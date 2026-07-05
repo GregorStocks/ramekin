@@ -37,8 +37,9 @@ fi
 export TEST_STATUS_DIR="$STATUS_DIR"
 
 PROCESS_COMPOSE_STARTED=0
+PROCESS_COMPOSE_PID=""
 
-trap 'EXIT_CODE=$?; set +e; if [ "$PROCESS_COMPOSE_STARTED" -eq 1 ]; then process-compose down --port "$PROCESS_COMPOSE_PORT" >/dev/null 2>&1 || true; fi; release_repo_lock; exit "$EXIT_CODE"' EXIT
+trap 'EXIT_CODE=$?; set +e; if [ "$PROCESS_COMPOSE_STARTED" -eq 1 ]; then process-compose down --port "$PROCESS_COMPOSE_PORT" >/dev/null 2>&1 || true; if [ -n "$PROCESS_COMPOSE_PID" ]; then wait "$PROCESS_COMPOSE_PID" >/dev/null 2>&1 || true; fi; fi; release_repo_lock; exit "$EXIT_CODE"' EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
 
@@ -115,9 +116,12 @@ fi
 
 set +e
 PROCESS_COMPOSE_STARTED=1
-process-compose up -e "$ENV_FILE" -f test-compose.yaml -t=false --port "$PROCESS_COMPOSE_PORT"
+process-compose up -e "$ENV_FILE" -f test-compose.yaml -t=false --port "$PROCESS_COMPOSE_PORT" &
+PROCESS_COMPOSE_PID=$!
+wait "$PROCESS_COMPOSE_PID"
 EXIT_CODE=$?
 PROCESS_COMPOSE_STARTED=0
+PROCESS_COMPOSE_PID=""
 set -e
 
 if [ $EXIT_CODE -ne 0 ]; then

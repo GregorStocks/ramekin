@@ -232,6 +232,7 @@ def test_run_tests_stops_process_compose_on_termination(tmp_path):
 
     calls_path = tmp_path / "process-compose-calls"
     started_path = tmp_path / "process-compose-started"
+    stopped_path = tmp_path / "process-compose-stopped"
     env_file = tmp_path / "test.env"
     env_file.write_text("PROCESS_COMPOSE_PORT=4317\n", encoding="utf-8")
 
@@ -244,12 +245,14 @@ printf '%s\\n' "$*" >> "{calls_path}"
 
 if [ "$1" = "up" ]; then
   touch "{started_path}"
-  while true; do
+  while [ ! -f "{stopped_path}" ]; do
     sleep 1
   done
+  exit 0
 fi
 
 if [ "$1" = "down" ]; then
+  touch "{stopped_path}"
   exit 0
 fi
 
@@ -276,7 +279,7 @@ exit 1
     )
     try:
         _wait_for_path(started_path)
-        os.killpg(proc.pid, signal.SIGTERM)
+        proc.send_signal(signal.SIGTERM)
         stdout, stderr = proc.communicate(timeout=5)
     finally:
         if proc.poll() is None:
