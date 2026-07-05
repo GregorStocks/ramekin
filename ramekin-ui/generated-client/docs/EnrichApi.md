@@ -90,7 +90,7 @@ example().catch(console.error);
 
 Enrich a recipe
 
-This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user\&#39;s existing tag library (requires AI; skipped if unavailable)
+This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user\&#39;s existing tag library (requires AI; returns 503 if unavailable)
 
 ### Example
 
@@ -153,6 +153,7 @@ example().catch(console.error);
 | **200** | Enriched recipe object |  -  |
 | **401** | Unauthorized |  -  |
 | **500** | Internal server error |  -  |
+| **503** | AI service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

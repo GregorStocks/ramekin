@@ -103,7 +103,7 @@ via a normal PUT /api/recipes/{id} call.
 
 Enriches:
 - Ingredient measurements with gram conversions (volume/weight → grams)
-- Tags by suggesting from the user's existing tag library (requires AI; skipped if unavailable)
+- Tags by suggesting from the user's existing tag library (requires AI; returns 503 if unavailable)
 
 ### Example
 
@@ -175,6 +175,7 @@ Name | Type | Description  | Notes
 **200** | Enriched recipe object |  -  |
 **401** | Unauthorized |  -  |
 **500** | Internal server error |  -  |
+**503** | AI service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

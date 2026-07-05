@@ -182,7 +182,7 @@
           "enrich"
         ],
         "summary": "Enrich a recipe",
-        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nEnriches:\n- Ingredient measurements with gram conversions (volume/weight → grams)\n- Tags by suggesting from the user's existing tag library (requires AI; skipped if unavailable)",
+        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nEnriches:\n- Ingredient measurements with gram conversions (volume/weight → grams)\n- Tags by suggesting from the user's existing tag library (requires AI; returns 503 if unavailable)",
         "operationId": "enrich_recipe",
         "requestBody": {
           "content": {
@@ -217,6 +217,16 @@
           },
           "500": {
             "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "AI service unavailable",
             "content": {
               "application/json": {
                 "schema": {

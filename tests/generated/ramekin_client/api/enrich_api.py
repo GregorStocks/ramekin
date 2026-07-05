@@ -342,7 +342,7 @@ class EnrichApi:
     ) -> RecipeContent:
         """Enrich a recipe
 
-        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user's existing tag library (requires AI; skipped if unavailable)
+        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user's existing tag library (requires AI; returns 503 if unavailable)
 
         :param recipe_content: (required)
         :type recipe_content: RecipeContent
@@ -380,6 +380,7 @@ class EnrichApi:
             '200': "RecipeContent",
             '401': "ErrorResponse",
             '500': "ErrorResponse",
+            '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -411,7 +412,7 @@ class EnrichApi:
     ) -> ApiResponse[RecipeContent]:
         """Enrich a recipe
 
-        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user's existing tag library (requires AI; skipped if unavailable)
+        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user's existing tag library (requires AI; returns 503 if unavailable)
 
         :param recipe_content: (required)
         :type recipe_content: RecipeContent
@@ -449,6 +450,7 @@ class EnrichApi:
             '200': "RecipeContent",
             '401': "ErrorResponse",
             '500': "ErrorResponse",
+            '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -480,7 +482,7 @@ class EnrichApi:
     ) -> RESTResponseType:
         """Enrich a recipe
 
-        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user's existing tag library (requires AI; skipped if unavailable)
+        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user's existing tag library (requires AI; returns 503 if unavailable)
 
         :param recipe_content: (required)
         :type recipe_content: RecipeContent
@@ -518,6 +520,7 @@ class EnrichApi:
             '200': "RecipeContent",
             '401': "ErrorResponse",
             '500': "ErrorResponse",
+            '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -54,7 +54,7 @@ export class EnrichApi extends runtime.BaseAPI {
         return await response.value();
     }
     /**
-     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user\'s existing tag library (requires AI; skipped if unavailable)
+     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user\'s existing tag library (requires AI; returns 503 if unavailable)
      * Enrich a recipe
      */
     async enrichRecipeRaw(requestParameters, initOverrides) {
@@ -82,7 +82,7 @@ export class EnrichApi extends runtime.BaseAPI {
         return new runtime.JSONApiResponse(response, (jsonValue) => RecipeContentFromJSON(jsonValue));
     }
     /**
-     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user\'s existing tag library (requires AI; skipped if unavailable)
+     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user\'s existing tag library (requires AI; returns 503 if unavailable)
      * Enrich a recipe
      */
     async enrichRecipe(requestParameters, initOverrides) {

@@ -118,6 +118,9 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         if "recipe title editor" in all_text:
             return self._mock_normalize_title(all_text)
 
+        if "Force Auto Tag Failure" in all_text:
+            return '{"suggested_tags": ['
+
         # Default: auto-tag response
         return '{"suggested_tags": ["test-auto-tag"]}'
 
