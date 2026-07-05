@@ -2,7 +2,7 @@ use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::models::{Ingredient, NewRecipeVersion};
+use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
 use crate::recipes::{create_new_version, TagSource};
 use crate::schema::{recipe_versions, recipes};
 use axum::{
@@ -51,26 +51,6 @@ fn format_ingredients_for_prompt(ingredients: &serde_json::Value) -> String {
         .join(", ")
 }
 
-#[allow(clippy::type_complexity)]
-type CurrentVersionRow = (
-    Uuid,              // recipes.id
-    String,            // title
-    Option<String>,    // description
-    serde_json::Value, // ingredients
-    String,            // instructions
-    Option<String>,    // source_url
-    Option<String>,    // source_name
-    Vec<Option<Uuid>>, // photo_ids
-    Option<String>,    // servings
-    Option<String>,    // prep_time
-    Option<String>,    // cook_time
-    Option<String>,    // total_time
-    Option<i32>,       // rating
-    Option<String>,    // difficulty
-    Option<String>,    // nutritional_info
-    Option<String>,    // notes
-);
-
 #[utoipa::path(
     post,
     path = "/api/recipes/{id}/normalize-title",
@@ -95,7 +75,7 @@ pub async fn normalize_title(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    let current: CurrentVersionRow = match recipes::table
+    let current_version: RecipeVersion = match recipes::table
         .inner_join(
             recipe_versions::table.on(recipe_versions::id
                 .nullable()
@@ -104,24 +84,7 @@ pub async fn normalize_title(
         .filter(recipes::id.eq(recipe_id))
         .filter(recipes::user_id.eq(user.id))
         .filter(recipes::deleted_at.is_null())
-        .select((
-            recipes::id,
-            recipe_versions::title,
-            recipe_versions::description,
-            recipe_versions::ingredients,
-            recipe_versions::instructions,
-            recipe_versions::source_url,
-            recipe_versions::source_name,
-            recipe_versions::photo_ids,
-            recipe_versions::servings,
-            recipe_versions::prep_time,
-            recipe_versions::cook_time,
-            recipe_versions::total_time,
-            recipe_versions::rating,
-            recipe_versions::difficulty,
-            recipe_versions::nutritional_info,
-            recipe_versions::notes,
-        ))
+        .select(RecipeVersion::as_select())
         .first(&mut conn)
     {
         Ok(r) => r,
@@ -132,24 +95,7 @@ pub async fn normalize_title(
         }
     };
 
-    let (
-        recipe_id,
-        original_title,
-        description,
-        ingredients,
-        instructions,
-        source_url,
-        source_name,
-        photo_ids,
-        servings,
-        prep_time,
-        cook_time,
-        total_time,
-        rating,
-        difficulty,
-        nutritional_info,
-        notes,
-    ) = current;
+    let original_title = current_version.title.clone();
 
     let ai_client = match CachingAiClient::from_env() {
         Ok(c) => c,
@@ -159,13 +105,13 @@ pub async fn normalize_title(
         }
     };
 
-    let ingredients_str = format_ingredients_for_prompt(&ingredients);
+    let ingredients_str = format_ingredients_for_prompt(&current_version.ingredients);
 
     let result = match ai_normalize_title(
         &ai_client,
         &original_title,
         &ingredients_str,
-        &instructions,
+        &current_version.instructions,
     )
     .await
     {
@@ -195,23 +141,8 @@ pub async fn normalize_title(
 
     let write_result: Result<(), diesel::result::Error> = conn.transaction(|conn| {
         let new_version = NewRecipeVersion {
-            recipe_id,
             title: &new_title,
-            description: description.as_deref(),
-            ingredients,
-            instructions: &instructions,
-            source_url: source_url.as_deref(),
-            source_name: source_name.as_deref(),
-            photo_ids: &photo_ids,
-            servings: servings.as_deref(),
-            prep_time: prep_time.as_deref(),
-            cook_time: cook_time.as_deref(),
-            total_time: total_time.as_deref(),
-            rating,
-            difficulty: difficulty.as_deref(),
-            nutritional_info: nutritional_info.as_deref(),
-            notes: notes.as_deref(),
-            version_source: "normalize_title",
+            ..NewRecipeVersion::copy_of(&current_version, "normalize_title")
         };
 
         let old_version_id: Option<Uuid> = recipes::table

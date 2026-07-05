@@ -2,7 +2,7 @@ use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::models::{Ingredient, NewPhoto, NewRecipeVersion};
+use crate::models::{Ingredient, NewPhoto, NewRecipeVersion, RecipeVersion};
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
 use crate::recipes::{create_new_version_cas, VersionWriteError};
 use crate::schema::{photos, recipe_versions, recipes};
@@ -25,27 +25,6 @@ pub struct GeneratePhotoResponse {
     pub photo_id: Uuid,
     pub version_id: Uuid,
 }
-
-#[allow(clippy::type_complexity)]
-type CurrentVersionRow = (
-    Uuid,              // recipes.id
-    Option<Uuid>,      // recipes.current_version_id
-    String,            // title
-    Option<String>,    // description
-    serde_json::Value, // ingredients
-    String,            // instructions
-    Option<String>,    // source_url
-    Option<String>,    // source_name
-    Vec<Option<Uuid>>, // photo_ids
-    Option<String>,    // servings
-    Option<String>,    // prep_time
-    Option<String>,    // cook_time
-    Option<String>,    // total_time
-    Option<i32>,       // rating
-    Option<String>,    // difficulty
-    Option<String>,    // nutritional_info
-    Option<String>,    // notes
-);
 
 fn format_ingredients_for_prompt(ingredients: &serde_json::Value) -> String {
     let Ok(items) = serde_json::from_value::<Vec<Ingredient>>(ingredients.clone()) else {
@@ -119,7 +98,7 @@ pub async fn generate_photo(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    let current: CurrentVersionRow = match recipes::table
+    let (source_version_id, current_version): (Option<Uuid>, RecipeVersion) = match recipes::table
         .inner_join(
             recipe_versions::table.on(recipe_versions::id
                 .nullable()
@@ -128,25 +107,7 @@ pub async fn generate_photo(
         .filter(recipes::id.eq(recipe_id))
         .filter(recipes::user_id.eq(user.id))
         .filter(recipes::deleted_at.is_null())
-        .select((
-            recipes::id,
-            recipes::current_version_id,
-            recipe_versions::title,
-            recipe_versions::description,
-            recipe_versions::ingredients,
-            recipe_versions::instructions,
-            recipe_versions::source_url,
-            recipe_versions::source_name,
-            recipe_versions::photo_ids,
-            recipe_versions::servings,
-            recipe_versions::prep_time,
-            recipe_versions::cook_time,
-            recipe_versions::total_time,
-            recipe_versions::rating,
-            recipe_versions::difficulty,
-            recipe_versions::nutritional_info,
-            recipe_versions::notes,
-        ))
+        .select((recipes::current_version_id, RecipeVersion::as_select()))
         .first(&mut conn)
     {
         Ok(r) => r,
@@ -156,26 +117,6 @@ pub async fn generate_photo(
             return ApiError::internal("Failed to fetch recipe").into_response();
         }
     };
-
-    let (
-        recipe_id,
-        source_version_id,
-        title,
-        description,
-        ingredients,
-        instructions,
-        _source_url,
-        _source_name,
-        _current_photo_ids,
-        _servings,
-        _prep_time,
-        _cook_time,
-        _total_time,
-        _rating,
-        _difficulty,
-        _nutritional_info,
-        _notes,
-    ) = current;
 
     let source_version_id = match source_version_id {
         Some(version_id) => version_id,
@@ -196,13 +137,13 @@ pub async fn generate_photo(
         }
     };
 
-    let ingredients_str = format_ingredients_for_prompt(&ingredients);
+    let ingredients_str = format_ingredients_for_prompt(&current_version.ingredients);
     let generated = match ai_generate_recipe_photo(
         &config,
-        &title,
-        description.as_deref(),
+        &current_version.title,
+        current_version.description.as_deref(),
         &ingredients_str,
-        &instructions,
+        &current_version.instructions,
     )
     .await
     {
@@ -240,7 +181,7 @@ pub async fn generate_photo(
     };
 
     let write_result: Result<(Uuid, Uuid), VersionWriteError> = conn.transaction(|conn| {
-        let current: CurrentVersionRow = recipes::table
+        let (current_version_id, current_version): (Option<Uuid>, RecipeVersion) = recipes::table
             .inner_join(
                 recipe_versions::table.on(recipe_versions::id
                     .nullable()
@@ -249,50 +190,12 @@ pub async fn generate_photo(
             .filter(recipes::id.eq(recipe_id))
             .filter(recipes::user_id.eq(user.id))
             .filter(recipes::deleted_at.is_null())
-            .select((
-                recipes::id,
-                recipes::current_version_id,
-                recipe_versions::title,
-                recipe_versions::description,
-                recipe_versions::ingredients,
-                recipe_versions::instructions,
-                recipe_versions::source_url,
-                recipe_versions::source_name,
-                recipe_versions::photo_ids,
-                recipe_versions::servings,
-                recipe_versions::prep_time,
-                recipe_versions::cook_time,
-                recipe_versions::total_time,
-                recipe_versions::rating,
-                recipe_versions::difficulty,
-                recipe_versions::nutritional_info,
-                recipe_versions::notes,
-            ))
+            .select((recipes::current_version_id, RecipeVersion::as_select()))
             .first(conn)
             .map_err(|e| match e {
                 diesel::result::Error::NotFound => VersionWriteError::Stale,
                 other => VersionWriteError::Db(other),
             })?;
-
-        let (
-            _recipe_id,
-            current_version_id,
-            current_title,
-            current_description,
-            current_ingredients,
-            current_instructions,
-            current_source_url,
-            current_source_name,
-            current_photo_ids,
-            current_servings,
-            current_prep_time,
-            current_cook_time,
-            current_total_time,
-            current_rating,
-            current_difficulty,
-            current_nutritional_info,
-            current_notes,
-        ) = current;
 
         if current_version_id != Some(source_version_id) {
             return Err(VersionWriteError::Stale);
@@ -314,28 +217,13 @@ pub async fn generate_photo(
             .get_result(conn)
             .map_err(VersionWriteError::Db)?;
 
-        let mut new_photo_ids = Vec::with_capacity(current_photo_ids.len() + 1);
+        let mut new_photo_ids = Vec::with_capacity(current_version.photo_ids.len() + 1);
         new_photo_ids.push(Some(photo_id));
-        new_photo_ids.extend(current_photo_ids.iter().copied());
+        new_photo_ids.extend(current_version.photo_ids.iter().copied());
 
         let new_version = NewRecipeVersion {
-            recipe_id,
-            title: &current_title,
-            description: current_description.as_deref(),
-            ingredients: current_ingredients,
-            instructions: &current_instructions,
-            source_url: current_source_url.as_deref(),
-            source_name: current_source_name.as_deref(),
             photo_ids: &new_photo_ids,
-            servings: current_servings.as_deref(),
-            prep_time: current_prep_time.as_deref(),
-            cook_time: current_cook_time.as_deref(),
-            total_time: current_total_time.as_deref(),
-            rating: current_rating,
-            difficulty: current_difficulty.as_deref(),
-            nutritional_info: current_nutritional_info.as_deref(),
-            notes: current_notes.as_deref(),
-            version_source: "ai_photo",
+            ..NewRecipeVersion::copy_of(&current_version, "ai_photo")
         };
 
         // Compare-and-swap: only repoint if current_version_id still matches
