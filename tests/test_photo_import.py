@@ -1,21 +1,9 @@
 """Tests for photo import functionality."""
 
-import time
-
 import pytest
 
+from conftest import wait_for_job_completion
 from ramekin_client.api import ImportApi, PhotosApi, RecipesApi, ScrapeApi
-
-
-def wait_for_job_completion(scrape_api, job_id, timeout=30.0):
-    """Poll job status until completion or timeout."""
-    start = time.time()
-    while time.time() - start < timeout:
-        job = scrape_api.get_scrape(job_id)
-        if job.status in ("completed", "failed"):
-            return job
-        time.sleep(0.1)
-    raise TimeoutError(f"Job {job_id} did not complete within {timeout}s")
 
 
 class TestPhotoImport:
