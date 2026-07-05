@@ -36,6 +36,12 @@ if [ -n "$ORIG_PROCESS_COMPOSE_PORT" ]; then
 fi
 export TEST_STATUS_DIR="$STATUS_DIR"
 
+PROCESS_COMPOSE_STARTED=0
+
+trap 'EXIT_CODE=$?; set +e; if [ "$PROCESS_COMPOSE_STARTED" -eq 1 ]; then process-compose down --port "$PROCESS_COMPOSE_PORT" >/dev/null 2>&1 || true; fi; release_repo_lock; exit "$EXIT_CODE"' EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
 print_failure_logs() {
   if [ -f "$TEST_LOG_FILE" ]; then
     echo "[$(date +%H:%M:%S)] Test orchestration failed. Last 200 lines of ${TEST_LOG_FILE}:"
@@ -108,8 +114,10 @@ if [ -x "./server/target/release/ramekin-server" ]; then
 fi
 
 set +e
+PROCESS_COMPOSE_STARTED=1
 process-compose up -e "$ENV_FILE" -f test-compose.yaml -t=false --port "$PROCESS_COMPOSE_PORT"
 EXIT_CODE=$?
+PROCESS_COMPOSE_STARTED=0
 set -e
 
 if [ $EXIT_CODE -ne 0 ]; then

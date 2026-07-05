@@ -1,6 +1,8 @@
 import os
+import signal
 import stat
 import subprocess
+import time
 from pathlib import Path
 
 
@@ -11,6 +13,15 @@ SCRIPT_PATH = REPO_ROOT / "scripts" / "run-ui-tests.sh"
 def _write_executable(path: Path, contents: str) -> None:
     path.write_text(contents, encoding="utf-8")
     path.chmod(path.stat().st_mode | stat.S_IXUSR)
+
+
+def _wait_for_path(path: Path) -> None:
+    deadline = time.monotonic() + 5
+    while time.monotonic() < deadline:
+        if path.exists():
+            return
+        time.sleep(0.05)
+    raise AssertionError(f"Timed out waiting for {path}")
 
 
 def test_run_ui_tests_surfaces_orchestration_logs_on_failure(tmp_path):
@@ -46,6 +57,7 @@ exit 7
     env = os.environ.copy()
     env["PATH"] = f"{bin_dir}:{env['PATH']}"
     env["TEST_ENV_FILE"] = str(env_file)
+    env["PROCESS_COMPOSE_PORT"] = "4318"
     env.pop("CI", None)
 
     try:
@@ -70,3 +82,72 @@ exit 7
         in result.stdout
     )
     assert log_line in result.stdout
+
+
+def test_run_ui_tests_stops_process_compose_on_termination(tmp_path):
+    bin_dir = tmp_path / "bin"
+    bin_dir.mkdir()
+
+    calls_path = tmp_path / "process-compose-calls"
+    started_path = tmp_path / "process-compose-started"
+    env_file = tmp_path / "test.env"
+    env_file.write_text("PROCESS_COMPOSE_PORT=4318\nUI_PORT=4173\n", encoding="utf-8")
+
+    _write_executable(
+        bin_dir / "playwright",
+        """#!/bin/bash
+set -e
+exit 0
+""",
+    )
+    _write_executable(
+        bin_dir / "process-compose",
+        f"""#!/bin/bash
+set -e
+
+printf '%s\\n' "$*" >> "{calls_path}"
+
+if [ "$1" = "up" ]; then
+  touch "{started_path}"
+  while true; do
+    sleep 1
+  done
+fi
+
+if [ "$1" = "down" ]; then
+  exit 0
+fi
+
+exit 1
+""",
+    )
+
+    env = os.environ.copy()
+    env["PATH"] = f"{bin_dir}:{env['PATH']}"
+    env["TEST_ENV_FILE"] = str(env_file)
+    env["PROCESS_COMPOSE_PORT"] = "4318"
+    env.pop("CI", None)
+
+    proc = subprocess.Popen(
+        ["bash", str(SCRIPT_PATH)],
+        cwd=REPO_ROOT,
+        env=env,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        start_new_session=True,
+    )
+    try:
+        _wait_for_path(started_path)
+        os.killpg(proc.pid, signal.SIGTERM)
+        stdout, stderr = proc.communicate(timeout=5)
+    finally:
+        if proc.poll() is None:
+            os.killpg(proc.pid, signal.SIGKILL)
+            proc.communicate(timeout=5)
+
+    assert proc.returncode == 143, (stdout, stderr)
+    assert calls_path.read_text(encoding="utf-8").splitlines() == [
+        f"up -e {env_file} -f test-ui-compose.yaml -t=false --port 4318",
+        "down --port 4318",
+    ]
