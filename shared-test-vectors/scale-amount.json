@@ -30,6 +30,12 @@
     "expected": "1"
   },
   {
+    "name": "zero-leading comma decimal scales to unit fraction",
+    "amount": "0,125",
+    "factor": 2,
+    "expected": "1/4"
+  },
+  {
     "name": "simple fraction doubles",
     "amount": "1/2",
     "factor": 2,
