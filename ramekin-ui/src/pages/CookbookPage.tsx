@@ -16,6 +16,7 @@ import PdfExportModal from "../components/PdfExportModal";
 import {
   AI_ENRICHMENTS,
   runRecipeAiBatchOperation,
+  type RecipeAiOperationSummary,
 } from "../utils/aiEnrichments";
 import type { RecipeSummary, SortBy, Direction } from "ramekin-client";
 import { groupTags, parseTag } from "../utils/tagHierarchy";
@@ -43,6 +44,18 @@ type SortOption =
   | "title"
   | "created"
   | "random";
+
+type BulkOperation =
+  | "rescrapePhoto"
+  | "normalizeTitle"
+  | "description"
+  | "photo";
+
+interface BulkProgress {
+  operation: BulkOperation;
+  done: number;
+  total: number;
+}
 
 function getSortParams(sort: SortOption): {
   sortBy?: SortBy;
@@ -256,6 +269,7 @@ export default function CookbookPage() {
   const [loading, setLoading] = createSignal(false);
   const [loadingMore, setLoadingMore] = createSignal(false);
   const [error, setError] = createSignal<string | null>(null);
+  const [notice, setNotice] = createSignal<string | null>(null);
   const [offset, setOffset] = createSignal(0);
   const [total, setTotal] = createSignal(0);
   const [hasMore, setHasMore] = createSignal(true);
@@ -293,22 +307,9 @@ export default function CookbookPage() {
   // Full list of matching recipes (loaded for bulk ops like PDF export).
   const [bulkRecipes, setBulkRecipes] = createSignal<RecipeSummary[]>([]);
   const [showPdfModal, setShowPdfModal] = createSignal(false);
-  const [rescrapeProgress, setRescrapeProgress] = createSignal<{
-    done: number;
-    total: number;
-  } | null>(null);
-  const [normalizeTitleProgress, setNormalizeTitleProgress] = createSignal<{
-    done: number;
-    total: number;
-  } | null>(null);
-  const [descriptionProgress, setDescriptionProgress] = createSignal<{
-    done: number;
-    total: number;
-  } | null>(null);
-  const [generatePhotoProgress, setGeneratePhotoProgress] = createSignal<{
-    done: number;
-    total: number;
-  } | null>(null);
+  const [bulkProgress, setBulkProgress] = createSignal<BulkProgress | null>(
+    null,
+  );
 
   const PAGE_SIZE = 20;
 
@@ -355,6 +356,7 @@ export default function CookbookPage() {
       setLoading(true);
     }
     setError(null);
+    if (!appendMode) setNotice(null);
 
     try {
       const q = searchQuery();
@@ -753,123 +755,138 @@ export default function CookbookPage() {
     setShowPdfModal(true);
   };
 
-  const bulkNormalizeTitle = async () => {
+  const progressFor = (operation: BulkOperation) => {
+    const progress = bulkProgress();
+    return progress?.operation === operation ? progress : null;
+  };
+
+  const bulkButtonLabel = (
+    operation: BulkOperation,
+    idleLabel: string,
+    progressVerb: string,
+  ) => {
+    const progress = progressFor(operation);
+    return progress
+      ? `${progressVerb} ${progress.done}/${progress.total}…`
+      : idleLabel;
+  };
+
+  const summarizeErrors = (errors: string[]) =>
+    `${errors.slice(0, 3).join("; ")}${errors.length > 3 ? "…" : ""}`;
+
+  const runSelectedBulkOperation = async <TResult,>({
+    operation,
+    confirm,
+    action,
+    errorFallback,
+    reloadRecipes = false,
+    summarize,
+  }: {
+    operation: BulkOperation;
+    confirm: (count: number) => string;
+    action: (id: string) => Promise<TResult>;
+    errorFallback: string;
+    reloadRecipes?: boolean;
+    summarize: (summary: RecipeAiOperationSummary) => string;
+  }) => {
     const ids = Array.from(selected());
     if (ids.length === 0) return;
-    const confirmMsg =
-      ids.length === 1
-        ? "Normalize (de-clickbait) the title of this recipe?"
-        : `Normalize (de-clickbait) titles for ${ids.length} recipes? Each one calls the LLM (cached results are free).`;
-    if (!window.confirm(confirmMsg)) return;
+    if (!window.confirm(confirm(ids.length))) return;
 
-    setNormalizeTitleProgress({ done: 0, total: ids.length });
-    const api = getRecipesApi();
+    setError(null);
+    setNotice(null);
+    setBulkProgress({ operation, done: 0, total: ids.length });
     const summary = await runRecipeAiBatchOperation({
       ids,
-      run: (id) => api.normalizeTitle({ id }),
-      errorFallback: "normalize failed",
-      onProgress: setNormalizeTitleProgress,
+      run: action,
+      errorFallback,
+      onProgress: (progress) => {
+        setBulkProgress({ operation, ...progress });
+      },
     });
-    setNormalizeTitleProgress(null);
-    await loadRecipes();
-    if (summary.errors.length > 0) {
-      setError(
-        `${summary.succeeded}/${summary.total} normalized (${summary.changed} changed). Errors: ${summary.errors.slice(0, 3).join("; ")}${summary.errors.length > 3 ? "…" : ""}`,
-      );
-    } else {
-      setError(
-        `Normalized ${summary.total} recipes (${summary.changed} changed, ${summary.total - summary.changed} unchanged).`,
-      );
+    setBulkProgress(null);
+
+    if (reloadRecipes) {
+      await loadRecipes();
     }
+
+    const message = summarize(summary);
+    if (summary.errors.length > 0) {
+      setError(message);
+    } else {
+      setNotice(message);
+    }
+  };
+
+  const bulkNormalizeTitle = async () => {
+    const api = getRecipesApi();
+    await runSelectedBulkOperation({
+      operation: "normalizeTitle",
+      confirm: (count) =>
+        count === 1
+          ? "Normalize (de-clickbait) the title of this recipe?"
+          : `Normalize (de-clickbait) titles for ${count} recipes? Each one calls the LLM (cached results are free).`,
+      action: (id) => api.normalizeTitle({ id }),
+      errorFallback: "normalize failed",
+      reloadRecipes: true,
+      summarize: (summary) =>
+        summary.errors.length > 0
+          ? `${summary.succeeded}/${summary.total} normalized (${summary.changed} changed). Errors: ${summarizeErrors(summary.errors)}`
+          : `Normalized ${summary.total} recipes (${summary.changed} changed, ${summary.total - summary.changed} unchanged).`,
+    });
   };
 
   const bulkGenerateDescription = async () => {
-    const ids = Array.from(selected());
-    if (ids.length === 0) return;
-    const confirmMsg =
-      ids.length === 1
-        ? "Generate a description for this recipe?"
-        : `Generate descriptions for ${ids.length} recipes? Each one calls the LLM (cached results are free).`;
-    if (!window.confirm(confirmMsg)) return;
-
-    setDescriptionProgress({ done: 0, total: ids.length });
     const api = getRecipesApi();
-    const summary = await runRecipeAiBatchOperation({
-      ids,
-      run: (id) => api.generateDescription({ id }),
+    await runSelectedBulkOperation({
+      operation: "description",
+      confirm: (count) =>
+        count === 1
+          ? "Generate a description for this recipe?"
+          : `Generate descriptions for ${count} recipes? Each one calls the LLM (cached results are free).`,
+      action: (id) => api.generateDescription({ id }),
       errorFallback: "description failed",
-      onProgress: setDescriptionProgress,
+      reloadRecipes: true,
+      summarize: (summary) =>
+        summary.errors.length > 0
+          ? `${summary.succeeded}/${summary.total} described (${summary.changed} changed). Errors: ${summarizeErrors(summary.errors)}`
+          : `Generated descriptions for ${summary.total} recipes (${summary.changed} changed, ${summary.total - summary.changed} unchanged).`,
     });
-    setDescriptionProgress(null);
-    await loadRecipes();
-    if (summary.errors.length > 0) {
-      setError(
-        `${summary.succeeded}/${summary.total} described (${summary.changed} changed). Errors: ${summary.errors.slice(0, 3).join("; ")}${summary.errors.length > 3 ? "…" : ""}`,
-      );
-    } else {
-      setError(
-        `Generated descriptions for ${summary.total} recipes (${summary.changed} changed, ${summary.total - summary.changed} unchanged).`,
-      );
-    }
   };
 
   const bulkGeneratePhoto = async () => {
-    const ids = Array.from(selected());
-    if (ids.length === 0) return;
-    const confirmMsg =
-      ids.length === 1
-        ? "Generate an AI photo for this recipe?"
-        : `Generate AI photos for ${ids.length} recipes? Each one calls the image model.`;
-    if (!window.confirm(confirmMsg)) return;
-
-    setGeneratePhotoProgress({ done: 0, total: ids.length });
     const api = getRecipesApi();
-    const summary = await runRecipeAiBatchOperation({
-      ids,
-      run: (id) => api.generatePhoto({ id }),
+    await runSelectedBulkOperation({
+      operation: "photo",
+      confirm: (count) =>
+        count === 1
+          ? "Generate an AI photo for this recipe?"
+          : `Generate AI photos for ${count} recipes? Each one calls the image model.`,
+      action: (id) => api.generatePhoto({ id }),
       errorFallback: "photo generation failed",
-      onProgress: setGeneratePhotoProgress,
+      reloadRecipes: true,
+      summarize: (summary) =>
+        summary.errors.length > 0
+          ? `${summary.succeeded}/${summary.total} photos generated. Errors: ${summarizeErrors(summary.errors)}`
+          : `Generated AI photos for ${summary.total} recipes.`,
     });
-    setGeneratePhotoProgress(null);
-    await loadRecipes();
-    if (summary.errors.length > 0) {
-      setError(
-        `${summary.succeeded}/${summary.total} photos generated. Errors: ${summary.errors.slice(0, 3).join("; ")}${summary.errors.length > 3 ? "…" : ""}`,
-      );
-    } else {
-      setError(`Generated AI photos for ${summary.total} recipes.`);
-    }
   };
 
   const bulkRescrapePhoto = async () => {
-    const ids = Array.from(selected());
-    if (ids.length === 0) return;
-    const confirmMsg =
-      ids.length === 1
-        ? "Queue a photo rescrape for this recipe?"
-        : `Queue photo rescrapes for ${ids.length} recipes? This will issue one job per recipe.`;
-    if (!window.confirm(confirmMsg)) return;
-
-    setRescrapeProgress({ done: 0, total: ids.length });
     const api = getRecipesApi();
-    let done = 0;
-    const errors: string[] = [];
-    for (const id of ids) {
-      try {
-        await api.rescrapePhoto({ id });
-      } catch (e) {
-        const msg = await extractApiError(e, "rescrape failed");
-        errors.push(`${id.slice(0, 8)}: ${msg}`);
-      }
-      done += 1;
-      setRescrapeProgress({ done, total: ids.length });
-    }
-    setRescrapeProgress(null);
-    if (errors.length > 0) {
-      setError(
-        `${ids.length - errors.length}/${ids.length} jobs queued. Errors: ${errors.slice(0, 3).join("; ")}${errors.length > 3 ? "…" : ""}`,
-      );
-    }
+    await runSelectedBulkOperation({
+      operation: "rescrapePhoto",
+      confirm: (count) =>
+        count === 1
+          ? "Queue a photo rescrape for this recipe?"
+          : `Queue photo rescrapes for ${count} recipes? This will issue one job per recipe.`,
+      action: (id) => api.rescrapePhoto({ id }),
+      errorFallback: "rescrape failed",
+      summarize: (summary) =>
+        summary.errors.length > 0
+          ? `${summary.succeeded}/${summary.total} jobs queued. Errors: ${summarizeErrors(summary.errors)}`
+          : `Queued photo rescrapes for ${summary.total} recipes.`,
+    });
   };
 
   return (
@@ -997,56 +1014,45 @@ export default function CookbookPage() {
             type="button"
             class="btn btn-small"
             onClick={bulkRescrapePhoto}
-            disabled={selected().size === 0 || rescrapeProgress() !== null}
+            disabled={selected().size === 0 || bulkProgress() !== null}
           >
-            <Show when={rescrapeProgress()} fallback={<>Rescrape photo</>}>
-              Rescraping {rescrapeProgress()!.done}/{rescrapeProgress()!.total}…
-            </Show>
+            {bulkButtonLabel("rescrapePhoto", "Rescrape photo", "Rescraping")}
           </button>
           <button
             type="button"
             class="btn btn-small"
             onClick={bulkNormalizeTitle}
-            disabled={
-              selected().size === 0 || normalizeTitleProgress() !== null
-            }
+            disabled={selected().size === 0 || bulkProgress() !== null}
           >
-            <Show
-              when={normalizeTitleProgress()}
-              fallback={<>{AI_ENRICHMENTS.normalizeTitle.bulkLabel}</>}
-            >
-              {AI_ENRICHMENTS.normalizeTitle.progressVerb}{" "}
-              {normalizeTitleProgress()!.done}/{normalizeTitleProgress()!.total}
-              …
-            </Show>
+            {bulkButtonLabel(
+              "normalizeTitle",
+              AI_ENRICHMENTS.normalizeTitle.bulkLabel,
+              AI_ENRICHMENTS.normalizeTitle.progressVerb,
+            )}
           </button>
           <button
             type="button"
             class="btn btn-small"
             onClick={bulkGenerateDescription}
-            disabled={selected().size === 0 || descriptionProgress() !== null}
+            disabled={selected().size === 0 || bulkProgress() !== null}
           >
-            <Show
-              when={descriptionProgress()}
-              fallback={<>{AI_ENRICHMENTS.generateDescription.bulkLabel}</>}
-            >
-              {AI_ENRICHMENTS.generateDescription.progressVerb}{" "}
-              {descriptionProgress()!.done}/{descriptionProgress()!.total}…
-            </Show>
+            {bulkButtonLabel(
+              "description",
+              AI_ENRICHMENTS.generateDescription.bulkLabel,
+              AI_ENRICHMENTS.generateDescription.progressVerb,
+            )}
           </button>
           <button
             type="button"
             class="btn btn-small"
             onClick={bulkGeneratePhoto}
-            disabled={selected().size === 0 || generatePhotoProgress() !== null}
+            disabled={selected().size === 0 || bulkProgress() !== null}
           >
-            <Show
-              when={generatePhotoProgress()}
-              fallback={<>{AI_ENRICHMENTS.generatePhoto.bulkLabel}</>}
-            >
-              {AI_ENRICHMENTS.generatePhoto.progressVerb}{" "}
-              {generatePhotoProgress()!.done}/{generatePhotoProgress()!.total}…
-            </Show>
+            {bulkButtonLabel(
+              "photo",
+              AI_ENRICHMENTS.generatePhoto.bulkLabel,
+              AI_ENRICHMENTS.generatePhoto.progressVerb,
+            )}
           </button>
         </div>
       </Show>
@@ -1238,6 +1244,10 @@ export default function CookbookPage() {
 
           <Show when={error()}>
             <p class="error">{error()}</p>
+          </Show>
+
+          <Show when={notice()}>
+            <p class="success">{notice()}</p>
           </Show>
 
           <Show when={!loading() && recipes().length === 0 && !searchQuery()}>
