@@ -2,26 +2,29 @@ import XCTest
 @testable import Ramekin
 
 final class RecipeScaleSupportTests: XCTestCase {
-    func testScaleAmountDoublesRepresentativeAmounts() {
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1", by: 2), "2")
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1,5", by: 2), "3")
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1/2", by: 2), "1")
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1 1/2", by: 2), "3")
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount(".5", by: 2), "1")
+    struct ScaleAmountVector: Decodable {
+        let name: String
+        let amount: String
+        let factor: Double
+        let expected: String
     }
 
-    func testScaleAmountHalvesRepresentativeAmounts() {
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1", by: 0.5), "1/2")
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("2", by: 0.5), "1")
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1/2", by: 0.5), "1/4")
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1 1/2", by: 0.5), "0.75")
-    }
+    func testScaleAmountMatchesSharedVectors() throws {
+        let url = try XCTUnwrap(
+            Bundle(for: Self.self).url(forResource: "scale-amount", withExtension: "json")
+        )
+        let vectors = try JSONDecoder().decode(
+            [ScaleAmountVector].self,
+            from: Data(contentsOf: url)
+        )
 
-    func testScaleAmountLeavesUnparseableAmountsAlone() {
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1-2", by: 2), "1-2")
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("to taste", by: 2), "to taste")
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1", by: 1), "1")
-        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1", by: 0), "1")
+        for vector in vectors {
+            XCTAssertEqual(
+                RecipeScaleSupport.scaleAmount(vector.amount, by: vector.factor),
+                vector.expected,
+                vector.name
+            )
+        }
     }
 
     func testParseDecimalAcceptsCommaDecimalInput() {

@@ -6,6 +6,7 @@ name: iOS
     branches: ["*"]
     paths:
       - 'ramekin-ios/**'
+      - 'shared-test-vectors/**'
       - '.github/workflows/ios.yml'
 
 concurrency:
