@@ -68,12 +68,29 @@ export default function ShoppingListPage() {
     cacheMutationVersion += 1;
   };
 
+  const persistCache = (cache: ShoppingListSyncCache) => {
+    try {
+      saveShoppingListSyncCache(localStorage, token(), cache);
+    } catch (err) {
+      logger.warn(
+        "Shopping",
+        `shopping list cache write failed: ${String(err)}`,
+      );
+      try {
+        clearShoppingListSyncCache(localStorage, token());
+      } catch (clearErr) {
+        logger.warn(
+          "Shopping",
+          `shopping list cache clear failed: ${String(clearErr)}`,
+        );
+      }
+    }
+  };
+
   const saveCurrentCacheItems = (nextItems: ShoppingListItemResponse[]) => {
     markConfirmedServerMutation();
     const cached = loadShoppingListSyncCache(localStorage, token());
-    saveShoppingListSyncCache(
-      localStorage,
-      token(),
+    persistCache(
       replaceShoppingListCachedItems(cached, nextItems, categoryOrder()),
     );
   };
@@ -101,8 +118,8 @@ export default function ShoppingListPage() {
         return await loadItems(false);
       }
       const nextCache = applyShoppingListSyncResponse(cached, response);
-      saveShoppingListSyncCache(localStorage, token(), nextCache);
       applyCache(nextCache);
+      persistCache(nextCache);
       return true;
     } catch (err) {
       const message = await extractApiError(
