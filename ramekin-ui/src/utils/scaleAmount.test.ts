@@ -1,5 +1,4 @@
 import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
 
 import { describe, expect, it } from "vitest";
 
@@ -14,7 +13,7 @@ type ScaleAmountVector = {
 
 const vectors = JSON.parse(
   readFileSync(
-    resolve(__dirname, "../../../shared-test-vectors/scale-amount.json"),
+    new URL("../../../shared-test-vectors/scale-amount.json", import.meta.url),
     "utf8",
   ),
 ) as ScaleAmountVector[];
