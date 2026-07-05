@@ -1,11 +1,10 @@
+use super::read::fetch_current_recipe_with_version_and_tags;
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
-use crate::raw_sql;
 use crate::recipes::{create_new_version, TagSource};
-use crate::schema::{recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
     http::StatusCode,
@@ -100,23 +99,14 @@ pub async fn update_recipe(
 
     let mut conn = get_conn!(pool);
 
-    // Fetch recipe, current version, and tags in a single query
-    let (current_version, cur_tags): (RecipeVersion, Vec<String>) = match recipes::table
-        .inner_join(
-            recipe_versions::table.on(recipe_versions::id
-                .nullable()
-                .eq(recipes::current_version_id)),
-        )
-        .filter(recipes::id.eq(id))
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .select((RecipeVersion::as_select(), raw_sql::tags_subquery()))
-        .first(&mut conn)
-    {
-        Ok(r) => r,
-        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
-        Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
-    };
+    let (current_version, cur_tags): (RecipeVersion, Vec<String>) =
+        match fetch_current_recipe_with_version_and_tags(&mut conn, user.id, id) {
+            Ok((recipe, tags)) => (recipe.version, tags),
+            Err(diesel::NotFound) => {
+                return ApiError::not_found("Recipe not found").into_response()
+            }
+            Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
+        };
 
     // Merge request with current version
     let new_title = request

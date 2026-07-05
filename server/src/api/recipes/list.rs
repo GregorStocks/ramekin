@@ -1,3 +1,7 @@
+use super::read::{
+    counted_recipe_summary_select, current_recipe_versions_for_user, recipe_relevance_select,
+    CountedRecipeSummaryRow, RecipeRelevanceRow, RecipeSummaryRow,
+};
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
@@ -12,7 +16,6 @@ use axum::{
     Json,
 };
 use chrono::{DateTime, NaiveDate, Utc};
-use diesel::dsl::count_star;
 use diesel::prelude::*;
 use diesel::sql_types::{Array, Nullable, Uuid as SqlUuid};
 use serde::{Deserialize, Serialize};
@@ -253,6 +256,21 @@ pub struct RecipeSummary {
     pub updated_at: DateTime<Utc>,
 }
 
+impl RecipeSummary {
+    pub(crate) fn from_row(row: RecipeSummaryRow) -> Self {
+        Self {
+            id: row.id,
+            title: row.title,
+            description: row.description,
+            tags: row.tags,
+            thumbnail_photo_id: row.photo_ids.first().and_then(|id| *id),
+            rating: row.rating,
+            created_at: row.created_at,
+            updated_at: row.updated_at,
+        }
+    }
+}
+
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct ListRecipesResponse {
     pub recipes: Vec<RecipeSummary>,
@@ -265,35 +283,6 @@ fn escape_like_pattern(s: &str) -> String {
         .replace('%', "\\%")
         .replace('_', "\\_")
 }
-
-// Type alias for our query result row (tags included via correlated subquery)
-type RecipeRow = (
-    Uuid,              // recipe id
-    DateTime<Utc>,     // recipe created_at
-    String,            // version title
-    Option<String>,    // version description
-    Vec<Option<Uuid>>, // version photo_ids
-    Option<i32>,       // version rating
-    DateTime<Utc>,     // version created_at (updated_at)
-    i64,               // total count from window function
-    Vec<String>,       // tags from correlated subquery
-);
-
-// Row for relevance-sorted queries: no window count (the whole result set is
-// loaded, so total = len), plus the full-text fields the scorer reads.
-type RelevanceRow = (
-    Uuid,              // recipe id
-    DateTime<Utc>,     // recipe created_at
-    String,            // version title
-    Option<String>,    // version description
-    Vec<Option<Uuid>>, // version photo_ids
-    Option<i32>,       // version rating
-    DateTime<Utc>,     // version created_at (updated_at)
-    serde_json::Value, // version ingredients (JSONB)
-    String,            // version instructions
-    Option<String>,    // version notes
-    Vec<String>,       // tags from correlated subquery
-);
 
 #[utoipa::path(
     get,
@@ -325,15 +314,7 @@ pub async fn list_recipes(
 
     // Build base query with join
     // We use into_boxed() to allow dynamic filter additions
-    let mut query = recipes::table
-        .inner_join(
-            recipe_versions::table.on(recipe_versions::id
-                .nullable()
-                .eq(recipes::current_version_id)),
-        )
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .into_boxed();
+    let mut query = current_recipe_versions_for_user!(user.id).into_boxed();
 
     // Text search: each word must appear somewhere across all fields (AND
     // between words, OR between fields). Matches are case- AND
@@ -425,49 +406,23 @@ pub async fn list_recipes(
     // later. Load every matching row and rank in memory — search result
     // sets are one user's matching recipes, which is small.
     if matches!(sort_by, SortBy::Relevance) {
-        let rows: Vec<RelevanceRow> = match query
-            .select((
-                recipes::id,
-                recipes::created_at,
-                recipe_versions::title,
-                recipe_versions::description,
-                recipe_versions::photo_ids,
-                recipe_versions::rating,
-                recipe_versions::created_at,
-                recipe_versions::ingredients,
-                recipe_versions::instructions,
-                recipe_versions::notes,
-                raw_sql::tags_subquery(),
-            ))
-            .load(&mut conn)
-        {
-            Ok(r) => r,
-            Err(e) => {
-                tracing::error!("Failed to fetch recipes for relevance sort: {:?}", e);
-                return ApiError::internal("Failed to fetch recipes").into_response();
-            }
-        };
+        let rows: Vec<RecipeRelevanceRow> =
+            match query.select(recipe_relevance_select!()).load(&mut conn) {
+                Ok(r) => r,
+                Err(e) => {
+                    tracing::error!("Failed to fetch recipes for relevance sort: {:?}", e);
+                    return ApiError::internal("Failed to fetch recipes").into_response();
+                }
+            };
 
         let mut scored: Vec<(u32, RecipeSummary)> = Vec::with_capacity(rows.len());
-        for (
-            id,
-            created_at,
-            title,
-            description,
-            photo_ids,
-            rating,
-            updated_at,
-            ingredients_json,
-            instructions,
-            notes,
-            tags,
-        ) in rows
-        {
-            let ingredients: Vec<Ingredient> = match serde_json::from_value(ingredients_json) {
+        for row in rows {
+            let ingredients: Vec<Ingredient> = match serde_json::from_value(row.ingredients.clone())
+            {
                 Ok(i) => i,
                 Err(e) => {
                     tracing::error!(
-                        recipe_id = %id,
+                        recipe_id = %row.id,
                         error = %e,
                         "stored ingredients JSON failed to deserialize"
                     );
@@ -495,28 +450,16 @@ pub async fn list_recipes(
             let score = ramekin_core::search::relevance_score(
                 &parsed.text,
                 &ramekin_core::search::SearchDoc {
-                    title: &title,
-                    description: description.as_deref(),
-                    tags: &tags,
+                    title: &row.title,
+                    description: row.description.as_deref(),
+                    tags: &row.tags,
                     ingredients: &ingredient_texts,
-                    instructions: &instructions,
-                    notes: notes.as_deref(),
+                    instructions: &row.instructions,
+                    notes: row.notes.as_deref(),
                 },
             );
 
-            scored.push((
-                score,
-                RecipeSummary {
-                    id,
-                    title,
-                    description,
-                    tags,
-                    thumbnail_photo_id: photo_ids.first().and_then(|p| *p),
-                    rating,
-                    created_at,
-                    updated_at,
-                },
-            ));
+            scored.push((score, RecipeSummary::from_row(row.into_summary_row())));
         }
 
         // Highest score first; recency then id break ties deterministically.
@@ -582,18 +525,8 @@ pub async fn list_recipes(
 
     // Select columns including COUNT(*) OVER() for total and tags via correlated subquery
     // All data fetched in a single query
-    let results: Vec<RecipeRow> = match query
-        .select((
-            recipes::id,
-            recipes::created_at,
-            recipe_versions::title,
-            recipe_versions::description,
-            recipe_versions::photo_ids,
-            recipe_versions::rating,
-            recipe_versions::created_at,
-            count_star().over(),
-            raw_sql::tags_subquery(),
-        ))
+    let results: Vec<CountedRecipeSummaryRow> = match query
+        .select(counted_recipe_summary_select!())
         .limit(limit)
         .offset(offset)
         .load(&mut conn)
@@ -606,26 +539,11 @@ pub async fn list_recipes(
     };
 
     // Extract total from first row, or 0 if no results
-    let total = results.first().map(|r| r.7).unwrap_or(0);
+    let total = results.first().map(|r| r.total).unwrap_or(0);
 
     let recipes = results
         .into_iter()
-        .map(
-            |(id, created_at, title, description, photo_ids, rating, updated_at, _, tags)| {
-                let thumbnail_photo_id = photo_ids.first().and_then(|id| *id);
-
-                RecipeSummary {
-                    id,
-                    title,
-                    description,
-                    tags,
-                    thumbnail_photo_id,
-                    rating,
-                    created_at,
-                    updated_at,
-                }
-            },
-        )
+        .map(|row| RecipeSummary::from_row(row.into_summary_row()))
         .collect();
 
     (
