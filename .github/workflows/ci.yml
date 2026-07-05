@@ -65,7 +65,7 @@ jobs:
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('requirements-test.txt') }}
+          key: playwright-${{ runner.os }}-${{ hashFiles('requirements-test.txt', 'requirements-test.lock') }}
 
       - name: Install Playwright browsers
         run: |
