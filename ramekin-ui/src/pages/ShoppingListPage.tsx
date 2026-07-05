@@ -30,6 +30,7 @@ export default function ShoppingListPage() {
   const [updatingCategoryId, setUpdatingCategoryId] = createSignal<
     string | null
   >(null);
+  let cacheMutationVersion = 0;
 
   const hasCheckedItems = () => items().some((item) => item.isChecked);
 
@@ -63,6 +64,7 @@ export default function ShoppingListPage() {
   };
 
   const saveCurrentCacheItems = (nextItems: ShoppingListItemResponse[]) => {
+    cacheMutationVersion += 1;
     const cached = loadShoppingListSyncCache(localStorage, token());
     saveShoppingListSyncCache(
       localStorage,
@@ -73,6 +75,7 @@ export default function ShoppingListPage() {
 
   const loadItems = async (showLoading = true) => {
     const cached = loadShoppingListSyncCache(localStorage, token());
+    const syncStartedAtMutationVersion = cacheMutationVersion;
     if (cached) {
       applyCache(cached);
       setLoading(false);
@@ -89,6 +92,10 @@ export default function ShoppingListPage() {
           },
         }),
       );
+      if (syncStartedAtMutationVersion !== cacheMutationVersion) {
+        await loadItems(false);
+        return;
+      }
       const nextCache = applyShoppingListSyncResponse(cached, response);
       saveShoppingListSyncCache(localStorage, token(), nextCache);
       applyCache(nextCache);

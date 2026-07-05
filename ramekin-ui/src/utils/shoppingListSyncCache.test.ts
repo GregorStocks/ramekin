@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   applyShoppingListSyncResponse,
   loadShoppingListSyncCache,
+  refreshShoppingListSyncCache,
   replaceShoppingListCachedItems,
   saveShoppingListSyncCache,
   shoppingListCacheKey,
@@ -135,6 +136,28 @@ describe("shopping list sync cache", () => {
     expect(next.items).toBe(nextItems);
     expect(next.categoryOrder).toEqual(["Dairy & Eggs", "Other"]);
     expect(next.lastSyncAt).toBe(lastSyncAt);
+  });
+
+  it("refreshes the cache from the sync API", async () => {
+    const storage = new MemoryStorage();
+    const syncTimestamp = new Date("2026-07-01T12:05:00.000Z");
+    const api = {
+      syncItems: async () => ({
+        categoryOrder: ["Other"],
+        created: [],
+        deleted: [],
+        serverChanges: [serverChange({ id: "new", item: "flour" })],
+        syncTimestamp,
+        updated: [],
+      }),
+    };
+
+    const next = await refreshShoppingListSyncCache(api, storage, "token-a");
+
+    expect(next.items).toHaveLength(1);
+    expect(next.items[0].item).toBe("flour");
+    expect(next.lastSyncAt).toBe(syncTimestamp);
+    expect(loadShoppingListSyncCache(storage, "token-a")).toEqual(next);
   });
 });
 

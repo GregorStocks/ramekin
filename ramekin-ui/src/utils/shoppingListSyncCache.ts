@@ -1,4 +1,5 @@
 import type {
+  ShoppingListApi,
   ShoppingListItemResponse,
   SyncResponse,
   SyncServerChange,
@@ -72,6 +73,22 @@ export function applyShoppingListSyncResponse(
     categoryOrder: response.categoryOrder,
     lastSyncAt: response.syncTimestamp,
   };
+}
+
+export async function refreshShoppingListSyncCache(
+  api: Pick<ShoppingListApi, "syncItems">,
+  storage: Pick<Storage, "getItem" | "setItem">,
+  token: string | null,
+): Promise<ShoppingListSyncCache> {
+  const cached = loadShoppingListSyncCache(storage, token);
+  const response = await api.syncItems({
+    syncRequest: {
+      lastSyncAt: cached?.lastSyncAt ?? undefined,
+    },
+  });
+  const nextCache = applyShoppingListSyncResponse(cached, response);
+  saveShoppingListSyncCache(storage, token, nextCache);
+  return nextCache;
 }
 
 export function replaceShoppingListCachedItems(

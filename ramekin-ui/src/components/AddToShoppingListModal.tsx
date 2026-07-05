@@ -6,6 +6,7 @@ import {
   formatIngredient,
   formatIngredientAmount,
 } from "../utils/ingredientFormatting";
+import { refreshShoppingListSyncCache } from "../utils/shoppingListSyncCache";
 import type { RecipeResponse } from "ramekin-client";
 
 interface AddToShoppingListModalProps {
@@ -18,7 +19,7 @@ interface AddToShoppingListModalProps {
 export default function AddToShoppingListModal(
   props: AddToShoppingListModalProps,
 ) {
-  const { getShoppingListApi } = useAuth();
+  const { getShoppingListApi, token } = useAuth();
 
   const [selectedIndices, setSelectedIndices] = createSignal<Set<number>>(
     new Set(),
@@ -78,9 +79,11 @@ export default function AddToShoppingListModal(
           sourceRecipeTitle: props.recipe.title,
         }));
 
-      await getShoppingListApi().createItems({
+      const api = getShoppingListApi();
+      await api.createItems({
         createShoppingListRequest: { items },
       });
+      await refreshShoppingListSyncCache(api, localStorage, token());
 
       setShowSuccess(true);
       setTimeout(() => {
