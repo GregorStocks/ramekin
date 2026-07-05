@@ -6,11 +6,19 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import { logger } from "../utils/logger";
 import { createAsyncAction } from "../utils/asyncState";
+import {
+  applyShoppingListSyncResponse,
+  clearShoppingListSyncCache,
+  loadShoppingListSyncCache,
+  replaceShoppingListCachedItems,
+  saveShoppingListSyncCache,
+  type ShoppingListSyncCache,
+} from "../utils/shoppingListSyncCache";
 import type { ShoppingListItemResponse } from "ramekin-client";
 
 export default function ShoppingListPage() {
   usePageTitle(() => "Shopping List");
-  const { getShoppingListApi } = useAuth();
+  const { getShoppingListApi, token } = useAuth();
 
   const [items, setItems] = createSignal<ShoppingListItemResponse[]>([]);
   const [categoryOrder, setCategoryOrder] = createSignal<string[]>([]);
@@ -23,6 +31,7 @@ export default function ShoppingListPage() {
   const [updatingCategoryId, setUpdatingCategoryId] = createSignal<
     string | null
   >(null);
+  let cacheMutationVersion = 0;
 
   const hasCheckedItems = () => items().some((item) => item.isChecked);
 
@@ -50,21 +59,102 @@ export default function ShoppingListPage() {
       .sort((a, b) => a.sortOrder - b.sortOrder),
   );
 
-  const loadItems = async (showLoading = true) => {
-    if (showLoading) setLoading(true);
+  const applyCache = (cache: ShoppingListSyncCache) => {
+    setItems(cache.items);
+    setCategoryOrder(cache.categoryOrder);
+  };
+
+  const markConfirmedServerMutation = () => {
+    cacheMutationVersion += 1;
+  };
+
+  const clearCacheAfterError = (
+    context: string,
+    err: unknown,
+    cacheToken: string | null,
+  ) => {
+    logger.warn("Shopping", `${context}: ${String(err)}`);
+    try {
+      clearShoppingListSyncCache(localStorage, cacheToken);
+    } catch (clearErr) {
+      logger.warn(
+        "Shopping",
+        `shopping list cache clear failed: ${String(clearErr)}`,
+      );
+    }
+  };
+
+  const loadCacheOrNull = (
+    cacheToken: string | null,
+  ): ShoppingListSyncCache | null => {
+    try {
+      return loadShoppingListSyncCache(localStorage, cacheToken);
+    } catch (err) {
+      clearCacheAfterError("shopping list cache read failed", err, cacheToken);
+      return null;
+    }
+  };
+
+  const persistCache = (
+    cache: ShoppingListSyncCache,
+    cacheToken: string | null,
+  ) => {
+    try {
+      saveShoppingListSyncCache(localStorage, cacheToken, cache);
+    } catch (err) {
+      clearCacheAfterError("shopping list cache write failed", err, cacheToken);
+    }
+  };
+
+  const saveCurrentCacheItems = (nextItems: ShoppingListItemResponse[]) => {
+    markConfirmedServerMutation();
+    const cacheToken = token();
+    const cached = loadCacheOrNull(cacheToken);
+    persistCache(
+      replaceShoppingListCachedItems(cached, nextItems, categoryOrder()),
+      cacheToken,
+    );
+  };
+
+  const loadItems = async (showLoading = true): Promise<boolean> => {
+    const requestToken = token();
+    const cached = loadCacheOrNull(requestToken);
+    const syncStartedAtMutationVersion = cacheMutationVersion;
+    if (cached) {
+      applyCache(cached);
+      setLoading(false);
+    } else if (showLoading) {
+      setLoading(true);
+    }
+
     setError(null);
     try {
-      const response = await logger.timed("Shopping", "listItems", () =>
-        getShoppingListApi().listItems(),
+      const response = await logger.timed("Shopping", "syncItems", () =>
+        getShoppingListApi().syncItems({
+          syncRequest: {
+            lastSyncAt: cached?.lastSyncAt ?? undefined,
+          },
+        }),
       );
-      setItems(response.items);
-      setCategoryOrder(response.categoryOrder);
+      if (requestToken !== token()) {
+        return true;
+      }
+      if (syncStartedAtMutationVersion !== cacheMutationVersion) {
+        return await loadItems(false);
+      }
+      const nextCache = applyShoppingListSyncResponse(cached, response);
+      applyCache(nextCache);
+      persistCache(nextCache, requestToken);
+      return true;
     } catch (err) {
       const message = await extractApiError(
         err,
-        "Failed to load shopping list",
+        cached
+          ? "Failed to sync shopping list"
+          : "Failed to load shopping list",
       );
       setError(message);
+      return false;
     } finally {
       setLoading(false);
     }
@@ -82,9 +172,12 @@ export default function ShoppingListPage() {
         },
       }),
     );
+    markConfirmedServerMutation();
     setNewItemName("");
     setNewItemAmount("");
-    await loadItems(false);
+    if (!(await loadItems(false))) {
+      clearShoppingListSyncCache(localStorage, token());
+    }
   }, "Failed to add item");
 
   const toggleCheckedAction = createAsyncAction(
@@ -95,11 +188,11 @@ export default function ShoppingListPage() {
           isChecked: !item.isChecked,
         },
       });
-      setItems((prev) =>
-        prev.map((i) =>
-          i.id === item.id ? { ...i, isChecked: !i.isChecked } : i,
-        ),
+      const nextItems = items().map((i) =>
+        i.id === item.id ? { ...i, isChecked: !i.isChecked } : i,
       );
+      setItems(nextItems);
+      saveCurrentCacheItems(nextItems);
     },
     "Failed to update item",
   );
@@ -114,7 +207,10 @@ export default function ShoppingListPage() {
             categoryOverride,
           },
         });
-        await loadItems(false);
+        markConfirmedServerMutation();
+        if (!(await loadItems(false))) {
+          clearShoppingListSyncCache(localStorage, token());
+        }
       } finally {
         setUpdatingCategoryId(null);
       }
@@ -126,7 +222,9 @@ export default function ShoppingListPage() {
     async (item: ShoppingListItemResponse) => {
       await getShoppingListApi().deleteItem({ id: item.id });
       setDeletingItem(null);
-      setItems((prev) => prev.filter((i) => i.id !== item.id));
+      const nextItems = items().filter((i) => i.id !== item.id);
+      setItems(nextItems);
+      saveCurrentCacheItems(nextItems);
     },
     "Failed to delete item",
     {
@@ -138,7 +236,9 @@ export default function ShoppingListPage() {
 
   const clearCheckedAction = createAsyncAction(async () => {
     await getShoppingListApi().clearChecked();
-    setItems((prev) => prev.filter((i) => !i.isChecked));
+    const nextItems = items().filter((i) => !i.isChecked);
+    setItems(nextItems);
+    saveCurrentCacheItems(nextItems);
   }, "Failed to clear checked items");
 
   const adding = addItemAction.loading;
