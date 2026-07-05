@@ -1,39 +1,9 @@
 version: "0.5"
-extends: compose/base.yaml
+extends: compose/test-base.yaml
 
 log_location: ./logs/test-ui.log
 
 processes:
-  fixture-server:
-    command: python3 ../fixture_server.py ${FIXTURE_PORT}
-    working_dir: ./tests/scrape_fixtures
-    readiness_probe:
-      http_get:
-        host: localhost
-        port: ${FIXTURE_PORT}
-        path: /
-
-  mock-openrouter:
-    command: python3 tests/mock_openrouter.py ${MOCK_OPENROUTER_PORT}
-    readiness_probe:
-      http_get:
-        host: localhost
-        port: ${MOCK_OPENROUTER_PORT}
-        path: /
-
-  server:
-    working_dir: ./server
-    environment:
-      - OPENROUTER_API_KEY=test-api-key
-      - RAMEKIN_AI_BASE_URL=http://localhost:${MOCK_OPENROUTER_PORT}/v1
-      - RAMEKIN_AI_CACHE_DIR=../logs/test-ai-cache
-      - SCRAPE_ALLOWED_HOSTS=localhost:${FIXTURE_PORT}
-    depends_on:
-      fixture-server:
-        condition: process_healthy
-      mock-openrouter:
-        condition: process_healthy
-
   ui:
     command: npm run dev -- --port ${UI_PORT} --strictPort
     working_dir: ./ramekin-ui
