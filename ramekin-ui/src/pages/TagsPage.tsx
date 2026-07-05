@@ -1,18 +1,22 @@
-import { createSignal, createEffect, For, Show } from "solid-js";
+import { createSignal, For, Show } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
-import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import type { TagItem } from "ramekin-client";
 import { groupTags, parseTag } from "../utils/tagHierarchy";
+import { createApiResource, createAsyncAction } from "../utils/asyncState";
 
 export default function TagsPage() {
   usePageTitle(() => "Tags");
   const navigate = useNavigate();
   const { getTagsApi, refreshTags } = useAuth();
 
-  const [tags, setTags] = createSignal<TagItem[]>([]);
+  const tagsResource = createApiResource(
+    async () => getTagsApi().listAllTags(),
+    "Failed to load tags",
+  );
+  const tags = () => tagsResource.data()?.tags ?? [];
   const groupedTags = () => {
     const byName = new Map(tags().map((t) => [t.name, t] as const));
     return groupTags(tags().map((t) => t.name)).map((group) => ({
@@ -20,60 +24,99 @@ export default function TagsPage() {
       items: group.tags.map((name) => byName.get(name)!).filter(Boolean),
     }));
   };
-  const [loading, setLoading] = createSignal(true);
-  const [error, setError] = createSignal<string | null>(null);
+  const loading = tagsResource.loading;
 
   // Edit state
   const [editingId, setEditingId] = createSignal<string | null>(null);
   const [editName, setEditName] = createSignal("");
-  const [editError, setEditError] = createSignal<string | null>(null);
-  const [saving, setSaving] = createSignal(false);
+  const [editValidationError, setEditValidationError] = createSignal<
+    string | null
+  >(null);
 
   // Delete confirmation state
   const [deleteTag, setDeleteTag] = createSignal<TagItem | null>(null);
-  const [deleting, setDeleting] = createSignal(false);
 
   // Bulk edit state
   const [bulkEditing, setBulkEditing] = createSignal(false);
   const [bulkNames, setBulkNames] = createSignal<Record<string, string>>({});
   const [bulkErrors, setBulkErrors] = createSignal<Record<string, string>>({});
-  const [bulkSaving, setBulkSaving] = createSignal(false);
 
-  const loadTags = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await getTagsApi().listAllTags();
-      setTags(response.tags);
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to load tags");
-      setError(message);
-    } finally {
-      setLoading(false);
+  const renameAction = createAsyncAction(async (tagId: string) => {
+    const newName = editName().trim();
+    await getTagsApi().renameTag({
+      id: tagId,
+      renameTagRequest: { name: newName },
+    });
+    await refreshTags();
+    await tagsResource.refetch();
+    cancelEditing();
+  }, "Failed to rename tag");
+
+  const bulkRenameAction = createAsyncAction(async () => {
+    for (const tag of pendingBulkChanges()) {
+      await getTagsApi().renameTag({
+        id: tag.id,
+        renameTagRequest: { name: temporaryBulkName(tag) },
+      });
     }
-  };
+    for (const tag of pendingBulkChanges()) {
+      await getTagsApi().renameTag({
+        id: tag.id,
+        renameTagRequest: { name: normalizedBulkName(tag) },
+      });
+    }
+    await refreshTags();
+    await tagsResource.refetch();
+    cancelBulkEditing();
+  }, "Failed to rename tags");
 
-  createEffect(() => {
-    loadTags();
-  });
+  const deleteAction = createAsyncAction(
+    async (tag: TagItem) => {
+      await getTagsApi().deleteTag({ id: tag.id });
+      await refreshTags();
+      await tagsResource.refetch();
+      setDeleteTag(null);
+    },
+    "Failed to delete tag",
+    {
+      onError: () => {
+        setDeleteTag(null);
+      },
+    },
+  );
+
+  const saving = renameAction.loading;
+  const deleting = deleteAction.loading;
+  const bulkSaving = bulkRenameAction.loading;
+  const editError = () => editValidationError() ?? renameAction.error();
+  const error = () =>
+    bulkRenameAction.error() ?? deleteAction.error() ?? tagsResource.error();
+
+  const clearPageErrors = () => {
+    bulkRenameAction.clearError();
+    deleteAction.clearError();
+  };
 
   const startEditing = (tag: TagItem) => {
     setEditingId(tag.id);
     setEditName(tag.name);
-    setEditError(null);
+    setEditValidationError(null);
+    renameAction.clearError();
   };
 
   const cancelEditing = () => {
     setEditingId(null);
     setEditName("");
-    setEditError(null);
+    setEditValidationError(null);
+    renameAction.clearError();
   };
 
   const startBulkEditing = () => {
     setEditingId(null);
     setEditName("");
-    setEditError(null);
-    setError(null);
+    setEditValidationError(null);
+    renameAction.clearError();
+    clearPageErrors();
     setBulkErrors({});
     setBulkNames(
       Object.fromEntries(tags().map((tag) => [tag.id, tag.name] as const)),
@@ -85,7 +128,7 @@ export default function TagsPage() {
     setBulkEditing(false);
     setBulkNames({});
     setBulkErrors({});
-    setBulkSaving(false);
+    bulkRenameAction.clearError();
   };
 
   const updateBulkName = (tagId: string, value: string) => {
@@ -137,26 +180,12 @@ export default function TagsPage() {
   const handleRename = async (tagId: string) => {
     const newName = editName().trim();
     if (!newName) {
-      setEditError("Tag name cannot be empty");
+      setEditValidationError("Tag name cannot be empty");
       return;
     }
 
-    setSaving(true);
-    setEditError(null);
-    try {
-      await getTagsApi().renameTag({
-        id: tagId,
-        renameTagRequest: { name: newName },
-      });
-      await refreshTags();
-      await loadTags();
-      cancelEditing();
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to rename tag");
-      setEditError(message);
-    } finally {
-      setSaving(false);
-    }
+    setEditValidationError(null);
+    await renameAction.run(tagId);
   };
 
   const handleBulkSave = async () => {
@@ -168,31 +197,7 @@ export default function TagsPage() {
       return;
     }
 
-    setBulkSaving(true);
-    setError(null);
-
-    try {
-      for (const tag of changedTags) {
-        await getTagsApi().renameTag({
-          id: tag.id,
-          renameTagRequest: { name: temporaryBulkName(tag) },
-        });
-      }
-      for (const tag of changedTags) {
-        await getTagsApi().renameTag({
-          id: tag.id,
-          renameTagRequest: { name: normalizedBulkName(tag) },
-        });
-      }
-      await refreshTags();
-      await loadTags();
-      cancelBulkEditing();
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to rename tags");
-      setError(message);
-    } finally {
-      setBulkSaving(false);
-    }
+    await bulkRenameAction.run();
   };
 
   const confirmDelete = (tag: TagItem) => {
@@ -203,19 +208,7 @@ export default function TagsPage() {
     const tag = deleteTag();
     if (!tag) return;
 
-    setDeleting(true);
-    try {
-      await getTagsApi().deleteTag({ id: tag.id });
-      await refreshTags();
-      await loadTags();
-      setDeleteTag(null);
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to delete tag");
-      setError(message);
-      setDeleteTag(null);
-    } finally {
-      setDeleting(false);
-    }
+    await deleteAction.run(tag);
   };
 
   const navigateToFiltered = (tagName: string) => {
