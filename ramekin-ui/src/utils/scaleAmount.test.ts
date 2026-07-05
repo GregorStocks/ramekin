@@ -1,7 +1,6 @@
-import { readFileSync } from "node:fs";
-
 import { describe, expect, it } from "vitest";
 
+import vectorsJson from "../../../shared-test-vectors/scale-amount.json?raw";
 import { scaleAmount } from "./scaleAmount";
 
 type ScaleAmountVector = {
@@ -11,12 +10,7 @@ type ScaleAmountVector = {
   expected: string;
 };
 
-const vectors = JSON.parse(
-  readFileSync(
-    new URL("../../../shared-test-vectors/scale-amount.json", import.meta.url),
-    "utf8",
-  ),
-) as ScaleAmountVector[];
+const vectors = JSON.parse(vectorsJson) as ScaleAmountVector[];
 
 describe("scaleAmount", () => {
   it.each(vectors)("$name", ({ amount, factor, expected }) => {
