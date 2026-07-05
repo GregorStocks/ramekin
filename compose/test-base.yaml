@@ -4,7 +4,7 @@ extends: base.yaml
 processes:
   fixture:
     command: python3 ../fixture_server.py ${FIXTURE_PORT}
-    working_dir: ../tests/scrape_fixtures
+    working_dir: ${PWD}/tests/scrape_fixtures
     readiness_probe:
       http_get:
         host: localhost
@@ -13,7 +13,7 @@ processes:
 
   mock-openrouter:
     command: python3 tests/mock_openrouter.py ${MOCK_OPENROUTER_PORT}
-    working_dir: ..
+    working_dir: ${PWD}
     readiness_probe:
       http_get:
         host: localhost
@@ -21,7 +21,7 @@ processes:
         path: /
 
   server:
-    working_dir: ../server
+    working_dir: ${PWD}/server
     environment:
       - SCRAPE_ALLOWED_HOSTS=localhost:${FIXTURE_PORT}
       - OPENROUTER_API_KEY=test-api-key

@@ -19,11 +19,11 @@ def test_shared_test_base_owns_fixture_and_mock_processes():
     assert "extends: base.yaml" in test_base
     assert "\n  fixture:\n" in test_base
     assert "\n  fixture-server:\n" not in test_base
-    assert "working_dir: ../tests/scrape_fixtures" in test_base
+    assert "working_dir: ${PWD}/tests/scrape_fixtures" in test_base
     assert "\n  mock-openrouter:\n" in test_base
     assert "command: python3 tests/mock_openrouter.py" in test_base
-    assert "working_dir: .." in test_base
-    assert "working_dir: ../server" in test_base
+    assert "working_dir: ${PWD}" in test_base
+    assert "working_dir: ${PWD}/server" in test_base
     assert "SCRAPE_ALLOWED_HOSTS=localhost:${FIXTURE_PORT}" in test_base
     assert (
         "RAMEKIN_AI_BASE_URL=http://localhost:${MOCK_OPENROUTER_PORT}/v1" in test_base
