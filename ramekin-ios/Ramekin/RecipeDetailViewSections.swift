@@ -9,15 +9,15 @@ extension RecipeDetailView {
             }
 
             VStack(alignment: .leading, spacing: 20) {
-                if isRescraping {
+                if viewModel.isRescraping {
                     rescrapeProgressBanner()
                 }
 
-                if let banner = autoEnrichmentProgressLabel {
+                if let banner = viewModel.autoEnrichmentProgressLabel {
                     autoEnrichmentProgressBanner(banner)
                 }
 
-                if let error {
+                if let error = viewModel.error {
                     inlineErrorBanner(message: error)
                 }
 
@@ -99,8 +99,8 @@ extension RecipeDetailView {
 
             if let servings = recipe.servings, !servings.isEmpty {
                 HStack(spacing: 6) {
-                    Text("Servings: \(RecipeScaleSupport.scaleAmount(servings, by: recipeScale))")
-                    if recipeScale != 1 {
+                    Text("Servings: \(RecipeScaleSupport.scaleAmount(servings, by: viewModel.recipeScale))")
+                    if viewModel.recipeScale != 1 {
                         scaleBadge
                     }
                 }
@@ -142,7 +142,7 @@ extension RecipeDetailView {
                 Text("Ingredients")
                     .font(.title2)
                     .fontWeight(.bold)
-                if recipeScale != 1 {
+                if viewModel.recipeScale != 1 {
                     scaleBadge
                 }
             }
@@ -159,7 +159,7 @@ extension RecipeDetailView {
                 }
 
                 ForEach(Array(group.items.enumerated()), id: \.offset) { _, ingredient in
-                    ingredientRow(ingredient, scale: recipeScale)
+                    ingredientRow(ingredient, scale: viewModel.recipeScale)
                 }
             }
         }
@@ -174,26 +174,30 @@ extension RecipeDetailView {
 
                 ForEach(RecipeScaleSupport.presets, id: \.value) { preset in
                     Button {
-                        customScaleInput = ""
+                        viewModel.customScaleInput = ""
                         setRecipeScale(preset.value)
                     } label: {
                         Text(preset.label)
                             .font(.subheadline)
-                            .fontWeight(recipeScale == preset.value ? .semibold : .regular)
+                            .fontWeight(viewModel.recipeScale == preset.value ? .semibold : .regular)
                             .padding(.horizontal, 10)
                             .padding(.vertical, 6)
                             .background(
                                 Capsule()
-                                    .fill(recipeScale == preset.value ? Color.orange : Color(.secondarySystemBackground))
+                                    .fill(
+                                        viewModel.recipeScale == preset.value
+                                            ? Color.orange
+                                            : Color(.secondarySystemBackground)
+                                    )
                             )
-                            .foregroundColor(recipeScale == preset.value ? .white : .primary)
+                            .foregroundColor(viewModel.recipeScale == preset.value ? .white : .primary)
                     }
                     .buttonStyle(.plain)
                 }
             }
 
             HStack(spacing: 8) {
-                TextField("Custom", text: $customScaleInput)
+                TextField("Custom", text: $viewModel.customScaleInput)
                     .keyboardType(.decimalPad)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 100)
@@ -208,7 +212,7 @@ extension RecipeDetailView {
     }
 
     var scaleBadge: some View {
-        Text("scaled \(RecipeScaleSupport.formatScaleLabel(recipeScale))")
+        Text("scaled \(RecipeScaleSupport.formatScaleLabel(viewModel.recipeScale))")
             .font(.caption)
             .fontWeight(.semibold)
             .padding(.horizontal, 8)

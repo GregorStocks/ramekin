@@ -4,125 +4,89 @@ struct RecipeDetailView: View {
     let recipeId: UUID
 
     @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel: RecipeDetailViewModel
 
-    @State var recipe: RecipeResponse?
-    @State var currentVersionId: UUID?
-    @State var versionHistory: [VersionSummary] = []
-    @State var compareSelection: [UUID] = []
-    @State var isVersionHistoryExpanded = false
-    @State var isLoading = false
-    @State var isLoadingVersions = false
-    @State var isLoadingCompare = false
-    @State var isReverting = false
-    @State var error: String?
-    @State var versionHistoryError: String?
-    @State var compareError: String?
-    @State var revertCandidate: VersionSummary?
-    @State var showingAddToShoppingList = false
-    @State var showingAddToMealPlan = false
-    @State var showingCustomEnrich = false
-    @State var showingEdit = false
-    @State var showingCompareSheet = false
-    @State var enrichResult: RecipeContent?
-    @State var comparedOlderVersion: RecipeResponse?
-    @State var comparedNewerVersion: RecipeResponse?
-    @State var showingDeleteConfirmation = false
-    @State var isDeleting = false
-    @State var deleteError: String?
-    @State var isRescraping = false
-    @State var rescrapeError: String?
-    @State var showingRescrapeConfirmation = false
-    @State var rescrapeTask: Task<Void, Never>?
-    @State var isEnriching = false
-    @State var isGeneratingPhoto = false
-    @State var isGeneratingDescription = false
-    @State var isNormalizingTitle = false
-    @State var autoEnrichError: String?
-    @State var recipeScale: Double = 1
-    @State var customScaleInput = ""
-    @State var isExporting = false
-    @State var exportShareItem: ShareItem?
-    @State var exportError: String?
+    init(recipeId: UUID) {
+        self.recipeId = recipeId
+        _viewModel = StateObject(wrappedValue: RecipeDetailViewModel(recipeId: recipeId))
+    }
 
     var isViewingHistoricalVersion: Bool {
-        RecipeVersionSupport.isViewingHistoricalVersion(
-            displayedVersionId: recipe?.versionId,
-            currentVersionId: currentVersionId
-        )
+        viewModel.isViewingHistoricalVersion
     }
 
     var actionsDisabledForHistoricalVersion: Bool {
-        isViewingHistoricalVersion || isReverting || isRescraping || isAutoEnrichmentRunning
+        viewModel.actionsDisabledForHistoricalVersion
     }
 
     var isAutoEnrichmentRunning: Bool {
-        isEnriching || isGeneratingPhoto || isGeneratingDescription || isNormalizingTitle
+        viewModel.isAutoEnrichmentRunning
     }
 
     var canCompareSelectedVersions: Bool {
-        compareSelection.count == 2
+        viewModel.canCompareSelectedVersions
     }
 
     var body: some View {
         ScrollView {
-            if isLoading && recipe == nil {
+            if viewModel.isLoading && viewModel.recipe == nil {
                 ProgressView()
                     .padding(.top, 100)
-            } else if let error, recipe == nil {
+            } else if let error = viewModel.error, viewModel.recipe == nil {
                 errorView(message: error)
-            } else if let recipe {
+            } else if let recipe = viewModel.recipe {
                 recipeContent(recipe)
             }
         }
-        .navigationTitle(recipe?.title ?? "Recipe")
+        .navigationTitle(viewModel.recipe?.title ?? "Recipe")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            if let recipe {
+            if let recipe = viewModel.recipe {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Button {
-                            showingEdit = true
+                            viewModel.showingEdit = true
                         } label: {
                             Label("Edit Recipe", systemImage: "pencil")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
                         Button {
-                            Task { await enrichWithAI() }
+                            Task { await viewModel.enrichWithAI() }
                         } label: {
                             Label("Enrich with AI", systemImage: "wand.and.stars")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
                         Button {
-                            showingCustomEnrich = true
+                            viewModel.showingCustomEnrich = true
                         } label: {
                             Label("Customize with AI", systemImage: "wand.and.stars.inverse")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
                         Button {
-                            Task { await normalizeTitle() }
+                            Task { await viewModel.normalizeTitle() }
                         } label: {
                             Label("Auto-rename", systemImage: "textformat")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
                         Button {
-                            Task { await generateDescription() }
+                            Task { await viewModel.generateDescription() }
                         } label: {
                             Label("Generate Description", systemImage: "text.bubble")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
                         Button {
-                            Task { await generatePhoto() }
+                            Task { await viewModel.generatePhoto() }
                         } label: {
                             Label("Generate AI Photo", systemImage: "photo.badge.plus")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
                         Button {
-                            showingAddToMealPlan = true
+                            viewModel.showingAddToMealPlan = true
                         } label: {
                             Label("Add to Meal Plan", systemImage: "calendar.badge.plus")
                         }
@@ -130,7 +94,7 @@ struct RecipeDetailView: View {
 
                         if !recipe.ingredients.isEmpty {
                             Button {
-                                showingAddToShoppingList = true
+                                viewModel.showingAddToShoppingList = true
                             } label: {
                                 Label("Add to Shopping List", systemImage: "cart.badge.plus")
                             }
@@ -139,18 +103,18 @@ struct RecipeDetailView: View {
 
                         if let sourceUrl = recipe.sourceUrl, !sourceUrl.isEmpty {
                             Button {
-                                showingRescrapeConfirmation = true
+                                viewModel.showingRescrapeConfirmation = true
                             } label: {
                                 Label("Rescrape from Source", systemImage: "arrow.triangle.2.circlepath")
                             }
-                            .disabled(actionsDisabledForHistoricalVersion || isRescraping)
+                            .disabled(actionsDisabledForHistoricalVersion || viewModel.isRescraping)
                         }
 
                         exportMenu(for: recipe)
                             .disabled(actionsDisabledForHistoricalVersion)
                         Divider()
                         Button(role: .destructive) {
-                            showingDeleteConfirmation = true
+                            viewModel.showingDeleteConfirmation = true
                         } label: {
                             Label("Delete Recipe", systemImage: "trash")
                         }
@@ -161,77 +125,80 @@ struct RecipeDetailView: View {
                 }
             }
         }
-        .sheet(isPresented: $showingAddToShoppingList) {
-            if let recipe {
+        .sheet(isPresented: $viewModel.showingAddToShoppingList) {
+            if let recipe = viewModel.recipe {
                 AddToShoppingListSheet(
                     recipe: recipe,
-                    scale: recipeScale,
-                    isPresented: $showingAddToShoppingList
+                    scale: viewModel.recipeScale,
+                    isPresented: $viewModel.showingAddToShoppingList
                 )
             }
         }
-        .sheet(isPresented: $showingAddToMealPlan) {
-            if let recipe {
-                AddToMealPlanSheet(recipe: recipe, isPresented: $showingAddToMealPlan)
+        .sheet(isPresented: $viewModel.showingAddToMealPlan) {
+            if let recipe = viewModel.recipe {
+                AddToMealPlanSheet(recipe: recipe, isPresented: $viewModel.showingAddToMealPlan)
             }
         }
-        .sheet(isPresented: $showingCustomEnrich) {
-            if let recipe {
-                CustomEnrichSheet(recipe: recipe, isPresented: $showingCustomEnrich) { result in
-                    enrichResult = result
+        .sheet(isPresented: $viewModel.showingCustomEnrich) {
+            if let recipe = viewModel.recipe {
+                CustomEnrichSheet(recipe: recipe, isPresented: $viewModel.showingCustomEnrich) { result in
+                    viewModel.enrichResult = result
                 }
             }
         }
-        .sheet(isPresented: $showingEdit) {
+        .sheet(isPresented: $viewModel.showingEdit) {
             NavigationStack {
                 RecipeFormView(mode: .edit(recipeId: recipeId)) {
-                    Task { await loadRecipe() }
+                    Task { await viewModel.loadRecipe() }
                 }
             }
         }
         .sheet(isPresented: Binding(
-            get: { enrichResult != nil },
-            set: { if !$0 { enrichResult = nil } }
+            get: { viewModel.enrichResult != nil },
+            set: { if !$0 { viewModel.enrichResult = nil } }
         )) {
-            if let recipe, let modified = enrichResult {
+            if let recipe = viewModel.recipe, let modified = viewModel.enrichResult {
                 EnrichPreviewSheet(
                     original: recipe,
                     modified: modified,
                     onApply: {
-                        Task { await applyEnrichment(modified) }
+                        Task { await viewModel.applyEnrichment(modified) }
                     },
-                    onCancel: { enrichResult = nil }
+                    onCancel: { viewModel.enrichResult = nil }
                 )
             }
         }
-        .sheet(isPresented: $showingCompareSheet) {
+        .sheet(isPresented: $viewModel.showingCompareSheet) {
             RecipeVersionCompareSheet(
-                olderVersion: comparedOlderVersion,
-                newerVersion: comparedNewerVersion,
-                isLoading: isLoadingCompare,
-                error: compareError,
-                onClose: closeCompareSheet
+                olderVersion: viewModel.comparedOlderVersion,
+                newerVersion: viewModel.comparedNewerVersion,
+                isLoading: viewModel.isLoadingCompare,
+                error: viewModel.compareError,
+                onClose: viewModel.closeCompareSheet
             )
         }
-        .confirmationDialog("Delete Recipe", isPresented: $showingDeleteConfirmation) {
+        .confirmationDialog("Delete Recipe", isPresented: $viewModel.showingDeleteConfirmation) {
             Button("Delete Recipe", role: .destructive) {
-                Task { await deleteRecipe() }
+                Task {
+                    if await viewModel.deleteRecipe() {
+                        dismiss()
+                    }
+                }
             }
         } message: {
             Text("Are you sure you want to delete this recipe? This cannot be undone.")
         }
         .alert("Delete Failed", isPresented: Binding(
-            get: { deleteError != nil },
-            set: { if !$0 { deleteError = nil } }
+            get: { viewModel.deleteError != nil },
+            set: { if !$0 { viewModel.deleteError = nil } }
         )) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text(deleteError ?? "")
+            Text(viewModel.deleteError ?? "")
         }
-        .confirmationDialog("Rescrape from Source", isPresented: $showingRescrapeConfirmation) {
+        .confirmationDialog("Rescrape from Source", isPresented: $viewModel.showingRescrapeConfirmation) {
             Button("Rescrape") {
-                rescrapeTask?.cancel()
-                rescrapeTask = Task { await rescrapeFromSource() }
+                viewModel.startRescrapeFromSource()
             }
         } message: {
             Text(
@@ -240,34 +207,34 @@ struct RecipeDetailView: View {
             )
         }
         .alert("Rescrape Failed", isPresented: Binding(
-            get: { rescrapeError != nil },
-            set: { if !$0 { rescrapeError = nil } }
+            get: { viewModel.rescrapeError != nil },
+            set: { if !$0 { viewModel.rescrapeError = nil } }
         )) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text(rescrapeError ?? "")
+            Text(viewModel.rescrapeError ?? "")
         }
         .alert("AI Enrichment Failed", isPresented: Binding(
-            get: { autoEnrichError != nil },
-            set: { if !$0 { autoEnrichError = nil } }
+            get: { viewModel.autoEnrichError != nil },
+            set: { if !$0 { viewModel.autoEnrichError = nil } }
         )) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text(autoEnrichError ?? "")
+            Text(viewModel.autoEnrichError ?? "")
         }
         .alert(
             "Revert to this version?",
             isPresented: Binding(
-                get: { revertCandidate != nil },
-                set: { if !$0 { revertCandidate = nil } }
+                get: { viewModel.revertCandidate != nil },
+                set: { if !$0 { viewModel.revertCandidate = nil } }
             ),
-            presenting: revertCandidate
+            presenting: viewModel.revertCandidate
         ) { version in
             Button("Cancel", role: .cancel) {
-                revertCandidate = nil
+                viewModel.revertCandidate = nil
             }
             Button("Revert") {
-                Task { await revert(to: version) }
+                Task { await viewModel.revert(to: version) }
             }
         } message: { version in
             Text(
@@ -277,37 +244,28 @@ struct RecipeDetailView: View {
             )
         }
         .modifier(ExportPresentationModifier(
-            shareItem: $exportShareItem,
-            errorMessage: $exportError
+            shareItem: $viewModel.exportShareItem,
+            errorMessage: $viewModel.exportError
         ))
         .task {
-            await loadRecipe()
+            await viewModel.loadRecipe()
         }
-        .onChange(of: isVersionHistoryExpanded) { isExpanded in
-            if isExpanded && versionHistory.isEmpty {
-                Task { await loadVersionHistory(force: true) }
+        .onChange(of: viewModel.isVersionHistoryExpanded) { isExpanded in
+            if isExpanded && viewModel.versionHistory.isEmpty {
+                Task { await viewModel.loadVersionHistory(force: true) }
             }
         }
         .onDisappear {
-            rescrapeTask?.cancel()
-            rescrapeTask = nil
+            viewModel.cancelRescrape()
         }
     }
 
     func setRecipeScale(_ value: Double) {
-        guard value.isFinite, value > 0 else {
-            return
-        }
-        recipeScale = value
+        viewModel.setRecipeScale(value)
     }
 
     func applyCustomScale() {
-        guard let value = RecipeScaleSupport.parseDecimal(customScaleInput),
-              value.isFinite,
-              value > 0 else {
-            return
-        }
-        setRecipeScale(value)
+        viewModel.applyCustomScale()
     }
 }
 
