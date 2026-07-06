@@ -1,0 +1,9 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/wprm/ingredient_groups_no_names_skipped.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Simple Recipe",
+    "ingredients_raw": "1 cup flour\n2 eggs",
+    "instructions_raw": "Mix."
+  }
+}

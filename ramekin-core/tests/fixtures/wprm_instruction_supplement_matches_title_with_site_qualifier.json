@@ -1,0 +1,9 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/wprm/instruction_supplement_matches_title_with_site_qualifier.html",
+  "source_url": "https://example.com/pancakes",
+  "expected": {
+    "title": "Semi-Instant Pancakes | Alton Brown",
+    "ingredients_raw": "1 cup flour",
+    "instructions_raw": "Correct card step"
+  }
+}

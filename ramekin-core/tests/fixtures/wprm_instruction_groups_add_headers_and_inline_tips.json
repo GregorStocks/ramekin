@@ -1,0 +1,9 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/wprm/instruction_groups_add_headers_and_inline_tips.html",
+  "source_url": "https://example.com/simmered",
+  "expected": {
+    "title": "Simmered Potatoes",
+    "ingredients_raw": "14 oz potatoes",
+    "instructions_raw": "Gather all the ingredients.\n\nTo Cook the Potatoes:\n\nPlace a drop lid and simmer. Nami's Tip: It keeps the potatoes from breaking."
+  }
+}
