@@ -7,6 +7,10 @@ import {
 import { usePageTitle } from "../utils/pageTitle";
 import { logger } from "../utils/logger";
 import { ImportExtractionMethod, type ScrapeApi } from "ramekin-client";
+import {
+  pollScrapeJob,
+  SCRAPE_JOB_POLL_TIMEOUT_MS,
+} from "../utils/pollScrapeJob";
 
 type RecipeStatus =
   | { state: "pending" }
@@ -20,69 +24,19 @@ interface RecipeRow {
   status: RecipeStatus;
 }
 
-const JOB_POLL_INTERVAL_MS = 2000;
-const JOB_POLL_TIMEOUT_MS = 10 * 60 * 1000;
-const TERMINAL_STATUSES = new Set(["completed", "failed"]);
-
 type TerminalResult =
   | { status: "completed" }
   | { status: "failed"; error: string }
   | { status: "timeout" };
 
-interface TrackedJob {
-  jobId: string;
-  startedAt: number;
-  resolve: (result: TerminalResult) => void;
-}
-
 function createJobPoller(scrapeApi: ScrapeApi) {
-  const pending: TrackedJob[] = [];
-  let running = false;
-
-  const loop = async () => {
-    running = true;
-    while (pending.length > 0) {
-      const job = pending[0];
-      if (Date.now() - job.startedAt > JOB_POLL_TIMEOUT_MS) {
-        pending.shift();
-        job.resolve({ status: "timeout" });
-        continue;
-      }
-      try {
-        const response = await scrapeApi.getScrape({ id: job.jobId });
-        if (TERMINAL_STATUSES.has(response.status)) {
-          pending.shift();
-          if (response.status === "completed") {
-            job.resolve({ status: "completed" });
-          } else {
-            job.resolve({
-              status: "failed",
-              error: response.error ?? "Import job failed",
-            });
-          }
-          continue;
-        }
-      } catch (err) {
-        logger.warn(
-          "Import",
-          `Error polling scrape job; retrying: ${String(err)}`,
-        );
-      }
-      // Rotate so we don't starve other jobs behind a slow one, and wait
-      // before the next request to keep pressure off /api/scrape/{id}.
-      pending.push(pending.shift()!);
-      await new Promise((resolve) => setTimeout(resolve, JOB_POLL_INTERVAL_MS));
+  return async (jobId: string): Promise<TerminalResult> => {
+    const result = await pollScrapeJob(scrapeApi, jobId);
+    if (result.status === "failed") {
+      return { status: "failed", error: result.error };
     }
-    running = false;
+    return { status: result.status };
   };
-
-  return (jobId: string): Promise<TerminalResult> =>
-    new Promise((resolve) => {
-      pending.push({ jobId, startedAt: Date.now(), resolve });
-      if (!running) {
-        void loop();
-      }
-    });
 }
 
 export default function ImportPage() {
@@ -176,17 +130,24 @@ export default function ImportPage() {
       const rowIndex = i;
       pollPromises.push(
         (async () => {
-          const terminal = await pollForJob(jobId);
-          if (terminal.status === "completed") {
-            updateRow(rowIndex, { state: "done", jobId });
-          } else if (terminal.status === "failed") {
-            updateRow(rowIndex, { state: "error", message: terminal.error });
-          } else {
+          try {
+            const terminal = await pollForJob(jobId);
+            if (terminal.status === "completed") {
+              updateRow(rowIndex, { state: "done", jobId });
+            } else if (terminal.status === "failed") {
+              updateRow(rowIndex, { state: "error", message: terminal.error });
+            } else {
+              updateRow(rowIndex, {
+                state: "error",
+                message: `Timed out waiting for import job after ${
+                  SCRAPE_JOB_POLL_TIMEOUT_MS / 1000
+                }s`,
+              });
+            }
+          } catch (err) {
             updateRow(rowIndex, {
               state: "error",
-              message: `Timed out waiting for import job after ${
-                JOB_POLL_TIMEOUT_MS / 1000
-              }s`,
+              message: err instanceof Error ? err.message : String(err),
             });
           }
         })(),

@@ -26,6 +26,7 @@ import { usePageTitle } from "../utils/pageTitle";
 import { scaleAmount } from "../utils/scaleAmount";
 import { formatIngredientParts } from "../utils/ingredientFormatting";
 import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
+import { pollScrapeJob } from "../utils/pollScrapeJob";
 import type { RecipeResponse, VersionSummary } from "ramekin-client";
 import { ErrorCode } from "ramekin-client";
 
@@ -319,33 +320,18 @@ export default function ViewRecipePage() {
       const response = await getRecipesApi().rescrape({ id: params.id });
       const jobId = response.jobId;
 
-      // Poll for completion
-      const pollStartTime = Date.now();
-      const poll = async (): Promise<void> => {
-        if (Date.now() - pollStartTime > 120_000) {
-          setError("Rescrape timed out");
-          setRescraping(false);
-          return;
-        }
-        const job = await getScrapeApi().getScrape({ id: jobId });
-
-        if (job.status === "completed") {
-          await loadRecipe();
-          setRescraping(false);
-        } else if (job.status === "failed") {
-          setError(`Rescrape failed: ${job.error || "Unknown error"}`);
-          setRescraping(false);
-        } else {
-          // Continue polling
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          await poll();
-        }
-      };
-
-      await poll();
+      const result = await pollScrapeJob(getScrapeApi(), jobId);
+      if (result.status === "completed") {
+        await loadRecipe();
+      } else if (result.status === "failed") {
+        setError(`Rescrape failed: ${result.error}`);
+      } else {
+        setError("Rescrape timed out");
+      }
     } catch (err) {
       const message = await extractApiError(err, "Failed to rescrape recipe");
       setError(message);
+    } finally {
       setRescraping(false);
     }
   };
