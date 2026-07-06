@@ -1,0 +1,9 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/wprm/instruction_supplement_matches_unicode_titles.html",
+  "source_url": "https://example.com/creme-brulee",
+  "expected": {
+    "title": "Crème Brûlée",
+    "ingredients_raw": "2 egg yolks",
+    "instructions_raw": "Torch the sugar topping."
+  }
+}
