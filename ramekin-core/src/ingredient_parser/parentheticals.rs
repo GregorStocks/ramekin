@@ -476,7 +476,11 @@ fn consume_leading_measurement_continuations(s: &str) -> String {
     let mut candidate = s.trim().to_string();
     loop {
         let trimmed = candidate.trim_start();
-        let Some(after_plus) = trimmed.strip_prefix('+') else {
+        let after_plus = if let Some(after_plus) = trimmed.strip_prefix('+') {
+            after_plus
+        } else if trimmed.to_lowercase().starts_with("plus ") {
+            trimmed.get(5..).unwrap_or("")
+        } else {
             break;
         };
         let Some((_, _, after_measurement, _)) =
