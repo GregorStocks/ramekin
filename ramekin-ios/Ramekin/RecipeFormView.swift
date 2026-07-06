@@ -1,55 +1,15 @@
 import PhotosUI
 import SwiftUI
 
-// MARK: - RecipeFormView
-
 struct RecipeFormView: View {
-    let mode: RecipeFormMode
     var onSaved: (() -> Void)?
 
     @Environment(\.dismiss) private var dismiss
+    @StateObject private var viewModel: RecipeFormViewModel
 
-    @State private var title = ""
-    @State private var recipeDescription = ""
-    @State private var instructions = ""
-    @State private var servings = ""
-    @State private var prepTime = ""
-    @State private var cookTime = ""
-    @State private var totalTime = ""
-    @State private var difficulty = ""
-    @State private var rating: Int?
-    @State private var sourceUrl = ""
-    @State private var sourceName = ""
-    @State private var tags: [String] = []
-    @State private var availableTags: [TagItem] = []
-    @State private var selectedTagNamespace: String?
-    @State private var newTagValue = ""
-    @State private var newNamespace = ""
-    @State private var notes = ""
-    @State private var nutritionalInfo = ""
-    @State private var ingredients: [EditableIngredient] = [.empty()]
-    @State private var photoIds: [UUID] = []
-    @State private var isSaving = false
-    @State private var isLoading = false
-    @State private var error: String?
-    @State private var selectedPhotoItems: [PhotosPickerItem] = []
-    @State private var isUploadingPhoto = false
-    @State private var newSectionName = ""
-
-    private var canSave: Bool {
-        !title.trimmingCharacters(in: .whitespaces).isEmpty
-            && !instructions.trimmingCharacters(in: .whitespaces).isEmpty
-            && !isSaving
-    }
-
-    private var resolvedSelectedNamespace: String? {
-        if let selectedTagNamespace {
-            if selectedTagNamespace.isEmpty {
-                return TagHierarchySupport.normalizedNamespace(from: newNamespace)
-            }
-            return selectedTagNamespace
-        }
-        return nil
+    init(mode: RecipeFormMode, onSaved: (() -> Void)? = nil) {
+        self.onSaved = onSaved
+        _viewModel = StateObject(wrappedValue: RecipeFormViewModel(mode: mode))
     }
 
     var body: some View {
@@ -67,33 +27,33 @@ struct RecipeFormView: View {
             photosSection
             errorSection
         }
-        .navigationTitle(mode == .create ? "New Recipe" : "Edit Recipe")
+        .navigationTitle(viewModel.mode == .create ? "New Recipe" : "Edit Recipe")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button("Cancel") { dismiss() }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(isSaving ? "Saving..." : "Save") {
-                    Task { await save() }
+                Button(viewModel.isSaving ? "Saving..." : "Save") {
+                    Task {
+                        if await viewModel.save() {
+                            onSaved?()
+                            dismiss()
+                        }
+                    }
                 }
-                .disabled(!canSave)
+                .disabled(!viewModel.canSave)
                 .fontWeight(.semibold)
             }
         }
-        .disabled(isSaving)
-        .overlay { if isLoading { ProgressView("Loading recipe...") } }
+        .disabled(viewModel.isSaving)
+        .overlay { if viewModel.isLoading { ProgressView("Loading recipe...") } }
         .task {
-            availableTags = TagFilterCache.loadAvailableTags()
-            if case .edit(let recipeId) = mode {
-                await loadRecipe(id: recipeId)
-            }
-            await loadAvailableTags()
+            await viewModel.start()
         }
-        .onChange(of: selectedPhotoItems) { items in
+        .onChange(of: viewModel.selectedPhotoItems) { items in
             if !items.isEmpty {
-                Task { await uploadPhotos(items) }
-                selectedPhotoItems = []
+                Task { await viewModel.uploadSelectedPhotos() }
             }
         }
     }
@@ -103,24 +63,24 @@ struct RecipeFormView: View {
 
 extension RecipeFormView {
     private var titleSection: some View {
-        Section { TextField("Recipe title", text: $title).font(.headline) }
+        Section { TextField("Recipe title", text: $viewModel.formData.title).font(.headline) }
             header: { Text("Title *") }
     }
 
     private var descriptionSection: some View {
         Section("Description") {
-            TextField("Brief description", text: $recipeDescription, axis: .vertical)
+            TextField("Brief description", text: $viewModel.formData.recipeDescription, axis: .vertical)
                 .lineLimit(2...4)
         }
     }
 
     private var metadataSection: some View {
         Section("Details") {
-            TextField("Servings", text: $servings)
-            TextField("Prep time", text: $prepTime).textContentType(.none)
-            TextField("Cook time", text: $cookTime).textContentType(.none)
-            TextField("Total time", text: $totalTime).textContentType(.none)
-            TextField("Difficulty", text: $difficulty)
+            TextField("Servings", text: $viewModel.formData.servings)
+            TextField("Prep time", text: $viewModel.formData.prepTime).textContentType(.none)
+            TextField("Cook time", text: $viewModel.formData.cookTime).textContentType(.none)
+            TextField("Total time", text: $viewModel.formData.totalTime).textContentType(.none)
+            TextField("Difficulty", text: $viewModel.formData.difficulty)
         }
     }
 
@@ -129,16 +89,16 @@ extension RecipeFormView {
             HStack(spacing: 8) {
                 ForEach(1...5, id: \.self) { star in
                     Button {
-                        rating = rating == star ? nil : star
+                        viewModel.formData.rating = viewModel.formData.rating == star ? nil : star
                     } label: {
-                        Image(systemName: star <= (rating ?? 0) ? "star.fill" : "star")
+                        Image(systemName: star <= (viewModel.formData.rating ?? 0) ? "star.fill" : "star")
                             .font(.title2).foregroundColor(.orange)
                     }
                     .buttonStyle(.plain)
                 }
                 Spacer()
-                if rating != nil {
-                    Button("Clear") { rating = nil }
+                if viewModel.formData.rating != nil {
+                    Button("Clear") { viewModel.formData.rating = nil }
                         .font(.caption).foregroundColor(.secondary)
                 }
             }
@@ -147,7 +107,7 @@ extension RecipeFormView {
 
     private var ingredientsFormSection: some View {
         Section {
-            let grouped = groupIngredientsBySection(ingredients)
+            let grouped = groupIngredientsBySection(viewModel.formData.ingredients)
             ForEach(Array(grouped.enumerated()), id: \.offset) { _, group in
                 ingredientGroupView(group)
             }
@@ -163,50 +123,50 @@ extension RecipeFormView {
     }
 
     private var instructionsSection: some View {
-        Section { TextEditor(text: $instructions).frame(minHeight: 150) }
+        Section { TextEditor(text: $viewModel.formData.instructions).frame(minHeight: 150) }
             header: { Text("Instructions *") }
     }
 
     private var sourceSection: some View {
         Section("Source") {
-            TextField("URL", text: $sourceUrl)
+            TextField("URL", text: $viewModel.formData.sourceUrl)
                 .keyboardType(.URL).autocapitalization(.none).autocorrectionDisabled()
-            TextField("Source name", text: $sourceName)
+            TextField("Source name", text: $viewModel.formData.sourceName)
         }
     }
 
     private var tagsSection: some View {
         RecipeFormTagsSection(
-            tags: $tags,
-            availableTags: $availableTags,
-            selectedTagNamespace: $selectedTagNamespace,
-            newTagValue: $newTagValue,
-            newNamespace: $newNamespace,
-            onAddTag: addTag
+            tags: $viewModel.formData.tags,
+            availableTags: $viewModel.availableTags,
+            selectedTagNamespace: $viewModel.selectedTagNamespace,
+            newTagValue: $viewModel.newTagValue,
+            newNamespace: $viewModel.newNamespace,
+            onAddTag: viewModel.addTag
         )
     }
 
     private var notesSection: some View {
-        Section("Notes") { TextEditor(text: $notes).frame(minHeight: 80) }
+        Section("Notes") { TextEditor(text: $viewModel.formData.notes).frame(minHeight: 80) }
     }
 
     private var nutritionalInfoSection: some View {
-        Section("Nutritional Info") { TextEditor(text: $nutritionalInfo).frame(minHeight: 60) }
+        Section("Nutritional Info") { TextEditor(text: $viewModel.formData.nutritionalInfo).frame(minHeight: 60) }
     }
 
     private var photosSection: some View {
         Section("Photos") {
-            if !photoIds.isEmpty { photoGrid }
-            PhotosPicker(selection: $selectedPhotoItems, maxSelectionCount: 5, matching: .images) {
-                Label(isUploadingPhoto ? "Uploading..." : "Add Photo", systemImage: "photo.badge.plus")
+            if !viewModel.formData.photoIds.isEmpty { photoGrid }
+            PhotosPicker(selection: $viewModel.selectedPhotoItems, maxSelectionCount: 5, matching: .images) {
+                Label(viewModel.isUploadingPhoto ? "Uploading..." : "Add Photo", systemImage: "photo.badge.plus")
             }
-            .disabled(isUploadingPhoto)
+            .disabled(viewModel.isUploadingPhoto)
         }
     }
 
     @ViewBuilder
     private var errorSection: some View {
-        if let error = error {
+        if let error = viewModel.error {
             Section {
                 HStack {
                     Image(systemName: "exclamationmark.triangle.fill").foregroundColor(.red)
@@ -226,25 +186,25 @@ extension RecipeFormView {
             TextField("Section name", text: Binding(
                 get: { group.section },
                 set: { newName in
-                    for idx in group.indices { ingredients[idx].section = newName }
+                    for idx in group.indices { viewModel.formData.ingredients[idx].section = newName }
                 }
             ))
             .font(.headline).foregroundColor(.orange)
         }
 
         ForEach(group.indices, id: \.self) { idx in
-            IngredientRowView(ingredient: $ingredients[idx]) {
-                ingredients.remove(at: idx)
+            IngredientRowView(ingredient: $viewModel.formData.ingredients[idx]) {
+                viewModel.removeIngredient(at: idx)
             }
         }
         .onMove { source, destination in
-            moveIngredients(in: group, from: source, to: destination)
+            viewModel.moveIngredients(in: group, from: source, to: destination)
         }
     }
 
     private var addIngredientButton: some View {
         Button {
-            ingredients.append(.empty(section: ingredients.last?.section ?? ""))
+            viewModel.addIngredient()
         } label: {
             Label("Add Ingredient", systemImage: "plus.circle")
         }
@@ -252,17 +212,13 @@ extension RecipeFormView {
 
     @ViewBuilder
     private var addSectionRow: some View {
-        if !ingredients.isEmpty {
+        if !viewModel.formData.ingredients.isEmpty {
             HStack {
-                TextField("New section name", text: $newSectionName)
+                TextField("New section name", text: $viewModel.newSectionName)
                 Button("Add Section") {
-                    let name = newSectionName.trimmingCharacters(in: .whitespaces)
-                    if !name.isEmpty {
-                        ingredients.append(.empty(section: name))
-                        newSectionName = ""
-                    }
+                    viewModel.addSection()
                 }
-                .disabled(newSectionName.trimmingCharacters(in: .whitespaces).isEmpty)
+                .disabled(viewModel.newSectionName.trimmingCharacters(in: .whitespaces).isEmpty)
             }
         }
     }
@@ -270,10 +226,10 @@ extension RecipeFormView {
     private var photoGrid: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 12) {
-                ForEach(photoIds, id: \.self) { photoId in
+                ForEach(viewModel.formData.photoIds, id: \.self) { photoId in
                     ZStack(alignment: .topTrailing) {
                         RecipeThumbnail(photoId: photoId, size: 80)
-                        Button { photoIds.removeAll { $0 == photoId } } label: {
+                        Button { viewModel.removePhoto(id: photoId) } label: {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.white)
                                 .background(Circle().fill(Color.black.opacity(0.6)))
@@ -282,191 +238,6 @@ extension RecipeFormView {
                     }
                 }
             }
-        }
-    }
-}
-
-// MARK: - Actions
-
-extension RecipeFormView {
-    private var formData: RecipeFormData {
-        RecipeFormData(
-            title: title,
-            recipeDescription: recipeDescription,
-            instructions: instructions,
-            servings: servings,
-            prepTime: prepTime,
-            cookTime: cookTime,
-            totalTime: totalTime,
-            difficulty: difficulty,
-            rating: rating,
-            sourceUrl: sourceUrl,
-            sourceName: sourceName,
-            tags: tags,
-            notes: notes,
-            nutritionalInfo: nutritionalInfo,
-            ingredients: ingredients,
-            photoIds: photoIds
-        )
-    }
-
-    private func apply(formData: RecipeFormData) {
-        title = formData.title
-        recipeDescription = formData.recipeDescription
-        instructions = formData.instructions
-        servings = formData.servings
-        prepTime = formData.prepTime
-        cookTime = formData.cookTime
-        totalTime = formData.totalTime
-        difficulty = formData.difficulty
-        rating = formData.rating
-        sourceUrl = formData.sourceUrl
-        sourceName = formData.sourceName
-        tags = formData.tags
-        notes = formData.notes
-        nutritionalInfo = formData.nutritionalInfo
-        photoIds = formData.photoIds
-        ingredients = formData.ingredients
-    }
-
-    private func addTag() {
-        if selectedTagNamespace == nil {
-            let parsed = TagHierarchySupport.parse(name: newTagValue)
-            if parsed.namespace != nil {
-                guard let normalizedTag = TagHierarchySupport.normalizedTypedName(from: newTagValue) else {
-                    return
-                }
-                appendTagIfNeeded(normalizedTag)
-                newTagValue = ""
-                return
-            }
-        }
-
-        guard let tag = TagHierarchySupport.formattedName(
-            namespace: resolvedSelectedNamespace,
-            value: newTagValue
-        ) else {
-            return
-        }
-
-        appendTagIfNeeded(tag)
-        newTagValue = ""
-        if selectedTagNamespace?.isEmpty == true {
-            selectedTagNamespace = resolvedSelectedNamespace
-            newNamespace = ""
-        }
-    }
-
-    private func appendTagIfNeeded(_ name: String) {
-        guard !tags.contains(where: { $0.caseInsensitiveCompare(name) == .orderedSame }) else {
-            return
-        }
-        tags.append(name)
-    }
-
-    private func loadAvailableTags() async {
-        do {
-            let response = try await TagsAPI.listAllTags()
-            await MainActor.run {
-                availableTags = response.tags
-                TagFilterCache.saveAvailableTags(response.tags)
-            }
-        } catch is CancellationError {
-        } catch {
-        }
-    }
-
-    private func save() async {
-        error = nil
-        isSaving = true
-        do {
-            switch mode {
-            case .create:
-                try await saveNewRecipe()
-            case .edit(let recipeId):
-                try await updateExistingRecipe(recipeId)
-            }
-        } catch is CancellationError {
-            // ignore
-        } catch {
-            await MainActor.run {
-                self.error = error.localizedDescription
-                isSaving = false
-            }
-        }
-    }
-
-    private func saveNewRecipe() async throws {
-        let request = formData.makeCreateRequest()
-        _ = try await RecipesAPI.createRecipe(createRecipeRequest: request)
-        await MainActor.run {
-            isSaving = false
-            onSaved?()
-            dismiss()
-        }
-    }
-
-    private func updateExistingRecipe(_ recipeId: UUID) async throws {
-        let request = formData.makeUpdateRequest()
-        try await RecipesAPI.updateRecipe(id: recipeId, updateRecipeRequest: request)
-        await MainActor.run {
-            isSaving = false
-            onSaved?()
-            dismiss()
-        }
-    }
-
-    private func loadRecipe(id: UUID) async {
-        isLoading = true
-        do {
-            let recipe = try await RecipesAPI.getRecipe(id: id)
-            await MainActor.run {
-                populateForm(from: recipe)
-                isLoading = false
-            }
-        } catch is CancellationError {
-            // ignore
-        } catch {
-            await MainActor.run {
-                self.error = error.localizedDescription
-                isLoading = false
-            }
-        }
-    }
-
-    private func populateForm(from recipe: RecipeResponse) {
-        apply(formData: RecipeFormData(recipe: recipe))
-    }
-
-    private func uploadPhotos(_ items: [PhotosPickerItem]) async {
-        await MainActor.run { isUploadingPhoto = true }
-        for item in items {
-            do {
-                guard let data = try await item.loadTransferable(type: Data.self) else { continue }
-                let tempDir = FileManager.default.temporaryDirectory
-                let fileURL = tempDir.appendingPathComponent(UUID().uuidString + ".jpg")
-                try data.write(to: fileURL)
-                let response = try await PhotosAPI.upload(file: fileURL)
-                await MainActor.run { photoIds.append(response.id) }
-                try? FileManager.default.removeItem(at: fileURL)
-            } catch is CancellationError {
-                break
-            } catch {
-                await MainActor.run {
-                    self.error = "Photo upload failed: \(error.localizedDescription)"
-                }
-            }
-        }
-        await MainActor.run { isUploadingPhoto = false }
-    }
-
-    private func moveIngredients(
-        in group: IngredientGroup, from source: IndexSet, to destination: Int
-    ) {
-        var groupItems = group.indices.map { ingredients[$0] }
-        groupItems.move(fromOffsets: source, toOffset: destination)
-        for (offset, globalIdx) in group.indices.enumerated() {
-            ingredients[globalIdx] = groupItems[offset]
         }
     }
 }
