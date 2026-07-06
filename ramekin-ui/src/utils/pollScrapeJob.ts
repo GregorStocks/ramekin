@@ -45,13 +45,16 @@ export async function pollScrapeJob(
 
   while (true) {
     throwIfAborted(opts.signal);
-    if (timeoutMs !== null && Date.now() - startedAt > timeoutMs) {
+    if (hasTimedOut(startedAt, timeoutMs)) {
       return { status: "timeout", job: lastJob };
     }
 
     try {
       await opts.beforePoll?.();
       throwIfAborted(opts.signal);
+      if (hasTimedOut(startedAt, timeoutMs)) {
+        return { status: "timeout", job: lastJob };
+      }
       const job = await scrapeApi.getScrape({ id: jobId });
       throwIfAborted(opts.signal);
       lastJob = job;
@@ -84,6 +87,10 @@ function throwIfAborted(signal: AbortSignal | undefined) {
   if (signal?.aborted) {
     throw new PollScrapeJobAbortedError();
   }
+}
+
+function hasTimedOut(startedAt: number, timeoutMs: number | null): boolean {
+  return timeoutMs !== null && Date.now() - startedAt > timeoutMs;
 }
 
 function isRetryablePollError(err: unknown): boolean {

@@ -82,6 +82,21 @@ describe("pollScrapeJob", () => {
     expect(result).toEqual({ status: "timeout", job: lastJob });
   });
 
+  it("returns timeout after a queued poll turn exceeds the deadline", async () => {
+    let now = 0;
+    vi.spyOn(Date, "now").mockImplementation(() => now);
+    const api = scrapeApi([scrapeJob("completed")]);
+
+    const result = await pollScrapeJob(api, "job-id", {
+      timeoutMs: 100,
+      beforePoll: async () => {
+        now = 101;
+      },
+    });
+
+    expect(result).toEqual({ status: "timeout", job: null });
+  });
+
   it("retries generated-client fetch errors", async () => {
     const fetchError = new Error("temporary failure");
     fetchError.name = "FetchError";
