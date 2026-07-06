@@ -12,10 +12,16 @@ Edit code in `server/src/` and it auto-recompiles. Stop with `make dev-down`.
 ## Database Migrations
 
 ```bash
-cd server && diesel migration generate migration_name   # Create new migration
-cd server && diesel migration run                       # Run migrations
-make generate-schema                                    # Regenerate schema.rs
+make db-migrate        # Run pending migrations
+make generate-schema   # Regenerate schema.rs after schema changes
 ```
+
+Create migration files through a Makefile-backed workflow. If no Makefile
+target exists for the migration operation you need, add one before running the
+tool directly. New migrations must preserve live data: use soft deletes and
+additive/backfill-safe changes instead of destructively dropping data from live
+tables. Historical migrations may predate this rule, but they are not a pattern
+to copy.
 
 ## Client Regeneration
 
