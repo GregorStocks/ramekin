@@ -117,6 +117,15 @@ fn parse_plus_continuation_measurement(
     Some((amount?, unit?, remaining, modifier))
 }
 
+fn leading_measurement_consumes_all(s: &str) -> bool {
+    let (_, after_pre_amount_modifier) = strip_measurement_modifier(s);
+    let (amount, after_amount) = extract_amount(&after_pre_amount_modifier);
+    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
+    let (unit, after_unit) = extract_unit(&after_pre_unit_modifier);
+
+    amount.is_some() && unit.is_some() && after_unit.trim().is_empty()
+}
+
 /// Parse a single ingredient line into structured data.
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
@@ -362,14 +371,18 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
     } else if let Some(plus_idx) = remaining.to_lowercase().find(" plus ") {
         // Without comma: check if followed by valid measurement
+        let before_plus = remaining.get(..plus_idx).unwrap_or("").trim();
         let after_plus = remaining.get(plus_idx + 6..).unwrap_or("").trim();
         if !after_plus.is_empty() {
-            let (test_amount, after_test_amount) = extract_amount(after_plus);
-            let (test_unit, _) = extract_unit(&after_test_amount);
+            let (plus_prefix, _) = strip_plus_measurement_prefix(after_plus);
+            let plus_measurement = parse_plus_continuation_measurement(after_plus);
+            let plus_belongs_to_leading_measurement = leading_measurement_consumes_all(before_plus);
 
-            // Only if we DON'T have both amount+unit, treat as note (fallback)
+            // Only if we DON'T have amount+unit, treat as note (fallback)
             // Cases with valid measurement are handled later as compound amounts
-            if test_amount.is_none() || test_unit.is_none() {
+            if plus_measurement.is_none()
+                || (plus_prefix.is_some() && !plus_belongs_to_leading_measurement)
+            {
                 if let Some(plus_part) = remaining.get(plus_idx + 1..) {
                     if note.is_none() {
                         note = Some(plus_part.trim().to_string());
@@ -1408,6 +1421,39 @@ mod tests {
         assert_eq!(
             result.measurements[0].amount,
             Some("1/3 cup plus 2 tbsp".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, None);
+        assert_eq!(result.note.as_deref(), Some("100 mL white vinegar"));
+    }
+
+    #[test]
+    fn test_word_plus_compound_measurement_with_modifier() {
+        let result = parse_ingredient("1 cup plus about 2 Tbsp flour");
+        assert_eq!(result.item, "flour");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1 cup plus about 2 tbsp".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, None);
+    }
+
+    #[test]
+    fn test_word_plus_modified_measurement_after_item_is_note() {
+        let result = parse_ingredient("2/3 cup powdered sugar plus about 2 tbsp for dusting");
+        assert_eq!(result.item, "powdered sugar");
+        assert_eq!(
+            result.note.as_deref(),
+            Some("plus about 2 tbsp for dusting")
+        );
+    }
+
+    #[test]
+    fn test_parenthetical_identity_supplies_item_after_word_plus_modified_measurement() {
+        let result = parse_ingredient("1/3 cup plus about 2 Tbsp (100 mL white vinegar)");
+        assert_eq!(result.item, "white vinegar");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1/3 cup plus about 2 tbsp".to_string())
         );
         assert_eq!(result.measurements[0].unit, None);
         assert_eq!(result.note.as_deref(), Some("100 mL white vinegar"));
