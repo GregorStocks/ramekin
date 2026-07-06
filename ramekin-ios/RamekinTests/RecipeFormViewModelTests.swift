@@ -83,11 +83,12 @@ final class RecipeFormViewModelTests: XCTestCase {
         viewModel.newNamespace = "Season"
         viewModel.newTagValue = "Winter"
         viewModel.addTag()
+        viewModel.selectedTagNamespace = nil
         viewModel.newTagValue = "season:winter"
         viewModel.addTag()
 
-        XCTAssertEqual(viewModel.formData.tags, ["meal:dinner", "season:winter"])
-        XCTAssertEqual(viewModel.selectedTagNamespace, "season")
+        XCTAssertEqual(viewModel.formData.tags, ["meal:Dinner", "season:Winter"])
+        XCTAssertNil(viewModel.selectedTagNamespace)
         XCTAssertEqual(viewModel.newNamespace, "")
         XCTAssertEqual(viewModel.newTagValue, "")
     }
