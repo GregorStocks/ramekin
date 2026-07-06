@@ -319,6 +319,7 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
         "filling", "frosting", "garnish", "glaze", "icing", "lid", "marinade", "puffs", "sauce",
         "streusel", "syrup", "topping",
     ];
+    const TITLE_CASE_SECTION_PHRASES: &[&str] = &["brown sugar coating", "cream cheese glaze"];
 
     if name.contains(':')
         || name.chars().any(|c| c.is_ascii_digit())
@@ -336,14 +337,16 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
     }
 
     let word_count = words.clone().count();
-    if word_count != 1 {
-        return false;
+    let lower = name.to_lowercase();
+    if word_count == 1 {
+        return TITLE_CASE_SECTION_LABELS
+            .iter()
+            .any(|label| lower == *label);
     }
 
-    let lower = name.to_lowercase();
-    TITLE_CASE_SECTION_LABELS
+    TITLE_CASE_SECTION_PHRASES
         .iter()
-        .any(|label| lower == *label)
+        .any(|phrase| lower == *phrase)
 }
 
 /// Detect if a line is a section header (e.g., "For the sauce:", "FILLING:", "Topping Ingredients:").

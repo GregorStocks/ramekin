@@ -141,13 +141,7 @@
     },
     {
       "raw": "Brown Sugar Coating",
-      "expected": {
-        "item": "Brown Sugar Coating",
-        "measurements": [],
-        "note": null,
-        "section": "Dough",
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup packed light brown sugar (CI advises against dark brown, which they feel imparts too strong of a molasses taste; I suspect it wouldn’t bother me)",
@@ -160,7 +154,7 @@
           }
         ],
         "note": "CI advises against dark brown, which they feel imparts too strong of a molasses taste; I suspect it wouldn’t bother me",
-        "section": "Dough",
+        "section": "Brown Sugar Coating",
         "category": "Baking"
       }
     },
@@ -179,7 +173,7 @@
           }
         ],
         "note": null,
-        "section": "Dough",
+        "section": "Brown Sugar Coating",
         "category": "Spices & Seasonings"
       }
     },
@@ -206,19 +200,13 @@
           }
         ],
         "note": "melted",
-        "section": "Dough",
+        "section": "Brown Sugar Coating",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Cream Cheese Glaze",
-      "expected": {
-        "item": "Cream Cheese Glaze",
-        "measurements": [],
-        "note": null,
-        "section": "Dough",
-        "category": "Cheese"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 ounces cream cheese, softened",
@@ -235,7 +223,7 @@
           }
         ],
         "note": "softened",
-        "section": "Dough",
+        "section": "Cream Cheese Glaze",
         "category": "Cheese"
       }
     },
@@ -254,7 +242,7 @@
           }
         ],
         "note": "plus extra if needed",
-        "section": "Dough",
+        "section": "Cream Cheese Glaze",
         "category": "Baking"
       }
     },
@@ -273,7 +261,7 @@
           }
         ],
         "note": "plus extra if needed",
-        "section": "Dough",
+        "section": "Cream Cheese Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -292,7 +280,7 @@
           }
         ],
         "note": null,
-        "section": "Dough",
+        "section": "Cream Cheese Glaze",
         "category": "Baking"
       }
     }
