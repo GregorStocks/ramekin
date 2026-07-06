@@ -47,13 +47,57 @@ struct NumericThreshold: Equatable {
 }
 
 enum RecipeListFilterSupport {
-    /// Whether the query has free-text terms to rank against. Mirrors the
-    /// server's relevance trigger (`parsed.text` non-empty): tag/source/photo/
-    /// date filters are not text terms, so a filter-only query still browses by
-    /// the chosen sort. When true the list sends no sort and the server ranks
-    /// by relevance; the browse sort applies only when this is false.
+    /// Whether the query has free-text terms to rank against, so search ranks
+    /// by relevance and the list drops the browse sort. Mirrors the server's
+    /// `parse_query` (server/src/api/recipes/list.rs): DSL filter tokens typed
+    /// into the search field (`tag:`/`source:`/`created:`/`photo_*:`/`has:`/
+    /// `no:`) are parsed as filters, not text, so a filter-only search still
+    /// browses by the chosen sort. Structured filters (tag chips, source,
+    /// dates) live outside searchText and are likewise not text terms.
     static func hasTextQuery(_ state: RecipeListFilterState) -> Bool {
-        !state.searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        tokenizeSearchText(state.searchText).contains(where: isFreeTextTerm)
+    }
+
+    /// Split on spaces/tabs, respecting double quotes — mirrors the server's
+    /// `tokenize`.
+    private static func tokenizeSearchText(_ input: String) -> [String] {
+        var tokens: [String] = []
+        var current = ""
+        var inQuotes = false
+        for character in input {
+            if character == "\"" {
+                inQuotes.toggle()
+            } else if (character == " " || character == "\t") && !inQuotes {
+                if !current.isEmpty {
+                    tokens.append(current)
+                    current = ""
+                }
+            } else {
+                current.append(character)
+            }
+        }
+        if !current.isEmpty {
+            tokens.append(current)
+        }
+        return tokens
+    }
+
+    /// A token is a relevance-ranked text term unless it is a query-DSL filter,
+    /// matching the server's `parse_query` classification.
+    private static func isFreeTextTerm(_ token: String) -> Bool {
+        if token.isEmpty {
+            return false
+        }
+        let filterPrefixes = ["tag:", "source:", "created:", "photo_size:", "photo_dim:"]
+        if filterPrefixes.contains(where: { token.hasPrefix($0) }) {
+            return false
+        }
+        switch token {
+        case "has:photos", "has:photo", "no:photos", "no:photo":
+            return false
+        default:
+            return true
+        }
     }
 
     static func buildQuery(from state: RecipeListFilterState) -> String? {
