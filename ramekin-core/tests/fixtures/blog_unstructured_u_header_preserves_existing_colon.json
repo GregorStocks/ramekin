@@ -1,0 +1,14 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_u_header_preserves_existing_colon.html",
+  "source_url": "https://example.com/r",
+  "expected": {
+    "title": "Recipe",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "For the Sauce:\n1 cup cream"
+    ],
+    "ingredients_not_contains": [
+      "For the Sauce::"
+    ]
+  }
+}

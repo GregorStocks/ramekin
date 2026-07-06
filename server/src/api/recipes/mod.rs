@@ -6,12 +6,14 @@ pub mod generate_photo;
 pub mod get;
 pub mod list;
 pub mod normalize_title;
+pub(crate) mod paprika;
 pub(crate) mod read;
 pub mod rescrape;
 pub mod rescrape_photo;
 pub mod sync;
 pub mod update;
 pub mod versions;
+pub(crate) mod zip_stream;
 
 use crate::AppState;
 use axum::routing::{get, post};

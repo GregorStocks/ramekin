@@ -1,0 +1,12 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_u_headers_are_colon_terminated.html",
+  "source_url": "https://example.com/fajitas",
+  "expected": {
+    "title": "Fajitas",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "For the chicken:",
+      "To assemble:"
+    ]
+  }
+}
