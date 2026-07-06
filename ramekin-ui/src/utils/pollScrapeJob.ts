@@ -89,7 +89,7 @@ function throwIfAborted(signal: AbortSignal | undefined) {
 function isRetryablePollError(err: unknown): boolean {
   const response = responseFromError(err);
   if (!response) {
-    return true;
+    return err instanceof Error && err.name === "FetchError";
   }
   return response.status === 429 || response.status >= 500;
 }

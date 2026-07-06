@@ -82,10 +82,12 @@ describe("pollScrapeJob", () => {
     expect(result).toEqual({ status: "timeout", job: lastJob });
   });
 
-  it("retries transient scrape status request errors", async () => {
+  it("retries generated-client fetch errors", async () => {
+    const fetchError = new Error("temporary failure");
+    fetchError.name = "FetchError";
     const api = scrapeApi([
       scrapeJob("pending"),
-      new Error("temporary failure"),
+      fetchError,
       scrapeJob("completed"),
     ]);
     const pollErrors: string[] = [];
@@ -99,6 +101,17 @@ describe("pollScrapeJob", () => {
 
     expect(result.status).toBe("completed");
     expect(pollErrors).toEqual(["temporary failure"]);
+  });
+
+  it("throws plain client errors", async () => {
+    const clientError = new SyntaxError("bad payload");
+    const api = scrapeApi([clientError]);
+
+    await expect(
+      pollScrapeJob(api, "job-id", {
+        sleep: async () => {},
+      }),
+    ).rejects.toBe(clientError);
   });
 
   it("retries 5xx scrape status responses", async () => {
