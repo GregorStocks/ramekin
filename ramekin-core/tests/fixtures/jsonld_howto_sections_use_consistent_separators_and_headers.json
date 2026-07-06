@@ -1,0 +1,10 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/jsonld/howto_sections_use_consistent_separators_and_headers.html",
+  "source_url": "https://example.com/sectioned",
+  "expected": {
+    "title": "Sectioned Recipe",
+    "method_used": "json_ld",
+    "ingredients_raw": "1 cup flour",
+    "instructions_raw": "Gather all the ingredients.\n\nTo Cook:\n\nBrown the chicken.\n\nAdd the potatoes.\n\nTo Serve:\n\nPlate and garnish."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/jsonld/with_footnotes_populates_field.html",
+  "source_url": "https://example.com/brownies",
+  "expected": {
+    "title": "Brownies",
+    "method_used": "json_ld",
+    "ingredients_contains": [
+      "butter*"
+    ],
+    "instructions_raw": "Mix and bake.",
+    "footnotes": [
+      {
+        "marker": "*",
+        "text_contains": "European-style butter"
+      },
+      {
+        "marker": "**",
+        "text_contains": "Dutch process"
+      }
+    ]
+  }
+}

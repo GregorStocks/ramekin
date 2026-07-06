@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="application/ld+json">
+    {
+        "@type": "Recipe",
+        "name": "Sectioned Recipe",
+        "recipeIngredient": ["1 cup flour"],
+        "recipeInstructions": [
+            {"@type": "HowToStep", "text": "Gather all the ingredients."},
+            {
+                "@type": "HowToSection",
+                "name": "To Cook",
+                "itemListElement": [
+                    {"@type": "HowToStep", "text": "Brown the chicken."},
+                    {"@type": "HowToStep", "text": "Add the potatoes."}
+                ]
+            },
+            {
+                "@type": "HowToSection",
+                "name": "To Serve",
+                "itemListElement": [
+                    {"@type": "HowToStep", "text": "Plate and garnish."}
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body></body>
+</html>
