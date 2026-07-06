@@ -479,8 +479,8 @@ fn consume_leading_measurement_continuations(s: &str) -> String {
         let Some(after_plus) = trimmed.strip_prefix('+') else {
             break;
         };
-        let Some((_, Some(_), after_measurement)) =
-            parse_range_continuation_measurement(after_plus.trim_start())
+        let Some((_, _, after_measurement, _)) =
+            parse_plus_continuation_measurement(after_plus.trim_start())
         else {
             break;
         };

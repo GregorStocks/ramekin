@@ -1390,6 +1390,18 @@ mod tests {
     }
 
     #[test]
+    fn test_parenthetical_identity_supplies_item_after_modified_compound_measurement() {
+        let result = parse_ingredient("1/3 cup + about 2 Tbsp (100 mL white vinegar)");
+        assert_eq!(result.item, "white vinegar");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1/3 cup plus about 2 tbsp".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, None);
+        assert_eq!(result.note.as_deref(), Some("100 mL white vinegar"));
+    }
+
+    #[test]
     fn test_uppercase_t_period_is_tablespoon() {
         let result = parse_ingredient("2 T. ice water");
         assert_eq!(result.item, "ice water");
