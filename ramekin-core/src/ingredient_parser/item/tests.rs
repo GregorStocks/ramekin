@@ -76,6 +76,26 @@ fn test_detect_section_header_all_caps_no_colon() {
 }
 
 #[test]
+fn test_detect_section_header_title_case_no_colon() {
+    assert_eq!(detect_section_header("Lid"), Some("Lid".to_string()));
+    assert_eq!(
+        detect_section_header("Filling"),
+        Some("Filling".to_string())
+    );
+    assert_eq!(detect_section_header("Crust"), Some("Crust".to_string()));
+
+    assert_eq!(detect_section_header("Chicken"), None);
+    assert_eq!(detect_section_header("Eggs"), None);
+    assert_eq!(detect_section_header("Salt"), None);
+    assert_eq!(detect_section_header("Cream"), None);
+    assert_eq!(detect_section_header("Soy Sauce"), None);
+    assert_eq!(detect_section_header("Pizza Dough"), None);
+    assert_eq!(detect_section_header("Cream Cheese Filling"), None);
+    assert_eq!(detect_section_header("lid"), None);
+    assert_eq!(detect_section_header("Lid 2"), None);
+}
+
+#[test]
 fn test_detect_section_header_ingredients_suffix() {
     // Lines ending with "Ingredients" should be detected
     assert_eq!(

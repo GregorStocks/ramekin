@@ -208,12 +208,7 @@
     },
     {
       "raw": "Assembly",
-      "expected": {
-        "item": "Assembly",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup ricotta (ever wanted to make your own?)",
@@ -226,6 +221,7 @@
           }
         ],
         "note": "ever wanted to make your own?",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -240,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -249,6 +246,7 @@
         "item": "Toasted and chopped pistachios or almonds",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -258,6 +256,7 @@
         "item": "Additional honey",
         "measurements": [],
         "note": "if desired",
+        "section": "Assembly",
         "category": "Baking"
       }
     }

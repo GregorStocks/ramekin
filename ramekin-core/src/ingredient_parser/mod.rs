@@ -1345,6 +1345,18 @@ mod tests {
     }
 
     #[test]
+    fn test_parse_ingredients_title_case_sections_without_colons() {
+        let blob = "Lid\n2 cups flour\nFilling\n2 tablespoons olive oil";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 2);
+        assert_eq!(result[0].section, Some("Lid".to_string()));
+        assert_eq!(result[0].item, "flour");
+        assert_eq!(result[1].section, Some("Filling".to_string()));
+        assert_eq!(result[1].item, "olive oil");
+    }
+
+    #[test]
     fn test_parse_ingredients_no_sections() {
         let blob = "1 cup flour\n2 eggs\n1 tsp salt";
         let result = parse_ingredients(blob);

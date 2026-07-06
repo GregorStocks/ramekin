@@ -128,12 +128,7 @@
     },
     {
       "raw": "Dressing",
-      "expected": {
-        "item": "Dressing",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons olive oil",
@@ -150,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -168,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -182,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -196,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -205,6 +204,7 @@
         "item": "Just shy of 1 teaspoon honey",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -214,6 +214,7 @@
         "item": "Salt and freshly ground black pepper to taste",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

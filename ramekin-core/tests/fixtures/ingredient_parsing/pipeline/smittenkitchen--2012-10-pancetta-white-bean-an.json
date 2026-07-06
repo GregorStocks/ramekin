@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Lid",
-      "expected": {
-        "item": "Lid",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups (250 grams) all- purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Spices & Seasonings"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": "185 grams or 1 stick plus 5 tablespoons, diced",
+        "section": "Lid",
         "category": "Dairy & Eggs"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": "i.e., a strained yogurt",
+        "section": "Lid",
         "category": "Dairy & Eggs"
       }
     },
@@ -102,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Oils & Vinegars"
       }
     },
@@ -124,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Beverages"
       }
     },
@@ -138,17 +139,13 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons (30 ml) olive oil",
@@ -169,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -191,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -209,6 +208,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -223,6 +223,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -237,6 +238,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -251,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -260,6 +263,7 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -274,6 +278,7 @@
           }
         ],
         "note": "minced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -283,6 +288,7 @@
         "item": "Thinly sliced Swiss chard leaves from an 8- to 10-ounce",
         "measurements": [],
         "note": "225- to 285-gram",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -297,6 +303,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -315,6 +322,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -333,6 +341,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -351,6 +360,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -365,6 +375,7 @@
           }
         ],
         "note": "or from one and a third 15.5- ounce",
+        "section": "Filling",
         "category": "Canned Goods"
       }
     }

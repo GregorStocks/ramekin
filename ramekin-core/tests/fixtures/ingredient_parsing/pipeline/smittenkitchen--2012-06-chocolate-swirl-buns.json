@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Dough",
-      "expected": {
-        "item": "Dough",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) milk, preferably whole",
@@ -30,6 +25,7 @@
           }
         ],
         "note": "preferably whole",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": "plus a pinch of granulated sugar",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -66,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": "plus more for work surface",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,17 +135,13 @@
           }
         ],
         "note": "plus additional for bowl and muffin tins",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (45 grams) unsalted butter, at room temperature",
@@ -161,6 +158,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -179,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -197,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -211,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -229,6 +230,7 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -238,6 +240,7 @@
         "item": "Egg wash",
         "measurements": [],
         "note": "optional",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -252,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -270,6 +274,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

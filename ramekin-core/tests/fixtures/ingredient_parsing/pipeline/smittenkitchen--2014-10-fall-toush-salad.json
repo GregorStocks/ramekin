@@ -201,12 +201,7 @@
     },
     {
       "raw": "Dressing",
-      "expected": {
-        "item": "Dressing",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons ground sumac or paprika (see Note above)",
@@ -219,6 +214,7 @@
           }
         ],
         "note": "see Note above",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +233,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Beverages"
       }
     },
@@ -251,6 +248,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -265,6 +263,7 @@
           }
         ],
         "note": "minced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -283,6 +282,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -301,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -310,6 +311,7 @@
         "item": "Salt and freshly ground black pepper or Aleppo pepper flakes to taste",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

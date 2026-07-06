@@ -233,12 +233,7 @@
     },
     {
       "raw": "Frosting",
-      "expected": {
-        "item": "Frosting",
-        "measurements": [],
-        "note": null,
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 large egg whites",
@@ -251,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -269,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -283,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -301,6 +299,7 @@
           }
         ],
         "note": "will help stabilize egg whites, don’t worry if you don’t have it",
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -319,6 +318,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     }

@@ -240,12 +240,7 @@
     },
     {
       "raw": "Garnish",
-      "expected": {
-        "item": "Garnish",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Cream puffs",
@@ -253,6 +248,7 @@
         "item": "Cream puffs",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Dairy & Eggs"
       }
     },
@@ -262,6 +258,7 @@
         "item": "Edible organic rose petals",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Other"
       }
     }

@@ -69,12 +69,7 @@
     },
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup (125 grams) all-purpose flour",
@@ -91,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -105,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -149,17 +147,13 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons (85 grams) unsalted butter",
@@ -176,6 +170,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -194,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -212,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -226,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -240,6 +238,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -254,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -268,6 +268,7 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -286,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -304,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -326,6 +329,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -340,6 +344,7 @@
           }
         ],
         "note": "always",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -349,6 +354,7 @@
         "item": "Flaky sea salt on top",
         "measurements": [],
         "note": "if desired",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     }

@@ -148,12 +148,7 @@
     },
     {
       "raw": "Dressing",
-      "expected": {
-        "item": "Dressing",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 tablespoons lime juice (Key limes are recommended, but don’t fuss if you can’t find them)",
@@ -170,6 +165,7 @@
           }
         ],
         "note": "Key limes are recommended, but don’t fuss if you can’t find them",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -184,6 +180,7 @@
           }
         ],
         "note": "or 1 tablespoon water + 1 teaspoon dark brown sugar",
+        "section": "Dressing",
         "category": "Beverages"
       }
     },
@@ -198,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -212,6 +210,7 @@
           }
         ],
         "note": "1 large clove",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -226,6 +225,7 @@
           }
         ],
         "note": "more or less to taste, thinly sliced",
+        "section": "Dressing",
         "category": "Produce"
       }
     }

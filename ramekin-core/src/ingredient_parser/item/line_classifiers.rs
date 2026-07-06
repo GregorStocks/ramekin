@@ -313,6 +313,38 @@ pub(in crate::ingredient_parser) fn title_case(s: &str) -> String {
     result
 }
 
+pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str) -> bool {
+    const TITLE_CASE_SECTION_LABELS: &[&str] = &[
+        "assembly", "batter", "crumb", "crumble", "crust", "dough", "dressing", "filling",
+        "frosting", "garnish", "glaze", "icing", "lid", "marinade", "sauce", "streusel", "topping",
+    ];
+
+    if name.contains(':')
+        || name.chars().any(|c| c.is_ascii_digit())
+        || !name.chars().any(|c| c.is_alphabetic())
+    {
+        return false;
+    }
+
+    let words = name.split_whitespace();
+    if !words
+        .clone()
+        .all(|word| word.chars().next().is_some_and(|c| c.is_uppercase()))
+    {
+        return false;
+    }
+
+    let word_count = words.clone().count();
+    if word_count != 1 {
+        return false;
+    }
+
+    let lower = name.to_lowercase();
+    TITLE_CASE_SECTION_LABELS
+        .iter()
+        .any(|label| lower == *label)
+}
+
 /// Detect if a line is a section header (e.g., "For the sauce:", "FILLING:", "Topping Ingredients:").
 /// Also detects ALL CAPS lines without colons (e.g., "DOUGH", "FILLING", "BERRY SAUCE").
 /// Returns Some(normalized_section_name) if it's a header, None if it's a regular ingredient.
@@ -331,6 +363,10 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
             .all(|c| c.is_uppercase())
         && trimmed.chars().any(|c| c.is_alphabetic())
     {
+        return Some(normalize_section_name(trimmed));
+    }
+
+    if is_known_title_case_section_label(trimmed) {
         return Some(normalize_section_name(trimmed));
     }
 

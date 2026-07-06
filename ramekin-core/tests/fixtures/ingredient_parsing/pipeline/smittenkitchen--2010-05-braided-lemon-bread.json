@@ -93,12 +93,7 @@
     },
     {
       "raw": "Dough",
-      "expected": {
-        "item": "Dough",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Sponge (above)",
@@ -106,6 +101,7 @@
         "item": "Sponge",
         "measurements": [],
         "note": "above",
+        "section": "Dough",
         "category": "Other"
       }
     },
@@ -128,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -154,6 +151,7 @@
           }
         ],
         "note": "softened",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -168,6 +166,7 @@
           }
         ],
         "note": "1 beaten with 1 teaspoon water for brushing bread",
+        "section": "Dough",
         "category": "Bakery & Bread"
       }
     },
@@ -190,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -208,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -226,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -248,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -257,6 +260,7 @@
         "item": "Pearl sugar* or sparkling white sugar for sprinkling",
         "measurements": [],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -266,6 +270,7 @@
         "item": "Lemon cream cheese filling",
         "measurements": [],
         "note": null,
+        "section": "Dough",
         "category": "Cheese"
       }
     },
@@ -288,6 +293,7 @@
           }
         ],
         "note": "softened",
+        "section": "Dough",
         "category": "Cheese"
       }
     },
@@ -310,6 +316,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -332,6 +339,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -350,6 +358,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Produce"
       }
     },
@@ -372,6 +381,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -394,6 +404,7 @@
           }
         ],
         "note": "recipe below",
+        "section": "Dough",
         "category": "Produce"
       }
     },
@@ -412,6 +423,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Produce"
       }
     },
@@ -426,6 +438,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Dough",
         "category": "Produce"
       }
     },
@@ -444,6 +457,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -458,6 +472,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -476,6 +491,7 @@
           }
         ],
         "note": "cut into small pieces",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     }

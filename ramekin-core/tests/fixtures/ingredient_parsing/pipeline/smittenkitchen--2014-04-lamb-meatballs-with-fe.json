@@ -200,12 +200,7 @@
     },
     {
       "raw": "Sauce",
-      "expected": {
-        "item": "Sauce",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 medium onion, finely chopped",
@@ -218,6 +213,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -232,6 +228,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -241,6 +238,7 @@
         "item": "A couple glugs of red wine or white/dry vermouth",
         "measurements": [],
         "note": "optional",
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -259,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -277,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -286,6 +286,7 @@
         "item": "Zest of half a lemon",
         "measurements": [],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -300,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -314,6 +316,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -332,6 +335,7 @@
           }
         ],
         "note": "about 45 grams, chopped kalamata olives",
+        "section": "Sauce",
         "category": "Other"
       }
     },
@@ -346,6 +350,7 @@
           }
         ],
         "note": "plus more for garnish",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -360,6 +365,7 @@
           }
         ],
         "note": "plus more for garnish",
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -369,6 +375,7 @@
         "item": "Juice of one lemon",
         "measurements": [],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -387,6 +394,7 @@
           }
         ],
         "note": "for garnish",
+        "section": "Sauce",
         "category": "Cheese"
       }
     }

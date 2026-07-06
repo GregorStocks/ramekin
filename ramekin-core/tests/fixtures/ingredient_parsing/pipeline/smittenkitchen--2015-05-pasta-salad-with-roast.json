@@ -187,12 +187,7 @@
     },
     {
       "raw": "Assembly",
-      "expected": {
-        "item": "Assembly",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound (455 grams) dried pasta, a bite-sized shape of your choosing (I used reginetti), cooked until 1 to 2 minutes before doneness and drained",
@@ -209,6 +204,7 @@
           }
         ],
         "note": "I used reginetti, cooked until 1 to 2 minutes before doneness and drained",
+        "section": "Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -227,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -245,6 +242,7 @@
           }
         ],
         "note": "well-toasted and cooled",
+        "section": "Assembly",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -263,6 +261,7 @@
           }
         ],
         "note": "I used gaeta here, but like them even more when oil-cured",
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     },
@@ -272,6 +271,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -286,6 +286,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Assembly",
         "category": "Produce"
       }
     }

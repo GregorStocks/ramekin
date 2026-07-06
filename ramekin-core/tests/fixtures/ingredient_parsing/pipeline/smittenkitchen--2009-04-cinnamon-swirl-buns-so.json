@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Dough",
-      "expected": {
-        "item": "Dough",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup whole milk",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": "or more, divided",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -104,6 +104,7 @@
           }
         ],
         "note": "from 1 envelope yeast",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -122,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,17 +133,13 @@
         "item": "Nonstick vegetable oil spray",
         "measurements": [],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (packed) golden brown sugar",
@@ -154,6 +152,7 @@
           }
         ],
         "note": "packed",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -172,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -194,6 +194,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -208,17 +209,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Glaze",
-      "expected": {
-        "item": "Glaze",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 ounces cream cheese, at room temperature",
@@ -235,6 +232,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Glaze",
         "category": "Cheese"
       }
     },
@@ -253,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -275,6 +274,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -293,6 +293,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     }

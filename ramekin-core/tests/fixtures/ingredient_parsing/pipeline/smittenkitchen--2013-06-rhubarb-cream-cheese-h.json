@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 3/4 cups (470 grams) all-purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": "optional",
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": "very cold and cut into small cubes",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": "or, make your own buttermilk substitute",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +122,7 @@
         "item": "Rhubarb Filling",
         "measurements": [],
         "note": null,
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -139,6 +141,7 @@
           }
         ],
         "note": "trimmed and cut into 1/2-inch segments",
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -157,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -166,6 +170,7 @@
         "item": "Cream cheese filling",
         "measurements": [],
         "note": null,
+        "section": "Crust",
         "category": "Cheese"
       }
     },
@@ -184,6 +189,7 @@
           }
         ],
         "note": "i.e. very soft, at room temperature",
+        "section": "Crust",
         "category": "Cheese"
       }
     },
@@ -202,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -216,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -234,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -248,6 +257,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -257,6 +267,7 @@
         "item": "To assemble",
         "measurements": [],
         "note": null,
+        "section": "Crust",
         "category": "Other"
       }
     },
@@ -271,6 +282,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -289,6 +301,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Beverages"
       }
     },
@@ -298,6 +311,7 @@
         "item": "Coarse sugar",
         "measurements": [],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     }

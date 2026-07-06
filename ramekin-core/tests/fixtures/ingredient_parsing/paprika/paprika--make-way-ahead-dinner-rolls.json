@@ -49,12 +49,7 @@
     },
     {
       "raw": "Dough",
-      "expected": {
-        "item": "Dough",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "¾ cup milk, chilled",
@@ -71,6 +66,7 @@
           }
         ],
         "note": "chilled",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -93,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -107,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -139,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -157,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,6 +176,7 @@
           }
         ],
         "note": "softened",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -184,6 +186,7 @@
         "item": "Vegetable oil spray",
         "measurements": [],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
     }

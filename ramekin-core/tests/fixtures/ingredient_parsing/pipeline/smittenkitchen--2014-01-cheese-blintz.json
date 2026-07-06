@@ -90,12 +90,7 @@
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups farmer’s cheese, quark, a thicker cottage cheese or ricotta",
@@ -108,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -122,6 +118,7 @@
           }
         ],
         "note": "creme fraiche or softened cream cheese",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -140,6 +137,7 @@
           }
         ],
         "note": "or more to taste, see Note up top",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -158,6 +156,7 @@
           }
         ],
         "note": "if desired",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -167,6 +166,7 @@
         "item": "Few gratings fresh lemon zest",
         "measurements": [],
         "note": "if desired",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -181,6 +181,7 @@
           }
         ],
         "note": "optional, see Note up top",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

@@ -150,12 +150,7 @@
     },
     {
       "raw": "Sauce",
-      "expected": {
-        "item": "Sauce",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1  can condensed tomato soup (10.75 oz)",
@@ -176,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -194,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -212,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -230,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Oils & Vinegars"
       }
     },
@@ -248,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     }

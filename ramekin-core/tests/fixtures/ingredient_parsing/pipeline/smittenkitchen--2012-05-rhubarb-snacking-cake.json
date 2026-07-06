@@ -211,12 +211,7 @@
     },
     {
       "raw": "Crumb",
-      "expected": {
-        "item": "Crumb",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup (125 grams) all-purpose flour",
@@ -233,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb",
         "category": "Baking"
       }
     },
@@ -251,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb",
         "category": "Baking"
       }
     },
@@ -269,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb",
         "category": "Spices & Seasonings"
       }
     },
@@ -287,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb",
         "category": "Spices & Seasonings"
       }
     },
@@ -313,6 +312,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crumb",
         "category": "Dairy & Eggs"
       }
     }

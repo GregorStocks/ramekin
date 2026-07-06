@@ -63,12 +63,7 @@
     },
     {
       "raw": "Dough",
-      "expected": {
-        "item": "Dough",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 teaspoon instant yeast",
@@ -85,6 +80,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -99,6 +95,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -117,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,6 +129,7 @@
           }
         ],
         "note": "see note below; or 1 tablespoon dark or light malt syrup, honey, or brown sugar",
+        "section": "Dough",
         "category": "Other"
       }
     }

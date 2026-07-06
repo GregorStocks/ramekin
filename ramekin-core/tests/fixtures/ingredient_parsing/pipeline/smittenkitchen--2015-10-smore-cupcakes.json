@@ -274,12 +274,7 @@
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 pound (4 ounces) milk or semi-sweet chocolate, chopped small or in chips",
@@ -300,6 +295,7 @@
           }
         ],
         "note": "chopped small or in chips",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -318,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -332,17 +329,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Frosting",
-      "expected": {
-        "item": "Frosting",
-        "measurements": [],
-        "note": null,
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 large egg whites",
@@ -355,6 +348,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -373,6 +367,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -391,6 +386,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -409,6 +405,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     }

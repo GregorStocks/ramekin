@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Sauce",
-      "expected": {
-        "item": "Sauce",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 tablespoons miso (red is recommend; white would be just fine)",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "red is recommend; white would be just fine",
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": "finely grated",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -108,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": "from about 1 lime, plus lime wedges for serving",
+        "section": "Sauce",
         "category": "Produce"
       }
     }

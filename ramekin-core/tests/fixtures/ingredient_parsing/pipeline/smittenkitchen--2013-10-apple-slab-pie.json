@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 3/4 (470 grams) cups all-purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": "very cold",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -94,17 +93,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Beverages"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 to 4 pounds apples, peeled, cored and chopped into approximately 1/2-inch chunks (about 8 cups)",
@@ -125,6 +120,7 @@
           }
         ],
         "note": "about 8 cups, cored and chopped into approximately 1/2-inch chunks",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -134,6 +130,7 @@
         "item": "Squeeze of lemon juice",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -148,6 +145,7 @@
           }
         ],
         "note": "depending on how sweet you like your pies",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -166,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -184,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -202,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -220,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -238,17 +240,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Glaze",
-      "expected": {
-        "item": "Glaze",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "(optional) (only need half, barely, for what’s in photos)",
@@ -256,6 +254,7 @@
         "item": "only need half",
         "measurements": [],
         "note": "optional, barely, for what’s in photos",
+        "section": "Glaze",
         "category": "Other"
       }
     },
@@ -270,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -284,6 +284,7 @@
           }
         ],
         "note": "plus a drop or two more if needed",
+        "section": "Glaze",
         "category": "Beverages"
       }
     }

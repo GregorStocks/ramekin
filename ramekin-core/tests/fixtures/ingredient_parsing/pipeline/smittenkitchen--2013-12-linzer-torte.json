@@ -166,12 +166,7 @@
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup (about 20 to 25 grams) fine, dry breadcrumbs",
@@ -188,6 +183,7 @@
           }
         ],
         "note": "about 20 to 25 grams",
+        "section": "Filling",
         "category": "Bakery & Bread"
       }
     },
@@ -206,6 +202,7 @@
           }
         ],
         "note": "about 575 grams",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -215,6 +212,7 @@
         "item": "To finish",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -229,6 +227,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -247,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -265,6 +265,7 @@
           }
         ],
         "note": "julienne-shaped pieces, optional",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     }

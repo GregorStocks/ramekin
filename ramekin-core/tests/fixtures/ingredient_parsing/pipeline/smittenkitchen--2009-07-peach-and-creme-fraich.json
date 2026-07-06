@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Streusel",
-      "expected": {
-        "item": "Streusel",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup confectioners’ sugar",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": "I needed the latter amount to get this into a crumble",
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -90,17 +89,13 @@
           }
         ],
         "note": "cut into pieces",
+        "section": "Streusel",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds ripe (4 to 5 medium) yellow peaches, pitted and quartered",
@@ -121,6 +116,7 @@
           }
         ],
         "note": "pitted and quartered",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -135,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -149,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -163,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

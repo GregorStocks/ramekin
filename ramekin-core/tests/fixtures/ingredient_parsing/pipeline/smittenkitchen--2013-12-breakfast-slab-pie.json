@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 3/4 (470 grams) cups all-purpose flour (feel free to replace up to half with whole-wheat)",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "feel free to replace up to half with whole-wheat",
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": "very cold",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -76,17 +74,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Beverages"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound yukon gold potatoes, peeled if desired, cut into 1/2-inch slices",
@@ -103,6 +97,7 @@
           }
         ],
         "note": "cut into 1/2-inch slices",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -121,6 +116,7 @@
           }
         ],
         "note": "baby, “grown-up,” or frozen",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -135,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -149,6 +146,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -163,6 +161,7 @@
           }
         ],
         "note": "you’ll use the yolk in a minute",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -177,6 +176,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -186,6 +186,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +196,7 @@
         "item": "To finish",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Other"
       }
     },
@@ -209,6 +211,7 @@
           }
         ],
         "note": "leftover from filling",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Beverages"
       }
     }

@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Streusel",
-      "expected": {
-        "item": "Streusel",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup (31 grams) all-purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": "melted",
+        "section": "Streusel",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,6 +156,7 @@
         "item": "Muffin",
         "measurements": [],
         "note": null,
+        "section": "Streusel",
         "category": "Bakery & Bread"
       }
     },
@@ -167,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Dairy & Eggs"
       }
     },
@@ -185,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -203,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -221,6 +228,7 @@
           }
         ],
         "note": "melted and cooled to lukewarm",
+        "section": "Streusel",
         "category": "Dairy & Eggs"
       }
     },
@@ -243,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Dairy & Eggs"
       }
     },
@@ -257,6 +266,7 @@
           }
         ],
         "note": "approx. 120 grams, see Note",
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -275,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -293,6 +304,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -311,6 +323,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -329,6 +342,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -343,6 +357,7 @@
           }
         ],
         "note": "from about 6 to 8 ounces of stalks",
+        "section": "Streusel",
         "category": "Produce"
       }
     }

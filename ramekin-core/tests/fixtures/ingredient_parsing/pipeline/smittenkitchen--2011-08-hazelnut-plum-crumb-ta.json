@@ -143,12 +143,7 @@
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound (455 grams) ripe but firm plums (about 4 standard black ones or 12 smaller Italian plums; I used a mix of both)",
@@ -165,6 +160,7 @@
           }
         ],
         "note": "about 4 standard black ones or 12 smaller Italian plums; I used a mix of both",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -183,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -201,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -215,6 +213,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -229,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -273,6 +274,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -287,6 +289,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -305,6 +308,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -314,6 +318,7 @@
         "item": "Grated nutmeg",
         "measurements": [],
         "note": "optional",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     }

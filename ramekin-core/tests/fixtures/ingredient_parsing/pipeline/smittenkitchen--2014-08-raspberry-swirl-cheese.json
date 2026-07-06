@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups (about 250 grams) finely ground chocolate cookie crumbs (from about 1 9-ounce sleeve chocolate wafers; see more suggestions below)",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "about 250 grams, from about 1 9-ounce sleeve chocolate wafers; see more suggestions below",
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -89,6 +88,7 @@
         "item": "Raspberry Swirl",
         "measurements": [],
         "note": null,
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -107,6 +107,7 @@
           }
         ],
         "note": "which have been thawed or they will not puree easily",
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -125,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -134,6 +136,7 @@
         "item": "Cheesecake",
         "measurements": [],
         "note": null,
+        "section": "Crust",
         "category": "Other"
       }
     },
@@ -152,6 +155,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Cheese"
       }
     },
@@ -170,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -184,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -202,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -216,6 +223,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -225,6 +233,7 @@
         "item": "Chocolate sauce for serving",
         "measurements": [],
         "note": "optional",
+        "section": "Crust",
         "category": "Condiments & Sauces"
       }
     },
@@ -243,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -261,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     }

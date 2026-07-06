@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 9-ounce box chocolate wafer cookies or 9 ounces of homemade chocolate wafers",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "or 9 ounces of homemade chocolate wafers",
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": "packed",
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -99,6 +99,7 @@
         "item": "Ganache",
         "measurements": [],
         "note": null,
+        "section": "Crust",
         "category": "Other"
       }
     },
@@ -113,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +133,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -145,17 +148,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Beverages"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 8-ounce packages cream cheese, room temperature",
@@ -168,6 +167,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -186,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -204,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -218,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -232,6 +235,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -246,6 +250,7 @@
           }
         ],
         "note": "medium-coarse grind, I skipped this, increased the espresso powder instead",
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -264,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -278,6 +284,7 @@
           }
         ],
         "note": "light",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -292,17 +299,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Topping",
-      "expected": {
-        "item": "Topping",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups sour cream",
@@ -319,6 +322,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -337,6 +341,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -355,6 +360,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

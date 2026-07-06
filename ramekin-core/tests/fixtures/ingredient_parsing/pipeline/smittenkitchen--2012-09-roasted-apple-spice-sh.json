@@ -257,12 +257,7 @@
     },
     {
       "raw": "Frosting",
-      "expected": {
-        "item": "Frosting",
-        "measurements": [],
-        "note": null,
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 8-ounce (675 grams total) blocks cream cheese, at room temperature",
@@ -279,6 +274,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -305,6 +301,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -327,6 +324,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -345,6 +343,7 @@
           }
         ],
         "note": "sifted",
+        "section": "Frosting",
         "category": "Baking"
       }
     }

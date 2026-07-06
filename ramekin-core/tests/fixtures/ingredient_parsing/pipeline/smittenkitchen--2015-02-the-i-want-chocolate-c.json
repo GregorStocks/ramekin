@@ -290,12 +290,7 @@
     },
     {
       "raw": "Frosting",
-      "expected": {
-        "item": "Frosting",
-        "measurements": [],
-        "note": null,
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 ounces (55 grams) unsweetened chocolate, melted and cooled",
@@ -312,6 +307,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -330,6 +326,7 @@
           }
         ],
         "note": "sifted if lumpy",
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -352,6 +349,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -366,6 +364,7 @@
           }
         ],
         "note": "optional",
+        "section": "Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -380,6 +379,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -398,6 +398,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     }

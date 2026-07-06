@@ -98,12 +98,7 @@
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon (15 ml) olive or vegetable oil",
@@ -120,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -138,6 +134,7 @@
           }
         ],
         "note": "see Note up top for suggestions",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -147,6 +144,7 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -165,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -179,6 +178,7 @@
           }
         ],
         "note": "I used 4 small because I’m a rebel, minced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -193,6 +193,7 @@
           }
         ],
         "note": "use 1 teaspoon only if dried/jarred, minced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -215,6 +216,7 @@
           }
         ],
         "note": "grated",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -237,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -259,6 +262,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -273,6 +277,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -282,6 +287,7 @@
         "item": "Freshly grated nutmeg",
         "measurements": [],
         "note": "optional",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     }
