@@ -1,0 +1,18 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_keeps_multiple_recipe_blocks_separate.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Yogurt-Marinated Lamb Kebabs",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "1 pound plain yogurt",
+      "Tzatziki:\n14 ounces Greek yogurt"
+    ],
+    "instructions_contains": [
+      "Combine the yogurt, oil, and lamb in a bowl.",
+      "Grill the skewers until the lamb is medium-rare.",
+      "Tzatziki:",
+      "Place the yogurt in a medium bowl"
+    ]
+  }
+}

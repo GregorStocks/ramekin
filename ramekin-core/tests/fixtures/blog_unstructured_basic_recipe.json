@@ -1,0 +1,16 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_basic_recipe.html",
+  "source_url": "https://example.com/blog/cake",
+  "expected": {
+    "title": "Simple Vanilla Cake",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "2 cups flour",
+      "3 eggs",
+      "1 teaspoon vanilla extract"
+    ],
+    "instructions_contains": [
+      "Preheat oven to 350"
+    ]
+  }
+}

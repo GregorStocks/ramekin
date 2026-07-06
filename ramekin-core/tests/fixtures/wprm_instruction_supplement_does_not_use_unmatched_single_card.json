@@ -1,0 +1,9 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/wprm/instruction_supplement_does_not_use_unmatched_single_card.html",
+  "source_url": "https://example.com/pancakes",
+  "expected": {
+    "title": "Semi-Instant Pancakes",
+    "ingredients_raw": "1 cup flour",
+    "instructions_raw": "Keep the original structured instruction."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/virtualweberbullet_strong_header_with_nbsp.html",
+  "source_url": "https://www.virtualweberbullet.com/test-ribs",
+  "expected": {
+    "title": "Test Ribs",
+    "method_used": "html_fallback",
+    "ingredients_raw": "The Rub:\n1/4 cup paprika\n2 tablespoons salt"
+  }
+}

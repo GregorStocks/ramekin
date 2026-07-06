@@ -3,14 +3,10 @@ use crate::auth::{create_session_with_token, verify_password, DEV_TEST_TOKEN};
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::User;
+use crate::raw_sql;
 use crate::schema::users;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
-
-// SQL function declaration for PostgreSQL LOWER() on text
-diesel::define_sql_function! {
-    fn lower(x: diesel::sql_types::Text) -> diesel::sql_types::Text;
-}
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -43,7 +39,7 @@ pub async fn login(
     let mut conn = get_conn!(pool);
 
     let user: User = match users::table
-        .filter(lower(users::username).eq(req.username.to_lowercase()))
+        .filter(raw_sql::lower(users::username).eq(req.username.to_lowercase()))
         .filter(users::deleted_at.is_null())
         .select(User::as_select())
         .first(&mut conn)

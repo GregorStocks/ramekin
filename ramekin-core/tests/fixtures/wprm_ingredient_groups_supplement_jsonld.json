@@ -1,0 +1,9 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/wprm/ingredient_groups_supplement_jsonld.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Ginger Meatballs",
+    "ingredients_raw": "Meatballs:\n2 pounds ground pork\n2 large eggs\nBroth:\n1 can coconut milk\n2 cups chicken stock",
+    "instructions_raw": "Make meatballs and broth."
+  }
+}

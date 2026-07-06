@@ -1,0 +1,21 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_normalizes_later_block_titles_for_sections.html",
+  "source_url": "https://example.com/aloo-gobi",
+  "expected": {
+    "title": "Indian Spiced Cauliflower and Potatoes [Aloo Gobi]",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "1 head cauliflower",
+      "Red Split Lentils with Cabbage:\n1 1/4 cups red split lentils"
+    ],
+    "ingredients_not_contains": [
+      "Red Split Lentils With Cabbage (Masoor dal aur band gobi):"
+    ],
+    "instructions_contains": [
+      "Red Split Lentils with Cabbage:"
+    ],
+    "instructions_not_contains": [
+      "Red Split Lentils With Cabbage (Masoor dal aur band gobi):"
+    ]
+  }
+}

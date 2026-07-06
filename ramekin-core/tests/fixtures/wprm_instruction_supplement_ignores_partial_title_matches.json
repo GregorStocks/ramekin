@@ -1,0 +1,9 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/wprm/instruction_supplement_ignores_partial_title_matches.html",
+  "source_url": "https://example.com/chicken-soup",
+  "expected": {
+    "title": "Chicken Soup",
+    "ingredients_raw": "1 cup stock",
+    "instructions_raw": "Correct card step"
+  }
+}

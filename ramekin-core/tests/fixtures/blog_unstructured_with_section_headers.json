@@ -1,0 +1,17 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_with_section_headers.html",
+  "source_url": "https://example.com/pie",
+  "expected": {
+    "title": "Apple Pie",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "For the crust:",
+      "2 cups flour",
+      "For the filling:",
+      "6 apples"
+    ],
+    "instructions_contains": [
+      "Make the crust"
+    ]
+  }
+}
