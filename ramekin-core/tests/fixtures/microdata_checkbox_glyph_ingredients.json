@@ -1,0 +1,10 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/microdata/checkbox_glyph_ingredients.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Test Recipe",
+    "method_used": "microdata",
+    "ingredients_raw": "1 cup flour\n2 eggs",
+    "instructions_raw": "Mix it."
+  }
+}

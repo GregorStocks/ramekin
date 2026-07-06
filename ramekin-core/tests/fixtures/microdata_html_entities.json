@@ -1,0 +1,13 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/microdata/html_entities.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Nami's Dango",
+    "description": "Sweet & chewy",
+    "method_used": "microdata",
+    "ingredients_raw": "1 cup flour",
+    "instructions_contains": [
+      "it's done"
+    ]
+  }
+}

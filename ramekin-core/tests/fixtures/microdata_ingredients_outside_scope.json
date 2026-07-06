@@ -1,0 +1,16 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/microdata/ingredients_outside_scope.html",
+  "source_url": "https://smittenkitchen.com/recipe",
+  "expected": {
+    "title": "Chicken Wonton Soup",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "3/4 pound ground chicken",
+      "1 teaspoon soy sauce",
+      "50 wonton wrappers"
+    ],
+    "instructions_contains": [
+      "Combine chicken and soy sauce in a bowl."
+    ]
+  }
+}

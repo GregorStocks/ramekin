@@ -1,0 +1,14 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/microdata/og_image_fallback.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Test Recipe",
+    "description": "A test description",
+    "method_used": "microdata",
+    "image_urls": [
+      "https://example.com/recipe-photo.jpg"
+    ],
+    "ingredients_raw": "1 cup flour\n2 eggs",
+    "instructions_raw": "Mix and bake."
+  }
+}
