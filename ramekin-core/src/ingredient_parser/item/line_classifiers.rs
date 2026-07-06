@@ -317,7 +317,7 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
     const TITLE_CASE_SECTION_LABELS: &[&str] = &[
         "assembly", "batter", "coating", "crumb", "crumble", "crust", "dough", "dressing",
         "filling", "frosting", "garnish", "glaze", "icing", "lid", "marinade", "puffs", "sauce",
-        "streusel", "topping",
+        "streusel", "syrup", "topping",
     ];
 
     if name.contains(':')
