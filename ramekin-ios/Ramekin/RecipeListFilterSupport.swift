@@ -47,6 +47,15 @@ struct NumericThreshold: Equatable {
 }
 
 enum RecipeListFilterSupport {
+    /// Whether the query has free-text terms to rank against. Mirrors the
+    /// server's relevance trigger (`parsed.text` non-empty): tag/source/photo/
+    /// date filters are not text terms, so a filter-only query still browses by
+    /// the chosen sort. When true the list sends no sort and the server ranks
+    /// by relevance; the browse sort applies only when this is false.
+    static func hasTextQuery(_ state: RecipeListFilterState) -> Bool {
+        !state.searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
     static func buildQuery(from state: RecipeListFilterState) -> String? {
         var parts: [String] = []
 

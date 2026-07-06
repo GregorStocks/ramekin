@@ -58,6 +58,33 @@ final class RecipeListFilterSupportTests: XCTestCase {
         XCTAssertNil(RecipeListFilterSupport.buildQuery(from: RecipeListFilterState()))
     }
 
+    func testHasTextQueryReflectsFreeTextOnly() {
+        // Free text -> rank by relevance (the list sends no sort).
+        XCTAssertTrue(
+            RecipeListFilterSupport.hasTextQuery(
+                RecipeListFilterState(searchText: "garlic bread", photoFilter: .any)
+            )
+        )
+        // Whitespace-only is not a text query.
+        XCTAssertFalse(
+            RecipeListFilterSupport.hasTextQuery(
+                RecipeListFilterState(searchText: "   ", photoFilter: .any)
+            )
+        )
+        // Filter-only queries (tags/source/photos/dates) are not text terms, so
+        // they keep browsing by the chosen sort.
+        XCTAssertFalse(
+            RecipeListFilterSupport.hasTextQuery(
+                RecipeListFilterState(
+                    selectedTags: ["Weeknight"],
+                    photoFilter: .hasPhotos,
+                    source: "Serious Eats",
+                    createdAfter: "2024-04-01"
+                )
+            )
+        )
+    }
+
     func testBuildQueryQuotesHierarchicalTagNames() {
         let state = RecipeListFilterState(
             selectedTags: ["ingredient:chicken", "season:winter"],

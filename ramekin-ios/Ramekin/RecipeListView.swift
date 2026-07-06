@@ -12,7 +12,7 @@ struct RecipeListView: View {
     @State private var activeQuery: String?
     @State private var searchTask: Task<Void, Never>?
     @State private var isUsingLocalCache = false
-    @AppStorage("recipeSortOrder") private var sortOrder = RecipeSortOrder.best
+    @AppStorage("recipeSortOrder") private var sortOrder = RecipeSortOrder.newest
     @AppStorage("recipePhotoFilter") private var photoFilter = PhotoFilter.any
     @AppStorage("recipeSourceFilter") private var sourceFilter = ""
     @AppStorage("recipeCreatedAfterFilter") private var createdAfterFilter = ""
@@ -331,14 +331,18 @@ extension RecipeListView {
             error = nil
         }
 
+        // A text search ranks by relevance (no explicit sort); the browse sort
+        // applies only when there's no text to rank against.
+        let useRelevance = RecipeListFilterSupport.hasTextQuery(currentFilterState)
+
         do {
             let response = try await logger.timed("listRecipes API", source: "RecipeList") {
                 try await RecipesAPI.listRecipes(
                     limit: pageSize,
                     offset: 0,
                     q: queryValue,
-                    sortBy: sortOrder.sortBy,
-                    sortDir: sortOrder.sortDir
+                    sortBy: useRelevance ? nil : sortOrder.sortBy,
+                    sortDir: useRelevance ? nil : sortOrder.sortDir
                 )
             }
 
@@ -375,13 +379,15 @@ extension RecipeListView {
             loadMoreFailed = false
         }
 
+        let useRelevance = RecipeListFilterSupport.hasTextQuery(currentFilterState)
+
         do {
             let response = try await RecipesAPI.listRecipes(
                 limit: pageSize,
                 offset: Int64(recipes.count),
                 q: activeQuery,
-                sortBy: sortOrder.sortBy,
-                sortDir: sortOrder.sortDir
+                sortBy: useRelevance ? nil : sortOrder.sortBy,
+                sortDir: useRelevance ? nil : sortOrder.sortDir
             )
 
             await MainActor.run {
