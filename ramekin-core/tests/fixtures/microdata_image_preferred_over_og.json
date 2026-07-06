@@ -1,0 +1,13 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/microdata/image_preferred_over_og.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Test Recipe",
+    "method_used": "microdata",
+    "image_urls": [
+      "https://example.com/microdata-photo.jpg"
+    ],
+    "ingredients_raw": "1 cup flour",
+    "instructions_raw": "Mix and bake."
+  }
+}

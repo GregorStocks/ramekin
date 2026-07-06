@@ -27,6 +27,10 @@ struct ExpectedRecipe {
     description: Option<String>,
     #[serde(default)]
     method_used: Option<ExtractionMethod>,
+    #[serde(default)]
+    servings: Option<String>,
+    #[serde(default)]
+    image_urls: Vec<String>,
     /// Raw ingredients as newline-separated string (current behavior)
     #[serde(default)]
     ingredients_raw: Option<String>,
@@ -114,6 +118,23 @@ fn test_extraction_golden_files() {
                 result.raw_recipe.description.as_deref(),
                 Some(expected_desc.as_str()),
                 "Description mismatch for {}",
+                name
+            );
+        }
+
+        if let Some(expected_servings) = &case.expected.servings {
+            assert_eq!(
+                result.raw_recipe.servings.as_deref(),
+                Some(expected_servings.as_str()),
+                "Servings mismatch for {}",
+                name
+            );
+        }
+
+        if !case.expected.image_urls.is_empty() {
+            assert_eq!(
+                result.raw_recipe.image_urls, case.expected.image_urls,
+                "Image URLs mismatch for {}",
                 name
             );
         }
