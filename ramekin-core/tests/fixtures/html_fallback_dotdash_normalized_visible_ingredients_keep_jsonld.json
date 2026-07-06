@@ -1,0 +1,8 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/html_fallback/dotdash_normalized_visible_ingredients_keep_jsonld.html",
+  "source_url": "https://www.seriouseats.com/biscuits",
+  "expected": {
+    "title": "Biscuits and Gravy",
+    "ingredients_raw": "1 pound (454g) pork breakfast sausage, casings removed\nFreshly ground black pepper"
+  }
+}

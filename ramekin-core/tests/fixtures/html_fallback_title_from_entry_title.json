@@ -1,0 +1,7 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/html_fallback/title_from_entry_title.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "My Great Recipe"
+  }
+}

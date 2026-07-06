@@ -1,0 +1,8 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/html_fallback/seriouseats_dedupes_unit_name_quirk.html",
+  "source_url": "https://www.seriouseats.com/baguette",
+  "expected": {
+    "title": "Crusty Bread",
+    "ingredients_raw": "1 baguette"
+  }
+}

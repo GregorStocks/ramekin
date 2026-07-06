@@ -1,0 +1,17 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/html_fallback/seriouseats_no_groups.html",
+  "source_url": "https://www.seriouseats.com/vinaigrette",
+  "expected": {
+    "title": "Simple Vinaigrette",
+    "ingredients_contains": [
+      "3 tablespoons olive oil",
+      "1 tablespoon vinegar"
+    ],
+    "ingredients_not_contains": [
+      ":"
+    ],
+    "instructions_contains": [
+      "Whisk oil and vinegar"
+    ]
+  }
+}

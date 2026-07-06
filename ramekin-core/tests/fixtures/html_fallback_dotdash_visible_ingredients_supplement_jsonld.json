@@ -1,0 +1,8 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/html_fallback/dotdash_visible_ingredients_supplement_jsonld.html",
+  "source_url": "https://www.seriouseats.com/croquetas",
+  "expected": {
+    "title": "Croquetas de Jam\u00f3n",
+    "ingredients_raw": "2 cups (473 ml) whole milk\n1/2 cup plus 2 tablespoons all-purpose flour (80 g), plus 1 cup all-purpose flour (for dredging), divided"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/html_fallback/jetpack_ingredients.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Test Recipe",
+    "ingredients_contains": [
+      "1 cup flour",
+      "2 eggs"
+    ],
+    "instructions_contains": [
+      "Mix and bake"
+    ]
+  }
+}
