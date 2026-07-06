@@ -7,7 +7,9 @@ use async_trait::async_trait;
 
 use crate::ingredient_parser::{parse_ingredients, ParsedIngredient};
 use crate::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
-use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
+use crate::pipeline::{
+    deserialize_required_output_field, PipelineStep, StepContext, StepMetadata, StepResult,
+};
 use crate::types::{ParseIngredientsOutput, RawRecipe};
 use crate::volume_to_weight::{
     add_volume_to_weight_alternative, apply_ingredient_rewrites, VolumeConversionStats,
@@ -54,17 +56,18 @@ impl PipelineStep for ParseIngredientsStep {
         };
 
         // Parse raw_recipe to get ingredients blob
-        let raw_recipe: RawRecipe = match extract_output
-            .get("raw_recipe")
-            .and_then(|v| serde_json::from_value(v.clone()).ok())
-        {
-            Some(r) => r,
-            None => {
+        let raw_recipe: RawRecipe = match deserialize_required_output_field(
+            &extract_output,
+            "extract_recipe",
+            "raw_recipe",
+        ) {
+            Ok(r) => r,
+            Err(e) => {
                 return StepResult {
                     step_name: Self::NAME.to_string(),
                     success: false,
                     output: serde_json::Value::Null,
-                    error: Some("No raw_recipe in extract output".to_string()),
+                    error: Some(e),
                     duration_ms: start.elapsed().as_millis() as u64,
                     next_step: None,
                 };
@@ -177,4 +180,79 @@ fn extract_trailing_marker(s: &str) -> String {
         }
     }
     String::new()
+}
+
+#[cfg(test)]
+mod tests {
+    use std::collections::HashMap;
+    use std::error::Error;
+
+    use serde_json::{json, Value as JsonValue};
+
+    use super::ParseIngredientsStep;
+    use crate::pipeline::{PipelineStep, StepContext, StepOutputStore};
+
+    #[derive(Default)]
+    struct TestOutputStore {
+        outputs: HashMap<String, JsonValue>,
+    }
+
+    impl StepOutputStore for TestOutputStore {
+        fn get_output(&self, step_name: &str) -> Option<JsonValue> {
+            self.outputs.get(step_name).cloned()
+        }
+
+        fn save_output(
+            &mut self,
+            _step_name: &str,
+            _output: &JsonValue,
+            _duration_ms: i64,
+            _success: bool,
+            _error: Option<&str>,
+        ) -> Result<(), Box<dyn Error + Send + Sync>> {
+            Ok(())
+        }
+    }
+
+    #[tokio::test]
+    async fn malformed_raw_recipe_reports_deserialization_error() {
+        let mut outputs = TestOutputStore::default();
+        outputs.outputs.insert(
+            "extract_recipe".to_string(),
+            json!({ "raw_recipe": { "title": "Soup" } }),
+        );
+        let ctx = StepContext {
+            url: "https://example.test/soup",
+            outputs: &outputs,
+        };
+
+        let result = ParseIngredientsStep.execute(&ctx).await;
+
+        assert!(!result.success);
+        let err = result.error.unwrap();
+        assert!(
+            err.starts_with("Malformed raw_recipe in extract_recipe output:"),
+            "unexpected error: {err}"
+        );
+    }
+
+    #[tokio::test]
+    async fn missing_raw_recipe_reports_missing_field() {
+        let mut outputs = TestOutputStore::default();
+        outputs
+            .outputs
+            .insert("extract_recipe".to_string(), json!({}));
+        let ctx = StepContext {
+            url: "https://example.test/soup",
+            outputs: &outputs,
+        };
+
+        let result = ParseIngredientsStep.execute(&ctx).await;
+
+        assert!(!result.success);
+        assert_eq!(
+            result.error.as_deref(),
+            Some("Missing raw_recipe in extract_recipe output")
+        );
+    }
 }

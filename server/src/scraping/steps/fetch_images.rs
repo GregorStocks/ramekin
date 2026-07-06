@@ -6,7 +6,8 @@ use diesel::prelude::*;
 use uuid::Uuid;
 
 use ramekin_core::pipeline::{
-    steps::FetchImagesStepMeta, PipelineStep, StepContext, StepMetadata, StepResult,
+    deserialize_required_output_field, steps::FetchImagesStepMeta, PipelineStep, StepContext,
+    StepMetadata, StepResult,
 };
 use ramekin_core::{FailedImageFetch, FetchImagesOutput, RawRecipe};
 
@@ -56,17 +57,18 @@ impl PipelineStep for FetchImagesStep {
         };
 
         // Parse raw_recipe to get image URLs
-        let raw_recipe: RawRecipe = match extract_output
-            .get("raw_recipe")
-            .and_then(|v| serde_json::from_value(v.clone()).ok())
-        {
-            Some(r) => r,
-            None => {
+        let raw_recipe: RawRecipe = match deserialize_required_output_field(
+            &extract_output,
+            "extract_recipe",
+            "raw_recipe",
+        ) {
+            Ok(r) => r,
+            Err(e) => {
                 return StepResult {
                     step_name: FetchImagesStepMeta::NAME.to_string(),
                     success: false,
                     output: serde_json::Value::Null,
-                    error: Some("No raw_recipe in extract output".to_string()),
+                    error: Some(e),
                     duration_ms: start.elapsed().as_millis() as u64,
                     next_step: None,
                 };

@@ -7,6 +7,7 @@ use serde_json::json;
 use uuid::Uuid;
 
 use ramekin_core::pipeline::{
+    deserialize_optional_output_field, deserialize_required_output_field,
     step_after_scrape_auto_applied_ai_step, PipelineStep, StepContext, StepMetadata, StepResult,
 };
 
@@ -49,18 +50,55 @@ impl PipelineStep for ApplyNormalizedTitleStep {
         };
 
         let normalize_output = ctx.outputs.get_output("enrich_normalize_title");
-        let changed = normalize_output
-            .as_ref()
-            .and_then(|o| o.get("changed"))
-            .and_then(|v| v.as_bool())
-            .unwrap_or(false);
-        let normalized_title = normalize_output
-            .as_ref()
-            .and_then(|o| o.get("normalized_title"))
-            .and_then(|v| v.as_str())
-            .unwrap_or("")
-            .trim()
-            .to_string();
+        let changed: bool = match deserialize_optional_output_field(
+            normalize_output.as_ref(),
+            "enrich_normalize_title",
+            "changed",
+        ) {
+            Ok(Some(changed)) => changed,
+            Ok(None) => false,
+            Err(e) => {
+                return StepResult {
+                    step_name: Self::NAME.to_string(),
+                    success: false,
+                    output: json!({ "error": e }),
+                    error: Some(e),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                        .map(str::to_string),
+                };
+            }
+        };
+
+        let normalized_title = if changed {
+            match normalize_output
+                .as_ref()
+                .map(|output| {
+                    deserialize_required_output_field::<String>(
+                        output,
+                        "enrich_normalize_title",
+                        "normalized_title",
+                    )
+                })
+                .transpose()
+            {
+                Ok(Some(title)) => title.trim().to_string(),
+                Ok(None) => String::new(),
+                Err(e) => {
+                    return StepResult {
+                        step_name: Self::NAME.to_string(),
+                        success: false,
+                        output: json!({ "error": e }),
+                        error: Some(e),
+                        duration_ms: start.elapsed().as_millis() as u64,
+                        next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                            .map(str::to_string),
+                    };
+                }
+            }
+        } else {
+            String::new()
+        };
 
         if !changed || normalized_title.is_empty() {
             return StepResult {

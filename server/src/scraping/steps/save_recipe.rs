@@ -7,6 +7,7 @@ use serde_json::json;
 use uuid::Uuid;
 
 use ramekin_core::pipeline::{
+    deserialize_optional_output_field, deserialize_required_output_field,
     first_scrape_auto_applied_ai_step_name, steps::SaveRecipeStepMeta, PipelineStep, StepContext,
     StepMetadata, StepResult,
 };
@@ -89,17 +90,18 @@ impl PipelineStep for SaveRecipeStep {
         };
 
         // Parse raw_recipe
-        let raw_recipe: RawRecipe = match extract_output
-            .get("raw_recipe")
-            .and_then(|v| serde_json::from_value(v.clone()).ok())
-        {
-            Some(r) => r,
-            None => {
+        let raw_recipe: RawRecipe = match deserialize_required_output_field(
+            &extract_output,
+            "extract_recipe",
+            "raw_recipe",
+        ) {
+            Ok(r) => r,
+            Err(e) => {
                 return StepResult {
                     step_name: SaveRecipeStepMeta::NAME.to_string(),
                     success: false,
                     output: serde_json::Value::Null,
-                    error: Some("No raw_recipe in extract output".to_string()),
+                    error: Some(e),
                     duration_ms: start.elapsed().as_millis() as u64,
                     next_step: None,
                 };
@@ -107,9 +109,23 @@ impl PipelineStep for SaveRecipeStep {
         };
 
         // Parse extraction method to determine version_source
-        let extraction_method: Option<ExtractionMethod> = extract_output
-            .get("method_used")
-            .and_then(|v| serde_json::from_value(v.clone()).ok());
+        let extraction_method: Option<ExtractionMethod> = match deserialize_optional_output_field(
+            Some(&extract_output),
+            "extract_recipe",
+            "method_used",
+        ) {
+            Ok(method) => method,
+            Err(e) => {
+                return StepResult {
+                    step_name: SaveRecipeStepMeta::NAME.to_string(),
+                    success: false,
+                    output: serde_json::Value::Null,
+                    error: Some(e),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: None,
+                };
+            }
+        };
 
         // Determine version_source based on extraction method
         let version_source = match extraction_method {
@@ -123,21 +139,36 @@ impl PipelineStep for SaveRecipeStep {
         };
 
         // Get photo IDs from fetch_images output
-        let photo_ids: Vec<Uuid> = ctx
-            .outputs
-            .get_output("fetch_images")
-            .and_then(|o| o.get("photo_ids").cloned())
-            .and_then(|v| serde_json::from_value(v).ok())
-            .unwrap_or_default();
+        let fetch_images_output = ctx.outputs.get_output("fetch_images");
+        let photo_ids: Vec<Uuid> = match deserialize_optional_output_field(
+            fetch_images_output.as_ref(),
+            "fetch_images",
+            "photo_ids",
+        ) {
+            Ok(Some(ids)) => ids,
+            Ok(None) => Vec::new(),
+            Err(e) => {
+                return StepResult {
+                    step_name: SaveRecipeStepMeta::NAME.to_string(),
+                    success: false,
+                    output: serde_json::Value::Null,
+                    error: Some(e),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: None,
+                };
+            }
+        };
 
         // Get parsed ingredients from parse_ingredients output, or fall back to
         // simple line-by-line parsing if the step failed or is missing
-        let parsed_ingredients: Vec<Ingredient> = ctx
-            .outputs
-            .get_output("parse_ingredients")
-            .and_then(|o| o.get("ingredients").cloned())
-            .and_then(|v| serde_json::from_value(v).ok())
-            .unwrap_or_else(|| {
+        let parse_ingredients_output = ctx.outputs.get_output("parse_ingredients");
+        let parsed_ingredients: Vec<Ingredient> = match deserialize_optional_output_field(
+            parse_ingredients_output.as_ref(),
+            "parse_ingredients",
+            "ingredients",
+        ) {
+            Ok(Some(ingredients)) => ingredients,
+            Ok(None) => {
                 // Fallback: split by newlines, put each line in the item field
                 raw_recipe
                     .ingredients
@@ -150,7 +181,18 @@ impl PipelineStep for SaveRecipeStep {
                         section: None,
                     })
                     .collect()
-            });
+            }
+            Err(e) => {
+                return StepResult {
+                    step_name: SaveRecipeStepMeta::NAME.to_string(),
+                    success: false,
+                    output: serde_json::Value::Null,
+                    error: Some(e),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: None,
+                };
+            }
+        };
 
         tracing::info!(
             "save_recipe: mode={:?} user_id={} title={:?} version_source={} photos={} ingredients={}",
