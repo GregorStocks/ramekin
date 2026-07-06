@@ -14,16 +14,17 @@ are filed as separate issues (listed at the bottom).
 |---|---|---|---|---|---|
 | Recipe scaling | `ramekin-ui/src/utils/scaleAmount.ts` | `ramekin-ios/Ramekin/RecipeScaleSupport.swift` | none | ~100 | **Yes** — Swift accepts locale decimals (`"1,5"`) and formats results with a locale-aware `NumberFormatter`; TS only accepts/emits `"."` decimals. Same amount can scale differently per platform. |
 | Tag hierarchy | `ramekin-ui/src/utils/tagHierarchy.ts` | `ramekin-ios/Shared/TagHierarchySupport.swift` | `ramekin-core/src/tags.rs` (yes — validation lives here) | ~100–200 | Subtle — in-group sort uses plain lexicographic `.sort()` on raw names (web) vs `localizedCaseInsensitiveCompare` on parsed values (iOS); namespace-list ordering differs (`knownNamespaces` sorts seeded+discovered together, iOS keeps seeded order first). Seeded-namespace list is hardcoded in all three places. |
-| Ingredient display formatting | scattered: inline in `ViewRecipePage.tsx`, `AddToShoppingListModal.tsx`, `utils/formatRecipeForDiff.ts` | centralized: `Ramekin/IngredientFormatting.swift` (+ `IngredientSectionGrouping.swift`) | none | ~60 + ~30 | Yes — diff formatting includes `[Section]` headers on iOS but not web; note/alt-measurement inclusion is parameterized on iOS, hardcoded per call site on web. |
+| Ingredient display formatting | centralized: `utils/ingredientFormatting.ts` (+ callers) | centralized: `Ramekin/IngredientFormatting.swift` (+ `IngredientSectionGrouping.swift`) | none | ~60 + ~30 | Needs vectors — both clients now have centralized functions, but equivalence is not yet pinned across web and iOS. |
 | Meal plan date helpers | `utils/mealPlanHelpers.ts` + locals in `MealPlanPage.tsx` | `Shared/SharedDateFormatters.swift` + locals in `MealPlanView.swift` | none | ~40–50 | Week-start (Monday) computed with different algorithms (manual `getDay()` arithmetic vs `Calendar` weekday math); both currently correct. Web mixes `formatDateLocal`/`formatDateUtc` in one comparison — self-consistent today but fragile. |
-| Shopping list category order | `ShoppingListPage.tsx` `CATEGORY_ORDER` | `ShoppingListView.swift` `categoryOrder` | `ramekin-core/src/ingredient_categorizer.rs` (computes categories; order is client-side) | ~15 | None today, but the 16-entry list is hardcoded in 3 places and any edit must be made 3×. |
+| Shopping list category order | API response `categoryOrder` | API response `categoryOrder` | `server/src/api/shopping_list/list.rs` (yes) | ~15 | None — the canonical order now comes from the API. |
 
-Test coverage is lopsided: iOS has XCTest units for most of these
-(`RecipeScaleSupportTests`, `TagHierarchySupportTests`,
-`IngredientSectionGroupingTests`, `DateFormatterCachingTests`); ramekin-core
-has Rust tests for tags and categorization. **The web client has no unit test
-framework at all** — its only coverage is the Playwright UI suite. Web-side
-drift is currently invisible until a user notices.
+Test coverage is still lopsided, but less than it was when this decision was
+written. iOS has XCTest units for most of these (`RecipeScaleSupportTests`,
+`TagHierarchySupportTests`, `IngredientSectionGroupingTests`,
+`DateFormatterCachingTests`); ramekin-core has Rust tests for tags and
+categorization; and the web client now has Vitest wired through
+`make ui-unit-test`. Web-side pure-logic drift can now be pinned with fast unit
+tests instead of relying only on the Playwright UI suite.
 
 ## Options evaluated
 
@@ -32,8 +33,8 @@ drift is currently invisible until a user notices.
 Works when the data already round-trips through an endpoint and doesn't need
 to react instantly to client-side state. Categories already work this way
 (server computes `category` per item; clients only order/group). Category
-*order* is the one clear remaining candidate — already filed as
-`p3-shopping-list-category-order-from-api`.
+*order* was the one clear remaining candidate, and that work has landed: the
+shopping-list list and sync responses now include `category_order`.
 
 Doesn't fit the other areas: scaling reacts to a client-side multiplier
 without a server round-trip; display formatting and date grouping are
@@ -82,10 +83,9 @@ This fits this repo well:
   `ramekin-core/tests/ingredient_parsing_tests.rs`.
 - XCTest can load JSON fixtures as test resources (xcodegen `project.yml`
   resource entry pointing at the shared directory).
-- The one real prerequisite: **ramekin-ui needs a unit test runner**. Vitest
-  is the obvious choice (Vite is already the build tool). This is a modest,
-  general-purpose investment — plenty of other web logic deserves unit tests
-  too.
+- The original prerequisite has landed: ramekin-ui has a Vitest unit-test
+  runner exposed as `make ui-unit-test`, and web logic tests already consume
+  shared JSON vectors.
 
 Cost is low, and it's incremental: vectors only encode behavior both sides
 *should* share, so writing them forces the divergence decisions (e.g. is
@@ -96,10 +96,10 @@ of leaving them latent.
 
 | Area | Decision |
 |---|---|
-| Shopping list category order | **Option 1** — serve the canonical ordered list from the API. Already filed: `p3-shopping-list-category-order-from-api`. No new issue. |
-| Recipe scaling | **Option 3** — pilot area for shared vectors. Reconcile the locale-decimal divergence while writing the vectors (decide: accept `","` decimals on both, and emit `"."` canonically on both). |
+| Shopping list category order | **Option 1, done** — the API now serves the canonical ordered list in shopping-list list and sync responses. |
+| Recipe scaling | **Option 3, pilot done** — `shared-test-vectors/scale-amount.json` is consumed by both web Vitest and iOS XCTest. |
 | Tag hierarchy | **Option 3, three-way** — vectors for parse/format/normalize/group-order consumed by Rust, TS, and Swift tests, with `tags.rs` as the source of truth for semantics. Keep the 6-entry seeded-namespace list duplicated (it's tiny and now CI-pinned); serving it from the API is not worth an endpoint today. |
-| Ingredient display formatting | **Centralize web first** (it's scattered across three files; iOS already has the right shape), then add vectors for `formatted()`-equivalence in the same series as the other areas. |
+| Ingredient display formatting | **Option 3, next** — web centralization is done; add vectors for `formatted()`-equivalence in the same series as the other areas. |
 | Meal plan date helpers | **Option 3, narrow** — vectors for week-start (date string → Monday date string) and `YYYY-MM-DD` formatting only. Display formatting (day headers) is allowed to differ per platform-idiom; don't vector it. |
 
 ## Preventing future drift
@@ -118,11 +118,9 @@ re-create it. Three mechanisms keep the pattern alive:
 2. **The vectors themselves are the regression net.** Once an area is
    vectored, changing behavior on one client fails that client's tests until
    the vector file is updated, and updating the vector file exercises the
-   other client's tests. For that second half to actually fire, CI wiring
-   matters: iOS CI (`.github/workflows/ios.yml`) only triggers on PRs
-   touching `ramekin-ios/**`, so `shared-test-vectors/` must be added to its
-   trigger paths. This is part of the pilot issue — without it, a vector
-   edit merges without ever running the Swift side.
+   other client's tests. iOS CI (`.github/workflows/ios.yml`) now includes
+   `shared-test-vectors/**` in its trigger paths, so vector edits run the
+   Swift side as well.
 
 3. **Review-time check.** When a PR adds parallel logic to `ramekin-ui/src`
    and `ramekin-ios` without touching `shared-test-vectors/`, that is the
@@ -133,16 +131,11 @@ re-create it. Three mechanisms keep the pattern alive:
 
 ## Follow-up issues filed
 
-1. `p3-web-unit-test-runner` — add Vitest to ramekin-ui, wire into
-   `make test`/CI. Prerequisite for everything below.
-2. `blocked-shared-test-vectors-recipe-scaling` — pilot: vector file layout
-   (`shared-test-vectors/` at repo root), TS + Swift consumption, scaling
-   divergence reconciliation. Blocked on (1).
-3. `p3-centralize-web-ingredient-formatting` — web-only refactor mirroring
-   iOS's `IngredientFormatting`; independent of the test-runner work.
-4. `blocked-shared-test-vectors-remaining-areas` — extend the pilot's
-   conventions to tag hierarchy (three-way incl. Rust), meal-plan week-start,
-   and ingredient formatting (after 3). Blocked on (2).
+Done and deleted per `doc/issues.md`: the web Vitest runner, the recipe-scaling
+shared-vector pilot, centralized web ingredient formatting, and API-provided
+shopping-list category order.
 
-Plus the pre-existing `p3-shopping-list-category-order-from-api` for the
-option-1 move.
+Live follow-up: `blocked-shared-test-vectors-remaining-areas` — extend the
+pilot's conventions to tag hierarchy (three-way incl. Rust), meal-plan
+week-start, and ingredient formatting. It is blocked on using the conventions
+from the completed recipe-scaling pilot.
