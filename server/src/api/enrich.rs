@@ -246,21 +246,18 @@ pub async fn custom_enrich_recipe(
     };
 
     // Call custom enrich
-    let result = match custom_enrich(&ai_client, &recipe_json, &request.instruction, images).await {
-        Ok(r) => r,
+    let modified = match custom_enrich::<RecipeContent>(
+        &ai_client,
+        &recipe_json,
+        &request.instruction,
+        images,
+    )
+    .await
+    {
+        Ok(r) => r.recipe,
         Err(e) => {
             tracing::warn!("Custom enrich AI call failed: {}", e);
             return ApiError::service_unavailable(format!("AI service error: {}", e))
-                .into_response();
-        }
-    };
-
-    // Deserialize the AI response back into RecipeContent
-    let modified: RecipeContent = match serde_json::from_str(&result.recipe_json) {
-        Ok(r) => r,
-        Err(e) => {
-            tracing::warn!("Failed to parse AI response: {}", e);
-            return ApiError::service_unavailable(format!("Failed to parse AI response: {}", e))
                 .into_response();
         }
     };

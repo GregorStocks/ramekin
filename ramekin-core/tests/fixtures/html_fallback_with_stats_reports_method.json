@@ -1,0 +1,11 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/html_fallback/with_stats_reports_method.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Test Recipe",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "1 cup flour"
+    ]
+  }
+}

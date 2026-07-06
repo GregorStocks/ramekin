@@ -1,0 +1,11 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/html_fallback/jetpack_ingredient_groups_malformed_h5_inside_ul.html",
+  "source_url": "https://smittenkitchen.com/recipe",
+  "expected": {
+    "title": "Ginger Meatballs",
+    "ingredients_contains": [
+      "Meatballs",
+      "Broth"
+    ]
+  }
+}

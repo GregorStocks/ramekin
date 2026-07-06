@@ -1,0 +1,17 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/html_fallback/smittenkitchen_post_body_instructions_supplement_empty_jsonld.html",
+  "source_url": "https://smittenkitchen.com/2008/08/slow-roasted-tomatoes/",
+  "expected": {
+    "title": "Slow-Roasted Tomatoes",
+    "method_used": "html_fallback",
+    "instructions_contains": [
+      "Preheat oven",
+      "Bake the tomatoes",
+      "Either use them"
+    ],
+    "instructions_not_contains": [
+      "turning on the oven",
+      "Comment text"
+    ]
+  }
+}

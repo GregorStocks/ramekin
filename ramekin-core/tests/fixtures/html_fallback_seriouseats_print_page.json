@@ -1,0 +1,14 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/html_fallback/seriouseats_print_page.html",
+  "source_url": "https://www.seriouseats.com/toad-in-the-hole",
+  "expected": {
+    "title": "Toad in the Hole",
+    "ingredients_raw": "For the Yorkshire Pudding Batter:\n3 large eggs\n4 ounces all-purpose flour\nFor the Red Onion Gravy:\n2 tablespoons beef drippings\n1 large red onion, thinly sliced",
+    "instructions_contains": [
+      "For the Batter:",
+      "Whisk eggs, flour, and milk",
+      "For the Gravy:",
+      "Slice into wedges"
+    ]
+  }
+}

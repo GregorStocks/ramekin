@@ -169,7 +169,3 @@ pub(super) fn extract_ingredients_from_html_classes(document: &Html) -> Option<S
 
     None
 }
-
-#[cfg(test)]
-#[allow(clippy::print_stdout, clippy::print_stderr)]
-mod tests;
