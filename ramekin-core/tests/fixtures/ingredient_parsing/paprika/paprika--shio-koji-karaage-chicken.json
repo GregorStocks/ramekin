@@ -106,13 +106,7 @@
     },
     {
       "raw": "Coating",
-      "expected": {
-        "item": "Coating",
-        "measurements": [],
-        "note": null,
-        "section": "Marinade",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tbsp all-purpose flour or cake flour, don't use bread flour",
@@ -125,7 +119,7 @@
           }
         ],
         "note": null,
-        "section": "Marinade",
+        "section": "Coating",
         "category": "Baking"
       }
     },
@@ -140,7 +134,7 @@
           }
         ],
         "note": "katakuriko",
-        "section": "Marinade",
+        "section": "Coating",
         "category": "Baking"
       }
     },
@@ -155,7 +149,7 @@
           }
         ],
         "note": "katakuriko",
-        "section": "Marinade",
+        "section": "Coating",
         "category": "Produce"
       }
     }

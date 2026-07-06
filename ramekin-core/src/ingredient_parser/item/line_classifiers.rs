@@ -315,8 +315,9 @@ pub(in crate::ingredient_parser) fn title_case(s: &str) -> String {
 
 pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str) -> bool {
     const TITLE_CASE_SECTION_LABELS: &[&str] = &[
-        "assembly", "batter", "crumb", "crumble", "crust", "dough", "dressing", "filling",
-        "frosting", "garnish", "glaze", "icing", "lid", "marinade", "sauce", "streusel", "topping",
+        "assembly", "batter", "coating", "crumb", "crumble", "crust", "dough", "dressing",
+        "filling", "frosting", "garnish", "glaze", "icing", "lid", "marinade", "puffs", "sauce",
+        "streusel", "topping",
     ];
 
     if name.contains(':')
