@@ -1,0 +1,13 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/virtualweberbullet_summary_strong_paragraphs_do_not_feed_ingredients.html",
+  "source_url": "https://www.virtualweberbullet.com/test-ribs",
+  "expected": {
+    "title": "Test Ribs",
+    "method_used": "html_fallback",
+    "description": "First summary line\n\nSecond summary line",
+    "ingredients_raw": "The Rub:\n1/4 cup paprika\n2 tablespoons salt",
+    "ingredients_not_contains": [
+      "Not a recipe ingredient"
+    ]
+  }
+}

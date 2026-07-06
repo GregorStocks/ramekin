@@ -1,0 +1,5 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/smittenkitchen/huevos_rancheros.html",
+  "source_url": "https://smittenkitchen.com/2008/07/huevos-rancheros/",
+  "expected_error_contains": "recipeIngredient"
+}
