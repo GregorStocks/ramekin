@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Salad",
-      "expected": {
-        "item": "Salad",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup uncooked quinoa (or 1 1/2 cups cooked)",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "or 1 1/2 cups cooked",
+        "section": "Salad",
         "category": "Pasta & Rice"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": "very well toasted and cooled",
+        "section": "Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": "chopped a bit",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -82,6 +81,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -96,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -114,6 +115,7 @@
           }
         ],
         "note": "crumbled or finely grated",
+        "section": "Salad",
         "category": "Cheese"
       }
     },
@@ -123,6 +125,7 @@
         "item": "Few gratings of fresh lemon zest",
         "measurements": [],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },

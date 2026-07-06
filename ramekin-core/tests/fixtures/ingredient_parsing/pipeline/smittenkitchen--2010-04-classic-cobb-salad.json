@@ -173,13 +173,7 @@
     },
     {
       "raw": "Salad",
-      "expected": {
-        "item": "Salad",
-        "measurements": [],
-        "note": null,
-        "section": "Dressing",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 head iceberg lettuce, cored and shredded",
@@ -192,7 +186,7 @@
           }
         ],
         "note": "cored and shredded",
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -207,7 +201,7 @@
           }
         ],
         "note": "chopped",
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -222,7 +216,7 @@
           }
         ],
         "note": "chopped",
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -241,7 +235,7 @@
           }
         ],
         "note": "we used a Stilton, crumbled",
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Cheese"
       }
     },
@@ -256,7 +250,7 @@
           }
         ],
         "note": "roughly chopped",
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -271,7 +265,7 @@
           }
         ],
         "note": "peeled and cut into 1/2-inch cubes",
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Dairy & Eggs"
       }
     },
@@ -286,7 +280,7 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -301,7 +295,7 @@
           }
         ],
         "note": "cooked and cut into 1/2-inch cubes",
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Meat & Seafood"
       }
     },
@@ -316,7 +310,7 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -326,7 +320,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -341,7 +335,7 @@
           }
         ],
         "note": "minced",
-        "section": "Dressing",
+        "section": "Salad",
         "category": "Produce"
       }
     }

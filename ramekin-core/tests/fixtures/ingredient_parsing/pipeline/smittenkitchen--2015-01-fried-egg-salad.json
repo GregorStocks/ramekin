@@ -69,12 +69,7 @@
     },
     {
       "raw": "Salad",
-      "expected": {
-        "item": "Salad",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup lightly-packed torn green leaf lettuce (approximately 2-inch pieces)",
@@ -87,6 +82,7 @@
           }
         ],
         "note": "approximately 2-inch pieces",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -101,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -115,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -129,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -143,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },

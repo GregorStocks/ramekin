@@ -77,12 +77,7 @@
     },
     {
       "raw": "Salad",
-      "expected": {
-        "item": "Salad",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound carrots, peeled and coarsely grated",
@@ -99,6 +94,7 @@
           }
         ],
         "note": "peeled and coarsely grated",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -113,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,6 +124,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Salad",
         "category": "Nuts & Dried Fruit"
       }
     },

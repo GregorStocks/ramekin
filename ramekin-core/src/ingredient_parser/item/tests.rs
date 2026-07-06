@@ -88,6 +88,7 @@ fn test_detect_section_header_title_case_no_colon() {
         Some("Coating".to_string())
     );
     assert_eq!(detect_section_header("Puffs"), Some("Puffs".to_string()));
+    assert_eq!(detect_section_header("Salad"), Some("Salad".to_string()));
     assert_eq!(detect_section_header("Syrup"), Some("Syrup".to_string()));
     assert_eq!(
         detect_section_header("Brown Sugar Coating"),

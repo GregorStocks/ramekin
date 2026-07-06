@@ -160,13 +160,7 @@
     },
     {
       "raw": "Salad",
-      "expected": {
-        "item": "Salad",
-        "measurements": [],
-        "note": null,
-        "section": "Brine",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 small head (2 pounds) green cabbage",
@@ -187,7 +181,7 @@
           }
         ],
         "note": null,
-        "section": "Brine",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -202,7 +196,7 @@
           }
         ],
         "note": null,
-        "section": "Brine",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -217,7 +211,7 @@
           }
         ],
         "note": "I used only 1/2 my very thick one",
-        "section": "Brine",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -232,7 +226,7 @@
           }
         ],
         "note": null,
-        "section": "Brine",
+        "section": "Salad",
         "category": "Produce"
       }
     }

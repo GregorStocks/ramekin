@@ -335,6 +335,7 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
         "lid",
         "marinade",
         "puffs",
+        "salad",
         "sauce",
         "streusel",
         "syrup",
