@@ -47,6 +47,14 @@ struct ExpectedRecipe {
     instructions_contains: Vec<String>,
     #[serde(default)]
     instructions_not_contains: Vec<String>,
+    #[serde(default)]
+    footnotes: Vec<ExpectedFootnote>,
+}
+
+#[derive(Debug, Deserialize)]
+struct ExpectedFootnote {
+    marker: String,
+    text_contains: String,
 }
 
 /// Get the project root directory
@@ -217,6 +225,35 @@ fn test_extraction_golden_files() {
                 unexpected,
                 result.raw_recipe.instructions
             );
+        }
+
+        if !expected.footnotes.is_empty() {
+            let actual_footnotes = result
+                .raw_recipe
+                .footnotes
+                .as_ref()
+                .unwrap_or_else(|| panic!("Expected footnotes for {}", name));
+            assert_eq!(
+                actual_footnotes.len(),
+                expected.footnotes.len(),
+                "Footnote count mismatch for {}",
+                name
+            );
+
+            for (actual, expected) in actual_footnotes.iter().zip(&expected.footnotes) {
+                assert_eq!(
+                    actual.0, expected.marker,
+                    "Footnote marker mismatch for {}",
+                    name
+                );
+                assert!(
+                    actual.1.contains(&expected.text_contains),
+                    "Footnote for {} should contain {:?}\n\nActual:\n{}",
+                    name,
+                    expected.text_contains,
+                    actual.1
+                );
+            }
         }
     }
 }

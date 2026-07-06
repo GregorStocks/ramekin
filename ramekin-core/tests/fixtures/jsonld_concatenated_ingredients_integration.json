@@ -1,0 +1,10 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/jsonld/concatenated_ingredients_integration.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Test Cake",
+    "method_used": "json_ld",
+    "ingredients_raw": "4 large eggs (200g)\n300g granulated sugar\n300g granulated sugar\n1 cup milk",
+    "instructions_raw": "Mix."
+  }
+}
