@@ -88,9 +88,14 @@ export default function ScrapeStatusPage() {
     pollController = controller;
     void pollScrapeJob(getScrapeApi(), id, {
       signal: controller.signal,
+      timeoutMs: null,
       onUpdate: (resp) => {
         setJob(resp);
         setPollError(null);
+      },
+      onPollError: async (err) => {
+        const message = await extractApiError(err, "Failed to load scrape");
+        setPollError(message);
       },
     })
       .then((result) => {

@@ -2,6 +2,7 @@ import type { ScrapeApi, ScrapeJobResponse } from "ramekin-client";
 
 export const SCRAPE_JOB_POLL_INTERVAL_MS = 500;
 export const SCRAPE_JOB_POLL_TIMEOUT_MS = 120_000;
+export const SCRAPE_JOB_LONG_POLL_TIMEOUT_MS = 10 * 60_000;
 
 const TERMINAL_STATUSES = new Set(["completed", "failed"]);
 
@@ -23,9 +24,11 @@ export class PollScrapeJobAbortedError extends Error {
 
 interface PollScrapeJobOptions {
   intervalMs?: number;
-  timeoutMs?: number;
+  timeoutMs?: number | null;
   signal?: AbortSignal;
   onUpdate?: (job: ScrapeJobResponse) => void;
+  onPollError?: (err: unknown) => void | Promise<void>;
+  beforePoll?: () => Promise<void>;
   sleep?: (ms: number) => Promise<void>;
 }
 
@@ -35,30 +38,39 @@ export async function pollScrapeJob(
   opts: PollScrapeJobOptions = {},
 ): Promise<PollScrapeJobResult> {
   const intervalMs = opts.intervalMs ?? SCRAPE_JOB_POLL_INTERVAL_MS;
-  const timeoutMs = opts.timeoutMs ?? SCRAPE_JOB_POLL_TIMEOUT_MS;
+  const timeoutMs =
+    opts.timeoutMs === undefined ? SCRAPE_JOB_POLL_TIMEOUT_MS : opts.timeoutMs;
   const startedAt = Date.now();
   let lastJob: ScrapeJobResponse | null = null;
 
   while (true) {
     throwIfAborted(opts.signal);
-    if (Date.now() - startedAt > timeoutMs) {
+    if (timeoutMs !== null && Date.now() - startedAt > timeoutMs) {
       return { status: "timeout", job: lastJob };
     }
 
-    const job = await scrapeApi.getScrape({ id: jobId });
-    throwIfAborted(opts.signal);
-    lastJob = job;
-    opts.onUpdate?.(job);
+    try {
+      await opts.beforePoll?.();
+      throwIfAborted(opts.signal);
+      const job = await scrapeApi.getScrape({ id: jobId });
+      throwIfAborted(opts.signal);
+      lastJob = job;
+      opts.onUpdate?.(job);
 
-    if (isTerminalScrapeJobStatus(job.status)) {
-      if (job.status === "completed") {
-        return { status: "completed", job };
+      if (isTerminalScrapeJobStatus(job.status)) {
+        if (job.status === "completed") {
+          return { status: "completed", job };
+        }
+        return {
+          status: "failed",
+          job,
+          error: job.error ?? "Scrape job failed",
+        };
       }
-      return {
-        status: "failed",
-        job,
-        error: job.error ?? "Scrape job failed",
-      };
+    } catch (err) {
+      if (err instanceof PollScrapeJobAbortedError) throw err;
+      throwIfAborted(opts.signal);
+      await opts.onPollError?.(err);
     }
 
     await sleep(intervalMs, opts.signal, opts.sleep);

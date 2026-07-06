@@ -9,7 +9,7 @@ import { logger } from "../utils/logger";
 import { ImportExtractionMethod, type ScrapeApi } from "ramekin-client";
 import {
   pollScrapeJob,
-  SCRAPE_JOB_POLL_TIMEOUT_MS,
+  SCRAPE_JOB_LONG_POLL_TIMEOUT_MS,
 } from "../utils/pollScrapeJob";
 
 type RecipeStatus =
@@ -29,13 +29,44 @@ type TerminalResult =
   | { status: "failed"; error: string }
   | { status: "timeout" };
 
+const IMPORT_JOB_POLL_INTERVAL_MS = 2000;
+
 function createJobPoller(scrapeApi: ScrapeApi) {
+  const waitForPollTurn = createQueuedPollTurn(IMPORT_JOB_POLL_INTERVAL_MS);
+
   return async (jobId: string): Promise<TerminalResult> => {
-    const result = await pollScrapeJob(scrapeApi, jobId);
+    const result = await pollScrapeJob(scrapeApi, jobId, {
+      beforePoll: waitForPollTurn,
+      intervalMs: 0,
+      timeoutMs: SCRAPE_JOB_LONG_POLL_TIMEOUT_MS,
+      onPollError: (err) => {
+        logger.warn(
+          "Import",
+          `Error polling scrape job; retrying: ${String(err)}`,
+        );
+      },
+    });
     if (result.status === "failed") {
       return { status: "failed", error: result.error };
     }
     return { status: result.status };
+  };
+}
+
+function createQueuedPollTurn(intervalMs: number) {
+  let nextTurn = Promise.resolve();
+  let lastStartedAt = 0;
+
+  return () => {
+    const turn = nextTurn.then(async () => {
+      const waitMs = Math.max(0, intervalMs - (Date.now() - lastStartedAt));
+      if (waitMs > 0) {
+        await new Promise((resolve) => setTimeout(resolve, waitMs));
+      }
+      lastStartedAt = Date.now();
+    });
+    nextTurn = turn.catch(() => {});
+    return turn;
   };
 }
 
@@ -140,7 +171,7 @@ export default function ImportPage() {
               updateRow(rowIndex, {
                 state: "error",
                 message: `Timed out waiting for import job after ${
-                  SCRAPE_JOB_POLL_TIMEOUT_MS / 1000
+                  SCRAPE_JOB_LONG_POLL_TIMEOUT_MS / 1000
                 }s`,
               });
             }
