@@ -1,9 +1,6 @@
 import UIKit
 import SwiftUI
 import UniformTypeIdentifiers
-import os.log
-
-private let logger = Logger(subsystem: "com.ramekin.app.share", category: "ShareExtension")
 
 /// Share Extension entry point.
 ///
@@ -26,7 +23,6 @@ class ShareViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DebugLogger.shared.log("ShareViewController viewDidLoad called")
-        logger.info("ShareViewController viewDidLoad called")
 
         extractPayload { [weak self] payload in
             DispatchQueue.main.async {
@@ -69,11 +65,11 @@ class ShareViewController: UIViewController {
 
     private func extractPayload(completion: @escaping (SharedPagePayload?) -> Void) {
         guard let extensionItems = extensionContext?.inputItems as? [NSExtensionItem] else {
-            logger.error("No extension items found in context")
+            DebugLogger.shared.log("ERROR: No extension items found in context", source: "ShareExtension")
             completion(nil)
             return
         }
-        logger.info("Found \(extensionItems.count) extension items")
+        DebugLogger.shared.log("Found \(extensionItems.count) extension items", source: "ShareExtension")
         Task {
             completion(await SharedPagePayloadExtractor.extractPayload(from: extensionItems))
         }
@@ -282,18 +278,15 @@ struct ShareExtensionView: View {
         DebugLogger.shared.log("isLoggedIn: \(RamekinAPI.shared.isLoggedIn)")
         DebugLogger.shared.log("serverURL: \(RamekinAPI.shared.serverURL ?? "nil")")
         DebugLogger.shared.log("authToken present: \(RamekinAPI.shared.authToken != nil)")
-        logger.info("checkLoginAndSend called, isLoggedIn: \(RamekinAPI.shared.isLoggedIn)")
 
         guard RamekinAPI.shared.isLoggedIn else {
             DebugLogger.shared.log("ERROR: User not logged in")
-            logger.warning("User not logged in")
             status = .notLoggedIn
             return
         }
 
         guard let payload else {
             DebugLogger.shared.log("ERROR: No payload from Safari preprocessing")
-            logger.error("No payload from Safari preprocessing")
             status = .error
             errorMessage = "Could not read page content. Open the page in Safari and share from there."
             return
@@ -305,7 +298,6 @@ struct ShareExtensionView: View {
 
     private func sendCapture(_ payload: SharedPagePayload) {
         DebugLogger.shared.log("sendCapture for: \(payload.url.absoluteString)")
-        logger.info("Sending capture to API: \(payload.url.absoluteString)")
         status = .sending
         showSlowAffordance = false
 
@@ -335,7 +327,7 @@ struct ShareExtensionView: View {
                         sourceURL: payload.url.absoluteString
                     )
                 }
-                logger.info("API call succeeded")
+                DebugLogger.shared.log("API call succeeded", source: "ShareExtension")
 
                 await MainActor.run {
                     status = .success
@@ -347,7 +339,6 @@ struct ShareExtensionView: View {
                 }
             } catch {
                 DebugLogger.shared.log("API call FAILED: \(error)", source: "ShareExtension")
-                logger.error("API call failed: \(error.localizedDescription)")
                 await MainActor.run {
                     // An expired/invalid session reads as "not signed in" so the
                     // user is pointed at re-authenticating rather than retrying.

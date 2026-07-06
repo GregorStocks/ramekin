@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 
 struct ShoppingListView: View {
-    @StateObject private var store = ShoppingListStore.shared
+    @ObservedObject private var store = ShoppingListStore.shared
     @State private var isAddingItem = false
     @State private var ingredientName = ""
     @State private var amount = ""
@@ -188,7 +188,7 @@ struct ShoppingListView: View {
         guard !name.isEmpty else { return }
 
         let trimmedAmount = amount.trimmingCharacters(in: .whitespaces)
-        ShoppingListStore.shared.addItem(
+        store.addItem(
             name: name,
             amount: trimmedAmount.isEmpty ? nil : trimmedAmount
         )
