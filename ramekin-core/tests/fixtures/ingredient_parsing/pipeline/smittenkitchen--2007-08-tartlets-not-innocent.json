@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For crust",
-      "expected": {
-        "item": "For crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup all purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": "cut into 1/2-inch pieces",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Beverages"
       }
     },
@@ -116,17 +116,13 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
     {
       "raw": "For filling",
-      "expected": {
-        "item": "For filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup whole almonds (about 2 ounces)",
@@ -147,6 +143,7 @@
           }
         ],
         "note": "about 2 ounces",
+        "section": "For Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -165,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -179,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -197,6 +196,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -211,6 +211,7 @@
           }
         ],
         "note": "raspberry liqueur",
+        "section": "For Filling",
         "category": "Beverages"
       }
     },
@@ -229,6 +230,7 @@
           }
         ],
         "note": "cut into 3/4-inch-thick wedges",
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -243,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Condiments & Sauces"
       }
     }

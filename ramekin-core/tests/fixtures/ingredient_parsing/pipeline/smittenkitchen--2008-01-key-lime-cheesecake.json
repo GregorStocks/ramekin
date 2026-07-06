@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For crust",
-      "expected": {
-        "item": "For crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/4 cups fine graham cracker crumbs (5 ounces)",
@@ -30,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Snacks"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "For Crust",
         "category": "Baking"
       }
     },
@@ -70,17 +67,13 @@
           }
         ],
         "note": "melted",
+        "section": "For Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "For filling",
-      "expected": {
-        "item": "For filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 (8 ounce) packages cream cheese at room temperature",
@@ -101,6 +94,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Cheese"
       }
     },
@@ -115,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -129,6 +124,7 @@
           }
         ],
         "note": "strained from about 1 1/2 lb Key limes, Nellie and Joe’s is wonderful, as is Manhattan brand, if you can find it",
+        "section": "For Filling",
         "category": "Produce"
       }
     },
@@ -147,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -165,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -183,6 +181,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Baking"
       }
     },
@@ -201,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -215,17 +215,13 @@
           }
         ],
         "note": null,
+        "section": "For Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "For topping",
-      "expected": {
-        "item": "For topping",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 large firm-ripe mangoes",
@@ -238,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Produce"
       }
     },
@@ -252,6 +249,7 @@
           }
         ],
         "note": "strained",
+        "section": "For Topping",
         "category": "Produce"
       }
     },
@@ -266,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -284,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "For Topping",
         "category": "Baking"
       }
     }

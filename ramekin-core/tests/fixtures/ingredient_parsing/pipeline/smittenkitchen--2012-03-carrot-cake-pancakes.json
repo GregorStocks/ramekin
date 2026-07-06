@@ -263,12 +263,7 @@
     },
     {
       "raw": "Cream cheese topping",
-      "expected": {
-        "item": "Cream cheese topping",
-        "measurements": [],
-        "note": null,
-        "category": "Cheese"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 ounces cream cheese, at room temperature",
@@ -285,6 +280,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Cream Cheese Topping",
         "category": "Cheese"
       }
     },
@@ -303,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Topping",
         "category": "Baking"
       }
     },
@@ -317,6 +314,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -335,6 +333,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Topping",
         "category": "Baking"
       }
     },
@@ -349,6 +348,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Topping",
         "category": "Spices & Seasonings"
       }
     }

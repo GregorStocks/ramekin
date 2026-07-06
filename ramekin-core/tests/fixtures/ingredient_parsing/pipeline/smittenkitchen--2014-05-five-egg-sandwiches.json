@@ -884,13 +884,7 @@
     },
     {
       "raw": "Creamed greens",
-      "expected": {
-        "item": "Creamed greens",
-        "measurements": [],
-        "note": null,
-        "section": "Waffles",
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "5 ounces baby spinach or another fairly quick-cooking green of your choice, stemmed if stems are heavy",
@@ -907,7 +901,7 @@
           }
         ],
         "note": null,
-        "section": "Waffles",
+        "section": "Creamed Greens",
         "category": "Produce"
       }
     },
@@ -917,7 +911,7 @@
         "item": "Butter",
         "measurements": [],
         "note": null,
-        "section": "Waffles",
+        "section": "Creamed Greens",
         "category": "Dairy & Eggs"
       }
     },
@@ -932,7 +926,7 @@
           }
         ],
         "note": "finely chopped",
-        "section": "Waffles",
+        "section": "Creamed Greens",
         "category": "Produce"
       }
     },
@@ -951,7 +945,7 @@
           }
         ],
         "note": null,
-        "section": "Waffles",
+        "section": "Creamed Greens",
         "category": "Dairy & Eggs"
       }
     }

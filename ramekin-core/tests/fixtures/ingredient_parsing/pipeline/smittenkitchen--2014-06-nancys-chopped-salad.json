@@ -118,12 +118,7 @@
     },
     {
       "raw": "Salad and assembly",
-      "expected": {
-        "item": "Salad and assembly",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 (15-ounce) can chickpeas or 1 3/4 cups cooked chickpeas, drained",
@@ -136,6 +131,7 @@
           }
         ],
         "note": "15-ounce, drained",
+        "section": "Salad and Assembly",
         "category": "Canned Goods"
       }
     },
@@ -150,6 +146,7 @@
           }
         ],
         "note": "peeled and sliced into paper-thin rings",
+        "section": "Salad and Assembly",
         "category": "Produce"
       }
     },
@@ -168,6 +165,7 @@
           }
         ],
         "note": "see Note about varieties, sliced 1/8-inch thick then cut into 1/4-inch ribbons",
+        "section": "Salad and Assembly",
         "category": "Cheese"
       }
     },
@@ -186,6 +184,7 @@
           }
         ],
         "note": "sliced 1/8-inch thick then cut into 1/4-inch ribbons",
+        "section": "Salad and Assembly",
         "category": "Meat & Seafood"
       }
     },
@@ -204,6 +203,7 @@
           }
         ],
         "note": "sliced into rings",
+        "section": "Salad and Assembly",
         "category": "Other"
       }
     },
@@ -222,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Salad and Assembly",
         "category": "Produce"
       }
     },
@@ -231,6 +232,7 @@
         "item": "Sea salt",
         "measurements": [],
         "note": null,
+        "section": "Salad and Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -245,6 +247,7 @@
           }
         ],
         "note": "see Note about size",
+        "section": "Salad and Assembly",
         "category": "Produce"
       }
     },
@@ -259,6 +262,7 @@
           }
         ],
         "note": "cored and cut in 1/4-inch ribbons",
+        "section": "Salad and Assembly",
         "category": "Produce"
       }
     },
@@ -273,6 +277,7 @@
           }
         ],
         "note": "optional",
+        "section": "Salad and Assembly",
         "category": "Spices & Seasonings"
       }
     }

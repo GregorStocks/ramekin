@@ -123,6 +123,18 @@ fn test_detect_section_header_title_case_no_colon() {
         Some("Cream Cheese Filling".to_string())
     );
     assert_eq!(
+        detect_section_header("Lemon cream cheese filling"),
+        Some("Lemon Cream Cheese Filling".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Creamed greens"),
+        Some("Creamed Greens".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cream cheese topping"),
+        Some("Cream Cheese Topping".to_string())
+    );
+    assert_eq!(
         detect_section_header("Cream cheese filling"),
         Some("Cream Cheese Filling".to_string())
     );
@@ -146,7 +158,22 @@ fn test_detect_section_header_title_case_no_colon() {
     assert_eq!(detect_section_header("Soy Sauce"), None);
     assert_eq!(detect_section_header("Pizza Dough"), None);
     assert_eq!(detect_section_header("Pizza Sauce"), None);
+    assert_eq!(detect_section_header("Homemade pizza dough"), None);
     assert_eq!(detect_section_header("Cilantro Lime Dressing"), None);
+    assert_eq!(detect_section_header("Jam or other filling"), None);
+    assert_eq!(detect_section_header("Flaky salt, for topping"), None);
+    assert_eq!(
+        detect_section_header("Toasted sesame seeds + chia seeds for topping"),
+        None
+    );
+    assert_eq!(
+        detect_section_header("Few basil leaves, cut into thin ribbons"),
+        None
+    );
+    assert_eq!(
+        detect_section_header("Turbinado sugar-for sprinkling on muffins before baking"),
+        None
+    );
     assert_eq!(detect_section_header("Chocolate Ganache Glaze"), None);
     assert_eq!(
         detect_section_header("Chocolate Peanut Butter Ganache"),

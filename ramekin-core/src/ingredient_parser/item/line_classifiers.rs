@@ -351,9 +351,18 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
         "assembly", "baking", "brine", "coating", "crust", "dough", "filling", "layer", "marinade",
         "ribbons", "rub", "swirl", "topping",
     ];
-    const TITLE_CASE_SECTION_PHRASES: &[&str] =
-        &["cream cheese filling", "cream cheese glaze", "crispy egg"];
-    const TITLE_CASE_SECTION_EXCLUSIONS: &[&str] = &["pizza dough", "pizza sauce", "soy sauce"];
+    const TITLE_CASE_SECTION_PHRASES: &[&str] = &[
+        "cream cheese filling",
+        "cream cheese glaze",
+        "creamed greens",
+        "crispy egg",
+    ];
+    const TITLE_CASE_SECTION_EXCLUSIONS: &[&str] = &[
+        "homemade pizza dough",
+        "pizza dough",
+        "pizza sauce",
+        "soy sauce",
+    ];
     const TITLE_CASE_SMALL_WORDS: &[&str] = &["and", "or", "the", "of", "for", "to", "in", "with"];
 
     if name.contains(':')
@@ -364,6 +373,16 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
     }
 
     let lower = name.to_lowercase();
+    if name.contains(',')
+        || name.contains('+')
+        || name.contains('/')
+        || lower.contains(" for ")
+        || lower.contains("-for ")
+        || lower.contains(" or ")
+    {
+        return false;
+    }
+
     if TITLE_CASE_SECTION_PHRASES
         .iter()
         .any(|phrase| lower == *phrase)
@@ -372,10 +391,18 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
     }
 
     let words = name.split_whitespace();
-    if !words.clone().enumerate().all(|(index, word)| {
+    if !words
+        .clone()
+        .next()
+        .is_some_and(|word| word.chars().next().is_some_and(|c| c.is_uppercase()))
+    {
+        return false;
+    }
+    if !words.clone().skip(1).all(|word| {
         let lower_word = word.to_lowercase();
-        (index > 0 && TITLE_CASE_SMALL_WORDS.contains(&lower_word.as_str()))
+        TITLE_CASE_SMALL_WORDS.contains(&lower_word.as_str())
             || word.chars().next().is_some_and(|c| c.is_uppercase())
+            || word.chars().all(|c| !c.is_alphabetic() || c.is_lowercase())
     }) {
         return false;
     }

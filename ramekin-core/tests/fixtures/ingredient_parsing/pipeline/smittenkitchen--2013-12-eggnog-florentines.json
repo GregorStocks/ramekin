@@ -175,12 +175,7 @@
     },
     {
       "raw": "Eggnog filling",
-      "expected": {
-        "item": "Eggnog filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 large eggs, hard-boiled",
@@ -193,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -211,6 +207,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Eggnog Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -229,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Filling",
         "category": "Baking"
       }
     },
@@ -247,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -265,6 +264,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Filling",
         "category": "Baking"
       }
     },
@@ -279,6 +279,7 @@
           }
         ],
         "note": "I halved this because I’m a spice wimp",
+        "section": "Eggnog Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -297,6 +298,7 @@
           }
         ],
         "note": "I halved this too",
+        "section": "Eggnog Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -315,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "Eggnog Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -329,6 +332,7 @@
           }
         ],
         "note": "can be skipped or reduced",
+        "section": "Eggnog Filling",
         "category": "Beverages"
       }
     }
