@@ -13,7 +13,22 @@
 
 use diesel::dsl::sql;
 use diesel::expression::SqlLiteral;
-use diesel::sql_types::{Array, Bool, Text};
+use diesel::sql_types::{Array, Bool, Nullable, Text, Uuid as SqlUuid};
+
+diesel::define_sql_function! {
+    /// PostgreSQL cardinality() function for array length.
+    fn cardinality(array: Array<Nullable<SqlUuid>>) -> diesel::sql_types::Integer;
+}
+
+diesel::define_sql_function! {
+    /// PostgreSQL lower() function.
+    fn lower(x: diesel::sql_types::Text) -> diesel::sql_types::Text;
+}
+
+diesel::define_sql_function! {
+    /// PostgreSQL random() function.
+    fn random() -> diesel::sql_types::Double;
+}
 
 /// Correlated subquery to fetch tags for the current recipe_versions row.
 ///

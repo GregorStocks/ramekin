@@ -1,3 +1,4 @@
+use crate::api::ai::ai_client_from_env;
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
@@ -12,7 +13,7 @@ use axum::{
     Json,
 };
 use diesel::prelude::*;
-use ramekin_core::ai::{normalize_title as ai_normalize_title, CachingAiClient};
+use ramekin_core::ai::normalize_title as ai_normalize_title;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -97,12 +98,9 @@ pub async fn normalize_title(
 
     let original_title = current_version.title.clone();
 
-    let ai_client = match CachingAiClient::from_env() {
+    let ai_client = match ai_client_from_env() {
         Ok(c) => c,
-        Err(e) => {
-            tracing::error!("AI client unavailable: {}", e);
-            return ApiError::service_unavailable("AI service unavailable").into_response();
-        }
+        Err(e) => return e.into_response(),
     };
 
     let ingredients_str = format_ingredients_for_prompt(&current_version.ingredients);

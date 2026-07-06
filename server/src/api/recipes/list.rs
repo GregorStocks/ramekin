@@ -17,27 +17,10 @@ use axum::{
 };
 use chrono::{DateTime, NaiveDate, Utc};
 use diesel::prelude::*;
-use diesel::sql_types::{Array, Nullable, Uuid as SqlUuid};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
 use uuid::Uuid;
-
-// SQL function declarations for PostgreSQL functions
-diesel::define_sql_function! {
-    /// PostgreSQL cardinality() function for array length
-    fn cardinality(array: Array<Nullable<SqlUuid>>) -> diesel::sql_types::Integer;
-}
-
-diesel::define_sql_function! {
-    /// PostgreSQL random() function
-    fn random() -> diesel::sql_types::Double;
-}
-
-diesel::define_sql_function! {
-    /// PostgreSQL lower() function
-    fn lower(x: diesel::sql_types::Text) -> diesel::sql_types::Text;
-}
 
 /// Sort field for recipe list
 #[derive(Debug, Clone, Copy, Deserialize, ToSchema)]
@@ -360,9 +343,9 @@ pub async fn list_recipes(
     // Has photos filter
     if let Some(has_photos) = parsed.has_photos {
         if has_photos {
-            query = query.filter(cardinality(recipe_versions::photo_ids).gt(0));
+            query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).gt(0));
         } else {
-            query = query.filter(cardinality(recipe_versions::photo_ids).eq(0));
+            query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).eq(0));
         }
     }
 
@@ -494,7 +477,7 @@ pub async fn list_recipes(
     // Add ordering (with recipes::id tiebreaker for deterministic pagination)
     let query = match (sort_by, params.sort_dir) {
         (SortBy::Relevance, _) => unreachable!("relevance is handled above"),
-        (SortBy::Random, _) => query.order(random()),
+        (SortBy::Random, _) => query.order(raw_sql::random()),
         (SortBy::UpdatedAt, Direction::Desc) => {
             query.order((recipe_versions::created_at.desc(), recipes::id.asc()))
         }
@@ -509,12 +492,14 @@ pub async fn list_recipes(
             recipe_versions::rating.asc().nulls_last(),
             recipes::id.asc(),
         )),
-        (SortBy::Title, Direction::Desc) => {
-            query.order((lower(recipe_versions::title).desc(), recipes::id.asc()))
-        }
-        (SortBy::Title, Direction::Asc) => {
-            query.order((lower(recipe_versions::title).asc(), recipes::id.asc()))
-        }
+        (SortBy::Title, Direction::Desc) => query.order((
+            raw_sql::lower(recipe_versions::title).desc(),
+            recipes::id.asc(),
+        )),
+        (SortBy::Title, Direction::Asc) => query.order((
+            raw_sql::lower(recipe_versions::title).asc(),
+            recipes::id.asc(),
+        )),
         (SortBy::CreatedAt, Direction::Desc) => {
             query.order((recipes::created_at.desc(), recipes::id.asc()))
         }

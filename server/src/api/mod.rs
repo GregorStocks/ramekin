@@ -1,3 +1,4 @@
+pub mod ai;
 pub mod client_logs;
 pub mod enrich;
 pub mod error;
