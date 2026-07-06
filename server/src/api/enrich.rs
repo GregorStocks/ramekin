@@ -1,3 +1,4 @@
+use crate::api::ai::ai_client_from_env;
 use crate::api::ApiError;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
@@ -7,7 +8,7 @@ use crate::schema::user_tags;
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
-use ramekin_core::ai::{custom_enrich, suggest_tags, CachingAiClient};
+use ramekin_core::ai::{custom_enrich, suggest_tags};
 use ramekin_core::enrich_ingredient_measurements;
 use ramekin_core::ingredient_parser::ParsedIngredient;
 use serde::Deserialize;
@@ -134,8 +135,7 @@ async fn try_enrich_tags(
         return Ok(request.tags.clone());
     }
 
-    let ai_client =
-        CachingAiClient::from_env().map_err(|e| TagEnrichmentError::Ai(e.to_string()))?;
+    let ai_client = ai_client_from_env().map_err(|e| TagEnrichmentError::Ai(e.message))?;
 
     // Format ingredients as string for prompt
     let ingredients_str = request
@@ -214,12 +214,9 @@ pub async fn custom_enrich_recipe(
     Json(request): Json<CustomEnrichRequest>,
 ) -> impl IntoResponse {
     // Create AI client
-    let ai_client = match CachingAiClient::from_env() {
+    let ai_client = match ai_client_from_env() {
         Ok(c) => c,
-        Err(e) => {
-            tracing::warn!("AI client unavailable: {}", e);
-            return ApiError::service_unavailable("AI service unavailable").into_response();
-        }
+        Err(e) => return e.into_response(),
     };
 
     // Serialize the recipe to JSON for the prompt

@@ -1,3 +1,4 @@
+use crate::api::ai::ai_config_from_env;
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
@@ -14,7 +15,7 @@ use axum::{
 };
 use base64::Engine;
 use diesel::prelude::*;
-use ramekin_core::ai::{generate_recipe_photo as ai_generate_recipe_photo, AiConfig};
+use ramekin_core::ai::generate_recipe_photo as ai_generate_recipe_photo;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -129,12 +130,9 @@ pub async fn generate_photo(
         }
     };
 
-    let config = match AiConfig::from_env() {
+    let config = match ai_config_from_env() {
         Ok(c) => c,
-        Err(e) => {
-            tracing::warn!("AI config unavailable for recipe photo generation: {}", e);
-            return ApiError::service_unavailable("AI service unavailable").into_response();
-        }
+        Err(e) => return e.into_response(),
     };
 
     let ingredients_str = format_ingredients_for_prompt(&current_version.ingredients);
