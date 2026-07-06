@@ -187,13 +187,7 @@
     },
     {
       "raw": "For glaze",
-      "expected": {
-        "item": "For glaze",
-        "measurements": [],
-        "note": null,
-        "section": "For Filling",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 ounces (85 grams) fine-quality bittersweet chocolate (not unsweetened), coarsely chopped",
@@ -210,7 +204,7 @@
           }
         ],
         "note": "not unsweetened, coarsely chopped",
-        "section": "For Filling",
+        "section": "For Glaze",
         "category": "Baking"
       }
     },
@@ -233,7 +227,7 @@
           }
         ],
         "note": "cut into pieces",
-        "section": "For Filling",
+        "section": "For Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -252,7 +246,7 @@
           }
         ],
         "note": null,
-        "section": "For Filling",
+        "section": "For Glaze",
         "category": "Baking"
       }
     }

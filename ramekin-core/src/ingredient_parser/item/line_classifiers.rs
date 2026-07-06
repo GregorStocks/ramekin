@@ -462,6 +462,7 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
             .chars()
             .next()
             .is_some_and(|c| c.is_uppercase())
+            || is_known_title_case_section_label(&normalize_section_name(section_name))
         {
             return Some(normalize_section_name(trimmed));
         }

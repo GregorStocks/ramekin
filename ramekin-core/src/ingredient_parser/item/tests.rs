@@ -150,6 +150,10 @@ fn test_detect_section_header_title_case_no_colon() {
         detect_section_header("For the Kebabs"),
         Some("For the Kebabs".to_string())
     );
+    assert_eq!(
+        detect_section_header("For glaze"),
+        Some("For Glaze".to_string())
+    );
 
     assert_eq!(detect_section_header("Chicken"), None);
     assert_eq!(detect_section_header("Eggs"), None);
