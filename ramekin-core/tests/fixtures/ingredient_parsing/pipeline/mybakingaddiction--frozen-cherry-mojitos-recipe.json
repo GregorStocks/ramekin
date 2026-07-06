@@ -82,7 +82,12 @@
     },
     {
       "raw": "Lime Simple Syrup",
-      "is_section_header": true
+      "expected": {
+        "item": "Lime Simple Syrup",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
     },
     {
       "raw": "1 cup sugar",
@@ -99,7 +104,6 @@
           }
         ],
         "note": null,
-        "section": "Lime Simple Syrup",
         "category": "Baking"
       }
     },
@@ -118,7 +122,6 @@
           }
         ],
         "note": null,
-        "section": "Lime Simple Syrup",
         "category": "Beverages"
       }
     },
@@ -133,7 +136,6 @@
           }
         ],
         "note": null,
-        "section": "Lime Simple Syrup",
         "category": "Produce"
       }
     }

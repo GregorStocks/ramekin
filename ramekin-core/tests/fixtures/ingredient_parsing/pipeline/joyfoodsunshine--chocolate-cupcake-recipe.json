@@ -222,7 +222,12 @@
     },
     {
       "raw": "Chocolate Buttercream Frosting",
-      "is_section_header": true
+      "expected": {
+        "item": "Chocolate Buttercream Frosting",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
     }
   ]
 }

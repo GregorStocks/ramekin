@@ -172,7 +172,12 @@
     },
     {
       "raw": "Mixed Berry Topping",
-      "is_section_header": true
+      "expected": {
+        "item": "Mixed Berry Topping",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
     },
     {
       "raw": "1/2 pint fresh strawberries, hulled and sliced",
@@ -185,7 +190,6 @@
           }
         ],
         "note": "hulled and sliced",
-        "section": "Mixed Berry Topping",
         "category": "Produce"
       }
     },
@@ -200,7 +204,6 @@
           }
         ],
         "note": null,
-        "section": "Mixed Berry Topping",
         "category": "Produce"
       }
     },
@@ -215,7 +218,6 @@
           }
         ],
         "note": null,
-        "section": "Mixed Berry Topping",
         "category": "Produce"
       }
     }

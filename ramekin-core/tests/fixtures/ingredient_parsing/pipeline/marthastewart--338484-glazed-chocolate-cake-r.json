@@ -166,7 +166,12 @@
     },
     {
       "raw": "Chocolate Ganache Glaze",
-      "is_section_header": true
+      "expected": {
+        "item": "Chocolate Ganache Glaze",
+        "measurements": [],
+        "note": null,
+        "category": "Snacks"
+      }
     },
     {
       "raw": "1 cup heavy cream (optional)",
@@ -183,7 +188,6 @@
           }
         ],
         "note": "optional",
-        "section": "Chocolate Ganache Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -193,7 +197,6 @@
         "item": "Chocolate shavings",
         "measurements": [],
         "note": "optional, for garnish",
-        "section": "Chocolate Ganache Glaze",
         "category": "Snacks"
       }
     }

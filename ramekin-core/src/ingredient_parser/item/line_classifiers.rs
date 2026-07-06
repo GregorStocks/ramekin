@@ -341,32 +341,9 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
         "topping",
         "toppings",
     ];
-    const TITLE_CASE_SECTION_SUFFIXES: &[&str] = &[
-        "assembly",
-        "batter",
-        "brine",
-        "coating",
-        "crumb",
-        "crumbs",
-        "crumble",
-        "crust",
-        "dough",
-        "dressing",
-        "filling",
-        "frosting",
-        "ganache",
-        "garnish",
-        "garnishes",
-        "glaze",
-        "icing",
-        "lid",
-        "marinade",
-        "puffs",
-        "streusel",
-        "syrup",
-        "topping",
-        "toppings",
-    ];
+    const TITLE_CASE_SECTION_SUFFIXES: &[&str] =
+        &["brine", "coating", "crust", "dough", "filling", "marinade"];
+    const TITLE_CASE_SECTION_PHRASES: &[&str] = &["cream cheese filling", "cream cheese glaze"];
     const TITLE_CASE_SECTION_EXCLUSIONS: &[&str] = &["pizza dough", "pizza sauce", "soy sauce"];
 
     if name.contains(':')
@@ -377,7 +354,10 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
     }
 
     let lower = name.to_lowercase();
-    if lower == "cream cheese filling" {
+    if TITLE_CASE_SECTION_PHRASES
+        .iter()
+        .any(|phrase| lower == *phrase)
+    {
         return true;
     }
 

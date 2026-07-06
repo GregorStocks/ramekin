@@ -110,7 +110,12 @@
     },
     {
       "raw": "Cilantro Lime Dressing",
-      "is_section_header": true
+      "expected": {
+        "item": "Cilantro Lime Dressing",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
     },
     {
       "raw": "1 to 2  serrano chiles ((blend with the dressing))",
@@ -123,7 +128,6 @@
           }
         ],
         "note": "blend with the dressing",
-        "section": "Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -142,7 +146,6 @@
           }
         ],
         "note": "cubed",
-        "section": "Cilantro Lime Dressing",
         "category": "Cheese"
       }
     },
@@ -152,7 +155,6 @@
         "item": "Florets from 1 small cauliflower",
         "measurements": [],
         "note": null,
-        "section": "Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -162,7 +164,6 @@
         "item": "Extra-virgin olive oil",
         "measurements": [],
         "note": "for drizzling",
-        "section": "Cilantro Lime Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,7 +182,6 @@
           }
         ],
         "note": null,
-        "section": "Cilantro Lime Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -200,7 +200,6 @@
           }
         ],
         "note": "finely chopped",
-        "section": "Cilantro Lime Dressing",
         "category": "Produce"
       }
     },
@@ -210,7 +209,6 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "Cilantro Lime Dressing",
         "category": "Spices & Seasonings"
       }
     }

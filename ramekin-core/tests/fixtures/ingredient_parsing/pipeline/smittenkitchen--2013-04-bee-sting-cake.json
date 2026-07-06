@@ -131,7 +131,12 @@
     },
     {
       "raw": "Honey-Almond-Crunch Topping",
-      "is_section_header": true
+      "expected": {
+        "item": "Honey-Almond-Crunch Topping",
+        "measurements": [],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
     },
     {
       "raw": "6 tablespoons unsalted butter, cold is fine",
@@ -148,7 +153,6 @@
           }
         ],
         "note": "cold is fine",
-        "section": "Honey-almond-crunch Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,7 +171,6 @@
           }
         ],
         "note": null,
-        "section": "Honey-almond-crunch Topping",
         "category": "Baking"
       }
     },
@@ -186,7 +189,6 @@
           }
         ],
         "note": null,
-        "section": "Honey-almond-crunch Topping",
         "category": "Baking"
       }
     },
@@ -205,7 +207,6 @@
           }
         ],
         "note": null,
-        "section": "Honey-almond-crunch Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -228,7 +229,6 @@
           }
         ],
         "note": null,
-        "section": "Honey-almond-crunch Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -243,7 +243,6 @@
           }
         ],
         "note": null,
-        "section": "Honey-almond-crunch Topping",
         "category": "Spices & Seasonings"
       }
     },

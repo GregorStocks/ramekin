@@ -69,7 +69,12 @@
     },
     {
       "raw": "Winter Warmth Syrup",
-      "is_section_header": true
+      "expected": {
+        "item": "Winter Warmth Syrup",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
     },
     {
       "raw": "1 1/2 cups water",
@@ -86,7 +91,6 @@
           }
         ],
         "note": null,
-        "section": "Winter Warmth Syrup",
         "category": "Beverages"
       }
     },
@@ -101,7 +105,6 @@
           }
         ],
         "note": "granulated will do just fine if you do not have them",
-        "section": "Winter Warmth Syrup",
         "category": "Baking"
       }
     },
@@ -116,7 +119,6 @@
           }
         ],
         "note": "and diced",
-        "section": "Winter Warmth Syrup",
         "category": "Produce"
       }
     },
@@ -131,7 +133,6 @@
           }
         ],
         "note": "and diced",
-        "section": "Winter Warmth Syrup",
         "category": "Produce"
       }
     },
@@ -146,7 +147,6 @@
           }
         ],
         "note": null,
-        "section": "Winter Warmth Syrup",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -161,7 +161,6 @@
           }
         ],
         "note": null,
-        "section": "Winter Warmth Syrup",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,7 +175,6 @@
           }
         ],
         "note": null,
-        "section": "Winter Warmth Syrup",
         "category": "Spices & Seasonings"
       }
     },
@@ -191,7 +189,6 @@
           }
         ],
         "note": null,
-        "section": "Winter Warmth Syrup",
         "category": "Spices & Seasonings"
       }
     },
@@ -201,7 +198,6 @@
         "item": "For Each Cocktail",
         "measurements": [],
         "note": null,
-        "section": "Winter Warmth Syrup",
         "category": "Other"
       }
     },
@@ -216,7 +212,6 @@
           }
         ],
         "note": "about 1 by 2 inches",
-        "section": "Winter Warmth Syrup",
         "category": "Produce"
       }
     },
@@ -235,7 +230,6 @@
           }
         ],
         "note": "recipe above",
-        "section": "Winter Warmth Syrup",
         "category": "Condiments & Sauces"
       }
     },
@@ -250,7 +244,6 @@
           }
         ],
         "note": "Fee Brothers black walnut bitters are recommended, I used orange bitters",
-        "section": "Winter Warmth Syrup",
         "category": "Other"
       }
     },
@@ -269,7 +262,6 @@
           }
         ],
         "note": null,
-        "section": "Winter Warmth Syrup",
         "category": "Beverages"
       }
     }

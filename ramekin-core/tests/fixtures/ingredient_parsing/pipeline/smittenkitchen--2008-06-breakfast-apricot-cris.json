@@ -76,7 +76,12 @@
     },
     {
       "raw": "Crisp Topping",
-      "is_section_header": true
+      "expected": {
+        "item": "Crisp Topping",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
     },
     {
       "raw": "1/2 stick (4 tablespoons, 2 ounces) butter, melted",
@@ -101,7 +106,6 @@
           }
         ],
         "note": "melted",
-        "section": "Crisp Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -116,7 +120,6 @@
           }
         ],
         "note": "turbinado, also sold as Sugar in the Raw, gives an excellent crunch",
-        "section": "Crisp Topping",
         "category": "Baking"
       }
     },
@@ -135,7 +138,6 @@
           }
         ],
         "note": null,
-        "section": "Crisp Topping",
         "category": "Snacks"
       }
     },
@@ -154,7 +156,6 @@
           }
         ],
         "note": "or a mixture of whole wheat and all-purpose flour",
-        "section": "Crisp Topping",
         "category": "Baking"
       }
     },
@@ -169,7 +170,6 @@
           }
         ],
         "note": null,
-        "section": "Crisp Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -184,7 +184,6 @@
           }
         ],
         "note": null,
-        "section": "Crisp Topping",
         "category": "Nuts & Dried Fruit"
       }
     }
