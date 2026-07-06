@@ -246,6 +246,27 @@ fn repair_unclosed_parenthetical_measurement_fragment(s: &str) -> String {
     s.to_string()
 }
 
+fn is_bare_parenthetical_package_size(s: &str) -> bool {
+    let (_, after_qualifier) = strip_leading_measurement_qualifier(s);
+    let (amount, after_amount) = extract_amount(after_qualifier);
+    let Some(amount) = amount else {
+        return false;
+    };
+
+    let Some(((replacement_amount, unit), remaining)) =
+        try_extract_hyphenated_unit_tail(&amount, &after_amount)
+    else {
+        return false;
+    };
+    if replacement_amount != amount || !remaining.trim().is_empty() {
+        return false;
+    }
+
+    let normalized_unit = unit.to_lowercase();
+    let normalized_unit = normalized_unit.trim_end_matches('.');
+    WEIGHT_UNITS_FOR_COMPOUND.contains(&normalized_unit)
+}
+
 fn is_standalone_parenthetical_package_fragment(s: &str) -> bool {
     let trimmed = s.trim();
     if !trimmed.starts_with('(') {
@@ -270,6 +291,7 @@ fn is_standalone_parenthetical_package_fragment(s: &str) -> bool {
     !parse_parenthetical_measurement_details(content)
         .measurements
         .is_empty()
+        || is_bare_parenthetical_package_size(content)
 }
 
 /// Parse a single ingredient line into structured data.
@@ -1382,8 +1404,14 @@ mod tests {
 
     #[test]
     fn test_parse_ingredients_drops_standalone_parenthetical_package_fragment() {
-        let blob = "2 cups white beans, cooked and drained\n(440-gram) cans";
-        let result = parse_ingredients(blob);
+        let blob = [
+            "2 cups white beans, cooked and drained",
+            "(440-gram) cans",
+            "(16-ounce) cans",
+            "(1-pound) packages",
+        ]
+        .join("\n");
+        let result = parse_ingredients(&blob);
 
         assert_eq!(result.len(), 1);
         assert_eq!(result[0].item, "white beans");
