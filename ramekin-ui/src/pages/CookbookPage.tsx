@@ -341,12 +341,20 @@ export default function CookbookPage() {
       sort === "random"
     )
       return sort;
-    return "best";
+    // "best" is not a browse choice; it's only the (disabled) display during a
+    // text search, where results are ranked by relevance. Browsing defaults to
+    // newest-first.
+    return "newest";
   };
+
+  // True when the query has free-text terms to rank against, so search ranks
+  // by relevance and the sort control is inapplicable (mirrors the server's
+  // relevance trigger). Tag/source/photo/date filters are not text terms.
+  const hasTextQuery = () => parsedQuery().textTerms.length > 0;
 
   const handleSortChange = (e: Event) => {
     const value = (e.target as HTMLSelectElement).value as SortOption;
-    setSearchParams({ sort: value === "best" ? undefined : value });
+    setSearchParams({ sort: value === "newest" ? undefined : value });
   };
 
   const loadRecipes = async (appendMode = false, currentOffset = 0) => {
@@ -360,7 +368,13 @@ export default function CookbookPage() {
 
     try {
       const q = searchQuery();
-      const { sortBy, sortDir } = getSortParams(sortOption());
+      // A text search ranks by relevance (no explicit sort); the browse sort
+      // applies only when there's no text to rank against. Tag/source/photo
+      // filters aren't text terms, so a filter-only query still uses the sort.
+      // "best" maps to no sort params, i.e. server relevance.
+      const { sortBy, sortDir } = getSortParams(
+        hasTextQuery() ? "best" : sortOption(),
+      );
       const response = await getRecipesApi().listRecipes({
         limit: PAGE_SIZE,
         offset: currentOffset,
@@ -929,10 +943,18 @@ export default function CookbookPage() {
         </button>
         <select
           class="sort-select"
-          value={sortOption()}
+          value={hasTextQuery() ? "best" : sortOption()}
+          disabled={hasTextQuery()}
+          title={
+            hasTextQuery()
+              ? "Search results are ranked by relevance"
+              : undefined
+          }
           onChange={handleSortChange}
         >
-          <option value="best">Best match</option>
+          <Show when={hasTextQuery()}>
+            <option value="best">Best match</option>
+          </Show>
           <option value="newest">Newest first</option>
           <option value="oldest">Oldest first</option>
           <option value="rating">Highest rated</option>

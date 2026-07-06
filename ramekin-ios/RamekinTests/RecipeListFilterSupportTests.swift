@@ -58,6 +58,42 @@ final class RecipeListFilterSupportTests: XCTestCase {
         XCTAssertNil(RecipeListFilterSupport.buildQuery(from: RecipeListFilterState()))
     }
 
+    func testHasTextQueryReflectsFreeTextOnly() {
+        func hasText(_ searchText: String) -> Bool {
+            RecipeListFilterSupport.hasTextQuery(
+                RecipeListFilterState(searchText: searchText, photoFilter: .any)
+            )
+        }
+
+        // Free text -> rank by relevance (the list sends no sort).
+        XCTAssertTrue(hasText("garlic bread"))
+        XCTAssertTrue(hasText("\"green beans\""))
+        // Whitespace-only is not a text query.
+        XCTAssertFalse(hasText("   "))
+        // DSL filter tokens typed into the search field are parsed as filters,
+        // not text, so they keep browsing by the chosen sort (mirrors the
+        // server's parse_query).
+        XCTAssertFalse(hasText("tag:dinner"))
+        XCTAssertFalse(hasText("created:>2024-01-01"))
+        XCTAssertFalse(hasText("has:photos"))
+        XCTAssertFalse(hasText("tag:dinner source:nyt"))
+        // A DSL token mixed with real text still ranks by relevance.
+        XCTAssertTrue(hasText("tag:dinner pasta"))
+
+        // Structured filters (tag chips, source, dates) live outside searchText
+        // and are likewise not text terms.
+        XCTAssertFalse(
+            RecipeListFilterSupport.hasTextQuery(
+                RecipeListFilterState(
+                    selectedTags: ["Weeknight"],
+                    photoFilter: .hasPhotos,
+                    source: "Serious Eats",
+                    createdAfter: "2024-04-01"
+                )
+            )
+        )
+    }
+
     func testBuildQueryQuotesHierarchicalTagNames() {
         let state = RecipeListFilterState(
             selectedTags: ["ingredient:chicken", "season:winter"],

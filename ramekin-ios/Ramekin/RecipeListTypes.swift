@@ -2,8 +2,10 @@ import SwiftUI
 
 // MARK: - Sort & Filter Types
 
+/// Sort order for *browsing* the recipe list (no active text search). During
+/// a text search the list ignores this and lets the server rank by relevance;
+/// see RecipeListFilterSupport.hasTextQuery.
 enum RecipeSortOrder: String, CaseIterable {
-    case best
     case newest
     case oldest
     case rating
@@ -11,11 +13,8 @@ enum RecipeSortOrder: String, CaseIterable {
     case created
     case random
 
-    /// nil means "let the server pick": relevance when the query has text
-    /// terms, newest-first otherwise.
-    var sortBy: SortBy? {
+    var sortBy: SortBy {
         switch self {
-        case .best: return nil
         case .newest, .oldest: return .updatedAt
         case .rating: return .rating
         case .title: return .title
@@ -24,9 +23,8 @@ enum RecipeSortOrder: String, CaseIterable {
         }
     }
 
-    var sortDir: Direction? {
+    var sortDir: Direction {
         switch self {
-        case .best: return nil
         case .newest, .rating, .created: return .desc
         case .oldest, .title: return .asc
         case .random: return .desc
@@ -35,7 +33,6 @@ enum RecipeSortOrder: String, CaseIterable {
 
     var label: String {
         switch self {
-        case .best: return "Best match"
         case .newest: return "Newest first"
         case .oldest: return "Oldest first"
         case .rating: return "Highest rated"
