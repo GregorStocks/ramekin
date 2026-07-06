@@ -1,0 +1,17 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/jsonld/empty_ingredients_falls_back_to_html_div.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Apple Bars",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "For the Bars",
+      "1 cup flour",
+      "2 eggs",
+      "1 tablespoon milk"
+    ],
+    "instructions_contains": [
+      "Preheat oven to 350."
+    ]
+  }
+}

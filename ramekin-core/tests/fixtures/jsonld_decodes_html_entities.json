@@ -1,0 +1,15 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/jsonld/decodes_html_entities.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Nami's Rice Crackers",
+    "description": "A delicious & crunchy snack",
+    "method_used": "json_ld",
+    "ingredients_contains": [
+      "\u00bd tsp salt"
+    ],
+    "instructions_contains": [
+      "it's hot"
+    ]
+  }
+}

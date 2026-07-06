@@ -1,0 +1,11 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/jsonld/servings_string.html",
+  "source_url": "https://example.com/recipe",
+  "expected": {
+    "title": "Test Recipe",
+    "method_used": "json_ld",
+    "servings": "4 servings",
+    "ingredients_raw": "1 cup flour",
+    "instructions_raw": "Mix and bake."
+  }
+}

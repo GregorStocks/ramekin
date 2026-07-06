@@ -29,6 +29,8 @@ struct ExpectedRecipe {
     #[serde(default)]
     description: Option<String>,
     #[serde(default)]
+    servings: Option<String>,
+    #[serde(default)]
     method_used: Option<ExtractionMethod>,
     /// Raw ingredients as newline-separated string (current behavior)
     #[serde(default)]
@@ -43,6 +45,14 @@ struct ExpectedRecipe {
     instructions_contains: Vec<String>,
     #[serde(default)]
     instructions_not_contains: Vec<String>,
+    #[serde(default)]
+    footnotes: Vec<ExpectedFootnote>,
+}
+
+#[derive(Debug, Deserialize)]
+struct ExpectedFootnote {
+    marker: String,
+    text_contains: String,
 }
 
 /// Get the project root directory
@@ -142,6 +152,15 @@ fn test_extraction_golden_files() {
             );
         }
 
+        if let Some(expected_servings) = &expected.servings {
+            assert_eq!(
+                result.raw_recipe.servings.as_deref(),
+                Some(expected_servings.as_str()),
+                "Servings mismatch for {}",
+                name
+            );
+        }
+
         if let Some(expected_ingredients) = &expected.ingredients_raw {
             assert_eq!(
                 &result.raw_recipe.ingredients, expected_ingredients,
@@ -196,6 +215,35 @@ fn test_extraction_golden_files() {
                 unexpected,
                 result.raw_recipe.instructions
             );
+        }
+
+        if !expected.footnotes.is_empty() {
+            let actual_footnotes = result
+                .raw_recipe
+                .footnotes
+                .as_ref()
+                .unwrap_or_else(|| panic!("Expected footnotes for {}", name));
+            assert_eq!(
+                actual_footnotes.len(),
+                expected.footnotes.len(),
+                "Footnote count mismatch for {}",
+                name
+            );
+
+            for (actual, expected) in actual_footnotes.iter().zip(&expected.footnotes) {
+                assert_eq!(
+                    actual.0, expected.marker,
+                    "Footnote marker mismatch for {}",
+                    name
+                );
+                assert!(
+                    actual.1.contains(&expected.text_contains),
+                    "Footnote for {} should contain {:?}\n\nActual:\n{}",
+                    name,
+                    expected.text_contains,
+                    actual.1
+                );
+            }
         }
     }
 }
