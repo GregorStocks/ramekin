@@ -1272,6 +1272,30 @@ fn closes_open_paren(s: &str) -> bool {
     scan_paren_balance(s).1
 }
 
+pub fn detect_peer_section_header(raw: &str, current_section: Option<&str>) -> Option<String> {
+    const PEACH_SPLIT_COMPONENT_SECTIONS: &[&str] = &["Crumbs", "Caramel", "Whipped Cream"];
+    const CRUMBS_PEER_LABELS: &[&str] = &["caramel", "whipped cream", "peaches"];
+
+    if !current_section.is_some_and(|section| PEACH_SPLIT_COMPONENT_SECTIONS.contains(&section)) {
+        return None;
+    }
+
+    let trimmed = raw.trim();
+    if trimmed.contains(':')
+        || trimmed.chars().any(|c| c.is_ascii_digit())
+        || !trimmed.chars().any(|c| c.is_alphabetic())
+    {
+        return None;
+    }
+
+    let lower = trimmed.to_lowercase();
+    if CRUMBS_PEER_LABELS.contains(&lower.as_str()) {
+        Some(normalize_section_name(trimmed))
+    } else {
+        None
+    }
+}
+
 /// Parse multiple ingredient lines (separated by newlines).
 /// Detects section headers (lines ending with colon, no measurements) and
 /// applies the section name to subsequent ingredients.
@@ -1315,6 +1339,11 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
             current_section = Some(section_name);
             continue; // Don't emit the header as an ingredient
         }
+        if let Some(section_name) = detect_peer_section_header(trimmed, current_section.as_deref())
+        {
+            current_section = Some(section_name);
+            continue;
+        }
 
         // Parse the ingredient and apply current section
         let mut ingredient = parse_ingredient(trimmed);
@@ -1354,6 +1383,46 @@ mod tests {
         assert_eq!(result[0].item, "flour");
         assert_eq!(result[1].section, Some("Filling".to_string()));
         assert_eq!(result[1].item, "olive oil");
+    }
+
+    #[test]
+    fn test_parse_ingredients_crumbs_peer_sections_without_colons() {
+        let blob = [
+            "Crumbs",
+            "1 cup flour",
+            "Caramel",
+            "2/3 cup sugar",
+            "Whipped cream",
+            "1/2 cup heavy cream",
+            "Peaches",
+            "4 large peaches",
+        ]
+        .join("\n");
+        let result = parse_ingredients(&blob);
+
+        assert_eq!(result.len(), 4);
+        assert_eq!(result[0].item, "flour");
+        assert_eq!(result[0].section, Some("Crumbs".to_string()));
+        assert_eq!(result[1].item, "sugar");
+        assert_eq!(result[1].section, Some("Caramel".to_string()));
+        assert_eq!(result[2].item, "heavy cream");
+        assert_eq!(result[2].section, Some("Whipped Cream".to_string()));
+        assert_eq!(result[3].item, "peaches");
+        assert_eq!(result[3].section, Some("Peaches".to_string()));
+    }
+
+    #[test]
+    fn test_parse_ingredients_peer_labels_stay_ingredients_without_crumbs_section() {
+        let blob = "Peaches\nWhipped cream\nToppings\nWhipped cream";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 3);
+        assert_eq!(result[0].item, "Peaches");
+        assert_eq!(result[0].section, None);
+        assert_eq!(result[1].item, "Whipped cream");
+        assert_eq!(result[1].section, None);
+        assert_eq!(result[2].item, "Whipped cream");
+        assert_eq!(result[2].section, Some("Toppings".to_string()));
     }
 
     #[test]

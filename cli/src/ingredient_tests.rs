@@ -6,8 +6,8 @@ use anyhow::{Context, Result};
 use flate2::read::GzDecoder;
 use ramekin_core::ingredient_categorizer;
 use ramekin_core::ingredient_parser::{
-    detect_section_header, parse_ingredient, parse_ingredients, should_ignore_line, Measurement,
-    ParsedIngredient,
+    detect_peer_section_header, detect_section_header, parse_ingredient, parse_ingredients,
+    should_ignore_line, Measurement, ParsedIngredient,
 };
 use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
 use ramekin_core::volume_to_weight::{
@@ -267,6 +267,7 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                 // Skip lines that should be ignored (scraper artifacts)
                 let mut new_ingredients = Vec::new();
                 let mut batch_iter = batch_results.into_iter().peekable();
+                let mut current_section: Option<String> = None;
 
                 let mut line_idx = 0;
                 while line_idx < raw_lines.len() {
@@ -276,7 +277,9 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                         line_idx += 1;
                         continue;
                     }
-                    if detect_section_header(raw).is_some() {
+                    if let Some(section_name) = detect_section_header(raw)
+                        .or_else(|| detect_peer_section_header(raw, current_section.as_deref()))
+                    {
                         // This is a section header - mark it as such
                         new_ingredients.push(IngredientTestCase {
                             raw: raw.clone(),
@@ -284,6 +287,7 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                             is_section_header: true,
                             expanded: false,
                         });
+                        current_section = Some(section_name);
                         line_idx += 1;
                         continue;
                     }

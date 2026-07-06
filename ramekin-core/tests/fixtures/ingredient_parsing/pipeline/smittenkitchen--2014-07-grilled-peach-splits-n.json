@@ -160,13 +160,7 @@
     },
     {
       "raw": "Caramel",
-      "expected": {
-        "item": "Caramel",
-        "measurements": [],
-        "note": null,
-        "section": "Crumbs",
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2/3 cup (135 grams) granulated sugar",
@@ -183,7 +177,7 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -202,7 +196,7 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -221,7 +215,7 @@
           }
         ],
         "note": "or whiskey or 1 teaspoon vanilla extract",
-        "section": "Crumbs",
+        "section": "Caramel",
         "category": "Beverages"
       }
     },
@@ -236,19 +230,13 @@
           }
         ],
         "note": "or level 1/4 teaspoon fine sea salt",
-        "section": "Crumbs",
+        "section": "Caramel",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Whipped cream",
-      "expected": {
-        "item": "Whipped cream",
-        "measurements": [],
-        "note": null,
-        "section": "Crumbs",
-        "category": "Dairy & Eggs"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) heavy or whipping cream",
@@ -265,7 +253,7 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -280,7 +268,7 @@
           }
         ],
         "note": "optional, or to taste",
-        "section": "Crumbs",
+        "section": "Whipped Cream",
         "category": "Baking"
       }
     },
@@ -299,7 +287,7 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Whipped Cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -318,19 +306,13 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Whipped Cream",
         "category": "Baking"
       }
     },
     {
       "raw": "Peaches",
-      "expected": {
-        "item": "Peaches",
-        "measurements": [],
-        "note": null,
-        "section": "Crumbs",
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Butter, for grill",
@@ -338,7 +320,7 @@
         "item": "Butter, for grill",
         "measurements": [],
         "note": null,
-        "section": "Crumbs",
+        "section": "Peaches",
         "category": "Dairy & Eggs"
       }
     },
@@ -353,7 +335,7 @@
           }
         ],
         "note": "free stone, if you can find them, not that I ever do, halved and pitted",
-        "section": "Crumbs",
+        "section": "Peaches",
         "category": "Produce"
       }
     },
@@ -372,7 +354,7 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Peaches",
         "category": "Condiments & Sauces"
       }
     },
@@ -387,7 +369,7 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Peaches",
         "category": "Spices & Seasonings"
       }
     }

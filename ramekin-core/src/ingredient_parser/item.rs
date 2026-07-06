@@ -4,6 +4,7 @@ mod line_classifiers;
 mod normalize;
 mod prep_notes;
 
+pub(in crate::ingredient_parser) use line_classifiers::normalize_section_name;
 pub use line_classifiers::{detect_section_header, should_ignore_line};
 pub(in crate::ingredient_parser) use normalize::*;
 pub(in crate::ingredient_parser) use prep_notes::*;
