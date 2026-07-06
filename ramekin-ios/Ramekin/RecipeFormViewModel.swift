@@ -122,7 +122,9 @@ extension RecipeFormViewModel {
             availableTags = response.tags
             TagFilterCache.saveAvailableTags(response.tags)
         } catch is CancellationError {
+            DebugLogger.shared.log("loadAvailableTags cancelled", source: "RecipeForm")
         } catch {
+            DebugLogger.shared.log("loadAvailableTags error: \(error.localizedDescription)", source: "RecipeForm")
         }
     }
 

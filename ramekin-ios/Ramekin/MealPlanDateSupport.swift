@@ -14,6 +14,19 @@ enum MealPlanDateSupport {
         ))!
     }
 
+    static func mondayStart(from date: Date, calendar: Calendar = .current) -> Date {
+        let weekday = calendar.component(.weekday, from: date)
+        let daysToSubtract = (weekday + 5) % 7
+        guard let monday = calendar.date(
+            byAdding: .day,
+            value: -daysToSubtract,
+            to: calendar.startOfDay(for: date)
+        ) else {
+            preconditionFailure("Unable to calculate Monday week start")
+        }
+        return monday
+    }
+
     private static let apiCalendar: Calendar = {
         var calendar = Calendar(identifier: .iso8601)
         calendar.timeZone = TimeZone(secondsFromGMT: 0)!
