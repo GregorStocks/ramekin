@@ -1,0 +1,17 @@
+{
+  "title": "Title-case section labels survive ingredient parsing",
+  "description": "The Smitten Kitchen pancetta white bean pot pie ingredient \
+fixture still emits `Lid` and `Filling` as ingredients because the source \
+labels are title-case lines without colons. Existing section-header detection \
+handles colon-suffixed labels and all-caps labels, but not these short \
+title-case labels. Investigate a narrow section-label heuristic that filters \
+this fixture without dropping real one-word ingredients.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-07-05T22:35:32-07:00",
+  "updated_at": "2026-07-05T22:35:32-07:00",
+}

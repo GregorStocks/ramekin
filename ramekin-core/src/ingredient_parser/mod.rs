@@ -126,6 +126,152 @@ fn leading_measurement_consumes_all(s: &str) -> bool {
     amount.is_some() && unit.is_some() && after_unit.trim().is_empty()
 }
 
+fn strip_leading_measurement_qualifier(s: &str) -> (Option<&str>, &str) {
+    let trimmed = s.trim_start();
+    let lower = trimmed.to_lowercase();
+    for qualifier in ["about", "approximately", "approx", "roughly"] {
+        if lower.starts_with(qualifier) {
+            if let Some(after) = trimmed.get(qualifier.len()..) {
+                if after.is_empty() || after.starts_with(char::is_whitespace) {
+                    return (Some(qualifier), after.trim_start());
+                }
+            }
+        }
+    }
+    (None, trimmed)
+}
+
+fn starts_with_measurement_fragment(s: &str) -> bool {
+    let (_, after_qualifier) = strip_leading_measurement_qualifier(s);
+    let (_, after_pre_amount_modifier) = strip_measurement_modifier(after_qualifier);
+    let (amount, after_amount) = extract_amount(&after_pre_amount_modifier);
+    amount.is_some() && !after_amount.trim().is_empty()
+}
+
+fn extract_unit_allowing_attached_item(s: &str) -> (Option<String>, String) {
+    let (unit, after_unit) = extract_unit(s);
+    if unit.is_some() {
+        return (unit, after_unit);
+    }
+
+    let trimmed = s.trim_start();
+    let lower = trimmed.to_lowercase();
+    for unit in UNITS_SORTED.iter().copied().filter(|unit| unit.len() > 1) {
+        if !lower.starts_with(unit) {
+            continue;
+        }
+        let Some(after_unit) = trimmed.get(unit.len()..) else {
+            continue;
+        };
+        let Some(next_char) = after_unit.chars().next() else {
+            continue;
+        };
+        if next_char.is_ascii_alphabetic() {
+            return (
+                Some(trimmed.get(..unit.len()).unwrap_or(unit).to_string()),
+                after_unit.to_string(),
+            );
+        }
+    }
+
+    (None, trimmed.to_string())
+}
+
+fn split_malformed_parenthetical_measurement_item(s: &str) -> Option<(String, String)> {
+    let (qualifier, after_qualifier) = strip_leading_measurement_qualifier(s);
+    let (amount, after_amount) = extract_amount(after_qualifier);
+    let amount = amount?;
+    let (unit, after_unit) = extract_unit_allowing_attached_item(&after_amount);
+    let unit = unit?;
+    let item = after_unit.trim().trim_start_matches(',').trim();
+    if item.is_empty() || !looks_like_parenthetical_item_identity(item) {
+        return None;
+    }
+
+    let measurement = match qualifier {
+        Some(qualifier) => format!("{} {} {}", qualifier, amount, unit),
+        None => format!("{} {}", amount, unit),
+    };
+    Some((measurement, item.to_string()))
+}
+
+fn split_malformed_parenthetical_package_item(s: &str) -> Option<(String, String)> {
+    let (qualifier, after_qualifier) = strip_leading_measurement_qualifier(s);
+    if qualifier.is_some() {
+        return None;
+    }
+
+    let (amount, after_amount) = extract_amount(after_qualifier);
+    let amount = amount?;
+    let ((replacement_amount, unit), after_unit) =
+        try_extract_hyphenated_unit_tail(&amount, &after_amount)?;
+    if replacement_amount != "1" {
+        return None;
+    }
+
+    let item = after_unit.trim().trim_start_matches(',').trim();
+    let identity_segment = item.split(" or ").next().unwrap_or(item).trim();
+    if item.is_empty() || !looks_like_parenthetical_item_identity(identity_segment) {
+        return None;
+    }
+
+    Some((unit, item.to_string()))
+}
+
+fn repair_unclosed_parenthetical_measurement_fragment(s: &str) -> String {
+    let Some(start) = s.find('(') else {
+        return s.to_string();
+    };
+    if find_matching_closing_paren(s, start).is_some() {
+        return s.to_string();
+    }
+
+    let before = s.get(..start).unwrap_or("").trim_end();
+    let content = s.get(start + 1..).unwrap_or("").trim_start();
+    if before.is_empty() {
+        if starts_with_measurement_fragment(content) {
+            return content.to_string();
+        }
+        return s.to_string();
+    }
+
+    if let Some((measurement, item)) = split_malformed_parenthetical_package_item(content) {
+        return join_segments(before, &join_segments(&measurement, &item));
+    }
+
+    if let Some((measurement, item)) = split_malformed_parenthetical_measurement_item(content) {
+        return join_segments(&join_segments(before, &item), &format!("({})", measurement));
+    }
+
+    s.to_string()
+}
+
+fn is_standalone_parenthetical_package_fragment(s: &str) -> bool {
+    let trimmed = s.trim();
+    if !trimmed.starts_with('(') {
+        return false;
+    }
+    let Some(close_idx) = find_matching_closing_paren(trimmed, 0) else {
+        return false;
+    };
+    let content = trimmed.get(1..close_idx).unwrap_or("").trim();
+    let after = trimmed
+        .get(close_idx + 1..)
+        .unwrap_or("")
+        .trim()
+        .trim_end_matches(['.', ',', ';'])
+        .trim()
+        .to_lowercase();
+
+    if after.is_empty() || !CONTAINERS.iter().any(|container| after == *container) {
+        return false;
+    }
+
+    !parse_parenthetical_measurement_details(content)
+        .measurements
+        .is_empty()
+}
+
 /// Parse a single ingredient line into structured data.
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
@@ -175,6 +321,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Issue 5: Normalize double-wrapped parentheticals to single
     // e.g., "((about 4 cloves))" -> "(about 4 cloves)"
     remaining = unwrap_redundant_parentheses(&remaining);
+
+    remaining = repair_unclosed_parenthetical_measurement_fragment(&remaining);
 
     // Strip placeholder parentheticals: TK ("to come") and TODO markers
     // e.g., "1/2 cup (TK g) panko bread crumbs" -> "1/2 cup panko bread crumbs"
@@ -1136,6 +1284,10 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
             continue;
         }
 
+        if is_standalone_parenthetical_package_fragment(trimmed) {
+            continue;
+        }
+
         // Check if this line is a section header
         if let Some(section_name) = detect_section_header(trimmed) {
             current_section = Some(section_name);
@@ -1179,6 +1331,62 @@ mod tests {
         assert!(result[0].section.is_none());
         assert!(result[1].section.is_none());
         assert!(result[2].section.is_none());
+    }
+
+    #[test]
+    fn test_parse_ingredient_repairs_unmatched_leading_measurement_paren() {
+        let result = parse_ingredient("(16-ounce can chickpeas");
+
+        assert_eq!(result.item, "chickpeas");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(
+            result.measurements[0].unit,
+            Some("16-ounce can".to_string())
+        );
+        assert_eq!(result.note, None);
+    }
+
+    #[test]
+    fn test_parse_ingredient_repairs_unclosed_package_parenthetical_after_count() {
+        let result = parse_ingredient("1 (16-ounce can chickpeas or 2 cups homemade chickpeas");
+
+        assert_eq!(result.item, "chickpeas");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(
+            result.measurements[0].unit,
+            Some("16-ounce can".to_string())
+        );
+        assert_eq!(
+            result.note,
+            Some("or 2 cups homemade chickpeas".to_string())
+        );
+    }
+
+    #[test]
+    fn test_parse_ingredient_repairs_unclosed_parenthetical_measurement_note() {
+        let result = parse_ingredient("1 cup (about 3 to 3 1/2 ouncesgrated Parmesan cheese");
+
+        assert_eq!(result.item, "grated Parmesan cheese");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+        assert_eq!(
+            result.measurements[1].amount,
+            Some("3 to 3 1/2".to_string())
+        );
+        assert_eq!(result.measurements[1].unit, Some("oz".to_string()));
+        assert_eq!(result.note, Some("about 3 to 3 1/2 ounces".to_string()));
+    }
+
+    #[test]
+    fn test_parse_ingredients_drops_standalone_parenthetical_package_fragment() {
+        let blob = "2 cups white beans, cooked and drained\n(440-gram) cans";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 1);
+        assert_eq!(result[0].item, "white beans");
     }
 
     #[test]
