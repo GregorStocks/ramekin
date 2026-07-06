@@ -467,9 +467,34 @@ pub(super) fn outside_lacks_item_identity(s: &str) -> bool {
     let (_, after_amount) = extract_amount(&after_pre_amount_modifier);
     let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
     let (_, after_unit) = extract_unit(&after_pre_unit_modifier);
-    let candidate = after_unit.trim().trim_start_matches(',').trim();
+    let candidate = consume_leading_measurement_continuations(after_unit.trim_start_matches(','));
 
-    candidate.is_empty() || is_only_descriptor_or_prep_words(candidate)
+    candidate.is_empty() || is_only_descriptor_or_prep_words(&candidate)
+}
+
+fn consume_leading_measurement_continuations(s: &str) -> String {
+    let mut candidate = s.trim().to_string();
+    loop {
+        let trimmed = candidate.trim_start();
+        let after_plus = if let Some(after_plus) = trimmed.strip_prefix('+') {
+            after_plus
+        } else if trimmed.to_lowercase().starts_with("plus ") {
+            trimmed.get(5..).unwrap_or("")
+        } else {
+            break;
+        };
+        let Some((_, _, after_measurement, _)) =
+            parse_plus_continuation_measurement(after_plus.trim_start())
+        else {
+            break;
+        };
+        candidate = after_measurement
+            .trim()
+            .trim_start_matches(',')
+            .trim()
+            .to_string();
+    }
+    candidate
 }
 
 pub(super) fn is_only_descriptor_or_prep_words(s: &str) -> bool {

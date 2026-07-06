@@ -69,6 +69,63 @@ impl ParsedIngredient {
     }
 }
 
+fn format_measurement_segment(amount: &str, unit: &str) -> String {
+    for modifier in MEASUREMENT_MODIFIERS {
+        if let Some(base_unit) = unit.strip_prefix(&format!("{} ", modifier)) {
+            return format!("{} {} {}", modifier, amount, base_unit);
+        }
+    }
+    format!("{} {}", amount, unit)
+}
+
+fn format_measurement_segment_with_prefix(
+    amount: &str,
+    unit: &str,
+    prefix: Option<&str>,
+) -> String {
+    match prefix {
+        Some(prefix) => format!("{} {} {}", prefix, amount, unit),
+        None => format_measurement_segment(amount, unit),
+    }
+}
+
+fn strip_plus_measurement_prefix(s: &str) -> (Option<String>, String) {
+    let s = s.trim();
+    let lower = s.to_lowercase();
+    for prefix in ["about", "approximately"] {
+        if lower.starts_with(prefix) {
+            if let Some(after) = s.get(prefix.len()..) {
+                if after.is_empty() || after.starts_with(char::is_whitespace) {
+                    return (Some(prefix.to_string()), after.trim_start().to_string());
+                }
+            }
+        }
+    }
+    (None, s.to_string())
+}
+
+fn parse_plus_continuation_measurement(
+    s: &str,
+) -> Option<(String, String, String, Option<String>)> {
+    let (plus_prefix, after_plus_prefix) = strip_plus_measurement_prefix(s);
+    let (pre_amount_modifier, after_modifier) = strip_measurement_modifier(&after_plus_prefix);
+    let (amount, after_amount) = extract_amount(&after_modifier);
+    let (pre_unit_modifier, after_pre_unit) = strip_measurement_modifier(&after_amount);
+    let modifier = pre_unit_modifier.or(pre_amount_modifier).or(plus_prefix);
+    let (unit, remaining) = extract_unit(&after_pre_unit);
+
+    Some((amount?, unit?, remaining, modifier))
+}
+
+fn leading_measurement_consumes_all(s: &str) -> bool {
+    let (_, after_pre_amount_modifier) = strip_measurement_modifier(s);
+    let (amount, after_amount) = extract_amount(&after_pre_amount_modifier);
+    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
+    let (unit, after_unit) = extract_unit(&after_pre_unit_modifier);
+
+    amount.is_some() && unit.is_some() && after_unit.trim().is_empty()
+}
+
 /// Parse a single ingredient line into structured data.
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
@@ -314,14 +371,18 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
     } else if let Some(plus_idx) = remaining.to_lowercase().find(" plus ") {
         // Without comma: check if followed by valid measurement
+        let before_plus = remaining.get(..plus_idx).unwrap_or("").trim();
         let after_plus = remaining.get(plus_idx + 6..).unwrap_or("").trim();
         if !after_plus.is_empty() {
-            let (test_amount, after_test_amount) = extract_amount(after_plus);
-            let (test_unit, _) = extract_unit(&after_test_amount);
+            let (plus_prefix, _) = strip_plus_measurement_prefix(after_plus);
+            let plus_measurement = parse_plus_continuation_measurement(after_plus);
+            let plus_belongs_to_leading_measurement = leading_measurement_consumes_all(before_plus);
 
-            // Only if we DON'T have both amount+unit, treat as note (fallback)
+            // Only if we DON'T have amount+unit, treat as note (fallback)
             // Cases with valid measurement are handled later as compound amounts
-            if test_amount.is_none() || test_unit.is_none() {
+            if plus_measurement.is_none()
+                || (plus_prefix.is_some() && !plus_belongs_to_leading_measurement)
+            {
                 if let Some(plus_part) = remaining.get(plus_idx + 1..) {
                     if note.is_none() {
                         note = Some(plus_part.trim().to_string());
@@ -500,22 +561,37 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         };
 
         // Try to parse a measurement from what follows "plus"
-        let (plus_amount, after_plus_amount) = extract_amount(after_plus);
-        let (plus_unit, after_plus_unit) = extract_unit(&after_plus_amount);
+        let plus_measurement = parse_plus_continuation_measurement(after_plus);
 
         // Only combine if we got BOTH amount AND unit after "plus"
-        if let (Some(p_amt), Some(p_unit)) = (plus_amount, plus_unit) {
+        if let Some((p_amt, p_unit, after_plus_unit, plus_prefix)) = plus_measurement {
             match (&primary_amount, &primary_unit) {
                 // Combine into a single compound amount: "1/2 cup plus 2 tablespoons"
                 (Some(amt), Some(unit)) => {
-                    primary_amount = Some(format!("{} {} plus {} {}", amt, unit, p_amt, p_unit));
+                    primary_amount = Some(format!(
+                        "{} plus {}",
+                        format_measurement_segment(amt, unit),
+                        format_measurement_segment_with_prefix(
+                            &p_amt,
+                            &p_unit,
+                            plus_prefix.as_deref()
+                        )
+                    ));
                     primary_unit = None; // Unit is now embedded in the compound amount
                     remaining = after_plus_unit;
                     continue;
                 }
                 // The amount is already compound: append the next segment
                 (Some(amt), None) if amt.contains(" plus ") => {
-                    primary_amount = Some(format!("{} plus {} {}", amt, p_amt, p_unit));
+                    primary_amount = Some(format!(
+                        "{} plus {}",
+                        amt,
+                        format_measurement_segment_with_prefix(
+                            &p_amt,
+                            &p_unit,
+                            plus_prefix.as_deref()
+                        )
+                    ));
                     remaining = after_plus_unit;
                     continue;
                 }
@@ -651,6 +727,41 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             found_attached_metric = true;
         } else {
             break;
+        }
+    }
+
+    // Step 4.7b: Fold same-unit trailing "+ amount unit" continuations that
+    // appear after the item text, e.g. "3/4 tsp salt + 1/8 tsp".
+    if let (Some(amount), Some(unit)) = (primary_amount.as_ref(), primary_unit.as_ref()) {
+        if let Some(plus_idx) = remaining.rfind(" + ") {
+            let before_plus = remaining.get(..plus_idx).unwrap_or("").trim();
+            let after_plus = remaining.get(plus_idx + 3..).unwrap_or("").trim();
+            if !before_plus.is_empty() {
+                if let Some((plus_amount, Some(plus_unit), after_plus_unit)) =
+                    parse_range_continuation_measurement(after_plus)
+                {
+                    if after_plus_unit.trim().is_empty() && units_share_base(unit, &plus_unit) {
+                        primary_amount = Some(format!("{} plus {}", amount, plus_amount));
+                        remaining = before_plus.to_string();
+                    }
+                }
+            }
+        }
+    }
+
+    // Step 4.7c: Treat mid-item "+ more ..." guidance as a note, matching the
+    // existing handling for ", plus more ...".
+    if note.is_none() {
+        if let Some(plus_idx) = remaining.to_lowercase().find(" + ") {
+            let before_plus = remaining.get(..plus_idx).unwrap_or("").trim();
+            let after_plus = remaining.get(plus_idx + 3..).unwrap_or("").trim();
+            if !before_plus.is_empty() && !after_plus.is_empty() {
+                let plus_note = format!("plus {}", after_plus);
+                if is_trailing_guidance_note(&plus_note) {
+                    note = Some(plus_note);
+                    remaining = before_plus.to_string();
+                }
+            }
         }
     }
 
@@ -1266,6 +1377,102 @@ mod tests {
     }
 
     #[test]
+    fn test_plus_sign_compound_measurement_with_modifier() {
+        let result = parse_ingredient(
+            "7 cups + about 6 Tbsp unbleached all-purpose flour (plus more to dust)",
+        );
+        assert_eq!(result.item, "unbleached all-purpose flour");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("7 cups plus about 6 tbsp".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, None);
+        assert_eq!(result.note.as_deref(), Some("plus more to dust"));
+    }
+
+    #[test]
+    fn test_parenthetical_identity_supplies_item_after_compound_measurement() {
+        let result = parse_ingredient("1/3 cup + 2 Tbsp (100 mL white vinegar)");
+        assert_eq!(result.item, "white vinegar");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1/3 cup plus 2 tbsp".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, None);
+        assert_eq!(result.note.as_deref(), Some("100 mL white vinegar"));
+    }
+
+    #[test]
+    fn test_parenthetical_identity_supplies_item_after_modified_compound_measurement() {
+        let result = parse_ingredient("1/3 cup + about 2 Tbsp (100 mL white vinegar)");
+        assert_eq!(result.item, "white vinegar");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1/3 cup plus about 2 tbsp".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, None);
+        assert_eq!(result.note.as_deref(), Some("100 mL white vinegar"));
+    }
+
+    #[test]
+    fn test_parenthetical_identity_supplies_item_after_word_plus_measurement() {
+        let result = parse_ingredient("1/3 cup plus 2 Tbsp (100 mL white vinegar)");
+        assert_eq!(result.item, "white vinegar");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1/3 cup plus 2 tbsp".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, None);
+        assert_eq!(result.note.as_deref(), Some("100 mL white vinegar"));
+    }
+
+    #[test]
+    fn test_word_plus_compound_measurement_with_modifier() {
+        let result = parse_ingredient("1 cup plus about 2 Tbsp flour");
+        assert_eq!(result.item, "flour");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1 cup plus about 2 tbsp".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, None);
+    }
+
+    #[test]
+    fn test_word_plus_modified_measurement_after_item_is_note() {
+        let result = parse_ingredient("2/3 cup powdered sugar plus about 2 tbsp for dusting");
+        assert_eq!(result.item, "powdered sugar");
+        assert_eq!(
+            result.note.as_deref(),
+            Some("plus about 2 tbsp for dusting")
+        );
+    }
+
+    #[test]
+    fn test_parenthetical_identity_supplies_item_after_word_plus_modified_measurement() {
+        let result = parse_ingredient("1/3 cup plus about 2 Tbsp (100 mL white vinegar)");
+        assert_eq!(result.item, "white vinegar");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1/3 cup plus about 2 tbsp".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, None);
+        assert_eq!(result.note.as_deref(), Some("100 mL white vinegar"));
+    }
+
+    #[test]
+    fn test_uppercase_t_period_is_tablespoon() {
+        let result = parse_ingredient("2 T. ice water");
+        assert_eq!(result.item, "ice water");
+        assert_eq!(result.measurements[0].amount, Some("2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tbsp".to_string()));
+
+        let result = parse_ingredient("2 t. kosher salt");
+        assert_eq!(result.item, "kosher salt");
+        assert_eq!(result.measurements[0].amount, Some("2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tsp".to_string()));
+    }
+
+    #[test]
     fn test_chained_plus_compound_measurement() {
         // Chains of "plus" segments fold into a single compound amount
         let result = parse_ingredient("3/4 cup plus 2 Tbsp. plus 1 tsp. sugar, divided");
@@ -1329,6 +1536,26 @@ mod tests {
         assert_eq!(result.item, "Oil");
         assert_eq!(result.measurements[0].amount, Some("1/4".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_mid_item_plus_more_becomes_note() {
+        let result = parse_ingredient("1 tablespoon olive oil + more for drizzling");
+        assert_eq!(result.item, "olive oil");
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tbsp".to_string()));
+        assert_eq!(result.note.as_deref(), Some("plus more for drizzling"));
+    }
+
+    #[test]
+    fn test_mid_item_plus_same_unit_amount_folds_into_measurement() {
+        let result = parse_ingredient("3/4 tsp salt + 1/8 tsp");
+        assert_eq!(result.item, "salt");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("3/4 plus 1/8".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, Some("tsp".to_string()));
     }
 
     #[test]

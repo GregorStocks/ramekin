@@ -91,14 +91,18 @@
     {
       "raw": "4 tablespoons melted butter + extra for cooking",
       "expected": {
-        "item": "melted butter + extra for cooking",
+        "item": "melted butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus extra for cooking",
         "category": "Dairy & Eggs"
       }
     }

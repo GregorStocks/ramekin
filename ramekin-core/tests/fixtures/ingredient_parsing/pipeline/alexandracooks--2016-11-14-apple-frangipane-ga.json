@@ -23,11 +23,15 @@
     {
       "raw": "2 T. sugar",
       "expected": {
-        "item": "T. sugar",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -69,11 +73,11 @@
     {
       "raw": "½ C. + 2 T. ice water",
       "expected": {
-        "item": "2 T. ice water",
+        "item": "ice water",
         "measurements": [
           {
-            "amount": "0.5",
-            "unit": "cup"
+            "amount": "1/2 c plus 2 tbsp",
+            "unit": null
           }
         ],
         "note": null,

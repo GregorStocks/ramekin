@@ -14,14 +14,18 @@
     {
       "raw": "1 tablespoon olive oil + more for drizzling",
       "expected": {
-        "item": "olive oil + more for drizzling",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus more for drizzling",
         "category": "Oils & Vinegars"
       }
     },
