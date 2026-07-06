@@ -4,7 +4,11 @@ struct RecipeListView: View {
     @StateObject private var viewModel: RecipeListViewModel
 
     @MainActor
-    init(viewModel: RecipeListViewModel = RecipeListViewModel()) {
+    init() {
+        _viewModel = StateObject(wrappedValue: RecipeListViewModel())
+    }
+
+    init(viewModel: RecipeListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
 
