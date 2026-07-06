@@ -152,13 +152,7 @@
     },
     {
       "raw": "Muffin",
-      "expected": {
-        "item": "Muffin",
-        "measurements": [],
-        "note": null,
-        "section": "Streusel",
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 large egg",
@@ -171,7 +165,7 @@
           }
         ],
         "note": null,
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Dairy & Eggs"
       }
     },
@@ -190,7 +184,7 @@
           }
         ],
         "note": null,
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -209,7 +203,7 @@
           }
         ],
         "note": null,
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -228,7 +222,7 @@
           }
         ],
         "note": "melted and cooled to lukewarm",
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Dairy & Eggs"
       }
     },
@@ -251,7 +245,7 @@
           }
         ],
         "note": null,
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Dairy & Eggs"
       }
     },
@@ -266,7 +260,7 @@
           }
         ],
         "note": "approx. 120 grams, see Note",
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -285,7 +279,7 @@
           }
         ],
         "note": null,
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -304,7 +298,7 @@
           }
         ],
         "note": null,
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -323,7 +317,7 @@
           }
         ],
         "note": null,
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Baking"
       }
     },
@@ -342,7 +336,7 @@
           }
         ],
         "note": null,
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Spices & Seasonings"
       }
     },
@@ -357,7 +351,7 @@
           }
         ],
         "note": "from about 6 to 8 ounces of stalks",
-        "section": "Streusel",
+        "section": "Muffin",
         "category": "Produce"
       }
     }

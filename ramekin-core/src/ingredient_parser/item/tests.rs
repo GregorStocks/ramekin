@@ -103,6 +103,22 @@ fn test_detect_section_header_title_case_no_colon() {
         Some("Rhubarb Filling".to_string())
     );
     assert_eq!(
+        detect_section_header("Crispy Egg"),
+        Some("Crispy Egg".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Pasta and Assembly"),
+        Some("Pasta and Assembly".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cheesecake Layer"),
+        Some("Cheesecake Layer".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Raspberry Swirl"),
+        Some("Raspberry Swirl".to_string())
+    );
+    assert_eq!(
         detect_section_header("Cream Cheese Filling"),
         Some("Cream Cheese Filling".to_string())
     );

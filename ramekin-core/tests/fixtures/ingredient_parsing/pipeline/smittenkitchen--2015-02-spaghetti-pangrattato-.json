@@ -161,13 +161,7 @@
     },
     {
       "raw": "Crispy Egg",
-      "expected": {
-        "item": "Crispy Egg",
-        "measurements": [],
-        "note": null,
-        "section": "Crumbs",
-        "category": "Dairy & Eggs"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 glug of olive oil per egg",
@@ -180,7 +174,7 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Crispy Egg",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,7 +189,7 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Crispy Egg",
         "category": "Dairy & Eggs"
       }
     },
@@ -205,19 +199,13 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
-        "section": "Crumbs",
+        "section": "Crispy Egg",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Pasta and Assembly",
-      "expected": {
-        "item": "Pasta and Assembly",
-        "measurements": [],
-        "note": null,
-        "section": "Crumbs",
-        "category": "Pasta & Rice"
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 ounces dried spaghetti",
@@ -234,7 +222,7 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Pasta and Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -253,7 +241,7 @@
           }
         ],
         "note": null,
-        "section": "Crumbs",
+        "section": "Pasta and Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -268,7 +256,7 @@
           }
         ],
         "note": "rinsed if salted, chopped",
-        "section": "Crumbs",
+        "section": "Pasta and Assembly",
         "category": "Canned Goods"
       }
     },
@@ -283,7 +271,7 @@
           }
         ],
         "note": "chopped",
-        "section": "Crumbs",
+        "section": "Pasta and Assembly",
         "category": "Produce"
       }
     },
@@ -298,7 +286,7 @@
           }
         ],
         "note": "optional",
-        "section": "Crumbs",
+        "section": "Pasta and Assembly",
         "category": "Cheese"
       }
     }

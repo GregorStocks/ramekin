@@ -287,13 +287,7 @@
     },
     {
       "raw": "Decoration",
-      "expected": {
-        "item": "Decoration",
-        "measurements": [],
-        "note": null,
-        "section": "Frosting",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Powdered sugar",
@@ -301,7 +295,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": null,
-        "section": "Frosting",
+        "section": "Decoration",
         "category": "Baking"
       }
     },
@@ -324,7 +318,7 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
+        "section": "Decoration",
         "category": "Produce"
       }
     },
@@ -347,7 +341,7 @@
           }
         ],
         "note": null,
-        "section": "Frosting",
+        "section": "Decoration",
         "category": "Produce"
       }
     }

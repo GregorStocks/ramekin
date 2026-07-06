@@ -218,13 +218,7 @@
     },
     {
       "raw": "Omelet Ribbons",
-      "expected": {
-        "item": "Omelet Ribbons",
-        "measurements": [],
-        "note": null,
-        "section": "Dressing",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Neutral cooking oil, to coat skillet",
@@ -232,7 +226,7 @@
         "item": "Neutral cooking oil, to coat skillet",
         "measurements": [],
         "note": null,
-        "section": "Dressing",
+        "section": "Omelet Ribbons",
         "category": "Oils & Vinegars"
       }
     },
@@ -247,7 +241,7 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
+        "section": "Omelet Ribbons",
         "category": "Dairy & Eggs"
       }
     },
@@ -266,7 +260,7 @@
           }
         ],
         "note": null,
-        "section": "Dressing",
+        "section": "Omelet Ribbons",
         "category": "Beverages"
       }
     },
@@ -276,7 +270,7 @@
         "item": "A few pinches sugar",
         "measurements": [],
         "note": null,
-        "section": "Dressing",
+        "section": "Omelet Ribbons",
         "category": "Baking"
       }
     },
@@ -286,7 +280,7 @@
         "item": "A few pinches salt",
         "measurements": [],
         "note": null,
-        "section": "Dressing",
+        "section": "Omelet Ribbons",
         "category": "Spices & Seasonings"
       }
     }

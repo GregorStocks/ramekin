@@ -711,13 +711,7 @@
     },
     {
       "raw": "Waffles",
-      "expected": {
-        "item": "Waffles",
-        "measurements": [],
-        "note": null,
-        "section": "To Assemble",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 cups all-purpose flour",
@@ -734,7 +728,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -749,7 +743,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -768,7 +762,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -787,7 +781,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Baking"
       }
     },
@@ -806,7 +800,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Spices & Seasonings"
       }
     },
@@ -825,7 +819,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -844,7 +838,7 @@
           }
         ],
         "note": "melted and cooled slightly",
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -859,7 +853,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -874,7 +868,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Cheese"
       }
     },
@@ -884,7 +878,7 @@
         "item": "Spray cooking oil to coat waffle iron",
         "measurements": [],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Oils & Vinegars"
       }
     },
@@ -894,7 +888,7 @@
         "item": "Creamed greens",
         "measurements": [],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Produce"
       }
     },
@@ -913,7 +907,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Produce"
       }
     },
@@ -923,7 +917,7 @@
         "item": "Butter",
         "measurements": [],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     },
@@ -938,7 +932,7 @@
           }
         ],
         "note": "finely chopped",
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Produce"
       }
     },
@@ -957,7 +951,7 @@
           }
         ],
         "note": null,
-        "section": "To Assemble",
+        "section": "Waffles",
         "category": "Dairy & Eggs"
       }
     }

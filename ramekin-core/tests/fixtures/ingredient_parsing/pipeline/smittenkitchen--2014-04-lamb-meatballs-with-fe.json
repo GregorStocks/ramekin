@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Meatballs",
-      "expected": {
-        "item": "Meatballs",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 to 8 tablespoons water",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Beverages"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": "about 70 grams",
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Cheese"
       }
     },
@@ -108,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -122,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -136,6 +138,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -150,6 +153,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -168,6 +172,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Canned Goods"
       }
     },
@@ -177,6 +182,7 @@
         "item": "Zest of half a lemon",
         "measurements": [],
         "note": null,
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -195,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
     },

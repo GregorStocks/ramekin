@@ -80,13 +80,7 @@
     },
     {
       "raw": "Dry Rub",
-      "expected": {
-        "item": "Dry Rub",
-        "measurements": [],
-        "note": null,
-        "section": "Brine",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons packed dark brown sugar",
@@ -99,7 +93,7 @@
           }
         ],
         "note": null,
-        "section": "Brine",
+        "section": "Dry Rub",
         "category": "Baking"
       }
     },
@@ -114,7 +108,7 @@
           }
         ],
         "note": null,
-        "section": "Brine",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -133,7 +127,7 @@
           }
         ],
         "note": null,
-        "section": "Brine",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,7 +137,7 @@
         "item": "Up to 1 tablespoon ground red pepper or to taste",
         "measurements": [],
         "note": "if you like things quite hot, I used 1/2 teaspoon",
-        "section": "Brine",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,7 +156,7 @@
           }
         ],
         "note": null,
-        "section": "Brine",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,7 +175,7 @@
           }
         ],
         "note": null,
-        "section": "Brine",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -200,7 +194,7 @@
           }
         ],
         "note": null,
-        "section": "Brine",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -219,7 +213,7 @@
           }
         ],
         "note": null,
-        "section": "Brine",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -229,7 +223,7 @@
         "item": "Up to 1 tablespoon coarsely ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "Brine",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     }

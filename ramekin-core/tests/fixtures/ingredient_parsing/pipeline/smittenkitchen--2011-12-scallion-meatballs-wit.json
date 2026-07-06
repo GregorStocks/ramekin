@@ -129,13 +129,7 @@
     },
     {
       "raw": "Meatballs",
-      "expected": {
-        "item": "Meatballs",
-        "measurements": [],
-        "note": null,
-        "section": "Sauce",
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound ground turkey",
@@ -152,7 +146,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -171,7 +165,7 @@
           }
         ],
         "note": "finely chopped",
-        "section": "Sauce",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -194,7 +188,7 @@
           }
         ],
         "note": "about 1/2 cup, the cilantro-averse can use flat-leaf parsley, finely chopped",
-        "section": "Sauce",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -209,7 +203,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -228,7 +222,7 @@
           }
         ],
         "note": "toasted if you can find it",
-        "section": "Sauce",
+        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
     },
@@ -247,7 +241,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -257,7 +251,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "Sauce",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -267,7 +261,7 @@
         "item": "Vegetable oil",
         "measurements": [],
         "note": null,
-        "section": "Sauce",
+        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
     }

@@ -225,13 +225,7 @@
     },
     {
       "raw": "Dip",
-      "expected": {
-        "item": "Dip",
-        "measurements": [],
-        "note": null,
-        "section": "Assembly",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 ounces feta, crumbled",
@@ -248,7 +242,7 @@
           }
         ],
         "note": "crumbled",
-        "section": "Assembly",
+        "section": "Dip",
         "category": "Cheese"
       }
     },
@@ -267,7 +261,7 @@
           }
         ],
         "note": "cold is fine",
-        "section": "Assembly",
+        "section": "Dip",
         "category": "Cheese"
       }
     },
@@ -286,7 +280,7 @@
           }
         ],
         "note": null,
-        "section": "Assembly",
+        "section": "Dip",
         "category": "Oils & Vinegars"
       }
     },
@@ -305,7 +299,7 @@
           }
         ],
         "note": null,
-        "section": "Assembly",
+        "section": "Dip",
         "category": "Produce"
       }
     },
@@ -315,7 +309,7 @@
         "item": "Coarse or kosher salt",
         "measurements": [],
         "note": "changed from 1/2 teaspoon, which could be overkill if your feta is very salty, to taste",
-        "section": "Assembly",
+        "section": "Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -325,7 +319,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "Assembly",
+        "section": "Dip",
         "category": "Spices & Seasonings"
       }
     }

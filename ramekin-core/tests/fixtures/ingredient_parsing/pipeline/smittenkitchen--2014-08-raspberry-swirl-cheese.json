@@ -84,13 +84,7 @@
     },
     {
       "raw": "Raspberry Swirl",
-      "expected": {
-        "item": "Raspberry Swirl",
-        "measurements": [],
-        "note": null,
-        "section": "Crust",
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 ounces (170 grams) fresh or frozen raspberries (which have been thawed or they will not puree easily)",
@@ -107,7 +101,7 @@
           }
         ],
         "note": "which have been thawed or they will not puree easily",
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Produce"
       }
     },
@@ -126,7 +120,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Baking"
       }
     },
@@ -136,7 +130,7 @@
         "item": "Cheesecake",
         "measurements": [],
         "note": null,
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Other"
       }
     },
@@ -155,7 +149,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Cheese"
       }
     },
@@ -174,7 +168,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Baking"
       }
     },
@@ -189,7 +183,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,7 +202,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Baking"
       }
     },
@@ -223,7 +217,7 @@
           }
         ],
         "note": "room temperature",
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Dairy & Eggs"
       }
     },
@@ -233,7 +227,7 @@
         "item": "Chocolate sauce for serving",
         "measurements": [],
         "note": "optional",
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Condiments & Sauces"
       }
     },
@@ -252,7 +246,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Dairy & Eggs"
       }
     },
@@ -271,7 +265,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Raspberry Swirl",
         "category": "Baking"
       }
     }

@@ -323,6 +323,8 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
         "crumbs",
         "crumble",
         "crust",
+        "decoration",
+        "dip",
         "dough",
         "dressing",
         "filling",
@@ -334,6 +336,8 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
         "icing",
         "lid",
         "marinade",
+        "meatballs",
+        "muffin",
         "puffs",
         "salad",
         "sauce",
@@ -341,11 +345,16 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
         "syrup",
         "topping",
         "toppings",
+        "waffles",
     ];
-    const TITLE_CASE_SECTION_SUFFIXES: &[&str] =
-        &["brine", "coating", "crust", "dough", "filling", "marinade"];
-    const TITLE_CASE_SECTION_PHRASES: &[&str] = &["cream cheese filling", "cream cheese glaze"];
+    const TITLE_CASE_SECTION_SUFFIXES: &[&str] = &[
+        "assembly", "baking", "brine", "coating", "crust", "dough", "filling", "layer", "marinade",
+        "ribbons", "rub", "swirl", "topping",
+    ];
+    const TITLE_CASE_SECTION_PHRASES: &[&str] =
+        &["cream cheese filling", "cream cheese glaze", "crispy egg"];
     const TITLE_CASE_SECTION_EXCLUSIONS: &[&str] = &["pizza dough", "pizza sauce", "soy sauce"];
+    const TITLE_CASE_SMALL_WORDS: &[&str] = &["and", "or", "the", "of", "for", "to", "in", "with"];
 
     if name.contains(':')
         || name.chars().any(|c| c.is_ascii_digit())
@@ -363,10 +372,11 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
     }
 
     let words = name.split_whitespace();
-    if !words
-        .clone()
-        .all(|word| word.chars().next().is_some_and(|c| c.is_uppercase()))
-    {
+    if !words.clone().enumerate().all(|(index, word)| {
+        let lower_word = word.to_lowercase();
+        (index > 0 && TITLE_CASE_SMALL_WORDS.contains(&lower_word.as_str()))
+            || word.chars().next().is_some_and(|c| c.is_uppercase())
+    }) {
         return false;
     }
 
