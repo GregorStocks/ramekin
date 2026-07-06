@@ -101,14 +101,22 @@
     {
       "raw": "1 cup (about 3 to 3 1/2 ouncesgrated Parmesan cheese",
       "expected": {
-        "item": "(about 3 to 3 1/2 ouncesgrated Parmesan cheese",
+        "item": "grated Parmesan cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "3 to 3.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "85 to 99",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 to 3 1/2 ounces",
         "category": "Cheese"
       }
     },
