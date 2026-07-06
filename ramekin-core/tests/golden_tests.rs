@@ -3,7 +3,7 @@
 //! These tests verify that extraction from HTML produces expected results.
 //! Test cases are defined as JSON files in the `fixtures/` directory.
 
-use ramekin_core::extract_recipe_with_stats;
+use ramekin_core::{extract_recipe_with_stats, ExtractionMethod};
 use serde::Deserialize;
 use std::fs;
 use std::path::Path;
@@ -25,8 +25,21 @@ struct ExpectedRecipe {
     title: String,
     #[serde(default)]
     description: Option<String>,
+    #[serde(default)]
+    method_used: Option<ExtractionMethod>,
     /// Raw ingredients as newline-separated string (current behavior)
-    ingredients_raw: String,
+    #[serde(default)]
+    ingredients_raw: Option<String>,
+    #[serde(default)]
+    ingredients_contains: Vec<String>,
+    #[serde(default)]
+    ingredients_not_contains: Vec<String>,
+    #[serde(default)]
+    instructions_raw: Option<String>,
+    #[serde(default)]
+    instructions_contains: Vec<String>,
+    #[serde(default)]
+    instructions_not_contains: Vec<String>,
 }
 
 /// Get the project root directory
@@ -80,6 +93,14 @@ fn test_extraction_golden_files() {
         let result = extract_recipe_with_stats(&html, &case.source_url)
             .unwrap_or_else(|e| panic!("Extraction failed for {}: {}", name, e));
 
+        if let Some(expected_method) = case.expected.method_used {
+            assert_eq!(
+                result.method_used, expected_method,
+                "Extraction method mismatch for {}",
+                name
+            );
+        }
+
         // Verify title
         assert_eq!(
             result.raw_recipe.title, case.expected.title,
@@ -97,11 +118,60 @@ fn test_extraction_golden_files() {
             );
         }
 
-        // Verify ingredients (raw string)
-        assert_eq!(
-            result.raw_recipe.ingredients, case.expected.ingredients_raw,
-            "Ingredients mismatch for {}\n\nExpected:\n{}\n\nActual:\n{}",
-            name, case.expected.ingredients_raw, result.raw_recipe.ingredients
-        );
+        if let Some(expected_ingredients) = &case.expected.ingredients_raw {
+            assert_eq!(
+                &result.raw_recipe.ingredients, expected_ingredients,
+                "Ingredients mismatch for {}\n\nExpected:\n{}\n\nActual:\n{}",
+                name, expected_ingredients, result.raw_recipe.ingredients
+            );
+        }
+
+        for expected in &case.expected.ingredients_contains {
+            assert!(
+                result.raw_recipe.ingredients.contains(expected),
+                "Ingredients for {} should contain {:?}\n\nActual:\n{}",
+                name,
+                expected,
+                result.raw_recipe.ingredients
+            );
+        }
+
+        for unexpected in &case.expected.ingredients_not_contains {
+            assert!(
+                !result.raw_recipe.ingredients.contains(unexpected),
+                "Ingredients for {} should not contain {:?}\n\nActual:\n{}",
+                name,
+                unexpected,
+                result.raw_recipe.ingredients
+            );
+        }
+
+        if let Some(expected_instructions) = &case.expected.instructions_raw {
+            assert_eq!(
+                &result.raw_recipe.instructions, expected_instructions,
+                "Instructions mismatch for {}\n\nExpected:\n{}\n\nActual:\n{}",
+                name, expected_instructions, result.raw_recipe.instructions
+            );
+        }
+
+        for expected in &case.expected.instructions_contains {
+            assert!(
+                result.raw_recipe.instructions.contains(expected),
+                "Instructions for {} should contain {:?}\n\nActual:\n{}",
+                name,
+                expected,
+                result.raw_recipe.instructions
+            );
+        }
+
+        for unexpected in &case.expected.instructions_not_contains {
+            assert!(
+                !result.raw_recipe.instructions.contains(unexpected),
+                "Instructions for {} should not contain {:?}\n\nActual:\n{}",
+                name,
+                unexpected,
+                result.raw_recipe.instructions
+            );
+        }
     }
 }
