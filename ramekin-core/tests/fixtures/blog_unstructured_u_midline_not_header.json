@@ -1,0 +1,14 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_u_midline_not_header.html",
+  "source_url": "https://example.com/r",
+  "expected": {
+    "title": "Recipe",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "Olive oil"
+    ],
+    "ingredients_not_contains": [
+      "Olive oil:"
+    ]
+  }
+}

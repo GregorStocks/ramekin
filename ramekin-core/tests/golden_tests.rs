@@ -16,7 +16,10 @@ struct TestCase {
     /// Source URL to use for extraction
     source_url: String,
     /// Expected extraction results
-    expected: ExpectedRecipe,
+    #[serde(default)]
+    expected: Option<ExpectedRecipe>,
+    #[serde(default)]
+    expected_error_contains: Option<String>,
 }
 
 /// Expected recipe extraction results
@@ -89,11 +92,32 @@ fn test_extraction_golden_files() {
             panic!("Failed to read HTML fixture {}: {}", html_path.display(), e)
         });
 
-        // Run extraction
-        let result = extract_recipe_with_stats(&html, &case.source_url)
-            .unwrap_or_else(|e| panic!("Extraction failed for {}: {}", name, e));
+        assert!(
+            case.expected.is_some() ^ case.expected_error_contains.is_some(),
+            "{} must define exactly one of expected or expected_error_contains",
+            name
+        );
 
-        if let Some(expected_method) = case.expected.method_used {
+        // Run extraction
+        let result = extract_recipe_with_stats(&html, &case.source_url);
+        if let Some(expected_error) = &case.expected_error_contains {
+            let err = result.expect_err(&format!("Extraction should fail for {}", name));
+            assert!(
+                err.to_string().contains(expected_error),
+                "Error for {} should contain {:?}\n\nActual:\n{}",
+                name,
+                expected_error,
+                err
+            );
+            continue;
+        }
+
+        let expected = case
+            .expected
+            .expect("checked expected presence before extraction assertions");
+        let result = result.unwrap_or_else(|e| panic!("Extraction failed for {}: {}", name, e));
+
+        if let Some(expected_method) = expected.method_used {
             assert_eq!(
                 result.method_used, expected_method,
                 "Extraction method mismatch for {}",
@@ -103,13 +127,13 @@ fn test_extraction_golden_files() {
 
         // Verify title
         assert_eq!(
-            result.raw_recipe.title, case.expected.title,
+            result.raw_recipe.title, expected.title,
             "Title mismatch for {}",
             name
         );
 
         // Verify description if expected
-        if let Some(expected_desc) = &case.expected.description {
+        if let Some(expected_desc) = &expected.description {
             assert_eq!(
                 result.raw_recipe.description.as_deref(),
                 Some(expected_desc.as_str()),
@@ -118,7 +142,7 @@ fn test_extraction_golden_files() {
             );
         }
 
-        if let Some(expected_ingredients) = &case.expected.ingredients_raw {
+        if let Some(expected_ingredients) = &expected.ingredients_raw {
             assert_eq!(
                 &result.raw_recipe.ingredients, expected_ingredients,
                 "Ingredients mismatch for {}\n\nExpected:\n{}\n\nActual:\n{}",
@@ -126,7 +150,7 @@ fn test_extraction_golden_files() {
             );
         }
 
-        for expected in &case.expected.ingredients_contains {
+        for expected in &expected.ingredients_contains {
             assert!(
                 result.raw_recipe.ingredients.contains(expected),
                 "Ingredients for {} should contain {:?}\n\nActual:\n{}",
@@ -136,7 +160,7 @@ fn test_extraction_golden_files() {
             );
         }
 
-        for unexpected in &case.expected.ingredients_not_contains {
+        for unexpected in &expected.ingredients_not_contains {
             assert!(
                 !result.raw_recipe.ingredients.contains(unexpected),
                 "Ingredients for {} should not contain {:?}\n\nActual:\n{}",
@@ -146,7 +170,7 @@ fn test_extraction_golden_files() {
             );
         }
 
-        if let Some(expected_instructions) = &case.expected.instructions_raw {
+        if let Some(expected_instructions) = &expected.instructions_raw {
             assert_eq!(
                 &result.raw_recipe.instructions, expected_instructions,
                 "Instructions mismatch for {}\n\nExpected:\n{}\n\nActual:\n{}",
@@ -154,7 +178,7 @@ fn test_extraction_golden_files() {
             );
         }
 
-        for expected in &case.expected.instructions_contains {
+        for expected in &expected.instructions_contains {
             assert!(
                 result.raw_recipe.instructions.contains(expected),
                 "Instructions for {} should contain {:?}\n\nActual:\n{}",
@@ -164,7 +188,7 @@ fn test_extraction_golden_files() {
             );
         }
 
-        for unexpected in &case.expected.instructions_not_contains {
+        for unexpected in &expected.instructions_not_contains {
             assert!(
                 !result.raw_recipe.instructions.contains(unexpected),
                 "Instructions for {} should not contain {:?}\n\nActual:\n{}",

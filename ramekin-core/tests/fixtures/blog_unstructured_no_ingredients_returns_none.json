@@ -1,0 +1,5 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_no_ingredients_returns_none.html",
+  "source_url": "https://example.com/paris",
+  "expected_error_contains": "Missing required field: name"
+}

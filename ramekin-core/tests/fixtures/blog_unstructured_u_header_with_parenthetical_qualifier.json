@@ -1,0 +1,12 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_u_header_with_parenthetical_qualifier.html",
+  "source_url": "https://smittenkitchen.com/recipe",
+  "expected": {
+    "title": "Homemade Pop Tarts",
+    "method_used": "html_fallback",
+    "ingredients_raw": "Pastry:\n2 cups flour\n1 egg\nCinnamon Filling:\n1/2 cup brown sugar\n1 teaspoon cinnamon",
+    "ingredients_not_contains": [
+      "Cinnamon Filling (enough for 9 tarts)"
+    ]
+  }
+}
