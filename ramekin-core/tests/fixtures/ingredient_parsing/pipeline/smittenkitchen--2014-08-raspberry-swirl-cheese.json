@@ -126,13 +126,7 @@
     },
     {
       "raw": "Cheesecake",
-      "expected": {
-        "item": "Cheesecake",
-        "measurements": [],
-        "note": null,
-        "section": "Raspberry Swirl",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "32 ounces (905 grams) cream cheese, very soft at room temperature",
@@ -149,7 +143,7 @@
           }
         ],
         "note": null,
-        "section": "Raspberry Swirl",
+        "section": "Cheesecake",
         "category": "Cheese"
       }
     },
@@ -168,7 +162,7 @@
           }
         ],
         "note": null,
-        "section": "Raspberry Swirl",
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -183,7 +177,7 @@
           }
         ],
         "note": null,
-        "section": "Raspberry Swirl",
+        "section": "Cheesecake",
         "category": "Spices & Seasonings"
       }
     },
@@ -202,7 +196,7 @@
           }
         ],
         "note": null,
-        "section": "Raspberry Swirl",
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -217,7 +211,7 @@
           }
         ],
         "note": "room temperature",
-        "section": "Raspberry Swirl",
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,7 +221,7 @@
         "item": "Chocolate sauce for serving",
         "measurements": [],
         "note": "optional",
-        "section": "Raspberry Swirl",
+        "section": "Cheesecake",
         "category": "Condiments & Sauces"
       }
     },
@@ -246,7 +240,7 @@
           }
         ],
         "note": null,
-        "section": "Raspberry Swirl",
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -265,7 +259,7 @@
           }
         ],
         "note": null,
-        "section": "Raspberry Swirl",
+        "section": "Cheesecake",
         "category": "Baking"
       }
     }

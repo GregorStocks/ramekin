@@ -91,6 +91,14 @@ fn test_detect_section_header_title_case_no_colon() {
     assert_eq!(detect_section_header("Salad"), Some("Salad".to_string()));
     assert_eq!(detect_section_header("Syrup"), Some("Syrup".to_string()));
     assert_eq!(
+        detect_section_header("Cheesecake"),
+        Some("Cheesecake".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cider vinegar dip"),
+        Some("Cider Vinegar Dip".to_string())
+    );
+    assert_eq!(
         detect_section_header("Brown Sugar Coating"),
         Some("Brown Sugar Coating".to_string())
     );
@@ -163,6 +171,7 @@ fn test_detect_section_header_title_case_no_colon() {
     assert_eq!(detect_section_header("Pizza Dough"), None);
     assert_eq!(detect_section_header("Pizza Sauce"), None);
     assert_eq!(detect_section_header("Homemade pizza dough"), None);
+    assert_eq!(detect_section_header("Savory Greek Yogurt Dip"), None);
     assert_eq!(detect_section_header("Cilantro Lime Dressing"), None);
     assert_eq!(detect_section_header("Jam or other filling"), None);
     assert_eq!(detect_section_header("Flaky salt, for topping"), None);

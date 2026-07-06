@@ -128,13 +128,7 @@
     },
     {
       "raw": "Cider vinegar dip",
-      "expected": {
-        "item": "Cider vinegar dip",
-        "measurements": [],
-        "note": null,
-        "section": "Dry Rub",
-        "category": "Oils & Vinegars"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon cider vinegar",
@@ -151,7 +145,7 @@
           }
         ],
         "note": null,
-        "section": "Dry Rub",
+        "section": "Cider Vinegar Dip",
         "category": "Oils & Vinegars"
       }
     },
@@ -166,7 +160,7 @@
           }
         ],
         "note": null,
-        "section": "Dry Rub",
+        "section": "Cider Vinegar Dip",
         "category": "Condiments & Sauces"
       }
     },
@@ -181,7 +175,7 @@
           }
         ],
         "note": null,
-        "section": "Dry Rub",
+        "section": "Cider Vinegar Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -196,7 +190,7 @@
           }
         ],
         "note": null,
-        "section": "Dry Rub",
+        "section": "Cider Vinegar Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -206,7 +200,7 @@
         "item": "Shake of smoked hot paprika or chipotle powder",
         "measurements": [],
         "note": null,
-        "section": "Dry Rub",
+        "section": "Cider Vinegar Dip",
         "category": "Spices & Seasonings"
       }
     }

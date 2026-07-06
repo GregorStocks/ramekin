@@ -318,6 +318,7 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
         "assembly",
         "batter",
         "brine",
+        "cheesecake",
         "coating",
         "crumb",
         "crumbs",
@@ -348,8 +349,8 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
         "waffles",
     ];
     const TITLE_CASE_SECTION_SUFFIXES: &[&str] = &[
-        "assembly", "baking", "brine", "coating", "crust", "dough", "filling", "layer", "marinade",
-        "ribbons", "rub", "swirl", "topping",
+        "assembly", "baking", "brine", "coating", "crust", "dip", "dough", "filling", "layer",
+        "marinade", "ribbons", "rub", "swirl", "topping",
     ];
     const TITLE_CASE_SECTION_PHRASES: &[&str] = &[
         "cream cheese filling",
@@ -361,6 +362,7 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
         "homemade pizza dough",
         "pizza dough",
         "pizza sauce",
+        "savory greek yogurt dip",
         "soy sauce",
     ];
     const TITLE_CASE_SMALL_WORDS: &[&str] = &["and", "or", "the", "of", "for", "to", "in", "with"];
