@@ -18,16 +18,16 @@ function scrapeJob(
   } as ScrapeJobResponse;
 }
 
-function scrapeApi(responses: Array<ScrapeJobResponse | Error>): ScrapeApi {
+function scrapeApi(responses: unknown[]): ScrapeApi {
   const getScrape = vi.fn(async () => {
     const response = responses.shift();
     if (!response) {
       throw new Error("No scrape response queued");
     }
-    if (response instanceof Error) {
+    if (response instanceof Error || response instanceof Response) {
       throw response;
     }
-    return response;
+    return response as ScrapeJobResponse;
   });
   return { getScrape } as unknown as ScrapeApi;
 }
@@ -99,6 +99,31 @@ describe("pollScrapeJob", () => {
 
     expect(result.status).toBe("completed");
     expect(pollErrors).toEqual(["temporary failure"]);
+  });
+
+  it("retries 5xx scrape status responses", async () => {
+    const api = scrapeApi([
+      new Response("unavailable", { status: 503 }),
+      scrapeJob("completed"),
+    ]);
+
+    const result = await pollScrapeJob(api, "job-id", {
+      sleep: async () => {},
+    });
+
+    expect(result.status).toBe("completed");
+  });
+
+  it("throws non-transient scrape status responses", async () => {
+    const notFound = new Response("not found", { status: 404 });
+    const api = scrapeApi([notFound]);
+
+    await expect(
+      pollScrapeJob(api, "job-id", {
+        timeoutMs: null,
+        sleep: async () => {},
+      }),
+    ).rejects.toBe(notFound);
   });
 
   it("allows callers to disable timeout", async () => {

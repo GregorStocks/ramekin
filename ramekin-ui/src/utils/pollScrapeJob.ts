@@ -70,6 +70,9 @@ export async function pollScrapeJob(
     } catch (err) {
       if (err instanceof PollScrapeJobAbortedError) throw err;
       throwIfAborted(opts.signal);
+      if (!isRetryablePollError(err)) {
+        throw err;
+      }
       await opts.onPollError?.(err);
     }
 
@@ -81,6 +84,29 @@ function throwIfAborted(signal: AbortSignal | undefined) {
   if (signal?.aborted) {
     throw new PollScrapeJobAbortedError();
   }
+}
+
+function isRetryablePollError(err: unknown): boolean {
+  const response = responseFromError(err);
+  if (!response) {
+    return true;
+  }
+  return response.status === 429 || response.status >= 500;
+}
+
+function responseFromError(err: unknown): Response | null {
+  if (err instanceof Response) {
+    return err;
+  }
+  if (
+    err &&
+    typeof err === "object" &&
+    "response" in err &&
+    err.response instanceof Response
+  ) {
+    return err.response;
+  }
+  return null;
 }
 
 async function sleep(
