@@ -259,6 +259,14 @@ pub(super) fn units_share_base(a: &str, b: &str) -> bool {
 
 pub(super) fn extract_unit(s: &str) -> (Option<String>, String) {
     let s = s.trim();
+
+    if let Some(remaining) = extract_single_letter_period_unit(s, "T.") {
+        return (Some("tbsp".to_string()), remaining);
+    }
+    if let Some(remaining) = extract_single_letter_period_unit(s, "t.") {
+        return (Some("tsp".to_string()), remaining);
+    }
+
     let s_lower = s.to_lowercase();
 
     for &unit in UNITS_SORTED.iter() {
@@ -284,6 +292,20 @@ pub(super) fn extract_unit(s: &str) -> (Option<String>, String) {
     }
 
     (None, s.to_string())
+}
+
+fn extract_single_letter_period_unit(s: &str, marker: &str) -> Option<String> {
+    let after = s.strip_prefix(marker)?;
+    if after.is_empty() || after.starts_with(|c: char| c.is_whitespace() || c == ',') {
+        return Some(
+            after
+                .trim()
+                .trim_start_matches("of ")
+                .trim_start()
+                .to_string(),
+        );
+    }
+    None
 }
 
 /// Count/container nouns that pair with a hyphenated size descriptor.

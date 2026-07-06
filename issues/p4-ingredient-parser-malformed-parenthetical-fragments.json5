@@ -1,0 +1,26 @@
+{
+  "title": "Malformed parenthetical fragments still survive ingredient parsing",
+  "description": "The plus/unit cleanup in \
+`p4-ingredient-parser-residual-plus-and-paren-edge-cases` fixed the safe \
+measurement cases, but the genuinely malformed parenthetical source fragments \
+still remain in `data/unique-ingredients.txt` after the 2026-07-06 pipeline \
+rerun:\n\
+\n\
+- `(16-ounce can chickpeas` from a source line with no closing parenthesis.\n\
+- `(440-gram) cans`, where the preceding line is already parenthesis-balanced \
+and the continuation heuristic has no safe signal to merge it.\n\
+- `(about 3 to 3 1/2 ouncesgrated Parmesan cheese`, from a source typo with a \
+missing space and missing closing parenthesis.\n\
+\n\
+These need a separate, intentionally narrow parser/extraction pass. Avoid a \
+broad leading-`(` merge heuristic unless it is pinned with fixtures and a \
+`make pipeline` diff proving it does not merge unrelated ingredients.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-07-06T20:31:00-07:00",
+  "updated_at": "2026-07-06T20:31:00-07:00",
+}
