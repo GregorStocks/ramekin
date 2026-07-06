@@ -162,12 +162,7 @@
     },
     {
       "raw": "To assemble",
-      "expected": {
-        "item": "To assemble",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 (6-inch) flour or corn tortillas",
@@ -180,6 +175,7 @@
           }
         ],
         "note": "6-inch",
+        "section": "To Assemble",
         "category": "Bakery & Bread"
       }
     },
@@ -189,6 +185,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Oils & Vinegars"
       }
     },
@@ -203,6 +200,7 @@
           }
         ],
         "note": "I use a mix of green, red and other colors, if I can find them, cut into thin strips",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -217,6 +215,7 @@
           }
         ],
         "note": "halved and sliced thin",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -226,6 +225,7 @@
         "item": "Coarse salt",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     }

@@ -190,12 +190,7 @@
     },
     {
       "raw": "To finish",
-      "expected": {
-        "item": "To finish",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) water",
@@ -216,6 +211,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Beverages"
       }
     },
@@ -230,6 +226,7 @@
           }
         ],
         "note": "see Notes below",
+        "section": "To Finish",
         "category": "Baking"
       }
     },
@@ -244,6 +241,7 @@
           }
         ],
         "note": "beaten with 1 teaspoon water",
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,6 +251,7 @@
         "item": "Pretzel salt, coarse salt or sesame seeds",
         "measurements": [],
         "note": null,
+        "section": "To Finish",
         "category": "Spices & Seasonings"
       }
     }

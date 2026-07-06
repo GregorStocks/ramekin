@@ -315,17 +315,70 @@ pub(in crate::ingredient_parser) fn title_case(s: &str) -> String {
 
 pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str) -> bool {
     const TITLE_CASE_SECTION_LABELS: &[&str] = &[
-        "assembly", "batter", "coating", "crumb", "crumble", "crust", "dough", "dressing",
-        "filling", "frosting", "garnish", "glaze", "icing", "lid", "marinade", "puffs", "sauce",
-        "streusel", "syrup", "topping",
+        "assembly",
+        "batter",
+        "brine",
+        "coating",
+        "crumb",
+        "crumbs",
+        "crumble",
+        "crust",
+        "dough",
+        "dressing",
+        "filling",
+        "frosting",
+        "ganache",
+        "garnish",
+        "garnishes",
+        "glaze",
+        "icing",
+        "lid",
+        "marinade",
+        "puffs",
+        "sauce",
+        "streusel",
+        "syrup",
+        "topping",
+        "toppings",
     ];
-    const TITLE_CASE_SECTION_PHRASES: &[&str] = &["brown sugar coating", "cream cheese glaze"];
+    const TITLE_CASE_SECTION_SUFFIXES: &[&str] = &[
+        "assembly",
+        "batter",
+        "brine",
+        "coating",
+        "crumb",
+        "crumbs",
+        "crumble",
+        "crust",
+        "dough",
+        "dressing",
+        "filling",
+        "frosting",
+        "ganache",
+        "garnish",
+        "garnishes",
+        "glaze",
+        "icing",
+        "lid",
+        "marinade",
+        "puffs",
+        "streusel",
+        "syrup",
+        "topping",
+        "toppings",
+    ];
+    const TITLE_CASE_SECTION_EXCLUSIONS: &[&str] = &["pizza dough", "pizza sauce", "soy sauce"];
 
     if name.contains(':')
         || name.chars().any(|c| c.is_ascii_digit())
         || !name.chars().any(|c| c.is_alphabetic())
     {
         return false;
+    }
+
+    let lower = name.to_lowercase();
+    if lower == "cream cheese filling" {
+        return true;
     }
 
     let words = name.split_whitespace();
@@ -337,16 +390,23 @@ pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str
     }
 
     let word_count = words.clone().count();
-    let lower = name.to_lowercase();
     if word_count == 1 {
         return TITLE_CASE_SECTION_LABELS
             .iter()
             .any(|label| lower == *label);
     }
 
-    TITLE_CASE_SECTION_PHRASES
+    if TITLE_CASE_SECTION_EXCLUSIONS
         .iter()
         .any(|phrase| lower == *phrase)
+    {
+        return false;
+    }
+
+    lower
+        .split_whitespace()
+        .last()
+        .is_some_and(|last_word| TITLE_CASE_SECTION_SUFFIXES.contains(&last_word))
 }
 
 /// Detect if a line is a section header (e.g., "For the sauce:", "FILLING:", "Topping Ingredients:").
@@ -371,6 +431,13 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
     }
 
     if is_known_title_case_section_label(trimmed) {
+        return Some(normalize_section_name(trimmed));
+    }
+
+    let lower = trimmed.to_lowercase();
+    if !trimmed.contains(':')
+        && ["to assemble", "to cook", "to finish", "to serve"].contains(&lower.as_str())
+    {
         return Some(normalize_section_name(trimmed));
     }
 

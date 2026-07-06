@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crumbs",
-      "expected": {
-        "item": "Crumbs",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (65 grams) raw pecans",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -134,6 +135,7 @@
           }
         ],
         "note": "melted and cooled slightly",
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -152,6 +154,7 @@
           }
         ],
         "note": "or you can use bourbon; I’ll never tell",
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -161,6 +164,7 @@
         "item": "Caramel",
         "measurements": [],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -179,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -197,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -215,6 +221,7 @@
           }
         ],
         "note": "or whiskey or 1 teaspoon vanilla extract",
+        "section": "Crumbs",
         "category": "Beverages"
       }
     },
@@ -229,6 +236,7 @@
           }
         ],
         "note": "or level 1/4 teaspoon fine sea salt",
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -238,6 +246,7 @@
         "item": "Whipped cream",
         "measurements": [],
         "note": null,
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -256,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -270,6 +280,7 @@
           }
         ],
         "note": "optional, or to taste",
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -288,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -306,6 +318,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Baking"
       }
     },
@@ -315,6 +328,7 @@
         "item": "Peaches",
         "measurements": [],
         "note": null,
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -324,6 +338,7 @@
         "item": "Butter, for grill",
         "measurements": [],
         "note": null,
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -338,6 +353,7 @@
           }
         ],
         "note": "free stone, if you can find them, not that I ever do, halved and pitted",
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -356,6 +372,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Condiments & Sauces"
       }
     },
@@ -370,6 +387,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     }

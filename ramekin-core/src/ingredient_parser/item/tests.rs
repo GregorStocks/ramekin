@@ -97,6 +97,18 @@ fn test_detect_section_header_title_case_no_colon() {
         detect_section_header("Cream Cheese Glaze"),
         Some("Cream Cheese Glaze".to_string())
     );
+    assert_eq!(
+        detect_section_header("Rhubarb Filling"),
+        Some("Rhubarb Filling".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cream Cheese Filling"),
+        Some("Cream Cheese Filling".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cream cheese filling"),
+        Some("Cream Cheese Filling".to_string())
+    );
 
     assert_eq!(detect_section_header("Chicken"), None);
     assert_eq!(detect_section_header("Eggs"), None);
@@ -104,7 +116,7 @@ fn test_detect_section_header_title_case_no_colon() {
     assert_eq!(detect_section_header("Cream"), None);
     assert_eq!(detect_section_header("Soy Sauce"), None);
     assert_eq!(detect_section_header("Pizza Dough"), None);
-    assert_eq!(detect_section_header("Cream Cheese Filling"), None);
+    assert_eq!(detect_section_header("Pizza Sauce"), None);
     assert_eq!(detect_section_header("lid"), None);
     assert_eq!(detect_section_header("Lid 2"), None);
 }
@@ -183,6 +195,14 @@ fn test_detect_section_header_to_assemble_pattern() {
     assert_eq!(
         detect_section_header("To assemble the cake:"),
         Some("To Assemble the Cake".to_string())
+    );
+    assert_eq!(
+        detect_section_header("To assemble"),
+        Some("To Assemble".to_string())
+    );
+    assert_eq!(
+        detect_section_header("To finish"),
+        Some("To Finish".to_string())
     );
 }
 

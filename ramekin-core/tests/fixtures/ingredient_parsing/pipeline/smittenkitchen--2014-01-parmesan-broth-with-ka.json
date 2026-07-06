@@ -114,12 +114,7 @@
     },
     {
       "raw": "To serve",
-      "expected": {
-        "item": "To serve",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 ounces tuscan kale (also known as black or lacinato kale; this is the thinner, flatter leaf variety), washed and patted dry (updated measurement)",
@@ -136,6 +131,7 @@
           }
         ],
         "note": "also known as black or lacinato kale; this is the thinner, flatter leaf variety, updated measurement, washed and patted dry",
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -150,6 +146,7 @@
           }
         ],
         "note": "from about 1/4 pound dried, usually about 1 1/2 cups, updated measurement, with their cooking liquid if fresh",
+        "section": "To Serve",
         "category": "Canned Goods"
       }
     },
@@ -159,6 +156,7 @@
         "item": "Thin slices of baguette",
         "measurements": [],
         "note": "toasted",
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     },
@@ -168,6 +166,7 @@
         "item": "Olive oil and parmesan for serving",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Oils & Vinegars"
       }
     }

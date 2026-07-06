@@ -242,13 +242,7 @@
     },
     {
       "raw": "To finish",
-      "expected": {
-        "item": "To finish",
-        "measurements": [],
-        "note": null,
-        "section": "Filling",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 large egg yolk",
@@ -261,7 +255,7 @@
           }
         ],
         "note": null,
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -280,7 +274,7 @@
           }
         ],
         "note": null,
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Beverages"
       }
     },
@@ -299,7 +293,7 @@
           }
         ],
         "note": "about 3 to 4, peeled and quartered",
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -322,7 +316,7 @@
           }
         ],
         "note": "about 1/2 pound, you’ll clean the grit out in a moment, and thinly sliced",
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -337,7 +331,7 @@
           }
         ],
         "note": null,
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Oils & Vinegars"
       }
     },
@@ -356,7 +350,7 @@
           }
         ],
         "note": null,
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -379,7 +373,7 @@
           }
         ],
         "note": "about 3 ounces or 1/4 to 1/3 bundle, you’ll wash it in a moment",
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Produce"
       }
     },
@@ -398,7 +392,7 @@
           }
         ],
         "note": null,
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Spices & Seasonings"
       }
     },
@@ -408,7 +402,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Spices & Seasonings"
       }
     },
@@ -427,7 +421,7 @@
           }
         ],
         "note": "at room temperature",
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Cheese"
       }
     }

@@ -185,12 +185,7 @@
     },
     {
       "raw": "Chocolate Peanut Butter Ganache",
-      "expected": {
-        "item": "Chocolate Peanut Butter Ganache",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 oz dark chocolate*, chopped",
@@ -207,6 +202,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chocolate Peanut Butter Ganache",
         "category": "Baking"
       }
     },
@@ -225,6 +221,7 @@
           }
         ],
         "note": "national brand",
+        "section": "Chocolate Peanut Butter Ganache",
         "category": "Condiments & Sauces"
       }
     },
@@ -239,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Peanut Butter Ganache",
         "category": "Spices & Seasonings"
       }
     }

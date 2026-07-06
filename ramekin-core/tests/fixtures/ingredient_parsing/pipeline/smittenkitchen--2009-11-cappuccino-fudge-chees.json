@@ -95,13 +95,7 @@
     },
     {
       "raw": "Ganache",
-      "expected": {
-        "item": "Ganache",
-        "measurements": [],
-        "note": null,
-        "section": "Crust",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups heavy or whipping cream",
@@ -114,7 +108,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Ganache",
         "category": "Dairy & Eggs"
       }
     },
@@ -133,7 +127,7 @@
           }
         ],
         "note": "chopped",
-        "section": "Crust",
+        "section": "Ganache",
         "category": "Baking"
       }
     },
@@ -148,7 +142,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Ganache",
         "category": "Beverages"
       }
     },

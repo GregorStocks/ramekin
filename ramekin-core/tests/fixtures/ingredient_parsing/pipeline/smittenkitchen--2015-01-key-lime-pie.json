@@ -230,13 +230,7 @@
     },
     {
       "raw": "To Finish",
-      "expected": {
-        "item": "To Finish",
-        "measurements": [],
-        "note": null,
-        "section": "Filling",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (175 ml) heavy whipping cream",
@@ -257,7 +251,7 @@
           }
         ],
         "note": null,
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -272,7 +266,7 @@
           }
         ],
         "note": "to taste",
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Baking"
       }
     }

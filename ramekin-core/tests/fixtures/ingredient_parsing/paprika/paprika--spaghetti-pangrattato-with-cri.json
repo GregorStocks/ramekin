@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crumbs",
-      "expected": {
-        "item": "Crumbs",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoon olive oil",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Oils & Vinegars"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": "minced",
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": "panko worked great here",
+        "section": "Crumbs",
         "category": "Bakery & Bread"
       }
     },
@@ -67,6 +65,7 @@
         "item": "Salt and red pepper flakes",
         "measurements": [],
         "note": "to taste",
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +80,7 @@
           }
         ],
         "note": "minced",
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -90,6 +90,7 @@
         "item": "Few fine gratings fresh lemon zest",
         "measurements": [],
         "note": null,
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -99,6 +100,7 @@
         "item": "Crispy Egg",
         "measurements": [],
         "note": null,
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Oils & Vinegars"
       }
     },
@@ -127,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Dairy & Eggs"
       }
     },
@@ -136,6 +140,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,6 +150,7 @@
         "item": "Pasta and Assembly",
         "measurements": [],
         "note": null,
+        "section": "Crumbs",
         "category": "Pasta & Rice"
       }
     },
@@ -163,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Pasta & Rice"
       }
     },
@@ -181,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +203,7 @@
           }
         ],
         "note": "rinsed if salted, chopped",
+        "section": "Crumbs",
         "category": "Canned Goods"
       }
     },
@@ -209,6 +218,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -223,6 +233,7 @@
           }
         ],
         "note": "optional",
+        "section": "Crumbs",
         "category": "Cheese"
       }
     }

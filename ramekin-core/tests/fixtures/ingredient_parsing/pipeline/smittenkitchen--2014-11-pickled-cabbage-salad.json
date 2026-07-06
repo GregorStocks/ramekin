@@ -69,12 +69,7 @@
     },
     {
       "raw": "Brine",
-      "expected": {
-        "item": "Brine",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups white vinegar",
@@ -91,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Oils & Vinegars"
       }
     },
@@ -109,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Beverages"
       }
     },
@@ -127,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Baking"
       }
     },
@@ -141,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Spices & Seasonings"
       }
     },
@@ -155,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Spices & Seasonings"
       }
     },
@@ -164,6 +164,7 @@
         "item": "Salad",
         "measurements": [],
         "note": null,
+        "section": "Brine",
         "category": "Other"
       }
     },
@@ -186,6 +187,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Produce"
       }
     },
@@ -200,6 +202,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Produce"
       }
     },
@@ -214,6 +217,7 @@
           }
         ],
         "note": "I used only 1/2 my very thick one",
+        "section": "Brine",
         "category": "Produce"
       }
     },
@@ -228,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Produce"
       }
     }

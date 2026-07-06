@@ -133,12 +133,7 @@
     },
     {
       "raw": "Cinnamon Filling",
-      "expected": {
-        "item": "Cinnamon Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
+      "is_section_header": true
     },
     {
       "raw": "(enough for 9 tarts)",
@@ -146,6 +141,7 @@
         "item": "enough for 9 tarts",
         "measurements": [],
         "note": null,
+        "section": "Cinnamon Filling",
         "category": "Other"
       }
     },
@@ -168,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Filling",
         "category": "Baking"
       }
     },
@@ -182,6 +179,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Cinnamon Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -200,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Filling",
         "category": "Baking"
       }
     },
@@ -214,17 +213,13 @@
           }
         ],
         "note": null,
+        "section": "Cinnamon Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Jam Filling",
-      "expected": {
-        "item": "Jam Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (8 ounces) jam",
@@ -245,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Jam Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -259,6 +255,7 @@
           }
         ],
         "note": null,
+        "section": "Jam Filling",
         "category": "Baking"
       }
     }

@@ -113,13 +113,7 @@
     },
     {
       "raw": "Poppy Seed Filling",
-      "expected": {
-        "item": "Poppy Seed Filling",
-        "measurements": [],
-        "note": null,
-        "section": "Dough",
-        "category": "Spices & Seasonings"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup milk",
@@ -136,7 +130,7 @@
           }
         ],
         "note": null,
-        "section": "Dough",
+        "section": "Poppy Seed Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -155,7 +149,7 @@
           }
         ],
         "note": null,
-        "section": "Dough",
+        "section": "Poppy Seed Filling",
         "category": "Baking"
       }
     },
@@ -165,7 +159,7 @@
         "item": "Grated zest of 1/2 orange",
         "measurements": [],
         "note": null,
-        "section": "Dough",
+        "section": "Poppy Seed Filling",
         "category": "Produce"
       }
     },
@@ -180,7 +174,7 @@
           }
         ],
         "note": null,
-        "section": "Dough",
+        "section": "Poppy Seed Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,7 +193,7 @@
           }
         ],
         "note": null,
-        "section": "Dough",
+        "section": "Poppy Seed Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -209,7 +203,7 @@
         "item": "Juice of 1/2 lemon",
         "measurements": [],
         "note": null,
-        "section": "Dough",
+        "section": "Poppy Seed Filling",
         "category": "Produce"
       }
     },
@@ -224,7 +218,7 @@
           }
         ],
         "note": null,
-        "section": "Dough",
+        "section": "Poppy Seed Filling",
         "category": "Beverages"
       }
     },
@@ -239,7 +233,7 @@
           }
         ],
         "note": null,
-        "section": "Dough",
+        "section": "Poppy Seed Filling",
         "category": "Beverages"
       }
     },
@@ -258,7 +252,7 @@
           }
         ],
         "note": null,
-        "section": "Dough",
+        "section": "Poppy Seed Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -277,7 +271,7 @@
           }
         ],
         "note": null,
-        "section": "Dough",
+        "section": "Poppy Seed Filling",
         "category": "Baking"
       }
     }

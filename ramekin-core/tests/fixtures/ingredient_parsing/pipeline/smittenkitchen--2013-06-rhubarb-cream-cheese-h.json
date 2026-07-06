@@ -118,13 +118,7 @@
     },
     {
       "raw": "Rhubarb Filling",
-      "expected": {
-        "item": "Rhubarb Filling",
-        "measurements": [],
-        "note": null,
-        "section": "Crust",
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound (455 grams) rhubarb stalks, trimmed and cut into 1/2-inch segments",
@@ -141,7 +135,7 @@
           }
         ],
         "note": "trimmed and cut into 1/2-inch segments",
-        "section": "Crust",
+        "section": "Rhubarb Filling",
         "category": "Produce"
       }
     },
@@ -160,19 +154,13 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Rhubarb Filling",
         "category": "Baking"
       }
     },
     {
       "raw": "Cream cheese filling",
-      "expected": {
-        "item": "Cream cheese filling",
-        "measurements": [],
-        "note": null,
-        "section": "Crust",
-        "category": "Cheese"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 ounces cream cheese, at room temperature (i.e. very soft)",
@@ -189,7 +177,7 @@
           }
         ],
         "note": "i.e. very soft, at room temperature",
-        "section": "Crust",
+        "section": "Cream Cheese Filling",
         "category": "Cheese"
       }
     },
@@ -208,7 +196,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Cream Cheese Filling",
         "category": "Baking"
       }
     },
@@ -223,7 +211,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Cream Cheese Filling",
         "category": "Produce"
       }
     },
@@ -242,7 +230,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Cream Cheese Filling",
         "category": "Produce"
       }
     },
@@ -257,19 +245,13 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "Cream Cheese Filling",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "To assemble",
-      "expected": {
-        "item": "To assemble",
-        "measurements": [],
-        "note": null,
-        "section": "Crust",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 large egg",
@@ -282,7 +264,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -301,7 +283,7 @@
           }
         ],
         "note": null,
-        "section": "Crust",
+        "section": "To Assemble",
         "category": "Beverages"
       }
     },
@@ -311,7 +293,7 @@
         "item": "Coarse sugar",
         "measurements": [],
         "note": null,
-        "section": "Crust",
+        "section": "To Assemble",
         "category": "Baking"
       }
     }

@@ -192,13 +192,7 @@
     },
     {
       "raw": "To finish",
-      "expected": {
-        "item": "To finish",
-        "measurements": [],
-        "note": null,
-        "section": "Filling",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 large egg yolk (leftover from filling)",
@@ -211,7 +205,7 @@
           }
         ],
         "note": "leftover from filling",
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -230,7 +224,7 @@
           }
         ],
         "note": null,
-        "section": "Filling",
+        "section": "To Finish",
         "category": "Beverages"
       }
     }

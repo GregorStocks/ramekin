@@ -426,12 +426,7 @@
     },
     {
       "raw": "To assemble",
-      "expected": {
-        "item": "To assemble",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 large slices whole-wheat sourdough bread, miche, or another sliced country bread of your choice, toasted",
@@ -444,6 +439,7 @@
           }
         ],
         "note": "toasted",
+        "section": "To Assemble",
         "category": "Bakery & Bread"
       }
     },
@@ -458,6 +454,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Condiments & Sauces"
       }
     },
@@ -472,6 +469,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -486,6 +484,7 @@
           }
         ],
         "note": "halved to approximate sandwich lengths",
+        "section": "To Assemble",
         "category": "Meat & Seafood"
       }
     },
@@ -500,6 +499,7 @@
           }
         ],
         "note": "toasted",
+        "section": "To Assemble",
         "category": "Bakery & Bread"
       }
     },
@@ -514,6 +514,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -523,6 +524,7 @@
         "item": "A few leaves of iceberg lettuce",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -541,6 +543,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Condiments & Sauces"
       }
     },
@@ -555,6 +558,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -573,6 +577,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -582,6 +587,7 @@
         "item": "Salt and freshly ground black pepper to taste",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     },
@@ -600,6 +606,7 @@
           }
         ],
         "note": "about 1/2-inch, cut into small cubes",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -614,6 +621,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Oils & Vinegars"
       }
     },
@@ -628,6 +636,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -646,6 +655,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Meat & Seafood"
       }
     },
@@ -655,6 +665,7 @@
         "item": "kosher salt",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     },
@@ -664,6 +675,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     },
@@ -678,6 +690,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -692,6 +705,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Bakery & Bread"
       }
     },
@@ -701,6 +715,7 @@
         "item": "Waffles",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Other"
       }
     },
@@ -719,6 +734,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Baking"
       }
     },
@@ -733,6 +749,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Baking"
       }
     },
@@ -751,6 +768,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Baking"
       }
     },
@@ -769,6 +787,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Baking"
       }
     },
@@ -787,6 +806,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     },
@@ -805,6 +825,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -823,6 +844,7 @@
           }
         ],
         "note": "melted and cooled slightly",
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -837,6 +859,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -851,6 +874,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Cheese"
       }
     },
@@ -860,6 +884,7 @@
         "item": "Spray cooking oil to coat waffle iron",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Oils & Vinegars"
       }
     },
@@ -869,6 +894,7 @@
         "item": "Creamed greens",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -887,6 +913,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -896,6 +923,7 @@
         "item": "Butter",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -910,6 +938,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -928,6 +957,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     }

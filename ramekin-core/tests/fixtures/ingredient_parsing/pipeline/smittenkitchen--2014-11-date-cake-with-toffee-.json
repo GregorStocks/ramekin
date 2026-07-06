@@ -340,13 +340,7 @@
     },
     {
       "raw": "To serve",
-      "expected": {
-        "item": "To serve",
-        "measurements": [],
-        "note": null,
-        "section": "Sauce",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Unsweetened whipped cream (optional, but please don’t skip it)",
@@ -354,7 +348,7 @@
         "item": "Unsweetened whipped cream",
         "measurements": [],
         "note": "optional, but please don’t skip it",
-        "section": "Sauce",
+        "section": "To Serve",
         "category": "Dairy & Eggs"
       }
     },
@@ -364,7 +358,7 @@
         "item": "A few flakes of sea salt",
         "measurements": [],
         "note": null,
-        "section": "Sauce",
+        "section": "To Serve",
         "category": "Spices & Seasonings"
       }
     },
@@ -374,7 +368,7 @@
         "item": "Fresh mint leaves",
         "measurements": [],
         "note": "optional",
-        "section": "Sauce",
+        "section": "To Serve",
         "category": "Produce"
       }
     }
