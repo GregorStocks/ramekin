@@ -411,11 +411,29 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
         return Some(normalize_section_name(trimmed));
     }
 
+    let lower = trimmed.to_lowercase();
+    if !trimmed.contains(':') && lower.starts_with("for the ") {
+        let section_name = trimmed.get("for the ".len()..).unwrap_or("").trim();
+        if section_name.chars().any(|c| c.is_alphabetic()) {
+            return Some(normalize_section_name(trimmed));
+        }
+    }
+
+    if !trimmed.contains(':') && lower.starts_with("for ") {
+        let section_name = trimmed.get("for ".len()..).unwrap_or("").trim();
+        if section_name
+            .chars()
+            .next()
+            .is_some_and(|c| c.is_uppercase())
+        {
+            return Some(normalize_section_name(trimmed));
+        }
+    }
+
     if is_known_title_case_section_label(trimmed) {
         return Some(normalize_section_name(trimmed));
     }
 
-    let lower = trimmed.to_lowercase();
     if !trimmed.contains(':')
         && ["to assemble", "to cook", "to finish", "to serve"].contains(&lower.as_str())
     {

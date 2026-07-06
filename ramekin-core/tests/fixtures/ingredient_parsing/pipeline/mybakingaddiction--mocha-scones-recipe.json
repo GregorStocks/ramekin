@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Scones",
-      "expected": {
-        "item": "For the Scones",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 ¼ cups all-purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Baking"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Spices & Seasonings"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": "frozen",
+        "section": "For the Scones",
         "category": "Dairy & Eggs"
       }
     },
@@ -130,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Baking"
       }
     },
@@ -148,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Dairy & Eggs"
       }
     },
@@ -162,6 +165,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Scones",
         "category": "Beverages"
       }
     },
@@ -176,17 +180,13 @@
           }
         ],
         "note": null,
+        "section": "For the Scones",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "For the Mocha Glaze",
-      "expected": {
-        "item": "For the Mocha Glaze",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup strong coffee",
@@ -199,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mocha Glaze",
         "category": "Beverages"
       }
     },
@@ -213,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mocha Glaze",
         "category": "Baking"
       }
     },
@@ -231,6 +233,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Mocha Glaze",
         "category": "Baking"
       }
     }

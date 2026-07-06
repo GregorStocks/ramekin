@@ -110,6 +110,18 @@ fn test_detect_section_header_title_case_no_colon() {
         detect_section_header("Cream cheese filling"),
         Some("Cream Cheese Filling".to_string())
     );
+    assert_eq!(
+        detect_section_header("For the Marinade"),
+        Some("For the Marinade".to_string())
+    );
+    assert_eq!(
+        detect_section_header("For the Cream Cheese Glaze"),
+        Some("For the Cream Cheese Glaze".to_string())
+    );
+    assert_eq!(
+        detect_section_header("For the Kebabs"),
+        Some("For the Kebabs".to_string())
+    );
 
     assert_eq!(detect_section_header("Chicken"), None);
     assert_eq!(detect_section_header("Eggs"), None);
@@ -125,6 +137,7 @@ fn test_detect_section_header_title_case_no_colon() {
         None
     );
     assert_eq!(detect_section_header("Lime Simple Syrup"), None);
+    assert_eq!(detect_section_header("For pistou"), None);
     assert_eq!(detect_section_header("lid"), None);
     assert_eq!(detect_section_header("Lid 2"), None);
 }

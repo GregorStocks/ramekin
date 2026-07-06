@@ -73,12 +73,7 @@
     },
     {
       "raw": "For the dressing and salad",
-      "expected": {
-        "item": "For the dressing and salad",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons coriander seeds, toasted and ground**",
@@ -91,6 +86,7 @@
           }
         ],
         "note": "toasted and ground",
+        "section": "For the Dressing and Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,6 +101,7 @@
           }
         ],
         "note": "toasted and ground",
+        "section": "For the Dressing and Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing and Salad",
         "category": "Produce"
       }
     },
@@ -128,6 +126,7 @@
         "item": "kosher salt",
         "measurements": [],
         "note": "Maldon or another flaky sea salt if you’ve got it",
+        "section": "For the Dressing and Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -142,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing and Salad",
         "category": "Condiments & Sauces"
       }
     },
@@ -160,6 +160,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "For the Dressing and Salad",
         "category": "Produce"
       }
     },
@@ -174,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "For the Dressing and Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -188,6 +190,7 @@
           }
         ],
         "note": "from a 15-ounce can",
+        "section": "For the Dressing and Salad",
         "category": "Canned Goods"
       }
     },
@@ -202,6 +205,7 @@
           }
         ],
         "note": "optional, rind finely diced",
+        "section": "For the Dressing and Salad",
         "category": "Produce"
       }
     },
@@ -216,6 +220,7 @@
           }
         ],
         "note": "thinly sliced into half-moons",
+        "section": "For the Dressing and Salad",
         "category": "Produce"
       }
     },
@@ -225,6 +230,7 @@
         "item": "A handful of small, delicate cilantro or flat-leaf parsley sprigs",
         "measurements": [],
         "note": null,
+        "section": "For the Dressing and Salad",
         "category": "Produce"
       }
     },
@@ -234,6 +240,7 @@
         "item": "A scant 1/4 cup feta",
         "measurements": [],
         "note": "goat’s milk if you can find it, otherwise use what you can get",
+        "section": "For the Dressing and Salad",
         "category": "Cheese"
       }
     },
@@ -248,6 +255,7 @@
           }
         ],
         "note": "toasted in a dry pan until a shade or two darker",
+        "section": "For the Dressing and Salad",
         "category": "Spices & Seasonings"
       }
     }

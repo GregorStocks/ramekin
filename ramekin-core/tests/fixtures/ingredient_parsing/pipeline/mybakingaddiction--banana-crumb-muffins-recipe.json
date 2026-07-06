@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Banana Muffins",
-      "expected": {
-        "item": "For the Banana Muffins",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups all-purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Banana Muffins",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Banana Muffins",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Banana Muffins",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Banana Muffins",
         "category": "Spices & Seasonings"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Banana Muffins",
         "category": "Produce"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Banana Muffins",
         "category": "Baking"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For the Banana Muffins",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Banana Muffins",
         "category": "Dairy & Eggs"
       }
     },
@@ -162,17 +165,13 @@
           }
         ],
         "note": null,
+        "section": "For the Banana Muffins",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "For the Crumb Topping",
-      "expected": {
-        "item": "For the Crumb Topping",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup packed brown sugar",
@@ -189,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumb Topping",
         "category": "Baking"
       }
     },
@@ -207,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumb Topping",
         "category": "Baking"
       }
     },
@@ -225,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumb Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -243,6 +245,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crumb Topping",
         "category": "Dairy & Eggs"
       }
     }

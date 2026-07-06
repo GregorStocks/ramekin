@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Filling",
-      "expected": {
-        "item": "For the Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups peeled diced (1/4-inch) Granny Smith apples",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "1/4-inch",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -36,17 +32,13 @@
           }
         ],
         "note": "click link for recipe",
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
     {
       "raw": "For the Batter",
-      "expected": {
-        "item": "For the Batter",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup Original Bisquick™ mix",
@@ -59,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Other"
       }
     },
@@ -77,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Baking"
       }
     },
@@ -91,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Produce"
       }
     },
@@ -109,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,6 +123,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -141,6 +138,7 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,17 +157,13 @@
           }
         ],
         "note": null,
+        "section": "For the Batter",
         "category": "Baking"
       }
     },
     {
       "raw": "For the Topping",
-      "expected": {
-        "item": "For the Topping",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup sweetened whipped cream",
@@ -182,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -196,6 +191,7 @@
           }
         ],
         "note": "click link for recipe",
+        "section": "For the Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -210,6 +206,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Nuts & Dried Fruit"
       }
     }

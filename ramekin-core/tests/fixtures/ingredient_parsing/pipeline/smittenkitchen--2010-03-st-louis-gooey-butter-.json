@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the cake",
-      "expected": {
-        "item": "For the cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons milk at room temperature",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -104,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -122,17 +123,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
       "raw": "For the topping",
-      "expected": {
-        "item": "For the topping",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons plus 1 teaspoon light corn syrup",
@@ -145,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -163,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -185,6 +184,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -203,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -221,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -235,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -249,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     }

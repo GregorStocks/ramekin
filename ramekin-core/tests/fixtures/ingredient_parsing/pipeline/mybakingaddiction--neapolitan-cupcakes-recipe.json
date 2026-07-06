@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Cupcakes",
-      "expected": {
-        "item": "For the Cupcakes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 1/4 cups cake flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -162,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -176,17 +180,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Produce"
       }
     },
     {
       "raw": "For the Frosting",
-      "expected": {
-        "item": "For the Frosting",
-        "measurements": [],
-        "note": null,
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 sticks butter, softened",
@@ -199,6 +199,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -217,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -235,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -253,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -271,6 +275,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Baking"
       }
     },
@@ -285,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "For the Frosting",
         "category": "Produce"
       }
     }

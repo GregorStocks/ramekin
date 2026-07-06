@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Marinade",
-      "expected": {
-        "item": "For the Marinade",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup soy sauce",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Baking"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": "or other hot sauce",
+        "section": "For the Marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
@@ -104,17 +104,13 @@
           }
         ],
         "note": "crushed",
+        "section": "For the Marinade",
         "category": "Produce"
       }
     },
     {
       "raw": "For the Kebabs",
-      "expected": {
-        "item": "For the Kebabs",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 skinless, boneless chicken breast halves, cubed",
@@ -127,6 +123,7 @@
           }
         ],
         "note": "cubed",
+        "section": "For the Kebabs",
         "category": "Meat & Seafood"
       }
     },
@@ -141,6 +138,7 @@
           }
         ],
         "note": "cut into 2 inch pieces",
+        "section": "For the Kebabs",
         "category": "Produce"
       }
     },
@@ -155,6 +153,7 @@
           }
         ],
         "note": "cut into wedges",
+        "section": "For the Kebabs",
         "category": "Produce"
       }
     },
@@ -169,6 +168,7 @@
           }
         ],
         "note": "cut into 2 inch pieces",
+        "section": "For the Kebabs",
         "category": "Produce"
       }
     }

@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the cupcakes",
-      "expected": {
-        "item": "For the cupcakes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 (18.25 ounce) package Devil’s Food Cake mix",
@@ -30,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
@@ -52,6 +48,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Snacks"
       }
     },
@@ -70,6 +67,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -88,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Oils & Vinegars"
       }
     },
@@ -102,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -120,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Beverages"
       }
     },
@@ -138,17 +139,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cupcakes",
         "category": "Baking"
       }
     },
     {
       "raw": "For the Southern Comfort Buttercream",
-      "expected": {
-        "item": "For the Southern Comfort Buttercream",
-        "measurements": [],
-        "note": null,
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 sticks unsalted butter; room temperature",
@@ -161,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "For the Southern Comfort Buttercream",
         "category": "Dairy & Eggs"
       }
     },
@@ -175,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "For the Southern Comfort Buttercream",
         "category": "Baking"
       }
     },
@@ -189,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "For the Southern Comfort Buttercream",
         "category": "Spices & Seasonings"
       }
     },
@@ -207,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "For the Southern Comfort Buttercream",
         "category": "Baking"
       }
     },
@@ -221,17 +222,13 @@
           }
         ],
         "note": null,
+        "section": "For the Southern Comfort Buttercream",
         "category": "Other"
       }
     },
     {
       "raw": "For the Garnish",
-      "expected": {
-        "item": "For the Garnish",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup semisweet chocolate chips melted and cooled",
@@ -244,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For the Garnish",
         "category": "Baking"
       }
     },
@@ -253,6 +251,7 @@
         "item": "Southern Comfort Caramel Corn",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Baking"
       }
     }

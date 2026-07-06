@@ -69,12 +69,7 @@
     },
     {
       "raw": "For the pork chops",
-      "expected": {
-        "item": "For the pork chops",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 boneless pork chops (about 3 ounces each)",
@@ -91,6 +86,7 @@
           }
         ],
         "note": "about 3 ounces each",
+        "section": "For the Pork Chops",
         "category": "Meat & Seafood"
       }
     },
@@ -100,6 +96,7 @@
         "item": "About 3 cups buttermilk, whole milk if you can find it",
         "measurements": [],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,6 +106,7 @@
         "item": "Kosher salt and freshly cracked black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Spices & Seasonings"
       }
     },
@@ -123,6 +121,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Baking"
       }
     },
@@ -132,6 +131,7 @@
         "item": "Cayenne pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Pork Chops",
         "category": "Spices & Seasonings"
       }
     },
@@ -141,17 +141,13 @@
         "item": "Canola oil for shallow-frying",
         "measurements": [],
         "note": "or high heat safflower or sunflower, what I used",
+        "section": "For the Pork Chops",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "For the potatoes",
-      "expected": {
-        "item": "For the potatoes",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 pounds small-to-medium red potatoes",
@@ -168,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Produce"
       }
     },
@@ -177,6 +174,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +193,7 @@
           }
         ],
         "note": "or 1/2 cup milk plus 1/2 cup heavy cream",
+        "section": "For the Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -213,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Cheese"
       }
     },
@@ -239,6 +239,7 @@
           }
         ],
         "note": "diced and chilled",
+        "section": "For the Potatoes",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Produce"
       }
     },
@@ -262,6 +264,7 @@
         "item": "Freshly ground black or white pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Potatoes",
         "category": "Spices & Seasonings"
       }
     }

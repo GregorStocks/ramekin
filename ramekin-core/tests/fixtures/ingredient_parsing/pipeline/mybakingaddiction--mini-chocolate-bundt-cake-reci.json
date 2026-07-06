@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Mini Chocolate Bundt Cakes",
-      "expected": {
-        "item": "For the Mini Chocolate Bundt Cakes",
-        "measurements": [],
-        "note": null,
-        "category": "Snacks"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup white sugar",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Baking"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Baking"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Baking"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Baking"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Baking"
       }
     },
@@ -108,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -122,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -140,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -158,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Oils & Vinegars"
       }
     },
@@ -176,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Baking"
       }
     },
@@ -194,17 +199,13 @@
           }
         ],
         "note": null,
+        "section": "For the Mini Chocolate Bundt Cakes",
         "category": "Beverages"
       }
     },
     {
       "raw": "For the Hot Fudge Sauce",
-      "expected": {
-        "item": "For the Hot Fudge Sauce",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 (14 ounce) can sweetened condensed milk",
@@ -225,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hot Fudge Sauce",
         "category": "Canned Goods"
       }
     },
@@ -247,6 +249,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hot Fudge Sauce",
         "category": "Baking"
       }
     },
@@ -265,6 +268,7 @@
           }
         ],
         "note": "no substitutes",
+        "section": "For the Hot Fudge Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -283,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "For the Hot Fudge Sauce",
         "category": "Baking"
       }
     }

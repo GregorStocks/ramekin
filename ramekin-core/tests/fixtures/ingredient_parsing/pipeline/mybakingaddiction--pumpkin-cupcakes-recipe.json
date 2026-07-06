@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Pumpkin Cake",
-      "expected": {
-        "item": "For the Pumpkin Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups all-purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Baking"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -158,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Baking"
       }
     },
@@ -176,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Baking"
       }
     },
@@ -198,6 +203,7 @@
           }
         ],
         "note": "melted and cooled",
+        "section": "For the Pumpkin Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -212,6 +218,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "For the Pumpkin Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -234,17 +241,13 @@
           }
         ],
         "note": null,
+        "section": "For the Pumpkin Cake",
         "category": "Produce"
       }
     },
     {
       "raw": "For the Cinnamon Cream Cheese Frosting",
-      "expected": {
-        "item": "For the Cinnamon Cream Cheese Frosting",
-        "measurements": [],
-        "note": null,
-        "category": "Cheese"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 (8) ounce package cream cheese, softened",
@@ -261,6 +264,7 @@
           }
         ],
         "note": "8, softened",
+        "section": "For the Cinnamon Cream Cheese Frosting",
         "category": "Cheese"
       }
     },
@@ -275,6 +279,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Cinnamon Cream Cheese Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -293,6 +298,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cinnamon Cream Cheese Frosting",
         "category": "Baking"
       }
     },
@@ -311,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cinnamon Cream Cheese Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -329,6 +336,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cinnamon Cream Cheese Frosting",
         "category": "Baking"
       }
     }

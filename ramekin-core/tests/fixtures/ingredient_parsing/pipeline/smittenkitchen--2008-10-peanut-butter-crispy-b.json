@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the crispy crust",
-      "expected": {
-        "item": "For the crispy crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 3/4 cups crisped rice cereal",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Crust",
         "category": "Snacks"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Crust",
         "category": "Baking"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crispy Crust",
         "category": "Baking"
       }
     },
@@ -72,17 +70,13 @@
           }
         ],
         "note": "their recommendation, what I used, and liked, melted",
+        "section": "For the Crispy Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "For the milk chocolate peanut butter layer",
-      "expected": {
-        "item": "For the milk chocolate peanut butter layer",
-        "measurements": [],
-        "note": null,
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "5 ounces good-quality milk (their recommendation) or semi-sweet (what I’d use next time) chocolate, coarsely chopped",
@@ -99,6 +93,7 @@
           }
         ],
         "note": "their recommendation, what I’d use next time, coarsely chopped",
+        "section": "For the Milk Chocolate Peanut Butter Layer",
         "category": "Baking"
       }
     },
@@ -117,17 +112,13 @@
           }
         ],
         "note": null,
+        "section": "For the Milk Chocolate Peanut Butter Layer",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "For the chocolate icing",
-      "expected": {
-        "item": "For the chocolate icing",
-        "measurements": [],
-        "note": null,
-        "category": "Snacks"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 ounces dark chocolate (60 to 72 percent cocoa), coarsely chopped",
@@ -144,6 +135,7 @@
           }
         ],
         "note": "60 to 72 percent cocoa, coarsely chopped",
+        "section": "For the Chocolate Icing",
         "category": "Baking"
       }
     },
@@ -162,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chocolate Icing",
         "category": "Baking"
       }
     },
@@ -188,6 +181,7 @@
           }
         ],
         "note": "their recommendation, what I used, and liked",
+        "section": "For the Chocolate Icing",
         "category": "Dairy & Eggs"
       }
     }

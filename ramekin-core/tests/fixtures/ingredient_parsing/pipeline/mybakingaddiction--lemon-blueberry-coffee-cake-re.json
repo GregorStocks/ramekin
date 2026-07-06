@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Cake",
-      "expected": {
-        "item": "For the Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "zest of one lemon",
@@ -17,6 +12,7 @@
         "item": "zest of one lemon",
         "measurements": [],
         "note": null,
+        "section": "For the Cake",
         "category": "Produce"
       }
     },
@@ -35,6 +31,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +50,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -71,6 +69,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -89,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -107,6 +107,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -171,17 +175,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Produce"
       }
     },
     {
       "raw": "For the Topping",
-      "expected": {
-        "item": "For the Topping",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup firmly packed brown sugar",
@@ -194,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -208,6 +209,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -226,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Baking"
       }
     },
@@ -244,6 +247,7 @@
           }
         ],
         "note": null,
+        "section": "For the Topping",
         "category": "Dairy & Eggs"
       }
     }

@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Cake",
-      "expected": {
-        "item": "For the Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup unsalted butter , softened",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -53,6 +50,7 @@
         "item": "zest of 3 medium limes",
         "measurements": [],
         "note": null,
+        "section": "For the Cake",
         "category": "Produce"
       }
     },
@@ -71,6 +69,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -85,6 +84,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -121,6 +122,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -139,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -153,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,17 +171,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Produce"
       }
     },
     {
       "raw": "For the Lime Glaze",
-      "expected": {
-        "item": "For the Lime Glaze",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup confectioners’ sugar, sifted",
@@ -190,6 +190,7 @@
           }
         ],
         "note": "sifted",
+        "section": "For the Lime Glaze",
         "category": "Baking"
       }
     },
@@ -208,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lime Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -226,6 +228,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lime Glaze",
         "category": "Baking"
       }
     },
@@ -235,6 +238,7 @@
         "item": "zest of 1 medium lime",
         "measurements": [],
         "note": null,
+        "section": "For the Lime Glaze",
         "category": "Produce"
       }
     }

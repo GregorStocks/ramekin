@@ -69,12 +69,7 @@
     },
     {
       "raw": "For the chickpeas",
-      "expected": {
-        "item": "For the chickpeas",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound dried chickpeas (garbanzo beans) or 4 15-ounce cans cooked chickpeas",
@@ -91,6 +86,7 @@
           }
         ],
         "note": "garbanzo beans",
+        "section": "For the Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -109,6 +105,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Oils & Vinegars"
       }
     },
@@ -123,6 +120,7 @@
           }
         ],
         "note": "halved and thinly sliced",
+        "section": "For the Chickpeas",
         "category": "Produce"
       }
     },
@@ -137,6 +135,7 @@
           }
         ],
         "note": "peeled and minced",
+        "section": "For the Chickpeas",
         "category": "Produce"
       }
     },
@@ -155,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -169,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -183,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -197,6 +199,7 @@
           }
         ],
         "note": "all adjusted to your heat preference",
+        "section": "For the Chickpeas",
         "category": "Condiments & Sauces"
       }
     },
@@ -206,6 +209,7 @@
         "item": "Few gratings fresh lemon zest",
         "measurements": [],
         "note": null,
+        "section": "For the Chickpeas",
         "category": "Produce"
       }
     },
@@ -220,6 +224,7 @@
           }
         ],
         "note": "what I used for lightly salted broth, use more for unsalted, less for salted or canned beans",
+        "section": "For the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -238,6 +243,7 @@
           }
         ],
         "note": "for dried but soaked chickpeas; or 1 1/2 cup for cooked chickpeas",
+        "section": "For the Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -252,6 +258,7 @@
           }
         ],
         "note": "will likely only need if beans weren’t pre-soaked",
+        "section": "For the Chickpeas",
         "category": "Beverages"
       }
     }
