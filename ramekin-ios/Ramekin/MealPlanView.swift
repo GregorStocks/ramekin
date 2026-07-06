@@ -20,7 +20,7 @@ extension MealType {
 // MARK: - MealPlanView
 
 struct MealPlanView: View {
-    @State private var weekStart: Date = getMonday(from: Date())
+    @State private var weekStart: Date = MealPlanDateSupport.mondayStart(from: Date())
     @State private var mealPlans: [MealPlanItem] = []
     @State private var isLoading = false
     @State private var error: String?
@@ -58,7 +58,7 @@ struct MealPlanView: View {
                     Spacer()
 
                     Button("Today") {
-                        weekStart = Self.getMonday(from: Date())
+                        weekStart = MealPlanDateSupport.mondayStart(from: Date())
                     }
 
                     Spacer()
@@ -256,14 +256,6 @@ struct MealPlanView: View {
 
     private static func localDateString(from date: Date) -> String {
         SharedDateFormatters.localDateOnly.string(from: date)
-    }
-
-    static func getMonday(from date: Date) -> Date {
-        let calendar = Calendar.current
-        let weekday = calendar.component(.weekday, from: date)
-        // weekday: 1=Sun, 2=Mon, ..., 7=Sat
-        let daysToSubtract = (weekday + 5) % 7
-        return calendar.date(byAdding: .day, value: -daysToSubtract, to: calendar.startOfDay(for: date))!
     }
 
     // MARK: - Data Loading
