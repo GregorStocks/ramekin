@@ -13,9 +13,11 @@ import type { ScrapeJobResponse, StepState } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
 import { usePageTitle } from "../utils/pageTitle";
 import { extractApiError } from "../utils/recipeFormHelpers";
-
-const POLL_INTERVAL_MS = 1000;
-const TERMINAL_STATUSES = new Set(["completed", "failed"]);
+import {
+  isTerminalScrapeJobStatus,
+  PollScrapeJobAbortedError,
+  pollScrapeJob,
+} from "../utils/pollScrapeJob";
 
 interface ExpandedOutput {
   loading: boolean;
@@ -75,62 +77,47 @@ export default function ScrapeStatusPage() {
     {},
   );
 
-  let pollTimer: ReturnType<typeof setTimeout> | null = null;
   let tickInterval: ReturnType<typeof setInterval> | null = null;
-  let cancelled = false;
-
-  const stopPolling = () => {
-    if (pollTimer !== null) {
-      clearTimeout(pollTimer);
-      pollTimer = null;
-    }
-  };
-
-  const poll = async () => {
-    const id = params.id;
-    if (!id) return;
-    try {
-      const resp = await getScrapeApi().getScrape({ id });
-      if (cancelled) return;
-      setJob(resp);
-      setPollError(null);
-    } catch (err) {
-      if (cancelled) return;
-      const message = await extractApiError(err, "Failed to load scrape");
-      setPollError(message);
-    }
-  };
-
-  const schedulePoll = () => {
-    if (cancelled) return;
-    pollTimer = setTimeout(async () => {
-      await poll();
-      const current = job();
-      if (!cancelled && current && !TERMINAL_STATUSES.has(current.status)) {
-        schedulePoll();
-      }
-    }, POLL_INTERVAL_MS);
-  };
+  let pollController: AbortController | null = null;
 
   const startPolling = () => {
-    stopPolling();
-    schedulePoll();
+    pollController?.abort();
+    const id = params.id;
+    if (!id) return;
+    const controller = new AbortController();
+    pollController = controller;
+    void pollScrapeJob(getScrapeApi(), id, {
+      signal: controller.signal,
+      timeoutMs: null,
+      onUpdate: (resp) => {
+        setJob(resp);
+        setPollError(null);
+      },
+      onPollError: async (err) => {
+        const message = await extractApiError(err, "Failed to load scrape");
+        setPollError(message);
+      },
+    })
+      .then((result) => {
+        if (result.status === "timeout") {
+          setPollError("Timed out waiting for scrape job");
+        }
+      })
+      .catch(async (err: unknown) => {
+        if (err instanceof PollScrapeJobAbortedError) return;
+        const message = await extractApiError(err, "Failed to load scrape");
+        setPollError(message);
+      });
   };
 
   onMount(() => {
-    void (async () => {
-      await poll();
-      const current = job();
-      if (!cancelled && current && !TERMINAL_STATUSES.has(current.status)) {
-        startPolling();
-      }
-    })();
+    startPolling();
     tickInterval = setInterval(() => setNow(Date.now()), 1000);
   });
 
   onCleanup(() => {
-    cancelled = true;
-    stopPolling();
+    pollController?.abort();
+    pollController = null;
     if (tickInterval) {
       clearInterval(tickInterval);
       tickInterval = null;
@@ -177,7 +164,6 @@ export default function ScrapeStatusPage() {
           }
         }),
       );
-      await poll();
       startPolling();
     } catch (err) {
       const message = await extractApiError(err, "Failed to retry scrape");
@@ -205,7 +191,7 @@ export default function ScrapeStatusPage() {
 
   const isTerminal = createMemo(() => {
     const j = job();
-    return j ? TERMINAL_STATUSES.has(j.status) : false;
+    return j ? isTerminalScrapeJobStatus(j.status) : false;
   });
 
   return (
