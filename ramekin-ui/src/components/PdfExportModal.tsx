@@ -1,10 +1,19 @@
 import { createMemo, createSignal, Show } from "solid-js";
 import jsPDF from "jspdf";
-import QRCode from "qrcode";
 import Modal from "./Modal";
 import type { RecipeSummary } from "ramekin-client";
-
-declare const __EXTERNAL_URL__: string;
+import {
+  PDF_BACK_CARD_PAD_DEFAULT,
+  PDF_PHOTO_ASPECT_RATIO,
+  backSlotFlipAxis,
+  cropImageToAspectRatio,
+  drawCutGuides,
+  fetchThumbnail,
+  generateQrDataUrl,
+  recipeUrlFor,
+  type PdfFlipDirection,
+  type PdfImageData,
+} from "../utils/pdfExport";
 
 interface Props {
   isOpen: () => boolean;
@@ -15,219 +24,6 @@ interface Props {
     input: RequestInfo | URL,
     init?: RequestInit,
   ) => Promise<Response>;
-}
-
-type ImageData = {
-  dataUrl: string;
-  format: "JPEG" | "PNG";
-  pxW: number;
-  pxH: number;
-};
-
-type FlipDirection = "long-edge" | "short-edge";
-
-const PHOTO_ASPECT_RATIO = 3 / 2;
-const BACK_CARD_PAD_DEFAULT = 0.1;
-
-async function blobToDataUrl(blob: Blob): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result as string);
-    reader.onerror = () => reject(reader.error);
-    reader.readAsDataURL(blob);
-  });
-}
-
-async function getImagePixelSize(
-  dataUrl: string,
-): Promise<{ w: number; h: number }> {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve({ w: img.naturalWidth, h: img.naturalHeight });
-    img.onerror = () => reject(new Error("image decode failed"));
-    img.src = dataUrl;
-  });
-}
-
-async function cropImageToAspectRatio(
-  img: ImageData,
-  targetRatio: number,
-): Promise<ImageData> {
-  if (targetRatio <= 0) return img;
-
-  const sourceRatio = img.pxW / img.pxH;
-  if (Math.abs(sourceRatio - targetRatio) < 0.01) return img;
-
-  const image = new Image();
-  image.src = img.dataUrl;
-  await image.decode();
-
-  let sourceX = 0;
-  let sourceY = 0;
-  let sourceW = img.pxW;
-  let sourceH = img.pxH;
-
-  if (sourceRatio > targetRatio) {
-    sourceW = Math.round(img.pxH * targetRatio);
-    sourceX = Math.round((img.pxW - sourceW) / 2);
-  } else {
-    sourceH = Math.round(img.pxW / targetRatio);
-    sourceY = Math.round((img.pxH - sourceH) / 2);
-  }
-
-  const canvas = document.createElement("canvas");
-  canvas.width = sourceW;
-  canvas.height = sourceH;
-
-  const ctx = canvas.getContext("2d");
-  if (!ctx) {
-    throw new Error("Failed to create canvas context for image crop");
-  }
-
-  ctx.drawImage(
-    image,
-    sourceX,
-    sourceY,
-    sourceW,
-    sourceH,
-    0,
-    0,
-    sourceW,
-    sourceH,
-  );
-
-  const mimeType = img.format === "PNG" ? "image/png" : "image/jpeg";
-  return {
-    dataUrl: canvas.toDataURL(mimeType, 0.92),
-    format: img.format,
-    pxW: sourceW,
-    pxH: sourceH,
-  };
-}
-
-function drawCutGuides(
-  doc: jsPDF,
-  pageW: number,
-  pageH: number,
-  xCuts: number[],
-  yCuts: number[],
-  gridBounds: { left: number; right: number; top: number; bottom: number },
-) {
-  const edgeInset = 0.08;
-  const desiredGuideLen = 0.22;
-  const guideGap = 0.04;
-
-  const topGuideLen = Math.max(
-    0,
-    Math.min(desiredGuideLen, gridBounds.top - edgeInset - guideGap),
-  );
-  const bottomGuideLen = Math.max(
-    0,
-    Math.min(desiredGuideLen, pageH - gridBounds.bottom - edgeInset - guideGap),
-  );
-  const leftGuideLen = Math.max(
-    0,
-    Math.min(desiredGuideLen, gridBounds.left - edgeInset - guideGap),
-  );
-  const rightGuideLen = Math.max(
-    0,
-    Math.min(desiredGuideLen, pageW - gridBounds.right - edgeInset - guideGap),
-  );
-
-  doc.setDrawColor(120);
-  doc.setLineWidth(0.01);
-
-  for (const x of xCuts) {
-    if (topGuideLen > 0) {
-      doc.line(x, edgeInset, x, edgeInset + topGuideLen);
-    }
-    if (bottomGuideLen > 0) {
-      doc.line(x, pageH - edgeInset - bottomGuideLen, x, pageH - edgeInset);
-    }
-  }
-
-  for (const y of yCuts) {
-    if (leftGuideLen > 0) {
-      doc.line(edgeInset, y, edgeInset + leftGuideLen, y);
-    }
-    if (rightGuideLen > 0) {
-      doc.line(pageW - edgeInset - rightGuideLen, y, pageW - edgeInset, y);
-    }
-  }
-
-  doc.setDrawColor(0);
-}
-
-async function fetchThumbnail(
-  photoId: string,
-  token: string,
-  authedFetch: (
-    input: RequestInfo | URL,
-    init?: RequestInit,
-  ) => Promise<Response>,
-): Promise<ImageData> {
-  const maxAttempts = 4;
-  let lastErr: unknown;
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    try {
-      const resp = await authedFetch(
-        `/api/photos/${photoId}/thumbnail?size=1200`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        },
-      );
-      if (!resp.ok) {
-        throw new Error(
-          `Failed to fetch thumbnail ${photoId}: ${resp.status} ${resp.statusText}`,
-        );
-      }
-      const blob = await resp.blob();
-      const dataUrl = await blobToDataUrl(blob);
-      const format: "JPEG" | "PNG" = blob.type.includes("png") ? "PNG" : "JPEG";
-      const { w, h } = await getImagePixelSize(dataUrl);
-      return { dataUrl, format, pxW: w, pxH: h };
-    } catch (e) {
-      lastErr = e;
-      if (attempt === maxAttempts) break;
-      const backoffMs = 250 * 2 ** (attempt - 1);
-      await new Promise((r) => setTimeout(r, backoffMs));
-    }
-  }
-  throw lastErr instanceof Error
-    ? lastErr
-    : new Error(`Failed to fetch thumbnail ${photoId}`);
-}
-
-function externalUrl(): string {
-  return __EXTERNAL_URL__.replace(/\/+$/, "");
-}
-
-function recipeUrlFor(recipeId: string): string {
-  return `${externalUrl()}/recipes/${recipeId}`;
-}
-
-async function generateQrDataUrl(url: string): Promise<string> {
-  return QRCode.toDataURL(url, {
-    errorCorrectionLevel: "M",
-    margin: 1,
-    width: 600,
-  });
-}
-
-// Physical page-flip for duplex printing:
-// - Long-edge binding flips around the long edge of the sheet.
-// - Short-edge binding flips around the short edge.
-// After the flip, one axis of the grid is reversed; we mirror the back cards
-// so that the card drawn behind slot (col,row) lands on the physical back of
-// that same slot once the sheet is flipped.
-function backSlotFlipAxis(
-  orientation: "portrait" | "landscape",
-  flip: FlipDirection,
-): "horizontal" | "vertical" {
-  const flipsHorizontally =
-    (orientation === "portrait" && flip === "long-edge") ||
-    (orientation === "landscape" && flip === "short-edge");
-  return flipsHorizontally ? "horizontal" : "vertical";
 }
 
 export default function PdfExportModal(props: Props) {
@@ -244,8 +40,10 @@ export default function PdfExportModal(props: Props) {
   const [showPageNumbers, setShowPageNumbers] = createSignal(true);
   const [doubleSided, setDoubleSided] = createSignal(true);
   const [flipDirection, setFlipDirection] =
-    createSignal<FlipDirection>("long-edge");
-  const [backPaddingIn, setBackPaddingIn] = createSignal(BACK_CARD_PAD_DEFAULT);
+    createSignal<PdfFlipDirection>("long-edge");
+  const [backPaddingIn, setBackPaddingIn] = createSignal(
+    PDF_BACK_CARD_PAD_DEFAULT,
+  );
   const [generating, setGenerating] = createSignal(false);
   const [progress, setProgress] = createSignal<{ done: number; total: number }>(
     { done: 0, total: 0 },
@@ -427,20 +225,20 @@ export default function PdfExportModal(props: Props) {
         const imgAreaH = innerH - titleAreaH;
         const imgAreaY = innerY + titleAreaH;
 
-        const img: ImageData | null = recipe.thumbnailPhotoId
+        const img: PdfImageData | null = recipe.thumbnailPhotoId
           ? await cropImageToAspectRatio(
               await fetchThumbnail(
                 recipe.thumbnailPhotoId,
                 tok,
                 props.authedFetch,
               ),
-              PHOTO_ASPECT_RATIO,
+              PDF_PHOTO_ASPECT_RATIO,
             )
           : null;
 
         if (img && imgAreaH > 0) {
-          const drawW = Math.min(innerW, imgAreaH * PHOTO_ASPECT_RATIO);
-          const drawH = drawW / PHOTO_ASPECT_RATIO;
+          const drawW = Math.min(innerW, imgAreaH * PDF_PHOTO_ASPECT_RATIO);
+          const drawH = drawW / PDF_PHOTO_ASPECT_RATIO;
           const drawX = innerX + (innerW - drawW) / 2;
           const drawY = imgAreaY + (imgAreaH - drawH) / 2;
           doc.addImage(img.dataUrl, img.format, drawX, drawY, drawW, drawH);
@@ -793,7 +591,7 @@ export default function PdfExportModal(props: Props) {
             <select
               value={flipDirection()}
               onChange={(e) =>
-                setFlipDirection(e.currentTarget.value as FlipDirection)
+                setFlipDirection(e.currentTarget.value as PdfFlipDirection)
               }
             >
               <option value="long-edge">
