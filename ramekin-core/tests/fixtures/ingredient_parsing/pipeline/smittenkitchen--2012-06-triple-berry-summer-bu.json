@@ -188,12 +188,7 @@
     },
     {
       "raw": "Glaze",
-      "expected": {
-        "item": "Glaze",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups (240 grams) powdered or confections’ sugar",
@@ -210,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -219,6 +215,7 @@
         "item": "Juice of 1 lemon",
         "measurements": [],
         "note": null,
+        "section": "Glaze",
         "category": "Produce"
       }
     },
@@ -237,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Dairy & Eggs"
       }
     }

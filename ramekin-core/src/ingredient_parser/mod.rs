@@ -1272,12 +1272,40 @@ fn closes_open_paren(s: &str) -> bool {
     scan_paren_balance(s).1
 }
 
+pub fn next_peer_section_anchor(section_name: &str) -> Option<String> {
+    (section_name == "Crumbs").then(|| section_name.to_string())
+}
+
+pub fn detect_peer_section_header(raw: &str, peer_section_anchor: Option<&str>) -> Option<String> {
+    let trimmed = raw.trim();
+    if trimmed.contains(':')
+        || trimmed.chars().any(|c| c.is_ascii_digit())
+        || !trimmed.chars().any(|c| c.is_alphabetic())
+    {
+        return None;
+    }
+
+    let lower = trimmed.to_lowercase();
+    let expected = match peer_section_anchor {
+        Some("Crumbs") => "caramel",
+        Some("Caramel") => "whipped cream",
+        Some("Whipped Cream") => "peaches",
+        _ => return None,
+    };
+    if lower != expected {
+        return None;
+    }
+
+    Some(normalize_section_name(trimmed))
+}
+
 /// Parse multiple ingredient lines (separated by newlines).
 /// Detects section headers (lines ending with colon, no measurements) and
 /// applies the section name to subsequent ingredients.
 /// Skips lines that should be ignored (scraper artifacts like "Gather Your Ingredients").
 pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
     let mut current_section: Option<String> = None;
+    let mut peer_section_anchor: Option<String> = None;
     let mut results = Vec::new();
 
     let mut lines = blob.lines().peekable();
@@ -1312,8 +1340,16 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
 
         // Check if this line is a section header
         if let Some(section_name) = detect_section_header(trimmed) {
+            peer_section_anchor = next_peer_section_anchor(&section_name);
             current_section = Some(section_name);
             continue; // Don't emit the header as an ingredient
+        }
+        if let Some(section_name) =
+            detect_peer_section_header(trimmed, peer_section_anchor.as_deref())
+        {
+            peer_section_anchor = Some(section_name.clone());
+            current_section = Some(section_name);
+            continue;
         }
 
         // Parse the ingredient and apply current section
@@ -1342,6 +1378,72 @@ mod tests {
         assert_eq!(result[1].item, "oil");
         assert_eq!(result[2].section, Some("For the Pasta".to_string()));
         assert_eq!(result[2].item, "spaghetti");
+    }
+
+    #[test]
+    fn test_parse_ingredients_title_case_sections_without_colons() {
+        let blob = "Lid\n2 cups flour\nFilling\n2 tablespoons olive oil";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 2);
+        assert_eq!(result[0].section, Some("Lid".to_string()));
+        assert_eq!(result[0].item, "flour");
+        assert_eq!(result[1].section, Some("Filling".to_string()));
+        assert_eq!(result[1].item, "olive oil");
+    }
+
+    #[test]
+    fn test_parse_ingredients_crumbs_peer_sections_without_colons() {
+        let blob = [
+            "Crumbs",
+            "1 cup flour",
+            "Caramel",
+            "2/3 cup sugar",
+            "Whipped cream",
+            "1/2 cup heavy cream",
+            "Peaches",
+            "4 large peaches",
+        ]
+        .join("\n");
+        let result = parse_ingredients(&blob);
+
+        assert_eq!(result.len(), 4);
+        assert_eq!(result[0].item, "flour");
+        assert_eq!(result[0].section, Some("Crumbs".to_string()));
+        assert_eq!(result[1].item, "sugar");
+        assert_eq!(result[1].section, Some("Caramel".to_string()));
+        assert_eq!(result[2].item, "heavy cream");
+        assert_eq!(result[2].section, Some("Whipped Cream".to_string()));
+        assert_eq!(result[3].item, "peaches");
+        assert_eq!(result[3].section, Some("Peaches".to_string()));
+    }
+
+    #[test]
+    fn test_parse_ingredients_peer_labels_stay_ingredients_without_crumbs_section() {
+        let blob = "Peaches\nWhipped cream\nToppings\nWhipped cream";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 3);
+        assert_eq!(result[0].item, "Peaches");
+        assert_eq!(result[0].section, None);
+        assert_eq!(result[1].item, "Whipped cream");
+        assert_eq!(result[1].section, None);
+        assert_eq!(result[2].item, "Whipped cream");
+        assert_eq!(result[2].section, Some("Toppings".to_string()));
+    }
+
+    #[test]
+    fn test_parse_ingredients_peach_split_peers_do_not_follow_ordinary_caramel_section() {
+        let blob = "Caramel:\nWhipped cream\npeaches\n1 cup sugar";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 3);
+        assert_eq!(result[0].item, "Whipped cream");
+        assert_eq!(result[0].section, Some("Caramel".to_string()));
+        assert_eq!(result[1].item, "peaches");
+        assert_eq!(result[1].section, Some("Caramel".to_string()));
+        assert_eq!(result[2].item, "sugar");
+        assert_eq!(result[2].section, Some("Caramel".to_string()));
     }
 
     #[test]

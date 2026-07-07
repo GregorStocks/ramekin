@@ -187,12 +187,7 @@
     },
     {
       "raw": "Almond Filling",
-      "expected": {
-        "item": "Almond Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2/3 cup (75 grams) blanched slivered almonds",
@@ -209,6 +204,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -227,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Filling",
         "category": "Baking"
       }
     },
@@ -245,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Filling",
         "category": "Baking"
       }
     },
@@ -267,6 +265,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Almond Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -281,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Almond Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -303,6 +303,7 @@
           }
         ],
         "note": "or 2 teaspoons brandy (optional)",
+        "section": "Almond Filling",
         "category": "Baking"
       }
     }

@@ -167,12 +167,7 @@
     },
     {
       "raw": "Toppings",
-      "expected": {
-        "item": "Toppings",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups heavy or whipping cream",
@@ -185,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Dairy & Eggs"
       }
     },
@@ -203,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Baking"
       }
     },
@@ -221,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Baking"
       }
     },
@@ -235,6 +233,7 @@
           }
         ],
         "note": "you’ll have leftover; you’re welcome",
+        "section": "Toppings",
         "category": "Frozen"
       }
     },
@@ -244,6 +243,7 @@
         "item": "Maraschino cherries",
         "measurements": [],
         "note": "optional",
+        "section": "Toppings",
         "category": "Produce"
       }
     }

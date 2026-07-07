@@ -77,12 +77,7 @@
     },
     {
       "raw": "Salad",
-      "expected": {
-        "item": "Salad",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound carrots, peeled and coarsely grated",
@@ -99,6 +94,7 @@
           }
         ],
         "note": "peeled and coarsely grated",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -113,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,17 +124,13 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Salad",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "Dressing",
-      "expected": {
-        "item": "Dressing",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 medium garlic clove, minced",
@@ -150,6 +143,7 @@
           }
         ],
         "note": "minced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -168,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -182,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -200,6 +196,7 @@
           }
         ],
         "note": "plus more if needed",
+        "section": "Dressing",
         "category": "Beverages"
       }
     },
@@ -218,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -227,6 +225,7 @@
         "item": "Salt and red pepper flakes to taste",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

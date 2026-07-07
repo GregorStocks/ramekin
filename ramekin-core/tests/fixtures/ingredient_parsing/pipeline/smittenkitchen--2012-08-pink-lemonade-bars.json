@@ -94,12 +94,7 @@
     },
     {
       "raw": "For the lemonade layer",
-      "expected": {
-        "item": "For the lemonade layer",
-        "measurements": [],
-        "note": null,
-        "category": "Beverages"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup (about 5 ounces or 140 grams) raspberries",
@@ -120,6 +115,7 @@
           }
         ],
         "note": "about 5 ounces or 140 grams",
+        "section": "For the Lemonade Layer",
         "category": "Produce"
       }
     },
@@ -134,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemonade Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -152,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemonade Layer",
         "category": "Baking"
       }
     },
@@ -166,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemonade Layer",
         "category": "Produce"
       }
     },
@@ -184,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "For the Lemonade Layer",
         "category": "Baking"
       }
     },
@@ -193,6 +193,7 @@
         "item": "Confectioners’ sugar, for dusting",
         "measurements": [],
         "note": null,
+        "section": "For the Lemonade Layer",
         "category": "Baking"
       }
     }

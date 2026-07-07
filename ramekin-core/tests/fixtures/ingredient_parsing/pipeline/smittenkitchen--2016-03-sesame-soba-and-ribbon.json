@@ -83,12 +83,7 @@
     },
     {
       "raw": "Dressing",
-      "expected": {
-        "item": "Dressing",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 1/2 tablespoons toasted sesame seeds, plus more for garnish",
@@ -101,6 +96,7 @@
           }
         ],
         "note": "plus more for garnish",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Beverages"
       }
     },
@@ -137,6 +134,7 @@
           }
         ],
         "note": "use low-sodium for a less salty sauce",
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -151,6 +149,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -165,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -183,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -201,6 +202,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Dressing",
         "category": "Baking"
       }
     },
@@ -210,17 +212,13 @@
         "item": "Chili sesame oil to taste",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "Omelet Ribbons",
-      "expected": {
-        "item": "Omelet Ribbons",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Neutral cooking oil, to coat skillet",
@@ -228,6 +226,7 @@
         "item": "Neutral cooking oil, to coat skillet",
         "measurements": [],
         "note": null,
+        "section": "Omelet Ribbons",
         "category": "Oils & Vinegars"
       }
     },
@@ -242,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Omelet Ribbons",
         "category": "Dairy & Eggs"
       }
     },
@@ -260,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Omelet Ribbons",
         "category": "Beverages"
       }
     },
@@ -269,6 +270,7 @@
         "item": "A few pinches sugar",
         "measurements": [],
         "note": null,
+        "section": "Omelet Ribbons",
         "category": "Baking"
       }
     },
@@ -278,6 +280,7 @@
         "item": "A few pinches salt",
         "measurements": [],
         "note": null,
+        "section": "Omelet Ribbons",
         "category": "Spices & Seasonings"
       }
     }

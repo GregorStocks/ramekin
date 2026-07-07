@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crumbs",
-      "expected": {
-        "item": "Crumbs",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoon olive oil",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crumbs",
         "category": "Oils & Vinegars"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": "minced",
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": "panko worked great here",
+        "section": "Crumbs",
         "category": "Bakery & Bread"
       }
     },
@@ -67,6 +65,7 @@
         "item": "Salt and red pepper flakes",
         "measurements": [],
         "note": "to taste",
+        "section": "Crumbs",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +80,7 @@
           }
         ],
         "note": "minced",
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
@@ -90,17 +90,13 @@
         "item": "Few fine gratings fresh lemon zest",
         "measurements": [],
         "note": null,
+        "section": "Crumbs",
         "category": "Produce"
       }
     },
     {
       "raw": "Crispy Egg",
-      "expected": {
-        "item": "Crispy Egg",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 glug of olive oil per egg",
@@ -113,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Egg",
         "category": "Oils & Vinegars"
       }
     },
@@ -127,6 +124,7 @@
           }
         ],
         "note": null,
+        "section": "Crispy Egg",
         "category": "Dairy & Eggs"
       }
     },
@@ -136,17 +134,13 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Crispy Egg",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Pasta and Assembly",
-      "expected": {
-        "item": "Pasta and Assembly",
-        "measurements": [],
-        "note": null,
-        "category": "Pasta & Rice"
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 ounces dried spaghetti",
@@ -163,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -181,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -195,6 +191,7 @@
           }
         ],
         "note": "rinsed if salted, chopped",
+        "section": "Pasta and Assembly",
         "category": "Canned Goods"
       }
     },
@@ -209,6 +206,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Pasta and Assembly",
         "category": "Produce"
       }
     },
@@ -223,6 +221,7 @@
           }
         ],
         "note": "optional",
+        "section": "Pasta and Assembly",
         "category": "Cheese"
       }
     }

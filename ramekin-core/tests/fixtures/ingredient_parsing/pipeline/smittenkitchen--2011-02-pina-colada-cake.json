@@ -242,12 +242,7 @@
     },
     {
       "raw": "Glaze",
-      "expected": {
-        "item": "Glaze",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup (120 grams or 4 ounces) powdered sugar",
@@ -268,6 +263,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Baking"
       }
     },
@@ -282,6 +278,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Spices & Seasonings"
       }
     },
@@ -296,6 +293,7 @@
           }
         ],
         "note": null,
+        "section": "Glaze",
         "category": "Beverages"
       }
     }

@@ -69,12 +69,7 @@
     },
     {
       "raw": "Topping",
-      "expected": {
-        "item": "Topping",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup (40 grams or 1 1/2 ounces) chopped dark chocolate",
@@ -95,6 +90,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -113,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Snacks"
       }
     },
@@ -131,6 +128,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Condiments & Sauces"
       }
     },
@@ -145,17 +143,13 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (40 grams) butter",
@@ -172,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -190,6 +185,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -204,6 +200,7 @@
           }
         ],
         "note": "I used firm D’Anjous; cooking times for other varieties will vary, cored and diced into small chunks",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -226,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     }

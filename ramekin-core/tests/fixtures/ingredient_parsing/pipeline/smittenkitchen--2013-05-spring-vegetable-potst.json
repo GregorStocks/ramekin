@@ -163,12 +163,7 @@
     },
     {
       "raw": "To assemble",
-      "expected": {
-        "item": "To assemble",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon cornstarch",
@@ -185,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Baking"
       }
     },
@@ -203,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Beverages"
       }
     },
@@ -217,6 +214,7 @@
           }
         ],
         "note": "most packages contain 50",
+        "section": "To Assemble",
         "category": "Frozen"
       }
     },
@@ -226,6 +224,7 @@
         "item": "Scallion dipping sauce",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -240,6 +239,7 @@
           }
         ],
         "note": "or, remainder of bundle used for potstickers, use some in sauce, some for garnish, thinly sliced",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -258,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Oils & Vinegars"
       }
     },
@@ -276,6 +277,7 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Condiments & Sauces"
       }
     },
@@ -290,17 +292,13 @@
           }
         ],
         "note": null,
+        "section": "To Assemble",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "To cook",
-      "expected": {
-        "item": "To cook",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 to 2 tablespoons neutral cooking oil",
@@ -313,6 +311,7 @@
           }
         ],
         "note": null,
+        "section": "To Cook",
         "category": "Oils & Vinegars"
       }
     },
@@ -327,6 +326,7 @@
           }
         ],
         "note": null,
+        "section": "To Cook",
         "category": "Beverages"
       }
     }

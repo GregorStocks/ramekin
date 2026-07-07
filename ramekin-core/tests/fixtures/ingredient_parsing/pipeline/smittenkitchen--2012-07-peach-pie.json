@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 1/2 cups (315 grams) all-purpose flour, plus more for dusting surfaces",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "plus more for dusting surfaces",
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -88,6 +86,7 @@
           }
         ],
         "note": "very cold",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -106,17 +105,13 @@
           }
         ],
         "note": "very cold",
+        "section": "Crust",
         "category": "Beverages"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "About 3 1/2 pounds peaches (approximately 6 large, 7 medium or 8 small)",
@@ -124,6 +119,7 @@
         "item": "About 3 1/2 pounds peaches",
         "measurements": [],
         "note": "approximately 6 large, 7 medium or 8 small",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -138,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -156,6 +153,7 @@
           }
         ],
         "note": "see note up top; use 1/3 cup for a sweeter pie",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -174,6 +172,7 @@
           }
         ],
         "note": "ditto",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -192,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -201,6 +201,7 @@
         "item": "Few gratings of fresh nutmeg",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -219,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -233,17 +235,13 @@
           }
         ],
         "note": "see note up top; or 3 tablespoons cornstarch or potato starch",
+        "section": "Filling",
         "category": "Baking"
       }
     },
     {
       "raw": "To finish",
-      "expected": {
-        "item": "To finish",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon milk, cream or water",
@@ -256,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -270,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Baking"
       }
     }

@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "37 gingersnap cookies, coarsely broken (about 9 ounces; about 3 1/4 cups plus 2 tablespoons of pieces)",
@@ -30,6 +25,7 @@
           }
         ],
         "note": "about 9 ounces; about 3 1/4 cups plus 2 tablespoons of pieces",
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -48,17 +44,13 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 8-ounce container mascarpone cheese",
@@ -71,6 +63,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -89,6 +82,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Filling",
         "category": "Cheese"
       }
     },
@@ -107,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -125,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -139,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -157,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -171,17 +169,13 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
       "raw": "Topping",
-      "expected": {
-        "item": "Topping",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 to 5 small nectarines, halved, pitted, cut into thin slices",
@@ -194,6 +188,7 @@
           }
         ],
         "note": "cut into thin slices",
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -208,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -222,6 +218,7 @@
           }
         ],
         "note": "optional",
+        "section": "Topping",
         "category": "Produce"
       }
     }

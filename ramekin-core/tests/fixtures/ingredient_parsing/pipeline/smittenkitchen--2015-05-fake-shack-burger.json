@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Sauce",
-      "expected": {
-        "item": "Sauce",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup mayonnaise",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -130,17 +131,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Assembly",
-      "expected": {
-        "item": "Assembly",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons unsalted butter, plus more if needed",
@@ -157,6 +154,7 @@
           }
         ],
         "note": "plus more if needed",
+        "section": "Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -189,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -198,6 +198,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -207,6 +208,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,6 +223,7 @@
           }
         ],
         "note": "if you’re making cheeseburgers",
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -235,6 +238,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -244,6 +248,7 @@
         "item": "Thinly sliced pickles",
         "measurements": [],
         "note": "if desired",
+        "section": "Assembly",
         "category": "Condiments & Sauces"
       }
     },
@@ -258,6 +263,7 @@
           }
         ],
         "note": "I used curly green leaf lettuce",
+        "section": "Assembly",
         "category": "Produce"
       }
     }

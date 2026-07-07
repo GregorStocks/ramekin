@@ -163,12 +163,7 @@
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups (120 grams) rolled oats",
@@ -185,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Snacks"
       }
     },
@@ -207,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -225,6 +222,7 @@
           }
         ],
         "note": "coarsely chopped",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -243,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -261,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,6 +279,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -297,6 +298,7 @@
           }
         ],
         "note": "melted",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -311,6 +313,7 @@
           }
         ],
         "note": "see Note below for replacements",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -329,6 +332,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -347,6 +351,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -361,6 +366,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

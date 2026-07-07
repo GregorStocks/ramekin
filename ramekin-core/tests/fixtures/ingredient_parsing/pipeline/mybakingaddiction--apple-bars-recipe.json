@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Bars",
-      "expected": {
-        "item": "For the Bars",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup sifted all-purpose flour",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Baking"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Baking"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Spices & Seasonings"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Spices & Seasonings"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": "melted",
+        "section": "For the Bars",
         "category": "Dairy & Eggs"
       }
     },
@@ -108,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Baking"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Baking"
       }
     },
@@ -140,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Dairy & Eggs"
       }
     },
@@ -158,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Baking"
       }
     },
@@ -172,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Produce"
       }
     },
@@ -186,6 +191,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -204,6 +210,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Baking"
       }
     },
@@ -222,17 +229,13 @@
           }
         ],
         "note": null,
+        "section": "For the Bars",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "For the Cream Cheese Glaze",
-      "expected": {
-        "item": "For the Cream Cheese Glaze",
-        "measurements": [],
-        "note": null,
-        "category": "Cheese"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 (4 ounce) package cream cheese, softened",
@@ -253,6 +256,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Cream Cheese Glaze",
         "category": "Cheese"
       }
     },
@@ -271,6 +275,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Cream Cheese Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -289,6 +294,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Glaze",
         "category": "Baking"
       }
     },
@@ -307,6 +313,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Glaze",
         "category": "Baking"
       }
     },
@@ -325,6 +332,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cream Cheese Glaze",
         "category": "Dairy & Eggs"
       }
     }

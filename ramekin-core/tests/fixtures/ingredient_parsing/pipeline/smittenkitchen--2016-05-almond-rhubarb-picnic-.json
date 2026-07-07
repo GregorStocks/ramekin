@@ -83,12 +83,7 @@
     },
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup (125 grams) all-purpose flour",
@@ -105,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -119,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -159,17 +157,13 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (75 grams or 2 1/2 to 2 3/4 ounces) sliced almonds, ideally toasted and cooled",
@@ -190,6 +184,7 @@
           }
         ],
         "note": "ideally toasted and cooled",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -208,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -217,6 +213,7 @@
         "item": "A few pinches of sea salt",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -239,6 +236,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -257,6 +255,7 @@
           }
         ],
         "note": "cold is fine",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -271,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -285,6 +285,7 @@
           }
         ],
         "note": "totally optional",
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -303,6 +304,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     }

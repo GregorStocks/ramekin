@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the bowl",
-      "expected": {
-        "item": "For the bowl",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup dried rice or another cooking grain of your choice",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bowl",
         "category": "Pasta & Rice"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": "about 1.5 pounds",
+        "section": "For the Bowl",
         "category": "Produce"
       }
     },
@@ -66,6 +63,7 @@
           }
         ],
         "note": "about 1 pound",
+        "section": "For the Bowl",
         "category": "Produce"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bowl",
         "category": "Oils & Vinegars"
       }
     },
@@ -89,6 +88,7 @@
         "item": "Coarse or kosher salt",
         "measurements": [],
         "note": null,
+        "section": "For the Bowl",
         "category": "Spices & Seasonings"
       }
     },
@@ -98,6 +98,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Bowl",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +113,7 @@
           }
         ],
         "note": null,
+        "section": "For the Bowl",
         "category": "Spices & Seasonings"
       }
     },
@@ -126,17 +128,13 @@
           }
         ],
         "note": null,
+        "section": "For the Bowl",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "For the miso-sesame dressing",
-      "expected": {
-        "item": "For the miso-sesame dressing",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon minced fresh ginger",
@@ -149,6 +147,7 @@
           }
         ],
         "note": null,
+        "section": "For the Miso-sesame Dressing",
         "category": "Produce"
       }
     },
@@ -163,6 +162,7 @@
           }
         ],
         "note": "minced",
+        "section": "For the Miso-sesame Dressing",
         "category": "Produce"
       }
     },
@@ -177,6 +177,7 @@
           }
         ],
         "note": "the mildest kind",
+        "section": "For the Miso-sesame Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,6 +196,7 @@
           }
         ],
         "note": "other nut butters can work in a pinch",
+        "section": "For the Miso-sesame Dressing",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "For the Miso-sesame Dressing",
         "category": "Baking"
       }
     },
@@ -231,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "For the Miso-sesame Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -249,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "For the Miso-sesame Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -267,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "For the Miso-sesame Dressing",
         "category": "Oils & Vinegars"
       }
     }

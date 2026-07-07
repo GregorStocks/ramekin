@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons water",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": "trimmed and cut into 3/4-inch chunks",
+        "section": "Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -108,6 +108,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Filling",
         "category": "Meat & Seafood"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": "trimmed and halved if medium or quartered if large",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -158,6 +161,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -172,6 +176,7 @@
           }
         ],
         "note": "minced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -190,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -222,17 +229,13 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Beverages"
       }
     },
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 large egg, lightly beaten",
@@ -245,6 +248,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -263,6 +267,7 @@
           }
         ],
         "note": "chilled",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -285,6 +290,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -303,6 +309,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -321,6 +328,7 @@
           }
         ],
         "note": "cut into 1/2-inch pieces and chilled",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     }

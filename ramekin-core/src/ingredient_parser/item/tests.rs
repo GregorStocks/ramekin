@@ -76,6 +76,129 @@ fn test_detect_section_header_all_caps_no_colon() {
 }
 
 #[test]
+fn test_detect_section_header_title_case_no_colon() {
+    assert_eq!(detect_section_header("Lid"), Some("Lid".to_string()));
+    assert_eq!(
+        detect_section_header("Filling"),
+        Some("Filling".to_string())
+    );
+    assert_eq!(detect_section_header("Crust"), Some("Crust".to_string()));
+    assert_eq!(
+        detect_section_header("Coating"),
+        Some("Coating".to_string())
+    );
+    assert_eq!(detect_section_header("Puffs"), Some("Puffs".to_string()));
+    assert_eq!(detect_section_header("Salad"), Some("Salad".to_string()));
+    assert_eq!(detect_section_header("Syrup"), Some("Syrup".to_string()));
+    assert_eq!(
+        detect_section_header("Cheesecake"),
+        Some("Cheesecake".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cider vinegar dip"),
+        Some("Cider Vinegar Dip".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Brown Sugar Coating"),
+        Some("Brown Sugar Coating".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cream Cheese Glaze"),
+        Some("Cream Cheese Glaze".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Rhubarb Filling"),
+        Some("Rhubarb Filling".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Crispy Egg"),
+        Some("Crispy Egg".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Pasta and Assembly"),
+        Some("Pasta and Assembly".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cheesecake Layer"),
+        Some("Cheesecake Layer".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Raspberry Swirl"),
+        Some("Raspberry Swirl".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cream Cheese Filling"),
+        Some("Cream Cheese Filling".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Lemon cream cheese filling"),
+        Some("Lemon Cream Cheese Filling".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Creamed greens"),
+        Some("Creamed Greens".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cream cheese topping"),
+        Some("Cream Cheese Topping".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Cream cheese filling"),
+        Some("Cream Cheese Filling".to_string())
+    );
+    assert_eq!(
+        detect_section_header("For the Marinade"),
+        Some("For the Marinade".to_string())
+    );
+    assert_eq!(
+        detect_section_header("For the Cream Cheese Glaze"),
+        Some("For the Cream Cheese Glaze".to_string())
+    );
+    assert_eq!(
+        detect_section_header("For the Kebabs"),
+        Some("For the Kebabs".to_string())
+    );
+    assert_eq!(
+        detect_section_header("For glaze"),
+        Some("For Glaze".to_string())
+    );
+
+    assert_eq!(detect_section_header("Chicken"), None);
+    assert_eq!(detect_section_header("Eggs"), None);
+    assert_eq!(detect_section_header("Salt"), None);
+    assert_eq!(detect_section_header("Cream"), None);
+    assert_eq!(detect_section_header("Soy Sauce"), None);
+    assert_eq!(detect_section_header("Pizza Dough"), None);
+    assert_eq!(detect_section_header("Pizza Sauce"), None);
+    assert_eq!(detect_section_header("Homemade pizza dough"), None);
+    assert_eq!(detect_section_header("Savory Greek Yogurt Dip"), None);
+    assert_eq!(detect_section_header("Cilantro Lime Dressing"), None);
+    assert_eq!(detect_section_header("Jam or other filling"), None);
+    assert_eq!(detect_section_header("Flaky salt, for topping"), None);
+    assert_eq!(
+        detect_section_header("Toasted sesame seeds + chia seeds for topping"),
+        None
+    );
+    assert_eq!(
+        detect_section_header("Few basil leaves, cut into thin ribbons"),
+        None
+    );
+    assert_eq!(
+        detect_section_header("Turbinado sugar-for sprinkling on muffins before baking"),
+        None
+    );
+    assert_eq!(detect_section_header("Chocolate Ganache Glaze"), None);
+    assert_eq!(
+        detect_section_header("Chocolate Peanut Butter Ganache"),
+        None
+    );
+    assert_eq!(detect_section_header("Lime Simple Syrup"), None);
+    assert_eq!(detect_section_header("For pistou"), None);
+    assert_eq!(detect_section_header("lid"), None);
+    assert_eq!(detect_section_header("Lid 2"), None);
+}
+
+#[test]
 fn test_detect_section_header_ingredients_suffix() {
     // Lines ending with "Ingredients" should be detected
     assert_eq!(
@@ -149,6 +272,14 @@ fn test_detect_section_header_to_assemble_pattern() {
     assert_eq!(
         detect_section_header("To assemble the cake:"),
         Some("To Assemble the Cake".to_string())
+    );
+    assert_eq!(
+        detect_section_header("To assemble"),
+        Some("To Assemble".to_string())
+    );
+    assert_eq!(
+        detect_section_header("To finish"),
+        Some("To Finish".to_string())
     );
 }
 

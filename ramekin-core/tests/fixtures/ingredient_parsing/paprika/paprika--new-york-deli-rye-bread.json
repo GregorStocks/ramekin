@@ -230,13 +230,7 @@
     },
     {
       "raw": "Dough and Baking",
-      "expected": {
-        "item": "Dough and Baking",
-        "measurements": [],
-        "note": null,
-        "section": "Flour Mixture",
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 tablespoon (0.25 ounces, 6.7 grams) vegetable oil",
@@ -257,7 +251,7 @@
           }
         ],
         "note": null,
-        "section": "Flour Mixture",
+        "section": "Dough and Baking",
         "category": "Oils & Vinegars"
       }
     },
@@ -276,7 +270,7 @@
           }
         ],
         "note": "about 0.5 ounces, 16 grams",
-        "section": "Flour Mixture",
+        "section": "Dough and Baking",
         "category": "Baking"
       }
     }

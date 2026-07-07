@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup unbleached all-purpose flour",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -84,17 +82,13 @@
           }
         ],
         "note": "cut into 1/2-inch pieces",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon ground almonds",
@@ -107,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -125,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -139,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -153,6 +150,7 @@
           }
         ],
         "note": "plus an extra teaspoon sugar",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -171,6 +169,7 @@
           }
         ],
         "note": "rolled into a 14-inch circle and chilled",
+        "section": "Filling",
         "category": "Bakery & Bread"
       }
     },
@@ -193,6 +192,7 @@
           }
         ],
         "note": "about 4 large",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -211,6 +211,7 @@
           }
         ],
         "note": "melted",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -225,6 +226,7 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -234,6 +236,7 @@
         "item": "Peach or nectarine jam",
         "measurements": [],
         "note": "optional",
+        "section": "Filling",
         "category": "Produce"
       }
     }

@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the crust",
-      "expected": {
-        "item": "For the crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "16 Oreo cookies",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "For the Crust",
         "category": "Snacks"
       }
     },
@@ -40,17 +36,13 @@
           }
         ],
         "note": "melted",
+        "section": "For the Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "For the filling",
-      "expected": {
-        "item": "For the filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup heavy cream",
@@ -67,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -85,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Cheese"
       }
     },
@@ -99,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -113,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -127,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Canned Goods"
       }
     },
@@ -145,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     }

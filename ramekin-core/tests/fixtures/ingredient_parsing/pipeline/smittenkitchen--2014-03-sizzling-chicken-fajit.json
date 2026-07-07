@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the chicken",
-      "expected": {
-        "item": "For the chicken",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds boneless, skinless chicken thighs (though, frankly, a little more or less will be fine here)",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "though, frankly, a little more or less will be fine here",
+        "section": "For the Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": "half a juicy lime",
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,6 +135,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +150,7 @@
           }
         ],
         "note": "minced or pressed",
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
@@ -157,17 +160,13 @@
         "item": "Few dashes hot sauce",
         "measurements": [],
         "note": "optional",
+        "section": "For the Chicken",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "To assemble",
-      "expected": {
-        "item": "To assemble",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 (6-inch) flour or corn tortillas",
@@ -180,6 +179,7 @@
           }
         ],
         "note": "6-inch",
+        "section": "To Assemble",
         "category": "Bakery & Bread"
       }
     },
@@ -189,6 +189,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Oils & Vinegars"
       }
     },
@@ -203,6 +204,7 @@
           }
         ],
         "note": "I use a mix of green, red and other colors, if I can find them, cut into thin strips",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -217,6 +219,7 @@
           }
         ],
         "note": "halved and sliced thin",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -226,6 +229,7 @@
         "item": "Coarse salt",
         "measurements": [],
         "note": null,
+        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     }

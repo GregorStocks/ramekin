@@ -184,12 +184,7 @@
     },
     {
       "raw": "Sauce",
-      "expected": {
-        "item": "Sauce",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup sour cream",
@@ -206,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -224,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -242,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -256,6 +254,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -270,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Spices & Seasonings"
       }
     }

@@ -83,12 +83,7 @@
     },
     {
       "raw": "For the chicken",
-      "expected": {
-        "item": "For the chicken",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 3/4-inch piece of ginger, peeled and minced (see Note up top)",
@@ -101,6 +96,7 @@
           }
         ],
         "note": "see Note up top, peeled and minced",
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
@@ -115,6 +111,7 @@
           }
         ],
         "note": "minced or pressed",
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
@@ -129,6 +126,7 @@
           }
         ],
         "note": "I used a jalapeno, seeded and minced",
+        "section": "For the Chicken",
         "category": "Produce"
       }
     },
@@ -143,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,6 +175,7 @@
           }
         ],
         "note": "I used 1/4 teaspoon; or adjusted to taste",
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -193,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -211,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -229,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Baking"
       }
     },
@@ -247,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -261,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "For the Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,17 +285,13 @@
           }
         ],
         "note": "all skin-on, bone-in, drumsticks or halved chicken breasts",
+        "section": "For the Chicken",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "For the vegetables",
-      "expected": {
-        "item": "For the vegetables",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons olive oil",
@@ -306,6 +308,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Oils & Vinegars"
       }
     },
@@ -328,6 +331,7 @@
           }
         ],
         "note": "about 4 medium, cut into 3/4-inch chunks",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -350,6 +354,7 @@
           }
         ],
         "note": "1 small or half a very large head, cut into 3/4-inch-wide florets",
+        "section": "For the Vegetables",
         "category": "Produce"
       }
     },
@@ -368,6 +373,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Spices & Seasonings"
       }
     },
@@ -382,6 +388,7 @@
           }
         ],
         "note": null,
+        "section": "For the Vegetables",
         "category": "Spices & Seasonings"
       }
     }

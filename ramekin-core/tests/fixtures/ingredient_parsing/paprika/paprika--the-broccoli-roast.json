@@ -31,12 +31,7 @@
     },
     {
       "raw": "Dry rub",
-      "expected": {
-        "item": "Dry rub",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons packed dark brown sugar",
@@ -49,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Baking"
       }
     },
@@ -63,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -81,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -99,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -108,6 +107,7 @@
         "item": "Chipotle powder or ground red pepper to taste",
         "measurements": [],
         "note": "cayenne",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
@@ -122,17 +122,13 @@
           }
         ],
         "note": "and more to taste",
+        "section": "Dry Rub",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Cider vinegar dip",
-      "expected": {
-        "item": "Cider vinegar dip",
-        "measurements": [],
-        "note": null,
-        "category": "Oils & Vinegars"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon cider vinegar",
@@ -149,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Cider Vinegar Dip",
         "category": "Oils & Vinegars"
       }
     },
@@ -163,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Cider Vinegar Dip",
         "category": "Condiments & Sauces"
       }
     },
@@ -177,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Cider Vinegar Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -191,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Cider Vinegar Dip",
         "category": "Spices & Seasonings"
       }
     },
@@ -200,6 +200,7 @@
         "item": "Shake of smoked hot paprika or chipotle powder",
         "measurements": [],
         "note": null,
+        "section": "Cider Vinegar Dip",
         "category": "Spices & Seasonings"
       }
     }

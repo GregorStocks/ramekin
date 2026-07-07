@@ -109,12 +109,7 @@
     },
     {
       "raw": "Lid",
-      "expected": {
-        "item": "Lid",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 1-inch slices from a large loaf of rye bread, whole wheat sourdough or bread of your choice (or 16 1-inch slices from a baguette), toasted until hard and lightly buttered on one side",
@@ -127,6 +122,7 @@
           }
         ],
         "note": "or 16 1-inch slices from a baguette, toasted until hard and lightly buttered on one side",
+        "section": "Lid",
         "category": "Bakery & Bread"
       }
     },
@@ -141,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Produce"
       }
     },
@@ -155,6 +152,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Lid",
         "category": "Cheese"
       }
     }

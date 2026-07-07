@@ -188,12 +188,7 @@
     },
     {
       "raw": "Streusel",
-      "expected": {
-        "item": "Streusel",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Reserved butter from cake (above)",
@@ -201,6 +196,7 @@
         "item": "Reserved butter from cake",
         "measurements": [],
         "note": "above",
+        "section": "Streusel",
         "category": "Dairy & Eggs"
       }
     },
@@ -223,6 +219,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -245,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Baking"
       }
     },
@@ -263,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     },
@@ -277,6 +276,7 @@
           }
         ],
         "note": null,
+        "section": "Streusel",
         "category": "Spices & Seasonings"
       }
     }

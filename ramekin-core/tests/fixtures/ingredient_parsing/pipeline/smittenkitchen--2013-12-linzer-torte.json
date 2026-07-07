@@ -166,12 +166,7 @@
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup (about 20 to 25 grams) fine, dry breadcrumbs",
@@ -188,6 +183,7 @@
           }
         ],
         "note": "about 20 to 25 grams",
+        "section": "Filling",
         "category": "Bakery & Bread"
       }
     },
@@ -206,17 +202,13 @@
           }
         ],
         "note": "about 575 grams",
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
       "raw": "To finish",
-      "expected": {
-        "item": "To finish",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 egg yolk",
@@ -229,6 +221,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -247,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Beverages"
       }
     },
@@ -265,6 +259,7 @@
           }
         ],
         "note": "julienne-shaped pieces, optional",
+        "section": "To Finish",
         "category": "Nuts & Dried Fruit"
       }
     }

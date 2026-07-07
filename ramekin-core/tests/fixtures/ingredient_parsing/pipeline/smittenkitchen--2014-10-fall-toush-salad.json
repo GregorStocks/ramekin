@@ -69,12 +69,7 @@
     },
     {
       "raw": "Salad",
-      "expected": {
-        "item": "Salad",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons olive oil, possibly plus another spoonful",
@@ -87,6 +82,7 @@
           }
         ],
         "note": "plus another spoonful",
+        "section": "Salad",
         "category": "Oils & Vinegars"
       }
     },
@@ -105,6 +101,7 @@
           }
         ],
         "note": "one medium",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -123,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -132,6 +130,7 @@
         "item": "Salt and freshly ground black pepper or Aleppo pepper flakes to taste",
         "measurements": [],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -146,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Salad",
         "category": "Bakery & Bread"
       }
     },
@@ -155,6 +155,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
@@ -169,6 +170,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -178,6 +180,7 @@
         "item": "About 1 tablespoon mint leaves",
         "measurements": [],
         "note": "finely chopped",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -187,6 +190,7 @@
         "item": "About 1 tablespoon flat-leaf parsley or cilantro leaves",
         "measurements": [],
         "note": "finely chopped",
+        "section": "Salad",
         "category": "Produce"
       }
     },
@@ -196,17 +200,13 @@
         "item": "Additional ground sumac or paprika, to finish",
         "measurements": [],
         "note": null,
+        "section": "Salad",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Dressing",
-      "expected": {
-        "item": "Dressing",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons ground sumac or paprika (see Note above)",
@@ -219,6 +219,7 @@
           }
         ],
         "note": "see Note above",
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     },
@@ -237,6 +238,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Beverages"
       }
     },
@@ -251,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -265,6 +268,7 @@
           }
         ],
         "note": "minced",
+        "section": "Dressing",
         "category": "Produce"
       }
     },
@@ -283,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -301,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Dressing",
         "category": "Oils & Vinegars"
       }
     },
@@ -310,6 +316,7 @@
         "item": "Salt and freshly ground black pepper or Aleppo pepper flakes to taste",
         "measurements": [],
         "note": null,
+        "section": "Dressing",
         "category": "Spices & Seasonings"
       }
     }

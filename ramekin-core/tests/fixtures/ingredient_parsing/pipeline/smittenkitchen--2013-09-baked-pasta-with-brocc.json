@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Pasta and assembly",
-      "expected": {
-        "item": "Pasta and assembly",
-        "measurements": [],
-        "note": null,
-        "category": "Pasta & Rice"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound chunky pasta of your choice (I love bell shapes; see above for details)",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "I love bell shapes; see above for details",
+        "section": "Pasta and Assembly",
         "category": "Pasta & Rice"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": "see above for options",
+        "section": "Pasta and Assembly",
         "category": "Produce"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": "sweet or spicy pork or chicken",
+        "section": "Pasta and Assembly",
         "category": "Meat & Seafood"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Cheese"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": "cut into small cubes",
+        "section": "Pasta and Assembly",
         "category": "Cheese"
       }
     },
@@ -99,6 +99,7 @@
         "item": "Bechamel",
         "measurements": [],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Other"
       }
     },
@@ -113,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Baking"
       }
     },
@@ -167,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +181,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +196,7 @@
           }
         ],
         "note": "minced",
+        "section": "Pasta and Assembly",
         "category": "Produce"
       }
     },
@@ -199,6 +206,7 @@
         "item": "Few gratings fresh nutmeg",
         "measurements": [],
         "note": null,
+        "section": "Pasta and Assembly",
         "category": "Spices & Seasonings"
       }
     }

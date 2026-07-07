@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the base",
-      "expected": {
-        "item": "For the base",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup heavy whipping cream",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Dairy & Eggs"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Baking"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Cheese"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Baking"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Beverages"
       }
     },
@@ -104,17 +104,13 @@
           }
         ],
         "note": null,
+        "section": "For the Base",
         "category": "Beverages"
       }
     },
     {
       "raw": "For the layering",
-      "expected": {
-        "item": "For the layering",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup heavy cream, whipped with 2 tablespoons granulated sugar",
@@ -127,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "For the Layering",
         "category": "Baking"
       }
     },
@@ -141,17 +138,13 @@
           }
         ],
         "note": null,
+        "section": "For the Layering",
         "category": "Snacks"
       }
     },
     {
       "raw": "For the garnish",
-      "expected": {
-        "item": "For the garnish",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "fresh raspberries",
@@ -159,6 +152,7 @@
         "item": "fresh raspberries",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Produce"
       }
     },
@@ -168,6 +162,7 @@
         "item": "chocolate shavings",
         "measurements": [],
         "note": null,
+        "section": "For the Garnish",
         "category": "Snacks"
       }
     }

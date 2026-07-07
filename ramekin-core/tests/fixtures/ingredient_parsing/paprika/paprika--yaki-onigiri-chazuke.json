@@ -131,12 +131,7 @@
     },
     {
       "raw": "Toppings",
-      "expected": {
-        "item": "Toppings",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 Umeboshi pickled sour plum",
@@ -149,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -163,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -172,6 +169,7 @@
         "item": "Nori roasted seaweed",
         "measurements": [],
         "note": "shredded",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -181,6 +179,7 @@
         "item": "wasabi",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     }

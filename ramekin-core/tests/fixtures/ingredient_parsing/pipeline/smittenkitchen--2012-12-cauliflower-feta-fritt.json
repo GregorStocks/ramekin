@@ -150,12 +150,7 @@
     },
     {
       "raw": "To serve",
-      "expected": {
-        "item": "To serve",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup yogurt",
@@ -168,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Dairy & Eggs"
       }
     },
@@ -186,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +192,7 @@
         "item": "Salt and pepper to taste",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     }

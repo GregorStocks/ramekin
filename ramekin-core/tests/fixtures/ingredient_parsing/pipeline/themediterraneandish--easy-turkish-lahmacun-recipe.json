@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Dough",
-      "expected": {
-        "item": "Dough",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 lb uncooked store-bought organic pizza dough",
@@ -26,17 +21,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "Topping",
-      "expected": {
-        "item": "Topping",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2  sweet red pepper (cored, cut into chunks)",
@@ -49,6 +40,7 @@
           }
         ],
         "note": "cored, cut into chunks",
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +55,7 @@
           }
         ],
         "note": "halved",
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -77,6 +70,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -95,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     },
@@ -113,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Meat & Seafood"
       }
     },
@@ -131,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -235,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -253,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Canned Goods"
       }
     },
@@ -267,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Oils & Vinegars"
       }
     },
@@ -276,6 +281,7 @@
         "item": "Lemon wedges for later",
         "measurements": [],
         "note": null,
+        "section": "Topping",
         "category": "Produce"
       }
     }

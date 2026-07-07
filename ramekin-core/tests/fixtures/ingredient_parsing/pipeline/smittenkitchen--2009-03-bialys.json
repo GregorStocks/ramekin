@@ -84,12 +84,7 @@
     },
     {
       "raw": "Onion-Poppy Seed Filling",
-      "expected": {
-        "item": "Onion-Poppy Seed Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 1/4 teaspoons vegetable oil",
@@ -106,6 +101,7 @@
           }
         ],
         "note": null,
+        "section": "Onion-poppy Seed Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -128,6 +124,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Onion-poppy Seed Filling",
         "category": "Produce"
       }
     },
@@ -142,6 +139,7 @@
           }
         ],
         "note": "I love poppy seeds on a bialy, but this did seem more than I was used to; I might dial it back next time",
+        "section": "Onion-poppy Seed Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -156,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Onion-poppy Seed Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -165,6 +164,7 @@
         "item": "Black pepper to taste",
         "measurements": [],
         "note": null,
+        "section": "Onion-poppy Seed Filling",
         "category": "Spices & Seasonings"
       }
     }

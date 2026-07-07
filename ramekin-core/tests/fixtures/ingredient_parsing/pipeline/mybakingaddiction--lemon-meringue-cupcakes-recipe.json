@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Cake",
-      "expected": {
-        "item": "For the Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 1/4 cups cake flour (I used Swan’s Down brand)",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "I used Swan’s Down brand",
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -121,6 +122,7 @@
         "item": "lemon zest from two lemons",
         "measurements": [],
         "note": "finely grated",
+        "section": "For the Cake",
         "category": "Produce"
       }
     },
@@ -143,6 +145,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,17 +164,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
     {
       "raw": "For the Filling",
-      "expected": {
-        "item": "For the Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup lemon curd",
@@ -184,6 +183,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Produce"
       }
     },
@@ -198,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -212,6 +213,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -230,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Beverages"
       }
     },
@@ -248,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -262,6 +266,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     }

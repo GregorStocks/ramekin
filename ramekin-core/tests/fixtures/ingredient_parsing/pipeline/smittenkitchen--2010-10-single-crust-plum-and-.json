@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Lid",
-      "expected": {
-        "item": "Lid",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "7 tablespoons (100 grams) unsalted butter, at room temperature",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Lid",
         "category": "Dairy & Eggs"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Baking"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Produce"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": "lightly beaten",
+        "section": "Lid",
         "category": "Dairy & Eggs"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Baking"
       }
     },
@@ -108,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Lid",
         "category": "Baking"
       }
     },
@@ -122,6 +123,7 @@
           }
         ],
         "note": "or less of table salt",
+        "section": "Lid",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,6 +133,7 @@
         "item": "Milk or cream, for brushing crust",
         "measurements": [],
         "note": null,
+        "section": "Lid",
         "category": "Dairy & Eggs"
       }
     },
@@ -140,6 +143,7 @@
         "item": "Coarse or fine sugar, for sprinkling crust",
         "measurements": [],
         "note": null,
+        "section": "Lid",
         "category": "Baking"
       }
     },
@@ -149,17 +153,13 @@
         "item": "Softly whipped, lightly sweetened cream",
         "measurements": [],
         "note": "for serving",
+        "section": "Lid",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound ripe prune plums or greengages, halved, pitted, and halved again (i.e. quartered)",
@@ -176,6 +176,7 @@
           }
         ],
         "note": "i.e. quartered, and halved again",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -194,6 +195,7 @@
           }
         ],
         "note": "than you see in my photos, cored and cut into smaller chunks",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -212,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -230,6 +233,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -239,6 +243,7 @@
         "item": "Squeeze or two of orange or lemon juice",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     }

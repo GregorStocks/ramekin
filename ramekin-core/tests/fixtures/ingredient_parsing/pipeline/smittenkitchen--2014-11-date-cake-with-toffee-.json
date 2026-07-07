@@ -252,12 +252,7 @@
     },
     {
       "raw": "Sauce",
-      "expected": {
-        "item": "Sauce",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 tablespoons (1 stick, 4 ounces or 115 grams) unsalted butter, melted",
@@ -282,6 +277,7 @@
           }
         ],
         "note": "melted",
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -300,6 +296,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Dairy & Eggs"
       }
     },
@@ -318,6 +315,7 @@
           }
         ],
         "note": "light is called for, but I’d like to use dark next time",
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -336,17 +334,13 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
     {
       "raw": "To serve",
-      "expected": {
-        "item": "To serve",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Unsweetened whipped cream (optional, but please don’t skip it)",
@@ -354,6 +348,7 @@
         "item": "Unsweetened whipped cream",
         "measurements": [],
         "note": "optional, but please don’t skip it",
+        "section": "To Serve",
         "category": "Dairy & Eggs"
       }
     },
@@ -363,6 +358,7 @@
         "item": "A few flakes of sea salt",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Spices & Seasonings"
       }
     },
@@ -372,6 +368,7 @@
         "item": "Fresh mint leaves",
         "measurements": [],
         "note": "optional",
+        "section": "To Serve",
         "category": "Produce"
       }
     }

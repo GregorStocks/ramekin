@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crumb crust",
-      "expected": {
-        "item": "Crumb crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 ounces (15 4 3/4 x 2 1/2-inch sheets of graham cracker; yes, I am crazy enough to both count and measure) finely ground graham crackers or cookies such as chocolate or vanilla wafers",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "15 4 3/4 x 2 1/2-inch sheets of graham cracker; yes, I am crazy enough to both count and measure",
+        "section": "Crumb Crust",
         "category": "Snacks"
       }
     },
@@ -52,6 +48,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crumb Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -70,6 +67,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb Crust",
         "category": "Baking"
       }
     },
@@ -88,6 +86,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -102,6 +101,7 @@
           }
         ],
         "note": "8-ounce, Philadelphia is recommended for cheesecakes but if you’ve had success with other brands, feel free to use them again, softened",
+        "section": "Crumb Crust",
         "category": "Cheese"
       }
     },
@@ -120,6 +120,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb Crust",
         "category": "Baking"
       }
     },
@@ -138,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb Crust",
         "category": "Baking"
       }
     },
@@ -152,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb Crust",
         "category": "Produce"
       }
     },
@@ -166,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb Crust",
         "category": "Produce"
       }
     },
@@ -180,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -194,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Crumb Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -212,17 +218,13 @@
           }
         ],
         "note": null,
+        "section": "Crumb Crust",
         "category": "Baking"
       }
     },
     {
       "raw": "Cherry topping",
-      "expected": {
-        "item": "Cherry topping",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "10 ounces sweet or sour cherries, pitted (they’re not in season here so I used frozen; worked just fine)",
@@ -239,6 +241,7 @@
           }
         ],
         "note": "they’re not in season here so I used frozen; worked just fine",
+        "section": "Cherry Topping",
         "category": "Produce"
       }
     },
@@ -257,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Topping",
         "category": "Produce"
       }
     },
@@ -275,6 +279,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Topping",
         "category": "Baking"
       }
     },
@@ -293,6 +298,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Topping",
         "category": "Baking"
       }
     },
@@ -311,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "Cherry Topping",
         "category": "Beverages"
       }
     }

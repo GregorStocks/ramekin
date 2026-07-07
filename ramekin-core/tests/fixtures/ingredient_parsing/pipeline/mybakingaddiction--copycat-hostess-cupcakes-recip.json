@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Cake",
-      "expected": {
-        "item": "For the Cake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups sugar",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -162,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -180,6 +184,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Baking"
       }
     },
@@ -198,17 +203,13 @@
           }
         ],
         "note": null,
+        "section": "For the Cake",
         "category": "Beverages"
       }
     },
     {
       "raw": "For the Filling",
-      "expected": {
-        "item": "For the Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 large egg whites",
@@ -221,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -239,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -257,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
@@ -275,6 +279,7 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Beverages"
       }
     },
@@ -293,17 +298,13 @@
           }
         ],
         "note": null,
+        "section": "For the Filling",
         "category": "Baking"
       }
     },
     {
       "raw": "For the Ganache Frosting",
-      "expected": {
-        "item": "For the Ganache Frosting",
-        "measurements": [],
-        "note": null,
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup cream",
@@ -316,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "For the Ganache Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -334,6 +336,7 @@
           }
         ],
         "note": "I used semi-sweet, finely chopped",
+        "section": "For the Ganache Frosting",
         "category": "Baking"
       }
     },
@@ -352,6 +355,7 @@
           }
         ],
         "note": "softened",
+        "section": "For the Ganache Frosting",
         "category": "Dairy & Eggs"
       }
     }

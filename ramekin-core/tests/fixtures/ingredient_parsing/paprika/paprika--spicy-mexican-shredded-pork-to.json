@@ -214,12 +214,7 @@
     },
     {
       "raw": "Garnishes",
-      "expected": {
-        "item": "Garnishes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "queso fresco or feta cheese",
@@ -227,6 +222,7 @@
         "item": "queso fresco or feta cheese",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Cheese"
       }
     },
@@ -236,6 +232,7 @@
         "item": "fresh cilantro leaves",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -245,6 +242,7 @@
         "item": "sour cream",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Dairy & Eggs"
       }
     },
@@ -254,6 +252,7 @@
         "item": "Diced avocado",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -263,6 +262,7 @@
         "item": "Lime wedge",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     }

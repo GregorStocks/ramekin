@@ -78,12 +78,7 @@
     },
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups (155 grams) finely ground graham cracker crumbs (from about 10 crackers)",
@@ -100,6 +95,7 @@
           }
         ],
         "note": "from about 10 crackers",
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -118,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -132,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -150,17 +148,13 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 tablespoons finely grated lime zest",
@@ -173,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -187,6 +182,7 @@
           }
         ],
         "note": "though extra-large would do you no harm here",
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -205,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Canned Goods"
       }
     },
@@ -227,17 +224,13 @@
           }
         ],
         "note": "from about 1 dozen tiny key limes or 4 persian/regular limes",
+        "section": "Filling",
         "category": "Produce"
       }
     },
     {
       "raw": "To Finish",
-      "expected": {
-        "item": "To Finish",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (175 ml) heavy whipping cream",
@@ -258,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -272,6 +266,7 @@
           }
         ],
         "note": "to taste",
+        "section": "To Finish",
         "category": "Baking"
       }
     }

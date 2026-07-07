@@ -176,12 +176,7 @@
     },
     {
       "raw": "Sauce",
-      "expected": {
-        "item": "Sauce",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "12 ounces fresh blackberries (frozen should work as well, but you should start with half the water)",
@@ -198,6 +193,7 @@
           }
         ],
         "note": "frozen should work as well, but you should start with half the water",
+        "section": "Sauce",
         "category": "Produce"
       }
     },
@@ -216,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Beverages"
       }
     },
@@ -234,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Baking"
       }
     },
@@ -252,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Sauce",
         "category": "Produce"
       }
     }

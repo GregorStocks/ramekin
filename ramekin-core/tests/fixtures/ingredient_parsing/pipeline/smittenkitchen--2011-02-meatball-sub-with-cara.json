@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Meatballs",
-      "expected": {
-        "item": "Meatballs",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "The baguettes or seeded sandwich rolls you’ll use for your sandwiches (see Note above for how to estimate)",
@@ -17,6 +12,7 @@
         "item": "The baguettes or seeded sandwich rolls you’ll use for your sandwiches",
         "measurements": [],
         "note": "see Note above for how to estimate",
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -35,6 +31,7 @@
           }
         ],
         "note": "I used pork but have in the past used beef, veal, chicken, turkey or a blend thereof",
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -49,6 +46,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -63,6 +61,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Cheese"
       }
     },
@@ -81,6 +80,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -95,6 +95,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -109,6 +110,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -127,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,6 +148,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -159,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -168,6 +173,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
     },
@@ -182,6 +188,7 @@
           }
         ],
         "note": "plus extra if you like a lot of extra sauce",
+        "section": "Meatballs",
         "category": "Canned Goods"
       }
     },
@@ -191,6 +198,7 @@
         "item": "Caramelized onions",
         "measurements": [],
         "note": null,
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -205,6 +213,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -223,6 +232,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,6 +251,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Oils & Vinegars"
       }
     },
@@ -250,6 +261,7 @@
         "item": "kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     }

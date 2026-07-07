@@ -313,6 +313,122 @@ pub(in crate::ingredient_parser) fn title_case(s: &str) -> String {
     result
 }
 
+pub(in crate::ingredient_parser) fn is_known_title_case_section_label(name: &str) -> bool {
+    const TITLE_CASE_SECTION_LABELS: &[&str] = &[
+        "assembly",
+        "batter",
+        "brine",
+        "cheesecake",
+        "coating",
+        "crumb",
+        "crumbs",
+        "crumble",
+        "crust",
+        "decoration",
+        "dip",
+        "dough",
+        "dressing",
+        "filling",
+        "frosting",
+        "ganache",
+        "garnish",
+        "garnishes",
+        "glaze",
+        "icing",
+        "lid",
+        "marinade",
+        "meatballs",
+        "muffin",
+        "puffs",
+        "salad",
+        "sauce",
+        "streusel",
+        "syrup",
+        "topping",
+        "toppings",
+        "waffles",
+    ];
+    const TITLE_CASE_SECTION_SUFFIXES: &[&str] = &[
+        "assembly", "baking", "brine", "coating", "crust", "dip", "dough", "filling", "layer",
+        "marinade", "ribbons", "rub", "swirl", "topping",
+    ];
+    const TITLE_CASE_SECTION_PHRASES: &[&str] = &[
+        "cream cheese filling",
+        "cream cheese glaze",
+        "creamed greens",
+        "crispy egg",
+    ];
+    const TITLE_CASE_SECTION_EXCLUSIONS: &[&str] = &[
+        "homemade pizza dough",
+        "pizza dough",
+        "pizza sauce",
+        "savory greek yogurt dip",
+        "soy sauce",
+    ];
+    const TITLE_CASE_SMALL_WORDS: &[&str] = &["and", "or", "the", "of", "for", "to", "in", "with"];
+
+    if name.contains(':')
+        || name.chars().any(|c| c.is_ascii_digit())
+        || !name.chars().any(|c| c.is_alphabetic())
+    {
+        return false;
+    }
+
+    let lower = name.to_lowercase();
+    if name.contains(',')
+        || name.contains('+')
+        || name.contains('/')
+        || lower.contains(" for ")
+        || lower.contains("-for ")
+        || lower.contains(" or ")
+    {
+        return false;
+    }
+
+    if TITLE_CASE_SECTION_PHRASES
+        .iter()
+        .any(|phrase| lower == *phrase)
+    {
+        return true;
+    }
+
+    let words = name.split_whitespace();
+    if !words
+        .clone()
+        .next()
+        .is_some_and(|word| word.chars().next().is_some_and(|c| c.is_uppercase()))
+    {
+        return false;
+    }
+    if !words.clone().skip(1).all(|word| {
+        let lower_word = word.to_lowercase();
+        TITLE_CASE_SMALL_WORDS.contains(&lower_word.as_str())
+            || word.chars().next().is_some_and(|c| c.is_uppercase())
+            || word.chars().all(|c| !c.is_alphabetic() || c.is_lowercase())
+    }) {
+        return false;
+    }
+
+    let word_count = words.clone().count();
+    if word_count == 1 {
+        return TITLE_CASE_SECTION_LABELS
+            .iter()
+            .any(|label| lower == *label);
+    }
+
+    if TITLE_CASE_SECTION_EXCLUSIONS
+        .iter()
+        .any(|phrase| lower == *phrase)
+    {
+        return false;
+    }
+
+    lower
+        .split_whitespace()
+        .last()
+        .is_some_and(|last_word| TITLE_CASE_SECTION_SUFFIXES.contains(&last_word))
+}
+
 /// Detect if a line is a section header (e.g., "For the sauce:", "FILLING:", "Topping Ingredients:").
 /// Also detects ALL CAPS lines without colons (e.g., "DOUGH", "FILLING", "BERRY SAUCE").
 /// Returns Some(normalized_section_name) if it's a header, None if it's a regular ingredient.
@@ -330,6 +446,36 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
             .filter(|c| c.is_alphabetic())
             .all(|c| c.is_uppercase())
         && trimmed.chars().any(|c| c.is_alphabetic())
+    {
+        return Some(normalize_section_name(trimmed));
+    }
+
+    let lower = trimmed.to_lowercase();
+    if !trimmed.contains(':') && lower.starts_with("for the ") {
+        let section_name = trimmed.get("for the ".len()..).unwrap_or("").trim();
+        if section_name.chars().any(|c| c.is_alphabetic()) {
+            return Some(normalize_section_name(trimmed));
+        }
+    }
+
+    if !trimmed.contains(':') && lower.starts_with("for ") {
+        let section_name = trimmed.get("for ".len()..).unwrap_or("").trim();
+        if section_name
+            .chars()
+            .next()
+            .is_some_and(|c| c.is_uppercase())
+            || is_known_title_case_section_label(&normalize_section_name(section_name))
+        {
+            return Some(normalize_section_name(trimmed));
+        }
+    }
+
+    if is_known_title_case_section_label(trimmed) {
+        return Some(normalize_section_name(trimmed));
+    }
+
+    if !trimmed.contains(':')
+        && ["to assemble", "to cook", "to finish", "to serve"].contains(&lower.as_str())
     {
         return Some(normalize_section_name(trimmed));
     }

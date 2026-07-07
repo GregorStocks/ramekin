@@ -194,12 +194,7 @@
     },
     {
       "raw": "For Each Cocktail",
-      "expected": {
-        "item": "For Each Cocktail",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 piece of orange peel (about 1 by 2 inches)",
@@ -212,6 +207,7 @@
           }
         ],
         "note": "about 1 by 2 inches",
+        "section": "For Each Cocktail",
         "category": "Produce"
       }
     },
@@ -230,6 +226,7 @@
           }
         ],
         "note": "recipe above",
+        "section": "For Each Cocktail",
         "category": "Condiments & Sauces"
       }
     },
@@ -244,6 +241,7 @@
           }
         ],
         "note": "Fee Brothers black walnut bitters are recommended, I used orange bitters",
+        "section": "For Each Cocktail",
         "category": "Other"
       }
     },
@@ -262,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "For Each Cocktail",
         "category": "Beverages"
       }
     }

@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups (about 250 grams) finely ground chocolate cookie crumbs (from about 1 9-ounce sleeve chocolate wafers; see more suggestions below)",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "about 250 grams, from about 1 9-ounce sleeve chocolate wafers; see more suggestions below",
+        "section": "Crust",
         "category": "Snacks"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -80,17 +78,13 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Raspberry Swirl",
-      "expected": {
-        "item": "Raspberry Swirl",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 ounces (170 grams) fresh or frozen raspberries (which have been thawed or they will not puree easily)",
@@ -107,6 +101,7 @@
           }
         ],
         "note": "which have been thawed or they will not puree easily",
+        "section": "Raspberry Swirl",
         "category": "Produce"
       }
     },
@@ -125,17 +120,13 @@
           }
         ],
         "note": null,
+        "section": "Raspberry Swirl",
         "category": "Baking"
       }
     },
     {
       "raw": "Cheesecake",
-      "expected": {
-        "item": "Cheesecake",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "32 ounces (905 grams) cream cheese, very soft at room temperature",
@@ -152,6 +143,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Cheese"
       }
     },
@@ -170,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -184,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Spices & Seasonings"
       }
     },
@@ -202,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     },
@@ -216,6 +211,7 @@
           }
         ],
         "note": "room temperature",
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -225,6 +221,7 @@
         "item": "Chocolate sauce for serving",
         "measurements": [],
         "note": "optional",
+        "section": "Cheesecake",
         "category": "Condiments & Sauces"
       }
     },
@@ -243,6 +240,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Dairy & Eggs"
       }
     },
@@ -261,6 +259,7 @@
           }
         ],
         "note": null,
+        "section": "Cheesecake",
         "category": "Baking"
       }
     }

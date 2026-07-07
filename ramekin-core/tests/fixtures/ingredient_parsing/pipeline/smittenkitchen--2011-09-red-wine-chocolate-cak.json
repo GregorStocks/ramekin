@@ -229,12 +229,7 @@
     },
     {
       "raw": "Topping",
-      "expected": {
-        "item": "Topping",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup mascarpone cheese",
@@ -247,6 +242,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Cheese"
       }
     },
@@ -265,6 +261,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -283,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     },
@@ -301,6 +299,7 @@
           }
         ],
         "note": null,
+        "section": "Topping",
         "category": "Baking"
       }
     }

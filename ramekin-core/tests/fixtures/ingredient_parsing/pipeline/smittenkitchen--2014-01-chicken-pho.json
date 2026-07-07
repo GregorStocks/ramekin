@@ -168,12 +168,7 @@
     },
     {
       "raw": "Garnishes",
-      "expected": {
-        "item": "Garnishes",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 large scallion, thinly sliced",
@@ -186,6 +181,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -204,6 +200,7 @@
           }
         ],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -218,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -232,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -246,6 +245,7 @@
           }
         ],
         "note": "cut into wedges",
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -260,6 +260,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Garnishes",
         "category": "Produce"
       }
     },
@@ -269,6 +270,7 @@
         "item": "Asian chili-garlic sauce",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Condiments & Sauces"
       }
     },
@@ -278,6 +280,7 @@
         "item": "Hoisin sauce",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Condiments & Sauces"
       }
     },
@@ -287,6 +290,7 @@
         "item": "Crispy shallots, recipe follows",
         "measurements": [],
         "note": null,
+        "section": "Garnishes",
         "category": "Produce"
       }
     }

@@ -163,12 +163,7 @@
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (100 grams) granulated sugar",
@@ -185,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -203,6 +199,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,6 +218,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -239,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -253,6 +252,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Beverages"
       }
     }

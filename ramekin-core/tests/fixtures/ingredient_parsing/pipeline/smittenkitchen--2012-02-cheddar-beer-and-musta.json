@@ -157,12 +157,7 @@
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoon (42 grams) unsalted butter",
@@ -179,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -197,6 +193,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -219,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -233,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -251,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,6 +269,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -287,6 +288,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -296,6 +298,7 @@
         "item": "Several grinds black pepper",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -314,6 +317,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Cheese"
       }
     }

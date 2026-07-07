@@ -270,12 +270,7 @@
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons unsalted butter",
@@ -292,6 +287,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -306,6 +302,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -320,6 +317,7 @@
           }
         ],
         "note": "see Note up top",
+        "section": "Filling",
         "category": "Condiments & Sauces"
       }
     },
@@ -329,6 +327,7 @@
         "item": "A pinch or two of sea salt",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -347,6 +346,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -365,6 +365,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Oils & Vinegars"
       }
     },
@@ -379,6 +380,7 @@
           }
         ],
         "note": "optional",
+        "section": "Filling",
         "category": "Beverages"
       }
     },
@@ -397,6 +399,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -411,6 +414,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     }

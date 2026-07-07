@@ -195,12 +195,7 @@
     },
     {
       "raw": "Cream cheese yogurt filling",
-      "expected": {
-        "item": "Cream cheese yogurt filling",
-        "measurements": [],
-        "note": null,
-        "category": "Cheese"
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 ounces (225 grams) cream cheese, well-softened",
@@ -217,6 +212,7 @@
           }
         ],
         "note": "well-softened",
+        "section": "Cream Cheese Yogurt Filling",
         "category": "Cheese"
       }
     },
@@ -235,6 +231,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Yogurt Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Yogurt Filling",
         "category": "Baking"
       }
     },
@@ -271,17 +269,13 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Yogurt Filling",
         "category": "Baking"
       }
     },
     {
       "raw": "Walnut butterscotch topping",
-      "expected": {
-        "item": "Walnut butterscotch topping",
-        "measurements": [],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) heavy whipping cream",
@@ -302,6 +296,7 @@
           }
         ],
         "note": null,
+        "section": "Walnut Butterscotch Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -320,6 +315,7 @@
           }
         ],
         "note": null,
+        "section": "Walnut Butterscotch Topping",
         "category": "Baking"
       }
     },
@@ -338,6 +334,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Walnut Butterscotch Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -356,6 +353,7 @@
           }
         ],
         "note": "about 50 grams, toasted",
+        "section": "Walnut Butterscotch Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -374,6 +372,7 @@
           }
         ],
         "note": null,
+        "section": "Walnut Butterscotch Topping",
         "category": "Baking"
       }
     },
@@ -388,6 +387,7 @@
           }
         ],
         "note": "or to taste",
+        "section": "Walnut Butterscotch Topping",
         "category": "Spices & Seasonings"
       }
     }

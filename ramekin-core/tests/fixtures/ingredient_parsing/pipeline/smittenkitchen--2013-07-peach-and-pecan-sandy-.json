@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Pecan sandy topping",
-      "expected": {
-        "item": "Pecan sandy topping",
-        "measurements": [],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup raw pecans",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Sandy Topping",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Sandy Topping",
         "category": "Baking"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Sandy Topping",
         "category": "Baking"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Sandy Topping",
         "category": "Baking"
       }
     },
@@ -90,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Sandy Topping",
         "category": "Spices & Seasonings"
       }
     },
@@ -108,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Pecan Sandy Topping",
         "category": "Baking"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": "melted",
+        "section": "Pecan Sandy Topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,17 +146,13 @@
           }
         ],
         "note": "or you can use bourbon; I’ll never tell",
+        "section": "Pecan Sandy Topping",
         "category": "Baking"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 to 4 pounds peaches",
@@ -171,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -189,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -207,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -225,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -239,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -257,6 +260,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -266,6 +270,7 @@
         "item": "A couple pinches of salt",
         "measurements": [],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     }

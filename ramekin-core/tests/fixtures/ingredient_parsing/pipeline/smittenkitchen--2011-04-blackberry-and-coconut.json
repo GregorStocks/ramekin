@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust",
-      "expected": {
-        "item": "Crust",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup plus 2 tablespoons white whole wheat flour, spelt flour or matzo cake meal",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Produce"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": "I used a coarse Turbinado because I had it on hand",
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -64,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -82,17 +81,13 @@
           }
         ],
         "note": "melted",
+        "section": "Crust",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Filling",
-      "expected": {
-        "item": "Filling",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups unsweetened finely shredded coconut",
@@ -105,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -119,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Baking"
       }
     },
@@ -133,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -151,6 +149,7 @@
           }
         ],
         "note": "feel free to swap any berry/cherry you can find in season, halved",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -165,6 +164,7 @@
           }
         ],
         "note": "crushed",
+        "section": "Filling",
         "category": "Nuts & Dried Fruit"
       }
     }

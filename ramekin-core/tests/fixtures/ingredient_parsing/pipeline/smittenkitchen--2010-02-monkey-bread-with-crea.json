@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Dough",
-      "expected": {
-        "item": "Dough",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 tablespoons (1/2 stick or 2 ounces) unsalted butter, divided (2 tablespoons softened, 2 tablespoons melted)",
@@ -34,6 +29,7 @@
           }
         ],
         "note": "2 tablespoons softened, 2 tablespoons melted, divided",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": "around 110 degrees",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": "also around 110 degrees",
+        "section": "Dough",
         "category": "Beverages"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Bakery & Bread"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": "plus extra for work surface",
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -134,17 +135,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Brown Sugar Coating",
-      "expected": {
-        "item": "Brown Sugar Coating",
-        "measurements": [],
-        "note": null,
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup packed light brown sugar (CI advises against dark brown, which they feel imparts too strong of a molasses taste; I suspect it wouldn’t bother me)",
@@ -157,6 +154,7 @@
           }
         ],
         "note": "CI advises against dark brown, which they feel imparts too strong of a molasses taste; I suspect it wouldn’t bother me",
+        "section": "Brown Sugar Coating",
         "category": "Baking"
       }
     },
@@ -175,6 +173,7 @@
           }
         ],
         "note": null,
+        "section": "Brown Sugar Coating",
         "category": "Spices & Seasonings"
       }
     },
@@ -201,17 +200,13 @@
           }
         ],
         "note": "melted",
+        "section": "Brown Sugar Coating",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Cream Cheese Glaze",
-      "expected": {
-        "item": "Cream Cheese Glaze",
-        "measurements": [],
-        "note": null,
-        "category": "Cheese"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 ounces cream cheese, softened",
@@ -228,6 +223,7 @@
           }
         ],
         "note": "softened",
+        "section": "Cream Cheese Glaze",
         "category": "Cheese"
       }
     },
@@ -246,6 +242,7 @@
           }
         ],
         "note": "plus extra if needed",
+        "section": "Cream Cheese Glaze",
         "category": "Baking"
       }
     },
@@ -264,6 +261,7 @@
           }
         ],
         "note": "plus extra if needed",
+        "section": "Cream Cheese Glaze",
         "category": "Dairy & Eggs"
       }
     },
@@ -282,6 +280,7 @@
           }
         ],
         "note": null,
+        "section": "Cream Cheese Glaze",
         "category": "Baking"
       }
     }

@@ -267,12 +267,7 @@
     },
     {
       "raw": "For frosting",
-      "expected": {
-        "item": "For frosting",
-        "measurements": [],
-        "note": null,
-        "category": "Baking"
-      }
+      "is_section_header": true
     },
     {
       "raw": "5 ounces (142 grams) cream cheese, softened",
@@ -289,6 +284,7 @@
           }
         ],
         "note": "softened",
+        "section": "For Frosting",
         "category": "Cheese"
       }
     },
@@ -311,6 +307,7 @@
           }
         ],
         "note": "softened",
+        "section": "For Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -329,6 +326,7 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
@@ -351,6 +349,7 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Baking"
       }
     },
@@ -369,6 +368,7 @@
           }
         ],
         "note": null,
+        "section": "For Frosting",
         "category": "Spices & Seasonings"
       }
     }

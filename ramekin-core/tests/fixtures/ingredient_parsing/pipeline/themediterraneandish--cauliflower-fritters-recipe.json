@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Mint Yogurt",
-      "expected": {
-        "item": "For the Mint Yogurt",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup Greek yogurt",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mint Yogurt",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mint Yogurt",
         "category": "Spices & Seasonings"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mint Yogurt",
         "category": "Produce"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "For the Mint Yogurt",
         "category": "Oils & Vinegars"
       }
     },
@@ -94,17 +93,13 @@
           }
         ],
         "note": null,
+        "section": "For the Mint Yogurt",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "For the Cauliflower Fritters",
-      "expected": {
-        "item": "For the Cauliflower Fritters",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1  small cauliflower, (cut into 1 ½-inch florets (3 cups florets))",
@@ -117,6 +112,7 @@
           }
         ],
         "note": "cut into 1 1/2-inch florets (3 cups florets)",
+        "section": "For the Cauliflower Fritters",
         "category": "Produce"
       }
     },
@@ -135,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cauliflower Fritters",
         "category": "Baking"
       }
     },
@@ -149,6 +146,7 @@
           }
         ],
         "note": "finely chopped",
+        "section": "For the Cauliflower Fritters",
         "category": "Produce"
       }
     },
@@ -163,6 +161,7 @@
           }
         ],
         "note": "finely chopped (about 3/4 cup)",
+        "section": "For the Cauliflower Fritters",
         "category": "Produce"
       }
     },
@@ -177,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cauliflower Fritters",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cauliflower Fritters",
         "category": "Spices & Seasonings"
       }
     },
@@ -213,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cauliflower Fritters",
         "category": "Spices & Seasonings"
       }
     },
@@ -231,6 +233,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cauliflower Fritters",
         "category": "Spices & Seasonings"
       }
     },
@@ -245,6 +248,7 @@
           }
         ],
         "note": "or 1/4 tsp red pepper flakes",
+        "section": "For the Cauliflower Fritters",
         "category": "Spices & Seasonings"
       }
     },
@@ -263,6 +267,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cauliflower Fritters",
         "category": "Baking"
       }
     },
@@ -272,6 +277,7 @@
         "item": "Kosher salt and black pepper",
         "measurements": [],
         "note": null,
+        "section": "For the Cauliflower Fritters",
         "category": "Spices & Seasonings"
       }
     },
@@ -286,6 +292,7 @@
           }
         ],
         "note": null,
+        "section": "For the Cauliflower Fritters",
         "category": "Oils & Vinegars"
       }
     }

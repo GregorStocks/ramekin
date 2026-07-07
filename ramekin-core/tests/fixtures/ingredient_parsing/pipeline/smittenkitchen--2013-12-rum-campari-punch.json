@@ -131,12 +131,7 @@
     },
     {
       "raw": "Garnish",
-      "expected": {
-        "item": "Garnish",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 giant ice cube",
@@ -149,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Garnish",
         "category": "Frozen"
       }
     },
@@ -163,6 +159,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -177,6 +174,7 @@
           }
         ],
         "note": "sliced thin",
+        "section": "Garnish",
         "category": "Produce"
       }
     },
@@ -186,6 +184,7 @@
         "item": "or thick peels of zest from 1 lime and 1 orange",
         "measurements": [],
         "note": null,
+        "section": "Garnish",
         "category": "Produce"
       }
     }
