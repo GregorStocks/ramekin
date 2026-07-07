@@ -7,7 +7,8 @@ use serde_json::json;
 use uuid::Uuid;
 
 use ramekin_core::pipeline::{
-    step_after_scrape_auto_applied_ai_step, PipelineStep, StepContext, StepMetadata, StepResult,
+    deserialize_optional_output_field, step_after_scrape_auto_applied_ai_step, PipelineStep,
+    StepContext, StepMetadata, StepResult,
 };
 
 use crate::db::DbPool;
@@ -54,11 +55,25 @@ impl PipelineStep for ApplyAutoTagsStep {
 
         // Get suggested_tags from enrich_auto_tag output
         let auto_tag_output = ctx.outputs.get_output("enrich_auto_tag");
-        let suggested_tags: Vec<String> = auto_tag_output
-            .as_ref()
-            .and_then(|o| o.get("suggested_tags"))
-            .and_then(|v| serde_json::from_value(v.clone()).ok())
-            .unwrap_or_default();
+        let suggested_tags: Vec<String> = match deserialize_optional_output_field(
+            auto_tag_output.as_ref(),
+            "enrich_auto_tag",
+            "suggested_tags",
+        ) {
+            Ok(Some(tags)) => tags,
+            Ok(None) => Vec::new(),
+            Err(e) => {
+                return StepResult {
+                    step_name: Self::NAME.to_string(),
+                    success: false,
+                    output: json!({ "error": e }),
+                    error: Some(e),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                        .map(str::to_string),
+                };
+            }
+        };
 
         // If no tags suggested, nothing to do
         if suggested_tags.is_empty() {

@@ -17,7 +17,10 @@ pub use auto_enrichments::{
     step_after_scrape_auto_applied_ai_step, ScrapeAutoAppliedAiEnrichment,
 };
 pub use executor::{run_pipeline, StepRegistry};
-pub use step::{PipelineStep, StepContext, StepMetadata, StepOutputStore, StepResult};
+pub use step::{
+    deserialize_optional_output_field, deserialize_required_output_field, PipelineStep,
+    StepContext, StepMetadata, StepOutputStore, StepResult,
+};
 
 #[cfg(test)]
 mod tests {

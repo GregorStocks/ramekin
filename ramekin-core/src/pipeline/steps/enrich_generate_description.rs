@@ -9,8 +9,10 @@ use serde_json::json;
 
 use crate::ai::{generate_description, AiClient, Usage};
 use crate::pipeline::{
-    step_after_scrape_auto_applied_ai_step, PipelineStep, StepContext, StepMetadata, StepResult,
+    deserialize_required_output_field, step_after_scrape_auto_applied_ai_step, PipelineStep,
+    StepContext, StepMetadata, StepResult,
 };
+use crate::types::RawRecipe;
 
 /// Step that generates concise menu-style recipe descriptions.
 pub struct EnrichGenerateDescriptionStep {
@@ -83,14 +85,18 @@ impl PipelineStep for EnrichGenerateDescriptionStep {
             }
         };
 
-        let raw_recipe = match extract_output.get("raw_recipe") {
-            Some(r) => r,
-            None => {
+        let raw_recipe: RawRecipe = match deserialize_required_output_field(
+            &extract_output,
+            "extract_recipe",
+            "raw_recipe",
+        ) {
+            Ok(r) => r,
+            Err(e) => {
                 return StepResult {
                     step_name: Self::NAME.to_string(),
                     success: false,
-                    output: json!({ "error": "No raw_recipe in extract output" }),
-                    error: Some("No raw_recipe in extract output".to_string()),
+                    output: json!({ "error": e }),
+                    error: Some(e),
                     duration_ms: start.elapsed().as_millis() as u64,
                     next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
                         .map(str::to_string),
@@ -98,23 +104,11 @@ impl PipelineStep for EnrichGenerateDescriptionStep {
             }
         };
 
-        let raw_title = raw_recipe
-            .get("title")
-            .and_then(|v| v.as_str())
-            .unwrap_or("");
+        let raw_title = raw_recipe.title.as_str();
         let title = title_for_description(ctx, raw_title);
-        let original_description = raw_recipe
-            .get("description")
-            .and_then(|v| v.as_str())
-            .map(str::to_string);
-        let ingredients = raw_recipe
-            .get("ingredients")
-            .and_then(|v| v.as_str())
-            .unwrap_or("");
-        let instructions = raw_recipe
-            .get("instructions")
-            .and_then(|v| v.as_str())
-            .unwrap_or("");
+        let original_description = raw_recipe.description.clone();
+        let ingredients = raw_recipe.ingredients.as_str();
+        let instructions = raw_recipe.instructions.as_str();
 
         let result =
             match generate_description(self.ai_client.as_ref(), &title, ingredients, instructions)

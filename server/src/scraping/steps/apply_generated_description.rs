@@ -7,6 +7,7 @@ use serde_json::json;
 use uuid::Uuid;
 
 use ramekin_core::pipeline::{
+    deserialize_optional_output_field, deserialize_required_output_field,
     step_after_scrape_auto_applied_ai_step, PipelineStep, StepContext, StepMetadata, StepResult,
 };
 
@@ -49,18 +50,55 @@ impl PipelineStep for ApplyGeneratedDescriptionStep {
         };
 
         let description_output = ctx.outputs.get_output("enrich_generate_description");
-        let changed = description_output
-            .as_ref()
-            .and_then(|o| o.get("changed"))
-            .and_then(|v| v.as_bool())
-            .unwrap_or(false);
-        let generated_description = description_output
-            .as_ref()
-            .and_then(|o| o.get("generated_description"))
-            .and_then(|v| v.as_str())
-            .unwrap_or("")
-            .trim()
-            .to_string();
+        let changed: bool = match deserialize_optional_output_field(
+            description_output.as_ref(),
+            "enrich_generate_description",
+            "changed",
+        ) {
+            Ok(Some(changed)) => changed,
+            Ok(None) => false,
+            Err(e) => {
+                return StepResult {
+                    step_name: Self::NAME.to_string(),
+                    success: false,
+                    output: json!({ "error": e }),
+                    error: Some(e),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                        .map(str::to_string),
+                };
+            }
+        };
+
+        let generated_description = if changed {
+            match description_output
+                .as_ref()
+                .map(|output| {
+                    deserialize_required_output_field::<String>(
+                        output,
+                        "enrich_generate_description",
+                        "generated_description",
+                    )
+                })
+                .transpose()
+            {
+                Ok(Some(description)) => description.trim().to_string(),
+                Ok(None) => String::new(),
+                Err(e) => {
+                    return StepResult {
+                        step_name: Self::NAME.to_string(),
+                        success: false,
+                        output: json!({ "error": e }),
+                        error: Some(e),
+                        duration_ms: start.elapsed().as_millis() as u64,
+                        next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                            .map(str::to_string),
+                    };
+                }
+            }
+        } else {
+            String::new()
+        };
 
         if !changed || generated_description.is_empty() {
             return StepResult {
