@@ -34,10 +34,9 @@ reach for WASM/UniFFI for a ~100-line scorer.",
     "search",
     "parity",
   ],
-  "blocked": "Requires an on-device recipe cache (full recipe bodies, not just \
-paged summaries) to search over — that offline-cache architecture doesn't \
-exist yet and needs Gregor's go-ahead as its own project before local search \
-is buildable.",
+  "blocked": "Blocked on p3-ios-full-recipe-cache-local-search: iOS needs an \
+on-device recipe cache with full recipe bodies, not just paged summaries, \
+before it has a local corpus that can mirror server search semantics.",
   "created_at": "2026-07-03T19:00:33-07:00",
-  "updated_at": "2026-07-03T19:00:33-07:00",
+  "updated_at": "2026-07-06T07:40:19-07:00",
 }
