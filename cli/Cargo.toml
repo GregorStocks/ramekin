@@ -29,7 +29,7 @@ serde_repr = "0.1"
 url = "2.5"
 
 # XML parsing (for sitemaps)
-quick-xml = { version = "0.40", features = ["serialize"] }
+quick-xml = { version = "0.41", features = ["serialize"] }
 
 # Regex for URL pattern matching
 regex = "1.12"
