@@ -53,10 +53,14 @@ installs through one full refresh, and added API and iOS tests for population,
 updates, deletions, and schema-version invalidation.
 
 The cache serves offline browsing, tag filters, the basic photo-presence
-filter, date filters, and deterministic browse sorts. Despite holding recipe
-bodies, it intentionally sends queries involving text, source, photo size or
-dimensions, or random sorting to the paginated server endpoint. `doc/web-sync.md`
-separately records why the web cookbook remains server-backed and paginated.
+filter, date filters, and deterministic browse sorts. Its title sort is not
+server-identical: Swift uses `localizedCaseInsensitiveCompare`, while the server
+uses PostgreSQL `lower(title)` under the database collation. The follow-up
+`p3-ios-cached-title-sort-collation-drift` tracks that existing browse-order
+bug. Despite holding recipe bodies, the cache sends queries involving text,
+source, photo size or dimensions, or random sorting to the paginated server
+endpoint. `doc/web-sync.md` separately records why the web cookbook remains
+server-backed and paginated.
 
 Core Data already uses an SQLite persistent store in the app-group container.
 "Move the iOS cache to SQLite" is therefore not a meaningful first step. Core
@@ -105,8 +109,9 @@ beside the structured ingredients. If server search later changes to match only
 flattened ingredient values, change the API, iOS, and shared vectors together.
 Source and detailed photo metadata remain outside the search document. Text
 queries combined with `source:`, `photo_size:`, or `photo_dim:` therefore stay
-on the server, as does random ordering. Local text search is limited to the
-cached tag, basic photo-presence, created-date, and deterministic-sort surface.
+on the server, as do title and random ordering. Local text search is limited to
+cached tags, basic photo presence, created-date filters, and relevance,
+updated-date, rating, or created-date ordering.
 
 PR #643 made the initial sync larger; later syncs should transfer only changed
 recipes once the cursor race is fixed. Immutable `recipe_versions` provide a
@@ -150,15 +155,15 @@ The smallest complete design is:
    query plus recipe documents in, matched and ordered IDs out. Consume both
    suites from server tests and XCTest. The match/filter suite must cover AND
    semantics across fields, quoted terms, basic photo presence, created-date
-   filters, supported deterministic sorts, and accent/ligature normalization.
-   For `tag:`, include whole-value vectors proving case-insensitive and
-   accent-sensitive `CITEXT` parity. The suite must also cover a token found
-   only in an ingredient JSON key, which matches today but may score zero.
-   Scorer-only vectors cannot prove result-set parity.
+   filters, relevance/updated-date/rating/created-date ordering, and
+   accent/ligature normalization. For `tag:`, include whole-value vectors
+   proving case-insensitive and accent-sensitive `CITEXT` parity. The suite must
+   also cover a token found only in an ingredient JSON key, which matches today
+   but may score zero. Scorer-only vectors cannot prove result-set parity.
 5. Route a text query locally only when source, photo-size, photo-dimension, and
-   random-sort requirements are absent. Preserve the existing server path for
-   every unsupported combination instead of evaluating it against incomplete
-   metadata.
+   title/random-sort requirements are absent. Preserve the existing server path
+   for every unsupported combination instead of evaluating it against missing
+   metadata or a different collation.
 6. Search the cached corpus locally and preserve the server's score, recency,
    and ID tie-break order.
 7. Keep web search on `GET /api/recipes`; web has neither an offline product
