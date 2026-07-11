@@ -9,11 +9,11 @@ The row is invisible to that sync and excluded from every later delta, so an \
 iOS cache can remain stale until a forced full sync.\n\
 \n\
 Choose and implement a race-safe change cursor or reconciliation strategy \
-before expanding recipe sync for full local search. Add a deterministic API \
-regression test that coordinates an uncommitted create/update, tag change, or \
-soft delete across the sync snapshot and proves the next sync returns it. The \
-fix must preserve idempotent application of repeated changes and soft-delete \
-tombstones.",
+before local search treats the full-body cache from PR #643 as a complete \
+corpus. Add a deterministic API regression test that coordinates an \
+uncommitted create/update, tag change, or soft delete across the sync snapshot \
+and proves the next sync returns it. The fix must preserve idempotent \
+application of repeated changes and soft-delete tombstones.",
   "status": "open",
   "priority": 2,
   "type": "bug",
@@ -23,5 +23,5 @@ tombstones.",
     "sync",
   ],
   "created_at": "2026-07-11T13:43:38-07:00",
-  "updated_at": "2026-07-11T13:43:38-07:00",
+  "updated_at": "2026-07-11T13:53:14-07:00",
 }

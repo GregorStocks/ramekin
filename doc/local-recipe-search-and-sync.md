@@ -4,11 +4,11 @@ Decision record for issue `p4-sqlite-local-first-exploration` (2026-07-11).
 
 ## Decision
 
-Keep PostgreSQL as the server database. For offline iOS recipe search, extend
-the existing read-only recipe sync and Core Data cache to include the full
-search document, then mirror the server's deterministic matching and scoring
-logic in Swift using exact shared normalization, matching, filtering, and
-ranking contracts.
+Keep PostgreSQL as the server database. PR #643 extended the existing read-only
+recipe sync and Core Data cache with the structured recipe body needed by local
+search. Finish offline iOS search on that path by making result membership
+exact and mirroring the server's deterministic matching and scoring logic in
+Swift through shared normalization, matching, filtering, and ranking contracts.
 
 Do not build offline recipe writes or adopt a generic replication system until
 there is a concrete product requirement for editing recipes offline. If that
@@ -30,8 +30,9 @@ required.
 
 ### Recipe reads on iOS
 
-The iOS app already has a SQLite-backed Core Data store. `RecipeCacheStore`
-stores every active recipe summary for an account in `CachedRecipe`, and
+The iOS app already has a SQLite-backed Core Data store. Since PR #643,
+`RecipeCacheStore` stores every active recipe's summary, structured ingredients,
+instructions, and notes for an account in `CachedRecipe`. The endpoint
 `GET /api/recipes/sync` maintains it using a server timestamp:
 
 - The first request returns all active recipe summaries.
@@ -47,11 +48,15 @@ follow-up `p2-recipe-sync-cursor-can-skip-concurrent-commits` must establish a
 safe cursor or reconciliation mechanism before this feed carries the full
 local-search corpus.
 
+PR #643 also versioned the cache timestamp key, forcing existing summary-only
+installs through one full refresh, and added API and iOS tests for population,
+updates, deletions, and schema-version invalidation.
+
 The cache serves offline browsing, tag filters, the basic photo-presence
-filter, date filters, and deterministic browse sorts. It intentionally sends
-queries involving text, source, photo size or dimensions, or random sorting to
-the paginated server endpoint. `doc/web-sync.md` separately records why the web
-cookbook remains server-backed and paginated.
+filter, date filters, and deterministic browse sorts. Despite holding recipe
+bodies, it intentionally sends queries involving text, source, photo size or
+dimensions, or random sorting to the paginated server endpoint. `doc/web-sync.md`
+separately records why the web cookbook remains server-backed and paginated.
 
 Core Data already uses an SQLite persistent store in the app-group container.
 "Move the iOS cache to SQLite" is therefore not a meaningful first step. Core
@@ -66,14 +71,14 @@ the matches with six field families through the pure function in
 matched another field, but bare text does not match tags; tags enter the result
 set through explicit `tag:` filters.
 
-| Field family | In the iOS cache | Bare-text match | Per-token ranking weight |
+| Field family | Cached after #643 | Bare-text match | Per-token ranking weight |
 |---|---:|---:|---:|
 | Title | yes | yes | 2,000, plus whole-title bonuses |
 | Tags | yes | no (`tag:` only) | 800 |
 | Description | yes | yes | 400 |
-| Ingredients | no | yes | 200 |
-| Instructions | no | yes | 50 |
-| Notes | no | yes | 50 |
+| Ingredients | structured values only | yes | 200 |
+| Instructions | yes | yes | 50 |
+| Notes | yes | yes | 50 |
 
 Ingredients currently have two distinct search representations. The SQL match
 casts the stored JSONB to text, so JSON keys and serialization syntax can make
@@ -81,31 +86,26 @@ a recipe match. The scorer instead flattens measurement values, item, note,
 and section into human-facing text. A token found only in a JSON key can
 therefore select a row and still contribute no ingredient score.
 
-The summary cache therefore has 3 of 6 ranking field families, 2 of 5
-bare-text matching field families, and 3,200 of the 3,500 ordinary per-token
-ranking points. It also has the title fields used by the 10,000 to 100,000
-point whole-title bonuses. That is enough data to rank many common searches
-plausibly, but it is not enough to search correctly: a token present only in an
-ingredient, instruction, or note must still make a recipe a match. Summary-only
-local search would produce false negatives.
+The cache now contains all six scorer field families and the human-facing data
+for all five bare-text matching families. That completes the expensive corpus
+transfer, but not exact result parity: the ingredient representation used for
+server membership is still absent, and query parsing and normalization are not
+implemented locally.
 
-The synced document must therefore add instructions, notes, structured
-ingredients for scoring, and a server-produced `ingredient_match_text` equal to
-the exact `ingredients::text` value used by the current SQL filter. That closes
-the current correctness gap across all five bare-text matching fields and all
-six scorer inputs without enabling a single offline mutation. If server search
-later changes to match only flattened ingredient values, change the API, iOS,
-and shared vectors together. Source and photo metadata can remain outside the
-search document unless local versions of those filters are also requested.
+Extend `SyncRecipe` with a server-produced `ingredient_match_text` equal to the
+exact `ingredients::text` value used by the current SQL filter, and persist it
+beside the structured ingredients. If server search later changes to match only
+flattened ingredient values, change the API, iOS, and shared vectors together.
+Source and photo metadata can remain outside the search document unless local
+versions of those filters are also requested.
 
-The full-body cache will make the initial sync larger, but later syncs should
-still transfer only changed recipes once the cursor race is fixed. Recipe
-updates already create immutable `recipe_versions`, which gives the feed a
+PR #643 made the initial sync larger; later syncs should transfer only changed
+recipes once the cursor race is fixed. Immutable `recipe_versions` provide a
 stable version identity even though wall-clock `created_at` is not by itself a
-safe cursor. Before implementation, measure initial payload size, stored cache
-size, sync duration, and search latency against representative large cookbooks.
-That measurement should choose the query implementation; it should not hold
-the data model hostage to an unmeasured indexing concern.
+safe cursor. Before enabling local search, measure stored cache size and search
+latency against representative large cookbooks. That measurement should choose
+the query implementation; it should not hold the data model hostage to an
+unmeasured indexing concern.
 
 ### Offline writes that already exist
 
@@ -130,11 +130,10 @@ The smallest complete design is:
 1. Replace or repair the timestamp cursor so a transaction that commits across
    the sync snapshot cannot be skipped. Cover create/update, tag changes, and
    soft-delete tombstones with a coordinated API regression test.
-2. Make recipe sync return a purpose-specific search document containing
-   title, description, tags, structured ingredients, the server-produced
-   `ingredient_match_text`, instructions, and notes. Do not assume encoding
-   structured ingredients on iOS recreates PostgreSQL's JSONB text.
-3. Persist that document in the existing account-scoped Core Data cache.
+2. Extend the existing `SyncRecipe` document with the server-produced
+   `ingredient_match_text`. Do not assume encoding its already-synced structured
+   ingredients on iOS recreates PostgreSQL's JSONB text.
+3. Persist that match text beside the existing full-body Core Data cache.
 4. Implement the server's matching, normalization, and relevance scoring in
    Swift, preserving the distinction between bare-text matching fields and
    explicit `tag:` filters. Following `doc/client-logic-sharing.md`, expand the
@@ -317,17 +316,16 @@ engine on both ends. A server database migration provides no shortcut.
 
 ### Stage 1: complete local reads
 
-First fix `p2-recipe-sync-cursor-can-skip-concurrent-commits`. Then implement
-`p3-ios-full-recipe-cache-local-search`: sync the complete search document—
-including the distinct ingredient match text and scorer inputs—into Core Data,
-measure payload/storage/search performance, and cover population, updates, tag
-changes, and tombstones with API and iOS tests.
+PR #643 completed the full-body read-only cache. Next fix
+`p2-recipe-sync-cursor-can-skip-concurrent-commits`, add the distinct ingredient
+match text and versioned normalization contract to `SyncRecipe`, and persist
+them in the existing cache.
 
-Then implement `blocked-ios-local-search-relevance`: mirror matching and scoring
-in Swift, first land the exact normalization contract, and pin query parsing,
-matching, structured filters, and ranking to shared vectors consumed by server
-and iOS tests. This delivers instant offline search without any conflict or
-upload path. Web remains unchanged.
+Then implement `blocked-ios-local-search-relevance`: mirror matching and
+scoring in Swift and pin query parsing, matching, structured filters, and
+ranking to shared vectors consumed by server and iOS tests. This delivers
+instant offline search without any conflict or upload path. Web remains
+unchanged.
 
 ### Stage 2: optimize only from measurements
 
