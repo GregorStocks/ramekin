@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **deleted** | **List[UUID]** | Recipe IDs deleted since last_sync_at. | 
-**recipes** | [**List[RecipeSummary]**](RecipeSummary.md) | Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent. | 
+**recipes** | [**List[SyncRecipe]**](SyncRecipe.md) | Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent. | 
 **sync_timestamp** | **datetime** | New sync timestamp to use for the next sync. | 
 
 ## Example

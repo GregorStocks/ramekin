@@ -81,6 +81,7 @@ ramekin_client/docs/SortBy.md
 ramekin_client/docs/StepState.md
 ramekin_client/docs/SyncCreateItem.md
 ramekin_client/docs/SyncCreatedItem.md
+ramekin_client/docs/SyncRecipe.md
 ramekin_client/docs/SyncRecipesResponse.md
 ramekin_client/docs/SyncRequest.md
 ramekin_client/docs/SyncResponse.md
@@ -157,6 +158,7 @@ ramekin_client/models/sort_by.py
 ramekin_client/models/step_state.py
 ramekin_client/models/sync_create_item.py
 ramekin_client/models/sync_created_item.py
+ramekin_client/models/sync_recipe.py
 ramekin_client/models/sync_recipes_response.py
 ramekin_client/models/sync_request.py
 ramekin_client/models/sync_response.py
@@ -239,6 +241,7 @@ ramekin_client/test/test_sort_by.py
 ramekin_client/test/test_step_state.py
 ramekin_client/test/test_sync_create_item.py
 ramekin_client/test/test_sync_created_item.py
+ramekin_client/test/test_sync_recipe.py
 ramekin_client/test/test_sync_recipes_response.py
 ramekin_client/test/test_sync_request.py
 ramekin_client/test/test_sync_response.py

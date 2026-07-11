@@ -7,7 +7,7 @@
 Name | Type
 ------------ | -------------
 `deleted` | Array&lt;string&gt;
-`recipes` | [Array&lt;RecipeSummary&gt;](RecipeSummary.md)
+`recipes` | [Array&lt;SyncRecipe&gt;](SyncRecipe.md)
 `syncTimestamp` | Date
 
 ## Example

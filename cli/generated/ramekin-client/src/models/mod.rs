@@ -110,6 +110,8 @@ pub mod sync_create_item;
 pub use self::sync_create_item::SyncCreateItem;
 pub mod sync_created_item;
 pub use self::sync_created_item::SyncCreatedItem;
+pub mod sync_recipe;
+pub use self::sync_recipe::SyncRecipe;
 pub mod sync_recipes_response;
 pub use self::sync_recipes_response::SyncRecipesResponse;
 pub mod sync_request;

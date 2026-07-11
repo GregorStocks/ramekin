@@ -18,7 +18,7 @@ pub struct SyncRecipesResponse {
     pub deleted: Vec<uuid::Uuid>,
     /// Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent.
     #[serde(rename = "recipes")]
-    pub recipes: Vec<models::RecipeSummary>,
+    pub recipes: Vec<models::SyncRecipe>,
     /// New sync timestamp to use for the next sync.
     #[serde(rename = "sync_timestamp")]
     pub sync_timestamp: String,
@@ -27,7 +27,7 @@ pub struct SyncRecipesResponse {
 impl SyncRecipesResponse {
     pub fn new(
         deleted: Vec<uuid::Uuid>,
-        recipes: Vec<models::RecipeSummary>,
+        recipes: Vec<models::SyncRecipe>,
         sync_timestamp: String,
     ) -> SyncRecipesResponse {
         SyncRecipesResponse {

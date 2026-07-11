@@ -11,7 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { RecipeSummaryFromJSON, RecipeSummaryToJSON, } from './RecipeSummary';
+import { SyncRecipeFromJSON, SyncRecipeToJSON, } from './SyncRecipe';
 /**
  * Check if a given object implements the SyncRecipesResponse interface.
  */
@@ -33,7 +33,7 @@ export function SyncRecipesResponseFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'deleted': json['deleted'],
-        'recipes': (json['recipes'].map(RecipeSummaryFromJSON)),
+        'recipes': (json['recipes'].map(SyncRecipeFromJSON)),
         'syncTimestamp': (new Date(json['sync_timestamp'])),
     };
 }
@@ -46,7 +46,7 @@ export function SyncRecipesResponseToJSONTyped(value, ignoreDiscriminator = fals
     }
     return {
         'deleted': value['deleted'],
-        'recipes': (value['recipes'].map(RecipeSummaryToJSON)),
+        'recipes': (value['recipes'].map(SyncRecipeToJSON)),
         'sync_timestamp': value['syncTimestamp'].toISOString(),
     };
 }

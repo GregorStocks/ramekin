@@ -170,6 +170,7 @@ Class | Method | HTTP request | Description
  - [StepState](ramekin_client/docs/StepState.md)
  - [SyncCreateItem](ramekin_client/docs/SyncCreateItem.md)
  - [SyncCreatedItem](ramekin_client/docs/SyncCreatedItem.md)
+ - [SyncRecipe](ramekin_client/docs/SyncRecipe.md)
  - [SyncRecipesResponse](ramekin_client/docs/SyncRecipesResponse.md)
  - [SyncRequest](ramekin_client/docs/SyncRequest.md)
  - [SyncResponse](ramekin_client/docs/SyncResponse.md)

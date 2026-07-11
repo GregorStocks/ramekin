@@ -1,6 +1,13 @@
 import CoreData
 import Foundation
 
+struct CachedRecipeSearchDocument {
+    let summary: RecipeSummary
+    let ingredients: [Ingredient]
+    let instructions: String
+    let notes: String?
+}
+
 @MainActor
 final class RecipeCacheStore {
     static let shared = RecipeCacheStore()
@@ -35,13 +42,17 @@ final class RecipeCacheStore {
     }
 
     func loadRecipes(accountKey: String) throws -> [RecipeSummary] {
+        try loadSearchDocuments(accountKey: accountKey).map(\.summary)
+    }
+
+    func loadSearchDocuments(accountKey: String) throws -> [CachedRecipeSearchDocument] {
         let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
         request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
         request.sortDescriptors = [
             NSSortDescriptor(keyPath: \CachedRecipe.updatedAt, ascending: false),
             NSSortDescriptor(keyPath: \CachedRecipe.id, ascending: true)
         ]
-        return try coreDataStack.viewContext.fetch(request).map(recipeSummary)
+        return try coreDataStack.viewContext.fetch(request).map(searchDocument)
     }
 
     func apply(syncResponse: SyncRecipesResponse, accountKey: String) throws {
@@ -59,6 +70,9 @@ final class RecipeCacheStore {
                 ?? CachedRecipe(context: context)
             cachedRecipe.accountKey = accountKey
             cachedRecipe.id = recipe.id
+            cachedRecipe.ingredientsJSON = try ingredientsJSON(recipe.ingredients)
+            cachedRecipe.instructions = recipe.instructions
+            cachedRecipe.notes = recipe.notes
             cachedRecipe.title = recipe.title
             cachedRecipe.summaryDescription = recipe.description
             cachedRecipe.tagsJSON = try tagsJSON(recipe.tags)
@@ -79,9 +93,11 @@ final class RecipeCacheStore {
         return request
     }
 
-    private func recipeSummary(from cachedRecipe: CachedRecipe) -> RecipeSummary {
+    private func searchDocument(from cachedRecipe: CachedRecipe) -> CachedRecipeSearchDocument {
         guard let createdAt = cachedRecipe.createdAt,
               let id = cachedRecipe.id,
+              let ingredientsJSON = cachedRecipe.ingredientsJSON,
+              let instructions = cachedRecipe.instructions,
               let tagsJSON = cachedRecipe.tagsJSON,
               let title = cachedRecipe.title,
               let updatedAt = cachedRecipe.updatedAt
@@ -89,7 +105,7 @@ final class RecipeCacheStore {
             fatalError("CachedRecipe is missing required fields")
         }
 
-        return RecipeSummary(
+        let summary = RecipeSummary(
             createdAt: createdAt,
             description: cachedRecipe.summaryDescription,
             id: id,
@@ -99,6 +115,31 @@ final class RecipeCacheStore {
             title: title,
             updatedAt: updatedAt
         )
+        return CachedRecipeSearchDocument(
+            summary: summary,
+            ingredients: ingredients(from: ingredientsJSON),
+            instructions: instructions,
+            notes: cachedRecipe.notes
+        )
+    }
+
+    private func ingredientsJSON(_ ingredients: [Ingredient]) throws -> String {
+        let data = try JSONEncoder().encode(ingredients)
+        guard let json = String(data: data, encoding: .utf8) else {
+            fatalError("Failed to encode cached recipe ingredients as UTF-8")
+        }
+        return json
+    }
+
+    private func ingredients(from json: String) -> [Ingredient] {
+        guard let data = json.data(using: .utf8) else {
+            fatalError("Cached recipe ingredients are not UTF-8")
+        }
+        do {
+            return try JSONDecoder().decode([Ingredient].self, from: data)
+        } catch {
+            fatalError("Cached recipe ingredients are invalid JSON: \(error)")
+        }
     }
 
     private func tagsJSON(_ tags: [String]) throws -> String {
