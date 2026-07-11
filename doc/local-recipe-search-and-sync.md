@@ -96,8 +96,10 @@ Extend `SyncRecipe` with a server-produced `ingredient_match_text` equal to the
 exact `ingredients::text` value used by the current SQL filter, and persist it
 beside the structured ingredients. If server search later changes to match only
 flattened ingredient values, change the API, iOS, and shared vectors together.
-Source and photo metadata can remain outside the search document unless local
-versions of those filters are also requested.
+Source and detailed photo metadata remain outside the search document. Text
+queries combined with `source:`, `photo_size:`, or `photo_dim:` therefore stay
+on the server, as does random ordering. Local text search is limited to the
+cached tag, basic photo-presence, created-date, and deterministic-sort surface.
 
 PR #643 made the initial sync larger; later syncs should transfer only changed
 recipes once the cursor race is fixed. Immutable `recipe_versions` provide a
@@ -140,13 +142,18 @@ The smallest complete design is:
    existing ranking fixtures with shared end-to-end match/filter vectors: raw
    query plus recipe documents in, matched and ordered IDs out. Consume both
    suites from server tests and XCTest. The match/filter suite must cover AND
-   semantics across fields, quoted terms, `tag:` and structured filters, and
-   accent/ligature normalization. It must also cover a token found only in an
-   ingredient JSON key, which matches today but may score zero. Scorer-only
-   vectors cannot prove result-set parity.
-5. Search the cached corpus locally and preserve the server's score, recency,
+   semantics across fields, quoted terms, `tag:`, basic photo presence,
+   created-date filters, supported deterministic sorts, and accent/ligature
+   normalization. It must also cover a token found only in an ingredient JSON
+   key, which matches today but may score zero. Scorer-only vectors cannot prove
+   result-set parity.
+5. Route a text query locally only when source, photo-size, photo-dimension, and
+   random-sort requirements are absent. Preserve the existing server path for
+   every unsupported combination instead of evaluating it against incomplete
+   metadata.
+6. Search the cached corpus locally and preserve the server's score, recency,
    and ID tie-break order.
-6. Keep web search on `GET /api/recipes`; web has neither an offline product
+7. Keep web search on `GET /api/recipes`; web has neither an offline product
    requirement nor a local corpus, and replacing its paginated flow with an
    all-recipes sync would be a regression.
 
