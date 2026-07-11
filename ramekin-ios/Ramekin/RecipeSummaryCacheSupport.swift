@@ -36,11 +36,12 @@ enum RecipeSummaryCacheSupport {
             case .rating:
                 return compareOptionalIntsDescending(lhs.rating, rhs.rating, lhs.id, rhs.id)
             case .title:
-                let titleCompare = lhs.title.localizedCaseInsensitiveCompare(rhs.title)
-                if titleCompare == .orderedSame {
-                    return lhs.id.uuidString < rhs.id.uuidString
-                }
-                return titleCompare == .orderedAscending
+                return RecipeTitleSortSupport.areInIncreasingOrder(
+                    lhsTitle: lhs.title,
+                    lhsID: lhs.id,
+                    rhsTitle: rhs.title,
+                    rhsID: rhs.id
+                )
             case .created:
                 return compareDatesDescending(lhs.createdAt, rhs.createdAt, lhs.id, rhs.id)
             case .random:

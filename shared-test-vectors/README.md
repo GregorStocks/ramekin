@@ -9,3 +9,4 @@ client match it in the same PR.
 - `tag-hierarchy.json`: Rust, web, and iOS tag parsing and client ordering.
 - `meal-plan-dates.json`: web and iOS local date formatting and Monday starts.
 - `ingredient-formatting.json`: web and iOS ingredient display formatting.
+- `recipe-title-sort.json`: Rust server and iOS case-folded recipe title ordering.
