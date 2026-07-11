@@ -71,6 +71,13 @@ the matches with six field families through the pure function in
 matched another field, but bare text does not match tags; tags enter the result
 set through explicit `tag:` filters.
 
+`tag:` has its own comparison contract. The server compares the complete tag
+value through PostgreSQL `CITEXT`: case-insensitive but accent-sensitive
+equality, not unaccented substring matching. Thus `tag:dinner` matches `Dinner`,
+while `tag:creme` does not match `Crème`. The Swift implementation needs a
+dedicated comparator pinned to server-backed case and accent vectors; it must
+not pass tag values through the bare-text normalizer.
+
 | Field family | Cached after #643 | Bare-text match | Per-token ranking weight |
 |---|---:|---:|---:|
 | Title | yes | yes | 2,000, plus whole-title bonuses |
@@ -142,11 +149,12 @@ The smallest complete design is:
    existing ranking fixtures with shared end-to-end match/filter vectors: raw
    query plus recipe documents in, matched and ordered IDs out. Consume both
    suites from server tests and XCTest. The match/filter suite must cover AND
-   semantics across fields, quoted terms, `tag:`, basic photo presence,
-   created-date filters, supported deterministic sorts, and accent/ligature
-   normalization. It must also cover a token found only in an ingredient JSON
-   key, which matches today but may score zero. Scorer-only vectors cannot prove
-   result-set parity.
+   semantics across fields, quoted terms, basic photo presence, created-date
+   filters, supported deterministic sorts, and accent/ligature normalization.
+   For `tag:`, include whole-value vectors proving case-insensitive and
+   accent-sensitive `CITEXT` parity. The suite must also cover a token found
+   only in an ingredient JSON key, which matches today but may score zero.
+   Scorer-only vectors cannot prove result-set parity.
 5. Route a text query locally only when source, photo-size, photo-dimension, and
    random-sort requirements are absent. Preserve the existing server path for
    every unsupported combination instead of evaluating it against incomplete
@@ -170,6 +178,10 @@ a best-effort mirror of PostgreSQL `unaccent`. That is safe for ranking because
 PostgreSQL has already selected each result. It is not safe for local matching:
 a character handled by the database but absent from the Rust and Swift mapping
 could make iOS omit a server result.
+
+This normalization contract applies only to bare-text matching and scoring.
+Structured tag equality retains the separate accent-sensitive `CITEXT`
+contract above.
 
 Before local matching ships, pin the complete `unaccent.rules` mapping used by
 the server as a versioned shared data asset, extend the pure Rust and Swift
