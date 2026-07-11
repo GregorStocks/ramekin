@@ -19,15 +19,15 @@
  * @export
  */
 export declare const ErrorCode: {
-    readonly NotFound: 'not_found';
-    readonly InvalidRequest: 'invalid_request';
-    readonly Conflict: 'conflict';
-    readonly Unauthorized: 'unauthorized';
-    readonly Forbidden: 'forbidden';
-    readonly MethodNotAllowed: 'method_not_allowed';
-    readonly PayloadTooLarge: 'payload_too_large';
-    readonly ServiceUnavailable: 'service_unavailable';
-    readonly Internal: 'internal';
+    readonly NotFound: "not_found";
+    readonly InvalidRequest: "invalid_request";
+    readonly Conflict: "conflict";
+    readonly Unauthorized: "unauthorized";
+    readonly Forbidden: "forbidden";
+    readonly MethodNotAllowed: "method_not_allowed";
+    readonly PayloadTooLarge: "payload_too_large";
+    readonly ServiceUnavailable: "service_unavailable";
+    readonly Internal: "internal";
 };
 export type ErrorCode = typeof ErrorCode[keyof typeof ErrorCode];
 export declare function instanceOfErrorCode(value: any): boolean;
