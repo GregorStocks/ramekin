@@ -38,8 +38,14 @@ stores every active recipe summary for an account in `CachedRecipe`, and
 - Later requests return current recipe versions created after the previous
   timestamp, plus recipes whose tags changed.
 - Soft-deleted recipe IDs are returned as tombstones.
-- The server captures the next timestamp before querying and bounds results by
-  that timestamp, so writes during a sync are not skipped.
+
+The timestamp is not a race-free change cursor. A transaction can receive a
+change timestamp at or before the cursor, commit after the sync SELECT's
+snapshot, and then be excluded by the next request's strict `>` filter. That can
+permanently omit a recipe update, tag change, or tombstone from the cache. The
+follow-up `p2-recipe-sync-cursor-can-skip-concurrent-commits` must establish a
+safe cursor or reconciliation mechanism before this feed carries the full
+local-search corpus.
 
 The cache serves offline browsing, tag filters, the basic photo-presence
 filter, date filters, and deterministic browse sorts. It intentionally sends
@@ -92,13 +98,14 @@ later changes to match only flattened ingredient values, change the API, iOS,
 and shared vectors together. Source and photo metadata can remain outside the
 search document unless local versions of those filters are also requested.
 
-The full-body cache will make the initial sync larger, but later syncs still
-transfer only changed recipes. Recipe updates already create immutable
-`recipe_versions`, so the current version's `created_at` is an effective change
-marker. Before implementation, measure initial payload size, stored cache size,
-sync duration, and search latency against representative large cookbooks. That
-measurement should choose the query implementation; it should not hold the
-data model hostage to an unmeasured indexing concern.
+The full-body cache will make the initial sync larger, but later syncs should
+still transfer only changed recipes once the cursor race is fixed. Recipe
+updates already create immutable `recipe_versions`, which gives the feed a
+stable version identity even though wall-clock `created_at` is not by itself a
+safe cursor. Before implementation, measure initial payload size, stored cache
+size, sync duration, and search latency against representative large cookbooks.
+That measurement should choose the query implementation; it should not hold
+the data model hostage to an unmeasured indexing concern.
 
 ### Offline writes that already exist
 
@@ -120,12 +127,15 @@ than pretending transport removes the need to decide what a conflict means.
 
 The smallest complete design is:
 
-1. Make recipe sync return a purpose-specific search document containing
+1. Replace or repair the timestamp cursor so a transaction that commits across
+   the sync snapshot cannot be skipped. Cover create/update, tag changes, and
+   soft-delete tombstones with a coordinated API regression test.
+2. Make recipe sync return a purpose-specific search document containing
    title, description, tags, structured ingredients, the server-produced
    `ingredient_match_text`, instructions, and notes. Do not assume encoding
    structured ingredients on iOS recreates PostgreSQL's JSONB text.
-2. Persist that document in the existing account-scoped Core Data cache.
-3. Implement the server's matching, normalization, and relevance scoring in
+3. Persist that document in the existing account-scoped Core Data cache.
+4. Implement the server's matching, normalization, and relevance scoring in
    Swift, preserving the distinction between bare-text matching fields and
    explicit `tag:` filters. Following `doc/client-logic-sharing.md`, expand the
    existing ranking fixtures with shared end-to-end match/filter vectors: raw
@@ -135,9 +145,9 @@ The smallest complete design is:
    accent/ligature normalization. It must also cover a token found only in an
    ingredient JSON key, which matches today but may score zero. Scorer-only
    vectors cannot prove result-set parity.
-4. Search the cached corpus locally and preserve the server's score, recency,
+5. Search the cached corpus locally and preserve the server's score, recency,
    and ID tie-break order.
-5. Keep web search on `GET /api/recipes`; web has neither an offline product
+6. Keep web search on `GET /api/recipes`; web has neither an offline product
    requirement nor a local corpus, and replacing its paginated flow with an
    all-recipes sync would be a regression.
 
@@ -212,8 +222,8 @@ The repository's immutable recipe versions make a narrow protocol feasible:
   the user restore or copy it.
 - Treat photo uploads as a separate queued operation with retry and
   idempotency; large blobs should not complicate the recipe metadata cursor.
-- Use a server-issued cursor or the existing bounded server timestamp for
-  downloads, never a device clock.
+- Use the race-safe server cursor established for recipe reads for downloads,
+  never the current wall-clock timestamp cursor or a device clock.
 
 For this product, optimistic document-level conflict detection is preferable
 to CRDTs. Concurrent edits should be rare, recipe bodies contain ordered and
@@ -307,10 +317,11 @@ engine on both ends. A server database migration provides no shortcut.
 
 ### Stage 1: complete local reads
 
-Implement `p3-ios-full-recipe-cache-local-search`: sync the complete search
-document—including the distinct ingredient match text and scorer inputs—into
-Core Data, measure payload/storage/search performance, and cover population,
-updates, tag changes, and tombstones with API and iOS tests.
+First fix `p2-recipe-sync-cursor-can-skip-concurrent-commits`. Then implement
+`p3-ios-full-recipe-cache-local-search`: sync the complete search document—
+including the distinct ingredient match text and scorer inputs—into Core Data,
+measure payload/storage/search performance, and cover population, updates, tag
+changes, and tombstones with API and iOS tests.
 
 Then implement `blocked-ios-local-search-relevance`: mirror matching and scoring
 in Swift, first land the exact normalization contract, and pin query parsing,
