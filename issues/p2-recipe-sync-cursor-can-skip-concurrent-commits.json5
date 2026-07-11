@@ -1,0 +1,27 @@
+{
+  "title": "Recipe sync cursor can skip concurrent commits",
+  "description": "`GET /api/recipes/sync` captures `sync_timestamp` before its \
+SELECT, returns it as the next cursor, and later filters changes with \
+timestamps strictly greater than that cursor. A concurrent recipe or tag \
+transaction can receive a `created_at`, `updated_at`, or `deleted_at` at or \
+before the cursor, then commit after the sync SELECT has taken its snapshot. \
+The row is invisible to that sync and excluded from every later delta, so an \
+iOS cache can remain stale until a forced full sync.\n\
+\n\
+Choose and implement a race-safe change cursor or reconciliation strategy \
+before local search treats the full-body cache from PR #643 as a complete \
+corpus. Add a deterministic API regression test that coordinates an \
+uncommitted create/update, tag change, or soft delete across the sync snapshot \
+and proves the next sync returns it. The fix must preserve idempotent \
+application of repeated changes and soft-delete tombstones.",
+  "status": "open",
+  "priority": 2,
+  "type": "bug",
+  "labels": [
+    "api",
+    "ios",
+    "sync",
+  ],
+  "created_at": "2026-07-11T13:43:38-07:00",
+  "updated_at": "2026-07-11T13:53:14-07:00",
+}

@@ -1,28 +1,36 @@
 {
   "title": "iOS local search using the shared search-ranking vectors",
   "description": "Search relevance ranking is implemented server-side as a \
-pure scoring function in ramekin-core/src/search.rs, with a JSON fixture \
-corpus at ramekin-core/tests/fixtures/search_ranking/cases.json that is \
-deliberately structured as shared test vectors (query tokens + recipe fields \
-in, ranked IDs out). The long-term plan (discussed 2026-07-03) is for iOS to \
-run the same matching + scoring locally for instant, offline search, with the \
-vector file guaranteeing identical ranking to the server. Web stays \
-server-side — it has no offline story and no local recipe corpus, so it \
-consumes ranking via the API and cannot drift.\n\
+pure scoring function in ramekin-core/src/search.rs, with ranking vectors at \
+ramekin-core/tests/fixtures/search_ranking/cases.json. Those vectors do not \
+cover query parsing or result membership. The complete parity requirements are \
+recorded in doc/local-recipe-search-and-sync.md. Web stays server-side because \
+it has no offline requirement or local recipe corpus.\n\
 \n\
 Scope when unblocked:\n\
-- Swift implementation of normalize_for_search (lowercase + strip combining \
-marks, mirroring Postgres f_unaccent + ILIKE semantics) and relevance_score \
-with the same field weights.\n\
-- Swift implementation of the matching filter (every text token must appear in \
-title/description/instructions/notes/ingredients, accent- and case-insensitive \
-substring), which is currently SQL in server/src/api/recipes/list.rs.\n\
-- XCTest that loads the shared vector corpus as a test resource (xcodegen \
-project.yml resources entry) and asserts identical ranking; move/copy the \
-corpus to shared-test-vectors/ per the conventions from \
-p3-shared-test-vectors-recipe-scaling if that pilot has landed by then.\n\
-- CI wiring: add the vector path to .github/workflows/ios.yml trigger paths so \
-a vector edit cannot merge without running the Swift side.\n\
+- Pin the complete PostgreSQL `unaccent.rules` behavior as a versioned shared \
+asset, verify every mapping against `f_unaccent` in an API test, and fail sync \
+when iOS does not support the server's normalization-contract version.\n\
+- Implement Swift query parsing, exact normalization, AND matching across the \
+five bare-text fields, explicit `tag:`, and cached photo-presence and \
+created-date filters. Implement relevance scoring plus updated-date, rating, \
+and created-date ordering with server-identical tie-breaks.\n\
+- Implement `tag:` as whole-value PostgreSQL `CITEXT` parity: case-insensitive \
+but accent-sensitive equality, separate from the bare-text unaccent substring \
+normalizer. Add server-backed vectors proving case and accent behavior.\n\
+- Keep text queries containing `source:`, `photo_size:`, `photo_dim:`, or \
+title/random ordering on the server. `SyncRecipe` lacks the source and \
+detailed photo metadata, while iOS title collation differs from PostgreSQL. \
+Add routing tests for every unsupported combination.\n\
+- Extend `SyncRecipe` and the CoreData cache with the server-produced \
+ingredient JSONB match text, preserving its distinction from the flattened \
+structured ingredient inputs used by the scorer.\n\
+- Add shared end-to-end match/filter vectors (raw query + recipe documents in, \
+matched and ordered IDs out) alongside the existing ranking vectors. Consume \
+both suites from server tests and XCTest, covering quotes, filters, accents, \
+ligatures, multi-token AND semantics, and JSON-key-only ingredient matches.\n\
+- Wire every shared vector path into iOS CI so a contract edit cannot merge \
+without running the Swift side.\n\
 \n\
 Per doc/client-logic-sharing.md this is the duplicate-and-pin pattern; do NOT \
 reach for WASM/UniFFI for a ~100-line scorer.",
@@ -34,9 +42,10 @@ reach for WASM/UniFFI for a ~100-line scorer.",
     "search",
     "parity",
   ],
-  "blocked": "Blocked on p3-ios-full-recipe-cache-local-search: iOS needs an \
-on-device recipe cache with full recipe bodies, not just paged summaries, \
-before it has a local corpus that can mirror server search semantics.",
+  "blocked": "Blocked on p2-recipe-sync-cursor-can-skip-concurrent-commits: PR \
+#643 landed the full-body iOS cache, but the current wall-clock cursor can \
+permanently omit a transaction that commits across the sync snapshot. Fix the \
+feed before local search relies on it as a complete corpus.",
   "created_at": "2026-07-03T19:00:33-07:00",
-  "updated_at": "2026-07-06T07:40:19-07:00",
+  "updated_at": "2026-07-11T14:14:30-07:00",
 }

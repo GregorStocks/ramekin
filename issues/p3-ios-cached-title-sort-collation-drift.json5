@@ -1,0 +1,26 @@
+{
+  "title": "Align iOS cached title sort with server collation",
+  "description": "The iOS recipe cache currently serves title-sorted browse \
+results with `localizedCaseInsensitiveCompare`, while `GET /api/recipes` sorts \
+by PostgreSQL `lower(title)` under the database collation. Accented and other \
+non-ASCII titles can therefore appear in a different order when iOS switches \
+between its cache and the server. Future local text search would inherit the \
+same drift if it allowed title ordering.\n\
+\n\
+Choose one canonical title comparator that can run identically on the server \
+and iOS, pin it with shared vectors covering case, accents, non-ASCII scripts, \
+equal folded titles, and UUID tie-breaks, then update API and XCTest coverage. \
+Until that contract lands, keep title-sorted text queries server-backed. Web \
+continues to consume server order and needs no client comparator.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ios",
+    "search",
+    "sorting",
+    "parity",
+  ],
+  "created_at": "2026-07-11T14:14:30-07:00",
+  "updated_at": "2026-07-11T14:14:30-07:00",
+}
