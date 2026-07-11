@@ -22,23 +22,6 @@ macro_rules! current_recipe_versions_for_user {
 
 pub(crate) use current_recipe_versions_for_user;
 
-macro_rules! recipe_summary_select {
-    () => {
-        (
-            $crate::schema::recipes::id,
-            $crate::schema::recipes::created_at,
-            $crate::schema::recipe_versions::title,
-            $crate::schema::recipe_versions::description,
-            $crate::schema::recipe_versions::photo_ids,
-            $crate::schema::recipe_versions::rating,
-            $crate::schema::recipe_versions::created_at,
-            $crate::raw_sql::tags_subquery(),
-        )
-    };
-}
-
-pub(crate) use recipe_summary_select;
-
 macro_rules! counted_recipe_summary_select {
     () => {
         (

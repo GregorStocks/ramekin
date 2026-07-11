@@ -69,6 +69,7 @@ from ramekin_client.models.sort_by import SortBy
 from ramekin_client.models.step_state import StepState
 from ramekin_client.models.sync_create_item import SyncCreateItem
 from ramekin_client.models.sync_created_item import SyncCreatedItem
+from ramekin_client.models.sync_recipe import SyncRecipe
 from ramekin_client.models.sync_recipes_response import SyncRecipesResponse
 from ramekin_client.models.sync_request import SyncRequest
 from ramekin_client.models.sync_response import SyncResponse

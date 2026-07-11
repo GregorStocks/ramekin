@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { RecipeSummary } from './RecipeSummary';
+import type { SyncRecipe } from './SyncRecipe';
 import {
-    RecipeSummaryFromJSON,
-    RecipeSummaryFromJSONTyped,
-    RecipeSummaryToJSON,
-    RecipeSummaryToJSONTyped,
-} from './RecipeSummary';
+    SyncRecipeFromJSON,
+    SyncRecipeFromJSONTyped,
+    SyncRecipeToJSON,
+    SyncRecipeToJSONTyped,
+} from './SyncRecipe';
 
 /**
  * 
@@ -35,10 +35,10 @@ export interface SyncRecipesResponse {
     deleted: Array<string>;
     /**
      * Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent.
-     * @type {Array<RecipeSummary>}
+     * @type {Array<SyncRecipe>}
      * @memberof SyncRecipesResponse
      */
-    recipes: Array<RecipeSummary>;
+    recipes: Array<SyncRecipe>;
     /**
      * New sync timestamp to use for the next sync.
      * @type {Date}
@@ -68,7 +68,7 @@ export function SyncRecipesResponseFromJSONTyped(json: any, ignoreDiscriminator:
     return {
         
         'deleted': json['deleted'],
-        'recipes': ((json['recipes'] as Array<any>).map(RecipeSummaryFromJSON)),
+        'recipes': ((json['recipes'] as Array<any>).map(SyncRecipeFromJSON)),
         'syncTimestamp': (new Date(json['sync_timestamp'])),
     };
 }
@@ -85,7 +85,7 @@ export function SyncRecipesResponseToJSONTyped(value?: SyncRecipesResponse | nul
     return {
         
         'deleted': value['deleted'],
-        'recipes': ((value['recipes'] as Array<any>).map(RecipeSummaryToJSON)),
+        'recipes': ((value['recipes'] as Array<any>).map(SyncRecipeToJSON)),
         'sync_timestamp': value['syncTimestamp'].toISOString(),
     };
 }

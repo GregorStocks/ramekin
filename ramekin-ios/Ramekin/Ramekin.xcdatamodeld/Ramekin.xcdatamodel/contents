@@ -4,6 +4,9 @@
         <attribute name="accountKey" attributeType="String"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="ingredientsJSON" attributeType="String" defaultValueString="[]"/>
+        <attribute name="instructions" attributeType="String" defaultValueString=""/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="rating" optional="YES" attributeType="String"/>
         <attribute name="summaryDescription" optional="YES" attributeType="String"/>
         <attribute name="tagsJSON" attributeType="String" defaultValueString="[]"/>

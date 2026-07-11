@@ -81,6 +81,7 @@ RamekinClient/Classes/OpenAPIs/Models/SortBy.swift
 RamekinClient/Classes/OpenAPIs/Models/StepState.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncCreateItem.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncCreatedItem.swift
+RamekinClient/Classes/OpenAPIs/Models/SyncRecipe.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncRecipesResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/SyncResponse.swift
@@ -165,6 +166,7 @@ docs/SortBy.md
 docs/StepState.md
 docs/SyncCreateItem.md
 docs/SyncCreatedItem.md
+docs/SyncRecipe.md
 docs/SyncRecipesResponse.md
 docs/SyncRequest.md
 docs/SyncResponse.md

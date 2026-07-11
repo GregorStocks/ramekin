@@ -48,6 +48,19 @@ def test_recipe_sync_initial_response_includes_active_recipes(
     recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
     assert str(created.id) in recipes_by_id
     assert recipes_by_id[str(created.id)]["title"] == "Initial Sync Recipe"
+    assert recipes_by_id[str(created.id)]["description"] == (
+        "Cached locally on first sync"
+    )
+    assert recipes_by_id[str(created.id)]["ingredients"] == [
+        {
+            "item": "flour",
+            "measurements": [],
+            "note": None,
+            "section": None,
+        }
+    ]
+    assert recipes_by_id[str(created.id)]["instructions"] == "Mix it."
+    assert recipes_by_id[str(created.id)]["notes"] is None
     assert set(recipes_by_id[str(created.id)]["tags"]) == {"sync", "cache"}
     assert response["deleted"] == []
     assert response["sync_timestamp"] is not None
@@ -79,7 +92,13 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
 
     recipes_api.update_recipe(
         updated.id,
-        UpdateRecipeRequest(title="After Update", tags=["changed"]),
+        UpdateRecipeRequest(
+            title="After Update",
+            ingredients=[make_ingredient(item="brown rice", note="rinsed")],
+            instructions="Simmer it.",
+            notes="Use a heavy pot.",
+            tags=["changed"],
+        ),
     )
     recipes_api.delete_recipe(deleted.id)
 
@@ -88,6 +107,10 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
     recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
     assert str(updated.id) in recipes_by_id
     assert recipes_by_id[str(updated.id)]["title"] == "After Update"
+    assert recipes_by_id[str(updated.id)]["ingredients"][0]["item"] == "brown rice"
+    assert recipes_by_id[str(updated.id)]["ingredients"][0]["note"] == "rinsed"
+    assert recipes_by_id[str(updated.id)]["instructions"] == "Simmer it."
+    assert recipes_by_id[str(updated.id)]["notes"] == "Use a heavy pot."
     assert recipes_by_id[str(updated.id)]["tags"] == ["changed"]
     assert str(deleted.id) not in recipes_by_id
     assert str(deleted.id) in response["deleted"]

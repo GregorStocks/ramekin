@@ -4207,6 +4207,77 @@
           }
         }
       },
+      "SyncRecipe": {
+        "type": "object",
+        "description": "Read-only recipe data needed to populate the iOS cache and mirror server search.",
+        "required": [
+          "id",
+          "title",
+          "tags",
+          "created_at",
+          "updated_at",
+          "ingredients",
+          "instructions"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ingredient"
+            }
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "thumbnail_photo_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
       "SyncRecipesResponse": {
         "type": "object",
         "required": [
@@ -4226,7 +4297,7 @@
           "recipes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RecipeSummary"
+              "$ref": "#/components/schemas/SyncRecipe"
             },
             "description": "Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent."
           },

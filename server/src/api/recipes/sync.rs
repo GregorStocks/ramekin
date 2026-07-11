@@ -1,11 +1,11 @@
-use crate::api::recipes::list::RecipeSummary;
 use crate::api::recipes::read::{
-    current_recipe_versions_for_user, recipe_summary_select, RecipeSummaryRow,
+    current_recipe_versions_for_user, recipe_relevance_select, RecipeRelevanceRow,
 };
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
+use crate::models::Ingredient;
 use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Query, State},
@@ -30,11 +30,46 @@ pub struct SyncRecipesParams {
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct SyncRecipesResponse {
     /// Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent.
-    pub recipes: Vec<RecipeSummary>,
+    pub recipes: Vec<SyncRecipe>,
     /// Recipe IDs deleted since last_sync_at.
     pub deleted: Vec<Uuid>,
     /// New sync timestamp to use for the next sync.
     pub sync_timestamp: DateTime<Utc>,
+}
+
+/// Read-only recipe data needed to populate the iOS cache and mirror server search.
+#[derive(Debug, Clone, Serialize, ToSchema)]
+pub struct SyncRecipe {
+    pub id: Uuid,
+    pub title: String,
+    pub description: Option<String>,
+    pub tags: Vec<String>,
+    pub thumbnail_photo_id: Option<Uuid>,
+    pub rating: Option<i32>,
+    pub created_at: DateTime<Utc>,
+    pub updated_at: DateTime<Utc>,
+    pub ingredients: Vec<Ingredient>,
+    pub instructions: String,
+    pub notes: Option<String>,
+}
+
+impl SyncRecipe {
+    fn try_from_row(row: RecipeRelevanceRow) -> Result<Self, serde_json::Error> {
+        let ingredients = serde_json::from_value(row.ingredients)?;
+        Ok(Self {
+            id: row.id,
+            title: row.title,
+            description: row.description,
+            tags: row.tags,
+            thumbnail_photo_id: row.photo_ids.first().and_then(|id| *id),
+            rating: row.rating,
+            created_at: row.created_at,
+            updated_at: row.updated_at,
+            ingredients,
+            instructions: row.instructions,
+            notes: row.notes,
+        })
+    }
 }
 
 #[utoipa::path(
@@ -73,8 +108,8 @@ pub async fn sync_recipes(
         query = query.filter(recipe_versions::created_at.gt(last_sync_at).or(tag_changed));
     }
 
-    let rows: Vec<RecipeSummaryRow> = match query
-        .select(recipe_summary_select!())
+    let rows: Vec<RecipeRelevanceRow> = match query
+        .select(recipe_relevance_select!())
         .order((recipe_versions::created_at.desc(), recipes::id.asc()))
         .load(&mut conn)
     {
@@ -103,7 +138,17 @@ pub async fn sync_recipes(
         }
     };
 
-    let recipes = rows.into_iter().map(RecipeSummary::from_row).collect();
+    let recipes = match rows
+        .into_iter()
+        .map(SyncRecipe::try_from_row)
+        .collect::<Result<Vec<_>, _>>()
+    {
+        Ok(recipes) => recipes,
+        Err(e) => {
+            tracing::error!(error = %e, "stored ingredients JSON failed to deserialize during recipe sync");
+            return ApiError::internal("Recipe ingredients are corrupt").into_response();
+        }
+    };
 
     (
         StatusCode::OK,
