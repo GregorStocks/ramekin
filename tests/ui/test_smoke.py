@@ -338,6 +338,29 @@ def test_cookbook_density_toggle_persists(logged_in_page: Page):
     )
 
 
+def test_cookbook_filters_adapt_between_desktop_and_mobile(logged_in_page: Page):
+    """The desktop sidebar becomes an accessible mobile filter sheet."""
+    sidebar = logged_in_page.get_by_role("complementary", name="Filters")
+    open_filters = logged_in_page.get_by_role("button", name="Open filters")
+
+    expect(sidebar).to_be_visible()
+    expect(open_filters).not_to_be_visible()
+
+    logged_in_page.set_viewport_size({"width": 390, "height": 844})
+    expect(open_filters).to_be_visible()
+    expect(sidebar).not_to_be_in_viewport()
+
+    open_filters.click()
+    expect(sidebar).to_have_class(re.compile(r"cookbook-sidebar-open"))
+    expect(sidebar).to_be_in_viewport()
+    expect(logged_in_page.locator("body")).to_have_css("overflow", "hidden")
+
+    logged_in_page.keyboard.press("Escape")
+    expect(sidebar).not_to_have_class(re.compile(r"cookbook-sidebar-open"))
+    expect(sidebar).not_to_be_in_viewport()
+    expect(logged_in_page.locator("body")).not_to_have_css("overflow", "hidden")
+
+
 def test_version_history_labels_enrichment_badges(
     page: Page, ui_url: str, api_url: str
 ):
