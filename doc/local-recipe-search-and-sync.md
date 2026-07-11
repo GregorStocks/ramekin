@@ -53,28 +53,32 @@ native SQLite API, but it is a suitable object store for the current cache.
 
 ### Search data and semantics
 
-Server search matches six field families and then ranks the matches with the
-pure function in `ramekin-core/src/search.rs`:
+Server search first matches bare text against five field families, then ranks
+the matches with six field families through the pure function in
+`ramekin-core/src/search.rs`. Tags can increase the score of a recipe that
+matched another field, but bare text does not match tags; tags enter the result
+set through explicit `tag:` filters.
 
-| Field family | In the iOS cache | Per-token ranking weight |
-|---|---:|---:|
-| Title | yes | 2,000, plus whole-title bonuses |
-| Tags | yes | 800 |
-| Description | yes | 400 |
-| Ingredients | no | 200 |
-| Instructions | no | 50 |
-| Notes | no | 50 |
+| Field family | In the iOS cache | Bare-text match | Per-token ranking weight |
+|---|---:|---:|---:|
+| Title | yes | yes | 2,000, plus whole-title bonuses |
+| Tags | yes | no (`tag:` only) | 800 |
+| Description | yes | yes | 400 |
+| Ingredients | no | yes | 200 |
+| Instructions | no | yes | 50 |
+| Notes | no | yes | 50 |
 
-The summary cache therefore has 3 of 6 searchable field families and 3,200 of
-the 3,500 ordinary per-token ranking points. It also has the title fields used
-by the 10,000 to 100,000 point whole-title bonuses. That is enough data to rank
-many common searches plausibly, but it is not enough to search correctly: a
-token present only in an ingredient, instruction, or note must still make a
-recipe a match. Summary-only local search would produce false negatives.
+The summary cache therefore has 3 of 6 ranking field families, 2 of 5
+bare-text matching field families, and 3,200 of the 3,500 ordinary per-token
+ranking points. It also has the title fields used by the 10,000 to 100,000
+point whole-title bonuses. That is enough data to rank many common searches
+plausibly, but it is not enough to search correctly: a token present only in an
+ingredient, instruction, or note must still make a recipe a match. Summary-only
+local search would produce false negatives.
 
 Adding ingredients, instructions, and notes to the synced search document
-closes that entire correctness gap. It supports all six matching fields and
-100% of the scorer's inputs without enabling a single offline mutation.
+closes that entire correctness gap. It supports all five bare-text matching
+fields and all six scorer inputs without enabling a single offline mutation.
 Source and photo metadata can remain outside the search document unless local
 versions of those filters are also requested.
 
@@ -111,8 +115,9 @@ The smallest complete design is:
    sync model rather than every field in `RecipeResponse`.
 2. Persist that document in the existing account-scoped Core Data cache.
 3. Implement the server's matching, normalization, and relevance scoring in
-   Swift. Consume the same JSON ranking vectors as the Rust tests, following
-   `doc/client-logic-sharing.md`.
+   Swift, preserving the distinction between bare-text matching fields and
+   explicit `tag:` filters. Consume the same JSON ranking vectors as the Rust
+   tests, following `doc/client-logic-sharing.md`.
 4. Search the cached corpus locally and preserve the server's score, recency,
    and ID tie-break order.
 5. Keep web search on `GET /api/recipes`; web has neither an offline product
@@ -134,7 +139,8 @@ migrations, observation, a Swift query interface, and FTS5 support.
 
 FTS5 is not a drop-in replacement for Ramekin search:
 
-- Ramekin uses accent-insensitive substring containment for every query token.
+- Ramekin uses accent-insensitive substring containment for every bare-text
+  query token across its five matching fields.
 - FTS5 normally tokenizes words; its trigram tokenizer can accelerate more
   general substring queries, but strings shorter than three characters need
   special handling.
