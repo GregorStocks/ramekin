@@ -1,0 +1,9 @@
+.enrich-preview {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.no-changes {
+  color: var(--text-muted);
+  font-style: italic;
+}

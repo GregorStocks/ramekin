@@ -1,0 +1,29 @@
+/* Recipe Metadata (view page) */
+.recipe-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background: var(--surface-1);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.recipe-metadata-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-secondary);
+}
+
+.recipe-metadata-item .label {
+  color: var(--text-faint);
+}
+
+.recipe-metadata-item .value {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Difficulty badge */

@@ -1,0 +1,238 @@
+/* Meal Plan Page */
+.meal-plan-page {
+  max-width: 100%;
+}
+
+.meal-plan-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.week-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.meal-plan-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border-hairline);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.meal-plan-header {
+  display: grid;
+  grid-template-columns: 100px repeat(7, minmax(0, 1fr));
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.meal-plan-header .meal-type-label {
+  padding: 0.75rem;
+}
+
+.day-header {
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.85rem;
+  border-left: 1px solid var(--border-hairline);
+}
+
+.day-header.day-today {
+  background: var(--accent-wash);
+  color: var(--accent);
+}
+
+.meal-row {
+  display: grid;
+  grid-template-columns: 100px repeat(7, minmax(0, 1fr));
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.meal-row:last-child {
+  border-bottom: none;
+}
+
+.meal-type-label {
+  padding: 0.75rem;
+  font-weight: 500;
+  font-size: 0.85rem;
+  background: var(--surface-1);
+  display: flex;
+  align-items: flex-start;
+}
+
+.meal-slot {
+  border-left: 1px solid var(--border-hairline);
+  padding: 0.5rem;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--surface-2);
+}
+
+.meal-slot.day-today {
+  background: color-mix(in oklab, var(--accent-wash) 50%, var(--surface-2));
+}
+
+.meal-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem;
+  background: var(--surface-elevated);
+  border-radius: 4px;
+  border: 1px solid var(--border-hairline);
+  position: relative;
+  min-width: 0;
+}
+
+.meal-card:hover {
+  border-color: var(--border-subtle);
+}
+
+.meal-thumbnail {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.meal-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meal-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  overflow: hidden;
+}
+
+.meal-title span {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meal-title:hover {
+  color: var(--accent);
+}
+
+.meal-notes {
+  color: var(--text-faint);
+  font-size: 0.72rem;
+}
+
+.meal-edit,
+.meal-remove {
+  position: absolute;
+  top: -4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: none;
+  color: var(--text-on-accent);
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.meal-edit {
+  right: 18px;
+  background: var(--accent);
+}
+
+.meal-remove {
+  right: -4px;
+  background: var(--danger);
+}
+
+.meal-card:hover .meal-edit,
+.meal-card:hover .meal-remove {
+  opacity: 1;
+}
+
+.add-meal-btn {
+  width: 100%;
+  padding: 0.375rem;
+  border: 1px dashed var(--border-subtle);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-faint);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.add-meal-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-wash);
+}
+
+@media (max-width: 960px) {
+  .meal-plan-grid {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .meal-plan-header,
+  .meal-row {
+    grid-template-columns: 80px repeat(7, minmax(120px, 1fr));
+    min-width: 920px;
+  }
+
+  .meal-type-label {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .day-header {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .meal-slot {
+    min-height: 80px;
+    padding: 0.25rem;
+  }
+
+  .meal-card {
+    padding: 0.25rem;
+    gap: 0.25rem;
+  }
+
+  .meal-title {
+    font-size: 0.7rem;
+  }
+
+  .meal-thumbnail {
+    width: 24px;
+    height: 24px;
+  }
+
+  .add-meal-btn {
+    padding: 0.25rem;
+    font-size: 0.85rem;
+  }
+}

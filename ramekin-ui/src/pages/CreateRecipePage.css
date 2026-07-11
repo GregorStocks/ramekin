@@ -1,0 +1,162 @@
+/* URL Import Section */
+.import-section {
+  background: var(--surface-1);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.import-header {
+  margin-bottom: 0.75rem;
+}
+
+.import-header label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.import-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.import-input {
+  flex: 1;
+  padding: 0.5rem 0.625rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-primary);
+}
+
+.import-input::placeholder {
+  color: var(--text-faint);
+}
+
+.import-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--surface-elevated);
+}
+
+.import-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.import-error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--danger-wash);
+  border: 1px solid
+    color-mix(in oklab, var(--danger) 45%, var(--border-hairline));
+  border-radius: var(--radius-sm);
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.import-error span {
+  flex: 1;
+}
+
+.import-success {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--accent-wash);
+  border: 1px solid
+    color-mix(in oklab, var(--accent) 45%, var(--border-hairline));
+  border-radius: var(--radius-sm);
+  color: var(--accent-press);
+}
+
+.import-success span {
+  flex: 1;
+}
+
+.import-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: var(--text-faint);
+  font-size: 0.85rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-hairline);
+}
+
+.section-divider span {
+  padding: 0 1rem;
+}
+
+/* Bookmarklet Section */
+.bookmarklet-section {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+}
+
+.bookmarklet-toggle {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.bookmarklet-toggle:hover {
+  text-decoration: underline;
+}
+
+.bookmarklet-content {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.bookmarklet-content p {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.bookmarklet-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  cursor: grab;
+}
+
+.bookmarklet-link:hover {
+  background: var(--accent-hover);
+}
+
+.bookmarklet-hint {
+  margin-top: 0.75rem !important;
+  font-size: 0.8rem !important;
+  color: var(--text-faint) !important;
+}

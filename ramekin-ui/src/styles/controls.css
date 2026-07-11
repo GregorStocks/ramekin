@@ -1,0 +1,156 @@
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-1);
+  color: var(--text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition:
+    background-color var(--dur-med) ease,
+    border-color var(--dur-med) ease;
+}
+
+.btn:hover {
+  background: var(--surface-2);
+  border-color: var(--border-subtle);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-danger {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: var(--text-on-accent);
+}
+
+.btn-danger:hover {
+  background: var(--danger-hover);
+  border-color: var(--danger-hover);
+}
+
+.btn-danger-outline {
+  background: transparent;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-danger-outline:hover {
+  background: var(--danger-wash);
+}
+
+.btn-small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.btn-header {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.logout-button {
+  background: transparent;
+  border: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: var(--surface-2);
+  color: var(--text-primary);
+}
+
+/* Shared input surface */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+  background: var(--surface-1);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 0.85rem;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--dur-med) ease;
+}
+
+/* Form controls stretch to fill their label group — inline selects and
+   toolbar inputs outside a .form-group keep their intrinsic/explicit
+   width. */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="search"],
+.form-group input[type="number"],
+.form-group input[type="url"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--border-subtle);
+  outline: none;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--border-subtle);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-hint {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}

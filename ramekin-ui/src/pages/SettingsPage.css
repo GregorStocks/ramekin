@@ -1,0 +1,92 @@
+/* Settings Page */
+.settings-page {
+  text-align: left;
+  max-width: 600px;
+}
+
+.settings-section {
+  margin-bottom: 2rem;
+}
+
+.settings-section h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.settings-list {
+  margin: 0 0 1rem;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-1);
+  overflow: hidden;
+}
+
+.settings-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.settings-row + .settings-row {
+  border-top: 1px solid var(--border-hairline);
+}
+
+.settings-row dt {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.settings-row dd {
+  margin: 0;
+  text-align: right;
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+}
+
+.settings-value-mono {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.settings-value-muted {
+  color: var(--text-faint);
+}
+
+.settings-connection {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.settings-connection-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: var(--radius-pill);
+  background: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.settings-connection[data-status="connected"] .settings-connection-dot {
+  background: var(--accent);
+}
+
+.settings-connection[data-status="error"] {
+  color: var(--danger);
+}
+
+.settings-connection[data-status="error"] .settings-connection-dot {
+  background: var(--danger);
+}
+
+.settings-link {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.settings-link:hover {
+  text-decoration: underline;
+}
