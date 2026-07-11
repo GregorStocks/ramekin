@@ -69,6 +69,12 @@ set through explicit `tag:` filters.
 | Instructions | no | yes | 50 |
 | Notes | no | yes | 50 |
 
+Ingredients currently have two distinct search representations. The SQL match
+casts the stored JSONB to text, so JSON keys and serialization syntax can make
+a recipe match. The scorer instead flattens measurement values, item, note,
+and section into human-facing text. A token found only in a JSON key can
+therefore select a row and still contribute no ingredient score.
+
 The summary cache therefore has 3 of 6 ranking field families, 2 of 5
 bare-text matching field families, and 3,200 of the 3,500 ordinary per-token
 ranking points. It also has the title fields used by the 10,000 to 100,000
@@ -77,11 +83,14 @@ plausibly, but it is not enough to search correctly: a token present only in an
 ingredient, instruction, or note must still make a recipe a match. Summary-only
 local search would produce false negatives.
 
-Adding ingredients, instructions, and notes to the synced search document
-closes that entire correctness gap. It supports all five bare-text matching
-fields and all six scorer inputs without enabling a single offline mutation.
-Source and photo metadata can remain outside the search document unless local
-versions of those filters are also requested.
+The synced document must therefore add instructions, notes, structured
+ingredients for scoring, and a server-produced `ingredient_match_text` equal to
+the exact `ingredients::text` value used by the current SQL filter. That closes
+the current correctness gap across all five bare-text matching fields and all
+six scorer inputs without enabling a single offline mutation. If server search
+later changes to match only flattened ingredient values, change the API, iOS,
+and shared vectors together. Source and photo metadata can remain outside the
+search document unless local versions of those filters are also requested.
 
 The full-body cache will make the initial sync larger, but later syncs still
 transfer only changed recipes. Recipe updates already create immutable
@@ -111,9 +120,10 @@ than pretending transport removes the need to decide what a conflict means.
 
 The smallest complete design is:
 
-1. Make recipe sync return a search document containing title, description,
-   tags, ingredients, instructions, and notes. This can be a purpose-specific
-   sync model rather than every field in `RecipeResponse`.
+1. Make recipe sync return a purpose-specific search document containing
+   title, description, tags, structured ingredients, the server-produced
+   `ingredient_match_text`, instructions, and notes. Do not assume encoding
+   structured ingredients on iOS recreates PostgreSQL's JSONB text.
 2. Persist that document in the existing account-scoped Core Data cache.
 3. Implement the server's matching, normalization, and relevance scoring in
    Swift, preserving the distinction between bare-text matching fields and
@@ -122,8 +132,9 @@ The smallest complete design is:
    query plus recipe documents in, matched and ordered IDs out. Consume both
    suites from server tests and XCTest. The match/filter suite must cover AND
    semantics across fields, quoted terms, `tag:` and structured filters, and
-   accent/ligature normalization; scorer-only vectors cannot prove result-set
-   parity.
+   accent/ligature normalization. It must also cover a token found only in an
+   ingredient JSON key, which matches today but may score zero. Scorer-only
+   vectors cannot prove result-set parity.
 4. Search the cached corpus locally and preserve the server's score, recency,
    and ID tie-break order.
 5. Keep web search on `GET /api/recipes`; web has neither an offline product
@@ -296,9 +307,10 @@ engine on both ends. A server database migration provides no shortcut.
 
 ### Stage 1: complete local reads
 
-Implement `p3-ios-full-recipe-cache-local-search`: sync the six-field search
-document into Core Data, measure payload/storage/search performance, and cover
-population, updates, tag changes, and tombstones with API and iOS tests.
+Implement `p3-ios-full-recipe-cache-local-search`: sync the complete search
+document—including the distinct ingredient match text and scorer inputs—into
+Core Data, measure payload/storage/search performance, and cover population,
+updates, tag changes, and tombstones with API and iOS tests.
 
 Then implement `blocked-ios-local-search-relevance`: mirror matching and scoring
 in Swift, first land the exact normalization contract, and pin query parsing,
