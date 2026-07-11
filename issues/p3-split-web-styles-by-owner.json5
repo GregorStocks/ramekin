@@ -1,0 +1,32 @@
+{
+  "title": "Split global web styles by page and component owner",
+  "description": "ramekin-ui/src/App.css is roughly 3,900 lines and contains \
+layout, navigation, shared controls, and nearly every page and component style \
+in one global sheet. This increases selector-collision risk and makes \
+otherwise narrow UI changes require scanning an unrelated monolith.\n\
+\n\
+Scope:\n\
+- Divide App.css into a small global/layout layer plus page- or \
+component-owned styles using the project's existing CSS approach.\n\
+- Preserve the current cascade deliberately; do not rename selectors or change \
+specificity unless required to keep behavior identical.\n\
+- Keep palette and shared design tokens centralized rather than duplicating \
+them.\n\
+- Make the move in reviewable groups and verify cookbook, recipe view/form, \
+shopping list, meal plan, tags, modals, navigation, and responsive breakpoints \
+with existing UI tests and screenshots.\n\
+- Keep this mechanical: no visual refresh, CSS framework, CSS-in-JS \
+dependency, or new design system.\n\
+\n\
+This is web-only cleanup and should be independent from the CookbookPage \
+component split.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+    "cleanup",
+  ],
+  "created_at": "2026-07-11T11:38:01-07:00",
+  "updated_at": "2026-07-11T11:38:01-07:00",
+}

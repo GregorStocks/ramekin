@@ -1,0 +1,32 @@
+{
+  "title": "Use complete day boundaries for recipe date filters",
+  "description": "The server implements an inclusive `created_before` date as \
+`created_at <= 23:59:59`. PostgreSQL timestamps include fractional seconds, so \
+recipes created during the last fractional second of the selected UTC day are \
+excluded. iOS local cache filtering compares UTC calendar days and therefore \
+includes those recipes, creating a server/client semantic mismatch.\n\
+\n\
+Scope:\n\
+- Express the inclusive end date as `created_at < next_day_midnight` using \
+chrono and the Diesel DSL.\n\
+- Confirm and document UTC day semantics for both start and end dates.\n\
+- Add server tests at midnight, 23:59:59, the final fractional second, and the \
+following midnight.\n\
+- Mirror the boundary cases in iOS cache-filter tests as required by \
+doc/client-logic-sharing.md. Web delegates filtering to the server and needs \
+no duplicate implementation.\n\
+\n\
+Do not broaden this into timezone-aware user preferences; the existing \
+contract is UTC.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+    "ios",
+    "parity",
+    "bug",
+  ],
+  "created_at": "2026-07-11T11:38:01-07:00",
+  "updated_at": "2026-07-11T11:38:01-07:00",
+}
