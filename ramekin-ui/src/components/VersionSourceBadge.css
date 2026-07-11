@@ -1,0 +1,29 @@
+/* Version Source Badges */
+.version-source-badge {
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.version-source-user {
+  background: var(--accent-wash);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.version-source-scrape {
+  background: var(--accent-wash);
+  border: 1px solid
+    color-mix(in oklab, var(--accent-press) 45%, var(--border-hairline));
+  color: var(--accent-press);
+}
+
+.version-source-enrich {
+  background: var(--accent-wash);
+  border: 1px solid
+    color-mix(in oklab, var(--accent) 45%, var(--border-hairline));
+  color: var(--accent);
+}
+
+/* Version Banner */

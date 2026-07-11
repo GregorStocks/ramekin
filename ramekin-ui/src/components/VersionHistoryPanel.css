@@ -1,0 +1,122 @@
+/* Version History Panel */
+.version-history-panel {
+  margin-bottom: 1.5rem;
+}
+
+.version-history-header {
+  padding: 0.75rem 1rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border-hairline);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.version-history-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.version-history-header-left:hover {
+  opacity: 0.8;
+}
+
+.version-history-toggle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.version-count {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.version-list {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.version-item {
+  padding: 0.75rem 1rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border-hairline);
+  border-radius: 4px;
+}
+
+.version-item.current {
+  border-color: var(--accent);
+}
+
+.version-item-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.version-compare-checkbox {
+  margin-top: 0.25rem;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.version-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.version-item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.version-date {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.current-badge {
+  padding: 0.15rem 0.5rem;
+  background: var(--accent-wash);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.version-item-title {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.version-item-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loading-text,
+.error-text {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+.error-text {
+  color: var(--danger);
+}

@@ -1,0 +1,37 @@
+.diff-viewer {
+  margin-bottom: 1rem;
+}
+
+.diff-viewer:last-child {
+  margin-bottom: 0;
+}
+
+.diff-label {
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.diff-content {
+  padding: 0.75rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-hairline);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.diff-addition {
+  background: var(--accent-wash);
+  color: var(--accent-press);
+}
+
+.diff-deletion {
+  background: var(--danger-wash);
+  color: var(--danger);
+  text-decoration: line-through;
+}
+
+/* Enrich Preview */
