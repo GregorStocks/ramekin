@@ -310,7 +310,7 @@
     content: "";
     position: fixed;
     inset: 0;
-    background-image: url("./assets/grain.png");
+    background-image: url("../assets/grain.png");
     background-size: 200px 200px;
     opacity: 0.03;
     mix-blend-mode: multiply;
