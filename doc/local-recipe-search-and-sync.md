@@ -7,7 +7,8 @@ Decision record for issue `p4-sqlite-local-first-exploration` (2026-07-11).
 Keep PostgreSQL as the server database. For offline iOS recipe search, extend
 the existing read-only recipe sync and Core Data cache to include the full
 search document, then mirror the server's deterministic matching and scoring
-logic in Swift using the shared vectors already planned for that work.
+logic in Swift using exact shared normalization, matching, filtering, and
+ranking contracts.
 
 Do not build offline recipe writes or adopt a generic replication system until
 there is a concrete product requirement for editing recipes offline. If that
@@ -116,8 +117,13 @@ The smallest complete design is:
 2. Persist that document in the existing account-scoped Core Data cache.
 3. Implement the server's matching, normalization, and relevance scoring in
    Swift, preserving the distinction between bare-text matching fields and
-   explicit `tag:` filters. Consume the same JSON ranking vectors as the Rust
-   tests, following `doc/client-logic-sharing.md`.
+   explicit `tag:` filters. Following `doc/client-logic-sharing.md`, expand the
+   existing ranking fixtures with shared end-to-end match/filter vectors: raw
+   query plus recipe documents in, matched and ordered IDs out. Consume both
+   suites from server tests and XCTest. The match/filter suite must cover AND
+   semantics across fields, quoted terms, `tag:` and structured filters, and
+   accent/ligature normalization; scorer-only vectors cannot prove result-set
+   parity.
 4. Search the cached corpus locally and preserve the server's score, recency,
    and ID tie-break order.
 5. Keep web search on `GET /api/recipes`; web has neither an offline product
@@ -129,6 +135,26 @@ implementation to benchmark. The server already loads one user's matching
 rows and applies the scorer in memory, and the scorer is deliberately small.
 The iOS implementation can precompute normalized search fields when applying
 sync changes if repeated normalization is the bottleneck.
+
+### Exact normalization is a prerequisite
+
+The current `ramekin_core::search::normalize_for_search` is deliberately only
+a best-effort mirror of PostgreSQL `unaccent`. That is safe for ranking because
+PostgreSQL has already selected each result. It is not safe for local matching:
+a character handled by the database but absent from the Rust and Swift mapping
+could make iOS omit a server result.
+
+Before local matching ships, pin the complete `unaccent.rules` mapping used by
+the server as a versioned shared data asset, extend the pure Rust and Swift
+normalizers to consume the exact contract, and add an API parity test that
+checks every mapping against `f_unaccent`. The app and server must not advance
+to different mapping versions: carry the version in the sync contract and fail
+the sync when the app does not support it. The match/filter vectors should
+include multi-character expansions, deleted characters, combining marks, and
+rare glyphs in both documents and queries. If maintaining that exact contract
+is unacceptable, the alternative is to change server matching to the same pure
+normalizer used by iOS; a best-effort Swift copy of today's scorer normalizer
+is not an acceptable result-set filter.
 
 ### When a direct SQLite layer would help
 
@@ -147,7 +173,8 @@ FTS5 is not a drop-in replacement for Ramekin search:
 - The canonical weighted scorer and deterministic tie-breaks must still run on
   the candidate rows.
 - SQLite's built-in Unicode behavior does not exactly equal PostgreSQL
-  `unaccent`, so the shared normalizer remains the source of truth.
+  `unaccent`, so final membership must use the exact versioned normalization
+  contract described above.
 
 An FTS table should therefore be an optimization that produces candidates,
 not a second definition of matching or ranking. Adding GRDB also means another
@@ -274,8 +301,10 @@ document into Core Data, measure payload/storage/search performance, and cover
 population, updates, tag changes, and tombstones with API and iOS tests.
 
 Then implement `blocked-ios-local-search-relevance`: mirror matching and scoring
-in Swift and pin it to the shared Rust vectors. This delivers instant offline
-search without any conflict or upload path. Web remains unchanged.
+in Swift, first land the exact normalization contract, and pin query parsing,
+matching, structured filters, and ranking to shared vectors consumed by server
+and iOS tests. This delivers instant offline search without any conflict or
+upload path. Web remains unchanged.
 
 ### Stage 2: optimize only from measurements
 
