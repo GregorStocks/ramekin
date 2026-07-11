@@ -11,6 +11,7 @@ struct CachedRecipeSearchDocument {
 @MainActor
 final class RecipeCacheStore {
     static let shared = RecipeCacheStore()
+    private static let cacheSchemaVersion = 2
 
     private let coreDataStack: CoreDataStack
     private let userDefaults: UserDefaults
@@ -163,6 +164,6 @@ final class RecipeCacheStore {
 
     private func lastSyncKey(accountKey: String) -> String {
         let encodedAccountKey = Data(accountKey.utf8).base64EncodedString()
-        return "recipe_cache_last_sync_at_\(encodedAccountKey)"
+        return "recipe_cache_v\(Self.cacheSchemaVersion)_last_sync_at_\(encodedAccountKey)"
     }
 }

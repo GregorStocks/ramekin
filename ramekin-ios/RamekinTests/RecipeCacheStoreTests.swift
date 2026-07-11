@@ -4,6 +4,18 @@ import XCTest
 
 @MainActor
 final class RecipeCacheStoreTests: XCTestCase {
+    func testCacheSchemaChangeForcesFullSync() {
+        let (store, defaults) = makeStore()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let encodedAccountKey = Data(accountKey.utf8).base64EncodedString()
+        defaults.set(
+            Date(timeIntervalSince1970: 100),
+            forKey: "recipe_cache_last_sync_at_\(encodedAccountKey)"
+        )
+
+        XCTAssertNil(store.lastSyncAt(accountKey: accountKey))
+    }
+
     func testApplyPopulatesSearchableRecipeBody() throws {
         let (store, defaults) = makeStore()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
