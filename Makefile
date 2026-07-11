@@ -13,6 +13,11 @@ API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) ser
 # Marker file for generated clients
 CLIENT_MARKER := cli/generated/ramekin-client/Cargo.toml
 UI_DEPS_MARKER := ramekin-ui/node_modules/.package-lock.json
+GENERATED_API_PATHS := api/openapi.json \
+	cli/generated \
+	ramekin-ui/generated-client \
+	tests/generated \
+	ramekin-ios/generated-client
 SERVER_RELEASE_BIN := server/target/release/ramekin-server
 RAMEKIN_IOS_APPLINKS_URL ?= https://ramekin.app
 
@@ -86,12 +91,12 @@ $(CLIENT_MARKER): api/openapi.json $(UI_DEPS_MARKER)
 	@$(MAKE) generate-clients
 
 check-client-generation: $(UI_DEPS_MARKER) ## Regenerate API clients and fail if committed output drifts
-	@git diff --quiet -- cli/generated ramekin-ui/generated-client tests/generated ramekin-ios/generated-client || \
-		{ echo "Generated clients must be clean before checking" >&2; exit 1; }
-	@git diff --cached --quiet -- cli/generated ramekin-ui/generated-client tests/generated ramekin-ios/generated-client || \
-		{ echo "Generated clients must be clean before checking" >&2; exit 1; }
+	@git diff --quiet -- $(GENERATED_API_PATHS) || \
+		{ echo "Generated API artifacts must be clean before checking" >&2; exit 1; }
+	@git diff --cached --quiet -- $(GENERATED_API_PATHS) || \
+		{ echo "Generated API artifacts must be clean before checking" >&2; exit 1; }
 	@$(MAKE) generate-clients
-	@git diff --exit-code -- cli/generated ramekin-ui/generated-client tests/generated ramekin-ios/generated-client
+	@git diff --exit-code -- $(GENERATED_API_PATHS)
 
 check-lint-deps: ## Check that the tools needed by make lint are installed
 	@./scripts/check-deps.sh --lint
