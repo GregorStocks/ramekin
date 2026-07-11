@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps lint clean clean-api generate-schema test test-core test-ui ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -7,11 +7,17 @@ SHELL := /bin/bash
 # Timestamp wrapper for log output
 TS := ./scripts/ts
 
-# Source files that affect the OpenAPI spec
-API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) server/src/models.rs server/src/schema.rs
+# Rust source files can expose types that affect the OpenAPI spec indirectly.
+API_SOURCES := $(shell find server/src -type f -name '*.rs' 2>/dev/null)
 
 # Marker file for generated clients
 CLIENT_MARKER := cli/generated/ramekin-client/Cargo.toml
+UI_DEPS_MARKER := ramekin-ui/node_modules/.package-lock.json
+GENERATED_API_PATHS := api/openapi.json \
+	cli/generated \
+	ramekin-ui/generated-client \
+	tests/generated \
+	ramekin-ios/generated-client
 SERVER_RELEASE_BIN := server/target/release/ramekin-server
 RAMEKIN_IOS_APPLINKS_URL ?= https://ramekin.app
 
@@ -70,10 +76,28 @@ api/openapi.json: $(API_SOURCES)
 server-release-build:
 	@cd server && cargo build --release -q
 
+# Install the lockfile-pinned UI toolchain used to compile the generated client
+$(UI_DEPS_MARKER): ramekin-ui/package.json ramekin-ui/package-lock.json
+	@cd ramekin-ui && npx --yes -p npm@latest npm ci --silent
+
+ui-deps: $(UI_DEPS_MARKER) ## Install lockfile-pinned UI dependencies
+
 # Generate clients from OpenAPI spec
-$(CLIENT_MARKER): api/openapi.json
+generate-clients: api/openapi.json $(UI_DEPS_MARKER) ## Regenerate all API clients with pinned tools
 	@./scripts/generate-clients.sh
-	@cd cli && cargo fmt --all -q 2>/dev/null || true
+	@cd cli && cargo fmt --all -q
+
+$(CLIENT_MARKER): api/openapi.json $(UI_DEPS_MARKER)
+	@$(MAKE) generate-clients
+
+check-client-generation: $(UI_DEPS_MARKER) ## Regenerate API clients and fail if committed output drifts
+	@git diff --quiet -- $(GENERATED_API_PATHS) || \
+		{ echo "Generated API artifacts must be clean before checking" >&2; exit 1; }
+	@git diff --cached --quiet -- $(GENERATED_API_PATHS) || \
+		{ echo "Generated API artifacts must be clean before checking" >&2; exit 1; }
+	@$(MAKE) -B api/openapi.json
+	@$(MAKE) generate-clients
+	@git diff --exit-code -- $(GENERATED_API_PATHS)
 
 check-lint-deps: ## Check that the tools needed by make lint are installed
 	@./scripts/check-deps.sh --lint

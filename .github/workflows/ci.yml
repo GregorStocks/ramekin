@@ -43,9 +43,8 @@ jobs:
       - name: Install UI dependencies
         run: |
           START=$(date +%s)
-          npm ci
+          make ui-deps
           echo "::notice::UI dependencies installed in $(($(date +%s) - START))s"
-        working-directory: ramekin-ui
 
       - name: Create Python venv
         run: make venv
@@ -73,6 +72,9 @@ jobs:
           # Always install with system deps to avoid missing libs on refreshed runners
           .venv/bin/playwright install chromium --with-deps
           echo "::notice::Playwright browsers installed in $(($(date +%s) - START))s"
+
+      - name: Check generated clients
+        run: make check-client-generation
 
       - name: Skip unnecessary regeneration
         run: touch api/openapi.json cli/generated/ramekin-client/Cargo.toml

@@ -1,8 +1,8 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 # Generate all API clients from saved OpenAPI spec
-# Called by `make generate-clients` after generating api/openapi.json
+# Called by `make generate-clients`; the root openapitools.json pins the generator.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
@@ -38,7 +38,7 @@ generate_client() {
         -g "$generator" \
         -o "$temp_path" \
         --additional-properties="$extra_props" \
-        2>&1 | grep -v "^\[main\] INFO" || true
+        2>&1 | sed '/^\[main\] INFO/d'
 
     # Atomic swap: remove old, move new into place
     rm -rf "${final_path:?}"
@@ -80,7 +80,7 @@ EOF
 
     # Compile TypeScript client to JS + .d.ts
     echo "Compiling TypeScript client..."
-    (cd "$PROJECT_ROOT/ramekin-ui" && npx --yes -p typescript tsc -p tsconfig.generated-client.json)
+    (cd "$PROJECT_ROOT/ramekin-ui" && npx --no-install tsc -p tsconfig.generated-client.json)
 
     # Generate Python client (for tests)
     generate_client "python" "tests/generated" "packageName=ramekin_client,generateSourceCodeOnly=true"

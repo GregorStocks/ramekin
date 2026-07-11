@@ -1,0 +1,24 @@
+{
+  "title": "Fail test orchestration when stale services occupy test ports",
+  "description": "A timed-out `make test` left the fixture server, mock \
+OpenRouter, and API server running as orphaned processes. A later `make test` \
+logged address-in-use failures when its replacement services tried to bind, \
+but the API tests connected to the stale services and the overall target \
+exited successfully. This can produce a false green result against binaries or \
+fixtures from an earlier run.\n\
+\n\
+The test harness should reliably terminate its full process tree on \
+interruption and must fail fast when any required service process fails to \
+start, even if a health check can reach an unrelated process already listening \
+on the configured port. Add a regression test covering stale listeners and \
+externally terminated orchestration.",
+  "status": "open",
+  "priority": 1,
+  "type": "bug",
+  "labels": [
+    "testing",
+    "tooling",
+  ],
+  "created_at": "2026-07-11T16:31:00-07:00",
+  "updated_at": "2026-07-11T16:31:00-07:00",
+}
