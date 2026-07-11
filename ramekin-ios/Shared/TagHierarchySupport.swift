@@ -73,8 +73,8 @@ enum TagHierarchySupport {
         guard let namespace else {
             return value
         }
-        let namespace = namespace.trimmingCharacters(in: .whitespacesAndNewlines)
-        return namespace.isEmpty ? value : "\(namespace):\(value)"
+        let trimmedNamespace = namespace.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmedNamespace.isEmpty ? value : "\(trimmedNamespace):\(value)"
     }
 
     static func formattedName(namespace: String?, value: String) -> String? {
