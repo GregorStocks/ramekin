@@ -3,8 +3,8 @@ import { useAuth } from "../context/AuthContext";
 import {
   formatTag,
   groupTags,
-  isValidNamespace,
   knownNamespaces,
+  normalizeNamespace,
   parseTag,
 } from "../utils/tagHierarchy";
 
@@ -85,12 +85,12 @@ export default function TagInput(props: TagInputProps) {
   };
 
   const acceptNewNamespace = () => {
-    const ns = newNsValue().trim();
-    if (!ns) {
+    if (!newNsValue().trim()) {
       setNewNsError("Namespace cannot be empty");
       return;
     }
-    if (!isValidNamespace(ns)) {
+    const ns = normalizeNamespace(newNsValue());
+    if (!ns) {
       setNewNsError(
         "Use lowercase letters, digits, - or _, starting with a letter",
       );

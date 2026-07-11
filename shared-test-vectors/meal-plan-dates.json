@@ -1,0 +1,42 @@
+[
+  {
+    "name": "monday remains in place",
+    "year": 2026,
+    "month": 7,
+    "day": 6,
+    "expectedFormatted": "2026-07-06",
+    "expectedMonday": "2026-07-06"
+  },
+  {
+    "name": "sunday backs up six days",
+    "year": 2026,
+    "month": 7,
+    "day": 12,
+    "expectedFormatted": "2026-07-12",
+    "expectedMonday": "2026-07-06"
+  },
+  {
+    "name": "week crosses month boundary",
+    "year": 2026,
+    "month": 5,
+    "day": 1,
+    "expectedFormatted": "2026-05-01",
+    "expectedMonday": "2026-04-27"
+  },
+  {
+    "name": "week crosses year boundary",
+    "year": 2027,
+    "month": 1,
+    "day": 1,
+    "expectedFormatted": "2027-01-01",
+    "expectedMonday": "2026-12-28"
+  },
+  {
+    "name": "single digit month and day are padded",
+    "year": 2026,
+    "month": 3,
+    "day": 4,
+    "expectedFormatted": "2026-03-04",
+    "expectedMonday": "2026-03-02"
+  }
+]

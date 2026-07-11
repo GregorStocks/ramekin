@@ -33,22 +33,6 @@ final class RecipeScaleSupportTests: XCTestCase {
         XCTAssertNil(RecipeScaleSupport.parseDecimal("1,2,3"))
     }
 
-    func testIngredientFormattingScalesPrimaryAndAlternativeMeasurements() {
-        let ingredient = Ingredient(
-            item: "butter",
-            measurements: [
-                Measurement(amount: "1/2", unit: "cup"),
-                Measurement(amount: "113", unit: "g")
-            ],
-            note: "softened"
-        )
-
-        XCTAssertEqual(
-            ingredient.formatted(scale: 2, includeAlternatives: true, includeNote: true),
-            "1 cup (226 g) butter (softened)"
-        )
-    }
-
     func testShoppingListIngredientsUseScaledAmountsInRecipeOrder() {
         let recipe = RecipeResponse(
             cookTime: nil,

@@ -1,115 +1,94 @@
-// Mirrors ramekin-ios/RamekinTests/TagHierarchySupportTests.swift where the
-// logic overlaps, per doc/client-logic-sharing.md. Keep representative cases
-// in sync until the shared-test-vector harness lands.
 import { describe, expect, it } from "vitest";
 
+import vectorsJson from "../../../shared-test-vectors/tag-hierarchy.json?raw";
 import {
   SEEDED_NAMESPACES,
   formatTag,
   groupTags,
-  isValidNamespace,
   knownNamespaces,
+  normalizeNamespace,
   parseTag,
 } from "./tagHierarchy";
 
-describe("parseTag", () => {
-  it("splits hierarchical tags and trims whitespace", () => {
-    expect(parseTag(" ingredient:chicken ")).toEqual({
-      namespace: "ingredient",
-      value: "chicken",
-    });
+type TagHierarchyVectors = {
+  seededNamespaces: string[];
+  parseCases: Array<{
+    name: string;
+    input: string;
+    namespace: string | null;
+    value: string;
+  }>;
+  formatCases: Array<{
+    name: string;
+    namespace: string | null;
+    value: string;
+    expected: string;
+  }>;
+  normalizeNamespaceCases: Array<{
+    name: string;
+    input: string;
+    expected: string | null;
+  }>;
+  groupCases: Array<{
+    name: string;
+    names: string[];
+    expected: Array<{ namespace: string | null; names: string[] }>;
+  }>;
+  knownNamespacesCases: Array<{
+    name: string;
+    names: string[];
+    expected: string[];
+  }>;
+};
+
+const vectors = JSON.parse(vectorsJson) as TagHierarchyVectors;
+
+describe("tag hierarchy shared vectors", () => {
+  it("pins the seeded namespaces", () => {
+    expect(SEEDED_NAMESPACES).toEqual(vectors.seededNamespaces);
   });
 
-  it("treats multi-colon tags as uncategorized", () => {
-    expect(parseTag("a:b:c")).toEqual({ namespace: null, value: "a:b:c" });
+  it.each(vectors.parseCases)("parses $name", ({ input, namespace, value }) => {
+    expect(parseTag(input)).toEqual({ namespace, value });
   });
 
-  it("treats tags with an empty namespace or value as uncategorized", () => {
-    expect(parseTag(":chicken")).toEqual({
-      namespace: null,
-      value: ":chicken",
-    });
-    expect(parseTag("ingredient:")).toEqual({
-      namespace: null,
-      value: "ingredient:",
-    });
-    expect(parseTag("dinner")).toEqual({ namespace: null, value: "dinner" });
-  });
-});
+  it.each(vectors.formatCases)(
+    "formats $name",
+    ({ namespace, value, expected }) => {
+      expect(formatTag(namespace, value)).toBe(expected);
+    },
+  );
 
-describe("formatTag", () => {
-  it("builds hierarchical and flat tags", () => {
-    expect(formatTag("ingredient", "Chicken")).toBe("ingredient:Chicken");
-    expect(formatTag(null, "Dinner")).toBe("Dinner");
-  });
+  it.each(vectors.normalizeNamespaceCases)(
+    "normalizes $name",
+    ({ input, expected }) => {
+      expect(normalizeNamespace(input)).toBe(expected);
+    },
+  );
 
-  it("drops a blank namespace", () => {
-    expect(formatTag("  ", "Dinner")).toBe("Dinner");
-  });
-});
-
-describe("isValidNamespace", () => {
-  it("accepts lowercase identifiers", () => {
-    expect(isValidNamespace("course")).toBe(true);
-    expect(isValidNamespace("side-dish_2")).toBe(true);
+  it.each(vectors.groupCases)("groups $name", ({ names, expected }) => {
+    expect(
+      groupTags(names).map((group) => ({
+        namespace: group.namespace,
+        names: group.tags,
+      })),
+    ).toEqual(expected);
   });
 
-  it("rejects invalid values", () => {
-    expect(isValidNamespace("bad namespace")).toBe(false);
-    expect(isValidNamespace("1course")).toBe(false);
-    expect(isValidNamespace("Course")).toBe(false);
-    expect(isValidNamespace("")).toBe(false);
-  });
+  it.each(vectors.knownNamespacesCases)(
+    "orders $name",
+    ({ names, expected }) => {
+      expect(knownNamespaces(names)).toEqual(expected);
+    },
+  );
 });
 
 describe("groupTags", () => {
-  it("orders seeded namespaces, then extras, then uncategorized", () => {
-    const groups = groupTags([
-      "season:winter",
-      "occasion:holiday",
-      "dinner",
-      "ingredient:chicken",
-    ]);
-
-    expect(groups.map((g) => g.namespace)).toEqual([
-      "ingredient",
-      "season",
-      "occasion",
-      null,
-    ]);
-    expect(groups[0].tags).toEqual(["ingredient:chicken"]);
-    expect(groups[3].tags).toEqual(["dinner"]);
-  });
-
-  it("sorts tags within each group", () => {
-    const groups = groupTags(["course:dinner", "course:breakfast"]);
-    expect(groups).toEqual([
-      { namespace: "course", tags: ["course:breakfast", "course:dinner"] },
-    ]);
-  });
-
   it("includes empty seeded namespaces when requested", () => {
     const groups = groupTags(["dinner"], { includeEmptySeeded: true });
-    expect(groups.map((g) => g.namespace)).toEqual([
+    expect(groups.map((group) => group.namespace)).toEqual([
       ...SEEDED_NAMESPACES,
       null,
-    ]);
-    expect(
-      groups.every((g) => g.namespace === null || g.tags.length === 0),
-    ).toBe(true);
-  });
-});
-
-describe("knownNamespaces", () => {
-  it("always includes seeded namespaces and sorts alphabetically", () => {
-    expect(knownNamespaces(["occasion:holiday", "dinner"])).toEqual([
-      "course",
-      "cuisine",
-      "diet",
-      "ingredient",
-      "method",
-      "occasion",
-      "season",
     ]);
   });
 });

@@ -12,10 +12,10 @@ are filed as separate issues (listed at the bottom).
 
 | Area | Web | iOS | Server (canonical?) | Pure-logic LOC/side | Known drift |
 |---|---|---|---|---|---|
-| Recipe scaling | `ramekin-ui/src/utils/scaleAmount.ts` | `ramekin-ios/Ramekin/RecipeScaleSupport.swift` | none | ~100 | **Yes** — Swift accepts locale decimals (`"1,5"`) and formats results with a locale-aware `NumberFormatter`; TS only accepts/emits `"."` decimals. Same amount can scale differently per platform. |
-| Tag hierarchy | `ramekin-ui/src/utils/tagHierarchy.ts` | `ramekin-ios/Shared/TagHierarchySupport.swift` | `ramekin-core/src/tags.rs` (yes — validation lives here) | ~100–200 | Subtle — in-group sort uses plain lexicographic `.sort()` on raw names (web) vs `localizedCaseInsensitiveCompare` on parsed values (iOS); namespace-list ordering differs (`knownNamespaces` sorts seeded+discovered together, iOS keeps seeded order first). Seeded-namespace list is hardcoded in all three places. |
-| Ingredient display formatting | centralized: `utils/ingredientFormatting.ts` (+ callers) | centralized: `Ramekin/IngredientFormatting.swift` (+ `IngredientSectionGrouping.swift`) | none | ~60 + ~30 | Needs vectors — both clients now have centralized functions, but equivalence is not yet pinned across web and iOS. |
-| Meal plan date helpers | `utils/mealPlanHelpers.ts` + locals in `MealPlanPage.tsx` | `Shared/SharedDateFormatters.swift` + locals in `MealPlanView.swift` | none | ~40–50 | Week-start (Monday) computed with different algorithms (manual `getDay()` arithmetic vs `Calendar` weekday math); both currently correct. Web mixes `formatDateLocal`/`formatDateUtc` in one comparison — self-consistent today but fragile. |
+| Recipe scaling | `ramekin-ui/src/utils/scaleAmount.ts` | `ramekin-ios/Ramekin/RecipeScaleSupport.swift` | none | ~100 | Pinned by `shared-test-vectors/scale-amount.json`, including comma-decimal inputs and locale-independent output. |
+| Tag hierarchy | `ramekin-ui/src/utils/tagHierarchy.ts` | `ramekin-ios/Shared/TagHierarchySupport.swift` | `ramekin-core/src/tags.rs` (yes — validation lives here) | ~100–200 | Pinned by `shared-test-vectors/tag-hierarchy.json`, including seeded namespace and group-member ordering. |
+| Ingredient display formatting | centralized: `utils/ingredientFormatting.ts` (+ callers) | centralized: `Ramekin/IngredientFormatting.swift` (+ `IngredientSectionGrouping.swift`) | none | ~60 + ~30 | Pinned by `shared-test-vectors/ingredient-formatting.json`. |
+| Meal plan date helpers | `utils/mealPlanHelpers.ts` | `Ramekin/MealPlanDateSupport.swift` | none | ~40–50 | Monday week-start and local `YYYY-MM-DD` formatting are pinned by `shared-test-vectors/meal-plan-dates.json`; display formatting remains platform-specific. |
 | Shopping list category order | API response `categoryOrder` | API response `categoryOrder` | `server/src/api/shopping_list/list.rs` (yes) | ~15 | None — the canonical order now comes from the API. |
 
 Test coverage is still lopsided, but less than it was when this decision was
@@ -98,9 +98,9 @@ of leaving them latent.
 |---|---|
 | Shopping list category order | **Option 1, done** — the API now serves the canonical ordered list in shopping-list list and sync responses. |
 | Recipe scaling | **Option 3, pilot done** — `shared-test-vectors/scale-amount.json` is consumed by both web Vitest and iOS XCTest. |
-| Tag hierarchy | **Option 3, three-way** — vectors for parse/format/normalize/group-order consumed by Rust, TS, and Swift tests, with `tags.rs` as the source of truth for semantics. Keep the 6-entry seeded-namespace list duplicated (it's tiny and now CI-pinned); serving it from the API is not worth an endpoint today. |
-| Ingredient display formatting | **Option 3, next** — web centralization is done; add vectors for `formatted()`-equivalence in the same series as the other areas. |
-| Meal plan date helpers | **Option 3, narrow** — vectors for week-start (date string → Monday date string) and `YYYY-MM-DD` formatting only. Display formatting (day headers) is allowed to differ per platform-idiom; don't vector it. |
+| Tag hierarchy | **Option 3, done** — vectors for parse/format/normalize/group-order are consumed by Rust, TS, and Swift tests, with `tags.rs` as the source of truth for semantics. The 6-entry seeded-namespace list stays duplicated (it's tiny and CI-pinned); serving it from the API is not worth an endpoint. |
+| Ingredient display formatting | **Option 3, done** — vectors pin `formatted()`-equivalence across web and iOS. |
+| Meal plan date helpers | **Option 3, done** — narrow vectors pin week-start and `YYYY-MM-DD` formatting. Display formatting such as day headers remains platform-specific. |
 
 ## Preventing future drift
 
@@ -109,11 +109,9 @@ re-create it. Three mechanisms keep the pattern alive:
 
 1. **AGENTS.md rule.** Development in this repo is largely agent-driven, and
    AGENTS.md is loaded at the start of every session — it is the closest
-   thing we have to authoring-time enforcement. It now requires new
-   dual-client pure logic to either live on the server or ship with shared
-   test vectors in the same PR (and, until the vector harness lands, to at
-   least mirror unit tests on both sides and flag the duplication in the PR
-   description).
+   thing we have to authoring-time enforcement. It requires new dual-client
+   pure logic to either live on the server or ship with shared test vectors in
+   the same PR.
 
 2. **The vectors themselves are the regression net.** Once an area is
    vectored, changing behavior on one client fails that client's tests until
@@ -135,7 +133,5 @@ Done and deleted per `doc/issues.md`: the web Vitest runner, the recipe-scaling
 shared-vector pilot, centralized web ingredient formatting, and API-provided
 shopping-list category order.
 
-Live follow-up: `blocked-shared-test-vectors-remaining-areas` — extend the
-pilot's conventions to tag hierarchy (three-way incl. Rust), meal-plan
-week-start, and ingredient formatting. It is blocked on using the conventions
-from the completed recipe-scaling pilot.
+The shared-vector follow-ups are complete: recipe scaling, tag hierarchy,
+meal-plan week-start, and ingredient formatting all consume checked-in vectors.
