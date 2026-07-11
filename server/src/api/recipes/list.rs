@@ -295,86 +295,94 @@ pub async fn list_recipes(
 
     let mut conn = get_conn!(pool);
 
-    // Build base query with join
-    // We use into_boxed() to allow dynamic filter additions
-    let mut query = current_recipe_versions_for_user!(user.id).into_boxed();
+    // Build the filtered query on demand so an empty page can rerun the same
+    // filters as a count query without changing the single-query populated-page
+    // path.
+    let build_query = || {
+        // We use into_boxed() to allow dynamic filter additions.
+        let mut query = current_recipe_versions_for_user!(user.id).into_boxed();
 
-    // Text search: each word must appear somewhere across all fields (AND
-    // between words, OR between fields). Matches are case- AND
-    // accent-insensitive ("creme brulee" finds "Crème Brûlée").
-    for token in &parsed.text {
-        let pattern = format!("%{}%", escape_like_pattern(token));
-        query = query.filter(
-            raw_sql::unaccent_ilike("recipe_versions.title", &pattern)
-                .or(raw_sql::unaccent_ilike(
-                    "recipe_versions.description",
-                    &pattern,
-                ))
-                .or(raw_sql::unaccent_ilike(
-                    "recipe_versions.instructions",
-                    &pattern,
-                ))
-                .or(raw_sql::unaccent_ilike("recipe_versions.notes", &pattern))
-                .or(raw_sql::ingredients_unaccent_ilike(&pattern)),
-        );
-    }
-
-    // Tag filters (AND logic - must have ALL tags)
-    // Use EXISTS subquery for each tag
-    for tag in &parsed.tags {
-        let tag_subquery = recipe_version_tags::table
-            .inner_join(user_tags::table)
-            .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
-            .filter(user_tags::name.eq(tag))
-            .filter(user_tags::deleted_at.is_null())
-            .select(recipe_version_tags::recipe_version_id);
-        query = query.filter(diesel::dsl::exists(tag_subquery));
-    }
-
-    // Source filter (accent- and case-insensitive)
-    if let Some(ref source) = parsed.source {
-        let pattern = format!("%{}%", escape_like_pattern(source));
-        query = query.filter(raw_sql::unaccent_ilike(
-            "recipe_versions.source_name",
-            &pattern,
-        ));
-    }
-
-    // Has photos filter
-    if let Some(has_photos) = parsed.has_photos {
-        if has_photos {
-            query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).gt(0));
-        } else {
-            query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).eq(0));
+        // Text search: each word must appear somewhere across all fields (AND
+        // between words, OR between fields). Matches are case- AND
+        // accent-insensitive ("creme brulee" finds "Crème Brûlée").
+        for token in &parsed.text {
+            let pattern = format!("%{}%", escape_like_pattern(token));
+            query = query.filter(
+                raw_sql::unaccent_ilike("recipe_versions.title", &pattern)
+                    .or(raw_sql::unaccent_ilike(
+                        "recipe_versions.description",
+                        &pattern,
+                    ))
+                    .or(raw_sql::unaccent_ilike(
+                        "recipe_versions.instructions",
+                        &pattern,
+                    ))
+                    .or(raw_sql::unaccent_ilike("recipe_versions.notes", &pattern))
+                    .or(raw_sql::ingredients_unaccent_ilike(&pattern)),
+            );
         }
-    }
 
-    // Photo file size filter (bytes)
-    if let Some(threshold) = parsed.photo_size {
-        query = query.filter(raw_sql::photo_file_size_filter(
-            threshold.op,
-            threshold.value,
-        ));
-    }
-
-    // Photo dimension filter (pixels, compares smaller of width/height)
-    if let Some(threshold) = parsed.photo_dim {
-        query = query.filter(raw_sql::photo_min_dim_filter(threshold.op, threshold.value));
-    }
-
-    // Date range filters (on recipe created_at)
-    if let Some(after) = parsed.created_after {
-        if let Some(time) = after.and_hms_opt(0, 0, 0) {
-            let after_datetime = time.and_utc();
-            query = query.filter(recipes::created_at.ge(after_datetime));
+        // Tag filters (AND logic - must have ALL tags)
+        // Use EXISTS subquery for each tag
+        for tag in &parsed.tags {
+            let tag_subquery = recipe_version_tags::table
+                .inner_join(user_tags::table)
+                .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
+                .filter(user_tags::name.eq(tag))
+                .filter(user_tags::deleted_at.is_null())
+                .select(recipe_version_tags::recipe_version_id);
+            query = query.filter(diesel::dsl::exists(tag_subquery));
         }
-    }
-    if let Some(before) = parsed.created_before {
-        if let Some(time) = before.and_hms_opt(23, 59, 59) {
-            let before_datetime = time.and_utc();
-            query = query.filter(recipes::created_at.le(before_datetime));
+
+        // Source filter (accent- and case-insensitive)
+        if let Some(ref source) = parsed.source {
+            let pattern = format!("%{}%", escape_like_pattern(source));
+            query = query.filter(raw_sql::unaccent_ilike(
+                "recipe_versions.source_name",
+                &pattern,
+            ));
         }
-    }
+
+        // Has photos filter
+        if let Some(has_photos) = parsed.has_photos {
+            if has_photos {
+                query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).gt(0));
+            } else {
+                query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).eq(0));
+            }
+        }
+
+        // Photo file size filter (bytes)
+        if let Some(threshold) = parsed.photo_size {
+            query = query.filter(raw_sql::photo_file_size_filter(
+                threshold.op,
+                threshold.value,
+            ));
+        }
+
+        // Photo dimension filter (pixels, compares smaller of width/height)
+        if let Some(threshold) = parsed.photo_dim {
+            query = query.filter(raw_sql::photo_min_dim_filter(threshold.op, threshold.value));
+        }
+
+        // Date range filters (on recipe created_at)
+        if let Some(after) = parsed.created_after {
+            if let Some(time) = after.and_hms_opt(0, 0, 0) {
+                let after_datetime = time.and_utc();
+                query = query.filter(recipes::created_at.ge(after_datetime));
+            }
+        }
+        if let Some(before) = parsed.created_before {
+            if let Some(time) = before.and_hms_opt(23, 59, 59) {
+                let before_datetime = time.and_utc();
+                query = query.filter(recipes::created_at.le(before_datetime));
+            }
+        }
+
+        query
+    };
+
+    let query = build_query();
 
     // Default sort: relevance when there are text terms to rank against,
     // recency otherwise.
@@ -523,8 +531,19 @@ pub async fn list_recipes(
         }
     };
 
-    // Extract total from first row, or 0 if no results
-    let total = results.first().map(|r| r.total).unwrap_or(0);
+    // The window count is unavailable when OFFSET leaves the page empty. Only
+    // that case pays for a second query, using exactly the same filters.
+    let total = if let Some(row) = results.first() {
+        row.total
+    } else {
+        match build_query().count().get_result(&mut conn) {
+            Ok(total) => total,
+            Err(e) => {
+                tracing::error!("Failed to count recipes for empty page: {:?}", e);
+                return ApiError::internal("Failed to fetch recipes").into_response();
+            }
+        }
+    };
 
     let recipes = results
         .into_iter()
