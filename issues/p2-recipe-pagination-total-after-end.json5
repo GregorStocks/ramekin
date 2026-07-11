@@ -1,0 +1,29 @@
+{
+  "title": "Preserve recipe pagination totals after the final page",
+  "description": "The normal list-recipes query obtains `COUNT(*) OVER()` from \
+the first returned row. When an offset is beyond the final matching row, the \
+result set is empty and the handler reports `total = 0` even though matches \
+exist. For example, 25 matching recipes with offset 40 returns an empty page \
+whose pagination total is zero instead of 25. Relevance pagination computes \
+the total before slicing and does not have this bug.\n\
+\n\
+Scope:\n\
+- Return the true filtered total for empty pages without using raw SQL. Prefer \
+a Diesel DSL query shape or a narrowly triggered count fallback.\n\
+- Preserve the existing single-query path for populated pages unless a simpler \
+consistently correct query is demonstrably better.\n\
+- Add API tests for an offset exactly at the total, an offset beyond the \
+total, filtered results, and an actually empty collection.\n\
+\n\
+Both clients consume this server metadata, so fixing the endpoint should \
+require no duplicated client logic.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "api",
+    "bug",
+  ],
+  "created_at": "2026-07-11T11:38:01-07:00",
+  "updated_at": "2026-07-11T11:38:01-07:00",
+}
