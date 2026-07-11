@@ -7,8 +7,8 @@ SHELL := /bin/bash
 # Timestamp wrapper for log output
 TS := ./scripts/ts
 
-# Source files that affect the OpenAPI spec
-API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) server/src/models.rs server/src/schema.rs
+# Rust source files can expose types that affect the OpenAPI spec indirectly.
+API_SOURCES := $(shell find server/src -type f -name '*.rs' 2>/dev/null)
 
 # Marker file for generated clients
 CLIENT_MARKER := cli/generated/ramekin-client/Cargo.toml
@@ -95,6 +95,7 @@ check-client-generation: $(UI_DEPS_MARKER) ## Regenerate API clients and fail if
 		{ echo "Generated API artifacts must be clean before checking" >&2; exit 1; }
 	@git diff --cached --quiet -- $(GENERATED_API_PATHS) || \
 		{ echo "Generated API artifacts must be clean before checking" >&2; exit 1; }
+	@$(MAKE) -B api/openapi.json
 	@$(MAKE) generate-clients
 	@git diff --exit-code -- $(GENERATED_API_PATHS)
 
