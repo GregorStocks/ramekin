@@ -27,6 +27,16 @@ enum MealPlanDateSupport {
         return monday
     }
 
+    static func localDateString(from date: Date, calendar: Calendar = .current) -> String {
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        guard let year = components.year,
+              let month = components.month,
+              let day = components.day else {
+            preconditionFailure("Unable to format local meal plan date")
+        }
+        return String(format: "%04d-%02d-%02d", year, month, day)
+    }
+
     private static let apiCalendar: Calendar = {
         var calendar = Calendar(identifier: .iso8601)
         calendar.timeZone = TimeZone(secondsFromGMT: 0)!

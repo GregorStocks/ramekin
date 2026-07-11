@@ -1,6 +1,5 @@
-// Web counterpart of ramekin-ios/Ramekin/IngredientFormatting.swift. Keep the
-// two in sync (see doc/client-logic-sharing.md) until the shared-test-vector
-// harness pins them.
+// Web counterpart of ramekin-ios/Ramekin/IngredientFormatting.swift. Shared
+// vectors pin the two implementations; see doc/client-logic-sharing.md.
 import type { Ingredient, Measurement } from "ramekin-client";
 
 import { scaleAmount } from "./scaleAmount";

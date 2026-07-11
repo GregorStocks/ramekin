@@ -14,10 +14,10 @@
  * @export
  */
 export declare const MealType: {
-    readonly Breakfast: "breakfast";
-    readonly Lunch: "lunch";
-    readonly Dinner: "dinner";
-    readonly Snack: "snack";
+    readonly Breakfast: 'breakfast';
+    readonly Lunch: 'lunch';
+    readonly Dinner: 'dinner';
+    readonly Snack: 'snack';
 };
 export type MealType = typeof MealType[keyof typeof MealType];
 export declare function instanceOfMealType(value: any): boolean;

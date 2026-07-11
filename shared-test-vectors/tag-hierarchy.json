@@ -1,0 +1,162 @@
+{
+  "seededNamespaces": [
+    "ingredient",
+    "course",
+    "cuisine",
+    "diet",
+    "method",
+    "season"
+  ],
+  "parseCases": [
+    {
+      "name": "hierarchical tag",
+      "input": " ingredient:chicken ",
+      "namespace": "ingredient",
+      "value": "chicken"
+    },
+    {
+      "name": "flat tag",
+      "input": " dinner ",
+      "namespace": null,
+      "value": "dinner"
+    },
+    {
+      "name": "multiple colons stay flat",
+      "input": " a:b:c ",
+      "namespace": null,
+      "value": "a:b:c"
+    },
+    {
+      "name": "empty namespace stays flat",
+      "input": " :chicken ",
+      "namespace": null,
+      "value": ":chicken"
+    },
+    {
+      "name": "empty value stays flat",
+      "input": " ingredient: ",
+      "namespace": null,
+      "value": "ingredient:"
+    },
+    {
+      "name": "whitespace around colon is trimmed",
+      "input": " course : breakfast ",
+      "namespace": "course",
+      "value": "breakfast"
+    }
+  ],
+  "formatCases": [
+    {
+      "name": "hierarchical tag",
+      "namespace": " ingredient ",
+      "value": " chicken ",
+      "expected": "ingredient:chicken"
+    },
+    {
+      "name": "flat tag",
+      "namespace": null,
+      "value": " dinner ",
+      "expected": "dinner"
+    },
+    {
+      "name": "blank namespace is omitted",
+      "namespace": "   ",
+      "value": " dinner ",
+      "expected": "dinner"
+    }
+  ],
+  "normalizeNamespaceCases": [
+    {
+      "name": "namespace is trimmed and lowercased",
+      "input": " Course ",
+      "expected": "course"
+    },
+    {
+      "name": "hyphen underscore and digits are accepted",
+      "input": " Side-Dish_2 ",
+      "expected": "side-dish_2"
+    },
+    {
+      "name": "leading digit is rejected",
+      "input": "1course",
+      "expected": null
+    },
+    {
+      "name": "embedded whitespace is rejected",
+      "input": "bad namespace",
+      "expected": null
+    },
+    {
+      "name": "non-ASCII letters are rejected",
+      "input": "éclair",
+      "expected": null
+    },
+    {
+      "name": "blank namespace is rejected",
+      "input": "   ",
+      "expected": null
+    }
+  ],
+  "groupCases": [
+    {
+      "name": "seeded then extra then uncategorized",
+      "names": [
+        "season:winter",
+        "occasion:holiday",
+        "dinner",
+        "ingredient:chicken",
+        "course:Ziti",
+        "course:apple"
+      ],
+      "expected": [
+        {
+          "namespace": "ingredient",
+          "names": ["ingredient:chicken"]
+        },
+        {
+          "namespace": "course",
+          "names": ["course:apple", "course:Ziti"]
+        },
+        {
+          "namespace": "season",
+          "names": ["season:winter"]
+        },
+        {
+          "namespace": "occasion",
+          "names": ["occasion:holiday"]
+        },
+        {
+          "namespace": null,
+          "names": ["dinner"]
+        }
+      ]
+    },
+    {
+      "name": "uncategorized members sort by parsed value",
+      "names": ["zebra", "Apple", "a:b:c"],
+      "expected": [
+        {
+          "namespace": null,
+          "names": ["a:b:c", "Apple", "zebra"]
+        }
+      ]
+    }
+  ],
+  "knownNamespacesCases": [
+    {
+      "name": "seeded order precedes alphabetical extras",
+      "names": ["zoo:one", "occasion:holiday", "course:dinner", "alpha:two"],
+      "expected": [
+        "ingredient",
+        "course",
+        "cuisine",
+        "diet",
+        "method",
+        "season",
+        "alpha",
+        "occasion",
+        "zoo"
+      ]
+    }
+  ]
+}

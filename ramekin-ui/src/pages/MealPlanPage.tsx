@@ -11,17 +11,9 @@ import {
   parseLocalDate,
   toApiDate,
   formatDateLocal,
+  getMonday,
 } from "../utils/mealPlanHelpers";
 import type { MealPlanItem, MealType, RecipeSummary } from "ramekin-client";
-
-function getMonday(d: Date): Date {
-  const date = new Date(d);
-  const day = date.getDay();
-  const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-  date.setDate(diff);
-  date.setHours(0, 0, 0, 0);
-  return date;
-}
 
 function formatDateUtc(d: Date): string {
   const year = d.getUTCFullYear();

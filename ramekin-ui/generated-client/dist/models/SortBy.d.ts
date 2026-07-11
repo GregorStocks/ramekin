@@ -14,12 +14,12 @@
  * @export
  */
 export declare const SortBy: {
-    readonly Relevance: "relevance";
-    readonly UpdatedAt: "updated_at";
-    readonly Rating: "rating";
-    readonly Title: "title";
-    readonly CreatedAt: "created_at";
-    readonly Random: "random";
+    readonly Relevance: 'relevance';
+    readonly UpdatedAt: 'updated_at';
+    readonly Rating: 'rating';
+    readonly Title: 'title';
+    readonly CreatedAt: 'created_at';
+    readonly Random: 'random';
 };
 export type SortBy = typeof SortBy[keyof typeof SortBy];
 export declare function instanceOfSortBy(value: any): boolean;

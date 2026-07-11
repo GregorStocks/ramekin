@@ -99,6 +99,15 @@ targets:
       - path: ../shared-test-vectors/scale-amount.json
         buildPhase: resources
         type: file
+      - path: ../shared-test-vectors/tag-hierarchy.json
+        buildPhase: resources
+        type: file
+      - path: ../shared-test-vectors/meal-plan-dates.json
+        buildPhase: resources
+        type: file
+      - path: ../shared-test-vectors/ingredient-formatting.json
+        buildPhase: resources
+        type: file
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.tests

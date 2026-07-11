@@ -1,0 +1,75 @@
+[
+  {
+    "name": "primary measurement only by default",
+    "ingredient": {
+      "item": "flour",
+      "measurements": [
+        {"amount": "1", "unit": "cup"},
+        {"amount": "120", "unit": "g"}
+      ],
+      "note": "sifted"
+    },
+    "options": {},
+    "expected": "1 cup flour"
+  },
+  {
+    "name": "alternatives and note",
+    "ingredient": {
+      "item": "flour",
+      "measurements": [
+        {"amount": "1", "unit": "cup"},
+        {"amount": "120", "unit": "g"},
+        {"amount": "4.25", "unit": "oz"}
+      ],
+      "note": " sifted "
+    },
+    "options": {"includeAlternatives": true, "includeNote": true},
+    "expected": "1 cup (120 g, 4.25 oz) flour (sifted)"
+  },
+  {
+    "name": "blank measurements and note are omitted",
+    "ingredient": {
+      "item": "salt",
+      "measurements": [
+        {"amount": " ", "unit": null},
+        {"amount": null, "unit": " "},
+        {"amount": "1", "unit": "tsp"}
+      ],
+      "note": "   "
+    },
+    "options": {"includeAlternatives": true, "includeNote": true},
+    "expected": "(1 tsp) salt"
+  },
+  {
+    "name": "ingredient without measurements",
+    "ingredient": {"item": "salt", "measurements": [], "note": null},
+    "options": {},
+    "expected": "salt"
+  },
+  {
+    "name": "primary and alternatives are scaled",
+    "ingredient": {
+      "item": "butter",
+      "measurements": [
+        {"amount": "1/2", "unit": "cup"},
+        {"amount": "113", "unit": "g"}
+      ],
+      "note": "softened"
+    },
+    "options": {"scale": 2, "includeAlternatives": true, "includeNote": true},
+    "expected": "1 cup (226 g) butter (softened)"
+  },
+  {
+    "name": "amount-only and unit-only measurements",
+    "ingredient": {
+      "item": "eggs",
+      "measurements": [
+        {"amount": "2", "unit": null},
+        {"amount": null, "unit": "pinch"}
+      ],
+      "note": null
+    },
+    "options": {"includeAlternatives": true},
+    "expected": "2 (pinch) eggs"
+  }
+]

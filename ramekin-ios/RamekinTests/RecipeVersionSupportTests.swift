@@ -165,53 +165,6 @@ final class RecipeVersionSupportTests: XCTestCase {
         )
     }
 
-    func testIngredientFormattedDefaultsToPrimaryMeasurementOnly() {
-        let ingredient = Ingredient(
-            item: "flour",
-            measurements: [
-                Measurement(amount: "1", unit: "cup"),
-                Measurement(amount: "120", unit: "g")
-            ],
-            note: "sifted"
-        )
-
-        XCTAssertEqual(ingredient.formatted(), "1 cup flour")
-    }
-
-    func testIngredientFormattedCanIncludeAlternativesAndNote() {
-        let ingredient = Ingredient(
-            item: "flour",
-            measurements: [
-                Measurement(amount: "1", unit: "cup"),
-                Measurement(amount: "120", unit: "g"),
-                Measurement(amount: "4.25", unit: "oz")
-            ],
-            note: " sifted "
-        )
-
-        XCTAssertEqual(
-            ingredient.formatted(includeAlternatives: true, includeNote: true),
-            "1 cup (120 g, 4.25 oz) flour (sifted)"
-        )
-    }
-
-    func testIngredientFormattedSkipsBlankMeasurementsAndBlankNote() {
-        let ingredient = Ingredient(
-            item: "salt",
-            measurements: [
-                Measurement(amount: " ", unit: nil),
-                Measurement(amount: nil, unit: " "),
-                Measurement(amount: "1", unit: "tsp")
-            ],
-            note: "   "
-        )
-
-        XCTAssertEqual(
-            ingredient.formatted(includeAlternatives: true, includeNote: true),
-            "(1 tsp) salt"
-        )
-    }
-
     func testNutritionalInfoForDisplayTrimsWhitespaceAndHidesEmptyValues() {
         var recipe = makeRecipe(updatedAt: Date(timeIntervalSince1970: 400))
 

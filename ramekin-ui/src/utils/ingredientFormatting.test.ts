@@ -1,10 +1,7 @@
-// Mirrors the formatting cases in
-// ramekin-ios/RamekinTests/RecipeVersionSupportTests.swift, per
-// doc/client-logic-sharing.md. Keep representative cases in sync until the
-// shared-test-vector harness lands.
 import { describe, expect, it } from "vitest";
 
 import type { Ingredient } from "ramekin-client";
+import vectorsJson from "../../../shared-test-vectors/ingredient-formatting.json?raw";
 
 import {
   formatIngredient,
@@ -16,68 +13,22 @@ function ingredient(overrides: Partial<Ingredient> & { item: string }) {
   return { measurements: [], ...overrides };
 }
 
+type IngredientFormattingVector = {
+  name: string;
+  ingredient: Ingredient;
+  options: {
+    scale?: number;
+    includeAlternatives?: boolean;
+    includeNote?: boolean;
+  };
+  expected: string;
+};
+
+const vectors = JSON.parse(vectorsJson) as IngredientFormattingVector[];
+
 describe("formatIngredient", () => {
-  it("defaults to primary measurement only", () => {
-    const ing = ingredient({
-      item: "flour",
-      measurements: [
-        { amount: "1", unit: "cup" },
-        { amount: "120", unit: "g" },
-      ],
-      note: "sifted",
-    });
-
-    expect(formatIngredient(ing)).toBe("1 cup flour");
-  });
-
-  it("can include alternatives and note", () => {
-    const ing = ingredient({
-      item: "flour",
-      measurements: [
-        { amount: "1", unit: "cup" },
-        { amount: "120", unit: "g" },
-        { amount: "4.25", unit: "oz" },
-      ],
-      note: " sifted ",
-    });
-
-    expect(
-      formatIngredient(ing, { includeAlternatives: true, includeNote: true }),
-    ).toBe("1 cup (120 g, 4.25 oz) flour (sifted)");
-  });
-
-  it("skips blank measurements and blank note", () => {
-    const ing = ingredient({
-      item: "salt",
-      measurements: [
-        { amount: " ", unit: null },
-        { amount: null, unit: " " },
-        { amount: "1", unit: "tsp" },
-      ],
-      note: "   ",
-    });
-
-    expect(
-      formatIngredient(ing, { includeAlternatives: true, includeNote: true }),
-    ).toBe("(1 tsp) salt");
-  });
-
-  it("returns just the item when there are no measurements", () => {
-    expect(formatIngredient(ingredient({ item: "salt" }))).toBe("salt");
-  });
-
-  it("scales the primary and alternative amounts", () => {
-    const ing = ingredient({
-      item: "flour",
-      measurements: [
-        { amount: "1", unit: "cup" },
-        { amount: "1/2", unit: "stick" },
-      ],
-    });
-
-    expect(formatIngredient(ing, { scale: 2, includeAlternatives: true })).toBe(
-      "2 cup (1 stick) flour",
-    );
+  it.each(vectors)("$name", ({ ingredient, options, expected }) => {
+    expect(formatIngredient(ingredient, options)).toBe(expected);
   });
 });
 

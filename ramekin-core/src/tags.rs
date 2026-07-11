@@ -127,7 +127,170 @@ pub fn validate_tag_name(name: &str) -> Result<(), TagNameError> {
 
 #[cfg(test)]
 mod tests {
+    use std::collections::HashMap;
+
     use super::*;
+    use serde::Deserialize;
+
+    #[derive(Deserialize)]
+    #[serde(rename_all = "camelCase")]
+    struct TagHierarchyVectors {
+        seeded_namespaces: Vec<String>,
+        parse_cases: Vec<ParseCase>,
+        format_cases: Vec<FormatCase>,
+        normalize_namespace_cases: Vec<NormalizeNamespaceCase>,
+        group_cases: Vec<GroupCase>,
+        known_namespaces_cases: Vec<KnownNamespacesCase>,
+    }
+
+    #[derive(Deserialize)]
+    struct ParseCase {
+        name: String,
+        input: String,
+        namespace: Option<String>,
+        value: String,
+    }
+
+    #[derive(Deserialize)]
+    struct FormatCase {
+        name: String,
+        namespace: Option<String>,
+        value: String,
+        expected: String,
+    }
+
+    #[derive(Deserialize)]
+    struct NormalizeNamespaceCase {
+        name: String,
+        input: String,
+        expected: Option<String>,
+    }
+
+    #[derive(Deserialize)]
+    struct GroupCase {
+        name: String,
+        names: Vec<String>,
+        expected: Vec<ExpectedGroup>,
+    }
+
+    #[derive(Debug, Deserialize, PartialEq, Eq)]
+    struct ExpectedGroup {
+        namespace: Option<String>,
+        names: Vec<String>,
+    }
+
+    #[derive(Deserialize)]
+    struct KnownNamespacesCase {
+        name: String,
+        names: Vec<String>,
+        expected: Vec<String>,
+    }
+
+    #[test]
+    fn shared_tag_hierarchy_vectors_match() {
+        let vectors: TagHierarchyVectors =
+            serde_json::from_str(include_str!("../../shared-test-vectors/tag-hierarchy.json"))
+                .unwrap();
+
+        assert_eq!(
+            SEEDED_NAMESPACES,
+            vectors.seeded_namespaces.as_slice(),
+            "seeded namespaces"
+        );
+
+        for case in vectors.parse_cases {
+            let parsed = parse_tag(&case.input);
+            assert_eq!(parsed.namespace, case.namespace, "{}", case.name);
+            assert_eq!(parsed.value, case.value, "{}", case.name);
+        }
+
+        for case in vectors.format_cases {
+            assert_eq!(
+                format_tag(case.namespace.as_deref(), &case.value),
+                case.expected,
+                "{}",
+                case.name
+            );
+        }
+
+        for case in vectors.normalize_namespace_cases {
+            let normalized = case.input.trim().to_lowercase();
+            let actual = NAMESPACE_RE.is_match(&normalized).then_some(normalized);
+            assert_eq!(actual, case.expected, "{}", case.name);
+        }
+
+        for case in vectors.group_cases {
+            assert_eq!(group_names(&case.names), case.expected, "{}", case.name);
+        }
+
+        for case in vectors.known_namespaces_cases {
+            assert_eq!(
+                known_namespaces(&case.names),
+                case.expected,
+                "{}",
+                case.name
+            );
+        }
+    }
+
+    fn group_names(names: &[String]) -> Vec<ExpectedGroup> {
+        let mut buckets: HashMap<Option<String>, Vec<String>> = HashMap::new();
+        for name in names {
+            buckets
+                .entry(parse_tag(name).namespace)
+                .or_default()
+                .push(name.clone());
+        }
+
+        let mut namespaces: Vec<String> = SEEDED_NAMESPACES
+            .iter()
+            .filter(|namespace| buckets.contains_key(&Some(namespace.to_string())))
+            .map(|namespace| (*namespace).to_string())
+            .collect();
+        let mut extras: Vec<String> = buckets
+            .keys()
+            .filter_map(Clone::clone)
+            .filter(|namespace| !SEEDED_NAMESPACES.contains(&namespace.as_str()))
+            .collect();
+        extras.sort();
+        namespaces.extend(extras);
+
+        let mut groups: Vec<ExpectedGroup> = namespaces
+            .into_iter()
+            .map(|namespace| ExpectedGroup {
+                names: sorted_by_value(buckets.remove(&Some(namespace.clone())).unwrap()),
+                namespace: Some(namespace),
+            })
+            .collect();
+        if let Some(uncategorized) = buckets.remove(&None) {
+            groups.push(ExpectedGroup {
+                namespace: None,
+                names: sorted_by_value(uncategorized),
+            });
+        }
+        groups
+    }
+
+    fn sorted_by_value(mut names: Vec<String>) -> Vec<String> {
+        names.sort_by_key(|name| parse_tag(name).value.to_lowercase());
+        names
+    }
+
+    fn known_namespaces(names: &[String]) -> Vec<String> {
+        let mut extras: Vec<String> = names
+            .iter()
+            .filter_map(|name| parse_tag(name).namespace)
+            .filter(|namespace| !SEEDED_NAMESPACES.contains(&namespace.as_str()))
+            .collect();
+        extras.sort();
+        extras.dedup();
+
+        SEEDED_NAMESPACES
+            .iter()
+            .map(|namespace| (*namespace).to_string())
+            .chain(extras)
+            .collect()
+    }
 
     #[test]
     fn parse_flat_name() {

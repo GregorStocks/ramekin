@@ -68,6 +68,15 @@ enum TagHierarchySupport {
         return trimmed
     }
 
+    static func format(namespace: String?, value: String) -> String {
+        let value = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let namespace else {
+            return value
+        }
+        let namespace = namespace.trimmingCharacters(in: .whitespacesAndNewlines)
+        return namespace.isEmpty ? value : "\(namespace):\(value)"
+    }
+
     static func formattedName(namespace: String?, value: String) -> String? {
         guard let normalizedValue = normalizedValue(from: value) else {
             return nil
@@ -78,7 +87,7 @@ enum TagHierarchySupport {
         guard let normalizedNamespace = normalizedNamespace(from: namespace) else {
             return nil
         }
-        return "\(normalizedNamespace):\(normalizedValue)"
+        return format(namespace: normalizedNamespace, value: normalizedValue)
     }
 
     static func normalizedTypedName(from rawName: String) -> String? {
@@ -174,15 +183,21 @@ enum TagHierarchySupport {
     }
 
     private static func isValidNamespace(_ namespace: String) -> Bool {
-        guard let first = namespace.first, first.isLetter, first.isLowercase else {
+        guard let first = namespace.utf8.first,
+              first >= Character("a").asciiValue!,
+              first <= Character("z").asciiValue! else {
             return false
         }
 
-        for character in namespace {
-            guard character.isLetter || character.isNumber || character == "-" || character == "_" else {
-                return false
-            }
-            if character.isUppercase {
+        for character in namespace.utf8 {
+            let isLowercaseLetter = character >= Character("a").asciiValue!
+                && character <= Character("z").asciiValue!
+            let isDigit = character >= Character("0").asciiValue!
+                && character <= Character("9").asciiValue!
+            if !isLowercaseLetter
+                && !isDigit
+                && character != Character("-").asciiValue!
+                && character != Character("_").asciiValue! {
                 return false
             }
         }
