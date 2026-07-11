@@ -21,7 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
 from uuid import UUID
-from ramekin_client.models.recipe_summary import RecipeSummary
+from ramekin_client.models.sync_recipe import SyncRecipe
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class SyncRecipesResponse(BaseModel):
     SyncRecipesResponse
     """ # noqa: E501
     deleted: List[UUID] = Field(description="Recipe IDs deleted since last_sync_at.")
-    recipes: List[RecipeSummary] = Field(description="Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent.")
+    recipes: List[SyncRecipe] = Field(description="Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent.")
     sync_timestamp: datetime = Field(description="New sync timestamp to use for the next sync.")
     __properties: ClassVar[List[str]] = ["deleted", "recipes", "sync_timestamp"]
 
@@ -93,7 +93,7 @@ class SyncRecipesResponse(BaseModel):
 
         _obj = cls.model_validate({
             "deleted": obj.get("deleted"),
-            "recipes": [RecipeSummary.from_dict(_item) for _item in obj["recipes"]] if obj.get("recipes") is not None else None,
+            "recipes": [SyncRecipe.from_dict(_item) for _item in obj["recipes"]] if obj.get("recipes") is not None else None,
             "sync_timestamp": obj.get("sync_timestamp")
         })
         return _obj

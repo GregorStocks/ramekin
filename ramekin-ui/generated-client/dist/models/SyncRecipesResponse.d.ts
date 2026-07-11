@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { RecipeSummary } from './RecipeSummary';
+import type { SyncRecipe } from './SyncRecipe';
 /**
  *
  * @export
@@ -24,10 +24,10 @@ export interface SyncRecipesResponse {
     deleted: Array<string>;
     /**
      * Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent.
-     * @type {Array<RecipeSummary>}
+     * @type {Array<SyncRecipe>}
      * @memberof SyncRecipesResponse
      */
-    recipes: Array<RecipeSummary>;
+    recipes: Array<SyncRecipe>;
     /**
      * New sync timestamp to use for the next sync.
      * @type {Date}

@@ -68,6 +68,7 @@ docs/SortBy.md
 docs/StepState.md
 docs/SyncCreateItem.md
 docs/SyncCreatedItem.md
+docs/SyncRecipe.md
 docs/SyncRecipesResponse.md
 docs/SyncRequest.md
 docs/SyncResponse.md
@@ -159,6 +160,7 @@ src/models/sort_by.rs
 src/models/step_state.rs
 src/models/sync_create_item.rs
 src/models/sync_created_item.rs
+src/models/sync_recipe.rs
 src/models/sync_recipes_response.rs
 src/models/sync_request.rs
 src/models/sync_response.rs

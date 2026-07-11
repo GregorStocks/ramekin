@@ -1,0 +1,38 @@
+{
+  "title": "Scope iOS shopping and tag caches to the active account",
+  "description": "The iOS recipe cache is scoped by server URL and username, \
+but the shopping-list and tag caches are global. `ShoppingItem` has no account \
+key, `ShoppingListStore` uses fixed UserDefaults keys for the sync cursor and \
+category order, and `TagFilterCache` uses fixed keys for selected and \
+available tags. Logout clears credentials without clearing or switching these \
+stores. After signing into another user or server, the app can display the \
+prior account's cached state and can submit its pending shopping mutations to \
+the new account.\n\
+\n\
+Scope:\n\
+- Add an account identifier to locally persisted shopping rows and filter \
+every shopping fetch/mutation/sync operation by the active account. Follow the \
+existing RecipeCacheStore account-key convention unless a shared account-key \
+helper is cleaner.\n\
+- Scope the shopping sync cursor, category order, selected tags, and available \
+tags to the same account.\n\
+- Handle account changes and logout explicitly so stale published state is not \
+visible while logged out or after switching accounts. Preserve data per \
+account rather than deleting it.\n\
+- Add migration coverage for existing unscoped Core Data rows and iOS tests \
+proving that two users and two servers cannot see or sync one another's cached \
+state.\n\
+\n\
+This is intentionally iOS-only: the web shopping cache is already keyed by the \
+active token.",
+  "status": "open",
+  "priority": 1,
+  "type": "task",
+  "labels": [
+    "ios",
+    "sync",
+    "bug",
+  ],
+  "created_at": "2026-07-11T11:38:01-07:00",
+  "updated_at": "2026-07-11T11:38:01-07:00",
+}

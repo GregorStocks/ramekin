@@ -133,6 +133,7 @@ Class | Method | HTTP request | Description
  - [StepState](docs/StepState.md)
  - [SyncCreateItem](docs/SyncCreateItem.md)
  - [SyncCreatedItem](docs/SyncCreatedItem.md)
+ - [SyncRecipe](docs/SyncRecipe.md)
  - [SyncRecipesResponse](docs/SyncRecipesResponse.md)
  - [SyncRequest](docs/SyncRequest.md)
  - [SyncResponse](docs/SyncResponse.md)

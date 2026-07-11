@@ -15,11 +15,11 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
     /** Recipe IDs deleted since last_sync_at. */
     public var deleted: [UUID]
     /** Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent. */
-    public var recipes: [RecipeSummary]
+    public var recipes: [SyncRecipe]
     /** New sync timestamp to use for the next sync. */
     public var syncTimestamp: Date
 
-    public init(deleted: [UUID], recipes: [RecipeSummary], syncTimestamp: Date) {
+    public init(deleted: [UUID], recipes: [SyncRecipe], syncTimestamp: Date) {
         self.deleted = deleted
         self.recipes = recipes
         self.syncTimestamp = syncTimestamp

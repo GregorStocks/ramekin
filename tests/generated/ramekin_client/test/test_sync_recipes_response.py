@@ -39,10 +39,23 @@ class TestSyncRecipesResponse(unittest.TestCase):
                     ''
                     ],
                 recipes = [
-                    ramekin_client.models.recipe_summary.RecipeSummary(
+                    ramekin_client.models.sync_recipe.SyncRecipe(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
                         id = '', 
+                        ingredients = [
+                            ramekin_client.models.ingredient.Ingredient(
+                                item = '', 
+                                measurements = [
+                                    ramekin_client.models.measurement.Measurement(
+                                        amount = '', 
+                                        unit = '', )
+                                    ], 
+                                note = '', 
+                                section = '', )
+                            ], 
+                        instructions = '', 
+                        notes = '', 
                         rating = 56, 
                         tags = [
                             ''
@@ -59,10 +72,23 @@ class TestSyncRecipesResponse(unittest.TestCase):
                     ''
                     ],
                 recipes = [
-                    ramekin_client.models.recipe_summary.RecipeSummary(
+                    ramekin_client.models.sync_recipe.SyncRecipe(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
                         id = '', 
+                        ingredients = [
+                            ramekin_client.models.ingredient.Ingredient(
+                                item = '', 
+                                measurements = [
+                                    ramekin_client.models.measurement.Measurement(
+                                        amount = '', 
+                                        unit = '', )
+                                    ], 
+                                note = '', 
+                                section = '', )
+                            ], 
+                        instructions = '', 
+                        notes = '', 
                         rating = 56, 
                         tags = [
                             ''

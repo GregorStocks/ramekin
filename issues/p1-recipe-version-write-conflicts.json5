@@ -1,0 +1,40 @@
+{
+  "title": "Prevent concurrent recipe writes from silently losing updates",
+  "description": "Recipe updates read the current version, merge request \
+fields into that snapshot, then use `create_new_version`, which \
+unconditionally repoints `recipes.current_version_id`. Several enrichment and \
+pipeline write paths use the same helper. Concurrent edits can both report \
+success while the last pointer update silently replaces the other edit. \
+Long-running AI operations make this especially likely. A compare-and-swap \
+helper already exists for generated descriptions and photos, but it currently \
+only supports copying tags.\n\
+\n\
+Scope:\n\
+- Generalize the shared version-write path so compare-and-swap writes support \
+all required TagSource strategies. Keep recipe/version/tag changes atomic.\n\
+- Require ordinary update requests to identify the version they edited and \
+return a typed 409 conflict when it is stale. Add API end-to-end tests before \
+changing either client.\n\
+- Update both web and iOS edit flows to submit the expected version and \
+present the conflict without overwriting either version.\n\
+- Audit normalize-title, auto-tag, generated-description, rescrape, and \
+save-recipe pipeline writes. Any operation based on a snapshot must either use \
+CAS or document and test why unconditional replacement is correct.\n\
+- Add deterministic concurrency tests covering user-vs-user and \
+user-vs-enrichment races.\n\
+\n\
+Do not retain the unconditional path merely for backwards compatibility; this \
+project has no production compatibility requirement.",
+  "status": "open",
+  "priority": 1,
+  "type": "task",
+  "labels": [
+    "api",
+    "web",
+    "ios",
+    "pipeline",
+    "bug",
+  ],
+  "created_at": "2026-07-11T11:38:01-07:00",
+  "updated_at": "2026-07-11T11:38:01-07:00",
+}

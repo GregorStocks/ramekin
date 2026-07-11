@@ -32,6 +32,15 @@ class CoreDataStack: ObservableObject {
             }
         }
 
+        configureViewContext()
+    }
+
+    init(container: NSPersistentContainer) {
+        self.container = container
+        configureViewContext()
+    }
+
+    private func configureViewContext() {
         // Merge changes from background contexts automatically
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
