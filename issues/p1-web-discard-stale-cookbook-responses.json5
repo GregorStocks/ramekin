@@ -1,13 +1,15 @@
 {
-  "title": "Discard stale cookbook list responses",
+  "title": "Discard stale recipe-list responses on both clients",
   "description": "CookbookPage starts a new listRecipes request whenever the \
 URL query or sort changes, but every response updates recipes, totals, \
 offsets, and loading state regardless of whether a newer request has started. \
 A slow response for an old search can therefore replace the results for the \
 current URL. Append requests have the same risk when a filter change races an \
 in-flight next-page request. The page already uses a monotonically increasing \
-request ID for bulk-selection requests, and the iOS recipe list uses an \
-active-query check.\n\
+request ID for bulk-selection requests. iOS checks `activeQuery` before \
+applying an initial response, but `RecipeListViewModel.loadMore()` appends a \
+response without rechecking the query, so an old page can be mixed into the \
+new list there as well.\n\
 \n\
 Scope:\n\
 - Give cookbook list requests an identity or abort signal and only apply data, \
@@ -17,14 +19,15 @@ error, pagination, and loading-state updates from the current request.\n\
 without redesigning the page.\n\
 - Add web unit tests with controllable deferred responses proving that older \
 success and failure responses cannot overwrite newer state.\n\
-\n\
-iOS already guards against stale recipe-list responses, so no iOS behavior \
-change is expected.",
+- Apply the same request identity rule to iOS pagination and add mirrored \
+RecipeListViewModel tests for a filter or sort change during `loadMore()`. \
+Keep the existing initial-response guard.",
   "status": "open",
   "priority": 1,
   "type": "task",
   "labels": [
     "web",
+    "ios",
     "bug",
   ],
   "created_at": "2026-07-11T11:38:01-07:00",
