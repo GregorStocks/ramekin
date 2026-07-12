@@ -25,9 +25,17 @@ where
     T: Send + 'static,
 {
     let pool = pool.clone();
+    // Blocking threads carry no ambient request context, so re-enter the
+    // caller's tracing span (keeps db.query spans parented to the request)
+    // and its query counter (keeps X-DB-Query-Count accurate).
+    let span = tracing::Span::current();
+    let query_counter = crate::telemetry::current_query_counter();
     match tokio::task::spawn_blocking(move || {
-        let mut conn = pool.get()?;
-        Ok(f(&mut conn))
+        let _entered = span.entered();
+        crate::telemetry::with_query_counter(query_counter, || {
+            let mut conn = pool.get()?;
+            Ok(f(&mut conn))
+        })
     })
     .await
     {

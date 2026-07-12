@@ -23,13 +23,30 @@ pub fn get_query_count() -> Option<u32> {
         .ok()
 }
 
+/// Capture the current request's query counter so a blocking task can keep
+/// counting under it. Returns `None` outside a request scope.
+pub fn current_query_counter() -> Option<Arc<AtomicU32>> {
+    DB_QUERY_COUNTER.try_with(Arc::clone).ok()
+}
+
+/// Run `f` with `counter` installed as the task-local query counter, so
+/// `db.query` spans created inside `f` are attributed to the originating
+/// request. With `None`, `f` runs without a counter in scope.
+pub fn with_query_counter<T>(counter: Option<Arc<AtomicU32>>, f: impl FnOnce() -> T) -> T {
+    match counter {
+        Some(counter) => DB_QUERY_COUNTER.sync_scope(counter, f),
+        None => f(),
+    }
+}
+
 /// A tracing Layer that counts db.query spans per HTTP request.
 ///
 /// When a `db.query` span is created, the Layer increments the task-local counter.
 /// This works because:
 /// - The counter is initialized by `query_counting_middleware` for each request
-/// - Diesel queries run synchronously within the same async task
-/// - `tokio::task_local!` follows the task across thread migrations
+/// - Diesel queries run on the blocking thread pool under [`with_query_counter`],
+///   which re-enters the originating request's counter there
+///   (see `db::run_blocking`)
 pub struct DbQueryCountingLayer;
 
 impl<S> Layer<S> for DbQueryCountingLayer
