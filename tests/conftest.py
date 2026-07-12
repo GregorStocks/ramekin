@@ -1,3 +1,5 @@
+import concurrent.futures
+import contextlib
 import os
 import re
 import time
@@ -77,6 +79,65 @@ def uncommitted(database_url):
     with psycopg.connect(database_url) as conn:  # autocommit off
         yield conn
         conn.rollback()
+
+
+LOCK_WAIT_TIMEOUT_SECONDS = 30
+WRITE_TIMEOUT_SECONDS = 60
+
+
+def _wait_until_blocked_behind(database_url, holder_pid, write):
+    """Wait for some backend to queue on a lock held by backend `holder_pid`.
+
+    Matches on the holder's backend pid via `pg_blocking_pids` rather than on
+    query text, so concurrently running tests (pytest-xdist) can't satisfy the
+    wait by accident. Returns early if the write future finishes, so a write
+    that fails outright surfaces its error instead of burning the timeout.
+    """
+    deadline = time.monotonic() + LOCK_WAIT_TIMEOUT_SECONDS
+    with psycopg.connect(database_url, autocommit=True) as conn:
+        while time.monotonic() < deadline:
+            if write.done():
+                return
+            waiting = conn.execute(
+                "SELECT count(*) FROM pg_stat_activity"
+                " WHERE wait_event_type = 'Lock'"
+                " AND %s = ANY(pg_blocking_pids(pid))",
+                (holder_pid,),
+            ).fetchone()[0]
+            if waiting:
+                return
+            time.sleep(0.1)
+    raise TimeoutError("the write never started waiting on the row lock")
+
+
+@contextlib.contextmanager
+def blocked_api_write(database_url, uncommitted, send_write):
+    """Hold an API write in flight, queued behind a row lock.
+
+    `uncommitted` must already hold a lock (e.g. `SELECT ... FOR UPDATE`) on a
+    row that `send_write` will touch. The write runs in a background thread;
+    the body of the `with` block runs once the write is queued on the lock and
+    therefore cannot commit until the block exits. On exit the lock is
+    released so the write can finish, and any exception it raised propagates.
+    Yields the write's Future; its result is available after the block.
+    """
+    holder_pid = uncommitted.execute("SELECT pg_backend_pid()").fetchone()[0]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+        write = pool.submit(send_write)
+        try:
+            _wait_until_blocked_behind(database_url, holder_pid, write)
+            if write.done():
+                write.result()  # surfaces the failed write's own error
+                # It cannot have committed while the lock was held, so
+                # finishing means the lock never covered the write at all.
+                raise AssertionError(
+                    "the write finished without queuing on the row lock"
+                )
+            yield write
+        finally:
+            # Release the lock even on failure so the write can finish.
+            uncommitted.rollback()
+        write.result(timeout=WRITE_TIMEOUT_SECONDS)
 
 
 @pytest.fixture

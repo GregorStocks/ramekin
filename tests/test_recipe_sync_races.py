@@ -8,26 +8,19 @@ transaction id is always at or above the cursor, so the next `>= cursor` delta
 returns it.
 
 Each test drives the racing write through the real API: a helper transaction
-holds a row lock on the write's target, the API write starts in a background
-thread and queues on that lock, the sync runs across the in-flight write, and
-only then does releasing the lock let the write commit. That exercises the
-handlers' own `change_xid` stamping inside the race window; the sequential
-deltas in `test_recipe_sync.py` cover the same stamping outside it.
-
-The choreography stays deterministic without sleeps: the write cannot commit
-while the helper transaction holds the lock, and `pg_blocking_pids` reports
-exactly when the write is queued behind that transaction's backend — matching
-on our own backend pid rather than query text, so concurrently running tests
-(pytest-xdist) can't satisfy the wait by accident.
+holds a row lock on the write's target, `blocked_api_write` (conftest) starts
+the API write in a background thread and waits until it queues on that lock,
+the sync runs across the in-flight write, and only then does releasing the
+lock let the write commit. That exercises the handlers' own `change_xid`
+stamping inside the race window; the sequential deltas in
+`test_recipe_sync.py` cover the same stamping outside it. The choreography
+stays deterministic without sleeps: the write cannot commit while the helper
+transaction holds the lock.
 """
 
-import threading
-import time
-
-import psycopg
 import requests
 
-from conftest import make_ingredient
+from conftest import WRITE_TIMEOUT_SECONDS, blocked_api_write, make_ingredient
 from ramekin_client.api import RecipesApi, TagsApi
 from ramekin_client.models import (
     CreateRecipeRequest,
@@ -36,8 +29,6 @@ from ramekin_client.models import (
 )
 
 SYNC_TIMEOUT_SECONDS = 30
-LOCK_WAIT_TIMEOUT_SECONDS = 30
-WRITE_TIMEOUT_SECONDS = 60
 
 
 def _sync(client, server_url, cursor=None):
@@ -50,70 +41,6 @@ def _sync(client, server_url, cursor=None):
     )
     response.raise_for_status()
     return response.json()
-
-
-def _wait_until_blocked_behind(database_url, holder_pid, writer):
-    """Wait for some backend to be queued on a lock held by `holder_pid`.
-
-    Returns early if the writer thread dies, so a write that fails outright
-    surfaces its error instead of burning the whole lock-wait timeout.
-    """
-    deadline = time.monotonic() + LOCK_WAIT_TIMEOUT_SECONDS
-    with psycopg.connect(database_url, autocommit=True) as conn:
-        while time.monotonic() < deadline:
-            if not writer.is_alive():
-                return
-            waiting = conn.execute(
-                "SELECT count(*) FROM pg_stat_activity"
-                " WHERE wait_event_type = 'Lock'"
-                " AND %s = ANY(pg_blocking_pids(pid))",
-                (holder_pid,),
-            ).fetchone()[0]
-            if waiting:
-                return
-            time.sleep(0.1)
-    raise TimeoutError("the write never started waiting on the row lock")
-
-
-def _sync_during_blocked_write(
-    client, server_url, database_url, uncommitted, send_write
-):
-    """Sync while an API write is queued on a row lock held by `uncommitted`.
-
-    Runs `send_write` in a background thread, waits until it is blocked behind
-    the helper transaction, syncs inside that race window, then releases the
-    lock so the write commits. Returns the racing sync response; raises
-    whatever `send_write` raised, if anything.
-    """
-    holder_pid = uncommitted.execute("SELECT pg_backend_pid()").fetchone()[0]
-    result = {}
-
-    def run_write():
-        try:
-            result["value"] = send_write()
-        except Exception as exc:
-            result["error"] = exc
-
-    writer = threading.Thread(target=run_write)
-    writer.start()
-    try:
-        _wait_until_blocked_behind(database_url, holder_pid, writer)
-        if "error" in result:
-            raise result["error"]
-        if not writer.is_alive():
-            # It cannot have committed while the lock was held, so finishing
-            # here means the lock never covered the write at all.
-            raise AssertionError("the write finished without queuing on the row lock")
-        racing = _sync(client, server_url)
-    finally:
-        # Release the lock even on failure so the writer can finish and join.
-        uncommitted.rollback()
-        writer.join(timeout=WRITE_TIMEOUT_SECONDS)
-
-    assert not writer.is_alive()
-    if "error" in result:
-        raise result["error"]
-    return racing
 
 
 def test_sync_returns_update_that_commits_across_the_snapshot(
@@ -137,12 +64,8 @@ def test_sync_returns_update_that_commits_across_the_snapshot(
         "SELECT id FROM recipes WHERE id = %s FOR UPDATE", (created.id,)
     )
 
-    racing = _sync_during_blocked_write(
-        client,
-        server_url,
-        database_url,
-        uncommitted,
-        lambda: recipes_api.update_recipe(
+    def racing_update():
+        recipes_api.update_recipe(
             created.id,
             UpdateRecipeRequest(
                 expected_version_id=version_id,
@@ -150,8 +73,10 @@ def test_sync_returns_update_that_commits_across_the_snapshot(
                 instructions="Simmer it.",
             ),
             _request_timeout=WRITE_TIMEOUT_SECONDS,
-        ),
-    )
+        )
+
+    with blocked_api_write(database_url, uncommitted, racing_update):
+        racing = _sync(client, server_url)
     assert "After Racing Update" not in {r["title"] for r in racing["recipes"]}
 
     after = _sync(client, server_url, cursor=racing["cursor"])
@@ -181,15 +106,11 @@ def test_sync_returns_soft_delete_that_commits_across_the_snapshot(
         "SELECT id FROM recipes WHERE id = %s FOR UPDATE", (created.id,)
     )
 
-    racing = _sync_during_blocked_write(
-        client,
-        server_url,
-        database_url,
-        uncommitted,
-        lambda: recipes_api.delete_recipe(
-            created.id, _request_timeout=WRITE_TIMEOUT_SECONDS
-        ),
-    )
+    def racing_delete():
+        recipes_api.delete_recipe(created.id, _request_timeout=WRITE_TIMEOUT_SECONDS)
+
+    with blocked_api_write(database_url, uncommitted, racing_delete):
+        racing = _sync(client, server_url)
     assert str(created.id) not in racing["deleted"]
 
     after = _sync(client, server_url, cursor=racing["cursor"])
@@ -222,17 +143,15 @@ def test_sync_returns_tag_rename_that_commits_across_the_snapshot(
     # The rename's UPDATE of the user_tags row queues on the row lock.
     uncommitted.execute("SELECT id FROM user_tags WHERE id = %s FOR UPDATE", (tag.id,))
 
-    racing = _sync_during_blocked_write(
-        client,
-        server_url,
-        database_url,
-        uncommitted,
-        lambda: tags_api.rename_tag(
+    def racing_rename():
+        tags_api.rename_tag(
             tag.id,
             RenameTagRequest(name="after-racing-rename"),
             _request_timeout=WRITE_TIMEOUT_SECONDS,
-        ),
-    )
+        )
+
+    with blocked_api_write(database_url, uncommitted, racing_rename):
+        racing = _sync(client, server_url)
 
     # The rename never touches the recipe's own version row, so the recipe can
     # only come back through the tag arm of the delta.
