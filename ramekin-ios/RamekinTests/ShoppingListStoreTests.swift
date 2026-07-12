@@ -125,6 +125,8 @@ final class ShoppingListStoreTests: XCTestCase {
             syncItems: { try await syncStub.sync($0) }
         )
         store.addItem(name: "Apples")
+        let clientId = try XCTUnwrap(store.items.first?.id)
+        let serverId = UUID()
 
         let syncTask = Task { await store.syncWithServer() }
         await syncStub.waitForRequest()
@@ -132,9 +134,9 @@ final class ShoppingListStoreTests: XCTestCase {
         syncStub.complete(
             with: SyncResponse(
                 categoryOrder: ["Produce"],
-                created: [],
+                created: [SyncCreatedItem(clientId: clientId, serverId: serverId, version: 1)],
                 deleted: [],
-                serverChanges: [Self.serverChange(item: "Avocado")],
+                serverChanges: [],
                 syncTimestamp: Date(timeIntervalSince1970: 800),
                 updated: []
             )
@@ -142,12 +144,12 @@ final class ShoppingListStoreTests: XCTestCase {
         await syncTask.value
 
         XCTAssertTrue(store.items.isEmpty)
-        XCTAssertEqual(
-            try stack.viewContext.fetch(ShoppingItem.fetchActiveItems(accountKey: firstAccount))
-                .compactMap(\.item)
-                .sorted(),
-            ["Apples", "Avocado"]
+        let firstAccountItems = try stack.viewContext.fetch(
+            ShoppingItem.fetchActiveItems(accountKey: firstAccount)
         )
+        XCTAssertEqual(firstAccountItems.map(\.item), ["Apples"])
+        XCTAssertEqual(firstAccountItems.first?.id, serverId)
+        XCTAssertEqual(firstAccountItems.first?.syncStatusEnum, .synced)
         XCTAssertTrue(
             try stack.viewContext.fetch(ShoppingItem.fetchActiveItems(accountKey: secondUserAccount)).isEmpty
         )
@@ -161,19 +163,6 @@ final class ShoppingListStoreTests: XCTestCase {
             serverChanges: [],
             syncTimestamp: Date(timeIntervalSince1970: 1_000),
             updated: []
-        )
-    }
-
-    private static func serverChange(item: String) -> SyncServerChange {
-        SyncServerChange(
-            category: "Produce",
-            computedCategory: "Produce",
-            id: UUID(),
-            isChecked: false,
-            item: item,
-            sortOrder: 1,
-            updatedAt: Date(timeIntervalSince1970: 700),
-            version: 1
         )
     }
 
