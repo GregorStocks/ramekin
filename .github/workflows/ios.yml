@@ -143,8 +143,10 @@ jobs:
       - name: Build and test
         run: |
           cd ramekin-ios
+          # Simulator builds must be (ad-hoc) code signed: without a signature
+          # the keychain access-group entitlement is missing, every keychain
+          # operation fails, and login never completes in UI tests.
           xcodebuild test \
             -scheme Ramekin \
             -destination 'platform=iOS Simulator,id=${{ steps.simulator.outputs.udid }}' \
-            -resultBundlePath TestResults \
-            CODE_SIGNING_ALLOWED=NO
+            -resultBundlePath TestResults
