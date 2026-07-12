@@ -176,7 +176,7 @@ extension ShoppingListStore {
     // MARK: - Sync
 
     private func triggerSync() {
-        guard isOnline else { return }
+        guard automaticallySync, isOnline else { return }
         Task { await syncWithServer() }
     }
 
