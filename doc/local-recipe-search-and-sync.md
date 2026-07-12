@@ -68,9 +68,9 @@ The cache serves offline browsing, tag filters, the basic photo-presence
 filter, date filters, deterministic browse sorts, and — since the
 `ios-local-search-relevance` work — bare-text search with server-identical
 membership, relevance ranking, and tie-breaks. Queries involving source,
-photo size or dimensions, random sorting, or title-ordering a text query
-still go to the paginated server endpoint. `doc/web-sync.md` separately
-records why the web cookbook remains server-backed and paginated.
+photo size or dimensions, or random sorting still go to the paginated server
+endpoint. `doc/web-sync.md` separately records why the web cookbook remains
+server-backed and paginated.
 
 Core Data already uses an SQLite persistent store in the app-group container.
 "Move the iOS cache to SQLite" is therefore not a meaningful first step. Core
@@ -116,9 +116,10 @@ beside the structured ingredients. If server search later changes to match only
 flattened ingredient values, change the API, iOS, and shared vectors together.
 Source and detailed photo metadata remain outside the search document. Text
 queries combined with `source:`, `photo_size:`, or `photo_dim:` therefore stay
-on the server, as do title and random ordering. Local text search is limited to
-cached tags, basic photo presence, created-date filters, and relevance,
-updated-date, rating, or created-date ordering.
+on the server, as does random ordering. Local search covers bare text, `tag:`,
+basic photo presence, and created-date filters, with relevance, updated-date,
+rating, created-date, and title browse ordering. (A text query's browse sort
+is irrelevant on both sides — the app always asks for relevance.)
 
 PR #643 made the initial sync larger; later syncs now transfer only changed
 recipes. Immutable `recipe_versions` provide a stable version identity, and
@@ -359,7 +360,7 @@ matching, filtering, scoring, and ordering
 end to end by `shared-test-vectors/search-match-filter.json` and
 `search-ranking.json`, consumed by both the Python API tests and XCTest. Text
 queries now serve from the cache unless they need `source:`, `photo_size:`,
-`photo_dim:`, or title/random ordering. Web remains unchanged.
+`photo_dim:`, or random ordering. Web remains unchanged.
 
 ### Stage 2: optimize only from measurements
 

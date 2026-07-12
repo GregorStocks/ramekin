@@ -3,23 +3,16 @@ import Foundation
 enum RecipeSummaryCacheSupport {
     /// Whether the current filter+sort can be answered from the local cache
     /// with server-identical results. Text queries run locally through the
-    /// mirrored search pipeline; queries needing `source:`, `photo_size:`,
-    /// or `photo_dim:` stay on the server because the synced recipes carry
-    /// neither the source name nor detailed photo metadata. Random ordering
-    /// is server-only, and title-ordering a text query is too (the app asks
-    /// the server for relevance in that case).
+    /// mirrored search pipeline (the browse sort is irrelevant there — both
+    /// sides rank text queries by relevance); queries needing `source:`,
+    /// `photo_size:`, or `photo_dim:` stay on the server because the synced
+    /// recipes carry neither the source name nor detailed photo metadata,
+    /// and random ordering is server-only.
     static func canServeFromCache(filterState: RecipeListFilterState, sortOrder: RecipeSortOrder) -> Bool {
         guard sortOrder != .random else {
             return false
         }
-        let parsed = parsedQuery(for: filterState)
-        if parsed.requiresServer {
-            return false
-        }
-        if !parsed.textTokens.isEmpty && sortOrder == .title {
-            return false
-        }
-        return true
+        return !parsedQuery(for: filterState).requiresServer
     }
 
     /// The cached recipes the current filter+sort should display, in order —

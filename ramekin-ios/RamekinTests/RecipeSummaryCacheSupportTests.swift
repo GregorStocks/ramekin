@@ -157,6 +157,14 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
                 sortOrder: .title
             )
         )
+        // The browse sort is irrelevant to a text query — both sides rank it
+        // by relevance — so a Title browse sort must not force the network.
+        XCTAssertTrue(
+            RecipeSummaryCacheSupport.canServeFromCache(
+                filterState: RecipeListFilterState(searchText: "bread"),
+                sortOrder: .title
+            )
+        )
         // An unparseable threshold is a server-side no-op, so it can run
         // locally too.
         XCTAssertTrue(
@@ -202,18 +210,11 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
                 sortOrder: .newest
             )
         )
-        // Random ordering is server-only, and title-ordering a text query
-        // stays on the server (the app requests relevance there).
+        // Random ordering is server-only.
         XCTAssertFalse(
             RecipeSummaryCacheSupport.canServeFromCache(
                 filterState: RecipeListFilterState(),
                 sortOrder: .random
-            )
-        )
-        XCTAssertFalse(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(searchText: "bread"),
-                sortOrder: .title
             )
         )
     }
