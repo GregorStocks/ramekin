@@ -110,6 +110,7 @@ struct RevertRecipeRequest: Encodable {
         try container.encode(cookTime, forKey: .cookTime)
         try encodeNullable(description, forKey: .description, into: &container)
         try encodeNullable(difficulty, forKey: .difficulty, into: &container)
+        try container.encode(expectedVersionId, forKey: .expectedVersionId)
         try container.encode(ingredients, forKey: .ingredients)
         try container.encode(instructions, forKey: .instructions)
         try encodeNullable(notes, forKey: .notes, into: &container)
