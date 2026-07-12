@@ -4,7 +4,7 @@ use diesel::prelude::*;
 use tracing::Instrument;
 use uuid::Uuid;
 
-use ramekin_core::ai::{AiClient, CachingAiClient};
+use ramekin_core::ai::{AiClient, AiConfig, CachingAiClient, UnconfiguredAiClient};
 use ramekin_core::pipeline::steps::{
     EnrichAutoTagStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
 };
@@ -90,7 +90,17 @@ pub async fn build_registry(
     let ai_client = if auto_enrichments.is_empty() {
         None
     } else {
-        Some(Arc::new(CachingAiClient::from_env()?) as Arc<dyn AiClient>)
+        // A missing OPENROUTER_API_KEY must not fail the job before
+        // save_recipe runs: hand the enrich steps a client that errors on
+        // every call, so a missing key behaves exactly like an invalid one.
+        let client: Arc<dyn AiClient> = match AiConfig::from_env() {
+            Ok(config) => Arc::new(CachingAiClient::new(config)),
+            Err(e) => {
+                tracing::warn!("AI client unavailable, enrichment steps will fail: {e}");
+                Arc::new(UnconfiguredAiClient::new(e))
+            }
+        };
+        Some(client)
     };
 
     for enrichment in auto_enrichments {
@@ -320,13 +330,16 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         // We still mark the step as failed on the result so the persisted row
         // (and status API) reflect the failure, but we preserve `next_step`
         // so the chain continues.
-        if let Err(e) = store.save_output(
-            &step_name,
-            &result.output,
-            result.duration_ms as i64,
-            result.success,
-            result.error.as_deref(),
-        ) {
+        if let Err(e) = store
+            .save_output(
+                &step_name,
+                &result.output,
+                result.duration_ms as i64,
+                result.success,
+                result.error.as_deref(),
+            )
+            .await
+        {
             let msg = format!("Failed to persist output for step {step_name}: {e}");
             tracing::error!("{msg}");
             result.success = false;
@@ -370,6 +383,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
     // Determine final outcome
     let recipe_id = store
         .get_output(SaveRecipeStepMeta::NAME)
+        .await
         .and_then(|o| {
             o.get("recipe_id")
                 .and_then(|v| v.as_str())
@@ -454,7 +468,7 @@ async fn execute_step_with_tracing(
             }
             "fetch_images" => {
                 // Get requested count from extract_recipe output
-                if let Some(extract_output) = store.get_output("extract_recipe") {
+                if let Some(extract_output) = store.get_output("extract_recipe").await {
                     if let Some(urls) = extract_output
                         .get("raw_recipe")
                         .and_then(|r| r.get("image_urls"))
@@ -475,7 +489,7 @@ async fn execute_step_with_tracing(
                     current_span.record("recipe.id", recipe_id);
                 }
                 // Get title from extract_recipe output
-                if let Some(extract_output) = store.get_output("extract_recipe") {
+                if let Some(extract_output) = store.get_output("extract_recipe").await {
                     if let Some(title) = extract_output
                         .get("raw_recipe")
                         .and_then(|r| r.get("title"))
@@ -487,7 +501,7 @@ async fn execute_step_with_tracing(
             }
             "enrich_auto_tag" | "apply_auto_tags" => {
                 // Get recipe_id from save_recipe output
-                if let Some(save_output) = store.get_output("save_recipe") {
+                if let Some(save_output) = store.get_output("save_recipe").await {
                     if let Some(recipe_id) = save_output.get("recipe_id").and_then(|v| v.as_str()) {
                         current_span.record("recipe.id", recipe_id);
                     }

@@ -97,7 +97,7 @@ impl PipelineStep for SaveRecipeStep {
         let start = Instant::now();
 
         // Get extract output
-        let extract_output = match ctx.outputs.get_output("extract_recipe") {
+        let extract_output = match ctx.outputs.get_output("extract_recipe").await {
             Some(o) => o,
             None => {
                 return StepResult {
@@ -161,7 +161,7 @@ impl PipelineStep for SaveRecipeStep {
         };
 
         // Get photo IDs from fetch_images output
-        let fetch_images_output = ctx.outputs.get_output("fetch_images");
+        let fetch_images_output = ctx.outputs.get_output("fetch_images").await;
         let photo_ids: Vec<Uuid> = match deserialize_optional_output_field(
             fetch_images_output.as_ref(),
             "fetch_images",
@@ -183,7 +183,7 @@ impl PipelineStep for SaveRecipeStep {
 
         // Get parsed ingredients from parse_ingredients output, or fall back to
         // simple line-by-line parsing if the step failed or is missing
-        let parse_ingredients_output = ctx.outputs.get_output("parse_ingredients");
+        let parse_ingredients_output = ctx.outputs.get_output("parse_ingredients").await;
         let parsed_ingredients: Vec<Ingredient> = match deserialize_optional_output_field(
             parse_ingredients_output.as_ref(),
             "parse_ingredients",

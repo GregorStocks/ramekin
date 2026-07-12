@@ -49,7 +49,7 @@ impl PipelineStep for EnrichNormalizeTitleStep {
     async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
         let start = Instant::now();
 
-        let extract_output = match ctx.outputs.get_output("extract_recipe") {
+        let extract_output = match ctx.outputs.get_output("extract_recipe").await {
             Some(o) => o,
             None => {
                 return StepResult {
@@ -126,5 +126,74 @@ impl PipelineStep for EnrichNormalizeTitleStep {
             duration_ms: start.elapsed().as_millis() as u64,
             next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use std::collections::HashMap;
+    use std::error::Error;
+    use std::sync::Arc;
+
+    use serde_json::{json, Value as JsonValue};
+
+    use super::EnrichNormalizeTitleStep;
+    use crate::ai::{ConfigError, UnconfiguredAiClient};
+    use crate::pipeline::{PipelineStep, StepContext, StepOutputStore};
+
+    #[derive(Default)]
+    struct TestOutputStore {
+        outputs: HashMap<String, JsonValue>,
+    }
+
+    impl StepOutputStore for TestOutputStore {
+        fn get_output(&self, step_name: &str) -> Option<JsonValue> {
+            self.outputs.get(step_name).cloned()
+        }
+
+        fn save_output(
+            &mut self,
+            _step_name: &str,
+            _output: &JsonValue,
+            _duration_ms: i64,
+            _success: bool,
+            _error: Option<&str>,
+        ) -> Result<(), Box<dyn Error + Send + Sync>> {
+            Ok(())
+        }
+    }
+
+    /// A missing OPENROUTER_API_KEY reaches the step as an UnconfiguredAiClient
+    /// (see server build_registry): the step must fail with the config error
+    /// but still chain to the next step, exactly like any other AI failure.
+    #[tokio::test]
+    async fn unconfigured_ai_client_fails_step_but_chains_to_next() {
+        let mut outputs = TestOutputStore::default();
+        outputs.outputs.insert(
+            "extract_recipe".to_string(),
+            json!({ "raw_recipe": {
+                "title": "Soup",
+                "ingredients": "water",
+                "instructions": "boil",
+                "image_urls": [],
+            }}),
+        );
+        let ctx = StepContext {
+            url: "https://example.test/soup",
+            outputs: &outputs,
+        };
+
+        let step = EnrichNormalizeTitleStep::new(Arc::new(UnconfiguredAiClient::new(
+            ConfigError::MissingEnvVar("OPENROUTER_API_KEY".to_string()),
+        )));
+        let result = step.execute(&ctx).await;
+
+        assert!(!result.success);
+        let err = result.error.unwrap();
+        assert!(
+            err.contains("OPENROUTER_API_KEY"),
+            "unexpected error: {err}"
+        );
+        assert_eq!(result.next_step.as_deref(), Some("apply_normalized_title"));
     }
 }

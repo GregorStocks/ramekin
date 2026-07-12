@@ -50,13 +50,13 @@ impl PipelineStep for ApplyAutoTagsStep {
         let start = Instant::now();
 
         // Get recipe_id from save_recipe output
-        let recipe_id = match recipe_id_from_save_output(ctx) {
+        let recipe_id = match recipe_id_from_save_output(ctx).await {
             Ok(id) => id,
             Err(result) => return result.with_step(Self::NAME, start, Self::NAME),
         };
 
         // Get suggested_tags from enrich_auto_tag output
-        let auto_tag_output = ctx.outputs.get_output("enrich_auto_tag");
+        let auto_tag_output = ctx.outputs.get_output("enrich_auto_tag").await;
         let suggested_tags: Vec<String> = match deserialize_optional_output_field(
             auto_tag_output.as_ref(),
             "enrich_auto_tag",
@@ -96,7 +96,9 @@ impl PipelineStep for ApplyAutoTagsStep {
                 ("apply_normalized_title", "new_version_id"),
                 ("save_recipe", "version_id"),
             ],
-        ) {
+        )
+        .await
+        {
             Ok(version_id) => version_id,
             Err(error) => {
                 return StepResult {

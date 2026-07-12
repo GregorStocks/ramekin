@@ -39,9 +39,14 @@ pub struct StepResult {
 
 /// Abstraction for reading/writing step outputs.
 /// Implemented differently by CLI (files) vs server (DB).
+///
+/// The methods are async so implementations backed by blocking IO (the
+/// server's database store) can hop off the runtime worker instead of
+/// parking it.
+#[async_trait]
 pub trait StepOutputStore: Send + Sync {
     /// Get the output from a previous step by name.
-    fn get_output(&self, step_name: &str) -> Option<JsonValue>;
+    async fn get_output(&self, step_name: &str) -> Option<JsonValue>;
 
     /// Save the output from a step.
     ///
@@ -50,7 +55,7 @@ pub trait StepOutputStore: Send + Sync {
     /// alongside the output so the status API can surface per-step failures
     /// for enrichment steps that have `continues_on_failure = true` (the
     /// overall job completes, but the individual step still failed).
-    fn save_output(
+    async fn save_output(
         &mut self,
         step_name: &str,
         output: &JsonValue,

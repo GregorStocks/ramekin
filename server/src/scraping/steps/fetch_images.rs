@@ -42,7 +42,7 @@ impl PipelineStep for FetchImagesStep {
         let start = Instant::now();
 
         // Get extract output to find image URLs
-        let extract_output = match ctx.outputs.get_output("extract_recipe") {
+        let extract_output = match ctx.outputs.get_output("extract_recipe").await {
             Some(o) => o,
             None => {
                 return StepResult {

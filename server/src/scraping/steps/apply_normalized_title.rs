@@ -46,12 +46,12 @@ impl PipelineStep for ApplyNormalizedTitleStep {
     async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
         let start = Instant::now();
 
-        let recipe_id = match recipe_id_from_save_output(ctx) {
+        let recipe_id = match recipe_id_from_save_output(ctx).await {
             Ok(id) => id,
             Err(result) => return result.with_step(Self::NAME, start, Self::NAME),
         };
 
-        let normalize_output = ctx.outputs.get_output("enrich_normalize_title");
+        let normalize_output = ctx.outputs.get_output("enrich_normalize_title").await;
         let changed: bool = match deserialize_optional_output_field(
             normalize_output.as_ref(),
             "enrich_normalize_title",
@@ -114,7 +114,7 @@ impl PipelineStep for ApplyNormalizedTitleStep {
         }
 
         let expected_version_id =
-            match version_id_from_pipeline_outputs(ctx, &[("save_recipe", "version_id")]) {
+            match version_id_from_pipeline_outputs(ctx, &[("save_recipe", "version_id")]).await {
                 Ok(version_id) => version_id,
                 Err(error) => {
                     return StepResult {
