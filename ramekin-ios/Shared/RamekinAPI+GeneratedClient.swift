@@ -50,21 +50,30 @@ extension RamekinAPI {
             return try await executeGenerated(operation)
         }
         return try await executeGenerated {
-            try await withThrowingTaskGroup(of: T.self) { group in
-                group.addTask {
-                    try await operation()
-                }
-                group.addTask {
-                    let nanoseconds = UInt64(timeoutInterval * 1_000_000_000)
-                    try await Task.sleep(nanoseconds: nanoseconds)
-                    throw APIError.networkError(URLError(.timedOut))
-                }
-                guard let result = try await group.next() else {
-                    throw APIError.invalidResponse
-                }
-                group.cancelAll()
-                return result
+            try await Self.race(operation, againstTimeout: timeoutInterval)
+        }
+    }
+
+    /// Race `operation` against a wall-clock timeout, throwing
+    /// `APIError.networkError(URLError(.timedOut))` if the timeout expires first.
+    static func race<T>(
+        _ operation: @escaping @Sendable () async throws -> T,
+        againstTimeout timeoutInterval: TimeInterval
+    ) async throws -> T {
+        try await withThrowingTaskGroup(of: T.self) { group in
+            group.addTask {
+                try await operation()
             }
+            group.addTask {
+                let nanoseconds = UInt64(timeoutInterval * 1_000_000_000)
+                try await Task.sleep(nanoseconds: nanoseconds)
+                throw APIError.networkError(URLError(.timedOut))
+            }
+            guard let result = try await group.next() else {
+                throw APIError.invalidResponse
+            }
+            group.cancelAll()
+            return result
         }
     }
 

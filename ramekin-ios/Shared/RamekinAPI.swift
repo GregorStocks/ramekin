@@ -235,6 +235,13 @@ class RamekinAPI {
 
     // MARK: - Authentication
 
+    /// Timeout for the login POST. Login is a single small round-trip, so a
+    /// stall this long means the server is unreachable and the user should see
+    /// an error instead of an indefinite spinner. UI tests rely on this bound:
+    /// their wait for the login error message must comfortably exceed it
+    /// (RecipeFlowTests.testLoginFailure).
+    static let loginTimeout: TimeInterval = 15
+
     /// Login to the Ramekin server
     func login(
         serverURL: String,
@@ -284,7 +291,10 @@ class RamekinAPI {
         )
 
         do {
-            let loginResponse = try await requestExecutor(builder)
+            let loginResponse = try await Self.race(
+                { try await requestExecutor(builder) },
+                againstTimeout: Self.loginTimeout
+            )
             // Save credentials
             _ = credentialStore.saveServerURL(normalizedURL)
             _ = credentialStore.saveToken(loginResponse.token)

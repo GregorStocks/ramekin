@@ -90,6 +90,9 @@ struct LoginView: View {
                         if isLoading {
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                // Lets UI tests tell "login request still in
+                                // flight" apart from "finished with no error".
+                                .accessibilityIdentifier("login-in-progress")
                         } else {
                             Text("Sign In")
                                 .fontWeight(.semibold)

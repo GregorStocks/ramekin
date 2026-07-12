@@ -14,8 +14,51 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ios:
-    name: iOS Tests
+  # Unit tests run in their own job, without the backend stack, so a UI-test
+  # host stall on a slow simulator can never fail the unit suite (and a UI
+  # flake rerun doesn't rebuild/reseed anything it doesn't need).
+  ios-unit:
+    name: iOS Unit Tests
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: make ios-generate
+
+      - name: Find available simulator
+        id: simulator
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 scripts/find-ios-simulator.py)
+          echo "Found simulator UDID: $UDID"
+          echo "udid=$UDID" >> $GITHUB_OUTPUT
+
+      - name: Build and test
+        run: |
+          cd ramekin-ios
+          # Simulator builds must be (ad-hoc) code signed: without a signature
+          # the keychain access-group entitlement is missing and every keychain
+          # operation fails.
+          xcodebuild test \
+            -scheme Ramekin \
+            -destination 'platform=iOS Simulator,id=${{ steps.simulator.outputs.udid }}' \
+            -only-testing:RamekinTests \
+            -resultBundlePath TestResults-unit
+
+      - name: Upload test results on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-unit-test-results
+          path: ramekin-ios/TestResults*
+          if-no-files-found: ignore
+
+  ios-ui:
+    name: iOS UI Tests
     runs-on: macos-latest
     timeout-minutes: 30
     steps:
@@ -178,12 +221,13 @@ jobs:
           xcodebuild test \
             -scheme Ramekin \
             -destination 'platform=iOS Simulator,id=${{ steps.simulator.outputs.udid }}' \
+            -only-testing:RamekinUITests \
             -resultBundlePath TestResults
 
       - name: Upload test results on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: ios-test-results
+          name: ios-ui-test-results
           path: ramekin-ios/TestResults*
           if-no-files-found: ignore

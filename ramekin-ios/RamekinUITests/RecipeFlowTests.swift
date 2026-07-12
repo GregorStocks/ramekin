@@ -2,6 +2,12 @@ import XCTest
 
 final class RecipeFlowTests: XCTestCase {
 
+    /// Budget for waits that are normally sub-second but must survive a
+    /// degraded CI simulator, which can take tens of seconds to service a
+    /// single accessibility-hierarchy snapshot. Any timeout shorter than a
+    /// couple of slow snapshots flakes on such runners.
+    let slowSimulatorTimeout: TimeInterval = 60
+
     var app: XCUIApplication!
 
     override func setUpWithError() throws {
@@ -39,7 +45,10 @@ final class RecipeFlowTests: XCTestCase {
 
         // Find and fill server URL field (clear default value first)
         let serverField = app.textFields["https://ramekin.app"]
-        XCTAssertTrue(serverField.waitForExistence(timeout: 5), "Server URL field should exist")
+        XCTAssertTrue(
+            serverField.waitForExistence(timeout: slowSimulatorTimeout),
+            "Server URL field should exist"
+        )
         clearField(serverField)
         serverField.typeText("http://localhost:55000")
 
@@ -67,7 +76,7 @@ final class RecipeFlowTests: XCTestCase {
         // The login screen is a Form whose rows also match `app.cells`, so the
         // logged-in check must be something only the recipe list has: its
         // "Recipes" navigation bar (the login screen's bar is "Sign In").
-        guard app.navigationBars["Recipes"].waitForExistence(timeout: 15) else {
+        guard app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout) else {
             attachScreenshot(named: "02-AfterLogin")
             XCTFail("Never left the login screen: Recipes navigation bar did not appear after Sign In.")
             return
@@ -94,7 +103,7 @@ final class RecipeFlowTests: XCTestCase {
         // previous screen's title only exists on the detail screen
         let backButton = app.navigationBars.buttons["Recipes"]
         XCTAssertTrue(
-            backButton.waitForExistence(timeout: 10),
+            backButton.waitForExistence(timeout: slowSimulatorTimeout),
             "Recipe detail view did not appear after tapping a recipe."
         )
         attachScreenshot(named: "03-RecipeDetail")
@@ -103,7 +112,7 @@ final class RecipeFlowTests: XCTestCase {
     /// Test that login fails with invalid credentials
     func testLoginFailure() throws {
         let serverField = app.textFields["https://ramekin.app"]
-        XCTAssertTrue(serverField.waitForExistence(timeout: 5))
+        XCTAssertTrue(serverField.waitForExistence(timeout: slowSimulatorTimeout))
         clearField(serverField)
         serverField.typeText("http://localhost:55000")
 
@@ -117,9 +126,26 @@ final class RecipeFlowTests: XCTestCase {
 
         app.buttons["Sign In"].tap()
 
-        // Wait for error message
-        let errorExists = app.staticTexts["login-error-message"].waitForExistence(timeout: 10)
+        // The error message renders in the same UI update that ends the
+        // in-flight spinner, so it appearing IS the "login request finished"
+        // signal. On a healthy run it shows up in well under a second; the
+        // budget only has to outlast the app's 15s login timeout plus the
+        // tens of seconds a degraded CI simulator can take per accessibility
+        // snapshot (issue: testLoginFailure flaked when a fixed 10s expired
+        // during a single slow snapshot).
+        let errorMessage = app.staticTexts["login-error-message"]
+        let errorExists = errorMessage.waitForExistence(timeout: slowSimulatorTimeout)
         attachScreenshot(named: "LoginError")
-        XCTAssertTrue(errorExists, "Expected an error message after failed login.")
+        if !errorExists {
+            if app.descendants(matching: .any)["login-in-progress"].exists {
+                XCTFail(
+                    "Login request still in flight after \(Int(slowSimulatorTimeout))s "
+                        + "despite the app's 15s login timeout — test-host or network stall, "
+                        + "not a login-error-path regression."
+                )
+            } else {
+                XCTFail("Login request finished but no error message was shown after a failed login.")
+            }
+        }
     }
 }
