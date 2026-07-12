@@ -188,6 +188,38 @@ describe("createCookbookRecipeRequests", () => {
     expect(state.loadingMore()).toBe(false);
   });
 
+  it("discards an append that lands before the query change triggers its reload", async () => {
+    const { state, pending, setQuery } = setup();
+
+    state.resetAndLoad();
+    pending[0].resolve(page(["a-1", "a-2"], 40));
+    await flush();
+
+    state.loadMore();
+
+    // The query changed but nothing has called resetAndLoad yet — on iOS the
+    // reload is debounced, so this window is wide.
+    setQuery("cake");
+    pending[1].resolve(page(["a-3", "a-4"], 40, 2));
+    await flush();
+
+    expect(state.recipes().map((item) => item.id)).toEqual(["a-1", "a-2"]);
+    expect(state.offset()).toBe(2);
+  });
+
+  it("does not start an append once the query changed but the reload has not run", async () => {
+    const { state, pending, setQuery } = setup();
+
+    state.resetAndLoad();
+    pending[0].resolve(page(["a-1", "a-2"], 40));
+    await flush();
+
+    setQuery("cake");
+    state.loadMore();
+
+    expect(pending).toHaveLength(1);
+  });
+
   it("does not start an append while an initial load is in flight", async () => {
     const { state, pending } = setup();
 

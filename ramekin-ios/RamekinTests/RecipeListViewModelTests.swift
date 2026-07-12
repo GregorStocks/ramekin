@@ -4,7 +4,7 @@ import XCTest
 @MainActor
 final class RecipeListViewModelTests: XCTestCase {
     func testTextSearchUsesRelevanceSortAndStoresResults() async {
-        let recipe = makeRecipe(title: "Pasta")
+        let recipe = RecipeListTestSupport.makeRecipe(title: "Pasta")
         var capturedRequest: ListRequest?
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
@@ -26,8 +26,8 @@ final class RecipeListViewModelTests: XCTestCase {
                     SyncRecipesResponse(deleted: [], recipes: [], syncTimestamp: Date())
                 }
             ),
-            cache: noCacheClient(),
-            userDefaults: isolatedDefaults(),
+            cache: RecipeListTestSupport.noCacheClient(),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20
         )
 
@@ -45,8 +45,8 @@ final class RecipeListViewModelTests: XCTestCase {
     }
 
     func testCacheableBrowseLoadsAndFiltersSyncedCache() async {
-        let matching = makeRecipe(title: "Dinner", tags: ["Dinner"])
-        let hidden = makeRecipe(title: "Lunch", tags: ["Lunch"])
+        let matching = RecipeListTestSupport.makeRecipe(title: "Dinner", tags: ["Dinner"])
+        let hidden = RecipeListTestSupport.makeRecipe(title: "Lunch", tags: ["Lunch"])
         var didListRecipes = false
         var didSync = false
         var cachedRecipes = [matching, hidden]
@@ -73,7 +73,7 @@ final class RecipeListViewModelTests: XCTestCase {
                 loadRecipes: { _ in cachedRecipes },
                 apply: { _, _ in cachedRecipes = [matching, hidden] }
             ),
-            userDefaults: isolatedDefaults(),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20
         )
 
@@ -88,132 +88,11 @@ final class RecipeListViewModelTests: XCTestCase {
         XCTAssertFalse(viewModel.hasMore)
     }
 
-    func testSearchChangeDuringLoadMoreDiscardsStaleAppend() async {
-        let pastaPage1 = [makeRecipe(title: "Pasta 1"), makeRecipe(title: "Pasta 2")]
-        let pastaPage2 = [makeRecipe(title: "Pasta 3")]
-        let cakeResults = [makeRecipe(title: "Cake")]
-        let appendStarted = Gate()
-        let releaseAppend = Gate()
-
-        let viewModel = RecipeListViewModel(
-            api: RecipeListViewAPIClient(
-                listAllTags: { TagsListResponse(tags: []) },
-                listRecipes: { limit, offset, query, _, _ in
-                    if offset > 0 {
-                        await appendStarted.open()
-                        await releaseAppend.wait()
-                        return ListRecipesResponse(
-                            pagination: PaginationMetadata(limit: limit, offset: offset, total: 10),
-                            recipes: pastaPage2
-                        )
-                    }
-                    let recipes = query == "cake" ? cakeResults : pastaPage1
-                    return ListRecipesResponse(
-                        pagination: PaginationMetadata(
-                            limit: limit,
-                            offset: offset,
-                            total: query == "cake" ? 1 : 10
-                        ),
-                        recipes: recipes
-                    )
-                },
-                syncRecipes: { _ in
-                    SyncRecipesResponse(deleted: [], recipes: [], syncTimestamp: Date())
-                }
-            ),
-            cache: noCacheClient(),
-            userDefaults: isolatedDefaults(),
-            pageSize: 20
-        )
-
-        viewModel.searchText = "pasta"
-        await viewModel.loadRecipes(reset: true)
-        XCTAssertEqual(viewModel.recipes.map(\.id), pastaPage1.map(\.id))
-        XCTAssertTrue(viewModel.hasMore)
-
-        let loadMoreTask = Task { await viewModel.loadMore() }
-        await appendStarted.wait()
-
-        viewModel.searchText = "cake"
-        await viewModel.loadRecipes(reset: true)
-
-        releaseAppend.open()
-        await loadMoreTask.value
-
-        XCTAssertEqual(viewModel.recipes.map(\.id), cakeResults.map(\.id))
-        XCTAssertEqual(viewModel.totalCount, 1)
-        XCTAssertFalse(viewModel.hasMore)
-        XCTAssertFalse(viewModel.isLoadingMore)
-        XCTAssertFalse(viewModel.loadMoreFailed)
-    }
-
-    // A sort change leaves the query string alone, so only the request
-    // generation can tell the in-flight append apart from the new list.
-    func testSortChangeDuringLoadMoreDiscardsStaleAppend() async {
-        let newestPage1 = [makeRecipe(title: "B"), makeRecipe(title: "C")]
-        let newestPage2 = [makeRecipe(title: "D")]
-        let titlePage1 = [makeRecipe(title: "A")]
-        let appendStarted = Gate()
-        let releaseAppend = Gate()
-
-        let viewModel = RecipeListViewModel(
-            api: RecipeListViewAPIClient(
-                listAllTags: { TagsListResponse(tags: []) },
-                listRecipes: { limit, offset, _, sortBy, _ in
-                    if offset > 0 {
-                        await appendStarted.open()
-                        await releaseAppend.wait()
-                        return ListRecipesResponse(
-                            pagination: PaginationMetadata(limit: limit, offset: offset, total: 10),
-                            recipes: newestPage2
-                        )
-                    }
-                    let byTitle = sortBy == .title
-                    return ListRecipesResponse(
-                        pagination: PaginationMetadata(
-                            limit: limit,
-                            offset: offset,
-                            total: byTitle ? 1 : 10
-                        ),
-                        recipes: byTitle ? titlePage1 : newestPage1
-                    )
-                },
-                syncRecipes: { _ in
-                    SyncRecipesResponse(deleted: [], recipes: [], syncTimestamp: Date())
-                }
-            ),
-            cache: noCacheClient(),
-            userDefaults: isolatedDefaults(),
-            pageSize: 20
-        )
-
-        // A source filter keeps this off the cacheable-browse path without
-        // adding a text query, so sortBy still reaches the API.
-        viewModel.sourceFilter = "NYT"
-        viewModel.sortOrder = .newest
-        await viewModel.loadRecipes(reset: true)
-        XCTAssertEqual(viewModel.recipes.map(\.id), newestPage1.map(\.id))
-
-        let loadMoreTask = Task { await viewModel.loadMore() }
-        await appendStarted.wait()
-
-        viewModel.sortOrder = .title
-        await viewModel.loadRecipes(reset: true)
-
-        releaseAppend.open()
-        await loadMoreTask.value
-
-        XCTAssertEqual(viewModel.recipes.map(\.id), titlePage1.map(\.id))
-        XCTAssertEqual(viewModel.totalCount, 1)
-        XCTAssertFalse(viewModel.hasMore)
-        XCTAssertFalse(viewModel.isLoadingMore)
-    }
-
     func testClearFiltersClearsSearchAndPersistedFilters() {
         let viewModel = RecipeListViewModel(
-            api: emptyAPIClient(),
-            cache: noCacheClient(),
-            userDefaults: isolatedDefaults(),
+            api: RecipeListTestSupport.emptyAPIClient(),
+            cache: RecipeListTestSupport.noCacheClient(),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20
         )
 
@@ -234,79 +113,11 @@ final class RecipeListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.photoSizeFilter, "")
     }
 
-    private func makeRecipe(
-        title: String,
-        tags: [String] = [],
-        createdAt: Date = Date(timeIntervalSince1970: 100),
-        updatedAt: Date = Date(timeIntervalSince1970: 200)
-    ) -> RecipeSummary {
-        RecipeSummary(
-            createdAt: createdAt,
-            description: nil,
-            id: UUID(),
-            rating: nil,
-            tags: tags,
-            thumbnailPhotoId: nil,
-            title: title,
-            updatedAt: updatedAt
-        )
-    }
-
-    private func noCacheClient() -> RecipeListCacheClient {
-        RecipeListCacheClient(
-            currentAccountKey: { nil },
-            lastSyncAt: { _ in nil },
-            clearLastSyncAt: { _ in },
-            loadRecipes: { _ in [] },
-            apply: { _, _ in }
-        )
-    }
-
-    private func emptyAPIClient() -> RecipeListViewAPIClient {
-        RecipeListViewAPIClient(
-            listAllTags: { TagsListResponse(tags: []) },
-            listRecipes: { limit, offset, _, _, _ in
-                ListRecipesResponse(
-                    pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),
-                    recipes: []
-                )
-            },
-            syncRecipes: { _ in SyncRecipesResponse(deleted: [], recipes: [], syncTimestamp: Date()) }
-        )
-    }
-
-    private func isolatedDefaults() -> UserDefaults {
-        let suiteName = "RecipeListViewModelTests-\(UUID().uuidString)"
-        let defaults = UserDefaults(suiteName: suiteName)!
-        defaults.removePersistentDomain(forName: suiteName)
-        return defaults
-    }
-
     private struct ListRequest {
         let limit: Int64
         let offset: Int64
         let query: String?
         let sortBy: SortBy?
         let sortDir: Direction?
-    }
-}
-
-/// One-shot latch used to hold a fake API call open, so a test can interleave
-/// other work while a request is in flight.
-@MainActor
-private final class Gate {
-    private var continuation: CheckedContinuation<Void, Never>?
-    private var isOpen = false
-
-    func wait() async {
-        guard !isOpen else { return }
-        await withCheckedContinuation { self.continuation = $0 }
-    }
-
-    func open() {
-        guard !isOpen else { return }
-        isOpen = true
-        continuation?.resume()
-        continuation = nil
     }
 }
