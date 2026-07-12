@@ -93,6 +93,14 @@ def _wait_until_blocked_behind(database_url, holder_pid, write):
     query text, so concurrently running tests (pytest-xdist) can't satisfy the
     wait by accident. Returns early if the write future finishes, so a write
     that fails outright surfaces its error instead of burning the timeout.
+
+    Also requires the blocked backend to already hold an assigned transaction
+    id (`backend_xid`). The sync race tests need the writer's xid to predate
+    the racing snapshot — that is the window the xid watermark exists to
+    close. Postgres assigns the xid on entry to heap_insert/heap_update,
+    before the tuple-lock wait, so this holds today; checking it here makes
+    the wait time out loudly rather than let those tests pass vacuously if it
+    ever stopped holding.
     """
     deadline = time.monotonic() + LOCK_WAIT_TIMEOUT_SECONDS
     with psycopg.connect(database_url, autocommit=True) as conn:
@@ -102,13 +110,16 @@ def _wait_until_blocked_behind(database_url, holder_pid, write):
             waiting = conn.execute(
                 "SELECT count(*) FROM pg_stat_activity"
                 " WHERE wait_event_type = 'Lock'"
+                " AND backend_xid IS NOT NULL"
                 " AND %s = ANY(pg_blocking_pids(pid))",
                 (holder_pid,),
             ).fetchone()[0]
             if waiting:
                 return
             time.sleep(0.1)
-    raise TimeoutError("the write never started waiting on the row lock")
+    raise TimeoutError(
+        "the write never started waiting on the row lock with an assigned xid"
+    )
 
 
 def _run_in_daemon_thread(fn):
