@@ -31,7 +31,8 @@ class AuthenticatedImageLoader: ObservableObject {
     private let imageCache: AuthenticatedImageCache
     private let tokenProvider: TokenProvider
     private let imageFetcher: ImageFetcher
-    private var currentTask: Task<Void, Never>?
+    /// The in-flight load. Readable so tests can await a load instead of polling for its result.
+    private(set) var currentTask: Task<Void, Never>?
 
     init(
         imageCache: AuthenticatedImageCache = .shared,

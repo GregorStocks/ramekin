@@ -167,16 +167,9 @@ final class ShoppingListStoreTests: XCTestCase {
     }
 
     private func makeStorage() -> (CoreDataStack, UserDefaults) {
-        let container = NSPersistentContainer(name: "Ramekin")
-        let description = NSPersistentStoreDescription()
-        description.type = NSInMemoryStoreType
-        container.persistentStoreDescriptions = [description]
-        container.loadPersistentStores { _, error in
-            XCTAssertNil(error)
-        }
         let defaults = UserDefaults(suiteName: defaultsSuiteName)!
         defaults.removePersistentDomain(forName: defaultsSuiteName)
-        return (CoreDataStack(container: container), defaults)
+        return (CoreDataTestStack.makeStack(), defaults)
     }
 
     private var defaultsSuiteName: String { "ShoppingListStoreTests.\(name)" }
