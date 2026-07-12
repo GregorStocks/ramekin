@@ -1,0 +1,16 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_recipe_title_precedes_inline_section_label.html",
+  "source_url": "https://example.com/grandmas-apple-pie",
+  "expected": {
+    "title": "Grandma's Apple Pie",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "For the Crust",
+      "2 cups flour",
+      "1/4 cup ice water"
+    ],
+    "instructions_contains": [
+      "Cut the butter into the flour"
+    ]
+  }
+}

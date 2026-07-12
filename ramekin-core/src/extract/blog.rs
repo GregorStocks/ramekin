@@ -100,6 +100,37 @@ pub(super) fn extract_bold_heading(chunk: &str) -> Option<String> {
     Some(decode_html_entities(bold_text))
 }
 
+/// If a single `<br>`-delimited part is entirely one bold/strong heading
+/// (e.g. `<b>Steakhouse Mustard Vinaigrette</b>`) with no other text on the
+/// line, return the decoded heading. We deliberately do not reject
+/// ingredient-shaped text (a leading quantity, "Fresh…", "Salt…") here: the
+/// heading is used only as a block boundary and is never stripped, so a title
+/// like `<b>Fresh Tomato Salsa</b>` or `<b>5-Minute Sauce</b>` must still count.
+fn bold_only_heading(part: &str) -> Option<String> {
+    let title = extract_bold_heading(part)?;
+    // The line must be *only* the bold heading — no other text alongside it, so
+    // a bold word inside an ingredient line ("1 cup <b>packed</b> sugar") is not
+    // mistaken for a heading.
+    if !fragment_to_text(&BOLD_TEXT_REGEX.replace(part, "")).is_empty() {
+        return None;
+    }
+    Some(title)
+}
+
+/// If the chunk's first non-empty `<br>`-delimited part is a standalone bold
+/// heading, return it. Bloggers sometimes write a sub-recipe's title inline at
+/// the top of the same `<p>` as its ingredient list
+/// (`<p><b>Vinaigrette</b><br>1 tbsp…`) rather than in a separate preceding
+/// paragraph; this recognizes that title so the block scanner can attribute it
+/// correctly. See [`bold_only_heading`].
+fn inline_leading_bold_title(chunk: &str) -> Option<String> {
+    let first_part = BR_TAG_REGEX
+        .split(chunk)
+        .map(str::trim)
+        .find(|part| !part.is_empty())?;
+    bold_only_heading(first_part)
+}
+
 pub(super) fn has_instruction_paragraph_between(
     chunks: &[&str],
     start_idx: usize,
@@ -325,8 +356,18 @@ fn collect_unstructured_recipe_blocks(
     let mut blocks: Vec<UnstructuredRecipeBlock> = Vec::new();
     let mut scan_start = 0;
     for &ingredient_idx in ingredient_chunk_indices {
-        let (block_title, block_title_chunk_idx) =
-            find_nearest_unstructured_block_title(chunks, scan_start, ingredient_idx);
+        // Inline titles introduce only *later* sub-recipe blocks. For the first
+        // block, a bold heading at the top of the ingredient list is a section
+        // label ("Ingredients", "For the dough") or a duplicate of the title,
+        // not the recipe title itself — that comes from a preceding paragraph
+        // or the page <title> — so don't let it become the first block's title.
+        let allow_inline_title = !blocks.is_empty();
+        let (block_title, block_title_chunk_idx) = find_nearest_unstructured_block_title(
+            chunks,
+            scan_start,
+            ingredient_idx,
+            allow_inline_title,
+        );
 
         if starts_new_unstructured_block(&blocks, chunks, block_title_chunk_idx) {
             blocks.push(UnstructuredRecipeBlock {
@@ -348,7 +389,11 @@ fn find_nearest_unstructured_block_title(
     chunks: &[&str],
     scan_start: usize,
     ingredient_idx: usize,
+    allow_inline_title: bool,
 ) -> (Option<String>, Option<usize>) {
+    // Prefer a heading in a preceding paragraph. For the first block that is the
+    // recipe title, so it must win over an inline bold heading at the top of the
+    // ingredient `<p>`.
     for i in (scan_start..ingredient_idx).rev() {
         let chunk = chunks[i].trim();
         if chunk.is_empty() {
@@ -357,6 +402,19 @@ fn find_nearest_unstructured_block_title(
         if let Some(title) = extract_bold_heading(chunk) {
             return (Some(title), Some(i));
         }
+    }
+    // No preceding heading in this window: a *later* ingredient `<p>` that opens
+    // with a standalone bold heading (no separate heading paragraph) marks a new
+    // sub-recipe block — this is how a vinaigrette/sauce after the main recipe is
+    // introduced. We use it only as a block *boundary* (so the previous recipe's
+    // instructions are attributed correctly), not as a title: the heading text
+    // is left in the ingredient list, where the ingredient parser classifies it
+    // as a section header if it is one — and if it is really a bold ingredient
+    // (e.g. `<b>Chopped parsley</b>`), it survives as an ingredient rather than
+    // being consumed as a title. Gated to non-first blocks so a first-block
+    // heading can't suppress the page-title fallback.
+    if allow_inline_title && inline_leading_bold_title(chunks[ingredient_idx]).is_some() {
+        return (None, Some(ingredient_idx));
     }
     (None, None)
 }
