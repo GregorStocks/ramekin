@@ -48,9 +48,9 @@ final class RecipeListViewModel: ObservableObject {
         didSet { userDefaults.set(photoDimensionFilter, forKey: Self.photoDimensionFilterKey) }
     }
 
-    private let api: RecipeListViewAPIClient
-    private let cache: RecipeListCacheClient
-    private let userDefaults: UserDefaults
+    let api: RecipeListViewAPIClient
+    let cache: RecipeListCacheClient
+    let userDefaults: UserDefaults
     private let pageSize: Int64
     private let syncPageSize: Int64
     /// Wall-clock budget for freshening a list already served from the cache.
@@ -177,64 +177,8 @@ extension RecipeListViewModel {
         reloadRecipes()
     }
 
-    func loadPersistedTags() {
-        guard let accountKey = cache.currentAccountKey() else {
-            selectedTags = []
-            return
-        }
-        selectedTags = TagFilterCache.loadSelectedTags(accountKey: accountKey, userDefaults: userDefaults)
-    }
-
-    func loadPersistedAvailableTags() {
-        guard let accountKey = cache.currentAccountKey() else {
-            availableTags = []
-            return
-        }
-        availableTags = TagFilterCache.loadAvailableTags(accountKey: accountKey, userDefaults: userDefaults)
-    }
-
-    func handleTagsDidChange() {
-        loadPersistedTags()
-        loadPersistedAvailableTags()
-        invalidateRecipeCacheSync()
-        reloadRecipes()
-    }
-
     func handleRecipeDeleted() {
         Task { await loadRecipes(reset: true) }
-    }
-
-    func loadTags() async {
-        guard let accountKey = cache.currentAccountKey() else {
-            selectedTags = []
-            availableTags = []
-            return
-        }
-        do {
-            let response = try await DebugLogger.shared.timed("listAllTags API", source: "RecipeList") {
-                try await api.listAllTags()
-            }
-            guard cache.currentAccountKey() == accountKey else { return }
-            availableTags = response.tags
-            TagFilterCache.saveAvailableTags(
-                response.tags,
-                accountKey: accountKey,
-                userDefaults: userDefaults
-            )
-            TagFilterCache.pruneSelectedTags(
-                validNames: Set(response.tags.map(\.name)),
-                accountKey: accountKey,
-                userDefaults: userDefaults
-            )
-            selectedTags = TagFilterCache.loadSelectedTags(
-                accountKey: accountKey,
-                userDefaults: userDefaults
-            )
-        } catch is CancellationError {
-            DebugLogger.shared.log("loadTags cancelled", source: "RecipeList")
-        } catch {
-            DebugLogger.shared.log("loadTags error: \(error.localizedDescription)", source: "RecipeList")
-        }
     }
 
     func loadRecipes(reset: Bool, forceNetwork: Bool = false) async {
@@ -405,24 +349,6 @@ private extension RecipeListViewModel {
         isLoadingMore = false
     }
 
-    func persistSelectedTags() {
-        guard let accountKey = cache.currentAccountKey() else { return }
-        TagFilterCache.saveSelectedTags(
-            selectedTags,
-            accountKey: accountKey,
-            userDefaults: userDefaults
-        )
-    }
-
-    func persistAvailableTags() {
-        guard let accountKey = cache.currentAccountKey() else { return }
-        TagFilterCache.saveAvailableTags(
-            availableTags,
-            accountKey: accountKey,
-            userDefaults: userDefaults
-        )
-    }
-
     func syncCachedRecipes(key: ListRequestKey) async {
         let logger = DebugLogger.shared
 
@@ -495,41 +421,14 @@ private extension RecipeListViewModel {
         }
     }
 
-    /// Pages the sync sweep, applying each page to the cache as it lands so an
-    /// interrupted sweep resumes from its pending state instead of re-fetching
-    /// every page. The persisted cursor only advances once the sweep
-    /// completes, and it advances to the sweep's *first* page watermark — a
-    /// change committed mid-sweep can land in an id range the sweep already
-    /// passed, and only the first watermark is low enough to redeliver it.
     func runSyncSweep(cursor: Int64?, accountKey: String) async throws {
-        var afterId: UUID?
-        var sweepWatermark: Int64?
-        if let pending = cache.pendingSyncSweep(accountKey), pending.since == cursor {
-            afterId = pending.afterId
-            sweepWatermark = pending.watermark
-        }
-
-        while true {
-            let response = try await api.syncRecipes(cursor, syncPageSize, afterId)
-            try cache.apply(response, accountKey)
-            let watermark = sweepWatermark ?? response.cursor
-            sweepWatermark = watermark
-
-            if response.hasMore {
-                guard let lastId = response.recipes.last?.id else {
-                    fatalError("Sync page claims more pages but contains no recipes")
-                }
-                afterId = lastId
-                cache.setPendingSyncSweep(
-                    PendingSyncSweep(since: cursor, afterId: lastId, watermark: watermark),
-                    accountKey
-                )
-            } else {
-                cache.setSyncCursor(watermark, accountKey)
-                cache.clearPendingSyncSweep(accountKey)
-                return
-            }
-        }
+        try await RecipeSyncSweep.run(
+            cursor: cursor,
+            accountKey: accountKey,
+            pageSize: syncPageSize,
+            api: api,
+            cache: cache
+        )
     }
 
     func applyCachedRecipes(_ cachedRecipes: [RecipeSummary]) {
