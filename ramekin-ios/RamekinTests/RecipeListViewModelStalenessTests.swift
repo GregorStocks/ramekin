@@ -236,9 +236,7 @@ final class RecipeListViewModelStalenessTests: XCTestCase {
             api: RecipeListViewAPIClient(
                 listAllTags: { TagsListResponse(tags: []) },
                 listRecipes: listRecipes,
-                syncRecipes: { _ in
-                    SyncRecipesResponse(cursor: 1, deleted: [], recipes: [])
-                }
+                syncRecipes: { _, _, _ in RecipeListTestSupport.emptySyncResponse() }
             ),
             cache: RecipeListTestSupport.noCacheClient(),
             userDefaults: RecipeListTestSupport.isolatedDefaults(),

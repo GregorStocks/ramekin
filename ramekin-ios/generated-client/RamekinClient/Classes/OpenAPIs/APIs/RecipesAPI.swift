@@ -491,12 +491,14 @@ open class RecipesAPI {
 
     /**
 
-     - parameter cursor: (query) Cursor returned by the previous sync. Absent means a full sync. (optional)
+     - parameter limit: (query) Maximum number of recipes returned per page, between 1 and 500. 
+     - parameter cursor: (query) Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
+     - parameter afterId: (query) ID of the last recipe on the previous page. Absent on a sweep&#39;s first page. (optional)
      - returns: SyncRecipesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func syncRecipes(cursor: Int64? = nil) async throws -> SyncRecipesResponse {
-        return try await syncRecipesWithRequestBuilder(cursor: cursor).execute().body
+    open class func syncRecipes(limit: Int64, cursor: Int64? = nil, afterId: UUID? = nil) async throws -> SyncRecipesResponse {
+        return try await syncRecipesWithRequestBuilder(limit: limit, cursor: cursor, afterId: afterId).execute().body
     }
 
     /**
@@ -504,10 +506,12 @@ open class RecipesAPI {
      - Bearer Token:
        - type: http
        - name: bearer_auth
-     - parameter cursor: (query) Cursor returned by the previous sync. Absent means a full sync. (optional)
+     - parameter limit: (query) Maximum number of recipes returned per page, between 1 and 500. 
+     - parameter cursor: (query) Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
+     - parameter afterId: (query) ID of the last recipe on the previous page. Absent on a sweep&#39;s first page. (optional)
      - returns: RequestBuilder<SyncRecipesResponse> 
      */
-    open class func syncRecipesWithRequestBuilder(cursor: Int64? = nil) -> RequestBuilder<SyncRecipesResponse> {
+    open class func syncRecipesWithRequestBuilder(limit: Int64, cursor: Int64? = nil, afterId: UUID? = nil) -> RequestBuilder<SyncRecipesResponse> {
         let localVariablePath = "/api/recipes/sync"
         let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -515,6 +519,8 @@ open class RecipesAPI {
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
             "cursor": (wrappedValue: cursor?.encodeToJSON(), isExplode: true),
+            "limit": (wrappedValue: limit.encodeToJSON(), isExplode: true),
+            "after_id": (wrappedValue: afterId?.encodeToJSON(), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: Any?] = [

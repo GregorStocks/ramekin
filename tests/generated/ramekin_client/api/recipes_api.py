@@ -3331,7 +3331,9 @@ class RecipesApi:
     @validate_call
     def sync_recipes(
         self,
-        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by the previous sync. Absent means a full sync.")] = None,
+        limit: Annotated[StrictInt, Field(description="Maximum number of recipes returned per page, between 1 and 500.")],
+        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.")] = None,
+        after_id: Annotated[Optional[UUID], Field(description="ID of the last recipe on the previous page. Absent on a sweep's first page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3348,8 +3350,12 @@ class RecipesApi:
         """sync_recipes
 
 
-        :param cursor: Cursor returned by the previous sync. Absent means a full sync.
+        :param limit: Maximum number of recipes returned per page, between 1 and 500. (required)
+        :type limit: int
+        :param cursor: Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.
         :type cursor: int
+        :param after_id: ID of the last recipe on the previous page. Absent on a sweep's first page.
+        :type after_id: UUID
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3373,7 +3379,9 @@ class RecipesApi:
         """ # noqa: E501
 
         _param = self._sync_recipes_serialize(
+            limit=limit,
             cursor=cursor,
+            after_id=after_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3382,6 +3390,7 @@ class RecipesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SyncRecipesResponse",
+            '400': "ErrorResponse",
             '401': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -3398,7 +3407,9 @@ class RecipesApi:
     @validate_call
     def sync_recipes_with_http_info(
         self,
-        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by the previous sync. Absent means a full sync.")] = None,
+        limit: Annotated[StrictInt, Field(description="Maximum number of recipes returned per page, between 1 and 500.")],
+        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.")] = None,
+        after_id: Annotated[Optional[UUID], Field(description="ID of the last recipe on the previous page. Absent on a sweep's first page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3415,8 +3426,12 @@ class RecipesApi:
         """sync_recipes
 
 
-        :param cursor: Cursor returned by the previous sync. Absent means a full sync.
+        :param limit: Maximum number of recipes returned per page, between 1 and 500. (required)
+        :type limit: int
+        :param cursor: Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.
         :type cursor: int
+        :param after_id: ID of the last recipe on the previous page. Absent on a sweep's first page.
+        :type after_id: UUID
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3440,7 +3455,9 @@ class RecipesApi:
         """ # noqa: E501
 
         _param = self._sync_recipes_serialize(
+            limit=limit,
             cursor=cursor,
+            after_id=after_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3449,6 +3466,7 @@ class RecipesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SyncRecipesResponse",
+            '400': "ErrorResponse",
             '401': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -3465,7 +3483,9 @@ class RecipesApi:
     @validate_call
     def sync_recipes_without_preload_content(
         self,
-        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by the previous sync. Absent means a full sync.")] = None,
+        limit: Annotated[StrictInt, Field(description="Maximum number of recipes returned per page, between 1 and 500.")],
+        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.")] = None,
+        after_id: Annotated[Optional[UUID], Field(description="ID of the last recipe on the previous page. Absent on a sweep's first page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3482,8 +3502,12 @@ class RecipesApi:
         """sync_recipes
 
 
-        :param cursor: Cursor returned by the previous sync. Absent means a full sync.
+        :param limit: Maximum number of recipes returned per page, between 1 and 500. (required)
+        :type limit: int
+        :param cursor: Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor.
         :type cursor: int
+        :param after_id: ID of the last recipe on the previous page. Absent on a sweep's first page.
+        :type after_id: UUID
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3507,7 +3531,9 @@ class RecipesApi:
         """ # noqa: E501
 
         _param = self._sync_recipes_serialize(
+            limit=limit,
             cursor=cursor,
+            after_id=after_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3516,6 +3542,7 @@ class RecipesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SyncRecipesResponse",
+            '400': "ErrorResponse",
             '401': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -3527,7 +3554,9 @@ class RecipesApi:
 
     def _sync_recipes_serialize(
         self,
+        limit,
         cursor,
+        after_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3553,6 +3582,14 @@ class RecipesApi:
         if cursor is not None:
             
             _query_params.append(('cursor', cursor))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if after_id is not None:
+            
+            _query_params.append(('after_id', after_id))
             
         # process the header parameters
         # process the form parameters

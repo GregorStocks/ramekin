@@ -1,0 +1,29 @@
+{
+  "title": "Import jobs hard-fail when OPENROUTER_API_KEY is unset, before \
+save_recipe runs",
+  "description": "build_registry in server/src/scraping/runner.rs calls \
+CachingAiClient::from_env()? while constructing the step registry, so with \
+OPENROUTER_API_KEY unset every import/scrape job fails before any step — \
+including save_recipe — executes. This is inconsistent with the design of the \
+AI steps themselves: every auto-enrichment step is continues_on_failure and \
+runs after save_recipe, so an *invalid* key imports recipes fine (enrichments \
+fail soft) while a *missing* key imports nothing. This is why the iOS CI \
+database had zero recipes: the workflow set no key, the seed CLI reported \
+success (it only sees job enqueue), and the old vacuous UI test hid the empty \
+list. The iOS workflow now works around it with a dummy OPENROUTER_API_KEY. \
+Decide the intended behavior: either defer AI client construction to the \
+enrich steps (missing key behaves like invalid key: recipe saves, enrichments \
+fail soft), or fail fast at server startup when auto-enrichments are \
+configured but the key is missing, so misconfiguration is loud instead of \
+per-job and silent from the importer's perspective.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "server",
+    "pipeline",
+    "ci",
+  ],
+  "created_at": "2026-07-12T13:35:00-07:00",
+  "updated_at": "2026-07-12T13:35:00-07:00",
+}

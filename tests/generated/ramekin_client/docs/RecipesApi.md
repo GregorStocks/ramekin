@@ -928,7 +928,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sync_recipes**
-> SyncRecipesResponse sync_recipes(cursor=cursor)
+> SyncRecipesResponse sync_recipes(limit, cursor=cursor, after_id=after_id)
 
 ### Example
 
@@ -960,10 +960,12 @@ configuration = ramekin_client.Configuration(
 with ramekin_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ramekin_client.RecipesApi(api_client)
-    cursor = 56 # int | Cursor returned by the previous sync. Absent means a full sync. (optional)
+    limit = 56 # int | Maximum number of recipes returned per page, between 1 and 500.
+    cursor = 56 # int | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
+    after_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | ID of the last recipe on the previous page. Absent on a sweep's first page. (optional)
 
     try:
-        api_response = api_instance.sync_recipes(cursor=cursor)
+        api_response = api_instance.sync_recipes(limit, cursor=cursor, after_id=after_id)
         print("The response of RecipesApi->sync_recipes:\n")
         pprint(api_response)
     except Exception as e:
@@ -977,7 +979,9 @@ with ramekin_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **int**| Cursor returned by the previous sync. Absent means a full sync. | [optional] 
+ **limit** | **int**| Maximum number of recipes returned per page, between 1 and 500. | 
+ **cursor** | **int**| Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. | [optional] 
+ **after_id** | **UUID**| ID of the last recipe on the previous page. Absent on a sweep&#39;s first page. | [optional] 
 
 ### Return type
 
@@ -997,6 +1001,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Recipe changes for local cache sync |  -  |
+**400** | Invalid limit |  -  |
 **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

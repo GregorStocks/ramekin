@@ -30,7 +30,7 @@ SYNC_TIMEOUT_SECONDS = 30
 
 
 def _sync(client, server_url, cursor=None):
-    params = {} if cursor is None else {"cursor": cursor}
+    params = {"limit": 500} if cursor is None else {"limit": 500, "cursor": cursor}
     response = requests.get(
         f"{server_url}/api/recipes/sync",
         headers={"Authorization": f"Bearer {client.configuration.access_token}"},
