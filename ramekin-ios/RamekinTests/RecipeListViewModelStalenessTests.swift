@@ -159,6 +159,41 @@ final class RecipeListViewModelStalenessTests: XCTestCase {
         XCTAssertFalse(viewModel.isLoadingMore)
     }
 
+    // The mirror image of the append rule, and deliberately different: an initial
+    // response replaces the whole list, so it cannot mix two filters together. It
+    // still applies even though the user has changed a filter whose reload has not
+    // started — the advanced-filters sheet mutates sourceFilter on every keystroke
+    // and only reloads when applied, so rejecting here would strand the list.
+    func testInitialResponseAppliesWhileFilterChangeAwaitsItsReload() async {
+        let pastaPage1 = [RecipeListTestSupport.makeRecipe(title: "Pasta 1")]
+        let loadStarted = RequestGate()
+        let releaseLoad = RequestGate()
+
+        let viewModel = makeViewModel(
+            listRecipes: { limit, offset, _, _, _ in
+                await loadStarted.open()
+                await releaseLoad.wait()
+                return ListRecipesResponse(
+                    pagination: PaginationMetadata(limit: limit, offset: offset, total: 1),
+                    recipes: pastaPage1
+                )
+            }
+        )
+
+        viewModel.searchText = "pasta"
+        let loadTask = Task { await viewModel.loadRecipes(reset: true) }
+        await loadStarted.wait()
+
+        // Typing in the advanced-filters sheet: the key moves on, but no reload
+        // is scheduled until the user applies.
+        viewModel.sourceFilter = "NYT"
+        releaseLoad.open()
+        await loadTask.value
+
+        XCTAssertEqual(viewModel.recipes.map(\.id), pastaPage1.map(\.id))
+        XCTAssertFalse(viewModel.isLoading)
+    }
+
     func testLoadMoreDoesNotStartAfterFilterChangeBeforeReload() async {
         let pastaPage1 = [
             RecipeListTestSupport.makeRecipe(title: "Pasta 1"),

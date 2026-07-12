@@ -256,16 +256,24 @@ extension RecipeListViewModel {
         let useRelevance = RecipeListFilterSupport.hasTextQuery(currentFilterState)
 
         do {
+            // Every parameter comes from `key`, so the response is guaranteed to
+            // describe the filter+sort this request was started for.
             let response = try await logger.timed("listRecipes API", source: "RecipeList") {
                 try await api.listRecipes(
                     pageSize,
                     0,
-                    queryValue,
-                    useRelevance ? nil : sortOrder.sortBy,
-                    useRelevance ? nil : sortOrder.sortDir
+                    key.query,
+                    useRelevance ? nil : key.sortOrder.sortBy,
+                    useRelevance ? nil : key.sortOrder.sortDir
                 )
             }
 
+            // Deliberately no currentKey() check, unlike loadMore(). This response
+            // replaces the whole list, so it cannot mix two filters together — it
+            // just makes the list fresher while a reload is pending. Rejecting it
+            // would strand the list when no reload is coming: the advanced-filters
+            // sheet mutates sourceFilter and friends on every keystroke but only
+            // reloads when applied.
             guard isCurrentRequest(generation, key) else {
                 logger.log("loadRecipes: superseded request, discarding results", source: "RecipeList")
                 return
