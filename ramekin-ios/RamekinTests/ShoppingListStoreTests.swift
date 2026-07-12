@@ -11,7 +11,7 @@ final class ShoppingListStoreTests: XCTestCase {
         let store = ShoppingListStore(
             coreDataStack: stack,
             userDefaults: defaults,
-            initialAccountKey: nil,
+            initialAccountKey: firstAccount,
             automaticallySync: false,
             syncItems: { request in
                 requests.append(request)
@@ -90,7 +90,7 @@ final class ShoppingListStoreTests: XCTestCase {
         let store = ShoppingListStore(
             coreDataStack: stack,
             userDefaults: defaults,
-            initialAccountKey: firstAccount,
+            initialAccountKey: nil,
             automaticallySync: false,
             syncItems: {
                 request = $0
