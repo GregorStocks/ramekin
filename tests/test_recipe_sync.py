@@ -93,6 +93,7 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
     recipes_api.update_recipe(
         updated.id,
         UpdateRecipeRequest(
+            expected_version_id=recipes_api.get_recipe(updated.id).version_id,
             title="After Update",
             ingredients=[make_ingredient(item="brown rice", note="rinsed")],
             instructions="Simmer it.",

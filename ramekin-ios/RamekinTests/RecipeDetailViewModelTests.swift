@@ -212,6 +212,7 @@ final class RecipeDetailViewModelTests: XCTestCase {
 
         XCTAssertEqual(updateRequest?.title, "Updated")
         XCTAssertEqual(updateRequest?.instructions, "Updated instructions")
+        XCTAssertEqual(updateRequest?.expectedVersionId, original.versionId)
         XCTAssertEqual(viewModel.recipe?.title, "Updated")
         XCTAssertNil(viewModel.enrichResult)
     }
@@ -265,7 +266,7 @@ private func makeAPI(
     listVersions: @escaping (UUID) async throws -> VersionListResponse = { _ in throw UnexpectedAPICall.unexpected },
     normalizeTitle: @escaping (UUID) async throws -> NormalizeTitleResponse = { _ in throw UnexpectedAPICall.unexpected },
     rescrape: @escaping (UUID) async throws -> RescrapeResponse = { _ in throw UnexpectedAPICall.unexpected },
-    revertRecipe: @escaping (UUID, RecipeResponse) async throws -> Void = { _, _ in throw UnexpectedAPICall.unexpected },
+    revertRecipe: @escaping (UUID, RecipeResponse, UUID) async throws -> Void = { _, _, _ in throw UnexpectedAPICall.unexpected },
     updateRecipe: @escaping (UUID, UpdateRecipeRequest) async throws -> Void = { _, _ in throw UnexpectedAPICall.unexpected }
 ) -> RecipeDetailViewAPIClient {
     RecipeDetailViewAPIClient(

@@ -13,10 +13,12 @@ use ramekin_core::pipeline::{
 
 use crate::db::DbPool;
 use crate::models::NewRecipeVersion;
-use crate::recipes::{create_new_version, TagSource};
-use crate::schema::{recipe_versions, recipes};
+use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
+use crate::schema::recipe_versions;
 
-use super::helpers::{recipe_id_from_save_output, SaveOutputReadErrorExt};
+use super::helpers::{
+    recipe_id_from_save_output, version_id_from_pipeline_outputs, SaveOutputReadErrorExt,
+};
 
 /// Server implementation of ApplyNormalizedTitle step.
 pub struct ApplyNormalizedTitleStep {
@@ -111,7 +113,23 @@ impl PipelineStep for ApplyNormalizedTitleStep {
             };
         }
 
-        match self.apply_title(recipe_id, &normalized_title) {
+        let expected_version_id =
+            match version_id_from_pipeline_outputs(ctx, &[("save_recipe", "version_id")]) {
+                Ok(version_id) => version_id,
+                Err(error) => {
+                    return StepResult {
+                        step_name: Self::NAME.to_string(),
+                        success: false,
+                        output: json!({ "error": error }),
+                        error: Some(error),
+                        duration_ms: start.elapsed().as_millis() as u64,
+                        next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                            .map(str::to_string),
+                    };
+                }
+            };
+
+        match self.apply_title(recipe_id, expected_version_id, &normalized_title) {
             Ok(version_id) => StepResult {
                 step_name: Self::NAME.to_string(),
                 success: true,
@@ -137,26 +155,25 @@ impl PipelineStep for ApplyNormalizedTitleStep {
 }
 
 impl ApplyNormalizedTitleStep {
-    fn apply_title(&self, recipe_id: Uuid, normalized_title: &str) -> Result<Uuid, String> {
-        use crate::models::{Recipe, RecipeVersion};
+    fn apply_title(
+        &self,
+        recipe_id: Uuid,
+        expected_version_id: Uuid,
+        normalized_title: &str,
+    ) -> Result<Uuid, String> {
+        use crate::models::RecipeVersion;
 
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
         conn.transaction(|conn| {
-            let recipe: Recipe = recipes::table
-                .find(recipe_id)
-                .select(Recipe::as_select())
-                .first(conn)?;
-            let current_version_id = recipe
-                .current_version_id
-                .ok_or_else(|| diesel::result::Error::RollbackTransaction)?;
             let current: RecipeVersion = recipe_versions::table
-                .find(current_version_id)
+                .filter(recipe_versions::id.eq(expected_version_id))
+                .filter(recipe_versions::recipe_id.eq(recipe_id))
                 .select(RecipeVersion::as_select())
                 .first(conn)?;
 
             if current.title == normalized_title {
-                return Ok(current_version_id);
+                return Ok(expected_version_id);
             }
 
             let new_version = NewRecipeVersion {
@@ -164,11 +181,15 @@ impl ApplyNormalizedTitleStep {
                 ..NewRecipeVersion::copy_of(&current, "normalize_title")
             };
 
-            let new_version_id =
-                create_new_version(conn, &new_version, TagSource::CopyFrom(current_version_id))?;
+            let new_version_id = create_new_version_cas(
+                conn,
+                &new_version,
+                Some(expected_version_id),
+                TagSource::CopyFrom(expected_version_id),
+            )?;
 
             Ok(new_version_id)
         })
-        .map_err(|e: diesel::result::Error| e.to_string())
+        .map_err(|e: VersionWriteError| e.to_string())
     }
 }

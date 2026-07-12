@@ -1225,6 +1225,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Recipe was modified concurrently",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -1530,6 +1540,16 @@
           },
           "404": {
             "description": "Recipe not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Recipe was modified concurrently",
             "content": {
               "application/json": {
                 "schema": {
@@ -4652,6 +4672,9 @@
       },
       "UpdateRecipeRequest": {
         "type": "object",
+        "required": [
+          "expected_version_id"
+        ],
         "properties": {
           "cook_time": {
             "type": [
@@ -4670,6 +4693,11 @@
               "string",
               "null"
             ]
+          },
+          "expected_version_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Version the caller edited. The update conflicts if it is no longer current."
           },
           "ingredients": {
             "type": [

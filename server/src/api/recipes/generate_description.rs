@@ -153,7 +153,12 @@ pub async fn generate_description(
 
         // Compare-and-swap: only repoint if current_version_id hasn't changed
         // since our initial read, preventing overwrites of concurrent edits.
-        create_new_version_cas(conn, &new_version, version_id_snapshot)?;
+        create_new_version_cas(
+            conn,
+            &new_version,
+            version_id_snapshot,
+            crate::recipes::TagSource::CopyFrom(current_version.id),
+        )?;
 
         Ok(())
     });

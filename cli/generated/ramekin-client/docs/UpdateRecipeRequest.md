@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **cook_time** | Option<**String**> |  | [optional]
 **description** | Option<**String**> |  | [optional]
 **difficulty** | Option<**String**> |  | [optional]
+**expected_version_id** | [**uuid::Uuid**](uuid::Uuid.md) | Version the caller edited. The update conflicts if it is no longer current. | 
 **ingredients** | Option<[**Vec<models::Ingredient>**](Ingredient.md)> |  | [optional]
 **instructions** | Option<**String**> |  | [optional]
 **notes** | Option<**String**> |  | [optional]

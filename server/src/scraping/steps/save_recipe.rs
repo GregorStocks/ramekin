@@ -15,8 +15,8 @@ use ramekin_core::{ExtractionMethod, RawRecipe};
 
 use crate::db::DbPool;
 use crate::models::{Ingredient, NewRecipeVersion};
-use crate::recipes::{create_new_version, insert_recipe, TagSource};
-use crate::schema::{recipe_versions, recipes};
+use crate::recipes::{create_new_version_cas, insert_recipe, TagSource, VersionWriteError};
+use crate::schema::recipe_versions;
 
 /// How SaveRecipeStep should behave.
 #[derive(Debug, Clone, Copy)]
@@ -25,11 +25,17 @@ pub enum SaveMode {
     Create,
     /// Update an existing recipe by creating a new version from the newly
     /// scraped data.
-    Rescrape(Uuid),
+    Rescrape {
+        recipe_id: Uuid,
+        expected_version_id: Uuid,
+    },
     /// Update an existing recipe by creating a new version that copies every
     /// field from the current version and only replaces `photo_ids` with the
     /// newly-fetched photos.
-    PhotoOnly(Uuid),
+    PhotoOnly {
+        recipe_id: Uuid,
+        expected_version_id: Uuid,
+    },
 }
 
 /// Server implementation of SaveRecipe step.
@@ -48,19 +54,35 @@ impl SaveRecipeStep {
         }
     }
 
-    pub fn for_rescrape(pool: Arc<DbPool>, user_id: Uuid, recipe_id: Uuid) -> Self {
+    pub fn for_rescrape(
+        pool: Arc<DbPool>,
+        user_id: Uuid,
+        recipe_id: Uuid,
+        expected_version_id: Uuid,
+    ) -> Self {
         Self {
             pool,
             user_id,
-            mode: SaveMode::Rescrape(recipe_id),
+            mode: SaveMode::Rescrape {
+                recipe_id,
+                expected_version_id,
+            },
         }
     }
 
-    pub fn for_photo_rescrape(pool: Arc<DbPool>, user_id: Uuid, recipe_id: Uuid) -> Self {
+    pub fn for_photo_rescrape(
+        pool: Arc<DbPool>,
+        user_id: Uuid,
+        recipe_id: Uuid,
+        expected_version_id: Uuid,
+    ) -> Self {
         Self {
             pool,
             user_id,
-            mode: SaveMode::PhotoOnly(recipe_id),
+            mode: SaveMode::PhotoOnly {
+                recipe_id,
+                expected_version_id,
+            },
         }
     }
 }
@@ -133,8 +155,8 @@ impl PipelineStep for SaveRecipeStep {
             Some(ExtractionMethod::PhotoUpload) => "photo_import",
             _ => match self.mode {
                 SaveMode::Create => "scrape",
-                SaveMode::Rescrape(_) => "rescrape",
-                SaveMode::PhotoOnly(_) => "photo_rescrape",
+                SaveMode::Rescrape { .. } => "rescrape",
+                SaveMode::PhotoOnly { .. } => "photo_rescrape",
             },
         };
 
@@ -209,29 +231,39 @@ impl PipelineStep for SaveRecipeStep {
             SaveMode::Create => {
                 self.create_recipe(&raw_recipe, &photo_ids, &parsed_ingredients, version_source)
             }
-            SaveMode::Rescrape(recipe_id) => self.update_recipe(
+            SaveMode::Rescrape {
                 recipe_id,
+                expected_version_id,
+            } => self.update_recipe(
+                recipe_id,
+                expected_version_id,
                 &raw_recipe,
                 &photo_ids,
                 &parsed_ingredients,
                 version_source,
             ),
-            SaveMode::PhotoOnly(recipe_id) => {
-                self.update_photos_only(recipe_id, &photo_ids, version_source)
+            SaveMode::PhotoOnly {
+                recipe_id,
+                expected_version_id,
+            } => {
+                self.update_photos_only(recipe_id, expected_version_id, &photo_ids, version_source)
             }
         };
 
         match result {
-            Ok(recipe_id) => StepResult {
+            Ok((recipe_id, version_id)) => StepResult {
                 step_name: SaveRecipeStepMeta::NAME.to_string(),
                 success: true,
-                output: json!({ "recipe_id": recipe_id.to_string() }),
+                output: json!({
+                    "recipe_id": recipe_id.to_string(),
+                    "version_id": version_id.to_string(),
+                }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
                 // Photo-only rescrape must not run post-save enrichments:
                 // they can create another version after the photo-only update.
                 next_step: match self.mode {
-                    SaveMode::PhotoOnly(_) => None,
+                    SaveMode::PhotoOnly { .. } => None,
                     _ => first_scrape_auto_applied_ai_step_name().map(str::to_string),
                 },
             },
@@ -254,7 +286,7 @@ impl SaveRecipeStep {
         photo_ids: &[Uuid],
         parsed_ingredients: &[Ingredient],
         version_source: &str,
-    ) -> Result<Uuid, String> {
+    ) -> Result<(Uuid, Uuid), String> {
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
         let ingredients_json =
@@ -296,28 +328,30 @@ impl SaveRecipeStep {
                 version_source,
             };
 
-            create_new_version(
+            let version_id = create_new_version_cas(
                 conn,
                 &new_version,
+                None,
                 TagSource::Names {
                     user_id: self.user_id,
                     names: &category_tags,
                 },
             )?;
 
-            Ok(recipe_id)
+            Ok((recipe_id, version_id))
         })
-        .map_err(|e: diesel::result::Error| e.to_string())
+        .map_err(|e: VersionWriteError| e.to_string())
     }
 
     fn update_recipe(
         &self,
         recipe_id: Uuid,
+        expected_version_id: Uuid,
         raw: &RawRecipe,
         photo_ids: &[Uuid],
         parsed_ingredients: &[Ingredient],
         version_source: &str,
-    ) -> Result<Uuid, String> {
+    ) -> Result<(Uuid, Uuid), String> {
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
         let ingredients_json =
@@ -326,15 +360,9 @@ impl SaveRecipeStep {
         // Convert photo IDs to Option<Uuid> for the database
         let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
 
-        // Use a transaction to create new version and update recipe
+        // Use a transaction to create a new version only if the recipe has not
+        // changed since this rescrape job was created.
         conn.transaction(|conn| {
-            let current_version_id: Option<Uuid> = recipes::table
-                .find(recipe_id)
-                .select(recipes::current_version_id)
-                .first(conn)?;
-            let current_version_id =
-                current_version_id.ok_or_else(|| diesel::result::Error::RollbackTransaction)?;
-
             // Create a new version
             let new_version = NewRecipeVersion {
                 recipe_id,
@@ -356,11 +384,16 @@ impl SaveRecipeStep {
                 version_source,
             };
 
-            create_new_version(conn, &new_version, TagSource::CopyFrom(current_version_id))?;
+            let version_id = create_new_version_cas(
+                conn,
+                &new_version,
+                Some(expected_version_id),
+                TagSource::CopyFrom(expected_version_id),
+            )?;
 
-            Ok(recipe_id)
+            Ok((recipe_id, version_id))
         })
-        .map_err(|e: diesel::result::Error| e.to_string())
+        .map_err(|e: VersionWriteError| e.to_string())
     }
 
     /// Create a new version that copies every field from the recipe's current
@@ -374,10 +407,11 @@ impl SaveRecipeStep {
     fn update_photos_only(
         &self,
         recipe_id: Uuid,
+        expected_version_id: Uuid,
         photo_ids: &[Uuid],
         version_source: &str,
-    ) -> Result<Uuid, String> {
-        use crate::models::{Recipe, RecipeVersion};
+    ) -> Result<(Uuid, Uuid), String> {
+        use crate::models::RecipeVersion;
 
         if photo_ids.is_empty() {
             return Err(
@@ -389,15 +423,9 @@ impl SaveRecipeStep {
         let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
 
         conn.transaction(|conn| {
-            let recipe: Recipe = recipes::table
-                .find(recipe_id)
-                .select(Recipe::as_select())
-                .first(conn)?;
-            let current_version_id = recipe
-                .current_version_id
-                .ok_or_else(|| diesel::result::Error::RollbackTransaction)?;
             let current: RecipeVersion = recipe_versions::table
-                .find(current_version_id)
+                .filter(recipe_versions::id.eq(expected_version_id))
+                .filter(recipe_versions::recipe_id.eq(recipe_id))
                 .select(RecipeVersion::as_select())
                 .first(conn)?;
 
@@ -406,10 +434,15 @@ impl SaveRecipeStep {
                 ..NewRecipeVersion::copy_of(&current, version_source)
             };
 
-            create_new_version(conn, &new_version, TagSource::CopyFrom(current_version_id))?;
+            let version_id = create_new_version_cas(
+                conn,
+                &new_version,
+                Some(expected_version_id),
+                TagSource::CopyFrom(expected_version_id),
+            )?;
 
-            Ok(recipe_id)
+            Ok((recipe_id, version_id))
         })
-        .map_err(|e: diesel::result::Error| e.to_string())
+        .map_err(|e: VersionWriteError| e.to_string())
     }
 }

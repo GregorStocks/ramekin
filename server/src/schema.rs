@@ -110,6 +110,7 @@ diesel::table! {
         current_step -> Nullable<Varchar>,
         photo_only -> Bool,
         current_step_started_at -> Nullable<Timestamptz>,
+        expected_version_id -> Nullable<Uuid>,
     }
 }
 
@@ -193,6 +194,7 @@ diesel::joinable!(photos -> users (user_id));
 diesel::joinable!(recipe_version_tags -> recipe_versions (recipe_version_id));
 diesel::joinable!(recipe_version_tags -> user_tags (tag_id));
 diesel::joinable!(recipes -> users (user_id));
+diesel::joinable!(scrape_jobs -> recipe_versions (expected_version_id));
 diesel::joinable!(scrape_jobs -> users (user_id));
 diesel::joinable!(sessions -> users (user_id));
 diesel::joinable!(shopping_list_items -> recipes (source_recipe_id));

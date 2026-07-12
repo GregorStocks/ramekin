@@ -13,8 +13,6 @@ use uuid::Uuid;
 
 /// How a new recipe version gets its `recipe_version_tags` rows.
 pub enum TagSource<'a> {
-    /// No tags on the new version.
-    None,
     /// Copy tag links from an existing version.
     CopyFrom(Uuid),
     /// Upsert `user_tags` by name and link them.
@@ -35,6 +33,15 @@ pub enum VersionWriteError {
     Db(diesel::result::Error),
 }
 
+impl std::fmt::Display for VersionWriteError {
+    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::Stale => formatter.write_str("recipe version is stale"),
+            Self::Db(error) => error.fmt(formatter),
+        }
+    }
+}
+
 impl From<diesel::result::Error> for VersionWriteError {
     fn from(value: diesel::result::Error) -> Self {
         Self::Db(value)
@@ -49,53 +56,42 @@ pub fn insert_recipe(conn: &mut PgConnection, user_id: Uuid) -> QueryResult<Uuid
         .get_result(conn)
 }
 
-/// Insert a new version row, unconditionally repoint
-/// `recipes.current_version_id`, and apply tags. Call inside a transaction.
-/// Returns the new version id.
-pub fn create_new_version(
-    conn: &mut PgConnection,
-    new_version: &NewRecipeVersion<'_>,
-    tags: TagSource<'_>,
-) -> QueryResult<Uuid> {
-    let version_id = insert_version_row(conn, new_version)?;
-
-    diesel::update(recipes::table.find(new_version.recipe_id))
-        .set(recipes::current_version_id.eq(version_id))
-        .execute(conn)?;
-
-    apply_tags(conn, version_id, tags)?;
-    Ok(version_id)
-}
-
-/// Like [`create_new_version`], but repoints only if `current_version_id`
-/// still equals `expected_current` and the recipe is not soft-deleted;
-/// otherwise returns [`VersionWriteError::Stale`], which rolls back the
-/// caller's transaction. Tags are always carried forward from the version
-/// being replaced.
+/// Insert a new version row, repoint only if `current_version_id` still equals
+/// `expected_current` and the recipe is not soft-deleted, then apply `tags`.
+/// Otherwise returns [`VersionWriteError::Stale`], which rolls back the
+/// caller's transaction. Call inside a transaction.
 pub fn create_new_version_cas(
     conn: &mut PgConnection,
     new_version: &NewRecipeVersion<'_>,
     expected_current: Option<Uuid>,
+    tags: TagSource<'_>,
 ) -> Result<Uuid, VersionWriteError> {
     let version_id = insert_version_row(conn, new_version)?;
 
-    let rows_updated = diesel::update(
-        recipes::table
-            .filter(recipes::id.eq(new_version.recipe_id))
-            .filter(recipes::current_version_id.eq(expected_current))
-            .filter(recipes::deleted_at.is_null()),
-    )
-    .set(recipes::current_version_id.eq(version_id))
-    .execute(conn)?;
+    let rows_updated = match expected_current {
+        Some(expected_version_id) => diesel::update(
+            recipes::table
+                .filter(recipes::id.eq(new_version.recipe_id))
+                .filter(recipes::current_version_id.eq(Some(expected_version_id)))
+                .filter(recipes::deleted_at.is_null()),
+        )
+        .set(recipes::current_version_id.eq(version_id))
+        .execute(conn)?,
+        None => diesel::update(
+            recipes::table
+                .filter(recipes::id.eq(new_version.recipe_id))
+                .filter(recipes::current_version_id.is_null())
+                .filter(recipes::deleted_at.is_null()),
+        )
+        .set(recipes::current_version_id.eq(version_id))
+        .execute(conn)?,
+    };
 
     if rows_updated == 0 {
         return Err(VersionWriteError::Stale);
     }
 
-    // The CAS matched, so expected_current is the version we just replaced.
-    if let Some(old_version_id) = expected_current {
-        copy_recipe_version_tags(conn, old_version_id, version_id)?;
-    }
+    apply_tags(conn, version_id, tags)?;
     Ok(version_id)
 }
 
@@ -111,7 +107,6 @@ fn insert_version_row(
 
 fn apply_tags(conn: &mut PgConnection, version_id: Uuid, tags: TagSource<'_>) -> QueryResult<()> {
     match tags {
-        TagSource::None => {}
         TagSource::CopyFrom(from_version) => {
             copy_recipe_version_tags(conn, from_version, version_id)?;
         }

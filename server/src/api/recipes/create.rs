@@ -3,7 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::NewRecipeVersion;
-use crate::recipes::{create_new_version, insert_recipe, TagSource};
+use crate::recipes::{create_new_version_cas, insert_recipe, TagSource, VersionWriteError};
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
@@ -81,7 +81,7 @@ pub async fn create_recipe(
     }
 
     // Use a transaction to create recipe + version atomically
-    let result: Result<Uuid, diesel::result::Error> = conn.transaction(|conn| {
+    let result: Result<Uuid, VersionWriteError> = conn.transaction(|conn| {
         let recipe_id = insert_recipe(conn, user.id)?;
 
         let new_version = NewRecipeVersion {
@@ -104,9 +104,10 @@ pub async fn create_recipe(
             version_source: "user",
         };
 
-        create_new_version(
+        create_new_version_cas(
             conn,
             &new_version,
+            None,
             TagSource::Names {
                 user_id: user.id,
                 names: &tags,

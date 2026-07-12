@@ -35,6 +35,12 @@ export interface UpdateRecipeRequest {
      */
     difficulty?: string | null;
     /**
+     * Version the caller edited. The update conflicts if it is no longer current.
+     * @type {string}
+     * @memberof UpdateRecipeRequest
+     */
+    expectedVersionId: string;
+    /**
      *
      * @type {Array<Ingredient>}
      * @memberof UpdateRecipeRequest

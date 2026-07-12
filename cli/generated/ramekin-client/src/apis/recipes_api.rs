@@ -103,6 +103,7 @@ pub enum ListVersionsError {
 pub enum NormalizeTitleError {
     Status401(models::ErrorResponse),
     Status404(models::ErrorResponse),
+    Status409(models::ErrorResponse),
     Status503(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -142,6 +143,7 @@ pub enum UpdateRecipeError {
     Status400(models::ErrorResponse),
     Status401(models::ErrorResponse),
     Status404(models::ErrorResponse),
+    Status409(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 

@@ -737,6 +737,7 @@ example().catch(console.error);
 | **200** | Title normalized and applied |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Recipe not found |  -  |
+| **409** | Recipe was modified concurrently |  -  |
 | **503** | AI service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
@@ -1027,6 +1028,7 @@ example().catch(console.error);
 | **400** | Invalid request |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Recipe not found |  -  |
+| **409** | Recipe was modified concurrently |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

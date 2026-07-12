@@ -40,6 +40,7 @@ class TestRescrapeSuccess:
         recipes_api.update_recipe(
             recipe_id,
             UpdateRecipeRequest(
+                expected_version_id=original_version_id,
                 title=original_recipe.title,
                 description=original_recipe.description,
                 ingredients=original_recipe.ingredients,

@@ -15,6 +15,8 @@ public struct UpdateRecipeRequest: Codable, JSONEncodable, Hashable {
     public var cookTime: String?
     public var description: String?
     public var difficulty: String?
+    /** Version the caller edited. The update conflicts if it is no longer current. */
+    public var expectedVersionId: UUID
     public var ingredients: [Ingredient]?
     public var instructions: String?
     public var notes: String?
@@ -29,10 +31,11 @@ public struct UpdateRecipeRequest: Codable, JSONEncodable, Hashable {
     public var title: String?
     public var totalTime: String?
 
-    public init(cookTime: String? = nil, description: String? = nil, difficulty: String? = nil, ingredients: [Ingredient]? = nil, instructions: String? = nil, notes: String? = nil, nutritionalInfo: String? = nil, photoIds: [UUID]? = nil, prepTime: String? = nil, rating: Int? = nil, servings: String? = nil, sourceName: String? = nil, sourceUrl: String? = nil, tags: [String]? = nil, title: String? = nil, totalTime: String? = nil) {
+    public init(cookTime: String? = nil, description: String? = nil, difficulty: String? = nil, expectedVersionId: UUID, ingredients: [Ingredient]? = nil, instructions: String? = nil, notes: String? = nil, nutritionalInfo: String? = nil, photoIds: [UUID]? = nil, prepTime: String? = nil, rating: Int? = nil, servings: String? = nil, sourceName: String? = nil, sourceUrl: String? = nil, tags: [String]? = nil, title: String? = nil, totalTime: String? = nil) {
         self.cookTime = cookTime
         self.description = description
         self.difficulty = difficulty
+        self.expectedVersionId = expectedVersionId
         self.ingredients = ingredients
         self.instructions = instructions
         self.notes = notes
@@ -52,6 +55,7 @@ public struct UpdateRecipeRequest: Codable, JSONEncodable, Hashable {
         case cookTime = "cook_time"
         case description
         case difficulty
+        case expectedVersionId = "expected_version_id"
         case ingredients
         case instructions
         case notes
@@ -74,6 +78,7 @@ public struct UpdateRecipeRequest: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(cookTime, forKey: .cookTime)
         try container.encodeIfPresent(description, forKey: .description)
         try container.encodeIfPresent(difficulty, forKey: .difficulty)
+        try container.encode(expectedVersionId, forKey: .expectedVersionId)
         try container.encodeIfPresent(ingredients, forKey: .ingredients)
         try container.encodeIfPresent(instructions, forKey: .instructions)
         try container.encodeIfPresent(notes, forKey: .notes)

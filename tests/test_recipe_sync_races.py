@@ -1,20 +1,25 @@
 """Recipe sync must not skip a change that commits across its snapshot.
 
-Each test stalls a real API write mid-transaction by holding a row lock the
-write must take. The write therefore acquires its change stamp, a sync runs and
-returns a cursor, and only then does the write commit. The change lands on the
-far side of that sync's snapshot, which is exactly the window a wall-clock
-cursor loses: the row's timestamp precedes the cursor, so a later
-`> last_sync_at` delta excludes it forever.
+The window a wall-clock cursor loses: a writer takes its change stamp, a sync
+runs and hands back a cursor, and only *then* does the writer commit. The
+change's timestamp precedes the cursor, so the next `> last_sync_at` delta
+excludes it forever. The xid watermark closes it — an in-flight writer's
+transaction id is always at or above the cursor, so the next `>= cursor` delta
+returns it.
 
-These tests are pinned to one xdist group so at most one API request is ever
-blocked on a lock: handlers hold their worker thread across the query.
+Each test holds that uncommitted change open in its own database transaction
+and syncs through the API across it. The writes below mirror the server's write
+statements; that the *handlers* stamp `change_xid` correctly is covered
+separately by the sequential deltas in `test_recipe_sync.py`.
+
+The change cannot be driven through the API here: a stalled write would block a
+Diesel call inside an async handler, and when that handler is running on the
+tokio worker holding the IO driver the whole server stops accepting connections
+(see `p2-blocking-db-calls-stall-the-server`). The sync under test would never
+be answered.
 """
 
 import os
-import time
-from concurrent.futures import ThreadPoolExecutor
-from contextlib import contextmanager
 
 import psycopg
 import pytest
@@ -22,16 +27,9 @@ import requests
 
 from conftest import make_ingredient
 from ramekin_client.api import RecipesApi, TagsApi
-from ramekin_client.models import (
-    CreateRecipeRequest,
-    RenameTagRequest,
-    UpdateRecipeRequest,
-)
+from ramekin_client.models import CreateRecipeRequest
 
-pytestmark = pytest.mark.xdist_group("recipe_sync_races")
-
-BLOCKED_TIMEOUT_SECONDS = 20
-WRITE_TIMEOUT_SECONDS = 30
+SYNC_TIMEOUT_SECONDS = 30
 
 
 def _sync(client, server_url, cursor=None):
@@ -40,85 +38,25 @@ def _sync(client, server_url, cursor=None):
         f"{server_url}/api/recipes/sync",
         headers={"Authorization": f"Bearer {client.configuration.access_token}"},
         params=params,
-        timeout=WRITE_TIMEOUT_SECONDS,
+        timeout=SYNC_TIMEOUT_SECONDS,
     )
     response.raise_for_status()
     return response.json()
 
 
-class WriteBlocker:
-    """Holds a row lock so the API write that needs it stalls before commit."""
-
-    def __init__(self, conn):
-        self._conn = conn
-        self._xid = None
-
-    def lock_recipe(self, recipe_id):
-        """Block the recipes UPDATE that an update or soft delete performs."""
-        self._lock("SELECT id FROM recipes WHERE id = %s FOR UPDATE", recipe_id)
-
-    def lock_tag(self, tag_id):
-        """Block the user_tags UPDATE that a rename performs."""
-        self._lock("SELECT id FROM user_tags WHERE id = %s FOR UPDATE", tag_id)
-
-    def _lock(self, sql, row_id):
-        assert self._conn.execute(sql, (row_id,)).fetchone() is not None
-        # Locking stamped our transaction id onto the row. The blocked writer
-        # waits on that id, which identifies our stall precisely enough to
-        # ignore any other test's locks.
-        self._xid = self._conn.execute("SELECT pg_current_xact_id()::text").fetchone()[
-            0
-        ]
-
-    def wait_until_write_blocked(self):
-        deadline = time.monotonic() + BLOCKED_TIMEOUT_SECONDS
-        while time.monotonic() < deadline:
-            waiting = self._conn.execute(
-                "SELECT count(*) FROM pg_locks "
-                "WHERE NOT granted AND locktype = 'transactionid' "
-                "AND transactionid = %s::xid",
-                (self._xid,),
-            ).fetchone()[0]
-            if waiting:
-                return
-            time.sleep(0.05)
-        raise TimeoutError("API write never blocked on the held row lock")
-
-    def release(self):
-        self._conn.rollback()
-
-
 @pytest.fixture
-def blocker():
+def uncommitted():
+    """A transaction left open, so its writes are stamped but not yet visible."""
     database_url = os.environ.get("DATABASE_URL")
     if not database_url:
         raise ValueError("DATABASE_URL environment variable required")
-    with psycopg.connect(database_url) as conn:
-        yield WriteBlocker(conn)
+    with psycopg.connect(database_url) as conn:  # autocommit off
+        yield conn
         conn.rollback()
 
 
-@contextmanager
-def stalled_api_write(blocker, take_lock, write):
-    """Stall an API write mid-transaction, then commit it on exit.
-
-    The body runs while `write` holds its change stamp but has not committed.
-    The lock is released in a `finally` so a failing assertion surfaces as a
-    failure instead of hanging the executor on a write that can never finish.
-    """
-    take_lock()
-    with ThreadPoolExecutor(max_workers=1) as pool:
-        future = pool.submit(write)
-        try:
-            blocker.wait_until_write_blocked()
-            yield
-        finally:
-            blocker.release()
-            future.result(timeout=WRITE_TIMEOUT_SECONDS)
-
-
 def test_sync_returns_update_that_commits_across_the_snapshot(
-    authed_api_client, server_url, blocker
+    authed_api_client, server_url, uncommitted
 ):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
@@ -130,20 +68,30 @@ def test_sync_returns_update_that_commits_across_the_snapshot(
             ingredients=[make_ingredient(item="rice")],
         )
     )
-    _sync(client, server_url)
 
-    update = UpdateRecipeRequest(
-        title="After Racing Update",
-        instructions="Simmer it.",
-        ingredients=[make_ingredient(item="brown rice")],
+    # A new version, stamped but uncommitted — the shape of every recipe edit.
+    new_version_id = uncommitted.execute(
+        "INSERT INTO recipe_versions (recipe_id, title, description, ingredients,"
+        " instructions, source_url, source_name, photo_ids, servings, prep_time,"
+        " cook_time, total_time, rating, difficulty, nutritional_info, notes,"
+        " version_source)"
+        " SELECT recipe_id, %s, description, ingredients, %s, source_url, source_name,"
+        " photo_ids, servings, prep_time, cook_time, total_time, rating, difficulty,"
+        " nutritional_info, notes, 'manual'"
+        " FROM recipe_versions"
+        " WHERE id = (SELECT current_version_id FROM recipes WHERE id = %s)"
+        " RETURNING id",
+        ("After Racing Update", "Simmer it.", created.id),
+    ).fetchone()[0]
+    uncommitted.execute(
+        "UPDATE recipes SET current_version_id = %s WHERE id = %s",
+        (new_version_id, created.id),
     )
-    with stalled_api_write(
-        blocker,
-        lambda: blocker.lock_recipe(created.id),
-        lambda: recipes_api.update_recipe(created.id, update),
-    ):
-        racing = _sync(client, server_url)
-        assert "After Racing Update" not in {r["title"] for r in racing["recipes"]}
+
+    racing = _sync(client, server_url)
+    assert "After Racing Update" not in {r["title"] for r in racing["recipes"]}
+
+    uncommitted.commit()
 
     after = _sync(client, server_url, cursor=racing["cursor"])
 
@@ -154,7 +102,7 @@ def test_sync_returns_update_that_commits_across_the_snapshot(
 
 
 def test_sync_returns_soft_delete_that_commits_across_the_snapshot(
-    authed_api_client, server_url, blocker
+    authed_api_client, server_url, uncommitted
 ):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
@@ -166,15 +114,17 @@ def test_sync_returns_soft_delete_that_commits_across_the_snapshot(
             ingredients=[make_ingredient(item="beans")],
         )
     )
-    _sync(client, server_url)
 
-    with stalled_api_write(
-        blocker,
-        lambda: blocker.lock_recipe(created.id),
-        lambda: recipes_api.delete_recipe(created.id),
-    ):
-        racing = _sync(client, server_url)
-        assert str(created.id) not in racing["deleted"]
+    uncommitted.execute(
+        "UPDATE recipes SET deleted_at = now(), deleted_xid = current_change_xid()"
+        " WHERE id = %s",
+        (created.id,),
+    )
+
+    racing = _sync(client, server_url)
+    assert str(created.id) not in racing["deleted"]
+
+    uncommitted.commit()
 
     after = _sync(client, server_url, cursor=racing["cursor"])
 
@@ -183,7 +133,7 @@ def test_sync_returns_soft_delete_that_commits_across_the_snapshot(
 
 
 def test_sync_returns_tag_rename_that_commits_across_the_snapshot(
-    authed_api_client, server_url, blocker
+    authed_api_client, server_url, uncommitted
 ):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
@@ -197,20 +147,21 @@ def test_sync_returns_tag_rename_that_commits_across_the_snapshot(
             tags=["before-racing-rename"],
         )
     )
-    _sync(client, server_url)
     tag = next(
         tag
         for tag in tags_api.list_all_tags().tags
         if tag.name == "before-racing-rename"
     )
 
-    rename = RenameTagRequest(name="after-racing-rename")
-    with stalled_api_write(
-        blocker,
-        lambda: blocker.lock_tag(tag.id),
-        lambda: tags_api.rename_tag(tag.id, rename),
-    ):
-        racing = _sync(client, server_url)
+    uncommitted.execute(
+        "UPDATE user_tags SET name = %s, updated_at = now(),"
+        " change_xid = current_change_xid() WHERE id = %s",
+        ("after-racing-rename", tag.id),
+    )
+
+    racing = _sync(client, server_url)
+
+    uncommitted.commit()
 
     # The rename never touches the recipe's own version row, so the recipe can
     # only come back through the tag arm of the delta.

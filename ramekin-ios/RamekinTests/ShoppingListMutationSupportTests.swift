@@ -4,7 +4,7 @@ import XCTest
 
 final class ShoppingListMutationSupportTests: XCTestCase {
     func testUpdateCategoryOverrideSetsCategoryAndMarksSyncedItemPending() throws {
-        let context = makeInMemoryContainer().viewContext
+        let context = CoreDataTestStack.makeContext()
         let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.computedCategory = "Dairy & Eggs"
         item.markSynced(serverVersion: 3)
@@ -19,7 +19,7 @@ final class ShoppingListMutationSupportTests: XCTestCase {
     }
 
     func testUpdateCategoryOverrideClearsSyncedItemWithDirtyFlag() throws {
-        let context = makeInMemoryContainer().viewContext
+        let context = CoreDataTestStack.makeContext()
         let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.categoryOverride = "Produce"
         item.category = "Produce"
@@ -36,7 +36,7 @@ final class ShoppingListMutationSupportTests: XCTestCase {
     }
 
     func testUpdateCategoryOverrideClearsPendingCreateWithoutDirtyFlag() throws {
-        let context = makeInMemoryContainer().viewContext
+        let context = CoreDataTestStack.makeContext()
         let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.categoryOverride = "Produce"
         item.category = "Produce"
@@ -50,8 +50,7 @@ final class ShoppingListMutationSupportTests: XCTestCase {
     }
 
     func testAddItemsFromRecipeAssignsSequentialSortOrderAndMetadata() throws {
-        let container = makeInMemoryContainer()
-        let context = container.viewContext
+        let context = CoreDataTestStack.makeContext()
         let recipeId = UUID()
 
         _ = ShoppingItem.create(
@@ -86,8 +85,7 @@ final class ShoppingListMutationSupportTests: XCTestCase {
     }
 
     func testAddItemsFromRecipeRollsBackAndThrowsWhenSaveFails() throws {
-        let container = makeInMemoryContainer()
-        let context = container.viewContext
+        let context = CoreDataTestStack.makeContext()
         let recipeId = UUID()
         let underlyingSaveError = NSError(
             domain: "ShoppingListMutationSupportTests",
@@ -120,21 +118,6 @@ final class ShoppingListMutationSupportTests: XCTestCase {
 
         XCTAssertEqual(try context.count(for: ShoppingItem.fetchActiveItems(accountKey: accountKey)), 0)
         XCTAssertFalse(context.hasChanges)
-    }
-
-    private func makeInMemoryContainer() -> NSPersistentContainer {
-        let container = NSPersistentContainer(name: "Ramekin")
-        let description = NSPersistentStoreDescription()
-        description.type = NSInMemoryStoreType
-        container.persistentStoreDescriptions = [description]
-
-        let loaded = expectation(description: "persistent store loaded")
-        container.loadPersistentStores { _, error in
-            XCTAssertNil(error)
-            loaded.fulfill()
-        }
-        wait(for: [loaded], timeout: 5)
-        return container
     }
 
     private var accountKey: String { "https://example.test|chef" }

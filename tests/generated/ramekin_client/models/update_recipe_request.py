@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from ramekin_client.models.ingredient import Ingredient
@@ -31,6 +31,7 @@ class UpdateRecipeRequest(BaseModel):
     cook_time: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     difficulty: Optional[StrictStr] = None
+    expected_version_id: UUID = Field(description="Version the caller edited. The update conflicts if it is no longer current.")
     ingredients: Optional[List[Ingredient]] = None
     instructions: Optional[StrictStr] = None
     notes: Optional[StrictStr] = None
@@ -44,7 +45,7 @@ class UpdateRecipeRequest(BaseModel):
     tags: Optional[List[StrictStr]] = None
     title: Optional[StrictStr] = None
     total_time: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cook_time", "description", "difficulty", "ingredients", "instructions", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time"]
+    __properties: ClassVar[List[str]] = ["cook_time", "description", "difficulty", "expected_version_id", "ingredients", "instructions", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -187,6 +188,7 @@ class UpdateRecipeRequest(BaseModel):
             "cook_time": obj.get("cook_time"),
             "description": obj.get("description"),
             "difficulty": obj.get("difficulty"),
+            "expected_version_id": obj.get("expected_version_id"),
             "ingredients": [Ingredient.from_dict(_item) for _item in obj["ingredients"]] if obj.get("ingredients") is not None else None,
             "instructions": obj.get("instructions"),
             "notes": obj.get("notes"),

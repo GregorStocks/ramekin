@@ -56,7 +56,7 @@ processes:
     command: |
       echo "[TIMING] api-tests starting at $(date +%H:%M:%S)"
       START=$(date +%s)
-      pytest tests -v -n auto --dist loadgroup --ignore=tests/ui
+      pytest tests -v -n auto --ignore=tests/ui
       EXIT_CODE=$?
       printf '%s\n' "$EXIT_CODE" > ${TEST_STATUS_DIR}/api-tests.exit
       echo "[TIMING] api-tests completed in $(($(date +%s) - START))s"

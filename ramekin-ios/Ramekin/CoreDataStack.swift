@@ -6,6 +6,30 @@ class CoreDataStack: ObservableObject {
     static let shared = CoreDataStack()
     private let logger = DebugLogger.shared
 
+    private static let modelName = "Ramekin"
+
+    /// The one and only managed-object model instance, shared by every container.
+    ///
+    /// `NSPersistentContainer(name:)` loads a fresh model from the bundle on each call. Two live
+    /// models both claim `CachedRecipe` and `ShoppingItem`, and Core Data then resolves `+entity`
+    /// (which backs `ShoppingItem(context:)`) against an arbitrary one of them. Loading the model
+    /// exactly once keeps a single entity description per subclass.
+    static let managedObjectModel: NSManagedObjectModel = {
+        let name = CoreDataStack.modelName
+        guard let url = Bundle(for: CoreDataStack.self).url(forResource: name, withExtension: "momd"),
+            let model = NSManagedObjectModel(contentsOf: url)
+        else {
+            fatalError("Failed to load the \(name) Core Data model")
+        }
+        return model
+    }()
+
+    /// Builds a container backed by the shared model. Callers configure the store descriptions
+    /// and load the stores themselves.
+    static func makeContainer() -> NSPersistentContainer {
+        NSPersistentContainer(name: modelName, managedObjectModel: managedObjectModel)
+    }
+
     let container: NSPersistentContainer
 
     /// The main view context for UI operations
@@ -14,7 +38,7 @@ class CoreDataStack: ObservableObject {
     }
 
     private init() {
-        container = NSPersistentContainer(name: "Ramekin")
+        container = CoreDataStack.makeContainer()
 
         // Use app group container for shared access with extensions
         if let appGroupURL = FileManager.default.containerURL(

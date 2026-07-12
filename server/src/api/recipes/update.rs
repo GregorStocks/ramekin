@@ -4,7 +4,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
-use crate::recipes::{create_new_version, TagSource};
+use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
 use axum::{
     extract::{Path, State},
     http::StatusCode,
@@ -20,6 +20,8 @@ use uuid::Uuid;
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct UpdateRecipeRequest {
+    /// Version the caller edited. The update conflicts if it is no longer current.
+    pub expected_version_id: Uuid,
     pub title: Option<String>,
     #[serde(default, deserialize_with = "double_option::deserialize")]
     #[schema(value_type = Option<String>)]
@@ -73,6 +75,7 @@ pub struct UpdateRecipeRequest {
         (status = 200, description = "Recipe updated successfully"),
         (status = 400, description = "Invalid request", body = ErrorResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse),
+        (status = 409, description = "Recipe was modified concurrently", body = ErrorResponse),
         (status = 404, description = "Recipe not found", body = ErrorResponse)
     ),
     security(
@@ -107,6 +110,13 @@ pub async fn update_recipe(
             }
             Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
         };
+
+    if current_version.id != request.expected_version_id {
+        return ApiError::conflict(
+            "Recipe was modified after you opened it; reload before saving again",
+        )
+        .into_response();
+    }
 
     // Merge request with current version
     let new_title = request
@@ -175,7 +185,7 @@ pub async fn update_recipe(
         .unwrap_or_else(|| current_version.notes.clone());
 
     // Create new version in a transaction
-    let result: Result<(), diesel::result::Error> = conn.transaction(|conn| {
+    let result: Result<(), VersionWriteError> = conn.transaction(|conn| {
         let new_version = NewRecipeVersion {
             title: &new_title,
             description: new_description.as_deref(),
@@ -195,9 +205,10 @@ pub async fn update_recipe(
             ..NewRecipeVersion::copy_of(&current_version, "user")
         };
 
-        create_new_version(
+        create_new_version_cas(
             conn,
             &new_version,
+            Some(request.expected_version_id),
             TagSource::Names {
                 user_id: user.id,
                 names: &new_tags,
@@ -209,7 +220,11 @@ pub async fn update_recipe(
 
     match result {
         Ok(()) => StatusCode::OK.into_response(),
-        Err(e) => {
+        Err(VersionWriteError::Stale) => ApiError::conflict(
+            "Recipe was modified after you opened it; reload before saving again",
+        )
+        .into_response(),
+        Err(VersionWriteError::Db(e)) => {
             tracing::error!("Failed to update recipe: {}", e);
             ApiError::internal("Failed to update recipe").into_response()
         }

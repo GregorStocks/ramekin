@@ -26,8 +26,8 @@ pluggy==1.6.0
     # via pytest
 psycopg==3.3.4
     # via -r requirements-test.txt
-psycopg-binary==3.3.4 ; implementation_name != 'pypy'
-    # via psycopg
+psycopg-binary==3.3.4
+    # via -r requirements-test.txt
 pydantic==2.13.4
     # via -r requirements-test.txt
 pydantic-core==2.46.4

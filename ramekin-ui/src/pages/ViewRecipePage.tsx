@@ -251,6 +251,12 @@ export default function ViewRecipePage() {
 
     setReverting(true);
     try {
+      const expectedVersionId = currentVersionId();
+      if (!expectedVersionId) {
+        throw new Error(
+          "Cannot revert before loading the current recipe version",
+        );
+      }
       // Fetch the full recipe content at that version
       const oldRecipe = await getRecipesApi().getRecipe({
         id: params.id,
@@ -261,6 +267,7 @@ export default function ViewRecipePage() {
       await getRecipesApi().updateRecipe({
         id: params.id,
         updateRecipeRequest: {
+          expectedVersionId,
           title: oldRecipe.title,
           description: oldRecipe.description,
           instructions: oldRecipe.instructions,

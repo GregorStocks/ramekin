@@ -17,6 +17,7 @@ struct RecipeFormData {
     var nutritionalInfo: String = ""
     var ingredients: [EditableIngredient] = [.empty()]
     var photoIds: [UUID] = []
+    var expectedVersionId: UUID?
 
     init() {}
 
@@ -36,7 +37,8 @@ struct RecipeFormData {
         notes: String,
         nutritionalInfo: String,
         ingredients: [EditableIngredient],
-        photoIds: [UUID]
+        photoIds: [UUID],
+        expectedVersionId: UUID? = nil
     ) {
         self.title = title
         self.recipeDescription = recipeDescription
@@ -54,6 +56,7 @@ struct RecipeFormData {
         self.nutritionalInfo = nutritionalInfo
         self.ingredients = ingredients
         self.photoIds = photoIds
+        self.expectedVersionId = expectedVersionId
     }
 
     init(recipe: RecipeResponse) {
@@ -72,6 +75,7 @@ struct RecipeFormData {
         notes = recipe.notes ?? ""
         nutritionalInfo = recipe.nutritionalInfo ?? ""
         photoIds = recipe.photoIds
+        expectedVersionId = recipe.versionId
         ingredients = recipe.ingredients.isEmpty
             ? [.empty()]
             : recipe.ingredients.map { EditableIngredient.from($0) }
@@ -105,10 +109,14 @@ struct RecipeFormData {
     }
 
     func makeUpdateRequest() -> UpdateRecipeRequest {
-        UpdateRecipeRequest(
+        guard let expectedVersionId else {
+            preconditionFailure("Cannot update a recipe before loading its version")
+        }
+        return UpdateRecipeRequest(
             cookTime: cookTime.isEmpty ? nil : cookTime,
             description: recipeDescription.isEmpty ? nil : recipeDescription,
             difficulty: difficulty.isEmpty ? nil : difficulty,
+            expectedVersionId: expectedVersionId,
             ingredients: validIngredients,
             instructions: instructions,
             notes: notes.isEmpty ? nil : notes,

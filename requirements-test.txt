@@ -1,4 +1,5 @@
-psycopg[binary]
+psycopg
+psycopg-binary
 pytest
 pytest-playwright
 pytest-xdist

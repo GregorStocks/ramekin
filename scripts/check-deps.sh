@@ -1,9 +1,11 @@
 #!/bin/bash
 # Check for required development and test dependencies.
 #
-# Usage: check-deps.sh [--lint|--venv]
-#   --lint  Only check the tools needed by `make lint`.
-#   --venv  Only check the tools needed to build the venv (uv).
+# Usage: check-deps.sh [--lint|--venv|--lockfile]
+#   --lint      Only check the tools needed by `make lint`.
+#   --venv      Only check the tools needed to build the venv (uv).
+#   --lockfile  Only check that requirements-test.lock covers what
+#               requirements-test.txt declares.
 #
 # Reports every missing dependency with install instructions for the
 # current platform (macOS, Fedora, Arch, or generic Linux). Never
@@ -16,6 +18,7 @@ MODE=full
 case "${1:-}" in
     --lint) MODE=lint ;;
     --venv) MODE=venv ;;
+    --lockfile) MODE=lockfile ;;
 esac
 
 # Keep in sync with .github/actions/setup/action.yml
@@ -59,17 +62,67 @@ require() {
 
 SWIFTLINT_LINUX="curl -fsSL https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip -o /tmp/swiftlint.zip && unzip -o /tmp/swiftlint.zip -d /tmp/swiftlint && install -D -m 0755 /tmp/swiftlint/swiftlint ~/.local/bin/swiftlint"
 
-# uv is checked in every mode: `make venv` runs --venv before building the
-# virtualenv, since the venv recipe itself needs uv.
-require uv "$(hint \
-    "brew install uv" \
-    "sudo dnf install uv" \
-    "sudo pacman -S uv" \
-    "curl -LsSf https://astral.sh/uv/install.sh | sh")"
+# uv is checked in every mode that needs it: `make venv` runs --venv before
+# building the virtualenv, since the venv recipe itself needs uv.
+if [ "$MODE" != "lockfile" ]; then
+    require uv "$(hint \
+        "brew install uv" \
+        "sudo dnf install uv" \
+        "sudo pacman -S uv" \
+        "curl -LsSf https://astral.sh/uv/install.sh | sh")"
+fi
+
+# `uv pip sync` installs exactly what requirements-test.lock pins, and nothing
+# regenerates the lock implicitly, so a requirements-test.txt edit that never
+# reached the lock would be silently ignored. Catch that before the venv is built.
+#
+# This gates *consuming* the lock, never *producing* it: it lives in its own mode
+# so that `make python-test-deps-update` -- the command that fixes a stale lock --
+# is not blocked by the very check it resolves.
+if [ "$MODE" = "lockfile" ] || [ "$MODE" = "full" ]; then
+    # requirements-test.txt names packages; requirements-test.lock pins their
+    # versions. A specifier or extra here would silently not be honoured --
+    # `uv pip sync` reads only the lock, so `pytest>=10` would happily keep an
+    # older pinned pytest -- and we cannot evaluate one without resolving.
+    CONSTRAINED=()
+    while IFS= read -r req; do
+        if printf '%s' "$req" | grep -q '[][<>=!~;]'; then
+            CONSTRAINED+=("$req")
+        fi
+    done < <(sed -e 's/#.*//' -e 's/[[:space:]]//g' \
+        "$PROJECT_ROOT/requirements-test.txt" | grep -v '^$')
+
+    if [ ${#CONSTRAINED[@]} -ne 0 ]; then
+        MISSING+=("requirements-test.txt must list bare package names, but declares ${CONSTRAINED[*]} (pin versions in requirements-test.lock via: make python-test-deps-update)")
+    fi
+
+    # uv annotates every direct dependency with `# via -r requirements-test.txt`,
+    # so the lock records the requirement set it was compiled from. Comparing that
+    # record against what is declared today catches an added, removed, or renamed
+    # dependency alike -- a name-presence check would miss the last two, and a
+    # stale lock keeps installing a dependency nobody declares anymore.
+    DECLARED=$(sed -e 's/#.*//' -e 's/[[<>=!~;].*//' -e 's/[[:space:]]//g' \
+        "$PROJECT_ROOT/requirements-test.txt" | tr 'A-Z_.' 'a-z--' | grep -v '^$' | sort -u)
+    RECORDED=$(awk '/^[a-zA-Z0-9]/ { pkg = $0; sub(/[=<> ;].*/, "", pkg) }
+                    /-r requirements-test\.txt/ { print pkg }' \
+        "$PROJECT_ROOT/requirements-test.lock" | tr 'A-Z_.' 'a-z--' | sort -u)
+
+    UNPINNED=$(comm -23 <(printf '%s\n' "$DECLARED") <(printf '%s\n' "$RECORDED") | tr '\n' ' ')
+    STALE=$(comm -13 <(printf '%s\n' "$DECLARED") <(printf '%s\n' "$RECORDED") | tr '\n' ' ')
+
+    if [ -n "${UNPINNED// /}" ]; then
+        MISSING+=("requirements-test.lock does not pin ${UNPINNED% } (run: make python-test-deps-update)")
+    fi
+    if [ -n "${STALE// /}" ]; then
+        MISSING+=("requirements-test.lock still pins ${STALE% }, no longer declared in requirements-test.txt (run: make python-test-deps-update)")
+    fi
+fi
 
 # --- Tools needed by both `make lint` and the dev/test environment ---
+# Not --venv (which only needs uv) and not --lockfile (which only reads files),
+# since both gate the venv build and must work before dev tooling is installed.
 
-if [ "$MODE" != "venv" ]; then
+if [ "$MODE" = "lint" ] || [ "$MODE" = "full" ]; then
     require cargo "install Rust: https://rustup.rs"
     require npm "$(hint \
         "brew install node" \

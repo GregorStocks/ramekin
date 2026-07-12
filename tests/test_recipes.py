@@ -1,4 +1,5 @@
 import json
+import threading
 from pathlib import Path
 
 import pytest
@@ -12,6 +13,12 @@ from ramekin_client.models import (
     SortBy,
     UpdateRecipeRequest,
 )
+
+ZERO_UUID = "00000000-0000-0000-0000-000000000000"
+
+
+def current_version_id(recipes_api: RecipesApi, recipe_id):
+    return recipes_api.get_recipe(recipe_id).version_id
 
 
 def test_list_recipes_empty(authed_api_client):
@@ -184,6 +191,7 @@ def test_update_recipe_success(authed_api_client):
 
     # Update the recipe
     update_request = UpdateRecipeRequest(
+        expected_version_id=current_version_id(recipes_api, recipe_id),
         title="Updated Title",
         instructions="Updated instructions",
         ingredients=[
@@ -222,7 +230,10 @@ def test_update_recipe_partial(authed_api_client):
     recipe_id = str(create_response.id)
 
     # Update only the title
-    update_request = UpdateRecipeRequest(title="New Title Only")
+    update_request = UpdateRecipeRequest(
+        expected_version_id=current_version_id(recipes_api, recipe_id),
+        title="New Title Only",
+    )
 
     recipes_api.update_recipe(id=recipe_id, update_recipe_request=update_request)
 
@@ -233,13 +244,86 @@ def test_update_recipe_partial(authed_api_client):
     assert recipe.description == "Original description"
 
 
+def test_concurrent_updates_allow_exactly_one_writer(authed_api_client):
+    """Two edits of one version cannot both become current."""
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    created = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Original",
+            instructions="Cook it.",
+            ingredients=[],
+        )
+    )
+    expected_version_id = current_version_id(recipes_api, created.id)
+    start = threading.Barrier(3)
+    outcomes: list[tuple[str, int | None, str | None]] = []
+
+    def update(title: str) -> None:
+        start.wait()
+        try:
+            recipes_api.update_recipe(
+                created.id,
+                UpdateRecipeRequest(
+                    expected_version_id=expected_version_id,
+                    title=title,
+                ),
+            )
+            outcomes.append(("success", None, None))
+        except ApiException as error:
+            outcomes.append(("error", error.status, error.body))
+
+    threads = [
+        threading.Thread(target=update, args=("First edit",)),
+        threading.Thread(target=update, args=("Second edit",)),
+    ]
+    for thread in threads:
+        thread.start()
+    start.wait()
+    for thread in threads:
+        thread.join(timeout=5)
+        assert not thread.is_alive()
+
+    assert sorted((kind, status) for kind, status, _body in outcomes) == [
+        ("error", 409),
+        ("success", None),
+    ]
+    conflict_body = next(body for kind, _status, body in outcomes if kind == "error")
+    assert json.loads(conflict_body)["code"] == "conflict"
+
+
+def test_update_recipe_rejects_missing_expected_version(authed_api_client):
+    """The wire contract requires callers to identify the edited version."""
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    created = recipes_api.create_recipe(
+        CreateRecipeRequest(title="Original", instructions="Cook it.", ingredients=[])
+    )
+
+    response = client.rest_client.request(
+        "PUT",
+        f"{client.configuration.host}/api/recipes/{created.id}",
+        headers={
+            "Authorization": f"Bearer {client.configuration.access_token}",
+            "Content-Type": "application/json",
+        },
+        body=json.dumps({"title": "Missing version"}),
+    )
+    response.read()
+
+    assert response.status == 400
+    assert json.loads(response.data)["code"] == "invalid_request"
+
+
 def test_update_recipe_not_found(authed_api_client):
     """Test updating a non-existent recipe returns 404."""
     client, user_id = authed_api_client
     recipes_api = RecipesApi(client)
 
     fake_id = "00000000-0000-0000-0000-000000000000"
-    update_request = UpdateRecipeRequest(title="New Title")
+    update_request = UpdateRecipeRequest(
+        expected_version_id=ZERO_UUID, title="New Title"
+    )
 
     with pytest.raises(ApiException) as exc_info:
         recipes_api.update_recipe(id=fake_id, update_recipe_request=update_request)
@@ -263,7 +347,9 @@ def test_update_recipe_empty_title_fails(authed_api_client):
     recipe_id = str(create_response.id)
 
     # Try to update with empty title
-    update_request = UpdateRecipeRequest(title="   ")
+    update_request = UpdateRecipeRequest(
+        expected_version_id=current_version_id(recipes_api, recipe_id), title="   "
+    )
 
     with pytest.raises(ApiException) as exc_info:
         recipes_api.update_recipe(id=recipe_id, update_recipe_request=update_request)
@@ -275,7 +361,9 @@ def test_update_recipe_requires_auth(unauthed_api_client):
     """Test that updating a recipe requires authentication."""
     recipes_api = RecipesApi(unauthed_api_client)
 
-    update_request = UpdateRecipeRequest(title="New Title")
+    update_request = UpdateRecipeRequest(
+        expected_version_id=ZERO_UUID, title="New Title"
+    )
 
     with pytest.raises(ApiException) as exc_info:
         recipes_api.update_recipe(
@@ -323,6 +411,7 @@ def test_update_recipe_clear_optional_fields(authed_api_client):
     recipes_api.update_recipe(
         id=recipe_id,
         update_recipe_request=UpdateRecipeRequest(
+            expected_version_id=recipe.version_id,
             description=None,
             source_url=None,
             source_name=None,
@@ -506,7 +595,9 @@ def test_cannot_access_other_users_recipe(authed_api_client, second_authed_api_c
     with pytest.raises(ApiException) as exc_info:
         recipes_api2.update_recipe(
             id=recipe_id,
-            update_recipe_request=UpdateRecipeRequest(title="Hacked!"),
+            update_recipe_request=UpdateRecipeRequest(
+                expected_version_id=ZERO_UUID, title="Hacked!"
+            ),
         )
     assert exc_info.value.status == 404
 
@@ -1618,7 +1709,12 @@ def test_list_recipes_sort_by_title(authed_api_client):
     for recipe in vectors["recipes"]:
         recipes_api.update_recipe(
             id=actual_id_by_vector_id[recipe["id"]],
-            update_recipe_request=UpdateRecipeRequest(title=recipe["title"]),
+            update_recipe_request=UpdateRecipeRequest(
+                expected_version_id=current_version_id(
+                    recipes_api, actual_id_by_vector_id[recipe["id"]]
+                ),
+                title=recipe["title"],
+            ),
         )
 
     asc_response = recipes_api.list_recipes(
@@ -1663,7 +1759,10 @@ def test_list_recipes_sort_by_created_at(authed_api_client):
     # Update the first recipe so its updated_at changes but created_at stays earliest
     recipes_api.update_recipe(
         str(ids[0]),
-        UpdateRecipeRequest(title="Recipe 0 Updated"),
+        UpdateRecipeRequest(
+            expected_version_id=current_version_id(recipes_api, ids[0]),
+            title="Recipe 0 Updated",
+        ),
     )
 
     # Sort by created_at desc: most recently created first
@@ -1782,6 +1881,7 @@ def test_update_recipe_paprika_fields(authed_api_client):
     recipes_api.update_recipe(
         str(create_response.id),
         UpdateRecipeRequest(
+            expected_version_id=current_version_id(recipes_api, create_response.id),
             servings="2 servings",
             rating=5,
             notes="Updated notes",
@@ -1866,7 +1966,10 @@ def test_update_recipe_creates_new_version(authed_api_client):
     # Update the recipe
     recipes_api.update_recipe(
         recipe_id,
-        UpdateRecipeRequest(title="Updated Title"),
+        UpdateRecipeRequest(
+            expected_version_id=original_version_id,
+            title="Updated Title",
+        ),
     )
 
     # Get updated recipe
@@ -1896,11 +1999,17 @@ def test_list_versions(authed_api_client):
     # Update it twice
     recipes_api.update_recipe(
         recipe_id,
-        UpdateRecipeRequest(title="Version 2"),
+        UpdateRecipeRequest(
+            expected_version_id=current_version_id(recipes_api, recipe_id),
+            title="Version 2",
+        ),
     )
     recipes_api.update_recipe(
         recipe_id,
-        UpdateRecipeRequest(title="Version 3"),
+        UpdateRecipeRequest(
+            expected_version_id=current_version_id(recipes_api, recipe_id),
+            title="Version 3",
+        ),
     )
 
     # List versions
@@ -1945,6 +2054,7 @@ def test_get_specific_version(authed_api_client):
     recipes_api.update_recipe(
         recipe_id,
         UpdateRecipeRequest(
+            expected_version_id=original_recipe.version_id,
             title="Updated Title",
             ingredients=[make_ingredient(item="new ingredient")],
         ),
