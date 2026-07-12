@@ -2,6 +2,7 @@ use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
+use crate::raw_sql;
 use crate::schema::recipes;
 use axum::{
     extract::{Path, State},
@@ -43,7 +44,10 @@ pub async fn delete_recipe(
             .filter(recipes::user_id.eq(user.id))
             .filter(recipes::deleted_at.is_null()),
     )
-    .set(recipes::deleted_at.eq(Some(Utc::now())))
+    .set((
+        recipes::deleted_at.eq(Some(Utc::now())),
+        recipes::deleted_xid.eq(raw_sql::current_change_xid().nullable()),
+    ))
     .execute(&mut conn)
     {
         Ok(count) => count,

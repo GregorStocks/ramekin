@@ -13,27 +13,27 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SyncRecipesResponse {
-    /// Recipe IDs deleted since last_sync_at.
+    /// Opaque cursor to pass to the next sync. Changes may be redelivered across syncs, but none can be skipped.
+    #[serde(rename = "cursor")]
+    pub cursor: i64,
+    /// Recipe IDs deleted at or after `cursor`.
     #[serde(rename = "deleted")]
     pub deleted: Vec<uuid::Uuid>,
-    /// Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent.
+    /// Active recipes changed at or after `cursor`. All active recipes are returned when `cursor` is absent.
     #[serde(rename = "recipes")]
     pub recipes: Vec<models::SyncRecipe>,
-    /// New sync timestamp to use for the next sync.
-    #[serde(rename = "sync_timestamp")]
-    pub sync_timestamp: String,
 }
 
 impl SyncRecipesResponse {
     pub fn new(
+        cursor: i64,
         deleted: Vec<uuid::Uuid>,
         recipes: Vec<models::SyncRecipe>,
-        sync_timestamp: String,
     ) -> SyncRecipesResponse {
         SyncRecipesResponse {
+            cursor,
             deleted,
             recipes,
-            sync_timestamp,
         }
     }
 }

@@ -927,7 +927,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sync_recipes**
-> SyncRecipesResponse sync_recipes(last_sync_at=last_sync_at)
+> SyncRecipesResponse sync_recipes(cursor=cursor)
 
 ### Example
 
@@ -959,10 +959,10 @@ configuration = ramekin_client.Configuration(
 with ramekin_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ramekin_client.RecipesApi(api_client)
-    last_sync_at = '2013-10-20T19:20:30+01:00' # datetime | Last sync timestamp - server will return changes since this time. (optional)
+    cursor = 56 # int | Cursor returned by the previous sync. Absent means a full sync. (optional)
 
     try:
-        api_response = api_instance.sync_recipes(last_sync_at=last_sync_at)
+        api_response = api_instance.sync_recipes(cursor=cursor)
         print("The response of RecipesApi->sync_recipes:\n")
         pprint(api_response)
     except Exception as e:
@@ -976,7 +976,7 @@ with ramekin_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **last_sync_at** | **datetime**| Last sync timestamp - server will return changes since this time. | [optional] 
+ **cursor** | **int**| Cursor returned by the previous sync. Absent means a full sync. | [optional] 
 
 ### Return type
 

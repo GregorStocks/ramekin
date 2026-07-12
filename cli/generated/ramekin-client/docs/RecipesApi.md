@@ -361,7 +361,7 @@ Name | Type | Description  | Required | Notes
 
 ## sync_recipes
 
-> models::SyncRecipesResponse sync_recipes(last_sync_at)
+> models::SyncRecipesResponse sync_recipes(cursor)
 
 
 ### Parameters
@@ -369,7 +369,7 @@ Name | Type | Description  | Required | Notes
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**last_sync_at** | Option<**String**> | Last sync timestamp - server will return changes since this time. |  |
+**cursor** | Option<**i64**> | Cursor returned by the previous sync. Absent means a full sync. |  |
 
 ### Return type
 

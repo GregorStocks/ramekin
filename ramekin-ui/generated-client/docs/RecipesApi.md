@@ -888,7 +888,7 @@ example().catch(console.error);
 
 ## syncRecipes
 
-> SyncRecipesResponse syncRecipes(lastSyncAt)
+> SyncRecipesResponse syncRecipes(cursor)
 
 
 
@@ -910,8 +910,8 @@ async function example() {
   const api = new RecipesApi(config);
 
   const body = {
-    // Date | Last sync timestamp - server will return changes since this time. (optional)
-    lastSyncAt: 2013-10-20T19:20:30+01:00,
+    // number | Cursor returned by the previous sync. Absent means a full sync. (optional)
+    cursor: 789,
   } satisfies SyncRecipesRequest;
 
   try {
@@ -931,7 +931,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **lastSyncAt** | `Date` | Last sync timestamp - server will return changes since this time. | [Optional] [Defaults to `undefined`] |
+| **cursor** | `number` | Cursor returned by the previous sync. Absent means a full sync. | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 

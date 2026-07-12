@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 # **syncRecipes**
 ```swift
-    open class func syncRecipes(lastSyncAt: Date? = nil, completion: @escaping (_ data: SyncRecipesResponse?, _ error: Error?) -> Void)
+    open class func syncRecipes(cursor: Int64? = nil, completion: @escaping (_ data: SyncRecipesResponse?, _ error: Error?) -> Void)
 ```
 
 
@@ -602,9 +602,9 @@ Name | Type | Description  | Notes
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import RamekinClient
 
-let lastSyncAt = Date() // Date | Last sync timestamp - server will return changes since this time. (optional)
+let cursor = 987 // Int64 | Cursor returned by the previous sync. Absent means a full sync. (optional)
 
-RecipesAPI.syncRecipes(lastSyncAt: lastSyncAt) { (response, error) in
+RecipesAPI.syncRecipes(cursor: cursor) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -620,7 +620,7 @@ RecipesAPI.syncRecipes(lastSyncAt: lastSyncAt) { (response, error) in
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lastSyncAt** | **Date** | Last sync timestamp - server will return changes since this time. | [optional] 
+ **cursor** | **Int64** | Cursor returned by the previous sync. Absent means a full sync. | [optional] 
 
 ### Return type
 

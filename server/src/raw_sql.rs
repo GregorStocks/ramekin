@@ -30,6 +30,19 @@ diesel::define_sql_function! {
     fn random() -> diesel::sql_types::Double;
 }
 
+diesel::define_sql_function! {
+    /// The writing transaction's own 64-bit id, used to stamp sync-visible
+    /// changes. Defined in the `sync_change_xid` migration.
+    fn current_change_xid() -> diesel::sql_types::BigInt;
+}
+
+diesel::define_sql_function! {
+    /// The lowest transaction id still in flight for the current snapshot.
+    /// Every change stamped below it is settled, so it is a race-safe sync
+    /// cursor. Defined in the `sync_change_xid` migration.
+    fn change_xid_watermark() -> diesel::sql_types::BigInt;
+}
+
 /// Correlated subquery to fetch tags for the current recipe_versions row.
 ///
 /// Returns an array of tag names from user_tags via the junction table.

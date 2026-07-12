@@ -10,7 +10,7 @@ struct RecipeListViewAPIClient {
         _ sortBy: SortBy?,
         _ sortDir: Direction?
     ) async throws -> ListRecipesResponse
-    var syncRecipes: (_ lastSyncAt: Date?) async throws -> SyncRecipesResponse
+    var syncRecipes: (_ cursor: Int64?) async throws -> SyncRecipesResponse
 
     static let live = RecipeListViewAPIClient(
         listAllTags: { try await TagsAPI.listAllTags() },
@@ -23,22 +23,22 @@ struct RecipeListViewAPIClient {
                 sortDir: sortDir
             )
         },
-        syncRecipes: { try await RecipesAPI.syncRecipes(lastSyncAt: $0) }
+        syncRecipes: { try await RecipesAPI.syncRecipes(cursor: $0) }
     )
 }
 
 @MainActor
 struct RecipeListCacheClient {
     var currentAccountKey: () -> String?
-    var lastSyncAt: (_ accountKey: String) -> Date?
-    var clearLastSyncAt: (_ accountKey: String) -> Void
+    var syncCursor: (_ accountKey: String) -> Int64?
+    var clearSyncCursor: (_ accountKey: String) -> Void
     var loadRecipes: (_ accountKey: String) throws -> [RecipeSummary]
     var apply: (_ syncResponse: SyncRecipesResponse, _ accountKey: String) throws -> Void
 
     static let live = RecipeListCacheClient(
         currentAccountKey: { RecipeCacheStore.shared.currentAccountKey() },
-        lastSyncAt: { RecipeCacheStore.shared.lastSyncAt(accountKey: $0) },
-        clearLastSyncAt: { RecipeCacheStore.shared.clearLastSyncAt(accountKey: $0) },
+        syncCursor: { RecipeCacheStore.shared.syncCursor(accountKey: $0) },
+        clearSyncCursor: { RecipeCacheStore.shared.clearSyncCursor(accountKey: $0) },
         loadRecipes: { try RecipeCacheStore.shared.loadRecipes(accountKey: $0) },
         apply: { try RecipeCacheStore.shared.apply(syncResponse: $0, accountKey: $1) }
     )
@@ -363,7 +363,7 @@ extension RecipeListViewModel {
 
     func invalidateRecipeCacheSync() {
         guard let accountKey = cache.currentAccountKey() else { return }
-        cache.clearLastSyncAt(accountKey)
+        cache.clearSyncCursor(accountKey)
     }
 }
 
@@ -408,9 +408,9 @@ private extension RecipeListViewModel {
 
         do {
             let cachedBeforeSync = try cache.loadRecipes(accountKey)
-            let lastSyncAt = cachedBeforeSync.isEmpty ? nil : cache.lastSyncAt(accountKey)
+            let cursor = cachedBeforeSync.isEmpty ? nil : cache.syncCursor(accountKey)
             let response = try await logger.timed("syncRecipeCache API", source: "RecipeList") {
-                try await api.syncRecipes(lastSyncAt)
+                try await api.syncRecipes(cursor)
             }
             try cache.apply(response, accountKey)
             let cachedRecipes = try cache.loadRecipes(accountKey)

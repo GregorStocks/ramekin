@@ -16,7 +16,6 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from datetime import datetime
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
@@ -3329,7 +3328,7 @@ class RecipesApi:
     @validate_call
     def sync_recipes(
         self,
-        last_sync_at: Annotated[Optional[datetime], Field(description="Last sync timestamp - server will return changes since this time.")] = None,
+        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by the previous sync. Absent means a full sync.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3346,8 +3345,8 @@ class RecipesApi:
         """sync_recipes
 
 
-        :param last_sync_at: Last sync timestamp - server will return changes since this time.
-        :type last_sync_at: datetime
+        :param cursor: Cursor returned by the previous sync. Absent means a full sync.
+        :type cursor: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3371,7 +3370,7 @@ class RecipesApi:
         """ # noqa: E501
 
         _param = self._sync_recipes_serialize(
-            last_sync_at=last_sync_at,
+            cursor=cursor,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3396,7 +3395,7 @@ class RecipesApi:
     @validate_call
     def sync_recipes_with_http_info(
         self,
-        last_sync_at: Annotated[Optional[datetime], Field(description="Last sync timestamp - server will return changes since this time.")] = None,
+        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by the previous sync. Absent means a full sync.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3413,8 +3412,8 @@ class RecipesApi:
         """sync_recipes
 
 
-        :param last_sync_at: Last sync timestamp - server will return changes since this time.
-        :type last_sync_at: datetime
+        :param cursor: Cursor returned by the previous sync. Absent means a full sync.
+        :type cursor: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3438,7 +3437,7 @@ class RecipesApi:
         """ # noqa: E501
 
         _param = self._sync_recipes_serialize(
-            last_sync_at=last_sync_at,
+            cursor=cursor,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3463,7 +3462,7 @@ class RecipesApi:
     @validate_call
     def sync_recipes_without_preload_content(
         self,
-        last_sync_at: Annotated[Optional[datetime], Field(description="Last sync timestamp - server will return changes since this time.")] = None,
+        cursor: Annotated[Optional[StrictInt], Field(description="Cursor returned by the previous sync. Absent means a full sync.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3480,8 +3479,8 @@ class RecipesApi:
         """sync_recipes
 
 
-        :param last_sync_at: Last sync timestamp - server will return changes since this time.
-        :type last_sync_at: datetime
+        :param cursor: Cursor returned by the previous sync. Absent means a full sync.
+        :type cursor: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3505,7 +3504,7 @@ class RecipesApi:
         """ # noqa: E501
 
         _param = self._sync_recipes_serialize(
-            last_sync_at=last_sync_at,
+            cursor=cursor,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3525,7 +3524,7 @@ class RecipesApi:
 
     def _sync_recipes_serialize(
         self,
-        last_sync_at,
+        cursor,
         _request_auth,
         _content_type,
         _headers,
@@ -3548,18 +3547,9 @@ class RecipesApi:
 
         # process the path parameters
         # process the query parameters
-        if last_sync_at is not None:
-            if isinstance(last_sync_at, datetime):
-                _query_params.append(
-                    (
-                        'last_sync_at',
-                        last_sync_at.strftime(
-                            self.api_client.configuration.datetime_format
-                        )
-                    )
-                )
-            else:
-                _query_params.append(('last_sync_at', last_sync_at))
+        if cursor is not None:
+            
+            _query_params.append(('cursor', cursor))
             
         # process the header parameters
         # process the form parameters

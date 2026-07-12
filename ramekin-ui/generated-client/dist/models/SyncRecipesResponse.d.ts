@@ -17,23 +17,24 @@ import type { SyncRecipe } from './SyncRecipe';
  */
 export interface SyncRecipesResponse {
     /**
-     * Recipe IDs deleted since last_sync_at.
+     * Opaque cursor to pass to the next sync. Changes may be redelivered
+     * across syncs, but none can be skipped.
+     * @type {number}
+     * @memberof SyncRecipesResponse
+     */
+    cursor: number;
+    /**
+     * Recipe IDs deleted at or after `cursor`.
      * @type {Array<string>}
      * @memberof SyncRecipesResponse
      */
     deleted: Array<string>;
     /**
-     * Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent.
+     * Active recipes changed at or after `cursor`. All active recipes are returned when `cursor` is absent.
      * @type {Array<SyncRecipe>}
      * @memberof SyncRecipesResponse
      */
     recipes: Array<SyncRecipe>;
-    /**
-     * New sync timestamp to use for the next sync.
-     * @type {Date}
-     * @memberof SyncRecipesResponse
-     */
-    syncTimestamp: Date;
 }
 /**
  * Check if a given object implements the SyncRecipesResponse interface.

@@ -23,7 +23,7 @@ final class RecipeListViewModelTests: XCTestCase {
                     )
                 },
                 syncRecipes: { _ in
-                    SyncRecipesResponse(deleted: [], recipes: [], syncTimestamp: Date())
+                    SyncRecipesResponse(cursor: 1, deleted: [], recipes: [])
                 }
             ),
             cache: noCacheClient(),
@@ -63,13 +63,13 @@ final class RecipeListViewModelTests: XCTestCase {
                 },
                 syncRecipes: { _ in
                     didSync = true
-                    return SyncRecipesResponse(deleted: [], recipes: [], syncTimestamp: Date())
+                    return SyncRecipesResponse(cursor: 1, deleted: [], recipes: [])
                 }
             ),
             cache: RecipeListCacheClient(
                 currentAccountKey: { "account" },
-                lastSyncAt: { _ in nil },
-                clearLastSyncAt: { _ in },
+                syncCursor: { _ in nil },
+                clearSyncCursor: { _ in },
                 loadRecipes: { _ in cachedRecipes },
                 apply: { _, _ in cachedRecipes = [matching, hidden] }
             ),
@@ -134,8 +134,8 @@ final class RecipeListViewModelTests: XCTestCase {
     private func noCacheClient() -> RecipeListCacheClient {
         RecipeListCacheClient(
             currentAccountKey: { nil },
-            lastSyncAt: { _ in nil },
-            clearLastSyncAt: { _ in },
+            syncCursor: { _ in nil },
+            clearSyncCursor: { _ in },
             loadRecipes: { _ in [] },
             apply: { _, _ in }
         )
@@ -150,7 +150,7 @@ final class RecipeListViewModelTests: XCTestCase {
                     recipes: []
                 )
             },
-            syncRecipes: { _ in SyncRecipesResponse(deleted: [], recipes: [], syncTimestamp: Date()) }
+            syncRecipes: { _ in SyncRecipesResponse(cursor: 1, deleted: [], recipes: []) }
         )
     }
 

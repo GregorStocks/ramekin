@@ -143,12 +143,16 @@ impl ApplyNormalizedTitleStep {
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
         conn.transaction(|conn| {
-            let recipe: Recipe = recipes::table.find(recipe_id).first(conn)?;
+            let recipe: Recipe = recipes::table
+                .find(recipe_id)
+                .select(Recipe::as_select())
+                .first(conn)?;
             let current_version_id = recipe
                 .current_version_id
                 .ok_or_else(|| diesel::result::Error::RollbackTransaction)?;
             let current: RecipeVersion = recipe_versions::table
                 .find(current_version_id)
+                .select(RecipeVersion::as_select())
                 .first(conn)?;
 
             if current.title == normalized_title {

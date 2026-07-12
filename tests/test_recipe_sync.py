@@ -13,10 +13,10 @@ def _auth_headers(client):
     return {"Authorization": f"Bearer {client.configuration.access_token}"}
 
 
-def _sync(client, server_url, last_sync_at=None):
+def _sync(client, server_url, cursor=None):
     params = {}
-    if last_sync_at is not None:
-        params["last_sync_at"] = last_sync_at
+    if cursor is not None:
+        params["cursor"] = cursor
     response = requests.get(
         f"{server_url}/api/recipes/sync",
         headers=_auth_headers(client),
@@ -63,7 +63,7 @@ def test_recipe_sync_initial_response_includes_active_recipes(
     assert recipes_by_id[str(created.id)]["notes"] is None
     assert set(recipes_by_id[str(created.id)]["tags"]) == {"sync", "cache"}
     assert response["deleted"] == []
-    assert response["sync_timestamp"] is not None
+    assert response["cursor"] > 0
 
 
 def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
@@ -73,7 +73,7 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
     recipes_api = RecipesApi(client)
 
     baseline = _sync(client, server_url)
-    last_sync_at = baseline["sync_timestamp"]
+    cursor = baseline["cursor"]
 
     updated = recipes_api.create_recipe(
         CreateRecipeRequest(
@@ -102,7 +102,7 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
     )
     recipes_api.delete_recipe(deleted.id)
 
-    response = _sync(client, server_url, last_sync_at=last_sync_at)
+    response = _sync(client, server_url, cursor=cursor)
 
     recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
     assert str(updated.id) in recipes_by_id
@@ -149,14 +149,14 @@ def test_recipe_sync_includes_recipes_after_tag_rename(authed_api_client, server
         )
     )
     baseline = _sync(client, server_url)
-    last_sync_at = baseline["sync_timestamp"]
+    cursor = baseline["cursor"]
 
     tag = next(
         tag for tag in tags_api.list_all_tags().tags if tag.name == "before-rename"
     )
     tags_api.rename_tag(tag.id, RenameTagRequest(name="after-rename"))
 
-    response = _sync(client, server_url, last_sync_at=last_sync_at)
+    response = _sync(client, server_url, cursor=cursor)
 
     recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
     assert recipes_by_id[str(created.id)]["tags"] == ["after-rename"]
@@ -176,14 +176,14 @@ def test_recipe_sync_includes_recipes_after_tag_delete(authed_api_client, server
         )
     )
     baseline = _sync(client, server_url)
-    last_sync_at = baseline["sync_timestamp"]
+    cursor = baseline["cursor"]
 
     tag = next(
         tag for tag in tags_api.list_all_tags().tags if tag.name == "delete-from-sync"
     )
     tags_api.delete_tag(tag.id)
 
-    response = _sync(client, server_url, last_sync_at=last_sync_at)
+    response = _sync(client, server_url, cursor=cursor)
 
     recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
     assert recipes_by_id[str(created.id)]["tags"] == []
@@ -209,7 +209,7 @@ def test_recipe_sync_includes_recipes_after_recipe_create_revives_tag(
     )
     tags_api.delete_tag(tag.id)
     after_delete = _sync(client, server_url)
-    last_sync_at = after_delete["sync_timestamp"]
+    cursor = after_delete["cursor"]
 
     recipes_api.create_recipe(
         CreateRecipeRequest(
@@ -220,7 +220,7 @@ def test_recipe_sync_includes_recipes_after_recipe_create_revives_tag(
         )
     )
 
-    response = _sync(client, server_url, last_sync_at=last_sync_at)
+    response = _sync(client, server_url, cursor=cursor)
 
     recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
     assert recipes_by_id[str(existing.id)]["tags"] == ["revived-by-create"]
