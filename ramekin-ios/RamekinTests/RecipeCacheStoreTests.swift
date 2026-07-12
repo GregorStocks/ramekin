@@ -18,6 +18,44 @@ final class RecipeCacheStoreTests: XCTestCase {
         XCTAssertNil(store.syncCursor(accountKey: accountKey))
     }
 
+    func testRowsWrittenByOlderSchemaArePurgedNotServed() throws {
+        // Simulate an upgrade: rows exist, but the marker recording which
+        // schema wrote them predates the current version (or is absent, as
+        // for any pre-v4 install). Core Data migration backfills new columns
+        // with defaults, so serving such rows would under-match searches.
+        let (store, defaults) = makeStore()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        try store.apply(
+            syncResponse: SyncRecipesResponse(
+                cursor: 300,
+                deleted: [],
+                hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                recipes: [makeRecipe()]
+            ),
+            accountKey: accountKey
+        )
+        let markerKey = defaults.dictionaryRepresentation().keys.first {
+            $0.hasPrefix("recipe_cache_rows_schema_version")
+        }
+        defaults.removeObject(forKey: try XCTUnwrap(markerKey))
+
+        XCTAssertTrue(try store.loadSearchDocuments(accountKey: accountKey).isEmpty)
+
+        // A fresh apply stamps the current schema version, so its rows serve.
+        try store.apply(
+            syncResponse: SyncRecipesResponse(
+                cursor: 400,
+                deleted: [],
+                hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                recipes: [makeRecipe()]
+            ),
+            accountKey: accountKey
+        )
+        XCTAssertEqual(try store.loadSearchDocuments(accountKey: accountKey).count, 1)
+    }
+
     func testApplyPopulatesSearchableRecipeBody() throws {
         let (store, defaults) = makeStore()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
