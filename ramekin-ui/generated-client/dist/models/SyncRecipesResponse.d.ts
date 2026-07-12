@@ -41,6 +41,16 @@ export interface SyncRecipesResponse {
      */
     hasMore: boolean;
     /**
+     * Version of the shared search-normalization contract
+     * (shared-test-vectors/search-normalization.json) the server was built
+     * with. A client mirroring server search locally must fail the sync when
+     * it does not support this version: matching with a stale contract would
+     * silently drop or add results relative to server search.
+     * @type {number}
+     * @memberof SyncRecipesResponse
+     */
+    normalizationContractVersion: number;
+    /**
      * The next `limit` active recipes (by ascending recipe ID, starting past
      * `after_id`) changed at or after `cursor`. All active recipes match when
      * `cursor` is absent.

@@ -20,6 +20,8 @@ export function instanceOfSyncRecipe(value) {
         return false;
     if (!('id' in value) || value['id'] === undefined)
         return false;
+    if (!('ingredientMatchText' in value) || value['ingredientMatchText'] === undefined)
+        return false;
     if (!('ingredients' in value) || value['ingredients'] === undefined)
         return false;
     if (!('instructions' in value) || value['instructions'] === undefined)
@@ -43,6 +45,7 @@ export function SyncRecipeFromJSONTyped(json, ignoreDiscriminator) {
         'createdAt': (new Date(json['created_at'])),
         'description': json['description'] == null ? undefined : json['description'],
         'id': json['id'],
+        'ingredientMatchText': json['ingredient_match_text'],
         'ingredients': (json['ingredients'].map(IngredientFromJSON)),
         'instructions': json['instructions'],
         'notes': json['notes'] == null ? undefined : json['notes'],
@@ -64,6 +67,7 @@ export function SyncRecipeToJSONTyped(value, ignoreDiscriminator = false) {
         'created_at': value['createdAt'].toISOString(),
         'description': value['description'],
         'id': value['id'],
+        'ingredient_match_text': value['ingredientMatchText'],
         'ingredients': (value['ingredients'].map(IngredientToJSON)),
         'instructions': value['instructions'],
         'notes': value['notes'],

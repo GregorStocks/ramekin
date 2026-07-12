@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from ramekin_client.models.ingredient import Ingredient
@@ -32,6 +32,7 @@ class SyncRecipe(BaseModel):
     created_at: datetime
     description: Optional[StrictStr] = None
     id: UUID
+    ingredient_match_text: StrictStr = Field(description="The database's text rendering of the stored ingredients JSONB — the exact haystack the server's bare-text search filter matches (JSON keys and syntax included). Local search must match against this string, not a re-encoding of `ingredients`, to reproduce server result membership.")
     ingredients: List[Ingredient]
     instructions: StrictStr
     notes: Optional[StrictStr] = None
@@ -40,7 +41,7 @@ class SyncRecipe(BaseModel):
     thumbnail_photo_id: Optional[UUID] = None
     title: StrictStr
     updated_at: datetime
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "ingredients", "instructions", "notes", "rating", "tags", "thumbnail_photo_id", "title", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "ingredient_match_text", "ingredients", "instructions", "notes", "rating", "tags", "thumbnail_photo_id", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -123,6 +124,7 @@ class SyncRecipe(BaseModel):
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "id": obj.get("id"),
+            "ingredient_match_text": obj.get("ingredient_match_text"),
             "ingredients": [Ingredient.from_dict(_item) for _item in obj["ingredients"]] if obj.get("ingredients") is not None else None,
             "instructions": obj.get("instructions"),
             "notes": obj.get("notes"),

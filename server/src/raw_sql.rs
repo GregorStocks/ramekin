@@ -125,3 +125,15 @@ pub fn unaccent_ilike(column: &'static str, pattern: &str) -> SqlLiteral<Bool> {
 pub fn ingredients_unaccent_ilike(pattern: &str) -> SqlLiteral<Bool> {
     unaccent_ilike("recipe_versions.ingredients::text", pattern)
 }
+
+/// The ingredients JSONB cast to text — the exact haystack
+/// `ingredients_unaccent_ilike` matches against. Served through recipe sync
+/// so the iOS local search matches the same string instead of trying to
+/// re-create PostgreSQL's JSONB serialization. Diesel has no native support
+/// for casting JSONB to text.
+///
+/// # Safety
+/// Static SQL string with no user input.
+pub fn ingredients_text() -> SqlLiteral<Text> {
+    sql::<Text>("recipe_versions.ingredients::text")
+}

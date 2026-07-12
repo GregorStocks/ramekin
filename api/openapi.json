@@ -4270,6 +4270,7 @@
           "created_at",
           "updated_at",
           "ingredients",
+          "ingredient_match_text",
           "instructions"
         ],
         "properties": {
@@ -4286,6 +4287,10 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "ingredient_match_text": {
+            "type": "string",
+            "description": "The database's text rendering of the stored ingredients JSONB — the\nexact haystack the server's bare-text search filter matches (JSON keys\nand syntax included). Local search must match against this string, not\na re-encoding of `ingredients`, to reproduce server result membership."
           },
           "ingredients": {
             "type": "array",
@@ -4337,7 +4342,8 @@
           "recipes",
           "deleted",
           "cursor",
-          "has_more"
+          "has_more",
+          "normalization_contract_version"
         ],
         "properties": {
           "cursor": {
@@ -4356,6 +4362,12 @@
           "has_more": {
             "type": "boolean",
             "description": "True when the sweep has more pages. Request the next one with the same\n`cursor` and `after_id` set to this page's last recipe ID."
+          },
+          "normalization_contract_version": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Version of the shared search-normalization contract\n(shared-test-vectors/search-normalization.json) the server was built\nwith. A client mirroring server search locally must fail the sync when\nit does not support this version: matching with a stale contract would\nsilently drop or add results relative to server search.",
+            "minimum": 0
           },
           "recipes": {
             "type": "array",

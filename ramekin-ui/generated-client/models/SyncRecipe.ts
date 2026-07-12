@@ -46,6 +46,15 @@ export interface SyncRecipe {
      */
     id: string;
     /**
+     * The database's text rendering of the stored ingredients JSONB — the
+     * exact haystack the server's bare-text search filter matches (JSON keys
+     * and syntax included). Local search must match against this string, not
+     * a re-encoding of `ingredients`, to reproduce server result membership.
+     * @type {string}
+     * @memberof SyncRecipe
+     */
+    ingredientMatchText: string;
+    /**
      * 
      * @type {Array<Ingredient>}
      * @memberof SyncRecipe
@@ -101,6 +110,7 @@ export interface SyncRecipe {
 export function instanceOfSyncRecipe(value: object): value is SyncRecipe {
     if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
     if (!('id' in value) || value['id'] === undefined) return false;
+    if (!('ingredientMatchText' in value) || value['ingredientMatchText'] === undefined) return false;
     if (!('ingredients' in value) || value['ingredients'] === undefined) return false;
     if (!('instructions' in value) || value['instructions'] === undefined) return false;
     if (!('tags' in value) || value['tags'] === undefined) return false;
@@ -122,6 +132,7 @@ export function SyncRecipeFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'createdAt': (new Date(json['created_at'])),
         'description': json['description'] == null ? undefined : json['description'],
         'id': json['id'],
+        'ingredientMatchText': json['ingredient_match_text'],
         'ingredients': ((json['ingredients'] as Array<any>).map(IngredientFromJSON)),
         'instructions': json['instructions'],
         'notes': json['notes'] == null ? undefined : json['notes'],
@@ -147,6 +158,7 @@ export function SyncRecipeToJSONTyped(value?: SyncRecipe | null, ignoreDiscrimin
         'created_at': value['createdAt'].toISOString(),
         'description': value['description'],
         'id': value['id'],
+        'ingredient_match_text': value['ingredientMatchText'],
         'ingredients': ((value['ingredients'] as Array<any>).map(IngredientToJSON)),
         'instructions': value['instructions'],
         'notes': value['notes'],

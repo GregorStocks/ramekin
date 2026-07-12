@@ -40,11 +40,13 @@ class TestSyncRecipesResponse(unittest.TestCase):
                     ''
                     ],
                 has_more = True,
+                normalization_contract_version = 0,
                 recipes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
                         id = '', 
+                        ingredient_match_text = '', 
                         ingredients = [
                             ramekin_client.models.ingredient.Ingredient(
                                 item = '', 
@@ -74,11 +76,13 @@ class TestSyncRecipesResponse(unittest.TestCase):
                     ''
                     ],
                 has_more = True,
+                normalization_contract_version = 0,
                 recipes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
                         id = '', 
+                        ingredient_match_text = '', 
                         ingredients = [
                             ramekin_client.models.ingredient.Ingredient(
                                 item = '', 

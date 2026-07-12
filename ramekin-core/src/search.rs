@@ -2,21 +2,25 @@
 //!
 //! This is the canonical implementation of search ranking, deliberately a
 //! pure function over plain strings so that a client can mirror it for local
-//! search later (see doc/client-logic-sharing.md and the
-//! blocked-ios-local-search-relevance issue). The fixture corpus at
-//! tests/fixtures/search_ranking/cases.json doubles as the shared test
-//! vectors for any future client implementation — behavior changes here must
-//! update that file, and vice versa.
+//! search (see doc/client-logic-sharing.md). The shared vectors at
+//! shared-test-vectors/search-ranking.json double as the test corpus for
+//! client implementations — behavior changes here must update that file, and
+//! vice versa.
 //!
 //! Matching semantics mirror the SQL filters in the list-recipes endpoint:
 //! case-insensitive, accent-insensitive substring containment (Postgres
-//! `f_unaccent(col) ILIKE f_unaccent(pattern)`). Scoring only *orders*
-//! rows the SQL filter already matched, so a matched row may legitimately
-//! score 0 (e.g. the SQL filter matched JSONB structure the scorer ignores);
-//! callers break ties — including everything-scored-0 — by recency.
+//! `f_unaccent(col) ILIKE f_unaccent(pattern)`). `normalize_for_search`
+//! reproduces that pipeline exactly by consuming the versioned contract at
+//! shared-test-vectors/search-normalization.json: the server database's
+//! complete per-codepoint unaccent dictionary followed by its per-codepoint
+//! lower() mapping (which is what ILIKE's case-insensitivity applies).
+//! tests/test_search_normalization_contract.py fails when that asset drifts
+//! from the running database, and recipe sync refuses to feed a client whose
+//! contract version differs, so local matching can rely on this
+//! normalization being byte-identical to SQL matching.
 
-use unicode_normalization::char::is_combining_mark;
-use unicode_normalization::UnicodeNormalization;
+use std::collections::HashMap;
+use std::sync::OnceLock;
 
 /// The searchable fields of one recipe, as plain text.
 pub struct SearchDoc<'a> {
@@ -44,47 +48,80 @@ const WEIGHT_TOKEN_IN_INGREDIENT: u32 = 200;
 const WEIGHT_TOKEN_IN_INSTRUCTIONS: u32 = 50;
 const WEIGHT_TOKEN_IN_NOTES: u32 = 50;
 
-/// Normalize text for matching: NFKD-decompose (so presentation ligatures
-/// like "ﬁ" and full-width forms come apart), strip combining marks, expand
-/// the characters Postgres `unaccent` rewrites that no Unicode decomposition
-/// covers (ligature letters, curly punctuation), then lowercase. This is the
-/// Rust mirror of the database's `f_unaccent` + `ILIKE` semantics, so
-/// "Crème Brûlée"/"creme brulee", "Œufs"/"oeufs", and "ﬁnely"/"finely"
-/// normalize identically. Parity with the full unaccent.rules table is
-/// best-effort — an unmapped rare glyph only costs ranking points on a row
-/// the SQL filter already matched, it can't hide a result.
-pub fn normalize_for_search(s: &str) -> String {
-    let mut out = String::with_capacity(s.len());
-    for c in s.nfkd().filter(|c| !is_combining_mark(*c)) {
-        match unaccent_expansion(c) {
-            Some(replacement) => out.push_str(replacement),
-            None => out.push(c),
-        }
-    }
-    out.to_lowercase()
+#[derive(serde::Deserialize)]
+struct ContractFile {
+    version: u32,
+    unaccent: HashMap<String, String>,
+    lower: HashMap<String, String>,
 }
 
-/// Characters with no Unicode decomposition that Postgres `unaccent`
-/// nevertheless rewrites (see contrib/unaccent's rules file): ligature
-/// letters, plus the typographic punctuation it folds to ASCII.
-fn unaccent_expansion(c: char) -> Option<&'static str> {
-    Some(match c {
-        'æ' | 'Æ' => "ae",
-        'œ' | 'Œ' => "oe",
-        'ß' | 'ẞ' => "ss",
-        'ø' | 'Ø' => "o",
-        'đ' | 'Đ' | 'ð' | 'Ð' => "d",
-        'þ' | 'Þ' => "th",
-        'ł' | 'Ł' => "l",
-        'ı' => "i",
-        // NFKD decomposes vulgar fractions (½ -> 1⁄2) using the Unicode
-        // fraction slash; unaccent emits an ASCII slash.
-        '⁄' => "/",
-        '‘' | '’' | '‚' | '‛' => "'",
-        '“' | '”' | '„' | '‟' => "\"",
-        '‐' | '‑' | '‒' | '–' | '—' | '―' | '−' => "-",
-        _ => return None,
+struct Contract {
+    version: u32,
+    unaccent: HashMap<char, String>,
+    lower: HashMap<char, char>,
+}
+
+fn parse_codepoint_key(key: &str) -> char {
+    let cp = u32::from_str_radix(key, 16)
+        .unwrap_or_else(|_| panic!("invalid codepoint key in normalization contract: {key}"));
+    char::from_u32(cp).unwrap_or_else(|| {
+        panic!("codepoint key is not a scalar value in normalization contract: {key}")
     })
+}
+
+fn contract() -> &'static Contract {
+    static CONTRACT: OnceLock<Contract> = OnceLock::new();
+    CONTRACT.get_or_init(|| {
+        let file: ContractFile = serde_json::from_str(include_str!(
+            "../../shared-test-vectors/search-normalization.json"
+        ))
+        .expect("search-normalization.json is invalid");
+        Contract {
+            version: file.version,
+            unaccent: file
+                .unaccent
+                .into_iter()
+                .map(|(key, replacement)| (parse_codepoint_key(&key), replacement))
+                .collect(),
+            lower: file
+                .lower
+                .into_iter()
+                .map(|(key, replacement)| {
+                    let mut chars = replacement.chars();
+                    let (Some(lower), None) = (chars.next(), chars.next()) else {
+                        panic!("lower mapping for {key} is not a single character");
+                    };
+                    (parse_codepoint_key(&key), lower)
+                })
+                .collect(),
+        }
+    })
+}
+
+/// The version of the shared normalization contract this build consumes.
+/// Carried in the recipe sync response so a client with a different contract
+/// version fails sync instead of silently mismatching server search results.
+pub fn normalization_contract_version() -> u32 {
+    contract().version
+}
+
+/// Normalize text for matching and scoring, byte-identical to the database's
+/// `f_unaccent(text)` under `ILIKE`: apply the contract's unaccent mapping
+/// per codepoint (replacements may be empty or multi-character), then its
+/// per-codepoint lower() mapping. Unlike Rust's `str::to_lowercase`, the
+/// database lowercases without context (no final-sigma handling), so the
+/// contract's table is authoritative.
+pub fn normalize_for_search(s: &str) -> String {
+    let contract = contract();
+    let lower = |c: char| contract.lower.get(&c).copied().unwrap_or(c);
+    let mut out = String::with_capacity(s.len());
+    for c in s.chars() {
+        match contract.unaccent.get(&c) {
+            Some(replacement) => out.extend(replacement.chars().map(lower)),
+            None => out.push(lower(c)),
+        }
+    }
+    out
 }
 
 /// Score one recipe against the text tokens of a search query. Tokens are
@@ -170,6 +207,11 @@ mod tests {
     }
 
     #[test]
+    fn test_contract_version_is_positive() {
+        assert!(normalization_contract_version() >= 1);
+    }
+
+    #[test]
     fn test_normalize_strips_accents_and_case() {
         assert_eq!(normalize_for_search("Crème Brûlée"), "creme brulee");
         assert_eq!(normalize_for_search("JALAPEÑO"), "jalapeno");
@@ -189,12 +231,33 @@ mod tests {
 
     #[test]
     fn test_normalize_expands_presentation_forms_and_punctuation() {
-        // NFKD handles presentation ligatures and vulgar fractions.
+        // The unaccent dictionary expands presentation ligatures and vulgar
+        // fractions, and folds typographic punctuation to ASCII.
         assert_eq!(normalize_for_search("ﬁnely chopped"), "finely chopped");
         assert_eq!(normalize_for_search("1½ cups"), "11/2 cups");
-        // unaccent folds typographic punctuation to ASCII.
         assert_eq!(normalize_for_search("Mom’s Apple Cake"), "mom's apple cake");
         assert_eq!(normalize_for_search("Sweet–and–Sour"), "sweet-and-sour");
+    }
+
+    #[test]
+    fn test_normalize_deletes_combining_marks() {
+        // Decomposed "é" (e + U+0301): the dictionary deletes the bare
+        // combining mark, exactly like the database.
+        assert_eq!(normalize_for_search("Cre\u{301}me"), "creme");
+    }
+
+    #[test]
+    fn test_normalize_folds_fullwidth_forms() {
+        assert_eq!(normalize_for_search("ＡＢＣ"), "abc");
+    }
+
+    #[test]
+    fn test_normalize_lowercases_per_codepoint_without_context() {
+        // The database's lower() has no final-sigma special case: Σ always
+        // lowercases to σ, and ς stays ς. Rust's to_lowercase would produce
+        // "ας" for "ΑΣ"; the contract must win.
+        assert_eq!(normalize_for_search("ΣΟΥΠΑ"), "σουπα");
+        assert_eq!(normalize_for_search("σουπες"), "σουπες");
     }
 
     #[test]

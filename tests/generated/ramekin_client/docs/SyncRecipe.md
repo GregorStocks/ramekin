@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | 
 **description** | **str** |  | [optional] 
 **id** | **UUID** |  | 
+**ingredient_match_text** | **str** | The database&#39;s text rendering of the stored ingredients JSONB — the exact haystack the server&#39;s bare-text search filter matches (JSON keys and syntax included). Local search must match against this string, not a re-encoding of &#x60;ingredients&#x60;, to reproduce server result membership. | 
 **ingredients** | [**List[Ingredient]**](Ingredient.md) |  | 
 **instructions** | **str** |  | 
 **notes** | **str** |  | [optional] 

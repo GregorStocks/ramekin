@@ -22,6 +22,8 @@ export function instanceOfSyncRecipesResponse(value) {
         return false;
     if (!('hasMore' in value) || value['hasMore'] === undefined)
         return false;
+    if (!('normalizationContractVersion' in value) || value['normalizationContractVersion'] === undefined)
+        return false;
     if (!('recipes' in value) || value['recipes'] === undefined)
         return false;
     return true;
@@ -37,6 +39,7 @@ export function SyncRecipesResponseFromJSONTyped(json, ignoreDiscriminator) {
         'cursor': json['cursor'],
         'deleted': json['deleted'],
         'hasMore': json['has_more'],
+        'normalizationContractVersion': json['normalization_contract_version'],
         'recipes': (json['recipes'].map(SyncRecipeFromJSON)),
     };
 }
@@ -51,6 +54,7 @@ export function SyncRecipesResponseToJSONTyped(value, ignoreDiscriminator = fals
         'cursor': value['cursor'],
         'deleted': value['deleted'],
         'has_more': value['hasMore'],
+        'normalization_contract_version': value['normalizationContractVersion'],
         'recipes': (value['recipes'].map(SyncRecipeToJSON)),
     };
 }

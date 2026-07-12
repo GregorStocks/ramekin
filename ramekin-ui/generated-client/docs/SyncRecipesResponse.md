@@ -9,6 +9,7 @@ Name | Type
 `cursor` | number
 `deleted` | Array&lt;string&gt;
 `hasMore` | boolean
+`normalizationContractVersion` | number
 `recipes` | [Array&lt;SyncRecipe&gt;](SyncRecipe.md)
 
 ## Example
@@ -21,6 +22,7 @@ const example = {
   "cursor": null,
   "deleted": null,
   "hasMore": null,
+  "normalizationContractVersion": null,
   "recipes": null,
 } satisfies SyncRecipesResponse
 

@@ -25,6 +25,9 @@ pub struct SyncRecipe {
     pub description: Option<Option<String>>,
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
+    /// The database's text rendering of the stored ingredients JSONB — the exact haystack the server's bare-text search filter matches (JSON keys and syntax included). Local search must match against this string, not a re-encoding of `ingredients`, to reproduce server result membership.
+    #[serde(rename = "ingredient_match_text")]
+    pub ingredient_match_text: String,
     #[serde(rename = "ingredients")]
     pub ingredients: Vec<models::Ingredient>,
     #[serde(rename = "instructions")]
@@ -63,6 +66,7 @@ impl SyncRecipe {
     pub fn new(
         created_at: String,
         id: uuid::Uuid,
+        ingredient_match_text: String,
         ingredients: Vec<models::Ingredient>,
         instructions: String,
         tags: Vec<String>,
@@ -73,6 +77,7 @@ impl SyncRecipe {
             created_at,
             description: None,
             id,
+            ingredient_match_text,
             ingredients,
             instructions,
             notes: None,

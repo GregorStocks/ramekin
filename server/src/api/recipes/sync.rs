@@ -1,5 +1,5 @@
 use crate::api::recipes::read::{
-    current_recipe_versions_for_user, recipe_relevance_select, RecipeRelevanceRow,
+    current_recipe_versions_for_user, recipe_sync_select, RecipeSyncRow,
 };
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
@@ -55,6 +55,12 @@ pub struct SyncRecipesResponse {
     /// True when the sweep has more pages. Request the next one with the same
     /// `cursor` and `after_id` set to this page's last recipe ID.
     pub has_more: bool,
+    /// Version of the shared search-normalization contract
+    /// (shared-test-vectors/search-normalization.json) the server was built
+    /// with. A client mirroring server search locally must fail the sync when
+    /// it does not support this version: matching with a stale contract would
+    /// silently drop or add results relative to server search.
+    pub normalization_contract_version: u32,
 }
 
 /// Read-only recipe data needed to populate the iOS cache and mirror server search.
@@ -69,12 +75,17 @@ pub struct SyncRecipe {
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
     pub ingredients: Vec<Ingredient>,
+    /// The database's text rendering of the stored ingredients JSONB — the
+    /// exact haystack the server's bare-text search filter matches (JSON keys
+    /// and syntax included). Local search must match against this string, not
+    /// a re-encoding of `ingredients`, to reproduce server result membership.
+    pub ingredient_match_text: String,
     pub instructions: String,
     pub notes: Option<String>,
 }
 
 impl SyncRecipe {
-    fn try_from_row(row: RecipeRelevanceRow) -> Result<Self, serde_json::Error> {
+    fn try_from_row(row: RecipeSyncRow) -> Result<Self, serde_json::Error> {
         let ingredients = serde_json::from_value(row.ingredients)?;
         Ok(Self {
             id: row.id,
@@ -86,6 +97,7 @@ impl SyncRecipe {
             created_at: row.created_at,
             updated_at: row.updated_at,
             ingredients,
+            ingredient_match_text: row.ingredient_match_text,
             instructions: row.instructions,
             notes: row.notes,
         })
@@ -160,8 +172,8 @@ pub async fn sync_recipes(
                     query = query.filter(recipes::id.gt(after_id));
                 }
 
-                let mut rows: Vec<RecipeRelevanceRow> = query
-                    .select(recipe_relevance_select!())
+                let mut rows: Vec<RecipeSyncRow> = query
+                    .select(recipe_sync_select!())
                     .order(recipes::id.asc())
                     .limit(params.limit + 1)
                     .load(conn)?;
@@ -214,6 +226,7 @@ pub async fn sync_recipes(
             deleted,
             cursor,
             has_more,
+            normalization_contract_version: ramekin_core::search::normalization_contract_version(),
         }),
     ))
 }

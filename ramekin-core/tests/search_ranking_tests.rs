@@ -1,12 +1,11 @@
 //! Shared-vector tests for search relevance ranking.
 //!
-//! The corpus in `fixtures/search_ranking/cases.json` is the canonical
+//! The corpus in `shared-test-vectors/search-ranking.json` is the canonical
 //! specification of ranking behavior. Each case lists recipe ids in expected
 //! score order and requires the scores to be strictly decreasing, so ranking
 //! never depends on tie-breaking; `zero_score` pins ids that must not match
-//! at all. A future client-side search implementation must consume this same
-//! file and produce identical rankings (see
-//! issues/blocked-ios-local-search-relevance.json5).
+//! at all. The iOS local search implementation consumes this same file
+//! (SearchRankingSharedVectorTests) and must produce identical rankings.
 
 use ramekin_core::search::{relevance_score, SearchDoc};
 use serde::Deserialize;
@@ -55,8 +54,8 @@ fn score(recipe: &FixtureRecipe, tokens: &[String]) -> u32 {
 
 #[test]
 fn test_search_ranking_vectors() {
-    let path =
-        PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/search_ranking/cases.json");
+    let path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join("../shared-test-vectors/search-ranking.json");
     let fixture: FixtureFile =
         serde_json::from_str(&fs::read_to_string(&path).expect("read fixture"))
             .expect("parse fixture");

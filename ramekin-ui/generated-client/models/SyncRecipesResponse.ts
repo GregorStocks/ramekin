@@ -52,6 +52,16 @@ export interface SyncRecipesResponse {
      */
     hasMore: boolean;
     /**
+     * Version of the shared search-normalization contract
+     * (shared-test-vectors/search-normalization.json) the server was built
+     * with. A client mirroring server search locally must fail the sync when
+     * it does not support this version: matching with a stale contract would
+     * silently drop or add results relative to server search.
+     * @type {number}
+     * @memberof SyncRecipesResponse
+     */
+    normalizationContractVersion: number;
+    /**
      * The next `limit` active recipes (by ascending recipe ID, starting past
      * `after_id`) changed at or after `cursor`. All active recipes match when
      * `cursor` is absent.
@@ -68,6 +78,7 @@ export function instanceOfSyncRecipesResponse(value: object): value is SyncRecip
     if (!('cursor' in value) || value['cursor'] === undefined) return false;
     if (!('deleted' in value) || value['deleted'] === undefined) return false;
     if (!('hasMore' in value) || value['hasMore'] === undefined) return false;
+    if (!('normalizationContractVersion' in value) || value['normalizationContractVersion'] === undefined) return false;
     if (!('recipes' in value) || value['recipes'] === undefined) return false;
     return true;
 }
@@ -85,6 +96,7 @@ export function SyncRecipesResponseFromJSONTyped(json: any, ignoreDiscriminator:
         'cursor': json['cursor'],
         'deleted': json['deleted'],
         'hasMore': json['has_more'],
+        'normalizationContractVersion': json['normalization_contract_version'],
         'recipes': ((json['recipes'] as Array<any>).map(SyncRecipeFromJSON)),
     };
 }
@@ -103,6 +115,7 @@ export function SyncRecipesResponseToJSONTyped(value?: SyncRecipesResponse | nul
         'cursor': value['cursor'],
         'deleted': value['deleted'],
         'has_more': value['hasMore'],
+        'normalization_contract_version': value['normalizationContractVersion'],
         'recipes': ((value['recipes'] as Array<any>).map(SyncRecipeToJSON)),
     };
 }

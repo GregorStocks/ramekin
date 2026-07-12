@@ -16,6 +16,8 @@ public struct SyncRecipe: Codable, JSONEncodable, Hashable {
     public var createdAt: Date
     public var description: String?
     public var id: UUID
+    /** The database's text rendering of the stored ingredients JSONB — the exact haystack the server's bare-text search filter matches (JSON keys and syntax included). Local search must match against this string, not a re-encoding of `ingredients`, to reproduce server result membership. */
+    public var ingredientMatchText: String
     public var ingredients: [Ingredient]
     public var instructions: String
     public var notes: String?
@@ -25,10 +27,11 @@ public struct SyncRecipe: Codable, JSONEncodable, Hashable {
     public var title: String
     public var updatedAt: Date
 
-    public init(createdAt: Date, description: String? = nil, id: UUID, ingredients: [Ingredient], instructions: String, notes: String? = nil, rating: Int? = nil, tags: [String], thumbnailPhotoId: UUID? = nil, title: String, updatedAt: Date) {
+    public init(createdAt: Date, description: String? = nil, id: UUID, ingredientMatchText: String, ingredients: [Ingredient], instructions: String, notes: String? = nil, rating: Int? = nil, tags: [String], thumbnailPhotoId: UUID? = nil, title: String, updatedAt: Date) {
         self.createdAt = createdAt
         self.description = description
         self.id = id
+        self.ingredientMatchText = ingredientMatchText
         self.ingredients = ingredients
         self.instructions = instructions
         self.notes = notes
@@ -43,6 +46,7 @@ public struct SyncRecipe: Codable, JSONEncodable, Hashable {
         case createdAt = "created_at"
         case description
         case id
+        case ingredientMatchText = "ingredient_match_text"
         case ingredients
         case instructions
         case notes
@@ -60,6 +64,7 @@ public struct SyncRecipe: Codable, JSONEncodable, Hashable {
         try container.encode(createdAt, forKey: .createdAt)
         try container.encodeIfPresent(description, forKey: .description)
         try container.encode(id, forKey: .id)
+        try container.encode(ingredientMatchText, forKey: .ingredientMatchText)
         try container.encode(ingredients, forKey: .ingredients)
         try container.encode(instructions, forKey: .instructions)
         try container.encodeIfPresent(notes, forKey: .notes)

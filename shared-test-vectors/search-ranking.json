@@ -1,5 +1,5 @@
 {
-  "_comment": "Shared test vectors for search relevance ranking. Canonical implementation: ramekin-core/src/search.rs. Any client that implements local search (see issues/blocked-ios-local-search-relevance.json5) must consume this file and produce identical rankings. expected_order lists recipe ids from highest to lowest score and requires strictly decreasing scores (no ties); zero_score lists ids that must score exactly 0.",
+  "_comment": "Shared test vectors for search relevance ranking. Canonical implementation: ramekin-core/src/search.rs; iOS mirror: ramekin-ios/Ramekin/RecipeSearchSupport.swift. Consumed by ramekin-core/tests/search_ranking_tests.rs and SearchRankingSharedVectorTests. expected_order lists recipe ids from highest to lowest score and requires strictly decreasing scores (no ties); zero_score lists ids that must score exactly 0.",
   "recipes": [
     {
       "id": "garlic-bread",
