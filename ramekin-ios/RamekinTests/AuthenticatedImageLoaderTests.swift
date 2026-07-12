@@ -26,7 +26,7 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
         )
 
         loader.load(url: url)
-        try await waitForImage(on: loader)
+        await waitForImage(on: loader)
 
         XCTAssertTrue(loader.image === cachedImage)
         XCTAssertFalse(loader.isLoading)
@@ -54,7 +54,7 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
             }
         )
         loaderA.load(url: url)
-        try await waitForImage(on: loaderA)
+        await waitForImage(on: loaderA)
         let tokenAFirstImageData = try XCTUnwrap(loaderA.image?.pngData())
 
         let loaderB = AuthenticatedImageLoader(
@@ -65,7 +65,7 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
             }
         )
         loaderB.load(url: url)
-        try await waitForImage(on: loaderB)
+        await waitForImage(on: loaderB)
         let tokenBImageData = try XCTUnwrap(loaderB.image?.pngData())
 
         let loaderASecond = AuthenticatedImageLoader(
@@ -76,7 +76,7 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
             }
         )
         loaderASecond.load(url: url)
-        try await waitForImage(on: loaderASecond)
+        await waitForImage(on: loaderASecond)
         let tokenASecondImageData = try XCTUnwrap(loaderASecond.image?.pngData())
 
         XCTAssertNotEqual(tokenAFirstImageData, tokenBImageData)
@@ -85,16 +85,13 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
         XCTAssertEqual(requestCount, 2)
     }
 
+    /// Awaits the load `loader` just started. Polling against a wall-clock deadline instead made
+    /// the first load in a suite flaky on CI, where cold-start work can outlast a short deadline.
     @MainActor
-    private func waitForImage(
-        on loader: AuthenticatedImageLoader,
-        timeoutNanoseconds: UInt64 = 1_000_000_000
-    ) async throws {
-        let deadline = ContinuousClock.now + .nanoseconds(Int64(timeoutNanoseconds))
-        while loader.image == nil && loader.error == nil && ContinuousClock.now < deadline {
-            try await Task.sleep(nanoseconds: 10_000_000)
-        }
+    private func waitForImage(on loader: AuthenticatedImageLoader) async {
+        await loader.currentTask?.value
 
+        XCTAssertNil(loader.error)
         XCTAssertNotNil(loader.image)
     }
 
