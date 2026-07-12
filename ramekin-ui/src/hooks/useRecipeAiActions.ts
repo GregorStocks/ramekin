@@ -15,7 +15,6 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 interface UseRecipeAiActionsOptions {
   recipeId: Accessor<string>;
   recipe: Accessor<RecipeResponse | null>;
-  currentVersionId: Accessor<string | null>;
   getRecipesApi: () => RecipesApi;
   getEnrichApi: () => EnrichApi;
   loadRecipe: () => Promise<void>;
@@ -50,12 +49,27 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
   const [enriching, setEnriching] = createSignal(false);
   const [enrichedContent, setEnrichedContent] =
     createSignal<RecipeContent | null>(null);
+  const [enrichmentSourceVersionId, setEnrichmentSourceVersionId] =
+    createSignal<string | null>(null);
   const [applyingEnrichment, setApplyingEnrichment] = createSignal(false);
   const [customInstruction, setCustomInstruction] = createSignal("");
   const [showCustomEnrichInput, setShowCustomEnrichInput] = createSignal(false);
   const [generatingPhoto, setGeneratingPhoto] = createSignal(false);
   const [normalizingTitle, setNormalizingTitle] = createSignal(false);
   const [generatingDescription, setGeneratingDescription] = createSignal(false);
+
+  const setEnrichmentPreview = (
+    content: RecipeContent,
+    sourceVersionId: string,
+  ) => {
+    setEnrichedContent(content);
+    setEnrichmentSourceVersionId(sourceVersionId);
+  };
+
+  const clearEnrichmentPreview = () => {
+    setEnrichedContent(null);
+    setEnrichmentSourceVersionId(null);
+  };
 
   const handleEnrich = async () => {
     const currentRecipe = options.recipe();
@@ -67,7 +81,7 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
       const enriched = await options.getEnrichApi().enrichRecipe({
         recipeContent: recipeToContent(currentRecipe),
       });
-      setEnrichedContent(enriched);
+      setEnrichmentPreview(enriched, currentRecipe.versionId);
     } catch (err) {
       const message = await extractApiError(err, "Failed to enrich recipe");
       options.setError(message);
@@ -79,11 +93,10 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
   const handleApplyEnrichment = async () => {
     const enriched = enrichedContent();
     if (!enriched) return;
-    const currentRecipe = options.recipe();
-    const expectedVersionId = options.currentVersionId();
-    if (!currentRecipe || !expectedVersionId) {
+    const expectedVersionId = enrichmentSourceVersionId();
+    if (!expectedVersionId) {
       throw new Error(
-        "Cannot apply enrichment before loading the current recipe version",
+        "Cannot apply enrichment without its source recipe version",
       );
     }
 
@@ -109,7 +122,7 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
           sourceUrl: enriched.sourceUrl,
         },
       });
-      setEnrichedContent(null);
+      clearEnrichmentPreview();
       await options.loadRecipe();
     } catch (err) {
       const message = await extractApiError(err, "Failed to apply enrichment");
@@ -184,7 +197,7 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
               : undefined,
         },
       });
-      setEnrichedContent(enriched);
+      setEnrichmentPreview(enriched, currentRecipe.versionId);
       setShowCustomEnrichInput(false);
       setCustomInstruction("");
     } catch (err) {
@@ -239,6 +252,6 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
     handleNormalizeTitle,
     handleCustomEnrich,
     handleGenerateDescription,
-    handleEnrichClose: () => setEnrichedContent(null),
+    handleEnrichClose: clearEnrichmentPreview,
   };
 }

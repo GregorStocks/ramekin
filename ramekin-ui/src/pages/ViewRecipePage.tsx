@@ -308,7 +308,6 @@ export default function ViewRecipePage() {
   const recipeAiActions = useRecipeAiActions({
     recipeId: () => params.id,
     recipe,
-    currentVersionId,
     getRecipesApi,
     getEnrichApi,
     loadRecipe,
