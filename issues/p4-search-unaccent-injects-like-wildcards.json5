@@ -1,0 +1,34 @@
+{
+  "title": "Server search lets unaccent expansions act as LIKE wildcards",
+  "description": "list_recipes builds each bare-text token's pattern by \
+escaping LIKE metacharacters (escape_like_pattern) and *then* passing the \
+pattern through f_unaccent. Six codepoints unaccent to LIKE metacharacters \
+(fullwidth ％ U+FF05 and small ﹪ U+FE6A to %, fullwidth ＿ U+FF3F to _, and \
+U+2216/U+FE68/U+FF3C to \\), so a query containing them gains wildcard or \
+escape behavior after escaping: searching 100％ matches any recipe containing \
+'100'.\n\
+\n\
+This is currently deliberate parity behavior: the iOS local search mirrors it \
+exactly (RecipeSearchSupport implements LIKE semantics over the normalized \
+pattern), and the shared vector case 'fullwidth percent unaccents to a LIKE \
+wildcard after escaping' in shared-test-vectors/search-match-filter.json pins \
+it on both sides. But it is arguably a server bug — a user typing a fullwidth \
+percent almost certainly wants a literal match.\n\
+\n\
+If it is worth fixing, escape the pattern *after* unaccenting it on the \
+server (f_unaccent of the escaped pattern is otherwise unchanged: no other \
+unaccent output contains \\, %, or _), simplify the iOS LIKE matcher back to \
+plain substring containment, and update the shared vector case in the same \
+PR. If not, delete this issue; the behavior is documented and pinned either \
+way.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "api",
+    "search",
+    "ios",
+  ],
+  "created_at": "2026-07-12T16:00:00-07:00",
+  "updated_at": "2026-07-12T16:00:00-07:00",
+}

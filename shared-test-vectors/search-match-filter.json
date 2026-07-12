@@ -515,6 +515,14 @@
       ]
     },
     {
+      "name": "fullwidth percent unaccents to a LIKE wildcard after escaping",
+      "query": "100％",
+      "expected_ids": [
+        "hot-cocoa",
+        "pancakes"
+      ]
+    },
+    {
       "name": "token found only in ingredient JSON keys matches but scores zero",
       "query": "measurements",
       "expected_ids": [

@@ -34,6 +34,11 @@ targets:
           - Info.plist
       - path: Shared
       - path: generated-client/RamekinClient/Classes/OpenAPIs
+      # The search normalization contract is app data, not just a test
+      # vector: SearchNormalizationSupport loads it at runtime.
+      - path: ../shared-test-vectors/search-normalization.json
+        buildPhase: resources
+        type: file
     info:
       path: Ramekin/Info.plist
       properties:
@@ -112,6 +117,12 @@ targets:
         buildPhase: resources
         type: file
       - path: ../shared-test-vectors/created-date-filter.json
+        buildPhase: resources
+        type: file
+      - path: ../shared-test-vectors/search-ranking.json
+        buildPhase: resources
+        type: file
+      - path: ../shared-test-vectors/search-match-filter.json
         buildPhase: resources
         type: file
     settings:

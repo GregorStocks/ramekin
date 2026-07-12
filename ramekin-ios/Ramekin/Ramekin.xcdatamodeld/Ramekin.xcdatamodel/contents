@@ -4,6 +4,7 @@
         <attribute name="accountKey" attributeType="String"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="ingredientMatchText" attributeType="String" defaultValueString="[]"/>
         <attribute name="ingredientsJSON" attributeType="String" defaultValueString="[]"/>
         <attribute name="instructions" attributeType="String" defaultValueString=""/>
         <attribute name="notes" optional="YES" attributeType="String"/>

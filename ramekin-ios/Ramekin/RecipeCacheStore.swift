@@ -4,6 +4,10 @@ import Foundation
 struct CachedRecipeSearchDocument {
     let summary: RecipeSummary
     let ingredients: [Ingredient]
+    /// The server-produced JSONB-to-text rendering of the ingredients — the
+    /// exact haystack server search matches bare text against. Distinct from
+    /// `ingredients`, which the relevance scorer flattens itself.
+    let ingredientMatchText: String
     let instructions: String
     let notes: String?
 }
@@ -25,7 +29,9 @@ struct PendingSyncSweep: Codable, Equatable {
 @MainActor
 final class RecipeCacheStore {
     static let shared = RecipeCacheStore()
-    private static let cacheSchemaVersion = 3
+    // v4 added ingredientMatchText; bumping forces a full re-sync so every
+    // cached recipe carries it.
+    private static let cacheSchemaVersion = 4
 
     private let coreDataStack: CoreDataStack
     private let userDefaults: UserDefaults
@@ -76,10 +82,6 @@ final class RecipeCacheStore {
         userDefaults.removeObject(forKey: pendingSweepKey(accountKey: accountKey))
     }
 
-    func loadRecipes(accountKey: String) throws -> [RecipeSummary] {
-        try loadSearchDocuments(accountKey: accountKey).map(\.summary)
-    }
-
     func loadSearchDocuments(accountKey: String) throws -> [CachedRecipeSearchDocument] {
         let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
         request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
@@ -105,6 +107,7 @@ final class RecipeCacheStore {
                 ?? CachedRecipe(context: context)
             cachedRecipe.accountKey = accountKey
             cachedRecipe.id = recipe.id
+            cachedRecipe.ingredientMatchText = recipe.ingredientMatchText
             cachedRecipe.ingredientsJSON = try ingredientsJSON(recipe.ingredients)
             cachedRecipe.instructions = recipe.instructions
             cachedRecipe.notes = recipe.notes
@@ -130,6 +133,7 @@ final class RecipeCacheStore {
     private func searchDocument(from cachedRecipe: CachedRecipe) -> CachedRecipeSearchDocument {
         guard let createdAt = cachedRecipe.createdAt,
               let id = cachedRecipe.id,
+              let ingredientMatchText = cachedRecipe.ingredientMatchText,
               let ingredientsJSON = cachedRecipe.ingredientsJSON,
               let instructions = cachedRecipe.instructions,
               let tagsJSON = cachedRecipe.tagsJSON,
@@ -152,6 +156,7 @@ final class RecipeCacheStore {
         return CachedRecipeSearchDocument(
             summary: summary,
             ingredients: ingredients(from: ingredientsJSON),
+            ingredientMatchText: ingredientMatchText,
             instructions: instructions,
             notes: cachedRecipe.notes
         )

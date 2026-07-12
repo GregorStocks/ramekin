@@ -306,8 +306,8 @@ extension RecipeListViewModel {
         }
 
         do {
-            let cachedRecipes = try cache.loadRecipes(accountKey)
-            applyCachedRecipes(cachedRecipes)
+            let cachedDocuments = try cache.loadSearchDocuments(accountKey)
+            applyCachedRecipes(cachedDocuments)
         } catch {
             DebugLogger.shared.log("loadCachedRecipes error: \(error.localizedDescription)", source: "RecipeList")
         }
@@ -373,7 +373,7 @@ private extension RecipeListViewModel {
         // error — an empty `recipes` can just mean the filters match nothing.
         var appliedCachedRecipes = false
         do {
-            let cachedBeforeSync = try cache.loadRecipes(accountKey)
+            let cachedBeforeSync = try cache.loadSearchDocuments(accountKey)
             // Sorting, tag filters, and clearing a search are answerable from
             // the cache alone, so apply them before the network round-trip.
             // The sync below only freshens the data: if it fails or hangs, the
@@ -396,14 +396,14 @@ private extension RecipeListViewModel {
                     try await runSyncSweep(cursor: cursor, accountKey: accountKey)
                 }
             }
-            let cachedRecipes = try cache.loadRecipes(accountKey)
+            let cachedDocuments = try cache.loadSearchDocuments(accountKey)
 
             guard isCurrentRequest(generation, key) else {
                 logger.log("syncCachedRecipes: superseded request, discarding results", source: "RecipeList")
                 return
             }
-            applyCachedRecipes(cachedRecipes)
-            logger.log("syncCachedRecipes: cache has \(cachedRecipes.count) recipes", source: "RecipeList")
+            applyCachedRecipes(cachedDocuments)
+            logger.log("syncCachedRecipes: cache has \(cachedDocuments.count) recipes", source: "RecipeList")
         } catch is CancellationError {
             logger.log("syncCachedRecipes: cancelled", source: "RecipeList")
         } catch {
@@ -431,9 +431,9 @@ private extension RecipeListViewModel {
         )
     }
 
-    func applyCachedRecipes(_ cachedRecipes: [RecipeSummary]) {
-        let visibleRecipes = RecipeSummaryCacheSupport.filteredAndSorted(
-            cachedRecipes,
+    func applyCachedRecipes(_ cachedDocuments: [CachedRecipeSearchDocument]) {
+        let visibleRecipes = RecipeSummaryCacheSupport.visibleRecipes(
+            documents: cachedDocuments,
             filterState: currentFilterState,
             sortOrder: sortOrder
         )

@@ -30,6 +30,7 @@ final class RecipeCacheStoreTests: XCTestCase {
                     section: "Cake"
                 )
             ],
+            ingredientMatchText: "[{\"item\": \"flour\"}]",
             instructions: "Mix and bake.",
             notes: "Cool completely."
         )
@@ -39,6 +40,7 @@ final class RecipeCacheStoreTests: XCTestCase {
                 cursor: 300,
                 deleted: [],
                 hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [recipe]
             ),
             accountKey: accountKey
@@ -50,6 +52,7 @@ final class RecipeCacheStoreTests: XCTestCase {
         XCTAssertEqual(document.summary.id, recipe.id)
         XCTAssertEqual(document.summary.title, recipe.title)
         XCTAssertEqual(document.ingredients, recipe.ingredients)
+        XCTAssertEqual(document.ingredientMatchText, "[{\"item\": \"flour\"}]")
         XCTAssertEqual(document.instructions, "Mix and bake.")
         XCTAssertEqual(document.notes, "Cool completely.")
         // The cursor only advances when a sweep completes, never per page.
@@ -85,6 +88,7 @@ final class RecipeCacheStoreTests: XCTestCase {
                 cursor: 300,
                 deleted: [],
                 hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [makeRecipe(id: id, instructions: "Old instructions", notes: "Old notes")]
             ),
             accountKey: accountKey
@@ -102,6 +106,7 @@ final class RecipeCacheStoreTests: XCTestCase {
                 cursor: 500,
                 deleted: [],
                 hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [updated]
             ),
             accountKey: accountKey
@@ -123,6 +128,7 @@ final class RecipeCacheStoreTests: XCTestCase {
                 cursor: 300,
                 deleted: [],
                 hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [recipe]
             ),
             accountKey: accountKey
@@ -133,6 +139,7 @@ final class RecipeCacheStoreTests: XCTestCase {
                 cursor: 400,
                 deleted: [recipe.id],
                 hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: []
             ),
             accountKey: accountKey
@@ -156,6 +163,7 @@ final class RecipeCacheStoreTests: XCTestCase {
     private func makeRecipe(
         id: UUID = UUID(),
         ingredients: [Ingredient] = [],
+        ingredientMatchText: String = "[]",
         instructions: String = "Cook it.",
         notes: String? = nil,
         updatedAt: Date = Date(timeIntervalSince1970: 200)
@@ -164,6 +172,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             createdAt: Date(timeIntervalSince1970: 100),
             description: "A cached recipe",
             id: id,
+            ingredientMatchText: ingredientMatchText,
             ingredients: ingredients,
             instructions: instructions,
             notes: notes,
