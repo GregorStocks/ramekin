@@ -58,11 +58,23 @@ serve: check-deps db-up $(CLIENT_MARKER) server-release-build ## Start release-m
 	@set -a && . ./dev.env && set +a && process-compose up -e dev.env -f serve-compose.yaml -t=false --port "$${PROCESS_COMPOSE_PORT:-8180}"
 
 dev-down: ## Stop dev processes (not database)
-	@process-compose down 2>/dev/null || true
+	@if [ -f dev.env ]; then set -a && . ./dev.env && set +a; fi; \
+	port="$${PROCESS_COMPOSE_PORT:-8180}"; \
+	if process-compose project state --port "$$port" >/dev/null 2>&1; then \
+		process-compose down --port "$$port"; \
+	else \
+		echo "No process-compose instance running on port $$port"; \
+	fi
 	@pkill -f "cargo watch" 2>/dev/null || true
 
 serve-down: ## Stop release-mode serve processes
-	@process-compose down 2>/dev/null || true
+	@if [ -f dev.env ]; then set -a && . ./dev.env && set +a; fi; \
+	port="$${PROCESS_COMPOSE_PORT:-8180}"; \
+	if process-compose project state --port "$$port" >/dev/null 2>&1; then \
+		process-compose down --port "$$port"; \
+	else \
+		echo "No process-compose instance running on port $$port"; \
+	fi
 	@pkill -f "systemfd --no-pid" 2>/dev/null || true
 
 # Generate OpenAPI spec from Rust source
