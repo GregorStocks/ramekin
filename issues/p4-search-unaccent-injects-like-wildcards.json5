@@ -15,12 +15,11 @@ wildcard after escaping' in shared-test-vectors/search-match-filter.json pins \
 it on both sides. But it is arguably a server bug — a user typing a fullwidth \
 percent almost certainly wants a literal match.\n\
 \n\
-If it is worth fixing, escape the pattern *after* unaccenting it on the \
-server (f_unaccent of the escaped pattern is otherwise unchanged: no other \
-unaccent output contains \\, %, or _), simplify the iOS LIKE matcher back to \
-plain substring containment, and update the shared vector case in the same \
-PR. If not, delete this issue; the behavior is documented and pinned either \
-way.",
+If it is worth fixing, escape the pattern *after* unaccenting it on the server \
+(f_unaccent of the escaped pattern is otherwise unchanged: no other unaccent \
+output contains \\, %, or _), simplify the iOS LIKE matcher back to plain \
+substring containment, and update the shared vector case in the same PR. If \
+not, delete this issue; the behavior is documented and pinned either way.",
   "status": "open",
   "priority": 4,
   "type": "bug",

@@ -134,7 +134,7 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
         }
     }
 
-    func testRoutingKeepsServerOnlyQueriesOnTheNetwork() {
+    func testRoutingServesTextAndFilterQueriesFromCache() {
         // Plain text now runs locally...
         XCTAssertTrue(
             RecipeSummaryCacheSupport.canServeFromCache(
@@ -157,6 +157,17 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
                 sortOrder: .title
             )
         )
+        // An unparseable threshold is a server-side no-op, so it can run
+        // locally too.
+        XCTAssertTrue(
+            RecipeSummaryCacheSupport.canServeFromCache(
+                filterState: RecipeListFilterState(searchText: "bread photo_size:abc"),
+                sortOrder: .newest
+            )
+        )
+    }
+
+    func testRoutingKeepsServerOnlyQueriesOnTheNetwork() {
         // The synced corpus has no source or photo metadata: those queries
         // stay on the server whether structured or typed as DSL tokens.
         XCTAssertFalse(
@@ -188,14 +199,6 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
         XCTAssertFalse(
             RecipeSummaryCacheSupport.canServeFromCache(
                 filterState: RecipeListFilterState(searchText: "bread photo_dim:>500"),
-                sortOrder: .newest
-            )
-        )
-        // An unparseable threshold is a server-side no-op, so it can run
-        // locally too.
-        XCTAssertTrue(
-            RecipeSummaryCacheSupport.canServeFromCache(
-                filterState: RecipeListFilterState(searchText: "bread photo_size:abc"),
                 sortOrder: .newest
             )
         )

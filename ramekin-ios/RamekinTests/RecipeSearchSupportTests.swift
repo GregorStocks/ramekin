@@ -23,8 +23,14 @@ final class RecipeSearchSupportTests: XCTestCase {
         XCTAssertEqual(parsed.textTokens, ["chicken"])
         XCTAssertEqual(parsed.tags, ["dinner"])
         XCTAssertEqual(parsed.source, "NYTimes")
-        XCTAssertEqual(parsed.hasPhotos, true)
+        XCTAssertEqual(parsed.photoFilter, .hasPhotos)
         XCTAssertTrue(parsed.requiresServer)
+    }
+
+    func testParseNoPhotosToken() {
+        XCTAssertEqual(RecipeSearchSupport.parse("no:photos").photoFilter, .noPhotos)
+        XCTAssertEqual(RecipeSearchSupport.parse("no:photo").photoFilter, .noPhotos)
+        XCTAssertEqual(RecipeSearchSupport.parse("bread").photoFilter, .any)
     }
 
     func testParseDateForms() {

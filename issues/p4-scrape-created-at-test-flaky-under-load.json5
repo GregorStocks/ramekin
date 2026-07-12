@@ -1,0 +1,26 @@
+{
+  "title": "test_created_at_present is flaky under heavy machine load",
+  "description": "tests/test_scrape_status_page.py::TestScrapeStatusResponse::test_created_at_present \
+asserts the scrape job's created_at is within 60 seconds of the client's wall \
+clock. Observed a one-off failure (2026-07-12) while the API suite ran \
+concurrently with two xcodebuild builds and a cargo release build; the same \
+suite passed immediately before and after on an idle machine, and host and \
+database clocks were in sync. Under that much load an xdist worker can \
+apparently stall long enough between creating the scrape and asserting to blow \
+the 60-second margin.\n\
+\n\
+The sanity margin is the point of the assertion (it catches populating \
+created_at from the wrong column), so don't just delete it. Options: widen the \
+margin (wrong-column bugs produce errors of hours or years, so even 10 minutes \
+keeps the signal), or capture `now` before creating the job and assert \
+created_at >= that lower bound and <= a post-request upper bound.",
+  "status": "open",
+  "priority": 4,
+  "type": "chore",
+  "labels": [
+    "api",
+    "tests",
+  ],
+  "created_at": "2026-07-12T16:20:00-07:00",
+  "updated_at": "2026-07-12T16:20:00-07:00",
+}

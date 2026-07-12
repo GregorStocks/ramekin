@@ -1,40 +1,41 @@
 import XCTest
 @testable import Ramekin
 
+private struct FixtureFile: Decodable {
+    let recipes: [FixtureRecipe]
+    let cases: [FixtureCase]
+}
+
+private struct FixtureRecipe: Decodable {
+    let id: String
+    let title: String
+    let description: String?
+    let tags: [String]
+    let ingredients: [String]
+    let instructions: String
+    let notes: String?
+}
+
+private struct FixtureCase: Decodable {
+    let name: String
+    let tokens: [String]
+    let expectedOrder: [String]
+    let zeroScore: [String]
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case tokens
+        case expectedOrder = "expected_order"
+        case zeroScore = "zero_score"
+    }
+}
+
 /// Consumes shared-test-vectors/search-ranking.json — the same corpus the
 /// canonical Rust scorer is pinned to (ramekin-core/tests/
 /// search_ranking_tests.rs) — and requires identical rankings from the Swift
 /// mirror: strictly decreasing scores down each expected order, and exact
 /// zeros where the server scores zero.
 final class SearchRankingSharedVectorTests: XCTestCase {
-    private struct FixtureFile: Decodable {
-        let recipes: [FixtureRecipe]
-        let cases: [FixtureCase]
-    }
-
-    private struct FixtureRecipe: Decodable {
-        let id: String
-        let title: String
-        let description: String?
-        let tags: [String]
-        let ingredients: [String]
-        let instructions: String
-        let notes: String?
-    }
-
-    private struct FixtureCase: Decodable {
-        let name: String
-        let tokens: [String]
-        let expectedOrder: [String]
-        let zeroScore: [String]
-
-        enum CodingKeys: String, CodingKey {
-            case name
-            case tokens
-            case expectedOrder = "expected_order"
-            case zeroScore = "zero_score"
-        }
-    }
 
     func testSearchRankingVectors() throws {
         let url = try XCTUnwrap(

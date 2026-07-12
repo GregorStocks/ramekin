@@ -1,6 +1,61 @@
 import XCTest
 @testable import Ramekin
 
+private struct FixtureFile: Decodable {
+    let recipes: [FixtureRecipe]
+    let cases: [FixtureCase]
+}
+
+private struct FixtureMeasurement: Decodable {
+    let amount: String?
+    let unit: String?
+}
+
+private struct FixtureIngredient: Decodable {
+    let item: String
+    let measurements: [FixtureMeasurement]
+    let note: String?
+    let section: String?
+}
+
+private struct FixtureRecipe: Decodable {
+    let id: String
+    let title: String
+    let description: String?
+    let tags: [String]
+    let ingredients: [FixtureIngredient]
+    let ingredientMatchText: String
+    let instructions: String
+    let notes: String?
+    let rating: Int?
+    let hasPhoto: Bool
+    let createdAt: String
+    let updatedAt: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, title, description, tags, ingredients, instructions, notes, rating
+        case ingredientMatchText = "ingredient_match_text"
+        case hasPhoto = "has_photo"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+    }
+}
+
+private struct FixtureCase: Decodable {
+    let name: String
+    let query: String
+    let sortBy: String?
+    let sortDir: String?
+    let expectedIds: [String]
+
+    enum CodingKeys: String, CodingKey {
+        case name, query
+        case sortBy = "sort_by"
+        case sortDir = "sort_dir"
+        case expectedIds = "expected_ids"
+    }
+}
+
 /// Consumes shared-test-vectors/search-match-filter.json — the end-to-end
 /// search contract: raw query strings plus recipe documents in, matched ids
 /// in final display order out. The server side replays the same file through
@@ -8,60 +63,6 @@ import XCTest
 /// this test replays it through the complete Swift local pipeline: parsing,
 /// normalization, membership, scoring, and ordering.
 final class SearchMatchFilterSharedVectorTests: XCTestCase {
-    private struct FixtureFile: Decodable {
-        let recipes: [FixtureRecipe]
-        let cases: [FixtureCase]
-    }
-
-    private struct FixtureMeasurement: Decodable {
-        let amount: String?
-        let unit: String?
-    }
-
-    private struct FixtureIngredient: Decodable {
-        let item: String
-        let measurements: [FixtureMeasurement]
-        let note: String?
-        let section: String?
-    }
-
-    private struct FixtureRecipe: Decodable {
-        let id: String
-        let title: String
-        let description: String?
-        let tags: [String]
-        let ingredients: [FixtureIngredient]
-        let ingredientMatchText: String
-        let instructions: String
-        let notes: String?
-        let rating: Int?
-        let hasPhoto: Bool
-        let createdAt: String
-        let updatedAt: String
-
-        enum CodingKeys: String, CodingKey {
-            case id, title, description, tags, ingredients, instructions, notes, rating
-            case ingredientMatchText = "ingredient_match_text"
-            case hasPhoto = "has_photo"
-            case createdAt = "created_at"
-            case updatedAt = "updated_at"
-        }
-    }
-
-    private struct FixtureCase: Decodable {
-        let name: String
-        let query: String
-        let sortBy: String?
-        let sortDir: String?
-        let expectedIds: [String]
-
-        enum CodingKeys: String, CodingKey {
-            case name, query
-            case sortBy = "sort_by"
-            case sortDir = "sort_dir"
-            case expectedIds = "expected_ids"
-        }
-    }
 
     func testSearchMatchFilterVectors() throws {
         let url = try XCTUnwrap(

@@ -12,9 +12,7 @@ enum RecipeSummaryCacheSupport {
         guard sortOrder != .random else {
             return false
         }
-        let parsed = RecipeSearchSupport.parse(
-            RecipeListFilterSupport.buildQuery(from: filterState) ?? ""
-        )
+        let parsed = parsedQuery(for: filterState)
         if parsed.requiresServer {
             return false
         }
@@ -35,9 +33,7 @@ enum RecipeSummaryCacheSupport {
         filterState: RecipeListFilterState,
         sortOrder: RecipeSortOrder
     ) -> [RecipeSummary] {
-        let parsed = RecipeSearchSupport.parse(
-            RecipeListFilterSupport.buildQuery(from: filterState) ?? ""
-        )
+        let parsed = parsedQuery(for: filterState)
         let hasText = !parsed.textTokens.isEmpty
         return RecipeSearchSupport.execute(
             documents: documents,
@@ -45,5 +41,11 @@ enum RecipeSummaryCacheSupport {
             sortBy: hasText ? nil : sortOrder.sortBy,
             sortDir: hasText ? nil : sortOrder.sortDir
         )
+    }
+
+    /// The same query string the app would send the server, parsed the same
+    /// way the server parses it.
+    private static func parsedQuery(for filterState: RecipeListFilterState) -> ParsedSearchQuery {
+        RecipeSearchSupport.parse(RecipeListFilterSupport.buildQuery(from: filterState) ?? "")
     }
 }

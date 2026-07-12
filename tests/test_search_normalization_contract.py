@@ -49,14 +49,12 @@ def _codepoint(key: str) -> str:
     return chr(int(key, 16))
 
 
-def _apply_unaccent(contract, text: str) -> str:
-    unaccent = {_codepoint(k): v for k, v in contract["unaccent"].items()}
-    return "".join(unaccent.get(c, c) for c in text)
+def _char_mapping(contract, table: str) -> dict[str, str]:
+    return {_codepoint(k): v for k, v in contract[table].items()}
 
 
-def _apply_lower(contract, text: str) -> str:
-    lower = {_codepoint(k): v for k, v in contract["lower"].items()}
-    return "".join(lower.get(c, c) for c in text)
+def _apply(mapping: dict[str, str], text: str) -> str:
+    return "".join(mapping.get(c, c) for c in text)
 
 
 def test_unaccent_mapping_matches_database_for_every_codepoint(database_url, contract):
@@ -92,22 +90,22 @@ def test_contract_applies_per_codepoint_to_whole_strings(database_url, contract)
     faithful if the database's functions also act per codepoint on full
     strings (no multi-character rules), so pin that property on strings that
     mix decomposed accents, ligatures, and unmapped scripts."""
+    unaccent = _char_mapping(contract, "unaccent")
+    lower = _char_mapping(contract, "lower")
     with psycopg.connect(database_url) as conn:
         for sample in COMPOSITION_SAMPLES:
             (unaccented,) = conn.execute(
                 "select unaccent('public.unaccent', %s)", (sample,)
             ).fetchone()
-            assert unaccented == _apply_unaccent(contract, sample), repr(sample)
+            assert unaccented == _apply(unaccent, sample), repr(sample)
             (lowered,) = conn.execute("select lower(%s)", (sample,)).fetchone()
-            assert lowered == _apply_lower(contract, sample), repr(sample)
+            assert lowered == _apply(lower, sample), repr(sample)
             # And the full pipeline the search filter uses:
             # lower(f_unaccent(text)) is what ILIKE compares.
             (normalized,) = conn.execute(
                 "select lower(f_unaccent(%s))", (sample,)
             ).fetchone()
-            assert normalized == _apply_lower(
-                contract, _apply_unaccent(contract, sample)
-            ), repr(sample)
+            assert normalized == _apply(lower, _apply(unaccent, sample)), repr(sample)
 
 
 def test_lower_replacements_are_single_codepoints(contract):

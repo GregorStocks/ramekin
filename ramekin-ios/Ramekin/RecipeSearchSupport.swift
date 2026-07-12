@@ -6,7 +6,9 @@ struct ParsedSearchQuery: Equatable {
     var textTokens: [String] = []
     var tags: [String] = []
     var source: String?
-    var hasPhotos: Bool?
+    /// `.any` when the query has no photo-presence token, mirroring the
+    /// server's absent filter.
+    var photoFilter: PhotoFilter = .any
     /// Validated `yyyy-MM-dd` values naming inclusive UTC calendar days.
     var createdAfter: String?
     var createdBefore: String?
@@ -60,32 +62,61 @@ enum RecipeSearchSupport {
     /// server.
     static func parse(_ query: String) -> ParsedSearchQuery {
         var result = ParsedSearchQuery()
-        for token in tokenize(query) {
-            if token.hasPrefix("tag:") {
-                let tag = String(token.dropFirst("tag:".count))
-                if !tag.isEmpty {
-                    result.tags.append(tag)
-                }
-            } else if token.hasPrefix("source:") {
-                let source = String(token.dropFirst("source:".count))
-                if !source.isEmpty {
-                    result.source = source
-                }
-            } else if token == "has:photos" || token == "has:photo" {
-                result.hasPhotos = true
-            } else if token == "no:photos" || token == "no:photo" {
-                result.hasPhotos = false
-            } else if token.hasPrefix("created:") {
-                parseDateFilter(String(token.dropFirst("created:".count)), into: &result)
-            } else if token.hasPrefix("photo_size:") {
-                result.photoSize = parseNumericThreshold(String(token.dropFirst("photo_size:".count)))
-            } else if token.hasPrefix("photo_dim:") {
-                result.photoDim = parseNumericThreshold(String(token.dropFirst("photo_dim:".count)))
-            } else if !token.isEmpty {
+        for token in tokenize(query) where !applyFilterToken(token, to: &result) {
+            if !token.isEmpty {
                 result.textTokens.append(token)
             }
         }
         return result
+    }
+
+    /// Consumes a DSL filter token into `result`, returning false for plain
+    /// text terms. Prefix order matches the server's `parse_query`.
+    private static func applyFilterToken(_ token: String, to result: inout ParsedSearchQuery) -> Bool {
+        if let tag = value(of: "tag:", in: token) {
+            if !tag.isEmpty {
+                result.tags.append(tag)
+            }
+            return true
+        }
+        if let source = value(of: "source:", in: token) {
+            if !source.isEmpty {
+                result.source = source
+            }
+            return true
+        }
+        if let photoFilter = photoPresenceFilter(token) {
+            result.photoFilter = photoFilter
+            return true
+        }
+        if let dateExpression = value(of: "created:", in: token) {
+            parseDateFilter(dateExpression, into: &result)
+            return true
+        }
+        if let sizeExpression = value(of: "photo_size:", in: token) {
+            result.photoSize = parseNumericThreshold(sizeExpression)
+            return true
+        }
+        if let dimExpression = value(of: "photo_dim:", in: token) {
+            result.photoDim = parseNumericThreshold(dimExpression)
+            return true
+        }
+        return false
+    }
+
+    private static func value(of prefix: String, in token: String) -> String? {
+        token.hasPrefix(prefix) ? String(token.dropFirst(prefix.count)) : nil
+    }
+
+    private static func photoPresenceFilter(_ token: String) -> PhotoFilter? {
+        switch token {
+        case "has:photos", "has:photo":
+            return .hasPhotos
+        case "no:photos", "no:photo":
+            return .noPhotos
+        default:
+            return nil
+        }
     }
 
     private static func parseNumericThreshold(_ expression: String) -> NumericThreshold? {
@@ -140,7 +171,13 @@ enum RecipeSearchSupport {
     /// of title, description, instructions, notes, or the ingredient match
     /// text (NULL fields never match, like SQL). Tags use whole-value CITEXT
     /// equality: case-insensitive but accent-sensitive, never unaccented.
-    static func matches(_ document: CachedRecipeSearchDocument, parsed: ParsedSearchQuery) -> Bool {
+    /// `membershipPatterns` are the tokens' prebuilt LIKE patterns — like the
+    /// server, they are built once per query, not per row.
+    static func matches(
+        _ document: CachedRecipeSearchDocument,
+        parsed: ParsedSearchQuery,
+        membershipPatterns: [[UInt32]]
+    ) -> Bool {
         let summary = document.summary
 
         for tag in parsed.tags {
@@ -150,8 +187,15 @@ enum RecipeSearchSupport {
             }
         }
 
-        if let hasPhotos = parsed.hasPhotos, hasPhotos != (summary.thumbnailPhotoId != nil) {
+        switch parsed.photoFilter {
+        case .any:
+            break
+        case .hasPhotos where summary.thumbnailPhotoId == nil:
             return false
+        case .noPhotos where summary.thumbnailPhotoId != nil:
+            return false
+        case .hasPhotos, .noPhotos:
+            break
         }
 
         guard matchesCreatedDates(
@@ -162,7 +206,7 @@ enum RecipeSearchSupport {
             return false
         }
 
-        if parsed.textTokens.isEmpty {
+        if membershipPatterns.isEmpty {
             return true
         }
         let fields: [[UInt32]?] = [
@@ -170,11 +214,10 @@ enum RecipeSearchSupport {
             summary.description.map(normalizedScalars),
             normalizedScalars(document.instructions),
             document.notes.map(normalizedScalars),
-            normalizedScalars(document.ingredientMatchText),
+            normalizedScalars(document.ingredientMatchText)
         ]
-        return parsed.textTokens.allSatisfy { token in
-            let pattern = membershipPattern(token)
-            return fields.contains { field in
+        return membershipPatterns.allSatisfy { pattern in
+            fields.contains { field in
                 guard let field else { return false }
                 return likeContains(haystack: field, pattern: pattern)
             }
@@ -196,187 +239,6 @@ enum RecipeSearchSupport {
         return true
     }
 
-    /// The server builds each token's SQL pattern by escaping LIKE
-    /// metacharacters and *then* unaccenting the pattern, so an unaccent
-    /// replacement that emits `%`, `_`, or `\` (e.g. fullwidth `％` → `%`)
-    /// acts as a wildcard or escape. Mirror that order exactly.
-    private static func membershipPattern(_ token: String) -> [UInt32] {
-        let escaped = token
-            .replacingOccurrences(of: "\\", with: "\\\\")
-            .replacingOccurrences(of: "%", with: "\\%")
-            .replacingOccurrences(of: "_", with: "\\_")
-        return normalizedScalars(escaped)
-    }
-
-    private static let percent: UInt32 = 0x25
-    private static let underscore: UInt32 = 0x5F
-    private static let backslash: UInt32 = 0x5C
-
-    /// `haystack ILIKE '%' || pattern || '%'` over already-normalized
-    /// codepoints: `%` matches any run, `_` exactly one codepoint, `\` makes
-    /// the next codepoint literal.
-    static func likeContains(haystack: [UInt32], pattern: [UInt32]) -> Bool {
-        var fullPattern: [UInt32] = [percent]
-        fullPattern.append(contentsOf: pattern)
-        fullPattern.append(percent)
-        return likeMatches(haystack: haystack, pattern: fullPattern)
-    }
-
-    private static func likeMatches(haystack: [UInt32], pattern: [UInt32]) -> Bool {
-        var textIndex = 0
-        var patternIndex = 0
-        var starPattern = -1
-        var starText = -1
-
-        while textIndex < haystack.count {
-            if patternIndex < pattern.count, pattern[patternIndex] == percent {
-                starPattern = patternIndex
-                starText = textIndex
-                patternIndex += 1
-            } else if patternIndex < pattern.count, pattern[patternIndex] == underscore {
-                patternIndex += 1
-                textIndex += 1
-            } else if patternIndex < pattern.count,
-                      literal(in: pattern, at: patternIndex).scalar == haystack[textIndex] {
-                patternIndex += literal(in: pattern, at: patternIndex).width
-                textIndex += 1
-            } else if starPattern >= 0 {
-                starText += 1
-                textIndex = starText
-                patternIndex = starPattern + 1
-            } else {
-                return false
-            }
-        }
-
-        while patternIndex < pattern.count, pattern[patternIndex] == percent {
-            patternIndex += 1
-        }
-        return patternIndex == pattern.count
-    }
-
-    private static func literal(in pattern: [UInt32], at index: Int) -> (scalar: UInt32, width: Int) {
-        if pattern[index] == backslash, index + 1 < pattern.count {
-            return (pattern[index + 1], 2)
-        }
-        return (pattern[index], 1)
-    }
-
-    // MARK: - Relevance scoring
-
-    /// The searchable fields of one recipe as plain text — the Swift mirror
-    /// of `SearchDoc` in ramekin-core/src/search.rs.
-    struct ScoringDocument {
-        let title: String
-        let description: String?
-        let tags: [String]
-        /// One entry per ingredient: its full text (measurement
-        /// amounts/units, item, note, section).
-        let ingredients: [String]
-        let instructions: String
-        let notes: String?
-    }
-
-    private static let weightExactTitle: UInt32 = 100_000
-    private static let weightTitlePhrase: UInt32 = 20_000
-    private static let weightAllTokensInTitle: UInt32 = 10_000
-    private static let weightTokenInTitle: UInt32 = 2_000
-    private static let weightTokenInTag: UInt32 = 800
-    private static let weightTokenInDescription: UInt32 = 400
-    private static let weightTokenInIngredient: UInt32 = 200
-    private static let weightTokenInInstructions: UInt32 = 50
-    private static let weightTokenInNotes: UInt32 = 50
-
-    /// Mirror of `ramekin_core::search::relevance_score`, pinned by
-    /// shared-test-vectors/search-ranking.json.
-    static func relevanceScore(textTokens: [String], document: ScoringDocument) -> UInt32 {
-        if textTokens.isEmpty {
-            return 0
-        }
-
-        let tokens = textTokens.map(normalizedScalars)
-        let title = normalizedScalars(document.title)
-        let description = document.description.map(normalizedScalars)
-        let tags = document.tags.map(normalizedScalars)
-        let ingredients = document.ingredients.map(normalizedScalars)
-        let instructions = normalizedScalars(document.instructions)
-        let notes = document.notes.map(normalizedScalars)
-
-        var score: UInt32 = 0
-
-        var phrase: [UInt32] = []
-        for (index, token) in tokens.enumerated() {
-            if index > 0 {
-                phrase.append(0x20)
-            }
-            phrase.append(contentsOf: token)
-        }
-        if title == phrase {
-            score += weightExactTitle
-        } else if scalarsContain(title, phrase) {
-            score += weightTitlePhrase
-        }
-
-        if tokens.allSatisfy({ scalarsContain(title, $0) }) {
-            score += weightAllTokensInTitle
-        }
-
-        for token in tokens {
-            if scalarsContain(title, token) {
-                score += weightTokenInTitle
-            }
-            if tags.contains(where: { scalarsContain($0, token) }) {
-                score += weightTokenInTag
-            }
-            if let description, scalarsContain(description, token) {
-                score += weightTokenInDescription
-            }
-            if ingredients.contains(where: { scalarsContain($0, token) }) {
-                score += weightTokenInIngredient
-            }
-            if scalarsContain(instructions, token) {
-                score += weightTokenInInstructions
-            }
-            if let notes, scalarsContain(notes, token) {
-                score += weightTokenInNotes
-            }
-        }
-
-        return score
-    }
-
-    /// Flatten one cached recipe into the scorer's field texts, mirroring the
-    /// per-ingredient flattening in the server's relevance path.
-    static func scoringDocument(for document: CachedRecipeSearchDocument) -> ScoringDocument {
-        let ingredientTexts = document.ingredients.map { ingredient -> String in
-            var parts: [String] = []
-            for measurement in ingredient.measurements {
-                if let amount = measurement.amount {
-                    parts.append(amount)
-                }
-                if let unit = measurement.unit {
-                    parts.append(unit)
-                }
-            }
-            parts.append(ingredient.item)
-            if let note = ingredient.note {
-                parts.append(note)
-            }
-            if let section = ingredient.section {
-                parts.append(section)
-            }
-            return parts.joined(separator: " ")
-        }
-        return ScoringDocument(
-            title: document.summary.title,
-            description: document.summary.description,
-            tags: document.summary.tags,
-            ingredients: ingredientTexts,
-            instructions: document.instructions,
-            notes: document.notes
-        )
-    }
-
     // MARK: - Execution
 
     /// Filter and order the cached corpus exactly like
@@ -393,27 +255,16 @@ enum RecipeSearchSupport {
     ) -> [RecipeSummary] {
         precondition(!parsed.requiresServer, "source/photo_size/photo_dim queries are server-only")
 
-        let matched = documents.filter { matches($0, parsed: parsed) }
+        let membershipPatterns = parsed.textTokens.map(membershipPattern)
+        let matched = documents.filter {
+            matches($0, parsed: parsed, membershipPatterns: membershipPatterns)
+        }
         let effectiveSortBy = sortBy ?? (parsed.textTokens.isEmpty ? .updatedAt : .relevance)
         let descending = (sortDir ?? .desc) == .desc
 
         switch effectiveSortBy {
         case .relevance:
-            let scored = matched.map { document in
-                (
-                    score: relevanceScore(textTokens: parsed.textTokens, document: scoringDocument(for: document)),
-                    summary: document.summary
-                )
-            }
-            return scored.sorted { lhs, rhs in
-                if lhs.score != rhs.score {
-                    return lhs.score > rhs.score
-                }
-                if lhs.summary.updatedAt != rhs.summary.updatedAt {
-                    return lhs.summary.updatedAt > rhs.summary.updatedAt
-                }
-                return lhs.summary.id.uuidString < rhs.summary.id.uuidString
-            }.map(\.summary)
+            return rankedByRelevance(matched, textTokens: parsed.textTokens)
         case .title:
             return matched.map(\.summary).sorted { lhs, rhs in
                 RecipeTitleSortSupport.areInIncreasingOrder(
@@ -439,6 +290,27 @@ enum RecipeSearchSupport {
         case .random:
             fatalError("random ordering is server-only; routing must not send it here")
         }
+    }
+
+    private static func rankedByRelevance(
+        _ matched: [CachedRecipeSearchDocument],
+        textTokens: [String]
+    ) -> [RecipeSummary] {
+        let scored = matched.map { document in
+            (
+                score: relevanceScore(textTokens: textTokens, document: scoringDocument(for: document)),
+                summary: document.summary
+            )
+        }
+        return scored.sorted { lhs, rhs in
+            if lhs.score != rhs.score {
+                return lhs.score > rhs.score
+            }
+            if lhs.summary.updatedAt != rhs.summary.updatedAt {
+                return lhs.summary.updatedAt > rhs.summary.updatedAt
+            }
+            return lhs.summary.id.uuidString < rhs.summary.id.uuidString
+        }.map(\.summary)
     }
 
     private static func compareDates(
@@ -470,36 +342,17 @@ enum RecipeSearchSupport {
 
     // MARK: - Shared helpers
 
-    private static func normalizedScalars(_ text: String) -> [UInt32] {
+    static func normalizedScalars(_ text: String) -> [UInt32] {
         SearchNormalizationSupport.normalizeForSearch(text).unicodeScalars.map(\.value)
     }
 
-    private static func scalarsContain(_ haystack: [UInt32], _ needle: [UInt32]) -> Bool {
-        if needle.isEmpty {
-            return true
-        }
-        if needle.count > haystack.count {
-            return false
-        }
-        for start in 0...(haystack.count - needle.count) {
-            var offset = 0
-            while offset < needle.count, haystack[start + offset] == needle[offset] {
-                offset += 1
-            }
-            if offset == needle.count {
-                return true
-            }
-        }
-        return false
-    }
-
-    private static let utcCalendar: Calendar = {
+    static let utcCalendar: Calendar = {
         var calendar = Calendar(identifier: .iso8601)
         calendar.timeZone = TimeZone(secondsFromGMT: 0)!
         return calendar
     }()
 
-    private static let utcDateFormatter: DateFormatter = {
+    static let utcDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.calendar = Calendar(identifier: .iso8601)
