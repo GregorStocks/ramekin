@@ -36,12 +36,13 @@ impl SaveOutputReadErrorExt for SaveOutputReadError {
     }
 }
 
-pub(super) fn recipe_id_from_save_output(
+pub(super) async fn recipe_id_from_save_output(
     ctx: &StepContext<'_>,
 ) -> Result<Uuid, SaveOutputReadError> {
     let output = ctx
         .outputs
         .get_output("save_recipe")
+        .await
         .ok_or(SaveOutputReadError::MissingSaveRecipeOutput)?;
     let raw_id: String = deserialize_required_output_field(&output, "save_recipe", "recipe_id")
         .map_err(|e| {
@@ -62,12 +63,12 @@ pub(super) fn recipe_id_from_save_output(
 /// Find the newest version produced by an earlier pipeline write. Candidates
 /// must be ordered newest-first and restricted to steps that precede the
 /// caller so stale outputs from a later retry step cannot be selected.
-pub(super) fn version_id_from_pipeline_outputs(
+pub(super) async fn version_id_from_pipeline_outputs(
     ctx: &StepContext<'_>,
     candidates: &[(&str, &str)],
 ) -> Result<Uuid, String> {
     for (step_name, field_name) in candidates {
-        let Some(output) = ctx.outputs.get_output(step_name) else {
+        let Some(output) = ctx.outputs.get_output(step_name).await else {
             continue;
         };
         let Some(value) = output.get(field_name) else {
@@ -87,6 +88,7 @@ pub(super) fn version_id_from_pipeline_outputs(
 mod tests {
     use std::collections::HashMap;
 
+    use async_trait::async_trait;
     use ramekin_core::pipeline::StepOutputStore;
     use serde_json::{json, Value};
 
@@ -94,12 +96,13 @@ mod tests {
 
     struct Outputs(HashMap<String, Value>);
 
+    #[async_trait]
     impl StepOutputStore for Outputs {
-        fn get_output(&self, step_name: &str) -> Option<Value> {
+        async fn get_output(&self, step_name: &str) -> Option<Value> {
             self.0.get(step_name).cloned()
         }
 
-        fn save_output(
+        async fn save_output(
             &mut self,
             _step_name: &str,
             _output: &Value,
@@ -111,8 +114,8 @@ mod tests {
         }
     }
 
-    #[test]
-    fn pipeline_version_uses_newest_allowed_predecessor() {
+    #[tokio::test]
+    async fn pipeline_version_uses_newest_allowed_predecessor() {
         let saved = Uuid::new_v4();
         let normalized = Uuid::new_v4();
         let stale_later_output = Uuid::new_v4();
@@ -142,14 +145,15 @@ mod tests {
                 ("save_recipe", "version_id"),
             ],
         )
+        .await
         .expect("a predecessor version should be selected");
 
         assert_eq!(selected, normalized);
         assert_ne!(selected, stale_later_output);
     }
 
-    #[test]
-    fn pipeline_version_falls_back_when_predecessor_did_not_write() {
+    #[tokio::test]
+    async fn pipeline_version_falls_back_when_predecessor_did_not_write() {
         let saved = Uuid::new_v4();
         let outputs = Outputs(HashMap::from([
             (
@@ -173,6 +177,7 @@ mod tests {
                 ("save_recipe", "version_id"),
             ],
         )
+        .await
         .expect("the save version should be used");
 
         assert_eq!(selected, saved);

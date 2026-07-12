@@ -5,6 +5,7 @@ use std::error::Error;
 use std::fs;
 use std::path::{Path, PathBuf};
 
+use async_trait::async_trait;
 use ramekin_core::http::slugify_url;
 use ramekin_core::pipeline::StepOutputStore;
 use serde_json::Value as JsonValue;
@@ -52,8 +53,9 @@ impl FileOutputStore {
     }
 }
 
+#[async_trait]
 impl StepOutputStore for FileOutputStore {
-    fn get_output(&self, step_name: &str) -> Option<JsonValue> {
+    async fn get_output(&self, step_name: &str) -> Option<JsonValue> {
         // Check in-memory cache first
         if let Some(value) = self.cache.get(step_name) {
             return Some(value.clone());
@@ -71,7 +73,7 @@ impl StepOutputStore for FileOutputStore {
         None
     }
 
-    fn save_output(
+    async fn save_output(
         &mut self,
         step_name: &str,
         output: &JsonValue,
@@ -110,25 +112,26 @@ mod tests {
     use serde_json::json;
     use tempfile::TempDir;
 
-    #[test]
-    fn successful_output_is_written_and_readable() {
+    #[tokio::test]
+    async fn successful_output_is_written_and_readable() {
         let dir = TempDir::new().unwrap();
         let mut store = FileOutputStore::new(dir.path(), "https://example.com/recipe");
 
         store
             .save_output("extract_recipe", &json!({ "value": 42 }), 5, true, None)
+            .await
             .unwrap();
 
         assert_eq!(
-            store.get_output("extract_recipe"),
+            store.get_output("extract_recipe").await,
             Some(json!({ "value": 42 }))
         );
         assert!(store.output_path("extract_recipe").exists());
         assert!(!store.step_dir("extract_recipe").join("error.json").exists());
     }
 
-    #[test]
-    fn failed_output_goes_to_error_json_and_is_not_readable() {
+    #[tokio::test]
+    async fn failed_output_goes_to_error_json_and_is_not_readable() {
         let dir = TempDir::new().unwrap();
         let mut store = FileOutputStore::new(dir.path(), "https://example.com/recipe");
 
@@ -140,11 +143,12 @@ mod tests {
                 false,
                 Some("AI call failed: details"),
             )
+            .await
             .unwrap();
 
         // get_output must keep returning None for failed steps so downstream
         // steps and the snapshot writer never consume error payloads.
-        assert_eq!(store.get_output("enrich_normalize_title"), None);
+        assert_eq!(store.get_output("enrich_normalize_title").await, None);
         assert!(!store.output_path("enrich_normalize_title").exists());
 
         let error_path = store.step_dir("enrich_normalize_title").join("error.json");

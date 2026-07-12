@@ -36,9 +36,10 @@ struct GenerateDescriptionOutput {
     usage: Usage,
 }
 
-fn title_for_description(ctx: &StepContext<'_>, raw_title: &str) -> String {
+async fn title_for_description(ctx: &StepContext<'_>, raw_title: &str) -> String {
     ctx.outputs
         .get_output(EnrichNormalizeTitleStepName::NAME)
+        .await
         .and_then(|o| {
             let changed = o.get("changed").and_then(|v| v.as_bool()).unwrap_or(false);
             if !changed {
@@ -70,7 +71,7 @@ impl PipelineStep for EnrichGenerateDescriptionStep {
     async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
         let start = Instant::now();
 
-        let extract_output = match ctx.outputs.get_output("extract_recipe") {
+        let extract_output = match ctx.outputs.get_output("extract_recipe").await {
             Some(o) => o,
             None => {
                 return StepResult {
@@ -105,7 +106,7 @@ impl PipelineStep for EnrichGenerateDescriptionStep {
         };
 
         let raw_title = raw_recipe.title.as_str();
-        let title = title_for_description(ctx, raw_title);
+        let title = title_for_description(ctx, raw_title).await;
         let original_description = raw_recipe.description.clone();
         let ingredients = raw_recipe.ingredients.as_str();
         let instructions = raw_recipe.instructions.as_str();
