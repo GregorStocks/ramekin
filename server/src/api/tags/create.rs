@@ -3,6 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::NewUserTag;
+use crate::raw_sql;
 use crate::schema::user_tags;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
@@ -74,6 +75,7 @@ pub async fn create_tag(
                 .set((
                     user_tags::deleted_at.eq(None::<DateTime<Utc>>),
                     user_tags::updated_at.eq(now),
+                    user_tags::change_xid.eq(raw_sql::current_change_xid()),
                 ))
                 .execute(&mut conn);
 

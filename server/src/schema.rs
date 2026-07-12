@@ -80,6 +80,7 @@ diesel::table! {
         notes -> Nullable<Text>,
         version_source -> Varchar,
         created_at -> Timestamptz,
+        change_xid -> Int8,
     }
 }
 
@@ -90,6 +91,7 @@ diesel::table! {
         current_version_id -> Nullable<Uuid>,
         created_at -> Timestamptz,
         deleted_at -> Nullable<Timestamptz>,
+        deleted_xid -> Nullable<Int8>,
     }
 }
 
@@ -167,6 +169,7 @@ diesel::table! {
         created_at -> Timestamptz,
         deleted_at -> Nullable<Timestamptz>,
         updated_at -> Timestamptz,
+        change_xid -> Int8,
     }
 }
 

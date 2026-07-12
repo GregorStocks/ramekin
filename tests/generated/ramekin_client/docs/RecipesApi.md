@@ -575,7 +575,7 @@ with ramekin_client.ApiClient(configuration) as api_client:
     api_instance = ramekin_client.RecipesApi(api_client)
     limit = 56 # int | Number of items to return (default: 20, max: 1000) (optional)
     offset = 56 # int | Number of items to skip (default: 0) (optional)
-    q = 'q_example' # str | Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created after date - created:<2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \"chicken tag:dinner tag:quick has:photos\" (optional)
+    q = 'q_example' # str | Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created on or after date - created:<2024-12-31: created on or before date - created:2024-01-01..2024-12-31: created in date range  Date filters name inclusive UTC calendar days.  Example: \"chicken tag:dinner tag:quick has:photos\" (optional)
     sort_by = ramekin_client.SortBy() # SortBy | Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. (optional)
     sort_dir = ramekin_client.Direction() # Direction | Sort direction (default: desc). Ignored when sort_by is random or relevance. (optional)
 
@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of items to return (default: 20, max: 1000) | [optional] 
  **offset** | **int**| Number of items to skip (default: 0) | [optional] 
- **q** | **str**| Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created after date - created:&lt;2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; | [optional] 
+ **q** | **str**| Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created on or after date - created:&lt;2024-12-31: created on or before date - created:2024-01-01..2024-12-31: created in date range  Date filters name inclusive UTC calendar days.  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; | [optional] 
  **sort_by** | [**SortBy**](.md)| Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. | [optional] 
  **sort_dir** | [**Direction**](.md)| Sort direction (default: desc). Ignored when sort_by is random or relevance. | [optional] 
 
@@ -928,7 +928,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sync_recipes**
-> SyncRecipesResponse sync_recipes(last_sync_at=last_sync_at)
+> SyncRecipesResponse sync_recipes(cursor=cursor)
 
 ### Example
 
@@ -960,10 +960,10 @@ configuration = ramekin_client.Configuration(
 with ramekin_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ramekin_client.RecipesApi(api_client)
-    last_sync_at = '2013-10-20T19:20:30+01:00' # datetime | Last sync timestamp - server will return changes since this time. (optional)
+    cursor = 56 # int | Cursor returned by the previous sync. Absent means a full sync. (optional)
 
     try:
-        api_response = api_instance.sync_recipes(last_sync_at=last_sync_at)
+        api_response = api_instance.sync_recipes(cursor=cursor)
         print("The response of RecipesApi->sync_recipes:\n")
         pprint(api_response)
     except Exception as e:
@@ -977,7 +977,7 @@ with ramekin_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **last_sync_at** | **datetime**| Last sync timestamp - server will return changes since this time. | [optional] 
+ **cursor** | **int**| Cursor returned by the previous sync. Absent means a full sync. | [optional] 
 
 ### Return type
 

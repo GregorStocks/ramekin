@@ -360,7 +360,7 @@ extension RecipeListViewModel {
 
     func invalidateRecipeCacheSync() {
         guard let accountKey = cache.currentAccountKey() else { return }
-        cache.clearLastSyncAt(accountKey)
+        cache.clearSyncCursor(accountKey)
     }
 }
 
@@ -439,9 +439,9 @@ private extension RecipeListViewModel {
             if !cachedBeforeSync.isEmpty {
                 applyCachedRecipes(cachedBeforeSync)
             }
-            let lastSyncAt = cachedBeforeSync.isEmpty ? nil : cache.lastSyncAt(accountKey)
+            let cursor = cachedBeforeSync.isEmpty ? nil : cache.syncCursor(accountKey)
             let response = try await logger.timed("syncRecipeCache API", source: "RecipeList") {
-                try await api.syncRecipes(lastSyncAt)
+                try await api.syncRecipes(cursor)
             }
             try cache.apply(response, accountKey)
             let cachedRecipes = try cache.loadRecipes(accountKey)

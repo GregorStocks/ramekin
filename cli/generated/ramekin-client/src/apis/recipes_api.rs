@@ -743,16 +743,16 @@ pub async fn rescrape_photo(
 
 pub async fn sync_recipes(
     configuration: &configuration::Configuration,
-    last_sync_at: Option<String>,
+    cursor: Option<i64>,
 ) -> Result<models::SyncRecipesResponse, Error<SyncRecipesError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_last_sync_at = last_sync_at;
+    let p_query_cursor = cursor;
 
     let uri_str = format!("{}/api/recipes/sync", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
-    if let Some(ref param_value) = p_query_last_sync_at {
-        req_builder = req_builder.query(&[("last_sync_at", &param_value.to_string())]);
+    if let Some(ref param_value) = p_query_cursor {
+        req_builder = req_builder.query(&[("cursor", &param_value.to_string())]);
     }
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());

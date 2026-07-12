@@ -401,8 +401,8 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async syncRecipesRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters['lastSyncAt'] != null) {
-            queryParameters['last_sync_at'] = requestParameters['lastSyncAt'].toISOString();
+        if (requestParameters['cursor'] != null) {
+            queryParameters['cursor'] = requestParameters['cursor'];
         }
         const headerParameters = {};
         if (this.configuration && this.configuration.accessToken) {

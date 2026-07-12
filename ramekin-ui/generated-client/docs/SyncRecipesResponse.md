@@ -6,9 +6,9 @@
 
 Name | Type
 ------------ | -------------
+`cursor` | number
 `deleted` | Array&lt;string&gt;
 `recipes` | [Array&lt;SyncRecipe&gt;](SyncRecipe.md)
-`syncTimestamp` | Date
 
 ## Example
 
@@ -17,9 +17,9 @@ import type { SyncRecipesResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "cursor": null,
   "deleted": null,
   "recipes": null,
-  "syncTimestamp": null,
 } satisfies SyncRecipesResponse
 
 console.log(example)

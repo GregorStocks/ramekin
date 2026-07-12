@@ -6,6 +6,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::Ingredient;
+use crate::raw_sql;
 use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Query, State},
@@ -23,18 +24,19 @@ use uuid::Uuid;
 
 #[derive(Debug, Deserialize, IntoParams)]
 pub struct SyncRecipesParams {
-    /// Last sync timestamp - server will return changes since this time.
-    pub last_sync_at: Option<DateTime<Utc>>,
+    /// Cursor returned by the previous sync. Absent means a full sync.
+    pub cursor: Option<i64>,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct SyncRecipesResponse {
-    /// Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent.
+    /// Active recipes changed at or after `cursor`. All active recipes are returned when `cursor` is absent.
     pub recipes: Vec<SyncRecipe>,
-    /// Recipe IDs deleted since last_sync_at.
+    /// Recipe IDs deleted at or after `cursor`.
     pub deleted: Vec<Uuid>,
-    /// New sync timestamp to use for the next sync.
-    pub sync_timestamp: DateTime<Utc>,
+    /// Opaque cursor to pass to the next sync. Changes may be redelivered
+    /// across syncs, but none can be skipped.
+    pub cursor: i64,
 }
 
 /// Read-only recipe data needed to populate the iOS cache and mirror server search.
@@ -90,50 +92,59 @@ pub async fn sync_recipes(
     State(pool): State<Arc<DbPool>>,
     Query(params): Query<SyncRecipesParams>,
 ) -> impl IntoResponse {
-    let sync_timestamp = Utc::now();
     let mut conn = get_conn!(pool);
 
-    let mut query = current_recipe_versions_for_user!(user.id)
-        .filter(recipe_versions::created_at.le(sync_timestamp))
-        .into_boxed();
+    // One read-only repeatable-read transaction, so the cursor and both reads
+    // come from a single snapshot. The cursor is the snapshot's xmin: the
+    // lowest transaction id still in flight. Anything a writer commits after
+    // this snapshot carries a change_xid at or above it, so the next sync's
+    // inclusive `>= cursor` filter picks it up instead of skipping it. The
+    // price is that changes can be redelivered; applying them is idempotent.
+    let loaded = conn
+        .build_transaction()
+        .read_only()
+        .repeatable_read()
+        .run(|conn| {
+            // Runs first so it establishes the snapshot the reads below use.
+            let cursor: i64 = diesel::select(raw_sql::change_xid_watermark()).get_result(conn)?;
 
-    if let Some(last_sync_at) = params.last_sync_at {
-        let tag_changed = exists(
-            recipe_version_tags::table
-                .inner_join(user_tags::table)
-                .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
-                .filter(user_tags::updated_at.gt(last_sync_at))
-                .filter(user_tags::updated_at.le(sync_timestamp)),
-        );
-        query = query.filter(recipe_versions::created_at.gt(last_sync_at).or(tag_changed));
-    }
+            let mut query = current_recipe_versions_for_user!(user.id).into_boxed();
 
-    let rows: Vec<RecipeRelevanceRow> = match query
-        .select(recipe_relevance_select!())
-        .order((recipe_versions::created_at.desc(), recipes::id.asc()))
-        .load(&mut conn)
-    {
-        Ok(rows) => rows,
+            if let Some(since) = params.cursor {
+                // A rename or delete rewrites the tags of every recipe carrying
+                // the tag, without touching the recipe's own version row.
+                let tag_changed = exists(
+                    recipe_version_tags::table
+                        .inner_join(user_tags::table)
+                        .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
+                        .filter(user_tags::change_xid.ge(since)),
+                );
+                query = query.filter(recipe_versions::change_xid.ge(since).or(tag_changed));
+            }
+
+            let rows: Vec<RecipeRelevanceRow> = query
+                .select(recipe_relevance_select!())
+                .order((recipe_versions::created_at.desc(), recipes::id.asc()))
+                .load(conn)?;
+
+            let mut deleted_query = recipes::table
+                .filter(recipes::user_id.eq(user.id))
+                .filter(recipes::deleted_at.is_not_null())
+                .into_boxed();
+
+            if let Some(since) = params.cursor {
+                deleted_query = deleted_query.filter(recipes::deleted_xid.ge(since));
+            }
+
+            let deleted: Vec<Uuid> = deleted_query.select(recipes::id).load(conn)?;
+
+            Ok::<_, diesel::result::Error>((cursor, rows, deleted))
+        });
+
+    let (cursor, rows, deleted) = match loaded {
+        Ok(loaded) => loaded,
         Err(e) => {
             tracing::error!("Failed to sync recipes: {}", e);
-            return ApiError::internal("Failed to sync recipes").into_response();
-        }
-    };
-
-    let mut deleted_query = recipes::table
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_not_null())
-        .filter(recipes::deleted_at.le(sync_timestamp))
-        .into_boxed();
-
-    if let Some(last_sync_at) = params.last_sync_at {
-        deleted_query = deleted_query.filter(recipes::deleted_at.gt(last_sync_at));
-    }
-
-    let deleted = match deleted_query.select(recipes::id).load(&mut conn) {
-        Ok(ids) => ids,
-        Err(e) => {
-            tracing::error!("Failed to sync deleted recipes: {}", e);
             return ApiError::internal("Failed to sync recipes").into_response();
         }
     };
@@ -155,7 +166,7 @@ pub async fn sync_recipes(
         Json(SyncRecipesResponse {
             recipes,
             deleted,
-            sync_timestamp,
+            cursor,
         }),
     )
         .into_response()

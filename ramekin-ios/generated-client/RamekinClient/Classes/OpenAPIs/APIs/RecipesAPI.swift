@@ -286,7 +286,7 @@ open class RecipesAPI {
 
      - parameter limit: (query) Number of items to return (default: 20, max: 1000) (optional)
      - parameter offset: (query) Number of items to skip (default: 0) (optional)
-     - parameter q: (query) Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created after date - created:&lt;2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; (optional)
+     - parameter q: (query) Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created on or after date - created:&lt;2024-12-31: created on or before date - created:2024-01-01..2024-12-31: created in date range  Date filters name inclusive UTC calendar days.  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; (optional)
      - parameter sortBy: (query) Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. (optional)
      - parameter sortDir: (query) Sort direction (default: desc). Ignored when sort_by is random or relevance. (optional)
      - returns: ListRecipesResponse
@@ -303,7 +303,7 @@ open class RecipesAPI {
        - name: bearer_auth
      - parameter limit: (query) Number of items to return (default: 20, max: 1000) (optional)
      - parameter offset: (query) Number of items to skip (default: 0) (optional)
-     - parameter q: (query) Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created after date - created:&lt;2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; (optional)
+     - parameter q: (query) Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created on or after date - created:&lt;2024-12-31: created on or before date - created:2024-01-01..2024-12-31: created in date range  Date filters name inclusive UTC calendar days.  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; (optional)
      - parameter sortBy: (query) Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. (optional)
      - parameter sortDir: (query) Sort direction (default: desc). Ignored when sort_by is random or relevance. (optional)
      - returns: RequestBuilder<ListRecipesResponse> 
@@ -491,12 +491,12 @@ open class RecipesAPI {
 
     /**
 
-     - parameter lastSyncAt: (query) Last sync timestamp - server will return changes since this time. (optional)
+     - parameter cursor: (query) Cursor returned by the previous sync. Absent means a full sync. (optional)
      - returns: SyncRecipesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func syncRecipes(lastSyncAt: Date? = nil) async throws -> SyncRecipesResponse {
-        return try await syncRecipesWithRequestBuilder(lastSyncAt: lastSyncAt).execute().body
+    open class func syncRecipes(cursor: Int64? = nil) async throws -> SyncRecipesResponse {
+        return try await syncRecipesWithRequestBuilder(cursor: cursor).execute().body
     }
 
     /**
@@ -504,17 +504,17 @@ open class RecipesAPI {
      - Bearer Token:
        - type: http
        - name: bearer_auth
-     - parameter lastSyncAt: (query) Last sync timestamp - server will return changes since this time. (optional)
+     - parameter cursor: (query) Cursor returned by the previous sync. Absent means a full sync. (optional)
      - returns: RequestBuilder<SyncRecipesResponse> 
      */
-    open class func syncRecipesWithRequestBuilder(lastSyncAt: Date? = nil) -> RequestBuilder<SyncRecipesResponse> {
+    open class func syncRecipesWithRequestBuilder(cursor: Int64? = nil) -> RequestBuilder<SyncRecipesResponse> {
         let localVariablePath = "/api/recipes/sync"
         let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "last_sync_at": (wrappedValue: lastSyncAt?.encodeToJSON(), isExplode: true),
+            "cursor": (wrappedValue: cursor?.encodeToJSON(), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: Any?] = [

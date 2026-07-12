@@ -111,7 +111,7 @@ export interface RescrapePhotoRequest {
 }
 
 export interface SyncRecipesRequest {
-    lastSyncAt?: Date | null;
+    cursor?: number | null;
 }
 
 export interface UpdateRecipeOperationRequest {
@@ -652,8 +652,8 @@ export class RecipesApi extends runtime.BaseAPI {
     async syncRecipesRaw(requestParameters: SyncRecipesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SyncRecipesResponse>> {
         const queryParameters: any = {};
 
-        if (requestParameters['lastSyncAt'] != null) {
-            queryParameters['last_sync_at'] = (requestParameters['lastSyncAt'] as any).toISOString();
+        if (requestParameters['cursor'] != null) {
+            queryParameters['cursor'] = requestParameters['cursor'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};

@@ -10,3 +10,7 @@ client match it in the same PR.
 - `meal-plan-dates.json`: web and iOS local date formatting and Monday starts.
 - `ingredient-formatting.json`: web and iOS ingredient display formatting.
 - `recipe-title-sort.json`: Rust server and iOS case-folded recipe title ordering.
+- `created-date-filter.json`: Rust server and iOS inclusive UTC-day created-date
+  filtering. Timestamps stop at millisecond precision because Foundation's date
+  parsing truncates below that; the Rust unit tests additionally pin the
+  microsecond boundary PostgreSQL can store.

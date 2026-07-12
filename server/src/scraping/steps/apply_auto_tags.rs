@@ -150,6 +150,7 @@ impl ApplyAutoTagsStep {
         // Get the recipe to find user_id and current_version_id
         let recipe: Recipe = recipes::table
             .find(recipe_id)
+            .select(Recipe::as_select())
             .first(&mut conn)
             .map_err(|e| e.to_string())?;
 
@@ -157,6 +158,7 @@ impl ApplyAutoTagsStep {
         let current_version: RecipeVersion = recipe_versions::table
             .filter(recipe_versions::id.eq(expected_version_id))
             .filter(recipe_versions::recipe_id.eq(recipe_id))
+            .select(RecipeVersion::as_select())
             .first(&mut conn)
             .map_err(|e| e.to_string())?;
 

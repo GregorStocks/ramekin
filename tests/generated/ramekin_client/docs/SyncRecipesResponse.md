@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deleted** | **List[UUID]** | Recipe IDs deleted since last_sync_at. | 
-**recipes** | [**List[SyncRecipe]**](SyncRecipe.md) | Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent. | 
-**sync_timestamp** | **datetime** | New sync timestamp to use for the next sync. | 
+**cursor** | **int** | Opaque cursor to pass to the next sync. Changes may be redelivered across syncs, but none can be skipped. | 
+**deleted** | **List[UUID]** | Recipe IDs deleted at or after &#x60;cursor&#x60;. | 
+**recipes** | [**List[SyncRecipe]**](SyncRecipe.md) | Active recipes changed at or after &#x60;cursor&#x60;. All active recipes are returned when &#x60;cursor&#x60; is absent. | 
 
 ## Example
 
