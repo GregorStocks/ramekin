@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **cookTime** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **difficulty** | **String** |  | [optional] 
+**expectedVersionId** | **UUID** | Version the caller edited. The update conflicts if it is no longer current. | 
 **ingredients** | [Ingredient] |  | [optional] 
 **instructions** | **String** |  | [optional] 
 **notes** | **String** |  | [optional] 

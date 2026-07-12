@@ -2,7 +2,10 @@ import { createSignal, Show, onMount } from "solid-js";
 import { useParams, useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import RecipeForm from "../components/RecipeForm";
-import { extractApiError, parseApiError } from "../utils/recipeFormHelpers";
+import {
+  parseApiError,
+  recipeUpdateErrorMessage,
+} from "../utils/recipeFormHelpers";
 import { createRecipeFormState } from "../utils/recipeFormState";
 import { emptyEditRecipeFormValues } from "../utils/recipeFormSerialization";
 import { ErrorCode } from "ramekin-client";
@@ -62,11 +65,8 @@ export default function EditRecipePage() {
 
       navigate(`/recipes/${params.id}`);
     } catch (err) {
-      const errorMessage = await extractApiError(
-        err,
-        "Failed to update recipe",
-      );
-      form.setError(errorMessage);
+      const parsed = await parseApiError(err, "Failed to update recipe");
+      form.setError(recipeUpdateErrorMessage(parsed));
     } finally {
       form.setSaving(false);
     }

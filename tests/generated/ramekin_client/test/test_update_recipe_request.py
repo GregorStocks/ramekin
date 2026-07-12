@@ -38,6 +38,7 @@ class TestUpdateRecipeRequest(unittest.TestCase):
                 cook_time = '',
                 description = '',
                 difficulty = '',
+                expected_version_id = '',
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
                         item = '', 
@@ -68,6 +69,7 @@ class TestUpdateRecipeRequest(unittest.TestCase):
             )
         else:
             return UpdateRecipeRequest(
+                expected_version_id = '',
         )
         """
 

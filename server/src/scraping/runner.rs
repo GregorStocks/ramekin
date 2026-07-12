@@ -53,6 +53,7 @@ pub fn build_registry(
     pool: Arc<DbPool>,
     user_id: Uuid,
     existing_recipe_id: Option<Uuid>,
+    expected_version_id: Option<Uuid>,
     photo_only: bool,
 ) -> Result<StepRegistry, ScrapeError> {
     let mut registry = StepRegistry::new();
@@ -62,12 +63,27 @@ pub fn build_registry(
     registry.register(Box::new(ParseIngredientsStep));
 
     // Pick the right SaveRecipeStep based on job mode.
-    let save_step = match (existing_recipe_id, photo_only) {
-        (Some(recipe_id), true) => {
-            SaveRecipeStep::for_photo_rescrape(pool.clone(), user_id, recipe_id)
+    let save_step = match (existing_recipe_id, expected_version_id, photo_only) {
+        (Some(recipe_id), Some(expected_version_id), true) => SaveRecipeStep::for_photo_rescrape(
+            pool.clone(),
+            user_id,
+            recipe_id,
+            expected_version_id,
+        ),
+        (Some(recipe_id), Some(expected_version_id), false) => {
+            SaveRecipeStep::for_rescrape(pool.clone(), user_id, recipe_id, expected_version_id)
         }
-        (Some(recipe_id), false) => SaveRecipeStep::for_rescrape(pool.clone(), user_id, recipe_id),
-        (None, _) => SaveRecipeStep::new(pool.clone(), user_id),
+        (Some(_), None, _) => {
+            return Err(ScrapeError::InvalidState(
+                "rescrape job has no expected recipe version".to_string(),
+            ));
+        }
+        (None, None, _) => SaveRecipeStep::new(pool.clone(), user_id),
+        (None, Some(_), _) => {
+            return Err(ScrapeError::InvalidState(
+                "new recipe job unexpectedly has an expected recipe version".to_string(),
+            ));
+        }
     };
     registry.register(Box::new(save_step));
 
@@ -239,7 +255,13 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
 
     // Build the step registry and output store.
     // If job.recipe_id is already set, this is a rescrape - pass it to build_registry.
-    let registry = match build_registry(pool.clone(), job.user_id, job.recipe_id, job.photo_only) {
+    let registry = match build_registry(
+        pool.clone(),
+        job.user_id,
+        job.recipe_id,
+        job.expected_version_id,
+        job.photo_only,
+    ) {
         Ok(registry) => registry,
         Err(e) => {
             mark_failed(&pool, job_id, first_step, &e.to_string())?;

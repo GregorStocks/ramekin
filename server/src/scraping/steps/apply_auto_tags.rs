@@ -13,10 +13,12 @@ use ramekin_core::pipeline::{
 
 use crate::db::DbPool;
 use crate::models::NewRecipeVersion;
-use crate::recipes::{create_new_version, TagSource};
+use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
 use crate::schema::{recipe_versions, recipes};
 
-use super::helpers::{recipe_id_from_save_output, SaveOutputReadErrorExt};
+use super::helpers::{
+    recipe_id_from_save_output, version_id_from_pipeline_outputs, SaveOutputReadErrorExt,
+};
 
 /// Server implementation of ApplyAutoTags step.
 ///
@@ -87,8 +89,30 @@ impl PipelineStep for ApplyAutoTagsStep {
             };
         }
 
+        let expected_version_id = match version_id_from_pipeline_outputs(
+            ctx,
+            &[
+                ("apply_generated_description", "new_version_id"),
+                ("apply_normalized_title", "new_version_id"),
+                ("save_recipe", "version_id"),
+            ],
+        ) {
+            Ok(version_id) => version_id,
+            Err(error) => {
+                return StepResult {
+                    step_name: Self::NAME.to_string(),
+                    success: false,
+                    output: json!({ "error": error }),
+                    error: Some(error),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                        .map(str::to_string),
+                };
+            }
+        };
+
         // Apply the tags to the recipe
-        match self.apply_tags(recipe_id, &suggested_tags) {
+        match self.apply_tags(recipe_id, expected_version_id, &suggested_tags) {
             Ok(version_id) => StepResult {
                 step_name: Self::NAME.to_string(),
                 success: true,
@@ -113,7 +137,12 @@ impl PipelineStep for ApplyAutoTagsStep {
 }
 
 impl ApplyAutoTagsStep {
-    fn apply_tags(&self, recipe_id: Uuid, new_tags: &[String]) -> Result<Uuid, String> {
+    fn apply_tags(
+        &self,
+        recipe_id: Uuid,
+        expected_version_id: Uuid,
+        new_tags: &[String],
+    ) -> Result<Uuid, String> {
         use crate::models::{Recipe, RecipeVersion};
 
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
@@ -124,13 +153,10 @@ impl ApplyAutoTagsStep {
             .first(&mut conn)
             .map_err(|e| e.to_string())?;
 
-        let current_version_id = recipe
-            .current_version_id
-            .ok_or("Recipe has no current version")?;
-
         // Fetch current version data
         let current_version: RecipeVersion = recipe_versions::table
-            .find(current_version_id)
+            .filter(recipe_versions::id.eq(expected_version_id))
+            .filter(recipe_versions::recipe_id.eq(recipe_id))
             .first(&mut conn)
             .map_err(|e| e.to_string())?;
 
@@ -140,11 +166,12 @@ impl ApplyAutoTagsStep {
             let new_version = NewRecipeVersion::copy_of(&current_version, "enrichment");
 
             // 2. Carry existing tags forward and add the AI-suggested ones
-            let new_version_id = create_new_version(
+            let new_version_id = create_new_version_cas(
                 conn,
                 &new_version,
+                Some(expected_version_id),
                 TagSource::CopyAndNames {
-                    from_version: current_version_id,
+                    from_version: expected_version_id,
                     user_id: recipe.user_id,
                     names: new_tags,
                 },
@@ -152,6 +179,6 @@ impl ApplyAutoTagsStep {
 
             Ok(new_version_id)
         })
-        .map_err(|e: diesel::result::Error| e.to_string())
+        .map_err(|e: VersionWriteError| e.to_string())
     }
 }

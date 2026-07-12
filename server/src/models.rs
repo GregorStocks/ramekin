@@ -231,6 +231,7 @@ pub struct ScrapeJob {
     pub current_step: Option<String>,
     pub photo_only: bool,
     pub current_step_started_at: Option<DateTime<Utc>>,
+    pub expected_version_id: Option<Uuid>,
 }
 
 #[derive(Insertable)]

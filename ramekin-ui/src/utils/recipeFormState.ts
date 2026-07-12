@@ -102,6 +102,9 @@ export function createRecipeFormState(
   const [uploading, setUploading] = createSignal(false);
   const [saving, setSaving] = createSignal(false);
   const [error, setError] = createSignal<string | null>(null);
+  const [expectedVersionId, setExpectedVersionId] = createSignal<string | null>(
+    null,
+  );
 
   const values = (): RecipeFormValues => ({
     title: title(),
@@ -227,8 +230,15 @@ export function createRecipeFormState(
     },
     loadRecipe: (recipe: RecipeResponse) => {
       loadValues(recipeFormValuesFromRecipe(recipe));
+      setExpectedVersionId(recipe.versionId);
     },
     toCreateRecipeRequest: () => buildCreateRecipeRequest(values()),
-    toUpdateRecipeRequest: () => buildUpdateRecipeRequest(values()),
+    toUpdateRecipeRequest: () => {
+      const versionId = expectedVersionId();
+      if (versionId === null) {
+        throw new Error("Cannot update a recipe before loading its version");
+      }
+      return buildUpdateRecipeRequest(values(), versionId);
+    },
   };
 }

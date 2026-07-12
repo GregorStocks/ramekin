@@ -198,12 +198,16 @@ async fn create_user_and_recipes(
         let photo_id = upload_photo_with_client(&config, image_data, &http_client)
             .await
             .context("Failed to upload photo")?;
+        let current = recipes_api::get_recipe(&config, &recipe_response.id.to_string(), None)
+            .await
+            .context("Failed to load recipe version before adding photo")?;
 
         // Update recipe to add the photo
         recipes_api::update_recipe(
             &config,
             &recipe_response.id.to_string(),
             UpdateRecipeRequest {
+                expected_version_id: current.version_id,
                 title: None,
                 instructions: None,
                 ingredients: None,
@@ -228,10 +232,14 @@ async fn create_user_and_recipes(
 
     // Edit each recipe (update instructions)
     for recipe_id in &recipe_ids {
+        let current = recipes_api::get_recipe(&config, &recipe_id.to_string(), None)
+            .await
+            .context("Failed to load recipe version before editing")?;
         recipes_api::update_recipe(
             &config,
             &recipe_id.to_string(),
             UpdateRecipeRequest {
+                expected_version_id: current.version_id,
                 title: None,
                 instructions: Some(Some("Updated instructions during load test.".to_string())),
                 ingredients: None,

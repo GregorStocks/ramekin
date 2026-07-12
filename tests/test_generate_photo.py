@@ -126,6 +126,7 @@ def test_generate_photo_fails_if_recipe_changes_mid_generation(authed_api_client
     )
 
     result: dict[str, object] = {}
+    source_version_id = recipes_api.get_recipe(create_response.id).version_id
 
     def generate_photo() -> None:
         try:
@@ -144,6 +145,7 @@ def test_generate_photo_fails_if_recipe_changes_mid_generation(authed_api_client
         recipes_api.update_recipe(
             id=str(create_response.id),
             update_recipe_request=UpdateRecipeRequest(
+                expected_version_id=source_version_id,
                 title="Updated While Generating",
                 description="A recipe used to simulate photo generation races.",
                 instructions="Toast the bread and serve it warm.",

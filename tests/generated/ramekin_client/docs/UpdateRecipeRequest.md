@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **cook_time** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **difficulty** | **str** |  | [optional] 
+**expected_version_id** | **UUID** | Version the caller edited. The update conflicts if it is no longer current. | 
 **ingredients** | [**List[Ingredient]**](Ingredient.md) |  | [optional] 
 **instructions** | **str** |  | [optional] 
 **notes** | **str** |  | [optional] 

@@ -144,6 +144,7 @@ final class RecipeFormSupportTests: XCTestCase {
     }
 
     func testUpdateRequestPreservesExplicitEmptyTagsAndPhotoIds() {
+        let expectedVersionId = UUID()
         let formData = RecipeFormData(
             title: "Soup",
             recipeDescription: "Brothy",
@@ -167,7 +168,8 @@ final class RecipeFormSupportTests: XCTestCase {
                     section: ""
                 )
             ],
-            photoIds: []
+            photoIds: [],
+            expectedVersionId: expectedVersionId
         )
 
         let request = formData.makeUpdateRequest()
@@ -181,6 +183,7 @@ final class RecipeFormSupportTests: XCTestCase {
         XCTAssertEqual(request.difficulty, "Easy")
         XCTAssertEqual(request.sourceUrl, "https://example.com/soup")
         XCTAssertEqual(request.notes, "Salt to taste")
+        XCTAssertEqual(request.expectedVersionId, expectedVersionId)
         XCTAssertEqual(request.tags, [])
         XCTAssertEqual(request.photoIds, [])
         XCTAssertNil(request.prepTime)

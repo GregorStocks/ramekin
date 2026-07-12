@@ -110,8 +110,10 @@ export function buildCreateRecipeRequest(
 
 export function buildUpdateRecipeRequest(
   values: RecipeFormValues,
+  expectedVersionId: string,
 ): UpdateRecipeRequest {
   return {
+    expectedVersionId,
     title: values.title,
     description: values.description || null,
     instructions: values.instructions,

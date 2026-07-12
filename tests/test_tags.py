@@ -255,6 +255,7 @@ def test_update_recipe_creates_new_tags(authed_api_client):
     recipes_api.update_recipe(
         recipe.id,
         UpdateRecipeRequest(
+            expected_version_id=recipes_api.get_recipe(recipe.id).version_id,
             title="Update tag recipe",
             instructions="Cook it",
             ingredients=[make_ingredient(item="food")],

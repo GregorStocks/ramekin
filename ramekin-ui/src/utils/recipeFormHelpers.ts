@@ -225,6 +225,12 @@ export interface ParsedApiError {
   status: number | null;
 }
 
+export function recipeUpdateErrorMessage(error: ParsedApiError): string {
+  return error.code === ErrorCode.Conflict
+    ? "This recipe changed since you opened it. Your edits are still here; reload before saving again."
+    : error.message;
+}
+
 /**
  * Parse an API error into its structured `code`, human-readable `message`, and
  * HTTP `status`. Branch on `code` (against the {@link ErrorCode} enum), never on

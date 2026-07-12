@@ -62,8 +62,16 @@ enum RecipeVersionSupport {
     }
 
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    static func revertRecipe(id: UUID, from recipe: RecipeResponse) async throws {
-        try await RecipesAPI.revertRecipe(id: id, recipe: recipe)
+    static func revertRecipe(
+        id: UUID,
+        from recipe: RecipeResponse,
+        expectedVersionId: UUID
+    ) async throws {
+        try await RecipesAPI.revertRecipe(
+            id: id,
+            recipe: recipe,
+            expectedVersionId: expectedVersionId
+        )
     }
 
     static func formatIngredients(_ ingredients: [Ingredient]) -> String {
