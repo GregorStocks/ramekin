@@ -1,6 +1,6 @@
 use super::read::{
     counted_recipe_summary_select, current_recipe_versions_for_user, recipe_relevance_select,
-    CountedRecipeSummaryRow, RecipeRelevanceRow, RecipeSummaryRow,
+    recipe_summary_select, CountedRecipeSummaryRow, RecipeRelevanceRow, RecipeSummaryRow,
 };
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
@@ -18,7 +18,7 @@ use axum::{
 use chrono::{DateTime, NaiveDate, Utc};
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
-use std::sync::Arc;
+use std::{collections::HashMap, sync::Arc};
 use utoipa::{IntoParams, ToSchema};
 use uuid::Uuid;
 
@@ -482,9 +482,82 @@ pub async fn list_recipes(
             .into_response();
     }
 
+    // PostgreSQL text ordering depends on the database collation, which the
+    // offline iOS cache cannot reproduce. Apply the shared locale-independent
+    // comparator in memory so cached and server-backed title sorts agree.
+    if matches!(sort_by, SortBy::Title) {
+        let mut title_rows: Vec<(Uuid, String)> = match query
+            .select((recipes::id, recipe_versions::title))
+            .load(&mut conn)
+        {
+            Ok(rows) => rows,
+            Err(error) => {
+                tracing::error!(?error, "Failed to fetch recipe titles for title sort");
+                return ApiError::internal("Failed to fetch recipes").into_response();
+            }
+        };
+
+        let descending = matches!(params.sort_dir, Direction::Desc);
+        title_rows.sort_by(|lhs, rhs| {
+            ramekin_core::recipe_title_sort::compare_recipe_titles(
+                &lhs.1, &lhs.0, &rhs.1, &rhs.0, descending,
+            )
+        });
+
+        let total = title_rows.len() as i64;
+        let page_ids: Vec<Uuid> = title_rows
+            .into_iter()
+            .skip(offset as usize)
+            .take(limit as usize)
+            .map(|(id, _)| id)
+            .collect();
+
+        let rows: Vec<RecipeSummaryRow> = match current_recipe_versions_for_user!(user.id)
+            .filter(recipes::id.eq_any(&page_ids))
+            .select(recipe_summary_select!())
+            .load(&mut conn)
+        {
+            Ok(rows) => rows,
+            Err(error) => {
+                tracing::error!(?error, "Failed to fetch title-sorted recipe page");
+                return ApiError::internal("Failed to fetch recipes").into_response();
+            }
+        };
+        let mut recipes: Vec<RecipeSummary> =
+            rows.into_iter().map(RecipeSummary::from_row).collect();
+        if recipes.len() != page_ids.len() {
+            tracing::error!(
+                expected = page_ids.len(),
+                actual = recipes.len(),
+                "Title-sorted recipe page changed while it was loading"
+            );
+            return ApiError::internal("Failed to fetch recipes").into_response();
+        }
+        let page_position_by_id: HashMap<Uuid, usize> = page_ids
+            .into_iter()
+            .enumerate()
+            .map(|(position, id)| (id, position))
+            .collect();
+        recipes.sort_by_key(|recipe| page_position_by_id[&recipe.id]);
+
+        return (
+            StatusCode::OK,
+            Json(ListRecipesResponse {
+                recipes,
+                pagination: PaginationMetadata {
+                    total,
+                    limit,
+                    offset,
+                },
+            }),
+        )
+            .into_response();
+    }
+
     // Add ordering (with recipes::id tiebreaker for deterministic pagination)
     let query = match (sort_by, params.sort_dir) {
         (SortBy::Relevance, _) => unreachable!("relevance is handled above"),
+        (SortBy::Title, _) => unreachable!("title is handled above"),
         (SortBy::Random, _) => query.order(raw_sql::random()),
         (SortBy::UpdatedAt, Direction::Desc) => {
             query.order((recipe_versions::created_at.desc(), recipes::id.asc()))
@@ -498,14 +571,6 @@ pub async fn list_recipes(
         )),
         (SortBy::Rating, Direction::Asc) => query.order((
             recipe_versions::rating.asc().nulls_last(),
-            recipes::id.asc(),
-        )),
-        (SortBy::Title, Direction::Desc) => query.order((
-            raw_sql::lower(recipe_versions::title).desc(),
-            recipes::id.asc(),
-        )),
-        (SortBy::Title, Direction::Asc) => query.order((
-            raw_sql::lower(recipe_versions::title).asc(),
             recipes::id.asc(),
         )),
         (SortBy::CreatedAt, Direction::Desc) => {

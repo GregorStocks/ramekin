@@ -108,6 +108,9 @@ targets:
       - path: ../shared-test-vectors/ingredient-formatting.json
         buildPhase: resources
         type: file
+      - path: ../shared-test-vectors/recipe-title-sort.json
+        buildPhase: resources
+        type: file
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.tests

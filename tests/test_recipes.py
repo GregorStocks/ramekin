@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 import pytest
 
 from conftest import make_ingredient
@@ -1585,28 +1588,63 @@ def test_list_recipes_sort_by_rating(authed_api_client):
 
 
 def test_list_recipes_sort_by_title(authed_api_client):
-    """Test sorting recipes alphabetically by title."""
+    """The API follows the shared locale-independent title sort contract."""
     client, user_id = authed_api_client
     recipes_api = RecipesApi(client)
 
-    for name in ["Cherry Pie", "Apple Sauce", "Banana Bread"]:
+    vectors = json.loads(
+        (
+            Path(__file__).parent.parent / "shared-test-vectors/recipe-title-sort.json"
+        ).read_text()
+    )
+    created_ids = [
         recipes_api.create_recipe(
-            CreateRecipeRequest(title=name, instructions="x", ingredients=[])
+            CreateRecipeRequest(
+                title=f"Placeholder {index}", instructions="x", ingredients=[]
+            )
+        ).id
+        for index, _ in enumerate(vectors["recipes"])
+    ]
+
+    # Map vector IDs to generated recipe IDs in the same UUID order, then set
+    # the real titles. This lets the shared fixture verify UUID tie-breaking
+    # without exposing a test-only way to choose IDs in the create endpoint.
+    actual_id_by_vector_id = dict(
+        zip(
+            sorted(recipe["id"] for recipe in vectors["recipes"]),
+            sorted(created_ids),
+        )
+    )
+    for recipe in vectors["recipes"]:
+        recipes_api.update_recipe(
+            id=actual_id_by_vector_id[recipe["id"]],
+            update_recipe_request=UpdateRecipeRequest(title=recipe["title"]),
         )
 
-    # Sort by title asc (A-Z)
     asc_response = recipes_api.list_recipes(
         sort_by=SortBy.TITLE, sort_dir=Direction.ASC
     )
-    titles = [r.title for r in asc_response.recipes]
-    assert titles == ["Apple Sauce", "Banana Bread", "Cherry Pie"]
+    assert [recipe.id for recipe in asc_response.recipes] == [
+        actual_id_by_vector_id[vector_id] for vector_id in vectors["ascending"]
+    ]
 
-    # Sort by title desc (Z-A)
+    paged_response = recipes_api.list_recipes(
+        sort_by=SortBy.TITLE,
+        sort_dir=Direction.ASC,
+        limit=3,
+        offset=2,
+    )
+    assert [recipe.id for recipe in paged_response.recipes] == [
+        actual_id_by_vector_id[vector_id] for vector_id in vectors["ascending"][2:5]
+    ]
+    assert paged_response.pagination.total == len(vectors["recipes"])
+
     desc_response = recipes_api.list_recipes(
         sort_by=SortBy.TITLE, sort_dir=Direction.DESC
     )
-    titles = [r.title for r in desc_response.recipes]
-    assert titles == ["Cherry Pie", "Banana Bread", "Apple Sauce"]
+    assert [recipe.id for recipe in desc_response.recipes] == [
+        actual_id_by_vector_id[vector_id] for vector_id in vectors["descending"]
+    ]
 
 
 def test_list_recipes_sort_by_created_at(authed_api_client):
