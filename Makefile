@@ -311,8 +311,7 @@ ios-test: ios-generate ## Run iOS unit tests
 		-scheme Ramekin \
 		-destination "$$DEST" \
 		-only-testing:RamekinTests \
-		-resultBundlePath ../logs/ios-tests.xcresult \
-		CODE_SIGNING_ALLOWED=NO
+		-resultBundlePath ../logs/ios-tests.xcresult
 	@echo "Unit test results at logs/ios-tests.xcresult"
 
 ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
@@ -324,8 +323,7 @@ ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
 		-scheme Ramekin \
 		-destination "$$DEST" \
 		-only-testing:RamekinUITests \
-		-resultBundlePath ../logs/ios-ui-tests.xcresult \
-		CODE_SIGNING_ALLOWED=NO
+		-resultBundlePath ../logs/ios-ui-tests.xcresult
 	@echo "UI test results at logs/ios-ui-tests.xcresult"
 
 ingredient-tests-generate: ## Generate ingredient parsing test fixtures from latest pipeline run

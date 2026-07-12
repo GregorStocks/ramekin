@@ -1,0 +1,26 @@
+{
+  "title": "Commit the prettier 3.9.4 reformat of ramekin-ui so make lint \
+stops dirtying the tree",
+  "description": "PR #639 bumped prettier from 3.8.4 to 3.9.4, and prettier \
+3.9 collapses multiline union types that fit on one line. `make lint` runs \
+`prettier --write src/`, so anyone who runs it on current master gets \
+uncommitted reformat churn in three files:\n\
+- ramekin-ui/src/hooks/useCookbookBulkSelection.ts (BulkOperation union)\n\
+- ramekin-ui/src/pages/cookbook/query.ts (SortOption union)\n\
+- ramekin-ui/src/utils/asyncState.ts (ApiResourceValue union)\n\
+\n\
+CI never notices because ci.yml runs `make lint` without checking the tree is \
+clean afterward. Fix: run `make lint` and commit the resulting reformat in a \
+dedicated PR. Optionally consider making CI fail when `make lint` modifies \
+files, so formatter version bumps can't leave master in a state where lint \
+dirties every contributor's tree.",
+  "status": "open",
+  "priority": 3,
+  "type": "chore",
+  "labels": [
+    "ui",
+    "lint",
+  ],
+  "created_at": "2026-07-12T11:45:00-07:00",
+  "updated_at": "2026-07-12T11:45:00-07:00",
+}

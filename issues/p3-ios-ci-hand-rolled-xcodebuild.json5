@@ -1,0 +1,22 @@
+{
+  "title": "iOS CI hand-rolls its xcodebuild invocation instead of using make \
+targets",
+  "description": ".github/workflows/ios.yml builds and tests with its own \
+inline `xcodebuild test` command instead of `make ios-test` / `make \
+ios-test-ui`, so build flags now live in three independently maintained places \
+(the two Makefile targets and CI). The sign-simulator-test-builds fix had to \
+patch all three, and future flag tweaks can silently drift between them — e.g. \
+someone reintroducing CODE_SIGNING_ALLOWED=NO in one copy would resurrect the \
+keychain/login failure there. Centralize on parameterized make targets that CI \
+calls (destination/simulator id as a variable), keeping the invariant \
+single-sourced, per the repo rule that everything goes through the Makefile.",
+  "status": "open",
+  "priority": 3,
+  "type": "chore",
+  "labels": [
+    "ios",
+    "ci",
+  ],
+  "created_at": "2026-07-12T11:55:00-07:00",
+  "updated_at": "2026-07-12T11:55:00-07:00",
+}
