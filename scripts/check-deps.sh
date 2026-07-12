@@ -73,34 +73,48 @@ if [ "$MODE" != "lockfile" ]; then
 fi
 
 # `uv pip sync` installs exactly what requirements-test.lock pins, and nothing
-# regenerates the lock implicitly, so a dependency added to requirements-test.txt
-# alone would never reach the venv. Catch that before the venv is built.
+# regenerates the lock implicitly, so a requirements-test.txt edit that never
+# reached the lock would be silently ignored. Catch that before the venv is built.
 #
 # This gates *consuming* the lock, never *producing* it: it lives in its own mode
 # so that `make python-test-deps-update` -- the command that fixes a stale lock --
 # is not blocked by the very check it resolves.
 if [ "$MODE" = "lockfile" ] || [ "$MODE" = "full" ]; then
-    UNPINNED=()
+    # requirements-test.txt names packages; requirements-test.lock pins their
+    # versions. A specifier or extra here would silently not be honoured --
+    # `uv pip sync` reads only the lock, so `pytest>=10` would happily keep an
+    # older pinned pytest -- and we cannot evaluate one without resolving.
     CONSTRAINED=()
     while IFS= read -r req; do
-        # requirements-test.txt names packages; requirements-test.lock pins their
-        # versions. A specifier or extra here would silently not be honoured --
-        # `uv pip sync` reads only the lock, so `pytest>=10` would happily keep an
-        # older pinned pytest -- and we cannot evaluate one without resolving.
         if printf '%s' "$req" | grep -q '[][<>=!~;]'; then
             CONSTRAINED+=("$req")
-            continue
         fi
-        dep=$(printf '%s' "$req" | tr 'A-Z_.' 'a-z--')
-        grep -qE "^${dep}==" "$PROJECT_ROOT/requirements-test.lock" || UNPINNED+=("$dep")
     done < <(sed -e 's/#.*//' -e 's/[[:space:]]//g' \
         "$PROJECT_ROOT/requirements-test.txt" | grep -v '^$')
 
     if [ ${#CONSTRAINED[@]} -ne 0 ]; then
         MISSING+=("requirements-test.txt must list bare package names, but declares ${CONSTRAINED[*]} (pin versions in requirements-test.lock via: make python-test-deps-update)")
     fi
-    if [ ${#UNPINNED[@]} -ne 0 ]; then
-        MISSING+=("requirements-test.lock does not pin ${UNPINNED[*]} (run: make python-test-deps-update)")
+
+    # uv annotates every direct dependency with `# via -r requirements-test.txt`,
+    # so the lock records the requirement set it was compiled from. Comparing that
+    # record against what is declared today catches an added, removed, or renamed
+    # dependency alike -- a name-presence check would miss the last two, and a
+    # stale lock keeps installing a dependency nobody declares anymore.
+    DECLARED=$(sed -e 's/#.*//' -e 's/[[<>=!~;].*//' -e 's/[[:space:]]//g' \
+        "$PROJECT_ROOT/requirements-test.txt" | tr 'A-Z_.' 'a-z--' | grep -v '^$' | sort -u)
+    RECORDED=$(awk '/^[a-zA-Z0-9]/ { pkg = $0; sub(/[=<> ;].*/, "", pkg) }
+                    /-r requirements-test\.txt/ { print pkg }' \
+        "$PROJECT_ROOT/requirements-test.lock" | tr 'A-Z_.' 'a-z--' | sort -u)
+
+    UNPINNED=$(comm -23 <(printf '%s\n' "$DECLARED") <(printf '%s\n' "$RECORDED") | tr '\n' ' ')
+    STALE=$(comm -13 <(printf '%s\n' "$DECLARED") <(printf '%s\n' "$RECORDED") | tr '\n' ' ')
+
+    if [ -n "${UNPINNED// /}" ]; then
+        MISSING+=("requirements-test.lock does not pin ${UNPINNED% } (run: make python-test-deps-update)")
+    fi
+    if [ -n "${STALE// /}" ]; then
+        MISSING+=("requirements-test.lock still pins ${STALE% }, no longer declared in requirements-test.txt (run: make python-test-deps-update)")
     fi
 fi
 

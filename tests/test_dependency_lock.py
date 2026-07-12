@@ -112,11 +112,23 @@ def test_the_lockfile_check_does_not_block_the_target_that_fixes_a_stale_lock():
     assert "check-deps.sh --lockfile" not in recipes
 
 
-def test_check_deps_accepts_a_lockfile_pinning_every_declared_dependency(tmp_path):
+# uv marks each direct dependency with a `-r requirements-test.txt` via-comment,
+# and lists transitive ones under the package that pulled them in.
+LOCKED_PYTEST_AND_REQUESTS = """\
+certifi==2026.6.17
+    # via requests
+pytest==8.4.2
+    # via -r requirements-test.txt
+requests==2.32.5
+    # via -r requirements-test.txt
+"""
+
+
+def test_check_deps_accepts_a_lockfile_matching_the_declared_dependencies(tmp_path):
     result = _run_check_deps(
         tmp_path,
-        declared="pytest\nPython_Dateutil\n",
-        locked="pytest==8.4.2\npython-dateutil==2.9.0\n",
+        declared="pytest\nRequests\n",
+        locked=LOCKED_PYTEST_AND_REQUESTS,
     )
 
     assert result.returncode == 0, result.stdout
@@ -125,13 +137,39 @@ def test_check_deps_accepts_a_lockfile_pinning_every_declared_dependency(tmp_pat
 def test_check_deps_rejects_a_lockfile_missing_a_declared_dependency(tmp_path):
     result = _run_check_deps(
         tmp_path,
-        declared="pytest\npillow\n",
-        locked="pytest==8.4.2\n",
+        declared="pytest\nrequests\npillow\n",
+        locked=LOCKED_PYTEST_AND_REQUESTS,
     )
 
     assert result.returncode == 1
-    assert "pillow" in result.stdout
+    assert "does not pin pillow" in result.stdout
     assert "make python-test-deps-update" in result.stdout
+
+
+def test_check_deps_rejects_a_lockfile_still_pinning_a_removed_dependency(tmp_path):
+    # `uv pip sync` installs whatever the lock names, so a dropped dependency
+    # would keep being installed and CI would pass without it being declared.
+    result = _run_check_deps(
+        tmp_path,
+        declared="pytest\n",
+        locked=LOCKED_PYTEST_AND_REQUESTS,
+    )
+
+    assert result.returncode == 1
+    assert "still pins requests" in result.stdout
+
+
+def test_check_deps_rejects_a_dependency_only_present_transitively(tmp_path):
+    # certifi is in the lock, but only because requests pulled it in -- it is not
+    # a requirement the lock was compiled from, so declaring it must not pass.
+    result = _run_check_deps(
+        tmp_path,
+        declared="pytest\nrequests\ncertifi\n",
+        locked=LOCKED_PYTEST_AND_REQUESTS,
+    )
+
+    assert result.returncode == 1
+    assert "does not pin certifi" in result.stdout
 
 
 @pytest.mark.parametrize("constrained", ["pytest>=10", "requests[socks]", "urllib3<3"])
@@ -140,8 +178,8 @@ def test_check_deps_rejects_a_constrained_requirement(tmp_path, constrained):
     # unhonoured: `pytest>=10` would silently keep the older pinned pytest.
     result = _run_check_deps(
         tmp_path,
-        declared=f"pytest\n{constrained}\n",
-        locked="pytest==8.4.2\nrequests==2.32.5\nurllib3==2.7.0\n",
+        declared=f"pytest\nrequests\n{constrained}\n",
+        locked=LOCKED_PYTEST_AND_REQUESTS,
     )
 
     assert result.returncode == 1
@@ -152,8 +190,8 @@ def test_lockfile_mode_needs_no_dev_tooling(tmp_path):
     # It gates the venv build, so it has to work before cargo/npm/ast-grep exist.
     result = _run_check_deps(
         tmp_path,
-        declared="pytest\n",
-        locked="pytest==8.4.2\n",
+        declared="pytest\nrequests\n",
+        locked=LOCKED_PYTEST_AND_REQUESTS,
         path="/usr/bin:/bin",
     )
 
