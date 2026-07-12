@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
@@ -49,41 +48,39 @@ type TagRow = (Uuid, String, DateTime<Utc>, i64);
 pub async fn list_all_tags(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
-
+) -> Result<impl IntoResponse, ApiError> {
     // Use Diesel DSL with JOINs and GROUP BY instead of raw SQL subquery
     // Query: user_tags LEFT JOIN recipe_version_tags LEFT JOIN recipe_versions LEFT JOIN recipes
     // where recipes.current_version_id matches and deleted_at IS NULL
-    let tags: Vec<TagRow> = match user_tags::table
-        .left_join(recipe_version_tags::table)
-        .left_join(
-            recipe_versions::table
-                .on(recipe_versions::id.eq(recipe_version_tags::recipe_version_id)),
-        )
-        .left_join(
-            recipes::table.on(recipes::current_version_id
-                .eq(recipe_versions::id.nullable())
-                .and(recipes::deleted_at.is_null())),
-        )
-        .filter(user_tags::user_id.eq(user.id))
-        .filter(user_tags::deleted_at.is_null())
-        .group_by((user_tags::id, user_tags::name, user_tags::created_at))
-        .select((
-            user_tags::id,
-            user_tags::name,
-            user_tags::created_at,
-            count(recipes::id.nullable()),
-        ))
-        .order(user_tags::name.asc())
-        .load(&mut conn)
-    {
-        Ok(rows) => rows,
-        Err(e) => {
-            tracing::error!("Failed to fetch tags: {}", e);
-            return ApiError::internal("Failed to fetch tags").into_response();
-        }
-    };
+    let tags: Vec<TagRow> = run_db(&pool, move |conn| {
+        user_tags::table
+            .left_join(recipe_version_tags::table)
+            .left_join(
+                recipe_versions::table
+                    .on(recipe_versions::id.eq(recipe_version_tags::recipe_version_id)),
+            )
+            .left_join(
+                recipes::table.on(recipes::current_version_id
+                    .eq(recipe_versions::id.nullable())
+                    .and(recipes::deleted_at.is_null())),
+            )
+            .filter(user_tags::user_id.eq(user.id))
+            .filter(user_tags::deleted_at.is_null())
+            .group_by((user_tags::id, user_tags::name, user_tags::created_at))
+            .select((
+                user_tags::id,
+                user_tags::name,
+                user_tags::created_at,
+                count(recipes::id.nullable()),
+            ))
+            .order(user_tags::name.asc())
+            .load(conn)
+            .map_err(|e| {
+                tracing::error!("Failed to fetch tags: {}", e);
+                ApiError::internal("Failed to fetch tags")
+            })
+    })
+    .await?;
 
     let response = TagsListResponse {
         tags: tags
@@ -102,5 +99,5 @@ pub async fn list_all_tags(
             .collect(),
     };
 
-    (StatusCode::OK, Json(response)).into_response()
+    Ok((StatusCode::OK, Json(response)))
 }

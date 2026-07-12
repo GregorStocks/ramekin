@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
@@ -88,37 +87,35 @@ type ShoppingListRow = (
 pub async fn list_items(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
-
-    let rows: Vec<ShoppingListRow> = match shopping_list_items::table
-        .filter(shopping_list_items::user_id.eq(user.id))
-        .filter(shopping_list_items::deleted_at.is_null())
-        .select((
-            shopping_list_items::id,
-            shopping_list_items::item,
-            shopping_list_items::amount,
-            shopping_list_items::note,
-            shopping_list_items::source_recipe_id,
-            shopping_list_items::source_recipe_title,
-            shopping_list_items::is_checked,
-            shopping_list_items::sort_order,
-            shopping_list_items::category_override,
-            shopping_list_items::version,
-            shopping_list_items::updated_at,
-        ))
-        .order((
-            shopping_list_items::is_checked.asc(),
-            shopping_list_items::sort_order.asc(),
-        ))
-        .load(&mut conn)
-    {
-        Ok(rows) => rows,
-        Err(e) => {
-            tracing::error!("Failed to fetch shopping list: {}", e);
-            return ApiError::internal("Failed to fetch shopping list").into_response();
-        }
-    };
+) -> Result<impl IntoResponse, ApiError> {
+    let rows: Vec<ShoppingListRow> = run_db(&pool, move |conn| {
+        shopping_list_items::table
+            .filter(shopping_list_items::user_id.eq(user.id))
+            .filter(shopping_list_items::deleted_at.is_null())
+            .select((
+                shopping_list_items::id,
+                shopping_list_items::item,
+                shopping_list_items::amount,
+                shopping_list_items::note,
+                shopping_list_items::source_recipe_id,
+                shopping_list_items::source_recipe_title,
+                shopping_list_items::is_checked,
+                shopping_list_items::sort_order,
+                shopping_list_items::category_override,
+                shopping_list_items::version,
+                shopping_list_items::updated_at,
+            ))
+            .order((
+                shopping_list_items::is_checked.asc(),
+                shopping_list_items::sort_order.asc(),
+            ))
+            .load(conn)
+            .map_err(|e| {
+                tracing::error!("Failed to fetch shopping list: {}", e);
+                ApiError::internal("Failed to fetch shopping list")
+            })
+    })
+    .await?;
 
     let items = rows
         .into_iter()
@@ -157,12 +154,11 @@ pub async fn list_items(
         )
         .collect();
 
-    (
+    Ok((
         StatusCode::OK,
         Json(ShoppingListResponse {
             items,
             category_order: category_order(),
         }),
-    )
-        .into_response()
+    ))
 }

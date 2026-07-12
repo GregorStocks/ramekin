@@ -11,7 +11,7 @@ use ramekin_core::pipeline::{
     step_after_scrape_auto_applied_ai_step, PipelineStep, StepContext, StepMetadata, StepResult,
 };
 
-use crate::db::DbPool;
+use crate::db::{run_blocking, DbPool};
 use crate::models::NewRecipeVersion;
 use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
 use crate::schema::recipe_versions;
@@ -129,7 +129,10 @@ impl PipelineStep for ApplyNormalizedTitleStep {
                 }
             };
 
-        match self.apply_title(recipe_id, expected_version_id, &normalized_title) {
+        match self
+            .apply_title(recipe_id, expected_version_id, &normalized_title)
+            .await
+        {
             Ok(version_id) => StepResult {
                 step_name: Self::NAME.to_string(),
                 success: true,
@@ -155,7 +158,7 @@ impl PipelineStep for ApplyNormalizedTitleStep {
 }
 
 impl ApplyNormalizedTitleStep {
-    fn apply_title(
+    async fn apply_title(
         &self,
         recipe_id: Uuid,
         expected_version_id: Uuid,
@@ -163,33 +166,36 @@ impl ApplyNormalizedTitleStep {
     ) -> Result<Uuid, String> {
         use crate::models::RecipeVersion;
 
-        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
+        let normalized_title = normalized_title.to_string();
+        run_blocking(&self.pool, move |conn| {
+            conn.transaction(|conn| {
+                let current: RecipeVersion = recipe_versions::table
+                    .filter(recipe_versions::id.eq(expected_version_id))
+                    .filter(recipe_versions::recipe_id.eq(recipe_id))
+                    .select(RecipeVersion::as_select())
+                    .first(conn)?;
 
-        conn.transaction(|conn| {
-            let current: RecipeVersion = recipe_versions::table
-                .filter(recipe_versions::id.eq(expected_version_id))
-                .filter(recipe_versions::recipe_id.eq(recipe_id))
-                .select(RecipeVersion::as_select())
-                .first(conn)?;
+                if current.title == normalized_title {
+                    return Ok(expected_version_id);
+                }
 
-            if current.title == normalized_title {
-                return Ok(expected_version_id);
-            }
+                let new_version = NewRecipeVersion {
+                    title: &normalized_title,
+                    ..NewRecipeVersion::copy_of(&current, "normalize_title")
+                };
 
-            let new_version = NewRecipeVersion {
-                title: normalized_title,
-                ..NewRecipeVersion::copy_of(&current, "normalize_title")
-            };
+                let new_version_id = create_new_version_cas(
+                    conn,
+                    &new_version,
+                    Some(expected_version_id),
+                    TagSource::CopyFrom(expected_version_id),
+                )?;
 
-            let new_version_id = create_new_version_cas(
-                conn,
-                &new_version,
-                Some(expected_version_id),
-                TagSource::CopyFrom(expected_version_id),
-            )?;
-
-            Ok(new_version_id)
+                Ok(new_version_id)
+            })
+            .map_err(|e: VersionWriteError| e.to_string())
         })
-        .map_err(|e: VersionWriteError| e.to_string())
+        .await
+        .map_err(|e| e.to_string())?
     }
 }

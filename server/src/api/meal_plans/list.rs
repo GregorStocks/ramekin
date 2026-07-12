@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::schema::{meal_plans, recipe_versions, recipes};
 use axum::{
     extract::{Query, State},
@@ -96,46 +95,46 @@ pub async fn list_meal_plans(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Query(params): Query<ListMealPlansParams>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
-
+) -> Result<impl IntoResponse, ApiError> {
     let today = chrono::Utc::now().date_naive();
     let start_date = params.start_date.unwrap_or(today);
     let end_date = params
         .end_date
         .unwrap_or(start_date + chrono::Duration::days(6));
 
+    let user_id = user.id;
+
     // Query meal_plans joined with recipes and recipe_versions to get title and photo
-    let rows: Vec<MealPlanRow> = match meal_plans::table
-        .inner_join(recipes::table)
-        .inner_join(
-            recipe_versions::table.on(recipe_versions::id
-                .nullable()
-                .eq(recipes::current_version_id)),
-        )
-        .filter(meal_plans::user_id.eq(user.id))
-        .filter(meal_plans::deleted_at.is_null())
-        .filter(recipes::deleted_at.is_null())
-        .filter(meal_plans::meal_date.ge(start_date))
-        .filter(meal_plans::meal_date.le(end_date))
-        .select((
-            meal_plans::id,
-            meal_plans::recipe_id,
-            meal_plans::meal_date,
-            meal_plans::meal_type,
-            meal_plans::notes,
-            recipe_versions::title,
-            recipe_versions::photo_ids,
-        ))
-        .order((meal_plans::meal_date.asc(), meal_plans::meal_type.asc()))
-        .load(&mut conn)
-    {
-        Ok(rows) => rows,
-        Err(e) => {
-            tracing::error!("Failed to fetch meal plans: {}", e);
-            return ApiError::internal("Failed to fetch meal plans").into_response();
-        }
-    };
+    let rows: Vec<MealPlanRow> = run_db(&pool, move |conn| {
+        meal_plans::table
+            .inner_join(recipes::table)
+            .inner_join(
+                recipe_versions::table.on(recipe_versions::id
+                    .nullable()
+                    .eq(recipes::current_version_id)),
+            )
+            .filter(meal_plans::user_id.eq(user_id))
+            .filter(meal_plans::deleted_at.is_null())
+            .filter(recipes::deleted_at.is_null())
+            .filter(meal_plans::meal_date.ge(start_date))
+            .filter(meal_plans::meal_date.le(end_date))
+            .select((
+                meal_plans::id,
+                meal_plans::recipe_id,
+                meal_plans::meal_date,
+                meal_plans::meal_type,
+                meal_plans::notes,
+                recipe_versions::title,
+                recipe_versions::photo_ids,
+            ))
+            .order((meal_plans::meal_date.asc(), meal_plans::meal_type.asc()))
+            .load(conn)
+            .map_err(|e| {
+                tracing::error!("Failed to fetch meal plans: {}", e);
+                ApiError::internal("Failed to fetch meal plans")
+            })
+    })
+    .await?;
 
     let meal_plans = rows
         .into_iter()
@@ -156,5 +155,5 @@ pub async fn list_meal_plans(
         )
         .collect();
 
-    (StatusCode::OK, Json(MealPlanListResponse { meal_plans })).into_response()
+    Ok((StatusCode::OK, Json(MealPlanListResponse { meal_plans })))
 }

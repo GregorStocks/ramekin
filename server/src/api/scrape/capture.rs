@@ -41,8 +41,11 @@ pub async fn capture(
     }
 
     // Create job with pre-existing HTML
+    let html_len = request.html.len();
     let job =
-        match scraping::create_job_with_html(&pool, user.id, &request.source_url, &request.html) {
+        match scraping::create_job_with_html(&pool, user.id, &request.source_url, request.html)
+            .await
+        {
             Ok(j) => j,
             Err(e) => {
                 tracing::error!("Failed to create capture job: {}", e);
@@ -54,7 +57,7 @@ pub async fn capture(
         "Created capture job {} for user {} with HTML len {} from URL {}",
         job.id,
         user.id,
-        request.html.len(),
+        html_len,
         request.source_url
     );
 

@@ -1,9 +1,7 @@
-use crate::api::recipes::rescrape::RescrapeResponse;
+use crate::api::recipes::rescrape::{fetch_rescrape_target, RescrapeResponse};
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
-use crate::schema::{recipe_versions, recipes};
 use crate::scraping;
 use axum::{
     extract::{Path, State},
@@ -11,7 +9,6 @@ use axum::{
     response::IntoResponse,
     Json,
 };
-use diesel::prelude::*;
 use std::sync::Arc;
 use uuid::Uuid;
 
@@ -36,71 +33,31 @@ pub async fn rescrape_photo(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Path(recipe_id): Path<Uuid>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
 
-    let recipe: (Uuid, Option<Uuid>) = match recipes::table
-        .filter(recipes::id.eq(recipe_id))
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .select((recipes::id, recipes::current_version_id))
-        .first(&mut conn)
-    {
-        Ok(r) => r,
-        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
-        Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
-    };
+    let (current_version_id, source_url) = fetch_rescrape_target(&pool, user_id, recipe_id).await?;
 
-    let (recipe_id, current_version_id) = recipe;
-
-    let current_version_id = match current_version_id {
-        Some(vid) => vid,
-        None => return ApiError::invalid_request("Recipe has no versions").into_response(),
-    };
-
-    let source_url: Option<String> = match recipe_versions::table
-        .filter(recipe_versions::id.eq(current_version_id))
-        .select(recipe_versions::source_url)
-        .first(&mut conn)
-    {
-        Ok(url) => url,
-        Err(_) => return ApiError::internal("Failed to fetch recipe version").into_response(),
-    };
-
-    let source_url = match source_url {
-        Some(url) if !url.is_empty() => url,
-        _ => {
-            return ApiError::invalid_request("Recipe has no source URL to rescrape from")
-                .into_response()
-        }
-    };
-
-    if let Err(e) = scraping::is_host_allowed(&source_url) {
-        return ApiError::invalid_request(e.to_string()).into_response();
-    }
-
-    let job = match scraping::create_photo_rescrape_job(
+    let job = scraping::create_photo_rescrape_job(
         &pool,
-        user.id,
+        user_id,
         recipe_id,
         current_version_id,
         &source_url,
-    ) {
-        Ok(j) => j,
-        Err(e) => {
-            tracing::error!("Failed to create photo rescrape job: {}", e);
-            return ApiError::internal("Failed to create photo rescrape job").into_response();
-        }
-    };
+    )
+    .await
+    .map_err(|e| {
+        tracing::error!("Failed to create photo rescrape job: {}", e);
+        ApiError::internal("Failed to create photo rescrape job")
+    })?;
 
     scraping::spawn_scrape_job(pool.clone(), job.id, &source_url, "rescrape_photo");
 
-    (
+    Ok((
         StatusCode::CREATED,
         Json(RescrapeResponse {
             job_id: job.id,
             status: job.status,
         }),
-    )
-        .into_response()
+    ))
 }

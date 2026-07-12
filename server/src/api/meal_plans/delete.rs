@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::schema::meal_plans;
 use axum::{
     extract::{Path, State},
@@ -31,29 +30,29 @@ pub async fn delete_meal_plan(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
 
-    // Soft delete - set deleted_at timestamp
-    let updated = match diesel::update(
-        meal_plans::table
-            .filter(meal_plans::id.eq(id))
-            .filter(meal_plans::user_id.eq(user.id))
-            .filter(meal_plans::deleted_at.is_null()),
-    )
-    .set(meal_plans::deleted_at.eq(Some(Utc::now())))
-    .execute(&mut conn)
-    {
-        Ok(count) => count,
-        Err(e) => {
+    let updated = run_db(&pool, move |conn| {
+        // Soft delete - set deleted_at timestamp
+        diesel::update(
+            meal_plans::table
+                .filter(meal_plans::id.eq(id))
+                .filter(meal_plans::user_id.eq(user_id))
+                .filter(meal_plans::deleted_at.is_null()),
+        )
+        .set(meal_plans::deleted_at.eq(Some(Utc::now())))
+        .execute(conn)
+        .map_err(|e| {
             tracing::error!("Failed to delete meal plan: {}", e);
-            return ApiError::internal("Failed to delete meal plan").into_response();
-        }
-    };
+            ApiError::internal("Failed to delete meal plan")
+        })
+    })
+    .await?;
 
     if updated == 0 {
-        return ApiError::not_found("Meal plan not found").into_response();
+        return Err(ApiError::not_found("Meal plan not found"));
     }
 
-    StatusCode::NO_CONTENT.into_response()
+    Ok(StatusCode::NO_CONTENT)
 }

@@ -10,23 +10,41 @@ pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("../migrations");
 pub type DbPool = r2d2::Pool<ConnectionManager<PgConnection>>;
 pub type DbConn = r2d2::PooledConnection<ConnectionManager<PgConnection>>;
 
-/// Helper macro to get a database connection from a pool.
-/// Returns early with a 500 error response if the connection fails.
+/// Run blocking database work on tokio's blocking thread pool.
 ///
-/// Usage:
-/// ```ignore
-/// let mut conn = get_conn!(pool);
-/// ```
-#[macro_export]
-macro_rules! get_conn {
-    ($pool:expr) => {
-        match $pool.get() {
-            Ok(c) => c,
-            Err(_) => {
-                return $crate::api::ApiError::internal("Database connection failed").into_response()
-            }
-        }
-    };
+/// Diesel calls must never run directly on a runtime worker: a slow or
+/// lock-blocked query parks the worker — and when that worker holds the IO
+/// driver, the whole server stops answering until the query finishes. Every
+/// async code path checks out its connection and runs its queries inside the
+/// closure passed here instead.
+///
+/// A panic inside the closure propagates to the caller.
+pub async fn run_blocking<T, F>(pool: &DbPool, f: F) -> Result<T, r2d2::PoolError>
+where
+    F: FnOnce(&mut DbConn) -> T + Send + 'static,
+    T: Send + 'static,
+{
+    let pool = pool.clone();
+    // Blocking threads carry no ambient request context, so re-enter the
+    // caller's tracing span (keeps db.query spans parented to the request)
+    // and its query counter (keeps X-DB-Query-Count accurate).
+    let span = tracing::Span::current();
+    let query_counter = crate::telemetry::current_query_counter();
+    match tokio::task::spawn_blocking(move || {
+        let _entered = span.entered();
+        crate::telemetry::with_query_counter(query_counter, || {
+            let mut conn = pool.get()?;
+            Ok(f(&mut conn))
+        })
+    })
+    .await
+    {
+        Ok(result) => result,
+        Err(join_error) => match join_error.try_into_panic() {
+            Ok(panic) => std::panic::resume_unwind(panic),
+            Err(join_error) => panic!("database task cancelled: {join_error}"),
+        },
+    }
 }
 
 // Thread-local storage for tracking active database spans.

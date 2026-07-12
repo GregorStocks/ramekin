@@ -1,8 +1,7 @@
 use super::list::MealType;
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::schema::meal_plans;
 use axum::{
     extract::{Path, State},
@@ -47,68 +46,70 @@ pub async fn update_meal_plan(
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
     Json(request): Json<UpdateMealPlanRequest>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
 
-    // Fetch the existing meal plan
-    let existing: Option<(NaiveDate, String, Option<String>)> = match meal_plans::table
-        .filter(meal_plans::id.eq(id))
-        .filter(meal_plans::user_id.eq(user.id))
-        .filter(meal_plans::deleted_at.is_null())
-        .select((
-            meal_plans::meal_date,
-            meal_plans::meal_type,
-            meal_plans::notes,
-        ))
-        .first(&mut conn)
-        .optional()
-    {
-        Ok(record) => record,
-        Err(e) => {
-            tracing::error!("Failed to fetch meal plan: {}", e);
-            return ApiError::internal("Failed to fetch meal plan").into_response();
-        }
-    };
-
-    let Some((current_date, current_type, current_notes)) = existing else {
-        return ApiError::not_found("Meal plan not found").into_response();
-    };
-
-    // Calculate new values
-    let new_date = request.meal_date.unwrap_or(current_date);
-    let new_type = request
-        .meal_type
-        .map(|mt| mt.as_str().to_string())
-        .unwrap_or(current_type);
-    let new_notes = match &request.notes {
-        Some(n) if n.is_empty() => None,
-        Some(n) => Some(n.clone()),
-        None => current_notes,
-    };
-
-    // Update the meal plan
-    let result = diesel::update(
-        meal_plans::table
+    run_db(&pool, move |conn| {
+        // Fetch the existing meal plan
+        let existing: Option<(NaiveDate, String, Option<String>)> = meal_plans::table
             .filter(meal_plans::id.eq(id))
-            .filter(meal_plans::user_id.eq(user.id))
-            .filter(meal_plans::deleted_at.is_null()),
-    )
-    .set((
-        meal_plans::meal_date.eq(new_date),
-        meal_plans::meal_type.eq(&new_type),
-        meal_plans::notes.eq(&new_notes),
-    ))
-    .execute(&mut conn);
+            .filter(meal_plans::user_id.eq(user_id))
+            .filter(meal_plans::deleted_at.is_null())
+            .select((
+                meal_plans::meal_date,
+                meal_plans::meal_type,
+                meal_plans::notes,
+            ))
+            .first(conn)
+            .optional()
+            .map_err(|e| {
+                tracing::error!("Failed to fetch meal plan: {}", e);
+                ApiError::internal("Failed to fetch meal plan")
+            })?;
 
-    match result {
-        Ok(0) => ApiError::not_found("Meal plan not found").into_response(),
-        Ok(_) => StatusCode::OK.into_response(),
-        Err(DieselError::DatabaseError(DatabaseErrorKind::UniqueViolation, _)) => {
-            ApiError::conflict("This recipe is already planned for this meal").into_response()
+        let Some((current_date, current_type, current_notes)) = existing else {
+            return Err(ApiError::not_found("Meal plan not found"));
+        };
+
+        // Calculate new values
+        let new_date = request.meal_date.unwrap_or(current_date);
+        let new_type = request
+            .meal_type
+            .map(|mt| mt.as_str().to_string())
+            .unwrap_or(current_type);
+        let new_notes = match &request.notes {
+            Some(n) if n.is_empty() => None,
+            Some(n) => Some(n.clone()),
+            None => current_notes,
+        };
+
+        // Update the meal plan
+        let result = diesel::update(
+            meal_plans::table
+                .filter(meal_plans::id.eq(id))
+                .filter(meal_plans::user_id.eq(user_id))
+                .filter(meal_plans::deleted_at.is_null()),
+        )
+        .set((
+            meal_plans::meal_date.eq(new_date),
+            meal_plans::meal_type.eq(&new_type),
+            meal_plans::notes.eq(&new_notes),
+        ))
+        .execute(conn);
+
+        match result {
+            Ok(0) => Err(ApiError::not_found("Meal plan not found")),
+            Ok(_) => Ok(()),
+            Err(DieselError::DatabaseError(DatabaseErrorKind::UniqueViolation, _)) => Err(
+                ApiError::conflict("This recipe is already planned for this meal"),
+            ),
+            Err(e) => {
+                tracing::error!("Failed to update meal plan: {}", e);
+                Err(ApiError::internal("Failed to update meal plan"))
+            }
         }
-        Err(e) => {
-            tracing::error!("Failed to update meal plan: {}", e);
-            ApiError::internal("Failed to update meal plan").into_response()
-        }
-    }
+    })
+    .await?;
+
+    Ok(StatusCode::OK)
 }

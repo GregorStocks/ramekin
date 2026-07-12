@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::raw_sql;
 use crate::schema::user_tags;
 use axum::{
@@ -34,30 +33,35 @@ pub async fn delete_tag(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
-    let now = Utc::now();
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
 
-    // Soft delete - set deleted_at timestamp
-    let updated = diesel::update(
-        user_tags::table
-            .filter(user_tags::id.eq(id))
-            .filter(user_tags::user_id.eq(user.id))
-            .filter(user_tags::deleted_at.is_null()),
-    )
-    .set((
-        user_tags::deleted_at.eq(Some(now)),
-        user_tags::updated_at.eq(now),
-        user_tags::change_xid.eq(raw_sql::current_change_xid()),
-    ))
-    .execute(&mut conn);
+    let updated = run_db(&pool, move |conn| {
+        let now = Utc::now();
 
-    match updated {
-        Ok(0) => ApiError::not_found("Tag not found").into_response(),
-        Ok(_) => StatusCode::NO_CONTENT.into_response(),
-        Err(e) => {
+        // Soft delete - set deleted_at timestamp
+        diesel::update(
+            user_tags::table
+                .filter(user_tags::id.eq(id))
+                .filter(user_tags::user_id.eq(user_id))
+                .filter(user_tags::deleted_at.is_null()),
+        )
+        .set((
+            user_tags::deleted_at.eq(Some(now)),
+            user_tags::updated_at.eq(now),
+            user_tags::change_xid.eq(raw_sql::current_change_xid()),
+        ))
+        .execute(conn)
+        .map_err(|e| {
             tracing::error!("Failed to delete tag: {}", e);
-            ApiError::internal("Failed to delete tag").into_response()
-        }
+            ApiError::internal("Failed to delete tag")
+        })
+    })
+    .await?;
+
+    if updated == 0 {
+        return Err(ApiError::not_found("Tag not found"));
     }
+
+    Ok(StatusCode::NO_CONTENT)
 }

@@ -11,7 +11,7 @@ use ramekin_core::pipeline::{
     StepContext, StepMetadata, StepResult,
 };
 
-use crate::db::DbPool;
+use crate::db::{run_blocking, DbPool};
 use crate::models::NewRecipeVersion;
 use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
 use crate::schema::{recipe_versions, recipes};
@@ -112,7 +112,10 @@ impl PipelineStep for ApplyAutoTagsStep {
         };
 
         // Apply the tags to the recipe
-        match self.apply_tags(recipe_id, expected_version_id, &suggested_tags) {
+        match self
+            .apply_tags(recipe_id, expected_version_id, &suggested_tags)
+            .await
+        {
             Ok(version_id) => StepResult {
                 step_name: Self::NAME.to_string(),
                 success: true,
@@ -137,7 +140,7 @@ impl PipelineStep for ApplyAutoTagsStep {
 }
 
 impl ApplyAutoTagsStep {
-    fn apply_tags(
+    async fn apply_tags(
         &self,
         recipe_id: Uuid,
         expected_version_id: Uuid,
@@ -145,42 +148,45 @@ impl ApplyAutoTagsStep {
     ) -> Result<Uuid, String> {
         use crate::models::{Recipe, RecipeVersion};
 
-        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
+        let new_tags = new_tags.to_vec();
+        run_blocking(&self.pool, move |conn| {
+            // Get the recipe to find user_id and current_version_id
+            let recipe: Recipe = recipes::table
+                .find(recipe_id)
+                .select(Recipe::as_select())
+                .first(conn)
+                .map_err(|e| e.to_string())?;
 
-        // Get the recipe to find user_id and current_version_id
-        let recipe: Recipe = recipes::table
-            .find(recipe_id)
-            .select(Recipe::as_select())
-            .first(&mut conn)
-            .map_err(|e| e.to_string())?;
+            // Fetch current version data
+            let current_version: RecipeVersion = recipe_versions::table
+                .filter(recipe_versions::id.eq(expected_version_id))
+                .filter(recipe_versions::recipe_id.eq(recipe_id))
+                .select(RecipeVersion::as_select())
+                .first(conn)
+                .map_err(|e| e.to_string())?;
 
-        // Fetch current version data
-        let current_version: RecipeVersion = recipe_versions::table
-            .filter(recipe_versions::id.eq(expected_version_id))
-            .filter(recipe_versions::recipe_id.eq(recipe_id))
-            .select(RecipeVersion::as_select())
-            .first(&mut conn)
-            .map_err(|e| e.to_string())?;
+            // Create new version with AI-suggested tags
+            conn.transaction(|conn| {
+                // 1. Create new version (copy all data, change version_source to "enrichment")
+                let new_version = NewRecipeVersion::copy_of(&current_version, "enrichment");
 
-        // Create new version with AI-suggested tags
-        conn.transaction(|conn| {
-            // 1. Create new version (copy all data, change version_source to "enrichment")
-            let new_version = NewRecipeVersion::copy_of(&current_version, "enrichment");
+                // 2. Carry existing tags forward and add the AI-suggested ones
+                let new_version_id = create_new_version_cas(
+                    conn,
+                    &new_version,
+                    Some(expected_version_id),
+                    TagSource::CopyAndNames {
+                        from_version: expected_version_id,
+                        user_id: recipe.user_id,
+                        names: &new_tags,
+                    },
+                )?;
 
-            // 2. Carry existing tags forward and add the AI-suggested ones
-            let new_version_id = create_new_version_cas(
-                conn,
-                &new_version,
-                Some(expected_version_id),
-                TagSource::CopyAndNames {
-                    from_version: expected_version_id,
-                    user_id: recipe.user_id,
-                    names: new_tags,
-                },
-            )?;
-
-            Ok(new_version_id)
+                Ok(new_version_id)
+            })
+            .map_err(|e: VersionWriteError| e.to_string())
         })
-        .map_err(|e: VersionWriteError| e.to_string())
+        .await
+        .map_err(|e| e.to_string())?
     }
 }

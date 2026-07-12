@@ -16,9 +16,28 @@ pub mod users;
 use utoipa::openapi::security::{Http, HttpAuthScheme, SecurityScheme};
 use utoipa::OpenApi;
 
+use crate::db::{DbConn, DbPool};
 use crate::models::Ingredient;
 
 pub use error::{ApiError, ErrorCode, ErrorResponse};
+
+/// Run a handler's blocking Diesel work off the runtime threads.
+///
+/// Wraps [`crate::db::run_blocking`], turning a pool checkout failure into a
+/// 500 so handlers can use `?` on the result.
+pub async fn run_db<T, F>(pool: &DbPool, f: F) -> Result<T, ApiError>
+where
+    F: FnOnce(&mut DbConn) -> Result<T, ApiError> + Send + 'static,
+    T: Send + 'static,
+{
+    match crate::db::run_blocking(pool, f).await {
+        Ok(result) => result,
+        Err(e) => {
+            tracing::error!(error = %e, "failed to get database connection");
+            Err(ApiError::internal("Database connection failed"))
+        }
+    }
+}
 
 /// Generate the complete OpenAPI spec by merging all module specs
 pub fn openapi() -> utoipa::openapi::OpenApi {

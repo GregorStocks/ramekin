@@ -1,8 +1,7 @@
 use crate::api::ai::ai_config_from_env;
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::models::{Ingredient, NewPhoto, NewRecipeVersion, RecipeVersion};
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
 use crate::recipes::{create_new_version_cas, VersionWriteError};
@@ -96,28 +95,33 @@ pub async fn generate_photo(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Path(recipe_id): Path<Uuid>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
 
-    let (source_version_id, current_version): (Option<Uuid>, RecipeVersion) = match recipes::table
-        .inner_join(
-            recipe_versions::table.on(recipe_versions::id
-                .nullable()
-                .eq(recipes::current_version_id)),
-        )
-        .filter(recipes::id.eq(recipe_id))
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .select((recipes::current_version_id, RecipeVersion::as_select()))
-        .first(&mut conn)
-    {
-        Ok(r) => r,
-        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
-        Err(e) => {
-            tracing::error!("Failed to fetch recipe for photo generation: {}", e);
-            return ApiError::internal("Failed to fetch recipe").into_response();
-        }
-    };
+    // Read recipe snapshot in its own run_db block so no DB connection is held
+    // across the (potentially slow) AI call.
+    let (source_version_id, current_version): (Option<Uuid>, RecipeVersion) =
+        run_db(&pool, move |conn| {
+            recipes::table
+                .inner_join(
+                    recipe_versions::table.on(recipe_versions::id
+                        .nullable()
+                        .eq(recipes::current_version_id)),
+                )
+                .filter(recipes::id.eq(recipe_id))
+                .filter(recipes::user_id.eq(user_id))
+                .filter(recipes::deleted_at.is_null())
+                .select((recipes::current_version_id, RecipeVersion::as_select()))
+                .first(conn)
+                .map_err(|e| match e {
+                    diesel::NotFound => ApiError::not_found("Recipe not found"),
+                    e => {
+                        tracing::error!("Failed to fetch recipe for photo generation: {}", e);
+                        ApiError::internal("Failed to fetch recipe")
+                    }
+                })
+        })
+        .await?;
 
     let source_version_id = match source_version_id {
         Some(version_id) => version_id,
@@ -126,14 +130,11 @@ pub async fn generate_photo(
                 "Recipe {} had no current version during photo generation",
                 recipe_id
             );
-            return ApiError::internal("Failed to fetch recipe").into_response();
+            return Err(ApiError::internal("Failed to fetch recipe"));
         }
     };
 
-    let config = match ai_config_from_env() {
-        Ok(c) => c,
-        Err(e) => return e.into_response(),
-    };
+    let config = ai_config_from_env()?;
 
     let ingredients_str = format_ingredients_for_prompt(&current_version.ingredients);
     let generated = match ai_generate_recipe_photo(
@@ -148,8 +149,10 @@ pub async fn generate_photo(
         Ok(result) => result,
         Err(e) => {
             tracing::warn!("Recipe photo generation failed: {}", e);
-            return ApiError::service_unavailable(format!("Photo generation failed: {}", e))
-                .into_response();
+            return Err(ApiError::service_unavailable(format!(
+                "Photo generation failed: {}",
+                e
+            )));
         }
     };
 
@@ -157,7 +160,9 @@ pub async fn generate_photo(
         Ok(data) => data,
         Err(e) => {
             tracing::warn!("Generated photo payload was invalid: {}", e);
-            return ApiError::service_unavailable("AI returned an invalid image").into_response();
+            return Err(ApiError::service_unavailable(
+                "AI returned an invalid image",
+            ));
         }
     };
 
@@ -167,90 +172,99 @@ pub async fn generate_photo(
             raw_image.len(),
             MAX_FILE_SIZE
         );
-        return ApiError::service_unavailable("AI returned an invalid image").into_response();
+        return Err(ApiError::service_unavailable(
+            "AI returned an invalid image",
+        ));
     }
 
     let processed = match process_image(&raw_image) {
         Ok(processed) => processed,
         Err(e) => {
             tracing::warn!("Generated photo failed validation: {}", e);
-            return ApiError::service_unavailable("AI returned an invalid image").into_response();
+            return Err(ApiError::service_unavailable(
+                "AI returned an invalid image",
+            ));
         }
     };
 
-    let write_result: Result<(Uuid, Uuid), VersionWriteError> = conn.transaction(|conn| {
-        let (current_version_id, current_version): (Option<Uuid>, RecipeVersion) = recipes::table
-            .inner_join(
-                recipe_versions::table.on(recipe_versions::id
-                    .nullable()
-                    .eq(recipes::current_version_id)),
-            )
-            .filter(recipes::id.eq(recipe_id))
-            .filter(recipes::user_id.eq(user.id))
-            .filter(recipes::deleted_at.is_null())
-            .select((recipes::current_version_id, RecipeVersion::as_select()))
-            .first(conn)
-            .map_err(|e| match e {
-                diesel::result::Error::NotFound => VersionWriteError::Stale,
-                other => VersionWriteError::Db(other),
-            })?;
+    let (photo_id, version_id) = run_db(&pool, move |conn| {
+        let write_result: Result<(Uuid, Uuid), VersionWriteError> = conn.transaction(|conn| {
+            let (current_version_id, current_version): (Option<Uuid>, RecipeVersion) =
+                recipes::table
+                    .inner_join(
+                        recipe_versions::table.on(recipe_versions::id
+                            .nullable()
+                            .eq(recipes::current_version_id)),
+                    )
+                    .filter(recipes::id.eq(recipe_id))
+                    .filter(recipes::user_id.eq(user_id))
+                    .filter(recipes::deleted_at.is_null())
+                    .select((recipes::current_version_id, RecipeVersion::as_select()))
+                    .first(conn)
+                    .map_err(|e| match e {
+                        diesel::result::Error::NotFound => VersionWriteError::Stale,
+                        other => VersionWriteError::Db(other),
+                    })?;
 
-        if current_version_id != Some(source_version_id) {
-            return Err(VersionWriteError::Stale);
+            if current_version_id != Some(source_version_id) {
+                return Err(VersionWriteError::Stale);
+            }
+
+            let new_photo = NewPhoto {
+                user_id,
+                content_type: &processed.content_type,
+                data: &raw_image,
+                thumbnail: &processed.thumbnail,
+                width: Some(processed.width as i32),
+                height: Some(processed.height as i32),
+                file_size: Some(raw_image.len() as i32),
+            };
+
+            let photo_id: Uuid = diesel::insert_into(photos::table)
+                .values(&new_photo)
+                .returning(photos::id)
+                .get_result(conn)
+                .map_err(VersionWriteError::Db)?;
+
+            let mut new_photo_ids = Vec::with_capacity(current_version.photo_ids.len() + 1);
+            new_photo_ids.push(Some(photo_id));
+            new_photo_ids.extend(current_version.photo_ids.iter().copied());
+
+            let new_version = NewRecipeVersion {
+                photo_ids: &new_photo_ids,
+                ..NewRecipeVersion::copy_of(&current_version, "ai_photo")
+            };
+
+            // Compare-and-swap: only repoint if current_version_id still matches
+            // the version we generated the photo for.
+            let new_version_id = create_new_version_cas(
+                conn,
+                &new_version,
+                Some(source_version_id),
+                crate::recipes::TagSource::CopyFrom(source_version_id),
+            )?;
+
+            Ok((photo_id, new_version_id))
+        });
+
+        match write_result {
+            Ok(ids) => Ok(ids),
+            Err(VersionWriteError::Stale) => Err(ApiError::conflict(
+                "Recipe changed while generating photo; try again",
+            )),
+            Err(VersionWriteError::Db(e)) => {
+                tracing::error!("Failed to persist generated recipe photo: {}", e);
+                Err(ApiError::internal("Failed to save generated photo"))
+            }
         }
+    })
+    .await?;
 
-        let new_photo = NewPhoto {
-            user_id: user.id,
-            content_type: &processed.content_type,
-            data: &raw_image,
-            thumbnail: &processed.thumbnail,
-            width: Some(processed.width as i32),
-            height: Some(processed.height as i32),
-            file_size: Some(raw_image.len() as i32),
-        };
-
-        let photo_id: Uuid = diesel::insert_into(photos::table)
-            .values(&new_photo)
-            .returning(photos::id)
-            .get_result(conn)
-            .map_err(VersionWriteError::Db)?;
-
-        let mut new_photo_ids = Vec::with_capacity(current_version.photo_ids.len() + 1);
-        new_photo_ids.push(Some(photo_id));
-        new_photo_ids.extend(current_version.photo_ids.iter().copied());
-
-        let new_version = NewRecipeVersion {
-            photo_ids: &new_photo_ids,
-            ..NewRecipeVersion::copy_of(&current_version, "ai_photo")
-        };
-
-        // Compare-and-swap: only repoint if current_version_id still matches
-        // the version we generated the photo for.
-        let new_version_id = create_new_version_cas(
-            conn,
-            &new_version,
-            Some(source_version_id),
-            crate::recipes::TagSource::CopyFrom(source_version_id),
-        )?;
-
-        Ok((photo_id, new_version_id))
-    });
-
-    match write_result {
-        Ok((photo_id, version_id)) => (
-            StatusCode::OK,
-            Json(GeneratePhotoResponse {
-                photo_id,
-                version_id,
-            }),
-        )
-            .into_response(),
-        Err(VersionWriteError::Stale) => {
-            ApiError::conflict("Recipe changed while generating photo; try again").into_response()
-        }
-        Err(VersionWriteError::Db(e)) => {
-            tracing::error!("Failed to persist generated recipe photo: {}", e);
-            ApiError::internal("Failed to save generated photo").into_response()
-        }
-    }
+    Ok((
+        StatusCode::OK,
+        Json(GeneratePhotoResponse {
+            photo_id,
+            version_id,
+        }),
+    ))
 }

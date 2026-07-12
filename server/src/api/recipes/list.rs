@@ -2,10 +2,9 @@ use super::read::{
     counted_recipe_summary_select, current_recipe_versions_for_user, recipe_relevance_select,
     recipe_summary_select, CountedRecipeSummaryRow, RecipeRelevanceRow, RecipeSummaryRow,
 };
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
-use crate::db::DbPool;
-use crate::get_conn;
+use crate::db::{DbConn, DbPool};
 use crate::models::Ingredient;
 use crate::raw_sql;
 use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
@@ -288,7 +287,7 @@ pub async fn list_recipes(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Query(params): Query<ListRecipesParams>,
-) -> impl IntoResponse {
+) -> Result<impl IntoResponse, ApiError> {
     // Validate and set defaults for pagination
     let limit = params.limit.unwrap_or(20).clamp(1, 1000);
     let offset = params.offset.unwrap_or(0).max(0);
@@ -296,14 +295,41 @@ pub async fn list_recipes(
     // Parse the query string
     let parsed = params.q.as_deref().map(parse_query).unwrap_or_default();
 
-    let mut conn = get_conn!(pool);
+    // Default sort: relevance when there are text terms to rank against,
+    // recency otherwise.
+    let sort_by = params.sort_by.unwrap_or(if parsed.text.is_empty() {
+        SortBy::UpdatedAt
+    } else {
+        SortBy::Relevance
+    });
+    let sort_dir = params.sort_dir;
+    let user_id = user.id;
 
+    let response = run_db(&pool, move |conn| {
+        list_recipes_blocking(conn, user_id, &parsed, sort_by, sort_dir, limit, offset)
+    })
+    .await?;
+
+    Ok((StatusCode::OK, Json(response)))
+}
+
+/// Blocking DB and ranking work for `list_recipes`; runs on the blocking
+/// thread pool via `run_db`.
+fn list_recipes_blocking(
+    conn: &mut DbConn,
+    user_id: Uuid,
+    parsed: &ParsedQuery,
+    sort_by: SortBy,
+    sort_dir: Direction,
+    limit: i64,
+    offset: i64,
+) -> Result<ListRecipesResponse, ApiError> {
     // Build the filtered query on demand so an empty page can rerun the same
     // filters as a count query without changing the single-query populated-page
     // path.
     let build_query = || {
         // We use into_boxed() to allow dynamic filter additions.
-        let mut query = current_recipe_versions_for_user!(user.id).into_boxed();
+        let mut query = current_recipe_versions_for_user!(user_id).into_boxed();
 
         // Text search: each word must appear somewhere across all fields (AND
         // between words, OR between fields). Matches are case- AND
@@ -383,42 +409,30 @@ pub async fn list_recipes(
 
     let query = build_query();
 
-    // Default sort: relevance when there are text terms to rank against,
-    // recency otherwise.
-    let sort_by = params.sort_by.unwrap_or(if parsed.text.is_empty() {
-        SortBy::UpdatedAt
-    } else {
-        SortBy::Relevance
-    });
-
     // Relevance can't be a SQL ORDER BY: the scorer is a pure Rust function
     // (ramekin_core::search) so a client can mirror it for local search
     // later. Load every matching row and rank in memory — search result
     // sets are one user's matching recipes, which is small.
     if matches!(sort_by, SortBy::Relevance) {
-        let rows: Vec<RecipeRelevanceRow> =
-            match query.select(recipe_relevance_select!()).load(&mut conn) {
-                Ok(r) => r,
-                Err(e) => {
-                    tracing::error!("Failed to fetch recipes for relevance sort: {:?}", e);
-                    return ApiError::internal("Failed to fetch recipes").into_response();
-                }
-            };
+        let rows: Vec<RecipeRelevanceRow> = query
+            .select(recipe_relevance_select!())
+            .load(conn)
+            .map_err(|e| {
+                tracing::error!("Failed to fetch recipes for relevance sort: {:?}", e);
+                ApiError::internal("Failed to fetch recipes")
+            })?;
 
         let mut scored: Vec<(u32, RecipeSummary)> = Vec::with_capacity(rows.len());
         for row in rows {
-            let ingredients: Vec<Ingredient> = match serde_json::from_value(row.ingredients.clone())
-            {
-                Ok(i) => i,
-                Err(e) => {
+            let ingredients: Vec<Ingredient> = serde_json::from_value(row.ingredients.clone())
+                .map_err(|e| {
                     tracing::error!(
                         recipe_id = %row.id,
                         error = %e,
                         "stored ingredients JSON failed to deserialize"
                     );
-                    return ApiError::internal("Recipe ingredients are corrupt").into_response();
-                }
-            };
+                    ApiError::internal("Recipe ingredients are corrupt")
+                })?;
             // One text per ingredient covering everything the SQL filter can
             // match in the JSONB (measurements included), so tokens like
             // "cups" score instead of matching silently.
@@ -467,36 +481,29 @@ pub async fn list_recipes(
             .map(|(_, summary)| summary)
             .collect();
 
-        return (
-            StatusCode::OK,
-            Json(ListRecipesResponse {
-                recipes,
-                pagination: PaginationMetadata {
-                    total,
-                    limit,
-                    offset,
-                },
-            }),
-        )
-            .into_response();
+        return Ok(ListRecipesResponse {
+            recipes,
+            pagination: PaginationMetadata {
+                total,
+                limit,
+                offset,
+            },
+        });
     }
 
     // PostgreSQL text ordering depends on the database collation, which the
     // offline iOS cache cannot reproduce. Apply the shared locale-independent
     // comparator in memory so cached and server-backed title sorts agree.
     if matches!(sort_by, SortBy::Title) {
-        let mut title_rows: Vec<(Uuid, String)> = match query
+        let mut title_rows: Vec<(Uuid, String)> = query
             .select((recipes::id, recipe_versions::title))
-            .load(&mut conn)
-        {
-            Ok(rows) => rows,
-            Err(error) => {
+            .load(conn)
+            .map_err(|error| {
                 tracing::error!(?error, "Failed to fetch recipe titles for title sort");
-                return ApiError::internal("Failed to fetch recipes").into_response();
-            }
-        };
+                ApiError::internal("Failed to fetch recipes")
+            })?;
 
-        let descending = matches!(params.sort_dir, Direction::Desc);
+        let descending = matches!(sort_dir, Direction::Desc);
         title_rows.sort_by(|lhs, rhs| {
             ramekin_core::recipe_title_sort::compare_recipe_titles(
                 &lhs.1, &lhs.0, &rhs.1, &rhs.0, descending,
@@ -511,17 +518,14 @@ pub async fn list_recipes(
             .map(|(id, _)| id)
             .collect();
 
-        let rows: Vec<RecipeSummaryRow> = match current_recipe_versions_for_user!(user.id)
+        let rows: Vec<RecipeSummaryRow> = current_recipe_versions_for_user!(user_id)
             .filter(recipes::id.eq_any(&page_ids))
             .select(recipe_summary_select!())
-            .load(&mut conn)
-        {
-            Ok(rows) => rows,
-            Err(error) => {
+            .load(conn)
+            .map_err(|error| {
                 tracing::error!(?error, "Failed to fetch title-sorted recipe page");
-                return ApiError::internal("Failed to fetch recipes").into_response();
-            }
-        };
+                ApiError::internal("Failed to fetch recipes")
+            })?;
         let mut recipes: Vec<RecipeSummary> =
             rows.into_iter().map(RecipeSummary::from_row).collect();
         if recipes.len() != page_ids.len() {
@@ -530,7 +534,7 @@ pub async fn list_recipes(
                 actual = recipes.len(),
                 "Title-sorted recipe page changed while it was loading"
             );
-            return ApiError::internal("Failed to fetch recipes").into_response();
+            return Err(ApiError::internal("Failed to fetch recipes"));
         }
         let page_position_by_id: HashMap<Uuid, usize> = page_ids
             .into_iter()
@@ -539,22 +543,18 @@ pub async fn list_recipes(
             .collect();
         recipes.sort_by_key(|recipe| page_position_by_id[&recipe.id]);
 
-        return (
-            StatusCode::OK,
-            Json(ListRecipesResponse {
-                recipes,
-                pagination: PaginationMetadata {
-                    total,
-                    limit,
-                    offset,
-                },
-            }),
-        )
-            .into_response();
+        return Ok(ListRecipesResponse {
+            recipes,
+            pagination: PaginationMetadata {
+                total,
+                limit,
+                offset,
+            },
+        });
     }
 
     // Add ordering (with recipes::id tiebreaker for deterministic pagination)
-    let query = match (sort_by, params.sort_dir) {
+    let query = match (sort_by, sort_dir) {
         (SortBy::Relevance, _) => unreachable!("relevance is handled above"),
         (SortBy::Title, _) => unreachable!("title is handled above"),
         (SortBy::Random, _) => query.order(raw_sql::random()),
@@ -582,31 +582,25 @@ pub async fn list_recipes(
 
     // Select columns including COUNT(*) OVER() for total and tags via correlated subquery
     // All data fetched in a single query
-    let results: Vec<CountedRecipeSummaryRow> = match query
+    let results: Vec<CountedRecipeSummaryRow> = query
         .select(counted_recipe_summary_select!())
         .limit(limit)
         .offset(offset)
-        .load(&mut conn)
-    {
-        Ok(r) => r,
-        Err(e) => {
+        .load(conn)
+        .map_err(|e| {
             tracing::error!("Failed to fetch recipes: {:?}", e);
-            return ApiError::internal("Failed to fetch recipes").into_response();
-        }
-    };
+            ApiError::internal("Failed to fetch recipes")
+        })?;
 
     // The window count is unavailable when OFFSET leaves the page empty. Only
     // that case pays for a second query, using exactly the same filters.
     let total = if let Some(row) = results.first() {
         row.total
     } else {
-        match build_query().count().get_result(&mut conn) {
-            Ok(total) => total,
-            Err(e) => {
-                tracing::error!("Failed to count recipes for empty page: {:?}", e);
-                return ApiError::internal("Failed to fetch recipes").into_response();
-            }
-        }
+        build_query().count().get_result(conn).map_err(|e| {
+            tracing::error!("Failed to count recipes for empty page: {:?}", e);
+            ApiError::internal("Failed to fetch recipes")
+        })?
     };
 
     let recipes = results
@@ -614,18 +608,14 @@ pub async fn list_recipes(
         .map(|row| RecipeSummary::from_row(row.into_summary_row()))
         .collect();
 
-    (
-        StatusCode::OK,
-        Json(ListRecipesResponse {
-            recipes,
-            pagination: PaginationMetadata {
-                total,
-                limit,
-                offset,
-            },
-        }),
-    )
-        .into_response()
+    Ok(ListRecipesResponse {
+        recipes,
+        pagination: PaginationMetadata {
+            total,
+            limit,
+            offset,
+        },
+    })
 }
 
 #[cfg(test)]

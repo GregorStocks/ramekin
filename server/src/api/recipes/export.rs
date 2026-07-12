@@ -1,10 +1,9 @@
 use super::paprika::export_recipe_to_paprikarecipe;
 use super::read::{fetch_current_recipe_with_version, fetch_current_recipes_with_versions};
 use super::zip_stream::write_zip_stream;
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use axum::{
     body::Body,
     extract::{Path, State},
@@ -40,24 +39,23 @@ pub async fn export_recipe(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
+    let exported = run_db(&pool, move |conn| {
+        let recipe = match fetch_current_recipe_with_version(conn, user_id, id) {
+            Ok(r) => r,
+            Err(diesel::NotFound) => return Err(ApiError::not_found("Recipe not found")),
+            Err(_) => return Err(ApiError::internal("Failed to fetch recipe")),
+        };
 
-    let recipe = match fetch_current_recipe_with_version(&mut conn, user.id, id) {
-        Ok(r) => r,
-        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
-        Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
-    };
-
-    let exported = match export_recipe_to_paprikarecipe(&mut conn, user.id, &recipe) {
-        Ok(e) => e,
-        Err(e) => {
+        export_recipe_to_paprikarecipe(conn, user_id, &recipe).map_err(|e| {
             tracing::error!("Failed to export recipe: {}", e);
-            return ApiError::internal("Failed to export recipe").into_response();
-        }
-    };
+            ApiError::internal("Failed to export recipe")
+        })
+    })
+    .await?;
 
-    Response::builder()
+    Ok(Response::builder()
         .status(StatusCode::OK)
         .header(header::CONTENT_TYPE, "application/gzip")
         .header(
@@ -65,8 +63,7 @@ pub async fn export_recipe(
             format!("attachment; filename=\"{}\"", exported.filename),
         )
         .body(Body::from(exported.data))
-        .unwrap()
-        .into_response()
+        .unwrap())
 }
 
 #[utoipa::path(
@@ -84,30 +81,19 @@ pub async fn export_recipe(
 pub async fn export_all_recipes(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
-) -> impl IntoResponse {
+) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
 
     // Fetch recipe metadata (no photo bytes) on a blocking thread so we can
     // still return a clean 500 if the DB is unhappy. Once we commit to the
     // streaming body below, errors can only truncate the response.
-    let pool_for_list = Arc::clone(&pool);
-    let fetched = tokio::task::spawn_blocking(move || {
-        let mut conn = pool_for_list.get().map_err(|e| format!("db pool: {}", e))?;
-        fetch_current_recipes_with_versions(&mut conn, user_id).map_err(|e| e.to_string())
-    })
-    .await;
-
-    let all_recipes = match fetched {
-        Ok(Ok(r)) => r,
-        Ok(Err(e)) => {
+    let all_recipes = run_db(&pool, move |conn| {
+        fetch_current_recipes_with_versions(conn, user_id).map_err(|e| {
             tracing::error!(error = %e, "failed to fetch recipes for export");
-            return ApiError::internal("Failed to fetch recipes").into_response();
-        }
-        Err(e) => {
-            tracing::error!(error = %e, "export fetch task panicked");
-            return ApiError::internal("Failed to fetch recipes").into_response();
-        }
-    };
+            ApiError::internal("Failed to fetch recipes")
+        })
+    })
+    .await?;
 
     let recipe_count = all_recipes.len();
     let start = Instant::now();
@@ -147,7 +133,7 @@ pub async fn export_all_recipes(
     let timestamp = Utc::now().format("%Y%m%d-%H%M%S");
     let filename = format!("recipes-{}.paprikarecipes", timestamp);
 
-    Response::builder()
+    Ok(Response::builder()
         .status(StatusCode::OK)
         .header(header::CONTENT_TYPE, "application/zip")
         .header(
@@ -155,6 +141,5 @@ pub async fn export_all_recipes(
             format!("attachment; filename=\"{}\"", filename),
         )
         .body(Body::from_stream(ReceiverStream::new(rx)))
-        .unwrap()
-        .into_response()
+        .unwrap())
 }

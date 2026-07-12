@@ -1,0 +1,29 @@
+{
+  "title": "DbOutputStore still runs blocking queries on the async scrape \
+pipeline",
+  "description": "The scrape pipeline's database work was moved onto tokio's \
+blocking thread pool (`db::run_blocking`), with one exception: \
+`server/src/scraping/output_store.rs`. `DbOutputStore` implements \
+ramekin_core's `StepOutputStore` trait, whose methods (`get_output`, \
+`save_output`) are synchronous, so each call checks out a connection and runs \
+its Diesel query directly on whatever thread executes the step -- which is a \
+tokio runtime worker during async step execution. These are single-row indexed \
+reads/inserts, so they are fast in practice, but a lock wait or a saturated \
+pool would still park a runtime worker (the bug class fixed by the \
+`run_blocking` migration).\n\
+\n\
+Fixing it means making `StepOutputStore` async in ramekin_core (async fn in \
+trait or the async-trait crate) and threading `.await` through every step that \
+reads or writes outputs, plus the in-memory store the CLI pipeline uses. \
+Purely mechanical but cross-crate, which is why it was split out of the main \
+migration.",
+  "status": "open",
+  "priority": 3,
+  "type": "chore",
+  "labels": [
+    "api",
+    "performance",
+  ],
+  "created_at": "2026-07-12T12:30:00-07:00",
+  "updated_at": "2026-07-12T12:30:00-07:00",
+}

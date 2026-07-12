@@ -13,7 +13,7 @@ use ramekin_core::pipeline::{
 };
 use ramekin_core::{ExtractionMethod, RawRecipe};
 
-use crate::db::DbPool;
+use crate::db::{run_blocking, DbPool};
 use crate::models::{Ingredient, NewRecipeVersion};
 use crate::recipes::{create_new_version_cas, insert_recipe, TagSource, VersionWriteError};
 use crate::schema::recipe_versions;
@@ -229,24 +229,29 @@ impl PipelineStep for SaveRecipeStep {
         // Create or update recipe in database
         let result = match self.mode {
             SaveMode::Create => {
-                self.create_recipe(&raw_recipe, &photo_ids, &parsed_ingredients, version_source)
+                self.create_recipe(raw_recipe, &photo_ids, &parsed_ingredients, version_source)
+                    .await
             }
             SaveMode::Rescrape {
                 recipe_id,
                 expected_version_id,
-            } => self.update_recipe(
-                recipe_id,
-                expected_version_id,
-                &raw_recipe,
-                &photo_ids,
-                &parsed_ingredients,
-                version_source,
-            ),
+            } => {
+                self.update_recipe(
+                    recipe_id,
+                    expected_version_id,
+                    raw_recipe,
+                    &photo_ids,
+                    &parsed_ingredients,
+                    version_source,
+                )
+                .await
+            }
             SaveMode::PhotoOnly {
                 recipe_id,
                 expected_version_id,
             } => {
                 self.update_photos_only(recipe_id, expected_version_id, &photo_ids, version_source)
+                    .await
             }
         };
 
@@ -280,15 +285,13 @@ impl PipelineStep for SaveRecipeStep {
 }
 
 impl SaveRecipeStep {
-    fn create_recipe(
+    async fn create_recipe(
         &self,
-        raw: &RawRecipe,
+        raw: RawRecipe,
         photo_ids: &[Uuid],
         parsed_ingredients: &[Ingredient],
         version_source: &str,
     ) -> Result<(Uuid, Uuid), String> {
-        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
-
         let ingredients_json =
             serde_json::to_value(parsed_ingredients).map_err(|e| e.to_string())?;
 
@@ -304,96 +307,107 @@ impl SaveRecipeStep {
             .cloned()
             .collect();
 
+        let version_source = version_source.to_string();
+        let user_id = self.user_id;
+
         // Use a transaction to create recipe + version atomically
-        conn.transaction(|conn| {
-            let recipe_id = insert_recipe(conn, self.user_id)?;
+        run_blocking(&self.pool, move |conn| {
+            conn.transaction(|conn| {
+                let recipe_id = insert_recipe(conn, user_id)?;
 
-            let new_version = NewRecipeVersion {
-                recipe_id,
-                title: &raw.title,
-                description: raw.description.as_deref(),
-                ingredients: ingredients_json.clone(),
-                instructions: &raw.instructions,
-                source_url: raw.source_url.as_deref(),
-                source_name: raw.source_name.as_deref(),
-                photo_ids: &photo_ids_nullable,
-                servings: raw.servings.as_deref(),
-                prep_time: raw.prep_time.as_deref(),
-                cook_time: raw.cook_time.as_deref(),
-                total_time: raw.total_time.as_deref(),
-                rating: raw.rating,
-                difficulty: raw.difficulty.as_deref(),
-                nutritional_info: raw.nutritional_info.as_deref(),
-                notes: raw.notes.as_deref(),
-                version_source,
-            };
+                let new_version = NewRecipeVersion {
+                    recipe_id,
+                    title: &raw.title,
+                    description: raw.description.as_deref(),
+                    ingredients: ingredients_json.clone(),
+                    instructions: &raw.instructions,
+                    source_url: raw.source_url.as_deref(),
+                    source_name: raw.source_name.as_deref(),
+                    photo_ids: &photo_ids_nullable,
+                    servings: raw.servings.as_deref(),
+                    prep_time: raw.prep_time.as_deref(),
+                    cook_time: raw.cook_time.as_deref(),
+                    total_time: raw.total_time.as_deref(),
+                    rating: raw.rating,
+                    difficulty: raw.difficulty.as_deref(),
+                    nutritional_info: raw.nutritional_info.as_deref(),
+                    notes: raw.notes.as_deref(),
+                    version_source: &version_source,
+                };
 
-            let version_id = create_new_version_cas(
-                conn,
-                &new_version,
-                None,
-                TagSource::Names {
-                    user_id: self.user_id,
-                    names: &category_tags,
-                },
-            )?;
+                let version_id = create_new_version_cas(
+                    conn,
+                    &new_version,
+                    None,
+                    TagSource::Names {
+                        user_id,
+                        names: &category_tags,
+                    },
+                )?;
 
-            Ok((recipe_id, version_id))
+                Ok((recipe_id, version_id))
+            })
+            .map_err(|e: VersionWriteError| e.to_string())
         })
-        .map_err(|e: VersionWriteError| e.to_string())
+        .await
+        .map_err(|e| e.to_string())?
     }
 
-    fn update_recipe(
+    async fn update_recipe(
         &self,
         recipe_id: Uuid,
         expected_version_id: Uuid,
-        raw: &RawRecipe,
+        raw: RawRecipe,
         photo_ids: &[Uuid],
         parsed_ingredients: &[Ingredient],
         version_source: &str,
     ) -> Result<(Uuid, Uuid), String> {
-        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
-
         let ingredients_json =
             serde_json::to_value(parsed_ingredients).map_err(|e| e.to_string())?;
 
         // Convert photo IDs to Option<Uuid> for the database
         let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
 
+        let version_source = version_source.to_string();
+
         // Use a transaction to create a new version only if the recipe has not
         // changed since this rescrape job was created.
-        conn.transaction(|conn| {
-            // Create a new version
-            let new_version = NewRecipeVersion {
-                recipe_id,
-                title: &raw.title,
-                description: raw.description.as_deref(),
-                ingredients: ingredients_json.clone(),
-                instructions: &raw.instructions,
-                source_url: raw.source_url.as_deref(),
-                source_name: raw.source_name.as_deref(),
-                photo_ids: &photo_ids_nullable,
-                servings: raw.servings.as_deref(),
-                prep_time: raw.prep_time.as_deref(),
-                cook_time: raw.cook_time.as_deref(),
-                total_time: raw.total_time.as_deref(),
-                rating: raw.rating,
-                difficulty: raw.difficulty.as_deref(),
-                nutritional_info: raw.nutritional_info.as_deref(),
-                notes: None,
-                version_source,
-            };
+        run_blocking(&self.pool, move |conn| {
+            conn.transaction(|conn| {
+                // Create a new version
+                let new_version = NewRecipeVersion {
+                    recipe_id,
+                    title: &raw.title,
+                    description: raw.description.as_deref(),
+                    ingredients: ingredients_json.clone(),
+                    instructions: &raw.instructions,
+                    source_url: raw.source_url.as_deref(),
+                    source_name: raw.source_name.as_deref(),
+                    photo_ids: &photo_ids_nullable,
+                    servings: raw.servings.as_deref(),
+                    prep_time: raw.prep_time.as_deref(),
+                    cook_time: raw.cook_time.as_deref(),
+                    total_time: raw.total_time.as_deref(),
+                    rating: raw.rating,
+                    difficulty: raw.difficulty.as_deref(),
+                    nutritional_info: raw.nutritional_info.as_deref(),
+                    notes: None,
+                    version_source: &version_source,
+                };
 
-            let version_id = create_new_version_cas(
-                conn,
-                &new_version,
-                Some(expected_version_id),
-                TagSource::CopyFrom(expected_version_id),
-            )?;
+                let version_id = create_new_version_cas(
+                    conn,
+                    &new_version,
+                    Some(expected_version_id),
+                    TagSource::CopyFrom(expected_version_id),
+                )?;
 
-            Ok((recipe_id, version_id))
+                Ok((recipe_id, version_id))
+            })
+            .map_err(|e: VersionWriteError| e.to_string())
         })
-        .map_err(|e: VersionWriteError| e.to_string())
+        .await
+        .map_err(|e| e.to_string())?
     }
 
     /// Create a new version that copies every field from the recipe's current
@@ -404,7 +418,7 @@ impl SaveRecipeStep {
     /// image-fetch step is tolerant of failures (bad URL, CDN timeout, no
     /// image in the extracted recipe) and we would rather the job fail loudly
     /// than silently drop the recipe's existing photos.
-    fn update_photos_only(
+    async fn update_photos_only(
         &self,
         recipe_id: Uuid,
         expected_version_id: Uuid,
@@ -419,30 +433,34 @@ impl SaveRecipeStep {
             );
         }
 
-        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
         let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
+        let version_source = version_source.to_string();
 
-        conn.transaction(|conn| {
-            let current: RecipeVersion = recipe_versions::table
-                .filter(recipe_versions::id.eq(expected_version_id))
-                .filter(recipe_versions::recipe_id.eq(recipe_id))
-                .select(RecipeVersion::as_select())
-                .first(conn)?;
+        run_blocking(&self.pool, move |conn| {
+            conn.transaction(|conn| {
+                let current: RecipeVersion = recipe_versions::table
+                    .filter(recipe_versions::id.eq(expected_version_id))
+                    .filter(recipe_versions::recipe_id.eq(recipe_id))
+                    .select(RecipeVersion::as_select())
+                    .first(conn)?;
 
-            let new_version = NewRecipeVersion {
-                photo_ids: &photo_ids_nullable,
-                ..NewRecipeVersion::copy_of(&current, version_source)
-            };
+                let new_version = NewRecipeVersion {
+                    photo_ids: &photo_ids_nullable,
+                    ..NewRecipeVersion::copy_of(&current, &version_source)
+                };
 
-            let version_id = create_new_version_cas(
-                conn,
-                &new_version,
-                Some(expected_version_id),
-                TagSource::CopyFrom(expected_version_id),
-            )?;
+                let version_id = create_new_version_cas(
+                    conn,
+                    &new_version,
+                    Some(expected_version_id),
+                    TagSource::CopyFrom(expected_version_id),
+                )?;
 
-            Ok((recipe_id, version_id))
+                Ok((recipe_id, version_id))
+            })
+            .map_err(|e: VersionWriteError| e.to_string())
         })
-        .map_err(|e: VersionWriteError| e.to_string())
+        .await
+        .map_err(|e| e.to_string())?
     }
 }
