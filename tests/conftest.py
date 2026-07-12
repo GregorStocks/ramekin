@@ -2,6 +2,7 @@ import concurrent.futures
 import contextlib
 import os
 import re
+import threading
 import time
 import uuid
 
@@ -110,6 +111,25 @@ def _wait_until_blocked_behind(database_url, holder_pid, write):
     raise TimeoutError("the write never started waiting on the row lock")
 
 
+def _run_in_daemon_thread(fn):
+    """Run `fn` on a daemon thread, exposing its outcome as a Future.
+
+    A daemon thread rather than a ThreadPoolExecutor worker: nothing joins the
+    thread, so a write wedged past its timeout fails the test instead of
+    hanging the process in executor shutdown or interpreter exit.
+    """
+    future = concurrent.futures.Future()
+
+    def run():
+        try:
+            future.set_result(fn())
+        except BaseException as exc:
+            future.set_exception(exc)
+
+    threading.Thread(target=run, daemon=True).start()
+    return future
+
+
 @contextlib.contextmanager
 def blocked_api_write(database_url, uncommitted, send_write):
     """Hold an API write in flight, queued behind a row lock.
@@ -122,22 +142,19 @@ def blocked_api_write(database_url, uncommitted, send_write):
     Yields the write's Future; its result is available after the block.
     """
     holder_pid = uncommitted.execute("SELECT pg_backend_pid()").fetchone()[0]
-    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
-        write = pool.submit(send_write)
-        try:
-            _wait_until_blocked_behind(database_url, holder_pid, write)
-            if write.done():
-                write.result()  # surfaces the failed write's own error
-                # It cannot have committed while the lock was held, so
-                # finishing means the lock never covered the write at all.
-                raise AssertionError(
-                    "the write finished without queuing on the row lock"
-                )
-            yield write
-        finally:
-            # Release the lock even on failure so the write can finish.
-            uncommitted.rollback()
-        write.result(timeout=WRITE_TIMEOUT_SECONDS)
+    write = _run_in_daemon_thread(send_write)
+    try:
+        _wait_until_blocked_behind(database_url, holder_pid, write)
+        if write.done():
+            write.result()  # surfaces the failed write's own error
+            # It cannot have committed while the lock was held, so finishing
+            # means the lock never covered the write at all.
+            raise AssertionError("the write finished without queuing on the row lock")
+        yield write
+    finally:
+        # Release the lock even on failure so the write can finish.
+        uncommitted.rollback()
+    write.result(timeout=WRITE_TIMEOUT_SECONDS)
 
 
 @pytest.fixture
