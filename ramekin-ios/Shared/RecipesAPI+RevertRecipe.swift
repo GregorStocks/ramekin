@@ -2,8 +2,12 @@ import Foundation
 
 extension RecipesAPI {
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    static func revertRecipe(id: UUID, recipe: RecipeResponse) async throws {
-        let request = RevertRecipeRequest(recipe: recipe)
+    static func revertRecipe(
+        id: UUID,
+        recipe: RecipeResponse,
+        expectedVersionId: UUID
+    ) async throws {
+        let request = RevertRecipeRequest(recipe: recipe, expectedVersionId: expectedVersionId)
         _ = try await revertRecipeWithRequestBuilder(id: id, request: request).execute().body
     }
 
@@ -45,6 +49,7 @@ struct RevertRecipeRequest: Encodable {
     let cookTime: String?
     let description: String?
     let difficulty: String?
+    let expectedVersionId: UUID
     let ingredients: [Ingredient]
     let instructions: String
     let notes: String?
@@ -59,10 +64,11 @@ struct RevertRecipeRequest: Encodable {
     let title: String
     let totalTime: String?
 
-    init(recipe: RecipeResponse) {
+    init(recipe: RecipeResponse, expectedVersionId: UUID) {
         cookTime = recipe.cookTime
         description = recipe.description
         difficulty = recipe.difficulty
+        self.expectedVersionId = expectedVersionId
         ingredients = recipe.ingredients
         instructions = recipe.instructions
         notes = recipe.notes
@@ -82,6 +88,7 @@ struct RevertRecipeRequest: Encodable {
         case cookTime = "cook_time"
         case description
         case difficulty
+        case expectedVersionId = "expected_version_id"
         case ingredients
         case instructions
         case notes

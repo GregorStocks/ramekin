@@ -4,7 +4,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
-use crate::recipes::{create_new_version, TagSource};
+use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
 use crate::schema::{recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
@@ -63,6 +63,7 @@ fn format_ingredients_for_prompt(ingredients: &serde_json::Value) -> String {
         (status = 200, description = "Title normalized and applied", body = NormalizeTitleResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse),
         (status = 404, description = "Recipe not found", body = ErrorResponse),
+        (status = 409, description = "Recipe was modified concurrently", body = ErrorResponse),
         (status = 503, description = "AI service unavailable", body = ErrorResponse)
     ),
     security(
@@ -137,26 +138,34 @@ pub async fn normalize_title(
             .into_response();
     }
 
-    let write_result: Result<(), diesel::result::Error> = conn.transaction(|conn| {
+    let write_result: Result<(), VersionWriteError> = conn.transaction(|conn| {
         let new_version = NewRecipeVersion {
             title: &new_title,
             ..NewRecipeVersion::copy_of(&current_version, "normalize_title")
         };
 
-        let old_version_id: Option<Uuid> = recipes::table
-            .filter(recipes::id.eq(recipe_id))
-            .select(recipes::current_version_id)
-            .first(conn)?;
-
-        let tag_source = old_version_id.map_or(TagSource::None, TagSource::CopyFrom);
-        create_new_version(conn, &new_version, tag_source)?;
+        create_new_version_cas(
+            conn,
+            &new_version,
+            Some(current_version.id),
+            TagSource::CopyFrom(current_version.id),
+        )?;
 
         Ok(())
     });
 
-    if let Err(e) = write_result {
-        tracing::error!("Failed to persist normalized title: {}", e);
-        return ApiError::internal("Failed to persist normalized title").into_response();
+    match write_result {
+        Ok(()) => {}
+        Err(VersionWriteError::Stale) => {
+            return ApiError::conflict(
+                "Recipe was modified while normalizing its title; try again",
+            )
+            .into_response();
+        }
+        Err(VersionWriteError::Db(e)) => {
+            tracing::error!("Failed to persist normalized title: {}", e);
+            return ApiError::internal("Failed to persist normalized title").into_response();
+        }
     }
 
     (

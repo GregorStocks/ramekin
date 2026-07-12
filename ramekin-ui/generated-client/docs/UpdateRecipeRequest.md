@@ -9,6 +9,7 @@ Name | Type
 `cookTime` | string
 `description` | string
 `difficulty` | string
+`expectedVersionId` | string
 `ingredients` | [Array&lt;Ingredient&gt;](Ingredient.md)
 `instructions` | string
 `notes` | string
@@ -33,6 +34,7 @@ const example = {
   "cookTime": null,
   "description": null,
   "difficulty": null,
+  "expectedVersionId": null,
   "ingredients": null,
   "instructions": null,
   "notes": null,

@@ -93,7 +93,13 @@ pub async fn rescrape(
     }
 
     // Create rescrape job with recipe_id pre-populated
-    let job = match scraping::create_rescrape_job(&pool, user.id, recipe_id, &source_url) {
+    let job = match scraping::create_rescrape_job(
+        &pool,
+        user.id,
+        recipe_id,
+        current_version_id,
+        &source_url,
+    ) {
         Ok(j) => j,
         Err(e) => {
             tracing::error!("Failed to create rescrape job: {}", e);

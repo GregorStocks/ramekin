@@ -14,7 +14,7 @@ struct RecipeDetailViewAPIClient {
     var listVersions: (UUID) async throws -> VersionListResponse
     var normalizeTitle: (UUID) async throws -> NormalizeTitleResponse
     var rescrape: (UUID) async throws -> RescrapeResponse
-    var revertRecipe: (UUID, RecipeResponse) async throws -> Void
+    var revertRecipe: (UUID, RecipeResponse, UUID) async throws -> Void
     var updateRecipe: (UUID, UpdateRecipeRequest) async throws -> Void
 
     static let live = RecipeDetailViewAPIClient(
@@ -50,7 +50,7 @@ struct RecipeDetailViewAPIClient {
         listVersions: { try await RecipesAPI.listVersions(id: $0) },
         normalizeTitle: { try await RecipesAPI.normalizeTitle(id: $0) },
         rescrape: { try await RecipesAPI.rescrape(id: $0) },
-        revertRecipe: { try await RecipeVersionSupport.revertRecipe(id: $0, from: $1) },
+        revertRecipe: { try await RecipeVersionSupport.revertRecipe(id: $0, from: $1, expectedVersionId: $2) },
         updateRecipe: { try await RecipesAPI.updateRecipe(id: $0, updateRecipeRequest: $1) }
     )
 }
@@ -111,6 +111,10 @@ final class RecipeDetailViewModel: ObservableObject {
 }
 
 extension RecipeDetailViewModel {
+    func submitUpdate(_ request: UpdateRecipeRequest) async throws {
+        try await api.updateRecipe(recipeId, request)
+    }
+
     var isViewingHistoricalVersion: Bool {
         RecipeVersionSupport.isViewingHistoricalVersion(
             displayedVersionId: recipe?.versionId,
@@ -283,7 +287,10 @@ extension RecipeDetailViewModel {
 
         do {
             let historicalRecipe = try await api.getRecipe(recipeId, version.id)
-            try await api.revertRecipe(recipeId, historicalRecipe)
+            guard let currentVersionId else {
+                preconditionFailure("Cannot revert before loading the current recipe version")
+            }
+            try await api.revertRecipe(recipeId, historicalRecipe, currentVersionId)
 
             await loadRecipe()
         } catch is CancellationError {
@@ -294,34 +301,6 @@ extension RecipeDetailViewModel {
         isReverting = false
     }
 
-    func applyEnrichment(_ modified: RecipeContent) async {
-        let updateRequest = UpdateRecipeRequest(
-            cookTime: modified.cookTime,
-            description: modified.description,
-            difficulty: modified.difficulty,
-            ingredients: modified.ingredients,
-            instructions: modified.instructions,
-            notes: modified.notes,
-            nutritionalInfo: modified.nutritionalInfo,
-            prepTime: modified.prepTime,
-            rating: modified.rating,
-            servings: modified.servings,
-            sourceName: modified.sourceName,
-            sourceUrl: modified.sourceUrl,
-            tags: modified.tags,
-            title: modified.title,
-            totalTime: modified.totalTime
-        )
-
-        do {
-            try await api.updateRecipe(recipeId, updateRequest)
-            enrichResult = nil
-            await loadRecipe()
-        } catch is CancellationError {
-        } catch {
-            self.error = error.localizedDescription
-        }
-    }
 }
 
 extension RecipeDetailViewModel {

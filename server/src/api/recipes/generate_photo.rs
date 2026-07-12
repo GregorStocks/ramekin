@@ -226,7 +226,12 @@ pub async fn generate_photo(
 
         // Compare-and-swap: only repoint if current_version_id still matches
         // the version we generated the photo for.
-        let new_version_id = create_new_version_cas(conn, &new_version, Some(source_version_id))?;
+        let new_version_id = create_new_version_cas(
+            conn,
+            &new_version,
+            Some(source_version_id),
+            crate::recipes::TagSource::CopyFrom(source_version_id),
+        )?;
 
         Ok((photo_id, new_version_id))
     });

@@ -46,6 +46,12 @@ export interface UpdateRecipeRequest {
      */
     difficulty?: string | null;
     /**
+     * Version the caller edited. The update conflicts if it is no longer current.
+     * @type {string}
+     * @memberof UpdateRecipeRequest
+     */
+    expectedVersionId: string;
+    /**
      * 
      * @type {Array<Ingredient>}
      * @memberof UpdateRecipeRequest
@@ -129,6 +135,7 @@ export interface UpdateRecipeRequest {
  * Check if a given object implements the UpdateRecipeRequest interface.
  */
 export function instanceOfUpdateRecipeRequest(value: object): value is UpdateRecipeRequest {
+    if (!('expectedVersionId' in value) || value['expectedVersionId'] === undefined) return false;
     return true;
 }
 
@@ -145,6 +152,7 @@ export function UpdateRecipeRequestFromJSONTyped(json: any, ignoreDiscriminator:
         'cookTime': json['cook_time'] == null ? undefined : json['cook_time'],
         'description': json['description'] == null ? undefined : json['description'],
         'difficulty': json['difficulty'] == null ? undefined : json['difficulty'],
+        'expectedVersionId': json['expected_version_id'],
         'ingredients': json['ingredients'] == null ? undefined : ((json['ingredients'] as Array<any>).map(IngredientFromJSON)),
         'instructions': json['instructions'] == null ? undefined : json['instructions'],
         'notes': json['notes'] == null ? undefined : json['notes'],
@@ -175,6 +183,7 @@ export function UpdateRecipeRequestToJSONTyped(value?: UpdateRecipeRequest | nul
         'cook_time': value['cookTime'],
         'description': value['description'],
         'difficulty': value['difficulty'],
+        'expected_version_id': value['expectedVersionId'],
         'ingredients': value['ingredients'] == null ? undefined : ((value['ingredients'] as Array<any>).map(IngredientToJSON)),
         'instructions': value['instructions'],
         'notes': value['notes'],

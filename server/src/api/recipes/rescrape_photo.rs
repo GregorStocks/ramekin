@@ -79,7 +79,13 @@ pub async fn rescrape_photo(
         return ApiError::invalid_request(e.to_string()).into_response();
     }
 
-    let job = match scraping::create_photo_rescrape_job(&pool, user.id, recipe_id, &source_url) {
+    let job = match scraping::create_photo_rescrape_job(
+        &pool,
+        user.id,
+        recipe_id,
+        current_version_id,
+        &source_url,
+    ) {
         Ok(j) => j,
         Err(e) => {
             tracing::error!("Failed to create photo rescrape job: {}", e);

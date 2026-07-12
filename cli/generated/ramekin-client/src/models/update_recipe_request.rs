@@ -34,6 +34,9 @@ pub struct UpdateRecipeRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub difficulty: Option<Option<String>>,
+    /// Version the caller edited. The update conflicts if it is no longer current.
+    #[serde(rename = "expected_version_id")]
+    pub expected_version_id: uuid::Uuid,
     #[serde(
         rename = "ingredients",
         default,
@@ -128,11 +131,12 @@ pub struct UpdateRecipeRequest {
 }
 
 impl UpdateRecipeRequest {
-    pub fn new() -> UpdateRecipeRequest {
+    pub fn new(expected_version_id: uuid::Uuid) -> UpdateRecipeRequest {
         UpdateRecipeRequest {
             cook_time: None,
             description: None,
             difficulty: None,
+            expected_version_id,
             ingredients: None,
             instructions: None,
             notes: None,

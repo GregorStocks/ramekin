@@ -37,6 +37,7 @@ pub fn create_rescrape_job(
     pool: &DbPool,
     user_id: Uuid,
     recipe_id: Uuid,
+    expected_version_id: Uuid,
     url: &str,
 ) -> Result<ScrapeJob, ScrapeError> {
     let mut conn = pool
@@ -48,6 +49,7 @@ pub fn create_rescrape_job(
             scrape_jobs::user_id.eq(user_id),
             scrape_jobs::url.eq(url),
             scrape_jobs::recipe_id.eq(Some(recipe_id)),
+            scrape_jobs::expected_version_id.eq(Some(expected_version_id)),
         ))
         .get_result::<ScrapeJob>(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))
@@ -60,6 +62,7 @@ pub fn create_photo_rescrape_job(
     pool: &DbPool,
     user_id: Uuid,
     recipe_id: Uuid,
+    expected_version_id: Uuid,
     url: &str,
 ) -> Result<ScrapeJob, ScrapeError> {
     let mut conn = pool
@@ -71,6 +74,7 @@ pub fn create_photo_rescrape_job(
             scrape_jobs::user_id.eq(user_id),
             scrape_jobs::url.eq(url),
             scrape_jobs::recipe_id.eq(Some(recipe_id)),
+            scrape_jobs::expected_version_id.eq(Some(expected_version_id)),
             scrape_jobs::photo_only.eq(true),
         ))
         .get_result::<ScrapeJob>(&mut conn)

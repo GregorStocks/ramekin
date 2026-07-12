@@ -16,6 +16,8 @@ import { IngredientFromJSON, IngredientToJSON, } from './Ingredient';
  * Check if a given object implements the UpdateRecipeRequest interface.
  */
 export function instanceOfUpdateRecipeRequest(value) {
+    if (!('expectedVersionId' in value) || value['expectedVersionId'] === undefined)
+        return false;
     return true;
 }
 export function UpdateRecipeRequestFromJSON(json) {
@@ -29,6 +31,7 @@ export function UpdateRecipeRequestFromJSONTyped(json, ignoreDiscriminator) {
         'cookTime': json['cook_time'] == null ? undefined : json['cook_time'],
         'description': json['description'] == null ? undefined : json['description'],
         'difficulty': json['difficulty'] == null ? undefined : json['difficulty'],
+        'expectedVersionId': json['expected_version_id'],
         'ingredients': json['ingredients'] == null ? undefined : (json['ingredients'].map(IngredientFromJSON)),
         'instructions': json['instructions'] == null ? undefined : json['instructions'],
         'notes': json['notes'] == null ? undefined : json['notes'],
@@ -55,6 +58,7 @@ export function UpdateRecipeRequestToJSONTyped(value, ignoreDiscriminator = fals
         'cook_time': value['cookTime'],
         'description': value['description'],
         'difficulty': value['difficulty'],
+        'expected_version_id': value['expectedVersionId'],
         'ingredients': value['ingredients'] == null ? undefined : (value['ingredients'].map(IngredientToJSON)),
         'instructions': value['instructions'],
         'notes': value['notes'],

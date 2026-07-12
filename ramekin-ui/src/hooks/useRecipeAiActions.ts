@@ -15,6 +15,7 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 interface UseRecipeAiActionsOptions {
   recipeId: Accessor<string>;
   recipe: Accessor<RecipeResponse | null>;
+  currentVersionId: Accessor<string | null>;
   getRecipesApi: () => RecipesApi;
   getEnrichApi: () => EnrichApi;
   loadRecipe: () => Promise<void>;
@@ -78,12 +79,20 @@ export function useRecipeAiActions(options: UseRecipeAiActionsOptions) {
   const handleApplyEnrichment = async () => {
     const enriched = enrichedContent();
     if (!enriched) return;
+    const currentRecipe = options.recipe();
+    const expectedVersionId = options.currentVersionId();
+    if (!currentRecipe || !expectedVersionId) {
+      throw new Error(
+        "Cannot apply enrichment before loading the current recipe version",
+      );
+    }
 
     setApplyingEnrichment(true);
     try {
       await options.getRecipesApi().updateRecipe({
         id: options.recipeId(),
         updateRecipeRequest: {
+          expectedVersionId,
           title: enriched.title,
           description: enriched.description,
           instructions: enriched.instructions,

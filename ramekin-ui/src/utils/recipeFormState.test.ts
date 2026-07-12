@@ -34,7 +34,8 @@ describe("recipe form request serialization", () => {
     values.instructions = "Simmer.";
     values.photoIds = [];
 
-    expect(buildUpdateRecipeRequest(values)).toEqual({
+    expect(buildUpdateRecipeRequest(values, "version-1")).toEqual({
+      expectedVersionId: "version-1",
       title: "Soup",
       description: null,
       instructions: "Simmer.",

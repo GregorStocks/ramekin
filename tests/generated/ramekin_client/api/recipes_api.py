@@ -2581,6 +2581,7 @@ class RecipesApi:
             '200': "NormalizeTitleResponse",
             '401': "ErrorResponse",
             '404': "ErrorResponse",
+            '409': "ErrorResponse",
             '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -2650,6 +2651,7 @@ class RecipesApi:
             '200': "NormalizeTitleResponse",
             '401': "ErrorResponse",
             '404': "ErrorResponse",
+            '409': "ErrorResponse",
             '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -2719,6 +2721,7 @@ class RecipesApi:
             '200': "NormalizeTitleResponse",
             '401': "ErrorResponse",
             '404': "ErrorResponse",
+            '409': "ErrorResponse",
             '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -3659,6 +3662,7 @@ class RecipesApi:
             '400': "ErrorResponse",
             '401': "ErrorResponse",
             '404': "ErrorResponse",
+            '409': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3732,6 +3736,7 @@ class RecipesApi:
             '400': "ErrorResponse",
             '401': "ErrorResponse",
             '404': "ErrorResponse",
+            '409': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3805,6 +3810,7 @@ class RecipesApi:
             '400': "ErrorResponse",
             '401': "ErrorResponse",
             '404': "ErrorResponse",
+            '409': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

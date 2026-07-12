@@ -144,7 +144,9 @@ extension RecipeFormViewModel {
             isSaving = false
             return false
         } catch {
-            self.error = error.localizedDescription
+            self.error = APIErrorFormatter.code(from: error) == .conflict
+                ? "This recipe changed since you opened it. Your edits are still here; reload before saving again."
+                : APIErrorFormatter.userMessage(from: error, fallback: "Failed to update recipe")
             isSaving = false
             return false
         }
