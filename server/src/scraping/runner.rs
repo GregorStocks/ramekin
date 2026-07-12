@@ -4,7 +4,7 @@ use diesel::prelude::*;
 use tracing::Instrument;
 use uuid::Uuid;
 
-use ramekin_core::ai::{AiClient, CachingAiClient};
+use ramekin_core::ai::{AiClient, AiConfig, CachingAiClient, UnconfiguredAiClient};
 use ramekin_core::pipeline::steps::{
     EnrichAutoTagStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
 };
@@ -90,7 +90,17 @@ pub async fn build_registry(
     let ai_client = if auto_enrichments.is_empty() {
         None
     } else {
-        Some(Arc::new(CachingAiClient::from_env()?) as Arc<dyn AiClient>)
+        // A missing OPENROUTER_API_KEY must not fail the job before
+        // save_recipe runs: hand the enrich steps a client that errors on
+        // every call, so a missing key behaves exactly like an invalid one.
+        let client: Arc<dyn AiClient> = match AiConfig::from_env() {
+            Ok(config) => Arc::new(CachingAiClient::new(config)),
+            Err(e) => {
+                tracing::warn!("AI client unavailable, enrichment steps will fail: {e}");
+                Arc::new(UnconfiguredAiClient::new(e))
+            }
+        };
+        Some(client)
     };
 
     for enrichment in auto_enrichments {
