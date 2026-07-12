@@ -40,6 +40,8 @@ Only use commands like `git checkout` when you're in a workspace that you own (a
 
 Always run `make lint` before creating a PR, and fix any lint errors it finds.
 
+On Linux, do not attempt to run `make ios-test` or ask the user to install XcodeGen/Xcode. Submit the PR and use the existing macOS iOS GitHub Actions job to build and test iOS changes. Treat any failure there like any other test failure and fix it before finishing.
+
 # Claude Web
 
 If you are Claude for Web, first run `make setup-claude-web`. (If you're not sure, just go ahead and run it - it's a no-op if you aren't.)

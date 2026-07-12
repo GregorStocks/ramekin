@@ -22,22 +22,23 @@ enum ShoppingListMutationSupport {
 
     static func addItemsFromRecipe(
         ingredients: [(name: String, amount: String?)],
-        recipeId: UUID,
-        recipeTitle: String,
+        recipe: (id: UUID, title: String),
+        accountKey: String,
         context: NSManagedObjectContext,
         save: () throws -> Void
     ) throws {
         do {
-            let currentItems = try context.fetch(ShoppingItem.fetchActiveItems())
+            let currentItems = try context.fetch(ShoppingItem.fetchActiveItems(accountKey: accountKey))
             var maxSort = currentItems.map(\.sortOrder).max() ?? -1
             for ingredient in ingredients {
                 maxSort += 1
                 _ = ShoppingItem.create(
                     in: context,
+                    accountKey: accountKey,
                     item: ingredient.name,
                     amount: ingredient.amount,
-                    sourceRecipeId: recipeId,
-                    sourceRecipeTitle: recipeTitle,
+                    sourceRecipeId: recipe.id,
+                    sourceRecipeTitle: recipe.title,
                     sortOrder: maxSort
                 )
             }

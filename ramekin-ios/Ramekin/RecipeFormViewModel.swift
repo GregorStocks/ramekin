@@ -61,7 +61,11 @@ extension RecipeFormViewModel {
     }
 
     func start() async {
-        availableTags = TagFilterCache.loadAvailableTags()
+        if let accountKey = AccountScope.currentAccountKey() {
+            availableTags = TagFilterCache.loadAvailableTags(accountKey: accountKey)
+        } else {
+            availableTags = []
+        }
         if case .edit(let recipeId) = mode {
             await loadRecipe(id: recipeId)
         }
@@ -117,10 +121,15 @@ extension RecipeFormViewModel {
     }
 
     func loadAvailableTags() async {
+        guard let accountKey = AccountScope.currentAccountKey() else {
+            availableTags = []
+            return
+        }
         do {
             let response = try await api.listAllTags()
+            guard AccountScope.currentAccountKey() == accountKey else { return }
             availableTags = response.tags
-            TagFilterCache.saveAvailableTags(response.tags)
+            TagFilterCache.saveAvailableTags(response.tags, accountKey: accountKey)
         } catch is CancellationError {
             DebugLogger.shared.log("loadAvailableTags cancelled", source: "RecipeForm")
         } catch {

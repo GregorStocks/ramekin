@@ -6,11 +6,36 @@ extension Notification.Name {
 }
 
 enum TagFilterCache {
-    private static let selectedTagsKey = "recipeSelectedTags"
-    private static let availableTagsKey = "recipeAvailableTags"
+    private static let selectedTagsKeyPrefix = "recipe_selected_tags"
+    private static let availableTagsKeyPrefix = "recipe_available_tags"
+    private static let legacySelectedTagsKey = "recipeSelectedTags"
+    private static let legacyAvailableTagsKey = "recipeAvailableTags"
+    private static let legacyMigrationKey = "recipe_tag_cache_account_scope_migrated"
 
-    static func loadSelectedTags() -> Set<String> {
-        guard let data = UserDefaults.standard.data(forKey: selectedTagsKey),
+    static func migrateLegacyState(
+        activeAccountKey: String?,
+        userDefaults: UserDefaults = .standard
+    ) {
+        guard !userDefaults.bool(forKey: legacyMigrationKey) else { return }
+
+        if let activeAccountKey {
+            if let selectedTags = userDefaults.data(forKey: legacySelectedTagsKey) {
+                userDefaults.set(selectedTags, forKey: selectedTagsKey(accountKey: activeAccountKey))
+            }
+            if let availableTags = userDefaults.data(forKey: legacyAvailableTagsKey) {
+                userDefaults.set(availableTags, forKey: availableTagsKey(accountKey: activeAccountKey))
+            }
+        }
+        userDefaults.removeObject(forKey: legacySelectedTagsKey)
+        userDefaults.removeObject(forKey: legacyAvailableTagsKey)
+        userDefaults.set(true, forKey: legacyMigrationKey)
+    }
+
+    static func loadSelectedTags(
+        accountKey: String,
+        userDefaults: UserDefaults = .standard
+    ) -> Set<String> {
+        guard let data = userDefaults.data(forKey: selectedTagsKey(accountKey: accountKey)),
               let names = try? JSONDecoder().decode([String].self, from: data) else {
             return []
         }
@@ -18,41 +43,65 @@ enum TagFilterCache {
         return Set(names)
     }
 
-    static func saveSelectedTags(_ selectedTags: Set<String>) {
+    static func saveSelectedTags(
+        _ selectedTags: Set<String>,
+        accountKey: String,
+        userDefaults: UserDefaults = .standard
+    ) {
         guard let data = try? JSONEncoder().encode(Array(selectedTags)) else {
             return
         }
 
-        UserDefaults.standard.set(data, forKey: selectedTagsKey)
+        userDefaults.set(data, forKey: selectedTagsKey(accountKey: accountKey))
     }
 
-    static func pruneSelectedTags(validNames: Set<String>) {
-        saveSelectedTags(loadSelectedTags().intersection(validNames))
+    static func pruneSelectedTags(
+        validNames: Set<String>,
+        accountKey: String,
+        userDefaults: UserDefaults = .standard
+    ) {
+        saveSelectedTags(
+            loadSelectedTags(accountKey: accountKey, userDefaults: userDefaults).intersection(validNames),
+            accountKey: accountKey,
+            userDefaults: userDefaults
+        )
     }
 
-    static func renameSelectedTag(from oldName: String, to newName: String) {
-        var selectedTags = loadSelectedTags()
+    static func renameSelectedTag(
+        from oldName: String,
+        to newName: String,
+        accountKey: String,
+        userDefaults: UserDefaults = .standard
+    ) {
+        var selectedTags = loadSelectedTags(accountKey: accountKey, userDefaults: userDefaults)
         guard selectedTags.contains(oldName) else {
             return
         }
 
         selectedTags.remove(oldName)
         selectedTags.insert(newName)
-        saveSelectedTags(selectedTags)
+        saveSelectedTags(selectedTags, accountKey: accountKey, userDefaults: userDefaults)
     }
 
-    static func removeSelectedTag(named name: String) {
-        var selectedTags = loadSelectedTags()
+    static func removeSelectedTag(
+        named name: String,
+        accountKey: String,
+        userDefaults: UserDefaults = .standard
+    ) {
+        var selectedTags = loadSelectedTags(accountKey: accountKey, userDefaults: userDefaults)
         guard selectedTags.contains(name) else {
             return
         }
 
         selectedTags.remove(name)
-        saveSelectedTags(selectedTags)
+        saveSelectedTags(selectedTags, accountKey: accountKey, userDefaults: userDefaults)
     }
 
-    static func loadAvailableTags() -> [TagItem] {
-        guard let data = UserDefaults.standard.data(forKey: availableTagsKey),
+    static func loadAvailableTags(
+        accountKey: String,
+        userDefaults: UserDefaults = .standard
+    ) -> [TagItem] {
+        guard let data = userDefaults.data(forKey: availableTagsKey(accountKey: accountKey)),
               let tags = try? CodableHelper.jsonDecoder.decode([TagItem].self, from: data) else {
             return []
         }
@@ -60,16 +109,28 @@ enum TagFilterCache {
         return tags
     }
 
-    static func saveAvailableTags(_ availableTags: [TagItem]) {
+    static func saveAvailableTags(
+        _ availableTags: [TagItem],
+        accountKey: String,
+        userDefaults: UserDefaults = .standard
+    ) {
         guard let data = try? CodableHelper.jsonEncoder.encode(availableTags) else {
             return
         }
 
-        UserDefaults.standard.set(data, forKey: availableTagsKey)
+        userDefaults.set(data, forKey: availableTagsKey(accountKey: accountKey))
     }
 
     static func notifyTagsDidChange() {
         NotificationCenter.default.post(name: .tagsDidChange, object: nil)
+    }
+
+    private static func selectedTagsKey(accountKey: String) -> String {
+        AccountScope.userDefaultsKey(prefix: selectedTagsKeyPrefix, accountKey: accountKey)
+    }
+
+    private static func availableTagsKey(accountKey: String) -> String {
+        AccountScope.userDefaultsKey(prefix: availableTagsKeyPrefix, accountKey: accountKey)
     }
 }
 

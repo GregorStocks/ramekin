@@ -199,11 +199,19 @@ extension RecipeListViewModel {
     }
 
     func loadPersistedTags() {
-        selectedTags = TagFilterCache.loadSelectedTags()
+        guard let accountKey = cache.currentAccountKey() else {
+            selectedTags = []
+            return
+        }
+        selectedTags = TagFilterCache.loadSelectedTags(accountKey: accountKey, userDefaults: userDefaults)
     }
 
     func loadPersistedAvailableTags() {
-        availableTags = TagFilterCache.loadAvailableTags()
+        guard let accountKey = cache.currentAccountKey() else {
+            availableTags = []
+            return
+        }
+        availableTags = TagFilterCache.loadAvailableTags(accountKey: accountKey, userDefaults: userDefaults)
     }
 
     func handleTagsDidChange() {
@@ -218,14 +226,31 @@ extension RecipeListViewModel {
     }
 
     func loadTags() async {
+        guard let accountKey = cache.currentAccountKey() else {
+            selectedTags = []
+            availableTags = []
+            return
+        }
         do {
             let response = try await DebugLogger.shared.timed("listAllTags API", source: "RecipeList") {
                 try await api.listAllTags()
             }
+            guard cache.currentAccountKey() == accountKey else { return }
             availableTags = response.tags
-            persistAvailableTags()
-            TagFilterCache.pruneSelectedTags(validNames: Set(response.tags.map(\.name)))
-            selectedTags = TagFilterCache.loadSelectedTags()
+            TagFilterCache.saveAvailableTags(
+                response.tags,
+                accountKey: accountKey,
+                userDefaults: userDefaults
+            )
+            TagFilterCache.pruneSelectedTags(
+                validNames: Set(response.tags.map(\.name)),
+                accountKey: accountKey,
+                userDefaults: userDefaults
+            )
+            selectedTags = TagFilterCache.loadSelectedTags(
+                accountKey: accountKey,
+                userDefaults: userDefaults
+            )
         } catch is CancellationError {
             DebugLogger.shared.log("loadTags cancelled", source: "RecipeList")
         } catch {
@@ -348,11 +373,21 @@ private extension RecipeListViewModel {
     }
 
     func persistSelectedTags() {
-        TagFilterCache.saveSelectedTags(selectedTags)
+        guard let accountKey = cache.currentAccountKey() else { return }
+        TagFilterCache.saveSelectedTags(
+            selectedTags,
+            accountKey: accountKey,
+            userDefaults: userDefaults
+        )
     }
 
     func persistAvailableTags() {
-        TagFilterCache.saveAvailableTags(availableTags)
+        guard let accountKey = cache.currentAccountKey() else { return }
+        TagFilterCache.saveAvailableTags(
+            availableTags,
+            accountKey: accountKey,
+            userDefaults: userDefaults
+        )
     }
 
     func syncCachedRecipes(queryValue: String?) async {

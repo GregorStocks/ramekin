@@ -5,7 +5,7 @@ import XCTest
 final class ShoppingListMutationSupportTests: XCTestCase {
     func testUpdateCategoryOverrideSetsCategoryAndMarksSyncedItemPending() throws {
         let context = makeInMemoryContainer().viewContext
-        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.computedCategory = "Dairy & Eggs"
         item.markSynced(serverVersion: 3)
 
@@ -20,7 +20,7 @@ final class ShoppingListMutationSupportTests: XCTestCase {
 
     func testUpdateCategoryOverrideClearsSyncedItemWithDirtyFlag() throws {
         let context = makeInMemoryContainer().viewContext
-        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.categoryOverride = "Produce"
         item.category = "Produce"
         item.computedCategory = "Dairy & Eggs"
@@ -37,7 +37,7 @@ final class ShoppingListMutationSupportTests: XCTestCase {
 
     func testUpdateCategoryOverrideClearsPendingCreateWithoutDirtyFlag() throws {
         let context = makeInMemoryContainer().viewContext
-        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.categoryOverride = "Produce"
         item.category = "Produce"
 
@@ -56,6 +56,7 @@ final class ShoppingListMutationSupportTests: XCTestCase {
 
         _ = ShoppingItem.create(
             in: context,
+            accountKey: accountKey,
             item: "Existing",
             amount: nil,
             sourceRecipeId: nil,
@@ -68,15 +69,15 @@ final class ShoppingListMutationSupportTests: XCTestCase {
                 (name: "Apples", amount: "2"),
                 (name: "Flour", amount: "1 cup")
             ],
-            recipeId: recipeId,
-            recipeTitle: "Pie",
+            recipe: (id: recipeId, title: "Pie"),
+            accountKey: accountKey,
             context: context,
             save: {
                 try context.save()
             }
         )
 
-        let items = try context.fetch(ShoppingItem.fetchActiveItems())
+        let items = try context.fetch(ShoppingItem.fetchActiveItems(accountKey: accountKey))
         XCTAssertEqual(items.map { $0.item ?? "" }, ["Existing", "Apples", "Flour"])
         XCTAssertEqual(items.map(\.sortOrder), [4, 5, 6])
         XCTAssertEqual(items[1].sourceRecipeId, recipeId)
@@ -97,8 +98,8 @@ final class ShoppingListMutationSupportTests: XCTestCase {
         XCTAssertThrowsError(
             try ShoppingListMutationSupport.addItemsFromRecipe(
                 ingredients: [(name: "Apples", amount: "2")],
-                recipeId: recipeId,
-                recipeTitle: "Pie",
+                recipe: (id: recipeId, title: "Pie"),
+                accountKey: accountKey,
                 context: context,
                 save: {
                     throw underlyingSaveError
@@ -117,7 +118,7 @@ final class ShoppingListMutationSupportTests: XCTestCase {
             XCTAssertEqual(error.localizedDescription, "Failed to save shopping list changes.")
         }
 
-        XCTAssertEqual(try context.count(for: ShoppingItem.fetchActiveItems()), 0)
+        XCTAssertEqual(try context.count(for: ShoppingItem.fetchActiveItems(accountKey: accountKey)), 0)
         XCTAssertFalse(context.hasChanges)
     }
 
@@ -135,4 +136,6 @@ final class ShoppingListMutationSupportTests: XCTestCase {
         wait(for: [loaded], timeout: 5)
         return container
     }
+
+    private var accountKey: String { "https://example.test|chef" }
 }

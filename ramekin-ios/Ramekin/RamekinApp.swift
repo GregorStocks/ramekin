@@ -104,6 +104,9 @@ class AppState: ObservableObject {
         isLoggedIn = RamekinAPI.shared.isLoggedIn
         username = KeychainHelper.shared.getUsername() ?? ""
         serverURL = KeychainHelper.shared.getServerURL() ?? ""
+        let accountKey = AccountScope.currentAccountKey()
+        TagFilterCache.migrateLegacyState(activeAccountKey: accountKey)
+        ShoppingListStore.shared.setActiveAccountKey(accountKey)
     }
 
     func logout() {
