@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::schema::{recipe_versions, recipes};
 use crate::scraping;
 use axum::{
@@ -45,77 +44,83 @@ pub async fn rescrape(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Path(recipe_id): Path<Uuid>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
 
-    // Verify the recipe exists and belongs to the user
-    let recipe: (Uuid, Option<Uuid>) = match recipes::table
-        .filter(recipes::id.eq(recipe_id))
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .select((recipes::id, recipes::current_version_id))
-        .first(&mut conn)
-    {
-        Ok(r) => r,
-        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
-        Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
-    };
+    let (current_version_id, source_url) = fetch_rescrape_target(&pool, user_id, recipe_id).await?;
 
-    let (recipe_id, current_version_id) = recipe;
-
-    // Get current version to extract source_url
-    let current_version_id = match current_version_id {
-        Some(vid) => vid,
-        None => return ApiError::invalid_request("Recipe has no versions").into_response(),
-    };
-
-    let source_url: Option<String> = match recipe_versions::table
-        .filter(recipe_versions::id.eq(current_version_id))
-        .select(recipe_versions::source_url)
-        .first(&mut conn)
-    {
-        Ok(url) => url,
-        Err(_) => return ApiError::internal("Failed to fetch recipe version").into_response(),
-    };
-
-    // Require source_url for rescrape
-    let source_url = match source_url {
-        Some(url) if !url.is_empty() => url,
-        _ => {
-            return ApiError::invalid_request("Recipe has no source URL to rescrape from")
-                .into_response()
-        }
-    };
-
-    // Check if host is allowed
-    if let Err(e) = scraping::is_host_allowed(&source_url) {
-        return ApiError::invalid_request(e.to_string()).into_response();
-    }
-
-    // Create rescrape job with recipe_id pre-populated
-    let job = match scraping::create_rescrape_job(
-        &pool,
-        user.id,
-        recipe_id,
-        current_version_id,
-        &source_url,
-    ) {
-        Ok(j) => j,
-        Err(e) => {
-            tracing::error!("Failed to create rescrape job: {}", e);
-            return ApiError::internal("Failed to create rescrape job").into_response();
-        }
-    };
+    // Create rescrape job with recipe_id pre-populated.
+    let job =
+        scraping::create_rescrape_job(&pool, user_id, recipe_id, current_version_id, &source_url)
+            .await
+            .map_err(|e| {
+                tracing::error!("Failed to create rescrape job: {}", e);
+                ApiError::internal("Failed to create rescrape job")
+            })?;
 
     // Spawn background task
     scraping::spawn_scrape_job(pool.clone(), job.id, &source_url, "rescrape");
 
-    (
+    Ok((
         StatusCode::CREATED,
         Json(RescrapeResponse {
             job_id: job.id,
             status: job.status,
         }),
-    )
-        .into_response()
+    ))
+}
+
+/// Look up the recipe's current version id and validated rescrape source URL:
+/// the recipe must belong to the user, have a current version, and carry a
+/// non-empty source URL on an allowed host.
+pub(super) async fn fetch_rescrape_target(
+    pool: &DbPool,
+    user_id: Uuid,
+    recipe_id: Uuid,
+) -> Result<(Uuid, String), ApiError> {
+    let (current_version_id, source_url) = run_db(pool, move |conn| {
+        // Verify the recipe exists and belongs to the user
+        let current_version_id: Option<Uuid> = recipes::table
+            .filter(recipes::id.eq(recipe_id))
+            .filter(recipes::user_id.eq(user_id))
+            .filter(recipes::deleted_at.is_null())
+            .select(recipes::current_version_id)
+            .first(conn)
+            .map_err(|e| match e {
+                diesel::NotFound => ApiError::not_found("Recipe not found"),
+                _ => ApiError::internal("Failed to fetch recipe"),
+            })?;
+
+        // Get current version to extract source_url
+        let current_version_id = match current_version_id {
+            Some(vid) => vid,
+            None => return Err(ApiError::invalid_request("Recipe has no versions")),
+        };
+
+        let source_url: Option<String> = recipe_versions::table
+            .filter(recipe_versions::id.eq(current_version_id))
+            .select(recipe_versions::source_url)
+            .first(conn)
+            .map_err(|_| ApiError::internal("Failed to fetch recipe version"))?;
+
+        Ok((current_version_id, source_url))
+    })
+    .await?;
+
+    // Require source_url for rescrape
+    let source_url = match source_url {
+        Some(url) if !url.is_empty() => url,
+        _ => {
+            return Err(ApiError::invalid_request(
+                "Recipe has no source URL to rescrape from",
+            ))
+        }
+    };
+
+    // Check if host is allowed
+    if let Err(e) = scraping::is_host_allowed(&source_url) {
+        return Err(ApiError::invalid_request(e.to_string()));
+    }
+
+    Ok((current_version_id, source_url))
 }

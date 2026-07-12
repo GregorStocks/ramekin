@@ -1,4 +1,4 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::schema::photos;
@@ -42,50 +42,44 @@ pub async fn import_from_photos(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<ImportFromPhotosRequest>,
-) -> impl IntoResponse {
+) -> Result<impl IntoResponse, ApiError> {
     // Validate: must have at least one photo
     if request.photo_ids.is_empty() {
-        return ApiError::invalid_request("At least one photo_id is required").into_response();
+        return Err(ApiError::invalid_request(
+            "At least one photo_id is required",
+        ));
     }
+
+    let user_id = user.id;
 
     // Verify all photos exist and belong to this user
-    {
-        let mut conn = match pool.get() {
-            Ok(c) => c,
-            Err(e) => {
-                return ApiError::internal(format!("Database error: {}", e)).into_response();
-            }
-        };
-
-        let found_count: i64 = match photos::table
-            .filter(photos::id.eq_any(&request.photo_ids))
-            .filter(photos::user_id.eq(user.id))
+    let photo_ids = request.photo_ids.clone();
+    run_db(&pool, move |conn| {
+        let found_count: i64 = photos::table
+            .filter(photos::id.eq_any(&photo_ids))
+            .filter(photos::user_id.eq(user_id))
             .filter(photos::deleted_at.is_null())
             .count()
-            .get_result(&mut conn)
-        {
-            Ok(count) => count,
-            Err(e) => {
-                return ApiError::internal(format!("Database error: {}", e)).into_response();
-            }
-        };
+            .get_result(conn)
+            .map_err(|e| ApiError::internal(format!("Database error: {}", e)))?;
 
-        if found_count != request.photo_ids.len() as i64 {
-            return ApiError::invalid_request(
+        if found_count != photo_ids.len() as i64 {
+            return Err(ApiError::invalid_request(
                 "One or more photo_ids not found or don't belong to user",
-            )
-            .into_response();
+            ));
         }
-    }
 
-    // Create a pending scrape job (no URL for photo imports)
-    let job = match scraping::create_pending_photo_job(&pool, user.id) {
-        Ok(j) => j,
-        Err(e) => {
+        Ok(())
+    })
+    .await?;
+
+    // Create a pending scrape job (no URL for photo imports).
+    let job = scraping::create_pending_photo_job(&pool, user_id)
+        .await
+        .map_err(|e| {
             tracing::error!("Failed to create photo import job: {}", e);
-            return ApiError::internal("Failed to create import job").into_response();
-        }
-    };
+            ApiError::internal("Failed to create import job")
+        })?;
 
     tracing::info!(
         "Created photo import job {} with {} photos",
@@ -96,12 +90,11 @@ pub async fn import_from_photos(
     // Spawn background task
     scraping::spawn_photo_import_job(pool.clone(), job.id, user.id, request.photo_ids);
 
-    (
+    Ok((
         StatusCode::CREATED,
         Json(ImportFromPhotosResponse {
             job_id: job.id,
             status: job.status,
         }),
-    )
-        .into_response()
+    ))
 }

@@ -15,7 +15,7 @@ use uuid::Uuid;
 
 use crate::db::DbPool;
 use crate::schema::step_outputs;
-use crate::scraping::ScrapeError;
+use crate::scraping::{run_scrape_db, ScrapeError};
 use ramekin_core::pipeline::scrape_pipeline_step_names;
 
 /// Row shape read by `build_step_states_from_outputs`:
@@ -220,7 +220,7 @@ pub fn extra_failed_state_for_unknown_step(
 /// If `failed_at_step` is not one of the canonical scrape steps, a synthetic failed
 /// entry is prepended — these represent steps that run outside the canonical
 /// scrape pipeline (e.g. `photo_extract` in photo-only imports).
-pub fn build_step_states(
+pub async fn build_step_states(
     pool: &DbPool,
     job_id: Uuid,
     job_status: &str,
@@ -229,27 +229,26 @@ pub fn build_step_states(
     failed_at_step: Option<&str>,
     job_error_message: Option<&str>,
 ) -> Result<Vec<StepState>, ScrapeError> {
-    let mut conn = pool
-        .get()
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
     // Only select the pre-computed `summary` column — NOT the full `output`
     // JSON. Loading `output` would pull megabytes per poll for `fetch_html` /
     // `extract_recipe` rows, and the status API only ever needed the short
     // summary. The expand-step endpoint still reads `output` on demand.
-    let outputs: Vec<StepOutputRow> = step_outputs::table
-        .filter(step_outputs::scrape_job_id.eq(job_id))
-        .order(step_outputs::created_at.asc())
-        .select((
-            step_outputs::step_name,
-            step_outputs::created_at,
-            step_outputs::duration_ms,
-            step_outputs::summary,
-            step_outputs::success,
-            step_outputs::error,
-        ))
-        .load(&mut conn)
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+    let outputs: Vec<StepOutputRow> = run_scrape_db(pool, move |conn| {
+        step_outputs::table
+            .filter(step_outputs::scrape_job_id.eq(job_id))
+            .order(step_outputs::created_at.asc())
+            .select((
+                step_outputs::step_name,
+                step_outputs::created_at,
+                step_outputs::duration_ms,
+                step_outputs::summary,
+                step_outputs::success,
+                step_outputs::error,
+            ))
+            .load(conn)
+            .map_err(|e| ScrapeError::Database(e.to_string()))
+    })
+    .await?;
 
     Ok(build_step_states_from_outputs(
         outputs,

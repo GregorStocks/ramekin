@@ -1,8 +1,7 @@
 use super::read::fetch_current_recipe_with_version_and_tags;
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::models::{Ingredient, RecipeVersion};
 use crate::raw_sql;
 use crate::schema::{recipe_versions, recipes};
@@ -117,57 +116,59 @@ pub async fn get_recipe(
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
     Query(params): Query<GetRecipeParams>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
 
-    let result: Result<Option<RecipeRow>, _> = match params.version_id {
-        Some(version_id) => {
-            // Fetch specific version
-            recipes::table
-                .inner_join(recipe_versions::table.on(recipe_versions::recipe_id.eq(recipes::id)))
-                .filter(recipes::id.eq(id))
-                .filter(recipes::user_id.eq(user.id))
-                .filter(recipes::deleted_at.is_null())
-                .filter(recipe_versions::id.eq(version_id))
-                .select((
-                    recipes::created_at,
-                    RecipeVersion::as_select(),
-                    raw_sql::tags_subquery(),
-                ))
-                .first(&mut conn)
-                .optional()
-        }
-        None => match fetch_current_recipe_with_version_and_tags(&mut conn, user.id, id) {
-            Ok((recipe, tags)) => Ok(Some((recipe.created_at, recipe.version, tags))),
-            Err(diesel::NotFound) => Ok(None),
-            Err(e) => Err(e),
-        },
-    };
+    let row = run_db(&pool, move |conn| {
+        let result: Result<Option<RecipeRow>, _> = match params.version_id {
+            Some(version_id) => {
+                // Fetch specific version
+                recipes::table
+                    .inner_join(
+                        recipe_versions::table.on(recipe_versions::recipe_id.eq(recipes::id)),
+                    )
+                    .filter(recipes::id.eq(id))
+                    .filter(recipes::user_id.eq(user_id))
+                    .filter(recipes::deleted_at.is_null())
+                    .filter(recipe_versions::id.eq(version_id))
+                    .select((
+                        recipes::created_at,
+                        RecipeVersion::as_select(),
+                        raw_sql::tags_subquery(),
+                    ))
+                    .first(conn)
+                    .optional()
+            }
+            None => match fetch_current_recipe_with_version_and_tags(conn, user_id, id) {
+                Ok((recipe, tags)) => Ok(Some((recipe.created_at, recipe.version, tags))),
+                Err(diesel::NotFound) => Ok(None),
+                Err(e) => Err(e),
+            },
+        };
 
-    let row = match result {
-        Ok(Some(r)) => r,
-        Ok(None) => return ApiError::not_found("Recipe not found").into_response(),
-        Err(e) => {
+        result.map_err(|e| {
             tracing::error!(recipe_id = %id, error = %e, "failed to fetch recipe");
-            return ApiError::internal("Failed to fetch recipe").into_response();
-        }
+            ApiError::internal("Failed to fetch recipe")
+        })
+    })
+    .await?;
+
+    let Some((recipe_created_at, version, tags)) = row else {
+        return Err(ApiError::not_found("Recipe not found"));
     };
 
-    let (recipe_created_at, version, tags) = row;
     let version_id = version.id;
 
-    let response = match RecipeResponse::from_version(id, recipe_created_at, version, tags) {
-        Ok(response) => response,
-        Err(e) => {
+    let response =
+        RecipeResponse::from_version(id, recipe_created_at, version, tags).map_err(|e| {
             tracing::error!(
                 recipe_id = %id,
                 version_id = %version_id,
                 error = %e,
                 "stored ingredients JSON failed to deserialize"
             );
-            return ApiError::internal("Recipe ingredients are corrupt").into_response();
-        }
-    };
+            ApiError::internal("Recipe ingredients are corrupt")
+        })?;
 
-    (StatusCode::OK, Json(response)).into_response()
+    Ok((StatusCode::OK, Json(response)))
 }

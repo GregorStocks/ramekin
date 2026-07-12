@@ -11,7 +11,7 @@ use ramekin_core::pipeline::{
 };
 use ramekin_core::{FailedImageFetch, FetchImagesOutput, RawRecipe};
 
-use crate::db::DbPool;
+use crate::db::{run_blocking, DbPool};
 use crate::models::NewPhoto;
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
 use crate::schema::photos;
@@ -131,23 +131,26 @@ impl FetchImagesStep {
         let processed = process_image(&data).map_err(|e| e.to_string())?;
 
         // Store in database
-        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
+        let user_id = self.user_id;
+        let photo_id: Uuid = run_blocking(&self.pool, move |conn| {
+            let new_photo = NewPhoto {
+                user_id,
+                content_type: &processed.content_type,
+                data: &data,
+                thumbnail: &processed.thumbnail,
+                width: Some(processed.width as i32),
+                height: Some(processed.height as i32),
+                file_size: Some(data.len() as i32),
+            };
 
-        let new_photo = NewPhoto {
-            user_id: self.user_id,
-            content_type: &processed.content_type,
-            data: &data,
-            thumbnail: &processed.thumbnail,
-            width: Some(processed.width as i32),
-            height: Some(processed.height as i32),
-            file_size: Some(data.len() as i32),
-        };
-
-        let photo_id: Uuid = diesel::insert_into(photos::table)
-            .values(&new_photo)
-            .returning(photos::id)
-            .get_result(&mut conn)
-            .map_err(|e| e.to_string())?;
+            diesel::insert_into(photos::table)
+                .values(&new_photo)
+                .returning(photos::id)
+                .get_result(conn)
+                .map_err(|e| e.to_string())
+        })
+        .await
+        .map_err(|e| e.to_string())??;
 
         tracing::info!("Stored photo {} from {}", photo_id, url);
         Ok(photo_id)

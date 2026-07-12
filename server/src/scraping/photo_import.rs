@@ -15,22 +15,24 @@ use crate::schema::scrape_jobs;
 
 use super::jobs::{mark_failed, save_step_output, update_status_and_step};
 use super::runner::run_scrape_job;
-use super::{ScrapeError, STATUS_PARSING, STATUS_SCRAPING};
+use super::{run_scrape_db, ScrapeError, STATUS_PARSING, STATUS_SCRAPING};
 
 const PHOTO_EXTRACT_STEP: &str = "photo_extract";
 
 /// Create a pending photo import job (no step pre-population yet).
-pub fn create_pending_photo_job(pool: &DbPool, user_id: Uuid) -> Result<ScrapeJob, ScrapeError> {
-    let mut conn = pool
-        .get()
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+pub async fn create_pending_photo_job(
+    pool: &DbPool,
+    user_id: Uuid,
+) -> Result<ScrapeJob, ScrapeError> {
+    run_scrape_db(pool, move |conn| {
+        let new_job = NewScrapeJob { user_id, url: None };
 
-    let new_job = NewScrapeJob { user_id, url: None };
-
-    diesel::insert_into(scrape_jobs::table)
-        .values(&new_job)
-        .get_result::<ScrapeJob>(&mut conn)
-        .map_err(|e| ScrapeError::Database(e.to_string()))
+        diesel::insert_into(scrape_jobs::table)
+            .values(&new_job)
+            .get_result::<ScrapeJob>(conn)
+            .map_err(|e| ScrapeError::Database(e.to_string()))
+    })
+    .await
 }
 
 /// Spawn a photo import job with proper OpenTelemetry context propagation.
@@ -78,7 +80,7 @@ async fn run_photo_import_job(
                 job_id,
                 e
             );
-            mark_failed(&pool, job_id, PHOTO_EXTRACT_STEP, &e.to_string())?;
+            mark_failed(&pool, job_id, PHOTO_EXTRACT_STEP, &e.to_string()).await?;
             Err(e)
         }
     }
@@ -91,10 +93,11 @@ async fn run_photo_import_job_inner(
     photo_ids: Vec<Uuid>,
 ) -> Result<(), ScrapeError> {
     // Update status to "scraping" (extraction phase)
-    update_status_and_step(&pool, job_id, STATUS_SCRAPING, Some(PHOTO_EXTRACT_STEP))?;
+    update_status_and_step(&pool, job_id, STATUS_SCRAPING, Some(PHOTO_EXTRACT_STEP)).await?;
 
     // Step 1: Fetch photo bytes from database
     let images = load_photo_images(&pool, user_id, &photo_ids)
+        .await
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
     // Step 2: Call vision AI to extract recipe
@@ -115,22 +118,20 @@ async fn run_photo_import_job_inner(
     };
     let extract_json =
         serde_json::to_value(&extract_output).map_err(|e| ScrapeError::Database(e.to_string()))?;
-    save_step_output(&pool, job_id, ExtractRecipeStep::NAME, extract_json)?;
 
-    // Store fetch_images output (photos already uploaded)
+    // fetch_images output (photos already uploaded)
     let images_output = FetchImagesOutput {
         photo_ids,
         failed_urls: vec![],
     };
     let images_json =
         serde_json::to_value(&images_output).map_err(|e| ScrapeError::Database(e.to_string()))?;
-    save_step_output(&pool, job_id, FetchImagesStepMeta::NAME, images_json)?;
 
-    // Update job to start from parse_ingredients
-    {
-        let mut conn = pool
-            .get()
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
+    run_scrape_db(&pool, move |conn| {
+        save_step_output(conn, job_id, ExtractRecipeStep::NAME, extract_json)?;
+        save_step_output(conn, job_id, FetchImagesStepMeta::NAME, images_json)?;
+
+        // Update job to start from parse_ingredients
         let now = chrono::Utc::now();
         diesel::update(scrape_jobs::table.find(job_id))
             .set((
@@ -139,9 +140,12 @@ async fn run_photo_import_job_inner(
                 scrape_jobs::current_step_started_at.eq(Some(now)),
                 scrape_jobs::updated_at.eq(now),
             ))
-            .execute(&mut conn)
+            .execute(conn)
             .map_err(|e| ScrapeError::Database(e.to_string()))?;
-    }
+
+        Ok(())
+    })
+    .await?;
 
     // Step 4: Run the rest of the pipeline
     run_scrape_job(pool, job_id).await;

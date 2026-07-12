@@ -52,7 +52,7 @@ pub async fn create_scrape(
     }
 
     // Create job
-    let job = match scraping::create_job(&pool, user.id, &request.url) {
+    let job = match scraping::create_job(&pool, user.id, &request.url).await {
         Ok(j) => j,
         Err(e) => {
             tracing::error!("Failed to create scrape job: {}", e);

@@ -63,7 +63,7 @@ pub async fn get_scrape(
     State(pool): State<Arc<DbPool>>,
     Path(job_id): Path<Uuid>,
 ) -> impl IntoResponse {
-    let job = match scraping::get_job(&pool, job_id) {
+    let job = match scraping::get_job(&pool, job_id).await {
         Ok(j) => j,
         Err(scraping::ScrapeError::JobNotFound) => {
             return ApiError::not_found("Scrape job not found").into_response();
@@ -92,7 +92,9 @@ pub async fn get_scrape(
         job.current_step_started_at,
         job.failed_at_step.as_deref(),
         job.error_message.as_deref(),
-    ) {
+    )
+    .await
+    {
         Ok(s) => s,
         Err(e) => {
             tracing::error!("Failed to build step states: {}", e);

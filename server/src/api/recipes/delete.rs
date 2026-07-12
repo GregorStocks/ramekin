@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::raw_sql;
 use crate::schema::recipes;
 use axum::{
@@ -34,32 +33,32 @@ pub async fn delete_recipe(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
 
     // Soft delete - set deleted_at timestamp
-    let updated = match diesel::update(
-        recipes::table
-            .filter(recipes::id.eq(id))
-            .filter(recipes::user_id.eq(user.id))
-            .filter(recipes::deleted_at.is_null()),
-    )
-    .set((
-        recipes::deleted_at.eq(Some(Utc::now())),
-        recipes::deleted_xid.eq(raw_sql::current_change_xid().nullable()),
-    ))
-    .execute(&mut conn)
-    {
-        Ok(count) => count,
-        Err(e) => {
+    let updated = run_db(&pool, move |conn| {
+        diesel::update(
+            recipes::table
+                .filter(recipes::id.eq(id))
+                .filter(recipes::user_id.eq(user_id))
+                .filter(recipes::deleted_at.is_null()),
+        )
+        .set((
+            recipes::deleted_at.eq(Some(Utc::now())),
+            recipes::deleted_xid.eq(raw_sql::current_change_xid().nullable()),
+        ))
+        .execute(conn)
+        .map_err(|e| {
             tracing::error!("Failed to delete recipe: {}", e);
-            return ApiError::internal("Failed to delete recipe").into_response();
-        }
-    };
+            ApiError::internal("Failed to delete recipe")
+        })
+    })
+    .await?;
 
     if updated == 0 {
-        return ApiError::not_found("Recipe not found").into_response();
+        return Err(ApiError::not_found("Recipe not found"));
     }
 
-    StatusCode::NO_CONTENT.into_response()
+    Ok(StatusCode::NO_CONTENT)
 }

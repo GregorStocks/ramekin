@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::models::NewShoppingListItem;
 use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
@@ -50,9 +49,9 @@ pub async fn create_items(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<CreateShoppingListRequest>,
-) -> impl IntoResponse {
+) -> Result<impl IntoResponse, ApiError> {
     if request.items.is_empty() {
-        return ApiError::invalid_request("At least one item is required").into_response();
+        return Err(ApiError::invalid_request("At least one item is required"));
     }
 
     if request.items.iter().any(|item| {
@@ -60,81 +59,78 @@ pub async fn create_items(
             .as_deref()
             .is_some_and(|category| !super::list::is_valid_category(category))
     }) {
-        return ApiError::invalid_request("Invalid category override").into_response();
+        return Err(ApiError::invalid_request("Invalid category override"));
     }
 
-    let mut conn = get_conn!(pool);
+    let user_id = user.id;
+    let ids = run_db(&pool, move |conn| {
+        conn.transaction(|conn| {
+            // Get current max sort_order for this user
+            let max_sort_order: i32 = shopping_list_items::table
+                .filter(shopping_list_items::user_id.eq(user_id))
+                .filter(shopping_list_items::deleted_at.is_null())
+                .select(diesel::dsl::max(shopping_list_items::sort_order))
+                .first::<Option<i32>>(conn)?
+                .unwrap_or(0);
 
-    let ids_result = conn.transaction(|conn| {
-        // Get current max sort_order for this user
-        let max_sort_order: i32 = shopping_list_items::table
-            .filter(shopping_list_items::user_id.eq(user.id))
-            .filter(shopping_list_items::deleted_at.is_null())
-            .select(diesel::dsl::max(shopping_list_items::sort_order))
-            .first::<Option<i32>>(conn)?
-            .unwrap_or(0);
+            let mut ids = Vec::with_capacity(request.items.len());
 
-        let mut ids = Vec::with_capacity(request.items.len());
+            for (i, item_req) in request.items.iter().enumerate() {
+                let amount_ref = item_req.amount.as_deref();
+                let note_ref = item_req.note.as_deref();
+                let source_title_ref = item_req.source_recipe_title.as_deref();
 
-        for (i, item_req) in request.items.iter().enumerate() {
-            let amount_ref = item_req.amount.as_deref();
-            let note_ref = item_req.note.as_deref();
-            let source_title_ref = item_req.source_recipe_title.as_deref();
+                let new_item = NewShoppingListItem {
+                    user_id,
+                    item: &item_req.item,
+                    amount: amount_ref,
+                    note: note_ref,
+                    source_recipe_id: item_req.source_recipe_id,
+                    source_recipe_title: source_title_ref,
+                    is_checked: false,
+                    sort_order: max_sort_order + 1 + i as i32,
+                    category_override: item_req.category_override.as_deref(),
+                    client_id: item_req.client_id,
+                };
 
-            let new_item = NewShoppingListItem {
-                user_id: user.id,
-                item: &item_req.item,
-                amount: amount_ref,
-                note: note_ref,
-                source_recipe_id: item_req.source_recipe_id,
-                source_recipe_title: source_title_ref,
-                is_checked: false,
-                sort_order: max_sort_order + 1 + i as i32,
-                category_override: item_req.category_override.as_deref(),
-                client_id: item_req.client_id,
-            };
+                let id = if let Some(client_id) = item_req.client_id {
+                    // Use the unique constraint for conflict detection (dedup offline syncs)
+                    match diesel::insert_into(shopping_list_items::table)
+                        .values(&new_item)
+                        .on_conflict(on_constraint("uq_shopping_list_client_id"))
+                        .do_nothing()
+                        .returning(shopping_list_items::id)
+                        .get_result::<Uuid>(conn)
+                    {
+                        Ok(id) => id,
+                        Err(diesel::result::Error::NotFound) => shopping_list_items::table
+                            .filter(shopping_list_items::user_id.eq(user_id))
+                            .filter(shopping_list_items::client_id.eq(client_id))
+                            .select(shopping_list_items::id)
+                            .first::<Uuid>(conn)?,
+                        Err(e) => return Err(e),
+                    }
+                } else {
+                    diesel::insert_into(shopping_list_items::table)
+                        .values(&new_item)
+                        .returning(shopping_list_items::id)
+                        .get_result::<Uuid>(conn)?
+                };
 
-            let id = if let Some(client_id) = item_req.client_id {
-                // Use the unique constraint for conflict detection (dedup offline syncs)
-                match diesel::insert_into(shopping_list_items::table)
-                    .values(&new_item)
-                    .on_conflict(on_constraint("uq_shopping_list_client_id"))
-                    .do_nothing()
-                    .returning(shopping_list_items::id)
-                    .get_result::<Uuid>(conn)
-                {
-                    Ok(id) => id,
-                    Err(diesel::result::Error::NotFound) => shopping_list_items::table
-                        .filter(shopping_list_items::user_id.eq(user.id))
-                        .filter(shopping_list_items::client_id.eq(client_id))
-                        .select(shopping_list_items::id)
-                        .first::<Uuid>(conn)?,
-                    Err(e) => return Err(e),
-                }
-            } else {
-                diesel::insert_into(shopping_list_items::table)
-                    .values(&new_item)
-                    .returning(shopping_list_items::id)
-                    .get_result::<Uuid>(conn)?
-            };
+                ids.push(id);
+            }
 
-            ids.push(id);
-        }
-
-        Ok(ids)
-    });
-
-    let ids = match ids_result {
-        Ok(ids) => ids,
-        Err(e) => {
+            Ok(ids)
+        })
+        .map_err(|e: diesel::result::Error| {
             tracing::error!("Failed to create shopping list items: {}", e);
-            return ApiError::internal("Failed to create shopping list items").into_response();
-        }
-    };
+            ApiError::internal("Failed to create shopping list items")
+        })
+    })
+    .await?;
 
-    (
+    Ok((
         StatusCode::CREATED,
         Json(CreateShoppingListResponse { ids }),
-    )
-        .into_response()
+    ))
 }

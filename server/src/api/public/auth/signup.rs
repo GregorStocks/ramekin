@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::{create_session_with_token, hash_password, DEV_TEST_TOKEN};
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::models::NewUser;
 use crate::schema::users;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
@@ -37,49 +36,41 @@ pub struct SignupResponse {
 pub async fn signup(
     State(pool): State<Arc<DbPool>>,
     Json(req): Json<SignupRequest>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let (user_id, token) = run_db(&pool, move |conn| {
+        let password_hash = hash_password(&req.password)
+            .map_err(|_| ApiError::internal("Failed to hash password"))?;
 
-    let password_hash = match hash_password(&req.password) {
-        Ok(h) => h,
-        Err(_) => return ApiError::internal("Failed to hash password").into_response(),
-    };
+        let new_user = NewUser {
+            username: &req.username,
+            password_hash: &password_hash,
+        };
 
-    let new_user = NewUser {
-        username: &req.username,
-        password_hash: &password_hash,
-    };
+        let user: crate::models::User = match diesel::insert_into(users::table)
+            .values(&new_user)
+            .returning(crate::models::User::as_returning())
+            .get_result(conn)
+        {
+            Ok(u) => u,
+            Err(diesel::result::Error::DatabaseError(
+                diesel::result::DatabaseErrorKind::UniqueViolation,
+                _,
+            )) => return Err(ApiError::conflict("Username already exists")),
+            Err(_) => return Err(ApiError::internal("Failed to create user")),
+        };
 
-    let user: crate::models::User = match diesel::insert_into(users::table)
-        .values(&new_user)
-        .returning(crate::models::User::as_returning())
-        .get_result(&mut conn)
-    {
-        Ok(u) => u,
-        Err(diesel::result::Error::DatabaseError(
-            diesel::result::DatabaseErrorKind::UniqueViolation,
-            _,
-        )) => return ApiError::conflict("Username already exists").into_response(),
-        Err(_) => return ApiError::internal("Failed to create user").into_response(),
-    };
+        // Use fixed token for test user "t" so session persists across DB resets
+        let fixed_token = if req.username.to_lowercase() == "t" {
+            Some(DEV_TEST_TOKEN)
+        } else {
+            None
+        };
+        let token = create_session_with_token(conn, user.id, fixed_token)
+            .map_err(|_| ApiError::internal("Failed to create session"))?;
 
-    // Use fixed token for test user "t" so session persists across DB resets
-    let fixed_token = if req.username.to_lowercase() == "t" {
-        Some(DEV_TEST_TOKEN)
-    } else {
-        None
-    };
-    let token = match create_session_with_token(&mut conn, user.id, fixed_token) {
-        Ok(t) => t,
-        Err(_) => return ApiError::internal("Failed to create session").into_response(),
-    };
+        Ok((user.id, token))
+    })
+    .await?;
 
-    (
-        StatusCode::CREATED,
-        Json(SignupResponse {
-            user_id: user.id,
-            token,
-        }),
-    )
-        .into_response()
+    Ok((StatusCode::CREATED, Json(SignupResponse { user_id, token })))
 }

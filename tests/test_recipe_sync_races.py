@@ -12,17 +12,14 @@ and syncs through the API across it. The writes below mirror the server's write
 statements; that the *handlers* stamp `change_xid` correctly is covered
 separately by the sequential deltas in `test_recipe_sync.py`.
 
-The change cannot be driven through the API here: a stalled write would block a
-Diesel call inside an async handler, and when that handler is running on the
-tokio worker holding the IO driver the whole server stops accepting connections
-(see `p2-blocking-db-calls-stall-the-server`). The sync under test would never
-be answered.
+The change is not driven through the API here because the tests need precise
+control over commit timing: the write must stay uncommitted while the sync
+runs. Now that a stalled handler no longer stalls the whole server (database
+work runs on the blocking thread pool; see `tests/test_server_liveness.py`),
+an API-driven variant is possible -- tracked in
+`issues/p3-drive-sync-race-tests-through-the-api.json5`.
 """
 
-import os
-
-import psycopg
-import pytest
 import requests
 
 from conftest import make_ingredient
@@ -42,17 +39,6 @@ def _sync(client, server_url, cursor=None):
     )
     response.raise_for_status()
     return response.json()
-
-
-@pytest.fixture
-def uncommitted():
-    """A transaction left open, so its writes are stamped but not yet visible."""
-    database_url = os.environ.get("DATABASE_URL")
-    if not database_url:
-        raise ValueError("DATABASE_URL environment variable required")
-    with psycopg.connect(database_url) as conn:  # autocommit off
-        yield conn
-        conn.rollback()
 
 
 def test_sync_returns_update_that_commits_across_the_snapshot(

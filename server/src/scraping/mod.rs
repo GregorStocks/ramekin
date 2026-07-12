@@ -46,6 +46,20 @@ pub enum ScrapeError {
     AiConfig(#[from] ramekin_core::ai::AiError),
 }
 
+/// Run scraping-side blocking Diesel work off the runtime threads.
+///
+/// Wraps [`crate::db::run_blocking`], turning a pool checkout failure into
+/// [`ScrapeError::Database`] so callers can use `?` on the result.
+pub(crate) async fn run_scrape_db<T, F>(pool: &crate::db::DbPool, f: F) -> Result<T, ScrapeError>
+where
+    F: FnOnce(&mut crate::db::DbConn) -> Result<T, ScrapeError> + Send + 'static,
+    T: Send + 'static,
+{
+    crate::db::run_blocking(pool, f)
+        .await
+        .map_err(|e| ScrapeError::Database(e.to_string()))?
+}
+
 /// Job statuses
 pub const STATUS_SCRAPING: &str = "scraping";
 pub const STATUS_PARSING: &str = "parsing";

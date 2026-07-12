@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::raw_sql;
 use crate::schema::user_tags;
 use axum::{
@@ -52,105 +51,94 @@ pub async fn rename_tag(
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
     Json(request): Json<RenameTagRequest>,
-) -> impl IntoResponse {
-    let new_name = request.name.trim();
+) -> Result<impl IntoResponse, ApiError> {
+    let new_name = request.name.trim().to_string();
 
-    if let Err(err) = ramekin_core::validate_tag_name(new_name) {
-        return ApiError::invalid_request(err.message().to_string()).into_response();
+    if let Err(err) = ramekin_core::validate_tag_name(&new_name) {
+        return Err(ApiError::invalid_request(err.message().to_string()));
     }
 
-    let mut conn = get_conn!(pool);
+    let user_id = user.id;
 
-    // Check if tag exists, belongs to user, and is not deleted
-    let existing_tag: Option<(Uuid, String)> = match user_tags::table
-        .filter(user_tags::id.eq(id))
-        .filter(user_tags::user_id.eq(user.id))
-        .filter(user_tags::deleted_at.is_null())
-        .select((user_tags::id, user_tags::name))
-        .first(&mut conn)
-        .optional()
-    {
-        Ok(tag) => tag,
-        Err(e) => {
-            tracing::error!("Failed to look up tag: {}", e);
-            return ApiError::internal("Failed to look up tag").into_response();
+    let (id, name) = run_db(&pool, move |conn| {
+        // Check if tag exists, belongs to user, and is not deleted
+        let existing_tag: Option<(Uuid, String)> = user_tags::table
+            .filter(user_tags::id.eq(id))
+            .filter(user_tags::user_id.eq(user_id))
+            .filter(user_tags::deleted_at.is_null())
+            .select((user_tags::id, user_tags::name))
+            .first(conn)
+            .optional()
+            .map_err(|e| {
+                tracing::error!("Failed to look up tag: {}", e);
+                ApiError::internal("Failed to look up tag")
+            })?;
+
+        let Some((_tag_id, current_name)) = existing_tag else {
+            return Err(ApiError::not_found("Tag not found"));
+        };
+
+        // If renaming to the same name (possibly different case), just return success
+        // CITEXT comparison handles case-insensitivity
+        if current_name.eq_ignore_ascii_case(&new_name) {
+            // Update to preserve the new casing
+            let now = Utc::now();
+            return diesel::update(
+                user_tags::table
+                    .filter(user_tags::id.eq(id))
+                    .filter(user_tags::user_id.eq(user_id)),
+            )
+            .set((
+                user_tags::name.eq(new_name.as_str()),
+                user_tags::updated_at.eq(now),
+                user_tags::change_xid.eq(raw_sql::current_change_xid()),
+            ))
+            .returning((user_tags::id, user_tags::name))
+            .get_result(conn)
+            .map_err(|e| {
+                tracing::error!("Failed to rename tag: {}", e);
+                ApiError::internal("Failed to rename tag")
+            });
         }
-    };
 
-    let Some((_tag_id, current_name)) = existing_tag else {
-        return ApiError::not_found("Tag not found").into_response();
-    };
+        // Check if another non-deleted tag with the new name already exists (case-insensitive)
+        let duplicate: Option<Uuid> = user_tags::table
+            .filter(user_tags::user_id.eq(user_id))
+            .filter(user_tags::name.eq(new_name.as_str()))
+            .filter(user_tags::id.ne(id))
+            .filter(user_tags::deleted_at.is_null())
+            .select(user_tags::id)
+            .first(conn)
+            .optional()
+            .map_err(|e| {
+                tracing::error!("Failed to check for duplicate tag: {}", e);
+                ApiError::internal("Failed to check for duplicate tag")
+            })?;
 
-    // If renaming to the same name (possibly different case), just return success
-    // CITEXT comparison handles case-insensitivity
-    if current_name.eq_ignore_ascii_case(new_name) {
-        // Update to preserve the new casing
+        if duplicate.is_some() {
+            return Err(ApiError::conflict("Tag with that name already exists"));
+        }
+
+        // Perform the rename
         let now = Utc::now();
-        let result: Result<(Uuid, String), _> = diesel::update(
+        diesel::update(
             user_tags::table
                 .filter(user_tags::id.eq(id))
-                .filter(user_tags::user_id.eq(user.id)),
+                .filter(user_tags::user_id.eq(user_id)),
         )
         .set((
-            user_tags::name.eq(new_name),
+            user_tags::name.eq(new_name.as_str()),
             user_tags::updated_at.eq(now),
             user_tags::change_xid.eq(raw_sql::current_change_xid()),
         ))
         .returning((user_tags::id, user_tags::name))
-        .get_result(&mut conn);
-
-        return match result {
-            Ok((id, name)) => {
-                (StatusCode::OK, Json(RenameTagResponse { id, name })).into_response()
-            }
-            Err(e) => {
-                tracing::error!("Failed to rename tag: {}", e);
-                ApiError::internal("Failed to rename tag").into_response()
-            }
-        };
-    }
-
-    // Check if another non-deleted tag with the new name already exists (case-insensitive)
-    let duplicate: Option<Uuid> = match user_tags::table
-        .filter(user_tags::user_id.eq(user.id))
-        .filter(user_tags::name.eq(new_name))
-        .filter(user_tags::id.ne(id))
-        .filter(user_tags::deleted_at.is_null())
-        .select(user_tags::id)
-        .first(&mut conn)
-        .optional()
-    {
-        Ok(dup) => dup,
-        Err(e) => {
-            tracing::error!("Failed to check for duplicate tag: {}", e);
-            return ApiError::internal("Failed to check for duplicate tag").into_response();
-        }
-    };
-
-    if duplicate.is_some() {
-        return ApiError::conflict("Tag with that name already exists").into_response();
-    }
-
-    // Perform the rename
-    let now = Utc::now();
-    let result: Result<(Uuid, String), _> = diesel::update(
-        user_tags::table
-            .filter(user_tags::id.eq(id))
-            .filter(user_tags::user_id.eq(user.id)),
-    )
-    .set((
-        user_tags::name.eq(new_name),
-        user_tags::updated_at.eq(now),
-        user_tags::change_xid.eq(raw_sql::current_change_xid()),
-    ))
-    .returning((user_tags::id, user_tags::name))
-    .get_result(&mut conn);
-
-    match result {
-        Ok((id, name)) => (StatusCode::OK, Json(RenameTagResponse { id, name })).into_response(),
-        Err(e) => {
+        .get_result(conn)
+        .map_err(|e| {
             tracing::error!("Failed to rename tag: {}", e);
-            ApiError::internal("Failed to rename tag").into_response()
-        }
-    }
+            ApiError::internal("Failed to rename tag")
+        })
+    })
+    .await?;
+
+    Ok((StatusCode::OK, Json(RenameTagResponse { id, name })))
 }

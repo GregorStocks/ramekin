@@ -1,8 +1,7 @@
 use super::read::fetch_current_recipe_with_version_and_tags;
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
 use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
 use axum::{
@@ -87,146 +86,145 @@ pub async fn update_recipe(
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
     Json(request): Json<UpdateRecipeRequest>,
-) -> impl IntoResponse {
+) -> Result<impl IntoResponse, ApiError> {
     if let Some(ref title) = request.title {
         if title.trim().is_empty() {
-            return ApiError::invalid_request("Title cannot be empty").into_response();
+            return Err(ApiError::invalid_request("Title cannot be empty"));
         }
     }
 
     if let Some(ref instructions) = request.instructions {
         if instructions.trim().is_empty() {
-            return ApiError::invalid_request("Instructions cannot be empty").into_response();
+            return Err(ApiError::invalid_request("Instructions cannot be empty"));
         }
     }
 
-    let mut conn = get_conn!(pool);
+    let user_id = user.id;
 
-    let (current_version, cur_tags): (RecipeVersion, Vec<String>) =
-        match fetch_current_recipe_with_version_and_tags(&mut conn, user.id, id) {
-            Ok((recipe, tags)) => (recipe.version, tags),
-            Err(diesel::NotFound) => {
-                return ApiError::not_found("Recipe not found").into_response()
-            }
-            Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
-        };
+    run_db(&pool, move |conn| {
+        let (current_version, cur_tags): (RecipeVersion, Vec<String>) =
+            match fetch_current_recipe_with_version_and_tags(conn, user_id, id) {
+                Ok((recipe, tags)) => (recipe.version, tags),
+                Err(diesel::NotFound) => return Err(ApiError::not_found("Recipe not found")),
+                Err(_) => return Err(ApiError::internal("Failed to fetch recipe")),
+            };
 
-    if current_version.id != request.expected_version_id {
-        return ApiError::conflict(
-            "Recipe was modified after you opened it; reload before saving again",
-        )
-        .into_response();
-    }
-
-    // Merge request with current version
-    let new_title = request
-        .title
-        .unwrap_or_else(|| current_version.title.clone());
-    let new_description = request
-        .description
-        .unwrap_or_else(|| current_version.description.clone());
-    let new_ingredients = match request.ingredients {
-        Some(ingredients) => match serde_json::to_value(&ingredients) {
-            Ok(v) => v,
-            Err(_) => {
-                return ApiError::invalid_request("Invalid ingredients format").into_response()
-            }
-        },
-        None => current_version.ingredients.clone(),
-    };
-    let new_instructions = request
-        .instructions
-        .unwrap_or_else(|| current_version.instructions.clone());
-    let new_source_url = request
-        .source_url
-        .unwrap_or_else(|| current_version.source_url.clone());
-    let new_source_name = request
-        .source_name
-        .unwrap_or_else(|| current_version.source_name.clone());
-    let new_photo_ids: Vec<Option<Uuid>> = request
-        .photo_ids
-        .map(|ids| ids.into_iter().map(Some).collect())
-        .unwrap_or_else(|| current_version.photo_ids.clone());
-    let new_tags: Vec<String> = match request.tags {
-        Some(tags) => {
-            // Normalize and validate before any DB work so the trimmed
-            // form is what lands in user_tags.
-            let tags: Vec<String> = tags.into_iter().map(|t| t.trim().to_string()).collect();
-            for tag_name in &tags {
-                if let Err(err) = ramekin_core::validate_tag_name(tag_name) {
-                    return ApiError::invalid_request(err.message().to_string()).into_response();
-                }
-            }
-            tags
+        if current_version.id != request.expected_version_id {
+            return Err(ApiError::conflict(
+                "Recipe was modified after you opened it; reload before saving again",
+            ));
         }
-        None => cur_tags,
-    };
-    let new_servings = request
-        .servings
-        .unwrap_or_else(|| current_version.servings.clone());
-    let new_prep_time = request
-        .prep_time
-        .unwrap_or_else(|| current_version.prep_time.clone());
-    let new_cook_time = request
-        .cook_time
-        .unwrap_or_else(|| current_version.cook_time.clone());
-    let new_total_time = request
-        .total_time
-        .unwrap_or_else(|| current_version.total_time.clone());
-    let new_rating = request.rating.unwrap_or(current_version.rating);
-    let new_difficulty = request
-        .difficulty
-        .unwrap_or_else(|| current_version.difficulty.clone());
-    let new_nutritional_info = request
-        .nutritional_info
-        .unwrap_or_else(|| current_version.nutritional_info.clone());
-    let new_notes = request
-        .notes
-        .unwrap_or_else(|| current_version.notes.clone());
 
-    // Create new version in a transaction
-    let result: Result<(), VersionWriteError> = conn.transaction(|conn| {
-        let new_version = NewRecipeVersion {
-            title: &new_title,
-            description: new_description.as_deref(),
-            ingredients: new_ingredients,
-            instructions: &new_instructions,
-            source_url: new_source_url.as_deref(),
-            source_name: new_source_name.as_deref(),
-            photo_ids: &new_photo_ids,
-            servings: new_servings.as_deref(),
-            prep_time: new_prep_time.as_deref(),
-            cook_time: new_cook_time.as_deref(),
-            total_time: new_total_time.as_deref(),
-            rating: new_rating,
-            difficulty: new_difficulty.as_deref(),
-            nutritional_info: new_nutritional_info.as_deref(),
-            notes: new_notes.as_deref(),
-            ..NewRecipeVersion::copy_of(&current_version, "user")
-        };
-
-        create_new_version_cas(
-            conn,
-            &new_version,
-            Some(request.expected_version_id),
-            TagSource::Names {
-                user_id: user.id,
-                names: &new_tags,
+        // Merge request with current version
+        let new_title = request
+            .title
+            .unwrap_or_else(|| current_version.title.clone());
+        let new_description = request
+            .description
+            .unwrap_or_else(|| current_version.description.clone());
+        let new_ingredients = match request.ingredients {
+            Some(ingredients) => match serde_json::to_value(&ingredients) {
+                Ok(v) => v,
+                Err(_) => return Err(ApiError::invalid_request("Invalid ingredients format")),
             },
-        )?;
+            None => current_version.ingredients.clone(),
+        };
+        let new_instructions = request
+            .instructions
+            .unwrap_or_else(|| current_version.instructions.clone());
+        let new_source_url = request
+            .source_url
+            .unwrap_or_else(|| current_version.source_url.clone());
+        let new_source_name = request
+            .source_name
+            .unwrap_or_else(|| current_version.source_name.clone());
+        let new_photo_ids: Vec<Option<Uuid>> = request
+            .photo_ids
+            .map(|ids| ids.into_iter().map(Some).collect())
+            .unwrap_or_else(|| current_version.photo_ids.clone());
+        let new_tags: Vec<String> = match request.tags {
+            Some(tags) => {
+                // Normalize and validate before any DB work so the trimmed
+                // form is what lands in user_tags.
+                let tags: Vec<String> = tags.into_iter().map(|t| t.trim().to_string()).collect();
+                for tag_name in &tags {
+                    if let Err(err) = ramekin_core::validate_tag_name(tag_name) {
+                        return Err(ApiError::invalid_request(err.message().to_string()));
+                    }
+                }
+                tags
+            }
+            None => cur_tags,
+        };
+        let new_servings = request
+            .servings
+            .unwrap_or_else(|| current_version.servings.clone());
+        let new_prep_time = request
+            .prep_time
+            .unwrap_or_else(|| current_version.prep_time.clone());
+        let new_cook_time = request
+            .cook_time
+            .unwrap_or_else(|| current_version.cook_time.clone());
+        let new_total_time = request
+            .total_time
+            .unwrap_or_else(|| current_version.total_time.clone());
+        let new_rating = request.rating.unwrap_or(current_version.rating);
+        let new_difficulty = request
+            .difficulty
+            .unwrap_or_else(|| current_version.difficulty.clone());
+        let new_nutritional_info = request
+            .nutritional_info
+            .unwrap_or_else(|| current_version.nutritional_info.clone());
+        let new_notes = request
+            .notes
+            .unwrap_or_else(|| current_version.notes.clone());
 
-        Ok(())
-    });
+        // Create new version in a transaction
+        let result: Result<(), VersionWriteError> = conn.transaction(|conn| {
+            let new_version = NewRecipeVersion {
+                title: &new_title,
+                description: new_description.as_deref(),
+                ingredients: new_ingredients,
+                instructions: &new_instructions,
+                source_url: new_source_url.as_deref(),
+                source_name: new_source_name.as_deref(),
+                photo_ids: &new_photo_ids,
+                servings: new_servings.as_deref(),
+                prep_time: new_prep_time.as_deref(),
+                cook_time: new_cook_time.as_deref(),
+                total_time: new_total_time.as_deref(),
+                rating: new_rating,
+                difficulty: new_difficulty.as_deref(),
+                nutritional_info: new_nutritional_info.as_deref(),
+                notes: new_notes.as_deref(),
+                ..NewRecipeVersion::copy_of(&current_version, "user")
+            };
 
-    match result {
-        Ok(()) => StatusCode::OK.into_response(),
-        Err(VersionWriteError::Stale) => ApiError::conflict(
-            "Recipe was modified after you opened it; reload before saving again",
-        )
-        .into_response(),
-        Err(VersionWriteError::Db(e)) => {
-            tracing::error!("Failed to update recipe: {}", e);
-            ApiError::internal("Failed to update recipe").into_response()
+            create_new_version_cas(
+                conn,
+                &new_version,
+                Some(request.expected_version_id),
+                TagSource::Names {
+                    user_id,
+                    names: &new_tags,
+                },
+            )?;
+
+            Ok(())
+        });
+
+        match result {
+            Ok(()) => Ok(()),
+            Err(VersionWriteError::Stale) => Err(ApiError::conflict(
+                "Recipe was modified after you opened it; reload before saving again",
+            )),
+            Err(VersionWriteError::Db(e)) => {
+                tracing::error!("Failed to update recipe: {}", e);
+                Err(ApiError::internal("Failed to update recipe"))
+            }
         }
-    }
+    })
+    .await?;
+
+    Ok(StatusCode::OK)
 }

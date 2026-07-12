@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::Utc;
@@ -28,35 +27,33 @@ pub struct ClearCheckedResponse {
 pub async fn clear_checked(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
-
-    let now = Utc::now();
-    let deleted = match diesel::update(
-        shopping_list_items::table
-            .filter(shopping_list_items::user_id.eq(user.id))
-            .filter(shopping_list_items::is_checked.eq(true))
-            .filter(shopping_list_items::deleted_at.is_null()),
-    )
-    .set((
-        shopping_list_items::deleted_at.eq(now),
-        shopping_list_items::updated_at.eq(now),
-        shopping_list_items::version.eq(shopping_list_items::version + 1),
-    ))
-    .execute(&mut conn)
-    {
-        Ok(count) => count,
-        Err(e) => {
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
+    let deleted = run_db(&pool, move |conn| {
+        let now = Utc::now();
+        diesel::update(
+            shopping_list_items::table
+                .filter(shopping_list_items::user_id.eq(user_id))
+                .filter(shopping_list_items::is_checked.eq(true))
+                .filter(shopping_list_items::deleted_at.is_null()),
+        )
+        .set((
+            shopping_list_items::deleted_at.eq(now),
+            shopping_list_items::updated_at.eq(now),
+            shopping_list_items::version.eq(shopping_list_items::version + 1),
+        ))
+        .execute(conn)
+        .map_err(|e| {
             tracing::error!("Failed to clear checked items: {}", e);
-            return ApiError::internal("Failed to clear checked items").into_response();
-        }
-    };
+            ApiError::internal("Failed to clear checked items")
+        })
+    })
+    .await?;
 
-    (
+    Ok((
         StatusCode::OK,
         Json(ClearCheckedResponse {
             deleted_count: deleted,
         }),
-    )
-        .into_response()
+    ))
 }

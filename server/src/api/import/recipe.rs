@@ -133,16 +133,20 @@ pub async fn import_recipe(
 ) -> impl IntoResponse {
     let raw_recipe: RawRecipe = request.raw_recipe.into();
     let extraction_method: ExtractionMethod = request.extraction_method.into();
+    let source_url = raw_recipe.source_url.clone();
+    let title = raw_recipe.title.clone();
 
     // Create import job with pre-populated step outputs
     let job = match scraping::create_import_job(
         &pool,
         user.id,
-        raw_recipe.source_url.as_deref(),
-        &raw_recipe,
+        source_url.as_deref(),
+        raw_recipe,
         extraction_method,
         request.photo_ids,
-    ) {
+    )
+    .await
+    {
         Ok(j) => j,
         Err(e) => {
             tracing::error!("Failed to create import job: {}", e);
@@ -151,11 +155,7 @@ pub async fn import_recipe(
         }
     };
 
-    tracing::info!(
-        "Created import job {} for recipe '{}'",
-        job.id,
-        raw_recipe.title
-    );
+    tracing::info!("Created import job {} for recipe '{}'", job.id, title);
 
     // Spawn background task to run the pipeline
     scraping::spawn_import_job(pool.clone(), job.id);

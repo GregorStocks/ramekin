@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::{create_session_with_token, verify_password, DEV_TEST_TOKEN};
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::models::User;
 use crate::raw_sql;
 use crate::schema::users;
@@ -35,33 +34,29 @@ pub struct LoginResponse {
 pub async fn login(
     State(pool): State<Arc<DbPool>>,
     Json(req): Json<LoginRequest>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let token = run_db(&pool, move |conn| {
+        let user: User = users::table
+            .filter(raw_sql::lower(users::username).eq(req.username.to_lowercase()))
+            .filter(users::deleted_at.is_null())
+            .select(User::as_select())
+            .first(conn)
+            .map_err(|_| ApiError::unauthorized("Invalid credentials"))?;
 
-    let user: User = match users::table
-        .filter(raw_sql::lower(users::username).eq(req.username.to_lowercase()))
-        .filter(users::deleted_at.is_null())
-        .select(User::as_select())
-        .first(&mut conn)
-    {
-        Ok(u) => u,
-        Err(_) => return ApiError::unauthorized("Invalid credentials").into_response(),
-    };
+        if !verify_password(&req.password, &user.password_hash) {
+            return Err(ApiError::unauthorized("Invalid credentials"));
+        }
 
-    if !verify_password(&req.password, &user.password_hash) {
-        return ApiError::unauthorized("Invalid credentials").into_response();
-    }
+        // For test user "t", use the fixed dev token so it's predictable
+        let fixed_token = if user.username.to_lowercase() == "t" {
+            Some(DEV_TEST_TOKEN)
+        } else {
+            None
+        };
+        create_session_with_token(conn, user.id, fixed_token)
+            .map_err(|_| ApiError::internal("Failed to create session"))
+    })
+    .await?;
 
-    // For test user "t", use the fixed dev token so it's predictable
-    let fixed_token = if user.username.to_lowercase() == "t" {
-        Some(DEV_TEST_TOKEN)
-    } else {
-        None
-    };
-    let token = match create_session_with_token(&mut conn, user.id, fixed_token) {
-        Ok(t) => t,
-        Err(_) => return ApiError::internal("Failed to create session").into_response(),
-    };
-
-    (StatusCode::OK, Json(LoginResponse { token })).into_response()
+    Ok((StatusCode::OK, Json(LoginResponse { token })))
 }

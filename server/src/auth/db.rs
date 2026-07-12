@@ -81,29 +81,34 @@ pub fn create_bookmarklet_token(
 /// Returns `None` for unknown, expired, or soft-deleted-user tokens. The
 /// `token_type` lets callers (`require_auth`) apply per-type scope rules.
 pub async fn get_user_from_token(pool: &DbPool, token: &str) -> Option<(User, String)> {
-    let mut conn = pool.get().ok()?;
     let token_hash = hash_token(token);
-    let now = Utc::now();
 
-    let (user, token_type) = sessions::table
-        .inner_join(users::table)
-        .filter(sessions::token_hash.eq(&token_hash))
-        .filter(sessions::expires_at.gt(now))
-        .filter(users::deleted_at.is_null())
-        .select((User::as_select(), sessions::token_type))
-        .first::<(User, String)>(&mut conn)
-        .ok()?;
+    crate::db::run_blocking(pool, move |conn| {
+        let now = Utc::now();
 
-    // Sliding expiry: bump the session's expires_at when it's aged at least a
-    // day past its last touch. The filter caps writes at one per session per
-    // day while keeping active sessions from hitting the 30-day wall.
-    // Bookmarklet tokens sit far in the future, so this never shortens them.
-    let new_expiry = now + Duration::days(30);
-    let _ = diesel::update(sessions::table)
-        .filter(sessions::token_hash.eq(&token_hash))
-        .filter(sessions::expires_at.lt(new_expiry - Duration::days(1)))
-        .set(sessions::expires_at.eq(new_expiry))
-        .execute(&mut conn);
+        let (user, token_type) = sessions::table
+            .inner_join(users::table)
+            .filter(sessions::token_hash.eq(&token_hash))
+            .filter(sessions::expires_at.gt(now))
+            .filter(users::deleted_at.is_null())
+            .select((User::as_select(), sessions::token_type))
+            .first::<(User, String)>(conn)
+            .ok()?;
 
-    Some((user, token_type))
+        // Sliding expiry: bump the session's expires_at when it's aged at least a
+        // day past its last touch. The filter caps writes at one per session per
+        // day while keeping active sessions from hitting the 30-day wall.
+        // Bookmarklet tokens sit far in the future, so this never shortens them.
+        let new_expiry = now + Duration::days(30);
+        let _ = diesel::update(sessions::table)
+            .filter(sessions::token_hash.eq(&token_hash))
+            .filter(sessions::expires_at.lt(new_expiry - Duration::days(1)))
+            .set(sessions::expires_at.eq(new_expiry))
+            .execute(conn);
+
+        Some((user, token_type))
+    })
+    .await
+    .ok()
+    .flatten()
 }

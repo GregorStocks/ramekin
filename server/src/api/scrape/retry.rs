@@ -44,7 +44,7 @@ pub async fn retry_scrape(
     Path(job_id): Path<Uuid>,
 ) -> impl IntoResponse {
     // Get job to check ownership
-    let job = match scraping::get_job(&pool, job_id) {
+    let job = match scraping::get_job(&pool, job_id).await {
         Ok(j) => j,
         Err(scraping::ScrapeError::JobNotFound) => {
             return ApiError::not_found("Scrape job not found").into_response();
@@ -69,7 +69,7 @@ pub async fn retry_scrape(
     };
 
     // Retry job
-    let new_status = match scraping::retry_job(&pool, job_id) {
+    let new_status = match scraping::retry_job(&pool, job_id).await {
         Ok(s) => s,
         Err(scraping::ScrapeError::InvalidState(msg)) => {
             return ApiError::invalid_request(msg).into_response();

@@ -1,7 +1,7 @@
 use crate::api::ai::ai_client_from_env;
 use crate::api::ApiError;
 use crate::auth::AuthUser;
-use crate::db::DbPool;
+use crate::db::{run_blocking, DbPool};
 use crate::models::Ingredient;
 use crate::photos::{load_photo_images, PhotoImageLoadError};
 use crate::schema::user_tags;
@@ -90,20 +90,16 @@ pub async fn enrich_recipe(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<RecipeContent>,
-) -> impl IntoResponse {
-    let tags = match try_enrich_tags(&user.id, &pool, &request).await {
-        Ok(tags) => tags,
-        Err(e) => return e.into_api_error().into_response(),
-    };
+) -> Result<impl IntoResponse, ApiError> {
+    let tags = try_enrich_tags(&user.id, &pool, &request)
+        .await
+        .map_err(|e| e.into_api_error())?;
 
     // Enrich ingredient measurements (no AI needed - uses density database)
-    let ingredients = match enrich_ingredients(request.ingredients) {
-        Ok(v) => v,
-        Err(e) => {
-            tracing::error!("Failed to enrich ingredients: {}", e);
-            return ApiError::internal("Failed to enrich ingredients").into_response();
-        }
-    };
+    let ingredients = enrich_ingredients(request.ingredients).map_err(|e| {
+        tracing::error!("Failed to enrich ingredients: {}", e);
+        ApiError::internal("Failed to enrich ingredients")
+    })?;
 
     // Return enriched recipe
     let enriched = RecipeContent {
@@ -111,7 +107,7 @@ pub async fn enrich_recipe(
         ingredients,
         ..request
     };
-    (StatusCode::OK, Json(enriched)).into_response()
+    Ok((StatusCode::OK, Json(enriched)))
 }
 
 /// Try to enrich tags using AI.
@@ -120,16 +116,18 @@ async fn try_enrich_tags(
     pool: &Arc<DbPool>,
     request: &RecipeContent,
 ) -> Result<Vec<String>, TagEnrichmentError> {
-    let mut conn = pool
-        .get()
-        .map_err(|e| TagEnrichmentError::Database(e.to_string()))?;
-    let user_tags: Vec<String> = user_tags::table
-        .filter(user_tags::user_id.eq(user_id))
-        .filter(user_tags::deleted_at.is_null())
-        .select(user_tags::name)
-        .order(user_tags::name.asc())
-        .load(&mut conn)
-        .map_err(|e| TagEnrichmentError::Database(format!("failed to fetch user tags: {}", e)))?;
+    let user_id = *user_id;
+    let user_tags: Vec<String> = run_blocking(pool, move |conn| {
+        user_tags::table
+            .filter(user_tags::user_id.eq(user_id))
+            .filter(user_tags::deleted_at.is_null())
+            .select(user_tags::name)
+            .order(user_tags::name.asc())
+            .load(conn)
+            .map_err(|e| TagEnrichmentError::Database(format!("failed to fetch user tags: {}", e)))
+    })
+    .await
+    .map_err(|e| TagEnrichmentError::Database(e.to_string()))??;
 
     if user_tags.is_empty() {
         return Ok(request.tags.clone());
@@ -228,7 +226,7 @@ pub async fn custom_enrich_recipe(
         }
     };
 
-    let images = match load_photo_images(&pool, user.id, &request.photo_ids) {
+    let images = match load_photo_images(&pool, user.id, &request.photo_ids).await {
         Ok(images) => images,
         Err(PhotoImageLoadError::NotFound) => {
             return ApiError::invalid_request(

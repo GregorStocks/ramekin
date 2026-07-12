@@ -1,8 +1,7 @@
 use super::list::MealType;
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::models::NewMealPlan;
 use crate::schema::{meal_plans, recipes};
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
@@ -44,50 +43,51 @@ pub async fn create_meal_plan(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<CreateMealPlanRequest>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
 
-    // Verify recipe exists and belongs to user
-    let recipe_exists: bool = match recipes::table
-        .filter(recipes::id.eq(request.recipe_id))
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .select(recipes::id)
-        .first::<Uuid>(&mut conn)
-        .optional()
-    {
-        Ok(record) => record.is_some(),
-        Err(e) => {
-            tracing::error!("Failed to verify recipe ownership: {}", e);
-            return ApiError::internal("Failed to verify recipe").into_response();
+    let id = run_db(&pool, move |conn| {
+        // Verify recipe exists and belongs to user
+        let recipe_exists: bool = recipes::table
+            .filter(recipes::id.eq(request.recipe_id))
+            .filter(recipes::user_id.eq(user_id))
+            .filter(recipes::deleted_at.is_null())
+            .select(recipes::id)
+            .first::<Uuid>(conn)
+            .optional()
+            .map_err(|e| {
+                tracing::error!("Failed to verify recipe ownership: {}", e);
+                ApiError::internal("Failed to verify recipe")
+            })?
+            .is_some();
+
+        if !recipe_exists {
+            return Err(ApiError::invalid_request("Recipe not found"));
         }
-    };
 
-    if !recipe_exists {
-        return ApiError::invalid_request("Recipe not found").into_response();
-    }
+        // Insert the meal plan
+        let notes_ref = request.notes.as_deref();
+        diesel::insert_into(meal_plans::table)
+            .values(NewMealPlan {
+                user_id,
+                recipe_id: request.recipe_id,
+                meal_date: request.meal_date,
+                meal_type: request.meal_type.as_str(),
+                notes: notes_ref,
+            })
+            .returning(meal_plans::id)
+            .get_result(conn)
+            .map_err(|e| match e {
+                DieselError::DatabaseError(DatabaseErrorKind::UniqueViolation, _) => {
+                    ApiError::conflict("This recipe is already planned for this meal")
+                }
+                e => {
+                    tracing::error!("Failed to create meal plan: {}", e);
+                    ApiError::internal("Failed to create meal plan")
+                }
+            })
+    })
+    .await?;
 
-    // Insert the meal plan
-    let notes_ref = request.notes.as_deref();
-    let result: Result<Uuid, DieselError> = diesel::insert_into(meal_plans::table)
-        .values(NewMealPlan {
-            user_id: user.id,
-            recipe_id: request.recipe_id,
-            meal_date: request.meal_date,
-            meal_type: request.meal_type.as_str(),
-            notes: notes_ref,
-        })
-        .returning(meal_plans::id)
-        .get_result(&mut conn);
-
-    match result {
-        Ok(id) => (StatusCode::CREATED, Json(CreateMealPlanResponse { id })).into_response(),
-        Err(DieselError::DatabaseError(DatabaseErrorKind::UniqueViolation, _)) => {
-            ApiError::conflict("This recipe is already planned for this meal").into_response()
-        }
-        Err(e) => {
-            tracing::error!("Failed to create meal plan: {}", e);
-            ApiError::internal("Failed to create meal plan").into_response()
-        }
-    }
+    Ok((StatusCode::CREATED, Json(CreateMealPlanResponse { id })))
 }

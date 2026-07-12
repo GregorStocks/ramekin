@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::models::NewRecipeVersion;
 use crate::recipes::{create_new_version_cas, insert_recipe, TagSource, VersionWriteError};
 use crate::types::RecipeContent;
@@ -42,20 +41,18 @@ pub async fn create_recipe(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<CreateRecipeRequest>,
-) -> impl IntoResponse {
+) -> Result<impl IntoResponse, ApiError> {
     if request.content.title.trim().is_empty() {
-        return ApiError::invalid_request("Title cannot be empty").into_response();
+        return Err(ApiError::invalid_request("Title cannot be empty"));
     }
 
     if request.content.instructions.trim().is_empty() {
-        return ApiError::invalid_request("Instructions cannot be empty").into_response();
+        return Err(ApiError::invalid_request("Instructions cannot be empty"));
     }
-
-    let mut conn = get_conn!(pool);
 
     let ingredients_json = match serde_json::to_value(&request.content.ingredients) {
         Ok(v) => v,
-        Err(_) => return ApiError::invalid_request("Invalid ingredients format").into_response(),
+        Err(_) => return Err(ApiError::invalid_request("Invalid ingredients format")),
     };
 
     let photo_ids: Vec<Option<Uuid>> = request
@@ -76,56 +73,59 @@ pub async fn create_recipe(
         .collect();
     for tag_name in &tags {
         if let Err(err) = ramekin_core::validate_tag_name(tag_name) {
-            return ApiError::invalid_request(err.message().to_string()).into_response();
+            return Err(ApiError::invalid_request(err.message().to_string()));
         }
     }
 
-    // Use a transaction to create recipe + version atomically
-    let result: Result<Uuid, VersionWriteError> = conn.transaction(|conn| {
-        let recipe_id = insert_recipe(conn, user.id)?;
+    let user_id = user.id;
 
-        let new_version = NewRecipeVersion {
-            recipe_id,
-            title: &request.content.title,
-            description: request.content.description.as_deref(),
-            ingredients: ingredients_json,
-            instructions: &request.content.instructions,
-            source_url: request.content.source_url.as_deref(),
-            source_name: request.content.source_name.as_deref(),
-            photo_ids: &photo_ids,
-            servings: request.content.servings.as_deref(),
-            prep_time: request.content.prep_time.as_deref(),
-            cook_time: request.content.cook_time.as_deref(),
-            total_time: request.content.total_time.as_deref(),
-            rating: request.content.rating,
-            difficulty: request.content.difficulty.as_deref(),
-            nutritional_info: request.content.nutritional_info.as_deref(),
-            notes: request.content.notes.as_deref(),
-            version_source: "user",
-        };
+    let recipe_id = run_db(&pool, move |conn| {
+        // Use a transaction to create recipe + version atomically
+        let result: Result<Uuid, VersionWriteError> = conn.transaction(|conn| {
+            let recipe_id = insert_recipe(conn, user_id)?;
 
-        create_new_version_cas(
-            conn,
-            &new_version,
-            None,
-            TagSource::Names {
-                user_id: user.id,
-                names: &tags,
-            },
-        )?;
+            let new_version = NewRecipeVersion {
+                recipe_id,
+                title: &request.content.title,
+                description: request.content.description.as_deref(),
+                ingredients: ingredients_json,
+                instructions: &request.content.instructions,
+                source_url: request.content.source_url.as_deref(),
+                source_name: request.content.source_name.as_deref(),
+                photo_ids: &photo_ids,
+                servings: request.content.servings.as_deref(),
+                prep_time: request.content.prep_time.as_deref(),
+                cook_time: request.content.cook_time.as_deref(),
+                total_time: request.content.total_time.as_deref(),
+                rating: request.content.rating,
+                difficulty: request.content.difficulty.as_deref(),
+                nutritional_info: request.content.nutritional_info.as_deref(),
+                notes: request.content.notes.as_deref(),
+                version_source: "user",
+            };
 
-        Ok(recipe_id)
-    });
+            create_new_version_cas(
+                conn,
+                &new_version,
+                None,
+                TagSource::Names {
+                    user_id,
+                    names: &tags,
+                },
+            )?;
 
-    match result {
-        Ok(recipe_id) => (
-            StatusCode::CREATED,
-            Json(CreateRecipeResponse { id: recipe_id }),
-        )
-            .into_response(),
-        Err(e) => {
+            Ok(recipe_id)
+        });
+
+        result.map_err(|e| {
             tracing::error!("Failed to create recipe: {}", e);
-            ApiError::internal("Failed to create recipe").into_response()
-        }
-    }
+            ApiError::internal("Failed to create recipe")
+        })
+    })
+    .await?;
+
+    Ok((
+        StatusCode::CREATED,
+        Json(CreateRecipeResponse { id: recipe_id }),
+    ))
 }

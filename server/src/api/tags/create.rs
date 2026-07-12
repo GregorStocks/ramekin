@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::models::NewUserTag;
 use crate::raw_sql;
 use crate::schema::user_tags;
@@ -43,77 +42,64 @@ pub async fn create_tag(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<CreateTagRequest>,
-) -> impl IntoResponse {
-    let name = request.name.trim();
+) -> Result<impl IntoResponse, ApiError> {
+    let name = request.name.trim().to_string();
 
-    if let Err(err) = ramekin_core::validate_tag_name(name) {
-        return ApiError::invalid_request(err.message().to_string()).into_response();
+    if let Err(err) = ramekin_core::validate_tag_name(&name) {
+        return Err(ApiError::invalid_request(err.message().to_string()));
     }
 
-    let mut conn = get_conn!(pool);
+    let user_id = user.id;
 
-    // Check if tag already exists (including soft-deleted)
-    let existing: Option<(Uuid, String, Option<DateTime<Utc>>)> = match user_tags::table
-        .filter(user_tags::user_id.eq(user.id))
-        .filter(user_tags::name.eq(name))
-        .select((user_tags::id, user_tags::name, user_tags::deleted_at))
-        .first(&mut conn)
-        .optional()
-    {
-        Ok(tag) => tag,
-        Err(e) => {
-            tracing::error!("Failed to look up existing tag: {}", e);
-            return ApiError::internal("Failed to look up existing tag").into_response();
-        }
-    };
+    let (id, name) = run_db(&pool, move |conn| {
+        // Check if tag already exists (including soft-deleted)
+        let existing: Option<(Uuid, String, Option<DateTime<Utc>>)> = user_tags::table
+            .filter(user_tags::user_id.eq(user_id))
+            .filter(user_tags::name.eq(name.as_str()))
+            .select((user_tags::id, user_tags::name, user_tags::deleted_at))
+            .first(conn)
+            .optional()
+            .map_err(|e| {
+                tracing::error!("Failed to look up existing tag: {}", e);
+                ApiError::internal("Failed to look up existing tag")
+            })?;
 
-    if let Some((id, existing_name, deleted_at)) = existing {
-        if deleted_at.is_some() {
-            // Revive the soft-deleted tag
-            let now = Utc::now();
-            let result = diesel::update(user_tags::table.filter(user_tags::id.eq(id)))
-                .set((
-                    user_tags::deleted_at.eq(None::<DateTime<Utc>>),
-                    user_tags::updated_at.eq(now),
-                    user_tags::change_xid.eq(raw_sql::current_change_xid()),
-                ))
-                .execute(&mut conn);
+        if let Some((id, existing_name, deleted_at)) = existing {
+            if deleted_at.is_some() {
+                // Revive the soft-deleted tag
+                let now = Utc::now();
+                diesel::update(user_tags::table.filter(user_tags::id.eq(id)))
+                    .set((
+                        user_tags::deleted_at.eq(None::<DateTime<Utc>>),
+                        user_tags::updated_at.eq(now),
+                        user_tags::change_xid.eq(raw_sql::current_change_xid()),
+                    ))
+                    .execute(conn)
+                    .map_err(|e| {
+                        tracing::error!("Failed to revive tag: {}", e);
+                        ApiError::internal("Failed to create tag")
+                    })?;
 
-            return match result {
-                Ok(_) => (
-                    StatusCode::CREATED,
-                    Json(CreateTagResponse {
-                        id,
-                        name: existing_name,
-                    }),
-                )
-                    .into_response(),
-                Err(e) => {
-                    tracing::error!("Failed to revive tag: {}", e);
-                    ApiError::internal("Failed to create tag").into_response()
-                }
-            };
+                return Ok((id, existing_name));
+            }
+
+            return Err(ApiError::conflict("Tag already exists"));
         }
 
-        return ApiError::conflict("Tag already exists").into_response();
-    }
+        // Insert the new tag
+        diesel::insert_into(user_tags::table)
+            .values(NewUserTag {
+                user_id,
+                name: name.as_str(),
+            })
+            .returning((user_tags::id, user_tags::name))
+            .get_result(conn)
+            .map_err(|e| {
+                tracing::error!("Failed to create tag: {}", e);
+                ApiError::internal("Failed to create tag")
+            })
+    })
+    .await?;
 
-    // Insert the new tag
-    let result: Result<(Uuid, String), _> = diesel::insert_into(user_tags::table)
-        .values(NewUserTag {
-            user_id: user.id,
-            name,
-        })
-        .returning((user_tags::id, user_tags::name))
-        .get_result(&mut conn);
-
-    match result {
-        Ok((id, name)) => {
-            (StatusCode::CREATED, Json(CreateTagResponse { id, name })).into_response()
-        }
-        Err(e) => {
-            tracing::error!("Failed to create tag: {}", e);
-            ApiError::internal("Failed to create tag").into_response()
-        }
-    }
+    Ok((StatusCode::CREATED, Json(CreateTagResponse { id, name })))
 }

@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::schema::shopping_list_items;
 use axum::{
     extract::{Path, State},
@@ -61,97 +60,100 @@ pub async fn update_item(
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
     Json(request): Json<UpdateShoppingListItemRequest>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
-
-    // Fetch the existing item
-    let existing: Option<ItemRow> = match shopping_list_items::table
-        .filter(shopping_list_items::id.eq(id))
-        .filter(shopping_list_items::user_id.eq(user.id))
-        .filter(shopping_list_items::deleted_at.is_null())
-        .select((
-            shopping_list_items::item,
-            shopping_list_items::amount,
-            shopping_list_items::note,
-            shopping_list_items::is_checked,
-            shopping_list_items::sort_order,
-            shopping_list_items::category_override,
-            shopping_list_items::version,
-        ))
-        .first(&mut conn)
-        .optional()
-    {
-        Ok(record) => record,
-        Err(e) => {
-            tracing::error!("Failed to fetch shopping list item: {}", e);
-            return ApiError::internal("Failed to fetch item").into_response();
-        }
-    };
-
-    let Some((
-        current_item,
-        current_amount,
-        current_note,
-        current_checked,
-        current_order,
-        current_category_override,
-        current_version,
-    )) = existing
-    else {
-        return ApiError::not_found("Item not found").into_response();
-    };
-
-    // Calculate new values
-    let new_item = request.item.unwrap_or(current_item);
-    let new_amount = request.amount.or(current_amount);
-    let new_note = request.note.or(current_note);
-    let new_checked = request.is_checked.unwrap_or(current_checked);
-    let new_order = request.sort_order.unwrap_or(current_order);
-    if request.clear_category_override == Some(true)
-        && matches!(request.category_override, Some(Some(_)))
-    {
-        return ApiError::invalid_request("Conflicting category override fields").into_response();
-    }
-    let new_category_override = if request.clear_category_override == Some(true) {
-        None
-    } else {
-        request
-            .category_override
-            .unwrap_or(current_category_override)
-    };
-
-    if new_category_override
-        .as_deref()
-        .is_some_and(|category| !super::list::is_valid_category(category))
-    {
-        return ApiError::invalid_request("Invalid category override").into_response();
-    }
-
-    // Update the item
-    let result = diesel::update(
-        shopping_list_items::table
+) -> Result<impl IntoResponse, ApiError> {
+    let user_id = user.id;
+    run_db(&pool, move |conn| {
+        // Fetch the existing item
+        let existing: Option<ItemRow> = shopping_list_items::table
             .filter(shopping_list_items::id.eq(id))
-            .filter(shopping_list_items::user_id.eq(user.id))
-            .filter(shopping_list_items::deleted_at.is_null()),
-    )
-    .set((
-        shopping_list_items::item.eq(&new_item),
-        shopping_list_items::amount.eq(&new_amount),
-        shopping_list_items::note.eq(&new_note),
-        shopping_list_items::is_checked.eq(new_checked),
-        shopping_list_items::sort_order.eq(new_order),
-        shopping_list_items::category_override.eq(&new_category_override),
-        shopping_list_items::version.eq(current_version + 1),
-        shopping_list_items::updated_at.eq(Utc::now()),
-    ))
-    .execute(&mut conn);
+            .filter(shopping_list_items::user_id.eq(user_id))
+            .filter(shopping_list_items::deleted_at.is_null())
+            .select((
+                shopping_list_items::item,
+                shopping_list_items::amount,
+                shopping_list_items::note,
+                shopping_list_items::is_checked,
+                shopping_list_items::sort_order,
+                shopping_list_items::category_override,
+                shopping_list_items::version,
+            ))
+            .first(conn)
+            .optional()
+            .map_err(|e| {
+                tracing::error!("Failed to fetch shopping list item: {}", e);
+                ApiError::internal("Failed to fetch item")
+            })?;
 
-    match result {
-        Ok(0) => ApiError::not_found("Item not found").into_response(),
-        Ok(_) => StatusCode::OK.into_response(),
-        Err(e) => {
-            tracing::error!("Failed to update shopping list item: {}", e);
-            ApiError::internal("Failed to update item").into_response()
+        let Some((
+            current_item,
+            current_amount,
+            current_note,
+            current_checked,
+            current_order,
+            current_category_override,
+            current_version,
+        )) = existing
+        else {
+            return Err(ApiError::not_found("Item not found"));
+        };
+
+        // Calculate new values
+        let new_item = request.item.unwrap_or(current_item);
+        let new_amount = request.amount.or(current_amount);
+        let new_note = request.note.or(current_note);
+        let new_checked = request.is_checked.unwrap_or(current_checked);
+        let new_order = request.sort_order.unwrap_or(current_order);
+        if request.clear_category_override == Some(true)
+            && matches!(request.category_override, Some(Some(_)))
+        {
+            return Err(ApiError::invalid_request(
+                "Conflicting category override fields",
+            ));
         }
-    }
+        let new_category_override = if request.clear_category_override == Some(true) {
+            None
+        } else {
+            request
+                .category_override
+                .unwrap_or(current_category_override)
+        };
+
+        if new_category_override
+            .as_deref()
+            .is_some_and(|category| !super::list::is_valid_category(category))
+        {
+            return Err(ApiError::invalid_request("Invalid category override"));
+        }
+
+        // Update the item
+        let result = diesel::update(
+            shopping_list_items::table
+                .filter(shopping_list_items::id.eq(id))
+                .filter(shopping_list_items::user_id.eq(user_id))
+                .filter(shopping_list_items::deleted_at.is_null()),
+        )
+        .set((
+            shopping_list_items::item.eq(&new_item),
+            shopping_list_items::amount.eq(&new_amount),
+            shopping_list_items::note.eq(&new_note),
+            shopping_list_items::is_checked.eq(new_checked),
+            shopping_list_items::sort_order.eq(new_order),
+            shopping_list_items::category_override.eq(&new_category_override),
+            shopping_list_items::version.eq(current_version + 1),
+            shopping_list_items::updated_at.eq(Utc::now()),
+        ))
+        .execute(conn);
+
+        match result {
+            Ok(0) => Err(ApiError::not_found("Item not found")),
+            Ok(_) => Ok(()),
+            Err(e) => {
+                tracing::error!("Failed to update shopping list item: {}", e);
+                Err(ApiError::internal("Failed to update item"))
+            }
+        }
+    })
+    .await?;
+
+    Ok(StatusCode::OK)
 }

@@ -1,7 +1,6 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::get_conn;
 use crate::models::NewPhotoThumbnail;
 use crate::photos::processing::{generate_thumbnail, MAX_THUMBNAIL_SIZE, THUMBNAIL_SIZE};
 use crate::schema::{photo_thumbnails, photos};
@@ -9,7 +8,7 @@ use axum::{
     body::Body,
     extract::{Path, Query, State},
     http::{header, StatusCode},
-    response::{IntoResponse, Response},
+    response::Response,
 };
 use diesel::prelude::*;
 use serde::Deserialize;
@@ -55,8 +54,8 @@ pub async fn get_photo_thumbnail(
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
     Query(params): Query<ThumbnailParams>,
-) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
+) -> Result<Response, ApiError> {
+    let user_id = user.id;
 
     let size = params
         .size
@@ -65,85 +64,78 @@ pub async fn get_photo_thumbnail(
 
     // Fast path: size=200 uses the pre-generated photos.thumbnail column
     if size == THUMBNAIL_SIZE {
-        let thumbnail: Vec<u8> = match photos::table
-            .filter(photos::id.eq(id))
-            .filter(photos::user_id.eq(user.id))
-            .filter(photos::deleted_at.is_null())
-            .select(photos::thumbnail)
-            .first(&mut conn)
-        {
-            Ok(t) => t,
-            Err(diesel::result::Error::NotFound) => {
-                return ApiError::not_found("Photo not found").into_response()
-            }
-            Err(_) => return ApiError::internal("Failed to fetch photo").into_response(),
-        };
-
-        return jpeg_response(thumbnail).into_response();
-    }
-
-    // Verify photo exists and belongs to user (without loading the full blob)
-    let photo_exists: bool = match photos::table
-        .filter(photos::id.eq(id))
-        .filter(photos::user_id.eq(user.id))
-        .filter(photos::deleted_at.is_null())
-        .select(diesel::dsl::count_star().gt(0))
-        .first(&mut conn)
-    {
-        Ok(exists) => exists,
-        Err(_) => return ApiError::internal("Failed to fetch photo").into_response(),
-    };
-
-    if !photo_exists {
-        return ApiError::not_found("Photo not found").into_response();
-    }
-
-    // Check the thumbnail cache
-    let cached: Option<Vec<u8>> = match photo_thumbnails::table
-        .filter(photo_thumbnails::photo_id.eq(id))
-        .filter(photo_thumbnails::size.eq(size as i32))
-        .select(photo_thumbnails::data)
-        .first(&mut conn)
-        .optional()
-    {
-        Ok(value) => value,
-        Err(_) => return ApiError::internal("Failed to fetch thumbnail cache").into_response(),
-    };
-
-    if let Some(data) = cached {
-        return jpeg_response(data).into_response();
-    }
-
-    // Cache miss: load the full image and generate
-    let full_data: Vec<u8> = match photos::table
-        .filter(photos::id.eq(id))
-        .filter(photos::user_id.eq(user.id))
-        .filter(photos::deleted_at.is_null())
-        .select(photos::data)
-        .first(&mut conn)
-    {
-        Ok(d) => d,
-        Err(_) => return ApiError::internal("Failed to load photo data").into_response(),
-    };
-
-    let thumb_bytes = match generate_thumbnail(&full_data, size) {
-        Ok(bytes) => bytes,
-        Err(e) => {
-            tracing::error!("Failed to generate thumbnail: {}", e);
-            return ApiError::internal("Failed to generate thumbnail").into_response();
-        }
-    };
-
-    // Cache it (race-safe: ON CONFLICT DO NOTHING)
-    let _ = diesel::insert_into(photo_thumbnails::table)
-        .values(&NewPhotoThumbnail {
-            photo_id: id,
-            size: size as i32,
-            data: &thumb_bytes,
+        let thumbnail: Vec<u8> = run_db(&pool, move |conn| {
+            photos::table
+                .filter(photos::id.eq(id))
+                .filter(photos::user_id.eq(user_id))
+                .filter(photos::deleted_at.is_null())
+                .select(photos::thumbnail)
+                .first(conn)
+                .map_err(|e| match e {
+                    diesel::result::Error::NotFound => ApiError::not_found("Photo not found"),
+                    _ => ApiError::internal("Failed to fetch photo"),
+                })
         })
-        .on_conflict((photo_thumbnails::photo_id, photo_thumbnails::size))
-        .do_nothing()
-        .execute(&mut conn);
+        .await?;
 
-    jpeg_response(thumb_bytes).into_response()
+        return Ok(jpeg_response(thumbnail));
+    }
+
+    let thumb_bytes: Vec<u8> = run_db(&pool, move |conn| {
+        // Verify photo exists and belongs to user (without loading the full blob)
+        let photo_exists: bool = photos::table
+            .filter(photos::id.eq(id))
+            .filter(photos::user_id.eq(user_id))
+            .filter(photos::deleted_at.is_null())
+            .select(diesel::dsl::count_star().gt(0))
+            .first(conn)
+            .map_err(|_| ApiError::internal("Failed to fetch photo"))?;
+
+        if !photo_exists {
+            return Err(ApiError::not_found("Photo not found"));
+        }
+
+        // Check the thumbnail cache
+        let cached: Option<Vec<u8>> = photo_thumbnails::table
+            .filter(photo_thumbnails::photo_id.eq(id))
+            .filter(photo_thumbnails::size.eq(size as i32))
+            .select(photo_thumbnails::data)
+            .first(conn)
+            .optional()
+            .map_err(|_| ApiError::internal("Failed to fetch thumbnail cache"))?;
+
+        if let Some(data) = cached {
+            return Ok(data);
+        }
+
+        // Cache miss: load the full image and generate
+        let full_data: Vec<u8> = photos::table
+            .filter(photos::id.eq(id))
+            .filter(photos::user_id.eq(user_id))
+            .filter(photos::deleted_at.is_null())
+            .select(photos::data)
+            .first(conn)
+            .map_err(|_| ApiError::internal("Failed to load photo data"))?;
+
+        let thumb_bytes = generate_thumbnail(&full_data, size).map_err(|e| {
+            tracing::error!("Failed to generate thumbnail: {}", e);
+            ApiError::internal("Failed to generate thumbnail")
+        })?;
+
+        // Cache it (race-safe: ON CONFLICT DO NOTHING)
+        let _ = diesel::insert_into(photo_thumbnails::table)
+            .values(&NewPhotoThumbnail {
+                photo_id: id,
+                size: size as i32,
+                data: &thumb_bytes,
+            })
+            .on_conflict((photo_thumbnails::photo_id, photo_thumbnails::size))
+            .do_nothing()
+            .execute(conn);
+
+        Ok(thumb_bytes)
+    })
+    .await?;
+
+    Ok(jpeg_response(thumb_bytes))
 }

@@ -3,6 +3,7 @@ import re
 import time
 import uuid
 
+import psycopg
 import pytest
 
 from query_thresholds import get_thresholds
@@ -57,6 +58,25 @@ def server_url():
     if not api_base_url:
         raise ValueError("API_BASE_URL environment variable required")
     return api_base_url
+
+
+@pytest.fixture
+def database_url():
+    url = os.environ.get("DATABASE_URL")
+    if not url:
+        raise ValueError("DATABASE_URL environment variable required")
+    return url
+
+
+@pytest.fixture
+def uncommitted(database_url):
+    """A transaction left open, so its writes and row locks stay pending.
+
+    Rolled back at teardown; commit explicitly in the test to release it.
+    """
+    with psycopg.connect(database_url) as conn:  # autocommit off
+        yield conn
+        conn.rollback()
 
 
 @pytest.fixture
