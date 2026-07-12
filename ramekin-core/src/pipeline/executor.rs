@@ -74,13 +74,16 @@ pub async fn run_pipeline(
 
         // Save output for both success and failure - failure output is needed
         // to root-cause failed runs. The store decides how to record failures.
-        if let Err(e) = store.save_output(
-            meta.name,
-            &result.output,
-            result.duration_ms as i64,
-            result.success,
-            result.error.as_deref(),
-        ) {
+        if let Err(e) = store
+            .save_output(
+                meta.name,
+                &result.output,
+                result.duration_ms as i64,
+                result.success,
+                result.error.as_deref(),
+            )
+            .await
+        {
             tracing::error!("Failed to save output for step {}: {}", meta.name, e);
             // A successful step whose output can't be saved is treated as
             // failed: later steps read their inputs from the output store, so
@@ -121,12 +124,13 @@ mod tests {
         saves: Vec<(String, JsonValue, bool, Option<String>)>,
     }
 
+    #[async_trait]
     impl StepOutputStore for RecordingStore {
-        fn get_output(&self, _step_name: &str) -> Option<JsonValue> {
+        async fn get_output(&self, _step_name: &str) -> Option<JsonValue> {
             None
         }
 
-        fn save_output(
+        async fn save_output(
             &mut self,
             step_name: &str,
             output: &JsonValue,
@@ -147,12 +151,13 @@ mod tests {
     /// Store whose save_output always fails.
     struct FailingStore;
 
+    #[async_trait]
     impl StepOutputStore for FailingStore {
-        fn get_output(&self, _step_name: &str) -> Option<JsonValue> {
+        async fn get_output(&self, _step_name: &str) -> Option<JsonValue> {
             None
         }
 
-        fn save_output(
+        async fn save_output(
             &mut self,
             _step_name: &str,
             _output: &JsonValue,

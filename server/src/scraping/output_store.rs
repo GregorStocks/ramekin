@@ -2,13 +2,14 @@
 
 use std::error::Error;
 
+use async_trait::async_trait;
 use diesel::prelude::*;
 use ramekin_core::pipeline::StepOutputStore;
 use ramekin_core::BUILD_ID;
 use serde_json::Value as JsonValue;
 use uuid::Uuid;
 
-use crate::db::DbPool;
+use crate::db::{run_blocking, DbPool};
 use crate::models::{NewStepOutput, StepOutput};
 use crate::schema::step_outputs;
 use crate::scraping::status::step_summary;
@@ -28,21 +29,27 @@ impl<'a> DbOutputStore<'a> {
     }
 }
 
+#[async_trait]
 impl StepOutputStore for DbOutputStore<'_> {
-    fn get_output(&self, step_name: &str) -> Option<JsonValue> {
-        let mut conn = self.pool.get().ok()?;
+    async fn get_output(&self, step_name: &str) -> Option<JsonValue> {
+        let job_id = self.job_id;
+        let step_name = step_name.to_string();
 
-        step_outputs::table
-            .filter(step_outputs::scrape_job_id.eq(self.job_id))
-            .filter(step_outputs::step_name.eq(step_name))
-            .order(step_outputs::created_at.desc())
-            .first::<StepOutput>(&mut conn)
-            .optional()
-            .ok()?
-            .map(|output| output.output)
+        run_blocking(self.pool, move |conn| {
+            step_outputs::table
+                .filter(step_outputs::scrape_job_id.eq(job_id))
+                .filter(step_outputs::step_name.eq(step_name))
+                .order(step_outputs::created_at.desc())
+                .first::<StepOutput>(conn)
+                .optional()
+        })
+        .await
+        .ok()?
+        .ok()?
+        .map(|output| output.output)
     }
 
-    fn save_output(
+    async fn save_output(
         &mut self,
         step_name: &str,
         output: &JsonValue,
@@ -50,11 +57,6 @@ impl StepOutputStore for DbOutputStore<'_> {
         success: bool,
         error: Option<&str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
-        let mut conn = self
-            .pool
-            .get()
-            .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?;
-
         let new_output = NewStepOutput {
             scrape_job_id: self.job_id,
             step_name: step_name.to_string(),
@@ -66,10 +68,14 @@ impl StepOutputStore for DbOutputStore<'_> {
             error: error.map(|s| s.to_string()),
         };
 
-        diesel::insert_into(step_outputs::table)
-            .values(&new_output)
-            .execute(&mut conn)
-            .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?;
+        run_blocking(self.pool, move |conn| {
+            diesel::insert_into(step_outputs::table)
+                .values(&new_output)
+                .execute(conn)
+        })
+        .await
+        .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?
+        .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?;
 
         Ok(())
     }

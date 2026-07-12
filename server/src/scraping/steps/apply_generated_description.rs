@@ -46,12 +46,12 @@ impl PipelineStep for ApplyGeneratedDescriptionStep {
     async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
         let start = Instant::now();
 
-        let recipe_id = match recipe_id_from_save_output(ctx) {
+        let recipe_id = match recipe_id_from_save_output(ctx).await {
             Ok(id) => id,
             Err(result) => return result.with_step(Self::NAME, start, Self::NAME),
         };
 
-        let description_output = ctx.outputs.get_output("enrich_generate_description");
+        let description_output = ctx.outputs.get_output("enrich_generate_description").await;
         let changed: bool = match deserialize_optional_output_field(
             description_output.as_ref(),
             "enrich_generate_description",
@@ -119,7 +119,9 @@ impl PipelineStep for ApplyGeneratedDescriptionStep {
                 ("apply_normalized_title", "new_version_id"),
                 ("save_recipe", "version_id"),
             ],
-        ) {
+        )
+        .await
+        {
             Ok(version_id) => version_id,
             Err(error) => {
                 return StepResult {

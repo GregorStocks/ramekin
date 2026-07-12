@@ -41,7 +41,7 @@ impl PipelineStep for ParseIngredientsStep {
         let start = Instant::now();
 
         // Get extract output to find raw ingredients
-        let extract_output = match ctx.outputs.get_output("extract_recipe") {
+        let extract_output = match ctx.outputs.get_output("extract_recipe").await {
             Some(o) => o,
             None => {
                 return StepResult {
@@ -187,6 +187,7 @@ mod tests {
     use std::collections::HashMap;
     use std::error::Error;
 
+    use async_trait::async_trait;
     use serde_json::{json, Value as JsonValue};
 
     use super::ParseIngredientsStep;
@@ -197,12 +198,13 @@ mod tests {
         outputs: HashMap<String, JsonValue>,
     }
 
+    #[async_trait]
     impl StepOutputStore for TestOutputStore {
-        fn get_output(&self, step_name: &str) -> Option<JsonValue> {
+        async fn get_output(&self, step_name: &str) -> Option<JsonValue> {
             self.outputs.get(step_name).cloned()
         }
 
-        fn save_output(
+        async fn save_output(
             &mut self,
             _step_name: &str,
             _output: &JsonValue,
