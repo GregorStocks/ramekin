@@ -67,6 +67,19 @@ require uv "$(hint \
     "sudo pacman -S uv" \
     "curl -LsSf https://astral.sh/uv/install.sh | sh")"
 
+# `uv pip sync` installs exactly what requirements-test.lock pins, and nothing
+# regenerates the lock implicitly, so a dependency added to requirements-test.txt
+# alone would never reach the venv. Catch that here, before the venv is built.
+UNPINNED=()
+while IFS= read -r dep; do
+    grep -qE "^${dep}==" "$PROJECT_ROOT/requirements-test.lock" || UNPINNED+=("$dep")
+done < <(sed -e 's/#.*//' -e 's/[[<>=!~;].*//' -e 's/[[:space:]]//g' \
+    "$PROJECT_ROOT/requirements-test.txt" | tr 'A-Z_.' 'a-z--' | grep -v '^$')
+
+if [ ${#UNPINNED[@]} -ne 0 ]; then
+    MISSING+=("requirements-test.lock does not pin ${UNPINNED[*]} (run: make python-test-deps-update)")
+fi
+
 # --- Tools needed by both `make lint` and the dev/test environment ---
 
 if [ "$MODE" != "venv" ]; then
