@@ -26,7 +26,6 @@ class ShoppingListStore: ObservableObject {
     private static let lastSyncAtKeyPrefix = "shopping_list_last_sync_at"
     private static let categoryOrderKeyPrefix = "shopping_list_category_order"
     private static let legacyMigrationKey = "shopping_list_account_scope_migrated"
-    private static let orphanedAccountKey = "__orphaned_unscoped_shopping_items__"
 
     init(
         coreDataStack: CoreDataStack = .shared,
@@ -411,29 +410,29 @@ extension ShoppingListStore {
     }
 
     private func migrateLegacyState(activeAccountKey: String?) {
-        guard !userDefaults.bool(forKey: Self.legacyMigrationKey) else { return }
+        guard let activeAccountKey,
+              !userDefaults.bool(forKey: Self.legacyMigrationKey) else {
+            return
+        }
 
-        let destinationAccountKey = activeAccountKey ?? Self.orphanedAccountKey
         do {
             let unscopedItems = try coreDataStack.viewContext.fetch(ShoppingItem.fetchUnscopedItems())
             for item in unscopedItems {
-                item.accountKey = destinationAccountKey
+                item.accountKey = activeAccountKey
             }
             try coreDataStack.saveContextOrThrow()
         } catch {
             fatalError("Failed to migrate unscoped shopping items: \(error)")
         }
 
-        if let activeAccountKey {
-            if let legacyLastSyncAt = userDefaults.object(forKey: Self.lastSyncAtKeyPrefix) as? Date {
-                setLastSyncAt(legacyLastSyncAt, accountKey: activeAccountKey)
-            }
-            if let legacyCategoryOrder = userDefaults.stringArray(forKey: Self.categoryOrderKeyPrefix) {
-                userDefaults.set(
-                    legacyCategoryOrder,
-                    forKey: categoryOrderKey(accountKey: activeAccountKey)
-                )
-            }
+        if let legacyLastSyncAt = userDefaults.object(forKey: Self.lastSyncAtKeyPrefix) as? Date {
+            setLastSyncAt(legacyLastSyncAt, accountKey: activeAccountKey)
+        }
+        if let legacyCategoryOrder = userDefaults.stringArray(forKey: Self.categoryOrderKeyPrefix) {
+            userDefaults.set(
+                legacyCategoryOrder,
+                forKey: categoryOrderKey(accountKey: activeAccountKey)
+            )
         }
         userDefaults.removeObject(forKey: Self.lastSyncAtKeyPrefix)
         userDefaults.removeObject(forKey: Self.categoryOrderKeyPrefix)

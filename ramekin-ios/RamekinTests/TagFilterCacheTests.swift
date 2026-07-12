@@ -59,6 +59,13 @@ final class TagFilterCacheTests: XCTestCase {
         defaults.set(try JSONEncoder().encode([tag.name]), forKey: "recipeSelectedTags")
         defaults.set(try CodableHelper.jsonEncoder.encode([tag]), forKey: "recipeAvailableTags")
 
+        TagFilterCache.migrateLegacyState(activeAccountKey: nil, userDefaults: defaults)
+
+        XCTAssertNotNil(defaults.object(forKey: "recipeSelectedTags"))
+        XCTAssertTrue(
+            TagFilterCache.loadSelectedTags(accountKey: firstAccount, userDefaults: defaults).isEmpty
+        )
+
         TagFilterCache.migrateLegacyState(activeAccountKey: firstAccount, userDefaults: defaults)
 
         XCTAssertEqual(

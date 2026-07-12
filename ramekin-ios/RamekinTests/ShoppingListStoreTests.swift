@@ -11,7 +11,7 @@ final class ShoppingListStoreTests: XCTestCase {
         let store = ShoppingListStore(
             coreDataStack: stack,
             userDefaults: defaults,
-            initialAccountKey: firstAccount,
+            initialAccountKey: nil,
             automaticallySync: false,
             syncItems: { request in
                 requests.append(request)
@@ -97,6 +97,12 @@ final class ShoppingListStoreTests: XCTestCase {
                 return Self.emptyResponse()
             }
         )
+
+        XCTAssertTrue(store.items.isEmpty)
+        XCTAssertNil(legacyItem.accountKey)
+        XCTAssertEqual(defaults.object(forKey: "shopping_list_last_sync_at") as? Date, legacySyncDate)
+
+        store.setActiveAccountKey(firstAccount)
 
         XCTAssertEqual(store.items.map(\.item), ["Apples"])
         XCTAssertEqual(store.items.first?.accountKey, firstAccount)

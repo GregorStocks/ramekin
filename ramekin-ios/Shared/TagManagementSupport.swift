@@ -16,15 +16,16 @@ enum TagFilterCache {
         activeAccountKey: String?,
         userDefaults: UserDefaults = .standard
     ) {
-        guard !userDefaults.bool(forKey: legacyMigrationKey) else { return }
+        guard let activeAccountKey,
+              !userDefaults.bool(forKey: legacyMigrationKey) else {
+            return
+        }
 
-        if let activeAccountKey {
-            if let selectedTags = userDefaults.data(forKey: legacySelectedTagsKey) {
-                userDefaults.set(selectedTags, forKey: selectedTagsKey(accountKey: activeAccountKey))
-            }
-            if let availableTags = userDefaults.data(forKey: legacyAvailableTagsKey) {
-                userDefaults.set(availableTags, forKey: availableTagsKey(accountKey: activeAccountKey))
-            }
+        if let selectedTags = userDefaults.data(forKey: legacySelectedTagsKey) {
+            userDefaults.set(selectedTags, forKey: selectedTagsKey(accountKey: activeAccountKey))
+        }
+        if let availableTags = userDefaults.data(forKey: legacyAvailableTagsKey) {
+            userDefaults.set(availableTags, forKey: availableTagsKey(accountKey: activeAccountKey))
         }
         userDefaults.removeObject(forKey: legacySelectedTagsKey)
         userDefaults.removeObject(forKey: legacyAvailableTagsKey)
