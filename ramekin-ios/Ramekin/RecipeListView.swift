@@ -25,6 +25,10 @@ struct RecipeListView: View {
                 emptyStateView
             } else {
                 VStack(spacing: 0) {
+                    if viewModel.syncFailed {
+                        syncFailedBanner
+                        Divider()
+                    }
                     filterBar
                     Divider()
                     if viewModel.recipes.isEmpty {
@@ -79,6 +83,24 @@ struct RecipeListView: View {
                 viewModel.reloadRecipes()
             }
         }
+    }
+
+    private var syncFailedBanner: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "exclamationmark.triangle.fill")
+                .foregroundColor(.orange)
+            Text("Couldn't refresh — showing saved recipes")
+                .font(.footnote)
+                .foregroundColor(.secondary)
+            Spacer()
+            Button("Retry") {
+                viewModel.reloadRecipes()
+            }
+            .font(.footnote.weight(.semibold))
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        .background(Color(.systemYellow).opacity(0.15))
     }
 
     private var sortMenu: some View {

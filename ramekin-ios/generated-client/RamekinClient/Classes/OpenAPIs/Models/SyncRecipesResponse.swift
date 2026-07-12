@@ -12,22 +12,26 @@ import AnyCodable
 
 public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
 
-    /** Opaque cursor to pass to the next sync. Changes may be redelivered across syncs, but none can be skipped. */
+    /** This page's snapshot watermark. Once a sweep completes, persist the *first* page's cursor and pass it to the next sync: changes committed mid-sweep can land in id ranges the sweep already passed, and only the first watermark is low enough to redeliver all of them. Changes may be redelivered across syncs, but none can be skipped. */
     public var cursor: Int64
-    /** Recipe IDs deleted at or after `cursor`. */
+    /** Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first page; later pages return an empty list. */
     public var deleted: [UUID]
-    /** Active recipes changed at or after `cursor`. All active recipes are returned when `cursor` is absent. */
+    /** True when the sweep has more pages. Request the next one with the same `cursor` and `after_id` set to this page's last recipe ID. */
+    public var hasMore: Bool
+    /** The next `limit` active recipes (by ascending recipe ID, starting past `after_id`) changed at or after `cursor`. All active recipes match when `cursor` is absent. */
     public var recipes: [SyncRecipe]
 
-    public init(cursor: Int64, deleted: [UUID], recipes: [SyncRecipe]) {
+    public init(cursor: Int64, deleted: [UUID], hasMore: Bool, recipes: [SyncRecipe]) {
         self.cursor = cursor
         self.deleted = deleted
+        self.hasMore = hasMore
         self.recipes = recipes
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case cursor
         case deleted
+        case hasMore = "has_more"
         case recipes
     }
 
@@ -37,6 +41,7 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(cursor, forKey: .cursor)
         try container.encode(deleted, forKey: .deleted)
+        try container.encode(hasMore, forKey: .hasMore)
         try container.encode(recipes, forKey: .recipes)
     }
 }

@@ -13,10 +13,12 @@ def _auth_headers(client):
     return {"Authorization": f"Bearer {client.configuration.access_token}"}
 
 
-def _sync(client, server_url, cursor=None):
-    params = {}
+def _sync(client, server_url, cursor=None, limit=500, after_id=None):
+    params = {"limit": limit}
     if cursor is not None:
         params["cursor"] = cursor
+    if after_id is not None:
+        params["after_id"] = after_id
     response = requests.get(
         f"{server_url}/api/recipes/sync",
         headers=_auth_headers(client),
@@ -225,6 +227,122 @@ def test_recipe_sync_includes_recipes_after_recipe_create_revives_tag(
 
     recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
     assert recipes_by_id[str(existing.id)]["tags"] == ["revived-by-create"]
+
+
+def test_recipe_sync_paginates_by_recipe_id(authed_api_client, server_url):
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    created_ids = set()
+    for index in range(3):
+        created = recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=f"Paged Recipe {index}",
+                instructions="Cook it.",
+                ingredients=[make_ingredient(item="salt")],
+            )
+        )
+        created_ids.add(str(created.id))
+    deleted = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Paged Deleted Recipe",
+            instructions="Cook it.",
+            ingredients=[make_ingredient(item="pepper")],
+        )
+    )
+    recipes_api.delete_recipe(deleted.id)
+
+    first_page = _sync(client, server_url, limit=2)
+
+    assert len(first_page["recipes"]) == 2
+    assert first_page["has_more"] is True
+    assert str(deleted.id) in first_page["deleted"]
+
+    second_page = _sync(
+        client,
+        server_url,
+        limit=2,
+        after_id=first_page["recipes"][-1]["id"],
+    )
+
+    assert second_page["has_more"] is False
+    # Deletions all ride on the sweep's first page.
+    assert second_page["deleted"] == []
+
+    swept_ids = {recipe["id"] for recipe in first_page["recipes"]} | {
+        recipe["id"] for recipe in second_page["recipes"]
+    }
+    assert created_ids <= swept_ids
+    # Pages sweep the recipe-id space in ascending order without overlap.
+    all_ids = [
+        recipe["id"] for recipe in first_page["recipes"] + second_page["recipes"]
+    ]
+    assert all_ids == sorted(all_ids)
+    assert len(all_ids) == len(set(all_ids))
+
+
+def test_recipe_sync_first_page_cursor_covers_later_changes(
+    authed_api_client, server_url
+):
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    for index in range(2):
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=f"Sweep Recipe {index}",
+                instructions="Cook it.",
+                ingredients=[make_ingredient(item="salt")],
+            )
+        )
+
+    first_page = _sync(client, server_url, limit=1)
+    assert first_page["has_more"] is True
+
+    # A change that lands while the sweep is still paging. Persisting the
+    # first page's cursor (the documented client protocol) must hand it to
+    # the next sync.
+    late = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Late Arrival",
+            instructions="Cook it.",
+            ingredients=[make_ingredient(item="saffron")],
+        )
+    )
+    _sync(client, server_url, limit=1, after_id=first_page["recipes"][-1]["id"])
+
+    next_sync = _sync(client, server_url, cursor=first_page["cursor"])
+
+    assert str(late.id) in {recipe["id"] for recipe in next_sync["recipes"]}
+
+
+def test_recipe_sync_rejects_missing_or_invalid_limit(authed_api_client, server_url):
+    client, _user_id = authed_api_client
+
+    missing = requests.get(
+        f"{server_url}/api/recipes/sync",
+        headers=_auth_headers(client),
+        timeout=10,
+    )
+    assert missing.status_code == 400
+
+    zero = requests.get(
+        f"{server_url}/api/recipes/sync",
+        headers=_auth_headers(client),
+        params={"limit": 0},
+        timeout=10,
+    )
+    assert zero.status_code == 400
+    assert zero.json()["code"] == "invalid_request"
+
+    oversized = requests.get(
+        f"{server_url}/api/recipes/sync",
+        headers=_auth_headers(client),
+        params={"limit": 501},
+        timeout=10,
+    )
+    assert oversized.status_code == 400
+    assert oversized.json()["code"] == "invalid_request"
 
 
 def test_recipe_sync_requires_auth(unauthed_api_client, server_url):

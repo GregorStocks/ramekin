@@ -8,6 +8,7 @@ Name | Type
 ------------ | -------------
 `cursor` | number
 `deleted` | Array&lt;string&gt;
+`hasMore` | boolean
 `recipes` | [Array&lt;SyncRecipe&gt;](SyncRecipe.md)
 
 ## Example
@@ -19,6 +20,7 @@ import type { SyncRecipesResponse } from ''
 const example = {
   "cursor": null,
   "deleted": null,
+  "hasMore": null,
   "recipes": null,
 } satisfies SyncRecipesResponse
 

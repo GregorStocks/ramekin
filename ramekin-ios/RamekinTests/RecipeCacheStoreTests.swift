@@ -33,12 +33,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             instructions: "Mix and bake.",
             notes: "Cool completely."
         )
-        let cursor: Int64 = 300
 
         try store.apply(
             syncResponse: SyncRecipesResponse(
-                cursor: cursor,
+                cursor: 300,
                 deleted: [],
+                hasMore: false,
                 recipes: [recipe]
             ),
             accountKey: accountKey
@@ -52,7 +52,28 @@ final class RecipeCacheStoreTests: XCTestCase {
         XCTAssertEqual(document.ingredients, recipe.ingredients)
         XCTAssertEqual(document.instructions, "Mix and bake.")
         XCTAssertEqual(document.notes, "Cool completely.")
-        XCTAssertEqual(store.syncCursor(accountKey: accountKey), cursor)
+        // The cursor only advances when a sweep completes, never per page.
+        XCTAssertNil(store.syncCursor(accountKey: accountKey))
+    }
+
+    func testPendingSyncSweepRoundTripsAndClearsWithCursor() {
+        let (store, defaults) = makeStore()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let sweep = PendingSyncSweep(since: nil, afterId: UUID(), watermark: 250)
+
+        store.setPendingSyncSweep(sweep, accountKey: accountKey)
+        store.setSyncCursor(300, accountKey: accountKey)
+
+        XCTAssertEqual(store.pendingSyncSweep(accountKey: accountKey), sweep)
+        XCTAssertEqual(store.syncCursor(accountKey: accountKey), 300)
+        XCTAssertNil(store.pendingSyncSweep(accountKey: "https://example.test|other"))
+
+        store.clearSyncCursor(accountKey: accountKey)
+
+        XCTAssertNil(store.syncCursor(accountKey: accountKey))
+        // Invalidating the cache restarts the sweep from scratch: resuming a
+        // pending sweep against a different `since` would skip pages.
+        XCTAssertNil(store.pendingSyncSweep(accountKey: accountKey))
     }
 
     func testApplyReplacesSearchableFieldsOnUpdate() throws {
@@ -63,6 +84,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
+                hasMore: false,
                 recipes: [makeRecipe(id: id, instructions: "Old instructions", notes: "Old notes")]
             ),
             accountKey: accountKey
@@ -79,6 +101,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 500,
                 deleted: [],
+                hasMore: false,
                 recipes: [updated]
             ),
             accountKey: accountKey
@@ -99,6 +122,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
+                hasMore: false,
                 recipes: [recipe]
             ),
             accountKey: accountKey
@@ -108,6 +132,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 400,
                 deleted: [recipe.id],
+                hasMore: false,
                 recipes: []
             ),
             accountKey: accountKey

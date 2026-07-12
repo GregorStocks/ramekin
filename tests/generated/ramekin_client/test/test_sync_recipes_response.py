@@ -39,6 +39,7 @@ class TestSyncRecipesResponse(unittest.TestCase):
                 deleted = [
                     ''
                     ],
+                has_more = True,
                 recipes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -72,6 +73,7 @@ class TestSyncRecipesResponse(unittest.TestCase):
                 deleted = [
                     ''
                     ],
+                has_more = True,
                 recipes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

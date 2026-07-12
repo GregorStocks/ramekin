@@ -111,7 +111,9 @@ export interface RescrapePhotoRequest {
 }
 
 export interface SyncRecipesRequest {
+    limit: number;
     cursor?: number | null;
+    afterId?: string | null;
 }
 
 export interface UpdateRecipeOperationRequest {
@@ -650,10 +652,25 @@ export class RecipesApi extends runtime.BaseAPI {
     /**
      */
     async syncRecipesRaw(requestParameters: SyncRecipesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SyncRecipesResponse>> {
+        if (requestParameters['limit'] == null) {
+            throw new runtime.RequiredError(
+                'limit',
+                'Required parameter "limit" was null or undefined when calling syncRecipes().'
+            );
+        }
+
         const queryParameters: any = {};
 
         if (requestParameters['cursor'] != null) {
             queryParameters['cursor'] = requestParameters['cursor'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['afterId'] != null) {
+            queryParameters['after_id'] = requestParameters['afterId'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -681,7 +698,7 @@ export class RecipesApi extends runtime.BaseAPI {
 
     /**
      */
-    async syncRecipes(requestParameters: SyncRecipesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SyncRecipesResponse> {
+    async syncRecipes(requestParameters: SyncRecipesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SyncRecipesResponse> {
         const response = await this.syncRecipesRaw(requestParameters, initOverrides);
         return await response.value();
     }
