@@ -1,0 +1,25 @@
+{
+  "title": "Eliminate ambiguous Core Data entities in iOS tests",
+  "description": "The iOS unit suite creates many independent \
+`NSPersistentContainer(name: \"Ramekin\")` instances from the bundled model. \
+Core Data then logs that `CachedRecipe` and `ShoppingItem` fail to find a \
+unique entity match for their generated managed-object subclasses. In PR #652 \
+this made a test insertion through `ShoppingItem(context:)` unreliable once \
+other containers had loaded, even though the same code worked in isolation.\n\
+\n\
+Create a shared in-memory Core Data test factory that avoids registering \
+competing models or inserts entities through the target context's model. \
+Migrate the existing recipe-cache, shopping-mutation, shopping-sync, and \
+shopping-store tests to it, then assert the suite runs without \
+ambiguous-entity diagnostics.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "ios",
+    "tests",
+    "core-data",
+  ],
+  "created_at": "2026-07-11T23:10:00-07:00",
+  "updated_at": "2026-07-11T23:10:00-07:00",
+}

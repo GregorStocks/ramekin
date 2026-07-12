@@ -15,37 +15,73 @@ class ShoppingListStore: ObservableObject {
     /// across launches. Empty until the first successful sync.
     @Published var categoryOrder: [String] = []
 
-    private let coreDataStack = CoreDataStack.shared
+    private let coreDataStack: CoreDataStack
+    private let userDefaults: UserDefaults
+    private let syncItems: (SyncRequest) async throws -> SyncResponse
     private let networkMonitor = NWPathMonitor()
     private let monitorQueue = DispatchQueue(label: "NetworkMonitor")
-    private let lastSyncAtKey = "shopping_list_last_sync_at"
-    private let categoryOrderKey = "shopping_list_category_order"
+    private let automaticallySync: Bool
+    private var activeAccountKey: String?
 
-    private var lastSyncAt: Date? {
-        get { UserDefaults.standard.object(forKey: lastSyncAtKey) as? Date }
-        set { UserDefaults.standard.set(newValue, forKey: lastSyncAtKey) }
-    }
+    private static let lastSyncAtKeyPrefix = "shopping_list_last_sync_at"
+    private static let categoryOrderKeyPrefix = "shopping_list_category_order"
+    private static let legacyMigrationKey = "shopping_list_account_scope_migrated"
 
-    private init() {
-        networkMonitor.pathUpdateHandler = { [weak self] path in
-            Task { @MainActor in
-                self?.isOnline = path.status == .satisfied
-                if path.status == .satisfied {
-                    await self?.syncIfNeeded()
+    init(
+        coreDataStack: CoreDataStack = .shared,
+        userDefaults: UserDefaults = .standard,
+        initialAccountKey: String? = AccountScope.currentAccountKey(),
+        automaticallySync: Bool = true,
+        syncItems: @escaping (SyncRequest) async throws -> SyncResponse = {
+            try await ShoppingListAPI.syncItems(syncRequest: $0)
+        }
+    ) {
+        self.coreDataStack = coreDataStack
+        self.userDefaults = userDefaults
+        self.automaticallySync = automaticallySync
+        self.syncItems = syncItems
+
+        if automaticallySync {
+            networkMonitor.pathUpdateHandler = { [weak self] path in
+                Task { @MainActor in
+                    self?.isOnline = path.status == .satisfied
+                    if path.status == .satisfied {
+                        await self?.syncIfNeeded()
+                    }
                 }
             }
+            networkMonitor.start(queue: monitorQueue)
         }
-        networkMonitor.start(queue: monitorQueue)
-        categoryOrder = UserDefaults.standard.stringArray(forKey: categoryOrderKey) ?? []
-        fetchItems()
+        setActiveAccountKey(initialAccountKey)
     }
 
     deinit { networkMonitor.cancel() }
+}
 
+extension ShoppingListStore {
     // MARK: - Local Operations
 
+    func setActiveAccountKey(_ accountKey: String?) {
+        migrateLegacyState(activeAccountKey: accountKey)
+        activeAccountKey = accountKey
+        items = []
+        categoryOrder = []
+        lastSyncError = nil
+
+        guard let accountKey else { return }
+        categoryOrder = userDefaults.stringArray(forKey: categoryOrderKey(accountKey: accountKey)) ?? []
+        fetchItems()
+        if automaticallySync, isOnline {
+            Task { await syncIfNeeded() }
+        }
+    }
+
     func fetchItems() {
-        let request = ShoppingItem.fetchActiveItems()
+        guard let activeAccountKey else {
+            items = []
+            return
+        }
+        let request = ShoppingItem.fetchActiveItems(accountKey: activeAccountKey)
         items = (try? coreDataStack.viewContext.fetch(request)) ?? []
     }
 
@@ -56,9 +92,13 @@ class ShoppingListStore: ObservableObject {
         sourceRecipeId: UUID? = nil,
         sourceRecipeTitle: String? = nil
     ) {
+        guard let activeAccountKey else {
+            preconditionFailure("Cannot add a shopping item without an active account")
+        }
         let maxSort = items.map(\.sortOrder).max() ?? -1
         _ = ShoppingItem.create(
-            in: coreDataStack.viewContext, item: name, amount: amount, note: note,
+            in: coreDataStack.viewContext, accountKey: activeAccountKey,
+            item: name, amount: amount, note: note,
             sourceRecipeId: sourceRecipeId, sourceRecipeTitle: sourceRecipeTitle, sortOrder: maxSort + 1
         )
         saveAndSync()
@@ -69,10 +109,13 @@ class ShoppingListStore: ObservableObject {
         recipeId: UUID,
         recipeTitle: String
     ) throws {
+        guard let activeAccountKey else {
+            preconditionFailure("Cannot add recipe items without an active account")
+        }
         try ShoppingListMutationSupport.addItemsFromRecipe(
             ingredients: ingredients,
-            recipeId: recipeId,
-            recipeTitle: recipeTitle,
+            recipe: (id: recipeId, title: recipeTitle),
+            accountKey: activeAccountKey,
             context: coreDataStack.viewContext,
             save: coreDataStack.saveContextOrThrow
         )
@@ -81,12 +124,14 @@ class ShoppingListStore: ObservableObject {
     }
 
     func toggleChecked(_ item: ShoppingItem) {
+        validateActiveAccount(for: item)
         item.isChecked.toggle()
         item.markUpdated()
         saveAndSync()
     }
 
     func updateItem(_ item: ShoppingItem, name: String? = nil, amount: String? = nil, note: String? = nil) {
+        validateActiveAccount(for: item)
         if let name = name { item.item = name }
         if let amount = amount { item.amount = amount }
         if let note = note { item.note = note }
@@ -95,12 +140,14 @@ class ShoppingListStore: ObservableObject {
     }
 
     func updateCategoryOverride(_ item: ShoppingItem, categoryOverride: String?) {
+        validateActiveAccount(for: item)
         guard item.categoryOverride != categoryOverride else { return }
         ShoppingListMutationSupport.updateCategoryOverride(item, categoryOverride: categoryOverride)
         saveAndSync()
     }
 
     func deleteItem(_ item: ShoppingItem) {
+        validateActiveAccount(for: item)
         if item.syncStatusEnum == .pendingCreate {
             coreDataStack.viewContext.delete(item)
         } else {
@@ -129,20 +176,23 @@ class ShoppingListStore: ObservableObject {
     // MARK: - Sync
 
     private func triggerSync() {
-        guard isOnline else { return }
+        guard automaticallySync, isOnline else { return }
         Task { await syncWithServer() }
     }
 
     func syncIfNeeded() async {
-        guard isOnline, !isSyncing else { return }
-        let hasPending = (try? coreDataStack.viewContext.fetch(ShoppingItem.fetchPendingSync()))?.isEmpty == false
+        guard let activeAccountKey, isOnline, !isSyncing else { return }
+        let hasPending = (try? coreDataStack.viewContext.fetch(
+            ShoppingItem.fetchPendingSync(accountKey: activeAccountKey)
+        ))?.isEmpty == false
+        let lastSyncAt = lastSyncAt(accountKey: activeAccountKey)
         let stale = lastSyncAt == nil || Date().timeIntervalSince(lastSyncAt!) > 300
         if hasPending || stale { await syncWithServer() }
     }
 
     func syncWithServer(isFollowUp: Bool = false) async {
         let logger = DebugLogger.shared
-        guard isOnline, !isSyncing else {
+        guard let syncAccountKey = activeAccountKey, isOnline, !isSyncing else {
             logger.log("syncWithServer skipped (online=\(isOnline), syncing=\(isSyncing))", source: "Shopping")
             return
         }
@@ -152,7 +202,9 @@ class ShoppingListStore: ObservableObject {
         logger.log("syncWithServer started", source: "Shopping")
 
         do {
-            let pending = try coreDataStack.viewContext.fetch(ShoppingItem.fetchPendingSync())
+            let pending = try coreDataStack.viewContext.fetch(
+                ShoppingItem.fetchPendingSync(accountKey: syncAccountKey)
+            )
             let creates = pending.filter { $0.syncStatusEnum == .pendingCreate }.count
             let updates = pending.filter { $0.syncStatusEnum == .pendingUpdate }.count
             let deletes = pending.filter { $0.syncStatusEnum == .pendingDelete }.count
@@ -160,27 +212,45 @@ class ShoppingListStore: ObservableObject {
                 "syncWithServer: \(pending.count) pending (\(creates) create, \(updates) update, \(deletes) delete)",
                 source: "Shopping"
             )
-            let request = buildSyncRequest(from: pending)
+            let request = buildSyncRequest(from: pending, accountKey: syncAccountKey)
             let response = try await logger.timed("shopping sync API", source: "Shopping") {
-                try await ShoppingListAPI.syncItems(syncRequest: request)
+                try await syncItems(request)
             }
-            processServerResponse(response, pendingItems: pending, syncStartedAt: syncStartedAt)
-            lastSyncAt = response.syncTimestamp
-            categoryOrder = response.categoryOrder
-            UserDefaults.standard.set(response.categoryOrder, forKey: categoryOrderKey)
+            processServerResponse(
+                response,
+                pendingItems: pending,
+                syncStartedAt: syncStartedAt,
+                accountKey: syncAccountKey
+            )
+            setLastSyncAt(response.syncTimestamp, accountKey: syncAccountKey)
+            userDefaults.set(response.categoryOrder, forKey: categoryOrderKey(accountKey: syncAccountKey))
+            if activeAccountKey == syncAccountKey {
+                categoryOrder = response.categoryOrder
+            }
             logger.log("syncWithServer completed successfully", source: "Shopping")
         } catch {
             logger.log("syncWithServer FAILED: \(error.localizedDescription)", source: "Shopping")
-            lastSyncError = error.localizedDescription
+            if activeAccountKey == syncAccountKey {
+                lastSyncError = error.localizedDescription
+            }
         }
 
         isSyncing = false
         fetchItems()
 
+        guard activeAccountKey == syncAccountKey else {
+            if automaticallySync {
+                await syncIfNeeded()
+            }
+            return
+        }
+
         // If the sync succeeded and new items were modified during it, do one follow-up sync.
         // Only re-sync once to avoid unbounded loops from persistent conflicts.
         if lastSyncError == nil && !isFollowUp {
-            let hasPending = (try? coreDataStack.viewContext.fetch(ShoppingItem.fetchPendingSync()))?.isEmpty == false
+            let hasPending = (try? coreDataStack.viewContext.fetch(
+                ShoppingItem.fetchPendingSync(accountKey: syncAccountKey)
+            ))?.isEmpty == false
             if hasPending && isOnline {
                 logger.log("syncWithServer: still have pending items, follow-up sync", source: "Shopping")
                 await syncWithServer(isFollowUp: true)
@@ -188,7 +258,7 @@ class ShoppingListStore: ObservableObject {
         }
     }
 
-    private func buildSyncRequest(from pending: [ShoppingItem]) -> SyncRequest {
+    private func buildSyncRequest(from pending: [ShoppingItem], accountKey: String) -> SyncRequest {
         var creates: [SyncCreateItem] = []
         var updates: [SyncUpdateItem] = []
         var deletes: [UUID] = []
@@ -220,12 +290,17 @@ class ShoppingListStore: ObservableObject {
         return SyncRequest(
             creates: creates.isEmpty ? nil : creates,
             deletes: deletes.isEmpty ? nil : deletes,
-            lastSyncAt: lastSyncAt,
+            lastSyncAt: lastSyncAt(accountKey: accountKey),
             updates: updates.isEmpty ? nil : updates
         )
     }
 
-    private func processServerResponse(_ response: SyncResponse, pendingItems: [ShoppingItem], syncStartedAt: Date) {
+    private func processServerResponse(
+        _ response: SyncResponse,
+        pendingItems: [ShoppingItem],
+        syncStartedAt: Date,
+        accountKey: String
+    ) {
         let context = coreDataStack.viewContext
 
         for created in response.created {
@@ -252,20 +327,28 @@ class ShoppingListStore: ObservableObject {
         }
 
         for deletedId in response.deleted {
-            if let local = (try? context.fetch(ShoppingItem.fetchById(deletedId)))?.first {
+            if let local = (try? context.fetch(
+                ShoppingItem.fetchById(deletedId, accountKey: accountKey)
+            ))?.first {
                 context.delete(local)
             }
         }
 
         for change in response.serverChanges {
-            applyServerChange(change, in: context)
+            applyServerChange(change, accountKey: accountKey, in: context)
         }
 
         coreDataStack.saveContext()
     }
 
-    private func applyServerChange(_ change: SyncServerChange, in context: NSManagedObjectContext) {
-        let existing = (try? context.fetch(ShoppingItem.fetchById(change.id)))?.first
+    private func applyServerChange(
+        _ change: SyncServerChange,
+        accountKey: String,
+        in context: NSManagedObjectContext
+    ) {
+        let existing = (try? context.fetch(
+            ShoppingItem.fetchById(change.id, accountKey: accountKey)
+        ))?.first
 
         if let item = existing {
             // Don't overwrite pending local changes — they'll be synced next round
@@ -285,6 +368,7 @@ class ShoppingListStore: ObservableObject {
             item.markSynced(serverVersion: Int32(change.version))
         } else {
             let newItem = ShoppingItem(context: context)
+            newItem.accountKey = accountKey
             newItem.id = change.id
             newItem.item = change.item
             newItem.amount = change.amount
@@ -300,6 +384,59 @@ class ShoppingListStore: ObservableObject {
             newItem.updatedAt = change.updatedAt
             newItem.markSynced(serverVersion: Int32(change.version))
         }
+    }
+
+    private func validateActiveAccount(for item: ShoppingItem) {
+        precondition(
+            item.accountKey == activeAccountKey && activeAccountKey != nil,
+            "Shopping item does not belong to the active account"
+        )
+    }
+
+    private func lastSyncAt(accountKey: String) -> Date? {
+        userDefaults.object(forKey: lastSyncAtKey(accountKey: accountKey)) as? Date
+    }
+
+    private func setLastSyncAt(_ date: Date, accountKey: String) {
+        userDefaults.set(date, forKey: lastSyncAtKey(accountKey: accountKey))
+    }
+
+    private func lastSyncAtKey(accountKey: String) -> String {
+        AccountScope.userDefaultsKey(prefix: Self.lastSyncAtKeyPrefix, accountKey: accountKey)
+    }
+
+    private func categoryOrderKey(accountKey: String) -> String {
+        AccountScope.userDefaultsKey(prefix: Self.categoryOrderKeyPrefix, accountKey: accountKey)
+    }
+
+    private func migrateLegacyState(activeAccountKey: String?) {
+        guard let activeAccountKey,
+              !userDefaults.bool(forKey: Self.legacyMigrationKey) else {
+            return
+        }
+
+        do {
+            let unscopedItems = try coreDataStack.viewContext.fetch(ShoppingItem.fetchUnscopedItems())
+            for item in unscopedItems {
+                item.accountKey = activeAccountKey
+            }
+            try coreDataStack.saveContextOrThrow()
+        } catch {
+            fatalError("Failed to migrate unscoped shopping items: \(error)")
+        }
+
+        if let legacyLastSyncAt = userDefaults.object(forKey: Self.lastSyncAtKeyPrefix) as? Date {
+            setLastSyncAt(legacyLastSyncAt, accountKey: activeAccountKey)
+        }
+        if let legacyCategoryOrder = userDefaults.stringArray(forKey: Self.categoryOrderKeyPrefix) {
+            userDefaults.set(
+                legacyCategoryOrder,
+                forKey: categoryOrderKey(accountKey: activeAccountKey)
+            )
+        }
+        userDefaults.removeObject(forKey: Self.lastSyncAtKeyPrefix)
+        userDefaults.removeObject(forKey: Self.categoryOrderKeyPrefix)
+        userDefaults.set(true, forKey: Self.legacyMigrationKey)
     }
 
 }
