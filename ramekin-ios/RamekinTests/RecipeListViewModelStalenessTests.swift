@@ -147,6 +147,16 @@ final class RecipeListViewModelStalenessTests: XCTestCase {
         await loadMoreTask.value
 
         XCTAssertEqual(viewModel.recipes.map(\.id), pastaPage1.map(\.id))
+        // Discarding the append must not strand the spinner: no reset load is
+        // coming to clear it, and a stuck isLoadingMore blocks every later page.
+        XCTAssertFalse(viewModel.isLoadingMore)
+
+        // Back on the original filters, pagination still works.
+        viewModel.searchText = "pasta"
+        await viewModel.loadMore()
+
+        XCTAssertEqual(viewModel.recipes.map(\.id), (pastaPage1 + pastaPage2).map(\.id))
+        XCTAssertFalse(viewModel.isLoadingMore)
     }
 
     func testLoadMoreDoesNotStartAfterFilterChangeBeforeReload() async {

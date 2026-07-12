@@ -1,54 +1,11 @@
 import Combine
 import Foundation
 
-struct RecipeListViewAPIClient {
-    var listAllTags: () async throws -> TagsListResponse
-    var listRecipes: (
-        _ limit: Int64,
-        _ offset: Int64,
-        _ query: String?,
-        _ sortBy: SortBy?,
-        _ sortDir: Direction?
-    ) async throws -> ListRecipesResponse
-    var syncRecipes: (_ lastSyncAt: Date?) async throws -> SyncRecipesResponse
-
-    static let live = RecipeListViewAPIClient(
-        listAllTags: { try await TagsAPI.listAllTags() },
-        listRecipes: { limit, offset, query, sortBy, sortDir in
-            try await RecipesAPI.listRecipes(
-                limit: limit,
-                offset: offset,
-                q: query,
-                sortBy: sortBy,
-                sortDir: sortDir
-            )
-        },
-        syncRecipes: { try await RecipesAPI.syncRecipes(lastSyncAt: $0) }
-    )
-}
-
 /// Identifies the filter+sort combination a list request belongs to. Sort is
 /// part of it because a sort change leaves the query string untouched.
 private struct ListRequestKey: Equatable {
     let query: String?
     let sortOrder: RecipeSortOrder
-}
-
-@MainActor
-struct RecipeListCacheClient {
-    var currentAccountKey: () -> String?
-    var lastSyncAt: (_ accountKey: String) -> Date?
-    var clearLastSyncAt: (_ accountKey: String) -> Void
-    var loadRecipes: (_ accountKey: String) throws -> [RecipeSummary]
-    var apply: (_ syncResponse: SyncRecipesResponse, _ accountKey: String) throws -> Void
-
-    static let live = RecipeListCacheClient(
-        currentAccountKey: { RecipeCacheStore.shared.currentAccountKey() },
-        lastSyncAt: { RecipeCacheStore.shared.lastSyncAt(accountKey: $0) },
-        clearLastSyncAt: { RecipeCacheStore.shared.clearLastSyncAt(accountKey: $0) },
-        loadRecipes: { try RecipeCacheStore.shared.loadRecipes(accountKey: $0) },
-        apply: { try RecipeCacheStore.shared.apply(syncResponse: $0, accountKey: $1) }
-    )
 }
 
 @MainActor
@@ -357,8 +314,9 @@ extension RecipeListViewModel {
                 useRelevance ? nil : key.sortOrder.sortDir
             )
 
-            guard isCurrentRequest(generation, key), key == currentKey() else {
+            guard appendMayApply(generation, key) else {
                 DebugLogger.shared.log("loadMore: superseded request, discarding results", source: "RecipeList")
+                releaseAppendSlot(generation)
                 return
             }
             recipes.append(contentsOf: response.recipes)
@@ -366,8 +324,12 @@ extension RecipeListViewModel {
             hasMore = recipes.count < totalCount
             isLoadingMore = false
         } catch is CancellationError {
+            releaseAppendSlot(generation)
         } catch {
-            guard isCurrentRequest(generation, key), key == currentKey() else { return }
+            guard appendMayApply(generation, key) else {
+                releaseAppendSlot(generation)
+                return
+            }
             loadMoreFailed = true
             isLoadingMore = false
         }
@@ -408,6 +370,20 @@ private extension RecipeListViewModel {
     /// sort change; the key check keeps the existing initial-response guard.
     func isCurrentRequest(_ generation: Int, _ key: ListRequestKey) -> Bool {
         generation == requestGeneration && activeKey == key
+    }
+
+    /// An append additionally has to match what the user is asking for right
+    /// now: a filter or sort change can land before its reload starts.
+    func appendMayApply(_ generation: Int, _ key: ListRequestKey) -> Bool {
+        isCurrentRequest(generation, key) && key == currentKey()
+    }
+
+    /// A reset load owns the loading flags once it bumps the generation. Until
+    /// then a discarded append has to clear its own spinner, or it sticks and
+    /// the `!isLoadingMore` guard blocks every later page.
+    func releaseAppendSlot(_ generation: Int) {
+        guard generation == requestGeneration else { return }
+        isLoadingMore = false
     }
 
     func persistSelectedTags() {

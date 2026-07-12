@@ -205,6 +205,21 @@ describe("createCookbookRecipeRequests", () => {
 
     expect(state.recipes().map((item) => item.id)).toEqual(["a-1", "a-2"]);
     expect(state.offset()).toBe(2);
+    // Discarding the append must not strand the spinner, or a stuck
+    // loadingMore blocks every later page.
+    expect(state.loadingMore()).toBe(false);
+
+    // Back on the original query, pagination still works.
+    setQuery("");
+    state.loadMore();
+    pending[2].resolve(page(["a-3"], 3, 2));
+    await flush();
+
+    expect(state.recipes().map((item) => item.id)).toEqual([
+      "a-1",
+      "a-2",
+      "a-3",
+    ]);
   });
 
   it("does not start an append once the query changed but the reload has not run", async () => {
