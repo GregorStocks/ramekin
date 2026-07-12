@@ -55,8 +55,15 @@ final class RecipeFormViewModel: ObservableObject {
 
 extension RecipeFormViewModel {
     var canSave: Bool {
-        !formData.title.trimmingCharacters(in: .whitespaces).isEmpty
+        let hasRequiredVersion = switch mode {
+        case .create:
+            true
+        case .edit:
+            formData.expectedVersionId != nil
+        }
+        return !formData.title.trimmingCharacters(in: .whitespaces).isEmpty
             && !formData.instructions.trimmingCharacters(in: .whitespaces).isEmpty
+            && hasRequiredVersion
             && !isSaving
     }
 

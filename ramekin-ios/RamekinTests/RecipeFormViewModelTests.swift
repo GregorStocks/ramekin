@@ -3,6 +3,27 @@ import XCTest
 
 @MainActor
 final class RecipeFormViewModelTests: XCTestCase {
+    func testEditSaveRequiresLoadedRecipeVersion() {
+        let viewModel = RecipeFormViewModel(
+            mode: .edit(recipeId: UUID()),
+            api: RecipeFormViewAPIClient(
+                createRecipe: { _ in throw TestError.unexpectedCall },
+                updateRecipe: { _, _ in throw TestError.unexpectedCall },
+                getRecipe: { _ in throw TestError.unexpectedCall },
+                listAllTags: { TagsListResponse(tags: []) },
+                uploadPhoto: { _ in throw TestError.unexpectedCall }
+            )
+        )
+        viewModel.formData.title = "Soup"
+        viewModel.formData.instructions = "Simmer"
+
+        XCTAssertFalse(viewModel.canSave)
+
+        viewModel.formData.expectedVersionId = UUID()
+
+        XCTAssertTrue(viewModel.canSave)
+    }
+
     func testCreateSaveBuildsRequestAndClearsSavingState() async {
         var capturedRequest: CreateRecipeRequest?
         let viewModel = RecipeFormViewModel(
