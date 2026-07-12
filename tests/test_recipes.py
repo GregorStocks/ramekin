@@ -1589,6 +1589,17 @@ def test_list_recipes_sort_by_title(authed_api_client):
         actual_id_by_vector_id[vector_id] for vector_id in vectors["ascending"]
     ]
 
+    paged_response = recipes_api.list_recipes(
+        sort_by=SortBy.TITLE,
+        sort_dir=Direction.ASC,
+        limit=3,
+        offset=2,
+    )
+    assert [recipe.id for recipe in paged_response.recipes] == [
+        actual_id_by_vector_id[vector_id] for vector_id in vectors["ascending"][2:5]
+    ]
+    assert paged_response.pagination.total == len(vectors["recipes"])
+
     desc_response = recipes_api.list_recipes(
         sort_by=SortBy.TITLE, sort_dir=Direction.DESC
     )
