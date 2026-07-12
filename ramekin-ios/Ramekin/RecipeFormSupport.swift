@@ -112,7 +112,7 @@ struct RecipeFormData {
         guard let expectedVersionId else {
             preconditionFailure("Cannot update a recipe before loading its version")
         }
-        UpdateRecipeRequest(
+        return UpdateRecipeRequest(
             cookTime: cookTime.isEmpty ? nil : cookTime,
             description: recipeDescription.isEmpty ? nil : recipeDescription,
             difficulty: difficulty.isEmpty ? nil : difficulty,
