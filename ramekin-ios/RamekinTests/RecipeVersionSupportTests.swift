@@ -125,7 +125,11 @@ final class RecipeVersionSupportTests: XCTestCase {
             versionId: recipe.versionId,
             versionSource: recipe.versionSource
         )
-        let request = RevertRecipeRequest(recipe: clearedRecipe)
+        let expectedVersionId = UUID()
+        let request = RevertRecipeRequest(
+            recipe: clearedRecipe,
+            expectedVersionId: expectedVersionId
+        )
         let data = try JSONEncoder().encode(request)
         let json = try XCTUnwrap(
             JSONSerialization.jsonObject(with: data) as? [String: Any]
@@ -134,6 +138,7 @@ final class RecipeVersionSupportTests: XCTestCase {
         XCTAssertEqual(json["title"] as? String, clearedRecipe.title)
         XCTAssertEqual(json["instructions"] as? String, clearedRecipe.instructions)
         XCTAssertEqual(json["tags"] as? [String], clearedRecipe.tags)
+        XCTAssertEqual(json["expected_version_id"] as? String, expectedVersionId.uuidString)
         XCTAssertTrue(json["description"] is NSNull)
         XCTAssertTrue(json["notes"] is NSNull)
         XCTAssertTrue(json["source_name"] is NSNull)
