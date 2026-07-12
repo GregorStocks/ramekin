@@ -5,6 +5,8 @@ cd "$(dirname "$0")/.."
 
 # shellcheck source=/dev/null
 source ./scripts/repo-lock.sh
+# shellcheck source=/dev/null
+source ./scripts/test-orchestration.sh
 test_lock_name="${TEST_LOCK_NAME:-top-level-run}"
 test_lock_owner_name="test run"
 if [ -z "${TEST_LOCK_NAME:-}" ]; then
@@ -36,10 +38,16 @@ if [ -n "$ORIG_PROCESS_COMPOSE_PORT" ]; then
 fi
 export TEST_STATUS_DIR="$STATUS_DIR"
 
+assert_test_ports_available \
+  "API server" "${PORT:-}" \
+  "fixture server" "${FIXTURE_PORT:-}" \
+  "mock OpenRouter" "${MOCK_OPENROUTER_PORT:-}" \
+  "process-compose control" "${PROCESS_COMPOSE_PORT:-}"
+
 PROCESS_COMPOSE_STARTED=0
 PROCESS_COMPOSE_PID=""
 
-trap 'EXIT_CODE=$?; set +e; if [ "$PROCESS_COMPOSE_STARTED" -eq 1 ]; then process-compose down --port "$PROCESS_COMPOSE_PORT" >/dev/null 2>&1 || true; if [ -n "$PROCESS_COMPOSE_PID" ]; then wait "$PROCESS_COMPOSE_PID" >/dev/null 2>&1 || true; fi; fi; release_repo_lock; exit "$EXIT_CODE"' EXIT
+trap 'EXIT_CODE=$?; set +e; stop_test_orchestration "$PROCESS_COMPOSE_STARTED" "$PROCESS_COMPOSE_PID" "$PROCESS_COMPOSE_PORT"; release_repo_lock; exit "$EXIT_CODE"' EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
 
@@ -120,6 +128,7 @@ process-compose up -e "$ENV_FILE" -f test-compose.yaml -t=false --port "$PROCESS
 PROCESS_COMPOSE_PID=$!
 wait "$PROCESS_COMPOSE_PID"
 EXIT_CODE=$?
+stop_test_orchestration "$PROCESS_COMPOSE_STARTED" "$PROCESS_COMPOSE_PID" "$PROCESS_COMPOSE_PORT"
 PROCESS_COMPOSE_STARTED=0
 PROCESS_COMPOSE_PID=""
 set -e
