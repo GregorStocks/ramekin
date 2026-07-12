@@ -20,6 +20,8 @@ export function instanceOfSyncRecipesResponse(value) {
         return false;
     if (!('deleted' in value) || value['deleted'] === undefined)
         return false;
+    if (!('hasMore' in value) || value['hasMore'] === undefined)
+        return false;
     if (!('recipes' in value) || value['recipes'] === undefined)
         return false;
     return true;
@@ -34,6 +36,7 @@ export function SyncRecipesResponseFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'cursor': json['cursor'],
         'deleted': json['deleted'],
+        'hasMore': json['has_more'],
         'recipes': (json['recipes'].map(SyncRecipeFromJSON)),
     };
 }
@@ -47,6 +50,7 @@ export function SyncRecipesResponseToJSONTyped(value, ignoreDiscriminator = fals
     return {
         'cursor': value['cursor'],
         'deleted': value['deleted'],
+        'has_more': value['hasMore'],
         'recipes': (value['recipes'].map(SyncRecipeToJSON)),
     };
 }

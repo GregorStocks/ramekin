@@ -22,14 +22,36 @@ enum RecipeListTestSupport {
         )
     }
 
-    static func noCacheClient() -> RecipeListCacheClient {
+    static func cacheClient(
+        currentAccountKey: @escaping () -> String? = { nil },
+        syncCursor: @escaping (String) -> Int64? = { _ in nil },
+        setSyncCursor: @escaping (Int64, String) -> Void = { _, _ in },
+        clearSyncCursor: @escaping (String) -> Void = { _ in },
+        pendingSyncSweep: @escaping (String) -> PendingSyncSweep? = { _ in nil },
+        setPendingSyncSweep: @escaping (PendingSyncSweep, String) -> Void = { _, _ in },
+        clearPendingSyncSweep: @escaping (String) -> Void = { _ in },
+        loadRecipes: @escaping (String) throws -> [RecipeSummary] = { _ in [] },
+        apply: @escaping (SyncRecipesResponse, String) throws -> Void = { _, _ in }
+    ) -> RecipeListCacheClient {
         RecipeListCacheClient(
-            currentAccountKey: { nil },
-            syncCursor: { _ in nil },
-            clearSyncCursor: { _ in },
-            loadRecipes: { _ in [] },
-            apply: { _, _ in }
+            currentAccountKey: currentAccountKey,
+            syncCursor: syncCursor,
+            setSyncCursor: setSyncCursor,
+            clearSyncCursor: clearSyncCursor,
+            pendingSyncSweep: pendingSyncSweep,
+            setPendingSyncSweep: setPendingSyncSweep,
+            clearPendingSyncSweep: clearPendingSyncSweep,
+            loadRecipes: loadRecipes,
+            apply: apply
         )
+    }
+
+    static func noCacheClient() -> RecipeListCacheClient {
+        cacheClient()
+    }
+
+    static func emptySyncResponse() -> SyncRecipesResponse {
+        SyncRecipesResponse(cursor: 1, deleted: [], hasMore: false, recipes: [])
     }
 
     static func emptyAPIClient() -> RecipeListViewAPIClient {
@@ -41,7 +63,7 @@ enum RecipeListTestSupport {
                     recipes: []
                 )
             },
-            syncRecipes: { _ in SyncRecipesResponse(cursor: 1, deleted: [], recipes: []) }
+            syncRecipes: { _, _, _ in emptySyncResponse() }
         )
     }
 

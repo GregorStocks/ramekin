@@ -22,9 +22,7 @@ final class RecipeListViewModelTests: XCTestCase {
                         recipes: [recipe]
                     )
                 },
-                syncRecipes: { _ in
-                    SyncRecipesResponse(cursor: 1, deleted: [], recipes: [])
-                }
+                syncRecipes: { _, _, _ in RecipeListTestSupport.emptySyncResponse() }
             ),
             cache: RecipeListTestSupport.noCacheClient(),
             userDefaults: RecipeListTestSupport.isolatedDefaults(),
@@ -61,15 +59,13 @@ final class RecipeListViewModelTests: XCTestCase {
                         recipes: []
                     )
                 },
-                syncRecipes: { _ in
+                syncRecipes: { _, _, _ in
                     didSync = true
-                    return SyncRecipesResponse(cursor: 1, deleted: [], recipes: [])
+                    return RecipeListTestSupport.emptySyncResponse()
                 }
             ),
-            cache: RecipeListCacheClient(
+            cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
-                syncCursor: { _ in nil },
-                clearSyncCursor: { _ in },
                 loadRecipes: { _ in cachedRecipes },
                 apply: { _, _ in cachedRecipes = [matching, hidden] }
             ),
@@ -131,14 +127,12 @@ final class RecipeListViewModelTests: XCTestCase {
                         recipes: [cachedNew]
                     )
                 },
-                syncRecipes: { _ in throw URLError(.timedOut) }
+                syncRecipes: { _, _, _ in throw URLError(.timedOut) }
             ),
-            cache: RecipeListCacheClient(
+            cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
                 syncCursor: { _ in 300 },
-                clearSyncCursor: { _ in },
-                loadRecipes: { _ in [cachedOld, cachedNew] },
-                apply: { _, _ in }
+                loadRecipes: { _ in [cachedOld, cachedNew] }
             ),
             userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20
@@ -177,14 +171,12 @@ final class RecipeListViewModelTests: XCTestCase {
                         recipes: []
                     )
                 },
-                syncRecipes: { _ in throw URLError(.timedOut) }
+                syncRecipes: { _, _, _ in throw URLError(.timedOut) }
             ),
-            cache: RecipeListCacheClient(
+            cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
                 syncCursor: { _ in 300 },
-                clearSyncCursor: { _ in },
-                loadRecipes: { _ in [older, newer] },
-                apply: { _, _ in }
+                loadRecipes: { _ in [older, newer] }
             ),
             userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20
@@ -211,14 +203,12 @@ final class RecipeListViewModelTests: XCTestCase {
                         recipes: []
                     )
                 },
-                syncRecipes: { _ in throw URLError(.timedOut) }
+                syncRecipes: { _, _, _ in throw URLError(.timedOut) }
             ),
-            cache: RecipeListCacheClient(
+            cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
                 syncCursor: { _ in 300 },
-                clearSyncCursor: { _ in },
-                loadRecipes: { _ in [cached] },
-                apply: { _, _ in }
+                loadRecipes: { _ in [cached] }
             ),
             userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20
@@ -242,14 +232,10 @@ final class RecipeListViewModelTests: XCTestCase {
                         recipes: []
                     )
                 },
-                syncRecipes: { _ in throw URLError(.timedOut) }
+                syncRecipes: { _, _, _ in throw URLError(.timedOut) }
             ),
-            cache: RecipeListCacheClient(
-                currentAccountKey: { "account" },
-                syncCursor: { _ in nil },
-                clearSyncCursor: { _ in },
-                loadRecipes: { _ in [] },
-                apply: { _, _ in }
+            cache: RecipeListTestSupport.cacheClient(
+                currentAccountKey: { "account" }
             ),
             userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20

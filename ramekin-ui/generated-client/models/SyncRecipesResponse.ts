@@ -28,20 +28,33 @@ import {
  */
 export interface SyncRecipesResponse {
     /**
-     * Opaque cursor to pass to the next sync. Changes may be redelivered
-     * across syncs, but none can be skipped.
+     * This page's snapshot watermark. Once a sweep completes, persist the
+     * *first* page's cursor and pass it to the next sync: changes committed
+     * mid-sweep can land in id ranges the sweep already passed, and only the
+     * first watermark is low enough to redeliver all of them. Changes may be
+     * redelivered across syncs, but none can be skipped.
      * @type {number}
      * @memberof SyncRecipesResponse
      */
     cursor: number;
     /**
-     * Recipe IDs deleted at or after `cursor`.
+     * Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first
+     * page; later pages return an empty list.
      * @type {Array<string>}
      * @memberof SyncRecipesResponse
      */
     deleted: Array<string>;
     /**
-     * Active recipes changed at or after `cursor`. All active recipes are returned when `cursor` is absent.
+     * True when the sweep has more pages. Request the next one with the same
+     * `cursor` and `after_id` set to this page's last recipe ID.
+     * @type {boolean}
+     * @memberof SyncRecipesResponse
+     */
+    hasMore: boolean;
+    /**
+     * The next `limit` active recipes (by ascending recipe ID, starting past
+     * `after_id`) changed at or after `cursor`. All active recipes match when
+     * `cursor` is absent.
      * @type {Array<SyncRecipe>}
      * @memberof SyncRecipesResponse
      */
@@ -54,6 +67,7 @@ export interface SyncRecipesResponse {
 export function instanceOfSyncRecipesResponse(value: object): value is SyncRecipesResponse {
     if (!('cursor' in value) || value['cursor'] === undefined) return false;
     if (!('deleted' in value) || value['deleted'] === undefined) return false;
+    if (!('hasMore' in value) || value['hasMore'] === undefined) return false;
     if (!('recipes' in value) || value['recipes'] === undefined) return false;
     return true;
 }
@@ -70,6 +84,7 @@ export function SyncRecipesResponseFromJSONTyped(json: any, ignoreDiscriminator:
         
         'cursor': json['cursor'],
         'deleted': json['deleted'],
+        'hasMore': json['has_more'],
         'recipes': ((json['recipes'] as Array<any>).map(SyncRecipeFromJSON)),
     };
 }
@@ -87,6 +102,7 @@ export function SyncRecipesResponseToJSONTyped(value?: SyncRecipesResponse | nul
         
         'cursor': value['cursor'],
         'deleted': value['deleted'],
+        'has_more': value['hasMore'],
         'recipes': ((value['recipes'] as Array<any>).map(SyncRecipeToJSON)),
     };
 }

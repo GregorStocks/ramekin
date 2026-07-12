@@ -132,6 +132,7 @@ pub enum RescrapePhotoError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum SyncRecipesError {
+    Status400(models::ErrorResponse),
     Status401(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -743,16 +744,24 @@ pub async fn rescrape_photo(
 
 pub async fn sync_recipes(
     configuration: &configuration::Configuration,
+    limit: i64,
     cursor: Option<i64>,
+    after_id: Option<&str>,
 ) -> Result<models::SyncRecipesResponse, Error<SyncRecipesError>> {
     // add a prefix to parameters to efficiently prevent name collisions
+    let p_query_limit = limit;
     let p_query_cursor = cursor;
+    let p_query_after_id = after_id;
 
     let uri_str = format!("{}/api/recipes/sync", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref param_value) = p_query_cursor {
         req_builder = req_builder.query(&[("cursor", &param_value.to_string())]);
+    }
+    req_builder = req_builder.query(&[("limit", &p_query_limit.to_string())]);
+    if let Some(ref param_value) = p_query_after_id {
+        req_builder = req_builder.query(&[("after_id", &param_value.to_string())]);
     }
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());

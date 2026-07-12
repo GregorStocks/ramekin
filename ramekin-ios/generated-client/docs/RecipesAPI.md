@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 # **syncRecipes**
 ```swift
-    open class func syncRecipes(cursor: Int64? = nil, completion: @escaping (_ data: SyncRecipesResponse?, _ error: Error?) -> Void)
+    open class func syncRecipes(limit: Int64, cursor: Int64? = nil, afterId: UUID? = nil, completion: @escaping (_ data: SyncRecipesResponse?, _ error: Error?) -> Void)
 ```
 
 
@@ -602,9 +602,11 @@ Name | Type | Description  | Notes
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import RamekinClient
 
-let cursor = 987 // Int64 | Cursor returned by the previous sync. Absent means a full sync. (optional)
+let limit = 987 // Int64 | Maximum number of recipes returned per page, between 1 and 500.
+let cursor = 987 // Int64 | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
+let afterId = 987 // UUID | ID of the last recipe on the previous page. Absent on a sweep's first page. (optional)
 
-RecipesAPI.syncRecipes(cursor: cursor) { (response, error) in
+RecipesAPI.syncRecipes(limit: limit, cursor: cursor, afterId: afterId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -620,7 +622,9 @@ RecipesAPI.syncRecipes(cursor: cursor) { (response, error) in
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **Int64** | Cursor returned by the previous sync. Absent means a full sync. | [optional] 
+ **limit** | **Int64** | Maximum number of recipes returned per page, between 1 and 500. | 
+ **cursor** | **Int64** | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. | [optional] 
+ **afterId** | **UUID** | ID of the last recipe on the previous page. Absent on a sweep&#39;s first page. | [optional] 
 
 ### Return type
 

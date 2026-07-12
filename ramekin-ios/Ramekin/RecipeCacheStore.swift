@@ -8,6 +8,20 @@ struct CachedRecipeSearchDocument {
     let notes: String?
 }
 
+/// Durable mid-sweep progress for a paged sync, so an interrupted sweep
+/// resumes where it left off instead of re-fetching every page.
+struct PendingSyncSweep: Codable, Equatable {
+    /// The cursor every page of the sweep filters on. Nil for a full sync.
+    let since: Int64?
+    /// Last recipe ID applied; the next page starts past it.
+    let afterId: UUID
+    /// The sweep's first-page watermark — what gets persisted as the sync
+    /// cursor once the sweep completes. Later pages' watermarks are too high:
+    /// they would skip changes that committed mid-sweep in id ranges the
+    /// sweep had already passed.
+    let watermark: Int64
+}
+
 @MainActor
 final class RecipeCacheStore {
     static let shared = RecipeCacheStore()
@@ -35,6 +49,31 @@ final class RecipeCacheStore {
 
     func clearSyncCursor(accountKey: String) {
         userDefaults.removeObject(forKey: syncCursorKey(accountKey: accountKey))
+        clearPendingSyncSweep(accountKey: accountKey)
+    }
+
+    func pendingSyncSweep(accountKey: String) -> PendingSyncSweep? {
+        guard let data = userDefaults.data(forKey: pendingSweepKey(accountKey: accountKey)) else {
+            return nil
+        }
+        do {
+            return try JSONDecoder().decode(PendingSyncSweep.self, from: data)
+        } catch {
+            fatalError("Pending sync sweep is invalid JSON: \(error)")
+        }
+    }
+
+    func setPendingSyncSweep(_ sweep: PendingSyncSweep, accountKey: String) {
+        do {
+            let data = try JSONEncoder().encode(sweep)
+            userDefaults.set(data, forKey: pendingSweepKey(accountKey: accountKey))
+        } catch {
+            fatalError("Failed to encode pending sync sweep: \(error)")
+        }
+    }
+
+    func clearPendingSyncSweep(accountKey: String) {
+        userDefaults.removeObject(forKey: pendingSweepKey(accountKey: accountKey))
     }
 
     func loadRecipes(accountKey: String) throws -> [RecipeSummary] {
@@ -79,7 +118,6 @@ final class RecipeCacheStore {
         }
 
         try coreDataStack.saveContextOrThrow()
-        setSyncCursor(syncResponse.cursor, accountKey: accountKey)
     }
 
     private func fetchRequest(accountKey: String, id: UUID) -> NSFetchRequest<CachedRecipe> {
@@ -160,6 +198,13 @@ final class RecipeCacheStore {
     private func syncCursorKey(accountKey: String) -> String {
         AccountScope.userDefaultsKey(
             prefix: "recipe_cache_v\(Self.cacheSchemaVersion)_sync_cursor",
+            accountKey: accountKey
+        )
+    }
+
+    private func pendingSweepKey(accountKey: String) -> String {
+        AccountScope.userDefaultsKey(
+            prefix: "recipe_cache_v\(Self.cacheSchemaVersion)_pending_sweep",
             accountKey: accountKey
         )
     }

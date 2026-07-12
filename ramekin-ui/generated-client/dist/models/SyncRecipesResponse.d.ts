@@ -17,20 +17,33 @@ import type { SyncRecipe } from './SyncRecipe';
  */
 export interface SyncRecipesResponse {
     /**
-     * Opaque cursor to pass to the next sync. Changes may be redelivered
-     * across syncs, but none can be skipped.
+     * This page's snapshot watermark. Once a sweep completes, persist the
+     * *first* page's cursor and pass it to the next sync: changes committed
+     * mid-sweep can land in id ranges the sweep already passed, and only the
+     * first watermark is low enough to redeliver all of them. Changes may be
+     * redelivered across syncs, but none can be skipped.
      * @type {number}
      * @memberof SyncRecipesResponse
      */
     cursor: number;
     /**
-     * Recipe IDs deleted at or after `cursor`.
+     * Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first
+     * page; later pages return an empty list.
      * @type {Array<string>}
      * @memberof SyncRecipesResponse
      */
     deleted: Array<string>;
     /**
-     * Active recipes changed at or after `cursor`. All active recipes are returned when `cursor` is absent.
+     * True when the sweep has more pages. Request the next one with the same
+     * `cursor` and `after_id` set to this page's last recipe ID.
+     * @type {boolean}
+     * @memberof SyncRecipesResponse
+     */
+    hasMore: boolean;
+    /**
+     * The next `limit` active recipes (by ascending recipe ID, starting past
+     * `after_id`) changed at or after `cursor`. All active recipes match when
+     * `cursor` is absent.
      * @type {Array<SyncRecipe>}
      * @memberof SyncRecipesResponse
      */

@@ -889,7 +889,7 @@ example().catch(console.error);
 
 ## syncRecipes
 
-> SyncRecipesResponse syncRecipes(cursor)
+> SyncRecipesResponse syncRecipes(limit, cursor, afterId)
 
 
 
@@ -911,8 +911,12 @@ async function example() {
   const api = new RecipesApi(config);
 
   const body = {
-    // number | Cursor returned by the previous sync. Absent means a full sync. (optional)
+    // number | Maximum number of recipes returned per page, between 1 and 500.
+    limit: 789,
+    // number | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
     cursor: 789,
+    // string | ID of the last recipe on the previous page. Absent on a sweep\'s first page. (optional)
+    afterId: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
   } satisfies SyncRecipesRequest;
 
   try {
@@ -932,7 +936,9 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **cursor** | `number` | Cursor returned by the previous sync. Absent means a full sync. | [Optional] [Defaults to `undefined`] |
+| **limit** | `number` | Maximum number of recipes returned per page, between 1 and 500. | [Defaults to `undefined`] |
+| **cursor** | `number` | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. | [Optional] [Defaults to `undefined`] |
+| **afterId** | `string` | ID of the last recipe on the previous page. Absent on a sweep\&#39;s first page. | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 
@@ -952,6 +958,7 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Recipe changes for local cache sync |  -  |
+| **400** | Invalid limit |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)

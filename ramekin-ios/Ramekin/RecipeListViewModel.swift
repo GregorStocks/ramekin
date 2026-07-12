@@ -19,6 +19,9 @@ final class RecipeListViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var totalCount = 0
     @Published var isUsingLocalCache = false
+    /// A cache-served list could not be freshened: the list on screen may be
+    /// stale, and the user needs a signal plus a way to retry.
+    @Published var syncFailed = false
     @Published var selectedTags: Set<String> = []
     @Published var availableTags: [TagItem] = []
     @Published var showingAdvancedFilters = false
@@ -49,6 +52,9 @@ final class RecipeListViewModel: ObservableObject {
     private let cache: RecipeListCacheClient
     private let userDefaults: UserDefaults
     private let pageSize: Int64
+    private let syncPageSize: Int64
+    /// Wall-clock budget for freshening a list already served from the cache.
+    private let syncBudget: TimeInterval
     /// Filter+sort the visible list was loaded with.
     private var activeKey: ListRequestKey?
     /// Bumped by every reset load. A response may only be applied while its
@@ -61,12 +67,16 @@ final class RecipeListViewModel: ObservableObject {
         api: RecipeListViewAPIClient = .live,
         cache: RecipeListCacheClient? = nil,
         userDefaults: UserDefaults = .standard,
-        pageSize: Int64 = 20
+        pageSize: Int64 = 20,
+        syncPageSize: Int64 = 100,
+        syncBudget: TimeInterval = 15
     ) {
         self.api = api
         self.cache = cache ?? .live
         self.userDefaults = userDefaults
         self.pageSize = pageSize
+        self.syncPageSize = syncPageSize
+        self.syncBudget = syncBudget
         sortOrder = RecipeSortOrder(rawValue: userDefaults.string(forKey: Self.sortOrderKey) ?? "")
             ?? .newest
         photoFilter = PhotoFilter(rawValue: userDefaults.string(forKey: Self.photoFilterKey) ?? "")
@@ -244,6 +254,7 @@ extension RecipeListViewModel {
             loadMoreFailed = false
             isLoadingMore = false
             isUsingLocalCache = false
+            syncFailed = false
             requestGeneration += 1
         }
         let key = ListRequestKey(query: queryValue, sortOrder: sortOrder)
@@ -422,6 +433,7 @@ private extension RecipeListViewModel {
         isLoadingMore = false
         isLoading = recipes.isEmpty
         error = nil
+        syncFailed = false
         requestGeneration += 1
         let generation = requestGeneration
 
@@ -445,10 +457,19 @@ private extension RecipeListViewModel {
                 appliedCachedRecipes = true
             }
             let cursor = cachedBeforeSync.isEmpty ? nil : cache.syncCursor(accountKey)
-            let response = try await logger.timed("syncRecipeCache API", source: "RecipeList") {
-                try await api.syncRecipes(cursor)
+            try await logger.timed("syncRecipeCache API", source: "RecipeList") {
+                // When the list was already served from the cache, the sweep
+                // only freshens it — give it a wall-clock budget so awaiting
+                // callers like pull-to-refresh resolve promptly and a slow
+                // sync surfaces as the stale banner instead of a hang.
+                if appliedCachedRecipes {
+                    try await withWallClockBudget(seconds: syncBudget) { [self] in
+                        try await runSyncSweep(cursor: cursor, accountKey: accountKey)
+                    }
+                } else {
+                    try await runSyncSweep(cursor: cursor, accountKey: accountKey)
+                }
             }
-            try cache.apply(response, accountKey)
             let cachedRecipes = try cache.loadRecipes(accountKey)
 
             guard isCurrentRequest(generation, key) else {
@@ -464,8 +485,50 @@ private extension RecipeListViewModel {
             guard isCurrentRequest(generation, key) else { return }
             if recipes.isEmpty && !appliedCachedRecipes {
                 self.error = "Could not load recipes. Please try again."
+            } else {
+                // The user is looking at a cache-served list that could not
+                // be freshened. Never leave that silent: new and edited
+                // recipes would just quietly not show up.
+                syncFailed = true
             }
             isLoading = false
+        }
+    }
+
+    /// Pages the sync sweep, applying each page to the cache as it lands so an
+    /// interrupted sweep resumes from its pending state instead of re-fetching
+    /// every page. The persisted cursor only advances once the sweep
+    /// completes, and it advances to the sweep's *first* page watermark — a
+    /// change committed mid-sweep can land in an id range the sweep already
+    /// passed, and only the first watermark is low enough to redeliver it.
+    func runSyncSweep(cursor: Int64?, accountKey: String) async throws {
+        var afterId: UUID?
+        var sweepWatermark: Int64?
+        if let pending = cache.pendingSyncSweep(accountKey), pending.since == cursor {
+            afterId = pending.afterId
+            sweepWatermark = pending.watermark
+        }
+
+        while true {
+            let response = try await api.syncRecipes(cursor, syncPageSize, afterId)
+            try cache.apply(response, accountKey)
+            let watermark = sweepWatermark ?? response.cursor
+            sweepWatermark = watermark
+
+            if response.hasMore {
+                guard let lastId = response.recipes.last?.id else {
+                    fatalError("Sync page claims more pages but contains no recipes")
+                }
+                afterId = lastId
+                cache.setPendingSyncSweep(
+                    PendingSyncSweep(since: cursor, afterId: lastId, watermark: watermark),
+                    accountKey
+                )
+            } else {
+                cache.setSyncCursor(watermark, accountKey)
+                cache.clearPendingSyncSweep(accountKey)
+                return
+            }
         }
     }
 

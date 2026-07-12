@@ -50,7 +50,9 @@ export interface RescrapePhotoRequest {
     id: string;
 }
 export interface SyncRecipesRequest {
+    limit: number;
     cursor?: number | null;
+    afterId?: string | null;
 }
 export interface UpdateRecipeOperationRequest {
     id: string;
@@ -137,7 +139,7 @@ export declare class RecipesApi extends runtime.BaseAPI {
     syncRecipesRaw(requestParameters: SyncRecipesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SyncRecipesResponse>>;
     /**
      */
-    syncRecipes(requestParameters?: SyncRecipesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SyncRecipesResponse>;
+    syncRecipes(requestParameters: SyncRecipesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SyncRecipesResponse>;
     /**
      */
     updateRecipeRaw(requestParameters: UpdateRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;

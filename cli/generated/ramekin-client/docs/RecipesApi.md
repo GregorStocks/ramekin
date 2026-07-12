@@ -361,7 +361,7 @@ Name | Type | Description  | Required | Notes
 
 ## sync_recipes
 
-> models::SyncRecipesResponse sync_recipes(cursor)
+> models::SyncRecipesResponse sync_recipes(limit, cursor, after_id)
 
 
 ### Parameters
@@ -369,7 +369,9 @@ Name | Type | Description  | Required | Notes
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**cursor** | Option<**i64**> | Cursor returned by the previous sync. Absent means a full sync. |  |
+**limit** | **i64** | Maximum number of recipes returned per page, between 1 and 500. | [required] |
+**cursor** | Option<**i64**> | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. |  |
+**after_id** | Option<**uuid::Uuid**> | ID of the last recipe on the previous page. Absent on a sweep's first page. |  |
 
 ### Return type
 

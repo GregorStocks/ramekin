@@ -400,9 +400,18 @@ export class RecipesApi extends runtime.BaseAPI {
     /**
      */
     async syncRecipesRaw(requestParameters, initOverrides) {
+        if (requestParameters['limit'] == null) {
+            throw new runtime.RequiredError('limit', 'Required parameter "limit" was null or undefined when calling syncRecipes().');
+        }
         const queryParameters = {};
         if (requestParameters['cursor'] != null) {
             queryParameters['cursor'] = requestParameters['cursor'];
+        }
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+        if (requestParameters['afterId'] != null) {
+            queryParameters['after_id'] = requestParameters['afterId'];
         }
         const headerParameters = {};
         if (this.configuration && this.configuration.accessToken) {
@@ -423,7 +432,7 @@ export class RecipesApi extends runtime.BaseAPI {
     }
     /**
      */
-    async syncRecipes(requestParameters = {}, initOverrides) {
+    async syncRecipes(requestParameters, initOverrides) {
         const response = await this.syncRecipesRaw(requestParameters, initOverrides);
         return await response.value();
     }

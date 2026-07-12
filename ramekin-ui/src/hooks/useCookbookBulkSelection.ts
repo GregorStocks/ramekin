@@ -8,10 +8,7 @@ import {
 import { createRequestTracker } from "../utils/requestTracker";
 
 export type BulkOperation =
-  | "rescrapePhoto"
-  | "normalizeTitle"
-  | "description"
-  | "photo";
+  "rescrapePhoto" | "normalizeTitle" | "description" | "photo";
 
 export interface BulkProgress {
   operation: BulkOperation;
