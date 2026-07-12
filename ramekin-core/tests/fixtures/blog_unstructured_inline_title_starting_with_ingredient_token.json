@@ -1,0 +1,16 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_inline_title_starting_with_ingredient_token.html",
+  "source_url": "https://example.com/rice-bowl-with-fresh-tomato-salsa",
+  "expected": {
+    "title": "Rice Bowl with Fresh Tomato Salsa",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "1 cup rice",
+      "Fresh Tomato Salsa\n2 tomatoes, diced"
+    ],
+    "instructions_contains": [
+      "Cook the rice in the water with the salt",
+      "Combine the salsa ingredients"
+    ]
+  }
+}

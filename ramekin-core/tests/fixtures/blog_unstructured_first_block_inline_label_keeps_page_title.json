@@ -1,0 +1,15 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_first_block_inline_label_keeps_page_title.html",
+  "source_url": "https://example.com/best-blueberry-muffins",
+  "expected": {
+    "title": "Best Blueberry Muffins",
+    "method_used": "html_fallback",
+    "ingredients_contains": [
+      "2 cups flour",
+      "1 cup blueberries"
+    ],
+    "instructions_contains": [
+      "fold in the blueberries"
+    ]
+  }
+}
