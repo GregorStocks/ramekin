@@ -50,7 +50,7 @@ export interface RescrapePhotoRequest {
     id: string;
 }
 export interface SyncRecipesRequest {
-    lastSyncAt?: Date | null;
+    cursor?: number | null;
 }
 export interface UpdateRecipeOperationRequest {
     id: string;

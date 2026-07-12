@@ -28,32 +28,33 @@ import {
  */
 export interface SyncRecipesResponse {
     /**
-     * Recipe IDs deleted since last_sync_at.
+     * Opaque cursor to pass to the next sync. Changes may be redelivered
+     * across syncs, but none can be skipped.
+     * @type {number}
+     * @memberof SyncRecipesResponse
+     */
+    cursor: number;
+    /**
+     * Recipe IDs deleted at or after `cursor`.
      * @type {Array<string>}
      * @memberof SyncRecipesResponse
      */
     deleted: Array<string>;
     /**
-     * Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent.
+     * Active recipes changed at or after `cursor`. All active recipes are returned when `cursor` is absent.
      * @type {Array<SyncRecipe>}
      * @memberof SyncRecipesResponse
      */
     recipes: Array<SyncRecipe>;
-    /**
-     * New sync timestamp to use for the next sync.
-     * @type {Date}
-     * @memberof SyncRecipesResponse
-     */
-    syncTimestamp: Date;
 }
 
 /**
  * Check if a given object implements the SyncRecipesResponse interface.
  */
 export function instanceOfSyncRecipesResponse(value: object): value is SyncRecipesResponse {
+    if (!('cursor' in value) || value['cursor'] === undefined) return false;
     if (!('deleted' in value) || value['deleted'] === undefined) return false;
     if (!('recipes' in value) || value['recipes'] === undefined) return false;
-    if (!('syncTimestamp' in value) || value['syncTimestamp'] === undefined) return false;
     return true;
 }
 
@@ -67,9 +68,9 @@ export function SyncRecipesResponseFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
+        'cursor': json['cursor'],
         'deleted': json['deleted'],
         'recipes': ((json['recipes'] as Array<any>).map(SyncRecipeFromJSON)),
-        'syncTimestamp': (new Date(json['sync_timestamp'])),
     };
 }
 
@@ -84,9 +85,9 @@ export function SyncRecipesResponseToJSONTyped(value?: SyncRecipesResponse | nul
 
     return {
         
+        'cursor': value['cursor'],
         'deleted': value['deleted'],
         'recipes': ((value['recipes'] as Array<any>).map(SyncRecipeToJSON)),
-        'sync_timestamp': value['syncTimestamp'].toISOString(),
     };
 }
 

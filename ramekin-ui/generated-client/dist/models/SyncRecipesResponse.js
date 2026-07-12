@@ -16,11 +16,11 @@ import { SyncRecipeFromJSON, SyncRecipeToJSON, } from './SyncRecipe';
  * Check if a given object implements the SyncRecipesResponse interface.
  */
 export function instanceOfSyncRecipesResponse(value) {
+    if (!('cursor' in value) || value['cursor'] === undefined)
+        return false;
     if (!('deleted' in value) || value['deleted'] === undefined)
         return false;
     if (!('recipes' in value) || value['recipes'] === undefined)
-        return false;
-    if (!('syncTimestamp' in value) || value['syncTimestamp'] === undefined)
         return false;
     return true;
 }
@@ -32,9 +32,9 @@ export function SyncRecipesResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        'cursor': json['cursor'],
         'deleted': json['deleted'],
         'recipes': (json['recipes'].map(SyncRecipeFromJSON)),
-        'syncTimestamp': (new Date(json['sync_timestamp'])),
     };
 }
 export function SyncRecipesResponseToJSON(json) {
@@ -45,8 +45,8 @@ export function SyncRecipesResponseToJSONTyped(value, ignoreDiscriminator = fals
         return value;
     }
     return {
+        'cursor': value['cursor'],
         'deleted': value['deleted'],
         'recipes': (value['recipes'].map(SyncRecipeToJSON)),
-        'sync_timestamp': value['syncTimestamp'].toISOString(),
     };
 }

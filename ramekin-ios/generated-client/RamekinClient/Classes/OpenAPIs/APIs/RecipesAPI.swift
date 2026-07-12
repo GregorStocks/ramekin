@@ -491,12 +491,12 @@ open class RecipesAPI {
 
     /**
 
-     - parameter lastSyncAt: (query) Last sync timestamp - server will return changes since this time. (optional)
+     - parameter cursor: (query) Cursor returned by the previous sync. Absent means a full sync. (optional)
      - returns: SyncRecipesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func syncRecipes(lastSyncAt: Date? = nil) async throws -> SyncRecipesResponse {
-        return try await syncRecipesWithRequestBuilder(lastSyncAt: lastSyncAt).execute().body
+    open class func syncRecipes(cursor: Int64? = nil) async throws -> SyncRecipesResponse {
+        return try await syncRecipesWithRequestBuilder(cursor: cursor).execute().body
     }
 
     /**
@@ -504,17 +504,17 @@ open class RecipesAPI {
      - Bearer Token:
        - type: http
        - name: bearer_auth
-     - parameter lastSyncAt: (query) Last sync timestamp - server will return changes since this time. (optional)
+     - parameter cursor: (query) Cursor returned by the previous sync. Absent means a full sync. (optional)
      - returns: RequestBuilder<SyncRecipesResponse> 
      */
-    open class func syncRecipesWithRequestBuilder(lastSyncAt: Date? = nil) -> RequestBuilder<SyncRecipesResponse> {
+    open class func syncRecipesWithRequestBuilder(cursor: Int64? = nil) -> RequestBuilder<SyncRecipesResponse> {
         let localVariablePath = "/api/recipes/sync"
         let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "last_sync_at": (wrappedValue: lastSyncAt?.encodeToJSON(), isExplode: true),
+            "cursor": (wrappedValue: cursor?.encodeToJSON(), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: Any?] = [

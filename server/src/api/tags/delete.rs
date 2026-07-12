@@ -2,6 +2,7 @@ use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
+use crate::raw_sql;
 use crate::schema::user_tags;
 use axum::{
     extract::{Path, State},
@@ -47,6 +48,7 @@ pub async fn delete_tag(
     .set((
         user_tags::deleted_at.eq(Some(now)),
         user_tags::updated_at.eq(now),
+        user_tags::change_xid.eq(raw_sql::current_change_xid()),
     ))
     .execute(&mut conn);
 

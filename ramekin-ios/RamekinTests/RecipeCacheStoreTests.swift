@@ -8,12 +8,14 @@ final class RecipeCacheStoreTests: XCTestCase {
         let (store, defaults) = makeStore()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
         let encodedAccountKey = Data(accountKey.utf8).base64EncodedString()
+        // The timestamp cursor a pre-v3 install persisted. It is meaningless to
+        // the xid cursor, so the store must ignore it and take a full sync.
         defaults.set(
             Date(timeIntervalSince1970: 100),
-            forKey: "recipe_cache_last_sync_at_\(encodedAccountKey)"
+            forKey: "recipe_cache_v2_last_sync_at_\(encodedAccountKey)"
         )
 
-        XCTAssertNil(store.lastSyncAt(accountKey: accountKey))
+        XCTAssertNil(store.syncCursor(accountKey: accountKey))
     }
 
     func testApplyPopulatesSearchableRecipeBody() throws {
@@ -31,13 +33,13 @@ final class RecipeCacheStoreTests: XCTestCase {
             instructions: "Mix and bake.",
             notes: "Cool completely."
         )
-        let syncTimestamp = Date(timeIntervalSince1970: 300)
+        let cursor: Int64 = 300
 
         try store.apply(
             syncResponse: SyncRecipesResponse(
+                cursor: cursor,
                 deleted: [],
-                recipes: [recipe],
-                syncTimestamp: syncTimestamp
+                recipes: [recipe]
             ),
             accountKey: accountKey
         )
@@ -50,7 +52,7 @@ final class RecipeCacheStoreTests: XCTestCase {
         XCTAssertEqual(document.ingredients, recipe.ingredients)
         XCTAssertEqual(document.instructions, "Mix and bake.")
         XCTAssertEqual(document.notes, "Cool completely.")
-        XCTAssertEqual(store.lastSyncAt(accountKey: accountKey), syncTimestamp)
+        XCTAssertEqual(store.syncCursor(accountKey: accountKey), cursor)
     }
 
     func testApplyReplacesSearchableFieldsOnUpdate() throws {
@@ -59,9 +61,9 @@ final class RecipeCacheStoreTests: XCTestCase {
         let id = UUID()
         try store.apply(
             syncResponse: SyncRecipesResponse(
+                cursor: 300,
                 deleted: [],
-                recipes: [makeRecipe(id: id, instructions: "Old instructions", notes: "Old notes")],
-                syncTimestamp: Date(timeIntervalSince1970: 300)
+                recipes: [makeRecipe(id: id, instructions: "Old instructions", notes: "Old notes")]
             ),
             accountKey: accountKey
         )
@@ -75,9 +77,9 @@ final class RecipeCacheStoreTests: XCTestCase {
 
         try store.apply(
             syncResponse: SyncRecipesResponse(
+                cursor: 500,
                 deleted: [],
-                recipes: [updated],
-                syncTimestamp: Date(timeIntervalSince1970: 500)
+                recipes: [updated]
             ),
             accountKey: accountKey
         )
@@ -95,18 +97,18 @@ final class RecipeCacheStoreTests: XCTestCase {
         let recipe = makeRecipe()
         try store.apply(
             syncResponse: SyncRecipesResponse(
+                cursor: 300,
                 deleted: [],
-                recipes: [recipe],
-                syncTimestamp: Date(timeIntervalSince1970: 300)
+                recipes: [recipe]
             ),
             accountKey: accountKey
         )
 
         try store.apply(
             syncResponse: SyncRecipesResponse(
+                cursor: 400,
                 deleted: [recipe.id],
-                recipes: [],
-                syncTimestamp: Date(timeIntervalSince1970: 400)
+                recipes: []
             ),
             accountKey: accountKey
         )

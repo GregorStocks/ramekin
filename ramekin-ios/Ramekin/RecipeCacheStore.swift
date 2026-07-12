@@ -11,7 +11,7 @@ struct CachedRecipeSearchDocument {
 @MainActor
 final class RecipeCacheStore {
     static let shared = RecipeCacheStore()
-    private static let cacheSchemaVersion = 2
+    private static let cacheSchemaVersion = 3
 
     private let coreDataStack: CoreDataStack
     private let userDefaults: UserDefaults
@@ -25,16 +25,16 @@ final class RecipeCacheStore {
         AccountScope.currentAccountKey()
     }
 
-    func lastSyncAt(accountKey: String) -> Date? {
-        userDefaults.object(forKey: lastSyncKey(accountKey: accountKey)) as? Date
+    func syncCursor(accountKey: String) -> Int64? {
+        userDefaults.object(forKey: syncCursorKey(accountKey: accountKey)) as? Int64
     }
 
-    func setLastSyncAt(_ date: Date, accountKey: String) {
-        userDefaults.set(date, forKey: lastSyncKey(accountKey: accountKey))
+    func setSyncCursor(_ cursor: Int64, accountKey: String) {
+        userDefaults.set(cursor, forKey: syncCursorKey(accountKey: accountKey))
     }
 
-    func clearLastSyncAt(accountKey: String) {
-        userDefaults.removeObject(forKey: lastSyncKey(accountKey: accountKey))
+    func clearSyncCursor(accountKey: String) {
+        userDefaults.removeObject(forKey: syncCursorKey(accountKey: accountKey))
     }
 
     func loadRecipes(accountKey: String) throws -> [RecipeSummary] {
@@ -79,7 +79,7 @@ final class RecipeCacheStore {
         }
 
         try coreDataStack.saveContextOrThrow()
-        setLastSyncAt(syncResponse.syncTimestamp, accountKey: accountKey)
+        setSyncCursor(syncResponse.cursor, accountKey: accountKey)
     }
 
     private func fetchRequest(accountKey: String, id: UUID) -> NSFetchRequest<CachedRecipe> {
@@ -157,9 +157,9 @@ final class RecipeCacheStore {
         }
     }
 
-    private func lastSyncKey(accountKey: String) -> String {
+    private func syncCursorKey(accountKey: String) -> String {
         AccountScope.userDefaultsKey(
-            prefix: "recipe_cache_v\(Self.cacheSchemaVersion)_last_sync_at",
+            prefix: "recipe_cache_v\(Self.cacheSchemaVersion)_sync_cursor",
             accountKey: accountKey
         )
     }

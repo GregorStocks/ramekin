@@ -25,8 +25,8 @@ enum RecipeListTestSupport {
     static func noCacheClient() -> RecipeListCacheClient {
         RecipeListCacheClient(
             currentAccountKey: { nil },
-            lastSyncAt: { _ in nil },
-            clearLastSyncAt: { _ in },
+            syncCursor: { _ in nil },
+            clearSyncCursor: { _ in },
             loadRecipes: { _ in [] },
             apply: { _, _ in }
         )
@@ -41,7 +41,7 @@ enum RecipeListTestSupport {
                     recipes: []
                 )
             },
-            syncRecipes: { _ in SyncRecipesResponse(deleted: [], recipes: [], syncTimestamp: Date()) }
+            syncRecipes: { _ in SyncRecipesResponse(cursor: 1, deleted: [], recipes: []) }
         )
     }
 

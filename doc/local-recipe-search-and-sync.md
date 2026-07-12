@@ -33,20 +33,32 @@ required.
 The iOS app already has a SQLite-backed Core Data store. Since PR #643,
 `RecipeCacheStore` stores every active recipe's summary, structured ingredients,
 instructions, and notes for an account in `CachedRecipe`. The endpoint
-`GET /api/recipes/sync` maintains it using a server timestamp:
+`GET /api/recipes/sync` maintains it using an opaque integer cursor:
 
 - The first request returns all active recipe summaries.
-- Later requests return current recipe versions created after the previous
-  timestamp, plus recipes whose tags changed.
+- Later requests return current recipe versions changed at or after the previous
+  cursor, plus recipes whose tags changed.
 - Soft-deleted recipe IDs are returned as tombstones.
 
-The timestamp is not a race-free change cursor. A transaction can receive a
-change timestamp at or before the cursor, commit after the sync SELECT's
-snapshot, and then be excluded by the next request's strict `>` filter. That can
-permanently omit a recipe update, tag change, or tombstone from the cache. The
-follow-up `p2-recipe-sync-cursor-can-skip-concurrent-commits` must establish a
-safe cursor or reconciliation mechanism before this feed carries the full
-local-search corpus.
+The cursor is a PostgreSQL transaction-id watermark, not a wall clock. Every
+sync-visible change carries the 64-bit id of the transaction that wrote it
+(`recipe_versions.change_xid`, `recipes.deleted_xid`, `user_tags.change_xid`,
+all stamped by `current_change_xid()`). The sync reads in a single read-only
+repeatable-read transaction and returns `change_xid_watermark()` — the snapshot's
+`pg_snapshot_xmin`, the lowest transaction id still in flight — as the next
+cursor. Every transaction that has not committed-and-become-visible by that
+snapshot necessarily has an id at or above the watermark, so the next request's
+inclusive `>= cursor` filter returns it.
+
+That ordering is what a wall-clock cursor could not provide: a transaction took
+its timestamp before the cursor, committed after the sync SELECT's snapshot, and
+was then excluded by the next request's strict `>` filter, permanently omitting a
+recipe update, tag change, or tombstone. The trade is deliberate — the watermark
+lags any in-flight writer, so changes can be *redelivered* across syncs. Clients
+already apply changes idempotently (upsert by id, tombstone by id), and
+redelivering a change is recoverable where skipping one is not.
+`tests/test_recipe_sync_races.py` pins this by stalling a real API write
+mid-transaction, syncing, and then letting the write commit.
 
 PR #643 also versioned the cache timestamp key, forcing existing summary-only
 installs through one full refresh, and added API and iOS tests for population,
@@ -113,10 +125,10 @@ on the server, as do title and random ordering. Local text search is limited to
 cached tags, basic photo presence, created-date filters, and relevance,
 updated-date, rating, or created-date ordering.
 
-PR #643 made the initial sync larger; later syncs should transfer only changed
-recipes once the cursor race is fixed. Immutable `recipe_versions` provide a
-stable version identity even though wall-clock `created_at` is not by itself a
-safe cursor. Before enabling local search, measure stored cache size and search
+PR #643 made the initial sync larger; later syncs now transfer only changed
+recipes. Immutable `recipe_versions` provide a stable version identity, and
+`change_xid` orders those versions against commits in a way wall-clock
+`created_at` cannot. Before enabling local search, measure stored cache size and search
 latency against representative large cookbooks. That measurement should choose
 the query implementation; it should not hold the data model hostage to an
 unmeasured indexing concern.
@@ -141,9 +153,9 @@ than pretending transport removes the need to decide what a conflict means.
 
 The smallest complete design is:
 
-1. Replace or repair the timestamp cursor so a transaction that commits across
-   the sync snapshot cannot be skipped. Cover create/update, tag changes, and
-   soft-delete tombstones with a coordinated API regression test.
+1. Done: the transaction-id watermark cursor above replaced the timestamp, and
+   `tests/test_recipe_sync_races.py` covers update, tag change, and soft-delete
+   tombstones with coordinated API regression tests.
 2. Extend the existing `SyncRecipe` document with the server-produced
    `ingredient_match_text`. Do not assume encoding its already-synced structured
    ingredients on iOS recreates PostgreSQL's JSONB text.
@@ -340,8 +352,8 @@ engine on both ends. A server database migration provides no shortcut.
 
 ### Stage 1: complete local reads
 
-PR #643 completed the full-body read-only cache. Next fix
-`p2-recipe-sync-cursor-can-skip-concurrent-commits`, add the distinct ingredient
+PR #643 completed the full-body read-only cache, and the transaction-id
+watermark cursor made its deltas race-safe. Next add the distinct ingredient
 match text and versioned normalization contract to `SyncRecipe`, and persist
 them in the existing cache.
 

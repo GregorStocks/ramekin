@@ -1,4 +1,5 @@
 use crate::models::NewUserTag;
+use crate::raw_sql;
 use crate::schema::user_tags;
 use chrono::{DateTime, Utc};
 use diesel::pg::PgConnection;
@@ -25,6 +26,7 @@ pub fn upsert_user_tag(conn: &mut PgConnection, user_id: Uuid, name: &str) -> Qu
     .set((
         user_tags::deleted_at.eq(None::<DateTime<Utc>>),
         user_tags::updated_at.eq(Utc::now()),
+        user_tags::change_xid.eq(raw_sql::current_change_xid()),
     ))
     .returning(user_tags::id)
     .get_result(conn)

@@ -174,6 +174,7 @@ impl ApplyGeneratedDescriptionStep {
             let current: RecipeVersion = recipe_versions::table
                 .filter(recipe_versions::id.eq(expected_version_id))
                 .filter(recipe_versions::recipe_id.eq(recipe_id))
+                .select(RecipeVersion::as_select())
                 .first(conn)?;
 
             if current.description.as_deref() == Some(description) {

@@ -35,6 +35,7 @@ class TestSyncRecipesResponse(unittest.TestCase):
         model = SyncRecipesResponse()
         if include_optional:
             return SyncRecipesResponse(
+                cursor = 56,
                 deleted = [
                     ''
                     ],
@@ -63,11 +64,11 @@ class TestSyncRecipesResponse(unittest.TestCase):
                         thumbnail_photo_id = '', 
                         title = '', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                    ],
-                sync_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
+                    ]
             )
         else:
             return SyncRecipesResponse(
+                cursor = 56,
                 deleted = [
                     ''
                     ],
@@ -97,7 +98,6 @@ class TestSyncRecipesResponse(unittest.TestCase):
                         title = '', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                     ],
-                sync_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )
         """
 
