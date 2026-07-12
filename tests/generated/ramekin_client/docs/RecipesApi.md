@@ -575,7 +575,7 @@ with ramekin_client.ApiClient(configuration) as api_client:
     api_instance = ramekin_client.RecipesApi(api_client)
     limit = 56 # int | Number of items to return (default: 20, max: 1000) (optional)
     offset = 56 # int | Number of items to skip (default: 0) (optional)
-    q = 'q_example' # str | Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created after date - created:<2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \"chicken tag:dinner tag:quick has:photos\" (optional)
+    q = 'q_example' # str | Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created on or after date - created:<2024-12-31: created on or before date - created:2024-01-01..2024-12-31: created in date range  Date filters name inclusive UTC calendar days.  Example: \"chicken tag:dinner tag:quick has:photos\" (optional)
     sort_by = ramekin_client.SortBy() # SortBy | Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. (optional)
     sort_dir = ramekin_client.Direction() # Direction | Sort direction (default: desc). Ignored when sort_by is random or relevance. (optional)
 
@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of items to return (default: 20, max: 1000) | [optional] 
  **offset** | **int**| Number of items to skip (default: 0) | [optional] 
- **q** | **str**| Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created after date - created:&lt;2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; | [optional] 
+ **q** | **str**| Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created on or after date - created:&lt;2024-12-31: created on or before date - created:2024-01-01..2024-12-31: created in date range  Date filters name inclusive UTC calendar days.  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; | [optional] 
  **sort_by** | [**SortBy**](.md)| Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. | [optional] 
  **sort_dir** | [**Direction**](.md)| Sort direction (default: desc). Ignored when sort_by is random or relevance. | [optional] 
 

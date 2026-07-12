@@ -1,5 +1,6 @@
 import json
 import threading
+from datetime import timedelta, timezone
 from pathlib import Path
 
 import pytest
@@ -531,6 +532,37 @@ def test_list_recipes_returns_created_recipes(authed_api_client):
         assert recipe.title is not None
         assert recipe.created_at is not None
         assert recipe.updated_at is not None
+
+
+def test_list_recipes_created_date_filter_covers_whole_utc_day(authed_api_client):
+    """created: filters name inclusive UTC calendar days on both ends."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    created = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Boundary Recipe",
+            instructions="Instructions",
+            ingredients=[],
+        )
+    )
+    recipe = recipes_api.get_recipe(str(created.id))
+    created_day = recipe.created_at.astimezone(timezone.utc).date()
+    day_before = created_day - timedelta(days=1)
+    day_after = created_day + timedelta(days=1)
+
+    def listed_ids(q: str) -> set[str]:
+        return {str(r.id) for r in recipes_api.list_recipes(q=q).recipes}
+
+    recipe_id = str(recipe.id)
+    # Inclusive bounds: the creation day itself matches on both ends.
+    assert recipe_id in listed_ids(f"created:<{created_day}")
+    assert recipe_id in listed_ids(f"created:>{created_day}")
+    assert recipe_id in listed_ids(f"created:{created_day}")
+    assert recipe_id in listed_ids(f"created:{created_day}..{created_day}")
+    # Days that exclude the creation day filter it out.
+    assert recipe_id not in listed_ids(f"created:<{day_before}")
+    assert recipe_id not in listed_ids(f"created:>{day_after}")
 
 
 def test_recipes_only_visible_to_owner(authed_api_client, second_authed_api_client):

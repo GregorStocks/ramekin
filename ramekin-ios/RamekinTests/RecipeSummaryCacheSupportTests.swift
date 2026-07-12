@@ -47,23 +47,47 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
         XCTAssertEqual(result.map(\.id), [five.id, three.id, unrated.id])
     }
 
-    func testCreatedDateFilterUsesUtcDayBoundaries() {
+    private struct CreatedDateFilterCase: Decodable {
+        let name: String
+        let createdAfter: String?
+        let createdBefore: String?
+        let createdAt: String
+        let matches: Bool
+    }
+
+    func testCreatedDateFilterMatchesSharedVectors() throws {
+        // Pin a non-UTC device timezone so a pass proves the filter uses UTC
+        // days rather than the device calendar.
         let originalTimeZone = NSTimeZone.default
         NSTimeZone.default = TimeZone(identifier: "America/Los_Angeles")!
         defer { NSTimeZone.default = originalTimeZone }
 
-        let justAfterUtcMidnight = makeRecipe(
-            title: "UTC Match",
-            createdAt: dateTime(year: 2024, month: 2, day: 1, hour: 1)
+        let url = try XCTUnwrap(
+            Bundle(for: Self.self).url(forResource: "created-date-filter", withExtension: "json")
         )
+        let cases = try JSONDecoder().decode([CreatedDateFilterCase].self, from: Data(contentsOf: url))
+        // The formatter the app uses to decode createdAt off the wire, so the
+        // vectors pin production parse semantics.
+        let timestampFormatter = OpenISO8601DateFormatter()
 
-        let result = RecipeSummaryCacheSupport.filteredAndSorted(
-            [justAfterUtcMidnight],
-            filterState: RecipeListFilterState(createdAfter: "2024-02-01"),
-            sortOrder: .newest
-        )
+        for testCase in cases {
+            let createdAt = try XCTUnwrap(
+                timestampFormatter.date(from: testCase.createdAt),
+                "unparseable timestamp: \(testCase.createdAt)"
+            )
+            let recipe = makeRecipe(title: "Boundary", createdAt: createdAt)
 
-        XCTAssertEqual(result.map(\.id), [justAfterUtcMidnight.id])
+            let result = RecipeSummaryCacheSupport.filteredAndSorted(
+                [recipe],
+                filterState: RecipeListFilterState(
+                    createdAfter: testCase.createdAfter ?? "",
+                    createdBefore: testCase.createdBefore ?? ""
+                ),
+                sortOrder: .newest
+            )
+
+            XCTAssertEqual(!result.isEmpty, testCase.matches, "case: \(testCase.name)")
+        }
     }
 
     func testSourceFilterAndRandomSortUseNetwork() {
@@ -126,15 +150,4 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
         RecipeListFilterSupport.date(from: value)!
     }
 
-    private func dateTime(year: Int, month: Int, day: Int, hour: Int) -> Date {
-        var calendar = Calendar(identifier: .iso8601)
-        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
-        return calendar.date(from: DateComponents(
-            timeZone: TimeZone(secondsFromGMT: 0)!,
-            year: year,
-            month: month,
-            day: day,
-            hour: hour
-        ))!
-    }
 }

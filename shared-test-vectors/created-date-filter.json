@@ -1,0 +1,84 @@
+[
+  {
+    "name": "midnight of the created_before day matches",
+    "createdBefore": "2024-03-15",
+    "createdAt": "2024-03-15T00:00:00Z",
+    "matches": true
+  },
+  {
+    "name": "last whole second of the created_before day matches",
+    "createdBefore": "2024-03-15",
+    "createdAt": "2024-03-15T23:59:59Z",
+    "matches": true
+  },
+  {
+    "name": "final fractional second of the created_before day matches",
+    "createdBefore": "2024-03-15",
+    "createdAt": "2024-03-15T23:59:59.999Z",
+    "matches": true
+  },
+  {
+    "name": "midnight following the created_before day does not match",
+    "createdBefore": "2024-03-15",
+    "createdAt": "2024-03-16T00:00:00Z",
+    "matches": false
+  },
+  {
+    "name": "midnight of the created_after day matches",
+    "createdAfter": "2024-03-15",
+    "createdAt": "2024-03-15T00:00:00Z",
+    "matches": true
+  },
+  {
+    "name": "final fractional second before the created_after day does not match",
+    "createdAfter": "2024-03-15",
+    "createdAt": "2024-03-14T23:59:59.999Z",
+    "matches": false
+  },
+  {
+    "name": "range includes the start day's midnight",
+    "createdAfter": "2024-03-01",
+    "createdBefore": "2024-03-15",
+    "createdAt": "2024-03-01T00:00:00Z",
+    "matches": true
+  },
+  {
+    "name": "range excludes the leap day before the start day",
+    "createdAfter": "2024-03-01",
+    "createdBefore": "2024-03-15",
+    "createdAt": "2024-02-29T23:59:59.999Z",
+    "matches": false
+  },
+  {
+    "name": "range includes the end day's final fractional second",
+    "createdAfter": "2024-03-01",
+    "createdBefore": "2024-03-15",
+    "createdAt": "2024-03-15T23:59:59.999Z",
+    "matches": true
+  },
+  {
+    "name": "range excludes the midnight following the end day",
+    "createdAfter": "2024-03-01",
+    "createdBefore": "2024-03-15",
+    "createdAt": "2024-03-16T00:00:00Z",
+    "matches": false
+  },
+  {
+    "name": "single-day range covers the whole UTC day",
+    "createdAfter": "2024-03-15",
+    "createdBefore": "2024-03-15",
+    "createdAt": "2024-03-15T12:00:00Z",
+    "matches": true
+  },
+  {
+    "name": "end of year rolls over to the next year's midnight",
+    "createdBefore": "2024-12-31",
+    "createdAt": "2024-12-31T23:59:59.999Z",
+    "matches": true
+  },
+  {
+    "name": "no date filters match everything",
+    "createdAt": "2024-03-15T00:00:00Z",
+    "matches": true
+  }
+]

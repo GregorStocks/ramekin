@@ -17,6 +17,7 @@ use axum::{
 };
 use chrono::{DateTime, NaiveDate, Utc};
 use diesel::prelude::*;
+use ramekin_core::created_date_filter::{day_end_utc_exclusive, day_start_utc};
 use serde::{Deserialize, Serialize};
 use std::{collections::HashMap, sync::Arc};
 use utoipa::{IntoParams, ToSchema};
@@ -64,9 +65,11 @@ pub struct ListRecipesParams {
     /// - tag:value: filter by tag (can use multiple)
     /// - source:value: filter by source name
     /// - has:photos / no:photos: filter by photo presence
-    /// - created:>2024-01-01: created after date
-    /// - created:<2024-12-31: created before date
+    /// - created:>2024-01-01: created on or after date
+    /// - created:<2024-12-31: created on or before date
     /// - created:2024-01-01..2024-12-31: created in date range
+    ///
+    /// Date filters name inclusive UTC calendar days.
     ///
     /// Example: "chicken tag:dinner tag:quick has:photos"
     pub q: Option<String>,
@@ -365,18 +368,14 @@ pub async fn list_recipes(
             query = query.filter(raw_sql::photo_min_dim_filter(threshold.op, threshold.value));
         }
 
-        // Date range filters (on recipe created_at)
+        // Date range filters (on recipe created_at). The filter dates name
+        // inclusive UTC calendar days; the shared bounds keep the iOS cache
+        // filter's day semantics and this query in agreement.
         if let Some(after) = parsed.created_after {
-            if let Some(time) = after.and_hms_opt(0, 0, 0) {
-                let after_datetime = time.and_utc();
-                query = query.filter(recipes::created_at.ge(after_datetime));
-            }
+            query = query.filter(recipes::created_at.ge(day_start_utc(after)));
         }
         if let Some(before) = parsed.created_before {
-            if let Some(time) = before.and_hms_opt(23, 59, 59) {
-                let before_datetime = time.and_utc();
-                query = query.filter(recipes::created_at.le(before_datetime));
-            }
+            query = query.filter(recipes::created_at.lt(day_end_utc_exclusive(before)));
         }
 
         query
