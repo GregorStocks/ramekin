@@ -5,6 +5,7 @@ import {
   runRecipeAiBatchOperation,
   type RecipeAiOperationSummary,
 } from "../utils/aiEnrichments";
+import { createRequestTracker } from "../utils/requestTracker";
 
 export type BulkOperation =
   | "rescrapePhoto"
@@ -41,12 +42,12 @@ export function useCookbookBulkSelection(
   const [bulkProgress, setBulkProgress] = createSignal<BulkProgress | null>(
     null,
   );
-  const [bulkRequestId, setBulkRequestId] = createSignal(0);
+  const bulkRequests = createRequestTracker();
 
   const resetForQueryChange = () => {
     setSelected(new Set<string>());
     setBulkRecipes([]);
-    setBulkRequestId((id) => id + 1);
+    bulkRequests.invalidate();
   };
 
   const toggleBulkMode = () => {
@@ -71,8 +72,7 @@ export function useCookbookBulkSelection(
     const cached = bulkRecipes();
     if (cached.length > 0 && cached.length === options.total()) return cached;
 
-    const myRequestId = bulkRequestId() + 1;
-    setBulkRequestId(myRequestId);
+    const requestId = bulkRequests.start();
     const query = options.query();
     const api = options.getRecipesApi();
     const all: RecipeSummary[] = [];
@@ -87,7 +87,7 @@ export function useCookbookBulkSelection(
         sortBy: "updated_at",
         sortDir: "desc",
       });
-      if (bulkRequestId() !== myRequestId) return null;
+      if (!bulkRequests.isCurrent(requestId)) return null;
 
       all.push(...response.recipes);
       offset += response.recipes.length;
@@ -99,7 +99,7 @@ export function useCookbookBulkSelection(
       }
     }
 
-    if (bulkRequestId() !== myRequestId) return null;
+    if (!bulkRequests.isCurrent(requestId)) return null;
     setBulkRecipes(all);
     return all;
   };

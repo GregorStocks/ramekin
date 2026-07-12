@@ -1,16 +1,9 @@
-import {
-  createEffect,
-  createSignal,
-  onCleanup,
-  onMount,
-  type Accessor,
-} from "solid-js";
-import type { RecipeSummary, RecipesApi } from "ramekin-client";
+import { createEffect, onCleanup, onMount, type Accessor } from "solid-js";
+import type { RecipesApi } from "ramekin-client";
 
-import { getSortParams, type SortOption } from "../pages/cookbook/query";
+import type { SortOption } from "../pages/cookbook/query";
+import { createCookbookRecipeRequests } from "../pages/cookbook/recipeRequests";
 import type { Density } from "../pages/cookbook/presentation";
-
-const PAGE_SIZE = 20;
 
 interface UseCookbookRecipesOptions {
   getRecipesApi: () => RecipesApi;
@@ -23,67 +16,12 @@ interface UseCookbookRecipesOptions {
 }
 
 export function useCookbookRecipes(options: UseCookbookRecipesOptions) {
-  const [recipes, setRecipes] = createSignal<RecipeSummary[]>([]);
-  const [loading, setLoading] = createSignal(false);
-  const [loadingMore, setLoadingMore] = createSignal(false);
-  const [offset, setOffset] = createSignal(0);
-  const [total, setTotal] = createSignal(0);
-  const [hasMore, setHasMore] = createSignal(true);
-
-  const loadRecipes = async (appendMode = false, currentOffset = 0) => {
-    if (appendMode) {
-      setLoadingMore(true);
-    } else {
-      setLoading(true);
-    }
-    options.setError(null);
-    if (!appendMode) options.setNotice(null);
-
-    try {
-      const query = options.query();
-      const { sortBy, sortDir } = getSortParams(
-        options.hasTextQuery() ? "best" : options.sortOption(),
-      );
-      const response = await options.getRecipesApi().listRecipes({
-        limit: PAGE_SIZE,
-        offset: currentOffset,
-        q: query || undefined,
-        sortBy,
-        sortDir,
-      });
-
-      setRecipes(
-        appendMode ? [...recipes(), ...response.recipes] : response.recipes,
-      );
-      setTotal(response.pagination.total);
-      setOffset(currentOffset + response.recipes.length);
-      setHasMore(
-        currentOffset + response.recipes.length < response.pagination.total,
-      );
-    } catch {
-      options.setError("Failed to load recipes");
-    } finally {
-      setLoading(false);
-      setLoadingMore(false);
-    }
-  };
-
-  const resetAndLoad = () => {
-    setOffset(0);
-    setRecipes([]);
-    void loadRecipes(false, 0);
-  };
-
-  const loadMore = () => {
-    if (!loadingMore() && hasMore()) {
-      void loadRecipes(true, offset());
-    }
-  };
+  const state = createCookbookRecipeRequests(options);
 
   const handleScroll = () => {
     const root = document.documentElement;
     if (root.scrollHeight - root.scrollTop - root.clientHeight < 300) {
-      loadMore();
+      state.loadMore();
     }
   };
 
@@ -91,14 +29,14 @@ export function useCookbookRecipes(options: UseCookbookRecipesOptions) {
   onCleanup(() => window.removeEventListener("scroll", handleScroll));
 
   createEffect(() => {
-    const items = recipes();
+    const items = state.recipes();
     options.density();
     if (items.length > 0) requestAnimationFrame(handleScroll);
   });
 
   const recipeCount = () => {
-    const count = recipes().length;
-    const totalCount = total();
+    const count = state.recipes().length;
+    const totalCount = state.total();
     if (totalCount === 0) return "";
     if (count < totalCount) {
       return `(showing ${count} of ${totalCount} recipes)`;
@@ -108,13 +46,13 @@ export function useCookbookRecipes(options: UseCookbookRecipesOptions) {
   };
 
   return {
-    recipes,
-    loading,
-    loadingMore,
-    total,
-    hasMore,
-    loadRecipes,
-    resetAndLoad,
+    recipes: state.recipes,
+    loading: state.loading,
+    loadingMore: state.loadingMore,
+    total: state.total,
+    hasMore: state.hasMore,
+    loadRecipes: state.loadRecipes,
+    resetAndLoad: state.resetAndLoad,
     recipeCount,
   };
 }

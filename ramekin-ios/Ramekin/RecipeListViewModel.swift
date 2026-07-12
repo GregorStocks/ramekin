@@ -1,47 +1,11 @@
 import Combine
 import Foundation
 
-struct RecipeListViewAPIClient {
-    var listAllTags: () async throws -> TagsListResponse
-    var listRecipes: (
-        _ limit: Int64,
-        _ offset: Int64,
-        _ query: String?,
-        _ sortBy: SortBy?,
-        _ sortDir: Direction?
-    ) async throws -> ListRecipesResponse
-    var syncRecipes: (_ cursor: Int64?) async throws -> SyncRecipesResponse
-
-    static let live = RecipeListViewAPIClient(
-        listAllTags: { try await TagsAPI.listAllTags() },
-        listRecipes: { limit, offset, query, sortBy, sortDir in
-            try await RecipesAPI.listRecipes(
-                limit: limit,
-                offset: offset,
-                q: query,
-                sortBy: sortBy,
-                sortDir: sortDir
-            )
-        },
-        syncRecipes: { try await RecipesAPI.syncRecipes(cursor: $0) }
-    )
-}
-
-@MainActor
-struct RecipeListCacheClient {
-    var currentAccountKey: () -> String?
-    var syncCursor: (_ accountKey: String) -> Int64?
-    var clearSyncCursor: (_ accountKey: String) -> Void
-    var loadRecipes: (_ accountKey: String) throws -> [RecipeSummary]
-    var apply: (_ syncResponse: SyncRecipesResponse, _ accountKey: String) throws -> Void
-
-    static let live = RecipeListCacheClient(
-        currentAccountKey: { RecipeCacheStore.shared.currentAccountKey() },
-        syncCursor: { RecipeCacheStore.shared.syncCursor(accountKey: $0) },
-        clearSyncCursor: { RecipeCacheStore.shared.clearSyncCursor(accountKey: $0) },
-        loadRecipes: { try RecipeCacheStore.shared.loadRecipes(accountKey: $0) },
-        apply: { try RecipeCacheStore.shared.apply(syncResponse: $0, accountKey: $1) }
-    )
+/// Identifies the filter+sort combination a list request belongs to. Sort is
+/// part of it because a sort change leaves the query string untouched.
+private struct ListRequestKey: Equatable {
+    let query: String?
+    let sortOrder: RecipeSortOrder
 }
 
 @MainActor
@@ -85,7 +49,12 @@ final class RecipeListViewModel: ObservableObject {
     private let cache: RecipeListCacheClient
     private let userDefaults: UserDefaults
     private let pageSize: Int64
-    private var activeQuery: String?
+    /// Filter+sort the visible list was loaded with.
+    private var activeKey: ListRequestKey?
+    /// Bumped by every reset load. A response may only be applied while its
+    /// generation is still current, so a filter or sort change discards both
+    /// initial and append requests that were already in flight.
+    private var requestGeneration = 0
     private var searchTask: Task<Void, Never>?
 
     init(
@@ -266,7 +235,7 @@ extension RecipeListViewModel {
         if !forceNetwork,
            reset,
            RecipeSummaryCacheSupport.canServeFromCache(filterState: currentFilterState, sortOrder: sortOrder) {
-            await syncCachedRecipes(queryValue: queryValue)
+            await syncCachedRecipes(key: currentKey())
             return
         }
 
@@ -274,9 +243,12 @@ extension RecipeListViewModel {
             hasMore = true
             loadMoreFailed = false
             isLoadingMore = false
-            activeQuery = queryValue
             isUsingLocalCache = false
+            requestGeneration += 1
         }
+        let key = ListRequestKey(query: queryValue, sortOrder: sortOrder)
+        activeKey = key
+        let generation = requestGeneration
 
         isLoading = true
         error = nil
@@ -284,18 +256,26 @@ extension RecipeListViewModel {
         let useRelevance = RecipeListFilterSupport.hasTextQuery(currentFilterState)
 
         do {
+            // Every parameter comes from `key`, so the response is guaranteed to
+            // describe the filter+sort this request was started for.
             let response = try await logger.timed("listRecipes API", source: "RecipeList") {
                 try await api.listRecipes(
                     pageSize,
                     0,
-                    queryValue,
-                    useRelevance ? nil : sortOrder.sortBy,
-                    useRelevance ? nil : sortOrder.sortDir
+                    key.query,
+                    useRelevance ? nil : key.sortOrder.sortBy,
+                    useRelevance ? nil : key.sortOrder.sortDir
                 )
             }
 
-            guard activeQuery == queryValue else {
-                logger.log("loadRecipes: stale query, discarding results", source: "RecipeList")
+            // Deliberately no currentKey() check, unlike loadMore(). This response
+            // replaces the whole list, so it cannot mix two filters together — it
+            // just makes the list fresher while a reload is pending. Rejecting it
+            // would strand the list when no reload is coming: the advanced-filters
+            // sheet mutates sourceFilter and friends on every keystroke but only
+            // reloads when applied.
+            guard isCurrentRequest(generation, key) else {
+                logger.log("loadRecipes: superseded request, discarding results", source: "RecipeList")
                 return
             }
             recipes = response.recipes
@@ -310,7 +290,7 @@ extension RecipeListViewModel {
             logger.log("loadRecipes: cancelled", source: "RecipeList")
         } catch {
             logger.log("loadRecipes: error - \(error.localizedDescription)", source: "RecipeList")
-            guard activeQuery == queryValue else { return }
+            guard isCurrentRequest(generation, key) else { return }
             if recipes.isEmpty {
                 self.error = "Could not load recipes. Please try again."
             }
@@ -320,6 +300,13 @@ extension RecipeListViewModel {
 
     func loadMore() async {
         guard !isUsingLocalCache && !isLoading && !isLoadingMore && hasMore else { return }
+        // The user can change a filter or sort before its reload starts — search
+        // is debounced, and reloadRecipes() defers to a Task. Extending a list
+        // the user has already moved on from would splice rows from the previous
+        // query into it, so leave the next request to the pending reload.
+        guard let key = activeKey, key == currentKey() else { return }
+
+        let generation = requestGeneration
 
         isLoadingMore = true
         loadMoreFailed = false
@@ -330,17 +317,27 @@ extension RecipeListViewModel {
             let response = try await api.listRecipes(
                 pageSize,
                 Int64(recipes.count),
-                activeQuery,
-                useRelevance ? nil : sortOrder.sortBy,
-                useRelevance ? nil : sortOrder.sortDir
+                key.query,
+                useRelevance ? nil : key.sortOrder.sortBy,
+                useRelevance ? nil : key.sortOrder.sortDir
             )
 
+            guard appendMayApply(generation, key) else {
+                DebugLogger.shared.log("loadMore: superseded request, discarding results", source: "RecipeList")
+                releaseAppendSlot(generation)
+                return
+            }
             recipes.append(contentsOf: response.recipes)
             totalCount = Int(response.pagination.total)
             hasMore = recipes.count < totalCount
             isLoadingMore = false
         } catch is CancellationError {
+            releaseAppendSlot(generation)
         } catch {
+            guard appendMayApply(generation, key) else {
+                releaseAppendSlot(generation)
+                return
+            }
             loadMoreFailed = true
             isLoadingMore = false
         }
@@ -372,6 +369,31 @@ private extension RecipeListViewModel {
         RecipeListFilterSupport.buildQuery(from: currentFilterState)
     }
 
+    func currentKey() -> ListRequestKey {
+        ListRequestKey(query: buildQuery(), sortOrder: sortOrder)
+    }
+
+    /// A response may only be applied if nothing superseded its request. The
+    /// generation catches reloads that leave the query untouched, such as a
+    /// sort change; the key check keeps the existing initial-response guard.
+    func isCurrentRequest(_ generation: Int, _ key: ListRequestKey) -> Bool {
+        generation == requestGeneration && activeKey == key
+    }
+
+    /// An append additionally has to match what the user is asking for right
+    /// now: a filter or sort change can land before its reload starts.
+    func appendMayApply(_ generation: Int, _ key: ListRequestKey) -> Bool {
+        isCurrentRequest(generation, key) && key == currentKey()
+    }
+
+    /// A reset load owns the loading flags once it bumps the generation. Until
+    /// then a discarded append has to clear its own spinner, or it sticks and
+    /// the `!isLoadingMore` guard blocks every later page.
+    func releaseAppendSlot(_ generation: Int) {
+        guard generation == requestGeneration else { return }
+        isLoadingMore = false
+    }
+
     func persistSelectedTags() {
         guard let accountKey = cache.currentAccountKey() else { return }
         TagFilterCache.saveSelectedTags(
@@ -390,16 +412,18 @@ private extension RecipeListViewModel {
         )
     }
 
-    func syncCachedRecipes(queryValue: String?) async {
+    func syncCachedRecipes(key: ListRequestKey) async {
         let logger = DebugLogger.shared
 
-        activeQuery = queryValue
+        activeKey = key
         isUsingLocalCache = true
         hasMore = false
         loadMoreFailed = false
         isLoadingMore = false
         isLoading = recipes.isEmpty
         error = nil
+        requestGeneration += 1
+        let generation = requestGeneration
 
         guard let accountKey = cache.currentAccountKey() else {
             await loadRecipes(reset: true, forceNetwork: true)
@@ -415,8 +439,8 @@ private extension RecipeListViewModel {
             try cache.apply(response, accountKey)
             let cachedRecipes = try cache.loadRecipes(accountKey)
 
-            guard activeQuery == queryValue else {
-                logger.log("syncCachedRecipes: stale query, discarding results", source: "RecipeList")
+            guard isCurrentRequest(generation, key) else {
+                logger.log("syncCachedRecipes: superseded request, discarding results", source: "RecipeList")
                 return
             }
             applyCachedRecipes(cachedRecipes)
@@ -425,7 +449,7 @@ private extension RecipeListViewModel {
             logger.log("syncCachedRecipes: cancelled", source: "RecipeList")
         } catch {
             logger.log("syncCachedRecipes: error - \(error.localizedDescription)", source: "RecipeList")
-            guard activeQuery == queryValue else { return }
+            guard isCurrentRequest(generation, key) else { return }
             if recipes.isEmpty {
                 self.error = "Could not load recipes. Please try again."
             }
@@ -446,7 +470,7 @@ private extension RecipeListViewModel {
         isLoadingMore = false
         loadMoreFailed = false
         isUsingLocalCache = true
-        activeQuery = buildQuery()
+        activeKey = currentKey()
     }
 
     static let sortOrderKey = "recipeSortOrder"

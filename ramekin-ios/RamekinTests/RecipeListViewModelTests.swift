@@ -4,7 +4,7 @@ import XCTest
 @MainActor
 final class RecipeListViewModelTests: XCTestCase {
     func testTextSearchUsesRelevanceSortAndStoresResults() async {
-        let recipe = makeRecipe(title: "Pasta")
+        let recipe = RecipeListTestSupport.makeRecipe(title: "Pasta")
         var capturedRequest: ListRequest?
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
@@ -26,8 +26,8 @@ final class RecipeListViewModelTests: XCTestCase {
                     SyncRecipesResponse(cursor: 1, deleted: [], recipes: [])
                 }
             ),
-            cache: noCacheClient(),
-            userDefaults: isolatedDefaults(),
+            cache: RecipeListTestSupport.noCacheClient(),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20
         )
 
@@ -45,8 +45,8 @@ final class RecipeListViewModelTests: XCTestCase {
     }
 
     func testCacheableBrowseLoadsAndFiltersSyncedCache() async {
-        let matching = makeRecipe(title: "Dinner", tags: ["Dinner"])
-        let hidden = makeRecipe(title: "Lunch", tags: ["Lunch"])
+        let matching = RecipeListTestSupport.makeRecipe(title: "Dinner", tags: ["Dinner"])
+        let hidden = RecipeListTestSupport.makeRecipe(title: "Lunch", tags: ["Lunch"])
         var didListRecipes = false
         var didSync = false
         var cachedRecipes = [matching, hidden]
@@ -73,7 +73,7 @@ final class RecipeListViewModelTests: XCTestCase {
                 loadRecipes: { _ in cachedRecipes },
                 apply: { _, _ in cachedRecipes = [matching, hidden] }
             ),
-            userDefaults: isolatedDefaults(),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20
         )
 
@@ -90,9 +90,9 @@ final class RecipeListViewModelTests: XCTestCase {
 
     func testClearFiltersClearsSearchAndPersistedFilters() {
         let viewModel = RecipeListViewModel(
-            api: emptyAPIClient(),
-            cache: noCacheClient(),
-            userDefaults: isolatedDefaults(),
+            api: RecipeListTestSupport.emptyAPIClient(),
+            cache: RecipeListTestSupport.noCacheClient(),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20
         )
 
@@ -111,54 +111,6 @@ final class RecipeListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.sourceFilter, "")
         XCTAssertEqual(viewModel.createdAfterFilter, "")
         XCTAssertEqual(viewModel.photoSizeFilter, "")
-    }
-
-    private func makeRecipe(
-        title: String,
-        tags: [String] = [],
-        createdAt: Date = Date(timeIntervalSince1970: 100),
-        updatedAt: Date = Date(timeIntervalSince1970: 200)
-    ) -> RecipeSummary {
-        RecipeSummary(
-            createdAt: createdAt,
-            description: nil,
-            id: UUID(),
-            rating: nil,
-            tags: tags,
-            thumbnailPhotoId: nil,
-            title: title,
-            updatedAt: updatedAt
-        )
-    }
-
-    private func noCacheClient() -> RecipeListCacheClient {
-        RecipeListCacheClient(
-            currentAccountKey: { nil },
-            syncCursor: { _ in nil },
-            clearSyncCursor: { _ in },
-            loadRecipes: { _ in [] },
-            apply: { _, _ in }
-        )
-    }
-
-    private func emptyAPIClient() -> RecipeListViewAPIClient {
-        RecipeListViewAPIClient(
-            listAllTags: { TagsListResponse(tags: []) },
-            listRecipes: { limit, offset, _, _, _ in
-                ListRecipesResponse(
-                    pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),
-                    recipes: []
-                )
-            },
-            syncRecipes: { _ in SyncRecipesResponse(cursor: 1, deleted: [], recipes: []) }
-        )
-    }
-
-    private func isolatedDefaults() -> UserDefaults {
-        let suiteName = "RecipeListViewModelTests-\(UUID().uuidString)"
-        let defaults = UserDefaults(suiteName: suiteName)!
-        defaults.removePersistentDomain(forName: suiteName)
-        return defaults
     }
 
     private struct ListRequest {
