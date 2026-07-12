@@ -118,17 +118,10 @@ final class RecipeCacheStoreTests: XCTestCase {
     private var defaultsSuiteName: String { "RecipeCacheStoreTests" }
 
     private func makeStore() -> (RecipeCacheStore, UserDefaults) {
-        let container = NSPersistentContainer(name: "Ramekin")
-        let description = NSPersistentStoreDescription()
-        description.type = NSInMemoryStoreType
-        container.persistentStoreDescriptions = [description]
-        container.loadPersistentStores { _, error in
-            XCTAssertNil(error)
-        }
         let defaults = UserDefaults(suiteName: defaultsSuiteName)!
         defaults.removePersistentDomain(forName: defaultsSuiteName)
         return (
-            RecipeCacheStore(coreDataStack: CoreDataStack(container: container), userDefaults: defaults),
+            RecipeCacheStore(coreDataStack: CoreDataTestStack.makeStack(), userDefaults: defaults),
             defaults
         )
     }
