@@ -29,7 +29,7 @@ impl PipelineStep for ExtractRecipeStep {
         let start = Instant::now();
 
         // Get HTML from prior step (duck typing - we know fetch_html outputs "html")
-        let fetch_output = match ctx.outputs.get_output("fetch_html") {
+        let fetch_output = match ctx.outputs.get_output("fetch_html").await {
             Some(o) => o,
             None => {
                 return StepResult {

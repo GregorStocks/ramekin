@@ -59,7 +59,7 @@ impl PipelineStep for EnrichAutoTagStep {
         let start = Instant::now();
 
         // Get recipe from extract_recipe output
-        let extract_output = match ctx.outputs.get_output("extract_recipe") {
+        let extract_output = match ctx.outputs.get_output("extract_recipe").await {
             Some(o) => o,
             None => {
                 return StepResult {

@@ -12,40 +12,13 @@ transaction, then requires that a database-free endpoint still answers over
 fresh connections while the write is waiting.
 """
 
-import threading
-import time
-
-import psycopg
 import requests
 
-from conftest import make_ingredient
+from conftest import WRITE_TIMEOUT_SECONDS, blocked_api_write, make_ingredient
 from ramekin_client.api import RecipesApi
 from ramekin_client.models import CreateRecipeRequest
 
 PING_TIMEOUT_SECONDS = 5
-LOCK_WAIT_TIMEOUT_SECONDS = 30
-UPDATE_TIMEOUT_SECONDS = 60
-
-
-def _wait_until_update_blocks(database_url):
-    """Wait for a backend to be stuck on a lock from the recipe update.
-
-    The update blocks at its `INSERT INTO recipe_versions` statement: the new
-    version row's foreign key takes a KEY SHARE lock on the referenced recipes
-    row, which conflicts with the test's FOR UPDATE lock. So match any
-    recipe-ish statement, not just writes to the recipes table itself.
-    """
-    deadline = time.monotonic() + LOCK_WAIT_TIMEOUT_SECONDS
-    with psycopg.connect(database_url, autocommit=True) as conn:
-        while time.monotonic() < deadline:
-            waiting = conn.execute(
-                "SELECT count(*) FROM pg_stat_activity"
-                " WHERE wait_event_type = 'Lock' AND query ILIKE '%recipe%'"
-            ).fetchone()[0]
-            if waiting:
-                return
-            time.sleep(0.1)
-    raise TimeoutError("the update never started waiting on the row lock")
 
 
 def test_unrelated_requests_answer_while_a_write_waits_on_a_lock(
@@ -62,6 +35,8 @@ def test_unrelated_requests_answer_while_a_write_waits_on_a_lock(
         )
     )
 
+    # The update's INSERT INTO recipe_versions queues here: the new version
+    # row's foreign key takes a KEY SHARE lock on the referenced recipes row.
     uncommitted.execute(
         "SELECT id FROM recipes WHERE id = %s FOR UPDATE", (created.id,)
     )
@@ -76,24 +51,18 @@ def test_unrelated_requests_answer_while_a_write_waits_on_a_lock(
     )
     assert warm.status_code == 200
 
-    update_result = {}
-
     def blocked_update():
-        update_result["response"] = session.put(
+        return session.put(
             f"{server_url}/api/recipes/{created.id}",
             headers=headers,
             json={
                 "expected_version_id": warm.json()["version_id"],
                 "title": "Unlocked Recipe",
             },
-            timeout=UPDATE_TIMEOUT_SECONDS,
+            timeout=WRITE_TIMEOUT_SECONDS,
         )
 
-    updater = threading.Thread(target=blocked_update)
-    updater.start()
-    try:
-        _wait_until_update_blocks(database_url)
-
+    with blocked_api_write(database_url, uncommitted, blocked_update) as write:
         # No database, and a fresh TCP connection each time: exactly what went
         # unanswered before database work moved off the runtime threads.
         for _ in range(3):
@@ -102,11 +71,7 @@ def test_unrelated_requests_answer_while_a_write_waits_on_a_lock(
                 timeout=PING_TIMEOUT_SECONDS,
             )
             assert ping.status_code == 200
-    finally:
-        uncommitted.rollback()
-        updater.join(timeout=UPDATE_TIMEOUT_SECONDS)
 
-    assert not updater.is_alive()
-    assert update_result["response"].status_code == 200
+    assert write.result().status_code == 200
     updated = recipes_api.get_recipe(created.id)
     assert updated.title == "Unlocked Recipe"
