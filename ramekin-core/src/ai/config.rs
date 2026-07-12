@@ -16,7 +16,7 @@ pub const DEFAULT_RATE_LIMIT_MS: u64 = 500;
 /// Default request timeout in seconds.
 pub const DEFAULT_REQUEST_TIMEOUT_SECS: u64 = 30;
 
-#[derive(Error, Debug)]
+#[derive(Error, Debug, Clone)]
 pub enum ConfigError {
     #[error("Missing required environment variable: {0}")]
     MissingEnvVar(String),

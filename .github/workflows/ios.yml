@@ -120,12 +120,6 @@ jobs:
           PORT: 55000
           RUST_LOG: error
           INSECURE_PASSWORD_HASHING: 1
-          # Import jobs construct an AI client while building their step
-          # registry and hard-fail without a key, before save_recipe ever
-          # runs (see issues/p3-import-jobs-hard-fail-without-ai-key.json5).
-          # A dummy key lets recipes import; the AI enrich steps then fail
-          # soft (continues_on_failure), same as local dev with a bad key.
-          OPENROUTER_API_KEY: sk-or-ci-dummy
 
       - name: Build CLI and seed database
         run: |

@@ -14,7 +14,7 @@ use tokio::sync::Mutex;
 use tokio::time::Instant;
 
 use super::cache::{AiCache, CacheKey};
-use super::config::AiConfig;
+use super::config::{AiConfig, ConfigError};
 use super::types::{ChatMessage, ChatRequest, ChatResponse, Role, Usage};
 
 #[derive(Error, Debug)]
@@ -340,6 +340,34 @@ impl AiClient for CachingAiClient {
     }
 }
 
+/// AI client used when configuration is unavailable (e.g. `OPENROUTER_API_KEY`
+/// is unset). Every call fails with the underlying configuration error, so a
+/// missing key behaves exactly like an invalid one: AI steps fail when they
+/// execute, rather than blocking construction of a pipeline whose non-AI steps
+/// could still run.
+pub struct UnconfiguredAiClient {
+    error: ConfigError,
+}
+
+impl UnconfiguredAiClient {
+    pub fn new(error: ConfigError) -> Self {
+        Self { error }
+    }
+}
+
+#[async_trait]
+impl AiClient for UnconfiguredAiClient {
+    async fn complete(
+        &self,
+        _prompt_name: &str,
+        _request: &ChatRequest,
+    ) -> Result<ChatResponse, AiError> {
+        Err(AiError::Config(self.error.clone()))
+    }
+
+    fn forget(&self, _prompt_name: &str, _messages: &[ChatMessage]) {}
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -517,5 +545,21 @@ mod tests {
         assert!(response_content_usable(false, "plain text answer"));
         assert!(!response_content_usable(false, ""));
         assert!(!response_content_usable(false, "   \n"));
+    }
+
+    #[tokio::test]
+    async fn unconfigured_client_fails_every_call_with_config_error() {
+        let client =
+            UnconfiguredAiClient::new(ConfigError::MissingEnvVar("OPENROUTER_API_KEY".to_string()));
+
+        let err = client.complete("p", &request()).await.unwrap_err();
+
+        assert!(
+            err.to_string().contains("OPENROUTER_API_KEY"),
+            "unexpected error: {err}"
+        );
+
+        // forget() has no cache to evict; it must simply be callable.
+        client.forget("p", &[ChatMessage::user("hi")]);
     }
 }

@@ -1,0 +1,35 @@
+{
+  "title": "continues_on_failure is defined inconsistently across types.rs, \
+step metadata, and job outcomes",
+  "description": "There are two parallel definitions of which pipeline steps \
+fail soft, and they disagree. \
+ramekin_core::types::PipelineStep::continues_on_failure() says EnrichAutoTag \
+and ApplyAutoTags continue on failure. But the step structs' own metadata() — \
+which is what the server runner and core executor actually consult — says \
+continues_on_failure: false for ALL enrich steps (enrich_normalize_title, \
+enrich_generate_description, and enrich_auto_tag, whose comment 'Errors should \
+stop the pipeline' directly contradicts types.rs); only the server's \
+ApplyAutoTagsStep is true. The practical consequence: when any AI enrichment \
+fails (invalid or missing OPENROUTER_API_KEY, provider flake), the recipe is \
+saved but the whole job is marked FAILED at the enrich step, even though \
+enrich steps carefully set next_step on failure as if they expected to fail \
+soft. Commit 8c9b6da23 (#526) says 'Mark ingest failed when a non-continuing \
+post-save apply step fails', so some of this is deliberate, but agents keep \
+misreading the design (a since-removed ios.yml comment claimed enrich steps \
+are continues_on_failure). Decide the intended semantics — should a post-save \
+enrichment failure fail the job, or complete it with per-step failures \
+surfaced (status.rs already renders failed steps inside completed jobs) — then \
+make types.rs, the step metadata, and the comments agree, and delete whichever \
+definition is redundant. Affects how import failures render in both the web \
+scrape-status UI and the iOS import UI; behavior should stay consistent for \
+both clients.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "server",
+    "pipeline",
+  ],
+  "created_at": "2026-07-12T15:30:00-07:00",
+  "updated_at": "2026-07-12T15:30:00-07:00",
+}
