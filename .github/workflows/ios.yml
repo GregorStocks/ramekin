@@ -8,6 +8,10 @@ name: iOS
       - 'ramekin-ios/**'
       - 'shared-test-vectors/**'
       - '.github/workflows/ios.yml'
+      # CI runs the iOS build through make targets, so changes to them (and
+      # the simulator picker they call) need this job to run.
+      - 'Makefile'
+      - 'scripts/find-ios-simulator.py'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -159,31 +163,16 @@ jobs:
           echo "Seeded recipes never became queryable — import jobs likely failed"
           exit 1
 
-      - name: Generate Xcode project
-        run: make ios-generate
+      - name: Run unit tests
+        run: make ios-test
 
-      - name: Find available simulator
-        id: simulator
-        run: |
-          UDID=$(xcrun simctl list devices available -j | python3 scripts/find-ios-simulator.py)
-          echo "Found simulator UDID: $UDID"
-          echo "udid=$UDID" >> $GITHUB_OUTPUT
-
-      - name: Build and test
-        run: |
-          cd ramekin-ios
-          # Simulator builds must be (ad-hoc) code signed: without a signature
-          # the keychain access-group entitlement is missing, every keychain
-          # operation fails, and login never completes in UI tests.
-          xcodebuild test \
-            -scheme Ramekin \
-            -destination 'platform=iOS Simulator,id=${{ steps.simulator.outputs.udid }}' \
-            -resultBundlePath TestResults
+      - name: Run UI tests
+        run: make ios-test-ui
 
       - name: Upload test results on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: ios-test-results
-          path: ramekin-ios/TestResults*
+          path: logs/*.xcresult
           if-no-files-found: ignore

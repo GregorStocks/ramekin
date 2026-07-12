@@ -302,6 +302,9 @@ ios-install: ios-generate ## Build and install iOS app on connected device
 		echo "Installing to device $$DEVICE_ID..." && \
 		xcrun devicectl device install app --device "$$DEVICE_ID" "$$APP_PATH"
 
+# Simulator test builds must stay (ad-hoc) code signed: without a signature
+# the keychain access-group entitlement is missing, every keychain operation
+# fails, and UI-test login never completes. Never pass CODE_SIGNING_ALLOWED=NO.
 ios-test: ios-generate ## Run iOS unit tests
 	@mkdir -p logs
 	@rm -rf logs/ios-tests.xcresult
