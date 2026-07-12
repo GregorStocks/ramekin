@@ -111,6 +111,9 @@ targets:
       - path: ../shared-test-vectors/recipe-title-sort.json
         buildPhase: resources
         type: file
+      - path: ../shared-test-vectors/created-date-filter.json
+        buildPhase: resources
+        type: file
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.tests

@@ -895,7 +895,7 @@
           {
             "name": "q",
             "in": "query",
-            "description": "Search query with optional filters. Supports:\n- Plain text: searches title and description\n- tag:value: filter by tag (can use multiple)\n- source:value: filter by source name\n- has:photos / no:photos: filter by photo presence\n- created:>2024-01-01: created after date\n- created:<2024-12-31: created before date\n- created:2024-01-01..2024-12-31: created in date range\n\nExample: \"chicken tag:dinner tag:quick has:photos\"",
+            "description": "Search query with optional filters. Supports:\n- Plain text: searches title and description\n- tag:value: filter by tag (can use multiple)\n- source:value: filter by source name\n- has:photos / no:photos: filter by photo presence\n- created:>2024-01-01: created on or after date\n- created:<2024-12-31: created on or before date\n- created:2024-01-01..2024-12-31: created in date range\n\nDate filters name inclusive UTC calendar days.\n\nExample: \"chicken tag:dinner tag:quick has:photos\"",
             "required": false,
             "schema": {
               "type": [

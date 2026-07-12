@@ -227,7 +227,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **limit** | Option<**i64**> | Number of items to return (default: 20, max: 1000) |  |
 **offset** | Option<**i64**> | Number of items to skip (default: 0) |  |
-**q** | Option<**String**> | Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created after date - created:<2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \"chicken tag:dinner tag:quick has:photos\" |  |
+**q** | Option<**String**> | Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created on or after date - created:<2024-12-31: created on or before date - created:2024-01-01..2024-12-31: created in date range  Date filters name inclusive UTC calendar days.  Example: \"chicken tag:dinner tag:quick has:photos\" |  |
 **sort_by** | Option<[**SortBy**](.md)> | Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. |  |
 **sort_dir** | Option<[**Direction**](.md)> | Sort direction (default: desc). Ignored when sort_by is random or relevance. |  |
 
