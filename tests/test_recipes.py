@@ -16,8 +16,10 @@ def test_list_recipes_empty(authed_api_client):
     client, user_id = authed_api_client
     recipes_api = RecipesApi(client)
 
-    response = recipes_api.list_recipes()
+    response = recipes_api.list_recipes(offset=10)
     assert response.recipes == []
+    assert response.pagination.total == 0
+    assert response.pagination.offset == 10
 
 
 def test_list_recipes_requires_auth(unauthed_api_client):
@@ -612,6 +614,43 @@ def test_list_recipes_pagination_total_count(authed_api_client):
     page2 = recipes_api.list_recipes(limit=20, offset=20)
     assert page2.pagination.total == 25  # Same total
     assert len(page2.recipes) == 5  # Only 5 remaining
+
+
+def test_list_recipes_empty_page_preserves_total(authed_api_client):
+    """Empty pages retain the total for both unfiltered and filtered lists."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    for i in range(3):
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=f"Matching Recipe {i}",
+                instructions="Cook it",
+                ingredients=[],
+                source_name="Matching Source",
+            )
+        )
+    for i in range(2):
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=f"Other Recipe {i}",
+                instructions="Cook it",
+                ingredients=[],
+                source_name="Other Source",
+            )
+        )
+
+    at_end = recipes_api.list_recipes(offset=5)
+    assert at_end.recipes == []
+    assert at_end.pagination.total == 5
+
+    beyond_end = recipes_api.list_recipes(offset=8)
+    assert beyond_end.recipes == []
+    assert beyond_end.pagination.total == 5
+
+    filtered_at_end = recipes_api.list_recipes(q="source:Matching", offset=3)
+    assert filtered_at_end.recipes == []
+    assert filtered_at_end.pagination.total == 3
 
 
 def test_list_recipes_pagination_ordering(authed_api_client):
