@@ -52,6 +52,7 @@ struct RamekinApp: App {
 }
 
 /// Global app state shared across views
+@MainActor
 class AppState: ObservableObject {
     @Published var isLoggedIn: Bool = false
     @Published var username: String = ""
@@ -70,14 +71,18 @@ class AppState: ObservableObject {
             queue: .main
         ) { [weak self] notification in
             guard let url = notification.object as? URL else { return }
-            self?.handleUniversalLink(url)
+            Task { @MainActor [weak self] in
+                self?.handleUniversalLink(url)
+            }
         }
         authExpiredObserver = NotificationCenter.default.addObserver(
             forName: .ramekinAuthExpired,
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.handleAuthExpired()
+            Task { @MainActor [weak self] in
+                self?.handleAuthExpired()
+            }
         }
         if let url = UniversalLinkStore.shared.consumePendingURL() {
             handleUniversalLink(url)

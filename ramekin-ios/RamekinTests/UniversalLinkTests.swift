@@ -1,6 +1,7 @@
 import XCTest
 @testable import Ramekin
 
+@MainActor
 final class UniversalLinkTests: XCTestCase {
     func testRecipeLinkSetsPendingRecipeId() throws {
         let id = UUID()
