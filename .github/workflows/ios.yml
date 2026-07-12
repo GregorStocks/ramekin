@@ -116,6 +116,12 @@ jobs:
           PORT: 55000
           RUST_LOG: error
           INSECURE_PASSWORD_HASHING: 1
+          # Import jobs construct an AI client while building their step
+          # registry and hard-fail without a key, before save_recipe ever
+          # runs (see issues/p3-import-jobs-hard-fail-without-ai-key.json5).
+          # A dummy key lets recipes import; the AI enrich steps then fail
+          # soft (continues_on_failure), same as local dev with a bad key.
+          OPENROUTER_API_KEY: sk-or-ci-dummy
 
       - name: Build CLI and seed database
         run: |
@@ -129,6 +135,29 @@ jobs:
         env:
           LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
           PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
+
+      - name: Verify seeded recipes are queryable
+        run: |
+          # Imports run as async server-side jobs; fail here with a clear
+          # message if they didn't produce recipes, instead of letting the UI
+          # test fail later with an empty recipe list.
+          TOKEN=$(curl -s -X POST http://localhost:55000/api/auth/login \
+            -H 'Content-Type: application/json' \
+            -d '{"username":"t","password":"t"}' \
+            | python3 -c 'import sys, json; print(json.load(sys.stdin)["token"])')
+          for i in {1..24}; do
+            TOTAL=$(curl -s "http://localhost:55000/api/recipes?limit=1" \
+              -H "Authorization: Bearer $TOKEN" \
+              | python3 -c 'import sys, json; print(json.load(sys.stdin)["pagination"]["total"])')
+            if [ "$TOTAL" -gt 0 ] 2>/dev/null; then
+              echo "Seeded recipes queryable: total=$TOTAL"
+              exit 0
+            fi
+            echo "No recipes queryable yet (total=$TOTAL), waiting... ($i/24)"
+            sleep 5
+          done
+          echo "Seeded recipes never became queryable — import jobs likely failed"
+          exit 1
 
       - name: Generate Xcode project
         run: make ios-generate
@@ -150,3 +179,11 @@ jobs:
             -scheme Ramekin \
             -destination 'platform=iOS Simulator,id=${{ steps.simulator.outputs.udid }}' \
             -resultBundlePath TestResults
+
+      - name: Upload test results on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-test-results
+          path: ramekin-ios/TestResults*
+          if-no-files-found: ignore

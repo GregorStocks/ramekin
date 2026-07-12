@@ -73,9 +73,12 @@ final class RecipeFlowTests: XCTestCase {
             return
         }
 
-        // Wait for recipe rows to load (requires seeded data from make seed)
+        // Wait for recipe rows to load (requires seeded data from make seed).
+        // A fresh install must first sync the full seed corpus (~475 recipes)
+        // into the local cache before any rows render, and that takes well
+        // over 15 seconds on CI hardware.
         let recipeCell = app.cells.firstMatch
-        guard recipeCell.waitForExistence(timeout: 15) else {
+        guard recipeCell.waitForExistence(timeout: 60) else {
             attachScreenshot(named: "02-EmptyRecipeList")
             XCTFail("Recipe list has no rows. Seed data from make seed is required for UI tests.")
             return
