@@ -2,7 +2,7 @@ import Foundation
 
 enum AccountScope {
     static func key(serverURL: String, username: String) -> String {
-        "\(serverURL)|\(username)"
+        "\(serverURL)|\(username.lowercased())"
     }
 
     static func currentAccountKey(credentialStore: CredentialStore = KeychainHelper.shared) -> String? {
