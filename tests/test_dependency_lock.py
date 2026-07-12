@@ -51,7 +51,7 @@ def _run_check_deps(
     (tmp_path / "requirements-test.lock").write_text(locked, encoding="utf-8")
 
     return subprocess.run(
-        [str(script), "--venv"], capture_output=True, text=True, check=False
+        [str(script), "--lockfile"], capture_output=True, text=True, check=False
     )
 
 
@@ -88,6 +88,22 @@ def test_dependency_upgrades_require_the_explicit_update_target():
 
     assert "uv pip compile --universal --upgrade requirements-test.txt" in recipes
     assert "--output-file requirements-test.lock" in recipes
+
+
+@pytest.mark.parametrize("target", ROUTINE_TARGETS)
+def test_routine_targets_check_the_lockfile_covers_declared_dependencies(target):
+    recipes = _dry_run_recipes(target, "requirements-test.txt")
+
+    assert "check-deps.sh --lockfile" in recipes
+
+
+def test_the_lockfile_check_does_not_block_the_target_that_fixes_a_stale_lock():
+    # The staleness check tells developers to run python-test-deps-update, so
+    # that target must not depend on the check it exists to satisfy — otherwise
+    # a stale lock blocks its own remedy.
+    recipes = _dry_run_recipes("python-test-deps-update", "requirements-test.txt")
+
+    assert "check-deps.sh --lockfile" not in recipes
 
 
 def test_check_deps_accepts_a_lockfile_pinning_every_declared_dependency(tmp_path):

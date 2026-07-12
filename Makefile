@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -156,10 +156,15 @@ pretool-hook-test: venv $(CLIENT_MARKER) ## Run repo PreToolUse hook policy test
 check-venv-deps:
 	@./scripts/check-deps.sh --venv
 
+# Gates consuming the lock, not producing it, so python-test-deps-update stays
+# runnable when the lock is what's stale.
+check-lockfile:
+	@./scripts/check-deps.sh --lockfile
+
 # Depends on the lockfile alone: `uv pip sync` reads only the lock, and a rule
 # building the lock from requirements-test.txt would let a git checkout's mtimes
 # trigger an implicit `--upgrade` during an ordinary `make test`.
-.venv/.installed: requirements-test.lock | check-venv-deps
+.venv/.installed: requirements-test.lock | check-venv-deps check-lockfile
 	@test -d .venv || uv venv
 	@uv pip sync requirements-test.lock
 	@touch .venv/.installed
