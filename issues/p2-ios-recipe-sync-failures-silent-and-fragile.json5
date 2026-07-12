@@ -1,0 +1,40 @@
+{
+  "title": "iOS recipe sync failures are silent and the full sync is fragile",
+  "description": "Follow-up to the fix that made browse sort/filter/clear \
+apply from the local cache before the network sync. The underlying sync \
+fragility remains:\n\
+\n\
+- A failed `GET /api/recipes/sync` is only written to the debug log. The user \
+gets no signal that their cookbook is stale — new and edited recipes silently \
+never arrive until some later sync happens to succeed. (Fail fast: this is \
+exactly the kind of swallowed error the repo philosophy forbids.)\n\
+- The first sync (and any sync after `lastSyncAt` is lost, e.g. the \
+`cacheSchemaVersion` bump in #643 changed the UserDefaults key) transfers \
+every recipe with full ingredients/instructions/notes in a single unpaginated \
+response. For a large account on a slow or flaky connection this can time out \
+repeatedly, and because `lastSyncAt` is only advanced on success, every retry \
+is the same full payload. A permanently failing loop looks to the user like \
+the pre-fix bugs: stale list, wasted bandwidth on every list operation.\n\
+- While a slow sync is in flight, pull-to-refresh keeps the refresh spinner \
+(which occupies the search-bar slot) until the sync resolves — reported as \
+\"pull down and the search bar disappears and doesn't come back\".\n\
+\n\
+Scope:\n\
+- Surface sync failures in the list UI (e.g. a small stale-data banner with \
+retry), not just the debug log.\n\
+- Paginate or chunk the full sync, or advance the cursor incrementally, so one \
+giant response is never a prerequisite for a working cookbook.\n\
+- Consider a timeout budget for the sync when it is only freshening an \
+already-served list.\n\
+- Web is unaffected (no local cache), but if the sync endpoint changes shape, \
+regenerate clients and keep the iOS cache tests green.",
+  "status": "open",
+  "priority": 2,
+  "type": "bug",
+  "labels": [
+    "ios",
+    "api",
+  ],
+  "created_at": "2026-07-12T10:35:00-07:00",
+  "updated_at": "2026-07-12T10:35:00-07:00",
+}

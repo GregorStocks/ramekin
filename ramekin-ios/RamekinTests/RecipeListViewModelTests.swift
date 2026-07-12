@@ -113,6 +113,154 @@ final class RecipeListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.photoSizeFilter, "")
     }
 
+    func testClearingSearchAppliesCachedRecipesWhenSyncFails() async {
+        let cachedOld = RecipeListTestSupport.makeRecipe(
+            title: "Aioli",
+            updatedAt: Date(timeIntervalSince1970: 100)
+        )
+        let cachedNew = RecipeListTestSupport.makeRecipe(
+            title: "Zuppa Toscana",
+            updatedAt: Date(timeIntervalSince1970: 200)
+        )
+        let viewModel = RecipeListViewModel(
+            api: RecipeListViewAPIClient(
+                listAllTags: { TagsListResponse(tags: []) },
+                listRecipes: { limit, offset, _, _, _ in
+                    ListRecipesResponse(
+                        pagination: PaginationMetadata(limit: limit, offset: offset, total: 1),
+                        recipes: [cachedNew]
+                    )
+                },
+                syncRecipes: { _ in throw URLError(.timedOut) }
+            ),
+            cache: RecipeListCacheClient(
+                currentAccountKey: { "account" },
+                syncCursor: { _ in 300 },
+                clearSyncCursor: { _ in },
+                loadRecipes: { _ in [cachedOld, cachedNew] },
+                apply: { _, _ in }
+            ),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
+            pageSize: 20
+        )
+
+        viewModel.searchText = "zuppa"
+        await viewModel.loadRecipes(reset: true)
+        XCTAssertEqual(viewModel.recipes.map(\.id), [cachedNew.id])
+
+        viewModel.searchText = ""
+        await viewModel.loadRecipes(reset: true)
+
+        XCTAssertEqual(viewModel.recipes.map(\.id), [cachedNew.id, cachedOld.id])
+        XCTAssertEqual(viewModel.totalCount, 2)
+        XCTAssertTrue(viewModel.isUsingLocalCache)
+        XCTAssertFalse(viewModel.isLoading)
+        XCTAssertNil(viewModel.error)
+    }
+
+    func testSortChangeAppliesCachedRecipesWhenSyncFails() async {
+        let older = RecipeListTestSupport.makeRecipe(
+            title: "Older",
+            updatedAt: Date(timeIntervalSince1970: 100)
+        )
+        let newer = RecipeListTestSupport.makeRecipe(
+            title: "Newer",
+            updatedAt: Date(timeIntervalSince1970: 200)
+        )
+        let viewModel = RecipeListViewModel(
+            api: RecipeListViewAPIClient(
+                listAllTags: { TagsListResponse(tags: []) },
+                listRecipes: { _, _, _, _, _ in
+                    XCTFail("cacheable browse must not hit listRecipes")
+                    return ListRecipesResponse(
+                        pagination: PaginationMetadata(limit: 20, offset: 0, total: 0),
+                        recipes: []
+                    )
+                },
+                syncRecipes: { _ in throw URLError(.timedOut) }
+            ),
+            cache: RecipeListCacheClient(
+                currentAccountKey: { "account" },
+                syncCursor: { _ in 300 },
+                clearSyncCursor: { _ in },
+                loadRecipes: { _ in [older, newer] },
+                apply: { _, _ in }
+            ),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
+            pageSize: 20
+        )
+
+        viewModel.sortOrder = .newest
+        await viewModel.loadRecipes(reset: true)
+        XCTAssertEqual(viewModel.recipes.map(\.id), [newer.id, older.id])
+
+        viewModel.sortOrder = .oldest
+        await viewModel.loadRecipes(reset: true)
+        XCTAssertEqual(viewModel.recipes.map(\.id), [older.id, newer.id])
+    }
+
+    func testFilterMatchingNothingWithFailingSyncShowsNoResultsNotError() async {
+        let cached = RecipeListTestSupport.makeRecipe(title: "Aioli", tags: ["Sauce"])
+        let viewModel = RecipeListViewModel(
+            api: RecipeListViewAPIClient(
+                listAllTags: { TagsListResponse(tags: []) },
+                listRecipes: { _, _, _, _, _ in
+                    XCTFail("cacheable browse must not hit listRecipes")
+                    return ListRecipesResponse(
+                        pagination: PaginationMetadata(limit: 20, offset: 0, total: 0),
+                        recipes: []
+                    )
+                },
+                syncRecipes: { _ in throw URLError(.timedOut) }
+            ),
+            cache: RecipeListCacheClient(
+                currentAccountKey: { "account" },
+                syncCursor: { _ in 300 },
+                clearSyncCursor: { _ in },
+                loadRecipes: { _ in [cached] },
+                apply: { _, _ in }
+            ),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
+            pageSize: 20
+        )
+
+        viewModel.selectedTags = ["Dessert"]
+        await viewModel.loadRecipes(reset: true)
+
+        XCTAssertTrue(viewModel.recipes.isEmpty)
+        XCTAssertNil(viewModel.error)
+        XCTAssertFalse(viewModel.isLoading)
+    }
+
+    func testSyncFailureWithEmptyCacheStillShowsError() async {
+        let viewModel = RecipeListViewModel(
+            api: RecipeListViewAPIClient(
+                listAllTags: { TagsListResponse(tags: []) },
+                listRecipes: { limit, offset, _, _, _ in
+                    ListRecipesResponse(
+                        pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),
+                        recipes: []
+                    )
+                },
+                syncRecipes: { _ in throw URLError(.timedOut) }
+            ),
+            cache: RecipeListCacheClient(
+                currentAccountKey: { "account" },
+                syncCursor: { _ in nil },
+                clearSyncCursor: { _ in },
+                loadRecipes: { _ in [] },
+                apply: { _, _ in }
+            ),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
+            pageSize: 20
+        )
+
+        await viewModel.loadRecipes(reset: true)
+
+        XCTAssertNotNil(viewModel.error)
+        XCTAssertFalse(viewModel.isLoading)
+    }
+
     private struct ListRequest {
         let limit: Int64
         let offset: Int64

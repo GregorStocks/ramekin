@@ -430,8 +430,20 @@ private extension RecipeListViewModel {
             return
         }
 
+        // Once the current filter+sort has been answered from the cache, a
+        // sync failure must not replace that answer with the full-screen load
+        // error — an empty `recipes` can just mean the filters match nothing.
+        var appliedCachedRecipes = false
         do {
             let cachedBeforeSync = try cache.loadRecipes(accountKey)
+            // Sorting, tag filters, and clearing a search are answerable from
+            // the cache alone, so apply them before the network round-trip.
+            // The sync below only freshens the data: if it fails or hangs, the
+            // list must not stay stuck on the previous filter+sort.
+            if !cachedBeforeSync.isEmpty {
+                applyCachedRecipes(cachedBeforeSync)
+                appliedCachedRecipes = true
+            }
             let cursor = cachedBeforeSync.isEmpty ? nil : cache.syncCursor(accountKey)
             let response = try await logger.timed("syncRecipeCache API", source: "RecipeList") {
                 try await api.syncRecipes(cursor)
@@ -450,7 +462,7 @@ private extension RecipeListViewModel {
         } catch {
             logger.log("syncCachedRecipes: error - \(error.localizedDescription)", source: "RecipeList")
             guard isCurrentRequest(generation, key) else { return }
-            if recipes.isEmpty {
+            if recipes.isEmpty && !appliedCachedRecipes {
                 self.error = "Could not load recipes. Please try again."
             }
             isLoading = false
