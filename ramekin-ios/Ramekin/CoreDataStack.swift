@@ -113,6 +113,7 @@ extension ShoppingItem {
     /// Creates a new shopping item with default values
     static func create(
         in context: NSManagedObjectContext,
+        accountKey: String,
         item: String,
         amount: String? = nil,
         note: String? = nil,
@@ -121,6 +122,7 @@ extension ShoppingItem {
         sortOrder: Int32 = 0
     ) -> ShoppingItem {
         let shoppingItem = ShoppingItem(context: context)
+        shoppingItem.accountKey = accountKey
         shoppingItem.id = UUID()
         shoppingItem.item = item
         shoppingItem.amount = amount
@@ -163,9 +165,13 @@ extension ShoppingItem {
 
 extension ShoppingItem {
     /// Fetches all items that are not pending deletion, sorted by checked status then sort order
-    static func fetchActiveItems() -> NSFetchRequest<ShoppingItem> {
+    static func fetchActiveItems(accountKey: String) -> NSFetchRequest<ShoppingItem> {
         let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
-        request.predicate = NSPredicate(format: "syncStatus != %@", SyncStatus.pendingDelete.rawValue)
+        request.predicate = NSPredicate(
+            format: "accountKey == %@ AND syncStatus != %@",
+            accountKey,
+            SyncStatus.pendingDelete.rawValue
+        )
         request.sortDescriptors = [
             NSSortDescriptor(keyPath: \ShoppingItem.isChecked, ascending: true),
             NSSortDescriptor(keyPath: \ShoppingItem.sortOrder, ascending: true),
@@ -175,35 +181,54 @@ extension ShoppingItem {
     }
 
     /// Fetches all items that need to be synced to the server
-    static func fetchPendingSync() -> NSFetchRequest<ShoppingItem> {
+    static func fetchPendingSync(accountKey: String) -> NSFetchRequest<ShoppingItem> {
         let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
-        request.predicate = NSPredicate(format: "syncStatus != %@", SyncStatus.synced.rawValue)
+        request.predicate = NSPredicate(
+            format: "accountKey == %@ AND syncStatus != %@",
+            accountKey,
+            SyncStatus.synced.rawValue
+        )
         return request
     }
 
     /// Fetches items pending deletion
-    static func fetchPendingDelete() -> NSFetchRequest<ShoppingItem> {
+    static func fetchPendingDelete(accountKey: String) -> NSFetchRequest<ShoppingItem> {
         let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
-        request.predicate = NSPredicate(format: "syncStatus == %@", SyncStatus.pendingDelete.rawValue)
+        request.predicate = NSPredicate(
+            format: "accountKey == %@ AND syncStatus == %@",
+            accountKey,
+            SyncStatus.pendingDelete.rawValue
+        )
         return request
     }
 
     /// Fetches an item by its UUID
-    static func fetchById(_ id: UUID) -> NSFetchRequest<ShoppingItem> {
+    static func fetchById(_ id: UUID, accountKey: String) -> NSFetchRequest<ShoppingItem> {
         let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
-        request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        request.predicate = NSPredicate(
+            format: "accountKey == %@ AND id == %@",
+            accountKey,
+            id as CVarArg
+        )
         request.fetchLimit = 1
         return request
     }
 
     /// Fetches an item by its item name (case-insensitive)
-    static func fetchByItemName(_ name: String) -> NSFetchRequest<ShoppingItem> {
+    static func fetchByItemName(_ name: String, accountKey: String) -> NSFetchRequest<ShoppingItem> {
         let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
         request.predicate = NSPredicate(
-            format: "item ==[c] %@ AND syncStatus != %@",
+            format: "accountKey == %@ AND item ==[c] %@ AND syncStatus != %@",
+            accountKey,
             name,
             SyncStatus.pendingDelete.rawValue
         )
+        return request
+    }
+
+    static func fetchUnscopedItems() -> NSFetchRequest<ShoppingItem> {
+        let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
+        request.predicate = NSPredicate(format: "accountKey == nil OR accountKey == ''")
         return request
     }
 }

@@ -5,7 +5,7 @@ import XCTest
 final class ShoppingListSyncSupportTests: XCTestCase {
     func testReconcileMarksUnchangedSuccessfulUpdateAsSynced() throws {
         let context = makeInMemoryContainer().viewContext
-        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.syncStatusEnum = .pendingUpdate
         item.updatedAt = Date(timeIntervalSince1970: 100)
 
@@ -22,7 +22,7 @@ final class ShoppingListSyncSupportTests: XCTestCase {
 
     func testReconcileKeepsPendingCreateModifiedDuringSyncAsPendingUpdate() throws {
         let context = makeInMemoryContainer().viewContext
-        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.updatedAt = Date(timeIntervalSince1970: 250)
 
         ShoppingListSyncSupport.reconcileSyncedItem(
@@ -38,7 +38,7 @@ final class ShoppingListSyncSupportTests: XCTestCase {
 
     func testReconcileRetainsPendingUpdateWhenServerRejectsWithNewVersion() throws {
         let context = makeInMemoryContainer().viewContext
-        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.syncStatusEnum = .pendingUpdate
         item.serverVersion = 3
         item.updatedAt = Date(timeIntervalSince1970: 100)
@@ -56,7 +56,7 @@ final class ShoppingListSyncSupportTests: XCTestCase {
 
     func testReconcileDoesNotClobberPendingItemWhenServerReturnsVersionZero() throws {
         let context = makeInMemoryContainer().viewContext
-        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.serverVersion = 2
         item.updatedAt = Date(timeIntervalSince1970: 300)
 
@@ -85,4 +85,6 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         wait(for: [loaded], timeout: 5)
         return container
     }
+
+    private var accountKey: String { "https://example.test|chef" }
 }

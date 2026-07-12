@@ -204,6 +204,13 @@ private extension TagManagementView {
     }
 
     func loadTags() async {
+        guard let accountKey = AccountScope.currentAccountKey() else {
+            await MainActor.run {
+                tags = []
+                isLoading = false
+            }
+            return
+        }
         await MainActor.run {
             isLoading = true
             error = nil
@@ -211,10 +218,14 @@ private extension TagManagementView {
 
         do {
             let response = try await TagsAPI.listAllTags()
+            guard AccountScope.currentAccountKey() == accountKey else { return }
             await MainActor.run {
                 tags = response.tags
-                TagFilterCache.saveAvailableTags(response.tags)
-                TagFilterCache.pruneSelectedTags(validNames: Set(response.tags.map(\.name)))
+                TagFilterCache.saveAvailableTags(response.tags, accountKey: accountKey)
+                TagFilterCache.pruneSelectedTags(
+                    validNames: Set(response.tags.map(\.name)),
+                    accountKey: accountKey
+                )
                 isLoading = false
             }
         } catch is CancellationError {
@@ -233,6 +244,7 @@ private extension TagManagementView {
     }
 
     func renameTag(_ tag: TagItem) async {
+        guard let accountKey = AccountScope.currentAccountKey() else { return }
         let currentEditName = await MainActor.run { editName }
 
         guard let newName = TagManagementSupport.normalizedName(from: currentEditName) else {
@@ -252,10 +264,15 @@ private extension TagManagementView {
                 id: tag.id,
                 renameTagRequest: RenameTagRequest(name: newName)
             )
+            guard AccountScope.currentAccountKey() == accountKey else { return }
             await MainActor.run {
                 tags = TagManagementSupport.renamedTags(tags, id: tag.id, newName: response.name)
-                TagFilterCache.saveAvailableTags(tags)
-                TagFilterCache.renameSelectedTag(from: tag.name, to: response.name)
+                TagFilterCache.saveAvailableTags(tags, accountKey: accountKey)
+                TagFilterCache.renameSelectedTag(
+                    from: tag.name,
+                    to: response.name,
+                    accountKey: accountKey
+                )
                 TagFilterCache.notifyTagsDidChange()
                 error = nil
                 isSaving = false
@@ -277,12 +294,14 @@ private extension TagManagementView {
     }
 
     func deleteTag(_ tag: TagItem) async {
+        guard let accountKey = AccountScope.currentAccountKey() else { return }
         do {
             try await TagsAPI.deleteTag(id: tag.id)
+            guard AccountScope.currentAccountKey() == accountKey else { return }
             await MainActor.run {
                 tags = TagManagementSupport.removingTag(tags, id: tag.id)
-                TagFilterCache.saveAvailableTags(tags)
-                TagFilterCache.removeSelectedTag(named: tag.name)
+                TagFilterCache.saveAvailableTags(tags, accountKey: accountKey)
+                TagFilterCache.removeSelectedTag(named: tag.name, accountKey: accountKey)
                 TagFilterCache.notifyTagsDidChange()
                 error = nil
                 deletingTag = nil

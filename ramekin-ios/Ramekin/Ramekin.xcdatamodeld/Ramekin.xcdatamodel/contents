@@ -21,6 +21,7 @@
         </uniquenessConstraints>
     </entity>
     <entity name="ShoppingItem" representedClassName="ShoppingItem" syncable="YES" codeGenerationType="class">
+        <attribute name="accountKey" optional="YES" attributeType="String"/>
         <attribute name="amount" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String" defaultValueString="Other"/>
         <attribute name="categoryOverride" optional="YES" attributeType="String"/>
@@ -37,5 +38,11 @@
         <attribute name="sourceRecipeTitle" optional="YES" attributeType="String"/>
         <attribute name="syncStatus" attributeType="String" defaultValueString="pending_create"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="accountKey"/>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>

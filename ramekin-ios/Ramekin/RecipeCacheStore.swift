@@ -22,12 +22,7 @@ final class RecipeCacheStore {
     }
 
     func currentAccountKey() -> String? {
-        guard let serverURL = KeychainHelper.shared.getServerURL(),
-              let username = KeychainHelper.shared.getUsername()
-        else {
-            return nil
-        }
-        return "\(serverURL)|\(username)"
+        AccountScope.currentAccountKey()
     }
 
     func lastSyncAt(accountKey: String) -> Date? {
@@ -163,7 +158,9 @@ final class RecipeCacheStore {
     }
 
     private func lastSyncKey(accountKey: String) -> String {
-        let encodedAccountKey = Data(accountKey.utf8).base64EncodedString()
-        return "recipe_cache_v\(Self.cacheSchemaVersion)_last_sync_at_\(encodedAccountKey)"
+        AccountScope.userDefaultsKey(
+            prefix: "recipe_cache_v\(Self.cacheSchemaVersion)_last_sync_at",
+            accountKey: accountKey
+        )
     }
 }
