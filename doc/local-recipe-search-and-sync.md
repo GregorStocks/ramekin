@@ -116,10 +116,11 @@ beside the structured ingredients. If server search later changes to match only
 flattened ingredient values, change the API, iOS, and shared vectors together.
 Source and detailed photo metadata remain outside the search document. Text
 queries combined with `source:`, `photo_size:`, or `photo_dim:` therefore stay
-on the server, as does random ordering. Local search covers bare text, `tag:`,
+on the server, as does random browsing. Local search covers bare text, `tag:`,
 basic photo presence, and created-date filters, with relevance, updated-date,
 rating, created-date, and title browse ordering. (A text query's browse sort
-is irrelevant on both sides — the app always asks for relevance.)
+is irrelevant on both sides — the app always asks for relevance — so only
+random browsing without text terms needs the server.)
 
 PR #643 made the initial sync larger; later syncs now transfer only changed
 recipes. Immutable `recipe_versions` provide a stable version identity, and
@@ -360,7 +361,8 @@ matching, filtering, scoring, and ordering
 end to end by `shared-test-vectors/search-match-filter.json` and
 `search-ranking.json`, consumed by both the Python API tests and XCTest. Text
 queries now serve from the cache unless they need `source:`, `photo_size:`,
-`photo_dim:`, or random ordering. Web remains unchanged.
+or `photo_dim:`; random browsing without text terms stays on the server. Web
+remains unchanged.
 
 ### Stage 2: optimize only from measurements
 
