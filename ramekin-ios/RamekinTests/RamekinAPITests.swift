@@ -166,6 +166,33 @@ final class RamekinAPITests: XCTestCase {
         XCTAssertNil(credentialStore.accessClientSecret)
     }
 
+    func testRaceReturnsOperationResultWithinTimeout() async throws {
+        let value = try await RamekinAPI.race({ "ok" }, againstTimeout: 5)
+        XCTAssertEqual(value, "ok")
+    }
+
+    func testRaceThrowsTimedOutWhenOperationOutlastsTimeout() async {
+        do {
+            _ = try await RamekinAPI.race(
+                { try await Task.sleep(nanoseconds: 10_000_000_000) },
+                againstTimeout: 0.05
+            )
+            XCTFail("Expected race to throw")
+        } catch let RamekinAPI.APIError.networkError(underlying) {
+            XCTAssertEqual((underlying as? URLError)?.code, .timedOut)
+        } catch {
+            XCTFail("Expected APIError.networkError(URLError(.timedOut)), got \(error)")
+        }
+    }
+
+    func testLoginTimeoutFitsUITestErrorBudget() {
+        // RecipeFlowTests.testLoginFailure waits up to 60s for the login error
+        // message; the app-side login timeout must leave that budget plenty of
+        // headroom for slow CI simulators.
+        XCTAssertLessThanOrEqual(RamekinAPI.loginTimeout, 30)
+        XCTAssertGreaterThan(RamekinAPI.loginTimeout, 0)
+    }
+
     func testCaptureSubmitTimeoutFitsShareExtensionBudget() {
         // iOS terminates share extensions around ~30s; the submit call must
         // return before that so the user sees a result instead of the OS

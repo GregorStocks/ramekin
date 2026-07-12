@@ -18,8 +18,32 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ios:
-    name: iOS Tests
+  # Unit tests run in their own job, without the backend stack, so a UI-test
+  # host stall on a slow simulator can never fail the unit suite (and a UI
+  # flake rerun doesn't rebuild/reseed anything it doesn't need).
+  ios-unit:
+    name: iOS Unit Tests
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: brew install xcodegen
+
+      - name: Run unit tests
+        run: make ios-test
+
+      - name: Upload test results on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-unit-test-results
+          path: logs/*.xcresult
+          if-no-files-found: ignore
+
+  ios-ui:
+    name: iOS UI Tests
     runs-on: macos-latest
     timeout-minutes: 30
     steps:
@@ -157,9 +181,6 @@ jobs:
           echo "Seeded recipes never became queryable — import jobs likely failed"
           exit 1
 
-      - name: Run unit tests
-        run: make ios-test
-
       - name: Run UI tests
         run: make ios-test-ui
 
@@ -167,6 +188,6 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: ios-test-results
+          name: ios-ui-test-results
           path: logs/*.xcresult
           if-no-files-found: ignore

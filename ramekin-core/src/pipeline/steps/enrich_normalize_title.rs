@@ -135,6 +135,7 @@ mod tests {
     use std::error::Error;
     use std::sync::Arc;
 
+    use async_trait::async_trait;
     use serde_json::{json, Value as JsonValue};
 
     use super::EnrichNormalizeTitleStep;
@@ -146,12 +147,13 @@ mod tests {
         outputs: HashMap<String, JsonValue>,
     }
 
+    #[async_trait]
     impl StepOutputStore for TestOutputStore {
-        fn get_output(&self, step_name: &str) -> Option<JsonValue> {
+        async fn get_output(&self, step_name: &str) -> Option<JsonValue> {
             self.outputs.get(step_name).cloned()
         }
 
-        fn save_output(
+        async fn save_output(
             &mut self,
             _step_name: &str,
             _output: &JsonValue,
