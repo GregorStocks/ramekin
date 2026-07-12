@@ -1,0 +1,158 @@
+import XCTest
+
+/// Temporary repro harness for reported list bugs: sort order ignored,
+/// clearing search not restoring the list, search bar vanishing on pull-down.
+/// Logs observations with the REPRO prefix and attaches screenshots.
+final class SearchSortReproTests: XCTestCase {
+    var app: XCUIApplication!
+
+    override func setUpWithError() throws {
+        continueAfterFailure = true
+        app = XCUIApplication()
+        app.launch()
+    }
+
+    override func tearDownWithError() throws {
+        app = nil
+    }
+
+    private func clearField(_ field: XCUIElement) {
+        field.tap()
+        field.tap(withNumberOfTaps: 3, numberOfTouches: 1)
+        field.typeText(XCUIKeyboardKey.delete.rawValue)
+    }
+
+    private func loginIfNeeded() {
+        let serverField = app.textFields["https://ramekin.app"]
+        if serverField.waitForExistence(timeout: 5) {
+            clearField(serverField)
+            serverField.typeText("http://localhost:55000")
+            let usernameField = app.textFields["Username"]
+            clearField(usernameField)
+            usernameField.typeText("t")
+            let passwordField = app.secureTextFields["Password"]
+            clearField(passwordField)
+            passwordField.typeText("t")
+            app.buttons["Sign In"].tap()
+        }
+        let recipesNav = app.navigationBars["Recipes"]
+        if !recipesNav.waitForExistence(timeout: 45) {
+            snap("00-login-stuck")
+            XCTFail("Never reached the Recipes screen after signing in")
+        }
+    }
+
+    private func visibleTitles(_ count: Int = 5) -> [String] {
+        var titles: [String] = []
+        let cells = app.cells
+        let limit = min(count, cells.count)
+        for index in 0..<limit {
+            let text = cells.element(boundBy: index).staticTexts.firstMatch
+            if text.exists {
+                titles.append(text.label)
+            }
+        }
+        return titles
+    }
+
+    private func snap(_ name: String) {
+        let shot = XCTAttachment(screenshot: app.screenshot())
+        shot.name = name
+        shot.lifetime = .keepAlways
+        add(shot)
+    }
+
+    private func selectSort(_ label: String) {
+        let menu = app.buttons["recipe-sort-menu"]
+        XCTAssertTrue(menu.waitForExistence(timeout: 5), "sort menu button should exist")
+        menu.tap()
+        let option = app.buttons[label]
+        XCTAssertTrue(option.waitForExistence(timeout: 3), "sort option \(label) should appear")
+        option.tap()
+        sleep(3)
+    }
+
+    func testSortOrders() throws {
+        loginIfNeeded()
+        sleep(2)
+
+        selectSort("Newest first")
+        let newestTitles = visibleTitles()
+        NSLog("REPRO newest: \(newestTitles)")
+        snap("01-newest")
+
+        selectSort("Oldest first")
+        let oldestTitles = visibleTitles()
+        NSLog("REPRO oldest: \(oldestTitles)")
+        snap("02-oldest")
+
+        selectSort("Title A–Z")
+        let titleTitles = visibleTitles()
+        NSLog("REPRO title: \(titleTitles)")
+        snap("03-title")
+
+        XCTAssertNotEqual(newestTitles, oldestTitles, "BUG: newest and oldest orders are identical")
+        XCTAssertNotEqual(newestTitles, titleTitles, "BUG: newest and title orders are identical")
+    }
+
+    func testSearchClearAndPullDown() throws {
+        loginIfNeeded()
+        sleep(2)
+
+        selectSort("Title A–Z")
+        let baseline = visibleTitles()
+        NSLog("REPRO baseline: \(baseline)")
+
+        app.swipeDown()
+        let searchField = app.searchFields.firstMatch
+        XCTAssertTrue(searchField.waitForExistence(timeout: 5), "search field should exist")
+        searchField.tap()
+        searchField.typeText("chicken")
+        sleep(3)
+        let searchTitles = visibleTitles()
+        NSLog("REPRO search results: \(searchTitles)")
+        snap("04-searching")
+
+        let clearButton = searchField.buttons["Clear text"]
+        if clearButton.exists {
+            clearButton.tap()
+        } else {
+            clearField(searchField)
+        }
+        sleep(3)
+        let clearedTitles = visibleTitles()
+        NSLog("REPRO after clear: \(clearedTitles)")
+        snap("05-cleared")
+        XCTAssertEqual(clearedTitles, baseline, "BUG: clearing search did not restore the list")
+
+        let cancel = app.buttons["Cancel"]
+        if cancel.exists {
+            cancel.tap()
+            sleep(1)
+        }
+
+        app.swipeDown()
+        app.swipeDown()
+        sleep(3)
+        snap("06-after-pull")
+        let searchVisibleAfterPull = app.searchFields.firstMatch.exists
+        NSLog("REPRO search field exists after pull: \(searchVisibleAfterPull)")
+        XCTAssertTrue(searchVisibleAfterPull, "BUG: search field gone after pull-down")
+    }
+}
+
+// NOTE (2026-07-12): This is a stashed XCUITest, not shipped code. It reproduces
+// the "sort ignored / search-clear stuck" symptoms end-to-end. It cannot live in
+// RamekinUITests yet because the UI-test harness runs with CODE_SIGNING_ALLOWED=NO,
+// which strips the keychain access-group entitlement so login never completes
+// (see issues/p2-ios-ui-tests-never-leave-login-screen.json5). To run it manually:
+//   1. make dev-headless with dev.env PORT=55000, then seed (user t/t).
+//   2. Copy this file to ramekin-ios/RamekinUITests/SearchSortReproTests.swift.
+//   3. Re-add .accessibilityIdentifier("recipe-sort-menu") to RecipeSortMenu's Menu.
+//   4. xcodebuild test -project Ramekin.xcodeproj -scheme Ramekin \
+//        -destination "platform=iOS Simulator,id=$UDID" \
+//        -only-testing:RamekinUITests/SearchSortReproTests GENERATE_INFOPLIST_FILE=YES
+// Reinstalling a rebuilt app wipes the app-group container (cache + debug.log);
+// populate the cache with an online run before testing offline behavior.
+// The app's DebugLogger output is readable on the host at:
+//   $(xcrun simctl get_app_container <udid> com.ramekin.app groups)/debug.log

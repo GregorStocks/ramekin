@@ -1,0 +1,40 @@
+{
+  "title": "iOS UI tests pass without ever leaving the login screen",
+  "description": "The iOS UI test job runs `xcodebuild test` with \
+`CODE_SIGNING_ALLOWED=NO` (both in `.github/workflows/ios.yml` and `make \
+ios-test-ui`). Without code signing the app bundle has no entitlements, so \
+KeychainHelper's `kSecAttrAccessGroup = \"group.com.ramekin.app\"` operations \
+fail: the login POST returns 200 (visible in server logs), but the token is \
+never persisted, `AppState.refreshState()` still sees a logged-out API, and \
+the app silently stays on the login screen with no error.\n\
+\n\
+`RecipeFlowTests.testRecipeFlow` still passes because its \"recipe list \
+loaded\" check is `app.cells.firstMatch.waitForExistence` — and LoginView is a \
+SwiftUI `Form`, whose rows are also `cells`. The test then \"taps the first \
+recipe\" (a login form row) and screenshots \"02-RecipeList\" / \
+\"03-RecipeDetail\" that are actually the login screen. Verified locally on \
+2026-07-12: server logs showed the 200 login and zero subsequent /api/recipes \
+requests while the suite passed.\n\
+\n\
+So the only UI coverage of the recipe list is vacuous, and any regression in \
+the logged-in UI is invisible to CI.\n\
+\n\
+Scope:\n\
+- Make login work under the UI test harness. Options: sign simulator test \
+builds (needs GENERATE_INFOPLIST_FILE=YES or Info.plist files for the test \
+targets), or make KeychainHelper fall back to no access group when the \
+entitlement is missing (simulator/dev only — fail fast in release).\n\
+- Fix testRecipeFlow to assert on something only the logged-in UI has (e.g. \
+the Recipes navigation bar) instead of `cells.firstMatch`, so it can never \
+pass from the login Form again.",
+  "status": "open",
+  "priority": 2,
+  "type": "bug",
+  "labels": [
+    "ios",
+    "test",
+    "ci",
+  ],
+  "created_at": "2026-07-12T10:10:00-07:00",
+  "updated_at": "2026-07-12T10:10:00-07:00",
+}

@@ -432,6 +432,13 @@ private extension RecipeListViewModel {
 
         do {
             let cachedBeforeSync = try cache.loadRecipes(accountKey)
+            // Sorting, tag filters, and clearing a search are answerable from
+            // the cache alone, so apply them before the network round-trip.
+            // The sync below only freshens the data: if it fails or hangs, the
+            // list must not stay stuck on the previous filter+sort.
+            if !cachedBeforeSync.isEmpty {
+                applyCachedRecipes(cachedBeforeSync)
+            }
             let lastSyncAt = cachedBeforeSync.isEmpty ? nil : cache.lastSyncAt(accountKey)
             let response = try await logger.timed("syncRecipeCache API", source: "RecipeList") {
                 try await api.syncRecipes(lastSyncAt)
