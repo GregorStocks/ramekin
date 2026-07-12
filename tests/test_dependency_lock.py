@@ -1,3 +1,4 @@
+import os
 import shutil
 import subprocess
 from pathlib import Path
@@ -36,9 +37,9 @@ def _dry_run_recipes(target: str, newer_file: str) -> str:
 
 
 def _run_check_deps(
-    tmp_path: Path, declared: str, locked: str
+    tmp_path: Path, declared: str, locked: str, path: str | None = None
 ) -> subprocess.CompletedProcess:
-    """Run scripts/check-deps.sh against fabricated requirements files.
+    """Run scripts/check-deps.sh --lockfile against fabricated requirements files.
 
     The script derives its project root from its own location, so copying it
     into tmp_path is what lets us hand it a stale lockfile.
@@ -50,8 +51,13 @@ def _run_check_deps(
     (tmp_path / "requirements-test.txt").write_text(declared, encoding="utf-8")
     (tmp_path / "requirements-test.lock").write_text(locked, encoding="utf-8")
 
+    env = None if path is None else {**os.environ, "PATH": path}
     return subprocess.run(
-        [str(script), "--lockfile"], capture_output=True, text=True, check=False
+        [str(script), "--lockfile"],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=env,
     )
 
 
@@ -126,3 +132,29 @@ def test_check_deps_rejects_a_lockfile_missing_a_declared_dependency(tmp_path):
     assert result.returncode == 1
     assert "pillow" in result.stdout
     assert "make python-test-deps-update" in result.stdout
+
+
+@pytest.mark.parametrize("constrained", ["pytest>=10", "requests[socks]", "urllib3<3"])
+def test_check_deps_rejects_a_constrained_requirement(tmp_path, constrained):
+    # `uv pip sync` reads only the lock, so a specifier or extra here would go
+    # unhonoured: `pytest>=10` would silently keep the older pinned pytest.
+    result = _run_check_deps(
+        tmp_path,
+        declared=f"pytest\n{constrained}\n",
+        locked="pytest==8.4.2\nrequests==2.32.5\nurllib3==2.7.0\n",
+    )
+
+    assert result.returncode == 1
+    assert constrained in result.stdout
+
+
+def test_lockfile_mode_needs_no_dev_tooling(tmp_path):
+    # It gates the venv build, so it has to work before cargo/npm/ast-grep exist.
+    result = _run_check_deps(
+        tmp_path,
+        declared="pytest\n",
+        locked="pytest==8.4.2\n",
+        path="/usr/bin:/bin",
+    )
+
+    assert result.returncode == 0, result.stdout

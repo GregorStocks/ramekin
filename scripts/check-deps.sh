@@ -81,19 +81,34 @@ fi
 # is not blocked by the very check it resolves.
 if [ "$MODE" = "lockfile" ] || [ "$MODE" = "full" ]; then
     UNPINNED=()
-    while IFS= read -r dep; do
+    CONSTRAINED=()
+    while IFS= read -r req; do
+        # requirements-test.txt names packages; requirements-test.lock pins their
+        # versions. A specifier or extra here would silently not be honoured --
+        # `uv pip sync` reads only the lock, so `pytest>=10` would happily keep an
+        # older pinned pytest -- and we cannot evaluate one without resolving.
+        if printf '%s' "$req" | grep -q '[][<>=!~;]'; then
+            CONSTRAINED+=("$req")
+            continue
+        fi
+        dep=$(printf '%s' "$req" | tr 'A-Z_.' 'a-z--')
         grep -qE "^${dep}==" "$PROJECT_ROOT/requirements-test.lock" || UNPINNED+=("$dep")
-    done < <(sed -e 's/#.*//' -e 's/[[<>=!~;].*//' -e 's/[[:space:]]//g' \
-        "$PROJECT_ROOT/requirements-test.txt" | tr 'A-Z_.' 'a-z--' | grep -v '^$')
+    done < <(sed -e 's/#.*//' -e 's/[[:space:]]//g' \
+        "$PROJECT_ROOT/requirements-test.txt" | grep -v '^$')
 
+    if [ ${#CONSTRAINED[@]} -ne 0 ]; then
+        MISSING+=("requirements-test.txt must list bare package names, but declares ${CONSTRAINED[*]} (pin versions in requirements-test.lock via: make python-test-deps-update)")
+    fi
     if [ ${#UNPINNED[@]} -ne 0 ]; then
         MISSING+=("requirements-test.lock does not pin ${UNPINNED[*]} (run: make python-test-deps-update)")
     fi
 fi
 
 # --- Tools needed by both `make lint` and the dev/test environment ---
+# Not --venv (which only needs uv) and not --lockfile (which only reads files),
+# since both gate the venv build and must work before dev tooling is installed.
 
-if [ "$MODE" != "venv" ]; then
+if [ "$MODE" = "lint" ] || [ "$MODE" = "full" ]; then
     require cargo "install Rust: https://rustup.rs"
     require npm "$(hint \
         "brew install node" \
