@@ -43,6 +43,14 @@ struct RamekinApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var appState = AppState()
 
+    init() {
+        // Keychain state survives reinstalls on the simulator, so UI tests
+        // pass this argument to guarantee they start from the login screen.
+        if ProcessInfo.processInfo.arguments.contains("--uitest-reset-auth") {
+            RamekinAPI.shared.logout()
+        }
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()

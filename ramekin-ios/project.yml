@@ -117,6 +117,11 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.tests
+        # Test targets have no Info.plist on disk; generating one lets them be
+        # code signed. Simulator test builds must be signed (ad-hoc) so the
+        # app's keychain access-group entitlement works — unsigned builds fail
+        # every keychain operation and login never completes.
+        GENERATE_INFOPLIST_FILE: YES
     dependencies:
       - target: Ramekin
 
@@ -128,6 +133,8 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.uitests
+        # Required for signing; see the RamekinTests note above.
+        GENERATE_INFOPLIST_FILE: YES
     dependencies:
       - target: Ramekin
 

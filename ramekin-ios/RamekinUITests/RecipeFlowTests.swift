@@ -7,6 +7,9 @@ final class RecipeFlowTests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
+        // Keychain state survives reinstalls on the simulator; make the app
+        // clear credentials so every test starts from the login screen.
+        app.launchArguments = ["--uitest-reset-auth"]
         app.launch()
     }
 
@@ -20,6 +23,14 @@ final class RecipeFlowTests: XCTestCase {
         field.tap()
         field.tap(withNumberOfTaps: 3, numberOfTouches: 1)
         field.typeText(XCUIKeyboardKey.delete.rawValue)
+    }
+
+    /// Attach a screenshot of the current app state to the test results.
+    private func attachScreenshot(named name: String) {
+        let screenshot = XCTAttachment(screenshot: app.screenshot())
+        screenshot.name = name
+        screenshot.lifetime = .keepAlways
+        add(screenshot)
     }
 
     /// Test the full recipe flow: login -> recipe list -> recipe detail
@@ -44,11 +55,7 @@ final class RecipeFlowTests: XCTestCase {
         clearField(passwordField)
         passwordField.typeText("t")
 
-        // Take screenshot of login form
-        let loginScreenshot = XCTAttachment(screenshot: app.screenshot())
-        loginScreenshot.name = "01-LoginForm"
-        loginScreenshot.lifetime = .keepAlways
-        add(loginScreenshot)
+        attachScreenshot(named: "01-LoginForm")
 
         // Tap Sign In button
         let signInButton = app.buttons["Sign In"]
@@ -57,39 +64,37 @@ final class RecipeFlowTests: XCTestCase {
 
         // MARK: - Recipe List
 
-        // Wait for recipe list to load (requires seeded data from make seed)
-        let recipeCell = app.cells.firstMatch
-        let recipesLoaded = recipeCell.waitForExistence(timeout: 15)
-
-        if recipesLoaded {
-            // Take screenshot of recipe list
-            let listScreenshot = XCTAttachment(screenshot: app.screenshot())
-            listScreenshot.name = "02-RecipeList"
-            listScreenshot.lifetime = .keepAlways
-            add(listScreenshot)
-
-            // MARK: - Recipe Detail
-
-            // Tap first recipe
-            recipeCell.tap()
-
-            // Wait for detail view to load
-            sleep(2)
-
-            // Take screenshot of recipe detail
-            let detailScreenshot = XCTAttachment(screenshot: app.screenshot())
-            detailScreenshot.name = "03-RecipeDetail"
-            detailScreenshot.lifetime = .keepAlways
-            add(detailScreenshot)
-        } else {
-            // Still take a screenshot of whatever we see after login
-            let afterLoginScreenshot = XCTAttachment(screenshot: app.screenshot())
-            afterLoginScreenshot.name = "02-AfterLogin"
-            afterLoginScreenshot.lifetime = .keepAlways
-            add(afterLoginScreenshot)
-
-            XCTFail("Recipe list did not load. Seed data from make seed is required for UI tests.")
+        // The login screen is a Form whose rows also match `app.cells`, so the
+        // logged-in check must be something only the recipe list has: its
+        // "Recipes" navigation bar (the login screen's bar is "Sign In").
+        guard app.navigationBars["Recipes"].waitForExistence(timeout: 15) else {
+            attachScreenshot(named: "02-AfterLogin")
+            XCTFail("Never left the login screen: Recipes navigation bar did not appear after Sign In.")
+            return
         }
+
+        // Wait for recipe rows to load (requires seeded data from make seed)
+        let recipeCell = app.cells.firstMatch
+        guard recipeCell.waitForExistence(timeout: 15) else {
+            attachScreenshot(named: "02-EmptyRecipeList")
+            XCTFail("Recipe list has no rows. Seed data from make seed is required for UI tests.")
+            return
+        }
+        attachScreenshot(named: "02-RecipeList")
+
+        // MARK: - Recipe Detail
+
+        // Tap first recipe
+        recipeCell.tap()
+
+        // Wait for detail view to load: the back button labeled with the
+        // previous screen's title only exists on the detail screen
+        let backButton = app.navigationBars.buttons["Recipes"]
+        XCTAssertTrue(
+            backButton.waitForExistence(timeout: 10),
+            "Recipe detail view did not appear after tapping a recipe."
+        )
+        attachScreenshot(named: "03-RecipeDetail")
     }
 
     /// Test that login fails with invalid credentials
@@ -111,12 +116,7 @@ final class RecipeFlowTests: XCTestCase {
 
         // Wait for error message
         let errorExists = app.staticTexts["login-error-message"].waitForExistence(timeout: 10)
-
-        let errorScreenshot = XCTAttachment(screenshot: app.screenshot())
-        errorScreenshot.name = "LoginError"
-        errorScreenshot.lifetime = .keepAlways
-        add(errorScreenshot)
-
+        attachScreenshot(named: "LoginError")
         XCTAssertTrue(errorExists, "Expected an error message after failed login.")
     }
 }
