@@ -86,6 +86,10 @@ final class RecipeListViewModel: ObservableObject {
     private let userDefaults: UserDefaults
     private let pageSize: Int64
     private var activeQuery: String?
+    /// Bumped by every reset load. A response may only be applied while its
+    /// generation is still current, so a filter or sort change discards both
+    /// initial and append requests that were already in flight.
+    private var requestGeneration = 0
     private var searchTask: Task<Void, Never>?
 
     init(
@@ -276,7 +280,9 @@ extension RecipeListViewModel {
             isLoadingMore = false
             activeQuery = queryValue
             isUsingLocalCache = false
+            requestGeneration += 1
         }
+        let generation = requestGeneration
 
         isLoading = true
         error = nil
@@ -294,8 +300,8 @@ extension RecipeListViewModel {
                 )
             }
 
-            guard activeQuery == queryValue else {
-                logger.log("loadRecipes: stale query, discarding results", source: "RecipeList")
+            guard isCurrentRequest(generation, queryValue) else {
+                logger.log("loadRecipes: superseded request, discarding results", source: "RecipeList")
                 return
             }
             recipes = response.recipes
@@ -310,7 +316,7 @@ extension RecipeListViewModel {
             logger.log("loadRecipes: cancelled", source: "RecipeList")
         } catch {
             logger.log("loadRecipes: error - \(error.localizedDescription)", source: "RecipeList")
-            guard activeQuery == queryValue else { return }
+            guard isCurrentRequest(generation, queryValue) else { return }
             if recipes.isEmpty {
                 self.error = "Could not load recipes. Please try again."
             }
@@ -321,6 +327,9 @@ extension RecipeListViewModel {
     func loadMore() async {
         guard !isUsingLocalCache && !isLoading && !isLoadingMore && hasMore else { return }
 
+        let generation = requestGeneration
+        let queryValue = activeQuery
+
         isLoadingMore = true
         loadMoreFailed = false
 
@@ -330,17 +339,22 @@ extension RecipeListViewModel {
             let response = try await api.listRecipes(
                 pageSize,
                 Int64(recipes.count),
-                activeQuery,
+                queryValue,
                 useRelevance ? nil : sortOrder.sortBy,
                 useRelevance ? nil : sortOrder.sortDir
             )
 
+            guard isCurrentRequest(generation, queryValue) else {
+                DebugLogger.shared.log("loadMore: superseded request, discarding results", source: "RecipeList")
+                return
+            }
             recipes.append(contentsOf: response.recipes)
             totalCount = Int(response.pagination.total)
             hasMore = recipes.count < totalCount
             isLoadingMore = false
         } catch is CancellationError {
         } catch {
+            guard isCurrentRequest(generation, queryValue) else { return }
             loadMoreFailed = true
             isLoadingMore = false
         }
@@ -372,6 +386,13 @@ private extension RecipeListViewModel {
         RecipeListFilterSupport.buildQuery(from: currentFilterState)
     }
 
+    /// A response may only be applied if nothing superseded its request. The
+    /// generation catches reloads that leave the query untouched, such as a
+    /// sort change; the query check keeps the existing initial-response guard.
+    func isCurrentRequest(_ generation: Int, _ queryValue: String?) -> Bool {
+        generation == requestGeneration && activeQuery == queryValue
+    }
+
     func persistSelectedTags() {
         guard let accountKey = cache.currentAccountKey() else { return }
         TagFilterCache.saveSelectedTags(
@@ -400,6 +421,8 @@ private extension RecipeListViewModel {
         isLoadingMore = false
         isLoading = recipes.isEmpty
         error = nil
+        requestGeneration += 1
+        let generation = requestGeneration
 
         guard let accountKey = cache.currentAccountKey() else {
             await loadRecipes(reset: true, forceNetwork: true)
@@ -415,8 +438,8 @@ private extension RecipeListViewModel {
             try cache.apply(response, accountKey)
             let cachedRecipes = try cache.loadRecipes(accountKey)
 
-            guard activeQuery == queryValue else {
-                logger.log("syncCachedRecipes: stale query, discarding results", source: "RecipeList")
+            guard isCurrentRequest(generation, queryValue) else {
+                logger.log("syncCachedRecipes: superseded request, discarding results", source: "RecipeList")
                 return
             }
             applyCachedRecipes(cachedRecipes)
@@ -425,7 +448,7 @@ private extension RecipeListViewModel {
             logger.log("syncCachedRecipes: cancelled", source: "RecipeList")
         } catch {
             logger.log("syncCachedRecipes: error - \(error.localizedDescription)", source: "RecipeList")
-            guard activeQuery == queryValue else { return }
+            guard isCurrentRequest(generation, queryValue) else { return }
             if recipes.isEmpty {
                 self.error = "Could not load recipes. Please try again."
             }

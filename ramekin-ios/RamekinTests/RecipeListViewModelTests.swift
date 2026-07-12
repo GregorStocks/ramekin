@@ -88,6 +88,127 @@ final class RecipeListViewModelTests: XCTestCase {
         XCTAssertFalse(viewModel.hasMore)
     }
 
+    func testSearchChangeDuringLoadMoreDiscardsStaleAppend() async {
+        let pastaPage1 = [makeRecipe(title: "Pasta 1"), makeRecipe(title: "Pasta 2")]
+        let pastaPage2 = [makeRecipe(title: "Pasta 3")]
+        let cakeResults = [makeRecipe(title: "Cake")]
+        let appendStarted = Gate()
+        let releaseAppend = Gate()
+
+        let viewModel = RecipeListViewModel(
+            api: RecipeListViewAPIClient(
+                listAllTags: { TagsListResponse(tags: []) },
+                listRecipes: { limit, offset, query, _, _ in
+                    if offset > 0 {
+                        await appendStarted.open()
+                        await releaseAppend.wait()
+                        return ListRecipesResponse(
+                            pagination: PaginationMetadata(limit: limit, offset: offset, total: 10),
+                            recipes: pastaPage2
+                        )
+                    }
+                    let recipes = query == "cake" ? cakeResults : pastaPage1
+                    return ListRecipesResponse(
+                        pagination: PaginationMetadata(
+                            limit: limit,
+                            offset: offset,
+                            total: query == "cake" ? 1 : 10
+                        ),
+                        recipes: recipes
+                    )
+                },
+                syncRecipes: { _ in
+                    SyncRecipesResponse(deleted: [], recipes: [], syncTimestamp: Date())
+                }
+            ),
+            cache: noCacheClient(),
+            userDefaults: isolatedDefaults(),
+            pageSize: 20
+        )
+
+        viewModel.searchText = "pasta"
+        await viewModel.loadRecipes(reset: true)
+        XCTAssertEqual(viewModel.recipes.map(\.id), pastaPage1.map(\.id))
+        XCTAssertTrue(viewModel.hasMore)
+
+        let loadMoreTask = Task { await viewModel.loadMore() }
+        await appendStarted.wait()
+
+        viewModel.searchText = "cake"
+        await viewModel.loadRecipes(reset: true)
+
+        releaseAppend.open()
+        await loadMoreTask.value
+
+        XCTAssertEqual(viewModel.recipes.map(\.id), cakeResults.map(\.id))
+        XCTAssertEqual(viewModel.totalCount, 1)
+        XCTAssertFalse(viewModel.hasMore)
+        XCTAssertFalse(viewModel.isLoadingMore)
+        XCTAssertFalse(viewModel.loadMoreFailed)
+    }
+
+    // A sort change leaves the query string alone, so only the request
+    // generation can tell the in-flight append apart from the new list.
+    func testSortChangeDuringLoadMoreDiscardsStaleAppend() async {
+        let newestPage1 = [makeRecipe(title: "B"), makeRecipe(title: "C")]
+        let newestPage2 = [makeRecipe(title: "D")]
+        let titlePage1 = [makeRecipe(title: "A")]
+        let appendStarted = Gate()
+        let releaseAppend = Gate()
+
+        let viewModel = RecipeListViewModel(
+            api: RecipeListViewAPIClient(
+                listAllTags: { TagsListResponse(tags: []) },
+                listRecipes: { limit, offset, _, sortBy, _ in
+                    if offset > 0 {
+                        await appendStarted.open()
+                        await releaseAppend.wait()
+                        return ListRecipesResponse(
+                            pagination: PaginationMetadata(limit: limit, offset: offset, total: 10),
+                            recipes: newestPage2
+                        )
+                    }
+                    let byTitle = sortBy == .title
+                    return ListRecipesResponse(
+                        pagination: PaginationMetadata(
+                            limit: limit,
+                            offset: offset,
+                            total: byTitle ? 1 : 10
+                        ),
+                        recipes: byTitle ? titlePage1 : newestPage1
+                    )
+                },
+                syncRecipes: { _ in
+                    SyncRecipesResponse(deleted: [], recipes: [], syncTimestamp: Date())
+                }
+            ),
+            cache: noCacheClient(),
+            userDefaults: isolatedDefaults(),
+            pageSize: 20
+        )
+
+        // A source filter keeps this off the cacheable-browse path without
+        // adding a text query, so sortBy still reaches the API.
+        viewModel.sourceFilter = "NYT"
+        viewModel.sortOrder = .newest
+        await viewModel.loadRecipes(reset: true)
+        XCTAssertEqual(viewModel.recipes.map(\.id), newestPage1.map(\.id))
+
+        let loadMoreTask = Task { await viewModel.loadMore() }
+        await appendStarted.wait()
+
+        viewModel.sortOrder = .title
+        await viewModel.loadRecipes(reset: true)
+
+        releaseAppend.open()
+        await loadMoreTask.value
+
+        XCTAssertEqual(viewModel.recipes.map(\.id), titlePage1.map(\.id))
+        XCTAssertEqual(viewModel.totalCount, 1)
+        XCTAssertFalse(viewModel.hasMore)
+        XCTAssertFalse(viewModel.isLoadingMore)
+    }
+
     func testClearFiltersClearsSearchAndPersistedFilters() {
         let viewModel = RecipeListViewModel(
             api: emptyAPIClient(),
@@ -167,5 +288,25 @@ final class RecipeListViewModelTests: XCTestCase {
         let query: String?
         let sortBy: SortBy?
         let sortDir: Direction?
+    }
+}
+
+/// One-shot latch used to hold a fake API call open, so a test can interleave
+/// other work while a request is in flight.
+@MainActor
+private final class Gate {
+    private var continuation: CheckedContinuation<Void, Never>?
+    private var isOpen = false
+
+    func wait() async {
+        guard !isOpen else { return }
+        await withCheckedContinuation { self.continuation = $0 }
+    }
+
+    func open() {
+        guard !isOpen else { return }
+        isOpen = true
+        continuation?.resume()
+        continuation = nil
     }
 }
