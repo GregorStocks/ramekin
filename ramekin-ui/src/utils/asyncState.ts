@@ -51,7 +51,8 @@ export interface ApiResource<T> {
 }
 
 type ApiResourceValue<T> =
-  { data: T; error: null } | { data?: undefined; error: string };
+  | { data: T; error: null }
+  | { data?: undefined; error: string };
 
 export function createApiResource<T>(
   fetcher: () => Promise<T>,

@@ -16,7 +16,13 @@ export interface FilterState {
 }
 
 export type SortOption =
-  "best" | "newest" | "oldest" | "rating" | "title" | "created" | "random";
+  | "best"
+  | "newest"
+  | "oldest"
+  | "rating"
+  | "title"
+  | "created"
+  | "random";
 
 export function getQueryParam(param: string | string[] | undefined): string {
   if (Array.isArray(param)) return param[0] || "";
