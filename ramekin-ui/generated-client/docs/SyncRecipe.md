@@ -10,6 +10,7 @@ Name | Type
 `createdAt` | Date
 `description` | string
 `id` | string
+`ingredientMatchText` | string
 `ingredients` | [Array&lt;Ingredient&gt;](Ingredient.md)
 `instructions` | string
 `notes` | string
@@ -29,6 +30,7 @@ const example = {
   "createdAt": null,
   "description": null,
   "id": null,
+  "ingredientMatchText": null,
   "ingredients": null,
   "instructions": null,
   "notes": null,

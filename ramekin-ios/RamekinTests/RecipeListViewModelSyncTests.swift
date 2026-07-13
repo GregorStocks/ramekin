@@ -27,9 +27,21 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                 // committed mid-sweep sit between the two, and only the first
                 // watermark redelivers them on the next sync.
                 if afterId == nil {
-                    return SyncRecipesResponse(cursor: 100, deleted: [], hasMore: true, recipes: pageOne)
+                    return SyncRecipesResponse(
+                        cursor: 100,
+                        deleted: [],
+                        hasMore: true,
+                        normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                        recipes: pageOne
+                    )
                 }
-                return SyncRecipesResponse(cursor: 200, deleted: [], hasMore: false, recipes: pageTwo)
+                return SyncRecipesResponse(
+                    cursor: 200,
+                    deleted: [],
+                    hasMore: false,
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                    recipes: pageTwo
+                )
             },
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
@@ -71,6 +83,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                     cursor: 500,
                     deleted: [],
                     hasMore: false,
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                     recipes: finalPage
                 )
             },
@@ -203,6 +216,37 @@ final class RecipeListViewModelSyncTests: XCTestCase {
         XCTAssertFalse(viewModel.syncFailed)
     }
 
+    func testSyncFailsOnNormalizationContractMismatch() async {
+        // A server whose search contract moved must not populate the cache:
+        // recipes normalized under a different contract would make local
+        // search silently disagree with server search.
+        let cached = RecipeListTestSupport.makeRecipe(title: "Cached")
+        var applied = false
+        let viewModel = makeViewModel(
+            syncRecipes: { _, _, _ in
+                SyncRecipesResponse(
+                    cursor: 100,
+                    deleted: [],
+                    hasMore: false,
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion + 1,
+                    recipes: []
+                )
+            },
+            cache: RecipeListTestSupport.cacheClient(
+                currentAccountKey: { "account" },
+                syncCursor: { _ in 300 },
+                loadRecipes: { _ in [cached] },
+                apply: { _, _ in applied = true }
+            )
+        )
+
+        await viewModel.loadRecipes(reset: true)
+
+        XCTAssertFalse(applied)
+        XCTAssertTrue(viewModel.syncFailed)
+        XCTAssertEqual(viewModel.recipes.map(\.id), [cached.id])
+    }
+
     private func makeViewModel(
         syncRecipes: @escaping (Int64?, Int64, UUID?) async throws -> SyncRecipesResponse,
         cache: RecipeListCacheClient,
@@ -231,6 +275,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             createdAt: Date(timeIntervalSince1970: 100),
             description: nil,
             id: UUID(),
+            ingredientMatchText: "[]",
             ingredients: [],
             instructions: "Cook it.",
             notes: nil,

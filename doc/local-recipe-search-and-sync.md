@@ -65,12 +65,10 @@ installs through one full refresh, and added API and iOS tests for population,
 updates, deletions, and schema-version invalidation.
 
 The cache serves offline browsing, tag filters, the basic photo-presence
-filter, date filters, and deterministic browse sorts. Its title sort is not
-server-identical: Swift uses `localizedCaseInsensitiveCompare`, while the server
-uses PostgreSQL `lower(title)` under the database collation. The follow-up
-`p3-ios-cached-title-sort-collation-drift` tracks that existing browse-order
-bug. Despite holding recipe bodies, the cache sends queries involving text,
-source, photo size or dimensions, or random sorting to the paginated server
+filter, date filters, deterministic browse sorts, and — since the
+`ios-local-search-relevance` work — bare-text search with server-identical
+membership, relevance ranking, and tie-breaks. Queries involving source,
+photo size or dimensions, or random sorting still go to the paginated server
 endpoint. `doc/web-sync.md` separately records why the web cookbook remains
 server-backed and paginated.
 
@@ -110,20 +108,19 @@ and section into human-facing text. A token found only in a JSON key can
 therefore select a row and still contribute no ingredient score.
 
 The cache now contains all six scorer field families and the human-facing data
-for all five bare-text matching families. That completes the expensive corpus
-transfer, but not exact result parity: the ingredient representation used for
-server membership is still absent, and query parsing and normalization are not
-implemented locally.
+for all five bare-text matching families.
 
-Extend `SyncRecipe` with a server-produced `ingredient_match_text` equal to the
-exact `ingredients::text` value used by the current SQL filter, and persist it
+`SyncRecipe` carries a server-produced `ingredient_match_text` equal to the
+exact `ingredients::text` value used by the current SQL filter, persisted
 beside the structured ingredients. If server search later changes to match only
 flattened ingredient values, change the API, iOS, and shared vectors together.
 Source and detailed photo metadata remain outside the search document. Text
 queries combined with `source:`, `photo_size:`, or `photo_dim:` therefore stay
-on the server, as do title and random ordering. Local text search is limited to
-cached tags, basic photo presence, created-date filters, and relevance,
-updated-date, rating, or created-date ordering.
+on the server, as does random browsing. Local search covers bare text, `tag:`,
+basic photo presence, and created-date filters, with relevance, updated-date,
+rating, created-date, and title browse ordering. (A text query's browse sort
+is irrelevant on both sides — the app always asks for relevance — so only
+random browsing without text terms needs the server.)
 
 PR #643 made the initial sync larger; later syncs now transfer only changed
 recipes. Immutable `recipe_versions` provide a stable version identity, and
@@ -190,27 +187,25 @@ sync changes if repeated normalization is the bottleneck.
 
 ### Exact normalization is a prerequisite
 
-The current `ramekin_core::search::normalize_for_search` is deliberately only
-a best-effort mirror of PostgreSQL `unaccent`. That is safe for ranking because
-PostgreSQL has already selected each result. It is not safe for local matching:
-a character handled by the database but absent from the Rust and Swift mapping
+A best-effort mirror of PostgreSQL `unaccent` would be safe for ranking
+(PostgreSQL already selected each result) but not for local matching: a
+character handled by the database but absent from the Rust and Swift mapping
 could make iOS omit a server result.
 
 This normalization contract applies only to bare-text matching and scoring.
 Structured tag equality retains the separate accent-sensitive `CITEXT`
 contract above.
 
-Before local matching ships, pin the complete `unaccent.rules` mapping used by
-the server as a versioned shared data asset, extend the pure Rust and Swift
-normalizers to consume the exact contract, and add an API parity test that
-checks every mapping against `f_unaccent`. The app and server must not advance
-to different mapping versions: carry the version in the sync contract and fail
-the sync when the app does not support it. The match/filter vectors should
-include multi-character expansions, deleted characters, combining marks, and
-rare glyphs in both documents and queries. If maintaining that exact contract
-is unacceptable, the alternative is to change server matching to the same pure
-normalizer used by iOS; a best-effort Swift copy of today's scorer normalizer
-is not an acceptable result-set filter.
+Local matching therefore consumes an exact versioned contract:
+`shared-test-vectors/search-normalization.json` pins the complete
+per-codepoint `unaccent` dictionary and `lower()` mapping generated from the
+live server (`scripts/generate-search-normalization.sh`), both the Rust and
+Swift normalizers apply it verbatim, and
+`tests/test_search_normalization_contract.py` verifies every mapping — in
+both directions, over every Unicode codepoint — against the running
+database's `f_unaccent` and `lower`. The sync response carries the contract
+version and the app fails the sync when it does not support it, so the app
+and server cannot silently advance to different mappings.
 
 ### When a direct SQLite layer would help
 
@@ -357,11 +352,17 @@ watermark cursor made its deltas race-safe. Next add the distinct ingredient
 match text and versioned normalization contract to `SyncRecipe`, and persist
 them in the existing cache.
 
-Then implement `blocked-ios-local-search-relevance`: mirror matching and
-scoring in Swift and pin query parsing, matching, structured filters, and
-ranking to shared vectors consumed by server and iOS tests. This delivers
-instant offline search without any conflict or upload path. Web remains
-unchanged.
+This stage is complete: sync carries `ingredient_match_text` and a versioned
+normalization contract (`shared-test-vectors/search-normalization.json`,
+verified against the live database by
+`tests/test_search_normalization_contract.py`), Swift mirrors query parsing,
+matching, filtering, scoring, and ordering
+(`ramekin-ios/Ramekin/RecipeSearchSupport.swift`), and the behavior is pinned
+end to end by `shared-test-vectors/search-match-filter.json` and
+`search-ranking.json`, consumed by both the Python API tests and XCTest. Text
+queries now serve from the cache unless they need `source:`, `photo_size:`,
+or `photo_dim:`; random browsing without text terms stays on the server. Web
+remains unchanged.
 
 ### Stage 2: optimize only from measurements
 

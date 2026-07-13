@@ -38,6 +38,7 @@ class TestSyncRecipe(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 description = '',
                 id = '',
+                ingredient_match_text = '',
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
                         item = '', 
@@ -63,6 +64,7 @@ class TestSyncRecipe(unittest.TestCase):
             return SyncRecipe(
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 id = '',
+                ingredient_match_text = '',
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
                         item = '', 

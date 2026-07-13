@@ -22,6 +22,9 @@ pub struct SyncRecipesResponse {
     /// True when the sweep has more pages. Request the next one with the same `cursor` and `after_id` set to this page's last recipe ID.
     #[serde(rename = "has_more")]
     pub has_more: bool,
+    /// Version of the shared search-normalization contract (shared-test-vectors/search-normalization.json) the server was built with. A client mirroring server search locally must fail the sync when it does not support this version: matching with a stale contract would silently drop or add results relative to server search.
+    #[serde(rename = "normalization_contract_version")]
+    pub normalization_contract_version: i32,
     /// The next `limit` active recipes (by ascending recipe ID, starting past `after_id`) changed at or after `cursor`. All active recipes match when `cursor` is absent.
     #[serde(rename = "recipes")]
     pub recipes: Vec<models::SyncRecipe>,
@@ -32,12 +35,14 @@ impl SyncRecipesResponse {
         cursor: i64,
         deleted: Vec<uuid::Uuid>,
         has_more: bool,
+        normalization_contract_version: i32,
         recipes: Vec<models::SyncRecipe>,
     ) -> SyncRecipesResponse {
         SyncRecipesResponse {
             cursor,
             deleted,
             has_more,
+            normalization_contract_version,
             recipes,
         }
     }

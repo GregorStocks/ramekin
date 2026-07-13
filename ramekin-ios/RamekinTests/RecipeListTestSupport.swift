@@ -22,6 +22,18 @@ enum RecipeListTestSupport {
         )
     }
 
+    /// Wrap bare summaries as cached search documents, for tests that only
+    /// exercise list behavior rather than search-field matching.
+    static func makeDocument(_ summary: RecipeSummary) -> CachedRecipeSearchDocument {
+        CachedRecipeSearchDocument(
+            summary: summary,
+            ingredients: [],
+            ingredientMatchText: "[]",
+            instructions: "",
+            notes: nil
+        )
+    }
+
     static func cacheClient(
         currentAccountKey: @escaping () -> String? = { nil },
         syncCursor: @escaping (String) -> Int64? = { _ in nil },
@@ -41,7 +53,7 @@ enum RecipeListTestSupport {
             pendingSyncSweep: pendingSyncSweep,
             setPendingSyncSweep: setPendingSyncSweep,
             clearPendingSyncSweep: clearPendingSyncSweep,
-            loadRecipes: loadRecipes,
+            loadSearchDocuments: { try loadRecipes($0).map(makeDocument) },
             apply: apply
         )
     }
@@ -51,7 +63,13 @@ enum RecipeListTestSupport {
     }
 
     static func emptySyncResponse() -> SyncRecipesResponse {
-        SyncRecipesResponse(cursor: 1, deleted: [], hasMore: false, recipes: [])
+        SyncRecipesResponse(
+            cursor: 1,
+            deleted: [],
+            hasMore: false,
+            normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+            recipes: []
+        )
     }
 
     static func emptyAPIClient() -> RecipeListViewAPIClient {

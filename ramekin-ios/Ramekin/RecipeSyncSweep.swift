@@ -1,5 +1,20 @@
 import Foundation
 
+enum RecipeSyncError: LocalizedError {
+    /// The server search contract moved (or the app is ahead of the server).
+    /// Caching recipes normalized under a different contract would make
+    /// local search silently disagree with server search, so the sync fails
+    /// instead.
+    case normalizationContractMismatch(server: Int, supported: Int)
+
+    var errorDescription: String? {
+        switch self {
+        case let .normalizationContractMismatch(server, supported):
+            return "Server search contract v\(server) is not supported (app supports v\(supported)); update the app."
+        }
+    }
+}
+
 /// The paged recipe cache sync: sweeps the server's recipe-id space under a
 /// fixed cursor, applying each page to the cache as it lands so an
 /// interrupted sweep resumes from its pending state instead of re-fetching
@@ -27,6 +42,12 @@ enum RecipeSyncSweep {
 
         while true {
             let response = try await api.syncRecipes(cursor, pageSize, afterId)
+            guard response.normalizationContractVersion == SearchNormalizationSupport.contractVersion else {
+                throw RecipeSyncError.normalizationContractMismatch(
+                    server: response.normalizationContractVersion,
+                    supported: SearchNormalizationSupport.contractVersion
+                )
+            }
             try cache.apply(response, accountKey)
             let watermark = sweepWatermark ?? response.cursor
             sweepWatermark = watermark

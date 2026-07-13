@@ -4,6 +4,10 @@ import Foundation
 struct CachedRecipeSearchDocument {
     let summary: RecipeSummary
     let ingredients: [Ingredient]
+    /// The server-produced JSONB-to-text rendering of the ingredients — the
+    /// exact haystack server search matches bare text against. Distinct from
+    /// `ingredients`, which the relevance scorer flattens itself.
+    let ingredientMatchText: String
     let instructions: String
     let notes: String?
 }
@@ -25,7 +29,9 @@ struct PendingSyncSweep: Codable, Equatable {
 @MainActor
 final class RecipeCacheStore {
     static let shared = RecipeCacheStore()
-    private static let cacheSchemaVersion = 3
+    // v4 added ingredientMatchText; bumping forces a full re-sync so every
+    // cached recipe carries it.
+    private static let cacheSchemaVersion = 4
 
     private let coreDataStack: CoreDataStack
     private let userDefaults: UserDefaults
@@ -76,11 +82,8 @@ final class RecipeCacheStore {
         userDefaults.removeObject(forKey: pendingSweepKey(accountKey: accountKey))
     }
 
-    func loadRecipes(accountKey: String) throws -> [RecipeSummary] {
-        try loadSearchDocuments(accountKey: accountKey).map(\.summary)
-    }
-
     func loadSearchDocuments(accountKey: String) throws -> [CachedRecipeSearchDocument] {
+        try purgeRowsWrittenByOlderSchema(accountKey: accountKey)
         let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
         request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
         request.sortDescriptors = [
@@ -88,6 +91,31 @@ final class RecipeCacheStore {
             NSSortDescriptor(keyPath: \CachedRecipe.id, ascending: true)
         ]
         return try coreDataStack.viewContext.fetch(request).map(searchDocument)
+    }
+
+    /// Rows written under an older cache schema must never be served: Core
+    /// Data's lightweight migration backfills columns the old schema lacked
+    /// with defaults (e.g. an empty ingredient match text), so searching them
+    /// would silently omit recipes the server would return. The schema bump
+    /// already forces a full re-sync; this drops the migrated rows so the
+    /// window before that sync completes serves nothing instead of wrong
+    /// results.
+    private func purgeRowsWrittenByOlderSchema(accountKey: String) throws {
+        let key = rowsSchemaVersionKey(accountKey: accountKey)
+        guard userDefaults.integer(forKey: key) != Self.cacheSchemaVersion else {
+            return
+        }
+        let context = coreDataStack.viewContext
+        let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
+        request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
+        let staleRows = try context.fetch(request)
+        guard !staleRows.isEmpty else {
+            return
+        }
+        for row in staleRows {
+            context.delete(row)
+        }
+        try coreDataStack.saveContextOrThrow()
     }
 
     func apply(syncResponse: SyncRecipesResponse, accountKey: String) throws {
@@ -105,6 +133,7 @@ final class RecipeCacheStore {
                 ?? CachedRecipe(context: context)
             cachedRecipe.accountKey = accountKey
             cachedRecipe.id = recipe.id
+            cachedRecipe.ingredientMatchText = recipe.ingredientMatchText
             cachedRecipe.ingredientsJSON = try ingredientsJSON(recipe.ingredients)
             cachedRecipe.instructions = recipe.instructions
             cachedRecipe.notes = recipe.notes
@@ -118,6 +147,7 @@ final class RecipeCacheStore {
         }
 
         try coreDataStack.saveContextOrThrow()
+        userDefaults.set(Self.cacheSchemaVersion, forKey: rowsSchemaVersionKey(accountKey: accountKey))
     }
 
     private func fetchRequest(accountKey: String, id: UUID) -> NSFetchRequest<CachedRecipe> {
@@ -130,6 +160,7 @@ final class RecipeCacheStore {
     private func searchDocument(from cachedRecipe: CachedRecipe) -> CachedRecipeSearchDocument {
         guard let createdAt = cachedRecipe.createdAt,
               let id = cachedRecipe.id,
+              let ingredientMatchText = cachedRecipe.ingredientMatchText,
               let ingredientsJSON = cachedRecipe.ingredientsJSON,
               let instructions = cachedRecipe.instructions,
               let tagsJSON = cachedRecipe.tagsJSON,
@@ -152,6 +183,7 @@ final class RecipeCacheStore {
         return CachedRecipeSearchDocument(
             summary: summary,
             ingredients: ingredients(from: ingredientsJSON),
+            ingredientMatchText: ingredientMatchText,
             instructions: instructions,
             notes: cachedRecipe.notes
         )
@@ -205,6 +237,16 @@ final class RecipeCacheStore {
     private func pendingSweepKey(accountKey: String) -> String {
         AccountScope.userDefaultsKey(
             prefix: "recipe_cache_v\(Self.cacheSchemaVersion)_pending_sweep",
+            accountKey: accountKey
+        )
+    }
+
+    /// Deliberately unversioned, unlike the keys above: it records which
+    /// schema version last wrote rows, so it must survive a version bump for
+    /// the purge check to see the old value.
+    private func rowsSchemaVersionKey(accountKey: String) -> String {
+        AccountScope.userDefaultsKey(
+            prefix: "recipe_cache_rows_schema_version",
             accountKey: accountKey
         )
     }

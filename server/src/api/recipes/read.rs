@@ -77,6 +77,27 @@ macro_rules! recipe_relevance_select {
 
 pub(crate) use recipe_relevance_select;
 
+macro_rules! recipe_sync_select {
+    () => {
+        (
+            $crate::schema::recipes::id,
+            $crate::schema::recipes::created_at,
+            $crate::schema::recipe_versions::title,
+            $crate::schema::recipe_versions::description,
+            $crate::schema::recipe_versions::photo_ids,
+            $crate::schema::recipe_versions::rating,
+            $crate::schema::recipe_versions::created_at,
+            $crate::schema::recipe_versions::ingredients,
+            $crate::raw_sql::ingredients_text(),
+            $crate::schema::recipe_versions::instructions,
+            $crate::schema::recipe_versions::notes,
+            $crate::raw_sql::tags_subquery(),
+        )
+    };
+}
+
+pub(crate) use recipe_sync_select;
+
 /// Recipe identity plus the current version row.
 pub struct RecipeWithVersion {
     pub id: Uuid,
@@ -134,6 +155,25 @@ pub struct RecipeRelevanceRow {
     pub rating: Option<i32>,
     pub updated_at: DateTime<Utc>,
     pub ingredients: JsonValue,
+    pub instructions: String,
+    pub notes: Option<String>,
+    pub tags: Vec<String>,
+}
+
+#[derive(Queryable)]
+pub struct RecipeSyncRow {
+    pub id: Uuid,
+    pub created_at: DateTime<Utc>,
+    pub title: String,
+    pub description: Option<String>,
+    pub photo_ids: Vec<Option<Uuid>>,
+    pub rating: Option<i32>,
+    pub updated_at: DateTime<Utc>,
+    pub ingredients: JsonValue,
+    /// The database's own text rendering of the ingredients JSONB — the
+    /// haystack the search filter matches, which clients cannot re-create by
+    /// re-encoding the structured ingredients.
+    pub ingredient_match_text: String,
     pub instructions: String,
     pub notes: Option<String>,
     pub tags: Vec<String>,
