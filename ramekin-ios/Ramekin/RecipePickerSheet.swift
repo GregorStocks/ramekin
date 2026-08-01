@@ -12,37 +12,28 @@ struct RecipePickerSheet: View {
     @State private var error: String?
     @State private var searchTask: Task<Void, Never>?
 
+    // As in RecipeListView, .searchable must stay attached to a view that never
+    // changes structural identity, or the search bar gets torn down whenever a
+    // load/error/empty state swaps the hierarchy. Keep the List permanent and
+    // overlay the status views.
     var body: some View {
         NavigationStack {
-            Group {
-                if isLoading && recipes.isEmpty {
-                    ProgressView("Loading recipes...")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if let error = error, recipes.isEmpty {
-                    errorView(message: error)
-                } else if recipes.isEmpty {
-                    VStack(spacing: 16) {
-                        Image(systemName: "magnifyingglass")
-                            .font(.system(size: 48))
-                            .foregroundColor(.secondary)
-                        Text("No recipes found")
-                            .font(.title2)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
-                    List(recipes) { recipe in
-                        Button {
-                            onSelect(recipe)
-                            dismiss()
-                        } label: {
-                            RecipeRowView(recipe: recipe)
-                        }
-                        .buttonStyle(.plain)
-                    }
-                    .listStyle(.plain)
+            List(recipes) { recipe in
+                Button {
+                    onSelect(recipe)
+                    dismiss()
+                } label: {
+                    RecipeRowView(recipe: recipe)
                 }
+                .buttonStyle(.plain)
             }
-            .searchable(text: $searchText, prompt: "Search recipes")
+            .listStyle(.plain)
+            .overlay { statusOverlay }
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: "Search recipes"
+            )
             .onChange(of: searchText) { _ in
                 SearchDebounceSupport.replaceTask(&searchTask) {
                     await loadRecipes()
@@ -59,6 +50,24 @@ struct RecipePickerSheet: View {
                 }
             }
             .task { await loadRecipes() }
+        }
+    }
+
+    @ViewBuilder
+    private var statusOverlay: some View {
+        if isLoading && recipes.isEmpty {
+            ProgressView("Loading recipes...")
+        } else if let error = error, recipes.isEmpty {
+            errorView(message: error)
+        } else if recipes.isEmpty {
+            VStack(spacing: 16) {
+                Image(systemName: "magnifyingglass")
+                    .font(.system(size: 48))
+                    .foregroundColor(.secondary)
+                Text("No recipes found")
+                    .font(.title2)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 

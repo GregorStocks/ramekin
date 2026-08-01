@@ -12,34 +12,28 @@ struct RecipeListView: View {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
 
+    // The search bar's UISearchController is owned by the view .searchable is
+    // attached to, so that view must never change structural identity: swapping
+    // it out (e.g. for a full-screen spinner) destroys the search bar. Keep the
+    // List permanently in the hierarchy and draw status views as overlays.
     var body: some View {
-        Group {
-            if viewModel.isLoading && viewModel.recipes.isEmpty {
-                ProgressView("Loading recipes...")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            } else if let error = viewModel.error, viewModel.recipes.isEmpty {
-                errorView(message: error)
-            } else if viewModel.recipes.isEmpty
-                && !viewModel.hasActiveFilters
-                && viewModel.searchText.isEmpty {
-                emptyStateView
-            } else {
-                VStack(spacing: 0) {
-                    if viewModel.syncFailed {
-                        syncFailedBanner
-                        Divider()
-                    }
-                    filterBar
+        VStack(spacing: 0) {
+            if showsListChrome {
+                if viewModel.syncFailed {
+                    syncFailedBanner
                     Divider()
-                    if viewModel.recipes.isEmpty {
-                        noResultsView
-                    } else {
-                        recipeList
-                    }
                 }
+                filterBar
+                Divider()
             }
+            recipeList
+                .overlay { statusOverlay }
         }
-        .searchable(text: $viewModel.searchText, prompt: "Search recipes")
+        .searchable(
+            text: $viewModel.searchText,
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: "Search recipes"
+        )
         .onChange(of: viewModel.searchText) { newValue in
             viewModel.handleSearchTextChange(newValue)
         }
@@ -82,6 +76,36 @@ struct RecipeListView: View {
             ) {
                 viewModel.reloadRecipes()
             }
+        }
+    }
+
+    private var showsListChrome: Bool {
+        if viewModel.isLoading && viewModel.recipes.isEmpty {
+            return false
+        }
+        if viewModel.error != nil && viewModel.recipes.isEmpty {
+            return false
+        }
+        if viewModel.recipes.isEmpty
+            && !viewModel.hasActiveFilters
+            && viewModel.searchText.isEmpty {
+            return false
+        }
+        return true
+    }
+
+    @ViewBuilder
+    private var statusOverlay: some View {
+        if viewModel.isLoading && viewModel.recipes.isEmpty {
+            ProgressView("Loading recipes...")
+        } else if let error = viewModel.error, viewModel.recipes.isEmpty {
+            errorView(message: error)
+        } else if viewModel.recipes.isEmpty
+            && !viewModel.hasActiveFilters
+            && viewModel.searchText.isEmpty {
+            emptyStateView
+        } else if viewModel.recipes.isEmpty {
+            noResultsView
         }
     }
 
