@@ -1,0 +1,35 @@
+{
+  "title": "Estimate recipe calories deterministically with ranges and explicit unknowns",
+  "description": "Add recipe calorie estimates calculated deterministically from an ingredient nutrition database. \
+The same recipe and database version must produce the same estimate; do not use LLM-generated calorie guesses.\n\
+\n\
+Expected behavior:\n\
+- Select and document a reliable nutrition data source, provenance, units, and deterministic ingredient matching rules. \
+Calculate calories only when both the ingredient match and quantity conversion are supported.\n\
+- Use ingredient quantities and supported mass/volume conversions to calculate contributions. \
+Propagate quantity ranges through the calculation instead of collapsing them to a single number.\n\
+- Sum supported contributions and explicitly list ingredients whose calories cannot be determined, including unsupported quantities, ambiguous matches, or missing conversion data. \
+Unknown does not mean zero.\n\
+- Display wording such as 'Known ingredients: 500–600 calories, plus unknown calories from yogurt.' \
+Make clear that a partial subtotal is not the complete recipe total. \
+Handle fully known, partially known, and entirely unknown recipes.\n\
+- Calculate consistently on the backend and expose the result on both web and iOS. \
+Recompute for ingredient/quantity changes and recipe scaling. \
+Clearly distinguish whole-recipe estimates from any per-serving display; only calculate per-serving values when a usable serving count exists.\n\
+- Keep calculated estimates distinguishable from existing imported nutritional_info text.\n\
+\n\
+Validation: Pin deterministic examples for exact amounts, ranges, unit conversions, missing density/nutrition data, ambiguous ingredients, mixed known/unknown ingredients, all-unknown recipes, and scaling. \
+Add API end-to-end tests before using new endpoints in the UIs. \
+Follow doc/client-logic-sharing.md for any duplicated client logic. \
+If implementation changes extraction or parsing, run make pipeline and commit intentional data/ diffs.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-09-07T23:14:55Z",
+  "updated_at": "2026-09-07T23:14:55Z",
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Make recipe creation paste-first with backend parsing",
+  "description": "The current recipe creation UI requires too much field-by-field input and too many clicks. \
+The minimum useful flow is to paste an entire recipe as text and let the backend parse it into an editable recipe draft.\n\
+\n\
+Expected behavior:\n\
+- Provide a prominent paste-text entry point in recipe creation on web and iOS. \
+Accept a whole recipe containing title, ingredients, instructions, and any available metadata without requiring users to split it into fields or add each ingredient separately.\n\
+- Parse on the backend, reusing existing extraction/parsing infrastructure where appropriate. \
+Return a structured draft that the user can review, correct, and save in a short flow.\n\
+- Preserve the pasted text and edits on failure, show actionable errors, and make missing or ambiguous fields visible without inventing recipe content.\n\
+- Review the surrounding creation/import flow to reduce unnecessary clicks; adding another buried control to the existing form is insufficient.\n\
+\n\
+Validation: Add API end-to-end tests before connecting any new endpoint to either UI. \
+Cover representative pasted recipes, incomplete input, and parse failures, plus the paste/review/save flow on both clients. \
+Run make pipeline for extraction/parsing changes and commit intentional data/ diffs. \
+Keep parsing logic on the server; follow doc/client-logic-sharing.md for any duplicated deterministic client logic.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "web",
+    "ios",
+    "api",
+    "ingredient-parser",
+  ],
+  "created_at": "2026-09-07T23:14:55Z",
+  "updated_at": "2026-09-07T23:14:55Z",
+}
