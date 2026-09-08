@@ -1015,6 +1015,61 @@
         ]
       }
     },
+    "/api/recipes/estimate-calories": {
+      "post": {
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "estimate_calories",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstimateCaloriesRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Deterministic calorie estimate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalorieEstimateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid scale or numeric bounds",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/export": {
       "get": {
         "tags": [
@@ -2757,6 +2812,73 @@
           }
         }
       },
+      "CalorieEstimateResponse": {
+        "type": "object",
+        "required": [
+          "database_version",
+          "unknown_ingredients",
+          "summary"
+        ],
+        "properties": {
+          "database_version": {
+            "type": "string",
+            "description": "Identifies the pinned source data, aliases, and calculation rules."
+          },
+          "known_calories": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/CalorieRange",
+                "description": "Null when no ingredient could be estimated. Otherwise a subtotal that may be partial."
+              }
+            ]
+          },
+          "per_serving_calories": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/CalorieRange"
+              }
+            ]
+          },
+          "per_serving_summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "unknown_ingredients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnknownCalorieIngredient"
+            }
+          }
+        }
+      },
+      "CalorieRange": {
+        "type": "object",
+        "required": [
+          "min",
+          "max"
+        ],
+        "properties": {
+          "max": {
+            "type": "number",
+            "format": "double"
+          },
+          "min": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
       "CaptureRequest": {
         "type": "object",
         "required": [
@@ -3095,6 +3217,33 @@
           "error": {
             "type": "string",
             "description": "Human-readable message for display and debugging."
+          }
+        }
+      },
+      "EstimateCaloriesRequest": {
+        "type": "object",
+        "required": [
+          "ingredients",
+          "scale"
+        ],
+        "properties": {
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ingredient"
+            }
+          },
+          "scale": {
+            "type": "number",
+            "format": "double",
+            "description": "Multiplier applied to the whole recipe, including its serving count."
+          },
+          "servings": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Original, unscaled serving count. Yield text is not interpreted as a count."
           }
         }
       },
@@ -4687,6 +4836,26 @@
         ],
         "properties": {
           "message": {
+            "type": "string"
+          }
+        }
+      },
+      "UnknownCalorieIngredient": {
+        "type": "object",
+        "required": [
+          "index",
+          "item",
+          "reason"
+        ],
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "item": {
+            "type": "string"
+          },
+          "reason": {
             "type": "string"
           }
         }

@@ -16,6 +16,7 @@ from ramekin_client.models import (
     Ingredient,
     Measurement,
     SignupRequest,
+    UpdateRecipeRequest,
 )
 
 
@@ -85,6 +86,112 @@ def scale_recipe(api_url: str, ui_url: str, page: Page):
 def _amount_texts(page: Page) -> List[str]:
     """Return the visible primary-amount text for each rendered ingredient row."""
     return page.locator(".ingredients-list li .amount").all_text_contents()
+
+
+def test_calorie_estimates_follow_recipe_and_scale(
+    scale_recipe, page: Page, api_url: str
+):
+    recipe_id, token = scale_recipe
+    section = page.get_by_role("region", name="Estimated calories", exact=True)
+    expect(section).to_contain_text("Whole-recipe calories unknown")
+    with _authed_client(api_url, token) as client:
+        api = RecipesApi(client)
+        original = api.get_recipe(recipe_id)
+        api.update_recipe(
+            recipe_id,
+            UpdateRecipeRequest(
+                expected_version_id=original.version_id,
+                ingredients=[
+                    Ingredient(
+                        item="granulated sugar",
+                        measurements=[Measurement(amount="100–200", unit="g")],
+                    ),
+                    Ingredient(
+                        item="yogurt",
+                        measurements=[Measurement(amount="100", unit="g")],
+                    ),
+                ],
+                nutritional_info="Imported nutrition: 123 calories",
+            ),
+        )
+    page.reload()
+    expect(section).to_contain_text("Known ingredients: 387–774 calories")
+    expect(section).to_contain_text("yogurt: Ambiguous ingredient")
+    expect(section).to_contain_text("partial whole-recipe subtotal")
+    expect(section).to_contain_text("Known ingredients per serving: 96–194 calories")
+    expect(page.get_by_text("Imported nutrition: 123 calories")).to_be_visible()
+    page.locator(".scale-preset", has_text="2×").click()
+    expect(section).to_contain_text("Known ingredients: 774–1548 calories")
+    expect(section).to_contain_text("Known ingredients per serving: 96–194 calories")
+
+    # Switching to the earlier version must not retain the current subtotal.
+    page.goto(f"{page.url.split('?')[0]}?version_id={original.version_id}")
+    expect(section).to_contain_text("Whole-recipe calories unknown")
+    expect(section).not_to_contain_text("Known ingredients: 774")
+
+    with _authed_client(api_url, token) as client:
+        api = RecipesApi(client)
+        current = api.get_recipe(recipe_id)
+        api.update_recipe(
+            recipe_id,
+            UpdateRecipeRequest(
+                expected_version_id=current.version_id,
+                ingredients=[
+                    Ingredient(
+                        item="granulated sugar",
+                        measurements=[Measurement(amount="100", unit="g")],
+                    )
+                ],
+            ),
+        )
+    page.goto(page.url.split("?")[0])
+    expect(section).to_contain_text("Whole recipe: approximately 387 calories.")
+    expect(section).to_contain_text("Per serving: approximately 97 calories.")
+    expect(section).not_to_contain_text("partial")
+
+
+def test_calorie_request_failure_clears_previous_result(scale_recipe, page: Page):
+    section = page.get_by_role("region", name="Estimated calories", exact=True)
+    expect(section).to_contain_text("Whole-recipe calories unknown")
+    page.route("**/api/recipes/estimate-calories", lambda route: route.abort())
+    page.locator(".scale-preset", has_text="2×").click()
+    expect(section.get_by_role("alert")).to_contain_text("Could not estimate calories")
+    expect(section).not_to_contain_text("Whole-recipe calories unknown")
+
+
+def test_late_calorie_response_does_not_replace_new_scale(scale_recipe, page: Page):
+    pending = []
+
+    def handle(route):
+        if route.request.post_data_json["scale"] == 1:
+            pending.append(route)
+        else:
+            route.fulfill(
+                json={
+                    "database_version": "test",
+                    "summary": "New estimate",
+                    "unknown_ingredients": [],
+                }
+            )
+
+    page.route("**/api/recipes/estimate-calories", handle)
+    page.reload()
+    section = page.get_by_role("region", name="Estimated calories", exact=True)
+    expect(section.get_by_role("status")).to_contain_text("Calculating")
+    page.locator(".scale-preset", has_text="2×").click()
+    expect(section).to_contain_text("New estimate")
+    assert len(pending) == 1
+    pending[0].fulfill(
+        json={
+            "database_version": "test",
+            "summary": "Old estimate",
+            "unknown_ingredients": [],
+        }
+    )
+    # The request event provides a synchronization point for the late response.
+    page.wait_for_load_state("networkidle")
+    expect(section).to_contain_text("New estimate")
+    expect(section).not_to_contain_text("Old estimate")
 
 
 def test_recipe_loads_with_original_amounts(scale_recipe, page: Page):

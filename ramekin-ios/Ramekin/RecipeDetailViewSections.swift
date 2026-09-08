@@ -47,6 +47,13 @@ extension RecipeDetailView {
                     notesSection(notes)
                 }
 
+                Divider()
+                CalorieEstimateSection(request: EstimateCaloriesRequest(
+                    ingredients: recipe.ingredients,
+                    scale: viewModel.recipeScale,
+                    servings: recipe.servings
+                ))
+
                 if let nutritionalInfo = recipe.nutritionalInfoForDisplay {
                     Divider()
                     nutritionalInfoSection(nutritionalInfo)

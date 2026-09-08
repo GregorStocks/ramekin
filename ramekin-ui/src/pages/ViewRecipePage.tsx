@@ -10,6 +10,7 @@ import {
 import { useParams, A, useNavigate, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import StarRating from "../components/StarRating";
+import CalorieEstimate from "../components/CalorieEstimate";
 import Modal from "../components/Modal";
 import EnrichPreviewModal from "../components/EnrichPreviewModal";
 import AddToShoppingListModal from "../components/AddToShoppingListModal";
@@ -809,6 +810,12 @@ export default function ViewRecipePage() {
                     <div class="recipe-notes">{r().notes}</div>
                   </section>
                 </Show>
+                <CalorieEstimate
+                  ingredients={r().ingredients}
+                  servings={r().servings}
+                  scale={scale()}
+                />
+
                 <Show when={r().nutritionalInfo}>
                   <section class="recipe-section">
                     <h3>Nutritional Info</h3>

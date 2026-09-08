@@ -10,12 +10,15 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { CreateRecipeRequest, CreateRecipeResponse, Direction, GenerateDescriptionResponse, GeneratePhotoResponse, ListRecipesResponse, NormalizeTitleResponse, RecipeResponse, RescrapeResponse, SortBy, SyncRecipesResponse, UpdateRecipeRequest, VersionListResponse } from '../models/index';
+import type { CalorieEstimateResponse, CreateRecipeRequest, CreateRecipeResponse, Direction, EstimateCaloriesRequest, GenerateDescriptionResponse, GeneratePhotoResponse, ListRecipesResponse, NormalizeTitleResponse, RecipeResponse, RescrapeResponse, SortBy, SyncRecipesResponse, UpdateRecipeRequest, VersionListResponse } from '../models/index';
 export interface CreateRecipeOperationRequest {
     createRecipeRequest: CreateRecipeRequest;
 }
 export interface DeleteRecipeRequest {
     id: string;
+}
+export interface EstimateCaloriesOperationRequest {
+    estimateCaloriesRequest: EstimateCaloriesRequest;
 }
 export interface ExportRecipeRequest {
     id: string;
@@ -74,6 +77,12 @@ export declare class RecipesApi extends runtime.BaseAPI {
     /**
      */
     deleteRecipe(requestParameters: DeleteRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    /**
+     */
+    estimateCaloriesRaw(requestParameters: EstimateCaloriesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CalorieEstimateResponse>>;
+    /**
+     */
+    estimateCalories(requestParameters: EstimateCaloriesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CalorieEstimateResponse>;
     /**
      */
     exportAllRecipesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;

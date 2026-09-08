@@ -42,6 +42,7 @@ Class | Method | HTTP request | Description
 *PhotosApi* | [**upload**](docs/PhotosApi.md#upload) | **POST** /api/photos | 
 *RecipesApi* | [**create_recipe**](docs/RecipesApi.md#create_recipe) | **POST** /api/recipes | 
 *RecipesApi* | [**delete_recipe**](docs/RecipesApi.md#delete_recipe) | **DELETE** /api/recipes/{id} | 
+*RecipesApi* | [**estimate_calories**](docs/RecipesApi.md#estimate_calories) | **POST** /api/recipes/estimate-calories | 
 *RecipesApi* | [**export_all_recipes**](docs/RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
 *RecipesApi* | [**export_recipe**](docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 *RecipesApi* | [**generate_description**](docs/RecipesApi.md#generate_description) | **POST** /api/recipes/{id}/generate-description | 
@@ -78,6 +79,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [BookmarkletTokenResponse](docs/BookmarkletTokenResponse.md)
+ - [CalorieEstimateResponse](docs/CalorieEstimateResponse.md)
+ - [CalorieRange](docs/CalorieRange.md)
  - [CaptureRequest](docs/CaptureRequest.md)
  - [ClearCheckedResponse](docs/ClearCheckedResponse.md)
  - [CreateClientLogRequest](docs/CreateClientLogRequest.md)
@@ -97,6 +100,7 @@ Class | Method | HTTP request | Description
  - [Direction](docs/Direction.md)
  - [ErrorCode](docs/ErrorCode.md)
  - [ErrorResponse](docs/ErrorResponse.md)
+ - [EstimateCaloriesRequest](docs/EstimateCaloriesRequest.md)
  - [GenerateDescriptionResponse](docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](docs/GeneratePhotoResponse.md)
  - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
@@ -143,6 +147,7 @@ Class | Method | HTTP request | Description
  - [TagItem](docs/TagItem.md)
  - [TagsListResponse](docs/TagsListResponse.md)
  - [UnauthedPingResponse](docs/UnauthedPingResponse.md)
+ - [UnknownCalorieIngredient](docs/UnknownCalorieIngredient.md)
  - [UpdateMealPlanRequest](docs/UpdateMealPlanRequest.md)
  - [UpdateRecipeRequest](docs/UpdateRecipeRequest.md)
  - [UpdateShoppingListItemRequest](docs/UpdateShoppingListItemRequest.md)

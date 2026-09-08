@@ -1,5 +1,6 @@
 pub mod create;
 pub mod delete;
+pub mod estimate_calories;
 pub mod export;
 pub mod generate_description;
 pub mod generate_photo;
@@ -26,6 +27,10 @@ pub fn router() -> Router<AppState> {
         .route("/", get(list::list_recipes).post(create::create_recipe))
         .route("/export", get(export::export_all_recipes))
         .route("/sync", get(sync::sync_recipes))
+        .route(
+            "/estimate-calories",
+            post(estimate_calories::estimate_calories),
+        )
         .route(
             "/{id}",
             get(get::get_recipe)
@@ -54,6 +59,7 @@ pub fn router() -> Router<AppState> {
         list::list_recipes,
         sync::sync_recipes,
         get::get_recipe,
+        estimate_calories::estimate_calories,
         update::update_recipe,
         delete::delete_recipe,
         export::export_recipe,
@@ -74,6 +80,10 @@ pub fn router() -> Router<AppState> {
         list::SortBy,
         list::Direction,
         get::RecipeResponse,
+        estimate_calories::EstimateCaloriesRequest,
+        estimate_calories::CalorieEstimateResponse,
+        estimate_calories::CalorieRange,
+        estimate_calories::UnknownCalorieIngredient,
         update::UpdateRecipeRequest,
         versions::VersionListResponse,
         versions::VersionSummary,
