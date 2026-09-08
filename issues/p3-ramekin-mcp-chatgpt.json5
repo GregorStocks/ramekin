@@ -11,6 +11,11 @@ Public DNS/HTTPS already exists; determine how to provide authenticated machine 
 Approach is deliberately undecided. \
 Investigate the current ChatGPT account/mobile support and prove connection/authentication early. \
 Cloudflare Managed OAuth, a separately authenticated MCP route or host, and a private connector/tunnel are possible approaches, not requirements. \
+Another owner-proposed option is to replace Postgres with SQLite and run the entire application inside Cloudflare, including the MCP integration. \
+Evaluate that broader deployment option alongside adapting the existing deployment; do not assume a database or hosting migration is necessary or already selected. \
+Investigate the appropriate Cloudflare runtime and SQLite storage offering, Rust/backend compatibility, Postgres/Diesel-specific behavior, background extraction jobs, photo storage, operational limits/costs, and a migration plan that preserves all existing data and soft-delete semantics. \
+Compare the implementation and operational tradeoffs, including web/iOS API behavior, and record the chosen direction before starting a broader migration. \
+Moving hosting or databases does not by itself resolve MCP authentication or ChatGPT mobile availability. \
 Do not assume Cloudflare authentication automatically selects or authorizes a Ramekin account. \
 Document the chosen trust boundary, identity-to-account mapping, token lifecycle/revocation, and required deployment configuration. \
 Prepare concrete configuration changes for owner review before changing production access policy. \
