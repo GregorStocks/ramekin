@@ -17,6 +17,7 @@ that palette readable rather than partially recoloring native controls.
 | Photo upload cannot be reached by keyboard because its input is hidden inside a label. | Open the file chooser from a real, focusable button. |
 | Form focus outlines are removed by more specific component rules. | Preserve keyboard focus outlines. Give disabled buttons a distinct, readable state and keep the save bar opaque. |
 | iOS Edit is buried in the overflow menu; ingredient fields use fixed 50/60-point widths. | Expose Edit in the toolbar, label creation/overflow actions, and give ingredient names a full row with flexible amount/unit fields and larger removal targets. |
+| CI screenshots show low-contrast iOS scale/login actions, and the UI test measures an 18.7-point accessibility frame despite 44-point layout padding. | Use an adaptive amber accent with inverse text on selected controls, test light/dark contrast, and explicitly define rectangular interaction shapes for padded ingredient actions. |
 
 ## Before / after
 
@@ -34,8 +35,9 @@ Matching viewports and the same seeded recipe make the layout changes comparable
 | Create, 390 × 844 | [Before](before-create-390.png) | [After](after-create-390.png) |
 
 iOS screenshots are attached to the existing `testRecipeFlow` test results,
-now uploaded on success as well as failure by the macOS UI test job. iOS
-visual inspection is not possible on this Linux host.
+now uploaded on success as well as failure by the macOS UI test job. The
+simulator runs on macOS; its exported screenshots were downloaded and
+reviewed on this Linux host.
 
 ## Validation
 

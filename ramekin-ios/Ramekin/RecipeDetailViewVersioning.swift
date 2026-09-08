@@ -15,7 +15,7 @@ extension RecipeDetailView {
         VStack(spacing: 16) {
             Image(systemName: "exclamationmark.triangle")
                 .font(.largeTitle)
-                .foregroundColor(.orange)
+                .foregroundColor(.accentColor)
             Text(message)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
@@ -31,14 +31,14 @@ extension RecipeDetailView {
     func inlineErrorBanner(message: String) -> some View {
         HStack(alignment: .top, spacing: 10) {
             Image(systemName: "exclamationmark.triangle.fill")
-                .foregroundColor(.orange)
+                .foregroundColor(.accentColor)
             Text(message)
                 .font(.subheadline)
                 .foregroundColor(.primary)
             Spacer()
         }
         .padding(12)
-        .background(Color.orange.opacity(0.14))
+        .background(Color.accentColor.opacity(0.14))
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 
@@ -114,7 +114,7 @@ extension RecipeDetailView {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top, spacing: 10) {
                 Image(systemName: "clock.arrow.circlepath")
-                    .foregroundColor(.orange)
+                    .foregroundColor(.accentColor)
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Viewing version from \(formatDate(recipe.updatedAt))")
                         .font(.subheadline)
@@ -148,7 +148,7 @@ extension RecipeDetailView {
             }
         }
         .padding(12)
-        .background(Color.orange.opacity(0.14))
+        .background(Color.accentColor.opacity(0.14))
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 
@@ -163,7 +163,7 @@ extension RecipeDetailView {
                 } label: {
                     Image(systemName: isSelectedForCompare ? "checkmark.circle.fill" : "circle")
                         .font(.title3)
-                        .foregroundColor(isSelectedForCompare ? .orange : .secondary)
+                        .foregroundColor(isSelectedForCompare ? .accentColor : .secondary)
                 }
                 .buttonStyle(.plain)
                 .disabled(viewModel.isLoading || viewModel.isLoadingCompare || viewModel.isReverting)
@@ -182,7 +182,7 @@ extension RecipeDetailView {
                         }
 
                         if isDisplayedVersion {
-                            statusPill(label: "Viewing", color: .orange)
+                            statusPill(label: "Viewing", color: .accentColor)
                         }
                     }
 
@@ -237,7 +237,7 @@ extension RecipeDetailView {
                 Spacer()
                 Image(systemName: "arrow.up.right.square")
             }
-            .foregroundColor(.orange)
+            .foregroundColor(.accentColor)
         }
     }
 

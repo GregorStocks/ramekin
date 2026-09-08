@@ -93,6 +93,7 @@ struct IngredientRowView: View {
                         .foregroundColor(.red)
                         .font(.body)
                         .frame(minWidth: 44, minHeight: 44)
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Remove alternative measurement")
@@ -110,6 +111,7 @@ struct IngredientRowView: View {
                     .font(.subheadline)
                     .foregroundColor(.primary)
                     .frame(minHeight: 44)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
 
@@ -125,6 +127,7 @@ struct IngredientRowView: View {
                         .font(.subheadline)
                         .foregroundColor(.primary)
                         .frame(minHeight: 44)
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             }
@@ -136,6 +139,7 @@ struct IngredientRowView: View {
                     .font(.body)
                     .foregroundColor(.red)
                     .frame(minWidth: 44, minHeight: 44)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             .accessibilityLabel("Remove ingredient")

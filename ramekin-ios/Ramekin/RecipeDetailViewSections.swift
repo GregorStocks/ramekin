@@ -113,7 +113,7 @@ extension RecipeDetailView {
                     ForEach(1...5, id: \.self) { star in
                         Image(systemName: star <= rating ? "star.fill" : "star")
                             .font(.subheadline)
-                            .foregroundColor(.orange)
+                            .foregroundColor(.accentColor)
                     }
                 }
             }
@@ -186,11 +186,11 @@ extension RecipeDetailView {
                                 Capsule()
                                     .fill(
                                         viewModel.recipeScale == preset.value
-                                            ? Color.orange
+                                            ? Color.accentColor
                                             : Color(.secondarySystemBackground)
                                     )
                             )
-                            .foregroundColor(viewModel.recipeScale == preset.value ? .white : .primary)
+                            .foregroundColor(viewModel.recipeScale == preset.value ? Color(.systemBackground) : .primary)
                     }
                     .buttonStyle(.plain)
                 }
@@ -217,15 +217,15 @@ extension RecipeDetailView {
             .fontWeight(.semibold)
             .padding(.horizontal, 8)
             .padding(.vertical, 3)
-            .background(Color.orange.opacity(0.16))
-            .foregroundColor(.orange)
+            .background(Color.accentColor.opacity(0.16))
+            .foregroundColor(.accentColor)
             .clipShape(Capsule())
     }
 
     func ingredientRow(_ ingredient: Ingredient, scale: Double) -> some View {
         HStack(alignment: .top, spacing: 8) {
             Circle()
-                .fill(Color.orange)
+                .fill(Color.accentColor)
                 .frame(width: 6, height: 6)
                 .padding(.top, 6)
 
