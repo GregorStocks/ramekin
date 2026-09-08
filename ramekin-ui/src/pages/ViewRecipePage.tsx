@@ -422,7 +422,7 @@ export default function ViewRecipePage() {
                   <div
                     class="recipe-more-actions-panel"
                     onClick={(event) => {
-                      if (event.target.closest("button")) {
+                      if (event.target.closest("button[data-close-actions]")) {
                         const disclosure =
                           event.currentTarget.closest("details");
                         if (disclosure) {
@@ -438,6 +438,7 @@ export default function ViewRecipePage() {
                         type="button"
                         class="btn"
                         onClick={() => setShowShoppingListModal(true)}
+                        data-close-actions="true"
                         disabled={isViewingHistoricalVersion()}
                       >
                         Add to Shopping List
@@ -446,6 +447,7 @@ export default function ViewRecipePage() {
                         type="button"
                         class="btn"
                         onClick={openMealPlanModal}
+                        data-close-actions="true"
                         disabled={isViewingHistoricalVersion()}
                       >
                         Add to Meal Plan
@@ -509,6 +511,7 @@ export default function ViewRecipePage() {
                       <button
                         type="button"
                         class="btn"
+                        data-close-actions="true"
                         onClick={() =>
                           recipeAiActions.setShowCustomEnrichInput(
                             !recipeAiActions.showCustomEnrichInput(),
@@ -539,6 +542,7 @@ export default function ViewRecipePage() {
                       <button
                         class="btn btn-danger-outline"
                         onClick={handleDelete}
+                        data-close-actions="true"
                         disabled={deleting()}
                       >
                         {deleting() ? "Deleting..." : "Delete"}

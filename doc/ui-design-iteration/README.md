@@ -9,7 +9,7 @@ that palette readable rather than partially recoloring native controls.
 | Finding | Change |
 | --- | --- |
 | Navigation link rules override New Recipe's white text, producing dark text on brown (2.37:1 contrast). | Exclude button links from navigation text overrides. The primary action now measures 5.04:1, and 6.03:1 on hover. |
-| Ten recipe actions stretch into tall, uneven buttons; Edit's label sits above its neighbors. | Use consistent centered link/button metrics, keep Edit directly visible, and group the remaining actions in a keyboard-operable More actions disclosure. |
+| Ten recipe actions stretch into tall, uneven buttons; Edit's label sits above its neighbors. | Use consistent centered link/button metrics, keep Edit directly visible, and group the remaining actions in a keyboard-operable More actions disclosure. Keep slow operations visible so their progress labels remain readable. |
 | Maintenance controls and version history precede the recipe title. | Lead with the recipe, give ingredients and instructions consistent headings, and move history below the reading layout. |
 | Mobile sort and density controls shrink until their labels are clipped. | Wrap whole controls and retain the density group's intrinsic width. Align the search field with the desktop toolbar. |
 | Custom scale reads “Cus” because the shared input padding overrides its sizing. | Give the field sufficient usable width and an accessible name. |
@@ -40,7 +40,7 @@ visual inspection is not possible on this Linux host.
 ## Validation
 
 Local checks passed: `make test` (400 API tests plus the Rust suites),
-`make ui-unit-test` (132 tests), `make test-ui` (52 tests), and `make lint`.
+`make ui-unit-test` (132 tests), `make test-ui` (53 tests), and `make lint`.
 
 Browser regression coverage exercises 320, 390, 768, 1920, and 2560-pixel
 widths, light/dark OS preferences, computed text contrast, unclipped density

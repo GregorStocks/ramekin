@@ -4,7 +4,7 @@ import re
 import uuid
 
 import pytest
-from playwright.sync_api import Locator, Page, expect
+from playwright.sync_api import Locator, Page, Route, expect
 
 from ramekin_client import ApiClient, Configuration
 from ramekin_client.api import AuthApi
@@ -32,6 +32,28 @@ def contrast_ratio(element: Locator) -> float:
 
 def assert_no_horizontal_overflow(page: Page):
     assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
+
+
+def test_slow_recipe_action_keeps_progress_visible(logged_in_page: Page):
+    page = logged_in_page
+    page.locator(".recipe-card").first.click()
+    page.locator(".recipe-more-actions > summary").click()
+    pending: list[Route] = []
+    page.route("**/generate-description", lambda route: pending.append(route))
+    page.get_by_role("button", name="Generate Description", exact=True).click()
+    progress = page.get_by_role("button", name="Generating...", exact=True)
+    expect(progress).to_be_visible()
+    expect(progress).to_be_disabled()
+    expect(page.locator(".recipe-more-actions")).to_have_attribute("open", "")
+    assert len(pending) == 1
+    pending[0].fulfill(
+        status=500,
+        content_type="application/json",
+        body='{"error":"Generation unavailable"}',
+    )
+    expect(
+        page.get_by_role("button", name="Generate Description", exact=True)
+    ).to_be_enabled()
 
 
 @pytest.mark.parametrize("width", [320, 390, 768, 1920, 2560])
