@@ -32,7 +32,9 @@ enum RecipeScaleSupport {
         guard factor.isFinite, factor > 0, factor != 1 else {
             return amount
         }
-        if let match = amount.range(of: #"^serves\s+"#, options: [.regularExpression, .caseInsensitive]),
+        if let match = amount.range(
+            of: #"^(?:serves(?:\s*:\s*|\s+)|servings?\s*:\s*)"#, options: [.regularExpression, .caseInsensitive]
+        ),
            let scaled = scaleNumeric(String(amount[match.upperBound...]), by: factor) {
             return String(amount[match]) + scaled
         }

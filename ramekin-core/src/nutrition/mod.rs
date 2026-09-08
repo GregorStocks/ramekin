@@ -12,7 +12,7 @@ use crate::metric_weights::parse_amount;
 
 const DATA: &str = include_str!("data.json");
 const ALIASES: &str = include_str!("aliases.json");
-const RULE_VERSION: &str = "calories-v2";
+const RULE_VERSION: &str = "calories-v3";
 
 #[derive(Deserialize)]
 struct Food {
@@ -117,6 +117,8 @@ fn match_food(name: &str) -> Result<&'static Food, &'static str> {
 /// Strict quantity grammar: decimals, fractions, mixed numbers and bounded ranges.
 /// This does not alter the extraction pipeline's interpretation of ingredients.
 fn quantity(value: &str) -> Option<CalorieRange> {
+    static GROUPED: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"^[1-9][0-9]{0,2},[0-9]{3}$").unwrap());
     static MIXED: LazyLock<Regex> =
         LazyLock::new(|| Regex::new(r"^([0-9]+)-([0-9]+/[0-9]+)$").unwrap());
     static NUMBER: LazyLock<Regex> = LazyLock::new(|| {
@@ -146,6 +148,10 @@ fn quantity(value: &str) -> Option<CalorieRange> {
     let value = value.split_whitespace().collect::<Vec<_>>().join(" ");
     let number = |s: &str| {
         let s = MIXED.replace(s.trim(), "$1 $2");
+        if GROUPED.is_match(&s) {
+            return None;
+        }
+        let s = s.replace(',', ".");
         if !NUMBER.is_match(&s) {
             return None;
         }
@@ -270,10 +276,12 @@ fn range_text(range: CalorieRange) -> String {
 }
 
 fn serving_count(servings: &str) -> Option<f64> {
+    static PREFIX: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"^(?:serves(?:\s*:\s*|\s+)|servings?\s*:\s*)").unwrap());
     let text = normalize(servings);
+    let text = PREFIX.replace(&text, "");
     let count = text
-        .strip_prefix("serves ")
-        .or_else(|| text.strip_suffix(" servings"))
+        .strip_suffix(" servings")
         .or_else(|| text.strip_suffix(" serving"))
         .unwrap_or(&text);
     quantity(count)

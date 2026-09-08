@@ -40,6 +40,9 @@ density database's broader ingredient rewrites and guesses about preparation.
   Broad names such as yogurt, flour, rice, oil, and milk remain ambiguous.
 - Accept nonnegative decimals, fractions, mixed numbers, common Unicode
   fractions, and ordered ranges with hyphen, en dash, em dash, `to`, or `or`.
+  Dot and comma decimal separators follow the client scaling contract: `1,5`,
+  `,5`, and `0,125` are decimals; ambiguous grouping (`1,000`), multiple commas,
+  and mixed dot/comma strings are unsupported.
   Hyphenated mixed numbers (`1-1/2`) mean 1.5; ranges may also contain mixed
   endpoints (`1-1/2-2`). Sum every term of compound measurements such as
   `1 tablespoon plus 1 teaspoon`, including chains and ranges. Each term must
@@ -73,8 +76,9 @@ say “Known ingredients: … calories, plus unknown calories from …” and ex
 identify the subtotal as partial. Entirely unknown recipes have no numeric total.
 Every unsupported ingredient includes its input index, name, and reason.
 
-Only a positive numeric serving count, optionally prefixed by `serves` or suffixed
-by `serving`/`servings`, is used for per-serving estimates. Yield text (`1 loaf`,
+Only a positive numeric serving count, optionally prefixed by `serves`, `Serves:`,
+or `Servings:` (case-insensitive), or suffixed by `serving`/`servings`, is used for
+per-serving estimates. Yield text (`1 loaf`,
 `4–6`) is deliberately not interpreted. Scaling
 multiplies both ingredients and servings, so per-serving calories stay the same.
 Partial per-serving estimates are labeled partial as well. Imported nutrition

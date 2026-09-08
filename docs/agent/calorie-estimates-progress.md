@@ -22,3 +22,8 @@ compound measurements, and serving labels, pinned by shared scaling vectors.
 PR #689. Addressed all three initial review findings. Local checks after fixes:
 409 API/Python tests, 151 web unit tests, Rust suites, 35 browser tests, lint.
 First-commit iOS unit CI passed; updated iOS/shared-vector changes await CI.
+
+Second review: added comma-decimal quantities and colon serving prefixes on the
+server and both client scale helpers, with shared vectors and API/browser checks.
+All 412 API/Python tests, 155 web unit tests, Rust suites, 35 browser tests, and
+lint pass after these changes. Both review rounds are addressed.

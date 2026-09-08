@@ -28,6 +28,10 @@ fn exact_ranges_units_and_scaling() {
         ("1/2", "kg", 1935.0, 1935.0),
         ("1½", "kg", 5805.0, 5805.0),
         ("1-1/2", "kg", 5805.0, 5805.0),
+        ("1,5", "kg", 5805.0, 5805.0),
+        (",5", "kg", 1935.0, 1935.0),
+        ("0,125", "kg", 483.75, 483.75),
+        ("1,5–2,5", "kg", 5805.0, 9675.0),
         ("1-1/2-2", "kg", 5805.0, 7740.0),
         ("1/2-3/4", "kg", 1935.0, 2902.5),
     ] {
@@ -193,7 +197,15 @@ fn deterministic_matching_zero_calories_and_servings() {
             .per_serving_calories
             .is_none());
     }
-    for servings in ["4", "serves 4", "4 servings", " 4 SERVINGS "] {
+    for servings in [
+        "4",
+        "serves 4",
+        "4 servings",
+        " 4 SERVINGS ",
+        "Servings: 4",
+        "SERVINGS:4",
+        "Serves: 4",
+    ] {
         assert_eq!(
             estimate(std::slice::from_ref(&sugar), Some(servings), 2.0)
                 .unwrap()
@@ -202,6 +214,10 @@ fn deterministic_matching_zero_calories_and_servings() {
                 .min,
             96.75
         );
+    }
+    for amount in ["1,000", "1,000.5", "1,2,3"] {
+        let result = estimate(&[ingredient("granulated sugar", amount, "g")], None, 1.0).unwrap();
+        assert!(result.known_calories.is_none());
     }
     let salt = estimate(&[ingredient("table salt", "1", "g")], None, 1.0).unwrap();
     assert_eq!(salt.known_calories.unwrap().min, 0.0);

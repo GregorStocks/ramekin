@@ -112,6 +112,7 @@ def test_calorie_estimates_follow_recipe_and_scale(
                     ),
                 ],
                 nutritional_info="Imported nutrition: 123 calories",
+                servings="Servings: 4",
             ),
         )
     page.reload()
@@ -123,6 +124,7 @@ def test_calorie_estimates_follow_recipe_and_scale(
     page.locator(".scale-preset", has_text="2×").click()
     expect(section).to_contain_text("Known ingredients: 774–1548 calories")
     expect(page.locator(".ingredients-list")).to_contain_text("200–400")
+    expect(page.locator(".recipe-metadata")).to_contain_text("Servings: 8")
     expect(section).to_contain_text("Known ingredients per serving: 96–194 calories")
 
     # Switching to the earlier version must not retain the current subtotal.

@@ -234,6 +234,30 @@
     "expected": "2 TO 4 tbsp PLUS 2 TSP"
   },
   {
+    "name": "colon serving prefix doubles",
+    "amount": "Servings: 8",
+    "factor": 2,
+    "expected": "Servings: 16"
+  },
+  {
+    "name": "colon serving prefix without whitespace",
+    "amount": "SERVINGS:8",
+    "factor": 0.5,
+    "expected": "SERVINGS:4"
+  },
+  {
+    "name": "colon serving range",
+    "amount": "Servings: 4–6",
+    "factor": 2,
+    "expected": "Servings: 8–12"
+  },
+  {
+    "name": "colon serves prefix",
+    "amount": "Serves: 4",
+    "factor": 2,
+    "expected": "Serves: 8"
+  },
+  {
     "name": "free text remains unchanged",
     "amount": "to taste",
     "factor": 2,

@@ -130,7 +130,9 @@ export function scaleAmount(
   if (!Number.isFinite(factor) || factor <= 0) return amount;
   if (factor === 1) return amount;
 
-  const serves = amount.match(/^(serves\s+)(.+)$/i);
+  const serves = amount.match(
+    /^((?:serves(?:\s*:\s*|\s+)|servings?\s*:\s*))(.+)$/i,
+  );
   if (serves) {
     const scaled = scaleNumeric(serves[2], factor);
     return scaled === null ? amount : `${serves[1]}${scaled}`;
