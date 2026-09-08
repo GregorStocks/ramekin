@@ -1,6 +1,22 @@
 import Foundation
 
 enum RecipeScaleSupport {
+    private static func regex(_ pattern: String, options: NSRegularExpression.Options = []) -> NSRegularExpression {
+        do {
+            return try NSRegularExpression(pattern: pattern, options: options)
+        } catch {
+            preconditionFailure("Invalid scaling pattern: \(error)")
+        }
+    }
+
+    private static let compoundSeparator = regex(#"\s+(?:plus|\+)\s+"#, options: .caseInsensitive)
+    private static let rangeSeparator = regex(#"\s+(?:to|or)\s+|\s*[-–—]\s*"#, options: .caseInsensitive)
+    private static let unitSuffix: NSRegularExpression = {
+        let units = #"g|grams?|kg|kilograms?|mg|milligrams?|oz|ounces?|lbs?|pounds?|cups?|tbsp|tablespoons?|tsp|teaspoons?"#
+            + #"|fl oz|fluid ounces?|pints?|quarts?|gallons?|ml|milliliters?|l|liters?|litres?|servings?"#
+        return regex(#"^(.+?)(\s+(?:"# + units + #"))$"#, options: .caseInsensitive)
+    }()
+
     static let presets: [(value: Double, label: String)] = [
         (0.25, "1/4x"),
         (0.5, "1/2x"),
@@ -16,11 +32,47 @@ enum RecipeScaleSupport {
         guard factor.isFinite, factor > 0, factor != 1 else {
             return amount
         }
-        guard let parsed = parseAmount(amount) else {
-            return amount
+        if let match = amount.range(of: #"^serves\s+"#, options: [.regularExpression, .caseInsensitive]),
+           let scaled = scaleNumeric(String(amount[match.upperBound...]), by: factor) {
+            return String(amount[match]) + scaled
         }
+        let matches = compoundSeparator.matches(in: amount, range: NSRange(amount.startIndex..., in: amount))
+        var result = ""
+        var start = amount.startIndex
+        for match in matches {
+            guard let range = Range(match.range, in: amount),
+                  let scaled = scaleTerm(String(amount[start..<range.lowerBound]), by: factor) else { return amount }
+            result += scaled + amount[range]
+            start = range.upperBound
+        }
+        guard let final = scaleTerm(String(amount[start...]), by: factor) else { return amount }
+        return result + final
+    }
 
-        return formatScaled(parsed * factor)
+    private static func scaleNumeric(_ raw: String, by factor: Double) -> String? {
+        func format(_ value: Double) -> String? {
+            let scaled = value * factor
+            guard scaled.isFinite, abs(scaled) <= 1e15 else { return nil }
+            return formatScaled(scaled)
+        }
+        if let parsed = parseAmount(raw) { return format(parsed) }
+        for match in rangeSeparator.matches(in: raw, range: NSRange(raw.startIndex..., in: raw)) {
+            guard let range = Range(match.range, in: raw),
+                  let left = parseAmount(String(raw[..<range.lowerBound])),
+                  let right = parseAmount(String(raw[range.upperBound...])), left <= right,
+                  let low = format(left), let high = format(right) else { continue }
+            return low + raw[range] + high
+        }
+        return nil
+    }
+
+    private static func scaleTerm(_ raw: String, by factor: Double) -> String? {
+        if let numeric = scaleNumeric(raw, by: factor) { return numeric }
+        guard let match = unitSuffix.firstMatch(in: raw, range: NSRange(raw.startIndex..., in: raw)),
+              let amountRange = Range(match.range(at: 1), in: raw),
+              let unitRange = Range(match.range(at: 2), in: raw),
+              let scaled = scaleNumeric(String(raw[amountRange]), by: factor) else { return nil }
+        return scaled + raw[unitRange]
     }
 
     static func formatScaleLabel(_ value: Double) -> String {
@@ -67,7 +119,10 @@ enum RecipeScaleSupport {
     }
 
     private static func parseAmount(_ raw: String) -> Double? {
-        let amount = normalizeFractions(raw).trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalized = normalizeFractions(raw).trimmingCharacters(in: .whitespacesAndNewlines)
+        let amount = normalized.replacingOccurrences(
+            of: #"^(\d+)-(\d+/\d+)$"#, with: "$1 $2", options: .regularExpression
+        )
         guard !amount.isEmpty else { return nil }
 
         let mixedParts = amount.split(separator: " ", omittingEmptySubsequences: true)

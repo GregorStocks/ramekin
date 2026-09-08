@@ -114,10 +114,124 @@
     "expected": "1.5"
   },
   {
-    "name": "range remains unchanged",
+    "name": "hyphen range doubles",
     "amount": "1-2",
     "factor": 2,
-    "expected": "1-2"
+    "expected": "2-4"
+  },
+  {
+    "name": "en dash range doubles",
+    "amount": "100–200",
+    "factor": 2,
+    "expected": "200–400"
+  },
+  {
+    "name": "em dash range halves",
+    "amount": "100—200",
+    "factor": 0.5,
+    "expected": "50—100"
+  },
+  {
+    "name": "word range scales fractions",
+    "amount": "1/2 to 3/4",
+    "factor": 2,
+    "expected": "1 to 1.5"
+  },
+  {
+    "name": "or range scales",
+    "amount": "1 or 2",
+    "factor": 2,
+    "expected": "2 or 4"
+  },
+  {
+    "name": "hyphen mixed number doubles",
+    "amount": "1-1/2",
+    "factor": 2,
+    "expected": "3"
+  },
+  {
+    "name": "range with hyphen mixed endpoint",
+    "amount": "1-1/2-2",
+    "factor": 2,
+    "expected": "3-4"
+  },
+  {
+    "name": "fraction endpoints are a range",
+    "amount": "1/2-3/4",
+    "factor": 2,
+    "expected": "1-1.5"
+  },
+  {
+    "name": "reversed range remains unchanged",
+    "amount": "200–100",
+    "factor": 2,
+    "expected": "200–100"
+  },
+  {
+    "name": "compound volume doubles each term",
+    "amount": "1 tablespoon plus 1 teaspoon",
+    "factor": 2,
+    "expected": "2 tablespoon plus 2 teaspoon"
+  },
+  {
+    "name": "compound chain with fraction and range",
+    "amount": "1/2 cup plus 1–2 tbsp plus 1 tsp",
+    "factor": 2,
+    "expected": "1 cup plus 2–4 tbsp plus 2 tsp"
+  },
+  {
+    "name": "compound shared unit",
+    "amount": "1/4 plus 1/8",
+    "factor": 2,
+    "expected": "1/2 plus 1/4"
+  },
+  {
+    "name": "compound plus sign",
+    "amount": "1 g + 1 kg",
+    "factor": 2,
+    "expected": "2 g + 2 kg"
+  },
+  {
+    "name": "unsupported compound term prevents partial scaling",
+    "amount": "1 cup plus more to taste",
+    "factor": 2,
+    "expected": "1 cup plus more to taste"
+  },
+  {
+    "name": "invalid compound fraction prevents partial scaling",
+    "amount": "1 cup plus 1/0 tbsp",
+    "factor": 2,
+    "expected": "1 cup plus 1/0 tbsp"
+  },
+  {
+    "name": "embedded fluid ounces",
+    "amount": "1 fl oz plus 1 tablespoon",
+    "factor": 2,
+    "expected": "2 fl oz plus 2 tablespoon"
+  },
+  {
+    "name": "explicit serving suffix",
+    "amount": "4 servings",
+    "factor": 2,
+    "expected": "8 servings"
+  },
+  {
+    "name": "explicit serves prefix",
+    "amount": "Serves 4",
+    "factor": 2,
+    "expected": "Serves 8"
+  },
+  {
+    "name": "overflow does not produce invalid display",
+    "amount": "1000000000000000",
+    "factor": 1e300,
+    "expected": "1000000000000000"
+  },
+  {
+    "name": "uppercase compound and range separators",
+    "amount": "1 TO 2 tbsp PLUS 1 TSP",
+    "factor": 2,
+    "expected": "2 TO 4 tbsp PLUS 2 TSP"
   },
   {
     "name": "free text remains unchanged",

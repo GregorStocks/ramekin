@@ -59,6 +59,28 @@ def test_estimate_ranges_partial_unknown_and_empty(server_url, authed_api_client
         assert unknown["per_serving_calories"] is None
 
 
+@pytest.mark.parametrize(
+    "amount,unit,expected",
+    [
+        ("1-1/2", "g", 5.805),
+        ("1 tablespoon plus 1 teaspoon", None, 64.5),
+        ("1/4 plus 1/8", "cup", 290.25),
+    ],
+)
+def test_estimate_preserved_parser_amounts(
+    server_url, authed_api_client, amount, unit, expected
+):
+    client, _ = authed_api_client
+    response = estimate(
+        server_url, client, [make_ingredient("granulated sugar", amount, unit)]
+    )
+    assert response.status_code == 200
+    result = response.json()
+    assert result["unknown_ingredients"] == []
+    assert result["known_calories"]["min"] == pytest.approx(expected)
+    assert result["known_calories"]["max"] == pytest.approx(expected)
+
+
 def test_estimate_uses_displayed_version_and_edited_quantities(
     server_url, authed_api_client
 ):

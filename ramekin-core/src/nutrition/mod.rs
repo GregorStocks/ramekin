@@ -12,7 +12,7 @@ use crate::metric_weights::parse_amount;
 
 const DATA: &str = include_str!("data.json");
 const ALIASES: &str = include_str!("aliases.json");
-const RULE_VERSION: &str = "calories-v1";
+const RULE_VERSION: &str = "calories-v2";
 
 #[derive(Deserialize)]
 struct Food {
@@ -117,6 +117,8 @@ fn match_food(name: &str) -> Result<&'static Food, &'static str> {
 /// Strict quantity grammar: decimals, fractions, mixed numbers and bounded ranges.
 /// This does not alter the extraction pipeline's interpretation of ingredients.
 fn quantity(value: &str) -> Option<CalorieRange> {
+    static MIXED: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"^([0-9]+)-([0-9]+/[0-9]+)$").unwrap());
     static NUMBER: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(r"^(?:[0-9]+(?:\.[0-9]+)?|\.[0-9]+|[0-9]+/[0-9]+|[0-9]+ [0-9]+/[0-9]+)$")
             .unwrap()
@@ -128,6 +130,12 @@ fn quantity(value: &str) -> Option<CalorieRange> {
         ('¾', "3/4"),
         ('⅓', "1/3"),
         ('⅔', "2/3"),
+        ('⅕', "1/5"),
+        ('⅖', "2/5"),
+        ('⅗', "3/5"),
+        ('⅘', "4/5"),
+        ('⅙', "1/6"),
+        ('⅚', "5/6"),
         ('⅛', "1/8"),
         ('⅜', "3/8"),
         ('⅝', "5/8"),
@@ -137,24 +145,39 @@ fn quantity(value: &str) -> Option<CalorieRange> {
     }
     let value = value.split_whitespace().collect::<Vec<_>>().join(" ");
     let number = |s: &str| {
-        let s = s.trim();
-        if !NUMBER.is_match(s) {
+        let s = MIXED.replace(s.trim(), "$1 $2");
+        if !NUMBER.is_match(&s) {
             return None;
         }
-        parse_amount(s).filter(|n| n.is_finite() && *n >= 0.0 && *n <= 1e12)
+        parse_amount(&s).filter(|n| n.is_finite() && *n >= 0.0 && *n <= 1e12)
     };
+    if let Some(amount) = number(&value) {
+        return Some(CalorieRange {
+            min: amount,
+            max: amount,
+        });
+    }
     for delimiter in [" to ", " or ", "–", "—", "-"] {
-        if let Some((left, right)) = value.split_once(delimiter) {
-            let min = number(left)?;
-            let max = number(right)?;
-            return (min <= max).then_some(CalorieRange { min, max });
+        for (index, _) in value.match_indices(delimiter) {
+            if let (Some(min), Some(max)) = (
+                number(
+                    value
+                        .get(..index)
+                        .expect("regex match starts at a character boundary"),
+                ),
+                number(
+                    value
+                        .get(index + delimiter.len()..)
+                        .expect("regex match ends at a character boundary"),
+                ),
+            ) {
+                if min <= max {
+                    return Some(CalorieRange { min, max });
+                }
+            }
         }
     }
-    let amount = number(&value)?;
-    Some(CalorieRange {
-        min: amount,
-        max: amount,
-    })
+    None
 }
 
 fn grams_per_unit(unit: &str, food: &Food) -> Result<f64, &'static str> {
@@ -166,6 +189,9 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<f64, &'static str> {
         "ounce" | "ounces" | "oz" => return Ok(28.349523125),
         "pound" | "pounds" | "lb" | "lbs" => return Ok(453.59237),
         "cups" => "cup",
+        "pints" => "pint",
+        "quarts" => "quart",
+        "gallons" => "gallon",
         "tablespoon" | "tablespoons" => "tbsp",
         "teaspoon" | "teaspoons" => "tsp",
         "fluid ounce" | "fluid ounces" | "fl oz" => "fl oz",
@@ -177,6 +203,37 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<f64, &'static str> {
     Ok(cups * food.grams_per_cup.ok_or("Missing density for this food")?)
 }
 
+fn measurement_grams(
+    amount: &str,
+    unit: Option<&str>,
+    food: &Food,
+) -> Result<CalorieRange, &'static str> {
+    static PLUS: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"\s+(?:plus|\+)\s+").unwrap());
+    static EMBEDDED: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"^(.+?)\s+([a-z][a-z ]*)$").unwrap());
+    let amount = normalize(amount);
+    let mut total = CalorieRange { min: 0.0, max: 0.0 };
+    for segment in PLUS.split(&amount) {
+        let (range, factor) = if let Some(range) = quantity(segment) {
+            (range, grams_per_unit(unit.unwrap_or(""), food)?)
+        } else {
+            // Compound measurements embed their units in amount, with no outer
+            // unit. A shared outer unit instead applies to every numeric term.
+            if unit.is_some_and(|unit| !unit.is_empty()) {
+                return Err("Unsupported or missing quantity");
+            }
+            let parts = EMBEDDED
+                .captures(segment)
+                .ok_or("Unsupported or missing quantity")?;
+            let range = quantity(&parts[1]).ok_or("Unsupported or missing quantity")?;
+            (range, grams_per_unit(&parts[2], food)?)
+        };
+        total.min += range.min * factor;
+        total.max += range.max * factor;
+    }
+    Ok(total)
+}
+
 fn contribution(ingredient: &ParsedIngredient) -> Result<CalorieRange, &'static str> {
     let food = match_food(&ingredient.item)?;
     let mut reason = "Missing quantity";
@@ -184,20 +241,21 @@ fn contribution(ingredient: &ParsedIngredient) -> Result<CalorieRange, &'static 
     // supported, then the first supported alternative, so rounded gram enrichments
     // do not replace precise primary amounts.
     for Measurement { amount, unit } in &ingredient.measurements {
-        let Some(amount) = amount.as_deref().and_then(quantity) else {
+        let Some(amount) = amount.as_deref() else {
             reason = "Unsupported or missing quantity";
             continue;
         };
-        let factor = match grams_per_unit(unit.as_deref().unwrap_or(""), food) {
-            Ok(grams) => grams * food.kcal_per_100g / 100.0,
+        let grams = match measurement_grams(amount, unit.as_deref(), food) {
+            Ok(grams) => grams,
             Err(error) => {
                 reason = error;
                 continue;
             }
         };
+        let factor = food.kcal_per_100g / 100.0;
         return Ok(CalorieRange {
-            min: amount.min * factor,
-            max: amount.max * factor,
+            min: grams.min * factor,
+            max: grams.max * factor,
         });
     }
     Err(reason)

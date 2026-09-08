@@ -14,6 +14,11 @@ Use an authenticated POST accepting the displayed recipe ingredients, servings
 and scale; avoids stale/version mismatches and keeps calculations server-side.
 
 USDA import reproduces SHA-256 21ef907fcec4e0beb3b15910f45f04184ed0f720895df90234ddcb7adb5dc895.
-All extraction/pipeline code is untouched; the quantity grammar belongs only to
-the new estimator. Calculation and display wording are entirely server-side,
-so no duplicated client business logic requires shared vectors.
+All extraction/pipeline code is untouched; the new quantity grammar belongs to
+the estimator. Calorie arithmetic and wording remain server-side. Review fixes
+also extend both existing client scale helpers for ranges, mixed numbers,
+compound measurements, and serving labels, pinned by shared scaling vectors.
+
+PR #689. Addressed all three initial review findings. Local checks after fixes:
+409 API/Python tests, 151 web unit tests, Rust suites, 35 browser tests, lint.
+First-commit iOS unit CI passed; updated iOS/shared-vector changes await CI.

@@ -122,6 +122,7 @@ def test_calorie_estimates_follow_recipe_and_scale(
     expect(page.get_by_text("Imported nutrition: 123 calories")).to_be_visible()
     page.locator(".scale-preset", has_text="2×").click()
     expect(section).to_contain_text("Known ingredients: 774–1548 calories")
+    expect(page.locator(".ingredients-list")).to_contain_text("200–400")
     expect(section).to_contain_text("Known ingredients per serving: 96–194 calories")
 
     # Switching to the earlier version must not retain the current subtotal.
@@ -251,7 +252,7 @@ def test_scale_2x_doubles_amounts(scale_recipe, page: Page):
     # Unparseable amounts pass through unchanged.
     page_text = page.locator(".ingredients-list").inner_text()
     assert "to taste" in page_text
-    assert "6-8" in page_text
+    assert "12-16" in page_text
     # Serves: 4 → 8
     expect(page.locator(".recipe-metadata")).to_contain_text("8")
     # Badge is shown (one near Ingredients heading, one near Serves: line).
@@ -311,4 +312,4 @@ def test_shopping_list_uses_scaled_amounts(scale_recipe, api_url, page: Page):
     assert by_item["milk"] == "5 cups"
     assert by_item["eggs"] == "6"
     assert by_item["salt"] == "to taste"
-    assert by_item["bay leaves"] == "6-8"
+    assert by_item["bay leaves"] == "12-16"

@@ -38,7 +38,7 @@ function parseAmount(raw: string): number | null {
   const s = normalizeFractions(raw).trim();
   if (s.length === 0) return null;
 
-  const mixed = s.match(/^(\d+)\s+(\d+)\/(\d+)$/);
+  const mixed = s.match(/^(\d+)(?:\s+|-)(\d+)\/(\d+)$/);
   if (mixed) {
     const whole = Number(mixed[1]);
     const num = Number(mixed[2]);
@@ -83,11 +83,42 @@ function formatScaled(value: number): string {
   return out;
 }
 
+function scaleNumeric(raw: string, factor: number): string | null {
+  const format = (value: number) => {
+    const scaled = value * factor;
+    return Number.isFinite(scaled) && Math.abs(scaled) <= 1e15
+      ? formatScaled(scaled)
+      : null;
+  };
+  const parsed = parseAmount(raw);
+  if (parsed !== null) return format(parsed);
+  for (const match of raw.matchAll(/\s+(?:to|or)\s+|\s*[-–—]\s*/gi)) {
+    const left = parseAmount(raw.slice(0, match.index));
+    const right = parseAmount(raw.slice(match.index! + match[0].length));
+    if (left === null || right === null || left > right) continue;
+    const low = format(left);
+    const high = format(right);
+    if (low !== null && high !== null) return `${low}${match[0]}${high}`;
+  }
+  return null;
+}
+
+function scaleTerm(raw: string, factor: number): string | null {
+  const numeric = scaleNumeric(raw, factor);
+  if (numeric !== null) return numeric;
+  const unit = raw.match(
+    /^(.+?)(\s+(?:g|grams?|kg|kilograms?|mg|milligrams?|oz|ounces?|lbs?|pounds?|cups?|tbsp|tablespoons?|tsp|teaspoons?|fl oz|fluid ounces?|pints?|quarts?|gallons?|ml|milliliters?|l|liters?|litres?|servings?))$/i,
+  );
+  if (!unit) return null;
+  const scaled = scaleNumeric(unit[1], factor);
+  return scaled === null ? null : `${scaled}${unit[2]}`;
+}
+
 /**
  * Multiply an ingredient amount string by `factor` and re-format.
  *
  * Returns the original string unchanged when:
- *   - the amount cannot be parsed (free text, ranges, empty),
+ *   - the amount cannot be parsed (free text or invalid quantities),
  *   - `factor` is not a positive finite number,
  *   - `factor === 1`.
  */
@@ -99,8 +130,14 @@ export function scaleAmount(
   if (!Number.isFinite(factor) || factor <= 0) return amount;
   if (factor === 1) return amount;
 
-  const parsed = parseAmount(amount);
-  if (parsed === null) return amount;
-
-  return formatScaled(parsed * factor);
+  const serves = amount.match(/^(serves\s+)(.+)$/i);
+  if (serves) {
+    const scaled = scaleNumeric(serves[2], factor);
+    return scaled === null ? amount : `${serves[1]}${scaled}`;
+  }
+  const parts = amount.split(/(\s+(?:plus|\+)\s+)/i);
+  const scaled = parts.map((part, index) =>
+    index % 2 === 1 ? part : scaleTerm(part, factor),
+  );
+  return scaled.some((part) => part === null) ? amount : scaled.join("");
 }

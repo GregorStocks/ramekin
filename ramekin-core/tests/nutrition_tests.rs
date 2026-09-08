@@ -27,6 +27,9 @@ fn exact_ranges_units_and_scaling() {
         ("100-200", "g", 387.0, 774.0),
         ("1/2", "kg", 1935.0, 1935.0),
         ("1½", "kg", 5805.0, 5805.0),
+        ("1-1/2", "kg", 5805.0, 5805.0),
+        ("1-1/2-2", "kg", 5805.0, 7740.0),
+        ("1/2-3/4", "kg", 1935.0, 2902.5),
     ] {
         for scale in [f64::from_bits(1), 0.5, 1.0, 2.0] {
             let result = estimate(
@@ -41,6 +44,31 @@ fn exact_ranges_units_and_scaling() {
             assert!((result.per_serving_calories.unwrap().min - min / 2.0).abs() < 1e-6);
             assert!(result.unknown_ingredients.is_empty());
         }
+    }
+}
+
+#[test]
+fn compounds_sum_every_supported_segment_and_keep_ranges() {
+    for (amount, unit, min, max) in [
+        ("1 tablespoon plus 1 teaspoon", "", 64.5, 64.5),
+        ("1/2 cup plus 1–2 tbsp plus 1 tsp", "", 451.5, 499.875),
+        ("1/4 plus 1/8", "cup", 290.25, 290.25),
+        ("1 g + 1 kg", "", 3873.87, 3873.87),
+    ] {
+        let result = estimate(&[ingredient("granulated sugar", amount, unit)], None, 2.0).unwrap();
+        let range = result.known_calories.unwrap();
+        assert!((range.min - min * 2.0).abs() < 1e-6, "{amount}");
+        assert!((range.max - max * 2.0).abs() < 1e-6, "{amount}");
+    }
+    for amount in [
+        "1 tablespoon plus more to taste",
+        "1 cup plus 1/0 tbsp",
+        "1 cup plus 1 pinch",
+        "1 cup plus ",
+    ] {
+        let result = estimate(&[ingredient("granulated sugar", amount, "")], None, 1.0).unwrap();
+        assert!(result.known_calories.is_none(), "{amount}");
+        assert_eq!(result.unknown_ingredients.len(), 1);
     }
 }
 

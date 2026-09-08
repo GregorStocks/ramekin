@@ -40,6 +40,11 @@ density database's broader ingredient rewrites and guesses about preparation.
   Broad names such as yogurt, flour, rice, oil, and milk remain ambiguous.
 - Accept nonnegative decimals, fractions, mixed numbers, common Unicode
   fractions, and ordered ranges with hyphen, en dash, em dash, `to`, or `or`.
+  Hyphenated mixed numbers (`1-1/2`) mean 1.5; ranges may also contain mixed
+  endpoints (`1-1/2-2`). Sum every term of compound measurements such as
+  `1 tablespoon plus 1 teaspoon`, including chains and ranges. Each term must
+  have a supported quantity and unit; unsupported terms make the ingredient
+  unknown rather than producing an incomplete ingredient contribution.
   Unsupported strings, negative values, reversed ranges and nonfinite values
   remain unknown. Each quantity is bounded at 10^12 for arithmetic safety.
 - Mass units: g, kg, mg, oz (28.349523125 g), lb (453.59237 g), including their
@@ -74,3 +79,8 @@ by `serving`/`servings`, is used for per-serving estimates. Yield text (`1 loaf`
 multiplies both ingredients and servings, so per-serving calories stay the same.
 Partial per-serving estimates are labeled partial as well. Imported nutrition
 text is displayed separately and never feeds the calculation.
+
+Web and iOS also scale displayed ranges, mixed numbers, compound measurements,
+and explicit serving-count labels. This presentation logic remains duplicated
+in their existing scale helpers and is pinned by shared vectors in
+`shared-test-vectors/scale-amount.json`. Calorie arithmetic remains server-side.
