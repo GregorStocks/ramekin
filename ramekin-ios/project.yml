@@ -104,6 +104,9 @@ targets:
       - path: ../shared-test-vectors/scale-amount.json
         buildPhase: resources
         type: file
+      - path: ../shared-test-vectors/recipe-scale-validation.json
+        buildPhase: resources
+        type: file
       - path: ../shared-test-vectors/tag-hierarchy.json
         buildPhase: resources
         type: file

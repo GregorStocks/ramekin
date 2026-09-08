@@ -19,6 +19,12 @@ const UNICODE_FRACTIONS: Record<string, string> = {
 const UNIT_FRACTION_DENOMS = [2, 3, 4, 6, 8] as const;
 const FLOAT_TOL = 1e-6;
 
+export const MAX_RECIPE_SCALE = 1_000_000;
+
+export function isValidRecipeScale(value: number): boolean {
+  return Number.isFinite(value) && value > 0 && value <= MAX_RECIPE_SCALE;
+}
+
 function normalizeFractions(input: string): string {
   let out = "";
   for (const ch of input) {
@@ -119,7 +125,7 @@ function scaleTerm(raw: string, factor: number): string | null {
  *
  * Returns the original string unchanged when:
  *   - the amount cannot be parsed (free text or invalid quantities),
- *   - `factor` is not a positive finite number,
+ *   - `factor` is outside the supported recipe-scale bounds,
  *   - `factor === 1`.
  */
 export function scaleAmount(
@@ -127,7 +133,7 @@ export function scaleAmount(
   factor: number,
 ): string {
   if (amount == null || amount === "") return amount ?? "";
-  if (!Number.isFinite(factor) || factor <= 0) return amount;
+  if (!isValidRecipeScale(factor)) return amount;
   if (factor === 1) return amount;
 
   const serves = amount.match(

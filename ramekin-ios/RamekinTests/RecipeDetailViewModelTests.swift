@@ -176,6 +176,14 @@ final class RecipeDetailViewModelTests: XCTestCase {
         viewModel.customScaleInput = "-1"
         viewModel.applyCustomScale()
         XCTAssertEqual(viewModel.recipeScale, 2.5)
+
+        viewModel.customScaleInput = "1000001"
+        viewModel.applyCustomScale()
+        XCTAssertEqual(viewModel.recipeScale, 2.5)
+        viewModel.setRecipeScale(1e300)
+        XCTAssertEqual(viewModel.recipeScale, 2.5)
+        viewModel.setRecipeScale(1_000_000)
+        XCTAssertEqual(viewModel.recipeScale, 1_000_000)
     }
 
     @MainActor

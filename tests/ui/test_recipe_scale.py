@@ -162,6 +162,28 @@ def test_calorie_request_failure_clears_previous_result(scale_recipe, page: Page
     expect(section).not_to_contain_text("Whole-recipe calories unknown")
 
 
+def test_excessive_scale_is_rejected_before_requesting_calories(
+    scale_recipe, page: Page
+):
+    with page.expect_request("**/api/recipes/estimate-calories") as requested:
+        page.goto(f"{page.url.split('?')[0]}?scale=1000001")
+    assert requested.value.post_data_json["scale"] == 1
+    expect(page.locator(".scale-preset", has_text="1×")).to_have_class(
+        "scale-preset active"
+    )
+    section = page.get_by_role("region", name="Estimated calories", exact=True)
+    expect(section).to_contain_text("Whole-recipe calories unknown")
+    expect(section.get_by_role("alert")).not_to_be_visible()
+    page.locator(".scale-preset", has_text="2×").click()
+    page.locator(".scale-custom-input").fill("1000001")
+    page.locator(".scale-custom-input").press("Enter")
+    expect(page.locator(".scale-preset", has_text="2×")).to_have_class(
+        "scale-preset active"
+    )
+    expect(section).to_contain_text("Whole-recipe calories unknown")
+    expect(section.get_by_role("alert")).not_to_be_visible()
+
+
 def test_late_calorie_response_does_not_replace_new_scale(scale_recipe, page: Page):
     pending = []
 

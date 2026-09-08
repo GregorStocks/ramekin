@@ -1,0 +1,9 @@
+[
+  { "name": "negative", "scale": -1, "valid": false },
+  { "name": "zero", "scale": 0, "valid": false },
+  { "name": "small positive", "scale": 0.000001, "valid": true },
+  { "name": "original recipe", "scale": 1, "valid": true },
+  { "name": "maximum", "scale": 1000000, "valid": true },
+  { "name": "above maximum", "scale": 1000001, "valid": false },
+  { "name": "very large", "scale": 1e300, "valid": false }
+]

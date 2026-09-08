@@ -27,3 +27,8 @@ Second review: added comma-decimal quantities and colon serving prefixes on the
 server and both client scale helpers, with shared vectors and API/browser checks.
 All 412 API/Python tests, 155 web unit tests, Rust suites, 35 browser tests, and
 lint pass after these changes. Both review rounds are addressed.
+
+Third review: both clients now enforce the endpoint's scale bounds. Shared
+validation vectors run in Rust, TypeScript, and Swift. Invalid URL/custom scales
+are covered in browser tests and iOS view-model tests. Local checks: 412 API/Python,
+162 web unit tests, Rust suites, 36 browser tests, and lint all pass.

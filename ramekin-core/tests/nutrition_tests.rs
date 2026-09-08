@@ -1,6 +1,28 @@
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
 use ramekin_core::nutrition::estimate;
 
+#[test]
+fn scale_limits_match_both_clients() {
+    #[derive(serde::Deserialize)]
+    struct Vector {
+        name: String,
+        scale: f64,
+        valid: bool,
+    }
+    let vectors: Vec<Vector> = serde_json::from_str(include_str!(
+        "../../shared-test-vectors/recipe-scale-validation.json"
+    ))
+    .unwrap();
+    for vector in vectors {
+        assert_eq!(
+            estimate(&[], None, vector.scale).is_ok(),
+            vector.valid,
+            "{}",
+            vector.name
+        );
+    }
+}
+
 fn ingredient(item: &str, amount: &str, unit: &str) -> ParsedIngredient {
     ParsedIngredient {
         item: item.into(),

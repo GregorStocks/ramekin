@@ -24,7 +24,11 @@ import {
 } from "../utils/recipeFormHelpers";
 import { parseTag } from "../utils/tagHierarchy";
 import { usePageTitle } from "../utils/pageTitle";
-import { scaleAmount } from "../utils/scaleAmount";
+import {
+  scaleAmount,
+  isValidRecipeScale,
+  MAX_RECIPE_SCALE,
+} from "../utils/scaleAmount";
 import { formatIngredientParts } from "../utils/ingredientFormatting";
 import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
 import { pollScrapeJob } from "../utils/pollScrapeJob";
@@ -85,18 +89,18 @@ export default function ViewRecipePage() {
   const scale = () => {
     const raw = searchParams.scale;
     const v = typeof raw === "string" ? Number(raw) : NaN;
-    return Number.isFinite(v) && v > 0 ? v : 1;
+    return isValidRecipeScale(v) ? v : 1;
   };
 
   const setScale = (v: number) => {
-    if (!Number.isFinite(v) || v <= 0) return;
+    if (!isValidRecipeScale(v)) return;
     setSearchParams({ scale: v === 1 ? undefined : String(v) });
   };
 
   const [customScaleInput, setCustomScaleInput] = createSignal("");
   const applyCustomScale = () => {
     const v = Number(customScaleInput());
-    if (Number.isFinite(v) && v > 0) {
+    if (isValidRecipeScale(v)) {
       setScale(v);
     }
   };
@@ -718,6 +722,7 @@ export default function ViewRecipePage() {
                         type="number"
                         step="0.25"
                         min="0"
+                        max={MAX_RECIPE_SCALE}
                         class="scale-custom-input"
                         placeholder="Custom"
                         value={customScaleInput()}

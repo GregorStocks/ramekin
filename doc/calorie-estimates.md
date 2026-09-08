@@ -88,3 +88,7 @@ Web and iOS also scale displayed ranges, mixed numbers, compound measurements,
 and explicit serving-count labels. This presentation logic remains duplicated
 in their existing scale helpers and is pinned by shared vectors in
 `shared-test-vectors/scale-amount.json`. Calorie arithmetic remains server-side.
+Both clients reject custom scales above the endpoint's 1,000,000 limit before
+changing the displayed scale. Invalid web URL scales use the original 1× recipe.
+`shared-test-vectors/recipe-scale-validation.json` pins accepted bounds across
+the Rust estimator and both clients.

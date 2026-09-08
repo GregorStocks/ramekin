@@ -1,6 +1,12 @@
 import Foundation
 
 enum RecipeScaleSupport {
+    static let maximumScale = 1_000_000.0
+
+    static func isValidScale(_ value: Double) -> Bool {
+        value.isFinite && value > 0 && value <= maximumScale
+    }
+
     private static func regex(_ pattern: String, options: NSRegularExpression.Options = []) -> NSRegularExpression {
         do {
             return try NSRegularExpression(pattern: pattern, options: options)
@@ -29,7 +35,7 @@ enum RecipeScaleSupport {
         guard let amount, !amount.isEmpty else {
             return amount ?? ""
         }
-        guard factor.isFinite, factor > 0, factor != 1 else {
+        guard isValidScale(factor), factor != 1 else {
             return amount
         }
         if let match = amount.range(
