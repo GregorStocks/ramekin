@@ -97,23 +97,9 @@ pub fn photo_min_dim_filter(op: &'static str, pixels: i32) -> SqlLiteral<Bool> {
     ))
 }
 
-/// Accent- and case-insensitive ILIKE filter on a text column.
-///
-/// Emits `f_unaccent(<column>) ILIKE f_unaccent('<pattern>')` so that queries
-/// for "creme brulee" match rows containing "crème brûlée". Matches the
-/// expression trigram indexes defined on `f_unaccent(col)`.
-///
-/// # Safety
-/// `column` is a compile-time `&'static str` that must be a literal column
-/// reference (e.g. `recipe_versions.title`) — never user input. The pattern
-/// is embedded with single-quote escaping (`'` → `''`) and callers must have
-/// already run it through `escape_like_pattern` (which handles `\`, `%`, `_`).
-pub fn unaccent_ilike(column: &'static str, pattern: &str) -> SqlLiteral<Bool> {
-    let sql_escaped = pattern.replace('\'', "''");
-    sql::<Bool>(&format!(
-        "f_unaccent({}) ILIKE f_unaccent('{}')",
-        column, sql_escaped
-    ))
+diesel::define_sql_function! {
+    /// Accent normalization used by the search expression trigram indexes.
+    fn f_unaccent(value: Nullable<Text>) -> Nullable<Text>;
 }
 
 /// The ingredients JSONB cast to text: the haystack bare-text search matches
@@ -121,17 +107,7 @@ pub fn unaccent_ilike(column: &'static str, pattern: &str) -> SqlLiteral<Bool> {
 /// served through recipe sync. One expression so they can never diverge.
 const INGREDIENTS_TEXT_SQL: &str = "recipe_versions.ingredients::text";
 
-/// Accent- and case-insensitive ILIKE filter on the ingredients JSONB field
-/// cast to text. Diesel has no native support for casting JSONB to text for
-/// ILIKE.
-///
-/// # Safety
-/// See `unaccent_ilike` — same pattern escaping rules apply.
-pub fn ingredients_unaccent_ilike(pattern: &str) -> SqlLiteral<Bool> {
-    unaccent_ilike(INGREDIENTS_TEXT_SQL, pattern)
-}
-
-/// The exact haystack `ingredients_unaccent_ilike` matches against. Served
+/// The exact ingredient haystack used by recipe search. Served
 /// through recipe sync so the iOS local search matches the same string
 /// instead of trying to re-create PostgreSQL's JSONB serialization. Diesel
 /// has no native support for casting JSONB to text.
