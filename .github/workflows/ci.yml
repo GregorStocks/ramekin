@@ -57,7 +57,7 @@ jobs:
       - name: Install agent-issues (pinned)
         run: |
           uv tool install --force \
-            "git+https://github.com/GregorStocks/agent-issues.git@9d23b9d6ab63065680c12eb1a3c54e7232af7401"
+            "git+https://github.com/GregorStocks/agent-issues.git@db3b31f271cf68941b37d5078effb4f03e60a307"
 
       - name: Cache Playwright browsers
         uses: actions/cache@v4
