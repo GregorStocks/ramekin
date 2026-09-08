@@ -7,6 +7,7 @@ import type {
   Ingredient,
   PhotosApi,
   RecipeResponse,
+  RecipeContent,
   UpdateRecipeRequest,
 } from "ramekin-client";
 import { extractApiError, extractImageFile } from "./recipeFormHelpers";
@@ -59,6 +60,7 @@ export interface RecipeFormState {
   onPhotoUpload: (e: Event) => Promise<void>;
   removePhoto: (photoId: string) => void;
   loadRecipe: (recipe: RecipeResponse) => void;
+  loadDraft: (content: RecipeContent) => void;
   toCreateRecipeRequest: () => CreateRecipeRequest;
   toUpdateRecipeRequest: () => UpdateRecipeRequest;
 }
@@ -232,6 +234,8 @@ export function createRecipeFormState(
       loadValues(recipeFormValuesFromRecipe(recipe));
       setExpectedVersionId(recipe.versionId);
     },
+    loadDraft: (content: RecipeContent) =>
+      loadValues(recipeFormValuesFromRecipe(content)),
     toCreateRecipeRequest: () => buildCreateRecipeRequest(values()),
     toUpdateRecipeRequest: () => {
       const versionId = expectedVersionId();

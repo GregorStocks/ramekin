@@ -50,6 +50,14 @@ pub struct CreateRecipeRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub photo_ids: Option<Option<Vec<uuid::Uuid>>>,
+    /// Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save.
+    #[serde(
+        rename = "raw_ingredients",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub raw_ingredients: Option<Option<String>>,
 }
 
 impl CreateRecipeRequest {
@@ -75,6 +83,7 @@ impl CreateRecipeRequest {
             title,
             total_time: None,
             photo_ids: None,
+            raw_ingredients: None,
         }
     }
 }

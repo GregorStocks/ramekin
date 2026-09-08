@@ -28,8 +28,10 @@ public struct CreateRecipeRequest: Codable, JSONEncodable, Hashable {
     public var title: String
     public var totalTime: String?
     public var photoIds: [UUID]?
+    /** Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save. */
+    public var rawIngredients: String?
 
-    public init(cookTime: String? = nil, description: String? = nil, difficulty: String? = nil, ingredients: [Ingredient], instructions: String, notes: String? = nil, nutritionalInfo: String? = nil, prepTime: String? = nil, rating: Int? = nil, servings: String? = nil, sourceName: String? = nil, sourceUrl: String? = nil, tags: [String]? = nil, title: String, totalTime: String? = nil, photoIds: [UUID]? = nil) {
+    public init(cookTime: String? = nil, description: String? = nil, difficulty: String? = nil, ingredients: [Ingredient], instructions: String, notes: String? = nil, nutritionalInfo: String? = nil, prepTime: String? = nil, rating: Int? = nil, servings: String? = nil, sourceName: String? = nil, sourceUrl: String? = nil, tags: [String]? = nil, title: String, totalTime: String? = nil, photoIds: [UUID]? = nil, rawIngredients: String? = nil) {
         self.cookTime = cookTime
         self.description = description
         self.difficulty = difficulty
@@ -46,6 +48,7 @@ public struct CreateRecipeRequest: Codable, JSONEncodable, Hashable {
         self.title = title
         self.totalTime = totalTime
         self.photoIds = photoIds
+        self.rawIngredients = rawIngredients
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
@@ -65,6 +68,7 @@ public struct CreateRecipeRequest: Codable, JSONEncodable, Hashable {
         case title
         case totalTime = "total_time"
         case photoIds = "photo_ids"
+        case rawIngredients = "raw_ingredients"
     }
 
     // Encodable protocol methods
@@ -87,6 +91,7 @@ public struct CreateRecipeRequest: Codable, JSONEncodable, Hashable {
         try container.encode(title, forKey: .title)
         try container.encodeIfPresent(totalTime, forKey: .totalTime)
         try container.encodeIfPresent(photoIds, forKey: .photoIds)
+        try container.encodeIfPresent(rawIngredients, forKey: .rawIngredients)
     }
 }
 

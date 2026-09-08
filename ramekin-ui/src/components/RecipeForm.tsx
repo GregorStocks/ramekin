@@ -1,5 +1,5 @@
 import { Show, Index, For, createSignal } from "solid-js";
-import type { Accessor } from "solid-js";
+import type { Accessor, JSX } from "solid-js";
 import type { SetStoreFunction } from "solid-js/store";
 import { A } from "@solidjs/router";
 import {
@@ -39,6 +39,7 @@ export interface RecipeFormProps {
   submitLabelSaving: string;
   cancelHref: string;
   token: Accessor<string | null | undefined>;
+  ingredientEditor?: JSX.Element;
 }
 
 /** Sortable ingredient row component */
@@ -437,10 +438,17 @@ export default function RecipeForm(props: RecipeFormProps) {
         </div>
       </div>
 
-      <IngredientsSection
-        ingredients={props.form.ingredients}
-        setIngredients={props.form.setIngredients}
-      />
+      <Show
+        when={props.ingredientEditor}
+        fallback={
+          <IngredientsSection
+            ingredients={props.form.ingredients}
+            setIngredients={props.form.setIngredients}
+          />
+        }
+      >
+        {props.ingredientEditor}
+      </Show>
 
       <div class="form-group">
         <label for="instructions">Instructions *</label>

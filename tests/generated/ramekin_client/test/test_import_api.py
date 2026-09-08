@@ -38,6 +38,12 @@ class TestImportApi(unittest.TestCase):
         """
         pass
 
+    def test_prepare_text_recipe(self) -> None:
+        """Test case for prepare_text_recipe
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

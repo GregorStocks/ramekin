@@ -64,7 +64,8 @@ class TestCreateRecipeRequest(unittest.TestCase):
                 total_time = '',
                 photo_ids = [
                     ''
-                    ]
+                    ],
+                raw_ingredients = ''
             )
         else:
             return CreateRecipeRequest(

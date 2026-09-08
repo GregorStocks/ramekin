@@ -3,6 +3,60 @@ import XCTest
 
 @MainActor
 final class RecipeFormViewModelTests: XCTestCase {
+    func testTextReviewCorrectAndSave() async {
+        var saved: CreateRecipeRequest?
+        let content = RecipeContent(
+            ingredients: [Ingredient(item: "flour", measurements: [Measurement(amount: "125", unit: "g")])],
+            instructions: "Mix.", title: "Pancakes"
+        )
+        let model = RecipeFormViewModel(mode: .create, api: RecipeFormViewAPIClient(
+            createRecipe: { saved = $0 },
+            updateRecipe: { _, _ in throw TestError.unexpectedCall },
+            getRecipe: { _ in throw TestError.unexpectedCall },
+            listAllTags: { TagsListResponse(tags: []) },
+            uploadPhoto: { _ in throw TestError.unexpectedCall },
+            prepareTextRecipe: { text in
+                XCTAssertEqual(text, "Pasted recipe")
+                return PrepareTextRecipeResponse(content: content, rawIngredients: "1 cup flour", warnings: [])
+            }
+        ))
+        model.recipeText = "Pasted recipe"
+        XCTAssertFalse(model.canSave)
+        await model.prepareRecipe()
+        XCTAssertTrue(model.canSave)
+        XCTAssertNil(saved)
+        model.formData.title = "Corrected pancakes"
+        model.rawIngredients = "2 cups flour"
+        let didSave = await model.save()
+        XCTAssertTrue(didSave)
+        XCTAssertEqual(saved?.title, "Corrected pancakes")
+        XCTAssertEqual(saved?.rawIngredients, "2 cups flour")
+        XCTAssertEqual(model.recipeText, "Pasted recipe")
+    }
+
+    func testTextAndReviewEditsSurviveFailures() async {
+        let model = RecipeFormViewModel(mode: .create, api: RecipeFormViewAPIClient(
+            createRecipe: { _ in throw TestError.unexpectedCall },
+            updateRecipe: { _, _ in throw TestError.unexpectedCall },
+            getRecipe: { _ in throw TestError.unexpectedCall },
+            listAllTags: { TagsListResponse(tags: []) },
+            uploadPhoto: { _ in throw TestError.unexpectedCall },
+            prepareTextRecipe: { _ in throw TestError.unexpectedCall }
+        ))
+        model.recipeText = "My original recipe"
+        await model.prepareRecipe()
+        XCTAssertEqual(model.recipeText, "My original recipe")
+        XCTAssertNotNil(model.error)
+        XCTAssertFalse(model.isPreparing)
+        model.formData.title = "My corrected recipe"
+        model.rawIngredients = "3 cups flour"
+        let didSave = await model.save()
+        XCTAssertFalse(didSave)
+        XCTAssertEqual(model.formData.title, "My corrected recipe")
+        XCTAssertEqual(model.rawIngredients, "3 cups flour")
+        XCTAssertEqual(model.recipeText, "My original recipe")
+    }
+
     func testEditSaveRequiresLoadedRecipeVersion() {
         let viewModel = RecipeFormViewModel(
             mode: .edit(recipeId: UUID()),

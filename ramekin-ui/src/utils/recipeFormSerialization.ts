@@ -1,6 +1,7 @@
 import type {
   CreateRecipeRequest,
   Ingredient,
+  RecipeContent,
   RecipeResponse,
   UpdateRecipeRequest,
 } from "ramekin-client";
@@ -57,7 +58,7 @@ export function emptyEditRecipeFormValues(): RecipeFormValues {
 }
 
 export function recipeFormValuesFromRecipe(
-  recipe: RecipeResponse,
+  recipe: RecipeResponse | (RecipeContent & { photoIds?: string[] }),
 ): RecipeFormValues {
   return {
     title: recipe.title,

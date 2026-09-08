@@ -86,6 +86,21 @@ def corpus(authed_api_client, database_url, test_image, vectors):
             )
             slug_by_id[str(created.id)] = recipe["id"]
 
+            # Creation now adds weight estimates. These vectors intentionally
+            # exercise exact, user-edited ingredient representations (including
+            # unusual units), so restore that corpus through the edit API.
+            current = recipes_api.get_recipe(created.id)
+            recipes_api.update_recipe(
+                created.id,
+                {
+                    **current.to_dict(),
+                    "expected_version_id": str(current.version_id),
+                    "ingredients": [
+                        _ingredient(i).to_dict() for i in recipe["ingredients"]
+                    ],
+                },
+            )
+
             # The vectors carry the exact JSONB-to-text haystack the SQL
             # filter matches. It is generated from the database, never
             # hand-written; fail loudly if the stored form ever diverges.

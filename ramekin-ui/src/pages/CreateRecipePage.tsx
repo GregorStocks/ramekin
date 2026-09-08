@@ -1,4 +1,6 @@
-import { createSignal, createMemo, Show } from "solid-js";
+import { createSignal, createMemo, Show, For } from "solid-js";
+import type { PrepareTextRecipeResponse } from "ramekin-client";
+import { formatIngredient } from "../utils/ingredientFormatting";
 import bookmarkletSource from "../bookmarklet.js?raw";
 import { useNavigate } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
@@ -14,6 +16,7 @@ export default function CreateRecipePage() {
   const navigate = useNavigate();
   const {
     getRecipesApi,
+    getImportApi,
     getPhotosApi,
     getScrapeApi,
     getUsersApi,
@@ -21,6 +24,34 @@ export default function CreateRecipePage() {
     token,
   } = useAuth();
   const form = createRecipeFormState({ getPhotosApi });
+  const [recipeText, setRecipeText] = createSignal("");
+  const [draft, setDraft] = createSignal<PrepareTextRecipeResponse | null>(
+    null,
+  );
+  const [rawIngredients, setRawIngredients] = createSignal("");
+  const [preparing, setPreparing] = createSignal(false);
+
+  const prepareRecipe = async () => {
+    setPreparing(true);
+    form.setError(null);
+    try {
+      const result = await getImportApi().prepareTextRecipe({
+        prepareTextRecipeRequest: { text: recipeText() },
+      });
+      form.loadDraft(result.content);
+      setRawIngredients(result.rawIngredients);
+      setDraft(result);
+    } catch (error) {
+      form.setError(
+        await extractApiError(
+          error,
+          "Could not read the recipe. Your text is unchanged; try again.",
+        ),
+      );
+    } finally {
+      setPreparing(false);
+    }
+  };
 
   // URL import state
   const [importUrl, setImportUrl] = createSignal("");
@@ -104,7 +135,10 @@ export default function CreateRecipePage() {
 
     try {
       const response = await getRecipesApi().createRecipe({
-        createRecipeRequest: form.toCreateRecipeRequest(),
+        createRecipeRequest: {
+          ...form.toCreateRecipeRequest(),
+          rawIngredients: rawIngredients(),
+        },
       });
 
       // Refresh tags cache in case new tags were created
@@ -126,87 +160,160 @@ export default function CreateRecipePage() {
     <div class="create-recipe-page">
       <h2>Create New Recipe</h2>
 
-      {/* URL Import Section */}
-      <div class="import-section">
-        <div class="import-header">
-          <label>Import from URL</label>
-        </div>
-        <div class="import-row">
-          <input
-            type="url"
-            placeholder="Paste recipe URL..."
-            value={importUrl()}
-            onInput={(e) => setImportUrl(e.currentTarget.value)}
-            disabled={scraping()}
-            class="import-input"
+      <Show when={!draft()}>
+        <div class="form-group">
+          <label for="recipe-text">Recipe text</label>
+          <textarea
+            id="recipe-text"
+            rows={14}
+            value={recipeText()}
+            onInput={(e) => setRecipeText(e.currentTarget.value)}
+            disabled={preparing()}
+            placeholder="Type or paste a whole recipe: title, ingredients, instructions, and any details."
           />
+        </div>
+        <button
+          class="btn btn-primary"
+          onClick={prepareRecipe}
+          disabled={preparing() || !recipeText().trim()}
+        >
+          {preparing() ? "Reading recipe…" : "Review recipe"}
+        </button>
+        <Show when={form.error()}>
+          <p role="alert">{form.error()}</p>
+        </Show>
+      </Show>
+
+      <Show when={draft()}>
+        {(review) => (
+          <>
+            <h3>Review recipe</h3>
+            <p>
+              Check the details, then save. Weight estimates are available only
+              for supported ingredients and quantities.
+            </p>
+            <For each={review().warnings}>
+              {(warning) => <p role="status">{warning}</p>}
+            </For>
+            <details>
+              <summary>Original recipe text</summary>
+              <pre class="original-recipe-text">{recipeText()}</pre>
+            </details>
+            <RecipeForm
+              form={form}
+              onSubmit={handleSubmit}
+              submitLabel="Save recipe"
+              submitLabelSaving="Saving…"
+              cancelHref="/"
+              token={token}
+              ingredientEditor={
+                <div class="form-group">
+                  <label for="raw-ingredients">Ingredients</label>
+                  <textarea
+                    id="raw-ingredients"
+                    rows={8}
+                    required
+                    value={rawIngredients()}
+                    onInput={(e) => setRawIngredients(e.currentTarget.value)}
+                  />
+                  <Show
+                    when={rawIngredients() === review().rawIngredients}
+                    fallback={
+                      <p>
+                        Weight estimates will be recalculated when you save.
+                      </p>
+                    }
+                  >
+                    <ul>
+                      <For each={review().content.ingredients}>
+                        {(ingredient) => (
+                          <li>
+                            {formatIngredient(ingredient, {
+                              includeAlternatives: true,
+                              includeNote: true,
+                            })}
+                          </li>
+                        )}
+                      </For>
+                    </ul>
+                  </Show>
+                </div>
+              }
+            />
+          </>
+        )}
+      </Show>
+
+      <Show when={!draft()}>
+        {/* URL Import Section */}
+        <div class="import-section">
+          <div class="import-header">
+            <label>Import from URL</label>
+          </div>
+          <div class="import-row">
+            <input
+              type="url"
+              placeholder="Paste recipe URL..."
+              value={importUrl()}
+              onInput={(e) => setImportUrl(e.currentTarget.value)}
+              disabled={scraping()}
+              class="import-input"
+            />
+            <button
+              type="button"
+              class="btn btn-primary"
+              onClick={startScrape}
+              disabled={scraping() || !importUrl().trim()}
+            >
+              {scraping() ? "Starting..." : "Import"}
+            </button>
+          </div>
+          <Show when={scrapeError()}>
+            <div class="import-error">
+              <span>{scrapeError()}</span>
+            </div>
+          </Show>
+          <p class="import-hint">
+            Import a recipe from a website. Works with sites that use structured
+            recipe data.
+          </p>
+        </div>
+
+        {/* Bookmarklet Section */}
+        <div class="bookmarklet-section">
           <button
             type="button"
-            class="btn btn-primary"
-            onClick={startScrape}
-            disabled={scraping() || !importUrl().trim()}
+            class="bookmarklet-toggle"
+            onClick={toggleBookmarklet}
           >
-            {scraping() ? "Starting..." : "Import"}
+            {showBookmarklet() ? "Hide" : "Show"} Bookmarklet
           </button>
-        </div>
-        <Show when={scrapeError()}>
-          <div class="import-error">
-            <span>{scrapeError()}</span>
-          </div>
-        </Show>
-        <p class="import-hint">
-          Import a recipe from a website. Works with sites that use structured
-          recipe data.
-        </p>
-      </div>
-
-      {/* Bookmarklet Section */}
-      <div class="bookmarklet-section">
-        <button
-          type="button"
-          class="bookmarklet-toggle"
-          onClick={toggleBookmarklet}
-        >
-          {showBookmarklet() ? "Hide" : "Show"} Bookmarklet
-        </button>
-        <Show when={showBookmarklet()}>
-          <div class="bookmarklet-content">
-            <p>
-              Drag this link to your bookmarks bar to capture recipes from any
-              page:
-            </p>
-            <Show
-              when={bookmarkletToken()}
-              fallback={
-                <p class="bookmarklet-hint">
-                  {bookmarkletError() ?? "Generating bookmarklet…"}
-                </p>
-              }
-            >
-              <a href={bookmarkletCode()} class="bookmarklet-link">
-                Save to Ramekin
-              </a>
-              <p class="bookmarklet-hint">
-                This works even on paywalled sites when you're logged in. The
-                link keeps working indefinitely — no need to regenerate it.
+          <Show when={showBookmarklet()}>
+            <div class="bookmarklet-content">
+              <p>
+                Drag this link to your bookmarks bar to capture recipes from any
+                page:
               </p>
-            </Show>
-          </div>
-        </Show>
-      </div>
-
-      <div class="section-divider">
-        <span>or enter manually</span>
-      </div>
-
-      <RecipeForm
-        form={form}
-        onSubmit={handleSubmit}
-        submitLabel="Create Recipe"
-        submitLabelSaving="Creating..."
-        cancelHref="/"
-        token={token}
-      />
+              <Show
+                when={bookmarkletToken()}
+                fallback={
+                  <p class="bookmarklet-hint">
+                    {bookmarkletError() ?? "Generating bookmarklet…"}
+                  </p>
+                }
+              >
+                <a href={bookmarkletCode()} class="bookmarklet-link">
+                  Save to Ramekin
+                </a>
+                <p class="bookmarklet-hint">
+                  This works even on paywalled sites when you're logged in. The
+                  link keeps working indefinitely — no need to regenerate it.
+                </p>
+              </Show>
+            </div>
+          </Show>
+        </div>
+      </Show>
     </div>
   );
 }

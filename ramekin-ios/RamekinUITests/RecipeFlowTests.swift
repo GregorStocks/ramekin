@@ -23,6 +23,32 @@ final class RecipeFlowTests: XCTestCase {
         app = nil
     }
 
+    func testTextRecipeReviewAndSave() throws {
+        let server = app.textFields["https://ramekin.app"]
+        XCTAssertTrue(server.waitForExistence(timeout: slowSimulatorTimeout))
+        clearField(server)
+        server.typeText("http://localhost:55000")
+        clearField(app.textFields["Username"])
+        app.textFields["Username"].typeText("t")
+        clearField(app.secureTextFields["Password"])
+        app.secureTextFields["Password"].typeText("t")
+        app.buttons["Sign In"].tap()
+        XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
+        app.buttons["New recipe"].tap()
+        let text = app.textViews["Recipe text"]
+        XCTAssertTrue(text.waitForExistence(timeout: slowSimulatorTimeout))
+        text.tap()
+        text.typeText("Text Pancakes\n1 cup all-purpose flour\nMix and cook.")
+        app.buttons["Review recipe"].tap()
+        let title = app.textFields["Recipe title"]
+        XCTAssertTrue(title.waitForExistence(timeout: slowSimulatorTimeout))
+        clearField(title)
+        title.typeText("iOS text pancakes")
+        app.navigationBars.buttons["Save"].tap()
+        XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertTrue(app.staticTexts["iOS text pancakes"].firstMatch.waitForExistence(timeout: slowSimulatorTimeout))
+    }
+
     /// Clear a text field by triple-tapping to select all, then deleting.
     /// More reliable than long-press + "Select All" menu item on CI.
     private func clearField(_ field: XCUIElement) {

@@ -79,6 +79,8 @@ __all__ = [
     "NormalizeTitleResponse",
     "PaginationMetadata",
     "PingResponse",
+    "PrepareTextRecipeRequest",
+    "PrepareTextRecipeResponse",
     "RecipeContent",
     "RecipeResponse",
     "RecipeSummary",
@@ -179,6 +181,8 @@ from ramekin_client.models.measurement import Measurement as Measurement
 from ramekin_client.models.normalize_title_response import NormalizeTitleResponse as NormalizeTitleResponse
 from ramekin_client.models.pagination_metadata import PaginationMetadata as PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse as PingResponse
+from ramekin_client.models.prepare_text_recipe_request import PrepareTextRecipeRequest as PrepareTextRecipeRequest
+from ramekin_client.models.prepare_text_recipe_response import PrepareTextRecipeResponse as PrepareTextRecipeResponse
 from ramekin_client.models.recipe_content import RecipeContent as RecipeContent
 from ramekin_client.models.recipe_response import RecipeResponse as RecipeResponse
 from ramekin_client.models.recipe_summary import RecipeSummary as RecipeSummary

@@ -14,17 +14,26 @@ struct RecipeFormView: View {
 
     var body: some View {
         Form {
-            titleSection
-            descriptionSection
-            metadataSection
-            ratingSection
-            ingredientsFormSection
-            instructionsSection
-            sourceSection
-            tagsSection
-            notesSection
-            nutritionalInfoSection
-            photosSection
+            if viewModel.mode == .create && viewModel.draft == nil {
+                recipeTextSection
+            } else {
+                draftReviewSection
+                titleSection
+                descriptionSection
+                metadataSection
+                ratingSection
+                if viewModel.draft != nil {
+                    draftIngredientsSection
+                } else {
+                    ingredientsFormSection
+                }
+                instructionsSection
+                sourceSection
+                tagsSection
+                notesSection
+                nutritionalInfoSection
+                photosSection
+            }
             errorSection
         }
         .navigationTitle(viewModel.mode == .create ? "New Recipe" : "Edit Recipe")
@@ -34,16 +43,18 @@ struct RecipeFormView: View {
                 Button("Cancel") { dismiss() }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(viewModel.isSaving ? "Saving..." : "Save") {
-                    Task {
-                        if await viewModel.save() {
-                            onSaved?()
-                            dismiss()
+                if viewModel.mode != .create || viewModel.draft != nil {
+                    Button(viewModel.isSaving ? "Saving..." : "Save") {
+                        Task {
+                            if await viewModel.save() {
+                                onSaved?()
+                                dismiss()
+                            }
                         }
                     }
+                    .disabled(!viewModel.canSave)
+                    .fontWeight(.semibold)
                 }
-                .disabled(!viewModel.canSave)
-                .fontWeight(.semibold)
             }
         }
         .disabled(viewModel.isSaving)
@@ -62,6 +73,50 @@ struct RecipeFormView: View {
 // MARK: - Form Sections
 
 extension RecipeFormView {
+    private var recipeTextSection: some View {
+        Section("Recipe text") {
+            TextEditor(text: $viewModel.recipeText)
+                .frame(minHeight: 240)
+                .accessibilityLabel("Recipe text")
+            Text("Type or paste a whole recipe: title, ingredients, instructions, and any details.")
+                .font(.caption).foregroundStyle(.secondary)
+            Button(viewModel.isPreparing ? "Reading recipe…" : "Review recipe") {
+                Task { await viewModel.prepareRecipe() }
+            }
+            .disabled(viewModel.isPreparing || viewModel.recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+        }
+        .disabled(viewModel.isPreparing)
+    }
+
+    @ViewBuilder private var draftReviewSection: some View {
+        if let draft = viewModel.draft {
+            Section("Review recipe") {
+                Text("Check the details, then save. Weight estimates are available only for supported ingredients and quantities.")
+                ForEach(Array(draft.warnings.enumerated()), id: \.offset) { _, warning in
+                    Text(warning).foregroundStyle(.orange)
+                }
+                DisclosureGroup("Original recipe text") { Text(viewModel.recipeText) }
+            }
+        }
+    }
+
+    @ViewBuilder private var draftIngredientsSection: some View {
+        if let draft = viewModel.draft {
+            Section("Ingredients") {
+                TextEditor(text: $viewModel.rawIngredients)
+                    .frame(minHeight: 150).accessibilityLabel("Ingredients")
+                if viewModel.rawIngredients == draft.rawIngredients {
+                    ForEach(Array(draft.content.ingredients.enumerated()), id: \.offset) { _, ingredient in
+                        Text(ingredient.formatted(includeAlternatives: true, includeNote: true))
+                            .font(.caption)
+                    }
+                } else {
+                    Text("Weight estimates will be recalculated when you save.").font(.caption)
+                }
+            }
+        }
+    }
+
     private var titleSection: some View {
         Section { TextField("Recipe title", text: $viewModel.formData.title).font(.headline) }
             header: { Text("Title *") }

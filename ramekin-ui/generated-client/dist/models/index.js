@@ -40,6 +40,8 @@ export * from './Measurement';
 export * from './NormalizeTitleResponse';
 export * from './PaginationMetadata';
 export * from './PingResponse';
+export * from './PrepareTextRecipeRequest';
+export * from './PrepareTextRecipeResponse';
 export * from './RecipeContent';
 export * from './RecipeResponse';
 export * from './RecipeSummary';

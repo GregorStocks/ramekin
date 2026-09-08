@@ -9,6 +9,9 @@ struct RecipeFormViewAPIClient {
     var getRecipe: (_ id: UUID) async throws -> RecipeResponse
     var listAllTags: () async throws -> TagsListResponse
     var uploadPhoto: (_ fileURL: URL) async throws -> UploadPhotoResponse
+    var prepareTextRecipe: (_ text: String) async throws -> PrepareTextRecipeResponse = {
+        try await ImportAPI.prepareTextRecipe(prepareTextRecipeRequest: PrepareTextRecipeRequest(text: $0))
+    }
 
     static let live = RecipeFormViewAPIClient(
         createRecipe: {
@@ -44,6 +47,10 @@ final class RecipeFormViewModel: ObservableObject {
     @Published var selectedPhotoItems: [PhotosPickerItem] = []
     @Published var isUploadingPhoto = false
     @Published var newSectionName = ""
+    @Published var recipeText = ""
+    @Published var rawIngredients = ""
+    @Published var draft: PrepareTextRecipeResponse?
+    @Published var isPreparing = false
 
     private let api: RecipeFormViewAPIClient
 
@@ -57,7 +64,7 @@ extension RecipeFormViewModel {
     var canSave: Bool {
         let hasRequiredVersion = switch mode {
         case .create:
-            true
+            draft != nil && !rawIngredients.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         case .edit:
             formData.expectedVersionId != nil
         }
@@ -65,6 +72,23 @@ extension RecipeFormViewModel {
             && !formData.instructions.trimmingCharacters(in: .whitespaces).isEmpty
             && hasRequiredVersion
             && !isSaving
+            && !isPreparing
+    }
+
+    func prepareRecipe() async {
+        error = nil
+        isPreparing = true
+        defer { isPreparing = false }
+        do {
+            let result = try await api.prepareTextRecipe(recipeText)
+            formData = RecipeFormData(content: result.content)
+            rawIngredients = result.rawIngredients
+            draft = result
+        } catch {
+            self.error = APIErrorFormatter.userMessage(
+                from: error, fallback: "Could not read the recipe. Your text is unchanged; try again."
+            )
+        }
     }
 
     func start() async {
@@ -150,7 +174,9 @@ extension RecipeFormViewModel {
         do {
             switch mode {
             case .create:
-                try await api.createRecipe(formData.makeCreateRequest())
+                var request = formData.makeCreateRequest()
+                request.rawIngredients = rawIngredients
+                try await api.createRecipe(request)
             case .edit(let recipeId):
                 try await api.updateRecipe(recipeId, formData.makeUpdateRequest())
             }

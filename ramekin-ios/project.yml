@@ -101,6 +101,9 @@ targets:
     platform: iOS
     sources:
       - path: RamekinTests
+      - path: ../shared-test-vectors/text-recipe-draft.json
+        buildPhase: resources
+        type: file
       - path: ../shared-test-vectors/scale-amount.json
         buildPhase: resources
         type: file

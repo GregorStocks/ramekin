@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **title** | **str** |  | 
 **total_time** | **str** |  | [optional] 
 **photo_ids** | **List[UUID]** |  | [optional] 
+**raw_ingredients** | **str** | Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save. | [optional] 
 
 ## Example
 

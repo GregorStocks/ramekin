@@ -65,6 +65,8 @@ RamekinClient/Classes/OpenAPIs/Models/ModelErrorResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/NormalizeTitleResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/PaginationMetadata.swift
 RamekinClient/Classes/OpenAPIs/Models/PingResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/PrepareTextRecipeRequest.swift
+RamekinClient/Classes/OpenAPIs/Models/PrepareTextRecipeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RecipeContent.swift
 RamekinClient/Classes/OpenAPIs/Models/RecipeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RecipeSummary.swift
@@ -147,6 +149,8 @@ docs/NormalizeTitleResponse.md
 docs/PaginationMetadata.md
 docs/PhotosAPI.md
 docs/PingResponse.md
+docs/PrepareTextRecipeRequest.md
+docs/PrepareTextRecipeResponse.md
 docs/RecipeContent.md
 docs/RecipeResponse.md
 docs/RecipeSummary.md

@@ -70,6 +70,7 @@ Class | Method | HTTP request | Description
 *EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
 *ImportApi* | [**import_from_photos**](ramekin_client/docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
+*ImportApi* | [**prepare_text_recipe**](ramekin_client/docs/ImportApi.md#prepare_text_recipe) | **POST** /api/import/text | 
 *MealPlansApi* | [**create_meal_plan**](ramekin_client/docs/MealPlansApi.md#create_meal_plan) | **POST** /api/meal-plans | 
 *MealPlansApi* | [**delete_meal_plan**](ramekin_client/docs/MealPlansApi.md#delete_meal_plan) | **DELETE** /api/meal-plans/{id} | 
 *MealPlansApi* | [**list_meal_plans**](ramekin_client/docs/MealPlansApi.md#list_meal_plans) | **GET** /api/meal-plans | 
@@ -154,6 +155,8 @@ Class | Method | HTTP request | Description
  - [NormalizeTitleResponse](ramekin_client/docs/NormalizeTitleResponse.md)
  - [PaginationMetadata](ramekin_client/docs/PaginationMetadata.md)
  - [PingResponse](ramekin_client/docs/PingResponse.md)
+ - [PrepareTextRecipeRequest](ramekin_client/docs/PrepareTextRecipeRequest.md)
+ - [PrepareTextRecipeResponse](ramekin_client/docs/PrepareTextRecipeResponse.md)
  - [RecipeContent](ramekin_client/docs/RecipeContent.md)
  - [RecipeResponse](ramekin_client/docs/RecipeResponse.md)
  - [RecipeSummary](ramekin_client/docs/RecipeSummary.md)
