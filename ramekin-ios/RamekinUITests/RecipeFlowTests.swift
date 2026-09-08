@@ -94,6 +94,14 @@ final class RecipeFlowTests: XCTestCase {
         }
         attachScreenshot(named: "02-RecipeList")
 
+        let newRecipeButton = app.navigationBars.buttons["New Recipe"]
+        XCTAssertTrue(newRecipeButton.isHittable, "New Recipe needs an accessible toolbar action")
+        newRecipeButton.tap()
+        XCTAssertTrue(app.navigationBars["New Recipe"].waitForExistence(timeout: slowSimulatorTimeout))
+        attachScreenshot(named: "02-NewRecipe")
+        app.navigationBars.buttons["Cancel"].tap()
+        XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
+
         // MARK: - Recipe Detail
 
         // Tap first recipe
@@ -107,6 +115,30 @@ final class RecipeFlowTests: XCTestCase {
             "Recipe detail view did not appear after tapping a recipe."
         )
         attachScreenshot(named: "03-RecipeDetail")
+
+        let editButton = app.navigationBars.buttons["Edit Recipe"]
+        XCTAssertTrue(editButton.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertTrue(editButton.isHittable, "Edit should be directly available without opening More actions")
+        XCTAssertTrue(app.navigationBars.buttons["More recipe actions"].isHittable)
+        editButton.tap()
+        XCTAssertTrue(app.navigationBars["Edit Recipe"].waitForExistence(timeout: slowSimulatorTimeout))
+        attachScreenshot(named: "04-EditRecipe")
+
+        let ingredientField = app.textFields["Ingredient"].firstMatch
+        let removeIngredient = app.buttons["Remove ingredient"].firstMatch
+        for _ in 0..<8 where !removeIngredient.isHittable {
+            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.75))
+            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+            start.press(forDuration: 0.01, thenDragTo: end)
+        }
+        XCTAssertTrue(ingredientField.isHittable)
+        XCTAssertTrue(app.textFields["Amount"].firstMatch.isHittable)
+        XCTAssertTrue(app.textFields["Unit"].firstMatch.isHittable)
+        XCTAssertTrue(removeIngredient.isHittable)
+        XCTAssertGreaterThanOrEqual(removeIngredient.frame.height, 44)
+        attachScreenshot(named: "05-IngredientEditor")
+        app.navigationBars.buttons["Cancel"].tap()
+        XCTAssertTrue(editButton.waitForExistence(timeout: slowSimulatorTimeout))
     }
 
     /// Test that login fails with invalid credentials

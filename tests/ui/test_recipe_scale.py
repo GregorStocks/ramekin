@@ -182,6 +182,7 @@ def test_shopping_list_uses_scaled_amounts(scale_recipe, api_url, page: Page):
 
     page.locator(".scale-preset", has_text="2×").click()
     page.wait_for_url(lambda url: "scale=2" in url)
+    page.locator(".recipe-more-actions > summary").click()
     page.locator("button", has_text="Add to Shopping List").click()
     page.wait_for_selector(".add-shopping-modal")
 

@@ -43,13 +43,15 @@ struct RecipeDetailView: View {
         .toolbar {
             if let recipe = viewModel.recipe {
                 ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Edit") {
+                        viewModel.showingEdit = true
+                    }
+                    .fontWeight(.semibold)
+                    .disabled(actionsDisabledForHistoricalVersion)
+                    .accessibilityLabel("Edit Recipe")
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
-                        Button {
-                            viewModel.showingEdit = true
-                        } label: {
-                            Label("Edit Recipe", systemImage: "pencil")
-                        }
-                        .disabled(actionsDisabledForHistoricalVersion)
                         Button {
                             Task { await viewModel.enrichWithAI() }
                         } label: {
@@ -122,6 +124,7 @@ struct RecipeDetailView: View {
                     } label: {
                         Image(systemName: "ellipsis.circle")
                     }
+                    .accessibilityLabel("More recipe actions")
                 }
             }
         }

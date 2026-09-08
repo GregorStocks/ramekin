@@ -72,12 +72,12 @@
   gap: 1.5rem;
 }
 
-.app-nav a {
+.app-nav a:not(.btn) {
   color: var(--text-secondary);
   text-decoration: none;
 }
 
-.app-nav a:hover {
+.app-nav a:not(.btn):hover {
   color: var(--text-primary);
 }
 
@@ -212,7 +212,7 @@
     gap: 0.5rem;
   }
 
-  .app-nav a,
+  .app-nav a:not(.btn),
   .app-nav .nav-link-button {
     width: 100%;
     text-align: left;
@@ -279,7 +279,7 @@
 
 /* Wider container for recipe view (two-column layout) */
 .app-main:has(.view-recipe-page) {
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 /* Wide fluid container for the cookbook — fill big displays with a

@@ -35,13 +35,24 @@ struct IngredientRowView: View {
     // MARK: - Subviews
 
     private var primaryMeasurementRow: some View {
-        HStack(spacing: 8) {
-            TextField("Amt", text: primaryAmountBinding)
-                .frame(width: 50)
-                .keyboardType(.decimalPad)
-            TextField("Unit", text: primaryUnitBinding)
-                .frame(width: 60)
+        VStack(alignment: .leading, spacing: 8) {
             TextField("Ingredient", text: $ingredient.item)
+                .accessibilityLabel("Ingredient")
+            HStack(alignment: .top, spacing: 12) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Amount").font(.caption).foregroundColor(.secondary)
+                    TextField("Amount", text: primaryAmountBinding)
+                        .keyboardType(.decimalPad)
+                        .accessibilityLabel("Amount")
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Unit").font(.caption).foregroundColor(.secondary)
+                    TextField("Unit", text: primaryUnitBinding)
+                        .accessibilityLabel("Unit")
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
         }
         .font(.body)
     }
@@ -68,34 +79,37 @@ struct IngredientRowView: View {
                 Text("Alt:")
                     .font(.caption)
                     .foregroundColor(.secondary)
-                    .frame(width: 30)
-                TextField("Amt", text: measurementAmountBinding(mIdx))
-                    .frame(width: 50)
+                TextField("Amount", text: measurementAmountBinding(mIdx))
+                    .frame(maxWidth: .infinity)
                     .keyboardType(.decimalPad)
+                    .accessibilityLabel("Alternative amount")
                 TextField("Unit", text: measurementUnitBinding(mIdx))
-                    .frame(width: 60)
-                Spacer()
+                    .frame(maxWidth: .infinity)
+                    .accessibilityLabel("Alternative unit")
                 Button {
                     ingredient.measurements.remove(at: mIdx)
                 } label: {
                     Image(systemName: "minus.circle")
                         .foregroundColor(.red)
-                        .font(.caption)
+                        .font(.body)
+                        .frame(minWidth: 44, minHeight: 44)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("Remove alternative measurement")
             }
-            .font(.caption)
+            .font(.body)
         }
     }
 
     private var actionButtons: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: 8) {
             Button {
                 ingredient.measurements.append(EditableMeasurement())
             } label: {
                 Label("Alt measurement", systemImage: "plus.circle")
-                    .font(.caption2)
-                    .foregroundColor(.orange)
+                    .font(.subheadline)
+                    .foregroundColor(.primary)
+                    .frame(minHeight: 44)
             }
             .buttonStyle(.plain)
 
@@ -108,8 +122,9 @@ struct IngredientRowView: View {
                     isNoteVisible = true
                 } label: {
                     Label("Note", systemImage: "note.text")
-                        .font(.caption2)
-                        .foregroundColor(.orange)
+                        .font(.subheadline)
+                        .foregroundColor(.primary)
+                        .frame(minHeight: 44)
                 }
                 .buttonStyle(.plain)
             }
@@ -118,10 +133,12 @@ struct IngredientRowView: View {
 
             Button(action: onDelete) {
                 Image(systemName: "trash")
-                    .font(.caption)
+                    .font(.body)
                     .foregroundColor(.red)
+                    .frame(minWidth: 44, minHeight: 44)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Remove ingredient")
         }
     }
 
