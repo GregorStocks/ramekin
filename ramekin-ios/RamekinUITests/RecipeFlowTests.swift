@@ -39,6 +39,17 @@ final class RecipeFlowTests: XCTestCase {
         add(screenshot)
     }
 
+    private func submitLogin() {
+        // Reveal the final Form rows before tapping. XCTest's implicit
+        // scroll-to-visible can move the button while synthesizing its tap
+        // on a slow simulator, leaving the login request unsubmitted.
+        app.swipeUp()
+        let button = app.buttons["Sign In"]
+        XCTAssertTrue(button.isEnabled, "Login fields must be populated before submitting")
+        XCTAssertTrue(button.isHittable, "Sign In must be visible before tapping")
+        button.tap()
+    }
+
     /// Test the full recipe flow: login -> recipe list -> recipe detail
     func testRecipeFlow() throws {
         // MARK: - Login
@@ -67,9 +78,7 @@ final class RecipeFlowTests: XCTestCase {
         attachScreenshot(named: "01-LoginForm")
 
         // Tap Sign In button
-        let signInButton = app.buttons["Sign In"]
-        XCTAssertTrue(signInButton.exists, "Sign In button should exist")
-        signInButton.tap()
+        submitLogin()
 
         // MARK: - Recipe List
 
@@ -124,7 +133,7 @@ final class RecipeFlowTests: XCTestCase {
         clearField(passwordField)
         passwordField.typeText("wrong")
 
-        app.buttons["Sign In"].tap()
+        submitLogin()
 
         // The error message renders in the same UI update that ends the
         // in-flight spinner, so it appearing IS the "login request finished"
