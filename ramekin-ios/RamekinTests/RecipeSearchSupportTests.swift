@@ -1,7 +1,7 @@
 import XCTest
 @testable import Ramekin
 
-/// Unit tests for the query parser and LIKE mirror. End-to-end behavior is
+/// Unit tests for the query parser and literal substring matching. End-to-end behavior is
 /// pinned by SearchMatchFilterSharedVectorTests; these cover the parser and
 /// matcher edges directly, mirroring the server's parse_query tests.
 final class RecipeSearchSupportTests: XCTestCase {
@@ -74,35 +74,13 @@ final class RecipeSearchSupportTests: XCTestCase {
         XCTAssertTrue(parsed.requiresServer)
     }
 
-    func testLikeContainsTreatsEscapedMetacharactersLiterally() {
-        // Escaped % (the parser escapes raw metacharacters before
-        // normalizing, like the server's escape_like_pattern).
-        let haystack = scalars("about 100% cacao")
-        XCTAssertTrue(RecipeSearchSupport.likeContains(
-            haystack: haystack,
-            pattern: scalars("100\\%")
-        ))
-        XCTAssertFalse(RecipeSearchSupport.likeContains(
-            haystack: scalars("100 degrees"),
-            pattern: scalars("100\\%")
-        ))
-    }
-
-    func testLikeContainsSupportsWildcardsFromUnaccentExpansions() {
-        // An unescaped % (e.g. produced by unaccenting fullwidth ％ after
-        // escaping) matches any run, and _ matches exactly one codepoint.
-        XCTAssertTrue(RecipeSearchSupport.likeContains(
-            haystack: scalars("100 degrees"),
-            pattern: scalars("100%")
-        ))
-        XCTAssertTrue(RecipeSearchSupport.likeContains(
-            haystack: scalars("cake"),
-            pattern: scalars("c_ke")
-        ))
-        XCTAssertFalse(RecipeSearchSupport.likeContains(
-            haystack: scalars("coke zero"),
-            pattern: scalars("c__ke")
-        ))
+    func testNormalizedMetacharactersMatchLiterally() {
+        for (query, literal) in [("％", "%"), ("﹪", "%"), ("＿", "_"),
+                                 ("∖", "\\"), ("﹨", "\\"), ("＼", "\\")] {
+            let needle = RecipeSearchSupport.normalizedScalars("a" + query + "b")
+            XCTAssertTrue(RecipeSearchSupport.scalarsContain(scalars("a" + literal + "b"), needle))
+            XCTAssertFalse(RecipeSearchSupport.scalarsContain(scalars("axb ab"), needle))
+        }
     }
 
     private func scalars(_ text: String) -> [UInt32] {

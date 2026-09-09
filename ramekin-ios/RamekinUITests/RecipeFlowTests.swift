@@ -51,12 +51,14 @@ final class RecipeFlowTests: XCTestCase {
         )
         clearField(serverField)
         serverField.typeText("http://localhost:55000")
+        XCTAssertEqual(serverField.value as? String, "http://localhost:55000")
 
         // Find and fill username field (clear default value first)
         let usernameField = app.textFields["Username"]
         XCTAssertTrue(usernameField.exists, "Username field should exist")
         clearField(usernameField)
         usernameField.typeText("t")
+        XCTAssertEqual(usernameField.value as? String, "t")
 
         // Find and fill password field (clear default value first)
         let passwordField = app.secureTextFields["Password"]
@@ -76,9 +78,17 @@ final class RecipeFlowTests: XCTestCase {
         // The login screen is a Form whose rows also match `app.cells`, so the
         // logged-in check must be something only the recipe list has: its
         // "Recipes" navigation bar (the login screen's bar is "Sign In").
-        guard app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout) else {
+        let recipesBar = app.navigationBars["Recipes"]
+        let loginError = app.staticTexts["login-error-message"]
+        let loginFinished = XCTNSPredicateExpectation(
+            predicate: NSPredicate { _, _ in recipesBar.exists || loginError.exists },
+            object: nil
+        )
+        let loginResult = XCTWaiter.wait(for: [loginFinished], timeout: slowSimulatorTimeout)
+        guard loginResult == .completed, recipesBar.exists else {
             attachScreenshot(named: "02-AfterLogin")
-            XCTFail("Never left the login screen: Recipes navigation bar did not appear after Sign In.")
+            let error = loginError.exists ? loginError.label : "No login error displayed"
+            XCTFail("Never reached Recipes after Sign In: \(error).\n\(app.debugDescription)")
             return
         }
 

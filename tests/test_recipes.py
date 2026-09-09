@@ -1081,6 +1081,35 @@ def test_filter_by_source(authed_api_client):
     assert response.recipes[0].title == "NYT Recipe"
 
 
+@pytest.mark.parametrize("character", ["％", "﹪", "＿", "∖", "﹨", "＼"])
+def test_source_normalization_preserves_literal_metacharacters(
+    authed_api_client, character
+):
+    client, _ = authed_api_client
+    recipes_api = RecipesApi(client)
+    literal = {"％": "%", "﹪": "%", "＿": "_", "∖": "\\", "﹨": "\\", "＼": "\\"}[
+        character
+    ]
+    expected = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Literal source",
+            instructions="Cook",
+            ingredients=[],
+            source_name=f"a{literal}b",
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Nonliteral source",
+            instructions="Cook",
+            ingredients=[],
+            source_name="axb ab",
+        )
+    )
+    response = recipes_api.list_recipes(q=f"source:a{character}b")
+    assert [recipe.id for recipe in response.recipes] == [expected.id]
+
+
 def test_filter_photo_size_and_dim(authed_api_client, test_image):
     """Test filtering recipes by photo file size / photo dimensions."""
     client, _ = authed_api_client

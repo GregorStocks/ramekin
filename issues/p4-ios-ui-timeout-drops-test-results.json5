@@ -1,0 +1,17 @@
+{
+  "title": "iOS UI job timeouts discard test failure artifacts and build caches",
+  "description": "In iOS run 34253129754 (PR #687), the UI job spent roughly 18 minutes installing/building the backend and CLI. testRecipeFlow then failed before the 30-minute job timeout, but xcodebuild had not exited when cancellation occurred. \
+The failure-only artifact upload and both cache post-steps were skipped, losing the login screenshots and xcresult bundle and preventing the expensive cold build from warming the next run. \
+Improve the workflow so completed build caches and test diagnostics survive job cancellation; investigate build duplication or split build/test stages instead of just increasing the timeout. \
+The original logs remain available on GitHub. \
+This issue concerns CI artifact/cache handling; the login failure is being investigated in #687.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "ios",
+    "ci",
+  ],
+  "created_at": "2026-09-08T17:20:15Z",
+  "updated_at": "2026-09-08T17:20:15Z",
+}

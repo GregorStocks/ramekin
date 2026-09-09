@@ -171,12 +171,12 @@ enum RecipeSearchSupport {
     /// of title, description, instructions, notes, or the ingredient match
     /// text (NULL fields never match, like SQL). Tags use whole-value CITEXT
     /// equality: case-insensitive but accent-sensitive, never unaccented.
-    /// `membershipPatterns` are the tokens' prebuilt LIKE patterns — like the
+    /// `membershipTokens` are the tokens' normalized Unicode scalars — like the
     /// server, they are built once per query, not per row.
     static func matches(
         _ document: CachedRecipeSearchDocument,
         parsed: ParsedSearchQuery,
-        membershipPatterns: [[UInt32]]
+        membershipTokens: [[UInt32]]
     ) -> Bool {
         let summary = document.summary
 
@@ -206,7 +206,7 @@ enum RecipeSearchSupport {
             return false
         }
 
-        if membershipPatterns.isEmpty {
+        if membershipTokens.isEmpty {
             return true
         }
         let fields: [[UInt32]?] = [
@@ -216,10 +216,10 @@ enum RecipeSearchSupport {
             document.notes.map(normalizedScalars),
             normalizedScalars(document.ingredientMatchText)
         ]
-        return membershipPatterns.allSatisfy { pattern in
+        return membershipTokens.allSatisfy { token in
             fields.contains { field in
                 guard let field else { return false }
-                return likeContains(haystack: field, pattern: pattern)
+                return scalarsContain(field, token)
             }
         }
     }
@@ -255,9 +255,9 @@ enum RecipeSearchSupport {
     ) -> [RecipeSummary] {
         precondition(!parsed.requiresServer, "source/photo_size/photo_dim queries are server-only")
 
-        let membershipPatterns = parsed.textTokens.map(membershipPattern)
+        let membershipTokens = parsed.textTokens.map(normalizedScalars)
         let matched = documents.filter {
-            matches($0, parsed: parsed, membershipPatterns: membershipPatterns)
+            matches($0, parsed: parsed, membershipTokens: membershipTokens)
         }
         let effectiveSortBy = sortBy ?? (parsed.textTokens.isEmpty ? .updatedAt : .relevance)
         let descending = (sortDir ?? .desc) == .desc
