@@ -11,7 +11,7 @@
   --text-primary: #1d1612;
   --text-secondary: #3d342c;
   --text-muted: #6f6256;
-  --text-faint: #8e8074;
+  --text-faint: #75695d;
   --text-on-accent: #fffdf7;
   --accent: #9a611a;
   --accent-hover: #8a5614;
@@ -128,6 +128,7 @@ button {
 
 button:focus-visible,
 a:focus-visible,
+summary:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {

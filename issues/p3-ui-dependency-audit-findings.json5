@@ -1,0 +1,16 @@
+{
+  "title": "Investigate dependency audit findings reported by web dev setup",
+  "description": "During the recipe design audit, make dev-headless installed the current web lockfile and reported eight dependency vulnerabilities: one low, one moderate, five high, and one critical. \
+No dependencies were added by the design iteration. \
+Investigate the affected packages and actual application/build exposure, update the dependency inputs through the approved npx workflow, and validate with make lint and UI checks. \
+Add a Makefile audit target if needed rather than bypassing the repository command policy.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+    "dependencies",
+  ],
+  "created_at": "2026-09-08T16:50:32Z",
+  "updated_at": "2026-09-08T16:50:32Z",
+}
