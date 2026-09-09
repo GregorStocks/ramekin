@@ -150,7 +150,7 @@ extension RecipeDetailViewModel {
     }
 
     func setRecipeScale(_ value: Double) {
-        guard value.isFinite, value > 0 else {
+        guard RecipeScaleSupport.isValidScale(value) else {
             return
         }
         recipeScale = value
@@ -158,8 +158,7 @@ extension RecipeDetailViewModel {
 
     func applyCustomScale() {
         guard let value = RecipeScaleSupport.parseDecimal(customScaleInput),
-              value.isFinite,
-              value > 0 else {
+              RecipeScaleSupport.isValidScale(value) else {
             return
         }
         setRecipeScale(value)

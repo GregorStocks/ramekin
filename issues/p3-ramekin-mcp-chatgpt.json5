@@ -1,0 +1,59 @@
+{
+  "title": "Support Ramekin MCP tools in ChatGPT, including on iPhone away from home",
+  "description": "Goal: let the owner use Ramekin from an MCP-capable assistant, with ChatGPT on iPhone both at home and away from home as the primary end-to-end use case. \
+Deliver a small working integration, not just an MCP endpoint that only works in a local inspector.\n\
+\n\
+Deployment context confirmed by the owner: production is at https://ramekin.app behind Cloudflare Access's email-me-a-code login. \
+The browser's Cloudflare session is separate from Ramekin's own bearer session tokens. \
+A normal MCP request cannot assume it inherits the user's browser login. \
+Public DNS/HTTPS already exists; determine how to provide authenticated machine access through the actual deployment.\n\
+\n\
+Approach is deliberately undecided. \
+Investigate the current ChatGPT account/mobile support and prove connection/authentication early. \
+Cloudflare Managed OAuth, a separately authenticated MCP route or host, and a private connector/tunnel are possible approaches, not requirements. \
+Another owner-proposed option is to replace Postgres with SQLite and run the entire application inside Cloudflare, including the MCP integration. \
+Evaluate that broader deployment option alongside adapting the existing deployment; do not assume a database or hosting migration is necessary or already selected. \
+Investigate the appropriate Cloudflare runtime and SQLite storage offering, Rust/backend compatibility, Postgres/Diesel-specific behavior, background extraction jobs, photo storage, operational limits/costs, and a migration plan that preserves all existing data and soft-delete semantics. \
+Compare the implementation and operational tradeoffs, including web/iOS API behavior, and record the chosen direction before starting a broader migration. \
+Moving hosting or databases does not by itself resolve MCP authentication or ChatGPT mobile availability. \
+Do not assume Cloudflare authentication automatically selects or authorizes a Ramekin account. \
+Document the chosen trust boundary, identity-to-account mapping, token lifecycle/revocation, and required deployment configuration. \
+Prepare concrete configuration changes for owner review before changing production access policy. \
+Preserve authenticated access to private recipes and prevent cross-account access.\n\
+\n\
+Initial scope: a small useful set of tools using existing server behavior, such as searching recipes, retrieving a recipe, and reading meal plans or the shopping list. \
+Select and document the initial tool set; write tools are not required for the first version. \
+If writes are included, document confirmation behavior, enforce authorization, and preserve soft-delete semantics. \
+Avoid duplicating search/scaling/business logic in the MCP layer. \
+Rich ChatGPT UI and public plugin-directory publication are not required.\n\
+\n\
+Acceptance criteria:\n\
+- An MCP client can discover and call the implemented tools with schema-valid inputs and model-readable results; unsupported inputs and authentication failures return explicit errors.\n\
+- Authenticate as the intended Ramekin user and verify missing/expired/revoked credentials and cross-account access are rejected. \
+Add appropriate automated MCP/API tests, including end-to-end tests for any new API endpoints.\n\
+- Demonstrate a real recipe search and detail retrieval in the ChatGPT iPhone app on home Wi-Fi and on cellular with home Wi-Fi disabled. \
+Do not infer private developer-connection mobile support from public plugin support. \
+If the account/product cannot support this, report the precise limitation and obtain agreement on an alternative before declaring the issue complete.\n\
+- Explain whether local MCP clients can connect directly on the LAN and document that setup or the supported remote alternative.\n\
+- Document owner setup: Cloudflare/hosting changes, secrets, account linking, any OpenAI developer-mode/account requirements, and reconnect/revocation behavior. \
+Personal use should not require public directory submission unless verified platform constraints make it necessary and the owner agrees.\n\
+- Existing Ramekin web and native iOS login and data access continue to work. \
+Handle any necessary client settings or account-linking changes on both clients; otherwise a server/connector implementation may suffice. \
+Keep deterministic logic server-side where possible and follow doc/client-logic-sharing.md if client logic must be duplicated.\n\
+\n\
+Validation: make test and make lint; use macOS CI for any native iOS changes. \
+No extraction/parsing changes are intended, so make pipeline is only required if implementation changes that behavior. \
+Include manual phone/network validation evidence and remaining platform constraints in the implementation PR.\n\
+\n\
+Research starting points (re-verify at implementation time): https://developers.cloudflare.com/changelog/post/2026-03-20-managed-oauth/ ; https://developers.cloudflare.com/cloudflare-one/access-controls/ai-controls/secure-mcp-servers/ ; https://developers.openai.com/plugins/deploy/connect-chatgpt ; https://developers.openai.com/plugins/build/auth ; https://learn.chatgpt.com/docs/plugins ; https://developers.openai.com/api/docs/guides/secure-mcp-tunnels .",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-09-08T09:39:49-07:00",
+  "updated_at": "2026-09-08T09:39:49-07:00",
+}

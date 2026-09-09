@@ -1,6 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 export * from './BookmarkletTokenResponse';
+export * from './CalorieEstimateResponse';
+export * from './CalorieRange';
 export * from './CaptureRequest';
 export * from './ClearCheckedResponse';
 export * from './CreateClientLogRequest';
@@ -20,6 +22,7 @@ export * from './CustomEnrichRequest';
 export * from './Direction';
 export * from './ErrorCode';
 export * from './ErrorResponse';
+export * from './EstimateCaloriesRequest';
 export * from './GenerateDescriptionResponse';
 export * from './GeneratePhotoResponse';
 export * from './ImportExtractionMethod';
@@ -68,6 +71,7 @@ export * from './SyncUpdatedItem';
 export * from './TagItem';
 export * from './TagsListResponse';
 export * from './UnauthedPingResponse';
+export * from './UnknownCalorieIngredient';
 export * from './UpdateMealPlanRequest';
 export * from './UpdateRecipeRequest';
 export * from './UpdateShoppingListItemRequest';

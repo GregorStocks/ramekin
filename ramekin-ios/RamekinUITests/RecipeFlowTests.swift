@@ -32,7 +32,7 @@ final class RecipeFlowTests: XCTestCase {
         app.textFields["Username"].typeText("t")
         clearField(app.secureTextFields["Password"])
         app.secureTextFields["Password"].typeText("t")
-        app.buttons["Sign In"].tap()
+        submitLogin()
         XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
         app.buttons["New recipe"].tap()
         let text = app.textViews["Recipe text"]
@@ -65,6 +65,17 @@ final class RecipeFlowTests: XCTestCase {
         add(screenshot)
     }
 
+    private func submitLogin() {
+        // Reveal the final Form rows before tapping. XCTest's implicit
+        // scroll-to-visible can move the button while synthesizing its tap
+        // on a slow simulator, leaving the login request unsubmitted.
+        app.swipeUp()
+        let button = app.buttons["Sign In"]
+        XCTAssertTrue(button.isEnabled, "Login fields must be populated before submitting")
+        XCTAssertTrue(button.isHittable, "Sign In must be visible before tapping")
+        button.tap()
+    }
+
     /// Test the full recipe flow: login -> recipe list -> recipe detail
     func testRecipeFlow() throws {
         // MARK: - Login
@@ -77,12 +88,14 @@ final class RecipeFlowTests: XCTestCase {
         )
         clearField(serverField)
         serverField.typeText("http://localhost:55000")
+        XCTAssertEqual(serverField.value as? String, "http://localhost:55000")
 
         // Find and fill username field (clear default value first)
         let usernameField = app.textFields["Username"]
         XCTAssertTrue(usernameField.exists, "Username field should exist")
         clearField(usernameField)
         usernameField.typeText("t")
+        XCTAssertEqual(usernameField.value as? String, "t")
 
         // Find and fill password field (clear default value first)
         let passwordField = app.secureTextFields["Password"]
@@ -93,18 +106,24 @@ final class RecipeFlowTests: XCTestCase {
         attachScreenshot(named: "01-LoginForm")
 
         // Tap Sign In button
-        let signInButton = app.buttons["Sign In"]
-        XCTAssertTrue(signInButton.exists, "Sign In button should exist")
-        signInButton.tap()
+        submitLogin()
 
         // MARK: - Recipe List
 
         // The login screen is a Form whose rows also match `app.cells`, so the
         // logged-in check must be something only the recipe list has: its
         // "Recipes" navigation bar (the login screen's bar is "Sign In").
-        guard app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout) else {
+        let recipesBar = app.navigationBars["Recipes"]
+        let loginError = app.staticTexts["login-error-message"]
+        let loginFinished = XCTNSPredicateExpectation(
+            predicate: NSPredicate { _, _ in recipesBar.exists || loginError.exists },
+            object: nil
+        )
+        let loginResult = XCTWaiter.wait(for: [loginFinished], timeout: slowSimulatorTimeout)
+        guard loginResult == .completed, recipesBar.exists else {
             attachScreenshot(named: "02-AfterLogin")
-            XCTFail("Never left the login screen: Recipes navigation bar did not appear after Sign In.")
+            let error = loginError.exists ? loginError.label : "No login error displayed"
+            XCTFail("Never reached Recipes after Sign In: \(error).\n\(app.debugDescription)")
             return
         }
 
@@ -120,6 +139,14 @@ final class RecipeFlowTests: XCTestCase {
         }
         attachScreenshot(named: "02-RecipeList")
 
+        let newRecipeButton = app.navigationBars.buttons["New Recipe"]
+        XCTAssertTrue(newRecipeButton.isHittable, "New Recipe needs an accessible toolbar action")
+        newRecipeButton.tap()
+        XCTAssertTrue(app.navigationBars["New Recipe"].waitForExistence(timeout: slowSimulatorTimeout))
+        attachScreenshot(named: "02-NewRecipe")
+        app.navigationBars.buttons["Cancel"].tap()
+        XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
+
         // MARK: - Recipe Detail
 
         // Tap first recipe
@@ -133,6 +160,30 @@ final class RecipeFlowTests: XCTestCase {
             "Recipe detail view did not appear after tapping a recipe."
         )
         attachScreenshot(named: "03-RecipeDetail")
+
+        let editButton = app.navigationBars.buttons["Edit Recipe"]
+        XCTAssertTrue(editButton.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertTrue(editButton.isHittable, "Edit should be directly available without opening More actions")
+        XCTAssertTrue(app.navigationBars.buttons["More recipe actions"].isHittable)
+        editButton.tap()
+        XCTAssertTrue(app.navigationBars["Edit Recipe"].waitForExistence(timeout: slowSimulatorTimeout))
+        attachScreenshot(named: "04-EditRecipe")
+
+        let ingredientField = app.textFields["Ingredient"].firstMatch
+        let removeIngredient = app.buttons["Remove ingredient"].firstMatch
+        for _ in 0..<8 where !removeIngredient.isHittable {
+            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.75))
+            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+            start.press(forDuration: 0.01, thenDragTo: end)
+        }
+        XCTAssertTrue(ingredientField.isHittable)
+        XCTAssertTrue(app.textFields["Amount"].firstMatch.isHittable)
+        XCTAssertTrue(app.textFields["Unit"].firstMatch.isHittable)
+        XCTAssertTrue(removeIngredient.isHittable)
+        XCTAssertGreaterThanOrEqual(removeIngredient.frame.height, 44)
+        attachScreenshot(named: "05-IngredientEditor")
+        app.navigationBars.buttons["Cancel"].tap()
+        XCTAssertTrue(editButton.waitForExistence(timeout: slowSimulatorTimeout))
     }
 
     /// Test that login fails with invalid credentials
@@ -150,7 +201,7 @@ final class RecipeFlowTests: XCTestCase {
         clearField(passwordField)
         passwordField.typeText("wrong")
 
-        app.buttons["Sign In"].tap()
+        submitLogin()
 
         // The error message renders in the same UI update that ends the
         // in-flight spinner, so it appearing IS the "login request finished"

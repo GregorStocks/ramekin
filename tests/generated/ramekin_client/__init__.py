@@ -40,6 +40,8 @@ __all__ = [
     "ApiAttributeError",
     "ApiException",
     "BookmarkletTokenResponse",
+    "CalorieEstimateResponse",
+    "CalorieRange",
     "CaptureRequest",
     "ClearCheckedResponse",
     "CreateClientLogRequest",
@@ -59,6 +61,7 @@ __all__ = [
     "Direction",
     "ErrorCode",
     "ErrorResponse",
+    "EstimateCaloriesRequest",
     "GenerateDescriptionResponse",
     "GeneratePhotoResponse",
     "ImportExtractionMethod",
@@ -107,6 +110,7 @@ __all__ = [
     "TagItem",
     "TagsListResponse",
     "UnauthedPingResponse",
+    "UnknownCalorieIngredient",
     "UpdateMealPlanRequest",
     "UpdateRecipeRequest",
     "UpdateShoppingListItemRequest",
@@ -142,6 +146,8 @@ from ramekin_client.exceptions import ApiException as ApiException
 
 # import models into sdk package
 from ramekin_client.models.bookmarklet_token_response import BookmarkletTokenResponse as BookmarkletTokenResponse
+from ramekin_client.models.calorie_estimate_response import CalorieEstimateResponse as CalorieEstimateResponse
+from ramekin_client.models.calorie_range import CalorieRange as CalorieRange
 from ramekin_client.models.capture_request import CaptureRequest as CaptureRequest
 from ramekin_client.models.clear_checked_response import ClearCheckedResponse as ClearCheckedResponse
 from ramekin_client.models.create_client_log_request import CreateClientLogRequest as CreateClientLogRequest
@@ -161,6 +167,7 @@ from ramekin_client.models.custom_enrich_request import CustomEnrichRequest as C
 from ramekin_client.models.direction import Direction as Direction
 from ramekin_client.models.error_code import ErrorCode as ErrorCode
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
+from ramekin_client.models.estimate_calories_request import EstimateCaloriesRequest as EstimateCaloriesRequest
 from ramekin_client.models.generate_description_response import GenerateDescriptionResponse as GenerateDescriptionResponse
 from ramekin_client.models.generate_photo_response import GeneratePhotoResponse as GeneratePhotoResponse
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod as ImportExtractionMethod
@@ -209,6 +216,7 @@ from ramekin_client.models.sync_updated_item import SyncUpdatedItem as SyncUpdat
 from ramekin_client.models.tag_item import TagItem as TagItem
 from ramekin_client.models.tags_list_response import TagsListResponse as TagsListResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse as UnauthedPingResponse
+from ramekin_client.models.unknown_calorie_ingredient import UnknownCalorieIngredient as UnknownCalorieIngredient
 from ramekin_client.models.update_meal_plan_request import UpdateMealPlanRequest as UpdateMealPlanRequest
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest as UpdateRecipeRequest
 from ramekin_client.models.update_shopping_list_item_request import UpdateShoppingListItemRequest as UpdateShoppingListItemRequest

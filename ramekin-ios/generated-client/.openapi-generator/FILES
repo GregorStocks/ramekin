@@ -26,6 +26,8 @@ RamekinClient/Classes/OpenAPIs/JSONDataEncoding.swift
 RamekinClient/Classes/OpenAPIs/JSONEncodingHelper.swift
 RamekinClient/Classes/OpenAPIs/Models.swift
 RamekinClient/Classes/OpenAPIs/Models/BookmarkletTokenResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/CalorieEstimateResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/CalorieRange.swift
 RamekinClient/Classes/OpenAPIs/Models/CaptureRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ClearCheckedResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateClientLogRequest.swift
@@ -44,6 +46,7 @@ RamekinClient/Classes/OpenAPIs/Models/CreateTagResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CustomEnrichRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/Direction.swift
 RamekinClient/Classes/OpenAPIs/Models/ErrorCode.swift
+RamekinClient/Classes/OpenAPIs/Models/EstimateCaloriesRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/GenerateDescriptionResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/GeneratePhotoResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportExtractionMethod.swift
@@ -93,6 +96,7 @@ RamekinClient/Classes/OpenAPIs/Models/SyncUpdatedItem.swift
 RamekinClient/Classes/OpenAPIs/Models/TagItem.swift
 RamekinClient/Classes/OpenAPIs/Models/TagsListResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/UnauthedPingResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/UnknownCalorieIngredient.swift
 RamekinClient/Classes/OpenAPIs/Models/UpdateMealPlanRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/UpdateRecipeRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/UpdateShoppingListItemRequest.swift
@@ -105,6 +109,8 @@ RamekinClient/Classes/OpenAPIs/URLSessionImplementations.swift
 RamekinClient/Classes/OpenAPIs/Validation.swift
 docs/AuthAPI.md
 docs/BookmarkletTokenResponse.md
+docs/CalorieEstimateResponse.md
+docs/CalorieRange.md
 docs/CaptureRequest.md
 docs/ClearCheckedResponse.md
 docs/ClientLogsAPI.md
@@ -125,6 +131,7 @@ docs/CustomEnrichRequest.md
 docs/Direction.md
 docs/EnrichAPI.md
 docs/ErrorCode.md
+docs/EstimateCaloriesRequest.md
 docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
 docs/ImportAPI.md
@@ -182,6 +189,7 @@ docs/TagsAPI.md
 docs/TagsListResponse.md
 docs/TestingAPI.md
 docs/UnauthedPingResponse.md
+docs/UnknownCalorieIngredient.md
 docs/UpdateMealPlanRequest.md
 docs/UpdateRecipeRequest.md
 docs/UpdateShoppingListItemRequest.md

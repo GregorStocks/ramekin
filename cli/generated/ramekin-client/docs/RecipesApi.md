@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_recipe**](RecipesApi.md#create_recipe) | **POST** /api/recipes | 
 [**delete_recipe**](RecipesApi.md#delete_recipe) | **DELETE** /api/recipes/{id} | 
+[**estimate_calories**](RecipesApi.md#estimate_calories) | **POST** /api/recipes/estimate-calories | 
 [**export_all_recipes**](RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
 [**export_recipe**](RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 [**generate_description**](RecipesApi.md#generate_description) | **POST** /api/recipes/{id}/generate-description | 
@@ -72,6 +73,34 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## estimate_calories
+
+> models::CalorieEstimateResponse estimate_calories(estimate_calories_request)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**estimate_calories_request** | [**EstimateCaloriesRequest**](EstimateCaloriesRequest.md) |  | [required] |
+
+### Return type
+
+[**models::CalorieEstimateResponse**](CalorieEstimateResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

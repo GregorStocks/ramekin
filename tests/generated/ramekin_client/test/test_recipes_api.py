@@ -38,6 +38,12 @@ class TestRecipesApi(unittest.TestCase):
         """
         pass
 
+    def test_estimate_calories(self) -> None:
+        """Test case for estimate_calories
+
+        """
+        pass
+
     def test_export_all_recipes(self) -> None:
         """Test case for export_all_recipes
 

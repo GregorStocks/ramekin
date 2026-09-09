@@ -12,6 +12,7 @@ pub mod image;
 pub mod ingredient_categorizer;
 pub mod ingredient_parser;
 pub mod metric_weights;
+pub mod nutrition;
 pub mod pipeline;
 pub mod recipe_title_sort;
 pub mod search;

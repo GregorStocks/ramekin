@@ -9,7 +9,8 @@
 //!
 //! Matching semantics mirror the SQL filters in the list-recipes endpoint:
 //! case-insensitive, accent-insensitive substring containment (Postgres
-//! `f_unaccent(col) ILIKE f_unaccent(pattern)`). `normalize_for_search`
+//! `f_unaccent(col) ILIKE pattern`, with query text normalized before LIKE
+//! escaping). `normalize_for_search`
 //! reproduces that pipeline exactly by consuming the versioned contract at
 //! shared-test-vectors/search-normalization.json: the server database's
 //! complete per-codepoint unaccent dictionary followed by its per-codepoint

@@ -393,6 +393,7 @@ def test_generate_ai_photo_from_recipe_detail(page: Page, ui_url: str, api_url: 
     page.wait_for_selector(".recipe-card")
 
     page.goto(f"{ui_url}/recipes/{recipe_id}")
+    page.locator(".recipe-more-actions > summary").click()
     page.get_by_role("button", name="Generate AI Photo").click()
 
     expect(page.locator(".recipe-photos img")).to_have_count(1)

@@ -364,6 +364,10 @@ ingredient-density-test: ## Run ingredient-density crate tests
 ingredient-density-import: ## Regenerate USDA data from downloaded CSV (requires USDA data download)
 	@cd ingredient-density && cargo run --bin import_usda
 
+.PHONY: nutrition-import
+nutrition-import: ## Download pinned USDA SR Legacy data and regenerate calorie data
+	@uv run --no-project scripts/import-nutrition.py
+
 shopping-list-categorizer-test: ## Score the categorizer against the prod shopping-list corpus (reports mismatches + 'Other' rate)
 	@cargo test -q --manifest-path ramekin-core/Cargo.toml --test shopping_list_categorizer_tests -- --nocapture
 

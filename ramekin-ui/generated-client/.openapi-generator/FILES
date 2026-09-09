@@ -14,6 +14,8 @@ apis/UsersApi.ts
 apis/index.ts
 docs/AuthApi.md
 docs/BookmarkletTokenResponse.md
+docs/CalorieEstimateResponse.md
+docs/CalorieRange.md
 docs/CaptureRequest.md
 docs/ClearCheckedResponse.md
 docs/ClientLogsApi.md
@@ -35,6 +37,7 @@ docs/Direction.md
 docs/EnrichApi.md
 docs/ErrorCode.md
 docs/ErrorResponse.md
+docs/EstimateCaloriesRequest.md
 docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
 docs/ImportApi.md
@@ -91,6 +94,7 @@ docs/TagsApi.md
 docs/TagsListResponse.md
 docs/TestingApi.md
 docs/UnauthedPingResponse.md
+docs/UnknownCalorieIngredient.md
 docs/UpdateMealPlanRequest.md
 docs/UpdateRecipeRequest.md
 docs/UpdateShoppingListItemRequest.md
@@ -100,6 +104,8 @@ docs/VersionListResponse.md
 docs/VersionSummary.md
 index.ts
 models/BookmarkletTokenResponse.ts
+models/CalorieEstimateResponse.ts
+models/CalorieRange.ts
 models/CaptureRequest.ts
 models/ClearCheckedResponse.ts
 models/CreateClientLogRequest.ts
@@ -119,6 +125,7 @@ models/CustomEnrichRequest.ts
 models/Direction.ts
 models/ErrorCode.ts
 models/ErrorResponse.ts
+models/EstimateCaloriesRequest.ts
 models/GenerateDescriptionResponse.ts
 models/GeneratePhotoResponse.ts
 models/ImportExtractionMethod.ts
@@ -167,6 +174,7 @@ models/SyncUpdatedItem.ts
 models/TagItem.ts
 models/TagsListResponse.ts
 models/UnauthedPingResponse.ts
+models/UnknownCalorieIngredient.ts
 models/UpdateMealPlanRequest.ts
 models/UpdateRecipeRequest.ts
 models/UpdateShoppingListItemRequest.ts

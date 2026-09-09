@@ -48,10 +48,12 @@ struct RecipeListView: View {
                         Image(systemName: "plus")
                             .accessibilityLabel("New recipe")
                     }
+                    .accessibilityLabel("New Recipe")
                     sortMenu
                     NavigationLink(value: NavigationDestination.settings) {
                         Image(systemName: "gear")
                     }
+                    .accessibilityLabel("Settings")
                 }
             }
         }

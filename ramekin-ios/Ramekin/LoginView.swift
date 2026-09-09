@@ -26,7 +26,7 @@ struct LoginView: View {
                 VStack(spacing: 16) {
                     Image(systemName: "fork.knife.circle.fill")
                         .font(.system(size: 64))
-                        .foregroundColor(.orange)
+                        .foregroundColor(.accentColor)
 
                     Text("Ramekin")
                         .font(.largeTitle)
@@ -89,7 +89,7 @@ struct LoginView: View {
                         Spacer()
                         if isLoading {
                             ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                .progressViewStyle(CircularProgressViewStyle(tint: Color(.systemBackground)))
                                 // Lets UI tests tell "login request still in
                                 // flight" apart from "finished with no error".
                                 .accessibilityIdentifier("login-in-progress")
@@ -104,9 +104,9 @@ struct LoginView: View {
                 .listRowBackground(
                     (isLoading || serverURL.isEmpty || username.isEmpty || password.isEmpty)
                         ? Color.gray
-                        : Color.orange
+                        : Color.accentColor
                 )
-                .foregroundColor(.white)
+                .foregroundColor(Color(.systemBackground))
             }
 
             if let error = errorMessage {

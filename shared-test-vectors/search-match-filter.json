@@ -8,7 +8,7 @@
       "tags": [],
       "ingredients": [],
       "instructions": "Bake the pie.",
-      "notes": null,
+      "notes": "literal a%b a_b a\\b; unicode x％y x﹪y x＿y x∖y x﹨y x＼y",
       "rating": null,
       "has_photo": false,
       "created_at": "2026-01-01T12:00:00Z",
@@ -515,11 +515,10 @@
       ]
     },
     {
-      "name": "fullwidth percent unaccents to a LIKE wildcard after escaping",
+      "name": "fullwidth percent matches a literal percent after normalization",
       "query": "100％",
       "expected_ids": [
-        "hot-cocoa",
-        "pancakes"
+        "hot-cocoa"
       ]
     },
     {
@@ -810,6 +809,99 @@
         "roast-chicken",
         "oeufs-en-meurette"
       ]
+    },
+    {
+      "name": "normalized ％ matches literal %",
+      "query": "a％b",
+      "expected_ids": [
+        "revised-classic"
+      ]
+    },
+    {
+      "name": "normalized ％ does not act as a wildcard or escape",
+      "query": "Bake％",
+      "expected_ids": []
+    },
+    {
+      "name": "ASCII % matches normalized recipe text",
+      "query": "x%y",
+      "expected_ids": [
+        "revised-classic"
+      ]
+    },
+    {
+      "name": "normalized ﹪ matches literal %",
+      "query": "a﹪b",
+      "expected_ids": [
+        "revised-classic"
+      ]
+    },
+    {
+      "name": "normalized ﹪ does not act as a wildcard or escape",
+      "query": "Bake﹪",
+      "expected_ids": []
+    },
+    {
+      "name": "normalized ＿ matches literal _",
+      "query": "a＿b",
+      "expected_ids": [
+        "revised-classic"
+      ]
+    },
+    {
+      "name": "normalized ＿ does not act as a wildcard or escape",
+      "query": "Bake＿",
+      "expected_ids": []
+    },
+    {
+      "name": "ASCII _ matches normalized recipe text",
+      "query": "x_y",
+      "expected_ids": [
+        "revised-classic"
+      ]
+    },
+    {
+      "name": "normalized ∖ matches literal \\",
+      "query": "a∖b",
+      "expected_ids": [
+        "revised-classic"
+      ]
+    },
+    {
+      "name": "normalized ∖ does not act as a wildcard or escape",
+      "query": "Bake∖",
+      "expected_ids": []
+    },
+    {
+      "name": "ASCII \\ matches normalized recipe text",
+      "query": "x\\y",
+      "expected_ids": [
+        "revised-classic"
+      ]
+    },
+    {
+      "name": "normalized ﹨ matches literal \\",
+      "query": "a﹨b",
+      "expected_ids": [
+        "revised-classic"
+      ]
+    },
+    {
+      "name": "normalized ﹨ does not act as a wildcard or escape",
+      "query": "Bake﹨",
+      "expected_ids": []
+    },
+    {
+      "name": "normalized ＼ matches literal \\",
+      "query": "a＼b",
+      "expected_ids": [
+        "revised-classic"
+      ]
+    },
+    {
+      "name": "normalized ＼ does not act as a wildcard or escape",
+      "query": "Bake＼",
+      "expected_ids": []
     }
   ]
 }

@@ -14,6 +14,8 @@
 
 # import models into model package
 from ramekin_client.models.bookmarklet_token_response import BookmarkletTokenResponse
+from ramekin_client.models.calorie_estimate_response import CalorieEstimateResponse
+from ramekin_client.models.calorie_range import CalorieRange
 from ramekin_client.models.capture_request import CaptureRequest
 from ramekin_client.models.clear_checked_response import ClearCheckedResponse
 from ramekin_client.models.create_client_log_request import CreateClientLogRequest
@@ -33,6 +35,7 @@ from ramekin_client.models.custom_enrich_request import CustomEnrichRequest
 from ramekin_client.models.direction import Direction
 from ramekin_client.models.error_code import ErrorCode
 from ramekin_client.models.error_response import ErrorResponse
+from ramekin_client.models.estimate_calories_request import EstimateCaloriesRequest
 from ramekin_client.models.generate_description_response import GenerateDescriptionResponse
 from ramekin_client.models.generate_photo_response import GeneratePhotoResponse
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod
@@ -81,6 +84,7 @@ from ramekin_client.models.sync_updated_item import SyncUpdatedItem
 from ramekin_client.models.tag_item import TagItem
 from ramekin_client.models.tags_list_response import TagsListResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse
+from ramekin_client.models.unknown_calorie_ingredient import UnknownCalorieIngredient
 from ramekin_client.models.update_meal_plan_request import UpdateMealPlanRequest
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest
 from ramekin_client.models.update_shopping_list_item_request import UpdateShoppingListItemRequest

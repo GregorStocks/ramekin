@@ -18,6 +18,7 @@
   font-weight: normal;
   font-size: 0.9rem;
   color: var(--text-faint);
+  font-family: var(--font-body);
 }
 
 @media (max-width: 960px) {
@@ -34,9 +35,11 @@
    rather than a floating pill, and lifts above the recipe grid (z-index: 5). */
 .cookbook-utility-bar {
   display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
   gap: 0.75rem;
-  margin: 0 -2rem 1.5rem;
-  padding: 0.75rem 2rem;
+  margin: 0 calc(-1 * var(--page-gutter)) 1.5rem;
+  padding: 0.75rem var(--page-gutter);
   position: sticky;
   top: 0;
   z-index: 5;
@@ -48,10 +51,13 @@
 .search-bar {
   position: relative;
   flex: 1;
+  min-width: 12rem;
 }
 
 .search-input {
   width: 100%;
+  height: 100%;
+  min-height: 44px;
   padding: 0.75rem 2.5rem 0.75rem 1rem;
   font-size: 1rem;
   border: 1px solid var(--border-subtle);
@@ -66,7 +72,6 @@
 }
 
 .search-input:focus {
-  outline: none;
   border-color: var(--accent);
   background: var(--surface-elevated);
 }
@@ -150,7 +155,6 @@
 }
 
 .sort-select:focus {
-  outline: none;
   border-color: var(--accent);
 }
 
@@ -158,8 +162,7 @@
 @media (max-width: 960px) {
   .cookbook-utility-bar {
     flex-wrap: wrap;
-    margin: 0 -1rem 1rem;
-    padding: 0.65rem 1rem;
+    margin-bottom: 1rem;
   }
 
   .search-bar {
@@ -168,11 +171,14 @@
   }
 
   .filter-button,
-  .sort-select,
-  .density-toggle {
-    flex: 1;
+  .sort-select {
+    flex: 1 1 auto;
     min-width: 0;
     justify-content: center;
+  }
+
+  .density-toggle {
+    flex: 0 0 auto;
   }
 }
 
@@ -303,7 +309,6 @@
 }
 
 .cookbook-filter-input:focus {
-  outline: none;
   border-color: var(--accent);
 }
 
@@ -602,11 +607,12 @@
   display: flex;
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  padding: 3px;
   background: var(--surface-1);
 }
 
 .density-toggle-button {
+  min-height: 36px;
   padding: 0.4rem 0.75rem;
   font-size: 0.85rem;
   background: transparent;
@@ -620,7 +626,11 @@
 }
 
 .density-toggle-button + .density-toggle-button {
-  border-left: 1px solid var(--border-hairline);
+  margin-left: 2px;
+}
+
+.density-toggle-button:focus-visible {
+  outline-offset: -2px;
 }
 
 .density-toggle-button:hover {

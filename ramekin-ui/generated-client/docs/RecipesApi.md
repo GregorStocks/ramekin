@@ -6,6 +6,7 @@ All URIs are relative to *http://localhost*
 |------------- | ------------- | -------------|
 | [**createRecipe**](RecipesApi.md#createrecipeoperation) | **POST** /api/recipes |  |
 | [**deleteRecipe**](RecipesApi.md#deleterecipe) | **DELETE** /api/recipes/{id} |  |
+| [**estimateCalories**](RecipesApi.md#estimatecaloriesoperation) | **POST** /api/recipes/estimate-calories |  |
 | [**exportAllRecipes**](RecipesApi.md#exportallrecipes) | **GET** /api/recipes/export |  |
 | [**exportRecipe**](RecipesApi.md#exportrecipe) | **GET** /api/recipes/{id}/export |  |
 | [**generateDescription**](RecipesApi.md#generatedescription) | **POST** /api/recipes/{id}/generate-description |  |
@@ -159,6 +160,77 @@ example().catch(console.error);
 | **204** | Recipe deleted successfully |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Recipe not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## estimateCalories
+
+> CalorieEstimateResponse estimateCalories(estimateCaloriesRequest)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  RecipesApi,
+} from '';
+import type { EstimateCaloriesOperationRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearer_auth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new RecipesApi(config);
+
+  const body = {
+    // EstimateCaloriesRequest
+    estimateCaloriesRequest: ...,
+  } satisfies EstimateCaloriesOperationRequest;
+
+  try {
+    const data = await api.estimateCalories(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **estimateCaloriesRequest** | [EstimateCaloriesRequest](EstimateCaloriesRequest.md) |  | |
+
+### Return type
+
+[**CalorieEstimateResponse**](CalorieEstimateResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Deterministic calorie estimate |  -  |
+| **400** | Invalid scale or numeric bounds |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

@@ -17,6 +17,7 @@ use axum::{
 use chrono::{DateTime, NaiveDate, Utc};
 use diesel::prelude::*;
 use ramekin_core::created_date_filter::{day_end_utc_exclusive, day_start_utc};
+use ramekin_core::search::normalize_for_search;
 use serde::{Deserialize, Serialize};
 use std::{collections::HashMap, sync::Arc};
 use utoipa::{IntoParams, ToSchema};
@@ -262,11 +263,13 @@ pub struct ListRecipesResponse {
     pub pagination: PaginationMetadata,
 }
 
-/// Escape special characters for ILIKE patterns
-fn escape_like_pattern(s: &str) -> String {
-    s.replace('\\', "\\\\")
+/// Normalize before escaping: unaccent can introduce LIKE metacharacters.
+fn literal_search_pattern(s: &str) -> String {
+    let escaped = normalize_for_search(s)
+        .replace('\\', "\\\\")
         .replace('%', "\\%")
-        .replace('_', "\\_")
+        .replace('_', "\\_");
+    format!("%{escaped}%")
 }
 
 #[utoipa::path(
@@ -335,19 +338,18 @@ fn list_recipes_blocking(
         // between words, OR between fields). Matches are case- AND
         // accent-insensitive ("creme brulee" finds "Crème Brûlée").
         for token in &parsed.text {
-            let pattern = format!("%{}%", escape_like_pattern(token));
+            let pattern = literal_search_pattern(token);
             query = query.filter(
-                raw_sql::unaccent_ilike("recipe_versions.title", &pattern)
-                    .or(raw_sql::unaccent_ilike(
-                        "recipe_versions.description",
-                        &pattern,
-                    ))
-                    .or(raw_sql::unaccent_ilike(
-                        "recipe_versions.instructions",
-                        &pattern,
-                    ))
-                    .or(raw_sql::unaccent_ilike("recipe_versions.notes", &pattern))
-                    .or(raw_sql::ingredients_unaccent_ilike(&pattern)),
+                raw_sql::f_unaccent(recipe_versions::title.nullable())
+                    .ilike(pattern.clone())
+                    .or(raw_sql::f_unaccent(recipe_versions::description).ilike(pattern.clone()))
+                    .or(
+                        raw_sql::f_unaccent(recipe_versions::instructions.nullable())
+                            .ilike(pattern.clone()),
+                    )
+                    .or(raw_sql::f_unaccent(recipe_versions::notes).ilike(pattern.clone()))
+                    .or(raw_sql::f_unaccent(raw_sql::ingredients_text().nullable())
+                        .ilike(pattern.clone())),
             );
         }
 
@@ -365,11 +367,8 @@ fn list_recipes_blocking(
 
         // Source filter (accent- and case-insensitive)
         if let Some(ref source) = parsed.source {
-            let pattern = format!("%{}%", escape_like_pattern(source));
-            query = query.filter(raw_sql::unaccent_ilike(
-                "recipe_versions.source_name",
-                &pattern,
-            ));
+            let pattern = literal_search_pattern(source);
+            query = query.filter(raw_sql::f_unaccent(recipe_versions::source_name).ilike(pattern));
         }
 
         // Has photos filter

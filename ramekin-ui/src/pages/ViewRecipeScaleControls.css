@@ -13,6 +13,7 @@
 }
 
 .scale-preset {
+  min-height: 36px;
   background: var(--surface-2);
   border: 1px solid var(--border-subtle);
   border-radius: 4px;
@@ -32,8 +33,9 @@
   border-color: var(--accent);
 }
 
-.scale-custom-input {
-  width: 4.5rem;
+.scale-controls .scale-custom-input {
+  width: 7rem;
+  min-height: 36px;
   padding: 0.2rem 0.4rem;
   font-size: 0.85rem;
   border: 1px solid var(--border-subtle);

@@ -30,6 +30,7 @@ export default function CookbookToolbar(props: CookbookToolbarProps) {
           type="text"
           class="search-input"
           placeholder="Search recipes..."
+          aria-label="Search recipes"
           value={props.searchInput()}
           onInput={(event) =>
             props.updateSearchQuery(event.currentTarget.value)
@@ -39,6 +40,7 @@ export default function CookbookToolbar(props: CookbookToolbarProps) {
           <button
             type="button"
             class="search-clear"
+            aria-label="Clear search"
             onClick={props.clearSearch}
           >
             &times;
@@ -59,6 +61,7 @@ export default function CookbookToolbar(props: CookbookToolbarProps) {
       </button>
       <select
         class="sort-select"
+        aria-label="Sort recipes"
         value={props.hasTextQuery() ? "best" : props.sortOption()}
         disabled={props.hasTextQuery()}
         title={

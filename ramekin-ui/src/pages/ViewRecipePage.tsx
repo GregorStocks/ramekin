@@ -10,6 +10,7 @@ import {
 import { useParams, A, useNavigate, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import StarRating from "../components/StarRating";
+import CalorieEstimate from "../components/CalorieEstimate";
 import Modal from "../components/Modal";
 import EnrichPreviewModal from "../components/EnrichPreviewModal";
 import AddToShoppingListModal from "../components/AddToShoppingListModal";
@@ -23,7 +24,11 @@ import {
 } from "../utils/recipeFormHelpers";
 import { parseTag } from "../utils/tagHierarchy";
 import { usePageTitle } from "../utils/pageTitle";
-import { scaleAmount } from "../utils/scaleAmount";
+import {
+  scaleAmount,
+  isValidRecipeScale,
+  MAX_RECIPE_SCALE,
+} from "../utils/scaleAmount";
 import { formatIngredientParts } from "../utils/ingredientFormatting";
 import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
 import { pollScrapeJob } from "../utils/pollScrapeJob";
@@ -84,18 +89,18 @@ export default function ViewRecipePage() {
   const scale = () => {
     const raw = searchParams.scale;
     const v = typeof raw === "string" ? Number(raw) : NaN;
-    return Number.isFinite(v) && v > 0 ? v : 1;
+    return isValidRecipeScale(v) ? v : 1;
   };
 
   const setScale = (v: number) => {
-    if (!Number.isFinite(v) || v <= 0) return;
+    if (!isValidRecipeScale(v)) return;
     setSearchParams({ scale: v === 1 ? undefined : String(v) });
   };
 
   const [customScaleInput, setCustomScaleInput] = createSignal("");
   const applyCustomScale = () => {
     const v = Number(customScaleInput());
-    if (Number.isFinite(v) && v > 0) {
+    if (isValidRecipeScale(v)) {
       setScale(v);
     }
   };
@@ -406,115 +411,153 @@ export default function ViewRecipePage() {
                 </Show>
               </div>
               <div class="recipe-actions">
-                <Show when={r().sourceUrl}>
-                  <button
-                    type="button"
-                    class="btn"
-                    onClick={handleRescrape}
-                    disabled={rescraping() || isViewingHistoricalVersion()}
-                  >
-                    {rescraping() ? "Rescraping..." : "Rescrape"}
-                  </button>
-                </Show>
-                <button
-                  type="button"
-                  class="btn"
-                  onClick={recipeAiActions.handleNormalizeTitle}
-                  disabled={
-                    recipeAiActions.normalizingTitle() ||
-                    isViewingHistoricalVersion() ||
-                    loading()
-                  }
-                >
-                  {recipeAiActions.normalizingTitle()
-                    ? "Renaming..."
-                    : AI_ENRICHMENTS.normalizeTitle.individualLabel}
-                </button>
-                <button
-                  type="button"
-                  class="btn"
-                  onClick={recipeAiActions.handleGenerateDescription}
-                  disabled={
-                    recipeAiActions.generatingDescription() ||
-                    isViewingHistoricalVersion() ||
-                    loading()
-                  }
-                >
-                  {recipeAiActions.generatingDescription()
-                    ? "Generating..."
-                    : AI_ENRICHMENTS.generateDescription.individualLabel}
-                </button>
-                <button
-                  type="button"
-                  class="btn"
-                  onClick={recipeAiActions.handleEnrich}
-                  disabled={
-                    recipeAiActions.enriching() || isViewingHistoricalVersion()
-                  }
-                >
-                  {recipeAiActions.enriching()
-                    ? "Enriching..."
-                    : AI_ENRICHMENTS.enrichRecipe.individualLabel}
-                </button>
-                <button
-                  type="button"
-                  class="btn"
-                  onClick={() =>
-                    recipeAiActions.setShowCustomEnrichInput(
-                      !recipeAiActions.showCustomEnrichInput(),
-                    )
-                  }
-                  disabled={
-                    recipeAiActions.enriching() || isViewingHistoricalVersion()
-                  }
-                >
-                  {AI_ENRICHMENTS.customEnrich.individualLabel}
-                </button>
-                <button
-                  type="button"
-                  class="btn"
-                  onClick={recipeAiActions.handleGeneratePhoto}
-                  disabled={
-                    recipeAiActions.generatingPhoto() ||
-                    isViewingHistoricalVersion()
-                  }
-                >
-                  {recipeAiActions.generatingPhoto()
-                    ? "Generating Photo..."
-                    : AI_ENRICHMENTS.generatePhoto.individualLabel}
-                </button>
-                <button
-                  type="button"
-                  class="btn"
-                  onClick={() => setShowShoppingListModal(true)}
-                  disabled={isViewingHistoricalVersion()}
-                >
-                  Add to Shopping List
-                </button>
-                <button
-                  type="button"
-                  class="btn"
-                  onClick={openMealPlanModal}
-                  disabled={isViewingHistoricalVersion()}
-                >
-                  Add to Meal Plan
-                </button>
                 <A href={`/recipes/${params.id}/edit`} class="btn btn-primary">
                   Edit
                 </A>
-                <button
-                  class="btn btn-danger-outline"
-                  onClick={handleDelete}
-                  disabled={deleting()}
+                <details
+                  class="recipe-more-actions"
+                  onKeyDown={(event) => {
+                    if (event.key === "Escape") {
+                      event.currentTarget.open = false;
+                      event.currentTarget.querySelector("summary")?.focus();
+                    }
+                  }}
                 >
-                  {deleting() ? "Deleting..." : "Delete"}
-                </button>
+                  <summary class="btn">More actions</summary>
+                  <div
+                    class="recipe-more-actions-panel"
+                    onClick={(event) => {
+                      if (event.target.closest("button[data-close-actions]")) {
+                        const disclosure =
+                          event.currentTarget.closest("details");
+                        if (disclosure) {
+                          disclosure.open = false;
+                          disclosure.querySelector("summary")?.focus();
+                        }
+                      }
+                    }}
+                  >
+                    <div class="recipe-action-group">
+                      <p class="recipe-action-label">Plan & shop</p>
+                      <button
+                        type="button"
+                        class="btn"
+                        onClick={() => setShowShoppingListModal(true)}
+                        data-close-actions="true"
+                        disabled={isViewingHistoricalVersion()}
+                      >
+                        Add to Shopping List
+                      </button>
+                      <button
+                        type="button"
+                        class="btn"
+                        onClick={openMealPlanModal}
+                        data-close-actions="true"
+                        disabled={isViewingHistoricalVersion()}
+                      >
+                        Add to Meal Plan
+                      </button>
+                    </div>
+                    <div class="recipe-action-group">
+                      <p class="recipe-action-label">Update recipe</p>
+                      <Show when={r().sourceUrl}>
+                        <button
+                          type="button"
+                          class="btn"
+                          onClick={handleRescrape}
+                          disabled={
+                            rescraping() || isViewingHistoricalVersion()
+                          }
+                        >
+                          {rescraping() ? "Rescraping..." : "Rescrape"}
+                        </button>
+                      </Show>
+                      <button
+                        type="button"
+                        class="btn"
+                        onClick={recipeAiActions.handleNormalizeTitle}
+                        disabled={
+                          recipeAiActions.normalizingTitle() ||
+                          isViewingHistoricalVersion() ||
+                          loading()
+                        }
+                      >
+                        {recipeAiActions.normalizingTitle()
+                          ? "Renaming..."
+                          : AI_ENRICHMENTS.normalizeTitle.individualLabel}
+                      </button>
+                      <button
+                        type="button"
+                        class="btn"
+                        onClick={recipeAiActions.handleGenerateDescription}
+                        disabled={
+                          recipeAiActions.generatingDescription() ||
+                          isViewingHistoricalVersion() ||
+                          loading()
+                        }
+                      >
+                        {recipeAiActions.generatingDescription()
+                          ? "Generating..."
+                          : AI_ENRICHMENTS.generateDescription.individualLabel}
+                      </button>
+                      <button
+                        type="button"
+                        class="btn"
+                        onClick={recipeAiActions.handleEnrich}
+                        disabled={
+                          recipeAiActions.enriching() ||
+                          isViewingHistoricalVersion()
+                        }
+                      >
+                        {recipeAiActions.enriching()
+                          ? "Enriching..."
+                          : AI_ENRICHMENTS.enrichRecipe.individualLabel}
+                      </button>
+                      <button
+                        type="button"
+                        class="btn"
+                        data-close-actions="true"
+                        onClick={() =>
+                          recipeAiActions.setShowCustomEnrichInput(
+                            !recipeAiActions.showCustomEnrichInput(),
+                          )
+                        }
+                        disabled={
+                          recipeAiActions.enriching() ||
+                          isViewingHistoricalVersion()
+                        }
+                      >
+                        {AI_ENRICHMENTS.customEnrich.individualLabel}
+                      </button>
+                      <button
+                        type="button"
+                        class="btn"
+                        onClick={recipeAiActions.handleGeneratePhoto}
+                        disabled={
+                          recipeAiActions.generatingPhoto() ||
+                          isViewingHistoricalVersion()
+                        }
+                      >
+                        {recipeAiActions.generatingPhoto()
+                          ? "Generating Photo..."
+                          : AI_ENRICHMENTS.generatePhoto.individualLabel}
+                      </button>
+                    </div>
+                    <div class="recipe-action-group">
+                      <button
+                        class="btn btn-danger-outline"
+                        onClick={handleDelete}
+                        data-close-actions="true"
+                        disabled={deleting()}
+                      >
+                        {deleting() ? "Deleting..." : "Delete"}
+                      </button>
+                    </div>
+                  </div>
+                </details>
               </div>
               <Show when={recipeAiActions.showCustomEnrichInput()}>
-                <div
-                  class="custom-enrich-input"
-                  style={{ display: "flex", gap: "8px", "margin-top": "8px" }}
-                >
+                <div class="custom-enrich-input">
                   <input
                     type="text"
                     placeholder="e.g., make this vegan, double the servings..."
@@ -529,7 +572,7 @@ export default function ViewRecipePage() {
                         recipeAiActions.handleCustomEnrich();
                     }}
                     disabled={recipeAiActions.enriching()}
-                    style={{ flex: "1" }}
+                    aria-label="Recipe customization instructions"
                   />
                   <button
                     type="button"
@@ -578,13 +621,6 @@ export default function ViewRecipePage() {
                 </div>
               </div>
             </Show>
-
-            <RecipeVersioningSection
-              recipeId={params.id}
-              currentVersionId={currentVersionId}
-              onViewVersion={handleViewVersion}
-              onRevertVersion={handleRevertClick}
-            />
 
             <div class="recipe-header-compact">
               <h2>{r().title}</h2>
@@ -717,8 +753,10 @@ export default function ViewRecipePage() {
                         type="number"
                         step="0.25"
                         min="0"
+                        max={MAX_RECIPE_SCALE}
                         class="scale-custom-input"
                         placeholder="Custom"
+                        aria-label="Custom recipe scale"
                         value={customScaleInput()}
                         onInput={(e) =>
                           setCustomScaleInput(e.currentTarget.value)
@@ -809,6 +847,12 @@ export default function ViewRecipePage() {
                     <div class="recipe-notes">{r().notes}</div>
                   </section>
                 </Show>
+                <CalorieEstimate
+                  ingredients={r().ingredients}
+                  servings={r().servings}
+                  scale={scale()}
+                />
+
                 <Show when={r().nutritionalInfo}>
                   <section class="recipe-section">
                     <h3>Nutritional Info</h3>
@@ -817,6 +861,13 @@ export default function ViewRecipePage() {
                 </Show>
               </div>
             </div>
+
+            <RecipeVersioningSection
+              recipeId={params.id}
+              currentVersionId={currentVersionId}
+              onViewVersion={handleViewVersion}
+              onRevertVersion={handleRevertClick}
+            />
 
             {/* Revert Confirmation Modal */}
             <Modal

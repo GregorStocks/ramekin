@@ -147,7 +147,7 @@ extension RecipeFormView {
                         viewModel.formData.rating = viewModel.formData.rating == star ? nil : star
                     } label: {
                         Image(systemName: star <= (viewModel.formData.rating ?? 0) ? "star.fill" : "star")
-                            .font(.title2).foregroundColor(.orange)
+                            .font(.title2).foregroundColor(.accentColor)
                     }
                     .buttonStyle(.plain)
                 }
@@ -244,7 +244,7 @@ extension RecipeFormView {
                     for idx in group.indices { viewModel.formData.ingredients[idx].section = newName }
                 }
             ))
-            .font(.headline).foregroundColor(.orange)
+            .font(.headline).foregroundColor(.accentColor)
         }
 
         ForEach(group.indices, id: \.self) { idx in

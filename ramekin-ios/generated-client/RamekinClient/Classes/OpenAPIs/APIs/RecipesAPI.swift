@@ -89,6 +89,42 @@ open class RecipesAPI {
 
     /**
 
+     - parameter estimateCaloriesRequest: (body)  
+     - returns: CalorieEstimateResponse
+     */
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    open class func estimateCalories(estimateCaloriesRequest: EstimateCaloriesRequest) async throws -> CalorieEstimateResponse {
+        return try await estimateCaloriesWithRequestBuilder(estimateCaloriesRequest: estimateCaloriesRequest).execute().body
+    }
+
+    /**
+     - POST /api/recipes/estimate-calories
+     - Bearer Token:
+       - type: http
+       - name: bearer_auth
+     - parameter estimateCaloriesRequest: (body)  
+     - returns: RequestBuilder<CalorieEstimateResponse> 
+     */
+    open class func estimateCaloriesWithRequestBuilder(estimateCaloriesRequest: EstimateCaloriesRequest) -> RequestBuilder<CalorieEstimateResponse> {
+        let localVariablePath = "/api/recipes/estimate-calories"
+        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: estimateCaloriesRequest)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<CalorieEstimateResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
+
      - returns: Void
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)

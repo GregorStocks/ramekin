@@ -136,7 +136,7 @@ extension RecipeSearchSupport {
         )
     }
 
-    private static func scalarsContain(_ haystack: [UInt32], _ needle: [UInt32]) -> Bool {
+    static func scalarsContain(_ haystack: [UInt32], _ needle: [UInt32]) -> Bool {
         if needle.isEmpty {
             return true
         }

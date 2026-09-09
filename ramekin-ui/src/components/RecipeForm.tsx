@@ -63,6 +63,7 @@ function SortableIngredient(props: {
         <input
           type="text"
           placeholder="Amount"
+          aria-label="Amount"
           value={getMeasurementAmount(props.ing, 0)}
           onInput={(e) =>
             updateMeasurementAmount(
@@ -77,6 +78,7 @@ function SortableIngredient(props: {
         <input
           type="text"
           placeholder="Unit"
+          aria-label="Unit"
           value={getMeasurementUnit(props.ing, 0)}
           onInput={(e) =>
             updateMeasurementUnit(
@@ -91,6 +93,7 @@ function SortableIngredient(props: {
         <input
           type="text"
           placeholder="Ingredient *"
+          aria-label="Ingredient"
           value={props.ing.item}
           onInput={(e) =>
             updateIngredientItem(
@@ -104,6 +107,7 @@ function SortableIngredient(props: {
         <input
           type="text"
           placeholder="Note"
+          aria-label="Ingredient note"
           value={props.ing.note || ""}
           onInput={(e) =>
             updateIngredientNote(
@@ -121,6 +125,7 @@ function SortableIngredient(props: {
             addAlternativeMeasurement(props.index, props.setIngredients)
           }
           title="Add alternative measurement"
+          aria-label="Add alternative measurement"
         >
           +
         </button>
@@ -128,6 +133,7 @@ function SortableIngredient(props: {
           type="button"
           class="btn btn-small btn-remove"
           onClick={() => removeIngredient(props.index, props.setIngredients)}
+          aria-label="Remove ingredient"
         >
           &times;
         </button>
@@ -141,6 +147,7 @@ function SortableIngredient(props: {
                 <input
                   type="text"
                   placeholder="Amount"
+                  aria-label="Amount"
                   value={getMeasurementAmount(props.ing, mIndex + 1)}
                   onInput={(e) =>
                     updateMeasurementAmount(
@@ -155,6 +162,7 @@ function SortableIngredient(props: {
                 <input
                   type="text"
                   placeholder="Unit"
+                  aria-label="Unit"
                   value={getMeasurementUnit(props.ing, mIndex + 1)}
                   onInput={(e) =>
                     updateMeasurementUnit(
@@ -177,6 +185,7 @@ function SortableIngredient(props: {
                     )
                   }
                   title="Remove alternative measurement"
+                  aria-label="Remove alternative measurement"
                 >
                   &times;
                 </button>
@@ -341,6 +350,7 @@ function IngredientsSection(props: {
 }
 
 export default function RecipeForm(props: RecipeFormProps) {
+  let photoUploadInput: HTMLInputElement | undefined;
   return (
     <form onSubmit={props.onSubmit}>
       <div class="form-group">
@@ -521,16 +531,23 @@ export default function RecipeForm(props: RecipeFormProps) {
           <label>Photos</label>
           <div class="section-header-actions">
             <span class="photo-paste-hint">or paste from clipboard</span>
-            <label class="btn btn-small">
+            <button
+              type="button"
+              class="btn btn-small"
+              onClick={() => photoUploadInput?.click()}
+              disabled={props.form.uploading()}
+            >
               {props.form.uploading() ? "Uploading..." : "+ Add Photo"}
-              <input
-                type="file"
-                accept="image/*"
-                onChange={props.form.onPhotoUpload}
-                disabled={props.form.uploading()}
-                style={{ display: "none" }}
-              />
-            </label>
+            </button>
+            <input
+              ref={photoUploadInput}
+              class="photo-upload-input"
+              type="file"
+              accept="image/*"
+              aria-label="Recipe photo"
+              onChange={props.form.onPhotoUpload}
+              disabled={props.form.uploading()}
+            />
           </div>
         </div>
         <Show when={props.form.photoIds().length > 0}>
