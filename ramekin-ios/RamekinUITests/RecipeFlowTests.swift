@@ -34,11 +34,12 @@ final class RecipeFlowTests: XCTestCase {
         app.secureTextFields["Password"].typeText("t")
         submitLogin()
         XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
-        app.buttons["New recipe"].tap()
+        app.buttons["New Recipe"].tap()
         let text = app.textViews["Recipe text"]
         XCTAssertTrue(text.waitForExistence(timeout: slowSimulatorTimeout))
         text.tap()
         text.typeText("Text Pancakes\n1 cup all-purpose flour\nMix and cook.")
+        app.swipeUp()
         app.buttons["Review recipe"].tap()
         let title = app.textFields["Recipe title"]
         XCTAssertTrue(title.waitForExistence(timeout: slowSimulatorTimeout))
@@ -46,7 +47,14 @@ final class RecipeFlowTests: XCTestCase {
         title.typeText("iOS text pancakes")
         app.navigationBars.buttons["Save"].tap()
         XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
-        XCTAssertTrue(app.staticTexts["iOS text pancakes"].firstMatch.waitForExistence(timeout: slowSimulatorTimeout))
+        let search = app.searchFields.firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: slowSimulatorTimeout))
+        search.tap()
+        search.typeText("iOS text pancakes")
+        let savedRecipe = app.buttons.matching(
+            NSPredicate(format: "label BEGINSWITH %@", "iOS text pancakes")
+        ).firstMatch
+        XCTAssertTrue(savedRecipe.waitForExistence(timeout: slowSimulatorTimeout))
     }
 
     /// Clear a text field by triple-tapping to select all, then deleting.

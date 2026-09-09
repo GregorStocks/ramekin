@@ -46,7 +46,6 @@ struct RecipeListView: View {
                 HStack(spacing: 16) {
                     NavigationLink(value: NavigationDestination.createRecipe) {
                         Image(systemName: "plus")
-                            .accessibilityLabel("New recipe")
                     }
                     .accessibilityLabel("New Recipe")
                     sortMenu
