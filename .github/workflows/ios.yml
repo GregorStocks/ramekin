@@ -50,7 +50,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: brew install xcodegen postgresql@16
+        run: brew install xcodegen postgresql@16 uv
 
       - name: Start PostgreSQL
         run: |
@@ -126,6 +126,19 @@ jobs:
           LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
           PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
 
+      - name: Start mock AI service
+        run: |
+          mkdir -p logs
+          make mock-openrouter MOCK_OPENROUTER_PORT=55002 > logs/mock-openrouter.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://localhost:55002/ > /dev/null 2>&1; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat logs/mock-openrouter.log
+          exit 1
+
       - name: Start server
         run: |
           cd server
@@ -144,6 +157,9 @@ jobs:
           PORT: 55000
           RUST_LOG: error
           INSECURE_PASSWORD_HASHING: 1
+          OPENROUTER_API_KEY: test-key
+          RAMEKIN_AI_BASE_URL: http://localhost:55002/v1
+          RAMEKIN_AI_RATE_LIMIT_MS: 0
 
       - name: Build CLI and seed database
         run: |
