@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createRecipe**](RecipesAPI.md#createrecipe) | **POST** /api/recipes | 
 [**deleteRecipe**](RecipesAPI.md#deleterecipe) | **DELETE** /api/recipes/{id} | 
+[**estimateCalories**](RecipesAPI.md#estimatecalories) | **POST** /api/recipes/estimate-calories | 
 [**exportAllRecipes**](RecipesAPI.md#exportallrecipes) | **GET** /api/recipes/export | 
 [**exportRecipe**](RecipesAPI.md#exportrecipe) | **GET** /api/recipes/{id}/export | 
 [**generateDescription**](RecipesAPI.md#generatedescription) | **POST** /api/recipes/{id}/generate-description | 
@@ -110,6 +111,53 @@ Void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **estimateCalories**
+```swift
+    open class func estimateCalories(estimateCaloriesRequest: EstimateCaloriesRequest, completion: @escaping (_ data: CalorieEstimateResponse?, _ error: Error?) -> Void)
+```
+
+
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import RamekinClient
+
+let estimateCaloriesRequest = EstimateCaloriesRequest(ingredients: [Ingredient(item: "item_example", measurements: [Measurement(amount: "amount_example", unit: "unit_example")], note: "note_example", section: "section_example")], scale: 123, servings: "servings_example") // EstimateCaloriesRequest | 
+
+RecipesAPI.estimateCalories(estimateCaloriesRequest: estimateCaloriesRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **estimateCaloriesRequest** | [**EstimateCaloriesRequest**](EstimateCaloriesRequest.md) |  | 
+
+### Return type
+
+[**CalorieEstimateResponse**](CalorieEstimateResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

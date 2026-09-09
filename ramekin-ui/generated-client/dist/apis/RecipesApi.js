@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, GenerateDescriptionResponseFromJSON, GeneratePhotoResponseFromJSON, ListRecipesResponseFromJSON, NormalizeTitleResponseFromJSON, RecipeResponseFromJSON, RescrapeResponseFromJSON, SyncRecipesResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
+import { CalorieEstimateResponseFromJSON, CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, EstimateCaloriesRequestToJSON, GenerateDescriptionResponseFromJSON, GeneratePhotoResponseFromJSON, ListRecipesResponseFromJSON, NormalizeTitleResponseFromJSON, RecipeResponseFromJSON, RescrapeResponseFromJSON, SyncRecipesResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -78,6 +78,38 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async deleteRecipe(requestParameters, initOverrides) {
         await this.deleteRecipeRaw(requestParameters, initOverrides);
+    }
+    /**
+     */
+    async estimateCaloriesRaw(requestParameters, initOverrides) {
+        if (requestParameters['estimateCaloriesRequest'] == null) {
+            throw new runtime.RequiredError('estimateCaloriesRequest', 'Required parameter "estimateCaloriesRequest" was null or undefined when calling estimateCalories().');
+        }
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+        let urlPath = `/api/recipes/estimate-calories`;
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EstimateCaloriesRequestToJSON(requestParameters['estimateCaloriesRequest']),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CalorieEstimateResponseFromJSON(jsonValue));
+    }
+    /**
+     */
+    async estimateCalories(requestParameters, initOverrides) {
+        const response = await this.estimateCaloriesRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */

@@ -79,6 +79,7 @@ Class | Method | HTTP request | Description
 *PhotosApi* | [**upload**](ramekin_client/docs/PhotosApi.md#upload) | **POST** /api/photos | 
 *RecipesApi* | [**create_recipe**](ramekin_client/docs/RecipesApi.md#create_recipe) | **POST** /api/recipes | 
 *RecipesApi* | [**delete_recipe**](ramekin_client/docs/RecipesApi.md#delete_recipe) | **DELETE** /api/recipes/{id} | 
+*RecipesApi* | [**estimate_calories**](ramekin_client/docs/RecipesApi.md#estimate_calories) | **POST** /api/recipes/estimate-calories | 
 *RecipesApi* | [**export_all_recipes**](ramekin_client/docs/RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
 *RecipesApi* | [**export_recipe**](ramekin_client/docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 *RecipesApi* | [**generate_description**](ramekin_client/docs/RecipesApi.md#generate_description) | **POST** /api/recipes/{id}/generate-description | 
@@ -115,6 +116,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [BookmarkletTokenResponse](ramekin_client/docs/BookmarkletTokenResponse.md)
+ - [CalorieEstimateResponse](ramekin_client/docs/CalorieEstimateResponse.md)
+ - [CalorieRange](ramekin_client/docs/CalorieRange.md)
  - [CaptureRequest](ramekin_client/docs/CaptureRequest.md)
  - [ClearCheckedResponse](ramekin_client/docs/ClearCheckedResponse.md)
  - [CreateClientLogRequest](ramekin_client/docs/CreateClientLogRequest.md)
@@ -134,6 +137,7 @@ Class | Method | HTTP request | Description
  - [Direction](ramekin_client/docs/Direction.md)
  - [ErrorCode](ramekin_client/docs/ErrorCode.md)
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
+ - [EstimateCaloriesRequest](ramekin_client/docs/EstimateCaloriesRequest.md)
  - [GenerateDescriptionResponse](ramekin_client/docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](ramekin_client/docs/GeneratePhotoResponse.md)
  - [ImportExtractionMethod](ramekin_client/docs/ImportExtractionMethod.md)
@@ -180,6 +184,7 @@ Class | Method | HTTP request | Description
  - [TagItem](ramekin_client/docs/TagItem.md)
  - [TagsListResponse](ramekin_client/docs/TagsListResponse.md)
  - [UnauthedPingResponse](ramekin_client/docs/UnauthedPingResponse.md)
+ - [UnknownCalorieIngredient](ramekin_client/docs/UnknownCalorieIngredient.md)
  - [UpdateMealPlanRequest](ramekin_client/docs/UpdateMealPlanRequest.md)
  - [UpdateRecipeRequest](ramekin_client/docs/UpdateRecipeRequest.md)
  - [UpdateShoppingListItemRequest](ramekin_client/docs/UpdateShoppingListItemRequest.md)

@@ -2,6 +2,22 @@ import XCTest
 @testable import Ramekin
 
 final class RecipeScaleSupportTests: XCTestCase {
+    struct ScaleValidationVector: Decodable {
+        let name: String
+        let scale: Double
+        let valid: Bool
+    }
+
+    func testScaleValidationMatchesSharedVectors() throws {
+        let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "recipe-scale-validation", withExtension: "json"))
+        let vectors = try JSONDecoder().decode([ScaleValidationVector].self, from: Data(contentsOf: url))
+        for vector in vectors {
+            XCTAssertEqual(RecipeScaleSupport.isValidScale(vector.scale), vector.valid, vector.name)
+        }
+        XCTAssertFalse(RecipeScaleSupport.isValidScale(.nan))
+        XCTAssertFalse(RecipeScaleSupport.isValidScale(.infinity))
+    }
+
     struct ScaleAmountVector: Decodable {
         let name: String
         let amount: String

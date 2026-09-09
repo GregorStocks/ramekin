@@ -1,0 +1,14 @@
+{
+  "title": "Implement the documented USDA density importer",
+  "description": "ingredient-density/README.md documents regenerating USDA density data, and make ingredient-density-import invokes src/bin/import_usda.rs, but that binary is a stub that always exits 1 with 'USDA import not yet implemented'. \
+Implement reproducible regeneration from the documented source with provenance and validation, or replace the documented workflow with an actual supported regeneration path. \
+Discovered while investigating deterministic recipe calorie estimates.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "backend",
+  ],
+  "created_at": "2026-09-08T16:20:54Z",
+  "updated_at": "2026-09-08T16:20:54Z",
+}

@@ -18,6 +18,8 @@ ramekin_client/api_response.py
 ramekin_client/configuration.py
 ramekin_client/docs/AuthApi.md
 ramekin_client/docs/BookmarkletTokenResponse.md
+ramekin_client/docs/CalorieEstimateResponse.md
+ramekin_client/docs/CalorieRange.md
 ramekin_client/docs/CaptureRequest.md
 ramekin_client/docs/ClearCheckedResponse.md
 ramekin_client/docs/ClientLogsApi.md
@@ -39,6 +41,7 @@ ramekin_client/docs/Direction.md
 ramekin_client/docs/EnrichApi.md
 ramekin_client/docs/ErrorCode.md
 ramekin_client/docs/ErrorResponse.md
+ramekin_client/docs/EstimateCaloriesRequest.md
 ramekin_client/docs/GenerateDescriptionResponse.md
 ramekin_client/docs/GeneratePhotoResponse.md
 ramekin_client/docs/ImportApi.md
@@ -93,6 +96,7 @@ ramekin_client/docs/TagsApi.md
 ramekin_client/docs/TagsListResponse.md
 ramekin_client/docs/TestingApi.md
 ramekin_client/docs/UnauthedPingResponse.md
+ramekin_client/docs/UnknownCalorieIngredient.md
 ramekin_client/docs/UpdateMealPlanRequest.md
 ramekin_client/docs/UpdateRecipeRequest.md
 ramekin_client/docs/UpdateShoppingListItemRequest.md
@@ -103,6 +107,8 @@ ramekin_client/docs/VersionSummary.md
 ramekin_client/exceptions.py
 ramekin_client/models/__init__.py
 ramekin_client/models/bookmarklet_token_response.py
+ramekin_client/models/calorie_estimate_response.py
+ramekin_client/models/calorie_range.py
 ramekin_client/models/capture_request.py
 ramekin_client/models/clear_checked_response.py
 ramekin_client/models/create_client_log_request.py
@@ -122,6 +128,7 @@ ramekin_client/models/custom_enrich_request.py
 ramekin_client/models/direction.py
 ramekin_client/models/error_code.py
 ramekin_client/models/error_response.py
+ramekin_client/models/estimate_calories_request.py
 ramekin_client/models/generate_description_response.py
 ramekin_client/models/generate_photo_response.py
 ramekin_client/models/import_extraction_method.py
@@ -168,6 +175,7 @@ ramekin_client/models/sync_updated_item.py
 ramekin_client/models/tag_item.py
 ramekin_client/models/tags_list_response.py
 ramekin_client/models/unauthed_ping_response.py
+ramekin_client/models/unknown_calorie_ingredient.py
 ramekin_client/models/update_meal_plan_request.py
 ramekin_client/models/update_recipe_request.py
 ramekin_client/models/update_shopping_list_item_request.py
@@ -178,6 +186,8 @@ ramekin_client/rest.py
 ramekin_client/test/__init__.py
 ramekin_client/test/test_auth_api.py
 ramekin_client/test/test_bookmarklet_token_response.py
+ramekin_client/test/test_calorie_estimate_response.py
+ramekin_client/test/test_calorie_range.py
 ramekin_client/test/test_capture_request.py
 ramekin_client/test/test_clear_checked_response.py
 ramekin_client/test/test_client_logs_api.py
@@ -199,6 +209,7 @@ ramekin_client/test/test_direction.py
 ramekin_client/test/test_enrich_api.py
 ramekin_client/test/test_error_code.py
 ramekin_client/test/test_error_response.py
+ramekin_client/test/test_estimate_calories_request.py
 ramekin_client/test/test_generate_description_response.py
 ramekin_client/test/test_generate_photo_response.py
 ramekin_client/test/test_import_api.py
@@ -253,6 +264,7 @@ ramekin_client/test/test_tags_api.py
 ramekin_client/test/test_tags_list_response.py
 ramekin_client/test/test_testing_api.py
 ramekin_client/test/test_unauthed_ping_response.py
+ramekin_client/test/test_unknown_calorie_ingredient.py
 ramekin_client/test/test_update_meal_plan_request.py
 ramekin_client/test/test_update_recipe_request.py
 ramekin_client/test/test_update_shopping_list_item_request.py
