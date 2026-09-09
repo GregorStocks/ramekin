@@ -20,6 +20,8 @@ import type {
   ImportFromPhotosResponse,
   ImportRecipeRequest,
   ImportRecipeResponse,
+  PrepareTextRecipeRequest,
+  PrepareTextRecipeResponse,
 } from '../models/index';
 import {
     ErrorResponseFromJSON,
@@ -32,6 +34,10 @@ import {
     ImportRecipeRequestToJSON,
     ImportRecipeResponseFromJSON,
     ImportRecipeResponseToJSON,
+    PrepareTextRecipeRequestFromJSON,
+    PrepareTextRecipeRequestToJSON,
+    PrepareTextRecipeResponseFromJSON,
+    PrepareTextRecipeResponseToJSON,
 } from '../models/index';
 
 export interface ImportFromPhotosOperationRequest {
@@ -40,6 +46,10 @@ export interface ImportFromPhotosOperationRequest {
 
 export interface ImportRecipeOperationRequest {
     importRecipeRequest: ImportRecipeRequest;
+}
+
+export interface PrepareTextRecipeOperationRequest {
+    prepareTextRecipeRequest: PrepareTextRecipeRequest;
 }
 
 /**
@@ -134,6 +144,51 @@ export class ImportApi extends runtime.BaseAPI {
      */
     async importRecipe(requestParameters: ImportRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImportRecipeResponse> {
         const response = await this.importRecipeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async prepareTextRecipeRaw(requestParameters: PrepareTextRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PrepareTextRecipeResponse>> {
+        if (requestParameters['prepareTextRecipeRequest'] == null) {
+            throw new runtime.RequiredError(
+                'prepareTextRecipeRequest',
+                'Required parameter "prepareTextRecipeRequest" was null or undefined when calling prepareTextRecipe().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/import/text`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PrepareTextRecipeRequestToJSON(requestParameters['prepareTextRecipeRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PrepareTextRecipeResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async prepareTextRecipe(requestParameters: PrepareTextRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PrepareTextRecipeResponse> {
+        const response = await this.prepareTextRecipeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

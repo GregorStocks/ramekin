@@ -22,6 +22,7 @@ Name | Type
 `title` | string
 `totalTime` | string
 `photoIds` | Array&lt;string&gt;
+`rawIngredients` | string
 
 ## Example
 
@@ -46,6 +47,7 @@ const example = {
   "title": null,
   "totalTime": null,
   "photoIds": null,
+  "rawIngredients": null,
 } satisfies CreateRecipeRequest
 
 console.log(example)

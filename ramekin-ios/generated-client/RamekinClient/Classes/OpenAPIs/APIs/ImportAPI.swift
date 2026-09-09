@@ -83,4 +83,40 @@ open class ImportAPI {
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
+
+    /**
+
+     - parameter prepareTextRecipeRequest: (body)  
+     - returns: PrepareTextRecipeResponse
+     */
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    open class func prepareTextRecipe(prepareTextRecipeRequest: PrepareTextRecipeRequest) async throws -> PrepareTextRecipeResponse {
+        return try await prepareTextRecipeWithRequestBuilder(prepareTextRecipeRequest: prepareTextRecipeRequest).execute().body
+    }
+
+    /**
+     - POST /api/import/text
+     - Bearer Token:
+       - type: http
+       - name: bearer_auth
+     - parameter prepareTextRecipeRequest: (body)  
+     - returns: RequestBuilder<PrepareTextRecipeResponse> 
+     */
+    open class func prepareTextRecipeWithRequestBuilder(prepareTextRecipeRequest: PrepareTextRecipeRequest) -> RequestBuilder<PrepareTextRecipeResponse> {
+        let localVariablePath = "/api/import/text"
+        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: prepareTextRecipeRequest)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<PrepareTextRecipeResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
 }

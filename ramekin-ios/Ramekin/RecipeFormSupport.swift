@@ -21,6 +21,24 @@ struct RecipeFormData {
 
     init() {}
 
+    init(content: RecipeContent) {
+        title = content.title
+        recipeDescription = content.description ?? ""
+        instructions = content.instructions
+        servings = content.servings ?? ""
+        prepTime = content.prepTime ?? ""
+        cookTime = content.cookTime ?? ""
+        totalTime = content.totalTime ?? ""
+        difficulty = content.difficulty ?? ""
+        rating = content.rating
+        sourceUrl = content.sourceUrl ?? ""
+        sourceName = content.sourceName ?? ""
+        tags = content.tags ?? []
+        notes = content.notes ?? ""
+        nutritionalInfo = content.nutritionalInfo ?? ""
+        ingredients = content.ingredients.map { EditableIngredient.from($0) }
+    }
+
     init(
         title: String,
         recipeDescription: String,

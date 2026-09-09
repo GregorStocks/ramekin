@@ -33,6 +33,7 @@ Class | Method | HTTP request | Description
 *EnrichAPI* | [**enrichRecipe**](docs/EnrichAPI.md#enrichrecipe) | **POST** /api/enrich | Enrich a recipe
 *ImportAPI* | [**importFromPhotos**](docs/ImportAPI.md#importfromphotos) | **POST** /api/import/photos | 
 *ImportAPI* | [**importRecipe**](docs/ImportAPI.md#importrecipe) | **POST** /api/import/recipe | 
+*ImportAPI* | [**prepareTextRecipe**](docs/ImportAPI.md#preparetextrecipe) | **POST** /api/import/text | 
 *MealPlansAPI* | [**createMealPlan**](docs/MealPlansAPI.md#createmealplan) | **POST** /api/meal-plans | 
 *MealPlansAPI* | [**deleteMealPlan**](docs/MealPlansAPI.md#deletemealplan) | **DELETE** /api/meal-plans/{id} | 
 *MealPlansAPI* | [**listMealPlans**](docs/MealPlansAPI.md#listmealplans) | **GET** /api/meal-plans | 
@@ -121,6 +122,8 @@ Class | Method | HTTP request | Description
  - [NormalizeTitleResponse](docs/NormalizeTitleResponse.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)
  - [PingResponse](docs/PingResponse.md)
+ - [PrepareTextRecipeRequest](docs/PrepareTextRecipeRequest.md)
+ - [PrepareTextRecipeResponse](docs/PrepareTextRecipeResponse.md)
  - [RecipeContent](docs/RecipeContent.md)
  - [RecipeResponse](docs/RecipeResponse.md)
  - [RecipeSummary](docs/RecipeSummary.md)

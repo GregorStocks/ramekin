@@ -52,6 +52,8 @@ docs/NormalizeTitleResponse.md
 docs/PaginationMetadata.md
 docs/PhotosApi.md
 docs/PingResponse.md
+docs/PrepareTextRecipeRequest.md
+docs/PrepareTextRecipeResponse.md
 docs/RecipeContent.md
 docs/RecipeResponse.md
 docs/RecipeSummary.md
@@ -151,6 +153,8 @@ src/models/mod.rs
 src/models/normalize_title_response.rs
 src/models/pagination_metadata.rs
 src/models/ping_response.rs
+src/models/prepare_text_recipe_request.rs
+src/models/prepare_text_recipe_response.rs
 src/models/recipe_content.rs
 src/models/recipe_response.rs
 src/models/recipe_summary.rs

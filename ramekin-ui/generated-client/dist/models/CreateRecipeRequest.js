@@ -48,6 +48,7 @@ export function CreateRecipeRequestFromJSONTyped(json, ignoreDiscriminator) {
         'title': json['title'],
         'totalTime': json['total_time'] == null ? undefined : json['total_time'],
         'photoIds': json['photo_ids'] == null ? undefined : json['photo_ids'],
+        'rawIngredients': json['raw_ingredients'] == null ? undefined : json['raw_ingredients'],
     };
 }
 export function CreateRecipeRequestToJSON(json) {
@@ -74,5 +75,6 @@ export function CreateRecipeRequestToJSONTyped(value, ignoreDiscriminator = fals
         'title': value['title'],
         'total_time': value['totalTime'],
         'photo_ids': value['photoIds'],
+        'raw_ingredients': value['rawIngredients'],
     };
 }

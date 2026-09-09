@@ -150,6 +150,36 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         if "recipe modification assistant" in all_text:
             return self._mock_custom_enrich(all_text, has_images=has_images)
 
+        if "recipe text extraction assistant" in all_text:
+            if "TEXT_EXTRACTION_FAILURE" in all_text:
+                return '{"raw_recipe":'
+            incomplete = "TEXT_INCOMPLETE" in all_text
+            return json.dumps(
+                {
+                    "raw_recipe": {
+                        "title": ""
+                        if incomplete
+                        else (
+                            "Force Text Enrichment Failure"
+                            if "TEXT_ENRICHMENT_FAILURE" in all_text
+                            else "Text Pancakes"
+                        ),
+                        "ingredients": (
+                            "1 cup all-purpose flour\n8 oz butter\n1 cup mystery powder"
+                        ),
+                        "instructions": ""
+                        if incomplete
+                        else "Mix ingredients.\n\nCook in a pan.",
+                        "image_urls": [],
+                        "servings": "4",
+                        "prep_time": "10 minutes",
+                        "source_name": "Family notebook",
+                        "notes": "Serve warm.",
+                    },
+                    "warnings": ["Check the missing fields."] if incomplete else [],
+                }
+            )
+
         if has_images:
             return self._mock_photo_extract()
 
@@ -250,6 +280,8 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
 
     def _mock_normalize_title(self, all_text):
         """Return a mock normalized title."""
+        if "Force Text Enrichment Failure" in all_text:
+            return '{"normalized_title":'
         # Try to extract the title from the prompt
         try:
             start = all_text.index("- Title: ") + len("- Title: ")

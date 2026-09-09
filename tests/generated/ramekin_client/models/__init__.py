@@ -56,6 +56,8 @@ from ramekin_client.models.measurement import Measurement
 from ramekin_client.models.normalize_title_response import NormalizeTitleResponse
 from ramekin_client.models.pagination_metadata import PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse
+from ramekin_client.models.prepare_text_recipe_request import PrepareTextRecipeRequest
+from ramekin_client.models.prepare_text_recipe_response import PrepareTextRecipeResponse
 from ramekin_client.models.recipe_content import RecipeContent
 from ramekin_client.models.recipe_response import RecipeResponse
 from ramekin_client.models.recipe_summary import RecipeSummary

@@ -21,7 +21,9 @@ use utoipa::ToSchema;
 ///
 /// Converts volume units (cups, tbsp, tsp) and imperial weights (oz, lb)
 /// to grams when density data is available.
-fn enrich_ingredients(ingredients: Vec<Ingredient>) -> Result<Vec<Ingredient>, serde_json::Error> {
+pub(crate) fn enrich_ingredients(
+    ingredients: Vec<Ingredient>,
+) -> Result<Vec<Ingredient>, serde_json::Error> {
     ingredients
         .into_iter()
         .map(|ing| {

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**import_from_photos**](ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 [**import_recipe**](ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
+[**prepare_text_recipe**](ImportApi.md#prepare_text_recipe) | **POST** /api/import/text | 
 
 
 # **import_from_photos**
@@ -157,6 +158,83 @@ Name | Type | Description  | Notes
 **201** | Import job created |  -  |
 **400** | Invalid request |  -  |
 **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **prepare_text_recipe**
+> PrepareTextRecipeResponse prepare_text_recipe(prepare_text_recipe_request)
+
+### Example
+
+* Bearer Authentication (bearer_auth):
+
+```python
+import ramekin_client
+from ramekin_client.models.prepare_text_recipe_request import PrepareTextRecipeRequest
+from ramekin_client.models.prepare_text_recipe_response import PrepareTextRecipeResponse
+from ramekin_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ramekin_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearer_auth
+configuration = ramekin_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with ramekin_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ramekin_client.ImportApi(api_client)
+    prepare_text_recipe_request = ramekin_client.PrepareTextRecipeRequest() # PrepareTextRecipeRequest | 
+
+    try:
+        api_response = api_instance.prepare_text_recipe(prepare_text_recipe_request)
+        print("The response of ImportApi->prepare_text_recipe:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ImportApi->prepare_text_recipe: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **prepare_text_recipe_request** | [**PrepareTextRecipeRequest**](PrepareTextRecipeRequest.md)|  | 
+
+### Return type
+
+[**PrepareTextRecipeResponse**](PrepareTextRecipeResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Recipe draft ready for review; nothing saved |  -  |
+**400** | Invalid recipe text |  -  |
+**401** | Unauthorized |  -  |
+**503** | Recipe processing failed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

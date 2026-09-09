@@ -336,5 +336,5 @@ def test_shopping_list_uses_scaled_amounts(scale_recipe, api_url, page: Page):
     assert by_item["butter"] == "3 sticks"
     assert by_item["milk"] == "5 cups"
     assert by_item["eggs"] == "6"
-    assert by_item["salt"] == "to taste"
+    assert by_item["kosher salt"] == "to taste"
     assert by_item["bay leaves"] == "12-16"

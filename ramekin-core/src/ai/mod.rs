@@ -45,6 +45,7 @@ mod generate_recipe_photo;
 mod normalize_title;
 pub mod photo_extract;
 pub mod prompts;
+pub mod text_extract;
 mod types;
 
 pub use auto_tag::{suggest_tags, AutoTagResult};

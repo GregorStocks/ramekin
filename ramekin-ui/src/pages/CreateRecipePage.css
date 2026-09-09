@@ -1,4 +1,13 @@
 /* URL Import Section */
+.original-recipe-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.create-recipe-page > .btn {
+  margin-bottom: 1.5rem;
+}
+
 .import-section {
   background: var(--surface-1);
   border: 1px solid var(--border-hairline);

@@ -162,13 +162,16 @@ def test_create_and_edit_recipe_with_responsive_form(
     page.goto(ui_url)
     page.evaluate("token => localStorage.setItem('token', token)", signup.token)
     page.goto(f"{ui_url}/recipes/new")
+    page.get_by_label("Recipe text", exact=True).fill(
+        "Design test soup\n2 cups carrots\nSimmer until tender."
+    )
+    page.get_by_role("button", name="Review recipe", exact=True).click()
+    expect(page.get_by_label("Title *", exact=True)).to_be_visible(timeout=30000)
     page.get_by_label("Title *", exact=True).fill("Design test soup")
     page.get_by_label("Instructions *", exact=True).fill("Simmer until tender.")
-    page.get_by_role("textbox", name="Ingredient", exact=True).first.fill("carrots")
-    page.get_by_role("textbox", name="Amount", exact=True).first.fill("2")
-    page.get_by_role("textbox", name="Unit", exact=True).first.fill("cups")
+    page.get_by_label("Ingredients", exact=True).fill("2 cups carrots")
     assert_no_horizontal_overflow(page)
-    page.get_by_role("button", name="Create Recipe", exact=True).click()
+    page.get_by_role("button", name="Save recipe", exact=True).click()
     expect(page.locator(".recipe-header-compact h2")).to_have_text("Design test soup")
     expect(page.locator(".ingredients-list")).to_contain_text("carrots")
 

@@ -70,6 +70,22 @@ class InsecureRequestBuilder<T>: URLSessionRequestBuilder<T> {
 class InsecureDecodableBuilder<T: Decodable>: URLSessionDecodableRequestBuilder<T> {
     override func createURLSession() -> URLSessionProtocol { insecureSession }
 
+    override func createURLRequest(
+        urlSession: URLSessionProtocol,
+        method: HTTPMethod,
+        encoding: ParameterEncoding,
+        headers: [String: String]
+    ) throws -> URLRequest {
+        var request = try super.createURLRequest(
+            urlSession: urlSession, method: method, encoding: encoding, headers: headers
+        )
+        // Text review waits for extraction plus the normal ingestion enrichments.
+        if request.url?.path == "/api/import/text" {
+            request.timeoutInterval = 180
+        }
+        return request
+    }
+
     @discardableResult
     override func execute(
         _ apiResponseQueue: DispatchQueue = RamekinClientAPI.apiResponseQueue,

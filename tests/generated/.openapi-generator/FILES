@@ -65,6 +65,8 @@ ramekin_client/docs/NormalizeTitleResponse.md
 ramekin_client/docs/PaginationMetadata.md
 ramekin_client/docs/PhotosApi.md
 ramekin_client/docs/PingResponse.md
+ramekin_client/docs/PrepareTextRecipeRequest.md
+ramekin_client/docs/PrepareTextRecipeResponse.md
 ramekin_client/docs/RecipeContent.md
 ramekin_client/docs/RecipeResponse.md
 ramekin_client/docs/RecipeSummary.md
@@ -149,6 +151,8 @@ ramekin_client/models/measurement.py
 ramekin_client/models/normalize_title_response.py
 ramekin_client/models/pagination_metadata.py
 ramekin_client/models/ping_response.py
+ramekin_client/models/prepare_text_recipe_request.py
+ramekin_client/models/prepare_text_recipe_response.py
 ramekin_client/models/recipe_content.py
 ramekin_client/models/recipe_response.py
 ramekin_client/models/recipe_summary.py
@@ -233,6 +237,8 @@ ramekin_client/test/test_normalize_title_response.py
 ramekin_client/test/test_pagination_metadata.py
 ramekin_client/test/test_photos_api.py
 ramekin_client/test/test_ping_response.py
+ramekin_client/test/test_prepare_text_recipe_request.py
+ramekin_client/test/test_prepare_text_recipe_response.py
 ramekin_client/test/test_recipe_content.py
 ramekin_client/test/test_recipe_response.py
 ramekin_client/test/test_recipe_summary.py

@@ -430,6 +430,71 @@
         ]
       }
     },
+    "/api/import/text": {
+      "post": {
+        "tags": [
+          "import"
+        ],
+        "operationId": "prepare_text_recipe",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrepareTextRecipeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Recipe draft ready for review; nothing saved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrepareTextRecipeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid recipe text",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Recipe processing failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/meal-plans": {
       "get": {
         "tags": [
@@ -3003,6 +3068,13 @@
                   "type": "string",
                   "format": "uuid"
                 }
+              },
+              "raw_ingredients": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save."
               }
             }
           }
@@ -3715,6 +3787,41 @@
         "properties": {
           "message": {
             "type": "string"
+          }
+        }
+      },
+      "PrepareTextRecipeRequest": {
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "A whole recipe, typed or pasted as unstructured text."
+          }
+        }
+      },
+      "PrepareTextRecipeResponse": {
+        "type": "object",
+        "required": [
+          "content",
+          "raw_ingredients",
+          "warnings"
+        ],
+        "properties": {
+          "content": {
+            "$ref": "#/components/schemas/RecipeContent"
+          },
+          "raw_ingredients": {
+            "type": "string",
+            "description": "Editable ingredient lines. Send these as raw_ingredients when saving."
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

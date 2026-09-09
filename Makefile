@@ -154,6 +154,11 @@ test: check-deps $(CLIENT_MARKER) cli/target/debug/ramekin-cli server-release-bu
 test-core: ## Run ramekin-core unit and fixture tests (no dev environment required)
 	@cargo test -q --manifest-path ramekin-core/Cargo.toml
 
+.PHONY: mock-openrouter
+MOCK_OPENROUTER_PORT ?= 55002
+mock-openrouter: ## Run the deterministic AI fixture server (override MOCK_OPENROUTER_PORT)
+	@uv run --no-project tests/mock_openrouter.py "$(MOCK_OPENROUTER_PORT)"
+
 test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires DATABASE_URL)
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-ui-tests.sh
 

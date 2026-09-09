@@ -123,6 +123,12 @@ export interface CreateRecipeRequest {
      * @memberof CreateRecipeRequest
      */
     photoIds?: Array<string> | null;
+    /**
+     * Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save.
+     * @type {string}
+     * @memberof CreateRecipeRequest
+     */
+    rawIngredients?: string | null;
 }
 
 /**
@@ -161,6 +167,7 @@ export function CreateRecipeRequestFromJSONTyped(json: any, ignoreDiscriminator:
         'title': json['title'],
         'totalTime': json['total_time'] == null ? undefined : json['total_time'],
         'photoIds': json['photo_ids'] == null ? undefined : json['photo_ids'],
+        'rawIngredients': json['raw_ingredients'] == null ? undefined : json['raw_ingredients'],
     };
 }
 
@@ -191,6 +198,7 @@ export function CreateRecipeRequestToJSONTyped(value?: CreateRecipeRequest | nul
         'title': value['title'],
         'total_time': value['totalTime'],
         'photo_ids': value['photoIds'],
+        'raw_ingredients': value['rawIngredients'],
     };
 }
 

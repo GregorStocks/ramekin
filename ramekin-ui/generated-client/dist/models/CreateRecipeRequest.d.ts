@@ -112,6 +112,12 @@ export interface CreateRecipeRequest {
      * @memberof CreateRecipeRequest
      */
     photoIds?: Array<string> | null;
+    /**
+     * Reviewed ingredient lines from a text draft. Parsed by the import pipeline on save.
+     * @type {string}
+     * @memberof CreateRecipeRequest
+     */
+    rawIngredients?: string | null;
 }
 /**
  * Check if a given object implements the CreateRecipeRequest interface.

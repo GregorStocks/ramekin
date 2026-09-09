@@ -61,6 +61,8 @@ docs/NormalizeTitleResponse.md
 docs/PaginationMetadata.md
 docs/PhotosApi.md
 docs/PingResponse.md
+docs/PrepareTextRecipeRequest.md
+docs/PrepareTextRecipeResponse.md
 docs/RecipeContent.md
 docs/RecipeResponse.md
 docs/RecipeSummary.md
@@ -144,6 +146,8 @@ models/Measurement.ts
 models/NormalizeTitleResponse.ts
 models/PaginationMetadata.ts
 models/PingResponse.ts
+models/PrepareTextRecipeRequest.ts
+models/PrepareTextRecipeResponse.ts
 models/RecipeContent.ts
 models/RecipeResponse.ts
 models/RecipeSummary.ts
