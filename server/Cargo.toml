@@ -59,7 +59,7 @@ opentelemetry-appender-tracing = "0.32"
 image = "0.25"
 
 # Encoding
-base64 = "0.22"
+base64 = "0.23"
 
 # Compression (for Paprika export)
 flate2 = "1.1"
