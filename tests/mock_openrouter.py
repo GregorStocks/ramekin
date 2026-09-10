@@ -81,6 +81,17 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 self.send_error(400, "Invalid JSON")
                 return
 
+            # Per-recipe trigger keeps concurrent tests isolated while exercising
+            # the real client's handling of OpenRouter authentication failures.
+            if "SeedAuthFailureFixture" in json.dumps(request.get("messages", [])):
+                self.send_response(401)
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(
+                    b'{"error":{"message":"Missing Authentication header","code":401}}'
+                )
+                return
+
             if "image" in request.get("modalities", []):
                 try:
                     response = self._mock_image_generation_response(request)

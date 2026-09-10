@@ -1,0 +1,16 @@
+{
+  "title": "CLI import and seed continue after photo and tag preparation errors",
+  "description": "cli/src/import.rs logs photo decoding/upload failures and continues importing the recipe with missing photos. cli/src/seed.rs similarly logs non-conflict tag creation errors and proceeds. \
+Both can ultimately exit successfully despite missing input data. \
+Make these preparation errors fail fast with actionable diagnostics, preserving any data already saved. \
+Keep expected existing-tag conflicts distinct from genuine failures.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "cli",
+    "dev-environment",
+  ],
+  "created_at": "2026-09-10T04:31:15Z",
+  "updated_at": "2026-09-10T04:31:15Z",
+}

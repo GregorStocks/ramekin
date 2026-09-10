@@ -1,0 +1,16 @@
+{
+  "title": "Seed skips incomplete imports whenever the user already exists",
+  "description": "cli/src/seed.rs returns success as soon as login succeeds. \
+If a prior seed created its user and then failed or was interrupted during imports, the next make dev-headless run skips all remaining work and declares readiness with an incomplete recipe set. \
+Determine how to track seed completion and resume safely without duplicating recipes or deleting saved data. \
+This is separate from reporting the terminal outcomes of a newly submitted batch.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "dev-environment",
+    "cli",
+  ],
+  "created_at": "2026-09-10T04:31:15Z",
+  "updated_at": "2026-09-10T04:31:15Z",
+}
