@@ -65,6 +65,27 @@ final class RecipeFlowTests: XCTestCase {
         field.typeText(XCUIKeyboardKey.delete.rawValue)
     }
 
+    /// Input can finish before a slow simulator's accessibility snapshot
+    /// reflects it. Synchronize on the resulting value before continuing.
+    private func assertAccessibleValue(
+        _ element: XCUIElement,
+        equals expected: String,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let updated = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "value == %@", expected),
+            object: element
+        )
+        XCTAssertEqual(
+            XCTWaiter.wait(for: [updated], timeout: slowSimulatorTimeout),
+            .completed,
+            "Expected accessibility value: \(expected)",
+            file: file,
+            line: line
+        )
+    }
+
     /// Attach a screenshot of the current app state to the test results.
     private func attachScreenshot(named name: String) {
         let screenshot = XCTAttachment(screenshot: app.screenshot())
@@ -96,14 +117,14 @@ final class RecipeFlowTests: XCTestCase {
         )
         clearField(serverField)
         serverField.typeText("http://localhost:55000")
-        XCTAssertEqual(serverField.value as? String, "http://localhost:55000")
+        assertAccessibleValue(serverField, equals: "http://localhost:55000")
 
         // Find and fill username field (clear default value first)
         let usernameField = app.textFields["Username"]
         XCTAssertTrue(usernameField.exists, "Username field should exist")
         clearField(usernameField)
         usernameField.typeText("t")
-        XCTAssertEqual(usernameField.value as? String, "t")
+        assertAccessibleValue(usernameField, equals: "t")
 
         // Find and fill password field (clear default value first)
         let passwordField = app.secureTextFields["Password"]
@@ -204,9 +225,9 @@ final class RecipeFlowTests: XCTestCase {
         let ingredient = app.buttons["shopping-ingredient-0"]
         XCTAssertTrue(ingredient.waitForExistence(timeout: slowSimulatorTimeout))
         XCTAssertFalse(ingredient.label.isEmpty)
-        XCTAssertEqual(ingredient.value as? String, "Selected")
+        assertAccessibleValue(ingredient, equals: "Selected")
         ingredient.tap()
-        XCTAssertEqual(ingredient.value as? String, "Not selected")
+        assertAccessibleValue(ingredient, equals: "Not selected")
         attachScreenshot(named: "06-ShoppingSheet")
         shoppingBar.buttons["Cancel"].tap()
         XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
@@ -215,7 +236,7 @@ final class RecipeFlowTests: XCTestCase {
         moreActions.tap()
         app.buttons["Add to Shopping List"].tap()
         XCTAssertTrue(shoppingBar.waitForExistence(timeout: slowSimulatorTimeout))
-        XCTAssertEqual(ingredient.value as? String, "Selected")
+        assertAccessibleValue(ingredient, equals: "Selected")
         shoppingBar.buttons["Cancel"].tap()
         XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
 
