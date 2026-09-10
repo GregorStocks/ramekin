@@ -137,3 +137,12 @@ def test_apply_overrides_rewrites_ramekin_urls_to_assigned_ui_port():
     assert "UI_PORT_HTTP=57691" in test_rendered
     assert "RAMEKIN_SELF_SIGNED_URL=http://localhost:5174" not in test_rendered
     assert "RAMEKIN_EXTERNAL_URL=http://localhost:5175" not in test_rendered
+
+
+def test_generated_dev_env_does_not_enable_ai_with_a_placeholder(tmp_path):
+    output = tmp_path / "dev.env"
+    WORKTREE_SETUP.write_env_file(REPO_ROOT / "dev.env.example", output, {})
+    active_lines = [
+        line for line in output.read_text().splitlines() if not line.startswith("#")
+    ]
+    assert not any(line.startswith("OPENROUTER_API_KEY=") for line in active_lines)

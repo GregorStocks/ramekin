@@ -20,6 +20,10 @@ pub const DEFAULT_REQUEST_TIMEOUT_SECS: u64 = 30;
 pub enum ConfigError {
     #[error("Missing required environment variable: {0}")]
     MissingEnvVar(String),
+    #[error(
+        "OPENROUTER_API_KEY contains the example placeholder; set a real key or leave it unset"
+    )]
+    PlaceholderApiKey,
 }
 
 /// AI client configuration.
@@ -55,8 +59,7 @@ impl AiConfig {
     /// - `RAMEKIN_AI_RATE_LIMIT_MS`: Rate limit in ms (default: 500)
     /// - `RAMEKIN_AI_TIMEOUT_SECS`: Request timeout in seconds (default: 30)
     pub fn from_env() -> Result<Self, ConfigError> {
-        let api_key = env::var("OPENROUTER_API_KEY")
-            .map_err(|_| ConfigError::MissingEnvVar("OPENROUTER_API_KEY".to_string()))?;
+        let api_key = validate_api_key(env::var("OPENROUTER_API_KEY"))?;
 
         let model = env::var("RAMEKIN_AI_MODEL").unwrap_or_else(|_| DEFAULT_MODEL.to_string());
         let image_model =
@@ -125,9 +128,50 @@ impl AiConfig {
     }
 }
 
+fn validate_api_key(value: Result<String, env::VarError>) -> Result<String, ConfigError> {
+    let key = value.map_err(|_| ConfigError::MissingEnvVar("OPENROUTER_API_KEY".to_string()))?;
+    if key.trim().is_empty() {
+        return Err(ConfigError::MissingEnvVar("OPENROUTER_API_KEY".to_string()));
+    }
+    if key.trim() == "sk-or-..." {
+        return Err(ConfigError::PlaceholderApiKey);
+    }
+    Ok(key)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn absent_or_blank_key_is_unconfigured() {
+        for value in [
+            Err(env::VarError::NotPresent),
+            Ok(String::new()),
+            Ok(" \t\n".into()),
+        ] {
+            assert!(matches!(
+                validate_api_key(value),
+                Err(ConfigError::MissingEnvVar(_))
+            ));
+        }
+    }
+
+    #[test]
+    fn example_key_is_rejected_locally() {
+        assert!(matches!(
+            validate_api_key(Ok("sk-or-...".into())),
+            Err(ConfigError::PlaceholderApiKey)
+        ));
+    }
+
+    #[test]
+    fn configured_key_is_preserved() {
+        assert_eq!(
+            validate_api_key(Ok("test-api-key".into())).unwrap(),
+            "test-api-key"
+        );
+    }
 
     fn config_with_base_url(base_url: &str) -> AiConfig {
         AiConfig {

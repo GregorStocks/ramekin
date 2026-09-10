@@ -1,13 +1,14 @@
-use anyhow::{Context, Result};
+use anyhow::{bail, Context, Result};
 use base64::Engine;
 use flate2::read::GzDecoder;
-use ramekin_client::apis::auth_api;
 use ramekin_client::apis::configuration::Configuration;
+use ramekin_client::apis::{auth_api, scrape_api};
 use ramekin_client::models::LoginRequest;
 use serde::{Deserialize, Serialize};
 use std::fs::File;
 use std::io::Read;
 use std::path::Path;
+use std::time::Duration;
 use zip::ZipArchive;
 
 /// Paprika recipe format
@@ -259,8 +260,7 @@ pub async fn import(
 
     tracing::info!("Found {} recipes in archive", archive.len());
 
-    let mut success_count = 0;
-    let mut error_count = 0;
+    let mut jobs = Vec::new();
 
     for i in 0..archive.len() {
         let mut entry = archive.by_index(i)?;
@@ -347,30 +347,203 @@ pub async fn import(
         // Convert to RawRecipe format and call the import endpoint
         let raw_recipe = convert_to_raw_recipe(&recipe, preserve_tags);
 
-        match import_recipe(&config, raw_recipe, photo_ids).await {
-            Ok(response) => {
-                tracing::info!(
-                    "  Imported: {} (job_id: {}, status: {})",
-                    recipe_name,
-                    response.job_id,
-                    response.status
-                );
-                success_count += 1;
+        let response = import_recipe(&config, raw_recipe, photo_ids)
+            .await
+            .with_context(|| format!("Failed to submit recipe '{recipe_name}'"))?;
+        tracing::info!(
+            "  Submitted: {} (job_id: {}, status: {})",
+            recipe_name,
+            response.job_id,
+            response.status
+        );
+        jobs.push(response.job_id);
+    }
+
+    let saved_count = jobs.len();
+    let enrichment_failures =
+        tokio::time::timeout(Duration::from_secs(600), wait_for_imports(&config, jobs))
+            .await
+            .context(
+                "Timed out waiting for import jobs; submitted recipes remain on the server",
+            )??;
+
+    tracing::info!("IMPORT COMPLETE");
+    tracing::info!("Recipes saved: {}", saved_count);
+    tracing::info!("Recipes with enrichment failures: {}", enrichment_failures);
+
+    Ok(())
+}
+
+/// Wait for the whole batch without serializing the server's background work.
+/// Completed jobs can still have failed optional enrichment steps.
+async fn wait_for_imports(config: &Configuration, mut jobs: Vec<uuid::Uuid>) -> Result<usize> {
+    let mut enrichment_failures = 0;
+    while !jobs.is_empty() {
+        let mut pending = Vec::new();
+        for id in jobs {
+            let job = scrape_api::get_scrape(config, &id.to_string())
+                .await
+                .with_context(|| format!("Failed to read import job {id}"))?;
+            match job.status.as_str() {
+                "completed" | "failed" => {
+                    let saved = job
+                        .steps
+                        .iter()
+                        .any(|step| step.name == "save_recipe" && step.status == "completed");
+                    let enrichment_failed = job
+                        .failed_at_step
+                        .as_ref()
+                        .and_then(|step| step.as_deref())
+                        .is_some_and(|step| step.starts_with("enrich_"));
+                    if job.status == "failed" && !(saved && enrichment_failed) {
+                        bail!("Import job {id} failed; inspect its status for details; saved data is preserved");
+                    }
+                    if job.status == "completed" && job.recipe_id.flatten().is_none() {
+                        bail!("Import job {id} completed without a saved recipe");
+                    }
+                    let failed_steps: Vec<_> = job
+                        .steps
+                        .iter()
+                        .filter(|step| step.status == "failed")
+                        .map(|step| step.name.as_str())
+                        .collect();
+                    if !failed_steps.is_empty() {
+                        enrichment_failures += 1;
+                        // Report step names, not provider response bodies or credentials.
+                        tracing::warn!(job_id = %id, steps = %failed_steps.join(", "),
+                            "Recipe saved, but enrichment failed; inspect the import job for details");
+                    }
+                }
+                "pending" | "scraping" | "parsing" => pending.push(id),
+                status => bail!("Import job {id} has unexpected status: {status}"),
             }
-            Err(e) => {
-                tracing::info!("  Error importing '{}': {}", recipe_name, e);
-                error_count += 1;
+        }
+        jobs = pending;
+        if !jobs.is_empty() {
+            tokio::time::sleep(Duration::from_millis(250)).await;
+        }
+    }
+    Ok(enrichment_failures)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use axum::{extract::State, routing::get, Json, Router};
+    use ramekin_client::models::{ScrapeJobResponse, StepState};
+    use std::collections::VecDeque;
+    use std::sync::{Arc, Mutex};
+
+    async fn job_status(
+        State(responses): State<Arc<Mutex<VecDeque<ScrapeJobResponse>>>>,
+    ) -> Json<ScrapeJobResponse> {
+        Json(
+            responses
+                .lock()
+                .unwrap()
+                .pop_front()
+                .expect("unexpected poll"),
+        )
+    }
+
+    async fn poll_responses(responses: Vec<ScrapeJobResponse>) -> Result<usize> {
+        let mut jobs = Vec::new();
+        for response in &responses {
+            if !jobs.contains(&response.id) {
+                jobs.push(response.id);
             }
+        }
+        let responses = Arc::new(Mutex::new(VecDeque::from(responses)));
+        let app = Router::new()
+            .route("/api/scrape/{id}", get(job_status))
+            .with_state(responses.clone());
+        let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+        let mut config = Configuration::new();
+        config.base_path = format!("http://{}", listener.local_addr().unwrap());
+        let server = tokio::spawn(async move { axum::serve(listener, app).await.unwrap() });
+        let result = wait_for_imports(&config, jobs).await;
+        server.abort();
+        assert!(responses.lock().unwrap().is_empty());
+        result
+    }
+
+    fn job(status: &str, saved: bool, failed_step: Option<&str>) -> ScrapeJobResponse {
+        let mut job = ScrapeJobResponse {
+            id: uuid::Uuid::new_v4(),
+            created_at: "2026-09-09T00:00:00Z".into(),
+            status: status.into(),
+            ..Default::default()
+        };
+        if saved {
+            job.steps.push(StepState::new(
+                true,
+                "save_recipe".into(),
+                "completed".into(),
+            ));
+            if status == "completed" {
+                job.recipe_id = Some(Some(uuid::Uuid::new_v4()));
+            }
+        }
+        if let Some(step) = failed_step {
+            job.failed_at_step = Some(Some(step.into()));
+            job.steps
+                .push(StepState::new(true, step.into(), "failed".into()));
+        }
+        job
+    }
+
+    #[tokio::test]
+    async fn waits_for_terminal_status() {
+        let pending = job("pending", false, None);
+        let mut completed = job("completed", true, None);
+        completed.id = pending.id;
+        assert_eq!(poll_responses(vec![pending, completed]).await.unwrap(), 0);
+    }
+
+    #[tokio::test]
+    async fn saved_recipe_with_failed_enrichment_is_counted() {
+        for status in ["completed", "failed"] {
+            assert_eq!(
+                poll_responses(vec![job(status, true, Some("enrich_auto_tag"))])
+                    .await
+                    .unwrap(),
+                1
+            );
         }
     }
 
-    tracing::info!("");
-    tracing::info!("{}", "=".repeat(50));
-    tracing::info!("IMPORT COMPLETE");
-    tracing::info!("{}", "=".repeat(50));
-    tracing::info!("Successful: {}", success_count);
-    tracing::info!("Errors: {}", error_count);
-    tracing::info!("{}", "=".repeat(50));
+    #[tokio::test]
+    async fn batch_waits_for_remaining_jobs_without_recounting_finished_ones() {
+        let failed = job("failed", true, Some("enrich_auto_tag"));
+        let pending = job("parsing", false, None);
+        let mut completed = job("completed", true, None);
+        completed.id = pending.id;
+        assert_eq!(
+            poll_responses(vec![failed, pending, completed]).await.unwrap(),
+            1
+        );
+    }
 
-    Ok(())
+    #[tokio::test]
+    async fn failures_before_save_and_apply_failures_are_errors() {
+        for (saved, step) in [
+            (false, "parse_ingredients"),
+            (true, "apply_auto_tags"),
+            (false, "enrich_auto_tag"),
+        ] {
+            let error = poll_responses(vec![job("failed", saved, Some(step))])
+                .await
+                .unwrap_err();
+            assert!(error.to_string().contains("failed; inspect its status"));
+        }
+    }
+
+    #[tokio::test]
+    async fn completed_without_recipe_and_unknown_status_are_errors() {
+        for status in ["completed", "unknown"] {
+            assert!(poll_responses(vec![job(status, false, None)])
+                .await
+                .is_err());
+        }
+    }
 }
