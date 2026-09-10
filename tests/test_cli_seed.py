@@ -53,6 +53,7 @@ def test_seed_reports_finished_jobs_and_preserves_recipes(
         capture_output=True,
         text=True,
         timeout=60,
+        env={**os.environ, "RUST_LOG": "info"},
     )
     assert result.returncode == 0, result.stderr
     assert "Recipes saved: 1" in result.stderr
