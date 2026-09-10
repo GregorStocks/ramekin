@@ -192,6 +192,43 @@ final class RecipeFlowTests: XCTestCase {
         attachScreenshot(named: "05-IngredientEditor")
         app.navigationBars.buttons["Cancel"].tap()
         XCTAssertTrue(editButton.waitForExistence(timeout: slowSimulatorTimeout))
+
+        // Native sheets must expose their title and controls while keeping
+        // the underlying recipe actions out of reach until dismissal.
+        let moreActions = app.navigationBars.buttons["More recipe actions"]
+        moreActions.tap()
+        app.buttons["Add to Shopping List"].tap()
+        let shoppingBar = app.navigationBars["Add to Shopping List"]
+        XCTAssertTrue(shoppingBar.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertFalse(editButton.isHittable)
+        let ingredient = app.buttons["shopping-ingredient-0"]
+        XCTAssertTrue(ingredient.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertFalse(ingredient.label.isEmpty)
+        XCTAssertEqual(ingredient.value as? String, "Selected")
+        ingredient.tap()
+        XCTAssertEqual(ingredient.value as? String, "Not selected")
+        attachScreenshot(named: "06-ShoppingSheet")
+        shoppingBar.buttons["Cancel"].tap()
+        XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertTrue(moreActions.isHittable)
+
+        moreActions.tap()
+        app.buttons["Add to Shopping List"].tap()
+        XCTAssertTrue(shoppingBar.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertEqual(ingredient.value as? String, "Selected")
+        shoppingBar.buttons["Cancel"].tap()
+        XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
+
+        moreActions.tap()
+        app.buttons["Add to Meal Plan"].tap()
+        let mealPlanBar = app.navigationBars["Add to Meal Plan"]
+        XCTAssertTrue(mealPlanBar.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertFalse(editButton.isHittable)
+        XCTAssertTrue(mealPlanBar.buttons["Add"].isHittable)
+        attachScreenshot(named: "07-MealPlanSheet")
+        mealPlanBar.buttons["Cancel"].tap()
+        XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertTrue(moreActions.isHittable)
     }
 
     /// Test that login fails with invalid credentials

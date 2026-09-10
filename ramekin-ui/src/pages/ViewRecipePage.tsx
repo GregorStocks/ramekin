@@ -426,15 +426,25 @@ export default function ViewRecipePage() {
                   <summary class="btn">More actions</summary>
                   <div
                     class="recipe-more-actions-panel"
-                    onClick={(event) => {
-                      if (event.target.closest("button[data-close-actions]")) {
-                        const disclosure =
-                          event.currentTarget.closest("details");
-                        if (disclosure) {
-                          disclosure.open = false;
-                          disclosure.querySelector("summary")?.focus();
-                        }
-                      }
+                    ref={(panel) => {
+                      // Close before the action opens a dialog so native focus
+                      // restoration remembers the visible summary button.
+                      panel.addEventListener(
+                        "click",
+                        (event) => {
+                          if (
+                            event.target instanceof Element &&
+                            event.target.closest("button[data-close-actions]")
+                          ) {
+                            const disclosure = panel.closest("details");
+                            if (disclosure) {
+                              disclosure.open = false;
+                              disclosure.querySelector("summary")?.focus();
+                            }
+                          }
+                        },
+                        { capture: true },
+                      );
                     }}
                   >
                     <div class="recipe-action-group">
