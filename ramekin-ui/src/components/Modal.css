@@ -21,6 +21,14 @@
   background: rgba(29, 22, 18, 0.48);
 }
 
+.modal-focus-guard {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
 .modal,
 .modal-content {
   background: var(--surface-elevated);

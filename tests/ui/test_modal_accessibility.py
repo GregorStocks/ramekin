@@ -75,6 +75,13 @@ def test_dialog_keyboard_containment_and_return_focus(modal_page: Page, title: s
 
     page.keyboard.press("Tab")
     expect(first).to_be_focused()
+    if title == "Add to Meal Plan":
+        # Native date inputs have multiple internal tab stops (month/day/year).
+        # Moving backwards within the date must not wrap to the footer action.
+        page.keyboard.press("Tab")
+        expect(first).to_be_focused()
+        page.keyboard.press("Shift+Tab")
+        expect(first).to_be_focused()
     page.keyboard.press("Shift+Tab")
     expect(last).to_be_focused()
     page.keyboard.press("Tab")

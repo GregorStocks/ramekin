@@ -62,11 +62,9 @@ function OpenModal(props: ModalProps) {
     });
   });
 
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key !== "Tab" || event.defaultPrevented) return;
-
+  const focusBoundary = (last: boolean) => {
     const controls = Array.from(
-      dialog.querySelectorAll<HTMLElement>("*"),
+      dialog.querySelectorAll<HTMLElement>(":not(.modal-focus-guard)"),
     ).filter(
       (element) =>
         element.tabIndex >= 0 &&
@@ -74,20 +72,8 @@ function OpenModal(props: ModalProps) {
         element.getClientRects().length > 0 &&
         getComputedStyle(element).visibility === "visible",
     );
-    const index = controls.indexOf(document.activeElement as HTMLElement);
-    if (controls.length === 0) {
-      event.preventDefault();
-      heading.focus();
-    } else if (event.shiftKey && index <= 0) {
-      event.preventDefault();
-      controls[controls.length - 1].focus();
-    } else if (
-      !event.shiftKey &&
-      (index < 0 || index === controls.length - 1)
-    ) {
-      event.preventDefault();
-      controls[0].focus();
-    }
+    const target = last ? controls[controls.length - 1] : controls[0];
+    (target ?? heading).focus();
   };
 
   return (
@@ -96,7 +82,6 @@ function OpenModal(props: ModalProps) {
       class="modal-backdrop"
       aria-modal="true"
       aria-labelledby={titleId}
-      onKeyDown={handleKeyDown}
       onCancel={(event) => {
         event.preventDefault();
         props.onClose();
@@ -106,6 +91,14 @@ function OpenModal(props: ModalProps) {
       }}
     >
       <div class="modal-content">
+        {/* Boundary guards preserve native tab stops inside controls such as
+            date inputs, which a keydown trap cannot distinguish. */}
+        <span
+          class="modal-focus-guard"
+          tabIndex={0}
+          aria-hidden="true"
+          onFocus={() => focusBoundary(true)}
+        />
         <div class="modal-header">
           <h3 id={titleId} ref={heading} tabIndex={-1} autofocus>
             {props.title}
@@ -115,6 +108,12 @@ function OpenModal(props: ModalProps) {
         <Show when={props.actions}>
           <div class="modal-actions">{props.actions}</div>
         </Show>
+        <span
+          class="modal-focus-guard"
+          tabIndex={0}
+          aria-hidden="true"
+          onFocus={() => focusBoundary(false)}
+        />
       </div>
     </dialog>
   );
