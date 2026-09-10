@@ -25,8 +25,13 @@ pub(super) fn extract_og_image_fast(html: &str) -> Option<String> {
     OG_IMAGE_REGEX
         .captures_iter(html)
         .chain(OG_IMAGE_REGEX_ALT.captures_iter(html))
-        .filter_map(|cap| cap.get(1).map(|m| decode_html_entities(m.as_str())))
-        .find(|url| is_fetchable_image_url(url))
+        .filter_map(|cap| {
+            cap.get(1)
+                .map(|m| (m.start(), decode_html_entities(m.as_str())))
+        })
+        .filter(|(_, url)| is_fetchable_image_url(url))
+        .min_by_key(|(offset, _)| *offset)
+        .map(|(_, url)| url)
 }
 
 pub(super) static OG_IMAGE_SELECTOR: LazyLock<Selector> =
@@ -180,6 +185,26 @@ mod tests {
                     Some("https://example.com/photo.jpg")
                 );
             }
+        }
+    }
+
+    #[test]
+    fn og_images_preserve_document_order_across_attribute_layouts() {
+        for first_image in [
+            r#"<meta content="https://example.com/first.jpg" property="og:image">"#,
+            r#"<meta property="og:image" content="https://example.com/first.jpg">"#,
+        ] {
+            let html = format!(
+                r#"<meta property="og:image" content="data:image/svg+xml,%3Csvg/%3E">{first_image}<meta property="og:image" content="https://example.com/second.jpg"><meta content="https://example.com/third.jpg" property="og:image">"#
+            );
+            assert_eq!(
+                extract_og_image_fast(&html).as_deref(),
+                Some("https://example.com/first.jpg")
+            );
+            assert_eq!(
+                extract_og_image(&Html::parse_document(&html)).as_deref(),
+                Some("https://example.com/first.jpg")
+            );
         }
     }
 
