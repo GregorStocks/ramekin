@@ -519,7 +519,9 @@ mod tests {
         let mut completed = job("completed", true, None);
         completed.id = pending.id;
         assert_eq!(
-            poll_responses(vec![failed, pending, completed]).await.unwrap(),
+            poll_responses(vec![failed, pending, completed])
+                .await
+                .unwrap(),
             1
         );
     }
