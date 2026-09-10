@@ -62,10 +62,43 @@ All curated entries require a source citation.
 
 ## Regenerating USDA Data
 
-The USDA data is pre-generated and checked into the repo. To regenerate:
+Run `make ingredient-density-import` from the repository root. It uses `uv`
+and the Python standard library to download the fixed April 2018 SR Legacy
+CSV archive, verify its SHA-256, and write `src/data/usda.json`. No API key or
+manual extraction is needed. The archive is cached at
+`.cache/nutrition-sr-legacy-2018-04.zip`, shared with `make nutrition-import`.
+Every run verifies the checksum, including cached runs. A checksum mismatch
+fails; review the source before changing the pin.
 
-1. Download USDA FoodData Central SR Legacy CSV files
-2. Run `cargo run --bin import_usda`
+The generated file records the source URL, release, checksum, and excluded
+portion IDs. Repeated imports of this archive produce identical bytes.
+Commit the regenerated file alongside changes to the importer.
+
+The importer in `scripts/usda-import/import_usda.py` uses these selection rules:
+
+- Divide portion gram weight by amount. Prefer cup portions, then tablespoons
+  (16 per cup), then teaspoons (48 per cup). Average measurements within the
+  preferred unit in archive row order.
+- Accept `cup`, `cups`, `cup, ...`, and `cup (...)`; omit chip portions and
+  unsupported units. Preparation qualifiers are not retained in density keys.
+- Normalize descriptions to lowercase and strip the suffixes listed in
+  `normalize_usda_name`. When normalized names collide, the first food with
+  volume data in the pinned portion table wins.
+- Start with the existing 23 manual baking densities and common-name aliases
+  in `get_curated_ingredients` / `get_curated_aliases`; manual values take
+  precedence. These values are not USDA measurements. Their original source
+  attribution is only “King Arthur Baking weight chart, various baking
+  references”; individual citations have not yet been established.
+- Generate additional aliases using the explicit patterns in
+  `extract_simple_name`. At runtime, `curated.json` overrides this generated
+  dataset as described above.
+- Exclude seven explicitly identified cup rows with zero amounts in this
+  release. Their IDs and expected values are pinned in `EXCLUDED_PORTIONS`;
+  all other malformed supported-volume measurements fail the import.
+
+The importer also rejects empty tables, duplicate food/portion IDs, unknown
+food references, invalid generated densities, and dangling aliases before
+writing output. Its offline regression tests run under `make test`.
 
 ## License
 

@@ -1,4 +1,17 @@
 {
+  "source": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+  "archive_sha256": "b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+  "release": "USDA SR Legacy April 2018",
+  "excluded_zero_amount_portion_ids": [
+    "83785",
+    "83786",
+    "83793",
+    "85231",
+    "85240",
+    "90178",
+    "92745"
+  ],
+  "generation_notes": "See ingredient-density/README.md for selection rules and embedded manual values.",
   "ingredients": {
     "abiyuch": 228.0,
     "acerola juice": 242.0,

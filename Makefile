@@ -361,8 +361,8 @@ ingredient-tests-migrate-curated: ## Migrate curated fixtures from individual fi
 ingredient-density-test: ## Run ingredient-density crate tests
 	@cd ingredient-density && cargo test
 
-ingredient-density-import: ## Regenerate USDA data from downloaded CSV (requires USDA data download)
-	@cd ingredient-density && cargo run --bin import_usda
+ingredient-density-import: ## Download pinned USDA data and regenerate ingredient densities
+	@uv run --no-project scripts/usda-import/import_usda.py
 
 .PHONY: nutrition-import
 nutrition-import: ## Download pinned USDA SR Legacy data and regenerate calorie data

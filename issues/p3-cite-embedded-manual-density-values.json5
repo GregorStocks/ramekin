@@ -1,0 +1,16 @@
+{
+  "title": "Verify and cite the manual values embedded in the USDA density importer",
+  "description": "scripts/usda-import/import_usda.py seeds the generated USDA dataset with 23 manual baking densities from get_curated_ingredients. \
+Their attribution is only 'King Arthur Baking weight chart, various baking references', with no per-value citations; these are not USDA-derived values. \
+Verify each value and give it an individual source citation, preferably in the curated dataset. \
+Preserve deliberate overrides and assess conversion changes for both web and iOS. \
+Discovered while repairing the documented USDA regeneration workflow (p3-implement-usda-density-import).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "backend",
+  ],
+  "created_at": "2026-09-09T21:30:43-07:00",
+  "updated_at": "2026-09-09T21:30:43-07:00",
+}

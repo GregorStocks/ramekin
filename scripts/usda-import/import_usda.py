@@ -3,41 +3,85 @@
 Import ingredient densities from USDA FoodData Central SR Legacy.
 
 Downloads SR Legacy data and extracts grams-per-cup for each ingredient,
-then updates density_data.json.
+then updates ingredient-density/src/data/usda.json.
 
 Usage:
-    uv run import_usda.py
+    make ingredient-density-import
 """
 
 import csv
+import hashlib
+import io
 import json
+import math
 import re
-from pathlib import Path
+import urllib.request
+import zipfile
 from collections import defaultdict
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+SOURCE = "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip"
+ARCHIVE_SHA256 = "b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0"
+CACHE = ROOT / ".cache/nutrition-sr-legacy-2018-04.zip"
+OUTPUT = ROOT / "ingredient-density/src/data/usda.json"
+# These pinned-source cup rows have zero amounts and cannot define a density.
+# Keep the exact identifying values so a source correction requires review.
+EXCLUDED_PORTIONS = {
+    "83785": ("168789", "cup", "0", "142"),
+    "83786": ("168790", "cup", "0", "142"),
+    "83793": ("168796", "cup", "0", "141"),
+    "85231": ("169617", "cup", "0", "142"),
+    "85240": ("169621", "cup", "0", "141"),
+    "90178": ("172252", "cup", "0", "7"),
+    "92745": ("173509", "cup", "0", "16"),
+}
 
 # Conversion factors to cups
 TBSP_PER_CUP = 16.0
 TSP_PER_CUP = 48.0
 
 
-def load_csv(path: Path) -> list[dict]:
-    """Load a CSV file and return list of dicts."""
-    with open(path, "r", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+def read_rows(archive: zipfile.ZipFile, filename: str) -> list[dict[str, str]]:
+    """Read exactly one CSV member without extracting archive paths."""
+    matches = [name for name in archive.namelist() if name.endswith("/" + filename)]
+    if len(matches) != 1:
+        raise ValueError(f"Expected exactly one {filename}: {matches}")
+    with archive.open(matches[0]) as stream:
+        return list(csv.DictReader(io.TextIOWrapper(stream, encoding="utf-8-sig")))
 
 
-def parse_volume_unit(modifier: str) -> tuple[str | None, float]:
+def verify_archive(contents: bytes) -> None:
+    if hashlib.sha256(contents).hexdigest() != ARCHIVE_SHA256:
+        raise ValueError(
+            "USDA archive checksum mismatch; review source before updating"
+        )
+
+
+def load_archive(cache: Path) -> bytes:
+    if cache.exists():
+        contents = cache.read_bytes()
+        verify_archive(contents)
+        return contents
+    with urllib.request.urlopen(SOURCE, timeout=120) as response:
+        contents = response.read()
+    verify_archive(contents)
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    cache.write_bytes(contents)
+    return contents
+
+
+def parse_volume_unit(modifier: str) -> str | None:
     """
     Parse volume unit from SR Legacy modifier field.
-    Returns (unit_type, multiplier) where unit_type is 'cup', 'tbsp', 'tsp', or None.
-    The multiplier accounts for partial measurements like "1/2 cup".
+    Returns 'cup', 'tbsp', 'tsp', or None. Fractions are in the amount field.
     """
     mod = modifier.lower().strip()
 
     # Skip entries with non-standard qualifiers
     # e.g., "cup chips" (not a typical measurement)
     if "chip" in mod:
-        return None, 1.0
+        return None
 
     # Check for cup - accept various forms like "cup", "cup, shredded", "cup, diced"
     if (
@@ -46,13 +90,13 @@ def parse_volume_unit(modifier: str) -> tuple[str | None, float]:
         or mod.startswith("cup (")
         or mod == "cups"
     ):
-        return "cup", 1.0
+        return "cup"
     if mod == "tbsp" or mod == "tablespoon":
-        return "tbsp", 1.0
+        return "tbsp"
     if mod == "tsp" or mod == "teaspoon":
-        return "tsp", 1.0
+        return "tsp"
 
-    return None, 1.0
+    return None
 
 
 def calculate_grams_per_cup(portions: list[dict]) -> float | None:
@@ -65,22 +109,26 @@ def calculate_grams_per_cup(portions: list[dict]) -> float | None:
     tsp_weights = []
 
     for p in portions:
-        modifier = p.get("modifier", "")
-        unit_type, _ = parse_volume_unit(modifier)
+        if p["id"] in EXCLUDED_PORTIONS:
+            values = tuple(
+                p[key] for key in ("fdc_id", "modifier", "amount", "gram_weight")
+            )
+            if values != EXCLUDED_PORTIONS[p["id"]]:
+                raise ValueError(f"Excluded USDA portion changed: {p}")
+            continue
+        unit_type = parse_volume_unit(p["modifier"])
         if unit_type is None:
             continue
 
-        try:
-            amount = float(p.get("amount", 0))
-            gram_weight = float(p.get("gram_weight", 0))
-        except (ValueError, TypeError):
-            continue
-
-        if amount <= 0 or gram_weight <= 0:
-            continue
+        amount = float(p["amount"])
+        gram_weight = float(p["gram_weight"])
+        if not all(math.isfinite(v) and v > 0 for v in (amount, gram_weight)):
+            raise ValueError(f"Invalid volume portion: {p}")
 
         # Calculate grams per single unit
         grams_per_unit = gram_weight / amount
+        if not math.isfinite(grams_per_unit * TSP_PER_CUP):
+            raise ValueError(f"Overflow in volume portion: {p}")
 
         if unit_type == "cup":
             cup_weights.append(grams_per_unit)
@@ -239,53 +287,41 @@ def get_curated_aliases() -> dict[str, str]:
     }
 
 
-def main():
-    script_dir = Path(__file__).parent
-    data_dir = script_dir / "FoodData_Central_sr_legacy_food_csv_2018-04"
-
-    if not data_dir.exists():
-        print(f"Error: Data directory not found: {data_dir}")
-        print("Please download SR Legacy data from USDA FoodData Central")
-        return
-
-    # Start with curated ingredients
-    print("Loading curated ingredients...")
+def build_data(foods: list[dict], portions: list[dict]) -> dict:
+    """Use the pinned archive's row order to resolve normalized-name collisions."""
+    if not foods or not portions:
+        raise ValueError("Expected nonempty USDA food and portion tables")
     ingredients = get_curated_ingredients()
-    print(f"  {len(ingredients)} curated ingredients")
-
-    print("\nLoading USDA SR Legacy data...")
-
-    # Load food descriptions
-    foods = load_csv(data_dir / "food.csv")
-    food_map = {f["fdc_id"]: f["description"] for f in foods}
-    print(f"  Loaded {len(food_map)} foods")
-
-    # Load portions
-    portions = load_csv(data_dir / "food_portion.csv")
-    print(f"  Loaded {len(portions)} portion records")
+    food_map = {}
+    for food in foods:
+        food_id = food["fdc_id"]
+        if int(food_id) <= 0 or food_id in food_map or not food["description"].strip():
+            raise ValueError(f"Invalid/duplicate food: {food}")
+        food_map[food_id] = food["description"]
 
     # Group portions by food
     portions_by_food = defaultdict(list)
+    portion_ids = set()
     for p in portions:
+        if int(p["id"]) <= 0 or p["id"] in portion_ids:
+            raise ValueError(f"Invalid/duplicate portion: {p}")
+        portion_ids.add(p["id"])
+        if p["fdc_id"] not in food_map:
+            raise ValueError(f"Unknown food in portion: {p}")
         portions_by_food[p["fdc_id"]].append(p)
 
     # Calculate grams per cup for each food from USDA
-    print("\nExtracting USDA densities...")
     usda_count = 0
-    skipped_no_volume = 0
 
     aliases = get_curated_aliases()
     generated_aliases = {}
 
     for fdc_id, food_portions in portions_by_food.items():
-        description = food_map.get(fdc_id, "")
-        if not description:
-            continue
+        description = food_map[fdc_id]
 
         # Calculate grams per cup
         grams_per_cup = calculate_grams_per_cup(food_portions)
         if grams_per_cup is None:
-            skipped_no_volume += 1
             continue
 
         # Normalize the USDA name
@@ -303,37 +339,42 @@ def main():
                 if normalized_name not in aliases:
                     generated_aliases[normalized_name] = simple_name
 
-    print(f"  Added {usda_count} ingredients from USDA")
-    print(f"  Skipped {skipped_no_volume} foods without volume measurements")
-    print(f"  Generated {len(generated_aliases)} aliases")
+    if usda_count == 0:
+        raise ValueError("No USDA volume densities found")
 
     # Merge generated aliases into curated aliases
     all_aliases = {**aliases, **generated_aliases}
 
     # Build JSON structure
-    data = {
+    if any(not math.isfinite(v) or v <= 0 for v in ingredients.values()):
+        raise ValueError("Invalid generated density")
+    if any(target not in ingredients for target in all_aliases.values()):
+        raise ValueError("Alias target missing from ingredients")
+    return {
+        "source": SOURCE,
+        "archive_sha256": ARCHIVE_SHA256,
+        "release": "USDA SR Legacy April 2018",
+        "excluded_zero_amount_portion_ids": sorted(EXCLUDED_PORTIONS, key=int),
+        "generation_notes": (
+            "See ingredient-density/README.md for selection rules "
+            "and embedded manual values."
+        ),
         "ingredients": dict(sorted(ingredients.items())),
         "aliases": dict(sorted(all_aliases.items())),
     }
 
-    # Write JSON
-    print("\nWriting JSON...")
-    output_path = (
-        script_dir.parent.parent / "ramekin-core" / "src" / "density_data.json"
+
+def main() -> None:
+    contents = load_archive(CACHE)
+    with zipfile.ZipFile(io.BytesIO(contents)) as archive:
+        data = build_data(
+            read_rows(archive, "food.csv"), read_rows(archive, "food_portion.csv")
+        )
+    serialized = json.dumps(data, indent=2, allow_nan=False) + "\n"
+    OUTPUT.write_text(serialized, encoding="utf-8")
+    print(
+        f"Imported {len(data['ingredients'])} densities into {OUTPUT.relative_to(ROOT)}"
     )
-    with open(output_path, "w") as f:
-        json.dump(data, f, indent=2)
-    print(f"  Written to {output_path}")
-
-    # Print some stats
-    print("\nDensity data summary:")
-    print(f"  Total ingredients: {len(ingredients)}")
-    print(f"  Total aliases: {len(all_aliases)}")
-
-    # Show some examples
-    print("\nSample entries:")
-    for name, grams in sorted(ingredients.items())[:15]:
-        print(f"  {name}: {grams:.1f} g/cup")
 
 
 if __name__ == "__main__":
