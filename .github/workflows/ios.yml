@@ -121,7 +121,7 @@ jobs:
           DATABASE_URL: postgres://ramekin@localhost:5432/ramekin_ios
 
       - name: Build server
-        run: cd server && cargo build --release
+        run: make server-release-build
         env:
           LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
           PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
@@ -163,13 +163,15 @@ jobs:
 
       - name: Build CLI and seed database
         run: |
-          cd cli && cargo build --release
-          ./target/release/ramekin-cli seed \
+          # This CLI only seeds test data. Avoid a second optimized Rust build
+          # consuming the simulator test budget on a cold cache.
+          make cli/target/debug/ramekin-cli
+          ./cli/target/debug/ramekin-cli seed \
             --server-url http://localhost:55000 \
             --username t --password t \
-            --tags-file ../data/eval-tags.json \
+            --tags-file data/eval-tags.json \
             --preserve-tags=false \
-            ../data/dev/seed.paprikarecipes
+            data/dev/seed.paprikarecipes
         env:
           LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
           PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib

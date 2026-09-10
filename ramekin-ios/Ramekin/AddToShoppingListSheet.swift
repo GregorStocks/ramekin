@@ -64,6 +64,7 @@ struct AddToShoppingListSheet: View {
                                 Image(systemName: selectedIngredients.contains(index) ? "checkmark.circle.fill" : "circle")
                                     .foregroundColor(selectedIngredients.contains(index) ? .orange : .secondary)
                                     .font(.title3)
+                                    .accessibilityHidden(true)
 
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text(ingredient.formatted(scale: scale))
@@ -79,6 +80,8 @@ struct AddToShoppingListSheet: View {
                             }
                         }
                         .buttonStyle(.plain)
+                        .accessibilityValue(selectedIngredients.contains(index) ? "Selected" : "Not selected")
+                        .accessibilityIdentifier("shopping-ingredient-\(index)")
                     }
                 } header: {
                     HStack {

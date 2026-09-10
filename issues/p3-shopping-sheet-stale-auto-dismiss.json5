@@ -1,0 +1,19 @@
+{
+  "title": "Keep old shopping-list submissions from dismissing a reopened sheet",
+  "description": "AddToShoppingListModal.tsx schedules props.onClose with an untracked 1500ms setTimeout after a successful submission. \
+Closing with Escape/backdrop and reopening before that timer fires lets the previous submission close the new presentation. \
+A response arriving after dismissal can also schedule this stale close. \
+AddToShoppingListSheet.swift similarly uses DispatchQueue.main.asyncAfter to set the shared isPresented binding to false without tying the delayed close to that presentation. \
+Scope completion state and delayed dismissal to the originating presentation, cancel or invalidate pending timers on close/unmount, and test close/reopen during both pending submission and success on web and iOS. \
+AddToMealPlanModal.tsx already tracks its close timer and provides a useful comparison.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+    "ios",
+    "shopping-list",
+  ],
+  "created_at": "2026-09-10T05:14:40Z",
+  "updated_at": "2026-09-10T05:14:40Z",
+}

@@ -65,6 +65,27 @@ final class RecipeFlowTests: XCTestCase {
         field.typeText(XCUIKeyboardKey.delete.rawValue)
     }
 
+    /// Input can finish before a slow simulator's accessibility snapshot
+    /// reflects it. Synchronize on the resulting value before continuing.
+    private func assertAccessibleValue(
+        _ element: XCUIElement,
+        equals expected: String,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let updated = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "value == %@", expected),
+            object: element
+        )
+        XCTAssertEqual(
+            XCTWaiter.wait(for: [updated], timeout: slowSimulatorTimeout),
+            .completed,
+            "Expected accessibility value: \(expected)",
+            file: file,
+            line: line
+        )
+    }
+
     /// Attach a screenshot of the current app state to the test results.
     private func attachScreenshot(named name: String) {
         let screenshot = XCTAttachment(screenshot: app.screenshot())
@@ -96,14 +117,14 @@ final class RecipeFlowTests: XCTestCase {
         )
         clearField(serverField)
         serverField.typeText("http://localhost:55000")
-        XCTAssertEqual(serverField.value as? String, "http://localhost:55000")
+        assertAccessibleValue(serverField, equals: "http://localhost:55000")
 
         // Find and fill username field (clear default value first)
         let usernameField = app.textFields["Username"]
         XCTAssertTrue(usernameField.exists, "Username field should exist")
         clearField(usernameField)
         usernameField.typeText("t")
-        XCTAssertEqual(usernameField.value as? String, "t")
+        assertAccessibleValue(usernameField, equals: "t")
 
         // Find and fill password field (clear default value first)
         let passwordField = app.secureTextFields["Password"]
@@ -192,6 +213,43 @@ final class RecipeFlowTests: XCTestCase {
         attachScreenshot(named: "05-IngredientEditor")
         app.navigationBars.buttons["Cancel"].tap()
         XCTAssertTrue(editButton.waitForExistence(timeout: slowSimulatorTimeout))
+
+        // Native sheets must expose their title and controls while keeping
+        // the underlying recipe actions out of reach until dismissal.
+        let moreActions = app.navigationBars.buttons["More recipe actions"]
+        moreActions.tap()
+        app.buttons["Add to Shopping List"].tap()
+        let shoppingBar = app.navigationBars["Add to Shopping List"]
+        XCTAssertTrue(shoppingBar.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertFalse(editButton.isHittable)
+        let ingredient = app.buttons["shopping-ingredient-0"]
+        XCTAssertTrue(ingredient.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertFalse(ingredient.label.isEmpty)
+        assertAccessibleValue(ingredient, equals: "Selected")
+        ingredient.tap()
+        assertAccessibleValue(ingredient, equals: "Not selected")
+        attachScreenshot(named: "06-ShoppingSheet")
+        shoppingBar.buttons["Cancel"].tap()
+        XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertTrue(moreActions.isHittable)
+
+        moreActions.tap()
+        app.buttons["Add to Shopping List"].tap()
+        XCTAssertTrue(shoppingBar.waitForExistence(timeout: slowSimulatorTimeout))
+        assertAccessibleValue(ingredient, equals: "Selected")
+        shoppingBar.buttons["Cancel"].tap()
+        XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
+
+        moreActions.tap()
+        app.buttons["Add to Meal Plan"].tap()
+        let mealPlanBar = app.navigationBars["Add to Meal Plan"]
+        XCTAssertTrue(mealPlanBar.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertFalse(editButton.isHittable)
+        XCTAssertTrue(mealPlanBar.buttons["Add"].isHittable)
+        attachScreenshot(named: "07-MealPlanSheet")
+        mealPlanBar.buttons["Cancel"].tap()
+        XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertTrue(moreActions.isHittable)
     }
 
     /// Test that login fails with invalid credentials

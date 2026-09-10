@@ -1,0 +1,18 @@
+{
+  "title": "Make meal-plan recipe choices keyboard accessible",
+  "description": "MealPlanPage.tsx renders each .recipe-picker-item as a div with an onClick handler inside the Add Recipe modal. \
+The rows cannot be reached with Tab or activated with Enter/Space, so a keyboard user can search for recipes but cannot select a result. \
+Use semantic interactive controls and add browser coverage for searching, tabbing to a result, and adding it. \
+Assess the corresponding iOS recipe picker and cover its accessible result actions too. \
+This is separate from shared modal focus containment, which cannot make non-interactive result rows keyboard-operable.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+    "ios",
+    "accessibility",
+  ],
+  "created_at": "2026-09-10T05:14:40Z",
+  "updated_at": "2026-09-10T05:14:40Z",
+}
