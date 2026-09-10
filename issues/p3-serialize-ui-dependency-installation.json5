@@ -1,0 +1,17 @@
+{
+  "title": "Serialize UI dependency installation across concurrent make targets",
+  "description": "Running make lint and make test concurrently in a fresh worktree makes both invoke npm ci through the UI_DEPS_MARKER rule. \
+During placeholder-image filtering validation, one installation exited 239 and the other left client generation unable to locate TypeScript (npx canceled due to missing tsc). \
+The generate-clients script has a lock, but the prerequisite UI install does not. \
+Serialize installation across make processes so concurrent validation cannot corrupt node_modules. \
+Reinstalling with make -W ramekin-ui/package-lock.json ui-deps and then regenerating clients sequentially repairs the setup. \
+This is build tooling shared by web and generated client validation; no client behavior change is needed.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+  ],
+  "created_at": "2026-09-09T21:30:08-07:00",
+  "updated_at": "2026-09-09T21:30:08-07:00",
+}

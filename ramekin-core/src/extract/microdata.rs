@@ -200,6 +200,7 @@ pub(super) fn extract_microdata_images(recipe_element: &scraper::ElementRef) -> 
             }
             None
         })
+        .filter(|url| is_fetchable_image_url(url))
         .collect()
 }
 
