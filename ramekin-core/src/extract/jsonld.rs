@@ -337,6 +337,7 @@ pub(super) fn extract_image_urls(recipe: &serde_json::Value) -> Vec<String> {
         }
     }
 
+    urls.retain(|url| is_fetchable_image_url(url));
     urls
 }
 
