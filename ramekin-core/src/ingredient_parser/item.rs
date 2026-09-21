@@ -297,10 +297,11 @@ pub(super) fn split_bare_compound_line(line: &str) -> Option<Vec<String>> {
     // "salt"/"pepper" are omitted because they end genuine spice lists far
     // more often than they act as shared heads.
     const SHARED_HEAD_TAIL_WORDS: &[&str] = &[
-        "cheese", "cheeses", "extract", "extracts", "flour", "flours", "juice", "juices",
-        "mustard", "mustards", "oil", "oils", "paste", "pastes", "peppers", "powder", "powders",
-        "puree", "purees", "salts", "sauce", "sauces", "seed", "seeds", "sugar", "sugars", "syrup",
-        "syrups", "vinegar", "vinegars", "zest", "zests",
+        "broth", "broths", "butter", "butters", "cheese", "cheeses", "cream", "creams", "extract",
+        "extracts", "flour", "flours", "juice", "juices", "milk", "milks", "mustard", "mustards",
+        "oil", "oils", "paste", "pastes", "peppers", "powder", "powders", "puree", "purees",
+        "salts", "sauce", "sauces", "seed", "seeds", "stock", "stocks", "sugar", "sugars", "syrup",
+        "syrups", "vinegar", "vinegars", "wine", "wines", "yogurt", "zest", "zests",
     ];
     if parts.last().is_some_and(|last| {
         let words: Vec<String> = last
