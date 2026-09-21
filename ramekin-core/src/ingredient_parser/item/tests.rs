@@ -620,6 +620,12 @@ fn test_split_bare_compound_line_requires_list_grammar() {
     // A bare "more"/"extra" tail isn't an ingredient.
     assert_eq!(split_bare_compound_line("salt, pepper, and more"), None);
     assert_eq!(split_bare_compound_line("salt, pepper and extra"), None);
+    // Component tails describe the preceding item, not new ingredients.
+    assert_eq!(split_bare_compound_line("lemon, zest and juice"), None);
+    assert_eq!(
+        split_bare_compound_line("eggs, whites and yolks separated"),
+        None
+    );
     // Coordinated modifiers sharing a final noun stay one ingredient.
     assert_eq!(
         split_bare_compound_line("red, yellow, and green bell peppers"),
@@ -663,6 +669,10 @@ fn test_split_bare_compound_line_keeps_amounts_intact() {
     );
     assert_eq!(
         split_bare_compound_line("A handful of parsley, cilantro and dill"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("A generous handful of parsley, cilantro and dill"),
         None
     );
 }

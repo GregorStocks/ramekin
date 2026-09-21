@@ -67,6 +67,14 @@ const MODIFIER_ONLY_WORDS: &[&str] = &[
     "mild", "orange", "pink", "purple", "red", "small", "spicy", "sweet", "white", "yellow",
 ];
 
+/// Nouns that name a component of the preceding item ("lemon, zest and
+/// juice", "eggs, whites and yolks separated") rather than an ingredient of
+/// their own.
+const COMPONENT_TAIL_WORDS: &[&str] = &[
+    "bones", "caps", "flesh", "fronds", "juice", "peel", "pulp", "rind", "seeds", "shells", "skin",
+    "stalks", "stems", "tops", "whites", "yolks", "zest",
+];
+
 /// True if a comma part reads as a qualifier of the preceding item (a prep,
 /// guidance, or other trailing note) rather than a standalone ingredient.
 fn is_non_item_part(part: &str) -> bool {
@@ -78,7 +86,10 @@ fn is_non_item_part(part: &str) -> bool {
     {
         return true;
     }
-    if !lower.contains(char::is_whitespace) && MODIFIER_ONLY_WORDS.contains(&lower.as_str()) {
+    if !lower.contains(char::is_whitespace)
+        && (MODIFIER_ONLY_WORDS.contains(&lower.as_str())
+            || COMPONENT_TAIL_WORDS.contains(&lower.as_str()))
+    {
         return true;
     }
     if is_only_prep_words(&lower)
@@ -185,9 +196,12 @@ pub(super) fn split_bare_compound_line(line: &str) -> Option<Vec<String>> {
     if lower_words.contains(&"each") {
         return None;
     }
-    let unit_scan_start = usize::from(lower_words.first().is_some_and(|word| {
+    let mut unit_scan_start = 0;
+    while lower_words.get(unit_scan_start).is_some_and(|word| {
         *word == "a" || *word == "an" || super::units::MEASUREMENT_MODIFIERS.contains(word)
-    }));
+    }) {
+        unit_scan_start += 1;
+    }
     let leading_words = &lower_words[unit_scan_start..];
     let leads_with_unit = match (leading_words.first(), leading_words.get(1)) {
         (Some(first), second) => {
