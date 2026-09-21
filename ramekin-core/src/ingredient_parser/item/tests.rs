@@ -629,6 +629,14 @@ fn test_split_bare_compound_line_requires_list_grammar() {
         split_bare_compound_line("coriander, cumin and fennel seeds"),
         None
     );
+    assert_eq!(
+        split_bare_compound_line("all-purpose, bread and cake flour"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("salt, paprika and garlic powder"),
+        None
+    );
     // Component tails describe the preceding item, not new ingredients.
     assert_eq!(split_bare_compound_line("lemon, zest and juice"), None);
     assert_eq!(

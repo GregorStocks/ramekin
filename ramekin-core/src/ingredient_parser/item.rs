@@ -271,9 +271,14 @@ pub(super) fn split_bare_compound_line(line: &str) -> Option<Vec<String>> {
     }
     // "garlic, onion and chili powders": a plural head noun shared across the
     // list means the earlier parts modify it rather than name ingredients.
+    // Both plural ("chili powders") and singular ("cake flour") heads occur;
+    // "salt"/"pepper" are omitted because they end genuine spice lists far
+    // more often than they act as shared heads.
     const SHARED_HEAD_TAIL_WORDS: &[&str] = &[
-        "cheeses", "extracts", "flours", "juices", "mustards", "oils", "pastes", "peppers",
-        "powders", "purees", "salts", "sauces", "seeds", "sugars", "syrups", "vinegars", "zests",
+        "cheese", "cheeses", "extract", "extracts", "flour", "flours", "juice", "juices",
+        "mustard", "mustards", "oil", "oils", "paste", "pastes", "peppers", "powder", "powders",
+        "puree", "purees", "salts", "sauce", "sauces", "seed", "seeds", "sugar", "sugars", "syrup",
+        "syrups", "vinegar", "vinegars", "zest", "zests",
     ];
     if parts.last().is_some_and(|last| {
         let words: Vec<String> = last
