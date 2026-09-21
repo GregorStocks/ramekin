@@ -700,6 +700,19 @@ fn test_split_bare_compound_line_keeps_amounts_intact() {
         split_bare_compound_line("A few sprigs of parsley, cilantro and dill"),
         None
     );
+    assert_eq!(
+        split_bare_compound_line("lightly packed handful of parsley, cilantro and dill"),
+        None
+    );
+    // Group wrappers describe the coordinated list as a whole.
+    assert_eq!(
+        split_bare_compound_line("mixture of berries, peaches and mango"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("a combination of oregano, basil and thyme"),
+        None
+    );
 }
 
 #[test]

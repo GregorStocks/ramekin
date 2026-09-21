@@ -147,6 +147,15 @@ const NON_LIST_PHRASES: &[&str] = &[
     "recipe follows",
     "however",
     "whatever",
+    "assortment of",
+    "blend of",
+    "choice of",
+    "combination of",
+    "medley of",
+    "mix of",
+    "mixture of",
+    "selection of",
+    "variety of",
 ];
 
 /// Split a bare compound ingredient line like "salt, pepper and cumin" into
@@ -202,25 +211,38 @@ pub(super) fn split_bare_compound_line(line: &str) -> Option<Vec<String>> {
     if lower_words.contains(&"each") {
         return None;
     }
-    let mut unit_scan_start = 0;
-    while lower_words.get(unit_scan_start).is_some_and(|word| {
-        *word == "a" || *word == "an" || super::units::MEASUREMENT_MODIFIERS.contains(word)
-    }) {
-        unit_scan_start += 1;
+    // Strip any run of leading articles and measurement modifiers, matching
+    // multiword modifiers ("lightly packed") atomically.
+    let mut head = lower.clone();
+    loop {
+        let current = head.trim_start().to_string();
+        if let Some(rest) = current
+            .strip_prefix("a ")
+            .or_else(|| current.strip_prefix("an "))
+        {
+            head = rest.to_string();
+            continue;
+        }
+        let (modifier, rest) = super::units::strip_measurement_modifier(&current);
+        if modifier.is_none() {
+            head = current;
+            break;
+        }
+        head = rest;
     }
+    let head_words: Vec<&str> = head.split_whitespace().collect();
     // Quantity determiners ("a few sprigs of ...", "several ...") carry
     // shared amount context just like units do.
     const QUANTITY_DETERMINERS: &[&str] = &[
         "couple", "few", "many", "numerous", "plenty", "several", "some",
     ];
-    if lower_words
-        .get(unit_scan_start)
+    if head_words
+        .first()
         .is_some_and(|word| QUANTITY_DETERMINERS.contains(word))
     {
         return None;
     }
-    let leading_words = &lower_words[unit_scan_start..];
-    let leads_with_unit = match (leading_words.first(), leading_words.get(1)) {
+    let leads_with_unit = match (head_words.first(), head_words.get(1)) {
         (Some(first), second) => {
             super::units::UNITS_RAW.contains(first)
                 || second.is_some_and(|second| {
