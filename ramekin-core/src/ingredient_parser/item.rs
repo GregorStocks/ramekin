@@ -111,6 +111,10 @@ const NON_LIST_PHRASES: &[&str] = &[
     " below",
     " above",
     " etc",
+    " if ",
+    " as needed",
+    " as desired",
+    " optional",
     "recipe follows",
     "however",
     "whatever",
@@ -126,8 +130,10 @@ const NON_LIST_PHRASES: &[&str] = &[
 ///   disqualifies the line (with amounts in play, comma tails are usually
 ///   notes or measurements, not separate ingredients, and "each" lines have
 ///   their own expansion)
-/// - parentheticals, colons, semicolons, "&", " or ", and prose/guidance
-///   phrases ("for serving", "see notes", "and/or") disqualify it
+/// - parentheticals, colons, semicolons, "&", " or ", prose/guidance phrases
+///   ("for serving", "see notes", "if desired", "as needed", "and/or"), a
+///   leading bare measurement unit ("pinch each of ..."), and "each" all
+///   disqualify it
 /// - the final "and" (or ", and") is required: without it, two-part lines are
 ///   as likely "item, qualifier" ("Fresh parsley, garnish", "oil, a drizzle")
 ///   as two items, and plain "salt and pepper" pairs may name one compound
@@ -156,6 +162,32 @@ pub(super) fn split_bare_compound_line(line: &str) -> Option<Vec<String>> {
     }
     let lower = trimmed.to_lowercase();
     if lower.contains(" or ") || NON_LIST_PHRASES.iter().any(|phrase| lower.contains(phrase)) {
+        return None;
+    }
+
+    // Lines led by a bare measurement unit carry an amount even without a
+    // number ("pinch each of salt, pepper, and cumin"); leave them to the
+    // measurement parser and "each" expansion. "each" anywhere means the
+    // expansion owns the line.
+    let lower_words: Vec<&str> = lower.split_whitespace().collect();
+    if lower_words.contains(&"each") {
+        return None;
+    }
+    let unit_scan_start = usize::from(lower_words.first().is_some_and(|word| {
+        *word == "a" || *word == "an" || super::units::MEASUREMENT_MODIFIERS.contains(word)
+    }));
+    let leading_words = &lower_words[unit_scan_start..];
+    let leads_with_unit = match (leading_words.first(), leading_words.get(1)) {
+        (Some(first), second) => {
+            super::units::UNITS_RAW.contains(first)
+                || second.is_some_and(|second| {
+                    let joined = format!("{} {}", first, second);
+                    super::units::UNITS_RAW.iter().any(|unit| *unit == joined)
+                })
+        }
+        (None, _) => false,
+    };
+    if leads_with_unit {
         return None;
     }
 

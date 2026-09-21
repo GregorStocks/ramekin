@@ -608,6 +608,15 @@ fn test_split_bare_compound_line_requires_list_grammar() {
         split_bare_compound_line("whipped cream, sprinkles and maraschino cherries for serving"),
         None
     );
+    // Guidance attached to the final item disqualifies the line.
+    assert_eq!(
+        split_bare_compound_line("salt, pepper, and garlic if desired"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("salt, pepper and cumin as needed"),
+        None
+    );
     // Open-ended qualifier tails aren't ingredients.
     assert_eq!(
         split_bare_compound_line("lettuce, tomato, pickles and other desired trimmings"),
@@ -637,6 +646,15 @@ fn test_split_bare_compound_line_keeps_amounts_intact() {
     );
     assert_eq!(
         split_bare_compound_line("Half an onion, diced and sautéed"),
+        None
+    );
+    // Bare measurement units carry an amount even without a number.
+    assert_eq!(
+        split_bare_compound_line("pinch each of salt, pepper, and cumin"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("A handful of parsley, cilantro and dill"),
         None
     );
 }
