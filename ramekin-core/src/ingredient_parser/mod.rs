@@ -1352,6 +1352,19 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
             continue;
         }
 
+        // Split bare compound lists ("salt, pepper and cumin") into one
+        // ingredient per item. Each split ingredient keeps the original line
+        // as its raw text, mirroring the "each" expansion below.
+        if let Some(parts) = split_bare_compound_line(trimmed) {
+            for part in parts {
+                let mut ingredient = parse_ingredient(&part);
+                ingredient.raw = Some(trimmed.to_string());
+                ingredient.section = current_section.clone();
+                results.push(ingredient);
+            }
+            continue;
+        }
+
         // Parse the ingredient and apply current section
         let mut ingredient = parse_ingredient(trimmed);
         ingredient.section = current_section.clone();
@@ -1938,5 +1951,36 @@ mod tests {
         let blob = "1 (16-ounce can chickpeas\n2 cups water";
         let result = parse_ingredients(blob);
         assert_eq!(result.len(), 2);
+    }
+
+    #[test]
+    fn test_parse_ingredients_splits_bare_compound_lines() {
+        let blob = "For the rub:\nsalt, black pepper and smoked paprika\n2 lbs pork shoulder";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 4);
+        assert_eq!(result[0].item, "salt");
+        assert_eq!(result[1].item, "black pepper");
+        assert_eq!(result[2].item, "smoked paprika");
+        for ingredient in &result[..3] {
+            assert_eq!(ingredient.section, Some("For the Rub".to_string()));
+            assert_eq!(
+                ingredient.raw,
+                Some("salt, black pepper and smoked paprika".to_string())
+            );
+            assert!(ingredient.measurements.is_empty());
+        }
+        assert_eq!(result[3].item, "pork shoulder");
+    }
+
+    #[test]
+    fn test_parse_ingredients_keeps_noted_lines_intact() {
+        // A qualifier tail means the comma is a note, not a list separator.
+        let blob = "2 cups flour, sifted\nolive oil, for frying\nsalt and pepper";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 3);
+        assert_eq!(result[0].item, "flour");
+        assert_eq!(result[2].item, "salt and pepper");
     }
 }

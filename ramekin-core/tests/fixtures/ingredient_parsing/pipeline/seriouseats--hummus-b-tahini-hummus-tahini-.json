@@ -126,11 +126,31 @@
     {
       "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
       "expected": {
-        "item": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
+        "item": "Sliced tomatoes",
         "measurements": [],
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
+      "expected": {
+        "item": "onions",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
+      "expected": {
+        "item": "Middle Eastern cucumber pickles",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     }
   ]
 }
