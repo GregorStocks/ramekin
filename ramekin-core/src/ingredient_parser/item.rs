@@ -161,8 +161,8 @@ const NON_LIST_PHRASES: &[&str] = &[
 ///   their own expansion)
 /// - parentheticals, colons, semicolons, "&", " or ", prose/guidance phrases
 ///   ("for serving", "see notes", "if desired", "as needed", "and/or"), a
-///   leading bare measurement unit ("pinch each of ..."), and "each" all
-///   disqualify it
+///   leading bare measurement unit or quantity determiner ("pinch each of
+///   ...", "a few sprigs of ..."), and "each" all disqualify it
 /// - the final "and" (or ", and") is required: without it, two-part lines are
 ///   as likely "item, qualifier" ("Fresh parsley, garnish", "oil, a drizzle")
 ///   as two items, and plain "salt and pepper" pairs may name one compound
@@ -207,6 +207,17 @@ pub(super) fn split_bare_compound_line(line: &str) -> Option<Vec<String>> {
         *word == "a" || *word == "an" || super::units::MEASUREMENT_MODIFIERS.contains(word)
     }) {
         unit_scan_start += 1;
+    }
+    // Quantity determiners ("a few sprigs of ...", "several ...") carry
+    // shared amount context just like units do.
+    const QUANTITY_DETERMINERS: &[&str] = &[
+        "couple", "few", "many", "numerous", "plenty", "several", "some",
+    ];
+    if lower_words
+        .get(unit_scan_start)
+        .is_some_and(|word| QUANTITY_DETERMINERS.contains(word))
+    {
+        return None;
     }
     let leading_words = &lower_words[unit_scan_start..];
     let leads_with_unit = match (leading_words.first(), leading_words.get(1)) {
@@ -256,6 +267,24 @@ pub(super) fn split_bare_compound_line(line: &str) -> Option<Vec<String>> {
     }
 
     if !saw_final_and || parts.len() < 2 {
+        return None;
+    }
+    // "garlic, onion and chili powders": a plural head noun shared across the
+    // list means the earlier parts modify it rather than name ingredients.
+    const SHARED_HEAD_TAIL_WORDS: &[&str] = &[
+        "cheeses", "extracts", "flours", "juices", "mustards", "oils", "pastes", "peppers",
+        "powders", "purees", "salts", "sauces", "seeds", "sugars", "syrups", "vinegars", "zests",
+    ];
+    if parts.last().is_some_and(|last| {
+        let words: Vec<String> = last
+            .split_whitespace()
+            .map(|word| word.to_lowercase())
+            .collect();
+        words.len() >= 2
+            && words
+                .last()
+                .is_some_and(|word| SHARED_HEAD_TAIL_WORDS.contains(&word.as_str()))
+    }) {
         return None;
     }
     // Title-like lines capitalize most parts; item lists rarely capitalize

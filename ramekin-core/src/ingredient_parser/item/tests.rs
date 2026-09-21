@@ -620,6 +620,15 @@ fn test_split_bare_compound_line_requires_list_grammar() {
     // A bare "more"/"extra" tail isn't an ingredient.
     assert_eq!(split_bare_compound_line("salt, pepper, and more"), None);
     assert_eq!(split_bare_compound_line("salt, pepper and extra"), None);
+    // A shared plural head noun means earlier parts are its modifiers.
+    assert_eq!(
+        split_bare_compound_line("garlic, onion and chili powders"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("coriander, cumin and fennel seeds"),
+        None
+    );
     // Component tails describe the preceding item, not new ingredients.
     assert_eq!(split_bare_compound_line("lemon, zest and juice"), None);
     assert_eq!(
@@ -677,6 +686,10 @@ fn test_split_bare_compound_line_keeps_amounts_intact() {
     );
     assert_eq!(
         split_bare_compound_line("A generous handful of parsley, cilantro and dill"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("A few sprigs of parsley, cilantro and dill"),
         None
     );
 }
