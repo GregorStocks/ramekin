@@ -608,6 +608,15 @@ fn test_split_bare_compound_line_requires_list_grammar() {
         split_bare_compound_line("whipped cream, sprinkles and maraschino cherries for serving"),
         None
     );
+    // Open-ended qualifier tails aren't ingredients.
+    assert_eq!(
+        split_bare_compound_line("lettuce, tomato, pickles and other desired trimmings"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("salt, pepper and any spices you like"),
+        None
+    );
     assert_eq!(
         split_bare_compound_line(
             "Dulce de leche, chopped nuts, whipped cream, and/or ground cinnamon"

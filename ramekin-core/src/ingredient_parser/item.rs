@@ -37,6 +37,8 @@ const PREP_PHRASE_PREPOSITIONS: &[&str] = &[
 /// than a separate ingredient (e.g. "salt, for the pot", "olive oil, plus more").
 const NON_ITEM_PART_PREFIXES: &[&str] = &[
     "about ",
+    "additional ",
+    "any ",
     "approximately ",
     "as ",
     "at ",
@@ -48,6 +50,7 @@ const NON_ITEM_PART_PREFIXES: &[&str] = &[
     "like ",
     "more ",
     "or ",
+    "other ",
     "plus ",
     "preferably ",
     "such as ",
