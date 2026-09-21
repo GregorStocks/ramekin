@@ -630,6 +630,15 @@ fn test_split_bare_compound_line_keeps_amounts_intact() {
     assert_eq!(split_bare_compound_line("2 cups flour, sifted"), None);
     assert_eq!(split_bare_compound_line("1 onion and 2 carrots"), None);
     assert_eq!(split_bare_compound_line("½ cup rice, rinsed"), None);
+    // Spelled-out amounts count as amounts; "each" lines have their own expansion.
+    assert_eq!(
+        split_bare_compound_line("One teaspoon each ground cinnamon, ginger, cloves, and cardamom"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("Half an onion, diced and sautéed"),
+        None
+    );
 }
 
 #[test]

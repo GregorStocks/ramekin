@@ -122,9 +122,10 @@ const NON_LIST_PHRASES: &[&str] = &[
 /// Deliberately conservative; returns `None` unless the whole line reads as
 /// "a, b[, c…] and z" — a plain comma list of short, amount-free item names
 /// closed by a final "and":
-/// - any digit or unicode fraction disqualifies the line (with amounts in
-///   play, comma tails are usually notes or measurements, not separate
-///   ingredients)
+/// - any digit, unicode fraction, or spelled-out amount ("One teaspoon")
+///   disqualifies the line (with amounts in play, comma tails are usually
+///   notes or measurements, not separate ingredients, and "each" lines have
+///   their own expansion)
 /// - parentheticals, colons, semicolons, "&", " or ", and prose/guidance
 ///   phrases ("for serving", "see notes", "and/or") disqualify it
 /// - the final "and" (or ", and") is required: without it, two-part lines are
@@ -141,7 +142,10 @@ pub(super) fn split_bare_compound_line(line: &str) -> Option<Vec<String>> {
     if trimmed.contains(['(', ')', ':', ';', '&']) {
         return None;
     }
-    if trimmed
+    // Spelled-out amounts ("One teaspoon each ...") count as amounts too, so
+    // normalize word numbers before checking, matching parse_ingredient.
+    let normalized_amounts = super::amounts::normalize_word_numbers(trimmed);
+    if normalized_amounts
         .chars()
         .any(|c| c.is_ascii_digit() || super::unicode_fraction_ascii(c).is_some())
     {
