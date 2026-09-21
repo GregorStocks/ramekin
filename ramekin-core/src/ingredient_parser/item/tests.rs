@@ -547,3 +547,231 @@ fn test_should_ignore_standalone_asterisks() {
     // Regular ingredients should not be ignored
     assert!(!should_ignore_line("1 cup flour*"));
 }
+
+#[test]
+fn test_split_bare_compound_line_splits_comma_lists() {
+    assert_eq!(
+        split_bare_compound_line("salt, pepper and cumin"),
+        Some(vec![
+            "salt".to_string(),
+            "pepper".to_string(),
+            "cumin".to_string()
+        ])
+    );
+    assert_eq!(
+        split_bare_compound_line("ground cinnamon, ginger, cloves, and cardamom"),
+        Some(vec![
+            "ground cinnamon".to_string(),
+            "ginger".to_string(),
+            "cloves".to_string(),
+            "cardamom".to_string()
+        ])
+    );
+    assert_eq!(
+        split_bare_compound_line("Kosher salt, freshly ground black pepper, and red pepper flakes"),
+        Some(vec![
+            "Kosher salt".to_string(),
+            "freshly ground black pepper".to_string(),
+            "red pepper flakes".to_string()
+        ])
+    );
+}
+
+#[test]
+fn test_split_bare_compound_line_requires_list_grammar() {
+    // Plain pairs are as likely to name one compound item as two.
+    assert_eq!(split_bare_compound_line("salt and pepper"), None);
+    assert_eq!(split_bare_compound_line("macaroni and cheese"), None);
+    // Without a closing "and", two-part lines are as likely "item, qualifier".
+    assert_eq!(split_bare_compound_line("chili powder, onion powder"), None);
+    assert_eq!(split_bare_compound_line("Fresh parsley, garnish"), None);
+    assert_eq!(split_bare_compound_line("oil, a drizzle"), None);
+    assert_eq!(
+        split_bare_compound_line("Crispy shallots, recipe follows"),
+        None
+    );
+    // Comma lists without the final "and" stay intact too.
+    assert_eq!(
+        split_bare_compound_line("pepperoni, sausage, olives, vegetables, pineapple, etc."),
+        None
+    );
+    // Prose and title-like lines stay intact.
+    assert_eq!(
+        split_bare_compound_line("crackers, bread, chips, vegetables — whatever you like"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("Vanilla, Pistachio and Strawberry Mini Loaf Cakes"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("whipped cream, sprinkles and maraschino cherries for serving"),
+        None
+    );
+    // Guidance attached to the final item disqualifies the line.
+    assert_eq!(
+        split_bare_compound_line("salt, pepper, and garlic if desired"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("salt, pepper and cumin as needed"),
+        None
+    );
+    // A bare "more"/"extra" tail isn't an ingredient.
+    assert_eq!(split_bare_compound_line("salt, pepper, and more"), None);
+    assert_eq!(split_bare_compound_line("salt, pepper and extra"), None);
+    // A shared plural head noun means earlier parts are its modifiers.
+    assert_eq!(
+        split_bare_compound_line("garlic, onion and chili powders"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("coriander, cumin and fennel seeds"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("all-purpose, bread and cake flour"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("salt, paprika and garlic powder"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("chicken, beef and vegetable broth"),
+        None
+    );
+    // Component tails describe the preceding item, not new ingredients.
+    assert_eq!(split_bare_compound_line("lemon, zest and juice"), None);
+    assert_eq!(
+        split_bare_compound_line("eggs, whites and yolks separated"),
+        None
+    );
+    // Coordinated modifiers sharing a final noun stay one ingredient.
+    assert_eq!(
+        split_bare_compound_line("red, yellow, and green bell peppers"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("dark red, bright yellow, and light green bell peppers"),
+        None
+    );
+    // Open-ended qualifier tails aren't ingredients.
+    assert_eq!(
+        split_bare_compound_line("lettuce, tomato, pickles and other desired trimmings"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("salt, pepper and any spices you like"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line(
+            "Dulce de leche, chopped nuts, whipped cream, and/or ground cinnamon"
+        ),
+        None
+    );
+}
+
+#[test]
+fn test_split_bare_compound_line_keeps_amounts_intact() {
+    assert_eq!(split_bare_compound_line("2 cups flour, sifted"), None);
+    assert_eq!(split_bare_compound_line("1 onion and 2 carrots"), None);
+    assert_eq!(split_bare_compound_line("½ cup rice, rinsed"), None);
+    // Spelled-out amounts count as amounts; "each" lines have their own expansion.
+    assert_eq!(
+        split_bare_compound_line("One teaspoon each ground cinnamon, ginger, cloves, and cardamom"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("Half an onion, diced and sautéed"),
+        None
+    );
+    // Bare measurement units carry an amount even without a number.
+    assert_eq!(
+        split_bare_compound_line("pinch each of salt, pepper, and cumin"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("A handful of parsley, cilantro and dill"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("A generous handful of parsley, cilantro and dill"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("A few sprigs of parsley, cilantro and dill"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("lightly packed handful of parsley, cilantro and dill"),
+        None
+    );
+    // Group wrappers describe the coordinated list as a whole.
+    assert_eq!(
+        split_bare_compound_line("mixture of berries, peaches and mango"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("a combination of oregano, basil and thyme"),
+        None
+    );
+}
+
+#[test]
+fn test_split_bare_compound_line_keeps_qualifier_tails_intact() {
+    // Prep notes
+    assert_eq!(split_bare_compound_line("flour, sifted"), None);
+    assert_eq!(split_bare_compound_line("chicken, cut into strips"), None);
+    assert_eq!(
+        split_bare_compound_line("sun-dried tomatoes, packed in oil"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("chicken breasts, skin removed"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("Oranges, thinly sliced for garnish"),
+        None
+    );
+    // Guidance notes and other qualifiers
+    assert_eq!(split_bare_compound_line("olive oil, for frying"), None);
+    assert_eq!(split_bare_compound_line("salt, to taste"), None);
+    assert_eq!(
+        split_bare_compound_line("butter, plus more for the pan"),
+        None
+    );
+    assert_eq!(
+        split_bare_compound_line("chicken stock, preferably homemade"),
+        None
+    );
+    // Alternatives stay one ingredient
+    assert_eq!(split_bare_compound_line("chicken, or turkey"), None);
+    assert_eq!(split_bare_compound_line("cilantro, mint or basil"), None);
+    // Parentheticals disqualify the line
+    assert_eq!(
+        split_bare_compound_line("salt, pepper (freshly ground)"),
+        None
+    );
+}
+
+#[test]
+fn test_split_bare_compound_line_rejects_non_list_and_grammar() {
+    // "and" outside the final list position isn't list grammar.
+    assert_eq!(split_bare_compound_line("salt and pepper, oil"), None);
+    assert_eq!(
+        split_bare_compound_line("oil, salt and pepper and cumin"),
+        None
+    );
+    // Hyphenated compounds don't count as "and" separators.
+    assert_eq!(
+        split_bare_compound_line("half-and-half, heavy cream and butter"),
+        Some(vec![
+            "half-and-half".to_string(),
+            "heavy cream".to_string(),
+            "butter".to_string()
+        ])
+    );
+}
