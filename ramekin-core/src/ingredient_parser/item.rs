@@ -59,14 +59,26 @@ const NON_ITEM_PART_PREFIXES: &[&str] = &[
     "without ",
 ];
 
+/// Adjectives that coordinate over a shared final noun ("red, yellow, and
+/// green bell peppers"); as a single-word comma part they modify the last
+/// part's item rather than naming an ingredient of their own.
+const MODIFIER_ONLY_WORDS: &[&str] = &[
+    "big", "black", "blue", "brown", "dark", "green", "hot", "large", "light", "little", "medium",
+    "mild", "orange", "pink", "purple", "red", "small", "spicy", "sweet", "white", "yellow",
+];
+
 /// True if a comma part reads as a qualifier of the preceding item (a prep,
 /// guidance, or other trailing note) rather than a standalone ingredient.
 fn is_non_item_part(part: &str) -> bool {
     let lower = part.to_lowercase();
+    // Match both "more ..." qualifiers and a bare trailing word ("and more").
     if NON_ITEM_PART_PREFIXES
         .iter()
-        .any(|prefix| lower.starts_with(prefix))
+        .any(|prefix| lower.starts_with(prefix) || lower == prefix.trim_end())
     {
+        return true;
+    }
+    if !lower.contains(char::is_whitespace) && MODIFIER_ONLY_WORDS.contains(&lower.as_str()) {
         return true;
     }
     if is_only_prep_words(&lower)

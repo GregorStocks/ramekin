@@ -617,6 +617,14 @@ fn test_split_bare_compound_line_requires_list_grammar() {
         split_bare_compound_line("salt, pepper and cumin as needed"),
         None
     );
+    // A bare "more"/"extra" tail isn't an ingredient.
+    assert_eq!(split_bare_compound_line("salt, pepper, and more"), None);
+    assert_eq!(split_bare_compound_line("salt, pepper and extra"), None);
+    // Coordinated modifiers sharing a final noun stay one ingredient.
+    assert_eq!(
+        split_bare_compound_line("red, yellow, and green bell peppers"),
+        None
+    );
     // Open-ended qualifier tails aren't ingredients.
     assert_eq!(
         split_bare_compound_line("lettuce, tomato, pickles and other desired trimmings"),
