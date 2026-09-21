@@ -631,6 +631,10 @@ fn test_split_bare_compound_line_requires_list_grammar() {
         split_bare_compound_line("red, yellow, and green bell peppers"),
         None
     );
+    assert_eq!(
+        split_bare_compound_line("dark red, bright yellow, and light green bell peppers"),
+        None
+    );
     // Open-ended qualifier tails aren't ingredients.
     assert_eq!(
         split_bare_compound_line("lettuce, tomato, pickles and other desired trimmings"),

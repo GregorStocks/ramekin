@@ -63,8 +63,9 @@ const NON_ITEM_PART_PREFIXES: &[&str] = &[
 /// green bell peppers"); as a single-word comma part they modify the last
 /// part's item rather than naming an ingredient of their own.
 const MODIFIER_ONLY_WORDS: &[&str] = &[
-    "big", "black", "blue", "brown", "dark", "green", "hot", "large", "light", "little", "medium",
-    "mild", "orange", "pink", "purple", "red", "small", "spicy", "sweet", "white", "yellow",
+    "big", "black", "blue", "bright", "brown", "dark", "deep", "green", "hot", "large", "light",
+    "little", "medium", "mild", "orange", "pale", "pink", "purple", "red", "small", "spicy",
+    "sweet", "white", "yellow",
 ];
 
 /// Nouns that name a component of the preceding item ("lemon, zest and
@@ -86,10 +87,15 @@ fn is_non_item_part(part: &str) -> bool {
     {
         return true;
     }
-    if !lower.contains(char::is_whitespace)
-        && (MODIFIER_ONLY_WORDS.contains(&lower.as_str())
-            || COMPONENT_TAIL_WORDS.contains(&lower.as_str()))
+    let lower_word_list: Vec<&str> = lower.split_whitespace().collect();
+    if !lower_word_list.is_empty()
+        && lower_word_list
+            .iter()
+            .all(|word| MODIFIER_ONLY_WORDS.contains(word))
     {
+        return true;
+    }
+    if lower_word_list.len() == 1 && COMPONENT_TAIL_WORDS.contains(&lower_word_list[0]) {
         return true;
     }
     if is_only_prep_words(&lower)
