@@ -52,7 +52,7 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 tracing-appender = "0.2"
 
 # Home directory detection
-dirs = "6.0"
+dirs = "7.0"
 
 # Paprika import
 zip = "8.6"
