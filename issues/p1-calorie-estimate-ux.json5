@@ -9,10 +9,12 @@ Recommended UX:\n\
 Lead with one number, not prose: per serving when servings is known (e.g. '~520 kcal / serving'), else whole-recipe. \
 The server should return structured fields (range, coverage) and stop shipping presentation sentences (summary / per_serving_summary) for clients to render verbatim.\n\
 2. \
-Gate on coverage, measured by estimated share of calories rather than line count. \
-The server should classify lines as matched / negligible (salt, pepper, water, spices under ~1 tbsp, garnish 'to taste') / unknown, and report coverage over non-negligible lines. \
-High coverage: show the number, with a quiet 'excludes: X, Y' footnote only when a non-negligible item is missing. \
-Low coverage (e.g. under ~70% of non-negligible lines, or any unknown that is likely calorie-dense such as meats, cheese, oils, sauces): don't show a number; show 'Not enough ingredient data to estimate calories' with the disclosure available.\n\
+Gate on unknown lines, not on a calorie share: unknown lines have no calorie value, so their share of the total can't be computed. \
+The server classifies every line as matched / negligible (catalog negligible flag: salt, pepper, water, dried spices at tsp scale, 'to taste') / not-a-food (headers) / unknown, and returns the count and names of unknown lines. \
+Zero unknown lines: show the number. \
+One or two unknown lines: show the number explicitly as a lower bound ('at least ~520 kcal / serving, excluding X'). \
+More than that: don't show a number; show 'Not enough ingredient data to estimate calories' with the disclosure available. \
+Pick the cutoff from the audit; it's a count of unknown lines, which the estimator can compute.\n\
 3. \
 Put the per-ingredient breakdown behind a disclosure ('How is this calculated?'), listing every line with its kcal contribution or a short human label ('not recognized', 'amount unclear'), never internal reason strings. \
 This is also where a future 'fix this match' affordance would live.\n\
@@ -36,5 +38,5 @@ Re-run the audit (dump current_version ingredients from the prod DB and replay n
     "api",
   ],
   "created_at": "2026-09-27T13:58:35-07:00",
-  "updated_at": "2026-09-27T13:58:35-07:00",
+  "updated_at": "2026-09-27T15:05:00-07:00",
 }

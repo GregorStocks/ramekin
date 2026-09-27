@@ -38,6 +38,7 @@ Document the procedure in docs/agent/ so it can be rerun as the corpus grows, an
     "ingredient-parser",
     "pipeline",
   ],
+  "blocked": "Needs p1-ingredient-catalog-step1-unified-resolver merged first: this step uses its resolve() API, catalog format, and make ingredient-catalog-audit target.",
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T14:44:25-07:00",
+  "updated_at": "2026-09-27T15:05:00-07:00",
 }

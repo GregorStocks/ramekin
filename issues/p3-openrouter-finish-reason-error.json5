@@ -7,7 +7,8 @@ openai-api-rs's FinishReason enum has no 'error' variant, so ramekin-core/src/ai
 Users and logs get a serde message instead of 'upstream rate limited', and nothing distinguishes this transient failure from a real bug.\n\
 \n\
 Fix options: (a) check whether a newer openai-api-rs handles unknown finish reasons or OpenRouter's choice-level error, or (b) on this deserialization failure, parse the raw body for choices[].error and surface a clear AiError, for example AiError::RateLimited, with the provider message. \
-Consider a bounded retry with backoff for rate_limit_exceeded, since the step otherwise needs a manual rerun. \
+Keep fail-fast: surface the error immediately, with no retry. \
+The failed step can be rerun manually. \
 Don't cache the response (the existing code already avoids caching unusable responses; keep that true). \
 Add a unit test with the captured response body.",
   "status": "open",
@@ -18,5 +19,5 @@ Add a unit test with the captured response body.",
     "pipeline",
   ],
   "created_at": "2026-09-27T13:58:35-07:00",
-  "updated_at": "2026-09-27T13:58:35-07:00",
+  "updated_at": "2026-09-27T15:05:00-07:00",
 }
