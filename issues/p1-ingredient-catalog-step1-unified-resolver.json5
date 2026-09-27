@@ -9,7 +9,8 @@ It resolves 7.6% of prod ingredient lines (audit 2026-09-27: 994 recipes, 11,865
 They disagree about the same ingredient (density knows 'kosher salt'; nutrition doesn't), and improvements to one never help the others.\n\
 \n\
 Build a single catalog plus resolver in ramekin-core:\n\
-- Catalog entry = stable id (slug, e.g. 'garlic', 'kosher-salt-diamond', 'olive-oil-extra-virgin') with display name, shopping category, grams_per_cup, kcal_per_100g, per-each portion weights (large/medium/small/clove/head; see p2-nutrition-count-units), a negligible-calories flag (salt, pepper, water, most dried spices at tsp scale), and provenance (USDA FDC id(s) or 'manual' with a citation).\n\
+- Catalog entry = stable id (slug, e.g. 'garlic', 'kosher-salt-diamond', 'olive-oil-extra-virgin') with display name, shopping category, grams_per_cup, kcal_per_100g, per-each portion weights (large/medium/small/clove/head; see p2-nutrition-count-units), a zero_calorie flag reserved for foods that are genuinely ~0 kcal at any quantity (salt, water, ice, baking soda), and a trace_ok flag for foods commonly listed without an amount (pepper, dried spices and herbs). \
+Negligibility is decided per line, not per food: zero_calorie foods are always negligible; trace_ok foods are negligible only when the line has no quantity or a trace unit ('to taste', pinch, dash); any line with a real quantity is computed from kcal_per_100g, so a cup of cumin counts in full, and provenance (USDA FDC id(s) or 'manual' with a citation).\n\
 - Alias table: normalized written name -> catalog id, or explicit 'not a food' (headers, 'to serve', equipment).\n\
 - resolve(item) -> Food { id, via: exact|alias|normalized } | Compound { ids } | NotFood | Unresolved. \
 NotFood (headers, equipment, 'to serve') is distinct from Unresolved, so coverage excludes it and step 3 never sends it to the LLM. \
@@ -19,7 +20,7 @@ Try the full name first, then strip one trailing comma/semicolon clause at a tim
 Also strip leading comma-separated modifier runs ('boneless, skinless ...') using the modifier list. \
 Add fixtures for both shapes. \
 Compound lines the parser keeps as one ingredient ('salt and pepper', 'oil and vinegar') resolve to Compound { ids }. \
-The line has one measurement for several foods, so nutrition never splits or duplicates the quantity: a Compound whose components are all negligible counts as negligible; any other Compound is unknown, with the component names shown in the breakdown. \
+The line has one measurement for several foods, so nutrition never splits or duplicates the quantity: a Compound counts as negligible only if every component would be negligible on that line under the per-line rule above; any other Compound is unknown, with the component names shown in the breakdown. \
 The shopping category and density use the first component.\n\
 - Density lookup, categorize(), and nutrition all go through resolve(). \
 Delete the old per-matcher tables once migrated. \
@@ -44,5 +45,5 @@ Follow-ups: step2 (bulk-classify the corpus with harness subagents) and step3 (L
     "api",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T16:05:00-07:00",
+  "updated_at": "2026-09-27T16:20:00-07:00",
 }
