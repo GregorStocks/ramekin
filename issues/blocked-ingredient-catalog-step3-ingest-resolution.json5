@@ -19,7 +19,7 @@ A one-off make target warms the table for all existing recipes.\n\
 An LLM 'unknown' is stored with disposition unknown so the name isn't paid for again on every save, and it still reads as unknown; 'not_food' lines (headers, equipment) are hidden. \
 The harvest step can re-resolve unknown rows after the catalog grows.\n\
 - Harvest: a make target exports the table so the step 2 process can review entries and promote good ones into the committed catalog, keeping the runtime table a shrinking fallback.\n\
-- For the paste flow, the resolution can be folded into the extraction call itself; see p2-text-import-structured-ingredients.\n\
+- The paste flow is no exception: resolution always happens server-side at save, never inside the extraction call or from draft data (see p2-text-import-structured-ingredients).\n\
 \n\
 Needs end-to-end tests with the mock OpenRouter fixture server (make mock-openrouter).",
   "status": "open",
@@ -34,5 +34,5 @@ Needs end-to-end tests with the mock OpenRouter fixture server (make mock-openro
 Owner decision also needed: when the write-time LLM call fails (OpenRouter down or invalid response), should the recipe save abort (strict fail-fast), or should resolution run as a visible, retryable job step after the save, like the existing enrich_* steps? \
 A silent fallback to unknown is not an option.",
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T15:35:00-07:00",
+  "updated_at": "2026-09-27T16:50:00-07:00",
 }

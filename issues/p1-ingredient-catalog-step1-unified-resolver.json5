@@ -14,6 +14,8 @@ Negligibility is decided per line, not per food: zero_calorie foods are always n
 - Alias table: normalized written name -> catalog id, or explicit 'not a food' (headers, 'to serve', equipment).\n\
 - resolve(item) -> Food { id, via: exact|alias|normalized } | Compound { ids } | NotFood | Unresolved. \
 NotFood (headers, equipment, 'to serve') is distinct from Unresolved, so coverage excludes it and step 3 never sends it to the LLM. \
+Catalog entries have a kind: food (nutrition plus category) or product (purchasable non-food such as dish soap or dog treats, shopping category only). \
+Product entries resolve like foods, so shopping-list categorization keeps working for free-text items (server/src/api/shopping_list/list.rs; data/shopping-list-categories.json covers Household, Personal Care, and Pet), while nutrition treats a product line like NotFood. \
 Normalization is the union of what density already does (rewrites, plural handling, modifier stripping) plus handling trailing clauses. \
 Don't blindly drop text after the first comma or semicolon: the corpora contain items like 'boneless, skinless chicken thighs', 'crushed, diced, chopped or whole tomatoes', and 'firm, tart apples', where the food comes after the comma. \
 Try the full name first, then strip one trailing comma/semicolon clause at a time and accept the result only if it resolves to a food ('kosher salt, presumably diamond' -> 'kosher salt'). \
@@ -45,5 +47,5 @@ Follow-ups: step2 (bulk-classify the corpus with harness subagents) and step3 (L
     "api",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T16:20:00-07:00",
+  "updated_at": "2026-09-27T16:50:00-07:00",
 }
