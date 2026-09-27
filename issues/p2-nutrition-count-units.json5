@@ -1,0 +1,23 @@
+{
+  "title": "Calorie estimate can't handle counted ingredients (2 large eggs, 1 medium onion, 3 cloves garlic)",
+  "description": "In nutrition::grams_per_unit only mass and volume units are supported, so ingredients whose food does match still fail with 'Unsupported quantity unit' when they're counted. \
+On the prod corpus (2026-09-27) this is 443 lines, including eggs 134, onion 123, garlic 95, egg 70, and onions 19. \
+The units involved are large 190, clove 93, none/bare count 88, medium 46, small 28, plus pinch, head and extra-large.\n\
+\n\
+These are some of the most common and most calorie-relevant ingredients (eggs especially). \
+USDA SR Legacy ships per-food portion weights (food_portion / measure descriptions like '1 large', '1 clove', '1 medium'). \
+Extend scripts/import-nutrition.py to import the relevant per-each portion weights into data.json (e.g. a portions map per food), then resolve count units (and bare counts, which default to the 'medium' or single-each portion) in grams_per_unit. 'pinch' and 'dash' can be treated as negligible via the catalog negligible flag (p1-ingredient-catalog-step1-unified-resolver). \
+Per-each weights belong on catalog entries, so do this as part of or after step 1.\n\
+\n\
+Add unit tests in ramekin-core/tests/nutrition_tests.rs for large egg, garlic clove, medium onion and a bare count. \
+Bump RULE_VERSION.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "api",
+  ],
+  "created_at": "2026-09-27T13:58:35-07:00",
+  "updated_at": "2026-09-27T13:58:35-07:00",
+}

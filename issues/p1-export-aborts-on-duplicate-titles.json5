@@ -1,0 +1,23 @@
+{
+  "title": "Bulk .paprikarecipes export aborts when two recipes share a title",
+  "description": "server/src/api/recipes/paprika.rs builds each zip entry name from the sanitized recipe title only (e.g. 'Beef Stew.paprikarecipe'). \
+The zip crate rejects a second entry with the same name ('invalid Zip archive: Duplicate filename: ...'). \
+Older prod logs (~/code/ramekin/logs/dev.log) show the previous behavior: those recipes were logged and silently skipped (Beef Stew, Fried Pickle Dip, Oven-Braised Beef with Tomatoes and Garlic, Spaghetti Alla Carrettiera). server/src/api/recipes/zip_stream.rs now maps any non-IO start_file error to a fatal io::Error and aborts the stream, so with current code the whole backup should fail as soon as it reaches the second same-titled recipe.\n\
+\n\
+This affects real prod data: as of 2026-09-27 each of the two prod users has 6-12 recipes whose titles collide (Beef Stew, Fried Pickle Dip, Reverse-Seared Steak, Hash Brown Patties, Oat and Wheat Sandwich Bread, ...). \
+Also, two titles that differ only in stripped punctuation, such as 'Pizza Beans / Tomato...', collide after sanitization.\n\
+\n\
+Fix: make entry names unique within the archive (e.g. append ' (2)', or a short id suffix, on collision after sanitization). \
+Paprika imports by the recipe payload, not the entry name, so renaming is safe. \
+Add an end-to-end test in tests/test_export.py that exports two recipes with the same title (and two that differ only in punctuation) and asserts both round-trip. \
+Verify on the prod instance that a full export completes afterward.",
+  "status": "open",
+  "priority": 1,
+  "type": "task",
+  "labels": [
+    "api",
+    "export",
+  ],
+  "created_at": "2026-09-27T13:58:35-07:00",
+  "updated_at": "2026-09-27T13:58:35-07:00",
+}

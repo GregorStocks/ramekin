@@ -1,0 +1,27 @@
+{
+  "title": "Upgrade default AI models (still google/gemini-2.5-flash from mid-2025) with an eval to pick replacements",
+  "description": "ramekin-core/src/ai/config.rs defaults every text feature to google/gemini-2.5-flash and images to google/gemini-2.5-flash-image. \
+Prod (~/code/ramekin dev.env/cli.env) doesn't set RAMEKIN_AI_MODEL, so prod runs all AI features on those defaults: text/photo extraction, auto-tag, custom enrich, title normalization, description generation, photo generation. cli.env.example still lists openai/gpt-4.1-mini and anthropic/claude-sonnet-4.6 as alternatives, which are also stale.\n\
+\n\
+Tasks:\n\
+1. \
+Check OpenRouter's current catalog (don't rely on training data) for current fast/cheap and frontier models, including pricing and JSON-mode support.\n\
+2. \
+Consider per-feature models rather than one global model. \
+Extraction (text/photo) and ingredient resolution reward accuracy; tagging and descriptions can use the cheapest good model.\n\
+3. \
+Compare candidates with the existing cached harnesses (make title-normalization-test, make description-generation-test) plus the text-import eval from p2-text-import-structured-ingredients, and record results in the PR.\n\
+4. \
+Update defaults, dev.env.example, and cli.env.example. \
+The AI cache key includes the model, so stale cached responses won't leak through; the mock OpenRouter fixtures may need their model names updated.\n\
+\n\
+Also relevant: a 2026-07-28 prod job failed on an upstream Gemini rate limit (see p3-openrouter-finish-reason-error).",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "ai",
+  ],
+  "created_at": "2026-09-27T14:40:27-07:00",
+  "updated_at": "2026-09-27T14:40:27-07:00",
+}

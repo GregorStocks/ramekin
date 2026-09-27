@@ -1,0 +1,28 @@
+{
+  "title": "Paste/text import: have the LLM return structured ingredients instead of raw lines for the deterministic parser",
+  "description": "POST /api/import/text already calls an LLM (ramekin-core/src/ai/text_extract.rs), but only to segment the pasted text. \
+It returns raw_recipe.ingredients as a newline-joined string, which server/src/api/import/text.rs parse_draft_ingredients then feeds through the deterministic ingredient parser. \
+So pasted text, which is exactly the input the deterministic parser handles worst (arbitrary formatting, prose amounts, headers without colons), gets no LLM help where it matters.\n\
+\n\
+Have the extraction call return structured ingredients directly: item, measurements (amount/unit alternatives), note, section, plus a catalog id for any name the catalog misses, which gets written to the step 3 resolution table (p2-ingredient-catalog-step3-ingest-resolution) so no separate resolution call is needed. \
+This costs one call, not an extra one. \
+Keep the rule 'never invent ingredients or amounts'. \
+The raw line should still be returned verbatim so the editable raw_ingredients text stays faithful to the source.\n\
+\n\
+Before switching, build an eval: collect ~50 varied pasted recipes (a few from the prod DB whose source text is available, plus hand-made messy cases: headers without colons, 'a pinch of', 'juice of 1 lemon', ranges, metric+imperial), run old vs new, and compare against hand-checked expectations. \
+The existing title-normalization-test / description-generation-test harnesses are the pattern to copy (cached LLM, free on rerun). \
+The eval also decides whether the scrape pipeline (JSON-LD recipeIngredient strings) should move the same way; that's a separate decision, since the deterministic parser there is measured by make pipeline and the ingredient fixtures.\n\
+\n\
+Both clients consume the import draft already; confirm web and iOS render the structured result unchanged. \
+Update end-to-end tests with the mock OpenRouter fixtures.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "ai",
+    "api",
+    "ingredient-parser",
+  ],
+  "created_at": "2026-09-27T14:40:27-07:00",
+  "updated_at": "2026-09-27T14:40:27-07:00",
+}

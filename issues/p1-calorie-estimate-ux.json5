@@ -1,0 +1,40 @@
+{
+  "title": "Redesign the Estimated calories section so it degrades gracefully instead of listing every unmatched ingredient",
+  "description": "The calorie estimate section (web: ramekin-ui/src/components/CalorieEstimate.tsx, iOS: ramekin-ios/Ramekin/CalorieEstimateSection.swift) renders the server's prose summary plus one bullet per unknown ingredient with its raw reason (\"kosher salt: No supported nutrition match\"). \
+Against the prod corpus (994 recipes, audited 2026-09-27) the matcher currently resolves 7.6% of ingredient lines and 0 recipes get a complete estimate, so every recipe shows a wall of failure bullets and a meaningless 'partial subtotal' number. \
+Even after the matcher improves (see the p1-ingredient-catalog-step* series), some recipes will stay partial, so the UI needs a coherent design for incomplete data.\n\
+\n\
+Recommended UX:\n\
+1. \
+Lead with one number, not prose: per serving when servings is known (e.g. '~520 kcal / serving'), else whole-recipe. \
+The server should return structured fields (range, coverage) and stop shipping presentation sentences (summary / per_serving_summary) for clients to render verbatim.\n\
+2. \
+Gate on coverage, measured by estimated share of calories rather than line count. \
+The server should classify lines as matched / negligible (salt, pepper, water, spices under ~1 tbsp, garnish 'to taste') / unknown, and report coverage over non-negligible lines. \
+High coverage: show the number, with a quiet 'excludes: X, Y' footnote only when a non-negligible item is missing. \
+Low coverage (e.g. under ~70% of non-negligible lines, or any unknown that is likely calorie-dense such as meats, cheese, oils, sauces): don't show a number; show 'Not enough ingredient data to estimate calories' with the disclosure available.\n\
+3. \
+Put the per-ingredient breakdown behind a disclosure ('How is this calculated?'), listing every line with its kcal contribution or a short human label ('not recognized', 'amount unclear'), never internal reason strings. \
+This is also where a future 'fix this match' affordance would live.\n\
+4. \
+Never show headers or no-measurement lines (section headers, 'salt and pepper to taste') as unknowns.\n\
+5. \
+Keep the USDA attribution line in the disclosure, not the main view.\n\
+\n\
+Both web and iOS need the change. \
+Coverage classification and thresholds must live server-side (ramekin-core nutrition::estimate) so clients only render; per doc/client-logic-sharing.md, don't duplicate the threshold logic in both clients. \
+The API response shape changes, so regenerate clients and update tests/test_*.py end-to-end coverage plus CalorieEstimateViewModelTests.\n\
+\n\
+Re-run the audit (dump current_version ingredients from the prod DB and replay nutrition::estimate) to pick the threshold; the goal is that most recipes show either a trustworthy number or a single clean 'not enough data' line.",
+  "status": "open",
+  "priority": 1,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "web",
+    "ios",
+    "api",
+  ],
+  "created_at": "2026-09-27T13:58:35-07:00",
+  "updated_at": "2026-09-27T13:58:35-07:00",
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Ingredient catalog step 3: LLM-resolve unrecognized ingredient names into a persistent shared resolution table",
+  "description": "Even after step 2, new recipes will bring names the committed catalog doesn't know. \
+Resolve those with an LLM once per distinct name, persist the answer, and resolve at read time from catalog + table.\n\
+\n\
+Design:\n\
+- Resolution stays at read time: resolve(item) checks the committed catalog/aliases, then a shared DB table (e.g. ingredient_resolutions: normalized_name unique, catalog_id or null for not-a-food, model, created_at). \
+It's a local indexed lookup with no TTL, so it's fast and consistent, and catalog improvements apply to every recipe immediately with no backfill. \
+Nothing is stored on the recipe's ingredients. \
+Diesel DSL, no raw SQL.\n\
+- Reads never call the LLM. \
+The table is populated at write time: after any ingest or save (scrape, paste/text import, photo import, Paprika import, manual edit), collect the recipe's names that miss both catalog and table and resolve them in one batched LLM call. \
+The call picks from candidate catalog ids shortlisted by lexical similarity to keep the prompt small, or answers not-a-food/unknown; it may only choose existing ids and never invents nutrition numbers. \
+A name hit concurrently by two saves resolves once (unique constraint).\n\
+- A read that hits a name not yet in the table (e.g. recipes imported before this ships, or a failed resolution) reports it as unknown. \
+A one-off make target warms the table for all existing recipes.\n\
+- Unknown stays unknown (the UI in p1-calorie-estimate-ux handles it); never treat an unresolved line as zero calories.\n\
+- Harvest: a make target exports the table so the step 2 process can review entries and promote good ones into the committed catalog, keeping the runtime table a shrinking fallback.\n\
+- For the paste flow, the resolution can be folded into the extraction call itself; see p2-text-import-structured-ingredients.\n\
+\n\
+Needs end-to-end tests with the mock OpenRouter fixture server (make mock-openrouter).",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "ai",
+    "api",
+  ],
+  "created_at": "2026-09-27T14:40:27-07:00",
+  "updated_at": "2026-09-27T14:44:25-07:00",
+}

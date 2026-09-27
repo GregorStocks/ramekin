@@ -1,0 +1,41 @@
+{
+  "title": "Ingredient catalog step 1: one canonical ingredient catalog and resolver shared by nutrition, density, and shopping categories",
+  "description": "Today three unrelated matchers turn a written ingredient into knowledge, each with its own normalization and data:\n\
+- ingredient-density find_density (ingredient-density/src/density_lookup.rs; used by ramekin-core/src/volume_to_weight.rs): lowercase, curated rewrites, aliases, plural variations, strip_modifiers; data in usda.json + curated.json.\n\
+- shopping-list categorizer (ramekin-core/src/ingredient_categorizer.rs, keyword rules in data/ingredients.json; used by server/src/api/shopping_list/list.rs): keyword-token containment.\n\
+- calorie estimate (ramekin-core/src/nutrition/mod.rs): exact whitespace/case-normalized match against SR Legacy descriptions plus 32 aliases. \
+It resolves 7.6% of prod ingredient lines (audit 2026-09-27: 994 recipes, 11,865 lines, 3,083 distinct unmatched names).\n\
+\n\
+They disagree about the same ingredient (density knows 'kosher salt'; nutrition doesn't), and improvements to one never help the others.\n\
+\n\
+Build a single catalog plus resolver in ramekin-core:\n\
+- Catalog entry = stable id (slug, e.g. 'garlic', 'kosher-salt-diamond', 'olive-oil-extra-virgin') with display name, shopping category, grams_per_cup, kcal_per_100g, per-each portion weights (large/medium/small/clove/head; see p2-nutrition-count-units), a negligible-calories flag (salt, pepper, water, most dried spices at tsp scale), and provenance (USDA FDC id(s) or 'manual' with a citation).\n\
+- Alias table: normalized written name -> catalog id, or explicit 'not a food' (headers, 'to serve', equipment).\n\
+- resolve(item) -> Resolution { id, via: exact|alias|normalized } | Unresolved. \
+Normalization is the union of what density already does (rewrites, plural handling, modifier stripping) plus dropping text after the first comma/semicolon ('kosher salt, presumably diamond'). \
+Compound lines ('salt and pepper') resolve to a list of ids.\n\
+- Density lookup, categorize(), and nutrition all go through resolve(). \
+Delete the old per-matcher tables once migrated. \
+No backwards compatibility.\n\
+- Keep USDA SR Legacy as the numeric source (it isn't the problem; the name mapping is). \
+Evaluate adding FNDDS survey foods for prepared items (tortillas, broth, mayonnaise, ketchup) if SR Legacy lacks good matches.\n\
+\n\
+Add a make target (e.g. make ingredient-catalog-audit) that replays resolve() and nutrition::estimate over a corpus and reports resolution rate, recipe completeness, per-feature coverage, and the top unresolved names. \
+The primary corpus is the make pipeline output, which is much larger than prod: data/density-gap-report.txt alone lists 6,533 distinct parsed names (14,265 occurrences) lacking density, and data/unique-ingredients.txt has 16,299 distinct raw lines. \
+Also accept an optional prod-DB dump (~11.9k lines) and data/shopping-list-categories.json (hand-typed shopping items). \
+Report each corpus separately, since pipeline data reflects the web at large and prod reflects actual use. \
+This target is how every later step is measured. \
+Expect diffs from the shopping-list categorizer test (make shopping-list-categorizer-test) and the ingredient-density test; review them as intentional, and rerun make pipeline and commit the data/ diffs (e.g. density-gap-report.txt shrinking).\n\
+\n\
+Follow-ups: step2 (bulk-classify the corpus with harness subagents) and step3 (LLM resolution for names the catalog misses).",
+  "status": "open",
+  "priority": 1,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "ingredient-parser",
+    "api",
+  ],
+  "created_at": "2026-09-27T14:40:27-07:00",
+  "updated_at": "2026-09-27T14:44:25-07:00",
+}
