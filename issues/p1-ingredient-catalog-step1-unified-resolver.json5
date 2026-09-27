@@ -23,7 +23,8 @@ Also strip leading comma-separated modifier runs ('boneless, skinless ...') usin
 Add fixtures for both shapes. \
 Compound lines the parser keeps as one ingredient ('salt and pepper', 'oil and vinegar') resolve to Compound { ids }. \
 The line has one measurement for several foods, so nutrition never splits or duplicates the quantity: a Compound counts as negligible only if every component would be negligible on that line under the per-line rule above; any other Compound is unknown, with the component names shown in the breakdown. \
-The shopping category and density use the first component.\n\
+The shopping category uses the first component. \
+Density stays unresolved for a Compound (the mixture ratio is unknown), so no gram alternative is generated for it.\n\
 - Density lookup, categorize(), and nutrition all go through resolve(). \
 Delete the old per-matcher tables once migrated. \
 No backwards compatibility.\n\
@@ -47,5 +48,5 @@ Follow-ups: step2 (bulk-classify the corpus with harness subagents) and step3 (L
     "api",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T16:50:00-07:00",
+  "updated_at": "2026-09-27T17:05:00-07:00",
 }

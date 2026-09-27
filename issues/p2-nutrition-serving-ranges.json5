@@ -8,7 +8,10 @@ Support ranges by producing a per-serving range (lower bound = whole-recipe min 
 Also accept 'servings N' without a colon, and 'yield N' / 'makes N servings'. \
 Per-serving is the number users actually want (see p1-calorie-estimate-ux), so this matters more than its line count suggests.\n\
 \n\
-Note that ramekin-core's servings scaling code may already parse these forms; reuse it rather than growing a second grammar. \
+Servings parsing currently exists in three places: nutrition::serving_count, ramekin-ui/src/utils/scaleAmount.ts, and ramekin-ios/Ramekin/RecipeScaleSupport.swift. \
+Extending only nutrition would make per-serving calories disagree with what both clients display when scaled (e.g. 'yield 4' at 2x). \
+Per doc/client-logic-sharing.md, prefer moving servings interpretation server-side, returning the parsed count or range alongside the recipe so clients stop parsing. \
+If that doesn't fit, add the new forms to both client implementations with shared test vectors in the same PR. \
 Add unit tests.",
   "status": "open",
   "priority": 2,
@@ -18,5 +21,5 @@ Add unit tests.",
     "api",
   ],
   "created_at": "2026-09-27T13:58:35-07:00",
-  "updated_at": "2026-09-27T15:20:00-07:00",
+  "updated_at": "2026-09-27T17:05:00-07:00",
 }
