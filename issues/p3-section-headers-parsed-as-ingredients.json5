@@ -10,7 +10,11 @@ Besides rendering wrong, these show up as 'unknown' ingredients in the calorie e
 \n\
 Investigate the ATK and Smitten Kitchen extraction paths (JSON-LD recipeIngredient often inlines headers as plain strings) and promote header-like lines to the section of the following ingredients. \
 Be conservative with Title-Case detection: require no quantity plus either a trailing colon or a match against the source's grouping structure. \
-Expect intentional data/ diffs from make pipeline; commit them.",
+Expect intentional data/ diffs from make pipeline; commit them. \
+Note that the current detect_section_header (ramekin-core/src/ingredient_parser/item/line_classifiers.rs) already recognizes short colon-terminated labels like 'To serve:' and 'Assembly:', so many of the 118 stored colon headers are likely stale rows from older imports that a parser fix won't touch. \
+Recipe reads return the stored ingredients JSONB as-is (server/src/api/recipes/get.rs). \
+Also add a one-off make target that re-runs the current parser's section detection over stored recipes and saves a new recipe version for each changed recipe, through the normal Diesel save path (no raw SQL, version history preserved). \
+Dry-run it against the prod DB first and report the counts.",
   "status": "open",
   "priority": 3,
   "type": "task",
@@ -19,5 +23,5 @@ Expect intentional data/ diffs from make pipeline; commit them.",
     "pipeline",
   ],
   "created_at": "2026-09-27T13:58:35-07:00",
-  "updated_at": "2026-09-27T13:58:35-07:00",
+  "updated_at": "2026-09-27T16:05:00-07:00",
 }
