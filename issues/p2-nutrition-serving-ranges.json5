@@ -4,7 +4,7 @@
 On the prod corpus (2026-09-27) servings is unparseable on 496 of 994 recipes and missing on 98. \
 Top unparseable strings: '4 to 6 servings' 36, 'serves 4 to 6' 29, 'servings: 4 to 6' 21, 'serves 6 to 8' 18, '6 to 8' 14, '6 to 8 servings' 13, 'servings: 2 to 4' 12, 'servings 2' 7 (no colon), 'yield 4' 6, 'makes ...'.\n\
 \n\
-Support ranges by producing a per-serving range (whole-recipe max / min servings .. whole-recipe min / max servings, i.e. '4 to 6 servings' of a 2400 kcal recipe is 400-600 kcal). \
+Support ranges by producing a per-serving range (lower bound = whole-recipe min / max servings, upper bound = whole-recipe max / min servings; e.g. '4 to 6 servings' of a 2400 kcal recipe is 400-600 kcal). \
 Also accept 'servings N' without a colon, and 'yield N' / 'makes N servings'. \
 Per-serving is the number users actually want (see p1-calorie-estimate-ux), so this matters more than its line count suggests.\n\
 \n\
@@ -18,5 +18,5 @@ Add unit tests.",
     "api",
   ],
   "created_at": "2026-09-27T13:58:35-07:00",
-  "updated_at": "2026-09-27T13:58:35-07:00",
+  "updated_at": "2026-09-27T15:20:00-07:00",
 }

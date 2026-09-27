@@ -4,7 +4,8 @@
 It returns raw_recipe.ingredients as a newline-joined string, which server/src/api/import/text.rs parse_draft_ingredients then feeds through the deterministic ingredient parser. \
 So pasted text, which is exactly the input the deterministic parser handles worst (arbitrary formatting, prose amounts, headers without colons), gets no LLM help where it matters.\n\
 \n\
-Have the extraction call return structured ingredients directly: item, measurements (amount/unit alternatives), note, section, plus a catalog id for any name the catalog misses, which gets written to the step 3 resolution table (ingredient-catalog-step3-ingest-resolution) so no separate resolution call is needed. \
+Have the extraction call return structured ingredients directly: item, measurements (amount/unit alternatives), note, section, plus a proposed catalog resolution for any name the catalog misses, so no separate resolution call is needed. \
+The import endpoint returns an editable, unsaved draft, so don't write proposals to the shared step 3 resolution table (ingredient-catalog-step3-ingest-resolution) at import time; carry them in the draft and persist them only when the reviewed recipe is saved, and only for names still present and unchanged in the saved ingredients. \
 This costs one call, not an extra one. \
 Keep the rule 'never invent ingredients or amounts'. \
 The raw line should still be returned verbatim so the editable raw_ingredients text stays faithful to the source.\n\
@@ -24,5 +25,5 @@ Update end-to-end tests with the mock OpenRouter fixtures.",
     "ingredient-parser",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T14:40:27-07:00",
+  "updated_at": "2026-09-27T15:20:00-07:00",
 }
