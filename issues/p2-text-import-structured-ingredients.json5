@@ -11,13 +11,16 @@ Resolution happens server-side when the recipe is saved (ingredient-catalog-step
 \n\
 Save contract: today both clients send rawIngredients on save (web CreateRecipePage.tsx, iOS RecipeFormViewModel.swift), and server/src/api/recipes/create.rs reparses that text with the deterministic parser, overwriting content.ingredients. \
 Returning a structured draft alone would therefore change nothing that gets saved. \
-Specify and implement: the clients send the structured ingredients from the draft, and the server saves them as-is when the raw text is unchanged since import. \
+Specify and implement: the clients pass the draft (each structured ingredient with its raw line) through unchanged alongside the edited raw text, and the server alone decides, per line, whether to keep the draft structure (raw line unchanged) or reparse (edited or added). \
+Clients do no diffing, so web and iOS cannot diverge (doc/client-logic-sharing.md). \
 If the user edits a raw line, that line is reparsed (deterministically, or by re-running the LLM for just the edited lines; the eval picks which). \
 Both web and iOS need this, with end-to-end tests covering an unedited save, an edited line, and an added line.\n\
 \n\
 Before switching, build an eval: collect ~50 varied pasted recipes (a few from the prod DB whose source text is available, plus hand-made messy cases: headers without colons, 'a pinch of', 'juice of 1 lemon', ranges, metric+imperial), run old vs new, and compare against hand-checked expectations. \
 The existing title-normalization-test / description-generation-test harnesses are the pattern to copy (cached LLM, free on rerun). \
-The eval also decides whether the scrape pipeline (JSON-LD recipeIngredient strings) should move the same way; that's a separate decision, since the deterministic parser there is measured by make pipeline and the ingredient fixtures.\n\
+The eval also decides whether the scrape pipeline (JSON-LD recipeIngredient strings) should move the same way; that's a separate decision, since the deterministic parser there is measured by make pipeline and the ingredient fixtures. \
+Still run make pipeline for this change: the expected result is no data/ diff, because the pipeline doesn't go through text import. \
+Say so in the PR, or commit any diff that does appear.\n\
 \n\
 Both clients consume the import draft already; confirm web and iOS render the structured result unchanged. \
 Update end-to-end tests with the mock OpenRouter fixtures.",
@@ -30,5 +33,5 @@ Update end-to-end tests with the mock OpenRouter fixtures.",
     "ingredient-parser",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T15:35:00-07:00",
+  "updated_at": "2026-09-27T15:50:00-07:00",
 }
