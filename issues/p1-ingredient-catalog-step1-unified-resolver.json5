@@ -26,6 +26,10 @@ The line has one measurement for several foods, so nutrition never splits or dup
 The shopping category uses the first component. \
 Density stays unresolved for a Compound (the mixture ratio is unknown), so no gram alternative is generated for it.\n\
 - Density lookup, categorize(), and nutrition all go through resolve(). \
+Open owner decision: calories and shopping categories are computed at read time, so catalog improvements reach every recipe immediately, but density gram alternatives are not. \
+ParseIngredientsStep (ramekin-core/src/pipeline/steps/parse_ingredients.rs) adds volume-to-weight alternatives at ingest, and reads return the stored ingredients JSON as-is. \
+So a name resolved later, or a corrected density, never updates those stored gram amounts. \
+Either compute gram alternatives at read time as well (recommended, for consistency), or re-run density enrichment over stored recipes when the catalog changes. \
 Delete the old per-matcher tables once migrated. \
 No backwards compatibility.\n\
 - Keep USDA SR Legacy as the numeric source (it isn't the problem; the name mapping is). \
@@ -48,5 +52,5 @@ Follow-ups: step2 (bulk-classify the corpus with harness subagents) and step3 (L
     "api",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T17:20:00-07:00",
+  "updated_at": "2026-09-27T16:06:16-07:00",
 }

@@ -18,11 +18,11 @@ Process:\n\
 A make target exports the distinct normalized names still unresolved across those corpora, with combined frequency, which corpora each came from, and 2-3 example raw lines each.\n\
 2. \
 Shard (e.g. ~200 names per shard, highest frequency first) and fan out subagents. \
-Each maps a name to an existing catalog id, proposes a new catalog entry (USDA FDC id(s) chosen from the pinned snapshot, never invented numbers), marks it not-a-food, or flags it uncertain. \
+Each maps a name to an existing catalog id, proposes a new food entry (USDA FDC id(s) chosen from the pinned snapshot, never invented numbers), proposes a new product entry (purchasable non-food such as a dish soap variant: shopping category only, no FDC id, nutrition, or density), marks it not-a-food, or flags it uncertain. \
 Output is structured JSON per shard. \
 Since the corpus is large, work in frequency tiers and measure with the audit after each tier; the tail below a frequency cutoff can be left to step 3.\n\
 3. \
-A validator (a Rust test or make target) checks every proposed FDC id exists in the snapshot, kcal/density come from the snapshot, ids are well-formed, and there are no alias conflicts.\n\
+A validator (a Rust test or make target) checks every proposed food entry's FDC id exists in the snapshot and its kcal/density come from the snapshot, product entries carry a valid shopping category and no nutrition fields, ids are well-formed, and there are no alias conflicts.\n\
 4. \
 A second verification pass (different subagents) spot-checks a random sample plus every high-calorie mapping (oils, meats, cheese, nuts, sugar), since those dominate estimate error.\n\
 5. \
@@ -40,5 +40,5 @@ Document the procedure in docs/agent/ so it can be rerun as the corpus grows, an
   ],
   "blocked": "Needs p1-ingredient-catalog-step1-unified-resolver merged first: this step uses its resolve() API, catalog format, and make ingredient-catalog-audit target.",
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T15:05:00-07:00",
+  "updated_at": "2026-09-27T16:06:16-07:00",
 }
