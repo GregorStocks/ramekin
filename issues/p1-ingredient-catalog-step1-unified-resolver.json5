@@ -1,0 +1,56 @@
+{
+  "title": "Ingredient catalog step 1: one canonical ingredient catalog and resolver shared by nutrition, density, and shopping categories",
+  "description": "Today three unrelated matchers turn a written ingredient into knowledge, each with its own normalization and data:\n\
+- ingredient-density find_density (ingredient-density/src/density_lookup.rs; used by ramekin-core/src/volume_to_weight.rs): lowercase, curated rewrites, aliases, plural variations, strip_modifiers; data in usda.json + curated.json.\n\
+- shopping-list categorizer (ramekin-core/src/ingredient_categorizer.rs, keyword rules in data/ingredients.json; used by server/src/api/shopping_list/list.rs): keyword-token containment.\n\
+- calorie estimate (ramekin-core/src/nutrition/mod.rs): exact whitespace/case-normalized match against SR Legacy descriptions plus 32 aliases. \
+It resolves 7.6% of prod ingredient lines (audit 2026-09-27: 994 recipes, 11,865 lines, 3,083 distinct unmatched names).\n\
+\n\
+They disagree about the same ingredient (density knows 'kosher salt'; nutrition doesn't), and improvements to one never help the others.\n\
+\n\
+Build a single catalog plus resolver in ramekin-core:\n\
+- Catalog entry = stable id (slug, e.g. 'garlic', 'kosher-salt-diamond', 'olive-oil-extra-virgin') with display name, shopping category, grams_per_cup, kcal_per_100g, per-each portion weights (large/medium/small/clove/head; see p2-nutrition-count-units), a zero_calorie flag reserved for foods that are genuinely ~0 kcal at any quantity (salt, water, ice, baking soda), and a trace_ok flag for foods commonly listed without an amount (pepper, dried spices and herbs). \
+Negligibility is decided per line, not per food: zero_calorie foods are always negligible; trace_ok foods are negligible only when the line has no quantity or a trace unit ('to taste', pinch, dash); any line with a real quantity is computed from kcal_per_100g, so a cup of cumin counts in full, and provenance (USDA FDC id(s) or 'manual' with a citation).\n\
+- Alias table: normalized written name -> catalog id, or explicit 'not a food' (headers, 'to serve', equipment).\n\
+- resolve(item) -> Food { id, via: exact|alias|normalized } | Compound { ids } | NotFood | Unresolved. \
+NotFood (headers, equipment, 'to serve') is distinct from Unresolved, so coverage excludes it and step 3 never sends it to the LLM. \
+Catalog entries have a kind: food (nutrition plus category) or product (purchasable non-food such as dish soap or dog treats, shopping category only). \
+Product entries resolve like foods, so shopping-list categorization keeps working for free-text items (server/src/api/shopping_list/list.rs; data/shopping-list-categories.json covers Household, Personal Care, and Pet), while nutrition treats a product line like NotFood. \
+Normalization is the union of what density already does (rewrites, plural handling, modifier stripping) plus handling trailing clauses. \
+Don't blindly drop text after the first comma or semicolon: the corpora contain items like 'boneless, skinless chicken thighs', 'crushed, diced, chopped or whole tomatoes', and 'firm, tart apples', where the food comes after the comma. \
+Try the full name first, then strip one trailing comma/semicolon clause at a time and accept the result only if it resolves to a food or product entry, never NotFood ('kosher salt, presumably diamond' -> 'kosher salt'; 'dish soap, unscented' -> 'dish soap'). \
+Also strip leading comma-separated modifier runs ('boneless, skinless ...') using the modifier list. \
+Add fixtures for both shapes. \
+Compound lines the parser keeps as one ingredient ('salt and pepper', 'oil and vinegar') resolve to Compound { ids }. \
+The line has one measurement for several foods, so nutrition never splits or duplicates the quantity: a Compound counts as negligible only if every component would be negligible on that line under the per-line rule above; any other Compound is unknown, with the component names shown in the breakdown. \
+The shopping category uses the first component. \
+Density stays unresolved for a Compound (the mixture ratio is unknown), so no gram alternative is generated for it.\n\
+- Density lookup, categorize(), and nutrition all go through resolve(). \
+Open owner decision: calories and shopping categories are computed at read time, so catalog improvements reach every recipe immediately, but density gram alternatives are not. \
+ParseIngredientsStep (ramekin-core/src/pipeline/steps/parse_ingredients.rs) adds volume-to-weight alternatives at ingest, and reads return the stored ingredients JSON as-is. \
+So a name resolved later, or a corrected density, never updates those stored gram amounts. \
+Either compute gram alternatives at read time as well (recommended, for consistency), or re-run density enrichment over stored recipes when the catalog changes. \
+Delete the old per-matcher tables once migrated. \
+No backwards compatibility.\n\
+- Keep USDA SR Legacy as the numeric source (it isn't the problem; the name mapping is). \
+Evaluate adding FNDDS survey foods for prepared items (tortillas, broth, mayonnaise, ketchup) if SR Legacy lacks good matches.\n\
+\n\
+Add a make target (e.g. make ingredient-catalog-audit) that replays resolve() and nutrition::estimate over a corpus and reports resolution rate, recipe completeness, per-feature coverage, and the top unresolved names. \
+The primary corpus is the make pipeline output, which is much larger than prod: data/density-gap-report.txt alone lists 6,533 distinct parsed names (14,265 occurrences) lacking density, and data/unique-ingredients.txt has 16,299 distinct raw lines. \
+Also accept an optional prod-DB dump (~11.9k lines) and data/shopping-list-categories.json (hand-typed shopping items). \
+Report each corpus separately, since pipeline data reflects the web at large and prod reflects actual use. \
+This target is how every later step is measured. \
+Expect diffs from the shopping-list categorizer test (make shopping-list-categorizer-test) and the ingredient-density test; review them as intentional, and rerun make pipeline and commit the data/ diffs (e.g. density-gap-report.txt shrinking).\n\
+\n\
+Follow-ups: step2 (bulk-classify the corpus with harness subagents) and step3 (LLM resolution for names the catalog misses).",
+  "status": "open",
+  "priority": 1,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "ingredient-parser",
+    "api",
+  ],
+  "created_at": "2026-09-27T14:40:27-07:00",
+  "updated_at": "2026-09-27T16:06:16-07:00",
+}
