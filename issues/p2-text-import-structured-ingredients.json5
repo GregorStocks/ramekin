@@ -14,6 +14,8 @@ Returning a structured draft alone would therefore change nothing that gets save
 Specify and implement: the clients pass the draft (each structured ingredient with its raw line) through unchanged alongside the edited raw text, and the server alone decides, per line, whether to keep the draft structure (raw line unchanged) or reparse (edited or added). \
 Clients do no diffing, so web and iOS cannot diverge (doc/client-logic-sharing.md). \
 If the user edits a raw line, that line is reparsed (deterministically, or by re-running the LLM for just the edited lines; the eval picks which). \
+Section headers carry context: adding, removing, or renaming a header invalidates every ingredient through the next header, and those lines are reparsed with the new section. \
+Cover header add, remove, and rename in the save tests. \
 Both web and iOS need this, with end-to-end tests covering an unedited save, an edited line, and an added line.\n\
 \n\
 Before switching, build an eval: collect ~50 varied pasted recipes (a few from the prod DB whose source text is available, plus hand-made messy cases: headers without colons, 'a pinch of', 'juice of 1 lemon', ranges, metric+imperial), run old vs new, and compare against hand-checked expectations. \
@@ -33,5 +35,5 @@ Update end-to-end tests with the mock OpenRouter fixtures.",
     "ingredient-parser",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T15:50:00-07:00",
+  "updated_at": "2026-09-27T17:20:00-07:00",
 }

@@ -18,7 +18,7 @@ Catalog entries have a kind: food (nutrition plus category) or product (purchasa
 Product entries resolve like foods, so shopping-list categorization keeps working for free-text items (server/src/api/shopping_list/list.rs; data/shopping-list-categories.json covers Household, Personal Care, and Pet), while nutrition treats a product line like NotFood. \
 Normalization is the union of what density already does (rewrites, plural handling, modifier stripping) plus handling trailing clauses. \
 Don't blindly drop text after the first comma or semicolon: the corpora contain items like 'boneless, skinless chicken thighs', 'crushed, diced, chopped or whole tomatoes', and 'firm, tart apples', where the food comes after the comma. \
-Try the full name first, then strip one trailing comma/semicolon clause at a time and accept the result only if it resolves to a food ('kosher salt, presumably diamond' -> 'kosher salt'). \
+Try the full name first, then strip one trailing comma/semicolon clause at a time and accept the result only if it resolves to a food or product entry, never NotFood ('kosher salt, presumably diamond' -> 'kosher salt'; 'dish soap, unscented' -> 'dish soap'). \
 Also strip leading comma-separated modifier runs ('boneless, skinless ...') using the modifier list. \
 Add fixtures for both shapes. \
 Compound lines the parser keeps as one ingredient ('salt and pepper', 'oil and vinegar') resolve to Compound { ids }. \
@@ -48,5 +48,5 @@ Follow-ups: step2 (bulk-classify the corpus with harness subagents) and step3 (L
     "api",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T17:05:00-07:00",
+  "updated_at": "2026-09-27T17:20:00-07:00",
 }
