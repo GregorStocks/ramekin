@@ -10,7 +10,10 @@ Check OpenRouter's current catalog (don't rely on training data) for current fas
 Consider per-feature models rather than one global model. \
 Extraction (text/photo) and ingredient resolution reward accuracy; tagging and descriptions can use the cheapest good model.\n\
 3. \
-Compare candidates with the existing cached harnesses (make title-normalization-test, make description-generation-test) plus the text-import eval from p2-text-import-structured-ingredients, and record results in the PR.\n\
+Compare candidates with the existing cached harnesses (make title-normalization-test, make description-generation-test) plus the text-import eval from p2-text-import-structured-ingredients, and record results in the PR. \
+These are text-only, but the text model also serves the multimodal request in ramekin-core/src/ai/photo_extract.rs, and the image model serves recipe-photo generation (generate_recipe_photo.rs). \
+Before changing either default, confirm on OpenRouter that the candidate supports image input (text model) or image output (image model), and add small cached evals: photo extraction over a handful of real recipe photos (printed cookbook page, handwritten card, screenshot), and image generation over a few recipes, reviewed by eye. \
+Changing only the text model while keeping a vision-capable one for photo extraction is fine if that is what the evals show.\n\
 4. \
 Update defaults, dev.env.example, and cli.env.example. \
 The AI cache key includes the model, so stale cached responses won't leak through; the mock OpenRouter fixtures may need their model names updated.\n\
@@ -23,5 +26,5 @@ Also relevant: a 2026-07-28 prod job failed on an upstream Gemini rate limit (se
     "ai",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T14:40:27-07:00",
+  "updated_at": "2026-09-27T16:35:00-07:00",
 }
