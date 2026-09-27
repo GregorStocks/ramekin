@@ -10,6 +10,7 @@ Nothing is stored on the recipe's ingredients. \
 Diesel DSL, no raw SQL.\n\
 - Reads never call the LLM. \
 The table is populated at write time: whenever a recipe is saved (scrape completion, saving a reviewed paste/photo/Paprika import, manual edit; unsaved import drafts never write to the table), collect the recipe's names that miss both catalog and table and resolve them in one batched LLM call. \
+Free-text shopping-list items are the other write path: server/src/api/shopping_list/list.rs categorizes every item through resolve(), so creating or renaming a shopping-list item must also resolve a name that misses both catalog and table (usually a product or food), or it stays uncategorized. \
 The call picks from candidate catalog ids shortlisted by lexical similarity to keep the prompt small, (food or product entries), or answers not-a-food/unknown; it may only choose existing ids and never invents nutrition numbers. \
 Deduplicate before calling the LLM: the server is a single process, so keep an in-process single-flight map keyed by normalized name, so concurrent saves wait on one in-flight resolution instead of each paying for a call. \
 Insert with on-conflict-do-nothing (Diesel DSL) so a race can never fail a save.\n\
@@ -34,5 +35,5 @@ Needs end-to-end tests with the mock OpenRouter fixture server (make mock-openro
 Owner decision also needed: when the write-time LLM call fails (OpenRouter down or invalid response), should the recipe save abort (strict fail-fast), or should resolution run as a visible, retryable job step after the save, like the existing enrich_* steps? \
 A silent fallback to unknown is not an option.",
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T16:06:16-07:00",
+  "updated_at": "2026-09-27T16:22:45-07:00",
 }
