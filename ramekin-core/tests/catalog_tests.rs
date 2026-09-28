@@ -275,4 +275,11 @@ fn density_approximations_keep_the_real_food_for_calories() {
     assert_eq!(fdc_id("dried thyme"), Some(170938));
     assert_close(density("dried thyme"), 38.4);
     assert_eq!(fdc_id("thyme"), Some(173470));
+    assert_eq!(fdc_id("greek yogurt"), Some(170894));
+    assert_close(density("greek yogurt"), 245.0);
+    // USDA has these foods, so they are not stood in for by chicken broth.
+    assert_eq!(fdc_id("beef broth"), Some(171538));
+    assert_close(density("beef broth"), 240.0);
+    assert_eq!(fdc_id("vegetable broth"), Some(171583));
+    assert_close(density("vegetable broth"), 221.0);
 }

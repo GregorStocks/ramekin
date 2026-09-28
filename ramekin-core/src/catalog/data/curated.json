@@ -8,7 +8,7 @@
     "baking powder": "leavening agents, baking powder, double-acting, sodium aluminum sulfate",
     "baking soda": "leavening agents, baking soda",
     "balsamic vinegar": "vinegar, balsamic",
-    "beef broth": "chicken broth",
+    "beef broth": "soup, beef broth or bouillon canned, ready-to-serve",
     "bicarbonate of soda": "leavening agents, baking soda",
     "bleached all-purpose flour": "wheat flour, white, all-purpose, enriched, bleached",
     "boiling water": "water, bottled, generic",
@@ -74,7 +74,6 @@
     "grated nutmeg": "spices, nutmeg, ground",
     "grated parmesan": "cheese, parmesan, grated",
     "grated parmesan cheese": "cheese, parmesan, grated",
-    "greek yogurt": "yogurt, plain, skim milk",
     "ground allspice": "spices, allspice, ground",
     "ground black pepper": "black pepper",
     "ground cayenne": "spices, pepper, red or cayenne",
@@ -164,7 +163,7 @@
     "unsalted butter": "butter",
     "unsweetened cocoa powder": "cocoa powder",
     "vanilla": "vanilla extract",
-    "vegetable broth": "chicken broth",
+    "vegetable broth": "soup, vegetable broth, ready to serve",
     "vidalia onion": "onions",
     "water": "water, bottled, generic",
     "whipping cream": "heavy cream",
@@ -322,6 +321,13 @@
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 200.0
+      }
+    },
+    "greek yogurt": {
+      "fdc_id": 170894,
+      "grams_per_cup": {
+        "source": "Approximation carried over from the original density alias to USDA yogurt, plain, skim milk; USDA lists no volume portion for plain nonfat Greek yogurt (FDC 170894), whose calories apply here.",
+        "value": 245.0
       }
     },
     "ground cumin": {

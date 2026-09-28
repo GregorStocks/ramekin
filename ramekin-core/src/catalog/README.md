@@ -117,9 +117,12 @@ are `tests/test_catalog_import.py`.
     `issues/p3-cite-embedded-manual-density-values`.
 - `aliases` map a name to an entry id, USDA stripped name, or unique USDA
   description. A `null` alias marks a name as ambiguous. An alias decides food
-  identity for *every* attribute, so never alias to a different food just to
-  borrow its density: add an entry linking the real food (`fdc_id`) with the
-  approximate `grams_per_cup` and a source explaining it (see "dried thyme").
+  identity for *every* attribute. When USDA has the food itself, point at it
+  (e.g. "beef broth"). If only its density is missing, add an entry linking the
+  real food (`fdc_id`) with an approximate `grams_per_cup` and a source
+  explaining it (see "dried thyme", "greek yogurt"). Aliasing to a stand-in
+  food is only for foods USDA lacks entirely ("dijon mustard" → yellow mustard,
+  "shaoxing wine" → sake), where the stand-in supplies every attribute.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
 
 The loader asserts that keys are normalized, targets exist, aliases don't
