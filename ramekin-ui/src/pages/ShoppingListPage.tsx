@@ -1,11 +1,4 @@
-import {
-  createSignal,
-  createMemo,
-  createEffect,
-  For,
-  Index,
-  Show,
-} from "solid-js";
+import { createSignal, createMemo, createEffect, For, Show } from "solid-js";
 import { A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
@@ -53,13 +46,13 @@ export default function ShoppingListPage() {
       if (!grouped.has(cat)) grouped.set(cat, []);
       grouped.get(cat)!.push(item);
     }
-    return categoryOrder()
-      .filter((cat) => grouped.has(cat))
-      .map((cat) => ({
-        category: cat,
-        items: grouped.get(cat)!,
-      }));
+    return grouped;
   });
+  // Render groups keyed by category name so a category appearing or
+  // emptying out doesn't rebuild the other groups' rows.
+  const uncheckedCategories = createMemo(() =>
+    categoryOrder().filter((cat) => groupedUncheckedItems().has(cat)),
+  );
 
   const checkedItems = createMemo(() =>
     items()
@@ -430,16 +423,18 @@ export default function ShoppingListPage() {
 
       <Show when={!loading() && items().length > 0}>
         <div class="shopping-list">
-          <Index each={groupedUncheckedItems()}>
-            {(group) => (
+          <For each={uncheckedCategories()}>
+            {(category) => (
               <div class="shopping-category-group">
-                <h3 class="shopping-category-header">{group().category}</h3>
+                <h3 class="shopping-category-header">{category}</h3>
                 <ul class="shopping-category-items">
-                  <For each={group().items}>{renderItem}</For>
+                  <For each={groupedUncheckedItems().get(category) ?? []}>
+                    {renderItem}
+                  </For>
                 </ul>
               </div>
             )}
-          </Index>
+          </For>
 
           <Show when={checkedItems().length > 0}>
             <div class="shopping-category-group checked-group">

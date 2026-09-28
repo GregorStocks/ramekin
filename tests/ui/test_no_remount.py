@@ -4,6 +4,7 @@ rebuild it. Each test tags an existing row's DOM node, performs an action that
 reloads the list, and checks the same node is still on the page.
 """
 
+import re
 import uuid
 
 from playwright.sync_api import Locator, Page, expect
@@ -82,22 +83,30 @@ def test_renaming_a_tag_keeps_other_rows_mounted(page: Page, ui_url: str, api_ur
     assert is_marked(chicken_row)
 
 
-def test_adding_a_shopping_item_keeps_existing_rows_mounted(
+def test_checking_a_shopping_item_keeps_other_rows_mounted(
     page: Page, ui_url: str, api_url: str
 ):
     username, password = create_user_with_tags(api_url, [])
     log_in(page, ui_url, username, password)
 
+    def shopping_row(name: str) -> Locator:
+        # Match the item name exactly: each row's category <select> also
+        # contains words like "Bread & Bakery".
+        return page.locator(".shopping-item").filter(
+            has=page.locator(".shopping-item-name", has_text=re.compile(f"^{name}$"))
+        )
+
     page.goto(f"{ui_url}/shopping-list")
     add_input = page.locator(".shopping-add-input")
-    add_input.fill("milk")
-    page.get_by_role("button", name="Add", exact=True).click()
-    milk_row = page.locator(".shopping-item").filter(has_text="milk")
-    expect(milk_row).to_be_visible()
-    mark(milk_row)
+    for name in ["milk", "bread"]:
+        add_input.fill(name)
+        page.get_by_role("button", name="Add", exact=True).click()
+        expect(shopping_row(name)).to_be_visible()
 
-    add_input.fill("bread")
-    page.get_by_role("button", name="Add", exact=True).click()
+    bread_row = shopping_row("bread")
+    mark(bread_row)
 
-    expect(page.locator(".shopping-item").filter(has_text="bread")).to_be_visible()
-    assert is_marked(milk_row)
+    shopping_row("milk").locator(".shopping-checkbox").check()
+
+    expect(page.locator(".checked-group .shopping-item")).to_have_count(1)
+    assert is_marked(bread_row)
