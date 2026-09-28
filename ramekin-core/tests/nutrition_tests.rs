@@ -389,3 +389,16 @@ fn frying_oil_is_not_charged_in_full() {
         .unknown_ingredients
         .is_empty());
 }
+
+#[test]
+fn a_spoonful_of_oil_for_frying_still_counts() {
+    let mut line = ingredient("olive oil", "1", "tbsp");
+    line.note = Some("for frying the meatballs".into());
+    let result = estimate(&[line], None, 1.0).unwrap();
+    assert!(
+        result.unknown_ingredients.is_empty(),
+        "{:?}",
+        result.unknown_ingredients
+    );
+    assert!(result.known_calories.unwrap().max > 100.0);
+}

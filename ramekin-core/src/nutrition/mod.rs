@@ -214,6 +214,9 @@ fn measurement_grams(
     Ok(total)
 }
 
+/// Above this, oil listed "for frying" is a frying medium (about 1/4 cup of oil).
+const FRYING_KEPT_KCAL: f64 = 500.0;
+
 /// Oil listed "for frying" is a cooking medium: most of it is discarded, so
 /// charging the whole quart would inflate the recipe by thousands of calories.
 /// "2 tbsp oil, plus more for frying" still counts the measured part.
@@ -229,9 +232,6 @@ fn is_frying_medium(ingredient: &ParsedIngredient) -> bool {
 }
 
 fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
-    if is_frying_medium(ingredient) {
-        return Err("Frying oil: only part of it is absorbed");
-    }
     let entry = match catalog::resolve_line(&ingredient.item, ingredient.note.as_deref()) {
         Resolution::Entry { entry, .. } if entry.kind == Kind::Product => return Ok(Line::Skipped),
         Resolution::Entry { entry, .. } => entry,
@@ -259,7 +259,16 @@ fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
     if is_negligible(entry, ingredient) {
         return Ok(Line::Calories(ZERO));
     }
-    measured_calories(ingredient, &food(entry)?).map(Line::Calories)
+    let calories = measured_calories(ingredient, &food(entry)?);
+    if is_frying_medium(ingredient) {
+        // A deep-frying amount is mostly discarded; a spoonful for browning
+        // stays in the dish.
+        return match calories {
+            Ok(range) if range.max <= FRYING_KEPT_KCAL => Ok(Line::Calories(range)),
+            _ => Err("Frying oil: only part of it is absorbed"),
+        };
+    }
+    calories.map(Line::Calories)
 }
 
 fn measured_calories(
