@@ -129,9 +129,9 @@ rows, ordered by count descending), merge the results into
 
 Coverage report for the ingredient-name matchers: nutrition (`nutrition::estimate`),
 density (`find_density`), and shopping categories (`categorize`). It shows how much
-of each corpus is recognized, the nutrition failure reasons, and the most frequent
-unrecognized names. It is the measuring stick for the ingredient catalog work
-(`issues/*ingredient-catalog*`): a matcher change should show up as a diff here.
+of each corpus is recognized and the nutrition failure reasons. It is the measuring
+stick for the ingredient catalog work (`issues/*ingredient-catalog*`): a matcher
+change should show up as a diff here.
 
 `make ingredient-catalog-audit` regenerates it from committed corpora only, so it is
 deterministic:
@@ -142,10 +142,14 @@ deterministic:
   only one reporting per-serving coverage
 - `data/shopping-list-categories.json`: hand-typed shopping-list items
 
-`make pipeline` runs it too, after regenerating the fixtures.
+`make pipeline` runs it too, after regenerating the fixtures. A CLI unit test
+(`committed_report_is_current`, part of `make test`) regenerates the report and fails
+if the committed file is stale, so a matcher change must commit the new numbers.
 
-Two optional local corpora go to `logs/ingredient-catalog-audit-local.md` instead
-and are never committed:
+Each run also writes `logs/ingredient-catalog-audit-local.md` (never committed): the
+same numbers plus the most frequent unrecognized names per matcher. Those lists shift
+with every catalog change, so they stay out of the committed report. Two optional
+corpora are added to the local report only:
 
 - `RUNS_DIR=path/to/data/pipeline-runs` audits the newest full pipeline run.
 - `PROD_RECIPES=path/to/recipes.json` audits a prod dump: a JSON array of

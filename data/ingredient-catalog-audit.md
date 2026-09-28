@@ -8,15 +8,15 @@ Replays the three ingredient-name matchers over committed corpora:
 - **Density**: `find_density`, over lines with a volume unit.
 - **Shopping category**: `categorize`; "categorized" means not "Other".
 
-Unrecognized names are lowercased with whitespace collapsed.
+A CLI unit test regenerates this file and fails if it is stale. The most frequent unrecognized names change with every catalog edit, so they are written to the uncommitted `logs/ingredient-catalog-audit-local.md` instead.
 
 ## Summary
 
 | Corpus | Recipes | Lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60510 | 14.5% | 10.1% | 0.0% | n/a (no servings) | 59.1% | 98.1% |
-| Paprika fixtures | 462 | 5377 | 12.4% | 8.1% | 0.0% | n/a (no servings) | 51.2% | 98.3% |
-| Pipeline snapshots | 445 | 5177 | 12.8% | 8.5% | 0.0% | 0.0% | 51.8% | 98.9% |
+| Pipeline fixtures | 5408 | 60510 | 8770/60510 (14.5%) | 6141/60510 (10.1%) | 0/5408 (0.0%) | n/a (no servings) | 21977/37166 (59.1%) | 59382/60510 (98.1%) |
+| Paprika fixtures | 462 | 5377 | 669/5377 (12.4%) | 437/5377 (8.1%) | 0/462 (0.0%) | n/a (no servings) | 1475/2881 (51.2%) | 5284/5377 (98.3%) |
+| Pipeline snapshots | 445 | 5177 | 665/5177 (12.8%) | 442/5177 (8.5%) | 0/445 (0.0%) | 0/445 (0.0%) | 1473/2842 (51.8%) | 5120/5177 (98.9%) |
 
 ## Pipeline fixtures
 
@@ -31,112 +31,13 @@ Unrecognized names are lowercased with whitespace collapsed.
 | Unsupported or missing quantity | 5 | 0.0% |
 | Unsupported quantity unit | 2518 | 4.2% |
 
-### Top unrecognized names (top 30)
+### Unrecognized-name fingerprints
 
-#### Nutrition (14253 distinct, 51740 lines)
-
-| Count | Name |
-| ---: | --- |
-| 2720 | kosher salt |
-| 802 | sugar |
-| 754 | water |
-| 600 | butter |
-| 533 | baking powder |
-| 497 | garlic cloves |
-| 436 | baking soda |
-| 419 | freshly ground black pepper |
-| 376 | heavy cream |
-| 372 | ground cinnamon |
-| 344 | vegetable oil |
-| 310 | extra-virgin olive oil |
-| 305 | black pepper |
-| 294 | milk |
-| 288 | soy sauce |
-| 270 | lemon juice |
-| 258 | powdered sugar |
-| 254 | garlic powder |
-| 244 | salt and pepper |
-| 237 | sour cream |
-| 234 | ground cumin |
-| 220 | pepper |
-| 199 | brown sugar |
-| 198 | cream cheese |
-| 195 | sea salt |
-| 195 | yellow onion |
-| 188 | extra virgin olive oil |
-| 186 | fine sea salt |
-| 182 | pure vanilla extract |
-| 177 | dried oregano |
-
-#### Density (volume lines only) (6286 distinct, 15189 lines)
-
-| Count | Name |
-| ---: | --- |
-| 226 | black pepper |
-| 202 | freshly ground black pepper |
-| 155 | pepper |
-| 153 | sea salt |
-| 151 | fine sea salt |
-| 113 | ground black pepper |
-| 88 | minced garlic |
-| 81 | japanese soy sauce |
-| 75 | parmesan cheese |
-| 72 | italian seasoning |
-| 71 | ground coriander |
-| 70 | fresh parsley |
-| 70 | packed light brown sugar |
-| 68 | crushed red pepper flakes |
-| 66 | fine sea or table salt |
-| 61 | lemon zest |
-| 50 | garam masala |
-| 47 | cherry tomatoes |
-| 47 | diamond crystal kosher salt; for table salt, use half as much by volume |
-| 44 | dried basil |
-| 44 | shredded cheddar cheese |
-| 43 | chopped fresh parsley |
-| 41 | confectioners’ sugar |
-| 40 | cumin seeds |
-| 39 | capers |
-| 39 | ground pepper |
-| 39 | parsley |
-| 38 | potato starch |
-| 37 | cooking oil |
-| 37 | sliced almonds |
-
-#### Shopping category ("Other") (750 distinct, 1128 lines)
-
-| Count | Name |
-| ---: | --- |
-| 79 | and for the other side of the world: |
-| 20 | dashi |
-| 13 | cake |
-| 12 | liquid smoke |
-| 9 | dashi granules |
-| 8 | grand marnier |
-| 8 | half & half |
-| 8 | microgreens |
-| 8 | tabasco |
-| 7 | aonori |
-| 7 | kasuri methi |
-| 7 | katsuobushi |
-| 7 | matcha powder |
-| 6 | diamond crystal |
-| 6 | dried currants |
-| 6 | lard |
-| 6 | mexican crema |
-| 5 | asafoetida |
-| 5 | hummus |
-| 5 | tempura flakes |
-| 4 | amchur |
-| 4 | arrowroot powder |
-| 4 | benishoga |
-| 4 | broccolini |
-| 4 | burdock root |
-| 4 | citric acid |
-| 4 | grenadine |
-| 4 | guanciale |
-| 4 | mrs. dash |
-| 4 | soup |
+| Matcher | Distinct entries | Fingerprint |
+| --- | ---: | --- |
+| Nutrition (all failures) | 14289 | `4f2d937fbc2b` |
+| Density | 6286 | `adc23975a493` |
+| Shopping category | 750 | `768022b1be6e` |
 
 ## Paprika fixtures
 
@@ -150,112 +51,13 @@ Unrecognized names are lowercased with whitespace collapsed.
 | Unsupported or missing quantity | 1 | 0.0% |
 | Unsupported quantity unit | 203 | 3.8% |
 
-### Top unrecognized names (top 30)
+### Unrecognized-name fingerprints
 
-#### Nutrition (2406 distinct, 4708 lines)
-
-| Count | Name |
-| ---: | --- |
-| 219 | kosher salt |
-| 89 | garlic cloves |
-| 80 | freshly ground black pepper |
-| 63 | water |
-| 49 | extra-virgin olive oil |
-| 47 | ground cumin |
-| 45 | sugar |
-| 38 | vegetable oil |
-| 36 | tomato paste |
-| 31 | yellow onion |
-| 28 | heavy cream |
-| 28 | soy sauce |
-| 27 | red pepper flakes |
-| 27 | sour cream |
-| 25 | garlic clove |
-| 25 | pepper |
-| 23 | black pepper |
-| 23 | butter |
-| 22 | cloves garlic |
-| 22 | kosher salt and freshly ground black pepper |
-| 21 | baking soda |
-| 20 | lemon juice |
-| 20 | mayonnaise |
-| 20 | salt and pepper |
-| 19 | baking powder |
-| 19 | bay leaf |
-| 19 | dried oregano |
-| 18 | ground coriander |
-| 18 | red onion |
-| 17 | carrots |
-
-#### Density (volume lines only) (991 distinct, 1406 lines)
-
-| Count | Name |
-| ---: | --- |
-| 26 | freshly ground black pepper |
-| 23 | pepper |
-| 19 | black pepper |
-| 18 | ground coriander |
-| 13 | cumin seeds |
-| 11 | chopped fresh cilantro |
-| 10 | smooth dijon mustard |
-| 9 | garam masala |
-| 9 | ground black pepper |
-| 8 | fine sea or table salt |
-| 8 | fine sea salt |
-| 7 | coarse or kosher salt |
-| 7 | diamond crystal kosher salt; for table salt, use half as much by volume |
-| 6 | lukewarm water |
-| 6 | minced fresh thyme |
-| 6 | minced garlic |
-| 6 | red-pepper flakes |
-| 5 | asian fish sauce |
-| 5 | capers |
-| 5 | caraway seeds |
-| 5 | chopped flat-leaf parsley |
-| 5 | chopped fresh dill |
-| 5 | chopped fresh parsley |
-| 5 | dry mustard |
-| 5 | dry sherry |
-| 5 | panko bread crumbs |
-| 5 | salted or unsalted butter |
-| 4 | crushed red pepper flakes |
-| 4 | diamond crystal kosher salt; for table salt use half as much by volume |
-| 4 | finely chopped parsley |
-
-#### Shopping category ("Other") (83 distinct, 93 lines)
-
-| Count | Name |
-| ---: | --- |
-| 4 | angostura aromatic bitters |
-| 2 | accent |
-| 2 | beansprouts |
-| 2 | cooking fat |
-| 2 | lard |
-| 2 | shokupan |
-| 2 | soup |
-| 2 | x 3x |
-| 1 | /8, 1/4 |
-| 1 | 1/2 teaspoon finely grated |
-| 1 | 2 tablespoons |
-| 1 | 20 percent saline solution |
-| 1 | aguamole |
-| 1 | amaro nonino |
-| 1 | amchoor powder |
-| 1 | and/or |
-| 1 | assorted nerimono |
-| 1 | atsuage |
-| 1 | baloney |
-| 1 | bouquet garni |
-| 1 | bran |
-| 1 | brine from jar |
-| 1 | burger accompaniments, as you like |
-| 1 | burritos |
-| 1 | cake |
-| 1 | carolina red |
-| 1 | cornflakes |
-| 1 | cornichons |
-| 1 | coteja |
-| 1 | crudités |
+| Matcher | Distinct entries | Fingerprint |
+| --- | ---: | --- |
+| Nutrition (all failures) | 2419 | `4ddc3db84911` |
+| Density | 991 | `16bfea1b3eb0` |
+| Shopping category | 83 | `5d1db47b2752` |
 
 ## Pipeline snapshots
 
@@ -269,112 +71,13 @@ Unrecognized names are lowercased with whitespace collapsed.
 | Unsupported or missing quantity | 1 | 0.0% |
 | Unsupported quantity unit | 195 | 3.8% |
 
-### Top unrecognized names (top 30)
+### Unrecognized-name fingerprints
 
-#### Nutrition (2274 distinct, 4512 lines)
-
-| Count | Name |
-| ---: | --- |
-| 207 | kosher salt |
-| 88 | garlic cloves |
-| 83 | freshly ground black pepper |
-| 67 | water |
-| 49 | extra-virgin olive oil |
-| 45 | ground cumin |
-| 45 | sugar |
-| 42 | vegetable oil |
-| 37 | tomato paste |
-| 32 | yellow onion |
-| 27 | kosher salt and freshly ground black pepper |
-| 27 | red pepper flakes |
-| 26 | heavy cream |
-| 26 | soy sauce |
-| 24 | garlic clove |
-| 23 | salt and pepper |
-| 22 | pepper |
-| 21 | baking soda |
-| 21 | butter |
-| 21 | cloves garlic |
-| 21 | mayonnaise |
-| 21 | sour cream |
-| 20 | lemon juice |
-| 19 | bay leaf |
-| 19 | worcestershire sauce |
-| 18 | baking powder |
-| 18 | dried oregano |
-| 18 | ground coriander |
-| 17 | carrots |
-| 17 | cayenne pepper |
-
-#### Density (volume lines only) (960 distinct, 1370 lines)
-
-| Count | Name |
-| ---: | --- |
-| 27 | freshly ground black pepper |
-| 21 | pepper |
-| 18 | ground coriander |
-| 13 | cumin seeds |
-| 11 | black pepper |
-| 11 | chopped fresh cilantro |
-| 11 | smooth dijon mustard |
-| 9 | fine sea or table salt |
-| 9 | ground black pepper |
-| 8 | diamond crystal kosher salt; for table salt, use half as much by volume |
-| 8 | fine sea salt |
-| 8 | garam masala |
-| 7 | coarse or kosher salt |
-| 7 | lukewarm water |
-| 7 | minced garlic |
-| 7 | red-pepper flakes |
-| 5 | asian fish sauce |
-| 5 | capers |
-| 5 | caraway seeds |
-| 5 | chopped flat-leaf parsley |
-| 5 | chopped fresh dill |
-| 5 | chopped fresh parsley |
-| 5 | dry mustard |
-| 5 | dry sherry |
-| 5 | minced fresh parsley |
-| 5 | minced fresh thyme |
-| 5 | panko bread crumbs |
-| 5 | salted or unsalted butter |
-| 4 | diamond crystal kosher salt; for table salt use half as much by volume |
-| 4 | finely chopped parsley |
-
-#### Shopping category ("Other") (52 distinct, 57 lines)
-
-| Count | Name |
-| ---: | --- |
-| 2 | accent |
-| 2 | angostura aromatic bitters |
-| 2 | beansprouts |
-| 2 | ditalini |
-| 2 | shokupan |
-| 1 | -and/or- |
-| 1 | /8, 1/4 |
-| 1 | 20 percent saline solution |
-| 1 | amaro nonino |
-| 1 | amchoor powder |
-| 1 | assorted nerimono |
-| 1 | atsuage |
-| 1 | bouquet garni |
-| 1 | bran |
-| 1 | burger accompaniments, as you like |
-| 1 | cornflakes |
-| 1 | crème de framboise |
-| 1 | dashi |
-| 1 | dashi granules |
-| 1 | deep pie dish, or frankly, any old dish you feel like baking in |
-| 1 | disposable aluminum pan |
-| 1 | finely chopped english |
-| 1 | fleur de sel to taste |
-| 1 | flounder fillets |
-| 1 | frisée, torn into-bite size pieces |
-| 1 | gochugaru |
-| 1 | grand marnier |
-| 1 | grated pamesan |
-| 1 | guinness draught |
-| 1 | hard shell tacos |
+| Matcher | Distinct entries | Fingerprint |
+| --- | ---: | --- |
+| Nutrition (all failures) | 2285 | `30ae4a006e33` |
+| Density | 959 | `b7bb315fd605` |
+| Shopping category | 52 | `ed20012f6093` |
 
 ## Shopping-list corpus
 
@@ -383,50 +86,12 @@ Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`).
 | Metric | Distinct items | Usage-weighted |
 | --- | ---: | ---: |
 | Items | 280 | 424 |
-| Nutrition name recognized | 3.6% | 8.3% |
-| Categorized (not "Other") | 98.9% | 99.3% |
+| Nutrition name recognized | 10/280 (3.6%) | 35/424 (8.3%) |
+| Categorized (not "Other") | 277/280 (98.9%) | 421/424 (99.3%) |
 
-### Top unrecognized names (top 30)
+### Unrecognized-name fingerprints
 
-#### Nutrition (257 distinct, 270 items)
-
-| Count | Name |
-| ---: | --- |
-| 2 | bread |
-| 2 | buttermilk |
-| 2 | carrots |
-| 2 | cherry tomatoes |
-| 2 | m&ms |
-| 2 | milk |
-| 2 | mozzarella |
-| 2 | mushrooms |
-| 2 | oyster crackers |
-| 2 | pasta |
-| 2 | pickles |
-| 2 | sour cream |
-| 2 | tortilla chips |
-| 1 | 1 cup (4 ounces; 113 g), plus 2 tablespoons (3/4 ounce; 21 g) unroasted walnuts, divided |
-| 1 | 1 medium white onion |
-| 1 | 13 1/2-ounce can unsweetened coconut milk |
-| 1 | 3 large onions |
-| 1 | 3 lb chicken parts |
-| 1 | a few handfuls of baby spinach |
-| 1 | aged parmesan or pecorino romano |
-| 1 | all-purpose flour, for dusting the patties |
-| 1 | american cheese |
-| 1 | anchovies |
-| 1 | anchovy fillets |
-| 1 | apples |
-| 1 | baby spinach or baby arugula |
-| 1 | bacon, cut into 1/4-inch wide strips |
-| 1 | bagels |
-| 1 | baguette |
-| 1 | baking powder |
-
-#### Shopping category ("Other") (3 distinct, 3 items)
-
-| Count | Name |
-| ---: | --- |
-| 1 | cold salad |
-| 1 | dip |
-| 1 | go humans |
+| Matcher | Distinct entries | Fingerprint |
+| --- | ---: | --- |
+| Nutrition | 257 | `ab59ee8184b1` |
+| Shopping category | 3 | `65911683b3db` |

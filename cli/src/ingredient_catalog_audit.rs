@@ -12,6 +12,7 @@ use ramekin_core::nutrition;
 use ramekin_core::types::ParseIngredientsOutput;
 use ramekin_core::volume_to_weight::{find_density, is_volume_unit};
 use serde::Deserialize;
+use sha2::{Digest, Sha256};
 use std::collections::{BTreeMap, HashMap};
 use std::fmt::Write as _;
 use std::fs;
@@ -49,6 +50,9 @@ struct RecipeCorpusStats {
     recipes_with_per_serving: usize,
     nutrition_reasons: BTreeMap<String, usize>,
     nutrition_unrecognized: HashMap<String, usize>,
+    /// Every nutrition failure keyed by "reason: name", so the fingerprint
+    /// changes when a line moves between failure reasons.
+    nutrition_failures: HashMap<String, usize>,
     volume_lines: usize,
     density_hits: usize,
     density_misses: HashMap<String, usize>,
@@ -130,9 +134,9 @@ fn read_json<T: serde::de::DeserializeOwned>(path: &Path) -> Result<T> {
 
 /// Recipe-shaped parser fixtures (pipeline and paprika); curated fixtures are
 /// single-line edge cases, not recipes, so they are excluded.
-fn load_fixture_corpus(subdir: &str, name: &str) -> Result<Corpus> {
+fn load_fixture_corpus(root: &Path, subdir: &str, name: &str) -> Result<Corpus> {
     let mut recipes = Vec::new();
-    for path in sorted_json_files(&Path::new(FIXTURES_DIR).join(subdir))? {
+    for path in sorted_json_files(&root.join(FIXTURES_DIR).join(subdir))? {
         let file: FixtureFile = read_json(&path)?;
         let ingredients = file
             .ingredients
@@ -157,9 +161,9 @@ fn load_fixture_corpus(subdir: &str, name: &str) -> Result<Corpus> {
     })
 }
 
-fn load_snapshot_corpus() -> Result<Corpus> {
+fn load_snapshot_corpus(root: &Path) -> Result<Corpus> {
     let mut recipes = Vec::new();
-    for path in sorted_json_files(Path::new(SNAPSHOTS_DIR))? {
+    for path in sorted_json_files(&root.join(SNAPSHOTS_DIR))? {
         let recipe: FinalRecipe = read_json(&path)?;
         recipes.push(Recipe {
             servings: recipe.servings,
@@ -265,6 +269,10 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
         }
         for u in unknown {
             *stats.nutrition_reasons.entry(u.reason.clone()).or_default() += 1;
+            *stats
+                .nutrition_failures
+                .entry(format!("{}: {}", u.reason, normalize_name(&u.item)))
+                .or_default() += 1;
             if NAME_FAILURES.contains(&u.reason.as_str()) {
                 *stats
                     .nutrition_unrecognized
@@ -355,6 +363,12 @@ fn pct(part: impl Into<u64>, whole: impl Into<u64>) -> String {
     format!("{:.1}%", part as f64 * 100.0 / whole as f64)
 }
 
+/// Exact counts alongside the rounded percentage, so a change of a single
+/// match still shows up in the committed report.
+fn share(part: u64, whole: u64) -> String {
+    format!("{part}/{whole} ({})", pct(part, whole))
+}
+
 /// Most frequent names first, ties broken alphabetically.
 fn top_names(counts: &HashMap<String, usize>, limit: usize) -> Vec<(&str, usize)> {
     let mut sorted: Vec<_> = counts.iter().map(|(n, c)| (n.as_str(), *c)).collect();
@@ -380,7 +394,41 @@ fn write_top_names(out: &mut String, title: &str, unit: &str, counts: &HashMap<S
     }
 }
 
-fn render_recipe_corpora(out: &mut String, corpora: &[(String, RecipeCorpusStats)]) {
+/// A short, stable hash of which names a matcher missed and how often. It
+/// changes whenever the set changes, even when the totals stay the same.
+fn fingerprint(counts: &HashMap<String, usize>) -> String {
+    let mut entries: Vec<_> = counts.iter().collect();
+    entries.sort();
+    let mut hasher = Sha256::new();
+    for (name, count) in entries {
+        hasher.update(format!("{name}\t{count}\n").as_bytes());
+    }
+    hasher.finalize()[..6]
+        .iter()
+        .map(|byte| format!("{byte:02x}"))
+        .collect()
+}
+
+fn write_fingerprints(out: &mut String, matchers: &[(&str, &HashMap<String, usize>)]) {
+    out.push_str(
+        "\n### Unrecognized-name fingerprints\n\n\
+         | Matcher | Distinct entries | Fingerprint |\n| --- | ---: | --- |\n",
+    );
+    for (matcher, counts) in matchers {
+        let _ = writeln!(
+            out,
+            "| {matcher} | {} | `{}` |",
+            counts.len(),
+            fingerprint(counts)
+        );
+    }
+}
+
+fn render_recipe_corpora(
+    out: &mut String,
+    corpora: &[(String, RecipeCorpusStats)],
+    with_names: bool,
+) {
     out.push_str(
         "## Summary\n\n\
          | Corpus | Recipes | Lines | Nutrition name recognized | Calories computed | \
@@ -392,18 +440,18 @@ fn render_recipe_corpora(out: &mut String, corpora: &[(String, RecipeCorpusStats
         let per_serving = if s.recipes_with_servings == 0 {
             "n/a (no servings)".to_string()
         } else {
-            pct(s.recipes_with_per_serving as u64, s.recipes as u64)
+            share(s.recipes_with_per_serving as u64, s.recipes as u64)
         };
         let _ = writeln!(
             out,
             "| {name} | {} | {} | {} | {} | {} | {per_serving} | {} | {} |",
             s.recipes,
             s.lines,
-            pct(s.nutrition_name_recognized as u64, s.lines as u64),
-            pct(s.nutrition_computed as u64, s.lines as u64),
-            pct(s.recipes_fully_estimated as u64, s.recipes as u64),
-            pct(s.density_hits as u64, s.volume_lines as u64),
-            pct(s.categorized as u64, s.lines as u64),
+            share(s.nutrition_name_recognized as u64, s.lines as u64),
+            share(s.nutrition_computed as u64, s.lines as u64),
+            share(s.recipes_fully_estimated as u64, s.recipes as u64),
+            share(s.density_hits as u64, s.volume_lines as u64),
+            share(s.categorized as u64, s.lines as u64),
         );
     }
 
@@ -416,6 +464,17 @@ fn render_recipe_corpora(out: &mut String, corpora: &[(String, RecipeCorpusStats
                 "| {reason} | {count} | {} |",
                 pct(*count as u64, s.lines as u64)
             );
+        }
+        write_fingerprints(
+            out,
+            &[
+                ("Nutrition (all failures)", &s.nutrition_failures),
+                ("Density", &s.density_misses),
+                ("Shopping category", &s.uncategorized),
+            ],
+        );
+        if !with_names {
+            continue;
         }
         let _ = writeln!(out, "\n### Top unrecognized names (top {TOP_NAMES})");
         write_top_names(out, "Nutrition", "lines", &s.nutrition_unrecognized);
@@ -434,7 +493,7 @@ fn render_recipe_corpora(out: &mut String, corpora: &[(String, RecipeCorpusStats
     }
 }
 
-fn render_shopping(out: &mut String, s: &ShoppingStats) {
+fn render_shopping(out: &mut String, s: &ShoppingStats, with_names: bool) {
     out.push_str(
         "\n## Shopping-list corpus\n\n\
          Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`). \
@@ -445,15 +504,25 @@ fn render_shopping(out: &mut String, s: &ShoppingStats) {
     let _ = writeln!(
         out,
         "| Nutrition name recognized | {} | {} |",
-        pct(s.nutrition_name_recognized as u64, s.items as u64),
-        pct(s.nutrition_name_recognized_uses, s.uses)
+        share(s.nutrition_name_recognized as u64, s.items as u64),
+        share(s.nutrition_name_recognized_uses, s.uses)
     );
     let _ = writeln!(
         out,
         "| Categorized (not \"Other\") | {} | {} |",
-        pct(s.categorized as u64, s.items as u64),
-        pct(s.categorized_uses, s.uses)
+        share(s.categorized as u64, s.items as u64),
+        share(s.categorized_uses, s.uses)
     );
+    write_fingerprints(
+        out,
+        &[
+            ("Nutrition", &s.nutrition_unrecognized),
+            ("Shopping category", &s.uncategorized),
+        ],
+    );
+    if !with_names {
+        return;
+    }
     let _ = writeln!(out, "\n### Top unrecognized names (top {TOP_NAMES})");
     write_top_names(out, "Nutrition", "items", &s.nutrition_unrecognized);
     write_top_names(
@@ -473,31 +542,48 @@ has calories computed, and has per-serving calories when it is also fully estima
 servings parse; only snapshots carry servings.\n\
 - **Density**: `find_density`, over lines with a volume unit.\n\
 - **Shopping category**: `categorize`; \"categorized\" means not \"Other\".\n\n\
-Unrecognized names are lowercased with whitespace collapsed.\n\n";
+A CLI unit test regenerates this file and fails if it is stale. The most frequent unrecognized \
+names change with every catalog edit, so they are written to the uncommitted \
+`logs/ingredient-catalog-audit-local.md` instead.\n\n";
 
-fn render_committed(corpora: &[(String, RecipeCorpusStats)], shopping: &ShoppingStats) -> String {
-    let mut out = HEADER.to_string();
-    render_recipe_corpora(&mut out, corpora);
-    render_shopping(&mut out, shopping);
-    out
+const LOCAL_HEADER: &str = "# Ingredient catalog audit (local, not committed)\n\n\
+Written by `make ingredient-catalog-audit`. Same metrics as `data/ingredient-catalog-audit.md`, \
+plus the most frequent unrecognized names per matcher, and any `RUNS_DIR` / `PROD_RECIPES` corpora.\n\n";
+
+struct CommittedAudit {
+    recipes: Vec<(String, RecipeCorpusStats)>,
+    shopping: ShoppingStats,
 }
 
-pub fn run(runs_dir: Option<&Path>, prod_recipes: Option<&Path>) -> Result<()> {
-    let committed = [
-        load_fixture_corpus("pipeline", "Pipeline fixtures")?,
-        load_fixture_corpus("paprika", "Paprika fixtures")?,
-        load_snapshot_corpus()?,
+fn audit_committed(root: &Path) -> Result<CommittedAudit> {
+    let corpora = [
+        load_fixture_corpus(root, "pipeline", "Pipeline fixtures")?,
+        load_fixture_corpus(root, "paprika", "Paprika fixtures")?,
+        load_snapshot_corpus(root)?,
     ];
-    let committed_stats = committed
+    let recipes = corpora
         .iter()
         .map(|corpus| Ok((corpus.name.clone(), audit_recipes(corpus)?)))
         .collect::<Result<Vec<_>>>()?;
-    let shopping_items: Vec<ShoppingItem> = read_json(Path::new(SHOPPING_CORPUS))?;
+    let shopping_items: Vec<ShoppingItem> = read_json(&root.join(SHOPPING_CORPUS))?;
     let shopping = audit_shopping(&shopping_items)?;
+    Ok(CommittedAudit { recipes, shopping })
+}
 
-    let report = render_committed(&committed_stats, &shopping);
-    fs::write(COMMITTED_REPORT, &report)
-        .with_context(|| format!("Failed to write {COMMITTED_REPORT}"))?;
+/// Only aggregate numbers are committed; name lists shift with every catalog
+/// change and live in the local report instead.
+fn render_committed(audit: &CommittedAudit) -> String {
+    let mut out = HEADER.to_string();
+    render_recipe_corpora(&mut out, &audit.recipes, false);
+    render_shopping(&mut out, &audit.shopping, false);
+    out
+}
+
+pub fn run(root: &Path, runs_dir: Option<&Path>, prod_recipes: Option<&Path>) -> Result<()> {
+    let mut committed = audit_committed(root)?;
+    let committed_path = root.join(COMMITTED_REPORT);
+    fs::write(&committed_path, render_committed(&committed))
+        .with_context(|| format!("Failed to write {}", committed_path.display()))?;
     tracing::info!("Ingredient catalog audit saved to: {COMMITTED_REPORT}");
 
     let mut local = Vec::new();
@@ -507,17 +593,19 @@ pub fn run(runs_dir: Option<&Path>, prod_recipes: Option<&Path>) -> Result<()> {
     if let Some(path) = prod_recipes {
         local.push(load_prod_corpus(path)?);
     }
-    if !local.is_empty() {
-        let local_stats = local
-            .iter()
-            .map(|corpus| Ok((corpus.name.clone(), audit_recipes(corpus)?)))
-            .collect::<Result<Vec<_>>>()?;
-        let mut out = "# Ingredient catalog audit (local corpora, not committed)\n\n".to_string();
-        render_recipe_corpora(&mut out, &local_stats);
-        fs::create_dir_all("logs")?;
-        fs::write(LOCAL_REPORT, &out).with_context(|| format!("Failed to write {LOCAL_REPORT}"))?;
-        tracing::info!("Local-corpus audit saved to: {LOCAL_REPORT}");
+    for corpus in &local {
+        committed
+            .recipes
+            .push((corpus.name.clone(), audit_recipes(corpus)?));
     }
+    let mut out = LOCAL_HEADER.to_string();
+    render_recipe_corpora(&mut out, &committed.recipes, true);
+    render_shopping(&mut out, &committed.shopping, true);
+    let local_path = root.join(LOCAL_REPORT);
+    fs::create_dir_all(root.join("logs"))?;
+    fs::write(&local_path, out)
+        .with_context(|| format!("Failed to write {}", local_path.display()))?;
+    tracing::info!("Local audit with unrecognized names saved to: {LOCAL_REPORT}");
     Ok(())
 }
 
@@ -578,6 +666,13 @@ mod tests {
             "names are grouped case- and whitespace-insensitively"
         );
         assert_eq!(stats.nutrition_reasons["Unsupported quantity unit"], 1);
+        assert_eq!(
+            stats
+                .nutrition_failures
+                .get("Unsupported quantity unit: eggs"),
+            Some(&1),
+            "quantity failures on recognized names are fingerprinted too"
+        );
         assert_eq!(stats.volume_lines, 2);
         assert_eq!(stats.density_hits, 1);
         assert_eq!(stats.density_misses.get("moon dust"), Some(&1));
@@ -615,6 +710,21 @@ mod tests {
         ]);
         assert_eq!(top_names(&counts, 2), vec![("c", 5), ("a", 2)]);
         assert_eq!(pct(0u64, 0u64), "n/a");
+        assert_eq!(share(1, 60_000), "1/60000 (0.0%)");
+    }
+
+    #[test]
+    fn fingerprint_tracks_names_not_just_totals() {
+        let before = HashMap::from([("salt".to_string(), 2), ("water".to_string(), 1)]);
+        let reordered = HashMap::from([("water".to_string(), 1), ("salt".to_string(), 2)]);
+        let swapped = HashMap::from([("salt".to_string(), 2), ("pepper".to_string(), 1)]);
+        assert_eq!(fingerprint(&before), fingerprint(&reordered));
+        assert_ne!(
+            fingerprint(&before),
+            fingerprint(&swapped),
+            "same totals, different names"
+        );
+        assert_eq!(fingerprint(&before).len(), 12);
     }
 
     fn write_run(runs_dir: &Path, run_id: &str, status: &str) {
@@ -651,5 +761,16 @@ mod tests {
             .expect("the newest run failed")
             .to_string();
         assert!(error.contains("\"failed\""), "{error}");
+    }
+
+    #[test]
+    fn committed_report_is_current() {
+        let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("..");
+        let expected = render_committed(&audit_committed(&root).unwrap());
+        let committed = fs::read_to_string(root.join(COMMITTED_REPORT)).unwrap();
+        assert!(
+            committed == expected,
+            "{COMMITTED_REPORT} is stale; run `make ingredient-catalog-audit` and commit the result"
+        );
     }
 }
