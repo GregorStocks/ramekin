@@ -130,9 +130,9 @@ fn read_json<T: serde::de::DeserializeOwned>(path: &Path) -> Result<T> {
 
 /// Recipe-shaped parser fixtures (pipeline and paprika); curated fixtures are
 /// single-line edge cases, not recipes, so they are excluded.
-fn load_fixture_corpus(subdir: &str, name: &str) -> Result<Corpus> {
+fn load_fixture_corpus(root: &Path, subdir: &str, name: &str) -> Result<Corpus> {
     let mut recipes = Vec::new();
-    for path in sorted_json_files(&Path::new(FIXTURES_DIR).join(subdir))? {
+    for path in sorted_json_files(&root.join(FIXTURES_DIR).join(subdir))? {
         let file: FixtureFile = read_json(&path)?;
         let ingredients = file
             .ingredients
@@ -157,9 +157,9 @@ fn load_fixture_corpus(subdir: &str, name: &str) -> Result<Corpus> {
     })
 }
 
-fn load_snapshot_corpus() -> Result<Corpus> {
+fn load_snapshot_corpus(root: &Path) -> Result<Corpus> {
     let mut recipes = Vec::new();
-    for path in sorted_json_files(Path::new(SNAPSHOTS_DIR))? {
+    for path in sorted_json_files(&root.join(SNAPSHOTS_DIR))? {
         let recipe: FinalRecipe = read_json(&path)?;
         recipes.push(Recipe {
             servings: recipe.servings,
@@ -380,7 +380,11 @@ fn write_top_names(out: &mut String, title: &str, unit: &str, counts: &HashMap<S
     }
 }
 
-fn render_recipe_corpora(out: &mut String, corpora: &[(String, RecipeCorpusStats)]) {
+fn render_recipe_corpora(
+    out: &mut String,
+    corpora: &[(String, RecipeCorpusStats)],
+    with_names: bool,
+) {
     out.push_str(
         "## Summary\n\n\
          | Corpus | Recipes | Lines | Nutrition name recognized | Calories computed | \
@@ -417,6 +421,9 @@ fn render_recipe_corpora(out: &mut String, corpora: &[(String, RecipeCorpusStats
                 pct(*count as u64, s.lines as u64)
             );
         }
+        if !with_names {
+            continue;
+        }
         let _ = writeln!(out, "\n### Top unrecognized names (top {TOP_NAMES})");
         write_top_names(out, "Nutrition", "lines", &s.nutrition_unrecognized);
         write_top_names(
@@ -434,7 +441,7 @@ fn render_recipe_corpora(out: &mut String, corpora: &[(String, RecipeCorpusStats
     }
 }
 
-fn render_shopping(out: &mut String, s: &ShoppingStats) {
+fn render_shopping(out: &mut String, s: &ShoppingStats, with_names: bool) {
     out.push_str(
         "\n## Shopping-list corpus\n\n\
          Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`). \
@@ -454,6 +461,9 @@ fn render_shopping(out: &mut String, s: &ShoppingStats) {
         pct(s.categorized as u64, s.items as u64),
         pct(s.categorized_uses, s.uses)
     );
+    if !with_names {
+        return;
+    }
     let _ = writeln!(out, "\n### Top unrecognized names (top {TOP_NAMES})");
     write_top_names(out, "Nutrition", "items", &s.nutrition_unrecognized);
     write_top_names(
@@ -473,31 +483,48 @@ has calories computed, and has per-serving calories when it is also fully estima
 servings parse; only snapshots carry servings.\n\
 - **Density**: `find_density`, over lines with a volume unit.\n\
 - **Shopping category**: `categorize`; \"categorized\" means not \"Other\".\n\n\
-Unrecognized names are lowercased with whitespace collapsed.\n\n";
+A CLI unit test regenerates this file and fails if it is stale. The most frequent unrecognized \
+names change with every catalog edit, so they are written to the uncommitted \
+`logs/ingredient-catalog-audit-local.md` instead.\n\n";
 
-fn render_committed(corpora: &[(String, RecipeCorpusStats)], shopping: &ShoppingStats) -> String {
-    let mut out = HEADER.to_string();
-    render_recipe_corpora(&mut out, corpora);
-    render_shopping(&mut out, shopping);
-    out
+const LOCAL_HEADER: &str = "# Ingredient catalog audit (local, not committed)\n\n\
+Written by `make ingredient-catalog-audit`. Same metrics as `data/ingredient-catalog-audit.md`, \
+plus the most frequent unrecognized names per matcher, and any `RUNS_DIR` / `PROD_RECIPES` corpora.\n\n";
+
+struct CommittedAudit {
+    recipes: Vec<(String, RecipeCorpusStats)>,
+    shopping: ShoppingStats,
 }
 
-pub fn run(runs_dir: Option<&Path>, prod_recipes: Option<&Path>) -> Result<()> {
-    let committed = [
-        load_fixture_corpus("pipeline", "Pipeline fixtures")?,
-        load_fixture_corpus("paprika", "Paprika fixtures")?,
-        load_snapshot_corpus()?,
+fn audit_committed(root: &Path) -> Result<CommittedAudit> {
+    let corpora = [
+        load_fixture_corpus(root, "pipeline", "Pipeline fixtures")?,
+        load_fixture_corpus(root, "paprika", "Paprika fixtures")?,
+        load_snapshot_corpus(root)?,
     ];
-    let committed_stats = committed
+    let recipes = corpora
         .iter()
         .map(|corpus| Ok((corpus.name.clone(), audit_recipes(corpus)?)))
         .collect::<Result<Vec<_>>>()?;
-    let shopping_items: Vec<ShoppingItem> = read_json(Path::new(SHOPPING_CORPUS))?;
+    let shopping_items: Vec<ShoppingItem> = read_json(&root.join(SHOPPING_CORPUS))?;
     let shopping = audit_shopping(&shopping_items)?;
+    Ok(CommittedAudit { recipes, shopping })
+}
 
-    let report = render_committed(&committed_stats, &shopping);
-    fs::write(COMMITTED_REPORT, &report)
-        .with_context(|| format!("Failed to write {COMMITTED_REPORT}"))?;
+/// Only aggregate numbers are committed; name lists shift with every catalog
+/// change and live in the local report instead.
+fn render_committed(audit: &CommittedAudit) -> String {
+    let mut out = HEADER.to_string();
+    render_recipe_corpora(&mut out, &audit.recipes, false);
+    render_shopping(&mut out, &audit.shopping, false);
+    out
+}
+
+pub fn run(root: &Path, runs_dir: Option<&Path>, prod_recipes: Option<&Path>) -> Result<()> {
+    let mut committed = audit_committed(root)?;
+    let committed_path = root.join(COMMITTED_REPORT);
+    fs::write(&committed_path, render_committed(&committed))
+        .with_context(|| format!("Failed to write {}", committed_path.display()))?;
     tracing::info!("Ingredient catalog audit saved to: {COMMITTED_REPORT}");
 
     let mut local = Vec::new();
@@ -507,17 +534,19 @@ pub fn run(runs_dir: Option<&Path>, prod_recipes: Option<&Path>) -> Result<()> {
     if let Some(path) = prod_recipes {
         local.push(load_prod_corpus(path)?);
     }
-    if !local.is_empty() {
-        let local_stats = local
-            .iter()
-            .map(|corpus| Ok((corpus.name.clone(), audit_recipes(corpus)?)))
-            .collect::<Result<Vec<_>>>()?;
-        let mut out = "# Ingredient catalog audit (local corpora, not committed)\n\n".to_string();
-        render_recipe_corpora(&mut out, &local_stats);
-        fs::create_dir_all("logs")?;
-        fs::write(LOCAL_REPORT, &out).with_context(|| format!("Failed to write {LOCAL_REPORT}"))?;
-        tracing::info!("Local-corpus audit saved to: {LOCAL_REPORT}");
+    for corpus in &local {
+        committed
+            .recipes
+            .push((corpus.name.clone(), audit_recipes(corpus)?));
     }
+    let mut out = LOCAL_HEADER.to_string();
+    render_recipe_corpora(&mut out, &committed.recipes, true);
+    render_shopping(&mut out, &committed.shopping, true);
+    let local_path = root.join(LOCAL_REPORT);
+    fs::create_dir_all(root.join("logs"))?;
+    fs::write(&local_path, out)
+        .with_context(|| format!("Failed to write {}", local_path.display()))?;
+    tracing::info!("Local audit with unrecognized names saved to: {LOCAL_REPORT}");
     Ok(())
 }
 
@@ -651,5 +680,16 @@ mod tests {
             .expect("the newest run failed")
             .to_string();
         assert!(error.contains("\"failed\""), "{error}");
+    }
+
+    #[test]
+    fn committed_report_is_current() {
+        let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("..");
+        let expected = render_committed(&audit_committed(&root).unwrap());
+        let committed = fs::read_to_string(root.join(COMMITTED_REPORT)).unwrap();
+        assert!(
+            committed == expected,
+            "{COMMITTED_REPORT} is stale; run `make ingredient-catalog-audit` and commit the result"
+        );
     }
 }

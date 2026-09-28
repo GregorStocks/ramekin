@@ -19,7 +19,7 @@ use chrono::Utc;
 use clap::{Parser, Subcommand, ValueEnum};
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::testing_api;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use tracing_subscriber::{fmt, layer::SubscriberExt, util::SubscriberInitExt, EnvFilter, Layer};
 
 /// What to do when HTML fetch fails
@@ -471,7 +471,11 @@ async fn main() -> Result<()> {
             runs_dir,
             prod_recipes,
         } => {
-            ingredient_catalog_audit::run(runs_dir.as_deref(), prod_recipes.as_deref())?;
+            ingredient_catalog_audit::run(
+                Path::new("."),
+                runs_dir.as_deref(),
+                prod_recipes.as_deref(),
+            )?;
         }
         Commands::TitleNormalizationTest {
             file,
