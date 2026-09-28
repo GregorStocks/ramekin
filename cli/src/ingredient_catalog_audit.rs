@@ -68,6 +68,9 @@ struct ShoppingStats {
     uses: u64,
     nutrition_name_recognized: usize,
     nutrition_name_recognized_uses: u64,
+    /// Products (dish soap), excluded from nutrition coverage.
+    non_food: usize,
+    non_food_uses: u64,
     categorized: usize,
     categorized_uses: u64,
     nutrition_unrecognized: HashMap<String, usize>,
@@ -322,9 +325,6 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
 
 /// Whether nutrition recognizes the name alone, independent of any quantity.
 fn nutrition_recognizes(item: &str) -> Result<bool> {
-    if is_non_food(item) {
-        return Ok(false);
-    }
     let ingredient = ParsedIngredient {
         item: item.to_string(),
         measurements: vec![],
@@ -345,7 +345,10 @@ fn audit_shopping(items: &[ShoppingItem]) -> Result<ShoppingStats> {
     for entry in items {
         stats.items += 1;
         stats.uses += entry.count;
-        if nutrition_recognizes(&entry.item)? {
+        if is_non_food(&entry.item) {
+            stats.non_food += 1;
+            stats.non_food_uses += entry.count;
+        } else if nutrition_recognizes(&entry.item)? {
             stats.nutrition_name_recognized += 1;
             stats.nutrition_name_recognized_uses += entry.count;
         } else {
@@ -449,6 +452,8 @@ fn render_recipe_corpora(
          | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n",
     );
     for (name, s) in corpora {
+        // Nutrition coverage is over lines that name something eaten.
+        let food_lines = (s.lines - s.non_food) as u64;
         let per_serving = if s.recipes_with_servings == 0 {
             "n/a (no servings)".to_string()
         } else {
@@ -460,8 +465,8 @@ fn render_recipe_corpora(
             s.recipes,
             s.lines,
             s.non_food,
-            share(s.nutrition_name_recognized as u64, s.lines as u64),
-            share(s.nutrition_computed as u64, s.lines as u64),
+            share(s.nutrition_name_recognized as u64, food_lines),
+            share(s.nutrition_computed as u64, food_lines),
             share(s.recipes_fully_estimated as u64, s.recipes as u64),
             share(s.density_hits as u64, s.volume_lines as u64),
             share(s.categorized as u64, s.lines as u64),
@@ -517,8 +522,11 @@ fn render_shopping(out: &mut String, s: &ShoppingStats, with_names: bool) {
     let _ = writeln!(
         out,
         "| Nutrition name recognized | {} | {} |",
-        share(s.nutrition_name_recognized as u64, s.items as u64),
-        share(s.nutrition_name_recognized_uses, s.uses)
+        share(
+            s.nutrition_name_recognized as u64,
+            (s.items - s.non_food) as u64
+        ),
+        share(s.nutrition_name_recognized_uses, s.uses - s.non_food_uses)
     );
     let _ = writeln!(
         out,
@@ -552,7 +560,7 @@ Replays the three ingredient-name matchers over committed corpora:\n\n\
 - **Nutrition**: `nutrition::estimate`. \"Name recognized\" means the name matched a food; \
 \"calories computed\" also needs a usable quantity, and includes negligible lines (salt, spices \
 to taste). Non-food lines (leftover headers, serving notes, products like parchment paper) are \
-counted separately and excluded from both. A recipe is fully estimated when every line \
+counted separately and excluded from both, numerator and denominator. A recipe is fully estimated when every line \
 has calories computed, and has per-serving calories when it is also fully estimated and its \
 servings parse; only snapshots carry servings.\n\
 - **Density**: `catalog::grams_per_cup`, over lines with a volume unit.\n\
