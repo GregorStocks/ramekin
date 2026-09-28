@@ -49,11 +49,11 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 # OpenTelemetry (traces and logs)
-opentelemetry = { version = "0.32", features = ["logs"] }
-opentelemetry_sdk = { version = "0.32", features = ["rt-tokio", "logs"] }
-opentelemetry-otlp = { version = "0.32", features = ["grpc-tonic", "logs"] }
+opentelemetry = { version = "0.33", features = ["logs"] }
+opentelemetry_sdk = { version = "0.33", features = ["rt-tokio", "logs"] }
+opentelemetry-otlp = { version = "0.33", features = ["grpc-tonic", "logs"] }
 tracing-opentelemetry = "0.33"
-opentelemetry-appender-tracing = "0.32"
+opentelemetry-appender-tracing = "0.33"
 
 # Image processing
 image = "0.25"
