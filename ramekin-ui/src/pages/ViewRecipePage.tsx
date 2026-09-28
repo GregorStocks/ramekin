@@ -32,6 +32,7 @@ import {
 import { formatIngredientParts } from "../utils/ingredientFormatting";
 import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
 import { pollScrapeJob } from "../utils/pollScrapeJob";
+import { createRequestTracker } from "../utils/requestTracker";
 import type { RecipeResponse, VersionSummary } from "ramekin-client";
 import { ErrorCode } from "ramekin-client";
 
@@ -150,7 +151,12 @@ export default function ViewRecipePage() {
   // Meal plan modal state
   const [showMealPlanModal, setShowMealPlanModal] = createSignal(false);
 
+  // Navigations can overlap (e.g. A -> B -> back to A); only the latest load
+  // may write recipe, error, or loading state.
+  const recipeRequests = createRequestTracker();
+
   const loadRecipe = async () => {
+    const requestId = recipeRequests.start();
     setLoading(true);
     setError(null);
     try {
@@ -159,6 +165,7 @@ export default function ViewRecipePage() {
         id: params.id,
         versionId: vid ?? undefined,
       });
+      if (!recipeRequests.isCurrent(requestId)) return;
       setRecipe(response);
       if (!vid) {
         setCurrentVersionId(response.versionId);
@@ -169,13 +176,14 @@ export default function ViewRecipePage() {
       }
     } catch (err) {
       const parsed = await parseApiError(err, "Failed to load recipe");
+      if (!recipeRequests.isCurrent(requestId)) return;
       setError(
         parsed.code === ErrorCode.NotFound
           ? "Recipe not found"
           : "Failed to load recipe",
       );
     } finally {
-      setLoading(false);
+      if (recipeRequests.isCurrent(requestId)) setLoading(false);
     }
   };
 

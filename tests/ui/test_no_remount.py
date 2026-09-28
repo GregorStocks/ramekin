@@ -147,3 +147,35 @@ def test_navigating_to_another_recipe_hides_the_previous_one(
         route.continue_()
     page.unroute(f"**/api/recipes/{second_id}")
     expect(page.get_by_role("heading", name="Zucchiniloaf")).to_be_visible()
+
+
+def test_stale_recipe_response_does_not_replace_the_current_one(
+    page: Page, ui_url: str, api_url: str
+):
+    """Navigate A -> B -> back to A while B's request is still in flight: B
+    landing last must not blank or replace A."""
+    username, password, (first_id, second_id) = create_user_with_recipes(
+        api_url, ["Applesauce", "Zucchiniloaf"], []
+    )
+    log_in(page, ui_url, username, password)
+
+    page.goto(f"{ui_url}/recipes/{first_id}?randomQ=Zucchiniloaf")
+    expect(page.get_by_role("heading", name="Applesauce")).to_be_visible()
+
+    pending: list[Route] = []
+    page.route(f"**/api/recipes/{second_id}", lambda route: pending.append(route))
+    with page.expect_request(f"**/api/recipes/{second_id}"):
+        page.get_by_role("button", name="Next Random").click()
+    expect(page).to_have_url(re.compile(str(second_id)))
+    assert len(pending) == 1
+
+    page.go_back()
+    expect(page.get_by_role("heading", name="Applesauce")).to_be_visible()
+
+    with page.expect_response(f"**/api/recipes/{second_id}"):
+        for route in pending:
+            route.continue_()
+    page.unroute(f"**/api/recipes/{second_id}")
+
+    expect(page.get_by_role("heading", name="Applesauce")).to_be_visible()
+    expect(page.get_by_text("Loading recipe...")).not_to_be_visible()
