@@ -60,7 +60,8 @@
   background: var(--surface-2);
 }
 
-.ingredient-row .btn-remove {
+.ingredient-row .btn-remove,
+.ingredient-section-header-row .btn-remove {
   padding: 0.4rem 0.6rem;
   background: transparent;
   border: 1px solid transparent;
@@ -71,7 +72,8 @@
   transition: all 0.15s;
 }
 
-.ingredient-row .btn-remove:hover {
+.ingredient-row .btn-remove:hover,
+.ingredient-section-header-row .btn-remove:hover {
   color: var(--danger);
   border-color: var(--danger);
   background: var(--danger-wash);
@@ -204,59 +206,97 @@
   }
 }
 
-/* Drag-and-drop section styles */
+/* Ingredient editor: ingredients and section headings share one sortable list */
 .drag-handle {
   cursor: grab;
   color: var(--text-faint);
   padding: 0 0.25rem;
   user-select: none;
+  touch-action: none;
   font-size: 0.9rem;
   letter-spacing: -2px;
+}
+
+.drag-handle:hover {
+  color: var(--text-secondary);
 }
 
 .drag-handle:active {
   cursor: grabbing;
 }
 
+.ingredient-editor-row {
+  position: relative;
+}
+
+.ingredient-editor-row.drop-before::before,
+.ingredient-editor-row.drop-after::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  pointer-events: none;
+}
+
+.ingredient-editor-row.drop-before::before {
+  top: -0.45rem;
+}
+
+.ingredient-editor-row.drop-after::after {
+  bottom: -0.45rem;
+}
+
 .ingredient-entry.is-dragging {
-  opacity: 0.5;
+  opacity: 0.35;
+}
+
+.ingredient-entry.in-section {
+  margin-left: 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--border-subtle);
 }
 
 .ingredient-entry.drag-overlay {
-  background: var(--border-hairline);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface-elevated);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  padding: 0.5rem;
-  box-shadow: var(--shadow-card);
-}
-
-.ingredient-section-group {
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  background: var(--bg-0);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-hairline);
+  padding: 0.5rem 0.75rem;
+  box-shadow: var(--shadow-hover);
+  cursor: grabbing;
 }
 
 .ingredient-section-header-row {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border-subtle);
+  margin: 1rem 0 0.5rem;
+}
+
+.ingredient-section-header-row:first-child {
+  margin-top: 0;
 }
 
 .section-name-input {
   flex: 1;
   min-width: 0;
   padding: 0.4rem 0.6rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid transparent;
+  border-bottom-color: var(--border-subtle);
   border-radius: var(--radius-sm);
-  background: var(--surface-1);
+  background: transparent;
   color: var(--text-secondary);
+}
+
+.section-name-input:hover {
+  border-color: var(--border-subtle);
 }
 
 .section-name-input:focus {
@@ -269,17 +309,9 @@
   font-weight: 400;
 }
 
-.add-section-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px dashed var(--border-subtle);
-}
-
-.add-section-row .section-name-input {
-  max-width: 200px;
+.empty-ingredients {
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 .section-header-actions {

@@ -6,6 +6,7 @@ struct RecipeFormView: View {
 
     @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel: RecipeFormViewModel
+    @FocusState private var focusedSectionId: UUID?
 
     init(mode: RecipeFormMode, onSaved: (() -> Void)? = nil) {
         self.onSaved = onSaved
@@ -160,14 +161,32 @@ extension RecipeFormView {
         }
     }
 
+    /// Ingredients and section headings are rows of one list, so moving an
+    /// ingredient past a heading (in edit mode) moves it into that section.
     private var ingredientsFormSection: some View {
         Section {
-            let grouped = groupIngredientsBySection(viewModel.formData.ingredients)
-            ForEach(Array(grouped.enumerated()), id: \.offset) { _, group in
-                ingredientGroupView(group)
+            let sectioned = sectionedIngredientIds(viewModel.formData.ingredientRows)
+            ForEach(viewModel.formData.ingredientRows) { row in
+                switch row {
+                case .section(let id, let name):
+                    sectionHeadingRow(
+                        id: id,
+                        name: viewModel.sectionNameBinding(id: id, rendered: name)
+                    )
+                case .ingredient(let ingredient):
+                    IngredientRowView(
+                        ingredient: viewModel.ingredientBinding(id: ingredient.id, rendered: ingredient)
+                    ) {
+                        viewModel.removeIngredientRow(id: ingredient.id)
+                    }
+                    .padding(.leading, sectioned.contains(ingredient.id) ? 12 : 0)
+                }
+            }
+            .onMove { source, destination in
+                viewModel.moveIngredientRows(from: source, to: destination)
             }
             addIngredientButton
-            addSectionRow
+            addSectionButton
         } header: {
             HStack {
                 Text("Ingredients")
@@ -235,26 +254,35 @@ extension RecipeFormView {
 // MARK: - Subview Helpers
 
 extension RecipeFormView {
-    @ViewBuilder
-    private func ingredientGroupView(_ group: IngredientGroup) -> some View {
-        if !group.section.isEmpty {
-            TextField("Section name", text: Binding(
-                get: { group.section },
-                set: { newName in
-                    for idx in group.indices { viewModel.formData.ingredients[idx].section = newName }
-                }
-            ))
-            .font(.headline).foregroundColor(.accentColor)
-        }
-
-        ForEach(group.indices, id: \.self) { idx in
-            IngredientRowView(ingredient: $viewModel.formData.ingredients[idx]) {
-                viewModel.removeIngredient(at: idx)
+    private func sectionHeadingRow(id: UUID, name: Binding<String>) -> some View {
+        HStack(spacing: 8) {
+            TextField("Section name", text: name)
+                .font(.headline)
+                .foregroundColor(.accentColor)
+                .focused($focusedSectionId, equals: id)
+                .accessibilityLabel("Section name")
+            Button {
+                viewModel.addIngredient(toSectionWithId: id)
+            } label: {
+                Image(systemName: "plus.circle")
+                    .frame(minWidth: 44, minHeight: 44)
+                    .contentShape(Rectangle())
             }
+            .buttonStyle(.borderless)
+            .accessibilityLabel("Add ingredient to this section")
+            Button {
+                viewModel.removeIngredientRow(id: id)
+            } label: {
+                Image(systemName: "trash")
+                    .foregroundColor(.red)
+                    .frame(minWidth: 44, minHeight: 44)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.borderless)
+            .accessibilityLabel("Delete section")
         }
-        .onMove { source, destination in
-            viewModel.moveIngredients(in: group, from: source, to: destination)
-        }
+        // Headings are drop positions for ingredients but don't move themselves.
+        .moveDisabled(true)
     }
 
     private var addIngredientButton: some View {
@@ -265,16 +293,11 @@ extension RecipeFormView {
         }
     }
 
-    @ViewBuilder
-    private var addSectionRow: some View {
-        if !viewModel.formData.ingredients.isEmpty {
-            HStack {
-                TextField("New section name", text: $viewModel.newSectionName)
-                Button("Add Section") {
-                    viewModel.addSection()
-                }
-                .disabled(viewModel.newSectionName.trimmingCharacters(in: .whitespaces).isEmpty)
-            }
+    private var addSectionButton: some View {
+        Button {
+            focusedSectionId = viewModel.addSection()
+        } label: {
+            Label("Add Section", systemImage: "text.badge.plus")
         }
     }
 

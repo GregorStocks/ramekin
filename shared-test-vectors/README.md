@@ -9,6 +9,9 @@ client match it in the same PR.
 - `tag-hierarchy.json`: Rust, web, and iOS tag parsing and client ordering.
 - `meal-plan-dates.json`: web and iOS local date formatting and Monday starts.
 - `ingredient-formatting.json`: web and iOS ingredient display formatting.
+- `ingredient-editor-rows.json`: web and iOS conversion between a recipe's
+  ingredients and the recipe form's flat list of section-heading and
+  ingredient rows.
 - `recipe-title-sort.json`: Rust server and iOS case-folded recipe title ordering.
 - `created-date-filter.json`: Rust server and iOS inclusive UTC-day created-date
   filtering. Timestamps stop at millisecond precision because Foundation's date

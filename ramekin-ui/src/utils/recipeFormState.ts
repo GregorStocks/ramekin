@@ -4,7 +4,6 @@ import { createStore, reconcile } from "solid-js/store";
 import type { SetStoreFunction } from "solid-js/store";
 import type {
   CreateRecipeRequest,
-  Ingredient,
   PhotosApi,
   RecipeResponse,
   RecipeContent,
@@ -18,6 +17,11 @@ import {
   recipeFormValuesFromRecipe,
 } from "./recipeFormSerialization";
 import type { RecipeFormValues } from "./recipeFormSerialization";
+import {
+  ingredientsFromRows,
+  rowsFromIngredients,
+} from "./ingredientEditorRows";
+import type { IngredientEditorRow } from "./ingredientEditorRows";
 
 export interface RecipeFormState {
   title: Accessor<string>;
@@ -34,8 +38,8 @@ export interface RecipeFormState {
   setTags: Setter<string[]>;
   photoIds: Accessor<string[]>;
   setPhotoIds: Setter<string[]>;
-  ingredients: Ingredient[];
-  setIngredients: SetStoreFunction<Ingredient[]>;
+  ingredientRows: IngredientEditorRow[];
+  setIngredientRows: SetStoreFunction<IngredientEditorRow[]>;
   servings: Accessor<string>;
   setServings: Setter<string>;
   prepTime: Accessor<string>;
@@ -88,9 +92,9 @@ export function createRecipeFormState(
   const [photoIds, setPhotoIds] = createSignal<string[]>(
     initialValues.photoIds,
   );
-  const [ingredients, setIngredients] = createStore<Ingredient[]>(
-    initialValues.ingredients,
-  );
+  const [ingredientRows, setIngredientRows] = createStore<
+    IngredientEditorRow[]
+  >(rowsFromIngredients(initialValues.ingredients));
   const [servings, setServings] = createSignal(initialValues.servings);
   const [prepTime, setPrepTime] = createSignal(initialValues.prepTime);
   const [cookTime, setCookTime] = createSignal(initialValues.cookTime);
@@ -116,7 +120,7 @@ export function createRecipeFormState(
     sourceName: sourceName(),
     tags: tags(),
     photoIds: photoIds(),
-    ingredients,
+    ingredients: ingredientsFromRows(ingredientRows),
     servings: servings(),
     prepTime: prepTime(),
     cookTime: cookTime(),
@@ -135,7 +139,7 @@ export function createRecipeFormState(
     setSourceName(nextValues.sourceName);
     setTags(nextValues.tags);
     setPhotoIds(nextValues.photoIds);
-    setIngredients(reconcile(nextValues.ingredients));
+    setIngredientRows(reconcile(rowsFromIngredients(nextValues.ingredients)));
     setServings(nextValues.servings);
     setPrepTime(nextValues.prepTime);
     setCookTime(nextValues.cookTime);
@@ -203,8 +207,8 @@ export function createRecipeFormState(
     setTags,
     photoIds,
     setPhotoIds,
-    ingredients,
-    setIngredients,
+    ingredientRows,
+    setIngredientRows,
     servings,
     setServings,
     prepTime,

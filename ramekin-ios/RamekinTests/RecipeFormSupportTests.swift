@@ -52,11 +52,15 @@ final class RecipeFormSupportTests: XCTestCase {
         XCTAssertEqual(formData.notes, "Serve warm")
         XCTAssertEqual(formData.nutritionalInfo, "200 cal")
         XCTAssertEqual(formData.photoIds, [photoId])
-        XCTAssertEqual(formData.ingredients.count, 1)
-        XCTAssertEqual(formData.ingredients[0].item, "Flour")
-        XCTAssertEqual(formData.ingredients[0].section, "Cake")
-        XCTAssertEqual(formData.ingredients[0].measurements[0].amount, "2")
-        XCTAssertEqual(formData.ingredients[0].measurements[0].unit, "cups")
+        XCTAssertEqual(formData.ingredientRows.count, 2)
+        guard case .section(_, let sectionName) = formData.ingredientRows[0],
+              case .ingredient(let ingredient) = formData.ingredientRows[1] else {
+            return XCTFail("Expected a section heading followed by an ingredient")
+        }
+        XCTAssertEqual(sectionName, "Cake")
+        XCTAssertEqual(ingredient.item, "Flour")
+        XCTAssertEqual(ingredient.measurements[0].amount, "2")
+        XCTAssertEqual(ingredient.measurements[0].unit, "cups")
     }
 
     func testRecipeFormDataUsesEmptyIngredientWhenRecipeHasNone() {
@@ -86,13 +90,15 @@ final class RecipeFormSupportTests: XCTestCase {
 
         let formData = RecipeFormData(recipe: recipe)
 
-        XCTAssertEqual(formData.ingredients.count, 1)
-        XCTAssertEqual(formData.ingredients[0].item, "")
-        XCTAssertEqual(formData.ingredients[0].note, "")
-        XCTAssertEqual(formData.ingredients[0].section, "")
-        XCTAssertEqual(formData.ingredients[0].measurements.count, 1)
-        XCTAssertEqual(formData.ingredients[0].measurements[0].amount, "")
-        XCTAssertEqual(formData.ingredients[0].measurements[0].unit, "")
+        XCTAssertEqual(formData.ingredientRows.count, 1)
+        guard case .ingredient(let ingredient) = formData.ingredientRows[0] else {
+            return XCTFail("Expected a single empty ingredient row")
+        }
+        XCTAssertEqual(ingredient.item, "")
+        XCTAssertEqual(ingredient.note, "")
+        XCTAssertEqual(ingredient.measurements.count, 1)
+        XCTAssertEqual(ingredient.measurements[0].amount, "")
+        XCTAssertEqual(ingredient.measurements[0].unit, "")
     }
 
     func testCreateRequestFiltersBlankIngredientAndOmitsEmptyOptionalFields() {
@@ -112,14 +118,14 @@ final class RecipeFormSupportTests: XCTestCase {
             tags: [],
             notes: "",
             nutritionalInfo: "200 cal",
-            ingredients: [
-                EditableIngredient(
+            ingredientRows: [
+                .newSection("Cake"),
+                .ingredient(EditableIngredient(
                     item: "Flour",
                     measurements: [EditableMeasurement(amount: "2", unit: "cups")],
-                    note: "",
-                    section: "Cake"
-                ),
-                EditableIngredient.empty()
+                    note: ""
+                )),
+                .ingredient(.empty())
             ],
             photoIds: [photoId]
         )
@@ -160,13 +166,12 @@ final class RecipeFormSupportTests: XCTestCase {
             tags: [],
             notes: "Salt to taste",
             nutritionalInfo: "",
-            ingredients: [
-                EditableIngredient(
+            ingredientRows: [
+                .ingredient(EditableIngredient(
                     item: "Water",
                     measurements: [EditableMeasurement(amount: "4", unit: "cups")],
-                    note: "",
-                    section: ""
-                )
+                    note: ""
+                ))
             ],
             photoIds: [],
             expectedVersionId: expectedVersionId
