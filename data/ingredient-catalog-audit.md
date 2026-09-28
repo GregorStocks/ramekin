@@ -33,9 +33,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 ### Unrecognized-name fingerprints
 
-| Matcher | Distinct names | Fingerprint |
+| Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition | 14253 | `32f066320f73` |
+| Nutrition (all failures) | 14289 | `4f2d937fbc2b` |
 | Density | 6286 | `adc23975a493` |
 | Shopping category | 750 | `768022b1be6e` |
 
@@ -53,9 +53,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 ### Unrecognized-name fingerprints
 
-| Matcher | Distinct names | Fingerprint |
+| Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition | 2406 | `03a36b16c34d` |
+| Nutrition (all failures) | 2419 | `4ddc3db84911` |
 | Density | 991 | `16bfea1b3eb0` |
 | Shopping category | 83 | `5d1db47b2752` |
 
@@ -73,9 +73,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 ### Unrecognized-name fingerprints
 
-| Matcher | Distinct names | Fingerprint |
+| Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition | 2272 | `4155e09ded20` |
+| Nutrition (all failures) | 2285 | `30ae4a006e33` |
 | Density | 959 | `b7bb315fd605` |
 | Shopping category | 52 | `ed20012f6093` |
 
@@ -91,7 +91,7 @@ Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`).
 
 ### Unrecognized-name fingerprints
 
-| Matcher | Distinct names | Fingerprint |
+| Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
 | Nutrition | 257 | `ab59ee8184b1` |
 | Shopping category | 3 | `65911683b3db` |

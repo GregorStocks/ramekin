@@ -50,6 +50,9 @@ struct RecipeCorpusStats {
     recipes_with_per_serving: usize,
     nutrition_reasons: BTreeMap<String, usize>,
     nutrition_unrecognized: HashMap<String, usize>,
+    /// Every nutrition failure keyed by "reason: name", so the fingerprint
+    /// changes when a line moves between failure reasons.
+    nutrition_failures: HashMap<String, usize>,
     volume_lines: usize,
     density_hits: usize,
     density_misses: HashMap<String, usize>,
@@ -266,6 +269,10 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
         }
         for u in unknown {
             *stats.nutrition_reasons.entry(u.reason.clone()).or_default() += 1;
+            *stats
+                .nutrition_failures
+                .entry(format!("{}: {}", u.reason, normalize_name(&u.item)))
+                .or_default() += 1;
             if NAME_FAILURES.contains(&u.reason.as_str()) {
                 *stats
                     .nutrition_unrecognized
@@ -405,7 +412,7 @@ fn fingerprint(counts: &HashMap<String, usize>) -> String {
 fn write_fingerprints(out: &mut String, matchers: &[(&str, &HashMap<String, usize>)]) {
     out.push_str(
         "\n### Unrecognized-name fingerprints\n\n\
-         | Matcher | Distinct names | Fingerprint |\n| --- | ---: | --- |\n",
+         | Matcher | Distinct entries | Fingerprint |\n| --- | ---: | --- |\n",
     );
     for (matcher, counts) in matchers {
         let _ = writeln!(
@@ -461,7 +468,7 @@ fn render_recipe_corpora(
         write_fingerprints(
             out,
             &[
-                ("Nutrition", &s.nutrition_unrecognized),
+                ("Nutrition (all failures)", &s.nutrition_failures),
                 ("Density", &s.density_misses),
                 ("Shopping category", &s.uncategorized),
             ],
@@ -659,6 +666,13 @@ mod tests {
             "names are grouped case- and whitespace-insensitively"
         );
         assert_eq!(stats.nutrition_reasons["Unsupported quantity unit"], 1);
+        assert_eq!(
+            stats
+                .nutrition_failures
+                .get("Unsupported quantity unit: eggs"),
+            Some(&1),
+            "quantity failures on recognized names are fingerprinted too"
+        );
         assert_eq!(stats.volume_lines, 2);
         assert_eq!(stats.density_hits, 1);
         assert_eq!(stats.density_misses.get("moon dust"), Some(&1));
