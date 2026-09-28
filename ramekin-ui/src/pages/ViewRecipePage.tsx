@@ -118,7 +118,15 @@ export default function ViewRecipePage() {
     return `${trimmed}×`;
   };
 
-  const [recipe, setRecipe] = createSignal<RecipeResponse | null>(null);
+  const [loadedRecipe, setRecipe] = createSignal<RecipeResponse | null>(null);
+  // Navigating to another recipe (e.g. "Next Random") reuses this page. Until
+  // the new recipe arrives, hide the previous one so its content and actions
+  // can't be confused with the recipe the URL now points at. Reloads of the
+  // same recipe keep it on screen and update in place.
+  const recipe = () => {
+    const r = loadedRecipe();
+    return r && r.id === params.id ? r : null;
+  };
   usePageTitle(() => recipe()?.title);
   const [currentVersionId, setCurrentVersionId] = createSignal<string | null>(
     null,
