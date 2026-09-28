@@ -12,6 +12,7 @@ use ramekin_core::nutrition;
 use ramekin_core::types::ParseIngredientsOutput;
 use ramekin_core::volume_to_weight::{find_density, is_volume_unit};
 use serde::Deserialize;
+use sha2::{Digest, Sha256};
 use std::collections::{BTreeMap, HashMap};
 use std::fmt::Write as _;
 use std::fs;
@@ -386,6 +387,36 @@ fn write_top_names(out: &mut String, title: &str, unit: &str, counts: &HashMap<S
     }
 }
 
+/// A short, stable hash of which names a matcher missed and how often. It
+/// changes whenever the set changes, even when the totals stay the same.
+fn fingerprint(counts: &HashMap<String, usize>) -> String {
+    let mut entries: Vec<_> = counts.iter().collect();
+    entries.sort();
+    let mut hasher = Sha256::new();
+    for (name, count) in entries {
+        hasher.update(format!("{name}\t{count}\n").as_bytes());
+    }
+    hasher.finalize()[..6]
+        .iter()
+        .map(|byte| format!("{byte:02x}"))
+        .collect()
+}
+
+fn write_fingerprints(out: &mut String, matchers: &[(&str, &HashMap<String, usize>)]) {
+    out.push_str(
+        "\n### Unrecognized-name fingerprints\n\n\
+         | Matcher | Distinct names | Fingerprint |\n| --- | ---: | --- |\n",
+    );
+    for (matcher, counts) in matchers {
+        let _ = writeln!(
+            out,
+            "| {matcher} | {} | `{}` |",
+            counts.len(),
+            fingerprint(counts)
+        );
+    }
+}
+
 fn render_recipe_corpora(
     out: &mut String,
     corpora: &[(String, RecipeCorpusStats)],
@@ -427,6 +458,14 @@ fn render_recipe_corpora(
                 pct(*count as u64, s.lines as u64)
             );
         }
+        write_fingerprints(
+            out,
+            &[
+                ("Nutrition", &s.nutrition_unrecognized),
+                ("Density", &s.density_misses),
+                ("Shopping category", &s.uncategorized),
+            ],
+        );
         if !with_names {
             continue;
         }
@@ -466,6 +505,13 @@ fn render_shopping(out: &mut String, s: &ShoppingStats, with_names: bool) {
         "| Categorized (not \"Other\") | {} | {} |",
         share(s.categorized as u64, s.items as u64),
         share(s.categorized_uses, s.uses)
+    );
+    write_fingerprints(
+        out,
+        &[
+            ("Nutrition", &s.nutrition_unrecognized),
+            ("Shopping category", &s.uncategorized),
+        ],
     );
     if !with_names {
         return;
@@ -651,6 +697,20 @@ mod tests {
         assert_eq!(top_names(&counts, 2), vec![("c", 5), ("a", 2)]);
         assert_eq!(pct(0u64, 0u64), "n/a");
         assert_eq!(share(1, 60_000), "1/60000 (0.0%)");
+    }
+
+    #[test]
+    fn fingerprint_tracks_names_not_just_totals() {
+        let before = HashMap::from([("salt".to_string(), 2), ("water".to_string(), 1)]);
+        let reordered = HashMap::from([("water".to_string(), 1), ("salt".to_string(), 2)]);
+        let swapped = HashMap::from([("salt".to_string(), 2), ("pepper".to_string(), 1)]);
+        assert_eq!(fingerprint(&before), fingerprint(&reordered));
+        assert_ne!(
+            fingerprint(&before),
+            fingerprint(&swapped),
+            "same totals, different names"
+        );
+        assert_eq!(fingerprint(&before).len(), 12);
     }
 
     fn write_run(runs_dir: &Path, run_id: &str, status: &str) {

@@ -31,6 +31,14 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Unsupported or missing quantity | 5 | 0.0% |
 | Unsupported quantity unit | 2518 | 4.2% |
 
+### Unrecognized-name fingerprints
+
+| Matcher | Distinct names | Fingerprint |
+| --- | ---: | --- |
+| Nutrition | 14253 | `32f066320f73` |
+| Density | 6286 | `adc23975a493` |
+| Shopping category | 750 | `768022b1be6e` |
+
 ## Paprika fixtures
 
 ### Nutrition failure reasons
@@ -42,6 +50,14 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | No supported nutrition match | 4616 | 85.8% |
 | Unsupported or missing quantity | 1 | 0.0% |
 | Unsupported quantity unit | 203 | 3.8% |
+
+### Unrecognized-name fingerprints
+
+| Matcher | Distinct names | Fingerprint |
+| --- | ---: | --- |
+| Nutrition | 2406 | `03a36b16c34d` |
+| Density | 991 | `16bfea1b3eb0` |
+| Shopping category | 83 | `5d1db47b2752` |
 
 ## Pipeline snapshots
 
@@ -55,6 +71,14 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Unsupported or missing quantity | 1 | 0.0% |
 | Unsupported quantity unit | 195 | 3.8% |
 
+### Unrecognized-name fingerprints
+
+| Matcher | Distinct names | Fingerprint |
+| --- | ---: | --- |
+| Nutrition | 2272 | `4155e09ded20` |
+| Density | 959 | `b7bb315fd605` |
+| Shopping category | 52 | `ed20012f6093` |
+
 ## Shopping-list corpus
 
 Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`). Usage-weighted numbers count each item by how often it was added.
@@ -64,3 +88,10 @@ Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`).
 | Items | 280 | 424 |
 | Nutrition name recognized | 10/280 (3.6%) | 35/424 (8.3%) |
 | Categorized (not "Other") | 277/280 (98.9%) | 421/424 (99.3%) |
+
+### Unrecognized-name fingerprints
+
+| Matcher | Distinct names | Fingerprint |
+| --- | ---: | --- |
+| Nutrition | 257 | `ab59ee8184b1` |
+| Shopping category | 3 | `65911683b3db` |
