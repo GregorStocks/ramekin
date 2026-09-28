@@ -307,6 +307,29 @@ pub fn food(fdc_id: u32) -> Option<&'static UsdaFood> {
     CATALOG.foods.get(&fdc_id)
 }
 
+/// Resolve an ingredient line, using its note when it changes the food. The
+/// parser keeps "cooked" in the note ("brown rice, cooked"), and cooked grains
+/// differ from dry ones about threefold, so a note saying the food is cooked
+/// tries "cooked <item>" first.
+pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
+    static COOKED: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"(?i)(^|[^a-z])cooked\b").unwrap());
+    if note.is_some_and(|note| COOKED.is_match(note)) {
+        if let resolved @ Resolution::Entry { .. } = resolve(&format!("cooked {item}")) {
+            return resolved;
+        }
+    }
+    resolve(item)
+}
+
+/// Grams per US cup for an ingredient line (see `resolve_line`).
+pub fn line_grams_per_cup(item: &str, note: Option<&str>) -> Option<f64> {
+    match resolve_line(item, note) {
+        Resolution::Entry { entry, .. } => entry.grams_per_cup,
+        _ => None,
+    }
+}
+
 /// Grams per US cup for a written ingredient name, if its entry has a density.
 /// A compound line has none: the ratio of its foods is unknown.
 pub fn grams_per_cup(item: &str) -> Option<f64> {

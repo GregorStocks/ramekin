@@ -76,6 +76,11 @@ Names are lowercased and whitespace is collapsed. Then:
    becoming dried rosemary. A curated alias that keeps a prep word ("grated
    nutmeg") is an explicit choice and still counts.
 
+Calorie estimates and density resolve whole lines with `resolve_line(item, note)`.
+The parser keeps "cooked" in the note ("brown rice, cooked" → item "brown rice"),
+and cooked grains, pasta, and meats differ from dry or raw ones about threefold.
+So a note saying "cooked" (not "uncooked") tries "cooked <item>" first.
+
 Only a match to a specific food ends the search. Trimming never settles for
 a name that isn't a food ("boneless, skinless …" is never cut to "boneless"),
 and an ambiguous hit still lets a later step find a specific food. A trailing

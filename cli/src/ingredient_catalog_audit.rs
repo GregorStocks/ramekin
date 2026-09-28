@@ -5,7 +5,7 @@
 //! catalog changes show measurable before/after numbers.
 
 use anyhow::{Context, Result};
-use ramekin_core::catalog::{grams_per_cup, is_non_food, is_volume_unit, resolve, Resolution};
+use ramekin_core::catalog::{is_non_food, is_volume_unit, line_grams_per_cup, resolve, Resolution};
 use ramekin_core::final_recipe::FinalRecipe;
 use ramekin_core::ingredient_categorizer::categorize;
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
@@ -303,7 +303,7 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
                 .any(|m| is_volume_unit(m.unit.as_deref()));
             if has_volume {
                 stats.volume_lines += 1;
-                if grams_per_cup(&ingredient.item).is_some() {
+                if line_grams_per_cup(&ingredient.item, ingredient.note.as_deref()).is_some() {
                     stats.density_hits += 1;
                 } else {
                     *stats

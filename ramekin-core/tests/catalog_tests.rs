@@ -1,5 +1,5 @@
 use ramekin_core::catalog::{
-    category, food, grams_per_cup, resolve, rewrite, version, Kind, Resolution, Via,
+    category, food, grams_per_cup, resolve, resolve_line, rewrite, version, Kind, Resolution, Via,
 };
 
 fn density(item: &str) -> f64 {
@@ -399,4 +399,28 @@ fn salmon_defaults_to_farmed_unless_named() {
     assert_eq!(fdc_id("salmon"), fdc_id("fish, salmon, atlantic, farmed"));
     assert!(kcal("wild salmon") < kcal("salmon"));
     assert_eq!(fdc_id("sockeye salmon"), fdc_id("fish, salmon, sockeye"));
+}
+
+#[test]
+fn a_cooked_note_selects_the_cooked_food() {
+    let line_fdc = |item, note| match resolve_line(item, note) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    // "brown rice, cooked" parses to item "brown rice" with note "cooked".
+    assert_eq!(
+        line_fdc("brown rice", Some("cooked")),
+        fdc_id("cooked brown rice")
+    );
+    assert_ne!(line_fdc("brown rice", Some("cooked")), fdc_id("brown rice"));
+    assert_eq!(
+        line_fdc("brown rice", Some("uncooked")),
+        fdc_id("brown rice")
+    );
+    assert_eq!(line_fdc("brown rice", None), fdc_id("brown rice"));
+    // Without a cooked form in the catalog, the item itself is used.
+    assert_eq!(
+        line_fdc("granulated sugar", Some("cooked")),
+        fdc_id("granulated sugar")
+    );
 }

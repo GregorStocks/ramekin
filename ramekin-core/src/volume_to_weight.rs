@@ -3,7 +3,7 @@
 //! Converts volume measurements (cups, tbsp, tsp, etc.) to grams for
 //! ingredients where we have reliable density data.
 
-use crate::catalog::{grams_per_cup, is_volume_unit, rewrite, volume_to_cups};
+use crate::catalog::{is_volume_unit, line_grams_per_cup, rewrite, volume_to_cups};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::{format_grams, parse_amount};
 
@@ -56,7 +56,8 @@ pub fn add_volume_to_weight_alternative(
     };
 
     // Look up density for this ingredient
-    let Some(grams_per_cup) = grams_per_cup(&ingredient.item) else {
+    let Some(grams_per_cup) = line_grams_per_cup(&ingredient.item, ingredient.note.as_deref())
+    else {
         stats.skipped_unknown_ingredient += 1;
         stats.unknown_ingredients.push(ingredient.item.clone());
         return ingredient;

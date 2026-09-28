@@ -215,7 +215,7 @@ fn measurement_grams(
 }
 
 fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
-    let entry = match catalog::resolve(&ingredient.item) {
+    let entry = match catalog::resolve_line(&ingredient.item, ingredient.note.as_deref()) {
         Resolution::Entry { entry, .. } if entry.kind == Kind::Product => return Ok(Line::Skipped),
         Resolution::Entry { entry, .. } => entry,
         Resolution::NotFood => return Ok(Line::Skipped),
