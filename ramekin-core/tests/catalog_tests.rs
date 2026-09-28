@@ -392,3 +392,11 @@ fn dissimilar_alternatives_and_bare_herbs() {
     assert!(matches!(resolve("sage"), Resolution::Ambiguous));
     assert!(matches!(resolve("oregano"), Resolution::Entry { .. }));
 }
+
+#[test]
+fn salmon_defaults_to_farmed_unless_named() {
+    let kcal = |item| food(fdc_id(item).unwrap()).unwrap().kcal_per_100g.unwrap();
+    assert_eq!(fdc_id("salmon"), fdc_id("fish, salmon, atlantic, farmed"));
+    assert!(kcal("wild salmon") < kcal("salmon"));
+    assert_eq!(fdc_id("sockeye salmon"), fdc_id("fish, salmon, sockeye"));
+}
