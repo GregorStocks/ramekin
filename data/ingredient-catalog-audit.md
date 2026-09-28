@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60510 | 100 | 46989/60410 (77.8%) | 35169/60410 (58.2%) | 144/5408 (2.7%) | n/a (no servings) | 28784/37166 (77.4%) | 59389/60510 (98.1%) |
+| Pipeline fixtures | 5408 | 60510 | 100 | 46987/60410 (77.8%) | 35167/60410 (58.2%) | 144/5408 (2.7%) | n/a (no servings) | 28782/37166 (77.4%) | 59389/60510 (98.1%) |
 | Paprika fixtures | 462 | 5377 | 11 | 4501/5366 (83.9%) | 3111/5366 (58.0%) | 16/462 (3.5%) | n/a (no servings) | 2256/2881 (78.3%) | 5286/5377 (98.3%) |
 | Pipeline snapshots | 445 | 5177 | 10 | 4399/5167 (85.1%) | 3107/5167 (60.1%) | 15/445 (3.4%) | 8/445 (1.8%) | 2250/2842 (79.2%) | 5122/5177 (98.9%) |
 
@@ -24,7 +24,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Reason | Lines | Share of lines |
 | --- | ---: | ---: |
-| Ambiguous ingredient | 250 | 0.4% |
+| Ambiguous ingredient | 252 | 0.4% |
 | Missing density for this food | 2098 | 3.5% |
 | Missing quantity | 1673 | 2.8% |
 | No supported nutrition match | 13171 | 21.8% |
@@ -36,8 +36,8 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 12283 | `44bb2e9013f6` |
-| Density | 4509 | `9251debfbfcc` |
+| Nutrition (all failures) | 12283 | `b74e329f054e` |
+| Density | 4509 | `0728e6a4912a` |
 | Shopping category | 745 | `482df69e4e62` |
 
 ## Paprika fixtures

@@ -79,7 +79,10 @@ Names are lowercased and whitespace is collapsed. Then:
 Calorie estimates and density resolve whole lines with `resolve_line(item, note)`.
 The parser keeps "cooked" in the note ("brown rice, cooked" → item "brown rice"),
 and cooked grains, pasta, and meats differ from dry or raw ones about threefold.
-So a note saying "cooked" (not "uncooked") tries "cooked <item>" first.
+So a note that states the measured food is cooked ("cooked", "cooked,
+shredded") tries "cooked <item>" first. A cooking instruction ("cooked and
+crumbled", "cooked al dente") describes what happens after measuring, so it
+doesn't.
 
 Only a match to a specific food ends the search. Trimming never settles for
 a name that isn't a food ("boneless, skinless …" is never cut to "boneless"),

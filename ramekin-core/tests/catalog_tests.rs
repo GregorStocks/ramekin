@@ -417,6 +417,18 @@ fn a_cooked_note_selects_the_cooked_food() {
         line_fdc("brown rice", Some("uncooked")),
         fdc_id("brown rice")
     );
+    assert_eq!(
+        line_fdc("brown rice", Some("cooked, cooled")),
+        fdc_id("cooked brown rice")
+    );
+    // A cooking instruction applies after measuring, so the raw food is measured.
+    for note in [
+        "cooked and crumbled",
+        "cooked al dente",
+        "cooked until crisp",
+    ] {
+        assert_eq!(line_fdc("bacon", Some(note)), fdc_id("bacon"), "{note}");
+    }
     assert_eq!(line_fdc("brown rice", None), fdc_id("brown rice"));
     // Without a cooked form in the catalog, the item itself is used.
     assert_eq!(
