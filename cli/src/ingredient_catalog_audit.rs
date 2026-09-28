@@ -92,6 +92,12 @@ struct ShoppingItem {
     count: u64,
 }
 
+/// The fields of a pipeline run's `manifest.json` that the audit checks.
+#[derive(Deserialize)]
+struct RunManifest {
+    status: String,
+}
+
 #[derive(Deserialize)]
 struct ProdRecipe {
     servings: Option<String>,
@@ -178,6 +184,19 @@ fn load_pipeline_run_corpus(runs_dir: &Path) -> Result<Corpus> {
         .pop()
         .with_context(|| format!("No pipeline runs in {}", runs_dir.display()))?;
 
+    // A running or failed run can be missing outputs, which would make
+    // coverage look like it changed when only the corpus did.
+    let manifest: RunManifest = read_json(&run_dir.join("manifest.json"))?;
+    anyhow::ensure!(
+        manifest.status == "completed",
+        "Latest pipeline run {} has status {:?}, not \"completed\"; rerun `make pipeline` \
+         or point RUNS_DIR at a directory whose newest run completed",
+        run_dir.display(),
+        manifest.status
+    );
+
+    // In a completed run, a URL without parse output is one whose fetch or
+    // extraction failed, so it has no ingredients to audit.
     let urls_dir = run_dir.join("urls");
     let mut url_dirs = fs::read_dir(&urls_dir)
         .with_context(|| format!("Failed to read {}", urls_dir.display()))?
@@ -596,5 +615,41 @@ mod tests {
         ]);
         assert_eq!(top_names(&counts, 2), vec![("c", 5), ("a", 2)]);
         assert_eq!(pct(0u64, 0u64), "n/a");
+    }
+
+    fn write_run(runs_dir: &Path, run_id: &str, status: &str) {
+        let run_dir = runs_dir.join(run_id);
+        let parse_dir = run_dir.join("urls/example-com_soup/parse_ingredients");
+        fs::create_dir_all(&parse_dir).unwrap();
+        fs::write(
+            run_dir.join("manifest.json"),
+            format!(r#"{{"status": "{status}"}}"#),
+        )
+        .unwrap();
+        fs::write(
+            parse_dir.join("output.json"),
+            r#"{"ingredients": [{"item": "water", "measurements": [], "note": null, "raw": null, "section": null}]}"#,
+        )
+        .unwrap();
+        fs::create_dir_all(run_dir.join("urls/example-com_blocked")).unwrap();
+    }
+
+    #[test]
+    fn pipeline_run_must_be_completed() {
+        let runs = tempfile::tempdir().unwrap();
+        write_run(runs.path(), "2026-01-01_00-00-00", "completed");
+        let corpus = load_pipeline_run_corpus(runs.path()).unwrap();
+        assert_eq!(
+            corpus.recipes.len(),
+            1,
+            "URLs without parse output (failed fetch/extract) are skipped"
+        );
+
+        write_run(runs.path(), "2026-01-02_00-00-00", "failed");
+        let error = load_pipeline_run_corpus(runs.path())
+            .err()
+            .expect("the newest run failed")
+            .to_string();
+        assert!(error.contains("\"failed\""), "{error}");
     }
 }
