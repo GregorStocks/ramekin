@@ -238,3 +238,32 @@ def test_switching_versions_hides_the_previous_version(
         route.continue_()
     page.unroute(is_version_fetch)
     expect(page.get_by_role("heading", name="Plumjam")).to_be_visible()
+
+
+def test_changing_weeks_shows_loading_until_the_new_week_arrives(
+    page: Page, ui_url: str, api_url: str
+):
+    """Reloading the same week updates in place, but a different week must not
+    render as an empty grid while its meal plans are still loading."""
+    username, password = create_user_with_tags(api_url, [])
+    log_in(page, ui_url, username, password)
+
+    page.goto(f"{ui_url}/meal-plan")
+    expect(page.locator(".meal-plan-grid")).to_be_visible()
+
+    def is_meal_plan_list(url: str) -> bool:
+        return "/api/meal-plans?" in url
+
+    pending: list[Route] = []
+    page.route(is_meal_plan_list, lambda route: pending.append(route))
+    with page.expect_request(lambda request: is_meal_plan_list(request.url)):
+        page.get_by_role("button", name="Next →").click()
+
+    expect(page.get_by_text("Loading meal plans...")).to_be_visible()
+    expect(page.locator(".meal-plan-grid")).not_to_be_visible()
+
+    for route in pending:
+        route.continue_()
+    page.unroute(is_meal_plan_list)
+    expect(page.locator(".meal-plan-grid")).to_be_visible()
+    expect(page.get_by_text("Loading meal plans...")).not_to_be_visible()

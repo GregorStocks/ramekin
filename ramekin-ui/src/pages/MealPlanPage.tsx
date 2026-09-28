@@ -6,6 +6,7 @@ import PhotoThumbnail from "../components/PhotoThumbnail";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import { reuseUnchanged } from "../utils/stableList";
+import { createRequestTracker } from "../utils/requestTracker";
 import {
   MEAL_TYPES,
   MEAL_TYPE_LABELS,
@@ -48,9 +49,13 @@ export default function MealPlanPage() {
 
   const [weekStart, setWeekStart] = createSignal(getMonday(new Date()));
   const [mealPlans, setMealPlans] = createSignal<MealPlanItem[]>([]);
-  // Only the first load shows the placeholder; later reloads (after an edit or
-  // a week change) update the grid in place.
-  const [loading, setLoading] = createSignal(true);
+  // The week whose meal plans are loaded. Reloading the same week after an
+  // edit updates the grid in place; switching weeks shows the placeholder
+  // until the new week arrives.
+  const [loadedWeek, setLoadedWeek] = createSignal<string | null>(null);
+  const loading = () => loadedWeek() !== formatDateLocal(weekStart());
+  // Only the latest week request may write meal plans or the loaded week.
+  const mealPlanRequests = createRequestTracker();
   const [error, setError] = createSignal<string | null>(null);
   const [pickerError, setPickerError] = createSignal<string | null>(null);
 
@@ -90,6 +95,8 @@ export default function MealPlanPage() {
   };
 
   const loadMealPlans = async () => {
+    const requestId = mealPlanRequests.start();
+    const week = formatDateLocal(weekStart());
     setError(null);
     try {
       const days = weekDays();
@@ -97,14 +104,15 @@ export default function MealPlanPage() {
         startDate: toApiDate(days[0]),
         endDate: toApiDate(days[6]),
       });
+      if (!mealPlanRequests.isCurrent(requestId)) return;
       setMealPlans((prev) =>
         reuseUnchanged(prev, response.mealPlans, (mp) => mp.id),
       );
+      setLoadedWeek(week);
     } catch (err) {
       const message = await extractApiError(err, "Failed to load meal plans");
+      if (!mealPlanRequests.isCurrent(requestId)) return;
       setError(message);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -281,7 +289,7 @@ export default function MealPlanPage() {
         <div class="error-message">{error()}</div>
       </Show>
 
-      <Show when={loading()}>
+      <Show when={loading() && !error()}>
         <p class="loading-text">Loading meal plans...</p>
       </Show>
 
