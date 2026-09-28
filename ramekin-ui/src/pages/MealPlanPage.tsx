@@ -5,6 +5,7 @@ import Modal from "../components/Modal";
 import PhotoThumbnail from "../components/PhotoThumbnail";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
+import { reuseUnchanged } from "../utils/stableList";
 import {
   MEAL_TYPES,
   MEAL_TYPE_LABELS,
@@ -47,6 +48,8 @@ export default function MealPlanPage() {
 
   const [weekStart, setWeekStart] = createSignal(getMonday(new Date()));
   const [mealPlans, setMealPlans] = createSignal<MealPlanItem[]>([]);
+  // Only the first load shows the placeholder; later reloads (after an edit or
+  // a week change) update the grid in place.
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
   const [pickerError, setPickerError] = createSignal<string | null>(null);
@@ -87,7 +90,6 @@ export default function MealPlanPage() {
   };
 
   const loadMealPlans = async () => {
-    setLoading(true);
     setError(null);
     try {
       const days = weekDays();
@@ -95,7 +97,9 @@ export default function MealPlanPage() {
         startDate: toApiDate(days[0]),
         endDate: toApiDate(days[6]),
       });
-      setMealPlans(response.mealPlans);
+      setMealPlans((prev) =>
+        reuseUnchanged(prev, response.mealPlans, (mp) => mp.id),
+      );
     } catch (err) {
       const message = await extractApiError(err, "Failed to load meal plans");
       setError(message);

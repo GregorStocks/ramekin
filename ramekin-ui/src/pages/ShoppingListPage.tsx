@@ -1,4 +1,11 @@
-import { createSignal, createMemo, createEffect, For, Show } from "solid-js";
+import {
+  createSignal,
+  createMemo,
+  createEffect,
+  For,
+  Index,
+  Show,
+} from "solid-js";
 import { A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
@@ -6,6 +13,7 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import { logger } from "../utils/logger";
 import { createAsyncAction } from "../utils/asyncState";
+import { reuseUnchanged } from "../utils/stableList";
 import {
   applyShoppingListSyncResponse,
   clearShoppingListSyncCache,
@@ -60,7 +68,7 @@ export default function ShoppingListPage() {
   );
 
   const applyCache = (cache: ShoppingListSyncCache) => {
-    setItems(cache.items);
+    setItems((prev) => reuseUnchanged(prev, cache.items, (i) => i.id));
     setCategoryOrder(cache.categoryOrder);
   };
 
@@ -422,16 +430,16 @@ export default function ShoppingListPage() {
 
       <Show when={!loading() && items().length > 0}>
         <div class="shopping-list">
-          <For each={groupedUncheckedItems()}>
+          <Index each={groupedUncheckedItems()}>
             {(group) => (
               <div class="shopping-category-group">
-                <h3 class="shopping-category-header">{group.category}</h3>
+                <h3 class="shopping-category-header">{group().category}</h3>
                 <ul class="shopping-category-items">
-                  <For each={group.items}>{renderItem}</For>
+                  <For each={group().items}>{renderItem}</For>
                 </ul>
               </div>
             )}
-          </For>
+          </Index>
 
           <Show when={checkedItems().length > 0}>
             <div class="shopping-category-group checked-group">

@@ -29,7 +29,7 @@ interface CookbookRecipeGridProps {
 export default function CookbookRecipeGrid(props: CookbookRecipeGridProps) {
   return (
     <div class="cookbook-content">
-      <Show when={props.loading()}>
+      <Show when={props.loading() && props.recipes().length === 0}>
         <p class="loading">Loading recipes...</p>
       </Show>
 
@@ -69,7 +69,7 @@ export default function CookbookRecipeGrid(props: CookbookRecipeGridProps) {
         </div>
       </Show>
 
-      <Show when={!props.loading() && props.recipes().length > 0}>
+      <Show when={props.recipes().length > 0}>
         <div class="recipe-grid" data-density={props.density()}>
           <For each={props.recipes()}>
             {(recipe) => {

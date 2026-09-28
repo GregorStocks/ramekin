@@ -97,4 +97,41 @@ describe("createApiResource", () => {
       });
     });
   });
+
+  it("stays out of initial loading while refetching loaded data", async () => {
+    await new Promise<void>((resolve, reject) => {
+      createRoot((dispose) => {
+        let release: (() => void) | undefined;
+        let calls = 0;
+        const resource = createApiResource(async () => {
+          calls += 1;
+          if (calls > 1) {
+            await new Promise<void>((r) => (release = r));
+          }
+          return calls;
+        }, "Failed");
+
+        expect(resource.initialLoading()).toBe(true);
+
+        waitForResource()
+          .then(async () => {
+            expect(resource.initialLoading()).toBe(false);
+            const refetch = resource.refetch();
+            expect(resource.loading()).toBe(true);
+            expect(resource.initialLoading()).toBe(false);
+            expect(resource.data()).toBe(1);
+            await waitForResource();
+            release?.();
+            await refetch;
+            expect(resource.data()).toBe(2);
+            dispose();
+            resolve();
+          })
+          .catch((err: unknown) => {
+            dispose();
+            reject(err);
+          });
+      });
+    });
+  });
 });

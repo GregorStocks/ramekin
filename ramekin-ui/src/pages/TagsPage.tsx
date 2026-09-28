@@ -1,4 +1,4 @@
-import { createSignal, For, Show } from "solid-js";
+import { createMemo, createSignal, For, Index, Show } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
@@ -6,6 +6,7 @@ import { usePageTitle } from "../utils/pageTitle";
 import type { TagItem } from "ramekin-client";
 import { groupTags, parseTag } from "../utils/tagHierarchy";
 import { createApiResource, createAsyncAction } from "../utils/asyncState";
+import { reuseUnchanged } from "../utils/stableList";
 
 export default function TagsPage() {
   usePageTitle(() => "Tags");
@@ -16,15 +17,19 @@ export default function TagsPage() {
     async () => getTagsApi().listAllTags(),
     "Failed to load tags",
   );
-  const tags = () => tagsResource.data()?.tags ?? [];
-  const groupedTags = () => {
+  const tags = createMemo<TagItem[]>(
+    (prev) =>
+      reuseUnchanged(prev, tagsResource.data()?.tags ?? [], (t) => t.id),
+    [],
+  );
+  const groupedTags = createMemo(() => {
     const byName = new Map(tags().map((t) => [t.name, t] as const));
     return groupTags(tags().map((t) => t.name)).map((group) => ({
       namespace: group.namespace,
       items: group.tags.map((name) => byName.get(name)!).filter(Boolean),
     }));
-  };
-  const loading = tagsResource.loading;
+  });
+  const loading = tagsResource.initialLoading;
 
   // Edit state
   const [editingId, setEditingId] = createSignal<string | null>(null);
@@ -289,13 +294,13 @@ export default function TagsPage() {
 
       <Show when={!loading() && tags().length > 0}>
         <div class="tags-list">
-          <For each={groupedTags()}>
+          <Index each={groupedTags()}>
             {(group) => (
               <section class="tags-group">
                 <h3 class="tags-group-label">
-                  {group.namespace ?? "Uncategorized"}
+                  {group().namespace ?? "Uncategorized"}
                 </h3>
-                <For each={group.items}>
+                <For each={group().items}>
                   {(tag) => {
                     const parsed = parseTag(tag.name);
                     return (
@@ -417,7 +422,7 @@ export default function TagsPage() {
                 </For>
               </section>
             )}
-          </For>
+          </Index>
         </div>
       </Show>
 

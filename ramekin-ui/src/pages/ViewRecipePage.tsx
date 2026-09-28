@@ -375,7 +375,7 @@ export default function ViewRecipePage() {
 
   return (
     <div class="view-recipe-page">
-      <Show when={loading()}>
+      <Show when={loading() && !recipe()}>
         <p class="loading">Loading recipe...</p>
       </Show>
 
