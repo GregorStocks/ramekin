@@ -26,10 +26,9 @@ The line has one measurement for several foods, so nutrition never splits or dup
 The shopping category uses the first component. \
 Density stays unresolved for a Compound (the mixture ratio is unknown), so no gram alternative is generated for it.\n\
 - Density lookup, categorize(), and nutrition all go through resolve(). \
-Open owner decision: calories and shopping categories are computed at read time, so catalog improvements reach every recipe immediately, but density gram alternatives are not. \
-ParseIngredientsStep (ramekin-core/src/pipeline/steps/parse_ingredients.rs) adds volume-to-weight alternatives at ingest, and reads return the stored ingredients JSON as-is. \
-So a name resolved later, or a corrected density, never updates those stored gram amounts. \
-Either compute gram alternatives at read time as well (recommended, for consistency), or re-run density enrichment over stored recipes when the catalog changes. \
+Density gram alternatives stay materialized at ingest in step 1 (owner decision, 2026-09-27); moving them to read time is p2-compute-gram-alternatives-at-read-time. \
+Step 1 ships as three PRs: (1) make ingredient-catalog-audit and data/ingredient-catalog-audit.md; (2) catalog + resolve(), density and nutrition moved onto it, the two USDA import scripts merged, the ingredient-density crate folded into ramekin-core; (3) categorize() onto resolve() (entry category, else today's keyword rules until step 2 fills categories), product kind, zero_calorie/trace_ok, compounds. \
+PR 3 deletes this issue. \
 Delete the old per-matcher tables once migrated. \
 No backwards compatibility.\n\
 - Keep USDA SR Legacy as the numeric source (it isn't the problem; the name mapping is). \
@@ -52,5 +51,5 @@ Follow-ups: step2 (bulk-classify the corpus with harness subagents) and step3 (L
     "api",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T16:06:16-07:00",
+  "updated_at": "2026-09-27T17:02:11-07:00",
 }

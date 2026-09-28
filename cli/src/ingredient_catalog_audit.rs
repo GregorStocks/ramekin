@@ -1,0 +1,600 @@
+//! Ingredient catalog audit.
+//!
+//! Replays the ingredient-name matchers (nutrition, density, shopping category)
+//! over recipe corpora and reports how much of each corpus they recognize, so
+//! catalog changes show measurable before/after numbers.
+
+use anyhow::{Context, Result};
+use ramekin_core::final_recipe::FinalRecipe;
+use ramekin_core::ingredient_categorizer::categorize;
+use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
+use ramekin_core::nutrition;
+use ramekin_core::types::ParseIngredientsOutput;
+use ramekin_core::volume_to_weight::{find_density, is_volume_unit};
+use serde::Deserialize;
+use std::collections::{BTreeMap, HashMap};
+use std::fmt::Write as _;
+use std::fs;
+use std::path::{Path, PathBuf};
+
+const FIXTURES_DIR: &str = "ramekin-core/tests/fixtures/ingredient_parsing";
+const SNAPSHOTS_DIR: &str = "data/pipeline-snapshots";
+const SHOPPING_CORPUS: &str = "data/shopping-list-categories.json";
+const COMMITTED_REPORT: &str = "data/ingredient-catalog-audit.md";
+const LOCAL_REPORT: &str = "logs/ingredient-catalog-audit-local.md";
+const TOP_NAMES: usize = 30;
+
+/// Nutrition failure reasons that mean the ingredient name itself was not
+/// recognized (as opposed to a recognized food with an unusable quantity).
+const NAME_FAILURES: [&str; 2] = ["No supported nutrition match", "Ambiguous ingredient"];
+
+struct Recipe {
+    servings: Option<String>,
+    ingredients: Vec<ParsedIngredient>,
+}
+
+struct Corpus {
+    name: String,
+    recipes: Vec<Recipe>,
+}
+
+#[derive(Default)]
+struct RecipeCorpusStats {
+    recipes: usize,
+    recipes_with_servings: usize,
+    lines: usize,
+    nutrition_name_recognized: usize,
+    nutrition_computed: usize,
+    recipes_fully_estimated: usize,
+    recipes_with_per_serving: usize,
+    nutrition_reasons: BTreeMap<String, usize>,
+    nutrition_unrecognized: HashMap<String, usize>,
+    volume_lines: usize,
+    density_hits: usize,
+    density_misses: HashMap<String, usize>,
+    categorized: usize,
+    uncategorized: HashMap<String, usize>,
+}
+
+#[derive(Default)]
+struct ShoppingStats {
+    items: usize,
+    uses: u64,
+    nutrition_name_recognized: usize,
+    nutrition_name_recognized_uses: u64,
+    categorized: usize,
+    categorized_uses: u64,
+    nutrition_unrecognized: HashMap<String, usize>,
+    uncategorized: HashMap<String, usize>,
+}
+
+#[derive(Deserialize)]
+struct FixtureFile {
+    ingredients: Vec<FixtureLine>,
+}
+
+#[derive(Deserialize)]
+struct FixtureLine {
+    expected: Option<FixtureExpected>,
+}
+
+#[derive(Deserialize)]
+struct FixtureExpected {
+    item: String,
+    measurements: Vec<Measurement>,
+    note: Option<String>,
+    section: Option<String>,
+}
+
+#[derive(Deserialize)]
+struct ShoppingItem {
+    item: String,
+    count: u64,
+}
+
+#[derive(Deserialize)]
+struct ProdRecipe {
+    servings: Option<String>,
+    ingredients: Vec<ParsedIngredient>,
+}
+
+fn normalize_name(item: &str) -> String {
+    item.split_whitespace()
+        .collect::<Vec<_>>()
+        .join(" ")
+        .to_lowercase()
+}
+
+/// JSON files in `dir`, sorted by name so reports are deterministic.
+fn sorted_json_files(dir: &Path) -> Result<Vec<PathBuf>> {
+    let mut files = fs::read_dir(dir)
+        .with_context(|| format!("Failed to read {}", dir.display()))?
+        .map(|entry| entry.map(|e| e.path()))
+        .collect::<Result<Vec<_>, _>>()?;
+    files.retain(|path| path.extension().is_some_and(|ext| ext == "json"));
+    files.sort();
+    Ok(files)
+}
+
+fn read_json<T: serde::de::DeserializeOwned>(path: &Path) -> Result<T> {
+    let content =
+        fs::read_to_string(path).with_context(|| format!("Failed to read {}", path.display()))?;
+    serde_json::from_str(&content).with_context(|| format!("Failed to parse {}", path.display()))
+}
+
+/// Recipe-shaped parser fixtures (pipeline and paprika); curated fixtures are
+/// single-line edge cases, not recipes, so they are excluded.
+fn load_fixture_corpus(subdir: &str, name: &str) -> Result<Corpus> {
+    let mut recipes = Vec::new();
+    for path in sorted_json_files(&Path::new(FIXTURES_DIR).join(subdir))? {
+        let file: FixtureFile = read_json(&path)?;
+        let ingredients = file
+            .ingredients
+            .into_iter()
+            .filter_map(|line| line.expected)
+            .map(|expected| ParsedIngredient {
+                item: expected.item,
+                measurements: expected.measurements,
+                note: expected.note,
+                raw: None,
+                section: expected.section,
+            })
+            .collect();
+        recipes.push(Recipe {
+            servings: None,
+            ingredients,
+        });
+    }
+    Ok(Corpus {
+        name: name.to_string(),
+        recipes,
+    })
+}
+
+fn load_snapshot_corpus() -> Result<Corpus> {
+    let mut recipes = Vec::new();
+    for path in sorted_json_files(Path::new(SNAPSHOTS_DIR))? {
+        let recipe: FinalRecipe = read_json(&path)?;
+        recipes.push(Recipe {
+            servings: recipe.servings,
+            ingredients: recipe.ingredients,
+        });
+    }
+    Ok(Corpus {
+        name: "Pipeline snapshots".to_string(),
+        recipes,
+    })
+}
+
+/// The newest run under `runs_dir`, as written by `make pipeline`.
+fn load_pipeline_run_corpus(runs_dir: &Path) -> Result<Corpus> {
+    let mut runs = fs::read_dir(runs_dir)
+        .with_context(|| format!("Failed to read {}", runs_dir.display()))?
+        .map(|entry| entry.map(|e| e.path()))
+        .collect::<Result<Vec<_>, _>>()?;
+    runs.retain(|path| path.is_dir());
+    runs.sort();
+    let run_dir = runs
+        .pop()
+        .with_context(|| format!("No pipeline runs in {}", runs_dir.display()))?;
+
+    let urls_dir = run_dir.join("urls");
+    let mut url_dirs = fs::read_dir(&urls_dir)
+        .with_context(|| format!("Failed to read {}", urls_dir.display()))?
+        .map(|entry| entry.map(|e| e.path()))
+        .collect::<Result<Vec<_>, _>>()?;
+    url_dirs.sort();
+
+    let mut recipes = Vec::new();
+    for url_dir in url_dirs {
+        let output_path = url_dir.join("parse_ingredients").join("output.json");
+        if !output_path.exists() {
+            continue;
+        }
+        let output: ParseIngredientsOutput = read_json(&output_path)?;
+        recipes.push(Recipe {
+            servings: None,
+            ingredients: output.ingredients,
+        });
+    }
+    Ok(Corpus {
+        name: format!("Pipeline run {}", run_dir.display()),
+        recipes,
+    })
+}
+
+fn load_prod_corpus(path: &Path) -> Result<Corpus> {
+    let recipes: Vec<ProdRecipe> = read_json(path)?;
+    Ok(Corpus {
+        name: format!("Prod recipes {}", path.display()),
+        recipes: recipes
+            .into_iter()
+            .map(|r| Recipe {
+                servings: r.servings,
+                ingredients: r.ingredients,
+            })
+            .collect(),
+    })
+}
+
+fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
+    let mut stats = RecipeCorpusStats::default();
+    for recipe in &corpus.recipes {
+        if recipe.ingredients.is_empty() {
+            continue;
+        }
+        stats.recipes += 1;
+        stats.lines += recipe.ingredients.len();
+        if recipe.servings.is_some() {
+            stats.recipes_with_servings += 1;
+        }
+
+        let estimate = nutrition::estimate(&recipe.ingredients, recipe.servings.as_deref(), 1.0)
+            .map_err(|e| anyhow::anyhow!("Calorie estimate failed in {}: {e}", corpus.name))?;
+        let unknown = &estimate.unknown_ingredients;
+        stats.nutrition_computed += recipe.ingredients.len() - unknown.len();
+        stats.nutrition_name_recognized += recipe.ingredients.len()
+            - unknown
+                .iter()
+                .filter(|u| NAME_FAILURES.contains(&u.reason.as_str()))
+                .count();
+        if unknown.is_empty() {
+            stats.recipes_fully_estimated += 1;
+            if estimate.per_serving_calories.is_some() {
+                stats.recipes_with_per_serving += 1;
+            }
+        }
+        for u in unknown {
+            *stats.nutrition_reasons.entry(u.reason.clone()).or_default() += 1;
+            if NAME_FAILURES.contains(&u.reason.as_str()) {
+                *stats
+                    .nutrition_unrecognized
+                    .entry(normalize_name(&u.item))
+                    .or_default() += 1;
+            }
+        }
+
+        for ingredient in &recipe.ingredients {
+            let has_volume = ingredient
+                .measurements
+                .iter()
+                .any(|m| is_volume_unit(m.unit.as_deref()));
+            if has_volume {
+                stats.volume_lines += 1;
+                if find_density(&ingredient.item).is_some() {
+                    stats.density_hits += 1;
+                } else {
+                    *stats
+                        .density_misses
+                        .entry(normalize_name(&ingredient.item))
+                        .or_default() += 1;
+                }
+            }
+
+            if categorize(&ingredient.item) == "Other" {
+                *stats
+                    .uncategorized
+                    .entry(normalize_name(&ingredient.item))
+                    .or_default() += 1;
+            } else {
+                stats.categorized += 1;
+            }
+        }
+    }
+    Ok(stats)
+}
+
+/// Whether nutrition recognizes the name alone, independent of any quantity.
+fn nutrition_recognizes(item: &str) -> Result<bool> {
+    let ingredient = ParsedIngredient {
+        item: item.to_string(),
+        measurements: vec![],
+        note: None,
+        raw: None,
+        section: None,
+    };
+    let estimate = nutrition::estimate(std::slice::from_ref(&ingredient), None, 1.0)
+        .map_err(|e| anyhow::anyhow!("Calorie estimate failed for {item:?}: {e}"))?;
+    Ok(!estimate
+        .unknown_ingredients
+        .iter()
+        .any(|u| NAME_FAILURES.contains(&u.reason.as_str())))
+}
+
+fn audit_shopping(items: &[ShoppingItem]) -> Result<ShoppingStats> {
+    let mut stats = ShoppingStats::default();
+    for entry in items {
+        stats.items += 1;
+        stats.uses += entry.count;
+        if nutrition_recognizes(&entry.item)? {
+            stats.nutrition_name_recognized += 1;
+            stats.nutrition_name_recognized_uses += entry.count;
+        } else {
+            *stats
+                .nutrition_unrecognized
+                .entry(normalize_name(&entry.item))
+                .or_default() += 1;
+        }
+        if categorize(&entry.item) == "Other" {
+            *stats
+                .uncategorized
+                .entry(normalize_name(&entry.item))
+                .or_default() += 1;
+        } else {
+            stats.categorized += 1;
+            stats.categorized_uses += entry.count;
+        }
+    }
+    Ok(stats)
+}
+
+fn pct(part: impl Into<u64>, whole: impl Into<u64>) -> String {
+    let (part, whole) = (part.into(), whole.into());
+    if whole == 0 {
+        return "n/a".to_string();
+    }
+    format!("{:.1}%", part as f64 * 100.0 / whole as f64)
+}
+
+/// Most frequent names first, ties broken alphabetically.
+fn top_names(counts: &HashMap<String, usize>, limit: usize) -> Vec<(&str, usize)> {
+    let mut sorted: Vec<_> = counts.iter().map(|(n, c)| (n.as_str(), *c)).collect();
+    sorted.sort_by(|a, b| b.1.cmp(&a.1).then_with(|| a.0.cmp(b.0)));
+    sorted.truncate(limit);
+    sorted
+}
+
+fn write_top_names(out: &mut String, title: &str, unit: &str, counts: &HashMap<String, usize>) {
+    let total: usize = counts.values().sum();
+    let _ = writeln!(
+        out,
+        "\n#### {title} ({} distinct, {total} {unit})\n",
+        counts.len()
+    );
+    if counts.is_empty() {
+        out.push_str("None.\n");
+        return;
+    }
+    out.push_str("| Count | Name |\n| ---: | --- |\n");
+    for (name, count) in top_names(counts, TOP_NAMES) {
+        let _ = writeln!(out, "| {count} | {} |", name.replace('|', "\\|"));
+    }
+}
+
+fn render_recipe_corpora(out: &mut String, corpora: &[(String, RecipeCorpusStats)]) {
+    out.push_str(
+        "## Summary\n\n\
+         | Corpus | Recipes | Lines | Nutrition name recognized | Calories computed | \
+         Recipes fully estimated | Recipes with per-serving | Volume lines with density | \
+         Lines categorized |\n\
+         | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n",
+    );
+    for (name, s) in corpora {
+        let per_serving = if s.recipes_with_servings == 0 {
+            "n/a (no servings)".to_string()
+        } else {
+            pct(s.recipes_with_per_serving as u64, s.recipes as u64)
+        };
+        let _ = writeln!(
+            out,
+            "| {name} | {} | {} | {} | {} | {} | {per_serving} | {} | {} |",
+            s.recipes,
+            s.lines,
+            pct(s.nutrition_name_recognized as u64, s.lines as u64),
+            pct(s.nutrition_computed as u64, s.lines as u64),
+            pct(s.recipes_fully_estimated as u64, s.recipes as u64),
+            pct(s.density_hits as u64, s.volume_lines as u64),
+            pct(s.categorized as u64, s.lines as u64),
+        );
+    }
+
+    for (name, s) in corpora {
+        let _ = writeln!(out, "\n## {name}\n\n### Nutrition failure reasons\n");
+        out.push_str("| Reason | Lines | Share of lines |\n| --- | ---: | ---: |\n");
+        for (reason, count) in &s.nutrition_reasons {
+            let _ = writeln!(
+                out,
+                "| {reason} | {count} | {} |",
+                pct(*count as u64, s.lines as u64)
+            );
+        }
+        let _ = writeln!(out, "\n### Top unrecognized names (top {TOP_NAMES})");
+        write_top_names(out, "Nutrition", "lines", &s.nutrition_unrecognized);
+        write_top_names(
+            out,
+            "Density (volume lines only)",
+            "lines",
+            &s.density_misses,
+        );
+        write_top_names(
+            out,
+            "Shopping category (\"Other\")",
+            "lines",
+            &s.uncategorized,
+        );
+    }
+}
+
+fn render_shopping(out: &mut String, s: &ShoppingStats) {
+    out.push_str(
+        "\n## Shopping-list corpus\n\n\
+         Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`). \
+         Usage-weighted numbers count each item by how often it was added.\n\n\
+         | Metric | Distinct items | Usage-weighted |\n| --- | ---: | ---: |\n",
+    );
+    let _ = writeln!(out, "| Items | {} | {} |", s.items, s.uses);
+    let _ = writeln!(
+        out,
+        "| Nutrition name recognized | {} | {} |",
+        pct(s.nutrition_name_recognized as u64, s.items as u64),
+        pct(s.nutrition_name_recognized_uses, s.uses)
+    );
+    let _ = writeln!(
+        out,
+        "| Categorized (not \"Other\") | {} | {} |",
+        pct(s.categorized as u64, s.items as u64),
+        pct(s.categorized_uses, s.uses)
+    );
+    let _ = writeln!(out, "\n### Top unrecognized names (top {TOP_NAMES})");
+    write_top_names(out, "Nutrition", "items", &s.nutrition_unrecognized);
+    write_top_names(
+        out,
+        "Shopping category (\"Other\")",
+        "items",
+        &s.uncategorized,
+    );
+}
+
+const HEADER: &str = "# Ingredient catalog audit\n\n\
+Generated by `make ingredient-catalog-audit` (also run by `make pipeline`). Do not edit by hand.\n\n\
+Replays the three ingredient-name matchers over committed corpora:\n\n\
+- **Nutrition**: `nutrition::estimate`. \"Name recognized\" means the name matched a food; \
+\"calories computed\" also needs a usable quantity. A recipe is fully estimated when every line \
+has calories computed, and has per-serving calories when it is also fully estimated and its \
+servings parse; only snapshots carry servings.\n\
+- **Density**: `find_density`, over lines with a volume unit.\n\
+- **Shopping category**: `categorize`; \"categorized\" means not \"Other\".\n\n\
+Unrecognized names are lowercased with whitespace collapsed.\n\n";
+
+fn render_committed(corpora: &[(String, RecipeCorpusStats)], shopping: &ShoppingStats) -> String {
+    let mut out = HEADER.to_string();
+    render_recipe_corpora(&mut out, corpora);
+    render_shopping(&mut out, shopping);
+    out
+}
+
+pub fn run(runs_dir: Option<&Path>, prod_recipes: Option<&Path>) -> Result<()> {
+    let committed = [
+        load_fixture_corpus("pipeline", "Pipeline fixtures")?,
+        load_fixture_corpus("paprika", "Paprika fixtures")?,
+        load_snapshot_corpus()?,
+    ];
+    let committed_stats = committed
+        .iter()
+        .map(|corpus| Ok((corpus.name.clone(), audit_recipes(corpus)?)))
+        .collect::<Result<Vec<_>>>()?;
+    let shopping_items: Vec<ShoppingItem> = read_json(Path::new(SHOPPING_CORPUS))?;
+    let shopping = audit_shopping(&shopping_items)?;
+
+    let report = render_committed(&committed_stats, &shopping);
+    fs::write(COMMITTED_REPORT, &report)
+        .with_context(|| format!("Failed to write {COMMITTED_REPORT}"))?;
+    tracing::info!("Ingredient catalog audit saved to: {COMMITTED_REPORT}");
+
+    let mut local = Vec::new();
+    if let Some(runs_dir) = runs_dir {
+        local.push(load_pipeline_run_corpus(runs_dir)?);
+    }
+    if let Some(path) = prod_recipes {
+        local.push(load_prod_corpus(path)?);
+    }
+    if !local.is_empty() {
+        let local_stats = local
+            .iter()
+            .map(|corpus| Ok((corpus.name.clone(), audit_recipes(corpus)?)))
+            .collect::<Result<Vec<_>>>()?;
+        let mut out = "# Ingredient catalog audit (local corpora, not committed)\n\n".to_string();
+        render_recipe_corpora(&mut out, &local_stats);
+        fs::create_dir_all("logs")?;
+        fs::write(LOCAL_REPORT, &out).with_context(|| format!("Failed to write {LOCAL_REPORT}"))?;
+        tracing::info!("Local-corpus audit saved to: {LOCAL_REPORT}");
+    }
+    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn ingredient(item: &str, amount: Option<&str>, unit: Option<&str>) -> ParsedIngredient {
+        ParsedIngredient {
+            item: item.to_string(),
+            measurements: vec![Measurement {
+                amount: amount.map(str::to_string),
+                unit: unit.map(str::to_string),
+            }],
+            note: None,
+            raw: None,
+            section: None,
+        }
+    }
+
+    #[test]
+    fn recipe_stats_split_name_and_quantity_failures() {
+        let corpus = Corpus {
+            name: "test".to_string(),
+            recipes: vec![
+                Recipe {
+                    servings: Some("2".to_string()),
+                    ingredients: vec![
+                        ingredient("granulated sugar", Some("1"), Some("cup")),
+                        ingredient("Moon  Dust", Some("1"), Some("cup")),
+                        ingredient("eggs", Some("2"), Some("large")),
+                    ],
+                },
+                Recipe {
+                    servings: Some("4".to_string()),
+                    ingredients: vec![ingredient("granulated sugar", Some("100"), Some("g"))],
+                },
+                Recipe {
+                    servings: None,
+                    ingredients: vec![],
+                },
+            ],
+        };
+        let stats = audit_recipes(&corpus).unwrap();
+
+        assert_eq!(stats.recipes, 2, "empty recipes are skipped");
+        assert_eq!(stats.lines, 4);
+        assert_eq!(stats.nutrition_computed, 2);
+        assert_eq!(
+            stats.nutrition_name_recognized, 3,
+            "eggs match but lack a unit"
+        );
+        assert_eq!(stats.recipes_fully_estimated, 1);
+        assert_eq!(stats.recipes_with_per_serving, 1);
+        assert_eq!(
+            stats.nutrition_unrecognized.get("moon dust"),
+            Some(&1),
+            "names are grouped case- and whitespace-insensitively"
+        );
+        assert_eq!(stats.nutrition_reasons["Unsupported quantity unit"], 1);
+        assert_eq!(stats.volume_lines, 2);
+        assert_eq!(stats.density_hits, 1);
+        assert_eq!(stats.density_misses.get("moon dust"), Some(&1));
+    }
+
+    #[test]
+    fn shopping_stats_weight_by_usage() {
+        let items = vec![
+            ShoppingItem {
+                item: "granulated sugar".to_string(),
+                count: 3,
+            },
+            ShoppingItem {
+                item: "moon dust".to_string(),
+                count: 1,
+            },
+        ];
+        let stats = audit_shopping(&items).unwrap();
+        assert_eq!(stats.items, 2);
+        assert_eq!(stats.uses, 4);
+        assert_eq!(stats.nutrition_name_recognized, 1);
+        assert_eq!(stats.nutrition_name_recognized_uses, 3);
+        assert_eq!(
+            pct(stats.nutrition_name_recognized_uses, stats.uses),
+            "75.0%"
+        );
+    }
+
+    #[test]
+    fn top_names_sort_by_count_then_name() {
+        let counts = HashMap::from([
+            ("b".to_string(), 2),
+            ("a".to_string(), 2),
+            ("c".to_string(), 5),
+        ]);
+        assert_eq!(top_names(&counts, 2), vec![("c", 5), ("a", 2)]);
+        assert_eq!(pct(0u64, 0u64), "n/a");
+    }
+}

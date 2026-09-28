@@ -5,7 +5,8 @@
 
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::{format_grams, parse_amount};
-use ingredient_density::{find_density, is_volume_unit, rewrite_ingredient, volume_to_cups};
+pub use ingredient_density::{find_density, is_volume_unit};
+use ingredient_density::{rewrite_ingredient, volume_to_cups};
 
 /// Statistics about volume-to-weight conversion.
 #[derive(Debug, Default, Clone, serde::Serialize, serde::Deserialize)]

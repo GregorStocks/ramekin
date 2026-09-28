@@ -4,6 +4,7 @@ mod description_generation;
 mod export;
 mod generate_test_urls;
 mod import;
+mod ingredient_catalog_audit;
 mod ingredient_tests;
 mod load_test;
 mod parse_html;
@@ -253,6 +254,15 @@ enum Commands {
         #[arg(long)]
         fixtures_dir: Option<PathBuf>,
     },
+    /// Report how much of each ingredient corpus the nutrition, density, and category matchers recognize
+    IngredientCatalogAudit {
+        /// Also audit the latest pipeline run in this directory (local report only)
+        #[arg(long)]
+        runs_dir: Option<PathBuf>,
+        /// Also audit a JSON array of {servings, ingredients} prod recipes (local report only)
+        #[arg(long)]
+        prod_recipes: Option<PathBuf>,
+    },
     /// Generate a title-normalization mapping from a .paprikarecipes file
     TitleNormalizationTest {
         /// Path to the .paprikarecipes file
@@ -457,6 +467,12 @@ async fn main() -> Result<()> {
         Commands::IngredientTestsMigrateCurated { fixtures_dir } => {
             ingredient_tests::migrate_curated(fixtures_dir.as_deref())?;
         }
+        Commands::IngredientCatalogAudit {
+            runs_dir,
+            prod_recipes,
+        } => {
+            ingredient_catalog_audit::run(runs_dir.as_deref(), prod_recipes.as_deref())?;
+        }
         Commands::TitleNormalizationTest {
             file,
             titles_file,
@@ -577,6 +593,7 @@ fn command_slug(cmd: &Commands) -> &'static str {
         Commands::IngredientTestsUpdate { .. } => "ingredient-tests-update",
         Commands::IngredientTestsGeneratePaprika { .. } => "ingredient-tests-generate-paprika",
         Commands::IngredientTestsMigrateCurated { .. } => "ingredient-tests-migrate-curated",
+        Commands::IngredientCatalogAudit { .. } => "ingredient-catalog-audit",
         Commands::TitleNormalizationTest { .. } => "title-normalization-test",
         Commands::DescriptionGenerationTest { .. } => "description-generation-test",
     }

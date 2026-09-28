@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test ingredient-catalog-audit title-normalization-test description-generation-test server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -370,6 +370,11 @@ nutrition-import: ## Download pinned USDA SR Legacy data and regenerate calorie 
 
 shopping-list-categorizer-test: ## Score the categorizer against the prod shopping-list corpus (reports mismatches + 'Other' rate)
 	@cargo test -q --manifest-path ramekin-core/Cargo.toml --test shopping_list_categorizer_tests -- --nocapture
+
+ingredient-catalog-audit: ## Report nutrition/density/category coverage of committed ingredient corpora (optional RUNS_DIR=, PROD_RECIPES=)
+	@cargo run -q --release --manifest-path cli/Cargo.toml -- ingredient-catalog-audit \
+		$(if $(RUNS_DIR),--runs-dir $(RUNS_DIR),) \
+		$(if $(PROD_RECIPES),--prod-recipes $(PROD_RECIPES),)
 
 title-normalization-test: ## Normalize recipe titles from seed.paprikarecipes via the LLM (cached; free on rerun)
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \

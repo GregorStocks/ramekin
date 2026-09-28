@@ -124,3 +124,32 @@ codebase. To refresh it, ask Gregor to run a read-only extraction of the distinc
 rows, ordered by count descending), merge the results into
 `data/shopping-list-categories.json`, and label any new items so
 `make shopping-list-categorizer-test` passes.
+
+## ingredient-catalog-audit.md
+
+Coverage report for the ingredient-name matchers: nutrition (`nutrition::estimate`),
+density (`find_density`), and shopping categories (`categorize`). It shows how much
+of each corpus is recognized, the nutrition failure reasons, and the most frequent
+unrecognized names. It is the measuring stick for the ingredient catalog work
+(`issues/*ingredient-catalog*`): a matcher change should show up as a diff here.
+
+`make ingredient-catalog-audit` regenerates it from committed corpora only, so it is
+deterministic:
+
+- `ramekin-core/tests/fixtures/ingredient_parsing/pipeline/` and `.../paprika/`: one
+  recipe per fixture file (curated fixtures are single-line edge cases and are skipped)
+- `data/pipeline-snapshots/`: the only committed corpus with servings, so it is the
+  only one reporting per-serving coverage
+- `data/shopping-list-categories.json`: hand-typed shopping-list items
+
+`make pipeline` runs it too, after regenerating the fixtures.
+
+Two optional local corpora go to `logs/ingredient-catalog-audit-local.md` instead
+and are never committed:
+
+- `RUNS_DIR=path/to/data/pipeline-runs` audits the newest full pipeline run.
+- `PROD_RECIPES=path/to/recipes.json` audits a prod dump: a JSON array of
+  `{"servings": ..., "ingredients": [...]}` objects, where `ingredients` is the stored
+  `recipe_versions.ingredients` value of each live recipe's current version. Like the
+  shopping-list corpus, this is a one-off read-only extraction Gregor runs; the query
+  and the dump are intentionally not checked in.
