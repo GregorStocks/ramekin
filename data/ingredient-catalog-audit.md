@@ -14,9 +14,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60510 | 14.5% | 10.1% | 0.0% | n/a (no servings) | 59.1% | 98.1% |
-| Paprika fixtures | 462 | 5377 | 12.4% | 8.1% | 0.0% | n/a (no servings) | 51.2% | 98.3% |
-| Pipeline snapshots | 445 | 5177 | 12.8% | 8.5% | 0.0% | 0.0% | 51.8% | 98.9% |
+| Pipeline fixtures | 5408 | 60510 | 8770/60510 (14.5%) | 6141/60510 (10.1%) | 0/5408 (0.0%) | n/a (no servings) | 21977/37166 (59.1%) | 59382/60510 (98.1%) |
+| Paprika fixtures | 462 | 5377 | 669/5377 (12.4%) | 437/5377 (8.1%) | 0/462 (0.0%) | n/a (no servings) | 1475/2881 (51.2%) | 5284/5377 (98.3%) |
+| Pipeline snapshots | 445 | 5177 | 665/5177 (12.8%) | 442/5177 (8.5%) | 0/445 (0.0%) | 0/445 (0.0%) | 1473/2842 (51.8%) | 5120/5177 (98.9%) |
 
 ## Pipeline fixtures
 
@@ -62,5 +62,5 @@ Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`).
 | Metric | Distinct items | Usage-weighted |
 | --- | ---: | ---: |
 | Items | 280 | 424 |
-| Nutrition name recognized | 3.6% | 8.3% |
-| Categorized (not "Other") | 98.9% | 99.3% |
+| Nutrition name recognized | 10/280 (3.6%) | 35/424 (8.3%) |
+| Categorized (not "Other") | 277/280 (98.9%) | 421/424 (99.3%) |

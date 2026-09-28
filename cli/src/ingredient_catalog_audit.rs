@@ -355,6 +355,12 @@ fn pct(part: impl Into<u64>, whole: impl Into<u64>) -> String {
     format!("{:.1}%", part as f64 * 100.0 / whole as f64)
 }
 
+/// Exact counts alongside the rounded percentage, so a change of a single
+/// match still shows up in the committed report.
+fn share(part: u64, whole: u64) -> String {
+    format!("{part}/{whole} ({})", pct(part, whole))
+}
+
 /// Most frequent names first, ties broken alphabetically.
 fn top_names(counts: &HashMap<String, usize>, limit: usize) -> Vec<(&str, usize)> {
     let mut sorted: Vec<_> = counts.iter().map(|(n, c)| (n.as_str(), *c)).collect();
@@ -396,18 +402,18 @@ fn render_recipe_corpora(
         let per_serving = if s.recipes_with_servings == 0 {
             "n/a (no servings)".to_string()
         } else {
-            pct(s.recipes_with_per_serving as u64, s.recipes as u64)
+            share(s.recipes_with_per_serving as u64, s.recipes as u64)
         };
         let _ = writeln!(
             out,
             "| {name} | {} | {} | {} | {} | {} | {per_serving} | {} | {} |",
             s.recipes,
             s.lines,
-            pct(s.nutrition_name_recognized as u64, s.lines as u64),
-            pct(s.nutrition_computed as u64, s.lines as u64),
-            pct(s.recipes_fully_estimated as u64, s.recipes as u64),
-            pct(s.density_hits as u64, s.volume_lines as u64),
-            pct(s.categorized as u64, s.lines as u64),
+            share(s.nutrition_name_recognized as u64, s.lines as u64),
+            share(s.nutrition_computed as u64, s.lines as u64),
+            share(s.recipes_fully_estimated as u64, s.recipes as u64),
+            share(s.density_hits as u64, s.volume_lines as u64),
+            share(s.categorized as u64, s.lines as u64),
         );
     }
 
@@ -452,14 +458,14 @@ fn render_shopping(out: &mut String, s: &ShoppingStats, with_names: bool) {
     let _ = writeln!(
         out,
         "| Nutrition name recognized | {} | {} |",
-        pct(s.nutrition_name_recognized as u64, s.items as u64),
-        pct(s.nutrition_name_recognized_uses, s.uses)
+        share(s.nutrition_name_recognized as u64, s.items as u64),
+        share(s.nutrition_name_recognized_uses, s.uses)
     );
     let _ = writeln!(
         out,
         "| Categorized (not \"Other\") | {} | {} |",
-        pct(s.categorized as u64, s.items as u64),
-        pct(s.categorized_uses, s.uses)
+        share(s.categorized as u64, s.items as u64),
+        share(s.categorized_uses, s.uses)
     );
     if !with_names {
         return;
@@ -644,6 +650,7 @@ mod tests {
         ]);
         assert_eq!(top_names(&counts, 2), vec![("c", 5), ("a", 2)]);
         assert_eq!(pct(0u64, 0u64), "n/a");
+        assert_eq!(share(1, 60_000), "1/60000 (0.0%)");
     }
 
     fn write_run(runs_dir: &Path, run_id: &str, status: &str) {
