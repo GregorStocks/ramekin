@@ -4,11 +4,11 @@ use std::sync::LazyLock;
 
 use regex::Regex;
 
-use crate::catalog::{self, normalize, Resolution};
+use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v4";
+const RULE_VERSION: &str = "calories-v5";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
@@ -42,12 +42,32 @@ pub struct Estimate {
     pub per_serving_summary: Option<String>,
 }
 
-fn match_food(name: &str) -> Result<Food, &'static str> {
-    let entry = match catalog::resolve(name) {
-        Resolution::Entry { entry, .. } => entry,
-        Resolution::Ambiguous => return Err("Ambiguous ingredient"),
-        Resolution::Unresolved => return Err("No supported nutrition match"),
-    };
+/// Units that mean "a trace", never a measurable amount.
+const TRACE_UNITS: [&str; 4] = ["pinch", "dash", "smidgen", "sprinkle"];
+
+/// A line with no real amount: no numeric quantity at all ("to taste", "as
+/// needed", no measurement), or only a pinch or dash.
+fn is_trace_line(ingredient: &ParsedIngredient) -> bool {
+    ingredient.measurements.iter().all(|measurement| {
+        let trace_unit = measurement
+            .unit
+            .as_deref()
+            .is_some_and(|unit| TRACE_UNITS.contains(&normalize(unit).as_str()));
+        let has_number = measurement
+            .amount
+            .as_deref()
+            .is_some_and(|amount| amount.chars().any(char::is_numeric));
+        trace_unit || !has_number
+    })
+}
+
+/// Whether a line of this entry contributes no meaningful calories: foods with
+/// none (salt, water) always, and spices listed without a real amount.
+fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient) -> bool {
+    entry.zero_calorie || (entry.trace_ok && is_trace_line(ingredient))
+}
+
+fn food(entry: &Entry) -> Result<Food, &'static str> {
     let kcal_per_100g = entry
         .fdc_id
         .and_then(catalog::food)
@@ -58,6 +78,15 @@ fn match_food(name: &str) -> Result<Food, &'static str> {
         grams_per_cup: entry.grams_per_cup,
     })
 }
+
+/// What one ingredient line adds to the estimate.
+enum Line {
+    Calories(CalorieRange),
+    /// Not something eaten (a leftover header, parchment paper).
+    Skipped,
+}
+
+const ZERO: CalorieRange = CalorieRange { min: 0.0, max: 0.0 };
 
 /// Strict quantity grammar: decimals, fractions, mixed numbers and bounded ranges.
 /// This does not alter the extraction pipeline's interpretation of ingredients.
@@ -185,8 +214,41 @@ fn measurement_grams(
     Ok(total)
 }
 
-fn contribution(ingredient: &ParsedIngredient) -> Result<CalorieRange, &'static str> {
-    let food = match_food(&ingredient.item)?;
+fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
+    let entry = match catalog::resolve(&ingredient.item) {
+        Resolution::Entry { entry, .. } if entry.kind == Kind::Product => return Ok(Line::Skipped),
+        Resolution::Entry { entry, .. } => entry,
+        Resolution::NotFood => return Ok(Line::Skipped),
+        // One amount for several foods can't be split between them, so only an
+        // all-negligible line ("salt and pepper") is known.
+        Resolution::Compound(entries) => {
+            let is_product = |entry: &&Entry| entry.kind == Kind::Product;
+            // "parchment paper and aluminum foil" is equipment, not food.
+            if entries.iter().all(is_product) {
+                return Ok(Line::Skipped);
+            }
+            return if entries
+                .iter()
+                .all(|entry| is_product(entry) || is_negligible(entry, ingredient))
+            {
+                Ok(Line::Calories(ZERO))
+            } else {
+                Err("Several ingredients share one amount")
+            };
+        }
+        Resolution::Ambiguous => return Err("Ambiguous ingredient"),
+        Resolution::Unresolved => return Err("No supported nutrition match"),
+    };
+    if is_negligible(entry, ingredient) {
+        return Ok(Line::Calories(ZERO));
+    }
+    measured_calories(ingredient, &food(entry)?).map(Line::Calories)
+}
+
+fn measured_calories(
+    ingredient: &ParsedIngredient,
+    food: &Food,
+) -> Result<CalorieRange, &'static str> {
     let mut reason = "Missing quantity";
     // Measurements are alternatives, not additive. Prefer the primary whenever
     // supported, then the first supported alternative, so rounded gram enrichments
@@ -196,7 +258,7 @@ fn contribution(ingredient: &ParsedIngredient) -> Result<CalorieRange, &'static 
             reason = "Unsupported or missing quantity";
             continue;
         };
-        let grams = match measurement_grams(amount, unit.as_deref(), &food) {
+        let grams = match measurement_grams(amount, unit.as_deref(), food) {
             Ok(grams) => grams,
             Err(error) => {
                 reason = error;
@@ -247,7 +309,8 @@ pub fn estimate(
     let mut unknown_ingredients = Vec::new();
     for (index, ingredient) in ingredients.iter().enumerate() {
         match contribution(ingredient) {
-            Ok(value) => {
+            Ok(Line::Skipped) => {}
+            Ok(Line::Calories(value)) => {
                 let total = known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });
                 total.min += value.min;
                 total.max += value.max;
@@ -284,7 +347,7 @@ pub fn estimate(
     let summary = match known {
         Some(range) if unknown_ingredients.is_empty() => format!("Whole recipe: approximately {} calories.", range_text(range)),
         Some(range) => format!("Known ingredients: {} calories, plus unknown calories from {unknown_names}. This is a partial whole-recipe subtotal.", range_text(range)),
-        None if ingredients.is_empty() => "No ingredients to estimate.".to_string(),
+        None if unknown_ingredients.is_empty() => "No ingredients to estimate.".to_string(),
         None => format!("Whole-recipe calories unknown: {unknown_names}."),
     };
     let per_serving_summary = per_serving.map(|range| {

@@ -1,4 +1,6 @@
-use ramekin_core::catalog::{food, grams_per_cup, resolve, rewrite, version, Resolution, Via};
+use ramekin_core::catalog::{
+    category, food, grams_per_cup, resolve, rewrite, version, Kind, Resolution, Via,
+};
 
 fn density(item: &str) -> f64 {
     grams_per_cup(item).unwrap_or_else(|| panic!("no density for {item:?}"))
@@ -282,4 +284,86 @@ fn density_approximations_keep_the_real_food_for_calories() {
     assert_close(density("beef broth"), 240.0);
     assert_eq!(fdc_id("vegetable broth"), Some(171583));
     assert_close(density("vegetable broth"), 221.0);
+}
+
+#[test]
+fn headers_and_serving_notes_are_not_food() {
+    for item in [
+        "and for the other side of the world:",
+        "For the sauce:",
+        "to serve",
+    ] {
+        assert!(
+            matches!(resolve(item), Resolution::NotFood),
+            "{item:?} should not be a food"
+        );
+    }
+    // Trimming a clause never settles for a non-food.
+    assert!(!matches!(
+        resolve("to serve, lime wedges"),
+        Resolution::NotFood
+    ));
+}
+
+#[test]
+fn products_carry_only_a_shopping_category() {
+    let Resolution::Entry { entry, .. } = resolve("Parchment Paper") else {
+        panic!("parchment paper should resolve");
+    };
+    assert_eq!(entry.kind, Kind::Product);
+    assert_eq!(entry.fdc_id, None);
+    assert_eq!(grams_per_cup("parchment paper"), None);
+    assert_eq!(
+        category("wooden skewers, soaked in cold water"),
+        Some("Household")
+    );
+    // Foods have no catalog category yet; the keyword categorizer decides.
+    assert_eq!(category("butter"), None);
+}
+
+#[test]
+fn compound_lines_list_every_food() {
+    for (item, count) in [
+        ("salt and pepper", 2),
+        ("kosher salt and freshly ground black pepper", 2),
+        ("salt & pepper to taste", 2),
+        ("olive oil and balsamic vinegar", 2),
+    ] {
+        match resolve(item) {
+            Resolution::Compound(entries) => assert_eq!(entries.len(), count, "{item}"),
+            other => panic!("{item:?} should be a compound, got {other:?}"),
+        }
+        assert_eq!(
+            grams_per_cup(item),
+            None,
+            "{item}: mixture ratio is unknown"
+        );
+    }
+    // A single food named with "and" is not split.
+    assert!(matches!(resolve("half and half"), Resolution::Entry { .. }));
+    assert!(matches!(resolve("half & half"), Resolution::Entry { .. }));
+    // Every part must be a specific food.
+    assert!(!matches!(
+        resolve("macaroni and cheese"),
+        Resolution::Compound(_)
+    ));
+}
+
+#[test]
+fn negligibility_attributes_come_from_the_data() {
+    let entry = |item| match resolve(item) {
+        Resolution::Entry { entry, .. } => entry,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    for item in ["salt", "fine sea salt", "water", "baking soda"] {
+        assert!(entry(item).zero_calorie, "{item} has no calories");
+    }
+    for item in ["black pepper", "ground cumin", "paprika"] {
+        let entry = entry(item);
+        assert!(
+            entry.trace_ok && !entry.zero_calorie,
+            "{item} is a trace spice"
+        );
+    }
+    assert!(!entry("butter").trace_ok);
 }

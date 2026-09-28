@@ -54,7 +54,10 @@
     "evaporated milk": "milk, canned, evaporated, with added vitamin a",
     "extra virgin olive oil": "olive oil",
     "extra-virgin olive oil": "olive oil",
+    "fine grain sea salt": "sea salt",
     "fine salt": "sea salt",
+    "fine sea or table salt": "sea salt",
+    "fine sea salt": "sea salt",
     "finely grated parmesan": "cheese, parmesan, grated",
     "finely grated parmesan cheese": "cheese, parmesan, grated",
     "finely shredded parmesan cheese": "cheese, parmesan, shredded",
@@ -83,6 +86,7 @@
     "ground nutmeg": "spices, nutmeg, ground",
     "ground pepper": "black pepper",
     "ground turmeric": "spices, turmeric, ground",
+    "half & half": "cream, fluid, half and half",
     "half and half": "cream, fluid, half and half",
     "half-and-half": "cream, fluid, half and half",
     "heavy whipping cream": "heavy cream",
@@ -202,6 +206,10 @@
         "value": 96.0
       }
     },
+    "aluminum foil": {
+      "category": "Household",
+      "kind": "product"
+    },
     "black pepper": {
       "fdc_id": 170931,
       "grams_per_cup": {
@@ -235,6 +243,10 @@
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 114.0
       }
+    },
+    "cheesecloth": {
+      "category": "Household",
+      "kind": "product"
     },
     "chicken broth": {
       "fdc_id": 174536,
@@ -352,6 +364,10 @@
         "value": 340.0
       }
     },
+    "kitchen twine": {
+      "category": "Household",
+      "kind": "product"
+    },
     "light corn syrup": {
       "fdc_id": 168837,
       "grams_per_cup": {
@@ -403,12 +419,24 @@
         "value": 288.0
       }
     },
+    "paper towels": {
+      "category": "Household",
+      "kind": "product"
+    },
+    "parchment paper": {
+      "category": "Household",
+      "kind": "product"
+    },
     "peanut butter": {
       "fdc_id": 174266,
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 258.0
       }
+    },
+    "plastic wrap": {
+      "category": "Household",
+      "kind": "product"
     },
     "powdered sugar": {
       "fdc_id": 169656,
@@ -444,12 +472,20 @@
         "none": "Crystal size varies too much between sea salts to convert volume to weight."
       }
     },
+    "skewers": {
+      "category": "Household",
+      "kind": "product"
+    },
     "sour cream": {
       "fdc_id": 171257,
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 242.0
       }
+    },
+    "toothpicks": {
+      "category": "Household",
+      "kind": "product"
     },
     "vegetable oil": {
       "fdc_id": 172370,
@@ -464,7 +500,15 @@
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 120.0
       }
+    },
+    "wooden skewers": {
+      "category": "Household",
+      "kind": "product"
     }
+  },
+  "not_food": {
+    "for serving": "A serving suggestion, not an ingredient.",
+    "to serve": "A serving suggestion, not an ingredient."
   },
   "rewrites": {
     "salt": "kosher salt"

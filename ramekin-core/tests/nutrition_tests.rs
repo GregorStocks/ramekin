@@ -290,3 +290,79 @@ fn catalog_defaults_and_density_gaps() {
         "Missing density for this food"
     );
 }
+
+fn bare(item: &str) -> ParsedIngredient {
+    ParsedIngredient {
+        item: item.into(),
+        measurements: vec![],
+        note: Some("to taste".into()),
+        raw: None,
+        section: None,
+    }
+}
+
+#[test]
+fn negligible_lines_are_known_zero() {
+    let known = |ingredient: ParsedIngredient| {
+        let result = estimate(&[ingredient], None, 1.0).unwrap();
+        assert!(
+            result.unknown_ingredients.is_empty(),
+            "{:?}",
+            result.unknown_ingredients
+        );
+        result.known_calories.unwrap().max
+    };
+    // Zero-calorie foods, with or without a usable amount.
+    assert_eq!(known(bare("kosher salt")), 0.0);
+    assert_eq!(known(ingredient("salt", "1", "pinch")), 0.0);
+    assert_eq!(known(bare("water")), 0.0);
+    // Spices without a real amount.
+    assert_eq!(known(bare("freshly ground black pepper")), 0.0);
+    assert_eq!(known(ingredient("ground cumin", "1", "pinch")), 0.0);
+    assert_eq!(known(ingredient("cayenne", "a few", "shakes")), 0.0);
+    // Compounds whose every food is negligible on the line.
+    assert_eq!(known(bare("salt and pepper")), 0.0);
+    assert_eq!(
+        known(bare("Kosher salt and freshly ground black pepper to taste")),
+        0.0
+    );
+    // A real amount of a spice counts in full.
+    assert!(
+        (known(ingredient("ground cumin", "1", "cup")) - 360.0).abs() < 0.5,
+        "96 g x 375 kcal"
+    );
+}
+
+#[test]
+fn compound_and_non_food_lines() {
+    let result = estimate(
+        &[
+            ingredient("olive oil and balsamic vinegar", "2", "tbsp"),
+            bare("And for the other side of the world:"),
+            ingredient("parchment paper", "1", "sheet"),
+            ingredient("granulated sugar", "100", "g"),
+        ],
+        None,
+        1.0,
+    )
+    .unwrap();
+    // One amount can't be split between two caloric foods.
+    assert_eq!(result.unknown_ingredients.len(), 1);
+    assert_eq!(
+        result.unknown_ingredients[0].reason,
+        "Several ingredients share one amount"
+    );
+    // The header and the parchment paper are skipped, not unknown.
+    assert_eq!(result.known_calories.unwrap().max, 387.0);
+
+    let equipment = estimate(&[bare("parchment paper and aluminum foil")], None, 1.0).unwrap();
+    assert!(
+        equipment.unknown_ingredients.is_empty(),
+        "an all-product compound is skipped"
+    );
+    assert!(equipment.known_calories.is_none());
+
+    let only_skipped = estimate(&[bare("to serve")], None, 1.0).unwrap();
+    assert!(only_skipped.unknown_ingredients.is_empty());
+    assert_eq!(only_skipped.summary, "No ingredients to estimate.");
+}

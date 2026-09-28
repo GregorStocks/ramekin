@@ -59,6 +59,29 @@ def test_estimate_ranges_partial_unknown_and_empty(server_url, authed_api_client
         assert unknown["per_serving_calories"] is None
 
 
+def test_estimate_negligible_compound_and_skipped_lines(server_url, authed_api_client):
+    client, _ = authed_api_client
+    ingredients = [
+        make_ingredient("granulated sugar", "100", "g"),
+        make_ingredient("salt and freshly ground black pepper", note="to taste"),
+        make_ingredient("For the topping:"),
+        make_ingredient("parchment paper"),
+        make_ingredient("olive oil and balsamic vinegar", "2", "tbsp"),
+    ]
+    response = estimate(server_url, client, ingredients)
+    assert response.status_code == 200
+    result = response.json()
+    # Seasoning to taste counts as zero; the header and parchment are skipped.
+    assert result["known_calories"] == {"min": 387, "max": 387}
+    assert result["unknown_ingredients"] == [
+        {
+            "index": 4,
+            "item": "olive oil and balsamic vinegar",
+            "reason": "Several ingredients share one amount",
+        }
+    ]
+
+
 @pytest.mark.parametrize(
     "amount,unit,expected",
     [

@@ -9,6 +9,11 @@ pub enum Resolution {
         entry: &'static Entry,
         via: Via,
     },
+    /// Several foods sharing one line and one amount ("salt and pepper").
+    Compound(Vec<&'static Entry>),
+    /// Not an ingredient at all: a leftover header ("for the sauce:") or a
+    /// curated phrase like "to serve".
+    NotFood,
     /// The name could mean several foods (e.g. "cheese"), so no attribute is
     /// reported for it.
     Ambiguous,
@@ -42,6 +47,8 @@ const MODIFIERS_TO_STRIP: &[&str] = &[
     ", room temperature",
     ", chilled",
     ", sifted",
+    ", to taste",
+    " to taste",
 ];
 
 fn strip_modifiers(name: &str) -> String {
@@ -151,12 +158,12 @@ fn lookup(name: &str) -> Option<(Target, Via)> {
         .map(|target| (target, Via::Plural))
 }
 
-/// Resolve a written ingredient name, trying progressively looser spellings.
-/// Only a match to a specific food ends the search: an ambiguous match (e.g.
+/// Resolve one already-normalized name as a single food, trying progressively
+/// looser spellings. Only a match to a specific food ends the search: an ambiguous match (e.g.
 /// "cheese") still lets a later spelling name a specific food, and trimming a
 /// clause never settles for a name that isn't a food.
-pub fn resolve(item: &str) -> Resolution {
-    let normalized = normalize(item);
+fn resolve_single(normalized: &str) -> Resolution {
+    let normalized = normalized.to_string();
 
     let mut candidates: Vec<(String, Option<Via>)> = vec![
         (normalized.clone(), None),
@@ -208,12 +215,53 @@ pub fn resolve(item: &str) -> Resolution {
                 };
             }
             Some((Target::Ambiguous, _)) => ambiguous = true,
-            None => {}
+            // Trimming a clause or leading words never settles for a non-food.
+            Some((Target::NotFood, _)) if matches!(step, None | Some(Via::Modifiers)) => {
+                return Resolution::NotFood;
+            }
+            Some((Target::NotFood, _)) | None => {}
         }
     }
     if ambiguous {
         Resolution::Ambiguous
     } else {
         Resolution::Unresolved
+    }
+}
+
+/// Several foods joined by "and", "&", or "and/or" in one ingredient name.
+/// Only tried once the whole name failed, so "half and half" stays one food;
+/// every part must resolve to a specific food on its own.
+fn compound(normalized: &str) -> Option<Resolution> {
+    let joined = normalized
+        .replace(" and/or ", " and ")
+        .replace(" & ", " and ");
+    let parts: Vec<&str> = joined.split(" and ").map(str::trim).collect();
+    if parts.len() < 2 || parts.iter().any(|part| part.is_empty()) {
+        return None;
+    }
+    let entries = parts
+        .iter()
+        .map(|part| match resolve_single(part) {
+            Resolution::Entry { entry, .. } => Some(entry),
+            _ => None,
+        })
+        .collect::<Option<Vec<_>>>()?;
+    Some(Resolution::Compound(entries))
+}
+
+/// Resolve a written ingredient name, trying progressively looser spellings
+/// and then, if it names no single food, several foods joined by "and". A name
+/// ending in ":" is a leftover section header, not an ingredient.
+pub fn resolve(item: &str) -> Resolution {
+    let normalized = normalize(item);
+    if normalized.ends_with(':') {
+        return Resolution::NotFood;
+    }
+    match resolve_single(&normalized) {
+        unresolved @ (Resolution::Ambiguous | Resolution::Unresolved) => {
+            compound(&normalized).unwrap_or(unresolved)
+        }
+        resolved => resolved,
     }
 }

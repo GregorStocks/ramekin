@@ -89,9 +89,17 @@ fn category_to_static(category: &str) -> &'static str {
 
 /// Categorize an ingredient by name.
 ///
+/// The ingredient catalog's category wins when it has one (products such as
+/// parchment paper, and the first food of a "salt and pepper" line). Otherwise
+/// keyword rules from `data/ingredients.json` apply; they remain the fallback
+/// until catalog entries carry categories.
+///
 /// Returns the category name, or "Other" if no match is found.
 /// Matching is case-insensitive and looks for keyword containment.
 pub fn categorize(item: &str) -> &'static str {
+    if let Some(category) = crate::catalog::category(item) {
+        return category_to_static(category);
+    }
     let lower = item.to_lowercase();
     let item_tokens = word_tokens(&lower);
 
@@ -362,5 +370,17 @@ mod tests {
         assert_eq!(categorize("fresh fruit"), "Produce");
         assert_eq!(categorize("Sure-Jell fruit pectin"), "Baking");
         assert_eq!(categorize("fruit juice"), "Beverages");
+    }
+
+    #[test]
+    fn test_catalog_category_overrides_keywords() {
+        assert_eq!(categorize("Parchment paper"), "Household");
+        // The "water" keyword used to make this a beverage.
+        assert_eq!(
+            categorize("wooden skewers, soaked in cold water for 30 minutes"),
+            "Household"
+        );
+        // Entries without a catalog category still use keyword rules.
+        assert_eq!(categorize("salt and pepper"), "Spices & Seasonings");
     }
 }
