@@ -271,7 +271,7 @@ Unrecognized names are lowercased with whitespace collapsed.
 
 ### Top unrecognized names (top 30)
 
-#### Nutrition (2274 distinct, 4512 lines)
+#### Nutrition (2272 distinct, 4512 lines)
 
 | Count | Name |
 | ---: | --- |
@@ -306,11 +306,11 @@ Unrecognized names are lowercased with whitespace collapsed.
 | 17 | carrots |
 | 17 | cayenne pepper |
 
-#### Density (volume lines only) (960 distinct, 1370 lines)
+#### Density (volume lines only) (959 distinct, 1369 lines)
 
 | Count | Name |
 | ---: | --- |
-| 27 | freshly ground black pepper |
+| 26 | freshly ground black pepper |
 | 21 | pepper |
 | 18 | ground coriander |
 | 13 | cumin seeds |
