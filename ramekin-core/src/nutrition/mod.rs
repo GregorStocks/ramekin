@@ -214,7 +214,24 @@ fn measurement_grams(
     Ok(total)
 }
 
+/// Oil listed "for frying" is a cooking medium: most of it is discarded, so
+/// charging the whole quart would inflate the recipe by thousands of calories.
+/// "2 tbsp oil, plus more for frying" still counts the measured part.
+fn is_frying_medium(ingredient: &ParsedIngredient) -> bool {
+    static FRYING: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"(?i)\bfor\s+(?:(?:deep|shallow|pan)[- ]?)?fry(?:ing)?\b").unwrap()
+    });
+    FRYING.is_match(&ingredient.item)
+        || ingredient
+            .note
+            .as_deref()
+            .is_some_and(|note| FRYING.is_match(note) && !note.to_lowercase().contains("plus more"))
+}
+
 fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
+    if is_frying_medium(ingredient) {
+        return Err("Frying oil: only part of it is absorbed");
+    }
     let entry = match catalog::resolve_line(&ingredient.item, ingredient.note.as_deref()) {
         Resolution::Entry { entry, .. } if entry.kind == Kind::Product => return Ok(Line::Skipped),
         Resolution::Entry { entry, .. } => entry,

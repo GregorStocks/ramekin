@@ -309,13 +309,13 @@ pub fn food(fdc_id: u32) -> Option<&'static UsdaFood> {
 
 /// Resolve an ingredient line, using its note when it changes the food. The
 /// parser keeps "cooked" in the note ("brown rice, cooked"), and cooked grains
-/// differ from dry ones about threefold. A note that states the measured food
-/// is cooked ("cooked", "cooked, shredded") tries "cooked <item>" first; a
-/// cooking instruction ("cooked and crumbled", "cooked al dente") describes
-/// what happens after measuring, so it doesn't.
+/// differ from dry ones about threefold. Only a note that is exactly "cooked"
+/// (or "leftover cooked") states the measured food is cooked and tries "cooked
+/// <item>" first. Anything longer ("cooked and crumbled", "cooked, drained,
+/// and cut") is a cooking instruction for a raw or dry measure.
 pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
     static COOKED: LazyLock<regex::Regex> =
-        LazyLock::new(|| regex::Regex::new(r"(?i)^\s*(leftover\s+)?cooked\s*($|[,;(])").unwrap());
+        LazyLock::new(|| regex::Regex::new(r"(?i)^\s*(leftover\s+)?cooked\s*$").unwrap());
     if note.is_some_and(|note| COOKED.is_match(note)) {
         if let resolved @ Resolution::Entry { .. } = resolve(&format!("cooked {item}")) {
             return resolved;

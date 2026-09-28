@@ -418,7 +418,7 @@ fn a_cooked_note_selects_the_cooked_food() {
         fdc_id("brown rice")
     );
     assert_eq!(
-        line_fdc("brown rice", Some("cooked, cooled")),
+        line_fdc("brown rice", Some("leftover cooked")),
         fdc_id("cooked brown rice")
     );
     // A cooking instruction applies after measuring, so the raw food is measured.
@@ -426,6 +426,7 @@ fn a_cooked_note_selects_the_cooked_food() {
         "cooked and crumbled",
         "cooked al dente",
         "cooked until crisp",
+        "cooked, drained, and cut into small pieces",
     ] {
         assert_eq!(line_fdc("bacon", Some(note)), fdc_id("bacon"), "{note}");
     }

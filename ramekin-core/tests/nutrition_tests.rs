@@ -366,3 +366,26 @@ fn compound_and_non_food_lines() {
     assert!(only_skipped.unknown_ingredients.is_empty());
     assert_eq!(only_skipped.summary, "No ingredients to estimate.");
 }
+
+#[test]
+fn frying_oil_is_not_charged_in_full() {
+    for (item, note) in [
+        ("neutral oil, such as vegetable oil, for frying", None),
+        ("vegetable oil", Some("for deep-frying")),
+    ] {
+        let mut line = ingredient(item, "2", "quart");
+        line.note = note.map(str::to_string);
+        let result = estimate(&[line], None, 1.0).unwrap();
+        assert_eq!(
+            result.unknown_ingredients[0].reason, "Frying oil: only part of it is absorbed",
+            "{item}"
+        );
+    }
+    // The measured part of "plus more for frying" is used in the recipe.
+    let mut line = ingredient("vegetable oil", "2", "tbsp");
+    line.note = Some("plus more for frying".into());
+    assert!(estimate(&[line], None, 1.0)
+        .unwrap()
+        .unknown_ingredients
+        .is_empty());
+}
