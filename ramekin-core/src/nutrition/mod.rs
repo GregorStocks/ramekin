@@ -222,7 +222,15 @@ fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
         // One amount for several foods can't be split between them, so only an
         // all-negligible line ("salt and pepper") is known.
         Resolution::Compound(entries) => {
-            return if entries.iter().all(|entry| is_negligible(entry, ingredient)) {
+            let is_product = |entry: &&Entry| entry.kind == Kind::Product;
+            // "parchment paper and aluminum foil" is equipment, not food.
+            if entries.iter().all(is_product) {
+                return Ok(Line::Skipped);
+            }
+            return if entries
+                .iter()
+                .all(|entry| is_product(entry) || is_negligible(entry, ingredient))
+            {
                 Ok(Line::Calories(ZERO))
             } else {
                 Err("Several ingredients share one amount")

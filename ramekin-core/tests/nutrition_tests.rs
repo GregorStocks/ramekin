@@ -355,6 +355,13 @@ fn compound_and_non_food_lines() {
     // The header and the parchment paper are skipped, not unknown.
     assert_eq!(result.known_calories.unwrap().max, 387.0);
 
+    let equipment = estimate(&[bare("parchment paper and aluminum foil")], None, 1.0).unwrap();
+    assert!(
+        equipment.unknown_ingredients.is_empty(),
+        "an all-product compound is skipped"
+    );
+    assert!(equipment.known_calories.is_none());
+
     let only_skipped = estimate(&[bare("to serve")], None, 1.0).unwrap();
     assert!(only_skipped.unknown_ingredients.is_empty());
     assert_eq!(only_skipped.summary, "No ingredients to estimate.");

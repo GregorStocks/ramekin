@@ -319,6 +319,17 @@ pub fn grams_per_cup(item: &str) -> Option<f64> {
     }
 }
 
+/// Whether a written name is not something eaten: a leftover header, a
+/// `not_food` phrase, or products only ("parchment paper and aluminum foil").
+pub fn is_non_food(item: &str) -> bool {
+    match resolve(item) {
+        Resolution::NotFood => true,
+        Resolution::Entry { entry, .. } => entry.kind == Kind::Product,
+        Resolution::Compound(entries) => entries.iter().all(|entry| entry.kind == Kind::Product),
+        Resolution::Ambiguous | Resolution::Unresolved => false,
+    }
+}
+
 /// The shopping-list category the catalog assigns a written name, if any. A
 /// compound line ("salt and pepper") takes its first food's category.
 pub fn category(item: &str) -> Option<&'static str> {
