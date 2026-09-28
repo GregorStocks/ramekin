@@ -169,3 +169,22 @@ The loader asserts that keys are normalized, targets exist, aliases don't
 shadow names, and densities are finite and positive. `catalog::version()`
 hashes both files and the rule version; bump `RULE_VERSION` in `mod.rs` when
 resolution behavior changes.
+
+## Classification passes
+
+Aliases beyond the hand-curated core come from Claude Code subagent passes over
+the names the catalog didn't resolve. The procedure, and how to rerun it, is in
+`docs/agent/catalog-classification.md`.
+
+| Date | Tier | Model / harness | Applied | Skipped |
+| --- | --- | --- | --- | --- |
+| 2026-09-28 | Top 2,000 unresolved names (seen ≥ 4 times across pipeline and Paprika fixtures and prod) | Claude Opus 5.5 via a Claude Code Workflow: 8 classifiers + 3 verifiers | 1,670 aliases, 16 ambiguous, 6 not-food, 4 products, 1 entry | 303 |
+
+- **Verification:** the verifiers checked every mapping to a ≥ 300 kcal/100 g food (543), a
+  ~1/7 sample of the rest, and consistency across all decisions. They corrected 34 decisions.
+  On review, 8 generic dish names ("soup", "meatballs") were changed from not-food to skip,
+  so a real "1 lb frozen meatballs" line is never silently dropped.
+- **Pipeline-fixture effect:**
+  - recognized names on food lines went from 54.0% to 77.8%;
+  - calories computed from 44.7% to 58.3%;
+  - volume lines with a density from 62.9% to 77.5%.

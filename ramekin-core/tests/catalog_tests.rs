@@ -258,13 +258,18 @@ fn fresh_herbs_never_become_dried_spices() {
     // Stripping one word at a time finds the more specific name first.
     assert_eq!(fdc_id("grated fresh ginger"), fdc_id("fresh ginger"));
     assert_eq!(fdc_id("minced ginger"), fdc_id("fresh ginger"));
-    // Dropping "fresh" or "chopped" must not land on the dried/ground spice.
+    // Dropping "fresh" or "chopped" must not land on the dried/ground spice:
+    // these either resolve to the fresh herb or stay unknown.
     for item in ["fresh rosemary", "chopped sage", "fresh oregano"] {
-        assert!(
-            !matches!(resolve(item), Resolution::Entry { .. }),
-            "{item:?} must stay unknown rather than match a dried spice"
-        );
+        if let Resolution::Entry { entry, .. } = resolve(item) {
+            assert!(
+                !entry.id.starts_with("spices, ") && !entry.id.contains("dried"),
+                "{item:?} must not match a dried spice, got {:?}",
+                entry.id
+            );
+        }
     }
+    assert_eq!(fdc_id("fresh rosemary"), fdc_id("rosemary, fresh"));
     // ...unless the name says so, or a curated alias covers the phrase.
     assert_eq!(fdc_id("freshly grated nutmeg"), fdc_id("ground nutmeg"));
     assert_eq!(fdc_id("chopped fresh thyme"), fdc_id("thyme, fresh"));
