@@ -372,3 +372,23 @@ fn negligibility_attributes_come_from_the_data() {
     }
     assert!(!entry("butter").trace_ok);
 }
+
+#[test]
+fn dissimilar_alternatives_and_bare_herbs() {
+    // Alternatives with very different calories in real amounts stay unknown.
+    for item in [
+        "heavy cream or milk",
+        "milk or water",
+        "sour cream or plain yogurt",
+    ] {
+        assert!(
+            matches!(resolve(item), Resolution::Ambiguous),
+            "{item:?} should be ambiguous"
+        );
+    }
+    // Bare herbs follow how recipes use them.
+    assert_eq!(fdc_id("rosemary"), fdc_id("rosemary, fresh"));
+    assert_eq!(fdc_id("ginger"), fdc_id("fresh ginger"));
+    assert!(matches!(resolve("sage"), Resolution::Ambiguous));
+    assert!(matches!(resolve("oregano"), Resolution::Entry { .. }));
+}

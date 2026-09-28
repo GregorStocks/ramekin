@@ -45,6 +45,8 @@ Each agent returns one schema-validated decision per name:
 
 The prompt carries the README's alias rules plus the lessons from review:
 - use the real food, not a stand-in, when USDA has it;
+- alternatives ("x or y") take the first-listed food only if they are close in calories
+  or trace amounts; otherwise `ambiguous` ("heavy cream or milk");
 - fresh vs dried;
 - specific parts (egg yolk, lemon peel);
 - never invent numbers;

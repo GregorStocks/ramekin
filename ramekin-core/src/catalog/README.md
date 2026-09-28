@@ -161,6 +161,12 @@ are `tests/test_catalog_import.py`.
   explaining it (see "dried thyme", "greek yogurt"). Aliasing to a stand-in
   food is only for foods USDA lacks entirely ("dijon mustard" → yellow mustard,
   "shaoxing wine" → sake), where the stand-in supplies every attribute.
+  A name offering alternatives resolves to the first-listed food only when the
+  alternatives are close in calories or used in trace amounts ("cayenne or hot
+  sauce"). When they differ a lot in real amounts ("heavy cream or milk",
+  "sour cream or plain yogurt"), the alias is `null` (ambiguous). Bare herb
+  names follow how recipes use them: "rosemary" and "ginger" mean fresh; "sage"
+  is ambiguous because USDA has no fresh sage.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
