@@ -179,7 +179,10 @@ are `tests/test_catalog_import.py`.
   sauce"). When they differ a lot in real amounts ("heavy cream or milk",
   "sour cream or plain yogurt"), the alias is `null` (ambiguous). Bare herb
   names follow how recipes use them: "rosemary" and "ginger" mean fresh; "sage"
-  is ambiguous because USDA has no fresh sage.
+  is ambiguous because USDA has no fresh sage. Bone-in cuts and whole birds are
+  `null` too: recipes give their purchased weight, bones included, while USDA
+  describes only the edible part, so a 4 lb whole chicken would be charged as
+  4 lb of meat. Boneless cuts map normally.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").

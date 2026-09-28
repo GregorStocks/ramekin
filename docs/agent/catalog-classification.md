@@ -47,6 +47,8 @@ The prompt carries the README's alias rules plus the lessons from review:
 - use the real food, not a stand-in, when USDA has it;
 - alternatives ("x or y") take the first-listed food only if they are close in calories
   or trace amounts; otherwise `ambiguous` ("heavy cream or milk");
+- bone-in cuts and whole birds are `ambiguous`: the recipe weight includes bones USDA
+  doesn't count;
 - fresh vs dried;
 - specific parts (egg yolk, lemon peel);
 - never invent numbers;

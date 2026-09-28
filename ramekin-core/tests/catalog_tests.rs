@@ -449,3 +449,17 @@ fn a_cooked_note_selects_the_cooked_food() {
         fdc_id("cooked brown rice")
     );
 }
+
+#[test]
+fn bone_in_weights_are_not_priced_as_meat() {
+    for item in ["whole chicken", "bone-in chicken thighs", "chicken wings"] {
+        assert!(
+            matches!(resolve(item), Resolution::Ambiguous),
+            "{item:?} includes bone weight"
+        );
+    }
+    assert!(matches!(
+        resolve("boneless skinless chicken thighs"),
+        Resolution::Entry { .. }
+    ));
+}
