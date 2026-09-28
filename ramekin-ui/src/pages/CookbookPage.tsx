@@ -123,7 +123,7 @@ export default function CookbookPage() {
       <div class="page-header">
         <h2>
           My Cookbook{" "}
-          <Show when={!recipeList.loading() && recipeList.total() > 0}>
+          <Show when={recipeList.recipes().length > 0}>
             <span class="recipe-count">{recipeList.recipeCount()}</span>
           </Show>
         </h2>

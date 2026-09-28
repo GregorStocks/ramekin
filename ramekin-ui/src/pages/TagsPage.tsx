@@ -1,4 +1,4 @@
-import { createSignal, For, Show } from "solid-js";
+import { createMemo, createSignal, For, Show } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
@@ -6,6 +6,7 @@ import { usePageTitle } from "../utils/pageTitle";
 import type { TagItem } from "ramekin-client";
 import { groupTags, parseTag } from "../utils/tagHierarchy";
 import { createApiResource, createAsyncAction } from "../utils/asyncState";
+import { reuseUnchanged } from "../utils/stableList";
 
 export default function TagsPage() {
   usePageTitle(() => "Tags");
@@ -16,15 +17,27 @@ export default function TagsPage() {
     async () => getTagsApi().listAllTags(),
     "Failed to load tags",
   );
-  const tags = () => tagsResource.data()?.tags ?? [];
-  const groupedTags = () => {
+  const tags = createMemo<TagItem[]>(
+    (prev) =>
+      reuseUnchanged(prev, tagsResource.data()?.tags ?? [], (t) => t.id),
+    [],
+  );
+  const groupedTags = createMemo(() => {
     const byName = new Map(tags().map((t) => [t.name, t] as const));
-    return groupTags(tags().map((t) => t.name)).map((group) => ({
-      namespace: group.namespace,
-      items: group.tags.map((name) => byName.get(name)!).filter(Boolean),
-    }));
-  };
-  const loading = tagsResource.loading;
+    return new Map(
+      groupTags(tags().map((t) => t.name)).map(
+        (group) =>
+          [
+            group.namespace,
+            group.tags.map((name) => byName.get(name)!).filter(Boolean),
+          ] as const,
+      ),
+    );
+  });
+  // Render groups keyed by namespace so a namespace appearing or emptying out
+  // doesn't rebuild the other groups' rows.
+  const namespaces = createMemo(() => [...groupedTags().keys()]);
+  const loading = tagsResource.initialLoading;
 
   // Edit state
   const [editingId, setEditingId] = createSignal<string | null>(null);
@@ -289,13 +302,11 @@ export default function TagsPage() {
 
       <Show when={!loading() && tags().length > 0}>
         <div class="tags-list">
-          <For each={groupedTags()}>
-            {(group) => (
+          <For each={namespaces()}>
+            {(namespace) => (
               <section class="tags-group">
-                <h3 class="tags-group-label">
-                  {group.namespace ?? "Uncategorized"}
-                </h3>
-                <For each={group.items}>
+                <h3 class="tags-group-label">{namespace ?? "Uncategorized"}</h3>
+                <For each={groupedTags().get(namespace) ?? []}>
                   {(tag) => {
                     const parsed = parseTag(tag.name);
                     return (

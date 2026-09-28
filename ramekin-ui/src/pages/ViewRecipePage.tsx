@@ -32,6 +32,7 @@ import {
 import { formatIngredientParts } from "../utils/ingredientFormatting";
 import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
 import { pollScrapeJob } from "../utils/pollScrapeJob";
+import { createRequestTracker } from "../utils/requestTracker";
 import type { RecipeResponse, VersionSummary } from "ramekin-client";
 import { ErrorCode } from "ramekin-client";
 
@@ -118,7 +119,21 @@ export default function ViewRecipePage() {
     return `${trimmed}×`;
   };
 
-  const [recipe, setRecipe] = createSignal<RecipeResponse | null>(null);
+  /** Identifies what the URL asks for: a recipe, optionally at a version. */
+  const requestedKey = () => `${params.id}@${versionId() ?? "current"}`;
+  const [loaded, setLoaded] = createSignal<{
+    key: string;
+    recipe: RecipeResponse;
+  } | null>(null);
+  // Navigating to another recipe or version (e.g. "Next Random", version
+  // history) reuses this page. Until the requested one arrives, hide the
+  // previous one so its content and actions can't be confused with what the
+  // URL now points at. Reloads of the same recipe and version keep it on
+  // screen and update in place.
+  const recipe = () => {
+    const l = loaded();
+    return l && l.key === requestedKey() ? l.recipe : null;
+  };
   usePageTitle(() => recipe()?.title);
   const [currentVersionId, setCurrentVersionId] = createSignal<string | null>(
     null,
@@ -142,7 +157,13 @@ export default function ViewRecipePage() {
   // Meal plan modal state
   const [showMealPlanModal, setShowMealPlanModal] = createSignal(false);
 
+  // Navigations can overlap (e.g. A -> B -> back to A); only the latest load
+  // may write recipe, error, or loading state.
+  const recipeRequests = createRequestTracker();
+
   const loadRecipe = async () => {
+    const requestId = recipeRequests.start();
+    const key = requestedKey();
     setLoading(true);
     setError(null);
     try {
@@ -151,7 +172,8 @@ export default function ViewRecipePage() {
         id: params.id,
         versionId: vid ?? undefined,
       });
-      setRecipe(response);
+      if (!recipeRequests.isCurrent(requestId)) return;
+      setLoaded({ key, recipe: response });
       if (!vid) {
         setCurrentVersionId(response.versionId);
       } else if (!currentVersionId()) {
@@ -161,13 +183,14 @@ export default function ViewRecipePage() {
       }
     } catch (err) {
       const parsed = await parseApiError(err, "Failed to load recipe");
+      if (!recipeRequests.isCurrent(requestId)) return;
       setError(
         parsed.code === ErrorCode.NotFound
           ? "Recipe not found"
           : "Failed to load recipe",
       );
     } finally {
-      setLoading(false);
+      if (recipeRequests.isCurrent(requestId)) setLoading(false);
     }
   };
 
@@ -375,7 +398,7 @@ export default function ViewRecipePage() {
 
   return (
     <div class="view-recipe-page">
-      <Show when={loading()}>
+      <Show when={loading() && !recipe()}>
         <p class="loading">Loading recipe...</p>
       </Show>
 

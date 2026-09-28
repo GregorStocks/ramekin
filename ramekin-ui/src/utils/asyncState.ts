@@ -45,6 +45,12 @@ export interface ApiResource<T> {
   data: Accessor<T | undefined>;
   latest: Accessor<T | undefined>;
   loading: Accessor<boolean>;
+  /**
+   * True only while the first load is in flight. Gate "Loading…" placeholders
+   * on this, not `loading`, so a refetch after an action updates the page in
+   * place instead of unmounting it.
+   */
+  initialLoading: Accessor<boolean>;
   error: Accessor<string | null>;
   refetch: () => Promise<T | undefined>;
   mutate: (value: T | undefined) => T | undefined;
@@ -71,6 +77,8 @@ export function createApiResource<T>(
     data: () => resource()?.data,
     latest: () => resource.latest?.data,
     loading: () => resource.loading,
+    initialLoading: () =>
+      resource.state === "unresolved" || resource.state === "pending",
     error: () => resource()?.error ?? null,
     refetch: async () => (await refetch())?.data,
     mutate: (value) => {

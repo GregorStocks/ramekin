@@ -265,4 +265,25 @@ describe("createCookbookRecipeRequests", () => {
     expect(state.loadingMore()).toBe(false);
     expect(getNotice()).toBeNull();
   });
+
+  it("keeps unchanged recipe objects across a reload", async () => {
+    const { state, pending } = setup();
+
+    void state.loadRecipes();
+    pending[0].resolve(page(["a", "b"], 2));
+    await flush();
+    const [a, b] = state.recipes();
+
+    void state.loadRecipes();
+    expect(state.recipes()).toEqual([a, b]);
+    const renamed = { ...recipe("b"), title: "B" };
+    pending[1].resolve({
+      pagination: { limit: 20, offset: 0, total: 2 },
+      recipes: [recipe("a"), renamed],
+    });
+    await flush();
+
+    expect(state.recipes()[0]).toBe(a);
+    expect(state.recipes()[1]).toBe(renamed);
+  });
 });
