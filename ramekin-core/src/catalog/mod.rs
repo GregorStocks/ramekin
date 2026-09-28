@@ -25,7 +25,7 @@ pub use volume::{
 
 const USDA_JSON: &str = include_str!("data/usda.json");
 const CURATED_JSON: &str = include_str!("data/curated.json");
-const RULE_VERSION: &str = "catalog-v1";
+const RULE_VERSION: &str = "catalog-v2";
 
 /// A food from the pinned USDA SR Legacy release.
 #[derive(Debug, Deserialize)]

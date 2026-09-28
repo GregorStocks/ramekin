@@ -196,6 +196,74 @@ fn rewrites_and_version() {
     assert_eq!(rewrite(" Salt "), Some("kosher salt"));
     assert_eq!(rewrite("kosher salt"), None);
     assert_eq!(rewrite("flour"), None);
-    assert!(version().starts_with("catalog-v1-sr2018-"));
+    assert!(version().starts_with("catalog-v2-sr2018-"));
     assert_eq!(version(), version());
+}
+
+#[test]
+fn looser_spellings_resolve_to_the_same_food() {
+    let same = |written: &str, canonical: &str| {
+        assert_eq!(
+            fdc_id(written),
+            fdc_id(canonical),
+            "{written:?} should match {canonical:?}"
+        );
+    };
+    let via = |item| match resolve(item) {
+        Resolution::Entry { via, .. } => via,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+
+    // Trailing clauses are dropped one at a time.
+    same("kosher salt, presumably diamond", "kosher salt");
+    same(
+        "diamond crystal kosher salt; for table salt, use half as much by volume",
+        "kosher salt",
+    );
+    assert_eq!(via("kosher salt, presumably diamond"), Via::Clause);
+    // Leading size/preparation words, including comma-separated runs.
+    same("freshly ground black pepper", "black pepper");
+    same("large eggs", "eggs");
+    same("chopped fresh cilantro", "cilantro");
+    assert_eq!(via("large eggs"), Via::LeadingModifiers);
+    // es/ies plurals.
+    same("strawberry", "strawberries");
+    same("radish", "radishes");
+    assert_eq!(via("strawberry"), Via::Plural);
+}
+
+#[test]
+fn trimming_never_settles_for_a_non_food() {
+    // Cutting at the comma would leave "boneless", which is not a food.
+    assert!(!matches!(
+        resolve("boneless, skinless mystery thighs"),
+        Resolution::Entry { .. }
+    ));
+    // Words that change the food are not stripped.
+    for (written, not) in [("ground beef", "beef"), ("dried apricots", "apricots")] {
+        if let (Resolution::Entry { entry: a, .. }, Resolution::Entry { entry: b, .. }) =
+            (resolve(written), resolve(not))
+        {
+            assert_ne!(a.id, b.id, "{written:?} must not collapse to {not:?}");
+        }
+    }
+    // A stripped name that is ambiguous stays ambiguous.
+    assert!(matches!(resolve("shredded cheese"), Resolution::Ambiguous));
+}
+
+#[test]
+fn fresh_herbs_never_become_dried_spices() {
+    // Stripping one word at a time finds the more specific name first.
+    assert_eq!(fdc_id("grated fresh ginger"), fdc_id("fresh ginger"));
+    assert_eq!(fdc_id("minced ginger"), fdc_id("fresh ginger"));
+    // Dropping "fresh" or "chopped" must not land on the dried/ground spice.
+    for item in ["fresh rosemary", "chopped sage", "fresh oregano"] {
+        assert!(
+            !matches!(resolve(item), Resolution::Entry { .. }),
+            "{item:?} must stay unknown rather than match a dried spice"
+        );
+    }
+    // ...unless the name says so, or a curated alias covers the phrase.
+    assert_eq!(fdc_id("freshly grated nutmeg"), fdc_id("ground nutmeg"));
+    assert_eq!(fdc_id("chopped fresh thyme"), fdc_id("thyme, fresh"));
 }

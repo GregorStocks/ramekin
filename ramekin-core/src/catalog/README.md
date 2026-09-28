@@ -32,11 +32,23 @@ Names are lowercased and whitespace is collapsed. Then:
    - unique USDA descriptions (a description shared by several foods is ambiguous);
    - curated aliases, which may not shadow any of the above and may only point
      at a non-alias name.
-2. Singular/plural variant (add or remove a trailing "s").
+2. A singular/plural variant: add or remove "s", then "es", then "ies" ↔ "y".
 3. Steps 1–2 again after stripping temperature and preparation modifiers
    ("softened ", ", sifted", …).
+4. The name with trailing ", …" or "; …" clauses dropped one at a time
+   ("kosher salt, presumably diamond" → "kosher salt").
+5. The name with leading size and preparation words (`LEADING_MODIFIERS`:
+   "chopped", "fresh", "large", "boneless", …) dropped one word at a time, so
+   "grated fresh ginger" tries "fresh ginger" before "ginger". Words that change
+   the food ("ground", "dried", "light", "crushed", "whole") are never dropped.
+   A *bare* name reached this way may not be a dried or ground spice unless the
+   original said "dried" or "ground". "fresh rosemary" stays unknown rather than
+   becoming dried rosemary. A curated alias that keeps a prep word ("grated
+   nutmeg") is an explicit choice and still counts.
 
-An ambiguous hit still lets modifier stripping find a specific food.
+Only a match to a specific food ends the search. Trimming never settles for
+a name that isn't a food ("boneless, skinless …" is never cut to "boneless"),
+and an ambiguous hit still lets a later step find a specific food.
 
 ## Data files
 

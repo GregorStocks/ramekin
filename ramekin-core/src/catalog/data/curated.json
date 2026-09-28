@@ -1,276 +1,4 @@
 {
-  "entries": {
-    "all-purpose flour": {
-      "grams_per_cup": {
-        "value": 125.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 168936
-    },
-    "almond extract": {
-      "grams_per_cup": {
-        "value": 208.0,
-        "source": "Not in USDA; comparable to vanilla extract (USDA FDC 173471: 208g/cup), both are alcohol-based extracts",
-        "url": "https://fdc.nal.usda.gov/food-details/173471/nutrients"
-      }
-    },
-    "almond flour": {
-      "grams_per_cup": {
-        "value": 96.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 170568
-    },
-    "black pepper": {
-      "fdc_id": 170931,
-      "grams_per_cup": {
-        "none": "Grind size changes the weight of a volume of pepper too much to convert."
-      }
-    },
-    "bread flour": {
-      "grams_per_cup": {
-        "value": 127.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 168896
-    },
-    "brown sugar": {
-      "grams_per_cup": {
-        "value": 220.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 168833
-    },
-    "butter": {
-      "grams_per_cup": {
-        "value": 227.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 173430
-    },
-    "cake flour": {
-      "grams_per_cup": {
-        "value": 114.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 169723
-    },
-    "chicken broth": {
-      "grams_per_cup": {
-        "value": 249.0,
-        "source": "USDA FoodData Central FDC 174536: Soup, chicken broth, ready-to-serve, 249g/cup",
-        "url": "https://fdc.nal.usda.gov/food-details/174536/nutrients"
-      },
-      "fdc_id": 174536
-    },
-    "cocoa powder": {
-      "grams_per_cup": {
-        "value": 86.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 169593
-    },
-    "coconut flour": {
-      "grams_per_cup": {
-        "value": 112.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      }
-    },
-    "coconut oil": {
-      "grams_per_cup": {
-        "value": 218.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 171412
-    },
-    "cornstarch": {
-      "grams_per_cup": {
-        "value": 128.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 169698
-    },
-    "cream cheese": {
-      "grams_per_cup": {
-        "value": 232.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 173418
-    },
-    "diamond crystal kosher salt": {
-      "grams_per_cup": {
-        "value": 137.0,
-        "source": "Serious Eats",
-        "url": "https://www.seriouseats.com/ask-the-food-lab-do-i-need-to-use-kosher-salt"
-      },
-      "fdc_id": 173468
-    },
-    "dried oregano": {
-      "grams_per_cup": {
-        "value": 48.0,
-        "source": "USDA FoodData Central FDC 171328: Spices, oregano, dried, 1.0g/tsp leaves x 48",
-        "url": "https://fdc.nal.usda.gov/food-details/171328/nutrients"
-      },
-      "fdc_id": 171328
-    },
-    "dry white wine": {
-      "grams_per_cup": {
-        "value": 236.0,
-        "source": "Not in USDA; wine is mostly water (~88%) with ~12% alcohol (density 0.789), estimated ~236g/cup"
-      },
-      "fdc_id": 174837
-    },
-    "fish sauce": {
-      "grams_per_cup": {
-        "value": 288.0,
-        "source": "USDA FoodData Central FDC 174531: Sauce, fish, ready-to-serve, 18g/tbsp x 16",
-        "url": "https://fdc.nal.usda.gov/food-details/174531/nutrients"
-      },
-      "fdc_id": 174531
-    },
-    "granulated sugar": {
-      "grams_per_cup": {
-        "value": 200.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 169655
-    },
-    "ground cumin": {
-      "grams_per_cup": {
-        "value": 96.0,
-        "source": "USDA FoodData Central FDC 170923: Spices, cumin seed, 6.0g/tbsp x 16",
-        "url": "https://fdc.nal.usda.gov/food-details/170923/nutrients"
-      },
-      "fdc_id": 170923
-    },
-    "heavy cream": {
-      "grams_per_cup": {
-        "value": 238.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 170859
-    },
-    "honey": {
-      "grams_per_cup": {
-        "value": 340.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 169640
-    },
-    "light corn syrup": {
-      "grams_per_cup": {
-        "value": 341.0,
-        "source": "USDA FoodData Central FDC 168837: Syrups, corn, light, 341g/cup",
-        "url": "https://fdc.nal.usda.gov/food-details/168837/nutrients"
-      },
-      "fdc_id": 168837
-    },
-    "maple syrup": {
-      "grams_per_cup": {
-        "value": 315.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 169661
-    },
-    "mayonnaise": {
-      "grams_per_cup": {
-        "value": 220.0,
-        "source": "USDA FoodData Central",
-        "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168025/nutrients"
-      },
-      "fdc_id": 171009
-    },
-    "milk": {
-      "grams_per_cup": {
-        "value": 245.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 171265
-    },
-    "mirin": {
-      "grams_per_cup": {
-        "value": 240.0,
-        "source": "Not in USDA; rice wine with sugar, comparable to sweetened water/broth densities (~240g/cup)"
-      }
-    },
-    "olive oil": {
-      "grams_per_cup": {
-        "value": 216.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 171413
-    },
-    "oyster sauce": {
-      "grams_per_cup": {
-        "value": 288.0,
-        "source": "USDA FoodData Central FDC 174529: Sauce, oyster, ready-to-serve, 18g/tbsp x 16",
-        "url": "https://fdc.nal.usda.gov/food-details/174529/nutrients"
-      },
-      "fdc_id": 174529
-    },
-    "peanut butter": {
-      "grams_per_cup": {
-        "value": 258.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 174266
-    },
-    "powdered sugar": {
-      "grams_per_cup": {
-        "value": 120.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 169656
-    },
-    "rice vinegar": {
-      "grams_per_cup": {
-        "value": 239.0,
-        "source": "Comparable to USDA vinegar entries (cider 239, red wine 239, distilled 238)"
-      },
-      "fdc_id": 172237
-    },
-    "rolled oats": {
-      "grams_per_cup": {
-        "value": 80.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 173904
-    },
-    "sake": {
-      "grams_per_cup": {
-        "value": 240.0,
-        "source": "Not in USDA; rice wine with ~15% alcohol and residual sugars, comparable to mirin/water densities"
-      },
-      "fdc_id": 167723
-    },
-    "sea salt": {
-      "fdc_id": 173468,
-      "grams_per_cup": {
-        "none": "Crystal size varies too much between sea salts to convert volume to weight."
-      }
-    },
-    "sour cream": {
-      "grams_per_cup": {
-        "value": 242.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 171257
-    },
-    "vegetable oil": {
-      "grams_per_cup": {
-        "value": 218.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 172370
-    },
-    "whole wheat flour": {
-      "grams_per_cup": {
-        "value": 120.0,
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values"
-      },
-      "fdc_id": 168893
-    }
-  },
   "aliases": {
     "active dry yeast": "leavening agents, yeast, baker's, active dry",
     "all purpose flour": "all-purpose flour",
@@ -294,6 +22,7 @@
     "chicken": null,
     "chicken stock": "chicken broth",
     "chili powder": "spices, chili powder",
+    "chopped ginger": "ginger root, raw",
     "chunky peanut butter": "peanut butter, chunk style, with salt",
     "cider vinegar": "vinegar, cider",
     "cilantro": "coriander (cilantro) leaves",
@@ -342,6 +71,8 @@
     "garlic powder": "spices, garlic powder",
     "ginger": "spices, ginger, ground",
     "golden raisins": "raisins, golden, seedless",
+    "grated ginger": "ginger root, raw",
+    "grated nutmeg": "spices, nutmeg, ground",
     "grated parmesan": "cheese, parmesan, grated",
     "grated parmesan cheese": "cheese, parmesan, grated",
     "greek yogurt": "yogurt, plain, skim milk",
@@ -371,6 +102,7 @@
     "low-sodium chicken broth": "chicken broth",
     "low-sodium soy sauce": "soy sauce made from soy and wheat (shoyu), low sodium",
     "mayo": "mayonnaise",
+    "minced ginger": "ginger root, raw",
     "mustard": "mustard, prepared, yellow",
     "natural cocoa powder": "cocoa powder",
     "nutmeg": "spices, nutmeg, ground",
@@ -449,6 +181,278 @@
     "yellow mustard": "mustard, prepared, yellow",
     "yellow onion": "onions",
     "yogurt": null
+  },
+  "entries": {
+    "all-purpose flour": {
+      "fdc_id": 168936,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 125.0
+      }
+    },
+    "almond extract": {
+      "grams_per_cup": {
+        "source": "Not in USDA; comparable to vanilla extract (USDA FDC 173471: 208g/cup), both are alcohol-based extracts",
+        "url": "https://fdc.nal.usda.gov/food-details/173471/nutrients",
+        "value": 208.0
+      }
+    },
+    "almond flour": {
+      "fdc_id": 170568,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 96.0
+      }
+    },
+    "black pepper": {
+      "fdc_id": 170931,
+      "grams_per_cup": {
+        "none": "Grind size changes the weight of a volume of pepper too much to convert."
+      }
+    },
+    "bread flour": {
+      "fdc_id": 168896,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 127.0
+      }
+    },
+    "brown sugar": {
+      "fdc_id": 168833,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 220.0
+      }
+    },
+    "butter": {
+      "fdc_id": 173430,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 227.0
+      }
+    },
+    "cake flour": {
+      "fdc_id": 169723,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 114.0
+      }
+    },
+    "chicken broth": {
+      "fdc_id": 174536,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 174536: Soup, chicken broth, ready-to-serve, 249g/cup",
+        "url": "https://fdc.nal.usda.gov/food-details/174536/nutrients",
+        "value": 249.0
+      }
+    },
+    "cocoa powder": {
+      "fdc_id": 169593,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 86.0
+      }
+    },
+    "coconut flour": {
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 112.0
+      }
+    },
+    "coconut oil": {
+      "fdc_id": 171412,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 218.0
+      }
+    },
+    "cornstarch": {
+      "fdc_id": 169698,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 128.0
+      }
+    },
+    "cream cheese": {
+      "fdc_id": 173418,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 232.0
+      }
+    },
+    "diamond crystal kosher salt": {
+      "fdc_id": 173468,
+      "grams_per_cup": {
+        "source": "Serious Eats",
+        "url": "https://www.seriouseats.com/ask-the-food-lab-do-i-need-to-use-kosher-salt",
+        "value": 137.0
+      }
+    },
+    "dried oregano": {
+      "fdc_id": 171328,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 171328: Spices, oregano, dried, 1.0g/tsp leaves x 48",
+        "url": "https://fdc.nal.usda.gov/food-details/171328/nutrients",
+        "value": 48.0
+      }
+    },
+    "dry white wine": {
+      "fdc_id": 174837,
+      "grams_per_cup": {
+        "source": "Not in USDA; wine is mostly water (~88%) with ~12% alcohol (density 0.789), estimated ~236g/cup",
+        "value": 236.0
+      }
+    },
+    "fish sauce": {
+      "fdc_id": 174531,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 174531: Sauce, fish, ready-to-serve, 18g/tbsp x 16",
+        "url": "https://fdc.nal.usda.gov/food-details/174531/nutrients",
+        "value": 288.0
+      }
+    },
+    "granulated sugar": {
+      "fdc_id": 169655,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 200.0
+      }
+    },
+    "ground cumin": {
+      "fdc_id": 170923,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 170923: Spices, cumin seed, 6.0g/tbsp x 16",
+        "url": "https://fdc.nal.usda.gov/food-details/170923/nutrients",
+        "value": 96.0
+      }
+    },
+    "heavy cream": {
+      "fdc_id": 170859,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 238.0
+      }
+    },
+    "honey": {
+      "fdc_id": 169640,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 340.0
+      }
+    },
+    "light corn syrup": {
+      "fdc_id": 168837,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 168837: Syrups, corn, light, 341g/cup",
+        "url": "https://fdc.nal.usda.gov/food-details/168837/nutrients",
+        "value": 341.0
+      }
+    },
+    "maple syrup": {
+      "fdc_id": 169661,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 315.0
+      }
+    },
+    "mayonnaise": {
+      "fdc_id": 171009,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168025/nutrients",
+        "value": 220.0
+      }
+    },
+    "milk": {
+      "fdc_id": 171265,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 245.0
+      }
+    },
+    "mirin": {
+      "grams_per_cup": {
+        "source": "Not in USDA; rice wine with sugar, comparable to sweetened water/broth densities (~240g/cup)",
+        "value": 240.0
+      }
+    },
+    "olive oil": {
+      "fdc_id": 171413,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 216.0
+      }
+    },
+    "oyster sauce": {
+      "fdc_id": 174529,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 174529: Sauce, oyster, ready-to-serve, 18g/tbsp x 16",
+        "url": "https://fdc.nal.usda.gov/food-details/174529/nutrients",
+        "value": 288.0
+      }
+    },
+    "peanut butter": {
+      "fdc_id": 174266,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 258.0
+      }
+    },
+    "powdered sugar": {
+      "fdc_id": 169656,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 120.0
+      }
+    },
+    "rice vinegar": {
+      "fdc_id": 172237,
+      "grams_per_cup": {
+        "source": "Comparable to USDA vinegar entries (cider 239, red wine 239, distilled 238)",
+        "value": 239.0
+      }
+    },
+    "rolled oats": {
+      "fdc_id": 173904,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 80.0
+      }
+    },
+    "sake": {
+      "fdc_id": 167723,
+      "grams_per_cup": {
+        "source": "Not in USDA; rice wine with ~15% alcohol and residual sugars, comparable to mirin/water densities",
+        "value": 240.0
+      }
+    },
+    "sea salt": {
+      "fdc_id": 173468,
+      "grams_per_cup": {
+        "none": "Crystal size varies too much between sea salts to convert volume to weight."
+      }
+    },
+    "sour cream": {
+      "fdc_id": 171257,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 242.0
+      }
+    },
+    "vegetable oil": {
+      "fdc_id": 172370,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 218.0
+      }
+    },
+    "whole wheat flour": {
+      "fdc_id": 168893,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 120.0
+      }
+    }
   },
   "rewrites": {
     "salt": "kosher salt"

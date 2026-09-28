@@ -14,9 +14,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60510 | 29263/60510 (48.4%) | 22866/60510 (37.8%) | 22/5408 (0.4%) | n/a (no servings) | 22027/37166 (59.3%) | 59382/60510 (98.1%) |
-| Paprika fixtures | 462 | 5377 | 2215/5377 (41.2%) | 1583/5377 (29.4%) | 1/462 (0.2%) | n/a (no servings) | 1480/2881 (51.4%) | 5284/5377 (98.3%) |
-| Pipeline snapshots | 445 | 5177 | 2178/5177 (42.1%) | 1586/5177 (30.6%) | 1/445 (0.2%) | 0/445 (0.0%) | 1479/2842 (52.0%) | 5120/5177 (98.9%) |
+| Pipeline fixtures | 5408 | 60510 | 31461/60510 (52.0%) | 24344/60510 (40.2%) | 29/5408 (0.5%) | n/a (no servings) | 23386/37166 (62.9%) | 59382/60510 (98.1%) |
+| Paprika fixtures | 462 | 5377 | 2481/5377 (46.1%) | 1745/5377 (32.5%) | 2/462 (0.4%) | n/a (no servings) | 1630/2881 (56.6%) | 5284/5377 (98.3%) |
+| Pipeline snapshots | 445 | 5177 | 2439/5177 (47.1%) | 1745/5177 (33.7%) | 2/445 (0.4%) | 1/445 (0.2%) | 1625/2842 (57.2%) | 5120/5177 (98.9%) |
 
 ## Pipeline fixtures
 
@@ -24,19 +24,19 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Reason | Lines | Share of lines |
 | --- | ---: | ---: |
-| Ambiguous ingredient | 41 | 0.1% |
-| Missing density for this food | 951 | 1.6% |
-| Missing quantity | 1365 | 2.3% |
-| No supported nutrition match | 31206 | 51.6% |
-| Unsupported or missing quantity | 264 | 0.4% |
-| Unsupported quantity unit | 3817 | 6.3% |
+| Ambiguous ingredient | 82 | 0.1% |
+| Missing density for this food | 1173 | 1.9% |
+| Missing quantity | 1601 | 2.6% |
+| No supported nutrition match | 28967 | 47.9% |
+| Unsupported or missing quantity | 281 | 0.5% |
+| Unsupported quantity unit | 4062 | 6.7% |
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 14256 | `eca082ebeb64` |
-| Density | 6274 | `85dcb09319ed` |
+| Nutrition (all failures) | 13730 | `0c609421bd4f` |
+| Density | 5748 | `2e1a9e6298b9` |
 | Shopping category | 750 | `768022b1be6e` |
 
 ## Paprika fixtures
@@ -45,19 +45,19 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Reason | Lines | Share of lines |
 | --- | ---: | ---: |
-| Ambiguous ingredient | 6 | 0.1% |
-| Missing density for this food | 82 | 1.5% |
-| Missing quantity | 214 | 4.0% |
-| No supported nutrition match | 3156 | 58.7% |
-| Unsupported or missing quantity | 23 | 0.4% |
-| Unsupported quantity unit | 313 | 5.8% |
+| Ambiguous ingredient | 10 | 0.2% |
+| Missing density for this food | 109 | 2.0% |
+| Missing quantity | 247 | 4.6% |
+| No supported nutrition match | 2886 | 53.7% |
+| Unsupported or missing quantity | 29 | 0.5% |
+| Unsupported quantity unit | 351 | 6.5% |
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 2331 | `53e740b231a3` |
-| Density | 988 | `b9058e550ee5` |
+| Nutrition (all failures) | 2231 | `eaea6668aaea` |
+| Density | 890 | `3a3bbfc1a445` |
 | Shopping category | 83 | `5d1db47b2752` |
 
 ## Pipeline snapshots
@@ -66,19 +66,19 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Reason | Lines | Share of lines |
 | --- | ---: | ---: |
-| Ambiguous ingredient | 4 | 0.1% |
-| Missing density for this food | 73 | 1.4% |
-| Missing quantity | 200 | 3.9% |
-| No supported nutrition match | 2995 | 57.9% |
-| Unsupported or missing quantity | 21 | 0.4% |
-| Unsupported quantity unit | 298 | 5.8% |
+| Ambiguous ingredient | 6 | 0.1% |
+| Missing density for this food | 98 | 1.9% |
+| Missing quantity | 232 | 4.5% |
+| No supported nutrition match | 2732 | 52.8% |
+| Unsupported or missing quantity | 27 | 0.5% |
+| Unsupported quantity unit | 337 | 6.5% |
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 2192 | `1c0433abecd4` |
-| Density | 956 | `c365045c4ecd` |
+| Nutrition (all failures) | 2093 | `345e4aa7c943` |
+| Density | 861 | `4c16f6576c4c` |
 | Shopping category | 52 | `ed20012f6093` |
 
 ## Shopping-list corpus
@@ -88,12 +88,12 @@ Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`).
 | Metric | Distinct items | Usage-weighted |
 | --- | ---: | ---: |
 | Items | 280 | 424 |
-| Nutrition name recognized | 53/280 (18.9%) | 101/424 (23.8%) |
+| Nutrition name recognized | 63/280 (22.5%) | 111/424 (26.2%) |
 | Categorized (not "Other") | 277/280 (98.9%) | 421/424 (99.3%) |
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition | 219 | `d2f9c799d188` |
+| Nutrition | 209 | `eed8c1b317d4` |
 | Shopping category | 3 | `65911683b3db` |
