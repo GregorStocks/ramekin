@@ -46,7 +46,6 @@ final class RecipeFormViewModel: ObservableObject {
     @Published var error: String?
     @Published var selectedPhotoItems: [PhotosPickerItem] = []
     @Published var isUploadingPhoto = false
-    @Published var newSectionName = ""
     @Published var recipeText = ""
     @Published var rawIngredients = ""
     @Published var draft: PrepareTextRecipeResponse?
@@ -103,20 +102,77 @@ extension RecipeFormViewModel {
         await loadAvailableTags()
     }
 
-    func addSection() {
-        let name = newSectionName.trimmingCharacters(in: .whitespaces)
-        if !name.isEmpty {
-            formData.ingredients.append(.empty(section: name))
-            newSectionName = ""
-        }
+    /// Append a blank section heading with one empty ingredient under it and
+    /// return the heading's id so the view can focus it.
+    func addSection() -> UUID {
+        let heading = IngredientEditorRow.newSection("")
+        formData.ingredientRows.append(heading)
+        formData.ingredientRows.append(.ingredient(.empty()))
+        return heading.id
     }
 
     func addIngredient() {
-        formData.ingredients.append(.empty(section: formData.ingredients.last?.section ?? ""))
+        formData.ingredientRows.append(.ingredient(.empty()))
     }
 
-    func removeIngredient(at index: Int) {
-        formData.ingredients.remove(at: index)
+    func addIngredient(toSectionWithId sectionId: UUID) {
+        guard let sectionIndex = formData.ingredientRows.firstIndex(where: { $0.id == sectionId }) else {
+            preconditionFailure("No section row with id \(sectionId)")
+        }
+        let end = ingredientSectionEndIndex(formData.ingredientRows, sectionIndex: sectionIndex)
+        formData.ingredientRows.insert(.ingredient(.empty()), at: end)
+    }
+
+    /// Remove an ingredient, or a section heading. Removing a heading keeps its
+    /// ingredients; they join the section above.
+    func removeIngredientRow(id: UUID) {
+        formData.ingredientRows.removeAll { $0.id == id }
+    }
+
+    func moveIngredientRows(from source: IndexSet, to destination: Int) {
+        formData.ingredientRows.move(fromOffsets: source, toOffset: destination)
+    }
+
+    // Row bindings look rows up by id rather than index: SwiftUI can still read
+    // a row's binding for a moment after the row is removed or moved. Such a read
+    // gets the row's last rendered value, and a write to a removed row is dropped.
+
+    func sectionNameBinding(id: UUID, rendered: String) -> Binding<String> {
+        Binding(
+            get: { [weak self] in
+                guard let row = self?.ingredientRow(id: id), case .section(_, let name) = row else {
+                    return rendered
+                }
+                return name
+            },
+            set: { [weak self] newValue in
+                guard let self, let index = self.ingredientRowIndex(id: id) else { return }
+                self.formData.ingredientRows[index] = .section(id: id, name: newValue)
+            }
+        )
+    }
+
+    func ingredientBinding(id: UUID, rendered: EditableIngredient) -> Binding<EditableIngredient> {
+        Binding(
+            get: { [weak self] in
+                guard let row = self?.ingredientRow(id: id), case .ingredient(let ingredient) = row else {
+                    return rendered
+                }
+                return ingredient
+            },
+            set: { [weak self] newValue in
+                guard let self, let index = self.ingredientRowIndex(id: id) else { return }
+                self.formData.ingredientRows[index] = .ingredient(newValue)
+            }
+        )
+    }
+
+    private func ingredientRowIndex(id: UUID) -> Int? {
+        formData.ingredientRows.firstIndex { $0.id == id }
+    }
+
+    private func ingredientRow(id: UUID) -> IngredientEditorRow? {
+        ingredientRowIndex(id: id).map { formData.ingredientRows[$0] }
     }
 
     func removePhoto(id photoId: UUID) {
@@ -236,18 +292,6 @@ extension RecipeFormViewModel {
             }
         }
         isUploadingPhoto = false
-    }
-
-    func moveIngredients(
-        in group: IngredientGroup,
-        from source: IndexSet,
-        to destination: Int
-    ) {
-        var groupItems = group.indices.map { formData.ingredients[$0] }
-        groupItems.move(fromOffsets: source, toOffset: destination)
-        for (offset, globalIdx) in group.indices.enumerated() {
-            formData.ingredients[globalIdx] = groupItems[offset]
-        }
     }
 }
 

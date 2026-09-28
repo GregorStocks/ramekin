@@ -94,13 +94,13 @@ final class RecipeFormViewModelTests: XCTestCase {
         )
         viewModel.formData.title = "Cake"
         viewModel.formData.instructions = "Mix and bake"
-        viewModel.formData.ingredients = [
-            EditableIngredient(
+        viewModel.formData.ingredientRows = [
+            .newSection("Batter"),
+            .ingredient(EditableIngredient(
                 item: "Flour",
                 measurements: [EditableMeasurement(amount: "2", unit: "cups")],
-                note: "",
-                section: "Batter"
-            )
+                note: ""
+            ))
         ]
 
         let didSave = await viewModel.save()

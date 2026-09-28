@@ -15,7 +15,7 @@ struct RecipeFormData {
     var tags: [String] = []
     var notes: String = ""
     var nutritionalInfo: String = ""
-    var ingredients: [EditableIngredient] = [.empty()]
+    var ingredientRows: [IngredientEditorRow] = [.ingredient(.empty())]
     var photoIds: [UUID] = []
     var expectedVersionId: UUID?
 
@@ -36,7 +36,7 @@ struct RecipeFormData {
         tags = content.tags ?? []
         notes = content.notes ?? ""
         nutritionalInfo = content.nutritionalInfo ?? ""
-        ingredients = content.ingredients.map { EditableIngredient.from($0) }
+        ingredientRows = ingredientEditorRows(from: content.ingredients)
     }
 
     init(
@@ -54,7 +54,7 @@ struct RecipeFormData {
         tags: [String],
         notes: String,
         nutritionalInfo: String,
-        ingredients: [EditableIngredient],
+        ingredientRows: [IngredientEditorRow],
         photoIds: [UUID],
         expectedVersionId: UUID? = nil
     ) {
@@ -72,7 +72,7 @@ struct RecipeFormData {
         self.tags = tags
         self.notes = notes
         self.nutritionalInfo = nutritionalInfo
-        self.ingredients = ingredients
+        self.ingredientRows = ingredientRows
         self.photoIds = photoIds
         self.expectedVersionId = expectedVersionId
     }
@@ -94,15 +94,14 @@ struct RecipeFormData {
         nutritionalInfo = recipe.nutritionalInfo ?? ""
         photoIds = recipe.photoIds
         expectedVersionId = recipe.versionId
-        ingredients = recipe.ingredients.isEmpty
-            ? [.empty()]
-            : recipe.ingredients.map { EditableIngredient.from($0) }
+        ingredientRows = recipe.ingredients.isEmpty
+            ? [.ingredient(.empty())]
+            : ingredientEditorRows(from: recipe.ingredients)
     }
 
     private var validIngredients: [Ingredient] {
-        ingredients
+        ingredients(from: ingredientRows)
             .filter { !$0.item.trimmingCharacters(in: .whitespaces).isEmpty }
-            .map { $0.toIngredient() }
     }
 
     func makeCreateRequest() -> CreateRecipeRequest {

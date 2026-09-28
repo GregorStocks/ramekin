@@ -28,7 +28,7 @@ final class IngredientRowViewSupportTests: XCTestCase {
             )
         )
 
-        let ingredient = EditableIngredient.empty().toIngredient()
+        let ingredient = EditableIngredient.empty().toIngredient(section: nil)
         XCTAssertNil(ingredient.note)
     }
 
@@ -51,9 +51,8 @@ final class IngredientRowViewSupportTests: XCTestCase {
         let ingredient = EditableIngredient(
             item: "flour",
             measurements: [EditableMeasurement(amount: "1", unit: "cup")],
-            note: "",
-            section: ""
-        ).toIngredient()
+            note: ""
+        ).toIngredient(section: nil)
         XCTAssertNil(ingredient.note)
     }
 
@@ -76,9 +75,8 @@ final class IngredientRowViewSupportTests: XCTestCase {
         let ingredient = EditableIngredient(
             item: "flour",
             measurements: [EditableMeasurement(amount: "1", unit: "cup")],
-            note: "sifted",
-            section: ""
-        ).toIngredient()
+            note: "sifted"
+        ).toIngredient(section: nil)
         XCTAssertEqual(ingredient.note, "sifted")
     }
 }

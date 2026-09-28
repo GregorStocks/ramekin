@@ -1,0 +1,179 @@
+{
+  "fromIngredients": [
+    {
+      "name": "no sections",
+      "ingredients": [
+        { "item": "salt", "measurements": [] },
+        { "item": "pepper", "measurements": [{ "amount": "1", "unit": "tsp" }] }
+      ],
+      "rows": [
+        { "ingredient": { "item": "salt", "measurements": [] } },
+        {
+          "ingredient": {
+            "item": "pepper",
+            "measurements": [{ "amount": "1", "unit": "tsp" }]
+          }
+        }
+      ]
+    },
+    {
+      "name": "unsectioned lead-in then sections",
+      "ingredients": [
+        { "item": "salt", "measurements": [] },
+        { "item": "flour", "measurements": [], "section": "Batter" },
+        { "item": "milk", "measurements": [], "section": "Batter" },
+        { "item": "sugar", "measurements": [], "section": "Glaze" }
+      ],
+      "rows": [
+        { "ingredient": { "item": "salt", "measurements": [] } },
+        { "section": "Batter" },
+        { "ingredient": { "item": "flour", "measurements": [] } },
+        { "ingredient": { "item": "milk", "measurements": [] } },
+        { "section": "Glaze" },
+        { "ingredient": { "item": "sugar", "measurements": [] } }
+      ]
+    },
+    {
+      "name": "repeated section name that is not contiguous gets two headings",
+      "ingredients": [
+        { "item": "flour", "measurements": [], "section": "Batter" },
+        { "item": "salt", "measurements": [] },
+        { "item": "milk", "measurements": [], "section": "Batter" }
+      ],
+      "rows": [
+        { "section": "Batter" },
+        { "ingredient": { "item": "flour", "measurements": [] } },
+        { "section": "" },
+        { "ingredient": { "item": "salt", "measurements": [] } },
+        { "section": "Batter" },
+        { "ingredient": { "item": "milk", "measurements": [] } }
+      ]
+    },
+    {
+      "name": "section names are trimmed and blank names mean no section",
+      "ingredients": [
+        { "item": "flour", "measurements": [], "section": "  Batter " },
+        { "item": "milk", "measurements": [], "section": "Batter" },
+        { "item": "salt", "measurements": [], "section": "   " }
+      ],
+      "rows": [
+        { "section": "Batter" },
+        { "ingredient": { "item": "flour", "measurements": [] } },
+        { "ingredient": { "item": "milk", "measurements": [] } },
+        { "section": "" },
+        { "ingredient": { "item": "salt", "measurements": [] } }
+      ]
+    },
+    {
+      "name": "notes are kept on the ingredient",
+      "ingredients": [
+        {
+          "item": "butter",
+          "measurements": [{ "amount": "2", "unit": "tbsp" }],
+          "note": "softened",
+          "section": "Frosting"
+        }
+      ],
+      "rows": [
+        { "section": "Frosting" },
+        {
+          "ingredient": {
+            "item": "butter",
+            "measurements": [{ "amount": "2", "unit": "tbsp" }],
+            "note": "softened"
+          }
+        }
+      ]
+    },
+    {
+      "name": "empty list",
+      "ingredients": [],
+      "rows": []
+    }
+  ],
+  "toIngredients": [
+    {
+      "name": "ingredients take the nearest section heading above them",
+      "rows": [
+        { "ingredient": { "item": "salt", "measurements": [] } },
+        { "section": "Batter" },
+        { "ingredient": { "item": "flour", "measurements": [] } },
+        { "section": "Glaze" },
+        { "ingredient": { "item": "sugar", "measurements": [] } }
+      ],
+      "ingredients": [
+        { "item": "salt", "measurements": [] },
+        { "item": "flour", "measurements": [], "section": "Batter" },
+        { "item": "sugar", "measurements": [], "section": "Glaze" }
+      ]
+    },
+    {
+      "name": "empty sections are dropped",
+      "rows": [
+        { "section": "Batter" },
+        { "section": "Glaze" },
+        { "ingredient": { "item": "sugar", "measurements": [] } },
+        { "section": "Garnish" }
+      ],
+      "ingredients": [
+        { "item": "sugar", "measurements": [], "section": "Glaze" }
+      ]
+    },
+    {
+      "name": "section heading names are trimmed",
+      "rows": [
+        { "section": "  Batter  " },
+        { "ingredient": { "item": "flour", "measurements": [] } }
+      ],
+      "ingredients": [
+        { "item": "flour", "measurements": [], "section": "Batter" }
+      ]
+    },
+    {
+      "name": "blank heading ends the previous section",
+      "rows": [
+        { "section": "Batter" },
+        { "ingredient": { "item": "flour", "measurements": [] } },
+        { "section": " " },
+        { "ingredient": { "item": "salt", "measurements": [] } }
+      ],
+      "ingredients": [
+        { "item": "flour", "measurements": [], "section": "Batter" },
+        { "item": "salt", "measurements": [] }
+      ]
+    },
+    {
+      "name": "removing a heading merges its ingredients into the section above",
+      "rows": [
+        { "section": "Batter" },
+        { "ingredient": { "item": "flour", "measurements": [] } },
+        { "ingredient": { "item": "milk", "measurements": [] } }
+      ],
+      "ingredients": [
+        { "item": "flour", "measurements": [], "section": "Batter" },
+        { "item": "milk", "measurements": [], "section": "Batter" }
+      ]
+    },
+    {
+      "name": "notes survive flattening",
+      "rows": [
+        { "section": "Frosting" },
+        {
+          "ingredient": {
+            "item": "butter",
+            "measurements": [{ "amount": "2", "unit": "tbsp" }],
+            "note": "softened"
+          }
+        }
+      ],
+      "ingredients": [
+        {
+          "item": "butter",
+          "measurements": [{ "amount": "2", "unit": "tbsp" }],
+          "note": "softened",
+          "section": "Frosting"
+        }
+      ]
+    }
+  ]
+}

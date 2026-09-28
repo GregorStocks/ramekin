@@ -20,19 +20,6 @@ final class IngredientSectionGroupingTests: XCTestCase {
         )
     }
 
-    func testEditableIngredientGroupingMapsSectionsToIndices() {
-        let groups = groupIngredientsBySection([
-            EditableIngredient.empty(section: ""),
-            EditableIngredient.empty(section: ""),
-            EditableIngredient.empty(section: "Sauce"),
-            EditableIngredient.empty(section: "Sauce"),
-            EditableIngredient.empty(section: "")
-        ])
-
-        XCTAssertEqual(groups.map(\.section), ["", "Sauce", ""])
-        XCTAssertEqual(groups.map(\.indices), [[0, 1], [2, 3], [4]])
-    }
-
     func testRecipeDetailGroupingReturnsGroupedIngredients() {
         let view = RecipeDetailView(recipeId: UUID())
         let ingredients = [
