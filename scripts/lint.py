@@ -3,7 +3,7 @@
 Run all linters in parallel.
 
 This script runs:
-- Rust formatters and linters (server, cli, ingredient-density)
+- Rust formatters and linters (server, cli, core)
 - TypeScript formatter and type checker
 - CSS linter (Stylelint)
 - Python formatter and linter
@@ -197,54 +197,6 @@ def lint_rust_core(project_root: Path) -> tuple[str, bool]:
 
     success = fmt_result.returncode == 0 and clippy_result.returncode == 0
     return ("Rust (core)", success)
-
-
-def lint_rust_ingredient_density(project_root: Path) -> tuple[str, bool]:
-    """Lint Rust ingredient-density crate."""
-    crate_dir = project_root / "ingredient-density"
-
-    # Run fmt
-    fmt_result = subprocess.run(
-        ["cargo", "fmt", "--all"],
-        cwd=crate_dir,
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-
-    # Run clippy
-    clippy_result = subprocess.run(
-        [
-            "cargo",
-            "clippy",
-            "--all-targets",
-            "--all-features",
-            "-q",
-            "--",
-            "-D",
-            "warnings",
-            "-D",
-            # Prevent UTF-8 panics from byte-based string slicing
-            "clippy::string_slice",
-        ],
-        cwd=crate_dir,
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-
-    # Print any output
-    if fmt_result.stdout:
-        print(fmt_result.stdout, end="")
-    if fmt_result.stderr:
-        print(fmt_result.stderr, end="", file=sys.stderr)
-    if clippy_result.stdout:
-        print(clippy_result.stdout, end="")
-    if clippy_result.stderr:
-        print(clippy_result.stderr, end="", file=sys.stderr)
-
-    success = fmt_result.returncode == 0 and clippy_result.returncode == 0
-    return ("Rust (ingredient-density)", success)
 
 
 def get_required_ui_paths(ui_dir: Path) -> list[Path]:
@@ -562,7 +514,6 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
             "--json",
             "server/",
             "cli/",
-            "ingredient-density/",
         ],
         cwd=project_root,
         capture_output=True,
@@ -751,10 +702,6 @@ def main() -> None:
         ("Rust (server)", lambda: lint_rust_server(project_root)),
         ("Rust (cli)", lambda: lint_rust_cli(project_root)),
         ("Rust (core)", lambda: lint_rust_core(project_root)),
-        (
-            "Rust (ingredient-density)",
-            lambda: lint_rust_ingredient_density(project_root),
-        ),
         ("TypeScript", lambda: lint_typescript(project_root)),
         ("CSS", lambda: lint_css(project_root)),
         ("Swift", lambda: lint_swift(project_root)),

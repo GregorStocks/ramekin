@@ -1,77 +1,22 @@
-//! Deterministic estimates from a pinned nutrition snapshot. Unknown is never zero.
+//! Deterministic estimates from the ingredient catalog. Unknown is never zero.
 
-use std::collections::BTreeMap;
 use std::sync::LazyLock;
 
 use regex::Regex;
-use serde::Deserialize;
-use sha2::{Digest, Sha256};
 
+use crate::catalog::{self, normalize, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const DATA: &str = include_str!("data.json");
-const ALIASES: &str = include_str!("aliases.json");
-const RULE_VERSION: &str = "calories-v3";
+const RULE_VERSION: &str = "calories-v4";
 
-#[derive(Deserialize)]
+static VERSION: LazyLock<String> =
+    LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
+
+/// The catalog attributes an estimate needs for one matched ingredient.
 struct Food {
-    fdc_id: u32,
-    name: String,
     kcal_per_100g: f64,
     grams_per_cup: Option<f64>,
-}
-
-struct Database {
-    foods: BTreeMap<u32, Food>,
-    names: BTreeMap<String, Vec<u32>>,
-    aliases: BTreeMap<String, Option<u32>>,
-    version: String,
-}
-
-static DATABASE: LazyLock<Database> = LazyLock::new(|| {
-    #[derive(Deserialize)]
-    struct Snapshot {
-        foods: Vec<Food>,
-    }
-    let snapshot: Snapshot = serde_json::from_str(DATA).expect("invalid nutrition snapshot");
-    let aliases: BTreeMap<String, Option<u32>> =
-        serde_json::from_str(ALIASES).expect("invalid nutrition aliases");
-    let mut foods = BTreeMap::new();
-    let mut names: BTreeMap<String, Vec<u32>> = BTreeMap::new();
-    for food in snapshot.foods {
-        assert!(food.kcal_per_100g.is_finite() && food.kcal_per_100g >= 0.0);
-        assert!(food.grams_per_cup.is_none_or(|g| g.is_finite() && g > 0.0));
-        names
-            .entry(normalize(&food.name))
-            .or_default()
-            .push(food.fdc_id);
-        assert!(foods.insert(food.fdc_id, food).is_none());
-    }
-    for (name, id) in &aliases {
-        assert_eq!(*name, normalize(name));
-        assert!(id.is_none_or(|id| foods.contains_key(&id)));
-        assert!(!names.contains_key(name), "alias shadows a USDA food name");
-    }
-    let hash = Sha256::digest(format!("{RULE_VERSION}\n{DATA}\n{ALIASES}"));
-    let hash = hash
-        .iter()
-        .map(|byte| format!("{byte:02x}"))
-        .collect::<String>();
-    Database {
-        foods,
-        names,
-        aliases,
-        version: format!("{RULE_VERSION}-sr2018-{hash}"),
-    }
-});
-
-fn normalize(value: &str) -> String {
-    value
-        .split_whitespace()
-        .collect::<Vec<_>>()
-        .join(" ")
-        .to_lowercase()
 }
 
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -97,21 +42,21 @@ pub struct Estimate {
     pub per_serving_summary: Option<String>,
 }
 
-fn match_food(name: &str) -> Result<&'static Food, &'static str> {
-    let name = normalize(name);
-    let id = if let Some(alias) = DATABASE.aliases.get(&name) {
-        alias.ok_or("Ambiguous ingredient")?
-    } else {
-        let ids = DATABASE
-            .names
-            .get(&name)
-            .ok_or("No supported nutrition match")?;
-        if ids.len() != 1 {
-            return Err("Ambiguous ingredient");
-        }
-        ids[0]
+fn match_food(name: &str) -> Result<Food, &'static str> {
+    let entry = match catalog::resolve(name) {
+        Resolution::Entry { entry, .. } => entry,
+        Resolution::Ambiguous => return Err("Ambiguous ingredient"),
+        Resolution::Unresolved => return Err("No supported nutrition match"),
     };
-    Ok(&DATABASE.foods[&id])
+    let kcal_per_100g = entry
+        .fdc_id
+        .and_then(catalog::food)
+        .and_then(|food| food.kcal_per_100g)
+        .ok_or("No supported nutrition match")?;
+    Ok(Food {
+        kcal_per_100g,
+        grams_per_cup: entry.grams_per_cup,
+    })
 }
 
 /// Strict quantity grammar: decimals, fractions, mixed numbers and bounded ranges.
@@ -205,7 +150,7 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<f64, &'static str> {
         "liter" | "liters" | "litre" | "litres" => "l",
         other => other,
     };
-    let cups = ingredient_density::volume_to_cups(1.0, unit).ok_or("Unsupported quantity unit")?;
+    let cups = catalog::volume_to_cups(1.0, unit).ok_or("Unsupported quantity unit")?;
     Ok(cups * food.grams_per_cup.ok_or("Missing density for this food")?)
 }
 
@@ -251,7 +196,7 @@ fn contribution(ingredient: &ParsedIngredient) -> Result<CalorieRange, &'static 
             reason = "Unsupported or missing quantity";
             continue;
         };
-        let grams = match measurement_grams(amount, unit.as_deref(), food) {
+        let grams = match measurement_grams(amount, unit.as_deref(), &food) {
             Ok(grams) => grams,
             Err(error) => {
                 reason = error;
@@ -350,7 +295,7 @@ pub fn estimate(
         }
     });
     Ok(Estimate {
-        database_version: DATABASE.version.clone(),
+        database_version: VERSION.clone(),
         known_calories: known,
         per_serving_calories: per_serving,
         unknown_ingredients,

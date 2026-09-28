@@ -5,12 +5,12 @@
 //! catalog changes show measurable before/after numbers.
 
 use anyhow::{Context, Result};
+use ramekin_core::catalog::{grams_per_cup, is_volume_unit};
 use ramekin_core::final_recipe::FinalRecipe;
 use ramekin_core::ingredient_categorizer::categorize;
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
 use ramekin_core::nutrition;
 use ramekin_core::types::ParseIngredientsOutput;
-use ramekin_core::volume_to_weight::{find_density, is_volume_unit};
 use serde::Deserialize;
 use sha2::{Digest, Sha256};
 use std::collections::{BTreeMap, HashMap};
@@ -288,7 +288,7 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
                 .any(|m| is_volume_unit(m.unit.as_deref()));
             if has_volume {
                 stats.volume_lines += 1;
-                if find_density(&ingredient.item).is_some() {
+                if grams_per_cup(&ingredient.item).is_some() {
                     stats.density_hits += 1;
                 } else {
                     *stats
@@ -540,7 +540,7 @@ Replays the three ingredient-name matchers over committed corpora:\n\n\
 \"calories computed\" also needs a usable quantity. A recipe is fully estimated when every line \
 has calories computed, and has per-serving calories when it is also fully estimated and its \
 servings parse; only snapshots carry servings.\n\
-- **Density**: `find_density`, over lines with a volume unit.\n\
+- **Density**: `catalog::grams_per_cup`, over lines with a volume unit.\n\
 - **Shopping category**: `categorize`; \"categorized\" means not \"Other\".\n\n\
 A CLI unit test regenerates this file and fails if it is stale. The most frequent unrecognized \
 names change with every catalog edit, so they are written to the uncommitted \

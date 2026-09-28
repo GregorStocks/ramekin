@@ -1,4 +1,4 @@
-"""Offline regression tests for the USDA density regeneration command."""
+"""Offline regression tests for the USDA ingredient catalog import command."""
 
 import hashlib
 import importlib.util
@@ -10,8 +10,8 @@ from pathlib import Path
 import pytest
 
 
-SCRIPT = Path(__file__).resolve().parents[1] / "scripts/usda-import/import_usda.py"
-SPEC = importlib.util.spec_from_file_location("density_import", SCRIPT)
+SCRIPT = Path(__file__).resolve().parents[1] / "scripts/import-catalog.py"
+SPEC = importlib.util.spec_from_file_location("catalog_import", SCRIPT)
 assert SPEC is not None and SPEC.loader is not None
 IMPORTER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(IMPORTER)
@@ -25,6 +25,10 @@ def portion(modifier="cup", amount="1", weight="120", food_id="1", row_id="1"):
         "amount": amount,
         "gram_weight": weight,
     }
+
+
+def energy(food_id="1", kcal="100"):
+    return {"fdc_id": food_id, "nutrient_id": "1008", "amount": kcal}
 
 
 @pytest.mark.parametrize(
@@ -71,42 +75,76 @@ def test_overflow_fails():
         IMPORTER.calculate_grams_per_cup([portion(amount="1e-300", weight="1e300")])
 
 
-def test_generation_selection_and_aliases():
+@pytest.mark.parametrize(
+    ("description", "expected"),
+    [
+        ("Example, raw", "example"),
+        (
+            "Wheat flour, white, all-purpose, enriched, bleached",
+            "wheat flour, white, all-purpose",
+        ),
+        ("Example, dry, raw", "example"),
+        ("Fruit  strips,  RAW", "fruit strips"),
+    ],
+)
+def test_strip_name(description, expected):
+    assert IMPORTER.strip_name(description) == expected
+
+
+def test_generation_records_and_names():
     foods = [
         {"fdc_id": "1", "description": "Example, raw"},
         {"fdc_id": "2", "description": "Example"},
-        {"fdc_id": "3", "description": "Butter, salted"},
-        {"fdc_id": "4", "description": "All-purpose flour"},
+        {"fdc_id": "3", "description": "Butter,  salted"},
+        {"fdc_id": "4", "description": "No density, raw"},
     ]
+    # Portion-table order decides the stripped-name owner among foods with a
+    # density: food 2 appears first, so it owns "example".
     rows = [
-        portion(food_id=str(i), row_id=str(i), weight=str(i * 100)) for i in range(1, 5)
+        portion(food_id="2", row_id="1", weight="200"),
+        portion(food_id="1", row_id="2", weight="100"),
+        portion(food_id="3", row_id="3", weight="300"),
+        portion("piece", food_id="4", row_id="4"),
     ]
-    data = IMPORTER.build_data(foods, rows)
-    assert data["ingredients"]["example"] == 100
-    assert data["ingredients"]["all-purpose flour"] == 125
-    assert data["ingredients"]["butter, salted"] == 300
-    assert data["aliases"]["butter, salted"] == "butter"
-    assert data["aliases"]["ap flour"] == "all-purpose flour"
-    assert list(data["ingredients"]) == sorted(data["ingredients"])
-    assert list(data["aliases"]) == sorted(data["aliases"])
+    nutrients = [energy("1", "10"), energy("2", "20"), energy("3", "717")]
+    data = IMPORTER.build_data(foods, nutrients, rows)
+    records = {record["fdc_id"]: record for record in data["foods"]}
+    assert records[3] == {
+        "fdc_id": 3,
+        "description": "butter, salted",
+        "kcal_per_100g": 717.0,
+        "grams_per_cup": 300.0,
+    }
+    assert records[4]["kcal_per_100g"] is None
+    assert records[4]["grams_per_cup"] is None
+    assert data["names"] == {
+        "butter, salted": 3,
+        "example": 2,
+        "no density": 4,
+    }
+    assert [record["fdc_id"] for record in data["foods"]] == [1, 2, 3, 4]
+    assert list(data["names"]) == sorted(data["names"])
     assert data["archive_sha256"] == IMPORTER.ARCHIVE_SHA256
 
 
 @pytest.mark.parametrize(
-    ("foods", "rows"),
+    ("foods", "nutrients", "rows"),
     [
-        ([], [portion()]),
-        ([{"fdc_id": "1", "description": "Example"}], []),
-        ([{"fdc_id": "1", "description": "Example"}] * 2, [portion()]),
-        ([{"fdc_id": "1", "description": " "}], [portion()]),
-        ([{"fdc_id": "2", "description": "Example"}], [portion()]),
-        ([{"fdc_id": "1", "description": "Example"}], [portion()] * 2),
-        ([{"fdc_id": "1", "description": "Example"}], [portion("piece")]),
+        ([], [], [portion()]),
+        ([{"fdc_id": "1", "description": "Example"}], [], []),
+        ([{"fdc_id": "1", "description": "Example"}] * 2, [], [portion()]),
+        ([{"fdc_id": "1", "description": " "}], [], [portion()]),
+        ([{"fdc_id": "2", "description": "Example"}], [], [portion()]),
+        ([{"fdc_id": "1", "description": "Example"}], [], [portion()] * 2),
+        ([{"fdc_id": "1", "description": "Example"}], [], [portion("piece")]),
+        ([{"fdc_id": "1", "description": "Example"}], [energy("2")], [portion()]),
+        ([{"fdc_id": "1", "description": "Example"}], [energy()] * 2, [portion()]),
+        ([{"fdc_id": "1", "description": "Example"}], [energy(kcal="-1")], [portion()]),
     ],
 )
-def test_invalid_tables_fail(foods, rows):
+def test_invalid_tables_fail(foods, nutrients, rows):
     with pytest.raises(ValueError):
-        IMPORTER.build_data(foods, rows)
+        IMPORTER.build_data(foods, nutrients, rows)
 
 
 def archive_bytes(members):
@@ -120,7 +158,8 @@ def archive_bytes(members):
 def test_cached_regeneration_is_reproducible(tmp_path, monkeypatch):
     contents = archive_bytes(
         {
-            "release/food.csv": '\ufefffdc_id,description\n1,"Example, raw"\n',
+            "release/food.csv": '﻿fdc_id,description\n1,"Example, raw"\n',
+            "release/food_nutrient.csv": "fdc_id,nutrient_id,amount\n1,1008,52\n",
             "release/food_portion.csv": (
                 "id,fdc_id,modifier,amount,gram_weight\n1,1,cup,0.5,60\n"
             ),
@@ -128,7 +167,7 @@ def test_cached_regeneration_is_reproducible(tmp_path, monkeypatch):
     )
     cache = tmp_path / "source.zip"
     cache.write_bytes(contents)
-    output = tmp_path / "density.json"
+    output = tmp_path / "usda.json"
     monkeypatch.setattr(
         IMPORTER, "ARCHIVE_SHA256", hashlib.sha256(contents).hexdigest()
     )
@@ -139,7 +178,16 @@ def test_cached_regeneration_is_reproducible(tmp_path, monkeypatch):
     first = output.read_bytes()
     IMPORTER.main()
     assert output.read_bytes() == first
-    assert json.loads(first)["ingredients"]["example"] == 120
+    data = json.loads(first)
+    assert data["foods"] == [
+        {
+            "fdc_id": 1,
+            "description": "example, raw",
+            "kcal_per_100g": 52.0,
+            "grams_per_cup": 120.0,
+        }
+    ]
+    assert data["names"] == {"example": 1}
     cache.write_bytes(b"corrupt archive")
     with pytest.raises(ValueError, match="checksum mismatch"):
         IMPORTER.main()

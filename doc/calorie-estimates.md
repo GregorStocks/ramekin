@@ -14,30 +14,34 @@ Source: USDA FoodData Central, SR Legacy April 2018, public domain (CC0).
 See https://fdc.nal.usda.gov/download-datasets/ and
 https://fdc.nal.usda.gov/api-guide/. This is the final SR Legacy release.
 
-Run `make nutrition-import`. The importer downloads the fixed USDA CSV archive
-into `.cache/`, then generates `ramekin-core/src/nutrition/data.json`. The output
-records the source URL, archive SHA-256, FDC food IDs, food descriptions, and
-nutrient 1008 (Energy) in kcal per 100 grams of edible food. It is committed so
+Ingredient names are matched by the shared ingredient catalog
+(`ramekin-core/src/catalog/`, see its README), which also drives volume-to-weight
+density. `make catalog-import` downloads the fixed USDA CSV archive into
+`.cache/` and generates `ramekin-core/src/catalog/data/usda.json`. It records the
+source URL, archive SHA-256, FDC food IDs, descriptions, nutrient 1008 (Energy)
+in kcal per 100 grams of edible food, and grams per cup. It is committed so
 runtime estimation needs no network. Re-importing a changed archive fails until
 the source change is explicitly reviewed. No generated data is hand-edited.
 
-Volume conversion uses only a portion explicitly labeled `cup` on the **same FDC
-food record**, normalized by the portion's amount. Portions with zero amounts
-are unusable and excluded. A food has a cup weight only if all usable plain-cup
-records agree. Modified cups, such as `cup, chopped`, are not silently substituted.
-Missing portions produce an explicit unknown. This intentionally avoids the
-density database's broader ingredient rewrites and guesses about preparation.
+Volume conversion uses the matched catalog entry's grams per cup. This is either
+a cited curated value or the USDA food's own cup, tablespoon or teaspoon portions
+(zero-amount rows excluded). An entry without a density produces an explicit
+"Missing density for this food" unknown.
 
 ## Matching and quantities
 
-- Normalize case and whitespace only. Match a reviewed alias in `aliases.json`
-  or a unique exact USDA description. There is no fuzzy matching or modifier
-  stripping. Multiple exact records and explicitly null aliases are ambiguous.
-- Aliases pin specific FDC IDs. For example, all-purpose flour selects unbleached
-  enriched all-purpose flour, whole milk selects 3.25% milkfat with vitamin D,
-  and eggs select raw whole fresh egg. Raw onion and garlic names use raw food
-  records. These are documented generic reference foods, not brand-specific data.
-  Broad names such as yogurt, flour, rice, oil, and milk remain ambiguous.
+- A name resolves through the catalog: case and whitespace normalization,
+  curated aliases, USDA names and descriptions, singular/plural variants, and
+  temperature/preparation modifier stripping. The matched entry's `fdc_id`
+  supplies calories.
+  - An entry with no linked USDA food, such as mirin, is "No supported
+    nutrition match".
+  - Explicitly ambiguous names are "Ambiguous ingredient": cheese, rice, chicken,
+    yogurt, and USDA descriptions shared by several foods.
+- Common broad names use pinned defaults shared with density: sugar → granulated
+  sugar, flour → unbleached enriched all-purpose flour, butter → unsalted butter,
+  oil → vegetable (soybean) oil, milk → whole 3.25% milk, salt → kosher salt
+  (0 kcal). These are generic reference foods, not brand-specific data.
 - Accept nonnegative decimals, fractions, mixed numbers, common Unicode
   fractions, and ordered ranges with hyphen, en dash, em dash, `to`, or `or`.
   Dot and comma decimal separators follow the client scaling contract: `1,5`,
@@ -63,9 +67,10 @@ density database's broader ingredient rewrites and guesses about preparation.
   above 10^15 kcal. A real known zero (e.g. table salt) is distinct from no known
   ingredients, which returns null rather than zero.
 
-The response version hashes the data and aliases together with the calculation
-rule version. Bump the rule version when changing calculation behavior, including
-changes to reused volume constants. Identical inputs and version give identical
+The response version combines the calculation rule version with the catalog
+version (a hash of the catalog data and its resolution rule version). Bump the
+calculation rule version when changing calculation behavior, including changes
+to reused volume constants. Identical inputs and version give identical
 results. Numeric fields retain calculation precision; summaries round exact
 estimates to whole calories and range bounds outward.
 

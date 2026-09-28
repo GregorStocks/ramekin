@@ -1,0 +1,472 @@
+{
+  "aliases": {
+    "active dry yeast": "leavening agents, yeast, baker's, active dry",
+    "all purpose flour": "all-purpose flour",
+    "allspice": "spices, allspice, ground",
+    "ap flour": "all-purpose flour",
+    "apple cider vinegar": "vinegar, cider",
+    "baking powder": "leavening agents, baking powder, double-acting, sodium aluminum sulfate",
+    "baking soda": "leavening agents, baking soda",
+    "balsamic vinegar": "vinegar, balsamic",
+    "beef broth": "soup, beef broth or bouillon canned, ready-to-serve",
+    "bicarbonate of soda": "leavening agents, baking soda",
+    "bleached all-purpose flour": "wheat flour, white, all-purpose, enriched, bleached",
+    "boiling water": "water, bottled, generic",
+    "bread machine yeast": "leavening agents, yeast, baker's, active dry",
+    "buttermilk": "milk, buttermilk, fluid, whole",
+    "canola oil": "vegetable oil",
+    "caster sugar": "granulated sugar",
+    "cayenne": "spices, pepper, red or cayenne",
+    "cayenne pepper": "spices, pepper, red or cayenne",
+    "cheese": null,
+    "chicken": null,
+    "chicken stock": "chicken broth",
+    "chili powder": "spices, chili powder",
+    "chopped ginger": "ginger root, raw",
+    "chunky peanut butter": "peanut butter, chunk style, with salt",
+    "cider vinegar": "vinegar, cider",
+    "cilantro": "coriander (cilantro) leaves",
+    "cinnamon": "spices, cinnamon, ground",
+    "cloves": "spices, cloves, ground",
+    "condensed milk": "milk, canned, condensed, sweetened",
+    "confectioners sugar": "powdered sugar",
+    "confectioners' sugar": "powdered sugar",
+    "corn starch": "cornstarch",
+    "corn syrup": "light corn syrup",
+    "cream of tartar": "leavening agents, cream of tartar",
+    "creamy peanut butter": "peanut butter, smooth style, with salt",
+    "crushed red pepper": "spices, pepper, red or cayenne",
+    "cumin": "ground cumin",
+    "curry powder": "spices, curry powder",
+    "dark brown sugar": "brown sugar",
+    "dijon mustard": "mustard, prepared, yellow",
+    "dill weed": "spices, dill weed, dried",
+    "distilled white vinegar": "vinegar, distilled",
+    "double cream": "heavy cream",
+    "dried dill": "spices, dill weed, dried",
+    "dried parsley": "spices, parsley, dried",
+    "dried rosemary": "spices, rosemary, dried",
+    "dried sage": "spices, sage, ground",
+    "dry yeast": "leavening agents, yeast, baker's, active dry",
+    "dutch process cocoa powder": "cocoa powder",
+    "egg": "egg, whole, raw, fresh",
+    "eggs": "egg, whole, raw, fresh",
+    "evaporated milk": "milk, canned, evaporated, with added vitamin a",
+    "extra virgin olive oil": "olive oil",
+    "extra-virgin olive oil": "olive oil",
+    "fine salt": "sea salt",
+    "finely grated parmesan": "cheese, parmesan, grated",
+    "finely grated parmesan cheese": "cheese, parmesan, grated",
+    "finely shredded parmesan cheese": "cheese, parmesan, shredded",
+    "flour": "all-purpose flour",
+    "fresh cilantro": "coriander (cilantro) leaves",
+    "fresh ginger": "ginger root",
+    "fresh lemon juice": "lemon juice",
+    "fresh lime juice": "lime juice",
+    "freshly grated parmesan": "cheese, parmesan, grated",
+    "freshly grated parmesan cheese": "cheese, parmesan, grated",
+    "freshly ground black pepper": "black pepper",
+    "freshly squeezed lemon juice": "lemon juice",
+    "garlic powder": "spices, garlic powder",
+    "ginger": "spices, ginger, ground",
+    "golden raisins": "raisins, golden, seedless",
+    "grated ginger": "ginger root, raw",
+    "grated nutmeg": "spices, nutmeg, ground",
+    "grated parmesan": "cheese, parmesan, grated",
+    "grated parmesan cheese": "cheese, parmesan, grated",
+    "ground allspice": "spices, allspice, ground",
+    "ground black pepper": "black pepper",
+    "ground cayenne": "spices, pepper, red or cayenne",
+    "ground cinnamon": "spices, cinnamon, ground",
+    "ground cloves": "spices, cloves, ground",
+    "ground ginger": "spices, ginger, ground",
+    "ground nutmeg": "spices, nutmeg, ground",
+    "ground pepper": "black pepper",
+    "ground turmeric": "spices, turmeric, ground",
+    "half and half": "cream, fluid, half and half",
+    "half-and-half": "cream, fluid, half and half",
+    "heavy whipping cream": "heavy cream",
+    "hellmann's": "mayonnaise",
+    "hoisin sauce": "sauce, hoisin, ready-to-serve",
+    "hot water": "water, bottled, generic",
+    "ice water": "water, bottled, generic",
+    "icing sugar": "powdered sugar",
+    "instant dry yeast": "leavening agents, yeast, baker's, active dry",
+    "instant yeast": "leavening agents, yeast, baker's, active dry",
+    "japanese soy sauce (koikuchi shoyu)": "soy sauce made from soy and wheat (shoyu)",
+    "ketchup": "catsup",
+    "kosher salt": "diamond crystal kosher salt",
+    "light brown sugar": "brown sugar",
+    "low-sodium chicken broth": "chicken broth",
+    "low-sodium soy sauce": "soy sauce made from soy and wheat (shoyu), low sodium",
+    "mayo": "mayonnaise",
+    "minced ginger": "ginger root, raw",
+    "mustard": "mustard, prepared, yellow",
+    "natural cocoa powder": "cocoa powder",
+    "nutmeg": "spices, nutmeg, ground",
+    "oil": "vegetable oil",
+    "old fashioned oats": "rolled oats",
+    "old-fashioned oats": "rolled oats",
+    "onion": "onions, raw",
+    "onion powder": "spices, onion powder",
+    "orange juice": "orange juice, chilled, includes from concentrate",
+    "oregano": "dried oregano",
+    "packed brown sugar": "brown sugar",
+    "paprika": "spices, paprika",
+    "pepper": "black pepper",
+    "pine nuts": "nuts, pine nuts, dried",
+    "plain flour": "all-purpose flour",
+    "plain low fat yogurt": "yogurt, plain, low fat",
+    "plain whole milk yogurt": "yogurt, plain, whole milk",
+    "plain yogurt": "yogurt, plain, whole milk",
+    "prepared mustard": "mustard, prepared, yellow",
+    "pumpkin pie spice": "spices, pumpkin pie spice",
+    "pure maple syrup": "maple syrup",
+    "pure vanilla extract": "vanilla extract",
+    "raisins": "raisins, dark, seedless",
+    "rapid-rise yeast": "leavening agents, yeast, baker's, active dry",
+    "raw egg": "egg, whole, raw, fresh",
+    "raw eggs": "egg, whole, raw, fresh",
+    "raw garlic": "garlic, raw",
+    "raw onion": "onions, raw",
+    "raw onions": "onions, raw",
+    "red onion": "onions",
+    "red pepper flakes": "spices, pepper, red or cayenne",
+    "red wine vinegar": "vinegar, red wine",
+    "rice": null,
+    "rosemary": "spices, rosemary, dried",
+    "sage": "spices, sage, ground",
+    "salt": "diamond crystal kosher salt",
+    "salted butter": "butter, salted",
+    "sesame oil": "oil, sesame, salad or cooking",
+    "sesame seeds": "seeds, sesame seeds, whole, dried",
+    "shaoxing wine": "sake",
+    "shredded mozzarella": "cheese, mozzarella, low moisture, part-skim, shredded",
+    "shredded mozzarella cheese": "cheese, mozzarella, low moisture, part-skim, shredded",
+    "shredded parmesan": "cheese, parmesan, shredded",
+    "shredded parmesan cheese": "cheese, parmesan, shredded",
+    "smoked paprika": "spices, paprika",
+    "smooth peanut butter": "peanut butter, smooth style, with salt",
+    "soy sauce": "soy sauce made from soy and wheat (shoyu)",
+    "spanish onion": "onions",
+    "sugar": "granulated sugar",
+    "sweet onion": "onions",
+    "sweetened condensed milk": "milk, canned, condensed, sweetened",
+    "table salt": "salt, table",
+    "tahini": "seeds, sesame butter, tahini, type of kernels unspecified",
+    "tamari": "soy sauce made from soy (tamari)",
+    "thyme": "thyme, fresh",
+    "toasted sesame oil": "oil, sesame, salad or cooking",
+    "tomato paste": "tomato products, canned, paste, without salt added",
+    "turmeric": "spices, turmeric, ground",
+    "unbleached all-purpose flour": "wheat flour, white, all-purpose, enriched, unbleached",
+    "unsalted butter": "butter",
+    "unsweetened cocoa powder": "cocoa powder",
+    "vanilla": "vanilla extract",
+    "vegetable broth": "soup, vegetable broth, ready to serve",
+    "vidalia onion": "onions",
+    "water": "water, bottled, generic",
+    "whipping cream": "heavy cream",
+    "white flour": "all-purpose flour",
+    "white onion": "onions",
+    "white sugar": "granulated sugar",
+    "white vinegar": "vinegar, distilled",
+    "white wine": "dry white wine",
+    "white wine vinegar": "vinegar, red wine",
+    "whole milk": "milk",
+    "worcestershire sauce": "sauce, worcestershire",
+    "yeast": "leavening agents, yeast, baker's, active dry",
+    "yellow mustard": "mustard, prepared, yellow",
+    "yellow onion": "onions",
+    "yogurt": null
+  },
+  "entries": {
+    "all-purpose flour": {
+      "fdc_id": 168936,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 125.0
+      }
+    },
+    "almond extract": {
+      "grams_per_cup": {
+        "source": "Not in USDA; comparable to vanilla extract (USDA FDC 173471: 208g/cup), both are alcohol-based extracts",
+        "url": "https://fdc.nal.usda.gov/food-details/173471/nutrients",
+        "value": 208.0
+      }
+    },
+    "almond flour": {
+      "fdc_id": 170568,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 96.0
+      }
+    },
+    "black pepper": {
+      "fdc_id": 170931,
+      "grams_per_cup": {
+        "none": "Grind size changes the weight of a volume of pepper too much to convert."
+      }
+    },
+    "bread flour": {
+      "fdc_id": 168896,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 127.0
+      }
+    },
+    "brown sugar": {
+      "fdc_id": 168833,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 220.0
+      }
+    },
+    "butter": {
+      "fdc_id": 173430,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 227.0
+      }
+    },
+    "cake flour": {
+      "fdc_id": 169723,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 114.0
+      }
+    },
+    "chicken broth": {
+      "fdc_id": 174536,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 174536: Soup, chicken broth, ready-to-serve, 249g/cup",
+        "url": "https://fdc.nal.usda.gov/food-details/174536/nutrients",
+        "value": 249.0
+      }
+    },
+    "cocoa powder": {
+      "fdc_id": 169593,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 86.0
+      }
+    },
+    "coconut flour": {
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 112.0
+      }
+    },
+    "coconut oil": {
+      "fdc_id": 171412,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 218.0
+      }
+    },
+    "cornstarch": {
+      "fdc_id": 169698,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 128.0
+      }
+    },
+    "cream cheese": {
+      "fdc_id": 173418,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 232.0
+      }
+    },
+    "diamond crystal kosher salt": {
+      "fdc_id": 173468,
+      "grams_per_cup": {
+        "source": "Serious Eats",
+        "url": "https://www.seriouseats.com/ask-the-food-lab-do-i-need-to-use-kosher-salt",
+        "value": 137.0
+      }
+    },
+    "dried oregano": {
+      "fdc_id": 171328,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 171328: Spices, oregano, dried, 1.0g/tsp leaves x 48",
+        "url": "https://fdc.nal.usda.gov/food-details/171328/nutrients",
+        "value": 48.0
+      }
+    },
+    "dried thyme": {
+      "fdc_id": 170938,
+      "grams_per_cup": {
+        "source": "Approximation carried over from the original density alias to USDA thyme, fresh (FDC 173470, 38.4 g/cup); USDA lists no volume portion for dried thyme (FDC 170938), whose calories apply here.",
+        "value": 38.400000000000006
+      }
+    },
+    "dry white wine": {
+      "fdc_id": 174837,
+      "grams_per_cup": {
+        "source": "Not in USDA; wine is mostly water (~88%) with ~12% alcohol (density 0.789), estimated ~236g/cup",
+        "value": 236.0
+      }
+    },
+    "fish sauce": {
+      "fdc_id": 174531,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 174531: Sauce, fish, ready-to-serve, 18g/tbsp x 16",
+        "url": "https://fdc.nal.usda.gov/food-details/174531/nutrients",
+        "value": 288.0
+      }
+    },
+    "granulated sugar": {
+      "fdc_id": 169655,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 200.0
+      }
+    },
+    "greek yogurt": {
+      "fdc_id": 170894,
+      "grams_per_cup": {
+        "source": "Approximation carried over from the original density alias to USDA yogurt, plain, skim milk; USDA lists no volume portion for plain nonfat Greek yogurt (FDC 170894), whose calories apply here.",
+        "value": 245.0
+      }
+    },
+    "ground cumin": {
+      "fdc_id": 170923,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 170923: Spices, cumin seed, 6.0g/tbsp x 16",
+        "url": "https://fdc.nal.usda.gov/food-details/170923/nutrients",
+        "value": 96.0
+      }
+    },
+    "heavy cream": {
+      "fdc_id": 170859,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 238.0
+      }
+    },
+    "honey": {
+      "fdc_id": 169640,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 340.0
+      }
+    },
+    "light corn syrup": {
+      "fdc_id": 168837,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 168837: Syrups, corn, light, 341g/cup",
+        "url": "https://fdc.nal.usda.gov/food-details/168837/nutrients",
+        "value": 341.0
+      }
+    },
+    "maple syrup": {
+      "fdc_id": 169661,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 315.0
+      }
+    },
+    "mayonnaise": {
+      "fdc_id": 171009,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168025/nutrients",
+        "value": 220.0
+      }
+    },
+    "milk": {
+      "fdc_id": 171265,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 245.0
+      }
+    },
+    "mirin": {
+      "grams_per_cup": {
+        "source": "Not in USDA; rice wine with sugar, comparable to sweetened water/broth densities (~240g/cup)",
+        "value": 240.0
+      }
+    },
+    "olive oil": {
+      "fdc_id": 171413,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 216.0
+      }
+    },
+    "oyster sauce": {
+      "fdc_id": 174529,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central FDC 174529: Sauce, oyster, ready-to-serve, 18g/tbsp x 16",
+        "url": "https://fdc.nal.usda.gov/food-details/174529/nutrients",
+        "value": 288.0
+      }
+    },
+    "peanut butter": {
+      "fdc_id": 174266,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 258.0
+      }
+    },
+    "powdered sugar": {
+      "fdc_id": 169656,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 120.0
+      }
+    },
+    "rice vinegar": {
+      "fdc_id": 172237,
+      "grams_per_cup": {
+        "source": "Comparable to USDA vinegar entries (cider 239, red wine 239, distilled 238)",
+        "value": 239.0
+      }
+    },
+    "rolled oats": {
+      "fdc_id": 173904,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 80.0
+      }
+    },
+    "sake": {
+      "fdc_id": 167723,
+      "grams_per_cup": {
+        "source": "Not in USDA; rice wine with ~15% alcohol and residual sugars, comparable to mirin/water densities",
+        "value": 240.0
+      }
+    },
+    "sea salt": {
+      "fdc_id": 173468,
+      "grams_per_cup": {
+        "none": "Crystal size varies too much between sea salts to convert volume to weight."
+      }
+    },
+    "sour cream": {
+      "fdc_id": 171257,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 242.0
+      }
+    },
+    "vegetable oil": {
+      "fdc_id": 172370,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 218.0
+      }
+    },
+    "whole wheat flour": {
+      "fdc_id": 168893,
+      "grams_per_cup": {
+        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "value": 120.0
+      }
+    }
+  },
+  "rewrites": {
+    "salt": "kosher salt"
+  }
+}

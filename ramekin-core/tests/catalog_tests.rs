@@ -1,0 +1,285 @@
+use ramekin_core::catalog::{food, grams_per_cup, resolve, rewrite, version, Resolution, Via};
+
+fn density(item: &str) -> f64 {
+    grams_per_cup(item).unwrap_or_else(|| panic!("no density for {item:?}"))
+}
+
+/// The USDA food supplying calories for a name.
+fn fdc_id(item: &str) -> Option<u32> {
+    match resolve(item) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    }
+}
+
+fn assert_close(actual: f64, expected: f64) {
+    assert!((actual - expected).abs() < 0.1, "{actual} != {expected}");
+}
+
+#[test]
+fn density_lookup_chain() {
+    // USDA stripped name, curated alias, modifiers, case, plural, unknown.
+    assert!(grams_per_cup("salt, table").is_some());
+    for item in ["flour", "sugar", "butter", "FLOUR", "Butter"] {
+        assert!(grams_per_cup(item).is_some(), "{item}");
+    }
+    assert!(grams_per_cup("softened butter").is_some());
+    assert!(grams_per_cup("melted butter").is_some());
+    assert!(
+        grams_per_cup("onion").is_some(),
+        "plural fallback to onions"
+    );
+    assert_eq!(grams_per_cup("unicorn tears"), None);
+    assert_eq!(grams_per_cup("mystery powder"), None);
+}
+
+#[test]
+fn curated_aliases_have_densities() {
+    for item in [
+        "baking powder",
+        "baking soda",
+        "instant yeast",
+        "rapid-rise yeast",
+        "instant dry yeast",
+        "bread machine yeast",
+        "cinnamon",
+        "ground cinnamon",
+        "garlic powder",
+        "yellow onion",
+        "red onion",
+        "buttermilk",
+        "greek yogurt",
+        "mayo",
+        "mayonnaise",
+        "mustard",
+        "yellow mustard",
+        "dijon mustard",
+        "water",
+        "soy sauce",
+        "ground cumin",
+        "dried oregano",
+        "pure vanilla extract",
+        "Worcestershire sauce",
+        "fresh lemon juice",
+        "tomato paste",
+        "sesame oil",
+        "vanilla",
+        "rice vinegar",
+        "cumin",
+        "oregano",
+        "toasted sesame oil",
+        "apple cider vinegar",
+        "red wine vinegar",
+        "balsamic vinegar",
+        "white vinegar",
+        "white wine vinegar",
+        "tamari",
+        "Japanese soy sauce (koikuchi shoyu)",
+        "all purpose flour",
+        "ketchup",
+        "fresh lime juice",
+        "freshly squeezed lemon juice",
+        "orange juice",
+        "boiling water",
+        "hot water",
+        "ice water",
+        "cider vinegar",
+        "distilled white vinegar",
+        "half and half",
+        "half-and-half",
+        "cilantro",
+        "fresh cilantro",
+        "hoisin sauce",
+        "raisins",
+        "golden raisins",
+        "tahini",
+        "sesame seeds",
+        "pine nuts",
+        "pumpkin pie spice",
+        "freshly grated parmesan",
+        "finely grated parmesan cheese",
+        "finely shredded parmesan cheese",
+        "shredded mozzarella",
+        "shredded mozzarella cheese",
+        "chicken stock",
+        "low-sodium chicken broth",
+        "vegetable broth",
+        "beef broth",
+        "white wine",
+        "Shaoxing wine",
+        "corn syrup",
+    ] {
+        assert!(grams_per_cup(item).is_some(), "{item}");
+    }
+}
+
+#[test]
+fn curated_densities_keep_their_values() {
+    assert_close(density("salt"), 137.0);
+    assert_close(density("kosher salt"), 137.0);
+    assert_close(density("table salt"), 292.0);
+    assert_close(density("fish sauce"), 288.0);
+    assert_close(density("chicken broth"), 249.0);
+    assert_close(density("light corn syrup"), 341.0);
+    assert_close(density("oyster sauce"), 288.0);
+    assert_close(density("mirin"), 240.0);
+    assert_close(density("almond extract"), 208.0);
+    assert_close(density("dry white wine"), 236.0);
+    assert_close(density("sake"), 240.0);
+    assert_close(density("grated parmesan cheese"), 100.0);
+    assert_close(density("shredded parmesan cheese"), 80.0);
+    // Manual baking values override the linked USDA food's density.
+    assert_close(density("all-purpose flour"), 125.0);
+    assert_close(density("butter"), 227.0);
+}
+
+#[test]
+fn some_foods_resolve_without_a_density() {
+    // Grind and crystal size make volume-to-weight unreliable, but the food is
+    // still known for calories.
+    for item in [
+        "sea salt",
+        "fine salt",
+        "black pepper",
+        "ground black pepper",
+        "freshly ground black pepper",
+        "pepper",
+    ] {
+        assert_eq!(grams_per_cup(item), None, "{item}");
+        assert!(fdc_id(item).is_some(), "{item}");
+    }
+}
+
+#[test]
+fn shared_defaults_and_ambiguous_names() {
+    assert_eq!(fdc_id("sugar"), fdc_id("granulated sugar"));
+    assert_eq!(fdc_id("flour"), fdc_id("all-purpose flour"));
+    assert_eq!(fdc_id("butter"), Some(173430), "unsalted butter");
+    assert_eq!(fdc_id("salted butter"), Some(173410));
+    assert_eq!(fdc_id("oil"), fdc_id("vegetable oil"));
+    assert_eq!(fdc_id("milk"), fdc_id("whole milk"));
+    assert_eq!(
+        food(fdc_id("salt").unwrap()).unwrap().kcal_per_100g,
+        Some(0.0)
+    );
+    for item in ["rice", "chicken", "cheese", "yogurt"] {
+        assert!(
+            matches!(resolve(item), Resolution::Ambiguous),
+            "{item} stays ambiguous"
+        );
+        assert_eq!(grams_per_cup(item), None);
+    }
+    // Some foods have no USDA equivalent, so calories stay unknown.
+    assert_eq!(fdc_id("mirin"), None);
+}
+
+#[test]
+fn resolution_reports_how_it_matched() {
+    let via = |item| match resolve(item) {
+        Resolution::Entry { via, .. } => via,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    assert_eq!(via("garlic, raw"), Via::Exact);
+    assert_eq!(
+        via("  Dry   White  Wine "),
+        Via::Exact,
+        "whitespace collapses"
+    );
+    assert_eq!(via("yellow onions"), Via::Plural);
+    assert_eq!(via("room temperature butter"), Via::Modifiers);
+    assert!(matches!(resolve("unicorn tears"), Resolution::Unresolved));
+}
+
+#[test]
+fn rewrites_and_version() {
+    assert_eq!(rewrite("salt"), Some("kosher salt"));
+    assert_eq!(rewrite(" Salt "), Some("kosher salt"));
+    assert_eq!(rewrite("kosher salt"), None);
+    assert_eq!(rewrite("flour"), None);
+    assert!(version().starts_with("catalog-v2-sr2018-"));
+    assert_eq!(version(), version());
+}
+
+#[test]
+fn looser_spellings_resolve_to_the_same_food() {
+    let same = |written: &str, canonical: &str| {
+        assert_eq!(
+            fdc_id(written),
+            fdc_id(canonical),
+            "{written:?} should match {canonical:?}"
+        );
+    };
+    let via = |item| match resolve(item) {
+        Resolution::Entry { via, .. } => via,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+
+    // Trailing clauses are dropped one at a time.
+    same("kosher salt, presumably diamond", "kosher salt");
+    same(
+        "diamond crystal kosher salt; for table salt, use half as much by volume",
+        "kosher salt",
+    );
+    assert_eq!(via("kosher salt, presumably diamond"), Via::Clause);
+    // Leading size/preparation words, including comma-separated runs.
+    same("freshly ground black pepper", "black pepper");
+    same("large eggs", "eggs");
+    same("chopped fresh cilantro", "cilantro");
+    assert_eq!(via("large eggs"), Via::LeadingModifiers);
+    // es/ies plurals.
+    same("strawberry", "strawberries");
+    same("radish", "radishes");
+    assert_eq!(via("strawberry"), Via::Plural);
+}
+
+#[test]
+fn trimming_never_settles_for_a_non_food() {
+    // Cutting at the comma would leave "boneless", which is not a food.
+    assert!(!matches!(
+        resolve("boneless, skinless mystery thighs"),
+        Resolution::Entry { .. }
+    ));
+    // Words that change the food are not stripped.
+    for (written, not) in [("ground beef", "beef"), ("dried apricots", "apricots")] {
+        if let (Resolution::Entry { entry: a, .. }, Resolution::Entry { entry: b, .. }) =
+            (resolve(written), resolve(not))
+        {
+            assert_ne!(a.id, b.id, "{written:?} must not collapse to {not:?}");
+        }
+    }
+    // A stripped name that is ambiguous stays ambiguous.
+    assert!(matches!(resolve("shredded cheese"), Resolution::Ambiguous));
+}
+
+#[test]
+fn fresh_herbs_never_become_dried_spices() {
+    // Stripping one word at a time finds the more specific name first.
+    assert_eq!(fdc_id("grated fresh ginger"), fdc_id("fresh ginger"));
+    assert_eq!(fdc_id("minced ginger"), fdc_id("fresh ginger"));
+    // Dropping "fresh" or "chopped" must not land on the dried/ground spice.
+    for item in ["fresh rosemary", "chopped sage", "fresh oregano"] {
+        assert!(
+            !matches!(resolve(item), Resolution::Entry { .. }),
+            "{item:?} must stay unknown rather than match a dried spice"
+        );
+    }
+    // ...unless the name says so, or a curated alias covers the phrase.
+    assert_eq!(fdc_id("freshly grated nutmeg"), fdc_id("ground nutmeg"));
+    assert_eq!(fdc_id("chopped fresh thyme"), fdc_id("thyme, fresh"));
+}
+
+#[test]
+fn density_approximations_keep_the_real_food_for_calories() {
+    // USDA has no volume portion for dried thyme, so its density borrows fresh
+    // thyme's, but its calories must come from dried thyme.
+    assert_eq!(fdc_id("dried thyme"), Some(170938));
+    assert_close(density("dried thyme"), 38.4);
+    assert_eq!(fdc_id("thyme"), Some(173470));
+    assert_eq!(fdc_id("greek yogurt"), Some(170894));
+    assert_close(density("greek yogurt"), 245.0);
+    // USDA has these foods, so they are not stood in for by chicken broth.
+    assert_eq!(fdc_id("beef broth"), Some(171538));
+    assert_close(density("beef broth"), 240.0);
+    assert_eq!(fdc_id("vegetable broth"), Some(171583));
+    assert_close(density("vegetable broth"), 221.0);
+}

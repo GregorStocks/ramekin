@@ -1262,14 +1262,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "ingredient-density"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "interpolate_name"
 version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1978,7 +1970,6 @@ dependencies = [
  "glob",
  "html-escape",
  "image",
- "ingredient-density",
  "openai-api-rs",
  "pretty_assertions",
  "regex",

@@ -3,10 +3,9 @@
 //! Converts volume measurements (cups, tbsp, tsp, etc.) to grams for
 //! ingredients where we have reliable density data.
 
+use crate::catalog::{grams_per_cup, is_volume_unit, rewrite, volume_to_cups};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::{format_grams, parse_amount};
-pub use ingredient_density::{find_density, is_volume_unit};
-use ingredient_density::{rewrite_ingredient, volume_to_cups};
 
 /// Statistics about volume-to-weight conversion.
 #[derive(Debug, Default, Clone, serde::Serialize, serde::Deserialize)]
@@ -57,7 +56,7 @@ pub fn add_volume_to_weight_alternative(
     };
 
     // Look up density for this ingredient
-    let Some(grams_per_cup) = find_density(&ingredient.item) else {
+    let Some(grams_per_cup) = grams_per_cup(&ingredient.item) else {
         stats.skipped_unknown_ingredient += 1;
         stats.unknown_ingredients.push(ingredient.item.clone());
         return ingredient;
@@ -112,7 +111,7 @@ fn convert_volume_to_grams(amount: &str, unit: &str, grams_per_cup: f64) -> Opti
 /// Rewrites normalize ingredient items before measurement enrichment
 /// (e.g. "salt" -> "kosher salt").
 pub fn apply_ingredient_rewrites(mut ingredient: ParsedIngredient) -> ParsedIngredient {
-    if let Some(rewritten) = rewrite_ingredient(&ingredient.item) {
+    if let Some(rewritten) = rewrite(&ingredient.item) {
         ingredient.item = rewritten.to_string();
     }
     ingredient
