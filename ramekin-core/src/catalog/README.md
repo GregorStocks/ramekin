@@ -3,9 +3,10 @@
 One place that turns a written ingredient name ("softened butter", "Dry  White
 Wine") into a known food. Density lookup (`volume_to_weight.rs`) and calorie
 estimates (`nutrition/`) both go through it, so a name the catalog learns helps
-both. The shopping-list categorizer still uses its own keyword rules
-(`data/ingredients.json`); moving it onto the catalog is the next step of
-`issues/*ingredient-catalog-step1*`.
+both. The shopping-list categorizer (`ingredient_categorizer.rs`) uses an
+entry's catalog `category` when it has one. Until catalog entries carry
+categories (`issues/*ingredient-catalog-step2*`), its keyword rules in
+`data/ingredients.json` remain the fallback.
 
 Coverage of every matcher is tracked in `data/ingredient-catalog-audit.md`
 (`make ingredient-catalog-audit`); a change here should show up there.
@@ -21,6 +22,33 @@ attributes, and either can be missing on purpose:
 So "black pepper" resolves (its calories are known) but has no density, because
 grind size changes the weight of a cup too much. Names that could mean several
 foods ("cheese", "rice", "chicken", "yogurt") are ambiguous for every attribute.
+
+A resolution is one of:
+
+- `Entry`: one food or product.
+  - **Products** (`kind: "product"`) are bought but not eaten: parchment paper,
+    skewers. They carry only a shopping `category`, and calorie estimates skip them.
+- `Compound`: several foods joined by "and", "&" or "and/or" on one line with one
+  amount ("salt and pepper").
+  - This is only tried once the whole name failed, so "half and half" stays one
+    food, and every part must resolve to a specific food.
+  - Density is unknown, since the mixture ratio is unknown.
+  - The shopping category is the first food's.
+- `NotFood`: a leftover section header (any name ending in ":") or a curated
+  `not_food` phrase ("to serve"). Calorie estimates skip these lines.
+- `Ambiguous` / `Unresolved`.
+
+Each entry also has two negligibility attributes, derived from the data:
+
+- **`zero_calorie`:** the linked food has 0 kcal/100 g (salt, water, baking soda).
+  Any line of it is negligible.
+- **`trace_ok`:** the linked food is a USDA "spices, …" food (dried spices, black
+  pepper), or the curated entry sets `trace_ok: true`. A line of it is negligible
+  only when it has no numeric amount ("to taste", no measurement) or a trace unit
+  (pinch, dash). A real amount, like a cup of cumin, counts in full.
+
+A compound line is negligible only if every one of its foods is negligible on
+that line. Otherwise its calories are unknown.
 
 ## Lookup order
 
@@ -50,7 +78,9 @@ Names are lowercased and whitespace is collapsed. Then:
 
 Only a match to a specific food ends the search. Trimming never settles for
 a name that isn't a food ("boneless, skinless …" is never cut to "boneless"),
-and an ambiguous hit still lets a later step find a specific food.
+and an ambiguous hit still lets a later step find a specific food. A trailing
+" to taste" is stripped like the other modifiers. If no single food matches,
+the name is tried as a compound (see above).
 
 ## Data files
 
@@ -97,12 +127,14 @@ are `tests/test_catalog_import.py`.
     "sea salt": {
       "fdc_id": 173468,
       "grams_per_cup": { "none": "Crystal size varies too much ..." }
-    }
+    },
+    "parchment paper": { "kind": "product", "category": "Household" }
   },
   "aliases": {
     "kosher salt": "diamond crystal kosher salt",
     "cheese": null
   },
+  "not_food": { "to serve": "A serving suggestion, not an ingredient." },
   "rewrites": { "salt": "kosher salt" }
 }
 ```
@@ -115,6 +147,12 @@ are `tests/test_catalog_import.py`.
   - Every value needs a `source`.
   - The 23 manual baking values still lack individual citations. See
     `issues/p3-cite-embedded-manual-density-values`.
+  - `category` (one of `ingredient_categorizer::CATEGORIES`) overrides the
+    keyword categorizer.
+  - `trace_ok: true` marks a food commonly listed without an amount, for foods
+    the "spices, …" rule doesn't cover.
+  - `kind: "product"` entries need a `category` and may not have an `fdc_id` or
+    `grams_per_cup`.
 - `aliases` map a name to an entry id, USDA stripped name, or unique USDA
   description. A `null` alias marks a name as ambiguous. An alias decides food
   identity for *every* attribute. When USDA has the food itself, point at it
@@ -123,6 +161,8 @@ are `tests/test_catalog_import.py`.
   explaining it (see "dried thyme", "greek yogurt"). Aliasing to a stand-in
   food is only for foods USDA lacks entirely ("dijon mustard" → yellow mustard,
   "shaoxing wine" → sake), where the stand-in supplies every attribute.
+- `not_food` lists phrases that are not ingredients at all, with the reason.
+  Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
 
 The loader asserts that keys are normalized, targets exist, aliases don't

@@ -74,6 +74,22 @@ to reused volume constants. Identical inputs and version give identical
 results. Numeric fields retain calculation precision; summaries round exact
 estimates to whole calories and range bounds outward.
 
+## Negligible, compound, and non-food lines
+
+Some lines are known without a usable amount (rules in the catalog README):
+
+- **Zero-calorie foods** (salt, water, baking soda) contribute 0 kcal on any line.
+- **Spices** (USDA "spices, …", including black pepper) contribute 0 kcal when
+  the line has no numeric amount ("to taste") or only a pinch or dash. A real
+  amount is computed normally.
+- **Compound lines** ("salt and pepper", one amount for several foods) contribute
+  0 kcal only if every food is negligible on that line. Otherwise they are
+  unknown with "Several ingredients share one amount", because one amount can't
+  be split between foods.
+- **Leftover section headers** (names ending in ":"), serving notes ("to serve")
+  and products such as parchment paper are skipped. They add nothing and are not
+  listed as unknown. A recipe of only such lines is "No ingredients to estimate."
+
 ## Presentation
 
 Complete estimates say “Whole recipe: approximately … calories.” Partial results

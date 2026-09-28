@@ -3,7 +3,7 @@
   "description": "Density-derived gram alternatives ('1 cup flour' -> also '120 g') are materialized into stored ingredients at ingest: ParseIngredientsStep (ramekin-core/src/pipeline/steps/parse_ingredients.rs) runs add_volume_to_weight_alternative before save_recipe, server/src/api/recipes/create.rs runs enrich_ingredient_measurements when a recipe is created without raw_ingredients, and POST /api/enrich returns enriched ingredients that clients save back. \
 Recipe reads return the stored ingredients JSON as-is (server/src/api/recipes/get.rs).\n\
 \n\
-So when the ingredient catalog (p1-ingredient-catalog-step1-unified-resolver and follow-ups) learns a new name or corrects a density, existing recipes never get the new or corrected gram amounts, while calories and shopping categories (computed at read time) do improve immediately. \
+So when the ingredient catalog (ramekin-core/src/catalog/, grown by the ingredient-catalog-step2/3 issues) learns a new name or corrects a density, existing recipes never get the new or corrected gram amounts, while calories and shopping categories (computed at read time) do improve immediately. \
 The same applies to the ingest-time 'salt' -> 'kosher salt' display rewrite (apply_ingredient_rewrites), which mutates the stored item name.\n\
 \n\
 Proposed direction: stop storing density-derived alternatives. \

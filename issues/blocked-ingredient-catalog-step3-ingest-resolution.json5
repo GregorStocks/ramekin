@@ -31,9 +31,9 @@ Needs end-to-end tests with the mock OpenRouter fixture server (make mock-openro
     "ai",
     "api",
   ],
-  "blocked": "Needs p1-ingredient-catalog-step1-unified-resolver merged first (resolve() and catalog ids); ideally also step 2, so the runtime LLM fallback only sees the long tail. \
+  "blocked": "Ideally after step 2 (ingredient-catalog-step2-bulk-classify), so the runtime LLM fallback only sees the long tail. \
 Owner decision also needed: when the write-time LLM call fails (OpenRouter down or invalid response), should the recipe save abort (strict fail-fast), or should resolution run as a visible, retryable job step after the save, like the existing enrich_* steps? \
 A silent fallback to unknown is not an option.",
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T16:22:45-07:00",
+  "updated_at": "2026-09-28T08:44:12-07:00",
 }

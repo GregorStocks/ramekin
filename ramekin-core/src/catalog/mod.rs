@@ -15,6 +15,8 @@ use std::collections::{BTreeMap, HashMap};
 use std::sync::LazyLock;
 
 use serde::Deserialize;
+
+use crate::ingredient_categorizer::CATEGORIES;
 use sha2::{Digest, Sha256};
 
 pub use resolve::{resolve, Resolution, Via};
@@ -45,8 +47,26 @@ struct UsdaFile {
 #[derive(Deserialize)]
 #[serde(deny_unknown_fields)]
 struct CuratedEntry {
+    #[serde(default)]
+    kind: Kind,
     fdc_id: Option<u32>,
     grams_per_cup: Option<CuratedDensity>,
+    /// Shopping-list category; overrides the keyword categorizer.
+    category: Option<String>,
+    /// Commonly listed without an amount ("pepper"); such lines are negligible.
+    #[serde(default)]
+    trace_ok: bool,
+}
+
+/// Whether an entry is something you eat or a purchasable non-food.
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum Kind {
+    #[default]
+    Food,
+    /// Bought at the store but not eaten (parchment paper, skewers). Carries
+    /// only a shopping category; calorie estimates skip it.
+    Product,
 }
 
 /// A curated density overrides the linked USDA food's density, or marks it
@@ -73,6 +93,8 @@ struct CuratedFile {
     entries: BTreeMap<String, CuratedEntry>,
     /// A null target marks a name as ambiguous for every attribute.
     aliases: BTreeMap<String, Option<String>>,
+    /// Names that are not ingredients at all ("to serve"), with the reason.
+    not_food: BTreeMap<String, String>,
     rewrites: BTreeMap<String, String>,
 }
 
@@ -81,15 +103,25 @@ struct CuratedFile {
 pub struct Entry {
     /// A curated entry's name, or a USDA food's lowercased description.
     pub id: String,
+    pub kind: Kind,
     /// The USDA food supplying calories, if known.
     pub fdc_id: Option<u32>,
     pub grams_per_cup: Option<f64>,
+    /// Shopping-list category, when the catalog knows it.
+    pub category: Option<String>,
+    /// The linked food has no calories (salt, water, baking soda), so any line
+    /// of it is negligible.
+    pub zero_calorie: bool,
+    /// Commonly listed without an amount (pepper, dried spices); a line of it
+    /// with no quantity, or a pinch or dash, is negligible.
+    pub trace_ok: bool,
 }
 
 #[derive(Clone, Copy)]
 enum Target {
     Entry(usize),
     Ambiguous,
+    NotFood,
 }
 
 struct Catalog {
@@ -111,6 +143,17 @@ pub(crate) fn normalize(value: &str) -> String {
 
 fn valid_density(grams_per_cup: f64) -> bool {
     grams_per_cup.is_finite() && grams_per_cup > 0.0
+}
+
+/// Foods with no calories at all, so any amount is negligible.
+fn is_zero_calorie(food: &UsdaFood) -> bool {
+    food.kcal_per_100g == Some(0.0)
+}
+
+/// Dried spices (USDA "spices, …", including black pepper) are commonly listed
+/// without an amount.
+fn is_trace_ok(food: &UsdaFood) -> bool {
+    food.description.starts_with("spices, ")
 }
 
 static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
@@ -147,11 +190,27 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             Some(CuratedDensity::Unknown { .. }) => None,
             None => food.and_then(|food| food.grams_per_cup),
         };
+        if let Some(category) = &curated_entry.category {
+            assert!(
+                CATEGORIES.contains(&category.as_str()),
+                "curated entry {id:?} has unknown category {category:?}"
+            );
+        }
+        if curated_entry.kind == Kind::Product {
+            assert!(
+                food.is_none() && grams_per_cup.is_none() && curated_entry.category.is_some(),
+                "product {id:?} must have a category and no food or density"
+            );
+        }
         index.insert(id.clone(), Target::Entry(entries.len()));
         entries.push(Entry {
             id,
+            kind: curated_entry.kind,
             fdc_id: curated_entry.fdc_id,
             grams_per_cup,
+            category: curated_entry.category,
+            zero_calorie: food.is_some_and(is_zero_calorie),
+            trace_ok: curated_entry.trace_ok || food.is_some_and(is_trace_ok),
         });
     }
 
@@ -163,8 +222,12 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         entry_for_food.insert(fdc_id, entries.len());
         entries.push(Entry {
             id: food.description.clone(),
+            kind: Kind::Food,
             fdc_id: Some(fdc_id),
             grams_per_cup: food.grams_per_cup,
+            category: None,
+            zero_calorie: is_zero_calorie(food),
+            trace_ok: is_trace_ok(food),
         });
     }
 
@@ -207,6 +270,14 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
     }
     index.extend(alias_targets);
 
+    for name in curated.not_food.keys() {
+        assert_eq!(*name, normalize(name), "not_food names must be normalized");
+        assert!(
+            index.insert(name.clone(), Target::NotFood).is_none(),
+            "not_food name {name:?} shadows a catalog name"
+        );
+    }
+
     for (from, to) in &curated.rewrites {
         assert_eq!(*from, normalize(from), "rewrite sources must be normalized");
         assert!(
@@ -237,11 +308,26 @@ pub fn food(fdc_id: u32) -> Option<&'static UsdaFood> {
 }
 
 /// Grams per US cup for a written ingredient name, if its entry has a density.
+/// A compound line has none: the ratio of its foods is unknown.
 pub fn grams_per_cup(item: &str) -> Option<f64> {
     match resolve(item) {
         Resolution::Entry { entry, .. } => entry.grams_per_cup,
-        Resolution::Ambiguous | Resolution::Unresolved => None,
+        Resolution::Compound(_)
+        | Resolution::NotFood
+        | Resolution::Ambiguous
+        | Resolution::Unresolved => None,
     }
+}
+
+/// The shopping-list category the catalog assigns a written name, if any. A
+/// compound line ("salt and pepper") takes its first food's category.
+pub fn category(item: &str) -> Option<&'static str> {
+    let entry = match resolve(item) {
+        Resolution::Entry { entry, .. } => entry,
+        Resolution::Compound(entries) => entries[0],
+        Resolution::NotFood | Resolution::Ambiguous | Resolution::Unresolved => return None,
+    };
+    entry.category.as_deref()
 }
 
 /// The display rewrite for an ingredient name (e.g. "salt" -> "kosher salt").

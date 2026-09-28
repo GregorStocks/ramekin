@@ -1,6 +1,6 @@
 {
   "title": "Ingredient catalog step 2: bulk-classify the pipeline and prod ingredient corpus with Claude Code subagents and commit the result",
-  "description": "After step 1 (p1-ingredient-catalog-step1-unified-resolver), most written names still won't be in the alias table. \
+  "description": "After step 1 (the shared catalog and resolve() in ramekin-core/src/catalog/, see its README), most written names still won't be in the alias table. \
 Grow the committed catalog offline using subagents inside the Claude Code harness (no OpenRouter spend) rather than hand-curating. \
 The long tail is too big for hand aliases: in prod alone, aliasing the top 400 unmatched names would cover only ~52% of unmatched lines.\n\
 \n\
@@ -28,6 +28,7 @@ A second verification pass (different subagents) spot-checks a random sample plu
 5. \
 Commit the merged alias/catalog data with a provenance note (date, harness, model), the before/after audit report, and the make pipeline data/ diffs.\n\
 \n\
+Also give each food entry a shopping category (curated `category`, one of ingredient_categorizer::CATEGORIES). categorize() already prefers an entry's category; once entries cover the shopping corpus (make shopping-list-categorizer-test still passes with the keyword fallback removed), delete data/ingredients.json and that fallback. \
 Success target: >=90% of non-negligible ingredient lines resolved on both the pipeline and prod corpora, and most prod recipes fully estimated. \
 Document the procedure in docs/agent/ so it can be rerun as the corpus grows, and so step 3's resolution table can be reviewed and promoted into the committed catalog.",
   "status": "open",
@@ -38,7 +39,6 @@ Document the procedure in docs/agent/ so it can be rerun as the corpus grows, an
     "ingredient-parser",
     "pipeline",
   ],
-  "blocked": "Needs p1-ingredient-catalog-step1-unified-resolver merged first: this step uses its resolve() API, catalog format, and make ingredient-catalog-audit target.",
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T16:06:16-07:00",
+  "updated_at": "2026-09-28T08:44:12-07:00",
 }
