@@ -128,7 +128,7 @@ rows, ordered by count descending), merge the results into
 ## ingredient-catalog-audit.md
 
 Coverage report for the ingredient-name matchers: nutrition (`nutrition::estimate`),
-density (`find_density`), and shopping categories (`categorize`). It shows how much
+density (`catalog::grams_per_cup`), and shopping categories (`categorize`). It shows how much
 of each corpus is recognized and the nutrition failure reasons. It is the measuring
 stick for the ingredient catalog work (`issues/*ingredient-catalog*`): a matcher
 change should show up as a diff here.

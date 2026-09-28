@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test ingredient-catalog-audit title-normalization-test description-generation-test server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import shopping-list-categorizer-test ingredient-catalog-audit title-normalization-test description-generation-test server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -358,15 +358,8 @@ ingredient-tests-generate-paprika: ## Generate ingredient parsing test fixtures 
 ingredient-tests-migrate-curated: ## Migrate curated fixtures from individual files to category files
 	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-migrate-curated
 
-ingredient-density-test: ## Run ingredient-density crate tests
-	@cd ingredient-density && cargo test
-
-ingredient-density-import: ## Download pinned USDA data and regenerate ingredient densities
-	@uv run --no-project scripts/usda-import/import_usda.py
-
-.PHONY: nutrition-import
-nutrition-import: ## Download pinned USDA SR Legacy data and regenerate calorie data
-	@uv run --no-project scripts/import-nutrition.py
+catalog-import: ## Download pinned USDA SR Legacy data and regenerate the ingredient catalog's usda.json
+	@uv run --no-project scripts/import-catalog.py
 
 shopping-list-categorizer-test: ## Score the categorizer against the prod shopping-list corpus (reports mismatches + 'Other' rate)
 	@cargo test -q --manifest-path ramekin-core/Cargo.toml --test shopping_list_categorizer_tests -- --nocapture

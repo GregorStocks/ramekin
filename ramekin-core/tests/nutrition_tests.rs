@@ -249,3 +249,44 @@ fn deterministic_matching_zero_calories_and_servings() {
         assert!(estimate(&[], None, scale).is_err());
     }
 }
+
+#[test]
+fn catalog_defaults_and_density_gaps() {
+    let kcal = |item: &str, amount: &str, unit: &str| {
+        let result = estimate(&[ingredient(item, amount, unit)], None, 1.0).unwrap();
+        assert!(
+            result.unknown_ingredients.is_empty(),
+            "{item}: {:?}",
+            result.unknown_ingredients
+        );
+        result.known_calories.unwrap().min
+    };
+    // Names nutrition used to refuse as ambiguous now share density's defaults.
+    assert_eq!(
+        kcal("sugar", "1", "cup"),
+        kcal("granulated sugar", "1", "cup")
+    );
+    assert!(
+        (kcal("flour", "1", "cup") - 455.0).abs() < 0.5,
+        "125 g/cup x 364 kcal"
+    );
+    assert!((kcal("Salted Butter", "100", "g") - 717.0).abs() < 0.5);
+    assert_eq!(kcal("kosher salt", "1", "tbsp"), 0.0);
+    // Resolved by modifier stripping and plural fallback, like density.
+    assert_eq!(
+        kcal("melted butter", "1", "tbsp"),
+        kcal("butter", "1", "tbsp")
+    );
+    // Pepper is known for calories but has no density, so only weights work.
+    assert!(kcal("freshly ground black pepper", "10", "g") > 0.0);
+    let by_volume = estimate(
+        &[ingredient("freshly ground black pepper", "1", "tsp")],
+        None,
+        1.0,
+    )
+    .unwrap();
+    assert_eq!(
+        by_volume.unknown_ingredients[0].reason,
+        "Missing density for this food"
+    );
+}

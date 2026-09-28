@@ -28,6 +28,7 @@ Density stays unresolved for a Compound (the mixture ratio is unknown), so no gr
 - Density lookup, categorize(), and nutrition all go through resolve(). \
 Density gram alternatives stay materialized at ingest in step 1 (owner decision, 2026-09-27); moving them to read time is p2-compute-gram-alternatives-at-read-time. \
 Step 1 ships as three PRs: (1) make ingredient-catalog-audit and data/ingredient-catalog-audit.md; (2) catalog + resolve(), density and nutrition moved onto it, the two USDA import scripts merged, the ingredient-density crate folded into ramekin-core; (3) categorize() onto resolve() (entry category, else today's keyword rules until step 2 fills categories), product kind, zero_calorie/trace_ok, compounds. \
+PR 1 and PR 2 are done: resolve(), the catalog data, and its format are in ramekin-core/src/catalog/ (see its README); the Resolution enum there is what PR 3 extends with NotFood, Compound, and the product kind. \
 PR 3 deletes this issue. \
 Delete the old per-matcher tables once migrated. \
 No backwards compatibility.\n\
@@ -39,7 +40,7 @@ The primary corpus is the make pipeline output, which is much larger than prod: 
 Also accept an optional prod-DB dump (~11.9k lines) and data/shopping-list-categories.json (hand-typed shopping items). \
 Report each corpus separately, since pipeline data reflects the web at large and prod reflects actual use. \
 This target is how every later step is measured. \
-Expect diffs from the shopping-list categorizer test (make shopping-list-categorizer-test) and the ingredient-density test; review them as intentional, and rerun make pipeline and commit the data/ diffs (e.g. density-gap-report.txt shrinking).\n\
+Expect diffs from the shopping-list categorizer test (make shopping-list-categorizer-test) and ramekin-core/tests/catalog_tests.rs; review them as intentional, and rerun make pipeline and commit the data/ diffs (e.g. density-gap-report.txt shrinking).\n\
 \n\
 Follow-ups: step2 (bulk-classify the corpus with harness subagents) and step3 (LLM resolution for names the catalog misses).",
   "status": "open",
@@ -51,5 +52,5 @@ Follow-ups: step2 (bulk-classify the corpus with harness subagents) and step3 (L
     "api",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T17:02:11-07:00",
+  "updated_at": "2026-09-27T21:24:03-07:00",
 }
