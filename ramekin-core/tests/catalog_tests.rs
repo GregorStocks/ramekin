@@ -431,9 +431,21 @@ fn a_cooked_note_selects_the_cooked_food() {
         assert_eq!(line_fdc("bacon", Some(note)), fdc_id("bacon"), "{note}");
     }
     assert_eq!(line_fdc("brown rice", None), fdc_id("brown rice"));
-    // Without a cooked form in the catalog, the item itself is used.
+    // With no cooked form in the catalog, a cooked measure stays unresolved
+    // rather than being charged as the raw food.
+    assert!(matches!(
+        resolve_line("moon dust", Some("cooked")),
+        Resolution::Unresolved
+    ));
+    // With no cooked form in the catalog, a cooked measure stays unresolved
+    // rather than being charged as the raw food...
+    assert!(matches!(
+        resolve_line("granulated sugar", Some("cooked")),
+        Resolution::Unresolved
+    ));
+    // ...unless the item already names a cooked food.
     assert_eq!(
-        line_fdc("granulated sugar", Some("cooked")),
-        fdc_id("granulated sugar")
+        line_fdc("cooked brown rice", Some("cooked")),
+        fdc_id("cooked brown rice")
     );
 }

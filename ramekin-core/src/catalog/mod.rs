@@ -320,6 +320,12 @@ pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
         if let resolved @ Resolution::Entry { .. } = resolve(&format!("cooked {item}")) {
             return resolved;
         }
+        // The item may already name a cooked food; otherwise the raw food
+        // would misstate a cooked measure, so it stays unresolved.
+        return match resolve(item) {
+            resolved @ Resolution::Entry { entry, .. } if entry.id.contains("cooked") => resolved,
+            _ => Resolution::Unresolved,
+        };
     }
     resolve(item)
 }
