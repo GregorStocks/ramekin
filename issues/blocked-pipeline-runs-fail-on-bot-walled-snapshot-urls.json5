@@ -1,0 +1,27 @@
+{
+  "title": "Every make pipeline run since 2026-05-09 ends 'failed' because 4 allowlisted Serious Eats URLs are bot-walled",
+  "description": "In the main checkout (~/code/ramekin/data/pipeline-runs), all six runs on 2026-05-09 have manifest status 'failed'; the last completed run is 2026-04-12. \
+Parsing finishes for every other URL; the failure comes from the snapshot phase. \
+The latest log (logs/pipeline-2026-05-09_22-55-47.191.log) shows 'pipeline snapshot phase complete allowlisted=442 written=438 missing=4' followed by 'wrote pipeline snapshots ... ok=false', with ERROR lines 'removed stale pipeline snapshot for missing allowlisted extract output' for:\n\
+- https://www.seriouseats.com/canederli-di-pane-italian-bread-dumpling-recipe-11679155\n\
+- https://www.seriouseats.com/colcannon-recipe-11694899\n\
+- https://www.seriouseats.com/marinara-sauce-recipe\n\
+- https://www.seriouseats.com/zuppa-toscana-olive-garden-recipe-8788253\n\
+\n\
+Those URLs return HTTP 403 (bot wall), and the main checkout's fetch cache holds cached 403 errors for them (the prod scrape_jobs table shows the same 403s). \
+Their snapshots still exist in the repo (data/pipeline-snapshots/), so a run from the main checkout deletes four committed snapshots and marks itself failed.\n\
+\n\
+Consequences: nothing reading the run manifest can trust the newest run (make ingredient-catalog-audit RUNS_DIR=... refuses non-completed runs), and anyone running make pipeline there gets a spurious snapshot diff to discard.\n\
+\n\
+Fix: capture the four pages with make pipeline-cache-capture (URL=...) in the main checkout, then rerun make pipeline and confirm status 'completed' with no snapshot deletions. \
+If a page can no longer be captured, remove it from data/pipeline-snapshot-urls.json along with its snapshot instead.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "pipeline",
+  ],
+  "blocked": "Needs Gregor: capturing bot-walled pages requires a real browser session via make pipeline-cache-capture in ~/code/ramekin.",
+  "created_at": "2026-09-27T17:12:59-07:00",
+  "updated_at": "2026-09-27T17:12:59-07:00",
+}

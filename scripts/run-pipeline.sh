@@ -24,3 +24,5 @@ time cargo run -q --release --manifest-path cli/Cargo.toml -- pipeline "$@"
 echo "[pipeline] cargo run done, running ingredient-tests-generate" | ./scripts/ts
 time make ingredient-tests-generate
 echo "[pipeline] ingredient-tests-generate done" | ./scripts/ts
+time make ingredient-catalog-audit
+echo "[pipeline] ingredient-catalog-audit done" | ./scripts/ts
