@@ -47,7 +47,6 @@
     "dried parsley": "spices, parsley, dried",
     "dried rosemary": "spices, rosemary, dried",
     "dried sage": "spices, sage, ground",
-    "dried thyme": "thyme, fresh",
     "dry yeast": "leavening agents, yeast, baker's, active dry",
     "dutch process cocoa powder": "cocoa powder",
     "egg": "egg, whole, raw, fresh",
@@ -294,6 +293,13 @@
         "source": "USDA FoodData Central FDC 171328: Spices, oregano, dried, 1.0g/tsp leaves x 48",
         "url": "https://fdc.nal.usda.gov/food-details/171328/nutrients",
         "value": 48.0
+      }
+    },
+    "dried thyme": {
+      "fdc_id": 170938,
+      "grams_per_cup": {
+        "source": "Approximation carried over from the original density alias to USDA thyme, fresh (FDC 173470, 38.4 g/cup); USDA lists no volume portion for dried thyme (FDC 170938), whose calories apply here.",
+        "value": 38.400000000000006
       }
     },
     "dry white wine": {

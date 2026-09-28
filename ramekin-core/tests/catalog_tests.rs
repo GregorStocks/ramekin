@@ -267,3 +267,12 @@ fn fresh_herbs_never_become_dried_spices() {
     assert_eq!(fdc_id("freshly grated nutmeg"), fdc_id("ground nutmeg"));
     assert_eq!(fdc_id("chopped fresh thyme"), fdc_id("thyme, fresh"));
 }
+
+#[test]
+fn density_approximations_keep_the_real_food_for_calories() {
+    // USDA has no volume portion for dried thyme, so its density borrows fresh
+    // thyme's, but its calories must come from dried thyme.
+    assert_eq!(fdc_id("dried thyme"), Some(170938));
+    assert_close(density("dried thyme"), 38.4);
+    assert_eq!(fdc_id("thyme"), Some(173470));
+}

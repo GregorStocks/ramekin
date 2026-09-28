@@ -36,7 +36,9 @@ Names are lowercased and whitespace is collapsed. Then:
 3. Steps 1–2 again after stripping temperature and preparation modifiers
    ("softened ", ", sifted", …).
 4. The name with trailing ", …" or "; …" clauses dropped one at a time
-   ("kosher salt, presumably diamond" → "kosher salt").
+   ("kosher salt, presumably diamond" → "kosher salt"). A clause listing
+   alternatives ("milk, dairy or non-dairy") resolves to the first-listed
+   food, the same way the first measurement wins over later alternatives.
 5. The name with leading size and preparation words (`LEADING_MODIFIERS`:
    "chopped", "fresh", "large", "boneless", …) dropped one word at a time, so
    "grated fresh ginger" tries "fresh ginger" before "ginger". Words that change
@@ -114,7 +116,10 @@ are `tests/test_catalog_import.py`.
   - The 23 manual baking values still lack individual citations. See
     `issues/p3-cite-embedded-manual-density-values`.
 - `aliases` map a name to an entry id, USDA stripped name, or unique USDA
-  description. A `null` alias marks a name as ambiguous.
+  description. A `null` alias marks a name as ambiguous. An alias decides food
+  identity for *every* attribute, so never alias to a different food just to
+  borrow its density: add an entry linking the real food (`fdc_id`) with the
+  approximate `grams_per_cup` and a source explaining it (see "dried thyme").
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
 
 The loader asserts that keys are normalized, targets exist, aliases don't
