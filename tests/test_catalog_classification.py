@@ -103,3 +103,12 @@ def test_categories_come_from_the_categorizer():
     categories = APPLY.shopping_categories(source)
     assert {"Produce", "Household", "Other"} <= categories
     assert len(categories) == 19
+
+
+def test_aliases_can_target_entries_from_the_same_batch():
+    updated, _, rejections = run(
+        {"name": "garlic paste spread", "action": "alias", "target": "garlic paste"},
+        {"name": "garlic paste", "action": "entry", "fdc_id": 1},
+    )
+    assert rejections == []
+    assert updated["aliases"]["garlic paste spread"] == "garlic paste"

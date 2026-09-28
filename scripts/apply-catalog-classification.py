@@ -66,7 +66,11 @@ def apply(curated: dict, usda: dict, categories: set[str], decisions: list[dict]
     counts = {action: 0 for action in sorted(ACTIONS)}
     rejections = []
     seen = set()
-    for decision in decisions:
+    # New entries and products first, so aliases in the same batch can target them.
+    ordered = sorted(
+        decisions, key=lambda d: d.get("action") not in ("entry", "product")
+    )
+    for decision in ordered:
         name = decision.get("name", "")
         action = decision.get("action")
 
@@ -111,6 +115,7 @@ def apply(curated: dict, usda: dict, categories: set[str], decisions: list[dict]
                 reject(f"unknown category {category!r}")
                 continue
             curated["entries"][name] = {"kind": "product", "category": category}
+            targets.add(name)
         elif action == "entry":
             fdc_id = decision.get("fdc_id")
             if fdc_id not in fdc_ids:
@@ -125,6 +130,7 @@ def apply(curated: dict, usda: dict, categories: set[str], decisions: list[dict]
                     continue
                 entry["grams_per_cup"] = {"value": float(value), "source": source}
             curated["entries"][name] = entry
+            targets.add(name)
     return curated, counts, rejections
 
 

@@ -381,6 +381,13 @@ fn frying_oil_is_not_charged_in_full() {
             "{item}"
         );
     }
+    // Only oils and fats are a frying medium; dredging flour stays in the dish.
+    let mut flour = ingredient("all-purpose flour", "2", "cup");
+    flour.note = Some("for frying".into());
+    assert!(estimate(&[flour], None, 1.0)
+        .unwrap()
+        .unknown_ingredients
+        .is_empty());
     // The measured part of "plus more for frying" is used in the recipe.
     let mut line = ingredient("vegetable oil", "2", "tbsp");
     line.note = Some("plus more for frying".into());

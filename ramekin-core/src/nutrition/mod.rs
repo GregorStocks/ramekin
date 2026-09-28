@@ -63,6 +63,17 @@ fn is_trace_line(ingredient: &ParsedIngredient) -> bool {
 
 /// Whether a line of this entry contributes no meaningful calories: foods with
 /// none (salt, water) always, and spices listed without a real amount.
+/// Oils and solid frying fats; only these are discarded as a frying medium
+/// ("2 cups flour, for frying" is dredging flour that stays in the dish).
+fn is_cooking_fat(entry: &Entry) -> bool {
+    entry.fdc_id.and_then(catalog::food).is_some_and(|food| {
+        let description = food.description.as_str();
+        description.starts_with("oil")
+            || description.starts_with("lard")
+            || description.starts_with("shortening")
+    })
+}
+
 fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient) -> bool {
     entry.zero_calorie || (entry.trace_ok && is_trace_line(ingredient))
 }
@@ -260,7 +271,7 @@ fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
         return Ok(Line::Calories(ZERO));
     }
     let calories = measured_calories(ingredient, &food(entry)?);
-    if is_frying_medium(ingredient) {
+    if is_frying_medium(ingredient) && is_cooking_fat(entry) {
         // A deep-frying amount is mostly discarded; a spoonful for browning
         // stays in the dish.
         return match calories {
