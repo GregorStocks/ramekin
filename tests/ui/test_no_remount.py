@@ -1,7 +1,9 @@
 """
 Actions that refetch data must update the page in place, not unmount and
-rebuild it. Each test tags an existing row's DOM node, performs an action that
-reloads the list, and checks the same node is still on the page.
+rebuild it: the row tests tag an existing DOM node, perform an action that
+reloads the list, and check the same node is still on the page. Navigating to
+a *different* recipe or version is the opposite case: the old content must not
+linger while the new one loads.
 """
 
 import re
@@ -14,8 +16,10 @@ from ramekin_client.api import AuthApi, RecipesApi
 from ramekin_client.models import (
     CreateRecipeRequest,
     Ingredient,
+    LoginRequest,
     Measurement,
     SignupRequest,
+    UpdateRecipeRequest,
 )
 
 
@@ -179,3 +183,58 @@ def test_stale_recipe_response_does_not_replace_the_current_one(
 
     expect(page.get_by_role("heading", name="Applesauce")).to_be_visible()
     expect(page.get_by_text("Loading recipe...")).not_to_be_visible()
+
+
+def test_switching_versions_hides_the_previous_version(
+    page: Page, ui_url: str, api_url: str
+):
+    """Viewing another version of the same recipe must not leave the previous
+    version on screen (with its revert/edit actions) while the new one loads."""
+    username, password, (recipe_id,) = create_user_with_recipes(
+        api_url, ["Plumjam"], []
+    )
+    with ApiClient(Configuration(host=api_url)) as client:
+        token = (
+            AuthApi(client)
+            .login(LoginRequest(username=username, password=password))
+            .token
+        )
+    authed_config = Configuration(host=api_url)
+    authed_config.access_token = token
+    with ApiClient(authed_config) as client:
+        recipes_api = RecipesApi(client)
+        current = recipes_api.get_recipe(recipe_id)
+        recipes_api.update_recipe(
+            recipe_id,
+            UpdateRecipeRequest(
+                title="Plumjelly",
+                instructions=current.instructions,
+                ingredients=current.ingredients,
+                expected_version_id=current.version_id,
+            ),
+        )
+
+    log_in(page, ui_url, username, password)
+    page.goto(f"{ui_url}/recipes/{recipe_id}")
+    expect(page.get_by_role("heading", name="Plumjelly")).to_be_visible()
+
+    page.get_by_text("Version History").click()
+    old_version = page.locator(".version-item").filter(
+        has=page.locator(".version-item-title", has_text=re.compile("^Plumjam$"))
+    )
+
+    def is_version_fetch(url: str) -> bool:
+        return f"/api/recipes/{recipe_id}?" in url and "version_id=" in url
+
+    pending: list[Route] = []
+    page.route(is_version_fetch, lambda route: pending.append(route))
+    with page.expect_request(lambda request: is_version_fetch(request.url)):
+        old_version.get_by_role("button", name="View").click()
+
+    expect(page.get_by_text("Loading recipe...")).to_be_visible()
+    expect(page.get_by_role("heading", name="Plumjelly")).not_to_be_visible()
+
+    for route in pending:
+        route.continue_()
+    page.unroute(is_version_fetch)
+    expect(page.get_by_role("heading", name="Plumjam")).to_be_visible()
