@@ -640,6 +640,16 @@ fn status_follows_the_number_of_uncounted_ingredients() {
     )
     .unwrap();
     assert_eq!(from_zero.status, Status::Insufficient);
+    let pinch = estimate(
+        &[
+            ingredient("granulated sugar", "0.1", "g"),
+            ingredient("moon dust", "1", "cup"),
+        ],
+        None,
+        1.0,
+    )
+    .unwrap();
+    assert_eq!(pinch.status, Status::Insufficient);
 
     let empty = estimate(&[], Some("4"), 1.0).unwrap();
     assert_eq!(empty.status, Status::Empty);

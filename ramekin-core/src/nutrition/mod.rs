@@ -591,8 +591,13 @@ pub fn estimate(
         (None, 0) => Status::Empty,
         (None, _) => Status::Insufficient,
         (Some(_), 0) => Status::Complete,
-        // A lower bound of zero (only salt, or "0-100 g") says nothing.
-        (Some(total), unknown) if unknown <= MAX_UNKNOWN_LINES && total.min > 0.0 => {
+        // A lower bound under 1 kcal (only salt, "0-100 g", a pinch of sugar)
+        // says nothing.
+        (Some(total), unknown)
+            if unknown <= MAX_UNKNOWN_LINES
+                && total.min >= 1.0
+                && per_serving.is_none_or(|serving| serving.min >= 1.0) =>
+        {
             Status::Partial
         }
         (Some(_), _) => Status::Insufficient,
