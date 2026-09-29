@@ -80,6 +80,16 @@ def test_valid_decisions_apply():
             {"name": "x", "action": "entry", "fdc_id": 1, "grams_per_cup_value": 5},
             "source",
         ),
+        (
+            {
+                "name": "x",
+                "action": "entry",
+                "fdc_id": 1,
+                "grams_per_cup_value": True,
+                "grams_per_cup_source": "s",
+            },
+            "positive value",
+        ),
         ({"name": "x", "action": "not_food"}, "reason"),
     ],
 )

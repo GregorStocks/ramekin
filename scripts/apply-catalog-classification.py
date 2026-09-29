@@ -125,7 +125,12 @@ def apply(curated: dict, usda: dict, categories: set[str], decisions: list[dict]
             value = decision.get("grams_per_cup_value")
             if value is not None:
                 source = decision.get("grams_per_cup_source")
-                if not (isinstance(value, (int, float)) and value > 0 and source):
+                if not (
+                    isinstance(value, (int, float))
+                    and not isinstance(value, bool)
+                    and value > 0
+                    and source
+                ):
                     reject("grams_per_cup needs a positive value and a source")
                     continue
                 entry["grams_per_cup"] = {"value": float(value), "source": source}
