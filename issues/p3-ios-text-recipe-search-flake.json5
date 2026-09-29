@@ -1,0 +1,17 @@
+{
+  "title": "iOS UI test testTextRecipeReviewAndSave flakes: saved recipe missing from search",
+  "description": "RecipeFlowTests.testTextRecipeReviewAndSave (ramekin-ios/RamekinUITests/RecipeFlowTests.swift:57) failed on PR #713 run 36640554986 and passed on rerun with no code change. \
+It saves a text recipe, returns to Recipes, types the title into search, and waits 60s for a button labeled with the title; that button never appeared. \
+Likely a race between the save, the recipe list/search cache refresh (RecipeCacheStore / sync), and the search query. \
+Investigate whether the list refreshes after save before search runs, and make the test synchronize on the saved recipe appearing in the unfiltered list (or the app refresh after save) rather than on a timeout.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "tests",
+    "flaky",
+  ],
+  "created_at": "2026-09-29T16:16:08-07:00",
+  "updated_at": "2026-09-29T16:16:08-07:00",
+}
