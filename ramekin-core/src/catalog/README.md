@@ -76,6 +76,20 @@ Names are lowercased and whitespace is collapsed. Then:
    becoming dried rosemary. A curated alias that keeps a prep word ("grated
    nutmeg") is an explicit choice and still counts.
 
+Calorie estimates and density resolve whole lines with `resolve_line(item, note)`.
+The parser keeps "cooked" in the note ("brown rice, cooked" → item "brown rice"),
+and cooked grains, pasta, and meats differ from dry or raw ones about threefold.
+Only a note that is exactly "cooked" (or "leftover cooked"), optionally followed
+by a parenthetical clarifier ("cooked (about 1 cup uncooked)"), states the measured
+food is cooked and tries "cooked <item>" first. If the catalog has no cooked form, the line
+stays unresolved rather than being charged as the raw food (unless the item
+already names a cooked food). Anything longer ("cooked and
+crumbled", "cooked, drained, and cut") is a cooking instruction for a raw or dry
+measure. Oil listed "for frying" in a deep-frying amount (over about 500 kcal, roughly
+1/4 cup) is a cooking medium that is mostly discarded, so the calorie estimate
+reports it as unknown instead of charging the full amount. A spoonful for
+browning still counts.
+
 Only a match to a specific food ends the search. Trimming never settles for
 a name that isn't a food ("boneless, skinless …" is never cut to "boneless"),
 and an ambiguous hit still lets a later step find a specific food. A trailing
@@ -161,6 +175,15 @@ are `tests/test_catalog_import.py`.
   explaining it (see "dried thyme", "greek yogurt"). Aliasing to a stand-in
   food is only for foods USDA lacks entirely ("dijon mustard" → yellow mustard,
   "shaoxing wine" → sake), where the stand-in supplies every attribute.
+  A name offering alternatives resolves to the first-listed food only when the
+  alternatives are close in calories or used in trace amounts ("cayenne or hot
+  sauce"). When they differ a lot in real amounts ("heavy cream or milk",
+  "sour cream or plain yogurt"), the alias is `null` (ambiguous). Bare herb
+  names follow how recipes use them: "rosemary" and "ginger" mean fresh; "sage"
+  is ambiguous because USDA has no fresh sage. Bone-in cuts and whole birds are
+  `null` too: recipes give their purchased weight, bones included, while USDA
+  describes only the edible part, so a 4 lb whole chicken would be charged as
+  4 lb of meat. Boneless cuts map normally.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
@@ -169,3 +192,22 @@ The loader asserts that keys are normalized, targets exist, aliases don't
 shadow names, and densities are finite and positive. `catalog::version()`
 hashes both files and the rule version; bump `RULE_VERSION` in `mod.rs` when
 resolution behavior changes.
+
+## Classification passes
+
+Aliases beyond the hand-curated core come from Claude Code subagent passes over
+the names the catalog didn't resolve. The procedure, and how to rerun it, is in
+`docs/agent/catalog-classification.md`.
+
+| Date | Tier | Model / harness | Applied | Skipped |
+| --- | --- | --- | --- | --- |
+| 2026-09-28 | Top 2,000 unresolved names (seen ≥ 4 times across pipeline and Paprika fixtures and prod) | Claude Opus 5.5 via a Claude Code Workflow: 8 classifiers + 3 verifiers | 1,670 aliases, 16 ambiguous, 6 not-food, 4 products, 1 entry | 303 |
+
+- **Verification:** the verifiers checked every mapping to a ≥ 300 kcal/100 g food (543), a
+  ~1/7 sample of the rest, and consistency across all decisions. They corrected 34 decisions.
+  On review, 8 generic dish names ("soup", "meatballs") were changed from not-food to skip,
+  so a real "1 lb frozen meatballs" line is never silently dropped.
+- **Pipeline-fixture effect:**
+  - recognized names on food lines went from 54.0% to 77.8%;
+  - calories computed from 44.7% to 58.3%;
+  - volume lines with a density from 62.9% to 77.5%.

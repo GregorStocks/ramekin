@@ -366,3 +366,46 @@ fn compound_and_non_food_lines() {
     assert!(only_skipped.unknown_ingredients.is_empty());
     assert_eq!(only_skipped.summary, "No ingredients to estimate.");
 }
+
+#[test]
+fn frying_oil_is_not_charged_in_full() {
+    for (item, note) in [
+        ("neutral oil, such as vegetable oil, for frying", None),
+        ("vegetable oil", Some("for deep-frying")),
+    ] {
+        let mut line = ingredient(item, "2", "quart");
+        line.note = note.map(str::to_string);
+        let result = estimate(&[line], None, 1.0).unwrap();
+        assert_eq!(
+            result.unknown_ingredients[0].reason, "Frying oil: only part of it is absorbed",
+            "{item}"
+        );
+    }
+    // Only oils and fats are a frying medium; dredging flour stays in the dish.
+    let mut flour = ingredient("all-purpose flour", "2", "cup");
+    flour.note = Some("for frying".into());
+    assert!(estimate(&[flour], None, 1.0)
+        .unwrap()
+        .unknown_ingredients
+        .is_empty());
+    // The measured part of "plus more for frying" is used in the recipe.
+    let mut line = ingredient("vegetable oil", "2", "tbsp");
+    line.note = Some("plus more for frying".into());
+    assert!(estimate(&[line], None, 1.0)
+        .unwrap()
+        .unknown_ingredients
+        .is_empty());
+}
+
+#[test]
+fn a_spoonful_of_oil_for_frying_still_counts() {
+    let mut line = ingredient("olive oil", "1", "tbsp");
+    line.note = Some("for frying the meatballs".into());
+    let result = estimate(&[line], None, 1.0).unwrap();
+    assert!(
+        result.unknown_ingredients.is_empty(),
+        "{:?}",
+        result.unknown_ingredients
+    );
+    assert!(result.known_calories.unwrap().max > 100.0);
+}

@@ -28,7 +28,11 @@ A second verification pass (different subagents) spot-checks a random sample plu
 5. \
 Commit the merged alias/catalog data with a provenance note (date, harness, model), the before/after audit report, and the make pipeline data/ diffs.\n\
 \n\
-Also give each food entry a shopping category (curated `category`, one of ingredient_categorizer::CATEGORIES). categorize() already prefers an entry's category; once entries cover the shopping corpus (make shopping-list-categorizer-test still passes with the keyword fallback removed), delete data/ingredients.json and that fallback. \
+Shopping categories moved to p2-catalog-shopping-categories. \
+Progress: tier 1 (top 2,000 names, 2026-09-28) is done; see the 'Classification passes' section of ramekin-core/src/catalog/README.md and docs/agent/catalog-classification.md (make ingredient-catalog-unresolved, the workflow, make catalog-apply-classification). \
+Pipeline fixtures now recognize 77.8% of food-line names (from 54.0%), prod 80.1%. \
+What limits calories now: 21.8% of lines are still unrecognized names (a long tail: of 13.9k queued names, 9k+ appear once), and 13.1% are recognized foods counted by the piece ('3 eggs', '2 cloves garlic'), which is p2-nutrition-count-units, not this issue. \
+Next: decide whether a tier 2 (e.g. names seen 2-3 times) is worth its cost before step 3 takes the tail. \
 Success target: >=90% of non-negligible ingredient lines resolved on both the pipeline and prod corpora, and most prod recipes fully estimated. \
 Document the procedure in docs/agent/ so it can be rerun as the corpus grows, and so step 3's resolution table can be reviewed and promoted into the committed catalog.",
   "status": "open",
@@ -40,5 +44,5 @@ Document the procedure in docs/agent/ so it can be rerun as the corpus grows, an
     "pipeline",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-28T08:44:12-07:00",
+  "updated_at": "2026-09-28T15:10:52-07:00",
 }

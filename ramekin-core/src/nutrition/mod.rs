@@ -63,6 +63,17 @@ fn is_trace_line(ingredient: &ParsedIngredient) -> bool {
 
 /// Whether a line of this entry contributes no meaningful calories: foods with
 /// none (salt, water) always, and spices listed without a real amount.
+/// Oils and solid frying fats; only these are discarded as a frying medium
+/// ("2 cups flour, for frying" is dredging flour that stays in the dish).
+fn is_cooking_fat(entry: &Entry) -> bool {
+    entry.fdc_id.and_then(catalog::food).is_some_and(|food| {
+        let description = food.description.as_str();
+        description.starts_with("oil")
+            || description.starts_with("lard")
+            || description.starts_with("shortening")
+    })
+}
+
 fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient) -> bool {
     entry.zero_calorie || (entry.trace_ok && is_trace_line(ingredient))
 }
@@ -214,8 +225,25 @@ fn measurement_grams(
     Ok(total)
 }
 
+/// Above this, oil listed "for frying" is a frying medium (about 1/4 cup of oil).
+const FRYING_KEPT_KCAL: f64 = 500.0;
+
+/// Oil listed "for frying" is a cooking medium: most of it is discarded, so
+/// charging the whole quart would inflate the recipe by thousands of calories.
+/// "2 tbsp oil, plus more for frying" still counts the measured part.
+fn is_frying_medium(ingredient: &ParsedIngredient) -> bool {
+    static FRYING: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"(?i)\bfor\s+(?:(?:deep|shallow|pan)[- ]?)?fry(?:ing)?\b").unwrap()
+    });
+    FRYING.is_match(&ingredient.item)
+        || ingredient
+            .note
+            .as_deref()
+            .is_some_and(|note| FRYING.is_match(note) && !note.to_lowercase().contains("plus more"))
+}
+
 fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
-    let entry = match catalog::resolve(&ingredient.item) {
+    let entry = match catalog::resolve_line(&ingredient.item, ingredient.note.as_deref()) {
         Resolution::Entry { entry, .. } if entry.kind == Kind::Product => return Ok(Line::Skipped),
         Resolution::Entry { entry, .. } => entry,
         Resolution::NotFood => return Ok(Line::Skipped),
@@ -242,7 +270,16 @@ fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
     if is_negligible(entry, ingredient) {
         return Ok(Line::Calories(ZERO));
     }
-    measured_calories(ingredient, &food(entry)?).map(Line::Calories)
+    let calories = measured_calories(ingredient, &food(entry)?);
+    if is_frying_medium(ingredient) && is_cooking_fat(entry) {
+        // A deep-frying amount is mostly discarded; a spoonful for browning
+        // stays in the dish.
+        return match calories {
+            Ok(range) if range.max <= FRYING_KEPT_KCAL => Ok(Line::Calories(range)),
+            _ => Err("Frying oil: only part of it is absorbed"),
+        };
+    }
+    calories.map(Line::Calories)
 }
 
 fn measured_calories(

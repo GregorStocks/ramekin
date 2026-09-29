@@ -5,13 +5,13 @@
 //! catalog changes show measurable before/after numbers.
 
 use anyhow::{Context, Result};
-use ramekin_core::catalog::{grams_per_cup, is_non_food, is_volume_unit};
+use ramekin_core::catalog::{is_non_food, is_volume_unit, line_grams_per_cup, resolve, Resolution};
 use ramekin_core::final_recipe::FinalRecipe;
 use ramekin_core::ingredient_categorizer::categorize;
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
 use ramekin_core::nutrition;
 use ramekin_core::types::ParseIngredientsOutput;
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 use std::collections::{BTreeMap, HashMap};
 use std::fmt::Write as _;
@@ -23,6 +23,8 @@ const SNAPSHOTS_DIR: &str = "data/pipeline-snapshots";
 const SHOPPING_CORPUS: &str = "data/shopping-list-categories.json";
 const COMMITTED_REPORT: &str = "data/ingredient-catalog-audit.md";
 const LOCAL_REPORT: &str = "logs/ingredient-catalog-audit-local.md";
+const UNRESOLVED_QUEUE: &str = "logs/catalog-unresolved.json";
+const MAX_EXAMPLES: usize = 3;
 const TOP_NAMES: usize = 30;
 
 /// Nutrition failure reasons that mean the ingredient name itself was not
@@ -84,6 +86,7 @@ struct FixtureFile {
 
 #[derive(Deserialize)]
 struct FixtureLine {
+    raw: String,
     expected: Option<FixtureExpected>,
 }
 
@@ -146,12 +149,12 @@ fn load_fixture_corpus(root: &Path, subdir: &str, name: &str) -> Result<Corpus> 
         let ingredients = file
             .ingredients
             .into_iter()
-            .filter_map(|line| line.expected)
-            .map(|expected| ParsedIngredient {
+            .filter_map(|line| Some((line.raw, line.expected?)))
+            .map(|(raw, expected)| ParsedIngredient {
                 item: expected.item,
                 measurements: expected.measurements,
                 note: expected.note,
-                raw: None,
+                raw: Some(raw),
                 section: expected.section,
             })
             .collect();
@@ -300,7 +303,7 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
                 .any(|m| is_volume_unit(m.unit.as_deref()));
             if has_volume {
                 stats.volume_lines += 1;
-                if grams_per_cup(&ingredient.item).is_some() {
+                if line_grams_per_cup(&ingredient.item, ingredient.note.as_deref()).is_some() {
                     stats.density_hits += 1;
                 } else {
                     *stats
@@ -632,6 +635,78 @@ pub fn run(root: &Path, runs_dir: Option<&Path>, prod_recipes: Option<&Path>) ->
     Ok(())
 }
 
+/// One name the catalog doesn't resolve, as a classification work item.
+#[derive(Serialize)]
+struct UnresolvedName {
+    name: String,
+    count: usize,
+    /// Lines per corpus ("pipeline", "paprika", "prod").
+    corpora: BTreeMap<String, usize>,
+    /// Up to three raw source lines, for context.
+    examples: Vec<String>,
+}
+
+/// Collect every name `resolve` leaves `Unresolved`, most frequent first.
+/// Ambiguous names are deliberate and excluded. Snapshots are skipped because
+/// they are a subset of the pipeline fixtures.
+fn unresolved_names(corpora: &[(&str, Corpus)]) -> Vec<UnresolvedName> {
+    let mut names: HashMap<String, UnresolvedName> = HashMap::new();
+    for (key, corpus) in corpora {
+        for ingredient in corpus.recipes.iter().flat_map(|recipe| &recipe.ingredients) {
+            if !matches!(resolve(&ingredient.item), Resolution::Unresolved) {
+                continue;
+            }
+            let name = normalize_name(&ingredient.item);
+            let entry = names.entry(name.clone()).or_insert_with(|| UnresolvedName {
+                name,
+                count: 0,
+                corpora: BTreeMap::new(),
+                examples: Vec::new(),
+            });
+            entry.count += 1;
+            *entry.corpora.entry(key.to_string()).or_default() += 1;
+            let example = ingredient
+                .raw
+                .clone()
+                .unwrap_or_else(|| ingredient.item.clone());
+            if entry.examples.len() < MAX_EXAMPLES && !entry.examples.contains(&example) {
+                entry.examples.push(example);
+            }
+        }
+    }
+    let mut names: Vec<_> = names.into_values().collect();
+    names.sort_by(|a, b| b.count.cmp(&a.count).then_with(|| a.name.cmp(&b.name)));
+    names
+}
+
+/// Write the classification work queue (`make ingredient-catalog-unresolved`).
+pub fn export_unresolved(root: &Path, prod_recipes: Option<&Path>) -> Result<()> {
+    let mut corpora = vec![
+        (
+            "pipeline",
+            load_fixture_corpus(root, "pipeline", "Pipeline fixtures")?,
+        ),
+        (
+            "paprika",
+            load_fixture_corpus(root, "paprika", "Paprika fixtures")?,
+        ),
+    ];
+    if let Some(path) = prod_recipes {
+        corpora.push(("prod", load_prod_corpus(path)?));
+    }
+    let names = unresolved_names(&corpora);
+    let path = root.join(UNRESOLVED_QUEUE);
+    fs::create_dir_all(root.join("logs"))?;
+    fs::write(&path, serde_json::to_string_pretty(&names)? + "\n")
+        .with_context(|| format!("Failed to write {}", path.display()))?;
+    tracing::info!(
+        "{} unresolved names ({} lines) saved to: {UNRESOLVED_QUEUE}",
+        names.len(),
+        names.iter().map(|name| name.count).sum::<usize>()
+    );
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -784,6 +859,46 @@ mod tests {
             .expect("the newest run failed")
             .to_string();
         assert!(error.contains("\"failed\""), "{error}");
+    }
+
+    #[test]
+    fn unresolved_names_group_count_and_keep_examples() {
+        let line = |item: &str, raw: &str| ParsedIngredient {
+            item: item.to_string(),
+            measurements: vec![],
+            note: None,
+            raw: Some(raw.to_string()),
+            section: None,
+        };
+        let corpus = |ingredients| Corpus {
+            name: "test".to_string(),
+            recipes: vec![Recipe {
+                servings: None,
+                ingredients,
+            }],
+        };
+        let names = unresolved_names(&[
+            (
+                "pipeline",
+                corpus(vec![
+                    line("Moon Dust", "1 cup Moon Dust"),
+                    line("moon  dust", "2 cups moon dust"),
+                    line("granulated sugar", "1 cup granulated sugar"),
+                    line("cheese", "1 cup cheese"),
+                ]),
+            ),
+            ("prod", corpus(vec![line("moon dust", "1 cup Moon Dust")])),
+        ]);
+        assert_eq!(names.len(), 1, "resolved and ambiguous names are excluded");
+        assert_eq!(names[0].name, "moon dust");
+        assert_eq!(names[0].count, 3);
+        assert_eq!(names[0].corpora["pipeline"], 2);
+        assert_eq!(names[0].corpora["prod"], 1);
+        assert_eq!(
+            names[0].examples,
+            vec!["1 cup Moon Dust", "2 cups moon dust"],
+            "examples are deduplicated"
+        );
     }
 
     #[test]

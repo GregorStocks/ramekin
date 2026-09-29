@@ -9,6 +9,10 @@ It's a local indexed lookup with no TTL, so it's fast and consistent, and catalo
 Nothing is stored on the recipe's ingredients. \
 Diesel DSL, no raw SQL.\n\
 - Reads never call the LLM. \
+Failure handling (owner decision, 2026-09-28): the save always succeeds; resolution runs afterwards as its own visible, retryable job step, like the existing enrich_* steps. \
+A failed LLM call (OpenRouter down, rate limited, invalid response) marks that step failed with the error and can be retried; until it succeeds, the names read as unknown. \
+It is never silently treated as resolved or dropped. \
+Scrape jobs get this as a pipeline step; manual saves, paste/photo/Paprika imports, and shopping-list edits have no job machinery today, so they need a small background job with the same visible-failure-and-retry behavior. \
 The table is populated at write time: whenever a recipe is saved (scrape completion, saving a reviewed paste/photo/Paprika import, manual edit; unsaved import drafts never write to the table), collect the recipe's names that miss both catalog and table and resolve them in one batched LLM call. \
 Free-text shopping-list items are the other write path: server/src/api/shopping_list/list.rs categorizes every item through resolve(), so creating or renaming a shopping-list item must also resolve a name that misses both catalog and table (usually a product or food), or it stays uncategorized. \
 The call picks from candidate catalog ids shortlisted by lexical similarity to keep the prompt small, (food or product entries), or answers not-a-food/unknown; it may only choose existing ids and never invents nutrition numbers. \
@@ -31,9 +35,7 @@ Needs end-to-end tests with the mock OpenRouter fixture server (make mock-openro
     "ai",
     "api",
   ],
-  "blocked": "Ideally after step 2 (ingredient-catalog-step2-bulk-classify), so the runtime LLM fallback only sees the long tail. \
-Owner decision also needed: when the write-time LLM call fails (OpenRouter down or invalid response), should the recipe save abort (strict fail-fast), or should resolution run as a visible, retryable job step after the save, like the existing enrich_* steps? \
-A silent fallback to unknown is not an option.",
+  "blocked": "After step 2 tier 1 (ingredient-catalog-step2-bulk-classify) lands, so the runtime LLM fallback only sees the long tail.",
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-28T08:44:12-07:00",
+  "updated_at": "2026-09-28T14:49:01-07:00",
 }

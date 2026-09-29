@@ -1,5 +1,5 @@
 use ramekin_core::catalog::{
-    category, food, grams_per_cup, resolve, rewrite, version, Kind, Resolution, Via,
+    category, food, grams_per_cup, resolve, resolve_line, rewrite, version, Kind, Resolution, Via,
 };
 
 fn density(item: &str) -> f64 {
@@ -258,13 +258,18 @@ fn fresh_herbs_never_become_dried_spices() {
     // Stripping one word at a time finds the more specific name first.
     assert_eq!(fdc_id("grated fresh ginger"), fdc_id("fresh ginger"));
     assert_eq!(fdc_id("minced ginger"), fdc_id("fresh ginger"));
-    // Dropping "fresh" or "chopped" must not land on the dried/ground spice.
+    // Dropping "fresh" or "chopped" must not land on the dried/ground spice:
+    // these either resolve to the fresh herb or stay unknown.
     for item in ["fresh rosemary", "chopped sage", "fresh oregano"] {
-        assert!(
-            !matches!(resolve(item), Resolution::Entry { .. }),
-            "{item:?} must stay unknown rather than match a dried spice"
-        );
+        if let Resolution::Entry { entry, .. } = resolve(item) {
+            assert!(
+                !entry.id.starts_with("spices, ") && !entry.id.contains("dried"),
+                "{item:?} must not match a dried spice, got {:?}",
+                entry.id
+            );
+        }
     }
+    assert_eq!(fdc_id("fresh rosemary"), fdc_id("rosemary, fresh"));
     // ...unless the name says so, or a curated alias covers the phrase.
     assert_eq!(fdc_id("freshly grated nutmeg"), fdc_id("ground nutmeg"));
     assert_eq!(fdc_id("chopped fresh thyme"), fdc_id("thyme, fresh"));
@@ -366,4 +371,99 @@ fn negligibility_attributes_come_from_the_data() {
         );
     }
     assert!(!entry("butter").trace_ok);
+}
+
+#[test]
+fn dissimilar_alternatives_and_bare_herbs() {
+    // Alternatives with very different calories in real amounts stay unknown.
+    for item in [
+        "heavy cream or milk",
+        "milk or water",
+        "sour cream or plain yogurt",
+    ] {
+        assert!(
+            matches!(resolve(item), Resolution::Ambiguous),
+            "{item:?} should be ambiguous"
+        );
+    }
+    // Bare herbs follow how recipes use them.
+    assert_eq!(fdc_id("rosemary"), fdc_id("rosemary, fresh"));
+    assert_eq!(fdc_id("ginger"), fdc_id("fresh ginger"));
+    assert!(matches!(resolve("sage"), Resolution::Ambiguous));
+    assert!(matches!(resolve("oregano"), Resolution::Entry { .. }));
+}
+
+#[test]
+fn salmon_defaults_to_farmed_unless_named() {
+    let kcal = |item| food(fdc_id(item).unwrap()).unwrap().kcal_per_100g.unwrap();
+    assert_eq!(fdc_id("salmon"), fdc_id("fish, salmon, atlantic, farmed"));
+    assert!(kcal("wild salmon") < kcal("salmon"));
+    assert_eq!(fdc_id("sockeye salmon"), fdc_id("fish, salmon, sockeye"));
+}
+
+#[test]
+fn a_cooked_note_selects_the_cooked_food() {
+    let line_fdc = |item, note| match resolve_line(item, note) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    // "brown rice, cooked" parses to item "brown rice" with note "cooked".
+    assert_eq!(
+        line_fdc("brown rice", Some("cooked")),
+        fdc_id("cooked brown rice")
+    );
+    assert_ne!(line_fdc("brown rice", Some("cooked")), fdc_id("brown rice"));
+    assert_eq!(
+        line_fdc("brown rice", Some("uncooked")),
+        fdc_id("brown rice")
+    );
+    assert_eq!(
+        line_fdc("brown rice", Some("leftover cooked")),
+        fdc_id("cooked brown rice")
+    );
+    assert_eq!(
+        line_fdc("brown rice", Some("cooked (about 1 cup uncooked)")),
+        fdc_id("cooked brown rice")
+    );
+    // A cooking instruction applies after measuring, so the raw food is measured.
+    for note in [
+        "cooked and crumbled",
+        "cooked al dente",
+        "cooked until crisp",
+        "cooked, drained, and cut into small pieces",
+    ] {
+        assert_eq!(line_fdc("bacon", Some(note)), fdc_id("bacon"), "{note}");
+    }
+    assert_eq!(line_fdc("brown rice", None), fdc_id("brown rice"));
+    // With no cooked form in the catalog, a cooked measure stays unresolved
+    // rather than being charged as the raw food.
+    assert!(matches!(
+        resolve_line("moon dust", Some("cooked")),
+        Resolution::Unresolved
+    ));
+    // With no cooked form in the catalog, a cooked measure stays unresolved
+    // rather than being charged as the raw food...
+    assert!(matches!(
+        resolve_line("granulated sugar", Some("cooked")),
+        Resolution::Unresolved
+    ));
+    // ...unless the item already names a cooked food.
+    assert_eq!(
+        line_fdc("cooked brown rice", Some("cooked")),
+        fdc_id("cooked brown rice")
+    );
+}
+
+#[test]
+fn bone_in_weights_are_not_priced_as_meat() {
+    for item in ["whole chicken", "bone-in chicken thighs", "chicken wings"] {
+        assert!(
+            matches!(resolve(item), Resolution::Ambiguous),
+            "{item:?} includes bone weight"
+        );
+    }
+    assert!(matches!(
+        resolve("boneless skinless chicken thighs"),
+        Resolution::Entry { .. }
+    ));
 }
