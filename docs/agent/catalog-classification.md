@@ -19,6 +19,19 @@ This writes `logs/catalog-unresolved.json`: every normalized name that
 Ambiguous names are deliberate and excluded. The prod dump format is in
 `data/README.md` (ingredient-catalog-audit.md section).
 
+For a later tier, cut the queue down to a work file before sharding. Tier 2 kept names
+seen at least twice plus every prod name, and dropped names earlier passes already
+skipped, since skips aren't recorded in the catalog and reappear in the queue:
+
+```
+jq --slurpfile s skips.json '[.[] | select((.count >= 2 or (.corpora.prod // 0) > 0)
+  and (.name as $n | $s[0] | index($n) | not))] | map({name, count, examples})' \
+  logs/catalog-unresolved.json > logs/catalog-tier2.json
+```
+
+Keep each pass's decisions file (`logs/catalog-classification-<date>.json`); its `skip`
+names are the next pass's exclusion list.
+
 ## 2. Classify with a workflow
 
 Run one Workflow with two phases. The tier-1 script is the reference; copy it from the
