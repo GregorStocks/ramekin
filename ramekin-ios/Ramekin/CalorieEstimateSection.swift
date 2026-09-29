@@ -52,16 +52,35 @@ struct CalorieEstimateSection: View {
                     Task { await model.load(request) }
                 }
             } else if let response = model.response {
-                Text(response.summary)
-                if let perServing = response.perServingSummary {
-                    Text(perServing)
+                Text(response.headline)
+                    .font(.title3.weight(.semibold))
+                if let secondary = response.secondary {
+                    Text(secondary)
+                        .foregroundStyle(.secondary)
                 }
-                ForEach(response.unknownIngredients, id: \.index) { ingredient in
-                    Text("\(ingredient.item): \(ingredient.reason)")
+                if !response.notCounted.isEmpty {
+                    Text("Not counted: \(response.notCounted.joined(separator: ", "))")
+                        .foregroundStyle(.secondary)
                 }
-                Text("Based on USDA reference foods and the listed ingredient amounts.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                if !response.lines.isEmpty {
+                    DisclosureGroup("How is this calculated?") {
+                        VStack(alignment: .leading, spacing: 6) {
+                            ForEach(response.lines, id: \.index) { line in
+                                HStack(alignment: .firstTextBaseline) {
+                                    Text(line.item)
+                                    Spacer()
+                                    Text(line.text)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                            Text("Based on USDA reference foods and the listed ingredient amounts.")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(.top, 4)
+                    }
+                    .accessibilityIdentifier("calorieBreakdown")
+                }
             }
         }
         .accessibilityIdentifier("calorieEstimate")

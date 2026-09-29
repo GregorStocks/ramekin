@@ -36,12 +36,24 @@ SCALE_TEST_INGREDIENTS: List[Ingredient] = [
 
 # Every line is known: flour (910 kcal), sugar (387), milk (373.6), 1 1/2
 # sticks of butter (169.5 g, 1215.3), 3 large eggs (150 g, 214.5), and salt to
-# taste and a few bay leaves (negligible) sum to 3100.4 kcal. At 2x, 12-16 bay
-# leaves are past the trace limit, so they become unknown.
-SCALE_TEST_TOTAL_1X = "Whole recipe: approximately 3100 calories."
-SCALE_TEST_TOTAL_2X = (
-    "Known ingredients: 6201 calories, plus unknown calories from bay leaves."
-)
+# taste and a few bay leaves (negligible) sum to 3100.4 kcal, 775.1 per serving
+# of 4. At 2x, 12-16 bay leaves are past the trace limit, so they become
+# uncounted and the figures become lower bounds.
+SCALE_TEST_HEADLINE_1X = "~780 kcal per serving"
+SCALE_TEST_TOTAL_1X = "~3,100 kcal for the whole recipe"
+SCALE_TEST_HEADLINE_2X = "At least ~770 kcal per serving"
+SCALE_TEST_TOTAL_2X = "At least ~6,200 kcal for the whole recipe"
+
+
+def _estimate_json(headline: str) -> dict:
+    """A stubbed estimate response."""
+    return {
+        "database_version": "test",
+        "status": "complete",
+        "headline": headline,
+        "not_counted": [],
+        "lines": [],
+    }
 
 
 def _sign_up(api_url: str) -> tuple[str, str, str]:
@@ -125,21 +137,30 @@ def test_calorie_estimates_follow_recipe_and_scale(
             ),
         )
     page.reload()
-    expect(section).to_contain_text("Known ingredients: 387–774 calories")
-    expect(section).to_contain_text("yogurt: Ambiguous ingredient")
-    expect(section).to_contain_text("partial whole-recipe subtotal")
-    expect(section).to_contain_text("Known ingredients per serving: 96–194 calories")
+    # One uncounted ingredient: the figures are lower bounds, and the reason is
+    # behind the breakdown disclosure.
+    expect(section).to_contain_text("At least ~96 kcal per serving")
+    expect(section).to_contain_text("At least ~380 kcal for the whole recipe")
+    expect(section).to_contain_text("Not counted: yogurt")
+    breakdown_line = section.locator(".calorie-breakdown li", has_text="yogurt")
+    expect(breakdown_line).to_be_hidden()
+    section.get_by_text("How is this calculated?").click()
+    expect(breakdown_line).to_contain_text("Could be several foods")
+    expect(
+        section.locator(".calorie-breakdown li", has_text="granulated sugar")
+    ).to_contain_text("~380–780 kcal")
     expect(page.get_by_text("Imported nutrition: 123 calories")).to_be_visible()
     page.locator(".scale-preset", has_text="2×").click()
-    expect(section).to_contain_text("Known ingredients: 774–1548 calories")
+    expect(section).to_contain_text("At least ~770 kcal for the whole recipe")
     expect(page.locator(".ingredients-list")).to_contain_text("200–400")
     expect(page.locator(".recipe-metadata")).to_contain_text("Servings: 8")
-    expect(section).to_contain_text("Known ingredients per serving: 96–194 calories")
+    expect(section).to_contain_text("At least ~96 kcal per serving")
 
-    # Switching to the earlier version must not retain the current subtotal.
+    # Switching to the earlier version must not retain the current estimate.
     page.goto(f"{page.url.split('?')[0]}?version_id={original.version_id}")
+    expect(section).to_contain_text(SCALE_TEST_HEADLINE_1X)
     expect(section).to_contain_text(SCALE_TEST_TOTAL_1X)
-    expect(section).not_to_contain_text("Known ingredients: 774")
+    expect(section).not_to_contain_text("Not counted")
 
     with _authed_client(api_url, token) as client:
         api = RecipesApi(client)
@@ -157,9 +178,9 @@ def test_calorie_estimates_follow_recipe_and_scale(
             ),
         )
     page.goto(page.url.split("?")[0])
-    expect(section).to_contain_text("Whole recipe: approximately 387 calories.")
-    expect(section).to_contain_text("Per serving: approximately 97 calories.")
-    expect(section).not_to_contain_text("partial")
+    expect(section).to_contain_text("~97 kcal per serving")
+    expect(section).to_contain_text("~390 kcal for the whole recipe")
+    expect(section).not_to_contain_text("At least")
 
 
 def test_calorie_request_failure_clears_previous_result(scale_recipe, page: Page):
@@ -168,7 +189,7 @@ def test_calorie_request_failure_clears_previous_result(scale_recipe, page: Page
     page.route("**/api/recipes/estimate-calories", lambda route: route.abort())
     page.locator(".scale-preset", has_text="2×").click()
     expect(section.get_by_role("alert")).to_contain_text("Could not estimate calories")
-    expect(section).not_to_contain_text("Whole recipe")
+    expect(section).not_to_contain_text("kcal")
 
 
 def test_excessive_scale_is_rejected_before_requesting_calories(
@@ -189,7 +210,9 @@ def test_excessive_scale_is_rejected_before_requesting_calories(
     expect(page.locator(".scale-preset", has_text="2×")).to_have_class(
         "scale-preset active"
     )
+    expect(section).to_contain_text(SCALE_TEST_HEADLINE_2X)
     expect(section).to_contain_text(SCALE_TEST_TOTAL_2X)
+    expect(section).to_contain_text("Not counted: bay leaves")
     expect(section.get_by_role("alert")).not_to_be_visible()
 
 
@@ -200,13 +223,7 @@ def test_late_calorie_response_does_not_replace_new_scale(scale_recipe, page: Pa
         if route.request.post_data_json["scale"] == 1:
             pending.append(route)
         else:
-            route.fulfill(
-                json={
-                    "database_version": "test",
-                    "summary": "New estimate",
-                    "unknown_ingredients": [],
-                }
-            )
+            route.fulfill(json=_estimate_json("New estimate"))
 
     page.route("**/api/recipes/estimate-calories", handle)
     page.reload()
@@ -215,13 +232,7 @@ def test_late_calorie_response_does_not_replace_new_scale(scale_recipe, page: Pa
     page.locator(".scale-preset", has_text="2×").click()
     expect(section).to_contain_text("New estimate")
     assert len(pending) == 1
-    pending[0].fulfill(
-        json={
-            "database_version": "test",
-            "summary": "Old estimate",
-            "unknown_ingredients": [],
-        }
-    )
+    pending[0].fulfill(json=_estimate_json("Old estimate"))
     # The request event provides a synchronization point for the late response.
     page.wait_for_load_state("networkidle")
     expect(section).to_contain_text("New estimate")

@@ -1,17 +1,20 @@
 
 # CalorieEstimateResponse
 
+Every display string is final; clients render them as-is.
 
 ## Properties
 
 Name | Type
 ------------ | -------------
 `databaseVersion` | string
+`headline` | string
 `knownCalories` | [CalorieRange](CalorieRange.md)
+`lines` | [Array&lt;CalorieLine&gt;](CalorieLine.md)
+`notCounted` | Array&lt;string&gt;
 `perServingCalories` | [CalorieRange](CalorieRange.md)
-`perServingSummary` | string
-`summary` | string
-`unknownIngredients` | [Array&lt;UnknownCalorieIngredient&gt;](UnknownCalorieIngredient.md)
+`secondary` | string
+`status` | [CalorieStatus](CalorieStatus.md)
 
 ## Example
 
@@ -21,11 +24,13 @@ import type { CalorieEstimateResponse } from ''
 // TODO: Update the object below with actual values
 const example = {
   "databaseVersion": null,
+  "headline": null,
   "knownCalories": null,
+  "lines": null,
+  "notCounted": null,
   "perServingCalories": null,
-  "perServingSummary": null,
-  "summary": null,
-  "unknownIngredients": null,
+  "secondary": null,
+  "status": null,
 } satisfies CalorieEstimateResponse
 
 console.log(example)

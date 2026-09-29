@@ -8,7 +8,7 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v6";
+const RULE_VERSION: &str = "calories-v7";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
@@ -33,15 +33,52 @@ pub struct UnknownIngredient {
     pub reason: String,
 }
 
+/// How far to trust an estimate, from how many real ingredients it couldn't count.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Status {
+    /// Every ingredient is counted or negligible.
+    Complete,
+    /// A few ingredients are missing, so the total is a lower bound.
+    Partial,
+    /// Too many ingredients are missing for a useful number.
+    Insufficient,
+    /// Nothing to estimate (no ingredients, or only headers and products).
+    Empty,
+}
+
+/// One ingredient line's part of the estimate, for the breakdown.
+#[derive(Debug)]
+pub struct LineEstimate {
+    pub index: usize,
+    pub item: String,
+    /// Scaled calories, when counted (zero for negligible lines).
+    pub calories: Option<CalorieRange>,
+    /// "~120 kcal", "Negligible", "Not a food", or why it couldn't be counted.
+    pub text: String,
+}
+
 #[derive(Debug)]
 pub struct Estimate {
     pub database_version: String,
+    pub status: Status,
+    /// The one line to show: "~520 kcal per serving", "At least ~3,100 kcal
+    /// for the whole recipe", "Not enough ingredient data to estimate calories".
+    pub headline: String,
+    /// The whole-recipe figure under a per-serving headline, or how many
+    /// ingredients an insufficient estimate is missing.
+    pub secondary: Option<String>,
+    /// For a partial estimate, the ingredients the lower bound leaves out.
+    pub not_counted: Vec<String>,
     pub known_calories: Option<CalorieRange>,
     pub per_serving_calories: Option<CalorieRange>,
+    /// Internal reasons, for the audit; clients get `lines`.
     pub unknown_ingredients: Vec<UnknownIngredient>,
-    pub summary: String,
-    pub per_serving_summary: Option<String>,
+    pub lines: Vec<LineEstimate>,
 }
+
+/// The most uncounted ingredients an estimate can have and still show a
+/// (lower-bound) number. See doc/calorie-estimates.md for how it was chosen.
+pub const MAX_UNKNOWN_LINES: usize = 3;
 
 /// Units that mean "a trace", never a measurable amount.
 const TRACE_UNITS: [&str; 5] = ["pinch", "dash", "smidgen", "sprinkle", "sprig"];
@@ -126,11 +163,11 @@ fn food(entry: &Entry) -> Result<Food<'_>, &'static str> {
 /// What one ingredient line adds to the estimate.
 enum Line {
     Calories(CalorieRange),
+    /// Too little to matter (salt, a pinch of spice, a few bay leaves).
+    Negligible,
     /// Not something eaten (a leftover header, parchment paper).
     Skipped,
 }
-
-const ZERO: CalorieRange = CalorieRange { min: 0.0, max: 0.0 };
 
 /// Strict quantity grammar: decimals, fractions, mixed numbers and bounded ranges.
 /// This does not alter the extraction pipeline's interpretation of ingredients.
@@ -367,7 +404,7 @@ fn contribution(ingredient: &ParsedIngredient, scale: f64) -> Result<Line, &'sta
                 .iter()
                 .all(|entry| is_product(entry) || is_negligible(entry, ingredient, scale))
             {
-                Ok(Line::Calories(ZERO))
+                Ok(Line::Negligible)
             } else {
                 Err("Several ingredients share one amount")
             };
@@ -376,7 +413,7 @@ fn contribution(ingredient: &ParsedIngredient, scale: f64) -> Result<Line, &'sta
         Resolution::Unresolved => return Err("No supported nutrition match"),
     };
     if is_negligible(entry, ingredient, scale) {
-        return Ok(Line::Calories(ZERO));
+        return Ok(Line::Negligible);
     }
     let calories = measured_calories(ingredient, &food(entry)?);
     if is_frying_medium(ingredient) && is_cooking_fat(entry) {
@@ -422,11 +459,75 @@ fn measured_calories(
     Err(reason)
 }
 
-fn range_text(range: CalorieRange) -> String {
-    if range.min == range.max {
-        format!("{:.0}", range.min.round())
+/// A calorie count as people read it: whole calories under 100, tens above,
+/// with thousands separators ("~5", "~120", "~3,100").
+/// Which way a displayed number may move: to the nearest value for a single
+/// estimate, or outward for a range's ends and lower bounds, so the display
+/// never claims more (or less) than was computed.
+#[derive(Clone, Copy)]
+enum Rounding {
+    Nearest,
+    Down,
+    Up,
+}
+
+fn kcal_number(kcal: f64, rounding: Rounding) -> String {
+    let step = if kcal < 100.0 { 1.0 } else { 10.0 };
+    let rounded = match rounding {
+        Rounding::Nearest => (kcal / step).round() * step,
+        Rounding::Down => (kcal / step).floor() * step,
+        Rounding::Up => (kcal / step).ceil() * step,
+    };
+    // A single tiny estimate is "<1"; a range's lower end may honestly be 0.
+    if matches!(rounding, Rounding::Nearest) && kcal > 0.0 && rounded == 0.0 {
+        return "<1".to_string();
+    }
+    let digits = format!("{rounded:.0}");
+    let mut grouped = String::new();
+    for (i, digit) in digits.chars().enumerate() {
+        if i > 0 && (digits.len() - i) % 3 == 0 {
+            grouped.push(',');
+        }
+        grouped.push(digit);
+    }
+    grouped
+}
+
+/// "~120 kcal", or "~480–560 kcal" for a range (rounded outward).
+fn kcal_text(range: CalorieRange) -> String {
+    if range.max > 0.0 && range.max < 1.0 {
+        return "<1 kcal".to_string();
+    }
+    let (min, max) = if range.min == range.max {
+        let value = kcal_number(range.min, Rounding::Nearest);
+        (value.clone(), value)
     } else {
-        format!("{:.0}–{:.0}", range.min.floor(), range.max.ceil())
+        (
+            kcal_number(range.min, Rounding::Down),
+            kcal_number(range.max, Rounding::Up),
+        )
+    };
+    if min == max && min == "<1" {
+        "<1 kcal".to_string()
+    } else if min == max {
+        format!("~{min} kcal")
+    } else {
+        format!("~{min}–{max} kcal")
+    }
+}
+
+/// Why a line couldn't be counted, in words for the breakdown.
+fn unknown_label(reason: &str) -> &'static str {
+    match reason {
+        "No supported nutrition match" => "Not recognized",
+        "Ambiguous ingredient" => "Could be several foods",
+        "Several ingredients share one amount" => "Several foods share one amount",
+        "Missing quantity" | "Unsupported or missing quantity" | "Unsupported quantity unit" => {
+            "Amount unclear"
+        }
+        "Missing density for this food" => "Can't convert this measurement to weight",
+        "Frying oil: only part of it is absorbed" => "Frying oil: only part is absorbed",
+        other => panic!("no label for unknown reason {other:?}"),
     }
 }
 
@@ -455,9 +556,17 @@ pub fn estimate(
     }
     let mut known = None;
     let mut unknown_ingredients = Vec::new();
+    let mut lines = Vec::new();
     for (index, ingredient) in ingredients.iter().enumerate() {
-        match contribution(ingredient, scale) {
-            Ok(Line::Skipped) => {}
+        let (calories, text) = match contribution(ingredient, scale) {
+            Ok(Line::Skipped) => (None, "Not a food".to_string()),
+            Ok(Line::Negligible) => {
+                known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });
+                (
+                    Some(CalorieRange { min: 0.0, max: 0.0 }),
+                    "Negligible".to_string(),
+                )
+            }
             Ok(Line::Calories(value)) => {
                 let total = known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });
                 total.min += value.min;
@@ -465,13 +574,27 @@ pub fn estimate(
                 if !total.min.is_finite() || !total.max.is_finite() || total.max * scale > 1e15 {
                     return Err("Calorie estimate exceeds supported numeric bounds");
                 }
+                let scaled = CalorieRange {
+                    min: value.min * scale,
+                    max: value.max * scale,
+                };
+                (Some(scaled), kcal_text(scaled))
             }
-            Err(reason) => unknown_ingredients.push(UnknownIngredient {
-                index,
-                item: ingredient.item.clone(),
-                reason: reason.to_string(),
-            }),
-        }
+            Err(reason) => {
+                unknown_ingredients.push(UnknownIngredient {
+                    index,
+                    item: ingredient.item.clone(),
+                    reason: reason.to_string(),
+                });
+                (None, unknown_label(reason).to_string())
+            }
+        };
+        lines.push(LineEstimate {
+            index,
+            item: ingredient.item.clone(),
+            calories,
+            text,
+        });
     }
     // Divide the original subtotal directly: scaling ingredients and servings
     // cancels out, including at very small scales where a scaled subtotal underflows.
@@ -487,30 +610,60 @@ pub fn estimate(
         min: total.min * scale,
         max: total.max * scale,
     });
-    let unknown_names = unknown_ingredients
-        .iter()
-        .map(|i| i.item.as_str())
-        .collect::<Vec<_>>()
-        .join(", ");
-    let summary = match known {
-        Some(range) if unknown_ingredients.is_empty() => format!("Whole recipe: approximately {} calories.", range_text(range)),
-        Some(range) => format!("Known ingredients: {} calories, plus unknown calories from {unknown_names}. This is a partial whole-recipe subtotal.", range_text(range)),
-        None if unknown_ingredients.is_empty() => "No ingredients to estimate.".to_string(),
-        None => format!("Whole-recipe calories unknown: {unknown_names}."),
-    };
-    let per_serving_summary = per_serving.map(|range| {
-        if unknown_ingredients.is_empty() {
-            format!("Per serving: approximately {} calories.", range_text(range))
-        } else {
-            format!("Known ingredients per serving: {} calories, plus unknown calories. This is a partial subtotal.", range_text(range))
+    let status = match (known, unknown_ingredients.len()) {
+        (None, 0) => Status::Empty,
+        (None, _) => Status::Insufficient,
+        (Some(_), 0) => Status::Complete,
+        // A lower bound under 1 kcal (only salt, "0-100 g", a pinch of sugar)
+        // says nothing.
+        (Some(total), unknown)
+            if unknown <= MAX_UNKNOWN_LINES
+                && total.min >= 1.0
+                && per_serving.is_none_or(|serving| serving.min >= 1.0) =>
+        {
+            Status::Partial
         }
-    });
+        (Some(_), _) => Status::Insufficient,
+    };
+    // A partial total is a lower bound, so it shows only its minimum.
+    let figure = |range: CalorieRange, what: &str| match status {
+        // Rounded down, so it never claims more than was counted.
+        Status::Partial => format!(
+            "At least ~{} kcal {what}",
+            kcal_number(range.min, Rounding::Down)
+        ),
+        _ => format!("{} {what}", kcal_text(range)),
+    };
+    let (headline, secondary) = match (status, known, per_serving) {
+        (Status::Empty, ..) => ("No ingredients to estimate".to_string(), None),
+        (Status::Insufficient, ..) => (
+            "Not enough ingredient data to estimate calories".to_string(),
+            Some(match unknown_ingredients.len() {
+                1 => "1 ingredient couldn't be counted.".to_string(),
+                n => format!("{n} ingredients couldn't be counted."),
+            }),
+        ),
+        (_, Some(total), Some(serving)) => (
+            figure(serving, "per serving"),
+            Some(figure(total, "for the whole recipe")),
+        ),
+        (_, Some(total), None) => (figure(total, "for the whole recipe"), None),
+        (_, None, _) => unreachable!("complete and partial estimates have a total"),
+    };
+    let not_counted = if status == Status::Partial {
+        unknown_ingredients.iter().map(|i| i.item.clone()).collect()
+    } else {
+        Vec::new()
+    };
     Ok(Estimate {
         database_version: VERSION.clone(),
+        status,
+        headline,
+        secondary,
+        not_counted,
         known_calories: known,
         per_serving_calories: per_serving,
         unknown_ingredients,
-        summary,
-        per_serving_summary,
+        lines,
     })
 }

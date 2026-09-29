@@ -80,8 +80,8 @@ The response version combines the calculation rule version with the catalog
 version (a hash of the catalog data and its resolution rule version). Bump the
 calculation rule version when changing calculation behavior, including changes
 to reused volume constants. Identical inputs and version give identical
-results. Numeric fields retain calculation precision; summaries round exact
-estimates to whole calories and range bounds outward.
+results. Numeric fields retain calculation precision; display strings round as
+described under Presentation.
 
 ## Negligible, compound, and non-food lines
 
@@ -103,17 +103,43 @@ Some lines are known without a usable amount (rules in the catalog README):
 
 ## Presentation
 
-Complete estimates say “Whole recipe: approximately … calories.” Partial results
-say “Known ingredients: … calories, plus unknown calories from …” and explicitly
-identify the subtotal as partial. Entirely unknown recipes have no numeric total.
-Every unsupported ingredient includes its input index, name, and reason.
+The server decides everything and formats every string; web and iOS only lay
+them out. Each estimate has a `status`, set by how many real ingredients it
+couldn't count (negligible lines and non-food lines never count against it):
+
+| Uncounted | Status | Headline |
+| --- | --- | --- |
+| 0 | `complete` | "~780 kcal per serving", or "~3,100 kcal for the whole recipe" without servings |
+| 1–3 | `partial` | "At least ~780 kcal per serving", plus "Not counted: mirin, garlic" |
+| 4+, or nothing counted | `insufficient` | "Not enough ingredient data to estimate calories" |
+| no estimable lines | `empty` | "No ingredients to estimate" |
+
+A per-serving headline has the whole-recipe figure as its `secondary` line. A
+partial estimate shows only its lower bound, and an insufficient one shows no
+number at all. Numbers use whole calories under 100 and tens above, with
+thousands separators ("~97", "~3,100"). A single estimate rounds to the nearest
+value. Range ends round outward ("~380–780 kcal" for 387–774), and a lower bound
+rounds down ("At least ~380"), so the display never claims more than was counted.
+A lower bound under 1 kcal is insufficient rather than partial.
+
+The cutoff of 3 uncounted ingredients (`nutrition::MAX_UNKNOWN_LINES`) came from
+the "Uncounted ingredients per recipe" table in the catalog audit, run against
+prod on 2026-09-28. With 992 recipes, a cutoff of 2 would show a number for only
+40% of them, 3 shows one for 56%, and 5 for 82%. However, a lower bound missing
+five ingredients can be far below the real total. The cutoff should rise only if
+the audit shows most uncounted lines are minor.
+
+A "How is this calculated?" disclosure lists every line with its scaled calories,
+"Negligible", "Not a food", or a short reason it couldn't be counted ("Not
+recognized", "Could be several foods", "Amount unclear", "Can't convert this
+measurement to weight"), followed by the USDA attribution.
 
 Only a positive numeric serving count, optionally prefixed by `serves`, `Serves:`,
 or `Servings:` (case-insensitive), or suffixed by `serving`/`servings`, is used for
 per-serving estimates. Yield text (`1 loaf`,
 `4–6`) is deliberately not interpreted. Scaling
 multiplies both ingredients and servings, so per-serving calories stay the same.
-Partial per-serving estimates are labeled partial as well. Imported nutrition
+Partial per-serving estimates are lower bounds as well. Imported nutrition
 text is displayed separately and never feeds the calculation.
 
 Web and iOS also scale displayed ranges, mixed numbers, compound measurements,

@@ -2,7 +2,9 @@
 /* eslint-disable */
 export * from './BookmarkletTokenResponse';
 export * from './CalorieEstimateResponse';
+export * from './CalorieLine';
 export * from './CalorieRange';
+export * from './CalorieStatus';
 export * from './CaptureRequest';
 export * from './ClearCheckedResponse';
 export * from './CreateClientLogRequest';
@@ -71,7 +73,6 @@ export * from './SyncUpdatedItem';
 export * from './TagItem';
 export * from './TagsListResponse';
 export * from './UnauthedPingResponse';
-export * from './UnknownCalorieIngredient';
 export * from './UpdateMealPlanRequest';
 export * from './UpdateRecipeRequest';
 export * from './UpdateShoppingListItemRequest';

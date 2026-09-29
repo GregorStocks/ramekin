@@ -118,7 +118,9 @@ Class | Method | HTTP request | Description
 
  - [BookmarkletTokenResponse](ramekin_client/docs/BookmarkletTokenResponse.md)
  - [CalorieEstimateResponse](ramekin_client/docs/CalorieEstimateResponse.md)
+ - [CalorieLine](ramekin_client/docs/CalorieLine.md)
  - [CalorieRange](ramekin_client/docs/CalorieRange.md)
+ - [CalorieStatus](ramekin_client/docs/CalorieStatus.md)
  - [CaptureRequest](ramekin_client/docs/CaptureRequest.md)
  - [ClearCheckedResponse](ramekin_client/docs/ClearCheckedResponse.md)
  - [CreateClientLogRequest](ramekin_client/docs/CreateClientLogRequest.md)
@@ -187,7 +189,6 @@ Class | Method | HTTP request | Description
  - [TagItem](ramekin_client/docs/TagItem.md)
  - [TagsListResponse](ramekin_client/docs/TagsListResponse.md)
  - [UnauthedPingResponse](ramekin_client/docs/UnauthedPingResponse.md)
- - [UnknownCalorieIngredient](ramekin_client/docs/UnknownCalorieIngredient.md)
  - [UpdateMealPlanRequest](ramekin_client/docs/UpdateMealPlanRequest.md)
  - [UpdateRecipeRequest](ramekin_client/docs/UpdateRecipeRequest.md)
  - [UpdateShoppingListItemRequest](ramekin_client/docs/UpdateShoppingListItemRequest.md)

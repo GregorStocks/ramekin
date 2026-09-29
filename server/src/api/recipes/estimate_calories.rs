@@ -31,23 +31,61 @@ impl From<nutrition::CalorieRange> for CalorieRange {
     }
 }
 
+/// How far to trust the estimate, from how many ingredients it couldn't count.
 #[derive(Serialize, ToSchema)]
-pub struct UnknownCalorieIngredient {
-    pub index: usize,
-    pub item: String,
-    pub reason: String,
+#[serde(rename_all = "snake_case")]
+pub enum CalorieStatus {
+    /// Every ingredient is counted or negligible.
+    Complete,
+    /// A few ingredients are missing, so the figures are lower bounds.
+    Partial,
+    /// Too many ingredients are missing to show a number.
+    Insufficient,
+    /// Nothing to estimate.
+    Empty,
 }
 
+impl From<nutrition::Status> for CalorieStatus {
+    fn from(status: nutrition::Status) -> Self {
+        match status {
+            nutrition::Status::Complete => Self::Complete,
+            nutrition::Status::Partial => Self::Partial,
+            nutrition::Status::Insufficient => Self::Insufficient,
+            nutrition::Status::Empty => Self::Empty,
+        }
+    }
+}
+
+/// One ingredient line's part of the estimate.
+#[derive(Serialize, ToSchema)]
+pub struct CalorieLine {
+    pub index: usize,
+    pub item: String,
+    /// Scaled calories when counted (zero when negligible).
+    pub calories: Option<CalorieRange>,
+    /// Display text: "~120 kcal", "Negligible", "Not a food", or why it
+    /// couldn't be counted ("Not recognized", "Amount unclear").
+    pub text: String,
+}
+
+/// Every display string is final; clients render them as-is.
 #[derive(Serialize, ToSchema)]
 pub struct CalorieEstimateResponse {
     /// Identifies the pinned source data, aliases, and calculation rules.
     pub database_version: String,
-    /// Null when no ingredient could be estimated. Otherwise a subtotal that may be partial.
+    pub status: CalorieStatus,
+    /// The main line: "~520 kcal per serving", "At least ~3,100 kcal for the
+    /// whole recipe", or "Not enough ingredient data to estimate calories".
+    pub headline: String,
+    /// Shown under the headline when present.
+    pub secondary: Option<String>,
+    /// For a partial estimate, the ingredients its lower bound leaves out.
+    pub not_counted: Vec<String>,
+    /// Null when nothing was counted. A lower bound when status is partial.
     pub known_calories: Option<CalorieRange>,
     pub per_serving_calories: Option<CalorieRange>,
-    pub unknown_ingredients: Vec<UnknownCalorieIngredient>,
-    pub summary: String,
-    pub per_serving_summary: Option<String>,
+    /// The breakdown, one entry per ingredient in order.
+    pub lines: Vec<CalorieLine>,
 }
 
 #[utoipa::path(
@@ -88,18 +126,21 @@ pub async fn estimate_calories(
         .map_err(ApiError::invalid_request)?;
     Ok(Json(CalorieEstimateResponse {
         database_version: result.database_version,
+        status: result.status.into(),
+        headline: result.headline,
+        secondary: result.secondary,
+        not_counted: result.not_counted,
         known_calories: result.known_calories.map(Into::into),
         per_serving_calories: result.per_serving_calories.map(Into::into),
-        unknown_ingredients: result
-            .unknown_ingredients
+        lines: result
+            .lines
             .into_iter()
-            .map(|item| UnknownCalorieIngredient {
-                index: item.index,
-                item: item.item,
-                reason: item.reason,
+            .map(|line| CalorieLine {
+                index: line.index,
+                item: line.item,
+                calories: line.calories.map(Into::into),
+                text: line.text,
             })
             .collect(),
-        summary: result.summary,
-        per_serving_summary: result.per_serving_summary,
     }))
 }

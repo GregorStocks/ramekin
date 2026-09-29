@@ -2879,15 +2879,22 @@
       },
       "CalorieEstimateResponse": {
         "type": "object",
+        "description": "Every display string is final; clients render them as-is.",
         "required": [
           "database_version",
-          "unknown_ingredients",
-          "summary"
+          "status",
+          "headline",
+          "not_counted",
+          "lines"
         ],
         "properties": {
           "database_version": {
             "type": "string",
             "description": "Identifies the pinned source data, aliases, and calculation rules."
+          },
+          "headline": {
+            "type": "string",
+            "description": "The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the\nwhole recipe\", or \"Not enough ingredient data to estimate calories\"."
           },
           "known_calories": {
             "oneOf": [
@@ -2896,9 +2903,23 @@
               },
               {
                 "$ref": "#/components/schemas/CalorieRange",
-                "description": "Null when no ingredient could be estimated. Otherwise a subtotal that may be partial."
+                "description": "Null when nothing was counted. A lower bound when status is partial."
               }
             ]
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalorieLine"
+            },
+            "description": "The breakdown, one entry per ingredient in order."
+          },
+          "not_counted": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "For a partial estimate, the ingredients its lower bound leaves out."
           },
           "per_serving_calories": {
             "oneOf": [
@@ -2910,20 +2931,48 @@
               }
             ]
           },
-          "per_serving_summary": {
+          "secondary": {
             "type": [
               "string",
               "null"
+            ],
+            "description": "Shown under the headline when present."
+          },
+          "status": {
+            "$ref": "#/components/schemas/CalorieStatus"
+          }
+        }
+      },
+      "CalorieLine": {
+        "type": "object",
+        "description": "One ingredient line's part of the estimate.",
+        "required": [
+          "index",
+          "item",
+          "text"
+        ],
+        "properties": {
+          "calories": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/CalorieRange",
+                "description": "Scaled calories when counted (zero when negligible)."
+              }
             ]
           },
-          "summary": {
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "item": {
             "type": "string"
           },
-          "unknown_ingredients": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UnknownCalorieIngredient"
-            }
+          "text": {
+            "type": "string",
+            "description": "Display text: \"~120 kcal\", \"Negligible\", \"Not a food\", or why it\ncouldn't be counted (\"Not recognized\", \"Amount unclear\")."
           }
         }
       },
@@ -2943,6 +2992,16 @@
             "format": "double"
           }
         }
+      },
+      "CalorieStatus": {
+        "type": "string",
+        "description": "How far to trust the estimate, from how many ingredients it couldn't count.",
+        "enum": [
+          "complete",
+          "partial",
+          "insufficient",
+          "empty"
+        ]
       },
       "CaptureRequest": {
         "type": "object",
@@ -4943,26 +5002,6 @@
         ],
         "properties": {
           "message": {
-            "type": "string"
-          }
-        }
-      },
-      "UnknownCalorieIngredient": {
-        "type": "object",
-        "required": [
-          "index",
-          "item",
-          "reason"
-        ],
-        "properties": {
-          "index": {
-            "type": "integer",
-            "minimum": 0
-          },
-          "item": {
-            "type": "string"
-          },
-          "reason": {
             "type": "string"
           }
         }

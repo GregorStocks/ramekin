@@ -10,33 +10,44 @@ import Foundation
 import AnyCodable
 #endif
 
+/** Every display string is final; clients render them as-is. */
 public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
 
     /** Identifies the pinned source data, aliases, and calculation rules. */
     public var databaseVersion: String
-    /** Null when no ingredient could be estimated. Otherwise a subtotal that may be partial. */
+    /** The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the whole recipe\", or \"Not enough ingredient data to estimate calories\". */
+    public var headline: String
+    /** Null when nothing was counted. A lower bound when status is partial. */
     public var knownCalories: CalorieRange?
+    /** The breakdown, one entry per ingredient in order. */
+    public var lines: [CalorieLine]
+    /** For a partial estimate, the ingredients its lower bound leaves out. */
+    public var notCounted: [String]
     public var perServingCalories: CalorieRange?
-    public var perServingSummary: String?
-    public var summary: String
-    public var unknownIngredients: [UnknownCalorieIngredient]
+    /** Shown under the headline when present. */
+    public var secondary: String?
+    public var status: CalorieStatus
 
-    public init(databaseVersion: String, knownCalories: CalorieRange? = nil, perServingCalories: CalorieRange? = nil, perServingSummary: String? = nil, summary: String, unknownIngredients: [UnknownCalorieIngredient]) {
+    public init(databaseVersion: String, headline: String, knownCalories: CalorieRange? = nil, lines: [CalorieLine], notCounted: [String], perServingCalories: CalorieRange? = nil, secondary: String? = nil, status: CalorieStatus) {
         self.databaseVersion = databaseVersion
+        self.headline = headline
         self.knownCalories = knownCalories
+        self.lines = lines
+        self.notCounted = notCounted
         self.perServingCalories = perServingCalories
-        self.perServingSummary = perServingSummary
-        self.summary = summary
-        self.unknownIngredients = unknownIngredients
+        self.secondary = secondary
+        self.status = status
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case databaseVersion = "database_version"
+        case headline
         case knownCalories = "known_calories"
+        case lines
+        case notCounted = "not_counted"
         case perServingCalories = "per_serving_calories"
-        case perServingSummary = "per_serving_summary"
-        case summary
-        case unknownIngredients = "unknown_ingredients"
+        case secondary
+        case status
     }
 
     // Encodable protocol methods
@@ -44,11 +55,13 @@ public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(databaseVersion, forKey: .databaseVersion)
+        try container.encode(headline, forKey: .headline)
         try container.encodeIfPresent(knownCalories, forKey: .knownCalories)
+        try container.encode(lines, forKey: .lines)
+        try container.encode(notCounted, forKey: .notCounted)
         try container.encodeIfPresent(perServingCalories, forKey: .perServingCalories)
-        try container.encodeIfPresent(perServingSummary, forKey: .perServingSummary)
-        try container.encode(summary, forKey: .summary)
-        try container.encode(unknownIngredients, forKey: .unknownIngredients)
+        try container.encodeIfPresent(secondary, forKey: .secondary)
+        try container.encode(status, forKey: .status)
     }
 }
 

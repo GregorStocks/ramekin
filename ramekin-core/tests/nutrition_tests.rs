@@ -1,5 +1,5 @@
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
-use ramekin_core::nutrition::estimate;
+use ramekin_core::nutrition::{estimate, Status, MAX_UNKNOWN_LINES};
 
 #[test]
 fn scale_limits_match_both_clients() {
@@ -192,7 +192,11 @@ fn unknowns_are_explicit_and_never_zero() {
         assert!(result.known_calories.is_none(), "{item} {amount} {unit}");
         assert!(result.per_serving_calories.is_none());
         assert_eq!(result.unknown_ingredients[0].reason, reason);
-        assert!(result.summary.contains("unknown"));
+        assert_eq!(result.status, Status::Insufficient);
+        assert_eq!(
+            result.headline,
+            "Not enough ingredient data to estimate calories"
+        );
         let partial = estimate(
             &[ingredient("granulated sugar", "100", "g"), unknown],
             Some("4"),
@@ -201,11 +205,13 @@ fn unknowns_are_explicit_and_never_zero() {
         .unwrap();
         assert_eq!(partial.known_calories.unwrap().min, 387.0);
         assert_eq!(partial.unknown_ingredients[0].index, 1);
-        assert!(partial.summary.contains("partial whole-recipe subtotal"));
-        assert!(partial
-            .per_serving_summary
-            .unwrap()
-            .contains("partial subtotal"));
+        assert_eq!(partial.status, Status::Partial);
+        assert_eq!(partial.headline, "At least ~96 kcal per serving");
+        assert_eq!(
+            partial.secondary.as_deref(),
+            Some("At least ~380 kcal for the whole recipe")
+        );
+        assert_eq!(partial.not_counted, [item]);
     }
 }
 
@@ -215,7 +221,7 @@ fn deterministic_matching_zero_calories_and_servings() {
     let first = estimate(std::slice::from_ref(&sugar), Some("4"), 1.0).unwrap();
     let second = estimate(std::slice::from_ref(&sugar), Some("4"), 1.0).unwrap();
     assert_eq!(first.database_version, second.database_version);
-    assert_eq!(first.summary, second.summary);
+    assert_eq!(first.headline, second.headline);
     for servings in ["0", "-1", "4–6", "1 loaf", "4–6 servings", "NaN"] {
         assert!(estimate(std::slice::from_ref(&sugar), Some(servings), 1.0)
             .unwrap()
@@ -514,7 +520,9 @@ fn compound_and_non_food_lines() {
 
     let only_skipped = estimate(&[bare("to serve")], None, 1.0).unwrap();
     assert!(only_skipped.unknown_ingredients.is_empty());
-    assert_eq!(only_skipped.summary, "No ingredients to estimate.");
+    assert_eq!(only_skipped.status, Status::Empty);
+    assert_eq!(only_skipped.headline, "No ingredients to estimate");
+    assert_eq!(only_skipped.lines[0].text, "Not a food");
 }
 
 #[test]
@@ -558,4 +566,120 @@ fn a_spoonful_of_oil_for_frying_still_counts() {
         result.unknown_ingredients
     );
     assert!(result.known_calories.unwrap().max > 100.0);
+}
+
+#[test]
+fn status_follows_the_number_of_uncounted_ingredients() {
+    let sugar = || ingredient("granulated sugar", "100", "g");
+    let unknown = |n: usize| {
+        (0..n)
+            .map(|i| ingredient(&format!("moon dust {i}"), "1", "cup"))
+            .collect::<Vec<_>>()
+    };
+    let complete = estimate(&[sugar()], None, 1.0).unwrap();
+    assert_eq!(complete.status, Status::Complete);
+    assert_eq!(complete.headline, "~390 kcal for the whole recipe");
+    assert_eq!(complete.secondary, None);
+    assert!(complete.not_counted.is_empty());
+
+    let mut lines = vec![sugar()];
+    lines.extend(unknown(MAX_UNKNOWN_LINES));
+    let partial = estimate(&lines, None, 1.0).unwrap();
+    assert_eq!(partial.status, Status::Partial);
+    assert_eq!(partial.headline, "At least ~380 kcal for the whole recipe");
+    assert_eq!(partial.not_counted.len(), MAX_UNKNOWN_LINES);
+
+    lines.extend(unknown(1));
+    let insufficient = estimate(&lines, None, 1.0).unwrap();
+    assert_eq!(insufficient.status, Status::Insufficient);
+    assert_eq!(
+        insufficient.secondary.as_deref(),
+        Some(format!("{} ingredients couldn't be counted.", MAX_UNKNOWN_LINES + 1).as_str())
+    );
+    assert!(insufficient.not_counted.is_empty());
+
+    // Negligible and non-food lines are never uncounted.
+    let seasoned = estimate(
+        &[
+            sugar(),
+            bare("salt and pepper"),
+            bare("to serve"),
+            bare("Sauce:"),
+        ],
+        None,
+        1.0,
+    )
+    .unwrap();
+    assert_eq!(seasoned.status, Status::Complete);
+    let texts: Vec<_> = seasoned.lines.iter().map(|l| l.text.as_str()).collect();
+    assert_eq!(
+        texts,
+        ["~390 kcal", "Negligible", "Not a food", "Not a food"]
+    );
+
+    // A real food without a usable amount stays uncounted.
+    let greased = estimate(&[sugar(), bare("butter")], None, 1.0).unwrap();
+    assert_eq!(greased.status, Status::Partial);
+    assert_eq!(greased.lines[1].text, "Amount unclear");
+
+    // Salt beside an unknown main ingredient is no lower bound at all.
+    let only_salt = estimate(
+        &[bare("kosher salt"), ingredient("moon dust", "1", "cup")],
+        None,
+        1.0,
+    )
+    .unwrap();
+    assert_eq!(only_salt.status, Status::Insufficient);
+    let from_zero = estimate(
+        &[
+            ingredient("granulated sugar", "0-100", "g"),
+            ingredient("moon dust", "1", "cup"),
+        ],
+        None,
+        1.0,
+    )
+    .unwrap();
+    assert_eq!(from_zero.status, Status::Insufficient);
+    let pinch = estimate(
+        &[
+            ingredient("granulated sugar", "0.1", "g"),
+            ingredient("moon dust", "1", "cup"),
+        ],
+        None,
+        1.0,
+    )
+    .unwrap();
+    assert_eq!(pinch.status, Status::Insufficient);
+
+    let empty = estimate(&[], Some("4"), 1.0).unwrap();
+    assert_eq!(empty.status, Status::Empty);
+}
+
+#[test]
+fn headlines_lead_with_per_serving_and_format_numbers() {
+    let flour = ingredient("flour", "2", "cups");
+    let per_serving = estimate(std::slice::from_ref(&flour), Some("4"), 1.0).unwrap();
+    assert_eq!(per_serving.headline, "~230 kcal per serving");
+    assert_eq!(
+        per_serving.secondary.as_deref(),
+        Some("~910 kcal for the whole recipe")
+    );
+    // Thousands separators, lines scaled with the recipe.
+    let tripled = estimate(std::slice::from_ref(&flour), None, 3.0).unwrap();
+    assert_eq!(tripled.headline, "~2,730 kcal for the whole recipe");
+    assert_eq!(tripled.lines[0].text, "~2,730 kcal");
+    let ranged = estimate(
+        &[ingredient("granulated sugar", "100-200", "g")],
+        Some("serves 4"),
+        1.0,
+    )
+    .unwrap();
+    assert_eq!(ranged.headline, "~96–200 kcal per serving");
+    let tiny = estimate(&[ingredient("granulated sugar", "0.1", "g")], None, 1.0).unwrap();
+    assert_eq!(tiny.headline, "<1 kcal for the whole recipe");
+    let tiny_range =
+        estimate(&[ingredient("granulated sugar", "0.1-0.2", "g")], None, 1.0).unwrap();
+    assert_eq!(tiny_range.headline, "<1 kcal for the whole recipe");
+    let from_tiny = estimate(&[ingredient("granulated sugar", "0.1-2", "g")], None, 1.0).unwrap();
+    assert_eq!(from_tiny.headline, "~0–8 kcal for the whole recipe");
 }

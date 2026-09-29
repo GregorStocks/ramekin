@@ -11,12 +11,16 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+/// CalorieEstimateResponse : Every display string is final; clients render them as-is.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CalorieEstimateResponse {
     /// Identifies the pinned source data, aliases, and calculation rules.
     #[serde(rename = "database_version")]
     pub database_version: String,
-    /// Null when no ingredient could be estimated. Otherwise a subtotal that may be partial.
+    /// The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the whole recipe\", or \"Not enough ingredient data to estimate calories\".
+    #[serde(rename = "headline")]
+    pub headline: String,
+    /// Null when nothing was counted. A lower bound when status is partial.
     #[serde(
         rename = "known_calories",
         default,
@@ -24,6 +28,12 @@ pub struct CalorieEstimateResponse {
         skip_serializing_if = "Option::is_none"
     )]
     pub known_calories: Option<Option<Box<models::CalorieRange>>>,
+    /// The breakdown, one entry per ingredient in order.
+    #[serde(rename = "lines")]
+    pub lines: Vec<models::CalorieLine>,
+    /// For a partial estimate, the ingredients its lower bound leaves out.
+    #[serde(rename = "not_counted")]
+    pub not_counted: Vec<String>,
     #[serde(
         rename = "per_serving_calories",
         default,
@@ -31,32 +41,36 @@ pub struct CalorieEstimateResponse {
         skip_serializing_if = "Option::is_none"
     )]
     pub per_serving_calories: Option<Option<Box<models::CalorieRange>>>,
+    /// Shown under the headline when present.
     #[serde(
-        rename = "per_serving_summary",
+        rename = "secondary",
         default,
         with = "::serde_with::rust::double_option",
         skip_serializing_if = "Option::is_none"
     )]
-    pub per_serving_summary: Option<Option<String>>,
-    #[serde(rename = "summary")]
-    pub summary: String,
-    #[serde(rename = "unknown_ingredients")]
-    pub unknown_ingredients: Vec<models::UnknownCalorieIngredient>,
+    pub secondary: Option<Option<String>>,
+    #[serde(rename = "status")]
+    pub status: models::CalorieStatus,
 }
 
 impl CalorieEstimateResponse {
+    /// Every display string is final; clients render them as-is.
     pub fn new(
         database_version: String,
-        summary: String,
-        unknown_ingredients: Vec<models::UnknownCalorieIngredient>,
+        headline: String,
+        lines: Vec<models::CalorieLine>,
+        not_counted: Vec<String>,
+        status: models::CalorieStatus,
     ) -> CalorieEstimateResponse {
         CalorieEstimateResponse {
             database_version,
+            headline,
             known_calories: None,
+            lines,
+            not_counted,
             per_serving_calories: None,
-            per_serving_summary: None,
-            summary,
-            unknown_ingredients,
+            secondary: None,
+            status,
         }
     }
 }

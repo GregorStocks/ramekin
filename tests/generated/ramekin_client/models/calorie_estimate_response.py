@@ -19,22 +19,25 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ramekin_client.models.calorie_line import CalorieLine
 from ramekin_client.models.calorie_range import CalorieRange
-from ramekin_client.models.unknown_calorie_ingredient import UnknownCalorieIngredient
+from ramekin_client.models.calorie_status import CalorieStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
 class CalorieEstimateResponse(BaseModel):
     """
-    CalorieEstimateResponse
+    Every display string is final; clients render them as-is.
     """ # noqa: E501
     database_version: StrictStr = Field(description="Identifies the pinned source data, aliases, and calculation rules.")
-    known_calories: Optional[CalorieRange] = Field(default=None, description="Null when no ingredient could be estimated. Otherwise a subtotal that may be partial.")
+    headline: StrictStr = Field(description="The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the whole recipe\", or \"Not enough ingredient data to estimate calories\".")
+    known_calories: Optional[CalorieRange] = Field(default=None, description="Null when nothing was counted. A lower bound when status is partial.")
+    lines: List[CalorieLine] = Field(description="The breakdown, one entry per ingredient in order.")
+    not_counted: List[StrictStr] = Field(description="For a partial estimate, the ingredients its lower bound leaves out.")
     per_serving_calories: Optional[CalorieRange] = None
-    per_serving_summary: Optional[StrictStr] = None
-    summary: StrictStr
-    unknown_ingredients: List[UnknownCalorieIngredient]
-    __properties: ClassVar[List[str]] = ["database_version", "known_calories", "per_serving_calories", "per_serving_summary", "summary", "unknown_ingredients"]
+    secondary: Optional[StrictStr] = Field(default=None, description="Shown under the headline when present.")
+    status: CalorieStatus
+    __properties: ClassVar[List[str]] = ["database_version", "headline", "known_calories", "lines", "not_counted", "per_serving_calories", "secondary", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,16 +81,16 @@ class CalorieEstimateResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of known_calories
         if self.known_calories:
             _dict['known_calories'] = self.known_calories.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in lines (list)
+        _items = []
+        if self.lines:
+            for _item_lines in self.lines:
+                if _item_lines:
+                    _items.append(_item_lines.to_dict())
+            _dict['lines'] = _items
         # override the default output from pydantic by calling `to_dict()` of per_serving_calories
         if self.per_serving_calories:
             _dict['per_serving_calories'] = self.per_serving_calories.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in unknown_ingredients (list)
-        _items = []
-        if self.unknown_ingredients:
-            for _item_unknown_ingredients in self.unknown_ingredients:
-                if _item_unknown_ingredients:
-                    _items.append(_item_unknown_ingredients.to_dict())
-            _dict['unknown_ingredients'] = _items
         # set to None if known_calories (nullable) is None
         # and model_fields_set contains the field
         if self.known_calories is None and "known_calories" in self.model_fields_set:
@@ -98,10 +101,10 @@ class CalorieEstimateResponse(BaseModel):
         if self.per_serving_calories is None and "per_serving_calories" in self.model_fields_set:
             _dict['per_serving_calories'] = None
 
-        # set to None if per_serving_summary (nullable) is None
+        # set to None if secondary (nullable) is None
         # and model_fields_set contains the field
-        if self.per_serving_summary is None and "per_serving_summary" in self.model_fields_set:
-            _dict['per_serving_summary'] = None
+        if self.secondary is None and "secondary" in self.model_fields_set:
+            _dict['secondary'] = None
 
         return _dict
 
@@ -116,11 +119,13 @@ class CalorieEstimateResponse(BaseModel):
 
         _obj = cls.model_validate({
             "database_version": obj.get("database_version"),
+            "headline": obj.get("headline"),
             "known_calories": CalorieRange.from_dict(obj["known_calories"]) if obj.get("known_calories") is not None else None,
+            "lines": [CalorieLine.from_dict(_item) for _item in obj["lines"]] if obj.get("lines") is not None else None,
+            "not_counted": obj.get("not_counted"),
             "per_serving_calories": CalorieRange.from_dict(obj["per_serving_calories"]) if obj.get("per_serving_calories") is not None else None,
-            "per_serving_summary": obj.get("per_serving_summary"),
-            "summary": obj.get("summary"),
-            "unknown_ingredients": [UnknownCalorieIngredient.from_dict(_item) for _item in obj["unknown_ingredients"]] if obj.get("unknown_ingredients") is not None else None
+            "secondary": obj.get("secondary"),
+            "status": obj.get("status")
         })
         return _obj
 

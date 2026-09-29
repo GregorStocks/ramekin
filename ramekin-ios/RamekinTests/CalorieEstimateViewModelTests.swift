@@ -2,14 +2,21 @@ import XCTest
 @testable import Ramekin
 
 final class CalorieEstimateViewModelTests: XCTestCase {
+    private func estimate(_ headline: String, status: CalorieStatus = .complete) -> CalorieEstimateResponse {
+        CalorieEstimateResponse(databaseVersion: "test", headline: headline, lines: [], notCounted: [], status: status)
+    }
+
     @MainActor
     func testPassesOriginalIngredientsServingsAndScaleAndDisplaysServerResult() async {
         let ingredient = Ingredient(item: "yogurt", measurements: [Measurement(amount: "100", unit: "g")])
         let request = EstimateCaloriesRequest(ingredients: [ingredient], scale: 2, servings: "4")
         let result = CalorieEstimateResponse(
             databaseVersion: "test",
-            summary: "Whole-recipe calories unknown: yogurt.",
-            unknownIngredients: [UnknownCalorieIngredient(index: 0, item: "yogurt", reason: "Ambiguous ingredient")]
+            headline: "Not enough ingredient data to estimate calories",
+            lines: [CalorieLine(index: 0, item: "yogurt", text: "Could be several foods")],
+            notCounted: [],
+            secondary: "1 ingredient couldn't be counted.",
+            status: .insufficient
         )
         let model = CalorieEstimateViewModel { actual in
             XCTAssertEqual(actual, request)
@@ -25,7 +32,7 @@ final class CalorieEstimateViewModelTests: XCTestCase {
     @MainActor
     func testFailureClearsPreviousEstimateAndRetryRecovers() async {
         let request = EstimateCaloriesRequest(ingredients: [], scale: 1)
-        let result = CalorieEstimateResponse(databaseVersion: "test", summary: "No ingredients to estimate.", unknownIngredients: [])
+        let result = estimate("No ingredients to estimate", status: .empty)
         var shouldFail = false
         let model = CalorieEstimateViewModel { _ in
             if shouldFail { throw URLError(.notConnectedToInternet) }
@@ -47,7 +54,7 @@ final class CalorieEstimateViewModelTests: XCTestCase {
     @MainActor
     func testLateResponseCannotReplaceNewScaleOrRecipe() async {
         var continuation: CheckedContinuation<CalorieEstimateResponse, Never>?
-        let newer = CalorieEstimateResponse(databaseVersion: "test", summary: "New recipe", unknownIngredients: [])
+        let newer = estimate("New recipe")
         let model = CalorieEstimateViewModel { request in
             if request.scale == 1 {
                 return await withCheckedContinuation { continuation = $0 }
@@ -60,7 +67,7 @@ final class CalorieEstimateViewModelTests: XCTestCase {
         XCTAssertNil(model.response)
         await model.load(EstimateCaloriesRequest(ingredients: [], scale: 2))
         XCTAssertEqual(model.response, newer)
-        continuation?.resume(returning: CalorieEstimateResponse(databaseVersion: "test", summary: "Old recipe", unknownIngredients: []))
+        continuation?.resume(returning: estimate("Old recipe"))
         await first.value
         XCTAssertEqual(model.response, newer)
         XCTAssertEqual(model.request?.scale, 2)

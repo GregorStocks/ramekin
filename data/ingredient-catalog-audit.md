@@ -33,6 +33,19 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Unsupported or missing quantity | 43 | 0.1% |
 | Unsupported quantity unit | 616 | 1.0% |
 
+### Uncounted ingredients per recipe
+
+| Uncounted | Recipes | Share of recipes |
+| --- | ---: | ---: |
+| 0 | 395 | 7.3% |
+| 1 | 903 | 16.7% |
+| 2 | 1052 | 19.5% |
+| 3 | 955 | 17.7% |
+| 4-5 | 1276 | 23.6% |
+| 6+ | 827 | 15.3% |
+
+Estimate status with at most 3 uncounted: Complete 7.3%, Insufficient 40.3%, Partial 52.3%
+
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
@@ -56,6 +69,19 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Unsupported or missing quantity | 6 | 0.1% |
 | Unsupported quantity unit | 87 | 1.6% |
 
+### Uncounted ingredients per recipe
+
+| Uncounted | Recipes | Share of recipes |
+| --- | ---: | ---: |
+| 0 | 48 | 10.4% |
+| 1 | 74 | 16.0% |
+| 2 | 102 | 22.1% |
+| 3 | 66 | 14.3% |
+| 4-5 | 109 | 23.6% |
+| 6+ | 63 | 13.6% |
+
+Estimate status with at most 3 uncounted: Complete 10.4%, Insufficient 37.7%, Partial 51.9%
+
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
@@ -78,6 +104,19 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Several ingredients share one amount | 7 | 0.1% |
 | Unsupported or missing quantity | 4 | 0.1% |
 | Unsupported quantity unit | 79 | 1.5% |
+
+### Uncounted ingredients per recipe
+
+| Uncounted | Recipes | Share of recipes |
+| --- | ---: | ---: |
+| 0 | 46 | 10.3% |
+| 1 | 76 | 17.1% |
+| 2 | 104 | 23.4% |
+| 3 | 72 | 16.2% |
+| 4-5 | 103 | 23.1% |
+| 6+ | 44 | 9.9% |
+
+Estimate status with at most 3 uncounted: Complete 10.3%, Insufficient 33.5%, Partial 56.2%
 
 ### Unrecognized-name fingerprints
 

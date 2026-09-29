@@ -18,19 +18,21 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from ramekin_client.models.calorie_range import CalorieRange
 from typing import Optional, Set
 from typing_extensions import Self
 
-class UnknownCalorieIngredient(BaseModel):
+class CalorieLine(BaseModel):
     """
-    UnknownCalorieIngredient
+    One ingredient line's part of the estimate.
     """ # noqa: E501
+    calories: Optional[CalorieRange] = Field(default=None, description="Scaled calories when counted (zero when negligible).")
     index: Annotated[int, Field(strict=True, ge=0)]
     item: StrictStr
-    reason: StrictStr
-    __properties: ClassVar[List[str]] = ["index", "item", "reason"]
+    text: StrictStr = Field(description="Display text: \"~120 kcal\", \"Negligible\", \"Not a food\", or why it couldn't be counted (\"Not recognized\", \"Amount unclear\").")
+    __properties: ClassVar[List[str]] = ["calories", "index", "item", "text"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +52,7 @@ class UnknownCalorieIngredient(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of UnknownCalorieIngredient from a JSON string"""
+        """Create an instance of CalorieLine from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,11 +73,19 @@ class UnknownCalorieIngredient(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of calories
+        if self.calories:
+            _dict['calories'] = self.calories.to_dict()
+        # set to None if calories (nullable) is None
+        # and model_fields_set contains the field
+        if self.calories is None and "calories" in self.model_fields_set:
+            _dict['calories'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of UnknownCalorieIngredient from a dict"""
+        """Create an instance of CalorieLine from a dict"""
         if obj is None:
             return None
 
@@ -83,9 +93,10 @@ class UnknownCalorieIngredient(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "calories": CalorieRange.from_dict(obj["calories"]) if obj.get("calories") is not None else None,
             "index": obj.get("index"),
             "item": obj.get("item"),
-            "reason": obj.get("reason")
+            "text": obj.get("text")
         })
         return _obj
 
