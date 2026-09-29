@@ -165,8 +165,12 @@ fn extract_trailing_marker(s: &str) -> String {
                 i += 1;
             }
             let count = i - start;
+            // "* 1 cup flour": asterisks opening the line are a list bullet,
+            // which the raw line keeps, not a footnote marker.
+            let is_bullet = start == 0 && bytes.get(i) == Some(&b' ');
             // Valid marker: 1-3 asterisks followed by end-of-string or a boundary char
-            if (1..=3).contains(&count)
+            if !is_bullet
+                && (1..=3).contains(&count)
                 && (i >= bytes.len()
                     || bytes[i] == b' '
                     || bytes[i] == b','
@@ -184,6 +188,13 @@ fn extract_trailing_marker(s: &str) -> String {
 
 #[cfg(test)]
 mod tests {
+    #[test]
+    fn list_bullets_are_not_footnote_markers() {
+        assert_eq!(super::extract_trailing_marker("* 1 cup flour"), "");
+        assert_eq!(super::extract_trailing_marker("* 1 tsp salt*"), "*");
+        assert_eq!(super::extract_trailing_marker("salt* (to taste)"), "*");
+    }
+
     use std::collections::HashMap;
     use std::error::Error;
 
