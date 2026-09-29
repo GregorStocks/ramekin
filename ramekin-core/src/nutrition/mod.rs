@@ -478,7 +478,8 @@ fn kcal_number(kcal: f64, rounding: Rounding) -> String {
         Rounding::Down => (kcal / step).floor() * step,
         Rounding::Up => (kcal / step).ceil() * step,
     };
-    if kcal > 0.0 && rounded == 0.0 {
+    // A single tiny estimate is "<1"; a range's lower end may honestly be 0.
+    if matches!(rounding, Rounding::Nearest) && kcal > 0.0 && rounded == 0.0 {
         return "<1".to_string();
     }
     let digits = format!("{rounded:.0}");
@@ -494,6 +495,9 @@ fn kcal_number(kcal: f64, rounding: Rounding) -> String {
 
 /// "~120 kcal", or "~480–560 kcal" for a range (rounded outward).
 fn kcal_text(range: CalorieRange) -> String {
+    if range.max > 0.0 && range.max < 1.0 {
+        return "<1 kcal".to_string();
+    }
     let (min, max) = if range.min == range.max {
         let value = kcal_number(range.min, Rounding::Nearest);
         (value.clone(), value)

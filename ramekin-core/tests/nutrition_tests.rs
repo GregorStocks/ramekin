@@ -677,4 +677,9 @@ fn headlines_lead_with_per_serving_and_format_numbers() {
     assert_eq!(ranged.headline, "~96–200 kcal per serving");
     let tiny = estimate(&[ingredient("granulated sugar", "0.1", "g")], None, 1.0).unwrap();
     assert_eq!(tiny.headline, "<1 kcal for the whole recipe");
+    let tiny_range =
+        estimate(&[ingredient("granulated sugar", "0.1-0.2", "g")], None, 1.0).unwrap();
+    assert_eq!(tiny_range.headline, "<1 kcal for the whole recipe");
+    let from_tiny = estimate(&[ingredient("granulated sugar", "0.1-2", "g")], None, 1.0).unwrap();
+    assert_eq!(from_tiny.headline, "~0–8 kcal for the whole recipe");
 }
