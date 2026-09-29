@@ -234,7 +234,7 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
 | Date | Tier | Model / harness | Applied | Skipped |
 | --- | --- | --- | --- | --- |
 | 2026-09-28 | Top 2,000 unresolved names (seen ≥ 4 times across pipeline and Paprika fixtures and prod) | Claude Opus 5.5 via a Claude Code Workflow: 8 classifiers + 3 verifiers | 1,670 aliases, 16 ambiguous, 6 not-food, 4 products, 1 entry | 303 |
-| 2026-09-29 | Tier 2: every remaining name seen ≥ 2 times, plus every prod name, minus tier-1 skips (2,568 names, 5,836 lines) | Claude Opus 5.5 via a Claude Code Workflow: 11 classifiers + 3 verifiers | 1,919 aliases, 93 ambiguous, 112 not-food, 4 products | 440 |
+| 2026-09-29 | Tier 2: every remaining name seen ≥ 2 times, plus every prod name, minus tier-1 skips (2,568 names, 5,836 lines) | Claude Opus 5.5 via a Claude Code Workflow: 11 classifiers + 3 verifiers | 1,918 aliases, 94 ambiguous, 112 not-food, 4 products | 440 |
 
 - **Verification:** the verifiers checked every mapping to a ≥ 300 kcal/100 g food (543), a
   ~1/7 sample of the rest, and consistency across all decisions. They corrected 34 decisions.
@@ -248,9 +248,12 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
   sample, and consistency across 1,400 decisions. They corrected 28 decisions, mostly guesses
   turned into skips: panko (half the density of dry crumbs), and blends USDA lacks such as
   shichimi, Tajín and Italian seasoning.
-- **Tier 2 not-food review:** all 113 not-food names were read by hand. PR review moved one to
-  ambiguous: an "alternate fillings" line that names real food. The remaining 112 are blog
-  "years ago:" links, yield and serving lines, section headers, and parser fragments.
+- **Tier 2 not-food review:** all 113 not-food names were read by hand. The remaining 112 are
+  blog "years ago:" links, yield and serving lines, section headers, and parser fragments.
+- **Tier 2 PR review:** two names became ambiguous.
+  - An "alternate fillings" line was not-food, but it names real food.
+  - "spring roll wrappers" was aliased to wonton wrappers, but it covers both rice paper and
+    wheat pastry.
 - **Tier 2 effect:**
 
   | Measure | Prod (992 recipes) | Pipeline fixtures |

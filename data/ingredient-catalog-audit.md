@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60510 | 265 | 49764/60245 (82.6%) | 44885/60245 (74.5%) | 566/5408 (10.5%) | n/a (no servings) | 29888/37166 (80.4%) | 59392/60510 (98.2%) |
+| Pipeline fixtures | 5408 | 60510 | 265 | 49762/60245 (82.6%) | 44884/60245 (74.5%) | 566/5408 (10.5%) | n/a (no servings) | 29888/37166 (80.4%) | 59392/60510 (98.2%) |
 | Paprika fixtures | 462 | 5377 | 21 | 4918/5356 (91.8%) | 4269/5356 (79.7%) | 81/462 (17.5%) | n/a (no servings) | 2407/2881 (83.5%) | 5285/5377 (98.3%) |
 | Pipeline snapshots | 445 | 5177 | 16 | 4768/5161 (92.4%) | 4205/5161 (81.5%) | 78/445 (17.5%) | 33/445 (7.4%) | 2386/2842 (84.0%) | 5121/5177 (98.9%) |
 
@@ -24,14 +24,14 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Reason | Lines | Share of lines |
 | --- | ---: | ---: |
-| Ambiguous ingredient | 495 | 0.8% |
+| Ambiguous ingredient | 497 | 0.8% |
 | Frying oil: only part of it is absorbed | 90 | 0.1% |
 | Missing density for this food | 2292 | 3.8% |
 | Missing quantity | 1613 | 2.7% |
 | No supported nutrition match | 9986 | 16.5% |
 | Several ingredients share one amount | 53 | 0.1% |
 | Unsupported or missing quantity | 48 | 0.1% |
-| Unsupported quantity unit | 783 | 1.3% |
+| Unsupported quantity unit | 782 | 1.3% |
 
 ### Uncounted ingredients per recipe
 
@@ -40,8 +40,8 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | 0 | 566 | 10.5% |
 | 1 | 1067 | 19.7% |
 | 2 | 1146 | 21.2% |
-| 3 | 935 | 17.3% |
-| 4-5 | 1115 | 20.6% |
+| 3 | 934 | 17.3% |
+| 4-5 | 1116 | 20.6% |
 | 6+ | 579 | 10.7% |
 
 Estimate status with at most 3 uncounted: Complete 10.5%, Insufficient 32.6%, Partial 56.9%
@@ -50,7 +50,7 @@ Estimate status with at most 3 uncounted: Complete 10.5%, Insufficient 32.6%, Pa
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 10220 | `bcf7bb168409` |
+| Nutrition (all failures) | 10220 | `006980344420` |
 | Density | 3877 | `0275226af559` |
 | Shopping category | 744 | `807168c6f7c2` |
 
