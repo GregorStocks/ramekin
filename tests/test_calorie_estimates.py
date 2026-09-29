@@ -45,7 +45,7 @@ def test_estimate_ranges_partial_unknown_and_empty(server_url, authed_api_client
     assert result["known_calories"] == {"min": 774, "max": 1548}
     assert result["per_serving_calories"] == {"min": 96.75, "max": 193.5}
     assert result["status"] == "partial"
-    assert result["headline"] == "At least ~97 kcal per serving"
+    assert result["headline"] == "At least ~96 kcal per serving"
     assert result["secondary"] == "At least ~770 kcal for the whole recipe"
     assert result["not_counted"] == ["yogurt"]
     assert result["lines"] == [

@@ -461,15 +461,26 @@ fn measured_calories(
 
 /// A calorie count as people read it: whole calories under 100, tens above,
 /// with thousands separators ("~5", "~120", "~3,100").
-fn kcal_number(kcal: f64) -> String {
-    if kcal > 0.0 && kcal < 0.5 {
+/// Which way a displayed number may move: to the nearest value for a single
+/// estimate, or outward for a range's ends and lower bounds, so the display
+/// never claims more (or less) than was computed.
+#[derive(Clone, Copy)]
+enum Rounding {
+    Nearest,
+    Down,
+    Up,
+}
+
+fn kcal_number(kcal: f64, rounding: Rounding) -> String {
+    let step = if kcal < 100.0 { 1.0 } else { 10.0 };
+    let rounded = match rounding {
+        Rounding::Nearest => (kcal / step).round() * step,
+        Rounding::Down => (kcal / step).floor() * step,
+        Rounding::Up => (kcal / step).ceil() * step,
+    };
+    if kcal > 0.0 && rounded == 0.0 {
         return "<1".to_string();
     }
-    let rounded = if kcal < 100.0 {
-        kcal.round()
-    } else {
-        (kcal / 10.0).round() * 10.0
-    };
     let digits = format!("{rounded:.0}");
     let mut grouped = String::new();
     for (i, digit) in digits.chars().enumerate() {
@@ -481,9 +492,17 @@ fn kcal_number(kcal: f64) -> String {
     grouped
 }
 
-/// "~120 kcal", or "~480–560 kcal" for a range.
+/// "~120 kcal", or "~480–560 kcal" for a range (rounded outward).
 fn kcal_text(range: CalorieRange) -> String {
-    let (min, max) = (kcal_number(range.min), kcal_number(range.max));
+    let (min, max) = if range.min == range.max {
+        let value = kcal_number(range.min, Rounding::Nearest);
+        (value.clone(), value)
+    } else {
+        (
+            kcal_number(range.min, Rounding::Down),
+            kcal_number(range.max, Rounding::Up),
+        )
+    };
     if min == max && min == "<1" {
         "<1 kcal".to_string()
     } else if min == max {
@@ -604,12 +623,10 @@ pub fn estimate(
     };
     // A partial total is a lower bound, so it shows only its minimum.
     let figure = |range: CalorieRange, what: &str| match status {
+        // Rounded down, so it never claims more than was counted.
         Status::Partial => format!(
-            "At least {} {what}",
-            kcal_text(CalorieRange {
-                min: range.min,
-                max: range.min
-            })
+            "At least ~{} kcal {what}",
+            kcal_number(range.min, Rounding::Down)
         ),
         _ => format!("{} {what}", kcal_text(range)),
     };

@@ -206,10 +206,10 @@ fn unknowns_are_explicit_and_never_zero() {
         assert_eq!(partial.known_calories.unwrap().min, 387.0);
         assert_eq!(partial.unknown_ingredients[0].index, 1);
         assert_eq!(partial.status, Status::Partial);
-        assert_eq!(partial.headline, "At least ~97 kcal per serving");
+        assert_eq!(partial.headline, "At least ~96 kcal per serving");
         assert_eq!(
             partial.secondary.as_deref(),
-            Some("At least ~390 kcal for the whole recipe")
+            Some("At least ~380 kcal for the whole recipe")
         );
         assert_eq!(partial.not_counted, [item]);
     }
@@ -586,7 +586,7 @@ fn status_follows_the_number_of_uncounted_ingredients() {
     lines.extend(unknown(MAX_UNKNOWN_LINES));
     let partial = estimate(&lines, None, 1.0).unwrap();
     assert_eq!(partial.status, Status::Partial);
-    assert_eq!(partial.headline, "At least ~390 kcal for the whole recipe");
+    assert_eq!(partial.headline, "At least ~380 kcal for the whole recipe");
     assert_eq!(partial.not_counted.len(), MAX_UNKNOWN_LINES);
 
     lines.extend(unknown(1));
@@ -674,7 +674,7 @@ fn headlines_lead_with_per_serving_and_format_numbers() {
         1.0,
     )
     .unwrap();
-    assert_eq!(ranged.headline, "~97–190 kcal per serving");
+    assert_eq!(ranged.headline, "~96–200 kcal per serving");
     let tiny = estimate(&[ingredient("granulated sugar", "0.1", "g")], None, 1.0).unwrap();
     assert_eq!(tiny.headline, "<1 kcal for the whole recipe");
 }

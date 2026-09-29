@@ -80,8 +80,8 @@ The response version combines the calculation rule version with the catalog
 version (a hash of the catalog data and its resolution rule version). Bump the
 calculation rule version when changing calculation behavior, including changes
 to reused volume constants. Identical inputs and version give identical
-results. Numeric fields retain calculation precision; summaries round exact
-estimates to whole calories and range bounds outward.
+results. Numeric fields retain calculation precision; display strings round as
+described under Presentation.
 
 ## Negligible, compound, and non-food lines
 
@@ -116,8 +116,11 @@ couldn't count (negligible lines and non-food lines never count against it):
 
 A per-serving headline has the whole-recipe figure as its `secondary` line. A
 partial estimate shows only its lower bound, and an insufficient one shows no
-number at all. Numbers round to whole calories under 100 and to tens above, with
-thousands separators ("~97", "~3,100"); ranges read "~390–770 kcal".
+number at all. Numbers use whole calories under 100 and tens above, with
+thousands separators ("~97", "~3,100"). A single estimate rounds to the nearest
+value. Range ends round outward ("~380–780 kcal" for 387–774), and a lower bound
+rounds down ("At least ~380"), so the display never claims more than was counted.
+A lower bound under 1 kcal is insufficient rather than partial.
 
 The cutoff of 3 uncounted ingredients (`nutrition::MAX_UNKNOWN_LINES`) came from
 the "Uncounted ingredients per recipe" table in the catalog audit, run against

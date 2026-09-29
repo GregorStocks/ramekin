@@ -41,7 +41,7 @@ SCALE_TEST_INGREDIENTS: List[Ingredient] = [
 # uncounted and the figures become lower bounds.
 SCALE_TEST_HEADLINE_1X = "~780 kcal per serving"
 SCALE_TEST_TOTAL_1X = "~3,100 kcal for the whole recipe"
-SCALE_TEST_HEADLINE_2X = "At least ~780 kcal per serving"
+SCALE_TEST_HEADLINE_2X = "At least ~770 kcal per serving"
 SCALE_TEST_TOTAL_2X = "At least ~6,200 kcal for the whole recipe"
 
 
@@ -139,8 +139,8 @@ def test_calorie_estimates_follow_recipe_and_scale(
     page.reload()
     # One uncounted ingredient: the figures are lower bounds, and the reason is
     # behind the breakdown disclosure.
-    expect(section).to_contain_text("At least ~97 kcal per serving")
-    expect(section).to_contain_text("At least ~390 kcal for the whole recipe")
+    expect(section).to_contain_text("At least ~96 kcal per serving")
+    expect(section).to_contain_text("At least ~380 kcal for the whole recipe")
     expect(section).to_contain_text("Not counted: yogurt")
     breakdown_line = section.locator(".calorie-breakdown li", has_text="yogurt")
     expect(breakdown_line).to_be_hidden()
@@ -148,13 +148,13 @@ def test_calorie_estimates_follow_recipe_and_scale(
     expect(breakdown_line).to_contain_text("Could be several foods")
     expect(
         section.locator(".calorie-breakdown li", has_text="granulated sugar")
-    ).to_contain_text("~390–770 kcal")
+    ).to_contain_text("~380–780 kcal")
     expect(page.get_by_text("Imported nutrition: 123 calories")).to_be_visible()
     page.locator(".scale-preset", has_text="2×").click()
     expect(section).to_contain_text("At least ~770 kcal for the whole recipe")
     expect(page.locator(".ingredients-list")).to_contain_text("200–400")
     expect(page.locator(".recipe-metadata")).to_contain_text("Servings: 8")
-    expect(section).to_contain_text("At least ~97 kcal per serving")
+    expect(section).to_contain_text("At least ~96 kcal per serving")
 
     # Switching to the earlier version must not retain the current estimate.
     page.goto(f"{page.url.split('?')[0]}?version_id={original.version_id}")
