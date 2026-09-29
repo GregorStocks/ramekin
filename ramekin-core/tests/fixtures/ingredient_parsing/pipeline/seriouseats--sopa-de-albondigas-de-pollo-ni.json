@@ -33,14 +33,14 @@
     {
       "raw": "1 medium green bell pepper, stemmed, seeded, and quartered",
       "expected": {
-        "item": "green bell pepper",
+        "item": "green bell pepper, stemmed, seeded, and quartered",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "stemmed, seeded, and quartered",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -175,14 +175,14 @@
     {
       "raw": "1/2 medium green bell pepper, stemmed, seeded, and coarsely chopped",
       "expected": {
-        "item": "green bell pepper",
+        "item": "green bell pepper, stemmed, seeded, and coarsely chopped",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": "stemmed, seeded, and coarsely chopped",
+        "note": null,
         "category": "Produce"
       }
     },

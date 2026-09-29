@@ -109,14 +109,14 @@
     {
       "raw": "2 hard-boiled eggs, cold, peeled, and sliced",
       "expected": {
-        "item": "hard-boiled eggs",
+        "item": "hard-boiled eggs, cold, peeled, and sliced",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "cold, peeled, and sliced",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

@@ -103,7 +103,7 @@
     {
       "raw": "5.5 to 6 ounces (155 to 170 grams) semi- or bittersweet dark chocolate, chopped into chunks, see Note below",
       "expected": {
-        "item": "semi- or bittersweet dark chocolate",
+        "item": "semi- or bittersweet dark chocolate, chopped into chunks",
         "measurements": [
           {
             "amount": "5.5 to 6",
@@ -114,7 +114,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped into chunks, see Note below",
+        "note": "see Note below",
         "category": "Baking"
       }
     },

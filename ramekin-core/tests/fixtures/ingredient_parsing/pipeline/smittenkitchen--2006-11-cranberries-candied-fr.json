@@ -179,14 +179,14 @@
     {
       "raw": "8 dried black Mission figs, stemmed, chopped",
       "expected": {
-        "item": "dried black Mission figs",
+        "item": "dried black Mission figs, stemmed",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "stemmed, chopped",
+        "note": "chopped",
         "category": "Produce"
       }
     },

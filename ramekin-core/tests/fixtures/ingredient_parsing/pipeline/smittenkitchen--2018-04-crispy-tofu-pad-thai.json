@@ -183,14 +183,14 @@
     {
       "raw": "4 garlic chives, or the green parts of 8 scallions or spring onions, cut into 2-inch pieces, divided",
       "expected": {
-        "item": "garlic chives",
+        "item": "garlic chives, or the green parts of 8 scallions or spring onions, cut into 2-inch pieces",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "or the green parts of 8 scallions or spring onions, cut into 2-inch pieces, divided",
+        "note": "divided",
         "category": "Produce"
       }
     },

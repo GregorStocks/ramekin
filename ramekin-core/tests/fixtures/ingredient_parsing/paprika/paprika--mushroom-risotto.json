@@ -91,7 +91,7 @@
     {
       "raw": "6 tablespoons unsalted butter, cut into 6 pieces, divided",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cut into 6 pieces",
         "measurements": [
           {
             "amount": "6",
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 6 pieces, divided",
+        "note": "divided",
         "category": "Dairy & Eggs"
       }
     },

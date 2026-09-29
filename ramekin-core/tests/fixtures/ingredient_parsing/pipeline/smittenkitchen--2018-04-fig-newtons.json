@@ -5,7 +5,7 @@
     {
       "raw": "10 tablespoons (140 grams or 5 ounces) unsalted butter, cold is fine, cut into small chunks",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "10",
@@ -20,7 +20,7 @@
             "unit": "oz"
           }
         ],
-        "note": "cold is fine, cut into small chunks",
+        "note": "cut into small chunks",
         "category": "Dairy & Eggs"
       }
     },

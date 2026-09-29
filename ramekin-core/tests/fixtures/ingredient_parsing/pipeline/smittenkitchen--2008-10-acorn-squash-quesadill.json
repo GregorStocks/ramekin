@@ -156,14 +156,14 @@
     {
       "raw": "10 tomatillos, husked and well washed, quartered",
       "expected": {
-        "item": "tomatillos",
+        "item": "tomatillos, husked and well washed",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": "husked and well washed, quartered",
+        "note": "quartered",
         "category": "Produce"
       }
     },

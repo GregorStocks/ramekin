@@ -294,7 +294,7 @@
     {
       "raw": "1 medium red bell pepper (8 ounces; 227 g), stemmed, seeded, and thinly sliced",
       "expected": {
-        "item": "red bell pepper",
+        "item": "red bell pepper, stemmed, seeded, and thinly sliced",
         "measurements": [
           {
             "amount": "1",
@@ -309,7 +309,7 @@
             "unit": "g"
           }
         ],
-        "note": "stemmed, seeded, and thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -105,15 +105,15 @@
     {
       "raw": "1 fresh red chile, stemmed, seeded and minced or red pepper flakes, to taste",
       "expected": {
-        "item": "fresh red chile",
+        "item": "fresh red chile, stemmed, seeded and minced or red pepper flakes",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "stemmed, seeded and minced or red pepper flakes, to taste",
-        "category": "Produce"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {

@@ -149,7 +149,7 @@
     {
       "raw": "8 ounces (225 grams) bittersweet chocolate, chopped into chips, or a generous 1 cup storebought mini chocolate chips",
       "expected": {
-        "item": "bittersweet chocolate",
+        "item": "bittersweet chocolate, chopped into chips",
         "measurements": [
           {
             "amount": "8",
@@ -160,7 +160,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped into chips, or a generous 1 cup storebought mini chocolate chips",
+        "note": "or a generous 1 cup storebought mini chocolate chips",
         "category": "Baking"
       }
     },

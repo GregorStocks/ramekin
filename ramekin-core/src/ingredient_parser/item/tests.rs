@@ -775,3 +775,18 @@ fn test_split_bare_compound_line_rejects_non_list_and_grammar() {
         ])
     );
 }
+
+#[test]
+fn test_trailing_comma_notes_never_peel_listed_foods() {
+    let parsed = super::super::parse_ingredient(
+        "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions, for topping",
+    );
+    assert_eq!(
+        parsed.item,
+        "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions"
+    );
+    assert_eq!(parsed.note.as_deref(), Some("for topping"));
+    let parsed = super::super::parse_ingredient("1/2 cup feta, drained, crumbled");
+    assert_eq!(parsed.item, "feta");
+    assert_eq!(parsed.note.as_deref(), Some("drained, crumbled"));
+}

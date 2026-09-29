@@ -89,7 +89,7 @@
     {
       "raw": "1 pound yukon gold potatoes, peeled if desired, cut into 1/2-inch slices",
       "expected": {
-        "item": "yukon gold potatoes",
+        "item": "yukon gold potatoes, peeled",
         "measurements": [
           {
             "amount": "1",
@@ -100,7 +100,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled if desired, cut into 1/2-inch slices",
+        "note": "if desired, cut into 1/2-inch slices",
         "section": "Filling",
         "category": "Produce"
       }

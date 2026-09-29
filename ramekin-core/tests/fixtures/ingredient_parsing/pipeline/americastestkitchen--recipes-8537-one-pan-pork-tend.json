@@ -155,7 +155,7 @@
     {
       "raw": "1 1/2 pounds fingerling potatoes , unpeeled, halved lengthwise",
       "expected": {
-        "item": "fingerling potatoes",
+        "item": "fingerling potatoes, unpeeled",
         "measurements": [
           {
             "amount": "1.5",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": "unpeeled, halved lengthwise",
+        "note": "halved lengthwise",
         "category": "Produce"
       }
     }

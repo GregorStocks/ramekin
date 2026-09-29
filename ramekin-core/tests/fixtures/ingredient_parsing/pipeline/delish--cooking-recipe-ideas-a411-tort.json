@@ -251,9 +251,9 @@
     {
       "raw": "Finely chopped avocado, shredded cheddar, and finely chopped fresh cilantro, for serving&nbsp;",
       "expected": {
-        "item": "Finely chopped avocado",
+        "item": "Finely chopped avocado, shredded cheddar, and finely chopped fresh cilantro",
         "measurements": [],
-        "note": "shredded cheddar, and finely chopped fresh cilantro, for serving",
+        "note": "for serving",
         "category": "Produce"
       }
     }

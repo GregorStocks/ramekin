@@ -110,15 +110,15 @@
     {
       "raw": "1 fresh chile, very thinly sliced or finely chopped or hot sauce, to taste",
       "expected": {
-        "item": "fresh chile",
+        "item": "fresh chile, very thinly sliced or finely chopped or hot sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "very thinly sliced or finely chopped or hot sauce, to taste",
-        "category": "Produce"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {

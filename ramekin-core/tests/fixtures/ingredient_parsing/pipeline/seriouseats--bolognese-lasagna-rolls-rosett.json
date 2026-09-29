@@ -133,7 +133,7 @@
     {
       "raw": "2 pounds (900g) ground meat, either all beef or 1 pound beef with 1/2 pound each ground pork and veal, divided (see notes)",
       "expected": {
-        "item": "ground meat",
+        "item": "ground meat, either all beef",
         "measurements": [
           {
             "amount": "2",
@@ -144,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes, either all beef or 1 pound beef with 1/2 pound each ground pork and veal, divided",
+        "note": "or 1 pound beef with 1/2 pound each ground pork and veal (see notes); divided",
         "category": "Meat & Seafood"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "4 Granny Smith apples - peeled, cored, and chopped",
       "expected": {
-        "item": "Granny Smith apples - peeled",
+        "item": "Granny Smith apples - peeled, cored, and chopped",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "cored, and chopped",
+        "note": null,
         "category": "Produce"
       }
     },

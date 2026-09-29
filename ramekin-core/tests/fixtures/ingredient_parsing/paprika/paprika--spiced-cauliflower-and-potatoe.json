@@ -319,7 +319,7 @@
     {
       "raw": "200 grams (1 1/4 cups) red split lentils (masoor dal), picked over, washed and drained",
       "expected": {
-        "item": "red split lentils",
+        "item": "red split lentils, picked over",
         "measurements": [
           {
             "amount": "200",
@@ -330,7 +330,7 @@
             "unit": "cup"
           }
         ],
-        "note": "masoor dal, picked over, washed and drained",
+        "note": "masoor dal, washed and drained",
         "category": "Canned Goods"
       }
     },

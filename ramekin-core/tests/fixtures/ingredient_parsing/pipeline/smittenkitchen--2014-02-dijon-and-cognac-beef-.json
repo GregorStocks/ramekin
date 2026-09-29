@@ -196,7 +196,7 @@
     {
       "raw": "1/2 pound mushrooms, stemmed, cleaned and quartered",
       "expected": {
-        "item": "mushrooms",
+        "item": "mushrooms, stemmed",
         "measurements": [
           {
             "amount": "0.5",
@@ -207,7 +207,7 @@
             "unit": "g"
           }
         ],
-        "note": "stemmed, cleaned and quartered",
+        "note": "cleaned and quartered",
         "category": "Produce"
       }
     },

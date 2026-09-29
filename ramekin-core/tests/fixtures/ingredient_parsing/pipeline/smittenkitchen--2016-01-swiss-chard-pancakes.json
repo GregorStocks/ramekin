@@ -207,14 +207,14 @@
     {
       "raw": "2 garlic cloves, split, germ removed, and coarsely chopped",
       "expected": {
-        "item": "garlic cloves, split",
+        "item": "garlic cloves, split, germ removed, and coarsely chopped",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "germ removed, and coarsely chopped",
+        "note": null,
         "category": "Produce"
       }
     },

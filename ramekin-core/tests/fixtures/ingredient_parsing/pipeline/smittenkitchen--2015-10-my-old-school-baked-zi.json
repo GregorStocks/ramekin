@@ -60,15 +60,15 @@
     {
       "raw": "28-ounce can whole tomatoes with juices, chopped by you, or crushed tomatoes",
       "expected": {
-        "item": "whole tomatoes with juices",
+        "item": "whole tomatoes with juices, chopped by you, or crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "28-ounce can"
           }
         ],
-        "note": "chopped by you, or crushed tomatoes",
-        "category": "Produce"
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {

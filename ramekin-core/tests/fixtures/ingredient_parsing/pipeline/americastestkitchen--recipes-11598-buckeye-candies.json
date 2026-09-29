@@ -23,7 +23,7 @@
     {
       "raw": "8 tablespoons unsalted butter , cut into 8 pieces, softened but still cold",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cut into 8 pieces",
         "measurements": [
           {
             "amount": "8",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 8 pieces, softened but still cold",
+        "note": "softened but still cold",
         "category": "Dairy & Eggs"
       }
     },

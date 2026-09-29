@@ -55,7 +55,7 @@
     {
       "raw": "8 ounces button mushrooms, washed and halved if large, divided",
       "expected": {
-        "item": "button mushrooms",
+        "item": "button mushrooms, washed and halved if large",
         "measurements": [
           {
             "amount": "8",
@@ -66,14 +66,14 @@
             "unit": "g"
           }
         ],
-        "note": "washed and halved if large, divided",
+        "note": "divided",
         "category": "Produce"
       }
     },
     {
       "raw": "15 ounces carrots, peeled and chopped into 1-inch chunks, divided",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and chopped into 1-inch chunks",
         "measurements": [
           {
             "amount": "15",
@@ -84,7 +84,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and chopped into 1-inch chunks, divided",
+        "note": "divided",
         "category": "Produce"
       }
     },

@@ -123,7 +123,7 @@
     {
       "raw": "1 lb. asparagus, trimmed, cut into thirds, quartered if large",
       "expected": {
-        "item": "asparagus",
+        "item": "asparagus, trimmed, cut into thirds",
         "measurements": [
           {
             "amount": "1",
@@ -134,7 +134,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed, cut into thirds, quartered if large",
+        "note": "quartered if large",
         "category": "Produce"
       }
     },

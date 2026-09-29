@@ -154,7 +154,7 @@
     {
       "raw": "2 pounds (905 grams) Napa cabbage, 12 large leaves removed from the head, and reserved, the remainder sliced thin",
       "expected": {
-        "item": "Napa cabbage, 12 large leaves removed from the head",
+        "item": "Napa cabbage, 12 large leaves removed from the head, and reserved",
         "measurements": [
           {
             "amount": "2",
@@ -165,7 +165,7 @@
             "unit": "g"
           }
         ],
-        "note": "and reserved, the remainder sliced thin",
+        "note": "the remainder sliced thin",
         "category": "Produce"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1 acorn squash, cut in half, seeds removed, sliced into ¼-inch pieces",
       "expected": {
-        "item": "acorn squash",
+        "item": "acorn squash, cut in half",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cut in half, seeds removed, sliced into 1/4-inch pieces",
+        "note": "seeds removed, sliced into 1/4-inch pieces",
         "category": "Produce"
       }
     },

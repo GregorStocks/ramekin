@@ -19,14 +19,14 @@
     {
       "raw": "1 medium sweet onion, halved crosswise, divided",
       "expected": {
-        "item": "sweet onion",
+        "item": "sweet onion, halved crosswise",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "halved crosswise, divided",
+        "note": "divided",
         "category": "Produce"
       }
     },

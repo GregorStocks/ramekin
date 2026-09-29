@@ -150,7 +150,7 @@
     {
       "raw": "1 hothouse or English cucumber (1 pound), unpeeled but quartered lengthwise, seeds removed",
       "expected": {
-        "item": "hothouse or English cucumber",
+        "item": "hothouse or English cucumber, unpeeled but quartered lengthwise",
         "measurements": [
           {
             "amount": "1",
@@ -165,7 +165,7 @@
             "unit": "g"
           }
         ],
-        "note": "unpeeled but quartered lengthwise, seeds removed",
+        "note": "seeds removed",
         "category": "Produce"
       }
     }

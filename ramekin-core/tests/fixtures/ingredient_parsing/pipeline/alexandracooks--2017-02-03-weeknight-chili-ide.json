@@ -254,10 +254,10 @@
     {
       "raw": "Grated cheese, chopped cilantro, chopped scallion or onion, for garnish",
       "expected": {
-        "item": "Grated cheese",
+        "item": "Grated cheese, chopped cilantro, chopped scallion or onion",
         "measurements": [],
-        "note": "chopped cilantro, chopped scallion or onion, for garnish",
-        "category": "Cheese"
+        "note": "for garnish",
+        "category": "Produce"
       }
     }
   ]

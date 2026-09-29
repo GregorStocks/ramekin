@@ -81,7 +81,7 @@
     {
       "raw": "1 leeks, white and light-green parts only, halved lengthwise, sliced thin (1 cup), and washed thoroughly",
       "expected": {
-        "item": "leeks, white and light-green parts only",
+        "item": "leeks, white and light-green parts only, halved lengthwise, sliced thin, and washed thoroughly",
         "measurements": [
           {
             "amount": "1",
@@ -96,7 +96,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved lengthwise, sliced thin, and washed thoroughly",
+        "note": null,
         "category": "Produce"
       }
     },

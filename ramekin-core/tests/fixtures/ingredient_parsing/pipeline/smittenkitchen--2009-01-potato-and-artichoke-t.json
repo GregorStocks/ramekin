@@ -51,14 +51,14 @@
     {
       "raw": "3 marinated artichoke hearts (from a can or jar), rinsed, patted dry, and thinly sliced",
       "expected": {
-        "item": "marinated artichoke hearts",
+        "item": "marinated artichoke hearts, rinsed, patted dry, and thinly sliced",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "from a can or jar, rinsed, patted dry, and thinly sliced",
+        "note": "from a can or jar",
         "category": "Canned Goods"
       }
     },

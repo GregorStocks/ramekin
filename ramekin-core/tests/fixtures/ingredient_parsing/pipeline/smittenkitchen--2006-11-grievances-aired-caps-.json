@@ -111,7 +111,7 @@
     {
       "raw": "1/4 cup fresh parsley leaves, washed well, spun dry, and minced",
       "expected": {
-        "item": "fresh parsley leaves",
+        "item": "fresh parsley leaves, washed well, spun dry, and minced",
         "measurements": [
           {
             "amount": "0.25",
@@ -122,7 +122,7 @@
             "unit": "g"
           }
         ],
-        "note": "washed well, spun dry, and minced",
+        "note": null,
         "category": "Produce"
       }
     },

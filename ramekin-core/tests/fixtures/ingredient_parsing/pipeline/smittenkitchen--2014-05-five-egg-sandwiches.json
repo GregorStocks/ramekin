@@ -443,14 +443,14 @@
     {
       "raw": "6 large slices whole-wheat sourdough bread, miche, or another sliced country bread of your choice, toasted",
       "expected": {
-        "item": "slices whole-wheat sourdough bread, miche",
+        "item": "slices whole-wheat sourdough bread, miche, or another sliced country bread of your choice",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": "or another sliced country bread of your choice, toasted",
+        "note": "toasted",
         "section": "To Assemble",
         "category": "Bakery & Bread"
       }

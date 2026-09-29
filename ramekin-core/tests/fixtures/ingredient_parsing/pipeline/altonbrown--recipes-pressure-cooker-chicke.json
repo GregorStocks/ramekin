@@ -33,14 +33,14 @@
     {
       "raw": "4 stalks celery, 2 halved crosswise and 2 cut into half-moons, with the leaves reserved for garnish",
       "expected": {
-        "item": "celery",
+        "item": "celery, 2 halved crosswise and 2 cut into half-moons",
         "measurements": [
           {
             "amount": "4",
             "unit": "stalk"
           }
         ],
-        "note": "2 halved crosswise and 2 cut into half-moons, with the leaves reserved for garnish",
+        "note": "with the leaves reserved for garnish",
         "category": "Produce"
       }
     },
@@ -103,14 +103,14 @@
     {
       "raw": "1 (5-pound) roaster chicken, cut into 8 to 10 pieces, with the skin removed",
       "expected": {
-        "item": "roaster chicken",
+        "item": "roaster chicken, cut into 8 to 10 pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "5-pound, cut into 8 to 10 pieces, with the skin removed",
+        "note": "5-pound, with the skin removed",
         "category": "Meat & Seafood"
       }
     },

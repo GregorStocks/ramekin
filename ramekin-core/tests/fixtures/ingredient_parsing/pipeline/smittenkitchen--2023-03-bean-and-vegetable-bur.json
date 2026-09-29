@@ -166,7 +166,7 @@
     {
       "raw": "1 1/2 cups corn kernels, fresh (from 2 ears), canned and drained, or frozen (no need to thaw)",
       "expected": {
-        "item": "corn kernels",
+        "item": "corn kernels, fresh, canned and drained, or frozen",
         "measurements": [
           {
             "amount": "1.5",
@@ -177,8 +177,8 @@
             "unit": "g"
           }
         ],
-        "note": "from 2 ears, no need to thaw, fresh, canned and drained, or frozen",
-        "category": "Produce"
+        "note": "from 2 ears, no need to thaw",
+        "category": "Canned Goods"
       }
     },
     {

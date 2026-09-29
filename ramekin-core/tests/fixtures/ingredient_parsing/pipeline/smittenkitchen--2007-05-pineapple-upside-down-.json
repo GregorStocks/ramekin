@@ -5,14 +5,14 @@
     {
       "raw": "1/2 medium pineapple, peeled, quartered lengthwise, and cored",
       "expected": {
-        "item": "pineapple",
+        "item": "pineapple, peeled, quartered lengthwise, and cored",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": "peeled, quartered lengthwise, and cored",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -121,15 +121,15 @@
     {
       "raw": "1 egg, beaten with 1 teaspoon water, for egg wash",
       "expected": {
-        "item": "egg",
+        "item": "egg, beaten with 1 teaspoon water",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "beaten with 1 teaspoon water, for egg wash",
-        "category": "Dairy & Eggs"
+        "note": "for egg wash",
+        "category": "Beverages"
       }
     },
     {

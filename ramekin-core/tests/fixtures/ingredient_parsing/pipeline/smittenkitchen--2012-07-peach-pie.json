@@ -240,14 +240,14 @@
     {
       "raw": "2 tablespoons minute tapioca, ground to a powder (see note up top), or 3 tablespoons cornstarch or potato starch",
       "expected": {
-        "item": "minute tapioca",
+        "item": "minute tapioca, ground to a powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "see note up top, ground to a powder, or 3 tablespoons cornstarch or potato starch",
+        "note": "see note up top; or 3 tablespoons cornstarch or potato starch",
         "section": "Filling",
         "category": "Baking"
       }

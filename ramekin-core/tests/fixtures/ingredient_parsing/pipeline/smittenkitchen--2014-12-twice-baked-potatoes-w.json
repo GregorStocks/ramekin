@@ -165,7 +165,7 @@
     {
       "raw": "1 cup coarsely grated cheddar, gruyere or comt&#233;, 2/3 cup finely grated parmesan or pecorino, or 1/2 to 2/3 cup cream cheese or goat cheese, softened",
       "expected": {
-        "item": "coarsely grated cheddar, gruyere or comté",
+        "item": "coarsely grated cheddar, gruyere or comté, 2/3 cup finely grated parmesan or pecorino",
         "measurements": [
           {
             "amount": "1",
@@ -176,7 +176,7 @@
             "unit": "g"
           }
         ],
-        "note": "2/3 cup finely grated parmesan or pecorino, or 1/2 to 2/3 cup cream cheese or goat cheese, softened",
+        "note": "or 1/2 to 2/3 cup cream cheese or goat cheese, softened",
         "category": "Cheese"
       }
     },

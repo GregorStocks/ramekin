@@ -189,7 +189,7 @@
     {
       "raw": "12 ounces (340 grams) Persian-style small cucumbers, unpeeled, thinly sliced",
       "expected": {
-        "item": "Persian-style small cucumbers",
+        "item": "Persian-style small cucumbers, unpeeled",
         "measurements": [
           {
             "amount": "12",
@@ -200,7 +200,7 @@
             "unit": "g"
           }
         ],
-        "note": "unpeeled, thinly sliced",
+        "note": "thinly sliced",
         "category": "Produce"
       }
     },

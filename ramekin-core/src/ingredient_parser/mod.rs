@@ -962,17 +962,33 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .trim()
                 .to_string();
             let potential_item = remaining.get(..comma_idx).unwrap_or("").trim().to_string();
+            let guidance = is_trailing_guidance_note(&potential_note);
+            let lower_note = potential_note.to_lowercase();
+            // "and sliced scallions" continues a list of foods; it is never a note.
+            let continues_list = lower_note.starts_with("and ") || lower_note.starts_with("or ");
+            // Only the last part may be a prep phrase that names a food
+            // ("crumbled queso fresco"); every part before it must be a pure
+            // note, or a list of foods ending in "for topping" would lose all
+            // but its first item.
+            let is_note = if peeled.is_empty() {
+                is_trailing_prep_note(&potential_note)
+                    || guidance
+                    || is_trailing_qualifier(&potential_note)
+            } else {
+                is_strict_trailing_prep_note(&potential_note)
+                    || guidance
+                    || is_trailing_qualifier(&potential_note)
+            };
             if potential_note.is_empty()
                 || potential_item.is_empty()
                 || is_only_prep_words(&potential_item)
-                || !(is_trailing_prep_note(&potential_note)
-                    || is_trailing_guidance_note(&potential_note)
-                    || is_trailing_qualifier(&potential_note))
+                || (continues_list && !guidance)
+                || !is_note
             {
                 break;
             }
             let mut extracted_note = potential_note.clone();
-            if peeled.is_empty() && is_trailing_guidance_note(&potential_note) {
+            if peeled.is_empty() && guidance {
                 if let Some(branch_note) =
                     take_last_or_parenthetical_note(&mut deferred_parenthetical_notes)
                 {

@@ -77,14 +77,14 @@
     {
       "raw": "1 medium peach, pitted and sliced, for garnish (optional)",
       "expected": {
-        "item": "peach",
+        "item": "peach, pitted and sliced",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "optional, pitted and sliced, for garnish",
+        "note": "optional, for garnish",
         "category": "Produce"
       }
     }

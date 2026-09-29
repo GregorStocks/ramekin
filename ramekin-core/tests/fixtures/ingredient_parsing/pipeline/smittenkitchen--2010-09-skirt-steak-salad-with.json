@@ -5,7 +5,7 @@
     {
       "raw": "1 pound skirt steak, trimmed of excess fat if necessary, halved crosswise, at room temperature",
       "expected": {
-        "item": "skirt steak",
+        "item": "skirt steak, trimmed of excess fat if necessary, halved crosswise",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed of excess fat if necessary, halved crosswise, at room temperature",
+        "note": "at room temperature",
         "category": "Meat & Seafood"
       }
     },
@@ -108,14 +108,14 @@
     {
       "raw": "3 tablespoons minced chives, 2 thinly sliced scallions or 3 tablespoons finely chopped red onion, for garnish",
       "expected": {
-        "item": "minced chives",
+        "item": "minced chives, 2 thinly sliced scallions",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "2 thinly sliced scallions or 3 tablespoons finely chopped red onion, for garnish",
+        "note": "or 3 tablespoons finely chopped red onion; for garnish",
         "category": "Produce"
       }
     },

@@ -33,14 +33,14 @@
     {
       "raw": "1/2 medium red bell pepper, seeded, roughly chopped",
       "expected": {
-        "item": "red bell pepper",
+        "item": "red bell pepper, seeded",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": "seeded, roughly chopped",
+        "note": "roughly chopped",
         "category": "Produce"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1/2 small red cabbage, trimmed, cored, and shredded (about 6 cups)",
       "expected": {
-        "item": "red cabbage",
+        "item": "red cabbage, trimmed, cored, and shredded",
         "measurements": [
           {
             "amount": "0.5",
@@ -20,14 +20,14 @@
             "unit": "g"
           }
         ],
-        "note": "about 6 cups, trimmed, cored, and shredded",
+        "note": "about 6 cups",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 small green cabbage, trimmed, cored, and shredded (about 6 cups)",
       "expected": {
-        "item": "green cabbage",
+        "item": "green cabbage, trimmed, cored, and shredded",
         "measurements": [
           {
             "amount": "0.5",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 6 cups, trimmed, cored, and shredded",
+        "note": "about 6 cups",
         "category": "Produce"
       }
     },
