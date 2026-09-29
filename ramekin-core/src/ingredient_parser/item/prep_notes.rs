@@ -497,7 +497,13 @@ pub(in crate::ingredient_parser) fn has_generic_head(item: &str) -> bool {
         "toppings",
         "veggies",
     ];
-    let head = item.to_lowercase();
+    let mut head = item.to_lowercase().trim_end_matches([',', ' ']).to_string();
+    // "toppings of your choice", "mix-in of choice", "toppings you like".
+    for qualifier in [" of your choice", " of choice", " you like", " as desired"] {
+        if let Some(stripped) = head.strip_suffix(qualifier) {
+            head = stripped.to_string();
+        }
+    }
     let head_word = head
         .trim_end_matches([',', ' '])
         .split_whitespace()

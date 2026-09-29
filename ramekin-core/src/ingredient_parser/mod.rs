@@ -1099,9 +1099,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             // A brand alone before "or" ("Diamond Crystal or 1 1/4 tsp. Morton
             // kosher salt") borrows the food from the alternative: "Diamond
             // Crystal kosher salt".
-            let brand_only = before_or
-                .split_whitespace()
-                .all(|word| word.chars().next().is_some_and(char::is_uppercase));
+            // A multi-word capitalized name ("Diamond Crystal", "Grand
+            // Marnier"); a single capitalized word ("Tajín") is its own food.
+            let brand_words: Vec<&str> = before_or.split_whitespace().collect();
+            let brand_only = brand_words.len() >= 2
+                && brand_words
+                    .iter()
+                    .all(|word| word.chars().next().is_some_and(char::is_uppercase));
             let shared_food = if brand_only {
                 let alternative_item = parse_ingredient(after_or).item;
                 let food: Vec<&str> = alternative_item

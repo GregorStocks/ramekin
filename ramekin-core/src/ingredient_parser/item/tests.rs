@@ -843,3 +843,15 @@ fn test_examples_connectors_and_brand_alternatives() {
         parse("1 tablespoon Grand Marnier or another orange liqueur or 1/4 teaspoon orange zest");
     assert_eq!(liqueur.item, "Grand Marnier orange liqueur");
 }
+
+#[test]
+fn test_single_word_names_and_qualified_categories() {
+    let parse = super::super::parse_ingredient;
+    let tajin = parse("1 teaspoon Tajín or 1/2 teaspoon chili powder");
+    assert_eq!(tajin.item, "Tajín");
+    let toppings = parse("Toppings of your choice, such as grated cheddar cheese, sour cream");
+    assert!(
+        toppings.item.contains("grated cheddar cheese"),
+        "{toppings:?}"
+    );
+}
