@@ -57,7 +57,14 @@ a cited curated value or the USDA food's own cup, tablespoon or teaspoon portion
 - Mass units: g, kg, mg, oz (28.349523125 g), lb (453.59237 g), including their
   listed singular/plural spellings. Volume uses the existing US cup conversion
   constants for cup, tbsp, tsp, fluid ounce, pint, quart, gallon, ml and l.
-  Counts and packages require a supported alternate measurement.
+  "Heaped", "heaping", "scant", "generous", "level" and "rounded" volumes count
+  as the plain unit.
+- Packages that state their weight ("15-ounce can", "(28-oz.) can", "425-gram
+  package") use that weight for any food. A bare "can" is unknown.
+- Counts use USDA per-piece weights (catalog README, "Piece rules"): "3 eggs"
+  (large, 50 g each), "2 cloves garlic" (3 g), "1 medium onion" (110 g), "1
+  stalk celery" (40 g), "1 1/2 sticks butter" (113 g each). A count the food
+  has no piece weight for ("1 head garlic") is unknown.
 - Use the first supported measurement once; subsequent measurements are
   alternatives, not additional ingredients. This preserves precise primary
   amounts ahead of rounded gram alternatives. As with ingredient display,
@@ -79,9 +86,10 @@ estimates to whole calories and range bounds outward.
 Some lines are known without a usable amount (rules in the catalog README):
 
 - **Zero-calorie foods** (salt, water, baking soda) contribute 0 kcal on any line.
-- **Spices** (USDA "spices, …", including black pepper) contribute 0 kcal when
-  the line has no numeric amount ("to taste") or only a pinch or dash. A real
-  amount is computed normally.
+- **Spices** (USDA "spices, …", including black pepper) and fresh herbs
+  contribute 0 kcal when the line has no numeric amount ("to taste"), only a
+  pinch, dash, or sprig, or counts small pieces USDA has no weight for ("2 bay
+  leaves", "1 cinnamon stick"). A real amount is computed normally.
 - **Compound lines** ("salt and pepper", one amount for several foods) contribute
   0 kcal only if every food is negligible on that line. Otherwise they are
   unknown with "Several ingredients share one amount", because one amount can't

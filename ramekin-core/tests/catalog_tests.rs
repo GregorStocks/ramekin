@@ -1,5 +1,6 @@
 use ramekin_core::catalog::{
-    category, food, grams_per_cup, resolve, resolve_line, rewrite, version, Kind, Resolution, Via,
+    category, food, grams_per_cup, grams_per_piece, resolve, resolve_line, rewrite, version, Kind,
+    Resolution, Via,
 };
 
 fn density(item: &str) -> f64 {
@@ -466,4 +467,50 @@ fn bone_in_weights_are_not_priced_as_meat() {
         resolve("boneless skinless chicken thighs"),
         Resolution::Entry { .. }
     ));
+}
+
+#[test]
+fn counted_pieces_use_usda_portions() {
+    let piece = |item, unit| match resolve(item) {
+        Resolution::Entry { entry, .. } => grams_per_piece(entry, unit),
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    // Egg sizes, with a bare count meaning large (a curated override).
+    assert_eq!(piece("eggs", None), Some(50.0));
+    for (unit, grams) in [
+        ("small", 38.0),
+        ("medium", 44.0),
+        ("large", 50.0),
+        ("extra-large", 56.0),
+        ("Extra Large", 56.0),
+        ("jumbo", 63.0),
+    ] {
+        assert_eq!(piece("eggs", Some(unit)), Some(grams), "{unit}");
+    }
+    assert_eq!(piece("garlic", Some("cloves")), Some(3.0));
+    assert_eq!(piece("garlic", None), Some(3.0));
+    assert_eq!(piece("garlic", Some("head")), None);
+    assert_eq!(piece("onion", None), Some(110.0));
+    assert_eq!(piece("celery", Some("stalks")), Some(40.0));
+    assert_eq!(piece("celery", Some("large")), Some(64.0));
+    assert_eq!(piece("butter", Some("stick")), Some(113.0));
+    assert_eq!(piece("lemon", None), Some(58.0));
+    assert_eq!(piece("jalapeño", None), Some(14.0));
+    // A bare count never means a slice.
+    assert_eq!(piece("bacon", None), None);
+    assert_eq!(piece("bacon", Some("slices")), Some(28.0));
+    // Spices have no piece weight.
+    assert_eq!(piece("bay leaves", None), None);
+}
+
+#[test]
+fn fresh_herbs_are_trace_foods() {
+    for item in [
+        "thyme", "rosemary", "basil", "parsley", "cilantro", "dill", "mint",
+    ] {
+        match resolve(item) {
+            Resolution::Entry { entry, .. } => assert!(entry.trace_ok, "{item}"),
+            other => panic!("{item:?} did not resolve: {other:?}"),
+        }
+    }
 }

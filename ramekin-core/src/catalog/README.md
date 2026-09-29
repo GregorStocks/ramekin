@@ -18,6 +18,8 @@ attributes, and either can be missing on purpose:
 
 - `fdc_id`: the USDA food supplying calories.
 - `grams_per_cup`: density for volume-to-weight conversion.
+- Per-piece weights (via the linked food's `portions`): `grams_per_piece(entry,
+  unit)` converts counts ("3 eggs", "2 cloves garlic", "1 medium onion").
 
 So "black pepper" resolves (its calories are known) but has no density, because
 grind size changes the weight of a cup too much. Names that could mean several
@@ -43,9 +45,11 @@ Each entry also has two negligibility attributes, derived from the data:
 - **`zero_calorie`:** the linked food has 0 kcal/100 g (salt, water, baking soda).
   Any line of it is negligible.
 - **`trace_ok`:** the linked food is a USDA "spices, …" food (dried spices, black
-  pepper), or the curated entry sets `trace_ok: true`. A line of it is negligible
-  only when it has no numeric amount ("to taste", no measurement) or a trace unit
-  (pinch, dash). A real amount, like a cup of cumin, counts in full.
+  pepper), a food with a `trace_ok` food override (fresh herbs), or the curated
+  entry sets `trace_ok: true`. A line of it is negligible when it has no numeric
+  amount ("to taste", no measurement), a trace unit (pinch, dash, sprig), or
+  counts small pieces USDA has no weight for ("2 bay leaves", "1 cinnamon
+  stick"). A real amount, like a cup of cumin, counts in full.
 
 A compound line is negligible only if every one of its foods is negligible on
 that line. Otherwise its calories are unknown.
@@ -107,7 +111,7 @@ mismatch fails until the source change is reviewed), and writes:
 
 - `foods`: one record per food with `fdc_id`, `description` (lowercased,
   whitespace collapsed), `kcal_per_100g` (nutrient 1008, Energy), and
-  `grams_per_cup`.
+  `grams_per_cup`, plus `portions` (grams per piece) and `default_portion`.
 - `names`: stripped name → `fdc_id`.
 
 Density rules:
@@ -117,6 +121,25 @@ Density rules:
 - Accept `cup`, `cups`, `cup, ...` and `cup (...)`. Skip chip portions and other units.
 - Seven zero-amount cup rows in this release are pinned in `EXCLUDED_PORTIONS`.
   Any other malformed supported-volume portion fails the import.
+
+Piece rules (`portions`):
+
+- Every portion that is not a volume, mass, or package measure (cup, oz, can,
+  serving, …) is a piece. Its key is the modifier lowercased, without
+  parentheticals, with the first word singular ("cloves" → "clove", "leaves" →
+  "leaf") and a trailing "whole" or "raw" dropped. A size after a comma is kept:
+  "stalk, medium (…)" → "stalk medium".
+- The weight is gram weight ÷ amount ("3 cloves" of 9 g → 3 g). The first
+  portion in portion-table order wins a key. Zero-amount rows and the cooked
+  yield of a pound of meat or a whole recipe are not pieces.
+- `default_portion`, the piece a bare count means, is the first of medium,
+  fruit, whole, large, small; else the one "<piece> medium"; else the only
+  piece. Parts of a piece (slice, strip, wedge, ring, …) are never the default.
+
+At lookup, a counted unit is normalized the same way ("extra-large" → "extra
+large"). A size with no exact portion uses the food's one sized piece ("2 medium
+potatoes" → "potato medium"), else its default piece ("1 large lemon" → the
+lemon). A piece with sizes uses its medium ("1 stalk celery" → "stalk medium").
 
 Name rules:
 
@@ -149,7 +172,11 @@ are `tests/test_catalog_import.py`.
     "cheese": null
   },
   "not_food": { "to serve": "A serving suggestion, not an ingredient." },
-  "rewrites": { "salt": "kosher salt" }
+  "rewrites": { "salt": "kosher salt" },
+  "food_overrides": {
+    "egg, whole, raw, fresh": { "default_portion": "large" },
+    "thyme, fresh": { "trace_ok": true }
+  }
 }
 ```
 
@@ -187,6 +214,10 @@ are `tests/test_catalog_import.py`.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
+- `food_overrides` correct USDA foods by their unique description:
+  `default_portion` picks the piece a bare count means ("3 eggs" are large, the
+  US recipe convention), and `trace_ok` marks fresh herbs, which recipes list by
+  the sprig.
 
 The loader asserts that keys are normalized, targets exist, aliases don't
 shadow names, and densities are finite and positive. `catalog::version()`

@@ -8,15 +8,16 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v5";
+const RULE_VERSION: &str = "calories-v6";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
 
 /// The catalog attributes an estimate needs for one matched ingredient.
-struct Food {
+struct Food<'a> {
     kcal_per_100g: f64,
-    grams_per_cup: Option<f64>,
+    /// Supplies the density and per-piece weights.
+    entry: &'a Entry,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -43,7 +44,14 @@ pub struct Estimate {
 }
 
 /// Units that mean "a trace", never a measurable amount.
-const TRACE_UNITS: [&str; 4] = ["pinch", "dash", "smidgen", "sprinkle"];
+const TRACE_UNITS: [&str; 5] = ["pinch", "dash", "smidgen", "sprinkle", "sprig"];
+
+/// Units that count small whole pieces of a trace food ("2 bay leaves", "1
+/// cinnamon stick"); no unit is a bare count.
+const TRACE_COUNT_UNITS: [&str; 16] = [
+    "", "leaf", "leaves", "stick", "sticks", "pod", "pods", "stem", "stems", "piece", "pieces",
+    "whole", "clove", "cloves", "star", "stars",
+];
 
 /// A line with no real amount: no numeric quantity at all ("to taste", "as
 /// needed", no measurement), or only a pinch or dash.
@@ -74,11 +82,26 @@ fn is_cooking_fat(entry: &Entry) -> bool {
     })
 }
 
-fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient) -> bool {
-    entry.zero_calorie || (entry.trace_ok && is_trace_line(ingredient))
+/// A few whole leaves, sticks, or pods of a food USDA has no piece weight for
+/// ("2 bay leaves"); a handful of a trace food is a few calories.
+fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient) -> bool {
+    ingredient.measurements.iter().all(|measurement| {
+        let unit = measurement
+            .unit
+            .as_deref()
+            .map(normalize)
+            .unwrap_or_default();
+        TRACE_COUNT_UNITS.contains(&unit.as_str())
+            && catalog::grams_per_piece(entry, Some(unit.as_str())).is_none()
+    })
 }
 
-fn food(entry: &Entry) -> Result<Food, &'static str> {
+fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient) -> bool {
+    entry.zero_calorie
+        || (entry.trace_ok && (is_trace_line(ingredient) || is_unweighed_count(entry, ingredient)))
+}
+
+fn food(entry: &Entry) -> Result<Food<'_>, &'static str> {
     let kcal_per_100g = entry
         .fdc_id
         .and_then(catalog::food)
@@ -86,7 +109,7 @@ fn food(entry: &Entry) -> Result<Food, &'static str> {
         .ok_or("No supported nutrition match")?;
     Ok(Food {
         kcal_per_100g,
-        grams_per_cup: entry.grams_per_cup,
+        entry,
     })
 }
 
@@ -171,8 +194,38 @@ fn quantity(value: &str) -> Option<CalorieRange> {
     None
 }
 
+/// A unit that carries its own weight: "15-ounce can", "(28-oz.) can", "425-gram
+/// package".
+fn package_grams(unit: &str) -> Option<f64> {
+    static PACKAGE: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(
+            r"^\(?([0-9]+(?:\.[0-9]+)?)[- ]?(ounce|oz|pound|lb|gram|g)\.?\)?[- ]?(?:can|package|block|bag|jar|box|carton|container|tin|bottle|packet|tub)s?$",
+        )
+        .unwrap()
+    });
+    let parts = PACKAGE.captures(unit)?;
+    let amount: f64 = parts[1].parse().ok()?;
+    let grams_per = match &parts[2] {
+        "ounce" | "oz" => 28.349523125,
+        "pound" | "lb" => 453.59237,
+        _ => 1.0,
+    };
+    Some(amount * grams_per)
+}
+
 fn grams_per_unit(unit: &str, food: &Food) -> Result<f64, &'static str> {
+    // A heaped or scant spoon is close enough to a level one.
+    static FILL: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"^(?:slightly )?(?:heaped|heaping|scant|generous|level|rounded) ").unwrap()
+    });
     let normalized = normalize(unit);
+    if normalized.is_empty() {
+        return catalog::grams_per_piece(food.entry, None).ok_or("Unsupported quantity unit");
+    }
+    if let Some(grams) = package_grams(&normalized) {
+        return Ok(grams);
+    }
+    let normalized = FILL.replace(&normalized, "").into_owned();
     let unit = match normalized.as_str() {
         "gram" | "grams" | "g" => return Ok(1.0),
         "kilogram" | "kilograms" | "kg" => return Ok(1000.0),
@@ -190,8 +243,14 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<f64, &'static str> {
         "liter" | "liters" | "litre" | "litres" => "l",
         other => other,
     };
-    let cups = catalog::volume_to_cups(1.0, unit).ok_or("Unsupported quantity unit")?;
-    Ok(cups * food.grams_per_cup.ok_or("Missing density for this food")?)
+    let Some(cups) = catalog::volume_to_cups(1.0, unit) else {
+        return catalog::grams_per_piece(food.entry, Some(unit)).ok_or("Unsupported quantity unit");
+    };
+    Ok(cups
+        * food
+            .entry
+            .grams_per_cup
+            .ok_or("Missing density for this food")?)
 }
 
 fn measurement_grams(

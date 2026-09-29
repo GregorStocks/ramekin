@@ -734,7 +734,7 @@ mod tests {
                     ingredients: vec![
                         ingredient("granulated sugar", Some("1"), Some("cup")),
                         ingredient("Moon  Dust", Some("1"), Some("cup")),
-                        ingredient("eggs", Some("2"), Some("large")),
+                        ingredient("garlic", Some("1"), Some("head")),
                     ],
                 },
                 Recipe {
@@ -754,7 +754,7 @@ mod tests {
         assert_eq!(stats.nutrition_computed, 2);
         assert_eq!(
             stats.nutrition_name_recognized, 3,
-            "eggs match but lack a unit"
+            "garlic matches but has no per-head weight"
         );
         assert_eq!(stats.recipes_fully_estimated, 1);
         assert_eq!(stats.recipes_with_per_serving, 1);
@@ -767,7 +767,7 @@ mod tests {
         assert_eq!(
             stats
                 .nutrition_failures
-                .get("Unsupported quantity unit: eggs"),
+                .get("Unsupported quantity unit: garlic"),
             Some(&1),
             "quantity failures on recognized names are fingerprinted too"
         );
