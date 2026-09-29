@@ -413,6 +413,23 @@ fn packages_carry_their_own_weight_and_fill_words_are_ignored() {
             "{note}"
         );
     }
+    let ounces = |oz: f64| kcal("chickpeas", &(oz * 28.349523125).to_string(), "g");
+    let noted = ParsedIngredient {
+        note: Some("14 1/2-ounce".into()),
+        ..ingredient("chickpeas", "1", "can")
+    };
+    let result = estimate(&[noted], None, 1.0).unwrap();
+    assert!((result.known_calories.unwrap().min - ounces(14.5)).abs() < 1e-9);
+    let ranged = estimate(
+        &[ingredient("chickpeas", "2", "12- to 18-ounce packages")],
+        None,
+        1.0,
+    )
+    .unwrap()
+    .known_calories
+    .unwrap();
+    assert!((ranged.min - ounces(24.0)).abs() < 1e-9);
+    assert!((ranged.max - ounces(36.0)).abs() < 1e-9);
     for note in ["drained", "about 15-ounce", "15-ounce-ish"] {
         let noted = ParsedIngredient {
             note: Some(note.into()),
@@ -450,7 +467,10 @@ fn counted_trace_foods_without_a_piece_weight_are_negligible() {
     assert_eq!(known(ingredient("bay leaves", "2", "leaves")), 0.0);
     assert_eq!(known(ingredient("cinnamon", "1", "stick")), 0.0);
     assert_eq!(known(count("bay leaves", "6-8")), 0.0);
-    // Past a handful, the calories are unknown rather than zero.
+    // Past a handful, including after scaling, the calories are unknown
+    // rather than zero.
+    let doubled = estimate(&[count("bay leaves", "6-8")], None, 2.0).unwrap();
+    assert!(doubled.known_calories.is_none());
     for amount in ["100", "8-12"] {
         let many = estimate(&[count("bay leaves", amount)], None, 1.0).unwrap();
         assert!(many.known_calories.is_none(), "{amount}");

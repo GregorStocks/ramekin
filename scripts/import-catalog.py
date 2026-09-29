@@ -71,6 +71,11 @@ NON_PIECE_MODIFIERS = {
     "bottle",
     "bag",
     "packet",
+    "block",
+    "box",
+    "carton",
+    "tin",
+    "tub",
     "scoop",
     "portion",
     "unit",
@@ -209,7 +214,7 @@ def portion_key(modifier: str) -> str | None:
     head = parts[0]
     if (
         head in NON_PIECE_MODIFIERS
-        or head.split(" ")[0] in NON_PIECE_MODIFIERS
+        or singular(head.split(" ")[0]) in NON_PIECE_MODIFIERS
         or any(char.isdigit() for char in head)
     ):
         return None

@@ -36,9 +36,12 @@ SCALE_TEST_INGREDIENTS: List[Ingredient] = [
 
 # Every line is known: flour (910 kcal), sugar (387), milk (373.6), 1 1/2
 # sticks of butter (169.5 g, 1215.3), 3 large eggs (150 g, 214.5), and salt to
-# taste and a few bay leaves (negligible) sum to 3100.4 kcal.
+# taste and a few bay leaves (negligible) sum to 3100.4 kcal. At 2x, 12-16 bay
+# leaves are past the trace limit, so they become unknown.
 SCALE_TEST_TOTAL_1X = "Whole recipe: approximately 3100 calories."
-SCALE_TEST_TOTAL_2X = "Whole recipe: approximately 6201 calories."
+SCALE_TEST_TOTAL_2X = (
+    "Known ingredients: 6201 calories, plus unknown calories from bay leaves."
+)
 
 
 def _sign_up(api_url: str) -> tuple[str, str, str]:

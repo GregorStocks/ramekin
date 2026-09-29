@@ -14,9 +14,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60510 | 100 | 46928/60410 (77.7%) | 42662/60410 (70.6%) | 395/5408 (7.3%) | n/a (no servings) | 28780/37166 (77.4%) | 59389/60510 (98.1%) |
+| Pipeline fixtures | 5408 | 60510 | 100 | 46928/60410 (77.7%) | 42664/60410 (70.6%) | 395/5408 (7.3%) | n/a (no servings) | 28780/37166 (77.4%) | 59389/60510 (98.1%) |
 | Paprika fixtures | 462 | 5377 | 11 | 4492/5366 (83.7%) | 3942/5366 (73.5%) | 48/462 (10.4%) | n/a (no servings) | 2255/2881 (78.3%) | 5286/5377 (98.3%) |
-| Pipeline snapshots | 445 | 5177 | 10 | 4389/5167 (84.9%) | 3908/5167 (75.6%) | 46/445 (10.3%) | 18/445 (4.0%) | 2249/2842 (79.1%) | 5122/5177 (98.9%) |
+| Pipeline snapshots | 445 | 5177 | 10 | 4389/5167 (84.9%) | 3909/5167 (75.7%) | 46/445 (10.3%) | 18/445 (4.0%) | 2249/2842 (79.1%) | 5122/5177 (98.9%) |
 
 ## Pipeline fixtures
 
@@ -31,13 +31,13 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | No supported nutrition match | 13178 | 21.8% |
 | Several ingredients share one amount | 44 | 0.1% |
 | Unsupported or missing quantity | 43 | 0.1% |
-| Unsupported quantity unit | 618 | 1.0% |
+| Unsupported quantity unit | 616 | 1.0% |
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 11412 | `9ff86698ca3f` |
+| Nutrition (all failures) | 11411 | `bbc00df12175` |
 | Density | 4511 | `a1960d93d0df` |
 | Shopping category | 745 | `482df69e4e62` |
 
@@ -77,13 +77,13 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | No supported nutrition match | 738 | 14.3% |
 | Several ingredients share one amount | 7 | 0.1% |
 | Unsupported or missing quantity | 4 | 0.1% |
-| Unsupported quantity unit | 80 | 1.5% |
+| Unsupported quantity unit | 79 | 1.5% |
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 1024 | `fd8e588a70f4` |
+| Nutrition (all failures) | 1023 | `68162a888ce2` |
 | Density | 425 | `9808fd779886` |
 | Shopping category | 50 | `331abe3656de` |
 

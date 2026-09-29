@@ -835,10 +835,9 @@
       "kcal_per_100g": 215.0,
       "grams_per_cup": null,
       "portions": {
-        "box": 352.0,
         "pancake": 48.0
       },
-      "default_portion": null
+      "default_portion": "pancake"
     },
     {
       "fdc_id": 167602,
@@ -4154,10 +4153,8 @@
       "description": "candies, caramello candy bar",
       "kcal_per_100g": 462.0,
       "grams_per_cup": null,
-      "portions": {
-        "block": 7.166666666666667
-      },
-      "default_portion": "block"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 167976,
@@ -4333,10 +4330,8 @@
       "description": "candies, krackel chocolate bar",
       "kcal_per_100g": 523.0,
       "grams_per_cup": null,
-      "portions": {
-        "block": 12.333333333333334
-      },
-      "default_portion": "block"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 167994,
@@ -4505,10 +4500,9 @@
       "kcal_per_100g": 248.0,
       "grams_per_cup": null,
       "portions": {
-        "box": 255.0,
         "waffle": 47.0
       },
-      "default_portion": null
+      "default_portion": "waffle"
     },
     {
       "fdc_id": 168012,
@@ -11308,7 +11302,6 @@
       "kcal_per_100g": 360.0,
       "grams_per_cup": null,
       "portions": {
-        "block": 8.0,
         "chiclet": 1.6,
         "stick": 3.0
       },
@@ -18389,10 +18382,9 @@
       "kcal_per_100g": 492.0,
       "grams_per_cup": 208.0,
       "portions": {
-        "box": 42.0,
         "piece": 0.7
       },
-      "default_portion": null
+      "default_portion": "piece"
     },
     {
       "fdc_id": 169584,
@@ -18472,10 +18464,9 @@
       "kcal_per_100g": 556.0,
       "grams_per_cup": null,
       "portions": {
-        "bar": 17.0,
-        "block": 14.0
+        "bar": 17.0
       },
-      "default_portion": null
+      "default_portion": "bar"
     },
     {
       "fdc_id": 169593,
@@ -20039,10 +20030,9 @@
       "kcal_per_100g": 324.0,
       "grams_per_cup": null,
       "portions": {
-        "biscuit": 126.0,
-        "box": 526.0
+        "biscuit": 126.0
       },
-      "default_portion": null
+      "default_portion": "biscuit"
     },
     {
       "fdc_id": 169782,
@@ -20070,10 +20060,9 @@
       "kcal_per_100g": 328.0,
       "grams_per_cup": null,
       "portions": {
-        "biscuit": 128.0,
-        "box": 595.0
+        "biscuit": 128.0
       },
-      "default_portion": null
+      "default_portion": "biscuit"
     },
     {
       "fdc_id": 169785,
@@ -33023,10 +33012,8 @@
       "description": "cheese, limburger",
       "kcal_per_100g": 327.0,
       "grams_per_cup": 134.0,
-      "portions": {
-        "box": 113.0
-      },
-      "default_portion": "box"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 171244,
@@ -33991,10 +33978,8 @@
       "description": "babyfood, cereal, oatmeal, dry fortified",
       "kcal_per_100g": 394.0,
       "grams_per_cup": 48.8,
-      "portions": {
-        "box": 223.0
-      },
-      "default_portion": "box"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 171361,
@@ -35239,10 +35224,8 @@
       "description": "turkey roast, boneless, frozen, seasoned, light and dark meat, raw",
       "kcal_per_100g": 120.0,
       "grams_per_cup": null,
-      "portions": {
-        "box": 1134.0
-      },
-      "default_portion": "box"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 171504,
@@ -35948,10 +35931,8 @@
       "description": "soup, vegetable broth, ready to serve",
       "kcal_per_100g": 5.0,
       "grams_per_cup": 221.0,
-      "portions": {
-        "carton": 926.0
-      },
-      "default_portion": "carton"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 171584,
@@ -43522,10 +43503,8 @@
       "description": "tofu, firm, prepared with calcium sulfate and magnesium chloride (nigari)",
       "kcal_per_100g": 78.0,
       "grams_per_cup": 252.0,
-      "portions": {
-        "block": 324.0
-      },
-      "default_portion": "block"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 172449,
@@ -43533,10 +43512,9 @@
       "kcal_per_100g": 61.0,
       "grams_per_cup": 248.0,
       "portions": {
-        "block": 464.0,
         "piece": 120.0
       },
-      "default_portion": null
+      "default_portion": "piece"
     },
     {
       "fdc_id": 172450,
@@ -43757,20 +43735,16 @@
       "description": "tofu, raw, firm, prepared with calcium sulfate",
       "kcal_per_100g": 144.0,
       "grams_per_cup": 252.0,
-      "portions": {
-        "block": 324.0
-      },
-      "default_portion": "block"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 172476,
       "description": "tofu, raw, regular, prepared with calcium sulfate",
       "kcal_per_100g": 76.0,
       "grams_per_cup": 248.0,
-      "portions": {
-        "block": 464.0
-      },
-      "default_portion": "block"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 172477,
@@ -47601,10 +47575,8 @@
       "description": "soup, beef broth, less/reduced sodium, ready to serve",
       "kcal_per_100g": 6.0,
       "grams_per_cup": 219.0,
-      "portions": {
-        "carton": 923.0
-      },
-      "default_portion": "carton"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 172890,
@@ -58179,10 +58151,9 @@
       "kcal_per_100g": 263.0,
       "grams_per_cup": null,
       "portions": {
-        "box": 242.0,
         "waffle": 45.0
       },
-      "default_portion": null
+      "default_portion": "waffle"
     },
     {
       "fdc_id": 174106,
@@ -58190,10 +58161,9 @@
       "kcal_per_100g": 215.0,
       "grams_per_cup": null,
       "portions": {
-        "box": 352.0,
         "pancake": 48.0
       },
-      "default_portion": null
+      "default_portion": "pancake"
     },
     {
       "fdc_id": 174107,
@@ -59699,10 +59669,8 @@
       "description": "tofu, salted and fermented (fuyu)",
       "kcal_per_100g": 116.0,
       "grams_per_cup": null,
-      "portions": {
-        "block": 11.0
-      },
-      "default_portion": "block"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 174281,
@@ -59783,20 +59751,16 @@
       "description": "tofu, extra firm, prepared with nigari",
       "kcal_per_100g": 83.0,
       "grams_per_cup": null,
-      "portions": {
-        "block": 455.0
-      },
-      "default_portion": "block"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 174291,
       "description": "tofu, hard, prepared with nigari",
       "kcal_per_100g": 145.0,
       "grams_per_cup": null,
-      "portions": {
-        "block": 488.0
-      },
-      "default_portion": "block"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 174292,
@@ -59913,10 +59877,8 @@
       "description": "tofu, salted and fermented (fuyu), prepared with calcium sulfate",
       "kcal_per_100g": 116.0,
       "grams_per_cup": null,
-      "portions": {
-        "block": 11.0
-      },
-      "default_portion": "block"
+      "portions": {},
+      "default_portion": null
     },
     {
       "fdc_id": 174306,

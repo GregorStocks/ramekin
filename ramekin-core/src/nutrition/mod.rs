@@ -82,19 +82,19 @@ fn is_cooking_fat(entry: &Entry) -> bool {
     })
 }
 
-/// The most pieces of a trace food that still count as a trace ("6-8 bay
-/// leaves"). Beyond this, the calories are unknown rather than zero.
+/// The most pieces of a trace food, after scaling, that still count as a trace
+/// ("6-8 bay leaves"). Beyond this, the calories are unknown rather than zero.
 const MAX_TRACE_COUNT: f64 = 10.0;
 
 /// A few whole leaves, sticks, or pods of a food USDA has no piece weight for
 /// ("2 bay leaves"); a handful of a trace food is a few calories.
-fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient) -> bool {
+fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bool {
     ingredient.measurements.iter().all(|measurement| {
         let few = measurement
             .amount
             .as_deref()
             .and_then(quantity)
-            .is_some_and(|count| count.max <= MAX_TRACE_COUNT);
+            .is_some_and(|count| count.max * scale <= MAX_TRACE_COUNT);
         let unit = measurement
             .unit
             .as_deref()
@@ -105,9 +105,10 @@ fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient) -> bool {
     })
 }
 
-fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient) -> bool {
+fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bool {
     entry.zero_calorie
-        || (entry.trace_ok && (is_trace_line(ingredient) || is_unweighed_count(entry, ingredient)))
+        || (entry.trace_ok
+            && (is_trace_line(ingredient) || is_unweighed_count(entry, ingredient, scale)))
 }
 
 fn food(entry: &Entry) -> Result<Food<'_>, &'static str> {
@@ -206,14 +207,16 @@ fn quantity(value: &str) -> Option<CalorieRange> {
 /// Containers whose weight a recipe may state ("15-ounce can").
 const PACKAGE_WORDS: &str = "can|package|block|bag|jar|box|carton|container|tin|bottle|packet|tub";
 
+/// Mass units a package weight may use.
+const PACKAGE_MASS: &str = "ounces?|oz|pounds?|lbs?|grams?|g";
+
 /// "2 (15-ounce) cans" parses as unit "can" with the weight leading the note
 /// ("15-ounce, drained"); join them back into one weighed unit.
 fn noted_package_unit(unit: &str, note: Option<&str>) -> Option<String> {
     static BARE: LazyLock<Regex> =
         LazyLock::new(|| Regex::new(&format!(r"^(?:{PACKAGE_WORDS})s?$")).unwrap());
     static WEIGHT: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(r"^([0-9]+(?:\.[0-9]+)?[- ]?(?:ounce|oz|pound|lb|gram|g)\.?)(?:$|[,;]| or )")
-            .unwrap()
+        Regex::new(&format!(r"^(.+?)[- ]?({PACKAGE_MASS})\.?(?:$|[,;]| or )")).unwrap()
     });
     let unit = normalize(unit);
     if !BARE.is_match(&unit) {
@@ -221,47 +224,60 @@ fn noted_package_unit(unit: &str, note: Option<&str>) -> Option<String> {
     }
     let note = normalize(note?);
     let weight = WEIGHT.captures(&note)?;
-    Some(format!("{} {unit}", &weight[1]))
+    Some(format!("{} {} {unit}", &weight[1], &weight[2]))
 }
 
-/// A unit that carries its own weight: "15-ounce can", "(28-oz.) can", "425-gram
-/// package".
-fn package_grams(unit: &str) -> Option<f64> {
+/// A unit that carries its own weight: "15-ounce can", "(28-oz.) can", "14
+/// 1/2-ounce can", "12- to 18-ounce package", "425-gram package".
+fn package_grams(unit: &str) -> Option<CalorieRange> {
     static PACKAGE: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(
-            &format!(r"^\(?([0-9]+(?:\.[0-9]+)?)[- ]?(ounce|oz|pound|lb|gram|g)\.?\)?[- ]?(?:{PACKAGE_WORDS})s?$"),
-        )
+        Regex::new(&format!(
+            r"^\(?(.+?)[- ]?({PACKAGE_MASS})\.?\)?[- ]?(?:{PACKAGE_WORDS})s?$"
+        ))
         .unwrap()
     });
     let parts = PACKAGE.captures(unit)?;
-    let amount: f64 = parts[1].parse().ok()?;
-    let grams_per = match &parts[2] {
+    // "12- to 18-ounce" shares the unit between both ends of the range.
+    let weight = quantity(&parts[1].replace("- to ", " to "))?;
+    let grams_per = match parts[2].trim_end_matches('s') {
         "ounce" | "oz" => 28.349523125,
         "pound" | "lb" => 453.59237,
         _ => 1.0,
     };
-    Some(amount * grams_per)
+    Some(CalorieRange {
+        min: weight.min * grams_per,
+        max: weight.max * grams_per,
+    })
 }
 
-fn grams_per_unit(unit: &str, food: &Food) -> Result<f64, &'static str> {
+fn exact(grams: f64) -> CalorieRange {
+    CalorieRange {
+        min: grams,
+        max: grams,
+    }
+}
+
+fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str> {
     // A heaped or scant spoon is close enough to a level one.
     static FILL: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(r"^(?:slightly )?(?:heaped|heaping|scant|generous|level|rounded) ").unwrap()
     });
     let normalized = normalize(unit);
     if normalized.is_empty() {
-        return catalog::grams_per_piece(food.entry, None).ok_or("Unsupported quantity unit");
+        return catalog::grams_per_piece(food.entry, None)
+            .map(exact)
+            .ok_or("Unsupported quantity unit");
     }
     if let Some(grams) = package_grams(&normalized) {
         return Ok(grams);
     }
     let normalized = FILL.replace(&normalized, "").into_owned();
     let unit = match normalized.as_str() {
-        "gram" | "grams" | "g" => return Ok(1.0),
-        "kilogram" | "kilograms" | "kg" => return Ok(1000.0),
-        "milligram" | "milligrams" | "mg" => return Ok(0.001),
-        "ounce" | "ounces" | "oz" => return Ok(28.349523125),
-        "pound" | "pounds" | "lb" | "lbs" => return Ok(453.59237),
+        "gram" | "grams" | "g" => return Ok(exact(1.0)),
+        "kilogram" | "kilograms" | "kg" => return Ok(exact(1000.0)),
+        "milligram" | "milligrams" | "mg" => return Ok(exact(0.001)),
+        "ounce" | "ounces" | "oz" => return Ok(exact(28.349523125)),
+        "pound" | "pounds" | "lb" | "lbs" => return Ok(exact(453.59237)),
         "cups" => "cup",
         "pints" => "pint",
         "quarts" => "quart",
@@ -274,13 +290,16 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<f64, &'static str> {
         other => other,
     };
     let Some(cups) = catalog::volume_to_cups(1.0, unit) else {
-        return catalog::grams_per_piece(food.entry, Some(unit)).ok_or("Unsupported quantity unit");
+        return catalog::grams_per_piece(food.entry, Some(unit))
+            .map(exact)
+            .ok_or("Unsupported quantity unit");
     };
-    Ok(cups
-        * food
+    Ok(exact(
+        cups * food
             .entry
             .grams_per_cup
-            .ok_or("Missing density for this food")?)
+            .ok_or("Missing density for this food")?,
+    ))
 }
 
 fn measurement_grams(
@@ -308,8 +327,8 @@ fn measurement_grams(
             let range = quantity(&parts[1]).ok_or("Unsupported or missing quantity")?;
             (range, grams_per_unit(&parts[2], food)?)
         };
-        total.min += range.min * factor;
-        total.max += range.max * factor;
+        total.min += range.min * factor.min;
+        total.max += range.max * factor.max;
     }
     Ok(total)
 }
@@ -331,7 +350,7 @@ fn is_frying_medium(ingredient: &ParsedIngredient) -> bool {
             .is_some_and(|note| FRYING.is_match(note) && !note.to_lowercase().contains("plus more"))
 }
 
-fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
+fn contribution(ingredient: &ParsedIngredient, scale: f64) -> Result<Line, &'static str> {
     let entry = match catalog::resolve_line(&ingredient.item, ingredient.note.as_deref()) {
         Resolution::Entry { entry, .. } if entry.kind == Kind::Product => return Ok(Line::Skipped),
         Resolution::Entry { entry, .. } => entry,
@@ -346,7 +365,7 @@ fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
             }
             return if entries
                 .iter()
-                .all(|entry| is_product(entry) || is_negligible(entry, ingredient))
+                .all(|entry| is_product(entry) || is_negligible(entry, ingredient, scale))
             {
                 Ok(Line::Calories(ZERO))
             } else {
@@ -356,7 +375,7 @@ fn contribution(ingredient: &ParsedIngredient) -> Result<Line, &'static str> {
         Resolution::Ambiguous => return Err("Ambiguous ingredient"),
         Resolution::Unresolved => return Err("No supported nutrition match"),
     };
-    if is_negligible(entry, ingredient) {
+    if is_negligible(entry, ingredient, scale) {
         return Ok(Line::Calories(ZERO));
     }
     let calories = measured_calories(ingredient, &food(entry)?);
@@ -437,7 +456,7 @@ pub fn estimate(
     let mut known = None;
     let mut unknown_ingredients = Vec::new();
     for (index, ingredient) in ingredients.iter().enumerate() {
-        match contribution(ingredient) {
+        match contribution(ingredient, scale) {
             Ok(Line::Skipped) => {}
             Ok(Line::Calories(value)) => {
                 let total = known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });
