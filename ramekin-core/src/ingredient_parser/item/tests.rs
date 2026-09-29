@@ -810,6 +810,10 @@ fn test_trailing_notes_keep_the_food_and_drop_connectors() {
     assert!(dish.item.contains("any old dish"), "{dish:?}");
     let garnish = parse("Confectioners’ sugar, for dusting, and mint leaves, for garnish");
     assert!(garnish.item.contains("mint leaves"), "{garnish:?}");
+    let liqueur = parse("1/2 ounce crème de framboise [raspberry liqueur]");
+    assert!(liqueur.item.contains("raspberry liqueur"), "{liqueur:?}");
+    let spinach = parse("1 pound baby spinach [see Note about frozen]");
+    assert_eq!(spinach.item, "baby spinach");
     let pasta = parse("1 pound dried pasta, any shape you like");
     assert_eq!(pasta.item, "dried pasta");
 }

@@ -523,8 +523,40 @@ pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
     let mut consider = |idx: usize| {
         cut = Some(cut.map_or(idx, |c: usize| c.min(idx)));
     };
+    // "[see Note]" or "[optional]", but not a synonym that names the food
+    // ("crème de framboise [raspberry liqueur]").
     if let Some(idx) = lower.find(" [") {
-        consider(idx);
+        let inside = lower.get(idx + 2..).unwrap_or("");
+        let inside = inside.split(']').next().unwrap_or("");
+        const NOTE_WORDS: &[&str] = &[
+            "about",
+            "corrected",
+            "edited",
+            "finish",
+            "for",
+            "garnish",
+            "if",
+            "make",
+            "more",
+            "note",
+            "notes",
+            "optional",
+            "or",
+            "see",
+            "serve",
+            "serving",
+            "to",
+            "updated",
+        ];
+        let words: Vec<&str> = inside.split_whitespace().collect();
+        let synonym = !words.is_empty()
+            && words.len() <= 3
+            && words
+                .iter()
+                .all(|word| word.chars().all(char::is_alphabetic) && !NOTE_WORDS.contains(word));
+        if !synonym {
+            consider(idx);
+        }
     }
     if let Some(idx) = lower.find(" such as ") {
         consider(idx);
