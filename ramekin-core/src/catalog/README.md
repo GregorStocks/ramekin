@@ -234,6 +234,7 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
 | Date | Tier | Model / harness | Applied | Skipped |
 | --- | --- | --- | --- | --- |
 | 2026-09-28 | Top 2,000 unresolved names (seen ≥ 4 times across pipeline and Paprika fixtures and prod) | Claude Opus 5.5 via a Claude Code Workflow: 8 classifiers + 3 verifiers | 1,670 aliases, 16 ambiguous, 6 not-food, 4 products, 1 entry | 303 |
+| 2026-09-29 | Tier 2: every remaining name seen ≥ 2 times, plus every prod name, minus tier-1 skips (2,568 names, 5,836 lines) | Claude Opus 5.5 via a Claude Code Workflow: 11 classifiers + 3 verifiers | 1,919 aliases, 92 ambiguous, 113 not-food, 4 products | 440 |
 
 - **Verification:** the verifiers checked every mapping to a ≥ 300 kcal/100 g food (543), a
   ~1/7 sample of the rest, and consistency across all decisions. They corrected 34 decisions.
@@ -243,3 +244,16 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
   - recognized names on food lines went from 54.0% to 77.8%;
   - calories computed from 44.7% to 58.3%;
   - volume lines with a density from 62.9% to 77.5%.
+- **Tier 2 verification:** the verifiers checked 360 high-calorie mappings, a 262-name
+  sample, and consistency across 1,400 decisions. They corrected 28 decisions, mostly guesses
+  turned into skips: panko (half the density of dry crumbs), and blends USDA lacks such as
+  shichimi, Tajín and Italian seasoning. All 113 not-food names were reviewed by hand; they
+  are blog "years ago:" links, yield and serving lines, section headers, and parser fragments.
+- **Tier 2 effect:**
+
+  | Measure | Prod (992 recipes) | Pipeline fixtures |
+  | --- | --- | --- |
+  | Names recognized | 79.8% → 91.8% | 77.7% → 82.6% |
+  | Calories computed | 69.9% → 79.3% | 70.6% → 74.5% |
+  | Estimates complete | 5.9% → 15.0% | 7.3% → 10.5% |
+  | "Not enough data" | 44.7% → 25.8% | 40.3% → 32.6% |
