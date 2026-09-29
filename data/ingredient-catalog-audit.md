@@ -50,7 +50,7 @@ Estimate status with at most 3 uncounted: Complete 10.8%, Insufficient 31.6%, Pa
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 9590 | `f24d45320bd0` |
+| Nutrition (all failures) | 9591 | `237df119d8d0` |
 | Density | 3756 | `ebdbca761702` |
 | Shopping category | 743 | `041fa98a6e95` |
 
@@ -86,7 +86,7 @@ Estimate status with at most 3 uncounted: Complete 16.5%, Insufficient 24.5%, Pa
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 806 | `82d56cef5f27` |
+| Nutrition (all failures) | 806 | `12970b140199` |
 | Density | 298 | `5b86d5355882` |
 | Shopping category | 82 | `870de6192ed9` |
 
@@ -122,7 +122,7 @@ Estimate status with at most 3 uncounted: Complete 16.0%, Insufficient 20.9%, Pa
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 719 | `c841648e816d` |
+| Nutrition (all failures) | 719 | `902278e8d146` |
 | Density | 291 | `3d8506c0bcd3` |
 | Shopping category | 52 | `372189728903` |
 

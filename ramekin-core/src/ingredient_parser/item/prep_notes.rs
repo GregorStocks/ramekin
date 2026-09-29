@@ -533,12 +533,21 @@ pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
         let phrase = format!(" for {purpose}");
         if let Some(idx) = lower.find(&phrase) {
             let end = idx + phrase.len();
-            // Whole words only: "for serving" but not "for servings of".
-            if lower
-                .get(end..)
-                .and_then(|rest| rest.chars().next())
-                .is_none_or(|c| !c.is_alphanumeric())
-            {
+            let rest = lower.get(end..).unwrap_or("");
+            // Whole words only: "for serving" but not "for servings of". And
+            // a list that goes on ("sugar, for dusting, and mint leaves")
+            // names more foods, so the phrase isn't the end of the line.
+            let after = rest.trim_start_matches([',', ' ']);
+            let next = after
+                .strip_prefix("and ")
+                .or_else(|| after.strip_prefix("or "));
+            // "for deep-frying, and coating the bowl" goes on with another use.
+            let continues_list = next.is_some_and(|next| {
+                !USE_PURPOSES
+                    .iter()
+                    .any(|purpose| next.starts_with(purpose.trim_start_matches("the ")))
+            });
+            if rest.chars().next().is_none_or(|c| !c.is_alphanumeric()) && !continues_list {
                 consider(idx);
             }
         }

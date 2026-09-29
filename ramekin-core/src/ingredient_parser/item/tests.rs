@@ -808,6 +808,8 @@ fn test_trailing_notes_keep_the_food_and_drop_connectors() {
     assert_eq!(sugar.note.as_deref(), Some("or to taste"));
     let dish = parse("1 deep pie dish, or frankly, any old dish you feel like baking in");
     assert!(dish.item.contains("any old dish"), "{dish:?}");
+    let garnish = parse("Confectioners’ sugar, for dusting, and mint leaves, for garnish");
+    assert!(garnish.item.contains("mint leaves"), "{garnish:?}");
     let pasta = parse("1 pound dried pasta, any shape you like");
     assert_eq!(pasta.item, "dried pasta");
 }
