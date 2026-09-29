@@ -232,6 +232,37 @@ def test_export_all_recipes(authed_api_client, server_url):
             assert title in exported_titles
 
 
+def test_export_all_recipes_with_colliding_titles(authed_api_client, server_url):
+    """Recipes whose sanitized titles collide must all land in the archive.
+
+    Zip entry names come from the sanitized title, and the zip writer rejects
+    duplicate names, which used to abort the whole export.
+    """
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    titles = [
+        "Beef Stew",
+        "Beef Stew",
+        "beef stew",
+        "Pizza Beans / Tomato",
+        "Pizza Beans Tomato",
+        "!!!",
+    ]
+    for title in titles:
+        recipes_api.create_recipe(
+            CreateRecipeRequest(title=title, instructions="Cook it", ingredients=[])
+        )
+
+    contents = _export_zip_contents(server_url, client)
+
+    assert len(contents) == len(titles)
+    assert all(name.endswith(".paprikarecipe") for name in contents)
+    assert len({name.lower() for name in contents}) == len(titles)
+    assert ".paprikarecipe" not in contents
+    assert sorted(r["name"] for r in contents.values()) == sorted(titles)
+
+
 def test_export_recipe_not_found(authed_api_client, server_url):
     """Test exporting a non-existent recipe returns 404."""
     client, user_id = authed_api_client

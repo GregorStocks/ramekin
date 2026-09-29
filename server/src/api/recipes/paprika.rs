@@ -189,6 +189,8 @@ fn fetch_recipe_photos(
         .map_err(|e| format!("failed to fetch photos: {}", e))
 }
 
+pub(super) const PAPRIKARECIPE_EXTENSION: &str = ".paprikarecipe";
+
 /// Exported single recipe data (gzipped .paprikarecipe content).
 pub(super) struct ExportedRecipe {
     pub filename: String,
@@ -231,7 +233,13 @@ pub(super) fn export_recipe_to_paprikarecipe(
         .chars()
         .filter(|c| c.is_alphanumeric() || *c == ' ' || *c == '-' || *c == '_')
         .collect::<String>();
-    let filename = format!("{}.paprikarecipe", filename);
+    let filename = filename.trim();
+    let filename = if filename.is_empty() {
+        "Recipe"
+    } else {
+        filename
+    };
+    let filename = format!("{}{}", filename, PAPRIKARECIPE_EXTENSION);
 
     Ok(ExportedRecipe { filename, data })
 }
