@@ -48,6 +48,44 @@ pub fn parsed_name(name: &str) -> String {
     parsed
 }
 
+/// Whether re-parsing drops text that could say which food the name meant:
+/// examples ("such as basil"), alternatives ("or cod"), or a personal choice
+/// ("i used manila"). Moving such a key to the shorter name would turn a
+/// one-off choice into the meaning of a generic name ("fresh herbs").
+fn drops_identity(name: &str) -> bool {
+    const IDENTITY_MARKERS: &[&str] = &[
+        "and/or",
+        "any ",
+        "e.g",
+        "example",
+        "i use",
+        "like ",
+        "mix of",
+        "or ",
+        "preferably",
+        "such as",
+        "your choice",
+        "your favorite",
+    ];
+    let parsed = parse_ingredient(name);
+    parsed.note.is_some_and(|note| {
+        let note = note.to_lowercase();
+        IDENTITY_MARKERS.iter().any(|marker| note.contains(marker))
+    })
+}
+
+/// Whether the parsed name is a safe new key: only notes were split off (no
+/// amount, which means the key was a fragment of a line), and what's left
+/// isn't itself a fragment ("pepper or", "and half", "plus 2 tablespoons
+/// lard").
+fn is_clean_rename(name: &str, parsed: &str) -> bool {
+    const FRAGMENT_EDGES: &[&str] = &["and", "more", "or", "plus", "to", "per", "of", "with"];
+    let words: Vec<&str> = parsed.split_whitespace().collect();
+    parse_ingredient(name).measurements.is_empty()
+        && !words.first().is_some_and(|w| FRAGMENT_EDGES.contains(w))
+        && !words.last().is_some_and(|w| FRAGMENT_EDGES.contains(w))
+}
+
 /// How a name resolves, comparably: the entry id, or the kind of non-match.
 fn outcome(name: &str) -> String {
     match resolve(name) {
@@ -91,6 +129,19 @@ pub fn clean_curated(json: &str) -> (String, Vec<CuratedChange>) {
                 changes.push(CuratedChange::Remove {
                     section,
                     name: name.clone(),
+                });
+            } else if cleaned == "unresolved"
+                && (drops_identity(name)
+                    || !is_clean_rename(name, &parsed)
+                    || names[name].is_null())
+            {
+                // Moving the key would broaden a one-off choice (an example,
+                // an ambiguity) to a shorter name, or key on a fragment.
+                changes.push(CuratedChange::Conflict {
+                    section,
+                    name: name.clone(),
+                    parsed,
+                    detail: "not safe to move to the parsed name".to_string(),
                 });
             } else if cleaned == "unresolved" {
                 renames.entry(parsed).or_default().push(name.clone());

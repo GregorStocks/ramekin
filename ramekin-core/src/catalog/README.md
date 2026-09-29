@@ -223,13 +223,21 @@ are `tests/test_catalog_import.py`.
   garlic", "oil, for frying") can never match a newly parsed line.
   `make catalog-clean-aliases` re-parses every key:
   - it removes the key when the parsed name already resolves the same way;
-  - it re-keys it to the parsed name when that name resolves to nothing;
+  - it re-keys it to the parsed name when that name resolves to nothing, but
+    only when the re-parse split off nothing but notes;
   - it reports conflicts to `logs/catalog-alias-cleanup.md` and leaves them
     alone.
 
+  A re-key counts as a conflict if the re-parse would:
+  - drop an example or alternative ("fresh herbs such as basil" must not make
+    "fresh herbs" mean basil);
+  - drop an amount, meaning the key was a fragment of a line;
+  - leave a fragment ("pepper or");
+  - move an ambiguous (null) alias onto a shorter name.
+
   The `curated_names_are_what_the_parser_produces` test fails until it has
-  been run. The first run (2026-09-29, alongside the parser fix) removed 579
-  keys and re-keyed 171.
+  been run. The first run (2026-09-29, alongside the parser fix) removed 561
+  keys, re-keyed 79, and left 141 conflicts.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
