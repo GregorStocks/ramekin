@@ -823,3 +823,11 @@ fn test_trailing_notes_keep_the_food_and_drop_connectors() {
     let pasta = parse("1 pound dried pasta, any shape you like");
     assert_eq!(pasta.item, "dried pasta");
 }
+
+#[test]
+fn test_trailing_or_alternative_goes_to_the_note() {
+    let spinach =
+        super::super::parse_ingredient("1 pound fresh baby spinach, or thawed frozen spinach");
+    assert_eq!(spinach.item, "fresh baby spinach");
+    assert_eq!(spinach.note.as_deref(), Some("or thawed frozen spinach"));
+}

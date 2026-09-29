@@ -159,7 +159,7 @@
     {
       "raw": "1/4 cup (25 grams) wheat germ, wheat bran, oat bran, or a finely chopped nut of your choice (I like walnuts)",
       "expected": {
-        "item": "wheat germ, wheat bran, oat bran, or a finely chopped nut of your choice",
+        "item": "wheat germ, wheat bran, oat bran",
         "measurements": [
           {
             "amount": "0.25",
@@ -170,7 +170,7 @@
             "unit": "g"
           }
         ],
-        "note": "I like walnuts",
+        "note": "I like walnuts; or a finely chopped nut of your choice",
         "category": "Baking"
       }
     },

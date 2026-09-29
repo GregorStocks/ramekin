@@ -28,14 +28,14 @@
     {
       "raw": "1/2 cup minced shallots, or green onions, or very finely minced onions",
       "expected": {
-        "item": "minced shallots, or green onions, or very finely minced onions",
+        "item": "minced shallots, or green onions",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or very finely minced onions",
         "category": "Produce"
       }
     },

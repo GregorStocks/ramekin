@@ -78,7 +78,7 @@
     {
       "raw": "12 ounces fresh baby spinach, or thawed frozen spinach (no need to squeeze)",
       "expected": {
-        "item": "fresh baby spinach, or thawed frozen spinach",
+        "item": "fresh baby spinach",
         "measurements": [
           {
             "amount": "12",
@@ -89,8 +89,8 @@
             "unit": "g"
           }
         ],
-        "note": "no need to squeeze",
-        "category": "Frozen"
+        "note": "no need to squeeze; or thawed frozen spinach",
+        "category": "Produce"
       }
     },
     {

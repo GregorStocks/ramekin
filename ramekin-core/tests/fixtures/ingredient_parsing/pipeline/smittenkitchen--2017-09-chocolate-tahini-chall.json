@@ -51,7 +51,7 @@
     {
       "raw": "1/2 cup (120 ml) vegetable or another neutral oil, or melted butter",
       "expected": {
-        "item": "vegetable or another neutral oil, or melted butter",
+        "item": "vegetable or another neutral oil",
         "measurements": [
           {
             "amount": "0.5",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or melted butter",
         "category": "Oils & Vinegars"
       }
     },

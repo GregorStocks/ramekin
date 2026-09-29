@@ -965,7 +965,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             let guidance = is_trailing_guidance_note(&potential_note);
             let lower_note = potential_note.to_lowercase();
             // "and sliced scallions" continues a list of foods; it is never a note.
-            let continues_list = lower_note.starts_with("and ") || lower_note.starts_with("or ");
+            // A trailing "or ..." alternative still goes to the note.
+            let continues_list = lower_note.starts_with("and ");
             // Only the last part may be a prep phrase that names a food
             // ("crumbled queso fresco"); every part before it must be a pure
             // note, or a list of foods ending in "for topping" would lose all

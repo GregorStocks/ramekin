@@ -173,7 +173,7 @@
     {
       "raw": "1/2 cup raisins, cranberries, or other chopped dried fruit",
       "expected": {
-        "item": "raisins, cranberries, or other chopped dried fruit",
+        "item": "raisins, cranberries",
         "measurements": [
           {
             "amount": "0.5",
@@ -184,8 +184,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "or other chopped dried fruit",
+        "category": "Produce"
       }
     }
   ]
