@@ -259,18 +259,18 @@
     {
       "raw": "peanut or vegetable oil, for frying",
       "expected": {
-        "item": "peanut or vegetable oil, for frying",
+        "item": "peanut or vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "softened butter, for buns",
       "expected": {
-        "item": "softened butter, for buns",
+        "item": "softened butter",
         "measurements": [],
-        "note": null,
+        "note": "for buns",
         "category": "Dairy & Eggs"
       }
     },

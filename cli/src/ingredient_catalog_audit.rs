@@ -684,6 +684,55 @@ pub fn run(root: &Path, runs_dir: Option<&Path>, prod_recipes: Option<&Path>) ->
     Ok(())
 }
 
+const CURATED_PATH: &str = "ramekin-core/src/catalog/data/curated.json";
+const CLEANUP_REPORT: &str = "logs/catalog-alias-cleanup.md";
+
+/// Re-key or remove curated names the parser no longer produces, writing
+/// curated.json and a report of every change and conflict.
+pub fn clean_aliases(root: &Path) -> Result<()> {
+    use ramekin_core::catalog::{clean_curated, CuratedChange};
+    let path = root.join(CURATED_PATH);
+    let json =
+        fs::read_to_string(&path).with_context(|| format!("Failed to read {CURATED_PATH}"))?;
+    let (cleaned, changes) = clean_curated(&json);
+    fs::write(&path, cleaned).with_context(|| format!("Failed to write {CURATED_PATH}"))?;
+    let (mut removed, mut renamed, mut conflicts) = (Vec::new(), Vec::new(), Vec::new());
+    for change in &changes {
+        match change {
+            CuratedChange::Remove { section, name } => removed.push(format!("- {section}: {name}")),
+            CuratedChange::Rename { section, from, to } => {
+                renamed.push(format!("- {section}: {from} -> {to}"))
+            }
+            CuratedChange::Conflict {
+                section,
+                name,
+                parsed,
+                detail,
+            } => conflicts.push(format!(
+                "- {section}: {name} (parses to {parsed}: {detail})"
+            )),
+        }
+    }
+    let report = format!(
+        "# Curated alias cleanup\n\n## Removed ({})\n\n{}\n\n## Renamed ({})\n\n{}\n\n## Conflicts, kept ({})\n\n{}\n",
+        removed.len(),
+        removed.join("\n"),
+        renamed.len(),
+        renamed.join("\n"),
+        conflicts.len(),
+        conflicts.join("\n"),
+    );
+    fs::create_dir_all(root.join("logs"))?;
+    fs::write(root.join(CLEANUP_REPORT), report)?;
+    tracing::info!(
+        "Removed {}, renamed {}, kept {} conflicts; report at {CLEANUP_REPORT}",
+        removed.len(),
+        renamed.len(),
+        conflicts.len()
+    );
+    Ok(())
+}
+
 /// One name the catalog doesn't resolve, as a classification work item.
 #[derive(Serialize)]
 struct UnresolvedName {

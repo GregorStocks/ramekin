@@ -5,14 +5,14 @@
     {
       "raw": "4 large eggs, separated",
       "expected": {
-        "item": "eggs, separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },
@@ -145,9 +145,9 @@
     {
       "raw": "Sifted confectioners’ sugar for garnish",
       "expected": {
-        "item": "Sifted confectioners’ sugar for garnish",
+        "item": "Sifted confectioners’ sugar",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Baking"
       }
     }

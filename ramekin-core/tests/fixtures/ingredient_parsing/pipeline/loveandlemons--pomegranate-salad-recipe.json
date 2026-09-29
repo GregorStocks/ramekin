@@ -5,14 +5,14 @@
     {
       "raw": "1 acorn squash, cut in half, seeds removed, sliced into ¼-inch pieces",
       "expected": {
-        "item": "acorn squash, cut in half, seeds removed",
+        "item": "acorn squash",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced into 1/4-inch pieces",
+        "note": "cut in half, seeds removed, sliced into 1/4-inch pieces",
         "category": "Produce"
       }
     },
@@ -51,9 +51,9 @@
     {
       "raw": "Extra-virgin olive oil, for drizzling",
       "expected": {
-        "item": "Extra-virgin olive oil, for drizzling",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     },

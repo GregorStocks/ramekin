@@ -5,7 +5,7 @@
     {
       "raw": "4 medium sweet potatoes (about 12 ounces; 340g each), washed, scrubbed, and dried",
       "expected": {
-        "item": "sweet potatoes, washed, scrubbed",
+        "item": "sweet potatoes",
         "measurements": [
           {
             "amount": "4",
@@ -20,16 +20,16 @@
             "unit": "g each"
           }
         ],
-        "note": "about 12 ounces; 340g each, and dried",
+        "note": "about 12 ounces; 340g each, washed, scrubbed, and dried",
         "category": "Produce"
       }
     },
     {
       "raw": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
       "expected": {
-        "item": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
+        "item": "Canola, vegetable, or extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for rubbing",
         "category": "Oils & Vinegars"
       }
     },
@@ -67,10 +67,10 @@
     {
       "raw": "Toppings of your choice, such as grated cheddar cheese, crispy diced bacon bits, minced chives, sour cream, and store-bought homemade chili",
       "expected": {
-        "item": "Toppings of your choice, such as grated cheddar cheese, crispy diced bacon bits, minced chives, sour cream, and store-bought homemade chili",
+        "item": "Toppings of your choice",
         "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "such as grated cheddar cheese, crispy diced bacon bits, minced chives, sour cream, and store-bought homemade chili",
+        "category": "Other"
       }
     }
   ]

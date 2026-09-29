@@ -236,14 +236,14 @@
     {
       "raw": "1 cup chopped fresh collard greens or kale, tough ribs removed",
       "expected": {
-        "item": "chopped fresh collard greens or kale, tough ribs removed",
+        "item": "chopped fresh collard greens or kale",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "tough ribs removed",
         "category": "Produce"
       }
     },

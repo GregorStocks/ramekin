@@ -105,7 +105,7 @@
     {
       "raw": "1 pound pork belly, tough skin removed, sliced 1/4 inch thick",
       "expected": {
-        "item": "pork belly, tough skin removed",
+        "item": "pork belly",
         "measurements": [
           {
             "amount": "1",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced 1/4 inch thick",
+        "note": "tough skin removed, sliced 1/4 inch thick",
         "category": "Meat & Seafood"
       }
     },

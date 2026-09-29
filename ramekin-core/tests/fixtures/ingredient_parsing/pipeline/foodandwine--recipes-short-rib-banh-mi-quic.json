@@ -91,14 +91,14 @@
     {
       "raw": "2 scallions, thinly sliced, plus more for serving",
       "expected": {
-        "item": "scallions, thinly sliced",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "plus more for serving",
+        "note": "thinly sliced, plus more for serving",
         "category": "Produce"
       }
     },

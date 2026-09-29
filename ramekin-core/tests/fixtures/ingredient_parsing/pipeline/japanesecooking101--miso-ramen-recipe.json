@@ -165,15 +165,15 @@
     {
       "raw": "1/4 tsp chili bean paste such as Tobanjan or any chili paste",
       "expected": {
-        "item": "chili bean paste such as Tobanjan or any chili paste",
+        "item": "chili bean paste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "such as Tobanjan or any chili paste",
+        "category": "Canned Goods"
       }
     },
     {

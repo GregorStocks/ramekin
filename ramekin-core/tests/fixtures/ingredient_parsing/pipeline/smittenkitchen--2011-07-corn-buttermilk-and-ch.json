@@ -55,7 +55,7 @@
     {
       "raw": "2 tablespoons melted butter, cooled, divided",
       "expected": {
-        "item": "melted butter, cooled",
+        "item": "melted butter",
         "measurements": [
           {
             "amount": "2",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "cooled, divided",
         "category": "Dairy & Eggs"
       }
     },

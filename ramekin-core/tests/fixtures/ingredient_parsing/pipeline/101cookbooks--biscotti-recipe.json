@@ -201,9 +201,9 @@
     {
       "raw": "semi-sweet chocolate, for dipping",
       "expected": {
-        "item": "semi-sweet chocolate, for dipping",
+        "item": "semi-sweet chocolate",
         "measurements": [],
-        "note": null,
+        "note": "for dipping",
         "category": "Baking"
       }
     }

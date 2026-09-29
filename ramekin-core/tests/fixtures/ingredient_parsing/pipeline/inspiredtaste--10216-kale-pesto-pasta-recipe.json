@@ -109,7 +109,7 @@
     {
       "raw": "1 pound pasta, any shape",
       "expected": {
-        "item": "pasta, any shape",
+        "item": "pasta",
         "measurements": [
           {
             "amount": "1",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any shape",
         "category": "Pasta & Rice"
       }
     },

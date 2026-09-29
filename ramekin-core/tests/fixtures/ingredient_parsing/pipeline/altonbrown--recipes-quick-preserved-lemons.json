@@ -5,14 +5,14 @@
     {
       "raw": "4  lemons, scrubbed and dried, plus the juice of 1 lemon",
       "expected": {
-        "item": "lemons, scrubbed and dried",
+        "item": "lemons",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "plus the juice of 1 lemon",
+        "note": "scrubbed and dried, plus the juice of 1 lemon",
         "category": "Produce"
       }
     },

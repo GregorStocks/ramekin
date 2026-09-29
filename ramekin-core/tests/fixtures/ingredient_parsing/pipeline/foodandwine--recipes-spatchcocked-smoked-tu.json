@@ -249,15 +249,15 @@
     {
       "raw": "1 (12- to 14-pound) whole Butterball turkey, thawed if frozen, giblets removed",
       "expected": {
-        "item": "whole Butterball turkey, thawed if frozen, giblets removed",
+        "item": "whole Butterball turkey",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "12- to 14-pound",
-        "category": "Frozen"
+        "note": "12- to 14-pound, thawed if frozen, giblets removed",
+        "category": "Meat & Seafood"
       }
     }
   ]

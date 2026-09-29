@@ -159,9 +159,14 @@
     {
       "raw": "About 1 cup jam or jelly (or custard, Nutella, pudding, pumpkin butter, apple butter, dulce de leche, etc.), optional",
       "expected": {
-        "item": "About 1 cup jam or jelly",
-        "measurements": [],
-        "note": "or custard, Nutella, pudding, pumpkin butter, apple butter, dulce de leche, etc., optional",
+        "item": "jam or jelly",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "about, or custard, Nutella, pudding, pumpkin butter, apple butter, dulce de leche, etc., optional",
         "category": "Condiments & Sauces"
       }
     }

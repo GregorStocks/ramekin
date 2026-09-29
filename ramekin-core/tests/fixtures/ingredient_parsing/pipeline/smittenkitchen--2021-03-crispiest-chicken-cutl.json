@@ -41,9 +41,9 @@
     {
       "raw": "Additional seasoning (optional) such as garlic or onion powder or a spice blend",
       "expected": {
-        "item": "Additional seasoning such as garlic or onion powder or a spice blend",
+        "item": "Additional seasoning",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, such as garlic or onion powder or a spice blend",
         "category": "Spices & Seasonings"
       }
     },
@@ -82,9 +82,9 @@
     {
       "raw": "Oil for frying (see above for suggestions)",
       "expected": {
-        "item": "Oil for frying",
+        "item": "Oil",
         "measurements": [],
-        "note": "see above for suggestions",
+        "note": "see above for suggestions, for frying",
         "category": "Oils & Vinegars"
       }
     }

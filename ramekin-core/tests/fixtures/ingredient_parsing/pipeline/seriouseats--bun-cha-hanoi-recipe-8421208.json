@@ -121,9 +121,9 @@
     {
       "raw": "Vegetable or other neutral oil, for brushing",
       "expected": {
-        "item": "Vegetable or other neutral oil, for brushing",
+        "item": "Vegetable or other neutral oil",
         "measurements": [],
-        "note": null,
+        "note": "for brushing",
         "category": "Oils & Vinegars"
       }
     },
@@ -374,7 +374,7 @@
     {
       "raw": "1 small kohlrabi (68g), thinly sliced, then cut into small pieces (1/2 cup), see note",
       "expected": {
-        "item": "kohlrabi, thinly sliced, then cut into small pieces, see note",
+        "item": "kohlrabi, thinly sliced, then cut into small pieces",
         "measurements": [
           {
             "amount": "1",
@@ -389,7 +389,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Produce"
       }
     },

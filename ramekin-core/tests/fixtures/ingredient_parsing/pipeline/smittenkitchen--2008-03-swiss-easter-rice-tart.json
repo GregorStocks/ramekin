@@ -5,14 +5,14 @@
     {
       "raw": "1 1/2 cups plus 1 tablespoon all-purpose flour and more for dusting",
       "expected": {
-        "item": "all-purpose flour and more for dusting",
+        "item": "all-purpose flour and more",
         "measurements": [
           {
             "amount": "1 1/2 cups plus 1 tablespoon",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     },
@@ -69,7 +69,7 @@
     {
       "raw": "11 tablespoons cold unsalted butter, in 11 slices",
       "expected": {
-        "item": "cold unsalted butter, in 11 slices",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "11",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "in 11 slices",
         "category": "Dairy & Eggs"
       }
     },

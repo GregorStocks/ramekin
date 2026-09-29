@@ -5,7 +5,7 @@
     {
       "raw": "1/4 cup fresh mint leaves, loosely packed, plus additional sprigs for garnish",
       "expected": {
-        "item": "fresh mint leaves, loosely packed",
+        "item": "fresh mint leaves",
         "measurements": [
           {
             "amount": "0.25",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus additional sprigs for garnish",
+        "note": "loosely packed, plus additional sprigs for garnish",
         "category": "Produce"
       }
     },

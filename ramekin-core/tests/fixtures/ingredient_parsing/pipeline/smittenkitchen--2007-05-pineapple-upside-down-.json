@@ -5,14 +5,14 @@
     {
       "raw": "1/2 medium pineapple, peeled, quartered lengthwise, and cored",
       "expected": {
-        "item": "pineapple, peeled, quartered lengthwise",
+        "item": "pineapple",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": "and cored",
+        "note": "peeled, quartered lengthwise, and cored",
         "category": "Produce"
       }
     },
@@ -217,7 +217,7 @@
     {
       "raw": "2 tablespoons (30 ml) dark rum for sprinkling over cake (optional)",
       "expected": {
-        "item": "dark rum for sprinkling over cake",
+        "item": "dark rum",
         "measurements": [
           {
             "amount": "2",
@@ -228,7 +228,7 @@
             "unit": "ml"
           }
         ],
-        "note": "optional",
+        "note": "optional, for sprinkling over cake",
         "category": "Beverages"
       }
     }

@@ -42,7 +42,7 @@
     {
       "raw": "12 ounces sweet or spicy Italian sausage, casings removed",
       "expected": {
-        "item": "sweet or spicy Italian sausage, casings removed",
+        "item": "sweet or spicy Italian sausage",
         "measurements": [
           {
             "amount": "12",
@@ -53,7 +53,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "casings removed",
         "category": "Meat & Seafood"
       }
     },
@@ -133,14 +133,14 @@
     {
       "raw": "1 6-8-ounce bundle kale, stemmed, or 4 to 5 ounces kale leaves, cut into thin ribbons",
       "expected": {
-        "item": "6-8-ounce bundle kale, stemmed, or 4 to 5 ounces kale leaves",
+        "item": "6-8-ounce bundle kale",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cut into thin ribbons",
+        "note": "stemmed, or 4 to 5 ounces kale leaves, cut into thin ribbons",
         "category": "Produce"
       }
     },
@@ -179,9 +179,9 @@
     {
       "raw": "Garlic bread, for serving, if you wish",
       "expected": {
-        "item": "Garlic bread, for serving",
+        "item": "Garlic bread",
         "measurements": [],
-        "note": "if you wish",
+        "note": "for serving, if you wish",
         "category": "Bakery & Bread"
       }
     }

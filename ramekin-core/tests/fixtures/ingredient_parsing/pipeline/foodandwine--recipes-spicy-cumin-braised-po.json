@@ -55,14 +55,14 @@
     {
       "raw": "1/2 cup chopped Scotch bonnet chiles, seeds and ribs removed",
       "expected": {
-        "item": "chopped Scotch bonnet chiles, seeds and ribs removed",
+        "item": "chopped Scotch bonnet chiles",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "seeds and ribs removed",
         "category": "Produce"
       }
     },

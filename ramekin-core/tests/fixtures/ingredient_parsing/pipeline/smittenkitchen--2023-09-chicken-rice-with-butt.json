@@ -99,7 +99,7 @@
     {
       "raw": "1 1/2 cups uncooked white rice, any variety",
       "expected": {
-        "item": "uncooked white rice, any variety",
+        "item": "uncooked white rice",
         "measurements": [
           {
             "amount": "1.5",
@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any variety",
         "category": "Pasta & Rice"
       }
     },

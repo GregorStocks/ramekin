@@ -55,7 +55,7 @@
     {
       "raw": "1 pound sweet Italian sausage, casings removed",
       "expected": {
-        "item": "sweet Italian sausage, casings removed",
+        "item": "sweet Italian sausage",
         "measurements": [
           {
             "amount": "1",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "casings removed",
         "category": "Meat & Seafood"
       }
     },

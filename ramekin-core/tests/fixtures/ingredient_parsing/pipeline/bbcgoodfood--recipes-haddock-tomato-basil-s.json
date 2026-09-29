@@ -125,14 +125,14 @@
     {
       "raw": "4 4x175g/6oz firm skinless white  fish fillets, such as haddock",
       "expected": {
-        "item": "4x175g/6oz firm skinless white  fish fillets, such as haddock",
+        "item": "4x175g/6oz firm skinless white  fish fillets",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "such as haddock",
         "category": "Meat & Seafood"
       }
     }

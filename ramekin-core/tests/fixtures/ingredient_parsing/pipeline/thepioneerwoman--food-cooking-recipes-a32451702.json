@@ -204,7 +204,7 @@
     {
       "raw": "1/4 c. vegetable oil, for frying",
       "expected": {
-        "item": "vegetable oil, for frying",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.25",
@@ -215,7 +215,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "752 g all-purpose flour (26 1/2 ounces; 5 3/4 cups plus 2 tablespoons), see notes",
       "expected": {
-        "item": "all-purpose flour, see notes",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "752",
@@ -16,7 +16,7 @@
             "unit": "oz"
           }
         ],
-        "note": "26 1/2 ounces; 5 3/4 cups plus 2 tablespoons",
+        "note": "26 1/2 ounces; 5 3/4 cups plus 2 tablespoons, see notes",
         "category": "Baking"
       }
     },
@@ -81,7 +81,7 @@
     {
       "raw": "70 g unsalted butter (about 2 1/2 ounces; 5 tablespoons), cut into 1/4-inch slices, at room temperature",
       "expected": {
-        "item": "unsalted butter, cut into 1/4-inch slices",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "70",
@@ -96,7 +96,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "about 2 1/2 ounces; 5 tablespoons, at room temperature",
+        "note": "about 2 1/2 ounces; 5 tablespoons, cut into 1/4-inch slices, at room temperature",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,7 +147,7 @@
     {
       "raw": "2 (8-ounce) packages European-style butter (16 ounces; 454 g), such as Kerrygold or Plugra, divided",
       "expected": {
-        "item": "European-style butter, such as Kerrygold or Plugra",
+        "item": "European-style butter",
         "measurements": [
           {
             "amount": "2",
@@ -162,25 +162,25 @@
             "unit": "g"
           }
         ],
-        "note": "8-ounce, divided",
+        "note": "8-ounce, such as Kerrygold or Plugra, divided",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Flour, for dusting",
       "expected": {
-        "item": "Flour, for dusting",
+        "item": "Flour",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     },
     {
       "raw": "Nonstick cooking spray, for greasing",
       "expected": {
-        "item": "Nonstick cooking spray, for greasing",
+        "item": "Nonstick cooking spray",
         "measurements": [],
-        "note": null,
+        "note": "for greasing",
         "category": "Oils & Vinegars"
       }
     },

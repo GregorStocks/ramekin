@@ -189,7 +189,7 @@
     {
       "raw": "2 ounces (60g) parmesan cheese, grated, about 2/3 cup",
       "expected": {
-        "item": "parmesan cheese, grated, about 2/3 cup",
+        "item": "parmesan cheese",
         "measurements": [
           {
             "amount": "2",
@@ -200,14 +200,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "grated, about 2/3 cup",
         "category": "Cheese"
       }
     },
     {
       "raw": "8 ounces (230g) low-moisture mozzarella cheese, shredded, about 2 cups",
       "expected": {
-        "item": "low-moisture mozzarella cheese, shredded, about 2 cups",
+        "item": "low-moisture mozzarella cheese",
         "measurements": [
           {
             "amount": "8",
@@ -218,7 +218,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shredded, about 2 cups",
         "category": "Cheese"
       }
     },

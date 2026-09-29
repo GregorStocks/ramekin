@@ -318,9 +318,18 @@
     {
       "raw": "About 8 cups peanut oil",
       "expected": {
-        "item": "About 8 cups peanut oil",
-        "measurements": [],
-        "note": null,
+        "item": "peanut oil",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          },
+          {
+            "amount": "1728",
+            "unit": "g"
+          }
+        ],
+        "note": "about",
         "category": "Oils & Vinegars"
       }
     }

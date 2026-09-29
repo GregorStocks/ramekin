@@ -286,9 +286,18 @@
       "section": null
     },
     {
-      "item": "About 8 cups peanut oil",
-      "measurements": [],
-      "note": null,
+      "item": "peanut oil",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        },
+        {
+          "amount": "1728",
+          "unit": "g"
+        }
+      ],
+      "note": "about",
       "raw": "About 8 cups peanut oil",
       "section": null
     }

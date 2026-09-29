@@ -101,7 +101,7 @@
     {
       "raw": "3 ounces pecorino Romano cheese, grated (about 3/4 cup), plus more for garnish",
       "expected": {
-        "item": "pecorino Romano cheese, grated",
+        "item": "pecorino Romano cheese",
         "measurements": [
           {
             "amount": "3",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 3/4 cup, plus more for garnish",
+        "note": "about 3/4 cup, grated, plus more for garnish",
         "category": "Cheese"
       }
     },

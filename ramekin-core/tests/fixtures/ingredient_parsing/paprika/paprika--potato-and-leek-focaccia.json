@@ -117,16 +117,16 @@
     {
       "raw": "Unsalted butter, for greasing the pan",
       "expected": {
-        "item": "Unsalted butter, for greasing the pan",
+        "item": "Unsalted butter",
         "measurements": [],
-        "note": null,
+        "note": "for greasing the pan",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 leek, white and pale green parts only, thinly sliced, about 1 cup (100 grams)",
       "expected": {
-        "item": "leek, white and pale green parts only, thinly sliced, about 1 cup",
+        "item": "leek, white and pale green parts only",
         "measurements": [
           {
             "amount": "1",
@@ -137,7 +137,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "thinly sliced, about 1 cup",
         "category": "Produce"
       }
     },

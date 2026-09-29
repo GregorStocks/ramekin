@@ -190,9 +190,18 @@
     {
       "raw": "approx 2 tbsp coarse sugar, for topping",
       "expected": {
-        "item": "approx 2 tbsp coarse sugar, for topping",
-        "measurements": [],
-        "note": null,
+        "item": "coarse sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": "approx, for topping",
         "category": "Baking"
       }
     }

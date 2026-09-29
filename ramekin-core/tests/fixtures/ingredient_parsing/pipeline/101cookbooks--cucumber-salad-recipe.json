@@ -96,7 +96,7 @@
     {
       "raw": "1/4  + cup walnuts, lightly toasted, roughly chopped",
       "expected": {
-        "item": "walnuts, lightly toasted",
+        "item": "walnuts",
         "measurements": [
           {
             "amount": "0.25",
@@ -107,7 +107,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "lightly toasted, roughly chopped",
         "category": "Nuts & Dried Fruit"
       }
     },

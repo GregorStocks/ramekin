@@ -65,7 +65,7 @@
     {
       "raw": "6 cups (1.4 L) unsalted chicken or vegetable broth, homemade or store-bought",
       "expected": {
-        "item": "unsalted chicken or vegetable broth, homemade or store-bought",
+        "item": "unsalted chicken or vegetable broth",
         "measurements": [
           {
             "amount": "6",
@@ -76,7 +76,7 @@
             "unit": "l"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Canned Goods"
       }
     },
@@ -232,9 +232,9 @@
     {
       "raw": "Extra-virgin olive oil, for coating the pasta and peas and to garnish",
       "expected": {
-        "item": "Extra-virgin olive oil, for coating the pasta and peas and to garnish",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for coating the pasta and peas and to garnish",
         "category": "Oils & Vinegars"
       }
     },

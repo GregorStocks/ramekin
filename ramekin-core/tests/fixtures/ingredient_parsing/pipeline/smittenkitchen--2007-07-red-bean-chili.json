@@ -195,19 +195,19 @@
     {
       "raw": "Hot sauce, cayenne, chipotle en adobo puree to taste (optional)",
       "expected": {
-        "item": "Hot sauce, cayenne, chipotle en adobo puree to taste",
+        "item": "Hot sauce, cayenne, chipotle en adobo puree",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, to taste",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "Toppings such as sour cream, cheddar, jalapeño (pickled or fresh), and corn bread",
       "expected": {
-        "item": "Toppings such as sour cream, cheddar, jalapeño, and corn bread",
+        "item": "Toppings",
         "measurements": [],
-        "note": "pickled or fresh",
-        "category": "Dairy & Eggs"
+        "note": "pickled or fresh, such as sour cream, cheddar, jalapeño , and corn bread",
+        "category": "Other"
       }
     }
   ]

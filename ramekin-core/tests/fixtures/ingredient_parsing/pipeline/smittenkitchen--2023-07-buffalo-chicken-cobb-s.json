@@ -168,14 +168,14 @@
     {
       "raw": "6 to 6 1/2 cups diced fresh vegetables, such as celery, carrots, bell pepper, cucumber, and tomatoes",
       "expected": {
-        "item": "diced fresh vegetables, such as celery, carrots, bell pepper, cucumber, and tomatoes",
+        "item": "diced fresh vegetables",
         "measurements": [
           {
             "amount": "6 to 6.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as celery, carrots, bell pepper, cucumber, and tomatoes",
         "category": "Produce"
       }
     },
@@ -200,7 +200,7 @@
     {
       "raw": "4 to 6 ounces diced blue cheese, such as a Danish blue",
       "expected": {
-        "item": "diced blue cheese, such as a Danish blue",
+        "item": "diced blue cheese",
         "measurements": [
           {
             "amount": "4 to 6",
@@ -211,7 +211,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as a Danish blue",
         "category": "Cheese"
       }
     },

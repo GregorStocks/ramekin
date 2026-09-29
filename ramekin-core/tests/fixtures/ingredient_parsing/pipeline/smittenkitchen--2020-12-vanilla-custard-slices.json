@@ -5,7 +5,7 @@
     {
       "raw": "2 8.5-ounce sheets ready-rolled puffed pastry, defrosted [from a 1.1-pound (490-gram) package]",
       "expected": {
-        "item": "8.5-ounce sheets ready-rolled puffed pastry, defrosted [from a 1.1-pound package]",
+        "item": "8.5-ounce sheets ready-rolled puffed pastry, defrosted",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from a 1.1-pound package",
         "category": "Other"
       }
     },
@@ -78,6 +78,10 @@
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "6.5",
+            "unit": "g"
           }
         ],
         "note": "or 2 teaspoons vanilla extract",

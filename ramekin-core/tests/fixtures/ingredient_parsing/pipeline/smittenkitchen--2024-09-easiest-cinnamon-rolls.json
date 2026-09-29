@@ -5,7 +5,7 @@
     {
       "raw": "2 cups (475 ml) milk, dairy or non-dairy (i.e. oat, almond, soy, etc.), warmed",
       "expected": {
-        "item": "milk, dairy or non-dairy, warmed",
+        "item": "milk, dairy or non-dairy",
         "measurements": [
           {
             "amount": "2",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "i.e. oat, almond, soy, etc.",
+        "note": "i.e. oat, almond, soy, etc., warmed",
         "category": "Dairy & Eggs"
       }
     },

@@ -82,7 +82,7 @@
     {
       "raw": "1/4 cup plain yogurt, preferably whole-milk though low-fat will work, plus additional for serving",
       "expected": {
-        "item": "plain yogurt, preferably whole-milk though low-fat will work",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "0.25",
@@ -93,7 +93,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus additional for serving",
+        "note": "preferably whole-milk though low-fat will work, plus additional for serving",
         "category": "Dairy & Eggs"
       }
     },
@@ -118,14 +118,18 @@
     {
       "raw": "1/3 cup water [edited]",
       "expected": {
-        "item": "water [edited]",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "edited",
         "category": "Beverages"
       }
     },
@@ -159,9 +163,9 @@
     {
       "raw": "Chopped fresh flat leaf parsley, cilantro or mint for garnish (optional)",
       "expected": {
-        "item": "Chopped fresh flat leaf parsley, cilantro or mint for garnish",
+        "item": "Chopped fresh flat leaf parsley, cilantro or mint",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Produce"
       }
     }

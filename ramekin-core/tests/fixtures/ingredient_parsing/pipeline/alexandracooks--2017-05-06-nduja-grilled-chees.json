@@ -37,14 +37,14 @@
     {
       "raw": "4 half-inch thick slices bread, such as ciabatta or chewy peasant-style bread",
       "expected": {
-        "item": "half-inch thick slices bread, such as ciabatta or chewy peasant-style bread",
+        "item": "half-inch thick slices bread",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "such as ciabatta or chewy peasant-style bread",
         "category": "Bakery & Bread"
       }
     },
@@ -69,7 +69,7 @@
     {
       "raw": "2 ounces ‘nduja, see notes above",
       "expected": {
-        "item": "‘nduja, see notes above",
+        "item": "‘nduja",
         "measurements": [
           {
             "amount": "2",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Other"
       }
     },

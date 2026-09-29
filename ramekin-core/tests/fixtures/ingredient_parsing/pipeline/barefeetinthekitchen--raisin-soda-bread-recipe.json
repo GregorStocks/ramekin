@@ -77,7 +77,7 @@
     {
       "raw": "16 ounces buttermilk, or 2 cups, divided (reserve 1/4 cup)",
       "expected": {
-        "item": "buttermilk, or 2 cups",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "16",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": "reserve 1/4 cup, divided",
+        "note": "reserve 1/4 cup; or 2 cups, divided",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,14 +113,14 @@
     {
       "raw": "2 tablespoons raw or demerara sugar, for topping",
       "expected": {
-        "item": "raw or demerara sugar, for topping",
+        "item": "raw or demerara sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Baking"
       }
     }

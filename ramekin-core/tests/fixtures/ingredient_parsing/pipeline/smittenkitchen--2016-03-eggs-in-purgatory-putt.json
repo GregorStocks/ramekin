@@ -148,28 +148,28 @@
     {
       "raw": "1 tablespoon capers, drained, rinsed",
       "expected": {
-        "item": "capers, drained",
+        "item": "capers",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "rinsed",
+        "note": "drained, rinsed",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 anchovy filet, minced, or more to taste, if you prefer a heap of them",
       "expected": {
-        "item": "anchovy filet, minced, or more to taste",
+        "item": "anchovy filet",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "if you prefer a heap of them",
+        "note": "minced, or more to taste, if you prefer a heap of them",
         "category": "Meat & Seafood"
       }
     },

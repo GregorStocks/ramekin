@@ -37,7 +37,7 @@
     {
       "raw": "1 teaspoon table salt, divided, plus salt for cooking pasta",
       "expected": {
-        "item": "table salt, divided",
+        "item": "table salt",
         "measurements": [
           {
             "amount": "1",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus salt for cooking pasta",
+        "note": "divided, plus salt for cooking pasta",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,7 +69,7 @@
     {
       "raw": "¼ cup extra-virgin olive oil, divided, plus extra for drizzling (optional)",
       "expected": {
-        "item": "extra-virgin olive oil, divided",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "0.25",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional, plus extra for drizzling",
+        "note": "optional, divided, plus extra for drizzling",
         "category": "Oils & Vinegars"
       }
     },
@@ -105,14 +105,14 @@
     {
       "raw": "3 anchovy fillets, rinsed, patted dry, and minced",
       "expected": {
-        "item": "anchovy fillets, rinsed, patted dry",
+        "item": "anchovy fillets",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "and minced",
+        "note": "rinsed, patted dry, and minced",
         "category": "Meat & Seafood"
       }
     },
@@ -133,14 +133,14 @@
     {
       "raw": "1 (14.5-ounce) can whole peeled tomatoes, drained with juice reserved, crushed by hand to small pieces",
       "expected": {
-        "item": "whole peeled tomatoes, drained with juice reserved",
+        "item": "whole peeled tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "14.5-ounce, crushed by hand to small pieces",
+        "note": "14.5-ounce, drained with juice reserved, crushed by hand to small pieces",
         "category": "Produce"
       }
     },

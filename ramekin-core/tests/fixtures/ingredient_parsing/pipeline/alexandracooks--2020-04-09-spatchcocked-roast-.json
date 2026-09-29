@@ -37,7 +37,7 @@
     {
       "raw": "10 oz. artichoke hearts, drained, see notes above",
       "expected": {
-        "item": "artichoke hearts, drained, see notes above",
+        "item": "artichoke hearts",
         "measurements": [
           {
             "amount": "10",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "drained, see notes above",
         "category": "Canned Goods"
       }
     },
@@ -109,23 +109,23 @@
     {
       "raw": "1 chicken, roughly 3 pounds, backbone removed with scissors, see video",
       "expected": {
-        "item": "chicken, roughly 3 pounds, backbone removed with scissors, see video",
+        "item": "chicken, roughly 3 pounds, backbone removed with scissors",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see video",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "Aleppo pepper, optional, see notes above",
       "expected": {
-        "item": "Aleppo pepper, optional, see notes above",
+        "item": "Aleppo pepper",
         "measurements": [],
-        "note": null,
+        "note": "optional, see notes above",
         "category": "Spices & Seasonings"
       }
     },

@@ -73,7 +73,7 @@
     {
       "raw": "8 tablespoons (4 ounces or 115 grams) unsalted butter, cold, diced",
       "expected": {
-        "item": "unsalted butter, cold",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "8",
@@ -88,14 +88,14 @@
             "unit": "g"
           }
         ],
-        "note": "diced",
+        "note": "cold, diced",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/4 cup (60 ml) half-and-half or 2 tablespoons each milk and heavy cream, cold",
       "expected": {
-        "item": "half-and-half or 2 tablespoons each milk and heavy cream",
+        "item": "half-and-half",
         "measurements": [
           {
             "amount": "0.25",
@@ -104,9 +104,13 @@
           {
             "amount": "60",
             "unit": "ml"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": "cold",
+        "note": "or 2 tablespoons each milk and heavy cream; cold",
         "category": "Dairy & Eggs"
       }
     },

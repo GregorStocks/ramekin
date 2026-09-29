@@ -113,14 +113,18 @@
     {
       "raw": "2 teaspoons minced fresh rosemary or 1/2 teaspoon dried rosemary, crushed",
       "expected": {
-        "item": "minced fresh rosemary or 1/2 teaspoon dried rosemary",
+        "item": "minced fresh rosemary",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
           }
         ],
-        "note": "crushed",
+        "note": "or 1/2 teaspoon dried rosemary; crushed",
         "category": "Produce"
       }
     },

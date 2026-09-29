@@ -23,7 +23,7 @@
     {
       "raw": "1/4 cup white wine vinegar, warmed",
       "expected": {
-        "item": "white wine vinegar, warmed",
+        "item": "white wine vinegar",
         "measurements": [
           {
             "amount": "0.25",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Oils & Vinegars"
       }
     },
@@ -55,7 +55,7 @@
     {
       "raw": "1 1/4 to 1 1/2 pounds fresh summer peas, such as sugar snaps, snow peas, shelling peas, and/or favas",
       "expected": {
-        "item": "fresh summer peas, such as sugar snaps, snow peas, shelling peas, and/or favas",
+        "item": "fresh summer peas",
         "measurements": [
           {
             "amount": "1.25 to 1.5",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as sugar snaps, snow peas, shelling peas, and/or favas",
         "category": "Produce"
       }
     },

@@ -55,7 +55,7 @@
     {
       "raw": "7 ounces London dry gin, such as Beefeater or Tanqueray",
       "expected": {
-        "item": "London dry gin, such as Beefeater or Tanqueray",
+        "item": "London dry gin",
         "measurements": [
           {
             "amount": "7",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Beefeater or Tanqueray",
         "category": "Beverages"
       }
     }

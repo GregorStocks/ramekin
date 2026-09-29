@@ -139,21 +139,21 @@
     {
       "raw": "Three 14 1/2- by 9 1/2-inch sheets puff pastry from three 14-ounce packages frozen puff pastry, thawed, preferably all-butter (such as Dufour)",
       "expected": {
-        "item": "14 1/2- by 9 1/2-inch sheets puff pastry from three 14-ounce packages frozen puff pastry, thawed",
+        "item": "14 1/2- by 9 1/2-inch sheets puff pastry from three 14-ounce packages frozen puff pastry",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "such as Dufour, preferably all-butter",
+        "note": "such as Dufour, thawed, preferably all-butter",
         "category": "Frozen"
       }
     },
     {
       "raw": "2 pounds (906g) dried beans or pie weights, for baking",
       "expected": {
-        "item": "dried beans or pie weights, for baking",
+        "item": "dried beans or pie weights",
         "measurements": [
           {
             "amount": "2",
@@ -164,16 +164,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Household"
+        "note": "for baking",
+        "category": "Canned Goods"
       }
     },
     {
       "raw": "Confectioners sugar, for dusting",
       "expected": {
-        "item": "Confectioners sugar, for dusting",
+        "item": "Confectioners sugar",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     }

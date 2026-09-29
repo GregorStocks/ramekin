@@ -138,9 +138,9 @@
     {
       "raw": "Milk or cream, for brushing crust",
       "expected": {
-        "item": "Milk or cream, for brushing crust",
+        "item": "Milk or cream",
         "measurements": [],
-        "note": null,
+        "note": "for brushing crust",
         "section": "Lid",
         "category": "Dairy & Eggs"
       }
@@ -148,9 +148,9 @@
     {
       "raw": "Coarse or fine sugar, for sprinkling crust",
       "expected": {
-        "item": "Coarse or fine sugar, for sprinkling crust",
+        "item": "Coarse or fine sugar",
         "measurements": [],
-        "note": null,
+        "note": "for sprinkling crust",
         "section": "Lid",
         "category": "Baking"
       }
@@ -191,7 +191,7 @@
     {
       "raw": "1 pound apples, peeled, cored and cut into smaller chunks (than you see in my photos)",
       "expected": {
-        "item": "apples, peeled",
+        "item": "apples",
         "measurements": [
           {
             "amount": "1",
@@ -202,7 +202,7 @@
             "unit": "g"
           }
         ],
-        "note": "than you see in my photos, cored and cut into smaller chunks",
+        "note": "than you see in my photos, peeled, cored and cut into smaller chunks",
         "section": "Filling",
         "category": "Produce"
       }

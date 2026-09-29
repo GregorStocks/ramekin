@@ -55,16 +55,16 @@
     {
       "raw": "Salt to taste",
       "expected": {
-        "item": "Salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 pound (455 grams) spaghetti or another dried pasta [To finish]",
       "expected": {
-        "item": "spaghetti or another dried pasta [To finish]",
+        "item": "spaghetti or another dried pasta",
         "measurements": [
           {
             "amount": "1",
@@ -75,7 +75,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "To finish",
         "category": "Pasta & Rice"
       }
     }

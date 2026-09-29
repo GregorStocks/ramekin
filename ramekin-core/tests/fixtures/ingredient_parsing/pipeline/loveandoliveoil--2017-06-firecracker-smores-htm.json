@@ -55,9 +55,9 @@
     {
       "raw": "red and blue pop rocks candy, for topping",
       "expected": {
-        "item": "red and blue pop rocks candy, for topping",
+        "item": "red and blue pop rocks candy",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Snacks"
       }
     }

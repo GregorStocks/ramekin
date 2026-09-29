@@ -208,7 +208,7 @@
     {
       "raw": "1 1/2 ounces prosciutto, sliced 1/8 inch thick, cut into matchsticks",
       "expected": {
-        "item": "prosciutto, sliced 1/8 inch thick",
+        "item": "prosciutto",
         "measurements": [
           {
             "amount": "1.5",
@@ -219,7 +219,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into matchsticks",
+        "note": "sliced 1/8 inch thick, cut into matchsticks",
         "category": "Meat & Seafood"
       }
     },

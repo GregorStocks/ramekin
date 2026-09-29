@@ -93,28 +93,32 @@
     {
       "raw": "1/4 tsp Pepper to taste",
       "expected": {
-        "item": "Pepper to taste",
+        "item": "Pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 Tbsp Green onion for garnish (optional)",
       "expected": {
-        "item": "Green onion for garnish",
+        "item": "Green onion",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Produce"
       }
     }

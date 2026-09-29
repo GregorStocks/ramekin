@@ -23,14 +23,14 @@
     {
       "raw": "2 tablespoons soy sauce preferably low sodium, see notes",
       "expected": {
-        "item": "soy sauce preferably low sodium, see notes",
+        "item": "soy sauce preferably low sodium",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Condiments & Sauces"
       }
     },
@@ -73,28 +73,32 @@
     {
       "raw": "½ teaspoon kosher salt optional, see notes",
       "expected": {
-        "item": "kosher salt optional, see notes",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "optional, see notes",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/4 teaspoon black pepper to taste",
       "expected": {
-        "item": "black pepper to taste",
+        "item": "black pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -133,9 +137,9 @@
     {
       "raw": "green onions, toasted sesame seeds, and lime wedges for serving (optional)",
       "expected": {
-        "item": "green onions, toasted sesame seeds, and lime wedges for serving",
+        "item": "green onions, toasted sesame seeds, and lime wedges",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Produce"
       }
     }

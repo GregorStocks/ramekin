@@ -147,7 +147,7 @@
     {
       "raw": "3 cups dry white wine, such as sauvignon blanc",
       "expected": {
-        "item": "dry white wine, such as sauvignon blanc",
+        "item": "dry white wine",
         "measurements": [
           {
             "amount": "3",
@@ -158,7 +158,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as sauvignon blanc",
         "category": "Beverages"
       }
     },

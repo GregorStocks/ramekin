@@ -199,7 +199,7 @@
     {
       "raw": "5 small scallions, thinly sliced (3/4 cup), divided",
       "expected": {
-        "item": "scallions, thinly sliced",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "5",
@@ -214,7 +214,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "thinly sliced, divided",
         "category": "Produce"
       }
     },

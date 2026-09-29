@@ -138,18 +138,27 @@
     {
       "raw": "Salt and red pepper flakes (I used the mild Aleppo variety) to taste",
       "expected": {
-        "item": "Salt and red pepper flakes to taste",
+        "item": "Salt and red pepper flakes",
         "measurements": [],
-        "note": "I used the mild Aleppo variety",
+        "note": "I used the mild Aleppo variety, to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "About 1/2 cup pitted dates, coarsely chopped or sliced",
       "expected": {
-        "item": "About 1/2 cup pitted dates",
-        "measurements": [],
-        "note": "coarsely chopped or sliced",
+        "item": "pitted dates",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "74",
+            "unit": "g"
+          }
+        ],
+        "note": "about, coarsely chopped or sliced",
         "category": "Nuts & Dried Fruit"
       }
     },

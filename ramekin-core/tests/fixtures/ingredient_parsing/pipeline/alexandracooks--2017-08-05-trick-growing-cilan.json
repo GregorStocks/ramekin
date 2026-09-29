@@ -23,14 +23,14 @@
     {
       "raw": "1 large jalapeño, seeds and veins removed if desired, thinly sliced",
       "expected": {
-        "item": "jalapeño, seeds and veins removed if desired",
+        "item": "jalapeño, seeds and veins removed",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "thinly sliced",
+        "note": "if desired, thinly sliced",
         "category": "Produce"
       }
     },

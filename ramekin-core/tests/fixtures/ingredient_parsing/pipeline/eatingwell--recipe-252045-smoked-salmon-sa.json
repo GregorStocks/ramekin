@@ -23,7 +23,7 @@
     {
       "raw": "6 ounces green beans, preferably thin haricots verts, trimmed and halved",
       "expected": {
-        "item": "green beans, preferably thin haricots verts",
+        "item": "green beans",
         "measurements": [
           {
             "amount": "6",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and halved",
+        "note": "preferably thin haricots verts, trimmed and halved",
         "category": "Produce"
       }
     },
@@ -177,14 +177,14 @@
     {
       "raw": "0.5 small cucumber, halved, seeded and thinly sliced",
       "expected": {
-        "item": "cucumber, halved",
+        "item": "cucumber",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": "seeded and thinly sliced",
+        "note": "halved, seeded and thinly sliced",
         "category": "Produce"
       }
     },

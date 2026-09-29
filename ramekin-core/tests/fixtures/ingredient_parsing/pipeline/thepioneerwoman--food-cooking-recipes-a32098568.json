@@ -5,7 +5,7 @@
     {
       "raw": "4 tbsp. salted butter, melted, plus more for the pan",
       "expected": {
-        "item": "salted butter, melted",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for the pan",
+        "note": "melted, plus more for the pan",
         "category": "Dairy & Eggs"
       }
     },

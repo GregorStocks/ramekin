@@ -33,14 +33,14 @@
     {
       "raw": "1 medium green bell pepper, stemmed, seeded, and quartered",
       "expected": {
-        "item": "green bell pepper, stemmed, seeded",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "and quartered",
+        "note": "stemmed, seeded, and quartered",
         "category": "Produce"
       }
     },
@@ -175,14 +175,14 @@
     {
       "raw": "1/2 medium green bell pepper, stemmed, seeded, and coarsely chopped",
       "expected": {
-        "item": "green bell pepper, stemmed, seeded",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": "and coarsely chopped",
+        "note": "stemmed, seeded, and coarsely chopped",
         "category": "Produce"
       }
     },
@@ -235,14 +235,14 @@
     {
       "raw": "2 cups corn masa mix, such as Maseca",
       "expected": {
-        "item": "corn masa mix, such as Maseca",
+        "item": "corn masa mix",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Maseca",
         "category": "Produce"
       }
     },
@@ -321,9 +321,9 @@
     {
       "raw": "Cilantro and mint leaves for garnish",
       "expected": {
-        "item": "Cilantro and mint leaves for garnish",
+        "item": "Cilantro and mint leaves",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     }

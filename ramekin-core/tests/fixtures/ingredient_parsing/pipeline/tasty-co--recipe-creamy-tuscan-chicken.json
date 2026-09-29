@@ -19,7 +19,7 @@
     {
       "raw": "2 teaspoons salt, for the chicken",
       "expected": {
-        "item": "salt, for the chicken",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2",
@@ -30,22 +30,22 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "for the chicken",
+        "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 teaspoon pepper, for the chicken",
       "expected": {
-        "item": "pepper, for the chicken",
+        "item": "pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "for the chicken",
+        "category": "Spices & Seasonings"
       }
     },
     {

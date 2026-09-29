@@ -241,9 +241,9 @@
     {
       "raw": "vanilla ice cream for serving",
       "expected": {
-        "item": "vanilla ice cream for serving",
+        "item": "vanilla ice cream",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Frozen"
       }
     }

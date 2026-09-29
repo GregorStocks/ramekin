@@ -182,18 +182,18 @@
     {
       "raw": "Chives for garnish",
       "expected": {
-        "item": "Chives for garnish",
+        "item": "Chives",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "Edible flowers for garnish, if desired (we used nasturtium flowers from our garden, only because we had them onhand)",
       "expected": {
-        "item": "Edible flowers for garnish",
+        "item": "Edible flowers",
         "measurements": [],
-        "note": "we used nasturtium flowers from our garden, only because we had them onhand, if desired",
+        "note": "we used nasturtium flowers from our garden, only because we had them onhand, for garnish, if desired",
         "category": "Other"
       }
     }

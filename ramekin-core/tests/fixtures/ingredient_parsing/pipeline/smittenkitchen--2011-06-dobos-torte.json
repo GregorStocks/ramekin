@@ -9,14 +9,14 @@
     {
       "raw": "7 large eggs, separated",
       "expected": {
-        "item": "eggs, separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "7",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }

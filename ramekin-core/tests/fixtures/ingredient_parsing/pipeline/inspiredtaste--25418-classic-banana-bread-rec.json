@@ -155,7 +155,7 @@
     {
       "raw": "1/2 cup (60g) walnuts, toasted and chopped, optional",
       "expected": {
-        "item": "walnuts, toasted and chopped",
+        "item": "walnuts",
         "measurements": [
           {
             "amount": "0.5",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "toasted and chopped, optional",
         "category": "Nuts & Dried Fruit"
       }
     }

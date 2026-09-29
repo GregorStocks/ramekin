@@ -65,7 +65,7 @@
     {
       "raw": "2 ounces pancetta, thickly sliced, finely diced",
       "expected": {
-        "item": "pancetta, thickly sliced",
+        "item": "pancetta",
         "measurements": [
           {
             "amount": "2",
@@ -76,7 +76,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely diced",
+        "note": "thickly sliced, finely diced",
         "category": "Meat & Seafood"
       }
     },
@@ -169,14 +169,14 @@
     {
       "raw": "1 (28-ounce) can peeled Italian tomatoes, seeded and finely chopped, juices reserved",
       "expected": {
-        "item": "peeled Italian tomatoes, seeded and finely chopped",
+        "item": "peeled Italian tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "28-ounce, juices reserved",
+        "note": "28-ounce, seeded and finely chopped, juices reserved",
         "category": "Produce"
       }
     },
@@ -287,9 +287,9 @@
     {
       "raw": "Freshly grated Parmesan cheese for serving",
       "expected": {
-        "item": "Freshly grated Parmesan cheese for serving",
+        "item": "Freshly grated Parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Cheese"
       }
     }

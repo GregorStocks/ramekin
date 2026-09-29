@@ -206,37 +206,37 @@
     {
       "raw": "1 cup shredded cheese, any favorite mix, to serve",
       "expected": {
-        "item": "shredded cheese, any favorite mix, to serve",
+        "item": "shredded cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "any favorite mix, to serve",
         "category": "Cheese"
       }
     },
     {
       "raw": "2 green onions, sliced thinly, to serve",
       "expected": {
-        "item": "green onions, sliced thinly, to serve",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced thinly, to serve",
         "category": "Produce"
       }
     },
     {
       "raw": "Rice, cornbread, or garlic knots, to serve",
       "expected": {
-        "item": "Rice, cornbread, or garlic knots, to serve",
+        "item": "Rice, cornbread, or garlic knots",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Bakery & Bread"
       }
     }

@@ -117,7 +117,7 @@
     {
       "raw": "1/4 ounce dried wild mushrooms, such as chanterelles, porcini or shiitakes",
       "expected": {
-        "item": "dried wild mushrooms, such as chanterelles, porcini or shiitakes",
+        "item": "dried wild mushrooms",
         "measurements": [
           {
             "amount": "0.25",
@@ -128,7 +128,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as chanterelles, porcini or shiitakes",
         "category": "Produce"
       }
     },
@@ -239,7 +239,7 @@
     {
       "raw": "1/2 pound assorted fresh wild mushrooms, such as chanterelles, porcini and shiitakes, brushed clean and large mushrooms thinly sliced",
       "expected": {
-        "item": "assorted fresh wild mushrooms, such as chanterelles, porcini and shiitakes",
+        "item": "assorted fresh wild mushrooms",
         "measurements": [
           {
             "amount": "0.5",
@@ -250,7 +250,7 @@
             "unit": "g"
           }
         ],
-        "note": "brushed clean and large mushrooms thinly sliced",
+        "note": "such as chanterelles, porcini and shiitakes, brushed clean and large mushrooms thinly sliced",
         "category": "Produce"
       }
     },

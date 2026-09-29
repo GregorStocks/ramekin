@@ -87,7 +87,7 @@
     {
       "raw": "1/2 cup small red cherry or grape tomatoes, sliced 1/4-inch thick if large, halved if tiny",
       "expected": {
-        "item": "small red cherry or grape tomatoes, sliced 1/4-inch thick if large",
+        "item": "small red cherry or grape tomatoes",
         "measurements": [
           {
             "amount": "0.5",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved if tiny",
+        "note": "sliced 1/4-inch thick if large, halved if tiny",
         "category": "Produce"
       }
     },

@@ -23,14 +23,14 @@
     {
       "raw": "1 cup plus 2 tablespoons milk, any variety",
       "expected": {
-        "item": "milk, any variety",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1 cup plus 2 tablespoons",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "any variety",
         "category": "Dairy & Eggs"
       }
     },

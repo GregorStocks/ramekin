@@ -105,7 +105,7 @@
     {
       "raw": "2 to 3 ounces feta (Bulgarian or French, if you can find them, are my favorites), in thick slices",
       "expected": {
-        "item": "feta, in thick slices",
+        "item": "feta",
         "measurements": [
           {
             "amount": "2 to 3",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": "Bulgarian or French, if you can find them, are my favorites",
+        "note": "Bulgarian or French, if you can find them, are my favorites, in thick slices",
         "category": "Cheese"
       }
     },

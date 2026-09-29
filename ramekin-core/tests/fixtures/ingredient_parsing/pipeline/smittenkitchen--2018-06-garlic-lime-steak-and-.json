@@ -189,7 +189,7 @@
     {
       "raw": "12 ounces (340 grams) Persian-style small cucumbers, unpeeled, thinly sliced",
       "expected": {
-        "item": "Persian-style small cucumbers, unpeeled",
+        "item": "Persian-style small cucumbers",
         "measurements": [
           {
             "amount": "12",
@@ -200,16 +200,21 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "unpeeled, thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "About 1/2 cup chopped mix of fresh cilantro and mint",
       "expected": {
-        "item": "About 1/2 cup chopped mix of fresh cilantro and mint",
-        "measurements": [],
-        "note": null,
+        "item": "chopped mix of fresh cilantro and mint",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "about",
         "category": "Produce"
       }
     }

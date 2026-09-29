@@ -173,14 +173,14 @@
     {
       "raw": "2 (10-inch or larger) flour tortillas, warmed",
       "expected": {
-        "item": "flour tortillas, warmed",
+        "item": "flour tortillas",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "10-inch or larger",
+        "note": "10-inch or larger, warmed",
         "category": "Bakery & Bread"
       }
     },

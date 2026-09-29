@@ -5,7 +5,7 @@
     {
       "raw": "2 (12 ounce) steaks, about 1-inch thick",
       "expected": {
-        "item": "steaks, about 1-inch thick",
+        "item": "steaks",
         "measurements": [
           {
             "amount": "2",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1-inch thick",
         "category": "Meat & Seafood"
       }
     },

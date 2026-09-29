@@ -5,9 +5,14 @@
     {
       "raw": "About 4 sheets matzo or approximately 40 saltine-style crackers",
       "expected": {
-        "item": "About 4 sheets matzo or approximately 40 saltine-style crackers",
-        "measurements": [],
-        "note": null,
+        "item": "sheets matzo or approximately 40 saltine-style crackers",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "about",
         "category": "Snacks"
       }
     },

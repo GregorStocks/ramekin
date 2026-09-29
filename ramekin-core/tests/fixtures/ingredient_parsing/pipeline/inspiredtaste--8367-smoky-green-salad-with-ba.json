@@ -110,28 +110,28 @@
     {
       "raw": "8 slices cooked bacon, see how we cook bacon",
       "expected": {
-        "item": "cooked bacon, see how we cook bacon",
+        "item": "cooked bacon",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "see how we cook bacon",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "4 poached eggs, see how we poach eggs",
       "expected": {
-        "item": "poached eggs, see how we poach eggs",
+        "item": "poached eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see how we poach eggs",
         "category": "Dairy & Eggs"
       }
     }

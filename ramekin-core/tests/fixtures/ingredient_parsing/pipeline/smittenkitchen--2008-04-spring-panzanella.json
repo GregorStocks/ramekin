@@ -37,7 +37,7 @@
     {
       "raw": "6 cups day-old bread, crust removed, cubed",
       "expected": {
-        "item": "day-old bread, crust removed",
+        "item": "day-old bread",
         "measurements": [
           {
             "amount": "6",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": "cubed",
+        "note": "crust removed, cubed",
         "category": "Bakery & Bread"
       }
     },

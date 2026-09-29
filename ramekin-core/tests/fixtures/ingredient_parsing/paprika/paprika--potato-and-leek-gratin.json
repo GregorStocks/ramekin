@@ -23,7 +23,7 @@
     {
       "raw": "2 1/2 pounds yukon gold potatoes, unpeeled, scrubbed, thinly sliced",
       "expected": {
-        "item": "yukon gold potatoes, unpeeled, scrubbed",
+        "item": "yukon gold potatoes",
         "measurements": [
           {
             "amount": "2.5",
@@ -34,21 +34,21 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "unpeeled, scrubbed, thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 thick or 2 slimmer leeks, halved, washed, cut into 1-inch segments",
       "expected": {
-        "item": "thick or 2 slimmer leeks, halved, washed",
+        "item": "thick or 2 slimmer leeks",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cut into 1-inch segments",
+        "note": "halved, washed, cut into 1-inch segments",
         "category": "Produce"
       }
     },

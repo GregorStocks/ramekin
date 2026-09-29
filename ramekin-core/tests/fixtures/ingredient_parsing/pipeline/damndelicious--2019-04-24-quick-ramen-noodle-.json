@@ -5,14 +5,14 @@
     {
       "raw": "2  3.5-ounce packages instant ramen noodles, flavor packets discarded",
       "expected": {
-        "item": "instant ramen noodles, flavor packets discarded",
+        "item": "instant ramen noodles",
         "measurements": [
           {
             "amount": "2",
             "unit": "3.5-ounce packages"
           }
         ],
-        "note": null,
+        "note": "flavor packets discarded",
         "category": "Pasta & Rice"
       }
     },

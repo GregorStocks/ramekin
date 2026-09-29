@@ -113,10 +113,10 @@
     {
       "raw": "Garnishes, such as minced chives, pickles, celery, radishes, bacon bits, pickled or fried shallots",
       "expected": {
-        "item": "Garnishes, such as minced chives, pickles, celery, radishes, bacon bits, pickled or fried shallots",
+        "item": "Garnishes",
         "measurements": [],
-        "note": null,
-        "category": "Produce"
+        "note": "such as minced chives, pickles, celery, radishes, bacon bits, pickled or fried shallots",
+        "category": "Other"
       }
     }
   ]

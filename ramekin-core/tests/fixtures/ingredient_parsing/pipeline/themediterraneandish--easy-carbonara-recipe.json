@@ -77,14 +77,14 @@
     {
       "raw": "6 garlic cloves, minced, divided",
       "expected": {
-        "item": "garlic cloves, minced",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "divided",
+        "note": "minced, divided",
         "category": "Produce"
       }
     },
@@ -205,9 +205,9 @@
     {
       "raw": "Crusted red pepper flakes for serving (optional)",
       "expected": {
-        "item": "Crusted red pepper flakes for serving",
+        "item": "Crusted red pepper flakes",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Spices & Seasonings"
       }
     }

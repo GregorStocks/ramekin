@@ -5,14 +5,14 @@
     {
       "raw": "4 slices of thick bread, cut into cubes, about 3 cups",
       "expected": {
-        "item": "thick bread, cut into cubes, about 3 cups",
+        "item": "thick bread",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut into cubes, about 3 cups",
         "category": "Bakery & Bread"
       }
     },

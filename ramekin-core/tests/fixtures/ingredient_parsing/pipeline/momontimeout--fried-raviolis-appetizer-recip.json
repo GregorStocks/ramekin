@@ -115,18 +115,18 @@
     {
       "raw": "oil for frying",
       "expected": {
-        "item": "oil for frying",
+        "item": "oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "marinara sauce for dipping (optional)",
       "expected": {
-        "item": "marinara sauce for dipping",
+        "item": "marinara sauce",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for dipping",
         "category": "Condiments & Sauces"
       }
     }

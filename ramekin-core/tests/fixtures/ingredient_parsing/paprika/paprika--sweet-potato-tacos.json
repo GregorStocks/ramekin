@@ -173,14 +173,14 @@
     {
       "raw": "1 lime, in wedges",
       "expected": {
-        "item": "lime, in wedges",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "in wedges",
         "category": "Produce"
       }
     },

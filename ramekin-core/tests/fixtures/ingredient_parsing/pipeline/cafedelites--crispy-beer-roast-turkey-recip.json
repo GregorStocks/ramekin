@@ -61,7 +61,7 @@
     {
       "raw": "1 tablespoon salt to taste",
       "expected": {
-        "item": "salt to taste",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
@@ -72,7 +72,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

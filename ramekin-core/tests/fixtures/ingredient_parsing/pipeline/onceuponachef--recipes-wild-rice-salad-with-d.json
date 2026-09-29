@@ -59,7 +59,7 @@
     {
       "raw": "¼ cup freshly squeezed orange juice, from 1 orange",
       "expected": {
-        "item": "freshly squeezed orange juice, from 1 orange",
+        "item": "freshly squeezed orange juice",
         "measurements": [
           {
             "amount": "0.25",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 orange",
         "category": "Beverages"
       }
     },
@@ -231,14 +231,14 @@
     {
       "raw": "1 tart yet sweet apple (such as Honeycrisp or Fuji), peeled, cored, and diced",
       "expected": {
-        "item": "tart yet sweet apple, peeled, cored",
+        "item": "tart yet sweet apple",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "such as Honeycrisp or Fuji, and diced",
+        "note": "such as Honeycrisp or Fuji, peeled, cored, and diced",
         "category": "Produce"
       }
     },

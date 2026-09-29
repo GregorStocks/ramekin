@@ -42,14 +42,14 @@
     {
       "raw": "6 Yukon gold potatoes (or any small potatoes), peeled, cubed",
       "expected": {
-        "item": "Yukon gold potatoes, peeled",
+        "item": "Yukon gold potatoes",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "or any small potatoes, cubed",
+        "note": "or any small potatoes, peeled, cubed",
         "category": "Produce"
       }
     },
@@ -65,7 +65,7 @@
     {
       "raw": "2.5 lb boneless leg of American lamb, fat trimmed, cut into cubes (Or American lamb shoulder, bones removed, fat-trimmed)",
       "expected": {
-        "item": "boneless leg of American lamb, fat trimmed",
+        "item": "boneless leg of American lamb",
         "measurements": [
           {
             "amount": "2.5",
@@ -76,7 +76,7 @@
             "unit": "g"
           }
         ],
-        "note": "Or American lamb shoulder, bones removed, fat-trimmed, cut into cubes",
+        "note": "Or American lamb shoulder, bones removed, fat-trimmed, fat trimmed, cut into cubes",
         "category": "Meat & Seafood"
       }
     },

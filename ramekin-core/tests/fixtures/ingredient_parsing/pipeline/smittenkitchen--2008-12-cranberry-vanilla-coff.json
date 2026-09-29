@@ -109,14 +109,14 @@
     {
       "raw": "1 stick plus 1 tablespoon unsalted butter, softened, divided",
       "expected": {
-        "item": "unsalted butter, softened",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1 stick plus 1 tablespoon",
             "unit": null
           }
         ],
-        "note": "divided",
+        "note": "softened, divided",
         "category": "Dairy & Eggs"
       }
     },
@@ -155,9 +155,9 @@
     {
       "raw": "Confectioners sugar, for dusting",
       "expected": {
-        "item": "Confectioners sugar, for dusting",
+        "item": "Confectioners sugar",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     }

@@ -51,9 +51,9 @@
     {
       "raw": "Salt and black pepper to taste",
       "expected": {
-        "item": "Salt and black pepper to taste",
+        "item": "Salt and black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -74,14 +74,14 @@
     {
       "raw": "3 to 5 green onions, thinly sliced or 1/4 cup chopped chives or 2 tablespoons chopped parsley or additional fried onions (see note), to serve",
       "expected": {
-        "item": "green onions, thinly sliced",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "3 to 5",
             "unit": null
           }
         ],
-        "note": "see note; or 1/4 cup chopped chives or 2 tablespoons chopped parsley or additional fried onions , to serve",
+        "note": "see note, thinly sliced or 1/4 cup chopped chives or 2 tablespoons chopped parsley or additional fried onions, to serve",
         "category": "Produce"
       }
     }

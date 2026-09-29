@@ -155,14 +155,14 @@
     {
       "raw": "1 ear of fresh corn, for grilling",
       "expected": {
-        "item": "ear of fresh corn, for grilling",
+        "item": "ear of fresh corn",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for grilling",
         "category": "Produce"
       }
     },

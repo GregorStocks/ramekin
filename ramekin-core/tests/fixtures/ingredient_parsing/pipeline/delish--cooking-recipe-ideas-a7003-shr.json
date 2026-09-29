@@ -137,14 +137,14 @@
     {
       "raw": "1/2 c. mild chili sauce, such as Heinz",
       "expected": {
-        "item": "mild chili sauce, such as Heinz",
+        "item": "mild chili sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Heinz",
         "category": "Condiments & Sauces"
       }
     },
@@ -241,14 +241,14 @@
     {
       "raw": "2 dashes hot sauce, such as Tabasco",
       "expected": {
-        "item": "hot sauce, such as Tabasco",
+        "item": "hot sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "dash"
           }
         ],
-        "note": null,
+        "note": "such as Tabasco",
         "category": "Condiments & Sauces"
       }
     },

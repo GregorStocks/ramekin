@@ -19,7 +19,7 @@
     {
       "raw": "1 pound seedless (English) or Persian cucumbers, unpeeled, cubed",
       "expected": {
-        "item": "seedless or Persian cucumbers, unpeeled",
+        "item": "seedless or Persian cucumbers",
         "measurements": [
           {
             "amount": "1",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "English, cubed",
+        "note": "English, unpeeled, cubed",
         "category": "Produce"
       }
     },

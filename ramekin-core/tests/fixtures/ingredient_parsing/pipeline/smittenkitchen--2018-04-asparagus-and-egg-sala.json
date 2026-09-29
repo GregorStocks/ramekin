@@ -99,7 +99,7 @@
     {
       "raw": "1 pound asparagus, any thickness, tough ends trimmed",
       "expected": {
-        "item": "asparagus, any thickness",
+        "item": "asparagus",
         "measurements": [
           {
             "amount": "1",
@@ -110,16 +110,25 @@
             "unit": "g"
           }
         ],
-        "note": "tough ends trimmed",
+        "note": "any thickness, tough ends trimmed",
         "category": "Produce"
       }
     },
     {
       "raw": "About 1/4 cup fresh lemon juice",
       "expected": {
-        "item": "About 1/4 cup fresh lemon juice",
-        "measurements": [],
-        "note": null,
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
+          }
+        ],
+        "note": "about",
         "category": "Produce"
       }
     },
@@ -131,6 +140,10 @@
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
           }
         ],
         "note": "chopped",

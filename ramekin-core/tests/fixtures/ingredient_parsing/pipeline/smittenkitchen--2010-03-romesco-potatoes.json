@@ -78,14 +78,14 @@
     {
       "raw": "1 slice country bread, about 1-inch thick",
       "expected": {
-        "item": "country bread, about 1-inch thick",
+        "item": "country bread",
         "measurements": [
           {
             "amount": "1",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "about 1-inch thick",
         "category": "Bakery & Bread"
       }
     },
@@ -142,14 +142,14 @@
     {
       "raw": "1/2 lemon, for juicing",
       "expected": {
-        "item": "lemon, for juicing",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for juicing",
         "category": "Produce"
       }
     },

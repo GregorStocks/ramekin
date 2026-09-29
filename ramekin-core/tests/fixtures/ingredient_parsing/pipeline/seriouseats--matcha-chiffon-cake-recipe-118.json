@@ -139,7 +139,7 @@
     {
       "raw": "56 g neutral oil (2 ounces; about 1/4 cup), such as vegetable",
       "expected": {
-        "item": "neutral oil, such as vegetable",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "56",
@@ -154,7 +154,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as vegetable",
         "category": "Oils & Vinegars"
       }
     },
@@ -321,9 +321,9 @@
     {
       "raw": "Powdered sugar, for dusting",
       "expected": {
-        "item": "Powdered sugar, for dusting",
+        "item": "Powdered sugar",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     }

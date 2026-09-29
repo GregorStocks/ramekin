@@ -5,9 +5,18 @@
     {
       "raw": "About 1 pound fresh spinach with stems or 10 ounces baby spinach",
       "expected": {
-        "item": "About 1 pound fresh spinach with stems",
-        "measurements": [],
-        "note": "or 10 ounces baby spinach",
+        "item": "fresh spinach with stems",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "about, or 10 ounces baby spinach",
         "category": "Produce"
       }
     },
@@ -101,9 +110,9 @@
     {
       "raw": "Olive oil, to finish",
       "expected": {
-        "item": "Olive oil, to finish",
+        "item": "Olive oil",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Oils & Vinegars"
       }
     }

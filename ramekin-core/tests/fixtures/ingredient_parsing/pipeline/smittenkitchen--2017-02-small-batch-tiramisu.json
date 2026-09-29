@@ -19,14 +19,14 @@
     {
       "raw": "3 large eggs, separated",
       "expected": {
-        "item": "eggs, separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,9 +109,9 @@
     {
       "raw": "A couple tablespoons of your favorite cocoa powder, for sifting over",
       "expected": {
-        "item": "A couple tablespoons of your favorite cocoa powder, for sifting over",
+        "item": "A couple tablespoons of your favorite cocoa powder",
         "measurements": [],
-        "note": null,
+        "note": "for sifting over",
         "category": "Baking"
       }
     }

@@ -114,7 +114,7 @@
     {
       "raw": "1 large or 2 small firm, tart tart apples, such as Granny Smith, peeled, cored and diced small",
       "expected": {
-        "item": "firm, tart tart apples, such as Granny Smith, peeled",
+        "item": "firm, tart tart apples",
         "measurements": [
           {
             "amount": "1",
@@ -125,7 +125,7 @@
             "unit": "small"
           }
         ],
-        "note": "cored and diced small",
+        "note": "such as Granny Smith, peeled, cored and diced small",
         "category": "Produce"
       }
     },

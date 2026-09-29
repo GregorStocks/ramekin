@@ -100,7 +100,7 @@
     {
       "raw": "1 yellow-fleshed potato (1/2 pound), peeled, halved, and thinly sliced",
       "expected": {
-        "item": "yellow-fleshed potato, peeled, halved",
+        "item": "yellow-fleshed potato",
         "measurements": [
           {
             "amount": "1",
@@ -115,7 +115,7 @@
             "unit": "g"
           }
         ],
-        "note": "and thinly sliced",
+        "note": "peeled, halved, and thinly sliced",
         "category": "Produce"
       }
     },

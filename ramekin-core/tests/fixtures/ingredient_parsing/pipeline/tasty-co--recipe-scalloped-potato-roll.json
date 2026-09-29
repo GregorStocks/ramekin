@@ -123,7 +123,7 @@
     {
       "raw": "4 tablespoons fresh parsley, chopped, divided",
       "expected": {
-        "item": "fresh parsley, chopped",
+        "item": "fresh parsley",
         "measurements": [
           {
             "amount": "4",
@@ -134,7 +134,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "chopped, divided",
         "category": "Produce"
       }
     },

@@ -55,21 +55,21 @@
     {
       "raw": "1 -3 tablespoons red or green Thai curry paste, see notes above",
       "expected": {
-        "item": "-3 tablespoons red or green Thai curry paste, see notes above",
+        "item": "-3 tablespoons red or green Thai curry paste",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 teaspoons curry powder, such as Madras",
       "expected": {
-        "item": "curry powder, such as Madras",
+        "item": "curry powder",
         "measurements": [
           {
             "amount": "2",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Madras",
         "category": "Spices & Seasonings"
       }
     },
@@ -173,18 +173,18 @@
     {
       "raw": "lime for serving, optional",
       "expected": {
-        "item": "lime for serving",
+        "item": "lime",
         "measurements": [],
-        "note": "optional",
+        "note": "for serving, optional",
         "category": "Produce"
       }
     },
     {
       "raw": "rice (without the seasonings) or naan, for serving, optional",
       "expected": {
-        "item": "rice or naan, for serving",
+        "item": "rice or naan",
         "measurements": [],
-        "note": "without the seasonings, optional",
+        "note": "without the seasonings, for serving, optional",
         "category": "Bakery & Bread"
       }
     }

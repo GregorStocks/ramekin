@@ -765,8 +765,8 @@ mod tests {
     #[test]
     fn test_parenthetical_size_hint_becomes_note() {
         let result = parse_ingredient("12 (6-inch) flour tortillas, warmed");
-        assert_eq!(result.item, "flour tortillas, warmed");
-        assert_eq!(result.note, Some("6-inch".to_string()));
+        assert_eq!(result.item, "flour tortillas");
+        assert_eq!(result.note, Some("6-inch, warmed".to_string()));
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("12".to_string()));
         assert_eq!(result.measurements[0].unit, None);
@@ -802,10 +802,10 @@ mod tests {
         let result = parse_ingredient(
             "2.5 cups warm water (85 degrees F), divided, plus more as needed for feeding",
         );
-        assert_eq!(result.item, "warm water, divided");
+        assert_eq!(result.item, "warm water");
         assert_eq!(
             result.note,
-            Some("85 degrees F, plus more as needed for feeding".to_string())
+            Some("85 degrees F, divided, plus more as needed for feeding".to_string())
         );
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("2.5".to_string()));

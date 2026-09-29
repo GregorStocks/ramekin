@@ -41,14 +41,14 @@
     {
       "raw": "2 large onions , halved and sliced thin, divided",
       "expected": {
-        "item": "onions, halved and sliced thin",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "divided",
+        "note": "halved and sliced thin, divided",
         "category": "Produce"
       }
     },
@@ -481,14 +481,14 @@
     {
       "raw": "12 (6-inch) pitas or flour tortillas, warmed",
       "expected": {
-        "item": "pitas or flour tortillas, warmed",
+        "item": "pitas or flour tortillas",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": "6-inch",
+        "note": "6-inch, warmed",
         "category": "Bakery & Bread"
       }
     },

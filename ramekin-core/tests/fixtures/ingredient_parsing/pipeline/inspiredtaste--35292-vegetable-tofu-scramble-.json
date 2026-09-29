@@ -37,7 +37,7 @@
     {
       "raw": "12 ounces tofu, see notes below",
       "expected": {
-        "item": "tofu, see notes below",
+        "item": "tofu",
         "measurements": [
           {
             "amount": "12",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes below",
         "category": "Produce"
       }
     },
@@ -155,9 +155,9 @@
     {
       "raw": "Fresh ground black pepper to taste",
       "expected": {
-        "item": "Fresh ground black pepper to taste",
+        "item": "Fresh ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

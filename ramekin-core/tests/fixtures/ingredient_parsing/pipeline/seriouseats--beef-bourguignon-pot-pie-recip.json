@@ -5,7 +5,7 @@
     {
       "raw": "1 tablespoon (15 ml) neutral oil, such as vegetable, plus more as needed",
       "expected": {
-        "item": "neutral oil, such as vegetable",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more as needed",
+        "note": "such as vegetable, plus more as needed",
         "category": "Oils & Vinegars"
       }
     },
@@ -160,7 +160,7 @@
     {
       "raw": "1 1/2 cups (355 ml) dry red wine, such as Pinot Noir",
       "expected": {
-        "item": "dry red wine, such as Pinot Noir",
+        "item": "dry red wine",
         "measurements": [
           {
             "amount": "1.5",
@@ -171,7 +171,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "such as Pinot Noir",
         "category": "Beverages"
       }
     },

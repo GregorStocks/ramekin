@@ -19,14 +19,14 @@
     {
       "raw": "1 egg, any size",
       "expected": {
-        "item": "egg, any size",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "any size",
         "category": "Dairy & Eggs"
       }
     },

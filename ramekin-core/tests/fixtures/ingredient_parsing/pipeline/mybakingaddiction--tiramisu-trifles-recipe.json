@@ -47,14 +47,14 @@
     {
       "raw": "1 cup Sargento® Ricotta Cheese, any style",
       "expected": {
-        "item": "Sargento® Ricotta Cheese, any style",
+        "item": "Sargento® Ricotta Cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "any style",
         "section": "For the Base",
         "category": "Cheese"
       }

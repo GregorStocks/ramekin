@@ -5,7 +5,7 @@
     {
       "raw": "1 pound (455 grams) dried pasta, any shape (shown here: gemelli; more traditional: trofie)",
       "expected": {
-        "item": "dried pasta, any shape",
+        "item": "dried pasta",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "shown here: gemelli; more traditional: trofie",
+        "note": "shown here: gemelli; more traditional: trofie, any shape",
         "category": "Pasta & Rice"
       }
     },

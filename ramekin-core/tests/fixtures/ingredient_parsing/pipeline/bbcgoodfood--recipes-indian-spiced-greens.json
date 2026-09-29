@@ -97,14 +97,14 @@
     {
       "raw": "500g shredded greens such as kale, brussels sprouts, or any other",
       "expected": {
-        "item": "shredded greens such as kale, brussels sprouts, or any other",
+        "item": "shredded greens",
         "measurements": [
           {
             "amount": "500",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as kale, brussels sprouts, or any other",
         "category": "Produce"
       }
     },

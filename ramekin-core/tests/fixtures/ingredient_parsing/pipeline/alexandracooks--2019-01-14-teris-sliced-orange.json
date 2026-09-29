@@ -69,9 +69,9 @@
     {
       "raw": "flaky sea salt such as Maldon",
       "expected": {
-        "item": "flaky sea salt such as Maldon",
+        "item": "flaky sea salt",
         "measurements": [],
-        "note": null,
+        "note": "such as Maldon",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,9 +137,9 @@
     {
       "raw": "freshly cracked black pepper to taste",
       "expected": {
-        "item": "freshly cracked black pepper to taste",
+        "item": "freshly cracked black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

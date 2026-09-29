@@ -19,16 +19,16 @@
     {
       "raw": "big handfuls fresh baby spinach, about 2 cups",
       "expected": {
-        "item": "big handfuls fresh baby spinach, about 2 cups",
+        "item": "big handfuls fresh baby spinach",
         "measurements": [],
-        "note": null,
+        "note": "about 2 cups",
         "category": "Produce"
       }
     },
     {
       "raw": "¼ cup fresh mint, about 10 leaves",
       "expected": {
-        "item": "fresh mint, about 10 leaves",
+        "item": "fresh mint",
         "measurements": [
           {
             "amount": "0.25",
@@ -39,7 +39,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 10 leaves",
         "category": "Produce"
       }
     },
@@ -83,6 +83,10 @@
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
           }
         ],
         "note": null,

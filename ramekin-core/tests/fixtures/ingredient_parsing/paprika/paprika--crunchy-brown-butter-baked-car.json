@@ -155,7 +155,7 @@
     {
       "raw": "3 tablespoons minced parsley, or a mix with herbs you like with carrots such as chives and dill",
       "expected": {
-        "item": "minced parsley, or a mix with herbs you like with carrots such as chives and dill",
+        "item": "minced parsley, or a mix with herbs you like with carrots",
         "measurements": [
           {
             "amount": "3",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as chives and dill",
         "category": "Spices & Seasonings"
       }
     },

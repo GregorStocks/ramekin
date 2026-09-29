@@ -5,7 +5,7 @@
     {
       "raw": "1.25 &amp;#8211; 1.5 lbs. boneless skinless chicken thighs, about 4",
       "expected": {
-        "item": "boneless skinless chicken thighs, about 4",
+        "item": "boneless skinless chicken thighs",
         "measurements": [
           {
             "amount": "1.25-1.5",
@@ -16,25 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "kosher salt to taste",
       "expected": {
-        "item": "kosher salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "freshly cracked black pepper to taste",
       "expected": {
-        "item": "freshly cracked black pepper to taste",
+        "item": "freshly cracked black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,7 +87,7 @@
     {
       "raw": "12-oz marinated artichoke hearts, drained and roughly chopped, see notes above",
       "expected": {
-        "item": "marinated artichoke hearts, drained and roughly chopped, see notes above",
+        "item": "marinated artichoke hearts",
         "measurements": [
           {
             "amount": "12",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "drained and roughly chopped, see notes above",
         "category": "Canned Goods"
       }
     },
@@ -137,9 +137,9 @@
     {
       "raw": "grated cheese, Parmesan or Fontina, see notes above",
       "expected": {
-        "item": "grated cheese, Parmesan or Fontina, see notes above",
+        "item": "grated cheese, Parmesan or Fontina",
         "measurements": [],
-        "note": null,
+        "note": "see notes above",
         "category": "Cheese"
       }
     },

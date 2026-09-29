@@ -85,14 +85,14 @@
     {
       "raw": "1/4 teaspoon ground cinnamon + additional for coating",
       "expected": {
-        "item": "ground cinnamon + additional for coating",
+        "item": "ground cinnamon + additional",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "for coating",
         "category": "Spices & Seasonings"
       }
     },

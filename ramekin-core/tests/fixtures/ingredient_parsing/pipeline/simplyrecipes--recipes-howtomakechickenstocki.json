@@ -19,42 +19,42 @@
     {
       "raw": "1 onion, halved or quartered, optional",
       "expected": {
-        "item": "onion, halved or quartered",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "halved or quartered, optional",
         "category": "Produce"
       }
     },
     {
       "raw": "1 rib celery, roughly chopped, optional",
       "expected": {
-        "item": "rib celery, roughly chopped",
+        "item": "rib celery",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "roughly chopped, optional",
         "category": "Produce"
       }
     },
     {
       "raw": "1 carrot, peeled and roughly chopped, optional",
       "expected": {
-        "item": "carrot, peeled and roughly chopped",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "peeled and roughly chopped, optional",
         "category": "Produce"
       }
     },

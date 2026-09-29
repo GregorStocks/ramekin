@@ -210,14 +210,14 @@
     {
       "raw": "2 tablespoons freshly grated Parmesan cheese or more to taste",
       "expected": {
-        "item": "freshly grated Parmesan cheese or more to taste",
+        "item": "freshly grated Parmesan cheese or more",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Cheese"
       }
     }

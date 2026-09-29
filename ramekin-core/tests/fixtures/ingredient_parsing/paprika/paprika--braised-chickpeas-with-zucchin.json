@@ -97,7 +97,7 @@
     {
       "raw": "1 pound summer squash or zucchini, quartered lengthwise, thinly sliced",
       "expected": {
-        "item": "summer squash or zucchini, quartered lengthwise",
+        "item": "summer squash or zucchini",
         "measurements": [
           {
             "amount": "1",
@@ -108,7 +108,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "quartered lengthwise, thinly sliced",
         "category": "Produce"
       }
     },
@@ -169,9 +169,9 @@
     {
       "raw": "Grated parmesan cheese, to finish",
       "expected": {
-        "item": "Grated parmesan cheese, to finish",
+        "item": "Grated parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Cheese"
       }
     },

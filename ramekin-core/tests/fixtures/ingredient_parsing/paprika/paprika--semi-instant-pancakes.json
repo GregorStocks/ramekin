@@ -123,14 +123,14 @@
     {
       "raw": "2 large eggs, separated, at room temperature",
       "expected": {
-        "item": "eggs, separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "at room temperature",
+        "note": "separated, at room temperature",
         "section": "Semi-instant Pancakes",
         "category": "Dairy & Eggs"
       }
@@ -176,14 +176,14 @@
     {
       "raw": "1 cup fresh fruit, such as blueberries, optional",
       "expected": {
-        "item": "fresh fruit, such as blueberries",
+        "item": "fresh fruit",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "such as blueberries, optional",
         "section": "Semi-instant Pancakes",
         "category": "Produce"
       }

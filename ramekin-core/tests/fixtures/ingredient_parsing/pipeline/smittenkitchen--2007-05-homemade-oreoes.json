@@ -104,7 +104,7 @@
     {
       "raw": "1 to 1¼ cups (200 to 250 grams) sugar [see Note]",
       "expected": {
-        "item": "sugar [see Note]",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1 to 1.25",
@@ -115,7 +115,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "section": "Chocolate Wafers",
         "category": "Baking"
       }

@@ -173,23 +173,23 @@
     {
       "raw": "1 lime, in wedges",
       "expected": {
-        "item": "lime, in wedges",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "in wedges",
         "category": "Produce"
       }
     },
     {
       "raw": "Sliced avocado, pickled red onions, pickled jalapenos, chopped fresh cilantro, hot sauce, Lazy Taco Slaw, or your choice(s) thereof, to finish",
       "expected": {
-        "item": "Sliced avocado, pickled red onions, pickled jalapenos, chopped fresh cilantro, hot sauce, Lazy Taco Slaw, or your choice thereof, to finish",
+        "item": "Sliced avocado, pickled red onions, pickled jalapenos, chopped fresh cilantro, hot sauce, Lazy Taco Slaw",
         "measurements": [],
-        "note": "s",
+        "note": "s; or your choice thereof, to finish",
         "category": "Condiments & Sauces"
       }
     }

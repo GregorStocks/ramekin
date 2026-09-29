@@ -5,14 +5,14 @@
     {
       "raw": "1 (1-inch-thick) sirloin steak, about 1 pound",
       "expected": {
-        "item": "sirloin steak, about 1 pound",
+        "item": "sirloin steak",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "1-inch-thick",
+        "note": "1-inch-thick, about 1 pound",
         "category": "Meat & Seafood"
       }
     },
@@ -37,7 +37,7 @@
     {
       "raw": "1 tablespoon neutral oil, such as safflower or canola",
       "expected": {
-        "item": "neutral oil, such as safflower or canola",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "1",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as safflower or canola",
         "category": "Oils & Vinegars"
       }
     }

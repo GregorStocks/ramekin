@@ -48,9 +48,14 @@
       "section": null
     },
     {
-      "item": "About 7 cloves garlic",
-      "measurements": [],
-      "note": "minced",
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "clove"
+        }
+      ],
+      "note": "about, minced",
       "raw": "About 7 cloves garlic, minced",
       "section": null
     },

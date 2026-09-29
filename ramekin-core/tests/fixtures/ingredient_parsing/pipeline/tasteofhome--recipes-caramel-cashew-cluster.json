@@ -23,7 +23,7 @@
     {
       "raw": "2 pounds milk chocolate candy coating, coarsely chopped, divided",
       "expected": {
-        "item": "milk chocolate candy coating, coarsely chopped",
+        "item": "milk chocolate candy coating",
         "measurements": [
           {
             "amount": "2",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "coarsely chopped, divided",
         "category": "Baking"
       }
     },

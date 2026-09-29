@@ -226,7 +226,7 @@
     {
       "raw": "2 tablespoons (30ml) fruit preserves, such as blueberry, cherry, or raspberry",
       "expected": {
-        "item": "fruit preserves, such as blueberry, cherry, or raspberry",
+        "item": "fruit preserves",
         "measurements": [
           {
             "amount": "2",
@@ -237,7 +237,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "such as blueberry, cherry, or raspberry",
         "category": "Produce"
       }
     },

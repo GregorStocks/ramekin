@@ -55,7 +55,7 @@
     {
       "raw": "1 teaspoon hot sauce of your choice, such as Sriracha or Tabasco, plus more to taste",
       "expected": {
-        "item": "hot sauce of your choice, such as Sriracha or Tabasco",
+        "item": "hot sauce of your choice",
         "measurements": [
           {
             "amount": "1",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to taste",
+        "note": "such as Sriracha or Tabasco, plus more to taste",
         "category": "Condiments & Sauces"
       }
     },
@@ -87,9 +87,9 @@
     {
       "raw": "Salt and pepper to taste",
       "expected": {
-        "item": "Salt and pepper to taste",
+        "item": "Salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

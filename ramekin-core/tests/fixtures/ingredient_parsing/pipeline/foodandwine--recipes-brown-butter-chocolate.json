@@ -199,14 +199,14 @@
     {
       "raw": "1/2 teaspoon flaky sea salt, such as Maldon",
       "expected": {
-        "item": "flaky sea salt, such as Maldon",
+        "item": "flaky sea salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "such as Maldon",
         "category": "Spices & Seasonings"
       }
     }

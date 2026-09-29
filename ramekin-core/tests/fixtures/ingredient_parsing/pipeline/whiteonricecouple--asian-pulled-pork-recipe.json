@@ -5,9 +5,18 @@
     {
       "raw": "about 4  pounds boneless pork butt or pork shoulder",
       "expected": {
-        "item": "about 4  pounds boneless pork butt or pork shoulder",
-        "measurements": [],
-        "note": null,
+        "item": "boneless pork butt or pork shoulder",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": "about",
         "category": "Meat & Seafood"
       }
     },

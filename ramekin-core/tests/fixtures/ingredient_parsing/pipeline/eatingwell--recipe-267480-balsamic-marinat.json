@@ -113,14 +113,14 @@
     {
       "raw": "2 teaspoons dried basil, crushed, or 2 tablespoons chopped fresh basil",
       "expected": {
-        "item": "dried basil, crushed",
+        "item": "dried basil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "or 2 tablespoons chopped fresh basil",
+        "note": "crushed, or 2 tablespoons chopped fresh basil",
         "category": "Spices & Seasonings"
       }
     },

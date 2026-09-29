@@ -9,14 +9,14 @@
   "source_name": "Smittenkitchen.com",
   "ingredients": [
     {
-      "item": "eggs, separated",
+      "item": "eggs",
       "measurements": [
         {
           "amount": "3",
           "unit": "large"
         }
       ],
-      "note": null,
+      "note": "separated",
       "raw": "3 large eggs, separated",
       "section": "Cake"
     },
@@ -227,9 +227,9 @@
       "section": "Assembly"
     },
     {
-      "item": "Confectioners’ sugar, for dusting, and mint leaves",
+      "item": "Confectioners’ sugar",
       "measurements": [],
-      "note": "both optional, for garnish",
+      "note": "both optional, for dusting, and mint leaves, for garnish",
       "raw": "Confectioners’ sugar, for dusting, and mint leaves, for garnish (both optional)",
       "section": "Assembly"
     }

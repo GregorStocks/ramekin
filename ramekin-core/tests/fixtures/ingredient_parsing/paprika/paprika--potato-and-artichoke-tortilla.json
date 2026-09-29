@@ -5,9 +5,18 @@
     {
       "raw": "About 4 tablespoons olive oil, plus more if needed",
       "expected": {
-        "item": "About 4 tablespoons olive oil",
-        "measurements": [],
-        "note": "plus more if needed",
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": "about, plus more if needed",
         "category": "Oils & Vinegars"
       }
     },
@@ -42,14 +51,14 @@
     {
       "raw": "3 marinated artichoke hearts (from a can or jar), rinsed, patted dry, and thinly sliced",
       "expected": {
-        "item": "marinated artichoke hearts, rinsed, patted dry",
+        "item": "marinated artichoke hearts",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "from a can or jar, and thinly sliced",
+        "note": "from a can or jar, rinsed, patted dry, and thinly sliced",
         "category": "Canned Goods"
       }
     },

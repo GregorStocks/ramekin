@@ -5,9 +5,9 @@
     {
       "raw": "Vegetable oil, or other high smoke-point oil such as canola or peanut for frying",
       "expected": {
-        "item": "Vegetable oil, or other high smoke-point oil such as canola or peanut for frying",
+        "item": "Vegetable oil, or other high smoke-point oil",
         "measurements": [],
-        "note": null,
+        "note": "such as canola or peanut for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -128,9 +128,9 @@
     {
       "raw": "Sea salt, powdered sugar or caramel sauce for serving",
       "expected": {
-        "item": "Sea salt, powdered sugar or caramel sauce for serving",
+        "item": "Sea salt, powdered sugar or caramel sauce",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Baking"
       }
     }

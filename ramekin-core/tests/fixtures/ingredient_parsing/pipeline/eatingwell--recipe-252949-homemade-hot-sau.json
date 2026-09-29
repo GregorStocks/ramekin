@@ -41,28 +41,28 @@
     {
       "raw": "2 medium chile peppers, such as poblano, New Mexico or Anaheim, diced",
       "expected": {
-        "item": "chile peppers, such as poblano, New Mexico or Anaheim",
+        "item": "chile peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "diced",
-        "category": "Produce"
+        "note": "such as poblano, New Mexico or Anaheim, diced",
+        "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2-4 habanero peppers, or other small hot chile peppers, stemmed, halved and seeded",
       "expected": {
-        "item": "habanero peppers, or other small hot chile peppers, stemmed",
+        "item": "habanero peppers, or other small hot chile peppers",
         "measurements": [
           {
             "amount": "2-4",
             "unit": null
           }
         ],
-        "note": "halved and seeded",
+        "note": "stemmed, halved and seeded",
         "category": "Produce"
       }
     },

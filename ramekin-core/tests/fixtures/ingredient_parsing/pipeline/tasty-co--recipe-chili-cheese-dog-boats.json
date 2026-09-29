@@ -51,7 +51,7 @@
     {
       "raw": "2 tablespoons fresh parsley, finely chopped, plus more for garnish",
       "expected": {
-        "item": "fresh parsley, finely chopped",
+        "item": "fresh parsley",
         "measurements": [
           {
             "amount": "2",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for garnish",
+        "note": "finely chopped, plus more for garnish",
         "category": "Produce"
       }
     },
@@ -83,7 +83,7 @@
     {
       "raw": "15 oz chili, with or without beans",
       "expected": {
-        "item": "chili, with or without beans",
+        "item": "chili",
         "measurements": [
           {
             "amount": "15",
@@ -94,7 +94,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "with or without beans",
         "category": "Produce"
       }
     },

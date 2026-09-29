@@ -19,42 +19,42 @@
     {
       "raw": "1/2 a large or 1 small shallot, peeled, roughly chopped",
       "expected": {
-        "item": "a large or 1 small shallot, peeled",
+        "item": "a large or 1 small shallot",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "roughly chopped",
+        "note": "peeled, roughly chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 medium red bell pepper, seeded, roughly chopped",
       "expected": {
-        "item": "red bell pepper, seeded",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": "roughly chopped",
+        "note": "seeded, roughly chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "1 piri piri, bird’s eye or other small red chili pepper, chopped, plus more to taste",
       "expected": {
-        "item": "piri piri, bird’s eye or other small red chili pepper, chopped",
+        "item": "piri piri, bird’s eye or other small red chili pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "plus more to taste",
+        "note": "chopped, plus more to taste",
         "category": "Spices & Seasonings"
       }
     },

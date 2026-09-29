@@ -303,15 +303,15 @@
     {
       "raw": "1 deep pie dish, or frankly, any old dish you feel like baking in",
       "expected": {
-        "item": "deep pie dish, or frankly, any old dish you feel like baking in",
+        "item": "deep pie dish, or frankly",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Household"
+        "note": "any old dish you feel like baking in",
+        "category": "Other"
       }
     },
     {

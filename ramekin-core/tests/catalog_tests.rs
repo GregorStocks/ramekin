@@ -514,3 +514,52 @@ fn fresh_herbs_are_trace_foods() {
         }
     }
 }
+
+#[test]
+fn curated_names_are_what_the_parser_produces() {
+    // Aliases keyed on text the parser splits off ("about 7 cloves garlic",
+    // "chickpeas, rinsed") never match a newly parsed line. `make
+    // catalog-clean-aliases` removes or re-keys them; only conflicts, which
+    // need a person to decide, may remain.
+    let (_, changes) = ramekin_core::catalog::clean_curated(ramekin_core::catalog::CURATED_JSON);
+    let stale: Vec<_> = changes
+        .iter()
+        .filter(|change| {
+            !matches!(
+                change,
+                ramekin_core::catalog::CuratedChange::Conflict { .. }
+            )
+        })
+        .collect();
+    assert!(
+        stale.is_empty(),
+        "run make catalog-clean-aliases: {stale:#?}"
+    );
+}
+
+#[test]
+fn stored_items_with_parse_junk_resolve_by_reparsing() {
+    let entry = |item| match resolve(item) {
+        Resolution::Entry { entry, via } => (entry.id.clone(), via),
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    let (garlic, _) = entry("garlic");
+    assert_eq!(
+        entry("about 7 cloves garlic, minced"),
+        (garlic, Via::Reparsed)
+    );
+    let (butter, _) = entry("unsalted butter");
+    assert_eq!(
+        entry("▢ 2 tablespoons unsalted butter"),
+        (butter, Via::Reparsed)
+    );
+    // A leading number that is part of the name is never cut off.
+    assert_eq!(
+        ramekin_core::catalog::parsed_name("85% lean ground beef"),
+        "85% lean ground beef"
+    );
+    assert_eq!(
+        ramekin_core::catalog::parsed_name("5- to 6-inch cubanelle chiles"),
+        "5- to 6-inch cubanelle chiles"
+    );
+}

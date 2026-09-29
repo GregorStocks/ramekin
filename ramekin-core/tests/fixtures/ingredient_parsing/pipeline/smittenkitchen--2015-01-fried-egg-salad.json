@@ -147,6 +147,10 @@
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -180,14 +184,14 @@
     {
       "raw": "1 1/2 tablespoons palm sugar simple syrup [see Note up top] or 1 tablespoon water + 1 teaspoon dark brown sugar",
       "expected": {
-        "item": "palm sugar simple syrup [see Note up top]",
+        "item": "palm sugar simple syrup",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": "or 1 tablespoon water + 1 teaspoon dark brown sugar",
+        "note": "see Note up top or 1 tablespoon water + 1 teaspoon dark brown sugar",
         "section": "Dressing",
         "category": "Beverages"
       }
@@ -229,14 +233,14 @@
     {
       "raw": "2 fresh Thai chiles, preferably green, thinly sliced (more or less to taste)",
       "expected": {
-        "item": "fresh Thai chiles, preferably green",
+        "item": "fresh Thai chiles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "more or less to taste, thinly sliced",
+        "note": "more or less to taste, preferably green, thinly sliced",
         "section": "Dressing",
         "category": "Produce"
       }

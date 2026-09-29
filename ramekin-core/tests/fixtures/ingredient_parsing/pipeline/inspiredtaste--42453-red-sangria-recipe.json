@@ -5,7 +5,7 @@
     {
       "raw": "1 (750ml) bottle of dry red wine, see notes below for suggestions",
       "expected": {
-        "item": "dry red wine, see notes below for suggestions",
+        "item": "dry red wine",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "see notes below for suggestions",
         "category": "Beverages"
       }
     },
@@ -69,14 +69,14 @@
     {
       "raw": "3 to 5 tablespoons brown sugar or sweetener of choice, see notes",
       "expected": {
-        "item": "brown sugar or sweetener of choice, see notes",
+        "item": "brown sugar or sweetener of choice",
         "measurements": [
           {
             "amount": "3 to 5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Baking"
       }
     },
@@ -111,14 +111,14 @@
     {
       "raw": "1 bottle sparkling water, chilled, optional",
       "expected": {
-        "item": "sparkling water, chilled",
+        "item": "sparkling water",
         "measurements": [
           {
             "amount": "1",
             "unit": "bottle"
           }
         ],
-        "note": "optional",
+        "note": "chilled, optional",
         "category": "Beverages"
       }
     }

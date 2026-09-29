@@ -123,28 +123,28 @@
     {
       "raw": "2 teaspoons chicken bouillon powder, such as Knorr or Lee Kum Kee",
       "expected": {
-        "item": "chicken bouillon powder, such as Knorr or Lee Kum Kee",
+        "item": "chicken bouillon powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "such as Knorr or Lee Kum Kee",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 tablespoon Sichuan chili flakes, see notes",
       "expected": {
-        "item": "Sichuan chili flakes, see notes",
+        "item": "Sichuan chili flakes",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Spices & Seasonings"
       }
     },
@@ -247,7 +247,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 12 ounces frozen, breaded chicken breast nuggets, prepared according to package directions, see notes",
+        "note": "or 12 ounces frozen, breaded chicken breast nuggets, prepared according to package directions; see notes",
         "category": "Other"
       }
     },
@@ -265,14 +265,14 @@
             "unit": "g"
           }
         ],
-        "note": "or 12 ounces frozen bagged steak fries, prepared according to package directions, see notes",
+        "note": "or 12 ounces frozen bagged steak fries, prepared according to package directions; see notes",
         "category": "Snacks"
       }
     },
     {
       "raw": "2 tablespoons (30 ml) neutral oil, such as canola or peanut",
       "expected": {
-        "item": "neutral oil, such as canola or peanut",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "2",
@@ -287,14 +287,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as canola or peanut",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1 medium red bell pepper (8 ounces; 227 g), stemmed, seeded, and thinly sliced",
       "expected": {
-        "item": "red bell pepper, stemmed, seeded",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
@@ -309,7 +309,7 @@
             "unit": "g"
           }
         ],
-        "note": "and thinly sliced",
+        "note": "stemmed, seeded, and thinly sliced",
         "category": "Produce"
       }
     },
@@ -338,14 +338,14 @@
     {
       "raw": "2 tablespoons chili crisp, such as Lao Gan Ma, plus more as needed",
       "expected": {
-        "item": "chili crisp, such as Lao Gan Ma",
+        "item": "chili crisp",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "plus more as needed",
+        "note": "such as Lao Gan Ma, plus more as needed",
         "category": "Produce"
       }
     }

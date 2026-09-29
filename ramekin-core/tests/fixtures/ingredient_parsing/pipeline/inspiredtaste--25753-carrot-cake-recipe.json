@@ -23,7 +23,7 @@
     {
       "raw": "2 teaspoons baking soda, important to level the teaspoon, see tips",
       "expected": {
-        "item": "baking soda, important to level the teaspoon, see tips",
+        "item": "baking soda, important to level the teaspoon",
         "measurements": [
           {
             "amount": "2",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see tips",
         "category": "Baking"
       }
     },
@@ -271,7 +271,7 @@
     {
       "raw": "⅓ cup cold heavy cream, not plain whipping cream, see tips (80ml)",
       "expected": {
-        "item": "cold heavy cream, not plain whipping cream, see tips",
+        "item": "cold heavy cream, not plain whipping cream",
         "measurements": [
           {
             "amount": "0.33",
@@ -286,14 +286,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see tips",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "½ cup&nbsp; coarsely chopped pecans, for topping cake (50g)",
       "expected": {
-        "item": "coarsely chopped pecans, for topping cake",
+        "item": "coarsely chopped pecans",
         "measurements": [
           {
             "amount": "0.5",
@@ -304,7 +304,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for topping cake",
         "category": "Nuts & Dried Fruit"
       }
     }

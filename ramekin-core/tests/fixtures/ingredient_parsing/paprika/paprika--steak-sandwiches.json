@@ -118,9 +118,9 @@
     {
       "raw": "Olive oil, or a neutral high-heat oil such as grapeseed",
       "expected": {
-        "item": "Olive oil, or a neutral high-heat oil such as grapeseed",
+        "item": "Olive oil, or a neutral high-heat oil",
         "measurements": [],
-        "note": null,
+        "note": "such as grapeseed",
         "category": "Oils & Vinegars"
       }
     },
@@ -159,7 +159,7 @@
     {
       "raw": "2 large or 4 medium (about 6″) focaccia or ciabatta buns, split and toasted, if you wish",
       "expected": {
-        "item": "focaccia or ciabatta buns, split and toasted",
+        "item": "focaccia or ciabatta buns",
         "measurements": [
           {
             "amount": "2",
@@ -170,7 +170,7 @@
             "unit": "medium"
           }
         ],
-        "note": "if you wish (about 6″)",
+        "note": "split and toasted, if you wish (about 6″)",
         "category": "Bakery & Bread"
       }
     },

@@ -175,7 +175,7 @@
     {
       "raw": "1 1/4 pounds (565 grams) bittersweet chocolate disks or fèves, at least 60%",
       "expected": {
-        "item": "bittersweet chocolate disks or fèves, at least 60%",
+        "item": "bittersweet chocolate disks or fèves",
         "measurements": [
           {
             "amount": "1.25",
@@ -186,7 +186,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "at least 60%",
         "category": "Baking"
       }
     },

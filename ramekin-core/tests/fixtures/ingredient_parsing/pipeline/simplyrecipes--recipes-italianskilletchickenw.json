@@ -114,7 +114,7 @@
     {
       "raw": "3 tablespoons lemon juice, from about 1 lemon",
       "expected": {
-        "item": "lemon juice, from about 1 lemon",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "3",
@@ -125,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 1 lemon",
         "category": "Produce"
       }
     },
@@ -214,14 +214,14 @@
     {
       "raw": "2 large handfuls spinach, about 2 packed cups",
       "expected": {
-        "item": "handfuls spinach, about 2 packed cups",
+        "item": "handfuls spinach",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "about 2 packed cups",
         "category": "Produce"
       }
     },
@@ -260,9 +260,9 @@
     {
       "raw": "Crusty bread, to serve",
       "expected": {
-        "item": "Crusty bread, to serve",
+        "item": "Crusty bread",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Bakery & Bread"
       }
     }

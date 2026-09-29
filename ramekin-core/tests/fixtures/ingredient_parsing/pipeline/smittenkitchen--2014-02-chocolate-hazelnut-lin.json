@@ -171,7 +171,7 @@
     {
       "raw": "1/2 cup (150 grams) chocolate-hazelnut spread, such as Nutella",
       "expected": {
-        "item": "chocolate-hazelnut spread, such as Nutella",
+        "item": "chocolate-hazelnut spread",
         "measurements": [
           {
             "amount": "0.5",
@@ -182,7 +182,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Nutella",
         "category": "Condiments & Sauces"
       }
     }

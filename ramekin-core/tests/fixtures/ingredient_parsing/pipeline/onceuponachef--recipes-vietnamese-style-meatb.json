@@ -87,7 +87,7 @@
     {
       "raw": "3 scallions, finely chopped (about ¼ cup), plus a few more for serving",
       "expected": {
-        "item": "scallions, finely chopped",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "3",
@@ -102,14 +102,14 @@
             "unit": "g"
           }
         ],
-        "note": "about 1/4 cup, plus a few more for serving",
+        "note": "about 1/4 cup, finely chopped, plus a few more for serving",
         "category": "Produce"
       }
     },
     {
       "raw": "2 teaspoons lime zest, from 2 limes",
       "expected": {
-        "item": "lime zest, from 2 limes",
+        "item": "lime zest",
         "measurements": [
           {
             "amount": "2",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 2 limes",
         "category": "Produce"
       }
     },
@@ -231,14 +231,14 @@
     {
       "raw": "2 tablespoons Asian chili sauce, such as Sambal Oelek, or Asian chili garlic sauce (available in Asian aisle of most supermarkets)",
       "expected": {
-        "item": "Asian chili sauce, such as Sambal Oelek, or Asian chili garlic sauce",
+        "item": "Asian chili sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "available in Asian aisle of most supermarkets",
+        "note": "available in Asian aisle of most supermarkets, such as Sambal Oelek, or Asian chili garlic sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -281,7 +281,7 @@
     {
       "raw": "¼ cup lime juice, from 2 to 3 limes",
       "expected": {
-        "item": "lime juice, from 2 to 3 limes",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "0.25",
@@ -292,7 +292,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 2 to 3 limes",
         "category": "Produce"
       }
     },

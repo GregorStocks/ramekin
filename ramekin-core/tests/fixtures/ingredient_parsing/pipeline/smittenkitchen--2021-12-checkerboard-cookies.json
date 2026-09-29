@@ -77,7 +77,7 @@
     {
       "raw": "1 cup (8 ounces or 225 grams) unsalted butter, see Note",
       "expected": {
-        "item": "unsalted butter, see Note",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -92,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,21 +117,21 @@
     {
       "raw": "1 large egg, separated",
       "expected": {
-        "item": "egg, separated",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/4 cup (20 grams) unsweetened cocoa powder, any variety",
       "expected": {
-        "item": "unsweetened cocoa powder, any variety",
+        "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
@@ -142,16 +142,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any variety",
         "category": "Baking"
       }
     },
     {
       "raw": "Colored sanding sugar, to finish",
       "expected": {
-        "item": "Colored sanding sugar, to finish",
+        "item": "Colored sanding sugar",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Baking"
       }
     }

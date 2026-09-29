@@ -77,23 +77,23 @@
     {
       "raw": "1 tablespoons finely chopped herb or herbs of your choice, such as a mixture of thyme and rosemary",
       "expected": {
-        "item": "finely chopped herb or herbs of your choice, such as a mixture of thyme and rosemary",
+        "item": "finely chopped herb or herbs of your choice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as a mixture of thyme and rosemary",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Fine sea salt for sprinkling",
       "expected": {
-        "item": "Fine sea salt for sprinkling",
+        "item": "Fine sea salt",
         "measurements": [],
-        "note": null,
+        "note": "for sprinkling",
         "category": "Spices & Seasonings"
       }
     },

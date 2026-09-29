@@ -5,7 +5,7 @@
     {
       "raw": "1/2 pound (230 grams) dried chickpeas, cooked until soft and tender* or two 15-ounce cans of chickpeas, drained and rinsed",
       "expected": {
-        "item": "dried chickpeas, cooked until soft and tender* or two 15-ounce cans of chickpeas",
+        "item": "dried chickpeas",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "cooked until soft and tender* or two 15-ounce cans of chickpeas, drained and rinsed",
         "category": "Canned Goods"
       }
     },

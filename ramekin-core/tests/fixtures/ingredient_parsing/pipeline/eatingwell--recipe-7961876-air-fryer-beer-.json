@@ -5,7 +5,7 @@
     {
       "raw": "1.25 pounds skinless cod fillet, about 1 inch thick, cut into 8 portions",
       "expected": {
-        "item": "skinless cod fillet, about 1 inch thick",
+        "item": "skinless cod fillet",
         "measurements": [
           {
             "amount": "1.25",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 8 portions",
+        "note": "about 1 inch thick, cut into 8 portions",
         "category": "Meat & Seafood"
       }
     },

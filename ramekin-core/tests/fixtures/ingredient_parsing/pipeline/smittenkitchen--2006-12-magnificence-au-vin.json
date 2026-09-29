@@ -105,14 +105,14 @@
     {
       "raw": "3 cups young, full-bodied red wine such as Burgundy, Beaujolais, Cotes du Rhone or Chianti",
       "expected": {
-        "item": "young, full-bodied red wine such as Burgundy, Beaujolais, Cotes du Rhone or Chianti",
+        "item": "young, full-bodied red wine",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Burgundy, Beaujolais, Cotes du Rhone or Chianti",
         "category": "Beverages"
       }
     },
@@ -288,14 +288,14 @@
     {
       "raw": "1. Remove the rind of and cut the bacon into lardons (rectangles 1/4-inch across and 1 inch long). Simmer for 10 minutes in 2 quarts of water. Rinse in cold water. Dry. [Deb note: As noted, I’d totally skip this step next time.]",
       "expected": {
-        "item": "Remove the rind of and cut the bacon into lardons . Simmer for 10 minutes in 2 quarts of water. Rinse in cold water. Dry. [Deb note: As noted, I’d totally skip this step next time.]",
+        "item": "Remove the rind of and cut the bacon into lardons . Simmer for 10 minutes in 2 quarts of water. Rinse in cold water. Dry.",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "rectangles 1/4-inch across and 1 inch long",
+        "note": "rectangles 1/4-inch across and 1 inch long, Deb note: As noted, I’d totally skip this step next time.",
         "category": "Meat & Seafood"
       }
     },
@@ -506,9 +506,9 @@
     {
       "raw": "Salt and pepper to taste",
       "expected": {
-        "item": "Salt and pepper to taste",
+        "item": "Salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -560,7 +560,7 @@
     {
       "raw": "1/2 pound fresh mushrooms, washed, well dried, left whole if small, sliced or quartered if large",
       "expected": {
-        "item": "fresh mushrooms, washed, well dried, left whole if small",
+        "item": "fresh mushrooms",
         "measurements": [
           {
             "amount": "0.5",
@@ -571,7 +571,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced or quartered if large",
+        "note": "washed, well dried, left whole if small, sliced or quartered if large",
         "category": "Produce"
       }
     },

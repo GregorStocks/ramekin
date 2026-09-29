@@ -59,14 +59,14 @@
     {
       "raw": "2 medium leeks, trimmed and thinly sliced (white and light green parts only), about 1 1 /2 cups",
       "expected": {
-        "item": "leeks, trimmed and thinly sliced, about 1 1 /2 cups",
+        "item": "leeks",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "white and light green parts only",
+        "note": "white and light green parts only, trimmed and thinly sliced, about 1 1 /2 cups",
         "category": "Produce"
       }
     },
@@ -105,7 +105,7 @@
     {
       "raw": "1 pound short pasta, such as penne, casarecce, or pipe rigate",
       "expected": {
-        "item": "short pasta, such as penne, casarecce, or pipe rigate",
+        "item": "short pasta",
         "measurements": [
           {
             "amount": "1",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as penne, casarecce, or pipe rigate",
         "category": "Pasta & Rice"
       }
     },

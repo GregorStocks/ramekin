@@ -5,8 +5,17 @@
     {
       "raw": "▢ 1 tablespoons extra virgin olive oil",
       "expected": {
-        "item": "▢ 1 tablespoons extra virgin olive oil",
-        "measurements": [],
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Oils & Vinegars"
       }
@@ -14,8 +23,17 @@
     {
       "raw": "▢ 2 tablespoons salted butter",
       "expected": {
-        "item": "▢ 2 tablespoons salted butter",
-        "measurements": [],
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Dairy & Eggs"
       }
@@ -23,8 +41,13 @@
     {
       "raw": "▢ 1 clove garlic, chopped",
       "expected": {
-        "item": "▢ 1 clove garlic",
-        "measurements": [],
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
         "note": "chopped",
         "category": "Produce"
       }
@@ -32,8 +55,13 @@
     {
       "raw": "▢ 1-2 teaspoon chili flakes (or Aleppo pepper)",
       "expected": {
-        "item": "▢ 1-2 teaspoon chili flakes",
-        "measurements": [],
+        "item": "chili flakes",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tsp"
+          }
+        ],
         "note": "or Aleppo pepper",
         "category": "Spices & Seasonings"
       }
@@ -41,8 +69,17 @@
     {
       "raw": "▢ 1/2 teaspoon paprika",
       "expected": {
-        "item": "▢ 1/2 teaspoon paprika",
-        "measurements": [],
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Spices & Seasonings"
       }
@@ -50,8 +87,13 @@
     {
       "raw": "▢ 4 large eggs",
       "expected": {
-        "item": "▢ 4 large eggs",
-        "measurements": [],
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
         "note": null,
         "category": "Dairy & Eggs"
       }
@@ -59,8 +101,17 @@
     {
       "raw": "▢ 1/2 cup finely shredded cheddar cheese",
       "expected": {
-        "item": "▢ 1/2 cup finely shredded cheddar cheese",
-        "measurements": [],
+        "item": "finely shredded cheddar cheese",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "82",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Cheese"
       }
@@ -68,7 +119,7 @@
     {
       "raw": "▢ sea salt and black pepper",
       "expected": {
-        "item": "▢ sea salt and black pepper",
+        "item": "sea salt and black pepper",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -77,8 +128,13 @@
     {
       "raw": "▢ 2 pieces sourdough or whole grain bread, toasted",
       "expected": {
-        "item": "▢ 2 pieces sourdough or whole grain bread",
-        "measurements": [],
+        "item": "sourdough or whole grain bread",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "piece"
+          }
+        ],
         "note": "toasted",
         "category": "Bakery & Bread"
       }
@@ -86,8 +142,13 @@
     {
       "raw": "▢ 1 small avocado, lightly mashed",
       "expected": {
-        "item": "▢ 1 small avocado, lightly mashed",
-        "measurements": [],
+        "item": "avocado, lightly mashed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -95,7 +156,7 @@
     {
       "raw": "▢ fresh herbs",
       "expected": {
-        "item": "▢ fresh herbs",
+        "item": "fresh herbs",
         "measurements": [],
         "note": null,
         "category": "Produce"

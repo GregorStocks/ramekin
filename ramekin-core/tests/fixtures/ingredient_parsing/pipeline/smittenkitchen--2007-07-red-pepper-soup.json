@@ -146,18 +146,18 @@
     {
       "raw": "Crème fraîche for garnish",
       "expected": {
-        "item": "Crème fraîche for garnish",
+        "item": "Crème fraîche",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Thyme sprigs for garnish.",
       "expected": {
-        "item": "Thyme sprigs for garnish.",
+        "item": "Thyme sprigs",
         "measurements": [],
-        "note": null,
+        "note": "for garnish.",
         "category": "Spices & Seasonings"
       }
     }

@@ -209,23 +209,23 @@
     {
       "raw": "Handful fresh parsley for garnish",
       "expected": {
-        "item": "fresh parsley for garnish",
+        "item": "fresh parsley",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "Crumbled feta for garnish",
       "expected": {
-        "item": "Crumbled feta for garnish",
+        "item": "Crumbled feta",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Cheese"
       }
     }

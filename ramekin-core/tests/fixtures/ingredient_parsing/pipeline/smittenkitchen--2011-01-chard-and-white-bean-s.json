@@ -85,7 +85,7 @@
     {
       "raw": "1 cup (4 1/4 ounces) chopped shallots, about 4 medium",
       "expected": {
-        "item": "chopped shallots, about 4 medium",
+        "item": "chopped shallots",
         "measurements": [
           {
             "amount": "1",
@@ -100,7 +100,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 medium",
         "category": "Produce"
       }
     },

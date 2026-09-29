@@ -41,14 +41,14 @@
     {
       "raw": "⅓ cup finely chopped shallots, from 1-2 shallots",
       "expected": {
-        "item": "finely chopped shallots, from 1-2 shallots",
+        "item": "finely chopped shallots",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1-2 shallots",
         "category": "Produce"
       }
     },

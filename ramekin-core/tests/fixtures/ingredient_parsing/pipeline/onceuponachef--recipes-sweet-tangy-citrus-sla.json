@@ -37,14 +37,14 @@
     {
       "raw": "¼ cup finely chopped shallots, from 1 to 2 shallots",
       "expected": {
-        "item": "finely chopped shallots, from 1 to 2 shallots",
+        "item": "finely chopped shallots",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 to 2 shallots",
         "category": "Produce"
       }
     },
@@ -92,7 +92,7 @@
     {
       "raw": "¼ cup fresh lime juice, from 2 limes",
       "expected": {
-        "item": "fresh lime juice, from 2 limes",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "0.25",
@@ -103,7 +103,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 2 limes",
         "category": "Produce"
       }
     },

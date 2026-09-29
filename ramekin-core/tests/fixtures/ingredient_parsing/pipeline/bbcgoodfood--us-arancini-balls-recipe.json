@@ -74,6 +74,10 @@
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "341",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -165,9 +169,9 @@
     {
       "raw": "vegetable oil for deep-frying",
       "expected": {
-        "item": "vegetable oil for deep-frying",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for deep-frying",
         "category": "Oils & Vinegars"
       }
     },

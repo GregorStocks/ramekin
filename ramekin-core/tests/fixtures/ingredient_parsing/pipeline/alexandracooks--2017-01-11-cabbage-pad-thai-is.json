@@ -41,14 +41,14 @@
     {
       "raw": "1&nbsp;14-oz block extra-firm tofu, patted dry, cut into 1-inch cubes",
       "expected": {
-        "item": "14-oz block extra-firm tofu, patted dry",
+        "item": "14-oz block extra-firm tofu",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cut into 1-inch cubes",
+        "note": "patted dry, cut into 1-inch cubes",
         "category": "Produce"
       }
     },
@@ -163,7 +163,7 @@
     {
       "raw": "1&nbsp;jalapeño, seeds removed, minced (about 2 tablespoons)",
       "expected": {
-        "item": "jalapeño, seeds removed",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 2 tablespoons, minced",
+        "note": "about 2 tablespoons, seeds removed, minced",
         "category": "Produce"
       }
     },

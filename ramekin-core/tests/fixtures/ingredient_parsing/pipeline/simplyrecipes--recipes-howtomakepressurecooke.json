@@ -51,28 +51,28 @@
     {
       "raw": "1/2 cup chopped mix-ins, like cooked meats and/or raw or cooked vegetables",
       "expected": {
-        "item": "chopped mix-ins, like cooked meats and/or raw or cooked vegetables",
+        "item": "chopped mix-ins",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "like cooked meats and/or raw or cooked vegetables",
+        "category": "Other"
       }
     },
     {
       "raw": "1/2 cup shredded cheese, such as cheddar, Monterey jack, or mozzarella",
       "expected": {
-        "item": "shredded cheese, such as cheddar, Monterey jack, or mozzarella",
+        "item": "shredded cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as cheddar, Monterey jack, or mozzarella",
         "category": "Cheese"
       }
     }

@@ -186,14 +186,14 @@
     {
       "raw": "1 1/2 to 2&nbsp;cups cooked beans, any kind you like, or one 15-oz can beans, drained and rinsed",
       "expected": {
-        "item": "cooked beans, any kind you like, or one 15-oz can beans",
+        "item": "cooked beans",
         "measurements": [
           {
             "amount": "1.5 to 2",
             "unit": "cup"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "any kind you like, or one 15-oz can beans, drained and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -254,10 +254,10 @@
     {
       "raw": "Grated cheese, chopped cilantro, chopped scallion or onion, for garnish",
       "expected": {
-        "item": "Grated cheese, chopped cilantro, chopped scallion or onion",
+        "item": "Grated cheese",
         "measurements": [],
-        "note": "for garnish",
-        "category": "Produce"
+        "note": "chopped cilantro, chopped scallion or onion, for garnish",
+        "category": "Cheese"
       }
     }
   ]

@@ -37,7 +37,7 @@
     {
       "raw": "1/2 cup jam, any flavor",
       "expected": {
-        "item": "jam, any flavor",
+        "item": "jam",
         "measurements": [
           {
             "amount": "0.5",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any flavor",
         "category": "Condiments & Sauces"
       }
     }

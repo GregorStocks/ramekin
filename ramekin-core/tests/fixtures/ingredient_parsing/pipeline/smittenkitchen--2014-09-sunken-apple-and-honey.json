@@ -9,14 +9,14 @@
     {
       "raw": "4 tiny-to-small apples, halved, peeled and cored",
       "expected": {
-        "item": "tiny-to-small apples, halved",
+        "item": "tiny-to-small apples",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "peeled and cored",
+        "note": "halved, peeled and cored",
         "section": "Topping",
         "category": "Produce"
       }
@@ -146,14 +146,14 @@
     {
       "raw": "3 large eggs, separated",
       "expected": {
-        "item": "eggs, separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "section": "Batter",
         "category": "Dairy & Eggs"
       }

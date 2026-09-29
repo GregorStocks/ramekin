@@ -108,7 +108,7 @@
     {
       "raw": "3 1/2 to 4 pounds apples, peeled, cored and chopped into approximately 1/2-inch chunks (about 8 cups)",
       "expected": {
-        "item": "apples, peeled",
+        "item": "apples",
         "measurements": [
           {
             "amount": "3.5 to 4",
@@ -123,7 +123,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 8 cups, cored and chopped into approximately 1/2-inch chunks",
+        "note": "about 8 cups, peeled, cored and chopped into approximately 1/2-inch chunks",
         "section": "Filling",
         "category": "Produce"
       }

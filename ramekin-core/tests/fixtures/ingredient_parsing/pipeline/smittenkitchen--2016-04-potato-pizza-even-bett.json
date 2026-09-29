@@ -154,9 +154,14 @@
     {
       "raw": "About 1 tablespoon fresh rosemary leaves",
       "expected": {
-        "item": "About 1 tablespoon fresh rosemary leaves",
-        "measurements": [],
-        "note": null,
+        "item": "fresh rosemary leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "about",
         "category": "Produce"
       }
     },

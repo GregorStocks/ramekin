@@ -295,28 +295,28 @@
     {
       "raw": "1 recipe warm cooked white rice for serving",
       "expected": {
-        "item": "recipe warm cooked white rice for serving",
+        "item": "recipe warm cooked white rice",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for serving",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "4 crispy fried eggs for serving",
       "expected": {
-        "item": "crispy fried eggs for serving",
+        "item": "crispy fried eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for serving",
         "category": "Dairy & Eggs"
       }
     }

@@ -59,14 +59,14 @@
     {
       "raw": "2 tablespoons nut butter like peanut or almond butter, see our homemade peanut butter recipe",
       "expected": {
-        "item": "nut butter like peanut or almond butter, see our homemade peanut butter recipe",
+        "item": "nut butter like peanut or almond butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see our homemade peanut butter recipe",
         "category": "Condiments & Sauces"
       }
     },
@@ -129,9 +129,9 @@
     {
       "raw": "Honey, agave or other sweetener as needed",
       "expected": {
-        "item": "Honey, agave or other sweetener as needed",
+        "item": "Honey, agave or other sweetener",
         "measurements": [],
-        "note": null,
+        "note": "as needed",
         "category": "Baking"
       }
     }

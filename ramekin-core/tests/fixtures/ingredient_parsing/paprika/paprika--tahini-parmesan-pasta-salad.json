@@ -14,7 +14,7 @@
     {
       "raw": "1 pound ridged or curly pasta, such as fusilli or gemelli",
       "expected": {
-        "item": "ridged or curly pasta, such as fusilli or gemelli",
+        "item": "ridged or curly pasta",
         "measurements": [
           {
             "amount": "1",
@@ -25,7 +25,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as fusilli or gemelli",
         "category": "Pasta & Rice"
       }
     },

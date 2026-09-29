@@ -23,14 +23,14 @@
     {
       "raw": "5 black tea bags, such as English Breakfast",
       "expected": {
-        "item": "black tea bags, such as English Breakfast",
+        "item": "black tea bags",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "such as English Breakfast",
         "category": "Beverages"
       }
     },

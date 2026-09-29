@@ -5,14 +5,14 @@
     {
       "raw": "4  ripe oranges, like Navel",
       "expected": {
-        "item": "ripe oranges, like Navel",
+        "item": "ripe oranges",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "like Navel",
         "category": "Produce"
       }
     },

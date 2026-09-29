@@ -111,14 +111,14 @@
     {
       "raw": "2 small Kirby (pickling) cucumbers, cored, seeded and diced",
       "expected": {
-        "item": "Kirby cucumbers, cored",
+        "item": "Kirby cucumbers",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": "pickling, seeded and diced",
+        "note": "pickling, cored, seeded and diced",
         "category": "Produce"
       }
     },
@@ -157,9 +157,14 @@
     {
       "raw": "About 1/2 cup slivered fresh mint or basil (optional)",
       "expected": {
-        "item": "About 1/2 cup slivered fresh mint or basil",
-        "measurements": [],
-        "note": "optional",
+        "item": "slivered fresh mint or basil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "about, optional",
         "category": "Produce"
       }
     },
@@ -358,14 +363,14 @@
     {
       "raw": "3 medium-size firm tomatoes, peeled, seeded and chopped",
       "expected": {
-        "item": "medium-size firm tomatoes, peeled",
+        "item": "medium-size firm tomatoes",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "seeded and chopped",
+        "note": "peeled, seeded and chopped",
         "category": "Produce"
       }
     },

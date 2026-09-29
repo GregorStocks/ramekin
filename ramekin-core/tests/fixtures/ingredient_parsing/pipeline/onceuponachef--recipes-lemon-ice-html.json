@@ -5,7 +5,7 @@
     {
       "raw": "1 teaspoon lemon zest, from 1 lemon",
       "expected": {
-        "item": "lemon zest, from 1 lemon",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 lemon",
         "category": "Produce"
       }
     },

@@ -51,14 +51,14 @@
     {
       "raw": "1 large egg, hard-boiled (see above), chilled, peeled and thinly sliced",
       "expected": {
-        "item": "egg, hard-boiled, chilled",
+        "item": "egg, hard-boiled",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "see above, peeled and thinly sliced",
+        "note": "see above, chilled, peeled and thinly sliced",
         "category": "Dairy & Eggs"
       }
     },
@@ -137,9 +137,9 @@
     {
       "raw": "Coarse salt and freshly ground black pepper to taste",
       "expected": {
-        "item": "Coarse salt and freshly ground black pepper to taste",
+        "item": "Coarse salt and freshly ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

@@ -157,7 +157,7 @@
     {
       "raw": "1/4 cup dry red wine (2 ounces; 60 g), such as Cabernet Sauvignon or Merlot",
       "expected": {
-        "item": "dry red wine, such as Cabernet Sauvignon or Merlot",
+        "item": "dry red wine",
         "measurements": [
           {
             "amount": "0.25",
@@ -172,7 +172,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Cabernet Sauvignon or Merlot",
         "category": "Beverages"
       }
     },
@@ -201,7 +201,7 @@
     {
       "raw": "1 1/2 cups low-sodium beef stock (12 ounces; 360 g), homemade or store-bought, see notes",
       "expected": {
-        "item": "low-sodium beef stock, homemade or store-bought, see notes",
+        "item": "low-sodium beef stock",
         "measurements": [
           {
             "amount": "1.5",
@@ -216,7 +216,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought, see notes",
         "category": "Canned Goods"
       }
     },
@@ -272,14 +272,14 @@
     {
       "raw": "1 recipe Yorkshire pudding batter, see above",
       "expected": {
-        "item": "recipe Yorkshire pudding batter, see above",
+        "item": "recipe Yorkshire pudding batter",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see above",
         "category": "Other"
       }
     },

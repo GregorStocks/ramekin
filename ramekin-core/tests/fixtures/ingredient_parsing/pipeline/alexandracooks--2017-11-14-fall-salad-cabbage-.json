@@ -138,18 +138,18 @@
     {
       "raw": "shaved Manchego to taste",
       "expected": {
-        "item": "shaved Manchego to taste",
+        "item": "shaved Manchego",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Cheese"
       }
     },
     {
       "raw": "fresh cracked pepper to taste",
       "expected": {
-        "item": "fresh cracked pepper to taste",
+        "item": "fresh cracked pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

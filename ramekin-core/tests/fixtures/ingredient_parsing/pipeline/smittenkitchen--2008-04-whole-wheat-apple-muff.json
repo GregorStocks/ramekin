@@ -149,7 +149,7 @@
     {
       "raw": "1/2 cup (95 grams) dark brown sugar, packed, divided",
       "expected": {
-        "item": "dark brown sugar, packed",
+        "item": "dark brown sugar",
         "measurements": [
           {
             "amount": "0.5",
@@ -160,7 +160,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "packed, divided",
         "category": "Baking"
       }
     },
@@ -203,14 +203,14 @@
     {
       "raw": "2 large apples, peeled, cored, and coarsely chopped",
       "expected": {
-        "item": "apples, peeled, cored",
+        "item": "apples",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "and coarsely chopped",
+        "note": "peeled, cored, and coarsely chopped",
         "category": "Produce"
       }
     }

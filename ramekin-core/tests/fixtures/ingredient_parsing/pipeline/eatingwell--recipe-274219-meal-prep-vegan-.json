@@ -5,14 +5,14 @@
     {
       "raw": "2 heads butter or Bibb lettuce, leaves separated",
       "expected": {
-        "item": "butter or Bibb lettuce, leaves separated",
+        "item": "butter or Bibb lettuce",
         "measurements": [
           {
             "amount": "2",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "leaves separated",
         "category": "Produce"
       }
     },

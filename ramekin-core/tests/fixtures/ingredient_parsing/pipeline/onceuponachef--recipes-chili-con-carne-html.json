@@ -205,14 +205,14 @@
     {
       "raw": "3  jalapeño chiles, cored, seeded and finely diced (see note)",
       "expected": {
-        "item": "jalapeño chiles, cored",
+        "item": "jalapeño chiles",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "see note, seeded and finely diced",
+        "note": "see note, cored, seeded and finely diced",
         "category": "Produce"
       }
     },
@@ -291,7 +291,7 @@
     {
       "raw": "1 tablespoon molasses, such as Grandma's Original",
       "expected": {
-        "item": "molasses, such as Grandma's Original",
+        "item": "molasses",
         "measurements": [
           {
             "amount": "1",
@@ -302,7 +302,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Grandma's Original",
         "category": "Baking"
       }
     },

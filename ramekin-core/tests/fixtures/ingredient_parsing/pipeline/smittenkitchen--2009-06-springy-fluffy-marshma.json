@@ -5,9 +5,18 @@
     {
       "raw": "About 1 cup confectioners’ sugar",
       "expected": {
-        "item": "About 1 cup confectioners’ sugar",
-        "measurements": [],
-        "note": null,
+        "item": "confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": "about",
         "category": "Baking"
       }
     },

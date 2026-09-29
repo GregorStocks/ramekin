@@ -14,14 +14,14 @@
     {
       "raw": "2/3 cup sunflower or safflower oil, or any type of oil you like for deep-frying",
       "expected": {
-        "item": "sunflower or safflower oil, or any type of oil you like for deep-frying",
+        "item": "sunflower or safflower oil, or any type of oil you like",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for deep-frying",
         "category": "Oils & Vinegars"
       }
     },

@@ -163,7 +163,7 @@
     {
       "raw": "4 ounces kale, stems removed (I use a package from the salad greens section)",
       "expected": {
-        "item": "kale, stems removed",
+        "item": "kale",
         "measurements": [
           {
             "amount": "4",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": "I use a package from the salad greens section",
+        "note": "I use a package from the salad greens section, stems removed",
         "category": "Produce"
       }
     },
@@ -241,18 +241,18 @@
     {
       "raw": "Toasted pita wedges, to serve (optional)",
       "expected": {
-        "item": "Toasted pita wedges, to serve",
+        "item": "Toasted pita wedges",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, to serve",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "Dollops of plain Greek yogurt, to serve (optional)",
       "expected": {
-        "item": "Dollops of plain Greek yogurt, to serve",
+        "item": "Dollops of plain Greek yogurt",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, to serve",
         "category": "Dairy & Eggs"
       }
     }

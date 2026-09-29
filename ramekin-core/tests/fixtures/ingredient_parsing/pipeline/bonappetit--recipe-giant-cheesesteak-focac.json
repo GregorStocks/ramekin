@@ -119,15 +119,19 @@
     {
       "raw": "1½ tsp. Diamond Crystal or 1 tsp. Morton kosher salt, plus more",
       "expected": {
-        "item": "Diamond Crystal or 1 tsp. Morton kosher salt",
+        "item": "Diamond Crystal",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
-        "note": "plus more",
-        "category": "Spices & Seasonings"
+        "note": "or 1 tsp. Morton kosher salt; plus more",
+        "category": "Other"
       }
     },
     {
@@ -165,28 +169,28 @@
     {
       "raw": "1 large green bell pepper, ribs and seeds removed, thinly sliced",
       "expected": {
-        "item": "green bell pepper, ribs and seeds removed",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "thinly sliced",
+        "note": "ribs and seeds removed, thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 large red bell pepper, ribs and seeds removed, thinly sliced",
       "expected": {
-        "item": "red bell pepper, ribs and seeds removed",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "thinly sliced",
+        "note": "ribs and seeds removed, thinly sliced",
         "category": "Produce"
       }
     },

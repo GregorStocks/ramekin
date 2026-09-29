@@ -55,14 +55,14 @@
     {
       "raw": "Pinch of sea salt, such as Maldon",
       "expected": {
-        "item": "sea salt, such as Maldon",
+        "item": "sea salt",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "such as Maldon",
         "category": "Spices & Seasonings"
       }
     }

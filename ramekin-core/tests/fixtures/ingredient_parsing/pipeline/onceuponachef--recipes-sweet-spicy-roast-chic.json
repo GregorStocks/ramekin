@@ -23,7 +23,7 @@
     {
       "raw": "3 tablespoons  freshly squeezed lemon juice, from 1 large lemon",
       "expected": {
-        "item": "freshly squeezed lemon juice, from 1 large lemon",
+        "item": "freshly squeezed lemon juice",
         "measurements": [
           {
             "amount": "3",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 large lemon",
         "category": "Produce"
       }
     },
@@ -59,7 +59,7 @@
     {
       "raw": "6 tablespoons freshly squeezed orange juice, from 2 oranges",
       "expected": {
-        "item": "freshly squeezed orange juice, from 2 oranges",
+        "item": "freshly squeezed orange juice",
         "measurements": [
           {
             "amount": "6",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 2 oranges",
         "category": "Beverages"
       }
     },
@@ -281,14 +281,14 @@
     {
       "raw": "2 scallions, light and dark green parts, thinly sliced, for garnish",
       "expected": {
-        "item": "scallions, light and dark green parts, thinly sliced",
+        "item": "scallions, light and dark green parts",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "for garnish",
+        "note": "thinly sliced, for garnish",
         "category": "Produce"
       }
     },

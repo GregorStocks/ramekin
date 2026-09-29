@@ -5,7 +5,7 @@
     {
       "raw": "1/2 cup unsalted butter, melted, cooled slightly or 1/2 cup vegetable oil",
       "expected": {
-        "item": "unsalted butter, melted",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "cooled slightly or 1/2 cup vegetable oil",
+        "note": "melted, cooled slightly or 1/2 cup vegetable oil",
         "category": "Dairy & Eggs"
       }
     },

@@ -266,9 +266,9 @@
     {
       "raw": "Grated monterey jack cheese and chopped avocado, for topping",
       "expected": {
-        "item": "Grated monterey jack cheese and chopped avocado, for topping",
+        "item": "Grated monterey jack cheese and chopped avocado",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     },

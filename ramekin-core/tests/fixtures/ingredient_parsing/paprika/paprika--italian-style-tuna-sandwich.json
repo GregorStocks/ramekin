@@ -55,14 +55,14 @@
     {
       "raw": "1/4 cup roughly chopped green olives, such as Castelvetrano",
       "expected": {
-        "item": "roughly chopped green olives, such as Castelvetrano",
+        "item": "roughly chopped green olives",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Castelvetrano",
         "category": "Canned Goods"
       }
     },
@@ -157,7 +157,7 @@
     {
       "raw": "8 ounces best quality oil packed tuna, drained, in large chunks",
       "expected": {
-        "item": "best quality oil packed tuna, drained, in large chunks",
+        "item": "best quality oil packed tuna",
         "measurements": [
           {
             "amount": "8",
@@ -168,7 +168,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "drained, in large chunks",
         "category": "Meat & Seafood"
       }
     },
@@ -198,14 +198,14 @@
     {
       "raw": "1 serrano chile, thinly sliced, optional",
       "expected": {
-        "item": "serrano chile, thinly sliced",
+        "item": "serrano chile",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "thinly sliced, optional",
         "category": "Produce"
       }
     }

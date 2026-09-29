@@ -287,14 +287,14 @@
     {
       "raw": "4 (6- to 8-ounce) cod fillets , each cut lengthwise into 3 pieces",
       "expected": {
-        "item": "cod fillets, each cut lengthwise into 3 pieces",
+        "item": "cod fillets",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "6- to 8-ounce",
+        "note": "6- to 8-ounce, each cut lengthwise into 3 pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -423,14 +423,14 @@
     {
       "raw": "12 corn tortillas , warmed",
       "expected": {
-        "item": "corn tortillas, warmed",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Bakery & Bread"
       }
     },

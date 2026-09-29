@@ -148,7 +148,7 @@
     {
       "raw": "1/2 teaspoon table salt, see note**",
       "expected": {
-        "item": "table salt, see note",
+        "item": "table salt",
         "measurements": [
           {
             "amount": "0.5",
@@ -159,7 +159,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Spices & Seasonings"
       }
     },

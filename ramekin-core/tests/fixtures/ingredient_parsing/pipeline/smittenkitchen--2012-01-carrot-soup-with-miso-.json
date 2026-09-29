@@ -32,7 +32,7 @@
     {
       "raw": "2 pounds carrots, peeled, thinly sliced",
       "expected": {
-        "item": "carrots, peeled",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
@@ -43,7 +43,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "peeled, thinly sliced",
         "category": "Produce"
       }
     },

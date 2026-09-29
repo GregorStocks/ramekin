@@ -37,28 +37,28 @@
     {
       "raw": "5 large ancho chiles, stems and seeds removed",
       "expected": {
-        "item": "ancho chiles, stems and seeds removed",
+        "item": "ancho chiles",
         "measurements": [
           {
             "amount": "5",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "stems and seeds removed",
         "category": "Produce"
       }
     },
     {
       "raw": "3 dried guajillo chiles, stems and seeds removed",
       "expected": {
-        "item": "dried guajillo chiles, stems and seeds removed",
+        "item": "dried guajillo chiles",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stems and seeds removed",
         "category": "Produce"
       }
     },
@@ -79,14 +79,14 @@
     {
       "raw": "2 pasilla chiles, stems and seeds removed",
       "expected": {
-        "item": "pasilla chiles, stems and seeds removed",
+        "item": "pasilla chiles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stems and seeds removed",
         "category": "Produce"
       }
     },
@@ -175,7 +175,7 @@
     {
       "raw": "1 pound boneless pork shoulder (Boston butt), fat trimmed, cut into 1-inch pieces",
       "expected": {
-        "item": "boneless pork shoulder, fat trimmed",
+        "item": "boneless pork shoulder",
         "measurements": [
           {
             "amount": "1",
@@ -186,7 +186,7 @@
             "unit": "g"
           }
         ],
-        "note": "Boston butt, cut into 1-inch pieces",
+        "note": "Boston butt, fat trimmed, cut into 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -365,14 +365,14 @@
     {
       "raw": "1¼ cups plus 2 tablespoons lard, melted, plus more if needed",
       "expected": {
-        "item": "lard, melted",
+        "item": "lard",
         "measurements": [
           {
             "amount": "1 1/4 cups plus 2 tablespoons",
             "unit": null
           }
         ],
-        "note": "plus more if needed",
+        "note": "melted, plus more if needed",
         "category": "Other"
       }
     },

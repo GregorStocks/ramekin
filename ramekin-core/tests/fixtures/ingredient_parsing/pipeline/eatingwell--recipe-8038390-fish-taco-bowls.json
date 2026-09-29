@@ -83,7 +83,7 @@
     {
       "raw": "1 cup packed fresh cilantro leaves, divided, plus more for garnish",
       "expected": {
-        "item": "packed fresh cilantro leaves, divided",
+        "item": "packed fresh cilantro leaves",
         "measurements": [
           {
             "amount": "1",
@@ -94,14 +94,14 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for garnish",
+        "note": "divided, plus more for garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "0.25 cup fresh lime juice, divided, plus lime wedges for serving",
       "expected": {
-        "item": "fresh lime juice, divided",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "0.25",
@@ -112,7 +112,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus lime wedges for serving",
+        "note": "divided, plus lime wedges for serving",
         "category": "Produce"
       }
     },

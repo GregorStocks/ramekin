@@ -188,7 +188,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water",
+        "note": "or 2 teaspoons reduced-sodium jarred beef stock base; such as Better Than Bouillon brand dissolved in 2 cups tap water",
         "section": "For the Gravy",
         "category": "Canned Goods"
       }
@@ -322,9 +322,9 @@
     {
       "raw": "Warm cooked white rice for serving",
       "expected": {
-        "item": "Warm cooked white rice for serving",
+        "item": "Warm cooked white rice",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "section": "For the Gravy",
         "category": "Pasta & Rice"
       }
@@ -332,14 +332,14 @@
     {
       "raw": "4 crispy fried eggs for serving",
       "expected": {
-        "item": "crispy fried eggs for serving",
+        "item": "crispy fried eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for serving",
         "section": "For the Gravy",
         "category": "Dairy & Eggs"
       }

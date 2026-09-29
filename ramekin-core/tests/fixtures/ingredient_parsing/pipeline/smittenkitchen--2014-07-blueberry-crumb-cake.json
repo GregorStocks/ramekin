@@ -264,7 +264,7 @@
     {
       "raw": "1/2 cup milk, whole is ideal, any kind should work",
       "expected": {
-        "item": "milk, whole is ideal, any kind should work",
+        "item": "milk, whole is ideal",
         "measurements": [
           {
             "amount": "0.5",
@@ -275,7 +275,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind should work",
         "category": "Dairy & Eggs"
       }
     },
@@ -300,9 +300,9 @@
     {
       "raw": "Confectioners’ sugar, for dusting (optional)",
       "expected": {
-        "item": "Confectioners’ sugar, for dusting",
+        "item": "Confectioners’ sugar",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for dusting",
         "category": "Baking"
       }
     }

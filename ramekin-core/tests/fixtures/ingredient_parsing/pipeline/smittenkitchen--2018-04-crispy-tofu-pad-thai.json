@@ -23,7 +23,7 @@
     {
       "raw": "5 ounces dried rice noodles (sticks), about 1/8-inch (3mm) wide",
       "expected": {
-        "item": "dried rice noodles, about 1/8-inch wide",
+        "item": "dried rice noodles",
         "measurements": [
           {
             "amount": "5",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "sticks, 3mm",
+        "note": "sticks, 3mm, about 1/8-inch wide",
         "category": "Pasta & Rice"
       }
     },
@@ -183,14 +183,14 @@
     {
       "raw": "4 garlic chives, or the green parts of 8 scallions or spring onions, cut into 2-inch pieces, divided",
       "expected": {
-        "item": "garlic chives, or the green parts of 8 scallions or spring onions, cut into 2-inch pieces",
+        "item": "garlic chives",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "divided",
+        "note": "or the green parts of 8 scallions or spring onions, cut into 2-inch pieces, divided",
         "category": "Produce"
       }
     },

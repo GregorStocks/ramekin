@@ -135,14 +135,18 @@
     {
       "raw": "about 1 tablespoon (9g) dates, chopped; for sprinkling*",
       "expected": {
-        "item": "about 1 tablespoon dates",
+        "item": "dates",
         "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
           {
             "amount": "9",
             "unit": "g"
           }
         ],
-        "note": "chopped; for sprinkling",
+        "note": "about, chopped; for sprinkling",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -185,9 +189,9 @@
     {
       "raw": "flaky sea salt, for sprinkling",
       "expected": {
-        "item": "flaky sea salt, for sprinkling",
+        "item": "flaky sea salt",
         "measurements": [],
-        "note": null,
+        "note": "for sprinkling",
         "category": "Spices & Seasonings"
       }
     }

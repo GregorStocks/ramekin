@@ -31,6 +31,10 @@ pub enum Via {
     Clause,
     /// After dropping leading size or preparation words.
     LeadingModifiers,
+    /// After re-parsing the name as an ingredient line, for items stored
+    /// before the parser moved amounts and notes out ("about 7 cloves
+    /// garlic", "chickpeas, drained, rinsed").
+    Reparsed,
 }
 
 /// Temperature and preparation modifiers stripped before a second lookup.
@@ -258,10 +262,36 @@ pub fn resolve(item: &str) -> Resolution {
     if normalized.ends_with(':') {
         return Resolution::NotFood;
     }
-    match resolve_single(&normalized) {
+    match resolve_name(&normalized) {
+        Resolution::Unresolved => reparsed(&normalized).unwrap_or(Resolution::Unresolved),
+        resolved => resolved,
+    }
+}
+
+/// One name as a single food, else as several joined by "and".
+fn resolve_name(normalized: &str) -> Resolution {
+    match resolve_single(normalized) {
         unresolved @ (Resolution::Ambiguous | Resolution::Unresolved) => {
-            compound(&normalized).unwrap_or(unresolved)
+            compound(normalized).unwrap_or(unresolved)
         }
         resolved => resolved,
+    }
+}
+
+/// The name re-parsed as an ingredient line, when the parser would have
+/// stored a different item for it. Only ever a fallback: the name as written
+/// always wins.
+fn reparsed(normalized: &str) -> Option<Resolution> {
+    let item = super::parsed_name(normalized);
+    if item == normalized {
+        return None;
+    }
+    match resolve_name(&item) {
+        Resolution::Entry { entry, .. } => Some(Resolution::Entry {
+            entry,
+            via: Via::Reparsed,
+        }),
+        Resolution::Unresolved => None,
+        other => Some(other),
     }
 }

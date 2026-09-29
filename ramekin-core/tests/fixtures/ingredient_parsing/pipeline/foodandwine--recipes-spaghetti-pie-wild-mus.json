@@ -5,9 +5,9 @@
     {
       "raw": "Unsalted butter, softened, for brushing",
       "expected": {
-        "item": "Unsalted butter, softened, for brushing",
+        "item": "Unsalted butter",
         "measurements": [],
-        "note": null,
+        "note": "softened, for brushing",
         "category": "Dairy & Eggs"
       }
     },
@@ -78,7 +78,7 @@
     {
       "raw": "1 pound mixed wild mushrooms, such as cremini, porcini and stemmed shiitakes, cut into 1-inch pieces",
       "expected": {
-        "item": "mixed wild mushrooms, such as cremini, porcini and stemmed shiitakes",
+        "item": "mixed wild mushrooms",
         "measurements": [
           {
             "amount": "1",
@@ -89,7 +89,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 1-inch pieces",
+        "note": "such as cremini, porcini and stemmed shiitakes, cut into 1-inch pieces",
         "category": "Produce"
       }
     },

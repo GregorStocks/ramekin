@@ -86,14 +86,14 @@
     {
       "raw": "4 slices of pound cake, each cut into 8 small cubes",
       "expected": {
-        "item": "pound cake, each cut into 8 small cubes",
+        "item": "pound cake",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "each cut into 8 small cubes",
         "category": "Other"
       }
     },

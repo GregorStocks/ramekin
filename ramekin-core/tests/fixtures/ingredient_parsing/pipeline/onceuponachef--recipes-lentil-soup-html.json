@@ -107,7 +107,7 @@
     {
       "raw": "6 cups chicken broth, best quality such as Swanson",
       "expected": {
-        "item": "chicken broth, best quality such as Swanson",
+        "item": "chicken broth, best quality",
         "measurements": [
           {
             "amount": "6",
@@ -118,7 +118,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Swanson",
         "category": "Canned Goods"
       }
     },

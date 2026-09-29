@@ -109,14 +109,14 @@
     {
       "raw": "2 large eggs, beaten, PLUS 1 egg beaten with 1 tsp water (egg wash)",
       "expected": {
-        "item": "eggs, beaten",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "egg wash, PLUS 1 egg beaten with 1 tsp water",
+        "note": "egg wash, beaten, PLUS 1 egg beaten with 1 tsp water",
         "category": "Dairy & Eggs"
       }
     },

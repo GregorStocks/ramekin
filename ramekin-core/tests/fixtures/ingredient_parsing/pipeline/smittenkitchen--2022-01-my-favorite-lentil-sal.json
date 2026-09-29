@@ -5,14 +5,14 @@
     {
       "raw": "2 1/2 cups cooked, cooled small green, brown, or black lentils [see Note at end]",
       "expected": {
-        "item": "cooked, cooled small green, brown, or black lentils [see Note at end]",
+        "item": "cooked, cooled small green, brown, or black lentils",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note at end",
         "category": "Canned Goods"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "1 to 2 fresh jalapeños, to taste, chopped",
       "expected": {
-        "item": "fresh jalapeños, to taste",
+        "item": "fresh jalapeños",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": "chopped",
+        "note": "to taste, chopped",
         "category": "Produce"
       }
     },
@@ -175,9 +175,9 @@
     {
       "raw": "Tortilla chips for serving (optional)",
       "expected": {
-        "item": "Tortilla chips for serving",
+        "item": "Tortilla chips",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Snacks"
       }
     }

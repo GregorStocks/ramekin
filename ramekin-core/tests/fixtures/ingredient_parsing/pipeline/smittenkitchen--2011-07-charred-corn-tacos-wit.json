@@ -68,14 +68,14 @@
     {
       "raw": "4 ears corn, husks removed",
       "expected": {
-        "item": "ears corn, husks removed",
+        "item": "ears corn",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "husks removed",
         "category": "Produce"
       }
     },

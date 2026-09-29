@@ -19,7 +19,7 @@
     {
       "raw": "113g blanched or natural almond flour (4 ounces; 1 cup), see notes",
       "expected": {
-        "item": "blanched or natural almond flour, see notes",
+        "item": "blanched or natural almond flour",
         "measurements": [
           {
             "amount": "113",
@@ -34,7 +34,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Baking"
       }
     },
@@ -193,7 +193,7 @@
     {
       "raw": "2 firm but ripe medium pears (about 11 3/4 ounces; 330g), peeled, cored, and quartered",
       "expected": {
-        "item": "firm but ripe medium pears, peeled, cored",
+        "item": "firm but ripe medium pears",
         "measurements": [
           {
             "amount": "2",
@@ -208,16 +208,16 @@
             "unit": "g"
           }
         ],
-        "note": "about 11 3/4 ounces; 330g, and quartered",
+        "note": "about 11 3/4 ounces; 330g, peeled, cored, and quartered",
         "category": "Produce"
       }
     },
     {
       "raw": "Honey, for brushing (optional)",
       "expected": {
-        "item": "Honey, for brushing",
+        "item": "Honey",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for brushing",
         "category": "Baking"
       }
     }

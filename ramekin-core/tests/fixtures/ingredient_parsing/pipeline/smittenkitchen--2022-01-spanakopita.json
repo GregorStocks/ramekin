@@ -5,7 +5,7 @@
     {
       "raw": "1 1/4 pounds (20 ounces or 565 grams) baby spinach [see Note about frozen], roughly chopped",
       "expected": {
-        "item": "baby spinach [see Note about frozen]",
+        "item": "baby spinach",
         "measurements": [
           {
             "amount": "1.25",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "see Note about frozen, roughly chopped",
         "category": "Produce"
       }
     },
@@ -131,7 +131,7 @@
     {
       "raw": "3/4 pound (12 ounces or 340 grams) feta, drained, crumbled",
       "expected": {
-        "item": "feta, drained",
+        "item": "feta",
         "measurements": [
           {
             "amount": "0.75",
@@ -146,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "drained, crumbled",
         "category": "Cheese"
       }
     },
@@ -176,7 +176,7 @@
     {
       "raw": "1-pound (454-gram) package phyllo/filo pastry, defrosted [see Note]",
       "expected": {
-        "item": "phyllo/filo pastry, defrosted [see Note]",
+        "item": "phyllo/filo pastry, defrosted",
         "measurements": [
           {
             "amount": "1",
@@ -187,7 +187,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Frozen"
       }
     },

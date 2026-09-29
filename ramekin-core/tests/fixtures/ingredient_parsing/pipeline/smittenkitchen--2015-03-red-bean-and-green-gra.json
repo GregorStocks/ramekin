@@ -171,9 +171,9 @@
     {
       "raw": "Salt to taste",
       "expected": {
-        "item": "Salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,14 +221,14 @@
     {
       "raw": "1/2 to 1 finely chopped chipotle from a can, a rehydrated and finely chopped dried chipotle or in a pinch, chipotle powder to taste",
       "expected": {
-        "item": "finely chopped chipotle from a can, a rehydrated and finely chopped dried chipotle or in a pinch, chipotle powder to taste",
+        "item": "finely chopped chipotle from a can, a rehydrated and finely chopped dried chipotle or in a pinch, chipotle powder",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -321,9 +321,9 @@
     {
       "raw": "Kosher or coarse salt to taste",
       "expected": {
-        "item": "Kosher or coarse salt to taste",
+        "item": "Kosher or coarse salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

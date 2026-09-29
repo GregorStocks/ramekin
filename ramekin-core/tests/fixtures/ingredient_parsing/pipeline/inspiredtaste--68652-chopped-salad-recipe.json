@@ -51,7 +51,7 @@
     {
       "raw": "1 pint cherry tomatoes, halved, about 2 cups",
       "expected": {
-        "item": "cherry tomatoes, halved, about 2 cups",
+        "item": "cherry tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "halved, about 2 cups",
         "category": "Produce"
       }
     },

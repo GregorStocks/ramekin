@@ -19,9 +19,9 @@
     {
       "raw": "the flesh of 1 ripe avocado, see notes above",
       "expected": {
-        "item": "the flesh of 1 ripe avocado, see notes above",
+        "item": "the flesh of 1 ripe avocado",
         "measurements": [],
-        "note": null,
+        "note": "see notes above",
         "category": "Produce"
       }
     },
@@ -78,9 +78,9 @@
     {
       "raw": "freshly cracked black pepper to taste",
       "expected": {
-        "item": "freshly cracked black pepper to taste",
+        "item": "freshly cracked black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -151,14 +151,14 @@
     {
       "raw": "4 slices bread, whatever kind you like, about 1/2-inch thick, toasted",
       "expected": {
-        "item": "bread, whatever kind you like, about 1/2-inch thick",
+        "item": "bread, whatever kind you like",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": "toasted",
+        "note": "about 1/2-inch thick, toasted",
         "category": "Bakery & Bread"
       }
     },

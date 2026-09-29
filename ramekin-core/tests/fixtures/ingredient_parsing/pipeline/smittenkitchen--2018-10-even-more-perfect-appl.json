@@ -73,9 +73,9 @@
     {
       "raw": "Freshly grated nutmeg, to taste, or about 1/4 teaspoon ground",
       "expected": {
-        "item": "Freshly grated nutmeg, to taste",
+        "item": "Freshly grated nutmeg",
         "measurements": [],
-        "note": "or about 1/4 teaspoon ground",
+        "note": "to taste, or about 1/4 teaspoon ground",
         "category": "Spices & Seasonings"
       }
     },
@@ -178,9 +178,9 @@
     {
       "raw": "Coarse or raw sugar for sprinkling (optional)",
       "expected": {
-        "item": "Coarse or raw sugar for sprinkling",
+        "item": "Coarse or raw sugar",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for sprinkling",
         "category": "Baking"
       }
     }

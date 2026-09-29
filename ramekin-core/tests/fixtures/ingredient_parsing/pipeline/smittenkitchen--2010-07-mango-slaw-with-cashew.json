@@ -5,14 +5,14 @@
     {
       "raw": "2 mangoes, peeled, pitted and julienned",
       "expected": {
-        "item": "mangoes, peeled",
+        "item": "mangoes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "pitted and julienned",
+        "note": "peeled, pitted and julienned",
         "category": "Produce"
       }
     },
@@ -65,7 +65,7 @@
     {
       "raw": "6 tablespoons of fresh lime juice, from about two limes",
       "expected": {
-        "item": "fresh lime juice, from about two limes",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "6",
@@ -76,7 +76,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about two limes",
         "category": "Produce"
       }
     },

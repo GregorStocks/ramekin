@@ -119,14 +119,14 @@
     {
       "raw": "1/4 cup Caesar dressing, see our homemade dressing recipe",
       "expected": {
-        "item": "Caesar dressing, see our homemade dressing recipe",
+        "item": "Caesar dressing",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see our homemade dressing recipe",
         "category": "Condiments & Sauces"
       }
     }

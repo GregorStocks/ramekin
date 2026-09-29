@@ -165,7 +165,7 @@
     {
       "raw": "1 cup coarsely grated cheddar, gruyere or comt&#233;, 2/3 cup finely grated parmesan or pecorino, or 1/2 to 2/3 cup cream cheese or goat cheese, softened",
       "expected": {
-        "item": "coarsely grated cheddar, gruyere or comté, 2/3 cup finely grated parmesan or pecorino, or 1/2 to 2/3 cup cream cheese or goat cheese",
+        "item": "coarsely grated cheddar, gruyere or comté",
         "measurements": [
           {
             "amount": "1",
@@ -176,7 +176,7 @@
             "unit": "g"
           }
         ],
-        "note": "softened",
+        "note": "2/3 cup finely grated parmesan or pecorino, or 1/2 to 2/3 cup cream cheese or goat cheese, softened",
         "category": "Cheese"
       }
     },
@@ -201,9 +201,9 @@
     {
       "raw": "Freshly ground black pepper or red pepper flakes to taste",
       "expected": {
-        "item": "Freshly ground black pepper or red pepper flakes to taste",
+        "item": "Freshly ground black pepper or red pepper flakes",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

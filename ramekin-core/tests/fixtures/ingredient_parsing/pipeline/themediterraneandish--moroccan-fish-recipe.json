@@ -60,14 +60,14 @@
     {
       "raw": "1 red pepper, cored, sliced",
       "expected": {
-        "item": "red pepper, cored",
+        "item": "red pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced",
+        "note": "cored, sliced",
         "category": "Spices & Seasonings"
       }
     },

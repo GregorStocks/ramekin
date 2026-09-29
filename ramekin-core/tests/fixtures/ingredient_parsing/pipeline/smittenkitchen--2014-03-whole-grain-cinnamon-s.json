@@ -32,14 +32,18 @@
     {
       "raw": "Approximately 1 1/4 cups (160 grams) mixed whole grains (see suggestions at end)",
       "expected": {
-        "item": "Approximately 1 1/4 cups mixed whole grains",
+        "item": "mixed whole grains",
         "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
           {
             "amount": "160",
             "unit": "g"
           }
         ],
-        "note": "see suggestions at end",
+        "note": "approximately, see suggestions at end",
         "category": "Pasta & Rice"
       }
     },

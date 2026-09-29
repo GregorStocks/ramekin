@@ -307,7 +307,7 @@
     {
       "raw": "¼ cup fresh cilantro, chopped, plus more for garnish",
       "expected": {
-        "item": "fresh cilantro, chopped",
+        "item": "fresh cilantro",
         "measurements": [
           {
             "amount": "0.25",
@@ -318,7 +318,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for garnish",
+        "note": "chopped, plus more for garnish",
         "category": "Produce"
       }
     },

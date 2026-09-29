@@ -87,7 +87,7 @@
     {
       "raw": "1 large can (28 ounces) whole tomatoes*, with their liquid",
       "expected": {
-        "item": "can whole tomatoes*, with their liquid",
+        "item": "can whole tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "with their liquid",
         "category": "Produce"
       }
     },
@@ -127,7 +127,7 @@
     {
       "raw": "1 can (14 ounces) chickpeas, rinsed and drained, divided",
       "expected": {
-        "item": "chickpeas, rinsed and drained",
+        "item": "chickpeas",
         "measurements": [
           {
             "amount": "1",
@@ -142,7 +142,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "rinsed and drained, divided",
         "category": "Canned Goods"
       }
     },

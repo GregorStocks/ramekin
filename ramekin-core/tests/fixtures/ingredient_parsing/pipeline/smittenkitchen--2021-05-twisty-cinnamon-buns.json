@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (235 ml) milk, any kind, lightly warmed",
       "expected": {
-        "item": "milk, any kind, lightly warmed",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind, lightly warmed",
         "category": "Dairy & Eggs"
       }
     },

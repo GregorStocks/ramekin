@@ -28,14 +28,14 @@
     {
       "raw": "1 teaspoon sugar or to taste",
       "expected": {
-        "item": "sugar or to taste",
+        "item": "sugar or",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Baking"
       }
     }

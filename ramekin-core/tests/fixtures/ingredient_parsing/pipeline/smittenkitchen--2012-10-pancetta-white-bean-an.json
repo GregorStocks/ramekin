@@ -131,14 +131,14 @@
     {
       "raw": "1 egg, beaten with 1 tablespoon water, for egg wash",
       "expected": {
-        "item": "egg, beaten with 1 tablespoon water, for egg wash",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten with 1 tablespoon water, for egg wash",
         "section": "Lid",
         "category": "Dairy & Eggs"
       }
@@ -367,7 +367,7 @@
     {
       "raw": "2 cups white beans, cooked and drained, or from one and a third 15.5- ounce",
       "expected": {
-        "item": "white beans, cooked and drained",
+        "item": "white beans",
         "measurements": [
           {
             "amount": "2",
@@ -378,7 +378,7 @@
             "unit": "g"
           }
         ],
-        "note": "or from one and a third 15.5- ounce",
+        "note": "cooked and drained, or from one and a third 15.5- ounce",
         "section": "Filling",
         "category": "Canned Goods"
       }

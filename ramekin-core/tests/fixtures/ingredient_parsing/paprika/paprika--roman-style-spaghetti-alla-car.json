@@ -45,7 +45,7 @@
     {
       "raw": "1/2 cup (120 ml) extra-virgin olive oil, divided, plus more for finishing pasta",
       "expected": {
-        "item": "extra-virgin olive oil, divided",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "0.5",
@@ -60,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for finishing pasta",
+        "note": "divided, plus more for finishing pasta",
         "category": "Oils & Vinegars"
       }
     },
@@ -95,14 +95,14 @@
     {
       "raw": "1/4 cup plus 1 tablespoon finely minced fresh parsley leaves and tender stems, divided, plus more for garnish",
       "expected": {
-        "item": "finely minced fresh parsley leaves and tender stems, divided",
+        "item": "finely minced fresh parsley leaves and tender stems",
         "measurements": [
           {
             "amount": "1/4 cup plus 1 tablespoon",
             "unit": null
           }
         ],
-        "note": "plus more for garnish",
+        "note": "divided, plus more for garnish",
         "category": "Produce"
       }
     },
@@ -127,7 +127,7 @@
     {
       "raw": "1 (5-ounce; 140 g) olive oil-packed tuna, preferably ventresca (tuna belly; see notes), oil reserved",
       "expected": {
-        "item": "olive oil-packed tuna, preferably ventresca",
+        "item": "olive oil-packed tuna",
         "measurements": [
           {
             "amount": "1",
@@ -138,7 +138,7 @@
             "unit": "g"
           }
         ],
-        "note": "5-ounce; 140 g, tuna belly; see notes, oil reserved",
+        "note": "5-ounce; 140 g, tuna belly; see notes, preferably ventresca, oil reserved",
         "category": "Oils & Vinegars"
       }
     },

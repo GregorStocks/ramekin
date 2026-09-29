@@ -91,7 +91,7 @@
     {
       "raw": "8 ounces (2 sticks) unsalted butter at room temperature, in small pieces",
       "expected": {
-        "item": "unsalted butter at room temperature, in small pieces",
+        "item": "unsalted butter at room temperature",
         "measurements": [
           {
             "amount": "8",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "in small pieces",
         "section": "Dough",
         "category": "Dairy & Eggs"
       }

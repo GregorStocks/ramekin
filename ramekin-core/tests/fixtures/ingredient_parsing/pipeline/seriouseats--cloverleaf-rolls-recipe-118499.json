@@ -23,7 +23,7 @@
     {
       "raw": "42 g (3/4 cup) unseasoned potato flakes, such as Bob's Red Mill",
       "expected": {
-        "item": "unseasoned potato flakes, such as Bob's Red Mill",
+        "item": "unseasoned potato flakes",
         "measurements": [
           {
             "amount": "42",
@@ -34,7 +34,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Bob's Red Mill",
         "category": "Produce"
       }
     },
@@ -91,14 +91,14 @@
     {
       "raw": "8 unsalted butter, cut into 8 pieces, 6 tablespoons softened and 2 tablespoons reserved for melting",
       "expected": {
-        "item": "unsalted butter, cut into 8 pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "6 tablespoons softened and 2 tablespoons reserved for melting",
+        "note": "cut into 8 pieces, 6 tablespoons softened and 2 tablespoons reserved for melting",
         "category": "Dairy & Eggs"
       }
     },

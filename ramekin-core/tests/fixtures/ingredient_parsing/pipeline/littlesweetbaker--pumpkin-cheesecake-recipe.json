@@ -229,14 +229,18 @@
     {
       "raw": "1 tsp ground cinnamon for dusting (if desired)",
       "expected": {
-        "item": "ground cinnamon for dusting",
+        "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.6",
+            "unit": "g"
           }
         ],
-        "note": "if desired",
+        "note": "if desired, for dusting",
         "category": "Spices & Seasonings"
       }
     }

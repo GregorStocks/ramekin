@@ -5,7 +5,7 @@
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, at room temperature, plus extra for pie plate",
       "expected": {
-        "item": "unsalted butter, at room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus extra for pie plate",
+        "note": "at room temperature, plus extra for pie plate",
         "category": "Dairy & Eggs"
       }
     },

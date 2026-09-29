@@ -105,7 +105,7 @@
     {
       "raw": "2 teaspoons fresh lime juice, from 1 lime",
       "expected": {
-        "item": "fresh lime juice, from 1 lime",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "2",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 lime",
         "category": "Produce"
       }
     }

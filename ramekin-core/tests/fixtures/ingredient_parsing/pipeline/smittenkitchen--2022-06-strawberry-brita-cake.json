@@ -5,14 +5,14 @@
     {
       "raw": "3 large eggs, separated",
       "expected": {
-        "item": "eggs, separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },
@@ -253,9 +253,9 @@
     {
       "raw": "Confectioners’ sugar, for dusting, and mint leaves, for garnish (both optional)",
       "expected": {
-        "item": "Confectioners’ sugar, for dusting, and mint leaves",
+        "item": "Confectioners’ sugar",
         "measurements": [],
-        "note": "both optional, for garnish",
+        "note": "both optional, for dusting, and mint leaves, for garnish",
         "category": "Baking"
       }
     }

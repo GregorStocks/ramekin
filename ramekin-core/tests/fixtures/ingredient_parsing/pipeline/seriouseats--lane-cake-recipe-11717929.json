@@ -164,7 +164,7 @@
     {
       "raw": "1/4 cup (60 ml) neutral oil, such as canola",
       "expected": {
-        "item": "neutral oil, such as canola",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "0.25",
@@ -179,7 +179,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as canola",
         "category": "Oils & Vinegars"
       }
     },

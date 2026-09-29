@@ -128,14 +128,14 @@
     {
       "raw": "1/2 cup red wine such as merlot",
       "expected": {
-        "item": "red wine such as merlot",
+        "item": "red wine",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as merlot",
         "category": "Beverages"
       }
     },

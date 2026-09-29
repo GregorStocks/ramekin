@@ -162,9 +162,9 @@
     {
       "raw": "Shaved parmesan cheese, for topping",
       "expected": {
-        "item": "Shaved parmesan cheese, for topping",
+        "item": "Shaved parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     }

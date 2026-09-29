@@ -19,42 +19,46 @@
     {
       "raw": "1&nbsp;whole chicken, about 3 lbs",
       "expected": {
-        "item": "whole chicken, about 3 lbs",
+        "item": "whole chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "about 3 lbs",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1&nbsp;head cabbage, about 2.5 lbs",
       "expected": {
-        "item": "cabbage, about 2.5 lbs",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "about 2.5 lbs",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2&nbsp;cup neutral oil such as canola or grapeseed",
       "expected": {
-        "item": "neutral oil such as canola or grapeseed",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "109",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as canola or grapeseed",
         "category": "Oils & Vinegars"
       }
     },

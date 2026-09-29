@@ -202,14 +202,14 @@
     {
       "raw": "½ teaspoon sea salt, divided, plus more to taste",
       "expected": {
-        "item": "sea salt, divided",
+        "item": "sea salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste",
+        "note": "divided, plus more to taste",
         "category": "Spices & Seasonings"
       }
     },

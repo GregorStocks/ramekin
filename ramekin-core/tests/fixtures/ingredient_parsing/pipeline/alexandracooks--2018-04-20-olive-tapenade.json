@@ -5,7 +5,7 @@
     {
       "raw": "2 cups pitted black olives, such as Kalamata, see notes above",
       "expected": {
-        "item": "pitted black olives, such as Kalamata, see notes above",
+        "item": "pitted black olives",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Kalamata, see notes above",
         "category": "Canned Goods"
       }
     },

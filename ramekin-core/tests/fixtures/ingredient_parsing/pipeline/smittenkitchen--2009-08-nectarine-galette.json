@@ -66,7 +66,7 @@
     {
       "raw": "6 tablespoons (3/4 stick or 3 ounces) unsalted butter, chilled, cut into 1/2–inch pieces",
       "expected": {
-        "item": "unsalted butter, chilled",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
@@ -85,7 +85,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 1/2-inch pieces",
+        "note": "chilled, cut into 1/2-inch pieces",
         "section": "Crust",
         "category": "Dairy & Eggs"
       }
@@ -150,16 +150,16 @@
     {
       "raw": "1 tablespoon amaretti, pulverized — or — 1 extra tablespoon ground almonds plus an extra teaspoon sugar",
       "expected": {
-        "item": "amaretti, pulverized - or - 1 extra tablespoon ground almonds",
+        "item": "amaretti",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "plus an extra teaspoon sugar",
+        "note": "pulverized - or - 1 extra tablespoon ground almonds, plus an extra teaspoon sugar",
         "section": "Filling",
-        "category": "Nuts & Dried Fruit"
+        "category": "Other"
       }
     },
     {

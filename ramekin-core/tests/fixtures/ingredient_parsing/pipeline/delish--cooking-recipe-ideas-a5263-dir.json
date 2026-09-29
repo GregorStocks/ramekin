@@ -41,14 +41,14 @@
     {
       "raw": "1 medium green bell pepper, seeds and ribs removed, finely chopped",
       "expected": {
-        "item": "green bell pepper, seeds and ribs removed",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "finely chopped",
+        "note": "seeds and ribs removed, finely chopped",
         "category": "Produce"
       }
     },

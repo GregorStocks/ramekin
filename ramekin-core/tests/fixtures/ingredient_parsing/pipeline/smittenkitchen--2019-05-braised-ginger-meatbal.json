@@ -183,14 +183,14 @@
     {
       "raw": "2 fresh red chiles, thinly sliced, plus extra for serving (see Note)",
       "expected": {
-        "item": "fresh red chiles, thinly sliced",
+        "item": "fresh red chiles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "see Note, plus extra for serving",
+        "note": "see Note, thinly sliced, plus extra for serving",
         "category": "Produce"
       }
     },

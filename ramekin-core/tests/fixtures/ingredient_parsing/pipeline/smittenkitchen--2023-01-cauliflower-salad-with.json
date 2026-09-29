@@ -76,9 +76,14 @@
     {
       "raw": "About 8 dried dates",
       "expected": {
-        "item": "About 8 dried dates",
-        "measurements": [],
-        "note": null,
+        "item": "dried dates",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "about",
         "category": "Nuts & Dried Fruit"
       }
     },

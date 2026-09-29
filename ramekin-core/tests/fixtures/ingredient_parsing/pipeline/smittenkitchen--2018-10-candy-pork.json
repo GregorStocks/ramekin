@@ -5,7 +5,7 @@
     {
       "raw": "8 ounces palm sugar, finely chopped, or 1 cup dark brown sugar",
       "expected": {
-        "item": "palm sugar, finely chopped",
+        "item": "palm sugar",
         "measurements": [
           {
             "amount": "8",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 1 cup dark brown sugar",
+        "note": "finely chopped, or 1 cup dark brown sugar",
         "category": "Baking"
       }
     },

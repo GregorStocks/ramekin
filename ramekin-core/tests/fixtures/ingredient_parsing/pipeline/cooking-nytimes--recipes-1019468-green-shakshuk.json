@@ -155,28 +155,28 @@
     {
       "raw": "1 avocado, sliced, for serving",
       "expected": {
-        "item": "avocado, sliced",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "for serving",
+        "note": "sliced, for serving",
         "category": "Produce"
       }
     },
     {
       "raw": "1 small jalapeño, thinly sliced, for serving",
       "expected": {
-        "item": "jalapeño, thinly sliced",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "for serving",
+        "note": "thinly sliced, for serving",
         "category": "Produce"
       }
     },
@@ -201,23 +201,23 @@
     {
       "raw": "Corn tortillas, toasted, for serving",
       "expected": {
-        "item": "Corn tortillas, toasted",
+        "item": "Corn tortillas",
         "measurements": [],
-        "note": "for serving",
+        "note": "toasted, for serving",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 lime, cut into wedges, for serving",
       "expected": {
-        "item": "lime, cut into wedges",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "for serving",
+        "note": "cut into wedges, for serving",
         "category": "Produce"
       }
     }

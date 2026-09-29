@@ -166,14 +166,14 @@
     {
       "raw": "2 teaspoons capers, rinsed if salted, drained if brined, and roughly chopped",
       "expected": {
-        "item": "capers, rinsed if salted, drained if brined",
+        "item": "capers",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "and roughly chopped",
+        "note": "rinsed if salted, drained if brined, and roughly chopped",
         "category": "Canned Goods"
       }
     },

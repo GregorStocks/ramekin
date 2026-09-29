@@ -105,14 +105,14 @@
     {
       "raw": "1 sweet potato, peeled, halved and thinly sliced",
       "expected": {
-        "item": "sweet potato, peeled",
+        "item": "sweet potato",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "halved and thinly sliced",
+        "note": "peeled, halved and thinly sliced",
         "category": "Produce"
       }
     },

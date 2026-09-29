@@ -23,9 +23,18 @@
     {
       "raw": "About 3 cups fresh corn kernels (from 3 medium-large ears)",
       "expected": {
-        "item": "About 3 cups fresh corn kernels",
-        "measurements": [],
-        "note": "from 3 medium-large ears",
+        "item": "fresh corn kernels",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "435",
+            "unit": "g"
+          }
+        ],
+        "note": "about, from 3 medium-large ears",
         "category": "Produce"
       }
     },
@@ -86,7 +95,7 @@
     {
       "raw": "8 ounces (225 grams) pecorino romano cheese, cut into 1-inch chunks, plus a few extra gratings for garnish",
       "expected": {
-        "item": "pecorino romano cheese, cut into 1-inch chunks",
+        "item": "pecorino romano cheese",
         "measurements": [
           {
             "amount": "8",
@@ -97,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus a few extra gratings for garnish",
+        "note": "cut into 1-inch chunks, plus a few extra gratings for garnish",
         "category": "Cheese"
       }
     }

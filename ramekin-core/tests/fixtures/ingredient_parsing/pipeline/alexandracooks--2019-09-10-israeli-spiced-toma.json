@@ -46,7 +46,7 @@
     {
       "raw": "1.5 tablespoons fresh lemon juice, from about half a lemon",
       "expected": {
-        "item": "fresh lemon juice, from about half a lemon",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1.5",
@@ -57,7 +57,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about half a lemon",
         "category": "Produce"
       }
     },
@@ -146,9 +146,9 @@
     {
       "raw": "flaky sea salt, such as Maldon, and freshly ground black pepper",
       "expected": {
-        "item": "flaky sea salt, such as Maldon",
+        "item": "flaky sea salt",
         "measurements": [],
-        "note": "and freshly ground black pepper",
+        "note": "such as Maldon, and freshly ground black pepper",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,14 +269,14 @@
     {
       "raw": "Good bread for serving",
       "expected": {
-        "item": "bread for serving",
+        "item": "bread",
         "measurements": [
           {
             "amount": null,
             "unit": "good"
           }
         ],
-        "note": null,
+        "note": "for serving",
         "category": "Bakery & Bread"
       }
     }

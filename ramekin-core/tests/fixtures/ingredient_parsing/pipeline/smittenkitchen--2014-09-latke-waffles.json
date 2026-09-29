@@ -130,23 +130,23 @@
     {
       "raw": "Nonstick spray, for waffle iron",
       "expected": {
-        "item": "Nonstick spray, for waffle iron",
+        "item": "Nonstick spray",
         "measurements": [],
-        "note": null,
+        "note": "for waffle iron",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 tablespoons fresh chives, finely chopped, for garnish (totally optional)",
       "expected": {
-        "item": "fresh chives, finely chopped",
+        "item": "fresh chives",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "totally optional, for garnish",
+        "note": "totally optional, finely chopped, for garnish",
         "category": "Produce"
       }
     }

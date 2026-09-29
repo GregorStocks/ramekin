@@ -5,14 +5,14 @@
     {
       "raw": "2 medium-large yellow onions, unpeeled, halved or 1 large onion plus 1 large leek, cleaned and cut lengthwise",
       "expected": {
-        "item": "medium-large yellow onions, unpeeled, halved or 1 large onion plus 1 large leek",
+        "item": "medium-large yellow onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "cleaned and cut lengthwise",
+        "note": "unpeeled, halved or 1 large onion plus 1 large leek, cleaned and cut lengthwise",
         "category": "Produce"
       }
     },
@@ -211,14 +211,14 @@
     {
       "raw": "2 large carrots, peeled and diced or 1 large carrot and 1 large parsnip, diced",
       "expected": {
-        "item": "carrots, peeled and diced or 1 large carrot and 1 large parsnip",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "diced",
+        "note": "peeled and diced or 1 large carrot and 1 large parsnip, diced",
         "category": "Produce"
       }
     },

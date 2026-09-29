@@ -83,9 +83,9 @@
     {
       "raw": "Neutral oil for frying",
       "expected": {
-        "item": "Neutral oil for frying",
+        "item": "Neutral oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -142,14 +142,14 @@
     {
       "raw": "1&nbsp;lemon, halved, plus more for serving",
       "expected": {
-        "item": "lemon, halved",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "plus more for serving",
+        "note": "halved, plus more for serving",
         "category": "Produce"
       }
     }

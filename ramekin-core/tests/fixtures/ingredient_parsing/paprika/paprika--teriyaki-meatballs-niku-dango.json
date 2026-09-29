@@ -150,6 +150,10 @@
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": "katakuriko",
@@ -297,9 +301,9 @@
     {
       "raw": "toasted white sesame seeds to taste",
       "expected": {
-        "item": "toasted white sesame seeds to taste",
+        "item": "toasted white sesame seeds",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "section": "Toppings",
         "category": "Spices & Seasonings"
       }
@@ -307,9 +311,9 @@
     {
       "raw": "finely chopped green onions to taste",
       "expected": {
-        "item": "finely chopped green onions to taste",
+        "item": "finely chopped green onions",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "section": "Toppings",
         "category": "Produce"
       }

@@ -210,7 +210,7 @@
     {
       "raw": "1 1/2 cups (150 grams) milk, any kind",
       "expected": {
-        "item": "milk, any kind",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1.5",
@@ -221,7 +221,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind",
         "section": "French Toast",
         "category": "Dairy & Eggs"
       }
@@ -244,9 +244,9 @@
     {
       "raw": "Butter for the pan, salted (my preference) or unsalted",
       "expected": {
-        "item": "Butter for the pan, salted or unsalted",
+        "item": "Butter",
         "measurements": [],
-        "note": "my preference",
+        "note": "my preference, for the pan, salted or unsalted",
         "section": "French Toast",
         "category": "Dairy & Eggs"
       }
@@ -254,9 +254,9 @@
     {
       "raw": "Powdered sugar, for dusting",
       "expected": {
-        "item": "Powdered sugar, for dusting",
+        "item": "Powdered sugar",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "section": "French Toast",
         "category": "Baking"
       }

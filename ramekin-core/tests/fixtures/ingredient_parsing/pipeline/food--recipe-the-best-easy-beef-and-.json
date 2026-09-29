@@ -77,7 +77,7 @@
     {
       "raw": "1   lb    boneless round steak or 1   lb   charcoal chuck steak, cut into thin 3-inch strips",
       "expected": {
-        "item": "boneless round steak or 1   lb   charcoal chuck steak",
+        "item": "boneless round steak",
         "measurements": [
           {
             "amount": "1",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into thin 3-inch strips",
+        "note": "or 1   lb   charcoal chuck steak; cut into thin 3-inch strips",
         "category": "Meat & Seafood"
       }
     },

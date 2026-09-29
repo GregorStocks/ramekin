@@ -28,7 +28,7 @@
     {
       "raw": "6 tablespoons salted butter, divided, plus more as your spirit requires that day",
       "expected": {
-        "item": "salted butter, divided",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "6",
@@ -39,7 +39,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more as your spirit requires that day",
+        "note": "divided, plus more as your spirit requires that day",
         "category": "Dairy & Eggs"
       }
     },

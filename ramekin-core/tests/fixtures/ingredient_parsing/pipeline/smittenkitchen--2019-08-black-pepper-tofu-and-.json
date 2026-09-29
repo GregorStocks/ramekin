@@ -101,14 +101,14 @@
     {
       "raw": "5 garlic cloves, peeled, crushed",
       "expected": {
-        "item": "garlic cloves, peeled",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": "crushed",
+        "note": "peeled, crushed",
         "category": "Produce"
       }
     },

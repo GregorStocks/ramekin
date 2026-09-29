@@ -5,14 +5,14 @@
     {
       "raw": "2 delicata squash, ends trimmed, seeds removed, sliced into 1/2-inch thick pieces",
       "expected": {
-        "item": "delicata squash, ends trimmed, seeds removed",
+        "item": "delicata squash",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced into 1/2-inch thick pieces",
+        "note": "ends trimmed, seeds removed, sliced into 1/2-inch thick pieces",
         "category": "Produce"
       }
     },
@@ -37,9 +37,9 @@
     {
       "raw": "kosher salt to taste",
       "expected": {
-        "item": "kosher salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -60,14 +60,14 @@
     {
       "raw": "1/2 jalapeno or more to taste, finely diced",
       "expected": {
-        "item": "jalapeno or more to taste",
+        "item": "jalapeno or more",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "finely diced",
+        "note": "to taste, finely diced",
         "category": "Produce"
       }
     },

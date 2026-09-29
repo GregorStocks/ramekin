@@ -5,7 +5,7 @@
     {
       "raw": "3 cups (250 g) breadcrumbs from very stale bread or 5 cups (250 g) diced day-old bread, plus additional breadcrumbs if needed (see notes)",
       "expected": {
-        "item": "breadcrumbs from very stale bread or 5 cups diced day-old bread",
+        "item": "breadcrumbs from very stale bread",
         "measurements": [
           {
             "amount": "3",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes, plus additional breadcrumbs if needed",
+        "note": "or 5 cups diced day-old bread (see notes); plus additional breadcrumbs if needed",
         "category": "Bakery & Bread"
       }
     },
@@ -93,7 +93,7 @@
     {
       "raw": "1/4 pound (113 g) minced speck or sweet Italian sausage (about 1 large link), casing removed",
       "expected": {
-        "item": "minced speck or sweet Italian sausage, casing removed",
+        "item": "minced speck or sweet Italian sausage",
         "measurements": [
           {
             "amount": "0.25",
@@ -104,7 +104,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 1 large link",
+        "note": "about 1 large link, casing removed",
         "category": "Meat & Seafood"
       }
     },

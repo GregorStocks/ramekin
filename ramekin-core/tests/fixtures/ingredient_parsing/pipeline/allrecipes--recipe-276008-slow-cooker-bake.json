@@ -5,14 +5,14 @@
     {
       "raw": "4 large apples - peeled, cored, and sliced",
       "expected": {
-        "item": "apples - peeled, cored",
+        "item": "apples - peeled",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "and sliced",
+        "note": "cored, and sliced",
         "category": "Produce"
       }
     },

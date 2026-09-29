@@ -5,7 +5,7 @@
     {
       "raw": "2 1/4 to 1/2 pounds (1 to 1.15kg) apples, such as Granny Smith or Mutsu",
       "expected": {
-        "item": "apples, such as Granny Smith or Mutsu",
+        "item": "apples",
         "measurements": [
           {
             "amount": "2.25 to 0.5",
@@ -16,7 +16,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "such as Granny Smith or Mutsu",
         "category": "Produce"
       }
     },
@@ -140,7 +140,7 @@
     {
       "raw": "1/2 cup (120 ml) milk, any kind",
       "expected": {
-        "item": "milk, any kind",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
@@ -155,14 +155,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 tablespoons (40 grams) apricot preserves or apple jelly, warmed",
       "expected": {
-        "item": "apricot preserves or apple jelly, warmed",
+        "item": "apricot preserves or apple jelly",
         "measurements": [
           {
             "amount": "2",
@@ -173,16 +173,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Produce"
       }
     },
     {
       "raw": "Powdered sugar, for dusting (optional)",
       "expected": {
-        "item": "Powdered sugar, for dusting",
+        "item": "Powdered sugar",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for dusting",
         "category": "Baking"
       }
     }

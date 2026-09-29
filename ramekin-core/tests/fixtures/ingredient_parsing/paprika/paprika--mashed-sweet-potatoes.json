@@ -5,7 +5,7 @@
     {
       "raw": "3 pounds sweet potatoes, about 5 large or 6 medium, peeled and cut into 1-inch cubes",
       "expected": {
-        "item": "sweet potatoes, about 5 large or 6 medium",
+        "item": "sweet potatoes",
         "measurements": [
           {
             "amount": "3",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1-inch cubes",
+        "note": "about 5 large or 6 medium, peeled and cut into 1-inch cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "4 tablespoons unsalted butter, cut into pats, plus more for serving",
       "expected": {
-        "item": "unsalted butter, cut into pats",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "4",
@@ -34,14 +34,14 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for serving",
+        "note": "cut into pats, plus more for serving",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "½ cup milk, warmed",
       "expected": {
-        "item": "milk, warmed",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Dairy & Eggs"
       }
     },

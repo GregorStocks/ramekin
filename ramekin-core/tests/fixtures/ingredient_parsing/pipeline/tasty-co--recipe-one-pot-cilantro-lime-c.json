@@ -147,7 +147,7 @@
     {
       "raw": "1 ½ cups jasmine rice, uncooked, rinsed",
       "expected": {
-        "item": "jasmine rice, uncooked",
+        "item": "jasmine rice",
         "measurements": [
           {
             "amount": "1.5",
@@ -158,7 +158,7 @@
             "unit": "g"
           }
         ],
-        "note": "rinsed",
+        "note": "uncooked, rinsed",
         "category": "Pasta & Rice"
       }
     },

@@ -205,7 +205,7 @@
     {
       "raw": "1/2 teaspoon salt or to taste",
       "expected": {
-        "item": "salt or to taste",
+        "item": "salt or",
         "measurements": [
           {
             "amount": "0.5",
@@ -216,21 +216,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 teaspoon pepper or to taste",
       "expected": {
-        "item": "pepper or to taste",
+        "item": "pepper or",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

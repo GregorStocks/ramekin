@@ -143,7 +143,7 @@
     {
       "raw": "28 g unsalted butter (1 ounce; 2 tablespoons), melted and cooled slightly, plus more for greasing",
       "expected": {
-        "item": "unsalted butter, melted and cooled slightly",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "28",
@@ -158,7 +158,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more for greasing",
+        "note": "melted and cooled slightly, plus more for greasing",
         "category": "Dairy & Eggs"
       }
     },

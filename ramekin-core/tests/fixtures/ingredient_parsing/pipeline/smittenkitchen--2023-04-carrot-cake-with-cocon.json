@@ -221,7 +221,7 @@
     {
       "raw": "1 cup (8 ounces or 225 grams) non-dairy or regular cream cheese [see Note]",
       "expected": {
-        "item": "non-dairy or regular cream cheese [see Note]",
+        "item": "non-dairy or regular cream cheese",
         "measurements": [
           {
             "amount": "1",
@@ -236,7 +236,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Cheese"
       }
     },
@@ -284,6 +284,10 @@
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
           }
         ],
         "note": "replace with additional extract if you don’t have",

@@ -5,7 +5,7 @@
     {
       "raw": "8 ounces dry pasta such as bow tie or penne",
       "expected": {
-        "item": "dry pasta such as bow tie or penne",
+        "item": "dry pasta",
         "measurements": [
           {
             "amount": "8",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as bow tie or penne",
         "category": "Pasta & Rice"
       }
     },
@@ -46,7 +46,7 @@
     {
       "raw": "3 cup packed kale, tough stems and ribs removed",
       "expected": {
-        "item": "packed kale, tough stems and ribs removed",
+        "item": "packed kale",
         "measurements": [
           {
             "amount": "3",
@@ -57,7 +57,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "tough stems and ribs removed",
         "category": "Produce"
       }
     },

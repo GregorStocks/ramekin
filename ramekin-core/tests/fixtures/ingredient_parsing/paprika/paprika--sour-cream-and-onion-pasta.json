@@ -5,7 +5,7 @@
     {
       "raw": "1 1/4 teaspoons table salt, divided, plus salt for cooking pasta",
       "expected": {
-        "item": "table salt, divided",
+        "item": "table salt",
         "measurements": [
           {
             "amount": "1.25",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus salt for cooking pasta",
+        "note": "divided, plus salt for cooking pasta",
         "category": "Spices & Seasonings"
       }
     },

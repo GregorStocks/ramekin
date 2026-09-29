@@ -5,7 +5,7 @@
     {
       "raw": "12 ounces light beer, such as Miller High Life",
       "expected": {
-        "item": "light beer, such as Miller High Life",
+        "item": "light beer",
         "measurements": [
           {
             "amount": "12",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Miller High Life",
         "category": "Beverages"
       }
     },

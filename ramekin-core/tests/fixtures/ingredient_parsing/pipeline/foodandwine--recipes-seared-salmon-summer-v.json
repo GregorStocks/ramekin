@@ -59,7 +59,7 @@
     {
       "raw": "1/4 pound&nbsp;shiitake mushrooms, stems removed and reserved, caps quartered, divided",
       "expected": {
-        "item": "shiitake mushrooms, stems removed and reserved, caps quartered",
+        "item": "shiitake mushrooms",
         "measurements": [
           {
             "amount": "0.25",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "stems removed and reserved, caps quartered, divided",
         "category": "Produce"
       }
     },

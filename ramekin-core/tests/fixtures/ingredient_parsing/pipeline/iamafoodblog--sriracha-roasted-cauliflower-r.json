@@ -77,14 +77,14 @@
     {
       "raw": "2 tablespoons sriracha – start with a teaspoon and adjust this to taste",
       "expected": {
-        "item": "sriracha - start with a teaspoon and adjust this to taste",
+        "item": "sriracha - start with a teaspoon and adjust this",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Condiments & Sauces"
       }
     },

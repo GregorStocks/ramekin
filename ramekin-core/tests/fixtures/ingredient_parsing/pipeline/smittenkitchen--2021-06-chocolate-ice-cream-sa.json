@@ -63,7 +63,7 @@
     {
       "raw": "3 tablespoons (45 ml) milk, any kind",
       "expected": {
-        "item": "milk, any kind",
+        "item": "milk",
         "measurements": [
           {
             "amount": "3",
@@ -78,7 +78,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,7 +153,7 @@
     {
       "raw": "1/4 cup (20 grams) cocoa powder, any kind (see Note)",
       "expected": {
-        "item": "cocoa powder, any kind",
+        "item": "cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
@@ -164,7 +164,7 @@
             "unit": "g"
           }
         ],
-        "note": "see Note",
+        "note": "see Note, any kind",
         "category": "Baking"
       }
     },

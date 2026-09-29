@@ -161,14 +161,14 @@
     {
       "raw": "2 poblano peppers, stem, seeds and ribs removed, thinly sliced",
       "expected": {
-        "item": "poblano peppers, stem, seeds and ribs removed",
+        "item": "poblano peppers, stem",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "thinly sliced",
+        "note": "seeds and ribs removed, thinly sliced",
         "category": "Produce"
       }
     },

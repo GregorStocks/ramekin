@@ -41,14 +41,18 @@
     {
       "raw": "4 tbsp sunflower oil for frying",
       "expected": {
-        "item": "sunflower oil for frying",
+        "item": "sunflower oil",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -218,9 +222,9 @@
     {
       "raw": "olive oil for drizzling",
       "expected": {
-        "item": "olive oil for drizzling",
+        "item": "olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     }

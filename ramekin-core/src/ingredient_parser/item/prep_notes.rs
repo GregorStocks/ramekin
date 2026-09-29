@@ -387,3 +387,163 @@ pub(in crate::ingredient_parser) fn is_only_prep_words(s: &str) -> bool {
 
     true
 }
+
+/// Comma parts that qualify the preceding item rather than name it: purposes
+/// ("for frying"), examples ("such as canola"), references ("see note"), and
+/// amount guidance ("about 8 ounces", "divided").
+pub(in crate::ingredient_parser) fn is_trailing_qualifier(s: &str) -> bool {
+    const QUALIFIER_PREFIXES: &[&str] = &[
+        "about ",
+        "any ",
+        "approximately ",
+        "at least ",
+        "each ",
+        "for ",
+        "from ",
+        "if ",
+        "in ",
+        "including ",
+        "like ",
+        "or your ",
+        "plus ",
+        "preferably ",
+        "see ",
+        "such as ",
+        "with ",
+        "without ",
+        "you'll ",
+        "you will ",
+    ];
+    const QUALIFIER_WORDS: &[&str] = &[
+        "any kind",
+        "any shape",
+        "any variety",
+        "divided",
+        "homemade or store bought",
+        "homemade or store-bought",
+        "homemade or storebought",
+        "optional",
+        "separated",
+        "spun dry",
+        "store bought or homemade",
+        "store-bought or homemade",
+        "thawed",
+        "to finish",
+        "to serve",
+        "warmed",
+    ];
+    // Participles that end a prep phrase ("crusts removed", "stems and seeds
+    // discarded"): the part describes the item rather than naming another.
+    const TRAILING_PARTICIPLES: &[&str] = &[
+        "discarded",
+        "removed",
+        "reserved",
+        "separated",
+        "thawed",
+        "trimmed",
+        "warmed",
+    ];
+    let lower = s
+        .trim()
+        .trim_matches(|c: char| c == '[' || c == ']' || c == '.' || c.is_whitespace())
+        .to_lowercase();
+    let words: Vec<&str> = lower.split_whitespace().collect();
+    QUALIFIER_PREFIXES
+        .iter()
+        .any(|prefix| lower.starts_with(prefix))
+        || QUALIFIER_WORDS.contains(&lower.as_str())
+        || (words.len() >= 2
+            && words
+                .last()
+                .is_some_and(|w| TRAILING_PARTICIPLES.contains(w)))
+}
+
+/// Purposes after "for" that describe how an ingredient is used, never what
+/// it is ("oil for frying", "flour for dusting", "butter for the pan").
+const USE_PURPOSES: &[&str] = &[
+    "brushing",
+    "coating",
+    "decorating",
+    "deep frying",
+    "deep-frying",
+    "dipping",
+    "drizzling",
+    "dusting",
+    "finishing",
+    "frying",
+    "garnish",
+    "garnishing",
+    "greasing",
+    "rolling",
+    "serving",
+    "shallow frying",
+    "sprinkling",
+    "the baking sheet",
+    "the grill",
+    "the knife",
+    "the pan",
+    "the pans",
+    "the pot",
+    "the skillet",
+    "the work surface",
+    "topping",
+];
+
+/// Split a trailing usage note that isn't set off by a comma: "for frying",
+/// "to taste", "as needed", "if desired", "such as ...", or a bracketed
+/// "[see Note]". Returns (item, note) only when a real item remains.
+pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
+    s: &str,
+) -> Option<(String, String)> {
+    let lower = s.to_lowercase();
+    // Offsets found in the lowercase copy are used on the original, which only
+    // lines up when lowercasing kept every byte length.
+    if lower.len() != s.len() {
+        return None;
+    }
+    let mut cut: Option<usize> = None;
+    let mut consider = |idx: usize| {
+        cut = Some(cut.map_or(idx, |c: usize| c.min(idx)));
+    };
+    if let Some(idx) = lower.find(" [") {
+        consider(idx);
+    }
+    if let Some(idx) = lower.find(" such as ") {
+        consider(idx);
+    }
+    for purpose in USE_PURPOSES {
+        let phrase = format!(" for {purpose}");
+        if let Some(idx) = lower.find(&phrase) {
+            let end = idx + phrase.len();
+            // Whole words only: "for serving" but not "for servings of".
+            if lower
+                .get(end..)
+                .and_then(|rest| rest.chars().next())
+                .is_none_or(|c| !c.is_alphanumeric())
+            {
+                consider(idx);
+            }
+        }
+    }
+    for suffix in [" to taste", " as needed", " if desired", " optional"] {
+        if let Some(idx) = lower.rfind(suffix) {
+            if lower
+                .get(idx + suffix.len()..)
+                .is_some_and(|rest| rest.trim_matches(|c: char| !c.is_alphanumeric()).is_empty())
+            {
+                consider(idx);
+            }
+        }
+    }
+    let idx = cut?;
+    let item = s.get(..idx)?.trim().trim_end_matches(',').trim();
+    let note = s
+        .get(idx..)?
+        .trim()
+        .trim_matches(|c| c == '[' || c == ']')
+        .trim();
+    if item.is_empty() || note.is_empty() || is_only_prep_words(item) {
+        return None;
+    }
+    Some((item.to_string(), note.replace(['[', ']'], "")))
+}

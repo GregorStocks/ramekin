@@ -63,14 +63,14 @@
     {
       "raw": "2-3 tablespoons minced herbs, such as mint and/or dill",
       "expected": {
-        "item": "minced herbs, such as mint and/or dill",
+        "item": "minced herbs",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as mint and/or dill",
         "category": "Spices & Seasonings"
       }
     },

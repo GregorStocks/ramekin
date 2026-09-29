@@ -23,7 +23,7 @@
     {
       "raw": "4 cups diced onions, from 2 medium to large",
       "expected": {
-        "item": "diced onions, from 2 medium to large",
+        "item": "diced onions",
         "measurements": [
           {
             "amount": "4",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 2 medium to large",
         "category": "Produce"
       }
     },
@@ -83,9 +83,9 @@
     {
       "raw": "kosher salt to taste",
       "expected": {
-        "item": "kosher salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -106,14 +106,14 @@
     {
       "raw": "1 ham bone, if you have it, or 1 ham hock, see notes above if making without",
       "expected": {
-        "item": "ham bone, if you have it, or 1 ham hock, see notes above if making without",
+        "item": "ham bone",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if you have it, or 1 ham hock, see notes above if making without",
         "category": "Meat & Seafood"
       }
     },
@@ -134,7 +134,7 @@
     {
       "raw": "1 lb. split peas (about 2 heaping cups), rinsed, see notes above",
       "expected": {
-        "item": "split peas, rinsed, see notes above",
+        "item": "split peas",
         "measurements": [
           {
             "amount": "1",
@@ -145,7 +145,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 2 heaping cups",
+        "note": "about 2 heaping cups, rinsed, see notes above",
         "category": "Produce"
       }
     },
@@ -180,9 +180,9 @@
     {
       "raw": "fresh cracked pepper to taste",
       "expected": {
-        "item": "fresh cracked pepper to taste",
+        "item": "fresh cracked pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

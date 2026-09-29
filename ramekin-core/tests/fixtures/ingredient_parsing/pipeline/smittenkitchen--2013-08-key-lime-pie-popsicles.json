@@ -5,9 +5,14 @@
     {
       "raw": "Approximately 4 large regular limes or 6 to 7 several key limes",
       "expected": {
-        "item": "Approximately 4 large regular limes or 6 to 7 several key limes",
-        "measurements": [],
-        "note": null,
+        "item": "regular limes or 6 to 7 several key limes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "approximately",
         "category": "Produce"
       }
     },

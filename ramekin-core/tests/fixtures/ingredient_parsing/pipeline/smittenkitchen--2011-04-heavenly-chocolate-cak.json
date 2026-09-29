@@ -43,14 +43,14 @@
     {
       "raw": "6 large eggs, at room temperature, separated",
       "expected": {
-        "item": "eggs, at room temperature, separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "at room temperature, separated",
         "section": "Cake Layer",
         "category": "Dairy & Eggs"
       }
@@ -160,7 +160,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 1 to 2 tablespoons liqueur of your choice, such as Grand Marnier",
+        "note": "or 1 to 2 tablespoons liqueur of your choice; such as Grand Marnier",
         "section": "Cake Layer",
         "category": "Baking"
       }

@@ -147,14 +147,14 @@
     {
       "raw": "1 large red onion, sliced, divided",
       "expected": {
-        "item": "red onion, sliced",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "divided",
+        "note": "sliced, divided",
         "category": "Produce"
       }
     },
@@ -234,9 +234,9 @@
     {
       "raw": "seasoned salt to taste",
       "expected": {
-        "item": "seasoned salt to taste",
+        "item": "seasoned salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

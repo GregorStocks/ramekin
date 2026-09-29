@@ -81,14 +81,14 @@
     {
       "raw": "1 tbsp. cherry booze, such as kirsch, or clear rum (optional)",
       "expected": {
-        "item": "cherry booze, such as kirsch, or clear rum",
+        "item": "cherry booze",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, such as kirsch, or clear rum",
         "category": "Produce"
       }
     },

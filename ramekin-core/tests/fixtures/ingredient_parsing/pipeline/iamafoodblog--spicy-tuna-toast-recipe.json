@@ -73,14 +73,14 @@
     {
       "raw": "1 small ahi tuna steak, at least 1 inch thick",
       "expected": {
-        "item": "ahi tuna steak, at least 1 inch thick",
+        "item": "ahi tuna steak",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "at least 1 inch thick",
         "category": "Meat & Seafood"
       }
     },

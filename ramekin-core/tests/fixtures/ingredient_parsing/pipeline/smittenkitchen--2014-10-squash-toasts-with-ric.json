@@ -98,7 +98,7 @@
     {
       "raw": "1/2 teaspoon dried chile flakes, more or less to taste",
       "expected": {
-        "item": "dried chile flakes, more or less to taste",
+        "item": "dried chile flakes, more or less",
         "measurements": [
           {
             "amount": "0.5",
@@ -109,7 +109,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

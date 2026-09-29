@@ -5,7 +5,7 @@
     {
       "raw": "226g Scottish or quick-cooking oats (8 ounces; 2 1/2 cups), see notes",
       "expected": {
-        "item": "Scottish or quick-cooking oats, see notes",
+        "item": "Scottish or quick-cooking oats",
         "measurements": [
           {
             "amount": "226",
@@ -20,7 +20,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Snacks"
       }
     },
@@ -63,7 +63,7 @@
     {
       "raw": "6 tablespoons melted clarified butter or ghee, homemade or store-bought (2 1/4 ounces; 66g)",
       "expected": {
-        "item": "melted clarified butter or ghee, homemade or store-bought",
+        "item": "melted clarified butter or ghee",
         "measurements": [
           {
             "amount": "6",
@@ -78,7 +78,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Dairy & Eggs"
       }
     },

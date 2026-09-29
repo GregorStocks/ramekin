@@ -85,7 +85,7 @@
     {
       "raw": "3 1/2 cups pumpkin puree, from 2 15-ounce (425 gram) cans or homemade",
       "expected": {
-        "item": "pumpkin puree, from 2 15-ounce cans or homemade",
+        "item": "pumpkin puree",
         "measurements": [
           {
             "amount": "3.5",
@@ -96,7 +96,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 2 15-ounce cans or homemade",
         "category": "Produce"
       }
     },

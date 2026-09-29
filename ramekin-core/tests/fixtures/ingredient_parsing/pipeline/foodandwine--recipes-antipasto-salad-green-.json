@@ -163,7 +163,7 @@
     {
       "raw": "1 small head of iceberg lettuce, halved, cored and finely shredded (4 cups)",
       "expected": {
-        "item": "head of iceberg lettuce, halved",
+        "item": "head of iceberg lettuce",
         "measurements": [
           {
             "amount": "1",
@@ -172,9 +172,13 @@
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "228",
+            "unit": "g"
           }
         ],
-        "note": "cored and finely shredded",
+        "note": "halved, cored and finely shredded",
         "category": "Produce"
       }
     },
@@ -217,14 +221,14 @@
     {
       "raw": "1/2 cup green olives, such as Picholine",
       "expected": {
-        "item": "green olives, such as Picholine",
+        "item": "green olives",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Picholine",
         "category": "Canned Goods"
       }
     }

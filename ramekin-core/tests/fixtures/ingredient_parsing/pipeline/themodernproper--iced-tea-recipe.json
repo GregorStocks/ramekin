@@ -5,14 +5,14 @@
     {
       "raw": "8 bags black tea, such as Lipton",
       "expected": {
-        "item": "black tea, such as Lipton",
+        "item": "black tea",
         "measurements": [
           {
             "amount": "8",
             "unit": "bag"
           }
         ],
-        "note": null,
+        "note": "such as Lipton",
         "category": "Beverages"
       }
     },

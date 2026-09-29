@@ -192,14 +192,14 @@
     {
       "raw": "Small basil leaves, for topping",
       "expected": {
-        "item": "basil leaves, for topping",
+        "item": "basil leaves",
         "measurements": [
           {
             "amount": null,
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

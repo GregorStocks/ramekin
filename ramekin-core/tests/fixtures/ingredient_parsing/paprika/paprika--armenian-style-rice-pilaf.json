@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": "such as vermicelli or fine spaghetti; or 1/2 cup of small, non-tubular pasta, like orzo",
+        "note": "such as vermicelli or fine spaghetti; or 1/2 cup of small, non-tubular pasta; like orzo",
         "category": "Pasta & Rice"
       }
     },
@@ -117,7 +117,7 @@
     {
       "raw": "1 tablespoon minced fresh parsley or dill (or a combination), optional, divided",
       "expected": {
-        "item": "minced fresh parsley or dill, optional",
+        "item": "minced fresh parsley or dill",
         "measurements": [
           {
             "amount": "1",
@@ -128,7 +128,7 @@
             "unit": "g"
           }
         ],
-        "note": "or a combination, divided",
+        "note": "or a combination, optional, divided",
         "category": "Produce"
       }
     }

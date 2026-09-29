@@ -183,9 +183,9 @@
     {
       "raw": "freshly cracked black pepper to taste",
       "expected": {
-        "item": "freshly cracked black pepper to taste",
+        "item": "freshly cracked black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -224,9 +224,9 @@
     {
       "raw": "dressing to taste",
       "expected": {
-        "item": "dressing to taste",
+        "item": "dressing",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Condiments & Sauces"
       }
     }

@@ -41,14 +41,14 @@
     {
       "raw": "3/4 cup shredded coconut such as Durkee Flaked Coconut",
       "expected": {
-        "item": "shredded coconut such as Durkee Flaked Coconut",
+        "item": "shredded coconut",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Durkee Flaked Coconut",
         "category": "Produce"
       }
     },

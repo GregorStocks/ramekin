@@ -9,7 +9,7 @@
     {
       "raw": "2 salmon fillets (5oz each), skin removed",
       "expected": {
-        "item": "salmon fillets, skin removed",
+        "item": "salmon fillets",
         "measurements": [
           {
             "amount": "2",
@@ -20,7 +20,7 @@
             "unit": "oz each"
           }
         ],
-        "note": null,
+        "note": "skin removed",
         "section": "Salmon",
         "category": "Meat & Seafood"
       }

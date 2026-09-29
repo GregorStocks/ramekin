@@ -141,7 +141,7 @@
     {
       "raw": "4 cups 2% milk, warmed",
       "expected": {
-        "item": "2% milk, warmed",
+        "item": "2% milk",
         "measurements": [
           {
             "amount": "4",
@@ -152,7 +152,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Dairy & Eggs"
       }
     },

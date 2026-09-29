@@ -46,21 +46,21 @@
     {
       "raw": "1/4 cup chipotles in adobo sauce, see notes above",
       "expected": {
-        "item": "chipotles in adobo sauce, see notes above",
+        "item": "chipotles in adobo sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 cup crushed tomatoes, see notes above",
       "expected": {
-        "item": "crushed tomatoes, see notes above",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -71,7 +71,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Canned Goods"
       }
     },

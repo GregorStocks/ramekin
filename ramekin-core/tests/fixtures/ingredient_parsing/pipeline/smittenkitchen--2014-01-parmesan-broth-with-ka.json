@@ -14,7 +14,7 @@
     {
       "raw": "8 ounces cheese rinds, any paper at the ends removed",
       "expected": {
-        "item": "cheese rinds, any paper at the ends removed",
+        "item": "cheese rinds",
         "measurements": [
           {
             "amount": "8",
@@ -25,7 +25,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any paper at the ends removed",
         "category": "Cheese"
       }
     },
@@ -167,9 +167,9 @@
     {
       "raw": "Olive oil and parmesan for serving",
       "expected": {
-        "item": "Olive oil and parmesan for serving",
+        "item": "Olive oil and parmesan",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "section": "To Serve",
         "category": "Oils & Vinegars"
       }

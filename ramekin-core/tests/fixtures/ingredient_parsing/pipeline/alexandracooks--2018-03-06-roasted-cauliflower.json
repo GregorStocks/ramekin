@@ -111,15 +111,15 @@
     {
       "raw": "1/2 cup deribbed, seeded, and roughly chopped fresh hot green chilies, such as serrano (2 to 4)",
       "expected": {
-        "item": "deribbed, seeded, and roughly chopped fresh hot green chilies, such as serrano",
+        "item": "deribbed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "2 to 4",
-        "category": "Produce"
+        "note": "2 to 4, seeded, and roughly chopped fresh hot green chilies, such as serrano",
+        "category": "Other"
       }
     },
     {
@@ -139,28 +139,36 @@
     {
       "raw": "2 cups lightly packed cilantro leaves, see notes",
       "expected": {
-        "item": "lightly packed cilantro leaves, see notes",
+        "item": "lightly packed cilantro leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Produce"
       }
     },
     {
       "raw": "2 cups lightly packed flat-leaf parsley leaves, see notes",
       "expected": {
-        "item": "lightly packed flat-leaf parsley leaves, see notes",
+        "item": "lightly packed flat-leaf parsley leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Produce"
       }
     },
@@ -176,9 +184,9 @@
     {
       "raw": "juice from one lemon, about 3 tablespoons, divided",
       "expected": {
-        "item": "juice from one lemon, about 3 tablespoons",
+        "item": "juice from one lemon",
         "measurements": [],
-        "note": "divided",
+        "note": "about 3 tablespoons, divided",
         "category": "Beverages"
       }
     },

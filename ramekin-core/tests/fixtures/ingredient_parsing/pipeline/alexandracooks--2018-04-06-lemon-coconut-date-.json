@@ -106,14 +106,14 @@
     {
       "raw": "2 tablespoons coconut butter, see notes above",
       "expected": {
-        "item": "coconut butter, see notes above",
+        "item": "coconut butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Produce"
       }
     }

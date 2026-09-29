@@ -59,7 +59,7 @@
     {
       "raw": "1 teaspoon pumpkin pie spice, such as McCormick",
       "expected": {
-        "item": "pumpkin pie spice, such as McCormick",
+        "item": "pumpkin pie spice",
         "measurements": [
           {
             "amount": "1",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as McCormick",
         "category": "Spices & Seasonings"
       }
     },

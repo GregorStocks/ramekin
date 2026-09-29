@@ -5,7 +5,7 @@
     {
       "raw": "2 bone-in chicken breasts, skin removed (1 to 1 1/2 pounds)",
       "expected": {
-        "item": "bone-in chicken breasts, skin removed",
+        "item": "bone-in chicken breasts",
         "measurements": [
           {
             "amount": "2",
@@ -20,14 +20,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin removed",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 cup long-grain white rice, like basmati",
       "expected": {
-        "item": "long-grain white rice, like basmati",
+        "item": "long-grain white rice",
         "measurements": [
           {
             "amount": "1",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "like basmati",
         "category": "Pasta & Rice"
       }
     },

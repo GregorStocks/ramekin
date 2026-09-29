@@ -141,7 +141,7 @@
     {
       "raw": "8 ounces Mexican-style chorizo sausage , casings removed",
       "expected": {
-        "item": "Mexican-style chorizo sausage, casings removed",
+        "item": "Mexican-style chorizo sausage",
         "measurements": [
           {
             "amount": "8",
@@ -152,7 +152,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "casings removed",
         "category": "Meat & Seafood"
       }
     },

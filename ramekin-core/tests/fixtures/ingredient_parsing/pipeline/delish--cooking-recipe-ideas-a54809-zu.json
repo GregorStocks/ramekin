@@ -31,7 +31,7 @@
     {
       "raw": "2 tsp. kosher salt, divided, plus more",
       "expected": {
-        "item": "kosher salt, divided",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more",
+        "note": "divided, plus more",
         "category": "Spices & Seasonings"
       }
     },

@@ -93,9 +93,18 @@
     {
       "raw": "About 3 cups buttermilk, whole milk if you can find it",
       "expected": {
-        "item": "About 3 cups buttermilk, whole milk if you can find it",
-        "measurements": [],
-        "note": null,
+        "item": "buttermilk, whole milk if you can find it",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "735",
+            "unit": "g"
+          }
+        ],
+        "note": "about",
         "section": "For the Pork Chops",
         "category": "Dairy & Eggs"
       }

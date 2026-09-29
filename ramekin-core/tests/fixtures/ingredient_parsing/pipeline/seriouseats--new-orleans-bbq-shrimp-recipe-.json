@@ -5,7 +5,7 @@
     {
       "raw": "24 tablespoons (3 sticks; 340 g) cold unsalted butter, cut into 1/2-inch cubes, divided",
       "expected": {
-        "item": "cold unsalted butter, cut into 1/2-inch cubes",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "24",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "cut into 1/2-inch cubes, divided",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,14 +127,14 @@
     {
       "raw": "2 teaspoons Cajun seasoning mix, such as Tony Chachere's or Slap Ya Mama (see notes)",
       "expected": {
-        "item": "Cajun seasoning mix, such as Tony Chachere's or Slap Ya Mama",
+        "item": "Cajun seasoning mix",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "see notes",
+        "note": "see notes, such as Tony Chachere's or Slap Ya Mama",
         "category": "Spices & Seasonings"
       }
     },
@@ -191,9 +191,9 @@
     {
       "raw": "A few dashes of Louisiana-style hot sauce, such as Crystal or Louisiana Red Hot, to taste",
       "expected": {
-        "item": "A few dashes of Louisiana-style hot sauce, such as Crystal or Louisiana Red Hot",
+        "item": "A few dashes of Louisiana-style hot sauce",
         "measurements": [],
-        "note": "to taste",
+        "note": "such as Crystal or Louisiana Red Hot, to taste",
         "category": "Condiments & Sauces"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "12 slices white bread, crusts removed",
       "expected": {
-        "item": "white bread, crusts removed",
+        "item": "white bread",
         "measurements": [
           {
             "amount": "12",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "crusts removed",
         "category": "Bakery & Bread"
       }
     },

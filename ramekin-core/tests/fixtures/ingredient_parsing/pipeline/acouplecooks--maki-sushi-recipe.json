@@ -131,14 +131,14 @@
     {
       "raw": "1 4-ounce can tuna, in water, drained",
       "expected": {
-        "item": "tuna, in water",
+        "item": "tuna",
         "measurements": [
           {
             "amount": "1",
             "unit": "4-ounce can"
           }
         ],
-        "note": "drained",
+        "note": "in water, drained",
         "category": "Meat & Seafood"
       }
     },

@@ -55,7 +55,7 @@
     {
       "raw": "1 pound aged extra-sharp cheddar, preferably Tillamook, shredded",
       "expected": {
-        "item": "aged extra-sharp cheddar, preferably Tillamook",
+        "item": "aged extra-sharp cheddar",
         "measurements": [
           {
             "amount": "1",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "shredded",
+        "note": "preferably Tillamook, shredded",
         "category": "Cheese"
       }
     },

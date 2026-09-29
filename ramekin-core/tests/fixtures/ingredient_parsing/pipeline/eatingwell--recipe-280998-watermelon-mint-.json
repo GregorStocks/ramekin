@@ -56,14 +56,14 @@
     {
       "raw": "Small slice watermelon for garnish",
       "expected": {
-        "item": "slice watermelon for garnish",
+        "item": "slice watermelon",
         "measurements": [
           {
             "amount": null,
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     }

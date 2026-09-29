@@ -46,14 +46,14 @@
     {
       "raw": "pinch saffron, about 10 threads",
       "expected": {
-        "item": "saffron, about 10 threads",
+        "item": "saffron",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "about 10 threads",
         "category": "Spices & Seasonings"
       }
     },

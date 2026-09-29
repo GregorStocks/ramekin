@@ -95,9 +95,9 @@
     {
       "raw": "flaky sea salt to taste",
       "expected": {
-        "item": "flaky sea salt to taste",
+        "item": "flaky sea salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -140,14 +140,14 @@
     {
       "raw": "3/4 teaspoon spices such as cayenne, smoked paprika, or cumin, etc.&nbsp;",
       "expected": {
-        "item": "spices such as cayenne, smoked paprika, or cumin, etc.",
+        "item": "spices",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "such as cayenne, smoked paprika, or cumin, etc.",
         "category": "Spices & Seasonings"
       }
     }

@@ -37,14 +37,14 @@
     {
       "raw": "1 stale baguette, cubed, about 4 cups",
       "expected": {
-        "item": "stale baguette, cubed, about 4 cups",
+        "item": "stale baguette",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cubed, about 4 cups",
         "category": "Bakery & Bread"
       }
     },

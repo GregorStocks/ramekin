@@ -8,6 +8,7 @@
 //! `grams_per_cup`), so an entry can be recognized even when one attribute is
 //! deliberately unknown. See README.md for the data rules.
 
+mod cleanup;
 mod resolve;
 mod volume;
 
@@ -19,6 +20,7 @@ use serde::Deserialize;
 use crate::ingredient_categorizer::CATEGORIES;
 use sha2::{Digest, Sha256};
 
+pub use cleanup::{clean_curated, parsed_name, CuratedChange};
 pub use resolve::{resolve, Resolution, Via};
 pub use volume::{
     is_volume_unit, volume_to_cups, CUPS_PER_FL_OZ, CUPS_PER_GALLON, CUPS_PER_L, CUPS_PER_ML,
@@ -26,7 +28,7 @@ pub use volume::{
 };
 
 const USDA_JSON: &str = include_str!("data/usda.json");
-const CURATED_JSON: &str = include_str!("data/curated.json");
+pub const CURATED_JSON: &str = include_str!("data/curated.json");
 const RULE_VERSION: &str = "catalog-v2";
 
 /// A food from the pinned USDA SR Legacy release.

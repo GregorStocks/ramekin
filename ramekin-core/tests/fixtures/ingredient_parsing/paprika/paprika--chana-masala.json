@@ -215,7 +215,7 @@
     {
       "raw": "2 cups tomatoes, chopped small or 1 15-ounce can of whole tomatoes with their juices, chopped small",
       "expected": {
-        "item": "tomatoes, chopped small or 1 15-ounce can of whole tomatoes with their juices",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "2",
@@ -226,7 +226,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped small",
+        "note": "chopped small or 1 15-ounce can of whole tomatoes with their juices, chopped small",
         "category": "Produce"
       }
     },

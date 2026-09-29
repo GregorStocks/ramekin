@@ -93,14 +93,14 @@
     {
       "raw": "1 teaspoon or more hot sauce, such as gochujang",
       "expected": {
-        "item": "or more hot sauce, such as gochujang",
+        "item": "or more hot sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "such as gochujang",
         "category": "Condiments & Sauces"
       }
     },

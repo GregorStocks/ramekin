@@ -60,7 +60,7 @@
     {
       "raw": "1.25 lb peeled butternut squash pieces, about 4 cups",
       "expected": {
-        "item": "peeled butternut squash pieces, about 4 cups",
+        "item": "peeled butternut squash pieces",
         "measurements": [
           {
             "amount": "1.25",
@@ -71,7 +71,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 cups",
         "category": "Produce"
       }
     },

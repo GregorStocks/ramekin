@@ -142,14 +142,14 @@
     {
       "raw": "1kg salad potatoes such as Charlotte or Nicola",
       "expected": {
-        "item": "salad potatoes such as Charlotte or Nicola",
+        "item": "salad potatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "such as Charlotte or Nicola",
         "category": "Produce"
       }
     },

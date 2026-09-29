@@ -191,7 +191,7 @@
     {
       "raw": "5 cups oil for frying (or as needed)",
       "expected": {
-        "item": "oil for frying",
+        "item": "oil",
         "measurements": [
           {
             "amount": "5",
@@ -202,7 +202,7 @@
             "unit": "g"
           }
         ],
-        "note": "or as needed",
+        "note": "or as needed, for frying",
         "category": "Oils & Vinegars"
       }
     }

@@ -174,14 +174,14 @@
     {
       "raw": "Handful fresh parsley, about ½ cup packed, chopped",
       "expected": {
-        "item": "fresh parsley, about 1/2 cup packed",
+        "item": "fresh parsley",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": "chopped",
+        "note": "about 1/2 cup packed, chopped",
         "category": "Produce"
       }
     },

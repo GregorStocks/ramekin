@@ -5,14 +5,14 @@
     {
       "raw": "1 large onion, halved, with the skin on",
       "expected": {
-        "item": "onion, halved, with the skin on",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "halved, with the skin on",
         "category": "Produce"
       }
     },
@@ -33,14 +33,14 @@
     {
       "raw": "4 stalks celery, 2 halved crosswise and 2 cut into half-moons, with the leaves reserved for garnish",
       "expected": {
-        "item": "celery, 2 halved crosswise and 2 cut into half-moons",
+        "item": "celery",
         "measurements": [
           {
             "amount": "4",
             "unit": "stalk"
           }
         ],
-        "note": "with the leaves reserved for garnish",
+        "note": "2 halved crosswise and 2 cut into half-moons, with the leaves reserved for garnish",
         "category": "Produce"
       }
     },
@@ -103,14 +103,14 @@
     {
       "raw": "1 (5-pound) roaster chicken, cut into 8 to 10 pieces, with the skin removed",
       "expected": {
-        "item": "roaster chicken, cut into 8 to 10 pieces, with the skin removed",
+        "item": "roaster chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "5-pound",
+        "note": "5-pound, cut into 8 to 10 pieces, with the skin removed",
         "category": "Meat & Seafood"
       }
     },
@@ -195,9 +195,9 @@
     {
       "raw": "Freshly squeezed lemon juice, to taste, optional",
       "expected": {
-        "item": "Freshly squeezed lemon juice, to taste",
+        "item": "Freshly squeezed lemon juice",
         "measurements": [],
-        "note": "optional",
+        "note": "to taste, optional",
         "category": "Produce"
       }
     },

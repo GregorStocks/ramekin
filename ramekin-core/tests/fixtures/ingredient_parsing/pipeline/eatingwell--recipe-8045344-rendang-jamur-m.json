@@ -33,14 +33,14 @@
     {
       "raw": "0.25 cup chili paste, such as sambal oelek, or to taste",
       "expected": {
-        "item": "chili paste, such as sambal oelek",
+        "item": "chili paste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or to taste",
+        "note": "such as sambal oelek, or to taste",
         "category": "Condiments & Sauces"
       }
     },
@@ -65,14 +65,14 @@
     {
       "raw": "2 tablespoons canola oil or other neutral oil, such as coconut or avocado",
       "expected": {
-        "item": "canola oil or other neutral oil, such as coconut or avocado",
+        "item": "canola oil or other neutral oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as coconut or avocado",
         "category": "Oils & Vinegars"
       }
     },

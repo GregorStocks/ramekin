@@ -87,23 +87,23 @@
     {
       "raw": "2 poblano chiles, roasted, peeled and cut into strips",
       "expected": {
-        "item": "poblano chiles, roasted",
+        "item": "poblano chiles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "peeled and cut into strips",
+        "note": "roasted, peeled and cut into strips",
         "category": "Produce"
       }
     },
     {
       "raw": "Salt and pepper to taste",
       "expected": {
-        "item": "Salt and pepper to taste",
+        "item": "Salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -138,9 +138,9 @@
     {
       "raw": "Butter for frying quesadillas",
       "expected": {
-        "item": "Butter for frying quesadillas",
+        "item": "Butter",
         "measurements": [],
-        "note": null,
+        "note": "for frying quesadillas",
         "category": "Dairy & Eggs"
       }
     },
@@ -156,28 +156,28 @@
     {
       "raw": "10 tomatillos, husked and well washed, quartered",
       "expected": {
-        "item": "tomatillos, husked and well washed",
+        "item": "tomatillos",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": "quartered",
+        "note": "husked and well washed, quartered",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 bunch of scallions, roots and green ends trimmed, cut into big segements",
       "expected": {
-        "item": "scallions, roots and green ends trimmed",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "bunch"
           }
         ],
-        "note": "cut into big segements",
+        "note": "roots and green ends trimmed, cut into big segements",
         "category": "Produce"
       }
     },
@@ -226,9 +226,9 @@
     {
       "raw": "Salt to taste",
       "expected": {
-        "item": "Salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

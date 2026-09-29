@@ -100,18 +100,18 @@
     {
       "raw": "ice, to serve",
       "expected": {
-        "item": "ice, to serve",
+        "item": "ice",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Frozen"
       }
     },
     {
       "raw": "gin, to serve, optional",
       "expected": {
-        "item": "gin, to serve",
+        "item": "gin",
         "measurements": [],
-        "note": "optional",
+        "note": "to serve, optional",
         "category": "Beverages"
       }
     }

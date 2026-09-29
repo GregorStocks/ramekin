@@ -101,14 +101,14 @@
     {
       "raw": "1 to 2 teaspoons finely chopped fresh hot red chile, including seeds",
       "expected": {
-        "item": "finely chopped fresh hot red chile, including seeds",
+        "item": "finely chopped fresh hot red chile",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "including seeds",
         "category": "Produce"
       }
     },

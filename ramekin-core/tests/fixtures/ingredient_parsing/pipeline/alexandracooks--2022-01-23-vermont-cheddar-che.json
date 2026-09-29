@@ -23,28 +23,28 @@
     {
       "raw": "3 to 4 cups diced onions, from 2 to 3 onion",
       "expected": {
-        "item": "diced onions, from 2 to 3 onion",
+        "item": "diced onions",
         "measurements": [
           {
             "amount": "3 to 4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2 to 3 onion",
         "category": "Produce"
       }
     },
     {
       "raw": "2 to 3 cups diced celery, from 1 small head",
       "expected": {
-        "item": "diced celery, from 1 small head",
+        "item": "diced celery",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 small head",
         "category": "Produce"
       }
     },
@@ -65,28 +65,28 @@
     {
       "raw": "2 to 4 cups diced red bell pepper, from 2 peppers",
       "expected": {
-        "item": "diced red bell pepper, from 2 peppers",
+        "item": "diced red bell pepper",
         "measurements": [
           {
             "amount": "2 to 4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2 peppers",
         "category": "Produce"
       }
     },
     {
       "raw": "2 to 3 cups diced, peeled red potato, from 4 to 5",
       "expected": {
-        "item": "diced, peeled red potato, from 4 to 5",
+        "item": "diced, peeled red potato",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 4 to 5",
         "category": "Produce"
       }
     },
@@ -188,7 +188,7 @@
     {
       "raw": "4&nbsp;cups grated cheddar cheese, about 1 lb.",
       "expected": {
-        "item": "grated cheddar cheese, about 1 lb.",
+        "item": "grated cheddar cheese",
         "measurements": [
           {
             "amount": "4",
@@ -199,7 +199,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 lb.",
         "category": "Cheese"
       }
     },
@@ -224,14 +224,14 @@
     {
       "raw": "dashes Worcestershire, see notes above",
       "expected": {
-        "item": "Worcestershire, see notes above",
+        "item": "Worcestershire",
         "measurements": [
           {
             "amount": null,
             "unit": "dash"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Condiments & Sauces"
       }
     },
@@ -252,18 +252,18 @@
     {
       "raw": "Fresh cracked pepper to taste",
       "expected": {
-        "item": "Fresh cracked pepper to taste",
+        "item": "Fresh cracked pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Bread for serving",
       "expected": {
-        "item": "Bread for serving",
+        "item": "Bread",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Bakery & Bread"
       }
     }

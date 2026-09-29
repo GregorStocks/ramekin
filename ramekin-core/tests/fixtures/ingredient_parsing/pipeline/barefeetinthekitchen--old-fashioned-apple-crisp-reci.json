@@ -5,14 +5,14 @@
     {
       "raw": "4  thinly sliced apples, about 6 cups worth",
       "expected": {
-        "item": "thinly sliced apples, about 6 cups worth",
+        "item": "thinly sliced apples",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "about 6 cups worth",
         "category": "Produce"
       }
     },

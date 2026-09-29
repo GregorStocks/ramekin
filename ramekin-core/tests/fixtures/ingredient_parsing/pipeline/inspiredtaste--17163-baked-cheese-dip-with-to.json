@@ -59,7 +59,7 @@
     {
       "raw": "8 ounces mozzarella cheese, shredded, about 2 cups (226g)",
       "expected": {
-        "item": "mozzarella cheese, shredded, about 2 cups",
+        "item": "mozzarella cheese",
         "measurements": [
           {
             "amount": "8",
@@ -70,14 +70,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shredded, about 2 cups",
         "category": "Cheese"
       }
     },
     {
       "raw": "12 ounces Monterey Jack cheese, shredded, about 3 cups (340g)",
       "expected": {
-        "item": "Monterey Jack cheese, shredded, about 3 cups",
+        "item": "Monterey Jack cheese",
         "measurements": [
           {
             "amount": "12",
@@ -88,21 +88,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shredded, about 3 cups",
         "category": "Cheese"
       }
     },
     {
       "raw": "1 cup basil leaves, chopped, plus more for serving",
       "expected": {
-        "item": "basil leaves, chopped",
+        "item": "basil leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "plus more for serving",
+        "note": "chopped, plus more for serving",
         "category": "Produce"
       }
     },

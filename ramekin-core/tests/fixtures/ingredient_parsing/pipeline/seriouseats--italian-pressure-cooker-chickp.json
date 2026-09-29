@@ -189,7 +189,7 @@
     {
       "raw": "12 ounces yellow potatoes (340g; about 2 medium potatoes), such as Yukon Gold, peeled and cut into irregular chunks about 1/2 inch thick (see headnote above)",
       "expected": {
-        "item": "yellow potatoes, such as Yukon Gold",
+        "item": "yellow potatoes",
         "measurements": [
           {
             "amount": "12",
@@ -200,7 +200,7 @@
             "unit": "g"
           }
         ],
-        "note": "340g; about 2 medium potatoes, see headnote above, peeled and cut into irregular chunks about 1/2 inch thick",
+        "note": "340g; about 2 medium potatoes, see headnote above, such as Yukon Gold, peeled and cut into irregular chunks about 1/2 inch thick",
         "category": "Produce"
       }
     },

@@ -368,7 +368,7 @@
     {
       "raw": "6 ounces bittersweet chocolate, chopped (or, about 1 cup bittersweet chocolate chips), divided",
       "expected": {
-        "item": "bittersweet chocolate, chopped",
+        "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "6",
@@ -379,7 +379,7 @@
             "unit": "g"
           }
         ],
-        "note": "or, about 1 cup bittersweet chocolate chips, divided",
+        "note": "or, about 1 cup bittersweet chocolate chips, chopped, divided",
         "category": "Baking"
       }
     },

@@ -199,14 +199,14 @@
     {
       "raw": "1/4 cup peach jam, warmed",
       "expected": {
-        "item": "peach jam, warmed",
+        "item": "peach jam",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "section": "Topping",
         "category": "Produce"
       }

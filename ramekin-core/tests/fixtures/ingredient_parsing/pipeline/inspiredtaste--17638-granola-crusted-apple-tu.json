@@ -19,7 +19,7 @@
     {
       "raw": "1 tablespoon mayonnaise, see our homemade mayonnaise recipe",
       "expected": {
-        "item": "mayonnaise, see our homemade mayonnaise recipe",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "1",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see our homemade mayonnaise recipe",
         "category": "Condiments & Sauces"
       }
     },

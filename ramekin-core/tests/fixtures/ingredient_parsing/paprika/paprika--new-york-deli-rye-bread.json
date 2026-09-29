@@ -258,8 +258,12 @@
     {
       "raw": "about 2 teaspoons (about 0.5 ounces, 16 grams) cornmeal for sprinkling",
       "expected": {
-        "item": "about 2 teaspoons cornmeal for sprinkling",
+        "item": "cornmeal",
         "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
           {
             "amount": "0.5",
             "unit": "oz"
@@ -269,7 +273,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 0.5 ounces, 16 grams",
+        "note": "about, about 0.5 ounces, 16 grams, for sprinkling",
         "section": "Dough and Baking",
         "category": "Baking"
       }

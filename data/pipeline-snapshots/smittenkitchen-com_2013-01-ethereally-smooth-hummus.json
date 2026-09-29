@@ -101,9 +101,18 @@
       "section": null
     },
     {
-      "item": "Approximately 1/4 cup water or reserved chickpea cooking water",
-      "measurements": [],
-      "note": null,
+      "item": "water or reserved chickpea cooking water",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        },
+        {
+          "amount": "59",
+          "unit": "g"
+        }
+      ],
+      "note": "approximately",
       "raw": "Approximately 1/4 cup water or reserved chickpea cooking water",
       "section": null
     }

@@ -153,7 +153,7 @@
     {
       "raw": "1/2 cup (120 ml) milk, any kind, plus more if needed to get to your desired consistency",
       "expected": {
-        "item": "milk, any kind",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
@@ -168,7 +168,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more if needed to get to your desired consistency",
+        "note": "any kind, plus more if needed to get to your desired consistency",
         "category": "Dairy & Eggs"
       }
     },

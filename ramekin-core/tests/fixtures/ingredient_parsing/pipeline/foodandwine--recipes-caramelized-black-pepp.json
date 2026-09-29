@@ -23,9 +23,14 @@
     {
       "raw": "About 1/4 cup nam pla (fish sauce)",
       "expected": {
-        "item": "About 1/4 cup nam pla",
-        "measurements": [],
-        "note": "fish sauce",
+        "item": "nam pla",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "about, fish sauce",
         "category": "Other"
       }
     },

@@ -96,14 +96,14 @@
     {
       "raw": "1 28-oz can of peeled whole San Marzano tomatoes, see notes above",
       "expected": {
-        "item": "of peeled whole San Marzano tomatoes, see notes above",
+        "item": "of peeled whole San Marzano tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "28-oz can"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Canned Goods"
       }
     },

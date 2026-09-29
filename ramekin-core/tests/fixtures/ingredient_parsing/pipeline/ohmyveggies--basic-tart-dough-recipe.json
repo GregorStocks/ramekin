@@ -10,6 +10,10 @@
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "188",
+            "unit": "g"
           }
         ],
         "note": "plus extra for work surface",
@@ -96,6 +100,10 @@
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -105,14 +113,14 @@
     {
       "raw": "1½ cups 250 g dried beans, for blind-baking",
       "expected": {
-        "item": "250 g dried beans, for blind-baking",
+        "item": "250 g dried beans",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for blind-baking",
         "category": "Canned Goods"
       }
     }

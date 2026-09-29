@@ -5,7 +5,7 @@
     {
       "raw": "4.3333334922791 cups whole-wheat flour (1 pound, 6 ounces), divided, plus more as needed for feeding",
       "expected": {
-        "item": "whole-wheat flour, divided",
+        "item": "whole-wheat flour",
         "measurements": [
           {
             "amount": "4.33",
@@ -24,14 +24,14 @@
             "unit": "g"
           }
         ],
-        "note": "plus more as needed for feeding",
+        "note": "divided, plus more as needed for feeding",
         "category": "Baking"
       }
     },
     {
       "raw": "2.5 cups warm water (85 degrees F), divided, plus more as needed for feeding",
       "expected": {
-        "item": "warm water, divided",
+        "item": "warm water",
         "measurements": [
           {
             "amount": "2.5",
@@ -42,14 +42,14 @@
             "unit": "g"
           }
         ],
-        "note": "85 degrees F, plus more as needed for feeding",
+        "note": "85 degrees F, divided, plus more as needed for feeding",
         "category": "Beverages"
       }
     },
     {
       "raw": "2/3 cup plus 2 tablespoons all-purpose flour (4 ounces), divided, plus more as needed for feeding",
       "expected": {
-        "item": "all-purpose flour, divided",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2/3 cup plus 2 tablespoons",
@@ -64,7 +64,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more as needed for feeding",
+        "note": "divided, plus more as needed for feeding",
         "category": "Baking"
       }
     }

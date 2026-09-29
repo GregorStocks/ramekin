@@ -169,14 +169,14 @@
     {
       "raw": "1/2 cup small pasta such as mini Farfalle or elbow macaroni",
       "expected": {
-        "item": "small pasta such as mini Farfalle or elbow macaroni",
+        "item": "small pasta",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as mini Farfalle or elbow macaroni",
         "category": "Pasta & Rice"
       }
     },

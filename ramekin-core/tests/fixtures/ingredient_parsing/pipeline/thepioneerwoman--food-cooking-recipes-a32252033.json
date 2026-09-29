@@ -309,9 +309,9 @@
     {
       "raw": "Fried onions, for topping",
       "expected": {
-        "item": "Fried onions, for topping",
+        "item": "Fried onions",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

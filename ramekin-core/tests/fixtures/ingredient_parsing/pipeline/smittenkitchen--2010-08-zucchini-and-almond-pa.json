@@ -77,7 +77,7 @@
     {
       "raw": "1/2 pound pasta of your choice (I like the extra bite of whole wheat pasta in pasta salads), cooked, drained and cooled",
       "expected": {
-        "item": "pasta of your choice, cooked",
+        "item": "pasta of your choice",
         "measurements": [
           {
             "amount": "0.5",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": "I like the extra bite of whole wheat pasta in pasta salads, drained and cooled",
+        "note": "I like the extra bite of whole wheat pasta in pasta salads, cooked, drained and cooled",
         "category": "Pasta & Rice"
       }
     },

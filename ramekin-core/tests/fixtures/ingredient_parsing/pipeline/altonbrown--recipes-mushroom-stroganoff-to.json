@@ -73,7 +73,7 @@
     {
       "raw": "1 pound mixed meaty mushrooms, such as cremini and button, trimmed and sliced 1/4 inch thick",
       "expected": {
-        "item": "mixed meaty mushrooms, such as cremini and button",
+        "item": "mixed meaty mushrooms",
         "measurements": [
           {
             "amount": "1",
@@ -84,7 +84,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and sliced 1/4 inch thick",
+        "note": "such as cremini and button, trimmed and sliced 1/4 inch thick",
         "category": "Produce"
       }
     },
@@ -173,14 +173,14 @@
     {
       "raw": "4 (3/4-inch-thick) slices high-quality bread, such as country French or sourdough",
       "expected": {
-        "item": "high-quality bread, such as country French or sourdough",
+        "item": "high-quality bread",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": "3/4-inch-thick",
+        "note": "3/4-inch-thick, such as country French or sourdough",
         "category": "Bakery & Bread"
       }
     }

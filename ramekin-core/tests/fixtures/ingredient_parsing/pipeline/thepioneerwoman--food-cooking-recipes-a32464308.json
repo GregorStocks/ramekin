@@ -154,14 +154,14 @@
     {
       "raw": "1 chipotle chile in adobo, chopped, plus 1 teaspoon sauce from the can",
       "expected": {
-        "item": "chipotle chile in adobo, chopped",
+        "item": "chipotle chile in adobo",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "plus 1 teaspoon sauce from the can",
+        "note": "chopped, plus 1 teaspoon sauce from the can",
         "category": "Canned Goods"
       }
     },
@@ -182,9 +182,9 @@
     {
       "raw": "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions, for topping",
       "expected": {
-        "item": "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions, for topping",
+        "item": "Chopped avocado",
         "measurements": [],
-        "note": null,
+        "note": "thinly sliced radishes, crumbled queso fresco, and sliced scallions, for topping",
         "category": "Produce"
       }
     }

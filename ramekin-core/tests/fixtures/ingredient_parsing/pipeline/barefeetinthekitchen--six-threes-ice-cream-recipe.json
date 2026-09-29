@@ -19,7 +19,7 @@
     {
       "raw": "1/2  cup fresh orange juice, about 1 orange",
       "expected": {
-        "item": "fresh orange juice, about 1 orange",
+        "item": "fresh orange juice",
         "measurements": [
           {
             "amount": "0.5",
@@ -30,14 +30,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 orange",
         "category": "Beverages"
       }
     },
     {
       "raw": "1/4 cup fresh lemon juice, about 1 lemon",
       "expected": {
-        "item": "fresh lemon juice, about 1 lemon",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "0.25",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 lemon",
         "category": "Produce"
       }
     },

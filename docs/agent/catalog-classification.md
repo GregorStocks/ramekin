@@ -99,6 +99,10 @@ make catalog-apply-classification FILE=<decisions.json>
 Any rejection fails the run and writes nothing. The Rust catalog loader's asserts
 (`make test-core`) are the final gate.
 
+Then run `make catalog-clean-aliases`. It removes or re-keys any decision keyed on
+text the parser now splits off. If the queue holds a name with an amount or a note
+stuck in it, that is a parser bug: fix the parser rather than aliasing the string.
+
 ## 4. Regenerate and review
 
 ```

@@ -41,14 +41,14 @@
     {
       "raw": "&amp;frac34; teaspoon fine sea salt, divided, to taste",
       "expected": {
-        "item": "fine sea salt, divided",
+        "item": "fine sea salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": "to taste",
+        "note": "divided, to taste",
         "category": "Spices & Seasonings"
       }
     },

@@ -72,9 +72,9 @@
     {
       "raw": "Salt and black pepper to taste",
       "expected": {
-        "item": "Salt and black pepper to taste",
+        "item": "Salt and black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -117,39 +117,39 @@
     {
       "raw": "Olive oil and butter as needed",
       "expected": {
-        "item": "Olive oil and butter as needed",
+        "item": "Olive oil and butter",
         "measurements": [],
-        "note": null,
+        "note": "as needed",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 teaspoons minced mixed fresh herbs such as rosemary, thyme and sage",
       "expected": {
-        "item": "minced mixed fresh herbs such as rosemary, thyme and sage",
+        "item": "minced mixed fresh herbs",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "such as rosemary, thyme and sage",
         "category": "Produce"
       }
     },
     {
       "raw": "Salt and black pepper to taste",
       "expected": {
-        "item": "Salt and black pepper to taste",
+        "item": "Salt and black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 pound loaf of a hearty white or whole wheat sourdough bread, in 3/4-inch slices",
       "expected": {
-        "item": "loaf of a hearty white or whole wheat sourdough bread, in 3/4-inch slices",
+        "item": "loaf of a hearty white or whole wheat sourdough bread",
         "measurements": [
           {
             "amount": "1",
@@ -160,7 +160,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "in 3/4-inch slices",
         "category": "Bakery & Bread"
       }
     },

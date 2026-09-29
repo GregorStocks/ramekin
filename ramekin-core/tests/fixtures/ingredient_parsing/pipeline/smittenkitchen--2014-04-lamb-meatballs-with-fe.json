@@ -58,7 +58,7 @@
     {
       "raw": "1 1/4 cup (about 70 grams) breadcrumbs, fresh or plain, such as Panko",
       "expected": {
-        "item": "breadcrumbs, fresh or plain, such as Panko",
+        "item": "breadcrumbs",
         "measurements": [
           {
             "amount": "1.25",
@@ -69,7 +69,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 70 grams",
+        "note": "about 70 grams, fresh or plain, such as Panko",
         "section": "Meatballs",
         "category": "Bakery & Bread"
       }
