@@ -114,9 +114,13 @@ def test_generation_records_and_names():
         "description": "butter, salted",
         "kcal_per_100g": 717.0,
         "grams_per_cup": 300.0,
+        "portions": {},
+        "default_portion": None,
     }
     assert records[4]["kcal_per_100g"] is None
     assert records[4]["grams_per_cup"] is None
+    assert records[4]["portions"] == {"piece": 120.0}
+    assert records[4]["default_portion"] == "piece"
     assert data["names"] == {
         "butter, salted": 3,
         "example": 2,
@@ -125,6 +129,69 @@ def test_generation_records_and_names():
     assert [record["fdc_id"] for record in data["foods"]] == [1, 2, 3, 4]
     assert list(data["names"]) == sorted(data["names"])
     assert data["archive_sha256"] == IMPORTER.ARCHIVE_SHA256
+
+
+@pytest.mark.parametrize(
+    ("modifier", "expected"),
+    [
+        ('medium (2-1/2" dia)', "medium"),
+        ('slice, large (1/4" thick)', "slice large"),
+        ('stalk, medium (7-1/2" - 8" long)', "stalk medium"),
+        ("cloves", "clove"),
+        ("leaves", "leaf"),
+        ('large whole (3" dia)', "large"),
+        ("slice raw", "slice"),
+        ("chop, excluding refuse (yield from 1 raw chop)", "chop"),
+        ("extra large", "extra large"),
+        ("glass", "glass"),
+        ("cup, chopped", None),
+        ("cup slices", None),
+        ("oz, boneless", None),
+        ("package (10 oz)", None),
+        ("carton", None),
+        ("block", None),
+        ("blocks", None),
+        ("NLEA serving", None),
+        ("jar Gerber Second Food (4 oz)", None),
+        ("10 pieces", None),
+        ("piece, cooked (yield from 1 lb raw meat)", None),
+        ("recipe yield", None),
+    ],
+)
+def test_portion_key(modifier, expected):
+    assert IMPORTER.portion_key(modifier) == expected
+
+
+def test_piece_portions_are_per_one_and_first_wins():
+    rows = [
+        portion("cloves", amount="3", weight="9"),
+        portion("fruit", weight="58", row_id="2"),
+        portion("fruit", weight="84", row_id="3"),
+        portion("chicken, skin only", amount="0", weight="72", row_id="4"),
+        portion("cup", weight="136", row_id="5"),
+    ]
+    assert IMPORTER.piece_portions(rows) == {"clove": 3.0, "fruit": 58.0}
+    with pytest.raises(ValueError):
+        IMPORTER.piece_portions([portion("piece", weight="0")])
+
+
+@pytest.mark.parametrize(
+    ("pieces", "expected"),
+    [
+        ({"large": 1, "medium": 1, "small": 1}, "medium"),
+        ({"fruit": 1, "large": 1}, "fruit"),
+        ({"large": 1, "small": 1}, "large"),
+        ({"potato large": 1, "potato medium": 1}, "potato medium"),
+        ({"clove": 1}, "clove"),
+        ({"slice": 1, "slice medium": 1, "medium": 1}, "medium"),
+        ({"slice": 1}, None),
+        ({"stick": 1, "pat": 1}, "stick"),
+        ({"cookie": 1, "bar": 1}, None),
+        ({}, None),
+    ],
+)
+def test_default_portion(pieces, expected):
+    assert IMPORTER.default_portion(pieces) == expected
 
 
 @pytest.mark.parametrize(
@@ -185,6 +252,8 @@ def test_cached_regeneration_is_reproducible(tmp_path, monkeypatch):
             "description": "example, raw",
             "kcal_per_100g": 52.0,
             "grams_per_cup": 120.0,
+            "portions": {},
+            "default_portion": None,
         }
     ]
     assert data["names"] == {"example": 1}

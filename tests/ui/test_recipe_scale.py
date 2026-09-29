@@ -34,10 +34,14 @@ SCALE_TEST_INGREDIENTS: List[Ingredient] = [
     Ingredient(item="bay leaves", measurements=[Measurement(amount="6-8", unit=None)]),
 ]
 
-# The catalog matches flour (910 kcal), sugar (387) and milk (373.6). Butter in
-# sticks, counted eggs, salt to taste and bay leaves stay unknown.
-SCALE_TEST_SUBTOTAL_1X = "Known ingredients: 1671 calories"
-SCALE_TEST_SUBTOTAL_2X = "Known ingredients: 3341 calories"
+# Every line is known: flour (910 kcal), sugar (387), milk (373.6), 1 1/2
+# sticks of butter (169.5 g, 1215.3), 3 large eggs (150 g, 214.5), and salt to
+# taste and a few bay leaves (negligible) sum to 3100.4 kcal. At 2x, 12-16 bay
+# leaves are past the trace limit, so they become unknown.
+SCALE_TEST_TOTAL_1X = "Whole recipe: approximately 3100 calories."
+SCALE_TEST_TOTAL_2X = (
+    "Known ingredients: 6201 calories, plus unknown calories from bay leaves."
+)
 
 
 def _sign_up(api_url: str) -> tuple[str, str, str]:
@@ -98,7 +102,7 @@ def test_calorie_estimates_follow_recipe_and_scale(
 ):
     recipe_id, token = scale_recipe
     section = page.get_by_role("region", name="Estimated calories", exact=True)
-    expect(section).to_contain_text(SCALE_TEST_SUBTOTAL_1X)
+    expect(section).to_contain_text(SCALE_TEST_TOTAL_1X)
     with _authed_client(api_url, token) as client:
         api = RecipesApi(client)
         original = api.get_recipe(recipe_id)
@@ -134,7 +138,7 @@ def test_calorie_estimates_follow_recipe_and_scale(
 
     # Switching to the earlier version must not retain the current subtotal.
     page.goto(f"{page.url.split('?')[0]}?version_id={original.version_id}")
-    expect(section).to_contain_text(SCALE_TEST_SUBTOTAL_1X)
+    expect(section).to_contain_text(SCALE_TEST_TOTAL_1X)
     expect(section).not_to_contain_text("Known ingredients: 774")
 
     with _authed_client(api_url, token) as client:
@@ -160,11 +164,11 @@ def test_calorie_estimates_follow_recipe_and_scale(
 
 def test_calorie_request_failure_clears_previous_result(scale_recipe, page: Page):
     section = page.get_by_role("region", name="Estimated calories", exact=True)
-    expect(section).to_contain_text(SCALE_TEST_SUBTOTAL_1X)
+    expect(section).to_contain_text(SCALE_TEST_TOTAL_1X)
     page.route("**/api/recipes/estimate-calories", lambda route: route.abort())
     page.locator(".scale-preset", has_text="2×").click()
     expect(section.get_by_role("alert")).to_contain_text("Could not estimate calories")
-    expect(section).not_to_contain_text("Known ingredients")
+    expect(section).not_to_contain_text("Whole recipe")
 
 
 def test_excessive_scale_is_rejected_before_requesting_calories(
@@ -177,7 +181,7 @@ def test_excessive_scale_is_rejected_before_requesting_calories(
         "scale-preset active"
     )
     section = page.get_by_role("region", name="Estimated calories", exact=True)
-    expect(section).to_contain_text(SCALE_TEST_SUBTOTAL_1X)
+    expect(section).to_contain_text(SCALE_TEST_TOTAL_1X)
     expect(section.get_by_role("alert")).not_to_be_visible()
     page.locator(".scale-preset", has_text="2×").click()
     page.locator(".scale-custom-input").fill("1000001")
@@ -185,7 +189,7 @@ def test_excessive_scale_is_rejected_before_requesting_calories(
     expect(page.locator(".scale-preset", has_text="2×")).to_have_class(
         "scale-preset active"
     )
-    expect(section).to_contain_text(SCALE_TEST_SUBTOTAL_2X)
+    expect(section).to_contain_text(SCALE_TEST_TOTAL_2X)
     expect(section.get_by_role("alert")).not_to_be_visible()
 
 

@@ -2223,6 +2223,35 @@
       "kind": "product"
     }
   },
+  "food_overrides": {
+    "basil, fresh": {
+      "trace_ok": true
+    },
+    "coriander (cilantro) leaves, raw": {
+      "trace_ok": true
+    },
+    "dill weed, fresh": {
+      "trace_ok": true
+    },
+    "egg, whole, raw, fresh": {
+      "default_portion": "large"
+    },
+    "parsley, fresh": {
+      "trace_ok": true
+    },
+    "peppermint, fresh": {
+      "trace_ok": true
+    },
+    "rosemary, fresh": {
+      "trace_ok": true
+    },
+    "spearmint, fresh": {
+      "trace_ok": true
+    },
+    "thyme, fresh": {
+      "trace_ok": true
+    }
+  },
   "not_food": {
     "drained brined white beans from above": "Refers to beans already listed earlier in the recipe; counting it would double count. Matches 'marinated pork from above' and 'prepared rice noodles from above'.",
     "for serving": "A serving suggestion, not an ingredient.",

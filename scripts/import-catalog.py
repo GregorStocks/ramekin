@@ -3,7 +3,8 @@
 Import the pinned USDA SR Legacy release into the ingredient catalog.
 
 Writes ramekin-core/src/catalog/data/usda.json: one record per food with its
-energy and volume density, plus the stripped-name index the resolver uses.
+energy, volume density, and per-piece weights, plus the stripped-name index the
+resolver uses.
 Hand-maintained entries, aliases, and citations live in curated.json; this
 script is a pure projection of the USDA archive.
 
@@ -16,6 +17,7 @@ import hashlib
 import io
 import json
 import math
+import re
 import urllib.request
 import zipfile
 from pathlib import Path
@@ -39,6 +41,52 @@ EXCLUDED_PORTIONS = {
 }
 TBSP_PER_CUP = 16.0
 TSP_PER_CUP = 48.0
+# Portion modifiers that measure volume, mass, or a package rather than a piece.
+NON_PIECE_MODIFIERS = {
+    "cup",
+    "cups",
+    "tbsp",
+    "tablespoon",
+    "tablespoons",
+    "tsp",
+    "teaspoon",
+    "teaspoons",
+    "fl oz",
+    "oz",
+    "lb",
+    "pint",
+    "quart",
+    "gallon",
+    "g",
+    "ml",
+    "liter",
+    "cubic inch",
+    "serving",
+    "nlea serving",
+    "package",
+    "can",
+    "can or bottle",
+    "container",
+    "jar",
+    "bottle",
+    "bag",
+    "packet",
+    "block",
+    "box",
+    "carton",
+    "tin",
+    "tub",
+    "scoop",
+    "portion",
+    "unit",
+    "item",
+}
+SIZE_WORDS = {"small", "medium", "large", "extra large", "jumbo"}
+# Preferred piece for a bare count, before falling back to "<piece> medium" or
+# the only piece.
+# Parts of a piece, which a bare count never means.
+PARTIAL_PIECES = {"slice", "strip", "wedge", "ring", "cube", "chip", "pat", "spear"}
+DEFAULT_PORTION_ORDER = ["medium", "fruit", "whole", "large", "small"]
 # Suffixes that carry no meaning in recipe ingredient names.
 NAME_SUFFIXES = [
     ", enriched, bleached",
@@ -141,6 +189,77 @@ def strip_name(description: str) -> str:
     return name
 
 
+def singular(word: str) -> str:
+    """Singularize a piece name the way catalog::piece_unit does."""
+    if word.endswith("leaves"):
+        return word[: -len("leaves")] + "leaf"
+    if word.endswith("s") and not word.endswith("ss") and len(word) > 3:
+        return word[:-1]
+    return word
+
+
+def portion_key(modifier: str) -> str | None:
+    """Normalize a piece portion's modifier ("medium (2-1/2" dia)" -> "medium",
+    "slice, large (1/4" thick)" -> "slice large", "cloves" -> "clove").
+
+    Volume, mass, and package measures are not pieces, and neither are the
+    cooked yield of a pound of meat or a whole recipe; all return None.
+    """
+    if re.search(r"yield from 1 lb|recipe yield", modifier.lower()):
+        return None
+    text = normalize(re.sub(r"\([^)]*\)?", " ", modifier))
+    parts = [part.strip() for part in text.split(",") if part.strip()]
+    if not parts:
+        return None
+    head = parts[0]
+    if (
+        head in NON_PIECE_MODIFIERS
+        or singular(head.split(" ")[0]) in NON_PIECE_MODIFIERS
+        or any(char.isdigit() for char in head)
+    ):
+        return None
+    words = head.split(" ")
+    # "large whole" and "slice raw" are the plain "large" and "slice".
+    if len(words) > 1 and words[-1] in ("whole", "raw"):
+        words.pop()
+    head = " ".join([singular(words[0]), *words[1:]])
+    if len(parts) > 1 and parts[1] in SIZE_WORDS:
+        head = f"{head} {parts[1]}"
+    return head
+
+
+def piece_portions(portions: list[dict]) -> dict[str, float]:
+    """Grams per single piece, keyed by portion_key. The first portion in
+    portion-table order wins when two share a key."""
+    pieces: dict[str, float] = {}
+    for p in portions:
+        key = portion_key(p["modifier"])
+        amount = float(p["amount"])
+        # Zero-amount rows are yield notes ("chicken, skin only"), not pieces.
+        if key is None or key in pieces or amount == 0:
+            continue
+        gram_weight = float(p["gram_weight"])
+        if not all(math.isfinite(v) and v > 0 for v in (amount, gram_weight)):
+            raise ValueError(f"Invalid piece portion: {p}")
+        pieces[key] = gram_weight / amount
+    return pieces
+
+
+def default_portion(pieces: dict[str, float]) -> str | None:
+    """The piece a bare count ("3 carrots") most likely means. Parts of a
+    piece (a slice, a wedge) never are."""
+    whole = [key for key in pieces if key.split(" ")[0] not in PARTIAL_PIECES]
+    for key in DEFAULT_PORTION_ORDER:
+        if key in whole:
+            return key
+    sized = sorted(key for key in whole if key.endswith(" medium"))
+    if sized:
+        return sized[0]
+    if len(whole) == 1:
+        return whole[0]
+    return None
+
+
 def build_data(foods: list[dict], nutrients: list[dict], portions: list[dict]) -> dict:
     if not foods or not portions:
         raise ValueError("Expected nonempty USDA food and portion tables")
@@ -187,6 +306,11 @@ def build_data(foods: list[dict], nutrients: list[dict], portions: list[dict]) -
     if not densities:
         raise ValueError("No USDA volume densities found")
 
+    pieces = {
+        food_id: piece_portions(portions_by_food.get(food_id, []))
+        for food_id in descriptions
+    }
+
     # A stripped name belongs to the first food with a density (portion-table
     # order), else to the first food in food-table order.
     names: dict[str, int] = {}
@@ -201,6 +325,8 @@ def build_data(foods: list[dict], nutrients: list[dict], portions: list[dict]) -
             "description": normalize(description),
             "kcal_per_100g": energy.get(food_id),
             "grams_per_cup": densities.get(food_id),
+            "portions": dict(sorted(pieces[food_id].items())),
+            "default_portion": default_portion(pieces[food_id]),
         }
         for food_id, description in descriptions.items()
     ]

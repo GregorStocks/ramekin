@@ -11,7 +11,7 @@
 mod resolve;
 mod volume;
 
-use std::collections::{BTreeMap, HashMap};
+use std::collections::{BTreeMap, HashMap, HashSet};
 use std::sync::LazyLock;
 
 use serde::Deserialize;
@@ -36,6 +36,10 @@ pub struct UsdaFood {
     pub description: String,
     pub kcal_per_100g: Option<f64>,
     pub grams_per_cup: Option<f64>,
+    /// Grams per piece, keyed by piece name ("clove", "large", "stalk medium").
+    pub portions: BTreeMap<String, f64>,
+    /// The piece a bare count ("3 carrots") means, if any.
+    pub default_portion: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -96,6 +100,18 @@ struct CuratedFile {
     /// Names that are not ingredients at all ("to serve"), with the reason.
     not_food: BTreeMap<String, String>,
     rewrites: BTreeMap<String, String>,
+    /// Corrections to USDA foods, keyed by their (unique) description.
+    food_overrides: BTreeMap<String, FoodOverride>,
+}
+
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct FoodOverride {
+    /// Replaces the imported default piece ("3 eggs" means large eggs).
+    default_portion: Option<String>,
+    /// Marks a food trace_ok (fresh herbs are listed by the sprig).
+    #[serde(default)]
+    trace_ok: bool,
 }
 
 /// A catalog entry a name can resolve to.
@@ -150,10 +166,10 @@ fn is_zero_calorie(food: &UsdaFood) -> bool {
     food.kcal_per_100g == Some(0.0)
 }
 
-/// Dried spices (USDA "spices, …", including black pepper) are commonly listed
-/// without an amount.
-fn is_trace_ok(food: &UsdaFood) -> bool {
-    food.description.starts_with("spices, ")
+/// Dried spices (USDA "spices, …", including black pepper) and curated foods
+/// are commonly listed without an amount.
+fn is_trace_ok(food: &UsdaFood, trace_ok_foods: &HashSet<u32>) -> bool {
+    food.description.starts_with("spices, ") || trace_ok_foods.contains(&food.fdc_id)
 }
 
 static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
@@ -165,10 +181,39 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
     for food in usda.foods {
         assert!(food.kcal_per_100g.is_none_or(|k| k.is_finite() && k >= 0.0));
         assert!(food.grams_per_cup.is_none_or(valid_density));
+        assert!(food.portions.values().all(|&grams| valid_density(grams)));
+        assert!(food
+            .default_portion
+            .as_ref()
+            .is_none_or(|piece| food.portions.contains_key(piece)));
         assert!(
             foods.insert(food.fdc_id, food).is_none(),
             "duplicate fdc_id"
         );
+    }
+
+    let mut trace_ok_foods = HashSet::new();
+    for (description, food_override) in curated.food_overrides {
+        let mut matches = foods
+            .values_mut()
+            .filter(|food| food.description == description);
+        let food = matches
+            .next()
+            .unwrap_or_else(|| panic!("food override {description:?} matches no food"));
+        assert!(
+            matches.next().is_none(),
+            "food override {description:?} matches several foods"
+        );
+        if let Some(piece) = food_override.default_portion {
+            assert!(
+                food.portions.contains_key(&piece),
+                "food override {description:?} has unknown portion {piece:?}"
+            );
+            food.default_portion = Some(piece);
+        }
+        if food_override.trace_ok {
+            trace_ok_foods.insert(food.fdc_id);
+        }
     }
 
     let mut entries = Vec::new();
@@ -210,7 +255,8 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             grams_per_cup,
             category: curated_entry.category,
             zero_calorie: food.is_some_and(is_zero_calorie),
-            trace_ok: curated_entry.trace_ok || food.is_some_and(is_trace_ok),
+            trace_ok: curated_entry.trace_ok
+                || food.is_some_and(|food| is_trace_ok(food, &trace_ok_foods)),
         });
     }
 
@@ -227,7 +273,7 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             grams_per_cup: food.grams_per_cup,
             category: None,
             zero_calorie: is_zero_calorie(food),
-            trace_ok: is_trace_ok(food),
+            trace_ok: is_trace_ok(food, &trace_ok_foods),
         });
     }
 
@@ -377,4 +423,70 @@ pub fn category(item: &str) -> Option<&'static str> {
 /// The display rewrite for an ingredient name (e.g. "salt" -> "kosher salt").
 pub fn rewrite(item: &str) -> Option<&'static str> {
     CATALOG.rewrites.get(&normalize(item)).map(String::as_str)
+}
+
+/// Size words a count can carry ("2 large eggs").
+const SIZES: [&str; 5] = ["small", "medium", "large", "extra large", "jumbo"];
+
+/// Parts of a piece; a size alone never means one of these. Matches the
+/// importer's `PARTIAL_PIECES`.
+const PARTIAL_PIECES: [&str; 8] = [
+    "slice", "strip", "wedge", "ring", "cube", "chip", "pat", "spear",
+];
+
+/// Normalize a counted unit to a portion key: lowercase, "extra-large" ->
+/// "extra large", and the first word singular ("cloves" -> "clove"). Matches
+/// the importer's `portion_key`.
+fn piece_unit(unit: &str) -> String {
+    let unit = normalize(&unit.replace('-', " "));
+    let (first, rest) = unit.split_once(' ').unwrap_or((&unit, ""));
+    let first = if let Some(stem) = first.strip_suffix("leaves") {
+        format!("{stem}leaf")
+    } else if let Some(stem) = first
+        .strip_suffix('s')
+        .filter(|stem| stem.chars().count() >= 3 && !stem.ends_with('s'))
+    {
+        stem.to_string()
+    } else {
+        first.to_string()
+    };
+    if rest.is_empty() {
+        first
+    } else {
+        format!("{first} {rest}")
+    }
+}
+
+/// Grams in one piece of this entry's food: `unit` is the counted unit ("clove",
+/// "large", "stalks"), or None for a bare count ("3 eggs"). A size the food has
+/// no exact portion for uses the one sized piece ("medium" potato is "potato
+/// medium"), else the default piece; a piece with sizes uses its medium
+/// ("stalk" celery is "stalk medium").
+pub fn grams_per_piece(entry: &Entry, unit: Option<&str>) -> Option<f64> {
+    let food = food(entry.fdc_id?)?;
+    let default = || {
+        food.default_portion
+            .as_ref()
+            .map(|piece| food.portions[piece])
+    };
+    let Some(unit) = unit.filter(|unit| !unit.trim().is_empty()) else {
+        return default();
+    };
+    let key = piece_unit(unit);
+    if let Some(&grams) = food.portions.get(&key) {
+        return Some(grams);
+    }
+    if SIZES.contains(&key.as_str()) {
+        let suffix = format!(" {key}");
+        let mut sized = food.portions.iter().filter(|(piece, _)| {
+            piece.ends_with(&suffix)
+                && !PARTIAL_PIECES.contains(&piece.split(' ').next().unwrap_or_default())
+        });
+        return match (sized.next(), sized.next()) {
+            (Some((_, &grams)), None) => Some(grams),
+            (None, _) => default(),
+            (Some(_), Some(_)) => None,
+        };
+    }
+    food.portions.get(&format!("{key} medium")).copied()
 }

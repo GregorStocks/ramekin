@@ -176,7 +176,10 @@ fn unknowns_are_explicit_and_never_zero() {
             "g",
             "Unsupported or missing quantity",
         ),
-        ("eggs", "2", "", "Unsupported quantity unit"),
+        // USDA has no per-head weight for garlic, only per clove.
+        ("garlic", "1", "head", "Unsupported quantity unit"),
+        ("flour", "2", "", "Unsupported quantity unit"),
+        ("canned chickpeas", "1", "can", "Unsupported quantity unit"),
         (
             "waffles, buttermilk, frozen, ready-to-heat",
             "1",
@@ -331,6 +334,153 @@ fn negligible_lines_are_known_zero() {
         (known(ingredient("ground cumin", "1", "cup")) - 360.0).abs() < 0.5,
         "96 g x 375 kcal"
     );
+}
+
+fn count(item: &str, amount: &str) -> ParsedIngredient {
+    ParsedIngredient {
+        measurements: vec![Measurement {
+            amount: Some(amount.into()),
+            unit: None,
+        }],
+        ..bare(item)
+    }
+}
+
+#[test]
+fn counted_ingredients_use_usda_piece_weights() {
+    let kcal = |ingredient: ParsedIngredient| {
+        let result = estimate(&[ingredient], None, 1.0).unwrap();
+        assert!(
+            result.unknown_ingredients.is_empty(),
+            "{:?}",
+            result.unknown_ingredients
+        );
+        result.known_calories.unwrap().min
+    };
+    let grams = |item: &str, grams: f64| kcal(ingredient(item, &grams.to_string(), "g"));
+    for (counted, item, expected_grams) in [
+        // A bare count of eggs means large eggs (a curated override).
+        (count("eggs", "3"), "eggs", 150.0),
+        (ingredient("eggs", "2", "large"), "eggs", 100.0),
+        (ingredient("eggs", "1", "extra-large"), "eggs", 56.0),
+        (ingredient("egg yolks", "2", "large"), "egg yolks", 34.0),
+        (ingredient("garlic", "2", "cloves"), "garlic", 6.0),
+        (ingredient("onion", "1", "medium"), "onion", 110.0),
+        (count("onion", "1"), "onion", 110.0),
+        // Sized pieces: "stalk" is the medium stalk, and a size finds the
+        // food's one sized piece ("potato medium").
+        (ingredient("celery", "1", "stalk"), "celery", 40.0),
+        (ingredient("potatoes", "2", "medium"), "potatoes", 426.0),
+        // A size the food has no portion for is its default piece.
+        (ingredient("lemon", "1", "large"), "lemon", 58.0),
+        (ingredient("butter", "1 1/2", "sticks"), "butter", 169.5),
+        (count("jalapeño pepper", "2"), "jalapeño pepper", 28.0),
+        (count("basil leaves", "10"), "basil leaves", 5.0),
+    ] {
+        let expected = grams(item, expected_grams);
+        assert!(
+            (kcal(counted.clone()) - expected).abs() < 1e-9,
+            "{counted:?}: expected {expected_grams} g"
+        );
+    }
+}
+
+#[test]
+fn packages_carry_their_own_weight_and_fill_words_are_ignored() {
+    let kcal = |item: &str, amount: &str, unit: &str| {
+        let result = estimate(&[ingredient(item, amount, unit)], None, 1.0).unwrap();
+        assert!(
+            result.unknown_ingredients.is_empty(),
+            "{unit}: {:?}",
+            result.unknown_ingredients
+        );
+        result.known_calories.unwrap().min
+    };
+    let can = kcal("chickpeas", "425.242846875", "g");
+    for unit in ["15-ounce can", "(15-ounce) can", "15 oz can", "15-oz. cans"] {
+        assert!((kcal("chickpeas", "1", unit) - can).abs() < 1e-9, "{unit}");
+    }
+    // The parser moves a parenthesized weight into the note:
+    // "2 (15-ounce) cans chickpeas" is unit "can", note "15-ounce, drained".
+    for note in ["15-ounce, drained", "15 oz", "15-ounce or 425-gram"] {
+        let noted = ParsedIngredient {
+            note: Some(note.into()),
+            ..ingredient("chickpeas", "2", "cans")
+        };
+        let result = estimate(&[noted], None, 1.0).unwrap();
+        assert!(
+            (result.known_calories.unwrap().min - 2.0 * can).abs() < 1e-9,
+            "{note}"
+        );
+    }
+    let ounces = |oz: f64| kcal("chickpeas", &(oz * 28.349523125).to_string(), "g");
+    let noted = ParsedIngredient {
+        note: Some("14 1/2-ounce".into()),
+        ..ingredient("chickpeas", "1", "can")
+    };
+    let result = estimate(&[noted], None, 1.0).unwrap();
+    assert!((result.known_calories.unwrap().min - ounces(14.5)).abs() < 1e-9);
+    let ranged = estimate(
+        &[ingredient("chickpeas", "2", "12- to 18-ounce packages")],
+        None,
+        1.0,
+    )
+    .unwrap()
+    .known_calories
+    .unwrap();
+    assert!((ranged.min - ounces(24.0)).abs() < 1e-9);
+    assert!((ranged.max - ounces(36.0)).abs() < 1e-9);
+    for note in ["drained", "about 15-ounce", "15-ounce-ish"] {
+        let noted = ParsedIngredient {
+            note: Some(note.into()),
+            ..ingredient("chickpeas", "1", "can")
+        };
+        let result = estimate(&[noted], None, 1.0).unwrap();
+        assert!(result.known_calories.is_none(), "{note}");
+    }
+    assert!((kcal("chickpeas", "1", "425-gram can") - kcal("chickpeas", "425", "g")).abs() < 1e-9);
+    for unit in [
+        "heaped tsp",
+        "heaping tsp",
+        "scant tsp",
+        "slightly heaped tsp",
+    ] {
+        assert_eq!(
+            kcal("granulated sugar", "1", unit),
+            kcal("granulated sugar", "1", "tsp")
+        );
+    }
+}
+
+#[test]
+fn counted_trace_foods_without_a_piece_weight_are_negligible() {
+    let known = |ingredient: ParsedIngredient| {
+        let result = estimate(&[ingredient], None, 1.0).unwrap();
+        assert!(
+            result.unknown_ingredients.is_empty(),
+            "{:?}",
+            result.unknown_ingredients
+        );
+        result.known_calories.unwrap().max
+    };
+    assert_eq!(known(count("bay leaves", "2")), 0.0);
+    assert_eq!(known(ingredient("bay leaves", "2", "leaves")), 0.0);
+    assert_eq!(known(ingredient("cinnamon", "1", "stick")), 0.0);
+    assert_eq!(known(count("bay leaves", "6-8")), 0.0);
+    // Past a handful, including after scaling, the calories are unknown
+    // rather than zero.
+    let doubled = estimate(&[count("bay leaves", "6-8")], None, 2.0).unwrap();
+    assert!(doubled.known_calories.is_none());
+    for amount in ["100", "8-12"] {
+        let many = estimate(&[count("bay leaves", amount)], None, 1.0).unwrap();
+        assert!(many.known_calories.is_none(), "{amount}");
+    }
+    assert_eq!(known(ingredient("thyme", "4", "sprig")), 0.0);
+    // A measured amount of a fresh herb still counts.
+    assert!(known(ingredient("basil", "10", "g")) > 0.0);
+    // Only small pieces of trace foods: garlic heads are not negligible.
+    let head = estimate(&[ingredient("garlic", "1", "head")], None, 1.0).unwrap();
+    assert!(head.known_calories.is_none());
 }
 
 #[test]
