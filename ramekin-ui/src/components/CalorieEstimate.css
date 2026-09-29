@@ -32,7 +32,12 @@
   gap: 1rem;
 }
 
+.calorie-breakdown li > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .calorie-line-text {
   color: var(--text-muted);
-  white-space: nowrap;
+  text-align: right;
 }
