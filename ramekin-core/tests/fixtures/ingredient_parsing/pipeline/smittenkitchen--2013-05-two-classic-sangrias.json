@@ -197,14 +197,14 @@
     {
       "raw": "2 oranges, cut into wedges, for garnish",
       "expected": {
-        "item": "oranges, cut into wedges",
+        "item": "oranges",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "for garnish",
+        "note": "cut into wedges, for garnish",
         "category": "Produce"
       }
     },

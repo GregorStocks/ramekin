@@ -210,14 +210,14 @@
     {
       "raw": "1 lime, cut into wedges, for serving",
       "expected": {
-        "item": "lime, cut into wedges",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "for serving",
+        "note": "cut into wedges, for serving",
         "category": "Produce"
       }
     }

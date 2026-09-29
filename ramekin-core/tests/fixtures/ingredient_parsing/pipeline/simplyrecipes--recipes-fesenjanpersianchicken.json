@@ -99,7 +99,7 @@
     {
       "raw": "2 pounds boneless skinless chicken thighs and/or breasts, trimmed of excess fat, cut into medium size pieces, patted dry and salted",
       "expected": {
-        "item": "boneless skinless chicken thighs and/or breasts, trimmed of excess fat, cut into medium size pieces",
+        "item": "boneless skinless chicken thighs and/or breasts",
         "measurements": [
           {
             "amount": "2",
@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": "patted dry and salted",
+        "note": "trimmed of excess fat, cut into medium size pieces, patted dry and salted",
         "category": "Meat & Seafood"
       }
     },

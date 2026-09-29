@@ -41,14 +41,14 @@
     {
       "raw": "2 large onions , halved and sliced thin, divided",
       "expected": {
-        "item": "onions, halved and sliced thin",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "divided",
+        "note": "halved and sliced thin, divided",
         "category": "Produce"
       }
     },

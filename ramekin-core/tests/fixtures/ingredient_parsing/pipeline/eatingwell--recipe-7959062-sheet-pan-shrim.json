@@ -169,7 +169,7 @@
     {
       "raw": "1 pound large shrimp (24-30 count), peeled and deveined, halved lengthwise",
       "expected": {
-        "item": "large shrimp, peeled and deveined",
+        "item": "large shrimp",
         "measurements": [
           {
             "amount": "1",
@@ -180,7 +180,7 @@
             "unit": "g"
           }
         ],
-        "note": "24-30 count, halved lengthwise",
+        "note": "24-30 count, peeled and deveined, halved lengthwise",
         "category": "Meat & Seafood"
       }
     },

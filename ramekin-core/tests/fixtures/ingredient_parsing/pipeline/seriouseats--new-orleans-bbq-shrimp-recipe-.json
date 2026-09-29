@@ -5,7 +5,7 @@
     {
       "raw": "24 tablespoons (3 sticks; 340 g) cold unsalted butter, cut into 1/2-inch cubes, divided",
       "expected": {
-        "item": "cold unsalted butter, cut into 1/2-inch cubes",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "24",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "cut into 1/2-inch cubes, divided",
         "category": "Dairy & Eggs"
       }
     },

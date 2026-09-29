@@ -786,6 +786,13 @@ fn test_trailing_comma_notes_never_peel_listed_foods() {
         "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions"
     );
     assert_eq!(parsed.note.as_deref(), Some("for topping"));
+    let parsed =
+        super::super::parse_ingredient("1 egg, beaten with 1 teaspoon water, for egg wash");
+    assert_eq!(parsed.item, "egg");
+    assert_eq!(
+        parsed.note.as_deref(),
+        Some("beaten with 1 teaspoon water, for egg wash")
+    );
     let parsed = super::super::parse_ingredient("1/2 cup feta, drained, crumbled");
     assert_eq!(parsed.item, "feta");
     assert_eq!(parsed.note.as_deref(), Some("drained, crumbled"));

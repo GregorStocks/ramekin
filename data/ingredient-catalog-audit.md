@@ -50,9 +50,9 @@ Estimate status with at most 3 uncounted: Complete 10.8%, Insufficient 31.6%, Pa
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 9602 | `573cbf43eb9c` |
-| Density | 3763 | `b3412fc816a5` |
-| Shopping category | 746 | `181238be6a40` |
+| Nutrition (all failures) | 9597 | `ae34c58659e1` |
+| Density | 3762 | `2b6f26a804a7` |
+| Shopping category | 745 | `9416271b4a5d` |
 
 ## Paprika fixtures
 
@@ -86,7 +86,7 @@ Estimate status with at most 3 uncounted: Complete 16.5%, Insufficient 24.5%, Pa
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 807 | `ad464d09e5cf` |
+| Nutrition (all failures) | 807 | `0848813128b9` |
 | Density | 298 | `5b86d5355882` |
 | Shopping category | 83 | `79c0733a841c` |
 
@@ -122,7 +122,7 @@ Estimate status with at most 3 uncounted: Complete 16.0%, Insufficient 20.9%, Pa
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 720 | `ed9d5791006e` |
+| Nutrition (all failures) | 720 | `8455445a4f6a` |
 | Density | 291 | `3d8506c0bcd3` |
 | Shopping category | 53 | `0e6d962b1215` |
 

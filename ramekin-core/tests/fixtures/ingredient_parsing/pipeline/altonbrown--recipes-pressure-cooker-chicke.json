@@ -103,14 +103,14 @@
     {
       "raw": "1 (5-pound) roaster chicken, cut into 8 to 10 pieces, with the skin removed",
       "expected": {
-        "item": "roaster chicken, cut into 8 to 10 pieces",
+        "item": "roaster chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "5-pound, with the skin removed",
+        "note": "5-pound, cut into 8 to 10 pieces, with the skin removed",
         "category": "Meat & Seafood"
       }
     },

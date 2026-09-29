@@ -84,14 +84,14 @@
     {
       "raw": "3 large yams or orange-fleshed sweet potatoes, cut into 4 lengthwise wedges, or 8, if your yams are very thick",
       "expected": {
-        "item": "yams or orange-fleshed sweet potatoes, cut into 4 lengthwise wedges",
+        "item": "yams or orange-fleshed sweet potatoes",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "or 8, if your yams are very thick",
+        "note": "cut into 4 lengthwise wedges, or 8, if your yams are very thick",
         "category": "Produce"
       }
     },

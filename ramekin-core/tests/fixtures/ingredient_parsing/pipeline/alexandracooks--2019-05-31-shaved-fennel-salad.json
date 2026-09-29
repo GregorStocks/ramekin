@@ -60,7 +60,7 @@
     {
       "raw": "1/4 lb. asparagus, peeled with a peeler, see notes above or snap peas (100 g) snap peas, stemmed and sliced on the diagonal",
       "expected": {
-        "item": "asparagus, peeled with a peeler",
+        "item": "asparagus",
         "measurements": [
           {
             "amount": "0.25",
@@ -71,7 +71,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes above or snap peas snap peas, stemmed and sliced on the diagonal",
+        "note": "peeled with a peeler, see notes above or snap peas snap peas, stemmed and sliced on the diagonal",
         "category": "Produce"
       }
     },

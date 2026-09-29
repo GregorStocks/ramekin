@@ -186,7 +186,7 @@
     {
       "raw": "1 tablespoon (15 grams) butter, cut into 6 pieces, kept cold",
       "expected": {
-        "item": "butter, cut into 6 pieces",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
@@ -197,7 +197,7 @@
             "unit": "g"
           }
         ],
-        "note": "kept cold",
+        "note": "cut into 6 pieces, kept cold",
         "category": "Dairy & Eggs"
       }
     },

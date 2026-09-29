@@ -23,21 +23,21 @@
     {
       "raw": "1 1/2 teaspoons teaspoon cumin seeds, toasted and cooled if you have the patience, ground will work here as well",
       "expected": {
-        "item": "teaspoon cumin seeds, toasted and cooled if you have the patience",
+        "item": "teaspoon cumin seeds",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": "ground will work here as well",
+        "note": "toasted and cooled if you have the patience, ground will work here as well",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 1/2 teaspoons coriander seeds, toasted and cooled if you have the patience, ground will work here as well",
       "expected": {
-        "item": "coriander seeds, toasted and cooled if you have the patience",
+        "item": "coriander seeds",
         "measurements": [
           {
             "amount": "1.5",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": "ground will work here as well",
+        "note": "toasted and cooled if you have the patience, ground will work here as well",
         "category": "Spices & Seasonings"
       }
     },

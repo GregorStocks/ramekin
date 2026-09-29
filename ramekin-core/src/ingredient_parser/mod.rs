@@ -976,6 +976,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                     || is_trailing_qualifier(&potential_note)
             } else {
                 is_strict_trailing_prep_note(&potential_note)
+                    || item::is_prep_phrase(&potential_note)
                     || guidance
                     || is_trailing_qualifier(&potential_note)
             };
