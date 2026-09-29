@@ -6,7 +6,9 @@ README.md
 docs/AuthApi.md
 docs/BookmarkletTokenResponse.md
 docs/CalorieEstimateResponse.md
+docs/CalorieLine.md
 docs/CalorieRange.md
+docs/CalorieStatus.md
 docs/CaptureRequest.md
 docs/ClearCheckedResponse.md
 docs/ClientLogsApi.md
@@ -85,7 +87,6 @@ docs/TagsApi.md
 docs/TagsListResponse.md
 docs/TestingApi.md
 docs/UnauthedPingResponse.md
-docs/UnknownCalorieIngredient.md
 docs/UpdateMealPlanRequest.md
 docs/UpdateRecipeRequest.md
 docs/UpdateShoppingListItemRequest.md
@@ -111,7 +112,9 @@ src/apis/users_api.rs
 src/lib.rs
 src/models/bookmarklet_token_response.rs
 src/models/calorie_estimate_response.rs
+src/models/calorie_line.rs
 src/models/calorie_range.rs
+src/models/calorie_status.rs
 src/models/capture_request.rs
 src/models/clear_checked_response.rs
 src/models/create_client_log_request.rs
@@ -181,7 +184,6 @@ src/models/sync_updated_item.rs
 src/models/tag_item.rs
 src/models/tags_list_response.rs
 src/models/unauthed_ping_response.rs
-src/models/unknown_calorie_ingredient.rs
 src/models/update_meal_plan_request.rs
 src/models/update_recipe_request.rs
 src/models/update_shopping_list_item_request.rs

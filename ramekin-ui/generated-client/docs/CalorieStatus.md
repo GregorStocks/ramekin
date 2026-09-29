@@ -1,26 +1,21 @@
 
-# UnknownCalorieIngredient
+# CalorieStatus
 
+How far to trust the estimate, from how many ingredients it couldn\'t count.
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`index` | number
-`item` | string
-`reason` | string
 
 ## Example
 
 ```typescript
-import type { UnknownCalorieIngredient } from ''
+import type { CalorieStatus } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "index": null,
-  "item": null,
-  "reason": null,
-} satisfies UnknownCalorieIngredient
+} satisfies CalorieStatus
 
 console.log(example)
 
@@ -29,7 +24,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as UnknownCalorieIngredient
+const exampleParsed = JSON.parse(exampleJSON) as CalorieStatus
 console.log(exampleParsed)
 ```
 

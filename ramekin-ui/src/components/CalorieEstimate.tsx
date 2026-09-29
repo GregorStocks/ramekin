@@ -30,24 +30,34 @@ export default function CalorieEstimate(props: {
       <Show when={!estimate.loading && !estimate.error && estimate()}>
         {(result) => (
           <>
-            <p>{result().summary}</p>
-            <Show when={result().perServingSummary}>
-              <p>{result().perServingSummary}</p>
+            <p class="calorie-headline">{result().headline}</p>
+            <Show when={result().secondary}>
+              <p class="calorie-secondary">{result().secondary}</p>
             </Show>
-            <Show when={result().unknownIngredients.length > 0}>
-              <ul>
-                <For each={result().unknownIngredients}>
-                  {(ingredient) => (
-                    <li>
-                      {ingredient.item}: {ingredient.reason}
-                    </li>
-                  )}
-                </For>
-              </ul>
+            <Show when={result().notCounted.length > 0}>
+              <p class="calorie-secondary">
+                Not counted: {result().notCounted.join(", ")}
+              </p>
             </Show>
-            <p>
-              Based on USDA reference foods and the listed ingredient amounts.
-            </p>
+            <Show when={result().lines.length > 0}>
+              <details class="calorie-breakdown">
+                <summary>How is this calculated?</summary>
+                <ul>
+                  <For each={result().lines}>
+                    {(line) => (
+                      <li>
+                        <span>{line.item}</span>
+                        <span class="calorie-line-text">{line.text}</span>
+                      </li>
+                    )}
+                  </For>
+                </ul>
+                <p class="calorie-secondary">
+                  Based on USDA reference foods and the listed ingredient
+                  amounts.
+                </p>
+              </details>
+            </Show>
           </>
         )}
       </Show>

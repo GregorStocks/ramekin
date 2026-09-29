@@ -14,10 +14,10 @@
 
 import unittest
 
-from ramekin_client.models.unknown_calorie_ingredient import UnknownCalorieIngredient
+from ramekin_client.models.calorie_line import CalorieLine
 
-class TestUnknownCalorieIngredient(unittest.TestCase):
-    """UnknownCalorieIngredient unit test stubs"""
+class TestCalorieLine(unittest.TestCase):
+    """CalorieLine unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,30 +25,33 @@ class TestUnknownCalorieIngredient(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UnknownCalorieIngredient:
-        """Test UnknownCalorieIngredient
+    def make_instance(self, include_optional) -> CalorieLine:
+        """Test CalorieLine
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `UnknownCalorieIngredient`
+        # uncomment below to create an instance of `CalorieLine`
         """
-        model = UnknownCalorieIngredient()
+        model = CalorieLine()
         if include_optional:
-            return UnknownCalorieIngredient(
+            return CalorieLine(
+                calories = ramekin_client.models.calorie_range.CalorieRange(
+                    max = 1.337, 
+                    min = 1.337, ),
                 index = 0,
                 item = '',
-                reason = ''
+                text = ''
             )
         else:
-            return UnknownCalorieIngredient(
+            return CalorieLine(
                 index = 0,
                 item = '',
-                reason = '',
+                text = '',
         )
         """
 
-    def testUnknownCalorieIngredient(self):
-        """Test UnknownCalorieIngredient"""
+    def testCalorieLine(self):
+        """Test CalorieLine"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

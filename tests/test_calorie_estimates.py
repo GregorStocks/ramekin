@@ -44,11 +44,24 @@ def test_estimate_ranges_partial_unknown_and_empty(server_url, authed_api_client
     result = response.json()
     assert result["known_calories"] == {"min": 774, "max": 1548}
     assert result["per_serving_calories"] == {"min": 96.75, "max": 193.5}
-    assert result["unknown_ingredients"] == [
-        {"index": 1, "item": "yogurt", "reason": "Ambiguous ingredient"}
+    assert result["status"] == "partial"
+    assert result["headline"] == "At least ~97 kcal per serving"
+    assert result["secondary"] == "At least ~770 kcal for the whole recipe"
+    assert result["not_counted"] == ["yogurt"]
+    assert result["lines"] == [
+        {
+            "index": 0,
+            "item": "granulated sugar",
+            "calories": {"min": 774, "max": 1548},
+            "text": "~770–1,550 kcal",
+        },
+        {
+            "index": 1,
+            "item": "yogurt",
+            "calories": None,
+            "text": "Could be several foods",
+        },
     ]
-    assert "partial whole-recipe subtotal" in result["summary"]
-    assert "partial subtotal" in result["per_serving_summary"]
     assert (
         result
         == estimate(server_url, client, [sugar, yogurt], scale=2, servings="4").json()
@@ -73,13 +86,15 @@ def test_estimate_negligible_compound_and_skipped_lines(server_url, authed_api_c
     result = response.json()
     # Seasoning to taste counts as zero; the header and parchment are skipped.
     assert result["known_calories"] == {"min": 387, "max": 387}
-    assert result["unknown_ingredients"] == [
-        {
-            "index": 4,
-            "item": "olive oil and balsamic vinegar",
-            "reason": "Several ingredients share one amount",
-        }
+    assert [line["text"] for line in result["lines"]] == [
+        "~390 kcal",
+        "Negligible",
+        "Not a food",
+        "Not a food",
+        "Several foods share one amount",
     ]
+    assert result["status"] == "partial"
+    assert result["not_counted"] == ["olive oil and balsamic vinegar"]
 
 
 @pytest.mark.parametrize(
@@ -105,7 +120,7 @@ def test_estimate_preserved_parser_amounts(
     )
     assert response.status_code == 200
     result = response.json()
-    assert result["unknown_ingredients"] == []
+    assert result["status"] == "complete"
     assert result["known_calories"]["min"] == pytest.approx(expected)
     assert result["known_calories"]["max"] == pytest.approx(expected)
     assert result["per_serving_calories"]["min"] == pytest.approx(expected / 8)
@@ -140,11 +155,28 @@ def test_estimate_uses_displayed_version_and_edited_quantities(
             server_url, client, recipe.ingredients, servings=recipe.servings
         ).json()
         assert result["known_calories"] == {"min": expected, "max": expected}
-        assert "Whole recipe: approximately" in result["summary"]
-        assert result["unknown_ingredients"] == []
+        assert result["status"] == "complete"
+        assert result["headline"].endswith("kcal per serving")
+        assert result["not_counted"] == []
         assert recipe.nutritional_info == "Imported nutrition text"
     # The estimate is stateless, including a changed quantity not yet saved.
     result = estimate(
         server_url, client, [make_ingredient("granulated sugar", "1", "cup")]
     ).json()
     assert result["known_calories"] == {"min": 774, "max": 774}
+
+
+def test_estimate_status_follows_uncounted_ingredients(server_url, authed_api_client):
+    client, _ = authed_api_client
+    sugar = make_ingredient("granulated sugar", "100", "g")
+    unknown = [make_ingredient(f"moon dust {i}", "1", "cup") for i in range(4)]
+    for count, status in [(0, "complete"), (3, "partial"), (4, "insufficient")]:
+        result = estimate(server_url, client, [sugar, *unknown[:count]]).json()
+        assert result["status"] == status, count
+    insufficient = estimate(server_url, client, [sugar, *unknown]).json()
+    assert insufficient["headline"] == "Not enough ingredient data to estimate calories"
+    assert insufficient["secondary"] == "4 ingredients couldn't be counted."
+    assert insufficient["not_counted"] == []
+    empty = estimate(server_url, client, []).json()
+    assert empty["status"] == "empty"
+    assert empty["headline"] == "No ingredients to estimate"

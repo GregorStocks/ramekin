@@ -27,7 +27,9 @@ RamekinClient/Classes/OpenAPIs/JSONEncodingHelper.swift
 RamekinClient/Classes/OpenAPIs/Models.swift
 RamekinClient/Classes/OpenAPIs/Models/BookmarkletTokenResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CalorieEstimateResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/CalorieLine.swift
 RamekinClient/Classes/OpenAPIs/Models/CalorieRange.swift
+RamekinClient/Classes/OpenAPIs/Models/CalorieStatus.swift
 RamekinClient/Classes/OpenAPIs/Models/CaptureRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ClearCheckedResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateClientLogRequest.swift
@@ -96,7 +98,6 @@ RamekinClient/Classes/OpenAPIs/Models/SyncUpdatedItem.swift
 RamekinClient/Classes/OpenAPIs/Models/TagItem.swift
 RamekinClient/Classes/OpenAPIs/Models/TagsListResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/UnauthedPingResponse.swift
-RamekinClient/Classes/OpenAPIs/Models/UnknownCalorieIngredient.swift
 RamekinClient/Classes/OpenAPIs/Models/UpdateMealPlanRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/UpdateRecipeRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/UpdateShoppingListItemRequest.swift
@@ -110,7 +111,9 @@ RamekinClient/Classes/OpenAPIs/Validation.swift
 docs/AuthAPI.md
 docs/BookmarkletTokenResponse.md
 docs/CalorieEstimateResponse.md
+docs/CalorieLine.md
 docs/CalorieRange.md
+docs/CalorieStatus.md
 docs/CaptureRequest.md
 docs/ClearCheckedResponse.md
 docs/ClientLogsAPI.md
@@ -189,7 +192,6 @@ docs/TagsAPI.md
 docs/TagsListResponse.md
 docs/TestingAPI.md
 docs/UnauthedPingResponse.md
-docs/UnknownCalorieIngredient.md
 docs/UpdateMealPlanRequest.md
 docs/UpdateRecipeRequest.md
 docs/UpdateShoppingListItemRequest.md

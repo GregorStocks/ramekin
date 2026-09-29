@@ -1,16 +1,19 @@
 # CalorieEstimateResponse
 
+Every display string is final; clients render them as-is.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **database_version** | **str** | Identifies the pinned source data, aliases, and calculation rules. | 
-**known_calories** | [**CalorieRange**](CalorieRange.md) | Null when no ingredient could be estimated. Otherwise a subtotal that may be partial. | [optional] 
+**headline** | **str** | The main line: \&quot;~520 kcal per serving\&quot;, \&quot;At least ~3,100 kcal for the whole recipe\&quot;, or \&quot;Not enough ingredient data to estimate calories\&quot;. | 
+**known_calories** | [**CalorieRange**](CalorieRange.md) | Null when nothing was counted. A lower bound when status is partial. | [optional] 
+**lines** | [**List[CalorieLine]**](CalorieLine.md) | The breakdown, one entry per ingredient in order. | 
+**not_counted** | **List[str]** | For a partial estimate, the ingredients its lower bound leaves out. | 
 **per_serving_calories** | [**CalorieRange**](CalorieRange.md) |  | [optional] 
-**per_serving_summary** | **str** |  | [optional] 
-**summary** | **str** |  | 
-**unknown_ingredients** | [**List[UnknownCalorieIngredient]**](UnknownCalorieIngredient.md) |  | 
+**secondary** | **str** | Shown under the headline when present. | [optional] 
+**status** | [**CalorieStatus**](CalorieStatus.md) |  | 
 
 ## Example
 

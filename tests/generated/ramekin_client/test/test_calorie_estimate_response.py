@@ -36,31 +36,41 @@ class TestCalorieEstimateResponse(unittest.TestCase):
         if include_optional:
             return CalorieEstimateResponse(
                 database_version = '',
+                headline = '',
                 known_calories = ramekin_client.models.calorie_range.CalorieRange(
                     max = 1.337, 
                     min = 1.337, ),
+                lines = [
+                    ramekin_client.models.calorie_line.CalorieLine(
+                        calories = null, 
+                        index = 0, 
+                        item = '', 
+                        text = '', )
+                    ],
+                not_counted = [
+                    ''
+                    ],
                 per_serving_calories = ramekin_client.models.calorie_range.CalorieRange(
                     max = 1.337, 
                     min = 1.337, ),
-                per_serving_summary = '',
-                summary = '',
-                unknown_ingredients = [
-                    ramekin_client.models.unknown_calorie_ingredient.UnknownCalorieIngredient(
-                        index = 0, 
-                        item = '', 
-                        reason = '', )
-                    ]
+                secondary = '',
+                status = 'complete'
             )
         else:
             return CalorieEstimateResponse(
                 database_version = '',
-                summary = '',
-                unknown_ingredients = [
-                    ramekin_client.models.unknown_calorie_ingredient.UnknownCalorieIngredient(
+                headline = '',
+                lines = [
+                    ramekin_client.models.calorie_line.CalorieLine(
+                        calories = null, 
                         index = 0, 
                         item = '', 
-                        reason = '', )
+                        text = '', )
                     ],
+                not_counted = [
+                    ''
+                    ],
+                status = 'complete',
         )
         """
 

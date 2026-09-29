@@ -81,7 +81,9 @@ Class | Method | HTTP request | Description
 
  - [BookmarkletTokenResponse](docs/BookmarkletTokenResponse.md)
  - [CalorieEstimateResponse](docs/CalorieEstimateResponse.md)
+ - [CalorieLine](docs/CalorieLine.md)
  - [CalorieRange](docs/CalorieRange.md)
+ - [CalorieStatus](docs/CalorieStatus.md)
  - [CaptureRequest](docs/CaptureRequest.md)
  - [ClearCheckedResponse](docs/ClearCheckedResponse.md)
  - [CreateClientLogRequest](docs/CreateClientLogRequest.md)
@@ -150,7 +152,6 @@ Class | Method | HTTP request | Description
  - [TagItem](docs/TagItem.md)
  - [TagsListResponse](docs/TagsListResponse.md)
  - [UnauthedPingResponse](docs/UnauthedPingResponse.md)
- - [UnknownCalorieIngredient](docs/UnknownCalorieIngredient.md)
  - [UpdateMealPlanRequest](docs/UpdateMealPlanRequest.md)
  - [UpdateRecipeRequest](docs/UpdateRecipeRequest.md)
  - [UpdateShoppingListItemRequest](docs/UpdateShoppingListItemRequest.md)

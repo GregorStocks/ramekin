@@ -11,41 +11,44 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { CalorieRangeFromJSON, CalorieRangeToJSON, } from './CalorieRange';
 /**
- * Check if a given object implements the UnknownCalorieIngredient interface.
+ * Check if a given object implements the CalorieLine interface.
  */
-export function instanceOfUnknownCalorieIngredient(value) {
+export function instanceOfCalorieLine(value) {
     if (!('index' in value) || value['index'] === undefined)
         return false;
     if (!('item' in value) || value['item'] === undefined)
         return false;
-    if (!('reason' in value) || value['reason'] === undefined)
+    if (!('text' in value) || value['text'] === undefined)
         return false;
     return true;
 }
-export function UnknownCalorieIngredientFromJSON(json) {
-    return UnknownCalorieIngredientFromJSONTyped(json, false);
+export function CalorieLineFromJSON(json) {
+    return CalorieLineFromJSONTyped(json, false);
 }
-export function UnknownCalorieIngredientFromJSONTyped(json, ignoreDiscriminator) {
+export function CalorieLineFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
+        'calories': json['calories'] == null ? undefined : CalorieRangeFromJSON(json['calories']),
         'index': json['index'],
         'item': json['item'],
-        'reason': json['reason'],
+        'text': json['text'],
     };
 }
-export function UnknownCalorieIngredientToJSON(json) {
-    return UnknownCalorieIngredientToJSONTyped(json, false);
+export function CalorieLineToJSON(json) {
+    return CalorieLineToJSONTyped(json, false);
 }
-export function UnknownCalorieIngredientToJSONTyped(value, ignoreDiscriminator = false) {
+export function CalorieLineToJSONTyped(value, ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }
     return {
+        'calories': CalorieRangeToJSON(value['calories']),
         'index': value['index'],
         'item': value['item'],
-        'reason': value['reason'],
+        'text': value['text'],
     };
 }

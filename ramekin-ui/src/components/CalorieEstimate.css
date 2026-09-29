@@ -1,0 +1,38 @@
+.calorie-headline {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.calorie-secondary {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted);
+}
+
+.calorie-breakdown {
+  margin-top: 0.75rem;
+}
+
+.calorie-breakdown > summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.calorie-breakdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.calorie-breakdown li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.calorie-line-text {
+  color: var(--text-muted);
+  white-space: nowrap;
+}

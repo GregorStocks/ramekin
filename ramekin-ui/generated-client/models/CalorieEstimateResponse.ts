@@ -13,6 +13,20 @@
  */
 
 import { mapValues } from '../runtime';
+import type { CalorieStatus } from './CalorieStatus';
+import {
+    CalorieStatusFromJSON,
+    CalorieStatusFromJSONTyped,
+    CalorieStatusToJSON,
+    CalorieStatusToJSONTyped,
+} from './CalorieStatus';
+import type { CalorieLine } from './CalorieLine';
+import {
+    CalorieLineFromJSON,
+    CalorieLineFromJSONTyped,
+    CalorieLineToJSON,
+    CalorieLineToJSONTyped,
+} from './CalorieLine';
 import type { CalorieRange } from './CalorieRange';
 import {
     CalorieRangeFromJSON,
@@ -20,16 +34,9 @@ import {
     CalorieRangeToJSON,
     CalorieRangeToJSONTyped,
 } from './CalorieRange';
-import type { UnknownCalorieIngredient } from './UnknownCalorieIngredient';
-import {
-    UnknownCalorieIngredientFromJSON,
-    UnknownCalorieIngredientFromJSONTyped,
-    UnknownCalorieIngredientToJSON,
-    UnknownCalorieIngredientToJSONTyped,
-} from './UnknownCalorieIngredient';
 
 /**
- * 
+ * Every display string is final; clients render them as-is.
  * @export
  * @interface CalorieEstimateResponse
  */
@@ -41,11 +48,30 @@ export interface CalorieEstimateResponse {
      */
     databaseVersion: string;
     /**
-     * Null when no ingredient could be estimated. Otherwise a subtotal that may be partial.
+     * The main line: "~520 kcal per serving", "At least ~3,100 kcal for the
+     * whole recipe", or "Not enough ingredient data to estimate calories".
+     * @type {string}
+     * @memberof CalorieEstimateResponse
+     */
+    headline: string;
+    /**
+     * Null when nothing was counted. A lower bound when status is partial.
      * @type {CalorieRange}
      * @memberof CalorieEstimateResponse
      */
     knownCalories?: CalorieRange | null;
+    /**
+     * The breakdown, one entry per ingredient in order.
+     * @type {Array<CalorieLine>}
+     * @memberof CalorieEstimateResponse
+     */
+    lines: Array<CalorieLine>;
+    /**
+     * For a partial estimate, the ingredients its lower bound leaves out.
+     * @type {Array<string>}
+     * @memberof CalorieEstimateResponse
+     */
+    notCounted: Array<string>;
     /**
      * 
      * @type {CalorieRange}
@@ -53,32 +79,30 @@ export interface CalorieEstimateResponse {
      */
     perServingCalories?: CalorieRange | null;
     /**
-     * 
+     * Shown under the headline when present.
      * @type {string}
      * @memberof CalorieEstimateResponse
      */
-    perServingSummary?: string | null;
+    secondary?: string | null;
     /**
      * 
-     * @type {string}
+     * @type {CalorieStatus}
      * @memberof CalorieEstimateResponse
      */
-    summary: string;
-    /**
-     * 
-     * @type {Array<UnknownCalorieIngredient>}
-     * @memberof CalorieEstimateResponse
-     */
-    unknownIngredients: Array<UnknownCalorieIngredient>;
+    status: CalorieStatus;
 }
+
+
 
 /**
  * Check if a given object implements the CalorieEstimateResponse interface.
  */
 export function instanceOfCalorieEstimateResponse(value: object): value is CalorieEstimateResponse {
     if (!('databaseVersion' in value) || value['databaseVersion'] === undefined) return false;
-    if (!('summary' in value) || value['summary'] === undefined) return false;
-    if (!('unknownIngredients' in value) || value['unknownIngredients'] === undefined) return false;
+    if (!('headline' in value) || value['headline'] === undefined) return false;
+    if (!('lines' in value) || value['lines'] === undefined) return false;
+    if (!('notCounted' in value) || value['notCounted'] === undefined) return false;
+    if (!('status' in value) || value['status'] === undefined) return false;
     return true;
 }
 
@@ -93,11 +117,13 @@ export function CalorieEstimateResponseFromJSONTyped(json: any, ignoreDiscrimina
     return {
         
         'databaseVersion': json['database_version'],
+        'headline': json['headline'],
         'knownCalories': json['known_calories'] == null ? undefined : CalorieRangeFromJSON(json['known_calories']),
+        'lines': ((json['lines'] as Array<any>).map(CalorieLineFromJSON)),
+        'notCounted': json['not_counted'],
         'perServingCalories': json['per_serving_calories'] == null ? undefined : CalorieRangeFromJSON(json['per_serving_calories']),
-        'perServingSummary': json['per_serving_summary'] == null ? undefined : json['per_serving_summary'],
-        'summary': json['summary'],
-        'unknownIngredients': ((json['unknown_ingredients'] as Array<any>).map(UnknownCalorieIngredientFromJSON)),
+        'secondary': json['secondary'] == null ? undefined : json['secondary'],
+        'status': CalorieStatusFromJSON(json['status']),
     };
 }
 
@@ -113,11 +139,13 @@ export function CalorieEstimateResponseToJSONTyped(value?: CalorieEstimateRespon
     return {
         
         'database_version': value['databaseVersion'],
+        'headline': value['headline'],
         'known_calories': CalorieRangeToJSON(value['knownCalories']),
+        'lines': ((value['lines'] as Array<any>).map(CalorieLineToJSON)),
+        'not_counted': value['notCounted'],
         'per_serving_calories': CalorieRangeToJSON(value['perServingCalories']),
-        'per_serving_summary': value['perServingSummary'],
-        'summary': value['summary'],
-        'unknown_ingredients': ((value['unknownIngredients'] as Array<any>).map(UnknownCalorieIngredientToJSON)),
+        'secondary': value['secondary'],
+        'status': CalorieStatusToJSON(value['status']),
     };
 }
 

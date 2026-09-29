@@ -11,17 +11,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { CalorieStatusFromJSON, CalorieStatusToJSON, } from './CalorieStatus';
+import { CalorieLineFromJSON, CalorieLineToJSON, } from './CalorieLine';
 import { CalorieRangeFromJSON, CalorieRangeToJSON, } from './CalorieRange';
-import { UnknownCalorieIngredientFromJSON, UnknownCalorieIngredientToJSON, } from './UnknownCalorieIngredient';
 /**
  * Check if a given object implements the CalorieEstimateResponse interface.
  */
 export function instanceOfCalorieEstimateResponse(value) {
     if (!('databaseVersion' in value) || value['databaseVersion'] === undefined)
         return false;
-    if (!('summary' in value) || value['summary'] === undefined)
+    if (!('headline' in value) || value['headline'] === undefined)
         return false;
-    if (!('unknownIngredients' in value) || value['unknownIngredients'] === undefined)
+    if (!('lines' in value) || value['lines'] === undefined)
+        return false;
+    if (!('notCounted' in value) || value['notCounted'] === undefined)
+        return false;
+    if (!('status' in value) || value['status'] === undefined)
         return false;
     return true;
 }
@@ -34,11 +39,13 @@ export function CalorieEstimateResponseFromJSONTyped(json, ignoreDiscriminator) 
     }
     return {
         'databaseVersion': json['database_version'],
+        'headline': json['headline'],
         'knownCalories': json['known_calories'] == null ? undefined : CalorieRangeFromJSON(json['known_calories']),
+        'lines': (json['lines'].map(CalorieLineFromJSON)),
+        'notCounted': json['not_counted'],
         'perServingCalories': json['per_serving_calories'] == null ? undefined : CalorieRangeFromJSON(json['per_serving_calories']),
-        'perServingSummary': json['per_serving_summary'] == null ? undefined : json['per_serving_summary'],
-        'summary': json['summary'],
-        'unknownIngredients': (json['unknown_ingredients'].map(UnknownCalorieIngredientFromJSON)),
+        'secondary': json['secondary'] == null ? undefined : json['secondary'],
+        'status': CalorieStatusFromJSON(json['status']),
     };
 }
 export function CalorieEstimateResponseToJSON(json) {
@@ -50,10 +57,12 @@ export function CalorieEstimateResponseToJSONTyped(value, ignoreDiscriminator = 
     }
     return {
         'database_version': value['databaseVersion'],
+        'headline': value['headline'],
         'known_calories': CalorieRangeToJSON(value['knownCalories']),
+        'lines': (value['lines'].map(CalorieLineToJSON)),
+        'not_counted': value['notCounted'],
         'per_serving_calories': CalorieRangeToJSON(value['perServingCalories']),
-        'per_serving_summary': value['perServingSummary'],
-        'summary': value['summary'],
-        'unknown_ingredients': (value['unknownIngredients'].map(UnknownCalorieIngredientToJSON)),
+        'secondary': value['secondary'],
+        'status': CalorieStatusToJSON(value['status']),
     };
 }

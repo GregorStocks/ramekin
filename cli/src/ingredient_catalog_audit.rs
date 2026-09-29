@@ -52,6 +52,11 @@ struct RecipeCorpusStats {
     nutrition_computed: usize,
     recipes_fully_estimated: usize,
     recipes_with_per_serving: usize,
+    /// Recipes by how many ingredients the estimate couldn't count, bucketed
+    /// as in `UNKNOWN_BUCKETS`; this is what `MAX_UNKNOWN_LINES` is chosen from.
+    unknown_lines_per_recipe: [usize; UNKNOWN_BUCKETS.len()],
+    /// Recipes by estimate status (complete, partial, insufficient, empty).
+    statuses: BTreeMap<String, usize>,
     nutrition_reasons: BTreeMap<String, usize>,
     nutrition_unrecognized: HashMap<String, usize>,
     /// Every nutrition failure keyed by "reason: name", so the fingerprint
@@ -62,6 +67,23 @@ struct RecipeCorpusStats {
     density_misses: HashMap<String, usize>,
     categorized: usize,
     uncategorized: HashMap<String, usize>,
+}
+
+/// Buckets of uncounted ingredients per recipe: (label, lowest count).
+const UNKNOWN_BUCKETS: [(&str, usize); 6] = [
+    ("0", 0),
+    ("1", 1),
+    ("2", 2),
+    ("3", 3),
+    ("4-5", 4),
+    ("6+", 6),
+];
+
+fn unknown_bucket(unknown: usize) -> usize {
+    UNKNOWN_BUCKETS
+        .iter()
+        .rposition(|(_, lowest)| unknown >= *lowest)
+        .expect("the first bucket starts at 0")
 }
 
 #[derive(Default)]
@@ -263,6 +285,11 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
         let estimate = nutrition::estimate(&recipe.ingredients, recipe.servings.as_deref(), 1.0)
             .map_err(|e| anyhow::anyhow!("Calorie estimate failed in {}: {e}", corpus.name))?;
         let unknown = &estimate.unknown_ingredients;
+        stats.unknown_lines_per_recipe[unknown_bucket(unknown.len())] += 1;
+        *stats
+            .statuses
+            .entry(format!("{:?}", estimate.status))
+            .or_default() += 1;
         let non_food = recipe
             .ingredients
             .iter()
@@ -486,6 +513,28 @@ fn render_recipe_corpora(
                 pct(*count as u64, s.lines as u64)
             );
         }
+        let _ = writeln!(
+            out,
+            "\n### Uncounted ingredients per recipe\n\n\
+             | Uncounted | Recipes | Share of recipes |\n| --- | ---: | ---: |"
+        );
+        for ((label, _), count) in UNKNOWN_BUCKETS.iter().zip(s.unknown_lines_per_recipe) {
+            let _ = writeln!(
+                out,
+                "| {label} | {count} | {} |",
+                pct(count as u64, s.recipes as u64)
+            );
+        }
+        let _ = writeln!(
+            out,
+            "\nEstimate status with at most {} uncounted: {}",
+            nutrition::MAX_UNKNOWN_LINES,
+            s.statuses
+                .iter()
+                .map(|(status, count)| format!("{status} {}", pct(*count as u64, s.recipes as u64)))
+                .collect::<Vec<_>>()
+                .join(", ")
+        );
         write_fingerprints(
             out,
             &[

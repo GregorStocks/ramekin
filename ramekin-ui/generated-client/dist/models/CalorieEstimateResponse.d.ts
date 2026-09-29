@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { CalorieStatus } from './CalorieStatus';
+import type { CalorieLine } from './CalorieLine';
 import type { CalorieRange } from './CalorieRange';
-import type { UnknownCalorieIngredient } from './UnknownCalorieIngredient';
 /**
- *
+ * Every display string is final; clients render them as-is.
  * @export
  * @interface CalorieEstimateResponse
  */
@@ -24,11 +25,30 @@ export interface CalorieEstimateResponse {
      */
     databaseVersion: string;
     /**
-     * Null when no ingredient could be estimated. Otherwise a subtotal that may be partial.
+     * The main line: "~520 kcal per serving", "At least ~3,100 kcal for the
+     * whole recipe", or "Not enough ingredient data to estimate calories".
+     * @type {string}
+     * @memberof CalorieEstimateResponse
+     */
+    headline: string;
+    /**
+     * Null when nothing was counted. A lower bound when status is partial.
      * @type {CalorieRange}
      * @memberof CalorieEstimateResponse
      */
     knownCalories?: CalorieRange | null;
+    /**
+     * The breakdown, one entry per ingredient in order.
+     * @type {Array<CalorieLine>}
+     * @memberof CalorieEstimateResponse
+     */
+    lines: Array<CalorieLine>;
+    /**
+     * For a partial estimate, the ingredients its lower bound leaves out.
+     * @type {Array<string>}
+     * @memberof CalorieEstimateResponse
+     */
+    notCounted: Array<string>;
     /**
      *
      * @type {CalorieRange}
@@ -36,23 +56,17 @@ export interface CalorieEstimateResponse {
      */
     perServingCalories?: CalorieRange | null;
     /**
-     *
+     * Shown under the headline when present.
      * @type {string}
      * @memberof CalorieEstimateResponse
      */
-    perServingSummary?: string | null;
+    secondary?: string | null;
     /**
      *
-     * @type {string}
+     * @type {CalorieStatus}
      * @memberof CalorieEstimateResponse
      */
-    summary: string;
-    /**
-     *
-     * @type {Array<UnknownCalorieIngredient>}
-     * @memberof CalorieEstimateResponse
-     */
-    unknownIngredients: Array<UnknownCalorieIngredient>;
+    status: CalorieStatus;
 }
 /**
  * Check if a given object implements the CalorieEstimateResponse interface.
