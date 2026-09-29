@@ -534,6 +534,9 @@ pub fn estimate(
     let mut known = None;
     let mut unknown_ingredients = Vec::new();
     let mut lines = Vec::new();
+    // Whether anything with calories was counted; negligible lines alone make
+    // a lower bound of zero, which says nothing.
+    let mut counted_calories = false;
     for (index, ingredient) in ingredients.iter().enumerate() {
         let (calories, text) = match contribution(ingredient, scale) {
             Ok(Line::Skipped) => (None, "Not a food".to_string()),
@@ -545,6 +548,7 @@ pub fn estimate(
                 )
             }
             Ok(Line::Calories(value)) => {
+                counted_calories |= value.max > 0.0;
                 let total = known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });
                 total.min += value.min;
                 total.max += value.max;
@@ -591,7 +595,7 @@ pub fn estimate(
         (None, 0) => Status::Empty,
         (None, _) => Status::Insufficient,
         (Some(_), 0) => Status::Complete,
-        (Some(_), unknown) if unknown <= MAX_UNKNOWN_LINES => Status::Partial,
+        (Some(_), unknown) if unknown <= MAX_UNKNOWN_LINES && counted_calories => Status::Partial,
         (Some(_), _) => Status::Insufficient,
     };
     // A partial total is a lower bound, so it shows only its minimum.

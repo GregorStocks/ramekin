@@ -622,6 +622,15 @@ fn status_follows_the_number_of_uncounted_ingredients() {
     assert_eq!(greased.status, Status::Partial);
     assert_eq!(greased.lines[1].text, "Amount unclear");
 
+    // Salt beside an unknown main ingredient is no lower bound at all.
+    let only_salt = estimate(
+        &[bare("kosher salt"), ingredient("moon dust", "1", "cup")],
+        None,
+        1.0,
+    )
+    .unwrap();
+    assert_eq!(only_salt.status, Status::Insufficient);
+
     let empty = estimate(&[], Some("4"), 1.0).unwrap();
     assert_eq!(empty.status, Status::Empty);
 }

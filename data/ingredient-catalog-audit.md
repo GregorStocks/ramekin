@@ -44,7 +44,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | 4-5 | 1276 | 23.6% |
 | 6+ | 827 | 15.3% |
 
-Estimate status with at most 3 uncounted: Complete 7.3%, Insufficient 39.5%, Partial 53.2%
+Estimate status with at most 3 uncounted: Complete 7.3%, Insufficient 40.3%, Partial 52.4%
 
 ### Unrecognized-name fingerprints
 
@@ -80,7 +80,7 @@ Estimate status with at most 3 uncounted: Complete 7.3%, Insufficient 39.5%, Par
 | 4-5 | 109 | 23.6% |
 | 6+ | 63 | 13.6% |
 
-Estimate status with at most 3 uncounted: Complete 10.4%, Insufficient 37.4%, Partial 52.2%
+Estimate status with at most 3 uncounted: Complete 10.4%, Insufficient 37.7%, Partial 51.9%
 
 ### Unrecognized-name fingerprints
 
@@ -116,7 +116,7 @@ Estimate status with at most 3 uncounted: Complete 10.4%, Insufficient 37.4%, Pa
 | 4-5 | 103 | 23.1% |
 | 6+ | 44 | 9.9% |
 
-Estimate status with at most 3 uncounted: Complete 10.3%, Insufficient 33.0%, Partial 56.6%
+Estimate status with at most 3 uncounted: Complete 10.3%, Insufficient 33.5%, Partial 56.2%
 
 ### Unrecognized-name fingerprints
 
