@@ -980,8 +980,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                     || guidance
                     || is_trailing_qualifier(&potential_note)
             };
+            let lower_item = potential_item.to_lowercase();
+            // "a dish, or frankly, any old dish": never leave a dangling "or".
+            let dangling = lower_item.ends_with(" or") || lower_item.ends_with(" and");
             if potential_note.is_empty()
                 || potential_item.is_empty()
+                || dangling
                 || is_only_prep_words(&potential_item)
                 || (continues_list && !guidance)
                 || !is_note
@@ -1086,7 +1090,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             let has_number = without_parens.chars().any(|c| c.is_ascii_digit());
             let contains_measurement = has_unit && has_number;
 
-            if !before_or.is_empty() && !after_or.is_empty() && contains_measurement {
+            // A brand alone before "or" ("Diamond Crystal or 1 1/4 tsp. Morton
+            // kosher salt") names no food; keep the whole line as the item.
+            let brand_only = before_or
+                .split_whitespace()
+                .all(|word| word.chars().next().is_some_and(char::is_uppercase));
+            if !before_or.is_empty() && !after_or.is_empty() && contains_measurement && !brand_only
+            {
                 let alternative_note =
                     take_last_or_parenthetical_note(&mut deferred_parenthetical_notes);
                 let alternative = match alternative_note {

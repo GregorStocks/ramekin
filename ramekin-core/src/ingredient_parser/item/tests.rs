@@ -797,3 +797,17 @@ fn test_trailing_comma_notes_never_peel_listed_foods() {
     assert_eq!(parsed.item, "feta");
     assert_eq!(parsed.note.as_deref(), Some("drained, crumbled"));
 }
+
+#[test]
+fn test_trailing_notes_keep_the_food_and_drop_connectors() {
+    let parse = super::super::parse_ingredient;
+    let salt = parse("2 1/4 tsp. Diamond Crystal or 1 1/4 tsp. Morton kosher salt, divided");
+    assert!(salt.item.to_lowercase().contains("kosher salt"), "{salt:?}");
+    let sugar = parse("1 teaspoon sugar or to taste");
+    assert_eq!(sugar.item, "sugar");
+    assert_eq!(sugar.note.as_deref(), Some("or to taste"));
+    let dish = parse("1 deep pie dish, or frankly, any old dish you feel like baking in");
+    assert!(dish.item.contains("any old dish"), "{dish:?}");
+    let pasta = parse("1 pound dried pasta, any shape you like");
+    assert_eq!(pasta.item, "dried pasta");
+}

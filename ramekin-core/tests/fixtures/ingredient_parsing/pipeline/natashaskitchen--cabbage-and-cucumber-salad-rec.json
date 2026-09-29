@@ -79,28 +79,36 @@
     {
       "raw": "1 1/2 tbsp vinegar or to taste",
       "expected": {
-        "item": "vinegar or",
+        "item": "vinegar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "22",
+            "unit": "g"
           }
         ],
-        "note": "to taste",
+        "note": "or to taste",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1 1/2 tsp salt or to taste",
       "expected": {
-        "item": "salt or",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
-        "note": "to taste",
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     }

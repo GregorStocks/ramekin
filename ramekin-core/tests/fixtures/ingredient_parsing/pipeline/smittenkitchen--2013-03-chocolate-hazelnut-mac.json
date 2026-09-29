@@ -216,16 +216,16 @@
     {
       "raw": "1 tablespoon Frangelico or another hazelnut liqueur or 1 teaspoon vanilla extract**",
       "expected": {
-        "item": "Frangelico",
+        "item": "Frangelico or another hazelnut liqueur or 1 teaspoon vanilla extract",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or another hazelnut liqueur or 1 teaspoon vanilla extract",
+        "note": null,
         "section": "Whipped Frosting and Filling",
-        "category": "Other"
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

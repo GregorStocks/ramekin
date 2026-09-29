@@ -83,14 +83,14 @@
     {
       "raw": "½ teaspoon Manuka honey or to taste",
       "expected": {
-        "item": "Manuka honey or",
+        "item": "Manuka honey",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "to taste",
+        "note": "or to taste",
         "category": "Baking"
       }
     },

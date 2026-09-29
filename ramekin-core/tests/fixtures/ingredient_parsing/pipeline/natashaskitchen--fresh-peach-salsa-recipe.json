@@ -133,14 +133,14 @@
     {
       "raw": "1/4 tsp freshly ground black pepper or to taste",
       "expected": {
-        "item": "freshly ground black pepper or",
+        "item": "freshly ground black pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "to taste",
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     }

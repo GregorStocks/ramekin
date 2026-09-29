@@ -23,15 +23,15 @@
     {
       "raw": "1 teaspoon Tajín or 1/2 teaspoon chili powder",
       "expected": {
-        "item": "Tajín",
+        "item": "Tajín or 1/2 teaspoon chili powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or 1/2 teaspoon chili powder",
-        "category": "Other"
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {

@@ -191,7 +191,7 @@
     {
       "raw": "¾ tsp. Diamond Crystal or ¼ tsp. plus ⅛ tsp. Morton kosher salt",
       "expected": {
-        "item": "Diamond Crystal",
+        "item": "Diamond Crystal or 1/4 tsp. plus 1/8 tsp. Morton kosher salt",
         "measurements": [
           {
             "amount": "0.75",
@@ -202,8 +202,8 @@
             "unit": "g"
           }
         ],
-        "note": "or 1/4 tsp. plus 1/8 tsp. Morton kosher salt",
-        "category": "Other"
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {

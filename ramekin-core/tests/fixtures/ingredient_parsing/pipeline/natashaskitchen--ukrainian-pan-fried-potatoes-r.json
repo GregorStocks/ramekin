@@ -69,28 +69,32 @@
     {
       "raw": "1/2 tsp salt or to taste",
       "expected": {
-        "item": "salt or",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": "to taste",
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/4 tsp of pepper or to taste",
       "expected": {
-        "item": "pepper or",
+        "item": "pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "to taste",
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     }

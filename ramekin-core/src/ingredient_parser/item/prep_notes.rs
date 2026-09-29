@@ -394,7 +394,6 @@ pub(in crate::ingredient_parser) fn is_only_prep_words(s: &str) -> bool {
 pub(in crate::ingredient_parser) fn is_trailing_qualifier(s: &str) -> bool {
     const QUALIFIER_PREFIXES: &[&str] = &[
         "about ",
-        "any ",
         "approximately ",
         "at least ",
         "each ",
@@ -415,9 +414,6 @@ pub(in crate::ingredient_parser) fn is_trailing_qualifier(s: &str) -> bool {
         "you will ",
     ];
     const QUALIFIER_WORDS: &[&str] = &[
-        "any kind",
-        "any shape",
-        "any variety",
         "divided",
         "homemade or store bought",
         "homemade or store-bought",
@@ -448,9 +444,31 @@ pub(in crate::ingredient_parser) fn is_trailing_qualifier(s: &str) -> bool {
         .trim_matches(|c: char| c == '[' || c == ']' || c == '.' || c.is_whitespace())
         .to_lowercase();
     let words: Vec<&str> = lower.split_whitespace().collect();
-    QUALIFIER_PREFIXES
-        .iter()
-        .any(|prefix| lower.starts_with(prefix))
+    // "any flavor", "any percentage will do": an attribute left open, not an
+    // alternative ("or frankly, any old dish").
+    const OPEN_ATTRIBUTES: &[&str] = &[
+        "brand",
+        "color",
+        "favorite",
+        "flavor",
+        "kind",
+        "percentage",
+        "shape",
+        "size",
+        "style",
+        "temperature",
+        "thickness",
+        "type",
+        "variety",
+    ];
+    let open_attribute = words.first() == Some(&"any")
+        && words
+            .get(1)
+            .is_some_and(|word| OPEN_ATTRIBUTES.contains(&word.trim_end_matches(',')));
+    open_attribute
+        || QUALIFIER_PREFIXES
+            .iter()
+            .any(|prefix| lower.starts_with(prefix))
         || QUALIFIER_WORDS.contains(&lower.as_str())
         || (words.len() >= 2
             && words
@@ -535,7 +553,14 @@ pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
             }
         }
     }
-    let idx = cut?;
+    let mut idx = cut?;
+    // "sugar or to taste": the connector belongs to the note.
+    for connector in [" or", " and"] {
+        let before = lower.get(..idx)?.trim_end();
+        if before.ends_with(connector) {
+            idx = before.len() - connector.len();
+        }
+    }
     let item = s.get(..idx)?.trim().trim_end_matches(',').trim();
     let note = s
         .get(idx..)?
