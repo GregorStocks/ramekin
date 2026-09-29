@@ -598,7 +598,12 @@ pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
     // "neutral oil such as canola" names the food before "such as"; in
     // "Garnishes, such as minced chives, pickles" the examples are the foods.
     if let Some(idx) = lower.find(" such as ") {
-        if !has_generic_head(lower.get(..idx).unwrap_or("")) {
+        let before = lower.get(..idx).unwrap_or("").trim_end_matches([',', ' ']);
+        // Inside a labeled list ("garnishes: bacon, fresh herbs such as
+        // thyme, cracked black pepper"), the foods after the examples would be
+        // lost.
+        let inside_list = before.contains(':');
+        if !has_generic_head(before) && !inside_list {
             consider(idx);
         }
     }

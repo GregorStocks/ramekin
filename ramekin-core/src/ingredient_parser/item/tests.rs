@@ -855,3 +855,11 @@ fn test_single_word_names_and_qualified_categories() {
         "{toppings:?}"
     );
 }
+
+#[test]
+fn test_such_as_inside_a_list_keeps_the_rest_of_the_list() {
+    let parsed = super::super::parse_ingredient(
+        "optional garnishes: crumbled bacon, fresh herbs such as thyme or parsley, cracked black pepper, cheddar",
+    );
+    assert!(parsed.item.contains("cracked black pepper"), "{parsed:?}");
+}
