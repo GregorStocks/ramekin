@@ -150,14 +150,14 @@
     {
       "raw": "1 tablespoon plus 2 teaspoons kosher salt* plus more to taste",
       "expected": {
-        "item": "kosher salt* plus more",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1 tablespoon plus 2 teaspoons",
             "unit": null
           }
         ],
-        "note": "to taste",
+        "note": "plus more to taste",
         "section": "Brine",
         "category": "Spices & Seasonings"
       }

@@ -966,7 +966,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             let lower_note = potential_note.to_lowercase();
             // "and sliced scallions" continues a list of foods; it is never a note.
             // A trailing "or ..." alternative still goes to the note.
-            let continues_list = lower_note.starts_with("and ");
+            // "chopped mix-ins, like cooked meats": after a category, the
+            // examples are the foods.
+            let examples_of_category = (lower_note.starts_with("like ")
+                || lower_note.starts_with("such as "))
+                && item::has_generic_head(&potential_item);
+            let continues_list = lower_note.starts_with("and ") || examples_of_category;
             // Only the last part may be a prep phrase that names a food
             // ("crumbled queso fresco"); every part before it must be a pure
             // note, or a list of foods ending in "for topping" would lose all
@@ -1102,6 +1107,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 let food: Vec<&str> = alternative_item
                     .split_whitespace()
                     .skip_while(|word| word.chars().next().is_some_and(char::is_uppercase))
+                    // "or another orange liqueur": the determiner isn't the food.
+                    .skip_while(|word| {
+                        ["another", "other", "a", "an", "any", "some", "your"]
+                            .contains(&word.to_lowercase().as_str())
+                    })
                     .collect();
                 (!food.is_empty()).then(|| format!("{} {}", before_or, food.join(" ")))
             } else {

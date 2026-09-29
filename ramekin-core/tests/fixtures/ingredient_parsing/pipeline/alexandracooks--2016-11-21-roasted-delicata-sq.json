@@ -60,14 +60,14 @@
     {
       "raw": "1/2 jalapeno or more to taste, finely diced",
       "expected": {
-        "item": "jalapeno or more",
+        "item": "jalapeno",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "to taste, finely diced",
+        "note": "or more to taste, finely diced",
         "category": "Produce"
       }
     },

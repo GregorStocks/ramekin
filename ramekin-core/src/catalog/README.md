@@ -233,8 +233,8 @@ are `tests/test_catalog_import.py`.
   - move an ambiguous (null) alias onto a shorter name.
 
   The `curated_names_are_what_the_parser_produces` test fails until it has
-  been run. The first run (2026-09-29, alongside the parser fix) removed 565
-  keys, re-keyed 74, and left 137 conflicts.
+  been run. The first run (2026-09-29, alongside the parser fix) removed 568
+  keys, re-keyed 74, and left 134 conflicts.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").

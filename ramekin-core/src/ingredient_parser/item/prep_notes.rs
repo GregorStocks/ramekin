@@ -476,6 +476,37 @@ pub(in crate::ingredient_parser) fn is_trailing_qualifier(s: &str) -> bool {
                 .is_some_and(|w| TRAILING_PARTICIPLES.contains(w)))
 }
 
+/// Whether an item names a category rather than a food ("Garnishes", "taco
+/// toppings", "chopped mix-ins"), so examples after it ("such as chives",
+/// "like cooked meats") are the actual foods.
+pub(in crate::ingredient_parser) fn has_generic_head(item: &str) -> bool {
+    const GENERIC_HEADS: &[&str] = &[
+        "accompaniments",
+        "add-ins",
+        "additions",
+        "dippers",
+        "extras",
+        "fillings",
+        "fixings",
+        "garnish",
+        "garnishes",
+        "mix-ins",
+        "options",
+        "sides",
+        "things",
+        "toppings",
+        "veggies",
+    ];
+    let head = item.to_lowercase();
+    let head_word = head
+        .trim_end_matches([',', ' '])
+        .split_whitespace()
+        .last()
+        .unwrap_or("")
+        .to_string();
+    GENERIC_HEADS.contains(&head_word.as_str())
+}
+
 /// Purposes after "for" that describe how an ingredient is used, never what
 /// it is ("oil for frying", "flour for dusting", "butter for the pan").
 const USE_PURPOSES: &[&str] = &[
@@ -561,31 +592,7 @@ pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
     // "neutral oil such as canola" names the food before "such as"; in
     // "Garnishes, such as minced chives, pickles" the examples are the foods.
     if let Some(idx) = lower.find(" such as ") {
-        const GENERIC_HEADS: &[&str] = &[
-            "accompaniments",
-            "add-ins",
-            "additions",
-            "dippers",
-            "extras",
-            "fillings",
-            "fixings",
-            "garnish",
-            "garnishes",
-            "mix-ins",
-            "options",
-            "sides",
-            "things",
-            "toppings",
-            "veggies",
-        ];
-        let head_word = lower
-            .get(..idx)
-            .unwrap_or("")
-            .trim_end_matches([',', ' '])
-            .split_whitespace()
-            .last()
-            .unwrap_or("");
-        if !GENERIC_HEADS.contains(&head_word) {
+        if !has_generic_head(lower.get(..idx).unwrap_or("")) {
             consider(idx);
         }
     }
@@ -628,8 +635,16 @@ pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
         }
     }
     let mut idx = cut?;
-    // "sugar or to taste": the connector belongs to the note.
-    for connector in [" or", " and"] {
+    // "sugar or to taste", "salt or more to taste": the connector belongs to
+    // the note.
+    for connector in [
+        " more or less",
+        " or more",
+        " or less",
+        " plus more",
+        " or",
+        " and",
+    ] {
         let before = lower.get(..idx)?.trim_end();
         if before.ends_with(connector) {
             idx = before.len() - connector.len();

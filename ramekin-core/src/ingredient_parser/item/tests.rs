@@ -831,3 +831,15 @@ fn test_trailing_or_alternative_goes_to_the_note() {
     assert_eq!(spinach.item, "fresh baby spinach");
     assert_eq!(spinach.note.as_deref(), Some("or thawed frozen spinach"));
 }
+
+#[test]
+fn test_examples_connectors_and_brand_alternatives() {
+    let parse = super::super::parse_ingredient;
+    let mixins = parse("1 cup chopped mix-ins, like cooked meats and/or raw or cooked vegetables");
+    assert!(mixins.item.contains("cooked meats"), "{mixins:?}");
+    let salt = parse("3/4 teaspoon table salt or more to taste");
+    assert_eq!(salt.item, "table salt");
+    let liqueur =
+        parse("1 tablespoon Grand Marnier or another orange liqueur or 1/4 teaspoon orange zest");
+    assert_eq!(liqueur.item, "Grand Marnier orange liqueur");
+}

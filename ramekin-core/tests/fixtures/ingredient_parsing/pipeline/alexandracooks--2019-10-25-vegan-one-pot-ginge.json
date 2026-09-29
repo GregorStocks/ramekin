@@ -92,14 +92,14 @@
     {
       "raw": "pinch crushed red pepper flakes or more to taste",
       "expected": {
-        "item": "crushed red pepper flakes or more",
+        "item": "crushed red pepper flakes",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": "to taste",
+        "note": "or more to taste",
         "category": "Spices & Seasonings"
       }
     },
