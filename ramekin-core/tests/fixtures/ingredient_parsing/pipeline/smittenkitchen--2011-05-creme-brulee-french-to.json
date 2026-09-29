@@ -110,14 +110,14 @@
     {
       "raw": "1 teaspoon Grand Marnier or another orange liqueur or 1/4 teaspoon orange zest",
       "expected": {
-        "item": "Grand Marnier or another orange liqueur or 1/4 teaspoon orange zest",
+        "item": "Grand Marnier another orange liqueur",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or another orange liqueur or 1/4 teaspoon orange zest",
         "category": "Beverages"
       }
     },

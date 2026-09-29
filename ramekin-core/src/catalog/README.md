@@ -80,12 +80,9 @@ Names are lowercased and whitespace is collapsed. Then:
    original said "dried" or "ground". "fresh rosemary" stays unknown rather than
    becoming dried rosemary. A curated alias that keeps a prep word ("grated
    nutmeg") is an explicit choice and still counts.
-6. If nothing matched, the name is re-parsed as an ingredient line and the item
-   the parser would store now is looked up (`Via::Reparsed`). Recipes saved
-   before the parser split off amounts and notes still carry items like "about 7
-   cloves garlic" or "chickpeas, drained, rinsed". A re-parse only counts when
-   what's left starts with a word, so "85% lean ground beef" and "5- to 6-inch
-   chiles" keep their numbers.
+6. The name without a leading measure the parser left in it ("8 tbsp unsalted
+   butter", "240 ml heavy cream", "cloves garlic", "can of tomato paste"), then
+   steps 3 and 5 on that. A count or unit never names the food.
 
 Calorie estimates and density resolve whole lines with `resolve_line(item, note)`.
 The parser keeps "cooked" in the note ("brown rice, cooked" → item "brown rice"),

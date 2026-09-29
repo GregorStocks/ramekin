@@ -240,10 +240,10 @@
     {
       "raw": "Shredded veggies, such as carrots, lettuce or bell peppers",
       "expected": {
-        "item": "Shredded veggies",
+        "item": "Shredded veggies, such as carrots, lettuce or bell peppers",
         "measurements": [],
-        "note": "such as carrots, lettuce or bell peppers",
-        "category": "Other"
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

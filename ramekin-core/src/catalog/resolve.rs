@@ -1,5 +1,9 @@
 //! Turn a written ingredient name into a catalog entry.
 
+use std::sync::LazyLock;
+
+use regex::Regex;
+
 use super::{normalize, Entry, Target, CATALOG};
 
 /// What a written ingredient name refers to.
@@ -31,10 +35,6 @@ pub enum Via {
     Clause,
     /// After dropping leading size or preparation words.
     LeadingModifiers,
-    /// After re-parsing the name as an ingredient line, for items stored
-    /// before the parser moved amounts and notes out ("about 7 cloves
-    /// garlic", "chickpeas, drained, rinsed").
-    Reparsed,
 }
 
 /// Temperature and preparation modifiers stripped before a second lookup.
@@ -73,16 +73,21 @@ fn strip_modifiers(name: &str) -> String {
 /// "dried" (dried apricots), "light" (light cream), "crushed" (crushed
 /// tomatoes), "whole" (whole chicken).
 const LEADING_MODIFIERS: &[&str] = &[
+    "best",
     "boneless",
     "chopped",
     "coarsely",
     "diced",
     "extra-large",
     "finely",
+    "firmly",
     "fresh",
     "freshly",
+    "good",
     "grated",
     "large",
+    "lightly",
+    "loosely",
     "medium",
     "minced",
     "organic",
@@ -96,6 +101,20 @@ const LEADING_MODIFIERS: &[&str] = &[
     "thinly",
     "toasted",
 ];
+
+/// The name without a leading measure the parser left in it ("8 tbsp
+/// unsalted butter", "240 ml heavy cream", "cloves garlic", "head green
+/// cabbage"): a count or unit never names the food.
+fn without_leading_measure(name: &str) -> Option<String> {
+    static MEASURE: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(
+            r"^(?:(?:one|a|an|[0-9][0-9./ ]*)\s*)?(?:heaping\s+|heaped\s+)?(?:(?:tbsps?|tsps?|tablespoons?|teaspoons?|cups?|oz|ounces?|ml|g|grams?|lbs?|pounds?|sticks?|cloves?|heads?|cans?|bunch(?:es)?|sprigs?|stalks?|packets?|packages?)\.?(?:\s*(?:/|or)\s*[0-9][0-9./ ]*\s*(?:g|grams?|ml|oz|ounces?|lbs?|pounds?)\.?)?\s+(?:of\s+)?|heaping\s+|heaped\s+)",
+        )
+        .unwrap()
+    });
+    let rest = MEASURE.replace(name, "");
+    (rest.len() < name.len() && !rest.is_empty()).then(|| rest.into_owned())
+}
 
 /// The name with leading size/preparation words dropped one at a time,
 /// including comma-separated ones: "grated fresh ginger" -> ["fresh ginger",
@@ -177,7 +196,15 @@ fn resolve_single(normalized: &str) -> Resolution {
         candidates.push((prefix.to_string(), Some(Via::Clause)));
         candidates.push((strip_modifiers(prefix), Some(Via::Clause)));
     }
-    for stripped in leading_strips(&normalized) {
+    let unmeasured = without_leading_measure(&normalized);
+    let mut stripped_names = leading_strips(&normalized);
+    if let Some(unmeasured) = &unmeasured {
+        stripped_names.push(unmeasured.clone());
+        stripped_names.push(strip_modifiers(unmeasured));
+        stripped_names.extend(leading_strips(unmeasured));
+        stripped_names.extend(leading_strips(&strip_modifiers(unmeasured)));
+    }
+    for stripped in stripped_names {
         let prefixes: Vec<String> = clause_prefixes(&stripped)
             .into_iter()
             .map(str::to_string)
@@ -262,10 +289,7 @@ pub fn resolve(item: &str) -> Resolution {
     if normalized.ends_with(':') {
         return Resolution::NotFood;
     }
-    match resolve_name(&normalized) {
-        Resolution::Unresolved => reparsed(&normalized).unwrap_or(Resolution::Unresolved),
-        resolved => resolved,
-    }
+    resolve_name(&normalized)
 }
 
 /// One name as a single food, else as several joined by "and".
@@ -275,23 +299,5 @@ fn resolve_name(normalized: &str) -> Resolution {
             compound(normalized).unwrap_or(unresolved)
         }
         resolved => resolved,
-    }
-}
-
-/// The name re-parsed as an ingredient line, when the parser would have
-/// stored a different item for it. Only ever a fallback: the name as written
-/// always wins.
-fn reparsed(normalized: &str) -> Option<Resolution> {
-    let item = super::parsed_name(normalized);
-    if item == normalized {
-        return None;
-    }
-    match resolve_name(&item) {
-        Resolution::Entry { entry, .. } => Some(Resolution::Entry {
-            entry,
-            via: Via::Reparsed,
-        }),
-        Resolution::Unresolved => None,
-        other => Some(other),
     }
 }

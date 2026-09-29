@@ -137,10 +137,10 @@
     {
       "raw": "optional toppings for serving: extra cheese, chopped herbs, hollandaise sauce, &amp;amp; freshly ground pepper to taste",
       "expected": {
-        "item": "optional toppings",
+        "item": "optional toppings for serving: extra cheese, chopped herbs, hollandaise sauce",
         "measurements": [],
-        "note": "for serving: extra cheese, chopped herbs, hollandaise sauce, & freshly ground pepper to taste",
-        "category": "Other"
+        "note": "& freshly ground pepper to taste",
+        "category": "Cheese"
       }
     }
   ]

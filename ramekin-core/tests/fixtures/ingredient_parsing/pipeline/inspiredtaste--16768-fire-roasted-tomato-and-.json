@@ -222,10 +222,10 @@
     {
       "raw": "Taco toppings, such as shredded lettuce, cheese, onion, guacamole or sour cream",
       "expected": {
-        "item": "Taco toppings",
+        "item": "Taco toppings, such as shredded lettuce, cheese, onion, guacamole or sour cream",
         "measurements": [],
-        "note": "such as shredded lettuce, cheese, onion, guacamole or sour cream",
-        "category": "Other"
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     }
   ]

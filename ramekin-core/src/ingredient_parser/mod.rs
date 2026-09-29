@@ -1091,11 +1091,25 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             let contains_measurement = has_unit && has_number;
 
             // A brand alone before "or" ("Diamond Crystal or 1 1/4 tsp. Morton
-            // kosher salt") names no food; keep the whole line as the item.
+            // kosher salt") borrows the food from the alternative: "Diamond
+            // Crystal kosher salt".
             let brand_only = before_or
                 .split_whitespace()
                 .all(|word| word.chars().next().is_some_and(char::is_uppercase));
-            if !before_or.is_empty() && !after_or.is_empty() && contains_measurement && !brand_only
+            let shared_food = if brand_only {
+                let alternative_item = parse_ingredient(after_or).item;
+                let food: Vec<&str> = alternative_item
+                    .split_whitespace()
+                    .skip_while(|word| word.chars().next().is_some_and(char::is_uppercase))
+                    .collect();
+                (!food.is_empty()).then(|| format!("{} {}", before_or, food.join(" ")))
+            } else {
+                None
+            };
+            if !before_or.is_empty()
+                && !after_or.is_empty()
+                && contains_measurement
+                && (!brand_only || shared_food.is_some())
             {
                 let alternative_note =
                     take_last_or_parenthetical_note(&mut deferred_parenthetical_notes);
@@ -1107,7 +1121,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                     Some(existing) => format!("{}; {}", alternative, existing),
                     None => alternative,
                 });
-                remaining = before_or.to_string();
+                remaining = shared_food.unwrap_or_else(|| before_or.to_string());
             }
         }
     }

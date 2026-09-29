@@ -204,10 +204,10 @@
     {
       "raw": "Toppings such as sour cream, cheddar, jalapeño (pickled or fresh), and corn bread",
       "expected": {
-        "item": "Toppings",
+        "item": "Toppings such as sour cream, cheddar, jalapeño, and corn bread",
         "measurements": [],
-        "note": "pickled or fresh, such as sour cream, cheddar, jalapeño , and corn bread",
-        "category": "Other"
+        "note": "pickled or fresh",
+        "category": "Dairy & Eggs"
       }
     }
   ]

@@ -814,6 +814,12 @@ fn test_trailing_notes_keep_the_food_and_drop_connectors() {
     assert!(liqueur.item.contains("raspberry liqueur"), "{liqueur:?}");
     let spinach = parse("1 pound baby spinach [see Note about frozen]");
     assert_eq!(spinach.item, "baby spinach");
+    let garnishes = parse("Garnishes, such as minced chives, pickles, celery, radishes");
+    assert!(garnishes.item.contains("minced chives"), "{garnishes:?}");
+    let toppings = parse("optional toppings for serving: extra cheese, chopped herbs");
+    assert!(toppings.item.contains("extra cheese"), "{toppings:?}");
+    let oil = parse("2 tablespoons neutral oil, such as canola");
+    assert_eq!(oil.item, "neutral oil");
     let pasta = parse("1 pound dried pasta, any shape you like");
     assert_eq!(pasta.item, "dried pasta");
 }

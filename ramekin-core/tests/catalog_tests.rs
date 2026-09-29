@@ -77,7 +77,7 @@ fn curated_aliases_have_densities() {
         "white vinegar",
         "white wine vinegar",
         "tamari",
-        "Japanese soy sauce (koikuchi shoyu)",
+        "Japanese soy sauce",
         "all purpose flour",
         "ketchup",
         "fresh lime juice",
@@ -538,22 +538,8 @@ fn curated_names_are_what_the_parser_produces() {
 }
 
 #[test]
-fn stored_items_with_parse_junk_resolve_by_reparsing() {
-    let entry = |item| match resolve(item) {
-        Resolution::Entry { entry, via } => (entry.id.clone(), via),
-        other => panic!("{item:?} did not resolve: {other:?}"),
-    };
-    let (garlic, _) = entry("garlic");
-    assert_eq!(
-        entry("about 7 cloves garlic, minced"),
-        (garlic, Via::Reparsed)
-    );
-    let (butter, _) = entry("unsalted butter");
-    assert_eq!(
-        entry("▢ 2 tablespoons unsalted butter"),
-        (butter, Via::Reparsed)
-    );
-    // A leading number that is part of the name is never cut off.
+fn parsed_name_never_cuts_into_a_name() {
+    // A leading number that is part of the name is never taken as an amount.
     assert_eq!(
         ramekin_core::catalog::parsed_name("85% lean ground beef"),
         "85% lean ground beef"
@@ -561,5 +547,9 @@ fn stored_items_with_parse_junk_resolve_by_reparsing() {
     assert_eq!(
         ramekin_core::catalog::parsed_name("5- to 6-inch cubanelle chiles"),
         "5- to 6-inch cubanelle chiles"
+    );
+    assert_eq!(
+        ramekin_core::catalog::parsed_name("about 7 cloves garlic, minced"),
+        "garlic"
     );
 }

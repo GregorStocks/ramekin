@@ -558,8 +558,36 @@ pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
             consider(idx);
         }
     }
+    // "neutral oil such as canola" names the food before "such as"; in
+    // "Garnishes, such as minced chives, pickles" the examples are the foods.
     if let Some(idx) = lower.find(" such as ") {
-        consider(idx);
+        const GENERIC_HEADS: &[&str] = &[
+            "accompaniments",
+            "add-ins",
+            "additions",
+            "dippers",
+            "extras",
+            "fillings",
+            "fixings",
+            "garnish",
+            "garnishes",
+            "mix-ins",
+            "options",
+            "sides",
+            "things",
+            "toppings",
+            "veggies",
+        ];
+        let head_word = lower
+            .get(..idx)
+            .unwrap_or("")
+            .trim_end_matches([',', ' '])
+            .split_whitespace()
+            .last()
+            .unwrap_or("");
+        if !GENERIC_HEADS.contains(&head_word) {
+            consider(idx);
+        }
     }
     for purpose in USE_PURPOSES {
         let phrase = format!(" for {purpose}");
@@ -579,7 +607,12 @@ pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
                     .iter()
                     .any(|purpose| next.starts_with(purpose.trim_start_matches("the ")))
             });
-            if rest.chars().next().is_none_or(|c| !c.is_alphanumeric()) && !continues_list {
+            // "toppings for serving: extra cheese, ..." introduces a list.
+            let introduces_list = rest.trim_start().starts_with(':');
+            if rest.chars().next().is_none_or(|c| !c.is_alphanumeric())
+                && !continues_list
+                && !introduces_list
+            {
                 consider(idx);
             }
         }
