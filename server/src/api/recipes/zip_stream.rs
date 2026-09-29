@@ -1,7 +1,8 @@
-use super::paprika::export_recipe_to_paprikarecipe;
+use super::paprika::{export_recipe_to_paprikarecipe, PAPRIKARECIPE_EXTENSION};
 use super::read::RecipeWithVersion;
 use crate::db::DbPool;
 use bytes::Bytes;
+use std::collections::HashSet;
 use std::io::{self, Write};
 use tokio::sync::mpsc;
 use uuid::Uuid;
@@ -31,6 +32,33 @@ impl Write for ChannelWriter {
     }
 }
 
+/// Hands out zip entry names that are unique within one archive. Recipe
+/// titles collide (duplicate recipes, or titles that only differ in
+/// punctuation stripped by sanitization), and the zip crate rejects
+/// duplicate entry names. Comparison is case-insensitive so entries don't
+/// overwrite each other when unzipped on a case-insensitive filesystem.
+#[derive(Default)]
+struct EntryNames {
+    used: HashSet<String>,
+}
+
+impl EntryNames {
+    /// Returns `filename` if unused, otherwise `<stem> (N).paprikarecipe`
+    /// for the smallest N >= 2 that is unused.
+    fn claim(&mut self, filename: &str) -> String {
+        let stem = filename
+            .strip_suffix(PAPRIKARECIPE_EXTENSION)
+            .expect("export entry names always end in .paprikarecipe");
+        let mut candidate = filename.to_string();
+        let mut n = 2;
+        while !self.used.insert(candidate.to_lowercase()) {
+            candidate = format!("{} ({}){}", stem, n, PAPRIKARECIPE_EXTENSION);
+            n += 1;
+        }
+        candidate
+    }
+}
+
 /// Write every recipe in `recipes` as a .paprikarecipe entry to a streaming
 /// ZIP. Any per-recipe failure (DB error fetching photos/tags, corrupt
 /// stored data, zip metadata rejection) aborts the stream: an export is a
@@ -56,6 +84,7 @@ pub(super) fn write_zip_stream(
     // Store without additional compression since each .paprikarecipe is already gzipped
     let options = SimpleFileOptions::default().compression_method(zip::CompressionMethod::Stored);
 
+    let mut entry_names = EntryNames::default();
     let mut total_entry_bytes: u64 = 0;
     for recipe in recipes {
         // Short-lived per-recipe connection: held during the DB fetch and
@@ -81,7 +110,8 @@ pub(super) fn write_zip_stream(
             })?
         };
 
-        zip.start_file(&exported.filename, options).map_err(|e| {
+        let entry_name = entry_names.claim(&exported.filename);
+        zip.start_file(&entry_name, options).map_err(|e| {
             // IO errors here almost always mean the client has gone away;
             // anything else (zip metadata rejection) is still a recipe we
             // would otherwise silently drop from the backup.
@@ -104,4 +134,70 @@ pub(super) fn write_zip_stream(
     zip.finish()
         .map_err(|e| io::Error::other(format!("finalize zip: {}", e)))?;
     Ok(total_entry_bytes)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::EntryNames;
+
+    #[test]
+    fn unique_names_pass_through() {
+        let mut names = EntryNames::default();
+        assert_eq!(
+            names.claim("Beef Stew.paprikarecipe"),
+            "Beef Stew.paprikarecipe"
+        );
+        assert_eq!(names.claim("Chili.paprikarecipe"), "Chili.paprikarecipe");
+    }
+
+    #[test]
+    fn duplicates_get_numbered_suffixes() {
+        let mut names = EntryNames::default();
+        assert_eq!(
+            names.claim("Beef Stew.paprikarecipe"),
+            "Beef Stew.paprikarecipe"
+        );
+        assert_eq!(
+            names.claim("Beef Stew.paprikarecipe"),
+            "Beef Stew (2).paprikarecipe"
+        );
+        assert_eq!(
+            names.claim("Beef Stew.paprikarecipe"),
+            "Beef Stew (3).paprikarecipe"
+        );
+    }
+
+    #[test]
+    fn case_only_differences_are_deduped() {
+        let mut names = EntryNames::default();
+        assert_eq!(
+            names.claim("Beef Stew.paprikarecipe"),
+            "Beef Stew.paprikarecipe"
+        );
+        assert_eq!(
+            names.claim("beef stew.paprikarecipe"),
+            "beef stew (2).paprikarecipe"
+        );
+    }
+
+    #[test]
+    fn generated_suffix_skips_names_already_taken() {
+        let mut names = EntryNames::default();
+        assert_eq!(
+            names.claim("Beef Stew 2.paprikarecipe"),
+            "Beef Stew 2.paprikarecipe"
+        );
+        assert_eq!(
+            names.claim("Beef Stew (2).paprikarecipe"),
+            "Beef Stew (2).paprikarecipe"
+        );
+        assert_eq!(
+            names.claim("Beef Stew.paprikarecipe"),
+            "Beef Stew.paprikarecipe"
+        );
+        assert_eq!(
+            names.claim("Beef Stew.paprikarecipe"),
+            "Beef Stew (3).paprikarecipe"
+        );
+    }
 }
