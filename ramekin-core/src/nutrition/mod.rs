@@ -82,16 +82,25 @@ fn is_cooking_fat(entry: &Entry) -> bool {
     })
 }
 
+/// The most pieces of a trace food that still count as a trace ("6-8 bay
+/// leaves"). Beyond this, the calories are unknown rather than zero.
+const MAX_TRACE_COUNT: f64 = 10.0;
+
 /// A few whole leaves, sticks, or pods of a food USDA has no piece weight for
 /// ("2 bay leaves"); a handful of a trace food is a few calories.
 fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient) -> bool {
     ingredient.measurements.iter().all(|measurement| {
+        let few = measurement
+            .amount
+            .as_deref()
+            .and_then(quantity)
+            .is_some_and(|count| count.max <= MAX_TRACE_COUNT);
         let unit = measurement
             .unit
             .as_deref()
             .map(normalize)
             .unwrap_or_default();
-        TRACE_COUNT_UNITS.contains(&unit.as_str())
+        few && TRACE_COUNT_UNITS.contains(&unit.as_str())
             && catalog::grams_per_piece(entry, Some(unit.as_str())).is_none()
     })
 }
@@ -194,12 +203,33 @@ fn quantity(value: &str) -> Option<CalorieRange> {
     None
 }
 
+/// Containers whose weight a recipe may state ("15-ounce can").
+const PACKAGE_WORDS: &str = "can|package|block|bag|jar|box|carton|container|tin|bottle|packet|tub";
+
+/// "2 (15-ounce) cans" parses as unit "can" with the weight leading the note
+/// ("15-ounce, drained"); join them back into one weighed unit.
+fn noted_package_unit(unit: &str, note: Option<&str>) -> Option<String> {
+    static BARE: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(&format!(r"^(?:{PACKAGE_WORDS})s?$")).unwrap());
+    static WEIGHT: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"^([0-9]+(?:\.[0-9]+)?[- ]?(?:ounce|oz|pound|lb|gram|g)\.?)(?:$|[,;]| or )")
+            .unwrap()
+    });
+    let unit = normalize(unit);
+    if !BARE.is_match(&unit) {
+        return None;
+    }
+    let note = normalize(note?);
+    let weight = WEIGHT.captures(&note)?;
+    Some(format!("{} {unit}", &weight[1]))
+}
+
 /// A unit that carries its own weight: "15-ounce can", "(28-oz.) can", "425-gram
 /// package".
 fn package_grams(unit: &str) -> Option<f64> {
     static PACKAGE: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(
-            r"^\(?([0-9]+(?:\.[0-9]+)?)[- ]?(ounce|oz|pound|lb|gram|g)\.?\)?[- ]?(?:can|package|block|bag|jar|box|carton|container|tin|bottle|packet|tub)s?$",
+            &format!(r"^\(?([0-9]+(?:\.[0-9]+)?)[- ]?(ounce|oz|pound|lb|gram|g)\.?\)?[- ]?(?:{PACKAGE_WORDS})s?$"),
         )
         .unwrap()
     });
@@ -354,7 +384,10 @@ fn measured_calories(
             reason = "Unsupported or missing quantity";
             continue;
         };
-        let grams = match measurement_grams(amount, unit.as_deref(), food) {
+        let noted = unit
+            .as_deref()
+            .and_then(|unit| noted_package_unit(unit, ingredient.note.as_deref()));
+        let grams = match measurement_grams(amount, noted.as_deref().or(unit.as_deref()), food) {
             Ok(grams) => grams,
             Err(error) => {
                 reason = error;

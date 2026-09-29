@@ -400,6 +400,27 @@ fn packages_carry_their_own_weight_and_fill_words_are_ignored() {
     for unit in ["15-ounce can", "(15-ounce) can", "15 oz can", "15-oz. cans"] {
         assert!((kcal("chickpeas", "1", unit) - can).abs() < 1e-9, "{unit}");
     }
+    // The parser moves a parenthesized weight into the note:
+    // "2 (15-ounce) cans chickpeas" is unit "can", note "15-ounce, drained".
+    for note in ["15-ounce, drained", "15 oz", "15-ounce or 425-gram"] {
+        let noted = ParsedIngredient {
+            note: Some(note.into()),
+            ..ingredient("chickpeas", "2", "cans")
+        };
+        let result = estimate(&[noted], None, 1.0).unwrap();
+        assert!(
+            (result.known_calories.unwrap().min - 2.0 * can).abs() < 1e-9,
+            "{note}"
+        );
+    }
+    for note in ["drained", "about 15-ounce", "15-ounce-ish"] {
+        let noted = ParsedIngredient {
+            note: Some(note.into()),
+            ..ingredient("chickpeas", "1", "can")
+        };
+        let result = estimate(&[noted], None, 1.0).unwrap();
+        assert!(result.known_calories.is_none(), "{note}");
+    }
     assert!((kcal("chickpeas", "1", "425-gram can") - kcal("chickpeas", "425", "g")).abs() < 1e-9);
     for unit in [
         "heaped tsp",
@@ -428,6 +449,12 @@ fn counted_trace_foods_without_a_piece_weight_are_negligible() {
     assert_eq!(known(count("bay leaves", "2")), 0.0);
     assert_eq!(known(ingredient("bay leaves", "2", "leaves")), 0.0);
     assert_eq!(known(ingredient("cinnamon", "1", "stick")), 0.0);
+    assert_eq!(known(count("bay leaves", "6-8")), 0.0);
+    // Past a handful, the calories are unknown rather than zero.
+    for amount in ["100", "8-12"] {
+        let many = estimate(&[count("bay leaves", amount)], None, 1.0).unwrap();
+        assert!(many.known_calories.is_none(), "{amount}");
+    }
     assert_eq!(known(ingredient("thyme", "4", "sprig")), 0.0);
     // A measured amount of a fresh herb still counts.
     assert!(known(ingredient("basil", "10", "g")) > 0.0);
