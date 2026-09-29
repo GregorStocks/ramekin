@@ -421,6 +421,10 @@ fn a_cooked_note_selects_the_cooked_food() {
         line_fdc("brown rice", Some("leftover cooked")),
         fdc_id("cooked brown rice")
     );
+    assert_eq!(
+        line_fdc("brown rice", Some("cooked (about 1 cup uncooked)")),
+        fdc_id("cooked brown rice")
+    );
     // A cooking instruction applies after measuring, so the raw food is measured.
     for note in [
         "cooked and crumbled",

@@ -79,7 +79,8 @@ Names are lowercased and whitespace is collapsed. Then:
 Calorie estimates and density resolve whole lines with `resolve_line(item, note)`.
 The parser keeps "cooked" in the note ("brown rice, cooked" → item "brown rice"),
 and cooked grains, pasta, and meats differ from dry or raw ones about threefold.
-Only a note that is exactly "cooked" (or "leftover cooked") states the measured
+Only a note that is exactly "cooked" (or "leftover cooked"), optionally followed
+by a parenthetical clarifier ("cooked (about 1 cup uncooked)"), states the measured
 food is cooked and tries "cooked <item>" first. If the catalog has no cooked form, the line
 stays unresolved rather than being charged as the raw food (unless the item
 already names a cooked food). Anything longer ("cooked and
