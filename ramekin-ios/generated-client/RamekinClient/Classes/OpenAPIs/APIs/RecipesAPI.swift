@@ -448,42 +448,6 @@ open class RecipesAPI {
     }
 
     /**
-     Re-parse the stored ingredients of all of the user's recipes with the current parser, saving a new version (source \"reparse\") for each recipe whose ingredients change.
-     
-     - returns: ReparseIngredientsResponse
-     */
-    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func reparseAllIngredients() async throws -> ReparseIngredientsResponse {
-        return try await reparseAllIngredientsWithRequestBuilder().execute().body
-    }
-
-    /**
-     Re-parse the stored ingredients of all of the user's recipes with the current parser, saving a new version (source \"reparse\") for each recipe whose ingredients change.
-     - POST /api/recipes/reparse-ingredients
-     - Bearer Token:
-       - type: http
-       - name: bearer_auth
-     - returns: RequestBuilder<ReparseIngredientsResponse> 
-     */
-    open class func reparseAllIngredientsWithRequestBuilder() -> RequestBuilder<ReparseIngredientsResponse> {
-        let localVariablePath = "/api/recipes/reparse-ingredients"
-        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
-        let localVariableParameters: [String: Any]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: Any?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<ReparseIngredientsResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
-    }
-
-    /**
 
      - parameter id: (path) Recipe ID 
      - returns: RescrapeResponse

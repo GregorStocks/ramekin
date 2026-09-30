@@ -27,12 +27,4 @@ export declare class IngredientNamesApi extends runtime.BaseAPI {
     /**
      */
     retryIngredientNames(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IngredientNamesQueuedResponse>;
-    /**
-     * Queue every name the catalog doesn\'t know from the caller\'s current recipes and shopping list, e.g. once after this feature ships.
-     */
-    warmIngredientNamesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IngredientNamesQueuedResponse>>;
-    /**
-     * Queue every name the catalog doesn\'t know from the caller\'s current recipes and shopping list, e.g. once after this feature ships.
-     */
-    warmIngredientNames(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IngredientNamesQueuedResponse>;
 }

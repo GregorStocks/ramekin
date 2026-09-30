@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_ingredient_names_status**](IngredientNamesApi.md#get_ingredient_names_status) | **GET** /api/ingredient-names/status | 
 [**retry_ingredient_names**](IngredientNamesApi.md#retry_ingredient_names) | **POST** /api/ingredient-names/retry | 
-[**warm_ingredient_names**](IngredientNamesApi.md#warm_ingredient_names) | **POST** /api/ingredient-names/warm | Queue every name the catalog doesn&#39;t know from the caller&#39;s current recipes and shopping list, e.g. once after this feature ships.
 
 
 # **get_ingredient_names_status**
@@ -145,79 +144,6 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Failed names queued again |  -  |
-**401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **warm_ingredient_names**
-> IngredientNamesQueuedResponse warm_ingredient_names()
-
-Queue every name the catalog doesn't know from the caller's current recipes and shopping list, e.g. once after this feature ships.
-
-### Example
-
-* Bearer Authentication (bearer_auth):
-
-```python
-import ramekin_client
-from ramekin_client.models.ingredient_names_queued_response import IngredientNamesQueuedResponse
-from ramekin_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ramekin_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearer_auth
-configuration = ramekin_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with ramekin_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ramekin_client.IngredientNamesApi(api_client)
-
-    try:
-        # Queue every name the catalog doesn't know from the caller's current recipes and shopping list, e.g. once after this feature ships.
-        api_response = api_instance.warm_ingredient_names()
-        print("The response of IngredientNamesApi->warm_ingredient_names:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IngredientNamesApi->warm_ingredient_names: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**IngredientNamesQueuedResponse**](IngredientNamesQueuedResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Unknown names in the caller&#39;s recipes and shopping list queued |  -  |
 **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

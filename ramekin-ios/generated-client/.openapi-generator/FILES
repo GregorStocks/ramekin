@@ -81,7 +81,6 @@ RamekinClient/Classes/OpenAPIs/Models/RecipeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RecipeSummary.swift
 RamekinClient/Classes/OpenAPIs/Models/RenameTagRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/RenameTagResponse.swift
-RamekinClient/Classes/OpenAPIs/Models/ReparseIngredientsResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RescrapeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RetryScrapeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ScrapeJobResponse.swift
@@ -176,7 +175,6 @@ docs/RecipeSummary.md
 docs/RecipesAPI.md
 docs/RenameTagRequest.md
 docs/RenameTagResponse.md
-docs/ReparseIngredientsResponse.md
 docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeAPI.md

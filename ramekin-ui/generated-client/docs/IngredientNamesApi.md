@@ -6,7 +6,6 @@ All URIs are relative to *http://localhost*
 |------------- | ------------- | -------------|
 | [**getIngredientNamesStatus**](IngredientNamesApi.md#getingredientnamesstatus) | **GET** /api/ingredient-names/status |  |
 | [**retryIngredientNames**](IngredientNamesApi.md#retryingredientnames) | **POST** /api/ingredient-names/retry |  |
-| [**warmIngredientNames**](IngredientNamesApi.md#warmingredientnames) | **POST** /api/ingredient-names/warm | Queue every name the catalog doesn\&#39;t know from the caller\&#39;s current recipes and shopping list, e.g. once after this feature ships. |
 
 
 
@@ -129,68 +128,6 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Failed names queued again |  -  |
-| **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## warmIngredientNames
-
-> IngredientNamesQueuedResponse warmIngredientNames()
-
-Queue every name the catalog doesn\&#39;t know from the caller\&#39;s current recipes and shopping list, e.g. once after this feature ships.
-
-### Example
-
-```ts
-import {
-  Configuration,
-  IngredientNamesApi,
-} from '';
-import type { WarmIngredientNamesRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: bearer_auth
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new IngredientNamesApi(config);
-
-  try {
-    const data = await api.warmIngredientNames();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**IngredientNamesQueuedResponse**](IngredientNamesQueuedResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Unknown names in the caller\&#39;s recipes and shopping list queued |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)

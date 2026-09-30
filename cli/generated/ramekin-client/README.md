@@ -36,7 +36,6 @@ Class | Method | HTTP request | Description
 *ImportApi* | [**prepare_text_recipe**](docs/ImportApi.md#prepare_text_recipe) | **POST** /api/import/text | 
 *IngredientNamesApi* | [**get_ingredient_names_status**](docs/IngredientNamesApi.md#get_ingredient_names_status) | **GET** /api/ingredient-names/status | 
 *IngredientNamesApi* | [**retry_ingredient_names**](docs/IngredientNamesApi.md#retry_ingredient_names) | **POST** /api/ingredient-names/retry | 
-*IngredientNamesApi* | [**warm_ingredient_names**](docs/IngredientNamesApi.md#warm_ingredient_names) | **POST** /api/ingredient-names/warm | Queue every name the catalog doesn't know from the caller's current recipes and shopping list, e.g. once after this feature ships.
 *MealPlansApi* | [**create_meal_plan**](docs/MealPlansApi.md#create_meal_plan) | **POST** /api/meal-plans | 
 *MealPlansApi* | [**delete_meal_plan**](docs/MealPlansApi.md#delete_meal_plan) | **DELETE** /api/meal-plans/{id} | 
 *MealPlansApi* | [**list_meal_plans**](docs/MealPlansApi.md#list_meal_plans) | **GET** /api/meal-plans | 
@@ -55,7 +54,6 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**list_recipes**](docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_versions**](docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 *RecipesApi* | [**normalize_title**](docs/RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
-*RecipesApi* | [**reparse_all_ingredients**](docs/RecipesApi.md#reparse_all_ingredients) | **POST** /api/recipes/reparse-ingredients | Re-parse the stored ingredients of all of the user's recipes with the current parser, saving a new version (source \"reparse\") for each recipe whose ingredients change.
 *RecipesApi* | [**rescrape**](docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**rescrape_photo**](docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 *RecipesApi* | [**sync_recipes**](docs/RecipesApi.md#sync_recipes) | **GET** /api/recipes/sync | 
@@ -138,7 +136,6 @@ Class | Method | HTTP request | Description
  - [RecipeSummary](docs/RecipeSummary.md)
  - [RenameTagRequest](docs/RenameTagRequest.md)
  - [RenameTagResponse](docs/RenameTagResponse.md)
- - [ReparseIngredientsResponse](docs/ReparseIngredientsResponse.md)
  - [RescrapeResponse](docs/RescrapeResponse.md)
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)

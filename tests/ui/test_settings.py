@@ -67,12 +67,9 @@ def test_settings_logout(logged_in_page: Page, ui_url: str):
 
 
 def test_settings_shows_ingredient_recognition(logged_in_page: Page, ui_url: str):
-    """The recognition panel shows counts and can queue names from recipes."""
+    """The recognition panel shows counts; Retry needs a failure to retry."""
     logged_in_page.goto(f"{ui_url}/settings")
     panel = logged_in_page.get_by_role("region", name="Ingredient recognition")
     expect(panel.locator(".settings-name-counts")).to_contain_text("recognized")
-    expect(panel.locator(".settings-name-counts")).to_contain_text("pending")
-    panel.get_by_role("button", name="Recognize names in all my recipes").click()
-    expect(panel.get_by_role("status")).to_contain_text(
-        re.compile(r"Queued \d+ names\.")
-    )
+    expect(panel.locator(".settings-name-counts")).to_contain_text("0 failed")
+    expect(panel.get_by_role("button", name="Retry failed")).to_be_disabled()

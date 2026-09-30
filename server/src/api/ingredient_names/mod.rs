@@ -6,9 +6,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::ingredient_names::{
-    enqueue, requeue_failed, unlearned_names, wake, FAILED, PENDING, RESOLVED,
-};
+use crate::ingredient_names::{requeue_failed, unlearned_names, wake, FAILED, PENDING, RESOLVED};
 use crate::models::Ingredient;
 use crate::schema::{
     ingredient_name_resolutions as names, recipe_versions, recipes, shopping_list_items,
@@ -172,46 +170,15 @@ pub async fn retry_ingredient_names(
     Ok(Json(IngredientNamesQueuedResponse { queued }))
 }
 
-#[utoipa::path(
-    post,
-    path = "/api/ingredient-names/warm",
-    tag = "ingredient_names",
-    responses(
-        (status = 200, description = "Unknown names in the caller's recipes and shopping list queued", body = IngredientNamesQueuedResponse),
-        (status = 401, description = "Unauthorized", body = ErrorResponse)
-    ),
-    security(("bearer_auth" = []))
-)]
-/// Queue every name the catalog doesn't know from the caller's current
-/// recipes and shopping list, e.g. once after this feature ships.
-pub async fn warm_ingredient_names(
-    AuthUser(user): AuthUser,
-    State(pool): State<Arc<DbPool>>,
-) -> Result<Json<IngredientNamesQueuedResponse>, ApiError> {
-    let user_id = user.id;
-    let queued = run_db(&pool, move |conn| {
-        let pending = own_names(conn, user_id)?;
-        enqueue(conn, &pending).map_err(db_error)
-    })
-    .await?;
-    wake();
-    Ok(Json(IngredientNamesQueuedResponse { queued }))
-}
-
 pub fn router() -> Router<AppState> {
     Router::new()
         .route("/status", get(get_ingredient_names_status))
         .route("/retry", post(retry_ingredient_names))
-        .route("/warm", post(warm_ingredient_names))
 }
 
 #[derive(OpenApi)]
 #[openapi(
-    paths(
-        get_ingredient_names_status,
-        retry_ingredient_names,
-        warm_ingredient_names
-    ),
+    paths(get_ingredient_names_status, retry_ingredient_names),
     components(schemas(
         IngredientNamesStatusResponse,
         IngredientNameFailure,
