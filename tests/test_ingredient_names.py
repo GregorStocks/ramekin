@@ -6,6 +6,7 @@ import threading
 import time
 import uuid
 
+import pytest
 import requests
 
 from conftest import make_ingredient, wait_for_job_completion
@@ -223,14 +224,16 @@ def test_status_and_retry_only_cover_your_own_names(
     mock_fail(item.lower(), False)
 
 
-def test_resolving_a_name_reaches_incremental_sync(authed_api_client):
+@pytest.mark.parametrize("padding", ["", "  "])
+def test_resolving_a_name_reaches_incremental_sync(authed_api_client, padding):
     client, _ = authed_api_client
     shopping = ShoppingListApi(client)
     names_api = IngredientNamesApi(client)
     item = unique("sugar")
+    stored = f"{padding}{item}{padding}"
     mock_fail(item.lower(), True)
     shopping.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item=item)])
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item=stored)])
     )
     wait_for(lambda: failures_named(names_api, item.lower()))
     synced = shopping.sync_items(SyncRequest())
@@ -251,7 +254,7 @@ def test_resolving_a_name_reaches_incremental_sync(authed_api_client):
             for c in shopping.sync_items(
                 SyncRequest(last_sync_at=synced.sync_timestamp)
             ).server_changes
-            if c.item == item
+            if c.item == stored
         ]
     )
     assert changes[0].computed_category
@@ -277,4 +280,33 @@ def test_sync_queues_only_names_it_wrote(authed_api_client):
     )
     # Queued together, the two names would sort into the same batch.
     wait_for(lambda: mock_calls(written.lower()) >= 1)
+    assert mock_calls(rejected.lower()) == 0
+
+
+def test_create_queues_only_names_it_inserted(authed_api_client):
+    client, _ = authed_api_client
+    shopping = ShoppingListApi(client)
+    prefix = unique("")
+    written = f"{prefix}a sugar"
+    rejected = f"{prefix}b sugar"
+    client_id = uuid.uuid4()
+    shopping.create_items(
+        CreateShoppingListRequest(
+            items=[CreateShoppingListItemRequest(item=written, client_id=client_id)]
+        )
+    )
+    wait_for(lambda: mock_calls(written.lower()) >= 1)
+    # A retry with the same client_id returns the existing row; its new name
+    # was never saved, so it is never asked about.
+    fresh = f"{prefix}c sugar"
+    shopping.create_items(
+        CreateShoppingListRequest(
+            items=[
+                CreateShoppingListItemRequest(item=rejected, client_id=client_id),
+                CreateShoppingListItemRequest(item=fresh),
+            ]
+        )
+    )
+    # Queued together, the two names would sort into the same batch.
+    wait_for(lambda: mock_calls(fresh.lower()) >= 1)
     assert mock_calls(rejected.lower()) == 0

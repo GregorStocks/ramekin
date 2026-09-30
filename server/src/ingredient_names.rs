@@ -169,8 +169,16 @@ pub async fn resolve_pending(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> R
         }
         // A failed answer is recorded on its names; failing to record it
         // would leave them pending, so stop rather than ask again.
-        if let Some(e) = resolve_batch(pool, batch).await? {
-            first_error.get_or_insert(e);
+        match resolve_batch(pool, batch).await? {
+            Batch::Resolved => {}
+            Batch::NamesFailed(e) => {
+                first_error.get_or_insert(e);
+            }
+            // The next batch would fail the same way; leave it pending.
+            Batch::ProviderFailed(e) => {
+                first_error.get_or_insert(e);
+                break;
+            }
         }
     }
     match (first_error, only) {
@@ -199,41 +207,63 @@ pub async fn resolve_pending(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> R
     }
 }
 
+/// How a batch ended. Its failures are already recorded on its names.
+enum Batch {
+    Resolved,
+    /// The model's answer for some names was invalid.
+    NamesFailed(String),
+    /// The provider or configuration failed, so later batches would too.
+    ProviderFailed(String),
+}
+
 /// Resolve one batch. If the model's answer for a multi-name batch is
 /// invalid, each name is retried alone, so one name the model can't handle
 /// doesn't fail the others; only the names that fail on their own are marked
-/// failed. Provider and configuration errors fail the whole batch at once.
-/// Returns the recorded resolution failure, if any; `Err` means an outcome
-/// couldn't be saved.
-async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Option<String>, String> {
-    match ask(&batch).await {
-        Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await.map(|()| None),
-        Err(AiError::ParseError(error)) if batch.len() > 1 => {
-            tracing::warn!(
-                names = batch.len(),
-                "ingredient name batch failed, retrying names one at a time: {}",
-                error
-            );
-            let mut first_error = None;
-            for name in batch {
-                let single = vec![name];
-                match ask(&single).await {
-                    Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await?,
-                    Err(error) => {
-                        let error = error.to_string();
-                        save_failed(pool, single, error.clone()).await?;
-                        first_error.get_or_insert(error);
+/// failed. Provider and configuration errors fail the batch at once. `Err`
+/// means an outcome couldn't be saved.
+async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, String> {
+    let error = match ask(&batch).await {
+        Ok((resolutions, model)) => {
+            save_resolved(pool, resolutions, model).await?;
+            return Ok(Batch::Resolved);
+        }
+        Err(AiError::ParseError(error)) if batch.len() > 1 => error,
+        Err(error) => return fail(pool, batch, error).await,
+    };
+    tracing::warn!(
+        names = batch.len(),
+        "ingredient name batch failed, retrying names one at a time: {}",
+        error
+    );
+    let mut outcome = Batch::Resolved;
+    for name in batch {
+        let single = vec![name];
+        match ask(&single).await {
+            Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await?,
+            Err(error) => match fail(pool, single, error).await? {
+                Batch::NamesFailed(e) => {
+                    if matches!(outcome, Batch::Resolved) {
+                        outcome = Batch::NamesFailed(e);
                     }
                 }
-            }
-            Ok(first_error)
-        }
-        Err(error) => {
-            let error = error.to_string();
-            save_failed(pool, batch, error.clone()).await?;
-            Ok(Some(error))
+                // Names not yet asked about stay pending.
+                provider => return Ok(provider),
+            },
         }
     }
+    Ok(outcome)
+}
+
+/// Record `error` on `names` and classify it.
+async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<Batch, String> {
+    let provider_wide = !matches!(error, AiError::ParseError(_));
+    let error = error.to_string();
+    save_failed(pool, names, error.clone()).await?;
+    Ok(if provider_wide {
+        Batch::ProviderFailed(error)
+    } else {
+        Batch::NamesFailed(error)
+    })
 }
 
 /// One LLM call for `batch`: each name's answer, and the model that gave it.
@@ -310,6 +340,9 @@ fn touch_shopping_items(
         .replace('%', "\\%")
         .replace('_', "\\_")
         .replace(' ', "%");
+    // Unanchored, so spellings with surrounding text or whitespace that
+    // normalize to `name` still reach the exact check below.
+    let pattern = format!("%{pattern}%");
     let candidates: Vec<(uuid::Uuid, String)> = items::table
         .filter(items::deleted_at.is_null())
         .filter(items::item.ilike(pattern).escape('\\'))
