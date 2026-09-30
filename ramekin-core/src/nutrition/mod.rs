@@ -533,15 +533,20 @@ fn unknown_label(reason: &str) -> &'static str {
 
 /// How many servings a recipe makes, as a range ("4 to 6 servings" is 4–6).
 /// Accepts "serves 4", "servings: 4", "servings 4", "yield: 4", "makes 4
-/// servings", and a bare count, with an optional "servings", "people", or
-/// "portions" suffix. "Makes 12 cookies" names no servings, so it's None.
+/// servings", and a bare count, with an optional "servings", "people",
+/// "person(s)", or "portion(s)" suffix. "Makes 12 cookies" and a bare "makes
+/// 24" name no servings, so they're None.
 fn serving_count(servings: &str) -> Option<CalorieRange> {
     static PREFIX: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(r"^(?:serves|servings?|yields?|makes)(?:\s*:\s*|\s+)").unwrap()
     });
     static SUFFIX: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"\s+(?:servings?|people|persons|portions)$").unwrap());
+        LazyLock::new(|| Regex::new(r"\s+(?:servings?|people|persons?|portions?)$").unwrap());
     let text = normalize(servings);
+    // "Makes 24" is usually cookies; only "makes 4 servings" names servings.
+    if text.starts_with("makes") && !SUFFIX.is_match(&text) {
+        return None;
+    }
     let count = PREFIX.replace(&text, "");
     let count = SUFFIX.replace(&count, "");
     quantity(&count).filter(|r| r.min > 0.0 && r.min <= r.max)

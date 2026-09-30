@@ -113,7 +113,7 @@ function scaleTerm(raw: string, factor: number): string | null {
   const numeric = scaleNumeric(raw, factor);
   if (numeric !== null) return numeric;
   const unit = raw.match(
-    /^(.+?)(\s+(?:g|grams?|kg|kilograms?|mg|milligrams?|oz|ounces?|lbs?|pounds?|cups?|tbsp|tablespoons?|tsp|teaspoons?|fl oz|fluid ounces?|pints?|quarts?|gallons?|ml|milliliters?|l|liters?|litres?|servings?|people|persons|portions))$/i,
+    /^(.+?)(\s+(?:g|grams?|kg|kilograms?|mg|milligrams?|oz|ounces?|lbs?|pounds?|cups?|tbsp|tablespoons?|tsp|teaspoons?|fl oz|fluid ounces?|pints?|quarts?|gallons?|ml|milliliters?|l|liters?|litres?|servings?|people|persons?|portions?))$/i,
   );
   if (!unit) return null;
   const scaled = scaleNumeric(unit[1], factor);

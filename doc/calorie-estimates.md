@@ -136,7 +136,7 @@ measurement to weight"), followed by the USDA attribution.
 
 A per-serving estimate needs a positive serving count or range.
 - **Prefixes:** `serves`, `servings`, `yield`, `yields` or `makes`, with or without a colon (case-insensitive).
-- **Suffixes:** `serving(s)`, `people`, `persons` or `portions`.
+- **Suffixes:** `serving(s)`, `people`, `person(s)` or `portion(s)`. A "makes" count needs one ("Makes 4 servings"); a bare "Makes 24" is usually cookies.
 - **Examples:** "4", "Serves 4 to 6", "Servings 2", "Yield: 4", "Makes 4 servings".
 - **Ranges:** a range gives a per-serving range, from the total over the most servings to the total over the fewest. "4 to 6 servings" of 2,400 kcal is ~400–600 kcal.
 - **Not counted:** a yield of something other than servings ("Makes 12 cookies", "1 loaf").

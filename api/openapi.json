@@ -3420,7 +3420,7 @@
               "string",
               "null"
             ],
-            "description": "Original, unscaled servings text: a count or range, optionally with a\n\"serves\", \"servings\", \"yield\", or \"makes\" prefix and a \"servings\",\n\"people\", \"persons\", or \"portions\" suffix (\"Serves 4 to 6\", \"Yield: 4\").\nA yield of something else (\"Makes 12 cookies\") gives no per-serving figure."
+            "description": "Original, unscaled servings text: a count or range, optionally with a\n\"serves\", \"servings\", \"yield\", or \"makes\" prefix and a \"servings\",\n\"people\", \"person(s)\", or \"portion(s)\" suffix (\"Serves 4 to 6\", \"Yield:\n4\"). A \"makes\" count needs a serving suffix; a yield of something else\n(\"Makes 12 cookies\", \"Makes 24\") gives no per-serving figure."
           }
         }
       },

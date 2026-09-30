@@ -228,6 +228,7 @@ fn deterministic_matching_zero_calories_and_servings() {
         "6-4",
         "1 loaf",
         "makes 12 cookies",
+        "Makes 24",
         "yield: 1 loaf",
         "NaN",
     ] {
@@ -249,6 +250,7 @@ fn deterministic_matching_zero_calories_and_servings() {
         "yield 4",
         "Makes 4 servings",
         "serves 4 people",
+        "Yield: 4 portions",
     ] {
         assert_eq!(
             estimate(std::slice::from_ref(&sugar), Some(servings), 2.0)

@@ -12,8 +12,9 @@ pub struct EstimateCaloriesRequest {
     pub ingredients: Vec<Ingredient>,
     /// Original, unscaled servings text: a count or range, optionally with a
     /// "serves", "servings", "yield", or "makes" prefix and a "servings",
-    /// "people", "persons", or "portions" suffix ("Serves 4 to 6", "Yield: 4").
-    /// A yield of something else ("Makes 12 cookies") gives no per-serving figure.
+    /// "people", "person(s)", or "portion(s)" suffix ("Serves 4 to 6", "Yield:
+    /// 4"). A "makes" count needs a serving suffix; a yield of something else
+    /// ("Makes 12 cookies", "Makes 24") gives no per-serving figure.
     pub servings: Option<String>,
     /// Multiplier applied to the whole recipe, including its serving count.
     pub scale: f64,
