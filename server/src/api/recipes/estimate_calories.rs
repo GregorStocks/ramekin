@@ -10,7 +10,11 @@ use utoipa::ToSchema;
 #[derive(Deserialize, ToSchema)]
 pub struct EstimateCaloriesRequest {
     pub ingredients: Vec<Ingredient>,
-    /// Original, unscaled serving count. Yield text is not interpreted as a count.
+    /// Original, unscaled servings text: a count or range, optionally with a
+    /// "serves", "servings", "yield", or "makes" prefix and a "servings",
+    /// "people", "person(s)", or "portion(s)" suffix ("Serves 4 to 6", "Yield:
+    /// 4"). A "makes" count needs a serving suffix; a yield of something else
+    /// ("Makes 12 cookies", "Makes 24") gives no per-serving figure.
     pub servings: Option<String>,
     /// Multiplier applied to the whole recipe, including its serving count.
     pub scale: f64,

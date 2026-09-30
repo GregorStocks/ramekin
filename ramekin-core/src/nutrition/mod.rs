@@ -8,7 +8,7 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v7";
+const RULE_VERSION: &str = "calories-v8";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
@@ -531,18 +531,25 @@ fn unknown_label(reason: &str) -> &'static str {
     }
 }
 
-fn serving_count(servings: &str) -> Option<f64> {
-    static PREFIX: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"^(?:serves(?:\s*:\s*|\s+)|servings?\s*:\s*)").unwrap());
+/// How many servings a recipe makes, as a range ("4 to 6 servings" is 4–6).
+/// Accepts "serves 4", "servings: 4", "servings 4", "yield: 4", "makes 4
+/// servings", and a bare count, with an optional "servings", "people",
+/// "person(s)", or "portion(s)" suffix. "Makes 12 cookies" and a bare "makes
+/// 24" name no servings, so they're None.
+fn serving_count(servings: &str) -> Option<CalorieRange> {
+    static PREFIX: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"^(?:serves|servings?|yields?|makes)(?:\s*:\s*|\s+)").unwrap()
+    });
+    static SUFFIX: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"\s+(?:servings?|people|persons?|portions?)$").unwrap());
     let text = normalize(servings);
-    let text = PREFIX.replace(&text, "");
-    let count = text
-        .strip_suffix(" servings")
-        .or_else(|| text.strip_suffix(" serving"))
-        .unwrap_or(&text);
-    quantity(count)
-        .filter(|r| r.min == r.max && r.min > 0.0)
-        .map(|r| r.min)
+    // "Makes 24" is usually cookies; only "makes 4 servings" names servings.
+    if text.starts_with("makes") && !SUFFIX.is_match(&text) {
+        return None;
+    }
+    let count = PREFIX.replace(&text, "");
+    let count = SUFFIX.replace(&count, "");
+    quantity(&count).filter(|r| r.min > 0.0 && r.min <= r.max)
 }
 
 /// All arithmetic and presentation are computed here; clients render the result.
@@ -599,9 +606,11 @@ pub fn estimate(
     // Divide the original subtotal directly: scaling ingredients and servings
     // cancels out, including at very small scales where a scaled subtotal underflows.
     let count = servings.and_then(serving_count);
+    // "4 to 6 servings": the fewest calories per serving come from the most
+    // servings, and the most from the fewest.
     let per_serving = known.zip(count).map(|(total, count)| CalorieRange {
-        min: total.min / count,
-        max: total.max / count,
+        min: total.min / count.max,
+        max: total.max / count.min,
     });
     if per_serving.is_some_and(|range| !range.max.is_finite() || range.max > 1e15) {
         return Err("Per-serving estimate exceeds supported numeric bounds");

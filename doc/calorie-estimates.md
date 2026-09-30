@@ -134,11 +134,14 @@ A "How is this calculated?" disclosure lists every line with its scaled calories
 recognized", "Could be several foods", "Amount unclear", "Can't convert this
 measurement to weight"), followed by the USDA attribution.
 
-Only a positive numeric serving count, optionally prefixed by `serves`, `Serves:`,
-or `Servings:` (case-insensitive), or suffixed by `serving`/`servings`, is used for
-per-serving estimates. Yield text (`1 loaf`,
-`4–6`) is deliberately not interpreted. Scaling
-multiplies both ingredients and servings, so per-serving calories stay the same.
+A per-serving estimate needs a positive serving count or range.
+- **Prefixes:** `serves`, `servings`, `yield`, `yields` or `makes`, with or without a colon (case-insensitive).
+- **Suffixes:** `serving(s)`, `people`, `person(s)` or `portion(s)`. A "makes" count needs one ("Makes 4 servings"); a bare "Makes 24" is usually cookies.
+- **Examples:** "4", "Serves 4 to 6", "Servings 2", "Yield: 4", "Makes 4 servings".
+- **Ranges:** a range gives a per-serving range, from the total over the most servings to the total over the fewest. "4 to 6 servings" of 2,400 kcal is ~400–600 kcal.
+- **Not counted:** a yield of something other than servings ("Makes 12 cookies", "1 loaf").
+
+The web and iOS scalers accept the same prefixes when scaling the displayed servings (pinned by `shared-test-vectors/scale-amount.json`). Scaling multiplies both ingredients and servings, so per-serving calories stay the same.
 Partial per-serving estimates are lower bounds as well. Imported nutrition
 text is displayed separately and never feeds the calculation.
 

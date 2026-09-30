@@ -222,7 +222,16 @@ fn deterministic_matching_zero_calories_and_servings() {
     let second = estimate(std::slice::from_ref(&sugar), Some("4"), 1.0).unwrap();
     assert_eq!(first.database_version, second.database_version);
     assert_eq!(first.headline, second.headline);
-    for servings in ["0", "-1", "4–6", "1 loaf", "4–6 servings", "NaN"] {
+    for servings in [
+        "0",
+        "-1",
+        "6-4",
+        "1 loaf",
+        "makes 12 cookies",
+        "Makes 24",
+        "yield: 1 loaf",
+        "NaN",
+    ] {
         assert!(estimate(std::slice::from_ref(&sugar), Some(servings), 1.0)
             .unwrap()
             .per_serving_calories
@@ -236,6 +245,12 @@ fn deterministic_matching_zero_calories_and_servings() {
         "Servings: 4",
         "SERVINGS:4",
         "Serves: 4",
+        "Servings 4",
+        "Yield: 4",
+        "yield 4",
+        "Makes 4 servings",
+        "serves 4 people",
+        "Yield: 4 portions",
     ] {
         assert_eq!(
             estimate(std::slice::from_ref(&sugar), Some(servings), 2.0)
@@ -682,4 +697,17 @@ fn headlines_lead_with_per_serving_and_format_numbers() {
     assert_eq!(tiny_range.headline, "<1 kcal for the whole recipe");
     let from_tiny = estimate(&[ingredient("granulated sugar", "0.1-2", "g")], None, 1.0).unwrap();
     assert_eq!(from_tiny.headline, "~0–8 kcal for the whole recipe");
+}
+
+#[test]
+fn serving_ranges_give_a_per_serving_range() {
+    let sugar = ingredient("granulated sugar", "240", "g");
+    for servings in ["4 to 6 servings", "Serves 4 to 6", "Servings: 4-6", "4–6"] {
+        let result = estimate(std::slice::from_ref(&sugar), Some(servings), 1.0).unwrap();
+        let per_serving = result.per_serving_calories.unwrap();
+        // 928.8 kcal over 6 servings to 928.8 over 4.
+        assert!((per_serving.min - 154.8).abs() < 1e-9, "{servings}");
+        assert!((per_serving.max - 232.2).abs() < 1e-9, "{servings}");
+        assert_eq!(result.headline, "~150–240 kcal per serving", "{servings}");
+    }
 }

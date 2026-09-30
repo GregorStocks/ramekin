@@ -258,6 +258,48 @@
     "expected": "Serves: 8"
   },
   {
+    "name": "servings prefix without colon",
+    "amount": "Servings 2",
+    "factor": 2,
+    "expected": "Servings 4"
+  },
+  {
+    "name": "yield prefix",
+    "amount": "Yield: 4",
+    "factor": 2,
+    "expected": "Yield: 8"
+  },
+  {
+    "name": "makes servings",
+    "amount": "Makes 4 servings",
+    "factor": 2,
+    "expected": "Makes 8 servings"
+  },
+  {
+    "name": "serves range with people",
+    "amount": "Serves 4 to 6 people",
+    "factor": 2,
+    "expected": "Serves 8 to 12 people"
+  },
+  {
+    "name": "serves with persons",
+    "amount": "Serves 4 persons",
+    "factor": 2,
+    "expected": "Serves 8 persons"
+  },
+  {
+    "name": "yield a single portion",
+    "amount": "Yield: 1 portion",
+    "factor": 2,
+    "expected": "Yield: 2 portion"
+  },
+  {
+    "name": "makes a non-serving count scales nothing",
+    "amount": "Makes 12 cookies",
+    "factor": 2,
+    "expected": "Makes 12 cookies"
+  },
+  {
     "name": "free text remains unchanged",
     "amount": "to taste",
     "factor": 2,
