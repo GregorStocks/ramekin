@@ -40,7 +40,10 @@ export interface EstimateCaloriesRequest {
      */
     scale: number;
     /**
-     * Original, unscaled serving count. Yield text is not interpreted as a count.
+     * Original, unscaled servings text: a count or range, optionally with a
+     * "serves", "servings", "yield", or "makes" prefix and a "servings",
+     * "people", "persons", or "portions" suffix ("Serves 4 to 6", "Yield: 4").
+     * A yield of something else ("Makes 12 cookies") gives no per-serving figure.
      * @type {string}
      * @memberof EstimateCaloriesRequest
      */

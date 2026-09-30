@@ -29,7 +29,7 @@ class EstimateCaloriesRequest(BaseModel):
     """ # noqa: E501
     ingredients: List[Ingredient]
     scale: Union[StrictFloat, StrictInt] = Field(description="Multiplier applied to the whole recipe, including its serving count.")
-    servings: Optional[StrictStr] = Field(default=None, description="Original, unscaled serving count. Yield text is not interpreted as a count.")
+    servings: Optional[StrictStr] = Field(default=None, description="Original, unscaled servings text: a count or range, optionally with a \"serves\", \"servings\", \"yield\", or \"makes\" prefix and a \"servings\", \"people\", \"persons\", or \"portions\" suffix (\"Serves 4 to 6\", \"Yield: 4\"). A yield of something else (\"Makes 12 cookies\") gives no per-serving figure.")
     __properties: ClassVar[List[str]] = ["ingredients", "scale", "servings"]
 
     model_config = ConfigDict(
