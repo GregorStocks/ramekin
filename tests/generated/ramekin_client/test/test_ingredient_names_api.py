@@ -38,13 +38,6 @@ class TestIngredientNamesApi(unittest.TestCase):
         """
         pass
 
-    def test_warm_ingredient_names(self) -> None:
-        """Test case for warm_ingredient_names
-
-        Queue every name the catalog doesn't know from the caller's current recipes and shopping list, e.g. once after this feature ships.
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

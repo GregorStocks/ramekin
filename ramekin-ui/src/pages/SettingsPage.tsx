@@ -9,7 +9,6 @@ import {
   Match,
 } from "solid-js";
 import { A } from "@solidjs/router";
-import type { ReparseIngredientsResponse } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
@@ -21,13 +20,8 @@ type UploadState = "idle" | "uploading" | "done";
 
 export default function SettingsPage() {
   usePageTitle(() => "Settings");
-  const {
-    getUsersApi,
-    getClientLogsApi,
-    getRecipesApi,
-    getIngredientNamesApi,
-    setToken,
-  } = useAuth();
+  const { getUsersApi, getClientLogsApi, getIngredientNamesApi, setToken } =
+    useAuth();
 
   const [username, setUsername] = createSignal<string | null>(null);
   const [status, setStatus] = createSignal<ConnectionStatus>("checking");
@@ -35,10 +29,6 @@ export default function SettingsPage() {
   const [showLogoutConfirm, setShowLogoutConfirm] = createSignal(false);
   const [uploadState, setUploadState] = createSignal<UploadState>("idle");
   const [uploadError, setUploadError] = createSignal<string | null>(null);
-  const [reparsing, setReparsing] = createSignal(false);
-  const [reparseResult, setReparseResult] =
-    createSignal<ReparseIngredientsResponse | null>(null);
-  const [reparseError, setReparseError] = createSignal<string | null>(null);
 
   // On web the server is simply the origin serving the app.
   const serverUrl = window.location.origin;
@@ -88,7 +78,7 @@ export default function SettingsPage() {
   const [nameStatus, { refetch: refetchNameStatus }] = createResource(() =>
     getIngredientNamesApi().getIngredientNamesStatus(),
   );
-  const [nameAction, setNameAction] = createSignal<string | null>(null);
+  const [retrying, setRetrying] = createSignal(false);
   const [nameMessage, setNameMessage] = createSignal<string | null>(null);
   const [nameError, setNameError] = createSignal<string | null>(null);
   // Keep the counts current while names are waiting to be resolved.
@@ -97,36 +87,18 @@ export default function SettingsPage() {
     const timer = setTimeout(() => refetchNameStatus(), 2000);
     onCleanup(() => clearTimeout(timer));
   });
-  const runNameAction = async (
-    label: string,
-    action: () => Promise<{ queued: number }>,
-  ) => {
-    setNameAction(label);
+  const handleRetryNames = async () => {
+    setRetrying(true);
     setNameMessage(null);
     setNameError(null);
     try {
-      const { queued } = await action();
+      const { queued } = await getIngredientNamesApi().retryIngredientNames();
       setNameMessage(`Queued ${queued} names.`);
       refetchNameStatus();
     } catch (err) {
       setNameError(await extractApiError(err, "Failed to queue names"));
     } finally {
-      setNameAction(null);
-    }
-  };
-
-  const handleReparse = async () => {
-    setReparsing(true);
-    setReparseResult(null);
-    setReparseError(null);
-    try {
-      setReparseResult(await getRecipesApi().reparseAllIngredients());
-    } catch (err) {
-      setReparseError(
-        await extractApiError(err, "Failed to re-parse ingredients"),
-      );
-    } finally {
-      setReparsing(false);
+      setRetrying(false);
     }
   };
 
@@ -183,31 +155,6 @@ export default function SettingsPage() {
         <A href="/tags" class="settings-link">
           Manage Tags
         </A>
-        <p>
-          Re-read every recipe's ingredients with the current parser, moving
-          amounts and notes out of ingredient names. Changed recipes get a new
-          version; earlier versions are kept.
-        </p>
-        <button
-          type="button"
-          class="btn btn-small"
-          disabled={reparsing()}
-          onClick={handleReparse}
-        >
-          {reparsing() ? "Re-parsing…" : "Re-parse ingredients"}
-        </button>
-        <Show when={reparseResult()}>
-          {(result) => (
-            <p class="success" role="status">
-              Checked {result().recipesChecked} recipes; updated{" "}
-              {result().recipesUpdated} ({result().ingredientsChanged}{" "}
-              ingredients changed).
-            </p>
-          )}
-        </Show>
-        <Show when={reparseError()}>
-          <p class="error">{reparseError()}</p>
-        </Show>
       </section>
 
       <section class="settings-section" aria-label="Ingredient recognition">
@@ -239,36 +186,14 @@ export default function SettingsPage() {
             </>
           )}
         </Show>
-        <div class="settings-actions">
-          <button
-            type="button"
-            class="btn btn-small"
-            disabled={
-              nameAction() !== null || (nameStatus()?.failed ?? 0) === 0
-            }
-            onClick={() =>
-              runNameAction("retry", () =>
-                getIngredientNamesApi().retryIngredientNames(),
-              )
-            }
-          >
-            {nameAction() === "retry" ? "Retrying…" : "Retry failed"}
-          </button>
-          <button
-            type="button"
-            class="btn btn-small"
-            disabled={nameAction() !== null}
-            onClick={() =>
-              runNameAction("warm", () =>
-                getIngredientNamesApi().warmIngredientNames(),
-              )
-            }
-          >
-            {nameAction() === "warm"
-              ? "Queueing…"
-              : "Recognize names in all my recipes"}
-          </button>
-        </div>
+        <button
+          type="button"
+          class="btn btn-small"
+          disabled={retrying() || (nameStatus()?.failed ?? 0) === 0}
+          onClick={handleRetryNames}
+        >
+          {retrying() ? "Retrying…" : "Retry failed"}
+        </button>
         <Show when={nameMessage()}>
           <p class="success" role="status">
             {nameMessage()}

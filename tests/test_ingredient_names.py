@@ -201,16 +201,6 @@ def test_shopping_list_items_are_resolved(authed_api_client):
     wait_for(lambda: mock_calls(item.lower()) >= 1)
 
 
-def test_warm_queues_nothing_new_for_saved_recipes(authed_api_client):
-    client, _ = authed_api_client
-    api = RecipesApi(client)
-    item = unique("sugar")
-    create_recipe(api, item)
-    wait_for(lambda: line_text(api, item) != "Not recognized")
-    # Saving already queued the name, so warming finds nothing new.
-    assert IngredientNamesApi(client).warm_ingredient_names().queued == 0
-
-
 def failures_named(names_api, name: str):
     return [
         f for f in names_api.get_ingredient_names_status().failures if f.name == name

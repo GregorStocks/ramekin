@@ -95,7 +95,6 @@ __all__ = [
     "RecipeSummary",
     "RenameTagRequest",
     "RenameTagResponse",
-    "ReparseIngredientsResponse",
     "RescrapeResponse",
     "RetryScrapeResponse",
     "ScrapeJobResponse",
@@ -207,7 +206,6 @@ from ramekin_client.models.recipe_response import RecipeResponse as RecipeRespon
 from ramekin_client.models.recipe_summary import RecipeSummary as RecipeSummary
 from ramekin_client.models.rename_tag_request import RenameTagRequest as RenameTagRequest
 from ramekin_client.models.rename_tag_response import RenameTagResponse as RenameTagResponse
-from ramekin_client.models.reparse_ingredients_response import ReparseIngredientsResponse as ReparseIngredientsResponse
 from ramekin_client.models.rescrape_response import RescrapeResponse as RescrapeResponse
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse as RetryScrapeResponse
 from ramekin_client.models.scrape_job_response import ScrapeJobResponse as ScrapeJobResponse

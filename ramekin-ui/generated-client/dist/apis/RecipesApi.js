@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CalorieEstimateResponseFromJSON, CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, EstimateCaloriesRequestToJSON, GenerateDescriptionResponseFromJSON, GeneratePhotoResponseFromJSON, ListRecipesResponseFromJSON, NormalizeTitleResponseFromJSON, RecipeResponseFromJSON, ReparseIngredientsResponseFromJSON, RescrapeResponseFromJSON, SyncRecipesResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
+import { CalorieEstimateResponseFromJSON, CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, EstimateCaloriesRequestToJSON, GenerateDescriptionResponseFromJSON, GeneratePhotoResponseFromJSON, ListRecipesResponseFromJSON, NormalizeTitleResponseFromJSON, RecipeResponseFromJSON, RescrapeResponseFromJSON, SyncRecipesResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -365,35 +365,6 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async normalizeTitle(requestParameters, initOverrides) {
         const response = await this.normalizeTitleRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-    /**
-     * Re-parse the stored ingredients of all of the user\'s recipes with the current parser, saving a new version (source \"reparse\") for each recipe whose ingredients change.
-     */
-    async reparseAllIngredientsRaw(initOverrides) {
-        const queryParameters = {};
-        const headerParameters = {};
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-        let urlPath = `/api/recipes/reparse-ingredients`;
-        const response = await this.request({
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ReparseIngredientsResponseFromJSON(jsonValue));
-    }
-    /**
-     * Re-parse the stored ingredients of all of the user\'s recipes with the current parser, saving a new version (source \"reparse\") for each recipe whose ingredients change.
-     */
-    async reparseAllIngredients(initOverrides) {
-        const response = await this.reparseAllIngredientsRaw(initOverrides);
         return await response.value();
     }
     /**

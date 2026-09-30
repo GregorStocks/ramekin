@@ -103,41 +103,4 @@ export class IngredientNamesApi extends runtime.BaseAPI {
         return await response.value();
     }
 
-    /**
-     * Queue every name the catalog doesn\'t know from the caller\'s current recipes and shopping list, e.g. once after this feature ships.
-     */
-    async warmIngredientNamesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IngredientNamesQueuedResponse>> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/api/ingredient-names/warm`;
-
-        const response = await this.request({
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => IngredientNamesQueuedResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Queue every name the catalog doesn\'t know from the caller\'s current recipes and shopping list, e.g. once after this feature ships.
-     */
-    async warmIngredientNames(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IngredientNamesQueuedResponse> {
-        const response = await this.warmIngredientNamesRaw(initOverrides);
-        return await response.value();
-    }
-
 }

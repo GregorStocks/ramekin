@@ -79,40 +79,4 @@ open class IngredientNamesAPI {
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
-
-    /**
-     Queue every name the catalog doesn't know from the caller's current recipes and shopping list, e.g. once after this feature ships.
-     
-     - returns: IngredientNamesQueuedResponse
-     */
-    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func warmIngredientNames() async throws -> IngredientNamesQueuedResponse {
-        return try await warmIngredientNamesWithRequestBuilder().execute().body
-    }
-
-    /**
-     Queue every name the catalog doesn't know from the caller's current recipes and shopping list, e.g. once after this feature ships.
-     - POST /api/ingredient-names/warm
-     - Bearer Token:
-       - type: http
-       - name: bearer_auth
-     - returns: RequestBuilder<IngredientNamesQueuedResponse> 
-     */
-    open class func warmIngredientNamesWithRequestBuilder() -> RequestBuilder<IngredientNamesQueuedResponse> {
-        let localVariablePath = "/api/ingredient-names/warm"
-        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
-        let localVariableParameters: [String: Any]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: Any?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<IngredientNamesQueuedResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
-    }
 }

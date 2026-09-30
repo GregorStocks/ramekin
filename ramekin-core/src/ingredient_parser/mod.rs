@@ -1311,38 +1311,6 @@ pub fn reparse_item(item: &str) -> Option<ParsedIngredient> {
     (starts_with_word && !lower.starts_with("percent ")).then_some(parsed)
 }
 
-/// A stored ingredient updated to what the current parser makes of it: its
-/// item is read as a line again, so amounts and notes an older parser left in
-/// it ("about 7 cloves garlic", "chickpeas, drained, rinsed") move out. Stored
-/// measurements are kept; ones found in the item are used only when there
-/// were none. The split-off note goes before the stored note. Returns None
-/// when the item doesn't change.
-pub fn reparse_stored(ingredient: &ParsedIngredient) -> Option<ParsedIngredient> {
-    let parsed = reparse_item(&ingredient.item)?;
-    if parsed.item.trim() == ingredient.item.trim() {
-        return None;
-    }
-    let note = match (parsed.note, ingredient.note.as_deref()) {
-        (Some(split), Some(stored)) if !stored.trim().is_empty() => {
-            Some(format!("{split}, {stored}"))
-        }
-        (Some(split), _) => Some(split),
-        (None, stored) => stored.map(str::to_string),
-    };
-    let measurements = if ingredient.measurements.is_empty() {
-        parsed.measurements
-    } else {
-        ingredient.measurements.clone()
-    };
-    Some(ParsedIngredient {
-        item: parsed.item,
-        measurements,
-        note,
-        raw: ingredient.raw.clone(),
-        section: ingredient.section.clone(),
-    })
-}
-
 /// Expand a parsed ingredient with "each" modifier into multiple ingredients.
 ///
 /// When the first measurement's unit ends with " each" and the item contains

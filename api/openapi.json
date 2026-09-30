@@ -565,42 +565,6 @@
         ]
       }
     },
-    "/api/ingredient-names/warm": {
-      "post": {
-        "tags": [
-          "ingredient_names"
-        ],
-        "summary": "Queue every name the catalog doesn't know from the caller's current\nrecipes and shopping list, e.g. once after this feature ships.",
-        "operationId": "warm_ingredient_names",
-        "responses": {
-          "200": {
-            "description": "Unknown names in the caller's recipes and shopping list queued",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IngredientNamesQueuedResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
     "/api/meal-plans": {
       "get": {
         "tags": [
@@ -1256,52 +1220,6 @@
           },
           "401": {
             "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
-    "/api/recipes/reparse-ingredients": {
-      "post": {
-        "tags": [
-          "recipes"
-        ],
-        "summary": "Re-parse the stored ingredients of all of the user's recipes with the\ncurrent parser, saving a new version (source \"reparse\") for each recipe\nwhose ingredients change.",
-        "operationId": "reparse_all_ingredients",
-        "responses": {
-          "200": {
-            "description": "Every recipe re-parsed; changed recipes got a new version",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReparseIngredientsResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "A recipe changed while re-parsing; run it again",
             "content": {
               "application/json": {
                 "schema": {
@@ -4424,31 +4342,6 @@
           },
           "name": {
             "type": "string"
-          }
-        }
-      },
-      "ReparseIngredientsResponse": {
-        "type": "object",
-        "required": [
-          "recipes_checked",
-          "recipes_updated",
-          "ingredients_changed"
-        ],
-        "properties": {
-          "ingredients_changed": {
-            "type": "integer",
-            "description": "Ingredient lines whose item changed.",
-            "minimum": 0
-          },
-          "recipes_checked": {
-            "type": "integer",
-            "description": "Recipes whose current version was checked.",
-            "minimum": 0
-          },
-          "recipes_updated": {
-            "type": "integer",
-            "description": "Recipes that got a new version because an ingredient changed.",
-            "minimum": 0
           }
         }
       },

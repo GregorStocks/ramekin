@@ -108,8 +108,6 @@ pub mod rename_tag_request;
 pub use self::rename_tag_request::RenameTagRequest;
 pub mod rename_tag_response;
 pub use self::rename_tag_response::RenameTagResponse;
-pub mod reparse_ingredients_response;
-pub use self::reparse_ingredients_response::ReparseIngredientsResponse;
 pub mod rescrape_response;
 pub use self::rescrape_response::RescrapeResponse;
 pub mod retry_scrape_response;

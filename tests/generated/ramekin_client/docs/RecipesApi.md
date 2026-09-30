@@ -15,7 +15,6 @@ Method | HTTP request | Description
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 [**list_versions**](RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 [**normalize_title**](RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
-[**reparse_all_ingredients**](RecipesApi.md#reparse_all_ingredients) | **POST** /api/recipes/reparse-ingredients | Re-parse the stored ingredients of all of the user&#39;s recipes with the current parser, saving a new version (source \&quot;reparse\&quot;) for each recipe whose ingredients change.
 [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrape_photo**](RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 [**sync_recipes**](RecipesApi.md#sync_recipes) | **GET** /api/recipes/sync | 
@@ -850,80 +849,6 @@ Name | Type | Description  | Notes
 **404** | Recipe not found |  -  |
 **409** | Recipe was modified concurrently |  -  |
 **503** | AI service unavailable |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **reparse_all_ingredients**
-> ReparseIngredientsResponse reparse_all_ingredients()
-
-Re-parse the stored ingredients of all of the user's recipes with the current parser, saving a new version (source \"reparse\") for each recipe whose ingredients change.
-
-### Example
-
-* Bearer Authentication (bearer_auth):
-
-```python
-import ramekin_client
-from ramekin_client.models.reparse_ingredients_response import ReparseIngredientsResponse
-from ramekin_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ramekin_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearer_auth
-configuration = ramekin_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with ramekin_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ramekin_client.RecipesApi(api_client)
-
-    try:
-        # Re-parse the stored ingredients of all of the user's recipes with the current parser, saving a new version (source \"reparse\") for each recipe whose ingredients change.
-        api_response = api_instance.reparse_all_ingredients()
-        print("The response of RecipesApi->reparse_all_ingredients:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling RecipesApi->reparse_all_ingredients: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**ReparseIngredientsResponse**](ReparseIngredientsResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Every recipe re-parsed; changed recipes got a new version |  -  |
-**401** | Unauthorized |  -  |
-**409** | A recipe changed while re-parsing; run it again |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

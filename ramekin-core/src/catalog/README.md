@@ -233,13 +233,11 @@ are `tests/test_catalog_import.py`.
   - move an ambiguous (null) alias onto a shorter name.
 
   The `curated_names_are_what_the_parser_produces` test fails until it has
-  been run.
-  Recipes already stored keep the items an older parser gave them.
-  **Settings → Re-parse ingredients** (web, `POST /api/recipes/reparse-ingredients`)
-  re-reads each stored item with the current parser and saves a new version
-  (source "reparse") for recipes that change. Press it after a parser change
-  like this one. The first run (2026-09-29, alongside the parser fix) removed 571
+  been run. The first run (2026-09-29, alongside the parser fix) removed 571
   keys, re-keyed 74, and left 131 conflicts.
+  Recipes already stored keep the items an older parser gave them. After that
+  parser fix, a one-off re-parse (since removed) re-read every stored item and
+  saved a new version (source "reparse") for recipes that changed.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
