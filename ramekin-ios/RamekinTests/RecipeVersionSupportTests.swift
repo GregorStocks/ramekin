@@ -6,6 +6,7 @@ final class RecipeVersionSupportTests: XCTestCase {
         XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "user"), "User Edit")
         XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "scrape"), "Imported")
         XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "enrichment"), "AI Enriched")
+        XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "reparse"), "Re-parsed")
         XCTAssertEqual(RecipeVersionSupport.sourceLabel(for: "custom"), "custom")
     }
 
