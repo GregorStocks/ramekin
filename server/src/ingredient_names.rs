@@ -15,7 +15,9 @@ use std::sync::{Arc, LazyLock};
 
 use chrono::Utc;
 use diesel::prelude::*;
-use ramekin_core::ai::{resolve_ingredient_names, AiConfig, CachingAiClient, NameResolution};
+use ramekin_core::ai::{
+    resolve_ingredient_names, AiConfig, AiError, CachingAiClient, ConfigError, NameResolution,
+};
 use ramekin_core::catalog::{candidates, unlearned_name, Learned, LearnedTarget};
 use tokio::sync::{Mutex, Notify};
 
@@ -33,6 +35,14 @@ pub const FAILED: &str = "failed";
 
 static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
 static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
+/// One client for the process, so its rate limit spaces every call, with
+/// the model it asks.
+static CLIENT: LazyLock<Result<(CachingAiClient, String), ConfigError>> = LazyLock::new(|| {
+    AiConfig::from_env().map(|config| {
+        let model = config.model.clone();
+        (CachingAiClient::new(config), model)
+    })
+});
 
 /// The names among `items` the committed catalog doesn't know, deduplicated.
 pub fn unlearned_names<'a>(items: impl IntoIterator<Item = &'a str>) -> Vec<String> {
@@ -187,17 +197,14 @@ pub async fn resolve_pending(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> R
     }
 }
 
-/// Resolve one batch. If a multi-name batch fails, each name is retried
-/// alone, so one name the model can't handle doesn't fail the others; only
-/// the names that fail on their own are marked failed.
+/// Resolve one batch. If the model's answer for a multi-name batch is
+/// invalid, each name is retried alone, so one name the model can't handle
+/// doesn't fail the others; only the names that fail on their own are marked
+/// failed. Provider and configuration errors fail the whole batch at once.
 async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<(), String> {
     match ask(&batch).await {
         Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await,
-        Err(error) if batch.len() == 1 => {
-            save_failed(pool, batch, error.clone()).await?;
-            Err(error)
-        }
-        Err(error) => {
+        Err(AiError::ParseError(error)) if batch.len() > 1 => {
             tracing::warn!(
                 names = batch.len(),
                 "ingredient name batch failed, retrying names one at a time: {}",
@@ -209,6 +216,7 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<(), Str
                 let outcome = match ask(&single).await {
                     Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await,
                     Err(error) => {
+                        let error = error.to_string();
                         save_failed(pool, single, error.clone()).await?;
                         Err(error)
                     }
@@ -219,11 +227,16 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<(), Str
             }
             first_error.map_or(Ok(()), Err)
         }
+        Err(error) => {
+            let error = error.to_string();
+            save_failed(pool, batch, error.clone()).await?;
+            Err(error)
+        }
     }
 }
 
 /// One LLM call for `batch`: each name's answer, and the model that gave it.
-async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String), String> {
+async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String), AiError> {
     let prompt: Vec<(String, Vec<String>)> = batch
         .iter()
         .map(|name| {
@@ -234,12 +247,9 @@ async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String)
             (name.clone(), keys)
         })
         .collect();
-    let config = AiConfig::from_env().map_err(|e| format!("AI service unavailable: {e}"))?;
-    let model = config.model.clone();
-    let result = resolve_ingredient_names(&CachingAiClient::new(config), &prompt)
-        .await
-        .map_err(|e| e.to_string())?;
-    Ok((result.resolutions.into_iter().collect(), model))
+    let (client, model) = CLIENT.as_ref().map_err(|e| AiError::Config(e.clone()))?;
+    let result = resolve_ingredient_names(client, &prompt).await?;
+    Ok((result.resolutions.into_iter().collect(), model.clone()))
 }
 
 async fn save_resolved(
@@ -247,10 +257,12 @@ async fn save_resolved(
     resolutions: Vec<(String, NameResolution)>,
     model: String,
 ) -> Result<(), String> {
-    let now = Utc::now();
     let resolved = resolutions.len();
     run_blocking(pool, move |conn| {
         conn.transaction(|conn| {
+            // Taken once the connection is ours, to keep the touch as close
+            // to its commit as possible for incremental sync.
+            let now = Utc::now();
             for (name, resolution) in &resolutions {
                 let (disposition, key) = match resolution {
                     NameResolution::Entry(key) => ("entry", Some(key.as_str())),
