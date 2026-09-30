@@ -387,7 +387,16 @@ pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
 
 /// Grams per US cup for an ingredient line (see `resolve_line`).
 pub fn line_grams_per_cup(item: &str, note: Option<&str>) -> Option<f64> {
-    match resolve_line(item, note) {
+    resolution_grams_per_cup(resolve_line(item, note))
+}
+
+/// `line_grams_per_cup`, with learned names (see `resolve_line_with`).
+pub fn line_grams_per_cup_with(item: &str, note: Option<&str>, learned: &Learned) -> Option<f64> {
+    resolution_grams_per_cup(resolve_line_with(item, note, learned))
+}
+
+fn resolution_grams_per_cup(resolution: Resolution) -> Option<f64> {
+    match resolution {
         Resolution::Entry { entry, .. } => entry.grams_per_cup,
         _ => None,
     }
@@ -408,7 +417,16 @@ pub fn grams_per_cup(item: &str) -> Option<f64> {
 /// Whether a written name is not something eaten: a leftover header, a
 /// `not_food` phrase, or products only ("parchment paper and aluminum foil").
 pub fn is_non_food(item: &str) -> bool {
-    match resolve(item) {
+    resolution_is_non_food(resolve(item))
+}
+
+/// `is_non_food`, with learned names (see `resolve_with`).
+pub fn is_non_food_with(item: &str, learned: &Learned) -> bool {
+    resolution_is_non_food(resolve_with(item, learned))
+}
+
+fn resolution_is_non_food(resolution: Resolution) -> bool {
+    match resolution {
         Resolution::NotFood => true,
         Resolution::Entry { entry, .. } => entry.kind == Kind::Product,
         Resolution::Compound(entries) => entries.iter().all(|entry| entry.kind == Kind::Product),

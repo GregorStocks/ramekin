@@ -6,7 +6,8 @@
 
 use anyhow::{Context, Result};
 use ramekin_core::catalog::{
-    is_non_food, is_volume_unit, line_grams_per_cup, resolve, Learned, LearnedTarget, Resolution,
+    is_non_food, is_non_food_with, is_volume_unit, line_grams_per_cup_with, resolve, Learned,
+    LearnedTarget, Resolution,
 };
 use ramekin_core::final_recipe::FinalRecipe;
 use ramekin_core::ingredient_categorizer::{categorize, categorize_with};
@@ -343,7 +344,7 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
         let non_food = recipe
             .ingredients
             .iter()
-            .filter(|ingredient| is_non_food(&ingredient.item))
+            .filter(|ingredient| is_non_food_with(&ingredient.item, &corpus.learned))
             .count();
         stats.non_food += non_food;
         stats.nutrition_computed += recipe.ingredients.len() - unknown.len() - non_food;
@@ -380,7 +381,13 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
                 .any(|m| is_volume_unit(m.unit.as_deref()));
             if has_volume {
                 stats.volume_lines += 1;
-                if line_grams_per_cup(&ingredient.item, ingredient.note.as_deref()).is_some() {
+                if line_grams_per_cup_with(
+                    &ingredient.item,
+                    ingredient.note.as_deref(),
+                    &corpus.learned,
+                )
+                .is_some()
+                {
                     stats.density_hits += 1;
                 } else {
                     *stats
@@ -1083,7 +1090,9 @@ mod tests {
         fs::write(
             &recipes,
             r#"[{"servings": null, "ingredients": [
-                {"item": "zzqq sugar", "measurements": [{"amount": "100", "unit": "g"}]}
+                {"item": "zzqq sugar", "measurements": [{"amount": "100", "unit": "g"}]},
+                {"item": "zzqq flour", "measurements": [{"amount": "1", "unit": "cup"}]},
+                {"item": "zzqq garnish plate", "measurements": []}
             ]}]"#,
         )
         .unwrap();
@@ -1092,6 +1101,10 @@ mod tests {
             r#"[
                 {"name": "zzqq sugar", "status": "resolved", "disposition": "entry",
                  "catalog_key": "granulated sugar"},
+                {"name": "zzqq flour", "status": "resolved", "disposition": "entry",
+                 "catalog_key": "all-purpose flour"},
+                {"name": "zzqq garnish plate", "status": "resolved", "disposition": "not_food",
+                 "catalog_key": null},
                 {"name": "pending one", "status": "pending", "disposition": null,
                  "catalog_key": null}
             ]"#,
@@ -1099,9 +1112,14 @@ mod tests {
         .unwrap();
         let without = audit_recipes(&load_prod_corpus(&recipes, None).unwrap()).unwrap();
         assert_eq!(without.recipes_fully_estimated, 0);
+        assert_eq!((without.non_food, without.density_hits), (0, 0));
         let corpus = load_prod_corpus(&recipes, Some(&learned)).unwrap();
-        assert_eq!(corpus.learned.len(), 1, "only resolved rows");
-        assert_eq!(audit_recipes(&corpus).unwrap().recipes_fully_estimated, 1);
+        assert_eq!(corpus.learned.len(), 3, "only resolved rows");
+        let with = audit_recipes(&corpus).unwrap();
+        assert_eq!(with.recipes_fully_estimated, 1);
+        // Every metric reads learned names: the not-food line is non-food and
+        // the learned flour has the flour density.
+        assert_eq!((with.non_food, with.density_hits), (1, 1));
 
         fs::write(
             &learned,
