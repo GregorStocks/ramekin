@@ -6,7 +6,9 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::ingredient_names::{enqueue, unlearned_names, wake, FAILED, PENDING, RESOLVED};
+use crate::ingredient_names::{
+    enqueue, requeue_failed, unlearned_names, wake, FAILED, PENDING, RESOLVED,
+};
 use crate::models::Ingredient;
 use crate::schema::{
     ingredient_name_resolutions as names, recipe_versions, recipes, shopping_list_items,
@@ -163,14 +165,7 @@ pub async fn retry_ingredient_names(
     let user_id = user.id;
     let queued = run_db(&pool, move |conn| {
         let own = own_names(conn, user_id)?;
-        diesel::update(
-            names::table
-                .filter(names::status.eq(FAILED))
-                .filter(names::name.eq_any(&own)),
-        )
-        .set((names::status.eq(PENDING), names::error.eq(None::<String>)))
-        .execute(conn)
-        .map_err(db_error)
+        requeue_failed(conn, &own).map_err(db_error)
     })
     .await?;
     wake();

@@ -8,8 +8,14 @@ import uuid
 
 import requests
 
-from conftest import make_ingredient
-from ramekin_client.api import IngredientNamesApi, RecipesApi, ShoppingListApi
+from conftest import make_ingredient, wait_for_job_completion
+from ramekin_client.api import (
+    ImportApi,
+    IngredientNamesApi,
+    RecipesApi,
+    ScrapeApi,
+    ShoppingListApi,
+)
 from ramekin_client.models import (
     CreateRecipeRequest,
     CreateShoppingListItemRequest,
@@ -133,6 +139,42 @@ def test_failures_are_visible_and_retryable(authed_api_client):
     wait_for(lambda: line_text(api, item) != "Not recognized")
     status = names_api.get_ingredient_names_status()
     assert all(f.name != item.lower() for f in status.failures)
+
+
+def import_recipe(client, item: str):
+    imported = ImportApi(client).import_recipe(
+        {
+            "raw_recipe": {
+                "title": f"Imported {item}",
+                "ingredients": f"100 g {item}",
+                "instructions": "Cook.",
+            },
+            "photo_ids": [],
+            "extraction_method": "paprika",
+        }
+    )
+    return wait_for_job_completion(ScrapeApi(client), imported.job_id)
+
+
+def test_resolver_failures_do_not_strand_imports(authed_api_client):
+    client, _ = authed_api_client
+    names_api = IngredientNamesApi(client)
+    item = unique("sugar")
+    mock_fail(item.lower(), True)
+    job = import_recipe(client, item)
+    # Imports can't be retried, so the saved recipe's job still completes;
+    # the failure shows in Settings instead.
+    assert job.status == "completed"
+    assert job.recipe_id
+    assert failures_named(names_api, item.lower())
+
+    # A later save retries the failed name rather than reusing the failure.
+    mock_fail(item.lower(), False)
+    calls = mock_calls(item.lower())
+    assert import_recipe(client, item).status == "completed"
+    assert mock_calls(item.lower()) > calls
+    assert failures_named(names_api, item.lower()) == []
+    assert line_text(RecipesApi(client), item) != "Not recognized"
 
 
 def test_shopping_list_items_are_resolved(authed_api_client):

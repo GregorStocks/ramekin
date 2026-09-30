@@ -126,36 +126,36 @@ pub async fn update_item(
             return Err(ApiError::invalid_request("Invalid category override"));
         }
 
-        // Update the item
-        let result = diesel::update(
-            shopping_list_items::table
-                .filter(shopping_list_items::id.eq(id))
-                .filter(shopping_list_items::user_id.eq(user_id))
-                .filter(shopping_list_items::deleted_at.is_null()),
-        )
-        .set((
-            shopping_list_items::item.eq(&new_item),
-            shopping_list_items::amount.eq(&new_amount),
-            shopping_list_items::note.eq(&new_note),
-            shopping_list_items::is_checked.eq(new_checked),
-            shopping_list_items::sort_order.eq(new_order),
-            shopping_list_items::category_override.eq(&new_category_override),
-            shopping_list_items::version.eq(current_version + 1),
-            shopping_list_items::updated_at.eq(Utc::now()),
-        ))
-        .execute(conn);
+        // Update the item, queueing a new name in the same transaction
+        let result = conn.transaction::<_, diesel::result::Error, _>(|conn| {
+            let updated = diesel::update(
+                shopping_list_items::table
+                    .filter(shopping_list_items::id.eq(id))
+                    .filter(shopping_list_items::user_id.eq(user_id))
+                    .filter(shopping_list_items::deleted_at.is_null()),
+            )
+            .set((
+                shopping_list_items::item.eq(&new_item),
+                shopping_list_items::amount.eq(&new_amount),
+                shopping_list_items::note.eq(&new_note),
+                shopping_list_items::is_checked.eq(new_checked),
+                shopping_list_items::sort_order.eq(new_order),
+                shopping_list_items::category_override.eq(&new_category_override),
+                shopping_list_items::version.eq(current_version + 1),
+                shopping_list_items::updated_at.eq(Utc::now()),
+            ))
+            .execute(conn)?;
+            if updated > 0 {
+                if let Some(item) = &renamed_to {
+                    crate::ingredient_names::enqueue_items(conn, [item.as_str()])?;
+                }
+            }
+            Ok(updated)
+        });
 
         match result {
             Ok(0) => Err(ApiError::not_found("Item not found")),
-            Ok(_) => {
-                if let Some(item) = &renamed_to {
-                    crate::ingredient_names::enqueue_items(conn, [item.as_str()]).map_err(|e| {
-                        tracing::error!("Failed to queue ingredient name: {}", e);
-                        ApiError::internal("Failed to update item")
-                    })?;
-                }
-                Ok(())
-            }
+            Ok(_) => Ok(()),
             Err(e) => {
                 tracing::error!("Failed to update shopping list item: {}", e);
                 Err(ApiError::internal("Failed to update item"))

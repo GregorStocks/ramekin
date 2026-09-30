@@ -60,6 +60,18 @@ pub fn enqueue(conn: &mut PgConnection, new_names: &[String]) -> QueryResult<usi
         .execute(conn)
 }
 
+/// Put failed names back in the queue, clearing their error, so the next
+/// pass asks about them again.
+pub fn requeue_failed(conn: &mut PgConnection, failed: &[String]) -> QueryResult<usize> {
+    diesel::update(
+        names::table
+            .filter(names::status.eq(FAILED))
+            .filter(names::name.eq_any(failed)),
+    )
+    .set((names::status.eq(PENDING), names::error.eq(None::<String>)))
+    .execute(conn)
+}
+
 /// Queue the unknown names in `items`. Write paths call this inside their
 /// transaction, so a save and its queued names commit together, then call
 /// `wake` once it has committed.

@@ -11,15 +11,17 @@ use ramekin_core::pipeline::{
 };
 
 use crate::db::{run_blocking, DbPool};
-use crate::ingredient_names::{enqueue, resolve_pending, unlearned_names};
+use crate::ingredient_names::{enqueue, requeue_failed, resolve_pending, unlearned_names};
 use crate::models::Ingredient;
 use crate::schema::recipe_versions;
 
 use super::helpers::version_id_from_pipeline_outputs;
 
 /// Resolve the saved recipe's ingredient names the catalog doesn't know
-/// (catalog step 3). Runs right after save so a failure shows on the job and
-/// can be retried from here.
+/// (catalog step 3). Runs right after save. The recipe is already saved, so
+/// like the enrichment steps a failure shows on the step without failing the
+/// job (import jobs can't be retried); the failed names stay visible in
+/// Settings, which can retry them.
 pub struct ResolveIngredientNamesStep {
     pool: Arc<DbPool>,
 }
@@ -51,7 +53,7 @@ impl PipelineStep for ResolveIngredientNamesStep {
         StepMetadata {
             name: RESOLVE_INGREDIENT_NAMES_STEP,
             description: "Resolve ingredient names the catalog doesn't know",
-            continues_on_failure: false,
+            continues_on_failure: true,
         }
     }
 
@@ -72,6 +74,8 @@ impl PipelineStep for ResolveIngredientNamesStep {
                 serde_json::from_value(ingredients).map_err(|e| e.to_string())?;
             let names = unlearned_names(ingredients.iter().map(|i| i.item.as_str()));
             enqueue(conn, &names).map_err(|e| e.to_string())?;
+            // A rerun of this step asks again about names that failed before.
+            requeue_failed(conn, &names).map_err(|e| e.to_string())?;
             Ok::<_, String>(names)
         })
         .await
