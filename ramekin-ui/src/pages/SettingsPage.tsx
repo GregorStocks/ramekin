@@ -1,4 +1,13 @@
-import { createSignal, createEffect, Show, Switch, Match } from "solid-js";
+import {
+  createSignal,
+  createEffect,
+  createResource,
+  onCleanup,
+  For,
+  Show,
+  Switch,
+  Match,
+} from "solid-js";
 import { A } from "@solidjs/router";
 import type { ReparseIngredientsResponse } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
@@ -12,7 +21,13 @@ type UploadState = "idle" | "uploading" | "done";
 
 export default function SettingsPage() {
   usePageTitle(() => "Settings");
-  const { getUsersApi, getClientLogsApi, getRecipesApi, setToken } = useAuth();
+  const {
+    getUsersApi,
+    getClientLogsApi,
+    getRecipesApi,
+    getIngredientNamesApi,
+    setToken,
+  } = useAuth();
 
   const [username, setUsername] = createSignal<string | null>(null);
   const [status, setStatus] = createSignal<ConnectionStatus>("checking");
@@ -66,6 +81,37 @@ export default function SettingsPage() {
     } catch (err) {
       setUploadState("idle");
       setUploadError(await extractApiError(err, "Failed to upload logs"));
+    }
+  };
+
+  // Ingredient names the catalog doesn't know, resolved in the background.
+  const [nameStatus, { refetch: refetchNameStatus }] = createResource(() =>
+    getIngredientNamesApi().getIngredientNamesStatus(),
+  );
+  const [nameAction, setNameAction] = createSignal<string | null>(null);
+  const [nameMessage, setNameMessage] = createSignal<string | null>(null);
+  const [nameError, setNameError] = createSignal<string | null>(null);
+  // Keep the counts current while names are waiting to be resolved.
+  createEffect(() => {
+    if ((nameStatus()?.pending ?? 0) === 0) return;
+    const timer = setTimeout(() => refetchNameStatus(), 2000);
+    onCleanup(() => clearTimeout(timer));
+  });
+  const runNameAction = async (
+    label: string,
+    action: () => Promise<{ queued: number }>,
+  ) => {
+    setNameAction(label);
+    setNameMessage(null);
+    setNameError(null);
+    try {
+      const { queued } = await action();
+      setNameMessage(`Queued ${queued} names.`);
+      refetchNameStatus();
+    } catch (err) {
+      setNameError(await extractApiError(err, "Failed to queue names"));
+    } finally {
+      setNameAction(null);
     }
   };
 
@@ -161,6 +207,75 @@ export default function SettingsPage() {
         </Show>
         <Show when={reparseError()}>
           <p class="error">{reparseError()}</p>
+        </Show>
+      </section>
+
+      <section class="settings-section" aria-label="Ingredient recognition">
+        <h3>Ingredient recognition</h3>
+        <p>
+          Ingredient names the catalog doesn't know are identified in the
+          background after you save. Until then they count as unknown in calorie
+          estimates.
+        </p>
+        <Show when={nameStatus()}>
+          {(status) => (
+            <>
+              <p class="settings-name-counts">
+                {status().recognized} recognized · {status().notFood} not food ·{" "}
+                {status().unknown} unknown · {status().pending} pending ·{" "}
+                {status().failed} failed
+              </p>
+              <Show when={status().failures.length > 0}>
+                <ul class="settings-name-failures">
+                  <For each={status().failures}>
+                    {(failure) => (
+                      <li>
+                        {failure.name}: {failure.error}
+                      </li>
+                    )}
+                  </For>
+                </ul>
+              </Show>
+            </>
+          )}
+        </Show>
+        <div class="settings-actions">
+          <button
+            type="button"
+            class="btn btn-small"
+            disabled={
+              nameAction() !== null || (nameStatus()?.failed ?? 0) === 0
+            }
+            onClick={() =>
+              runNameAction("retry", () =>
+                getIngredientNamesApi().retryIngredientNames(),
+              )
+            }
+          >
+            {nameAction() === "retry" ? "Retrying…" : "Retry failed"}
+          </button>
+          <button
+            type="button"
+            class="btn btn-small"
+            disabled={nameAction() !== null}
+            onClick={() =>
+              runNameAction("warm", () =>
+                getIngredientNamesApi().warmIngredientNames(),
+              )
+            }
+          >
+            {nameAction() === "warm"
+              ? "Queueing…"
+              : "Recognize names in all my recipes"}
+          </button>
+        </div>
+        <Show when={nameMessage()}>
+          <p class="success" role="status">
+            {nameMessage()}
+          </p>
+        </Show>
+        <Show when={nameError()}>
+          <p class="error">{nameError()}</p>
         </Show>
       </section>
 

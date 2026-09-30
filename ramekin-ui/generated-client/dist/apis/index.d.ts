@@ -2,6 +2,7 @@ export * from './AuthApi';
 export * from './ClientLogsApi';
 export * from './EnrichApi';
 export * from './ImportApi';
+export * from './IngredientNamesApi';
 export * from './MealPlansApi';
 export * from './PhotosApi';
 export * from './RecipesApi';

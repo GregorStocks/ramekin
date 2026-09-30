@@ -45,6 +45,7 @@ mod generate_recipe_photo;
 mod normalize_title;
 pub mod photo_extract;
 pub mod prompts;
+mod resolve_ingredient_names;
 pub mod text_extract;
 mod types;
 
@@ -57,6 +58,9 @@ pub use generate_description::{generate_description, GenerateDescriptionResult};
 pub use generate_recipe_photo::{generate_recipe_photo, GenerateRecipePhotoResult};
 pub use normalize_title::{normalize_title, NormalizeTitleResult};
 pub use photo_extract::{extract_recipe_from_photos, PhotoExtractResult};
+pub use resolve_ingredient_names::{
+    resolve_ingredient_names, NameResolution, ResolveIngredientNamesResult,
+};
 pub use types::{
     ChatMessage, ChatRequest, ChatResponse, ImageData, Role, Usage, SHORT_JSON_ANSWER_MAX_TOKENS,
 };

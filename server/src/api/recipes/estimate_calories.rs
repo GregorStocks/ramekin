@@ -1,10 +1,12 @@
-use crate::api::{ApiError, ErrorResponse};
+use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
+use crate::db::DbPool;
 use crate::models::Ingredient;
-use axum::Json;
+use axum::{extract::State, Json};
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
 use ramekin_core::nutrition;
 use serde::{Deserialize, Serialize};
+use std::sync::Arc;
 use utoipa::ToSchema;
 
 #[derive(Deserialize, ToSchema)]
@@ -106,6 +108,7 @@ pub struct CalorieEstimateResponse {
 )]
 pub async fn estimate_calories(
     AuthUser(_user): AuthUser,
+    State(pool): State<Arc<DbPool>>,
     Json(request): Json<EstimateCaloriesRequest>,
 ) -> Result<Json<CalorieEstimateResponse>, ApiError> {
     let ingredients = request
@@ -126,8 +129,23 @@ pub async fn estimate_calories(
             raw: None,
         })
         .collect::<Vec<_>>();
-    let result = nutrition::estimate(&ingredients, request.servings.as_deref(), request.scale)
-        .map_err(ApiError::invalid_request)?;
+    // Stored answers for names the committed catalog doesn't know; names not
+    // resolved yet read as unknown.
+    let items: Vec<String> = ingredients.iter().map(|i| i.item.clone()).collect();
+    let learned = run_db(&pool, move |conn| {
+        crate::ingredient_names::load_learned(conn, items.iter().map(String::as_str)).map_err(|e| {
+            tracing::error!("Failed to load learned ingredient names: {}", e);
+            ApiError::internal("Failed to load ingredient names")
+        })
+    })
+    .await?;
+    let result = nutrition::estimate_with(
+        &ingredients,
+        request.servings.as_deref(),
+        request.scale,
+        &learned,
+    )
+    .map_err(ApiError::invalid_request)?;
     Ok(Json(CalorieEstimateResponse {
         database_version: result.database_version,
         status: result.status.into(),

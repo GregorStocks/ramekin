@@ -51,8 +51,9 @@ pub fn is_valid_category(category: &str) -> bool {
     ingredient_categorizer::CATEGORIES.contains(&category)
 }
 
-pub fn computed_category(item: &str) -> String {
-    ingredient_categorizer::categorize(item).to_string()
+/// The item's category, using stored answers for names the catalog doesn't know.
+pub fn computed_category(item: &str, learned: &ramekin_core::catalog::Learned) -> String {
+    ingredient_categorizer::categorize_with(item, learned).to_string()
 }
 
 pub fn item_category(computed_category: &str, category_override: Option<&str>) -> String {
@@ -117,6 +118,16 @@ pub async fn list_items(
     })
     .await?;
 
+    let items_to_learn: Vec<String> = rows.iter().map(|row| row.1.clone()).collect();
+    let learned = run_db(&pool, move |conn| {
+        crate::ingredient_names::load_learned(conn, items_to_learn.iter().map(String::as_str))
+            .map_err(|e| {
+                tracing::error!("Failed to load learned ingredient names: {}", e);
+                ApiError::internal("Failed to fetch shopping list")
+            })
+    })
+    .await?;
+
     let items = rows
         .into_iter()
         .map(
@@ -133,7 +144,7 @@ pub async fn list_items(
                 version,
                 updated_at,
             )| {
-                let computed_category = computed_category(&item);
+                let computed_category = computed_category(&item, &learned);
                 let category = item_category(&computed_category, category_override.as_deref());
                 ShoppingListItemResponse {
                     id,

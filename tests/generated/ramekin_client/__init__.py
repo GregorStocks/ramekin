@@ -22,6 +22,7 @@ __all__ = [
     "ClientLogsApi",
     "EnrichApi",
     "ImportApi",
+    "IngredientNamesApi",
     "MealPlansApi",
     "PhotosApi",
     "RecipesApi",
@@ -73,6 +74,9 @@ __all__ = [
     "ImportRecipeRequest",
     "ImportRecipeResponse",
     "Ingredient",
+    "IngredientNameFailure",
+    "IngredientNamesQueuedResponse",
+    "IngredientNamesStatusResponse",
     "ListRecipesResponse",
     "LoginRequest",
     "LoginResponse",
@@ -126,6 +130,7 @@ from ramekin_client.api.auth_api import AuthApi as AuthApi
 from ramekin_client.api.client_logs_api import ClientLogsApi as ClientLogsApi
 from ramekin_client.api.enrich_api import EnrichApi as EnrichApi
 from ramekin_client.api.import_api import ImportApi as ImportApi
+from ramekin_client.api.ingredient_names_api import IngredientNamesApi as IngredientNamesApi
 from ramekin_client.api.meal_plans_api import MealPlansApi as MealPlansApi
 from ramekin_client.api.photos_api import PhotosApi as PhotosApi
 from ramekin_client.api.recipes_api import RecipesApi as RecipesApi
@@ -181,6 +186,9 @@ from ramekin_client.models.import_raw_recipe import ImportRawRecipe as ImportRaw
 from ramekin_client.models.import_recipe_request import ImportRecipeRequest as ImportRecipeRequest
 from ramekin_client.models.import_recipe_response import ImportRecipeResponse as ImportRecipeResponse
 from ramekin_client.models.ingredient import Ingredient as Ingredient
+from ramekin_client.models.ingredient_name_failure import IngredientNameFailure as IngredientNameFailure
+from ramekin_client.models.ingredient_names_queued_response import IngredientNamesQueuedResponse as IngredientNamesQueuedResponse
+from ramekin_client.models.ingredient_names_status_response import IngredientNamesStatusResponse as IngredientNamesStatusResponse
 from ramekin_client.models.list_recipes_response import ListRecipesResponse as ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest as LoginRequest
 from ramekin_client.models.login_response import LoginResponse as LoginResponse

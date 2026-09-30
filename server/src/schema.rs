@@ -14,6 +14,20 @@ diesel::table! {
 }
 
 diesel::table! {
+    ingredient_name_resolutions (name) {
+        name -> Text,
+        status -> Text,
+        disposition -> Nullable<Text>,
+        catalog_key -> Nullable<Text>,
+        model -> Nullable<Text>,
+        error -> Nullable<Text>,
+        attempts -> Int4,
+        created_at -> Timestamptz,
+        updated_at -> Timestamptz,
+    }
+}
+
+diesel::table! {
     meal_plans (id) {
         id -> Uuid,
         user_id -> Uuid,
@@ -204,6 +218,7 @@ diesel::joinable!(user_tags -> users (user_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
     client_log_uploads,
+    ingredient_name_resolutions,
     meal_plans,
     photo_thumbnails,
     photos,

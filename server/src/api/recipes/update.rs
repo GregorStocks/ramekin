@@ -122,6 +122,10 @@ pub async fn update_recipe(
         let new_description = request
             .description
             .unwrap_or_else(|| current_version.description.clone());
+        let edited_items: Option<Vec<String>> = request
+            .ingredients
+            .as_ref()
+            .map(|ingredients| ingredients.iter().map(|i| i.item.clone()).collect());
         let new_ingredients = match request.ingredients {
             Some(ingredients) => match serde_json::to_value(&ingredients) {
                 Ok(v) => v,
@@ -214,7 +218,12 @@ pub async fn update_recipe(
         });
 
         match result {
-            Ok(()) => Ok(()),
+            Ok(()) => {
+                if let Some(items) = &edited_items {
+                    crate::ingredient_names::enqueue_items(conn, items.iter().map(String::as_str));
+                }
+                Ok(())
+            }
             Err(VersionWriteError::Stale) => Err(ApiError::conflict(
                 "Recipe was modified after you opened it; reload before saving again",
             )),

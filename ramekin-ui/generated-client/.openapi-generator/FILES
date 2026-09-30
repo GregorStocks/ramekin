@@ -3,6 +3,7 @@ apis/AuthApi.ts
 apis/ClientLogsApi.ts
 apis/EnrichApi.ts
 apis/ImportApi.ts
+apis/IngredientNamesApi.ts
 apis/MealPlansApi.ts
 apis/PhotosApi.ts
 apis/RecipesApi.ts
@@ -50,6 +51,10 @@ docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
 docs/ImportRecipeResponse.md
 docs/Ingredient.md
+docs/IngredientNameFailure.md
+docs/IngredientNamesApi.md
+docs/IngredientNamesQueuedResponse.md
+docs/IngredientNamesStatusResponse.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
@@ -139,6 +144,9 @@ models/ImportRawRecipe.ts
 models/ImportRecipeRequest.ts
 models/ImportRecipeResponse.ts
 models/Ingredient.ts
+models/IngredientNameFailure.ts
+models/IngredientNamesQueuedResponse.ts
+models/IngredientNamesStatusResponse.ts
 models/ListRecipesResponse.ts
 models/LoginRequest.ts
 models/LoginResponse.ts

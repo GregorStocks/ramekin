@@ -25,6 +25,13 @@ class SlowImageGenerationBarrier:
 
 SLOW_IMAGE_GENERATION_BARRIER = SlowImageGenerationBarrier()
 
+# How many ingredient-name-resolver calls included each name, so tests can
+# check that concurrent saves of one name pay for a single call.
+INGREDIENT_NAME_CALLS = {}
+INGREDIENT_NAME_CALLS_LOCK = threading.Lock()
+# Names whose resolver calls fail until a test clears them.
+FAILING_INGREDIENT_NAMES = set()
+
 
 def mock_png_data_url():
     image_path = (
@@ -61,6 +68,28 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             SLOW_IMAGE_GENERATION_BARRIER.release.set()
             self.send_response(204)
             self.end_headers()
+            return
+
+        if parsed.path == "/test/ingredient-name-failure":
+            params = parse_qs(parsed.query)
+            name = params.get("name", [""])[0]
+            with INGREDIENT_NAME_CALLS_LOCK:
+                if params.get("fail", ["true"])[0] == "true":
+                    FAILING_INGREDIENT_NAMES.add(name)
+                else:
+                    FAILING_INGREDIENT_NAMES.discard(name)
+            self.send_response(204)
+            self.end_headers()
+            return
+
+        if parsed.path == "/test/ingredient-name-calls":
+            name = parse_qs(parsed.query).get("name", [""])[0]
+            with INGREDIENT_NAME_CALLS_LOCK:
+                count = INGREDIENT_NAME_CALLS.get(name, 0)
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            self.wfile.write(json.dumps({"calls": count}).encode())
             return
 
         # Health check endpoint
@@ -135,6 +164,37 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         else:
             self.send_error(404, "Not found")
 
+    def _mock_resolve_ingredient_names(self, all_text):
+        """Resolve each item to its first candidate. A name containing
+        names a test marked failing (/test/ingredient-name-failure) break the
+        response; "unknowable" answers unknown; "serving platter" is not food."""
+        items_text = all_text.split("Items:", 1)[1].split("Respond with JSON", 1)[0]
+        items = json.loads(items_text)
+        with INGREDIENT_NAME_CALLS_LOCK:
+            for item in items:
+                INGREDIENT_NAME_CALLS[item["name"]] = (
+                    INGREDIENT_NAME_CALLS.get(item["name"], 0) + 1
+                )
+        with INGREDIENT_NAME_CALLS_LOCK:
+            failing = any(item["name"] in FAILING_INGREDIENT_NAMES for item in items)
+        if failing:
+            return '{"resolutions": ['
+        resolutions = []
+        for item in items:
+            if "unknowable" in item["name"] or not item["candidates"]:
+                resolutions.append({"name": item["name"], "answer": "unknown"})
+            elif "serving platter" in item["name"]:
+                resolutions.append({"name": item["name"], "answer": "not_food"})
+            else:
+                resolutions.append(
+                    {
+                        "name": item["name"],
+                        "answer": "entry",
+                        "key": item["candidates"][0],
+                    }
+                )
+        return json.dumps({"resolutions": resolutions})
+
     def _generate_response_content(self, request):
         """Generate appropriate mock response based on the request type."""
         if "image" in request.get("modalities", []):
@@ -157,6 +217,9 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                         all_text += " " + part.get("text", "")
                     elif part.get("type") == "image_url":
                         has_images = True
+
+        if "ingredient name resolver" in all_text:
+            return self._mock_resolve_ingredient_names(all_text)
 
         if "recipe modification assistant" in all_text:
             return self._mock_custom_enrich(all_text, has_images=has_images)

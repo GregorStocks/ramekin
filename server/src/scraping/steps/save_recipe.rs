@@ -8,8 +8,8 @@ use uuid::Uuid;
 
 use ramekin_core::pipeline::{
     deserialize_optional_output_field, deserialize_required_output_field,
-    first_scrape_auto_applied_ai_step_name, steps::SaveRecipeStepMeta, PipelineStep, StepContext,
-    StepMetadata, StepResult,
+    steps::SaveRecipeStepMeta, PipelineStep, StepContext, StepMetadata, StepResult,
+    RESOLVE_INGREDIENT_NAMES_STEP,
 };
 use ramekin_core::{ExtractionMethod, RawRecipe};
 
@@ -269,7 +269,7 @@ impl PipelineStep for SaveRecipeStep {
                 // they can create another version after the photo-only update.
                 next_step: match self.mode {
                     SaveMode::PhotoOnly { .. } => None,
-                    _ => first_scrape_auto_applied_ai_step_name().map(str::to_string),
+                    _ => Some(RESOLVE_INGREDIENT_NAMES_STEP.to_string()),
                 },
             },
             Err(e) => StepResult {

@@ -109,6 +109,10 @@ pub async fn reparse_all_ingredients(
                 Ok(_) => {
                     response.recipes_updated += 1;
                     response.ingredients_changed += changed;
+                    crate::ingredient_names::enqueue_items(
+                        conn,
+                        updated.iter().map(|i| i.item.as_str()),
+                    );
                 }
                 Err(VersionWriteError::Stale) => {
                     return Err(ApiError::conflict(

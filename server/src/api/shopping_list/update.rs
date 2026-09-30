@@ -62,6 +62,7 @@ pub async fn update_item(
     Json(request): Json<UpdateShoppingListItemRequest>,
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
+    let renamed_to = request.item.clone();
     run_db(&pool, move |conn| {
         // Fetch the existing item
         let existing: Option<ItemRow> = shopping_list_items::table
@@ -154,6 +155,10 @@ pub async fn update_item(
         }
     })
     .await?;
+
+    if let Some(item) = renamed_to {
+        crate::ingredient_names::enqueue_items_after_write(&pool, vec![item]).await;
+    }
 
     Ok(StatusCode::OK)
 }

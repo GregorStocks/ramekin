@@ -35,6 +35,8 @@ pub enum Via {
     Clause,
     /// After dropping leading size or preparation words.
     LeadingModifiers,
+    /// Through a stored LLM answer for a name the catalog doesn't know.
+    Learned,
 }
 
 /// Temperature and preparation modifiers stripped before a second lookup.

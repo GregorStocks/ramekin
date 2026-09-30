@@ -495,6 +495,112 @@
         ]
       }
     },
+    "/api/ingredient-names/retry": {
+      "post": {
+        "tags": [
+          "ingredient_names"
+        ],
+        "operationId": "retry_ingredient_names",
+        "responses": {
+          "200": {
+            "description": "Failed names queued again",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngredientNamesQueuedResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/ingredient-names/status": {
+      "get": {
+        "tags": [
+          "ingredient_names"
+        ],
+        "operationId": "get_ingredient_names_status",
+        "responses": {
+          "200": {
+            "description": "Resolution status of ingredient names the catalog doesn't know",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngredientNamesStatusResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/ingredient-names/warm": {
+      "post": {
+        "tags": [
+          "ingredient_names"
+        ],
+        "summary": "Queue every name the catalog doesn't know from the caller's current\nrecipes and shopping list, e.g. once after this feature ships.",
+        "operationId": "warm_ingredient_names",
+        "responses": {
+          "200": {
+            "description": "Unknown names in the caller's recipes and shopping list queued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngredientNamesQueuedResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/meal-plans": {
       "get": {
         "tags": [
@@ -3694,6 +3800,84 @@
               "null"
             ],
             "description": "Section name for grouping (e.g., \"For the sauce\", \"For the dough\")"
+          }
+        }
+      },
+      "IngredientNameFailure": {
+        "type": "object",
+        "required": [
+          "name",
+          "error",
+          "attempts"
+        ],
+        "properties": {
+          "attempts": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "error": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "IngredientNamesQueuedResponse": {
+        "type": "object",
+        "required": [
+          "queued"
+        ],
+        "properties": {
+          "queued": {
+            "type": "integer",
+            "description": "Names queued for resolution by this call.",
+            "minimum": 0
+          }
+        }
+      },
+      "IngredientNamesStatusResponse": {
+        "type": "object",
+        "required": [
+          "recognized",
+          "not_food",
+          "unknown",
+          "pending",
+          "failed",
+          "failures"
+        ],
+        "properties": {
+          "failed": {
+            "type": "integer",
+            "format": "int64",
+            "description": "The last attempt failed; retry to try again."
+          },
+          "failures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IngredientNameFailure"
+            },
+            "description": "The most recent failures."
+          },
+          "not_food": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Resolved as not an ingredient (a heading, a serving note)."
+          },
+          "pending": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Waiting for the background resolver."
+          },
+          "recognized": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Resolved to a catalog food or product."
+          },
+          "unknown": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Resolved, but the model couldn't tell; still unknown in estimates."
           }
         }
       },

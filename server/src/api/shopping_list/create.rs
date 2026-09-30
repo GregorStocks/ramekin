@@ -53,6 +53,7 @@ pub async fn create_items(
     if request.items.is_empty() {
         return Err(ApiError::invalid_request("At least one item is required"));
     }
+    let written_items: Vec<String> = request.items.iter().map(|i| i.item.clone()).collect();
 
     if request.items.iter().any(|item| {
         item.category_override
@@ -128,6 +129,8 @@ pub async fn create_items(
         })
     })
     .await?;
+
+    crate::ingredient_names::enqueue_items_after_write(&pool, written_items).await;
 
     Ok((
         StatusCode::CREATED,

@@ -1,0 +1,34 @@
+# IngredientNamesStatusResponse
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**failed** | **int** | The last attempt failed; retry to try again. | 
+**failures** | [**List[IngredientNameFailure]**](IngredientNameFailure.md) | The most recent failures. | 
+**not_food** | **int** | Resolved as not an ingredient (a heading, a serving note). | 
+**pending** | **int** | Waiting for the background resolver. | 
+**recognized** | **int** | Resolved to a catalog food or product. | 
+**unknown** | **int** | Resolved, but the model couldn&#39;t tell; still unknown in estimates. | 
+
+## Example
+
+```python
+from ramekin_client.models.ingredient_names_status_response import IngredientNamesStatusResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of IngredientNamesStatusResponse from a JSON string
+ingredient_names_status_response_instance = IngredientNamesStatusResponse.from_json(json)
+# print the JSON string representation of the object
+print(IngredientNamesStatusResponse.to_json())
+
+# convert the object into a dict
+ingredient_names_status_response_dict = ingredient_names_status_response_instance.to_dict()
+# create an instance of IngredientNamesStatusResponse from a dict
+ingredient_names_status_response_from_dict = IngredientNamesStatusResponse.from_dict(ingredient_names_status_response_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

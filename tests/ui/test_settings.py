@@ -64,3 +64,15 @@ def test_settings_logout(logged_in_page: Page, ui_url: str):
     expect(logged_in_page.locator("input[type='password']")).to_be_visible()
     expect(logged_in_page).to_have_url(re.compile(r"/login$"))
     assert logged_in_page.evaluate("localStorage.getItem('token')") is None
+
+
+def test_settings_shows_ingredient_recognition(logged_in_page: Page, ui_url: str):
+    """The recognition panel shows counts and can queue names from recipes."""
+    logged_in_page.goto(f"{ui_url}/settings")
+    panel = logged_in_page.get_by_role("region", name="Ingredient recognition")
+    expect(panel.locator(".settings-name-counts")).to_contain_text("recognized")
+    expect(panel.locator(".settings-name-counts")).to_contain_text("pending")
+    panel.get_by_role("button", name="Recognize names in all my recipes").click()
+    expect(panel.get_by_role("status")).to_contain_text(
+        re.compile(r"Queued \d+ names\.")
+    )

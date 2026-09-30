@@ -34,6 +34,9 @@ Class | Method | HTTP request | Description
 *ImportAPI* | [**importFromPhotos**](docs/ImportAPI.md#importfromphotos) | **POST** /api/import/photos | 
 *ImportAPI* | [**importRecipe**](docs/ImportAPI.md#importrecipe) | **POST** /api/import/recipe | 
 *ImportAPI* | [**prepareTextRecipe**](docs/ImportAPI.md#preparetextrecipe) | **POST** /api/import/text | 
+*IngredientNamesAPI* | [**getIngredientNamesStatus**](docs/IngredientNamesAPI.md#getingredientnamesstatus) | **GET** /api/ingredient-names/status | 
+*IngredientNamesAPI* | [**retryIngredientNames**](docs/IngredientNamesAPI.md#retryingredientnames) | **POST** /api/ingredient-names/retry | 
+*IngredientNamesAPI* | [**warmIngredientNames**](docs/IngredientNamesAPI.md#warmingredientnames) | **POST** /api/ingredient-names/warm | Queue every name the catalog doesn&#39;t know from the caller&#39;s current recipes and shopping list, e.g. once after this feature ships.
 *MealPlansAPI* | [**createMealPlan**](docs/MealPlansAPI.md#createmealplan) | **POST** /api/meal-plans | 
 *MealPlansAPI* | [**deleteMealPlan**](docs/MealPlansAPI.md#deletemealplan) | **DELETE** /api/meal-plans/{id} | 
 *MealPlansAPI* | [**listMealPlans**](docs/MealPlansAPI.md#listmealplans) | **GET** /api/meal-plans | 
@@ -113,6 +116,9 @@ Class | Method | HTTP request | Description
  - [ImportRecipeRequest](docs/ImportRecipeRequest.md)
  - [ImportRecipeResponse](docs/ImportRecipeResponse.md)
  - [Ingredient](docs/Ingredient.md)
+ - [IngredientNameFailure](docs/IngredientNameFailure.md)
+ - [IngredientNamesQueuedResponse](docs/IngredientNamesQueuedResponse.md)
+ - [IngredientNamesStatusResponse](docs/IngredientNamesStatusResponse.md)
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)
