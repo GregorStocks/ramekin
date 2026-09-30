@@ -863,3 +863,12 @@ fn test_such_as_inside_a_list_keeps_the_rest_of_the_list() {
     );
     assert!(parsed.item.contains("cracked black pepper"), "{parsed:?}");
 }
+
+#[test]
+fn test_named_brands_and_singular_categories() {
+    let parse = super::super::parse_ingredient;
+    let oats = parse("1 cup King Arthur Rolled Oats or 1 cup old-fashioned rolled oats");
+    assert_eq!(oats.item, "King Arthur Rolled Oats");
+    let mixin = parse("1 cup mix-in of choice, such as sliced almonds, chocolate chips");
+    assert!(mixin.item.contains("sliced almonds"), "{mixin:?}");
+}

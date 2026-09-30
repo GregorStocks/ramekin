@@ -1117,15 +1117,20 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                             .contains(&word.to_lowercase().as_str())
                     })
                     .collect();
-                (!food.is_empty()).then(|| format!("{} {}", before_or, food.join(" ")))
+                // "King Arthur Rolled Oats or 1 cup rolled oats" already names
+                // the food; only a name without it borrows the alternative's.
+                let names_food = food.last().is_some_and(|last| {
+                    before_or
+                        .to_lowercase()
+                        .split_whitespace()
+                        .any(|word| word == last.to_lowercase())
+                });
+                (!food.is_empty() && !names_food)
+                    .then(|| format!("{} {}", before_or, food.join(" ")))
             } else {
                 None
             };
-            if !before_or.is_empty()
-                && !after_or.is_empty()
-                && contains_measurement
-                && (!brand_only || shared_food.is_some())
-            {
+            if !before_or.is_empty() && !after_or.is_empty() && contains_measurement {
                 let alternative_note =
                     take_last_or_parenthetical_note(&mut deferred_parenthetical_notes);
                 let alternative = match alternative_note {

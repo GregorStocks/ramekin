@@ -481,7 +481,9 @@ pub(in crate::ingredient_parser) fn is_trailing_qualifier(s: &str) -> bool {
 /// "like cooked meats") are the actual foods.
 pub(in crate::ingredient_parser) fn has_generic_head(item: &str) -> bool {
     const GENERIC_HEADS: &[&str] = &[
+        "accompaniment",
         "accompaniments",
+        "add-in",
         "add-ins",
         "additions",
         "dippers",
@@ -490,10 +492,13 @@ pub(in crate::ingredient_parser) fn has_generic_head(item: &str) -> bool {
         "fixings",
         "garnish",
         "garnishes",
+        "mix-in",
         "mix-ins",
+        "option",
         "options",
         "sides",
         "things",
+        "topping",
         "toppings",
         "veggies",
     ];
