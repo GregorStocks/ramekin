@@ -185,12 +185,6 @@ pub async fn sync_items(
     let user_id = user.id;
     let sync_timestamp = Utc::now();
 
-    let written_items: Vec<String> = request
-        .creates
-        .iter()
-        .map(|c| c.item.clone())
-        .chain(request.updates.iter().filter_map(|u| u.item.clone()))
-        .collect();
     let response = run_db(&pool, move |conn| {
         conn.transaction::<_, diesel::result::Error, _>(|conn| {
             // 1. Process creates — batch insert, fall back to a single SELECT for conflicts
@@ -610,6 +604,15 @@ pub async fn sync_items(
                 deleted_set.extend(deleted_rows);
             }
 
+            crate::ingredient_names::enqueue_items(
+                conn,
+                request
+                    .creates
+                    .iter()
+                    .map(|c| c.item.as_str())
+                    .chain(request.updates.iter().filter_map(|u| u.item.as_deref())),
+            )?;
+
             Ok(SyncResponse {
                 created,
                 updated,
@@ -626,7 +629,7 @@ pub async fn sync_items(
     })
     .await?;
 
-    crate::ingredient_names::enqueue_items_after_write(&pool, written_items).await;
+    crate::ingredient_names::wake();
 
     Ok((StatusCode::OK, Json(response)))
 }

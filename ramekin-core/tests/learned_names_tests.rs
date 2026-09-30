@@ -102,3 +102,21 @@ fn candidates_share_words_with_the_name() {
     );
     assert!(candidates("the of and", 10).is_empty());
 }
+
+#[test]
+fn a_cooked_note_applies_to_the_learned_key() {
+    let learned = learned(&[(
+        "moon rice",
+        LearnedTarget::Entry("rice, white, long-grain, regular, raw, enriched".into()),
+    )]);
+    let dry = match resolve_line_with("moon rice", None, &learned) {
+        Resolution::Entry { entry, .. } => entry.id.clone(),
+        other => panic!("{other:?}"),
+    };
+    // The dry-rice key with a "cooked" note never means dry rice.
+    match resolve_line_with("moon rice", Some("cooked"), &learned) {
+        Resolution::Entry { entry, .. } => assert_ne!(entry.id, dry),
+        Resolution::Unresolved => {}
+        other => panic!("{other:?}"),
+    }
+}

@@ -1,5 +1,7 @@
 //! Status and controls for resolving ingredient names the catalog doesn't
-//! know (catalog step 3). The resolution table is shared across accounts.
+//! know (catalog step 3). The resolution table is shared across accounts, but
+//! each account only sees and retries the names in its own recipes and
+//! shopping list.
 
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
@@ -16,6 +18,7 @@ use diesel::prelude::*;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::{OpenApi, ToSchema};
+use uuid::Uuid;
 
 /// Failed names shown in the status.
 const FAILURES_SHOWN: i64 = 20;
@@ -54,6 +57,35 @@ fn db_error(e: diesel::result::Error) -> ApiError {
     ApiError::internal("Failed to read ingredient names")
 }
 
+/// The names the catalog doesn't know in the user's current recipes and
+/// shopping list.
+fn own_names(conn: &mut PgConnection, user_id: Uuid) -> Result<Vec<String>, ApiError> {
+    let versions: Vec<serde_json::Value> = recipes::table
+        .inner_join(
+            recipe_versions::table
+                .on(recipes::current_version_id.eq(recipe_versions::id.nullable())),
+        )
+        .filter(recipes::user_id.eq(user_id))
+        .filter(recipes::deleted_at.is_null())
+        .select(recipe_versions::ingredients)
+        .load(conn)
+        .map_err(db_error)?;
+    let mut items: Vec<String> = Vec::new();
+    for ingredients in versions {
+        let ingredients: Vec<Ingredient> = serde_json::from_value(ingredients)
+            .map_err(|_| ApiError::internal("Stored ingredients are not valid"))?;
+        items.extend(ingredients.into_iter().map(|i| i.item));
+    }
+    let shopping: Vec<String> = shopping_list_items::table
+        .filter(shopping_list_items::user_id.eq(user_id))
+        .filter(shopping_list_items::deleted_at.is_null())
+        .select(shopping_list_items::item)
+        .load(conn)
+        .map_err(db_error)?;
+    items.extend(shopping);
+    Ok(unlearned_names(items.iter().map(String::as_str)))
+}
+
 #[utoipa::path(
     get,
     path = "/api/ingredient-names/status",
@@ -65,11 +97,14 @@ fn db_error(e: diesel::result::Error) -> ApiError {
     security(("bearer_auth" = []))
 )]
 pub async fn get_ingredient_names_status(
-    AuthUser(_user): AuthUser,
+    AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
 ) -> Result<Json<IngredientNamesStatusResponse>, ApiError> {
-    let response = run_db(&pool, |conn| {
+    let user_id = user.id;
+    let response = run_db(&pool, move |conn| {
+        let own = own_names(conn, user_id)?;
         let counts: Vec<(String, Option<String>, i64)> = names::table
+            .filter(names::name.eq_any(&own))
             .group_by((names::status, names::disposition))
             .select((names::status, names::disposition, diesel::dsl::count_star()))
             .load(conn)
@@ -84,6 +119,7 @@ pub async fn get_ingredient_names_status(
                 .sum::<i64>()
         };
         let failures: Vec<(String, Option<String>, i32)> = names::table
+            .filter(names::name.eq_any(&own))
             .filter(names::status.eq(FAILED))
             .order(names::updated_at.desc())
             .limit(FAILURES_SHOWN)
@@ -121,14 +157,20 @@ pub async fn get_ingredient_names_status(
     security(("bearer_auth" = []))
 )]
 pub async fn retry_ingredient_names(
-    AuthUser(_user): AuthUser,
+    AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
 ) -> Result<Json<IngredientNamesQueuedResponse>, ApiError> {
-    let queued = run_db(&pool, |conn| {
-        diesel::update(names::table.filter(names::status.eq(FAILED)))
-            .set((names::status.eq(PENDING), names::error.eq(None::<String>)))
-            .execute(conn)
-            .map_err(db_error)
+    let user_id = user.id;
+    let queued = run_db(&pool, move |conn| {
+        let own = own_names(conn, user_id)?;
+        diesel::update(
+            names::table
+                .filter(names::status.eq(FAILED))
+                .filter(names::name.eq_any(&own)),
+        )
+        .set((names::status.eq(PENDING), names::error.eq(None::<String>)))
+        .execute(conn)
+        .map_err(db_error)
     })
     .await?;
     wake();
@@ -153,30 +195,7 @@ pub async fn warm_ingredient_names(
 ) -> Result<Json<IngredientNamesQueuedResponse>, ApiError> {
     let user_id = user.id;
     let queued = run_db(&pool, move |conn| {
-        let versions: Vec<serde_json::Value> = recipes::table
-            .inner_join(
-                recipe_versions::table
-                    .on(recipes::current_version_id.eq(recipe_versions::id.nullable())),
-            )
-            .filter(recipes::user_id.eq(user_id))
-            .filter(recipes::deleted_at.is_null())
-            .select(recipe_versions::ingredients)
-            .load(conn)
-            .map_err(db_error)?;
-        let mut items: Vec<String> = Vec::new();
-        for ingredients in versions {
-            let ingredients: Vec<Ingredient> = serde_json::from_value(ingredients)
-                .map_err(|_| ApiError::internal("Stored ingredients are not valid"))?;
-            items.extend(ingredients.into_iter().map(|i| i.item));
-        }
-        let shopping: Vec<String> = shopping_list_items::table
-            .filter(shopping_list_items::user_id.eq(user_id))
-            .filter(shopping_list_items::deleted_at.is_null())
-            .select(shopping_list_items::item)
-            .load(conn)
-            .map_err(db_error)?;
-        items.extend(shopping);
-        let pending = unlearned_names(items.iter().map(String::as_str));
+        let pending = own_names(conn, user_id)?;
         enqueue(conn, &pending).map_err(db_error)
     })
     .await?;

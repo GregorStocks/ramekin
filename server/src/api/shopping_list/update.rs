@@ -147,7 +147,15 @@ pub async fn update_item(
 
         match result {
             Ok(0) => Err(ApiError::not_found("Item not found")),
-            Ok(_) => Ok(()),
+            Ok(_) => {
+                if let Some(item) = &renamed_to {
+                    crate::ingredient_names::enqueue_items(conn, [item.as_str()]).map_err(|e| {
+                        tracing::error!("Failed to queue ingredient name: {}", e);
+                        ApiError::internal("Failed to update item")
+                    })?;
+                }
+                Ok(())
+            }
             Err(e) => {
                 tracing::error!("Failed to update shopping list item: {}", e);
                 Err(ApiError::internal("Failed to update item"))
@@ -156,9 +164,7 @@ pub async fn update_item(
     })
     .await?;
 
-    if let Some(item) = renamed_to {
-        crate::ingredient_names::enqueue_items_after_write(&pool, vec![item]).await;
-    }
+    crate::ingredient_names::wake();
 
     Ok(StatusCode::OK)
 }

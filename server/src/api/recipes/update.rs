@@ -213,17 +213,15 @@ pub async fn update_recipe(
                     names: &new_tags,
                 },
             )?;
+            if let Some(items) = &edited_items {
+                crate::ingredient_names::enqueue_items(conn, items.iter().map(String::as_str))?;
+            }
 
             Ok(())
         });
 
         match result {
-            Ok(()) => {
-                if let Some(items) = &edited_items {
-                    crate::ingredient_names::enqueue_items(conn, items.iter().map(String::as_str));
-                }
-                Ok(())
-            }
+            Ok(()) => Ok(()),
             Err(VersionWriteError::Stale) => Err(ApiError::conflict(
                 "Recipe was modified after you opened it; reload before saving again",
             )),
@@ -234,6 +232,7 @@ pub async fn update_recipe(
         }
     })
     .await?;
+    crate::ingredient_names::wake();
 
     Ok(StatusCode::OK)
 }

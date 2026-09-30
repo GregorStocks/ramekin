@@ -15,6 +15,7 @@ from ramekin_client.models import (
     CreateShoppingListItemRequest,
     CreateShoppingListRequest,
     EstimateCaloriesRequest,
+    SyncRequest,
 )
 
 
@@ -151,3 +152,62 @@ def test_warm_queues_nothing_new_for_saved_recipes(authed_api_client):
     wait_for(lambda: line_text(api, item) != "Not recognized")
     # Saving already queued the name, so warming finds nothing new.
     assert IngredientNamesApi(client).warm_ingredient_names().queued == 0
+
+
+def failures_named(names_api, name: str):
+    return [
+        f for f in names_api.get_ingredient_names_status().failures if f.name == name
+    ]
+
+
+def test_status_and_retry_only_cover_your_own_names(
+    authed_api_client, second_authed_api_client
+):
+    client, _ = authed_api_client
+    other_client, _ = second_authed_api_client
+    item = unique("sugar")
+    mock_fail(item.lower(), True)
+    create_recipe(RecipesApi(client), item)
+    mine = IngredientNamesApi(client)
+    wait_for(lambda: failures_named(mine, item.lower()))
+
+    theirs = IngredientNamesApi(other_client)
+    assert failures_named(theirs, item.lower()) == []
+    theirs.retry_ingredient_names()
+    time.sleep(0.5)
+    assert failures_named(mine, item.lower()), "another account's retry left it alone"
+    mock_fail(item.lower(), False)
+
+
+def test_resolving_a_name_reaches_incremental_sync(authed_api_client):
+    client, _ = authed_api_client
+    shopping = ShoppingListApi(client)
+    names_api = IngredientNamesApi(client)
+    item = unique("sugar")
+    mock_fail(item.lower(), True)
+    shopping.create_items(
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item=item)])
+    )
+    wait_for(lambda: failures_named(names_api, item.lower()))
+    synced = shopping.sync_items(SyncRequest())
+
+    # Resolving after the client's last sync must mark the item changed, so
+    # the next incremental sync carries its (possibly new) category.
+    mock_fail(item.lower(), False)
+    names_api.retry_ingredient_names()
+    wait_for(
+        lambda: (
+            not failures_named(names_api, item.lower())
+            and mock_calls(item.lower()) >= 2
+        )
+    )
+    changes = wait_for(
+        lambda: [
+            c
+            for c in shopping.sync_items(
+                SyncRequest(last_sync_at=synced.sync_timestamp)
+            ).server_changes
+            if c.item == item
+        ]
+    )
+    assert changes[0].computed_category

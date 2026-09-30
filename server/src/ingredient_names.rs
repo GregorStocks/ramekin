@@ -60,29 +60,14 @@ pub fn enqueue(conn: &mut PgConnection, new_names: &[String]) -> QueryResult<usi
         .execute(conn)
 }
 
-/// Queue the unknown names in `items` and wake the worker. For write paths:
-/// a failure to queue is logged, never a failed save.
-pub fn enqueue_items<'a>(conn: &mut PgConnection, items: impl IntoIterator<Item = &'a str>) {
-    let pending = unlearned_names(items);
-    match enqueue(conn, &pending) {
-        Ok(0) => {}
-        Ok(queued) => {
-            tracing::info!(queued, "queued ingredient names for resolution");
-            wake();
-        }
-        Err(e) => tracing::error!("Failed to queue ingredient names: {}", e),
-    }
-}
-
-/// `enqueue_items` on its own connection, after a write has committed.
-pub async fn enqueue_items_after_write(pool: &Arc<DbPool>, items: Vec<String>) {
-    let result = run_blocking(pool, move |conn| {
-        enqueue_items(conn, items.iter().map(String::as_str));
-    })
-    .await;
-    if let Err(e) = result {
-        tracing::error!("Failed to queue ingredient names: {}", e);
-    }
+/// Queue the unknown names in `items`. Write paths call this inside their
+/// transaction, so a save and its queued names commit together, then call
+/// `wake` once it has committed.
+pub fn enqueue_items<'a>(
+    conn: &mut PgConnection,
+    items: impl IntoIterator<Item = &'a str>,
+) -> QueryResult<usize> {
+    enqueue(conn, &unlearned_names(items))
 }
 
 /// Wake the worker.
@@ -260,6 +245,9 @@ async fn save_resolved(
                     NameResolution::NotFood => ("not_food", None),
                     NameResolution::Unknown => ("unknown", None),
                 };
+                if !matches!(resolution, NameResolution::Unknown) {
+                    touch_shopping_items(conn, name, now)?;
+                }
                 diesel::update(names::table.find(name))
                     .set((
                         names::status.eq(RESOLVED),
@@ -279,6 +267,39 @@ async fn save_resolved(
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
     tracing::info!(resolved, "resolved ingredient names");
+    Ok(())
+}
+
+/// Mark shopping-list items with this name as changed, so incremental sync
+/// sends their new computed category. Only `updated_at` moves: the item
+/// itself is unchanged, so its version (and clients' pending edits) stay valid.
+fn touch_shopping_items(
+    conn: &mut PgConnection,
+    name: &str,
+    now: chrono::DateTime<Utc>,
+) -> QueryResult<()> {
+    use crate::schema::shopping_list_items as items;
+    // Case-insensitive prefilter; the exact match is the catalog normalization.
+    let pattern = name
+        .replace('\\', "\\\\")
+        .replace('%', "\\%")
+        .replace('_', "\\_")
+        .replace(' ', "%");
+    let candidates: Vec<(uuid::Uuid, String)> = items::table
+        .filter(items::deleted_at.is_null())
+        .filter(items::item.ilike(pattern).escape('\\'))
+        .select((items::id, items::item))
+        .load(conn)?;
+    let ids: Vec<uuid::Uuid> = candidates
+        .into_iter()
+        .filter(|(_, item)| unlearned_name(item).as_deref() == Some(name))
+        .map(|(id, _)| id)
+        .collect();
+    if !ids.is_empty() {
+        diesel::update(items::table.filter(items::id.eq_any(ids)))
+            .set(items::updated_at.eq(now))
+            .execute(conn)?;
+    }
     Ok(())
 }
 

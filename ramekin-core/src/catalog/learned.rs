@@ -36,7 +36,7 @@ pub fn unlearned_name(item: &str) -> Option<String> {
 /// comes from committed data.
 pub fn resolve_line_with(item: &str, note: Option<&str>, learned: &Learned) -> Resolution {
     match resolve_line(item, note) {
-        Resolution::Unresolved => resolve_learned(item, learned),
+        Resolution::Unresolved => resolve_learned(item, note, learned),
         resolved => resolved,
     }
 }
@@ -44,14 +44,16 @@ pub fn resolve_line_with(item: &str, note: Option<&str>, learned: &Learned) -> R
 /// `resolve`, then a learned answer.
 pub fn resolve_with(item: &str, learned: &Learned) -> Resolution {
     match resolve(item) {
-        Resolution::Unresolved => resolve_learned(item, learned),
+        Resolution::Unresolved => resolve_learned(item, None, learned),
         resolved => resolved,
     }
 }
 
-fn resolve_learned(item: &str, learned: &Learned) -> Resolution {
+/// A learned key resolved like the line itself, note included, so "cooked"
+/// still selects the cooked food (or stays unknown) rather than the dry one.
+fn resolve_learned(item: &str, note: Option<&str>, learned: &Learned) -> Resolution {
     match learned.get(&normalize(item)) {
-        Some(LearnedTarget::Entry(key)) => match resolve(key) {
+        Some(LearnedTarget::Entry(key)) => match resolve_line(key, note) {
             Resolution::Entry { entry, .. } => Resolution::Entry {
                 entry,
                 via: Via::Learned,

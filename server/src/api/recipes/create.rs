@@ -139,21 +139,21 @@ pub async fn create_recipe(
                     names: &tags,
                 },
             )?;
+            crate::ingredient_names::enqueue_items(
+                conn,
+                request.content.ingredients.iter().map(|i| i.item.as_str()),
+            )?;
 
             Ok(recipe_id)
         });
 
-        let recipe_id = result.map_err(|e| {
+        result.map_err(|e| {
             tracing::error!("Failed to create recipe: {}", e);
             ApiError::internal("Failed to create recipe")
-        })?;
-        crate::ingredient_names::enqueue_items(
-            conn,
-            request.content.ingredients.iter().map(|i| i.item.as_str()),
-        );
-        Ok(recipe_id)
+        })
     })
     .await?;
+    crate::ingredient_names::wake();
 
     Ok((
         StatusCode::CREATED,
