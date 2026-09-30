@@ -148,15 +148,23 @@ pub fn requeue_stale_keys(pool: &DbPool) -> Result<usize, String> {
     if stale.is_empty() {
         return Ok(0);
     }
-    diesel::update(names::table.filter(names::name.eq_any(&stale)))
-        .set((
-            names::status.eq(PENDING),
-            names::disposition.eq(None::<String>),
-            names::catalog_key.eq(None::<String>),
-            names::updated_at.eq(Utc::now()),
-        ))
-        .execute(&mut conn)
-        .map_err(|e| e.to_string())
+    conn.transaction(|conn| {
+        let now = Utc::now();
+        // Their items' computed category changes now, so incremental sync
+        // must send them again.
+        for name in &stale {
+            touch_shopping_items(conn, name, now)?;
+        }
+        diesel::update(names::table.filter(names::name.eq_any(&stale)))
+            .set((
+                names::status.eq(PENDING),
+                names::disposition.eq(None::<String>),
+                names::catalog_key.eq(None::<String>),
+                names::updated_at.eq(now),
+            ))
+            .execute(conn)
+    })
+    .map_err(|e: diesel::result::Error| e.to_string())
 }
 
 /// Start the worker. It first drains whatever was pending at startup, then
