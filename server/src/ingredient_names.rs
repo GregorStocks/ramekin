@@ -12,6 +12,7 @@
 
 use std::collections::BTreeSet;
 use std::sync::{Arc, LazyLock};
+use std::time::Duration;
 
 use chrono::Utc;
 use diesel::prelude::*;
@@ -30,6 +31,10 @@ use crate::schema::ingredient_name_resolutions as names;
 const BATCH_SIZE: i64 = 40;
 /// Candidate catalog keys offered per name.
 const CANDIDATES: usize = 12;
+/// How soon the worker tries again after a pass that failed, doubling up to
+/// `RETRY_MAX` while failures continue.
+const RETRY_MIN: Duration = Duration::from_secs(60);
+const RETRY_MAX: Duration = Duration::from_secs(60 * 60);
 
 pub const PENDING: &str = "pending";
 pub const RESOLVED: &str = "resolved";
@@ -171,11 +176,28 @@ pub fn requeue_stale_keys(pool: &DbPool) -> Result<usize, String> {
 /// waits to be woken.
 pub fn spawn_worker(pool: Arc<DbPool>) {
     tokio::spawn(async move {
+        let mut backoff = RETRY_MIN;
         loop {
-            if let Err(e) = resolve_pending(&pool, None).await {
-                tracing::warn!("Ingredient name resolution failed: {}", e);
+            match resolve_pending(&pool, None).await {
+                Ok(()) => {
+                    backoff = RETRY_MIN;
+                    WAKE.notified().await;
+                }
+                // Names may still be pending (a provider outage, or a
+                // database error), so try again later even if nothing wakes us.
+                Err(e) => {
+                    tracing::warn!(
+                        retry_in_secs = backoff.as_secs(),
+                        "Ingredient name resolution failed: {}",
+                        e
+                    );
+                    tokio::select! {
+                        () = WAKE.notified() => {}
+                        () = tokio::time::sleep(backoff) => {}
+                    }
+                    backoff = (backoff * 2).min(RETRY_MAX);
+                }
             }
-            WAKE.notified().await;
         }
     });
 }
