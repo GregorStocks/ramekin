@@ -1,5 +1,6 @@
 use ramekin_core::catalog::{
-    candidates, resolve_line_with, unlearned_name, Learned, LearnedTarget, Resolution, Via,
+    candidates, learned_key_resolves, resolve_line_with, unlearned_name, Learned, LearnedTarget,
+    Resolution, Via,
 };
 use ramekin_core::ingredient_categorizer::categorize_with;
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
@@ -119,4 +120,12 @@ fn a_cooked_note_applies_to_the_learned_key() {
         Resolution::Unresolved => {}
         other => panic!("{other:?}"),
     }
+}
+
+#[test]
+fn learned_keys_are_checked_against_the_current_catalog() {
+    assert!(learned_key_resolves("garlic"));
+    assert!(!learned_key_resolves("moon dust"));
+    // Ambiguous names don't name one entry either.
+    assert!(!learned_key_resolves("cheese"));
 }

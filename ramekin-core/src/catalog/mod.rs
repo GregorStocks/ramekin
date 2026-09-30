@@ -23,7 +23,8 @@ use sha2::{Digest, Sha256};
 
 pub use cleanup::{clean_curated, parsed_name, CuratedChange};
 pub use learned::{
-    candidates, resolve_line_with, resolve_with, unlearned_name, Learned, LearnedTarget,
+    candidates, learned_key_resolves, resolve_line_with, resolve_with, unlearned_name, Learned,
+    LearnedTarget,
 };
 pub use resolve::{resolve, Resolution, Via};
 pub use volume::{

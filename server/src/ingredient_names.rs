@@ -18,7 +18,9 @@ use diesel::prelude::*;
 use ramekin_core::ai::{
     resolve_ingredient_names, AiConfig, AiError, CachingAiClient, ConfigError, NameResolution,
 };
-use ramekin_core::catalog::{candidates, unlearned_name, Learned, LearnedTarget};
+use ramekin_core::catalog::{
+    candidates, learned_key_resolves, unlearned_name, Learned, LearnedTarget,
+};
 use tokio::sync::{Mutex, Notify};
 
 use crate::db::{run_blocking, DbPool};
@@ -124,6 +126,37 @@ pub fn load_learned<'a>(
             (name, target)
         })
         .collect())
+}
+
+/// Requeue learned answers whose catalog key no longer names one entry (a
+/// catalog change removed or split it), so they're asked about again rather
+/// than silently reading as unknown. Runs at startup, before serving, since
+/// the catalog only changes with a deploy.
+pub fn requeue_stale_keys(pool: &DbPool) -> Result<usize, String> {
+    let mut conn = pool.get().map_err(|e| e.to_string())?;
+    let keys: Vec<(String, String)> = names::table
+        .filter(names::status.eq(RESOLVED))
+        .filter(names::catalog_key.is_not_null())
+        .select((names::name, names::catalog_key.assume_not_null()))
+        .load(&mut conn)
+        .map_err(|e| e.to_string())?;
+    let stale: Vec<String> = keys
+        .into_iter()
+        .filter(|(_, key)| !learned_key_resolves(key))
+        .map(|(name, _)| name)
+        .collect();
+    if stale.is_empty() {
+        return Ok(0);
+    }
+    diesel::update(names::table.filter(names::name.eq_any(&stale)))
+        .set((
+            names::status.eq(PENDING),
+            names::disposition.eq(None::<String>),
+            names::catalog_key.eq(None::<String>),
+            names::updated_at.eq(Utc::now()),
+        ))
+        .execute(&mut conn)
+        .map_err(|e| e.to_string())
 }
 
 /// Start the worker. It first drains whatever was pending at startup, then

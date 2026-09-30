@@ -31,6 +31,12 @@ pub fn unlearned_name(item: &str) -> Option<String> {
     (!name.is_empty() && matches!(resolve(&name), Resolution::Unresolved)).then_some(name)
 }
 
+/// Whether a stored learned key still names one catalog entry. The server
+/// requeues answers whose key stopped doing so after a catalog change.
+pub fn learned_key_resolves(key: &str) -> bool {
+    matches!(resolve(key), Resolution::Entry { .. })
+}
+
 /// Like `resolve_line`, then a learned answer for a name the catalog doesn't
 /// know. A learned key is resolved through the catalog, so every attribute
 /// comes from committed data.
@@ -58,7 +64,9 @@ fn resolve_learned(item: &str, note: Option<&str>, learned: &Learned) -> Resolut
                 entry,
                 via: Via::Learned,
             },
-            // The key no longer names a single entry (the catalog changed).
+            // The line's note rules the entry out (e.g. cooked rice with no
+            // cooked entry). Keys that stopped resolving at all are requeued
+            // by the server at startup.
             _ => Resolution::Unresolved,
         },
         Some(LearnedTarget::NotFood) => Resolution::NotFood,

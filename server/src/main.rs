@@ -194,7 +194,15 @@ async fn main() {
     photos::spawn_dimension_backfill(pool.clone());
 
     // Resolve ingredient names the catalog doesn't know, starting with any
-    // left pending by a previous run.
+    // left pending by a previous run or whose learned key this catalog lost.
+    let requeued = ingredient_names::requeue_stale_keys(&pool)
+        .expect("Failed to requeue stale learned ingredient names");
+    if requeued > 0 {
+        tracing::info!(
+            requeued,
+            "requeued learned ingredient names the catalog lost"
+        );
+    }
     ingredient_names::spawn_worker(pool.clone());
 
     // Public routes (no auth required)
