@@ -49,8 +49,9 @@ Each entry also has two negligibility attributes, derived from the data:
   entry sets `trace_ok: true`. A line of it is negligible when it has no numeric
   amount ("to taste", no measurement), a trace unit (pinch, dash, sprig), or
   counts at most 10 small pieces (after scaling) USDA has no weight for ("2 bay
-  leaves", "1 cinnamon stick"). A real amount, like a cup of cumin, counts in
-  full.
+  leaves", "1 cinnamon stick"). So is at most a tablespoon (after scaling) of one
+  with no density ("1 tsp freshly ground black pepper"), which is at most about
+  25 kcal. A real amount, like a cup of cumin, counts in full.
 
 A compound line is negligible only if every one of its foods is negligible on
 that line. Otherwise its calories are unknown.
