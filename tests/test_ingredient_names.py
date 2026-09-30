@@ -21,7 +21,9 @@ from ramekin_client.models import (
     CreateShoppingListItemRequest,
     CreateShoppingListRequest,
     EstimateCaloriesRequest,
+    SyncCreateItem,
     SyncRequest,
+    SyncUpdateItem,
 )
 
 
@@ -253,3 +255,26 @@ def test_resolving_a_name_reaches_incremental_sync(authed_api_client):
         ]
     )
     assert changes[0].computed_category
+
+
+def test_sync_queues_only_names_it_wrote(authed_api_client):
+    client, _ = authed_api_client
+    shopping = ShoppingListApi(client)
+    prefix = unique("")
+    written = f"{prefix}a sugar"
+    rejected = f"{prefix}b sugar"
+    shopping.sync_items(
+        SyncRequest(
+            creates=[
+                SyncCreateItem(
+                    client_id=uuid.uuid4(), item=written, is_checked=False, sort_order=0
+                )
+            ],
+            updates=[
+                SyncUpdateItem(id=uuid.uuid4(), expected_version=1, item=rejected)
+            ],
+        )
+    )
+    # Queued together, the two names would sort into the same batch.
+    wait_for(lambda: mock_calls(written.lower()) >= 1)
+    assert mock_calls(rejected.lower()) == 0

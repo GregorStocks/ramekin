@@ -189,6 +189,8 @@ pub async fn sync_items(
         conn.transaction::<_, diesel::result::Error, _>(|conn| {
             // 1. Process creates — batch insert, fall back to a single SELECT for conflicts
             let mut created = Vec::with_capacity(request.creates.len());
+            // Names this sync actually wrote, queued for resolution below.
+            let mut written_items: Vec<String> = Vec::new();
             if !request.creates.is_empty() {
                 let new_items: Vec<NewShoppingListItem> = request
                     .creates
@@ -207,7 +209,7 @@ pub async fn sync_items(
                     })
                     .collect();
 
-                let inserted: Vec<(Option<Uuid>, Uuid, i32)> =
+                let inserted: Vec<(Option<Uuid>, Uuid, i32, String)> =
                     diesel::insert_into(shopping_list_items::table)
                         .values(&new_items)
                         .on_conflict(on_constraint("uq_shopping_list_client_id"))
@@ -216,12 +218,14 @@ pub async fn sync_items(
                             shopping_list_items::client_id,
                             shopping_list_items::id,
                             shopping_list_items::version,
+                            shopping_list_items::item,
                         ))
                         .get_results(conn)?;
 
                 let mut by_client_id: HashMap<Uuid, (Uuid, i32)> =
                     HashMap::with_capacity(request.creates.len());
-                for (cid, id, ver) in inserted {
+                for (cid, id, ver, item) in inserted {
+                    written_items.push(item);
                     if let Some(cid) = cid {
                         by_client_id.insert(cid, (id, ver));
                     }
@@ -365,6 +369,9 @@ pub async fn sync_items(
                     .execute(conn)?;
 
                     if updated_rows == 1 {
+                        if update_req.item.is_some() {
+                            written_items.push(new_item.clone());
+                        }
                         // Write-back so a later update for the same id in this batch sees
                         // the new state instead of the stale prefetch.
                         current_map.insert(
@@ -604,14 +611,7 @@ pub async fn sync_items(
                 deleted_set.extend(deleted_rows);
             }
 
-            crate::ingredient_names::enqueue_items(
-                conn,
-                request
-                    .creates
-                    .iter()
-                    .map(|c| c.item.as_str())
-                    .chain(request.updates.iter().filter_map(|u| u.item.as_deref())),
-            )?;
+            crate::ingredient_names::enqueue_items(conn, written_items.iter().map(String::as_str))?;
 
             Ok(SyncResponse {
                 created,
