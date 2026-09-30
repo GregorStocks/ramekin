@@ -19,7 +19,7 @@ enum RecipeScaleSupport {
     private static let rangeSeparator = regex(#"\s+(?:to|or)\s+|\s*[-–—]\s*"#, options: .caseInsensitive)
     private static let unitSuffix: NSRegularExpression = {
         let units = #"g|grams?|kg|kilograms?|mg|milligrams?|oz|ounces?|lbs?|pounds?|cups?|tbsp|tablespoons?|tsp|teaspoons?"#
-            + #"|fl oz|fluid ounces?|pints?|quarts?|gallons?|ml|milliliters?|l|liters?|litres?|servings?|people|portions"#
+            + #"|fl oz|fluid ounces?|pints?|quarts?|gallons?|ml|milliliters?|l|liters?|litres?|servings?|people|persons|portions"#
         return regex(#"^(.+?)(\s+(?:"# + units + #"))$"#, options: .caseInsensitive)
     }()
 

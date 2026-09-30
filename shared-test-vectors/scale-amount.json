@@ -282,6 +282,12 @@
     "expected": "Serves 8 to 12 people"
   },
   {
+    "name": "serves with persons",
+    "amount": "Serves 4 persons",
+    "factor": 2,
+    "expected": "Serves 8 persons"
+  },
+  {
     "name": "makes a non-serving count scales nothing",
     "amount": "Makes 12 cookies",
     "factor": 2,
