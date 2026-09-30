@@ -167,7 +167,9 @@ pub async fn resolve_pending(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> R
         if batch.is_empty() {
             break;
         }
-        if let Err(e) = resolve_batch(pool, batch).await {
+        // A failed answer is recorded on its names; failing to record it
+        // would leave them pending, so stop rather than ask again.
+        if let Some(e) = resolve_batch(pool, batch).await? {
             first_error.get_or_insert(e);
         }
     }
@@ -201,9 +203,11 @@ pub async fn resolve_pending(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> R
 /// invalid, each name is retried alone, so one name the model can't handle
 /// doesn't fail the others; only the names that fail on their own are marked
 /// failed. Provider and configuration errors fail the whole batch at once.
-async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<(), String> {
+/// Returns the recorded resolution failure, if any; `Err` means an outcome
+/// couldn't be saved.
+async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Option<String>, String> {
     match ask(&batch).await {
-        Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await,
+        Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await.map(|()| None),
         Err(AiError::ParseError(error)) if batch.len() > 1 => {
             tracing::warn!(
                 names = batch.len(),
@@ -213,24 +217,21 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<(), Str
             let mut first_error = None;
             for name in batch {
                 let single = vec![name];
-                let outcome = match ask(&single).await {
-                    Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await,
+                match ask(&single).await {
+                    Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await?,
                     Err(error) => {
                         let error = error.to_string();
                         save_failed(pool, single, error.clone()).await?;
-                        Err(error)
+                        first_error.get_or_insert(error);
                     }
-                };
-                if let Err(e) = outcome {
-                    first_error.get_or_insert(e);
                 }
             }
-            first_error.map_or(Ok(()), Err)
+            Ok(first_error)
         }
         Err(error) => {
             let error = error.to_string();
             save_failed(pool, batch, error.clone()).await?;
-            Err(error)
+            Ok(Some(error))
         }
     }
 }

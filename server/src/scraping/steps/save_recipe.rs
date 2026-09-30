@@ -14,6 +14,7 @@ use ramekin_core::pipeline::{
 use ramekin_core::{ExtractionMethod, RawRecipe};
 
 use crate::db::{run_blocking, DbPool};
+use crate::ingredient_names;
 use crate::models::{Ingredient, NewRecipeVersion};
 use crate::recipes::{create_new_version_cas, insert_recipe, TagSource, VersionWriteError};
 use crate::schema::recipe_versions;
@@ -294,6 +295,8 @@ impl SaveRecipeStep {
     ) -> Result<(Uuid, Uuid), String> {
         let ingredients_json =
             serde_json::to_value(parsed_ingredients).map_err(|e| e.to_string())?;
+        let unknown_names =
+            ingredient_names::unlearned_names(parsed_ingredients.iter().map(|i| i.item.as_str()));
 
         // Convert photo IDs to Option<Uuid> for the database
         let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
@@ -344,6 +347,8 @@ impl SaveRecipeStep {
                         names: &category_tags,
                     },
                 )?;
+                // Queued with the save; the next step resolves them.
+                ingredient_names::enqueue(conn, &unknown_names)?;
 
                 Ok((recipe_id, version_id))
             })
@@ -364,6 +369,8 @@ impl SaveRecipeStep {
     ) -> Result<(Uuid, Uuid), String> {
         let ingredients_json =
             serde_json::to_value(parsed_ingredients).map_err(|e| e.to_string())?;
+        let unknown_names =
+            ingredient_names::unlearned_names(parsed_ingredients.iter().map(|i| i.item.as_str()));
 
         // Convert photo IDs to Option<Uuid> for the database
         let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
@@ -401,6 +408,8 @@ impl SaveRecipeStep {
                     Some(expected_version_id),
                     TagSource::CopyFrom(expected_version_id),
                 )?;
+                // Queued with the save; the next step resolves them.
+                ingredient_names::enqueue(conn, &unknown_names)?;
 
                 Ok((recipe_id, version_id))
             })
