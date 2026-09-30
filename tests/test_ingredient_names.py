@@ -41,6 +41,15 @@ def mock_fail(name: str, fail: bool) -> None:
     ).raise_for_status()
 
 
+def mock_hold(name: str, hold: bool) -> None:
+    port = os.environ["MOCK_OPENROUTER_PORT"]
+    requests.get(
+        f"http://localhost:{port}/test/ingredient-name-hold",
+        params={"name": name, "hold": "true" if hold else "false"},
+        timeout=10,
+    ).raise_for_status()
+
+
 def mock_calls(name: str) -> int:
     port = os.environ["MOCK_OPENROUTER_PORT"]
     response = requests.get(
@@ -62,13 +71,16 @@ def create_recipe(api: RecipesApi, item: str) -> str:
     ).id
 
 
-def line_text(api: RecipesApi, item: str) -> str:
-    estimate = api.estimate_calories(
+def estimate(api: RecipesApi, item: str):
+    return api.estimate_calories(
         EstimateCaloriesRequest(
             ingredients=[make_ingredient(item, "100", "g")], scale=1
         )
     )
-    return estimate.lines[0].text
+
+
+def line_text(api: RecipesApi, item: str) -> str:
+    return estimate(api, item).lines[0].text
 
 
 def wait_for(predicate, timeout: float = 20.0):
@@ -310,3 +322,32 @@ def test_create_queues_only_names_it_inserted(authed_api_client):
     # Queued together, the two names would sort into the same batch.
     wait_for(lambda: mock_calls(fresh.lower()) >= 1)
     assert mock_calls(rejected.lower()) == 0
+
+
+def test_estimates_say_when_names_are_still_resolving(authed_api_client):
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    item = unique("sugar")
+    mock_hold(item.lower(), True)
+    try:
+        create_recipe(api, item)
+        wait_for(lambda: mock_calls(item.lower()) >= 1)
+        pending = estimate(api, item)
+        assert pending.resolving
+        assert pending.lines[0].text == "Not recognized"
+    finally:
+        mock_hold(item.lower(), False)
+    resolved = wait_for(lambda: (e := estimate(api, item)) and not e.resolving and e)
+    assert resolved.lines[0].text != "Not recognized"
+
+
+def test_failed_and_unqueued_names_are_not_resolving(authed_api_client):
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    names_api = IngredientNamesApi(client)
+    item = unique("sugar")
+    mock_fail(item.lower(), True)
+    assert not estimate(api, item).resolving, "never queued"
+    create_recipe(api, item)
+    wait_for(lambda: failures_named(names_api, item.lower()))
+    assert not estimate(api, item).resolving

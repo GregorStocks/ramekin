@@ -92,6 +92,9 @@ pub struct CalorieEstimateResponse {
     pub per_serving_calories: Option<CalorieRange>,
     /// The breakdown, one entry per ingredient in order.
     pub lines: Vec<CalorieLine>,
+    /// Some ingredient names are still being recognized in the background;
+    /// ask again shortly for an estimate that includes them.
+    pub resolving: bool,
 }
 
 #[utoipa::path(
@@ -132,11 +135,17 @@ pub async fn estimate_calories(
     // Stored answers for names the committed catalog doesn't know; names not
     // resolved yet read as unknown.
     let items: Vec<String> = ingredients.iter().map(|i| i.item.clone()).collect();
-    let learned = run_db(&pool, move |conn| {
-        crate::ingredient_names::load_learned(conn, items.iter().map(String::as_str)).map_err(|e| {
-            tracing::error!("Failed to load learned ingredient names: {}", e);
-            ApiError::internal("Failed to load ingredient names")
-        })
+    let (learned, resolving) = run_db(&pool, move |conn| {
+        let names = || items.iter().map(String::as_str);
+        crate::ingredient_names::load_learned(conn, names())
+            .and_then(|learned| {
+                crate::ingredient_names::any_pending(conn, names())
+                    .map(|resolving| (learned, resolving))
+            })
+            .map_err(|e| {
+                tracing::error!("Failed to load learned ingredient names: {}", e);
+                ApiError::internal("Failed to load ingredient names")
+            })
     })
     .await?;
     let result = nutrition::estimate_with(
@@ -164,5 +173,6 @@ pub async fn estimate_calories(
                 text: line.text,
             })
             .collect(),
+        resolving,
     }))
 }

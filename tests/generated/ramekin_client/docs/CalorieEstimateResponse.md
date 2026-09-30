@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **lines** | [**List[CalorieLine]**](CalorieLine.md) | The breakdown, one entry per ingredient in order. | 
 **not_counted** | **List[str]** | For a partial estimate, the ingredients its lower bound leaves out. | 
 **per_serving_calories** | [**CalorieRange**](CalorieRange.md) |  | [optional] 
+**resolving** | **bool** | Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them. | 
 **secondary** | **str** | Shown under the headline when present. | [optional] 
 **status** | [**CalorieStatus**](CalorieStatus.md) |  | 
 

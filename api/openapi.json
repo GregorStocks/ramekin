@@ -3037,7 +3037,8 @@
           "status",
           "headline",
           "not_counted",
-          "lines"
+          "lines",
+          "resolving"
         ],
         "properties": {
           "database_version": {
@@ -3082,6 +3083,10 @@
                 "$ref": "#/components/schemas/CalorieRange"
               }
             ]
+          },
+          "resolving": {
+            "type": "boolean",
+            "description": "Some ingredient names are still being recognized in the background;\nask again shortly for an estimate that includes them."
           },
           "secondary": {
             "type": [

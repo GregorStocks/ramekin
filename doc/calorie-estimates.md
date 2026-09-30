@@ -96,6 +96,10 @@ estimates. Saving never waits for it, and estimating never calls the LLM:
 - a failed resolution shows in Settings → Ingredient recognition, where it can
   be retried.
 
+While any of an estimate's names is still pending, the response sets
+`resolving`. The web and iOS clients then re-request the same estimate every
+2 seconds, keeping the current one on screen, until it clears.
+
 ## Negligible, compound, and non-food lines
 
 Some lines are known without a usable amount (rules in the catalog README):

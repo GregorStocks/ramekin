@@ -133,6 +133,24 @@ pub fn load_learned<'a>(
         .collect())
 }
 
+/// Whether any of `items`' unknown names is still waiting to be resolved,
+/// so a reader knows a fresher answer is coming.
+pub fn any_pending<'a>(
+    conn: &mut PgConnection,
+    items: impl IntoIterator<Item = &'a str>,
+) -> QueryResult<bool> {
+    let wanted = unlearned_names(items);
+    if wanted.is_empty() {
+        return Ok(false);
+    }
+    diesel::select(diesel::dsl::exists(
+        names::table
+            .filter(names::name.eq_any(&wanted))
+            .filter(names::status.eq(PENDING)),
+    ))
+    .get_result(conn)
+}
+
 /// Requeue learned answers whose catalog key no longer names one entry (a
 /// catalog change removed or split it), so they're asked about again rather
 /// than silently reading as unknown. Runs at startup, before serving, since

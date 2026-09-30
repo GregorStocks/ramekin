@@ -53,6 +53,7 @@ class TestCalorieEstimateResponse(unittest.TestCase):
                 per_serving_calories = ramekin_client.models.calorie_range.CalorieRange(
                     max = 1.337, 
                     min = 1.337, ),
+                resolving = True,
                 secondary = '',
                 status = 'complete'
             )
@@ -70,6 +71,7 @@ class TestCalorieEstimateResponse(unittest.TestCase):
                 not_counted = [
                     ''
                     ],
+                resolving = True,
                 status = 'complete',
         )
         """

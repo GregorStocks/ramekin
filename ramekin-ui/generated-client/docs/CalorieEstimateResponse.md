@@ -13,6 +13,7 @@ Name | Type
 `lines` | [Array&lt;CalorieLine&gt;](CalorieLine.md)
 `notCounted` | Array&lt;string&gt;
 `perServingCalories` | [CalorieRange](CalorieRange.md)
+`resolving` | boolean
 `secondary` | string
 `status` | [CalorieStatus](CalorieStatus.md)
 
@@ -29,6 +30,7 @@ const example = {
   "lines": null,
   "notCounted": null,
   "perServingCalories": null,
+  "resolving": null,
   "secondary": null,
   "status": null,
 } satisfies CalorieEstimateResponse

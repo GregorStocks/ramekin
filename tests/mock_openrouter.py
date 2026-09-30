@@ -8,6 +8,7 @@ import base64
 import json
 import sys
 import threading
+import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -31,6 +32,10 @@ INGREDIENT_NAME_CALLS = {}
 INGREDIENT_NAME_CALLS_LOCK = threading.Lock()
 # Names whose resolver calls fail until a test clears them.
 FAILING_INGREDIENT_NAMES = set()
+# Names whose answer is held back until a test releases them, so the test can
+# observe a name while it is still pending. Never held longer than this.
+HELD_INGREDIENT_NAMES = set()
+INGREDIENT_NAME_HOLD_LIMIT_SECONDS = 15
 
 
 def mock_png_data_url():
@@ -78,6 +83,18 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                     FAILING_INGREDIENT_NAMES.add(name)
                 else:
                     FAILING_INGREDIENT_NAMES.discard(name)
+            self.send_response(204)
+            self.end_headers()
+            return
+
+        if parsed.path == "/test/ingredient-name-hold":
+            params = parse_qs(parsed.query)
+            name = params.get("name", [""])[0]
+            with INGREDIENT_NAME_CALLS_LOCK:
+                if params.get("hold", ["true"])[0] == "true":
+                    HELD_INGREDIENT_NAMES.add(name)
+                else:
+                    HELD_INGREDIENT_NAMES.discard(name)
             self.send_response(204)
             self.end_headers()
             return
@@ -175,6 +192,12 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 INGREDIENT_NAME_CALLS[item["name"]] = (
                     INGREDIENT_NAME_CALLS.get(item["name"], 0) + 1
                 )
+        deadline = time.monotonic() + INGREDIENT_NAME_HOLD_LIMIT_SECONDS
+        while time.monotonic() < deadline:
+            with INGREDIENT_NAME_CALLS_LOCK:
+                if not any(item["name"] in HELD_INGREDIENT_NAMES for item in items):
+                    break
+            time.sleep(0.05)
         with INGREDIENT_NAME_CALLS_LOCK:
             failing = any(item["name"] in FAILING_INGREDIENT_NAMES for item in items)
         if failing:

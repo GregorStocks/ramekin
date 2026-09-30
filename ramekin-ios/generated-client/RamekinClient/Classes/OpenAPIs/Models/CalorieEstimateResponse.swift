@@ -24,17 +24,20 @@ public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
     /** For a partial estimate, the ingredients its lower bound leaves out. */
     public var notCounted: [String]
     public var perServingCalories: CalorieRange?
+    /** Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them. */
+    public var resolving: Bool
     /** Shown under the headline when present. */
     public var secondary: String?
     public var status: CalorieStatus
 
-    public init(databaseVersion: String, headline: String, knownCalories: CalorieRange? = nil, lines: [CalorieLine], notCounted: [String], perServingCalories: CalorieRange? = nil, secondary: String? = nil, status: CalorieStatus) {
+    public init(databaseVersion: String, headline: String, knownCalories: CalorieRange? = nil, lines: [CalorieLine], notCounted: [String], perServingCalories: CalorieRange? = nil, resolving: Bool, secondary: String? = nil, status: CalorieStatus) {
         self.databaseVersion = databaseVersion
         self.headline = headline
         self.knownCalories = knownCalories
         self.lines = lines
         self.notCounted = notCounted
         self.perServingCalories = perServingCalories
+        self.resolving = resolving
         self.secondary = secondary
         self.status = status
     }
@@ -46,6 +49,7 @@ public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
         case lines
         case notCounted = "not_counted"
         case perServingCalories = "per_serving_calories"
+        case resolving
         case secondary
         case status
     }
@@ -60,6 +64,7 @@ public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
         try container.encode(lines, forKey: .lines)
         try container.encode(notCounted, forKey: .notCounted)
         try container.encodeIfPresent(perServingCalories, forKey: .perServingCalories)
+        try container.encode(resolving, forKey: .resolving)
         try container.encodeIfPresent(secondary, forKey: .secondary)
         try container.encode(status, forKey: .status)
     }

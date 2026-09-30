@@ -26,6 +26,8 @@ export function instanceOfCalorieEstimateResponse(value) {
         return false;
     if (!('notCounted' in value) || value['notCounted'] === undefined)
         return false;
+    if (!('resolving' in value) || value['resolving'] === undefined)
+        return false;
     if (!('status' in value) || value['status'] === undefined)
         return false;
     return true;
@@ -44,6 +46,7 @@ export function CalorieEstimateResponseFromJSONTyped(json, ignoreDiscriminator) 
         'lines': (json['lines'].map(CalorieLineFromJSON)),
         'notCounted': json['not_counted'],
         'perServingCalories': json['per_serving_calories'] == null ? undefined : CalorieRangeFromJSON(json['per_serving_calories']),
+        'resolving': json['resolving'],
         'secondary': json['secondary'] == null ? undefined : json['secondary'],
         'status': CalorieStatusFromJSON(json['status']),
     };
@@ -62,6 +65,7 @@ export function CalorieEstimateResponseToJSONTyped(value, ignoreDiscriminator = 
         'lines': (value['lines'].map(CalorieLineToJSON)),
         'not_counted': value['notCounted'],
         'per_serving_calories': CalorieRangeToJSON(value['perServingCalories']),
+        'resolving': value['resolving'],
         'secondary': value['secondary'],
         'status': CalorieStatusToJSON(value['status']),
     };

@@ -2,8 +2,19 @@ import XCTest
 @testable import Ramekin
 
 final class CalorieEstimateViewModelTests: XCTestCase {
-    private func estimate(_ headline: String, status: CalorieStatus = .complete) -> CalorieEstimateResponse {
-        CalorieEstimateResponse(databaseVersion: "test", headline: headline, lines: [], notCounted: [], status: status)
+    private func estimate(
+        _ headline: String,
+        status: CalorieStatus = .complete,
+        resolving: Bool = false
+    ) -> CalorieEstimateResponse {
+        CalorieEstimateResponse(
+            databaseVersion: "test",
+            headline: headline,
+            lines: [],
+            notCounted: [],
+            resolving: resolving,
+            status: status
+        )
     }
 
     @MainActor
@@ -15,6 +26,7 @@ final class CalorieEstimateViewModelTests: XCTestCase {
             headline: "Not enough ingredient data to estimate calories",
             lines: [CalorieLine(index: 0, item: "yogurt", text: "Could be several foods")],
             notCounted: [],
+            resolving: false,
             secondary: "1 ingredient couldn't be counted.",
             status: .insufficient
         )
@@ -70,6 +82,46 @@ final class CalorieEstimateViewModelTests: XCTestCase {
         continuation?.resume(returning: estimate("Old recipe"))
         await first.value
         XCTAssertEqual(model.response, newer)
+        XCTAssertEqual(model.request?.scale, 2)
+    }
+
+    @MainActor
+    func testPollsQuietlyWhileNamesAreResolving() async {
+        let request = EstimateCaloriesRequest(ingredients: [], scale: 1)
+        var calls = 0
+        var loadingSeenDuringPoll = false
+        var model: CalorieEstimateViewModel!
+        model = CalorieEstimateViewModel(pollInterval: .zero) { _ in
+            calls += 1
+            if calls > 1, model.isLoading { loadingSeenDuringPoll = true }
+            return calls < 3
+                ? self.estimate("Not yet", resolving: true)
+                : self.estimate("Counted")
+        }
+        await model.load(request)
+        XCTAssertEqual(calls, 3)
+        XCTAssertEqual(model.response?.headline, "Counted")
+        XCTAssertFalse(loadingSeenDuringPoll, "polls keep the current estimate on screen")
+        XCTAssertFalse(model.isLoading)
+    }
+
+    @MainActor
+    func testPollingStopsWhenANewerRequestReplacesIt() async {
+        var calls = 0
+        var model: CalorieEstimateViewModel!
+        model = CalorieEstimateViewModel(pollInterval: .zero) { request in
+            calls += 1
+            if request.scale == 1 {
+                if calls > 1 {
+                    // A newer request arrives while the first is polling.
+                    await model.load(EstimateCaloriesRequest(ingredients: [], scale: 2))
+                }
+                return self.estimate("Old", resolving: true)
+            }
+            return self.estimate("New")
+        }
+        await model.load(EstimateCaloriesRequest(ingredients: [], scale: 1))
+        XCTAssertEqual(model.response?.headline, "New")
         XCTAssertEqual(model.request?.scale, 2)
     }
 }
