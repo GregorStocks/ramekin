@@ -9,6 +9,7 @@ pub mod list;
 pub mod normalize_title;
 pub(crate) mod paprika;
 pub(crate) mod read;
+pub mod reparse_ingredients;
 pub mod rescrape;
 pub mod rescrape_photo;
 pub mod sync;
@@ -27,6 +28,10 @@ pub fn router() -> Router<AppState> {
         .route("/", get(list::list_recipes).post(create::create_recipe))
         .route("/export", get(export::export_all_recipes))
         .route("/sync", get(sync::sync_recipes))
+        .route(
+            "/reparse-ingredients",
+            post(reparse_ingredients::reparse_all_ingredients),
+        )
         .route(
             "/estimate-calories",
             post(estimate_calories::estimate_calories),
@@ -60,6 +65,7 @@ pub fn router() -> Router<AppState> {
         sync::sync_recipes,
         get::get_recipe,
         estimate_calories::estimate_calories,
+        reparse_ingredients::reparse_all_ingredients,
         update::update_recipe,
         delete::delete_recipe,
         export::export_recipe,
@@ -85,6 +91,7 @@ pub fn router() -> Router<AppState> {
         estimate_calories::CalorieRange,
         estimate_calories::CalorieStatus,
         estimate_calories::CalorieLine,
+        reparse_ingredients::ReparseIngredientsResponse,
         update::UpdateRecipeRequest,
         versions::VersionListResponse,
         versions::VersionSummary,

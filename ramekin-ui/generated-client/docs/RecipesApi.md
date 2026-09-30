@@ -15,6 +15,7 @@ All URIs are relative to *http://localhost*
 | [**listRecipes**](RecipesApi.md#listrecipes) | **GET** /api/recipes |  |
 | [**listVersions**](RecipesApi.md#listversions) | **GET** /api/recipes/{id}/versions |  |
 | [**normalizeTitle**](RecipesApi.md#normalizetitle) | **POST** /api/recipes/{id}/normalize-title |  |
+| [**reparseAllIngredients**](RecipesApi.md#reparseallingredients) | **POST** /api/recipes/reparse-ingredients | Re-parse the stored ingredients of all of the user\&#39;s recipes with the current parser, saving a new version (source \&quot;reparse\&quot;) for each recipe whose ingredients change. |
 | [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape |  |
 | [**rescrapePhoto**](RecipesApi.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo |  |
 | [**syncRecipes**](RecipesApi.md#syncrecipes) | **GET** /api/recipes/sync |  |
@@ -811,6 +812,69 @@ example().catch(console.error);
 | **404** | Recipe not found |  -  |
 | **409** | Recipe was modified concurrently |  -  |
 | **503** | AI service unavailable |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## reparseAllIngredients
+
+> ReparseIngredientsResponse reparseAllIngredients()
+
+Re-parse the stored ingredients of all of the user\&#39;s recipes with the current parser, saving a new version (source \&quot;reparse\&quot;) for each recipe whose ingredients change.
+
+### Example
+
+```ts
+import {
+  Configuration,
+  RecipesApi,
+} from '';
+import type { ReparseAllIngredientsRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearer_auth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new RecipesApi(config);
+
+  try {
+    const data = await api.reparseAllIngredients();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ReparseIngredientsResponse**](ReparseIngredientsResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Every recipe re-parsed; changed recipes got a new version |  -  |
+| **401** | Unauthorized |  -  |
+| **409** | A recipe changed while re-parsing; run it again |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

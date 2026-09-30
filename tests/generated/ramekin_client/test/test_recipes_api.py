@@ -92,6 +92,13 @@ class TestRecipesApi(unittest.TestCase):
         """
         pass
 
+    def test_reparse_all_ingredients(self) -> None:
+        """Test case for reparse_all_ingredients
+
+        Re-parse the stored ingredients of all of the user's recipes with the current parser, saving a new version (source \"reparse\") for each recipe whose ingredients change.
+        """
+        pass
+
     def test_rescrape(self) -> None:
         """Test case for rescrape
 

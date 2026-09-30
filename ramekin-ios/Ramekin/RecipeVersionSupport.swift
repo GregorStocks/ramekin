@@ -11,6 +11,8 @@ enum RecipeVersionSupport {
             return "AI Enriched"
         case "ai_photo":
             return "AI Photo"
+        case "reparse":
+            return "Re-parsed"
         default:
             return source
         }

@@ -1,5 +1,6 @@
 import { createSignal, createEffect, Show, Switch, Match } from "solid-js";
 import { A } from "@solidjs/router";
+import type { ReparseIngredientsResponse } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
@@ -11,7 +12,7 @@ type UploadState = "idle" | "uploading" | "done";
 
 export default function SettingsPage() {
   usePageTitle(() => "Settings");
-  const { getUsersApi, getClientLogsApi, setToken } = useAuth();
+  const { getUsersApi, getClientLogsApi, getRecipesApi, setToken } = useAuth();
 
   const [username, setUsername] = createSignal<string | null>(null);
   const [status, setStatus] = createSignal<ConnectionStatus>("checking");
@@ -19,6 +20,10 @@ export default function SettingsPage() {
   const [showLogoutConfirm, setShowLogoutConfirm] = createSignal(false);
   const [uploadState, setUploadState] = createSignal<UploadState>("idle");
   const [uploadError, setUploadError] = createSignal<string | null>(null);
+  const [reparsing, setReparsing] = createSignal(false);
+  const [reparseResult, setReparseResult] =
+    createSignal<ReparseIngredientsResponse | null>(null);
+  const [reparseError, setReparseError] = createSignal<string | null>(null);
 
   // On web the server is simply the origin serving the app.
   const serverUrl = window.location.origin;
@@ -61,6 +66,21 @@ export default function SettingsPage() {
     } catch (err) {
       setUploadState("idle");
       setUploadError(await extractApiError(err, "Failed to upload logs"));
+    }
+  };
+
+  const handleReparse = async () => {
+    setReparsing(true);
+    setReparseResult(null);
+    setReparseError(null);
+    try {
+      setReparseResult(await getRecipesApi().reparseAllIngredients());
+    } catch (err) {
+      setReparseError(
+        await extractApiError(err, "Failed to re-parse ingredients"),
+      );
+    } finally {
+      setReparsing(false);
     }
   };
 
@@ -117,6 +137,31 @@ export default function SettingsPage() {
         <A href="/tags" class="settings-link">
           Manage Tags
         </A>
+        <p>
+          Re-read every recipe's ingredients with the current parser, moving
+          amounts and notes out of ingredient names. Changed recipes get a new
+          version; earlier versions are kept.
+        </p>
+        <button
+          type="button"
+          class="btn btn-small"
+          disabled={reparsing()}
+          onClick={handleReparse}
+        >
+          {reparsing() ? "Re-parsing…" : "Re-parse ingredients"}
+        </button>
+        <Show when={reparseResult()}>
+          {(result) => (
+            <p class="success" role="status">
+              Checked {result().recipesChecked} recipes; updated{" "}
+              {result().recipesUpdated} ({result().ingredientsChanged}{" "}
+              ingredients changed).
+            </p>
+          )}
+        </Show>
+        <Show when={reparseError()}>
+          <p class="error">{reparseError()}</p>
+        </Show>
       </section>
 
       <section class="settings-section">

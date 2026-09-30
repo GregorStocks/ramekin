@@ -1300,6 +1300,49 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     }
 }
 
+/// An item text read as an ingredient line again, when the parse doesn't cut
+/// into the name. A stored item can start with a number that is part of it
+/// ("5- to 6-inch chiles", "85% lean ground beef", "1/4-inch-thick slices"),
+/// so a parse only counts when what's left starts with a word.
+pub fn reparse_item(item: &str) -> Option<ParsedIngredient> {
+    let parsed = parse_ingredient(item);
+    let lower = parsed.item.trim().to_lowercase();
+    let starts_with_word = lower.chars().next().is_some_and(char::is_alphabetic);
+    (starts_with_word && !lower.starts_with("percent ")).then_some(parsed)
+}
+
+/// A stored ingredient updated to what the current parser makes of it: its
+/// item is read as a line again, so amounts and notes an older parser left in
+/// it ("about 7 cloves garlic", "chickpeas, drained, rinsed") move out. Stored
+/// measurements are kept; ones found in the item are used only when there
+/// were none. The split-off note goes before the stored note. Returns None
+/// when the item doesn't change.
+pub fn reparse_stored(ingredient: &ParsedIngredient) -> Option<ParsedIngredient> {
+    let parsed = reparse_item(&ingredient.item)?;
+    if parsed.item.trim() == ingredient.item.trim() {
+        return None;
+    }
+    let note = match (parsed.note, ingredient.note.as_deref()) {
+        (Some(split), Some(stored)) if !stored.trim().is_empty() => {
+            Some(format!("{split}, {stored}"))
+        }
+        (Some(split), _) => Some(split),
+        (None, stored) => stored.map(str::to_string),
+    };
+    let measurements = if ingredient.measurements.is_empty() {
+        parsed.measurements
+    } else {
+        ingredient.measurements.clone()
+    };
+    Some(ParsedIngredient {
+        item: parsed.item,
+        measurements,
+        note,
+        raw: ingredient.raw.clone(),
+        section: ingredient.section.clone(),
+    })
+}
+
 /// Expand a parsed ingredient with "each" modifier into multiple ingredients.
 ///
 /// When the first measurement's unit ends with " each" and the item contains
