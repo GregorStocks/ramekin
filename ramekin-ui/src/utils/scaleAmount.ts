@@ -113,7 +113,7 @@ function scaleTerm(raw: string, factor: number): string | null {
   const numeric = scaleNumeric(raw, factor);
   if (numeric !== null) return numeric;
   const unit = raw.match(
-    /^(.+?)(\s+(?:g|grams?|kg|kilograms?|mg|milligrams?|oz|ounces?|lbs?|pounds?|cups?|tbsp|tablespoons?|tsp|teaspoons?|fl oz|fluid ounces?|pints?|quarts?|gallons?|ml|milliliters?|l|liters?|litres?|servings?))$/i,
+    /^(.+?)(\s+(?:g|grams?|kg|kilograms?|mg|milligrams?|oz|ounces?|lbs?|pounds?|cups?|tbsp|tablespoons?|tsp|teaspoons?|fl oz|fluid ounces?|pints?|quarts?|gallons?|ml|milliliters?|l|liters?|litres?|servings?|people|portions))$/i,
   );
   if (!unit) return null;
   const scaled = scaleNumeric(unit[1], factor);
@@ -136,11 +136,12 @@ export function scaleAmount(
   if (!isValidRecipeScale(factor)) return amount;
   if (factor === 1) return amount;
 
+  // "Serves 4", "Servings: 4–6", "Yield 4", "Makes 4 servings".
   const serves = amount.match(
-    /^((?:serves(?:\s*:\s*|\s+)|servings?\s*:\s*))(.+)$/i,
+    /^((?:serves|servings?|yields?|makes)(?:\s*:\s*|\s+))(.+)$/i,
   );
   if (serves) {
-    const scaled = scaleNumeric(serves[2], factor);
+    const scaled = scaleTerm(serves[2], factor);
     return scaled === null ? amount : `${serves[1]}${scaled}`;
   }
   const parts = amount.split(/(\s+(?:plus|\+)\s+)/i);

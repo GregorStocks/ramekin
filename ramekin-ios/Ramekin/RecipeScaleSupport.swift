@@ -19,7 +19,7 @@ enum RecipeScaleSupport {
     private static let rangeSeparator = regex(#"\s+(?:to|or)\s+|\s*[-–—]\s*"#, options: .caseInsensitive)
     private static let unitSuffix: NSRegularExpression = {
         let units = #"g|grams?|kg|kilograms?|mg|milligrams?|oz|ounces?|lbs?|pounds?|cups?|tbsp|tablespoons?|tsp|teaspoons?"#
-            + #"|fl oz|fluid ounces?|pints?|quarts?|gallons?|ml|milliliters?|l|liters?|litres?|servings?"#
+            + #"|fl oz|fluid ounces?|pints?|quarts?|gallons?|ml|milliliters?|l|liters?|litres?|servings?|people|portions"#
         return regex(#"^(.+?)(\s+(?:"# + units + #"))$"#, options: .caseInsensitive)
     }()
 
@@ -38,10 +38,12 @@ enum RecipeScaleSupport {
         guard isValidScale(factor), factor != 1 else {
             return amount
         }
+        // "Serves 4", "Servings: 4–6", "Yield 4", "Makes 4 servings".
         if let match = amount.range(
-            of: #"^(?:serves(?:\s*:\s*|\s+)|servings?\s*:\s*)"#, options: [.regularExpression, .caseInsensitive]
-        ),
-           let scaled = scaleNumeric(String(amount[match.upperBound...]), by: factor) {
+            of: #"^(?:serves|servings?|yields?|makes)(?:\s*:\s*|\s+)"#,
+            options: [.regularExpression, .caseInsensitive]
+        ) {
+            guard let scaled = scaleTerm(String(amount[match.upperBound...]), by: factor) else { return amount }
             return String(amount[match]) + scaled
         }
         let matches = compoundSeparator.matches(in: amount, range: NSRange(amount.startIndex..., in: amount))
