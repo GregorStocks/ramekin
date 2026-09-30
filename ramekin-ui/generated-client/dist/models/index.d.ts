@@ -50,6 +50,7 @@ export * from './RecipeResponse';
 export * from './RecipeSummary';
 export * from './RenameTagRequest';
 export * from './RenameTagResponse';
+export * from './ReparseIngredientsResponse';
 export * from './RescrapeResponse';
 export * from './RetryScrapeResponse';
 export * from './ScrapeJobResponse';

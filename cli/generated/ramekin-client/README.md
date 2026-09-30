@@ -52,6 +52,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**list_recipes**](docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_versions**](docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 *RecipesApi* | [**normalize_title**](docs/RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
+*RecipesApi* | [**reparse_all_ingredients**](docs/RecipesApi.md#reparse_all_ingredients) | **POST** /api/recipes/reparse-ingredients | Re-parse the stored ingredients of all of the user's recipes with the current parser, saving a new version (source \"reparse\") for each recipe whose ingredients change.
 *RecipesApi* | [**rescrape**](docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**rescrape_photo**](docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 *RecipesApi* | [**sync_recipes**](docs/RecipesApi.md#sync_recipes) | **GET** /api/recipes/sync | 
@@ -131,6 +132,7 @@ Class | Method | HTTP request | Description
  - [RecipeSummary](docs/RecipeSummary.md)
  - [RenameTagRequest](docs/RenameTagRequest.md)
  - [RenameTagResponse](docs/RenameTagResponse.md)
+ - [ReparseIngredientsResponse](docs/ReparseIngredientsResponse.md)
  - [RescrapeResponse](docs/RescrapeResponse.md)
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)

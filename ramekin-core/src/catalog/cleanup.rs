@@ -35,17 +35,11 @@ pub enum CuratedChange {
 }
 
 /// The item the parser stores for a name read as an ingredient line, or the
-/// name itself when re-parsing would cut into it. A bare item can start with
-/// a number that is part of the name ("5- to 6-inch chiles", "85% lean ground
-/// beef", "1/4-inch-thick slices"), so a parse only counts when what is left
-/// starts with a word.
+/// name itself when re-parsing would cut into it (see `reparse_item`).
 pub fn parsed_name(name: &str) -> String {
-    let parsed = normalize(&parse_ingredient(name).item);
-    let starts_with_word = parsed.chars().next().is_some_and(char::is_alphabetic);
-    if parsed.is_empty() || !starts_with_word || parsed.starts_with("percent ") {
-        return normalize(name);
-    }
-    parsed
+    crate::ingredient_parser::reparse_item(name)
+        .map(|parsed| normalize(&parsed.item))
+        .unwrap_or_else(|| normalize(name))
 }
 
 /// Whether re-parsing drops text that could say which food the name meant:
