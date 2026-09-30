@@ -3,6 +3,7 @@ pub mod client_logs;
 pub mod enrich;
 pub mod error;
 pub mod import;
+pub mod ingredient_names;
 pub mod meal_plans;
 pub mod photos;
 pub mod public;
@@ -67,6 +68,7 @@ pub fn openapi() -> utoipa::openapi::OpenApi {
         enrich::ApiDoc::openapi(),
         tags::ApiDoc::openapi(),
         import::ApiDoc::openapi(),
+        ingredient_names::ApiDoc::openapi(),
         meal_plans::ApiDoc::openapi(),
         shopping_list::ApiDoc::openapi(),
         users::ApiDoc::openapi(),

@@ -56,6 +56,13 @@ export interface CalorieEstimateResponse {
      */
     perServingCalories?: CalorieRange | null;
     /**
+     * Some ingredient names are still being recognized in the background;
+     * ask again shortly for an estimate that includes them.
+     * @type {boolean}
+     * @memberof CalorieEstimateResponse
+     */
+    resolving: boolean;
+    /**
      * Shown under the headline when present.
      * @type {string}
      * @memberof CalorieEstimateResponse

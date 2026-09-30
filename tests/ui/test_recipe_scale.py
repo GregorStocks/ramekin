@@ -45,7 +45,7 @@ SCALE_TEST_HEADLINE_2X = "At least ~770 kcal per serving"
 SCALE_TEST_TOTAL_2X = "At least ~6,200 kcal for the whole recipe"
 
 
-def _estimate_json(headline: str) -> dict:
+def _estimate_json(headline: str, resolving: bool = False) -> dict:
     """A stubbed estimate response."""
     return {
         "database_version": "test",
@@ -53,6 +53,7 @@ def _estimate_json(headline: str) -> dict:
         "headline": headline,
         "not_counted": [],
         "lines": [],
+        "resolving": resolving,
     }
 
 
@@ -214,6 +215,30 @@ def test_excessive_scale_is_rejected_before_requesting_calories(
     expect(section).to_contain_text(SCALE_TEST_TOTAL_2X)
     expect(section).to_contain_text("Not counted: bay leaves")
     expect(section.get_by_role("alert")).not_to_be_visible()
+
+
+def test_estimate_refreshes_quietly_while_names_resolve(scale_recipe, page: Page):
+    responses = [
+        _estimate_json("Waiting on names", resolving=True),
+        _estimate_json("Still waiting", resolving=True),
+        _estimate_json("All names recognized"),
+    ]
+    served = []
+
+    def handle(route):
+        served.append(route.request.post_data_json)
+        route.fulfill(json=responses[min(len(served), len(responses)) - 1])
+
+    page.route("**/api/recipes/estimate-calories", handle)
+    page.reload()
+    section = page.get_by_role("region", name="Estimated calories", exact=True)
+    expect(section).to_contain_text("Waiting on names")
+    # Polls keep the current estimate on screen rather than a spinner.
+    expect(section.get_by_role("status")).not_to_be_visible()
+    expect(section).to_contain_text("All names recognized", timeout=10000)
+    page.wait_for_timeout(2500)
+    assert len(served) == 3, "polling stops once no names are resolving"
+    assert all(request == served[0] for request in served)
 
 
 def test_late_calorie_response_does_not_replace_new_scale(scale_recipe, page: Page):

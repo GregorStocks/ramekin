@@ -8,11 +8,16 @@ final class CalorieEstimateViewModel: ObservableObject {
     @Published private(set) var error: String?
 
     private let estimate: (EstimateCaloriesRequest) async throws -> CalorieEstimateResponse
+    private let pollInterval: Duration
     private var generation = UUID()
 
-    init(estimate: @escaping (EstimateCaloriesRequest) async throws -> CalorieEstimateResponse = {
-        try await RecipesAPI.estimateCalories(estimateCaloriesRequest: $0)
-    }) {
+    init(
+        pollInterval: Duration = .seconds(2),
+        estimate: @escaping (EstimateCaloriesRequest) async throws -> CalorieEstimateResponse = {
+            try await RecipesAPI.estimateCalories(estimateCaloriesRequest: $0)
+        }
+    ) {
+        self.pollInterval = pollInterval
         self.estimate = estimate
     }
 
@@ -24,11 +29,25 @@ final class CalorieEstimateViewModel: ObservableObject {
         error = nil
         isLoading = true
         do {
-            let result = try await estimate(request)
+            var result = try await estimate(request)
             guard self.generation == generation, !Task.isCancelled else { return }
             response = result
+            isLoading = false
+            // Names still being recognized in the background: ask again
+            // quietly until the estimate includes them. Ends when the view
+            // goes away (cancellation) or a newer request replaces this one.
+            while result.resolving {
+                try await Task.sleep(for: pollInterval)
+                guard self.generation == generation else { return }
+                result = try await estimate(request)
+                guard self.generation == generation, !Task.isCancelled else { return }
+                response = result
+            }
+        } catch is CancellationError {
+            return
         } catch {
             guard self.generation == generation, !Task.isCancelled else { return }
+            response = nil
             self.error = "Could not estimate calories: \(error.localizedDescription)"
         }
         isLoading = false

@@ -103,6 +103,15 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
             let id = output.get("recipe_id").and_then(|v| v.as_str())?;
             Some(format!("saved recipe {}", id))
         }
+        // ResolveIngredientNamesStep stores `{ "names": <count> }`.
+        "resolve_ingredient_names" => {
+            let names = output.get("names").and_then(|v| v.as_u64())?;
+            Some(match names {
+                0 => "no new ingredient names".to_string(),
+                1 => "1 new ingredient name resolved".to_string(),
+                n => format!("{n} new ingredient names resolved"),
+            })
+        }
         // EnrichNormalizeTitleStep stores `{ changed, normalized_title, ... }`.
         "enrich_normalize_title" => {
             let changed = output
@@ -495,6 +504,7 @@ mod tests {
                 "fetch_images",
                 "parse_ingredients",
                 "save_recipe",
+                "resolve_ingredient_names",
                 "enrich_normalize_title",
                 "apply_normalized_title",
                 "enrich_generate_description",

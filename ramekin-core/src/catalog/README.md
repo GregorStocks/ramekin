@@ -253,6 +253,26 @@ shadow names, and densities are finite and positive. `catalog::version()`
 hashes both files and the rule version; bump `RULE_VERSION` in `mod.rs` when
 resolution behavior changes.
 
+## Learned names (catalog step 3)
+
+Names the committed catalog still doesn't know are resolved by an LLM after
+save and stored by the server in `ingredient_name_resolutions`, shared across
+accounts. `learned.rs` is the pure half:
+- `unlearned_name(item)` picks the names to learn: `Unresolved` only.
+  Deliberately ambiguous names ("cheese") are never sent.
+- `candidates(name, n)` is the lexical shortlist the model must choose from. It
+  covers catalog keys that share a word and name one entry.
+- `resolve_line_with(item, note, &Learned)` consults a stored answer only after
+  the committed catalog says `Unresolved`. An answer is a catalog key, re-resolved
+  through the catalog (`Via::Learned`), so calories, density and category all
+  come from committed data. A model never supplies numbers.
+
+Pending, failed and "unknown" names stay unknown. The server side (queueing on
+every recipe and shopping-list save, the background worker, the scrape step
+`resolve_ingredient_names`, and Settings → Ingredient recognition) is in
+`server/src/ingredient_names.rs`. Harvesting good answers back into
+`curated.json` is `p2-catalog-harvest-learned-names`.
+
 ## Classification passes
 
 Aliases beyond the hand-curated core come from Claude Code subagent passes over

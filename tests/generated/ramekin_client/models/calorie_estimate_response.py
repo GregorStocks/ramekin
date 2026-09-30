@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ramekin_client.models.calorie_line import CalorieLine
 from ramekin_client.models.calorie_range import CalorieRange
@@ -35,9 +35,10 @@ class CalorieEstimateResponse(BaseModel):
     lines: List[CalorieLine] = Field(description="The breakdown, one entry per ingredient in order.")
     not_counted: List[StrictStr] = Field(description="For a partial estimate, the ingredients its lower bound leaves out.")
     per_serving_calories: Optional[CalorieRange] = None
+    resolving: StrictBool = Field(description="Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them.")
     secondary: Optional[StrictStr] = Field(default=None, description="Shown under the headline when present.")
     status: CalorieStatus
-    __properties: ClassVar[List[str]] = ["database_version", "headline", "known_calories", "lines", "not_counted", "per_serving_calories", "secondary", "status"]
+    __properties: ClassVar[List[str]] = ["database_version", "headline", "known_calories", "lines", "not_counted", "per_serving_calories", "resolving", "secondary", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -124,6 +125,7 @@ class CalorieEstimateResponse(BaseModel):
             "lines": [CalorieLine.from_dict(_item) for _item in obj["lines"]] if obj.get("lines") is not None else None,
             "not_counted": obj.get("not_counted"),
             "per_serving_calories": CalorieRange.from_dict(obj["per_serving_calories"]) if obj.get("per_serving_calories") is not None else None,
+            "resolving": obj.get("resolving"),
             "secondary": obj.get("secondary"),
             "status": obj.get("status")
         })

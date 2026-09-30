@@ -20,7 +20,7 @@ use super::jobs::{get_job, mark_completed, mark_failed, update_status_and_step};
 use super::output_store::DbOutputStore;
 use super::steps::{
     ApplyAutoTagsStep, ApplyGeneratedDescriptionStep, ApplyNormalizedTitleStep, FetchHtmlStep,
-    FetchImagesStep, SaveRecipeStep,
+    FetchImagesStep, ResolveIngredientNamesStep, SaveRecipeStep,
 };
 use super::{
     run_scrape_db, ScrapeError, STATUS_COMPLETED, STATUS_FAILED, STATUS_PARSING, STATUS_SCRAPING,
@@ -85,6 +85,7 @@ pub async fn build_registry(
         }
     };
     registry.register(Box::new(save_step));
+    registry.register(Box::new(ResolveIngredientNamesStep::new(pool.clone())));
 
     let auto_enrichments = scrape_auto_applied_ai_enrichments();
     let ai_client = if auto_enrichments.is_empty() {

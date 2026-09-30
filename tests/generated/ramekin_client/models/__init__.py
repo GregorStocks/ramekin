@@ -47,6 +47,9 @@ from ramekin_client.models.import_raw_recipe import ImportRawRecipe
 from ramekin_client.models.import_recipe_request import ImportRecipeRequest
 from ramekin_client.models.import_recipe_response import ImportRecipeResponse
 from ramekin_client.models.ingredient import Ingredient
+from ramekin_client.models.ingredient_name_failure import IngredientNameFailure
+from ramekin_client.models.ingredient_names_queued_response import IngredientNamesQueuedResponse
+from ramekin_client.models.ingredient_names_status_response import IngredientNamesStatusResponse
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse

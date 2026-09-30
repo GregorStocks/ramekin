@@ -79,6 +79,13 @@ export interface CalorieEstimateResponse {
      */
     perServingCalories?: CalorieRange | null;
     /**
+     * Some ingredient names are still being recognized in the background;
+     * ask again shortly for an estimate that includes them.
+     * @type {boolean}
+     * @memberof CalorieEstimateResponse
+     */
+    resolving: boolean;
+    /**
      * Shown under the headline when present.
      * @type {string}
      * @memberof CalorieEstimateResponse
@@ -102,6 +109,7 @@ export function instanceOfCalorieEstimateResponse(value: object): value is Calor
     if (!('headline' in value) || value['headline'] === undefined) return false;
     if (!('lines' in value) || value['lines'] === undefined) return false;
     if (!('notCounted' in value) || value['notCounted'] === undefined) return false;
+    if (!('resolving' in value) || value['resolving'] === undefined) return false;
     if (!('status' in value) || value['status'] === undefined) return false;
     return true;
 }
@@ -122,6 +130,7 @@ export function CalorieEstimateResponseFromJSONTyped(json: any, ignoreDiscrimina
         'lines': ((json['lines'] as Array<any>).map(CalorieLineFromJSON)),
         'notCounted': json['not_counted'],
         'perServingCalories': json['per_serving_calories'] == null ? undefined : CalorieRangeFromJSON(json['per_serving_calories']),
+        'resolving': json['resolving'],
         'secondary': json['secondary'] == null ? undefined : json['secondary'],
         'status': CalorieStatusFromJSON(json['status']),
     };
@@ -144,6 +153,7 @@ export function CalorieEstimateResponseToJSONTyped(value?: CalorieEstimateRespon
         'lines': ((value['lines'] as Array<any>).map(CalorieLineToJSON)),
         'not_counted': value['notCounted'],
         'per_serving_calories': CalorieRangeToJSON(value['perServingCalories']),
+        'resolving': value['resolving'],
         'secondary': value['secondary'],
         'status': CalorieStatusToJSON(value['status']),
     };

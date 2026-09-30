@@ -71,6 +71,9 @@ Class | Method | HTTP request | Description
 *ImportApi* | [**import_from_photos**](ramekin_client/docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *ImportApi* | [**prepare_text_recipe**](ramekin_client/docs/ImportApi.md#prepare_text_recipe) | **POST** /api/import/text | 
+*IngredientNamesApi* | [**get_ingredient_names_status**](ramekin_client/docs/IngredientNamesApi.md#get_ingredient_names_status) | **GET** /api/ingredient-names/status | 
+*IngredientNamesApi* | [**retry_ingredient_names**](ramekin_client/docs/IngredientNamesApi.md#retry_ingredient_names) | **POST** /api/ingredient-names/retry | 
+*IngredientNamesApi* | [**warm_ingredient_names**](ramekin_client/docs/IngredientNamesApi.md#warm_ingredient_names) | **POST** /api/ingredient-names/warm | Queue every name the catalog doesn&#39;t know from the caller&#39;s current recipes and shopping list, e.g. once after this feature ships.
 *MealPlansApi* | [**create_meal_plan**](ramekin_client/docs/MealPlansApi.md#create_meal_plan) | **POST** /api/meal-plans | 
 *MealPlansApi* | [**delete_meal_plan**](ramekin_client/docs/MealPlansApi.md#delete_meal_plan) | **DELETE** /api/meal-plans/{id} | 
 *MealPlansApi* | [**list_meal_plans**](ramekin_client/docs/MealPlansApi.md#list_meal_plans) | **GET** /api/meal-plans | 
@@ -151,6 +154,9 @@ Class | Method | HTTP request | Description
  - [ImportRecipeRequest](ramekin_client/docs/ImportRecipeRequest.md)
  - [ImportRecipeResponse](ramekin_client/docs/ImportRecipeResponse.md)
  - [Ingredient](ramekin_client/docs/Ingredient.md)
+ - [IngredientNameFailure](ramekin_client/docs/IngredientNameFailure.md)
+ - [IngredientNamesQueuedResponse](ramekin_client/docs/IngredientNamesQueuedResponse.md)
+ - [IngredientNamesStatusResponse](ramekin_client/docs/IngredientNamesStatusResponse.md)
  - [ListRecipesResponse](ramekin_client/docs/ListRecipesResponse.md)
  - [LoginRequest](ramekin_client/docs/LoginRequest.md)
  - [LoginResponse](ramekin_client/docs/LoginResponse.md)

@@ -90,3 +90,15 @@
 .settings-link:hover {
   text-decoration: underline;
 }
+
+.settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.settings-name-failures {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+}

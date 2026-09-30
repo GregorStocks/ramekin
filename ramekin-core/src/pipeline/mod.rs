@@ -15,6 +15,7 @@ pub use auto_enrichments::{
     first_scrape_auto_applied_ai_step_name, scrape_auto_applied_ai_enrichments,
     scrape_auto_applied_ai_step_names, scrape_pipeline_step_names,
     step_after_scrape_auto_applied_ai_step, ScrapeAutoAppliedAiEnrichment,
+    RESOLVE_INGREDIENT_NAMES_STEP,
 };
 pub use executor::{run_pipeline, StepRegistry};
 pub use step::{

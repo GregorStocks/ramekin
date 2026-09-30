@@ -8,7 +8,7 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v8";
+const RULE_VERSION: &str = "calories-v9";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
@@ -387,31 +387,38 @@ fn is_frying_medium(ingredient: &ParsedIngredient) -> bool {
             .is_some_and(|note| FRYING.is_match(note) && !note.to_lowercase().contains("plus more"))
 }
 
-fn contribution(ingredient: &ParsedIngredient, scale: f64) -> Result<Line, &'static str> {
-    let entry = match catalog::resolve_line(&ingredient.item, ingredient.note.as_deref()) {
-        Resolution::Entry { entry, .. } if entry.kind == Kind::Product => return Ok(Line::Skipped),
-        Resolution::Entry { entry, .. } => entry,
-        Resolution::NotFood => return Ok(Line::Skipped),
-        // One amount for several foods can't be split between them, so only an
-        // all-negligible line ("salt and pepper") is known.
-        Resolution::Compound(entries) => {
-            let is_product = |entry: &&Entry| entry.kind == Kind::Product;
-            // "parchment paper and aluminum foil" is equipment, not food.
-            if entries.iter().all(is_product) {
-                return Ok(Line::Skipped);
+fn contribution(
+    ingredient: &ParsedIngredient,
+    scale: f64,
+    learned: &catalog::Learned,
+) -> Result<Line, &'static str> {
+    let entry =
+        match catalog::resolve_line_with(&ingredient.item, ingredient.note.as_deref(), learned) {
+            Resolution::Entry { entry, .. } if entry.kind == Kind::Product => {
+                return Ok(Line::Skipped)
             }
-            return if entries
-                .iter()
-                .all(|entry| is_product(entry) || is_negligible(entry, ingredient, scale))
-            {
-                Ok(Line::Negligible)
-            } else {
-                Err("Several ingredients share one amount")
-            };
-        }
-        Resolution::Ambiguous => return Err("Ambiguous ingredient"),
-        Resolution::Unresolved => return Err("No supported nutrition match"),
-    };
+            Resolution::Entry { entry, .. } => entry,
+            Resolution::NotFood => return Ok(Line::Skipped),
+            // One amount for several foods can't be split between them, so only an
+            // all-negligible line ("salt and pepper") is known.
+            Resolution::Compound(entries) => {
+                let is_product = |entry: &&Entry| entry.kind == Kind::Product;
+                // "parchment paper and aluminum foil" is equipment, not food.
+                if entries.iter().all(is_product) {
+                    return Ok(Line::Skipped);
+                }
+                return if entries
+                    .iter()
+                    .all(|entry| is_product(entry) || is_negligible(entry, ingredient, scale))
+                {
+                    Ok(Line::Negligible)
+                } else {
+                    Err("Several ingredients share one amount")
+                };
+            }
+            Resolution::Ambiguous => return Err("Ambiguous ingredient"),
+            Resolution::Unresolved => return Err("No supported nutrition match"),
+        };
     if is_negligible(entry, ingredient, scale) {
         return Ok(Line::Negligible);
     }
@@ -552,11 +559,22 @@ fn serving_count(servings: &str) -> Option<CalorieRange> {
     quantity(&count).filter(|r| r.min > 0.0 && r.min <= r.max)
 }
 
-/// All arithmetic and presentation are computed here; clients render the result.
+/// `estimate_with` using only the committed catalog.
 pub fn estimate(
     ingredients: &[ParsedIngredient],
     servings: Option<&str>,
     scale: f64,
+) -> Result<Estimate, &'static str> {
+    estimate_with(ingredients, servings, scale, &catalog::Learned::new())
+}
+
+/// All arithmetic and presentation are computed here; clients render the result.
+/// `learned` holds stored answers for names the committed catalog doesn't know.
+pub fn estimate_with(
+    ingredients: &[ParsedIngredient],
+    servings: Option<&str>,
+    scale: f64,
+    learned: &catalog::Learned,
 ) -> Result<Estimate, &'static str> {
     if !scale.is_finite() || scale <= 0.0 || scale > 1e6 {
         return Err("Scale must be finite, greater than zero, and at most 1000000");
@@ -565,7 +583,7 @@ pub fn estimate(
     let mut unknown_ingredients = Vec::new();
     let mut lines = Vec::new();
     for (index, ingredient) in ingredients.iter().enumerate() {
-        let (calories, text) = match contribution(ingredient, scale) {
+        let (calories, text) = match contribution(ingredient, scale, learned) {
             Ok(Line::Skipped) => (None, "Not a food".to_string()),
             Ok(Line::Negligible) => {
                 known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });

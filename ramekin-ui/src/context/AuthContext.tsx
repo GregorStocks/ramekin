@@ -17,6 +17,7 @@ import {
   ImportApi,
   UsersApi,
   ClientLogsApi,
+  IngredientNamesApi,
 } from "ramekin-client";
 
 interface AuthContextValue {
@@ -33,6 +34,7 @@ interface AuthContextValue {
   getImportApi: () => ImportApi;
   getUsersApi: () => UsersApi;
   getClientLogsApi: () => ClientLogsApi;
+  getIngredientNamesApi: () => IngredientNamesApi;
   // Cached tags - fetched once, shared across components
   tags: Accessor<string[]>;
   tagsLoading: Accessor<boolean>;
@@ -104,6 +106,7 @@ export const AuthProvider: ParentComponent = (props) => {
   const getImportApi = () => new ImportApi(getAuthedConfig());
   const getUsersApi = () => new UsersApi(getAuthedConfig());
   const getClientLogsApi = () => new ClientLogsApi(getAuthedConfig());
+  const getIngredientNamesApi = () => new IngredientNamesApi(getAuthedConfig());
 
   const refreshTags = async () => {
     if (!token()) {
@@ -144,6 +147,7 @@ export const AuthProvider: ParentComponent = (props) => {
     getImportApi,
     getUsersApi,
     getClientLogsApi,
+    getIngredientNamesApi,
     tags,
     tagsLoading,
     refreshTags,

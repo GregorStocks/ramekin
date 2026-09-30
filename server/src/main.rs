@@ -3,6 +3,7 @@
 mod api;
 mod auth;
 mod db;
+mod ingredient_names;
 mod models;
 mod photos;
 mod raw_sql;
@@ -192,6 +193,18 @@ async fn main() {
     // for photos created before the column existed).
     photos::spawn_dimension_backfill(pool.clone());
 
+    // Resolve ingredient names the catalog doesn't know, starting with any
+    // left pending by a previous run or whose learned key this catalog lost.
+    let requeued = ingredient_names::requeue_stale_keys(&pool)
+        .expect("Failed to requeue stale learned ingredient names");
+    if requeued > 0 {
+        tracing::info!(
+            requeued,
+            "requeued learned ingredient names the catalog lost"
+        );
+    }
+    ingredient_names::spawn_worker(pool.clone());
+
     // Public routes (no auth required)
     let public_router = api::public::router();
 
@@ -208,6 +221,7 @@ async fn main() {
         .nest("/api/client-logs", api::client_logs::router())
         .nest("/api/test", api::testing::router())
         .nest("/api/photos", api::photos::router())
+        .nest("/api/ingredient-names", api::ingredient_names::router())
         .nest("/api/recipes", api::recipes::router())
         .nest("/api/scrape", api::scrape::router())
         .nest("/api/tags", api::tags::router())

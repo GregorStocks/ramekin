@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **lines** | [CalorieLine] | The breakdown, one entry per ingredient in order. | 
 **notCounted** | **[String]** | For a partial estimate, the ingredients its lower bound leaves out. | 
 **perServingCalories** | [**CalorieRange**](CalorieRange.md) |  | [optional] 
+**resolving** | **Bool** | Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them. | 
 **secondary** | **String** | Shown under the headline when present. | [optional] 
 **status** | [**CalorieStatus**](CalorieStatus.md) |  | 
 

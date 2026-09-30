@@ -8,12 +8,16 @@ pub enum ScrapeAutoAppliedAiEnrichment {
     AutoTag,
 }
 
+/// Resolves the saved recipe's ingredient names the catalog doesn't know.
+pub const RESOLVE_INGREDIENT_NAMES_STEP: &str = "resolve_ingredient_names";
+
 const CORE_SCRAPE_STEP_NAMES: &[&str] = &[
     "fetch_html",
     "extract_recipe",
     "fetch_images",
     "parse_ingredients",
     "save_recipe",
+    RESOLVE_INGREDIENT_NAMES_STEP,
 ];
 
 const AUTO_TAG_STEP_NAMES: &[&str] = &["enrich_auto_tag", "apply_auto_tags"];

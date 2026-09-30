@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **lines** | [**Vec<models::CalorieLine>**](CalorieLine.md) | The breakdown, one entry per ingredient in order. | 
 **not_counted** | **Vec<String>** | For a partial estimate, the ingredients its lower bound leaves out. | 
 **per_serving_calories** | Option<[**models::CalorieRange**](CalorieRange.md)> |  | [optional]
+**resolving** | **bool** | Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them. | 
 **secondary** | Option<**String**> | Shown under the headline when present. | [optional]
 **status** | [**models::CalorieStatus**](CalorieStatus.md) |  | 
 

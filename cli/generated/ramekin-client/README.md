@@ -34,6 +34,9 @@ Class | Method | HTTP request | Description
 *ImportApi* | [**import_from_photos**](docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *ImportApi* | [**prepare_text_recipe**](docs/ImportApi.md#prepare_text_recipe) | **POST** /api/import/text | 
+*IngredientNamesApi* | [**get_ingredient_names_status**](docs/IngredientNamesApi.md#get_ingredient_names_status) | **GET** /api/ingredient-names/status | 
+*IngredientNamesApi* | [**retry_ingredient_names**](docs/IngredientNamesApi.md#retry_ingredient_names) | **POST** /api/ingredient-names/retry | 
+*IngredientNamesApi* | [**warm_ingredient_names**](docs/IngredientNamesApi.md#warm_ingredient_names) | **POST** /api/ingredient-names/warm | Queue every name the catalog doesn't know from the caller's current recipes and shopping list, e.g. once after this feature ships.
 *MealPlansApi* | [**create_meal_plan**](docs/MealPlansApi.md#create_meal_plan) | **POST** /api/meal-plans | 
 *MealPlansApi* | [**delete_meal_plan**](docs/MealPlansApi.md#delete_meal_plan) | **DELETE** /api/meal-plans/{id} | 
 *MealPlansApi* | [**list_meal_plans**](docs/MealPlansApi.md#list_meal_plans) | **GET** /api/meal-plans | 
@@ -114,6 +117,9 @@ Class | Method | HTTP request | Description
  - [ImportRecipeRequest](docs/ImportRecipeRequest.md)
  - [ImportRecipeResponse](docs/ImportRecipeResponse.md)
  - [Ingredient](docs/Ingredient.md)
+ - [IngredientNameFailure](docs/IngredientNameFailure.md)
+ - [IngredientNamesQueuedResponse](docs/IngredientNamesQueuedResponse.md)
+ - [IngredientNamesStatusResponse](docs/IngredientNamesStatusResponse.md)
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)

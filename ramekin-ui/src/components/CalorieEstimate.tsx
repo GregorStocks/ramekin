@@ -1,4 +1,11 @@
-import { createResource, For, Show } from "solid-js";
+import {
+  createEffect,
+  createResource,
+  createSignal,
+  For,
+  onCleanup,
+  Show,
+} from "solid-js";
 import type { Ingredient } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
 
@@ -8,15 +15,38 @@ export default function CalorieEstimate(props: {
   scale: number;
 }) {
   const { getRecipesApi } = useAuth();
-  const [estimate] = createResource(
-    () => ({
-      ingredients: props.ingredients,
-      servings: props.servings,
-      scale: props.scale,
-    }),
-    (request) =>
-      getRecipesApi().estimateCalories({ estimateCaloriesRequest: request }),
-  );
+  const request = () => ({
+    ingredients: props.ingredients,
+    servings: props.servings,
+    scale: props.scale,
+  });
+  const fetchEstimate = (estimateCaloriesRequest: ReturnType<typeof request>) =>
+    getRecipesApi().estimateCalories({ estimateCaloriesRequest });
+  const [pollFailed, setPollFailed] = createSignal(false);
+  const [estimate, { mutate }] = createResource(request, (r) => {
+    setPollFailed(false);
+    return fetchEstimate(r);
+  });
+  // Names still being recognized in the background: ask again quietly (no
+  // loading state) until the estimate includes them.
+  createEffect(() => {
+    if (estimate.loading || !estimate()?.resolving) return;
+    const polled = request();
+    const current = () =>
+      !estimate.loading &&
+      props.ingredients === polled.ingredients &&
+      props.servings === polled.servings &&
+      props.scale === polled.scale;
+    const timer = setTimeout(async () => {
+      try {
+        const result = await fetchEstimate(polled);
+        if (current()) mutate(result);
+      } catch {
+        if (current()) setPollFailed(true);
+      }
+    }, 2000);
+    onCleanup(() => clearTimeout(timer));
+  });
 
   return (
     <section class="recipe-section" aria-label="Estimated calories">
@@ -24,10 +54,14 @@ export default function CalorieEstimate(props: {
       <Show when={estimate.loading}>
         <p role="status">Calculating calories…</p>
       </Show>
-      <Show when={estimate.error}>
+      <Show when={estimate.error || pollFailed()}>
         <p role="alert">Could not estimate calories. Please reload to retry.</p>
       </Show>
-      <Show when={!estimate.loading && !estimate.error && estimate()}>
+      <Show
+        when={
+          !estimate.loading && !estimate.error && !pollFailed() && estimate()
+        }
+      >
         {(result) => (
           <>
             <p class="calorie-headline">{result().headline}</p>

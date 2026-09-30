@@ -97,6 +97,25 @@ fn category_to_static(category: &str) -> &'static str {
 /// Returns the category name, or "Other" if no match is found.
 /// Matching is case-insensitive and looks for keyword containment.
 pub fn categorize(item: &str) -> &'static str {
+    categorize_with(item, &crate::catalog::Learned::new())
+}
+
+/// `categorize`, using a stored answer for a name the catalog doesn't know: a
+/// learned entry's category, else the learned key's keyword category; a
+/// learned non-food is "Other".
+pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'static str {
+    use crate::catalog::{normalize, unlearned_name, LearnedTarget};
+    if unlearned_name(item).is_some() {
+        match learned.get(&normalize(item)) {
+            Some(LearnedTarget::Entry(key)) => return categorize_known(key),
+            Some(LearnedTarget::NotFood) => return "Other",
+            Some(LearnedTarget::Unknown) | None => {}
+        }
+    }
+    categorize_known(item)
+}
+
+fn categorize_known(item: &str) -> &'static str {
     if let Some(category) = crate::catalog::category(item) {
         return category_to_static(category);
     }

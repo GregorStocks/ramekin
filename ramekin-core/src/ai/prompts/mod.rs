@@ -6,6 +6,7 @@ pub mod generate_description;
 pub mod generate_recipe_photo;
 pub mod normalize_title;
 pub mod photo_extract;
+pub mod resolve_ingredient_names;
 
 pub use auto_tag::render_auto_tag_prompt;
 pub use custom_enrich::{render_custom_enrich_system_prompt, render_custom_enrich_user_prompt};

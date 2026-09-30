@@ -189,6 +189,8 @@ pub async fn sync_items(
         conn.transaction::<_, diesel::result::Error, _>(|conn| {
             // 1. Process creates — batch insert, fall back to a single SELECT for conflicts
             let mut created = Vec::with_capacity(request.creates.len());
+            // Names this sync actually wrote, queued for resolution below.
+            let mut written_items: Vec<String> = Vec::new();
             if !request.creates.is_empty() {
                 let new_items: Vec<NewShoppingListItem> = request
                     .creates
@@ -207,7 +209,7 @@ pub async fn sync_items(
                     })
                     .collect();
 
-                let inserted: Vec<(Option<Uuid>, Uuid, i32)> =
+                let inserted: Vec<(Option<Uuid>, Uuid, i32, String)> =
                     diesel::insert_into(shopping_list_items::table)
                         .values(&new_items)
                         .on_conflict(on_constraint("uq_shopping_list_client_id"))
@@ -216,12 +218,14 @@ pub async fn sync_items(
                             shopping_list_items::client_id,
                             shopping_list_items::id,
                             shopping_list_items::version,
+                            shopping_list_items::item,
                         ))
                         .get_results(conn)?;
 
                 let mut by_client_id: HashMap<Uuid, (Uuid, i32)> =
                     HashMap::with_capacity(request.creates.len());
-                for (cid, id, ver) in inserted {
+                for (cid, id, ver, item) in inserted {
+                    written_items.push(item);
                     if let Some(cid) = cid {
                         by_client_id.insert(cid, (id, ver));
                     }
@@ -365,6 +369,9 @@ pub async fn sync_items(
                     .execute(conn)?;
 
                     if updated_rows == 1 {
+                        if update_req.item.is_some() {
+                            written_items.push(new_item.clone());
+                        }
                         // Write-back so a later update for the same id in this batch sees
                         // the new state instead of the stale prefetch.
                         current_map.insert(
@@ -466,30 +473,53 @@ pub async fn sync_items(
             }
 
             // 4. Get server changes since last_sync_at
-            let server_changes: Vec<SyncServerChange> =
-                if let Some(last_sync) = request.last_sync_at {
-                    let rows: Vec<ServerChangeRow> = shopping_list_items::table
-                        .filter(shopping_list_items::user_id.eq(user_id))
-                        .filter(shopping_list_items::deleted_at.is_null())
-                        .filter(shopping_list_items::updated_at.gt(last_sync))
-                        .select((
-                            shopping_list_items::id,
-                            shopping_list_items::item,
-                            shopping_list_items::amount,
-                            shopping_list_items::note,
-                            shopping_list_items::source_recipe_id,
-                            shopping_list_items::source_recipe_title,
-                            shopping_list_items::is_checked,
-                            shopping_list_items::sort_order,
-                            shopping_list_items::category_override,
-                            shopping_list_items::version,
-                            shopping_list_items::updated_at,
-                        ))
-                        .load(conn)?;
+            let server_changes: Vec<SyncServerChange> = if let Some(last_sync) =
+                request.last_sync_at
+            {
+                let rows: Vec<ServerChangeRow> = shopping_list_items::table
+                    .filter(shopping_list_items::user_id.eq(user_id))
+                    .filter(shopping_list_items::deleted_at.is_null())
+                    .filter(shopping_list_items::updated_at.gt(last_sync))
+                    .select((
+                        shopping_list_items::id,
+                        shopping_list_items::item,
+                        shopping_list_items::amount,
+                        shopping_list_items::note,
+                        shopping_list_items::source_recipe_id,
+                        shopping_list_items::source_recipe_title,
+                        shopping_list_items::is_checked,
+                        shopping_list_items::sort_order,
+                        shopping_list_items::category_override,
+                        shopping_list_items::version,
+                        shopping_list_items::updated_at,
+                    ))
+                    .load(conn)?;
+                let learned = crate::ingredient_names::load_learned(
+                    conn,
+                    rows.iter().map(|row| row.1.as_str()),
+                )?;
 
-                    rows.into_iter()
-                        .map(
-                            |(
+                rows.into_iter()
+                    .map(
+                        |(
+                            id,
+                            item,
+                            amount,
+                            note,
+                            source_recipe_id,
+                            source_recipe_title,
+                            is_checked,
+                            sort_order,
+                            category_override,
+                            version,
+                            updated_at,
+                        )| {
+                            let computed_category = super::list::computed_category(&item, &learned);
+                            let category = super::list::item_category(
+                                &computed_category,
+                                category_override.as_deref(),
+                            );
+                            SyncServerChange {
                                 id,
                                 item,
                                 amount,
@@ -498,56 +528,60 @@ pub async fn sync_items(
                                 source_recipe_title,
                                 is_checked,
                                 sort_order,
-                                category_override,
                                 version,
                                 updated_at,
-                            )| {
-                                let computed_category = super::list::computed_category(&item);
-                                let category = super::list::item_category(
-                                    &computed_category,
-                                    category_override.as_deref(),
-                                );
-                                SyncServerChange {
-                                    id,
-                                    item,
-                                    amount,
-                                    note,
-                                    source_recipe_id,
-                                    source_recipe_title,
-                                    is_checked,
-                                    sort_order,
-                                    version,
-                                    updated_at,
-                                    category_override,
-                                    computed_category,
-                                    category,
-                                }
-                            },
-                        )
-                        .collect()
-                } else {
-                    // No last_sync_at means first sync - return all items
-                    let rows: Vec<ServerChangeRow> = shopping_list_items::table
-                        .filter(shopping_list_items::user_id.eq(user_id))
-                        .filter(shopping_list_items::deleted_at.is_null())
-                        .select((
-                            shopping_list_items::id,
-                            shopping_list_items::item,
-                            shopping_list_items::amount,
-                            shopping_list_items::note,
-                            shopping_list_items::source_recipe_id,
-                            shopping_list_items::source_recipe_title,
-                            shopping_list_items::is_checked,
-                            shopping_list_items::sort_order,
-                            shopping_list_items::category_override,
-                            shopping_list_items::version,
-                            shopping_list_items::updated_at,
-                        ))
-                        .load(conn)?;
+                                category_override,
+                                computed_category,
+                                category,
+                            }
+                        },
+                    )
+                    .collect()
+            } else {
+                // No last_sync_at means first sync - return all items
+                let rows: Vec<ServerChangeRow> = shopping_list_items::table
+                    .filter(shopping_list_items::user_id.eq(user_id))
+                    .filter(shopping_list_items::deleted_at.is_null())
+                    .select((
+                        shopping_list_items::id,
+                        shopping_list_items::item,
+                        shopping_list_items::amount,
+                        shopping_list_items::note,
+                        shopping_list_items::source_recipe_id,
+                        shopping_list_items::source_recipe_title,
+                        shopping_list_items::is_checked,
+                        shopping_list_items::sort_order,
+                        shopping_list_items::category_override,
+                        shopping_list_items::version,
+                        shopping_list_items::updated_at,
+                    ))
+                    .load(conn)?;
+                let learned = crate::ingredient_names::load_learned(
+                    conn,
+                    rows.iter().map(|row| row.1.as_str()),
+                )?;
 
-                    rows.into_iter()
-                        .map(
-                            |(
+                rows.into_iter()
+                    .map(
+                        |(
+                            id,
+                            item,
+                            amount,
+                            note,
+                            source_recipe_id,
+                            source_recipe_title,
+                            is_checked,
+                            sort_order,
+                            category_override,
+                            version,
+                            updated_at,
+                        )| {
+                            let computed_category = super::list::computed_category(&item, &learned);
+                            let category = super::list::item_category(
+                                &computed_category,
+                                category_override.as_deref(),
+                            );
+                            SyncServerChange {
                                 id,
                                 item,
                                 amount,
@@ -556,34 +590,16 @@ pub async fn sync_items(
                                 source_recipe_title,
                                 is_checked,
                                 sort_order,
-                                category_override,
                                 version,
                                 updated_at,
-                            )| {
-                                let computed_category = super::list::computed_category(&item);
-                                let category = super::list::item_category(
-                                    &computed_category,
-                                    category_override.as_deref(),
-                                );
-                                SyncServerChange {
-                                    id,
-                                    item,
-                                    amount,
-                                    note,
-                                    source_recipe_id,
-                                    source_recipe_title,
-                                    is_checked,
-                                    sort_order,
-                                    version,
-                                    updated_at,
-                                    category_override,
-                                    computed_category,
-                                    category,
-                                }
-                            },
-                        )
-                        .collect()
-                };
+                                category_override,
+                                computed_category,
+                                category,
+                            }
+                        },
+                    )
+                    .collect()
+            };
 
             if let Some(last_sync) = request.last_sync_at {
                 let deleted_rows: Vec<Uuid> = shopping_list_items::table
@@ -594,6 +610,8 @@ pub async fn sync_items(
 
                 deleted_set.extend(deleted_rows);
             }
+
+            crate::ingredient_names::enqueue_items(conn, written_items.iter().map(String::as_str))?;
 
             Ok(SyncResponse {
                 created,
@@ -610,6 +628,8 @@ pub async fn sync_items(
         })
     })
     .await?;
+
+    crate::ingredient_names::wake();
 
     Ok((StatusCode::OK, Json(response)))
 }

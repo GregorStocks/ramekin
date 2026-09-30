@@ -9,6 +9,7 @@
 //! deliberately unknown. See README.md for the data rules.
 
 mod cleanup;
+mod learned;
 mod resolve;
 mod volume;
 
@@ -21,6 +22,10 @@ use crate::ingredient_categorizer::CATEGORIES;
 use sha2::{Digest, Sha256};
 
 pub use cleanup::{clean_curated, parsed_name, CuratedChange};
+pub use learned::{
+    candidates, learned_key_resolves, resolve_line_with, resolve_with, unlearned_name, Learned,
+    LearnedTarget,
+};
 pub use resolve::{resolve, Resolution, Via};
 pub use volume::{
     is_volume_unit, volume_to_cups, CUPS_PER_FL_OZ, CUPS_PER_GALLON, CUPS_PER_L, CUPS_PER_ML,

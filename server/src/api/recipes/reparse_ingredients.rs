@@ -65,7 +65,7 @@ pub async fn reparse_all_ingredients(
     State(pool): State<Arc<DbPool>>,
 ) -> Result<Json<ReparseIngredientsResponse>, ApiError> {
     let user_id = user.id;
-    let response = run_db(&pool, move |conn| {
+    let result = run_db(&pool, move |conn| {
         let versions: Vec<RecipeVersion> = recipes::table
             .inner_join(
                 recipe_versions::table
@@ -103,7 +103,12 @@ pub async fn reparse_all_ingredients(
                     },
                     Some(current.id),
                     TagSource::CopyFrom(current.id),
-                )
+                )?;
+                crate::ingredient_names::enqueue_items(
+                    conn,
+                    updated.iter().map(|i| i.item.as_str()),
+                )?;
+                Ok(())
             });
             match result {
                 Ok(_) => {
@@ -130,6 +135,9 @@ pub async fn reparse_all_ingredients(
         );
         Ok(response)
     })
-    .await?;
-    Ok(Json(response))
+    .await;
+    // Each recipe commits on its own, so wake the worker even when a later
+    // one failed: the earlier ones' names are already queued.
+    crate::ingredient_names::wake();
+    Ok(Json(result?))
 }

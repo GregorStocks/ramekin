@@ -1,0 +1,1 @@
+DROP TABLE ingredient_name_resolutions;

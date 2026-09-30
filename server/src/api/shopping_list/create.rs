@@ -74,6 +74,8 @@ pub async fn create_items(
                 .unwrap_or(0);
 
             let mut ids = Vec::with_capacity(request.items.len());
+            // Names this request actually inserted, queued for resolution.
+            let mut inserted_items = Vec::with_capacity(request.items.len());
 
             for (i, item_req) in request.items.iter().enumerate() {
                 let amount_ref = item_req.amount.as_deref();
@@ -102,7 +104,10 @@ pub async fn create_items(
                         .returning(shopping_list_items::id)
                         .get_result::<Uuid>(conn)
                     {
-                        Ok(id) => id,
+                        Ok(id) => {
+                            inserted_items.push(item_req.item.as_str());
+                            id
+                        }
                         Err(diesel::result::Error::NotFound) => shopping_list_items::table
                             .filter(shopping_list_items::user_id.eq(user_id))
                             .filter(shopping_list_items::client_id.eq(client_id))
@@ -111,6 +116,7 @@ pub async fn create_items(
                         Err(e) => return Err(e),
                     }
                 } else {
+                    inserted_items.push(item_req.item.as_str());
                     diesel::insert_into(shopping_list_items::table)
                         .values(&new_item)
                         .returning(shopping_list_items::id)
@@ -119,6 +125,7 @@ pub async fn create_items(
 
                 ids.push(id);
             }
+            crate::ingredient_names::enqueue_items(conn, inserted_items)?;
 
             Ok(ids)
         })
@@ -128,6 +135,8 @@ pub async fn create_items(
         })
     })
     .await?;
+
+    crate::ingredient_names::wake();
 
     Ok((
         StatusCode::CREATED,

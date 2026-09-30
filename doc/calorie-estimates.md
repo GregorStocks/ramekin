@@ -80,8 +80,25 @@ The response version combines the calculation rule version with the catalog
 version (a hash of the catalog data and its resolution rule version). Bump the
 calculation rule version when changing calculation behavior, including changes
 to reused volume constants. Identical inputs and version give identical
-results. Numeric fields retain calculation precision; display strings round as
+results, except that a name the catalog doesn't know can change from unknown to
+counted once its learned answer arrives (see "Names the catalog doesn't know").
+Numeric fields retain calculation precision; display strings round as
 described under Presentation.
+
+## Names the catalog doesn't know
+
+After a recipe or shopping-list item is saved, names the committed catalog
+doesn't know are resolved by an LLM in the background (catalog step 3). The
+answer is a catalog key or "not food", stored once per name and used by later
+estimates. Saving never waits for it, and estimating never calls the LLM:
+- a name not resolved yet reads as unknown ("Not recognized");
+- so does a name the model couldn't place;
+- a failed resolution shows in Settings → Ingredient recognition, where it can
+  be retried.
+
+While any of an estimate's names is still pending, the response sets
+`resolving`. The web and iOS clients then re-request the same estimate every
+2 seconds, keeping the current one on screen, until it clears.
 
 ## Negligible, compound, and non-food lines
 
