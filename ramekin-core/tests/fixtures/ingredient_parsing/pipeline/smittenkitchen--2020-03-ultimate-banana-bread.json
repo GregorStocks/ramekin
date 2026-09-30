@@ -5,7 +5,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, cut into chunks, plus more for pan",
       "expected": {
-        "item": "unsalted butter, cut into chunks",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for pan",
+        "note": "cut into chunks, plus more for pan",
         "category": "Dairy & Eggs"
       }
     },
@@ -45,7 +45,7 @@
     {
       "raw": "2 slightly heaped cups (about 18 ounces or 510 grams) (updated weight, see why) of mashed banana, from 4 extra-large or 5 medium-large bananas",
       "expected": {
-        "item": "mashed banana, from 4 extra-large or 5 medium-large bananas",
+        "item": "mashed banana",
         "measurements": [
           {
             "amount": "2",
@@ -60,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 18 ounces or 510 grams, updated weight, see why",
+        "note": "about 18 ounces or 510 grams, updated weight, see why, from 4 extra-large or 5 medium-large bananas",
         "category": "Produce"
       }
     },

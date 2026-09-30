@@ -5,7 +5,7 @@
     {
       "raw": "8 tablespoons (1 stick, 4 ounces or 115 grams) unsalted butter, cut into chunks, plus more for pan",
       "expected": {
-        "item": "unsalted butter, cut into chunks",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "8",
@@ -24,7 +24,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for pan",
+        "note": "cut into chunks, plus more for pan",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,14 +121,14 @@
     {
       "raw": "2 large eggs, room temperature, lightly beaten",
       "expected": {
-        "item": "eggs, room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "lightly beaten",
+        "note": "room temperature, lightly beaten",
         "category": "Dairy & Eggs"
       }
     },
@@ -261,18 +261,18 @@
     {
       "raw": "Confectioners’ sugar, for dusting finished cake",
       "expected": {
-        "item": "Confectioners’ sugar, for dusting finished cake",
+        "item": "Confectioners’ sugar",
         "measurements": [],
-        "note": null,
+        "note": "for dusting finished cake",
         "category": "Baking"
       }
     },
     {
       "raw": "Lightly sweetened whipped cream, essential for serving",
       "expected": {
-        "item": "Lightly sweetened whipped cream, essential for serving",
+        "item": "Lightly sweetened whipped cream, essential",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Dairy & Eggs"
       }
     }

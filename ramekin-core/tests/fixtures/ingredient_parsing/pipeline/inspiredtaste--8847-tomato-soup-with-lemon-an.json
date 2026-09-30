@@ -37,28 +37,28 @@
     {
       "raw": "4 whole garlic cloves, skins removed",
       "expected": {
-        "item": "whole garlic cloves, skins removed",
+        "item": "whole garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "skins removed",
         "category": "Produce"
       }
     },
     {
       "raw": "4 strips lemon zest, each 1/4-inch wide and 2 inches long",
       "expected": {
-        "item": "strips lemon zest, each 1/4-inch wide and 2 inches long",
+        "item": "strips lemon zest",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "each 1/4-inch wide and 2 inches long",
         "category": "Produce"
       }
     },
@@ -111,28 +111,28 @@
     {
       "raw": "4 cups low sodium chicken stock or vegetable stock, see our easy chicken stock recipe",
       "expected": {
-        "item": "low sodium chicken stock or vegetable stock, see our easy chicken stock recipe",
+        "item": "low sodium chicken stock or vegetable stock",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see our easy chicken stock recipe",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1/4 cup half and half or non-dairy milk such as almond and coconut",
       "expected": {
-        "item": "half and half or non-dairy milk such as almond and coconut",
+        "item": "half and half or non-dairy milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as almond and coconut",
         "category": "Dairy & Eggs"
       }
     },
@@ -148,14 +148,14 @@
     {
       "raw": "1/4 cup feta or blue cheese crumbles for serving, optional",
       "expected": {
-        "item": "feta or blue cheese crumbles for serving",
+        "item": "feta or blue cheese crumbles",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "for serving, optional",
         "category": "Cheese"
       }
     }

@@ -273,7 +273,7 @@
     {
       "raw": "2 tablespoons (30 ml) fresh lemon juice, from 1 medium lemonc",
       "expected": {
-        "item": "fresh lemon juice, from 1 medium lemonc",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "2",
@@ -288,7 +288,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 medium lemonc",
         "category": "Produce"
       }
     },

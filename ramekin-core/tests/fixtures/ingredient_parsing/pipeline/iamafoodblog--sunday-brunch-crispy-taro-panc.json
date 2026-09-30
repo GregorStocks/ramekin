@@ -46,7 +46,7 @@
     {
       "raw": "2 tablespoons oil, for frying",
       "expected": {
-        "item": "oil, for frying",
+        "item": "oil",
         "measurements": [
           {
             "amount": "2",
@@ -57,34 +57,34 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "sour cream, to serve",
       "expected": {
-        "item": "sour cream, to serve",
+        "item": "sour cream",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "smoked salmon, to serve",
       "expected": {
-        "item": "smoked salmon, to serve",
+        "item": "smoked salmon",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "sliced green onions, to serve",
       "expected": {
-        "item": "sliced green onions, to serve",
+        "item": "sliced green onions",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Produce"
       }
     },

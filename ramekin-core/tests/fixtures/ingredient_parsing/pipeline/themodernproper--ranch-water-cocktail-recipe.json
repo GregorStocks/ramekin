@@ -41,9 +41,9 @@
     {
       "raw": "Sparkling mineral water, such as Topo Chico",
       "expected": {
-        "item": "Sparkling mineral water, such as Topo Chico",
+        "item": "Sparkling mineral water",
         "measurements": [],
-        "note": null,
+        "note": "such as Topo Chico",
         "category": "Beverages"
       }
     },

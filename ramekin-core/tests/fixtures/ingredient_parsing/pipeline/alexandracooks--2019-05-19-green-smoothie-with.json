@@ -61,14 +61,14 @@
     {
       "raw": "1 Medjool dates, pitted and torn into pieces, see notes above",
       "expected": {
-        "item": "Medjool dates, pitted and torn into pieces, see notes above",
+        "item": "Medjool dates, pitted and torn into pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Nuts & Dried Fruit"
       }
     },

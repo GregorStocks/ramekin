@@ -23,7 +23,7 @@
     {
       "raw": "2 tablespoons (30 grams) unsalted butter, cold is fine, diced small, plus 3 tablespoons (45 grams) salted or unsalted, melted",
       "expected": {
-        "item": "unsalted butter, cold is fine, diced small",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "2",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 3 tablespoons salted or unsalted, melted",
+        "note": "diced small, plus 3 tablespoons salted or unsalted, melted",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,18 +135,18 @@
     {
       "raw": "Oil, for the bowl",
       "expected": {
-        "item": "Oil, for the bowl",
+        "item": "Oil",
         "measurements": [],
-        "note": null,
+        "note": "for the bowl",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "Flaky sea salt, for sprinkling (optional)",
       "expected": {
-        "item": "Flaky sea salt, for sprinkling",
+        "item": "Flaky sea salt",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for sprinkling",
         "category": "Spices & Seasonings"
       }
     }

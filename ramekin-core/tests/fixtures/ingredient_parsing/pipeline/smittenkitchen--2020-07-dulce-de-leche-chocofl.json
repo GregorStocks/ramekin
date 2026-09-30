@@ -239,7 +239,7 @@
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, cubed, at room temperature",
       "expected": {
-        "item": "unsalted butter, cubed",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
@@ -250,7 +250,7 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature",
+        "note": "cubed, at room temperature",
         "category": "Dairy & Eggs"
       }
     },

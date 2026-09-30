@@ -5,8 +5,13 @@
     {
       "raw": "▢ 3 tbsp panko breadcrumbs or regular breadcrumbs",
       "expected": {
-        "item": "▢ 3 tbsp panko breadcrumbs or regular breadcrumbs",
-        "measurements": [],
+        "item": "panko breadcrumbs or regular breadcrumbs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
         "note": null,
         "category": "Bakery & Bread"
       }
@@ -14,8 +19,17 @@
     {
       "raw": "▢ 2 tbsp whole milk cold",
       "expected": {
-        "item": "▢ 2 tbsp whole milk cold",
-        "measurements": [],
+        "item": "whole milk cold",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Dairy & Eggs"
       }
@@ -23,8 +37,13 @@
     {
       "raw": "▢ ⅛ onion",
       "expected": {
-        "item": "▢ 1/8 onion",
-        "measurements": [],
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": null
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -32,8 +51,17 @@
     {
       "raw": "▢ ½ tbsp grated ginger root or ginger paste",
       "expected": {
-        "item": "▢ 1/2 tbsp grated ginger root or ginger paste",
-        "measurements": [],
+        "item": "grated ginger root or ginger paste",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -41,8 +69,13 @@
     {
       "raw": "▢ 300 g ground pork 20% fat content (increase lard if leaner), or ground chicken thigh",
       "expected": {
-        "item": "▢ 300 g ground pork 20% fat content",
-        "measurements": [],
+        "item": "ground pork 20% fat content",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
         "note": "increase lard if leaner; or ground chicken thigh",
         "category": "Meat & Seafood"
       }
@@ -50,8 +83,17 @@
     {
       "raw": "▢ ¼ tsp salt fine",
       "expected": {
-        "item": "▢ 1/4 tsp salt fine",
-        "measurements": [],
+        "item": "salt fine",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Spices & Seasonings"
       }
@@ -59,8 +101,13 @@
     {
       "raw": "▢ 1 pinch ground black pepper or white pepper",
       "expected": {
-        "item": "▢ 1 pinch ground black pepper or white pepper",
-        "measurements": [],
+        "item": "ground black pepper or white pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
         "note": null,
         "category": "Spices & Seasonings"
       }
@@ -68,8 +115,13 @@
     {
       "raw": "▢ 1 tsp lard omit if your pork mince is already fatty enough",
       "expected": {
-        "item": "▢ 1 tsp lard omit if your pork mince is already fatty enough",
-        "measurements": [],
+        "item": "lard omit if your pork mince is already fatty enough",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
         "note": null,
         "category": "Meat & Seafood"
       }
@@ -77,8 +129,17 @@
     {
       "raw": "▢ 2 tbsp potato starch (katakuriko) or cornstarch/tapioca starch",
       "expected": {
-        "item": "▢ 2 tbsp potato starch or cornstarch/tapioca starch",
-        "measurements": [],
+        "item": "potato starch or cornstarch/tapioca starch",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
         "note": "katakuriko",
         "category": "Baking"
       }
@@ -86,8 +147,17 @@
     {
       "raw": "▢ 2 tbsp cooking oil neutral",
       "expected": {
-        "item": "▢ 2 tbsp cooking oil neutral",
-        "measurements": [],
+        "item": "cooking oil neutral",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Oils & Vinegars"
       }
@@ -95,8 +165,17 @@
     {
       "raw": "▢ 1½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "▢ 1 1/2 tbsp Japanese soy sauce",
-        "measurements": [],
+        "item": "Japanese soy sauce",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
+          }
+        ],
         "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
@@ -104,8 +183,17 @@
     {
       "raw": "▢ 1½ tbsp sake or dry sherry/wine",
       "expected": {
-        "item": "▢ 1 1/2 tbsp sake or dry sherry/wine",
-        "measurements": [],
+        "item": "sake or dry sherry/wine",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "22",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Beverages"
       }
@@ -113,8 +201,13 @@
     {
       "raw": "▢ 1½ tbsp mirin or cola",
       "expected": {
-        "item": "▢ 1 1/2 tbsp mirin or cola",
-        "measurements": [],
+        "item": "mirin or cola",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
         "note": null,
         "category": "Condiments & Sauces"
       }
@@ -122,8 +215,17 @@
     {
       "raw": "▢ ½ tbsp sugar",
       "expected": {
-        "item": "▢ 1/2 tbsp sugar",
-        "measurements": [],
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6.2",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Baking"
       }
@@ -131,8 +233,17 @@
     {
       "raw": "▢ 1 tsp grated ginger root or ginger paste",
       "expected": {
-        "item": "▢ 1 tsp grated ginger root or ginger paste",
-        "measurements": [],
+        "item": "grated ginger root or ginger paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -140,8 +251,17 @@
     {
       "raw": "▢ 1 tsp grated garlic or garlic paste",
       "expected": {
-        "item": "▢ 1 tsp grated garlic or garlic paste",
-        "measurements": [],
+        "item": "grated garlic or garlic paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.8",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -149,25 +269,25 @@
     {
       "raw": "▢ toasted white sesame seeds to taste",
       "expected": {
-        "item": "▢ toasted white sesame seeds to taste",
+        "item": "toasted white sesame seeds",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "▢ finely chopped green onions to taste",
       "expected": {
-        "item": "▢ finely chopped green onions to taste",
+        "item": "finely chopped green onions",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Produce"
       }
     },
     {
       "raw": "▢ grated hard cheese to taste, Parmesan, Pecorino, Grana Padano",
       "expected": {
-        "item": "▢ grated hard cheese to taste, Parmesan, Pecorino, Grana Padano",
+        "item": "grated hard cheese to taste, Parmesan, Pecorino, Grana Padano",
         "measurements": [],
         "note": null,
         "category": "Cheese"

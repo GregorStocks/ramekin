@@ -128,9 +128,9 @@
     {
       "raw": "olive oil, to finish",
       "expected": {
-        "item": "olive oil, to finish",
+        "item": "olive oil",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Oils & Vinegars"
       }
     }

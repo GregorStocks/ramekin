@@ -5,14 +5,14 @@
     {
       "raw": "1 large butternut squash, peeled, seeded and cut into 1-inch cubes (about 3 pounds or 8 cups, cubed)",
       "expected": {
-        "item": "butternut squash, peeled",
+        "item": "butternut squash",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "about 3 pounds or 8 cups, cubed, seeded and cut into 1-inch cubes",
+        "note": "about 3 pounds or 8 cups, cubed, peeled, seeded and cut into 1-inch cubes",
         "category": "Produce"
       }
     },
@@ -97,9 +97,9 @@
     {
       "raw": "Fresh herbs for serving like basil or parsley, optional",
       "expected": {
-        "item": "Fresh herbs for serving like basil or parsley",
+        "item": "Fresh herbs",
         "measurements": [],
-        "note": "optional",
+        "note": "for serving like basil or parsley, optional",
         "category": "Produce"
       }
     }

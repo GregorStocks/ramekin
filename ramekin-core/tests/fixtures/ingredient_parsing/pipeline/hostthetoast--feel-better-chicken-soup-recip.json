@@ -206,14 +206,14 @@
     {
       "raw": "3 tablespoons roasted chicken bouillon base, such as Better than Bouillon",
       "expected": {
-        "item": "roasted chicken bouillon base, such as Better than Bouillon",
+        "item": "roasted chicken bouillon base",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as Better than Bouillon",
         "category": "Spices & Seasonings"
       }
     },

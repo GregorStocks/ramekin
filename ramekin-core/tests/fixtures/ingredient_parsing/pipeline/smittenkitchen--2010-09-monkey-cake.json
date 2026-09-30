@@ -129,7 +129,7 @@
     {
       "raw": "1 1/2 cups (10 1/2 ounces or 300 grams) sugar [weights corrected 6/23/11]",
       "expected": {
-        "item": "sugar [weights corrected 6/23/11]",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1.5",
@@ -144,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "weights corrected 6/23/11",
         "category": "Baking"
       }
     },

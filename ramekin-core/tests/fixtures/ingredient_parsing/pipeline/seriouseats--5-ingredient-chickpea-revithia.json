@@ -63,7 +63,7 @@
     {
       "raw": "4 tablespoons (60 ml) extra-virgin olive oil, divided, plus more for serving",
       "expected": {
-        "item": "extra-virgin olive oil, divided",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "4",
@@ -78,7 +78,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for serving",
+        "note": "divided, plus more for serving",
         "category": "Oils & Vinegars"
       }
     },
@@ -167,9 +167,9 @@
     {
       "raw": "Lemon wedges for serving, optional",
       "expected": {
-        "item": "Lemon wedges for serving",
+        "item": "Lemon wedges",
         "measurements": [],
-        "note": "optional",
+        "note": "for serving, optional",
         "category": "Produce"
       }
     }

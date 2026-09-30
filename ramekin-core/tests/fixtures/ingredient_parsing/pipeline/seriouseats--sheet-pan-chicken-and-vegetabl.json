@@ -23,7 +23,7 @@
     {
       "raw": "2 tablespoons (30 ml) neutral cooking oil such as canola oil",
       "expected": {
-        "item": "neutral cooking oil such as canola oil",
+        "item": "neutral cooking oil",
         "measurements": [
           {
             "amount": "2",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as canola oil",
         "category": "Oils & Vinegars"
       }
     },

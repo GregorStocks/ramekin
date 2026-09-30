@@ -177,7 +177,7 @@
     {
       "raw": "1 c. fresh cilantro, chopped, plus more for topping",
       "expected": {
-        "item": "fresh cilantro, chopped",
+        "item": "fresh cilantro",
         "measurements": [
           {
             "amount": "1",
@@ -188,7 +188,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for topping",
+        "note": "chopped, plus more for topping",
         "category": "Produce"
       }
     },
@@ -237,9 +237,9 @@
     {
       "raw": "Salsa, pickled jalapeños and crumbled Cotija cheese, for topping",
       "expected": {
-        "item": "Salsa, pickled jalapeños and crumbled Cotija cheese, for topping",
+        "item": "Salsa, pickled jalapeños and crumbled Cotija cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

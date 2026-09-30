@@ -387,3 +387,293 @@ pub(in crate::ingredient_parser) fn is_only_prep_words(s: &str) -> bool {
 
     true
 }
+
+/// Comma parts that qualify the preceding item rather than name it: purposes
+/// ("for frying"), examples ("such as canola"), references ("see note"), and
+/// amount guidance ("about 8 ounces", "divided").
+pub(in crate::ingredient_parser) fn is_trailing_qualifier(s: &str) -> bool {
+    const QUALIFIER_PREFIXES: &[&str] = &[
+        "about ",
+        "approximately ",
+        "at least ",
+        "each ",
+        "for ",
+        "from ",
+        "if ",
+        "in ",
+        "including ",
+        "like ",
+        "or your ",
+        "plus ",
+        "preferably ",
+        "see ",
+        "such as ",
+        "with ",
+        "without ",
+        "you'll ",
+        "you will ",
+    ];
+    const QUALIFIER_WORDS: &[&str] = &[
+        "divided",
+        "homemade or store bought",
+        "homemade or store-bought",
+        "homemade or storebought",
+        "optional",
+        "separated",
+        "spun dry",
+        "store bought or homemade",
+        "store-bought or homemade",
+        "thawed",
+        "to finish",
+        "to serve",
+        "warmed",
+    ];
+    // Participles that end a prep phrase ("crusts removed", "stems and seeds
+    // discarded"): the part describes the item rather than naming another.
+    const TRAILING_PARTICIPLES: &[&str] = &[
+        "discarded",
+        "removed",
+        "reserved",
+        "separated",
+        "thawed",
+        "trimmed",
+        "warmed",
+    ];
+    let lower = s
+        .trim()
+        .trim_matches(|c: char| c == '[' || c == ']' || c == '.' || c.is_whitespace())
+        .to_lowercase();
+    let words: Vec<&str> = lower.split_whitespace().collect();
+    // "any flavor", "any percentage will do": an attribute left open, not an
+    // alternative ("or frankly, any old dish").
+    const OPEN_ATTRIBUTES: &[&str] = &[
+        "brand",
+        "color",
+        "favorite",
+        "flavor",
+        "kind",
+        "percentage",
+        "shape",
+        "size",
+        "style",
+        "temperature",
+        "thickness",
+        "type",
+        "variety",
+    ];
+    let open_attribute = words.first() == Some(&"any")
+        && words
+            .get(1)
+            .is_some_and(|word| OPEN_ATTRIBUTES.contains(&word.trim_end_matches(',')));
+    open_attribute
+        || QUALIFIER_PREFIXES
+            .iter()
+            .any(|prefix| lower.starts_with(prefix))
+        || QUALIFIER_WORDS.contains(&lower.as_str())
+        || (words.len() >= 2
+            && words
+                .last()
+                .is_some_and(|w| TRAILING_PARTICIPLES.contains(w)))
+}
+
+/// Whether an item names a category rather than a food ("Garnishes", "taco
+/// toppings", "chopped mix-ins"), so examples after it ("such as chives",
+/// "like cooked meats") are the actual foods.
+pub(in crate::ingredient_parser) fn has_generic_head(item: &str) -> bool {
+    const GENERIC_HEADS: &[&str] = &[
+        "accompaniment",
+        "accompaniments",
+        "add-in",
+        "add-ins",
+        "additions",
+        "dippers",
+        "extras",
+        "fillings",
+        "fixings",
+        "garnish",
+        "garnishes",
+        "mix-in",
+        "mix-ins",
+        "option",
+        "options",
+        "sides",
+        "things",
+        "topping",
+        "toppings",
+        "veggies",
+    ];
+    let mut head = item.to_lowercase().trim_end_matches([',', ' ']).to_string();
+    // "toppings of your choice", "mix-in of choice", "toppings you like".
+    for qualifier in [" of your choice", " of choice", " you like", " as desired"] {
+        if let Some(stripped) = head.strip_suffix(qualifier) {
+            head = stripped.to_string();
+        }
+    }
+    let head_word = head
+        .trim_end_matches([',', ' '])
+        .split_whitespace()
+        .last()
+        .unwrap_or("")
+        .to_string();
+    GENERIC_HEADS.contains(&head_word.as_str())
+}
+
+/// Purposes after "for" that describe how an ingredient is used, never what
+/// it is ("oil for frying", "flour for dusting", "butter for the pan").
+const USE_PURPOSES: &[&str] = &[
+    "brushing",
+    "coating",
+    "decorating",
+    "deep frying",
+    "deep-frying",
+    "dipping",
+    "drizzling",
+    "dusting",
+    "finishing",
+    "frying",
+    "garnish",
+    "garnishing",
+    "greasing",
+    "rolling",
+    "serving",
+    "shallow frying",
+    "sprinkling",
+    "the baking sheet",
+    "the grill",
+    "the knife",
+    "the pan",
+    "the pans",
+    "the pot",
+    "the skillet",
+    "the work surface",
+    "topping",
+];
+
+/// Split a trailing usage note that isn't set off by a comma: "for frying",
+/// "to taste", "as needed", "if desired", "such as ...", or a bracketed
+/// "[see Note]". Returns (item, note) only when a real item remains.
+pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
+    s: &str,
+) -> Option<(String, String)> {
+    let lower = s.to_lowercase();
+    // Offsets found in the lowercase copy are used on the original, which only
+    // lines up when lowercasing kept every byte length.
+    if lower.len() != s.len() {
+        return None;
+    }
+    let mut cut: Option<usize> = None;
+    let mut consider = |idx: usize| {
+        cut = Some(cut.map_or(idx, |c: usize| c.min(idx)));
+    };
+    // "[see Note]" or "[optional]", but not a synonym that names the food
+    // ("crème de framboise [raspberry liqueur]").
+    if let Some(idx) = lower.find(" [") {
+        let inside = lower.get(idx + 2..).unwrap_or("");
+        let inside = inside.split(']').next().unwrap_or("");
+        const NOTE_WORDS: &[&str] = &[
+            "about",
+            "corrected",
+            "edited",
+            "finish",
+            "for",
+            "garnish",
+            "if",
+            "make",
+            "more",
+            "note",
+            "notes",
+            "optional",
+            "or",
+            "see",
+            "serve",
+            "serving",
+            "to",
+            "updated",
+        ];
+        let words: Vec<&str> = inside.split_whitespace().collect();
+        let synonym = !words.is_empty()
+            && words.len() <= 3
+            && words
+                .iter()
+                .all(|word| word.chars().all(char::is_alphabetic) && !NOTE_WORDS.contains(word));
+        if !synonym {
+            consider(idx);
+        }
+    }
+    // "neutral oil such as canola" names the food before "such as"; in
+    // "Garnishes, such as minced chives, pickles" the examples are the foods.
+    if let Some(idx) = lower.find(" such as ") {
+        let before = lower.get(..idx).unwrap_or("").trim_end_matches([',', ' ']);
+        // Inside a labeled list ("garnishes: bacon, fresh herbs such as
+        // thyme, cracked black pepper"), the foods after the examples would be
+        // lost.
+        let inside_list = before.contains(':');
+        if !has_generic_head(before) && !inside_list {
+            consider(idx);
+        }
+    }
+    for purpose in USE_PURPOSES {
+        let phrase = format!(" for {purpose}");
+        if let Some(idx) = lower.find(&phrase) {
+            let end = idx + phrase.len();
+            let rest = lower.get(end..).unwrap_or("");
+            // Whole words only: "for serving" but not "for servings of". And
+            // a list that goes on ("sugar, for dusting, and mint leaves")
+            // names more foods, so the phrase isn't the end of the line.
+            let after = rest.trim_start_matches([',', ' ']);
+            let next = after
+                .strip_prefix("and ")
+                .or_else(|| after.strip_prefix("or "));
+            // "for deep-frying, and coating the bowl" goes on with another use.
+            let continues_list = next.is_some_and(|next| {
+                !USE_PURPOSES
+                    .iter()
+                    .any(|purpose| next.starts_with(purpose.trim_start_matches("the ")))
+            });
+            // "toppings for serving: extra cheese, ..." introduces a list.
+            let introduces_list = rest.trim_start().starts_with(':');
+            if rest.chars().next().is_none_or(|c| !c.is_alphanumeric())
+                && !continues_list
+                && !introduces_list
+            {
+                consider(idx);
+            }
+        }
+    }
+    for suffix in [" to taste", " as needed", " if desired", " optional"] {
+        if let Some(idx) = lower.rfind(suffix) {
+            if lower
+                .get(idx + suffix.len()..)
+                .is_some_and(|rest| rest.trim_matches(|c: char| !c.is_alphanumeric()).is_empty())
+            {
+                consider(idx);
+            }
+        }
+    }
+    let mut idx = cut?;
+    // "sugar or to taste", "salt or more to taste": the connector belongs to
+    // the note.
+    for connector in [
+        " more or less",
+        " or more",
+        " or less",
+        " plus more",
+        " or",
+        " and",
+    ] {
+        let before = lower.get(..idx)?.trim_end();
+        if before.ends_with(connector) {
+            idx = before.len() - connector.len();
+        }
+    }
+    let item = s.get(..idx)?.trim().trim_end_matches(',').trim();
+    let note = s
+        .get(idx..)?
+        .trim()
+        .trim_matches(|c| c == '[' || c == ']')
+        .trim();
+    if item.is_empty() || note.is_empty() || is_only_prep_words(item) {
+        return None;
+    }
+    Some((item.to_string(), note.replace(['[', ']'], "")))
+}

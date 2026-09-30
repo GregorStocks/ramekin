@@ -37,7 +37,7 @@
     {
       "raw": "2 cups grape tomatoes, quartered or 2 cups chopped tomatoes, drained a little",
       "expected": {
-        "item": "grape tomatoes, quartered or 2 cups chopped tomatoes",
+        "item": "grape tomatoes, quartered",
         "measurements": [
           {
             "amount": "2",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": "drained a little",
+        "note": "or 2 cups chopped tomatoes; drained a little",
         "category": "Produce"
       }
     },
@@ -133,9 +133,9 @@
     {
       "raw": "Tortilla chips, to serve",
       "expected": {
-        "item": "Tortilla chips, to serve",
+        "item": "Tortilla chips",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Snacks"
       }
     }

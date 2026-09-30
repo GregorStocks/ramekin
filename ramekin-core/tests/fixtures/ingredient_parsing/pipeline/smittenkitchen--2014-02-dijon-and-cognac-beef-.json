@@ -69,7 +69,7 @@
     {
       "raw": "2 pounds beef chuck, in 1-inch cubes",
       "expected": {
-        "item": "beef chuck, in 1-inch cubes",
+        "item": "beef chuck",
         "measurements": [
           {
             "amount": "2",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "in 1-inch cubes",
         "category": "Meat & Seafood"
       }
     },

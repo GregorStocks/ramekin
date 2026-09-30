@@ -117,14 +117,14 @@
     {
       "raw": "1 tablespoon orange sugar, see above",
       "expected": {
-        "item": "orange sugar, see above",
+        "item": "orange sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see above",
         "category": "Produce"
       }
     },
@@ -193,14 +193,14 @@
     {
       "raw": "1/4 cup orange sugar, see above",
       "expected": {
-        "item": "orange sugar, see above",
+        "item": "orange sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see above",
         "category": "Produce"
       }
     },
@@ -225,7 +225,7 @@
     {
       "raw": "3 tablespoons (45ml) orange liqueur, such as Cointreau or Grand Marnier",
       "expected": {
-        "item": "orange liqueur, such as Cointreau or Grand Marnier",
+        "item": "orange liqueur",
         "measurements": [
           {
             "amount": "3",
@@ -236,7 +236,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "such as Cointreau or Grand Marnier",
         "category": "Beverages"
       }
     }

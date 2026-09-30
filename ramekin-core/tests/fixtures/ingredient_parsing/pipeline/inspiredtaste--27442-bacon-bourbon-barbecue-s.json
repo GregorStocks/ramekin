@@ -177,14 +177,14 @@
     {
       "raw": "3/4 teaspoon sea salt or to taste",
       "expected": {
-        "item": "sea salt or to taste",
+        "item": "sea salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

@@ -27,14 +27,14 @@
     {
       "raw": "1/3 cup red wine vinegar or other, see note",
       "expected": {
-        "item": "red wine vinegar or other, see note",
+        "item": "red wine vinegar or other",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Oils & Vinegars"
       }
     },
@@ -81,9 +81,9 @@
     {
       "raw": "Kosher salt and freshly cracked pepper to taste",
       "expected": {
-        "item": "Kosher salt and freshly cracked pepper to taste",
+        "item": "Kosher salt and freshly cracked pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

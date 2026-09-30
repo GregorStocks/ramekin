@@ -73,18 +73,18 @@
     {
       "raw": "Fleur de sel to taste",
       "expected": {
-        "item": "Fleur de sel to taste",
+        "item": "Fleur de sel",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Other"
       }
     },
     {
       "raw": "White pepper to taste",
       "expected": {
-        "item": "White pepper to taste",
+        "item": "White pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

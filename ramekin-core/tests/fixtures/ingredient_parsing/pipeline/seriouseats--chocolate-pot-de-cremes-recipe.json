@@ -5,7 +5,7 @@
     {
       "raw": "4 1/2 ounces (128g) bittersweet chocolate, about 70% cacao, finely chopped",
       "expected": {
-        "item": "bittersweet chocolate, about 70% cacao",
+        "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "4.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 70% cacao, finely chopped",
         "category": "Baking"
       }
     },
@@ -139,18 +139,18 @@
     {
       "raw": "Whipped cream, for topping (optional)",
       "expected": {
-        "item": "Whipped cream, for topping",
+        "item": "Whipped cream",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for topping",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Chocolate shavings, for topping (optional)",
       "expected": {
-        "item": "Chocolate shavings, for topping",
+        "item": "Chocolate shavings",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for topping",
         "category": "Snacks"
       }
     }

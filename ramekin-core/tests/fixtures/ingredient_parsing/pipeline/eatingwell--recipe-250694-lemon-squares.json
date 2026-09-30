@@ -227,18 +227,18 @@
     {
       "raw": "Lemon zest for garnish",
       "expected": {
-        "item": "Lemon zest for garnish",
+        "item": "Lemon zest",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "Confectioners&amp;amp;#8217; sugar for garnish",
       "expected": {
-        "item": "Confectioners&#8217; sugar for garnish",
+        "item": "Confectioners&#8217; sugar",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Baking"
       }
     }

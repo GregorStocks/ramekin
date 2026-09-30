@@ -195,7 +195,7 @@
     {
       "raw": "8 ounces Colby-Jack cheese, shredded (about 2 cups), divided",
       "expected": {
-        "item": "Colby-Jack cheese, shredded",
+        "item": "Colby-Jack cheese",
         "measurements": [
           {
             "amount": "8",
@@ -210,7 +210,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 2 cups, divided",
+        "note": "about 2 cups, shredded, divided",
         "category": "Cheese"
       }
     }

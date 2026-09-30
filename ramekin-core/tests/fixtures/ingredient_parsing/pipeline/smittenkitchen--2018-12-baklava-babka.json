@@ -285,7 +285,7 @@
     {
       "raw": "3/4 cup (250 grams) honey, any kind you like",
       "expected": {
-        "item": "honey, any kind you like",
+        "item": "honey",
         "measurements": [
           {
             "amount": "0.75",
@@ -296,7 +296,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind you like",
         "category": "Baking"
       }
     },

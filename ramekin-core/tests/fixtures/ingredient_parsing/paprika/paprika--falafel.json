@@ -91,28 +91,28 @@
     {
       "raw": "1 teaspoons fine sea salt or 2 teaspoons kosher salt, plus more to taste",
       "expected": {
-        "item": "fine sea salt or 2 teaspoons kosher salt",
+        "item": "fine sea salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste",
+        "note": "or 2 teaspoons kosher salt; plus more to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 to 1 teaspoon hot red pepper flakes or mild ones such as urfa biber or Aleppo",
       "expected": {
-        "item": "hot red pepper flakes or mild ones such as urfa biber or Aleppo",
+        "item": "hot red pepper flakes or mild ones",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "such as urfa biber or Aleppo",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,9 +137,9 @@
     {
       "raw": "Peanut or vegetable oil for frying",
       "expected": {
-        "item": "Peanut or vegetable oil for frying",
+        "item": "Peanut or vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     }

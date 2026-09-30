@@ -5,15 +5,15 @@
     {
       "raw": "3 tablespoons neutral-flavored oil, such as avocado&nbsp; or &nbsp;grapeseed",
       "expected": {
-        "item": "neutral-flavored oil, such as avocado  or  grapeseed",
+        "item": "neutral-flavored oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "such as avocado  or  grapeseed",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -169,7 +169,7 @@
     {
       "raw": "1 pound large shrimp (24-30 count), peeled and deveined, halved lengthwise",
       "expected": {
-        "item": "large shrimp, peeled and deveined",
+        "item": "large shrimp",
         "measurements": [
           {
             "amount": "1",
@@ -180,7 +180,7 @@
             "unit": "g"
           }
         ],
-        "note": "24-30 count, halved lengthwise",
+        "note": "24-30 count, peeled and deveined, halved lengthwise",
         "category": "Meat & Seafood"
       }
     },
@@ -205,23 +205,23 @@
     {
       "raw": "8 corn tortillas, warmed",
       "expected": {
-        "item": "corn tortillas, warmed",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "Lime wedges, chopped fresh cilantro, sour cream, avocado&nbsp; and/or &nbsp;pico de gallo for serving",
       "expected": {
-        "item": "Lime wedges, chopped fresh cilantro, sour cream, avocado  and/or  pico de gallo for serving",
+        "item": "Lime wedges, chopped fresh cilantro, sour cream, avocado  and/or  pico de gallo",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Condiments & Sauces"
       }
     }

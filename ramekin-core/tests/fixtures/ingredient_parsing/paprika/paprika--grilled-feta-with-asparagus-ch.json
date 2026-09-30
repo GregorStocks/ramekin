@@ -62,7 +62,7 @@
     {
       "raw": "4 ounce bundle flat-leaf parsley [or 1/2 cup finely-chopped leaves]",
       "expected": {
-        "item": "bundle flat-leaf parsley [or 1/2 cup finely-chopped leaves]",
+        "item": "bundle flat-leaf parsley",
         "measurements": [
           {
             "amount": "4",
@@ -73,7 +73,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1/2 cup finely-chopped leaves",
         "section": "Chimichurri",
         "category": "Produce"
       }

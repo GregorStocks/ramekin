@@ -5,7 +5,7 @@
     {
       "raw": "1.5 lbs. tomatoes, such as Roma or hot house cluster or beefsteak",
       "expected": {
-        "item": "tomatoes, such as Roma or hot house cluster or beefsteak",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,21 +16,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Roma or hot house cluster or beefsteak",
         "category": "Produce"
       }
     },
     {
       "raw": "1 &amp;#8211; 2 teaspoons flaky sea salt, such as Maldon, or a smaller amount of kosher salt",
       "expected": {
-        "item": "flaky sea salt, such as Maldon, or a smaller amount of kosher salt",
+        "item": "flaky sea salt",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "such as Maldon, or a smaller amount of kosher salt",
         "category": "Spices & Seasonings"
       }
     },

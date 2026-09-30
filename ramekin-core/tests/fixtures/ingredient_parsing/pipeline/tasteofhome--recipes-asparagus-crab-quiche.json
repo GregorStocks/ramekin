@@ -173,14 +173,14 @@
     {
       "raw": "8 fresh asparagus spears for garnish",
       "expected": {
-        "item": "fresh asparagus spears for garnish",
+        "item": "fresh asparagus spears",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     }

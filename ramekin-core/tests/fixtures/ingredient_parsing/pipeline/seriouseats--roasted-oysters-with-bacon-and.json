@@ -181,14 +181,14 @@
     {
       "raw": "24 fresh raw oysters, about 3 inches long, well scrubbed",
       "expected": {
-        "item": "fresh raw oysters, about 3 inches long",
+        "item": "fresh raw oysters",
         "measurements": [
           {
             "amount": "24",
             "unit": null
           }
         ],
-        "note": "well scrubbed",
+        "note": "about 3 inches long, well scrubbed",
         "category": "Meat & Seafood"
       }
     }

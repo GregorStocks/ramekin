@@ -19,32 +19,37 @@
     {
       "raw": "about 16 leaves Swiss chard or Spinach, washed and dried",
       "expected": {
-        "item": "about 16 leaves Swiss chard or Spinach",
-        "measurements": [],
-        "note": "washed and dried",
+        "item": "leaves Swiss chard or Spinach",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": "about, washed and dried",
         "category": "Produce"
       }
     },
     {
       "raw": "4 6-oz fish fillets of white fish such as Bronzino or Striped Bass",
       "expected": {
-        "item": "6-oz fish fillets of white fish such as Bronzino or Striped Bass",
+        "item": "6-oz fish fillets of white fish",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "such as Bronzino or Striped Bass",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "kosher salt and freshly ground black pepper to taste",
       "expected": {
-        "item": "kosher salt and freshly ground black pepper to taste",
+        "item": "kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

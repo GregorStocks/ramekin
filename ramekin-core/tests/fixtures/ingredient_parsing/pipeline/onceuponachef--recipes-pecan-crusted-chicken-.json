@@ -137,16 +137,16 @@
     {
       "raw": "Vegetable oil, for cooking",
       "expected": {
-        "item": "Vegetable oil, for cooking",
+        "item": "Vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for cooking",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "½ cup mayonnaise, best quality such as Hellmann's",
       "expected": {
-        "item": "mayonnaise, best quality such as Hellmann's",
+        "item": "mayonnaise, best quality",
         "measurements": [
           {
             "amount": "0.5",
@@ -157,7 +157,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Hellmann's",
         "category": "Condiments & Sauces"
       }
     },

@@ -99,7 +99,7 @@
     {
       "raw": "6&nbsp;ounces cooked spinach (if using frozen, thaw&nbsp;first),&nbsp;squeezed to remove excess water (wrap in clean tea towel or several layers of paper towels and squeeze), finely chopped",
       "expected": {
-        "item": "cooked spinach, squeezed to remove excess water",
+        "item": "cooked spinach",
         "measurements": [
           {
             "amount": "6",
@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": "if using frozen, thaw first, wrap in clean tea towel or several layers of paper towels and squeeze, finely chopped",
+        "note": "if using frozen, thaw first, wrap in clean tea towel or several layers of paper towels and squeeze, squeezed to remove excess water, finely chopped",
         "category": "Produce"
       }
     },

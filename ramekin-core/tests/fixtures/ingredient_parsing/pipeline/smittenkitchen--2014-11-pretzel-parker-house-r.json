@@ -137,7 +137,7 @@
     {
       "raw": "3 tablespoons (45 grams) unsalted butter, melted, plus extra to coat bowl",
       "expected": {
-        "item": "unsalted butter, melted",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
@@ -148,7 +148,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus extra to coat bowl",
+        "note": "melted, plus extra to coat bowl",
         "category": "Dairy & Eggs"
       }
     },

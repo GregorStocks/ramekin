@@ -55,14 +55,14 @@
     {
       "raw": "2 tsp. Diamond Crystal or 1¼ tsp. Morton kosher, plus more",
       "expected": {
-        "item": "Diamond Crystal or 1 1/4 tsp. Morton kosher",
+        "item": "Diamond Crystal kosher",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "plus more",
+        "note": "or 1 1/4 tsp. Morton kosher; plus more",
         "category": "Other"
       }
     },

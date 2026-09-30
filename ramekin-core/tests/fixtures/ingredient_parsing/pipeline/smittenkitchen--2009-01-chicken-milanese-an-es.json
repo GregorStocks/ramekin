@@ -192,9 +192,9 @@
     {
       "raw": "Extra-virgin olive oil, for frying",
       "expected": {
-        "item": "Extra-virgin olive oil, for frying",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -247,14 +247,14 @@
     {
       "raw": "1 head escarole, washed, spun dry, cut into bite size pieces",
       "expected": {
-        "item": "escarole, washed, spun dry",
+        "item": "escarole",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": "cut into bite size pieces",
+        "note": "washed, spun dry, cut into bite size pieces",
         "category": "Produce"
       }
     },

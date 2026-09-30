@@ -37,7 +37,7 @@
     {
       "raw": "1/2 c. fresh mint, chopped, divided",
       "expected": {
-        "item": "fresh mint, chopped",
+        "item": "fresh mint",
         "measurements": [
           {
             "amount": "0.5",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "chopped, divided",
         "category": "Produce"
       }
     },

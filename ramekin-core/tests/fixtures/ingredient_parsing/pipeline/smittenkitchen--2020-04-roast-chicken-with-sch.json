@@ -27,9 +27,9 @@
     {
       "raw": "Splash of oil, any kind",
       "expected": {
-        "item": "Splash of oil, any kind",
+        "item": "Splash of oil",
         "measurements": [],
-        "note": null,
+        "note": "any kind",
         "category": "Oils & Vinegars"
       }
     },
@@ -86,9 +86,9 @@
     {
       "raw": "A lemon, if you wish, for serving (we never used ours)",
       "expected": {
-        "item": "A lemon, if you wish",
+        "item": "A lemon",
         "measurements": [],
-        "note": "we never used ours, for serving",
+        "note": "we never used ours, if you wish, for serving",
         "category": "Produce"
       }
     }

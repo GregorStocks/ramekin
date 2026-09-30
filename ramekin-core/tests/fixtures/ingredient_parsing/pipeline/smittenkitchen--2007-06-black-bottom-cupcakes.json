@@ -55,7 +55,7 @@
     {
       "raw": "2 ounces bittersweet or semisweet chocolate, coarsely chopped, or 1/2 cup chocolate chips",
       "expected": {
-        "item": "bittersweet or semisweet chocolate, coarsely chopped",
+        "item": "bittersweet or semisweet chocolate",
         "measurements": [
           {
             "amount": "2",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 1/2 cup chocolate chips",
+        "note": "coarsely chopped, or 1/2 cup chocolate chips",
         "category": "Baking"
       }
     },

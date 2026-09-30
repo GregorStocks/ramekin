@@ -87,14 +87,14 @@
     {
       "raw": "1 pineapple, peeled, cored and cut into rings",
       "expected": {
-        "item": "pineapple, peeled",
+        "item": "pineapple",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cored and cut into rings",
+        "note": "peeled, cored and cut into rings",
         "category": "Produce"
       }
     },
@@ -129,9 +129,9 @@
     {
       "raw": "Butter, for the rolls",
       "expected": {
-        "item": "Butter, for the rolls",
+        "item": "Butter",
         "measurements": [],
-        "note": null,
+        "note": "for the rolls",
         "category": "Dairy & Eggs"
       }
     },
@@ -166,9 +166,9 @@
     {
       "raw": "Lettuce, for topping",
       "expected": {
-        "item": "Lettuce, for topping",
+        "item": "Lettuce",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },

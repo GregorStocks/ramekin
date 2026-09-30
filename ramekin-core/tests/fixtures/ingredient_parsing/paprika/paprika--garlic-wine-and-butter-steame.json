@@ -146,14 +146,14 @@
     {
       "raw": "1 lemon, in wedges",
       "expected": {
-        "item": "lemon, in wedges",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "in wedges",
         "category": "Produce"
       }
     }

@@ -33,14 +33,14 @@
     {
       "raw": "4 strips lemon zest, each 1/4-inch wide and 2 inches long",
       "expected": {
-        "item": "strips lemon zest, each 1/4-inch wide and 2 inches long",
+        "item": "strips lemon zest",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "each 1/4-inch wide and 2 inches long",
         "category": "Produce"
       }
     },
@@ -124,9 +124,9 @@
     {
       "raw": "Fresh herbs or fresh grated Parmesan cheese for serving",
       "expected": {
-        "item": "Fresh herbs or fresh grated Parmesan cheese for serving",
+        "item": "Fresh herbs or fresh grated Parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Produce"
       }
     }

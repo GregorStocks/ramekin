@@ -96,6 +96,10 @@
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
         "note": "or substitute 1 more teaspoon vanilla extract",
@@ -105,14 +109,14 @@
     {
       "raw": "1/4 cup powdered sugar mixed with 2 tablespoons corn starch, for coating",
       "expected": {
-        "item": "powdered sugar mixed with 2 tablespoons corn starch, for coating",
+        "item": "powdered sugar mixed with 2 tablespoons corn starch",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for coating",
         "category": "Baking"
       }
     }

@@ -131,7 +131,7 @@
     {
       "raw": "2 ounces blue cheese, crumbled (about 1/4 cup), plus more for tops of shells",
       "expected": {
-        "item": "blue cheese, crumbled",
+        "item": "blue cheese",
         "measurements": [
           {
             "amount": "2",
@@ -146,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 1/4 cup, plus more for tops of shells",
+        "note": "about 1/4 cup, crumbled, plus more for tops of shells",
         "category": "Cheese"
       }
     },

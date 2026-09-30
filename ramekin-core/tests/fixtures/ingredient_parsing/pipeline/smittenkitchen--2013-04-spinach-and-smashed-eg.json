@@ -124,14 +124,14 @@
     {
       "raw": "1 tablespoon crumbled cheese, such as goat cheese or feta",
       "expected": {
-        "item": "crumbled cheese, such as goat cheese or feta",
+        "item": "crumbled cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as goat cheese or feta",
         "category": "Cheese"
       }
     }

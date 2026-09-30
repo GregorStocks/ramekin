@@ -109,14 +109,14 @@
     {
       "raw": "One 12-count pack square soft white dinner rolls, such as Kings Hawaiian Sweet Rolls",
       "expected": {
-        "item": "12-count pack square soft white dinner rolls, such as Kings Hawaiian Sweet Rolls",
+        "item": "12-count pack square soft white dinner rolls",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "such as Kings Hawaiian Sweet Rolls",
         "category": "Bakery & Bread"
       }
     },

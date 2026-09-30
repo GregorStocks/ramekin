@@ -131,9 +131,9 @@
     {
       "raw": "Salt and freshly ground black pepper or Aleppo pepper flakes to taste",
       "expected": {
-        "item": "Salt and freshly ground black pepper or Aleppo pepper flakes to taste",
+        "item": "Salt and freshly ground black pepper or Aleppo pepper flakes",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "section": "Salad",
         "category": "Spices & Seasonings"
       }
@@ -181,9 +181,18 @@
     {
       "raw": "About 1 tablespoon mint leaves, finely chopped",
       "expected": {
-        "item": "About 1 tablespoon mint leaves",
-        "measurements": [],
-        "note": "finely chopped",
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
+          }
+        ],
+        "note": "about, finely chopped",
         "section": "Salad",
         "category": "Produce"
       }
@@ -191,9 +200,14 @@
     {
       "raw": "About 1 tablespoon flat-leaf parsley or cilantro leaves, finely chopped",
       "expected": {
-        "item": "About 1 tablespoon flat-leaf parsley or cilantro leaves",
-        "measurements": [],
-        "note": "finely chopped",
+        "item": "flat-leaf parsley or cilantro leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "about, finely chopped",
         "section": "Salad",
         "category": "Produce"
       }
@@ -201,9 +215,9 @@
     {
       "raw": "Additional ground sumac or paprika, to finish",
       "expected": {
-        "item": "Additional ground sumac or paprika, to finish",
+        "item": "Additional ground sumac or paprika",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "section": "Salad",
         "category": "Spices & Seasonings"
       }
@@ -317,9 +331,9 @@
     {
       "raw": "Salt and freshly ground black pepper or Aleppo pepper flakes to taste",
       "expected": {
-        "item": "Salt and freshly ground black pepper or Aleppo pepper flakes to taste",
+        "item": "Salt and freshly ground black pepper or Aleppo pepper flakes",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "section": "Dressing",
         "category": "Spices & Seasonings"
       }

@@ -19,14 +19,14 @@
     {
       "raw": "4 strips cooked thick-cut bacon, see how we bake bacon",
       "expected": {
-        "item": "strips cooked thick-cut bacon, see how we bake bacon",
+        "item": "strips cooked thick-cut bacon",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see how we bake bacon",
         "category": "Meat & Seafood"
       }
     },
@@ -70,7 +70,7 @@
     {
       "raw": "1/4 cup mayonnaise, see our homemade mayonnaise recipe",
       "expected": {
-        "item": "mayonnaise, see our homemade mayonnaise recipe",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.25",
@@ -81,7 +81,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see our homemade mayonnaise recipe",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,9 +111,9 @@
     {
       "raw": "Salt to taste",
       "expected": {
-        "item": "Salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

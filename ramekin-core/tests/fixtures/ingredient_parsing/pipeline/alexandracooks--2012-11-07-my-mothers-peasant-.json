@@ -77,7 +77,7 @@
     {
       "raw": "2 teaspoons (8 g) instant yeast, I love SAF Instant Yeast, see notes below",
       "expected": {
-        "item": "instant yeast, I love SAF Instant Yeast, see notes below",
+        "item": "instant yeast, I love SAF Instant Yeast",
         "measurements": [
           {
             "amount": "2",
@@ -88,16 +88,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes below",
         "category": "Baking"
       }
     },
     {
       "raw": "room temperature butter, about 2 tablespoons",
       "expected": {
-        "item": "room temperature butter, about 2 tablespoons",
+        "item": "room temperature butter",
         "measurements": [],
-        "note": null,
+        "note": "about 2 tablespoons",
         "category": "Dairy & Eggs"
       }
     }

@@ -87,14 +87,14 @@
     {
       "raw": "1 to 2 cups cooked meat, such as crumbled sausage, chopped bacon, shredded chicken or carnitas",
       "expected": {
-        "item": "cooked meat, such as crumbled sausage, chopped bacon",
+        "item": "cooked meat",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "cup"
           }
         ],
-        "note": "shredded chicken or carnitas",
+        "note": "such as crumbled sausage, chopped bacon, shredded chicken or carnitas",
         "category": "Meat & Seafood"
       }
     },

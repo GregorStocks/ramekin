@@ -68,14 +68,14 @@
     {
       "raw": "Half a 14-ounce can artichoke hearts, drained, chopped",
       "expected": {
-        "item": "a 14-ounce can artichoke hearts, drained",
+        "item": "a 14-ounce can artichoke hearts",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "chopped",
+        "note": "drained, chopped",
         "category": "Canned Goods"
       }
     },

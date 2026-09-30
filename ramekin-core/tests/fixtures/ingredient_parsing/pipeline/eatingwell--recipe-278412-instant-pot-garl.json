@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds boneless center-cut pork loin, about 4 inches wide",
       "expected": {
-        "item": "boneless center-cut pork loin, about 4 inches wide",
+        "item": "boneless center-cut pork loin",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 inches wide",
         "category": "Meat & Seafood"
       }
     },

@@ -147,7 +147,7 @@
     {
       "raw": "2 ounces brandy, preferably Spanish, such as Romate",
       "expected": {
-        "item": "brandy, preferably Spanish, such as Romate",
+        "item": "brandy",
         "measurements": [
           {
             "amount": "2",
@@ -158,7 +158,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably Spanish, such as Romate",
         "category": "Beverages"
       }
     },
@@ -183,28 +183,28 @@
     {
       "raw": "2 apples, cored and diced, for garnish (I used one red and one green, for color)",
       "expected": {
-        "item": "apples, cored and diced",
+        "item": "apples",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "I used one red and one green, for color, for garnish",
+        "note": "I used one red and one green, for color, cored and diced, for garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "2 oranges, cut into wedges, for garnish",
       "expected": {
-        "item": "oranges, cut into wedges",
+        "item": "oranges",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "for garnish",
+        "note": "cut into wedges, for garnish",
         "category": "Produce"
       }
     },

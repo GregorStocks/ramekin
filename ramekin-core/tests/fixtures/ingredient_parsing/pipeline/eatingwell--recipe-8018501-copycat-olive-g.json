@@ -159,7 +159,7 @@
     {
       "raw": "1 (14 ounce) bone-in chicken breast, skin removed",
       "expected": {
-        "item": "bone-in chicken breast, skin removed",
+        "item": "bone-in chicken breast",
         "measurements": [
           {
             "amount": "1",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin removed",
         "category": "Meat & Seafood"
       }
     },

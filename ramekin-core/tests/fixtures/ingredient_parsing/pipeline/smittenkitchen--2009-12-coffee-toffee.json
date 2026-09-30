@@ -121,14 +121,14 @@
     {
       "raw": "1 cup semisweet chocolate chips, or 6 ounces semisweet chocolate, chopped",
       "expected": {
-        "item": "semisweet chocolate chips, or 6 ounces semisweet chocolate",
+        "item": "semisweet chocolate chips",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "chopped",
+        "note": "or 6 ounces semisweet chocolate, chopped",
         "category": "Baking"
       }
     },

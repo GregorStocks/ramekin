@@ -41,7 +41,7 @@
     {
       "raw": "1 cup milk, warmed",
       "expected": {
-        "item": "milk, warmed",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Dairy & Eggs"
       }
     },

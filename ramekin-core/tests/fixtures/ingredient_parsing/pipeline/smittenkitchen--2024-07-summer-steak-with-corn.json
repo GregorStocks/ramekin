@@ -201,28 +201,28 @@
     {
       "raw": "1 jalapeño, seeds removed, finely chopped",
       "expected": {
-        "item": "jalapeño, seeds removed",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "finely chopped",
+        "note": "seeds removed, finely chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup finely-chopped fresh herbs such as parsley, mint, basil, chives, or a mix thereof",
       "expected": {
-        "item": "finely-chopped fresh herbs such as parsley, mint, basil, chives, or a mix thereof",
+        "item": "finely-chopped fresh herbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as parsley, mint, basil, chives, or a mix thereof",
         "category": "Produce"
       }
     }

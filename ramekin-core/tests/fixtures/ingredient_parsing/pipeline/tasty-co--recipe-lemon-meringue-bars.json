@@ -59,7 +59,7 @@
     {
       "raw": "¾ cup unsalted butter, 1 1/2 sticks, cubed, room temperature",
       "expected": {
-        "item": "unsalted butter, 1 1/2 sticks, cubed",
+        "item": "unsalted butter, 1 1/2 sticks",
         "measurements": [
           {
             "amount": "0.75",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": "room temperature",
+        "note": "cubed, room temperature",
         "category": "Dairy & Eggs"
       }
     },

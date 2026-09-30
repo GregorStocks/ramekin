@@ -28,14 +28,18 @@
     {
       "raw": "1 tablespoon neutral cooking oil, such as safflower, canola or peanut",
       "expected": {
-        "item": "neutral cooking oil, such as safflower, canola or peanut",
+        "item": "neutral cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as safflower, canola or peanut",
         "category": "Oils & Vinegars"
       }
     },

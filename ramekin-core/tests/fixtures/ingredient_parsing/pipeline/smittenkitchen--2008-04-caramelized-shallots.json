@@ -27,7 +27,7 @@
     {
       "raw": "2 pounds (905 grams) fresh shallots, peeled, with roots intact",
       "expected": {
-        "item": "fresh shallots, peeled, with roots intact",
+        "item": "fresh shallots",
         "measurements": [
           {
             "amount": "2",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled, with roots intact",
         "category": "Produce"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "4 (6-inch) fresh pita (9 ounces, 256g total), see note",
       "expected": {
-        "item": "fresh pita, see note",
+        "item": "fresh pita",
         "measurements": [
           {
             "amount": "4",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "6-inch",
+        "note": "6-inch, see note",
         "category": "Bakery & Bread"
       }
     },

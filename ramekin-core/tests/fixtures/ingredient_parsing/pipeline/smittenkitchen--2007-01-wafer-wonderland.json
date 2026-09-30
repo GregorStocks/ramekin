@@ -59,23 +59,23 @@
     {
       "raw": "2 (9-ounce) packages thin chocolate wafer cookies [or, make your own!]",
       "expected": {
-        "item": "thin chocolate wafer cookies [or, make your own!]",
+        "item": "thin chocolate wafer cookies",
         "measurements": [
           {
             "amount": "2",
             "unit": "package"
           }
         ],
-        "note": "9-ounce",
+        "note": "9-ounce, or, make your own!",
         "category": "Snacks"
       }
     },
     {
       "raw": "Chocolate shavings, to finish",
       "expected": {
-        "item": "Chocolate shavings, to finish",
+        "item": "Chocolate shavings",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Snacks"
       }
     }

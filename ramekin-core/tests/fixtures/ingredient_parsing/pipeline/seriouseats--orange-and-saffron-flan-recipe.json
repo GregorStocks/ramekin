@@ -27,7 +27,7 @@
     {
       "raw": "1/4 cup plus 2 tablespoons (90 ml) freshly squeezed orange juice from 1 medium orange, divided, plus 1 tablespoon zest from 2 medium oranges, divided",
       "expected": {
-        "item": "freshly squeezed orange juice from 1 medium orange, divided",
+        "item": "freshly squeezed orange juice from 1 medium orange",
         "measurements": [
           {
             "amount": "1/4 cup plus 2 tablespoons",
@@ -38,21 +38,21 @@
             "unit": "ml"
           }
         ],
-        "note": "plus 1 tablespoon zest from 2 medium oranges, divided",
+        "note": "divided, plus 1 tablespoon zest from 2 medium oranges, divided",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 large pinch saffron threads, see notes",
       "expected": {
-        "item": "pinch saffron threads, see notes",
+        "item": "pinch saffron threads",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Spices & Seasonings"
       }
     },

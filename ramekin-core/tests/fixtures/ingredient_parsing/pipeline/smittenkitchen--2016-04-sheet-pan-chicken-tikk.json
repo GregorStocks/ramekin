@@ -323,7 +323,7 @@
     {
       "raw": "1 1/4 pounds (about 4 medium) Yukon Gold potatoes, peeled if desired, cut into 3/4-inch chunks",
       "expected": {
-        "item": "Yukon Gold potatoes, peeled if desired",
+        "item": "Yukon Gold potatoes, peeled",
         "measurements": [
           {
             "amount": "1.25",
@@ -338,7 +338,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 4 medium, cut into 3/4-inch chunks",
+        "note": "about 4 medium, if desired, cut into 3/4-inch chunks",
         "section": "For the Vegetables",
         "category": "Produce"
       }

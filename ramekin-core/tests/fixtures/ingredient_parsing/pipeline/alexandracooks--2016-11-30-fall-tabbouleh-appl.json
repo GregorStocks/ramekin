@@ -65,7 +65,7 @@
     {
       "raw": "1 cup walnuts, toasted and crushed, see notes above",
       "expected": {
-        "item": "walnuts, toasted and crushed, see notes above",
+        "item": "walnuts",
         "measurements": [
           {
             "amount": "1",
@@ -76,7 +76,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "toasted and crushed, see notes above",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -129,23 +129,23 @@
     {
       "raw": "1 to 2 teaspoons kosher salt or to taste",
       "expected": {
-        "item": "kosher salt or to taste",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "freshly cracked pepper to taste",
       "expected": {
-        "item": "freshly cracked pepper to taste",
+        "item": "freshly cracked pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

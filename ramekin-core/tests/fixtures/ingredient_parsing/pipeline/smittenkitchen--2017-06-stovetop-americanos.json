@@ -19,9 +19,14 @@
     {
       "raw": "About 5 tablespoons ground espresso powder",
       "expected": {
-        "item": "About 5 tablespoons ground espresso powder",
-        "measurements": [],
-        "note": null,
+        "item": "ground espresso powder",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "about",
         "category": "Beverages"
       }
     }

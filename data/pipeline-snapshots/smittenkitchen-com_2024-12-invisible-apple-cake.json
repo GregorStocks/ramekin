@@ -9,7 +9,7 @@
   "source_name": "Smittenkitchen.com",
   "ingredients": [
     {
-      "item": "apples, such as Granny Smith or Mutsu",
+      "item": "apples",
       "measurements": [
         {
           "amount": "2.25 to 0.5",
@@ -20,7 +20,7 @@
           "unit": "kg"
         }
       ],
-      "note": null,
+      "note": "such as Granny Smith or Mutsu",
       "raw": "2 1/4 to 1/2 pounds (1 to 1.15kg) apples, such as Granny Smith or Mutsu",
       "section": null
     },
@@ -128,7 +128,7 @@
       "section": null
     },
     {
-      "item": "milk, any kind",
+      "item": "milk",
       "measurements": [
         {
           "amount": "0.5",
@@ -143,12 +143,12 @@
           "unit": "g"
         }
       ],
-      "note": null,
+      "note": "any kind",
       "raw": "1/2 cup (120 ml) milk, any kind",
       "section": null
     },
     {
-      "item": "apricot preserves or apple jelly, warmed",
+      "item": "apricot preserves or apple jelly",
       "measurements": [
         {
           "amount": "2",
@@ -159,14 +159,14 @@
           "unit": "g"
         }
       ],
-      "note": null,
+      "note": "warmed",
       "raw": "2 tablespoons (40 grams) apricot preserves or apple jelly, warmed",
       "section": null
     },
     {
-      "item": "Powdered sugar, for dusting",
+      "item": "Powdered sugar",
       "measurements": [],
-      "note": "optional",
+      "note": "optional, for dusting",
       "raw": "Powdered sugar, for dusting (optional)",
       "section": null
     }

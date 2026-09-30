@@ -203,7 +203,7 @@
     {
       "raw": "1 teaspoon turbinado sugar, not paleo, totally optional!",
       "expected": {
-        "item": "turbinado sugar, not paleo, totally optional!",
+        "item": "turbinado sugar, not paleo, totally",
         "measurements": [
           {
             "amount": "1",
@@ -214,7 +214,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "optional!",
         "category": "Baking"
       }
     }

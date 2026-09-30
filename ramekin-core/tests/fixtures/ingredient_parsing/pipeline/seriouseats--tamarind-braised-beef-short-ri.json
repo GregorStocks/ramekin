@@ -136,7 +136,7 @@
     {
       "raw": "2 tablespoons (30 ml) neutral oil such as vegetable oil",
       "expected": {
-        "item": "neutral oil such as vegetable oil",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "2",
@@ -145,9 +145,13 @@
           {
             "amount": "30",
             "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as vegetable oil",
         "category": "Oils & Vinegars"
       }
     },

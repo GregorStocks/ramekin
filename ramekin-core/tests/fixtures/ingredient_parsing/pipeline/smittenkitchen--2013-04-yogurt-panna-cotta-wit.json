@@ -14,9 +14,9 @@
     {
       "raw": "Neutral oil such as canola or safflower",
       "expected": {
-        "item": "Neutral oil such as canola or safflower",
+        "item": "Neutral oil",
         "measurements": [],
-        "note": null,
+        "note": "such as canola or safflower",
         "category": "Oils & Vinegars"
       }
     },
@@ -170,7 +170,7 @@
     {
       "raw": "1/2 to 3/4 cup (55 to 85 grams) walnuts, toasted, cooled and coarsely chopped",
       "expected": {
-        "item": "walnuts, toasted",
+        "item": "walnuts",
         "measurements": [
           {
             "amount": "0.5 to 0.75",
@@ -181,7 +181,7 @@
             "unit": "g"
           }
         ],
-        "note": "cooled and coarsely chopped",
+        "note": "toasted, cooled and coarsely chopped",
         "section": "To Serve",
         "category": "Nuts & Dried Fruit"
       }

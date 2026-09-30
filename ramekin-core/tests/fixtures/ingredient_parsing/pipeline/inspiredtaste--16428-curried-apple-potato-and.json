@@ -153,7 +153,7 @@
     {
       "raw": "2 cups chicken stock, see our homemade chicken stock recipe",
       "expected": {
-        "item": "chicken stock, see our homemade chicken stock recipe",
+        "item": "chicken stock",
         "measurements": [
           {
             "amount": "2",
@@ -164,7 +164,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see our homemade chicken stock recipe",
         "category": "Canned Goods"
       }
     },
@@ -234,10 +234,10 @@
     {
       "raw": "Fresh chopped herbs such as dill or cilantro",
       "expected": {
-        "item": "Fresh chopped herbs such as dill or cilantro",
+        "item": "Fresh chopped herbs",
         "measurements": [],
-        "note": null,
-        "category": "Produce"
+        "note": "such as dill or cilantro",
+        "category": "Spices & Seasonings"
       }
     },
     {

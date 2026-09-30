@@ -119,14 +119,14 @@
     {
       "raw": "1 bundle green onion, sliced, for garnish",
       "expected": {
-        "item": "bundle green onion, sliced",
+        "item": "bundle green onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "for garnish",
+        "note": "sliced, for garnish",
         "category": "Produce"
       }
     },

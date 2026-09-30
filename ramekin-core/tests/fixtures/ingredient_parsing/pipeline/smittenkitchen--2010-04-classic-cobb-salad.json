@@ -216,14 +216,14 @@
     {
       "raw": "1/2 bunch watercress, some of the stems trimmed, chopped",
       "expected": {
-        "item": "watercress, some of the stems trimmed",
+        "item": "watercress",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "bunch"
           }
         ],
-        "note": "chopped",
+        "note": "some of the stems trimmed, chopped",
         "section": "Salad",
         "category": "Produce"
       }

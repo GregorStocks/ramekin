@@ -127,9 +127,9 @@
     {
       "raw": "maple syrup, to serve",
       "expected": {
-        "item": "maple syrup, to serve",
+        "item": "maple syrup",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Condiments & Sauces"
       }
     }

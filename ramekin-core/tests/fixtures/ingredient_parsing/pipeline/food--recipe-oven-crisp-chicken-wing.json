@@ -101,14 +101,14 @@
     {
       "raw": "10       chicken wings, tips removed",
       "expected": {
-        "item": "chicken wings, tips removed",
+        "item": "chicken wings",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "tips removed",
         "category": "Meat & Seafood"
       }
     }

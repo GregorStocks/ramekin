@@ -105,14 +105,18 @@
     {
       "raw": "2 TBSP chopped jalapeno [seeds + stem removed]",
       "expected": {
-        "item": "chopped jalapeno [seeds + stem removed]",
+        "item": "chopped jalapeno",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "seeds + stem removed",
         "category": "Produce"
       }
     },

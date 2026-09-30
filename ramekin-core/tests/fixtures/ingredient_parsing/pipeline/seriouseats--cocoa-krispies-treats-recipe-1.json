@@ -5,7 +5,7 @@
     {
       "raw": "99 g Rice Krispies (3 1/2 ounces; 3 1/2 cups), see notes",
       "expected": {
-        "item": "Rice Krispies, see notes",
+        "item": "Rice Krispies",
         "measurements": [
           {
             "amount": "99",
@@ -20,7 +20,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Snacks"
       }
     },
@@ -49,9 +49,9 @@
     {
       "raw": "Nonstick cooking spray, for greasing",
       "expected": {
-        "item": "Nonstick cooking spray, for greasing",
+        "item": "Nonstick cooking spray",
         "measurements": [],
-        "note": null,
+        "note": "for greasing",
         "category": "Oils & Vinegars"
       }
     },
@@ -98,14 +98,14 @@
     {
       "raw": "One 16-ounce bag marshmallows, any size",
       "expected": {
-        "item": "marshmallows, any size",
+        "item": "marshmallows",
         "measurements": [
           {
             "amount": "1",
             "unit": "16-ounce bag"
           }
         ],
-        "note": null,
+        "note": "any size",
         "category": "Baking"
       }
     },
@@ -156,9 +156,9 @@
     {
       "raw": "Flaky salt, such as Maldon, to garnish, optional",
       "expected": {
-        "item": "Flaky salt, such as Maldon, to garnish",
+        "item": "Flaky salt",
         "measurements": [],
-        "note": "optional",
+        "note": "such as Maldon, to garnish, optional",
         "category": "Spices & Seasonings"
       }
     }

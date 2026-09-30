@@ -47,7 +47,7 @@
     {
       "raw": "1 (3 pound) chuck roast, fat trimmed, cut into 3-inch pieces",
       "expected": {
-        "item": "chuck roast, fat trimmed",
+        "item": "chuck roast",
         "measurements": [
           {
             "amount": "1",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 3-inch pieces",
+        "note": "fat trimmed, cut into 3-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -301,9 +301,9 @@
     {
       "raw": "Corn or flour tortillas, warmed",
       "expected": {
-        "item": "Corn or flour tortillas, warmed",
+        "item": "Corn or flour tortillas",
         "measurements": [],
-        "note": null,
+        "note": "warmed",
         "category": "Bakery & Bread"
       }
     }

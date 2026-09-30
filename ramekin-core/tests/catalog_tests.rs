@@ -77,7 +77,7 @@ fn curated_aliases_have_densities() {
         "white vinegar",
         "white wine vinegar",
         "tamari",
-        "Japanese soy sauce (koikuchi shoyu)",
+        "Japanese soy sauce",
         "all purpose flour",
         "ketchup",
         "fresh lime juice",
@@ -513,4 +513,43 @@ fn fresh_herbs_are_trace_foods() {
             other => panic!("{item:?} did not resolve: {other:?}"),
         }
     }
+}
+
+#[test]
+fn curated_names_are_what_the_parser_produces() {
+    // Aliases keyed on text the parser splits off ("about 7 cloves garlic",
+    // "chickpeas, rinsed") never match a newly parsed line. `make
+    // catalog-clean-aliases` removes or re-keys them; only conflicts, which
+    // need a person to decide, may remain.
+    let (_, changes) = ramekin_core::catalog::clean_curated(ramekin_core::catalog::CURATED_JSON);
+    let stale: Vec<_> = changes
+        .iter()
+        .filter(|change| {
+            !matches!(
+                change,
+                ramekin_core::catalog::CuratedChange::Conflict { .. }
+            )
+        })
+        .collect();
+    assert!(
+        stale.is_empty(),
+        "run make catalog-clean-aliases: {stale:#?}"
+    );
+}
+
+#[test]
+fn parsed_name_never_cuts_into_a_name() {
+    // A leading number that is part of the name is never taken as an amount.
+    assert_eq!(
+        ramekin_core::catalog::parsed_name("85% lean ground beef"),
+        "85% lean ground beef"
+    );
+    assert_eq!(
+        ramekin_core::catalog::parsed_name("5- to 6-inch cubanelle chiles"),
+        "5- to 6-inch cubanelle chiles"
+    );
+    assert_eq!(
+        ramekin_core::catalog::parsed_name("about 7 cloves garlic, minced"),
+        "garlic"
+    );
 }

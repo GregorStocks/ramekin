@@ -86,14 +86,14 @@
     {
       "raw": "1 pinch ground black pepper to taste",
       "expected": {
-        "item": "ground black pepper to taste",
+        "item": "ground black pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

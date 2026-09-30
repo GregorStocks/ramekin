@@ -14,9 +14,9 @@
     {
       "raw": "Cornmeal, for dusting",
       "expected": {
-        "item": "Cornmeal, for dusting",
+        "item": "Cornmeal",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     },
@@ -118,7 +118,7 @@
     {
       "raw": "8 to 9 ounces fresh spinach, larger stems removed",
       "expected": {
-        "item": "fresh spinach, larger stems removed",
+        "item": "fresh spinach",
         "measurements": [
           {
             "amount": "8 to 9",
@@ -129,7 +129,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "larger stems removed",
         "category": "Produce"
       }
     }

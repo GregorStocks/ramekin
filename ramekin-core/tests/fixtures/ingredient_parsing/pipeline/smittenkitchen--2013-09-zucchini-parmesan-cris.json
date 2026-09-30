@@ -68,14 +68,14 @@
     {
       "raw": "1/2 cup plain, dry breadcrumbs, such as panko",
       "expected": {
-        "item": "plain, dry breadcrumbs, such as panko",
+        "item": "plain, dry breadcrumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as panko",
         "category": "Bakery & Bread"
       }
     },

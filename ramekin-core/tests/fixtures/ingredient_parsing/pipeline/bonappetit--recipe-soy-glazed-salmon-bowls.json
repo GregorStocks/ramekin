@@ -5,14 +5,14 @@
     {
       "raw": "1 1\" piece ginger, peeled, finely grated",
       "expected": {
-        "item": "1\" piece ginger, peeled",
+        "item": "1\" piece ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "finely grated",
+        "note": "peeled, finely grated",
         "category": "Produce"
       }
     },
@@ -69,7 +69,7 @@
     {
       "raw": "1 tsp. Diamond Crystal or ½ tsp. Morton kosher salt, plus more",
       "expected": {
-        "item": "Diamond Crystal or 1/2 tsp. Morton kosher salt",
+        "item": "Diamond Crystal kosher salt",
         "measurements": [
           {
             "amount": "1",
@@ -80,14 +80,14 @@
             "unit": "g"
           }
         ],
-        "note": "plus more",
+        "note": "or 1/2 tsp. Morton kosher salt; plus more",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "12 oz. green beans, trimmed, halved crosswise",
       "expected": {
-        "item": "green beans, trimmed",
+        "item": "green beans",
         "measurements": [
           {
             "amount": "12",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved crosswise",
+        "note": "trimmed, halved crosswise",
         "category": "Produce"
       }
     },

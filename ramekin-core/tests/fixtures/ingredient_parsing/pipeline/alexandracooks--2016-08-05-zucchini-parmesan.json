@@ -5,7 +5,7 @@
     {
       "raw": "2 lbs. zucchini, ends trimmed, sliced into rounds 1/4-inch thick",
       "expected": {
-        "item": "zucchini, ends trimmed",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "2",
@@ -16,16 +16,16 @@
             "unit": "g"
           }
         ],
-        "note": "sliced into rounds 1/4-inch thick",
+        "note": "ends trimmed, sliced into rounds 1/4-inch thick",
         "category": "Produce"
       }
     },
     {
       "raw": "kosher salt and pepper to taste",
       "expected": {
-        "item": "kosher salt and pepper to taste",
+        "item": "kosher salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

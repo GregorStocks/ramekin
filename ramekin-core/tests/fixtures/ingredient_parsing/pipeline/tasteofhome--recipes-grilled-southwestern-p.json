@@ -51,14 +51,14 @@
     {
       "raw": "2 medium ears sweet corn, husks removed",
       "expected": {
-        "item": "ears sweet corn, husks removed",
+        "item": "ears sweet corn",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "husks removed",
         "category": "Produce"
       }
     },

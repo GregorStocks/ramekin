@@ -81,7 +81,7 @@
     {
       "raw": "6 tablespoons (90ml) olive oil, divided, plus more as needed",
       "expected": {
-        "item": "olive oil, divided",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "6",
@@ -96,7 +96,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more as needed",
+        "note": "divided, plus more as needed",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,18 +157,18 @@
     {
       "raw": "Fresh rosemary, to finish",
       "expected": {
-        "item": "Fresh rosemary, to finish",
+        "item": "Fresh rosemary",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Produce"
       }
     },
     {
       "raw": "Flaky sea salt, to finish",
       "expected": {
-        "item": "Flaky sea salt, to finish",
+        "item": "Flaky sea salt",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Spices & Seasonings"
       }
     }

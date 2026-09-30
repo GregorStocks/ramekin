@@ -141,9 +141,9 @@
     {
       "raw": "Neutral oil, such as grapeseed, for frying",
       "expected": {
-        "item": "Neutral oil, such as grapeseed, for frying",
+        "item": "Neutral oil",
         "measurements": [],
-        "note": null,
+        "note": "such as grapeseed, for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -268,7 +268,7 @@
     {
       "raw": "1 pound&nbsp;skinless white fish fillets, such as bass or cod, cut into 12 strips",
       "expected": {
-        "item": "skinless white fish fillets, such as bass or cod",
+        "item": "skinless white fish fillets",
         "measurements": [
           {
             "amount": "1",
@@ -279,21 +279,21 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 12 strips",
+        "note": "such as bass or cod, cut into 12 strips",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "12 (5- to 6-inch) corn tortillas, warmed",
       "expected": {
-        "item": "corn tortillas, warmed",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": "5- to 6-inch",
+        "note": "5- to 6-inch, warmed",
         "category": "Bakery & Bread"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 pound dried pinto beans, see notes above, or three 15-oz cans pinto beans",
       "expected": {
-        "item": "dried pinto beans, see notes above",
+        "item": "dried pinto beans",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "or three 15-oz cans pinto beans",
+        "note": "see notes above, or three 15-oz cans pinto beans",
         "category": "Canned Goods"
       }
     },
@@ -55,9 +55,9 @@
     {
       "raw": "kosher salt to taste",
       "expected": {
-        "item": "kosher salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -128,14 +128,14 @@
     {
       "raw": "1 tablespoon chipotle chili powder + 2 tablespoons traditional chili powder, see notes above",
       "expected": {
-        "item": "chipotle chili powder + 2 tablespoons traditional chili powder, see notes above",
+        "item": "chipotle chili powder + 2 tablespoons traditional chili powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Spices & Seasonings"
       }
     },
@@ -160,14 +160,14 @@
     {
       "raw": "1 cup bulgur or quinoa, see notes above",
       "expected": {
-        "item": "bulgur or quinoa, see notes above",
+        "item": "bulgur or quinoa",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Pasta & Rice"
       }
     },

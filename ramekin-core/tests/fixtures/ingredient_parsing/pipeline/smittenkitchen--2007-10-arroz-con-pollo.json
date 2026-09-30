@@ -229,7 +229,7 @@
     {
       "raw": "1 1/2 teaspoons paprika, preferably the hot stuff, plus more to taste",
       "expected": {
-        "item": "paprika, preferably the hot stuff",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "1.5",
@@ -240,7 +240,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to taste",
+        "note": "preferably the hot stuff, plus more to taste",
         "category": "Spices & Seasonings"
       }
     },

@@ -37,14 +37,14 @@
     {
       "raw": "3 tablespoons vegan mayonnaise or Greek yogurt, see notes above",
       "expected": {
-        "item": "vegan mayonnaise or Greek yogurt, see notes above",
+        "item": "vegan mayonnaise or Greek yogurt",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Dairy & Eggs"
       }
     },
@@ -79,14 +79,14 @@
     {
       "raw": "¼ cup diced red onion or less, see notes above",
       "expected": {
-        "item": "diced red onion or less, see notes above",
+        "item": "diced red onion or less",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Produce"
       }
     },
@@ -180,9 +180,9 @@
     {
       "raw": "fresh lemon, optional, to taste",
       "expected": {
-        "item": "fresh lemon, optional",
+        "item": "fresh lemon",
         "measurements": [],
-        "note": "to taste",
+        "note": "optional, to taste",
         "category": "Produce"
       }
     },

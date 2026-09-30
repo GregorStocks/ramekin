@@ -5,9 +5,9 @@
     {
       "raw": "a large hunk of bread, to yield 1.5 to 2 cups lightly packed fresh crumbs, see notes",
       "expected": {
-        "item": "a large hunk of bread, to yield 1.5 to 2 cups lightly packed fresh crumbs, see notes",
+        "item": "a large hunk of bread, to yield 1.5 to 2 cups lightly packed fresh crumbs",
         "measurements": [],
-        "note": null,
+        "note": "see notes",
         "category": "Bakery & Bread"
       }
     },
@@ -114,9 +114,9 @@
     {
       "raw": "Tuscan kale, however many heads you need, stems removed, leaves finely chopped",
       "expected": {
-        "item": "Tuscan kale, however many heads you need, stems removed",
+        "item": "Tuscan kale, however many heads you need",
         "measurements": [],
-        "note": "leaves finely chopped",
+        "note": "stems removed, leaves finely chopped",
         "category": "Produce"
       }
     },
@@ -141,9 +141,9 @@
     {
       "raw": "shallot vinaigrette to taste",
       "expected": {
-        "item": "shallot vinaigrette to taste",
+        "item": "shallot vinaigrette",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Produce"
       }
     },

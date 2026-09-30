@@ -19,14 +19,14 @@
     {
       "raw": "1 small jar roasted red peppers, or about 1 cup, drained",
       "expected": {
-        "item": "jar roasted red peppers, or about 1 cup",
+        "item": "jar roasted red peppers",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "drained",
+        "note": "or about 1 cup, drained",
         "category": "Spices & Seasonings"
       }
     },
@@ -74,9 +74,9 @@
     {
       "raw": "Salt and pepper to taste",
       "expected": {
-        "item": "Salt and pepper to taste",
+        "item": "Salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

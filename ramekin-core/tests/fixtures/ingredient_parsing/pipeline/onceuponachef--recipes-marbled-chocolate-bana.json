@@ -113,7 +113,7 @@
     {
       "raw": "1 cup mashed very ripe bananas, from 2-3 bananas",
       "expected": {
-        "item": "mashed very ripe bananas, from 2-3 bananas",
+        "item": "mashed very ripe bananas",
         "measurements": [
           {
             "amount": "1",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 2-3 bananas",
         "category": "Produce"
       }
     },
@@ -185,7 +185,7 @@
     {
       "raw": "2 teaspoons natural unsweetened cocoa powder, such as Hershey's",
       "expected": {
-        "item": "natural unsweetened cocoa powder, such as Hershey's",
+        "item": "natural unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "2",
@@ -196,7 +196,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Hershey's",
         "category": "Baking"
       }
     }

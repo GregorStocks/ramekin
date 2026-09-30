@@ -115,14 +115,14 @@
     {
       "raw": "2 rounds pita, see notes above",
       "expected": {
-        "item": "rounds pita, see notes above",
+        "item": "rounds pita",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Bakery & Bread"
       }
     },
@@ -175,9 +175,9 @@
     {
       "raw": "kosher salt to taste",
       "expected": {
-        "item": "kosher salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -212,7 +212,7 @@
     {
       "raw": "1/2 lb. snap or snow peas, strings removed, sliced thinly on the bias",
       "expected": {
-        "item": "snap or snow peas, strings removed",
+        "item": "snap or snow peas",
         "measurements": [
           {
             "amount": "0.5",
@@ -223,21 +223,21 @@
             "unit": "g"
           }
         ],
-        "note": "sliced thinly on the bias",
+        "note": "strings removed, sliced thinly on the bias",
         "category": "Produce"
       }
     },
     {
       "raw": "4 radishes, optional, thinly sliced",
       "expected": {
-        "item": "radishes, optional",
+        "item": "radishes",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "thinly sliced",
+        "note": "optional, thinly sliced",
         "category": "Produce"
       }
     },

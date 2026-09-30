@@ -101,18 +101,18 @@
     {
       "raw": "a little extra flour for dusting",
       "expected": {
-        "item": "a little extra flour for dusting",
+        "item": "a little extra flour",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     },
     {
       "raw": "strawberry jam and clotted cream, to serve",
       "expected": {
-        "item": "strawberry jam and clotted cream, to serve",
+        "item": "strawberry jam and clotted cream",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Dairy & Eggs"
       }
     }

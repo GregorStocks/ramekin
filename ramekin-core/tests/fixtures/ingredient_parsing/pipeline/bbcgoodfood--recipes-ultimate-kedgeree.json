@@ -125,9 +125,14 @@
     {
       "raw": "about 14 fresh or freeze-dried  curry leaves",
       "expected": {
-        "item": "about 14 fresh or freeze-dried  curry leaves",
-        "measurements": [],
-        "note": null,
+        "item": "fresh or freeze-dried  curry leaves",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": "about",
         "category": "Spices & Seasonings"
       }
     },
@@ -222,14 +227,14 @@
     {
       "raw": "handful of coriander leaves and some lime wedges, to serve",
       "expected": {
-        "item": "coriander leaves and some lime wedges, to serve",
+        "item": "coriander leaves and some lime wedges",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": null,
+        "note": "to serve",
         "category": "Spices & Seasonings"
       }
     }

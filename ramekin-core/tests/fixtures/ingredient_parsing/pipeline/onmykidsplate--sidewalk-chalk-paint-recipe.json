@@ -5,8 +5,17 @@
     {
       "raw": "▢ ¾ cup cornstarch",
       "expected": {
-        "item": "▢ 3/4 cup cornstarch",
-        "measurements": [],
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "96",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Baking"
       }
@@ -14,8 +23,17 @@
     {
       "raw": "▢ ¾ cup water",
       "expected": {
-        "item": "▢ 3/4 cup water",
-        "measurements": [],
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Beverages"
       }
@@ -23,7 +41,7 @@
     {
       "raw": "▢ food coloring",
       "expected": {
-        "item": "▢ food coloring",
+        "item": "food coloring",
         "measurements": [],
         "note": null,
         "category": "Baking"

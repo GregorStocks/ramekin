@@ -37,6 +37,10 @@
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -46,9 +50,9 @@
     {
       "raw": "Neutral, high-heat oil for frying",
       "expected": {
-        "item": "Neutral, high-heat oil for frying",
+        "item": "Neutral, high-heat oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     }

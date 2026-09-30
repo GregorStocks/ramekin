@@ -162,9 +162,9 @@
     {
       "raw": "Heavy cream, cold, for drizzling",
       "expected": {
-        "item": "Heavy cream, cold, for drizzling",
+        "item": "Heavy cream",
         "measurements": [],
-        "note": null,
+        "note": "cold, for drizzling",
         "category": "Dairy & Eggs"
       }
     }

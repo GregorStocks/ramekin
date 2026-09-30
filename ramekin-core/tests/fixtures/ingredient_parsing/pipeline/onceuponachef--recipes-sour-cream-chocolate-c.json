@@ -167,7 +167,7 @@
     {
       "raw": "1 (12 oz) bag semi-sweet chocolate chips, best quality such as Ghirardelli",
       "expected": {
-        "item": "semi-sweet chocolate chips, best quality such as Ghirardelli",
+        "item": "semi-sweet chocolate chips, best quality",
         "measurements": [
           {
             "amount": "1",
@@ -182,16 +182,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Ghirardelli",
         "category": "Baking"
       }
     },
     {
       "raw": "Cinnamon and Confectioners’ sugar, for dusting (optional)",
       "expected": {
-        "item": "Cinnamon and Confectioners’ sugar, for dusting",
+        "item": "Cinnamon and Confectioners’ sugar",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for dusting",
         "category": "Baking"
       }
     }

@@ -94,7 +94,7 @@
     {
       "raw": "4 ounces (113g) Spanish dry-cured ham, such as jamón serrano, minced",
       "expected": {
-        "item": "Spanish dry-cured ham, such as jamón serrano",
+        "item": "Spanish dry-cured ham",
         "measurements": [
           {
             "amount": "4",
@@ -105,14 +105,14 @@
             "unit": "g"
           }
         ],
-        "note": "minced",
-        "category": "Produce"
+        "note": "such as jamón serrano, minced",
+        "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 cup all-purpose flour, for dredging",
       "expected": {
-        "item": "all-purpose flour, for dredging",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
@@ -123,7 +123,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for dredging",
         "category": "Baking"
       }
     },
@@ -167,23 +167,23 @@
     {
       "raw": "1 1/2 cups panko breadcrumbs, for breading (see notes)",
       "expected": {
-        "item": "panko breadcrumbs, for breading",
+        "item": "panko breadcrumbs",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "see notes",
+        "note": "see notes, for breading",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "Vegetable of other neutral oil, for frying",
       "expected": {
-        "item": "Vegetable of other neutral oil, for frying",
+        "item": "Vegetable of other neutral oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     }

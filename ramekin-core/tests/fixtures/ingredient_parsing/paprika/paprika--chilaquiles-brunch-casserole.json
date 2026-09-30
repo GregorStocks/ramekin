@@ -92,36 +92,36 @@
     {
       "raw": "Thinly sliced scallions, to serve",
       "expected": {
-        "item": "Thinly sliced scallions, to serve",
+        "item": "Thinly sliced scallions",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Produce"
       }
     },
     {
       "raw": "Sour cream, to serve",
       "expected": {
-        "item": "Sour cream, to serve",
+        "item": "Sour cream",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Diced avocado,  to serve",
       "expected": {
-        "item": "Diced avocado,  to serve",
+        "item": "Diced avocado",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Produce"
       }
     },
     {
       "raw": "Hot sauce, to serve",
       "expected": {
-        "item": "Hot sauce, to serve",
+        "item": "Hot sauce",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Condiments & Sauces"
       }
     }

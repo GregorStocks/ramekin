@@ -19,37 +19,37 @@
     {
       "raw": "2 slices high-quality sandwich bread, such as shokupanExtra-virgin olive oil, for drizzling",
       "expected": {
-        "item": "high-quality sandwich bread, such as shokupanExtra-virgin olive oil, for drizzling",
+        "item": "high-quality sandwich bread",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "such as shokupanExtra-virgin olive oil, for drizzling",
+        "category": "Bakery & Bread"
       }
     },
     {
       "raw": "2 slices high-quality sandwich bread, such as shokupan",
       "expected": {
-        "item": "high-quality sandwich bread, such as shokupan",
+        "item": "high-quality sandwich bread",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "such as shokupan",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "Extra-virgin olive oil, for drizzling",
       "expected": {
-        "item": "Extra-virgin olive oil, for drizzling",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     },

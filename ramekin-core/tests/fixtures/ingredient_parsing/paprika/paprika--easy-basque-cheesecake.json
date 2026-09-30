@@ -59,7 +59,7 @@
     {
       "raw": "1 pound cream cheese (2 8-ounce/227-gram packages) [see Note at end]",
       "expected": {
-        "item": "cream cheese [see Note at end]",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "1",
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": "2 8-ounce/227-gram packages",
+        "note": "2 8-ounce/227-gram packages, see Note at end",
         "category": "Cheese"
       }
     },

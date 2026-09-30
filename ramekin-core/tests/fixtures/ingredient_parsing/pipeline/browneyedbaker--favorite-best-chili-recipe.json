@@ -268,7 +268,7 @@
     {
       "raw": "12 ounce bottle mild lager, such as Budweiser",
       "expected": {
-        "item": "bottle mild lager, such as Budweiser",
+        "item": "bottle mild lager",
         "measurements": [
           {
             "amount": "12",
@@ -279,7 +279,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Budweiser",
         "category": "Other"
       }
     }

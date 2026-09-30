@@ -194,7 +194,7 @@
     {
       "raw": "5 ounces (140 grams) kale leaves, any variety, cut into thin ribbons [see Note]",
       "expected": {
-        "item": "kale leaves, any variety",
+        "item": "kale leaves",
         "measurements": [
           {
             "amount": "5",
@@ -205,7 +205,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into thin ribbons [see Note]",
+        "note": "any variety, cut into thin ribbons [see Note]",
         "category": "Produce"
       }
     },

@@ -150,9 +150,9 @@
     {
       "raw": "Parmigiano-Reggiano or Grana Padano cheese for serving, optional",
       "expected": {
-        "item": "Parmigiano-Reggiano or Grana Padano cheese for serving",
+        "item": "Parmigiano-Reggiano or Grana Padano cheese",
         "measurements": [],
-        "note": "optional",
+        "note": "for serving, optional",
         "category": "Cheese"
       }
     },
@@ -227,9 +227,9 @@
     {
       "raw": "Salt and pepper to taste",
       "expected": {
-        "item": "Salt and pepper to taste",
+        "item": "Salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

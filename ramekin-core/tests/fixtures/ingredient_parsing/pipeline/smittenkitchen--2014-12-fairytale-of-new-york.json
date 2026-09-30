@@ -111,28 +111,28 @@
     {
       "raw": "1/2 apple, peeled, cored, and diced",
       "expected": {
-        "item": "apple, peeled, cored",
+        "item": "apple, peeled, cored, and diced",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "and diced",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 pear, peeled, cored, and diced",
       "expected": {
-        "item": "pear, peeled, cored",
+        "item": "pear, peeled, cored, and diced",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "and diced",
+        "note": null,
         "category": "Produce"
       }
     },

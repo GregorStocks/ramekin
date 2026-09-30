@@ -113,7 +113,7 @@
     {
       "raw": "8 ounces (225g) plain, full-fat cream cheese, softened, preferably Philadelphia brand",
       "expected": {
-        "item": "plain, full-fat cream cheese, softened",
+        "item": "plain, full-fat cream cheese",
         "measurements": [
           {
             "amount": "8",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": "preferably Philadelphia brand",
+        "note": "softened, preferably Philadelphia brand",
         "category": "Cheese"
       }
     },
@@ -197,9 +197,9 @@
     {
       "raw": "Chopped parsley for garnish, if desired",
       "expected": {
-        "item": "Chopped parsley for garnish",
+        "item": "Chopped parsley",
         "measurements": [],
-        "note": "if desired",
+        "note": "for garnish, if desired",
         "category": "Spices & Seasonings"
       }
     },

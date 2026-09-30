@@ -23,7 +23,7 @@
     {
       "raw": "1/2 cup (120 ml) whole milk, warmed (but not over 116 degrees)",
       "expected": {
-        "item": "whole milk, warmed",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "0.5",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "but not over 116 degrees",
+        "note": "but not over 116 degrees, warmed",
         "category": "Dairy & Eggs"
       }
     },
@@ -235,9 +235,9 @@
     {
       "raw": "Oil for coating rising bowl",
       "expected": {
-        "item": "Oil for coating rising bowl",
+        "item": "Oil",
         "measurements": [],
-        "note": null,
+        "note": "for coating rising bowl",
         "category": "Oils & Vinegars"
       }
     },

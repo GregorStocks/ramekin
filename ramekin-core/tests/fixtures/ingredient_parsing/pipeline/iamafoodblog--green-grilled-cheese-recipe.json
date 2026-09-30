@@ -14,14 +14,14 @@
     {
       "raw": "1/2 leek, cleaned, trimmed and sliced",
       "expected": {
-        "item": "leek, cleaned",
+        "item": "leek",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "trimmed and sliced",
+        "note": "cleaned, trimmed and sliced",
         "category": "Produce"
       }
     },

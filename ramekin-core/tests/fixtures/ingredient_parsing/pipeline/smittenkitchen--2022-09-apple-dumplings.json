@@ -81,23 +81,32 @@
     {
       "raw": "About 1/2 cup cold water",
       "expected": {
-        "item": "About 1/2 cup cold water",
-        "measurements": [],
-        "note": null,
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": "about",
         "category": "Beverages"
       }
     },
     {
       "raw": "3 large apples (about 3″ across), any kind you like to bake with",
       "expected": {
-        "item": "apples, any kind you like to bake with",
+        "item": "apples",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "about 3″ across",
+        "note": "about 3″ across, any kind you like to bake with",
         "category": "Produce"
       }
     },
@@ -177,7 +186,7 @@
     {
       "raw": "1 tablespoon (15 grams) butter, cut into 6 pieces, kept cold",
       "expected": {
-        "item": "butter, cut into 6 pieces",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
@@ -188,21 +197,21 @@
             "unit": "g"
           }
         ],
-        "note": "kept cold",
+        "note": "cut into 6 pieces, kept cold",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 large egg, for glaze",
       "expected": {
-        "item": "egg, for glaze",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "for glaze",
         "category": "Dairy & Eggs"
       }
     },

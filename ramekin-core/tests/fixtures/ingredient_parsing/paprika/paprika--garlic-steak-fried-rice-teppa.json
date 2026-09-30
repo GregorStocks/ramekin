@@ -183,9 +183,9 @@
     {
       "raw": "dried parsley to taste",
       "expected": {
-        "item": "dried parsley to taste",
+        "item": "dried parsley",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -210,9 +210,9 @@
     {
       "raw": "finely chopped green onions to taste",
       "expected": {
-        "item": "finely chopped green onions to taste",
+        "item": "finely chopped green onions",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Produce"
       }
     }

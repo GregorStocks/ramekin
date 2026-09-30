@@ -150,7 +150,7 @@
     {
       "raw": "2 tablespoons (20 grams) minced scallions or fresh chives for garnish",
       "expected": {
-        "item": "minced scallions or fresh chives for garnish",
+        "item": "minced scallions or fresh chives",
         "measurements": [
           {
             "amount": "2",
@@ -161,7 +161,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     },

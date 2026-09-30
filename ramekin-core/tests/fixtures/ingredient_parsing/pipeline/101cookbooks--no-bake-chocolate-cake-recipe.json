@@ -96,9 +96,9 @@
     {
       "raw": "cocoa powder, to serve",
       "expected": {
-        "item": "cocoa powder, to serve",
+        "item": "cocoa powder",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Baking"
       }
     },

@@ -87,14 +87,14 @@
     {
       "raw": "2 ribs celery, chopped, optional",
       "expected": {
-        "item": "ribs celery, chopped",
+        "item": "ribs celery",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "chopped, optional",
         "category": "Produce"
       }
     },

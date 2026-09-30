@@ -23,9 +23,9 @@
     {
       "raw": "Nonstick cooking spray, for greasing",
       "expected": {
-        "item": "Nonstick cooking spray, for greasing",
+        "item": "Nonstick cooking spray",
         "measurements": [],
-        "note": null,
+        "note": "for greasing",
         "category": "Oils & Vinegars"
       }
     },
@@ -68,23 +68,23 @@
     {
       "raw": "One 16-ounce bag marshmallows, any size",
       "expected": {
-        "item": "marshmallows, any size",
+        "item": "marshmallows",
         "measurements": [
           {
             "amount": "1",
             "unit": "16-ounce bag"
           }
         ],
-        "note": null,
+        "note": "any size",
         "category": "Baking"
       }
     },
     {
       "raw": "Flaky salt, such as Maldon, to garnish",
       "expected": {
-        "item": "Flaky salt, such as Maldon, to garnish",
+        "item": "Flaky salt",
         "measurements": [],
-        "note": null,
+        "note": "such as Maldon, to garnish",
         "category": "Spices & Seasonings"
       }
     }

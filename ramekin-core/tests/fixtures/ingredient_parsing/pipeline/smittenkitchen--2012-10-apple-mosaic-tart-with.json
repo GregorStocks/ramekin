@@ -72,7 +72,7 @@
     {
       "raw": "2 tablespoons unsalted butter, cold, cut into small bits",
       "expected": {
-        "item": "unsalted butter, cold",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
@@ -83,7 +83,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into small bits",
+        "note": "cold, cut into small bits",
         "category": "Dairy & Eggs"
       }
     },

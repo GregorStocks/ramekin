@@ -68,7 +68,7 @@
     {
       "raw": "1 pound (455 grams) thin spaghetti such as angel hair or capellini",
       "expected": {
-        "item": "thin spaghetti such as angel hair or capellini",
+        "item": "thin spaghetti",
         "measurements": [
           {
             "amount": "1",
@@ -79,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as angel hair or capellini",
         "category": "Pasta & Rice"
       }
     },
@@ -95,9 +95,9 @@
     {
       "raw": "Pecorino romano, to finish",
       "expected": {
-        "item": "Pecorino romano, to finish",
+        "item": "Pecorino romano",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Cheese"
       }
     }

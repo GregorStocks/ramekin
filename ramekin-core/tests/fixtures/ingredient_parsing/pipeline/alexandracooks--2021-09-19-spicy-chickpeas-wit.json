@@ -19,14 +19,14 @@
     {
       "raw": "1/2 small yellow or white onion, finely chopped, about 1/2 cup",
       "expected": {
-        "item": "yellow or white onion, finely chopped, about 1/2 cup",
+        "item": "yellow or white onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "finely chopped, about 1/2 cup",
         "category": "Produce"
       }
     },
@@ -61,18 +61,18 @@
     {
       "raw": "crushed red pepper flakes to taste (I use 1/2 teaspoon or less)",
       "expected": {
-        "item": "crushed red pepper flakes to taste",
+        "item": "crushed red pepper flakes",
         "measurements": [],
-        "note": "I use 1/2 teaspoon or less",
+        "note": "I use 1/2 teaspoon or less, to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "kosher salt and pepper to taste",
       "expected": {
-        "item": "kosher salt and pepper to taste",
+        "item": "kosher salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -179,7 +179,7 @@
     {
       "raw": "1 teaspoon miso, optional, see notes above",
       "expected": {
-        "item": "miso, optional, see notes above",
+        "item": "miso",
         "measurements": [
           {
             "amount": "1",
@@ -190,7 +190,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "optional, see notes above",
         "category": "Condiments & Sauces"
       }
     },
@@ -215,9 +215,9 @@
     {
       "raw": "coconut rice, see notes above",
       "expected": {
-        "item": "coconut rice, see notes above",
+        "item": "coconut rice",
         "measurements": [],
-        "note": null,
+        "note": "see notes above",
         "category": "Produce"
       }
     },

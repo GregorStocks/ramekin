@@ -111,9 +111,9 @@
     {
       "raw": "salt and ground black pepper to taste",
       "expected": {
-        "item": "salt and ground black pepper to taste",
+        "item": "salt and ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -129,9 +129,9 @@
     {
       "raw": "fresh lime juice to taste",
       "expected": {
-        "item": "fresh lime juice to taste",
+        "item": "fresh lime juice",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Produce"
       }
     },
@@ -161,7 +161,7 @@
     {
       "raw": "1.5 cups cooked black beans, see notes above",
       "expected": {
-        "item": "cooked black beans, see notes above",
+        "item": "cooked black beans",
         "measurements": [
           {
             "amount": "1.5",
@@ -172,7 +172,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Canned Goods"
       }
     },
@@ -188,27 +188,27 @@
     {
       "raw": "grated Cheddar or Monterey Jack to taste",
       "expected": {
-        "item": "grated Cheddar or Monterey Jack to taste",
+        "item": "grated Cheddar or Monterey Jack",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Cheese"
       }
     },
     {
       "raw": "sour cream to taste",
       "expected": {
-        "item": "sour cream to taste",
+        "item": "sour cream",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "fresh lime to taste",
       "expected": {
-        "item": "fresh lime to taste",
+        "item": "fresh lime",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Produce"
       }
     }

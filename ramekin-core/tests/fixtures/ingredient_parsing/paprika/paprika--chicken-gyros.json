@@ -235,14 +235,14 @@
     {
       "raw": "4 large pitas (intending 1/2 per person) or more as needed",
       "expected": {
-        "item": "pitas or more as needed",
+        "item": "pitas",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "intending 1/2 per person",
+        "note": "intending 1/2 per person; or more as needed",
         "section": "Serving",
         "category": "Bakery & Bread"
       }

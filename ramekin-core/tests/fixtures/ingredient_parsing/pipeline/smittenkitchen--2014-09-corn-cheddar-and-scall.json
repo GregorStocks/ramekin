@@ -149,14 +149,18 @@
     {
       "raw": "2 3/4 cups milk [note: several commenters have said that they find prefer it with only 2 cups milk]",
       "expected": {
-        "item": "milk [note: several commenters have said that they find prefer it with only 2 cups milk]",
+        "item": "milk",
         "measurements": [
           {
             "amount": "2.75",
             "unit": "cup"
+          },
+          {
+            "amount": "674",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "note: several commenters have said that they find prefer it with only 2 cups milk",
         "category": "Dairy & Eggs"
       }
     },

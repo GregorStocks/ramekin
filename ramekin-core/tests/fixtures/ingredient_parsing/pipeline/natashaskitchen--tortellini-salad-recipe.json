@@ -87,14 +87,14 @@
     {
       "raw": "1/2 cup Creamy Caesar dressing or to taste",
       "expected": {
-        "item": "Creamy Caesar dressing or to taste",
+        "item": "Creamy Caesar dressing",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Condiments & Sauces"
       }
     }

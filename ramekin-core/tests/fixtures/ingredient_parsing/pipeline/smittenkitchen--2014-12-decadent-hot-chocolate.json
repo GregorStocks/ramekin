@@ -124,7 +124,7 @@
     {
       "raw": "1/2 cup (40 grams) cocoa powder, any kind you like",
       "expected": {
-        "item": "cocoa powder, any kind you like",
+        "item": "cocoa powder",
         "measurements": [
           {
             "amount": "0.5",
@@ -135,7 +135,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind you like",
         "category": "Baking"
       }
     },

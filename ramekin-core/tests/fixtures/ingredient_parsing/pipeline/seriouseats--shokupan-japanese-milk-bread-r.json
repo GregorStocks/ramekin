@@ -5,7 +5,7 @@
     {
       "raw": "70g sweet rice flour (about 2 1/2 ounces; 6 tablespoons plus 1 teaspoon), see notes",
       "expected": {
-        "item": "sweet rice flour, see notes",
+        "item": "sweet rice flour",
         "measurements": [
           {
             "amount": "70",
@@ -16,7 +16,7 @@
             "unit": "oz"
           }
         ],
-        "note": "about 2 1/2 ounces; 6 tablespoons plus 1 teaspoon",
+        "note": "about 2 1/2 ounces; 6 tablespoons plus 1 teaspoon, see notes",
         "category": "Baking"
       }
     },
@@ -159,7 +159,7 @@
     {
       "raw": "14g (1 tablespoon) unsalted butter, melted, for brushing loaf",
       "expected": {
-        "item": "unsalted butter, melted, for brushing loaf",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "14",
@@ -170,7 +170,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "melted, for brushing loaf",
         "category": "Dairy & Eggs"
       }
     }

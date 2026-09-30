@@ -5,7 +5,7 @@
     {
       "raw": "4 1/2 teaspoons Diamond Crystal kosher salt, divided, plus more to taste; for table salt, use half as much by volume",
       "expected": {
-        "item": "Diamond Crystal kosher salt, divided",
+        "item": "Diamond Crystal kosher salt",
         "measurements": [
           {
             "amount": "4.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to taste; for table salt, use half as much by volume",
+        "note": "divided, plus more to taste; for table salt, use half as much by volume",
         "category": "Spices & Seasonings"
       }
     },

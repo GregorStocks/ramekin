@@ -163,7 +163,7 @@
     {
       "raw": "1&nbsp;jalapeño, seeds removed, minced (about 2 tablespoons)",
       "expected": {
-        "item": "jalapeño, seeds removed",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 2 tablespoons, minced",
+        "note": "about 2 tablespoons, seeds removed, minced",
         "category": "Produce"
       }
     },

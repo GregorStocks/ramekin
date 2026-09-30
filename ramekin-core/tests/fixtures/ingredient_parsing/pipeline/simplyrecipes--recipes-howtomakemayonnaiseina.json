@@ -100,18 +100,18 @@
     {
       "raw": "Salt to taste",
       "expected": {
-        "item": "Salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Freshly ground black pepper to taste (optional; I don’t bother)",
       "expected": {
-        "item": "Freshly ground black pepper to taste",
+        "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": "optional; I don’t bother",
+        "note": "optional; I don’t bother, to taste",
         "category": "Spices & Seasonings"
       }
     }

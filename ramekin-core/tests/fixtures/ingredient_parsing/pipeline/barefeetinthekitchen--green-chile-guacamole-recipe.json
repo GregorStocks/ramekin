@@ -33,21 +33,21 @@
     {
       "raw": "½  small red onion diced small, about 1/3 cup worth, plus more for topping",
       "expected": {
-        "item": "red onion diced small, about 1/3 cup worth",
+        "item": "red onion diced small",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": "plus more for topping",
+        "note": "about 1/3 cup worth, plus more for topping",
         "category": "Produce"
       }
     },
     {
       "raw": "¼ cup fresh cilantro leaves, chopped small, plus more for topping",
       "expected": {
-        "item": "fresh cilantro leaves, chopped small",
+        "item": "fresh cilantro leaves",
         "measurements": [
           {
             "amount": "0.25",
@@ -58,7 +58,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for topping",
+        "note": "chopped small, plus more for topping",
         "category": "Produce"
       }
     },
@@ -97,7 +97,7 @@
     {
       "raw": "1 tablespoon fresh lime juice, about 1/2 large lime",
       "expected": {
-        "item": "fresh lime juice, about 1/2 large lime",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "1",
@@ -108,14 +108,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1/2 large lime",
         "category": "Produce"
       }
     },
     {
       "raw": "½ teaspoon kosher salt, adjust to taste",
       "expected": {
-        "item": "kosher salt, adjust to taste",
+        "item": "kosher salt, adjust",
         "measurements": [
           {
             "amount": "0.5",
@@ -126,7 +126,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -151,7 +151,7 @@
     {
       "raw": "⅛ teaspoon  cayenne pepper, adjust to taste",
       "expected": {
-        "item": "cayenne pepper, adjust to taste",
+        "item": "cayenne pepper, adjust",
         "measurements": [
           {
             "amount": "0.13",
@@ -162,7 +162,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

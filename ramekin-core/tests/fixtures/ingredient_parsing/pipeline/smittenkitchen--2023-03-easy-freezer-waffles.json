@@ -73,7 +73,7 @@
     {
       "raw": "1 cup (235 grams) milk, any variety",
       "expected": {
-        "item": "milk, any variety",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1",
@@ -84,7 +84,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any variety",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,9 +163,9 @@
     {
       "raw": "Nonstick spray for coating waffle iron",
       "expected": {
-        "item": "Nonstick spray for coating waffle iron",
+        "item": "Nonstick spray",
         "measurements": [],
-        "note": null,
+        "note": "for coating waffle iron",
         "category": "Oils & Vinegars"
       }
     }

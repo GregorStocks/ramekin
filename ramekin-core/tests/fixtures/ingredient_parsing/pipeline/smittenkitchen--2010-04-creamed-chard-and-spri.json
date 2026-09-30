@@ -19,14 +19,14 @@
     {
       "raw": "3 spring onions, ends trimmed, white and some green parts sliced into thin coins",
       "expected": {
-        "item": "spring onions, ends trimmed",
+        "item": "spring onions",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "white and some green parts sliced into thin coins",
+        "note": "ends trimmed, white and some green parts sliced into thin coins",
         "category": "Produce"
       }
     },

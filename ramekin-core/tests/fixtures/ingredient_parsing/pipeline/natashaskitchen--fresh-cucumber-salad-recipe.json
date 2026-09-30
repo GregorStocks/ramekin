@@ -83,9 +83,9 @@
     {
       "raw": "salt &amp;amp; pepper to taste",
       "expected": {
-        "item": "salt & pepper to taste",
+        "item": "salt & pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

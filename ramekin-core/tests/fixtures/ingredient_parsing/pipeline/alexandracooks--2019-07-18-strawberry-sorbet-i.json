@@ -5,7 +5,7 @@
     {
       "raw": "1 &amp;#8211; 1.5 lbs. strawberries, washed, hulled, and chopped",
       "expected": {
-        "item": "strawberries, washed, hulled",
+        "item": "strawberries, washed, hulled, and chopped",
         "measurements": [
           {
             "amount": "1-1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "and chopped",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -55,14 +55,14 @@
     {
       "raw": "Pinch of sea salt, such as Maldon",
       "expected": {
-        "item": "sea salt, such as Maldon",
+        "item": "sea salt",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "such as Maldon",
         "category": "Spices & Seasonings"
       }
     }

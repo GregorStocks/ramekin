@@ -109,14 +109,14 @@
     {
       "raw": "8 radishes, trimmed, thinly sliced",
       "expected": {
-        "item": "radishes, trimmed",
+        "item": "radishes",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "thinly sliced",
+        "note": "trimmed, thinly sliced",
         "category": "Produce"
       }
     },

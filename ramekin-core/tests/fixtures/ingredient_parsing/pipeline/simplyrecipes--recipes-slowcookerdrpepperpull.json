@@ -119,7 +119,7 @@
     {
       "raw": "1/4 cup BBQ sauce, any favorite variety",
       "expected": {
-        "item": "BBQ sauce, any favorite variety",
+        "item": "BBQ sauce",
         "measurements": [
           {
             "amount": "0.25",
@@ -130,7 +130,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any favorite variety",
         "category": "Condiments & Sauces"
       }
     },

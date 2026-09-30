@@ -32,7 +32,7 @@
     {
       "raw": "1/2 cup (120 ml) lime juice, from 6 to 8 limes",
       "expected": {
-        "item": "lime juice, from 6 to 8 limes",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "0.5",
@@ -47,7 +47,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 6 to 8 limes",
         "section": "For the Steak Fajita Marinade",
         "category": "Produce"
       }
@@ -271,14 +271,14 @@
     {
       "raw": "1 recipe guacamole, for serving, if desired",
       "expected": {
-        "item": "recipe guacamole, for serving",
+        "item": "recipe guacamole",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "if desired",
+        "note": "for serving, if desired",
         "section": "For the Fajitas",
         "category": "Condiments & Sauces"
       }
@@ -286,14 +286,14 @@
     {
       "raw": "1 recipe pico de gallo, for serving, if desired",
       "expected": {
-        "item": "recipe pico de gallo, for serving",
+        "item": "recipe pico de gallo",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "if desired",
+        "note": "for serving, if desired",
         "section": "For the Fajitas",
         "category": "Condiments & Sauces"
       }
@@ -301,9 +301,9 @@
     {
       "raw": "Sour cream, shredded cheese, and salsa, for serving, if desired",
       "expected": {
-        "item": "Sour cream, shredded cheese, and salsa, for serving",
+        "item": "Sour cream, shredded cheese, and salsa",
         "measurements": [],
-        "note": "if desired",
+        "note": "for serving, if desired",
         "section": "For the Fajitas",
         "category": "Dairy & Eggs"
       }

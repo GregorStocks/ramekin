@@ -5,14 +5,14 @@
     {
       "raw": "8 large slices country-style bread, about 1/2 inch thick",
       "expected": {
-        "item": "slices country-style bread, about 1/2 inch thick",
+        "item": "slices country-style bread",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "about 1/2 inch thick",
         "category": "Bakery & Bread"
       }
     },

@@ -73,14 +73,14 @@
     {
       "raw": "6 coffee beans for garnish",
       "expected": {
-        "item": "coffee beans for garnish",
+        "item": "coffee beans",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for garnish",
         "category": "Beverages"
       }
     }

@@ -59,14 +59,14 @@
     {
       "raw": "1/4 teaspoon fine sea salt or table salt, then more to taste",
       "expected": {
-        "item": "fine sea salt or table salt, then more to taste",
+        "item": "fine sea salt or table salt, then more",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,9 +127,9 @@
     {
       "raw": "oil for frying",
       "expected": {
-        "item": "oil for frying",
+        "item": "oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },

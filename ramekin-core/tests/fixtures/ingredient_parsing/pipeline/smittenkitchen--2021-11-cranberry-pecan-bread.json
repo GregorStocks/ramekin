@@ -41,21 +41,21 @@
     {
       "raw": "2 medium-to-large oranges, any variety",
       "expected": {
-        "item": "medium-to-large oranges, any variety",
+        "item": "medium-to-large oranges",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "any variety",
         "category": "Produce"
       }
     },
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, melted, cooled",
       "expected": {
-        "item": "unsalted butter, melted",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "cooled",
+        "note": "melted, cooled",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,14 +199,14 @@
     {
       "raw": "Pearl sugar (about 1½ tablespoons), to finish",
       "expected": {
-        "item": "Pearl sugar, to finish",
+        "item": "Pearl sugar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": "about 1 1/2 tablespoons",
+        "note": "about 1 1/2 tablespoons, to finish",
         "category": "Baking"
       }
     }

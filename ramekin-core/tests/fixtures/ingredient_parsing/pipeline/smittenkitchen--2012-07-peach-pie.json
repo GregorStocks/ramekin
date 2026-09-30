@@ -116,9 +116,18 @@
     {
       "raw": "About 3 1/2 pounds peaches (approximately 6 large, 7 medium or 8 small)",
       "expected": {
-        "item": "About 3 1/2 pounds peaches",
-        "measurements": [],
-        "note": "approximately 6 large, 7 medium or 8 small",
+        "item": "peaches",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "1588",
+            "unit": "g"
+          }
+        ],
+        "note": "about, approximately 6 large, 7 medium or 8 small",
         "section": "Filling",
         "category": "Produce"
       }
@@ -126,7 +135,7 @@
     {
       "raw": "1 tablespoon fresh lemon juice, from about half a regular lemon",
       "expected": {
-        "item": "fresh lemon juice, from about half a regular lemon",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1",
@@ -137,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about half a regular lemon",
         "section": "Filling",
         "category": "Produce"
       }
@@ -231,14 +240,14 @@
     {
       "raw": "2 tablespoons minute tapioca, ground to a powder (see note up top), or 3 tablespoons cornstarch or potato starch",
       "expected": {
-        "item": "minute tapioca, ground to a powder",
+        "item": "minute tapioca",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "see note up top; or 3 tablespoons cornstarch or potato starch",
+        "note": "see note up top, ground to a powder, or 3 tablespoons cornstarch or potato starch",
         "section": "Filling",
         "category": "Baking"
       }

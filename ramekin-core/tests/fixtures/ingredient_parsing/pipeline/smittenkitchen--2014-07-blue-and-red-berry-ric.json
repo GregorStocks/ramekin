@@ -228,14 +228,14 @@
     {
       "raw": "1 heaped teaspoon turbinado or coarse sugar for sprinkling",
       "expected": {
-        "item": "turbinado or coarse sugar for sprinkling",
+        "item": "turbinado or coarse sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "heaped tsp"
           }
         ],
-        "note": null,
+        "note": "for sprinkling",
         "section": "Glaze",
         "category": "Baking"
       }

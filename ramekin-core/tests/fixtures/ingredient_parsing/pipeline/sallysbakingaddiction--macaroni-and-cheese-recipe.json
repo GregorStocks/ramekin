@@ -211,7 +211,7 @@
     {
       "raw": "optional: 1/2 cup (45g) breadcrumbs, such as Panko",
       "expected": {
-        "item": "breadcrumbs, such as Panko",
+        "item": "breadcrumbs",
         "measurements": [
           {
             "amount": "0.5",
@@ -222,7 +222,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, such as Panko",
         "category": "Bakery & Bread"
       }
     },
@@ -247,9 +247,9 @@
     {
       "raw": "optional: chopped fresh parsley for garnish",
       "expected": {
-        "item": "chopped fresh parsley for garnish",
+        "item": "chopped fresh parsley",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Produce"
       }
     }

@@ -324,9 +324,9 @@
     {
       "raw": "optional if not using crumb topping: 2 Tablespoons coarse sugar, for sprinkling",
       "expected": {
-        "item": "optional if not using crumb topping: 2 Tablespoons coarse sugar, for sprinkling",
+        "item": "optional if not using crumb topping: 2 Tablespoons coarse sugar",
         "measurements": [],
-        "note": null,
+        "note": "for sprinkling",
         "category": "Baking"
       }
     }

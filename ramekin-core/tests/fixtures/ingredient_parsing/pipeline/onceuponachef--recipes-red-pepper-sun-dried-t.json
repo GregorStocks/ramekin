@@ -5,7 +5,7 @@
     {
       "raw": "1 cup  mayonnaise, best quality such as Hellmann's or Duke's",
       "expected": {
-        "item": "mayonnaise, best quality such as Hellmann's or Duke's",
+        "item": "mayonnaise, best quality",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Hellmann's or Duke's",
         "category": "Condiments & Sauces"
       }
     },

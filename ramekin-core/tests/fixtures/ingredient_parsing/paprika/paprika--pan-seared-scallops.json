@@ -5,7 +5,7 @@
     {
       "raw": "1 ½ pounds dry sea scallop, 10 to 20 per pound, tendons removed",
       "expected": {
-        "item": "dry sea scallop, 10 to 20 per pound, tendons removed",
+        "item": "dry sea scallop, 10 to 20 per pound",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "tendons removed",
         "category": "Meat & Seafood"
       }
     },

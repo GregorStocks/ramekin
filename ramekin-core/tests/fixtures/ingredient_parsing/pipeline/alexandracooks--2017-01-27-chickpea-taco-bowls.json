@@ -5,7 +5,7 @@
     {
       "raw": "1 pound dried chickpeas, see notes above",
       "expected": {
-        "item": "dried chickpeas, see notes above",
+        "item": "dried chickpeas",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Canned Goods"
       }
     },
@@ -96,7 +96,7 @@
     {
       "raw": "1 tablespoon chili powder, see notes above",
       "expected": {
-        "item": "chili powder, see notes above",
+        "item": "chili powder",
         "measurements": [
           {
             "amount": "1",
@@ -107,7 +107,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Spices & Seasonings"
       }
     },
@@ -132,7 +132,7 @@
     {
       "raw": "1 cup crushed tomatoes, see notes above",
       "expected": {
-        "item": "crushed tomatoes, see notes above",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -143,7 +143,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Canned Goods"
       }
     },
@@ -168,7 +168,7 @@
     {
       "raw": "4 cups cooked chickpeas, from above, or two 15-oz cans, drained and rinsed",
       "expected": {
-        "item": "cooked chickpeas, from above, or two 15-oz cans",
+        "item": "cooked chickpeas",
         "measurements": [
           {
             "amount": "4",
@@ -179,21 +179,21 @@
             "unit": "g"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "from above, or two 15-oz cans, drained and rinsed",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1/2 lime, for juicing, plus more for serving",
       "expected": {
-        "item": "lime, for juicing",
+        "item": "lime",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "plus more for serving",
+        "note": "for juicing, plus more for serving",
         "category": "Produce"
       }
     },

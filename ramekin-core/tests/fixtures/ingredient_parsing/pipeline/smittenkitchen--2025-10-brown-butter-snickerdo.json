@@ -63,7 +63,7 @@
     {
       "raw": "1 1/4 cups (250 grams) granulated sugar + 3 tablespoons (40 grams) for rolling",
       "expected": {
-        "item": "granulated sugar + 3 tablespoons for rolling",
+        "item": "granulated sugar + 3 tablespoons",
         "measurements": [
           {
             "amount": "1.25",
@@ -78,7 +78,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for rolling",
         "category": "Baking"
       }
     },
@@ -139,7 +139,7 @@
     {
       "raw": "1/4 cup (2 ounces, 55 grams or 1/4 of an 8-ounce brick) cream cheese, in chunks",
       "expected": {
-        "item": "cream cheese, in chunks",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "0.25",
@@ -154,7 +154,7 @@
             "unit": "g"
           }
         ],
-        "note": "2 ounces, 55 grams or 1/4 of an 8-ounce brick",
+        "note": "2 ounces, 55 grams or 1/4 of an 8-ounce brick, in chunks",
         "category": "Cheese"
       }
     },

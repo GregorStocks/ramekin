@@ -60,14 +60,14 @@
     {
       "raw": "8 slices white sandwich bread, crusts removed",
       "expected": {
-        "item": "white sandwich bread, crusts removed",
+        "item": "white sandwich bread",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "crusts removed",
         "category": "Bakery & Bread"
       }
     },
@@ -92,9 +92,9 @@
     {
       "raw": "Olive oil, for frying",
       "expected": {
-        "item": "Olive oil, for frying",
+        "item": "Olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     }

@@ -42,7 +42,7 @@
     {
       "raw": "1 pound ground beef or Italian sausage, casings removed",
       "expected": {
-        "item": "ground beef or Italian sausage, casings removed",
+        "item": "ground beef or Italian sausage",
         "measurements": [
           {
             "amount": "1",
@@ -53,7 +53,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "casings removed",
         "category": "Meat & Seafood"
       }
     },

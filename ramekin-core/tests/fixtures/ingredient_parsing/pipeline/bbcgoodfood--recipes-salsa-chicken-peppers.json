@@ -33,9 +33,9 @@
     {
       "raw": "oil for brushing",
       "expected": {
-        "item": "oil for brushing",
+        "item": "oil",
         "measurements": [],
-        "note": null,
+        "note": "for brushing",
         "category": "Oils & Vinegars"
       }
     },
@@ -112,9 +112,9 @@
     {
       "raw": "lime wedges, to serve",
       "expected": {
-        "item": "lime wedges, to serve",
+        "item": "lime wedges",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Produce"
       }
     }

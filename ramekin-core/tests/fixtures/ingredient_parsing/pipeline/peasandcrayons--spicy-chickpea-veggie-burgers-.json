@@ -223,9 +223,9 @@
     {
       "raw": "leafy green lettuce of choice for topping",
       "expected": {
-        "item": "leafy green lettuce of choice for topping",
+        "item": "leafy green lettuce of choice",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },

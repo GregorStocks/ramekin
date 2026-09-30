@@ -130,14 +130,14 @@
     {
       "raw": "3 large eggs, room temperature, lightly beaten",
       "expected": {
-        "item": "eggs, room temperature",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "lightly beaten",
+        "note": "room temperature, lightly beaten",
         "section": "Filling",
         "category": "Dairy & Eggs"
       }

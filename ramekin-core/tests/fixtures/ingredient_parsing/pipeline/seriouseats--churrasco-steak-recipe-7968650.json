@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds (900g) trimmed skirt steak (about 1 whole skirt steak) or other thin cut of steak such as hangar or a butterflied boneless beef short rib (see notes)",
       "expected": {
-        "item": "trimmed skirt steak or other thin cut of steak such as hangar or a butterflied boneless beef short rib",
+        "item": "trimmed skirt steak or other thin cut of steak",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 1 whole skirt steak, see notes",
+        "note": "about 1 whole skirt steak, see notes, such as hangar or a butterflied boneless beef short rib",
         "category": "Meat & Seafood"
       }
     },
@@ -32,9 +32,9 @@
     {
       "raw": "Neutral oil, such as corn or canola, for greasing grill grate or for the plancha/skillet",
       "expected": {
-        "item": "Neutral oil, such as corn or canola, for greasing grill grate or for the plancha/skillet",
+        "item": "Neutral oil",
         "measurements": [],
-        "note": null,
+        "note": "such as corn or canola, for greasing grill grate or for the plancha/skillet",
         "category": "Oils & Vinegars"
       }
     },

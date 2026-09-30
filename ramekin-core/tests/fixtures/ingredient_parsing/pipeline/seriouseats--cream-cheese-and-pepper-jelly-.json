@@ -31,24 +31,24 @@
     {
       "raw": "All-purpose flour, for dusting",
       "expected": {
-        "item": "All-purpose flour, for dusting",
+        "item": "All-purpose flour",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     },
     {
       "raw": "1 large egg beaten lightly with 1 teaspoon water, for egg wash",
       "expected": {
-        "item": "egg beaten lightly with 1 teaspoon water, for egg wash",
+        "item": "egg beaten lightly with 1 teaspoon water",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "for egg wash",
+        "category": "Beverages"
       }
     },
     {

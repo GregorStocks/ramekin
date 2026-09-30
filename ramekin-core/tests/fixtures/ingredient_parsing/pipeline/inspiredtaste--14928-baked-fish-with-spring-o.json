@@ -55,14 +55,14 @@
     {
       "raw": "4 (6-ounce portions) firm white fish, such as rockfish, striped bass or halibut",
       "expected": {
-        "item": "firm white fish, such as rockfish, striped bass or halibut",
+        "item": "firm white fish",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "6-ounce portions",
+        "note": "6-ounce portions, such as rockfish, striped bass or halibut",
         "category": "Meat & Seafood"
       }
     },

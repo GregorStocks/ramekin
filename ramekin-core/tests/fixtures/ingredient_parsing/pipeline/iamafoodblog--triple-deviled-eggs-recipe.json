@@ -5,14 +5,14 @@
     {
       "raw": "4 hard boiled eggs, peeled, chilled and cut in half",
       "expected": {
-        "item": "hard boiled eggs, peeled",
+        "item": "hard boiled eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "chilled and cut in half",
+        "note": "peeled, chilled and cut in half",
         "category": "Dairy & Eggs"
       }
     },
@@ -51,9 +51,9 @@
     {
       "raw": "salt and pepper to taste",
       "expected": {
-        "item": "salt and pepper to taste",
+        "item": "salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,9 +87,9 @@
     {
       "raw": "seaweed strips for garnish",
       "expected": {
-        "item": "seaweed strips for garnish",
+        "item": "seaweed strips",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     }

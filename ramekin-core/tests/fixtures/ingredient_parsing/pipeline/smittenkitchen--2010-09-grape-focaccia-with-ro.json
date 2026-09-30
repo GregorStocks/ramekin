@@ -27,7 +27,7 @@
     {
       "raw": "2 tablespoons (30 ml) milk, slightly warmed",
       "expected": {
-        "item": "milk, slightly warmed",
+        "item": "milk",
         "measurements": [
           {
             "amount": "2",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "slightly warmed",
         "category": "Dairy & Eggs"
       }
     },

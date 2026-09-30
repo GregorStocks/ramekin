@@ -189,9 +189,9 @@
     {
       "raw": "nice sea salt and pepper to taste",
       "expected": {
-        "item": "nice sea salt and pepper to taste",
+        "item": "nice sea salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "section": "For the Sauté",
         "category": "Spices & Seasonings"
       }
@@ -199,14 +199,14 @@
     {
       "raw": "1/3 cup thinly sliced basil or more to taste",
       "expected": {
-        "item": "thinly sliced basil or more to taste",
+        "item": "thinly sliced basil",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "section": "For the Sauté",
         "category": "Spices & Seasonings"
       }
@@ -214,9 +214,9 @@
     {
       "raw": "a few tablespoons finely minced parsley or more to taste, optional",
       "expected": {
-        "item": "a few tablespoons finely minced parsley or more to taste",
+        "item": "a few tablespoons finely minced parsley",
         "measurements": [],
-        "note": "optional",
+        "note": "or more to taste, optional",
         "section": "For the Sauté",
         "category": "Spices & Seasonings"
       }
@@ -224,9 +224,9 @@
     {
       "raw": "bread for serving",
       "expected": {
-        "item": "bread for serving",
+        "item": "bread",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "section": "For the Sauté",
         "category": "Bakery & Bread"
       }

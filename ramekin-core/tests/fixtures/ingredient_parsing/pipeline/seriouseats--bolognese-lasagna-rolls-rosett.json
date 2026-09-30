@@ -133,7 +133,7 @@
     {
       "raw": "2 pounds (900g) ground meat, either all beef or 1 pound beef with 1/2 pound each ground pork and veal, divided (see notes)",
       "expected": {
-        "item": "ground meat, either all beef or 1 pound beef with 1/2 pound each ground pork and veal",
+        "item": "ground meat, either all beef",
         "measurements": [
           {
             "amount": "2",
@@ -144,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes, divided",
+        "note": "or 1 pound beef with 1/2 pound each ground pork and veal (see notes); divided",
         "category": "Meat & Seafood"
       }
     },
@@ -443,9 +443,9 @@
     {
       "raw": "Vegetable oil, for greasing pan and pasta",
       "expected": {
-        "item": "Vegetable oil, for greasing pan and pasta",
+        "item": "Vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for greasing pan and pasta",
         "category": "Oils & Vinegars"
       }
     },

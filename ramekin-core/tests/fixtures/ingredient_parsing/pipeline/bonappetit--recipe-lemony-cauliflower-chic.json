@@ -32,9 +32,9 @@
     {
       "raw": "Extra-virgin olive oil, for searing",
       "expected": {
-        "item": "Extra-virgin olive oil, for searing",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for searing",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,7 +97,7 @@
     {
       "raw": "8 cups (1.9 L) unsalted chicken broth, homemade or store-bought",
       "expected": {
-        "item": "unsalted chicken broth, homemade or store-bought",
+        "item": "unsalted chicken broth",
         "measurements": [
           {
             "amount": "8",
@@ -112,7 +112,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Canned Goods"
       }
     },

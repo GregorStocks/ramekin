@@ -128,7 +128,7 @@
     {
       "raw": "3/4 pound yukon gold potatoes (about 3 medium), unpeeled, each cut into 8 wedges",
       "expected": {
-        "item": "yukon gold potatoes, unpeeled, each cut into 8 wedges",
+        "item": "yukon gold potatoes, unpeeled",
         "measurements": [
           {
             "amount": "0.75",
@@ -143,16 +143,16 @@
             "unit": "g"
           }
         ],
-        "note": "about 3 medium",
+        "note": "about 3 medium, each cut into 8 wedges",
         "category": "Produce"
       }
     },
     {
       "raw": "Big handful chopped flat-leaf parsley, to finish",
       "expected": {
-        "item": "Big handful chopped flat-leaf parsley, to finish",
+        "item": "Big handful chopped flat-leaf parsley",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Produce"
       }
     }

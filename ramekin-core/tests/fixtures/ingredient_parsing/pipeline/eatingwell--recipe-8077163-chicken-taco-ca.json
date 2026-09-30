@@ -227,7 +227,7 @@
     {
       "raw": "2 tablespoons thinly sliced jalapeño pepper, seeded if desired",
       "expected": {
-        "item": "thinly sliced jalapeño pepper, seeded if desired",
+        "item": "thinly sliced jalapeño pepper, seeded",
         "measurements": [
           {
             "amount": "2",
@@ -238,7 +238,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Produce"
       }
     },

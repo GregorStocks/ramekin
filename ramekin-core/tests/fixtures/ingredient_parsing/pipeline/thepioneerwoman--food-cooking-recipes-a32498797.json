@@ -5,9 +5,9 @@
     {
       "raw": "Salted butter, for the baking dish&nbsp;",
       "expected": {
-        "item": "Salted butter, for the baking dish",
+        "item": "Salted butter",
         "measurements": [],
-        "note": null,
+        "note": "for the baking dish",
         "category": "Dairy & Eggs"
       }
     },
@@ -194,7 +194,7 @@
     {
       "raw": "1 tbsp. coarse sugar, like sugar in the raw",
       "expected": {
-        "item": "coarse sugar, like sugar in the raw",
+        "item": "coarse sugar",
         "measurements": [
           {
             "amount": "1",
@@ -205,7 +205,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "like sugar in the raw",
         "category": "Baking"
       }
     },

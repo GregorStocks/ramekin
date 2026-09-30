@@ -123,9 +123,9 @@
     {
       "raw": "olive oil, for frying",
       "expected": {
-        "item": "olive oil, for frying",
+        "item": "olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     }

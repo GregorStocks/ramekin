@@ -164,7 +164,7 @@
     {
       "raw": "1 tablespoon fish sauce (optional), such as Red Boat",
       "expected": {
-        "item": "fish sauce, such as Red Boat",
+        "item": "fish sauce",
         "measurements": [
           {
             "amount": "1",
@@ -175,7 +175,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, such as Red Boat",
         "category": "Condiments & Sauces"
       }
     },

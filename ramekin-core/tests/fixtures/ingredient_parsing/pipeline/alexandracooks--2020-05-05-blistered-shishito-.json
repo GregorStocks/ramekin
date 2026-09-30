@@ -55,18 +55,18 @@
     {
       "raw": "flaky sea salt, such as Maldon, to taste",
       "expected": {
-        "item": "flaky sea salt, such as Maldon",
+        "item": "flaky sea salt",
         "measurements": [],
-        "note": "to taste",
+        "note": "such as Maldon, to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Aleppo pepper, if you have it, see notes above",
       "expected": {
-        "item": "Aleppo pepper, if you have it, see notes above",
+        "item": "Aleppo pepper",
         "measurements": [],
-        "note": null,
+        "note": "if you have it, see notes above",
         "category": "Spices & Seasonings"
       }
     },

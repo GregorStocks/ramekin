@@ -68,14 +68,14 @@
     {
       "raw": "1 celery stalk, in a 1/4-inch dice",
       "expected": {
-        "item": "celery stalk, in a 1/4-inch dice",
+        "item": "celery stalk",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "in a 1/4-inch dice",
         "category": "Produce"
       }
     },

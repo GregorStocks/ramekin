@@ -143,14 +143,14 @@
     {
       "raw": "2 ripe avocados, halved and pitted, divided",
       "expected": {
-        "item": "ripe avocados, halved and pitted",
+        "item": "ripe avocados",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "divided",
+        "note": "halved and pitted, divided",
         "category": "Produce"
       }
     },

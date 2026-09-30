@@ -141,14 +141,14 @@
     {
       "raw": "5 medium-sized bulk carrots, peeled, cut into 1 1/2&amp;#8243; pieces",
       "expected": {
-        "item": "medium-sized bulk carrots, peeled",
+        "item": "medium-sized bulk carrots",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": "cut into 1 1/2″ pieces",
+        "note": "peeled, cut into 1 1/2″ pieces",
         "category": "Produce"
       }
     },
@@ -229,7 +229,7 @@
     {
       "raw": "1/2 cup parsley leaves, stems removed, roughly chopped",
       "expected": {
-        "item": "parsley leaves, stems removed",
+        "item": "parsley leaves",
         "measurements": [
           {
             "amount": "0.5",
@@ -240,7 +240,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "stems removed, roughly chopped",
         "category": "Produce"
       }
     },

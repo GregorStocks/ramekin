@@ -201,14 +201,14 @@
     {
       "raw": "1/2 small preserved lemon, pith and flesh discarded, rind finely diced (optional)",
       "expected": {
-        "item": "preserved lemon, pith and flesh discarded",
+        "item": "preserved lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": "optional, rind finely diced",
+        "note": "optional, pith and flesh discarded, rind finely diced",
         "section": "For the Dressing and Salad",
         "category": "Produce"
       }

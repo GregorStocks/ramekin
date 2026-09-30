@@ -93,7 +93,7 @@
     {
       "raw": "1 1/2 cups (355ml) tomato passata (strained tomatoes), from one 24-ounce jar",
       "expected": {
-        "item": "tomato passata, from one 24-ounce jar",
+        "item": "tomato passata",
         "measurements": [
           {
             "amount": "1.5",
@@ -108,7 +108,7 @@
             "unit": "g"
           }
         ],
-        "note": "strained tomatoes",
+        "note": "strained tomatoes, from one 24-ounce jar",
         "category": "Produce"
       }
     },
@@ -277,7 +277,7 @@
     {
       "raw": "1/4 cup uncooked white long-grain rice (1/8 ounces; 50g), such as basmati",
       "expected": {
-        "item": "uncooked white long-grain rice, such as basmati",
+        "item": "uncooked white long-grain rice",
         "measurements": [
           {
             "amount": "0.25",
@@ -292,7 +292,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as basmati",
         "category": "Pasta & Rice"
       }
     },

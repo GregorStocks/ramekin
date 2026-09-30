@@ -95,14 +95,14 @@
     {
       "raw": "1/4 teaspoon black pepper to taste",
       "expected": {
-        "item": "black pepper to taste",
+        "item": "black pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,9 +145,9 @@
     {
       "raw": "green onions, toasted sesame seeds, and lime wedges for serving (optional)",
       "expected": {
-        "item": "green onions, toasted sesame seeds, and lime wedges for serving",
+        "item": "green onions, toasted sesame seeds, and lime wedges",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Produce"
       }
     }

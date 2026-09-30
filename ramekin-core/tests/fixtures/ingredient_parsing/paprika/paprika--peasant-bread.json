@@ -95,9 +95,9 @@
     {
       "raw": "room temperature butter, about 1 tablespoons",
       "expected": {
-        "item": "room temperature butter, about 1 tablespoons",
+        "item": "room temperature butter",
         "measurements": [],
-        "note": null,
+        "note": "about 1 tablespoons",
         "category": "Dairy & Eggs"
       }
     }

@@ -162,16 +162,16 @@
     {
       "raw": "Honey, for drizzling, optional",
       "expected": {
-        "item": "Honey, for drizzling",
+        "item": "Honey",
         "measurements": [],
-        "note": "optional",
+        "note": "for drizzling, optional",
         "category": "Baking"
       }
     },
     {
       "raw": "½ cup (1 stick/113 g) softened unsalted cultured butter, homemade or store-bought",
       "expected": {
-        "item": "softened unsalted cultured butter, homemade or store-bought",
+        "item": "softened unsalted cultured butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -186,7 +186,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Dairy & Eggs"
       }
     },

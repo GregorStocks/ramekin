@@ -49,7 +49,7 @@
     {
       "raw": "1/4 cup sugar plus 1 1/2 tablespoons for sprinkling (total of 2.2 ounces or 63 grams)",
       "expected": {
-        "item": "sugar plus 1 1/2 tablespoons for sprinkling",
+        "item": "sugar plus 1 1/2 tablespoons",
         "measurements": [
           {
             "amount": "0.25",
@@ -60,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": "total of 2.2 ounces or 63 grams",
+        "note": "total of 2.2 ounces or 63 grams, for sprinkling",
         "category": "Baking"
       }
     },
@@ -103,7 +103,7 @@
     {
       "raw": "6 tablespoons (3 ounces or 85 grams)unsalted butter, chilled and cut into 1/2-inch cubes plus additional for baking sheet if not lining it with parchment",
       "expected": {
-        "item": "unsalted butter, chilled and cut into 1/2-inch cubes",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
@@ -118,7 +118,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus additional for baking sheet if not lining it with parchment",
+        "note": "chilled and cut into 1/2-inch cubes, plus additional for baking sheet if not lining it with parchment",
         "category": "Dairy & Eggs"
       }
     },

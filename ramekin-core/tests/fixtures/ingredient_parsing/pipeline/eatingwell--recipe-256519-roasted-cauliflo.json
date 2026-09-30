@@ -223,15 +223,15 @@
     {
       "raw": "1 fresh red chile pepper, such as serrano or jalapeño, minced, plus more for garnish",
       "expected": {
-        "item": "fresh red chile pepper, such as serrano or jalapeño, minced",
+        "item": "fresh red chile pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "plus more for garnish",
-        "category": "Produce"
+        "note": "such as serrano or jalapeño, minced, plus more for garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -371,9 +371,9 @@
     {
       "raw": "Chopped fresh cilantro for garnish",
       "expected": {
-        "item": "Chopped fresh cilantro for garnish",
+        "item": "Chopped fresh cilantro",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     }

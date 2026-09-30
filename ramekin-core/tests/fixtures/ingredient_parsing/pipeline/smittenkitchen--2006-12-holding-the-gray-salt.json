@@ -59,7 +59,7 @@
     {
       "raw": "6 cups day-old bread, crust removed, cubed",
       "expected": {
-        "item": "day-old bread, crust removed",
+        "item": "day-old bread",
         "measurements": [
           {
             "amount": "6",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": "cubed",
+        "note": "crust removed, cubed",
         "category": "Bakery & Bread"
       }
     },
@@ -145,15 +145,15 @@
     {
       "raw": "4 cups peeled, seeded, and diced butternut squash (1/2-inch dice)",
       "expected": {
-        "item": "peeled, seeded",
+        "item": "peeled, seeded, and diced butternut squash",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "1/2-inch dice, and diced butternut squash",
-        "category": "Other"
+        "note": "1/2-inch dice",
+        "category": "Produce"
       }
     },
     {
@@ -196,7 +196,7 @@
     {
       "raw": "1/2 pound Brussels sprouts, ends trimmed, then quartered",
       "expected": {
-        "item": "Brussels sprouts, ends trimmed",
+        "item": "Brussels sprouts",
         "measurements": [
           {
             "amount": "0.5",
@@ -207,7 +207,7 @@
             "unit": "g"
           }
         ],
-        "note": "then quartered",
+        "note": "ends trimmed, then quartered",
         "category": "Produce"
       }
     },

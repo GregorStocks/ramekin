@@ -5,23 +5,23 @@
     {
       "raw": "2 medium eggplants [1 pound each or 2 pounds total)",
       "expected": {
-        "item": "eggplants [1 pound each",
+        "item": "eggplants",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "or 2 pounds total)",
+        "note": "1 pound each or 2 pounds total)",
         "category": "Produce"
       }
     },
     {
       "raw": "Olive oil for brushing",
       "expected": {
-        "item": "Olive oil for brushing",
+        "item": "Olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for brushing",
         "category": "Oils & Vinegars"
       }
     },

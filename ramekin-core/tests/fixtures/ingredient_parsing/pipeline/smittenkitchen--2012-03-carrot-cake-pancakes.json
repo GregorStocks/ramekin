@@ -258,7 +258,7 @@
     {
       "raw": "3 tablespoons butter, for griddle",
       "expected": {
-        "item": "butter, for griddle",
+        "item": "butter",
         "measurements": [
           {
             "amount": "3",
@@ -269,7 +269,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for griddle",
         "category": "Dairy & Eggs"
       }
     },

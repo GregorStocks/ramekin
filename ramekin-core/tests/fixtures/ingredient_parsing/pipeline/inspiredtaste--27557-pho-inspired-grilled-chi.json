@@ -110,14 +110,14 @@
     {
       "raw": "1 tablespoon neutral flavored oil, such as grape seed or canola",
       "expected": {
-        "item": "neutral flavored oil, such as grape seed or canola",
+        "item": "neutral flavored oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as grape seed or canola",
         "category": "Oils & Vinegars"
       }
     },

@@ -42,14 +42,14 @@
     {
       "raw": "2  small green chiles such as jalapeno (chopped)",
       "expected": {
-        "item": "green chiles such as jalapeno",
+        "item": "green chiles",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": "chopped",
+        "note": "chopped, such as jalapeno",
         "category": "Produce"
       }
     },

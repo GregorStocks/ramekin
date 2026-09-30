@@ -5,7 +5,7 @@
     {
       "raw": "1 can (28 ounces) whole peeled tomatoes, with their juices",
       "expected": {
-        "item": "whole peeled tomatoes, with their juices",
+        "item": "whole peeled tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "with their juices",
         "category": "Produce"
       }
     },
@@ -196,9 +196,9 @@
     {
       "raw": "Crusty bread, to serve (skip if serving gluten-free)",
       "expected": {
-        "item": "Crusty bread, to serve",
+        "item": "Crusty bread",
         "measurements": [],
-        "note": "skip if serving gluten-free",
+        "note": "skip if serving gluten-free, to serve",
         "category": "Bakery & Bread"
       }
     }

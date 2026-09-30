@@ -37,15 +37,15 @@
     {
       "raw": "1 tablespoon cacao butter or healthy fat of choice, like coconut oil",
       "expected": {
-        "item": "cacao butter or healthy fat of choice, like coconut oil",
+        "item": "cacao butter or healthy fat of choice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "like coconut oil",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -83,23 +83,23 @@
     {
       "raw": "½ teaspoon Manuka honey or to taste",
       "expected": {
-        "item": "Manuka honey or to taste",
+        "item": "Manuka honey",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Baking"
       }
     },
     {
       "raw": "Cinnamon and spice, to taste, optional",
       "expected": {
-        "item": "Cinnamon and spice, to taste",
+        "item": "Cinnamon and spice",
         "measurements": [],
-        "note": "optional",
+        "note": "to taste, optional",
         "category": "Spices & Seasonings"
       }
     }

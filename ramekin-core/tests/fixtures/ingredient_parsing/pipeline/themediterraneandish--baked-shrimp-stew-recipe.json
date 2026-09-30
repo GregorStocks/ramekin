@@ -28,14 +28,14 @@
     {
       "raw": "1 bell pepper, cored, chopped",
       "expected": {
-        "item": "bell pepper, cored",
+        "item": "bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "chopped",
+        "note": "cored, chopped",
         "category": "Produce"
       }
     },

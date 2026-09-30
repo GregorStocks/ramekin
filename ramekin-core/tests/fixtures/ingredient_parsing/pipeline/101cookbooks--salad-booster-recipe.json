@@ -19,7 +19,7 @@
     {
       "raw": "2 oz kale (8-10 leaves), stems &amp; center ribs removed",
       "expected": {
-        "item": "kale, stems & center ribs removed",
+        "item": "kale",
         "measurements": [
           {
             "amount": "2",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "8-10 leaves",
+        "note": "8-10 leaves, stems & center ribs removed",
         "category": "Produce"
       }
     },

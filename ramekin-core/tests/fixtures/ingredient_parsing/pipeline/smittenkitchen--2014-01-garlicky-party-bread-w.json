@@ -81,14 +81,14 @@
     {
       "raw": "Pinch or two of red pepper flakes or freshly ground black pepper to taste",
       "expected": {
-        "item": "or two of red pepper flakes or freshly ground black pepper to taste",
+        "item": "or two of red pepper flakes or freshly ground black pepper",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

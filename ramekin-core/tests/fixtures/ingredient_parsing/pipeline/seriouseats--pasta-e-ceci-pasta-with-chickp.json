@@ -126,7 +126,7 @@
     {
       "raw": "3 cups (1 pound 2 ounces; 510g) cooked dry chickpeas or two (15-ounce; 425g) cans low-sodium chickpeas, drained and rinsed, divided (see note)",
       "expected": {
-        "item": "cooked dry chickpeas or two cans low-sodium chickpeas, drained and rinsed",
+        "item": "cooked dry chickpeas or two cans low-sodium chickpeas",
         "measurements": [
           {
             "amount": "3",
@@ -141,7 +141,7 @@
             "unit": "g"
           }
         ],
-        "note": "1 pound 2 ounces; 510g, 15-ounce; 425g, see note, divided",
+        "note": "1 pound 2 ounces; 510g, 15-ounce; 425g, see note, drained and rinsed, divided",
         "category": "Canned Goods"
       }
     },
@@ -180,7 +180,7 @@
     {
       "raw": "8 ounces (225g) small tubular pasta, such as ditalini",
       "expected": {
-        "item": "small tubular pasta, such as ditalini",
+        "item": "small tubular pasta",
         "measurements": [
           {
             "amount": "8",
@@ -191,7 +191,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as ditalini",
         "category": "Pasta & Rice"
       }
     },

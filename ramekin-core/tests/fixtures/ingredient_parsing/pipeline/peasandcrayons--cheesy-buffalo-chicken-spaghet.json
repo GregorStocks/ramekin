@@ -146,18 +146,18 @@
     {
       "raw": "ranch or blue cheese dressing for drizzling ((optional))",
       "expected": {
-        "item": "ranch or blue cheese dressing for drizzling",
+        "item": "ranch or blue cheese dressing",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for drizzling",
         "category": "Cheese"
       }
     },
     {
       "raw": "extra grated cheese for topping",
       "expected": {
-        "item": "extra grated cheese for topping",
+        "item": "extra grated cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     }

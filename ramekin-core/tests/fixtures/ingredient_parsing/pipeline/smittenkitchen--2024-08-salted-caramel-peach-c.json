@@ -300,9 +300,9 @@
     {
       "raw": "Vanilla ice cream, to serve (not optional, sorry)",
       "expected": {
-        "item": "Vanilla ice cream, to serve",
+        "item": "Vanilla ice cream",
         "measurements": [],
-        "note": "not optional, sorry",
+        "note": "not optional, sorry, to serve",
         "category": "Frozen"
       }
     }

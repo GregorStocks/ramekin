@@ -19,10 +19,10 @@
     {
       "raw": "oil for deep frying – I like to use rice bran oil or grapeseed",
       "expected": {
-        "item": "oil for deep frying - I like to use rice bran oil or grapeseed",
+        "item": "oil",
         "measurements": [],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "for deep frying - I like to use rice bran oil or grapeseed",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -97,9 +97,9 @@
     {
       "raw": "kewpie mayo and sriracha to taste",
       "expected": {
-        "item": "kewpie mayo and sriracha to taste",
+        "item": "kewpie mayo and sriracha",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Condiments & Sauces"
       }
     }

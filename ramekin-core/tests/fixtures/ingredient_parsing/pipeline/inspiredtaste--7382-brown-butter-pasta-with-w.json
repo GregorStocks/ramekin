@@ -5,7 +5,7 @@
     {
       "raw": "4 ounces dry pasta such as linguine or spaghetti",
       "expected": {
-        "item": "dry pasta such as linguine or spaghetti",
+        "item": "dry pasta",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as linguine or spaghetti",
         "category": "Pasta & Rice"
       }
     },
@@ -105,9 +105,9 @@
     {
       "raw": "Parmesan cheese for serving",
       "expected": {
-        "item": "Parmesan cheese for serving",
+        "item": "Parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Cheese"
       }
     },

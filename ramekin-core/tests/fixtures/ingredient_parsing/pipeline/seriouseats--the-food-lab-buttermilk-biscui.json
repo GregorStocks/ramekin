@@ -117,7 +117,7 @@
     {
       "raw": "8 tablespoons (1 stick) cold unsalted butter, cut into 1/4-inch pats, plus 2 tablespoons melted unsalted butter for brushing",
       "expected": {
-        "item": "cold unsalted butter, cut into 1/4-inch pats",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "8",
@@ -132,7 +132,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons melted unsalted butter for brushing",
+        "note": "cut into 1/4-inch pats, plus 2 tablespoons melted unsalted butter for brushing",
         "category": "Dairy & Eggs"
       }
     }

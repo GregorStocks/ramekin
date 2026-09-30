@@ -220,14 +220,14 @@
     {
       "raw": "1 (9-inch) pie crust, see our homemade pie crust recipe",
       "expected": {
-        "item": "pie crust, see our homemade pie crust recipe",
+        "item": "pie crust",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "9-inch",
+        "note": "9-inch, see our homemade pie crust recipe",
         "category": "Frozen"
       }
     }

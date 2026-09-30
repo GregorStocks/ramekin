@@ -46,14 +46,14 @@
     {
       "raw": "1/2 to 1 cup Bacon Bourbon Barbecue Sauce or your favorite sauce, see our bacon barbecue sauce recipe",
       "expected": {
-        "item": "Bacon Bourbon Barbecue Sauce or your favorite sauce, see our bacon barbecue sauce recipe",
+        "item": "Bacon Bourbon Barbecue Sauce or your favorite sauce",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see our bacon barbecue sauce recipe",
         "category": "Condiments & Sauces"
       }
     }

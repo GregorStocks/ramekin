@@ -47,9 +47,18 @@
     {
       "raw": "About 1/4 oz/9 g chopped fresh dill",
       "expected": {
-        "item": "About 1/4 oz/9 g chopped fresh dill",
-        "measurements": [],
-        "note": null,
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
+          }
+        ],
+        "note": "about",
         "category": "Produce"
       }
     },

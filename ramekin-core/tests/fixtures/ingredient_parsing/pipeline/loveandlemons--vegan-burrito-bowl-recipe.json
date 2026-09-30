@@ -152,9 +152,9 @@
     {
       "raw": "Extra-virgin olive oil, for drizzling",
       "expected": {
-        "item": "Extra-virgin olive oil, for drizzling",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     },
@@ -179,42 +179,42 @@
     {
       "raw": "1 red bell pepper, stem, ribbing and seeds removed, sliced into strips",
       "expected": {
-        "item": "red bell pepper, stem, ribbing and seeds removed",
+        "item": "red bell pepper, stem",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced into strips",
+        "note": "ribbing and seeds removed, sliced into strips",
         "category": "Produce"
       }
     },
     {
       "raw": "1 green pepper, stem, ribbing and seeds removed, sliced into strips",
       "expected": {
-        "item": "green pepper, stem, ribbing and seeds removed",
+        "item": "green pepper, stem",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced into strips",
+        "note": "ribbing and seeds removed, sliced into strips",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 jalapeño pepper, ribbing and seeds removed, sliced into thin strips, optional",
       "expected": {
-        "item": "jalapeño pepper, ribbing and seeds removed, sliced into thin strips",
+        "item": "jalapeño pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "ribbing and seeds removed, sliced into thin strips, optional",
         "category": "Produce"
       }
     }

@@ -5,14 +5,14 @@
     {
       "raw": "140 grams warm water (100°F), about 2/3 cup",
       "expected": {
-        "item": "warm water, about 2/3 cup",
+        "item": "warm water",
         "measurements": [
           {
             "amount": "140",
             "unit": "g"
           }
         ],
-        "note": "100°F",
+        "note": "100°F, about 2/3 cup",
         "category": "Beverages"
       }
     },

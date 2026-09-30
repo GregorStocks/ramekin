@@ -55,7 +55,7 @@
     {
       "raw": "1 pound sweet Italian sausage, casings removed",
       "expected": {
-        "item": "sweet Italian sausage, casings removed",
+        "item": "sweet Italian sausage",
         "measurements": [
           {
             "amount": "1",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "casings removed",
         "category": "Meat & Seafood"
       }
     },
@@ -123,7 +123,7 @@
     {
       "raw": "10-ounces chopped frozen spinach, thawed, squeezed dry, chopped further (or 10 ounces chopped fresh spinach)",
       "expected": {
-        "item": "chopped frozen spinach, thawed, squeezed dry",
+        "item": "chopped frozen spinach",
         "measurements": [
           {
             "amount": "10",
@@ -134,7 +134,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 10 ounces chopped fresh spinach, chopped further",
+        "note": "or 10 ounces chopped fresh spinach, thawed, squeezed dry, chopped further",
         "category": "Frozen"
       }
     },

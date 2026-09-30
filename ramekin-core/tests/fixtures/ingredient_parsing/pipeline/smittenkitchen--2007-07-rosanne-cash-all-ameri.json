@@ -85,14 +85,14 @@
     {
       "raw": "3 hard-boiled eggs, peeled, chopped",
       "expected": {
-        "item": "hard-boiled eggs, peeled",
+        "item": "hard-boiled eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "chopped",
+        "note": "peeled, chopped",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,9 +167,9 @@
     {
       "raw": "Salt and pepper to taste",
       "expected": {
-        "item": "Salt and pepper to taste",
+        "item": "Salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

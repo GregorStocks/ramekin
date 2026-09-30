@@ -193,7 +193,7 @@
     {
       "raw": "12 ounces (340 g) thinly sliced rare roast beef, homemade or store-bought (see notes)",
       "expected": {
-        "item": "thinly sliced rare roast beef, homemade or store-bought",
+        "item": "thinly sliced rare roast beef",
         "measurements": [
           {
             "amount": "12",
@@ -204,7 +204,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes",
+        "note": "see notes, homemade or store-bought",
         "category": "Meat & Seafood"
       }
     },

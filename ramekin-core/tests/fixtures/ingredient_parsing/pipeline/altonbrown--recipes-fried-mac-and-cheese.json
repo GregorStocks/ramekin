@@ -5,7 +5,7 @@
     {
       "raw": "1 quart peanut oil, for frying",
       "expected": {
-        "item": "peanut oil, for frying",
+        "item": "peanut oil",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },

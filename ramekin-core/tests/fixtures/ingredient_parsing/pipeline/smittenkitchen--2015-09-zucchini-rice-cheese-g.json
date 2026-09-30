@@ -144,7 +144,7 @@
     {
       "raw": "1/2 cup milk, as needed, although water or broth of your choice would work just fine [1/2 cup needed for streamlined directions, less for original]",
       "expected": {
-        "item": "milk, as needed, although water or broth of your choice would work just fine [1/2 cup needed for streamlined directions, less for original]",
+        "item": "milk, as needed, although water or broth of your choice would work just fine",
         "measurements": [
           {
             "amount": "0.5",
@@ -155,7 +155,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1/2 cup needed for streamlined directions, less for original",
         "category": "Canned Goods"
       }
     },

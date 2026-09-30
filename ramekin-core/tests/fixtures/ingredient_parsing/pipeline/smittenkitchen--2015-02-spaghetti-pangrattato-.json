@@ -252,14 +252,14 @@
     {
       "raw": "2 teaspoons small capers, drained (rinsed if salted), chopped",
       "expected": {
-        "item": "small capers, drained",
+        "item": "small capers",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "rinsed if salted, chopped",
+        "note": "rinsed if salted, drained, chopped",
         "section": "Pasta and Assembly",
         "category": "Canned Goods"
       }

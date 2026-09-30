@@ -70,7 +70,7 @@
     {
       "raw": "1/2 pound (8 ounces or 225 grams) pasta of you choice, such as a ziti or twisty shape",
       "expected": {
-        "item": "pasta of you choice, such as a ziti or twisty shape",
+        "item": "pasta of you choice",
         "measurements": [
           {
             "amount": "0.5",
@@ -85,7 +85,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as a ziti or twisty shape",
         "category": "Pasta & Rice"
       }
     },
@@ -146,9 +146,9 @@
     {
       "raw": "Salt and freshly ground black pepper to taste",
       "expected": {
-        "item": "Salt and freshly ground black pepper to taste",
+        "item": "Salt and freshly ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

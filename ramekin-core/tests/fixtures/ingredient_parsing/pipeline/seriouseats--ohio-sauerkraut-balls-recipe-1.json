@@ -221,7 +221,7 @@
     {
       "raw": "2 quarts (1.9 L) neutral oil, such as vegetable oil, for frying",
       "expected": {
-        "item": "neutral oil, such as vegetable oil, for frying",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "2",
@@ -236,7 +236,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as vegetable oil, for frying",
         "category": "Oils & Vinegars"
       }
     },

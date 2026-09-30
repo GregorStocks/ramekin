@@ -48,6 +48,11 @@ pub(in crate::ingredient_parser) fn strip_leading_list_marker(s: &str) -> String
         let Some(first) = chars.next() else {
             break;
         };
+        // Checkbox and bullet glyphs from recipe plugins ("▢ 1 cup flour").
+        if matches!(first, '▢' | '☐' | '□' | '•' | '◦' | '▪') {
+            remaining = chars.as_str().trim_start();
+            continue;
+        }
         if matches!(first, '-' | '+' | '*' | '&') {
             let rest = chars.as_str();
             let rest_first = rest.chars().next();

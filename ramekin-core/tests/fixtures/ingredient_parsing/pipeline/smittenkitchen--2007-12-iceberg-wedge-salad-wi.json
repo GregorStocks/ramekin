@@ -118,8 +118,12 @@
     {
       "raw": "About ½ cup (2 ounces) crumbled firm blue cheese, plus more for garnish",
       "expected": {
-        "item": "About 1/2 cup crumbled firm blue cheese",
+        "item": "crumbled firm blue cheese",
         "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
           {
             "amount": "2",
             "unit": "oz"
@@ -129,7 +133,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for garnish",
+        "note": "about, plus more for garnish",
         "category": "Cheese"
       }
     },

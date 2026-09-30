@@ -123,14 +123,14 @@
     {
       "raw": "1 very ripe mango, peeled, pitted and roughly chopped",
       "expected": {
-        "item": "very ripe mango, peeled",
+        "item": "very ripe mango",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "pitted and roughly chopped",
+        "note": "peeled, pitted and roughly chopped",
         "category": "Produce"
       }
     },

@@ -28,6 +28,10 @@
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -83,9 +87,9 @@
     {
       "raw": "pepper to taste",
       "expected": {
-        "item": "pepper to taste",
+        "item": "pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     }

@@ -563,6 +563,19 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
+    // Step 2.9: "About 8 cups peanut oil": an approximation before the amount
+    // goes to the note so the amount still parses.
+    let mut approximation = None;
+    {
+        let (qualifier, after_qualifier) = strip_leading_measurement_qualifier(&remaining);
+        if let Some(qualifier) = qualifier {
+            if extract_amount(after_qualifier).0.is_some() {
+                approximation = Some(qualifier.to_string());
+                remaining = after_qualifier.to_string();
+            }
+        }
+    }
+
     // Step 3: Strip measurement modifiers before amount, preserve for unit
     // Handles "scant 1 teaspoon" - modifier goes on the unit as "scant teaspoon"
     let (pre_amount_modifier, after_modifier) = strip_measurement_modifier(&remaining);
@@ -935,32 +948,86 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
-    // Step 5: Extract note from the end (after comma), if not already set
-    // But don't extract if it would leave only prep words as the item
-    if note.is_none() {
-        if let Some(comma_idx) = remaining.rfind(',') {
-            if let Some(potential_note) = remaining.get(comma_idx + 1..) {
-                let potential_note = potential_note.trim();
-                let potential_item = remaining.get(..comma_idx).unwrap_or("").trim();
-                // Check if it looks like a prep note AND extracting it wouldn't
-                // leave only prep words as the item
-                if (is_trailing_prep_note(potential_note)
-                    || is_trailing_guidance_note(potential_note))
-                    && !is_only_prep_words(potential_item)
+    // Step 5: Peel trailing comma parts that qualify the item ("feta, drained,
+    // crumbled", "oil, for frying", "salt, divided"), right to left, stopping
+    // at the first part that could name the item itself. Never leave only
+    // prep words behind. Peeled parts go before any note already taken from
+    // the end of the line (", plus more").
+    {
+        let mut peeled: Vec<String> = Vec::new();
+        while let Some(comma_idx) = remaining.rfind(',') {
+            let potential_note = remaining
+                .get(comma_idx + 1..)
+                .unwrap_or("")
+                .trim()
+                .to_string();
+            let potential_item = remaining.get(..comma_idx).unwrap_or("").trim().to_string();
+            let guidance = is_trailing_guidance_note(&potential_note);
+            let lower_note = potential_note.to_lowercase();
+            // "and sliced scallions" continues a list of foods; it is never a note.
+            // A trailing "or ..." alternative still goes to the note.
+            // "chopped mix-ins, like cooked meats": after a category, the
+            // examples are the foods.
+            let examples_of_category = (lower_note.starts_with("like ")
+                || lower_note.starts_with("such as "))
+                && item::has_generic_head(&potential_item);
+            let continues_list = lower_note.starts_with("and ") || examples_of_category;
+            // Only the last part may be a prep phrase that names a food
+            // ("crumbled queso fresco"); every part before it must be a pure
+            // note, or a list of foods ending in "for topping" would lose all
+            // but its first item.
+            let is_note = if peeled.is_empty() {
+                is_trailing_prep_note(&potential_note)
+                    || guidance
+                    || is_trailing_qualifier(&potential_note)
+            } else {
+                is_strict_trailing_prep_note(&potential_note)
+                    || item::is_prep_phrase(&potential_note)
+                    || guidance
+                    || is_trailing_qualifier(&potential_note)
+            };
+            let lower_item = potential_item.to_lowercase();
+            // "a dish, or frankly, any old dish": never leave a dangling "or".
+            let dangling = lower_item.ends_with(" or") || lower_item.ends_with(" and");
+            if potential_note.is_empty()
+                || potential_item.is_empty()
+                || dangling
+                || is_only_prep_words(&potential_item)
+                || (continues_list && !guidance)
+                || !is_note
+            {
+                break;
+            }
+            let mut extracted_note = potential_note.clone();
+            if peeled.is_empty() && guidance {
+                if let Some(branch_note) =
+                    take_last_or_parenthetical_note(&mut deferred_parenthetical_notes)
                 {
-                    let mut extracted_note = potential_note.to_string();
-                    if is_trailing_guidance_note(potential_note) {
-                        if let Some(branch_note) =
-                            take_last_or_parenthetical_note(&mut deferred_parenthetical_notes)
-                        {
-                            extracted_note = format!("{} ({})", extracted_note, branch_note);
-                        }
-                    }
-                    note = Some(extracted_note);
-                    remaining = potential_item.to_string();
+                    extracted_note = format!("{} ({})", extracted_note, branch_note);
                 }
             }
+            peeled.push(extracted_note);
+            remaining = potential_item;
         }
+        if !peeled.is_empty() {
+            peeled.reverse();
+            let peeled = peeled.join(", ");
+            note = Some(match note {
+                Some(existing) => format!("{peeled}, {existing}"),
+                None => peeled,
+            });
+        }
+    }
+
+    // Step 5.1: Trailing guidance without a comma ("sesame seeds to taste",
+    // "oil for frying", "neutral oil such as canola", "spinach [see Note]")
+    // is a note, not part of the item.
+    if let Some((item_part, trailing)) = split_trailing_phrase_note(&remaining) {
+        note = Some(match note {
+            Some(existing) => format!("{}, {}", trailing, existing),
+            None => trailing,
+        });
+        remaining = item_part;
     }
 
     // Step 5.5: Handle " or " alternatives in the MIDDLE of remaining text
@@ -970,7 +1037,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // - Note isn't already set
     // - The text after " or " contains a measurement somewhere (indicating an alternative preparation)
     // This avoids breaking compound noun phrases like "chicken or vegetable stock"
-    if note.is_none() {
+    {
         if let Some(or_idx) = remaining.to_lowercase().find(" or ") {
             let before_or = remaining.get(..or_idx).unwrap_or("").trim();
             let after_or = remaining.get(or_idx + 4..).unwrap_or("").trim(); // Skip " or "
@@ -1029,14 +1096,52 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             let has_number = without_parens.chars().any(|c| c.is_ascii_digit());
             let contains_measurement = has_unit && has_number;
 
+            // A brand alone before "or" ("Diamond Crystal or 1 1/4 tsp. Morton
+            // kosher salt") borrows the food from the alternative: "Diamond
+            // Crystal kosher salt".
+            // A multi-word capitalized name ("Diamond Crystal", "Grand
+            // Marnier"); a single capitalized word ("Tajín") is its own food.
+            let brand_words: Vec<&str> = before_or.split_whitespace().collect();
+            let brand_only = brand_words.len() >= 2
+                && brand_words
+                    .iter()
+                    .all(|word| word.chars().next().is_some_and(char::is_uppercase));
+            let shared_food = if brand_only {
+                let alternative_item = parse_ingredient(after_or).item;
+                let food: Vec<&str> = alternative_item
+                    .split_whitespace()
+                    .skip_while(|word| word.chars().next().is_some_and(char::is_uppercase))
+                    // "or another orange liqueur": the determiner isn't the food.
+                    .skip_while(|word| {
+                        ["another", "other", "a", "an", "any", "some", "your"]
+                            .contains(&word.to_lowercase().as_str())
+                    })
+                    .collect();
+                // "King Arthur Rolled Oats or 1 cup rolled oats" already names
+                // the food; only a name without it borrows the alternative's.
+                let names_food = food.last().is_some_and(|last| {
+                    before_or
+                        .to_lowercase()
+                        .split_whitespace()
+                        .any(|word| word == last.to_lowercase())
+                });
+                (!food.is_empty() && !names_food)
+                    .then(|| format!("{} {}", before_or, food.join(" ")))
+            } else {
+                None
+            };
             if !before_or.is_empty() && !after_or.is_empty() && contains_measurement {
                 let alternative_note =
                     take_last_or_parenthetical_note(&mut deferred_parenthetical_notes);
-                note = Some(match alternative_note {
+                let alternative = match alternative_note {
                     Some(alternative_note) => format!("or {} ({})", after_or, alternative_note),
                     None => format!("or {}", after_or),
+                };
+                note = Some(match note {
+                    Some(existing) => format!("{}; {}", alternative, existing),
+                    None => alternative,
                 });
-                remaining = before_or.to_string();
+                remaining = shared_food.unwrap_or_else(|| before_or.to_string());
             }
         }
     }
@@ -1141,6 +1246,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         } else {
             Some(trimmed)
         };
+    }
+
+    if let Some(approximation) = approximation {
+        note = Some(match note {
+            Some(n) => format!("{approximation}, {n}"),
+            None => approximation,
+        });
     }
 
     // Prepend "optional" to note if we stripped that prefix
@@ -1323,6 +1435,8 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
         if trimmed.is_empty() {
             continue;
         }
+        // The raw text stays the line as written, list marker included.
+        let original = trimmed.to_string();
         let normalized = strip_leading_list_marker(trimmed);
         let trimmed = normalized.trim();
         if trimmed.is_empty() {
@@ -1358,7 +1472,7 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
         if let Some(parts) = split_bare_compound_line(trimmed) {
             for part in parts {
                 let mut ingredient = parse_ingredient(&part);
-                ingredient.raw = Some(trimmed.to_string());
+                ingredient.raw = Some(original.clone());
                 ingredient.section = current_section.clone();
                 results.push(ingredient);
             }
@@ -1367,6 +1481,7 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
 
         // Parse the ingredient and apply current section
         let mut ingredient = parse_ingredient(trimmed);
+        ingredient.raw = Some(original);
         ingredient.section = current_section.clone();
         // Expand "each" compound ingredients (e.g., "1/2 tsp each salt and pepper" -> 2 ingredients)
         results.extend(expand_each_ingredients(ingredient));

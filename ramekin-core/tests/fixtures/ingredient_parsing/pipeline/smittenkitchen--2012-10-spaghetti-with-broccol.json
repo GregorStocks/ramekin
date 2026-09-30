@@ -150,14 +150,14 @@
     {
       "raw": "A heap of grated parmesan (about 1/2 cup), to serve",
       "expected": {
-        "item": "A heap of grated parmesan, to serve",
+        "item": "A heap of grated parmesan",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "about 1/2 cup",
+        "note": "about 1/2 cup, to serve",
         "category": "Cheese"
       }
     }

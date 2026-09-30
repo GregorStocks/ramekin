@@ -23,28 +23,28 @@
     {
       "raw": "1 large white onion, quartered, divided",
       "expected": {
-        "item": "white onion, quartered",
+        "item": "white onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "divided",
+        "note": "quartered, divided",
         "category": "Produce"
       }
     },
     {
       "raw": "8 cloves garlic, peeled, divided",
       "expected": {
-        "item": "garlic, peeled",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "8",
             "unit": "clove"
           }
         ],
-        "note": "divided",
+        "note": "peeled, divided",
         "category": "Produce"
       }
     },
@@ -79,28 +79,28 @@
     {
       "raw": "8 dried guajillo chiles, stems and seeds removed",
       "expected": {
-        "item": "dried guajillo chiles, stems and seeds removed",
+        "item": "dried guajillo chiles",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stems and seeds removed",
         "category": "Produce"
       }
     },
     {
       "raw": "2 dried pasilla or ancho chiles, stems and seeds removed",
       "expected": {
-        "item": "dried pasilla or ancho chiles, stems and seeds removed",
+        "item": "dried pasilla or ancho chiles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stems and seeds removed",
         "category": "Produce"
       }
     },
@@ -211,18 +211,18 @@
     {
       "raw": "Kosher salt and black pepper to taste",
       "expected": {
-        "item": "Kosher salt and black pepper to taste",
+        "item": "Kosher salt and black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Chopped onion, lime wedges, and cilantro, to serve",
       "expected": {
-        "item": "Chopped onion, lime wedges, and cilantro, to serve",
+        "item": "Chopped onion, lime wedges, and cilantro",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Produce"
       }
     }

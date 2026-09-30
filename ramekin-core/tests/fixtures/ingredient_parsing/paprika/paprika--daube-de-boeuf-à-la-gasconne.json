@@ -189,7 +189,7 @@
     {
       "raw": "1/4 cup (60ml) brandy (preferably Armagnac), see notes",
       "expected": {
-        "item": "brandy, see notes",
+        "item": "brandy",
         "measurements": [
           {
             "amount": "0.25",
@@ -200,14 +200,14 @@
             "unit": "ml"
           }
         ],
-        "note": "preferably Armagnac",
+        "note": "preferably Armagnac, see notes",
         "category": "Beverages"
       }
     },
     {
       "raw": "One 750ml bottle full-bodied red wine (preferably Madiran or Cahors), see notes",
       "expected": {
-        "item": "bottle full-bodied red wine, see notes",
+        "item": "bottle full-bodied red wine",
         "measurements": [
           {
             "amount": "1",
@@ -218,7 +218,7 @@
             "unit": "ml"
           }
         ],
-        "note": "preferably Madiran or Cahors",
+        "note": "preferably Madiran or Cahors, see notes",
         "category": "Beverages"
       }
     },
@@ -279,18 +279,18 @@
     {
       "raw": "Chopped fresh parsley for garnish",
       "expected": {
-        "item": "Chopped fresh parsley for garnish",
+        "item": "Chopped fresh parsley",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "Potatoes or crusty bread for serving (optional)",
       "expected": {
-        "item": "Potatoes or crusty bread for serving",
+        "item": "Potatoes or crusty bread",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Produce"
       }
     }

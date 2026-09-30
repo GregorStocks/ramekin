@@ -14,7 +14,7 @@
     {
       "raw": "1 pound dried pasta, any shape you like",
       "expected": {
-        "item": "dried pasta, any shape you like",
+        "item": "dried pasta",
         "measurements": [
           {
             "amount": "1",
@@ -25,7 +25,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any shape you like",
         "category": "Pasta & Rice"
       }
     },
@@ -132,14 +132,14 @@
     {
       "raw": "Handful chopped chives or parsley, to finish (optional)",
       "expected": {
-        "item": "chopped chives or parsley, to finish",
+        "item": "chopped chives or parsley",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": "optional",
+        "note": "optional, to finish",
         "category": "Spices & Seasonings"
       }
     },

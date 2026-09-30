@@ -775,3 +775,100 @@ fn test_split_bare_compound_line_rejects_non_list_and_grammar() {
         ])
     );
 }
+
+#[test]
+fn test_trailing_comma_notes_never_peel_listed_foods() {
+    let parsed = super::super::parse_ingredient(
+        "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions, for topping",
+    );
+    assert_eq!(
+        parsed.item,
+        "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions"
+    );
+    assert_eq!(parsed.note.as_deref(), Some("for topping"));
+    let parsed =
+        super::super::parse_ingredient("1 egg, beaten with 1 teaspoon water, for egg wash");
+    assert_eq!(parsed.item, "egg");
+    assert_eq!(
+        parsed.note.as_deref(),
+        Some("beaten with 1 teaspoon water, for egg wash")
+    );
+    let parsed = super::super::parse_ingredient("1/2 cup feta, drained, crumbled");
+    assert_eq!(parsed.item, "feta");
+    assert_eq!(parsed.note.as_deref(), Some("drained, crumbled"));
+}
+
+#[test]
+fn test_trailing_notes_keep_the_food_and_drop_connectors() {
+    let parse = super::super::parse_ingredient;
+    let salt = parse("2 1/4 tsp. Diamond Crystal or 1 1/4 tsp. Morton kosher salt, divided");
+    assert!(salt.item.to_lowercase().contains("kosher salt"), "{salt:?}");
+    let sugar = parse("1 teaspoon sugar or to taste");
+    assert_eq!(sugar.item, "sugar");
+    assert_eq!(sugar.note.as_deref(), Some("or to taste"));
+    let dish = parse("1 deep pie dish, or frankly, any old dish you feel like baking in");
+    assert!(dish.item.contains("any old dish"), "{dish:?}");
+    let garnish = parse("Confectioners’ sugar, for dusting, and mint leaves, for garnish");
+    assert!(garnish.item.contains("mint leaves"), "{garnish:?}");
+    let liqueur = parse("1/2 ounce crème de framboise [raspberry liqueur]");
+    assert!(liqueur.item.contains("raspberry liqueur"), "{liqueur:?}");
+    let spinach = parse("1 pound baby spinach [see Note about frozen]");
+    assert_eq!(spinach.item, "baby spinach");
+    let garnishes = parse("Garnishes, such as minced chives, pickles, celery, radishes");
+    assert!(garnishes.item.contains("minced chives"), "{garnishes:?}");
+    let toppings = parse("optional toppings for serving: extra cheese, chopped herbs");
+    assert!(toppings.item.contains("extra cheese"), "{toppings:?}");
+    let oil = parse("2 tablespoons neutral oil, such as canola");
+    assert_eq!(oil.item, "neutral oil");
+    let pasta = parse("1 pound dried pasta, any shape you like");
+    assert_eq!(pasta.item, "dried pasta");
+}
+
+#[test]
+fn test_trailing_or_alternative_goes_to_the_note() {
+    let spinach =
+        super::super::parse_ingredient("1 pound fresh baby spinach, or thawed frozen spinach");
+    assert_eq!(spinach.item, "fresh baby spinach");
+    assert_eq!(spinach.note.as_deref(), Some("or thawed frozen spinach"));
+}
+
+#[test]
+fn test_examples_connectors_and_brand_alternatives() {
+    let parse = super::super::parse_ingredient;
+    let mixins = parse("1 cup chopped mix-ins, like cooked meats and/or raw or cooked vegetables");
+    assert!(mixins.item.contains("cooked meats"), "{mixins:?}");
+    let salt = parse("3/4 teaspoon table salt or more to taste");
+    assert_eq!(salt.item, "table salt");
+    let liqueur =
+        parse("1 tablespoon Grand Marnier or another orange liqueur or 1/4 teaspoon orange zest");
+    assert_eq!(liqueur.item, "Grand Marnier orange liqueur");
+}
+
+#[test]
+fn test_single_word_names_and_qualified_categories() {
+    let parse = super::super::parse_ingredient;
+    let tajin = parse("1 teaspoon Tajín or 1/2 teaspoon chili powder");
+    assert_eq!(tajin.item, "Tajín");
+    let toppings = parse("Toppings of your choice, such as grated cheddar cheese, sour cream");
+    assert!(
+        toppings.item.contains("grated cheddar cheese"),
+        "{toppings:?}"
+    );
+}
+
+#[test]
+fn test_such_as_inside_a_list_keeps_the_rest_of_the_list() {
+    let parsed = super::super::parse_ingredient(
+        "optional garnishes: crumbled bacon, fresh herbs such as thyme or parsley, cracked black pepper, cheddar",
+    );
+    assert!(parsed.item.contains("cracked black pepper"), "{parsed:?}");
+}
+
+#[test]
+fn test_named_brands_and_singular_categories() {
+    let parse = super::super::parse_ingredient;
+    let oats = parse("1 cup King Arthur Rolled Oats or 1 cup old-fashioned rolled oats");
+    assert_eq!(oats.item, "King Arthur Rolled Oats");
+    let mixin = parse("1 cup mix-in of choice, such as sliced almonds, chocolate chips");
+    assert!(mixin.item.contains("sliced almonds"), "{mixin:?}");
+}

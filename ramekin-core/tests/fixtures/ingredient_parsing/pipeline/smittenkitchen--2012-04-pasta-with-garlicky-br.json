@@ -91,9 +91,14 @@
     {
       "raw": "About 1 heaping teaspoon Kosher salt (or more to taste)",
       "expected": {
-        "item": "About 1 heaping teaspoon Kosher salt",
-        "measurements": [],
-        "note": "or more to taste",
+        "item": "Kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaping tsp"
+          }
+        ],
+        "note": "about, or more to taste",
         "category": "Spices & Seasonings"
       }
     }

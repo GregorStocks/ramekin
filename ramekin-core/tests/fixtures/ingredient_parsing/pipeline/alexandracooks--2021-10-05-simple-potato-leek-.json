@@ -46,7 +46,7 @@
     {
       "raw": "2 lbs. Potatoes, such as Yukon Gold or whatever variety you have on hand, peeled and cut into 1-inch pieces",
       "expected": {
-        "item": "Potatoes, such as Yukon Gold or whatever variety you have on hand",
+        "item": "Potatoes",
         "measurements": [
           {
             "amount": "2",
@@ -57,14 +57,14 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1-inch pieces",
+        "note": "such as Yukon Gold or whatever variety you have on hand, peeled and cut into 1-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "8 cups vegetable stock, chicken stock, or water, see notes above",
       "expected": {
-        "item": "vegetable stock, chicken stock, or water, see notes above",
+        "item": "vegetable stock, chicken stock, or water",
         "measurements": [
           {
             "amount": "8",
@@ -75,7 +75,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Canned Goods"
       }
     },

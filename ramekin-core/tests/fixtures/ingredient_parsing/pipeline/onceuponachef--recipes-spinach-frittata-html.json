@@ -23,14 +23,14 @@
     {
       "raw": "¾ cup  thinly sliced shallots, from 2 to 3 shallots",
       "expected": {
-        "item": "thinly sliced shallots, from 2 to 3 shallots",
+        "item": "thinly sliced shallots",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2 to 3 shallots",
         "category": "Produce"
       }
     },

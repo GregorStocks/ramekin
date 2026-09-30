@@ -113,7 +113,7 @@
     {
       "raw": "3/4 cup butter, softened, or 3/4 cup vegetable oil",
       "expected": {
-        "item": "butter, softened",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.75",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 3/4 cup vegetable oil",
+        "note": "softened, or 3/4 cup vegetable oil",
         "category": "Dairy & Eggs"
       }
     },

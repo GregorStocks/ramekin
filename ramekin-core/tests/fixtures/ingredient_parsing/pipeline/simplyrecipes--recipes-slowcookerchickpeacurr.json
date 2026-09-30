@@ -209,7 +209,7 @@
     {
       "raw": "6 cups spinach, roughly chopped, to serve",
       "expected": {
-        "item": "spinach, roughly chopped, to serve",
+        "item": "spinach",
         "measurements": [
           {
             "amount": "6",
@@ -220,34 +220,34 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "roughly chopped, to serve",
         "category": "Produce"
       }
     },
     {
       "raw": "Cooked rice , to serve (optional)",
       "expected": {
-        "item": "Cooked rice, to serve",
+        "item": "Cooked rice",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, to serve",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "Chopped cilantro, to serve",
       "expected": {
-        "item": "Chopped cilantro, to serve",
+        "item": "Chopped cilantro",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Produce"
       }
     },
     {
       "raw": "Lime or lemon wedges, to serve",
       "expected": {
-        "item": "Lime or lemon wedges, to serve",
+        "item": "Lime or lemon wedges",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Produce"
       }
     }

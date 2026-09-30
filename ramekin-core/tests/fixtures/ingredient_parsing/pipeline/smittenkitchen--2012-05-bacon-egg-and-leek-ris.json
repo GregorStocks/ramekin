@@ -45,7 +45,7 @@
     {
       "raw": "3 tablespoons unsalted butter, divided, plus more to fry eggs",
       "expected": {
-        "item": "unsalted butter, divided",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
@@ -56,21 +56,21 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to fry eggs",
+        "note": "divided, plus more to fry eggs",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 large or 3 smaller leeks, quartered lengthwise, cleaned of grit, and chopped small",
       "expected": {
-        "item": "or 3 smaller leeks, quartered lengthwise, cleaned of grit",
+        "item": "or 3 smaller leeks, quartered lengthwise, cleaned of grit, and chopped small",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "and chopped small",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -182,9 +182,9 @@
     {
       "raw": "Minced fresh chives for garnish (optional)",
       "expected": {
-        "item": "Minced fresh chives for garnish",
+        "item": "Minced fresh chives",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Produce"
       }
     }

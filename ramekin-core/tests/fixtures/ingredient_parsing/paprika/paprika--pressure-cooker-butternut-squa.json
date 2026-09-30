@@ -190,7 +190,7 @@
     {
       "raw": "2 cups (400 g) risotto rice, such as arborio",
       "expected": {
-        "item": "risotto rice, such as arborio",
+        "item": "risotto rice",
         "measurements": [
           {
             "amount": "2",
@@ -201,7 +201,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as arborio",
         "category": "Pasta & Rice"
       }
     },
@@ -248,9 +248,9 @@
     {
       "raw": "Parmigiano-Reggiano cheese, for grating",
       "expected": {
-        "item": "Parmigiano-Reggiano cheese, for grating",
+        "item": "Parmigiano-Reggiano cheese",
         "measurements": [],
-        "note": null,
+        "note": "for grating",
         "category": "Cheese"
       }
     }

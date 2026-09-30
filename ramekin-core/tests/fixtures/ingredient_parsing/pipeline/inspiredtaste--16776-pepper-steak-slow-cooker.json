@@ -32,14 +32,14 @@
     {
       "raw": "2 tablespoons neural flavored oil, such as grape seed or canola",
       "expected": {
-        "item": "neural flavored oil, such as grape seed or canola",
+        "item": "neural flavored oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as grape seed or canola",
         "category": "Oils & Vinegars"
       }
     },

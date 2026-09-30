@@ -272,14 +272,14 @@
     {
       "raw": "12  (6-in/15-cm) soft corn tortillas, warmed",
       "expected": {
-        "item": "soft corn tortillas, warmed",
+        "item": "soft corn tortillas",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": "6-in/15-cm",
+        "note": "6-in/15-cm, warmed",
         "category": "Bakery & Bread"
       }
     },

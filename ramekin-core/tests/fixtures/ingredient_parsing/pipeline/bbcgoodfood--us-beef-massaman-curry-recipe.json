@@ -175,14 +175,14 @@
     {
       "raw": "1  red chile pepper deseeded and finely sliced, to serve",
       "expected": {
-        "item": "red chile pepper deseeded and finely sliced, to serve",
+        "item": "red chile pepper deseeded and finely sliced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "to serve",
         "category": "Spices & Seasonings"
       }
     },

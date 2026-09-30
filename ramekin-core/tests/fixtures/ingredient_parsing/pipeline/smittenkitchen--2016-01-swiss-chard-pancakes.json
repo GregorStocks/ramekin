@@ -207,14 +207,14 @@
     {
       "raw": "2 garlic cloves, split, germ removed, and coarsely chopped",
       "expected": {
-        "item": "garlic cloves, split, germ removed",
+        "item": "garlic cloves, split, germ removed, and coarsely chopped",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "and coarsely chopped",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -230,7 +230,7 @@
     {
       "raw": "5 large or 10 small Swiss chard leaves, center ribs removed, roughly chopped",
       "expected": {
-        "item": "Swiss chard leaves, center ribs removed",
+        "item": "Swiss chard leaves",
         "measurements": [
           {
             "amount": "5",
@@ -241,21 +241,25 @@
             "unit": "small"
           }
         ],
-        "note": "roughly chopped",
+        "note": "center ribs removed, roughly chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "About 1/2 cup (120 ml) grapeseed, peanut, vegetable, or olive oil",
       "expected": {
-        "item": "About 1/2 cup grapeseed, peanut, vegetable, or olive oil",
+        "item": "grapeseed, peanut, vegetable, or olive oil",
         "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
           {
             "amount": "120",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "about",
         "category": "Oils & Vinegars"
       }
     }

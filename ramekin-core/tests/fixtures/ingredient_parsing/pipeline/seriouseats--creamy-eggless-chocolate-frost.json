@@ -27,7 +27,7 @@
     {
       "raw": "2 ounces Dutch cocoa powder, such as Cacao Barry Extra Brute (about 2/3 cup, spooned; 55g); see note",
       "expected": {
-        "item": "Dutch cocoa powder, such as Cacao Barry Extra Brute ; see note",
+        "item": "Dutch cocoa powder",
         "measurements": [
           {
             "amount": "2",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 2/3 cup, spooned; 55g",
+        "note": "about 2/3 cup, spooned; 55g, such as Cacao Barry Extra Brute ; see note",
         "category": "Baking"
       }
     },
@@ -67,7 +67,7 @@
     {
       "raw": "32 ounces milk, any percentage will do (4 cups; 910g)",
       "expected": {
-        "item": "milk, any percentage will do",
+        "item": "milk",
         "measurements": [
           {
             "amount": "32",
@@ -82,7 +82,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any percentage will do",
         "category": "Dairy & Eggs"
       }
     },

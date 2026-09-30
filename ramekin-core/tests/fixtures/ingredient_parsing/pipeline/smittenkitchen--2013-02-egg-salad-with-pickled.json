@@ -77,14 +77,14 @@
     {
       "raw": "2 stalks celery, trimmed, diced tiny",
       "expected": {
-        "item": "celery, trimmed",
+        "item": "celery",
         "measurements": [
           {
             "amount": "2",
             "unit": "stalk"
           }
         ],
-        "note": "diced tiny",
+        "note": "trimmed, diced tiny",
         "category": "Produce"
       }
     },
@@ -147,9 +147,9 @@
     {
       "raw": "Salt and freshly ground pepper to taste",
       "expected": {
-        "item": "Salt and freshly ground pepper to taste",
+        "item": "Salt and freshly ground pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

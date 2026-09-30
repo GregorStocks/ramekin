@@ -215,7 +215,7 @@
     {
       "raw": "6 ounces (170 grams) crumbled salty cheese, such as ricotta salata, feta, queso fresco",
       "expected": {
-        "item": "crumbled salty cheese, such as ricotta salata, feta, queso fresco",
+        "item": "crumbled salty cheese",
         "measurements": [
           {
             "amount": "6",
@@ -226,7 +226,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as ricotta salata, feta, queso fresco",
         "section": "Assembly",
         "category": "Cheese"
       }

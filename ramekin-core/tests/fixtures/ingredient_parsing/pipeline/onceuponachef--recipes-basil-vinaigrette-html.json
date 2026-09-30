@@ -33,21 +33,21 @@
     {
       "raw": "¼ cup + 2 tablespoons  white wine vinegar, best quality such as Pompeian Gourmet",
       "expected": {
-        "item": "white wine vinegar, best quality such as Pompeian Gourmet",
+        "item": "white wine vinegar, best quality",
         "measurements": [
           {
             "amount": "1/4 cup plus 2 tablespoons",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "such as Pompeian Gourmet",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "¾ cup  extra-virgin olive oil, best quality such as Lucini",
       "expected": {
-        "item": "extra-virgin olive oil, best quality such as Lucini",
+        "item": "extra-virgin olive oil, best quality",
         "measurements": [
           {
             "amount": "0.75",
@@ -58,7 +58,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Lucini",
         "category": "Oils & Vinegars"
       }
     },

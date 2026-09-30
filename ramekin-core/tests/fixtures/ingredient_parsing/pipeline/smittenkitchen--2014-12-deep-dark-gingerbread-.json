@@ -296,7 +296,7 @@
     {
       "raw": "3 tablespoons butter, melted, plus extra for brushing waffle iron",
       "expected": {
-        "item": "butter, melted",
+        "item": "butter",
         "measurements": [
           {
             "amount": "3",
@@ -307,16 +307,16 @@
             "unit": "g"
           }
         ],
-        "note": "plus extra for brushing waffle iron",
+        "note": "melted, plus extra for brushing waffle iron",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Powdered sugar for serving",
       "expected": {
-        "item": "Powdered sugar for serving",
+        "item": "Powdered sugar",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Baking"
       }
     }

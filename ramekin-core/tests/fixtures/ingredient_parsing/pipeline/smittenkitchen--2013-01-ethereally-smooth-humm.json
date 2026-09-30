@@ -109,9 +109,14 @@
     {
       "raw": "Approximately 1/4 cup water or reserved chickpea cooking water",
       "expected": {
-        "item": "Approximately 1/4 cup water or reserved chickpea cooking water",
-        "measurements": [],
-        "note": null,
+        "item": "water or reserved chickpea cooking water",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "approximately",
         "category": "Canned Goods"
       }
     }

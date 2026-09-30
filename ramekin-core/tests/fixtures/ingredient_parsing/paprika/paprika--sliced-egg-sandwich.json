@@ -100,32 +100,32 @@
     {
       "raw": "Butter, for toasting",
       "expected": {
-        "item": "Butter, for toasting",
+        "item": "Butter",
         "measurements": [],
-        "note": null,
+        "note": "for toasting",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 hard-boiled eggs, cold, peeled, and sliced",
       "expected": {
-        "item": "hard-boiled eggs, cold, peeled",
+        "item": "hard-boiled eggs, cold, peeled, and sliced",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "and sliced",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Thinly sliced pickles, celery, pickled onions [more suggestions in Notes]",
       "expected": {
-        "item": "Thinly sliced pickles, celery, pickled onions [more suggestions in Notes]",
+        "item": "Thinly sliced pickles, celery, pickled onions",
         "measurements": [],
-        "note": null,
+        "note": "more suggestions in Notes",
         "category": "Produce"
       }
     },

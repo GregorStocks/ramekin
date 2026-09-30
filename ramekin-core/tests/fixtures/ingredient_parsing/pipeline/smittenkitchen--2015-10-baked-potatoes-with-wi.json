@@ -257,14 +257,14 @@
     {
       "raw": "1 tablespoon minced fresh chives or flat-leaf parsley, to finish",
       "expected": {
-        "item": "minced fresh chives or flat-leaf parsley, to finish",
+        "item": "minced fresh chives or flat-leaf parsley",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "to finish",
         "category": "Produce"
       }
     }

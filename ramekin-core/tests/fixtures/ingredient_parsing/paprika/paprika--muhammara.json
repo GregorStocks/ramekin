@@ -307,18 +307,18 @@
     {
       "raw": "Mint sprig or 5 to 7 picked mint leaves for garnish, optional",
       "expected": {
-        "item": "Mint sprig or 5 to 7 picked mint leaves for garnish",
+        "item": "Mint sprig or 5 to 7 picked mint leaves",
         "measurements": [],
-        "note": "optional",
+        "note": "for garnish, optional",
         "category": "Produce"
       }
     },
     {
       "raw": "Pita bread for serving",
       "expected": {
-        "item": "Pita bread for serving",
+        "item": "Pita bread",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Bakery & Bread"
       }
     }

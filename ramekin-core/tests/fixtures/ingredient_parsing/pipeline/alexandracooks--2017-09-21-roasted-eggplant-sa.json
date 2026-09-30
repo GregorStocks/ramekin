@@ -45,7 +45,7 @@
     {
       "raw": "10 to 12&nbsp;ounces&nbsp;greens, such as Swiss chard, kale, or mustard greens, leaves removed from stems and finely chopped (you should have about 8 oz. greens post trimming)",
       "expected": {
-        "item": "greens, such as Swiss chard, kale, or mustard greens",
+        "item": "greens",
         "measurements": [
           {
             "amount": "10 to 12",
@@ -56,14 +56,14 @@
             "unit": "g"
           }
         ],
-        "note": "you should have about 8 oz. greens post trimming, leaves removed from stems and finely chopped",
-        "category": "Condiments & Sauces"
+        "note": "you should have about 8 oz. greens post trimming, such as Swiss chard, kale, or mustard greens, leaves removed from stems and finely chopped",
+        "category": "Produce"
       }
     },
     {
       "raw": "1&nbsp;quart&nbsp;tomato sauce, such as this one&nbsp;or this one",
       "expected": {
-        "item": "tomato sauce, such as this one or this one",
+        "item": "tomato sauce",
         "measurements": [
           {
             "amount": "1",
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as this one or this one",
         "category": "Canned Goods"
       }
     },

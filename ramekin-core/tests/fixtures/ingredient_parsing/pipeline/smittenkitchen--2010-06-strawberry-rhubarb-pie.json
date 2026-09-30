@@ -19,7 +19,7 @@
     {
       "raw": "3 1/2 cups (about 1 1/2 pounds, untrimmed) rhubarb, in 1/2-inch thick slices",
       "expected": {
-        "item": "rhubarb, in 1/2-inch thick slices",
+        "item": "rhubarb",
         "measurements": [
           {
             "amount": "3.5",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 1 1/2 pounds, untrimmed",
+        "note": "about 1 1/2 pounds, untrimmed, in 1/2-inch thick slices",
         "category": "Produce"
       }
     },

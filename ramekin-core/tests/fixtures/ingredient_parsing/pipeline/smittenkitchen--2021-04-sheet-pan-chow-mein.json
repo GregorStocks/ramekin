@@ -120,14 +120,14 @@
     {
       "raw": "2 tablespoons toasted sesame seeds, to finish",
       "expected": {
-        "item": "toasted sesame seeds, to finish",
+        "item": "toasted sesame seeds",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "to finish",
         "category": "Spices & Seasonings"
       }
     },
@@ -188,14 +188,14 @@
     {
       "raw": "1 tablespoon vegetarian stir-fry sauce, such as vegetarian oyster or hoisin sauce (optional)",
       "expected": {
-        "item": "vegetarian stir-fry sauce, such as vegetarian oyster or hoisin sauce",
+        "item": "vegetarian stir-fry sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, such as vegetarian oyster or hoisin sauce",
         "category": "Condiments & Sauces"
       }
     },

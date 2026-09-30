@@ -5,7 +5,7 @@
     {
       "raw": "2 tablespoons butter (1 ounce or 30 grams), melted, plus additional for brushing pan",
       "expected": {
-        "item": "butter, melted",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus additional for brushing pan",
+        "note": "melted, plus additional for brushing pan",
         "category": "Dairy & Eggs"
       }
     },
@@ -189,7 +189,7 @@
     {
       "raw": "1/4 cup (35 grams) cornmeal, any kind",
       "expected": {
-        "item": "cornmeal, any kind",
+        "item": "cornmeal",
         "measurements": [
           {
             "amount": "0.25",
@@ -200,7 +200,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind",
         "category": "Baking"
       }
     }

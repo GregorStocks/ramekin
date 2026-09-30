@@ -144,9 +144,9 @@
     {
       "raw": "Sunflower or other neutral oil, for greasing",
       "expected": {
-        "item": "Sunflower or other neutral oil, for greasing",
+        "item": "Sunflower or other neutral oil",
         "measurements": [],
-        "note": null,
+        "note": "for greasing",
         "section": "Dough",
         "category": "Oils & Vinegars"
       }
@@ -234,14 +234,18 @@
     {
       "raw": "1/4 teaspoon cinnamon [optional]",
       "expected": {
-        "item": "cinnamon [optional]",
+        "item": "cinnamon",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "optional",
         "section": "Filling",
         "category": "Spices & Seasonings"
       }

@@ -5,14 +5,14 @@
     {
       "raw": "2 fillets salmon (thin), about 1 lb",
       "expected": {
-        "item": "fillets salmon, about 1 lb",
+        "item": "fillets salmon",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "thin",
+        "note": "thin, about 1 lb",
         "category": "Meat & Seafood"
       }
     },

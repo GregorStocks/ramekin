@@ -41,7 +41,7 @@
     {
       "raw": "4 fresh red chiles, such as Holland, Fresno, or Cayenne (2 1/2 ounces; 70g), stemmed and thinly sliced crosswise (see notes)",
       "expected": {
-        "item": "fresh red chiles, such as Holland, Fresno, or Cayenne",
+        "item": "fresh red chiles",
         "measurements": [
           {
             "amount": "4",
@@ -56,8 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": "see notes, stemmed and thinly sliced crosswise",
-        "category": "Spices & Seasonings"
+        "note": "see notes, such as Holland, Fresno, or Cayenne, stemmed and thinly sliced crosswise",
+        "category": "Produce"
       }
     },
     {
@@ -103,7 +103,7 @@
     {
       "raw": "2 tablespoons (30ml) neutral oil such as vegetable or canola oil",
       "expected": {
-        "item": "neutral oil such as vegetable or canola oil",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "2",
@@ -118,7 +118,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as vegetable or canola oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -447,7 +447,7 @@
     {
       "raw": "4 tablespoons (60ml) neutral oil such as vegetable or canola oil, divided",
       "expected": {
-        "item": "neutral oil such as vegetable or canola oil",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "4",
@@ -462,7 +462,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "such as vegetable or canola oil, divided",
         "category": "Oils & Vinegars"
       }
     },

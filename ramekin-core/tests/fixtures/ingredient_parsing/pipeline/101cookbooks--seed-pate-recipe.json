@@ -41,7 +41,7 @@
     {
       "raw": "4 cups filtered water, for soaking",
       "expected": {
-        "item": "filtered water, for soaking",
+        "item": "filtered water",
         "measurements": [
           {
             "amount": "4",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for soaking",
         "category": "Beverages"
       }
     },
@@ -169,9 +169,9 @@
     {
       "raw": "fine grain salt to taste",
       "expected": {
-        "item": "fine grain salt to taste",
+        "item": "fine grain salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Pasta & Rice"
       }
     }

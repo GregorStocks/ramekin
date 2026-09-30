@@ -67,7 +67,7 @@
     {
       "raw": "1 tablespoon (15 ml) spicy brown mustard, such as Bertman Ball Park Mustard",
       "expected": {
-        "item": "spicy brown mustard, such as Bertman Ball Park Mustard",
+        "item": "spicy brown mustard",
         "measurements": [
           {
             "amount": "1",
@@ -78,7 +78,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "such as Bertman Ball Park Mustard",
         "category": "Condiments & Sauces"
       }
     },

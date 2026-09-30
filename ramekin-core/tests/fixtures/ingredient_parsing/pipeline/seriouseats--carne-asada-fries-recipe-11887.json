@@ -5,7 +5,7 @@
     {
       "raw": "2 (1 pound; 450 g each) bone-in or boneless ribeye or New York strip steaks, about 1 1/2 inches thick, trimmed",
       "expected": {
-        "item": "bone-in or boneless ribeye or New York strip steaks, about 1 1/2 inches thick",
+        "item": "bone-in or boneless ribeye or New York strip steaks",
         "measurements": [
           {
             "amount": "2",
@@ -20,7 +20,7 @@
             "unit": "g each"
           }
         ],
-        "note": "trimmed",
+        "note": "about 1 1/2 inches thick, trimmed",
         "category": "Meat & Seafood"
       }
     },
@@ -186,7 +186,7 @@
     {
       "raw": "2 quarts (1.9 L) neutral oil, such as peanut, vegetable, or canola, for frying",
       "expected": {
-        "item": "neutral oil, such as peanut, vegetable, or canola, for frying",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "2",
@@ -201,7 +201,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as peanut, vegetable, or canola, for frying",
         "category": "Oils & Vinegars"
       }
     },

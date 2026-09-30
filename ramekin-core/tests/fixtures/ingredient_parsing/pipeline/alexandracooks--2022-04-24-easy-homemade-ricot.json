@@ -5,7 +5,7 @@
     {
       "raw": "15 oz (430 g) whole milk ricotta, see notes above",
       "expected": {
-        "item": "whole milk ricotta, see notes above",
+        "item": "whole milk ricotta",
         "measurements": [
           {
             "amount": "15",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Cheese"
       }
     },
@@ -87,9 +87,9 @@
     {
       "raw": "kosher salt and pepper to taste",
       "expected": {
-        "item": "kosher salt and pepper to taste",
+        "item": "kosher salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

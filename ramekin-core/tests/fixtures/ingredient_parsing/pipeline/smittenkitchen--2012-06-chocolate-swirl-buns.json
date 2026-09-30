@@ -123,7 +123,7 @@
     {
       "raw": "3 tablespoons (45 grams) unsalted butter, at room temperature, plus additional for bowl and muffin tins",
       "expected": {
-        "item": "unsalted butter, at room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
@@ -134,7 +134,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus additional for bowl and muffin tins",
+        "note": "at room temperature, plus additional for bowl and muffin tins",
         "section": "Dough",
         "category": "Dairy & Eggs"
       }

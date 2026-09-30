@@ -41,7 +41,7 @@
     {
       "raw": "6 tablespoons hoisin sauce, best quality such as Lee Kum Kee or Kikkoman (use gluten-free if needed)",
       "expected": {
-        "item": "hoisin sauce, best quality such as Lee Kum Kee or Kikkoman",
+        "item": "hoisin sauce, best quality",
         "measurements": [
           {
             "amount": "6",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "use gluten-free if needed",
+        "note": "use gluten-free if needed, such as Lee Kum Kee or Kikkoman",
         "category": "Condiments & Sauces"
       }
     },
@@ -199,14 +199,14 @@
     {
       "raw": "5 scallions, sliced, light and dark green parts separated",
       "expected": {
-        "item": "scallions, sliced, light and dark green parts separated",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced, light and dark green parts separated",
         "category": "Produce"
       }
     },

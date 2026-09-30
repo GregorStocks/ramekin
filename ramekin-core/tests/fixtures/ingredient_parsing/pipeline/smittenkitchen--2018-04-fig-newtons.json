@@ -189,7 +189,7 @@
     {
       "raw": "1/3 cup (100 grams or 3 1/2 ounces) applesauce, any variety",
       "expected": {
-        "item": "applesauce, any variety",
+        "item": "applesauce",
         "measurements": [
           {
             "amount": "0.33",
@@ -204,7 +204,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "any variety",
         "category": "Canned Goods"
       }
     },

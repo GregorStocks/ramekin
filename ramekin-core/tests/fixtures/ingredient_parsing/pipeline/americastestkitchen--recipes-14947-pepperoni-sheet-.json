@@ -253,7 +253,7 @@
     {
       "raw": "1 ounce (28 grams) Parmesan cheese , grated (½ cup), plus extra for sprinkling",
       "expected": {
-        "item": "Parmesan cheese, grated",
+        "item": "Parmesan cheese",
         "measurements": [
           {
             "amount": "1",
@@ -268,7 +268,7 @@
             "unit": "cup"
           }
         ],
-        "note": "plus extra for sprinkling",
+        "note": "grated, plus extra for sprinkling",
         "category": "Cheese"
       }
     },

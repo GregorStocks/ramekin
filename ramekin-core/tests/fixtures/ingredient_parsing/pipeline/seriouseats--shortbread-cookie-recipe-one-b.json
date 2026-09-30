@@ -27,7 +27,7 @@
     {
       "raw": "255g white whole wheat flour (9 ounces; 2 cups), see notes",
       "expected": {
-        "item": "white whole wheat flour, see notes",
+        "item": "white whole wheat flour",
         "measurements": [
           {
             "amount": "255",
@@ -42,7 +42,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Baking"
       }
     },

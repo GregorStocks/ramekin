@@ -285,7 +285,7 @@
     {
       "raw": "1/4 teaspoon ground cinnamon, for sugar topping",
       "expected": {
-        "item": "ground cinnamon, for sugar topping",
+        "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "0.25",
@@ -296,7 +296,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for sugar topping",
         "category": "Spices & Seasonings"
       }
     }

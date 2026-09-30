@@ -19,14 +19,14 @@
     {
       "raw": "4 tender sprigs fresh thyme, marjoram, rosemary or sage, about 1/2 inch long",
       "expected": {
-        "item": "tender sprigs fresh thyme, marjoram, rosemary or sage, about 1/2 inch long",
+        "item": "tender sprigs fresh thyme, marjoram, rosemary or sage",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "about 1/2 inch long",
         "category": "Produce"
       }
     },
@@ -179,7 +179,7 @@
     {
       "raw": "1/4 cup slivered scallions (about 4 scallions), including a little of the green part",
       "expected": {
-        "item": "slivered scallions, including a little of the green part",
+        "item": "slivered scallions",
         "measurements": [
           {
             "amount": "0.25",
@@ -190,7 +190,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 4 scallions",
+        "note": "about 4 scallions, including a little of the green part",
         "category": "Produce"
       }
     },

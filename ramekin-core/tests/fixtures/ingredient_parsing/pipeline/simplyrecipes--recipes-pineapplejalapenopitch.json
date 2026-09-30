@@ -33,9 +33,9 @@
     {
       "raw": "Fresh lime wedges, for rimming the glasses and garnish",
       "expected": {
-        "item": "Fresh lime wedges, for rimming the glasses and garnish",
+        "item": "Fresh lime wedges",
         "measurements": [],
-        "note": null,
+        "note": "for rimming the glasses and garnish",
         "category": "Produce"
       }
     },
@@ -56,14 +56,14 @@
     {
       "raw": "1 1/4 cups aged tequila, such as reposado or&nbsp;añejo",
       "expected": {
-        "item": "aged tequila, such as reposado or añejo",
+        "item": "aged tequila",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as reposado or añejo",
         "category": "Beverages"
       }
     },
@@ -88,14 +88,14 @@
     {
       "raw": "1/2 cup orange liqueur, such as Triple Sec",
       "expected": {
-        "item": "orange liqueur, such as Triple Sec",
+        "item": "orange liqueur",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Triple Sec",
         "category": "Beverages"
       }
     },
@@ -120,9 +120,9 @@
     {
       "raw": "Extra jalapeño slice, pineapple wedges, and lime wedges for garnish",
       "expected": {
-        "item": "Extra jalapeño slice, pineapple wedges, and lime wedges for garnish",
+        "item": "Extra jalapeño slice, pineapple wedges, and lime wedges",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     }

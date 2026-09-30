@@ -221,9 +221,14 @@
     {
       "raw": "About 3 1/2 cups cauliflower florets (from about 1/2 a large 2.75-pound head)",
       "expected": {
-        "item": "About 3 1/2 cups cauliflower florets",
-        "measurements": [],
-        "note": "from about 1/2 a large 2.75-pound head",
+        "item": "cauliflower florets",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "about, from about 1/2 a large 2.75-pound head",
         "section": "Soup",
         "category": "Produce"
       }

@@ -321,14 +321,14 @@
     {
       "raw": "24 Rolos for garnish",
       "expected": {
-        "item": "Rolos for garnish",
+        "item": "Rolos",
         "measurements": [
           {
             "amount": "24",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for garnish",
         "category": "Other"
       }
     }

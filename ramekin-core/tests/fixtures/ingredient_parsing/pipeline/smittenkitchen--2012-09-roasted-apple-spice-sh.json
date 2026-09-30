@@ -14,14 +14,14 @@
     {
       "raw": "6 medium apples, any variety you like to bake with, peeled, halved and cored",
       "expected": {
-        "item": "apples, any variety you like to bake with, peeled",
+        "item": "apples",
         "measurements": [
           {
             "amount": "6",
             "unit": "medium"
           }
         ],
-        "note": "halved and cored",
+        "note": "any variety you like to bake with, peeled, halved and cored",
         "category": "Produce"
       }
     },

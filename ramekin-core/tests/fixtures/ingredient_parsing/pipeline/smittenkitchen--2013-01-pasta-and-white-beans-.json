@@ -19,28 +19,28 @@
     {
       "raw": "1 medium carrot, in big chunks",
       "expected": {
-        "item": "carrot, in big chunks",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "in big chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "1 celery stalk, in big chunks",
       "expected": {
-        "item": "celery stalk, in big chunks",
+        "item": "celery stalk",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "in big chunks",
         "category": "Produce"
       }
     },

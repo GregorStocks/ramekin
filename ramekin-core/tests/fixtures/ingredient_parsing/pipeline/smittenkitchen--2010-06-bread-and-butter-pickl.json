@@ -37,14 +37,18 @@
     {
       "raw": "1/4 cup Diamond Kosher salt [Updated: Why Diamond? Read this first.]",
       "expected": {
-        "item": "Diamond Kosher salt [Updated: Why Diamond? Read this first.]",
+        "item": "Diamond Kosher salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "34",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Updated: Why Diamond? Read this first.",
         "category": "Spices & Seasonings"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (8 ounces or 225 grams) salted butter, cold, cut into small pieces",
       "expected": {
-        "item": "salted butter, cold",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into small pieces",
+        "note": "cold, cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -103,7 +103,7 @@
     {
       "raw": "5.5 to 6 ounces (155 to 170 grams) semi- or bittersweet dark chocolate, chopped into chunks, see Note below",
       "expected": {
-        "item": "semi- or bittersweet dark chocolate, chopped into chunks, see Note below",
+        "item": "semi- or bittersweet dark chocolate",
         "measurements": [
           {
             "amount": "5.5 to 6",
@@ -114,7 +114,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "chopped into chunks, see Note below",
         "category": "Baking"
       }
     },
@@ -135,18 +135,18 @@
     {
       "raw": "Turbinado sugar, for rolling",
       "expected": {
-        "item": "Turbinado sugar, for rolling",
+        "item": "Turbinado sugar",
         "measurements": [],
-        "note": null,
+        "note": "for rolling",
         "category": "Baking"
       }
     },
     {
       "raw": "Flaky sea salt for sprinkling",
       "expected": {
-        "item": "Flaky sea salt for sprinkling",
+        "item": "Flaky sea salt",
         "measurements": [],
-        "note": null,
+        "note": "for sprinkling",
         "category": "Spices & Seasonings"
       }
     }

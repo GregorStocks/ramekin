@@ -5,14 +5,14 @@
     {
       "raw": "2 10 ounce bags semi-sweet, milk, white, or dark chocolate chips, about 3 cups",
       "expected": {
-        "item": "semi-sweet, milk, white, or dark chocolate chips, about 3 cups",
+        "item": "semi-sweet, milk, white, or dark chocolate chips",
         "measurements": [
           {
             "amount": "2",
             "unit": "10 ounce bags"
           }
         ],
-        "note": null,
+        "note": "about 3 cups",
         "category": "Baking"
       }
     },

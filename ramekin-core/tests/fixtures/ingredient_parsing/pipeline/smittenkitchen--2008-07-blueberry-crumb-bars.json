@@ -86,7 +86,7 @@
     {
       "raw": "1 cup (8 ounces or 225 grams) cold unsalted butter, cut into chunks, plus extra for coating pan if desired",
       "expected": {
-        "item": "cold unsalted butter, cut into chunks",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -101,7 +101,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus extra for coating pan if desired",
+        "note": "cut into chunks, plus extra for coating pan if desired",
         "category": "Dairy & Eggs"
       }
     },

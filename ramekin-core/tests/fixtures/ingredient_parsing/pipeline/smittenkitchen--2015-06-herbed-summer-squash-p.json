@@ -70,7 +70,7 @@
     {
       "raw": "8 ounces pasta, any shape you like",
       "expected": {
-        "item": "pasta, any shape you like",
+        "item": "pasta",
         "measurements": [
           {
             "amount": "8",
@@ -81,7 +81,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any shape you like",
         "category": "Pasta & Rice"
       }
     },
@@ -279,9 +279,9 @@
     {
       "raw": "Salt and more pepper to taste",
       "expected": {
-        "item": "Salt and more pepper to taste",
+        "item": "Salt and more pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

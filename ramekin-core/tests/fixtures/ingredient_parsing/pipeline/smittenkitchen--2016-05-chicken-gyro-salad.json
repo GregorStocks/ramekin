@@ -313,9 +313,18 @@
     {
       "raw": "About 1 pound small-medium tomatoes, chopped",
       "expected": {
-        "item": "About 1 pound small-medium tomatoes",
-        "measurements": [],
-        "note": "chopped",
+        "item": "small-medium tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "about, chopped",
         "category": "Produce"
       }
     },
@@ -336,14 +345,14 @@
     {
       "raw": "4 large pitas (intending 1/2 per person) or more as needed",
       "expected": {
-        "item": "pitas or more as needed",
+        "item": "pitas",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "intending 1/2 per person",
+        "note": "intending 1/2 per person; or more as needed",
         "category": "Bakery & Bread"
       }
     }

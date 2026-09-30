@@ -87,7 +87,7 @@
     {
       "raw": "1/4 cup cornstarch, for rolling",
       "expected": {
-        "item": "cornstarch, for rolling",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "0.25",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for rolling",
         "category": "Baking"
       }
     },

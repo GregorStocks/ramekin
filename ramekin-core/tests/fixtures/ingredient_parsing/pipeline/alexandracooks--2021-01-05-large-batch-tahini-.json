@@ -5,7 +5,7 @@
     {
       "raw": "2/3 cup well-stirred tahini, see notes above",
       "expected": {
-        "item": "well-stirred tahini, see notes above",
+        "item": "well-stirred tahini",
         "measurements": [
           {
             "amount": "0.67",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Condiments & Sauces"
       }
     },
@@ -77,28 +77,28 @@
     {
       "raw": "2 to 3 teaspoons salt, see notes above",
       "expected": {
-        "item": "salt, see notes above",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 to 1 teaspoon crushed red pepper flakes or to taste",
       "expected": {
-        "item": "crushed red pepper flakes or to taste",
+        "item": "crushed red pepper flakes",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

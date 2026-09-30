@@ -122,7 +122,7 @@
     {
       "raw": "1lb dried pasta, any shape",
       "expected": {
-        "item": "dried pasta, any shape",
+        "item": "dried pasta",
         "measurements": [
           {
             "amount": "1",
@@ -133,7 +133,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any shape",
         "section": "Serving",
         "category": "Pasta & Rice"
       }

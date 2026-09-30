@@ -76,6 +76,19 @@ const COMPONENT_TAIL_WORDS: &[&str] = &[
     "stalks", "stems", "tops", "whites", "yolks", "zest",
 ];
 
+/// A prep word followed by a preposition ("beaten with 1 teaspoon water",
+/// "cut into strips", "packed in oil"): a preparation, never a food name.
+pub(super) fn is_prep_phrase(part: &str) -> bool {
+    let lower = part.to_lowercase();
+    let words: Vec<&str> = lower.split_whitespace().collect();
+    let is_prep_word =
+        |word: &str| PREP_NOTES.contains(&word) || ACTIVE_PREP_PREFIXES.contains(&word);
+    matches!(
+        (words.first(), words.get(1)),
+        (Some(first), Some(second)) if is_prep_word(first) && PREP_PHRASE_PREPOSITIONS.contains(second)
+    )
+}
+
 /// True if a comma part reads as a qualifier of the preceding item (a prep,
 /// guidance, or other trailing note) rather than a standalone ingredient.
 fn is_non_item_part(part: &str) -> bool {
@@ -107,13 +120,9 @@ fn is_non_item_part(part: &str) -> bool {
     }
 
     let words: Vec<&str> = lower.split_whitespace().collect();
-    let is_prep_word =
-        |word: &str| PREP_NOTES.contains(&word) || ACTIVE_PREP_PREFIXES.contains(&word);
     // "packed in oil": prep word followed by a preposition is a prep phrase.
-    if let (Some(first), Some(second)) = (words.first(), words.get(1)) {
-        if is_prep_word(first) && PREP_PHRASE_PREPOSITIONS.contains(second) {
-            return true;
-        }
+    if is_prep_phrase(&lower) {
+        return true;
     }
     // "skin removed": a multi-word part ending in an active prep participle
     // describes the preceding item rather than naming a new one.

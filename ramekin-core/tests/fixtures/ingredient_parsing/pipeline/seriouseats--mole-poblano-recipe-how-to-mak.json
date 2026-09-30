@@ -351,14 +351,14 @@
     {
       "raw": "2 large tomatillos, husked, rinsed, and quartered",
       "expected": {
-        "item": "tomatillos, husked, rinsed",
+        "item": "tomatillos, husked, rinsed, and quartered",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "and quartered",
+        "note": null,
         "category": "Produce"
       }
     },

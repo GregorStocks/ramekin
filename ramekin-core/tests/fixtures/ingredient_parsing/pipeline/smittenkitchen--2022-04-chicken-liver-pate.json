@@ -14,14 +14,14 @@
     {
       "raw": "4 to 5 medium-large yellow onions [see Note], halved and thinly sliced",
       "expected": {
-        "item": "medium-large yellow onions [see Note]",
+        "item": "medium-large yellow onions",
         "measurements": [
           {
             "amount": "4 to 5",
             "unit": null
           }
         ],
-        "note": "halved and thinly sliced",
+        "note": "see Note, halved and thinly sliced",
         "category": "Produce"
       }
     },
@@ -92,9 +92,9 @@
     {
       "raw": "Matzo crackers, to serve",
       "expected": {
-        "item": "Matzo crackers, to serve",
+        "item": "Matzo crackers",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Snacks"
       }
     },

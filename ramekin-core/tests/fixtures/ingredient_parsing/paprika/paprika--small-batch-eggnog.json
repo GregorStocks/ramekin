@@ -5,14 +5,14 @@
     {
       "raw": "1 large egg, ideally pasteurized [see Note]",
       "expected": {
-        "item": "egg, ideally pasteurized [see Note]",
+        "item": "egg, ideally pasteurized",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Dairy & Eggs"
       }
     },

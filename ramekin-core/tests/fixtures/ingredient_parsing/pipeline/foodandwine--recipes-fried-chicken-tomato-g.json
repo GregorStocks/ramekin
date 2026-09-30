@@ -114,6 +114,10 @@
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": "optional",
@@ -141,7 +145,7 @@
     {
       "raw": "1 pound lard or solid vegetable shortening, for frying",
       "expected": {
-        "item": "lard or solid vegetable shortening, for frying",
+        "item": "lard or solid vegetable shortening",
         "measurements": [
           {
             "amount": "1",
@@ -152,7 +156,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Baking"
       }
     },

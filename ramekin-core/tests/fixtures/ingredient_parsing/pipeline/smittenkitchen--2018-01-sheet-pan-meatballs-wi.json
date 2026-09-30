@@ -69,14 +69,14 @@
     {
       "raw": "1 large red onion, thinly sliced, divided",
       "expected": {
-        "item": "red onion, thinly sliced",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "divided",
+        "note": "thinly sliced, divided",
         "category": "Produce"
       }
     },

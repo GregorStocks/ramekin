@@ -5,14 +5,14 @@
     {
       "raw": "6 large beef short ribs, about 14 to 16 ounces each (if ribs are tinier, buy by weight, not number)",
       "expected": {
-        "item": "beef short ribs, about 14 to 16 ounces each",
+        "item": "beef short ribs",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": "if ribs are tinier, buy by weight, not number",
+        "note": "if ribs are tinier, buy by weight, not number, about 14 to 16 ounces each",
         "category": "Meat & Seafood"
       }
     },
@@ -217,14 +217,14 @@
     {
       "raw": "2 bunches Swiss chard, cleaned, center ribs removed",
       "expected": {
-        "item": "Swiss chard, cleaned, center ribs removed",
+        "item": "Swiss chard",
         "measurements": [
           {
             "amount": "2",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "cleaned, center ribs removed",
         "category": "Produce"
       }
     },
@@ -325,7 +325,7 @@
     {
       "raw": "1 cup half-and-half , warmed",
       "expected": {
-        "item": "half-and-half, warmed",
+        "item": "half-and-half",
         "measurements": [
           {
             "amount": "1",
@@ -336,7 +336,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Dairy & Eggs"
       }
     },
@@ -370,9 +370,9 @@
     {
       "raw": "Chives for garnish (optional)",
       "expected": {
-        "item": "Chives for garnish",
+        "item": "Chives",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Produce"
       }
     }

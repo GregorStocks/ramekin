@@ -73,14 +73,14 @@
     {
       "raw": "1 whole (preferably organic) lemon, any variety (see Note), scrubbed",
       "expected": {
-        "item": "whole lemon, any variety",
+        "item": "whole lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "preferably organic, see Note, scrubbed",
+        "note": "preferably organic, see Note, any variety, scrubbed",
         "category": "Produce"
       }
     },

@@ -105,15 +105,15 @@
     {
       "raw": "1      finely grated lemon, rind of, in place of the vanilla",
       "expected": {
-        "item": "finely grated lemon, rind of, in place of the vanilla",
+        "item": "finely grated lemon, rind of",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "in place of the vanilla",
+        "category": "Produce"
       }
     },
     {
@@ -137,21 +137,21 @@
     {
       "raw": "1      finely grated orange, rind of, in place of the vanilla",
       "expected": {
-        "item": "finely grated orange, rind of, in place of the vanilla",
+        "item": "finely grated orange, rind of",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "in place of the vanilla",
+        "category": "Produce"
       }
     },
     {
       "raw": "1   teaspoon    almond extract, in place of the vanilla",
       "expected": {
-        "item": "almond extract, in place of the vanilla",
+        "item": "almond extract",
         "measurements": [
           {
             "amount": "1",
@@ -162,7 +162,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "in place of the vanilla",
         "category": "Baking"
       }
     },
@@ -190,7 +190,7 @@
             "unit": null
           }
         ],
-        "note": "For extra tipsy, pierce the cake layers and dribble with more of the same type of liquor and let sta; or 1 -2   tablespoon    Bourbon, in place of the vanilla",
+        "note": "For extra tipsy, pierce the cake layers and dribble with more of the same type of liquor and let sta; or 1 -2   tablespoon    Bourbon; in place of the vanilla",
         "category": "Beverages"
       }
     }

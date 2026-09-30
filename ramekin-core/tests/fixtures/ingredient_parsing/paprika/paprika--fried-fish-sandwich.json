@@ -23,7 +23,7 @@
     {
       "raw": "1/4 cup bread and butter pickle chips, finely chopped, plus 1 tablespoon pickle brine",
       "expected": {
-        "item": "bread and butter pickle chips, finely chopped",
+        "item": "bread and butter pickle chips",
         "measurements": [
           {
             "amount": "0.25",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 1 tablespoon pickle brine",
+        "note": "finely chopped, plus 1 tablespoon pickle brine",
         "category": "Dairy & Eggs"
       }
     },

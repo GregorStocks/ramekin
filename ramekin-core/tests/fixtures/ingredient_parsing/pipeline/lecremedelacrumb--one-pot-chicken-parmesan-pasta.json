@@ -87,7 +87,7 @@
     {
       "raw": "16 ounces short pasta noodles such as penne, ziti, or cellentani",
       "expected": {
-        "item": "short pasta noodles such as penne, ziti, or cellentani",
+        "item": "short pasta noodles",
         "measurements": [
           {
             "amount": "16",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as penne, ziti, or cellentani",
         "category": "Pasta & Rice"
       }
     },

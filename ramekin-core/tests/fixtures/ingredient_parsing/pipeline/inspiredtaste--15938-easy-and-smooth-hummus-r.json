@@ -23,7 +23,7 @@
     {
       "raw": "¼ cup fresh lemon juice, from 1 large lemon (60ml)",
       "expected": {
-        "item": "fresh lemon juice, from 1 large lemon",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "0.25",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 large lemon",
         "category": "Produce"
       }
     },
@@ -121,9 +121,9 @@
     {
       "raw": "Salt to taste",
       "expected": {
-        "item": "Salt to taste",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },

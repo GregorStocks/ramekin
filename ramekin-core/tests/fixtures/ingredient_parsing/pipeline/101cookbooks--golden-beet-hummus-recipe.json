@@ -19,14 +19,14 @@
     {
       "raw": "1  medium golden beet (raw), peeled, and quartered (4-inch diameter)",
       "expected": {
-        "item": "golden beet, peeled",
+        "item": "golden beet, peeled, and quartered",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "raw, 4-inch diameter, and quartered",
+        "note": "raw, 4-inch diameter",
         "category": "Produce"
       }
     },

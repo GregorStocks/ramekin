@@ -189,14 +189,14 @@
     {
       "raw": "1 (28-ounce) can  diced tomatoes, including juices (roughly chopped)",
       "expected": {
-        "item": "diced tomatoes, including juices",
+        "item": "diced tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "28-ounce, roughly chopped",
+        "note": "28-ounce, roughly chopped, including juices",
         "category": "Canned Goods"
       }
     },

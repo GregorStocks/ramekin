@@ -5,8 +5,17 @@
     {
       "raw": "▢ 125 g / 4oz  Chang’s Pad Thai dried rice sticks (Note 1)",
       "expected": {
-        "item": "▢ 125 g / 4oz  Chang’s Pad Thai dried rice sticks",
-        "measurements": [],
+        "item": "Chang’s Pad Thai dried rice sticks",
+        "measurements": [
+          {
+            "amount": "125",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          }
+        ],
         "note": "Note 1",
         "category": "Pasta & Rice"
       }
@@ -14,8 +23,13 @@
     {
       "raw": "▢ 1 1/2 tbsp tamarind puree , NOT concentrate (Note 2)",
       "expected": {
-        "item": "▢ 1 1/2 tbsp tamarind puree, NOT concentrate",
-        "measurements": [],
+        "item": "tamarind puree, NOT concentrate",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
         "note": "Note 2",
         "category": "Condiments & Sauces"
       }
@@ -23,8 +37,17 @@
     {
       "raw": "▢ 3 tbsp (packed) brown sugar",
       "expected": {
-        "item": "▢ 3 tbsp brown sugar",
-        "measurements": [],
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "41",
+            "unit": "g"
+          }
+        ],
         "note": "packed",
         "category": "Baking"
       }
@@ -32,8 +55,17 @@
     {
       "raw": "▢ 2 tbsp fish sauce (Note 3)",
       "expected": {
-        "item": "▢ 2 tbsp fish sauce",
-        "measurements": [],
+        "item": "fish sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
+          }
+        ],
         "note": "Note 3",
         "category": "Condiments & Sauces"
       }
@@ -41,8 +73,17 @@
     {
       "raw": "▢ 1 1/2 tbsp oyster sauce (Note 4)",
       "expected": {
-        "item": "▢ 1 1/2 tbsp oyster sauce",
-        "measurements": [],
+        "item": "oyster sauce",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
         "note": "Note 4",
         "category": "Condiments & Sauces"
       }
@@ -50,8 +91,13 @@
     {
       "raw": "▢ 2 – 3 tbsp vegetable or canola oil",
       "expected": {
-        "item": "▢ 2 - 3 tbsp vegetable or canola oil",
-        "measurements": [],
+        "item": "vegetable or canola oil",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "tbsp"
+          }
+        ],
         "note": null,
         "category": "Oils & Vinegars"
       }
@@ -59,8 +105,13 @@
     {
       "raw": "▢ 1/2 onion , sliced (brown, yellow)",
       "expected": {
-        "item": "▢ 1/2 onion",
-        "measurements": [],
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
         "note": "brown, yellow, sliced",
         "category": "Produce"
       }
@@ -68,8 +119,13 @@
     {
       "raw": "▢ 2 garlic cloves , finely chopped",
       "expected": {
-        "item": "▢ 2 garlic cloves",
-        "measurements": [],
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
         "note": "finely chopped",
         "category": "Produce"
       }
@@ -77,8 +133,17 @@
     {
       "raw": "▢ 150 g/5oz  chicken breast (or thigh) , thinly sliced",
       "expected": {
-        "item": "▢ 150 g/5oz  chicken breast",
-        "measurements": [],
+        "item": "chicken breast",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          }
+        ],
         "note": "or thigh, thinly sliced",
         "category": "Meat & Seafood"
       }
@@ -86,8 +151,13 @@
     {
       "raw": "▢ 2 eggs , lightly whisked",
       "expected": {
-        "item": "▢ 2 eggs",
-        "measurements": [],
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
         "note": "lightly whisked",
         "category": "Dairy & Eggs"
       }
@@ -95,8 +165,17 @@
     {
       "raw": "▢ 1 1/2 cups of beansprouts",
       "expected": {
-        "item": "▢ 1 1/2 cups of beansprouts",
-        "measurements": [],
+        "item": "beansprouts",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "156",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Other"
       }
@@ -104,8 +183,17 @@
     {
       "raw": "▢ 1/2 cup firm tofu, cut into 3cm / 1 1/4″ batons (see photo)",
       "expected": {
-        "item": "▢ 1/2 cup firm tofu",
-        "measurements": [],
+        "item": "firm tofu",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "126",
+            "unit": "g"
+          }
+        ],
         "note": "see photo, cut into 3cm / 1 1/4″ batons",
         "category": "Produce"
       }
@@ -113,8 +201,13 @@
     {
       "raw": "▢ 1/4 cup garlic chives , cut into 3cm / 1 1/4″ pieces",
       "expected": {
-        "item": "▢ 1/4 cup garlic chives",
-        "measurements": [],
+        "item": "garlic chives",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
         "note": "cut into 3cm / 1 1/4″ pieces",
         "category": "Produce"
       }
@@ -122,8 +215,17 @@
     {
       "raw": "▢ 1/4 cup finely chopped peanuts",
       "expected": {
-        "item": "▢ 1/4 cup finely chopped peanuts",
-        "measurements": [],
+        "item": "finely chopped peanuts",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
+          }
+        ],
         "note": null,
         "category": "Nuts & Dried Fruit"
       }
@@ -131,7 +233,7 @@
     {
       "raw": "▢ Lime wedges (essential)",
       "expected": {
-        "item": "▢ Lime wedges",
+        "item": "Lime wedges",
         "measurements": [],
         "note": "essential",
         "category": "Produce"
@@ -140,7 +242,7 @@
     {
       "raw": "▢ Ground chilli or cayenne pepper (optional)",
       "expected": {
-        "item": "▢ Ground chilli or cayenne pepper",
+        "item": "Ground chilli or cayenne pepper",
         "measurements": [],
         "note": "optional",
         "category": "Spices & Seasonings"
@@ -149,7 +251,7 @@
     {
       "raw": "▢ More beansprouts",
       "expected": {
-        "item": "▢ More beansprouts",
+        "item": "beansprouts",
         "measurements": [],
         "note": null,
         "category": "Other"

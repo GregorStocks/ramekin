@@ -207,9 +207,14 @@
     {
       "raw": "About 1/2 cup chopped mix of fresh cilantro and mint",
       "expected": {
-        "item": "About 1/2 cup chopped mix of fresh cilantro and mint",
-        "measurements": [],
-        "note": null,
+        "item": "chopped mix of fresh cilantro and mint",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "about",
         "category": "Produce"
       }
     }

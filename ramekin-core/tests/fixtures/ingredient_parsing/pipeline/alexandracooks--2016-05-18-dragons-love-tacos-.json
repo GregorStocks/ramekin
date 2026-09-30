@@ -51,7 +51,7 @@
     {
       "raw": "2 tablespoons chili powder, see notes above",
       "expected": {
-        "item": "chili powder, see notes above",
+        "item": "chili powder",
         "measurements": [
           {
             "amount": "2",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,9 +87,9 @@
     {
       "raw": "kosher salt and pepper to taste",
       "expected": {
-        "item": "kosher salt and pepper to taste",
+        "item": "kosher salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -186,9 +186,9 @@
     {
       "raw": "tortillas, see notes above",
       "expected": {
-        "item": "tortillas, see notes above",
+        "item": "tortillas",
         "measurements": [],
-        "note": null,
+        "note": "see notes above",
         "category": "Bakery & Bread"
       }
     },
@@ -213,9 +213,9 @@
     {
       "raw": "salsa, see notes above",
       "expected": {
-        "item": "salsa, see notes above",
+        "item": "salsa",
         "measurements": [],
-        "note": null,
+        "note": "see notes above",
         "category": "Condiments & Sauces"
       }
     },

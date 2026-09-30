@@ -19,7 +19,7 @@
     {
       "raw": "1 1/2 pounds eggplant (about 2 medium), in 3/4- to 1-inch slices",
       "expected": {
-        "item": "eggplant, in 3/4- to 1-inch slices",
+        "item": "eggplant",
         "measurements": [
           {
             "amount": "1.5",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 2 medium",
+        "note": "about 2 medium, in 3/4- to 1-inch slices",
         "category": "Produce"
       }
     },

@@ -163,7 +163,7 @@
     {
       "raw": "4 oz dark chocolate chunk, or your preference",
       "expected": {
-        "item": "dark chocolate chunk, or your preference",
+        "item": "dark chocolate chunk",
         "measurements": [
           {
             "amount": "4",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or your preference",
         "category": "Baking"
       }
     }

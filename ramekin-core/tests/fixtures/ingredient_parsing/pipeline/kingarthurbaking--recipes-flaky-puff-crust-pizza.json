@@ -153,7 +153,7 @@
     {
       "raw": "1/4 cup (25g) Parmesan cheese, grated; plus more for sprinkling",
       "expected": {
-        "item": "Parmesan cheese, grated",
+        "item": "Parmesan cheese",
         "measurements": [
           {
             "amount": "0.25",
@@ -164,7 +164,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for sprinkling",
+        "note": "grated;, plus more for sprinkling",
         "category": "Cheese"
       }
     },

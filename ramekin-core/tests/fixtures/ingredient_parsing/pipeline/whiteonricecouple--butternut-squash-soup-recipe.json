@@ -59,7 +59,7 @@
     {
       "raw": "1 medium  butternut squash ((@ 1.25 lbs or 570g), peeled, seeded and cubed into 1-inch sized pieces)",
       "expected": {
-        "item": "butternut squash, peeled",
+        "item": "butternut squash",
         "measurements": [
           {
             "amount": "1",
@@ -74,16 +74,21 @@
             "unit": "g"
           }
         ],
-        "note": "@ 1.25 lbs or 570g, seeded and cubed into 1-inch sized pieces",
+        "note": "@ 1.25 lbs or 570g, peeled, seeded and cubed into 1-inch sized pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "about 10 sprigs Italian parsley",
       "expected": {
-        "item": "about 10 sprigs Italian parsley",
-        "measurements": [],
-        "note": null,
+        "item": "Italian parsley",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "sprig"
+          }
+        ],
+        "note": "about",
         "category": "Spices & Seasonings"
       }
     },

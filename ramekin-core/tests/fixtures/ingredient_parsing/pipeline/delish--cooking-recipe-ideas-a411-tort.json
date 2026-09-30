@@ -37,14 +37,14 @@
     {
       "raw": "1 jalapeño, seeds removed,&nbsp;finely chopped",
       "expected": {
-        "item": "jalapeño, seeds removed",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "finely chopped",
+        "note": "seeds removed, finely chopped",
         "category": "Produce"
       }
     },
@@ -228,9 +228,9 @@
     {
       "raw": "Vegetable oil, for frying",
       "expected": {
-        "item": "Vegetable oil, for frying",
+        "item": "Vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 cup black beans, cooked, drained (about 2/3 of a 15-ounce can)",
       "expected": {
-        "item": "black beans, cooked",
+        "item": "black beans",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 2/3 of a 15-ounce can, drained",
+        "note": "about 2/3 of a 15-ounce can, cooked, drained",
         "category": "Canned Goods"
       }
     },
@@ -151,9 +151,9 @@
     {
       "raw": "Chopped cilantro for garnish",
       "expected": {
-        "item": "Chopped cilantro for garnish",
+        "item": "Chopped cilantro",
         "measurements": [],
-        "note": null,
+        "note": "for garnish",
         "category": "Produce"
       }
     },
@@ -174,14 +174,14 @@
     {
       "raw": "1 cup finely diced cucumber (from about half a long English or 2 small Persian cukes), seeds removed",
       "expected": {
-        "item": "finely diced cucumber, seeds removed",
+        "item": "finely diced cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "from about half a long English or 2 small Persian cukes",
+        "note": "from about half a long English or 2 small Persian cukes, seeds removed",
         "category": "Produce"
       }
     },

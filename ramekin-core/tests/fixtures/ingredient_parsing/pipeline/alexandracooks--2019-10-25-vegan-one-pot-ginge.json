@@ -19,21 +19,21 @@
     {
       "raw": "2 packages (3-0z each) Ramen noodles, any variety, seasoning packet discarded",
       "expected": {
-        "item": "Ramen noodles, any variety, seasoning packet discarded",
+        "item": "Ramen noodles",
         "measurements": [
           {
             "amount": "2",
             "unit": "package"
           }
         ],
-        "note": "3-0z each",
-        "category": "Spices & Seasonings"
+        "note": "3-0z each, any variety, seasoning packet discarded",
+        "category": "Pasta & Rice"
       }
     },
     {
       "raw": "10 ounces Cremini (or other) mushrooms, see notes above",
       "expected": {
-        "item": "Cremini mushrooms, see notes above",
+        "item": "Cremini mushrooms",
         "measurements": [
           {
             "amount": "10",
@@ -44,21 +44,21 @@
             "unit": "g"
           }
         ],
-        "note": "or other",
+        "note": "or other, see notes above",
         "category": "Produce"
       }
     },
     {
       "raw": "1 small knob ginger, about an inch long, peeled",
       "expected": {
-        "item": "knob ginger, about an inch long",
+        "item": "knob ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "peeled",
+        "note": "about an inch long, peeled",
         "category": "Produce"
       }
     },
@@ -92,14 +92,14 @@
     {
       "raw": "pinch crushed red pepper flakes or more to taste",
       "expected": {
-        "item": "crushed red pepper flakes or more to taste",
+        "item": "crushed red pepper flakes",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -192,9 +192,9 @@
     {
       "raw": "hot sauce, such as Sriracha, for serving",
       "expected": {
-        "item": "hot sauce, such as Sriracha",
+        "item": "hot sauce",
         "measurements": [],
-        "note": "for serving",
+        "note": "such as Sriracha, for serving",
         "category": "Condiments & Sauces"
       }
     }

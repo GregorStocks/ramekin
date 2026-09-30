@@ -145,23 +145,23 @@
     {
       "raw": "2 wedges lemon, to serve",
       "expected": {
-        "item": "wedges lemon, to serve",
+        "item": "wedges lemon",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "to serve",
         "category": "Produce"
       }
     },
     {
       "raw": "broccoli, cooked, to serve",
       "expected": {
-        "item": "broccoli, cooked, to serve",
+        "item": "broccoli",
         "measurements": [],
-        "note": null,
+        "note": "cooked, to serve",
         "category": "Produce"
       }
     }

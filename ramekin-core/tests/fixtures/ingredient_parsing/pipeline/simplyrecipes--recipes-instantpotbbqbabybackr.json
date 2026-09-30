@@ -27,9 +27,14 @@
     {
       "raw": "About 1/3 cup dry rub for pork, store-bought or homemade",
       "expected": {
-        "item": "About 1/3 cup dry rub for pork, store-bought or homemade",
-        "measurements": [],
-        "note": null,
+        "item": "dry rub for pork",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": "about, store-bought or homemade",
         "category": "Meat & Seafood"
       }
     },

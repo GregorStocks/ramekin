@@ -41,7 +41,7 @@
     {
       "raw": "6&nbsp;tablespoons extra-virgin olive oil, divided plus more for greasing",
       "expected": {
-        "item": "extra-virgin olive oil, divided",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "6",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for greasing",
+        "note": "divided, plus more for greasing",
         "category": "Oils & Vinegars"
       }
     },

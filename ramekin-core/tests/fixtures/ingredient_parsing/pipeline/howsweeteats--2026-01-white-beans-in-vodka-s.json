@@ -211,14 +211,14 @@
     {
       "raw": "handful of fresh basil for topping",
       "expected": {
-        "item": "fresh basil for topping",
+        "item": "fresh basil",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

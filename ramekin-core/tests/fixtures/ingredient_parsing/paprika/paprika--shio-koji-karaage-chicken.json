@@ -19,9 +19,9 @@
     {
       "raw": "cooking oil neutral flavor, high smoke point for deep frying",
       "expected": {
-        "item": "cooking oil neutral flavor, high smoke point for deep frying",
+        "item": "cooking oil neutral flavor, high smoke point",
         "measurements": [],
-        "note": null,
+        "note": "for deep frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -71,6 +71,10 @@
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
           }
         ],
         "note": "usukuchi shoyu",
@@ -143,6 +147,10 @@
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": "katakuriko",
@@ -158,6 +166,10 @@
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
         "note": "katakuriko",

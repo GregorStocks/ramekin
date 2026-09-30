@@ -115,7 +115,7 @@
     {
       "raw": "1 cup cabbage kimchi , drained with 2 tablespoons juice reserved, chopped coarse",
       "expected": {
-        "item": "cabbage kimchi, drained with 2 tablespoons juice reserved",
+        "item": "cabbage kimchi",
         "measurements": [
           {
             "amount": "1",
@@ -126,7 +126,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped coarse",
+        "note": "drained with 2 tablespoons juice reserved, chopped coarse",
         "category": "Produce"
       }
     },

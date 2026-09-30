@@ -41,9 +41,9 @@
     {
       "raw": "Salt and freshly ground pepper to taste",
       "expected": {
-        "item": "Salt and freshly ground pepper to taste",
+        "item": "Salt and freshly ground pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -196,14 +196,14 @@
     {
       "raw": "6 large carrots, about 1 1/2 pounds, trimmed and scraped",
       "expected": {
-        "item": "carrots, about 1 1/2 pounds",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": "trimmed and scraped",
+        "note": "about 1 1/2 pounds, trimmed and scraped",
         "category": "Produce"
       }
     }

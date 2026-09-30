@@ -67,7 +67,7 @@
     {
       "raw": "2 large portobello mushrooms (about 3 ounces; 85 g each), stems and gills removed, cut into 1/4-inch thick slices",
       "expected": {
-        "item": "portobello mushrooms, stems and gills removed",
+        "item": "portobello mushrooms",
         "measurements": [
           {
             "amount": "2",
@@ -82,14 +82,14 @@
             "unit": "g each"
           }
         ],
-        "note": "about 3 ounces; 85 g each, cut into 1/4-inch thick slices",
+        "note": "about 3 ounces; 85 g each, stems and gills removed, cut into 1/4-inch thick slices",
         "category": "Produce"
       }
     },
     {
       "raw": "6 ounces (170 g) mixed mushrooms, such as oyster, shiitake, and/or cremini, roughly chopped",
       "expected": {
-        "item": "mixed mushrooms, such as oyster, shiitake, and/or cremini",
+        "item": "mixed mushrooms",
         "measurements": [
           {
             "amount": "6",
@@ -100,7 +100,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "such as oyster, shiitake, and/or cremini, roughly chopped",
         "category": "Produce"
       }
     },

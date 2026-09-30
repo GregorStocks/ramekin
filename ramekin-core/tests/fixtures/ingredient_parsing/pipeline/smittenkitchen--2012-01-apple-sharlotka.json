@@ -5,23 +5,23 @@
     {
       "raw": "Butter or nonstick spray, for greasing pan",
       "expected": {
-        "item": "Butter or nonstick spray, for greasing pan",
+        "item": "Butter or nonstick spray",
         "measurements": [],
-        "note": null,
+        "note": "for greasing pan",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "6 large, tart apples, such as Granny Smiths",
       "expected": {
-        "item": "tart apples, such as Granny Smiths",
+        "item": "tart apples",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "such as Granny Smiths",
         "category": "Produce"
       }
     },
@@ -96,9 +96,9 @@
     {
       "raw": "Ground cinnamon, to finish",
       "expected": {
-        "item": "Ground cinnamon, to finish",
+        "item": "Ground cinnamon",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Spices & Seasonings"
       }
     },

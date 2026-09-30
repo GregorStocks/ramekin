@@ -5,7 +5,7 @@
     {
       "raw": "One 2-pound (907 g) head green cabbage, any bruised outermost leaves removed",
       "expected": {
-        "item": "2-pound head green cabbage, any bruised outermost leaves removed",
+        "item": "2-pound head green cabbage",
         "measurements": [
           {
             "amount": "1",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any bruised outermost leaves removed",
         "category": "Produce"
       }
     },
     {
       "raw": "1/4 cup (60 ml) neutral cooking oil such as canola oil, divided",
       "expected": {
-        "item": "neutral cooking oil such as canola oil",
+        "item": "neutral cooking oil",
         "measurements": [
           {
             "amount": "0.25",
@@ -38,14 +38,14 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "such as canola oil, divided",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1 1/2 teaspoons Diamond Crystal kosher salt, divided, plus more to taste; for table salt, use half as much by volume",
       "expected": {
-        "item": "Diamond Crystal kosher salt, divided",
+        "item": "Diamond Crystal kosher salt",
         "measurements": [
           {
             "amount": "1.5",
@@ -56,21 +56,21 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to taste; for table salt, use half as much by volume",
+        "note": "divided, plus more to taste; for table salt, use half as much by volume",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 teaspoon freshly ground black pepper, divided, plus more to taste",
       "expected": {
-        "item": "freshly ground black pepper, divided",
+        "item": "freshly ground black pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste",
+        "note": "divided, plus more to taste",
         "category": "Spices & Seasonings"
       }
     },

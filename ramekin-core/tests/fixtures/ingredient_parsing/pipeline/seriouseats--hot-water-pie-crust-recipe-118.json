@@ -5,7 +5,7 @@
     {
       "raw": "544 g high-protein all-purpose flour (19 ounces; 4 1/4 cups), such as King Arthur or Heckers, see notes",
       "expected": {
-        "item": "high-protein all-purpose flour, such as King Arthur or Heckers, see notes",
+        "item": "high-protein all-purpose flour",
         "measurements": [
           {
             "amount": "544",
@@ -20,7 +20,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as King Arthur or Heckers, see notes",
         "category": "Baking"
       }
     },

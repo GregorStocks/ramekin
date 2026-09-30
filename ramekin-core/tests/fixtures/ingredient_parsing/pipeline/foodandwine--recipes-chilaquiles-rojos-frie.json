@@ -147,14 +147,14 @@
     {
       "raw": "1 bunch fresh cilantro, leaves and stems separated, divided",
       "expected": {
-        "item": "fresh cilantro, leaves and stems separated",
+        "item": "fresh cilantro",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": "divided",
+        "note": "leaves and stems separated, divided",
         "category": "Produce"
       }
     },

@@ -169,9 +169,9 @@
     {
       "raw": "Grated parmesan cheese, to finish",
       "expected": {
-        "item": "Grated parmesan cheese, to finish",
+        "item": "Grated parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "to finish",
         "category": "Cheese"
       }
     },

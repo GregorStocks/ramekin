@@ -41,7 +41,7 @@
     {
       "raw": "3/4 cup buttermilk, room temperature, see notes above",
       "expected": {
-        "item": "buttermilk, room temperature, see notes above",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.75",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "room temperature, see notes above",
         "category": "Dairy & Eggs"
       }
     },

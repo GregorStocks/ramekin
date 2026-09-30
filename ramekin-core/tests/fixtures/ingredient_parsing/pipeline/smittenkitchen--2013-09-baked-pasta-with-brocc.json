@@ -43,7 +43,7 @@
     {
       "raw": "1 pound Italian sausage (sweet or spicy pork or chicken), casings removed",
       "expected": {
-        "item": "Italian sausage, casings removed",
+        "item": "Italian sausage",
         "measurements": [
           {
             "amount": "1",
@@ -54,7 +54,7 @@
             "unit": "g"
           }
         ],
-        "note": "sweet or spicy pork or chicken",
+        "note": "sweet or spicy pork or chicken, casings removed",
         "section": "Pasta and Assembly",
         "category": "Meat & Seafood"
       }

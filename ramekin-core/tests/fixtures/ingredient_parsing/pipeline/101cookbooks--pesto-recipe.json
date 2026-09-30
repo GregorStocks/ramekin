@@ -47,9 +47,18 @@
     {
       "raw": "roughly 3/4 cup Parmesan, (loosely packed and freshly grated)",
       "expected": {
-        "item": "roughly 3/4 cup Parmesan",
-        "measurements": [],
-        "note": "loosely packed and freshly grated",
+        "item": "Parmesan",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly, loosely packed and freshly grated",
         "category": "Cheese"
       }
     },

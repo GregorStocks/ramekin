@@ -59,14 +59,14 @@
     {
       "raw": "1 cup chocolate chips, enough for dipping",
       "expected": {
-        "item": "chocolate chips, enough for dipping",
+        "item": "chocolate chips, enough",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for dipping",
         "category": "Baking"
       }
     }

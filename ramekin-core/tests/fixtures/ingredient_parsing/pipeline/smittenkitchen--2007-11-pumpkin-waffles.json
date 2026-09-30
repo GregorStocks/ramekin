@@ -149,14 +149,14 @@
     {
       "raw": "4 large eggs, separated",
       "expected": {
-        "item": "eggs, separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },
@@ -221,9 +221,9 @@
     {
       "raw": "Vegetable oil for brushing waffle iron or cooking spray",
       "expected": {
-        "item": "Vegetable oil for brushing waffle iron or cooking spray",
+        "item": "Vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for brushing waffle iron or cooking spray",
         "category": "Oils & Vinegars"
       }
     }

@@ -19,14 +19,18 @@
     {
       "raw": "1 1/4 cups (from a 10-ounce can) red enchilada sauce [see Note]",
       "expected": {
-        "item": "red enchilada sauce [see Note]",
+        "item": "red enchilada sauce",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "280",
+            "unit": "g"
           }
         ],
-        "note": "from a 10-ounce can",
+        "note": "from a 10-ounce can, see Note",
         "category": "Condiments & Sauces"
       }
     },

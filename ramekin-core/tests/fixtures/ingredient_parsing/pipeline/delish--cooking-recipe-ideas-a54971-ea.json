@@ -114,7 +114,7 @@
     {
       "raw": "1 (15-oz.) can pinto beans, drained, rinsed",
       "expected": {
-        "item": "pinto beans, drained",
+        "item": "pinto beans",
         "measurements": [
           {
             "amount": "1",
@@ -125,7 +125,7 @@
             "unit": "oz."
           }
         ],
-        "note": "rinsed",
+        "note": "drained, rinsed",
         "category": "Canned Goods"
       }
     },

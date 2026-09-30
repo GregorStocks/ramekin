@@ -5,7 +5,7 @@
     {
       "raw": "1½ cups graham cracker crumbs, from about 12 whole crackers",
       "expected": {
-        "item": "graham cracker crumbs, from about 12 whole crackers",
+        "item": "graham cracker crumbs",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 12 whole crackers",
         "category": "Snacks"
       }
     },
@@ -91,7 +91,7 @@
     {
       "raw": "1 teaspoon packed finely grated lemon zest, from 1 lemon",
       "expected": {
-        "item": "packed finely grated lemon zest, from 1 lemon",
+        "item": "packed finely grated lemon zest",
         "measurements": [
           {
             "amount": "1",
@@ -102,14 +102,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 lemon",
         "category": "Produce"
       }
     },
     {
       "raw": "½ cup fresh lemon juice, from about 3 lemons",
       "expected": {
-        "item": "fresh lemon juice, from about 3 lemons",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "0.5",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 3 lemons",
         "category": "Produce"
       }
     },

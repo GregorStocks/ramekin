@@ -241,9 +241,9 @@
     {
       "raw": "Crusty bread, such as baguette",
       "expected": {
-        "item": "Crusty bread, such as baguette",
+        "item": "Crusty bread",
         "measurements": [],
-        "note": null,
+        "note": "such as baguette",
         "category": "Bakery & Bread"
       }
     },

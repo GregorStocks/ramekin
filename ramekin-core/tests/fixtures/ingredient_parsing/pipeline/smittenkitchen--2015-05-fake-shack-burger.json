@@ -161,14 +161,14 @@
     {
       "raw": "4 potato rolls, see Note",
       "expected": {
-        "item": "potato rolls, see Note",
+        "item": "potato rolls",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see Note",
         "section": "Assembly",
         "category": "Produce"
       }

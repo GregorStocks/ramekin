@@ -80,6 +80,9 @@ Names are lowercased and whitespace is collapsed. Then:
    original said "dried" or "ground". "fresh rosemary" stays unknown rather than
    becoming dried rosemary. A curated alias that keeps a prep word ("grated
    nutmeg") is an explicit choice and still counts.
+6. The name without a leading measure the parser left in it ("8 tbsp unsalted
+   butter", "240 ml heavy cream", "cloves garlic", "can of tomato paste"), then
+   steps 3 and 5 on that. A count or unit never names the food.
 
 Calorie estimates and density resolve whole lines with `resolve_line(item, note)`.
 The parser keeps "cooked" in the note ("brown rice, cooked" → item "brown rice"),
@@ -212,6 +215,26 @@ are `tests/test_catalog_import.py`.
   `null` too: recipes give their purchased weight, bones included, while USDA
   describes only the edible part, so a 4 lb whole chicken would be charged as
   4 lb of meat. Boneless cuts map normally.
+- Alias and not-food keys are what the parser stores as `item`, never raw line
+  text. A key with an amount, a prep clause or a usage note ("about 7 cloves
+  garlic", "oil, for frying") can never match a newly parsed line.
+  `make catalog-clean-aliases` re-parses every key:
+  - it removes the key when the parsed name already resolves the same way;
+  - it re-keys it to the parsed name when that name resolves to nothing, but
+    only when the re-parse split off nothing but notes;
+  - it reports conflicts to `logs/catalog-alias-cleanup.md` and leaves them
+    alone.
+
+  A re-key counts as a conflict if the re-parse would:
+  - drop an example or alternative ("fresh herbs such as basil" must not make
+    "fresh herbs" mean basil);
+  - drop an amount, meaning the key was a fragment of a line;
+  - leave a fragment ("pepper or");
+  - move an ambiguous (null) alias onto a shorter name.
+
+  The `curated_names_are_what_the_parser_produces` test fails until it has
+  been run. The first run (2026-09-29, alongside the parser fix) removed 571
+  keys, re-keyed 74, and left 131 conflicts.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").

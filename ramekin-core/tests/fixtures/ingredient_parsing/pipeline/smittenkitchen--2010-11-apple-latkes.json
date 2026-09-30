@@ -5,7 +5,7 @@
     {
       "raw": "1 pound tart, firm apples such as Granny Smiths (2 large or 3 medium)",
       "expected": {
-        "item": "tart, firm apples such as Granny Smiths",
+        "item": "tart, firm apples",
         "measurements": [
           {
             "amount": "1",
@@ -24,7 +24,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Granny Smiths",
         "category": "Produce"
       }
     },
@@ -144,9 +144,9 @@
     {
       "raw": "Rich plain yogurt, sour cream or crème fraîche for serving",
       "expected": {
-        "item": "Rich plain yogurt, sour cream or crème fraîche for serving",
+        "item": "Rich plain yogurt, sour cream or crème fraîche",
         "measurements": [],
-        "note": null,
+        "note": "for serving",
         "category": "Dairy & Eggs"
       }
     },

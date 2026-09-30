@@ -5,14 +5,14 @@
     {
       "raw": "8 medium/large ears corn, husks and silks removed",
       "expected": {
-        "item": "medium/large ears corn, husks and silks removed",
+        "item": "medium/large ears corn",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "husks and silks removed",
         "category": "Produce"
       }
     },
@@ -55,14 +55,14 @@
     {
       "raw": "1 large onion, preferably Spanish, chopped fine",
       "expected": {
-        "item": "onion, preferably Spanish",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "chopped fine",
+        "note": "preferably Spanish, chopped fine",
         "category": "Produce"
       }
     },
@@ -191,9 +191,9 @@
     {
       "raw": "Salt and freshly ground black pepper or cayenne to taste",
       "expected": {
-        "item": "Salt and freshly ground black pepper or cayenne to taste",
+        "item": "Salt and freshly ground black pepper or cayenne",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -304,9 +304,9 @@
     {
       "raw": "Chili powder or a chili-lime seasoning such as Tajín",
       "expected": {
-        "item": "Chili powder or a chili-lime seasoning such as Tajín",
+        "item": "Chili powder or a chili-lime seasoning",
         "measurements": [],
-        "note": null,
+        "note": "such as Tajín",
         "category": "Spices & Seasonings"
       }
     },

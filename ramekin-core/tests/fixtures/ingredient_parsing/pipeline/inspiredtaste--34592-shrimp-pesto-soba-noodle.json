@@ -124,14 +124,14 @@
     {
       "raw": "Handful torn or small basil leaves for serving",
       "expected": {
-        "item": "torn or small basil leaves for serving",
+        "item": "torn or small basil leaves",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": null,
+        "note": "for serving",
         "category": "Produce"
       }
     },

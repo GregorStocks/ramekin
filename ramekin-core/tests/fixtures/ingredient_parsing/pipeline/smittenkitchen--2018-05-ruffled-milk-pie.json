@@ -23,9 +23,14 @@
     {
       "raw": "About 7 sheets storebought filo, defrosted (mine were 12″x17″)",
       "expected": {
-        "item": "About 7 sheets storebought filo, defrosted",
-        "measurements": [],
-        "note": "mine were 12″x17″",
+        "item": "sheets storebought filo, defrosted",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": null
+          }
+        ],
+        "note": "about, mine were 12″x17″",
         "category": "Other"
       }
     },
@@ -118,9 +123,9 @@
     {
       "raw": "Confectioners’ sugar, for dusting",
       "expected": {
-        "item": "Confectioners’ sugar, for dusting",
+        "item": "Confectioners’ sugar",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     }

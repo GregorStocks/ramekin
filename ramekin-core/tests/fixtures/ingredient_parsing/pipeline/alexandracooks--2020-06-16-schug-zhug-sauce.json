@@ -37,14 +37,14 @@
     {
       "raw": "1/2 cup (or less! see notes above) seeded and roughly chopped fresh hot green chilies, such as serrano (2 to 4)",
       "expected": {
-        "item": "seeded and roughly chopped fresh hot green chilies, such as serrano",
+        "item": "seeded and roughly chopped fresh hot green chilies",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or less! see notes above, 2 to 4",
+        "note": "or less! see notes above, 2 to 4, such as serrano",
         "category": "Produce"
       }
     },
@@ -102,9 +102,9 @@
     {
       "raw": "juice from one lemon, about 3 tablespoons",
       "expected": {
-        "item": "juice from one lemon, about 3 tablespoons",
+        "item": "juice from one lemon",
         "measurements": [],
-        "note": null,
+        "note": "about 3 tablespoons",
         "category": "Beverages"
       }
     },

@@ -55,14 +55,14 @@
     {
       "raw": "1 14- ounce can of chickpeas, drained, rinsed (or equivalent)",
       "expected": {
-        "item": "14- ounce can of chickpeas, drained",
+        "item": "14- ounce can of chickpeas",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or equivalent, rinsed",
+        "note": "or equivalent, drained, rinsed",
         "category": "Canned Goods"
       }
     },

@@ -56,14 +56,14 @@
     {
       "raw": "1 to 2 jalapeños, or to taste, chopped small",
       "expected": {
-        "item": "jalapeños, or to taste",
+        "item": "jalapeños",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": "chopped small",
+        "note": "or to taste, chopped small",
         "category": "Produce"
       }
     },

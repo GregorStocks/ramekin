@@ -138,18 +138,18 @@
     {
       "raw": "Milk, for brushing cookies",
       "expected": {
-        "item": "Milk, for brushing cookies",
+        "item": "Milk",
         "measurements": [],
-        "note": null,
-        "category": "Snacks"
+        "note": "for brushing cookies",
+        "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Powdered sugar, for dusting",
       "expected": {
-        "item": "Powdered sugar, for dusting",
+        "item": "Powdered sugar",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     }

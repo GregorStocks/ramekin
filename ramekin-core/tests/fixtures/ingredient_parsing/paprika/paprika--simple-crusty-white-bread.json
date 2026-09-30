@@ -61,18 +61,14 @@
     {
       "raw": "1/2 teaspoon vegetable, canola, or other neutral oil, for greasing",
       "expected": {
-        "item": "vegetable, canola, or other neutral oil, for greasing",
+        "item": "vegetable, canola, or other neutral oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for greasing",
         "category": "Oils & Vinegars"
       }
     }

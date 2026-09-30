@@ -5,14 +5,14 @@
     {
       "raw": "1/2 cup coarsely chopped mixed dried fruit, such as golden raisins, cranberries, apricots and prunes",
       "expected": {
-        "item": "coarsely chopped mixed dried fruit, such as golden raisins, cranberries, apricots and prunes",
+        "item": "coarsely chopped mixed dried fruit",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as golden raisins, cranberries, apricots and prunes",
         "category": "Nuts & Dried Fruit"
       }
     },

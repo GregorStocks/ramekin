@@ -19,14 +19,14 @@
     {
       "raw": "4 large Granny Smith apples, peeled, cored, and sliced",
       "expected": {
-        "item": "Granny Smith apples, peeled, cored",
+        "item": "Granny Smith apples, peeled, cored, and sliced",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "and sliced",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -101,14 +101,14 @@
     {
       "raw": "4 large eggs, separated",
       "expected": {
-        "item": "eggs, separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },
@@ -205,9 +205,9 @@
     {
       "raw": "Melted butter or neutral oil for brushing the pan",
       "expected": {
-        "item": "Melted butter or neutral oil for brushing the pan",
+        "item": "Melted butter or neutral oil",
         "measurements": [],
-        "note": null,
+        "note": "for brushing the pan",
         "category": "Oils & Vinegars"
       }
     },

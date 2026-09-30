@@ -267,7 +267,7 @@
     {
       "raw": "30g / 1 oz   beef tenderloin, raw, very thinly sliced ((Note 4))",
       "expected": {
-        "item": "beef tenderloin, raw",
+        "item": "beef tenderloin",
         "measurements": [
           {
             "amount": "30",
@@ -278,7 +278,7 @@
             "unit": "oz"
           }
         ],
-        "note": "Note 4, very thinly sliced",
+        "note": "Note 4, raw, very thinly sliced",
         "category": "Meat & Seafood"
       }
     },

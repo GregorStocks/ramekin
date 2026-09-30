@@ -109,7 +109,7 @@
     {
       "raw": "1 tablespoon lime juice, about 1 lime",
       "expected": {
-        "item": "lime juice, about 1 lime",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "1",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 lime",
         "category": "Produce"
       }
     },
@@ -209,7 +209,7 @@
     {
       "raw": "1 tablespoon lime juice, about 1 lime",
       "expected": {
-        "item": "lime juice, about 1 lime",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "1",
@@ -220,7 +220,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 lime",
         "category": "Produce"
       }
     },

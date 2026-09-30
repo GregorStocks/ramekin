@@ -95,7 +95,7 @@
     {
       "raw": "1/2 cup (150 grams) molasses or treacle [updated weight]",
       "expected": {
-        "item": "molasses or treacle [updated weight]",
+        "item": "molasses or treacle",
         "measurements": [
           {
             "amount": "0.5",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "updated weight",
         "category": "Baking"
       }
     },
@@ -248,9 +248,9 @@
     {
       "raw": "Powdered sugar, for rolling",
       "expected": {
-        "item": "Powdered sugar, for rolling",
+        "item": "Powdered sugar",
         "measurements": [],
-        "note": null,
+        "note": "for rolling",
         "category": "Baking"
       }
     },

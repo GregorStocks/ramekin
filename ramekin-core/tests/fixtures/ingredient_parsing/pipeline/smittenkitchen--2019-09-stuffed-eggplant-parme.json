@@ -146,7 +146,7 @@
     {
       "raw": "6 ounces (about 1 1/3 cups) low-moisture mozzarella, coarsely grated, divided",
       "expected": {
-        "item": "low-moisture mozzarella, coarsely grated",
+        "item": "low-moisture mozzarella",
         "measurements": [
           {
             "amount": "6",
@@ -161,7 +161,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 1 1/3 cups, divided",
+        "note": "about 1 1/3 cups, coarsely grated, divided",
         "category": "Cheese"
       }
     },

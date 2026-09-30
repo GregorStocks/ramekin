@@ -217,14 +217,14 @@
     {
       "raw": "2 cups apple - peeled, cored, and chopped",
       "expected": {
-        "item": "apple - peeled, cored",
+        "item": "apple - peeled, cored, and chopped",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "and chopped",
+        "note": null,
         "category": "Produce"
       }
     },

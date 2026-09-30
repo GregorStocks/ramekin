@@ -5,14 +5,14 @@
     {
       "raw": "1 small beef chuck roast, about 2 pounds total",
       "expected": {
-        "item": "beef chuck roast, about 2 pounds total",
+        "item": "beef chuck roast",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "about 2 pounds total",
         "category": "Meat & Seafood"
       }
     },

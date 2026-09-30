@@ -5,14 +5,14 @@
     {
       "raw": "1 boneless pork shoulder (sometimes called Boston butt), about 3 3/4 pounds",
       "expected": {
-        "item": "boneless pork shoulder, about 3 3/4 pounds",
+        "item": "boneless pork shoulder",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sometimes called Boston butt",
+        "note": "sometimes called Boston butt, about 3 3/4 pounds",
         "category": "Meat & Seafood"
       }
     },

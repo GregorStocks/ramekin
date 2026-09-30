@@ -36,7 +36,7 @@
     {
       "raw": "2 cups (1/4-inch-sliced) fennel, top and core, if thick, removed",
       "expected": {
-        "item": "fennel, top and core, if thick",
+        "item": "fennel, top and core",
         "measurements": [
           {
             "amount": "2",
@@ -47,7 +47,7 @@
             "unit": "g"
           }
         ],
-        "note": "1/4-inch-sliced, removed",
+        "note": "1/4-inch-sliced, if thick, removed",
         "category": "Produce"
       }
     },

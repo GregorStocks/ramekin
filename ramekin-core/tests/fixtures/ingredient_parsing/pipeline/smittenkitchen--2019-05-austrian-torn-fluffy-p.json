@@ -41,14 +41,14 @@
     {
       "raw": "4 large eggs, separated",
       "expected": {
-        "item": "eggs, separated",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,7 +127,7 @@
     {
       "raw": "1/2 cup (120 ml) milk, any kind",
       "expected": {
-        "item": "milk, any kind",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
@@ -142,7 +142,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind",
         "category": "Dairy & Eggs"
       }
     },

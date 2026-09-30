@@ -37,7 +37,7 @@
     {
       "raw": "16 tablespoons (2 sticks) unsalted butter, cold, chopped into small pieces",
       "expected": {
-        "item": "unsalted butter, cold",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "16",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped into small pieces",
+        "note": "cold, chopped into small pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -151,14 +151,14 @@
     {
       "raw": "2 to 4 cups 100% olive oil, not extra-virgin, for frying",
       "expected": {
-        "item": "100% olive oil, not extra-virgin, for frying",
+        "item": "100% olive oil, not extra-virgin",
         "measurements": [
           {
             "amount": "2 to 4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },

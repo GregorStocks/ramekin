@@ -28,7 +28,7 @@
     {
       "raw": "1/3 cup plain breadcrumbs, such as panko",
       "expected": {
-        "item": "plain breadcrumbs, such as panko",
+        "item": "plain breadcrumbs",
         "measurements": [
           {
             "amount": "0.33",
@@ -39,7 +39,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as panko",
         "section": "Meatballs",
         "category": "Bakery & Bread"
       }
@@ -77,14 +77,14 @@
     {
       "raw": "4 green onions, minced, divided",
       "expected": {
-        "item": "green onions, minced",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "divided",
+        "note": "minced, divided",
         "section": "Meatballs",
         "category": "Produce"
       }
@@ -231,14 +231,14 @@
     {
       "raw": "2 to 3 cups thinly-sliced or diced cabbage, any variety",
       "expected": {
-        "item": "thinly-sliced or diced cabbage, any variety",
+        "item": "thinly-sliced or diced cabbage",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "any variety",
         "section": "Slaw",
         "category": "Produce"
       }
@@ -270,11 +270,11 @@
     {
       "raw": "Slider buns, such as potato or Hawaiian rolls",
       "expected": {
-        "item": "Slider buns, such as potato or Hawaiian rolls",
+        "item": "Slider buns",
         "measurements": [],
-        "note": null,
+        "note": "such as potato or Hawaiian rolls",
         "section": "Assembly",
-        "category": "Produce"
+        "category": "Bakery & Bread"
       }
     },
     {

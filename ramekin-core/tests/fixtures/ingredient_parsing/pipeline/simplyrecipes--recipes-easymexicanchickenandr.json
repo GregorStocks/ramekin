@@ -87,14 +87,14 @@
     {
       "raw": "1 (15-ounce) can fire-roasted diced tomatoes, with juices",
       "expected": {
-        "item": "fire-roasted diced tomatoes, with juices",
+        "item": "fire-roasted diced tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "15-ounce",
+        "note": "15-ounce, with juices",
         "category": "Canned Goods"
       }
     },
@@ -178,23 +178,23 @@
     {
       "raw": "1 to 2 limes, quartered, for garnish",
       "expected": {
-        "item": "limes, quartered",
+        "item": "limes",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": "for garnish",
+        "note": "quartered, for garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "Corn or flour tortillas, to serve",
       "expected": {
-        "item": "Corn or flour tortillas, to serve",
+        "item": "Corn or flour tortillas",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Bakery & Bread"
       }
     }

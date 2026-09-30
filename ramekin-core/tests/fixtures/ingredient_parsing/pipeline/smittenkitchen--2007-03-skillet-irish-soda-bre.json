@@ -5,7 +5,7 @@
     {
       "raw": "4 tablespoons (55 grams) unsalted butter, divided, plus more for pan",
       "expected": {
-        "item": "unsalted butter, divided",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for pan",
+        "note": "divided, plus more for pan",
         "category": "Dairy & Eggs"
       }
     },

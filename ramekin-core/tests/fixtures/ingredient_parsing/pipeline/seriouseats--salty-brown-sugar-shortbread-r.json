@@ -125,7 +125,7 @@
     {
       "raw": "1/4 cup (1 3/4 ounces/50 grams) granulated sugar, for coating",
       "expected": {
-        "item": "granulated sugar, for coating",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
@@ -140,16 +140,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for coating",
         "category": "Baking"
       }
     },
     {
       "raw": "Flaky salt, for topping",
       "expected": {
-        "item": "Flaky salt, for topping",
+        "item": "Flaky salt",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Spices & Seasonings"
       }
     }

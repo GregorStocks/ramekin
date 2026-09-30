@@ -19,18 +19,27 @@
     {
       "raw": "salt + freshly cracked black pepper to taste",
       "expected": {
-        "item": "salt + freshly cracked black pepper to taste",
+        "item": "salt + freshly cracked black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "about 1 tablespoon butter (softened)",
       "expected": {
-        "item": "about 1 tablespoon butter",
-        "measurements": [],
-        "note": "softened",
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "about, softened",
         "category": "Dairy & Eggs"
       }
     },

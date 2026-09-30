@@ -115,7 +115,7 @@
     {
       "raw": "2 teaspoons minced fresh jalapeño, including seeds",
       "expected": {
-        "item": "minced fresh jalapeño, including seeds",
+        "item": "minced fresh jalapeño",
         "measurements": [
           {
             "amount": "2",
@@ -126,7 +126,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "including seeds",
         "category": "Produce"
       }
     },
