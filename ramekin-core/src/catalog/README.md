@@ -226,7 +226,12 @@ that appears in both releases.
   - `category` (one of `ingredient_categorizer::CATEGORIES`) overrides the
     keyword categorizer.
   - `trace_ok: true` marks a food commonly listed without an amount, for foods
-    the "spices, …" rule doesn't cover.
+    the "spices, …" rule doesn't cover. An entry with only `trace_ok` (no
+    `fdc_id`, calories or density) is a trace-only spice or herb whose calories
+    no source gives: a line of it is negligible with no amount, a trace unit,
+    a few pieces, or up to a tablespoon, and unknown for anything more. Every
+    food entry needs at least one of `fdc_id`, `kcal_per_100g`,
+    `grams_per_cup` or `trace_ok`.
   - `kind: "product"` entries need a `category` and may not have an `fdc_id`,
     `kcal_per_100g`, or `grams_per_cup`.
 - `aliases` map a name to an entry id, USDA stripped name, or unique USDA
@@ -373,7 +378,10 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
     value). Buffalo wing sauce was dropped: labels range from near-zero hot sauce to
     butter-based restaurant sauce.
   - Of the skips, 94 names (102 prod lines) are spices whose labels only have servings
-    under 10 g, which can't be cited; see `p2-catalog-trace-only-spices`.
+    under 10 g, which can't be cited. A follow-up made 55 of them, plus fresh herbs listed
+    by the leaf, trace-only entries (with 37 aliases): sumac, celery salt, za'atar, five
+    spice, Old Bay, bitters, liquid smoke, vanilla beans, MSG, bonito flakes, fresh sage
+    and tarragon.
   - Effect:
 
     | Measure | Prod (owner's 499 recipes, with learned names) | Pipeline fixtures |

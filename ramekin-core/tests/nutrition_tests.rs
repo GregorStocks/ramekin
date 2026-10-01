@@ -770,3 +770,29 @@ fn secondary_source_foods_count() {
     assert!((total("garam masala", "1", "tsp").unwrap() - 10.0).abs() < 1e-9);
     assert!((total("garam masala", "1/4", "cup").unwrap() - 120.0).abs() < 1e-9);
 }
+
+#[test]
+fn trace_only_spices_are_negligible_in_small_amounts() {
+    // Sumac has no citable calories: a trace entry, negligible for a pinch,
+    // no amount, or up to a tablespoon, and unknown beyond that.
+    let calories = |line: ParsedIngredient| {
+        estimate(&[line], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    assert_eq!(calories(ingredient("sumac", "1", "pinch")), Some(0.0));
+    assert_eq!(calories(ingredient("sumac", "2", "tsp")), Some(0.0));
+    assert_eq!(calories(bare("ground sumac")), Some(0.0));
+    assert_eq!(calories(ingredient("sumac", "1/4", "cup")), None);
+    let result = estimate(&[ingredient("sumac", "100", "g")], None, 1.0).unwrap();
+    assert_eq!(
+        result.unknown_ingredients[0].reason,
+        "No supported nutrition match"
+    );
+    // Fresh herbs listed by the leaf are a trace too.
+    assert_eq!(
+        calories(ingredient("fresh sage leaves", "6", "")),
+        Some(0.0)
+    );
+}

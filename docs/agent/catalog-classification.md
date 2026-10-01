@@ -52,6 +52,7 @@ Each agent returns one schema-validated decision per name:
 | `alias` | `target` | a curated entry id, USDA stripped name (`usda.json` `.names`), or unique USDA description; never another alias |
 | `entry` | `fdc_id`, optional `grams_per_cup_value` + `grams_per_cup_source` | a real USDA food (SR Legacy, or FNDDS in `fndds.json`) that has no name of its own, or whose density must be borrowed (like "dried thyme") |
 | `food` | `kcal_per_100g_value` + `_source` + `_url`, optional `grams_per_cup_value` + `_source`, optional `trace_ok` | a food neither USDA release has, with calories cited from one specific record (a USDA Branded label) |
+| `trace` | `reason` | a spice, herb or flavoring used in trace amounts that no source gives citable calories for (sumac, bitters); small amounts become negligible, larger ones stay unknown |
 | `product` | `category` | a purchasable non-food (Household, …) |
 | `not_food` | `reason` | a note or heading, not an ingredient |
 | `ambiguous` | `reason` | spans foods with very different calories ("cheese") |

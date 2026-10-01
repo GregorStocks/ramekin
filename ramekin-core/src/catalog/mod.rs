@@ -293,6 +293,17 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
                 "curated entry {id:?} has unknown category {category:?}"
             );
         }
+        if curated_entry.kind == Kind::Food {
+            // A trace-only entry (a spice with no citable calories) is fine:
+            // small amounts are negligible and larger ones stay unknown.
+            assert!(
+                food.is_some()
+                    || kcal_per_100g.is_some()
+                    || grams_per_cup.is_some()
+                    || curated_entry.trace_ok,
+                "food entry {id:?} needs an fdc_id, calories, a density, or trace_ok"
+            );
+        }
         if curated_entry.kind == Kind::Product {
             assert!(
                 food.is_none()
