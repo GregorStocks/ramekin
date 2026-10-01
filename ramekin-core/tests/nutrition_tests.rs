@@ -838,3 +838,26 @@ fn whole_spices_use_their_ground_form_calories() {
     // Japanese chili powder is ground red chili, so its density applies.
     assert!(calories("japanese chili powder", "1/4", "cup").unwrap() > 0.0);
 }
+
+#[test]
+fn fresh_herb_and_star_anise_forms_reach_their_trace_entries() {
+    for item in [
+        "chopped fresh sage",
+        "minced fresh sage",
+        "fresh sage",
+        "chopped fresh tarragon",
+        "fresh tarragon",
+        "star anise pods",
+        "star anise pod",
+    ] {
+        let small = estimate(&[ingredient(item, "1", "tbsp")], None, 1.0).unwrap();
+        assert_eq!(
+            small.known_calories.map(|range| range.max),
+            Some(0.0),
+            "{item}"
+        );
+        // Not anise seed or dried sage: a weighed amount stays unknown.
+        let weighed = estimate(&[ingredient(item, "10", "g")], None, 1.0).unwrap();
+        assert!(weighed.known_calories.is_none(), "{item}");
+    }
+}
