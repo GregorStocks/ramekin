@@ -53,7 +53,7 @@ def mock_hold(name: str, hold: bool) -> None:
     ).raise_for_status()
 
 
-def mock_calls(name: str) -> int:
+def mock_counts(name: str) -> dict:
     port = os.environ["MOCK_OPENROUTER_PORT"]
     response = requests.get(
         f"http://localhost:{port}/test/ingredient-name-calls",
@@ -61,7 +61,18 @@ def mock_calls(name: str) -> int:
         timeout=10,
     )
     response.raise_for_status()
-    return response.json()["calls"]
+    return response.json()
+
+
+def mock_calls(name: str) -> int:
+    """Requests that included the name, answered or not."""
+    return mock_counts(name)["calls"]
+
+
+def mock_answers(name: str) -> int:
+    """Valid answers sent for the name. A batch that another test's failing
+    name broke is re-asked name by name, which adds a call but no answer."""
+    return mock_counts(name)["answers"]
 
 
 def create_recipe(api: RecipesApi, item: str) -> str:
@@ -104,7 +115,7 @@ def test_saved_unknown_names_are_resolved_and_counted(authed_api_client):
     create_recipe(api, item)
     text = wait_for(lambda: (t := line_text(api, item)) != "Not recognized" and t)
     assert text.endswith("kcal"), text
-    assert mock_calls(item.lower()) == 1
+    assert mock_answers(item.lower()) == 1
 
 
 def test_unknowable_names_stay_unknown(authed_api_client):
@@ -129,7 +140,7 @@ def test_concurrent_saves_resolve_a_name_once(authed_api_client):
     for thread in threads:
         thread.join()
     wait_for(lambda: line_text(api, item) != "Not recognized")
-    assert mock_calls(item.lower()) == 1
+    assert mock_answers(item.lower()) == 1
 
 
 def test_failures_are_visible_and_retryable(authed_api_client):
