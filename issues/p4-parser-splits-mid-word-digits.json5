@@ -1,0 +1,15 @@
+{
+  "title": "Ingredient parser splits a word at an inner digit-letter boundary",
+  "description": "parse_ingredient(\"100 g zqb53aadb2 sugar\") gives item \"zqb53 aadb2 sugar\": a token that starts with letters is split after an inner run of digits. \
+The split is presumably meant for glued amounts and units (\"5cups\"), not for words that merely contain digits. \
+Found because random test names in tests/test_ingredient_names.py flaked (fixed there by using letter-only names). \
+Real ingredient names with inner digits are rare (\"v8 juice\", \"a1 sauce\", \"7up\"), so check what those parse to, then only split when the token starts with the number.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "parser",
+  ],
+  "created_at": "2026-09-30T22:10:00.000000-07:00",
+  "updated_at": "2026-09-30T22:10:00.000000-07:00",
+}
