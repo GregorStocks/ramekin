@@ -29,6 +29,9 @@ SLOW_IMAGE_GENERATION_BARRIER = SlowImageGenerationBarrier()
 # How many ingredient-name-resolver calls included each name, so tests can
 # check that concurrent saves of one name pay for a single call.
 INGREDIENT_NAME_CALLS = {}
+# Valid answers sent per name. A batch broken by another test's failing name
+# is re-asked one name at a time, so calls can exceed answers.
+INGREDIENT_NAME_ANSWERS = {}
 INGREDIENT_NAME_CALLS_LOCK = threading.Lock()
 # Names whose resolver calls fail until a test clears them.
 FAILING_INGREDIENT_NAMES = set()
@@ -102,11 +105,14 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         if parsed.path == "/test/ingredient-name-calls":
             name = parse_qs(parsed.query).get("name", [""])[0]
             with INGREDIENT_NAME_CALLS_LOCK:
-                count = INGREDIENT_NAME_CALLS.get(name, 0)
+                counts = {
+                    "calls": INGREDIENT_NAME_CALLS.get(name, 0),
+                    "answers": INGREDIENT_NAME_ANSWERS.get(name, 0),
+                }
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
-            self.wfile.write(json.dumps({"calls": count}).encode())
+            self.wfile.write(json.dumps(counts).encode())
             return
 
         # Health check endpoint
@@ -215,6 +221,11 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                         "answer": "entry",
                         "key": item["candidates"][0],
                     }
+                )
+        with INGREDIENT_NAME_CALLS_LOCK:
+            for item in items:
+                INGREDIENT_NAME_ANSWERS[item["name"]] = (
+                    INGREDIENT_NAME_ANSWERS.get(item["name"], 0) + 1
                 )
         return json.dumps({"resolutions": resolutions})
 

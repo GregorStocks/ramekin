@@ -1,0 +1,16 @@
+{
+  "title": "iOS UI test testRecipeFlow can hang at login on CI (app unresponsive)",
+  "description": "On PR #722 (server-side catalog data only), the macOS iOS UI Tests job failed in RecipeFlowTests.testRecipeFlow after 253 s. After logging in, XCUITest polled for the 'Recipes' NavigationBar, then could not find the target application at all ('Find the Target Application com.ramekin.app' retried for 90 s), and failed with 'Failed to get matching snapshot: Timed out while evaluating UI query' (RecipeFlowTests.swift:91). \
+Rerunning the failed job passed (run 36822014393). \
+The app hung before any recipe or calorie screen, so it looks like a simulator or app hang on the runner rather than a product bug, but it has not been diagnosed. \
+If it recurs: capture the simulator's app logs on failure (see p4-ios-ui-timeout-drops-test-results) and check whether login's first recipe-list fetch or sync can block the main thread.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ios",
+    "flaky-test",
+  ],
+  "created_at": "2026-10-01T09:20:00.000000-07:00",
+  "updated_at": "2026-10-01T09:20:00.000000-07:00",
+}
