@@ -892,3 +892,30 @@ fn typed_tea_bags_are_a_trace() {
         );
     }
 }
+
+#[test]
+fn a_trace_spoonful_with_a_weight_alternative() {
+    let line = |item: &str| ParsedIngredient {
+        measurements: vec![
+            Measurement {
+                amount: Some("1-2".into()),
+                unit: Some("tsp".into()),
+            },
+            Measurement {
+                amount: Some("2-4".into()),
+                unit: Some("g".into()),
+            },
+        ],
+        ..ingredient(item, "1", "tsp")
+    };
+    let calories = |item: &str| {
+        estimate(&[line(item)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    // Sumac has no calories to weigh the grams with: the spoonful is a trace.
+    assert_eq!(calories("sumac"), Some(0.0));
+    // Black pepper does, so the weight alternative counts (4 g x 2.51 kcal/g).
+    assert!((calories("black pepper").unwrap() - 10.04).abs() < 1e-9);
+}
