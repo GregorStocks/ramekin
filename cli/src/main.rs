@@ -270,6 +270,10 @@ enum Commands {
         /// Also audit a JSON array of {servings, ingredients} prod recipes (local report only)
         #[arg(long)]
         prod_recipes: Option<PathBuf>,
+        /// Apply the server's learned names (a JSON array of ingredient_name_resolutions
+        /// rows) to the prod recipes, as the server does
+        #[arg(long)]
+        learned: Option<PathBuf>,
     },
     /// Generate a title-normalization mapping from a .paprikarecipes file
     TitleNormalizationTest {
@@ -484,11 +488,13 @@ async fn main() -> Result<()> {
         Commands::IngredientCatalogAudit {
             runs_dir,
             prod_recipes,
+            learned,
         } => {
             ingredient_catalog_audit::run(
                 Path::new("."),
                 runs_dir.as_deref(),
                 prod_recipes.as_deref(),
+                learned.as_deref(),
             )?;
         }
         Commands::TitleNormalizationTest {

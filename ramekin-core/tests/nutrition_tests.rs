@@ -301,10 +301,11 @@ fn catalog_defaults_and_density_gaps() {
         kcal("melted butter", "1", "tbsp"),
         kcal("butter", "1", "tbsp")
     );
-    // Pepper is known for calories but has no density, so only weights work.
+    // Pepper is known for calories but has no density, so only weights work
+    // (a spoonful or less is negligible; see the trace-food test).
     assert!(kcal("freshly ground black pepper", "10", "g") > 0.0);
     let by_volume = estimate(
-        &[ingredient("freshly ground black pepper", "1", "tsp")],
+        &[ingredient("freshly ground black pepper", "1/4", "cup")],
         None,
         1.0,
     )
@@ -502,6 +503,48 @@ fn counted_trace_foods_without_a_piece_weight_are_negligible() {
     // Only small pieces of trace foods: garlic heads are not negligible.
     let head = estimate(&[ingredient("garlic", "1", "head")], None, 1.0).unwrap();
     assert!(head.known_calories.is_none());
+}
+
+#[test]
+fn a_spoonful_of_an_unweighable_trace_food_is_negligible() {
+    let calories = |item: &str, amount: &str, unit: &str, scale: f64| {
+        let result = estimate(&[ingredient(item, amount, unit)], None, scale).unwrap();
+        result.known_calories.map(|range| range.max)
+    };
+    // Black pepper has no density (grind size varies too much).
+    for unit in ["tsp", "teaspoons", "tbsp", "heaping tsp", "ml"] {
+        assert_eq!(
+            calories("freshly ground black pepper", "1", unit, 1.0),
+            Some(0.0),
+            "{unit}"
+        );
+    }
+    assert_eq!(calories("black pepper", "1/2-1", "tbsp", 1.0), Some(0.0));
+    // Compound spoons are summed: 1 1/2 tsp is under a tablespoon, 2 tbsp isn't.
+    let compound = |amount: &str| {
+        let line = ParsedIngredient {
+            measurements: vec![Measurement {
+                amount: Some(amount.into()),
+                unit: None,
+            }],
+            ..ingredient("black pepper", "1", "tsp")
+        };
+        estimate(&[line], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    assert_eq!(compound("1 teaspoon plus 1/2 teaspoon"), Some(0.0));
+    assert_eq!(compound("1 tbsp + 1 tbsp"), None);
+    // Past a tablespoon, including after scaling, it's unknown, not zero.
+    assert_eq!(calories("black pepper", "2", "tbsp", 1.0), None);
+    assert_eq!(calories("black pepper", "1", "tbsp", 2.0), None);
+    assert_eq!(calories("black pepper", "1", "cup", 1.0), None);
+    // A trace food with a density is computed normally.
+    assert!(calories("ground cumin", "1", "tbsp", 1.0).unwrap() > 0.0);
+    // Only trace foods: a spoonful of anything else still needs a density.
+    let result = estimate(&[ingredient("capers", "1", "tbsp")], None, 1.0).unwrap();
+    assert!(result.known_calories.is_none());
 }
 
 #[test]

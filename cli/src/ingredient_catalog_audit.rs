@@ -5,9 +5,12 @@
 //! catalog changes show measurable before/after numbers.
 
 use anyhow::{Context, Result};
-use ramekin_core::catalog::{is_non_food, is_volume_unit, line_grams_per_cup, resolve, Resolution};
+use ramekin_core::catalog::{
+    is_non_food, is_non_food_with, is_volume_unit, line_grams_per_cup_with, resolve, Learned,
+    LearnedTarget, Resolution,
+};
 use ramekin_core::final_recipe::FinalRecipe;
-use ramekin_core::ingredient_categorizer::categorize;
+use ramekin_core::ingredient_categorizer::{categorize, categorize_with};
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
 use ramekin_core::nutrition;
 use ramekin_core::types::ParseIngredientsOutput;
@@ -39,6 +42,8 @@ struct Recipe {
 struct Corpus {
     name: String,
     recipes: Vec<Recipe>,
+    /// Names the server learned (catalog step 3); empty for committed corpora.
+    learned: Learned,
 }
 
 #[derive(Default)]
@@ -188,6 +193,7 @@ fn load_fixture_corpus(root: &Path, subdir: &str, name: &str) -> Result<Corpus> 
     Ok(Corpus {
         name: name.to_string(),
         recipes,
+        learned: Learned::new(),
     })
 }
 
@@ -203,6 +209,7 @@ fn load_snapshot_corpus(root: &Path) -> Result<Corpus> {
     Ok(Corpus {
         name: "Pipeline snapshots".to_string(),
         recipes,
+        learned: Learned::new(),
     })
 }
 
@@ -253,13 +260,51 @@ fn load_pipeline_run_corpus(runs_dir: &Path) -> Result<Corpus> {
     Ok(Corpus {
         name: format!("Pipeline run {}", run_dir.display()),
         recipes,
+        learned: Learned::new(),
     })
 }
 
-fn load_prod_corpus(path: &Path) -> Result<Corpus> {
+/// A row of the server's `ingredient_name_resolutions` table, as exported
+/// for `--learned`.
+#[derive(Deserialize)]
+struct LearnedRow {
+    name: String,
+    status: String,
+    disposition: Option<String>,
+    catalog_key: Option<String>,
+}
+
+/// The resolved rows of a learned-names export, as the server reads them.
+fn load_learned(path: &Path) -> Result<Learned> {
+    let rows: Vec<LearnedRow> = read_json(path)?;
+    rows.into_iter()
+        .filter(|row| row.status == "resolved")
+        .map(|row| {
+            let target = match (row.disposition.as_deref(), row.catalog_key) {
+                (Some("entry"), Some(key)) => LearnedTarget::Entry(key),
+                (Some("not_food"), None) => LearnedTarget::NotFood,
+                (Some("unknown"), None) => LearnedTarget::Unknown,
+                (disposition, key) => anyhow::bail!(
+                    "Bad learned row for {:?}: disposition {disposition:?}, key {key:?}",
+                    row.name
+                ),
+            };
+            Ok((row.name, target))
+        })
+        .collect()
+}
+
+fn load_prod_corpus(path: &Path, learned: Option<&Path>) -> Result<Corpus> {
     let recipes: Vec<ProdRecipe> = read_json(path)?;
+    let (name, learned) = match learned {
+        Some(learned) => (
+            format!("Prod recipes {} + learned names", path.display()),
+            load_learned(learned)?,
+        ),
+        None => (format!("Prod recipes {}", path.display()), Learned::new()),
+    };
     Ok(Corpus {
-        name: format!("Prod recipes {}", path.display()),
+        name,
         recipes: recipes
             .into_iter()
             .map(|r| Recipe {
@@ -267,6 +312,7 @@ fn load_prod_corpus(path: &Path) -> Result<Corpus> {
                 ingredients: r.ingredients,
             })
             .collect(),
+        learned,
     })
 }
 
@@ -282,8 +328,13 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
             stats.recipes_with_servings += 1;
         }
 
-        let estimate = nutrition::estimate(&recipe.ingredients, recipe.servings.as_deref(), 1.0)
-            .map_err(|e| anyhow::anyhow!("Calorie estimate failed in {}: {e}", corpus.name))?;
+        let estimate = nutrition::estimate_with(
+            &recipe.ingredients,
+            recipe.servings.as_deref(),
+            1.0,
+            &corpus.learned,
+        )
+        .map_err(|e| anyhow::anyhow!("Calorie estimate failed in {}: {e}", corpus.name))?;
         let unknown = &estimate.unknown_ingredients;
         stats.unknown_lines_per_recipe[unknown_bucket(unknown.len())] += 1;
         *stats
@@ -293,7 +344,7 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
         let non_food = recipe
             .ingredients
             .iter()
-            .filter(|ingredient| is_non_food(&ingredient.item))
+            .filter(|ingredient| is_non_food_with(&ingredient.item, &corpus.learned))
             .count();
         stats.non_food += non_food;
         stats.nutrition_computed += recipe.ingredients.len() - unknown.len() - non_food;
@@ -330,7 +381,13 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
                 .any(|m| is_volume_unit(m.unit.as_deref()));
             if has_volume {
                 stats.volume_lines += 1;
-                if line_grams_per_cup(&ingredient.item, ingredient.note.as_deref()).is_some() {
+                if line_grams_per_cup_with(
+                    &ingredient.item,
+                    ingredient.note.as_deref(),
+                    &corpus.learned,
+                )
+                .is_some()
+                {
                     stats.density_hits += 1;
                 } else {
                     *stats
@@ -340,7 +397,7 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
                 }
             }
 
-            if categorize(&ingredient.item) == "Other" {
+            if categorize_with(&ingredient.item, &corpus.learned) == "Other" {
                 *stats
                     .uncategorized
                     .entry(normalize_name(&ingredient.item))
@@ -550,6 +607,12 @@ fn render_recipe_corpora(
         write_top_names(out, "Nutrition", "lines", &s.nutrition_unrecognized);
         write_top_names(
             out,
+            "Nutrition failures (reason: name)",
+            "lines",
+            &s.nutrition_failures,
+        );
+        write_top_names(
+            out,
             "Density (volume lines only)",
             "lines",
             &s.density_misses,
@@ -654,7 +717,12 @@ fn render_committed(audit: &CommittedAudit) -> String {
     out
 }
 
-pub fn run(root: &Path, runs_dir: Option<&Path>, prod_recipes: Option<&Path>) -> Result<()> {
+pub fn run(
+    root: &Path,
+    runs_dir: Option<&Path>,
+    prod_recipes: Option<&Path>,
+    learned: Option<&Path>,
+) -> Result<()> {
     let mut committed = audit_committed(root)?;
     let committed_path = root.join(COMMITTED_REPORT);
     fs::write(&committed_path, render_committed(&committed))
@@ -666,7 +734,9 @@ pub fn run(root: &Path, runs_dir: Option<&Path>, prod_recipes: Option<&Path>) ->
         local.push(load_pipeline_run_corpus(runs_dir)?);
     }
     if let Some(path) = prod_recipes {
-        local.push(load_prod_corpus(path)?);
+        local.push(load_prod_corpus(path, learned)?);
+    } else if learned.is_some() {
+        anyhow::bail!("--learned needs --prod-recipes");
     }
     for corpus in &local {
         committed
@@ -790,7 +860,7 @@ pub fn export_unresolved(root: &Path, prod_recipes: Option<&Path>) -> Result<()>
         ),
     ];
     if let Some(path) = prod_recipes {
-        corpora.push(("prod", load_prod_corpus(path)?));
+        corpora.push(("prod", load_prod_corpus(path, None)?));
     }
     let names = unresolved_names(&corpora);
     let path = root.join(UNRESOLVED_QUEUE);
@@ -844,6 +914,7 @@ mod tests {
                     ingredients: vec![],
                 },
             ],
+            learned: Learned::new(),
         };
         let stats = audit_recipes(&corpus).unwrap();
 
@@ -974,6 +1045,7 @@ mod tests {
                 servings: None,
                 ingredients,
             }],
+            learned: Learned::new(),
         };
         let names = unresolved_names(&[
             (
@@ -1008,5 +1080,52 @@ mod tests {
             committed == expected,
             "{COMMITTED_REPORT} is stale; run `make ingredient-catalog-audit` and commit the result"
         );
+    }
+
+    #[test]
+    fn learned_names_count_in_the_prod_corpus() {
+        let dir = tempfile::tempdir().unwrap();
+        let recipes = dir.path().join("recipes.json");
+        let learned = dir.path().join("learned.json");
+        fs::write(
+            &recipes,
+            r#"[{"servings": null, "ingredients": [
+                {"item": "zzqq sugar", "measurements": [{"amount": "100", "unit": "g"}]},
+                {"item": "zzqq flour", "measurements": [{"amount": "1", "unit": "cup"}]},
+                {"item": "zzqq garnish plate", "measurements": []}
+            ]}]"#,
+        )
+        .unwrap();
+        fs::write(
+            &learned,
+            r#"[
+                {"name": "zzqq sugar", "status": "resolved", "disposition": "entry",
+                 "catalog_key": "granulated sugar"},
+                {"name": "zzqq flour", "status": "resolved", "disposition": "entry",
+                 "catalog_key": "all-purpose flour"},
+                {"name": "zzqq garnish plate", "status": "resolved", "disposition": "not_food",
+                 "catalog_key": null},
+                {"name": "pending one", "status": "pending", "disposition": null,
+                 "catalog_key": null}
+            ]"#,
+        )
+        .unwrap();
+        let without = audit_recipes(&load_prod_corpus(&recipes, None).unwrap()).unwrap();
+        assert_eq!(without.recipes_fully_estimated, 0);
+        assert_eq!((without.non_food, without.density_hits), (0, 0));
+        let corpus = load_prod_corpus(&recipes, Some(&learned)).unwrap();
+        assert_eq!(corpus.learned.len(), 3, "only resolved rows");
+        let with = audit_recipes(&corpus).unwrap();
+        assert_eq!(with.recipes_fully_estimated, 1);
+        // Every metric reads learned names: the not-food line is non-food and
+        // the learned flour has the flour density.
+        assert_eq!((with.non_food, with.density_hits), (1, 1));
+
+        fs::write(
+            &learned,
+            r#"[{"name": "x", "status": "resolved", "disposition": "entry", "catalog_key": null}]"#,
+        )
+        .unwrap();
+        assert!(load_prod_corpus(&recipes, Some(&learned)).is_err());
     }
 }

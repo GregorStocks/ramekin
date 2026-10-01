@@ -8,7 +8,7 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v9";
+const RULE_VERSION: &str = "calories-v10";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
@@ -142,10 +142,35 @@ fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) 
     })
 }
 
+/// The most volume of a trace food with no density, after scaling, that still
+/// counts as a trace: a tablespoon of any spice is at most about 25 kcal.
+const MAX_TRACE_CUPS: f64 = catalog::CUPS_PER_TBSP;
+
+/// Up to a tablespoon of a trace food whose volume can't be weighed ("1 tsp
+/// freshly ground black pepper"; grind size makes pepper's density unusable).
+/// A food with a density is computed normally.
+fn is_unweighed_spoonful(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bool {
+    entry.grams_per_cup.is_none()
+        && !ingredient.measurements.is_empty()
+        && ingredient.measurements.iter().all(|measurement| {
+            let cups_per_unit = |unit: &str| {
+                catalog::volume_to_cups(1.0, &canonical_unit(&normalize(unit)))
+                    .map(exact)
+                    .ok_or("Not a volume")
+            };
+            measurement.amount.as_deref().is_some_and(|amount| {
+                measurement_total(amount, measurement.unit.as_deref(), cups_per_unit)
+                    .is_ok_and(|cups| cups.max * scale <= MAX_TRACE_CUPS)
+            })
+        })
+}
+
 fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bool {
     entry.zero_calorie
         || (entry.trace_ok
-            && (is_trace_line(ingredient) || is_unweighed_count(entry, ingredient, scale)))
+            && (is_trace_line(ingredient)
+                || is_unweighed_count(entry, ingredient, scale)
+                || is_unweighed_spoonful(entry, ingredient, scale)))
 }
 
 fn food(entry: &Entry) -> Result<Food<'_>, &'static str> {
@@ -294,27 +319,15 @@ fn exact(grams: f64) -> CalorieRange {
     }
 }
 
-fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str> {
-    // A heaped or scant spoon is close enough to a level one.
+/// A normalized unit with any fill word dropped (a heaped or scant spoon is
+/// close enough to a level one) and volume names in the catalog's spelling
+/// ("tablespoons" -> "tbsp").
+fn canonical_unit(normalized: &str) -> String {
     static FILL: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(r"^(?:slightly )?(?:heaped|heaping|scant|generous|level|rounded) ").unwrap()
     });
-    let normalized = normalize(unit);
-    if normalized.is_empty() {
-        return catalog::grams_per_piece(food.entry, None)
-            .map(exact)
-            .ok_or("Unsupported quantity unit");
-    }
-    if let Some(grams) = package_grams(&normalized) {
-        return Ok(grams);
-    }
-    let normalized = FILL.replace(&normalized, "").into_owned();
-    let unit = match normalized.as_str() {
-        "gram" | "grams" | "g" => return Ok(exact(1.0)),
-        "kilogram" | "kilograms" | "kg" => return Ok(exact(1000.0)),
-        "milligram" | "milligrams" | "mg" => return Ok(exact(0.001)),
-        "ounce" | "ounces" | "oz" => return Ok(exact(28.349523125)),
-        "pound" | "pounds" | "lb" | "lbs" => return Ok(exact(453.59237)),
+    let unit = FILL.replace(normalized, "");
+    match unit.as_ref() {
         "cups" => "cup",
         "pints" => "pint",
         "quarts" => "quart",
@@ -325,7 +338,30 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str>
         "milliliter" | "milliliters" => "ml",
         "liter" | "liters" | "litre" | "litres" => "l",
         other => other,
-    };
+    }
+    .to_string()
+}
+
+fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str> {
+    let normalized = normalize(unit);
+    if normalized.is_empty() {
+        return catalog::grams_per_piece(food.entry, None)
+            .map(exact)
+            .ok_or("Unsupported quantity unit");
+    }
+    if let Some(grams) = package_grams(&normalized) {
+        return Ok(grams);
+    }
+    let unit = canonical_unit(&normalized);
+    match unit.as_str() {
+        "gram" | "grams" | "g" => return Ok(exact(1.0)),
+        "kilogram" | "kilograms" | "kg" => return Ok(exact(1000.0)),
+        "milligram" | "milligrams" | "mg" => return Ok(exact(0.001)),
+        "ounce" | "ounces" | "oz" => return Ok(exact(28.349523125)),
+        "pound" | "pounds" | "lb" | "lbs" => return Ok(exact(453.59237)),
+        _ => {}
+    }
+    let unit = unit.as_str();
     let Some(cups) = catalog::volume_to_cups(1.0, unit) else {
         return catalog::grams_per_piece(food.entry, Some(unit))
             .map(exact)
@@ -344,6 +380,16 @@ fn measurement_grams(
     unit: Option<&str>,
     food: &Food,
 ) -> Result<CalorieRange, &'static str> {
+    measurement_total(amount, unit, |unit| grams_per_unit(unit, food))
+}
+
+/// A measurement's total in whatever `per_unit` converts one unit to,
+/// including compound amounts ("1 cup plus 2 tbsp").
+fn measurement_total(
+    amount: &str,
+    unit: Option<&str>,
+    per_unit: impl Fn(&str) -> Result<CalorieRange, &'static str>,
+) -> Result<CalorieRange, &'static str> {
     static PLUS: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"\s+(?:plus|\+)\s+").unwrap());
     static EMBEDDED: LazyLock<Regex> =
         LazyLock::new(|| Regex::new(r"^(.+?)\s+([a-z][a-z ]*)$").unwrap());
@@ -351,7 +397,7 @@ fn measurement_grams(
     let mut total = CalorieRange { min: 0.0, max: 0.0 };
     for segment in PLUS.split(&amount) {
         let (range, factor) = if let Some(range) = quantity(segment) {
-            (range, grams_per_unit(unit.unwrap_or(""), food)?)
+            (range, per_unit(unit.unwrap_or(""))?)
         } else {
             // Compound measurements embed their units in amount, with no outer
             // unit. A shared outer unit instead applies to every numeric term.
@@ -362,7 +408,7 @@ fn measurement_grams(
                 .captures(segment)
                 .ok_or("Unsupported or missing quantity")?;
             let range = quantity(&parts[1]).ok_or("Unsupported or missing quantity")?;
-            (range, grams_per_unit(&parts[2], food)?)
+            (range, per_unit(&parts[2])?)
         };
         total.min += range.min * factor.min;
         total.max += range.max * factor.max;

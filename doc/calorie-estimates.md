@@ -107,9 +107,10 @@ Some lines are known without a usable amount (rules in the catalog README):
 - **Zero-calorie foods** (salt, water, baking soda) contribute 0 kcal on any line.
 - **Spices** (USDA "spices, …", including black pepper) and fresh herbs
   contribute 0 kcal when the line has no numeric amount ("to taste"), only a
-  pinch, dash, or sprig, or counts at most 10 small pieces (after scaling) USDA
-  has no weight for ("2 bay leaves", "1 cinnamon stick"); more is unknown. A
-  real amount is computed normally.
+  pinch, dash, or sprig, counts at most 10 small pieces (after scaling) USDA
+  has no weight for ("2 bay leaves", "1 cinnamon stick"), or is at most a
+  tablespoon (after scaling) of one with no density ("1 tsp freshly ground black
+  pepper"); more is unknown. A real amount is computed normally.
 - **Compound lines** ("salt and pepper", one amount for several foods) contribute
   0 kcal only if every food is negligible on that line. Otherwise they are
   unknown with "Several ingredients share one amount", because one amount can't

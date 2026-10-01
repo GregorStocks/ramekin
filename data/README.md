@@ -157,3 +157,9 @@ corpora are added to the local report only:
   `recipe_versions.ingredients` value of each live recipe's current version. Like the
   shopping-list corpus, this is a one-off read-only extraction Gregor runs; the query
   and the dump are intentionally not checked in.
+- `LEARNED=path/to/learned.json` (with `PROD_RECIPES`) applies the server's learned
+  names to the prod dump, as the server does when it estimates: a JSON array of
+  `ingredient_name_resolutions` rows (`name`, `status`, `disposition`, `catalog_key`).
+
+The local report also lists the most frequent nutrition failures as "reason: name",
+the quickest way to see what to fix next.
