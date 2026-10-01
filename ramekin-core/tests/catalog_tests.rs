@@ -582,3 +582,31 @@ fn secondary_sources_supply_foods_sr_legacy_lacks() {
     assert_close(density("garam masala"), 160.0);
     assert!(version().contains("fndds2024"));
 }
+
+#[test]
+fn dish_names_are_never_not_food() {
+    // "1 lb meatballs" is real food: marking a dish name not-food would drop
+    // its calories silently, so it must stay unknown (or resolve) instead.
+    for name in [
+        "cake",
+        "soup",
+        "stew",
+        "meatballs",
+        "pancakes",
+        "frosting",
+        "pastry",
+        "tacos",
+        "wontons",
+        "burritos",
+        "filling",
+        "marinade",
+        "slaw",
+        "cupcakes",
+        "cookie",
+    ] {
+        assert!(
+            !matches!(resolve(name), Resolution::NotFood),
+            "{name:?} must not be not-food"
+        );
+    }
+}

@@ -316,7 +316,7 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
 | --- | --- | --- | --- | --- |
 | 2026-09-28 | Top 2,000 unresolved names (seen ≥ 4 times across pipeline and Paprika fixtures and prod) | Claude Opus 5.5 via a Claude Code Workflow: 8 classifiers + 3 verifiers | 1,670 aliases, 16 ambiguous, 6 not-food, 4 products, 1 entry | 303 |
 | 2026-09-29 | Tier 2: every remaining name seen ≥ 2 times, plus every prod name, minus tier-1 skips (2,568 names, 5,836 lines) | Claude Opus 5.5 via a Claude Code Workflow: 11 classifiers + 3 verifiers | 1,884 aliases, 128 ambiguous, 112 not-food, 4 products | 440 |
-| 2026-10-01 | Secondary sources: earlier skips still unresolved, prod names the step-3 resolver answered "unknown", and every unresolved prod name (1,099 names, 3,492 lines) | Claude Opus 5.5 via a Claude Code Workflow: 6 classifiers + 3 verifiers | 490 aliases, 84 cited Branded foods, 29 FNDDS entries, 60 ambiguous, 50 not-food, 11 products | 375 |
+| 2026-10-01 | Secondary sources: earlier skips still unresolved, prod names the step-3 resolver answered "unknown", and every unresolved prod name (1,099 names, 3,492 lines) | Claude Opus 5.5 via a Claude Code Workflow: 6 classifiers + 3 verifiers | 490 aliases, 84 cited Branded foods, 29 FNDDS entries, 60 ambiguous, 4 not-food, 11 products | 421 |
 
 - **Verification:** the verifiers checked every mapping to a ≥ 300 kcal/100 g food (543), a
   ~1/7 sample of the rest, and consistency across all decisions. They corrected 34 decisions.
@@ -363,13 +363,17 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
   - `make catalog-clean-aliases` then removed 348 older keys the parser now splits.
     Their parsed names resolve on their own. Only stored items in accounts that were never
     re-parsed still used them (351 lines; none in the owner's account).
+  - On review, 46 not-food decisions became skips. Dish and sauce names ("meatballs",
+    "teriyaki glaze") can be real food, and parser fragments ("2 tablespoons", "pitted")
+    stand for a food the parser lost. Not-food would drop their calories silently.
+    `dish_names_are_never_not_food` guards the common dish names.
   - Of the skips, 94 names (102 prod lines) are spices whose labels only have servings
     under 10 g, which can't be cited; see `p2-catalog-trace-only-spices`.
   - Effect:
 
     | Measure | Prod (owner's 499 recipes, with learned names) | Pipeline fixtures |
     | --- | --- | --- |
-    | Names recognized | 93.3% → 95.4% | 83.3% → 85.3% |
-    | Calories computed | 83.2% → 84.8% | 76.9% → 78.4% |
-    | Estimates complete | 21.0% → 22.8% | 12.8% → 14.5% |
-    | "No nutrition match" lines | 304 → 134 | 9,499 → 8,213 |
+    | Names recognized | 93.3% → 95.0% | 83.3% → 85.2% |
+    | Calories computed | 83.2% → 84.4% | 76.9% → 78.3% |
+    | Estimates complete | 21.0% → 22.6% | 12.8% → 14.5% |
+    | "No nutrition match" lines | 304 → 157 | 9,499 → 8,256 |
