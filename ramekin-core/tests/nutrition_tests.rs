@@ -851,6 +851,11 @@ fn fresh_herb_and_star_anise_forms_reach_their_trace_entries() {
         "fresh tarragon",
         "star anise pods",
         "star anise pod",
+        "peach bitters",
+        "peychaud's bitters",
+        "aromatic bitters",
+        "shichimi",
+        "aleppo pepper flakes",
     ] {
         let small = estimate(&[ingredient(item, "1", "tbsp")], None, 1.0).unwrap();
         assert_eq!(
@@ -861,5 +866,29 @@ fn fresh_herb_and_star_anise_forms_reach_their_trace_entries() {
         // Not anise seed or dried sage: a weighed amount stays unknown.
         let weighed = estimate(&[ingredient(item, "10", "g")], None, 1.0).unwrap();
         assert!(weighed.known_calories.is_none(), "{item}");
+    }
+}
+
+#[test]
+fn typed_tea_bags_are_a_trace() {
+    for item in [
+        "tea bags",
+        "black tea bags",
+        "green tea bag",
+        "earl grey tea bag",
+    ] {
+        let line = ParsedIngredient {
+            measurements: vec![Measurement {
+                amount: Some("5".into()),
+                unit: None,
+            }],
+            ..ingredient(item, "5", "")
+        };
+        let result = estimate(&[line], None, 1.0).unwrap();
+        assert_eq!(
+            result.known_calories.map(|range| range.max),
+            Some(0.0),
+            "{item}"
+        );
     }
 }
