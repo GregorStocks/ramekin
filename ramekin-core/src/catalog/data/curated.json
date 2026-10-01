@@ -115,6 +115,7 @@
     "almonds": "nuts, almonds",
     "alternate fillings: 9 tablespoons chocolate chips, 9 tablespoons nutella": null,
     "aluminum-free baking powder": "leavening agents, baking powder, double-acting, straight phosphate",
+    "amaretto, kahlua, or brandy": null,
     "amchur": "amchoor powder",
     "american cheese": "cheese, pasteurized process, american, fortified with vitamin d",
     "american cheese or cheddar": "cheese, pasteurized process, american, fortified with vitamin d",
@@ -1067,9 +1068,9 @@
     "dry spaghetti": "pasta, dry, enriched",
     "dry uncooked orzo": "pasta",
     "dry vermouth": "alcoholic beverage, wine, dessert, dry",
-    "dry vermouth or dry white wine": "alcoholic beverage, wine, dessert, dry",
+    "dry vermouth or dry white wine": null,
     "dry white or red wine": "dry white wine",
-    "dry white wine or vermouth": "dry white wine",
+    "dry white wine or vermouth": null,
     "dry wide rice noodles": "rice noodles",
     "dry yeast": "leavening agents, yeast, baker's, active dry",
     "dry-roasted peanuts": "peanuts, all types, dry-roasted, without salt",
@@ -1163,7 +1164,7 @@
     "fine, dry breadcrumbs": "bread, crumbs, dry, grated, plain",
     "fine-grain sea salt": "sea salt",
     "fine-quality semisweet chocolate": "candies, semisweet chocolate",
-    "finely chopped bacon or pancetta": "pork, cured, bacon, unprepared",
+    "finely chopped bacon or pancetta": null,
     "finely chopped cilantro leaves and tender stems": "coriander (cilantro) leaves",
     "finely chopped dill": "dill weed, fresh",
     "finely chopped drained pimentos or roasted red peppers": "pimento, canned",
@@ -2058,7 +2059,6 @@
     "medium/large leeks": "leeks, (bulb and lower leaf-portion), raw",
     "medjool dates": "dates, medjool",
     "melted, unsalted butter, olive oil, coconut oil, or ghee": null,
-    "melted, unsalted butter, olive oil, coconut oil, or ghee (for assembly)": "butter",
     "mexican blend": "cheese, mexican blend",
     "mexican blend shredded cheese": "cheese, mexican blend",
     "mexican cheese": "cheese, mexican blend",
@@ -2873,7 +2873,7 @@
     "sifted cake flour": "cake flour",
     "sifted confectioners’ sugar": "powdered sugar",
     "silken tofu": "mori-nu, tofu, silken, firm",
-    "simple syrup or maple syrup": "simple syrup",
+    "simple syrup or maple syrup": null,
     "sirloin": "beef, top sirloin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
     "sirloin steak": "beef, top sirloin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
     "sirloin steak tips": "beef, top sirloin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
@@ -3566,9 +3566,6 @@
     "amaretto liqueur": {
       "fdc_id": 2710623
     },
-    "amaretto, kahlua, or brandy": {
-      "fdc_id": 2710623
-    },
     "amchoor powder": {
       "grams_per_cup": {
         "source": "USDA FoodData Central Branded food 400113: serving 10 g = 1 Tbsp",
@@ -3709,17 +3706,6 @@
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 220.0
-      }
-    },
-    "buffalo wing sauce": {
-      "grams_per_cup": {
-        "source": "USDA FoodData Central Branded food 385157: serving 32 g = 2 Tbsp",
-        "value": 256.0
-      },
-      "kcal_per_100g": {
-        "source": "USDA FoodData Central Branded food 385157 (BUFFALO SAUCE, STEAK 'N SHAKE): 141 kcal per 100 g",
-        "url": "https://fdc.nal.usda.gov/food-details/385157/nutrients",
-        "value": 141.0
       }
     },
     "burrata": {
