@@ -553,3 +553,32 @@ fn parsed_name_never_cuts_into_a_name() {
         "garlic"
     );
 }
+
+fn entry_kcal(item: &str) -> Option<f64> {
+    match resolve(item) {
+        Resolution::Entry { entry, .. } => entry.kcal_per_100g,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    }
+}
+
+#[test]
+fn secondary_sources_supply_foods_sr_legacy_lacks() {
+    // An FNDDS food, linked from a curated entry: its calories and density
+    // come from the generated fndds.json.
+    let guacamole = food(2709307).expect("FNDDS food is loaded");
+    assert_eq!(guacamole.description, "guacamole, nfs");
+    assert_eq!(fdc_id("guacamole"), Some(2709307));
+    assert_eq!(entry_kcal("guacamole"), guacamole.kcal_per_100g);
+    assert_eq!(grams_per_cup("guacamole"), guacamole.grams_per_cup);
+    // FNDDS descriptions are not names on their own: "simple syrup" is an
+    // FNDDS food no curated entry links, so the resolver never lands on it.
+    assert_eq!(food(2710278).unwrap().description, "simple syrup");
+    if let Resolution::Entry { entry, .. } = resolve("simple syrup") {
+        assert_ne!(entry.fdc_id, Some(2710278));
+    }
+    // A hand-curated food with cited calories and no USDA food.
+    assert_eq!(fdc_id("garam masala"), None);
+    assert_close(entry_kcal("garam masala").unwrap(), 300.0);
+    assert_close(density("garam masala"), 160.0);
+    assert!(version().contains("fndds2024"));
+}

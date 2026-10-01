@@ -28,10 +28,11 @@ CURATED = {
     "rewrites": {},
 }
 CATEGORIES = {"Household", "Produce"}
+FNDDS = {"foods": [{"fdc_id": 50, "description": "guacamole, nfs"}]}
 
 
 def run(*decisions):
-    return APPLY.apply(CURATED, USDA, CATEGORIES, list(decisions))
+    return APPLY.apply(CURATED, USDA, CATEGORIES, list(decisions), FNDDS)
 
 
 def test_valid_decisions_apply():
@@ -122,3 +123,42 @@ def test_aliases_can_target_entries_from_the_same_batch():
     )
     assert rejections == []
     assert updated["aliases"]["garlic paste spread"] == "garlic paste"
+
+
+def test_entries_may_link_fndds_foods():
+    updated, _, rejections = run({"name": "guacamole", "action": "entry", "fdc_id": 50})
+    assert rejections == []
+    assert updated["entries"]["guacamole"] == {"fdc_id": 50}
+
+
+def test_hand_curated_foods_need_cited_calories():
+    food = {
+        "name": "garam masala",
+        "action": "food",
+        "kcal_per_100g_value": 300,
+        "kcal_per_100g_source": "USDA FDC Branded 2028654 label",
+        "kcal_per_100g_url": "https://fdc.nal.usda.gov/food-details/2028654/nutrients",
+        "grams_per_cup_value": 160,
+        "grams_per_cup_source": "label: 1 Tbsp = 10 g",
+        "trace_ok": True,
+    }
+    updated, counts, rejections = run(food)
+    assert rejections == [] and counts["food"] == 1
+    assert updated["entries"]["garam masala"] == {
+        "kcal_per_100g": {
+            "value": 300.0,
+            "source": "USDA FDC Branded 2028654 label",
+            "url": "https://fdc.nal.usda.gov/food-details/2028654/nutrients",
+        },
+        "grams_per_cup": {"value": 160.0, "source": "label: 1 Tbsp = 10 g"},
+        "trace_ok": True,
+    }
+    no_url = {k: v for k, v in food.items() if k != "kcal_per_100g_url"}
+    _, _, rejections = run(no_url)
+    assert rejections and "url" in rejections[0]
+    no_kcal = {"name": "x", "action": "food"}
+    _, _, rejections = run(no_kcal)
+    assert rejections and "kcal_per_100g" in rejections[0]
+    bad = {**food, "kcal_per_100g_value": -1}
+    _, _, rejections = run(bad)
+    assert rejections and "positive value" in rejections[0]

@@ -50,7 +50,8 @@ Each agent returns one schema-validated decision per name:
 | action | fields | meaning |
 | --- | --- | --- |
 | `alias` | `target` | a curated entry id, USDA stripped name (`usda.json` `.names`), or unique USDA description; never another alias |
-| `entry` | `fdc_id`, optional `grams_per_cup_value` + `grams_per_cup_source` | a real USDA food whose density must be borrowed (like "dried thyme") |
+| `entry` | `fdc_id`, optional `grams_per_cup_value` + `grams_per_cup_source` | a real USDA food (SR Legacy, or FNDDS in `fndds.json`) that has no name of its own, or whose density must be borrowed (like "dried thyme") |
+| `food` | `kcal_per_100g_value` + `_source` + `_url`, optional `grams_per_cup_value` + `_source`, optional `trace_ok` | a food neither USDA release has, with calories cited from one specific record (a USDA Branded label) |
 | `product` | `category` | a purchasable non-food (Household, …) |
 | `not_food` | `reason` | a note or heading, not an ingredient |
 | `ambiguous` | `reason` | spans foods with very different calories ("cheese") |
@@ -67,8 +68,18 @@ The prompt carries the README's alias rules plus the lessons from review:
 - never invent numbers;
 - prefer `skip` over a guess.
 
-Agents are read-only and look things up with `jq`/`grep` on `usda.json` and
-`curated.json`.
+Source order: an SR Legacy name or food first; then an FNDDS food (`entry` with its
+`fdc_id`); only then a `food` citing a USDA Branded record. Look branded records up with
+the FDC API, e.g.
+`https://api.nal.usda.gov/fdc/v1/foods/search?query=garam%20masala&dataType=Branded&api_key=DEMO_KEY`.
+Label values are rounded per serving, so prefer records with a serving of at least
+about 10 g, and pick one typical of the brands rather than an outlier. Cite the
+record's `food-details` URL and the label math in the source ("30 kcal per 10 g
+serving"). A label's household serving ("1 Tbsp = 10 g") is a usable density
+source.
+
+Agents are read-only and look things up with `jq`/`grep` on `usda.json`, `fndds.json`
+and `curated.json`.
 
 ### Verify
 
@@ -92,9 +103,10 @@ make catalog-apply-classification FILE=<decisions.json>
 `scripts/apply-catalog-classification.py` validates everything first. It rejects:
 - names that aren't normalized, or already exist as catalog names;
 - targets that aren't valid (including alias-to-alias);
-- unknown FDC ids;
+- unknown FDC ids (SR Legacy or FNDDS);
 - products without a known category;
-- borrowed densities without a source.
+- borrowed densities without a source;
+- `food` decisions without calories, a source and a URL.
 
 Any rejection fails the run and writes nothing. The Rust catalog loader's asserts
 (`make test-core`) are the final gate.

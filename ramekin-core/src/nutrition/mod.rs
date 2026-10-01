@@ -174,11 +174,7 @@ fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bo
 }
 
 fn food(entry: &Entry) -> Result<Food<'_>, &'static str> {
-    let kcal_per_100g = entry
-        .fdc_id
-        .and_then(catalog::food)
-        .and_then(|food| food.kcal_per_100g)
-        .ok_or("No supported nutrition match")?;
+    let kcal_per_100g = entry.kcal_per_100g.ok_or("No supported nutrition match")?;
     Ok(Food {
         kcal_per_100g,
         entry,

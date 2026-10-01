@@ -235,16 +235,45 @@ def test_cached_regeneration_is_reproducible(tmp_path, monkeypatch):
     cache = tmp_path / "source.zip"
     cache.write_bytes(contents)
     output = tmp_path / "usda.json"
+    fndds_contents = archive_bytes(
+        {
+            "release/food.csv": 'fdc_id,description\n2,"Simple syrup"\n',
+            "release/food_nutrient.csv": "fdc_id,nutrient_id,amount\n2,208,184\n",
+            "release/food_portion.csv": (
+                "id,fdc_id,portion_description,gram_weight\n1,2,1 tablespoon,20\n"
+            ),
+        }
+    )
+    fndds_cache = tmp_path / "fndds.zip"
+    fndds_cache.write_bytes(fndds_contents)
+    fndds_output = tmp_path / "fndds.json"
     monkeypatch.setattr(
         IMPORTER, "ARCHIVE_SHA256", hashlib.sha256(contents).hexdigest()
     )
+    monkeypatch.setattr(
+        IMPORTER, "FNDDS_ARCHIVE_SHA256", hashlib.sha256(fndds_contents).hexdigest()
+    )
     monkeypatch.setattr(IMPORTER, "CACHE", cache)
     monkeypatch.setattr(IMPORTER, "OUTPUT", output)
+    monkeypatch.setattr(IMPORTER, "FNDDS_CACHE", fndds_cache)
+    monkeypatch.setattr(IMPORTER, "FNDDS_OUTPUT", fndds_output)
     monkeypatch.setattr(IMPORTER, "ROOT", tmp_path)
     IMPORTER.main()
     first = output.read_bytes()
+    first_fndds = fndds_output.read_bytes()
     IMPORTER.main()
     assert output.read_bytes() == first
+    assert fndds_output.read_bytes() == first_fndds
+    assert json.loads(first_fndds)["foods"] == [
+        {
+            "fdc_id": 2,
+            "description": "simple syrup",
+            "kcal_per_100g": 184.0,
+            "grams_per_cup": 320.0,
+            "portions": {},
+            "default_portion": None,
+        }
+    ]
     data = json.loads(first)
     assert data["foods"] == [
         {
@@ -270,12 +299,12 @@ def test_download_validated_before_caching(tmp_path, monkeypatch):
         IMPORTER.urllib.request, "urlopen", lambda *a, **kw: io.BytesIO(contents)
     )
     with pytest.raises(ValueError, match="checksum mismatch"):
-        IMPORTER.load_archive(cache)
+        IMPORTER.load_archive(cache, "https://example.test/a.zip", "0" * 64)
     assert not cache.exists()
-    monkeypatch.setattr(
-        IMPORTER, "ARCHIVE_SHA256", hashlib.sha256(contents).hexdigest()
+    sha256 = hashlib.sha256(contents).hexdigest()
+    assert (
+        IMPORTER.load_archive(cache, "https://example.test/a.zip", sha256) == contents
     )
-    assert IMPORTER.load_archive(cache) == contents
     assert cache.read_bytes() == contents
 
 
@@ -284,3 +313,99 @@ def test_missing_or_ambiguous_csv_fails(members):
     with zipfile.ZipFile(io.BytesIO(archive_bytes(members))) as archive:
         with pytest.raises(ValueError, match="exactly one food.csv"):
             IMPORTER.read_rows(archive, "food.csv")
+
+
+def fndds_portion(description, weight="100", food_id="1", row_id="1"):
+    return {
+        "id": row_id,
+        "fdc_id": food_id,
+        "portion_description": description,
+        "gram_weight": weight,
+    }
+
+
+@pytest.mark.parametrize(
+    ("rows", "expected"),
+    [
+        ([fndds_portion("1 cup", "240")], 240),
+        ([fndds_portion("1/2 cup, diced", "60")], 120),
+        ([fndds_portion("1 1/2 cups", "300")], 200),
+        ([fndds_portion("1 tablespoon", "15")], 240),
+        ([fndds_portion("2 teaspoons", "10")], 240),
+        ([fndds_portion("1 fl oz (no ice)", "30")], 240),
+        # Cups win over spoons; other measures are not volumes.
+        ([fndds_portion("1 tablespoon", "10"), fndds_portion("1 cup", "200")], 200),
+        ([fndds_portion("Quantity not specified", "0")], None),
+        ([fndds_portion("1 medium", "50"), fndds_portion("1 cubic inch", "10")], None),
+        ([fndds_portion("Guideline amount per cup of hot cereal", "61")], None),
+    ],
+)
+def test_fndds_density(rows, expected):
+    assert IMPORTER.fndds_grams_per_cup(rows) == expected
+
+
+def test_fndds_zero_volume_weight_fails():
+    with pytest.raises(ValueError, match="Invalid FNDDS volume portion"):
+        IMPORTER.fndds_grams_per_cup([fndds_portion("1 cup", "0")])
+
+
+def test_fndds_records_have_no_names_or_pieces():
+    data = IMPORTER.build_fndds_data(
+        [
+            {"fdc_id": "1", "description": "Guacamole, NFS"},
+            {"fdc_id": "2", "description": "Milk, human"},
+        ],
+        [
+            {"fdc_id": "1", "nutrient_id": "208", "amount": "155"},
+            {"fdc_id": "1", "nutrient_id": "1008", "amount": "999"},
+        ],
+        [fndds_portion("1 cup", "240"), fndds_portion("1 medium", "50", row_id="2")],
+    )
+    assert "names" not in data
+    assert data["foods"] == [
+        {
+            "fdc_id": 1,
+            "description": "guacamole, nfs",
+            "kcal_per_100g": 155.0,
+            "grams_per_cup": 240.0,
+            "portions": {},
+            "default_portion": None,
+        },
+        {
+            "fdc_id": 2,
+            "description": "milk, human",
+            "kcal_per_100g": None,
+            "grams_per_cup": None,
+            "portions": {},
+            "default_portion": None,
+        },
+    ]
+
+
+@pytest.mark.parametrize(
+    ("foods", "nutrients", "rows", "match"),
+    [
+        ([], [], [fndds_portion("1 cup")], "nonempty"),
+        (
+            [{"fdc_id": "1", "description": "A"}, {"fdc_id": "1", "description": "B"}],
+            [],
+            [fndds_portion("1 cup")],
+            "duplicate food",
+        ),
+        (
+            [{"fdc_id": "1", "description": "A"}],
+            [{"fdc_id": "9", "nutrient_id": "208", "amount": "1"}],
+            [fndds_portion("1 cup")],
+            "Unknown food in nutrient",
+        ),
+        (
+            [{"fdc_id": "1", "description": "A"}],
+            [],
+            [fndds_portion("1 cup", food_id="9")],
+            "Unknown food in portion",
+        ),
+    ],
+)
+def test_invalid_fndds_tables_fail(foods, nutrients, rows, match):
+    with pytest.raises(ValueError, match=match):
+        IMPORTER.build_fndds_data(foods, nutrients, rows)

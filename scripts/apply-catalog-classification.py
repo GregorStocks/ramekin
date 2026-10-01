@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "ramekin-core/src/catalog/data"
 CATEGORIZER = ROOT / "ramekin-core/src/ingredient_categorizer.rs"
-ACTIONS = {"alias", "entry", "product", "not_food", "ambiguous", "skip"}
+ACTIONS = {"alias", "entry", "food", "product", "not_food", "ambiguous", "skip"}
 
 
 def normalize(text: str) -> str:
@@ -44,10 +44,41 @@ def load_decisions(path: Path) -> list[dict]:
     return decisions
 
 
-def apply(curated: dict, usda: dict, categories: set[str], decisions: list[dict]):
-    """Return (updated curated, counts, rejections) without mutating inputs."""
+def cited(decision: dict, field: str) -> dict | None:
+    """A positive `<field>_value` with its `<field>_source` (and optional
+    `<field>_url`), or None when the decision gives no value."""
+    value = decision.get(f"{field}_value")
+    if value is None:
+        return None
+    source = decision.get(f"{field}_source")
+    if not (
+        isinstance(value, (int, float))
+        and not isinstance(value, bool)
+        and value > 0
+        and source
+    ):
+        raise ValueError(f"{field} needs a positive value and a source")
+    out = {"value": float(value), "source": source}
+    if decision.get(f"{field}_url"):
+        out["url"] = decision[f"{field}_url"]
+    return out
+
+
+def apply(
+    curated: dict,
+    usda: dict,
+    categories: set[str],
+    decisions: list[dict],
+    fndds: dict | None = None,
+):
+    """Return (updated curated, counts, rejections) without mutating inputs.
+
+    `entry` decisions may link an SR Legacy or FNDDS food; `food` decisions
+    add a hand-curated food with cited calories for foods neither has.
+    """
     curated = json.loads(json.dumps(curated))
     fdc_ids = {food["fdc_id"] for food in usda["foods"]}
+    fdc_ids |= {food["fdc_id"] for food in (fndds or {"foods": []})["foods"]}
     description_counts: dict[str, int] = {}
     for food in usda["foods"]:
         description_counts[food["description"]] = (
@@ -68,7 +99,7 @@ def apply(curated: dict, usda: dict, categories: set[str], decisions: list[dict]
     seen = set()
     # New entries and products first, so aliases in the same batch can target them.
     ordered = sorted(
-        decisions, key=lambda d: d.get("action") not in ("entry", "product")
+        decisions, key=lambda d: d.get("action") not in ("entry", "food", "product")
     )
     for decision in ordered:
         name = decision.get("name", "")
@@ -122,18 +153,30 @@ def apply(curated: dict, usda: dict, categories: set[str], decisions: list[dict]
                 reject(f"unknown fdc_id {fdc_id!r}")
                 continue
             entry: dict = {"fdc_id": fdc_id}
-            value = decision.get("grams_per_cup_value")
-            if value is not None:
-                source = decision.get("grams_per_cup_source")
-                if not (
-                    isinstance(value, (int, float))
-                    and not isinstance(value, bool)
-                    and value > 0
-                    and source
-                ):
-                    reject("grams_per_cup needs a positive value and a source")
-                    continue
-                entry["grams_per_cup"] = {"value": float(value), "source": source}
+            try:
+                density = cited(decision, "grams_per_cup")
+            except ValueError as error:
+                reject(str(error))
+                continue
+            if density is not None:
+                entry["grams_per_cup"] = density
+            curated["entries"][name] = entry
+            targets.add(name)
+        elif action == "food":
+            try:
+                kcal = cited(decision, "kcal_per_100g")
+                density = cited(decision, "grams_per_cup")
+            except ValueError as error:
+                reject(str(error))
+                continue
+            if kcal is None or "url" not in kcal:
+                reject("food needs kcal_per_100g with a source and url")
+                continue
+            entry = {"kcal_per_100g": kcal}
+            if density is not None:
+                entry["grams_per_cup"] = density
+            if decision.get("trace_ok"):
+                entry["trace_ok"] = True
             curated["entries"][name] = entry
             targets.add(name)
     return curated, counts, rejections
@@ -145,9 +188,10 @@ def main() -> None:
     curated_path = CATALOG / "curated.json"
     curated = json.loads(curated_path.read_text(encoding="utf-8"))
     usda = json.loads((CATALOG / "usda.json").read_text(encoding="utf-8"))
+    fndds = json.loads((CATALOG / "fndds.json").read_text(encoding="utf-8"))
     categories = shopping_categories(CATEGORIZER.read_text(encoding="utf-8"))
     updated, counts, rejections = apply(
-        curated, usda, categories, load_decisions(Path(sys.argv[1]))
+        curated, usda, categories, load_decisions(Path(sys.argv[1])), fndds
     )
     if rejections:
         print(f"{len(rejections)} invalid decision(s); curated.json not written:")

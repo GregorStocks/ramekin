@@ -157,6 +157,27 @@ The importer rejects empty tables, duplicate IDs, unknown food references, and
 invalid energies. Repeated imports produce identical bytes. Its offline tests
 are `tests/test_catalog_import.py`.
 
+### `data/fndds.json` (generated; do not edit)
+
+The same `make catalog-import` also projects the pinned USDA FNDDS (survey foods)
+October 2024 CSV archive (SHA-256 verified, cached at
+`.cache/nutrition-fndds-2024-10-31.zip`). FNDDS is a secondary source for foods SR
+Legacy lacks (guacamole, gnocchi, simple syrup, tahini, liqueur). Its records have
+the same shape as `usda.json` foods:
+
+- `kcal_per_100g` is nutrient number 208 (Energy, kcal); FNDDS keys nutrients by
+  number, not id.
+- `grams_per_cup` averages the volume portions whose description starts with an
+  amount and a volume unit ("1 cup", "1/2 cup, diced", "1 tablespoon", "1 fl oz").
+  Cups win over tablespoons, teaspoons, then fluid ounces.
+- `portions` is always empty: FNDDS pieces ("1 medium", "1 slice") are not
+  imported yet.
+
+There is no name index. FNDDS foods are never entries or names on their own, so
+adding the release changed no existing resolution. A curated entry reaches one by
+linking its `fdc_id`; the importer and the catalog loader both reject an FDC id
+that appears in both releases.
+
 ### `data/curated.json` (hand-maintained)
 
 ```json
@@ -186,8 +207,14 @@ are `tests/test_catalog_import.py`.
 ```
 
 - `entries` override USDA foods of the same name.
-  - `fdc_id` links the food whose calories apply. Omit it when USDA has no
-    equivalent (e.g. mirin), so calories stay unknown rather than wrong.
+  - `fdc_id` links the food whose calories apply: an SR Legacy food, or an FNDDS
+    food from `fndds.json`.
+  - `kcal_per_100g` (`{"value", "source", "url"}`) is the hand-curated fallback
+    for a food neither USDA release has (e.g. garam masala). It cites a specific
+    record, normally a USDA FoodData Central Branded label
+    (`https://fdc.nal.usda.gov/food-details/<id>/nutrients`). An entry has either
+    an `fdc_id` or cited calories, never both. With neither, its calories stay
+    unknown rather than wrong.
   - `grams_per_cup` is either a cited value, or `{"none": reason}` to suppress
     the linked food's density. Omit it to inherit the linked food's density.
   - Every value needs a `source`.
@@ -197,8 +224,8 @@ are `tests/test_catalog_import.py`.
     keyword categorizer.
   - `trace_ok: true` marks a food commonly listed without an amount, for foods
     the "spices, …" rule doesn't cover.
-  - `kind: "product"` entries need a `category` and may not have an `fdc_id` or
-    `grams_per_cup`.
+  - `kind: "product"` entries need a `category` and may not have an `fdc_id`,
+    `kcal_per_100g`, or `grams_per_cup`.
 - `aliases` map a name to an entry id, USDA stripped name, or unique USDA
   description. A `null` alias marks a name as ambiguous. An alias decides food
   identity for *every* attribute. When USDA has the food itself, point at it

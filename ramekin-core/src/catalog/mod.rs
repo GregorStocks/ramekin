@@ -2,11 +2,14 @@
 //! a known food.
 //!
 //! Every food in the pinned USDA SR Legacy release is an entry, and
-//! `data/curated.json` adds hand-maintained entries (with cited densities),
-//! aliases, and display rewrites on top. Resolution (which food a name is) is
-//! separate from attributes (calories via `fdc_id`, density via
-//! `grams_per_cup`), so an entry can be recognized even when one attribute is
-//! deliberately unknown. See README.md for the data rules.
+//! `data/curated.json` adds hand-maintained entries (with cited densities and,
+//! for foods no database has, cited calories), aliases, and display rewrites
+//! on top. Curated entries may also link foods from the secondary USDA FNDDS
+//! release, which are not entries or names on their own. Resolution (which
+//! food a name is) is separate from attributes (calories via `fdc_id` or a
+//! cited value, density via `grams_per_cup`), so an entry can be recognized
+//! even when one attribute is deliberately unknown. See README.md for the data
+//! rules.
 
 mod cleanup;
 mod learned;
@@ -33,10 +36,12 @@ pub use volume::{
 };
 
 const USDA_JSON: &str = include_str!("data/usda.json");
+const FNDDS_JSON: &str = include_str!("data/fndds.json");
 pub const CURATED_JSON: &str = include_str!("data/curated.json");
 const RULE_VERSION: &str = "catalog-v2";
 
-/// A food from the pinned USDA SR Legacy release.
+/// A food from a pinned USDA release (SR Legacy, or FNDDS for foods SR Legacy
+/// lacks).
 #[derive(Debug, Deserialize)]
 pub struct UsdaFood {
     pub fdc_id: u32,
@@ -55,12 +60,20 @@ struct UsdaFile {
     names: BTreeMap<String, u32>,
 }
 
+/// A secondary USDA release: foods only, linked from curated entries.
+#[derive(Deserialize)]
+struct FoodsFile {
+    foods: Vec<UsdaFood>,
+}
+
 #[derive(Deserialize)]
 #[serde(deny_unknown_fields)]
 struct CuratedEntry {
     #[serde(default)]
     kind: Kind,
     fdc_id: Option<u32>,
+    /// Cited calories for a food no linked USDA food covers.
+    kcal_per_100g: Option<CitedValue>,
     grams_per_cup: Option<CuratedDensity>,
     /// Shopping-list category; overrides the keyword categorizer.
     category: Option<String>,
@@ -78,6 +91,17 @@ pub enum Kind {
     /// Bought at the store but not eaten (parchment paper, skewers). Carries
     /// only a shopping category; calorie estimates skip it.
     Product,
+}
+
+/// A hand-curated number and where it came from.
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct CitedValue {
+    value: f64,
+    #[allow(dead_code)]
+    source: String,
+    #[allow(dead_code)]
+    url: Option<String>,
 }
 
 /// A curated density overrides the linked USDA food's density, or marks it
@@ -127,8 +151,10 @@ pub struct Entry {
     /// A curated entry's name, or a USDA food's lowercased description.
     pub id: String,
     pub kind: Kind,
-    /// The USDA food supplying calories, if known.
+    /// The USDA food this entry is, if any.
     pub fdc_id: Option<u32>,
+    /// Calories: a curated entry's cited value, else its linked food's.
+    pub kcal_per_100g: Option<f64>,
     pub grams_per_cup: Option<f64>,
     /// Shopping-list category, when the catalog knows it.
     pub category: Option<String>,
@@ -181,11 +207,15 @@ fn is_trace_ok(food: &UsdaFood, trace_ok_foods: &HashSet<u32>) -> bool {
 
 static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
     let usda: UsdaFile = serde_json::from_str(USDA_JSON).expect("invalid catalog usda.json");
+    let fndds: FoodsFile = serde_json::from_str(FNDDS_JSON).expect("invalid catalog fndds.json");
     let curated: CuratedFile =
         serde_json::from_str(CURATED_JSON).expect("invalid catalog curated.json");
 
+    // Only SR Legacy foods are entries and names; FNDDS foods are reached
+    // through curated entries.
+    let sr_food_ids: HashSet<u32> = usda.foods.iter().map(|food| food.fdc_id).collect();
     let mut foods = HashMap::new();
-    for food in usda.foods {
+    for food in usda.foods.into_iter().chain(fndds.foods) {
         assert!(food.kcal_per_100g.is_none_or(|k| k.is_finite() && k >= 0.0));
         assert!(food.grams_per_cup.is_none_or(valid_density));
         assert!(food.portions.values().all(|&grams| valid_density(grams)));
@@ -234,6 +264,19 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
                 .get(&fdc_id)
                 .unwrap_or_else(|| panic!("curated entry {id:?} links unknown fdc_id {fdc_id}"))
         });
+        let kcal_per_100g = match (&curated_entry.kcal_per_100g, food) {
+            (Some(cited), None) => {
+                assert!(
+                    cited.value.is_finite() && cited.value >= 0.0,
+                    "invalid calories for {id:?}"
+                );
+                Some(cited.value)
+            }
+            (Some(_), Some(_)) => {
+                panic!("curated entry {id:?} cites calories and links a USDA food")
+            }
+            (None, food) => food.and_then(|food| food.kcal_per_100g),
+        };
         let grams_per_cup = match curated_entry.grams_per_cup {
             Some(CuratedDensity::Value { value, .. }) => {
                 assert!(valid_density(value), "invalid density for {id:?}");
@@ -250,8 +293,11 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         }
         if curated_entry.kind == Kind::Product {
             assert!(
-                food.is_none() && grams_per_cup.is_none() && curated_entry.category.is_some(),
-                "product {id:?} must have a category and no food or density"
+                food.is_none()
+                    && kcal_per_100g.is_none()
+                    && grams_per_cup.is_none()
+                    && curated_entry.category.is_some(),
+                "product {id:?} must have a category and no food, calories or density"
             );
         }
         index.insert(id.clone(), Target::Entry(entries.len()));
@@ -259,15 +305,16 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             id,
             kind: curated_entry.kind,
             fdc_id: curated_entry.fdc_id,
+            kcal_per_100g,
             grams_per_cup,
             category: curated_entry.category,
-            zero_calorie: food.is_some_and(is_zero_calorie),
+            zero_calorie: kcal_per_100g == Some(0.0),
             trace_ok: curated_entry.trace_ok
                 || food.is_some_and(|food| is_trace_ok(food, &trace_ok_foods)),
         });
     }
 
-    let mut food_ids: Vec<_> = foods.keys().copied().collect();
+    let mut food_ids: Vec<_> = sr_food_ids.iter().copied().collect();
     food_ids.sort_unstable();
     let mut entry_for_food = HashMap::new();
     for fdc_id in food_ids {
@@ -277,6 +324,7 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             id: food.description.clone(),
             kind: Kind::Food,
             fdc_id: Some(fdc_id),
+            kcal_per_100g: food.kcal_per_100g,
             grams_per_cup: food.grams_per_cup,
             category: None,
             zero_calorie: is_zero_calorie(food),
@@ -291,11 +339,16 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         let entry = entry_for_food[&fdc_id];
         index.entry(name).or_insert(Target::Entry(entry));
     }
+    let sr_foods = || {
+        foods
+            .values()
+            .filter(|food| sr_food_ids.contains(&food.fdc_id))
+    };
     let mut description_counts: HashMap<&str, usize> = HashMap::new();
-    for food in foods.values() {
+    for food in sr_foods() {
         *description_counts.entry(&food.description).or_default() += 1;
     }
-    for food in foods.values() {
+    for food in sr_foods() {
         let target = if description_counts[food.description.as_str()] == 1 {
             Target::Entry(entry_for_food[&food.fdc_id])
         } else {
@@ -339,14 +392,16 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         );
     }
 
-    let hash = Sha256::digest(format!("{RULE_VERSION}\n{USDA_JSON}\n{CURATED_JSON}"));
+    let hash = Sha256::digest(format!(
+        "{RULE_VERSION}\n{USDA_JSON}\n{FNDDS_JSON}\n{CURATED_JSON}"
+    ));
     let hash: String = hash.iter().map(|byte| format!("{byte:02x}")).collect();
     Catalog {
         entries,
         foods,
         index,
         rewrites: curated.rewrites.into_iter().collect(),
-        version: format!("{RULE_VERSION}-sr2018-{hash}"),
+        version: format!("{RULE_VERSION}-sr2018-fndds2024-{hash}"),
     }
 });
 
@@ -355,7 +410,7 @@ pub fn version() -> &'static str {
     &CATALOG.version
 }
 
-/// The USDA food with this FDC id.
+/// The USDA food (SR Legacy or FNDDS) with this FDC id.
 pub fn food(fdc_id: u32) -> Option<&'static UsdaFood> {
     CATALOG.foods.get(&fdc_id)
 }
