@@ -13,6 +13,7 @@ Usage:
 """
 
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -54,6 +55,7 @@ def cited(decision: dict, field: str) -> dict | None:
     if not (
         isinstance(value, (int, float))
         and not isinstance(value, bool)
+        and math.isfinite(value)
         and value > 0
         and isinstance(source, str)
         and source.strip()
@@ -179,7 +181,11 @@ def apply(
             entry = {"kcal_per_100g": kcal}
             if density is not None:
                 entry["grams_per_cup"] = density
-            if decision.get("trace_ok"):
+            trace_ok = decision.get("trace_ok", False)
+            if not isinstance(trace_ok, bool):
+                reject("trace_ok must be true or false")
+                continue
+            if trace_ok:
                 entry["trace_ok"] = True
             curated["entries"][name] = entry
             targets.add(name)

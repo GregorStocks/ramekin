@@ -47,6 +47,10 @@ FNDDS_VOLUME = re.compile(
     r"^(\d+(?:\.\d+)?|\d+/\d+|\d+ \d+/\d+) "
     r"(cups?|tablespoons?|teaspoons?|fl oz)(?:$|[,( ])"
 )
+# Volume portions that measure the food before it is eaten ("1 cup, dry, yields",
+# "1 cup, unpopped, yields", "1 teaspoon, dry") or with something else in the
+# cup ("1 fl oz (with ice)", "1 cup ice"). Their weight isn't the eaten food's.
+FNDDS_NOT_AS_EATEN = re.compile(r"\byields\b|\bdry\b|\bunpopped\b|\bwith ice\b|\bice$")
 FNDDS_UNITS = {
     "cup": "cup",
     "cups": "cup",
@@ -396,8 +400,9 @@ def fndds_grams_per_cup(portions: list[dict]) -> float | None:
         "fl oz": FL_OZ_PER_CUP,
     }
     for p in portions:
-        match = FNDDS_VOLUME.match(normalize(p["portion_description"]))
-        if match is None:
+        description = normalize(p["portion_description"])
+        match = FNDDS_VOLUME.match(description)
+        if match is None or FNDDS_NOT_AS_EATEN.search(description):
             continue
         amount = parse_amount(match.group(1))
         gram_weight = float(p["gram_weight"])

@@ -169,7 +169,9 @@ the same shape as `usda.json` foods:
   number, not id.
 - `grams_per_cup` averages the volume portions whose description starts with an
   amount and a volume unit ("1 cup", "1/2 cup, diced", "1 tablespoon", "1 fl oz").
-  Cups win over tablespoons, teaspoons, then fluid ounces.
+  Cups win over tablespoons, teaspoons, then fluid ounces. Portions that measure
+  the food before it's eaten ("1 cup, dry, yields", "unpopped", "1 teaspoon,
+  dry") or with ice are skipped, since their weight isn't the eaten food's.
 - `portions` is always empty: FNDDS pieces ("1 medium", "1 slice") are not
   imported yet.
 

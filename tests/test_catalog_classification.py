@@ -167,3 +167,9 @@ def test_hand_curated_foods_need_cited_calories():
         assert rejections, url
     _, _, rejections = run({**food, "grams_per_cup_source": 3})
     assert rejections and "source" in rejections[0]
+    for value in [float("inf"), float("nan")]:
+        _, _, rejections = run({**food, "kcal_per_100g_value": value})
+        assert rejections and "positive value" in rejections[0], value
+    for trace_ok in ["false", 1, None]:
+        _, _, rejections = run({**food, "trace_ok": trace_ok})
+        assert rejections and "trace_ok" in rejections[0], trace_ok

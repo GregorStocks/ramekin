@@ -338,6 +338,21 @@ def fndds_portion(description, weight="100", food_id="1", row_id="1"):
         ([fndds_portion("Quantity not specified", "0")], None),
         ([fndds_portion("1 medium", "50"), fndds_portion("1 cubic inch", "10")], None),
         ([fndds_portion("Guideline amount per cup of hot cereal", "61")], None),
+        # Measures of the food before it's eaten, or with ice, aren't densities.
+        ([fndds_portion("1 cup, dry, yields", "740")], None),
+        ([fndds_portion("1 tablespoon dry yields 8 fl oz", "248")], None),
+        ([fndds_portion("1 cup, unpopped, yields", "193")], None),
+        ([fndds_portion("1 teaspoon, dry", "0.9")], None),
+        ([fndds_portion("1 fl oz (with ice)", "23")], None),
+        ([fndds_portion("1 cup ice", "110")], None),
+        (
+            [
+                fndds_portion("1 fl oz (no ice)", "30"),
+                fndds_portion("1 cup ice", "110"),
+            ],
+            240,
+        ),
+        ([fndds_portion("1 cup (yield after bone removed)", "184")], 184),
     ],
 )
 def test_fndds_density(rows, expected):
