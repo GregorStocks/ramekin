@@ -314,7 +314,7 @@ ios-install: ios-generate ## Build and install iOS app on connected device
 		-derivedDataPath build \
 		build
 	@APP_PATH=$$(find ramekin-ios/build/Build/Products -name "Ramekin.app" -path "*/Debug-iphoneos/*" | head -1) && \
-		DEVICE_ID=$$(xcrun devicectl list devices 2>/dev/null | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -1) && \
+		DEVICE_ID=$$(xcrun devicectl list devices --filter "Reality != 'simulated'" --columns Identifier --hide-default-columns --hide-headers 2>/dev/null | awk 'NR==1 {print $$1}') && \
 		if [ -z "$$DEVICE_ID" ]; then echo "No connected device found" && exit 1; fi && \
 		echo "Installing to device $$DEVICE_ID..." && \
 		xcrun devicectl device install app --device "$$DEVICE_ID" "$$APP_PATH"
