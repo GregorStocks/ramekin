@@ -90,6 +90,25 @@ fn estimates_and_categories_use_learned_names() {
 }
 
 #[test]
+fn learned_names_never_lose_a_keyword_category() {
+    use ramekin_core::ingredient_categorizer::categorize;
+    // A learned non-food is categorized like a committed one, by keywords.
+    let item = "any vegetables you have stashed in your stock bag";
+    assert_ne!(categorize(item), "Other");
+    let not_food = learned(&[(item, LearnedTarget::NotFood)]);
+    assert_eq!(categorize_with(item, &not_food), categorize(item));
+    // A learned key with no catalog category and no keyword keeps the item's
+    // own keyword category rather than becoming "Other".
+    let key = "abiyuch";
+    assert!(learned_key_resolves(key));
+    assert_eq!(categorize(key), "Other");
+    let item = "zzqq carrot medley";
+    assert_eq!(categorize(item), "Produce");
+    let entry = learned(&[(item, LearnedTarget::Entry(key.into()))]);
+    assert_eq!(categorize_with(item, &entry), "Produce");
+}
+
+#[test]
 fn candidates_share_words_with_the_name() {
     let found = candidates("garam masala spice blend", 10);
     assert!(!found.is_empty());

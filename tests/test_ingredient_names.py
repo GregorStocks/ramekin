@@ -29,7 +29,10 @@ from ramekin_client.models import (
 
 
 def unique(label: str) -> str:
-    return f"zq{uuid.uuid4().hex[:8]} {label}"
+    # Letters only: the parser splits a token at a digit-letter boundary
+    # ("ab53cd" -> "ab53 cd"), which would change the name it queues.
+    token = uuid.uuid4().hex[:8].translate(str.maketrans("0123456789", "ghijklmnop"))
+    return f"zq{token} {label}"
 
 
 def mock_fail(name: str, fail: bool) -> None:

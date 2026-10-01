@@ -265,6 +265,10 @@ accounts. `learned.rs` is the pure half:
   the committed catalog says `Unresolved`. An answer is a catalog key, re-resolved
   through the catalog (`Via::Learned`), so calories, density and category all
   come from committed data. A model never supplies numbers.
+- `categorize_with(item, &Learned)` uses a learned entry's catalog category when
+  it has one. Otherwise the item's own keywords decide, then the key's, so a
+  learned answer never loses a category the keywords already gave. A learned
+  non-food is categorized by keywords, like a committed one.
 
 Pending, failed and "unknown" names stay unknown. The server side (queueing on
 every recipe and shopping-list save, the background worker, the scrape step

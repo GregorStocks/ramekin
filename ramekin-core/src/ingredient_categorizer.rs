@@ -100,19 +100,23 @@ pub fn categorize(item: &str) -> &'static str {
     categorize_with(item, &crate::catalog::Learned::new())
 }
 
-/// `categorize`, using a stored answer for a name the catalog doesn't know: a
-/// learned entry's category, else the learned key's keyword category; a
-/// learned non-food is "Other".
+/// `categorize`, using a stored answer for a name the catalog doesn't know.
+/// A learned entry's catalog category wins; otherwise the item's own keywords
+/// decide, then the learned key's. A learned non-food is treated like a
+/// committed one: keywords still apply, since a shopping list can hold it.
 pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'static str {
     use crate::catalog::{normalize, unlearned_name, LearnedTarget};
-    if unlearned_name(item).is_some() {
-        match learned.get(&normalize(item)) {
-            Some(LearnedTarget::Entry(key)) => return categorize_known(key),
-            Some(LearnedTarget::NotFood) => return "Other",
-            Some(LearnedTarget::Unknown) | None => {}
-        }
+    let key = match unlearned_name(item).and_then(|name| learned.get(&normalize(&name))) {
+        Some(LearnedTarget::Entry(key)) => key,
+        _ => return categorize_known(item),
+    };
+    if let Some(category) = crate::catalog::category(key) {
+        return category_to_static(category);
     }
-    categorize_known(item)
+    match categorize_known(item) {
+        "Other" => categorize_known(key),
+        category => category,
+    }
 }
 
 fn categorize_known(item: &str) -> &'static str {
