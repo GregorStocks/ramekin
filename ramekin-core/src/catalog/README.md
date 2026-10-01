@@ -379,8 +379,8 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
     value). Buffalo wing sauce was dropped: labels range from near-zero hot sauce to
     butter-based restaurant sauce.
   - Of the skips, 94 names (102 prod lines) are spices whose labels only have servings
-    under 10 g, which can't be cited. A follow-up made 55 of them, plus fresh herbs listed
-    by the leaf, trace-only entries (with 37 aliases): sumac, celery salt, za'atar, five
+    under 10 g, which can't be cited. A follow-up made 52 of them, plus fresh herbs listed
+    by the leaf, trace-only entries (with 100 aliases for their variants): sumac, celery salt, za'atar, five
     spice, Old Bay, bitters, liquid smoke, vanilla beans, MSG, bonito flakes, fresh sage
     and tarragon. Whole spices whose ground form USDA has instead link it, since grinding
     changes the volume weight but not the calories by weight: mustard seeds and allspice
