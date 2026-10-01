@@ -382,9 +382,11 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
     under 10 g, which can't be cited. A follow-up made 55 of them, plus fresh herbs listed
     by the leaf, trace-only entries (with 37 aliases): sumac, celery salt, za'atar, five
     spice, Old Bay, bitters, liquid smoke, vanilla beans, MSG, bonito flakes, fresh sage
-    and tarragon. Mustard seeds instead link USDA's ground mustard seed, whose calories
-    are the same, with its density marked unknown (whole seeds pack denser), like
-    black pepper.
+    and tarragon. Whole spices whose ground form USDA has instead link it, since grinding
+    changes the volume weight but not the calories by weight: mustard seeds and allspice
+    berries (density marked unknown, like black pepper), and Japanese chili powder
+    (ground red chili, so cayenne's density applies). Fresh herbs stay trace-only: dried
+    forms have several times the calories per gram.
   - Effect:
 
     | Measure | Prod (owner's 499 recipes, with learned names) | Pipeline fixtures |

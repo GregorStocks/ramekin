@@ -823,3 +823,18 @@ fn mustard_seeds_use_usda_calories_without_a_volume_weight() {
     assert_eq!(calories("1", "tbsp"), Some(0.0));
     assert_eq!(calories("1/4", "cup"), None);
 }
+
+#[test]
+fn whole_spices_use_their_ground_form_calories() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    // USDA ground allspice: 263 kcal/100 g; whole berries have no volume weight.
+    assert!((calories("allspice berries", "10", "g").unwrap() - 26.3).abs() < 1e-9);
+    assert_eq!(calories("allspice berries", "1/4", "cup"), None);
+    // Japanese chili powder is ground red chili, so its density applies.
+    assert!(calories("japanese chili powder", "1/4", "cup").unwrap() > 0.0);
+}

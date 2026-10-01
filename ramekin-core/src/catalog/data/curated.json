@@ -3591,7 +3591,10 @@
       }
     },
     "allspice berries": {
-      "trace_ok": true
+      "fdc_id": 171315,
+      "grams_per_cup": {
+        "none": "USDA weighs only ground allspice; whole berries pack differently, and no label gives a whole-berry weight."
+      }
     },
     "almond extract": {
       "grams_per_cup": {
@@ -4376,7 +4379,7 @@
       "trace_ok": true
     },
     "japanese chili powder": {
-      "trace_ok": true
+      "fdc_id": 170932
     },
     "japanese curry roux": {
       "kcal_per_100g": {
