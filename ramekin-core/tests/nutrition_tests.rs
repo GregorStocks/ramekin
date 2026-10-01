@@ -520,6 +520,22 @@ fn a_spoonful_of_an_unweighable_trace_food_is_negligible() {
         );
     }
     assert_eq!(calories("black pepper", "1/2-1", "tbsp", 1.0), Some(0.0));
+    // Compound spoons are summed: 1 1/2 tsp is under a tablespoon, 2 tbsp isn't.
+    let compound = |amount: &str| {
+        let line = ParsedIngredient {
+            measurements: vec![Measurement {
+                amount: Some(amount.into()),
+                unit: None,
+            }],
+            ..ingredient("black pepper", "1", "tsp")
+        };
+        estimate(&[line], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    assert_eq!(compound("1 teaspoon plus 1/2 teaspoon"), Some(0.0));
+    assert_eq!(compound("1 tbsp + 1 tbsp"), None);
     // Past a tablespoon, including after scaling, it's unknown, not zero.
     assert_eq!(calories("black pepper", "2", "tbsp", 1.0), None);
     assert_eq!(calories("black pepper", "1", "tbsp", 2.0), None);

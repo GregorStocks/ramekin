@@ -153,13 +153,15 @@ fn is_unweighed_spoonful(entry: &Entry, ingredient: &ParsedIngredient, scale: f6
     entry.grams_per_cup.is_none()
         && !ingredient.measurements.is_empty()
         && ingredient.measurements.iter().all(|measurement| {
-            let unit = canonical_unit(&normalize(measurement.unit.as_deref().unwrap_or("")));
-            measurement
-                .amount
-                .as_deref()
-                .and_then(quantity)
-                .and_then(|amount| catalog::volume_to_cups(amount.max * scale, &unit))
-                .is_some_and(|cups| cups <= MAX_TRACE_CUPS)
+            let cups_per_unit = |unit: &str| {
+                catalog::volume_to_cups(1.0, &canonical_unit(&normalize(unit)))
+                    .map(exact)
+                    .ok_or("Not a volume")
+            };
+            measurement.amount.as_deref().is_some_and(|amount| {
+                measurement_total(amount, measurement.unit.as_deref(), cups_per_unit)
+                    .is_ok_and(|cups| cups.max * scale <= MAX_TRACE_CUPS)
+            })
         })
 }
 
@@ -378,6 +380,16 @@ fn measurement_grams(
     unit: Option<&str>,
     food: &Food,
 ) -> Result<CalorieRange, &'static str> {
+    measurement_total(amount, unit, |unit| grams_per_unit(unit, food))
+}
+
+/// A measurement's total in whatever `per_unit` converts one unit to,
+/// including compound amounts ("1 cup plus 2 tbsp").
+fn measurement_total(
+    amount: &str,
+    unit: Option<&str>,
+    per_unit: impl Fn(&str) -> Result<CalorieRange, &'static str>,
+) -> Result<CalorieRange, &'static str> {
     static PLUS: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"\s+(?:plus|\+)\s+").unwrap());
     static EMBEDDED: LazyLock<Regex> =
         LazyLock::new(|| Regex::new(r"^(.+?)\s+([a-z][a-z ]*)$").unwrap());
@@ -385,7 +397,7 @@ fn measurement_grams(
     let mut total = CalorieRange { min: 0.0, max: 0.0 };
     for segment in PLUS.split(&amount) {
         let (range, factor) = if let Some(range) = quantity(segment) {
-            (range, grams_per_unit(unit.unwrap_or(""), food)?)
+            (range, per_unit(unit.unwrap_or(""))?)
         } else {
             // Compound measurements embed their units in amount, with no outer
             // unit. A shared outer unit instead applies to every numeric term.
@@ -396,7 +408,7 @@ fn measurement_grams(
                 .captures(segment)
                 .ok_or("Unsupported or missing quantity")?;
             let range = quantity(&parts[1]).ok_or("Unsupported or missing quantity")?;
-            (range, grams_per_unit(&parts[2], food)?)
+            (range, per_unit(&parts[2])?)
         };
         total.min += range.min * factor.min;
         total.max += range.max * factor.max;
