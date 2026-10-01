@@ -143,7 +143,8 @@ fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) 
 }
 
 /// The most volume of a trace food with no density, after scaling, that still
-/// counts as a trace: a tablespoon of any spice is at most about 25 kcal.
+/// counts as a trace: a tablespoon of most spices is 15-25 kcal, and of dense
+/// seeds such as whole mustard seed up to about 50.
 const MAX_TRACE_CUPS: f64 = catalog::CUPS_PER_TBSP;
 
 /// Up to a tablespoon of a trace food whose volume can't be weighed ("1 tsp

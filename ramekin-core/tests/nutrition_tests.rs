@@ -808,3 +808,18 @@ fn za_atar_spellings_share_one_trace_entry() {
         );
     }
 }
+
+#[test]
+fn mustard_seeds_use_usda_calories_without_a_volume_weight() {
+    let calories = |amount: &str, unit: &str| {
+        estimate(&[ingredient("mustard seeds", amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    // USDA ground mustard seed: 508 kcal/100 g.
+    assert!((calories("10", "g").unwrap() - 50.8).abs() < 1e-9);
+    // Whole seeds have no volume weight: a spoonful is a trace, more is unknown.
+    assert_eq!(calories("1", "tbsp"), Some(0.0));
+    assert_eq!(calories("1/4", "cup"), None);
+}

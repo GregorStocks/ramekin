@@ -50,8 +50,9 @@ Each entry also has two negligibility attributes, derived from the data:
   amount ("to taste", no measurement), a trace unit (pinch, dash, sprig), or
   counts at most 10 small pieces (after scaling) USDA has no weight for ("2 bay
   leaves", "1 cinnamon stick"). So is at most a tablespoon (after scaling) of one
-  with no density ("1 tsp freshly ground black pepper"), which is at most about
-  25 kcal. A real amount, like a cup of cumin, counts in full.
+  with no density ("1 tsp freshly ground black pepper"): about 15-25 kcal for most
+  spices, and up to about 50 for dense, rich seeds such as whole mustard seed. A
+  real amount, like a cup of cumin, counts in full.
 
 A compound line is negligible only if every one of its foods is negligible on
 that line. Otherwise its calories are unknown.
@@ -381,7 +382,9 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
     under 10 g, which can't be cited. A follow-up made 55 of them, plus fresh herbs listed
     by the leaf, trace-only entries (with 37 aliases): sumac, celery salt, za'atar, five
     spice, Old Bay, bitters, liquid smoke, vanilla beans, MSG, bonito flakes, fresh sage
-    and tarragon.
+    and tarragon. Mustard seeds instead link USDA's ground mustard seed, whose calories
+    are the same, with its density marked unknown (whole seeds pack denser), like
+    black pepper.
   - Effect:
 
     | Measure | Prod (owner's 499 recipes, with learned names) | Pipeline fixtures |
