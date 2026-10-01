@@ -384,8 +384,8 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
     spice, Old Bay, bitters, liquid smoke, vanilla beans, MSG, bonito flakes, fresh sage
     and tarragon. Whole spices whose ground form USDA has instead link it, since grinding
     changes the volume weight but not the calories by weight: mustard seeds and allspice
-    berries (density marked unknown, like black pepper), and Japanese chili powder
-    (ground red chili, so cayenne's density applies). Fresh herbs stay trace-only: dried
+    berries (density marked unknown, like black pepper). "Japanese chili powder"
+    aliases shichimi togarashi, which is what recipes mean by it. Fresh herbs stay trace-only: dried
     forms have several times the calories per gram.
   - Effect:
 

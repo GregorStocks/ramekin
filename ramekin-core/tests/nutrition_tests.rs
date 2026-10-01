@@ -835,8 +835,10 @@ fn whole_spices_use_their_ground_form_calories() {
     // USDA ground allspice: 263 kcal/100 g; whole berries have no volume weight.
     assert!((calories("allspice berries", "10", "g").unwrap() - 26.3).abs() < 1e-9);
     assert_eq!(calories("allspice berries", "1/4", "cup"), None);
-    // Japanese chili powder is ground red chili, so its density applies.
-    assert!(calories("japanese chili powder", "1/4", "cup").unwrap() > 0.0);
+    // Recipes use "Japanese chili powder" for shichimi togarashi, a blend
+    // with no citable calories: a spoonful is a trace, more is unknown.
+    assert_eq!(calories("japanese chili powder", "1", "tsp"), Some(0.0));
+    assert_eq!(calories("japanese chili powder", "1/4", "cup"), None);
 }
 
 #[test]
