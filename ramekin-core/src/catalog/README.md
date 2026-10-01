@@ -215,7 +215,8 @@ that appears in both releases.
     for a food neither USDA release has (e.g. garam masala). It cites a specific
     record, normally a USDA FoodData Central Branded label
     (`https://fdc.nal.usda.gov/food-details/<id>/nutrients`). An entry has either
-    an `fdc_id` or cited calories, never both. With neither, its calories stay
+    an `fdc_id` or cited calories, never both. The catalog loader requires
+    the source and an `https://` URL. With neither, its calories stay
     unknown rather than wrong.
   - `grams_per_cup` is either a cited value, or `{"none": reason}` to suppress
     the linked food's density. Omit it to inherit the linked food's density.

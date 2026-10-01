@@ -93,15 +93,13 @@ pub enum Kind {
     Product,
 }
 
-/// A hand-curated number and where it came from.
+/// A hand-curated number and the record it came from.
 #[derive(Deserialize)]
 #[serde(deny_unknown_fields)]
 struct CitedValue {
     value: f64,
-    #[allow(dead_code)]
     source: String,
-    #[allow(dead_code)]
-    url: Option<String>,
+    url: String,
 }
 
 /// A curated density overrides the linked USDA food's density, or marks it
@@ -269,6 +267,10 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
                 assert!(
                     cited.value.is_finite() && cited.value >= 0.0,
                     "invalid calories for {id:?}"
+                );
+                assert!(
+                    !cited.source.trim().is_empty() && cited.url.starts_with("https://"),
+                    "calories for {id:?} need a source and an https:// url"
                 );
                 Some(cited.value)
             }
