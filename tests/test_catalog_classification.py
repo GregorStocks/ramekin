@@ -162,3 +162,8 @@ def test_hand_curated_foods_need_cited_calories():
     bad = {**food, "kcal_per_100g_value": -1}
     _, _, rejections = run(bad)
     assert rejections and "positive value" in rejections[0]
+    for url in [7, "", "fdc.nal.usda.gov/food-details/1", True]:
+        _, _, rejections = run({**food, "kcal_per_100g_url": url})
+        assert rejections, url
+    _, _, rejections = run({**food, "grams_per_cup_source": 3})
+    assert rejections and "source" in rejections[0]

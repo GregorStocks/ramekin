@@ -55,12 +55,16 @@ def cited(decision: dict, field: str) -> dict | None:
         isinstance(value, (int, float))
         and not isinstance(value, bool)
         and value > 0
-        and source
+        and isinstance(source, str)
+        and source.strip()
     ):
         raise ValueError(f"{field} needs a positive value and a source")
     out = {"value": float(value), "source": source}
-    if decision.get(f"{field}_url"):
-        out["url"] = decision[f"{field}_url"]
+    url = decision.get(f"{field}_url")
+    if url is not None:
+        if not (isinstance(url, str) and url.startswith("https://")):
+            raise ValueError(f"{field} url must be an https:// string")
+        out["url"] = url
     return out
 
 
