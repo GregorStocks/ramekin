@@ -97,10 +97,14 @@ fn learned_names_never_lose_a_keyword_category() {
     assert_ne!(categorize(item), "Other");
     let not_food = learned(&[(item, LearnedTarget::NotFood)]);
     assert_eq!(categorize_with(item, &not_food), categorize(item));
-    // A learned key the keywords don't know keeps the item's own category.
+    // A learned key with no catalog category and no keyword keeps the item's
+    // own keyword category rather than becoming "Other".
+    let key = "abiyuch";
+    assert!(learned_key_resolves(key));
+    assert_eq!(categorize(key), "Other");
     let item = "zzqq carrot medley";
     assert_eq!(categorize(item), "Produce");
-    let entry = learned(&[(item, LearnedTarget::Entry("seaweed, laver".into()))]);
+    let entry = learned(&[(item, LearnedTarget::Entry(key.into()))]);
     assert_eq!(categorize_with(item, &entry), "Produce");
 }
 
