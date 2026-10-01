@@ -754,3 +754,19 @@ fn serving_ranges_give_a_per_serving_range() {
         assert_eq!(result.headline, "~150–240 kcal per serving", "{servings}");
     }
 }
+
+#[test]
+fn secondary_source_foods_count() {
+    // FNDDS guacamole (155 kcal/100 g) and cited garam masala (300 kcal/100 g).
+    let total = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    assert_eq!(total("guacamole", "100", "g"), Some(155.0));
+    assert_eq!(total("garam masala", "100", "g"), Some(300.0));
+    // Its cited density weighs volumes: 1 tsp is 160/48 g, about 10 kcal.
+    assert!((total("garam masala", "1", "tsp").unwrap() - 10.0).abs() < 1e-9);
+    assert!((total("garam masala", "1/4", "cup").unwrap() - 120.0).abs() < 1e-9);
+}

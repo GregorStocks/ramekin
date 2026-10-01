@@ -358,7 +358,7 @@ ingredient-tests-generate-paprika: ## Generate ingredient parsing test fixtures 
 ingredient-tests-migrate-curated: ## Migrate curated fixtures from individual files to category files
 	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-migrate-curated
 
-catalog-import: ## Download pinned USDA SR Legacy data and regenerate the ingredient catalog's usda.json
+catalog-import: ## Download pinned USDA SR Legacy and FNDDS data and regenerate the ingredient catalog's usda.json and fndds.json
 	@uv run --no-project scripts/import-catalog.py
 
 catalog-apply-classification: ## Merge classification decisions (FILE=decisions.json) into the ingredient catalog's curated.json

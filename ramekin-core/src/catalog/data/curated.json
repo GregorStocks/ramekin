@@ -3496,6 +3496,18 @@
         "value": 288.0
       }
     },
+    "garam masala": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2028654 (NATCO Garam Masala): serving 1 Tbsp = 10 g",
+        "value": 160.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2028654 (NATCO Garam Masala): 30 kcal per 10 g serving",
+        "url": "https://fdc.nal.usda.gov/food-details/2028654/nutrients",
+        "value": 300.0
+      },
+      "trace_ok": true
+    },
     "gold luster dust": {
       "category": "Baking",
       "kind": "product"
@@ -3521,6 +3533,9 @@
         "url": "https://fdc.nal.usda.gov/food-details/170923/nutrients",
         "value": 96.0
       }
+    },
+    "guacamole": {
+      "fdc_id": 2709307
     },
     "heavy cream": {
       "fdc_id": 170859,
