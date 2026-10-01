@@ -1,6 +1,5 @@
 {
   "aliases": {
-    "(one per bowl) thick slices sourdough or country bread": "bread, french or vienna (includes sourdough)",
     "-inch piece of ginger": "ginger root",
     "-ounce block feta": "cheese, feta",
     "-ounce can whole tomatoes with juices, chopped by you": "tomatoes, red, ripe, canned, packed in tomato juice",
@@ -10,13 +9,8 @@
     "-pound chicken, in parts": null,
     "-pound package phyllo/filo pastry, defrosted [see note]": "phyllo dough",
     "1-inch bread cubes": "bread, white, commercially prepared (includes soft bread crumbs)",
-    "1-inch slices from a large loaf of rye bread, whole wheat sourdough or bread of your choice": "bread, rye",
-    "1-inch slices from a large loaf of rye bread, whole wheat sourdough or bread of your choice (or 16 1-inch slices from a baguette)": "bread, rye",
-    "1-inch thick new york strip boneless beef top loin or hangar steak": "beef, short loin, top loin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades",
-    "1/2-inch slice seven-grain sandwich bread": "bread, multi-grain (includes whole-grain)",
     "1/2-inch-thick slices of unpeeled fresh ginger, smashed": "ginger root",
     "1/4-inch-thick baguette bread slices": "bread, french or vienna (includes sourdough)",
-    "1/4-pound butternut or another sturdy winter squash, peeled, seeded, sliced thin or 1 pound in prepared chunks": "squash, winter, butternut, raw",
     "12- to 16-pound fresh turkey": "turkey, whole, meat and skin, raw",
     "14 1/2- by 9 1/2-inch sheets puff pastry from three 14-ounce packages frozen puff pastry, thawed": "puff pastry, frozen, ready-to-bake",
     "14 1/2- by 9 1/2-inch sheets puff pastry from three 14-ounce packages frozen puff pastry, thawed, preferably all-butter (such as dufour)": "puff pastry, frozen, ready-to-bake",
@@ -65,6 +59,7 @@
     "a few sprigs thyme, tied in a bundle": "thyme, fresh",
     "a good hunk of parmesan or pecorino": "cheese, parmesan, hard",
     "a good melting cheese": null,
+    "a handful of chopped fresh herbs": "parsley, fresh",
     "a handful of fresh dill": "dill weed, fresh",
     "a handful shredded red cabbage to serve": "cabbage, red",
     "a heaped 1/4 teaspoon fine sea or table salt": "sea salt",
@@ -82,10 +77,9 @@
     "a pinch or two of salt": "diamond crystal kosher salt",
     "a red chili pepper": "peppers, hot chili, red",
     "a red onion": "onions",
-    "a small handful finely chopped leafy fresh herbs (parsley, cilantro, mint, chives, dill or a mix thereof)": "parsley, fresh",
+    "a small handful finely chopped leafy fresh herbs": "parsley, fresh",
     "a squeeze or two of fresh lime juice": "lime juice, raw",
     "a white onion": "onions",
-    "about 1 heaped cup julienned or coarsely grated carrots": "carrots",
     "accompaniment: lemon wedges": "lemons, raw, without peel",
     "acorn squash": "squash, winter, acorn, raw",
     "active dry or instant yeast": "leavening agents, yeast, baker's, active dry",
@@ -94,7 +88,9 @@
     "additional flour for rolling": "all-purpose flour",
     "additional large egg": "egg, whole, raw, fresh",
     "additional lime wedges": "limes, raw",
-    "additional paprika or sumac for sprinkling": "spices, paprika",
+    "additional paprika or sumac": "spices, paprika",
+    "additional vegetables, as suggested above": null,
+    "adobo sauce": "chipotle chile in adobo sauce",
     "agave syrup": "sweetener, syrup, agave",
     "aged basmati rice": "rice, white, long-grain, regular, raw, enriched",
     "aged mozzarella": "cheese, mozzarella, low moisture, part-skim",
@@ -119,6 +115,7 @@
     "almonds": "nuts, almonds",
     "alternate fillings: 9 tablespoons chocolate chips, 9 tablespoons nutella": null,
     "aluminum-free baking powder": "leavening agents, baking powder, double-acting, straight phosphate",
+    "amchur": "amchoor powder",
     "american cheese": "cheese, pasteurized process, american, fortified with vitamin d",
     "american cheese or cheddar": "cheese, pasteurized process, american, fortified with vitamin d",
     "an english cucumber": "cucumber, with peel, raw",
@@ -131,6 +128,7 @@
     "anchovy fillets packed in oil": "fish, anchovy, european, canned in oil, drained solids",
     "andouille sausage": "sausage, smoked link sausage, pork",
     "anko": "beans, adzuki, mature seeds, canned, sweetened",
+    "any vegetables you have stashed in your stock bag": null,
     "ap flour": "all-purpose flour",
     "apple": "apples, raw, with skin",
     "apple cider": "apple juice, canned or bottled, unsweetened, without added ascorbic acid",
@@ -143,7 +141,7 @@
     "apple-cider vinegar": "vinegar, cider",
     "apples": "apples, raw, with skin (includes foods for usda's food distribution program)",
     "apples - peeled": "apples, raw, without skin",
-    "approximately 1/4 cup water or reserved chickpea cooking water": "water, bottled, generic",
+    "applesauce": "applesauce, canned, sweetened, without salt",
     "apricot jam": "jams and preserves, apricot",
     "apricot preserves": "jams and preserves, apricot",
     "apricot preserves or apple jelly": "jams and preserves, apricot",
@@ -153,10 +151,14 @@
     "arrowroot powder": "arrowroot flour",
     "arrowroot starch": "arrowroot flour",
     "artichokes": "artichokes, (globe or french), raw",
+    "asian chili garlic sauce": "chili garlic sauce",
+    "asian chili-garlic sauce": "chili garlic sauce",
     "asian fish sauce": "fish sauce",
+    "asian garlic chili paste": "chili garlic sauce",
     "asian sesame oil": "oil, sesame, salad or cooking",
     "asparagus spears": "asparagus",
     "assorted fresh mushrooms": "mushrooms, white, raw",
+    "assorted nerimono": "assorted nerimono (japanese fish cakes)",
     "assorted or just cremini mushrooms": "mushrooms, brown, italian, or crimini, raw",
     "atsuage": "tofu, fried",
     "avocado": "avocados, raw, all commercial varieties",
@@ -181,7 +183,7 @@
     "baby spinach or a few handfuls of another green": "spinach, raw",
     "baby spinach or baby arugula": "spinach, raw",
     "baby yukon gold potatoes": "potatoes, flesh and skin, raw",
-    "back bacon (or irish bacon)": "canadian bacon, unprepared",
+    "back bacon": "canadian bacon, unprepared",
     "bacon": "pork, cured, bacon, unprepared",
     "bacon cubed": "pork, cured, bacon, unprepared",
     "bacon slice": "pork, cured, bacon, unprepared",
@@ -200,8 +202,10 @@
     "baking potatoes": "potatoes, russet, flesh and skin, raw (includes foods for usda's food distribution program)",
     "baking powder": "leavening agents, baking powder, double-acting, sodium aluminum sulfate",
     "baking soda": "leavening agents, baking soda",
+    "ball no-knead pizza dough": "pizza dough",
     "ball of mozzarella": "cheese, mozzarella, whole milk",
-    "baloney (or mortadella)": "bologna, beef and pork",
+    "balls of burrata": "burrata",
+    "baloney": "bologna, beef and pork",
     "balsamic vinegar": "vinegar, balsamic",
     "bamboo skewers": "wooden skewers",
     "banana ketchup": "catsup",
@@ -211,6 +215,7 @@
     "barley malt syrup": "syrups, malt",
     "basil": "basil, fresh",
     "basil leaves": "basil, fresh",
+    "basil or mint or cilantro sprigs": "basil, fresh",
     "basil pesto": "sauce, pesto, ready-to-serve, refrigerated",
     "basmati rice": "rice, white, long-grain, regular, raw, enriched",
     "batch roasted tomato salsa or your favorite salsa": "sauce, salsa, ready-to-serve",
@@ -223,6 +228,7 @@
     "beans (heinz preferred)": "beans, baked, canned, plain or vegetarian",
     "beansprouts": "mung beans, mature seeds, sprouted, raw",
     "beef": null,
+    "beef bones": null,
     "beef bouillon": null,
     "beef bouillon granules": "soup, beef broth or bouillon, powder, dry",
     "beef brisket": "beef, brisket, whole, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
@@ -248,13 +254,14 @@
     "belgian endive": "chicory, witloof, raw",
     "bell pepper": "peppers, sweet, red, raw",
     "bell peppers": "peppers, sweet, red, raw",
+    "benishoga": "red pickled ginger",
     "berries": null,
     "best quality oil packed tuna": "fish, tuna, light, canned in oil, drained solids",
     "bibb or butter lettuce": "lettuce, butterhead (includes boston and bibb types), raw",
     "bicarbonate of soda": "leavening agents, baking soda",
     "big handful chopped fresh herbs": "parsley, fresh",
     "big handful fresh cilantro, stems finely chopped, leaves roughly torn": "coriander (cilantro) leaves",
-    "big handful of parsley (or a mix of parsley, cilantro and mint would be good too)": "parsley, fresh",
+    "big handful of parsley": "parsley, fresh",
     "bite-sized or mini pretzel twists": "snacks, pretzels, hard, plain, salted",
     "bittersweet chocolate": "chocolate, dark, 60-69% cacao solids",
     "bittersweet or semisweet chocolate": "chocolate, dark, 60-69% cacao solids",
@@ -277,6 +284,7 @@
     "blanched then frozen cauliflower": "cauliflower, frozen, unprepared",
     "bleached all-purpose flour": "wheat flour, white, all-purpose, enriched, bleached",
     "block cream cheese": "cream cheese",
+    "block konnyaku": "shirataki noodles",
     "blood orange juice": "orange juice, raw",
     "blood oranges": "oranges, raw, all commercial varieties",
     "blue cheese": "cheese, blue",
@@ -289,10 +297,12 @@
     "boiling hot water": "water, bottled, generic",
     "boiling water": "water, bottled, generic",
     "bok choy": "cabbage, chinese (pak-choi), raw",
+    "bone-in beef short ribs": null,
     "bone-in chicken thighs": null,
     "bone-in pork chops": null,
     "bone-in pork rib chops, 1 1/2 inches thick each": null,
     "bone-in pork shoulder": null,
+    "bone-in short ribs": null,
     "bone-in skin-on chicken thighs": null,
     "bone-in, skin-on chicken parts": null,
     "bone-in, skin-on chicken thighs": null,
@@ -309,6 +319,7 @@
     "boneless chicken thighs": "chicken, broilers or fryers, dark meat, thigh, meat only",
     "boneless chuck roast": "beef, chuck, arm pot roast, separable lean and fat, trimmed to 1/8\" fat, all grades",
     "boneless lamb stew meat": "lamb, shoulder, whole (arm and blade), separable lean and fat, trimmed to 1/4\" fat, choice, raw",
+    "boneless lamb stew meat (lamb neck, leg, or shoulder, or a combination)": "lamb, cubed for stew or kabob (leg and shoulder), separable lean only, trimmed to 1/4\" fat, raw",
     "boneless pork butt": "pork, fresh, shoulder, whole, separable lean and fat, raw",
     "boneless pork butt roast": "pork, fresh, shoulder, (boston butt), blade (steaks), separable lean and fat, raw",
     "boneless pork chops": "pork, fresh, loin, center loin (chops), boneless, separable lean and fat",
@@ -327,11 +338,12 @@
     "boneless, skinless chicken breast": "chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
     "boneless, skinless chicken breasts": "chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
     "boneless, skinless chicken thighs": "chicken, broilers or fryers, dark meat, thigh, meat only, raw",
-    "boneless, skinless fish scraps, such as salmon, cod, or halibut": null,
+    "boneless, skinless fish scraps": null,
     "bottled clam juice": "mollusks, clam, mixed species, canned, liquid",
     "bourbon": "alcoholic beverage, distilled, whiskey, 86 proof",
     "bourbon whiskey": "alcoholic beverage, distilled, whiskey, 86 proof",
     "bowl ice cold water": "water, bottled, generic",
+    "bran": null,
     "brandy": "alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof",
     "brandy or cognac": "alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof",
     "bratwurst sausages": "bratwurst, pork, beef, link",
@@ -341,6 +353,7 @@
     "bread flour or all-purpose flour": "bread flour",
     "bread machine yeast": "leavening agents, yeast, baker's, active dry",
     "bread of your choice": null,
+    "bread or cooked pasta": null,
     "breadcrumbs": "bread, crumbs, dry, grated, plain",
     "brewed coffee": "beverages, coffee, brewed, prepared with tap water",
     "brie": "cheese, brie",
@@ -366,14 +379,16 @@
     "bugles corn snack": "snacks, corn-based, extruded, cones, plain",
     "bulgur wheat": "bulgur",
     "bulk breakfast sausage": "pork sausage, link/patty, unprepared",
-    "bundle flat-leaf parsley [or 1/2 cup finely-chopped leaves]": "parsley, fresh",
+    "bundle flat-leaf parsley": "parsley, fresh",
     "bundle fresh chives": "chives",
     "bundle lacinato kale, swiss chard or spinach": "kale",
     "bundle scallions": "onions, spring or scallions (includes tops and bulb), raw",
     "bundle scallions, to be used here and to finish": "onions, spring or scallions (includes tops and bulb)",
     "bundles dried somen noodles": "noodles, japanese, somen",
     "buns": "rolls, hamburger or hotdog, plain",
+    "burger accompaniments, as you like": null,
     "burger buns": "rolls, hamburger or hotdog, plain",
+    "burrata cheese": "burrata",
     "burrito-size tortillas": "tortillas, ready-to-bake or -fry, flour, refrigerated",
     "burrito-sized flour tortillas": "tortillas, ready-to-bake or -fry, flour, refrigerated",
     "butter at room temperature": "butter",
@@ -392,6 +407,7 @@
     "buttermilk": "milk, buttermilk, fluid, whole",
     "buttermilk or plain yogurt": "milk, buttermilk, fluid, whole",
     "buttermilk powder": "milk, buttermilk, dried",
+    "butternut or another sturdy winter squash": "squash, winter, butternut",
     "butternut squash": "squash, winter, butternut",
     "butternut squash, large dice": "squash, winter, butternut",
     "button mushrooms": "mushrooms, white",
@@ -403,6 +419,7 @@
     "canadian bacon or thick-cut ham (or 8 slices regular, thick-cut bacon)": null,
     "candy canes": "candies, hard",
     "cane sugar": "granulated sugar",
+    "canned artichokes": "artichoke hearts",
     "canned bamboo shoots": "bamboo shoots, canned, drained solids",
     "canned black beans": "beans, black turtle, mature seeds, canned",
     "canned chickpeas": "chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained solids",
@@ -430,8 +447,11 @@
     "canola or peanut oil": "vegetable oil",
     "canola or safflower oil, or other neutral oil": "vegetable oil",
     "canola or vegetable oil": "vegetable oil",
+    "canola, safflower or peanut oil": "oil, canola",
     "canola, safflower or peanut oil for frying": "vegetable oil",
+    "canola, safflower, peanut or other high-heat oil": "oil, canola",
     "canola, safflower, peanut or other high-heat oil, for deep-frying": "vegetable oil",
+    "canola, vegetable, or extra-virgin olive oil": "oil, canola",
     "canola, vegetable, or extra-virgin olive oil, for rubbing": "vegetable oil",
     "canola, vegetable, or light olive oil": "vegetable oil",
     "cantal cheese": "cheese, cheddar",
@@ -491,7 +511,7 @@
     "cheddar": "cheese, cheddar (includes foods for usda's food distribution program)",
     "cheddar cheese": "cheese, cheddar (includes foods for usda's food distribution program)",
     "cheese": null,
-    "cheese crackers, such as cheez-its": "crackers, cheese, regular",
+    "cheese crackers": "crackers, cheese, regular",
     "cheese or a small pile of grated or crumbled cheese": null,
     "cheese tortellini": "tortellini, pasta with cheese filling, fresh-refrigerated, as purchased",
     "cherries": "cherries, sweet, raw",
@@ -500,6 +520,7 @@
     "chia seeds": "seeds, chia seeds, dried",
     "chick stock or broth": "chicken broth",
     "chicken": null,
+    "chicken bones": null,
     "chicken bones or chicken wings": null,
     "chicken bouillon": "soup, chicken broth or bouillon, dry",
     "chicken bouillon cube": "soup, chicken broth cubes, dry",
@@ -532,8 +553,10 @@
     "chickpeas": "chickpeas (garbanzo beans, bengal gram), mature seeds, canned, solids and liquids",
     "chickpeas, rinsed": "chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained, rinsed in tap water",
     "chile flakes": "spices, pepper, red or cayenne",
+    "chile oil": "chili oil",
     "chile powder": "spices, chili powder",
     "chiles de arbol": "peppers, hot chile, sun-dried",
+    "chili": null,
     "chili beans": "beans, chili, barbecue, ranch style, cooked",
     "chili flakes": "spices, pepper, red or cayenne",
     "chili pepper flakes": "spices, pepper, red or cayenne",
@@ -542,6 +565,7 @@
     "chili powder or cayenne": "spices, chili powder",
     "chili sauce": "sauce, tomato chili sauce, bottled, with salt",
     "chili threads": "peppers, hot chile, sun-dried",
+    "chili-garlic paste": "chili garlic sauce",
     "chilled heavy cream": "heavy cream",
     "chilled heavy or whipping cream": "heavy cream",
     "chilled unsalted butter": "butter",
@@ -551,14 +575,22 @@
     "chinese sesame paste or tahini": "seeds, sesame butter, tahini, type of kernels unspecified",
     "chinese-style chicken bouillon powder": "soup, chicken broth or bouillon, dry",
     "chinook salmon": "fish, salmon, chinook",
+    "chipotle chile packed in adobo sauce": "chipotle chile in adobo sauce",
     "chipotle chile powder": "spices, pepper, red or cayenne",
+    "chipotle chiles en adobo": "chipotle chile in adobo sauce",
+    "chipotle chili powder": "spices, pepper, red or cayenne",
+    "chipotle pepper in adobo": "chipotle chile in adobo sauce",
+    "chipotle pepper in adobo sauce": "chipotle chile in adobo sauce",
+    "chipotle peppers in adobo sauce": "chipotle chile in adobo sauce",
     "chipotle powder or ground red pepper": "spices, pepper, red or cayenne",
+    "chipotle powder, cayenne, or shakes of hot sauce": "spices, pepper, red or cayenne",
     "chives or green onion": "chives",
     "chocolate": null,
     "chocolate cake mix": "cake, pudding-type, chocolate, dry mix",
     "chocolate chips": "candies, semisweet chocolate",
     "chocolate chunks": "candies, semisweet chocolate",
     "chocolate ice cream": "ice creams, chocolate",
+    "chocolate jimmies": "chocolate sprinkles",
     "chocolate sandwich cookies": "cookies, chocolate sandwich, with creme filling, regular",
     "chocolate syrup": "beverages, chocolate syrup",
     "chocolate wafer cookies": "cookies, chocolate wafers",
@@ -567,8 +599,10 @@
     "chopped basil": "basil, fresh",
     "chopped bittersweet or dark chocolate or chocolate chips": "chocolate, dark, 60-69% cacao solids",
     "chopped capers": "capers, canned",
+    "chopped chipotle chiles from a can": "chipotle chile in adobo sauce",
     "chopped chives or parsley": "chives",
     "chopped cilantro leaves": "coriander (cilantro) leaves, raw",
+    "chopped clams": "mollusks, clam, mixed species, canned, drained solids",
     "chopped cooked chicken": "chicken, broilers or fryers, meat only, cooked, roasted",
     "chopped dark chocolate or chocolate chips": "candies, chocolate, dark, nfs (45-59% cacao solids 90%; 60-69% cacao solids 5%; 70-85% cacao solids 5%)",
     "chopped dill": "dill weed, fresh",
@@ -580,6 +614,9 @@
     "chopped fresh dill": "dill weed, fresh",
     "chopped fresh dill or flat-leaf parsley": "dill weed, fresh",
     "chopped fresh flat-leaf parsley": "parsley, fresh",
+    "chopped fresh greens": null,
+    "chopped fresh herbs": "parsley, fresh",
+    "chopped fresh herbs - parsley, cilantro, chives or a mix": "parsley, fresh",
     "chopped fresh italian parsley": "parsley, fresh",
     "chopped fresh mint": "spearmint, fresh",
     "chopped fresh parsley": "parsley, fresh",
@@ -609,6 +646,7 @@
     "chopped tomatoes": "tomatoes, red, ripe, raw, year round average",
     "chopped walnuts": "nuts, walnuts, english",
     "chopped walnuts or pecans": "nuts, walnuts, english",
+    "chu hou sauce": "chu hou sauce (see notes)",
     "chuck roast": "beef, chuck, blade roast, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
     "chunk chicken": "chicken, canned, no broth",
     "chunky peanut butter": "peanut butter, chunk style, with salt",
@@ -617,7 +655,9 @@
     "cider vinegar": "vinegar, cider",
     "cider vinegar or white vinegar": "vinegar, cider",
     "cilantro": "coriander (cilantro) leaves",
+    "cilantro and/or mint if you like": "coriander (cilantro) leaves, raw",
     "cilantro leaves": "coriander (cilantro) leaves",
+    "cilantro or mint": "coriander (cilantro) leaves",
     "cilantro roughly": "coriander (cilantro) leaves, raw",
     "cilantro sprigs": "coriander (cilantro) leaves",
     "cinnamon": "spices, cinnamon, ground",
@@ -627,7 +667,9 @@
     "cipollini onions": "onions",
     "clam broth": "mollusks, clam, mixed species, canned, liquid",
     "clam juice": "mollusks, clam, mixed species, canned, liquid",
+    "clams": null,
     "clarified butter": "butter, clarified butter (ghee)",
+    "clear vanilla extract": "vanilla extract",
     "cloves": "spices, cloves, ground",
     "club soda": "beverages, carbonated, club soda",
     "coarse crystal sugar": "granulated sugar",
@@ -643,6 +685,7 @@
     "coarse or turbinado sugar": "sugar, turbinado",
     "coarse salt": "diamond crystal kosher salt",
     "coarse sea or kosher salt": "sea salt",
+    "coarse sea or kosher salt (what i used for lightly salted broth, use more for unsalted, less for salted or canned beans)": "diamond crystal kosher salt",
     "coarse sea salt": "sea salt",
     "coarse sugar": "granulated sugar",
     "coarse-grained sea salt": "sea salt",
@@ -665,21 +708,28 @@
     "coarsely grated sharp cheddar or monterey jack": "cheese, cheddar (includes foods for usda's food distribution program)",
     "coarsely grated sharp white cheddar cheese": "cheese, cheddar",
     "coarsely grated shredded monterey jack or cheddar cheese": "cheese, monterey",
+    "coarsely ground black, green, and pink peppercorns": "black pepper",
     "cocoa": "cocoa powder",
     "coconut": null,
     "coconut cream": "nuts, coconut cream, raw (liquid expressed from grated meat)",
+    "coconut extract": "vanilla extract",
+    "coconut flakes": null,
     "coconut milk": "nuts, coconut milk, canned (liquid expressed from grated meat and water)",
     "coconut water": "nuts, coconut water (liquid from coconuts)",
     "cod": "fish, cod, atlantic, raw",
     "cod fillets": "fish, cod, atlantic, raw",
+    "coffee": null,
     "cognac": "alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof",
     "cognac or brandy": "alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof",
     "coho salmon": "fish, salmon, coho, wild",
+    "cointreau": "orange liqueur",
+    "cointreau or triple sec": "orange liqueur",
     "cola": "beverages, carbonated, cola, regular",
     "cold seltzer": "beverages, carbonated, club soda",
     "cold vegetable shortening": "shortening, vegetable, household, composite",
     "cold, unsalted butter": "butter",
     "coleslaw mix": "cabbage, raw",
+    "colored sprinkles": "sprinkles",
     "condensed cream of chicken soup": "soup, cream of chicken, canned, condensed",
     "condensed cream of mushroom soup": "soup, cream of mushroom, canned, condensed",
     "condensed milk": "milk, canned, condensed, sweetened",
@@ -689,6 +739,7 @@
     "confectioners’ sugar": "powdered sugar",
     "container cool whip": "dessert topping, semi solid, frozen",
     "container frozen whipped topping": "dessert topping, semi solid, frozen",
+    "container mascarpone cheese": "mascarpone cheese",
     "container ricotta": "cheese, ricotta, whole milk",
     "container sour cream": "sour cream",
     "cooked and drained red kidney beans or 2 cans red kidney beans": "beans, kidney, all types, mature seeds, cooked, boiled, without salt",
@@ -706,6 +757,7 @@
     "cooked chickpeas": "chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, without salt",
     "cooked chickpeas or 2 cans chickpeas": "chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, without salt",
     "cooked dry chickpeas or 2 cans low-sodium chickpeas": "chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, without salt",
+    "cooked firm-tender giant white beans": "beans, white, mature seeds, cooked, boiled, without salt",
     "cooked ham": "pork, cured, ham, boneless, regular (approximately 11% fat), roasted",
     "cooked japanese short-grain rice": "rice, white, short-grain, cooked",
     "cooked japanese short-grain rice cold/day-old, calrose ok": "rice, white, short-grain, cooked",
@@ -722,14 +774,18 @@
     "cooked white beans": "beans, great northern, mature seeds, cooked, boiled, without salt",
     "cooked white rice": "rice, white, long-grain, regular, enriched, cooked",
     "cooked, cooled rice": "rice, white, long-grain, regular, enriched, cooked",
+    "cooked, cooled rice (my favorite here is short-grain brown or white)": "rice, white, short-grain, enriched, cooked",
+    "cooked, drained beans (save cooking liquid for water in recipe, if desired) or 2 15-ounce cans small white beans (such as great northern or cannelini)": "beans, great northern, mature seeds, canned",
     "cooked, drained beans or 2 15-ounce cans small white beans": "beans, white, mature seeds, cooked, boiled, without salt",
     "cooked, drained chickpeas": "chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, without salt",
     "cooked, drained chickpeas (from a 15-ounce can)": "chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained solids",
     "cooked, ideally day old, short-grain white or brown rice": "rice, white, short-grain, cooked",
     "cooked, shredded chicken": "chicken, broilers or fryers, meat only, cooked, roasted",
+    "cookies": null,
+    "cooking fat": null,
     "cooking oil": "vegetable oil",
     "cooking oil neutral": "vegetable oil",
-    "cooking oil neutral flavor, high smoke point for deep frying": "vegetable oil",
+    "cooking oil neutral flavor, high smoke point": "vegetable oil",
     "cooking sherry": "alcoholic beverage, wine, cooking",
     "cooking spray": "oil, pam cooking spray, original",
     "cool water": "water, bottled, generic",
@@ -740,6 +796,7 @@
     "coriander powder": "spices, coriander seed",
     "coriander seeds": "spices, coriander seed",
     "corn": "corn, sweet, yellow, raw",
+    "corn chex, can sub with any cereal": "corn chex",
     "corn flakes": "cereals ready-to-eat, ralston corn flakes",
     "corn kernels": "corn, sweet, yellow",
     "corn muffin mix": "bread, cornbread, dry mix, enriched (includes corn muffin mix)",
@@ -764,6 +821,7 @@
     "crab meat": "crustaceans, crab, blue, canned",
     "cracked black pepper": "black pepper",
     "cracked pepper": "black pepper",
+    "crackers": null,
     "craisins": "cranberries, dried, sweetened (includes foods for usda's food distribution program)",
     "cranberry jelly": "cranberry sauce, canned, sweetened",
     "cranberry juice": "cranberry juice cocktail, bottled",
@@ -783,9 +841,11 @@
     "crimini mushrooms": "mushrooms, brown, italian, or crimini, raw",
     "crisp, dry white wine, doesn’t have to be fancy": "dry white wine",
     "crispy diced bacon bits": "pork, cured, bacon, pre-sliced, cooked, pan-fried",
-    "crispy fried eggs for serving": "egg, whole, cooked, fried",
+    "crispy fried eggs": "egg, whole, cooked, fried",
     "crispy rice cereal": "cereals ready-to-eat, malt-o-meal, crispy rice",
+    "crispy rice cereal squares": "rice chex cereal",
     "croutons": "croutons, plain",
+    "crudités": null,
     "crumbled blue cheese": "cheese, blue",
     "crumbled blue cheese or shredded cheddar": "cheese, blue",
     "crumbled cotija cheese": "cheese, mexican, queso cotija",
@@ -813,6 +873,8 @@
     "crushed walnuts": "nuts, walnuts, english",
     "crushed, diced, chopped or whole tomatoes": "tomatoes, red, ripe, canned, packed in tomato juice",
     "crusty bread": "bread, french or vienna (includes sourdough)",
+    "crème fraîche or mascarpone, or heavy cream": null,
+    "crème fraîche or sour cream": null,
     "cubed butternut squash": "squash, winter, butternut",
     "cubed cooked ham": "pork, cured, ham, boneless, regular (approximately 11% fat), roasted",
     "cubed crusty bread": "bread, french or vienna (includes sourdough)",
@@ -831,7 +893,7 @@
     "curry powder": "spices, curry powder",
     "daikon": "radishes, oriental",
     "daikon radish": "radishes, oriental",
-    "dark aged rum, preferably el dorado 8": "alcoholic beverage, distilled, rum, 80 proof",
+    "dark aged rum": "alcoholic beverage, distilled, rum, 80 proof",
     "dark brown sugar": "brown sugar",
     "dark brown sugar or rock sugar": "brown sugar",
     "dark chocolate": "candies, chocolate, dark, nfs (45-59% cacao solids 90%; 60-69% cacao solids 5%; 70-85% cacao solids 5%)",
@@ -878,6 +940,7 @@
     "dijon mustard": "mustard, prepared, yellow",
     "dill": "dill weed, fresh",
     "dill or parsley": "dill weed, fresh",
+    "dill pickle brine from one 16-ounce jar": "pickle juice",
     "dill pickle chips": "pickles, cucumber, dill or kosher dill",
     "dill pickles": "pickles, cucumber, dill or kosher dill",
     "dill seed": "spices, dill seed",
@@ -887,7 +950,9 @@
     "distilled white vinegar": "vinegar, distilled",
     "ditalini": "pasta",
     "ditalini pasta": "pasta",
+    "dolin dry vermouth": "alcoholic beverage, wine, dessert, dry",
     "dollops of yogurt": null,
+    "doubanjiang": "chili bean sauce",
     "double cream": "heavy cream",
     "double-concentrated tomato paste": "tomato products, canned, paste, without salt added (includes foods for usda's food distribution program)",
     "dr pepper": "beverages, carbonated, pepper-type, contains caffeine",
@@ -932,6 +997,9 @@
     "dried green lentils": "lentils",
     "dried green split peas": "peas, green, split, mature seeds",
     "dried guajillo chiles": "peppers, hot chile, sun-dried",
+    "dried italian herbs": "italian seasoning",
+    "dried italian seasoning": "italian seasoning",
+    "dried kelp": "kombu",
     "dried lasagna noodles": "pasta, dry, enriched",
     "dried lentils": "lentils",
     "dried lentils, any variety, but green or brown are my favorites here": "lentils",
@@ -940,6 +1008,7 @@
     "dried mexican oregano": "dried oregano",
     "dried minced garlic": "spices, garlic powder",
     "dried mint": "spearmint, dried",
+    "dried mushrooms (porcini, morels, or shitakes)": "dried porcini mushrooms",
     "dried mustard": "spices, mustard seed, ground",
     "dried navy beans": "beans, navy, mature seeds",
     "dried oatmeal": "rolled oats",
@@ -947,12 +1016,14 @@
     "dried oregano leaves": "dried oregano",
     "dried oregano or marjoram": "dried oregano",
     "dried parsley": "spices, parsley, dried",
+    "dried pasta": "pasta, dry, enriched",
     "dried pasta such as fusilli corti or gemelli": "pasta",
     "dried pasta, any shape": "pasta",
     "dried pasta, any shape you like": "pasta",
     "dried pasta, broken into pieces if large/long": "pasta",
     "dried pasta, such as macaroni or another small twisty shape": "pasta",
     "dried pinto beans": "beans, pinto, mature seeds, raw (includes foods for usda's food distribution program)",
+    "dried porcini or cepe mushrooms": "dried porcini mushrooms",
     "dried red chili": "peppers, hot chile, sun-dried",
     "dried red chili pepper": "peppers, hot chile, sun-dried",
     "dried red chilies": "peppers, hot chile, sun-dried",
@@ -995,6 +1066,8 @@
     "dry sherry, vermouth, or white wine": "alcoholic beverage, wine, dessert, dry",
     "dry spaghetti": "pasta, dry, enriched",
     "dry uncooked orzo": "pasta",
+    "dry vermouth": "alcoholic beverage, wine, dessert, dry",
+    "dry vermouth or dry white wine": "alcoholic beverage, wine, dessert, dry",
     "dry white or red wine": "dry white wine",
     "dry white wine or vermouth": "dry white wine",
     "dry wide rice noodles": "rice noodles",
@@ -1046,6 +1119,7 @@
     "espresso powder": "beverages, coffee, instant, regular, powder",
     "evaporated cane sugar": "granulated sugar",
     "evaporated milk": "milk, canned, evaporated, with added vitamin a",
+    "extra herbs to garnish": "parsley, fresh",
     "extra large eggs": "egg, whole, raw, fresh",
     "extra light olive oil": "olive oil",
     "extra sharp cheddar cheese": "cheese, cheddar",
@@ -1100,6 +1174,7 @@
     "finely chopped fresh cilantro leaves and tender stems": "coriander (cilantro) leaves, raw",
     "finely chopped fresh dill": "dill weed, fresh",
     "finely chopped fresh flat-leaf parsley": "parsley, fresh",
+    "finely chopped fresh herbs": "parsley, fresh",
     "finely chopped fresh parsley": "parsley, fresh",
     "finely chopped fresh parsley, if you’re measuring, or a big handful": "parsley, fresh",
     "finely chopped fresh red chili pepper": "peppers, hot chili, red",
@@ -1112,8 +1187,9 @@
     "finely chopped parsley, or a mix of parsley, mint, and chives": "parsley, fresh",
     "finely chopped pecans": "nuts, pecans",
     "finely chopped pecans or walnuts": "nuts, pecans",
-    "finely chopped roasted or tamari-flavored almonds, for garnish, available in health food stores": "nuts, almonds, dry roasted, without salt added",
+    "finely chopped roasted or tamari-flavored almonds": "nuts, almonds, dry roasted, without salt added",
     "finely chopped scallions": "onions, spring or scallions (includes tops and bulb)",
+    "finely diced pancetta": "pancetta",
     "finely grated fresh parmesan cheese": "cheese, parmesan, grated",
     "finely grated gruyère cheese": "cheese, gruyere",
     "finely grated lemon zest": "lemon peel, raw",
@@ -1155,7 +1231,7 @@
     "firm or extra-firm tofu": "tofu, firm, prepared with calcium sulfate and magnesium chloride (nigari)",
     "firm tofu": "tofu, firm, prepared with calcium sulfate and magnesium chloride (nigari)",
     "firm white sandwich bread": "bread, white, commercially prepared (includes soft bread crumbs)",
-    "firm, tart tart apples, such as granny smith, peeled": "apples, raw, without skin",
+    "firm, tart tart apples": "apples, raw, without skin",
     "firm-ripe avocado": "avocados, raw, all commercial varieties",
     "firmish goat cheese": "cheese, goat, semisoft type",
     "fish": null,
@@ -1173,8 +1249,10 @@
     "flat-leaf parsley leaves": "parsley, fresh",
     "flat-leaf parsley leaves and tender stems": "parsley, fresh",
     "flat-leaf spinach": "spinach",
+    "flatbread or toasted pita wedges": "bread, pita, white, enriched",
     "flax seeds": "seeds, flaxseed",
     "flaxseed": "seeds, flaxseed",
+    "flaxseed meal": "ground flaxseed",
     "fleur de sel": "sea salt",
     "flounder fillets": "fish, flatfish (flounder and sole species)",
     "flour": "all-purpose flour",
@@ -1185,6 +1263,7 @@
     "fontina cheese": "cheese, fontina",
     "frank's red hot sauce": "sauce, ready-to-serve, pepper or hot",
     "franks red hot or other hot sauce": "sauce, ready-to-serve, pepper or hot",
+    "freeze dried strawberries": "freeze-dried strawberries",
     "french baguette": "bread, french or vienna (includes sourdough)",
     "french green beans": "beans, snap, green, raw",
     "fresh 3 1/2-pound chicken": null,
@@ -1211,6 +1290,7 @@
     "fresh corn tortillas, stacked in groups of 8 and cut into 6 wedges each": "tortillas, ready-to-bake or -fry, corn",
     "fresh cracked black pepper": "black pepper",
     "fresh cremini mushrooms": "mushrooms, brown, italian, or crimini",
+    "fresh cut vegetables, romaine lettuce wedges, chips": null,
     "fresh dill": "dill weed, fresh",
     "fresh dill fronds": "dill weed, fresh",
     "fresh flat leaf parsley leaves and tender stems": "parsley, fresh",
@@ -1222,6 +1302,8 @@
     "fresh granny smith apple juice": "apple juice, canned or bottled, unsweetened, with added ascorbic acid",
     "fresh grapefruit juice": "grapefruit juice, white",
     "fresh green chile": "peppers, hot chili, green",
+    "fresh green chili (i used a jalapeno)": "peppers, jalapeno",
+    "fresh herbs": "parsley, fresh",
     "fresh herbs - snipped chives, basil, or parsley or a mix thereof - to finish": "chives",
     "fresh hot green chili": "peppers, hot chili, green",
     "fresh italian parsley": "parsley, fresh",
@@ -1251,12 +1333,14 @@
     "fresh or frozen peas": "peas, green",
     "fresh or frozen raspberries": "raspberries",
     "fresh or frozen strawberries": "strawberries, raw",
+    "fresh or stale coarse plain breadcrumbs": "bread, white, commercially prepared (includes soft bread crumbs)",
     "fresh or thawed frozen corn kernels": "corn, sweet, yellow, raw",
     "fresh parsley": "parsley, fresh",
     "fresh parsley leaves": "parsley, fresh",
     "fresh peaches": "peaches, yellow",
     "fresh pineapple chunks or canned chunks": "pineapple, raw, all varieties",
     "fresh pitas for pita chips": "bread, pita, white, enriched",
+    "fresh poblano chiles": "poblano peppers",
     "fresh red chiles": "peppers, hot chili, red",
     "fresh rosemary": "rosemary, fresh",
     "fresh shiitake mushrooms": "mushrooms, shiitake, raw",
@@ -1303,6 +1387,7 @@
     "fried tofu pouch": "tofu, fried",
     "frisee or another sturdy lettuce": "endive, raw",
     "frisée, torn into-bite size pieces": "endive, raw",
+    "from a large loaf of rye bread, whole wheat sourdough or bread of your choice": "bread, rye",
     "frozen banana": "bananas",
     "frozen blueberries": "blueberries, frozen, unsweetened",
     "frozen broccoli florets": "broccoli, frozen, spears, unprepared",
@@ -1314,6 +1399,7 @@
     "frozen green peas": "peas, green, frozen, unprepared (includes foods for usda's food distribution program)",
     "frozen lima beans": "lima beans, immature seeds, frozen, fordhook, unprepared",
     "frozen mango": "mangos, raw",
+    "frozen mixed berries": "mixed frozen berries",
     "frozen mixed vegetables": "vegetables, mixed, frozen, unprepared",
     "frozen or canned corn": "corn, sweet, yellow, frozen, kernels cut off cob, unprepared (includes foods for usda's food distribution program)",
     "frozen or fresh green peas": "peas, green, frozen, unprepared",
@@ -1328,7 +1414,7 @@
     "frozen spinach": "spinach, frozen, chopped or leaf, unprepared (includes foods for usda's food distribution program)",
     "frozen strawberries": "strawberries, frozen, unsweetened",
     "frozen tater tots": "potato puffs, frozen, unprepared",
-    "fruit jam or preserves, such as cherry, peach or orange": "jams and preserves",
+    "fruit jam or preserves": "jams and preserves",
     "fruit, cut into 1-inch chunks if large, stone fruit pitted": null,
     "full fat coconut milk": "nuts, coconut milk, canned (liquid expressed from grated meat and water)",
     "full fat cream cheese": "cream cheese",
@@ -1342,6 +1428,7 @@
     "full-fat plain yogurt": "yogurt, plain, whole milk",
     "full-fat sour cream": "sour cream",
     "full-sized fresh artichokes": "artichokes, (globe or french)",
+    "fully risen pizza dough or about a 2/3 volume of my lazy fitted-to-your-schedule favorite or your favorite, whichever it may be": "pizza dough",
     "fun size butterfinger candy bars": "candies, nestle, butterfinger bar",
     "galangal": "ginger root, raw",
     "garlic bread": "garlic bread, frozen",
@@ -1358,9 +1445,12 @@
     "garlic cloves, but who is counting": "garlic, raw",
     "garlic cloves, smashed": "garlic",
     "garlic finely diced": "garlic",
+    "garlic oil": "olive oil",
     "garlic or 1 shallot": "garlic, raw",
+    "garlic paste or freshly grated garlic": "garlic paste",
     "garlic powder": "spices, garlic powder",
     "garlicky or gruyere croutons": "croutons, seasoned",
+    "garnishes, such as minced chives, pickles, celery, radishes, bacon bits, pickled or fried shallots": null,
     "gated lemon zest": "lemon peel",
     "gelatin": "gelatins, dry powder, unsweetened",
     "ghee": "butter, clarified butter (ghee)",
@@ -1387,12 +1477,13 @@
     "golden raisins": "raisins, golden, seedless",
     "good quality dark chocolate": "chocolate, dark, 70-85% cacao solids",
     "good quality white chocolate": "candies, white chocolate",
-    "good quality whole tomatoes": "tomatoes, red, ripe, canned, packed in tomato juice",
     "gouda cheese": "cheese, gouda",
     "graham cracker crumbs": "cookies, graham crackers, plain or honey (includes cinnamon)",
     "graham crackers": "cookies, graham crackers, plain or honey (includes cinnamon)",
     "grainy dijon mustard": "mustard, prepared, yellow",
     "grainy mustard": "mustard, prepared, yellow",
+    "grand marnier": "orange liqueur",
+    "grand marnier or other orange liqueur": "orange liqueur",
     "granny smith apple": "apples, raw, granny smith, with skin",
     "granny smith apples": "apples, raw, granny smith, with skin",
     "granulated garlic": "spices, garlic powder",
@@ -1475,6 +1566,7 @@
     "green pepper": "peppers, sweet, green, raw",
     "green seedless grapes": "grapes, red or green (european type, such as thompson seedless), raw",
     "green tomatoes": "tomatoes, green, raw",
+    "greens": null,
     "grenadine": "syrups, grenadine",
     "ground aleppo pepper": "spices, pepper, red or cayenne",
     "ground allspice": "spices, allspice, ground",
@@ -1498,6 +1590,7 @@
     "ground chile powder": "spices, chili powder",
     "ground chili powder": "spices, chili powder",
     "ground chilli or cayenne pepper": "spices, pepper, red or cayenne",
+    "ground chipotle peppers": "spices, pepper, red or cayenne",
     "ground chipotle powder": "spices, pepper, red or cayenne",
     "ground chuck": "beef, ground, 80% lean meat / 20% fat, raw",
     "ground cinnamon": "spices, cinnamon, ground",
@@ -1506,6 +1599,7 @@
     "ground coriander seed": "spices, coriander seed",
     "ground cumin seeds": "ground cumin",
     "ground fennel": "spices, fennel seed",
+    "ground flaxseed meal": "ground flaxseed",
     "ground ginger": "spices, ginger, ground",
     "ground green cardamom": "spices, cardamom",
     "ground italian sausage": "sausage, italian, pork, mild, raw",
@@ -1513,7 +1607,9 @@
     "ground meat": null,
     "ground meat (beef, lamb, or bison)": "beef, ground, 80% lean meat / 20% fat, raw",
     "ground meat (i use a mix of beef and pork)": "beef, ground, 80% lean meat / 20% fat, raw",
+    "ground meat (see note up top for suggestions)": "beef, ground, 80% lean meat / 20% fat",
     "ground meat of your choice": null,
+    "ground meat of your choice (i used pork but have in the past used beef, veal, chicken, turkey or a blend thereof)": "pork, fresh, ground",
     "ground mustard": "spices, mustard seed, ground",
     "ground mustard powder": "spices, mustard seed, ground",
     "ground nutmeg": "spices, nutmeg, ground",
@@ -1554,6 +1650,7 @@
     "half-and-half or heavy cream": null,
     "half-and-half or whole milk": null,
     "half-sour pickle": "pickles, cucumber, sour",
+    "halloumi": "halloumi cheese",
     "halved cherry tomatoes": "tomatoes, red, ripe, raw, year round average",
     "halved chicken breasts": "chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
     "halved mini mozzarella balls": "cheese, mozzarella, whole milk",
@@ -1561,14 +1658,14 @@
     "ham ends or trimmings": "pork, cured, ham, boneless, regular (approximately 11% fat), roasted",
     "ham steak": "pork, cured, ham, steak, boneless, extra lean, unheated",
     "hamburger buns": "rolls, hamburger or hotdog, plain",
-    "handful basil or mint or cilantro sprigs, or your favorite of the three": "basil, fresh",
     "handful picked fresh rosemary leaves": "rosemary, fresh",
-    "handful torn fresh basil leaves": "basil, fresh",
     "hard boiled eggs": "egg, whole, cooked, hard-boiled",
     "hard shell tacos": "taco shells, baked",
     "hard-boiled eggs": "egg, whole, cooked, hard-boiled",
     "hard-cooked eggs": "egg, whole, cooked, hard-boiled",
     "hardboiled eggs": "egg, whole, cooked, hard-boiled",
+    "harissa or another hot sauce": null,
+    "harissa paste or another hot sauce": null,
     "hazelnuts": "nuts, hazelnuts or filberts",
     "hearty rye bread": "bread, rye",
     "hearty white bread": "bread, white, commercially prepared (includes soft bread crumbs)",
@@ -1583,8 +1680,9 @@
     "hellmann's": "mayonnaise",
     "hemp hearts": "seeds, hemp seed, hulled",
     "hemp seeds": "seeds, hemp seed, hulled",
+    "herbes de provence": "herbs de provence",
     "high-quality extra-virgin olive oil": "olive oil",
-    "high-quality sandwich bread, such as shokupan": "bread, white, commercially prepared (includes soft bread crumbs)",
+    "high-quality sandwich bread": "bread, white, commercially prepared (includes soft bread crumbs)",
     "hoagie rolls": "rolls, french",
     "hoisin sauce": "sauce, hoisin, ready-to-serve",
     "homemade beef stock or chicken stock or store-bought low-sodium chicken broth": "soup, stock, beef, home-prepared",
@@ -1602,9 +1700,12 @@
     "homemade or store-bought low-sodium chicken stock or vegetable stock": "chicken broth",
     "homemade or store-bought low-sodium vegetable broth": "soup, vegetable broth, ready to serve",
     "homemade or store-bought salsa verde": "sauce, salsa, verde, ready-to-serve",
+    "homemade or store-bought salsa verde for serving": null,
     "homemade or storebought low-sodium vegetable or mushroom broth": "soup, vegetable broth, ready to serve",
     "homemade pie crust or all butter pie crust": "pie crust, standard-type, prepared from recipe, unbaked",
+    "homemade pizza dough": "pizza dough",
     "homemade taco seasoning or store-bought taco seasoning": "seasoning mix, dry, taco, original",
+    "homemade whipped cream": "whipped cream",
     "hominy": "hominy, canned, white",
     "honey do not swap for white sugar": "honey",
     "honey or brown sugar": null,
@@ -1626,7 +1727,7 @@
     "hot house cucumber": "cucumber, with peel, raw",
     "hot house cucumber thinly sliced": "cucumber, with peel, raw",
     "hot pepper sauce": "sauce, ready-to-serve, pepper or hot",
-    "hot red pepper flakes or mild ones such as urfa biber or aleppo": "spices, pepper, red or cayenne",
+    "hot red pepper flakes or mild ones": "spices, pepper, red or cayenne",
     "hot sauce": "sauce, ready-to-serve, pepper or hot",
     "hot sauce of your choice": "sauce, ready-to-serve, pepper or hot",
     "hot smoked paprika": "spices, paprika",
@@ -1673,11 +1774,14 @@
     "instant yeast": "leavening agents, yeast, baker's, active dry",
     "instant/rapid-rise yeast": "leavening agents, yeast, baker's, active dry",
     "irish whiskey": "alcoholic beverage, distilled, whiskey, 86 proof",
+    "italian blend seasoning": "italian seasoning",
     "italian bread crumbs": "bread, crumbs, dry, grated, seasoned",
+    "italian herbs": "italian seasoning",
     "italian parsley": "parsley, fresh",
     "italian parsley leaves": "parsley, fresh",
     "italian sausage": "sausage, italian, pork, mild",
     "italian seasoned bread crumbs": "bread, crumbs, dry, grated, seasoned",
+    "italian seasoning blend": "italian seasoning",
     "italian style breadcrumbs": "bread, crumbs, dry, grated, seasoned",
     "jack cheese": "cheese, monterey",
     "jalapeno": "peppers, jalapeno, raw",
@@ -1700,6 +1804,7 @@
     "japanese cucumber or half the amount of english cucumber": "cucumber, with peel, raw",
     "japanese eggplants": "eggplant, raw",
     "japanese kewpie mayonnaise": "mayonnaise",
+    "japanese leek": "onions, welsh",
     "japanese light soy sauce": "soy sauce made from soy and wheat (shoyu)",
     "japanese light soy sauce or regular japanese soy sauce": "soy sauce made from soy and wheat (shoyu)",
     "japanese mayonnaise": "mayonnaise",
@@ -1717,6 +1822,7 @@
     "jarred sliced jalapeños": "peppers, jalapeno, canned, solids and liquids",
     "jars/cans olive oil-packed tuna": "fish, tuna, light, canned in oil, drained solids",
     "jasmine rice": "rice, white, long-grain, regular, raw, enriched",
+    "jasmine rice to serve": "rice, white, long-grain, regular, enriched, cooked",
     "jellied cranberry sauce": "cranberry sauce, jellied, canned, ocean spray",
     "jicama": "yambean (jicama), raw",
     "juice 1/2 lemon": "lemon juice",
@@ -1741,16 +1847,21 @@
     "juice of one orange": "orange juice, raw",
     "julienned carrots": "carrots",
     "julienned daikon radish": "radishes, oriental, raw",
+    "julienned or coarsely grated carrots": "carrots",
     "jumbo dried pasta shells": "pasta",
     "jumbo pasta shells": "pasta, dry, enriched",
     "kabocha": "squash, winter, all varieties, raw",
     "kabocha squash": "squash, winter, all varieties",
     "kaiser rolls or hamburger buns": "rolls, hard (includes kaiser)",
+    "kalamata olives": "pitted kalamata olives",
+    "kalamata or other brine-cured black olives": "pitted kalamata olives",
     "kale leaves": "kale, raw",
     "kanten agar powder": "seaweed, agar, dried",
     "kashmiri or other red chile powder": "spices, pepper, red or cayenne",
     "kashmiri red chili powder": "spices, pepper, red or cayenne",
     "kashmiri red chilli powder": "spices, pepper, red or cayenne",
+    "katakuriko": "cornstarch",
+    "katakuriko (potato starch": "cornstarch",
     "ketchup": "catsup",
     "kewpie mayo": "mayonnaise",
     "kewpie mayonnaise": "mayonnaise",
@@ -1765,6 +1876,8 @@
     "kirsch": "alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof",
     "kiwi": "kiwifruit, green",
     "kiwi fruit": "kiwifruit, green, raw",
+    "kizami nori": "nori",
+    "konnyaku": "shirataki noodles",
     "kosher dill pickle": "pickles, cucumber, dill or kosher dill",
     "kosher or coarse salt": "diamond crystal kosher salt",
     "kosher or coarse sea salt": "diamond crystal kosher salt",
@@ -1777,6 +1890,7 @@
     "laird’s straight apple brandy bottled-in-bond": "alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 100 proof",
     "lard or vegetable oil": "lard",
     "lard skip if your pork is already fatty, bump up if it runs lean": "lard",
+    "lardo or pancetta": null,
     "lasagna noodles": "pasta, dry, enriched",
     "laung": "spices, cloves, ground",
     "layers sliced sharp white cheddar": "cheese, cheddar, sharp, sliced",
@@ -1784,6 +1898,7 @@
     "lean ground beef": "beef, ground, 90% lean meat / 10% fat, raw",
     "lean ground chicken": "chicken, ground, raw",
     "lean ground turkey": "turkey, ground, 93% lean, 7% fat",
+    "lean, boneless chuck steak": "beef, chuck, blade roast, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
     "leaves basil": "basil, fresh",
     "leaves bibb lettuce": "lettuce, butterhead (includes boston and bibb types), raw",
     "leaves from 3 sprigs fresh thyme": "thyme, fresh",
@@ -1798,6 +1913,7 @@
     "leg of lamb": null,
     "lemon": "lemons, raw, without peel",
     "lemon (juiced) (see note; i used a whole lemon to swap for the amchoor powder)": "lemon juice",
+    "lemon extract": "vanilla extract",
     "lemon juice from 1 small lemon": "lemon juice",
     "lemon juice from 1 whole lemon": "lemon juice",
     "lemon juiced": "lemon juice",
@@ -1822,6 +1938,7 @@
     "light corn syrup or golden syrup": "light corn syrup",
     "light cream": "cream, fluid, light (coffee cream or table cream)",
     "light cream cheese": "cheese, cream, low fat",
+    "light feta cheese": "reduced fat feta cheese",
     "light flavored olive oil": "olive oil",
     "light mayo": "salad dressing, mayonnaise, light",
     "light olive oil": "olive oil",
@@ -1870,7 +1987,7 @@
     "low-moisture mozzarella": "cheese, mozzarella, whole milk, low moisture",
     "low-salt chicken broth": "chicken broth",
     "low-sodium beef broth": "soup, beef broth or bouillon canned, ready-to-serve",
-    "low-sodium beef stock, homemade or store-bought, see notes": "soup, beef broth, less/reduced sodium, ready to serve",
+    "low-sodium beef stock": "soup, beef broth, less/reduced sodium, ready to serve",
     "low-sodium broth": "chicken broth",
     "low-sodium chicken broth": "chicken broth",
     "low-sodium chicken or vegetable broth": "chicken broth",
@@ -1892,22 +2009,26 @@
     "malt powder": "barley malt flour",
     "malt powder (or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams)": null,
     "malted milk powder": "beverages, malted drink mix, natural, powder, dairy based.",
+    "mandarin oranges": "tangerines, (mandarin oranges)",
     "mandarins": "tangerines, (mandarin oranges), raw",
     "mango puree": "mangos, raw",
     "manila, cherrystone, or little neck clams": null,
     "many grinds of black pepper": "black pepper",
+    "maple extract": "vanilla extract",
     "maple sugar": "sugars, maple",
     "maple syrup or honey": "maple syrup",
     "maraschino cherries": "maraschino cherries, canned, drained",
     "maraschino cherry to garnish": "maraschino cherries, canned, drained",
     "margarine": "margarine, regular, 80% fat, composite, stick, with salt",
     "marinara sauce": "sauce, pasta, spaghetti/marinara, ready-to-serve",
+    "marinated artichokes": "marinated artichoke hearts",
     "marmite": "yeast extract spread",
     "marshmallow creme": "toppings, marshmallow cream",
     "marshmallow fluff": "toppings, marshmallow cream",
     "marshmallows": "candies, marshmallows",
     "martin's sandwich rolls": "rolls, hamburger or hotdog, plain",
     "masa harina": "corn flour, masa, enriched, white",
+    "mascarpone": "mascarpone cheese",
     "mashed bananas": "bananas",
     "mashed or pureed very ripe bananas": "bananas, raw",
     "mashed potatoes": "potatoes, mashed, home-prepared, whole milk and butter added",
@@ -1915,16 +2036,16 @@
     "mashed very ripe bananas": "bananas",
     "mashing potatoes": "potatoes, flesh and skin, raw",
     "masoor dal": "lentils, pink or red, raw",
+    "matcha powder": "matcha",
     "matchstick carrots": "carrots",
     "matzo meal": "crackers, matzo, plain",
     "mayo": "mayonnaise",
     "mayo or another dressing": "mayonnaise",
     "mayonaise": "mayonnaise",
     "mayonnaise - 1 level teaspoon": "mayonnaise",
+    "mayonnaise or plain yogurt": null,
     "meaty smoked ham shank or 2 to 3 smoked ham hocks": "pork, cured, ham, shank, bone-in, separable lean and fat, unheated",
     "medium grain rice": "rice, white, medium-grain, raw, enriched",
-    "medium starch yellow potatoes": "potatoes, flesh and skin, raw",
-    "medium starch yellow potatoes (such as yukon golds)": "potatoes, flesh and skin, raw",
     "medium-large sweet onion": "onions",
     "medium-large yellow onions": "onions",
     "medium-size flour tortillas": "tortillas, ready-to-bake or -fry, flour, refrigerated",
@@ -1937,9 +2058,11 @@
     "medium/large leeks": "leeks, (bulb and lower leaf-portion), raw",
     "medjool dates": "dates, medjool",
     "melted, unsalted butter, olive oil, coconut oil, or ghee": null,
+    "melted, unsalted butter, olive oil, coconut oil, or ghee (for assembly)": "butter",
     "mexican blend": "cheese, mexican blend",
     "mexican blend shredded cheese": "cheese, mexican blend",
     "mexican cheese": "cheese, mexican blend",
+    "mexican crema or crème fraîche": null,
     "mexican hot sauce": "sauce, ready-to-serve, pepper or hot",
     "mexican oregano": "dried oregano",
     "mexican-style chorizo sausage": "sausage, pork, chorizo, link or ground, raw",
@@ -1956,15 +2079,18 @@
     "milk chocolate chips": "candies, milk chocolate",
     "milk or buttermilk": "milk",
     "milk or cream": null,
+    "milk or heavy cream": null,
     "milk or semi-sweet chocolate": "candies, milk chocolate",
     "milk or water": null,
+    "minced canned chipotle chile in adobo sauce": "chipotle chile in adobo sauce",
+    "minced chipotle pepper in adobo": "chipotle chile in adobo sauce",
     "minced flat-leaf parsley": "parsley, fresh",
     "minced flat-leaf parsley leaves and tender stems": "parsley, fresh",
     "minced fresh chives or scallions": "chives, raw",
     "minced fresh dill": "dill weed, fresh",
     "minced fresh flat-leaf parsley": "parsley, fresh",
     "minced fresh gingerroot": "ginger root, raw",
-    "minced fresh herbs such as parsley, dill, or chives": "parsley, fresh",
+    "minced fresh herbs": "parsley, fresh",
     "minced fresh mint": "spearmint, fresh",
     "minced fresh parsley": "parsley, fresh",
     "minced fresh parsley leaves": "parsley, fresh",
@@ -1977,6 +2103,8 @@
     "minced half-sour pickle": "pickles, cucumber, sour",
     "minced or finely grated fresh ginger": "ginger root",
     "minced parsley": "parsley, fresh",
+    "minced parsley and/or dill to finish": "parsley, fresh",
+    "minced speck or sweet italian sausage": null,
     "minced white onion or pickled red onions": "onions",
     "mini chocolate chips": "candies, semisweet chocolate",
     "mini marshmallows": "candies, marshmallows",
@@ -1989,8 +2117,9 @@
     "miniature marshmallows": "candies, marshmallows",
     "miniature semisweet chocolate chips": "candies, semisweet chocolate",
     "mint": "spearmint, fresh",
+    "mint extract": "vanilla extract",
     "mint leaves": "spearmint, fresh",
-    "mint sprig or 5 to 7 picked mint leaves for garnish": "spearmint, fresh",
+    "mint sprig or 5 to 7 picked mint leaves": "spearmint, fresh",
     "minus 1 tablespoon all-purpose or bread flour": "all-purpose flour",
     "mirin honmirin preferred, or cola at same volume": null,
     "mirin or cola": null,
@@ -2038,7 +2167,7 @@
     "neutral cooking oil": "vegetable oil",
     "neutral oil": "vegetable oil",
     "neutral oil for roasting": "vegetable oil",
-    "neutral, high-heat oil for frying": "vegetable oil",
+    "neutral, high-heat oil": "vegetable oil",
     "neutral-tasting oil": "vegetable oil",
     "no-boil lasagna noodles": "pasta, dry, enriched",
     "no-salt-added black beans": "beans, black, mature seeds, canned, low sodium",
@@ -2057,6 +2186,7 @@
     "nonstick cooking spray": "oil, pam cooking spray, original",
     "nonstick spray": "oil, pam cooking spray, original",
     "nonstick vegetable oil spray": "oil, pam cooking spray, original",
+    "nori roasted seaweed": "nori",
     "not-too-firm seeded baguette": "bread, french or vienna (includes sourdough)",
     "nut butter": "peanut butter",
     "nutella": "chocolate-flavored hazelnut spread",
@@ -2089,9 +2219,7 @@
     "olive oil spray": "oil, pam cooking spray, original",
     "olive oil to brush bread": "olive oil",
     "olive oil to sauté": "olive oil",
-    "olive oil-packed tuna, preferably ventresca": "fish, tuna, light, canned in oil, drained solids",
-    "olive oil-packed tuna, preferably ventresca (tuna belly; see notes)": "fish, tuna, light, canned in oil, drained solids",
-    "olive oil-packed tuna, preferably ventresca (tuna belly; see notes), oil reserved": "fish, tuna, light, canned in oil, drained solids",
+    "olive oil-packed tuna": "fish, tuna, light, canned in oil, drained solids",
     "olive oild": "olive oil",
     "olive or a neutral oil": "olive oil",
     "olive or peanut oil": "olive oil",
@@ -2120,6 +2248,7 @@
     "or two flaky sea salt": "sea salt",
     "or two of salt": "diamond crystal kosher salt",
     "orange": "oranges, raw, all commercial varieties",
+    "orange blossom water": "water, bottled, generic",
     "orange extract": "vanilla extract",
     "orange juice": "orange juice, chilled, includes from concentrate",
     "orange juiced": "orange juice, raw",
@@ -2141,8 +2270,7 @@
     "oxtail": null,
     "oyster crackers": "crackers, saltines (includes oyster, soda, soup)",
     "oyster mushrooms": "mushrooms, oyster, raw",
-    "pack square wonton wrappers (preferably yellow)": "wonton wrappers (includes egg roll wrappers)",
-    "pack square wonton wrappers (preferably yellow), about 40-50 pieces": "wonton wrappers (includes egg roll wrappers)",
+    "pack square wonton wrappers": "wonton wrappers (includes egg roll wrappers)",
     "packed dark-brown sugar": "brown sugar",
     "packed fresh herbs such as basil, cilantro, parsley and/or dill": "basil, fresh",
     "packed light-brown sugar": "brown sugar",
@@ -2157,6 +2285,15 @@
     "packets unflavored powdered gelatin": "gelatins, dry powder, unsweetened",
     "pan spray": "oil, pam cooking spray, original",
     "paneer or extra firm tofu cut into 1-inch cubes and patted very dry": null,
+    "panko": "panko breadcrumbs",
+    "panko bread crumbs": "panko breadcrumbs",
+    "panko breadcrumbs japanese panko preferred, regular breadcrumbs work": "panko breadcrumbs",
+    "panko breadcrumbs or regular breadcrumbs": null,
+    "panko crumbs": "panko breadcrumbs",
+    "panko or plain breadcrumbs": null,
+    "panko, or another plain, dry breadcrumb": "panko breadcrumbs",
+    "panko-style breadcrumbs": "panko breadcrumbs",
+    "panko-style plain breadcrumbs": "panko breadcrumbs",
     "pappardelle or tagliatelle": "pasta",
     "paprika": "spices, paprika",
     "paprika or sumac": "spices, paprika",
@@ -2173,6 +2310,7 @@
     "parsley, leaves and tender stems": "parsley, fresh",
     "parsley, tied in a bundle": "parsley, fresh",
     "pasilla chiles": "peppers, pasilla, dried",
+    "pasta of you choice": "pasta",
     "pasta of you choice, such as a ziti or twisty shape": "pasta, dry, enriched",
     "pasta sauce": "sauce, pasta, spaghetti/marinara, ready-to-serve",
     "pasta water": "water, bottled, generic",
@@ -2208,9 +2346,11 @@
     "pepper flakes": "spices, pepper, red or cayenne",
     "pepper jack cheese": "cheese, monterey",
     "peppercorns": "black pepper",
+    "peppermint extract": "vanilla extract",
     "pepperoncini": "peppers, hot pickled, canned",
     "pepperoni": "pepperoni, beef and pork, sliced",
     "pepperoni slices": "pepperoni, beef and pork, sliced",
+    "per bowl thick slices sourdough or country bread": "bread, french or vienna (includes sourdough)",
     "persian cucumber": "cucumber, with peel, raw",
     "pesto": "sauce, pesto, ready-to-serve, refrigerated",
     "petite diced tomatoes": "tomatoes, red, ripe, canned, packed in tomato juice",
@@ -2218,12 +2358,14 @@
     "phyllo/filo pastry, defrosted": "phyllo dough",
     "picked cilantro leaves": "coriander (cilantro) leaves, raw",
     "picked cilantro leaves and tender stems": "coriander (cilantro) leaves",
-    "picked crab meat (or surimi, cut into 1/2-inch pieces)": "crustaceans, crab, blue, cooked, moist heat",
+    "picked crab meat": "crustaceans, crab, blue, cooked, moist heat",
     "pickle": "pickles, cucumber, dill or kosher dill",
+    "pickle brine": "pickle juice",
     "pickle slices": "pickles, cucumber, dill or kosher dill",
     "pickled jalalpenos": "peppers, jalapeno, canned, solids and liquids",
     "pickled jalapenos": "peppers, jalapeno, canned, solids and liquids",
     "pickled jalapeños": "peppers, jalapeno, canned, solids and liquids",
+    "pickled red onion": "pickled onions",
     "pickles": "pickles, cucumber, dill or kosher dill",
     "pickling cucumbers": "cucumber, with peel",
     "pickling salt": "salt, table",
@@ -2239,6 +2381,7 @@
     "pink grapefruit": "grapefruit, raw, pink and red, all areas",
     "pink salmon": "fish, salmon, pink",
     "pinto beans": "beans, pinto, canned, drained solids",
+    "pistachio extract": "vanilla extract",
     "pistachios": "nuts, pistachio nuts, raw",
     "pita": "bread, pita, white, enriched",
     "pita bread": "bread, pita, white, enriched",
@@ -2268,7 +2411,7 @@
     "plain unsweetened greek-style yogurt": "greek yogurt",
     "plain whole milk yogurt": "yogurt, plain, whole milk",
     "plain whole-milk greek yogurt": "yogurt, greek, plain, whole milk",
-    "plain whole-milk strained yogurt for serving": "yogurt, greek, plain, whole milk",
+    "plain whole-milk strained yogurt": "yogurt, greek, plain, whole milk",
     "plain whole-milk yogurt": "yogurt, plain, whole milk",
     "plain yogurt": "yogurt, plain, whole milk",
     "plain yogurt or sour cream": null,
@@ -2288,6 +2431,9 @@
     "plus 3 tablespoons extra-virgin olive oil": "olive oil",
     "poached chicken, 3 1/2 pounds": null,
     "poached eggs": "egg, whole, cooked, poached",
+    "poblano": "poblano peppers",
+    "poblano chile": "poblano peppers",
+    "poblano pepper": "poblano peppers",
     "pods green cardamom": "spices, cardamom",
     "polenta": "cornmeal, degermed, enriched, yellow",
     "pomegranate arils": "pomegranates, raw",
@@ -2323,11 +2469,13 @@
     "potato starch": "cornstarch",
     "potato starch about 1/2 tbsp per patty, or cornstarch": "cornstarch",
     "potato starch for final coating": "cornstarch",
+    "potato starch or cornstarch": "cornstarch",
     "potato starch or cornstarch, tapioca starch": "cornstarch",
     "potato starch or cornstarch/tapioca starch": "cornstarch",
     "potato starch or tapioca starch": "cornstarch",
     "potato starchy type like king edward or russet": "potatoes, russet, flesh and skin, raw (includes foods for usda's food distribution program)",
     "potatoes": "potatoes, flesh and skin, raw",
+    "potatoes or crusty bread": null,
     "potatoes starchy varieties like russet or yukon gold": "potatoes, russet, flesh and skin, raw (includes foods for usda's food distribution program)",
     "poultry seasoning": "spices, poultry seasoning",
     "powdered gelatin": "gelatins, dry powder, unsweetened",
@@ -2364,11 +2512,13 @@
     "pumpkin seeds": "seeds, pumpkin and squash seed kernels, dried",
     "pumpkin spice": "spices, pumpkin pie spice",
     "pure almond extract": "almond extract",
+    "pure chili pepper powder": "spices, pepper, red or cayenne",
     "pure honey": "honey",
     "pure maple syrup": "maple syrup",
     "pure pumpkin": "pumpkin, canned, without salt",
     "pure pumpkin puree": "pumpkin, canned, without salt",
     "pure vanilla extract": "vanilla extract",
+    "pureed canned chipotle in adobo": "chipotle chile in adobo sauce",
     "pureed tomatoes": "tomato products, canned, puree, with salt added",
     "purple cabbage": "cabbage, red, raw",
     "purple majesty or other purple potatoes": "potatoes, flesh and skin",
@@ -2377,12 +2527,17 @@
     "quality extra virgin olive oil": "olive oil",
     "quality mayonnaise": "mayonnaise",
     "quality olive oil": "olive oil",
+    "quality whole tomatoes": "tomatoes, red, ripe, canned, packed in tomato juice",
+    "quartered artichoke hearts": "artichoke hearts",
     "queso fresco": "cheese, fresh, queso fresco",
     "queso fresco or feta cheese": "cheese, fresh, queso fresco",
     "quick cooking oats": "cereals, quaker, quick oats, dry",
     "quick oats": "cereals, quaker, quick oats, dry",
     "quick-cooking oats": "cereals, quaker, quick oats, dry",
     "quinoa": "quinoa, uncooked",
+    "rack beef back ribs": null,
+    "rainbow nonpareils": "sprinkles",
+    "rainbow sprinkles": "sprinkles",
     "raisins": "raisins, dark, seedless",
     "ranch dressing": "salad dressing, ranch dressing, regular",
     "rapid-rise yeast": "leavening agents, yeast, baker's, active dry",
@@ -2390,8 +2545,10 @@
     "raspberry jam": "jams and preserves",
     "raspberry preserves": "jams and preserves",
     "raw almonds": "nuts, almonds",
+    "raw cacao": null,
     "raw cacao powder": "cocoa powder",
     "raw cashews": "nuts, cashew nuts",
+    "raw chopped vegetables or pita chips": null,
     "raw egg": "egg, whole, raw, fresh",
     "raw eggs": "egg, whole, raw, fresh",
     "raw garlic": "garlic, raw",
@@ -2416,8 +2573,11 @@
     "real mayonnaise": "mayonnaise",
     "real vanilla extract": "vanilla extract",
     "really good shots hot sauce": "sauce, ready-to-serve, pepper or hot",
-    "recipe pico de gallo, for serving": "sauce, salsa, ready-to-serve",
-    "recipe pico de gallo, for serving, if desired": "sauce, salsa, ready-to-serve",
+    "reblochon-style soft-rind cheese": "cheese, brie",
+    "recipe guacamole": "guacamole",
+    "recipe pico de gallo": "sauce, salsa, ready-to-serve",
+    "recipe pizza dough or about a 2/3 volume of my lazy fitted-to-your-schedule favorite or your favorite, whichever it may be": "pizza dough",
+    "recipe the best basic guacamole": "guacamole",
     "red apple": "apples, raw, with skin",
     "red bean paste": "beans, adzuki, mature seeds, canned, sweetened",
     "red bell pepper": "peppers, sweet, red, raw",
@@ -2425,6 +2585,7 @@
     "red bell peppers": "peppers, sweet, red",
     "red bird’s eye chili": "peppers, hot chili, red",
     "red cabbage": "cabbage, red",
+    "red cherry or grape tomatoes": "tomatoes, red, ripe, raw, year round average",
     "red chile flakes": "spices, pepper, red or cayenne",
     "red chile powder": "spices, pepper, red or cayenne",
     "red chili flakes": "spices, pepper, red or cayenne",
@@ -2434,6 +2595,7 @@
     "red chili powder or cayenne": "spices, pepper, red or cayenne",
     "red chilis": "peppers, hot chili, red",
     "red chilli powder": "spices, pepper, red or cayenne",
+    "red curry paste": "thai red curry paste",
     "red curry powder": "spices, curry powder",
     "red enchilada sauce": "sauce, enchilada, red, mild, ready to serve",
     "red jalapeño peppers or half a red bell pepper, deseeded and cut into slivers": "peppers, jalapeno, raw",
@@ -2451,6 +2613,7 @@
     "red pepper flakes or few grinds of black pepper": "spices, pepper, red or cayenne",
     "red pepper flakes or harissa": "spices, pepper, red or cayenne",
     "red peppers": "peppers, sweet, red, raw",
+    "red pickled ginger or other pickles of choice": "red pickled ginger",
     "red potatoes": "potatoes, red, flesh and skin",
     "red potatoes per person": "potatoes, red, flesh and skin",
     "red potatoes, large dice": "potatoes, red, flesh and skin, raw",
@@ -2474,6 +2637,7 @@
     "reduced-sodium chicken broth": "chicken broth",
     "reduced-sodium soy sauce": "soy sauce made from soy and wheat (shoyu), low sodium",
     "reduced-sodium soy sauce or tamari": "soy sauce made from soy and wheat (shoyu), low sodium",
+    "reese's peanut butter chips": "peanut butter chips",
     "refined coconut oil": "coconut oil",
     "refried beans": "refried beans, canned, traditional style",
     "refried beans, thinned with water to a just-pourable consistency": "refried beans, canned, traditional style",
@@ -2484,6 +2648,7 @@
     "regular or 6 small garlic cloves": "garlic, raw",
     "regular oreo cookies": "cookies, chocolate sandwich, with creme filling, regular",
     "regular plain yogurt": "yogurt, plain, whole milk",
+    "regular plain yogurt (or water; see tip)": null,
     "reserved chicken fat": "fat, chicken",
     "reserved chicken fat or vegetable oil": "fat, chicken",
     "reserved pasta cooking water": "water, bottled, generic",
@@ -2499,14 +2664,14 @@
     "rice flour": "rice flour, white",
     "rice krispies": "cereals ready-to-eat, ralston crisp rice",
     "rice krispies cereal": "cereals ready-to-eat, ralston crisp rice",
-    "rice or flatbreads, to serve": null,
+    "rice or flatbreads": null,
     "rice or roti": null,
     "rice vinegar or white vinegar": "rice vinegar",
     "rice wine vinegar": "rice vinegar",
     "rich homemade chicken stock or broth": "soup, stock, chicken, home-prepared",
     "ricotta": "cheese, ricotta, whole milk",
     "ricotta cheese": "cheese, ricotta, whole milk",
-    "ridged or curly pasta, such as fusilli or gemelli": "pasta",
+    "ridged or curly pasta": "pasta",
     "rigatoni or other large pasta shape": "pasta",
     "ripe avocado": "avocados, raw, all commercial varieties",
     "ripe avocados": "avocados, raw, all commercial varieties",
@@ -2519,13 +2684,15 @@
     "ripe pears": "pears, raw",
     "ripe plum tomatoes": "tomatoes, red, ripe, raw, year round average",
     "ripe tomatoes": "tomatoes, red, ripe, raw, year round average",
-    "risotto rice, such as arborio": "rice, white, medium-grain",
+    "risotto rice": "rice, white, medium-grain",
     "ritz crackers": "nabisco, nabisco ritz crackers",
+    "roasted corn": "corn, sweet, yellow, cooked, boiled, drained, without salt",
     "roasted garlic": "garlic",
     "roasted peanuts": "peanuts, all types, dry-roasted, without salt",
     "roasted red peppers": "peppers, sweet, red, canned, solids and liquids",
     "roasted salted peanuts": "peanuts, all types, dry-roasted, with salt",
     "roasted salted pepitas": "seeds, pumpkin and squash seed kernels, roasted, with salt added",
+    "roasted seaweed for sushi": "nori",
     "roasted seeds from your butternut squash": "seeds, pumpkin and squash seeds, whole, roasted, without salt",
     "roasted sesame seeds": "seeds, sesame seeds, whole, roasted and toasted",
     "roasted unsalted peanuts": "peanuts, all types, dry-roasted, without salt",
@@ -2538,6 +2705,7 @@
     "romaine leaves": "lettuce, cos or romaine, raw",
     "romaine lettuce": "lettuce, cos or romaine",
     "room-temperature water": "water, bottled, generic",
+    "rose water": "water, bottled, generic",
     "rosemary": "rosemary, fresh",
     "rosemary sprigs": "rosemary, fresh",
     "rosé wine": "alcoholic beverage, wine, table, all",
@@ -2573,7 +2741,7 @@
     "salmon filets": "fish, salmon, atlantic, farmed, raw",
     "salmon fillet": "fish, salmon, atlantic, farmed, raw",
     "salmon fillets": "fish, salmon, atlantic, farmed",
-    "salmon or white fish filets, cut into bite-size chunks": null,
+    "salmon or white fish filets": null,
     "salsa": "sauce, salsa, ready-to-serve",
     "salsa verde": null,
     "salt": "diamond crystal kosher salt",
@@ -2615,6 +2783,7 @@
     "semi- or bittersweet chocolate": "candies, semisweet chocolate",
     "semi- or bittersweet chocolate chips": "candies, semisweet chocolate",
     "semi-instant pancake mix": "pancakes, plain, dry mix, incomplete (includes buttermilk)",
+    "semi-pearled farro": "dried farro",
     "semi-skimmed milk": "milk, reduced fat, fluid, 2% milkfat, with added vitamin a and vitamin d",
     "semi-sweet chocolate": "candies, semisweet chocolate",
     "semi-sweet chocolate chips": "candies, semisweet chocolate",
@@ -2632,6 +2801,7 @@
     "sesame oil": "oil, sesame, salad or cooking",
     "sesame paste": "seeds, sesame butter, paste",
     "sesame seeds": "seeds, sesame seeds, whole, dried",
+    "seven-grain sandwich bread": "bread, multi-grain (includes whole-grain)",
     "several grinds black pepper": "spices, pepper, black",
     "shake of smoked hot paprika or chipotle powder": "spices, paprika",
     "shaoxing wine": "sake",
@@ -2643,10 +2813,15 @@
     "shaved parmesan cheese": "cheese, parmesan, hard",
     "sheep's milk feta cheese": "cheese, feta",
     "sheet frozen puff pastry": "puff pastry, frozen, ready-to-bake",
+    "sheet kombu dried sea kelp": "kombu",
     "sheet leaf gelatin": "gelatins, dry powder, unsweetened",
     "sheet puff pastry": "puff pastry, frozen, ready-to-bake",
+    "sheets leaf gelatin": "gelatins, dry powder, unsweetened",
+    "sheets nori": "nori",
+    "sheets nori roasted seaweed": "nori",
     "sheets phyllo dough": "phyllo dough",
     "sheets puff pastry": "puff pastry, frozen, ready-to-bake",
+    "sheets roasted seaweed for sushi": "nori",
     "sheets shumai or wonton wrappers": "wonton wrappers (includes egg roll wrappers)",
     "shelled edamame": "edamame, frozen, unprepared",
     "shelled pistachios": "nuts, pistachio nuts",
@@ -2661,7 +2836,8 @@
     "short cut pasta": "pasta",
     "short ribs": null,
     "short tube pasta": "pasta, dry, enriched",
-    "short-grain rice such as arborio, bomba, or carnaroli": "rice, white, short-grain",
+    "short tube pasta (see suggestions above)": "pasta",
+    "short-grain rice": "rice, white, short-grain",
     "shortening": "shortening, household, soybean (partially hydrogenated)-cottonseed (partially hydrogenated)",
     "shortening or unsalted butter": "shortening, household, soybean (partially hydrogenated)-cottonseed (partially hydrogenated)",
     "shredded cabbage or packaged coleslaw mix": "cabbage, raw",
@@ -2696,6 +2872,8 @@
     "sifted all-purpose flour": "all-purpose flour",
     "sifted cake flour": "cake flour",
     "sifted confectioners’ sugar": "powdered sugar",
+    "silken tofu": "mori-nu, tofu, silken, firm",
+    "simple syrup or maple syrup": "simple syrup",
     "sirloin": "beef, top sirloin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
     "sirloin steak": "beef, top sirloin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
     "sirloin steak tips": "beef, top sirloin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
@@ -2728,19 +2906,17 @@
     "sliced sourdough or country bread": "bread, french or vienna (includes sourdough)",
     "sliced turkey": "turkey breast, sliced, prepackaged",
     "sliced water chestnuts": "waterchestnuts, chinese, canned, solids and liquids",
-    "slider buns, such as potato or hawaiian rolls": "rolls, dinner, plain, commercially prepared (includes brown-and-serve)",
+    "slider buns": "rolls, dinner, plain, commercially prepared (includes brown-and-serve)",
     "slightly stale open-crumbed, chewy, peasant-style bread": "bread, italian",
+    "slightly stale open-crumbed, chewy, peasant-style bread (not sourdough)": "bread, french or vienna (includes sourdough)",
     "slightly-under-ripe, fragrant, medium pears": "pears, raw",
     "slim carrot": "carrots, raw",
     "slivered almonds": "nuts, almonds",
     "slivered or sliced almonds": "nuts, almonds",
     "slivered scallions": "onions, spring or scallions (includes tops and bulb)",
-    "small (i used manila) clams": null,
-    "small clams": null,
     "small new potatoes": "potatoes, flesh and skin",
     "small or 1/4 of a large white onion": "onions",
     "small pearl tapioca": "tapioca, pearl, dry",
-    "small red cherry or grape tomatoes, sliced 1/4-inch thick if large": "tomatoes, red, ripe, raw, year round average",
     "small tubular pasta, such as ditalini": "pasta",
     "small-diced celery": "celery, raw",
     "small-diced leeks or yellow onions": null,
@@ -2748,6 +2924,7 @@
     "small-medium tomatoes": "tomatoes, red, ripe, raw, year round average",
     "small-to-medium yellow onion": "onions, raw",
     "smoked ham": "pork, cured, ham, boneless, regular (approximately 11% fat), roasted",
+    "smoked ham hocks": null,
     "smoked hot or sweet paprika, more cayenne": "spices, paprika",
     "smoked hot sauce": "sauce, ready-to-serve, pepper or hot",
     "smoked paprika": "spices, paprika",
@@ -2757,6 +2934,7 @@
     "smoked turkey sausage": "sausage, turkey, hot, smoked",
     "smooth dijon mustard": "mustard, prepared, yellow",
     "smooth peanut butter": "peanut butter, smooth style, with salt",
+    "smooth peanut butter (see note at end)": "peanut butter",
     "snap peas": "peas, edible-podded",
     "snipped chives": "chives, raw",
     "snow peas": "peas, edible-podded, raw",
@@ -2768,6 +2946,7 @@
     "soft white buns": "rolls, hamburger or hotdog, plain",
     "soft-boiled egg": "egg, whole, cooked, hard-boiled",
     "soppresatta": "salami, dry or hard, pork",
+    "soup noodles of your choice": null,
     "sour cream or creme fraiche": "sour cream",
     "sour cream or crème fraîche": null,
     "sour cream or greek yogurt": null,
@@ -2800,7 +2979,7 @@
     "spinach or swiss chard": "spinach",
     "spiral-shaped pasta": "pasta",
     "splash of milk": "milk",
-    "splash of oil, any kind": "vegetable oil",
+    "splash of oil": "vegetable oil",
     "spoonful of sliced scallions, chives, crumbled bacon, or whatever else you want in your eggs": null,
     "spring mix": "lettuce, green leaf, raw",
     "spring onions": "onions, spring or scallions (includes tops and bulb), raw",
@@ -2813,6 +2992,7 @@
     "sriracha hot sauce": "sauce, hot chile, sriracha",
     "sriracha sauce": "sauce, hot chile, sriracha",
     "star anise pods": "spices, anise seed",
+    "starch yellow potatoes": "potatoes, flesh and skin, raw",
     "steak sauce": "sauce, steak, tomato based",
     "steamed couscous": "couscous, cooked",
     "steamed jasmine rice": "rice, white, long-grain, regular, enriched, cooked",
@@ -2821,16 +3001,19 @@
     "steel cut oats": "oats",
     "steel-cut oats": "oats",
     "stem fresh basil": "basil, fresh",
+    "stock": "broth",
     "stock or broth": "chicken broth",
     "stone-ground cornmeal": "cornmeal, whole-grain, yellow",
     "stone-ground mustard": "mustard, prepared, yellow",
     "store-bought low-sodium beef stock": "soup, beef broth, less/reduced sodium, ready to serve",
     "store-bought or homemade french rolls or hoagie/sub rolls, split lengthwise, but left attached on 1 side to create a hinge": "rolls, french",
+    "store-bought pizza dough": "pizza dough",
     "strand mace": "spices, mace, ground",
     "strawberry jam": "jams and preserves",
     "strip steaks": "beef, loin, top loin steak, boneless, lip off, separable lean and fat, trimmed to 0\" fat, all grades",
     "strips bacon": "pork, cured, bacon, unprepared",
     "strips lemon zest": "lemon peel, raw",
+    "strips roasted seaweed for sushi": "nori",
     "strong coffee": "beverages, coffee, brewed, prepared with tap water",
     "strong white flour": "bread flour",
     "strongly brewed coffee or espresso": "beverages, coffee, brewed, prepared with tap water",
@@ -2848,10 +3031,12 @@
     "sunflower oil": "oil, sunflower, high oleic (70% and over)",
     "sunflower seeds": "seeds, sunflower seed kernels, dried",
     "sunflower, safflower, or another high-heat friendly oil": "oil, sunflower, high oleic (70% and over)",
+    "super-fresh, young, crisp lettuce leaves": "lettuce, green leaf, raw",
     "super-fresh, young, crisp lettuce leaves such as romaine or little gem": "lettuce, cos or romaine",
     "superfine or granulated sugar": "granulated sugar",
     "superfine sugar": "granulated sugar",
     "sushi rice": null,
+    "sweet chili sauce": "thai sweet chili sauce",
     "sweet corn": "corn, sweet, yellow",
     "sweet italian sausage": "sausage, italian, pork, mild, raw",
     "sweet italian sausage (pork, turkey or chicken), casing removed": null,
@@ -2869,8 +3054,9 @@
     "sweet red pepper": "peppers, sweet, red, raw",
     "sweet relish": "pickle relish, sweet",
     "sweet smoked paprika": "spices, paprika",
+    "sweet soy sauce": "kecap manis",
     "sweet spanish paprika": "spices, paprika",
-    "sweet vermouth, preferably carpano antica formula": "alcoholic beverage, wine, dessert, sweet",
+    "sweet vermouth": "alcoholic beverage, wine, dessert, sweet",
     "sweet yellow pepper": "peppers, sweet, yellow, raw",
     "sweetened condensed milk": "milk, canned, condensed, sweetened",
     "sweetened desiccated coconut": "nuts, coconut meat, dried (desiccated), sweetened, shredded",
@@ -2883,11 +3069,13 @@
     "tabasco sauce": "sauce, ready-to-serve, pepper, tabasco",
     "table or fine sea salt": "salt, table",
     "table salt": "salt, table",
+    "taco seasoning": "seasoning mix, dry, taco, original",
     "tahini": "seeds, sesame butter, tahini, type of kernels unspecified",
     "tahini paste": "seeds, sesame butter, tahini, type of kernels unspecified",
     "tamari": "soy sauce made from soy (tamari)",
     "tamari or soy sauce": "soy sauce made from soy (tamari)",
     "tapatío hot sauce": "sauce, ready-to-serve, pepper or hot",
+    "tapioca flour": "tapioca starch",
     "tart apple": "apples, raw, with skin",
     "tart apple, peeled": "apples, raw, without skin",
     "tartar sauce": "sauce, tartar, ready-to-serve",
@@ -2906,25 +3094,30 @@
     "thick carrots": "carrots, raw",
     "thick cut bacon": "pork, cured, bacon, unprepared",
     "thick cut bread": "bread, white, commercially prepared (includes soft bread crumbs)",
+    "thick new york strip boneless beef top loin or hangar steak": "beef, short loin, top loin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades",
     "thick or 2 slimmer leeks": "leeks, (bulb and lower leaf-portion), raw",
     "thick slice of bread for each bowl of soup": "bread, white, commercially prepared (includes soft bread crumbs)",
     "thick slices bread from a large, crusty loaf": "bread, french or vienna (includes sourdough)",
     "thick slices country or sourdough bread": "bread, french or vienna (includes sourdough)",
     "thick slices sourdough or country bread": "bread, french or vienna (includes sourdough)",
     "thick-cut bacon": "pork, cured, bacon, unprepared",
-    "thick-cut beef steak, at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, t-bone, tri-tip, or filet mignon": null,
+    "thick-cut beef steak": null,
     "thin asparagus": "asparagus, raw",
+    "thin pasta (such as vermicelli or fine spaghetti), broken into 1-inch pieces, or 1/2 cup of small, non-tubular pasta, like orzo": "pasta",
     "thin pasta, broken into 1-inch pieces": "pasta, dry, enriched",
     "thin rice noodles": "rice noodles",
     "thin slices aged provolone or swiss cheese": "cheese, provolone",
+    "thin slices prosciutto": "prosciutto",
     "thin spaghetti": "pasta",
+    "thinly sliced cloves of garlic": "garlic, raw",
     "thinly sliced mint leaves": "spearmint, fresh",
     "thinly sliced or torn basil leaves": "basil, fresh",
     "thinly sliced pork belly": "pork, fresh, belly, raw",
+    "thinly sliced prosciutto": "prosciutto",
     "thinly sliced scallion": "onions, spring or scallions (includes tops and bulb)",
     "thinly sliced scallions": "onions, spring or scallions (includes tops and bulb)",
     "thinly sliced shallots or 1 medium white or red onion": null,
-    "thinly-sliced or diced cabbage, any variety": "cabbage, raw",
+    "thinly-sliced or diced cabbage": "cabbage",
     "thinly-sliced pickles": "pickles, cucumber, dill or kosher dill",
     "thinly-sliced salami": "salami, dry or hard, pork",
     "thinly-sliced scallion": "onions, spring or scallions (includes tops and bulb)",
@@ -2946,7 +3139,7 @@
     "to 4 pounds manila (my first choice), cherrystone, or little neck clams": null,
     "toasted and cooled pecan halves": "nuts, pecans, dry roasted, without salt added",
     "toasted baguette slices": "bread, french or vienna, toasted (includes sourdough)",
-    "toasted bread or grilled cheese for serving": null,
+    "toasted bread or grilled cheese": null,
     "toasted coconut": "nuts, coconut meat, dried (desiccated), toasted",
     "toasted hazelnuts": "nuts, hazelnuts or filberts, dry roasted, without salt added",
     "toasted pepitas": "seeds, pumpkin and squash seed kernels, roasted, without salt",
@@ -2961,6 +3154,7 @@
     "toasted white sesame seeds": "seeds, sesame seeds, whole, roasted and toasted",
     "toasted, salted pepitas": "seeds, pumpkin and squash seed kernels, roasted, with salt added",
     "toffee bits": "candies, toffee, prepared-from-recipe",
+    "tofu": null,
     "tomato": "tomatoes, red, ripe, raw, year round average",
     "tomato 5 mm to 1 cm thick slices, 1 per burger": "tomatoes, red, ripe, raw, year round average",
     "tomato juice": "tomato juice, canned, with salt added",
@@ -2979,14 +3173,17 @@
     "top round lamb": "lamb, leg, whole (shank and sirloin), separable lean and fat, trimmed to 1/4\" fat, choice, raw",
     "top sirloin": "beef, top sirloin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
     "top sirloin steak": "beef, top sirloin, steak, separable lean and fat, trimmed to 1/8\" fat, all grades, raw",
+    "toppings of your choice, such as grated cheddar cheese, crispy diced bacon bits, minced chives, sour cream, and store-bought homemade chili": null,
     "torn basil leaves": "basil, fresh",
     "torn chunks french, sourdough or country loaf, torn into bits": "bread, french or vienna (includes sourdough)",
     "torn fresh basil": "basil, fresh",
+    "torn fresh basil leaves": "basil, fresh",
     "tortilla chips": "snacks, tortilla chips, plain, white corn, salted",
     "tortillas": null,
     "tostada shells": "tostada shells, corn",
     "tostadas": "tostada shells, corn",
     "trimmed skirt steak, cut crosswise into 5- to 6-inch pieces": "beef, plate steak, boneless, inside skirt, separable lean and fat, trimmed to 0\" fat, all grades, raw",
+    "triple sec": "orange liqueur",
     "tube or can of tomato paste": "tomato products, canned, paste, without salt added",
     "tuna": "fish, tuna, light, canned in water, drained solids (includes foods for usda's food distribution program)",
     "turbinado or coarse sugar for sprinkling": "sugar, turbinado",
@@ -2995,13 +3192,14 @@
     "turkey": null,
     "turkey broth": "chicken broth",
     "turkey drippings or melted unsalted butter": null,
-    "turkey or chicken stock (i either use homemade chicken or better than bouillon’s turkey base)": "chicken broth",
+    "turkey or chicken stock": "chicken broth",
     "turkey sausage": "sausage, turkey, fresh, raw",
     "turkish or 1/2 california bay leaf": "spices, bay leaf",
     "turmeric": "spices, turmeric, ground",
     "turmeric powder": "spices, turmeric, ground",
     "tuscan kale": "kale, raw",
     "two us sticks unsalted butter": "butter",
+    "tzatziki sauce": "tzatziki",
     "unbaked flaky pie crust or all butter pie crust": "pie crust, standard-type, prepared from recipe, unbaked",
     "unbleached all purpose flour": "all-purpose flour",
     "unbleached all-purpose flour": "wheat flour, white, all-purpose, enriched, unbleached",
@@ -3010,12 +3208,13 @@
     "unbleached high-gluten or bread flour": "bread flour",
     "unbleached, all-purpose or bread flour": "all-purpose flour",
     "uncooked angel hair pasta": "pasta, dry, enriched",
-    "uncooked arborio, carnaroli, or another short-grained rice, such as sushi rice": "rice, white, short-grain",
+    "uncooked arborio, carnaroli, or another short-grained rice": "rice, white, short-grain",
     "uncooked chicken wings": null,
     "uncooked couscous": "couscous, dry",
     "uncooked ditalini pasta": "pasta, dry, enriched",
     "uncooked elbow macaroni": "pasta, dry, enriched",
     "uncooked elbow pasta": "pasta",
+    "uncooked farro": "dried farro",
     "uncooked japanese rice": "rice, white, short-grain",
     "uncooked long grain rice": "rice, white, long-grain, regular, raw, enriched",
     "uncooked millet": "millet, raw",
@@ -3023,7 +3222,7 @@
     "uncooked quinoa": "quinoa, uncooked",
     "uncooked shrimp": "crustaceans, shrimp, raw",
     "uncooked sushi rice": "rice, white, short-grain",
-    "uncooked white long-grain rice, such as basmati": "rice, white, long-grain, regular, raw, enriched",
+    "uncooked white long-grain rice": "rice, white, long-grain, regular, raw, enriched",
     "uncooked white rice": "rice, white, long-grain, regular, raw, enriched",
     "uncooked wild rice blend": "wild rice, raw",
     "unflavored gelatin": "gelatins, dry powder, unsweetened",
@@ -3072,6 +3271,7 @@
     "vadouvan curry powder": "spices, curry powder",
     "vanilla": "vanilla extract",
     "vanilla bean paste": "vanilla extract",
+    "vanilla bean paste or vanilla extract": "vanilla extract",
     "vanilla cake mix": "cake, yellow, enriched, dry mix",
     "vanilla essence": "vanilla extract",
     "vanilla extract or vanilla bean paste": "vanilla extract",
@@ -3083,9 +3283,10 @@
     "vanilla yogurt": "yogurt, vanilla, low fat.",
     "vegan butter": "margarine, 80% fat, stick, includes regular and hydrogenated corn and soybean oils",
     "vegan mayonnaise": "mayonnaise dressing, no cholesterol",
+    "vegetable bouillon": null,
     "vegetable broth": "soup, vegetable broth, ready to serve",
     "vegetable broth + splashes more": "soup, vegetable broth, ready to serve",
-    "vegetable of other neutral oil, for frying": "vegetable oil",
+    "vegetable of other neutral oil": "vegetable oil",
     "vegetable oil spray": "oil, pam cooking spray, original",
     "vegetable or another neutral cooking oil or melted butter": null,
     "vegetable or another neutral oil": "vegetable oil",
@@ -3137,7 +3338,9 @@
     "water or broth": "water, bottled, generic",
     "water or chicken stock": "water, bottled, generic",
     "water or low-sodium broth": "water, bottled, generic",
+    "water or milk": null,
     "water or mushroom broth": "water, bottled, generic",
+    "water or reserved chickpea cooking water": "water, bottled, generic",
     "watercress or spinach": "watercress, raw",
     "waxy potatoes": "potatoes, flesh and skin, raw",
     "well-drained sauerkraut": "sauerkraut, canned, solids and liquids",
@@ -3146,6 +3349,7 @@
     "well-shaken buttermilk": "milk, buttermilk, fluid, whole",
     "well-stirred tahini": "seeds, sesame butter, tahini, type of kernels unspecified",
     "wheat bran": "wheat bran, crude",
+    "wheat chex": "wheat chex cereal",
     "wheat flour": "whole wheat flour",
     "wheat germ": "wheat germ, crude",
     "wheel of brie": "cheese, brie",
@@ -3162,6 +3366,7 @@
     "white bread, crusts removed, torn into rough 1/2-inch pieces": "bread, white, commercially prepared (includes soft bread crumbs)",
     "white button mushrooms": "mushrooms, white, raw",
     "white button or cremini mushrooms": "mushrooms, white, raw",
+    "white cake mix": "cake, pudding-type, white, enriched, dry mix",
     "white caster sugar": "granulated sugar",
     "white cheddar": "cheese, cheddar",
     "white cheddar cheese": "cheese, cheddar (includes foods for usda's food distribution program)",
@@ -3198,6 +3403,7 @@
     "white-skinned potatoes, peeled, halved lengthwise, cut crosswise into 1/4-inch-thick slices": "potatoes, white, flesh and skin, raw",
     "white-wine vinegar": "vinegar, red wine",
     "whole almonds": "nuts, almonds",
+    "whole artichoke hearts": "artichoke hearts",
     "whole baby clams": "mollusks, clam, mixed species, canned, drained solids",
     "whole black peppercorns": "black pepper",
     "whole blanched almonds": "nuts, almonds, blanched",
@@ -3274,8 +3480,7 @@
     "worcestershire or soy sauce": "sauce, worcestershire",
     "worcestershire sauce": "sauce, worcestershire",
     "yam or sweet potato": "sweet potato, raw, unprepared (includes foods for usda's food distribution program)",
-    "yams or orange-fleshed sweet potatoes, cut into 4 lengthwise wedges, or 8": "sweet potato, raw, unprepared (includes foods for usda's food distribution program)",
-    "yams or orange-fleshed sweet potatoes, cut into 4 lengthwise wedges, or 8, if your yams are very thick": "sweet potato, raw, unprepared (includes foods for usda's food distribution program)",
+    "yams or orange-fleshed sweet potatoes": "sweet potato, raw, unprepared (includes foods for usda's food distribution program)",
     "yeast": "leavening agents, yeast, baker's, active dry",
     "yellow american cheese": "cheese, pasteurized process, american, fortified with vitamin d",
     "yellow bell pepper": "peppers, sweet, yellow",
@@ -3293,6 +3498,7 @@
     "yellow squash": "squash, summer, crookneck and straightneck",
     "yellow summer squash": "squash, summer, crookneck and straightneck, raw",
     "yellow, medium starch potatoes such as yukon gold": "potatoes, flesh and skin, raw",
+    "yellow, medium starch potatoes such as yukon gold (about eight 5-ounce potatoes)": "potatoes, flesh and skin, raw",
     "yellow, red, orange, or green bell peppers": "peppers, sweet, red, raw",
     "yogurt": null,
     "yolks from 12 large eggs": "egg, yolk, raw, fresh",
@@ -3318,13 +3524,19 @@
     "zucchini squash": "squash, summer, zucchini, includes skin, raw",
     "zucchinis": "squash, summer, zucchini, includes skin, raw",
     "” piece of daikon": "radishes, oriental",
-    "▢ 1 tbsp sake or dry sherry, white wine, water": null,
-    "▢ cooking oil neutral flavor, high smoke point for deep frying": "vegetable oil"
+    "▢ 1 tbsp sake or dry sherry, white wine, water": null
   },
   "entries": {
     "a spice mill or mortar and pestle": {
       "category": "Household",
       "kind": "product"
+    },
+    "achiote paste": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 399743 (ELYUCATECO, CONDIMENTED ANNATTO PASTE, ELYUCATECO): 185 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/399743/nutrients",
+        "value": 185.0
+      }
     },
     "all-purpose flour": {
       "fdc_id": 168936,
@@ -3351,17 +3563,145 @@
       "category": "Household",
       "kind": "product"
     },
+    "amaretto liqueur": {
+      "fdc_id": 2710623
+    },
+    "amaretto, kahlua, or brandy": {
+      "fdc_id": 2710623
+    },
+    "amchoor powder": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 400113: serving 10 g = 1 Tbsp",
+        "value": 160.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 400113 (SIVA'S, AMHUR POWDER (DRY MANGO POWDER), RESHMI'S GROUP, INC): 360 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/400113/nutrients",
+        "value": 360.0
+      },
+      "trace_ok": true
+    },
+    "anchovy paste": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2026262: serving 14 g = 1 Tbsp",
+        "value": 224.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2026262 (ANCHOVY PASTE, The Napoleon Co.): 214 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2026262/nutrients",
+        "value": 214.0
+      }
+    },
+    "andes peppermint crunch baking chips": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 485607: serving 40 g = 3 Tbsp",
+        "value": 213.3
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 485607 (ANDES, BAKING CHIPS, PEPPERMINT CRUNCH, Andes Candies L.P.): 550 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/485607/nutrients",
+        "value": 550.0
+      }
+    },
+    "artichoke hearts": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1952391: serving 60 g = 1/4 cup",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1952391 (QUARTERED ARTICHOKE HEARTS IN WATER, Safeway, Inc.): 33 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1952391/nutrients",
+        "value": 33.0
+      }
+    },
+    "asiago cheese": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 403087 (ASIAGO CHEESE, BELGIOIOSO): 357 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/403087/nutrients",
+        "value": 357.0
+      }
+    },
+    "assorted nerimono (japanese fish cakes)": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 537791 (ASSORTED FISH CAKE (ODEN SET), ANA): 166 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/537791/nutrients",
+        "value": 166.0
+      }
+    },
+    "baby corn": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2588804 (SWEET & WHOLE IN BRINE BABY CORN, Lieber Chocolate & Food Products Co.): 32 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2588804/nutrients",
+        "value": 32.0
+      }
+    },
+    "bacon bits": {
+      "fdc_id": 2707466
+    },
+    "baked or smoked tofu": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 390191 (WILDWOOD, SPROUTOFU, ORGANIC BAKED TOFU, SAVORY, Pulmuone Foods USA, Inc.): 176 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/390191/nutrients",
+        "value": 176.0
+      }
+    },
+    "balsamic glaze": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 373107: serving 17 g = 1 Tbsp",
+        "value": 272.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 373107 (GLAZE WITH BALSAMIC VINEGAR OF MODENA, MONARI FEDERZONI): 176 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/373107/nutrients",
+        "value": 176.0
+      }
+    },
     "black pepper": {
       "fdc_id": 170931,
       "grams_per_cup": {
         "none": "Grind size changes the weight of a volume of pepper too much to convert."
       }
     },
+    "black vinegar": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 403134: serving 15 g = 1 Tbsp",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 403134 (CHINKIANG VINEGAR, Walong Marketing, Inc.): 60 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/403134/nutrients",
+        "value": 60.0
+      }
+    },
+    "bourbon liqueur or bourbon": {
+      "fdc_id": 2710623
+    },
     "bread flour": {
       "fdc_id": 168896,
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 127.0
+      }
+    },
+    "brioche buns": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 929954 (BRIOCHE BUNS, Bimbo Bakeries USA, Inc.): 282 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/929954/nutrients",
+        "value": 282.0
+      }
+    },
+    "broth": {
+      "fdc_id": 2707132
+    },
+    "brown rice syrup": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1126338: serving 22 g = 1 Tbsp",
+        "value": 352.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1126338 (ORGANIC SMOOTH & MILD BROWN RICE SYRUP, BROWN RICE, Glorybee Honey & Supplies): 318 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1126338/nutrients",
+        "value": 318.0
       }
     },
     "brown sugar": {
@@ -3371,11 +3711,40 @@
         "value": 220.0
       }
     },
+    "buffalo wing sauce": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 385157: serving 32 g = 2 Tbsp",
+        "value": 256.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 385157 (BUFFALO SAUCE, STEAK 'N SHAKE): 141 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/385157/nutrients",
+        "value": 141.0
+      }
+    },
+    "burrata": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2070553 (BURRATA, Belgioioso Cheese, Inc.): 250 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2070553/nutrients",
+        "value": 250.0
+      }
+    },
     "butter": {
       "fdc_id": 173430,
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 227.0
+      }
+    },
+    "cacao nibs": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1885731: serving 30 g = 0.25 cup",
+        "value": 120.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1885731 (ORGANIC RAW CACAO NIBS, Wegmans Food Markets, Inc.): 600 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1885731/nutrients",
+        "value": 600.0
       }
     },
     "cake flour": {
@@ -3385,9 +3754,30 @@
         "value": 114.0
       }
     },
+    "candied walnuts": {
+      "fdc_id": 2707532
+    },
+    "cassava flour": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 593835: serving 35 g = 1/4 cup",
+        "value": 140.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 593835 (CASSAVA FLOUR, Bob's Red Mill Natural Foods, Inc.): 371 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/593835/nutrients",
+        "value": 371.0
+      }
+    },
     "cheesecloth": {
       "category": "Household",
       "kind": "product"
+    },
+    "chestnut spread": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 438259 (CASTELLINO, CHESTNUT CREAM, F.lli Castellino S.r.l.): 278 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/438259/nutrients",
+        "value": 278.0
+      }
     },
     "chicken broth": {
       "fdc_id": 174536,
@@ -3395,6 +3785,86 @@
         "source": "USDA FoodData Central FDC 174536: Soup, chicken broth, ready-to-serve, 249g/cup",
         "url": "https://fdc.nal.usda.gov/food-details/174536/nutrients",
         "value": 249.0
+      }
+    },
+    "chili bean sauce": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 399995 (WAN JAN SHAN, FORMOSA CHILI BEAN SAUCE, WAN JAN SHAN): 116 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/399995/nutrients",
+        "value": 116.0
+      }
+    },
+    "chili crisp": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 393070: serving 60 g = 0.25 cup",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 393070 (SPICY CHILI CRISP, GUIYANG NANMING LAOGANMA SPECIAL FLAVOUR CO., LTD.): 703 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/393070/nutrients",
+        "value": 703.0
+      }
+    },
+    "chili garlic sauce": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1862008: serving 17 g = 1 Tbsp",
+        "value": 272.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1862008 (CHILI GARLIC SAUCE, CHILI GARLIC, Lee Kum Kee Co. Ltd.): 88 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1862008/nutrients",
+        "value": 88.0
+      }
+    },
+    "chili oil": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1498030: serving 15 g = 1 Tbsp",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1498030 (CHILI OIL, Richin Trading Inc.): 900 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1498030/nutrients",
+        "value": 900.0
+      }
+    },
+    "chipotle chile in adobo sauce": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 370559: serving 34 g = 2 Tbsp",
+        "value": 272.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 370559 (CHIPOTLE PEPPERS IN ADOBO SAUCE, PRODUCTOS CAREY, S.A. DE C.V.): 74 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/370559/nutrients",
+        "value": 74.0
+      }
+    },
+    "chocolate sprinkles": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2568481: serving 24 g = 2 tbsp (24g)",
+        "value": 192.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2568481 (CHOCOLATE FLAVORED SPRINKLES, CHOCOLATE, Signature Brands LLC): 458 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2568481/nutrients",
+        "value": 458.0
+      }
+    },
+    "chopped jarred calabrian chiles in oil": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2590935 (CALABRIAN IN OIL CHILI PEPPERS, Cachere Distributing Inc.): 117 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2590935/nutrients",
+        "value": 117.0
+      }
+    },
+    "chu hou sauce (see notes)": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 458494: serving 18.0 g = 1 Tbsp",
+        "value": 288.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 458494 (CHEE HOU SAUCE, Koon Chun Hing Kee Soy & Sauce): 278 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/458494/nutrients",
+        "value": 278.0
       }
     },
     "cocoa powder": {
@@ -3417,6 +3887,28 @@
         "value": 218.0
       }
     },
+    "coconut sugar": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 595579: serving 10 g = 2.5 tsp",
+        "value": 192.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 595579 (COCONUT SUGAR, Wal-Mart Stores, Inc.): 400 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/595579/nutrients",
+        "value": 400.0
+      }
+    },
+    "corn chex": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2732833: serving 39 g = 1 1/4 cup",
+        "value": 31.2
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2732833 (Corn Chex Cereal, GENERAL MILLS SALES INC.): 385 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2732833/nutrients",
+        "value": 385.0
+      }
+    },
     "cornstarch": {
       "fdc_id": 169698,
       "grams_per_cup": {
@@ -3429,6 +3921,39 @@
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 232.0
+      }
+    },
+    "creole seasoning": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 402127 (FRENCH QUARTER CREOLE SEASONING, JERRY'S SMOKEHOUSE): 73 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/402127/nutrients",
+        "value": 73.0
+      },
+      "trace_ok": true
+    },
+    "crispy onions": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 458263: serving 15 g = 3 Tbsp",
+        "value": 80.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 458263 (CRISPY FRIED ONIONS, Deep Foods Inc.): 600 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/458263/nutrients",
+        "value": 600.0
+      }
+    },
+    "crème de framboise [raspberry liqueuer]": {
+      "fdc_id": 2710623
+    },
+    "crème fraîche": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1107127: serving 28 g = 2 Tbsp",
+        "value": 224.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1107127 (CREME FRAICHE, Savencia Cheese USA LLC): 393 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1107127/nutrients",
+        "value": 393.0
       }
     },
     "deep pie dish, or frankly, any old dish you feel like baking in": {
@@ -3454,6 +3979,10 @@
       "category": "Household",
       "kind": "product"
     },
+    "dried beans or pie weights": {
+      "category": "Household",
+      "kind": "product"
+    },
     "dried beans or pie weights, for baking": {
       "category": "Household",
       "kind": "product"
@@ -3466,6 +3995,17 @@
       "category": "Other",
       "kind": "product"
     },
+    "dried farro": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2060079: serving 45 g = 0.25 cup",
+        "value": 180.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2060079 (ORGANIC PEARLED FARRO, Wal-Mart Stores, Inc.): 333 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2060079/nutrients",
+        "value": 333.0
+      }
+    },
     "dried oregano": {
       "fdc_id": 171328,
       "grams_per_cup": {
@@ -3473,6 +4013,20 @@
         "url": "https://fdc.nal.usda.gov/food-details/171328/nutrients",
         "value": 48.0
       }
+    },
+    "dried porcini mushrooms": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2567671: serving 10 g = 1/2 cup (10g)",
+        "value": 20.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2567671 (DRIED PORCINI MUSHROOMS, Giorgio Foods, Inc.): 300 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2567671/nutrients",
+        "value": 300.0
+      }
+    },
+    "dried shrimp": {
+      "fdc_id": 2706366
     },
     "dried thyme": {
       "fdc_id": 170938,
@@ -3488,12 +4042,52 @@
         "value": 236.0
       }
     },
+    "finely chopped crystallized ginger": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 582331: serving 30 g = 3 Tbsp",
+        "value": 160.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 582331 (DRIED CANDIED GINGER, Target Stores): 367 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/582331/nutrients",
+        "value": 367.0
+      }
+    },
     "fish sauce": {
       "fdc_id": 174531,
       "grams_per_cup": {
         "source": "USDA FoodData Central FDC 174531: Sauce, fish, ready-to-serve, 18g/tbsp x 16",
         "url": "https://fdc.nal.usda.gov/food-details/174531/nutrients",
         "value": 288.0
+      }
+    },
+    "food coloring": {
+      "category": "Baking",
+      "kind": "product"
+    },
+    "freeze-dried strawberries": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2586373: serving 10 g = 1/2 cup",
+        "value": 20.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2586373 (FREEZE-DRIED STRAWBERRIES, Crunchies Natural Food Company, LLC): 350 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2586373/nutrients",
+        "value": 350.0
+      }
+    },
+    "fresh or frozen udon noodles": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 548153 (SANUKI UDON NOODLES, NISSIN): 145 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/548153/nutrients",
+        "value": 145.0
+      }
+    },
+    "fukujinzuke pickles": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 394657 (FUKUJINZUKE, Rafu Nanka Zuke Co.): 107 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/394657/nutrients",
+        "value": 107.0
       }
     },
     "garam masala": {
@@ -3508,9 +4102,71 @@
       },
       "trace_ok": true
     },
+    "garlic paste": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2671029: serving 14 g = 1 Tbsp",
+        "value": 224.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2671029 (GARLIC PASTE, GARLIC, Gildemeister Trading Corp.): 143 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2671029/nutrients",
+        "value": 143.0
+      }
+    },
+    "ginger beer": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 489721 (GINGER BEER, SPARKLING COCKTAIL MIXER, Thirsty Ventures, Inc.): 38 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/489721/nutrients",
+        "value": 38.0
+      }
+    },
+    "ginger garlic paste": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 472156: serving 16 g = 1 Tbsp",
+        "value": 256.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 472156 (GINGER GARLIC PASTE, Deep Foods Inc.): 94 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/472156/nutrients",
+        "value": 94.0
+      }
+    },
+    "glutinous rice flour": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 364843: serving 30 g = 0.25 cup",
+        "value": 120.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 364843 (GLUTINOUS RICE FLOUR, ERAWAN): 367 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/364843/nutrients",
+        "value": 367.0
+      }
+    },
+    "gochujang": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1819085: serving 20 g = 1 Tbsp",
+        "value": 320.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1819085 (GOCHUJANG KOREAN FERMENTED CHILI SAUCE, GOCHUJANG, Jayone Foods, Inc.): 225 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1819085/nutrients",
+        "value": 225.0
+      }
+    },
     "gold luster dust": {
       "category": "Baking",
       "kind": "product"
+    },
+    "granola": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 373696: serving 55 g = 0.5 cup",
+        "value": 110.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 373696 (GRANOLA, POST): 436 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/373696/nutrients",
+        "value": 436.0
+      }
     },
     "granulated sugar": {
       "fdc_id": 169655,
@@ -3526,6 +4182,22 @@
         "value": 245.0
       }
     },
+    "green food coloring": {
+      "category": "Baking",
+      "kind": "product"
+    },
+    "ground annatto": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 369297: serving 14 g = 1 Tbsp",
+        "value": 224.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 369297 (LA NUESTRA, GROUND ANNATTO, Montalvan's Sales): 371 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/369297/nutrients",
+        "value": 371.0
+      },
+      "trace_ok": true
+    },
     "ground cumin": {
       "fdc_id": 170923,
       "grams_per_cup": {
@@ -3534,8 +4206,32 @@
         "value": 96.0
       }
     },
+    "ground flaxseed": {
+      "fdc_id": 169414,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1638742 (GROUND FLAXSEED, Topco Associates, Inc.): serving 13 g = 2 Tbsp",
+        "value": 104.0
+      }
+    },
     "guacamole": {
       "fdc_id": 2709307
+    },
+    "guanciale": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2671410 (GUANCIALE, Maestri D'Italia Inc): 607 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2671410/nutrients",
+        "value": 607.0
+      }
+    },
+    "gummy worms": {
+      "fdc_id": 2710359
+    },
+    "halloumi cheese": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 473542 (HALLOUMI CHEESE, KRYSSOS COMPANY): 321 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/473542/nutrients",
+        "value": 321.0
+      }
     },
     "heavy cream": {
       "fdc_id": 170859,
@@ -3544,6 +4240,14 @@
         "value": 238.0
       }
     },
+    "herbs de provence": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 512842 (HERBS DE PROVENCE WITH LAVENDER, Big Y Foods, Inc.): 281 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/512842/nutrients",
+        "value": 281.0
+      },
+      "trace_ok": true
+    },
     "honey": {
       "fdc_id": 169640,
       "grams_per_cup": {
@@ -3551,9 +4255,88 @@
         "value": 340.0
       }
     },
+    "italian seasoning": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2033501 (PROMENADE RED APPLE MARKET, LEONARDO ITALIAN SEASONING, The Nutmeg Spice Co. Ltd.): 323 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2033501/nutrients",
+        "value": 323.0
+      },
+      "trace_ok": true
+    },
+    "japanese curry roux": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 593137 (GOLDEN CURRY SAUCE MIX, S & B Shokuhin Company Ltd): 500 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/593137/nutrients",
+        "value": 500.0
+      }
+    },
+    "japanese roasted green pea snack": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 374828 (GREEN PEA CRISPS, Calbee North America, LLC): 429 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/374828/nutrients",
+        "value": 429.0
+      }
+    },
+    "kamaboko fish cake": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 533671 (RED KAMABOKO STEAMED FISHCAKE, FISHCAKE): 123 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/533671/nutrients",
+        "value": 123.0
+      }
+    },
+    "kecap manis": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 380513: serving 15 g = 1 Tbsp",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 380513 (SWEET SOY SAUCE, PANTAINORASINGH MANUFACTURER CO.): 300 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/380513/nutrients",
+        "value": 300.0
+      }
+    },
     "kitchen twine": {
       "category": "Household",
       "kind": "product"
+    },
+    "kombu": {
+      "fdc_id": 2709988
+    },
+    "lemon curd": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 555629: serving 20 g = 1 Tbsp",
+        "value": 320.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 555629 (LEMON CURD, ANDROS): 345 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/555629/nutrients",
+        "value": 345.0
+      }
+    },
+    "lemon pie filling": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1140099: serving 91 g = 1/3 cup",
+        "value": 273.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1140099 (ORIGINAL LEMON PIE FILLING & TOPPING, ORIGINAL LEMON, Pinnacle Foods Group LLC): 132 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1140099/nutrients",
+        "value": 132.0
+      }
+    },
+    "lettuce": {
+      "fdc_id": 2709789
+    },
+    "light coconut milk": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 492328: serving 100 g = 0.5 cup",
+        "value": 200.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 492328 (LITE COCONUT MILK, Mid U S Trading Company): 90 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/492328/nutrients",
+        "value": 90.0
+      }
     },
     "light corn syrup": {
       "fdc_id": 168837,
@@ -3563,11 +4346,50 @@
         "value": 341.0
       }
     },
+    "limoncello liqueur": {
+      "fdc_id": 2710623
+    },
+    "liquid red food color": {
+      "category": "Baking",
+      "kind": "product"
+    },
+    "mango chutney": {
+      "fdc_id": 2709309
+    },
     "maple syrup": {
       "fdc_id": 169661,
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 315.0
+      }
+    },
+    "marinated artichoke hearts": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2096654: serving 30 g = 0.125 cup",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2096654 (MARINATED ARTICHOKE HEARTS, Wakefern Food Corporation): 83 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2096654/nutrients",
+        "value": 83.0
+      }
+    },
+    "mascarpone cheese": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2595456: serving 14 g = 1 tbsp. (1/2 oz./14g)",
+        "value": 224.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2595456 (MASCARPONE CHEESE, Belgioioso Cheese, Inc.): 429 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2595456/nutrients",
+        "value": 429.0
+      }
+    },
+    "matcha": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 481533 (MATCHA GREEN TEA POWDER, Jade Monk Beverage Company, Inc.): 300 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/481533/nutrients",
+        "value": 300.0
       }
     },
     "mayonnaise": {
@@ -3578,6 +4400,17 @@
         "value": 220.0
       }
     },
+    "mexican crema": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 588389: serving 30 g = 2 Tbsp",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 588389 (MEXICAN STYLE CREMA MEXICANA, XIMENA): 200 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/588389/nutrients",
+        "value": 200.0
+      }
+    },
     "milk": {
       "fdc_id": 171265,
       "grams_per_cup": {
@@ -3585,15 +4418,39 @@
         "value": 245.0
       }
     },
+    "mint green food coloring": {
+      "category": "Baking",
+      "kind": "product"
+    },
     "mirin": {
       "grams_per_cup": {
         "source": "Not in USDA; rice wine with sugar, comparable to sweetened water/broth densities (~240g/cup)",
         "value": 240.0
       }
     },
+    "mixed berries": {
+      "fdc_id": 2709271
+    },
+    "mixed frozen berries": {
+      "fdc_id": 2709272
+    },
     "mixing bowls": {
       "category": "Household",
       "kind": "product"
+    },
+    "nori": {
+      "fdc_id": 2709988
+    },
+    "nutritional yeast": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2467967: serving 16 g = 3 tbsp",
+        "value": 85.3
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2467967 (NUTRITIONAL YEAST, Wegmans Food Markets, Inc.): 375 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2467967/nutrients",
+        "value": 375.0
+      }
     },
     "olive oil": {
       "fdc_id": 171413,
@@ -3602,12 +4459,36 @@
         "value": 216.0
       }
     },
+    "orange liqueur": {
+      "fdc_id": 2710623
+    },
     "oyster sauce": {
       "fdc_id": 174529,
       "grams_per_cup": {
         "source": "USDA FoodData Central FDC 174529: Sauce, oyster, ready-to-serve, 18g/tbsp x 16",
         "url": "https://fdc.nal.usda.gov/food-details/174529/nutrients",
         "value": 288.0
+      }
+    },
+    "pancetta": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 522789 (PANCETTA, Euro Foods Inc.): 357 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/522789/nutrients",
+        "value": 357.0
+      }
+    },
+    "paneer": {
+      "fdc_id": 2705740
+    },
+    "panko breadcrumbs": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 385658: serving 28 g = 1/2 cup",
+        "value": 56.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 385658 (PANKO BREAD CRUMBS, Target Stores): 357 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/385658/nutrients",
+        "value": 357.0
       }
     },
     "paper towels": {
@@ -3625,15 +4506,134 @@
         "value": 258.0
       }
     },
+    "peanut butter chips": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 570979 (PEANUT BUTTER CHIPS, Topco Associates, Inc.): 533 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/570979/nutrients",
+        "value": 533.0
+      }
+    },
+    "pickle juice": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 369360: serving 30 g = 2 Tbsp",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 369360 (PICKLE JUICE, FARMSTEAD FERMENTS): 17 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/369360/nutrients",
+        "value": 17.0
+      }
+    },
+    "pickled onions": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2445844 (PICKLED ONIONS, Love Beets USA, LLC): 54 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2445844/nutrients",
+        "value": 54.0
+      }
+    },
+    "pink food color": {
+      "category": "Baking",
+      "kind": "product"
+    },
+    "pink food coloring": {
+      "category": "Baking",
+      "kind": "product"
+    },
+    "pitted kalamata olives": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2499509 (KALAMATA PITTED OLIVES, KALAMATA, Wakefern Food Corporation): 267 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2499509/nutrients",
+        "value": 267.0
+      }
+    },
+    "pizza dough": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2696525 (Gold Medal All Trumps High Gluten Pizza Dough Balls, GENERAL MILLS SALES INC.): 241 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2696525/nutrients",
+        "value": 241.0
+      }
+    },
     "plastic wrap": {
       "category": "Household",
       "kind": "product"
+    },
+    "poblano peppers": {
+      "fdc_id": 2709798
+    },
+    "pomegranate molasses": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1009651: serving 18 g = 1 Tbsp",
+        "value": 288.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1009651 (MOLASSES, POMEGRANATE, Tvt's International Export & Import Co.): 222 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1009651/nutrients",
+        "value": 222.0
+      }
     },
     "powdered sugar": {
       "fdc_id": 169656,
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 120.0
+      }
+    },
+    "prosciutto": {
+      "fdc_id": 2705879
+    },
+    "red food coloring": {
+      "category": "Baking",
+      "kind": "product"
+    },
+    "red food colouring": {
+      "category": "Baking",
+      "kind": "product"
+    },
+    "red gel food coloring": {
+      "category": "Baking",
+      "kind": "product"
+    },
+    "red gel icing": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2619218 (RED WRITING GEL, RED, Cake Craft, LLC): 300 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2619218/nutrients",
+        "value": 300.0
+      }
+    },
+    "red pickled ginger": {
+      "fdc_id": 2710082
+    },
+    "reduced fat feta cheese": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 471704: serving 28 g = 0.25 cup",
+        "value": 112.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 471704 (REDUCED FAT FETA CHEESE, Saputo Cheese USA Inc.): 214 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/471704/nutrients",
+        "value": 214.0
+      }
+    },
+    "refrigerated ravioli": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 364244: serving 106 g = 1 cup",
+        "value": 106.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 364244 (GIOVANNI RANA, CHEESE FORTE RAVIOLI, RANA MEAL SOLUTIONS, LLC): 264 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/364244/nutrients",
+        "value": 264.0
+      }
+    },
+    "rice chex cereal": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2724575: serving 40 g = 1 1/3 cup",
+        "value": 30.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2724575 (Rice Chex Breakfast Cereal, GENERAL MILLS SALES INC.): 375 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2724575/nutrients",
+        "value": 375.0
       }
     },
     "rice vinegar": {
@@ -3650,6 +4650,17 @@
         "value": 80.0
       }
     },
+    "romesco sauce": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 388708: serving 30 g = 2 Tbsp",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 388708 (ROMESCO SAUCE, Restaurant Lulu Inc.): 233 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/388708/nutrients",
+        "value": 233.0
+      }
+    },
     "sake": {
       "fdc_id": 167723,
       "grams_per_cup": {
@@ -3663,6 +4674,19 @@
         "none": "Crystal size varies too much between sea salts to convert volume to weight."
       }
     },
+    "shelf-stable or refrigerated potato gnocchi": {
+      "fdc_id": 2708722
+    },
+    "shirataki noodles": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1126226 (SHIRATAKI NOODLES, Super Frec U.S.A. Inc.): 9 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1126226/nutrients",
+        "value": 9.0
+      }
+    },
+    "simple syrup": {
+      "fdc_id": 2710278
+    },
     "skewers": {
       "category": "Household",
       "kind": "product"
@@ -3674,15 +4698,102 @@
         "value": 242.0
       }
     },
+    "spanish chorizo": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2608857 (CHORIZO ESPANOL TRADITIONAL SPANISH SALAMI FLAVORED WITH PAPRIKA, CHORIZO ESPANOL, Strasner's Bar-B-Que): 357 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2608857/nutrients",
+        "value": 357.0
+      }
+    },
+    "spanish dry-cured ham": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 594651 (JAMON SERRANO, DON JUAN): 250 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/594651/nutrients",
+        "value": 250.0
+      }
+    },
+    "sprinkles": {
+      "fdc_id": 2710334
+    },
+    "st. germain liqueur": {
+      "fdc_id": 2710623
+    },
+    "tapioca starch": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 542685: serving 30 g = 0.25 cup",
+        "value": 120.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 542685 (TAPIOCA STARCH, NAMASTE): 333 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/542685/nutrients",
+        "value": 333.0
+      }
+    },
+    "thai red curry paste": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1900948: serving 15 g = 1 Tbsp",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1900948 (RED CURRY PASTE, Thai Agri Foods Co., Ltd.): 100 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1900948/nutrients",
+        "value": 100.0
+      }
+    },
+    "thai sweet chili sauce": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 399991: serving 30 g = 2 Tbsp",
+        "value": 240.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 399991 (RICHIN, SWEET CHILLI SAUCE, Richin Trading Inc.): 183 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/399991/nutrients",
+        "value": 183.0
+      }
+    },
     "toothpicks": {
       "category": "Household",
       "kind": "product"
+    },
+    "tzatziki": {
+      "fdc_id": 2705448
+    },
+    "umeboshi pickled sour plum": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 396531 (JFC, PICKLED PLUM, JFC International Inc.): 60 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/396531/nutrients",
+        "value": 60.0
+      }
     },
     "vegetable oil": {
       "fdc_id": 172370,
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 218.0
+      }
+    },
+    "wavy dill pickle potato chips": {
+      "fdc_id": 2709431
+    },
+    "wheat chex cereal": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2683135: serving 59 g = 1 cup",
+        "value": 59.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2683135 (Wheat Chex Cereal, GENERAL MILLS SALES INC.): 356 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2683135/nutrients",
+        "value": 356.0
+      }
+    },
+    "whipped cream": {
+      "fdc_id": 2705598
+    },
+    "white candy melts": {
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 486893 (WHITE CANDY MELTS, Wilton Enterprises Inc): 550 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/486893/nutrients",
+        "value": 550.0
       }
     },
     "whole wheat flour": {
@@ -3692,8 +4803,34 @@
         "value": 120.0
       }
     },
+    "whole-wheat panko breadcrumbs": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 1112003: serving 30 g = 1/2 cup",
+        "value": 60.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 1112003 (WHOLE WHEAT PANKO BREAD CRUMBS, WHOLE WHEAT, Wegmans Food Markets, Inc.): 333 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/1112003/nutrients",
+        "value": 333.0
+      }
+    },
     "wooden skewers": {
       "category": "Household",
+      "kind": "product"
+    },
+    "xanthan gum": {
+      "grams_per_cup": {
+        "source": "USDA FoodData Central Branded food 2663656: serving 10 g = 1 tbsp",
+        "value": 160.0
+      },
+      "kcal_per_100g": {
+        "source": "USDA FoodData Central Branded food 2663656 (XANTHAN GUM, Just About Foods LLC): 350 kcal per 100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/2663656/nutrients",
+        "value": 350.0
+      }
+    },
+    "yellow food coloring": {
+      "category": "Baking",
       "kind": "product"
     }
   },
@@ -3727,29 +4864,58 @@
     }
   },
   "not_food": {
+    "/8, 1/4": "Parser fragment of a list of alternative amounts, not an ingredient.",
+    "1/2 teaspoon finely grated": "A parser fragment with no ingredient name.",
+    "2 tablespoons": "Parser fragment: an amount with no ingredient.",
     "a combination or your choice of: butter, plain vinegar, minced fresh dill, caramelized onions, sour cream . shown up top is kachka’s sauerkraut powder and i’d be remiss if i didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook": "A serving-suggestion list of optional toppings plus commentary, not one ingredient.",
     "adapted from king arthur flour": "Attribution note.",
+    "aguamole": "A recipe section heading or sub-recipe title, not an ingredient line.",
     "and/or": "Connector word, not an ingredient.",
+    "apple and herb stuffing* for all seasons": "A recipe section heading or sub-recipe title, not an ingredient line.",
     "assembly": "Section heading 'ASSEMBLY'.",
+    "berry sauce": "All-caps section heading for a sub-recipe.",
+    "blue cheese butter": "Title-case section heading for a sub-recipe.",
     "braise": "Section heading (BRAISE).",
+    "browned butter steak sauce": "A recipe section heading or sub-recipe title, not an ingredient line.",
+    "burritos": "A recipe section heading or sub-recipe title, not an ingredient line.",
+    "cake": "A section heading, not an ingredient.",
+    "carolina red": "A recipe section heading or sub-recipe title, not an ingredient line.",
+    "chicken and noodle salad": "A section heading, not an ingredient.",
+    "chipotle sour cream": "A recipe section heading or sub-recipe title, not an ingredient line.",
+    "cinnamon filling": "Section heading of a component recipe.",
+    "cinnamon/cumin rub for ribs": "A recipe section heading or sub-recipe title, not an ingredient line.",
     "coating": "Section heading (Coating).",
+    "container": "Packaging word left by the parser; the food is in the parenthetical.",
     "cooked": "Fragment 'cooked', not an ingredient.",
+    "cookie": "Section heading of a component recipe.",
+    "corn slaw": "A recipe section heading or sub-recipe title, not an ingredient line.",
     "crushed, diced": "Preparation fragment, not an ingredient.",
     "crust": "Section header.",
+    "cucumber scallion raita": "A recipe section heading or sub-recipe title, not an ingredient line.",
+    "cup/40 grams drained": "Measurement fragment, not an ingredient.",
+    "cupcakes": "Section heading of a component recipe.",
     "dough": "Section header.",
     "dough and baking": "Section heading (\"Dough and Baking\"), not an ingredient.",
     "drained brined white beans from above": "Refers to beans already listed earlier in the recipe; counting it would double count. Matches 'marinated pork from above' and 'prepared rice noodles from above'.",
     "enough for 9 tarts": "Yield note.",
+    "envelope": "Packaging word left by the parser; the food is in the parenthetical.",
+    "filling": "A section heading, not an ingredient.",
     "finely grated": "Preparation fragment, not an ingredient.",
     "for 2 servings": "Serving note, not an ingredient.",
     "for serving": "A serving suggestion, not an ingredient.",
     "for the crab rangoon": "Section heading.",
     "for the sweet & sour dipping sauce": "Section heading.",
+    "french toast": "All-caps section heading.",
+    "frosting": "All-caps section heading.",
     "garnishes": "Section header.",
     "ingredient section": "Section heading.",
     "jam filling": "Section heading (sub-recipe) with no amount.",
     "lid": "Equipment (a lid), not an ingredient.",
+    "marinade": "Section heading, not an ingredient.",
     "marinated pork from above": "Reference to a component prepared earlier in the recipe; counting it would double count.",
+    "matzo balls": "A recipe section heading or sub-recipe title, not an ingredient line.",
+    "meatball mixture": "Section heading, not an ingredient.",
+    "meatballs": "A section heading, not an ingredient.",
     "months ago: caponata": "Blog 'Six Months Ago' link heading, not an ingredient.",
     "months ago: five egg sandwiches": "Blog 'Six Months Ago' link heading, not an ingredient.",
     "months ago: frozen coconut limeade": "Blog 'Six Months Ago' link heading, not an ingredient.",
@@ -3758,25 +4924,43 @@
     "months ago: tomato and fried provolone sandwich": "Blog 'Six Months Ago' link heading, not an ingredient.",
     "optional toppings such as: shredded cheese, green onions, chives, salsa, avocado, ketchup, etc.": "A note listing optional toppings, not one ingredient.",
     "packed": "Fragment 'packed', not an ingredient.",
+    "pancakes": "A section heading, not an ingredient.",
     "pasta and assembly": "Section heading ('Pasta and Assembly').",
+    "pastry": "A recipe section heading or sub-recipe title, not an ingredient line.",
+    "peanut dressing": "A recipe section heading or sub-recipe title, not an ingredient line.",
     "peeled": "Bare preparation word 'peeled', not an ingredient.",
+    "pitted": "Parser fragment of a prep word, not an ingredient.",
+    "popovers": "Section heading, not an ingredient.",
     "prepared rice noodles from above": "Reference to a component prepared earlier in the recipe.",
     "recipe yorkshire pudding batter": "Reference to batter prepared earlier in the recipe.",
+    "salsa tatemada and garnish": "Section heading.",
     "seasonings for shumai": "Sub-recipe heading (\"Seasonings for Shumai\"), not an ingredient",
+    "seeded": "Parser fragment of a prep word, not an ingredient.",
     "serves 4": "Yield note, not an ingredient.",
     "serves 4 generously, 6 moderately": "Yield note, not an ingredient.",
     "serves 4, generously, and up to double that if served as shown, with lots of cucumber, peanuts and herbs": "Yield note, not an ingredient.",
+    "shack sauce": "Section heading for a sub-recipe, not an ingredient.",
+    "slaw": "Section heading, not an ingredient.",
     "software": "Not an ingredient (equipment heading).",
+    "soup": "A section heading, not an ingredient.",
+    "stew": "A recipe section heading or sub-recipe title, not an ingredient line.",
     "stir fry sauce from above": "Reference to a sauce made earlier in the recipe.",
+    "sweet-savory sauce": "Section heading, not an ingredient.",
+    "tacos": "Section heading, not an ingredient.",
+    "tangy sauce": "A recipe section heading or sub-recipe title, not an ingredient line.",
+    "teriyaki glaze": "Section heading, not an ingredient.",
     "tiny": "Size fragment, not an ingredient.",
+    "to finish": "Section heading, not an ingredient.",
     "to serve": "A serving suggestion, not an ingredient.",
     "to serve as tacos: tortillas, a quick slaw, minced white or pickled red onion, chopped cilantro, pickled jalapeños, sliced avocado, and lime wedges": "Serving suggestion listing several items, not an ingredient",
     "to serve with": "Heading for serving suggestions, not an ingredient",
     "to serve: sour cream, pickled red onions, pickled jalapenos, grated cheddar, cornbread, fresh cilantro, lime wedges": "Serving suggestion list, like \"optional toppings such as: ...\".",
     "toasts and assembly": "Section heading.",
+    "tomato-cucumber “relish” salad": "A recipe section heading or sub-recipe title, not an ingredient line.",
     "toppings": "Section heading.",
     "toppings as desired": "Section heading/instruction.",
     "toppings of your choice": "Serving suggestion, not an ingredient",
+    "wontons": "Section heading, not an ingredient.",
     "x 2x 3x": "Recipe scaling control text, not an ingredient.",
     "x 3x": "Recipe scaling buttons (2X 3X), not an ingredient.",
     "years ago: almond-crisped peaches": "Blog 'N years ago' link to another recipe, not an ingredient.",

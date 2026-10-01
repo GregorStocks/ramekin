@@ -570,11 +570,11 @@ fn secondary_sources_supply_foods_sr_legacy_lacks() {
     assert_eq!(fdc_id("guacamole"), Some(2709307));
     assert_eq!(entry_kcal("guacamole"), guacamole.kcal_per_100g);
     assert_eq!(grams_per_cup("guacamole"), guacamole.grams_per_cup);
-    // FNDDS descriptions are not names on their own: "simple syrup" is an
-    // FNDDS food no curated entry links, so the resolver never lands on it.
-    assert_eq!(food(2710278).unwrap().description, "simple syrup");
-    if let Resolution::Entry { entry, .. } = resolve("simple syrup") {
-        assert_ne!(entry.fdc_id, Some(2710278));
+    // FNDDS descriptions are not names on their own: no curated entry links
+    // FNDDS "milk, human", so the resolver never lands on it.
+    assert_eq!(food(2705383).unwrap().description, "milk, human");
+    if let Resolution::Entry { entry, .. } = resolve("milk, human") {
+        assert_ne!(entry.fdc_id, Some(2705383));
     }
     // A hand-curated food with cited calories and no USDA food.
     assert_eq!(fdc_id("garam masala"), None);
