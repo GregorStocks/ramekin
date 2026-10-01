@@ -796,3 +796,15 @@ fn trace_only_spices_are_negligible_in_small_amounts() {
         Some(0.0)
     );
 }
+
+#[test]
+fn za_atar_spellings_share_one_trace_entry() {
+    for name in ["za’atar", "za'atar", "zaatar"] {
+        let result = estimate(&[ingredient(name, "1", "tsp")], None, 1.0).unwrap();
+        assert_eq!(
+            result.known_calories.map(|range| range.max),
+            Some(0.0),
+            "{name}"
+        );
+    }
+}
