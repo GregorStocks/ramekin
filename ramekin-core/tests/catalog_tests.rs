@@ -390,7 +390,7 @@ fn dissimilar_alternatives_and_bare_herbs() {
         // "country bread" isn't a catalog name, so the next alternative counts.
         ("country or sourdough bread", "sourdough bread"),
         ("vegetable, canola, or peanut oil", "vegetable oil"),
-        ("cheddar and/or monterey jack cheese", "cheddar"),
+        ("cheddar and/or monterey jack cheese", "cheddar cheese"),
     ] {
         assert!(
             matches!(
@@ -413,6 +413,9 @@ fn dissimilar_alternatives_and_bare_herbs() {
     for (item, assumed) in [
         ("corn or flour tortillas", "corn tortillas"),
         ("lemon or lime juice", "lemon juice"),
+        ("sherry or red wine vinegar", "sherry vinegar"),
+        // A measured last alternative lends no noun.
+        ("vanilla or half a vanilla bean", "vanilla"),
         (
             "oil canola, olive, or other high-heat cooking oil",
             "canola oil",

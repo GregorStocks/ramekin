@@ -92,8 +92,10 @@ Names are lowercased and whitespace is collapsed. Then:
    chunk is tried whole, then by its comma pieces ("melted, unsalted butter,
    olive oil, or ghee" is unsalted butter). A single word is usually an
    adjective, so it is first tried with the list's noun: the last
-   alternative's trailing words ("corn or flour tortillas" is corn tortillas,
-   "vegetable, canola, or peanut oil" vegetable oil) or a head noun written
+   alternative's trailing words, longest first ("corn or flour tortillas" is
+   corn tortillas, "sherry or red wine vinegar" sherry vinegar), unless that
+   alternative carries its own amount ("vanilla or half a vanilla bean"), or a
+   head noun written
    first ("oil canola, olive, or …" is canola oil). Longer alternatives are
    tried alone, then with the trailing words. The calorie breakdown says what
    it assumed ("~120 kcal (assumed unsalted butter)"), including for an

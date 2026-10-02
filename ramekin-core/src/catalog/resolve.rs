@@ -338,7 +338,9 @@ pub fn chosen_alternative(item: &str) -> Option<String> {
 /// ("melted, unsalted butter, olive oil, or ghee"). A single word is first
 /// tried with the list's noun, since it is usually an adjective: the last
 /// alternative's trailing words ("corn or flour tortillas" is corn tortillas)
-/// or a leading noun ("oil canola, olive, or ..." is canola oil, olive oil).
+/// (longest first: "sherry or red wine vinegar" tries sherry wine vinegar, then
+/// sherry vinegar) or a leading noun ("oil canola, olive, or ..." is canola
+/// oil, olive oil).
 /// Longer alternatives are tried alone first, then with the trailing words.
 fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
     let text = normalized.replace(" and/or ", " or ");
@@ -349,8 +351,23 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
     if chunks.len() < 2 || chunks.iter().any(|chunk| chunk.is_empty()) {
         return None;
     }
+    // The last alternative's trailing words, longest first: "red wine vinegar"
+    // gives "wine vinegar", then "vinegar".
+    // A last alternative with its own amount ("vanilla or 1 vanilla bean",
+    // "vanilla or half a vanilla bean") is a measured alternative, not a
+    // shared noun.
+    const AMOUNT_WORDS: [&str; 8] = ["a", "an", "one", "two", "three", "half", "some", "several"];
     let last = chunks[chunks.len() - 1];
-    let trailing = last.split_once(' ').map(|(_, rest)| rest.to_string());
+    let measured = last.starts_with(|c: char| c.is_ascii_digit())
+        || AMOUNT_WORDS.contains(&last.split(' ').next().unwrap_or_default());
+    let last_words: Vec<&str> = if measured {
+        Vec::new()
+    } else {
+        last.split(' ').collect()
+    };
+    let trailing: Vec<String> = (1..last_words.len())
+        .map(|start| last_words[start..].join(" "))
+        .collect();
     // "oil canola, olive, ...": a head noun written before the first item.
     let first_piece = chunks[0].split(", ").next().unwrap_or_default();
     let leading = first_piece
@@ -377,8 +394,11 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
                 nouned.push(format!("{piece} {noun}"));
             }
         }
-        if let Some(trailing) = trailing.as_ref().filter(|t| !piece.ends_with(t.as_str())) {
-            nouned.push(format!("{piece} {trailing}"));
+        for tail in trailing
+            .iter()
+            .filter(|tail| !piece.ends_with(tail.as_str()))
+        {
+            nouned.push(format!("{piece} {tail}"));
         }
         if piece.contains(' ') {
             candidates.push(piece);
