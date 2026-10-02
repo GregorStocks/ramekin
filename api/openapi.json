@@ -2990,7 +2990,7 @@
             "items": {
               "type": "string"
             },
-            "description": "For a partial estimate, the ingredients its lower bound leaves out."
+            "description": "Ingredients the figures leave out, in recipe order: those given no\namount (even in a complete estimate), and for a partial estimate the\nones that couldn't be counted."
           },
           "per_serving_calories": {
             "oneOf": [
@@ -3047,7 +3047,7 @@
           },
           "text": {
             "type": "string",
-            "description": "Display text: \"~120 kcal\", \"Negligible\", \"Not a food\", or why it\ncouldn't be counted (\"Not recognized\", \"Amount unclear\")."
+            "description": "Display text: \"~120 kcal\", \"Negligible\", \"Not a food\", \"No amount\ngiven\", or why it couldn't be counted (\"Not recognized\", \"Amount\nunclear\")."
           }
         }
       },

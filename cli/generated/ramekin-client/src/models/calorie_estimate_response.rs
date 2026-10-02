@@ -31,7 +31,7 @@ pub struct CalorieEstimateResponse {
     /// The breakdown, one entry per ingredient in order.
     #[serde(rename = "lines")]
     pub lines: Vec<models::CalorieLine>,
-    /// For a partial estimate, the ingredients its lower bound leaves out.
+    /// Ingredients the figures leave out, in recipe order: those given no amount (even in a complete estimate), and for a partial estimate the ones that couldn't be counted.
     #[serde(rename = "not_counted")]
     pub not_counted: Vec<String>,
     #[serde(

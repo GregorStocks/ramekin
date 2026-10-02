@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **calories** | [**CalorieRange**](CalorieRange.md) | Scaled calories when counted (zero when negligible). | [optional] 
 **index** | **int** |  | 
 **item** | **str** |  | 
-**text** | **str** | Display text: \&quot;~120 kcal\&quot;, \&quot;Negligible\&quot;, \&quot;Not a food\&quot;, or why it couldn&#39;t be counted (\&quot;Not recognized\&quot;, \&quot;Amount unclear\&quot;). | 
+**text** | **str** | Display text: \&quot;~120 kcal\&quot;, \&quot;Negligible\&quot;, \&quot;Not a food\&quot;, \&quot;No amount given\&quot;, or why it couldn&#39;t be counted (\&quot;Not recognized\&quot;, \&quot;Amount unclear\&quot;). | 
 
 ## Example
 

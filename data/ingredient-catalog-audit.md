@@ -37,14 +37,14 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 826 | 15.3% |
-| 1 | 1328 | 24.6% |
-| 2 | 1199 | 22.2% |
-| 3 | 808 | 14.9% |
-| 4-5 | 876 | 16.2% |
-| 6+ | 371 | 6.9% |
+| 0 | 1261 | 23.3% |
+| 1 | 1661 | 30.7% |
+| 2 | 1174 | 21.7% |
+| 3 | 699 | 12.9% |
+| 4-5 | 490 | 9.1% |
+| 6+ | 123 | 2.3% |
 
-Estimate status with at most 3 uncounted: Complete 15.3%, Insufficient 24.3%, Partial 60.5%
+Estimate status with at most 3 uncounted: Complete 23.1%, Insufficient 12.9%, Partial 63.9%
 
 ### Unrecognized-name fingerprints
 
@@ -73,14 +73,14 @@ Estimate status with at most 3 uncounted: Complete 15.3%, Insufficient 24.3%, Pa
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 111 | 24.0% |
-| 1 | 135 | 29.2% |
-| 2 | 97 | 21.0% |
-| 3 | 57 | 12.3% |
-| 4-5 | 43 | 9.3% |
-| 6+ | 19 | 4.1% |
+| 0 | 197 | 42.6% |
+| 1 | 162 | 35.1% |
+| 2 | 65 | 14.1% |
+| 3 | 27 | 5.8% |
+| 4-5 | 11 | 2.4% |
+| 6+ | 0 | 0.0% |
 
-Estimate status with at most 3 uncounted: Complete 24.0%, Insufficient 13.6%, Partial 62.3%
+Estimate status with at most 3 uncounted: Complete 42.4%, Insufficient 2.8%, Partial 54.8%
 
 ### Unrecognized-name fingerprints
 
@@ -109,14 +109,14 @@ Estimate status with at most 3 uncounted: Complete 24.0%, Insufficient 13.6%, Pa
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 105 | 23.6% |
-| 1 | 146 | 32.8% |
-| 2 | 92 | 20.7% |
-| 3 | 50 | 11.2% |
-| 4-5 | 43 | 9.7% |
-| 6+ | 9 | 2.0% |
+| 0 | 177 | 39.8% |
+| 1 | 163 | 36.6% |
+| 2 | 65 | 14.6% |
+| 3 | 26 | 5.8% |
+| 4-5 | 14 | 3.1% |
+| 6+ | 0 | 0.0% |
 
-Estimate status with at most 3 uncounted: Complete 23.6%, Insufficient 12.1%, Partial 64.3%
+Estimate status with at most 3 uncounted: Complete 39.6%, Insufficient 3.8%, Partial 56.6%
 
 ### Unrecognized-name fingerprints
 
