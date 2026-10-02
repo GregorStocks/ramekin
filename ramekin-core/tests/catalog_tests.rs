@@ -430,13 +430,14 @@ fn dissimilar_alternatives_and_bare_herbs() {
             "cream cheese",
         ),
         ("fresh lemon or lime juice", "fresh lemon juice"),
-        // A complete first option is tried as written.
-        ("white wine or white balsamic vinegar", "white wine"),
-        ("rice wine or apple cider vinegar", "rice wine"),
-        // ...unless a later option says "other", sharing its noun.
+        // "X or Y noun" is X noun when that names a food...
+        ("white wine or white balsamic vinegar", "white wine vinegar"),
+        ("white wine or champagne vinegar", "white wine vinegar"),
         ("white wine or other mild vinegar", "white wine vinegar"),
-        // ...or when it parallels the later option's words before the noun.
         ("red wine or white wine vinegar", "red wine vinegar"),
+        ("rice wine or apple cider vinegar", "rice wine vinegar"),
+        // ...and X as written otherwise.
+        ("sour cream or plain greek yogurt", "sour cream"),
         (
             "berries: sliced strawberries, blackberries, or raspberries",
             "sliced strawberries",

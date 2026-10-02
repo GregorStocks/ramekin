@@ -106,12 +106,11 @@ Names are lowercased and whitespace is collapsed. Then:
      "tomatoes"), when it carries its own amount ("vanilla or half a vanilla
      bean"; an article is not an amount: "peanut or a vegetable oil" is peanut
      oil), or when it is a list before the last chunk ("mushroom, vegetable,
-     chicken, or beef broth" lends no "mushroom"). A one-word alternative (prep
-     words aside) is usually an adjective, so it borrows first ("fresh lemon or
-     lime juice" is lemon juice); a longer one names its food and is tried as
-     written first ("white wine or white balsamic vinegar" is white wine),
-     unless a later alternative says "other" ("white wine or other mild
-     vinegar" is white wine vinegar).
+     chicken, or beef broth" lends no "mushroom"). Every alternative borrows
+     first, since "X or Y noun" reads as X noun ("fresh lemon or lime juice" is
+     lemon juice; "white wine or champagne vinegar" is white wine vinegar), and
+     is tried as written only when that names no food ("sour cream or plain
+     greek yogurt" is sour cream).
    - **An unknown first alternative.** If none of the first alternative's
      candidates resolve, its own trailing words may ("local honey or maple
      syrup" is honey; "mixed cherry or grape tomatoes" is cherry tomatoes),

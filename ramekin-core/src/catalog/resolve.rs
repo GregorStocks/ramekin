@@ -409,13 +409,10 @@ fn tails_of(chunk: &str) -> Vec<String> {
 /// tortillas" is corn tortillas; "chicken, vegetable or seafood broth or
 /// stock" is chicken broth), longest first ("sherry or red wine vinegar" tries
 /// sherry wine vinegar, then sherry vinegar), or a head noun written first
-/// ("oil canola, olive, or ..." is canola oil, olive oil). A one-word
-/// alternative, prep words aside, is usually an adjective, so it borrows first
-/// ("fresh lemon or lime juice" is lemon juice); a longer one names its food
-/// and is tried as written first ("white wine or white balsamic vinegar" is
-/// white wine) unless it parallels the lender ("red wine or white wine
-/// vinegar") or a later one says "other". Grouped by the alternative as
-/// written, cleaned.
+/// ("oil canola, olive, or ..." is canola oil, olive oil). Borrowed
+/// forms come first ("fresh lemon or lime juice" is lemon juice, "white wine
+/// or champagne vinegar" white wine vinegar), then the alternative as written.
+/// Grouped by the alternative as written, cleaned.
 fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>> {
     let text = normalized.replace(" and/or ", " or ");
     let chunks = alternative_chunks(&text)?;
@@ -438,8 +435,7 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
             .map(|(_, later)| (*later, tails_of(later)))
             .find(|(_, tails)| !tails.is_empty())
             .unwrap_or_default();
-        let (lender, trailing) = trailing;
-        let lender = lender.split(", ").next().unwrap_or_default();
+        let (_, trailing) = trailing;
         let mut pieces: Vec<String> = chunk
             .split(", ")
             .map(|piece| piece.trim().to_string())
@@ -462,32 +458,10 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
             {
                 nouned.push(format!("{piece} {tail}"));
             }
-            let one_word = piece
-                .split(' ')
-                .filter(|word| !LEADING_MODIFIERS.contains(word))
-                .count()
-                <= 1;
-            // "white wine or other mild vinegar": "other" says the list
-            // shares a noun, so even a longer alternative borrows it first.
-            let other_follows = chunks[index + 1..]
-                .iter()
-                .any(|later| later.starts_with("other ") || later.starts_with("another "));
-            // "red wine or white wine vinegar": the alternative parallels the
-            // lender's words before the shared noun, so it means red wine
-            // vinegar, not red wine.
-            let parallel = trailing.iter().any(|tail| {
-                lender
-                    .strip_suffix(tail.as_str())
-                    .and_then(|head| head.trim_end().split_once(' '))
-                    .is_some_and(|(_, word)| {
-                        !word.contains(' ') && piece.rsplit(' ').next() == Some(word)
-                    })
-            });
-            let names = if one_word || other_follows || parallel {
-                nouned.into_iter().chain([piece.clone()]).collect()
-            } else {
-                [piece.clone()].into_iter().chain(nouned).collect()
-            };
+            // "X or Y noun" reads as X noun when that names a food ("white
+            // wine or champagne vinegar" is white wine vinegar); otherwise X as
+            // written ("sour cream or greek yogurt").
+            let names = nouned.into_iter().chain([piece.clone()]).collect();
             candidates.push((piece, names));
         }
     }
