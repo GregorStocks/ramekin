@@ -315,25 +315,32 @@ fn resolve_name(normalized: &str) -> Resolution {
 }
 
 /// The alternative an "x or y" name ("mayonnaise or plain yogurt", "vegetable,
-/// canola, or peanut oil") was counted as, for the estimate's "assumed" note;
-/// None when the name resolves without choosing one.
+/// canola, or peanut oil") was counted as, for the estimate's "assumed" note:
+/// the alternative step-7 chose, or for a name a curated alias resolves
+/// ("butter or margarine"), the listed alternative naming that same food.
+/// None for a name that offers no alternatives.
 pub fn chosen_alternative(item: &str) -> Option<String> {
     let normalized = normalize(item);
-    match resolve_name(&normalized) {
-        Resolution::Entry {
-            via: Via::Alternative,
-            ..
-        } => first_alternative(&normalized).map(|(_, text)| text),
-        _ => None,
+    let (entry, via) = match resolve_name(&normalized) {
+        Resolution::Entry { entry, via } => (entry, via),
+        _ => return None,
+    };
+    if via == Via::Alternative {
+        return first_alternative(&normalized).map(|(_, text)| text);
     }
+    alternative_candidates(&normalized)?
+        .into_iter()
+        .find(|name| matches!(resolve_single(name), Resolution::Entry { entry: e, .. } if std::ptr::eq(e, entry)))
 }
 
-/// The first alternative, in listed order, that names one food. Each "or"
-/// chunk is tried whole, then by comma pieces ("melted, unsalted butter, olive
-/// oil, or ghee" is butter), and each with the last alternative's trailing
-/// words when it fails alone ("all-purpose or bread flour" is all-purpose
-/// flour, "vegetable, canola, or peanut oil" vegetable oil).
-fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
+/// The names an "x or y" name's alternatives are tried as, in order, or None
+/// when it offers no alternatives. Each "or" chunk, then its comma pieces
+/// ("melted, unsalted butter, olive oil, or ghee"). A single word is first
+/// tried with the list's noun, since it is usually an adjective: the last
+/// alternative's trailing words ("corn or flour tortillas" is corn tortillas)
+/// or a leading noun ("oil canola, olive, or ..." is canola oil, olive oil).
+/// Longer alternatives are tried alone first, then with the trailing words.
+fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
     let text = normalized.replace(" and/or ", " or ");
     let chunks: Vec<&str> = text
         .split(" or ")
@@ -343,26 +350,53 @@ fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
         return None;
     }
     let last = chunks[chunks.len() - 1];
-    let shared = last.split_once(' ').map(|(_, rest)| rest);
-    let mut candidates = Vec::new();
+    let trailing = last.split_once(' ').map(|(_, rest)| rest.to_string());
+    // "oil canola, olive, ...": a head noun written before the first item.
+    let first_piece = chunks[0].split(", ").next().unwrap_or_default();
+    let leading = first_piece
+        .split_once(' ')
+        .filter(|_| chunks[0].contains(", "))
+        .map(|(noun, rest)| (noun.to_string(), rest.to_string()));
+    let mut pieces = Vec::new();
     for chunk in &chunks {
-        candidates.push(chunk.to_string());
-        candidates.extend(
+        pieces.push(chunk.to_string());
+        pieces.extend(
             chunk
                 .split(", ")
                 .map(|piece| piece.trim().to_string())
                 .filter(|piece| !piece.is_empty() && piece != chunk),
         );
     }
-    for candidate in candidates {
-        let with_shared = shared
-            .filter(|shared| !candidate.ends_with(shared))
-            .map(|shared| format!("{candidate} {shared}"));
-        for name in std::iter::once(candidate).chain(with_shared) {
-            if let Resolution::Entry { entry, .. } = resolve_single(&name) {
-                return Some((entry, name));
+    let mut candidates = Vec::new();
+    for piece in pieces {
+        let mut nouned = Vec::new();
+        if let Some((noun, rest)) = &leading {
+            if piece == *first_piece {
+                nouned.push(format!("{rest} {noun}"));
+            } else if !piece.contains(' ') {
+                nouned.push(format!("{piece} {noun}"));
             }
         }
+        if let Some(trailing) = trailing.as_ref().filter(|t| !piece.ends_with(t.as_str())) {
+            nouned.push(format!("{piece} {trailing}"));
+        }
+        if piece.contains(' ') {
+            candidates.push(piece);
+            candidates.extend(nouned);
+        } else {
+            candidates.extend(nouned);
+            candidates.push(piece);
+        }
     }
-    None
+    Some(candidates)
+}
+
+/// The first candidate, in `alternative_candidates` order, that names one food.
+fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
+    alternative_candidates(normalized)?
+        .into_iter()
+        .find_map(|name| match resolve_single(&name) {
+            Resolution::Entry { entry, .. } => Some((entry, name)),
+            _ => None,
+        })
 }

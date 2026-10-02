@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60510 | 303 | 53096/60207 (88.2%) | 49320/60207 (81.9%) | 1079/5408 (20.0%) | n/a (no servings) | 31664/37260 (85.0%) | 59403/60510 (98.2%) |
+| Pipeline fixtures | 5408 | 60510 | 303 | 53096/60207 (88.2%) | 49320/60207 (81.9%) | 1079/5408 (20.0%) | n/a (no servings) | 31663/37260 (85.0%) | 59403/60510 (98.2%) |
 | Paprika fixtures | 462 | 5377 | 22 | 5139/5355 (96.0%) | 4665/5355 (87.1%) | 148/462 (32.0%) | n/a (no servings) | 2541/2886 (88.0%) | 5285/5377 (98.3%) |
 | Pipeline snapshots | 445 | 5177 | 17 | 4971/5160 (96.3%) | 4573/5160 (88.6%) | 142/445 (31.9%) | 71/445 (16.0%) | 2515/2846 (88.4%) | 5121/5177 (98.9%) |
 
@@ -26,32 +26,32 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | --- | ---: | ---: |
 | Ambiguous ingredient | 477 | 0.8% |
 | Frying oil: only part of it is absorbed | 97 | 0.2% |
-| Missing density for this food | 1116 | 1.8% |
+| Missing density for this food | 1117 | 1.8% |
 | Missing quantity | 2003 | 3.3% |
 | No supported nutrition match | 6634 | 11.0% |
 | Several ingredients share one amount | 56 | 0.1% |
 | Unsupported or missing quantity | 49 | 0.1% |
-| Unsupported quantity unit | 455 | 0.8% |
+| Unsupported quantity unit | 454 | 0.8% |
 
 ### Uncounted ingredients per recipe
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
 | 0 | 1673 | 30.9% |
-| 1 | 1762 | 32.6% |
-| 2 | 1049 | 19.4% |
-| 3 | 522 | 9.7% |
-| 4-5 | 325 | 6.0% |
+| 1 | 1763 | 32.6% |
+| 2 | 1048 | 19.4% |
+| 3 | 521 | 9.6% |
+| 4-5 | 326 | 6.0% |
 | 6+ | 77 | 1.4% |
 
-Estimate status with at most 3 uncounted: Complete 30.7%, Insufficient 8.7%, Partial 60.5%
+Estimate status with at most 3 uncounted: Complete 30.7%, Insufficient 8.8%, Partial 60.5%
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 8079 | `d8c6a3fb9dcb` |
-| Density | 2854 | `437721151962` |
+| Nutrition (all failures) | 8079 | `9615fcfc57ab` |
+| Density | 2855 | `babd6569508d` |
 | Shopping category | 735 | `a0b9356943b6` |
 
 ## Paprika fixtures

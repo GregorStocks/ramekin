@@ -90,12 +90,14 @@ Names are lowercased and whitespace is collapsed. Then:
    alternative that names a food (`Via::Alternative`; owner decision
    2026-10-02), however much the alternatives differ in calories. Each "or"
    chunk is tried whole, then by its comma pieces ("melted, unsalted butter,
-   olive oil, or ghee" is unsalted butter), and each with the last
-   alternative's trailing words when it fails alone ("vegetable, canola, or
-   peanut oil" is vegetable oil). The calorie breakdown says what it assumed
-   ("~120 kcal (assumed unsalted butter)"). A first alternative that is a food
-   on its own wins even when a shared noun was meant: "corn or flour tortillas"
-   is counted as corn.
+   olive oil, or ghee" is unsalted butter). A single word is usually an
+   adjective, so it is first tried with the list's noun: the last
+   alternative's trailing words ("corn or flour tortillas" is corn tortillas,
+   "vegetable, canola, or peanut oil" vegetable oil) or a head noun written
+   first ("oil canola, olive, or …" is canola oil). Longer alternatives are
+   tried alone, then with the trailing words. The calorie breakdown says what
+   it assumed ("~120 kcal (assumed unsalted butter)"), including for an
+   alternatives name a curated alias resolves ("butter or margarine").
 
 Calorie estimates and density resolve whole lines with `resolve_line(item, note)`.
 The parser keeps "cooked" in the note ("brown rice, cooked" → item "brown rice"),

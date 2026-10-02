@@ -409,6 +409,28 @@ fn dissimilar_alternatives_and_bare_herbs() {
         );
         assert_eq!(fdc_id(item), fdc_id(assumed), "{item:?}");
     }
+    // A single word is usually an adjective: it takes the list's noun first.
+    for (item, assumed) in [
+        ("corn or flour tortillas", "corn tortillas"),
+        ("lemon or lime juice", "lemon juice"),
+        (
+            "oil canola, olive, or other high-heat cooking oil",
+            "canola oil",
+        ),
+    ] {
+        assert_eq!(
+            chosen_alternative(item).as_deref(),
+            Some(assumed),
+            "{item:?}"
+        );
+        assert_eq!(fdc_id(item), fdc_id(assumed), "{item:?}");
+    }
+    // A curated alias for an alternatives name is labeled with the listed
+    // alternative it counts as.
+    assert_eq!(
+        chosen_alternative("butter or margarine").as_deref(),
+        Some("butter")
+    );
     // A name that resolves on its own chose nothing.
     assert_eq!(chosen_alternative("heavy cream"), None);
     // Bare herbs follow how recipes use them.
