@@ -527,6 +527,16 @@ fn dissimilar_alternatives_and_bare_herbs() {
     // "cooled" is dropped only when joined to "cooked": alone it still
     // implies cooked rice, never the raw entry.
     assert_ne!(fdc_id_or_none("cooled white rice"), fdc_id("white rice"));
+    // An alias whose chosen spelling names nothing alone still says what it
+    // assumed.
+    assert_eq!(
+        chosen_alternative("bundle lacinato kale, swiss chard or spinach").as_deref(),
+        Some("bundle lacinato kale")
+    );
+    assert_eq!(
+        fdc_id("chopped fresh collard greens or kale"),
+        fdc_id("collards")
+    );
     // A name that resolves on its own chose nothing.
     assert_eq!(chosen_alternative("heavy cream"), None);
     // Bare herbs follow how recipes use them.

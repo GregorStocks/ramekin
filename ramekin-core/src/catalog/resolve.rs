@@ -347,8 +347,9 @@ fn resolve_name(normalized: &str) -> Resolution {
 /// The alternative an "x or y" name ("mayonnaise or plain yogurt", "vegetable,
 /// canola, or peanut oil") was counted as, for the estimate's "assumed" note:
 /// the alternative step-7 chose, or for a name a curated alias resolves
-/// ("butter or margarine"), the listed alternative naming that same food.
-/// None for a name that offers no alternatives.
+/// ("butter or margarine"), the listed alternative naming that same food, or
+/// failing that the first-listed one. None for a name that offers no
+/// alternatives.
 pub fn chosen_alternative(item: &str) -> Option<String> {
     let normalized = normalize(item);
     let (entry, via) = match resolve_name(&normalized) {
@@ -358,10 +359,16 @@ pub fn chosen_alternative(item: &str) -> Option<String> {
     if via == Via::Alternative {
         return first_alternative(&normalized).map(|(_, text)| text);
     }
-    alternative_candidates(&normalized)?
+    let groups = alternative_candidates(&normalized)?;
+    let first = groups.first().map(|(piece, _)| piece.clone());
+    groups
         .into_iter()
         .flat_map(|(_, candidates)| candidates)
         .find(|name| matches!(resolve_single(name), Resolution::Entry { entry: e, .. } if std::ptr::eq(e, entry)))
+        // An alias for the whole name whose chosen spelling names nothing on
+        // its own ("bundle lacinato kale, swiss chard or spinach" is kale):
+        // aliases pick the first-listed food, so label that.
+        .or(first)
 }
 
 /// An "x or y" name's "or" chunks, without a leading article, or None when it
