@@ -691,11 +691,19 @@ pub fn estimate_with(
             }
         };
         // "mayonnaise or plain yogurt" is counted as its first alternative;
-        // say so.
+        // say so, but only when the line used that resolution (a note can
+        // override it: "frozen or canned corn", cooked).
+        let note = ingredient.note.as_deref();
+        let used_item_resolution = matches!(
+            (
+                catalog::resolve_line_with(&ingredient.item, note, learned),
+                catalog::resolve(&ingredient.item),
+            ),
+            (Resolution::Entry { entry: used, .. }, Resolution::Entry { entry: own, .. })
+                if std::ptr::eq(used, own)
+        );
         let text = match catalog::chosen_alternative(&ingredient.item) {
-            Some(alternative) if calories.is_some() || text != "Not a food" => {
-                format!("{text} (assumed {alternative})")
-            }
+            Some(alternative) if used_item_resolution => format!("{text} (assumed {alternative})"),
             _ => text,
         };
         lines.push(LineEstimate {

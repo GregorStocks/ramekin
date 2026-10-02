@@ -991,4 +991,16 @@ fn alternatives_count_the_first_and_say_so() {
     );
     // A name that resolves on its own carries no note.
     assert!(!line("sour cream").1.contains("assumed"));
+    // A note that overrides the alternative's food ("cooked" rules out the
+    // catalog's unprepared frozen corn) leaves nothing assumed.
+    let cooked = ParsedIngredient {
+        note: Some("cooked".into()),
+        ..ingredient("frozen or canned corn", "1", "cup")
+    };
+    let result = estimate(&[cooked], None, 1.0).unwrap();
+    assert!(
+        !result.lines[0].text.contains("assumed"),
+        "{}",
+        result.lines[0].text
+    );
 }

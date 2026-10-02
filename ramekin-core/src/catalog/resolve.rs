@@ -413,7 +413,9 @@ fn tails_of(chunk: &str) -> Vec<String> {
 /// alternative, prep words aside, is usually an adjective, so it borrows first
 /// ("fresh lemon or lime juice" is lemon juice); a longer one names its food
 /// and is tried as written first ("white wine or white balsamic vinegar" is
-/// white wine). Grouped by the alternative as written, cleaned.
+/// white wine) unless it parallels the lender ("red wine or white wine
+/// vinegar") or a later one says "other". Grouped by the alternative as
+/// written, cleaned.
 fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>> {
     let text = normalized.replace(" and/or ", " or ");
     let chunks = alternative_chunks(&text)?;
@@ -433,9 +435,11 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
             .filter(|(offset, later)| {
                 index + 1 + offset == chunks.len() - 1 || !later.contains(", ")
             })
-            .map(|(_, later)| tails_of(later))
-            .find(|tails| !tails.is_empty())
+            .map(|(_, later)| (*later, tails_of(later)))
+            .find(|(_, tails)| !tails.is_empty())
             .unwrap_or_default();
+        let (lender, trailing) = trailing;
+        let lender = lender.split(", ").next().unwrap_or_default();
         let mut pieces: Vec<String> = chunk
             .split(", ")
             .map(|piece| piece.trim().to_string())
@@ -468,7 +472,18 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
             let other_follows = chunks[index + 1..]
                 .iter()
                 .any(|later| later.starts_with("other ") || later.starts_with("another "));
-            let names = if one_word || other_follows {
+            // "red wine or white wine vinegar": the alternative parallels the
+            // lender's words before the shared noun, so it means red wine
+            // vinegar, not red wine.
+            let parallel = trailing.iter().any(|tail| {
+                lender
+                    .strip_suffix(tail.as_str())
+                    .and_then(|head| head.trim_end().split_once(' '))
+                    .is_some_and(|(_, word)| {
+                        !word.contains(' ') && piece.rsplit(' ').next() == Some(word)
+                    })
+            });
+            let names = if one_word || other_follows || parallel {
                 nouned.into_iter().chain([piece.clone()]).collect()
             } else {
                 [piece.clone()].into_iter().chain(nouned).collect()
