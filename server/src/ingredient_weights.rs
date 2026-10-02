@@ -18,7 +18,7 @@ use ramekin_core::ai::{estimate_ingredient_weights, AiError};
 use ramekin_core::nutrition::{WeightKey, Weights};
 
 use crate::db::{run_blocking, DbPool};
-use crate::ingredient_names::{BATCH, BATCH_SIZE, CLIENT, FAILED, PENDING, RESOLVED};
+use crate::ingredient_names::{Step, BATCH, BATCH_SIZE, CLIENT, FAILED, PENDING, RESOLVED};
 use crate::schema::ingredient_weight_estimates as weights;
 
 /// Queue weight gaps for estimating. Gaps already queued or estimated are
@@ -164,38 +164,28 @@ pub fn requeue_failed(conn: &mut PgConnection, foods: &[String]) -> QueryResult<
     .execute(conn)
 }
 
-/// Estimate every pending weight, in batches. Returns the first batch error;
-/// that batch's rows are marked failed with it.
-pub async fn resolve_pending(pool: &Arc<DbPool>) -> Result<(), String> {
-    let mut first_error = None;
-    loop {
-        let _batch = BATCH.lock().await;
-        let batch: Vec<(String, String)> = run_blocking(pool, move |conn| {
-            weights::table
-                .filter(weights::status.eq(PENDING))
-                .select((weights::food, weights::unit))
-                .order((weights::food, weights::unit))
-                .limit(BATCH_SIZE)
-                .load(conn)
-        })
-        .await
-        .map_err(|e| e.to_string())?
-        .map_err(|e| e.to_string())?;
-        if batch.is_empty() {
-            break;
-        }
-        match estimate_batch(pool, batch).await? {
-            None => {}
-            Some((error, provider_wide)) => {
-                first_error.get_or_insert(error);
-                // The next batch would fail the same way; leave it pending.
-                if provider_wide {
-                    break;
-                }
-            }
-        }
+/// Estimate one batch of pending weights, taken under the shared batch lock.
+pub(crate) async fn estimate_next_batch(pool: &Arc<DbPool>) -> Result<Step, String> {
+    let _batch = BATCH.lock().await;
+    let batch: Vec<(String, String)> = run_blocking(pool, move |conn| {
+        weights::table
+            .filter(weights::status.eq(PENDING))
+            .select((weights::food, weights::unit))
+            .order((weights::food, weights::unit))
+            .limit(BATCH_SIZE)
+            .load(conn)
+    })
+    .await
+    .map_err(|e| e.to_string())?
+    .map_err(|e| e.to_string())?;
+    if batch.is_empty() {
+        return Ok(Step::Idle);
     }
-    first_error.map_or(Ok(()), Err)
+    Ok(match estimate_batch(pool, batch).await? {
+        None => Step::Done,
+        Some((error, true)) => Step::ProviderFailed(error),
+        Some((error, false)) => Step::Failed(error),
+    })
 }
 
 /// A batch's first failure and whether it was the provider's, or `Err` when an

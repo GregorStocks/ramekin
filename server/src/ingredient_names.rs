@@ -197,12 +197,7 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
     tokio::spawn(async move {
         let mut backoff = RETRY_MIN;
         loop {
-            // Names first: an answer can make a line's food known, and so
-            // its weight worth asking for. One failing doesn't hold up the
-            // other.
-            let names = resolve_pending(&pool, None).await;
-            let weights = crate::ingredient_weights::resolve_pending(&pool).await;
-            match names.and(weights) {
+            match work_pass(&pool).await {
                 Ok(()) => {
                     backoff = RETRY_MIN;
                     WAKE.notified().await;
@@ -226,71 +221,117 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
     });
 }
 
-/// Resolve pending names, all of them or only `only`, in batches. Returns
-/// the first batch error; that batch's names are marked failed with it.
-pub async fn resolve_pending(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> Result<(), String> {
+/// How taking one batch from a queue went. Failures are already recorded on
+/// their rows.
+pub(crate) enum Step {
+    /// Nothing was pending.
+    Idle,
+    Done,
+    /// The model's answer for some rows was invalid.
+    Failed(String),
+    /// The provider or configuration failed, so later batches would too.
+    ProviderFailed(String),
+}
+
+/// Work both queues until they're empty, a batch from each in turn, so a
+/// backlog of names never starves weights or the reverse. Names go first in
+/// each turn: an answer can make a line's food known, and so its weight worth
+/// asking for. Returns the first failure.
+async fn work_pass(pool: &Arc<DbPool>) -> Result<(), String> {
     let mut first_error = None;
-    loop {
-        // One batch at a time, taken fairly, so a scrape job's few names wait
-        // for at most the batch in flight rather than a whole backlog. The
-        // batch is chosen under the lock, so no name is asked about twice.
-        let _batch = BATCH.lock().await;
-        let filter = only.clone();
-        let batch: Vec<String> = run_blocking(pool, move |conn| {
-            let mut query = names::table
-                .filter(names::status.eq(PENDING))
-                .select(names::name)
-                .order(names::name)
-                .limit(BATCH_SIZE)
-                .into_boxed();
-            if let Some(only) = filter {
-                query = query.filter(names::name.eq_any(only));
-            }
-            query.load(conn)
-        })
-        .await
-        .map_err(|e| e.to_string())?
-        .map_err(|e| e.to_string())?;
-        if batch.is_empty() {
-            break;
+    let (mut names_open, mut weights_open) = (true, true);
+    while names_open || weights_open {
+        if names_open {
+            names_open = still_open(resolve_next_batch(pool, None).await?, &mut first_error);
         }
-        // A failed answer is recorded on its names; failing to record it
-        // would leave them pending, so stop rather than ask again.
-        match resolve_batch(pool, batch).await? {
-            Batch::Resolved => {}
-            Batch::NamesFailed(e) => {
-                first_error.get_or_insert(e);
-            }
-            // The next batch would fail the same way; leave it pending.
-            Batch::ProviderFailed(e) => {
-                first_error.get_or_insert(e);
-                break;
-            }
+        if weights_open {
+            weights_open = still_open(
+                crate::ingredient_weights::estimate_next_batch(pool).await?,
+                &mut first_error,
+            );
         }
     }
-    match (first_error, only) {
-        (Some(e), _) => Err(e),
-        // Names another caller already failed are still failures here.
-        (None, Some(only)) => {
-            let failed: Vec<(String, Option<String>)> = run_blocking(pool, move |conn| {
-                names::table
-                    .filter(names::name.eq_any(only))
-                    .filter(names::status.eq(FAILED))
-                    .select((names::name, names::error))
-                    .load(conn)
-            })
-            .await
-            .map_err(|e| e.to_string())?
-            .map_err(|e| e.to_string())?;
-            match failed.into_iter().next() {
-                Some((name, error)) => Err(format!(
-                    "{name:?}: {}",
-                    error.unwrap_or_else(|| "resolution failed".to_string())
-                )),
-                None => Ok(()),
-            }
+    first_error.map_or(Ok(()), Err)
+}
+
+/// Whether a queue may have more work after `step`, keeping its first error.
+/// After a provider failure its next batch would fail the same way, so it's
+/// left pending for the worker's retry.
+fn still_open(step: Step, first_error: &mut Option<String>) -> bool {
+    match step {
+        Step::Idle => false,
+        Step::Done => true,
+        Step::Failed(e) => {
+            first_error.get_or_insert(e);
+            true
         }
-        (None, None) => Ok(()),
+        Step::ProviderFailed(e) => {
+            first_error.get_or_insert(e);
+            false
+        }
+    }
+}
+
+/// Resolve one batch of pending names, or only of `only`. The batch is taken
+/// under the batch lock, so no name is asked about twice, and one at a time,
+/// so a scrape job's few names wait for at most the batch in flight.
+async fn resolve_next_batch(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> Result<Step, String> {
+    let _batch = BATCH.lock().await;
+    let batch: Vec<String> = run_blocking(pool, move |conn| {
+        let mut query = names::table
+            .filter(names::status.eq(PENDING))
+            .select(names::name)
+            .order(names::name)
+            .limit(BATCH_SIZE)
+            .into_boxed();
+        if let Some(only) = only {
+            query = query.filter(names::name.eq_any(only));
+        }
+        query.load(conn)
+    })
+    .await
+    .map_err(|e| e.to_string())?
+    .map_err(|e| e.to_string())?;
+    if batch.is_empty() {
+        return Ok(Step::Idle);
+    }
+    // A failed answer is recorded on its names; failing to record it would
+    // leave them pending, so `Err` stops rather than asking again.
+    Ok(match resolve_batch(pool, batch).await? {
+        Batch::Resolved => Step::Done,
+        Batch::NamesFailed(e) => Step::Failed(e),
+        Batch::ProviderFailed(e) => Step::ProviderFailed(e),
+    })
+}
+
+/// Resolve pending names among `only` in batches (a scrape job's names).
+/// Returns the first batch error, or a failure another caller already
+/// recorded on one of them.
+pub async fn resolve_pending(pool: &Arc<DbPool>, only: Vec<String>) -> Result<(), String> {
+    let mut first_error = None;
+    while still_open(
+        resolve_next_batch(pool, Some(only.clone())).await?,
+        &mut first_error,
+    ) {}
+    if let Some(e) = first_error {
+        return Err(e);
+    }
+    let failed: Vec<(String, Option<String>)> = run_blocking(pool, move |conn| {
+        names::table
+            .filter(names::name.eq_any(only))
+            .filter(names::status.eq(FAILED))
+            .select((names::name, names::error))
+            .load(conn)
+    })
+    .await
+    .map_err(|e| e.to_string())?
+    .map_err(|e| e.to_string())?;
+    match failed.into_iter().next() {
+        Some((name, error)) => Err(format!(
+            "{name:?}: {}",
+            error.unwrap_or_else(|| "resolution failed".to_string())
+        )),
+        None => Ok(()),
     }
 }
 
