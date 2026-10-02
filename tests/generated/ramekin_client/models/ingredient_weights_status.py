@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class IngredientWeightsStatus(BaseModel):
     """
-    Weights the catalog lacks for foods in the user's recipes (a density, or a counted unit such as \"bunch\"), estimated in the background.
+    Weights the catalog lacks for foods in the user's recipes (a density, or a counted unit such as \"bunch\"), estimated in the background: every estimate for those foods, whichever view queued it.
     """ # noqa: E501
     estimated: StrictInt = Field(description="Estimated; lines using one say \"estimated weight\".")
     failed: StrictInt = Field(description="The last attempt failed; retry to try again.")

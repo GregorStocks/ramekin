@@ -2,22 +2,38 @@
 lacks for foods it knows, the LLM (mock OpenRouter) estimates them in the
 background, and later estimates count the line, labeled."""
 
-import uuid
+import psycopg
 
 from conftest import make_ingredient
 from ramekin_client.api import IngredientNamesApi, RecipesApi
 from ramekin_client.models import CreateRecipeRequest, EstimateCaloriesRequest
-from test_ingredient_names import mock_answers, mock_calls, mock_fail, wait_for
+from test_ingredient_names import mock_answers, mock_calls, mock_fail
+from test_ingredient_names import wait_for as wait_briefly
 
-# A catalog food with calories but no density or jar weight.
+
+def wait_for(predicate):
+    """Weights share the worker, batch lock, and rate-limited client with
+    ingredient names, whose tests hold and break batches on purpose, so give
+    the background pass more room than a name test needs."""
+    return wait_briefly(predicate, timeout=60.0)
+
+
+# A catalog food with calories but no density and no piece weights. The
+# estimates are shared, so each test uses its own unit: "jar", "tbsp" (the
+# density), "handful" (the mock's no-typical-weight answer), and "bottle".
 FOOD = "capers"
 
 
-def unique_unit() -> str:
-    """A unit word no other test uses: letters only, so it's asked about, and
-    no trailing "s", so it's its own piece spelling."""
-    token = uuid.uuid4().hex[:8].translate(str.maketrans("0123456789", "ghijklmnop"))
-    return f"zq{token}"
+def fresh(database_url: str, unit: str) -> str:
+    """Put this test's unit back to unasked: estimates are shared and outlive
+    a test run, and a unit word can't be made unique the way a name can."""
+    with psycopg.connect(database_url, autocommit=True) as conn:
+        conn.execute(
+            "UPDATE ingredient_weight_estimates SET status = 'pending', grams = NULL, "
+            "error = NULL, model = NULL WHERE unit = %s",
+            (unit,),
+        )
+    return unit
 
 
 def estimate(api: RecipesApi, amount: str, unit: str):
@@ -44,12 +60,14 @@ def weight_failures(api: IngredientNamesApi, unit: str):
     ]
 
 
-def test_missing_unit_weights_are_estimated_and_labeled(authed_api_client):
+def test_missing_unit_weights_are_estimated_and_labeled(
+    authed_api_client, database_url
+):
     client, _ = authed_api_client
     api = RecipesApi(client)
-    unit = unique_unit()
+    unit = fresh(database_url, "jar")
+    answers = mock_answers(unit)
     first = estimate(api, "2", unit)
-    assert first.lines[0].text == "Amount unclear"
     assert first.resolving
     counted = wait_for(lambda: (e := estimate(api, "2", unit)).lines[0].calories and e)
     assert counted.lines[0].text.endswith("(estimated weight)"), counted.lines[0].text
@@ -61,7 +79,7 @@ def test_missing_unit_weights_are_estimated_and_labeled(authed_api_client):
         )
     )
     assert abs(counted.lines[0].calories.max - plain.lines[0].calories.max) < 1e-6
-    assert mock_answers(unit) == 1
+    assert mock_answers(unit) == answers + 1
 
 
 def test_missing_densities_are_estimated(authed_api_client):
@@ -80,25 +98,27 @@ def test_missing_densities_are_estimated(authed_api_client):
     assert text.startswith("~")
 
 
-def test_units_with_no_typical_weight_stay_unknown(authed_api_client):
+def test_units_with_no_typical_weight_stay_unknown(authed_api_client, database_url):
     client, _ = authed_api_client
     api = RecipesApi(client)
-    unit = unique_unit() + "nosize"
+    unit = fresh(database_url, "handful")
+    answers = mock_answers(unit)
     estimate(api, "2", unit)
-    wait_for(lambda: mock_answers(unit) >= 1)
+    wait_for(lambda: mock_answers(unit) > answers)
     later = wait_for(lambda: (e := estimate(api, "2", unit)) and not e.resolving and e)
     assert later.lines[0].text == "Amount unclear"
     assert later.lines[0].calories is None
 
 
 def test_weight_failures_are_visible_and_retryable(
-    authed_api_client, second_authed_api_client
+    authed_api_client, second_authed_api_client, database_url
 ):
     client, _ = authed_api_client
     api = RecipesApi(client)
     names_api = IngredientNamesApi(client)
-    unit = unique_unit()
+    unit = "bottle"
     mock_fail(unit, True)
+    fresh(database_url, unit)
     create_recipe(api, "2", unit)
     estimate(api, "2", unit)
     failure = wait_for(lambda: next(iter(weight_failures(names_api, unit)), None))

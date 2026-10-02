@@ -231,9 +231,9 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
 
     def _mock_estimate_ingredient_weights(self, all_text):
         """Weigh each (food, unit): 120 g per cup, 50 g per anything else. A
-        unit containing "nosize" has no typical weight (null); a unit a test
-        marked failing (/test/ingredient-name-failure) breaks the response.
-        Calls and answers are counted under the unit."""
+        "handful" has no typical weight (null); a unit a test marked failing
+        (/test/ingredient-name-failure) breaks the response. Calls and answers
+        are counted under the unit."""
         items_text = all_text.split("Items:", 1)[1].split("Respond with JSON", 1)[0]
         items = json.loads(items_text)
         with INGREDIENT_NAME_CALLS_LOCK:
@@ -246,7 +246,7 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             return '{"weights": ['
         weights = []
         for item in items:
-            if "nosize" in item["unit"]:
+            if item["unit"] == "handful":
                 grams = None
             elif item["unit"] == "cup":
                 grams = 120

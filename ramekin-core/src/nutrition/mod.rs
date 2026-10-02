@@ -25,6 +25,69 @@ pub struct WeightKey {
     pub unit: String,
 }
 
+/// The units a weight is estimated for, in `catalog::piece_unit` spelling:
+/// "cup" for any volume, "piece" for a bare count, sizes, and common counted
+/// units and packages. Anything else ("1/2-inch pieces", a typo) stays unknown
+/// rather than becoming a paid question.
+pub const ESTIMABLE_UNITS: &[&str] = &[
+    "bag",
+    "ball",
+    "bar",
+    "block",
+    "bottle",
+    "box",
+    "breast",
+    "bulb",
+    "bunch",
+    "can",
+    "carton",
+    "chop",
+    "clove",
+    "container",
+    "cube",
+    "cup",
+    "ear",
+    "envelope",
+    "extra large",
+    "fillet",
+    "handful",
+    "head",
+    "heart",
+    "jar",
+    "jumbo",
+    "knob",
+    "large",
+    "leaf",
+    "leg",
+    "link",
+    "loaf",
+    "medium",
+    "package",
+    "packet",
+    "piece",
+    "pouch",
+    "rib",
+    "ring",
+    "roll",
+    "sheet",
+    "slab",
+    "slice",
+    "small",
+    "spear",
+    "sprig",
+    "stalk",
+    "steak",
+    "stem",
+    "stick",
+    "strip",
+    "thigh",
+    "tube",
+    "tub",
+    "wedge",
+    "whole",
+    "wing",
+];
+
 /// Model-estimated weights the server stores for gaps an estimate reported
 /// (`Estimate::weight_gaps`); a line weighed with one says so.
 pub type Weights = HashMap<WeightKey, f64>;
@@ -49,13 +112,11 @@ struct Food<'a> {
 
 impl Food<'_> {
     /// An estimated weight for a unit the entry has none for, recording the
-    /// gap when there's no estimate yet. Only plain unit words are asked about.
+    /// gap when there's no estimate yet. Only `ESTIMABLE_UNITS` are asked
+    /// about, so what a request can queue is bounded by the catalog.
     fn estimated(&self, unit: &str) -> Option<f64> {
         let source = self.estimated?;
-        let askable = !unit.is_empty()
-            && unit.len() <= 30
-            && unit.chars().all(|c| c.is_alphabetic() || c == ' ');
-        if !askable {
+        if !ESTIMABLE_UNITS.contains(&unit) {
             return None;
         }
         let key = WeightKey {

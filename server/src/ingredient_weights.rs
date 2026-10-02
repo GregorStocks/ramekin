@@ -8,6 +8,8 @@
 //! ingredient names (see `ingredient_names`).
 
 use std::collections::BTreeSet;
+use std::future::Future;
+use std::pin::Pin;
 use std::sync::Arc;
 
 use chrono::Utc;
@@ -64,9 +66,14 @@ fn rows_for(
         .collect())
 }
 
+/// The most gaps one estimate request queues. A recipe rarely has more than a
+/// few; the rest are queued on a later view. With `ESTIMABLE_UNITS` this
+/// bounds what any request can add to the paid queue.
+const MAX_QUEUED_PER_REQUEST: usize = 50;
+
 /// Estimated weights for `gaps`, and whether any is still waiting to be
-/// estimated. Gaps never queued are queued here, so the caller should `wake`
-/// once this commits.
+/// estimated. Gaps never queued are queued here (up to
+/// `MAX_QUEUED_PER_REQUEST`), so the caller should `wake` once this commits.
 pub fn load_and_enqueue(
     conn: &mut PgConnection,
     gaps: &[WeightKey],
@@ -74,7 +81,7 @@ pub fn load_and_enqueue(
     if gaps.is_empty() {
         return Ok((Weights::new(), false));
     }
-    enqueue(conn, gaps)?;
+    enqueue(conn, &gaps[..gaps.len().min(MAX_QUEUED_PER_REQUEST)])?;
     let rows = rows_for(conn, gaps)?;
     let pending = rows.iter().any(|(_, status, _)| status == PENDING);
     let estimated = rows
@@ -85,7 +92,7 @@ pub fn load_and_enqueue(
     Ok((estimated, pending))
 }
 
-/// How the estimates for some gaps stand, for the status page.
+/// How the estimates for some foods stand, for the status page.
 pub struct Counts {
     pub estimated: i64,
     pub no_typical_weight: i64,
@@ -96,8 +103,10 @@ pub struct Counts {
 /// Food, unit, status, grams, error, attempts.
 type CountRow = (String, String, String, Option<f64>, Option<String>, i32);
 
-pub fn counts(conn: &mut PgConnection, gaps: &[WeightKey]) -> QueryResult<Counts> {
-    let foods: BTreeSet<&str> = gaps.iter().map(|key| key.food.as_str()).collect();
+/// Every estimate row for `foods`, whatever its unit: a gap can depend on the
+/// scale it was viewed at, so the stored recipes alone can't say which units
+/// were queued.
+pub fn counts(conn: &mut PgConnection, foods: &[String]) -> QueryResult<Counts> {
     let rows: Vec<CountRow> = weights::table
         .filter(weights::food.eq_any(foods))
         .order(weights::updated_at.desc())
@@ -117,40 +126,32 @@ pub fn counts(conn: &mut PgConnection, gaps: &[WeightKey]) -> QueryResult<Counts
         failed: Vec::new(),
     };
     for (food, unit, status, grams, error, attempts) in rows {
-        let key = WeightKey { food, unit };
-        if !gaps.contains(&key) {
-            continue;
-        }
         match (status.as_str(), grams) {
             (RESOLVED, Some(_)) => counts.estimated += 1,
             (RESOLVED, None) => counts.no_typical_weight += 1,
             (PENDING, _) => counts.pending += 1,
-            _ => counts
-                .failed
-                .push((key, error.unwrap_or_default(), attempts)),
+            _ => counts.failed.push((
+                WeightKey { food, unit },
+                error.unwrap_or_default(),
+                attempts,
+            )),
         }
     }
     Ok(counts)
 }
 
-/// Put failed estimates among `gaps` back in the queue.
-pub fn requeue_failed(conn: &mut PgConnection, gaps: &[WeightKey]) -> QueryResult<usize> {
-    let failed: Vec<WeightKey> = rows_for(conn, gaps)?
-        .into_iter()
-        .filter(|(_, status, _)| status == FAILED)
-        .map(|(key, _, _)| key)
-        .collect();
-    conn.transaction(|conn| {
-        for key in &failed {
-            diesel::update(weights::table.find((&key.food, &key.unit)))
-                .set((
-                    weights::status.eq(PENDING),
-                    weights::error.eq(None::<String>),
-                ))
-                .execute(conn)?;
-        }
-        Ok(failed.len())
-    })
+/// Put the failed estimates for `foods` back in the queue.
+pub fn requeue_failed(conn: &mut PgConnection, foods: &[String]) -> QueryResult<usize> {
+    diesel::update(
+        weights::table
+            .filter(weights::status.eq(FAILED))
+            .filter(weights::food.eq_any(foods)),
+    )
+    .set((
+        weights::status.eq(PENDING),
+        weights::error.eq(None::<String>),
+    ))
+    .execute(conn)
 }
 
 /// Estimate every pending weight, in batches. Returns the first batch error;
@@ -187,43 +188,44 @@ pub async fn resolve_pending(pool: &Arc<DbPool>) -> Result<(), String> {
     first_error.map_or(Ok(()), Err)
 }
 
+/// A batch's first failure and whether it was the provider's, or `Err` when an
+/// outcome couldn't be saved; boxed, since a failed batch retries its halves.
+type BatchFuture<'a> =
+    Pin<Box<dyn Future<Output = Result<Option<(String, bool)>, String>> + Send + 'a>>;
+
 /// Estimate one batch. If the model's answer for a multi-item batch is
-/// invalid, each item is retried alone, so one item the model can't handle
-/// doesn't fail the others. Returns the first failure and whether it was the
-/// provider's (so later batches would fail too); `Err` means an outcome
-/// couldn't be saved.
-async fn estimate_batch(
-    pool: &Arc<DbPool>,
-    batch: Vec<(String, String)>,
-) -> Result<Option<(String, bool)>, String> {
-    let error = match ask(&batch).await {
-        Ok((estimates, model)) => {
-            save_estimated(pool, estimates, model).await?;
-            return Ok(None);
-        }
-        Err(AiError::ParseError(error)) if batch.len() > 1 => error,
-        Err(error) => return fail(pool, batch, error).await.map(Some),
-    };
-    tracing::warn!(
-        items = batch.len(),
-        "ingredient weight batch failed, retrying items one at a time: {}",
-        error
-    );
-    let mut outcome = None;
-    for item in batch {
-        let single = vec![item];
-        match ask(&single).await {
-            Ok((estimates, model)) => save_estimated(pool, estimates, model).await?,
-            Err(error) => {
-                let (error, provider_wide) = fail(pool, single, error).await?;
-                if provider_wide {
-                    return Ok(Some((error, true)));
-                }
-                outcome.get_or_insert((error, false));
+/// invalid, each half is retried on its own, down to single items, so one item
+/// the model can't handle fails alone in about 2·log2(n) calls rather than n.
+/// Returns the first failure and whether it was the provider's (so later
+/// batches would fail too); `Err` means an outcome couldn't be saved.
+fn estimate_batch(pool: &Arc<DbPool>, batch: Vec<(String, String)>) -> BatchFuture<'_> {
+    Box::pin(async move {
+        let error = match ask(&batch).await {
+            Ok((estimates, model)) => {
+                save_estimated(pool, estimates, model).await?;
+                return Ok(None);
             }
+            Err(AiError::ParseError(error)) if batch.len() > 1 => error,
+            Err(error) => return fail(pool, batch, error).await.map(Some),
+        };
+        tracing::warn!(
+            items = batch.len(),
+            "ingredient weight batch failed, retrying each half: {}",
+            error
+        );
+        let mut first = batch;
+        let second = first.split_off(first.len() / 2);
+        let outcome = estimate_batch(pool, first).await?;
+        if matches!(outcome, Some((_, true))) {
+            return Ok(outcome);
         }
-    }
-    Ok(outcome)
+        let later = estimate_batch(pool, second).await?;
+        Ok(match (outcome, later) {
+            (_, provider @ Some((_, true))) => provider,
+            (Some(first), _) => Some(first),
+            (None, later) => later,
+        })
+    })
 }
 
 /// One LLM call: each item's grams (None: no typical weight), and the model.

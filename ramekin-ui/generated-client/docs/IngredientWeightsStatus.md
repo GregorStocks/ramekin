@@ -1,7 +1,7 @@
 
 # IngredientWeightsStatus
 
-Weights the catalog lacks for foods in the user\'s recipes (a density, or a counted unit such as \"bunch\"), estimated in the background.
+Weights the catalog lacks for foods in the user\'s recipes (a density, or a counted unit such as \"bunch\"), estimated in the background: every estimate for those foods, whichever view queued it.
 
 ## Properties
 

@@ -3835,7 +3835,7 @@
       },
       "IngredientWeightsStatus": {
         "type": "object",
-        "description": "Weights the catalog lacks for foods in the user's recipes (a density, or\na counted unit such as \"bunch\"), estimated in the background.",
+        "description": "Weights the catalog lacks for foods in the user's recipes (a density, or\na counted unit such as \"bunch\"), estimated in the background: every\nestimate for those foods, whichever view queued it.",
         "required": [
           "estimated",
           "no_typical_weight",

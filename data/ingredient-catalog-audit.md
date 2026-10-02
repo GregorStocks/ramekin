@@ -46,7 +46,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 Estimate status with at most 3 uncounted: Complete 31.6%, Insufficient 8.4%, Partial 60.0%
 
-Weights to estimate (distinct food and unit pairs the catalog can't weigh): 364
+Weights to estimate (distinct food and unit pairs the catalog can't weigh): 331
 
 ### Unrecognized-name fingerprints
 
@@ -84,7 +84,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 364
 
 Estimate status with at most 3 uncounted: Complete 56.9%, Insufficient 1.1%, Partial 42.0%
 
-Weights to estimate (distinct food and unit pairs the catalog can't weigh): 80
+Weights to estimate (distinct food and unit pairs the catalog can't weigh): 75
 
 ### Unrecognized-name fingerprints
 
@@ -122,7 +122,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 80
 
 Estimate status with at most 3 uncounted: Complete 54.2%, Insufficient 1.6%, Partial 44.3%
 
-Weights to estimate (distinct food and unit pairs the catalog can't weigh): 77
+Weights to estimate (distinct food and unit pairs the catalog can't weigh): 74
 
 ### Unrecognized-name fingerprints
 

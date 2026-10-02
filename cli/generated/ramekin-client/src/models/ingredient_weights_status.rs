@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// IngredientWeightsStatus : Weights the catalog lacks for foods in the user's recipes (a density, or a counted unit such as \"bunch\"), estimated in the background.
+/// IngredientWeightsStatus : Weights the catalog lacks for foods in the user's recipes (a density, or a counted unit such as \"bunch\"), estimated in the background: every estimate for those foods, whichever view queued it.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct IngredientWeightsStatus {
     /// Estimated; lines using one say \"estimated weight\".
@@ -32,7 +32,7 @@ pub struct IngredientWeightsStatus {
 }
 
 impl IngredientWeightsStatus {
-    /// Weights the catalog lacks for foods in the user's recipes (a density, or a counted unit such as \"bunch\"), estimated in the background.
+    /// Weights the catalog lacks for foods in the user's recipes (a density, or a counted unit such as \"bunch\"), estimated in the background: every estimate for those foods, whichever view queued it.
     pub fn new(
         estimated: i64,
         failed: i64,

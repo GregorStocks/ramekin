@@ -1069,7 +1069,10 @@ fn estimated_weights_fill_catalog_gaps_and_say_so() {
     let result = estimate_with(&[weighed], None, 1.0, &Learned::new(), &weights).unwrap();
     assert!(!result.lines[0].text.contains("estimated"));
     assert!(result.weight_gaps.is_empty());
-    // Junk units aren't asked about.
-    let junk = estimate(&[ingredient("capers", "2", "1/2-inch pieces")], None, 1.0).unwrap();
-    assert!(junk.weight_gaps.is_empty());
+    // Only known units are asked about, so a request can't queue arbitrary
+    // questions.
+    for unit in ["1/2-inch pieces", "zqfrobs", "glugs"] {
+        let junk = estimate(&[ingredient("capers", "2", unit)], None, 1.0).unwrap();
+        assert!(junk.weight_gaps.is_empty(), "{unit}");
+    }
 }

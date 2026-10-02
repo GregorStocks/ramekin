@@ -10,7 +10,7 @@ import Foundation
 import AnyCodable
 #endif
 
-/** Weights the catalog lacks for foods in the user&#39;s recipes (a density, or a counted unit such as \&quot;bunch\&quot;), estimated in the background. */
+/** Weights the catalog lacks for foods in the user&#39;s recipes (a density, or a counted unit such as \&quot;bunch\&quot;), estimated in the background: every estimate for those foods, whichever view queued it. */
 public struct IngredientWeightsStatus: Codable, JSONEncodable, Hashable {
 
     /** Estimated; lines using one say \"estimated weight\". */

@@ -18,8 +18,7 @@ use crate::AppState;
 use axum::routing::{get, post};
 use axum::{extract::State, Json, Router};
 use diesel::prelude::*;
-use ramekin_core::ingredient_parser::ParsedIngredient;
-use ramekin_core::nutrition::{self, WeightKey, Weights};
+use ramekin_core::catalog::{self, Resolution};
 use serde::Serialize;
 use std::collections::BTreeSet;
 use std::sync::Arc;
@@ -46,7 +45,8 @@ pub struct IngredientWeightFailure {
 }
 
 /// Weights the catalog lacks for foods in the user's recipes (a density, or
-/// a counted unit such as "bunch"), estimated in the background.
+/// a counted unit such as "bunch"), estimated in the background: every
+/// estimate for those foods, whichever view queued it.
 #[derive(Debug, Serialize, ToSchema)]
 pub struct IngredientWeightsStatus {
     /// Estimated; lines using one say "estimated weight".
@@ -132,12 +132,12 @@ fn own_names(
     Ok(unlearned_names(items.iter().map(String::as_str)))
 }
 
-/// The weights the catalog lacks for the user's current recipes, as their
-/// calorie estimates report them.
-fn own_weight_gaps(
+/// The catalog foods (entry ids) the user's current recipes use, as their
+/// calorie estimates resolve them, for scoping weight estimates.
+fn own_foods(
     conn: &mut PgConnection,
-    recipes: Vec<Vec<Ingredient>>,
-) -> Result<Vec<WeightKey>, ApiError> {
+    recipes: &[Vec<Ingredient>],
+) -> Result<Vec<String>, ApiError> {
     let learned = load_learned(
         conn,
         recipes
@@ -146,14 +146,18 @@ fn own_weight_gaps(
             .map(|ingredient| ingredient.item.as_str()),
     )
     .map_err(db_error)?;
-    let mut gaps = BTreeSet::new();
-    for ingredients in recipes {
-        let parsed: Vec<ParsedIngredient> = ingredients.into_iter().map(Into::into).collect();
-        let estimate = nutrition::estimate_with(&parsed, None, 1.0, &learned, &Weights::new())
-            .map_err(|e| ApiError::internal(format!("Failed to estimate stored recipe: {e}")))?;
-        gaps.extend(estimate.weight_gaps);
-    }
-    Ok(gaps.into_iter().collect())
+    let foods: BTreeSet<String> = recipes
+        .iter()
+        .flatten()
+        .filter_map(|ingredient| {
+            match catalog::resolve_line_with(&ingredient.item, ingredient.note.as_deref(), &learned)
+            {
+                Resolution::Entry { entry, .. } => Some(entry.id.clone()),
+                _ => None,
+            }
+        })
+        .collect();
+    Ok(foods.into_iter().collect())
 }
 
 #[utoipa::path(
@@ -197,8 +201,8 @@ pub async fn get_ingredient_names_status(
             .select((names::name, names::error, names::attempts))
             .load(conn)
             .map_err(db_error)?;
-        let gaps = own_weight_gaps(conn, recipes)?;
-        let weights = ingredient_weights::counts(conn, &gaps).map_err(db_error)?;
+        let foods = own_foods(conn, &recipes)?;
+        let weights = ingredient_weights::counts(conn, &foods).map_err(db_error)?;
         Ok(IngredientNamesStatusResponse {
             recognized: count(RESOLVED, Some("entry")),
             not_food: count(RESOLVED, Some("not_food")),
@@ -255,8 +259,8 @@ pub async fn retry_ingredient_names(
         let recipes = own_recipes(conn, user_id)?;
         let own = own_names(conn, user_id, &recipes)?;
         let names = requeue_failed(conn, &own).map_err(db_error)?;
-        let gaps = own_weight_gaps(conn, recipes)?;
-        let weights = ingredient_weights::requeue_failed(conn, &gaps).map_err(db_error)?;
+        let foods = own_foods(conn, &recipes)?;
+        let weights = ingredient_weights::requeue_failed(conn, &foods).map_err(db_error)?;
         Ok(names + weights)
     })
     .await?;
