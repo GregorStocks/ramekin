@@ -85,6 +85,7 @@ const LEADING_MODIFIERS: &[&str] = &[
     "boneless",
     "chopped",
     "coarsely",
+    "cooled",
     "diced",
     "extra-large",
     "finely",
@@ -415,7 +416,7 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
         pieces.push(chunk.to_string());
     }
     let mut candidates = Vec::new();
-    for piece in pieces {
+    for piece in pieces.iter().map(|piece| clean_alternative(piece)) {
         let mut nouned = Vec::new();
         if let Some((noun, rest)) = &leading {
             if piece == *first_piece {
@@ -439,6 +440,32 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
         }
     }
     Some(candidates)
+}
+
+/// One alternative without what keeps it from naming its food: an example
+/// marker ("like cream cheese", "such as ...") and a prep word joined by "and"
+/// ("cooked and cooled white rice" is cooked white rice).
+fn clean_alternative(piece: &str) -> String {
+    static EXAMPLE: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"^(?:like|such as|e\.g\.|eg|for example),? ").unwrap());
+    let piece = EXAMPLE.replace(piece, "");
+    let words: Vec<&str> = piece.split(' ').collect();
+    let mut kept = Vec::with_capacity(words.len());
+    let mut index = 0;
+    while index < words.len() {
+        if words[index] == "and"
+            && index > 0
+            && words
+                .get(index + 1)
+                .is_some_and(|word| LEADING_MODIFIERS.contains(word))
+        {
+            index += 2;
+            continue;
+        }
+        kept.push(words[index]);
+        index += 1;
+    }
+    kept.join(" ")
 }
 
 /// The first candidate, in `alternative_candidates` order, that names one food.

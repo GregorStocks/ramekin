@@ -415,6 +415,13 @@ fn dissimilar_alternatives_and_bare_herbs() {
         ("lemon or lime juice", "lemon juice"),
         ("sherry or red wine vinegar", "sherry vinegar"),
         ("apple, grape, or cranberry juice", "apple juice"),
+        // Joined prep words and example markers don't push the count onto a
+        // later option.
+        ("cooked and cooled white or brown rice", "cooked white rice"),
+        (
+            "soft cheese, like cream cheese, brie, or boursin",
+            "cream cheese",
+        ),
         // An article is not an amount.
         ("peanut or a vegetable oil", "peanut oil"),
         // A prep word ("baking") doesn't push the count onto a later option.
