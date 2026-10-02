@@ -102,6 +102,8 @@ const LEADING_MODIFIERS: &[&str] = &[
     "organic",
     "packed",
     "peeled",
+    // "raw pecan halves"; an exact name ("raw sugar") matches first.
+    "raw",
     "roughly",
     "shredded",
     "skinless",
@@ -109,6 +111,8 @@ const LEADING_MODIFIERS: &[&str] = &[
     "small",
     "thinly",
     "toasted",
+    // "unsalted pecan halves"; an exact name ("unsalted butter") matches first.
+    "unsalted",
 ];
 
 /// The name without a leading measure the parser left in it ("8 tbsp
@@ -358,83 +362,95 @@ pub fn chosen_alternative(item: &str) -> Option<String> {
 
 /// The names an "x or y" name's alternatives are tried as, in order, or None
 /// when it offers no alternatives. Each "or" chunk's comma pieces, then the
-/// chunk itself ("melted, unsalted butter, olive oil, or ghee"). Each is first
-/// tried with the list's noun, then alone: the last alternative's trailing
-/// words, longest first ("corn or flour tortillas" is corn tortillas, "fresh
-/// lemon or lime juice" lemon juice, "sherry or red wine vinegar" tries sherry
-/// wine vinegar, then sherry vinegar), or a leading noun ("oil canola, olive,
-/// or ..." is canola oil, olive oil).
+/// chunk itself ("melted, unsalted butter, olive oil, or ghee"), each cleaned
+/// (`clean_alternative`). An alternative may borrow the list's noun: the
+/// trailing words of the nearest later chunk that has some ("corn or flour
+/// tortillas" is corn tortillas; "chicken, vegetable or seafood broth or
+/// stock" is chicken broth), longest first ("sherry or red wine vinegar" tries
+/// sherry wine vinegar, then sherry vinegar), or a head noun written first
+/// ("oil canola, olive, or ..." is canola oil, olive oil). A one-word
+/// alternative, prep words aside, is usually an adjective, so it borrows first
+/// ("fresh lemon or lime juice" is lemon juice); a longer one names its food
+/// and is tried as written first ("white wine or white balsamic vinegar" is
+/// white wine).
 fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
+    // A chunk with its own amount ("vanilla or half a vanilla bean") is a
+    // measured alternative and lends no noun; an article is not an amount
+    // ("peanut or a vegetable oil" shares "oil").
+    const AMOUNT_WORDS: [&str; 6] = ["one", "two", "three", "half", "some", "several"];
     let text = normalized.replace(" and/or ", " or ");
     let chunks: Vec<&str> = text
         .split(" or ")
-        .map(|chunk| chunk.trim().trim_matches(','))
+        .map(|chunk| {
+            let chunk = chunk.trim().trim_matches(',');
+            chunk
+                .strip_prefix("a ")
+                .or_else(|| chunk.strip_prefix("an "))
+                .unwrap_or(chunk)
+        })
         .collect();
     if chunks.len() < 2 || chunks.iter().any(|chunk| chunk.is_empty()) {
         return None;
     }
-    // The last alternative's trailing words, longest first: "red wine vinegar"
-    // gives "wine vinegar", then "vinegar".
-    // A last alternative with its own amount ("vanilla or 1 vanilla bean",
-    // "vanilla or half a vanilla bean") is a measured alternative, not a
-    // shared noun.
-    const AMOUNT_WORDS: [&str; 6] = ["one", "two", "three", "half", "some", "several"];
-    // An article is not an amount: "peanut or a vegetable oil" shares "oil".
-    let last = chunks[chunks.len() - 1];
-    let last = last
-        .strip_prefix("a ")
-        .or_else(|| last.strip_prefix("an "))
-        .unwrap_or(last);
-    let measured = last.starts_with(|c: char| c.is_ascii_digit())
-        || AMOUNT_WORDS.contains(&last.split(' ').next().unwrap_or_default());
-    let last_words: Vec<&str> = if measured {
-        Vec::new()
-    } else {
-        last.split(' ').collect()
+    let tails_of = |chunk: &str| -> Vec<String> {
+        let measured = chunk.starts_with(|c: char| c.is_ascii_digit())
+            || AMOUNT_WORDS.contains(&chunk.split(' ').next().unwrap_or_default());
+        let words: Vec<&str> = chunk.split(' ').collect();
+        if measured {
+            return Vec::new();
+        }
+        (1..words.len())
+            .map(|start| words[start..].join(" "))
+            .collect()
     };
-    let trailing: Vec<String> = (1..last_words.len())
-        .map(|start| last_words[start..].join(" "))
-        .collect();
     // "oil canola, olive, ...": a head noun written before the first item.
     let first_piece = chunks[0].split(", ").next().unwrap_or_default();
     let leading = first_piece
         .split_once(' ')
         .filter(|_| chunks[0].contains(", "))
         .map(|(noun, rest)| (noun.to_string(), rest.to_string()));
-    // A chunk's comma pieces come before the whole chunk: resolving "apple,
-    // grape" whole drops the clause and lands on apples, while the piece
-    // "apple" with the shared noun is apple juice.
-    let mut pieces = Vec::new();
-    for chunk in &chunks {
-        pieces.extend(
-            chunk
-                .split(", ")
-                .map(|piece| piece.trim().to_string())
-                .filter(|piece| !piece.is_empty() && piece != chunk),
-        );
-        pieces.push(chunk.to_string());
-    }
     let mut candidates = Vec::new();
-    for piece in pieces.iter().map(|piece| clean_alternative(piece)) {
-        let mut nouned = Vec::new();
-        if let Some((noun, rest)) = &leading {
-            if piece == *first_piece {
-                nouned.push(format!("{rest} {noun}"));
-            } else if !piece.contains(' ') {
-                nouned.push(format!("{piece} {noun}"));
+    for (index, chunk) in chunks.iter().enumerate() {
+        let trailing = chunks[index + 1..]
+            .iter()
+            .map(|later| tails_of(later))
+            .find(|tails| !tails.is_empty())
+            .unwrap_or_default();
+        let mut pieces: Vec<String> = chunk
+            .split(", ")
+            .map(|piece| piece.trim().to_string())
+            .filter(|piece| !piece.is_empty() && piece != chunk)
+            .collect();
+        pieces.push(chunk.to_string());
+        for raw in pieces {
+            let piece = clean_alternative(&raw);
+            let mut nouned = Vec::new();
+            if let Some((noun, rest)) = &leading {
+                if raw == first_piece {
+                    nouned.push(format!("{rest} {noun}"));
+                } else if !piece.contains(' ') {
+                    nouned.push(format!("{piece} {noun}"));
+                }
+            }
+            for tail in trailing
+                .iter()
+                .filter(|tail| !piece.ends_with(tail.as_str()))
+            {
+                nouned.push(format!("{piece} {tail}"));
+            }
+            let one_word = piece
+                .split(' ')
+                .filter(|word| !LEADING_MODIFIERS.contains(word))
+                .count()
+                <= 1;
+            if one_word {
+                candidates.extend(nouned);
+                candidates.push(piece);
+            } else {
+                candidates.push(piece);
+                candidates.extend(nouned);
             }
         }
-        for tail in trailing
-            .iter()
-            .filter(|tail| !piece.ends_with(tail.as_str()))
-        {
-            nouned.push(format!("{piece} {tail}"));
-        }
-        // The shared noun first: "fresh lemon or lime juice" is lemon juice,
-        // not lemons; the bare piece still follows ("sour cream or plain
-        // yogurt").
-        candidates.extend(nouned);
-        candidates.push(piece);
     }
     Some(candidates)
 }

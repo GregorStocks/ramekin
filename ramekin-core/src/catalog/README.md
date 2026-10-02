@@ -75,7 +75,7 @@ Names are lowercased and whitespace is collapsed. Then:
    alternatives ("milk, dairy or non-dairy") resolves to the first-listed
    food, the same way the first measurement wins over later alternatives.
 5. The name with leading size and preparation words (`LEADING_MODIFIERS`:
-   "chopped", "fresh", "large", "boneless", "baking", …) dropped one word at a time, so
+   "chopped", "fresh", "large", "boneless", "baking", "raw", "unsalted", …) dropped one word at a time, so
    "grated fresh ginger" tries "fresh ginger" before "ginger". Words that change
    the food ("ground", "dried", "light", "crushed", "whole") are never dropped.
    A *bare* name reached this way may not be a dried or ground spice unless the
@@ -98,8 +98,12 @@ Names are lowercased and whitespace is collapsed. Then:
    …"), and prep words joined by "and" ("cooked and cooled white rice" is
    cooked white rice). Only if no alternative names a
    food do steps 4–6 run. A single word is usually an
-   adjective, so every alternative is first tried with the list's noun ("fresh
-   lemon or lime juice" is lemon juice), then alone: the last
+   adjective, so a one-word alternative (prep words aside) is first tried with
+   the list's noun ("fresh lemon or lime juice" is lemon juice), then alone; a
+   longer one names its food and is tried as written first ("white wine or
+   white balsamic vinegar" is white wine). The noun comes from the nearest
+   later alternative that has one ("chicken, vegetable or seafood broth or
+   stock" is chicken broth): the last
    alternative's trailing words, longest first ("corn or flour tortillas" is
    corn tortillas, "sherry or red wine vinegar" sherry vinegar), unless that
    alternative carries its own amount ("vanilla or half a vanilla bean"; an

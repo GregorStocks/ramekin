@@ -423,6 +423,9 @@ fn dissimilar_alternatives_and_bare_herbs() {
             "cream cheese",
         ),
         ("fresh lemon or lime juice", "fresh lemon juice"),
+        // A complete first option is tried as written.
+        ("white wine or white balsamic vinegar", "white wine"),
+        ("rice wine or apple cider vinegar", "rice wine"),
         (
             "berries: sliced strawberries, blackberries, or raspberries",
             "sliced strawberries",
@@ -446,6 +449,19 @@ fn dissimilar_alternatives_and_bare_herbs() {
         assert_eq!(fdc_id(item), fdc_id(assumed), "{item:?}");
     }
     assert_eq!(fdc_id("baking walnuts or pecans"), fdc_id("walnuts"));
+    assert_eq!(
+        fdc_id("raw or toasted, unsalted pecan halves"),
+        fdc_id("pecans")
+    );
+    // A trailing synonym ("or stock") doesn't hide the earlier options' noun.
+    let broth = "low-sodium chicken, vegetable or seafood broth or stock";
+    assert!(
+        chosen_alternative(broth)
+            .unwrap()
+            .ends_with("chicken broth"),
+        "{broth:?}"
+    );
+    assert_eq!(fdc_id(broth), fdc_id("chicken broth"));
     // A curated alias for an alternatives name is labeled with the listed
     // alternative it counts as.
     assert_eq!(
