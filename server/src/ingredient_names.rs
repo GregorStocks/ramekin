@@ -28,7 +28,7 @@ use crate::db::{run_blocking, DbPool};
 use crate::schema::ingredient_name_resolutions as names;
 
 /// Names resolved per LLM call.
-const BATCH_SIZE: i64 = 40;
+pub(crate) const BATCH_SIZE: i64 = 40;
 /// Candidate catalog keys offered per name.
 const CANDIDATES: usize = 12;
 /// How soon the worker tries again after a pass that failed, doubling up to
@@ -41,15 +41,16 @@ pub const RESOLVED: &str = "resolved";
 pub const FAILED: &str = "failed";
 
 static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
-static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
+pub(crate) static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
 /// One client for the process, so its rate limit spaces every call, with
 /// the model it asks.
-static CLIENT: LazyLock<Result<(CachingAiClient, String), ConfigError>> = LazyLock::new(|| {
-    AiConfig::from_env().map(|config| {
-        let model = config.model.clone();
-        (CachingAiClient::new(config), model)
-    })
-});
+pub(crate) static CLIENT: LazyLock<Result<(CachingAiClient, String), ConfigError>> =
+    LazyLock::new(|| {
+        AiConfig::from_env().map(|config| {
+            let model = config.model.clone();
+            (CachingAiClient::new(config), model)
+        })
+    });
 
 /// The names among `items` the committed catalog doesn't know, deduplicated.
 pub fn unlearned_names<'a>(items: impl IntoIterator<Item = &'a str>) -> Vec<String> {
@@ -196,7 +197,12 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
     tokio::spawn(async move {
         let mut backoff = RETRY_MIN;
         loop {
-            match resolve_pending(&pool, None).await {
+            // Names first: an answer can make a line's food known, and so
+            // its weight worth asking for. One failing doesn't hold up the
+            // other.
+            let names = resolve_pending(&pool, None).await;
+            let weights = crate::ingredient_weights::resolve_pending(&pool).await;
+            match names.and(weights) {
                 Ok(()) => {
                     backoff = RETRY_MIN;
                     WAKE.notified().await;

@@ -4,7 +4,7 @@ use ramekin_core::catalog::{
 };
 use ramekin_core::ingredient_categorizer::categorize_with;
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
-use ramekin_core::nutrition::{estimate, estimate_with};
+use ramekin_core::nutrition::{estimate, estimate_with, Weights};
 
 fn learned(pairs: &[(&str, LearnedTarget)]) -> Learned {
     pairs
@@ -81,7 +81,14 @@ fn estimates_and_categories_use_learned_names() {
         "moon sugar",
         LearnedTarget::Entry("granulated sugar".into()),
     )]);
-    let with = estimate_with(std::slice::from_ref(&line), None, 1.0, &learned).unwrap();
+    let with = estimate_with(
+        std::slice::from_ref(&line),
+        None,
+        1.0,
+        &learned,
+        &Weights::new(),
+    )
+    .unwrap();
     assert_eq!(with.known_calories.unwrap().min, 387.0);
 
     assert_eq!(categorize_with("moon sugar", &learned), "Baking");

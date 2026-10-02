@@ -41,7 +41,7 @@ pub struct CalorieEstimateResponse {
         skip_serializing_if = "Option::is_none"
     )]
     pub per_serving_calories: Option<Option<Box<models::CalorieRange>>>,
-    /// Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them.
+    /// Some ingredient names are still being recognized, or weights estimated, in the background; ask again shortly for an estimate that includes them.
     #[serde(rename = "resolving")]
     pub resolving: bool,
     /// Shown under the headline when present.

@@ -12,6 +12,7 @@
  * Do not edit the class manually.
  */
 import { IngredientNameFailureFromJSON, IngredientNameFailureToJSON, } from './IngredientNameFailure';
+import { IngredientWeightsStatusFromJSON, IngredientWeightsStatusToJSON, } from './IngredientWeightsStatus';
 /**
  * Check if a given object implements the IngredientNamesStatusResponse interface.
  */
@@ -27,6 +28,8 @@ export function instanceOfIngredientNamesStatusResponse(value) {
     if (!('recognized' in value) || value['recognized'] === undefined)
         return false;
     if (!('unknown' in value) || value['unknown'] === undefined)
+        return false;
+    if (!('weights' in value) || value['weights'] === undefined)
         return false;
     return true;
 }
@@ -44,6 +47,7 @@ export function IngredientNamesStatusResponseFromJSONTyped(json, ignoreDiscrimin
         'pending': json['pending'],
         'recognized': json['recognized'],
         'unknown': json['unknown'],
+        'weights': IngredientWeightsStatusFromJSON(json['weights']),
     };
 }
 export function IngredientNamesStatusResponseToJSON(json) {
@@ -60,5 +64,6 @@ export function IngredientNamesStatusResponseToJSONTyped(value, ignoreDiscrimina
         'pending': value['pending'],
         'recognized': value['recognized'],
         'unknown': value['unknown'],
+        'weights': IngredientWeightsStatusToJSON(value['weights']),
     };
 }

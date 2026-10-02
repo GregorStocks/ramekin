@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **lines** | [**List[CalorieLine]**](CalorieLine.md) | The breakdown, one entry per ingredient in order. | 
 **not_counted** | **List[str]** | Ingredients the figures leave out, in recipe order: those given no amount (even in a complete estimate), and for a partial estimate the ones that couldn&#39;t be counted. | 
 **per_serving_calories** | [**CalorieRange**](CalorieRange.md) |  | [optional] 
-**resolving** | **bool** | Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them. | 
+**resolving** | **bool** | Some ingredient names are still being recognized, or weights estimated, in the background; ask again shortly for an estimate that includes them. | 
 **secondary** | **str** | Shown under the headline when present. | [optional] 
 **status** | [**CalorieStatus**](CalorieStatus.md) |  | 
 

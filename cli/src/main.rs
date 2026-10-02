@@ -274,6 +274,10 @@ enum Commands {
         /// rows) to the prod recipes, as the server does
         #[arg(long)]
         learned: Option<PathBuf>,
+        /// Apply the server's estimated weights (a JSON array of
+        /// ingredient_weight_estimates rows) to the prod recipes, as the server does
+        #[arg(long)]
+        weights: Option<PathBuf>,
     },
     /// Generate a title-normalization mapping from a .paprikarecipes file
     TitleNormalizationTest {
@@ -489,12 +493,14 @@ async fn main() -> Result<()> {
             runs_dir,
             prod_recipes,
             learned,
+            weights,
         } => {
             ingredient_catalog_audit::run(
                 Path::new("."),
                 runs_dir.as_deref(),
                 prod_recipes.as_deref(),
                 learned.as_deref(),
+                weights.as_deref(),
             )?;
         }
         Commands::TitleNormalizationTest {

@@ -4,6 +4,7 @@ mod api;
 mod auth;
 mod db;
 mod ingredient_names;
+mod ingredient_weights;
 mod models;
 mod photos;
 mod raw_sql;

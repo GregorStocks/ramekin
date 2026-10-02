@@ -368,11 +368,12 @@ catalog-apply-classification: ## Merge classification decisions (FILE=decisions.
 shopping-list-categorizer-test: ## Score the categorizer against the prod shopping-list corpus (reports mismatches + 'Other' rate)
 	@cargo test -q --manifest-path ramekin-core/Cargo.toml --test shopping_list_categorizer_tests -- --nocapture
 
-ingredient-catalog-audit: ## Report nutrition/density/category coverage of committed ingredient corpora (optional RUNS_DIR=, PROD_RECIPES=, LEARNED=)
+ingredient-catalog-audit: ## Report nutrition/density/category coverage of committed ingredient corpora (optional RUNS_DIR=, PROD_RECIPES=, LEARNED=, WEIGHTS=)
 	@cargo run -q --release --manifest-path cli/Cargo.toml -- ingredient-catalog-audit \
 		$(if $(RUNS_DIR),--runs-dir $(RUNS_DIR),) \
 		$(if $(PROD_RECIPES),--prod-recipes $(PROD_RECIPES),) \
-		$(if $(LEARNED),--learned $(LEARNED),)
+		$(if $(LEARNED),--learned $(LEARNED),) \
+		$(if $(WEIGHTS),--weights $(WEIGHTS),)
 
 catalog-clean-aliases: ## Re-key or remove curated aliases the ingredient parser no longer produces (report in logs/catalog-alias-cleanup.md)
 	@cargo run -q --release --manifest-path cli/Cargo.toml -- catalog-clean-aliases

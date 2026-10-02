@@ -72,4 +72,6 @@ def test_settings_shows_ingredient_recognition(logged_in_page: Page, ui_url: str
     panel = logged_in_page.get_by_role("region", name="Ingredient recognition")
     expect(panel.locator(".settings-name-counts")).to_contain_text("recognized")
     expect(panel.locator(".settings-name-counts")).to_contain_text("0 failed")
+    expect(panel.locator(".settings-weight-counts")).to_contain_text("estimated")
+    expect(panel.locator(".settings-weight-counts")).to_contain_text("0 failed")
     expect(panel.get_by_role("button", name="Retry failed")).to_be_disabled()

@@ -27,7 +27,7 @@ class IngredientNamesQueuedResponse(BaseModel):
     """
     IngredientNamesQueuedResponse
     """ # noqa: E501
-    queued: Annotated[int, Field(strict=True, ge=0)] = Field(description="Names queued for resolution by this call.")
+    queued: Annotated[int, Field(strict=True, ge=0)] = Field(description="Names and weights queued again by this call.")
     __properties: ClassVar[List[str]] = ["queued"]
 
     model_config = ConfigDict(

@@ -59,6 +59,8 @@ ramekin_client/docs/IngredientNameFailure.md
 ramekin_client/docs/IngredientNamesApi.md
 ramekin_client/docs/IngredientNamesQueuedResponse.md
 ramekin_client/docs/IngredientNamesStatusResponse.md
+ramekin_client/docs/IngredientWeightFailure.md
+ramekin_client/docs/IngredientWeightsStatus.md
 ramekin_client/docs/ListRecipesResponse.md
 ramekin_client/docs/LoginRequest.md
 ramekin_client/docs/LoginResponse.md
@@ -151,6 +153,8 @@ ramekin_client/models/ingredient.py
 ramekin_client/models/ingredient_name_failure.py
 ramekin_client/models/ingredient_names_queued_response.py
 ramekin_client/models/ingredient_names_status_response.py
+ramekin_client/models/ingredient_weight_failure.py
+ramekin_client/models/ingredient_weights_status.py
 ramekin_client/models/list_recipes_response.py
 ramekin_client/models/login_request.py
 ramekin_client/models/login_response.py
@@ -240,6 +244,8 @@ ramekin_client/test/test_ingredient_name_failure.py
 ramekin_client/test/test_ingredient_names_api.py
 ramekin_client/test/test_ingredient_names_queued_response.py
 ramekin_client/test/test_ingredient_names_status_response.py
+ramekin_client/test/test_ingredient_weight_failure.py
+ramekin_client/test/test_ingredient_weights_status.py
 ramekin_client/test/test_list_recipes_response.py
 ramekin_client/test/test_login_request.py
 ramekin_client/test/test_login_response.py

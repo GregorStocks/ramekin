@@ -16,7 +16,7 @@
  */
 export interface IngredientNamesQueuedResponse {
     /**
-     * Names queued for resolution by this call.
+     * Names and weights queued again by this call.
      * @type {number}
      * @memberof IngredientNamesQueuedResponse
      */

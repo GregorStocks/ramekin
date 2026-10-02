@@ -673,7 +673,7 @@ const PARTIAL_PIECES: [&str; 8] = [
 /// Normalize a counted unit to a portion key: lowercase, "extra-large" ->
 /// "extra large", and the first word singular ("cloves" -> "clove"). Matches
 /// the importer's `portion_key`.
-fn piece_unit(unit: &str) -> String {
+pub fn piece_unit(unit: &str) -> String {
     let unit = normalize(&unit.replace('-', " "));
     let (first, rest) = unit.split_once(' ').unwrap_or((&unit, ""));
     let first = if let Some(stem) = first.strip_suffix("leaves") {

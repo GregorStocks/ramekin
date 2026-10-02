@@ -81,9 +81,12 @@ export default function SettingsPage() {
   const [retrying, setRetrying] = createSignal(false);
   const [nameMessage, setNameMessage] = createSignal<string | null>(null);
   const [nameError, setNameError] = createSignal<string | null>(null);
-  // Keep the counts current while names are waiting to be resolved.
+  const failedCount = () =>
+    (nameStatus()?.failed ?? 0) + (nameStatus()?.weights.failed ?? 0);
+  // Keep the counts current while names or weights are waiting.
   createEffect(() => {
-    if ((nameStatus()?.pending ?? 0) === 0) return;
+    const status = nameStatus();
+    if ((status?.pending ?? 0) + (status?.weights.pending ?? 0) === 0) return;
     const timer = setTimeout(() => refetchNameStatus(), 2000);
     onCleanup(() => clearTimeout(timer));
   });
@@ -93,7 +96,7 @@ export default function SettingsPage() {
     setNameError(null);
     try {
       const { queued } = await getIngredientNamesApi().retryIngredientNames();
-      setNameMessage(`Queued ${queued} names.`);
+      setNameMessage(`Queued ${queued} again.`);
       refetchNameStatus();
     } catch (err) {
       setNameError(await extractApiError(err, "Failed to queue names"));
@@ -161,8 +164,9 @@ export default function SettingsPage() {
         <h3>Ingredient recognition</h3>
         <p>
           Ingredient names the catalog doesn't know are identified in the
-          background after you save. Until then they count as unknown in calorie
-          estimates.
+          background after you save, and weights it lacks for a food (a cup of
+          capers, a bunch of kale) are estimated once a calorie estimate needs
+          them. Until then they count as unknown in calorie estimates.
         </p>
         <Show when={nameStatus()}>
           {(status) => (
@@ -172,12 +176,30 @@ export default function SettingsPage() {
                 {status().unknown} unknown · {status().pending} pending ·{" "}
                 {status().failed} failed
               </p>
-              <Show when={status().failures.length > 0}>
+              <p class="settings-weight-counts">
+                Weights: {status().weights.estimated} estimated ·{" "}
+                {status().weights.noTypicalWeight} no typical weight ·{" "}
+                {status().weights.pending} pending · {status().weights.failed}{" "}
+                failed
+              </p>
+              <Show
+                when={
+                  status().failures.length + status().weights.failures.length >
+                  0
+                }
+              >
                 <ul class="settings-name-failures">
                   <For each={status().failures}>
                     {(failure) => (
                       <li>
                         {failure.name}: {failure.error}
+                      </li>
+                    )}
+                  </For>
+                  <For each={status().weights.failures}>
+                    {(failure) => (
+                      <li>
+                        {failure.unit} of {failure.food}: {failure.error}
                       </li>
                     )}
                   </For>
@@ -189,7 +211,7 @@ export default function SettingsPage() {
         <button
           type="button"
           class="btn btn-small"
-          disabled={retrying() || (nameStatus()?.failed ?? 0) === 0}
+          disabled={retrying() || failedCount() === 0}
           onClick={handleRetryNames}
         >
           {retrying() ? "Retrying…" : "Retry failed"}

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **pending** | **int** | Waiting for the background resolver. | 
 **recognized** | **int** | Resolved to a catalog food or product. | 
 **unknown** | **int** | Resolved, but the model couldn&#39;t tell; still unknown in estimates. | 
+**weights** | [**IngredientWeightsStatus**](IngredientWeightsStatus.md) |  | 
 
 ## Example
 

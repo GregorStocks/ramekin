@@ -69,6 +69,25 @@ pub struct Ingredient {
     pub section: Option<String>,
 }
 
+impl From<Ingredient> for ramekin_core::ingredient_parser::ParsedIngredient {
+    fn from(ingredient: Ingredient) -> Self {
+        Self {
+            item: ingredient.item,
+            measurements: ingredient
+                .measurements
+                .into_iter()
+                .map(|m| ramekin_core::ingredient_parser::Measurement {
+                    amount: m.amount,
+                    unit: m.unit,
+                })
+                .collect(),
+            note: ingredient.note,
+            section: ingredient.section,
+            raw: None,
+        }
+    }
+}
+
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::photos)]
 #[diesel(check_for_backend(diesel::pg::Pg))]

@@ -13,7 +13,7 @@ import AnyCodable
 public struct IngredientNamesQueuedResponse: Codable, JSONEncodable, Hashable {
 
     public static let queuedRule = NumericRule<Int>(minimum: 0, exclusiveMinimum: false, maximum: nil, exclusiveMaximum: false, multipleOf: nil)
-    /** Names queued for resolution by this call. */
+    /** Names and weights queued again by this call. */
     public var queued: Int
 
     public init(queued: Int) {

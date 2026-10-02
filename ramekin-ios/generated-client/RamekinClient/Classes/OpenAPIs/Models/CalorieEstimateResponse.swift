@@ -24,7 +24,7 @@ public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
     /** Ingredients the figures leave out, in recipe order: those given no amount (even in a complete estimate), and for a partial estimate the ones that couldn't be counted. */
     public var notCounted: [String]
     public var perServingCalories: CalorieRange?
-    /** Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them. */
+    /** Some ingredient names are still being recognized, or weights estimated, in the background; ask again shortly for an estimate that includes them. */
     public var resolving: Bool
     /** Shown under the headline when present. */
     public var secondary: String?

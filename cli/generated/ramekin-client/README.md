@@ -118,6 +118,8 @@ Class | Method | HTTP request | Description
  - [IngredientNameFailure](docs/IngredientNameFailure.md)
  - [IngredientNamesQueuedResponse](docs/IngredientNamesQueuedResponse.md)
  - [IngredientNamesStatusResponse](docs/IngredientNamesStatusResponse.md)
+ - [IngredientWeightFailure](docs/IngredientWeightFailure.md)
+ - [IngredientWeightsStatus](docs/IngredientWeightsStatus.md)
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)

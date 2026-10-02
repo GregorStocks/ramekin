@@ -20,6 +20,13 @@ import {
     IngredientNameFailureToJSON,
     IngredientNameFailureToJSONTyped,
 } from './IngredientNameFailure';
+import type { IngredientWeightsStatus } from './IngredientWeightsStatus';
+import {
+    IngredientWeightsStatusFromJSON,
+    IngredientWeightsStatusFromJSONTyped,
+    IngredientWeightsStatusToJSON,
+    IngredientWeightsStatusToJSONTyped,
+} from './IngredientWeightsStatus';
 
 /**
  * 
@@ -63,6 +70,12 @@ export interface IngredientNamesStatusResponse {
      * @memberof IngredientNamesStatusResponse
      */
     unknown: number;
+    /**
+     * 
+     * @type {IngredientWeightsStatus}
+     * @memberof IngredientNamesStatusResponse
+     */
+    weights: IngredientWeightsStatus;
 }
 
 /**
@@ -75,6 +88,7 @@ export function instanceOfIngredientNamesStatusResponse(value: object): value is
     if (!('pending' in value) || value['pending'] === undefined) return false;
     if (!('recognized' in value) || value['recognized'] === undefined) return false;
     if (!('unknown' in value) || value['unknown'] === undefined) return false;
+    if (!('weights' in value) || value['weights'] === undefined) return false;
     return true;
 }
 
@@ -94,6 +108,7 @@ export function IngredientNamesStatusResponseFromJSONTyped(json: any, ignoreDisc
         'pending': json['pending'],
         'recognized': json['recognized'],
         'unknown': json['unknown'],
+        'weights': IngredientWeightsStatusFromJSON(json['weights']),
     };
 }
 
@@ -114,6 +129,7 @@ export function IngredientNamesStatusResponseToJSONTyped(value?: IngredientNames
         'pending': value['pending'],
         'recognized': value['recognized'],
         'unknown': value['unknown'],
+        'weights': IngredientWeightsStatusToJSON(value['weights']),
     };
 }
 
