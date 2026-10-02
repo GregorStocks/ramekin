@@ -430,3 +430,34 @@ def test_fndds_records_have_no_names_or_pieces():
 def test_invalid_fndds_tables_fail(foods, nutrients, rows, match):
     with pytest.raises(ValueError, match=match):
         IMPORTER.build_fndds_data(foods, nutrients, rows)
+
+
+def test_fluid_ounces_skip_dry_powders():
+    rows = [portion("fl oz", weight="30.5")]
+    assert IMPORTER.calculate_grams_per_cup(rows, "Infant formula, powder") is None
+    assert (
+        IMPORTER.calculate_grams_per_cup(rows, "Lemonade, powder, prepared with water")
+        == 244
+    )
+    assert IMPORTER.calculate_grams_per_cup(rows, "Wine, table, red") == 244
+
+
+def test_implausible_fluid_ounce_density_fails_only_when_used():
+    bad = portion("fl oz", amount="5", weight="30")
+    with pytest.raises(ValueError, match="Implausible fluid-ounce"):
+        IMPORTER.calculate_grams_per_cup([bad])
+    # A cup portion wins, so the fluid-ounce row isn't used.
+    assert IMPORTER.calculate_grams_per_cup([bad, portion(weight="166")]) == 166
+
+
+def test_malformed_fluid_ounce_row_is_pinned():
+    row = {
+        "id": "85498",
+        "fdc_id": "169789",
+        "modifier": "fl oz",
+        "amount": "5",
+        "gram_weight": "30",
+    }
+    assert IMPORTER.calculate_grams_per_cup([row]) is None
+    with pytest.raises(ValueError, match="Excluded USDA portion changed"):
+        IMPORTER.calculate_grams_per_cup([{**row, "gram_weight": "31"}])
