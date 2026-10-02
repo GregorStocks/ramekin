@@ -87,32 +87,42 @@ Names are lowercased and whitespace is collapsed. Then:
    steps 3 and 5 on that. A count or unit never names the food.
 7. A name offering alternatives ("x or y", "x and/or y") that steps 1–3 don't
    match directly (exactly, as a plural, or without modifiers) resolves to the
-   first-listed
-   alternative that names a food (`Via::Alternative`; owner decision
-   2026-10-02), however much the alternatives differ in calories. Each "or"
-   chunk's comma pieces are tried before the chunk itself ("melted, unsalted
-   butter, olive oil, or ghee" is unsalted butter; "apple, grape, or cranberry
-   juice" is apple juice, not the apple that clause trimming in step 4 would
-   find). Each alternative is first cleaned of a leading label ("berries:
-   sliced strawberries"), an example marker ("like cream cheese", "such as
-   …"), and prep words joined by "and" ("cooked and cooled white rice" is
-   cooked white rice). Only if no alternative names a
-   food do steps 4–6 run. A single word is usually an
-   adjective, so a one-word alternative (prep words aside) is first tried with
-   the list's noun ("fresh lemon or lime juice" is lemon juice), then alone; a
-   longer one names its food and is tried as written first ("white wine or
-   white balsamic vinegar" is white wine). The noun comes from the nearest
-   later alternative that has one ("chicken, vegetable or seafood broth or
-   stock" is chicken broth): the last
-   alternative's trailing words, longest first ("corn or flour tortillas" is
-   corn tortillas, "sherry or red wine vinegar" sherry vinegar), unless that
-   alternative carries its own amount ("vanilla or half a vanilla bean"; an
-   article is not an amount: "peanut or a vegetable oil" is peanut oil), or a
-   head noun written
-   first ("oil canola, olive, or …" is canola oil). Longer alternatives are
-   tried alone, then with the trailing words. The calorie breakdown says what
-   it assumed ("~120 kcal (assumed unsalted butter)"), including for an
-   alternatives name a curated alias resolves ("butter or margarine").
+   first-listed alternative that names a food (`Via::Alternative`; owner
+   decision 2026-10-02), however much the alternatives differ in calories.
+   Only if none does do steps 4–6 run.
+   - **Pieces.** Each "or" chunk's comma pieces are tried before the chunk
+     itself ("melted, unsalted butter, olive oil, or ghee" is unsalted butter;
+     "apple, grape, or cranberry juice" is apple juice, not the apple that
+     clause trimming in step 4 would find). Each is first cleaned of a leading
+     label ("berries: sliced strawberries"), an example marker ("like cream
+     cheese", "such as …"), and prep words joined by "and" ("cooked and cooled
+     white rice" is cooked white rice).
+   - **The list's noun.** An alternative may borrow the trailing words of the
+     nearest later chunk that has some ("chicken, vegetable or seafood broth or
+     stock" is chicken broth), longest first ("corn or flour tortillas" is corn
+     tortillas, "sherry or red wine vinegar" sherry vinegar), or a head noun
+     written first ("oil canola, olive, or …" is canola oil). A chunk lends
+     nothing past a trailing clause ("grape tomatoes, sliced" lends
+     "tomatoes"), when it carries its own amount ("vanilla or half a vanilla
+     bean"; an article is not an amount: "peanut or a vegetable oil" is peanut
+     oil), or when it is a list before the last chunk ("mushroom, vegetable,
+     chicken, or beef broth" lends no "mushroom"). A one-word alternative (prep
+     words aside) is usually an adjective, so it borrows first ("fresh lemon or
+     lime juice" is lemon juice); a longer one names its food and is tried as
+     written first ("white wine or white balsamic vinegar" is white wine).
+   - **An unknown first alternative.** If none of the first alternative's
+     candidates resolve, its own trailing words may ("local honey or maple
+     syrup" is honey; "mixed cherry or grape tomatoes" is cherry tomatoes),
+     and a one-word alternative may give way to the last chunk's whole noun
+     ("hot or mild paprika" is paprika; "country or sourdough bread" is
+     bread). If the words dropped to get there change the food ("cooked red
+     lentils or cannellini beans", "full-fat greek yogurt"), nothing counts:
+     a later alternative would misreport the first. Later alternatives are
+     tried only when the first names no known food at all ("quark or cream
+     cheese" is cream cheese).
+   - **Labels.** The calorie breakdown says what it assumed ("~120 kcal
+     (assumed unsalted butter)"), including for an alternatives name a curated
+     alias resolves ("butter or margarine").
 
 Calorie estimates and density resolve whole lines with `resolve_line(item, note)`.
 The parser keeps "cooked" in the note ("brown rice, cooked" → item "brown rice"),

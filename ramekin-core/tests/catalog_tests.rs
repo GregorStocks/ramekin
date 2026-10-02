@@ -15,6 +15,13 @@ fn fdc_id(item: &str) -> Option<u32> {
     }
 }
 
+fn fdc_id_or_none(item: &str) -> Option<u32> {
+    match resolve(item) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        _ => None,
+    }
+}
+
 fn assert_close(actual: f64, expected: f64) {
     assert!((actual - expected).abs() < 0.1, "{actual} != {expected}");
 }
@@ -387,8 +394,8 @@ fn dissimilar_alternatives_and_bare_herbs() {
             "melted, unsalted butter, olive oil, coconut oil, or ghee",
             "unsalted butter",
         ),
-        // "country bread" isn't a catalog name, so the next alternative counts.
-        ("country or sourdough bread", "sourdough bread"),
+        // "country bread" isn't a catalog name, but it is bread.
+        ("country or sourdough bread", "bread"),
         ("vegetable, canola, or peanut oil", "vegetable oil"),
         ("cheddar and/or monterey jack cheese", "cheddar cheese"),
     ] {
@@ -462,6 +469,49 @@ fn dissimilar_alternatives_and_bare_herbs() {
         "{broth:?}"
     );
     assert_eq!(fdc_id(broth), fdc_id("chicken broth"));
+    // A first option that is a known food under an unrecognized word counts
+    // as that food, never as a later option.
+    for (item, assumed) in [
+        (
+            "small-curd cottage cheese, sour cream, or yogurt",
+            "cottage cheese",
+        ),
+        ("local honey or maple syrup", "honey"),
+        ("mixed cherry or grape tomatoes", "cherry tomatoes"),
+    ] {
+        assert_eq!(
+            chosen_alternative(item).as_deref(),
+            Some(assumed),
+            "{item:?}"
+        );
+        assert_eq!(fdc_id(item), fdc_id(assumed), "{item:?}");
+    }
+    assert_eq!(
+        fdc_id("full-fat cottage cheese, sour cream, or yogurt"),
+        fdc_id("cottage cheese")
+    );
+    // A first option naming no known food is passed over.
+    assert_eq!(
+        chosen_alternative("quark or cream cheese").as_deref(),
+        Some("cream cheese")
+    );
+    // Only a one-word option gives way to the whole borrowed noun: not to a
+    // fragment of it, and not when that drops the option's own words.
+    for item in [
+        "sesame or poppy seeds to sprinkle",
+        "beni shoga or pickled ginger",
+    ] {
+        assert_ne!(fdc_id_or_none(item), fdc_id("sprinkles"), "{item:?}");
+        assert_ne!(fdc_id_or_none(item), fdc_id("ginger"), "{item:?}");
+    }
+    // ...unless the words it drops change the food: cooked lentils are not
+    // dry lentils, and cannellini beans aren't lentils at all.
+    let lentils = "cooked red lentils or cannellini beans";
+    assert!(
+        matches!(resolve(lentils), Resolution::Unresolved),
+        "{lentils:?}"
+    );
+    assert_eq!(chosen_alternative(lentils), None);
     // A curated alias for an alternatives name is labeled with the listed
     // alternative it counts as.
     assert_eq!(
