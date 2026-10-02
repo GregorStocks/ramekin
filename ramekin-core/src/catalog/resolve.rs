@@ -304,6 +304,25 @@ pub fn resolve(item: &str) -> Resolution {
 /// One name as a single food, else as several joined by "and", else as the
 /// first-listed alternative of "x or y".
 fn resolve_name(normalized: &str) -> Resolution {
+    // A name offering alternatives: a direct match ("butter or margarine" is a
+    // curated alias) wins, then the first alternative, before clause trimming
+    // can read ", grape, or cranberry juice" as a droppable clause.
+    if alternative_candidates(normalized).is_some() {
+        match resolve_single(normalized) {
+            direct @ Resolution::Entry {
+                via: Via::Exact | Via::Plural | Via::Modifiers,
+                ..
+            } => return direct,
+            not_food @ Resolution::NotFood => return not_food,
+            _ => {}
+        }
+        if let Some((entry, _)) = first_alternative(normalized) {
+            return Resolution::Entry {
+                entry,
+                via: Via::Alternative,
+            };
+        }
+    }
     match resolve_single(normalized) {
         unresolved @ (Resolution::Ambiguous | Resolution::Unresolved) => compound(normalized)
             .or_else(|| {
@@ -337,8 +356,8 @@ pub fn chosen_alternative(item: &str) -> Option<String> {
 }
 
 /// The names an "x or y" name's alternatives are tried as, in order, or None
-/// when it offers no alternatives. Each "or" chunk, then its comma pieces
-/// ("melted, unsalted butter, olive oil, or ghee"). A single word is first
+/// when it offers no alternatives. Each "or" chunk's comma pieces, then the
+/// chunk itself ("melted, unsalted butter, olive oil, or ghee"). A single word is first
 /// tried with the list's noun, since it is usually an adjective: the last
 /// alternative's trailing words ("corn or flour tortillas" is corn tortillas)
 /// (longest first: "sherry or red wine vinegar" tries sherry wine vinegar, then
@@ -382,15 +401,18 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
         .split_once(' ')
         .filter(|_| chunks[0].contains(", "))
         .map(|(noun, rest)| (noun.to_string(), rest.to_string()));
+    // A chunk's comma pieces come before the whole chunk: resolving "apple,
+    // grape" whole drops the clause and lands on apples, while the piece
+    // "apple" with the shared noun is apple juice.
     let mut pieces = Vec::new();
     for chunk in &chunks {
-        pieces.push(chunk.to_string());
         pieces.extend(
             chunk
                 .split(", ")
                 .map(|piece| piece.trim().to_string())
                 .filter(|piece| !piece.is_empty() && piece != chunk),
         );
+        pieces.push(chunk.to_string());
     }
     let mut candidates = Vec::new();
     for piece in pieces {

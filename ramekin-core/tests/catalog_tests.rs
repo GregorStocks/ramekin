@@ -414,6 +414,7 @@ fn dissimilar_alternatives_and_bare_herbs() {
         ("corn or flour tortillas", "corn tortillas"),
         ("lemon or lime juice", "lemon juice"),
         ("sherry or red wine vinegar", "sherry vinegar"),
+        ("apple, grape, or cranberry juice", "apple juice"),
         // An article is not an amount.
         ("peanut or a vegetable oil", "peanut oil"),
         // A prep word ("baking") doesn't push the count onto a later option.

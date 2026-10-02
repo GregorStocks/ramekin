@@ -85,12 +85,15 @@ Names are lowercased and whitespace is collapsed. Then:
 6. The name without a leading measure the parser left in it ("8 tbsp unsalted
    butter", "240 ml heavy cream", "cloves garlic", "can of tomato paste"), then
    steps 3 and 5 on that. A count or unit never names the food.
-7. If nothing above names one food and no "and" compound does, a name offering
-   alternatives ("x or y", "x and/or y") resolves to the first-listed
+7. A name offering alternatives ("x or y", "x and/or y") that steps 1–3 don't
+   match directly (exactly, as a plural, or without modifiers) resolves to the
+   first-listed
    alternative that names a food (`Via::Alternative`; owner decision
    2026-10-02), however much the alternatives differ in calories. Each "or"
-   chunk is tried whole, then by its comma pieces ("melted, unsalted butter,
-   olive oil, or ghee" is unsalted butter). A single word is usually an
+   chunk's comma pieces are tried before the chunk itself ("melted, unsalted
+   butter, olive oil, or ghee" is unsalted butter; "apple, grape, or cranberry
+   juice" is apple juice, not the apple that clause trimming in step 4 would
+   find). Only if no alternative names a food do steps 4–6 run. A single word is usually an
    adjective, so it is first tried with the list's noun: the last
    alternative's trailing words, longest first ("corn or flour tortillas" is
    corn tortillas, "sherry or red wine vinegar" sherry vinegar), unless that
