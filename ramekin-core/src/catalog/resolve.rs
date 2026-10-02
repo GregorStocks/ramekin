@@ -37,6 +37,9 @@ pub enum Via {
     LeadingModifiers,
     /// Through a stored LLM answer for a name the catalog doesn't know.
     Learned,
+    /// The first-listed alternative of "x or y" that names a food (see
+    /// `chosen_alternative`).
+    Alternative,
 }
 
 /// Temperature and preparation modifiers stripped before a second lookup.
@@ -75,6 +78,9 @@ fn strip_modifiers(name: &str) -> String {
 /// "dried" (dried apricots), "light" (light cream), "crushed" (crushed
 /// tomatoes), "whole" (whole chicken).
 const LEADING_MODIFIERS: &[&str] = &[
+    // "baking walnuts" (sold for baking); "baking soda" resolves before any
+    // word is dropped.
+    "baking",
     "best",
     "boneless",
     "chopped",
@@ -87,6 +93,8 @@ const LEADING_MODIFIERS: &[&str] = &[
     "freshly",
     "good",
     "grated",
+    // "homemade or store-bought chicken broth": where it comes from, not what.
+    "homemade",
     "large",
     "lightly",
     "loosely",
@@ -95,13 +103,19 @@ const LEADING_MODIFIERS: &[&str] = &[
     "organic",
     "packed",
     "peeled",
+    // "raw pecan halves"; an exact name ("raw sugar") matches first.
+    "raw",
     "roughly",
     "shredded",
     "skinless",
     "sliced",
     "small",
+    "store-bought",
+    "storebought",
     "thinly",
     "toasted",
+    // "unsalted pecan halves"; an exact name ("unsalted butter") matches first.
+    "unsalted",
 ];
 
 /// The name without a leading measure the parser left in it ("8 tbsp
@@ -262,13 +276,14 @@ fn resolve_single(normalized: &str) -> Resolution {
     }
 }
 
-/// Several foods joined by "and", "&", or "and/or" in one ingredient name.
-/// Only tried once the whole name failed, so "half and half" stays one food;
-/// every part must resolve to a specific food on its own.
+/// Several foods joined by "and" or "&" in one ingredient name. Only tried
+/// once the whole name failed, so "half and half" stays one food; every part
+/// must resolve to a specific food on its own. "and/or" offers alternatives.
 fn compound(normalized: &str) -> Option<Resolution> {
-    let joined = normalized
-        .replace(" and/or ", " and ")
-        .replace(" & ", " and ");
+    if normalized.contains(" and/or ") {
+        return None;
+    }
+    let joined = normalized.replace(" & ", " and ");
     let parts: Vec<&str> = joined.split(" and ").map(str::trim).collect();
     if parts.len() < 2 || parts.iter().any(|part| part.is_empty()) {
         return None;
@@ -294,12 +309,331 @@ pub fn resolve(item: &str) -> Resolution {
     resolve_name(&normalized)
 }
 
-/// One name as a single food, else as several joined by "and".
+/// One name as a single food, else as several joined by "and", else as the
+/// first-listed alternative of "x or y".
 fn resolve_name(normalized: &str) -> Resolution {
-    match resolve_single(normalized) {
-        unresolved @ (Resolution::Ambiguous | Resolution::Unresolved) => {
-            compound(normalized).unwrap_or(unresolved)
+    // A name offering alternatives: a direct match ("butter or margarine" is a
+    // curated alias) wins, then the first alternative, before clause trimming
+    // can read ", grape, or cranberry juice" as a droppable clause.
+    if alternative_candidates(normalized).is_some() {
+        match resolve_single(normalized) {
+            direct @ Resolution::Entry {
+                via: Via::Exact | Via::Plural | Via::Modifiers,
+                ..
+            } => return direct,
+            not_food @ Resolution::NotFood => return not_food,
+            _ => {}
         }
+        if let Some((entry, _)) = first_alternative(normalized) {
+            return Resolution::Entry {
+                entry,
+                via: Via::Alternative,
+            };
+        }
+    }
+    match resolve_single(normalized) {
+        unresolved @ (Resolution::Ambiguous | Resolution::Unresolved) => compound(normalized)
+            .or_else(|| {
+                first_alternative(normalized).map(|(entry, _)| Resolution::Entry {
+                    entry,
+                    via: Via::Alternative,
+                })
+            })
+            .unwrap_or(unresolved),
         resolved => resolved,
     }
+}
+
+/// The alternative an "x or y" name ("mayonnaise or plain yogurt", "vegetable,
+/// canola, or peanut oil") was counted as, for the estimate's "assumed" note:
+/// the alternative step-7 chose, or for a name a curated alias resolves
+/// ("butter or margarine"), the listed alternative naming that same food, or
+/// failing that the first-listed one. None for a name that offers no
+/// alternatives.
+pub fn chosen_alternative(item: &str) -> Option<String> {
+    let normalized = normalize(item);
+    let (entry, via) = match resolve_name(&normalized) {
+        Resolution::Entry { entry, via } => (entry, via),
+        _ => return None,
+    };
+    if via == Via::Alternative {
+        return first_alternative(&normalized).map(|(_, text)| text);
+    }
+    let groups = alternative_candidates(&normalized)?;
+    let first = groups.first().map(|(piece, _)| piece.clone());
+    groups
+        .into_iter()
+        .flat_map(|(_, candidates)| candidates)
+        .find(|name| matches!(resolve_single(name), Resolution::Entry { entry: e, .. } if std::ptr::eq(e, entry)))
+        // An alias for the whole name whose chosen spelling names nothing on
+        // its own ("bundle lacinato kale, swiss chard or spinach" is kale):
+        // aliases pick the first-listed food, so label that.
+        .or(first)
+}
+
+/// An "x or y" name's "or" chunks, without a leading article, or None when it
+/// offers no alternatives.
+fn alternative_chunks(text: &str) -> Option<Vec<&str>> {
+    let chunks: Vec<&str> = text
+        .split(" or ")
+        .map(|chunk| {
+            let chunk = chunk.trim().trim_matches(',');
+            chunk
+                .strip_prefix("a ")
+                .or_else(|| chunk.strip_prefix("an "))
+                .unwrap_or(chunk)
+        })
+        .collect();
+    (chunks.len() >= 2 && chunks.iter().all(|chunk| !chunk.is_empty())).then_some(chunks)
+}
+
+/// The trailing words an "or" chunk lends earlier alternatives, longest
+/// first: "red wine vinegar" lends "wine vinegar", then "vinegar". A trailing
+/// clause lends nothing ("grape tomatoes, sliced" lends "tomatoes"), and a
+/// chunk with its own amount ("vanilla or half a vanilla bean") is a measured
+/// alternative that lends no noun; an article is not an amount ("peanut or a
+/// vegetable oil" shares "oil").
+fn tails_of(chunk: &str) -> Vec<String> {
+    const AMOUNT_WORDS: [&str; 6] = ["one", "two", "three", "half", "some", "several"];
+    let chunk = chunk.split(", ").next().unwrap_or_default();
+    let measured = chunk.starts_with(|c: char| c.is_ascii_digit())
+        || AMOUNT_WORDS.contains(&chunk.split(' ').next().unwrap_or_default());
+    if measured {
+        return Vec::new();
+    }
+    let words: Vec<&str> = chunk.split(' ').collect();
+    (1..words.len())
+        .map(|start| words[start..].join(" "))
+        .collect()
+}
+
+/// The names an "x or y" name's alternatives are tried as, in order, or None
+/// when it offers no alternatives. Each "or" chunk's comma pieces, then the
+/// chunk itself ("melted, unsalted butter, olive oil, or ghee"), each cleaned
+/// (`clean_alternative`). An alternative may borrow the list's noun: the
+/// trailing words of the nearest later chunk that has some ("corn or flour
+/// tortillas" is corn tortillas; "chicken, vegetable or seafood broth or
+/// stock" is chicken broth), longest first ("sherry or red wine vinegar" tries
+/// sherry wine vinegar, then sherry vinegar), or a head noun written first
+/// ("oil canola, olive, or ..." is canola oil, olive oil). Borrowed
+/// forms usually come first (see the ordering below). Grouped by the
+/// alternative as written, cleaned.
+fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>> {
+    let text = normalized.replace(" and/or ", " or ");
+    let chunks = alternative_chunks(&text)?;
+    // "oil canola, olive, ...": a head noun written before the first item.
+    let first_piece = chunks[0].split(", ").next().unwrap_or_default();
+    let leading = first_piece
+        .split_once(' ')
+        .filter(|_| chunks[0].contains(", "))
+        .map(|(noun, rest)| (noun.to_string(), rest.to_string()));
+    let mut candidates = Vec::new();
+    for (index, chunk) in chunks.iter().enumerate() {
+        // A list chunk before the last ("mushroom, vegetable, chicken, or beef
+        // broth") ends in an item, not the list's noun.
+        let trailing = chunks[index + 1..]
+            .iter()
+            .enumerate()
+            .filter(|(offset, later)| {
+                index + 1 + offset == chunks.len() - 1 || !later.contains(", ")
+            })
+            .map(|(_, later)| (*later, tails_of(later)))
+            .find(|(_, tails)| !tails.is_empty())
+            .unwrap_or_default();
+        let (lender, trailing) = trailing;
+        let lender = lender.split(", ").next().unwrap_or_default();
+        let mut pieces: Vec<String> = chunk
+            .split(", ")
+            .map(|piece| piece.trim().to_string())
+            .filter(|piece| !piece.is_empty() && piece != chunk)
+            .collect();
+        pieces.push(chunk.to_string());
+        for raw in pieces {
+            let piece = clean_alternative(&raw);
+            let mut nouned = Vec::new();
+            if let Some((noun, rest)) = &leading {
+                if raw == first_piece {
+                    nouned.push(format!("{rest} {noun}"));
+                } else if !piece.contains(' ') {
+                    nouned.push(format!("{piece} {noun}"));
+                }
+            }
+            // A one-word alternative (prep and state words aside) is an
+            // adjective, so it borrows first. A longer one names a food of its
+            // own, so it borrows first only past a one-word qualifier ("white
+            // wine or champagne vinegar") or one ending like itself ("red wine
+            // or white wine vinegar"); past a distinct one it is tried as
+            // written first ("white wine or plain white vinegar" is white wine,
+            // "dutch process or special dark cocoa powder" still dutch process
+            // cocoa powder).
+            let one_word = piece
+                .split(' ')
+                .filter(|word| !LEADING_MODIFIERS.contains(word) && !STATE_WORDS.contains(word))
+                .count()
+                <= 1;
+            let borrows_first = |tail: &str| {
+                let head = lender.strip_suffix(tail).unwrap_or_default().trim_end();
+                // "or other mild vinegar": "other" only says the noun is shared.
+                let head = head
+                    .strip_prefix("other ")
+                    .or_else(|| head.strip_prefix("another "))
+                    .unwrap_or(head);
+                one_word
+                    || !head.contains(' ')
+                    || head.rsplit(' ').next() == piece.rsplit(' ').next()
+            };
+            let (first, after): (Vec<&String>, Vec<&String>) = trailing
+                .iter()
+                .filter(|tail| !piece.ends_with(tail.as_str()))
+                .partition(|tail| borrows_first(tail));
+            let with = |tails: Vec<&String>| -> Vec<String> {
+                tails
+                    .into_iter()
+                    .map(|tail| format!("{piece} {tail}"))
+                    .collect()
+            };
+            let names = nouned
+                .into_iter()
+                .chain(with(first))
+                .chain([piece.clone()])
+                .chain(with(after))
+                .collect();
+            candidates.push((piece, names));
+        }
+    }
+    Some(candidates)
+}
+
+/// One alternative without what keeps it from naming its food: an example
+/// marker ("like cream cheese", "such as ..."), a footnote marker ("***"),
+/// and a prep word joined by "and"
+/// ("cooked and cooled white rice" is cooked white rice).
+fn clean_alternative(piece: &str) -> String {
+    static EXAMPLE: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"^(?:[^:]+:\s*)?(?:(?:like|such as|e\.g\.|eg|for example),? )?").unwrap()
+    });
+    // A leading label ("berries: sliced strawberries") and an example marker.
+    let piece = EXAMPLE.replace(piece, "");
+    // A footnote marker ("dried bread crumbs*** or panko").
+    let piece = piece.trim_end_matches(['*', '†', '‡']).trim_end();
+    let words: Vec<&str> = piece.split(' ').collect();
+    let mut kept = Vec::with_capacity(words.len());
+    let mut index = 0;
+    while index < words.len() {
+        if words[index] == "and"
+            && index > 0
+            && words
+                .get(index + 1)
+                // "cooked and cooled": "cooled" only here, since alone it
+                // implies cooked ("cooled white rice" is not raw rice).
+                .is_some_and(|word| LEADING_MODIFIERS.contains(word) || *word == "cooled")
+        {
+            index += 2;
+            continue;
+        }
+        kept.push(words[index]);
+        index += 1;
+    }
+    kept.join(" ")
+}
+
+/// Words that change what a food is ("cooked red lentils" are not dry
+/// lentils; "full-fat greek yogurt" is not the catalog's nonfat one), so the
+/// first alternative never drops them to find its food.
+const STATE_WORDS: &[&str] = &[
+    "baked",
+    "boiled",
+    "candied",
+    "canned",
+    "cooked",
+    "dried",
+    "dry",
+    "fat-free",
+    "fried",
+    "frozen",
+    "full-fat",
+    "grilled",
+    "instant",
+    "low-fat",
+    "lowfat",
+    "nonfat",
+    "pickled",
+    "prepared",
+    "reduced-fat",
+    "roasted",
+    "smoked",
+    "sweetened",
+    "unsweetened",
+];
+
+/// The first alternative, in `alternative_candidates` order, that names one
+/// food. When none of the first-listed alternative's candidates resolve but
+/// one ends in a known food, that food counts ("local honey or maple syrup" is
+/// honey; "mixed cherry or grape tomatoes" is cherry tomatoes; "hot or mild
+/// paprika" is paprika), preferring one that keeps an alternative's own word;
+/// if the words dropped to reach it change what it is ("cooked red lentils or
+/// cannellini beans"), nothing counts rather than a later alternative. Later
+/// alternatives are passed over only when the first names no known food at
+/// all ("country or sourdough bread").
+fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
+    let entry_of = |name: &str| match resolve_single(name) {
+        Resolution::Entry { entry, .. } => Some(entry),
+        _ => None,
+    };
+    let mut groups = alternative_candidates(normalized)?.into_iter();
+    let (piece, candidates) = groups.next()?;
+    if let Some(found) = candidates
+        .iter()
+        .find_map(|name| entry_of(name).map(|entry| (entry, name.clone())))
+    {
+        return Some(found);
+    }
+    // A direct match only: clause trimming a fragment misleads.
+    let directly = |name: &str| match resolve_single(name) {
+        Resolution::Entry {
+            entry,
+            via: Via::Exact | Via::Plural | Via::Modifiers | Via::LeadingModifiers,
+        } => Some(entry),
+        _ => None,
+    };
+    // Only the piece and its borrowed-noun forms, borrowed forms first ("mixed
+    // cherry" finds cherry tomatoes before cherries).
+    let own_words = piece.split(' ').count();
+    let names: Vec<&String> = candidates
+        .iter()
+        .filter(|name| **name != piece && name.starts_with(piece.as_str()))
+        .chain(std::iter::once(&piece))
+        .collect();
+    for name in &names {
+        let words: Vec<&str> = name.split(' ').collect();
+        for start in 1..own_words.min(words.len()) {
+            let rest = words[start..].join(" ");
+            if let Some(entry) = directly(&rest) {
+                if words[..start].iter().any(|word| STATE_WORDS.contains(word)) {
+                    return None;
+                }
+                return Some((entry, rest));
+            }
+        }
+    }
+    // A one-word alternative is an adjective ("hot or mild paprika", "country
+    // or sourdough bread"): it may give way to the noun the last alternative
+    // ends in, whole ("sesame or poppy seeds to sprinkle" is not sprinkles).
+    if own_words == 1
+        && !STATE_WORDS.contains(&piece.as_str())
+        && !LEADING_MODIFIERS.contains(&piece.as_str())
+    {
+        let text = normalized.replace(" and/or ", " or ");
+        let last = alternative_chunks(&text)?.last().copied()?;
+        if let Some(noun) = tails_of(last).into_iter().next() {
+            if let Some(entry) = directly(&noun) {
+                return Some((entry, noun));
+            }
+        }
+    }
+    groups.find_map(|(_, candidates)| {
+        candidates
+            .into_iter()
+            .find_map(|name| entry_of(&name).map(|entry| (entry, name)))
+    })
 }

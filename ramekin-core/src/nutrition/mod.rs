@@ -8,7 +8,7 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v12";
+const RULE_VERSION: &str = "calories-v13";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
@@ -689,6 +689,22 @@ pub fn estimate_with(
                     (None, unknown_label(reason).to_string())
                 }
             }
+        };
+        // "mayonnaise or plain yogurt" is counted as its first alternative;
+        // say so, but only when the line used that resolution (a note can
+        // override it: "frozen or canned corn", cooked).
+        let note = ingredient.note.as_deref();
+        let used_item_resolution = matches!(
+            (
+                catalog::resolve_line_with(&ingredient.item, note, learned),
+                catalog::resolve(&ingredient.item),
+            ),
+            (Resolution::Entry { entry: used, .. }, Resolution::Entry { entry: own, .. })
+                if std::ptr::eq(used, own)
+        );
+        let text = match catalog::chosen_alternative(&ingredient.item) {
+            Some(alternative) if used_item_resolution => format!("{text} (assumed {alternative})"),
+            _ => text,
         };
         lines.push(LineEstimate {
             index,

@@ -1,6 +1,6 @@
 use ramekin_core::catalog::{
-    category, food, grams_per_cup, grams_per_piece, resolve, resolve_line, rewrite, version, Kind,
-    Resolution, Via,
+    category, chosen_alternative, food, grams_per_cup, grams_per_piece, resolve, resolve_line,
+    rewrite, version, Kind, Resolution, Via,
 };
 
 fn density(item: &str) -> f64 {
@@ -12,6 +12,13 @@ fn fdc_id(item: &str) -> Option<u32> {
     match resolve(item) {
         Resolution::Entry { entry, .. } => entry.fdc_id,
         other => panic!("{item:?} did not resolve: {other:?}"),
+    }
+}
+
+fn fdc_id_or_none(item: &str) -> Option<u32> {
+    match resolve(item) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        _ => None,
     }
 }
 
@@ -376,17 +383,169 @@ fn negligibility_attributes_come_from_the_data() {
 
 #[test]
 fn dissimilar_alternatives_and_bare_herbs() {
-    // Alternatives with very different calories in real amounts stay unknown.
-    for item in [
-        "heavy cream or milk",
-        "milk or water",
-        "sour cream or plain yogurt",
+    // Alternatives count as the first-listed one that names a food (owner
+    // decision 2026-10-02), even when they differ a lot in calories; the
+    // estimate says which it assumed.
+    for (item, assumed) in [
+        ("heavy cream or milk", "heavy cream"),
+        ("milk or water", "milk"),
+        ("sour cream or plain yogurt", "sour cream"),
+        (
+            "melted, unsalted butter, olive oil, coconut oil, or ghee",
+            "unsalted butter",
+        ),
+        // "country bread" isn't a catalog name, but it is bread.
+        ("country or sourdough bread", "bread"),
+        ("vegetable, canola, or peanut oil", "vegetable oil"),
+        ("cheddar and/or monterey jack cheese", "cheddar cheese"),
     ] {
         assert!(
-            matches!(resolve(item), Resolution::Ambiguous),
-            "{item:?} should be ambiguous"
+            matches!(
+                resolve(item),
+                Resolution::Entry {
+                    via: Via::Alternative,
+                    ..
+                }
+            ),
+            "{item:?}"
         );
+        assert_eq!(
+            chosen_alternative(item).as_deref(),
+            Some(assumed),
+            "{item:?}"
+        );
+        assert_eq!(fdc_id(item), fdc_id(assumed), "{item:?}");
     }
+    // A single word is usually an adjective: it takes the list's noun first.
+    for (item, assumed) in [
+        ("corn or flour tortillas", "corn tortillas"),
+        ("lemon or lime juice", "lemon juice"),
+        ("sherry or red wine vinegar", "sherry vinegar"),
+        ("apple, grape, or cranberry juice", "apple juice"),
+        // Joined prep words and example markers don't push the count onto a
+        // later option.
+        ("cooked and cooled white or brown rice", "cooked white rice"),
+        (
+            "soft cheese, like cream cheese, brie, or boursin",
+            "cream cheese",
+        ),
+        ("fresh lemon or lime juice", "fresh lemon juice"),
+        // "X or Y noun" is X noun past a one-word or parallel qualifier...
+        ("white wine or champagne vinegar", "white wine vinegar"),
+        ("white wine or other mild vinegar", "white wine vinegar"),
+        ("red wine or white wine vinegar", "red wine vinegar"),
+        // ...and X as written past a distinct one, or when X noun is no food.
+        ("white wine or plain white vinegar", "white wine"),
+        ("white wine or white balsamic vinegar", "white wine"),
+        ("rice wine or apple cider vinegar", "rice wine"),
+        ("sour cream or plain greek yogurt", "sour cream"),
+        (
+            "berries: sliced strawberries, blackberries, or raspberries",
+            "sliced strawberries",
+        ),
+        // An article is not an amount.
+        ("peanut or a vegetable oil", "peanut oil"),
+        // A prep word ("baking") doesn't push the count onto a later option.
+        ("baking walnuts or pecans", "baking walnuts"),
+        // A measured last alternative lends no noun.
+        ("vanilla or half a vanilla bean", "vanilla"),
+        (
+            "oil canola, olive, or other high-heat cooking oil",
+            "canola oil",
+        ),
+    ] {
+        assert_eq!(
+            chosen_alternative(item).as_deref(),
+            Some(assumed),
+            "{item:?}"
+        );
+        assert_eq!(fdc_id(item), fdc_id(assumed), "{item:?}");
+    }
+    assert_eq!(fdc_id("baking walnuts or pecans"), fdc_id("walnuts"));
+    assert_eq!(
+        fdc_id("raw or toasted, unsalted pecan halves"),
+        fdc_id("pecans")
+    );
+    // A trailing synonym ("or stock") doesn't hide the earlier options' noun.
+    let broth = "low-sodium chicken, vegetable or seafood broth or stock";
+    assert!(
+        chosen_alternative(broth)
+            .unwrap()
+            .ends_with("chicken broth"),
+        "{broth:?}"
+    );
+    assert_eq!(fdc_id(broth), fdc_id("chicken broth"));
+    // A first option that is a known food under an unrecognized word counts
+    // as that food, never as a later option.
+    for (item, assumed) in [
+        (
+            "small-curd cottage cheese, sour cream, or yogurt",
+            "cottage cheese",
+        ),
+        ("local honey or maple syrup", "honey"),
+        ("mixed cherry or grape tomatoes", "cherry tomatoes"),
+    ] {
+        assert_eq!(
+            chosen_alternative(item).as_deref(),
+            Some(assumed),
+            "{item:?}"
+        );
+        assert_eq!(fdc_id(item), fdc_id(assumed), "{item:?}");
+    }
+    assert_eq!(
+        fdc_id("full-fat cottage cheese, sour cream, or yogurt"),
+        fdc_id("cottage cheese")
+    );
+    // A first option naming no known food is passed over.
+    assert_eq!(
+        chosen_alternative("quark or cream cheese").as_deref(),
+        Some("cream cheese")
+    );
+    // Only a one-word option gives way to the whole borrowed noun: not to a
+    // fragment of it, and not when that drops the option's own words.
+    for item in [
+        "sesame or poppy seeds to sprinkle",
+        "beni shoga or pickled ginger",
+    ] {
+        assert_ne!(fdc_id_or_none(item), fdc_id("sprinkles"), "{item:?}");
+        assert_ne!(fdc_id_or_none(item), fdc_id("ginger"), "{item:?}");
+    }
+    // ...unless the words it drops change the food: cooked lentils are not
+    // dry lentils, and cannellini beans aren't lentils at all.
+    let lentils = "cooked red lentils or cannellini beans";
+    assert!(
+        matches!(resolve(lentils), Resolution::Unresolved),
+        "{lentils:?}"
+    );
+    assert_eq!(chosen_alternative(lentils), None);
+    // A curated alias for an alternatives name is labeled with the listed
+    // alternative it counts as.
+    assert_eq!(
+        chosen_alternative("butter or margarine").as_deref(),
+        Some("butter")
+    );
+    // "cooled" is dropped only when joined to "cooked": alone it still
+    // implies cooked rice, never the raw entry.
+    assert_ne!(fdc_id_or_none("cooled white rice"), fdc_id("white rice"));
+    // An alias whose chosen spelling names nothing alone still says what it
+    // assumed.
+    assert_eq!(
+        chosen_alternative("bundle lacinato kale, swiss chard or spinach").as_deref(),
+        Some("bundle lacinato kale")
+    );
+    assert_eq!(
+        fdc_id("chopped fresh collard greens or kale"),
+        fdc_id("collards")
+    );
+    // A footnote marker doesn't push the count onto a later option.
+    assert_eq!(
+        fdc_id("dried bread crumbs*** or panko"),
+        fdc_id("dried bread crumbs")
+    );
+    // A recipe's "maple" is maple syrup, not a cue to count the honey.
+    assert_eq!(fdc_id("maple or honey"), fdc_id("maple syrup"));
+    // A name that resolves on its own chose nothing.
+    assert_eq!(chosen_alternative("heavy cream"), None);
     // Bare herbs follow how recipes use them.
     assert_eq!(fdc_id("rosemary"), fdc_id("rosemary, fresh"));
     assert_eq!(fdc_id("ginger"), fdc_id("fresh ginger"));

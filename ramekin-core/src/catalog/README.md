@@ -30,8 +30,8 @@ A resolution is one of:
 - `Entry`: one food or product.
   - **Products** (`kind: "product"`) are bought but not eaten: parchment paper,
     skewers. They carry only a shopping `category`, and calorie estimates skip them.
-- `Compound`: several foods joined by "and", "&" or "and/or" on one line with one
-  amount ("salt and pepper").
+- `Compound`: several foods joined by "and" or "&" on one line with one amount
+  ("salt and pepper"). "and/or" offers alternatives (below).
   - This is only tried once the whole name failed, so "half and half" stays one
     food, and every part must resolve to a specific food.
   - Density is unknown, since the mixture ratio is unknown.
@@ -75,7 +75,7 @@ Names are lowercased and whitespace is collapsed. Then:
    alternatives ("milk, dairy or non-dairy") resolves to the first-listed
    food, the same way the first measurement wins over later alternatives.
 5. The name with leading size and preparation words (`LEADING_MODIFIERS`:
-   "chopped", "fresh", "large", "boneless", …) dropped one word at a time, so
+   "chopped", "fresh", "large", "boneless", "baking", "raw", "unsalted", …) dropped one word at a time, so
    "grated fresh ginger" tries "fresh ginger" before "ginger". Words that change
    the food ("ground", "dried", "light", "crushed", "whole") are never dropped.
    A *bare* name reached this way may not be a dried or ground spice unless the
@@ -85,6 +85,51 @@ Names are lowercased and whitespace is collapsed. Then:
 6. The name without a leading measure the parser left in it ("8 tbsp unsalted
    butter", "240 ml heavy cream", "cloves garlic", "can of tomato paste"), then
    steps 3 and 5 on that. A count or unit never names the food.
+7. A name offering alternatives ("x or y", "x and/or y") that steps 1–3 don't
+   match directly (exactly, as a plural, or without modifiers) resolves to the
+   first-listed alternative that names a food (`Via::Alternative`; owner
+   decision 2026-10-02), however much the alternatives differ in calories.
+   Only if none does do steps 4–6 run.
+   - **Pieces.** Each "or" chunk's comma pieces are tried before the chunk
+     itself ("melted, unsalted butter, olive oil, or ghee" is unsalted butter;
+     "apple, grape, or cranberry juice" is apple juice, not the apple that
+     clause trimming in step 4 would find). Each is first cleaned of a leading
+     label ("berries: sliced strawberries"), an example marker ("like cream
+     cheese", "such as …"), and prep words joined by "and" ("cooked and cooled
+     white rice" is cooked white rice).
+   - **The list's noun.** An alternative may borrow the trailing words of the
+     nearest later chunk that has some ("chicken, vegetable or seafood broth or
+     stock" is chicken broth), longest first ("corn or flour tortillas" is corn
+     tortillas, "sherry or red wine vinegar" sherry vinegar), or a head noun
+     written first ("oil canola, olive, or …" is canola oil). A chunk lends
+     nothing past a trailing clause ("grape tomatoes, sliced" lends
+     "tomatoes"), when it carries its own amount ("vanilla or half a vanilla
+     bean"; an article is not an amount: "peanut or a vegetable oil" is peanut
+     oil), or when it is a list before the last chunk ("mushroom, vegetable,
+     chicken, or beef broth" lends no "mushroom"). A one-word alternative
+     (prep and state words aside) is an adjective, so it borrows first ("fresh
+     lemon or lime juice" is lemon juice; "cooked white, brown, or cilantro
+     lime rice" is cooked white rice). A longer one borrows first only past a
+     one-word qualifier ("white wine or champagne vinegar", "or other mild
+     vinegar") or one ending like itself ("red wine or white wine vinegar");
+     past a distinct qualifier it is tried as written first ("white wine or
+     plain white vinegar" is white wine, while "dutch process or special dark
+     cocoa powder", naming nothing alone, is still dutch process cocoa
+     powder). "cooled" is dropped only when joined to "cooked", since alone it
+     still means cooked.
+   - **An unknown first alternative.** If none of the first alternative's
+     candidates resolve, its own trailing words may ("local honey or maple
+     syrup" is honey; "mixed cherry or grape tomatoes" is cherry tomatoes),
+     and a one-word alternative may give way to the last chunk's whole noun
+     ("hot or mild paprika" is paprika; "country or sourdough bread" is
+     bread). If the words dropped to get there change the food ("cooked red
+     lentils or cannellini beans", "full-fat greek yogurt"), nothing counts:
+     a later alternative would misreport the first. Later alternatives are
+     tried only when the first names no known food at all ("quark or cream
+     cheese" is cream cheese).
+   - **Labels.** The calorie breakdown says what it assumed ("~120 kcal
+     (assumed unsalted butter)"), including for an alternatives name a curated
+     alias resolves ("butter or margarine").
 
 Calorie estimates and density resolve whole lines with `resolve_line(item, note)`.
 The parser keeps "cooked" in the note ("brown rice, cooked" → item "brown rice"),
@@ -254,10 +299,10 @@ that appears in both releases.
   explaining it (see "dried thyme", "greek yogurt"). Aliasing to a stand-in
   food is only for foods USDA lacks entirely ("dijon mustard" → yellow mustard,
   "shaoxing wine" → sake), where the stand-in supplies every attribute.
-  A name offering alternatives resolves to the first-listed food only when the
-  alternatives are close in calories or used in trace amounts ("cayenne or hot
-  sauce"). When they differ a lot in real amounts ("heavy cream or milk",
-  "sour cream or plain yogurt"), the alias is `null` (ambiguous). Bare herb
+  A name offering alternatives resolves to its first-listed food (resolver step
+  7), so "x or y" aliases are only needed when that would pick the wrong food;
+  older `null` aliases for dissimilar alternatives ("heavy cream or milk") are
+  now overridden by step 7. Bare herb
   names follow how recipes use them: "rosemary" and "ginger" mean fresh; "sage"
   is ambiguous because USDA has no fresh sage. Bone-in cuts and whole birds are
   `null` too: recipes give their purchased weight, bones included, while USDA
