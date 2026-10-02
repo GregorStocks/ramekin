@@ -8,7 +8,7 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v10";
+const RULE_VERSION: &str = "calories-v11";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
@@ -143,26 +143,34 @@ fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) 
 }
 
 /// The most volume of a trace food with no density, after scaling, that still
-/// counts as a trace: a tablespoon of any spice is at most about 25 kcal.
+/// counts as a trace: a tablespoon of most spices is 15-25 kcal, and of dense
+/// seeds such as whole mustard seed up to about 50.
 const MAX_TRACE_CUPS: f64 = catalog::CUPS_PER_TBSP;
 
 /// Up to a tablespoon of a trace food whose volume can't be weighed ("1 tsp
 /// freshly ground black pepper"; grind size makes pepper's density unusable).
 /// A food with a density is computed normally.
 fn is_unweighed_spoonful(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bool {
-    entry.grams_per_cup.is_none()
-        && !ingredient.measurements.is_empty()
-        && ingredient.measurements.iter().all(|measurement| {
-            let cups_per_unit = |unit: &str| {
-                catalog::volume_to_cups(1.0, &canonical_unit(&normalize(unit)))
-                    .map(exact)
-                    .ok_or("Not a volume")
-            };
-            measurement.amount.as_deref().is_some_and(|amount| {
-                measurement_total(amount, measurement.unit.as_deref(), cups_per_unit)
-                    .is_ok_and(|cups| cups.max * scale <= MAX_TRACE_CUPS)
-            })
+    let cups = |measurement: &Measurement| {
+        let cups_per_unit = |unit: &str| {
+            catalog::volume_to_cups(1.0, &canonical_unit(&normalize(unit)))
+                .map(exact)
+                .ok_or("Not a volume")
+        };
+        measurement.amount.as_deref().and_then(|amount| {
+            measurement_total(amount, measurement.unit.as_deref(), cups_per_unit).ok()
         })
+    };
+    // Measurements are alternatives and the primary one leads, as in
+    // `measured_calories`. A weight alternative ("1 tsp / 2 g") is counted
+    // instead whenever the food has calories to weigh it with.
+    let Some(primary) = ingredient.measurements.first() else {
+        return false;
+    };
+    entry.grams_per_cup.is_none()
+        && cups(primary).is_some_and(|cups| cups.max * scale <= MAX_TRACE_CUPS)
+        && (entry.kcal_per_100g.is_none()
+            || ingredient.measurements.iter().all(|m| cups(m).is_some()))
 }
 
 fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bool {

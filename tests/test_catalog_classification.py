@@ -173,3 +173,15 @@ def test_hand_curated_foods_need_cited_calories():
     for trace_ok in ["false", 1, None]:
         _, _, rejections = run({**food, "trace_ok": trace_ok})
         assert rejections and "trace_ok" in rejections[0], trace_ok
+
+
+def test_trace_entries_carry_only_trace_ok():
+    updated, counts, rejections = run(
+        {"name": "sumac", "action": "trace", "reason": "No citable label."},
+        {"name": "ground sumac", "action": "alias", "target": "sumac"},
+    )
+    assert rejections == [] and counts["trace"] == 1
+    assert updated["entries"]["sumac"] == {"trace_ok": True}
+    assert updated["aliases"]["ground sumac"] == "sumac"
+    _, _, rejections = run({"name": "sumac", "action": "trace"})
+    assert rejections and "reason" in rejections[0]

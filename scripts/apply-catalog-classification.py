@@ -21,7 +21,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "ramekin-core/src/catalog/data"
 CATEGORIZER = ROOT / "ramekin-core/src/ingredient_categorizer.rs"
-ACTIONS = {"alias", "entry", "food", "product", "not_food", "ambiguous", "skip"}
+ACTIONS = {
+    "alias",
+    "entry",
+    "food",
+    "trace",
+    "product",
+    "not_food",
+    "ambiguous",
+    "skip",
+}
 
 
 def normalize(text: str) -> str:
@@ -105,7 +114,8 @@ def apply(
     seen = set()
     # New entries and products first, so aliases in the same batch can target them.
     ordered = sorted(
-        decisions, key=lambda d: d.get("action") not in ("entry", "food", "product")
+        decisions,
+        key=lambda d: d.get("action") not in ("entry", "food", "trace", "product"),
     )
     for decision in ordered:
         name = decision.get("name", "")
@@ -167,6 +177,14 @@ def apply(
             if density is not None:
                 entry["grams_per_cup"] = density
             curated["entries"][name] = entry
+            targets.add(name)
+        elif action == "trace":
+            # A spice or herb no source gives citable calories for: small
+            # amounts are negligible, anything more stays unknown.
+            if not decision.get("reason"):
+                reject("trace needs a reason")
+                continue
+            curated["entries"][name] = {"trace_ok": True}
             targets.add(name)
         elif action == "food":
             try:

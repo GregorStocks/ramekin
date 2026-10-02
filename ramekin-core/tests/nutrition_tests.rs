@@ -770,3 +770,152 @@ fn secondary_source_foods_count() {
     assert!((total("garam masala", "1", "tsp").unwrap() - 10.0).abs() < 1e-9);
     assert!((total("garam masala", "1/4", "cup").unwrap() - 120.0).abs() < 1e-9);
 }
+
+#[test]
+fn trace_only_spices_are_negligible_in_small_amounts() {
+    // Sumac has no citable calories: a trace entry, negligible for a pinch,
+    // no amount, or up to a tablespoon, and unknown beyond that.
+    let calories = |line: ParsedIngredient| {
+        estimate(&[line], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    assert_eq!(calories(ingredient("sumac", "1", "pinch")), Some(0.0));
+    assert_eq!(calories(ingredient("sumac", "2", "tsp")), Some(0.0));
+    assert_eq!(calories(bare("ground sumac")), Some(0.0));
+    assert_eq!(calories(ingredient("sumac", "1/4", "cup")), None);
+    let result = estimate(&[ingredient("sumac", "100", "g")], None, 1.0).unwrap();
+    assert_eq!(
+        result.unknown_ingredients[0].reason,
+        "No supported nutrition match"
+    );
+    // Fresh herbs listed by the leaf are a trace too.
+    assert_eq!(
+        calories(ingredient("fresh sage leaves", "6", "")),
+        Some(0.0)
+    );
+}
+
+#[test]
+fn za_atar_spellings_share_one_trace_entry() {
+    for name in ["za’atar", "za'atar", "zaatar"] {
+        let result = estimate(&[ingredient(name, "1", "tsp")], None, 1.0).unwrap();
+        assert_eq!(
+            result.known_calories.map(|range| range.max),
+            Some(0.0),
+            "{name}"
+        );
+    }
+}
+
+#[test]
+fn mustard_seeds_use_usda_calories_without_a_volume_weight() {
+    let calories = |amount: &str, unit: &str| {
+        estimate(&[ingredient("mustard seeds", amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    // USDA ground mustard seed: 508 kcal/100 g.
+    assert!((calories("10", "g").unwrap() - 50.8).abs() < 1e-9);
+    // Whole seeds have no volume weight: a spoonful is a trace, more is unknown.
+    assert_eq!(calories("1", "tbsp"), Some(0.0));
+    assert_eq!(calories("1/4", "cup"), None);
+}
+
+#[test]
+fn whole_spices_use_their_ground_form_calories() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    // USDA ground allspice: 263 kcal/100 g; whole berries have no volume weight.
+    assert!((calories("allspice berries", "10", "g").unwrap() - 26.3).abs() < 1e-9);
+    assert_eq!(calories("allspice berries", "1/4", "cup"), None);
+    // Recipes use "Japanese chili powder" for shichimi togarashi, a blend
+    // with no citable calories: a spoonful is a trace, more is unknown.
+    assert_eq!(calories("japanese chili powder", "1", "tsp"), Some(0.0));
+    assert_eq!(calories("japanese chili powder", "1/4", "cup"), None);
+}
+
+#[test]
+fn fresh_herb_and_star_anise_forms_reach_their_trace_entries() {
+    for item in [
+        "chopped fresh sage",
+        "minced fresh sage",
+        "fresh sage",
+        "chopped fresh tarragon",
+        "fresh tarragon",
+        "star anise pods",
+        "star anise pod",
+        "peach bitters",
+        "peychaud's bitters",
+        "aromatic bitters",
+        "shichimi",
+        "aleppo pepper flakes",
+    ] {
+        let small = estimate(&[ingredient(item, "1", "tbsp")], None, 1.0).unwrap();
+        assert_eq!(
+            small.known_calories.map(|range| range.max),
+            Some(0.0),
+            "{item}"
+        );
+        // Not anise seed or dried sage: a weighed amount stays unknown.
+        let weighed = estimate(&[ingredient(item, "10", "g")], None, 1.0).unwrap();
+        assert!(weighed.known_calories.is_none(), "{item}");
+    }
+}
+
+#[test]
+fn typed_tea_bags_are_a_trace() {
+    for item in [
+        "tea bags",
+        "black tea bags",
+        "green tea bag",
+        "earl grey tea bag",
+    ] {
+        let line = ParsedIngredient {
+            measurements: vec![Measurement {
+                amount: Some("5".into()),
+                unit: None,
+            }],
+            ..ingredient(item, "5", "")
+        };
+        let result = estimate(&[line], None, 1.0).unwrap();
+        assert_eq!(
+            result.known_calories.map(|range| range.max),
+            Some(0.0),
+            "{item}"
+        );
+    }
+}
+
+#[test]
+fn a_trace_spoonful_with_a_weight_alternative() {
+    let line = |item: &str| ParsedIngredient {
+        measurements: vec![
+            Measurement {
+                amount: Some("1-2".into()),
+                unit: Some("tsp".into()),
+            },
+            Measurement {
+                amount: Some("2-4".into()),
+                unit: Some("g".into()),
+            },
+        ],
+        ..ingredient(item, "1", "tsp")
+    };
+    let calories = |item: &str| {
+        estimate(&[line(item)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    // Sumac has no calories to weigh the grams with: the spoonful is a trace.
+    assert_eq!(calories("sumac"), Some(0.0));
+    // Black pepper does, so the weight alternative counts (4 g x 2.51 kcal/g).
+    assert!((calories("black pepper").unwrap() - 10.04).abs() < 1e-9);
+}

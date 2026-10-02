@@ -50,8 +50,9 @@ Each entry also has two negligibility attributes, derived from the data:
   amount ("to taste", no measurement), a trace unit (pinch, dash, sprig), or
   counts at most 10 small pieces (after scaling) USDA has no weight for ("2 bay
   leaves", "1 cinnamon stick"). So is at most a tablespoon (after scaling) of one
-  with no density ("1 tsp freshly ground black pepper"), which is at most about
-  25 kcal. A real amount, like a cup of cumin, counts in full.
+  with no density ("1 tsp freshly ground black pepper"): about 15-25 kcal for most
+  spices, and up to about 50 for dense, rich seeds such as whole mustard seed. A
+  real amount, like a cup of cumin, counts in full.
 
 A compound line is negligible only if every one of its foods is negligible on
 that line. Otherwise its calories are unknown.
@@ -226,7 +227,12 @@ that appears in both releases.
   - `category` (one of `ingredient_categorizer::CATEGORIES`) overrides the
     keyword categorizer.
   - `trace_ok: true` marks a food commonly listed without an amount, for foods
-    the "spices, …" rule doesn't cover.
+    the "spices, …" rule doesn't cover. An entry with only `trace_ok` (no
+    `fdc_id`, calories or density) is a trace-only spice or herb whose calories
+    no source gives: a line of it is negligible with no amount, a trace unit,
+    a few pieces, or up to a tablespoon, and unknown for anything more. Every
+    food entry needs at least one of `fdc_id`, `kcal_per_100g`,
+    `grams_per_cup` or `trace_ok`.
   - `kind: "product"` entries need a `category` and may not have an `fdc_id`,
     `kcal_per_100g`, or `grams_per_cup`.
 - `aliases` map a name to an entry id, USDA stripped name, or unique USDA
@@ -373,7 +379,14 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
     value). Buffalo wing sauce was dropped: labels range from near-zero hot sauce to
     butter-based restaurant sauce.
   - Of the skips, 94 names (102 prod lines) are spices whose labels only have servings
-    under 10 g, which can't be cited; see `p2-catalog-trace-only-spices`.
+    under 10 g, which can't be cited. A follow-up made 52 of them, plus fresh herbs listed
+    by the leaf, trace-only entries (with 100 aliases for their variants): sumac, celery salt, za'atar, five
+    spice, Old Bay, bitters, liquid smoke, vanilla beans, MSG, bonito flakes, fresh sage
+    and tarragon. Whole spices whose ground form USDA has instead link it, since grinding
+    changes the volume weight but not the calories by weight: mustard seeds and allspice
+    berries (density marked unknown, like black pepper). "Japanese chili powder"
+    aliases shichimi togarashi, which is what recipes mean by it. Fresh herbs stay trace-only: dried
+    forms have several times the calories per gram.
   - Effect:
 
     | Measure | Prod (owner's 499 recipes, with learned names) | Pipeline fixtures |
