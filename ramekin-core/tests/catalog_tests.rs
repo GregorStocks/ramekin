@@ -489,16 +489,19 @@ fn counted_pieces_use_usda_portions() {
     }
     assert_eq!(piece("garlic", Some("cloves")), Some(3.0));
     assert_eq!(piece("garlic", None), Some(3.0));
-    assert_eq!(piece("garlic", Some("head")), None);
+    // A cited override adds a head (Canadian Nutrient File: 1 bulb = 24 g).
+    assert_eq!(piece("garlic", Some("head")), Some(24.0));
     assert_eq!(piece("onion", None), Some(110.0));
     assert_eq!(piece("celery", Some("stalks")), Some(40.0));
     assert_eq!(piece("celery", Some("large")), Some(64.0));
     assert_eq!(piece("butter", Some("stick")), Some(113.0));
     assert_eq!(piece("lemon", None), Some(58.0));
     assert_eq!(piece("jalapeño", None), Some(14.0));
-    // A bare count never means a slice.
-    assert_eq!(piece("bacon", None), None);
+    // The importer never makes a slice the default, but bacon is counted by
+    // the strip, so a curated override does.
+    assert_eq!(piece("bacon", None), Some(28.0));
     assert_eq!(piece("bacon", Some("slices")), Some(28.0));
+    assert_eq!(piece("bread", None), None);
     // Spices have no piece weight.
     assert_eq!(piece("bay leaves", None), None);
 }
@@ -609,4 +612,58 @@ fn dish_names_are_never_not_food() {
             "{name:?} must not be not-food"
         );
     }
+}
+
+#[test]
+fn curated_pieces_fill_counts_usda_lacks() {
+    let piece = |item, unit| match resolve(item) {
+        Resolution::Entry { entry, .. } => grams_per_piece(entry, unit),
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    // Overrides on SR Legacy foods: new cited pieces, and defaults for a
+    // bare count among the food's own pieces.
+    assert_eq!(piece("corn tortillas", None), Some(24.0));
+    assert_eq!(piece("corn tortillas", Some("small")), Some(18.0));
+    assert_eq!(piece("anchovy fillets", None), Some(4.0));
+    assert_eq!(piece("ears of corn", None), Some(143.0));
+    assert_eq!(piece("parsnips", None), Some(84.56));
+    assert_eq!(piece("ham", Some("slices")), Some(28.0));
+    // Entry pieces replace the shared food's: buns differ by name.
+    assert_eq!(piece("hamburger buns", None), Some(57.0));
+    assert_eq!(piece("hot dog buns", None), Some(44.0));
+    assert_eq!(piece("baguette", None), Some(324.0));
+    assert_eq!(piece("lasagna noodles", None), Some(17.0));
+    // FNDDS-linked entries carry their own pieces.
+    assert_eq!(piece("sheets nori", None), Some(2.5));
+    assert_eq!(piece("prosciutto", Some("slices")), Some(9.2));
+    assert_eq!(piece("lettuce", Some("head")), Some(539.0));
+    // Bespoke pieces (bespoke.json): a shallot is medium unless sized.
+    assert_eq!(piece("shallots", None), Some(28.0));
+    assert_eq!(piece("shallot", Some("large")), Some(42.0));
+    assert_eq!(piece("ginger", Some("1-inch piece")), Some(7.4));
+    assert_eq!(piece("scallions", Some("bunch")), Some(105.0));
+    assert_eq!(piece("broccoli", Some("head")), Some(255.0));
+    assert_eq!(piece("active dry yeast", Some("packets")), Some(7.0));
+    // Standard US can sizes for a bare "can".
+    assert_eq!(piece("black beans", Some("can")), Some(425.0));
+    assert_eq!(piece("diced tomatoes", Some("cans")), Some(411.0));
+    assert_eq!(piece("tuna", Some("can")), Some(113.0));
+    // Bespoke pieces add to, never replace, published ones.
+    assert_eq!(piece("broccoli", Some("bunch")), Some(608.0));
+    // A bunch has a weight, but a bare count of kale still doesn't.
+    assert_eq!(piece("kale", None), None);
+}
+
+#[test]
+fn name_specific_pieces_replace_the_foods() {
+    let piece = |item, unit| match resolve(item) {
+        Resolution::Entry { entry, .. } => grams_per_piece(entry, unit),
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    // Generic French bread has a 139 g slice; a baguette's isn't known.
+    assert_eq!(piece("crusty bread", Some("slice")), Some(139.0));
+    assert_eq!(piece("baguette", Some("slices")), None);
+    // A can of corn is canned corn's, not raw corn's.
+    assert_eq!(piece("canned corn", Some("can")), Some(432.0));
+    assert_eq!(piece("corn", Some("can")), None);
 }

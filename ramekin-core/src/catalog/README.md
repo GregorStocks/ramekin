@@ -240,6 +240,10 @@ that appears in both releases.
     a few pieces, or up to a tablespoon, and unknown for anything more. Every
     food entry needs at least one of `fdc_id`, `kcal_per_100g`,
     `grams_per_cup` or `trace_ok`.
+  - `portions` (cited, like `food_overrides` portions) and `default_portion`
+    give a name its own pieces, replacing the linked food's: "hamburger buns"
+    and "hot dog buns" share one USDA food but weigh 57 and 44 g, and a
+    baguette doesn't inherit generic French bread's 139 g slice.
   - `kind: "product"` entries need a `category` and may not have an `fdc_id`,
     `kcal_per_100g`, or `grams_per_cup`.
 - `aliases` map a name to an entry id, USDA stripped name, or unique USDA
@@ -285,10 +289,50 @@ that appears in both releases.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
-- `food_overrides` correct USDA foods by their unique description:
-  `default_portion` picks the piece a bare count means ("3 eggs" are large, the
-  US recipe convention), and `trace_ok` marks fresh herbs, which recipes list by
-  the sprig.
+- `food_overrides` correct SR Legacy foods by their unique description:
+  - `default_portion` picks the piece a bare count means: "3 eggs" are large,
+    the US recipe convention, and "4 strips bacon" are slices, although the
+    importer never makes a slice the default;
+  - `portions` adds cited pieces the release doesn't weigh
+    (`{"head": {"value": 24, "source": ..., "url": ...}}` for garlic), keyed like
+    imported pieces;
+  - `trace_ok` marks fresh herbs, which recipes list by the sprig.
+  FNDDS foods are reached through curated entries, so their corrections live on
+  those entries.
+- Piece sources, in order: the food's own USDA portions, then USDA FNDDS
+  portions for the same food, the Canadian Nutrient File's household measures,
+  or a USDA Branded label, in `curated.json`; then `bespoke.json` (below).
+
+### `data/bespoke.json` (hand-maintained)
+
+Piece weights no published database gives, each with the basis for its number:
+
+```json
+{
+  "pieces": {
+    "shallots": {
+      "pieces": { "medium": { "grams": 28, "basis": "Medium shallot: 1 ounce (America's Test Kitchen)", "url": "https://..." } },
+      "default": "medium"
+    },
+    "black beans": { "pieces": { "can": { "grams": 425, "basis": "Standard US can of beans: 15 oz" } } }
+  }
+}
+```
+
+- Keys are any catalog name; the pieces are added to the entry the name
+  resolves to (on top of its own or its food's), so every alias of that food
+  gets them.
+- `basis` says where the number comes from: a reference's statement (cooking
+  references such as America's Test Kitchen, produce weight tables, a product
+  listing), a stated convention, or arithmetic on those ("twice a 1-inch
+  piece"). `url` is optional but expected when there is a reference.
+- Bespoke pieces never shadow a published piece for the same food, and
+  `default` (the piece a bare count means) applies only when the entry has
+  none.
+- A bare "can" uses the food's standard US can size (owner decision,
+  2026-10-02): 15 oz for beans, 14.5 oz for diced or whole tomatoes, 6 oz for
+  tomato paste, and so on. A food sold in several common sizes (crushed
+  tomatoes) has none and stays unknown.
 
 The loader asserts that keys are normalized, targets exist, aliases don't
 shadow names, and densities are finite and positive. `catalog::version()`
