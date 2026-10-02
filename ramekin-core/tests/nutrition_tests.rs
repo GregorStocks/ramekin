@@ -675,10 +675,42 @@ fn status_follows_the_number_of_uncounted_ingredients() {
         ["~390 kcal", "Negligible", "Not a food", "Not a food"]
     );
 
-    // A real food without a usable amount stays uncounted.
+    // A real food given no amount is left out and listed, but doesn't make
+    // the estimate partial: there's nothing to count.
     let greased = estimate(&[sugar(), bare("butter")], None, 1.0).unwrap();
-    assert_eq!(greased.status, Status::Partial);
-    assert_eq!(greased.lines[1].text, "Amount unclear");
+    assert_eq!(greased.status, Status::Complete);
+    assert_eq!(greased.headline, "~390 kcal for the whole recipe");
+    assert_eq!(greased.lines[1].text, "No amount given");
+    assert_eq!(greased.not_counted, ["butter"]);
+    assert!(greased.unknown_ingredients.is_empty());
+    assert_eq!(greased.no_amount[0].reason, "Missing quantity");
+    // An unclear amount is still unknown.
+    let handful = estimate(&[sugar(), ingredient("butter", "a knob", "")], None, 1.0).unwrap();
+    assert_eq!(handful.status, Status::Partial);
+    assert_eq!(handful.lines[1].text, "Amount unclear");
+    // Partial estimates list both kinds, in recipe order.
+    let both = estimate(
+        &[
+            bare("olive oil"),
+            sugar(),
+            ingredient("moon dust", "1", "cup"),
+        ],
+        None,
+        1.0,
+    )
+    .unwrap();
+    assert_eq!(both.status, Status::Partial);
+    assert_eq!(both.not_counted, ["olive oil", "moon dust"]);
+    // Nothing counted but lines with no amount: nothing to show.
+    let nothing = estimate(&[bare("olive oil"), bare("butter")], None, 1.0).unwrap();
+    assert_eq!(nothing.status, Status::Insufficient);
+    assert_eq!(
+        nothing.secondary.as_deref(),
+        Some("2 ingredients couldn't be counted.")
+    );
+    // Salt is no figure to show either.
+    let salted = estimate(&[bare("kosher salt"), bare("olive oil")], None, 1.0).unwrap();
+    assert_eq!(salted.status, Status::Insufficient);
 
     // Salt beside an unknown main ingredient is no lower bound at all.
     let only_salt = estimate(

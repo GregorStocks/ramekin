@@ -33,7 +33,7 @@ class CalorieEstimateResponse(BaseModel):
     headline: StrictStr = Field(description="The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the whole recipe\", or \"Not enough ingredient data to estimate calories\".")
     known_calories: Optional[CalorieRange] = Field(default=None, description="Null when nothing was counted. A lower bound when status is partial.")
     lines: List[CalorieLine] = Field(description="The breakdown, one entry per ingredient in order.")
-    not_counted: List[StrictStr] = Field(description="For a partial estimate, the ingredients its lower bound leaves out.")
+    not_counted: List[StrictStr] = Field(description="Ingredients the figures leave out, in recipe order: those given no amount (even in a complete estimate), and for a partial estimate the ones that couldn't be counted.")
     per_serving_calories: Optional[CalorieRange] = None
     resolving: StrictBool = Field(description="Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them.")
     secondary: Optional[StrictStr] = Field(default=None, description="Shown under the headline when present.")

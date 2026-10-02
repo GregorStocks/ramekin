@@ -335,8 +335,14 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
             &corpus.learned,
         )
         .map_err(|e| anyhow::anyhow!("Calorie estimate failed in {}: {e}", corpus.name))?;
-        let unknown = &estimate.unknown_ingredients;
-        stats.unknown_lines_per_recipe[unknown_bucket(unknown.len())] += 1;
+        // Only unknown lines decide the status; lines given no amount are left
+        // out but still not computed.
+        stats.unknown_lines_per_recipe[unknown_bucket(estimate.unknown_ingredients.len())] += 1;
+        let unknown: Vec<_> = estimate
+            .unknown_ingredients
+            .iter()
+            .chain(&estimate.no_amount)
+            .collect();
         *stats
             .statuses
             .entry(format!("{:?}", estimate.status))
@@ -360,7 +366,7 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
                 stats.recipes_with_per_serving += 1;
             }
         }
-        for u in unknown {
+        for u in &unknown {
             *stats.nutrition_reasons.entry(u.reason.clone()).or_default() += 1;
             *stats
                 .nutrition_failures
@@ -424,6 +430,7 @@ fn nutrition_recognizes(item: &str) -> Result<bool> {
     Ok(!estimate
         .unknown_ingredients
         .iter()
+        .chain(&estimate.no_amount)
         .any(|u| NAME_FAILURES.contains(&u.reason.as_str())))
 }
 

@@ -67,7 +67,9 @@ export interface CalorieEstimateResponse {
      */
     lines: Array<CalorieLine>;
     /**
-     * For a partial estimate, the ingredients its lower bound leaves out.
+     * Ingredients the figures leave out, in recipe order: those given no
+     * amount (even in a complete estimate), and for a partial estimate the
+     * ones that couldn't be counted.
      * @type {Array<string>}
      * @memberof CalorieEstimateResponse
      */

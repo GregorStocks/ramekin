@@ -119,15 +119,27 @@ Some lines are known without a usable amount (rules in the catalog README):
   and products such as parchment paper are skipped. They add nothing and are not
   listed as unknown. A recipe of only such lines is "No ingredients to estimate."
 
+## Lines with no amount
+
+A line given no amount at all ("olive oil", "lime wedges, to serve", "butter, for
+the pan") has nothing to count, so it is left out rather than unknown: its
+breakdown text is "No amount given" and it is listed under "Not counted", but it
+never makes an estimate partial or insufficient. A recipe whose other lines all
+count is complete, with its figure and "Not counted: olive oil" under it. If
+nothing else was counted, or only a trace under 1 kcal (salt), there is no
+figure to show and the estimate is insufficient. An unclear amount ("a knob of
+butter") is not this: it stays unknown ("Amount unclear").
+
 ## Presentation
 
 The server decides everything and formats every string; web and iOS only lay
 them out. Each estimate has a `status`, set by how many real ingredients it
-couldn't count (negligible lines and non-food lines never count against it):
+couldn't count (negligible lines, non-food lines, and lines given no amount
+never count against it):
 
 | Uncounted | Status | Headline |
 | --- | --- | --- |
-| 0 | `complete` | "~780 kcal per serving", or "~3,100 kcal for the whole recipe" without servings |
+| 0 | `complete` | "~780 kcal per serving", or "~3,100 kcal for the whole recipe" without servings; "Not counted: olive oil" if lines had no amount |
 | 1–3 | `partial` | "At least ~780 kcal per serving", plus "Not counted: mirin, garlic" |
 | 4+, or nothing counted | `insufficient` | "Not enough ingredient data to estimate calories" |
 | no estimable lines | `empty` | "No ingredients to estimate" |
@@ -148,7 +160,7 @@ five ingredients can be far below the real total. The cutoff should rise only if
 the audit shows most uncounted lines are minor.
 
 A "How is this calculated?" disclosure lists every line with its scaled calories,
-"Negligible", "Not a food", or a short reason it couldn't be counted ("Not
+"Negligible", "Not a food", "No amount given", or a short reason it couldn't be counted ("Not
 recognized", "Could be several foods", "Amount unclear", "Can't convert this
 measurement to weight"), followed by the USDA attribution.
 

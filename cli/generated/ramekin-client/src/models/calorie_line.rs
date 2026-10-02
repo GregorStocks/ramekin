@@ -26,7 +26,7 @@ pub struct CalorieLine {
     pub index: i32,
     #[serde(rename = "item")]
     pub item: String,
-    /// Display text: \"~120 kcal\", \"Negligible\", \"Not a food\", or why it couldn't be counted (\"Not recognized\", \"Amount unclear\").
+    /// Display text: \"~120 kcal\", \"Negligible\", \"Not a food\", \"No amount given\", or why it couldn't be counted (\"Not recognized\", \"Amount unclear\").
     #[serde(rename = "text")]
     pub text: String,
 }

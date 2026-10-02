@@ -18,7 +18,7 @@ public struct CalorieLine: Codable, JSONEncodable, Hashable {
     public var calories: CalorieRange?
     public var index: Int
     public var item: String
-    /** Display text: \"~120 kcal\", \"Negligible\", \"Not a food\", or why it couldn't be counted (\"Not recognized\", \"Amount unclear\"). */
+    /** Display text: \"~120 kcal\", \"Negligible\", \"Not a food\", \"No amount given\", or why it couldn't be counted (\"Not recognized\", \"Amount unclear\"). */
     public var text: String
 
     public init(calories: CalorieRange? = nil, index: Int, item: String, text: String) {

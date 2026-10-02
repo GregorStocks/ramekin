@@ -21,7 +21,7 @@ public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
     public var knownCalories: CalorieRange?
     /** The breakdown, one entry per ingredient in order. */
     public var lines: [CalorieLine]
-    /** For a partial estimate, the ingredients its lower bound leaves out. */
+    /** Ingredients the figures leave out, in recipe order: those given no amount (even in a complete estimate), and for a partial estimate the ones that couldn't be counted. */
     public var notCounted: [String]
     public var perServingCalories: CalorieRange?
     /** Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them. */

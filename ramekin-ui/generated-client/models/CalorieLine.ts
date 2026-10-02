@@ -46,8 +46,9 @@ export interface CalorieLine {
      */
     item: string;
     /**
-     * Display text: "~120 kcal", "Negligible", "Not a food", or why it
-     * couldn't be counted ("Not recognized", "Amount unclear").
+     * Display text: "~120 kcal", "Negligible", "Not a food", "No amount
+     * given", or why it couldn't be counted ("Not recognized", "Amount
+     * unclear").
      * @type {string}
      * @memberof CalorieLine
      */

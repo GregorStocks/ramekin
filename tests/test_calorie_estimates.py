@@ -180,3 +180,20 @@ def test_estimate_status_follows_uncounted_ingredients(server_url, authed_api_cl
     empty = estimate(server_url, client, []).json()
     assert empty["status"] == "empty"
     assert empty["headline"] == "No ingredients to estimate"
+
+
+def test_estimate_leaves_out_lines_with_no_amount(server_url, authed_api_client):
+    client, _ = authed_api_client
+    sugar = make_ingredient("granulated sugar", "100", "g")
+    oil = make_ingredient("olive oil")
+    result = estimate(server_url, client, [oil, sugar]).json()
+    assert result["status"] == "complete"
+    assert result["headline"] == "~390 kcal for the whole recipe"
+    assert result["not_counted"] == ["olive oil"]
+    assert result["lines"][0]["text"] == "No amount given"
+    assert result["lines"][0]["calories"] is None
+    # Lines with no amount never make an estimate partial or insufficient.
+    unknown = [make_ingredient(f"moon dust {i}", "1", "cup") for i in range(3)]
+    partial = estimate(server_url, client, [sugar, oil, *unknown]).json()
+    assert partial["status"] == "partial"
+    assert partial["not_counted"] == ["olive oil", *(u.item for u in unknown)]

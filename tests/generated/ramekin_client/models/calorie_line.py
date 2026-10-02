@@ -31,7 +31,7 @@ class CalorieLine(BaseModel):
     calories: Optional[CalorieRange] = Field(default=None, description="Scaled calories when counted (zero when negligible).")
     index: Annotated[int, Field(strict=True, ge=0)]
     item: StrictStr
-    text: StrictStr = Field(description="Display text: \"~120 kcal\", \"Negligible\", \"Not a food\", or why it couldn't be counted (\"Not recognized\", \"Amount unclear\").")
+    text: StrictStr = Field(description="Display text: \"~120 kcal\", \"Negligible\", \"Not a food\", \"No amount given\", or why it couldn't be counted (\"Not recognized\", \"Amount unclear\").")
     __properties: ClassVar[List[str]] = ["calories", "index", "item", "text"]
 
     model_config = ConfigDict(

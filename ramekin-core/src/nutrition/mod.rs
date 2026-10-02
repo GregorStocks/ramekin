@@ -8,7 +8,7 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v11";
+const RULE_VERSION: &str = "calories-v12";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
@@ -67,12 +67,17 @@ pub struct Estimate {
     /// The whole-recipe figure under a per-serving headline, or how many
     /// ingredients an insufficient estimate is missing.
     pub secondary: Option<String>,
-    /// For a partial estimate, the ingredients the lower bound leaves out.
+    /// Ingredients the figures leave out: those given no amount, and for a
+    /// partial estimate the ones that couldn't be counted.
     pub not_counted: Vec<String>,
     pub known_calories: Option<CalorieRange>,
     pub per_serving_calories: Option<CalorieRange>,
     /// Internal reasons, for the audit; clients get `lines`.
     pub unknown_ingredients: Vec<UnknownIngredient>,
+    /// Lines given no amount at all ("olive oil", "lime wedges, to serve"):
+    /// not counted, but not unknown either, so they never make an estimate
+    /// partial or insufficient. Internal reasons, as above.
+    pub no_amount: Vec<UnknownIngredient>,
     pub lines: Vec<LineEstimate>,
 }
 
@@ -89,6 +94,18 @@ const TRACE_COUNT_UNITS: [&str; 16] = [
     "", "leaf", "leaves", "stick", "sticks", "pod", "pods", "stem", "stems", "piece", "pieces",
     "whole", "clove", "cloves", "star", "stars",
 ];
+
+/// A line given no amount at all: no measurement, or none with an amount
+/// ("olive oil", "lime wedges, to serve"). An unclear amount ("a handful")
+/// is not this; it stays unknown.
+fn has_no_amount(ingredient: &ParsedIngredient) -> bool {
+    ingredient.measurements.iter().all(|measurement| {
+        measurement
+            .amount
+            .as_deref()
+            .is_none_or(|amount| amount.trim().is_empty())
+    })
+}
 
 /// A line with no real amount: no numeric quantity at all ("to taste", "as
 /// needed", no measurement), or only a pinch or dash.
@@ -631,6 +648,7 @@ pub fn estimate_with(
     }
     let mut known = None;
     let mut unknown_ingredients = Vec::new();
+    let mut no_amount = Vec::new();
     let mut lines = Vec::new();
     for (index, ingredient) in ingredients.iter().enumerate() {
         let (calories, text) = match contribution(ingredient, scale, learned) {
@@ -656,12 +674,20 @@ pub fn estimate_with(
                 (Some(scaled), kcal_text(scaled))
             }
             Err(reason) => {
-                unknown_ingredients.push(UnknownIngredient {
+                let uncounted = UnknownIngredient {
                     index,
                     item: ingredient.item.clone(),
                     reason: reason.to_string(),
-                });
-                (None, unknown_label(reason).to_string())
+                };
+                // With no amount there is nothing to count, whatever the food:
+                // left out and listed, not unknown.
+                if has_no_amount(ingredient) {
+                    no_amount.push(uncounted);
+                    (None, "No amount given".to_string())
+                } else {
+                    unknown_ingredients.push(uncounted);
+                    (None, unknown_label(reason).to_string())
+                }
             }
         };
         lines.push(LineEstimate {
@@ -688,9 +714,11 @@ pub fn estimate_with(
         max: total.max * scale,
     });
     let status = match (known, unknown_ingredients.len()) {
-        (None, 0) => Status::Empty,
+        (None, 0) if no_amount.is_empty() => Status::Empty,
         (None, _) => Status::Insufficient,
-        (Some(_), 0) => Status::Complete,
+        // Only lines with no amount left out: a whole-recipe figure, unless
+        // what was counted is under 1 kcal (only salt and "olive oil").
+        (Some(total), 0) if no_amount.is_empty() || total.min >= 1.0 => Status::Complete,
         // A lower bound under 1 kcal (only salt, "0-100 g", a pinch of sugar)
         // says nothing.
         (Some(total), unknown)
@@ -715,7 +743,7 @@ pub fn estimate_with(
         (Status::Empty, ..) => ("No ingredients to estimate".to_string(), None),
         (Status::Insufficient, ..) => (
             "Not enough ingredient data to estimate calories".to_string(),
-            Some(match unknown_ingredients.len() {
+            Some(match unknown_ingredients.len() + no_amount.len() {
                 1 => "1 ingredient couldn't be counted.".to_string(),
                 n => format!("{n} ingredients couldn't be counted."),
             }),
@@ -727,11 +755,13 @@ pub fn estimate_with(
         (_, Some(total), None) => (figure(total, "for the whole recipe"), None),
         (_, None, _) => unreachable!("complete and partial estimates have a total"),
     };
-    let not_counted = if status == Status::Partial {
-        unknown_ingredients.iter().map(|i| i.item.clone()).collect()
-    } else {
-        Vec::new()
+    let mut left_out: Vec<&UnknownIngredient> = match status {
+        Status::Partial => unknown_ingredients.iter().chain(&no_amount).collect(),
+        Status::Complete => no_amount.iter().collect(),
+        Status::Insufficient | Status::Empty => Vec::new(),
     };
+    left_out.sort_by_key(|line| line.index);
+    let not_counted = left_out.into_iter().map(|line| line.item.clone()).collect();
     Ok(Estimate {
         database_version: VERSION.clone(),
         status,
@@ -741,6 +771,7 @@ pub fn estimate_with(
         known_calories: known,
         per_serving_calories: per_serving,
         unknown_ingredients,
+        no_amount,
         lines,
     })
 }

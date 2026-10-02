@@ -69,8 +69,9 @@ pub struct CalorieLine {
     pub item: String,
     /// Scaled calories when counted (zero when negligible).
     pub calories: Option<CalorieRange>,
-    /// Display text: "~120 kcal", "Negligible", "Not a food", or why it
-    /// couldn't be counted ("Not recognized", "Amount unclear").
+    /// Display text: "~120 kcal", "Negligible", "Not a food", "No amount
+    /// given", or why it couldn't be counted ("Not recognized", "Amount
+    /// unclear").
     pub text: String,
 }
 
@@ -85,7 +86,9 @@ pub struct CalorieEstimateResponse {
     pub headline: String,
     /// Shown under the headline when present.
     pub secondary: Option<String>,
-    /// For a partial estimate, the ingredients its lower bound leaves out.
+    /// Ingredients the figures leave out, in recipe order: those given no
+    /// amount (even in a complete estimate), and for a partial estimate the
+    /// ones that couldn't be counted.
     pub not_counted: Vec<String>,
     /// Null when nothing was counted. A lower bound when status is partial.
     pub known_calories: Option<CalorieRange>,
