@@ -66,14 +66,15 @@ fn rows_for(
         .collect())
 }
 
-/// The most gaps one estimate request queues. A recipe rarely has more than a
-/// few; the rest are queued on a later view. With `ESTIMABLE_UNITS` this
-/// bounds what any request can add to the paid queue.
+/// The most new gaps one estimate request queues. A recipe rarely has more
+/// than a few; with `ESTIMABLE_UNITS` this bounds what any request can add to
+/// the paid queue.
 const MAX_QUEUED_PER_REQUEST: usize = 50;
 
-/// Estimated weights for `gaps`, and whether any is still waiting to be
-/// estimated. Gaps never queued are queued here (up to
-/// `MAX_QUEUED_PER_REQUEST`), so the caller should `wake` once this commits.
+/// Estimated weights for `gaps`, and whether any is still waiting: pending,
+/// or not yet queued because of `MAX_QUEUED_PER_REQUEST` (the client keeps
+/// polling, and each poll queues the next ones). Gaps with no row are queued
+/// here, so the caller should `wake` once this commits.
 pub fn load_and_enqueue(
     conn: &mut PgConnection,
     gaps: &[WeightKey],
@@ -81,15 +82,24 @@ pub fn load_and_enqueue(
     if gaps.is_empty() {
         return Ok((Weights::new(), false));
     }
-    enqueue(conn, &gaps[..gaps.len().min(MAX_QUEUED_PER_REQUEST)])?;
-    let rows = rows_for(conn, gaps)?;
-    let pending = rows.iter().any(|(_, status, _)| status == PENDING);
+    let mut rows = rows_for(conn, gaps)?;
+    let unqueued: Vec<WeightKey> = gaps
+        .iter()
+        .filter(|gap| !rows.iter().any(|(key, _, _)| key == *gap))
+        .cloned()
+        .collect();
+    let (queue_now, later) = unqueued.split_at(unqueued.len().min(MAX_QUEUED_PER_REQUEST));
+    if !queue_now.is_empty() {
+        enqueue(conn, queue_now)?;
+        rows = rows_for(conn, gaps)?;
+    }
+    let waiting = !later.is_empty() || rows.iter().any(|(_, status, _)| status == PENDING);
     let estimated = rows
         .into_iter()
         .filter(|(_, status, _)| status == RESOLVED)
         .filter_map(|(key, _, grams)| grams.map(|grams| (key, grams)))
         .collect();
-    Ok((estimated, pending))
+    Ok((estimated, waiting))
 }
 
 /// How the estimates for some foods stand, for the status page.

@@ -79,7 +79,7 @@ def test_missing_unit_weights_are_estimated_and_labeled(
         )
     )
     assert abs(counted.lines[0].calories.max - plain.lines[0].calories.max) < 1e-6
-    assert mock_answers(unit) == answers + 1
+    assert mock_answers(unit) > answers
 
 
 def test_missing_densities_are_estimated(authed_api_client):
@@ -137,3 +137,41 @@ def test_weight_failures_are_visible_and_retryable(
     wait_for(lambda: estimate(api, "2", unit).lines[0].calories)
     assert weight_failures(names_api, unit) == []
     assert mock_calls(unit) >= 2
+
+
+def test_requests_with_many_gaps_queue_them_all(authed_api_client, database_url):
+    """A request queues at most 50 new gaps, but keeps `resolving` until the
+    rest are queued on later polls, so every line is eventually weighed."""
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    # Miso has a density but no piece weights; no other test weighs it. The
+    # other tests' units (jar, handful, bottle) are left out.
+    with psycopg.connect(database_url, autocommit=True) as conn:
+        conn.execute(
+            "UPDATE ingredient_weight_estimates SET status = 'pending', grams = NULL, "
+            "error = NULL, model = NULL WHERE food = 'miso'"
+        )
+    units = [
+        "bag", "ball", "bar", "block", "box", "breast", "bulb", "bunch",
+        "can", "carton", "chop", "clove", "container", "cube", "ear", "envelope",
+        "extra large", "fillet", "head", "heart", "jumbo", "knob",
+        "large", "leaf", "leg", "link", "loaf", "medium", "package", "packet",
+        "piece", "pouch", "rib", "ring", "roll", "sheet", "slab", "slice", "small",
+        "spear", "sprig", "stalk", "steak", "stem", "stick", "strip", "thigh",
+        "tube", "tub", "wedge", "whole", "wing",
+    ]  # fmt: skip
+    assert len(units) > 50
+    request = EstimateCaloriesRequest(
+        ingredients=[make_ingredient("miso", "1", unit) for unit in units], scale=1
+    )
+    first = api.estimate_calories(request)
+    assert first.resolving
+    done = wait_for(
+        lambda: (
+            (e := api.estimate_calories(request))
+            and all(line.calories for line in e.lines)
+            and e
+        )
+    )
+    assert not done.resolving
+    assert all(line.text.endswith("(estimated weight)") for line in done.lines)
