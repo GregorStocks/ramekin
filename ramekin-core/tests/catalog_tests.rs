@@ -637,6 +637,19 @@ fn curated_pieces_fill_counts_usda_lacks() {
     assert_eq!(piece("sheets nori", None), Some(2.5));
     assert_eq!(piece("prosciutto", Some("slices")), Some(9.2));
     assert_eq!(piece("lettuce", Some("head")), Some(539.0));
-    // No source yet: still unknown.
-    assert_eq!(piece("shallots", None), None);
+    // Bespoke pieces (bespoke.json): a shallot is medium unless sized.
+    assert_eq!(piece("shallots", None), Some(28.0));
+    assert_eq!(piece("shallot", Some("large")), Some(42.0));
+    assert_eq!(piece("ginger", Some("1-inch piece")), Some(7.4));
+    assert_eq!(piece("scallions", Some("bunch")), Some(105.0));
+    assert_eq!(piece("broccoli", Some("head")), Some(255.0));
+    assert_eq!(piece("active dry yeast", Some("packets")), Some(7.0));
+    // Standard US can sizes for a bare "can".
+    assert_eq!(piece("black beans", Some("can")), Some(425.0));
+    assert_eq!(piece("diced tomatoes", Some("cans")), Some(411.0));
+    assert_eq!(piece("tuna", Some("can")), Some(113.0));
+    // Bespoke pieces add to, never replace, published ones.
+    assert_eq!(piece("broccoli", Some("bunch")), Some(608.0));
+    // A bunch has a weight, but a bare count of kale still doesn't.
+    assert_eq!(piece("kale", None), None);
 }

@@ -176,8 +176,8 @@ fn unknowns_are_explicit_and_never_zero() {
             "g",
             "Unsupported or missing quantity",
         ),
-        // No source weighs a whole shallot.
-        ("shallots", "2", "", "Unsupported quantity unit"),
+        // Kale is weighed by the bunch, but a bare count means nothing.
+        ("kale", "2", "", "Unsupported quantity unit"),
         ("flour", "2", "", "Unsupported quantity unit"),
         ("canned chickpeas", "1", "can", "Unsupported quantity unit"),
         (
@@ -452,14 +452,18 @@ fn packages_carry_their_own_weight_and_fill_words_are_ignored() {
     .unwrap();
     assert!((ranged.min - ounces(24.0)).abs() < 1e-9);
     assert!((ranged.max - ounces(36.0)).abs() < 1e-9);
-    for note in ["drained", "about 15-ounce", "15-ounce-ish"] {
-        let noted = ParsedIngredient {
+    let noted = |note: &str| {
+        let line = ParsedIngredient {
             note: Some(note.into()),
             ..ingredient("chickpeas", "1", "can")
         };
-        let result = estimate(&[noted], None, 1.0).unwrap();
-        assert!(result.known_calories.is_none(), "{note}");
-    }
+        estimate(&[line], None, 1.0).unwrap().known_calories
+    };
+    // A note with no weight leaves the standard can (15.5 oz)...
+    let standard = kcal("chickpeas", "439", "g");
+    assert!((noted("drained").unwrap().max - standard).abs() < 1e-9);
+    // ...but a stated weight that can't be read is an unclear amount.
+    assert!(noted("about 15-ounce").is_none());
     assert!((kcal("chickpeas", "1", "425-gram can") - kcal("chickpeas", "425", "g")).abs() < 1e-9);
     for unit in [
         "heaped tsp",
@@ -950,4 +954,22 @@ fn a_trace_spoonful_with_a_weight_alternative() {
     assert_eq!(calories("sumac"), Some(0.0));
     // Black pepper does, so the weight alternative counts (4 g x 2.51 kcal/g).
     assert!((calories("black pepper").unwrap() - 10.04).abs() < 1e-9);
+}
+
+#[test]
+fn bare_cans_use_standard_sizes() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.max)
+    };
+    let per_gram = |item: &str| calories(item, "100", "g").unwrap() / 100.0;
+    let can = calories("black beans", "1", "can").unwrap();
+    assert!((can - 425.0 * per_gram("black beans")).abs() < 1e-9);
+    // A stated size still wins over the standard one.
+    let stated = calories("black beans", "1", "28-ounce can").unwrap();
+    assert!((stated - 28.0 * 28.349523125 * per_gram("black beans")).abs() < 1e-6);
+    // Crushed tomatoes come in two common sizes, so a bare can stays unknown.
+    assert_eq!(calories("crushed tomatoes", "1", "can"), None);
 }

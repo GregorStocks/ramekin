@@ -300,8 +300,37 @@ that appears in both releases.
   those entries.
 - Piece sources, in order: the food's own USDA portions, then USDA FNDDS
   portions for the same food, the Canadian Nutrient File's household measures,
-  or a USDA Branded label. A food no source weighs (shallots, a bunch of herbs,
-  an inch of ginger) stays unknown.
+  or a USDA Branded label, in `curated.json`; then `bespoke.json` (below).
+
+### `data/bespoke.json` (hand-maintained)
+
+Piece weights no published database gives, each with the basis for its number:
+
+```json
+{
+  "pieces": {
+    "shallots": {
+      "pieces": { "medium": { "grams": 28, "basis": "Medium shallot: 1 ounce (America's Test Kitchen)", "url": "https://..." } },
+      "default": "medium"
+    },
+    "black beans": { "pieces": { "can": { "grams": 425, "basis": "Standard US can of beans: 15 oz" } } }
+  }
+}
+```
+
+- Keys are any catalog name; the pieces join the entry the name resolves to,
+  so every alias of that food gets them.
+- `basis` says where the number comes from: a reference's statement (cooking
+  references such as America's Test Kitchen, produce weight tables, a product
+  listing), a stated convention, or arithmetic on those ("twice a 1-inch
+  piece"). `url` is optional but expected when there is a reference.
+- Bespoke pieces never shadow a published piece for the same food, and
+  `default` (the piece a bare count means) applies only when the entry has
+  none.
+- A bare "can" uses the food's standard US can size (owner decision,
+  2026-10-02): 15 oz for beans, 14.5 oz for diced or whole tomatoes, 6 oz for
+  tomato paste, and so on. A food sold in several common sizes (crushed
+  tomatoes) has none and stays unknown.
 
 The loader asserts that keys are normalized, targets exist, aliases don't
 shadow names, and densities are finite and positive. `catalog::version()`

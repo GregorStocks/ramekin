@@ -38,6 +38,7 @@ pub use volume::{
 const USDA_JSON: &str = include_str!("data/usda.json");
 const FNDDS_JSON: &str = include_str!("data/fndds.json");
 pub const CURATED_JSON: &str = include_str!("data/curated.json");
+const BESPOKE_JSON: &str = include_str!("data/bespoke.json");
 const RULE_VERSION: &str = "catalog-v2";
 
 /// A food from a pinned USDA release (SR Legacy, or FNDDS for foods SR Legacy
@@ -117,6 +118,33 @@ fn assert_valid_piece(piece: &str, cited: &CitedValue, owner: &str) {
     );
 }
 
+/// Piece weights no published database gives (a shallot, a bunch of
+/// scallions, a standard can), each with the basis for its number.
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct BespokeFile {
+    /// Keyed by any catalog name: the pieces join the entry it resolves to.
+    pieces: BTreeMap<String, BespokeFood>,
+}
+
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct BespokeFood {
+    pieces: BTreeMap<String, BespokePiece>,
+    /// The piece a bare count means, if the entry has none.
+    default: Option<String>,
+}
+
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct BespokePiece {
+    grams: f64,
+    /// Where the number comes from: a reference's statement, or a stated
+    /// convention ("standard 15-ounce can").
+    basis: String,
+    url: Option<String>,
+}
+
 /// A hand-curated number and the record it came from.
 #[derive(Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -190,10 +218,10 @@ pub struct Entry {
     /// Commonly listed without an amount (pepper, dried spices); a line of it
     /// with no quantity, or a pinch or dash, is negligible.
     pub trace_ok: bool,
-    /// Grams per piece this name means, when they differ from the linked
-    /// food's (empty to use the food's).
+    /// Grams per piece: the linked food's, plus this name's own cited and
+    /// bespoke pieces.
     pub portions: BTreeMap<String, f64>,
-    /// The piece a bare count means, when `portions` is set.
+    /// The piece a bare count means.
     pub default_portion: Option<String>,
 }
 
@@ -329,15 +357,19 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             Some(CuratedDensity::Unknown { .. }) => None,
             None => food.and_then(|food| food.grams_per_cup),
         };
-        let portions: BTreeMap<String, f64> = curated_entry
-            .portions
-            .iter()
-            .map(|(piece, cited)| {
-                assert_valid_piece(piece, cited, &id);
-                (piece.clone(), cited.value)
-            })
-            .collect();
-        if let Some(piece) = &curated_entry.default_portion {
+        let mut portions = food.map(|food| food.portions.clone()).unwrap_or_default();
+        for (piece, cited) in &curated_entry.portions {
+            assert_valid_piece(piece, cited, &id);
+            assert!(
+                portions.insert(piece.clone(), cited.value).is_none(),
+                "curated entry {id:?} repeats its food's piece {piece:?}"
+            );
+        }
+        let default_portion = curated_entry
+            .default_portion
+            .clone()
+            .or_else(|| food.and_then(|food| food.default_portion.clone()));
+        if let Some(piece) = &default_portion {
             assert!(
                 portions.contains_key(piece),
                 "curated entry {id:?} default portion {piece:?} is not one of its portions"
@@ -381,7 +413,7 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             trace_ok: curated_entry.trace_ok
                 || food.is_some_and(|food| is_trace_ok(food, &trace_ok_foods)),
             portions,
-            default_portion: curated_entry.default_portion,
+            default_portion,
         });
     }
 
@@ -400,8 +432,8 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             category: None,
             zero_calorie: is_zero_calorie(food),
             trace_ok: is_trace_ok(food, &trace_ok_foods),
-            portions: BTreeMap::new(),
-            default_portion: None,
+            portions: food.portions.clone(),
+            default_portion: food.default_portion.clone(),
         });
     }
 
@@ -457,6 +489,47 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         );
     }
 
+    let bespoke: BespokeFile =
+        serde_json::from_str(BESPOKE_JSON).expect("invalid catalog bespoke.json");
+    for (name, extra) in bespoke.pieces {
+        assert_eq!(name, normalize(&name), "bespoke names must be normalized");
+        let Some(&Target::Entry(entry_index)) = index.get(&name) else {
+            panic!("bespoke pieces for {name:?}, which names no single entry");
+        };
+        let entry = &mut entries[entry_index];
+        for (piece, value) in extra.pieces {
+            assert_eq!(
+                piece,
+                piece_unit(&piece),
+                "bespoke piece {piece:?} must be normalized"
+            );
+            assert!(
+                valid_density(value.grams),
+                "invalid weight for bespoke {name:?} {piece:?}"
+            );
+            assert!(
+                !value.basis.trim().is_empty()
+                    && value
+                        .url
+                        .as_ref()
+                        .is_none_or(|url| url.starts_with("https://")),
+                "bespoke {name:?} {piece:?} needs a basis (and any url must be https://)"
+            );
+            // Bespoke numbers never shadow a published one.
+            assert!(
+                entry.portions.insert(piece.clone(), value.grams).is_none(),
+                "bespoke {name:?} {piece:?} shadows a published piece"
+            );
+        }
+        if let Some(piece) = extra.default {
+            assert!(
+                entry.default_portion.is_none() && entry.portions.contains_key(&piece),
+                "bespoke default {piece:?} for {name:?} must be one of its pieces, and the entry must have no default"
+            );
+            entry.default_portion = Some(piece);
+        }
+    }
+
     for (from, to) in &curated.rewrites {
         assert_eq!(*from, normalize(from), "rewrite sources must be normalized");
         assert!(
@@ -466,7 +539,7 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
     }
 
     let hash = Sha256::digest(format!(
-        "{RULE_VERSION}\n{USDA_JSON}\n{FNDDS_JSON}\n{CURATED_JSON}"
+        "{RULE_VERSION}\n{USDA_JSON}\n{FNDDS_JSON}\n{CURATED_JSON}\n{BESPOKE_JSON}"
     ));
     let hash: String = hash.iter().map(|byte| format!("{byte:02x}")).collect();
     Catalog {
@@ -616,13 +689,8 @@ fn piece_unit(unit: &str) -> String {
 /// medium"), else the default piece; a piece with sizes uses its medium
 /// ("stalk" celery is "stalk medium").
 pub fn grams_per_piece(entry: &Entry, unit: Option<&str>) -> Option<f64> {
-    let (portions, default_portion) = if entry.portions.is_empty() {
-        let food = food(entry.fdc_id?)?;
-        (&food.portions, food.default_portion.as_ref())
-    } else {
-        (&entry.portions, entry.default_portion.as_ref())
-    };
-    let default = || default_portion.map(|piece| portions[piece]);
+    let portions = &entry.portions;
+    let default = || entry.default_portion.as_ref().map(|piece| portions[piece]);
     let Some(unit) = unit.filter(|unit| !unit.trim().is_empty()) else {
         return default();
     };

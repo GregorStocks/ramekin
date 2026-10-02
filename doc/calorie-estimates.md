@@ -62,7 +62,10 @@ fluid-ounce portions (zero-amount rows excluded). An entry without a density pro
 - Packages that state their weight ("15-ounce can", "(28-oz.) can", "14
   1/2-ounce can", "12- to 18-ounce package", "425-gram package") use that weight for any food, including a weight the parser moved
   into the note ("2 (15-ounce) cans" is unit "can", note "15-ounce, drained").
-  A can with no stated weight is unknown.
+  A can with no stated weight uses the food's standard US can size from the
+  catalog's bespoke data ("1 can black beans" is 15 oz, "1 can diced tomatoes"
+  14.5 oz); a food with no standard size (crushed tomatoes, sold in 14.5- and
+  28-ounce cans) stays unknown.
 - Counts use USDA per-piece weights (catalog README, "Piece rules"): "3 eggs"
   (large, 50 g each), "2 cloves garlic" (3 g), "1 medium onion" (110 g), "1
   stalk celery" (40 g), "1 1/2 sticks butter" (113 g each). A count the food
