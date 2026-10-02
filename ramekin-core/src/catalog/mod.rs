@@ -29,7 +29,7 @@ pub use learned::{
     candidates, learned_key_resolves, resolve_line_with, resolve_with, unlearned_name, Learned,
     LearnedTarget,
 };
-pub use resolve::{resolve, Resolution, Via};
+pub use resolve::{chosen_alternative, resolve, Resolution, Via};
 pub use volume::{
     is_volume_unit, volume_to_cups, CUPS_PER_FL_OZ, CUPS_PER_GALLON, CUPS_PER_L, CUPS_PER_ML,
     CUPS_PER_PINT, CUPS_PER_QUART, CUPS_PER_TBSP, CUPS_PER_TSP,

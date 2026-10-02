@@ -1,6 +1,6 @@
 use ramekin_core::catalog::{
-    category, food, grams_per_cup, grams_per_piece, resolve, resolve_line, rewrite, version, Kind,
-    Resolution, Via,
+    category, chosen_alternative, food, grams_per_cup, grams_per_piece, resolve, resolve_line,
+    rewrite, version, Kind, Resolution, Via,
 };
 
 fn density(item: &str) -> f64 {
@@ -376,17 +376,41 @@ fn negligibility_attributes_come_from_the_data() {
 
 #[test]
 fn dissimilar_alternatives_and_bare_herbs() {
-    // Alternatives with very different calories in real amounts stay unknown.
-    for item in [
-        "heavy cream or milk",
-        "milk or water",
-        "sour cream or plain yogurt",
+    // Alternatives count as the first-listed one that names a food (owner
+    // decision 2026-10-02), even when they differ a lot in calories; the
+    // estimate says which it assumed.
+    for (item, assumed) in [
+        ("heavy cream or milk", "heavy cream"),
+        ("milk or water", "milk"),
+        ("sour cream or plain yogurt", "sour cream"),
+        (
+            "melted, unsalted butter, olive oil, coconut oil, or ghee",
+            "unsalted butter",
+        ),
+        // "country bread" isn't a catalog name, so the next alternative counts.
+        ("country or sourdough bread", "sourdough bread"),
+        ("vegetable, canola, or peanut oil", "vegetable oil"),
+        ("cheddar and/or monterey jack cheese", "cheddar"),
     ] {
         assert!(
-            matches!(resolve(item), Resolution::Ambiguous),
-            "{item:?} should be ambiguous"
+            matches!(
+                resolve(item),
+                Resolution::Entry {
+                    via: Via::Alternative,
+                    ..
+                }
+            ),
+            "{item:?}"
         );
+        assert_eq!(
+            chosen_alternative(item).as_deref(),
+            Some(assumed),
+            "{item:?}"
+        );
+        assert_eq!(fdc_id(item), fdc_id(assumed), "{item:?}");
     }
+    // A name that resolves on its own chose nothing.
+    assert_eq!(chosen_alternative("heavy cream"), None);
     // Bare herbs follow how recipes use them.
     assert_eq!(fdc_id("rosemary"), fdc_id("rosemary, fresh"));
     assert_eq!(fdc_id("ginger"), fdc_id("fresh ginger"));

@@ -30,8 +30,8 @@ A resolution is one of:
 - `Entry`: one food or product.
   - **Products** (`kind: "product"`) are bought but not eaten: parchment paper,
     skewers. They carry only a shopping `category`, and calorie estimates skip them.
-- `Compound`: several foods joined by "and", "&" or "and/or" on one line with one
-  amount ("salt and pepper").
+- `Compound`: several foods joined by "and" or "&" on one line with one amount
+  ("salt and pepper"). "and/or" offers alternatives (below).
   - This is only tried once the whole name failed, so "half and half" stays one
     food, and every part must resolve to a specific food.
   - Density is unknown, since the mixture ratio is unknown.
@@ -85,6 +85,17 @@ Names are lowercased and whitespace is collapsed. Then:
 6. The name without a leading measure the parser left in it ("8 tbsp unsalted
    butter", "240 ml heavy cream", "cloves garlic", "can of tomato paste"), then
    steps 3 and 5 on that. A count or unit never names the food.
+7. If nothing above names one food and no "and" compound does, a name offering
+   alternatives ("x or y", "x and/or y") resolves to the first-listed
+   alternative that names a food (`Via::Alternative`; owner decision
+   2026-10-02), however much the alternatives differ in calories. Each "or"
+   chunk is tried whole, then by its comma pieces ("melted, unsalted butter,
+   olive oil, or ghee" is unsalted butter), and each with the last
+   alternative's trailing words when it fails alone ("vegetable, canola, or
+   peanut oil" is vegetable oil). The calorie breakdown says what it assumed
+   ("~120 kcal (assumed unsalted butter)"). A first alternative that is a food
+   on its own wins even when a shared noun was meant: "corn or flour tortillas"
+   is counted as corn.
 
 Calorie estimates and density resolve whole lines with `resolve_line(item, note)`.
 The parser keeps "cooked" in the note ("brown rice, cooked" → item "brown rice"),
@@ -254,10 +265,10 @@ that appears in both releases.
   explaining it (see "dried thyme", "greek yogurt"). Aliasing to a stand-in
   food is only for foods USDA lacks entirely ("dijon mustard" → yellow mustard,
   "shaoxing wine" → sake), where the stand-in supplies every attribute.
-  A name offering alternatives resolves to the first-listed food only when the
-  alternatives are close in calories or used in trace amounts ("cayenne or hot
-  sauce"). When they differ a lot in real amounts ("heavy cream or milk",
-  "sour cream or plain yogurt"), the alias is `null` (ambiguous). Bare herb
+  A name offering alternatives resolves to its first-listed food (resolver step
+  7), so "x or y" aliases are only needed when that would pick the wrong food;
+  older `null` aliases for dissimilar alternatives ("heavy cream or milk") are
+  now overridden by step 7. Bare herb
   names follow how recipes use them: "rosemary" and "ginger" mean fresh; "sage"
   is ambiguous because USDA has no fresh sage. Bone-in cuts and whole birds are
   `null` too: recipes give their purchased weight, bones included, while USDA

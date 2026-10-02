@@ -37,6 +37,9 @@ pub enum Via {
     LeadingModifiers,
     /// Through a stored LLM answer for a name the catalog doesn't know.
     Learned,
+    /// The first-listed alternative of "x or y" that names a food (see
+    /// `chosen_alternative`).
+    Alternative,
 }
 
 /// Temperature and preparation modifiers stripped before a second lookup.
@@ -262,13 +265,14 @@ fn resolve_single(normalized: &str) -> Resolution {
     }
 }
 
-/// Several foods joined by "and", "&", or "and/or" in one ingredient name.
-/// Only tried once the whole name failed, so "half and half" stays one food;
-/// every part must resolve to a specific food on its own.
+/// Several foods joined by "and" or "&" in one ingredient name. Only tried
+/// once the whole name failed, so "half and half" stays one food; every part
+/// must resolve to a specific food on its own. "and/or" offers alternatives.
 fn compound(normalized: &str) -> Option<Resolution> {
-    let joined = normalized
-        .replace(" and/or ", " and ")
-        .replace(" & ", " and ");
+    if normalized.contains(" and/or ") {
+        return None;
+    }
+    let joined = normalized.replace(" & ", " and ");
     let parts: Vec<&str> = joined.split(" and ").map(str::trim).collect();
     if parts.len() < 2 || parts.iter().any(|part| part.is_empty()) {
         return None;
@@ -294,12 +298,71 @@ pub fn resolve(item: &str) -> Resolution {
     resolve_name(&normalized)
 }
 
-/// One name as a single food, else as several joined by "and".
+/// One name as a single food, else as several joined by "and", else as the
+/// first-listed alternative of "x or y".
 fn resolve_name(normalized: &str) -> Resolution {
     match resolve_single(normalized) {
-        unresolved @ (Resolution::Ambiguous | Resolution::Unresolved) => {
-            compound(normalized).unwrap_or(unresolved)
-        }
+        unresolved @ (Resolution::Ambiguous | Resolution::Unresolved) => compound(normalized)
+            .or_else(|| {
+                first_alternative(normalized).map(|(entry, _)| Resolution::Entry {
+                    entry,
+                    via: Via::Alternative,
+                })
+            })
+            .unwrap_or(unresolved),
         resolved => resolved,
     }
+}
+
+/// The alternative an "x or y" name ("mayonnaise or plain yogurt", "vegetable,
+/// canola, or peanut oil") was counted as, for the estimate's "assumed" note;
+/// None when the name resolves without choosing one.
+pub fn chosen_alternative(item: &str) -> Option<String> {
+    let normalized = normalize(item);
+    match resolve_name(&normalized) {
+        Resolution::Entry {
+            via: Via::Alternative,
+            ..
+        } => first_alternative(&normalized).map(|(_, text)| text),
+        _ => None,
+    }
+}
+
+/// The first alternative, in listed order, that names one food. Each "or"
+/// chunk is tried whole, then by comma pieces ("melted, unsalted butter, olive
+/// oil, or ghee" is butter), and each with the last alternative's trailing
+/// words when it fails alone ("all-purpose or bread flour" is all-purpose
+/// flour, "vegetable, canola, or peanut oil" vegetable oil).
+fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
+    let text = normalized.replace(" and/or ", " or ");
+    let chunks: Vec<&str> = text
+        .split(" or ")
+        .map(|chunk| chunk.trim().trim_matches(','))
+        .collect();
+    if chunks.len() < 2 || chunks.iter().any(|chunk| chunk.is_empty()) {
+        return None;
+    }
+    let last = chunks[chunks.len() - 1];
+    let shared = last.split_once(' ').map(|(_, rest)| rest);
+    let mut candidates = Vec::new();
+    for chunk in &chunks {
+        candidates.push(chunk.to_string());
+        candidates.extend(
+            chunk
+                .split(", ")
+                .map(|piece| piece.trim().to_string())
+                .filter(|piece| !piece.is_empty() && piece != chunk),
+        );
+    }
+    for candidate in candidates {
+        let with_shared = shared
+            .filter(|shared| !candidate.ends_with(shared))
+            .map(|shared| format!("{candidate} {shared}"));
+        for name in std::iter::once(candidate).chain(with_shared) {
+            if let Resolution::Entry { entry, .. } = resolve_single(&name) {
+                return Some((entry, name));
+            }
+        }
+    }
+    None
 }

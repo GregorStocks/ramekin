@@ -8,7 +8,7 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v12";
+const RULE_VERSION: &str = "calories-v13";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
@@ -689,6 +689,14 @@ pub fn estimate_with(
                     (None, unknown_label(reason).to_string())
                 }
             }
+        };
+        // "mayonnaise or plain yogurt" is counted as its first alternative;
+        // say so.
+        let text = match catalog::chosen_alternative(&ingredient.item) {
+            Some(alternative) if calories.is_some() || text != "Not a food" => {
+                format!("{text} (assumed {alternative})")
+            }
+            _ => text,
         };
         lines.push(LineEstimate {
             index,

@@ -38,6 +38,9 @@ fluid-ounce portions (zero-amount rows excluded). An entry without a density pro
     nutrition match".
   - Explicitly ambiguous names are "Ambiguous ingredient": cheese, rice, chicken,
     yogurt, and USDA descriptions shared by several foods.
+  - A name offering alternatives ("mayonnaise or plain yogurt", "cheddar and/or
+    Monterey Jack") counts as its first-listed alternative that names a food,
+    and the breakdown says so: "~200 kcal (assumed mayonnaise)".
 - Common broad names use pinned defaults shared with density: sugar → granulated
   sugar, flour → unbleached enriched all-purpose flour, butter → unsalted butter,
   oil → vegetable (soybean) oil, milk → whole 3.25% milk, salt → kosher salt

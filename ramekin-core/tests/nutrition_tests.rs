@@ -973,3 +973,22 @@ fn bare_cans_use_standard_sizes() {
     // Crushed tomatoes come in two common sizes, so a bare can stays unknown.
     assert_eq!(calories("crushed tomatoes", "1", "can"), None);
 }
+
+#[test]
+fn alternatives_count_the_first_and_say_so() {
+    let line = |item: &str| {
+        let result = estimate(&[ingredient(item, "100", "g")], None, 1.0).unwrap();
+        (
+            result.known_calories.map(|range| range.max),
+            result.lines[0].text.clone(),
+        )
+    };
+    let (calories, text) = line("sour cream or plain yogurt");
+    assert_eq!(calories, line("sour cream").0);
+    assert_eq!(
+        text,
+        format!("{} (assumed sour cream)", line("sour cream").1)
+    );
+    // A name that resolves on its own carries no note.
+    assert!(!line("sour cream").1.contains("assumed"));
+}
