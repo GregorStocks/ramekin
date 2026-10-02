@@ -505,7 +505,8 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
 }
 
 /// One alternative without what keeps it from naming its food: an example
-/// marker ("like cream cheese", "such as ...") and a prep word joined by "and"
+/// marker ("like cream cheese", "such as ..."), a footnote marker ("***"),
+/// and a prep word joined by "and"
 /// ("cooked and cooled white rice" is cooked white rice).
 fn clean_alternative(piece: &str) -> String {
     static EXAMPLE: LazyLock<Regex> = LazyLock::new(|| {
@@ -513,6 +514,8 @@ fn clean_alternative(piece: &str) -> String {
     });
     // A leading label ("berries: sliced strawberries") and an example marker.
     let piece = EXAMPLE.replace(piece, "");
+    // A footnote marker ("dried bread crumbs*** or panko").
+    let piece = piece.trim_end_matches(['*', '†', '‡']).trim_end();
     let words: Vec<&str> = piece.split(' ').collect();
     let mut kept = Vec::with_capacity(words.len());
     let mut index = 0;

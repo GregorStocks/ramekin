@@ -537,6 +537,11 @@ fn dissimilar_alternatives_and_bare_herbs() {
         fdc_id("chopped fresh collard greens or kale"),
         fdc_id("collards")
     );
+    // A footnote marker doesn't push the count onto a later option.
+    assert_eq!(
+        fdc_id("dried bread crumbs*** or panko"),
+        fdc_id("dried bread crumbs")
+    );
     // A recipe's "maple" is maple syrup, not a cue to count the honey.
     assert_eq!(fdc_id("maple or honey"), fdc_id("maple syrup"));
     // A name that resolves on its own chose nothing.
