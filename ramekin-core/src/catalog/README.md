@@ -240,6 +240,9 @@ that appears in both releases.
     a few pieces, or up to a tablespoon, and unknown for anything more. Every
     food entry needs at least one of `fdc_id`, `kcal_per_100g`,
     `grams_per_cup` or `trace_ok`.
+  - `portions` (cited, like `food_overrides` portions) and `default_portion`
+    give a name its own pieces, replacing the linked food's: "hamburger buns"
+    and "hot dog buns" share one USDA food but weigh 57 and 44 g.
   - `kind: "product"` entries need a `category` and may not have an `fdc_id`,
     `kcal_per_100g`, or `grams_per_cup`.
 - `aliases` map a name to an entry id, USDA stripped name, or unique USDA
@@ -285,10 +288,20 @@ that appears in both releases.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
-- `food_overrides` correct USDA foods by their unique description:
-  `default_portion` picks the piece a bare count means ("3 eggs" are large, the
-  US recipe convention), and `trace_ok` marks fresh herbs, which recipes list by
-  the sprig.
+- `food_overrides` correct SR Legacy foods by their unique description:
+  - `default_portion` picks the piece a bare count means: "3 eggs" are large,
+    the US recipe convention, and "4 strips bacon" are slices, although the
+    importer never makes a slice the default;
+  - `portions` adds cited pieces the release doesn't weigh
+    (`{"head": {"value": 24, "source": ..., "url": ...}}` for garlic), keyed like
+    imported pieces;
+  - `trace_ok` marks fresh herbs, which recipes list by the sprig.
+  FNDDS foods are reached through curated entries, so their corrections live on
+  those entries.
+- Piece sources, in order: the food's own USDA portions, then USDA FNDDS
+  portions for the same food, the Canadian Nutrient File's household measures,
+  or a USDA Branded label. A food no source weighs (shallots, a bunch of herbs,
+  an inch of ginger) stays unknown.
 
 The loader asserts that keys are normalized, targets exist, aliases don't
 shadow names, and densities are finite and positive. `catalog::version()`

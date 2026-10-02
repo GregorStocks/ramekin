@@ -199,7 +199,6 @@
     "bacon slice": "pork, cured, bacon, unprepared",
     "bacon strips": "pork, cured, bacon, unprepared",
     "bagel chips": "snacks, bagel chips, plain",
-    "baguette": "bread, french or vienna (includes sourdough)",
     "baguette or 4 ciabatta rolls": "bread, french or vienna (includes sourdough)",
     "baguette or loaf of cuban bread": "bread, french or vienna (includes sourdough)",
     "baileys": "alcoholic beverage, liqueur, coffee with cream, 34 proof",
@@ -1300,7 +1299,6 @@
     "frank's red hot sauce": "sauce, ready-to-serve, pepper or hot",
     "franks red hot or other hot sauce": "sauce, ready-to-serve, pepper or hot",
     "freeze dried strawberries": "freeze-dried strawberries",
-    "french baguette": "bread, french or vienna (includes sourdough)",
     "french green beans": "beans, snap, green, raw",
     "fresh 3 1/2-pound chicken": null,
     "fresh baby spinach": "spinach, raw",
@@ -1702,7 +1700,6 @@
     "ham": "pork, cured, ham, boneless, regular (approximately 11% fat), roasted",
     "ham ends or trimmings": "pork, cured, ham, boneless, regular (approximately 11% fat), roasted",
     "ham steak": "pork, cured, ham, steak, boneless, extra lean, unheated",
-    "hamburger buns": "rolls, hamburger or hotdog, plain",
     "handful picked fresh rosemary leaves": "rosemary, fresh",
     "hard boiled eggs": "egg, whole, cooked, hard-boiled",
     "hard shell tacos": "taco shells, baked",
@@ -1766,7 +1763,6 @@
     "hot chilli powder": "spices, pepper, red or cayenne",
     "hot coffee": "beverages, coffee, brewed, prepared with tap water",
     "hot cooked rice": "rice, white, long-grain, regular, enriched, cooked",
-    "hot dog buns": "rolls, hamburger or hotdog, plain",
     "hot dog sausages": "frankfurter, meat",
     "hot dogs": "frankfurter, meat",
     "hot fudge sauce": "syrups, chocolate, fudge-type",
@@ -1942,7 +1938,6 @@
     "lard or vegetable oil": "lard",
     "lard skip if your pork is already fatty, bump up if it runs lean": "lard",
     "lardo or pancetta": null,
-    "lasagna noodles": "pasta, dry, enriched",
     "laung": "spices, cloves, ground",
     "layers sliced sharp white cheddar": "cheese, cheddar, sharp, sliced",
     "leaf lettuce, any type or combination, torn into bite size pieces": "lettuce, green leaf, raw",
@@ -3756,6 +3751,22 @@
     "bacon bits": {
       "fdc_id": 2707466
     },
+    "baguette": {
+      "default_portion": "baguette",
+      "fdc_id": 172675,
+      "portions": {
+        "baguette": {
+          "source": "USDA FNDDS 2707610 (Bread, French or Vienna): 1 baguette (about 22\" long) = 324 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707610/nutrients",
+          "value": 324.0
+        },
+        "mini baguette": {
+          "source": "USDA FNDDS 2707610 (Bread, French or Vienna): 1 mini baguette (about 9\" long) = 152 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707610/nutrients",
+          "value": 152.0
+        }
+      }
+    },
     "baked or smoked tofu": {
       "kcal_per_100g": {
         "source": "USDA FoodData Central Branded food 390191 (WILDWOOD, SPROUTOFU, ORGANIC BAKED TOFU, SAVORY, Pulmuone Foods USA, Inc.): 176 kcal per 100 g",
@@ -4228,6 +4239,22 @@
         "value": 350.0
       }
     },
+    "french baguette": {
+      "default_portion": "baguette",
+      "fdc_id": 172675,
+      "portions": {
+        "baguette": {
+          "source": "USDA FNDDS 2707610 (Bread, French or Vienna): 1 baguette (about 22\" long) = 324 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707610/nutrients",
+          "value": 324.0
+        },
+        "mini baguette": {
+          "source": "USDA FNDDS 2707610 (Bread, French or Vienna): 1 mini baguette (about 9\" long) = 152 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707610/nutrients",
+          "value": 152.0
+        }
+      }
+    },
     "fresh bay leaves": {
       "trace_ok": true
     },
@@ -4406,6 +4433,17 @@
         "value": 321.0
       }
     },
+    "hamburger buns": {
+      "default_portion": "bun",
+      "fdc_id": 172796,
+      "portions": {
+        "bun": {
+          "source": "USDA FoodData Central Branded food 1107084 (HAMBURGER BUNS): 1 bun = 57 g",
+          "url": "https://fdc.nal.usda.gov/food-details/1107084/nutrients",
+          "value": 57.0
+        }
+      }
+    },
     "harissa spice blend": {
       "trace_ok": true
     },
@@ -4429,6 +4467,17 @@
       "grams_per_cup": {
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 340.0
+      }
+    },
+    "hot dog buns": {
+      "default_portion": "bun",
+      "fdc_id": 172796,
+      "portions": {
+        "bun": {
+          "source": "USDA FoodData Central Branded food 1109487 (DELUXE ENRICHED WHITE HOT DOG BUNS): 1 bun = 44 g",
+          "url": "https://fdc.nal.usda.gov/food-details/1109487/nutrients",
+          "value": 44.0
+        }
       }
     },
     "italian seasoning": {
@@ -4484,6 +4533,17 @@
     "kombu": {
       "fdc_id": 2709988
     },
+    "lasagna noodles": {
+      "default_portion": "noodle",
+      "fdc_id": 169736,
+      "portions": {
+        "noodle": {
+          "source": "USDA FoodData Central Branded food 386344 (BARILLA, LASAGNE ENRICHED EGG PASTA): 3 pieces = 51 g",
+          "url": "https://fdc.nal.usda.gov/food-details/386344/nutrients",
+          "value": 17.0
+        }
+      }
+    },
     "lemon curd": {
       "grams_per_cup": {
         "source": "USDA FoodData Central Branded food 555629: serving 20 g = 1 Tbsp",
@@ -4507,7 +4567,19 @@
       }
     },
     "lettuce": {
-      "fdc_id": 2709789
+      "fdc_id": 2709789,
+      "portions": {
+        "head": {
+          "source": "USDA FNDDS 2709789 (Lettuce, raw): 1 head = 539 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2709789/nutrients",
+          "value": 539.0
+        },
+        "leaf": {
+          "source": "USDA FNDDS 2709789 (Lettuce, raw): 1 leaf = 8 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2709789/nutrients",
+          "value": 8.0
+        }
+      }
     },
     "light coconut milk": {
       "grams_per_cup": {
@@ -4642,7 +4714,15 @@
       }
     },
     "nori": {
-      "fdc_id": 2709988
+      "default_portion": "sheet",
+      "fdc_id": 2709988,
+      "portions": {
+        "sheet": {
+          "source": "USDA FoodData Central Branded food 375287 (HISSHO SUSHI, NORI JAPANESE SEAWEED): 1 sheet = 2.5 g",
+          "url": "https://fdc.nal.usda.gov/food-details/375287/nutrients",
+          "value": 2.5
+        }
+      }
     },
     "nutritional yeast": {
       "grams_per_cup": {
@@ -4791,7 +4871,15 @@
       }
     },
     "prosciutto": {
-      "fdc_id": 2705879
+      "default_portion": "slice",
+      "fdc_id": 2705879,
+      "portions": {
+        "slice": {
+          "source": "USDA FNDDS 2705879 (Ham, prosciutto): 1 thin slice = 9.2 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2705879/nutrients",
+          "value": 9.2
+        }
+      }
     },
     "ras el hanout": {
       "trace_ok": true
@@ -5089,11 +5177,20 @@
     }
   },
   "food_overrides": {
+    "asparagus, raw": {
+      "default_portion": "spear medium"
+    },
     "basil, fresh": {
       "trace_ok": true
     },
+    "bread, pita, white, enriched": {
+      "default_portion": "pita large"
+    },
     "coriander (cilantro) leaves, raw": {
       "trace_ok": true
+    },
+    "corn, sweet, yellow, raw": {
+      "default_portion": "ear"
     },
     "dill weed, fresh": {
       "trace_ok": true
@@ -5101,20 +5198,82 @@
     "egg, whole, raw, fresh": {
       "default_portion": "large"
     },
+    "fish, anchovy, european, canned in oil, drained solids": {
+      "default_portion": "anchovy"
+    },
+    "garlic, raw": {
+      "portions": {
+        "bulb": {
+          "source": "Canadian Nutrient File 2394 (Garlic, raw): 1 bulb = 24 g",
+          "url": "https://food-nutrition.canada.ca/api/canadian-nutrient-file/servingsize/?id=2394&lang=en&type=json",
+          "value": 24.0
+        },
+        "head": {
+          "source": "Canadian Nutrient File 2394 (Garlic, raw): 1 bulb = 24 g",
+          "url": "https://food-nutrition.canada.ca/api/canadian-nutrient-file/servingsize/?id=2394&lang=en&type=json",
+          "value": 24.0
+        }
+      }
+    },
     "parsley, fresh": {
       "trace_ok": true
+    },
+    "parsnips, raw": {
+      "default_portion": "parsnip",
+      "portions": {
+        "parsnip": {
+          "source": "Canadian Nutrient File 2406 (Parsnip, raw): 1 parsnip (16.5 cm x 2.5 cm dia) = 84.56 g",
+          "url": "https://food-nutrition.canada.ca/api/canadian-nutrient-file/servingsize/?id=2406&lang=en&type=json",
+          "value": 84.56
+        }
+      }
     },
     "peppermint, fresh": {
       "trace_ok": true
     },
+    "pork, cured, bacon, unprepared": {
+      "default_portion": "slice"
+    },
+    "pork, cured, ham, boneless, regular (approximately 11% fat), roasted": {
+      "portions": {
+        "slice": {
+          "source": "USDA FNDDS 2706206 (Ham, prepackaged or deli, luncheon meat): 1 slice, NFS = 28 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2706206/nutrients",
+          "value": 28.0
+        }
+      }
+    },
     "rosemary, fresh": {
       "trace_ok": true
+    },
+    "soup, chicken broth cubes, dry": {
+      "default_portion": "cube"
     },
     "spearmint, fresh": {
       "trace_ok": true
     },
     "thyme, fresh": {
       "trace_ok": true
+    },
+    "tortillas, ready-to-bake or -fry, corn": {
+      "default_portion": "tortilla",
+      "portions": {
+        "large": {
+          "source": "USDA FNDDS 2707823 (Tortilla, corn): 1 large = 44 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707823/nutrients",
+          "value": 44.0
+        },
+        "medium": {
+          "source": "USDA FNDDS 2707823 (Tortilla, corn): 1 medium = 28 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707823/nutrients",
+          "value": 28.0
+        },
+        "small": {
+          "source": "USDA FNDDS 2707823 (Tortilla, corn): 1 small = 18 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707823/nutrients",
+          "value": 18.0
+        }
+      }
     }
   },
   "not_food": {

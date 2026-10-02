@@ -176,8 +176,8 @@ fn unknowns_are_explicit_and_never_zero() {
             "g",
             "Unsupported or missing quantity",
         ),
-        // USDA has no per-head weight for garlic, only per clove.
-        ("garlic", "1", "head", "Unsupported quantity unit"),
+        // No source weighs a whole shallot.
+        ("shallots", "2", "", "Unsupported quantity unit"),
         ("flour", "2", "", "Unsupported quantity unit"),
         ("canned chickpeas", "1", "can", "Unsupported quantity unit"),
         (
@@ -500,9 +500,9 @@ fn counted_trace_foods_without_a_piece_weight_are_negligible() {
     assert_eq!(known(ingredient("thyme", "4", "sprig")), 0.0);
     // A measured amount of a fresh herb still counts.
     assert!(known(ingredient("basil", "10", "g")) > 0.0);
-    // Only small pieces of trace foods: garlic heads are not negligible.
+    // Only small pieces of trace foods: a garlic head is counted (24 g).
     let head = estimate(&[ingredient("garlic", "1", "head")], None, 1.0).unwrap();
-    assert!(head.known_calories.is_none());
+    assert!(head.known_calories.unwrap().min > 0.0);
 }
 
 #[test]

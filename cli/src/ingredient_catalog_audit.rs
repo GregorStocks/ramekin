@@ -909,7 +909,7 @@ mod tests {
                     ingredients: vec![
                         ingredient("granulated sugar", Some("1"), Some("cup")),
                         ingredient("Moon  Dust", Some("1"), Some("cup")),
-                        ingredient("garlic", Some("1"), Some("head")),
+                        ingredient("shallots", Some("2"), None),
                     ],
                 },
                 Recipe {
@@ -930,7 +930,7 @@ mod tests {
         assert_eq!(stats.nutrition_computed, 2);
         assert_eq!(
             stats.nutrition_name_recognized, 3,
-            "garlic matches but has no per-head weight"
+            "shallots match but have no per-piece weight"
         );
         assert_eq!(stats.recipes_fully_estimated, 1);
         assert_eq!(stats.recipes_with_per_serving, 1);
@@ -943,7 +943,7 @@ mod tests {
         assert_eq!(
             stats
                 .nutrition_failures
-                .get("Unsupported quantity unit: garlic"),
+                .get("Unsupported quantity unit: shallots"),
             Some(&1),
             "quantity failures on recognized names are fingerprinted too"
         );
