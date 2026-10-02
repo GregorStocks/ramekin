@@ -123,9 +123,16 @@ mismatch fails until the source change is reviewed), and writes:
 Density rules:
 
 - Divide portion gram weight by amount. Prefer cup portions, then tablespoons
-  (16 per cup), then teaspoons (48 per cup), and average within the preferred unit.
+  (16 per cup), then teaspoons (48 per cup), then fluid ounces (8 per cup; wines,
+  spirits and many juices are weighed only per fluid ounce), and average within
+  the preferred unit. Only a bare "fl oz" modifier counts: servings such as
+  "jigger (1.5 fl oz)" are not volumes. A dry powder's fluid-ounce portions
+  (described "powder" and not "prepared") weigh the prepared drink, so they
+  are skipped. A fluid-ounce density outside 150-330 g/cup fails the import
+  when it is the one used.
 - Accept `cup`, `cups`, `cup, ...` and `cup (...)`. Skip chip portions and other units.
-- Seven zero-amount cup rows in this release are pinned in `EXCLUDED_PORTIONS`.
+- Seven zero-amount cup rows, and one fluid-ounce row whose amount is wrong (a
+  "5 fl oz" infant formula row weighing 30 g), are pinned in `EXCLUDED_PORTIONS`.
   Any other malformed supported-volume portion fails the import.
 
 Piece rules (`portions`):

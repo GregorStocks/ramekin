@@ -71,7 +71,16 @@ EXCLUDED_PORTIONS = {
     "85240": ("169621", "cup", "0", "141"),
     "90178": ("172252", "cup", "0", "7"),
     "92745": ("173509", "cup", "0", "16"),
+    # A "5 fl oz" row weighing 30 g; its sibling row weighs 5 fl oz at 152 g.
+    "85498": ("169789", "fl oz", "5", "30"),
 }
+# A fluid-ounce density outside this range is not a liquid's (aerated shakes are
+# about 166 g/cup, frozen concentrates about 290); when it is the one used, the
+# import fails until the source row is reviewed (and excluded above, if
+# malformed).
+FL_OZ_GRAMS_PER_CUP = (150.0, 330.0)
+# A dry powder's "fl oz" portion weighs the prepared drink, not the powder.
+DRY_POWDER = re.compile(r"\bpowder\b")
 TBSP_PER_CUP = 16.0
 TSP_PER_CUP = 48.0
 # Portion modifiers that measure volume, mass, or a package rather than a piece.
@@ -162,7 +171,8 @@ def load_archive(cache: Path, source: str, sha256: str) -> bytes:
 
 
 def parse_volume_unit(modifier: str) -> str | None:
-    """Return 'cup', 'tbsp', 'tsp', or None for an SR Legacy portion modifier."""
+    """Return 'cup', 'tbsp', 'tsp', 'fl oz', or None for an SR Legacy portion
+    modifier."""
     mod = modifier.lower().strip()
     # "cup chips" and similar are not a typical measurement.
     if "chip" in mod:
@@ -173,13 +183,26 @@ def parse_volume_unit(modifier: str) -> str | None:
         return "tbsp"
     if mod in ("tsp", "teaspoon"):
         return "tsp"
+    # Liquids (wine, spirits, juices) are often weighed only per fluid ounce.
+    if mod == "fl oz":
+        return "fl oz"
     return None
 
 
-def calculate_grams_per_cup(portions: list[dict]) -> float | None:
-    """Average cup portions; fall back to tablespoons, then teaspoons."""
-    by_unit: dict[str, list[float]] = {"cup": [], "tbsp": [], "tsp": []}
-    per_cup = {"cup": 1.0, "tbsp": TBSP_PER_CUP, "tsp": TSP_PER_CUP}
+def calculate_grams_per_cup(
+    portions: list[dict], description: str = ""
+) -> float | None:
+    """Average cup portions; fall back to tablespoons, teaspoons, then fluid
+    ounces. A dry powder's fluid-ounce portions are skipped."""
+    text = normalize(description)
+    dry_powder = DRY_POWDER.search(text) is not None and "prepared" not in text
+    by_unit: dict[str, list[float]] = {"cup": [], "tbsp": [], "tsp": [], "fl oz": []}
+    per_cup = {
+        "cup": 1.0,
+        "tbsp": TBSP_PER_CUP,
+        "tsp": TSP_PER_CUP,
+        "fl oz": FL_OZ_PER_CUP,
+    }
     for p in portions:
         if p["id"] in EXCLUDED_PORTIONS:
             values = tuple(
@@ -189,7 +212,7 @@ def calculate_grams_per_cup(portions: list[dict]) -> float | None:
                 raise ValueError(f"Excluded USDA portion changed: {p}")
             continue
         unit = parse_volume_unit(p["modifier"])
-        if unit is None:
+        if unit is None or (unit == "fl oz" and dry_powder):
             continue
         amount = float(p["amount"])
         gram_weight = float(p["gram_weight"])
@@ -199,9 +222,15 @@ def calculate_grams_per_cup(portions: list[dict]) -> float | None:
         if not math.isfinite(grams_per_unit * TSP_PER_CUP):
             raise ValueError(f"Overflow in volume portion: {p}")
         by_unit[unit].append(grams_per_unit * per_cup[unit])
-    for unit in ("cup", "tbsp", "tsp"):
+    for unit in ("cup", "tbsp", "tsp", "fl oz"):
         if by_unit[unit]:
-            return sum(by_unit[unit]) / len(by_unit[unit])
+            density = sum(by_unit[unit]) / len(by_unit[unit])
+            low, high = FL_OZ_GRAMS_PER_CUP
+            if unit == "fl oz" and not low <= density <= high:
+                raise ValueError(
+                    f"Implausible fluid-ounce density {density:g}: {portions}"
+                )
+            return density
     return None
 
 
@@ -333,7 +362,7 @@ def build_data(foods: list[dict], nutrients: list[dict], portions: list[dict]) -
 
     densities = {}
     for food_id, food_portions in portions_by_food.items():
-        grams_per_cup = calculate_grams_per_cup(food_portions)
+        grams_per_cup = calculate_grams_per_cup(food_portions, descriptions[food_id])
         if grams_per_cup is not None:
             densities[food_id] = grams_per_cup
     if not densities:
