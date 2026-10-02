@@ -653,3 +653,17 @@ fn curated_pieces_fill_counts_usda_lacks() {
     // A bunch has a weight, but a bare count of kale still doesn't.
     assert_eq!(piece("kale", None), None);
 }
+
+#[test]
+fn name_specific_pieces_replace_the_foods() {
+    let piece = |item, unit| match resolve(item) {
+        Resolution::Entry { entry, .. } => grams_per_piece(entry, unit),
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    // Generic French bread has a 139 g slice; a baguette's isn't known.
+    assert_eq!(piece("crusty bread", Some("slice")), Some(139.0));
+    assert_eq!(piece("baguette", Some("slices")), None);
+    // A can of corn is canned corn's, not raw corn's.
+    assert_eq!(piece("canned corn", Some("can")), Some(432.0));
+    assert_eq!(piece("corn", Some("can")), None);
+}

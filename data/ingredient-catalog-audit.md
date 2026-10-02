@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60510 | 302 | 51699/60208 (85.9%) | 48230/60208 (80.1%) | 930/5408 (17.2%) | n/a (no servings) | 30926/37260 (83.0%) | 59402/60510 (98.2%) |
+| Pipeline fixtures | 5408 | 60510 | 302 | 51699/60208 (85.9%) | 48223/60208 (80.1%) | 930/5408 (17.2%) | n/a (no servings) | 30926/37260 (83.0%) | 59402/60510 (98.2%) |
 | Paprika fixtures | 462 | 5377 | 22 | 5083/5355 (94.9%) | 4619/5355 (86.3%) | 135/462 (29.2%) | n/a (no servings) | 2508/2886 (86.9%) | 5285/5377 (98.3%) |
 | Pipeline snapshots | 445 | 5177 | 17 | 4904/5160 (95.0%) | 4521/5160 (87.6%) | 131/445 (29.4%) | 65/445 (14.6%) | 2480/2846 (87.1%) | 5121/5177 (98.9%) |
 
@@ -31,26 +31,26 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | No supported nutrition match | 7883 | 13.0% |
 | Several ingredients share one amount | 66 | 0.1% |
 | Unsupported or missing quantity | 47 | 0.1% |
-| Unsupported quantity unit | 426 | 0.7% |
+| Unsupported quantity unit | 433 | 0.7% |
 
 ### Uncounted ingredients per recipe
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
 | 0 | 1426 | 26.4% |
-| 1 | 1688 | 31.2% |
-| 2 | 1161 | 21.5% |
-| 3 | 609 | 11.3% |
-| 4-5 | 422 | 7.8% |
+| 1 | 1683 | 31.1% |
+| 2 | 1166 | 21.6% |
+| 3 | 607 | 11.2% |
+| 4-5 | 424 | 7.8% |
 | 6+ | 102 | 1.9% |
 
-Estimate status with at most 3 uncounted: Complete 26.2%, Insufficient 11.2%, Partial 62.7%
+Estimate status with at most 3 uncounted: Complete 26.2%, Insufficient 11.2%, Partial 62.6%
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 9095 | `862b608b7520` |
+| Nutrition (all failures) | 9099 | `2bf1c1217cf5` |
 | Density | 3529 | `3a9c799c88e3` |
 | Shopping category | 736 | `0c3c7d699f13` |
 

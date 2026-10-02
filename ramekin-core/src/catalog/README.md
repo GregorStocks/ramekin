@@ -242,7 +242,8 @@ that appears in both releases.
     `grams_per_cup` or `trace_ok`.
   - `portions` (cited, like `food_overrides` portions) and `default_portion`
     give a name its own pieces, replacing the linked food's: "hamburger buns"
-    and "hot dog buns" share one USDA food but weigh 57 and 44 g.
+    and "hot dog buns" share one USDA food but weigh 57 and 44 g, and a
+    baguette doesn't inherit generic French bread's 139 g slice.
   - `kind: "product"` entries need a `category` and may not have an `fdc_id`,
     `kcal_per_100g`, or `grams_per_cup`.
 - `aliases` map a name to an entry id, USDA stripped name, or unique USDA
@@ -318,8 +319,9 @@ Piece weights no published database gives, each with the basis for its number:
 }
 ```
 
-- Keys are any catalog name; the pieces join the entry the name resolves to,
-  so every alias of that food gets them.
+- Keys are any catalog name; the pieces are added to the entry the name
+  resolves to (on top of its own or its food's), so every alias of that food
+  gets them.
 - `basis` says where the number comes from: a reference's statement (cooking
   references such as America's Test Kitchen, produce weight tables, a product
   listing), a stated convention, or arithmetic on those ("twice a 1-inch

@@ -218,8 +218,8 @@ pub struct Entry {
     /// Commonly listed without an amount (pepper, dried spices); a line of it
     /// with no quantity, or a pinch or dash, is negligible.
     pub trace_ok: bool,
-    /// Grams per piece: the linked food's, plus this name's own cited and
-    /// bespoke pieces.
+    /// Grams per piece: this name's own cited pieces if it has any, else the
+    /// linked food's; plus any bespoke pieces.
     pub portions: BTreeMap<String, f64>,
     /// The piece a bare count means.
     pub default_portion: Option<String>,
@@ -357,18 +357,28 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             Some(CuratedDensity::Unknown { .. }) => None,
             None => food.and_then(|food| food.grams_per_cup),
         };
-        let mut portions = food.map(|food| food.portions.clone()).unwrap_or_default();
-        for (piece, cited) in &curated_entry.portions {
-            assert_valid_piece(piece, cited, &id);
+        // A name's own cited pieces replace its food's: a baguette's slice is
+        // not generic French bread's.
+        let (portions, default_portion) = if curated_entry.portions.is_empty() {
             assert!(
-                portions.insert(piece.clone(), cited.value).is_none(),
-                "curated entry {id:?} repeats its food's piece {piece:?}"
+                curated_entry.default_portion.is_none(),
+                "curated entry {id:?} has a default portion but no portions"
             );
-        }
-        let default_portion = curated_entry
-            .default_portion
-            .clone()
-            .or_else(|| food.and_then(|food| food.default_portion.clone()));
+            (
+                food.map(|food| food.portions.clone()).unwrap_or_default(),
+                food.and_then(|food| food.default_portion.clone()),
+            )
+        } else {
+            let portions: BTreeMap<String, f64> = curated_entry
+                .portions
+                .iter()
+                .map(|(piece, cited)| {
+                    assert_valid_piece(piece, cited, &id);
+                    (piece.clone(), cited.value)
+                })
+                .collect();
+            (portions, curated_entry.default_portion.clone())
+        };
         if let Some(piece) = &default_portion {
             assert!(
                 portions.contains_key(piece),

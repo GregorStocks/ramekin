@@ -59,6 +59,15 @@
         }
       }
     },
+    "canned corn": {
+      "pieces": {
+        "can": {
+          "basis": "Standard US can of corn kernels: 15.25 oz (432 g) net (Del Monte Whole Kernel Corn). The catalog's canned corn is drained solids, so using the net weight slightly overstates a can",
+          "grams": 432,
+          "url": "https://www.costco.com/del-monte,-canned-corn-whole-kernel,-15.25-oz,-12-count.product.100443694.html"
+        }
+      }
+    },
     "cannellini beans": {
       "pieces": {
         "can": {
@@ -109,15 +118,6 @@
           "basis": "Standard US can of coconut milk: 13.66 fl oz (404 ml) (Thai Kitchen), times USDA's density for canned coconut milk (226 g/cup, 0.955 g/ml)",
           "grams": 386,
           "url": "https://www.kingsoopers.com/p/thai-kitchen-unsweetened-coconut-milk/0073762801150"
-        }
-      }
-    },
-    "corn": {
-      "pieces": {
-        "can": {
-          "basis": "Standard US can of corn kernels: 15.25 oz (432 g) (Del Monte Whole Kernel Corn)",
-          "grams": 432,
-          "url": "https://www.costco.com/del-monte,-canned-corn-whole-kernel,-15.25-oz,-12-count.product.100443694.html"
         }
       }
     },
