@@ -430,13 +430,14 @@ fn dissimilar_alternatives_and_bare_herbs() {
             "cream cheese",
         ),
         ("fresh lemon or lime juice", "fresh lemon juice"),
-        // "X or Y noun" is X noun when that names a food...
-        ("white wine or white balsamic vinegar", "white wine vinegar"),
+        // "X or Y noun" is X noun past a one-word or parallel qualifier...
         ("white wine or champagne vinegar", "white wine vinegar"),
         ("white wine or other mild vinegar", "white wine vinegar"),
         ("red wine or white wine vinegar", "red wine vinegar"),
-        ("rice wine or apple cider vinegar", "rice wine vinegar"),
-        // ...and X as written otherwise.
+        // ...and X as written past a distinct one, or when X noun is no food.
+        ("white wine or plain white vinegar", "white wine"),
+        ("white wine or white balsamic vinegar", "white wine"),
+        ("rice wine or apple cider vinegar", "rice wine"),
         ("sour cream or plain greek yogurt", "sour cream"),
         (
             "berries: sliced strawberries, blackberries, or raspberries",
@@ -523,6 +524,9 @@ fn dissimilar_alternatives_and_bare_herbs() {
         chosen_alternative("butter or margarine").as_deref(),
         Some("butter")
     );
+    // "cooled" is dropped only when joined to "cooked": alone it still
+    // implies cooked rice, never the raw entry.
+    assert_ne!(fdc_id_or_none("cooled white rice"), fdc_id("white rice"));
     // A name that resolves on its own chose nothing.
     assert_eq!(chosen_alternative("heavy cream"), None);
     // Bare herbs follow how recipes use them.

@@ -106,11 +106,17 @@ Names are lowercased and whitespace is collapsed. Then:
      "tomatoes"), when it carries its own amount ("vanilla or half a vanilla
      bean"; an article is not an amount: "peanut or a vegetable oil" is peanut
      oil), or when it is a list before the last chunk ("mushroom, vegetable,
-     chicken, or beef broth" lends no "mushroom"). Every alternative borrows
-     first, since "X or Y noun" reads as X noun ("fresh lemon or lime juice" is
-     lemon juice; "white wine or champagne vinegar" is white wine vinegar), and
-     is tried as written only when that names no food ("sour cream or plain
-     greek yogurt" is sour cream).
+     chicken, or beef broth" lends no "mushroom"). A one-word alternative
+     (prep and state words aside) is an adjective, so it borrows first ("fresh
+     lemon or lime juice" is lemon juice; "cooked white, brown, or cilantro
+     lime rice" is cooked white rice). A longer one borrows first only past a
+     one-word qualifier ("white wine or champagne vinegar", "or other mild
+     vinegar") or one ending like itself ("red wine or white wine vinegar");
+     past a distinct qualifier it is tried as written first ("white wine or
+     plain white vinegar" is white wine, while "dutch process or special dark
+     cocoa powder", naming nothing alone, is still dutch process cocoa
+     powder). "cooled" is dropped only when joined to "cooked", since alone it
+     still means cooked.
    - **An unknown first alternative.** If none of the first alternative's
      candidates resolve, its own trailing words may ("local honey or maple
      syrup" is honey; "mixed cherry or grape tomatoes" is cherry tomatoes),

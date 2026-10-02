@@ -85,7 +85,6 @@ const LEADING_MODIFIERS: &[&str] = &[
     "boneless",
     "chopped",
     "coarsely",
-    "cooled",
     "diced",
     "extra-large",
     "finely",
@@ -410,9 +409,8 @@ fn tails_of(chunk: &str) -> Vec<String> {
 /// stock" is chicken broth), longest first ("sherry or red wine vinegar" tries
 /// sherry wine vinegar, then sherry vinegar), or a head noun written first
 /// ("oil canola, olive, or ..." is canola oil, olive oil). Borrowed
-/// forms come first ("fresh lemon or lime juice" is lemon juice, "white wine
-/// or champagne vinegar" white wine vinegar), then the alternative as written.
-/// Grouped by the alternative as written, cleaned.
+/// forms usually come first (see the ordering below). Grouped by the
+/// alternative as written, cleaned.
 fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>> {
     let text = normalized.replace(" and/or ", " or ");
     let chunks = alternative_chunks(&text)?;
@@ -435,7 +433,8 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
             .map(|(_, later)| (*later, tails_of(later)))
             .find(|(_, tails)| !tails.is_empty())
             .unwrap_or_default();
-        let (_, trailing) = trailing;
+        let (lender, trailing) = trailing;
+        let lender = lender.split(", ").next().unwrap_or_default();
         let mut pieces: Vec<String> = chunk
             .split(", ")
             .map(|piece| piece.trim().to_string())
@@ -452,16 +451,46 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
                     nouned.push(format!("{piece} {noun}"));
                 }
             }
-            for tail in trailing
+            // A one-word alternative (prep and state words aside) is an
+            // adjective, so it borrows first. A longer one names a food of its
+            // own, so it borrows first only past a one-word qualifier ("white
+            // wine or champagne vinegar") or one ending like itself ("red wine
+            // or white wine vinegar"); past a distinct one it is tried as
+            // written first ("white wine or plain white vinegar" is white wine,
+            // "dutch process or special dark cocoa powder" still dutch process
+            // cocoa powder).
+            let one_word = piece
+                .split(' ')
+                .filter(|word| !LEADING_MODIFIERS.contains(word) && !STATE_WORDS.contains(word))
+                .count()
+                <= 1;
+            let borrows_first = |tail: &str| {
+                let head = lender.strip_suffix(tail).unwrap_or_default().trim_end();
+                // "or other mild vinegar": "other" only says the noun is shared.
+                let head = head
+                    .strip_prefix("other ")
+                    .or_else(|| head.strip_prefix("another "))
+                    .unwrap_or(head);
+                one_word
+                    || !head.contains(' ')
+                    || head.rsplit(' ').next() == piece.rsplit(' ').next()
+            };
+            let (first, after): (Vec<&String>, Vec<&String>) = trailing
                 .iter()
                 .filter(|tail| !piece.ends_with(tail.as_str()))
-            {
-                nouned.push(format!("{piece} {tail}"));
-            }
-            // "X or Y noun" reads as X noun when that names a food ("white
-            // wine or champagne vinegar" is white wine vinegar); otherwise X as
-            // written ("sour cream or greek yogurt").
-            let names = nouned.into_iter().chain([piece.clone()]).collect();
+                .partition(|tail| borrows_first(tail));
+            let with = |tails: Vec<&String>| -> Vec<String> {
+                tails
+                    .into_iter()
+                    .map(|tail| format!("{piece} {tail}"))
+                    .collect()
+            };
+            let names = nouned
+                .into_iter()
+                .chain(with(first))
+                .chain([piece.clone()])
+                .chain(with(after))
+                .collect();
             candidates.push((piece, names));
         }
     }
@@ -485,7 +514,9 @@ fn clean_alternative(piece: &str) -> String {
             && index > 0
             && words
                 .get(index + 1)
-                .is_some_and(|word| LEADING_MODIFIERS.contains(word))
+                // "cooked and cooled": "cooled" only here, since alone it
+                // implies cooked ("cooled white rice" is not raw rice).
+                .is_some_and(|word| LEADING_MODIFIERS.contains(word) || *word == "cooled")
         {
             index += 2;
             continue;
