@@ -414,6 +414,10 @@ fn dissimilar_alternatives_and_bare_herbs() {
         ("corn or flour tortillas", "corn tortillas"),
         ("lemon or lime juice", "lemon juice"),
         ("sherry or red wine vinegar", "sherry vinegar"),
+        // An article is not an amount.
+        ("peanut or a vegetable oil", "peanut oil"),
+        // A prep word ("baking") doesn't push the count onto a later option.
+        ("baking walnuts or pecans", "baking walnuts"),
         // A measured last alternative lends no noun.
         ("vanilla or half a vanilla bean", "vanilla"),
         (
@@ -428,6 +432,7 @@ fn dissimilar_alternatives_and_bare_herbs() {
         );
         assert_eq!(fdc_id(item), fdc_id(assumed), "{item:?}");
     }
+    assert_eq!(fdc_id("baking walnuts or pecans"), fdc_id("walnuts"));
     // A curated alias for an alternatives name is labeled with the listed
     // alternative it counts as.
     assert_eq!(

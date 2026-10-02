@@ -78,6 +78,9 @@ fn strip_modifiers(name: &str) -> String {
 /// "dried" (dried apricots), "light" (light cream), "crushed" (crushed
 /// tomatoes), "whole" (whole chicken).
 const LEADING_MODIFIERS: &[&str] = &[
+    // "baking walnuts" (sold for baking); "baking soda" resolves before any
+    // word is dropped.
+    "baking",
     "best",
     "boneless",
     "chopped",
@@ -356,8 +359,13 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
     // A last alternative with its own amount ("vanilla or 1 vanilla bean",
     // "vanilla or half a vanilla bean") is a measured alternative, not a
     // shared noun.
-    const AMOUNT_WORDS: [&str; 8] = ["a", "an", "one", "two", "three", "half", "some", "several"];
+    const AMOUNT_WORDS: [&str; 6] = ["one", "two", "three", "half", "some", "several"];
+    // An article is not an amount: "peanut or a vegetable oil" shares "oil".
     let last = chunks[chunks.len() - 1];
+    let last = last
+        .strip_prefix("a ")
+        .or_else(|| last.strip_prefix("an "))
+        .unwrap_or(last);
     let measured = last.starts_with(|c: char| c.is_ascii_digit())
         || AMOUNT_WORDS.contains(&last.split(' ').next().unwrap_or_default());
     let last_words: Vec<&str> = if measured {

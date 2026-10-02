@@ -75,7 +75,7 @@ Names are lowercased and whitespace is collapsed. Then:
    alternatives ("milk, dairy or non-dairy") resolves to the first-listed
    food, the same way the first measurement wins over later alternatives.
 5. The name with leading size and preparation words (`LEADING_MODIFIERS`:
-   "chopped", "fresh", "large", "boneless", …) dropped one word at a time, so
+   "chopped", "fresh", "large", "boneless", "baking", …) dropped one word at a time, so
    "grated fresh ginger" tries "fresh ginger" before "ginger". Words that change
    the food ("ground", "dried", "light", "crushed", "whole") are never dropped.
    A *bare* name reached this way may not be a dried or ground spice unless the
@@ -94,7 +94,8 @@ Names are lowercased and whitespace is collapsed. Then:
    adjective, so it is first tried with the list's noun: the last
    alternative's trailing words, longest first ("corn or flour tortillas" is
    corn tortillas, "sherry or red wine vinegar" sherry vinegar), unless that
-   alternative carries its own amount ("vanilla or half a vanilla bean"), or a
+   alternative carries its own amount ("vanilla or half a vanilla bean"; an
+   article is not an amount: "peanut or a vegetable oil" is peanut oil), or a
    head noun written
    first ("oil canola, olive, or …" is canola oil). Longer alternatives are
    tried alone, then with the trailing words. The calorie breakdown says what
