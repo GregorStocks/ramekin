@@ -422,6 +422,11 @@ fn dissimilar_alternatives_and_bare_herbs() {
             "soft cheese, like cream cheese, brie, or boursin",
             "cream cheese",
         ),
+        ("fresh lemon or lime juice", "fresh lemon juice"),
+        (
+            "berries: sliced strawberries, blackberries, or raspberries",
+            "sliced strawberries",
+        ),
         // An article is not an amount.
         ("peanut or a vegetable oil", "peanut oil"),
         // A prep word ("baking") doesn't push the count onto a later option.

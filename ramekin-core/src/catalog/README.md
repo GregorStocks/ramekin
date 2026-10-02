@@ -93,11 +93,13 @@ Names are lowercased and whitespace is collapsed. Then:
    chunk's comma pieces are tried before the chunk itself ("melted, unsalted
    butter, olive oil, or ghee" is unsalted butter; "apple, grape, or cranberry
    juice" is apple juice, not the apple that clause trimming in step 4 would
-   find). Each alternative is first cleaned of an example marker ("like
-   cream cheese", "such as …") and of prep words joined by "and" ("cooked and
-   cooled white rice" is cooked white rice). Only if no alternative names a
+   find). Each alternative is first cleaned of a leading label ("berries:
+   sliced strawberries"), an example marker ("like cream cheese", "such as
+   …"), and prep words joined by "and" ("cooked and cooled white rice" is
+   cooked white rice). Only if no alternative names a
    food do steps 4–6 run. A single word is usually an
-   adjective, so it is first tried with the list's noun: the last
+   adjective, so every alternative is first tried with the list's noun ("fresh
+   lemon or lime juice" is lemon juice), then alone: the last
    alternative's trailing words, longest first ("corn or flour tortillas" is
    corn tortillas, "sherry or red wine vinegar" sherry vinegar), unless that
    alternative carries its own amount ("vanilla or half a vanilla bean"; an

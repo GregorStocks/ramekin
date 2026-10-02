@@ -358,13 +358,12 @@ pub fn chosen_alternative(item: &str) -> Option<String> {
 
 /// The names an "x or y" name's alternatives are tried as, in order, or None
 /// when it offers no alternatives. Each "or" chunk's comma pieces, then the
-/// chunk itself ("melted, unsalted butter, olive oil, or ghee"). A single word is first
-/// tried with the list's noun, since it is usually an adjective: the last
-/// alternative's trailing words ("corn or flour tortillas" is corn tortillas)
-/// (longest first: "sherry or red wine vinegar" tries sherry wine vinegar, then
-/// sherry vinegar) or a leading noun ("oil canola, olive, or ..." is canola
-/// oil, olive oil).
-/// Longer alternatives are tried alone first, then with the trailing words.
+/// chunk itself ("melted, unsalted butter, olive oil, or ghee"). Each is first
+/// tried with the list's noun, then alone: the last alternative's trailing
+/// words, longest first ("corn or flour tortillas" is corn tortillas, "fresh
+/// lemon or lime juice" lemon juice, "sherry or red wine vinegar" tries sherry
+/// wine vinegar, then sherry vinegar), or a leading noun ("oil canola, olive,
+/// or ..." is canola oil, olive oil).
 fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
     let text = normalized.replace(" and/or ", " or ");
     let chunks: Vec<&str> = text
@@ -431,13 +430,11 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
         {
             nouned.push(format!("{piece} {tail}"));
         }
-        if piece.contains(' ') {
-            candidates.push(piece);
-            candidates.extend(nouned);
-        } else {
-            candidates.extend(nouned);
-            candidates.push(piece);
-        }
+        // The shared noun first: "fresh lemon or lime juice" is lemon juice,
+        // not lemons; the bare piece still follows ("sour cream or plain
+        // yogurt").
+        candidates.extend(nouned);
+        candidates.push(piece);
     }
     Some(candidates)
 }
@@ -446,8 +443,10 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<String>> {
 /// marker ("like cream cheese", "such as ...") and a prep word joined by "and"
 /// ("cooked and cooled white rice" is cooked white rice).
 fn clean_alternative(piece: &str) -> String {
-    static EXAMPLE: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"^(?:like|such as|e\.g\.|eg|for example),? ").unwrap());
+    static EXAMPLE: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"^(?:[^:]+:\s*)?(?:(?:like|such as|e\.g\.|eg|for example),? )?").unwrap()
+    });
+    // A leading label ("berries: sliced strawberries") and an example marker.
     let piece = EXAMPLE.replace(piece, "");
     let words: Vec<&str> = piece.split(' ').collect();
     let mut kept = Vec::with_capacity(words.len());
