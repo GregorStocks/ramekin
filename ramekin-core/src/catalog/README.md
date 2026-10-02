@@ -109,7 +109,9 @@ Names are lowercased and whitespace is collapsed. Then:
      chicken, or beef broth" lends no "mushroom"). A one-word alternative (prep
      words aside) is usually an adjective, so it borrows first ("fresh lemon or
      lime juice" is lemon juice); a longer one names its food and is tried as
-     written first ("white wine or white balsamic vinegar" is white wine).
+     written first ("white wine or white balsamic vinegar" is white wine),
+     unless a later alternative says "other" ("white wine or other mild
+     vinegar" is white wine vinegar).
    - **An unknown first alternative.** If none of the first alternative's
      candidates resolve, its own trailing words may ("local honey or maple
      syrup" is honey; "mixed cherry or grape tomatoes" is cherry tomatoes),

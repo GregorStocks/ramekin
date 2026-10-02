@@ -433,6 +433,8 @@ fn dissimilar_alternatives_and_bare_herbs() {
         // A complete first option is tried as written.
         ("white wine or white balsamic vinegar", "white wine"),
         ("rice wine or apple cider vinegar", "rice wine"),
+        // ...unless a later option says "other", sharing its noun.
+        ("white wine or other mild vinegar", "white wine vinegar"),
         (
             "berries: sliced strawberries, blackberries, or raspberries",
             "sliced strawberries",

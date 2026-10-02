@@ -463,7 +463,12 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
                 .filter(|word| !LEADING_MODIFIERS.contains(word))
                 .count()
                 <= 1;
-            let names = if one_word {
+            // "white wine or other mild vinegar": "other" says the list
+            // shares a noun, so even a longer alternative borrows it first.
+            let other_follows = chunks[index + 1..]
+                .iter()
+                .any(|later| later.starts_with("other ") || later.starts_with("another "));
+            let names = if one_word || other_follows {
                 nouned.into_iter().chain([piece.clone()]).collect()
             } else {
                 [piece.clone()].into_iter().chain(nouned).collect()
