@@ -38,6 +38,12 @@ def energy(food_id="1", kcal="100"):
         ([portion("tbsp", weight="10")], 160),
         ([portion("teaspoon", weight="2")], 96),
         ([portion("cup, diced", weight="100"), portion(weight="140")], 120),
+        # Liquids weighed only per fluid ounce; cups and spoons win when present.
+        ([portion("fl oz", weight="29.5")], 236),
+        ([portion("fl oz", amount="1.5", weight="42")], 224),
+        ([portion("fl oz", weight="30"), portion("tbsp", weight="15")], 240),
+        ([portion("serving (5 fl oz)", weight="147")], None),
+        ([portion("jigger (1.5 fl oz)", weight="42")], None),
         ([portion(), portion("tbsp", weight="10")], 120),
         ([portion("tbsp", weight="10"), portion("tsp", weight="2")], 160),
         ([portion("piece"), portion("cup chips")], None),

@@ -24,8 +24,8 @@ runtime estimation needs no network. Re-importing a changed archive fails until
 the source change is explicitly reviewed. No generated data is hand-edited.
 
 Volume conversion uses the matched catalog entry's grams per cup. This is either
-a cited curated value or the USDA food's own cup, tablespoon or teaspoon portions
-(zero-amount rows excluded). An entry without a density produces an explicit
+a cited curated value or the USDA food's own cup, tablespoon, teaspoon or
+fluid-ounce portions (zero-amount rows excluded). An entry without a density produces an explicit
 "Missing density for this food" unknown.
 
 ## Matching and quantities

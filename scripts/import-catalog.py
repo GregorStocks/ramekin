@@ -162,7 +162,8 @@ def load_archive(cache: Path, source: str, sha256: str) -> bytes:
 
 
 def parse_volume_unit(modifier: str) -> str | None:
-    """Return 'cup', 'tbsp', 'tsp', or None for an SR Legacy portion modifier."""
+    """Return 'cup', 'tbsp', 'tsp', 'fl oz', or None for an SR Legacy portion
+    modifier."""
     mod = modifier.lower().strip()
     # "cup chips" and similar are not a typical measurement.
     if "chip" in mod:
@@ -173,13 +174,22 @@ def parse_volume_unit(modifier: str) -> str | None:
         return "tbsp"
     if mod in ("tsp", "teaspoon"):
         return "tsp"
+    # Liquids (wine, spirits, juices) are often weighed only per fluid ounce.
+    if mod == "fl oz":
+        return "fl oz"
     return None
 
 
 def calculate_grams_per_cup(portions: list[dict]) -> float | None:
-    """Average cup portions; fall back to tablespoons, then teaspoons."""
-    by_unit: dict[str, list[float]] = {"cup": [], "tbsp": [], "tsp": []}
-    per_cup = {"cup": 1.0, "tbsp": TBSP_PER_CUP, "tsp": TSP_PER_CUP}
+    """Average cup portions; fall back to tablespoons, teaspoons, then fluid
+    ounces."""
+    by_unit: dict[str, list[float]] = {"cup": [], "tbsp": [], "tsp": [], "fl oz": []}
+    per_cup = {
+        "cup": 1.0,
+        "tbsp": TBSP_PER_CUP,
+        "tsp": TSP_PER_CUP,
+        "fl oz": FL_OZ_PER_CUP,
+    }
     for p in portions:
         if p["id"] in EXCLUDED_PORTIONS:
             values = tuple(
@@ -199,7 +209,7 @@ def calculate_grams_per_cup(portions: list[dict]) -> float | None:
         if not math.isfinite(grams_per_unit * TSP_PER_CUP):
             raise ValueError(f"Overflow in volume portion: {p}")
         by_unit[unit].append(grams_per_unit * per_cup[unit])
-    for unit in ("cup", "tbsp", "tsp"):
+    for unit in ("cup", "tbsp", "tsp", "fl oz"):
         if by_unit[unit]:
             return sum(by_unit[unit]) / len(by_unit[unit])
     return None
