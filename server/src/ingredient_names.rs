@@ -537,7 +537,7 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, 
 
 /// Record `error` on `names` and classify it.
 async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<Batch, String> {
-    let provider_wide = !matches!(error, AiError::ParseError(_));
+    let provider_wide = !error.is_answer_specific();
     let error = error.to_string();
     save_failed(pool, names, error.clone()).await?;
     Ok(if provider_wide {

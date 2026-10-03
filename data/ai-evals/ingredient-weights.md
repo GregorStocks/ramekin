@@ -2,18 +2,18 @@
 
 Written by `make ai-eval`. Grams in one unit of a catalog food (`estimate_ingredient_weights`), against USDA: 60 densities (cup) and 60 piece weights in estimable units. Error is |estimate − USDA| / USDA; null means the model said there's no typical weight.
 
-Golden set: `data/ai-evals/golden/ingredient-weights.json` (120 cases), asked 40 per call (production asks 40). Truncated calls ran out of the production max_tokens (the batch is then retried item by item here; in production it fails). Cost is what this suite's calls cost at OpenRouter's current prices; a cached rerun spends nothing.
+Golden set: `data/ai-evals/golden/ingredient-weights.json` (120 cases), asked 40 per call (production asks 40). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated; production treats those as provider errors); a rejected batch is retried item by item. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
 
-| Model | Within 20% | Within 50% | Median error | P90 error | Null | Invalid | Truncated calls | Cost |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| google/gemini-2.5-flash | 59% | 84% | 10% | 56% | 0% | 0% | 0 | $0.0152 |
-| google/gemini-3.8-flash | 68% | 90% | 5% | 48% | 1% | 0% | 0 | $0.0428 |
-| google/gemini-3.1-pro-preview | 68% | 88% | 6% | 52% | 0% | 0% | 0 | $0.1517 |
-| anthropic/claude-sonnet-5.5 | 73% | 92% | 4% | 43% | 0% | 0% | 0 | $0.0662 |
-| anthropic/claude-opus-5.5 | 82% | 93% | 3% | 34% | 0% | 0% | 0 | $0.2136 |
-| openai/gpt-6.1-sol | 72% | 93% | 3% | 39% | 0% | 0% | 0 | $0.0634 |
-| openai/gpt-6-luna | 67% | 86% | 8% | 60% | 0% | 0% | 0 | $0.0034 |
-| x-ai/grok-4.7 | 72% | 90% | 5% | 50% | 0% | 0% | 0 | $0.2043 |
+| Model | Within 20% | Within 50% | Median error | P90 error | Null | Invalid | Rejected calls | Truncated calls | Cost of accepted calls |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| google/gemini-2.5-flash | 59% | 84% | 10% | 56% | 0% | 0% | 0 | 0 | $0.0152 |
+| google/gemini-3.8-flash | 68% | 90% | 5% | 48% | 1% | 0% | 0 | 0 | $0.0428 |
+| google/gemini-3.1-pro-preview | 68% | 88% | 6% | 52% | 0% | 0% | 0 | 0 | $0.1517 |
+| anthropic/claude-sonnet-5.5 | 73% | 92% | 4% | 43% | 0% | 0% | 0 | 0 | $0.0662 |
+| anthropic/claude-opus-5.5 | 82% | 93% | 3% | 34% | 0% | 0% | 0 | 0 | $0.2136 |
+| openai/gpt-6.1-sol | 72% | 93% | 3% | 39% | 0% | 0% | 0 | 0 | $0.0634 |
+| openai/gpt-6-luna | 67% | 86% | 8% | 60% | 0% | 0% | 0 | 0 | $0.0034 |
+| x-ai/grok-4.7 | 72% | 90% | 5% | 50% | 0% | 0% | 0 | 0 | $0.2043 |
 
 ## Rejected answers
 

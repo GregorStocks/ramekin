@@ -2,14 +2,14 @@
 
 Written by `make ai-eval`. Grams in one unit of a catalog food (`estimate_ingredient_weights`), against USDA: 60 densities (cup) and 60 piece weights in estimable units. Error is |estimate − USDA| / USDA; null means the model said there's no typical weight.
 
-Golden set: `data/ai-evals/golden/ingredient-weights.json` (120 cases), asked 1 per call (production asks 40). Truncated calls ran out of the production max_tokens (the batch is then retried item by item here; in production it fails). Cost is what this suite's calls cost at OpenRouter's current prices; a cached rerun spends nothing.
+Golden set: `data/ai-evals/golden/ingredient-weights.json` (120 cases), asked 1 per call (production asks 40). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated; production treats those as provider errors); a rejected batch is retried item by item. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
 
-| Model | Within 20% | Within 50% | Median error | P90 error | Null | Invalid | Truncated calls | Cost |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| google/gemini-2.5-flash | 62% | 84% | 9% | 58% | 2% | 0% | 0 | $0.0305 |
-| google/gemini-3.8-flash | 73% | 94% | 4% | 39% | 0% | 0% | 0 | $0.2618 |
-| openai/gpt-6.1-sol | 74% | 93% | 2% | 40% | 1% | 0% | 0 | $0.2217 |
-| google/gemini-3.1-pro-preview | 72% | 92% | 3% | 46% | 0% | 0% | 0 | $0.6550 |
+| Model | Within 20% | Within 50% | Median error | P90 error | Null | Invalid | Rejected calls | Truncated calls | Cost of accepted calls |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| google/gemini-2.5-flash | 62% | 84% | 9% | 58% | 2% | 0% | 0 | 0 | $0.0305 |
+| google/gemini-3.8-flash | 73% | 94% | 4% | 39% | 0% | 0% | 0 | 0 | $0.2618 |
+| openai/gpt-6.1-sol | 74% | 93% | 2% | 40% | 1% | 0% | 0 | 0 | $0.2217 |
+| google/gemini-3.1-pro-preview | 72% | 92% | 3% | 46% | 0% | 0% | 0 | 0 | $0.6550 |
 
 ## Rejected answers
 

@@ -25,8 +25,22 @@ pub enum AiError {
     #[error("Failed to parse response: {0}")]
     ParseError(String),
 
+    /// The answer ran out of `max_tokens`: this request's answer was too long,
+    /// so a smaller request (fewer items) may succeed.
+    #[error("Response truncated by max_tokens: {0}")]
+    Truncated(String),
+
     #[error("Configuration error: {0}")]
     Config(#[from] super::config::ConfigError),
+}
+
+impl AiError {
+    /// Whether the failure is this request's answer (invalid, or cut off by
+    /// max_tokens) rather than the provider or configuration, so asking about
+    /// fewer items may succeed where retrying the same request won't.
+    pub fn is_answer_specific(&self) -> bool {
+        matches!(self, AiError::ParseError(_) | AiError::Truncated(_))
+    }
 }
 
 /// Trait for AI clients.
@@ -291,8 +305,8 @@ impl AiClient for CachingAiClient {
         // it would turn a transient provider problem into a permanent,
         // deterministic failure for this prompt.
         if finish_reason == Some(FinishReason::length) {
-            return Err(AiError::Api(format!(
-                "Response truncated by max_tokens (finish_reason=length); partial content: {:?}",
+            return Err(AiError::Truncated(format!(
+                "finish_reason=length; partial content: {:?}",
                 content_snippet(&content)
             )));
         }
@@ -508,6 +522,15 @@ mod tests {
         client.forget("p", &messages);
 
         assert!(cache.get(&key).is_none());
+    }
+
+    #[test]
+    fn invalid_and_truncated_answers_are_answer_specific() {
+        // A smaller request may fix these, so batch callers split rather than
+        // treating them as a provider outage.
+        assert!(AiError::ParseError("bad json".into()).is_answer_specific());
+        assert!(AiError::Truncated("finish_reason=length".into()).is_answer_specific());
+        assert!(!AiError::Api("Request timed out".into()).is_answer_specific());
     }
 
     #[test]

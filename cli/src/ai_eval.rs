@@ -279,6 +279,10 @@ struct Spend {
     truncated: usize,
     /// Why items were rejected, first few, for the report.
     rejections: Vec<String>,
+    /// Calls whose answer was rejected (invalid or truncated). The provider
+    /// billed them, but an error carries no usage, so they're counted here
+    /// instead of in the cost.
+    rejected_calls: usize,
     prompt_tokens: u64,
     completion_tokens: u64,
 }
@@ -296,14 +300,18 @@ impl Spend {
 }
 
 fn client_for(model: &str) -> Result<CachingAiClient> {
-    let mut config = AiConfig::from_env().context("AI is not configured (OPENROUTER_API_KEY)")?;
+    // The ingredient calls' production settings (their timeout), with the
+    // candidate model in place of the ingredient model.
+    let mut config = AiConfig::from_env()
+        .context("AI is not configured (OPENROUTER_API_KEY)")?
+        .for_ingredients();
     config.model = model.to_string();
     Ok(CachingAiClient::new(config))
 }
 
 /// Whether the model ran out of the production max_tokens.
 fn truncated(error: &AiError) -> bool {
-    matches!(error, AiError::Api(message) if message.contains("truncated by max_tokens"))
+    matches!(error, AiError::Truncated(_))
 }
 
 /// Ask `items` in production-size batches. A batch the model answers invalidly
@@ -324,16 +332,18 @@ async fn in_batches<I: Clone, A>(
                 spend.add(&usage);
                 take(answers);
             }
-            Err(e) if matches!(e, AiError::ParseError(_)) || truncated(&e) => {
+            Err(e) if e.is_answer_specific() => {
                 spend.truncated += usize::from(truncated(&e));
+                spend.rejected_calls += 1;
                 for item in batch {
                     match ask(std::slice::from_ref(item)).await {
                         Ok((answers, usage)) => {
                             spend.add(&usage);
                             take(answers);
                         }
-                        Err(e) if matches!(e, AiError::ParseError(_)) || truncated(&e) => {
+                        Err(e) if e.is_answer_specific() => {
                             spend.truncated += usize::from(truncated(&e));
+                            spend.rejected_calls += 1;
                             invalid += 1;
                             if spend.rejections.len() < 5 {
                                 let reason = e.to_string();
@@ -652,30 +662,30 @@ fn render(
     suite: &str,
     cases: usize,
     batch_size: usize,
-    rows: &[(ModelResult, f64, usize, Vec<String>)],
+    rows: &[(ModelResult, f64, usize, usize, Vec<String>)],
 ) -> String {
     let spec = spec(suite);
     let mut out = format!(
-        "# AI eval: {}\n\nWritten by `make ai-eval`. {}\n\nGolden set: `{GOLDEN_DIR}/{suite}.json` ({cases} cases), asked {batch_size} per call (production asks {BATCH}). Truncated calls ran out of the production max_tokens (the batch is then retried item by item here; in production it fails). Cost is what this suite's calls cost at OpenRouter's current prices; a cached rerun spends nothing.\n\n",
+        "# AI eval: {}\n\nWritten by `make ai-eval`. {}\n\nGolden set: `{GOLDEN_DIR}/{suite}.json` ({cases} cases), asked {batch_size} per call (production asks {BATCH}). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated; production treats those as provider errors); a rejected batch is retried item by item. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.\n\n",
         spec.title, spec.about
     );
     let _ = writeln!(
         out,
-        "| Model | {} | Truncated calls | Cost |",
+        "| Model | {} | Rejected calls | Truncated calls | Cost of accepted calls |",
         spec.columns.join(" | ")
     );
     let _ = writeln!(
         out,
-        "| --- |{} ---: | ---: |",
+        "| --- |{} ---: | ---: | ---: |",
         " ---: |".repeat(spec.columns.len())
     );
-    for (result, dollars, truncated, _) in rows {
+    for (result, dollars, rejected, truncated, _) in rows {
         // A failed model has one cell, its error; pad the rest.
         let mut cells = result.cells.clone();
         cells.resize(spec.columns.len(), "–".into());
         let _ = writeln!(
             out,
-            "| {} | {} | {truncated} | ${dollars:.4} |",
+            "| {} | {} | {rejected} | {truncated} | ${dollars:.4} |",
             result.model,
             cells.join(" | ").replace('\n', " ")
         );
@@ -683,7 +693,7 @@ fn render(
     out.push_str(
         "\n## Rejected answers\n\nThe first few items each model answered invalidly even alone.\n",
     );
-    for (result, _, _, rejections) in rows {
+    for (result, _, _, _, rejections) in rows {
         if rejections.is_empty() {
             continue;
         }
@@ -693,7 +703,7 @@ fn render(
         }
     }
     out.push_str("\n## Worst misses\n");
-    for (result, _, _, _) in rows {
+    for (result, _, _, _, _) in rows {
         let _ = writeln!(out, "\n### {}\n", result.model);
         if result.misses.is_empty() {
             out.push_str("None.\n");
@@ -717,6 +727,9 @@ pub async fn run(
     }
     if models.is_empty() {
         bail!("Pass at least one model (MODELS=a,b)");
+    }
+    if batch_size == 0 {
+        bail!("The batch size must be at least 1");
     }
     let suites: Vec<&str> = match suite {
         "all" => SUITES.to_vec(),
@@ -762,7 +775,13 @@ pub async fn run(
             };
             let dollars = spend.dollars(&prices[model]);
             tracing::info!(suite, model, calls = spend.calls, dollars, "evaluated");
-            rows.push((result, dollars, spend.truncated, spend.rejections));
+            rows.push((
+                result,
+                dollars,
+                spend.rejected_calls,
+                spend.truncated,
+                spend.rejections,
+            ));
         }
         // Production's batch size is the main report; others sit beside it.
         let name = if batch_size == BATCH {

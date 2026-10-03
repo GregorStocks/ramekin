@@ -2,14 +2,14 @@
 
 Written by `make ai-eval`. Calories (and cup and piece weights) for a food with no catalog candidates (`resolve_ingredient_names`, answer "estimate"), against USDA for 80 foods given by their USDA description. Calorie error is against at least 20 kcal/100 g, so near-zero foods don't dominate. Cup and piece columns count foods where USDA has the weight; the piece is USDA's default portion, which isn't always a whole item.
 
-Golden set: `data/ai-evals/golden/food-estimates.json` (80 cases), asked 1 per call (production asks 40). Truncated calls ran out of the production max_tokens (the batch is then retried item by item here; in production it fails). Cost is what this suite's calls cost at OpenRouter's current prices; a cached rerun spends nothing.
+Golden set: `data/ai-evals/golden/food-estimates.json` (80 cases), asked 1 per call (production asks 40). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated; production treats those as provider errors); a rejected batch is retried item by item. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
 
-| Model | kcal within 20% | kcal median error | kcal P90 error | Cup within 25% | Piece within 25% | Unknown | Invalid | Truncated calls | Cost |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| google/gemini-2.5-flash | 41% | 7% | 46% | 55% | 12% | 46% | 0% | 0 | $0.0271 |
-| google/gemini-3.8-flash | 88% | 3% | 23% | 97% | 40% | 0% | 0% | 0 | $0.1786 |
-| openai/gpt-6.1-sol | 88% | 0% | 21% | 97% | 40% | 0% | 0% | 0 | $0.1999 |
-| google/gemini-3.1-pro-preview | 91% | 4% | 20% | 100% | 36% | 0% | 0% | 0 | $0.7273 |
+| Model | kcal within 20% | kcal median error | kcal P90 error | Cup within 25% | Piece within 25% | Unknown | Invalid | Rejected calls | Truncated calls | Cost of accepted calls |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| google/gemini-2.5-flash | 41% | 7% | 46% | 55% | 12% | 46% | 0% | 0 | 0 | $0.0271 |
+| google/gemini-3.8-flash | 88% | 3% | 23% | 97% | 40% | 0% | 0% | 0 | 0 | $0.1786 |
+| openai/gpt-6.1-sol | 88% | 0% | 21% | 97% | 40% | 0% | 0% | 0 | 0 | $0.1999 |
+| google/gemini-3.1-pro-preview | 91% | 4% | 20% | 100% | 36% | 0% | 0% | 0 | 0 | $0.7273 |
 
 ## Rejected answers
 
