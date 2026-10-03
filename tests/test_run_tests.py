@@ -24,10 +24,13 @@ def _write_executable(path: Path, contents: str) -> None:
     path.chmod(path.stat().st_mode | stat.S_IXUSR)
 
 
-def _script_env() -> dict[str, str]:
+def _script_env(tmp_path: Path) -> dict[str, str]:
     env = os.environ.copy()
     for variable in SERVICE_PORT_VARIABLES:
         env.pop(variable, None)
+    # The script clears the AI response cache; never the one a real test run
+    # (which may be this one) is using.
+    env["TEST_AI_CACHE_DIR"] = str(tmp_path / "ai-cache")
     return env
 
 
@@ -72,7 +75,7 @@ exit 1
 """,
     )
 
-    env = _script_env()
+    env = _script_env(tmp_path)
     env["PATH"] = f"{bin_dir}:{env['PATH']}"
     env["TEST_ENV_FILE"] = str(env_file)
     env["TEST_LOG_FILE"] = str(log_path)
@@ -118,7 +121,7 @@ exit 0
 """,
         )
 
-        env = _script_env()
+        env = _script_env(tmp_path)
         env["PATH"] = f"{bin_dir}:{env['PATH']}"
         env["TEST_ENV_FILE"] = str(env_file)
         env["REPO_LOCK_DIR"] = str(tmp_path / "locks")
@@ -165,7 +168,7 @@ exit 0
 """,
         )
 
-        env = _script_env()
+        env = _script_env(tmp_path)
         env["PATH"] = f"{bin_dir}:{env['PATH']}"
         env["TEST_ENV_FILE"] = str(env_file)
         env["REPO_LOCK_DIR"] = str(tmp_path / "locks")
@@ -220,7 +223,7 @@ exit 1
 """,
     )
 
-    env = _script_env()
+    env = _script_env(tmp_path)
     env["PATH"] = f"{bin_dir}:{env['PATH']}"
     env["TEST_ENV_FILE"] = str(env_file)
     env["TEST_LOG_FILE"] = str(log_path)
@@ -276,7 +279,7 @@ exit 1
 """,
     )
 
-    env = _script_env()
+    env = _script_env(tmp_path)
     env["PATH"] = f"{bin_dir}:{env['PATH']}"
     env["TEST_ENV_FILE"] = str(env_file)
     env["TEST_LOG_FILE"] = str(tmp_path / "isolated-test.log")
@@ -330,7 +333,7 @@ exit 0
 """,
     )
 
-    env = _script_env()
+    env = _script_env(tmp_path)
     env["PATH"] = f"{bin_dir}:{env['PATH']}"
     env["TEST_ENV_FILE"] = str(env_file)
     env["TEST_LOCK_NAME"] = "tests-script-stale-port-unit"
@@ -383,7 +386,7 @@ exit 1
 """,
     )
 
-    env = _script_env()
+    env = _script_env(tmp_path)
     env["PATH"] = f"{bin_dir}:{env['PATH']}"
     env["TEST_ENV_FILE"] = str(env_file)
     env["TEST_LOG_FILE"] = str(tmp_path / "isolated-test.log")
