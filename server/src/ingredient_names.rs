@@ -233,31 +233,38 @@ pub(crate) enum Step {
     ProviderFailed(String),
 }
 
-/// Work both queues until they're empty, a batch from each in turn, so a
+/// Work both queues until both are empty, a batch from each in turn, so a
 /// backlog of names never starves weights or the reverse. Names go first in
 /// each turn: an answer can make a line's food known, and so its weight worth
 /// asking for. Returns the first failure.
 async fn work_pass(pool: &Arc<DbPool>) -> Result<(), String> {
     let mut first_error = None;
-    let (mut names_open, mut weights_open) = (true, true);
-    while names_open || weights_open {
-        if names_open {
-            names_open = still_open(resolve_next_batch(pool, None).await?, &mut first_error);
+    // A queue whose provider failed sits out the rest of the pass: its next
+    // batch would fail the same way, so it waits for the worker's retry. An
+    // idle queue is checked again every turn, since saves keep adding work.
+    let (mut names_down, mut weights_down) = (false, false);
+    loop {
+        let mut worked = false;
+        if !names_down {
+            let step = resolve_next_batch(pool, None).await?;
+            names_down = matches!(step, Step::ProviderFailed(_));
+            worked |= record(step, &mut first_error);
         }
-        if weights_open {
-            weights_open = still_open(
-                crate::ingredient_weights::estimate_next_batch(pool).await?,
-                &mut first_error,
-            );
+        if !weights_down {
+            let step = crate::ingredient_weights::estimate_next_batch(pool).await?;
+            weights_down = matches!(step, Step::ProviderFailed(_));
+            worked |= record(step, &mut first_error);
+        }
+        if !worked {
+            break;
         }
     }
     first_error.map_or(Ok(()), Err)
 }
 
-/// Whether a queue may have more work after `step`, keeping its first error.
-/// After a provider failure its next batch would fail the same way, so it's
-/// left pending for the worker's retry.
-fn still_open(step: Step, first_error: &mut Option<String>) -> bool {
+/// Keep `step`'s error, if it's the first, and say whether it took a batch
+/// that a queue may have more of.
+fn record(step: Step, first_error: &mut Option<String>) -> bool {
     match step {
         Step::Idle => false,
         Step::Done => true,
@@ -309,7 +316,7 @@ async fn resolve_next_batch(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> Re
 /// recorded on one of them.
 pub async fn resolve_pending(pool: &Arc<DbPool>, only: Vec<String>) -> Result<(), String> {
     let mut first_error = None;
-    while still_open(
+    while record(
         resolve_next_batch(pool, Some(only.clone())).await?,
         &mut first_error,
     ) {}
