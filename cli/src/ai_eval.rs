@@ -749,7 +749,11 @@ pub async fn run(
         name if SUITES.contains(&name) => vec![name],
         other => bail!("Unknown suite {other:?}; one of {SUITES:?} or all"),
     };
+    // Configuration is checked once, up front: it's the run's problem, not a
+    // model's.
+    AiConfig::from_env().context("AI is not configured (OPENROUTER_API_KEY)")?;
     let prices = prices(models).await?;
+    let mut failures = Vec::new();
     for suite in suites {
         let path: PathBuf = root.join(GOLDEN_DIR).join(format!("{suite}.json"));
         let mut rows = Vec::new();
@@ -773,12 +777,13 @@ pub async fn run(
                     eval_names(model, &golden, batch_size, &mut spend).await
                 }
             };
-            // A model that times out or errors is a result too: report it and
-            // go on to the next one.
+            // A model whose provider calls fail (a timeout) gets a row, so the
+            // others' results are kept, and the run fails at the end.
             let result = match outcome {
                 Ok(result) => result,
                 Err(e) => {
-                    tracing::warn!(suite, model, "failed: {e}");
+                    tracing::error!(suite, model, "failed: {e}");
+                    failures.push(format!("{suite} / {model}: {e}"));
                     ModelResult {
                         model: model.clone(),
                         cells: vec![format!("failed: {e}")],
@@ -806,6 +811,13 @@ pub async fn run(
         fs::write(&out, render(suite, cases, batch_size, &rows))
             .with_context(|| format!("Failed to write {}", out.display()))?;
         tracing::info!("Wrote {}", out.display());
+    }
+    if !failures.is_empty() {
+        bail!(
+            "{} model run(s) failed (reported in the results):\n{}",
+            failures.len(),
+            failures.join("\n")
+        );
     }
     Ok(())
 }

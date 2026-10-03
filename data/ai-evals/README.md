@@ -14,8 +14,9 @@ set (it reads `cli.env`). Each call goes through the production prompt and
 validation, and responses are cached by model and prompt, so a rerun is free
 and a new model only pays for its own calls. Rejected answers aren't cached, so
 a model that answers invalidly is asked (and billed) again on every run. Models come from OpenRouter's live
-model list, which also supplies the prices in the cost column. A model that
-fails (a timeout) gets a row saying so rather than stopping the run.
+model list, which also supplies the prices in the cost column. A model whose
+calls fail (a timeout) gets a row saying so, and the command exits with an
+error once every report is written; a missing configuration stops it at once.
 
 | Suite | Use case | Scored against |
 | --- | --- | --- |
