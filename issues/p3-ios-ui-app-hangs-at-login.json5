@@ -7,7 +7,9 @@ If it recurs: capture the simulator's app logs on failure (see p4-ios-ui-timeout
 Recurred on PR #729 (run 37079044189, commit a05d0245b): testRecipeFlow failed at RecipeFlowTests.swift:221 with 'Failed to tap \"Add to Shopping List\" Button: Timed out while evaluating UI query' after 310 s, and the next test, testTextRecipeReviewAndSave, failed with 'Failed to terminate com.ramekin.app'. \
 So the app was unresponsive after login this time, not at it. \
 Rerunning the failed jobs passed. \
-The earlier push bdeb58738 of the same PR also passed. #729 makes the recipe calorie estimate return `resolving` while estimated weights are pending, so the app polls it every 2 s for a moment; worth ruling out that polling or its re-render keeps the app from going idle, though the rerun passing argues against a deterministic cause.",
+The earlier push bdeb58738 of the same PR also passed. #729 makes the recipe calorie estimate return `resolving` while estimated weights are pending, so the app polls it every 2 s for a moment; worth ruling out that polling or its re-render keeps the app from going idle, though the rerun passing argues against a deterministic cause. \
+The next push (run 37082683506) failed differently and earlier: testRecipeFlow at RecipeFlowTests.swift:120, where the typed server URL never showed up as the field's accessibility value ('Expected accessibility value: http://localhost:55000'). \
+That's on the login screen before any request, so the simulator is flaky at text entry too, not only after login.",
   "status": "open",
   "priority": 3,
   "type": "task",
