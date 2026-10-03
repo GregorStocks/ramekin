@@ -85,15 +85,17 @@ def test_missing_densities_are_estimated(authed_api_client):
     client, _ = authed_api_client
     api = RecipesApi(client)
     food = unasked_food(api, ["tbsp"])
-    text = wait_for(
+    line = wait_for(
         lambda: (
             (
-                t := api.estimate_calories(request(food, ["tbsp"])).lines[0].text
-            ).endswith("(estimated weight)")
-            and t
+                counted := api.estimate_calories(request(food, ["tbsp"])).lines[0]
+            ).text.endswith("(estimated weight)")
+            and counted
         )
     )
-    assert text.startswith("~")
+    # Counted; a random food may be light enough to read "<1 kcal".
+    assert line.calories is not None
+    assert " kcal (estimated weight)" in line.text
 
 
 def test_units_with_no_typical_weight_stay_unknown(authed_api_client):
