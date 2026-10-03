@@ -204,6 +204,18 @@ async fn main() {
             "requeued learned ingredient names the catalog lost"
         );
     }
+    // Everything stored recipes need, so a deploy doesn't wait on each being
+    // opened.
+    let (names, weights) = {
+        let mut conn = pool
+            .get()
+            .expect("Failed to get a connection to queue stored ingredient names");
+        ingredient_names::queue_stored(&mut conn, true)
+            .expect("Failed to queue stored ingredient names and weights")
+    };
+    if names + weights > 0 {
+        tracing::info!(names, weights, "queued stored ingredient names and weights");
+    }
     ingredient_names::spawn_worker(pool.clone());
 
     // Public routes (no auth required)

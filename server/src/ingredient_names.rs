@@ -11,6 +11,7 @@
 //! Ingredient recognition) until retried.
 
 use std::collections::BTreeSet;
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, LazyLock};
 use std::time::Duration;
 
@@ -43,6 +44,9 @@ pub const RESOLVED: &str = "resolved";
 pub const FAILED: &str = "failed";
 
 static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
+/// Set whenever names are saved resolved, so the worker sweeps stored recipes
+/// for the weight gaps the answers reveal.
+static NAMES_SAVED: AtomicBool = AtomicBool::new(false);
 pub(crate) static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
 /// One client for the process, so its rate limit spaces every call, with
 /// the model it asks.
@@ -252,9 +256,32 @@ pub fn requeue_stale_keys(pool: &DbPool) -> Result<usize, String> {
 /// waits to be woken.
 pub fn spawn_worker(pool: Arc<DbPool>) {
     tokio::spawn(async move {
+        // `queue_stored` ran at startup. A saved answer can reveal a weight
+        // gap in any stored recipe, whichever path resolved it (this worker,
+        // a scrape job, a retry), so weights are swept again after every pass
+        // that follows one, retrying until that sweep succeeds.
+        let mut sweep_weights = false;
         let mut backoff = RETRY_MIN;
         loop {
-            match work_pass(&pool).await {
+            let mut pass = work_pass(&pool).await;
+            sweep_weights |= NAMES_SAVED.swap(false, Ordering::SeqCst);
+            if pass.is_ok() && sweep_weights {
+                let swept = run_blocking(&pool, |conn| queue_stored(conn, false))
+                    .await
+                    .map_err(|e| e.to_string())
+                    .and_then(|result| result);
+                match swept {
+                    Ok((_, weights)) => {
+                        sweep_weights = false;
+                        if weights > 0 {
+                            tracing::info!(weights, "queued stored ingredient weight gaps");
+                            continue;
+                        }
+                    }
+                    Err(e) => pass = Err(format!("sweeping stored weight gaps: {e}")),
+                }
+            }
+            match pass {
                 Ok(()) => {
                     backoff = RETRY_MIN;
                     WAKE.notified().await;
@@ -276,6 +303,67 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
             }
         }
     });
+}
+
+/// Queue what every stored recipe and shopping-list item needs: unknown or
+/// ambiguous names (when `queue_names`), and the weight gaps their estimates
+/// report with what's learned so far. Returns how many names and weights were
+/// queued. Stored recipes are otherwise only queued when saved or read, so
+/// after a deploy (a catalog change, a new kind of answer) the server runs
+/// this at startup rather than waiting for each to be opened.
+pub fn queue_stored(conn: &mut PgConnection, queue_names: bool) -> Result<(usize, usize), String> {
+    use crate::models::Ingredient;
+    use crate::schema::{recipe_versions, recipes, shopping_list_items};
+    use ramekin_core::ingredient_parser::ParsedIngredient;
+    use ramekin_core::nutrition;
+
+    let versions: Vec<serde_json::Value> = recipes::table
+        .inner_join(
+            recipe_versions::table
+                .on(recipes::current_version_id.eq(recipe_versions::id.nullable())),
+        )
+        .filter(recipes::deleted_at.is_null())
+        .select(recipe_versions::ingredients)
+        .load(conn)
+        .map_err(|e| e.to_string())?;
+    let recipes: Vec<Vec<ParsedIngredient>> = versions
+        .into_iter()
+        .map(|ingredients| {
+            serde_json::from_value::<Vec<Ingredient>>(ingredients)
+                .map(|ingredients| ingredients.into_iter().map(Into::into).collect())
+                .map_err(|e| format!("stored recipe ingredients are not valid: {e}"))
+        })
+        .collect::<Result<_, _>>()?;
+    let mut items: Vec<String> = recipes
+        .iter()
+        .flatten()
+        .map(|ingredient| ingredient.item.clone())
+        .collect();
+    let queued_names = if queue_names {
+        let shopping: Vec<String> = shopping_list_items::table
+            .filter(shopping_list_items::deleted_at.is_null())
+            .select(shopping_list_items::item)
+            .load(conn)
+            .map_err(|e| e.to_string())?;
+        items.extend(shopping);
+        enqueue(conn, &unlearned_names(items.iter().map(String::as_str)))
+            .map_err(|e| e.to_string())?
+    } else {
+        0
+    };
+    let learned =
+        load_learned(conn, items.iter().map(String::as_str)).map_err(|e| e.to_string())?;
+    let empty = nutrition::Weights::new();
+    let mut gaps = BTreeSet::new();
+    for ingredients in &recipes {
+        let estimate = nutrition::estimate_with(ingredients, None, 1.0, &learned, &empty)
+            .map_err(|e| format!("stored recipe estimate failed: {e}"))?;
+        gaps.extend(estimate.weight_gaps);
+    }
+    let queued_weights =
+        crate::ingredient_weights::enqueue(conn, &gaps.into_iter().collect::<Vec<_>>())
+            .map_err(|e| e.to_string())?;
+    Ok((queued_names, queued_weights))
 }
 
 /// How taking one batch from a queue went. Failures are already recorded on
@@ -523,6 +611,8 @@ async fn save_resolved(
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
     tracing::info!(resolved, "resolved ingredient names");
+    NAMES_SAVED.store(true, Ordering::SeqCst);
+    wake();
     Ok(())
 }
 

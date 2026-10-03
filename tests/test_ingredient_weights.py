@@ -85,15 +85,17 @@ def test_missing_densities_are_estimated(authed_api_client):
     client, _ = authed_api_client
     api = RecipesApi(client)
     food = unasked_food(api, ["tbsp"])
-    text = wait_for(
+    line = wait_for(
         lambda: (
             (
-                t := api.estimate_calories(request(food, ["tbsp"])).lines[0].text
-            ).endswith("(estimated weight)")
-            and t
+                counted := api.estimate_calories(request(food, ["tbsp"])).lines[0]
+            ).text.endswith("(estimated weight)")
+            and counted
         )
     )
-    assert text.startswith("~")
+    # Counted; a random food may be light enough to read "<1 kcal".
+    assert line.calories is not None
+    assert " kcal (estimated weight)" in line.text
 
 
 def test_units_with_no_typical_weight_stay_unknown(authed_api_client):
@@ -192,3 +194,31 @@ def test_requests_with_many_gaps_queue_them_all(authed_api_client):
     )
     assert not done.resolving
     assert all(line.text.endswith("(estimated weight)") for line in done.lines)
+
+
+def test_saved_recipes_get_weights_without_being_viewed(authed_api_client):
+    """Once a saved recipe's name is answered, its weight gaps are queued by
+    the worker's sweep, without anyone reading the recipe's estimate."""
+    client, _ = authed_api_client
+    names_api = IngredientNamesApi(client)
+    # A model-estimated food (unique to this test) with no weight for sheets.
+    estimated = unique("estimable wrapper")
+    RecipesApi(client).create_recipe(
+        CreateRecipeRequest(
+            title=f"Recipe with {estimated}",
+            instructions="Cook.",
+            ingredients=[make_ingredient(estimated, "2", "sheets")],
+        )
+    )
+
+    def asked():
+        weights = names_api.get_ingredient_names_status().weights
+        rows = (
+            weights.estimated
+            + weights.no_typical_weight
+            + weights.pending
+            + weights.failed
+        )
+        return rows >= 1
+
+    wait_for(asked)
