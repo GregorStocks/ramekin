@@ -123,7 +123,10 @@ capers"), or no weight for a counted unit ("1 bunch kale", "2 jars capers", a
 bare "3 shallots" with no default piece). The estimate reports each such gap as
 (catalog food, unit), with "cup" standing for any volume and "piece" for a bare
 count, but only for lines no measurement can be weighed with catalog data alone.
-The estimate endpoint queues the gaps it sees, and the same background worker
+The estimate endpoint queues the gaps it sees (and at startup the server queues
+every stored recipe's names and gaps, then sweeps weights again once the first
+pass has resolved names, so a deploy doesn't wait on each recipe being opened),
+and the same background worker
 asks the LLM for grams per unit, stored once per (food, unit) and shared across
 accounts. The endpoint never calls the LLM itself, and sets `resolving` while
 any of its gaps is pending. A line weighed with an estimate says so: "~40 kcal
