@@ -18,7 +18,12 @@ Changing only the text model while keeping a vision-capable one for photo extrac
 Update defaults, dev.env.example, and cli.env.example. \
 The AI cache key includes the model, so stale cached responses won't leak through; the mock OpenRouter fixtures may need their model names updated.\n\
 \n\
-Also relevant: a 2026-07-28 prod job failed on an upstream Gemini rate limit (see p3-openrouter-finish-reason-error).",
+Also relevant: a 2026-07-28 prod job failed on an upstream Gemini rate limit (see p3-openrouter-finish-reason-error).\n\
+\n\
+Progress (2026-10-03): `make ai-eval` (data/ai-evals/) now scores models on committed golden sets for the three ingredient prompts. \
+Ingredient names and weights moved to google/gemini-3.8-flash via RAMEKIN_AI_INGREDIENT_MODEL / AiConfig::for_ingredients (with a 120 s timeout and 16k max_tokens). \
+Remaining, as further suites in the same framework: text and photo extraction (scored against pipeline recipes and a few hand-checked photos), then human-judged suites (tags, since existing tags aren't reliable ground truth; titles; descriptions; custom enrich; recipe photos to replace gemini-2.5-flash-image) that render a blind side-by-side page whose picks become golden answers. \
+Findings so far: Anthropic models ignore json_object mode via OpenRouter and answer in prose (about 45% of items rejected), so using them needs json_schema structured output; reasoning models need far more than 4096 max_tokens; gemini-2.5-flash alone (batch of 1) answers 'unknown' for 46% of foods it estimates fine in a batch.",
   "status": "open",
   "priority": 2,
   "type": "task",
@@ -26,5 +31,5 @@ Also relevant: a 2026-07-28 prod job failed on an upstream Gemini rate limit (se
     "ai",
   ],
   "created_at": "2026-09-27T14:40:27-07:00",
-  "updated_at": "2026-09-27T16:35:00-07:00",
+  "updated_at": "2026-10-03T12:00:00-07:00",
 }

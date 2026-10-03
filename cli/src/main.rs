@@ -1,5 +1,6 @@
 #![deny(clippy::print_stdout, clippy::print_stderr)]
 
+mod ai_eval;
 mod description_generation;
 mod export;
 mod generate_test_urls;
@@ -279,6 +280,21 @@ enum Commands {
         #[arg(long)]
         weights: Option<PathBuf>,
     },
+    /// Evaluate AI models against the committed golden sets (data/ai-evals)
+    AiEval {
+        /// Suite to run: ingredient-weights, food-estimates, ingredient-names, or all
+        #[arg(long, default_value = "all")]
+        suite: String,
+        /// Comma-separated OpenRouter model ids
+        #[arg(long, value_delimiter = ',')]
+        models: Vec<String>,
+        /// Items per call (production asks 40)
+        #[arg(long, default_value_t = ai_eval::BATCH)]
+        batch_size: usize,
+        /// Regenerate the golden sets from the committed catalog instead of running
+        #[arg(long)]
+        write_golden: bool,
+    },
     /// Generate a title-normalization mapping from a .paprikarecipes file
     TitleNormalizationTest {
         /// Path to the .paprikarecipes file
@@ -503,6 +519,14 @@ async fn main() -> Result<()> {
                 weights.as_deref(),
             )?;
         }
+        Commands::AiEval {
+            suite,
+            models,
+            batch_size,
+            write_golden,
+        } => {
+            ai_eval::run(Path::new("."), &suite, &models, batch_size, write_golden).await?;
+        }
         Commands::TitleNormalizationTest {
             file,
             titles_file,
@@ -626,6 +650,7 @@ fn command_slug(cmd: &Commands) -> &'static str {
         Commands::IngredientCatalogAudit { .. } => "ingredient-catalog-audit",
         Commands::CatalogCleanAliases => "catalog-clean-aliases",
         Commands::IngredientCatalogUnresolved { .. } => "ingredient-catalog-unresolved",
+        Commands::AiEval { .. } => "ai-eval",
         Commands::TitleNormalizationTest { .. } => "title-normalization-test",
         Commands::DescriptionGenerationTest { .. } => "description-generation-test",
     }

@@ -7,7 +7,9 @@ use serde::Deserialize;
 use crate::ai::prompts::resolve_ingredient_names::{
     render_resolve_ingredient_names_prompt, NameQuery, RESOLVE_INGREDIENT_NAMES_PROMPT_NAME,
 };
-use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage};
+use crate::ai::{
+    complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage, INGREDIENT_MAX_TOKENS,
+};
 use crate::catalog::EstimatedFood;
 
 #[derive(Debug, Deserialize)]
@@ -65,7 +67,7 @@ pub async fn resolve_ingredient_names(
             names,
         ))],
         json_response: true,
-        max_tokens: Some(4096),
+        max_tokens: Some(INGREDIENT_MAX_TOKENS),
         temperature: Some(0.0),
     };
     let (parsed, response): (Response, _) =

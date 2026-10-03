@@ -490,6 +490,7 @@ mod tests {
             api_key: "test-key".to_string(),
             model: "test/model".to_string(),
             image_model: "test/image-model".to_string(),
+            ingredient_model: "test-ingredient-model".to_string(),
             base_url: DEFAULT_BASE_URL.to_string(),
             cache_dir: dir.path().to_path_buf(),
             rate_limit_ms: 0,

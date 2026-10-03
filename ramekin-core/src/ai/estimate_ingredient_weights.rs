@@ -8,7 +8,9 @@ use serde::Deserialize;
 use crate::ai::prompts::estimate_ingredient_weights::{
     render_estimate_ingredient_weights_prompt, ESTIMATE_INGREDIENT_WEIGHTS_PROMPT_NAME,
 };
-use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage};
+use crate::ai::{
+    complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage, INGREDIENT_MAX_TOKENS,
+};
 
 #[derive(Debug, Deserialize)]
 struct Response {
@@ -47,7 +49,7 @@ pub async fn estimate_ingredient_weights(
             render_estimate_ingredient_weights_prompt(items),
         )],
         json_response: true,
-        max_tokens: Some(4096),
+        max_tokens: Some(INGREDIENT_MAX_TOKENS),
         temperature: Some(0.0),
     };
     let (parsed, response): (Response, _) =

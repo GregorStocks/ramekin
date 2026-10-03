@@ -8,6 +8,10 @@ pub const DEFAULT_BASE_URL: &str = "https://openrouter.ai/api/v1";
 
 /// Default model to use.
 pub const DEFAULT_MODEL: &str = "google/gemini-2.5-flash";
+/// Default model for ingredient names and weights, chosen with `make ai-eval`
+/// (data/ai-evals/): the most consistent of the current models across all
+/// three ingredient suites and both batch sizes.
+pub const DEFAULT_INGREDIENT_MODEL: &str = "google/gemini-3.8-flash";
 /// Default model to use for image generation.
 pub const DEFAULT_IMAGE_MODEL: &str = "google/gemini-2.5-flash-image";
 
@@ -15,6 +19,9 @@ pub const DEFAULT_IMAGE_MODEL: &str = "google/gemini-2.5-flash-image";
 pub const DEFAULT_RATE_LIMIT_MS: u64 = 500;
 /// Default request timeout in seconds.
 pub const DEFAULT_REQUEST_TIMEOUT_SECS: u64 = 30;
+/// The least request timeout for ingredient calls. They run in the
+/// background, and a batch of 40 takes the ingredient model 20-40 s.
+pub const INGREDIENT_TIMEOUT_SECS: u64 = 120;
 
 #[derive(Error, Debug, Clone)]
 pub enum ConfigError {
@@ -35,6 +42,8 @@ pub struct AiConfig {
     pub model: String,
     /// Model name for image generation.
     pub image_model: String,
+    /// Model name for ingredient names and weights (`for_ingredients`).
+    pub ingredient_model: String,
     /// Base URL for the API.
     pub base_url: String,
     /// Directory for caching responses.
@@ -54,6 +63,7 @@ impl AiConfig {
     /// Optional:
     /// - `RAMEKIN_AI_MODEL`: Model name (default: "google/gemini-2.5-flash")
     /// - `RAMEKIN_AI_IMAGE_MODEL`: Image model name (default: "google/gemini-2.5-flash-image")
+    /// - `RAMEKIN_AI_INGREDIENT_MODEL`: Ingredient names and weights model (default: "google/gemini-3.8-flash")
     /// - `RAMEKIN_AI_BASE_URL`: API base URL (default: "https://openrouter.ai/api/v1")
     /// - `RAMEKIN_AI_CACHE_DIR`: Cache directory (default: "~/.ramekin/ai-cache")
     /// - `RAMEKIN_AI_RATE_LIMIT_MS`: Rate limit in ms (default: 500)
@@ -64,6 +74,8 @@ impl AiConfig {
         let model = env::var("RAMEKIN_AI_MODEL").unwrap_or_else(|_| DEFAULT_MODEL.to_string());
         let image_model =
             env::var("RAMEKIN_AI_IMAGE_MODEL").unwrap_or_else(|_| DEFAULT_IMAGE_MODEL.to_string());
+        let ingredient_model = env::var("RAMEKIN_AI_INGREDIENT_MODEL")
+            .unwrap_or_else(|_| DEFAULT_INGREDIENT_MODEL.to_string());
 
         let base_url =
             env::var("RAMEKIN_AI_BASE_URL").unwrap_or_else(|_| DEFAULT_BASE_URL.to_string());
@@ -86,11 +98,22 @@ impl AiConfig {
             api_key,
             model,
             image_model,
+            ingredient_model,
             base_url,
             cache_dir,
             rate_limit_ms,
             request_timeout_secs,
         })
+    }
+
+    /// This configuration for ingredient names and weights: their model, and
+    /// a timeout long enough for a batch.
+    pub fn for_ingredients(&self) -> Self {
+        Self {
+            model: self.ingredient_model.clone(),
+            request_timeout_secs: self.request_timeout_secs.max(INGREDIENT_TIMEOUT_SECS),
+            ..self.clone()
+        }
     }
 
     /// Cache directory namespaced by API endpoint.
@@ -178,11 +201,26 @@ mod tests {
             api_key: "test-key".to_string(),
             model: DEFAULT_MODEL.to_string(),
             image_model: DEFAULT_IMAGE_MODEL.to_string(),
+            ingredient_model: DEFAULT_INGREDIENT_MODEL.to_string(),
             base_url: base_url.to_string(),
             cache_dir: std::path::PathBuf::from("/tmp/ai-cache"),
             rate_limit_ms: 0,
             request_timeout_secs: 1,
         }
+    }
+
+    #[test]
+    fn ingredient_calls_use_their_model_and_a_batch_length_timeout() {
+        let config = config_with_base_url(DEFAULT_BASE_URL);
+        let ingredients = config.for_ingredients();
+        assert_eq!(ingredients.model, DEFAULT_INGREDIENT_MODEL);
+        assert_eq!(ingredients.request_timeout_secs, INGREDIENT_TIMEOUT_SECS);
+        // A longer configured timeout is kept.
+        let patient = AiConfig {
+            request_timeout_secs: 600,
+            ..config
+        };
+        assert_eq!(patient.for_ingredients().request_timeout_secs, 600);
     }
 
     #[test]

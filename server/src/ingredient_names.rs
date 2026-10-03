@@ -49,10 +49,11 @@ static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
 static NAMES_SAVED: AtomicBool = AtomicBool::new(false);
 pub(crate) static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
 /// One client for the process, so its rate limit spaces every call, with
-/// the model it asks.
+/// the model it asks: the ingredient model (`AiConfig::for_ingredients`).
 pub(crate) static CLIENT: LazyLock<Result<(CachingAiClient, String), ConfigError>> =
     LazyLock::new(|| {
         AiConfig::from_env().map(|config| {
+            let config = config.for_ingredients();
             let model = config.model.clone();
             (CachingAiClient::new(config), model)
         })
