@@ -130,7 +130,7 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
         &Weights::new(),
     )
     .unwrap();
-    assert_eq!(result.lines[0].text, "Negligible");
+    assert_eq!(result.lines[0].text, "Negligible (estimated calories)");
     assert!(result.weight_gaps.is_empty());
 }
 

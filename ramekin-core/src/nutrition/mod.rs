@@ -839,6 +839,15 @@ fn serving_count(servings: &str) -> Option<CalorieRange> {
 }
 
 /// `estimate_with` using only the committed catalog.
+/// Whether the line counts a learned estimate: no catalog food, but an
+/// estimated one.
+fn estimated_food_line(ingredient: &ParsedIngredient, learned: &catalog::Learned) -> bool {
+    matches!(
+        catalog::resolve_line_with(&ingredient.item, ingredient.note.as_deref(), learned),
+        Resolution::Unresolved
+    ) && catalog::learned_estimate(&ingredient.item, learned).is_some()
+}
+
 /// The catalog key a learned answer chose for an ambiguous name ("cheese"),
 /// when the line used it.
 fn learned_default<'a>(
@@ -903,6 +912,11 @@ pub fn estimate_with(
             Ok(Line::Skipped) => (None, "Not a food".to_string()),
             Ok(Line::Negligible) => {
                 known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });
+                // A zero-calorie estimated food is negligible on the model's
+                // word; say so, as for any estimated food.
+                if estimated_food_line(ingredient, learned) {
+                    guess = Guess::Food;
+                }
                 (
                     Some(CalorieRange { min: 0.0, max: 0.0 }),
                     "Negligible".to_string(),
