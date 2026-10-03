@@ -131,6 +131,31 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
     )
     .unwrap();
     assert_eq!(result.lines[0].text, "Negligible (estimated calories)");
+    // An estimated fat listed for frying follows the frying-medium rule.
+    let fat = self::learned(&[(
+        "vanaspati",
+        LearnedTarget::Estimate(EstimatedFood {
+            kcal_per_100g: 880.0,
+            grams_per_cup: Some(205.0),
+            grams_per_piece: None,
+        }),
+    )]);
+    let frying = ParsedIngredient {
+        note: Some("for frying".into()),
+        ..grams_line("vanaspati", "2", "cups")
+    };
+    let result = estimate_with(&[frying], None, 1.0, &fat, &Weights::new()).unwrap();
+    assert!(result.known_calories.is_none());
+    assert_eq!(
+        result.unknown_ingredients[0].reason,
+        "Frying oil: only part of it is absorbed"
+    );
+    let browning = ParsedIngredient {
+        note: Some("for frying".into()),
+        ..grams_line("vanaspati", "1", "tbsp")
+    };
+    let result = estimate_with(&[browning], None, 1.0, &fat, &Weights::new()).unwrap();
+    assert!(result.known_calories.is_some());
     assert!(result.weight_gaps.is_empty());
 }
 

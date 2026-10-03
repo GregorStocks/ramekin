@@ -568,6 +568,9 @@ fn measurement_total(
     Ok(total)
 }
 
+/// Calories per 100 g at which an estimated food counts as a cooking fat.
+const ESTIMATED_FAT_KCAL: f64 = 800.0;
+
 /// Above this, oil listed "for frying" is a frying medium (about 1/4 cup of oil).
 const FRYING_KEPT_KCAL: f64 = 500.0;
 
@@ -683,14 +686,25 @@ fn estimated_food_calories(
     if entry.zero_calorie {
         return Ok(Line::Negligible);
     }
-    measured_calories(ingredient, &food(&entry, estimated)?).map(|(range, estimated_weight)| {
+    let calories = measured_calories(ingredient, &food(&entry, estimated)?);
+    let line = |(range, estimated_weight): (CalorieRange, bool)| {
         let guess = if estimated_weight {
             Guess::FoodAndWeight
         } else {
             Guess::Food
         };
         Line::Calories(range, guess)
-    })
+    };
+    // An estimated fat (vanaspati "for frying") follows the frying-medium rule
+    // like a catalog oil. With no USDA description to go by, anything this
+    // energy-dense is a fat: oils, ghee, lard and shortening are 800-900.
+    if is_frying_medium(ingredient) && estimate.kcal_per_100g >= ESTIMATED_FAT_KCAL {
+        return match calories {
+            Ok(counted) if counted.0.max <= FRYING_KEPT_KCAL => Ok(line(counted)),
+            _ => Err("Frying oil: only part of it is absorbed"),
+        };
+    }
+    calories.map(line)
 }
 
 /// The line's calories weighed with the catalog alone, or failing that with
