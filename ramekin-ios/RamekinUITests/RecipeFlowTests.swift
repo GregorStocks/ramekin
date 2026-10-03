@@ -68,13 +68,14 @@ final class RecipeFlowTests: XCTestCase {
         line: UInt = #line
     ) {
         field.tap()
-        // An empty field reports its placeholder as its value.
+        // An empty field reports its placeholder as its value, which can't be
+        // told apart from a prefilled value equal to the placeholder (the
+        // server URL field). Deleting past the start of the text is harmless,
+        // so always delete as many characters as the reported value.
         let current = field.value as? String ?? ""
-        if !current.isEmpty && current != field.placeholderValue {
-            // A tap past the end of the text puts the cursor after it.
-            field.coordinate(withNormalizedOffset: CGVector(dx: 0.98, dy: 0.5)).tap()
-            field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count))
-        }
+        // A tap past the end of the text puts the cursor after it.
+        field.coordinate(withNormalizedOffset: CGVector(dx: 0.98, dy: 0.5)).tap()
+        field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count))
         field.typeText(text)
         // A secure field reports one bullet per character.
         let expected = field.elementType == .secureTextField
