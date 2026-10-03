@@ -91,9 +91,7 @@ impl PipelineStep for ResolveIngredientNamesStep {
         }
         Self::result(
             start,
-            resolve_pending(&self.pool, Some(names))
-                .await
-                .map(|()| count),
+            resolve_pending(&self.pool, names).await.map(|()| count),
         )
     }
 }

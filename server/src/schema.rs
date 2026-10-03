@@ -28,6 +28,20 @@ diesel::table! {
 }
 
 diesel::table! {
+    ingredient_weight_estimates (food, unit) {
+        food -> Text,
+        unit -> Text,
+        status -> Text,
+        grams -> Nullable<Float8>,
+        model -> Nullable<Text>,
+        error -> Nullable<Text>,
+        attempts -> Int4,
+        created_at -> Timestamptz,
+        updated_at -> Timestamptz,
+    }
+}
+
+diesel::table! {
     meal_plans (id) {
         id -> Uuid,
         user_id -> Uuid,
@@ -219,6 +233,7 @@ diesel::joinable!(user_tags -> users (user_id));
 diesel::allow_tables_to_appear_in_same_query!(
     client_log_uploads,
     ingredient_name_resolutions,
+    ingredient_weight_estimates,
     meal_plans,
     photo_thumbnails,
     photos,

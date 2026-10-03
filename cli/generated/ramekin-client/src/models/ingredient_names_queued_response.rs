@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct IngredientNamesQueuedResponse {
-    /// Names queued for resolution by this call.
+    /// Names and weights queued again by this call.
     #[serde(rename = "queued")]
     pub queued: i32,
 }

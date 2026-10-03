@@ -2,6 +2,7 @@
 
 pub mod auto_tag;
 pub mod custom_enrich;
+pub mod estimate_ingredient_weights;
 pub mod generate_description;
 pub mod generate_recipe_photo;
 pub mod normalize_title;

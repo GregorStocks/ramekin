@@ -50,6 +50,8 @@ from ramekin_client.models.ingredient import Ingredient
 from ramekin_client.models.ingredient_name_failure import IngredientNameFailure
 from ramekin_client.models.ingredient_names_queued_response import IngredientNamesQueuedResponse
 from ramekin_client.models.ingredient_names_status_response import IngredientNamesStatusResponse
+from ramekin_client.models.ingredient_weight_failure import IngredientWeightFailure
+from ramekin_client.models.ingredient_weights_status import IngredientWeightsStatus
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse

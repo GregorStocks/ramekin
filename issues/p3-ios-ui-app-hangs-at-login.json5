@@ -1,0 +1,22 @@
+{
+  "title": "iOS UI tests intermittently hang on CI (app unresponsive in testRecipeFlow)",
+  "description": "On PR #722 (server-side catalog data only), the macOS iOS UI Tests job failed in RecipeFlowTests.testRecipeFlow after 253 s. After logging in, XCUITest polled for the 'Recipes' NavigationBar, then could not find the target application at all ('Find the Target Application com.ramekin.app' retried for 90 s), and failed with 'Failed to get matching snapshot: Timed out while evaluating UI query' (RecipeFlowTests.swift:91). \
+Rerunning the failed job passed (run 36822014393). \
+The app hung before any recipe or calorie screen, so it looks like a simulator or app hang on the runner rather than a product bug, but it has not been diagnosed. \
+If it recurs: capture the simulator's app logs on failure (see p4-ios-ui-timeout-drops-test-results) and check whether login's first recipe-list fetch or sync can block the main thread. \
+Recurred on PR #729 (run 37079044189, commit a05d0245b): testRecipeFlow failed at RecipeFlowTests.swift:221 with 'Failed to tap \"Add to Shopping List\" Button: Timed out while evaluating UI query' after 310 s, and the next test, testTextRecipeReviewAndSave, failed with 'Failed to terminate com.ramekin.app'. \
+So the app was unresponsive after login this time, not at it. \
+Rerunning the failed jobs passed. \
+The earlier push bdeb58738 of the same PR also passed. #729 makes the recipe calorie estimate return `resolving` while estimated weights are pending, so the app polls it every 2 s for a moment; worth ruling out that polling or its re-render keeps the app from going idle, though the rerun passing argues against a deterministic cause. \
+The next push (run 37082683506) failed differently and earlier: testRecipeFlow at RecipeFlowTests.swift:120, where the typed server URL never showed up as the field's accessibility value ('Expected accessibility value: http://localhost:55000'). \
+That's on the login screen before any request, so the simulator is flaky at text entry too, not only after login.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "flaky-test",
+  ],
+  "created_at": "2026-10-01T09:20:00.000000-07:00",
+  "updated_at": "2026-10-02T17:20:00.000000-07:00",
+}

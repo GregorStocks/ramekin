@@ -35,7 +35,7 @@ class CalorieEstimateResponse(BaseModel):
     lines: List[CalorieLine] = Field(description="The breakdown, one entry per ingredient in order.")
     not_counted: List[StrictStr] = Field(description="Ingredients the figures leave out, in recipe order: those given no amount (even in a complete estimate), and for a partial estimate the ones that couldn't be counted.")
     per_serving_calories: Optional[CalorieRange] = None
-    resolving: StrictBool = Field(description="Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them.")
+    resolving: StrictBool = Field(description="Some ingredient names are still being recognized, or weights estimated, in the background; ask again shortly for an estimate that includes them.")
     secondary: Optional[StrictStr] = Field(default=None, description="Shown under the headline when present.")
     status: CalorieStatus
     __properties: ClassVar[List[str]] = ["database_version", "headline", "known_calories", "lines", "not_counted", "per_serving_calories", "resolving", "secondary", "status"]

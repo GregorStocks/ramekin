@@ -396,7 +396,8 @@ accounts. `learned.rs` is the pure half:
 - `resolve_line_with(item, note, &Learned)` consults a stored answer only after
   the committed catalog says `Unresolved`. An answer is a catalog key, re-resolved
   through the catalog (`Via::Learned`), so calories, density and category all
-  come from committed data. A model never supplies numbers.
+  come from committed data. A name's answer never supplies numbers; weights
+  are separate and labeled (below).
 - `categorize_with(item, &Learned)` uses a learned entry's catalog category when
   it has one. Otherwise the item's own keywords decide, then the key's, so a
   learned answer never loses a category the keywords already gave. A learned
@@ -407,6 +408,16 @@ every recipe and shopping-list save, the background worker, the scrape step
 `resolve_ingredient_names`, and Settings → Ingredient recognition) is in
 `server/src/ingredient_names.rs`. Harvesting good answers back into
 `curated.json` is `p2-catalog-harvest-learned-names`.
+
+Weights work the same way one level down. A known food with no density, or no
+piece weight for a counted unit, makes `nutrition::estimate_with` report a
+`WeightKey { food: entry.id, unit }` gap ("cup" for any volume, the
+`piece_unit` spelling for a counted unit, "piece" for a bare count). The server
+stores model estimates in `ingredient_weight_estimates`
+(`server/src/ingredient_weights.rs`), and estimates read them back as
+`nutrition::Weights`, only after every measurement has failed to weigh with
+catalog data. These are model numbers, so the line is labeled "estimated
+weight"; good ones belong in `bespoke.json` or a curated `grams_per_cup`.
 
 ## Classification passes
 

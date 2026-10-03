@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List
 from ramekin_client.models.ingredient_name_failure import IngredientNameFailure
+from ramekin_client.models.ingredient_weights_status import IngredientWeightsStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,7 +34,8 @@ class IngredientNamesStatusResponse(BaseModel):
     pending: StrictInt = Field(description="Waiting for the background resolver.")
     recognized: StrictInt = Field(description="Resolved to a catalog food or product.")
     unknown: StrictInt = Field(description="Resolved, but the model couldn't tell; still unknown in estimates.")
-    __properties: ClassVar[List[str]] = ["failed", "failures", "not_food", "pending", "recognized", "unknown"]
+    weights: IngredientWeightsStatus
+    __properties: ClassVar[List[str]] = ["failed", "failures", "not_food", "pending", "recognized", "unknown", "weights"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +83,9 @@ class IngredientNamesStatusResponse(BaseModel):
                 if _item_failures:
                     _items.append(_item_failures.to_dict())
             _dict['failures'] = _items
+        # override the default output from pydantic by calling `to_dict()` of weights
+        if self.weights:
+            _dict['weights'] = self.weights.to_dict()
         return _dict
 
     @classmethod
@@ -98,7 +103,8 @@ class IngredientNamesStatusResponse(BaseModel):
             "not_food": obj.get("not_food"),
             "pending": obj.get("pending"),
             "recognized": obj.get("recognized"),
-            "unknown": obj.get("unknown")
+            "unknown": obj.get("unknown"),
+            "weights": IngredientWeightsStatus.from_dict(obj["weights"]) if obj.get("weights") is not None else None
         })
         return _obj
 

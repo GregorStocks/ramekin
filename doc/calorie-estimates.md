@@ -106,6 +106,23 @@ While any of an estimate's names is still pending, the response sets
 `resolving`. The web and iOS clients then re-request the same estimate every
 2 seconds, keeping the current one on screen, until it clears.
 
+## Weights the catalog doesn't have
+
+A known food can still be unweighable: no density for a volume ("2 tbsp
+capers"), or no weight for a counted unit ("1 bunch kale", "2 jars capers", a
+bare "3 shallots" with no default piece). The estimate reports each such gap as
+(catalog food, unit), with "cup" standing for any volume and "piece" for a bare
+count, but only for lines no measurement can be weighed with catalog data alone.
+The estimate endpoint queues the gaps it sees, and the same background worker
+asks the LLM for grams per unit, stored once per (food, unit) and shared across
+accounts. The endpoint never calls the LLM itself, and sets `resolving` while
+any of its gaps is pending. A line weighed with an estimate says so: "~40 kcal
+(estimated weight)". A weight the model says has no typical value (null) stays
+unknown, and failures show and retry in Settings → Ingredient recognition.
+Answers must be plausible (5–700 g per cup, 0.01–5000 g per other unit) or the
+batch is rejected. An estimate's version doesn't change when a weight arrives,
+like a learned name.
+
 ## Negligible, compound, and non-food lines
 
 Some lines are known without a usable amount (rules in the catalog README):

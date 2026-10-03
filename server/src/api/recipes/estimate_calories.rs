@@ -3,7 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::models::Ingredient;
 use axum::{extract::State, Json};
-use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
+use ramekin_core::ingredient_parser::ParsedIngredient;
 use ramekin_core::nutrition;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
@@ -95,8 +95,9 @@ pub struct CalorieEstimateResponse {
     pub per_serving_calories: Option<CalorieRange>,
     /// The breakdown, one entry per ingredient in order.
     pub lines: Vec<CalorieLine>,
-    /// Some ingredient names are still being recognized in the background;
-    /// ask again shortly for an estimate that includes them.
+    /// Some ingredient names are still being recognized, or weights
+    /// estimated, in the background; ask again shortly for an estimate that
+    /// includes them.
     pub resolving: bool,
 }
 
@@ -117,28 +118,12 @@ pub async fn estimate_calories(
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<EstimateCaloriesRequest>,
 ) -> Result<Json<CalorieEstimateResponse>, ApiError> {
-    let ingredients = request
-        .ingredients
-        .into_iter()
-        .map(|ingredient| ParsedIngredient {
-            item: ingredient.item,
-            measurements: ingredient
-                .measurements
-                .into_iter()
-                .map(|m| Measurement {
-                    amount: m.amount,
-                    unit: m.unit,
-                })
-                .collect(),
-            note: ingredient.note,
-            section: ingredient.section,
-            raw: None,
-        })
-        .collect::<Vec<_>>();
+    let ingredients: Vec<ParsedIngredient> =
+        request.ingredients.into_iter().map(Into::into).collect();
     // Stored answers for names the committed catalog doesn't know; names not
     // resolved yet read as unknown.
     let items: Vec<String> = ingredients.iter().map(|i| i.item.clone()).collect();
-    let (learned, resolving) = run_db(&pool, move |conn| {
+    let (learned, resolving_names) = run_db(&pool, move |conn| {
         let names = || items.iter().map(String::as_str);
         crate::ingredient_names::load_learned(conn, names())
             .and_then(|learned| {
@@ -151,13 +136,32 @@ pub async fn estimate_calories(
             })
     })
     .await?;
-    let result = nutrition::estimate_with(
-        &ingredients,
-        request.servings.as_deref(),
-        request.scale,
-        &learned,
-    )
-    .map_err(ApiError::invalid_request)?;
+    let estimate = |weights: &nutrition::Weights| {
+        nutrition::estimate_with(
+            &ingredients,
+            request.servings.as_deref(),
+            request.scale,
+            &learned,
+            weights,
+        )
+        .map_err(ApiError::invalid_request)
+    };
+    // Weights the catalog lacks for foods it knows: estimated in the
+    // background once reported, then read back here. Queuing a gap is the
+    // only write; the model is never called on this path.
+    let gaps = estimate(&nutrition::Weights::new())?.weight_gaps;
+    let (weights, resolving_weights) = run_db(&pool, move |conn| {
+        crate::ingredient_weights::load_and_enqueue(conn, &gaps).map_err(|e| {
+            tracing::error!("Failed to load estimated ingredient weights: {}", e);
+            ApiError::internal("Failed to load ingredient weights")
+        })
+    })
+    .await?;
+    if resolving_weights {
+        crate::ingredient_names::wake();
+    }
+    let result = estimate(&weights)?;
+    let resolving = resolving_names || resolving_weights;
     Ok(Json(CalorieEstimateResponse {
         database_version: result.database_version,
         status: result.status.into(),

@@ -1,5 +1,7 @@
 //! Deterministic estimates from the ingredient catalog. Unknown is never zero.
 
+use std::cell::RefCell;
+use std::collections::{BTreeSet, HashMap};
 use std::sync::LazyLock;
 
 use regex::Regex;
@@ -8,16 +10,125 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v13";
+const RULE_VERSION: &str = "calories-v14";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
 
+/// A weight the catalog lacks for one food: grams per `unit` of the catalog
+/// entry `food` (its id). `unit` is "cup" for any volume (a missing density),
+/// else the counted unit in the catalog's piece spelling ("bunch", "head",
+/// "large"), or "piece" for a bare count.
+#[derive(Debug, Clone, PartialEq, Eq, Hash, PartialOrd, Ord)]
+pub struct WeightKey {
+    pub food: String,
+    pub unit: String,
+}
+
+/// The units a weight is estimated for, in `catalog::piece_unit` spelling:
+/// "cup" for any volume, "piece" for a bare count, sizes, and common counted
+/// units and packages. Anything else ("1/2-inch pieces", a typo) stays unknown
+/// rather than becoming a paid question.
+pub const ESTIMABLE_UNITS: &[&str] = &[
+    "bag",
+    "ball",
+    "bar",
+    "block",
+    "bottle",
+    "box",
+    "breast",
+    "bulb",
+    "bunch",
+    "can",
+    "carton",
+    "chop",
+    "clove",
+    "container",
+    "cube",
+    "cup",
+    "ear",
+    "envelope",
+    "extra large",
+    "fillet",
+    "handful",
+    "head",
+    "heart",
+    "jar",
+    "jumbo",
+    "knob",
+    "large",
+    "leaf",
+    "leg",
+    "link",
+    "loaf",
+    "medium",
+    "package",
+    "packet",
+    "piece",
+    "pouch",
+    "rib",
+    "ring",
+    "roll",
+    "sheet",
+    "slab",
+    "slice",
+    "small",
+    "spear",
+    "sprig",
+    "stalk",
+    "steak",
+    "stem",
+    "stick",
+    "strip",
+    "thigh",
+    "tube",
+    "tub",
+    "wedge",
+    "whole",
+    "wing",
+];
+
+/// Model-estimated weights the server stores for gaps an estimate reported
+/// (`Estimate::weight_gaps`); a line weighed with one says so.
+pub type Weights = HashMap<WeightKey, f64>;
+
+/// Where a matched food's weights come from: the catalog, then (when given)
+/// estimated weights, recording any that are missing.
+struct WeightSource<'a> {
+    weights: &'a Weights,
+    gaps: &'a RefCell<BTreeSet<WeightKey>>,
+}
+
 /// The catalog attributes an estimate needs for one matched ingredient.
+#[derive(Clone, Copy)]
 struct Food<'a> {
     kcal_per_100g: f64,
     /// Supplies the density and per-piece weights.
     entry: &'a Entry,
+    /// Estimated weights for what the entry lacks; None weighs with the
+    /// catalog alone.
+    estimated: Option<&'a WeightSource<'a>>,
+}
+
+impl Food<'_> {
+    /// An estimated weight for a unit the entry has none for, recording the
+    /// gap when there's no estimate yet. Only `ESTIMABLE_UNITS` are asked
+    /// about, so what a request can queue is bounded by the catalog.
+    fn estimated(&self, unit: &str) -> Option<f64> {
+        let source = self.estimated?;
+        if !ESTIMABLE_UNITS.contains(&unit) {
+            return None;
+        }
+        let key = WeightKey {
+            food: self.entry.id.clone(),
+            unit: unit.to_string(),
+        };
+        let grams = source.weights.get(&key).copied();
+        if grams.is_none() {
+            source.gaps.borrow_mut().insert(key);
+        }
+        grams
+    }
 }
 
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -79,6 +190,9 @@ pub struct Estimate {
     /// partial or insufficient. Internal reasons, as above.
     pub no_amount: Vec<UnknownIngredient>,
     pub lines: Vec<LineEstimate>,
+    /// Weights uncounted lines need that `weights` didn't have, for the
+    /// server to have estimated.
+    pub weight_gaps: Vec<WeightKey>,
 }
 
 /// The most uncounted ingredients an estimate can have and still show a
@@ -198,17 +312,19 @@ fn is_negligible(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bo
                 || is_unweighed_spoonful(entry, ingredient, scale)))
 }
 
-fn food(entry: &Entry) -> Result<Food<'_>, &'static str> {
+fn food<'a>(entry: &'a Entry, estimated: &'a WeightSource<'a>) -> Result<Food<'a>, &'static str> {
     let kcal_per_100g = entry.kcal_per_100g.ok_or("No supported nutrition match")?;
     Ok(Food {
         kcal_per_100g,
         entry,
+        estimated: Some(estimated),
     })
 }
 
 /// What one ingredient line adds to the estimate.
 enum Line {
-    Calories(CalorieRange),
+    /// Counted; the bool says an estimated weight was used.
+    Calories(CalorieRange, bool),
     /// Too little to matter (salt, a pinch of spice, a few bay leaves).
     Negligible,
     /// Not something eaten (a leftover header, parchment paper).
@@ -367,6 +483,7 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str>
     let normalized = normalize(unit);
     if normalized.is_empty() {
         return catalog::grams_per_piece(food.entry, None)
+            .or_else(|| food.estimated("piece"))
             .map(exact)
             .ok_or("Unsupported quantity unit");
     }
@@ -385,6 +502,7 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str>
     let unit = unit.as_str();
     let Some(cups) = catalog::volume_to_cups(1.0, unit) else {
         return catalog::grams_per_piece(food.entry, Some(unit))
+            .or_else(|| food.estimated(&catalog::piece_unit(unit)))
             .map(exact)
             .ok_or("Unsupported quantity unit");
     };
@@ -392,6 +510,7 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str>
         cups * food
             .entry
             .grams_per_cup
+            .or_else(|| food.estimated("cup"))
             .ok_or("Missing density for this food")?,
     ))
 }
@@ -458,6 +577,7 @@ fn contribution(
     ingredient: &ParsedIngredient,
     scale: f64,
     learned: &catalog::Learned,
+    estimated: &WeightSource,
 ) -> Result<Line, &'static str> {
     let entry =
         match catalog::resolve_line_with(&ingredient.item, ingredient.note.as_deref(), learned) {
@@ -489,19 +609,41 @@ fn contribution(
     if is_negligible(entry, ingredient, scale) {
         return Ok(Line::Negligible);
     }
-    let calories = measured_calories(ingredient, &food(entry)?);
+    let calories = measured_calories(ingredient, &food(entry, estimated)?);
     if is_frying_medium(ingredient) && is_cooking_fat(entry) {
         // A deep-frying amount is mostly discarded; a spoonful for browning
         // stays in the dish.
         return match calories {
-            Ok(range) if range.max <= FRYING_KEPT_KCAL => Ok(Line::Calories(range)),
+            Ok((range, guessed)) if range.max <= FRYING_KEPT_KCAL => {
+                Ok(Line::Calories(range, guessed))
+            }
             _ => Err("Frying oil: only part of it is absorbed"),
         };
     }
-    calories.map(Line::Calories)
+    calories.map(|(range, guessed)| Line::Calories(range, guessed))
 }
 
+/// The line's calories weighed with the catalog alone, or failing that with
+/// estimated weights (true when one was used). Every measurement gets the
+/// catalog's chance first, so an estimate never replaces a weighable amount.
 fn measured_calories(
+    ingredient: &ParsedIngredient,
+    food: &Food,
+) -> Result<(CalorieRange, bool), &'static str> {
+    let committed = Food {
+        estimated: None,
+        ..*food
+    };
+    match catalog_calories(ingredient, &committed) {
+        Ok(range) => Ok((range, false)),
+        Err(reason) if food.estimated.is_some() => catalog_calories(ingredient, food)
+            .map(|range| (range, true))
+            .map_err(|_| reason),
+        Err(reason) => Err(reason),
+    }
+}
+
+fn catalog_calories(
     ingredient: &ParsedIngredient,
     food: &Food,
 ) -> Result<CalorieRange, &'static str> {
@@ -632,16 +774,24 @@ pub fn estimate(
     servings: Option<&str>,
     scale: f64,
 ) -> Result<Estimate, &'static str> {
-    estimate_with(ingredients, servings, scale, &catalog::Learned::new())
+    estimate_with(
+        ingredients,
+        servings,
+        scale,
+        &catalog::Learned::new(),
+        &Weights::new(),
+    )
 }
 
 /// All arithmetic and presentation are computed here; clients render the result.
-/// `learned` holds stored answers for names the committed catalog doesn't know.
+/// `learned` holds stored answers for names the committed catalog doesn't know,
+/// and `weights` estimated weights for foods the catalog can't weigh.
 pub fn estimate_with(
     ingredients: &[ParsedIngredient],
     servings: Option<&str>,
     scale: f64,
     learned: &catalog::Learned,
+    weights: &Weights,
 ) -> Result<Estimate, &'static str> {
     if !scale.is_finite() || scale <= 0.0 || scale > 1e6 {
         return Err("Scale must be finite, greater than zero, and at most 1000000");
@@ -650,8 +800,14 @@ pub fn estimate_with(
     let mut unknown_ingredients = Vec::new();
     let mut no_amount = Vec::new();
     let mut lines = Vec::new();
+    let gaps = RefCell::new(BTreeSet::new());
+    let source = WeightSource {
+        weights,
+        gaps: &gaps,
+    };
     for (index, ingredient) in ingredients.iter().enumerate() {
-        let (calories, text) = match contribution(ingredient, scale, learned) {
+        let mut guessed_weight = false;
+        let (calories, text) = match contribution(ingredient, scale, learned, &source) {
             Ok(Line::Skipped) => (None, "Not a food".to_string()),
             Ok(Line::Negligible) => {
                 known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });
@@ -660,7 +816,8 @@ pub fn estimate_with(
                     "Negligible".to_string(),
                 )
             }
-            Ok(Line::Calories(value)) => {
+            Ok(Line::Calories(value, guessed)) => {
+                guessed_weight = guessed;
                 let total = known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });
                 total.min += value.min;
                 total.max += value.max;
@@ -702,9 +859,19 @@ pub fn estimate_with(
             (Resolution::Entry { entry: used, .. }, Resolution::Entry { entry: own, .. })
                 if std::ptr::eq(used, own)
         );
-        let text = match catalog::chosen_alternative(&ingredient.item) {
-            Some(alternative) if used_item_resolution => format!("{text} (assumed {alternative})"),
-            _ => text,
+        let mut notes = Vec::new();
+        if let Some(alternative) = catalog::chosen_alternative(&ingredient.item) {
+            if used_item_resolution {
+                notes.push(format!("assumed {alternative}"));
+            }
+        }
+        if guessed_weight {
+            notes.push("estimated weight".to_string());
+        }
+        let text = if notes.is_empty() {
+            text
+        } else {
+            format!("{text} ({})", notes.join("; "))
         };
         lines.push(LineEstimate {
             index,
@@ -789,5 +956,6 @@ pub fn estimate_with(
         unknown_ingredients,
         no_amount,
         lines,
+        weight_gaps: gaps.into_inner().into_iter().collect(),
     })
 }

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **pending** | **i64** | Waiting for the background resolver. | 
 **recognized** | **i64** | Resolved to a catalog food or product. | 
 **unknown** | **i64** | Resolved, but the model couldn't tell; still unknown in estimates. | 
+**weights** | [**models::IngredientWeightsStatus**](IngredientWeightsStatus.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

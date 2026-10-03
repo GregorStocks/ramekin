@@ -503,7 +503,7 @@
         "operationId": "retry_ingredient_names",
         "responses": {
           "200": {
-            "description": "Failed names queued again",
+            "description": "Failed names and weights queued again",
             "content": {
               "application/json": {
                 "schema": {
@@ -3004,7 +3004,7 @@
           },
           "resolving": {
             "type": "boolean",
-            "description": "Some ingredient names are still being recognized in the background;\nask again shortly for an estimate that includes them."
+            "description": "Some ingredient names are still being recognized, or weights\nestimated, in the background; ask again shortly for an estimate that\nincludes them."
           },
           "secondary": {
             "type": [
@@ -3754,7 +3754,7 @@
         "properties": {
           "queued": {
             "type": "integer",
-            "description": "Names queued for resolution by this call.",
+            "description": "Names and weights queued again by this call.",
             "minimum": 0
           }
         }
@@ -3767,7 +3767,8 @@
           "unknown",
           "pending",
           "failed",
-          "failures"
+          "failures",
+          "weights"
         ],
         "properties": {
           "failed": {
@@ -3801,6 +3802,74 @@
             "type": "integer",
             "format": "int64",
             "description": "Resolved, but the model couldn't tell; still unknown in estimates."
+          },
+          "weights": {
+            "$ref": "#/components/schemas/IngredientWeightsStatus"
+          }
+        }
+      },
+      "IngredientWeightFailure": {
+        "type": "object",
+        "required": [
+          "food",
+          "unit",
+          "error",
+          "attempts"
+        ],
+        "properties": {
+          "attempts": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "error": {
+            "type": "string"
+          },
+          "food": {
+            "type": "string",
+            "description": "The catalog food, as the catalog names it."
+          },
+          "unit": {
+            "type": "string"
+          }
+        }
+      },
+      "IngredientWeightsStatus": {
+        "type": "object",
+        "description": "Weights the catalog lacks for foods in the user's recipes (a density, or\na counted unit such as \"bunch\"), estimated in the background: every\nestimate for those foods, whichever view queued it.",
+        "required": [
+          "estimated",
+          "no_typical_weight",
+          "pending",
+          "failed",
+          "failures"
+        ],
+        "properties": {
+          "estimated": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Estimated; lines using one say \"estimated weight\"."
+          },
+          "failed": {
+            "type": "integer",
+            "format": "int64",
+            "description": "The last attempt failed; retry to try again."
+          },
+          "failures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IngredientWeightFailure"
+            },
+            "description": "The most recent failures."
+          },
+          "no_typical_weight": {
+            "type": "integer",
+            "format": "int64",
+            "description": "The model said there's no typical weight; still unknown in estimates."
+          },
+          "pending": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Waiting for the background estimator (queued when an estimate is shown)."
           }
         }
       },

@@ -229,6 +229,37 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 )
         return json.dumps({"resolutions": resolutions})
 
+    def _mock_estimate_ingredient_weights(self, all_text):
+        """Weigh each (food, unit): 120 g per cup, 50 g per anything else. A
+        "handful" has no typical weight (null); a unit a test marked failing
+        (/test/ingredient-name-failure) breaks the response. Calls and answers
+        are counted under the unit."""
+        items_text = all_text.split("Items:", 1)[1].split("Respond with JSON", 1)[0]
+        items = json.loads(items_text)
+        with INGREDIENT_NAME_CALLS_LOCK:
+            for item in items:
+                INGREDIENT_NAME_CALLS[item["unit"]] = (
+                    INGREDIENT_NAME_CALLS.get(item["unit"], 0) + 1
+                )
+            failing = any(item["unit"] in FAILING_INGREDIENT_NAMES for item in items)
+        if failing:
+            return '{"weights": ['
+        weights = []
+        for item in items:
+            if item["unit"] == "handful":
+                grams = None
+            elif item["unit"] == "cup":
+                grams = 120
+            else:
+                grams = 50
+            weights.append({"food": item["food"], "unit": item["unit"], "grams": grams})
+        with INGREDIENT_NAME_CALLS_LOCK:
+            for item in items:
+                INGREDIENT_NAME_ANSWERS[item["unit"]] = (
+                    INGREDIENT_NAME_ANSWERS.get(item["unit"], 0) + 1
+                )
+        return json.dumps({"weights": weights})
+
     def _generate_response_content(self, request):
         """Generate appropriate mock response based on the request type."""
         if "image" in request.get("modalities", []):
@@ -254,6 +285,9 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
 
         if "ingredient name resolver" in all_text:
             return self._mock_resolve_ingredient_names(all_text)
+
+        if "ingredient weight estimator" in all_text:
+            return self._mock_estimate_ingredient_weights(all_text)
 
         if "recipe modification assistant" in all_text:
             return self._mock_custom_enrich(all_text, has_images=has_images)

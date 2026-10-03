@@ -40,6 +40,7 @@ mod cache;
 mod client;
 mod config;
 mod custom_enrich;
+mod estimate_ingredient_weights;
 mod generate_description;
 mod generate_recipe_photo;
 mod normalize_title;
@@ -54,6 +55,9 @@ pub use cache::{AiCache, CacheKey, CacheStats, CachedAiResponse};
 pub use client::{complete_json, AiClient, AiError, CachingAiClient, UnconfiguredAiClient};
 pub use config::{AiConfig, ConfigError};
 pub use custom_enrich::{custom_enrich, CustomEnrichResult};
+pub use estimate_ingredient_weights::{
+    estimate_ingredient_weights, EstimateIngredientWeightsResult,
+};
 pub use generate_description::{generate_description, GenerateDescriptionResult};
 pub use generate_recipe_photo::{generate_recipe_photo, GenerateRecipePhotoResult};
 pub use normalize_title::{normalize_title, NormalizeTitleResult};
