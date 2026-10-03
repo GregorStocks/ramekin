@@ -12,6 +12,8 @@ import AnyCodable
 
 public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
 
+    /** A real food no catalog entry matches, counted with the model's own calories (\"estimated calories\"). */
+    public var estimated: Int64
     /** The last attempt failed; retry to try again. */
     public var failed: Int64
     /** The most recent failures. */
@@ -20,13 +22,14 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
     public var notFood: Int64
     /** Waiting for the background resolver. */
     public var pending: Int64
-    /** Resolved to a catalog food or product. */
+    /** Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means). */
     public var recognized: Int64
     /** Resolved, but the model couldn't tell; still unknown in estimates. */
     public var unknown: Int64
     public var weights: IngredientWeightsStatus
 
-    public init(failed: Int64, failures: [IngredientNameFailure], notFood: Int64, pending: Int64, recognized: Int64, unknown: Int64, weights: IngredientWeightsStatus) {
+    public init(estimated: Int64, failed: Int64, failures: [IngredientNameFailure], notFood: Int64, pending: Int64, recognized: Int64, unknown: Int64, weights: IngredientWeightsStatus) {
+        self.estimated = estimated
         self.failed = failed
         self.failures = failures
         self.notFood = notFood
@@ -37,6 +40,7 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case estimated
         case failed
         case failures
         case notFood = "not_food"
@@ -50,6 +54,7 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(estimated, forKey: .estimated)
         try container.encode(failed, forKey: .failed)
         try container.encode(failures, forKey: .failures)
         try container.encode(notFood, forKey: .notFood)

@@ -120,20 +120,24 @@ pub async fn estimate_calories(
 ) -> Result<Json<CalorieEstimateResponse>, ApiError> {
     let ingredients: Vec<ParsedIngredient> =
         request.ingredients.into_iter().map(Into::into).collect();
-    // Stored answers for names the committed catalog doesn't know; names not
-    // resolved yet read as unknown.
+    // Stored answers for names the committed catalog doesn't know or calls
+    // ambiguous. Names never asked about are queued here, so a recipe saved
+    // before a catalog change still gets them resolved; until then they read
+    // as unknown.
     let items: Vec<String> = ingredients.iter().map(|i| i.item.clone()).collect();
     let (learned, resolving_names) = run_db(&pool, move |conn| {
         let names = || items.iter().map(String::as_str);
-        // Pending first: a name leaves pending in the same update that stores
-        // its answer, so once nothing reads as pending every answer is
-        // committed and the load below sees it. Loading first could miss an
-        // answer that lands between the two reads and then report nothing
-        // pending, ending the client's polling on a stale "Not recognized".
-        crate::ingredient_names::any_pending(conn, names())
-            .and_then(|resolving| {
-                crate::ingredient_names::load_learned(conn, names())
-                    .map(|learned| (learned, resolving))
+        crate::ingredient_names::enqueue_unasked(conn, names())
+            .and_then(|unqueued| {
+                // Pending first: a name leaves pending in the same update that
+                // stores its answer, so once nothing reads as pending every
+                // answer is committed and the load below sees it. Loading
+                // first could miss an answer that lands between the two reads
+                // and then report nothing pending, ending the client's polling
+                // on a stale "Not recognized".
+                let pending = crate::ingredient_names::any_pending(conn, names())?;
+                let learned = crate::ingredient_names::load_learned(conn, names())?;
+                Ok((learned, unqueued || pending))
             })
             .map_err(|e| {
                 tracing::error!("Failed to load learned ingredient names: {}", e);
@@ -141,6 +145,9 @@ pub async fn estimate_calories(
             })
     })
     .await?;
+    if resolving_names {
+        crate::ingredient_names::wake();
+    }
     let estimate = |weights: &nutrition::Weights| {
         nutrition::estimate_with(
             &ingredients,

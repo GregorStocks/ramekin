@@ -17,10 +17,12 @@ use std::time::Duration;
 use chrono::Utc;
 use diesel::prelude::*;
 use ramekin_core::ai::{
-    resolve_ingredient_names, AiConfig, AiError, CachingAiClient, ConfigError, NameResolution,
+    resolve_ingredient_names, AiConfig, AiError, CachingAiClient, ConfigError, NameQuery,
+    NameResolution,
 };
 use ramekin_core::catalog::{
-    candidates, learned_key_resolves, unlearned_name, Learned, LearnedTarget,
+    candidates, is_ambiguous, learned_key_resolves, unlearned_name, EstimatedFood, Learned,
+    LearnedTarget,
 };
 use tokio::sync::{Mutex, Notify};
 
@@ -100,6 +102,37 @@ pub fn enqueue_items<'a>(
     enqueue(conn, &unlearned_names(items))
 }
 
+/// The most new names one read queues: a recipe rarely has more, and the
+/// rest are queued on later reads, so a read can't grow the paid queue
+/// without bound.
+const MAX_QUEUED_PER_READ: usize = 50;
+
+/// Queue `items`' unknown or ambiguous names that have no row yet, up to
+/// `MAX_QUEUED_PER_READ`. A read path calls this, so recipes saved before a
+/// catalog change (or before ambiguous names were learned) still get their
+/// names resolved. Returns whether any were left for a later read, which
+/// should keep the reader polling like a pending name.
+pub fn enqueue_unasked<'a>(
+    conn: &mut PgConnection,
+    items: impl IntoIterator<Item = &'a str>,
+) -> QueryResult<bool> {
+    let wanted = unlearned_names(items);
+    if wanted.is_empty() {
+        return Ok(false);
+    }
+    let asked: Vec<String> = names::table
+        .filter(names::name.eq_any(&wanted))
+        .select(names::name)
+        .load(conn)?;
+    let unasked: Vec<String> = wanted
+        .into_iter()
+        .filter(|name| !asked.contains(name))
+        .collect();
+    let (now, later) = unasked.split_at(unasked.len().min(MAX_QUEUED_PER_READ));
+    enqueue(conn, now)?;
+    Ok(!later.is_empty())
+}
+
 /// Wake the worker.
 pub fn wake() {
     WAKE.notify_one();
@@ -116,23 +149,47 @@ pub fn load_learned<'a>(
     if wanted.is_empty() {
         return Ok(Learned::new());
     }
-    let rows: Vec<(String, Option<String>, Option<String>)> = names::table
+    let rows: Vec<LearnedRow> = names::table
         .filter(names::name.eq_any(&wanted))
         .filter(names::status.eq(RESOLVED))
-        .select((names::name, names::disposition, names::catalog_key))
+        .select((
+            names::name,
+            names::disposition,
+            names::catalog_key,
+            names::kcal_per_100g,
+            names::grams_per_cup,
+            names::grams_per_piece,
+        ))
         .load(conn)?;
     Ok(rows
         .into_iter()
-        .map(|(name, disposition, key)| {
-            let target = match (disposition.as_deref(), key) {
-                (Some("entry"), Some(key)) => LearnedTarget::Entry(key),
-                (Some("not_food"), _) => LearnedTarget::NotFood,
+        .map(|(name, disposition, key, kcal, cup, piece)| {
+            let target = match (disposition.as_deref(), key, kcal) {
+                (Some("entry"), Some(key), _) => LearnedTarget::Entry(key),
+                (Some("estimate"), _, Some(kcal_per_100g)) => {
+                    LearnedTarget::Estimate(EstimatedFood {
+                        kcal_per_100g,
+                        grams_per_cup: cup,
+                        grams_per_piece: piece,
+                    })
+                }
+                (Some("not_food"), _, _) => LearnedTarget::NotFood,
                 _ => LearnedTarget::Unknown,
             };
             (name, target)
         })
         .collect())
 }
+
+/// Name, disposition, key, and an estimate's calories, cup and piece weights.
+type LearnedRow = (
+    String,
+    Option<String>,
+    Option<String>,
+    Option<f64>,
+    Option<f64>,
+    Option<f64>,
+);
 
 /// Whether any of `items`' unknown names is still waiting to be resolved,
 /// so a reader knows a fresher answer is coming.
@@ -403,14 +460,15 @@ async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<
 
 /// One LLM call for `batch`: each name's answer, and the model that gave it.
 async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String), AiError> {
-    let prompt: Vec<(String, Vec<String>)> = batch
+    let prompt: Vec<NameQuery> = batch
         .iter()
-        .map(|name| {
-            let keys = candidates(name, CANDIDATES)
+        .map(|name| NameQuery {
+            name: name.clone(),
+            candidates: candidates(name, CANDIDATES)
                 .into_iter()
                 .map(str::to_string)
-                .collect();
-            (name.clone(), keys)
+                .collect(),
+            ambiguous: is_ambiguous(name),
         })
         .collect();
     let (client, model) = CLIENT.as_ref().map_err(|e| AiError::Config(e.clone()))?;
@@ -430,12 +488,17 @@ async fn save_resolved(
             // to its commit as possible for incremental sync.
             let now = Utc::now();
             for (name, resolution) in &resolutions {
-                let (disposition, key) = match resolution {
-                    NameResolution::Entry(key) => ("entry", Some(key.as_str())),
-                    NameResolution::NotFood => ("not_food", None),
-                    NameResolution::Unknown => ("unknown", None),
+                let (disposition, key, estimate) = match resolution {
+                    NameResolution::Entry(key) => ("entry", Some(key.as_str()), None),
+                    NameResolution::Estimate(estimate) => ("estimate", None, Some(estimate)),
+                    NameResolution::NotFood => ("not_food", None, None),
+                    NameResolution::Unknown => ("unknown", None, None),
                 };
-                if !matches!(resolution, NameResolution::Unknown) {
+                // Only entries and non-foods can change a shopping category.
+                if matches!(
+                    resolution,
+                    NameResolution::Entry(_) | NameResolution::NotFood
+                ) {
                     touch_shopping_items(conn, name, now)?;
                 }
                 diesel::update(names::table.find(name))
@@ -443,6 +506,9 @@ async fn save_resolved(
                         names::status.eq(RESOLVED),
                         names::disposition.eq(disposition),
                         names::catalog_key.eq(key),
+                        names::kcal_per_100g.eq(estimate.map(|e| e.kcal_per_100g)),
+                        names::grams_per_cup.eq(estimate.and_then(|e| e.grams_per_cup)),
+                        names::grams_per_piece.eq(estimate.and_then(|e| e.grams_per_piece)),
                         names::model.eq(&model),
                         names::error.eq(None::<String>),
                         names::attempts.eq(names::attempts + 1),

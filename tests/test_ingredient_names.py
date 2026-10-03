@@ -345,13 +345,70 @@ def test_estimates_say_when_names_are_still_resolving(authed_api_client):
     assert resolved.lines[0].text != "Not recognized"
 
 
-def test_failed_and_unqueued_names_are_not_resolving(authed_api_client):
+def test_failed_names_are_not_resolving(authed_api_client):
     client, _ = authed_api_client
     api = RecipesApi(client)
     names_api = IngredientNamesApi(client)
     item = unique("sugar")
     mock_fail(item.lower(), True)
-    assert not estimate(api, item).resolving, "never queued"
+    try:
+        # Reading queues it, so it's resolving until the attempt fails.
+        assert estimate(api, item).resolving
+        create_recipe(api, item)
+        wait_for(lambda: failures_named(names_api, item.lower()))
+        assert not estimate(api, item).resolving
+    finally:
+        mock_fail(item.lower(), False)
+
+
+def test_reading_an_estimate_queues_names_never_saved(authed_api_client):
+    """A recipe saved before a catalog change, or a draft, still gets its
+    names resolved: reading the estimate queues them."""
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    item = unique("flour")
+    first = estimate(api, item)
+    assert first.resolving
+    assert first.lines[0].text == "Not recognized"
+    text = wait_for(lambda: (t := line_text(api, item)) != "Not recognized" and t)
+    assert text.endswith("kcal"), text
+
+
+def test_reading_queues_names_past_the_per_read_limit(authed_api_client):
+    """A read queues at most 50 new names but stays resolving until the rest
+    are queued by later reads, so every name is eventually resolved."""
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    items = [unique(f"flour {word}") for word in "abcdefghijklmnopqrstuvwxyz"]
+    items += [unique(f"sugar {word}") for word in "abcdefghijklmnopqrstuvwxyz"]
+    request = EstimateCaloriesRequest(
+        ingredients=[make_ingredient(item, "100", "g") for item in items], scale=1
+    )
+    assert api.estimate_calories(request).resolving
+    done = wait_for(
+        lambda: (e := api.estimate_calories(request)) and not e.resolving and e,
+        timeout=60.0,
+    )
+    assert all(line.text != "Not recognized" for line in done.lines)
+
+
+def test_foods_no_entry_matches_are_estimated(authed_api_client):
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    item = unique("estimable fruit")
     create_recipe(api, item)
-    wait_for(lambda: failures_named(names_api, item.lower()))
-    assert not estimate(api, item).resolving
+    counted = wait_for(lambda: (e := estimate(api, item)).lines[0].calories and e)
+    assert counted.lines[0].text.endswith("(estimated calories)"), counted.lines[0].text
+    # The mock's 200 kcal per 100 g.
+    assert abs(counted.lines[0].calories.max - 200.0) < 1e-6
+    status = IngredientNamesApi(client).get_ingredient_names_status()
+    assert status.estimated >= 1
+
+
+def test_ambiguous_names_take_a_labeled_default(authed_api_client):
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    # "cheese" could be several foods; the model picks the likely one. Shared
+    # across runs, so only the end state is checked.
+    text = wait_for(lambda: (t := line_text(api, "cheese")) and "(assumed " in t and t)
+    assert text.startswith("~"), text

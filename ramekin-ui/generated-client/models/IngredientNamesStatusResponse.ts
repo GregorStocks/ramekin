@@ -35,6 +35,13 @@ import {
  */
 export interface IngredientNamesStatusResponse {
     /**
+     * A real food no catalog entry matches, counted with the model's own
+     * calories ("estimated calories").
+     * @type {number}
+     * @memberof IngredientNamesStatusResponse
+     */
+    estimated: number;
+    /**
      * The last attempt failed; retry to try again.
      * @type {number}
      * @memberof IngredientNamesStatusResponse
@@ -59,7 +66,8 @@ export interface IngredientNamesStatusResponse {
      */
     pending: number;
     /**
-     * Resolved to a catalog food or product.
+     * Resolved to a catalog food or product (for an ambiguous name, the one
+     * a recipe most likely means).
      * @type {number}
      * @memberof IngredientNamesStatusResponse
      */
@@ -82,6 +90,7 @@ export interface IngredientNamesStatusResponse {
  * Check if a given object implements the IngredientNamesStatusResponse interface.
  */
 export function instanceOfIngredientNamesStatusResponse(value: object): value is IngredientNamesStatusResponse {
+    if (!('estimated' in value) || value['estimated'] === undefined) return false;
     if (!('failed' in value) || value['failed'] === undefined) return false;
     if (!('failures' in value) || value['failures'] === undefined) return false;
     if (!('notFood' in value) || value['notFood'] === undefined) return false;
@@ -102,6 +111,7 @@ export function IngredientNamesStatusResponseFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
+        'estimated': json['estimated'],
         'failed': json['failed'],
         'failures': ((json['failures'] as Array<any>).map(IngredientNameFailureFromJSON)),
         'notFood': json['not_food'],
@@ -123,6 +133,7 @@ export function IngredientNamesStatusResponseToJSONTyped(value?: IngredientNames
 
     return {
         
+        'estimated': value['estimated'],
         'failed': value['failed'],
         'failures': ((value['failures'] as Array<any>).map(IngredientNameFailureToJSON)),
         'not_food': value['notFood'],

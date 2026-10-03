@@ -99,7 +99,7 @@ export default function CalorieEstimate(props: {
                 </ul>
                 <p class="calorie-secondary">
                   Based on USDA reference foods and the listed ingredient
-                  amounts.
+                  amounts, with model estimates where noted.
                 </p>
               </details>
             </Show>

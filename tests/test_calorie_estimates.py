@@ -38,7 +38,9 @@ def test_estimate_invalid_scale(server_url, authed_api_client, scale):
 def test_estimate_ranges_partial_unknown_and_empty(server_url, authed_api_client):
     client, _ = authed_api_client
     sugar = make_ingredient("granulated sugar", "100-200", "g")
-    yogurt = make_ingredient("yogurt", "1", "cup")
+    # Reading an estimate queues unknown names for the (mock) model, which
+    # answers "unknown" for this one, so it stays uncounted on every run.
+    yogurt = make_ingredient("unknowable yogurt", "1", "cup")
     response = estimate(server_url, client, [sugar, yogurt], scale=2, servings="4")
     assert response.status_code == 200
     result = response.json()
@@ -47,7 +49,7 @@ def test_estimate_ranges_partial_unknown_and_empty(server_url, authed_api_client
     assert result["status"] == "partial"
     assert result["headline"] == "At least ~96 kcal per serving"
     assert result["secondary"] == "At least ~770 kcal for the whole recipe"
-    assert result["not_counted"] == ["yogurt"]
+    assert result["not_counted"] == ["unknowable yogurt"]
     assert result["lines"] == [
         {
             "index": 0,
@@ -57,9 +59,9 @@ def test_estimate_ranges_partial_unknown_and_empty(server_url, authed_api_client
         },
         {
             "index": 1,
-            "item": "yogurt",
+            "item": "unknowable yogurt",
             "calories": None,
-            "text": "Could be several foods",
+            "text": "Not recognized",
         },
     ]
     assert (
@@ -169,7 +171,9 @@ def test_estimate_uses_displayed_version_and_edited_quantities(
 def test_estimate_status_follows_uncounted_ingredients(server_url, authed_api_client):
     client, _ = authed_api_client
     sugar = make_ingredient("granulated sugar", "100", "g")
-    unknown = [make_ingredient(f"moon dust {i}", "1", "cup") for i in range(4)]
+    unknown = [
+        make_ingredient(f"unknowable moon dust {i}", "1", "cup") for i in range(4)
+    ]
     for count, status in [(0, "complete"), (3, "partial"), (4, "insufficient")]:
         result = estimate(server_url, client, [sugar, *unknown[:count]]).json()
         assert result["status"] == status, count
@@ -193,7 +197,9 @@ def test_estimate_leaves_out_lines_with_no_amount(server_url, authed_api_client)
     assert result["lines"][0]["text"] == "No amount given"
     assert result["lines"][0]["calories"] is None
     # Lines with no amount never make an estimate partial or insufficient.
-    unknown = [make_ingredient(f"moon dust {i}", "1", "cup") for i in range(3)]
+    unknown = [
+        make_ingredient(f"unknowable moon dust {i}", "1", "cup") for i in range(3)
+    ]
     partial = estimate(server_url, client, [sugar, oil, *unknown]).json()
     assert partial["status"] == "partial"
     assert partial["not_counted"] == ["olive oil", *(u.item for u in unknown)]

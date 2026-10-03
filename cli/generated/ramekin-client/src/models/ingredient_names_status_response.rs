@@ -13,6 +13,9 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct IngredientNamesStatusResponse {
+    /// A real food no catalog entry matches, counted with the model's own calories (\"estimated calories\").
+    #[serde(rename = "estimated")]
+    pub estimated: i64,
     /// The last attempt failed; retry to try again.
     #[serde(rename = "failed")]
     pub failed: i64,
@@ -25,7 +28,7 @@ pub struct IngredientNamesStatusResponse {
     /// Waiting for the background resolver.
     #[serde(rename = "pending")]
     pub pending: i64,
-    /// Resolved to a catalog food or product.
+    /// Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means).
     #[serde(rename = "recognized")]
     pub recognized: i64,
     /// Resolved, but the model couldn't tell; still unknown in estimates.
@@ -37,6 +40,7 @@ pub struct IngredientNamesStatusResponse {
 
 impl IngredientNamesStatusResponse {
     pub fn new(
+        estimated: i64,
         failed: i64,
         failures: Vec<models::IngredientNameFailure>,
         not_food: i64,
@@ -46,6 +50,7 @@ impl IngredientNamesStatusResponse {
         weights: models::IngredientWeightsStatus,
     ) -> IngredientNamesStatusResponse {
         IngredientNamesStatusResponse {
+            estimated,
             failed,
             failures,
             not_food,

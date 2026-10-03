@@ -35,6 +35,7 @@ class TestIngredientNamesStatusResponse(unittest.TestCase):
         model = IngredientNamesStatusResponse()
         if include_optional:
             return IngredientNamesStatusResponse(
+                estimated = 56,
                 failed = 56,
                 failures = [
                     ramekin_client.models.ingredient_name_failure.IngredientNameFailure(
@@ -61,6 +62,7 @@ class TestIngredientNamesStatusResponse(unittest.TestCase):
             )
         else:
             return IngredientNamesStatusResponse(
+                estimated = 56,
                 failed = 56,
                 failures = [
                     ramekin_client.models.ingredient_name_failure.IngredientNameFailure(

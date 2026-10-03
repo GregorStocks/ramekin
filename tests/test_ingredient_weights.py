@@ -9,7 +9,7 @@ from pathlib import Path
 from conftest import make_ingredient
 from ramekin_client.api import IngredientNamesApi, RecipesApi
 from ramekin_client.models import CreateRecipeRequest, EstimateCaloriesRequest
-from test_ingredient_names import mock_calls, mock_fail
+from test_ingredient_names import mock_calls, mock_fail, unique
 from test_ingredient_names import wait_for as wait_briefly
 
 USDA = Path(__file__).resolve().parents[1] / "ramekin-core/src/catalog/data/usda.json"
@@ -118,6 +118,10 @@ def test_weight_failures_are_visible_and_retryable(
     api = RecipesApi(client)
     names_api = IngredientNamesApi(client)
     unit = "bottle"
+    # A food the model estimated (no catalog entry) is weighed by its stand-in
+    # id, and its weights are in the account's scope too.
+    estimated = unique("estimable soda")
+    estimated_id = f"estimated food: {estimated.lower()}"
     mock_fail(unit, True)
     try:
         food = unasked_food(api, [unit])
@@ -125,13 +129,24 @@ def test_weight_failures_are_visible_and_retryable(
             CreateRecipeRequest(
                 title=f"Recipe with 2 {unit}s of {food}",
                 instructions="Cook.",
-                ingredients=[make_ingredient(food, "2", unit)],
+                ingredients=[
+                    make_ingredient(food, "2", unit),
+                    make_ingredient(estimated, "2", unit),
+                ],
             )
         )
         failure = wait_for(
             lambda: next(iter(weight_failures(names_api, food, unit)), None)
         )
         assert failure.error
+        # Its name resolves to an estimate first; reading then queues the
+        # bottle weight, which fails like the catalog food's.
+        wait_for(
+            lambda: (
+                api.estimate_calories(request(estimated, [unit]))
+                and weight_failures(names_api, estimated_id, unit)
+            )
+        )
         assert names_api.get_ingredient_names_status().weights.failed >= 1
         line = api.estimate_calories(request(food, [unit])).lines[0]
         assert line.text == "Amount unclear"
@@ -142,9 +157,13 @@ def test_weight_failures_are_visible_and_retryable(
     finally:
         mock_fail(unit, False)
 
-    assert names_api.retry_ingredient_names().queued >= 1
+    assert names_api.retry_ingredient_names().queued >= 2
     wait_for(lambda: api.estimate_calories(request(food, [unit])).lines[0].calories)
+    wait_for(
+        lambda: api.estimate_calories(request(estimated, [unit])).lines[0].calories
+    )
     assert weight_failures(names_api, food, unit) == []
+    assert weight_failures(names_api, estimated_id, unit) == []
     assert mock_calls(unit) >= 2
 
 

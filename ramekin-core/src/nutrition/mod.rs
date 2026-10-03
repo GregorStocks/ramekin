@@ -10,7 +10,7 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v14";
+const RULE_VERSION: &str = "calories-v15";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
@@ -321,10 +321,22 @@ fn food<'a>(entry: &'a Entry, estimated: &'a WeightSource<'a>) -> Result<Food<'a
     })
 }
 
+/// Where a counted line's numbers came from, beyond the catalog.
+#[derive(Clone, Copy, PartialEq)]
+enum Guess {
+    /// Catalog data only.
+    None,
+    /// A model-estimated weight for a catalog food.
+    Weight,
+    /// A food no catalog entry matches, with the model's own calories.
+    Food,
+    /// Both: an estimated food, weighed with an estimated weight.
+    FoodAndWeight,
+}
+
 /// What one ingredient line adds to the estimate.
 enum Line {
-    /// Counted; the bool says an estimated weight was used.
-    Calories(CalorieRange, bool),
+    Calories(CalorieRange, Guess),
     /// Too little to matter (salt, a pinch of spice, a few bay leaves).
     Negligible,
     /// Not something eaten (a leftover header, parchment paper).
@@ -556,6 +568,9 @@ fn measurement_total(
     Ok(total)
 }
 
+/// Calories per 100 g at which an estimated food counts as a cooking fat.
+const ESTIMATED_FAT_KCAL: f64 = 800.0;
+
 /// Above this, oil listed "for frying" is a frying medium (about 1/4 cup of oil).
 const FRYING_KEPT_KCAL: f64 = 500.0;
 
@@ -604,7 +619,12 @@ fn contribution(
                 };
             }
             Resolution::Ambiguous => return Err("Ambiguous ingredient"),
-            Resolution::Unresolved => return Err("No supported nutrition match"),
+            Resolution::Unresolved => {
+                return match catalog::learned_estimate(&ingredient.item, learned) {
+                    Some(estimate) => estimated_food_calories(ingredient, estimate, estimated),
+                    None => Err("No supported nutrition match"),
+                }
+            }
         };
     if is_negligible(entry, ingredient, scale) {
         return Ok(Line::Negligible);
@@ -615,12 +635,76 @@ fn contribution(
         // stays in the dish.
         return match calories {
             Ok((range, guessed)) if range.max <= FRYING_KEPT_KCAL => {
-                Ok(Line::Calories(range, guessed))
+                Ok(Line::Calories(range, weight_guess(guessed)))
             }
             _ => Err("Frying oil: only part of it is absorbed"),
         };
     }
-    calories.map(|(range, guessed)| Line::Calories(range, guessed))
+    calories.map(|(range, guessed)| Line::Calories(range, weight_guess(guessed)))
+}
+
+fn weight_guess(estimated_weight: bool) -> Guess {
+    if estimated_weight {
+        Guess::Weight
+    } else {
+        Guess::None
+    }
+}
+
+/// The stand-in id of a food counted from a learned estimate: what its
+/// estimated weights are keyed by.
+pub fn estimated_food_id(item: &str) -> String {
+    format!("estimated food: {}", normalize(item))
+}
+
+/// A food the catalog has no entry for, counted with the model's estimate
+/// (calories per 100 g, and its cup and piece weights when it gave them),
+/// as a stand-in entry. Other counted units go through estimated weights
+/// like any food, keyed by the stand-in's id.
+fn estimated_food_calories(
+    ingredient: &ParsedIngredient,
+    estimate: &catalog::EstimatedFood,
+    estimated: &WeightSource,
+) -> Result<Line, &'static str> {
+    let piece = estimate.grams_per_piece;
+    let entry = Entry {
+        id: estimated_food_id(&ingredient.item),
+        kind: Kind::Food,
+        fdc_id: None,
+        kcal_per_100g: Some(estimate.kcal_per_100g),
+        grams_per_cup: estimate.grams_per_cup,
+        category: None,
+        // A zero-calorie estimate (a diet soda) is negligible on any line,
+        // like a zero-calorie catalog food.
+        zero_calorie: estimate.kcal_per_100g == 0.0,
+        trace_ok: false,
+        portions: piece
+            .map(|grams| std::collections::BTreeMap::from([("piece".to_string(), grams)]))
+            .unwrap_or_default(),
+        default_portion: piece.map(|_| "piece".to_string()),
+    };
+    if entry.zero_calorie {
+        return Ok(Line::Negligible);
+    }
+    let calories = measured_calories(ingredient, &food(&entry, estimated)?);
+    let line = |(range, estimated_weight): (CalorieRange, bool)| {
+        let guess = if estimated_weight {
+            Guess::FoodAndWeight
+        } else {
+            Guess::Food
+        };
+        Line::Calories(range, guess)
+    };
+    // An estimated fat (vanaspati "for frying") follows the frying-medium rule
+    // like a catalog oil. With no USDA description to go by, anything this
+    // energy-dense is a fat: oils, ghee, lard and shortening are 800-900.
+    if is_frying_medium(ingredient) && estimate.kcal_per_100g >= ESTIMATED_FAT_KCAL {
+        return match calories {
+            Ok(counted) if counted.0.max <= FRYING_KEPT_KCAL => Ok(line(counted)),
+            _ => Err("Frying oil: only part of it is absorbed"),
+        };
+    }
+    calories.map(line)
 }
 
 /// The line's calories weighed with the catalog alone, or failing that with
@@ -769,6 +853,37 @@ fn serving_count(servings: &str) -> Option<CalorieRange> {
 }
 
 /// `estimate_with` using only the committed catalog.
+/// Whether the line counts a learned estimate: no catalog food, but an
+/// estimated one.
+fn estimated_food_line(ingredient: &ParsedIngredient, learned: &catalog::Learned) -> bool {
+    matches!(
+        catalog::resolve_line_with(&ingredient.item, ingredient.note.as_deref(), learned),
+        Resolution::Unresolved
+    ) && catalog::learned_estimate(&ingredient.item, learned).is_some()
+}
+
+/// The catalog key a learned answer chose for an ambiguous name ("cheese"),
+/// when the line used it.
+fn learned_default<'a>(
+    ingredient: &ParsedIngredient,
+    learned: &'a catalog::Learned,
+) -> Option<&'a str> {
+    if !catalog::is_ambiguous(&ingredient.item) {
+        return None;
+    }
+    let used = matches!(
+        catalog::resolve_line_with(&ingredient.item, ingredient.note.as_deref(), learned),
+        Resolution::Entry {
+            via: catalog::Via::Learned,
+            ..
+        }
+    );
+    match learned.get(&normalize(&ingredient.item)) {
+        Some(catalog::LearnedTarget::Entry(key)) if used => Some(key),
+        _ => None,
+    }
+}
+
 pub fn estimate(
     ingredients: &[ParsedIngredient],
     servings: Option<&str>,
@@ -806,18 +921,23 @@ pub fn estimate_with(
         gaps: &gaps,
     };
     for (index, ingredient) in ingredients.iter().enumerate() {
-        let mut guessed_weight = false;
+        let mut guess = Guess::None;
         let (calories, text) = match contribution(ingredient, scale, learned, &source) {
             Ok(Line::Skipped) => (None, "Not a food".to_string()),
             Ok(Line::Negligible) => {
                 known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });
+                // A zero-calorie estimated food is negligible on the model's
+                // word; say so, as for any estimated food.
+                if estimated_food_line(ingredient, learned) {
+                    guess = Guess::Food;
+                }
                 (
                     Some(CalorieRange { min: 0.0, max: 0.0 }),
                     "Negligible".to_string(),
                 )
             }
             Ok(Line::Calories(value, guessed)) => {
-                guessed_weight = guessed;
+                guess = guessed;
                 let total = known.get_or_insert(CalorieRange { min: 0.0, max: 0.0 });
                 total.min += value.min;
                 total.max += value.max;
@@ -865,8 +985,18 @@ pub fn estimate_with(
                 notes.push(format!("assumed {alternative}"));
             }
         }
-        if guessed_weight {
-            notes.push("estimated weight".to_string());
+        // "cheese" is ambiguous; a learned default says which food it took.
+        if let Some(assumed) = learned_default(ingredient, learned) {
+            notes.push(format!("assumed {assumed}"));
+        }
+        match guess {
+            Guess::None => {}
+            Guess::Weight => notes.push("estimated weight".to_string()),
+            Guess::Food => notes.push("estimated calories".to_string()),
+            Guess::FoodAndWeight => {
+                notes.push("estimated calories".to_string());
+                notes.push("estimated weight".to_string());
+            }
         }
         let text = if notes.is_empty() {
             text
