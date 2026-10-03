@@ -693,14 +693,11 @@ fn render(
         " ---: |".repeat(spec.columns.len())
     );
     for (result, dollars, rejected, truncated, _) in rows {
-        // A failed model has one cell, its error; pad the rest.
-        let mut cells = result.cells.clone();
-        cells.resize(spec.columns.len(), "–".into());
         let _ = writeln!(
             out,
             "| {} | {} | {rejected} | {truncated} | ${dollars:.4} |",
             result.model,
-            cells.join(" | ").replace('\n', " ")
+            result.cells.join(" | ")
         );
     }
     out.push_str(
@@ -753,7 +750,6 @@ pub async fn run(
     // model's.
     AiConfig::from_env().context("AI is not configured (OPENROUTER_API_KEY)")?;
     let prices = prices(models).await?;
-    let mut failures = Vec::new();
     for suite in suites {
         let path: PathBuf = root.join(GOLDEN_DIR).join(format!("{suite}.json"));
         let mut rows = Vec::new();
@@ -777,20 +773,10 @@ pub async fn run(
                     eval_names(model, &golden, batch_size, &mut spend).await
                 }
             };
-            // A model whose provider calls fail (a timeout) gets a row, so the
-            // others' results are kept, and the run fails at the end.
-            let result = match outcome {
-                Ok(result) => result,
-                Err(e) => {
-                    tracing::error!(suite, model, "failed: {e}");
-                    failures.push(format!("{suite} / {model}: {e}"));
-                    ModelResult {
-                        model: model.clone(),
-                        cells: vec![format!("failed: {e}")],
-                        misses: Vec::new(),
-                    }
-                }
-            };
+            // A failing model (a timeout) stops the run before any report is
+            // overwritten; everything already answered is cached, so a rerun
+            // without it (or after fixing the cause) is nearly free.
+            let result = outcome.with_context(|| format!("{suite} / {model} failed"))?;
             let dollars = spend.dollars(&prices[model]);
             tracing::info!(suite, model, calls = spend.calls, dollars, "evaluated");
             rows.push((
@@ -811,13 +797,6 @@ pub async fn run(
         fs::write(&out, render(suite, cases, batch_size, &rows))
             .with_context(|| format!("Failed to write {}", out.display()))?;
         tracing::info!("Wrote {}", out.display());
-    }
-    if !failures.is_empty() {
-        bail!(
-            "{} model run(s) failed (reported in the results):\n{}",
-            failures.len(),
-            failures.join("\n")
-        );
     }
     Ok(())
 }
