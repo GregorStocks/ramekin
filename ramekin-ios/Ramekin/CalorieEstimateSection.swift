@@ -98,7 +98,7 @@ struct CalorieEstimateSection: View {
                                         .foregroundStyle(.secondary)
                                 }
                             }
-                            Text("Based on USDA reference foods and the listed ingredient amounts.")
+                            Text("Based on USDA reference foods and the listed ingredient amounts, with model estimates where noted.")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }

@@ -646,6 +646,12 @@ fn weight_guess(estimated_weight: bool) -> Guess {
     }
 }
 
+/// The stand-in id of a food counted from a learned estimate: what its
+/// estimated weights are keyed by.
+pub fn estimated_food_id(item: &str) -> String {
+    format!("estimated food: {}", normalize(item))
+}
+
 /// A food the catalog has no entry for, counted with the model's estimate
 /// (calories per 100 g, and its cup and piece weights when it gave them),
 /// as a stand-in entry. Other counted units go through estimated weights
@@ -657,7 +663,7 @@ fn estimated_food_calories(
 ) -> Result<Line, &'static str> {
     let piece = estimate.grams_per_piece;
     let entry = Entry {
-        id: format!("estimated food: {}", normalize(&ingredient.item)),
+        id: estimated_food_id(&ingredient.item),
         kind: Kind::Food,
         fdc_id: None,
         kcal_per_100g: Some(estimate.kcal_per_100g),

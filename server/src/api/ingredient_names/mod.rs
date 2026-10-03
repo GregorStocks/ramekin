@@ -19,6 +19,7 @@ use axum::routing::{get, post};
 use axum::{extract::State, Json, Router};
 use diesel::prelude::*;
 use ramekin_core::catalog::{self, Resolution};
+use ramekin_core::nutrition;
 use serde::Serialize;
 use std::collections::BTreeSet;
 use std::sync::Arc;
@@ -136,8 +137,9 @@ fn own_names(
     Ok(unlearned_names(items.iter().map(String::as_str)))
 }
 
-/// The catalog foods (entry ids) the user's current recipes use, as their
-/// calorie estimates resolve them, for scoping weight estimates.
+/// The foods the user's current recipes use, as their calorie estimates
+/// resolve them (catalog entry ids, and the stand-in ids of estimated
+/// foods), for scoping weight estimates.
 fn own_foods(
     conn: &mut PgConnection,
     recipes: &[Vec<Ingredient>],
@@ -157,7 +159,8 @@ fn own_foods(
             match catalog::resolve_line_with(&ingredient.item, ingredient.note.as_deref(), &learned)
             {
                 Resolution::Entry { entry, .. } => Some(entry.id.clone()),
-                _ => None,
+                _ => catalog::learned_estimate(&ingredient.item, &learned)
+                    .map(|_| nutrition::estimated_food_id(&ingredient.item)),
             }
         })
         .collect();
