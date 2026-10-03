@@ -16,7 +16,7 @@ use ramekin_core::nutrition;
 use ramekin_core::types::ParseIngredientsOutput;
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
-use std::collections::{BTreeMap, HashMap};
+use std::collections::{BTreeMap, BTreeSet, HashMap};
 use std::fmt::Write as _;
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -46,6 +46,9 @@ struct Corpus {
     learned: Learned,
     /// Weights the server estimated (catalog step 3); empty for committed corpora.
     weights: nutrition::Weights,
+    /// Every (food, unit) the server has a row for, answered or not: never
+    /// queued again, so not counted as weights to estimate.
+    asked: BTreeSet<nutrition::WeightKey>,
 }
 
 #[derive(Default)]
@@ -76,7 +79,7 @@ struct RecipeCorpusStats {
     uncategorized: HashMap<String, usize>,
     /// Distinct weights uncounted lines need that the corpus's estimated
     /// weights don't have: what the server would ask the model for.
-    weight_gaps: std::collections::BTreeSet<nutrition::WeightKey>,
+    weight_gaps: BTreeSet<nutrition::WeightKey>,
 }
 
 /// Buckets of uncounted ingredients per recipe: (label, lowest count).
@@ -200,6 +203,7 @@ fn load_fixture_corpus(root: &Path, subdir: &str, name: &str) -> Result<Corpus> 
         recipes,
         learned: Learned::new(),
         weights: nutrition::Weights::new(),
+        asked: Default::default(),
     })
 }
 
@@ -217,6 +221,7 @@ fn load_snapshot_corpus(root: &Path) -> Result<Corpus> {
         recipes,
         learned: Learned::new(),
         weights: nutrition::Weights::new(),
+        asked: Default::default(),
     })
 }
 
@@ -269,6 +274,7 @@ fn load_pipeline_run_corpus(runs_dir: &Path) -> Result<Corpus> {
         recipes,
         learned: Learned::new(),
         weights: nutrition::Weights::new(),
+        asked: Default::default(),
     })
 }
 
@@ -312,24 +318,23 @@ struct WeightRow {
     grams: Option<f64>,
 }
 
-/// The estimated weights in a weights export, as the server reads them.
-fn load_weights(path: &Path) -> Result<nutrition::Weights> {
+/// The estimated weights in a weights export, as the server reads them, and
+/// every pair it has a row for.
+fn load_weights(path: &Path) -> Result<(nutrition::Weights, BTreeSet<nutrition::WeightKey>)> {
     let rows: Vec<WeightRow> = read_json(path)?;
-    Ok(rows
-        .into_iter()
-        .filter(|row| row.status == "resolved")
-        .filter_map(|row| {
-            row.grams.map(|grams| {
-                (
-                    nutrition::WeightKey {
-                        food: row.food,
-                        unit: row.unit,
-                    },
-                    grams,
-                )
-            })
-        })
-        .collect())
+    let mut weights = nutrition::Weights::new();
+    let mut asked = BTreeSet::new();
+    for row in rows {
+        let key = nutrition::WeightKey {
+            food: row.food,
+            unit: row.unit,
+        };
+        if let (true, Some(grams)) = (row.status == "resolved", row.grams) {
+            weights.insert(key.clone(), grams);
+        }
+        asked.insert(key);
+    }
+    Ok((weights, asked))
 }
 
 fn load_prod_corpus(path: &Path, learned: Option<&Path>, weights: Option<&Path>) -> Result<Corpus> {
@@ -342,7 +347,7 @@ fn load_prod_corpus(path: &Path, learned: Option<&Path>, weights: Option<&Path>)
         name.push_str(" + estimated weights");
     }
     let learned = learned.map(load_learned).transpose()?.unwrap_or_default();
-    let weights = weights.map(load_weights).transpose()?.unwrap_or_default();
+    let (weights, asked) = weights.map(load_weights).transpose()?.unwrap_or_default();
     Ok(Corpus {
         name,
         recipes: recipes
@@ -354,6 +359,7 @@ fn load_prod_corpus(path: &Path, learned: Option<&Path>, weights: Option<&Path>)
             .collect(),
         learned,
         weights,
+        asked,
     })
 }
 
@@ -402,9 +408,13 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
                 .iter()
                 .filter(|u| NAME_FAILURES.contains(&u.reason.as_str()))
                 .count();
-        stats
-            .weight_gaps
-            .extend(estimate.weight_gaps.iter().cloned());
+        stats.weight_gaps.extend(
+            estimate
+                .weight_gaps
+                .iter()
+                .filter(|gap| !corpus.asked.contains(gap))
+                .cloned(),
+        );
         if unknown.is_empty() {
             stats.recipes_fully_estimated += 1;
             if estimate.per_serving_calories.is_some() {
@@ -974,6 +984,7 @@ mod tests {
             ],
             learned: Learned::new(),
             weights: nutrition::Weights::new(),
+            asked: Default::default(),
         };
         let stats = audit_recipes(&corpus).unwrap();
 
@@ -1106,6 +1117,7 @@ mod tests {
             }],
             learned: Learned::new(),
             weights: nutrition::Weights::new(),
+            asked: Default::default(),
         };
         let names = unresolved_names(&[
             (
@@ -1218,6 +1230,29 @@ mod tests {
         assert_eq!(without.recipes_fully_estimated, 0);
         let corpus = load_prod_corpus(&recipes, None, Some(&weights)).unwrap();
         assert_eq!(corpus.weights.len(), 1, "only resolved rows with grams");
-        assert_eq!(audit_recipes(&corpus).unwrap().recipes_fully_estimated, 1);
+        let stats = audit_recipes(&corpus).unwrap();
+        assert_eq!(stats.recipes_fully_estimated, 1);
+        assert!(stats.weight_gaps.is_empty());
+
+        // A pair the model answered with no typical weight is never asked
+        // again, so it isn't a weight to estimate.
+        fs::write(
+            &recipes,
+            r#"[{"servings": null, "ingredients": [
+                {"item": "capers", "measurements": [{"amount": "2", "unit": "jars"}]}
+            ]}]"#,
+        )
+        .unwrap();
+        let without = audit_recipes(&load_prod_corpus(&recipes, None, None).unwrap()).unwrap();
+        assert_eq!(without.weight_gaps.len(), 1);
+        fs::write(
+            &weights,
+            serde_json::json!([{"food": food, "unit": "jar", "status": "resolved", "grams": null}])
+                .to_string(),
+        )
+        .unwrap();
+        let with =
+            audit_recipes(&load_prod_corpus(&recipes, None, Some(&weights)).unwrap()).unwrap();
+        assert!(with.weight_gaps.is_empty());
     }
 }
