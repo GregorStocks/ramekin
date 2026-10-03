@@ -205,7 +205,7 @@ fn estimate_batch(pool: &Arc<DbPool>, batch: Vec<(String, String)>) -> BatchFutu
                 save_estimated(pool, estimates, model).await?;
                 return Ok(None);
             }
-            Err(AiError::ParseError(error)) if batch.len() > 1 => error,
+            Err(error) if error.is_answer_specific() && batch.len() > 1 => error.to_string(),
             Err(error) => return fail(pool, batch, error).await.map(Some),
         };
         tracing::warn!(
@@ -281,7 +281,7 @@ async fn fail(
     items: Vec<(String, String)>,
     error: AiError,
 ) -> Result<(String, bool), String> {
-    let provider_wide = !matches!(error, AiError::ParseError(_));
+    let provider_wide = !error.is_answer_specific();
     let error = error.to_string();
     tracing::warn!(
         items = items.len(),

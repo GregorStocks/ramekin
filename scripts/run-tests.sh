@@ -118,8 +118,8 @@ rm -rf "$STATUS_DIR"
 mkdir -p "$STATUS_DIR"
 # The mock AI's responses are cached by prompt (compose/test-base.yaml); start
 # each run empty, as CI does, so a test whose prompt repeats across runs still
-# reaches the mock.
-rm -rf logs/test-ai-cache
+# reaches the mock. The script's own tests point this elsewhere.
+rm -rf "${TEST_AI_CACHE_DIR:-logs/test-ai-cache}"
 
 # Prefer prebuilt server binary so readiness probes do not race a cold release build.
 if [ -x "./server/target/release/ramekin-server" ]; then

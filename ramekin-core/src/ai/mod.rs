@@ -63,6 +63,11 @@ pub use generate_recipe_photo::{generate_recipe_photo, GenerateRecipePhotoResult
 pub use normalize_title::{normalize_title, NormalizeTitleResult};
 pub use photo_extract::{extract_recipe_from_photos, PhotoExtractResult};
 pub use prompts::resolve_ingredient_names::NameQuery;
+
+/// Output tokens allowed for a batch of ingredient names or weights: a batch
+/// of 40 JSON answers is under 2,000, but reasoning models spend tokens
+/// thinking first, and running out fails the whole batch.
+pub const INGREDIENT_MAX_TOKENS: u32 = 16_384;
 pub use resolve_ingredient_names::{
     resolve_ingredient_names, NameResolution, ResolveIngredientNamesResult,
 };

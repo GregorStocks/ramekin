@@ -49,10 +49,11 @@ static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
 static NAMES_SAVED: AtomicBool = AtomicBool::new(false);
 pub(crate) static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
 /// One client for the process, so its rate limit spaces every call, with
-/// the model it asks.
+/// the model it asks: the ingredient model (`AiConfig::for_ingredients`).
 pub(crate) static CLIENT: LazyLock<Result<(CachingAiClient, String), ConfigError>> =
     LazyLock::new(|| {
         AiConfig::from_env().map(|config| {
+            let config = config.for_ingredients();
             let model = config.model.clone();
             (CachingAiClient::new(config), model)
         })
@@ -507,7 +508,7 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, 
             save_resolved(pool, resolutions, model).await?;
             return Ok(Batch::Resolved);
         }
-        Err(AiError::ParseError(error)) if batch.len() > 1 => error,
+        Err(error) if error.is_answer_specific() && batch.len() > 1 => error.to_string(),
         Err(error) => return fail(pool, batch, error).await,
     };
     tracing::warn!(
@@ -536,7 +537,7 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, 
 
 /// Record `error` on `names` and classify it.
 async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<Batch, String> {
-    let provider_wide = !matches!(error, AiError::ParseError(_));
+    let provider_wide = !error.is_answer_specific();
     let error = error.to_string();
     save_failed(pool, names, error.clone()).await?;
     Ok(if provider_wide {
