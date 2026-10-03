@@ -104,10 +104,15 @@ fn validate(
                     raw.name
                 ))
             }
-            // An ambiguous name has catalog candidates; the model picks one
-            // or says it can't, never invents numbers for it.
-            ("estimate", _) if query.ambiguous => {
-                return Err(format!("{:?}: estimated an ambiguous name", raw.name))
+            // An ambiguous name is a catalog food with several candidates:
+            // the model picks one or says it can't. It never invents numbers
+            // for it, and never calls it not food, which would drop it from
+            // every estimate.
+            ("estimate" | "not_food", _) if query.ambiguous => {
+                return Err(format!(
+                    "{:?}: answered {:?} for an ambiguous name",
+                    raw.name, raw.answer
+                ))
             }
             ("estimate", _) => {
                 let kcal = raw.kcal_per_100g.filter(|v| within(*v, KCAL_PER_100G));
@@ -237,8 +242,15 @@ mod tests {
             let json = with_cheese(rest);
             assert!(validate(&names(), response(&json)).is_err(), "{json}");
         }
-        // An ambiguous name is never estimated.
-        let json = r#"{"resolutions": [{"name": "moon sugar", "answer": "unknown"}, {"name": "platter", "answer": "unknown"}, {"name": "cheese", "answer": "estimate", "kcal_per_100g": 400}]}"#;
-        assert!(validate(&names(), response(json)).is_err());
+        // An ambiguous name is never estimated or called not food.
+        for cheese in [
+            r#"{"name": "cheese", "answer": "estimate", "kcal_per_100g": 400}"#,
+            r#"{"name": "cheese", "answer": "not_food"}"#,
+        ] {
+            let json = format!(
+                r#"{{"resolutions": [{{"name": "moon sugar", "answer": "unknown"}}, {{"name": "platter", "answer": "unknown"}}, {cheese}]}}"#
+            );
+            assert!(validate(&names(), response(&json)).is_err(), "{json}");
+        }
     }
 }

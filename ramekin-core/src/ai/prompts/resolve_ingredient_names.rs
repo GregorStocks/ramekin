@@ -34,7 +34,7 @@ pub fn render_resolve_ingredient_names_prompt(names: &[NameQuery]) -> String {
 For each item, answer exactly one of:
 - "entry": the name means the same food (or purchasable product) as one of ITS candidates. Give that candidate as "key", copied exactly. Pick the same food in the form the recipe means (fresh vs dried, raw vs cooked, the specific part such as yolk or zest). Brand or style words don't change the food. For an ambiguous item, pick the food a typical US home recipe most likely means by that generic name.
 - "estimate": only for an item NOT marked ambiguous that is a real food or drink none of its candidates matches (a regional ingredient, a branded product, a prepared dish). Give your best typical values: "kcal_per_100g" (number), "grams_per_cup" (grams in one level US cup as a recipe would measure it, or null if it isn't measured by volume), and "grams_per_piece" (grams in one whole typical item, or null if it isn't counted in pieces).
-- "not_food": the name isn't an ingredient at all (a heading, an instruction, a serving note, a yield).
+- "not_food": only for an item NOT marked ambiguous, when the name isn't an ingredient at all (a heading, an instruction, a serving note, a yield).
 - "unknown": you can't tell what food it is. Prefer "unknown" over a guess when the name itself is unclear; a wrong food corrupts calorie estimates.
 
 Never answer "entry" with a key that isn't in that item's candidates, and never invent one.
