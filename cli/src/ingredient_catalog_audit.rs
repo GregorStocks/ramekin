@@ -286,6 +286,12 @@ struct LearnedRow {
     status: String,
     disposition: Option<String>,
     catalog_key: Option<String>,
+    #[serde(default)]
+    kcal_per_100g: Option<f64>,
+    #[serde(default)]
+    grams_per_cup: Option<f64>,
+    #[serde(default)]
+    grams_per_piece: Option<f64>,
 }
 
 /// The resolved rows of a learned-names export, as the server reads them.
@@ -294,11 +300,22 @@ fn load_learned(path: &Path) -> Result<Learned> {
     rows.into_iter()
         .filter(|row| row.status == "resolved")
         .map(|row| {
-            let target = match (row.disposition.as_deref(), row.catalog_key) {
-                (Some("entry"), Some(key)) => LearnedTarget::Entry(key),
-                (Some("not_food"), None) => LearnedTarget::NotFood,
-                (Some("unknown"), None) => LearnedTarget::Unknown,
-                (disposition, key) => anyhow::bail!(
+            let target = match (
+                row.disposition.as_deref(),
+                row.catalog_key,
+                row.kcal_per_100g,
+            ) {
+                (Some("entry"), Some(key), None) => LearnedTarget::Entry(key),
+                (Some("estimate"), None, Some(kcal_per_100g)) => {
+                    LearnedTarget::Estimate(ramekin_core::catalog::EstimatedFood {
+                        kcal_per_100g,
+                        grams_per_cup: row.grams_per_cup,
+                        grams_per_piece: row.grams_per_piece,
+                    })
+                }
+                (Some("not_food"), None, None) => LearnedTarget::NotFood,
+                (Some("unknown"), None, None) => LearnedTarget::Unknown,
+                (disposition, key, _) => anyhow::bail!(
                     "Bad learned row for {:?}: disposition {disposition:?}, key {key:?}",
                     row.name
                 ),

@@ -5,9 +5,10 @@ use std::collections::HashMap;
 use serde::Deserialize;
 
 use crate::ai::prompts::resolve_ingredient_names::{
-    render_resolve_ingredient_names_prompt, RESOLVE_INGREDIENT_NAMES_PROMPT_NAME,
+    render_resolve_ingredient_names_prompt, NameQuery, RESOLVE_INGREDIENT_NAMES_PROMPT_NAME,
 };
 use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage};
+use crate::catalog::EstimatedFood;
 
 #[derive(Debug, Deserialize)]
 struct Response {
@@ -19,15 +20,30 @@ struct RawResolution {
     name: String,
     answer: String,
     key: Option<String>,
+    kcal_per_100g: Option<f64>,
+    grams_per_cup: Option<f64>,
+    grams_per_piece: Option<f64>,
 }
 
 /// The answer for one name.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq)]
 pub enum NameResolution {
     /// A catalog key from that name's candidates.
     Entry(String),
+    /// A real food no candidate matches, with the model's numbers.
+    Estimate(EstimatedFood),
     NotFood,
     Unknown,
+}
+
+/// Plausible calories per 100 g: water to pure fat.
+const KCAL_PER_100G: (f64, f64) = (0.0, 900.0);
+/// Plausible grams per cup and per piece, as for estimated weights.
+const CUP_GRAMS: (f64, f64) = (5.0, 700.0);
+const PIECE_GRAMS: (f64, f64) = (0.01, 5000.0);
+
+fn within(value: f64, (min, max): (f64, f64)) -> bool {
+    value.is_finite() && (min..=max).contains(&value)
 }
 
 pub struct ResolveIngredientNamesResult {
@@ -42,7 +58,7 @@ pub struct ResolveIngredientNamesResult {
 /// cache so a retry asks again.
 pub async fn resolve_ingredient_names(
     ai_client: &dyn AiClient,
-    names: &[(String, Vec<String>)],
+    names: &[NameQuery],
 ) -> Result<ResolveIngredientNamesResult, AiError> {
     let request = ChatRequest {
         messages: vec![ChatMessage::user(render_resolve_ingredient_names_prompt(
@@ -68,25 +84,50 @@ pub async fn resolve_ingredient_names(
 }
 
 fn validate(
-    names: &[(String, Vec<String>)],
+    names: &[NameQuery],
     parsed: Response,
 ) -> Result<HashMap<String, NameResolution>, String> {
-    let candidates: HashMap<&str, &Vec<String>> = names
+    let queries: HashMap<&str, &NameQuery> = names
         .iter()
-        .map(|(name, keys)| (name.as_str(), keys))
+        .map(|query| (query.name.as_str(), query))
         .collect();
     let mut resolutions = HashMap::new();
     for raw in parsed.resolutions {
-        let Some(keys) = candidates.get(raw.name.as_str()) else {
+        let Some(query) = queries.get(raw.name.as_str()) else {
             return Err(format!("answered a name that wasn't asked: {:?}", raw.name));
         };
         let resolution = match (raw.answer.as_str(), raw.key) {
-            ("entry", Some(key)) if keys.contains(&key) => NameResolution::Entry(key),
+            ("entry", Some(key)) if query.candidates.contains(&key) => NameResolution::Entry(key),
             ("entry", key) => {
                 return Err(format!(
                     "{:?}: key {key:?} is not one of its candidates",
                     raw.name
                 ))
+            }
+            // An ambiguous name has catalog candidates; the model picks one
+            // or says it can't, never invents numbers for it.
+            ("estimate", _) if query.ambiguous => {
+                return Err(format!("{:?}: estimated an ambiguous name", raw.name))
+            }
+            ("estimate", _) => {
+                let kcal = raw.kcal_per_100g.filter(|v| within(*v, KCAL_PER_100G));
+                let cup_ok = raw.grams_per_cup.is_none_or(|v| within(v, CUP_GRAMS));
+                let piece_ok = raw.grams_per_piece.is_none_or(|v| within(v, PIECE_GRAMS));
+                match kcal {
+                    Some(kcal_per_100g) if cup_ok && piece_ok => {
+                        NameResolution::Estimate(EstimatedFood {
+                            kcal_per_100g,
+                            grams_per_cup: raw.grams_per_cup,
+                            grams_per_piece: raw.grams_per_piece,
+                        })
+                    }
+                    _ => {
+                        return Err(format!(
+                            "{:?}: implausible estimate {:?} kcal/100 g, {:?} g/cup, {:?} g/piece",
+                            raw.name, raw.kcal_per_100g, raw.grams_per_cup, raw.grams_per_piece
+                        ))
+                    }
+                }
             }
             ("not_food", _) => NameResolution::NotFood,
             ("unknown", _) => NameResolution::Unknown,
@@ -96,11 +137,11 @@ fn validate(
             return Err(format!("answered {:?} twice", raw.name));
         }
     }
-    if let Some((missing, _)) = names
+    if let Some(missing) = names
         .iter()
-        .find(|(name, _)| !resolutions.contains_key(name))
+        .find(|query| !resolutions.contains_key(&query.name))
     {
-        return Err(format!("no answer for {missing:?}"));
+        return Err(format!("no answer for {:?}", missing.name));
     }
     Ok(resolutions)
 }
@@ -109,10 +150,23 @@ fn validate(
 mod tests {
     use super::*;
 
-    fn names() -> Vec<(String, Vec<String>)> {
+    fn names() -> Vec<NameQuery> {
         vec![
-            ("moon sugar".into(), vec!["granulated sugar".into()]),
-            ("platter".into(), vec![]),
+            NameQuery {
+                name: "moon sugar".into(),
+                candidates: vec!["granulated sugar".into()],
+                ambiguous: false,
+            },
+            NameQuery {
+                name: "platter".into(),
+                candidates: vec![],
+                ambiguous: false,
+            },
+            NameQuery {
+                name: "cheese".into(),
+                candidates: vec!["cheddar cheese".into()],
+                ambiguous: true,
+            },
         ]
     }
 
@@ -120,15 +174,20 @@ mod tests {
         serde_json::from_str(json).unwrap()
     }
 
+    const CHEESE: &str = r#"{"name": "cheese", "answer": "entry", "key": "cheddar cheese"}"#;
+
+    fn with_cheese(rest: &str) -> String {
+        format!(r#"{{"resolutions": [{rest}, {CHEESE}]}}"#)
+    }
+
     #[test]
     fn accepts_complete_answers_within_candidates() {
         let resolved = validate(
             &names(),
-            response(
-                r#"{"resolutions": [
-            {"name": "moon sugar", "answer": "entry", "key": "granulated sugar"},
-            {"name": "platter", "answer": "not_food"}]}"#,
-            ),
+            response(&with_cheese(
+                r#"{"name": "moon sugar", "answer": "entry", "key": "granulated sugar"},
+            {"name": "platter", "answer": "not_food"}"#,
+            )),
         )
         .unwrap();
         assert_eq!(
@@ -136,18 +195,50 @@ mod tests {
             NameResolution::Entry("granulated sugar".into())
         );
         assert_eq!(resolved["platter"], NameResolution::NotFood);
+        assert_eq!(
+            resolved["cheese"],
+            NameResolution::Entry("cheddar cheese".into())
+        );
     }
 
     #[test]
-    fn rejects_invented_keys_missing_names_and_duplicates() {
-        for json in [
-            r#"{"resolutions": [{"name": "moon sugar", "answer": "entry", "key": "honey"}, {"name": "platter", "answer": "unknown"}]}"#,
-            r#"{"resolutions": [{"name": "moon sugar", "answer": "unknown"}]}"#,
-            r#"{"resolutions": [{"name": "moon sugar", "answer": "unknown"}, {"name": "moon sugar", "answer": "unknown"}, {"name": "platter", "answer": "unknown"}]}"#,
-            r#"{"resolutions": [{"name": "stardust", "answer": "unknown"}, {"name": "moon sugar", "answer": "unknown"}, {"name": "platter", "answer": "unknown"}]}"#,
-            r#"{"resolutions": [{"name": "moon sugar", "answer": "maybe"}, {"name": "platter", "answer": "unknown"}]}"#,
+    fn accepts_plausible_estimates_for_unmatched_foods() {
+        let resolved = validate(
+            &names(),
+            response(&with_cheese(
+                r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 380, "grams_per_cup": 200, "grams_per_piece": null},
+            {"name": "platter", "answer": "unknown"}"#,
+            )),
+        )
+        .unwrap();
+        assert_eq!(
+            resolved["moon sugar"],
+            NameResolution::Estimate(EstimatedFood {
+                kcal_per_100g: 380.0,
+                grams_per_cup: Some(200.0),
+                grams_per_piece: None,
+            })
+        );
+    }
+
+    #[test]
+    fn rejects_invented_keys_bad_estimates_missing_names_and_duplicates() {
+        for rest in [
+            r#"{"name": "moon sugar", "answer": "entry", "key": "honey"}, {"name": "platter", "answer": "unknown"}"#,
+            r#"{"name": "moon sugar", "answer": "unknown"}"#,
+            r#"{"name": "moon sugar", "answer": "unknown"}, {"name": "moon sugar", "answer": "unknown"}, {"name": "platter", "answer": "unknown"}"#,
+            r#"{"name": "stardust", "answer": "unknown"}, {"name": "moon sugar", "answer": "unknown"}, {"name": "platter", "answer": "unknown"}"#,
+            r#"{"name": "moon sugar", "answer": "maybe"}, {"name": "platter", "answer": "unknown"}"#,
+            // No calories, implausible calories, an implausible cup.
+            r#"{"name": "moon sugar", "answer": "estimate"}, {"name": "platter", "answer": "unknown"}"#,
+            r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 2000}, {"name": "platter", "answer": "unknown"}"#,
+            r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 300, "grams_per_cup": 5000}, {"name": "platter", "answer": "unknown"}"#,
         ] {
-            assert!(validate(&names(), response(json)).is_err(), "{json}");
+            let json = with_cheese(rest);
+            assert!(validate(&names(), response(&json)).is_err(), "{json}");
         }
+        // An ambiguous name is never estimated.
+        let json = r#"{"resolutions": [{"name": "moon sugar", "answer": "unknown"}, {"name": "platter", "answer": "unknown"}, {"name": "cheese", "answer": "estimate", "kcal_per_100g": 400}]}"#;
+        assert!(validate(&names(), response(json)).is_err());
     }
 }

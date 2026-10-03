@@ -31,13 +31,15 @@ SCALE_TEST_INGREDIENTS: List[Ingredient] = [
     Ingredient(item="milk", measurements=[Measurement(amount="2.5", unit="cups")]),
     Ingredient(item="eggs", measurements=[Measurement(amount="3", unit=None)]),
     Ingredient(item="salt", measurements=[Measurement(amount="to taste", unit=None)]),
-    Ingredient(item="bay leaves", measurements=[Measurement(amount="6-8", unit=None)]),
+    # Counted in pods, which estimated weights never ask about, so past the
+    # trace limit it stays uncounted whatever the shared weight table holds.
+    Ingredient(item="cardamom", measurements=[Measurement(amount="6-8", unit="pods")]),
 ]
 
 # Every line is known: flour (910 kcal), sugar (387), milk (373.6), 1 1/2
 # sticks of butter (169.5 g, 1215.3), 3 large eggs (150 g, 214.5), and salt to
-# taste and a few bay leaves (negligible) sum to 3100.4 kcal, 775.1 per serving
-# of 4. At 2x, 12-16 bay leaves are past the trace limit, so they become
+# taste and a few cardamom pods (negligible) sum to 3100.4 kcal, 775.1 per serving
+# of 4. At 2x, 12-16 pods are past the trace limit, so they become
 # uncounted and the figures become lower bounds.
 SCALE_TEST_HEADLINE_1X = "~780 kcal per serving"
 SCALE_TEST_TOTAL_1X = "~3,100 kcal for the whole recipe"
@@ -128,8 +130,10 @@ def test_calorie_estimates_follow_recipe_and_scale(
                         item="granulated sugar",
                         measurements=[Measurement(amount="100–200", unit="g")],
                     ),
+                    # The mock model answers "unknown" for it, so it stays
+                    # uncounted even after the estimate queues it.
                     Ingredient(
-                        item="yogurt",
+                        item="unknowable yogurt",
                         measurements=[Measurement(amount="100", unit="g")],
                     ),
                 ],
@@ -142,11 +146,13 @@ def test_calorie_estimates_follow_recipe_and_scale(
     # behind the breakdown disclosure.
     expect(section).to_contain_text("At least ~96 kcal per serving")
     expect(section).to_contain_text("At least ~380 kcal for the whole recipe")
-    expect(section).to_contain_text("Not counted: yogurt")
-    breakdown_line = section.locator(".calorie-breakdown li", has_text="yogurt")
+    expect(section).to_contain_text("Not counted: unknowable yogurt")
+    breakdown_line = section.locator(
+        ".calorie-breakdown li", has_text="unknowable yogurt"
+    )
     expect(breakdown_line).to_be_hidden()
     section.get_by_text("How is this calculated?").click()
-    expect(breakdown_line).to_contain_text("Could be several foods")
+    expect(breakdown_line).to_contain_text("Not recognized")
     expect(
         section.locator(".calorie-breakdown li", has_text="granulated sugar")
     ).to_contain_text("~380–780 kcal")
@@ -213,7 +219,7 @@ def test_excessive_scale_is_rejected_before_requesting_calories(
     )
     expect(section).to_contain_text(SCALE_TEST_HEADLINE_2X)
     expect(section).to_contain_text(SCALE_TEST_TOTAL_2X)
-    expect(section).to_contain_text("Not counted: bay leaves")
+    expect(section).to_contain_text("Not counted: cardamom")
     expect(section.get_by_role("alert")).not_to_be_visible()
 
 
@@ -406,4 +412,4 @@ def test_shopping_list_uses_scaled_amounts(scale_recipe, api_url, page: Page):
     assert by_item["milk"] == "5 cups"
     assert by_item["eggs"] == "6"
     assert by_item["kosher salt"] == "to taste"
-    assert by_item["bay leaves"] == "12-16"
+    assert by_item["cardamom"] == "12-16 pods"

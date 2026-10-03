@@ -93,10 +93,20 @@ described under Presentation.
 
 ## Names the catalog doesn't know
 
-After a recipe or shopping-list item is saved, names the committed catalog
-doesn't know are resolved by an LLM in the background (catalog step 3). The
-answer is a catalog key or "not food", stored once per name and used by later
-estimates. Saving never waits for it, and estimating never calls the LLM:
+After a recipe or shopping-list item is saved, and whenever an estimate reads
+one never asked about (at most 50 new names per request, staying `resolving`
+until the rest are queued), names the committed catalog doesn't know or calls
+ambiguous are resolved by an LLM in the background (catalog step 3). The answer
+is stored once per name and used by later estimates:
+- a catalog key: the same food, or for an ambiguous name ("cheese") the one a
+  recipe most likely means, labeled "(assumed cheddar cheese)";
+- an estimate, for a real food no catalog entry matches: the model's calories
+  per 100 g, and its cup and piece weights when it gave them (calories 0–900
+  per 100 g, 5–700 g per cup, 0.01–5000 g per piece, or the batch is
+  rejected), labeled "(estimated calories)";
+- "not food".
+
+Saving never waits for it, and estimating never calls the LLM:
 - a name not resolved yet reads as unknown ("Not recognized");
 - so does a name the model couldn't place;
 - a failed resolution shows in Settings → Ingredient recognition, where it can

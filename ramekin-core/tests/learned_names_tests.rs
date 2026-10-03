@@ -1,6 +1,6 @@
 use ramekin_core::catalog::{
-    candidates, learned_key_resolves, resolve_line_with, unlearned_name, Learned, LearnedTarget,
-    Resolution, Via,
+    candidates, learned_key_resolves, resolve_line_with, unlearned_name, EstimatedFood, Learned,
+    LearnedTarget, Resolution, Via,
 };
 use ramekin_core::ingredient_categorizer::categorize_with;
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
@@ -17,8 +17,84 @@ fn learned(pairs: &[(&str, LearnedTarget)]) -> Learned {
 fn only_names_the_catalog_misses_are_learned() {
     assert_eq!(unlearned_name("Moon Dust"), Some("moon dust".to_string()));
     assert_eq!(unlearned_name("garlic"), None);
-    // Ambiguous on purpose, never sent to the LLM.
-    assert_eq!(unlearned_name("cheese"), None);
+    // Ambiguous names are sent too, for the food a recipe most likely means.
+    assert_eq!(unlearned_name("cheese"), Some("cheese".to_string()));
+}
+
+fn grams_line(item: &str, amount: &str, unit: &str) -> ParsedIngredient {
+    ParsedIngredient {
+        item: item.into(),
+        measurements: vec![Measurement {
+            amount: Some(amount.into()),
+            unit: Some(unit.into()),
+        }],
+        note: None,
+        raw: None,
+        section: None,
+    }
+}
+
+#[test]
+fn ambiguous_names_take_a_learned_default_and_say_so() {
+    let line = grams_line("cheese", "100", "g");
+    let without = estimate(std::slice::from_ref(&line), None, 1.0).unwrap();
+    assert_eq!(without.lines[0].text, "Could be several foods");
+    let learned = learned(&[("cheese", LearnedTarget::Entry("cheddar cheese".into()))]);
+    let with = estimate_with(
+        std::slice::from_ref(&line),
+        None,
+        1.0,
+        &learned,
+        &Weights::new(),
+    )
+    .unwrap();
+    let cheddar = estimate(&[grams_line("cheddar cheese", "100", "g")], None, 1.0).unwrap();
+    assert_eq!(with.known_calories, cheddar.known_calories);
+    assert!(
+        with.lines[0].text.ends_with("(assumed cheddar cheese)"),
+        "{}",
+        with.lines[0].text
+    );
+    // An "unknown" answer leaves it ambiguous.
+    let unknown = self::learned(&[("cheese", LearnedTarget::Unknown)]);
+    assert!(matches!(
+        resolve_line_with("cheese", None, &unknown),
+        Resolution::Ambiguous
+    ));
+}
+
+#[test]
+fn estimated_foods_count_with_the_model_numbers_and_say_so() {
+    let estimate_of = EstimatedFood {
+        kcal_per_100g: 250.0,
+        grams_per_cup: Some(120.0),
+        grams_per_piece: Some(30.0),
+    };
+    let learned = learned(&[("moon dust", LearnedTarget::Estimate(estimate_of))]);
+    // Still not a catalog entry, so densities and categories don't use it.
+    assert!(matches!(
+        resolve_line_with("moon dust", None, &learned),
+        Resolution::Unresolved
+    ));
+    for (amount, unit, grams) in [("100", "g", 100.0), ("1", "cup", 120.0), ("2", "", 60.0)] {
+        let line = grams_line("Moon Dust", amount, unit);
+        let result = estimate_with(&[line], None, 1.0, &learned, &Weights::new()).unwrap();
+        assert!(
+            (result.known_calories.unwrap().max - grams * 2.5).abs() < 1e-9,
+            "{amount} {unit}"
+        );
+        assert!(
+            result.lines[0].text.ends_with("(estimated calories)"),
+            "{}",
+            result.lines[0].text
+        );
+    }
+    // A unit it gave no weight for is a weight gap like any food's.
+    let line = grams_line("moon dust", "2", "jars");
+    let result = estimate_with(&[line], None, 1.0, &learned, &Weights::new()).unwrap();
+    assert!(result.known_calories.is_none());
+    assert_eq!(result.weight_gaps.len(), 1);
+    assert_eq!(result.weight_gaps[0].unit, "jar");
 }
 
 #[test]

@@ -164,17 +164,19 @@ export default function SettingsPage() {
         <h3>Ingredient recognition</h3>
         <p>
           Ingredient names the catalog doesn't know are identified in the
-          background after you save, and weights it lacks for a food (a cup of
-          capers, a bunch of kale) are estimated once a calorie estimate needs
-          them. Until then they count as unknown in calorie estimates.
+          background, a generic name ("cheese") gets the food a recipe most
+          likely means, and a food the catalog has no entry for gets estimated
+          calories. Weights it lacks for a food (a cup of capers, a bunch of
+          kale) are estimated too. Until then they count as unknown in calorie
+          estimates.
         </p>
         <Show when={nameStatus()}>
           {(status) => (
             <>
               <p class="settings-name-counts">
-                {status().recognized} recognized · {status().notFood} not food ·{" "}
-                {status().unknown} unknown · {status().pending} pending ·{" "}
-                {status().failed} failed
+                {status().recognized} recognized · {status().estimated}{" "}
+                estimated · {status().notFood} not food · {status().unknown}{" "}
+                unknown · {status().pending} pending · {status().failed} failed
               </p>
               <p class="settings-weight-counts">
                 Weights: {status().weights.estimated} estimated ·{" "}

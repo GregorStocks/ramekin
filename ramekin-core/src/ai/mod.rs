@@ -62,6 +62,7 @@ pub use generate_description::{generate_description, GenerateDescriptionResult};
 pub use generate_recipe_photo::{generate_recipe_photo, GenerateRecipePhotoResult};
 pub use normalize_title::{normalize_title, NormalizeTitleResult};
 pub use photo_extract::{extract_recipe_from_photos, PhotoExtractResult};
+pub use prompts::resolve_ingredient_names::NameQuery;
 pub use resolve_ingredient_names::{
     resolve_ingredient_names, NameResolution, ResolveIngredientNamesResult,
 };

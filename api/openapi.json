@@ -3763,6 +3763,7 @@
         "type": "object",
         "required": [
           "recognized",
+          "estimated",
           "not_food",
           "unknown",
           "pending",
@@ -3771,6 +3772,11 @@
           "weights"
         ],
         "properties": {
+          "estimated": {
+            "type": "integer",
+            "format": "int64",
+            "description": "A real food no catalog entry matches, counted with the model's own\ncalories (\"estimated calories\")."
+          },
           "failed": {
             "type": "integer",
             "format": "int64",
@@ -3796,7 +3802,7 @@
           "recognized": {
             "type": "integer",
             "format": "int64",
-            "description": "Resolved to a catalog food or product."
+            "description": "Resolved to a catalog food or product (for an ambiguous name, the one\na recipe most likely means)."
           },
           "unknown": {
             "type": "integer",

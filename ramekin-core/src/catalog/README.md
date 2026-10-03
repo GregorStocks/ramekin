@@ -386,24 +386,33 @@ resolution behavior changes.
 
 ## Learned names (catalog step 3)
 
-Names the committed catalog still doesn't know are resolved by an LLM after
-save and stored by the server in `ingredient_name_resolutions`, shared across
-accounts. `learned.rs` is the pure half:
-- `unlearned_name(item)` picks the names to learn: `Unresolved` only.
-  Deliberately ambiguous names ("cheese") are never sent.
+Names the committed catalog still doesn't know, or calls ambiguous, are
+resolved by an LLM after save (or when an estimate is read) and stored by the
+server in `ingredient_name_resolutions`, shared across accounts. `learned.rs`
+is the pure half:
+- `unlearned_name(item)` picks the names to learn: `Unresolved` and
+  `Ambiguous`. For an ambiguous name ("cheese") the model picks the food a
+  recipe most likely means from its candidates (owner decision 2026-10-02,
+  "model estimates, labeled"), and estimates say "(assumed cheddar cheese)".
 - `candidates(name, n)` is the lexical shortlist the model must choose from. It
   covers catalog keys that share a word and name one entry.
 - `resolve_line_with(item, note, &Learned)` consults a stored answer only after
   the committed catalog says `Unresolved`. An answer is a catalog key, re-resolved
   through the catalog (`Via::Learned`), so calories, density and category all
-  come from committed data. A name's answer never supplies numbers; weights
-  are separate and labeled (below).
+  come from committed data.
+- A real food no candidate matches can instead get an estimate
+  (`LearnedTarget::Estimate`): the model's calories per 100 g and, when it
+  gave them, grams per cup and per piece. It isn't a catalog entry, so
+  densities, categories and `resolve_line_with` ignore it; only
+  `nutrition::estimate_with` counts it (`learned_estimate`), as a stand-in
+  entry labeled "(estimated calories)". An ambiguous name is never estimated.
 - `categorize_with(item, &Learned)` uses a learned entry's catalog category when
   it has one. Otherwise the item's own keywords decide, then the key's, so a
   learned answer never loses a category the keywords already gave. A learned
   non-food is categorized by keywords, like a committed one.
 
-Pending, failed and "unknown" names stay unknown. The server side (queueing on
+Pending, failed and "unknown" names stay unknown (an ambiguous one stays
+ambiguous). The server side (queueing on
 every recipe and shopping-list save, the background worker, the scrape step
 `resolve_ingredient_names`, and Settings → Ingredient recognition) is in
 `server/src/ingredient_names.rs`. Harvesting good answers back into

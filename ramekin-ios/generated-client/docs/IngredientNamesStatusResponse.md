@@ -3,11 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**estimated** | **Int64** | A real food no catalog entry matches, counted with the model&#39;s own calories (\&quot;estimated calories\&quot;). | 
 **failed** | **Int64** | The last attempt failed; retry to try again. | 
 **failures** | [IngredientNameFailure] | The most recent failures. | 
 **notFood** | **Int64** | Resolved as not an ingredient (a heading, a serving note). | 
 **pending** | **Int64** | Waiting for the background resolver. | 
-**recognized** | **Int64** | Resolved to a catalog food or product. | 
+**recognized** | **Int64** | Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means). | 
 **unknown** | **Int64** | Resolved, but the model couldn&#39;t tell; still unknown in estimates. | 
 **weights** | [**IngredientWeightsStatus**](IngredientWeightsStatus.md) |  | 
 

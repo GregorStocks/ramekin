@@ -6,6 +6,7 @@
 
 Name | Type
 ------------ | -------------
+`estimated` | number
 `failed` | number
 `failures` | [Array&lt;IngredientNameFailure&gt;](IngredientNameFailure.md)
 `notFood` | number
@@ -21,6 +22,7 @@ import type { IngredientNamesStatusResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "estimated": null,
   "failed": null,
   "failures": null,
   "notFood": null,

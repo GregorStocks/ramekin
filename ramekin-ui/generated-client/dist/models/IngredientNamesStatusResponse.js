@@ -17,6 +17,8 @@ import { IngredientWeightsStatusFromJSON, IngredientWeightsStatusToJSON, } from 
  * Check if a given object implements the IngredientNamesStatusResponse interface.
  */
 export function instanceOfIngredientNamesStatusResponse(value) {
+    if (!('estimated' in value) || value['estimated'] === undefined)
+        return false;
     if (!('failed' in value) || value['failed'] === undefined)
         return false;
     if (!('failures' in value) || value['failures'] === undefined)
@@ -41,6 +43,7 @@ export function IngredientNamesStatusResponseFromJSONTyped(json, ignoreDiscrimin
         return json;
     }
     return {
+        'estimated': json['estimated'],
         'failed': json['failed'],
         'failures': (json['failures'].map(IngredientNameFailureFromJSON)),
         'notFood': json['not_food'],
@@ -58,6 +61,7 @@ export function IngredientNamesStatusResponseToJSONTyped(value, ignoreDiscrimina
         return value;
     }
     return {
+        'estimated': value['estimated'],
         'failed': value['failed'],
         'failures': (value['failures'].map(IngredientNameFailureToJSON)),
         'not_food': value['notFood'],

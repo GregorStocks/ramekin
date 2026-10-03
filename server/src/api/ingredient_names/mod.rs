@@ -1,5 +1,5 @@
 //! Status and controls for resolving ingredient names the catalog doesn't
-//! know, and estimating weights it lacks (catalog step 3). The resolution table is shared across accounts, but
+//! know or calls ambiguous, and estimating weights it lacks (catalog step 3). The resolution table is shared across accounts, but
 //! each account only sees and retries the names in its own recipes and
 //! shopping list.
 
@@ -63,8 +63,12 @@ pub struct IngredientWeightsStatus {
 
 #[derive(Debug, Serialize, ToSchema)]
 pub struct IngredientNamesStatusResponse {
-    /// Resolved to a catalog food or product.
+    /// Resolved to a catalog food or product (for an ambiguous name, the one
+    /// a recipe most likely means).
     pub recognized: i64,
+    /// A real food no catalog entry matches, counted with the model's own
+    /// calories ("estimated calories").
+    pub estimated: i64,
     /// Resolved as not an ingredient (a heading, a serving note).
     pub not_food: i64,
     /// Resolved, but the model couldn't tell; still unknown in estimates.
@@ -205,6 +209,7 @@ pub async fn get_ingredient_names_status(
         let weights = ingredient_weights::counts(conn, &foods).map_err(db_error)?;
         Ok(IngredientNamesStatusResponse {
             recognized: count(RESOLVED, Some("entry")),
+            estimated: count(RESOLVED, Some("estimate")),
             not_food: count(RESOLVED, Some("not_food")),
             unknown: count(RESOLVED, Some("unknown")),
             pending: count(PENDING, None),

@@ -188,9 +188,11 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             self.send_error(404, "Not found")
 
     def _mock_resolve_ingredient_names(self, all_text):
-        """Resolve each item to its first candidate. A name containing
-        names a test marked failing (/test/ingredient-name-failure) break the
-        response; "unknowable" answers unknown; "serving platter" is not food."""
+        """Resolve each item to its first candidate (an ambiguous one too).
+        Names a test marked failing (/test/ingredient-name-failure) break the
+        response; "estimable" gets an estimate (200 kcal/100 g, 150 g/cup,
+        40 g/piece); "unknowable" answers unknown; "serving platter" is not
+        food."""
         items_text = all_text.split("Items:", 1)[1].split("Respond with JSON", 1)[0]
         items = json.loads(items_text)
         with INGREDIENT_NAME_CALLS_LOCK:
@@ -210,7 +212,17 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             return '{"resolutions": ['
         resolutions = []
         for item in items:
-            if "unknowable" in item["name"] or not item["candidates"]:
+            if "estimable" in item["name"] and not item["ambiguous"]:
+                resolutions.append(
+                    {
+                        "name": item["name"],
+                        "answer": "estimate",
+                        "kcal_per_100g": 200,
+                        "grams_per_cup": 150,
+                        "grams_per_piece": 40,
+                    }
+                )
+            elif "unknowable" in item["name"] or not item["candidates"]:
                 resolutions.append({"name": item["name"], "answer": "unknown"})
             elif "serving platter" in item["name"]:
                 resolutions.append({"name": item["name"], "answer": "not_food"})

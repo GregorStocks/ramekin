@@ -28,14 +28,15 @@ class IngredientNamesStatusResponse(BaseModel):
     """
     IngredientNamesStatusResponse
     """ # noqa: E501
+    estimated: StrictInt = Field(description="A real food no catalog entry matches, counted with the model's own calories (\"estimated calories\").")
     failed: StrictInt = Field(description="The last attempt failed; retry to try again.")
     failures: List[IngredientNameFailure] = Field(description="The most recent failures.")
     not_food: StrictInt = Field(description="Resolved as not an ingredient (a heading, a serving note).")
     pending: StrictInt = Field(description="Waiting for the background resolver.")
-    recognized: StrictInt = Field(description="Resolved to a catalog food or product.")
+    recognized: StrictInt = Field(description="Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means).")
     unknown: StrictInt = Field(description="Resolved, but the model couldn't tell; still unknown in estimates.")
     weights: IngredientWeightsStatus
-    __properties: ClassVar[List[str]] = ["failed", "failures", "not_food", "pending", "recognized", "unknown", "weights"]
+    __properties: ClassVar[List[str]] = ["estimated", "failed", "failures", "not_food", "pending", "recognized", "unknown", "weights"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +99,7 @@ class IngredientNamesStatusResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "estimated": obj.get("estimated"),
             "failed": obj.get("failed"),
             "failures": [IngredientNameFailure.from_dict(_item) for _item in obj["failures"]] if obj.get("failures") is not None else None,
             "not_food": obj.get("not_food"),

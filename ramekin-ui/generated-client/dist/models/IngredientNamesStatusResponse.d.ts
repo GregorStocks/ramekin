@@ -18,6 +18,13 @@ import type { IngredientWeightsStatus } from './IngredientWeightsStatus';
  */
 export interface IngredientNamesStatusResponse {
     /**
+     * A real food no catalog entry matches, counted with the model's own
+     * calories ("estimated calories").
+     * @type {number}
+     * @memberof IngredientNamesStatusResponse
+     */
+    estimated: number;
+    /**
      * The last attempt failed; retry to try again.
      * @type {number}
      * @memberof IngredientNamesStatusResponse
@@ -42,7 +49,8 @@ export interface IngredientNamesStatusResponse {
      */
     pending: number;
     /**
-     * Resolved to a catalog food or product.
+     * Resolved to a catalog food or product (for an ambiguous name, the one
+     * a recipe most likely means).
      * @type {number}
      * @memberof IngredientNamesStatusResponse
      */
