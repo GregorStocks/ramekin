@@ -11,6 +11,7 @@
 //! Ingredient recognition) until retried.
 
 use std::collections::BTreeSet;
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, LazyLock};
 use std::time::Duration;
 
@@ -43,6 +44,9 @@ pub const RESOLVED: &str = "resolved";
 pub const FAILED: &str = "failed";
 
 static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
+/// Set whenever names are saved resolved, so the worker sweeps stored recipes
+/// for the weight gaps the answers reveal.
+static NAMES_SAVED: AtomicBool = AtomicBool::new(false);
 pub(crate) static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
 /// One client for the process, so its rate limit spaces every call, with
 /// the model it asks.
@@ -252,24 +256,27 @@ pub fn requeue_stale_keys(pool: &DbPool) -> Result<usize, String> {
 /// waits to be woken.
 pub fn spawn_worker(pool: Arc<DbPool>) {
     tokio::spawn(async move {
-        // `queue_stored` ran at startup. Weights depend on names, so they're
-        // swept again after the first pass that succeeds (every pending name
-        // answered), retrying until that sweep succeeds too.
-        let mut swept_weights = false;
+        // `queue_stored` ran at startup. A saved answer can reveal a weight
+        // gap in any stored recipe, whichever path resolved it (this worker,
+        // a scrape job, a retry), so weights are swept again after every pass
+        // that follows one, retrying until that sweep succeeds.
+        let mut sweep_weights = false;
         let mut backoff = RETRY_MIN;
         loop {
             let mut pass = work_pass(&pool).await;
-            if pass.is_ok() && !swept_weights {
+            sweep_weights |= NAMES_SAVED.swap(false, Ordering::SeqCst);
+            if pass.is_ok() && sweep_weights {
                 let swept = run_blocking(&pool, |conn| queue_stored(conn, false))
                     .await
                     .map_err(|e| e.to_string())
                     .and_then(|result| result);
                 match swept {
-                    Ok((_, 0)) => swept_weights = true,
                     Ok((_, weights)) => {
-                        swept_weights = true;
-                        tracing::info!(weights, "queued stored ingredient weight gaps");
-                        continue;
+                        sweep_weights = false;
+                        if weights > 0 {
+                            tracing::info!(weights, "queued stored ingredient weight gaps");
+                            continue;
+                        }
                     }
                     Err(e) => pass = Err(format!("sweeping stored weight gaps: {e}")),
                 }
@@ -604,6 +611,8 @@ async fn save_resolved(
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
     tracing::info!(resolved, "resolved ingredient names");
+    NAMES_SAVED.store(true, Ordering::SeqCst);
+    wake();
     Ok(())
 }
 
