@@ -2,7 +2,7 @@
 
 Written by `make ai-eval`. Calories (and cup and piece weights) for a food with no catalog candidates (`resolve_ingredient_names`, answer "estimate"), against USDA for 80 foods given by their USDA description. Calorie error is against at least 20 kcal/100 g, so near-zero foods don't dominate. Cup and piece columns count foods where USDA has the weight; the piece is USDA's default portion, which isn't always a whole item.
 
-Golden set: `data/ai-evals/golden/food-estimates.json` (80 cases), asked 40 per call (production asks 40). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated; production treats those as provider errors); a rejected batch is retried item by item. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
+Golden set: `data/ai-evals/golden/food-estimates.json` (80 cases), asked 40 per call (production asks 40). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated); a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
 
 | Model | kcal within 20% | kcal median error | kcal P90 error | Cup within 25% | Piece within 25% | Unknown | Invalid | Rejected calls | Truncated calls | Cost of accepted calls |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -10,7 +10,7 @@ Golden set: `data/ai-evals/golden/food-estimates.json` (80 cases), asked 40 per 
 | google/gemini-3.8-flash | 91% | 2% | 20% | 94% | 40% | 0% | 0% | 0 | 0 | $0.0272 |
 | google/gemini-3.1-pro-preview | 92% | 3% | 16% | 100% | 32% | 0% | 0% | 0 | 0 | $0.1386 |
 | anthropic/claude-sonnet-5.5 | 89% | 5% | 21% | 100% | 32% | 0% | 0% | 0 | 0 | $0.0818 |
-| anthropic/claude-opus-5.5 | 89% | 0% | 16% | 84% | 32% | 0% | 6% | 6 | 0 | $0.3771 |
+| anthropic/claude-opus-5.5 | 92% | 0% | 15% | 90% | 32% | 0% | 2% | 3 | 0 | $0.3988 |
 | openai/gpt-6.1-sol | 89% | 0% | 20% | 94% | 20% | 0% | 0% | 0 | 0 | $0.0607 |
 | openai/gpt-6-luna | 84% | 6% | 29% | 100% | 20% | 0% | 0% | 0 | 0 | $0.0035 |
 | x-ai/grok-4.7 | 91% | 2% | 17% | 97% | 32% | 0% | 0% | 0 | 0 | $0.1184 |
@@ -22,10 +22,7 @@ The first few items each model answered invalidly even alone.
 ### anthropic/claude-opus-5.5
 
 - Failed to parse response: Unusable model response (finish_reason=Some(stop)): "```json\n{\"resolutions\": [{\"name\": \"tempeh\", \"answer\": \"estimate\", \"kcal_per_100g\": 192, \"grams_per_cup\": 166, \"grams_per_piece\": 227}]}\n```"
-- Failed to parse response: Unusable model response (finish_reason=Some(stop)): "```json\n{\"resolutions\": [{\"name\": \"babyfood, fruit, apricot with tapioca, strained\", \"answer\": \"estimate\", \"kcal_per_100g\": 65, \"grams_per_cup\": 250, \"grams_per_piece\": 113}]}\n```"
-- Failed to parse response: Unusable model response (finish_reason=Some(stop)): "```json\n{\"resolutions\": [{\"name\": \"ham and cheese spread\", \"answer\": \"estimate\", \"kcal_per_100g\": 260, \"grams_per_cup\": 240, \"grams_per_piece\": null}]}\n```"
-- Failed to parse response: Unusable model response (finish_reason=Some(stop)): "```json\n{\"resolutions\": [{\"name\": \"pork, fresh, variety meats and by-products, spleen, cooked, braised\", \"answer\": \"estimate\", \"kcal_per_100g\": 149, \"grams_per_cup\": 140, \"grams_per_piece\": null}]}\n``"
-- Failed to parse response: Unusable model response (finish_reason=Some(stop)): "Balsamic vinegar is a real food, but this item has no candidates, so it gets an estimate. Typical values are about 88 kcal per 100 g, and one cup weighs about 255 g. It isn't counted in pieces, so gra"
+- Failed to parse response: Unusable model response (finish_reason=Some(stop)): "Balsamic vinegar is a real food, but this item has no candidates, so it needs an estimate. Typical values are about 88 kcal per 100 g and about 255 g per cup. It isn't counted in pieces, so grams_per_"
 
 ## Worst misses
 

@@ -508,7 +508,7 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, 
             save_resolved(pool, resolutions, model).await?;
             return Ok(Batch::Resolved);
         }
-        Err(AiError::ParseError(error)) if batch.len() > 1 => error,
+        Err(error) if error.is_answer_specific() && batch.len() > 1 => error.to_string(),
         Err(error) => return fail(pool, batch, error).await,
     };
     tracing::warn!(

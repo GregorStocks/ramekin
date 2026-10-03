@@ -2,7 +2,7 @@
 
 Written by `make ai-eval`. Grams in one unit of a catalog food (`estimate_ingredient_weights`), against USDA: 60 densities (cup) and 60 piece weights in estimable units. Error is |estimate − USDA| / USDA; null means the model said there's no typical weight.
 
-Golden set: `data/ai-evals/golden/ingredient-weights.json` (120 cases), asked 1 per call (production asks 40). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated; production treats those as provider errors); a rejected batch is retried item by item. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
+Golden set: `data/ai-evals/golden/ingredient-weights.json` (120 cases), asked 1 per call (production asks 40). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated); a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
 
 | Model | Within 20% | Within 50% | Median error | P90 error | Null | Invalid | Rejected calls | Truncated calls | Cost of accepted calls |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |

@@ -16,7 +16,7 @@ use ramekin_core::catalog::{self, Resolution};
 use ramekin_core::nutrition::ESTIMABLE_UNITS;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
 use sha2::{Digest, Sha256};
-use std::collections::{BTreeMap, HashMap};
+use std::collections::{BTreeMap, HashMap, VecDeque};
 use std::fmt::Write as _;
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -309,48 +309,58 @@ fn client_for(model: &str) -> Result<CachingAiClient> {
     Ok(CachingAiClient::new(config))
 }
 
-/// Whether the model ran out of the production max_tokens.
-fn truncated(error: &AiError) -> bool {
-    matches!(error, AiError::Truncated(_))
+/// How a production worker retries a batch whose answer was rejected.
+#[derive(Clone, Copy)]
+enum Split {
+    /// Each half on its own, down to single items (the weights worker).
+    Halves,
+    /// Each item on its own (the names worker).
+    Singles,
 }
 
-/// Ask `items` in production-size batches. A batch the model answers invalidly
-/// (or runs out of tokens on) is retried item by item, as the server does for
-/// invalid answers; items that fail alone are counted, not fatal. Other
-/// provider and configuration errors stop the run.
+/// Ask `items` `batch_size` at a time, retrying a rejected batch (invalid, or
+/// truncated) the way the production worker does; a rejected single item is
+/// invalid, with no second chance, as in production. Provider and
+/// configuration errors stop the run.
 async fn in_batches<I: Clone, A>(
     items: &[I],
     batch_size: usize,
+    split: Split,
     spend: &mut Spend,
     mut ask: impl AsyncFnMut(&[I]) -> Result<(A, Usage), AiError>,
     mut take: impl FnMut(A),
 ) -> Result<usize> {
     let mut invalid = 0;
-    for batch in items.chunks(batch_size) {
-        match ask(batch).await {
+    let mut queue: VecDeque<Vec<I>> = items.chunks(batch_size).map(<[I]>::to_vec).collect();
+    while let Some(batch) = queue.pop_front() {
+        match ask(&batch).await {
             Ok((answers, usage)) => {
                 spend.add(&usage);
                 take(answers);
             }
             Err(e) if e.is_answer_specific() => {
-                spend.truncated += usize::from(truncated(&e));
                 spend.rejected_calls += 1;
-                for item in batch {
-                    match ask(std::slice::from_ref(item)).await {
-                        Ok((answers, usage)) => {
-                            spend.add(&usage);
-                            take(answers);
+                spend.truncated += usize::from(matches!(e, AiError::Truncated(_)));
+                if batch.len() == 1 {
+                    invalid += 1;
+                    if spend.rejections.len() < 5 {
+                        spend
+                            .rejections
+                            .push(e.to_string().chars().take(300).collect());
+                    }
+                    continue;
+                }
+                match split {
+                    Split::Halves => {
+                        let mut first = batch;
+                        let second = first.split_off(first.len() / 2);
+                        queue.push_front(second);
+                        queue.push_front(first);
+                    }
+                    Split::Singles => {
+                        for item in batch.into_iter().rev() {
+                            queue.push_front(vec![item]);
                         }
-                        Err(e) if e.is_answer_specific() => {
-                            spend.truncated += usize::from(truncated(&e));
-                            spend.rejected_calls += 1;
-                            invalid += 1;
-                            if spend.rejections.len() < 5 {
-                                let reason = e.to_string();
-                                spend.rejections.push(reason.chars().take(300).collect());
-                            }
-                        }
-                        Err(e) => return Err(e.into()),
                     }
                 }
             }
@@ -428,6 +438,7 @@ async fn eval_weights(
     let invalid = in_batches(
         &items,
         batch_size,
+        Split::Halves,
         spend,
         async |batch: &[(String, String)]| {
             estimate_ingredient_weights(&client, batch)
@@ -484,6 +495,7 @@ async fn eval_foods(
     let invalid = in_batches(
         &queries,
         batch_size,
+        Split::Singles,
         spend,
         async |batch: &[String]| {
             let batch: Vec<NameQuery> = batch
@@ -561,6 +573,7 @@ async fn eval_names(
     let invalid = in_batches(
         &indexes,
         batch_size,
+        Split::Singles,
         spend,
         async |batch: &[usize]| {
             let batch: Vec<NameQuery> = batch
@@ -666,7 +679,7 @@ fn render(
 ) -> String {
     let spec = spec(suite);
     let mut out = format!(
-        "# AI eval: {}\n\nWritten by `make ai-eval`. {}\n\nGolden set: `{GOLDEN_DIR}/{suite}.json` ({cases} cases), asked {batch_size} per call (production asks {BATCH}). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated; production treats those as provider errors); a rejected batch is retried item by item. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.\n\n",
+        "# AI eval: {}\n\nWritten by `make ai-eval`. {}\n\nGolden set: `{GOLDEN_DIR}/{suite}.json` ({cases} cases), asked {batch_size} per call (production asks {BATCH}). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated); a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.\n\n",
         spec.title, spec.about
     );
     let _ = writeln!(

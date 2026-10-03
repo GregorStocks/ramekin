@@ -2,11 +2,11 @@
 
 Written by `make ai-eval`. Picking the catalog food a name means from its candidates (`resolve_ingredient_names`), for 100 curated aliases (correct if the answer resolves to the alias's food; the alias itself is not offered) and 30 curated not-food names. Some curated aliases are judgment calls (delicata squash counts as acorn squash), so a sensible answer can score as wrong: compare models with each other rather than reading this as absolute accuracy.
 
-Golden set: `data/ai-evals/golden/ingredient-names.json` (130 cases), asked 1 per call (production asks 40). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated; production treats those as provider errors); a rejected batch is retried item by item. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
+Golden set: `data/ai-evals/golden/ingredient-names.json` (130 cases), asked 1 per call (production asks 40). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated); a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
 
 | Model | Correct food | Wrong food | Unknown | Not food right | Invalid | Rejected calls | Truncated calls | Cost of accepted calls |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| google/gemini-2.5-flash | 83% | 12% | 3% | 53% | 2% | 4 | 0 | $0.0399 |
+| google/gemini-2.5-flash | 83% | 12% | 3% | 53% | 2% | 2 | 0 | $0.0399 |
 | google/gemini-3.8-flash | 87% | 13% | 0% | 80% | 0% | 0 | 0 | $0.3215 |
 | openai/gpt-6.1-sol | 88% | 11% | 1% | 57% | 0% | 0 | 0 | $0.2083 |
 | google/gemini-3.1-pro-preview | 84% | 16% | 0% | 77% | 0% | 0 | 0 | $1.3895 |
