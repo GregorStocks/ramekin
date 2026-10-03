@@ -330,6 +330,8 @@ enum Guess {
     Weight,
     /// A food no catalog entry matches, with the model's own calories.
     Food,
+    /// Both: an estimated food, weighed with an estimated weight.
+    FoodAndWeight,
 }
 
 /// What one ingredient line adds to the estimate.
@@ -669,15 +671,26 @@ fn estimated_food_calories(
         kcal_per_100g: Some(estimate.kcal_per_100g),
         grams_per_cup: estimate.grams_per_cup,
         category: None,
-        zero_calorie: false,
+        // A zero-calorie estimate (a diet soda) is negligible on any line,
+        // like a zero-calorie catalog food.
+        zero_calorie: estimate.kcal_per_100g == 0.0,
         trace_ok: false,
         portions: piece
             .map(|grams| std::collections::BTreeMap::from([("piece".to_string(), grams)]))
             .unwrap_or_default(),
         default_portion: piece.map(|_| "piece".to_string()),
     };
-    measured_calories(ingredient, &food(&entry, estimated)?)
-        .map(|(range, _)| Line::Calories(range, Guess::Food))
+    if entry.zero_calorie {
+        return Ok(Line::Negligible);
+    }
+    measured_calories(ingredient, &food(&entry, estimated)?).map(|(range, estimated_weight)| {
+        let guess = if estimated_weight {
+            Guess::FoodAndWeight
+        } else {
+            Guess::Food
+        };
+        Line::Calories(range, guess)
+    })
 }
 
 /// The line's calories weighed with the catalog alone, or failing that with
@@ -952,6 +965,10 @@ pub fn estimate_with(
             Guess::None => {}
             Guess::Weight => notes.push("estimated weight".to_string()),
             Guess::Food => notes.push("estimated calories".to_string()),
+            Guess::FoodAndWeight => {
+                notes.push("estimated calories".to_string());
+                notes.push("estimated weight".to_string());
+            }
         }
         let text = if notes.is_empty() {
             text

@@ -89,12 +89,49 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
             result.lines[0].text
         );
     }
-    // A unit it gave no weight for is a weight gap like any food's.
+    // A unit it gave no weight for is a weight gap like any food's, and once
+    // estimated the line says both numbers are the model's.
     let line = grams_line("moon dust", "2", "jars");
-    let result = estimate_with(&[line], None, 1.0, &learned, &Weights::new()).unwrap();
+    let result = estimate_with(
+        std::slice::from_ref(&line),
+        None,
+        1.0,
+        &learned,
+        &Weights::new(),
+    )
+    .unwrap();
     assert!(result.known_calories.is_none());
     assert_eq!(result.weight_gaps.len(), 1);
     assert_eq!(result.weight_gaps[0].unit, "jar");
+    let weights = Weights::from([(result.weight_gaps[0].clone(), 50.0)]);
+    let weighed = estimate_with(&[line], None, 1.0, &learned, &weights).unwrap();
+    assert!((weighed.known_calories.unwrap().max - 250.0).abs() < 1e-9);
+    assert!(
+        weighed.lines[0]
+            .text
+            .ends_with("(estimated calories; estimated weight)"),
+        "{}",
+        weighed.lines[0].text
+    );
+    // A zero-calorie estimate is negligible on any line, weighable or not.
+    let diet = self::learned(&[(
+        "moon soda",
+        LearnedTarget::Estimate(EstimatedFood {
+            kcal_per_100g: 0.0,
+            grams_per_cup: None,
+            grams_per_piece: None,
+        }),
+    )]);
+    let result = estimate_with(
+        &[grams_line("moon soda", "2", "bottles")],
+        None,
+        1.0,
+        &diet,
+        &Weights::new(),
+    )
+    .unwrap();
+    assert_eq!(result.lines[0].text, "Negligible");
+    assert!(result.weight_gaps.is_empty());
 }
 
 #[test]
