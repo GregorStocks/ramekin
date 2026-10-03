@@ -26,12 +26,9 @@ final class RecipeFlowTests: XCTestCase {
     func testTextRecipeReviewAndSave() throws {
         let server = app.textFields["https://ramekin.app"]
         XCTAssertTrue(server.waitForExistence(timeout: slowSimulatorTimeout))
-        clearField(server)
-        server.typeText("http://localhost:55000")
-        clearField(app.textFields["Username"])
-        app.textFields["Username"].typeText("t")
-        clearField(app.secureTextFields["Password"])
-        app.secureTextFields["Password"].typeText("t")
+        replaceText(in: server, with: "http://localhost:55000")
+        replaceText(in: app.textFields["Username"], with: "t")
+        replaceText(in: app.secureTextFields["Password"], with: "t")
         submitLogin()
         XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
         app.buttons["New Recipe"].tap()
@@ -43,8 +40,7 @@ final class RecipeFlowTests: XCTestCase {
         app.buttons["Review recipe"].tap()
         let title = app.textFields["Recipe title"]
         XCTAssertTrue(title.waitForExistence(timeout: slowSimulatorTimeout))
-        clearField(title)
-        title.typeText("iOS text pancakes")
+        replaceText(in: title, with: "iOS text pancakes")
         app.navigationBars.buttons["Save"].tap()
         XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
         let search = app.searchFields.firstMatch
@@ -57,12 +53,35 @@ final class RecipeFlowTests: XCTestCase {
         XCTAssertTrue(savedRecipe.waitForExistence(timeout: slowSimulatorTimeout))
     }
 
-    /// Clear a text field by triple-tapping to select all, then deleting.
-    /// More reliable than long-press + "Select All" menu item on CI.
-    private func clearField(_ field: XCUIElement) {
+    /// Replace a field's contents, then synchronize on the resulting value.
+    ///
+    /// Selecting the old text with a triple-tap is unreliable on a slow CI
+    /// simulator: it can land as a double-tap that selects only the last word,
+    /// or select nothing, and the typed text then joins what was left (a URL
+    /// of "https://ramekin.ap" plus the new one, or a recipe saved as
+    /// "TextiOS text pancakes"). Instead, put the cursor after the last
+    /// character and delete exactly as many characters as the field holds.
+    private func replaceText(
+        in field: XCUIElement,
+        with text: String,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
         field.tap()
-        field.tap(withNumberOfTaps: 3, numberOfTouches: 1)
-        field.typeText(XCUIKeyboardKey.delete.rawValue)
+        // An empty field reports its placeholder as its value, which can't be
+        // told apart from a prefilled value equal to the placeholder (the
+        // server URL field). Deleting past the start of the text is harmless,
+        // so always delete as many characters as the reported value.
+        let current = field.value as? String ?? ""
+        // A tap past the end of the text puts the cursor after it.
+        field.coordinate(withNormalizedOffset: CGVector(dx: 0.98, dy: 0.5)).tap()
+        field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count))
+        field.typeText(text)
+        // A secure field reports one bullet per character.
+        let expected = field.elementType == .secureTextField
+            ? String(repeating: "•", count: text.count)
+            : text
+        assertAccessibleValue(field, equals: expected, file: file, line: line)
     }
 
     /// Input can finish before a slow simulator's accessibility snapshot
@@ -80,7 +99,7 @@ final class RecipeFlowTests: XCTestCase {
         XCTAssertEqual(
             XCTWaiter.wait(for: [updated], timeout: slowSimulatorTimeout),
             .completed,
-            "Expected accessibility value: \(expected)",
+            "Expected accessibility value: \(expected), got: \(String(describing: element.value))",
             file: file,
             line: line
         )
@@ -115,22 +134,17 @@ final class RecipeFlowTests: XCTestCase {
             serverField.waitForExistence(timeout: slowSimulatorTimeout),
             "Server URL field should exist"
         )
-        clearField(serverField)
-        serverField.typeText("http://localhost:55000")
-        assertAccessibleValue(serverField, equals: "http://localhost:55000")
+        replaceText(in: serverField, with: "http://localhost:55000")
 
         // Find and fill username field (clear default value first)
         let usernameField = app.textFields["Username"]
         XCTAssertTrue(usernameField.exists, "Username field should exist")
-        clearField(usernameField)
-        usernameField.typeText("t")
-        assertAccessibleValue(usernameField, equals: "t")
+        replaceText(in: usernameField, with: "t")
 
         // Find and fill password field (clear default value first)
         let passwordField = app.secureTextFields["Password"]
         XCTAssertTrue(passwordField.exists, "Password field should exist")
-        clearField(passwordField)
-        passwordField.typeText("t")
+        replaceText(in: passwordField, with: "t")
 
         attachScreenshot(named: "01-LoginForm")
 
@@ -256,16 +270,9 @@ final class RecipeFlowTests: XCTestCase {
     func testLoginFailure() throws {
         let serverField = app.textFields["https://ramekin.app"]
         XCTAssertTrue(serverField.waitForExistence(timeout: slowSimulatorTimeout))
-        clearField(serverField)
-        serverField.typeText("http://localhost:55000")
-
-        let usernameField = app.textFields["Username"]
-        clearField(usernameField)
-        usernameField.typeText("invalid")
-
-        let passwordField = app.secureTextFields["Password"]
-        clearField(passwordField)
-        passwordField.typeText("wrong")
+        replaceText(in: serverField, with: "http://localhost:55000")
+        replaceText(in: app.textFields["Username"], with: "invalid")
+        replaceText(in: app.secureTextFields["Password"], with: "wrong")
 
         submitLogin()
 

@@ -41,7 +41,13 @@ final class CalorieEstimateViewModel: ObservableObject {
                 guard self.generation == generation else { return }
                 result = try await estimate(request)
                 guard self.generation == generation, !Task.isCancelled else { return }
-                response = result
+                // Most polls return the same estimate. Publishing it anyway
+                // re-renders the recipe screen every poll, and doing that
+                // while the toolbar menu is open kept the app's main thread
+                // busy for minutes on CI.
+                if result != response {
+                    response = result
+                }
             }
         } catch is CancellationError {
             return

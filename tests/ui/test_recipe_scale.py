@@ -241,6 +241,30 @@ def test_estimate_refreshes_quietly_while_names_resolve(scale_recipe, page: Page
     assert all(request == served[0] for request in served)
 
 
+def test_unchanged_poll_results_keep_polling(scale_recipe, page: Page):
+    # A poll that returns the same estimate isn't re-rendered, but polling must
+    # still continue until the names are recognized.
+    responses = [
+        _estimate_json("Waiting on names", resolving=True),
+        _estimate_json("Waiting on names", resolving=True),
+        _estimate_json("Waiting on names", resolving=True),
+        _estimate_json("All names recognized"),
+    ]
+    served = []
+
+    def handle(route):
+        served.append(route.request.post_data_json)
+        route.fulfill(json=responses[min(len(served), len(responses)) - 1])
+
+    page.route("**/api/recipes/estimate-calories", handle)
+    page.reload()
+    section = page.get_by_role("region", name="Estimated calories", exact=True)
+    expect(section).to_contain_text("Waiting on names")
+    expect(section).to_contain_text("All names recognized", timeout=15000)
+    page.wait_for_timeout(2500)
+    assert len(served) == 4, "polling stops once no names are resolving"
+
+
 def test_late_calorie_response_does_not_replace_new_scale(scale_recipe, page: Page):
     pending = []
 

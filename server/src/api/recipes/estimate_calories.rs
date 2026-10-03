@@ -125,10 +125,15 @@ pub async fn estimate_calories(
     let items: Vec<String> = ingredients.iter().map(|i| i.item.clone()).collect();
     let (learned, resolving_names) = run_db(&pool, move |conn| {
         let names = || items.iter().map(String::as_str);
-        crate::ingredient_names::load_learned(conn, names())
-            .and_then(|learned| {
-                crate::ingredient_names::any_pending(conn, names())
-                    .map(|resolving| (learned, resolving))
+        // Pending first: a name leaves pending in the same update that stores
+        // its answer, so once nothing reads as pending every answer is
+        // committed and the load below sees it. Loading first could miss an
+        // answer that lands between the two reads and then report nothing
+        // pending, ending the client's polling on a stale "Not recognized".
+        crate::ingredient_names::any_pending(conn, names())
+            .and_then(|resolving| {
+                crate::ingredient_names::load_learned(conn, names())
+                    .map(|learned| (learned, resolving))
             })
             .map_err(|e| {
                 tracing::error!("Failed to load learned ingredient names: {}", e);

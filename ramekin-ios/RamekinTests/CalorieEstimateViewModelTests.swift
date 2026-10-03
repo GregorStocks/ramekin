@@ -1,3 +1,4 @@
+import Combine
 import XCTest
 @testable import Ramekin
 
@@ -103,6 +104,25 @@ final class CalorieEstimateViewModelTests: XCTestCase {
         XCTAssertEqual(model.response?.headline, "Counted")
         XCTAssertFalse(loadingSeenDuringPoll, "polls keep the current estimate on screen")
         XCTAssertFalse(model.isLoading)
+    }
+
+    @MainActor
+    func testPollReturningTheSameEstimateDoesNotRepublishIt() async {
+        let request = EstimateCaloriesRequest(ingredients: [], scale: 1)
+        var calls = 0
+        let model = CalorieEstimateViewModel(pollInterval: .zero) { _ in
+            calls += 1
+            return calls < 4
+                ? self.estimate("Not yet", resolving: true)
+                : self.estimate("Counted")
+        }
+        var published: [String?] = []
+        let subscription = model.$response.dropFirst().sink { published.append($0?.headline) }
+        await model.load(request)
+        subscription.cancel()
+        XCTAssertEqual(calls, 4)
+        // Cleared at the start of the load, the first estimate, then only the change.
+        XCTAssertEqual(published, [nil, "Not yet", "Counted"])
     }
 
     @MainActor

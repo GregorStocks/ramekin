@@ -27,9 +27,13 @@ export default function CalorieEstimate(props: {
     setPollFailed(false);
     return fetchEstimate(r);
   });
+  // Bumped after a poll that returned the same estimate, so the next poll is
+  // scheduled without republishing an unchanged result.
+  const [unchangedPolls, setUnchangedPolls] = createSignal(0);
   // Names still being recognized in the background: ask again quietly (no
   // loading state) until the estimate includes them.
   createEffect(() => {
+    unchangedPolls();
     if (estimate.loading || !estimate()?.resolving) return;
     const polled = request();
     const current = () =>
@@ -40,7 +44,14 @@ export default function CalorieEstimate(props: {
     const timer = setTimeout(async () => {
       try {
         const result = await fetchEstimate(polled);
-        if (current()) mutate(result);
+        if (!current()) return;
+        // Most polls return the same estimate; re-rendering it every poll is
+        // wasted work.
+        if (JSON.stringify(result) === JSON.stringify(estimate())) {
+          setUnchangedPolls((n) => n + 1);
+        } else {
+          mutate(result);
+        }
       } catch {
         if (current()) setPollFailed(true);
       }
