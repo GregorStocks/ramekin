@@ -252,19 +252,26 @@ pub fn requeue_stale_keys(pool: &DbPool) -> Result<usize, String> {
 /// waits to be woken.
 pub fn spawn_worker(pool: Arc<DbPool>) {
     tokio::spawn(async move {
-        // Stored recipes are only queued when saved or read, so after a deploy
-        // (a catalog change, a new kind of answer) queue everything they need
-        // now rather than waiting for each to be opened. Weights depend on
-        // names, so they're swept again once the first pass has resolved them.
-        sweep_stored(&pool, true).await;
+        // `queue_stored` ran at startup. Weights depend on names, so they're
+        // swept again after the first pass that succeeds (every pending name
+        // answered), retrying until that sweep succeeds too.
         let mut swept_weights = false;
         let mut backoff = RETRY_MIN;
         loop {
-            let pass = work_pass(&pool).await;
-            if !swept_weights {
-                swept_weights = true;
-                if sweep_stored(&pool, false).await {
-                    continue;
+            let mut pass = work_pass(&pool).await;
+            if pass.is_ok() && !swept_weights {
+                let swept = run_blocking(&pool, |conn| queue_stored(conn, false))
+                    .await
+                    .map_err(|e| e.to_string())
+                    .and_then(|result| result);
+                match swept {
+                    Ok((_, 0)) => swept_weights = true,
+                    Ok((_, weights)) => {
+                        swept_weights = true;
+                        tracing::info!(weights, "queued stored ingredient weight gaps");
+                        continue;
+                    }
+                    Err(e) => pass = Err(format!("sweeping stored weight gaps: {e}")),
                 }
             }
             match pass {
@@ -292,30 +299,12 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
 }
 
 /// Queue what every stored recipe and shopping-list item needs: unknown or
-/// ambiguous names (when `names`), and the weight gaps their estimates report
-/// with what's learned so far. Returns whether anything was queued. A failed
-/// sweep is logged as an error and the worker carries on, since saves and
-/// reads still queue their own.
-async fn sweep_stored(pool: &Arc<DbPool>, names: bool) -> bool {
-    let swept = run_blocking(pool, move |conn| queue_stored(conn, names))
-        .await
-        .map_err(|e| e.to_string())
-        .and_then(|result| result);
-    match swept {
-        Ok((names, weights)) => {
-            if names + weights > 0 {
-                tracing::info!(names, weights, "queued stored ingredient names and weights");
-            }
-            names + weights > 0
-        }
-        Err(e) => {
-            tracing::error!("Failed to queue stored ingredient names and weights: {}", e);
-            false
-        }
-    }
-}
-
-fn queue_stored(conn: &mut PgConnection, queue_names: bool) -> Result<(usize, usize), String> {
+/// ambiguous names (when `queue_names`), and the weight gaps their estimates
+/// report with what's learned so far. Returns how many names and weights were
+/// queued. Stored recipes are otherwise only queued when saved or read, so
+/// after a deploy (a catalog change, a new kind of answer) the server runs
+/// this at startup rather than waiting for each to be opened.
+pub fn queue_stored(conn: &mut PgConnection, queue_names: bool) -> Result<(usize, usize), String> {
     use crate::models::Ingredient;
     use crate::schema::{recipe_versions, recipes, shopping_list_items};
     use ramekin_core::ingredient_parser::ParsedIngredient;
