@@ -138,9 +138,17 @@ fn curated_densities_keep_their_values() {
     assert_close(density("sake"), 240.0);
     assert_close(density("grated parmesan cheese"), 100.0);
     assert_close(density("shredded parmesan cheese"), 80.0);
-    // Manual baking values override the linked USDA food's density.
+    // Baking staples inherit the linked USDA food's density.
     assert_close(density("all-purpose flour"), 125.0);
     assert_close(density("butter"), 227.0);
+    // USDA cup rows the imported average misses: brown sugar's "cup packed"
+    // and heavy cream's fluid (not whipped) cup.
+    assert_close(density("brown sugar"), 220.0);
+    assert_close(density("heavy cream"), 238.0);
+    // Flours USDA doesn't weigh by the cup the way recipes measure them.
+    assert_close(density("almond flour"), 96.0);
+    assert_close(density("cake flour"), 112.0);
+    assert_close(density("coconut flour"), 112.0);
 }
 
 #[test]
@@ -564,39 +572,6 @@ fn dissimilar_alternatives_and_bare_herbs() {
 }
 
 #[test]
-fn bare_produce_alternative_shares_a_product_noun() {
-    let id = |item: &str| match resolve(item) {
-        Resolution::Entry { entry, .. } => entry.id.as_str(),
-        other => panic!("{item:?} did not resolve: {other:?}"),
-    };
-    // "Orange food coloring" isn't a catalog name, but the orange is a color
-    // of food coloring, not the fruit.
-    for (item, assumed) in [
-        ("orange or yellow food coloring", "food coloring"),
-        ("peach or nectarine jam", "jam"),
-        // A food standing on its own keeps its own name: a plural, anything
-        // but produce, or produce before a produce noun.
-        ("potatoes or sweet potatoes", "potatoes"),
-        ("butter or coconut oil", "butter"),
-        ("water or chicken broth", "water"),
-        ("lime or blood orange slices", "lime"),
-        // A last alternative naming a different food shares no noun.
-        ("banana or peanut butter", "banana"),
-        ("lemon or clarified butter", "lemon"),
-        ("banana or coconut oil", "banana"),
-        // The borrowed noun still comes first.
-        ("red or green bell pepper", "red bell pepper"),
-    ] {
-        assert_eq!(
-            chosen_alternative(item).as_deref(),
-            Some(assumed),
-            "{item:?}"
-        );
-        assert_eq!(id(item), id(assumed), "{item:?}");
-    }
-}
-
-#[test]
 fn salmon_defaults_to_farmed_unless_named() {
     let kcal = |item| food(fdc_id(item).unwrap()).unwrap().kcal_per_100g.unwrap();
     assert_eq!(fdc_id("salmon"), fdc_id("fish, salmon, atlantic, farmed"));
@@ -654,6 +629,52 @@ fn a_cooked_note_selects_the_cooked_food() {
     assert_eq!(
         line_fdc("cooked brown rice", Some("cooked")),
         fdc_id("cooked brown rice")
+    );
+    // An uncooked entry doesn't name a cooked food.
+    assert!(matches!(
+        resolve_line("dried apricots", Some("cooked")),
+        Resolution::Unresolved
+    ));
+}
+
+#[test]
+fn a_beverage_note_selects_the_beverage_milk() {
+    let line_fdc = |item, note| match resolve_line(item, note) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    let kcal = |fdc: Option<u32>| food(fdc.unwrap()).unwrap().kcal_per_100g.unwrap();
+    let canned = fdc_id("canned coconut milk");
+    let beverage = fdc_id("coconut milk beverage");
+    assert!(kcal(beverage) * 5.0 < kcal(canned));
+    assert_eq!(line_fdc("coconut milk", None), canned);
+    for note in [
+        "refrigerated kind, such as Silk",
+        "from a carton",
+        "beverage",
+    ] {
+        assert_eq!(line_fdc("coconut milk", Some(note)), beverage, "{note}");
+    }
+    assert_eq!(line_fdc("unsweetened coconut milk", None), canned);
+    assert_eq!(
+        line_fdc("unsweetened coconut milk", Some("from a carton")),
+        beverage
+    );
+    // A chilled can (for whipping) is still canned, and brands aren't signals.
+    for note in [
+        "refrigerated",
+        "refrigerated overnight",
+        "not refrigerated, divided",
+        "chilled overnight",
+        "such as Silk",
+        "so delicious",
+    ] {
+        assert_eq!(line_fdc("coconut milk", Some(note)), canned, "{note}");
+    }
+    // Milks that already default to the beverage keep it.
+    assert_eq!(
+        line_fdc("almond milk", Some("carton")),
+        line_fdc("almond milk", None)
     );
 }
 

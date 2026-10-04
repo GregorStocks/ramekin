@@ -2324,6 +2324,7 @@
     "orange juiced": "orange juice, raw",
     "orange marmalade": "marmalade, orange",
     "orange or apple juice": "orange juice, chilled, includes from concentrate",
+    "orange or yellow food coloring": "food coloring",
     "orange slice": "oranges, raw, all commercial varieties",
     "orange slices": "oranges, raw, all commercial varieties",
     "orange zest": "orange peel",
@@ -3354,6 +3355,7 @@
     "unsweetened cocoa powder": "cocoa powder",
     "unsweetened coconut flakes": "nuts, coconut meat, dried (desiccated), not sweetened",
     "unsweetened coconut milk": "nuts, coconut milk, canned (liquid expressed from grated meat and water)",
+    "unsweetened coconut milk beverage": "coconut milk beverage",
     "unsweetened dutch process cocoa": "cocoa, dry powder, unsweetened, processed with alkali",
     "unsweetened dutch-process cocoa powder": "cocoa, dry powder, unsweetened, processed with alkali",
     "unsweetened finely shredded coconut": "nuts, coconut meat, dried (desiccated), not sweetened",
@@ -4744,11 +4746,7 @@
       "trace_ok": true
     },
     "all-purpose flour": {
-      "fdc_id": 168936,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 125.0
-      }
+      "fdc_id": 168936
     },
     "allspice berries": {
       "fdc_id": 171315,
@@ -4766,7 +4764,8 @@
     "almond flour": {
       "fdc_id": 170568,
       "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "source": "King Arthur Baking ingredient weight chart: almond flour, 1 cup = 96 g",
+        "url": "https://www.kingarthurbaking.com/learn/ingredient-weight-chart",
         "value": 96.0
       }
     },
@@ -4919,11 +4918,7 @@
       "fdc_id": 2710623
     },
     "bread flour": {
-      "fdc_id": 168896,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 127.0
-      }
+      "fdc_id": 168896
     },
     "brioche buns": {
       "kcal_per_100g": {
@@ -4949,7 +4944,8 @@
     "brown sugar": {
       "fdc_id": 168833,
       "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "source": "USDA FoodData Central SR Legacy 168833 (Sugars, brown): 1 cup packed = 220 g",
+        "url": "https://fdc.nal.usda.gov/food-details/168833/nutrients",
         "value": 220.0
       }
     },
@@ -4961,11 +4957,7 @@
       }
     },
     "butter": {
-      "fdc_id": 173430,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 227.0
-      }
+      "fdc_id": 173430
     },
     "cacao nibs": {
       "grams_per_cup": {
@@ -4984,8 +4976,9 @@
     "cake flour": {
       "fdc_id": 169723,
       "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 114.0
+        "source": "USDA FoodData Central Branded food 2678594 (ENRICHED CAKE FLOUR, Reily Foods Company): serving 28 g = 1/4 cup",
+        "url": "https://fdc.nal.usda.gov/food-details/2678594/nutrients",
+        "value": 112.0
       }
     },
     "candied walnuts": {
@@ -5117,24 +5110,20 @@
       "trace_ok": true
     },
     "cocoa powder": {
-      "fdc_id": 169593,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 86.0
-      }
+      "fdc_id": 169593
     },
     "coconut flour": {
       "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "source": "USDA FoodData Central Branded food 1638046 (ORGANIC COCONUT FLOUR, Bob's Red Mill Natural Foods, Inc.): serving 14 g = 2 Tbsp",
+        "url": "https://fdc.nal.usda.gov/food-details/1638046/nutrients",
         "value": 112.0
       }
     },
+    "coconut milk beverage": {
+      "fdc_id": 2705413
+    },
     "coconut oil": {
-      "fdc_id": 171412,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 218.0
-      }
+      "fdc_id": 171412
     },
     "coconut sugar": {
       "grams_per_cup": {
@@ -5159,18 +5148,10 @@
       }
     },
     "cornstarch": {
-      "fdc_id": 169698,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 128.0
-      }
+      "fdc_id": 169698
     },
     "cream cheese": {
-      "fdc_id": 173418,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 232.0
-      }
+      "fdc_id": 173418
     },
     "creole seasoning": {
       "kcal_per_100g": {
@@ -5464,11 +5445,7 @@
       }
     },
     "granulated sugar": {
-      "fdc_id": 169655,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 200.0
-      }
+      "fdc_id": 169655
     },
     "grapefruit zest": {
       "trace_ok": true
@@ -5554,7 +5531,8 @@
     "heavy cream": {
       "fdc_id": 170859,
       "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
+        "source": "USDA FoodData Central SR Legacy 170859 (Cream, fluid, heavy whipping): 1 cup, fluid = 238 g; the imported average also counts its whipped cup (120 g)",
+        "url": "https://fdc.nal.usda.gov/food-details/170859/nutrients",
         "value": 238.0
       }
     },
@@ -5567,11 +5545,7 @@
       "trace_ok": true
     },
     "honey": {
-      "fdc_id": 169640,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 340.0
-      }
+      "fdc_id": 169640
     },
     "hot dog buns": {
       "default_portion": "bun",
@@ -5721,11 +5695,7 @@
       "fdc_id": 2709309
     },
     "maple syrup": {
-      "fdc_id": 169661,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 315.0
-      }
+      "fdc_id": 169661
     },
     "marinated artichoke hearts": {
       "grams_per_cup": {
@@ -5776,11 +5746,7 @@
       }
     },
     "milk": {
-      "fdc_id": 171265,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 245.0
-      }
+      "fdc_id": 171265
     },
     "mint green food coloring": {
       "category": "Baking",
@@ -5843,11 +5809,7 @@
       "trace_ok": true
     },
     "olive oil": {
-      "fdc_id": 171413,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 216.0
-      }
+      "fdc_id": 171413
     },
     "onion salt": {
       "trace_ok": true
@@ -5896,11 +5858,7 @@
       "kind": "product"
     },
     "peanut butter": {
-      "fdc_id": 174266,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 258.0
-      }
+      "fdc_id": 174266
     },
     "peanut butter chips": {
       "kcal_per_100g": {
@@ -5968,11 +5926,7 @@
       }
     },
     "powdered sugar": {
-      "fdc_id": 169656,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 120.0
-      }
+      "fdc_id": 169656
     },
     "prosciutto": {
       "default_portion": "slice",
@@ -6051,11 +6005,7 @@
       }
     },
     "rolled oats": {
-      "fdc_id": 173904,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 80.0
-      }
+      "fdc_id": 173904
     },
     "romesco sauce": {
       "grams_per_cup": {
@@ -6111,11 +6061,7 @@
       "trace_ok": true
     },
     "sour cream": {
-      "fdc_id": 171257,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 242.0
-      }
+      "fdc_id": 171257
     },
     "spanish chorizo": {
       "kcal_per_100g": {
@@ -6206,11 +6152,7 @@
       "trace_ok": true
     },
     "vegetable oil": {
-      "fdc_id": 172370,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 218.0
-      }
+      "fdc_id": 172370
     },
     "wavy dill pickle potato chips": {
       "fdc_id": 2709431
@@ -6237,11 +6179,7 @@
       }
     },
     "whole wheat flour": {
-      "fdc_id": 168893,
-      "grams_per_cup": {
-        "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
-        "value": 120.0
-      }
+      "fdc_id": 168893
     },
     "whole-wheat panko breadcrumbs": {
       "grams_per_cup": {

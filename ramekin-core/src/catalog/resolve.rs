@@ -578,8 +578,7 @@ const STATE_WORDS: &[&str] = &[
 /// if the words dropped to reach it change what it is ("cooked red lentils or
 /// cannellini beans"), nothing counts rather than a later alternative. Later
 /// alternatives are passed over only when the first names no known food at
-/// all ("country or sourdough bread"). A bare fruit or vegetable gives way to
-/// a product noun the list shares ("peach or nectarine jam" is jam).
+/// all ("country or sourdough bread").
 fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
     let entry_of = |name: &str| match resolve_single(name) {
         Resolution::Entry { entry, .. } => Some(entry),
@@ -587,6 +586,12 @@ fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
     };
     let mut groups = alternative_candidates(normalized)?.into_iter();
     let (piece, candidates) = groups.next()?;
+    if let Some(found) = candidates
+        .iter()
+        .find_map(|name| entry_of(name).map(|entry| (entry, name.clone())))
+    {
+        return Some(found);
+    }
     // A direct match only: clause trimming a fragment misleads.
     let directly = |name: &str| match resolve_single(name) {
         Resolution::Entry {
@@ -595,49 +600,6 @@ fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
         } => Some(entry),
         _ => None,
     };
-    // The last alternative as written, and the nouns it ends in, longest first.
-    let text = normalized.replace(" and/or ", " or ");
-    let last = alternative_chunks(&text)?.last()?.split(", ").next()?;
-    let last_tails = tails_of(last);
-    let one_word = !piece.contains(' ');
-    if let Some((entry, name)) = candidates
-        .iter()
-        .find_map(|name| entry_of(name).map(|entry| (entry, name.clone())))
-    {
-        // A singular fruit or vegetable written bare is a flavor sharing the
-        // list's noun when that noun is a product ("peach or nectarine jam" is
-        // jam, "orange or yellow food coloring" food coloring). A plural is a
-        // food of its own ("potatoes or sweet potatoes"), as is anything but
-        // produce ("butter or coconut oil"). The noun is shared only when the
-        // last alternative is no known food, or a variant the catalog keeps
-        // under that very name in the noun's aisle whose qualifier names no
-        // food ("yellow food coloring"): "banana or peanut butter" and "banana
-        // or coconut oil" are banana, and so is "lemon or clarified butter",
-        // an alias of ghee.
-        let produce = |entry: &Entry| entry.category.as_deref() == Some("Produce");
-        if name == piece && one_word && !piece.ends_with('s') && produce(entry) {
-            let written = entry_of(last);
-            if let Some(shared) = last_tails.iter().find_map(|tail| {
-                directly(tail)
-                    .filter(|shared| {
-                        !produce(shared)
-                            && written.is_none_or(|written| {
-                                let qualifier = last.strip_suffix(tail.as_str()).unwrap_or(last);
-                                written.id == last
-                                    && written.category == shared.category
-                                    && matches!(
-                                        resolve_single(qualifier.trim_end()),
-                                        Resolution::Unresolved
-                                    )
-                            })
-                    })
-                    .map(|shared| (shared, tail.clone()))
-            }) {
-                return Some(shared);
-            }
-        }
-        return Some((entry, name));
-    }
     // Only the piece and its borrowed-noun forms, borrowed forms first ("mixed
     // cherry" finds cherry tomatoes before cherries).
     let own_words = piece.split(' ').count();
@@ -661,13 +623,15 @@ fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
     // A one-word alternative is an adjective ("hot or mild paprika", "country
     // or sourdough bread"): it may give way to the noun the last alternative
     // ends in, whole ("sesame or poppy seeds to sprinkle" is not sprinkles).
-    if one_word
+    if own_words == 1
         && !STATE_WORDS.contains(&piece.as_str())
         && !LEADING_MODIFIERS.contains(&piece.as_str())
     {
-        if let Some(noun) = last_tails.first() {
-            if let Some(entry) = directly(noun) {
-                return Some((entry, noun.clone()));
+        let text = normalized.replace(" and/or ", " or ");
+        let last = alternative_chunks(&text)?.last().copied()?;
+        if let Some(noun) = tails_of(last).into_iter().next() {
+            if let Some(entry) = directly(&noun) {
+                return Some((entry, noun));
             }
         }
     }
