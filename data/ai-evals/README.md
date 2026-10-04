@@ -7,7 +7,9 @@ scorer, so a model change ships with its numbers.
   are generated from the committed catalog (`make ai-eval-golden`); regenerate
   only on purpose, since it changes what earlier results measured.
 - `<suite>.md`: the latest results, one row per model, at production's batch
-  size; `<suite>-batch-<n>.md` at other sizes.
+  size; `<suite>-batch-<n>.md` at other sizes (`BATCH=n`).
+- `logs/ai-evals/<suite>/<model>.json` (not committed): every case's answer,
+  for checking whether a miss is the model's or the measurement's.
 
 Run `make ai-eval MODELS=a,b,c [SUITE=…] [BATCH=n]` with `OPENROUTER_API_KEY`
 set (it reads `cli.env`). Each call goes through the production prompt and

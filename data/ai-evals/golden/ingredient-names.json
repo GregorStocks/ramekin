@@ -1848,24 +1848,6 @@
     "expected_entry": null
   },
   {
-    "name": "crust",
-    "candidates": [
-      "pie crust",
-      "refrigerated pie crust",
-      "refrigerated pie crusts",
-      "prepared graham cracker crust",
-      "homemade pie crust or all butter pie crust",
-      "pie crust, refrigerated, regular, baked",
-      "pie crust, refrigerated, regular, unbaked",
-      "breakfast bar, corn flake crust with fruit",
-      "pie crust, cookie-type, chocolate, ready crust",
-      "pie crust, standard-type, dry mix",
-      "pizza hut 12\" cheese pizza, pan crust",
-      "pizza hut 12\" pepperoni pizza, pan crust"
-    ],
-    "expected_entry": null
-  },
-  {
     "name": "dough and baking",
     "candidates": [
       "baking apples",
@@ -2133,24 +2115,6 @@
     "expected_entry": null
   },
   {
-    "name": "jam filling",
-    "candidates": [
-      "jam",
-      "apricot jam",
-      "jams and preserves",
-      "raspberry jam",
-      "strawberry jam",
-      "apple pie filling",
-      "fruit jam or preserves",
-      "jams and preserves, apricot",
-      "lemon pie filling",
-      "pumpkin pie filling",
-      "seedless raspberry jam",
-      "jam or preserves of your choice"
-    ],
-    "expected_entry": null
-  },
-  {
     "name": "braise",
     "candidates": [],
     "expected_entry": null
@@ -2174,24 +2138,6 @@
     "expected_entry": null
   },
   {
-    "name": "dough",
-    "candidates": [
-      "phyllo dough",
-      "pizza dough",
-      "homemade pizza dough",
-      "sheets phyllo dough",
-      "cookies, oatmeal, refrigerated dough",
-      "cookies, sugar, refrigerated dough",
-      "store-bought pizza dough",
-      "ball no-knead pizza dough",
-      "biscuits, mixed grain, refrigerated dough",
-      "cookies, chocolate chip, refrigerated dough",
-      "cookies, oatmeal, refrigerated dough, baked",
-      "cookies, peanut butter, refrigerated dough"
-    ],
-    "expected_entry": null
-  },
-  {
     "name": "assembly",
     "candidates": [],
     "expected_entry": null
@@ -2211,6 +2157,60 @@
       "penne pasta",
       "rotini pasta",
       "cavatappi or elbow pasta"
+    ],
+    "expected_entry": null
+  },
+  {
+    "name": "prepared rice noodles from above",
+    "candidates": [
+      "rice noodles",
+      "dried rice noodles",
+      "prepared brown rice",
+      "rice noodles, cooked",
+      "rice noodles, dry",
+      "thin rice noodles",
+      "dry wide rice noodles",
+      "babyfood, cereal, rice, prepared with whole milk",
+      "bread, whole-wheat, prepared from recipe",
+      "cake, gingerbread, prepared from recipe",
+      "cake, sponge, prepared from recipe",
+      "candies, divinity, prepared-from-recipe"
+    ],
+    "expected_entry": null
+  },
+  {
+    "name": "cooked",
+    "candidates": [
+      "bulgur, cooked",
+      "chopped cooked chicken",
+      "cooked bacon",
+      "cooked chicken",
+      "cooked chickpeas",
+      "cooked ham",
+      "cooked potatoes",
+      "cooked quinoa",
+      "cooked rice",
+      "couscous, cooked",
+      "millet, cooked",
+      "quinoa, cooked"
+    ],
+    "expected_entry": null
+  },
+  {
+    "name": "drained brined white beans from above",
+    "candidates": [
+      "cooked, drained beans or 2 15-ounce cans small white beans",
+      "cooked, drained beans (save cooking liquid for water in recipe, if desired) or 2 15-ounce cans small white beans (such as great northern or cannelini)",
+      "of white beans",
+      "white beans",
+      "cooked white beans",
+      "beans, small white, mature seeds",
+      "beans, small white, mature seeds, raw",
+      "beans, white, mature seeds",
+      "beans, white, mature seeds, raw",
+      "black beans rinsed and drained",
+      "cannellini or other white bean",
+      "cannellini or other white beans"
     ],
     "expected_entry": null
   }

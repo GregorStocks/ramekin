@@ -100,6 +100,12 @@ fn sample<T>(mut items: Vec<T>, key: impl Fn(&T) -> String, n: usize) -> Vec<T> 
     items
 }
 
+/// Curated not-food section headers whose name alone is a food ("Crust:"
+/// above the crust's ingredients). The prompt sees only the name, so no model
+/// can tell; in a recipe such a line usually has no amount and isn't counted
+/// either way.
+const FOOD_NAMED_HEADERS: [&str; 3] = ["crust", "dough", "jam filling"];
+
 /// Plain names only: letters, spaces, and light punctuation, so a case tests
 /// recognizing a food rather than surviving parser junk.
 fn plain_name(name: &str) -> bool {
@@ -108,6 +114,32 @@ fn plain_name(name: &str) -> bool {
         && name
             .chars()
             .all(|c| c.is_alphabetic() || matches!(c, ' ' | '-' | ',' | '\''))
+}
+
+/// Whether the answered key names the expected food. The catalog has several
+/// entries for many foods (a curated "whole-milk ricotta" beside USDA's
+/// "cheese, ricotta, whole milk"), so an equivalent entry counts: the same
+/// entry, the same USDA food, or calories within 10%.
+fn same_food(key: &str, name: &str, expected: &str) -> bool {
+    let (
+        Resolution::Entry {
+            entry: answered, ..
+        },
+        Resolution::Entry { entry: wanted, .. },
+    ) = (catalog::resolve(key), catalog::resolve(name))
+    else {
+        return false;
+    };
+    if answered.id == expected || answered.id == wanted.id {
+        return true;
+    }
+    if answered.fdc_id.is_some() && answered.fdc_id == wanted.fdc_id {
+        return true;
+    }
+    match (answered.kcal_per_100g, wanted.kcal_per_100g) {
+        (Some(a), Some(w)) if w > 0.0 => (a - w).abs() / w <= 0.1,
+        _ => false,
+    }
 }
 
 fn entry_id(name: &str) -> Option<String> {
@@ -202,7 +234,7 @@ fn write_golden(root: &Path) -> Result<()> {
     let not_food: Vec<NameCase> = curated
         .not_food
         .keys()
-        .filter(|name| plain_name(name))
+        .filter(|name| plain_name(name) && !FOOD_NAMED_HEADERS.contains(&name.as_str()))
         .filter_map(|name| name_case(name, None))
         .collect();
     let mut names = sample(aliases, |case| case.name.clone(), 100);
@@ -407,6 +439,16 @@ fn within(errors: &[f64], limit: f64, of: usize) -> String {
     pct(errors.iter().filter(|e| **e <= limit).count(), of)
 }
 
+/// Every case's answer for one model, for reading beyond the report:
+/// `logs/ai-evals/<suite>/<model>.json` (not committed).
+fn dump(suite: &str, model: &str, rows: Vec<serde_json::Value>) -> Result<()> {
+    let dir = Path::new("logs/ai-evals").join(suite);
+    fs::create_dir_all(&dir)?;
+    let path = dir.join(format!("{}.json", model.replace('/', "_")));
+    fs::write(&path, serde_json::to_string_pretty(&rows)? + "\n")
+        .with_context(|| format!("Failed to write {}", path.display()))
+}
+
 /// One model's row and its worst misses, for the report.
 struct ModelResult {
     model: String,
@@ -448,6 +490,21 @@ async fn eval_weights(
         |weights| answers.extend(weights),
     )
     .await?;
+    dump(
+        "ingredient-weights",
+        model,
+        cases
+            .iter()
+            .map(|case| {
+                serde_json::json!({
+                    "food": case.food,
+                    "unit": case.unit,
+                    "usda_grams": case.grams,
+                    "answer": answers.get(&(case.food.clone(), case.unit.clone())),
+                })
+            })
+            .collect(),
+    )?;
     let mut errors = Vec::new();
     let mut nulls = 0;
     let mut misses = Vec::new();
@@ -513,8 +570,22 @@ async fn eval_foods(
         |resolutions| answers.extend(resolutions),
     )
     .await?;
+    dump(
+        "food-estimates",
+        model,
+        cases
+            .iter()
+            .map(|case| {
+                serde_json::json!({
+                    "name": case.name,
+                    "usda": [case.kcal_per_100g, case.grams_per_cup, case.grams_per_piece],
+                    "answer": answers.get(&case.name).map(|answer| format!("{answer:?}")),
+                })
+            })
+            .collect(),
+    )?;
     let (mut kcal, mut cups, mut pieces) = (Vec::new(), Vec::new(), Vec::new());
-    let (mut cup_cases, mut piece_cases, mut unknown) = (0, 0, 0);
+    let (mut cup_cases, mut piece_cases, mut piece_answers, mut unknown) = (0, 0, 0, 0);
     let mut misses = Vec::new();
     for case in cases {
         cup_cases += usize::from(case.grams_per_cup.is_some());
@@ -543,6 +614,7 @@ async fn eval_foods(
         }
         if let (Some(truth), Some(guess)) = (case.grams_per_piece, estimate.grams_per_piece) {
             pieces.push(error(guess, truth));
+            piece_answers += 1;
         }
     }
     let n = cases.len();
@@ -553,7 +625,8 @@ async fn eval_foods(
             err_pct(percentile(&kcal, 0.5)),
             err_pct(percentile(&kcal, 0.9)),
             within(&cups, 0.25, cup_cases),
-            within(&pieces, 0.25, piece_cases),
+            pct(piece_answers, piece_cases),
+            within(&pieces, 0.25, piece_answers),
             pct(unknown, n),
             pct(invalid, n),
         ],
@@ -591,6 +664,21 @@ async fn eval_names(
         |resolutions| answers.extend(resolutions),
     )
     .await?;
+    dump(
+        "ingredient-names",
+        model,
+        cases
+            .iter()
+            .map(|case| {
+                serde_json::json!({
+                    "name": case.name,
+                    "expected": case.expected_entry,
+                    "candidates": case.candidates,
+                    "answer": answers.get(&case.name).map(|answer| format!("{answer:?}")),
+                })
+            })
+            .collect(),
+    )?;
     let (mut foods, mut not_foods) = (0, 0);
     let (mut right_food, mut wrong_food, mut unknown, mut right_not_food) = (0, 0, 0, 0);
     let mut misses = Vec::new();
@@ -600,9 +688,7 @@ async fn eval_names(
             Some(expected) => {
                 foods += 1;
                 match answer {
-                    Some(NameResolution::Entry(key))
-                        if entry_id(key).as_ref() == Some(expected) =>
-                    {
+                    Some(NameResolution::Entry(key)) if same_food(key, &case.name, expected) => {
                         right_food += 1
                     }
                     Some(NameResolution::Unknown) => unknown += 1,
@@ -659,12 +745,12 @@ fn spec(suite: &str) -> SuiteSpec {
         },
         "food-estimates" => SuiteSpec {
             title: "Food estimates",
-            about: "Calories (and cup and piece weights) for a food with no catalog candidates (`resolve_ingredient_names`, answer \"estimate\"), against USDA for 80 foods given by their USDA description. Calorie error is against at least 20 kcal/100 g, so near-zero foods don't dominate. Cup and piece columns count foods where USDA has the weight; the piece is USDA's default portion, which isn't always a whole item.",
-            columns: &["kcal within 20%", "kcal median error", "kcal P90 error", "Cup within 25%", "Piece within 25%", "Unknown", "Invalid"],
+            about: "Calories (and cup and piece weights) for a food with no catalog candidates (`resolve_ingredient_names`, answer \"estimate\"), against USDA for 80 foods given by their USDA description. Calorie error is against at least 20 kcal/100 g, so near-zero foods don't dominate. Cup and piece columns count foods where USDA has the weight. The piece is USDA's default portion, which is sometimes a whole pizza, roast or bird where a model gives one slice or serving, so with ~25 cases that column is low-signal.",
+            columns: &["kcal within 20%", "kcal median error", "kcal P90 error", "Cup within 25%", "Piece answered", "Piece within 25% of answered", "Unknown", "Invalid"],
         },
         "ingredient-names" => SuiteSpec {
             title: "Ingredient names",
-            about: "Picking the catalog food a name means from its candidates (`resolve_ingredient_names`), for 100 curated aliases (correct if the answer resolves to the alias's food; the alias itself is not offered) and 30 curated not-food names. Some curated aliases are judgment calls (delicata squash counts as acorn squash), so a sensible answer can score as wrong: compare models with each other rather than reading this as absolute accuracy.",
+            about: "Picking the catalog food a name means from its candidates (`resolve_ingredient_names`), for 100 curated aliases (correct if the answer resolves to the alias's food, or an equivalent entry: the same USDA food or calories within 10%, since the catalog has several entries for many foods; the alias itself is not offered) and 30 curated not-food names. Some curated aliases are judgment calls (delicata squash counts as acorn squash), so a sensible answer can score as wrong: compare models with each other rather than reading this as absolute accuracy.",
             columns: &["Correct food", "Wrong food", "Unknown", "Not food right", "Invalid"],
         },
         other => unreachable!("unknown suite {other}"),

@@ -9,9 +9,9 @@ pub const DEFAULT_BASE_URL: &str = "https://openrouter.ai/api/v1";
 /// Default model to use.
 pub const DEFAULT_MODEL: &str = "google/gemini-2.5-flash";
 /// Default model for ingredient names and weights, chosen with `make ai-eval`
-/// (data/ai-evals/): the most consistent of the current models across all
-/// three ingredient suites and both batch sizes.
-pub const DEFAULT_INGREDIENT_MODEL: &str = "google/gemini-3.8-flash";
+/// (data/ai-evals/): the most accurate on all three ingredient suites once its
+/// fenced JSON is accepted, at about $0.002 per item.
+pub const DEFAULT_INGREDIENT_MODEL: &str = "anthropic/claude-opus-5.5";
 /// Default model to use for image generation.
 pub const DEFAULT_IMAGE_MODEL: &str = "google/gemini-2.5-flash-image";
 
@@ -63,7 +63,7 @@ impl AiConfig {
     /// Optional:
     /// - `RAMEKIN_AI_MODEL`: Model name (default: "google/gemini-2.5-flash")
     /// - `RAMEKIN_AI_IMAGE_MODEL`: Image model name (default: "google/gemini-2.5-flash-image")
-    /// - `RAMEKIN_AI_INGREDIENT_MODEL`: Ingredient names and weights model (default: "google/gemini-3.8-flash")
+    /// - `RAMEKIN_AI_INGREDIENT_MODEL`: Ingredient names and weights model (default: "anthropic/claude-opus-5.5")
     /// - `RAMEKIN_AI_BASE_URL`: API base URL (default: "https://openrouter.ai/api/v1")
     /// - `RAMEKIN_AI_CACHE_DIR`: Cache directory (default: "~/.ramekin/ai-cache")
     /// - `RAMEKIN_AI_RATE_LIMIT_MS`: Rate limit in ms (default: 500)

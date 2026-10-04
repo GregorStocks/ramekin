@@ -217,6 +217,53 @@ fn response_content_usable(json_response: bool, content: &str) -> bool {
     }
 }
 
+/// JSON wrapped in a markdown code fence (```json ... ```), unwrapped; any
+/// other content unchanged.
+fn unfence_json(content: &str) -> &str {
+    let trimmed = content.trim();
+    let Some(rest) = trimmed.strip_prefix("```") else {
+        return content;
+    };
+    let Some(body) = rest.strip_suffix("```") else {
+        return content;
+    };
+    // Drop the info string ("json") on the opening fence's line.
+    match body.split_once('\n') {
+        Some((info, inner)) if !info.contains('{') && !info.contains('[') => inner.trim(),
+        _ => body.trim(),
+    }
+}
+
+/// The JSON in a JSON-mode response: the whole content when it parses, else
+/// a fenced block, else the object the content ends with ("I chose X.\n\n{...}").
+/// Content with none of these is returned unchanged, to fail validation.
+fn extract_json(content: &str) -> &str {
+    let parses = |text: &str| serde_json::from_str::<serde_json::Value>(text).is_ok();
+    if parses(content) {
+        return content;
+    }
+    let unfenced = unfence_json(content);
+    if parses(unfenced) {
+        return unfenced;
+    }
+    if let Some(fenced) = content.find("```").and_then(|start| content.get(start..)) {
+        let block = unfence_json(fenced);
+        if parses(block) {
+            return block;
+        }
+    }
+    let trimmed = content.trim_end();
+    if trimmed.ends_with('}') {
+        // The earliest '{' from which the rest parses is the whole object.
+        for (start, _) in trimmed.match_indices('{') {
+            if let Some(tail) = trimmed.get(start..).filter(|tail| parses(tail)) {
+                return tail;
+            }
+        }
+    }
+    content
+}
+
 /// First ~200 chars of a response, for inclusion in error messages.
 fn content_snippet(content: &str) -> String {
     content.chars().take(200).collect()
@@ -300,6 +347,14 @@ impl AiClient for CachingAiClient {
         let content = choice
             .and_then(|c| c.message.content.clone())
             .unwrap_or_default();
+        // Some providers (Anthropic models through OpenRouter) don't honor
+        // JSON mode: they wrap the JSON in a markdown code fence, or explain
+        // first and end with the JSON.
+        let content = if request.json_response {
+            extract_json(&content).to_string()
+        } else {
+            content
+        };
 
         // An unusable response must fail fast and must NOT be cached: caching
         // it would turn a transient provider problem into a permanent,
@@ -522,6 +577,39 @@ mod tests {
         client.forget("p", &messages);
 
         assert!(cache.get(&key).is_none());
+    }
+
+    #[test]
+    fn fenced_json_is_unwrapped() {
+        for fenced in [
+            "```json\n{\"a\": 1}\n```",
+            "```\n{\"a\": 1}\n```",
+            "  ```json\n{\"a\": 1}\n```  ",
+        ] {
+            assert_eq!(unfence_json(fenced), "{\"a\": 1}", "{fenced:?}");
+        }
+        // Anything else is left alone, to fail validation as before.
+        for other in [
+            "{\"a\": 1}",
+            "Here you go: {\"a\": 1}",
+            "```json\n{\"a\": 1}",
+        ] {
+            assert_eq!(unfence_json(other), other);
+        }
+    }
+
+    #[test]
+    fn json_is_extracted_after_reasoning_or_inside_a_fence() {
+        for content in [
+            "{\"a\": {\"b\": 1}}",
+            "```json\n{\"a\": {\"b\": 1}}\n```",
+            "The name means X, so I chose it.\n\n{\"a\": {\"b\": 1}}",
+            "Reasoning first.\n```json\n{\"a\": {\"b\": 1}}\n```\n",
+        ] {
+            assert_eq!(extract_json(content), "{\"a\": {\"b\": 1}}", "{content:?}");
+        }
+        let prose = "No JSON here at all.";
+        assert_eq!(extract_json(prose), prose);
     }
 
     #[test]
