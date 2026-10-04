@@ -595,9 +595,10 @@ fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
         } => Some(entry),
         _ => None,
     };
-    // The nouns the last alternative ends in, longest first.
+    // The last alternative as written, and the nouns it ends in, longest first.
     let text = normalized.replace(" and/or ", " or ");
-    let last_tails = tails_of(alternative_chunks(&text)?.last()?);
+    let last = alternative_chunks(&text)?.last()?.split(", ").next()?;
+    let last_tails = tails_of(last);
     let one_word = !piece.contains(' ');
     if let Some((entry, name)) = candidates
         .iter()
@@ -607,13 +608,19 @@ fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
         // list's noun when that noun is a product ("peach or nectarine jam" is
         // jam, "orange or yellow food coloring" food coloring). A plural is a
         // food of its own ("potatoes or sweet potatoes"), as is anything but
-        // produce ("butter or coconut oil").
+        // produce ("butter or coconut oil"). The noun is shared only when the
+        // last alternative is no known food or the same kind of food: "banana
+        // or peanut butter" is banana, not butter.
         let produce = |entry: &Entry| entry.category.as_deref() == Some("Produce");
         if name == piece && one_word && !piece.ends_with('s') && produce(entry) {
+            let written = entry_of(last);
             if let Some(shared) = last_tails.iter().find_map(|tail| {
                 directly(tail)
-                    .filter(|entry| !produce(entry))
-                    .map(|entry| (entry, tail.clone()))
+                    .filter(|shared| {
+                        !produce(shared)
+                            && written.is_none_or(|written| written.category == shared.category)
+                    })
+                    .map(|shared| (shared, tail.clone()))
             }) {
                 return Some(shared);
             }

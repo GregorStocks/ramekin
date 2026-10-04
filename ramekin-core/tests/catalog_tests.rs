@@ -580,6 +580,8 @@ fn bare_produce_alternative_shares_a_product_noun() {
         ("butter or coconut oil", "butter"),
         ("water or chicken broth", "water"),
         ("lime or blood orange slices", "lime"),
+        // A last alternative naming a different food shares no noun.
+        ("banana or peanut butter", "banana"),
         // The borrowed noun still comes first.
         ("red or green bell pepper", "red bell pepper"),
     ] {
