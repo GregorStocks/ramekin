@@ -244,8 +244,9 @@ pub enum CatalogSync {
     /// The catalog now calls the name ambiguous, which rules out an estimate
     /// or a non-food answer: ask again for the food a recipe most likely means.
     NowAmbiguous,
-    /// Answered unknown, and the catalog now offers different candidates:
-    /// ask again in case one fits.
+    /// Answered unknown or estimated (both mean no candidate fit), and the
+    /// catalog now offers different candidates: re-ask in case one fits,
+    /// serving the old answer until the new one replaces it.
     NewCandidates,
 }
 
@@ -284,7 +285,7 @@ pub fn catalog_sync(row: &StoredName) -> Option<CatalogSync> {
         (Some("estimate" | "not_food"), _) if is_ambiguous(&row.name) => {
             Some(CatalogSync::NowAmbiguous)
         }
-        (Some("unknown"), _) if row.candidates != Some(stored(offered(&row.name))) => {
+        (Some("unknown" | "estimate"), _) if row.candidates != Some(stored(offered(&row.name))) => {
             Some(CatalogSync::NewCandidates)
         }
         _ => None,
@@ -345,21 +346,30 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
                         names::updated_at.eq(now),
                     ))
                     .execute(conn)?,
-                _ => diesel::update(rows)
+                CatalogSync::NewCandidates => diesel::update(rows)
                     .set((
-                        names::status.eq(PENDING),
-                        names::reasked.eq(false),
+                        names::reasked.eq(true),
                         names::reask_error.eq(None::<String>),
-                        names::disposition.eq(None::<String>),
-                        names::catalog_key.eq(None::<String>),
-                        names::kcal_per_100g.eq(None::<f64>),
-                        names::grams_per_cup.eq(None::<f64>),
-                        names::grams_per_piece.eq(None::<f64>),
-                        names::candidates.eq(None::<Vec<Option<String>>>),
-                        names::error.eq(None::<String>),
                         names::updated_at.eq(now),
                     ))
                     .execute(conn)?,
+                CatalogSync::Unharvest | CatalogSync::StaleKey | CatalogSync::NowAmbiguous => {
+                    diesel::update(rows)
+                        .set((
+                            names::status.eq(PENDING),
+                            names::reasked.eq(false),
+                            names::reask_error.eq(None::<String>),
+                            names::disposition.eq(None::<String>),
+                            names::catalog_key.eq(None::<String>),
+                            names::kcal_per_100g.eq(None::<f64>),
+                            names::grams_per_cup.eq(None::<f64>),
+                            names::grams_per_piece.eq(None::<f64>),
+                            names::candidates.eq(None::<Vec<Option<String>>>),
+                            names::error.eq(None::<String>),
+                            names::updated_at.eq(now),
+                        ))
+                        .execute(conn)?
+                }
             };
         }
         QueryResult::Ok(())
@@ -974,6 +984,12 @@ mod tests {
     }
 
     #[test]
+    fn estimates_are_asked_again_when_the_candidates_change() {
+        let estimate = row("zorblax flour", RESOLVED, Some("estimate"), None);
+        assert_eq!(catalog_sync(&estimate), Some(CatalogSync::NewCandidates));
+    }
+
+    #[test]
     fn unknown_answers_are_asked_again_when_the_candidates_change() {
         let mut unknown = row("zorblax flour", RESOLVED, Some("unknown"), None);
         assert_eq!(
@@ -993,7 +1009,6 @@ mod tests {
             (PENDING, None),
             (FAILED, None),
             (RESOLVED, Some("not_food")),
-            (RESOLVED, Some("estimate")),
         ] {
             assert_eq!(
                 catalog_sync(&row("zorblax paste", status, disposition, None)),

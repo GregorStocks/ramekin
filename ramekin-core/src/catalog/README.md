@@ -429,8 +429,9 @@ every row with the committed catalog (`sync_with_catalog`):
 - an answer whose key no longer names one entry is asked again;
 - an estimate or not-food answer for a name the catalog now calls ambiguous
   is asked again, since an ambiguous name takes neither;
-- an "unknown" answer is asked again once the catalog offers different
-  candidates than the ones stored with it.
+- an "unknown" or estimated answer (no candidate fit) is re-asked once the
+  catalog offers different candidates than the ones stored with it, and
+  served until the new answer replaces it.
 
 Learned names don't add gram alternatives: those are fixed at ingest from the
 committed catalog. A harvested name gets them for recipes saved after its
