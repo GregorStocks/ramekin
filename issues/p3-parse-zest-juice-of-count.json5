@@ -1,0 +1,23 @@
+{
+  "title": "Ingredient parser: parse \"zest/juice of <count> <citrus>\" lines instead of keeping the whole line as the item",
+  "description": "Lines like \"Juice of 1 lemon\", \"Zest of 1 lemon\", \"zest of one lemon\", \"Juice of half a lemon\", \"Finely grated zest of 1 lemon\" and \"Zest and juice of 1 lemon\" parse today to item = the whole line with no measurements (e.g. ramekin-core/tests/fixtures/ingredient_parsing/pipeline/smittenkitchen--2008-07-blueberry-crumb-bars.json, paprika/paprika--strawberry-brita-cake.json). \
+About 230 fixture files contain such a line (grep for '(zest|juice) of (a|an|one|half|1|2|1/2|½)'); most common: \"Juice of half a lemon\" (21), \"Zest of 1 lemon\" (16), \"Juice of 1 lime\" (10). \
+They get no weight, so they show as unknown in the calorie estimate and the item name never resolves in the catalog.\n\
+\n\
+Parse \"[prep words] zest|juice of <count> <fruit>[ trailing note]\" into item \"<fruit> zest\" / \"<fruit> juice\", the count as the amount (one/half a/1/2/½ normalized like other amounts), the fruit as a count unit, and prep words (\"finely grated\") plus trailers (\"or more to taste\", \"(2 to 3 tablespoons)\") as the note. \
+Check what the catalog and nutrition code need for the per-fruit amount to convert to grams (piece weights for lemon/lime/orange juice and zest) and coordinate with p3-nutrition-remaining-count-units. \
+\"Zest and juice of 1 lemon\" names two ingredients; split it the way expand_each_ingredients splits \"each\" lines. \
+Add curated fixtures, and expect intentional data/ diffs from make pipeline; commit them.\n\
+\n\
+Context: this replaces p2-text-import-structured-ingredients, which proposed having the paste-import LLM structure ingredients. \
+The owner chose to keep the deterministic parser and fix concrete misses in it instead.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+    "nutrition",
+  ],
+  "created_at": "2026-10-03T18:00:00-07:00",
+  "updated_at": "2026-10-03T18:00:00-07:00",
+}
