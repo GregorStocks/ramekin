@@ -644,6 +644,9 @@ pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
         regex::Regex::new(r"(?i)\b(cartoned|carton|beverage|refrigerated\s+(kind|variety|type))\b")
             .unwrap()
     });
+    // A whole word, so "uncooked" and "precooked ... dry" don't count.
+    static COOKED_FOOD: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"(?i)\bcooked\b").unwrap());
     if note.is_some_and(|note| BEVERAGE.is_match(note)) {
         if let resolved @ Resolution::Entry { .. } = resolve(&format!("{item} beverage")) {
             return resolved;
@@ -656,7 +659,9 @@ pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
         // The item may already name a cooked food; otherwise the raw food
         // would misstate a cooked measure, so it stays unresolved.
         return match resolve(item) {
-            resolved @ Resolution::Entry { entry, .. } if entry.id.contains("cooked") => resolved,
+            resolved @ Resolution::Entry { entry, .. } if COOKED_FOOD.is_match(&entry.id) => {
+                resolved
+            }
             _ => Resolution::Unresolved,
         };
     }
