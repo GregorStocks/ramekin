@@ -28,6 +28,7 @@ diesel::table! {
         grams_per_cup -> Nullable<Float8>,
         grams_per_piece -> Nullable<Float8>,
         reasked -> Bool,
+        reask_error -> Nullable<Text>,
     }
 }
 
@@ -43,6 +44,7 @@ diesel::table! {
         created_at -> Timestamptz,
         updated_at -> Timestamptz,
         reasked -> Bool,
+        reask_error -> Nullable<Text>,
     }
 }
 

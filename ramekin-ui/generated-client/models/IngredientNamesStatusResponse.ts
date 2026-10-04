@@ -48,7 +48,7 @@ export interface IngredientNamesStatusResponse {
      */
     failed: number;
     /**
-     * The most recent failures.
+     * The most recent failures, failed re-asks included.
      * @type {Array<IngredientNameFailure>}
      * @memberof IngredientNamesStatusResponse
      */
@@ -65,6 +65,13 @@ export interface IngredientNamesStatusResponse {
      * @memberof IngredientNamesStatusResponse
      */
     pending: number;
+    /**
+     * Re-asking with the current model failed; the earlier model's answer
+     * is still used (and counted above). Retry to try again.
+     * @type {number}
+     * @memberof IngredientNamesStatusResponse
+     */
+    reaskFailed: number;
     /**
      * Resolved to a catalog food or product (for an ambiguous name, the one
      * a recipe most likely means).
@@ -95,6 +102,7 @@ export function instanceOfIngredientNamesStatusResponse(value: object): value is
     if (!('failures' in value) || value['failures'] === undefined) return false;
     if (!('notFood' in value) || value['notFood'] === undefined) return false;
     if (!('pending' in value) || value['pending'] === undefined) return false;
+    if (!('reaskFailed' in value) || value['reaskFailed'] === undefined) return false;
     if (!('recognized' in value) || value['recognized'] === undefined) return false;
     if (!('unknown' in value) || value['unknown'] === undefined) return false;
     if (!('weights' in value) || value['weights'] === undefined) return false;
@@ -116,6 +124,7 @@ export function IngredientNamesStatusResponseFromJSONTyped(json: any, ignoreDisc
         'failures': ((json['failures'] as Array<any>).map(IngredientNameFailureFromJSON)),
         'notFood': json['not_food'],
         'pending': json['pending'],
+        'reaskFailed': json['reask_failed'],
         'recognized': json['recognized'],
         'unknown': json['unknown'],
         'weights': IngredientWeightsStatusFromJSON(json['weights']),
@@ -138,6 +147,7 @@ export function IngredientNamesStatusResponseToJSONTyped(value?: IngredientNames
         'failures': ((value['failures'] as Array<any>).map(IngredientNameFailureToJSON)),
         'not_food': value['notFood'],
         'pending': value['pending'],
+        'reask_failed': value['reaskFailed'],
         'recognized': value['recognized'],
         'unknown': value['unknown'],
         'weights': IngredientWeightsStatusToJSON(value['weights']),

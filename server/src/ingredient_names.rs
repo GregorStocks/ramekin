@@ -86,15 +86,27 @@ pub fn enqueue(conn: &mut PgConnection, new_names: &[String]) -> QueryResult<usi
 }
 
 /// Put failed names back in the queue, clearing their error, so the next
-/// pass asks about them again.
+/// pass asks about them again. That includes failed re-asks, which keep
+/// their earlier answer meanwhile.
 pub fn requeue_failed(conn: &mut PgConnection, failed: &[String]) -> QueryResult<usize> {
-    diesel::update(
+    let pending = diesel::update(
         names::table
             .filter(names::status.eq(FAILED))
             .filter(names::name.eq_any(failed)),
     )
     .set((names::status.eq(PENDING), names::error.eq(None::<String>)))
-    .execute(conn)
+    .execute(conn)?;
+    let reasked = diesel::update(
+        names::table
+            .filter(names::reask_error.is_not_null())
+            .filter(names::name.eq_any(failed)),
+    )
+    .set((
+        names::reasked.eq(true),
+        names::reask_error.eq(None::<String>),
+    ))
+    .execute(conn)?;
+    Ok(pending + reasked)
 }
 
 /// Queue the unknown names in `items`. Write paths call this inside their
@@ -245,6 +257,7 @@ pub fn requeue_stale_keys(pool: &DbPool) -> Result<usize, String> {
             .set((
                 names::status.eq(PENDING),
                 names::reasked.eq(false),
+                names::reask_error.eq(None::<String>),
                 names::disposition.eq(None::<String>),
                 names::catalog_key.eq(None::<String>),
                 names::updated_at.eq(now),
@@ -266,14 +279,20 @@ pub fn reask_other_models(pool: &DbPool, model: &str) -> Result<(usize, usize), 
                 .filter(names::status.eq(RESOLVED))
                 .filter(names::model.is_distinct_from(model)),
         )
-        .set(names::reasked.eq(true))
+        .set((
+            names::reasked.eq(true),
+            names::reask_error.eq(None::<String>),
+        ))
         .execute(conn)?;
         let weights = diesel::update(
             weights::table
                 .filter(weights::status.eq(RESOLVED))
                 .filter(weights::model.is_distinct_from(model)),
         )
-        .set(weights::reasked.eq(true))
+        .set((
+            weights::reasked.eq(true),
+            weights::reask_error.eq(None::<String>),
+        ))
         .execute(conn)?;
         QueryResult::Ok((names, weights))
     })
@@ -659,6 +678,7 @@ async fn save_resolved(
                     .set((
                         names::status.eq(RESOLVED),
                         names::reasked.eq(false),
+                        names::reask_error.eq(None::<String>),
                         names::disposition.eq(disposition),
                         names::catalog_key.eq(key),
                         names::kcal_per_100g.eq(estimate.map(|e| e.kcal_per_100g)),
@@ -721,8 +741,8 @@ fn touch_shopping_items(
 
 /// Record a failed attempt. A pending name is marked failed. A name being
 /// re-asked keeps its old answer: after a provider failure it stays queued for
-/// the worker's retry; after an invalid answer the re-ask is given up, since
-/// asking again would fail the same way.
+/// the worker's retry; after an invalid answer the re-ask stops with its
+/// error recorded, for the status page and its Retry.
 async fn save_failed(
     pool: &Arc<DbPool>,
     failed: Vec<String>,
@@ -760,6 +780,7 @@ async fn save_failed(
             )
             .set((
                 names::reasked.eq(false),
+                names::reask_error.eq(&message),
                 names::attempts.eq(names::attempts + 1),
                 names::updated_at.eq(now),
             ))

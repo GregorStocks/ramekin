@@ -19,7 +19,7 @@ pub struct IngredientNamesStatusResponse {
     /// The last attempt failed; retry to try again.
     #[serde(rename = "failed")]
     pub failed: i64,
-    /// The most recent failures.
+    /// The most recent failures, failed re-asks included.
     #[serde(rename = "failures")]
     pub failures: Vec<models::IngredientNameFailure>,
     /// Resolved as not an ingredient (a heading, a serving note).
@@ -28,6 +28,9 @@ pub struct IngredientNamesStatusResponse {
     /// Waiting for the background resolver.
     #[serde(rename = "pending")]
     pub pending: i64,
+    /// Re-asking with the current model failed; the earlier model's answer is still used (and counted above). Retry to try again.
+    #[serde(rename = "reask_failed")]
+    pub reask_failed: i64,
     /// Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means).
     #[serde(rename = "recognized")]
     pub recognized: i64,
@@ -45,6 +48,7 @@ impl IngredientNamesStatusResponse {
         failures: Vec<models::IngredientNameFailure>,
         not_food: i64,
         pending: i64,
+        reask_failed: i64,
         recognized: i64,
         unknown: i64,
         weights: models::IngredientWeightsStatus,
@@ -55,6 +59,7 @@ impl IngredientNamesStatusResponse {
             failures,
             not_food,
             pending,
+            reask_failed,
             recognized,
             unknown,
             weights: Box::new(weights),

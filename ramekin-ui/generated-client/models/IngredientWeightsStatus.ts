@@ -42,7 +42,7 @@ export interface IngredientWeightsStatus {
      */
     failed: number;
     /**
-     * The most recent failures.
+     * The most recent failures, failed re-asks included.
      * @type {Array<IngredientWeightFailure>}
      * @memberof IngredientWeightsStatus
      */
@@ -59,6 +59,13 @@ export interface IngredientWeightsStatus {
      * @memberof IngredientWeightsStatus
      */
     pending: number;
+    /**
+     * Re-asking with the current model failed; the earlier model's estimate
+     * is still used (and counted above). Retry to try again.
+     * @type {number}
+     * @memberof IngredientWeightsStatus
+     */
+    reaskFailed: number;
 }
 
 /**
@@ -70,6 +77,7 @@ export function instanceOfIngredientWeightsStatus(value: object): value is Ingre
     if (!('failures' in value) || value['failures'] === undefined) return false;
     if (!('noTypicalWeight' in value) || value['noTypicalWeight'] === undefined) return false;
     if (!('pending' in value) || value['pending'] === undefined) return false;
+    if (!('reaskFailed' in value) || value['reaskFailed'] === undefined) return false;
     return true;
 }
 
@@ -88,6 +96,7 @@ export function IngredientWeightsStatusFromJSONTyped(json: any, ignoreDiscrimina
         'failures': ((json['failures'] as Array<any>).map(IngredientWeightFailureFromJSON)),
         'noTypicalWeight': json['no_typical_weight'],
         'pending': json['pending'],
+        'reaskFailed': json['reask_failed'],
     };
 }
 
@@ -107,6 +116,7 @@ export function IngredientWeightsStatusToJSONTyped(value?: IngredientWeightsStat
         'failures': ((value['failures'] as Array<any>).map(IngredientWeightFailureToJSON)),
         'no_typical_weight': value['noTypicalWeight'],
         'pending': value['pending'],
+        'reask_failed': value['reaskFailed'],
     };
 }
 

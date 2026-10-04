@@ -3768,6 +3768,7 @@
           "unknown",
           "pending",
           "failed",
+          "reask_failed",
           "failures",
           "weights"
         ],
@@ -3787,7 +3788,7 @@
             "items": {
               "$ref": "#/components/schemas/IngredientNameFailure"
             },
-            "description": "The most recent failures."
+            "description": "The most recent failures, failed re-asks included."
           },
           "not_food": {
             "type": "integer",
@@ -3798,6 +3799,11 @@
             "type": "integer",
             "format": "int64",
             "description": "Waiting for the background resolver."
+          },
+          "reask_failed": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Re-asking with the current model failed; the earlier model's answer\nis still used (and counted above). Retry to try again."
           },
           "recognized": {
             "type": "integer",
@@ -3847,6 +3853,7 @@
           "no_typical_weight",
           "pending",
           "failed",
+          "reask_failed",
           "failures"
         ],
         "properties": {
@@ -3865,7 +3872,7 @@
             "items": {
               "$ref": "#/components/schemas/IngredientWeightFailure"
             },
-            "description": "The most recent failures."
+            "description": "The most recent failures, failed re-asks included."
           },
           "no_typical_weight": {
             "type": "integer",
@@ -3876,6 +3883,11 @@
             "type": "integer",
             "format": "int64",
             "description": "Waiting for the background estimator (queued when an estimate is shown)."
+          },
+          "reask_failed": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Re-asking with the current model failed; the earlier model's estimate\nis still used (and counted above). Retry to try again."
           }
         }
       },

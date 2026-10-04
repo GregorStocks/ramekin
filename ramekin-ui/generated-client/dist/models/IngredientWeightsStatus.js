@@ -26,6 +26,8 @@ export function instanceOfIngredientWeightsStatus(value) {
         return false;
     if (!('pending' in value) || value['pending'] === undefined)
         return false;
+    if (!('reaskFailed' in value) || value['reaskFailed'] === undefined)
+        return false;
     return true;
 }
 export function IngredientWeightsStatusFromJSON(json) {
@@ -41,6 +43,7 @@ export function IngredientWeightsStatusFromJSONTyped(json, ignoreDiscriminator) 
         'failures': (json['failures'].map(IngredientWeightFailureFromJSON)),
         'noTypicalWeight': json['no_typical_weight'],
         'pending': json['pending'],
+        'reaskFailed': json['reask_failed'],
     };
 }
 export function IngredientWeightsStatusToJSON(json) {
@@ -56,5 +59,6 @@ export function IngredientWeightsStatusToJSONTyped(value, ignoreDiscriminator = 
         'failures': (value['failures'].map(IngredientWeightFailureToJSON)),
         'no_typical_weight': value['noTypicalWeight'],
         'pending': value['pending'],
+        'reask_failed': value['reaskFailed'],
     };
 }

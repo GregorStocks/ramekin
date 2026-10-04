@@ -6,9 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **estimated** | **i64** | A real food no catalog entry matches, counted with the model's own calories (\"estimated calories\"). | 
 **failed** | **i64** | The last attempt failed; retry to try again. | 
-**failures** | [**Vec<models::IngredientNameFailure>**](IngredientNameFailure.md) | The most recent failures. | 
+**failures** | [**Vec<models::IngredientNameFailure>**](IngredientNameFailure.md) | The most recent failures, failed re-asks included. | 
 **not_food** | **i64** | Resolved as not an ingredient (a heading, a serving note). | 
 **pending** | **i64** | Waiting for the background resolver. | 
+**reask_failed** | **i64** | Re-asking with the current model failed; the earlier model's answer is still used (and counted above). Retry to try again. | 
 **recognized** | **i64** | Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means). | 
 **unknown** | **i64** | Resolved, but the model couldn't tell; still unknown in estimates. | 
 **weights** | [**models::IngredientWeightsStatus**](IngredientWeightsStatus.md) |  | 
