@@ -35,6 +35,7 @@ pub async fn custom_enrich<T: serde::de::DeserializeOwned>(
     let request = ChatRequest {
         messages: vec![ChatMessage::system(system_prompt), user_message],
         json_response: true,
+        fresh: false,
         max_tokens: Some(4096),
         temperature: Some(0.7),
     };

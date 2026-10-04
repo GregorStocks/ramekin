@@ -289,7 +289,10 @@ impl AiClient for CachingAiClient {
         // Check cache first
         let cache_key = CacheKey::new(prompt_name, &self.config.model, &request.messages);
 
-        if let Some(cached) = self.cache.get(&cache_key) {
+        if let Some(cached) = (!request.fresh)
+            .then(|| self.cache.get(&cache_key))
+            .flatten()
+        {
             if response_content_usable(request.json_response, &cached.content) {
                 tracing::debug!(prompt_name = prompt_name, "AI response found in cache");
                 return Ok(cached.into());
@@ -498,6 +501,7 @@ mod tests {
         ChatRequest {
             messages: vec![ChatMessage::user("hi")],
             json_response: true,
+            fresh: false,
             max_tokens: None,
             temperature: None,
         }
@@ -579,6 +583,40 @@ mod tests {
         client.forget("p", &messages);
 
         assert!(cache.get(&key).is_none());
+    }
+
+    #[tokio::test]
+    async fn caching_client_fresh_request_skips_the_cached_reply() {
+        let dir = tempfile::TempDir::new().unwrap();
+        let config = AiConfig {
+            api_key: "test-key".to_string(),
+            model: "test/model".to_string(),
+            image_model: "test/image-model".to_string(),
+            ingredient_model: "test-ingredient-model".to_string(),
+            // Nothing listens here, so reaching the provider fails.
+            base_url: "http://127.0.0.1:1/v1".to_string(),
+            cache_dir: dir.path().to_path_buf(),
+            rate_limit_ms: 0,
+            request_timeout_secs: 1,
+        };
+        let request = request();
+        let key = CacheKey::new("p", "test/model", &request.messages);
+        AiCache::new(config.namespaced_cache_dir())
+            .put(
+                &key,
+                &response(r#"{"value": "cached"}"#, false),
+                "test/model",
+            )
+            .unwrap();
+        let client = CachingAiClient::new(config);
+
+        let cached = client.complete("p", &request).await.unwrap();
+        assert!(cached.cached);
+        let fresh = ChatRequest {
+            fresh: true,
+            ..request
+        };
+        assert!(client.complete("p", &fresh).await.is_err());
     }
 
     #[derive(Debug, PartialEq, serde::Deserialize)]

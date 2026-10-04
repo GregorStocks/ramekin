@@ -39,6 +39,7 @@ pub async fn extract_recipe_from_photos(
     let request = ChatRequest {
         messages: vec![ChatMessage::user_with_images(prompt, images)],
         json_response: true,
+        fresh: false,
         max_tokens: Some(4096),
         temperature: Some(0.1),
     };

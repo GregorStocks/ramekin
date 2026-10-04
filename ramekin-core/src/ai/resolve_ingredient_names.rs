@@ -69,12 +69,10 @@ pub async fn resolve_ingredient_names(
             names,
         ))],
         json_response: true,
+        fresh,
         max_tokens: Some(INGREDIENT_MAX_TOKENS),
         temperature: Some(0.0),
     };
-    if fresh {
-        ai_client.forget(RESOLVE_INGREDIENT_NAMES_PROMPT_NAME, &request.messages);
-    }
     let (parsed, response): (Response, _) =
         complete_json(ai_client, RESOLVE_INGREDIENT_NAMES_PROMPT_NAME, &request).await?;
     match validate(names, parsed) {

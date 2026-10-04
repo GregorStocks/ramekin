@@ -10,6 +10,9 @@ use std::collections::HashMap;
 use std::sync::LazyLock;
 
 const INGREDIENTS_JSON: &str = include_str!("../../data/ingredients.json");
+/// Bump when `categorize_with`'s own rules change (precedence, the "frozen"
+/// rule), so `version()` changes and synced clients get recomputed categories.
+const RULE_VERSION: &str = "categorizer-v1";
 
 /// The raw JSON structure for ingredients data file.
 #[derive(Deserialize)]
@@ -66,11 +69,14 @@ static VERSION: LazyLock<String> = LazyLock::new(|| {
         .take(8)
         .map(|byte| format!("{byte:02x}"))
         .collect();
-    format!("{}-keywords-{hash}", crate::catalog::version())
+    format!(
+        "{RULE_VERSION}-{}-keywords-{hash}",
+        crate::catalog::version()
+    )
 });
 
-/// A stable identifier for everything `categorize` reads: the catalog and the
-/// keyword rules. A stored category computed under another version may be
+/// A stable identifier for everything `categorize` depends on: its rules, the
+/// catalog, and the keyword data. A stored category computed under another version may be
 /// stale.
 pub fn version() -> &'static str {
     &VERSION
@@ -328,7 +334,8 @@ mod tests {
     #[test]
     fn test_version_covers_catalog_and_keywords() {
         let version = version();
-        assert!(version.starts_with(crate::catalog::version()));
+        assert!(version.starts_with(RULE_VERSION));
+        assert!(version.contains(crate::catalog::version()));
         assert!(version.contains("-keywords-"));
         assert_eq!(version, super::version(), "stable within a process");
     }
