@@ -113,6 +113,26 @@ pub struct ExtractionAttempt {
     pub error: Option<String>,
 }
 
+/// A free-text recipe field a model may answer as a bare number
+/// (`"servings": 4`), read as its text.
+pub(crate) fn text_or_number<'de, D>(deserializer: D) -> Result<Option<String>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    #[derive(Deserialize)]
+    #[serde(untagged)]
+    enum TextOrNumber {
+        Text(String),
+        Number(serde_json::Number),
+    }
+    Ok(
+        Option::<TextOrNumber>::deserialize(deserializer)?.map(|value| match value {
+            TextOrNumber::Text(text) => text,
+            TextOrNumber::Number(number) => number.to_string(),
+        }),
+    )
+}
+
 /// Recipe extracted from a page or imported - fields are raw blobs, not parsed.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct RawRecipe {
@@ -128,16 +148,32 @@ pub struct RawRecipe {
     pub source_url: Option<String>,
     pub source_name: Option<String>,
     /// Servings (e.g., "4 servings", "6-8")
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        default,
+        deserialize_with = "text_or_number",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub servings: Option<String>,
     /// Prep time (e.g., "15 minutes")
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        default,
+        deserialize_with = "text_or_number",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub prep_time: Option<String>,
     /// Cook time (e.g., "30 minutes")
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        default,
+        deserialize_with = "text_or_number",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub cook_time: Option<String>,
     /// Total time (e.g., "45 minutes")
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        default,
+        deserialize_with = "text_or_number",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub total_time: Option<String>,
     /// Rating (1-5)
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -146,7 +182,11 @@ pub struct RawRecipe {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub difficulty: Option<String>,
     /// Nutritional information
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(
+        default,
+        deserialize_with = "text_or_number",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub nutritional_info: Option<String>,
     /// Additional notes
     #[serde(skip_serializing_if = "Option::is_none")]

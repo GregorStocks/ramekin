@@ -4,8 +4,11 @@ Every AI use case should have a suite here: a fixed, committed input set and a
 scorer, so a model change ships with its numbers.
 
 - `golden/<suite>.json`: the inputs and expected answers. The ingredient suites
-  are generated from the committed catalog (`make ai-eval-golden`); regenerate
-  only on purpose, since it changes what earlier results measured.
+  are generated from the committed catalog and `text-extraction` from the
+  pipeline snapshots (`make ai-eval-golden`); regenerate only on purpose, since
+  it changes what earlier results measured. `photo-extraction` is transcribed by
+  hand from the photos in `photos/` and isn't regenerated: to add a case, add
+  the photo and its case (with a `note` on what makes it hard).
 - `<suite>.md`: the latest results, one row per model, at production's batch
   size; `<suite>-batch-<n>.md` at other sizes (`BATCH=n`).
 - `logs/ai-evals/<suite>/<model>.json` (not committed): every case's answer,
@@ -26,7 +29,9 @@ answered is cached.
 | `ingredient-weights` | `estimate_ingredient_weights` | USDA densities and piece weights |
 | `food-estimates` | `resolve_ingredient_names` (estimate) | USDA calories, densities, default pieces |
 | `ingredient-names` | `resolve_ingredient_names` (entry, not food) | Curated aliases and not-food names |
+| `text-extraction` | `extract_recipe_from_text` | Pipeline snapshots rendered as pasted text, plus non-recipes |
+| `photo-extraction` | `extract_recipe_from_photos` | Hand-checked transcriptions of real recipe photos |
 
-Still to add (`p2-upgrade-ai-models`): text and photo extraction, and
-human-judged suites (tags, titles, descriptions, custom enrich, recipe photos)
-that produce a blind side-by-side page for review.
+Still to add (`p2-upgrade-ai-models`): human-judged suites (tags, titles,
+descriptions, custom enrich, recipe photos) that produce a blind side-by-side
+page for review.

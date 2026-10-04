@@ -7,7 +7,9 @@ use std::{
 use async_trait::async_trait;
 use axum::{extract::State, Json};
 use diesel::prelude::*;
-use ramekin_core::ai::{text_extract::extract_recipe_from_text, AiClient, CachingAiClient};
+use ramekin_core::ai::{
+    text_extract::extract_recipe_from_text, AiClient, AiConfig, CachingAiClient,
+};
 use ramekin_core::metric_weights::is_metric_weight_unit;
 use ramekin_core::pipeline::{
     scrape_auto_applied_ai_enrichments, steps::EnrichAutoTagStep,
@@ -117,11 +119,13 @@ pub async fn prepare_text_recipe(
             "Enter recipe text between 1 and 50,000 bytes.",
         ));
     }
-    let client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env().map_err(|e| {
+    let config = AiConfig::from_env().map_err(|e| {
         tracing::warn!(error = %e, "Text extraction unavailable");
         ApiError::service_unavailable("Recipe text processing is unavailable. Ask your server administrator to configure AI access, then retry.")
-    })?);
-    let extracted = extract_recipe_from_text(client.as_ref(), &request.text)
+    })?;
+    let extractor = CachingAiClient::new(config.for_extraction());
+    let client: Arc<dyn AiClient> = Arc::new(CachingAiClient::new(config));
+    let extracted = extract_recipe_from_text(&extractor, &request.text)
         .await
         .map_err(|e| {
             tracing::warn!(error = %e, "Text extraction failed");

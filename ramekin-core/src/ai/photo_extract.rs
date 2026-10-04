@@ -4,7 +4,7 @@ use serde::Deserialize;
 
 use crate::ai::prompts::photo_extract::{render_photo_extract_prompt, PHOTO_EXTRACT_PROMPT_NAME};
 use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, ImageData, Usage};
-use crate::types::RawRecipe;
+use crate::types::{text_or_number, RawRecipe};
 
 #[derive(Debug, Deserialize)]
 struct PhotoExtractResponse {
@@ -13,13 +13,13 @@ struct PhotoExtractResponse {
     description: Option<String>,
     ingredients: String,
     instructions: String,
-    #[serde(default)]
+    #[serde(default, deserialize_with = "text_or_number")]
     servings: Option<String>,
-    #[serde(default)]
+    #[serde(default, deserialize_with = "text_or_number")]
     prep_time: Option<String>,
-    #[serde(default)]
+    #[serde(default, deserialize_with = "text_or_number")]
     cook_time: Option<String>,
-    #[serde(default)]
+    #[serde(default, deserialize_with = "text_or_number")]
     total_time: Option<String>,
     #[serde(default)]
     notes: Option<String>,
@@ -40,7 +40,9 @@ pub async fn extract_recipe_from_photos(
         messages: vec![ChatMessage::user_with_images(prompt, images)],
         json_response: true,
         fresh: false,
-        max_tokens: Some(4096),
+        // A long page's recipe runs to ~2.5k tokens, and reasoning models
+        // think first.
+        max_tokens: Some(8192),
         temperature: Some(0.1),
     };
 

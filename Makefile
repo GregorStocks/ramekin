@@ -390,13 +390,13 @@ ingredient-catalog-uncategorized: ## Write catalog foods and ambiguous names wit
 	@cargo run -q --release --manifest-path cli/Cargo.toml -- ingredient-catalog-uncategorized \
 		$(if $(PROD_RECIPES),--prod-recipes $(PROD_RECIPES),)
 
-ai-eval: ## Evaluate AI models on the golden sets: MODELS=a,b [SUITE=ingredient-weights|food-estimates|ingredient-names|all] [BATCH=40] (cached; writes data/ai-evals/)
+ai-eval: ## Evaluate AI models on the golden sets: MODELS=a,b [SUITE=ingredient-weights|food-estimates|ingredient-names|text-extraction|photo-extraction|all] [BATCH=40] (cached; writes data/ai-evals/)
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
 	cargo run -q --release --manifest-path cli/Cargo.toml -- ai-eval \
 		--suite $(or $(SUITE),all) --models "$(MODELS)" \
 		$(if $(BATCH),--batch-size $(BATCH),)
 
-ai-eval-golden: ## Regenerate the AI eval golden sets (data/ai-evals/golden/) from the committed catalog
+ai-eval-golden: ## Regenerate the generated AI eval golden sets (data/ai-evals/golden/) from the committed catalog and pipeline snapshots
 	@cargo run -q --release --manifest-path cli/Cargo.toml -- ai-eval --write-golden
 
 title-normalization-test: ## Normalize recipe titles from seed.paprikarecipes via the LLM (cached; free on rerun)

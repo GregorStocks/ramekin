@@ -295,7 +295,7 @@ enum Commands {
     },
     /// Evaluate AI models against the committed golden sets (data/ai-evals)
     AiEval {
-        /// Suite to run: ingredient-weights, food-estimates, ingredient-names, or all
+        /// Suite to run: ingredient-weights, food-estimates, ingredient-names, text-extraction, photo-extraction, or all
         #[arg(long, default_value = "all")]
         suite: String,
         /// Comma-separated OpenRouter model ids

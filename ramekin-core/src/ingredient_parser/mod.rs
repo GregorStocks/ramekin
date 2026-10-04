@@ -24,7 +24,9 @@ use units::*;
 
 pub(in crate::ingredient_parser) use fractions::unicode_fraction_ascii;
 pub(crate) use fractions::unicode_fraction_regex_class;
-pub use item::{detect_section_header, should_ignore_line};
+pub use item::{
+    detect_section_header, normalize_unicode, should_ignore_line, strip_leading_list_marker,
+};
 
 /// A single measurement (amount + unit pair)
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]

@@ -259,19 +259,26 @@ fn json_candidates(content: &str) -> Vec<&str> {
     candidates
 }
 
-/// The first JSON candidate that deserializes as `T`, or the whole content's
-/// error.
+/// The first JSON candidate that deserializes as `T`. Otherwise the error of
+/// the first candidate that is JSON of the wrong shape (`"servings": 4` where
+/// text is wanted), which says what the model got wrong, or else the whole
+/// content's.
 fn parse_json<T: serde::de::DeserializeOwned>(content: &str) -> Result<T, serde_json::Error> {
-    let mut first_error = None;
+    let (mut shape_error, mut first_error) = (None, None);
     for candidate in json_candidates(content) {
         match serde_json::from_str::<T>(candidate) {
             Ok(parsed) => return Ok(parsed),
+            Err(e) if e.is_data() => {
+                shape_error.get_or_insert(e);
+            }
             Err(e) => {
                 first_error.get_or_insert(e);
             }
         }
     }
-    Err(first_error.expect("there is always the whole-content candidate"))
+    Err(shape_error
+        .or(first_error)
+        .expect("there is always the whole-content candidate"))
 }
 
 /// First ~200 chars of a response, for inclusion in error messages.
@@ -566,6 +573,7 @@ mod tests {
             model: "test/model".to_string(),
             image_model: "test/image-model".to_string(),
             ingredient_model: "test-ingredient-model".to_string(),
+            extraction_model: "test-extraction-model".to_string(),
             base_url: DEFAULT_BASE_URL.to_string(),
             cache_dir: dir.path().to_path_buf(),
             rate_limit_ms: 0,
@@ -593,6 +601,7 @@ mod tests {
             model: "test/model".to_string(),
             image_model: "test/image-model".to_string(),
             ingredient_model: "test-ingredient-model".to_string(),
+            extraction_model: "test-extraction-model".to_string(),
             // Nothing listens here, so reaching the provider fails.
             base_url: "http://127.0.0.1:1/v1".to_string(),
             cache_dir: dir.path().to_path_buf(),
@@ -647,6 +656,9 @@ mod tests {
         for content in ["No JSON here at all.", "```json\n{\"answer\": \n```"] {
             assert!(parse_json::<Answer>(content).is_err(), "{content:?}");
         }
+        // Fenced JSON of the wrong shape reports why, not the fence's syntax.
+        let err = parse_json::<Answer>("```json\n{\"answer\": \"one\"}\n```").unwrap_err();
+        assert!(err.is_data(), "{err}");
         assert!(!response_content_usable(true, "No JSON here at all."));
     }
 
