@@ -38,6 +38,10 @@ pub struct Expected {
     /// headnote), in its instructions or notes.
     #[serde(default)]
     also_allowed: String,
+    /// The page has prose not transcribed here (a long headnote), so an
+    /// answer's description and notes can't be checked against the source.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    prose_untranscribed: bool,
     /// What the source states for these, for reading; an answer is scored
     /// only on not inventing numbers.
     servings: Option<String>,
@@ -208,6 +212,7 @@ pub fn write_golden(root: &Path) -> Result<Vec<TextCase>> {
                     ingredients,
                     instructions: snapshot.instructions,
                     also_allowed: description.unwrap_or_default(),
+                    prose_untranscribed: false,
                     servings,
                     prep_time: None,
                     cook_time: None,
@@ -297,12 +302,59 @@ fn ratio(n: usize, of: usize) -> f64 {
     }
 }
 
+fn is_number(token: &str) -> bool {
+    token.chars().all(|c| c.is_ascii_digit() || c == '/')
+}
+
 /// The numbers in a text ("2 to 2½ hours" has 2, 2 and 1/2).
 fn numbers(text: &str) -> Vec<String> {
-    tokens(text)
-        .into_iter()
-        .filter(|t| t.chars().all(|c| c.is_ascii_digit() || c == '/'))
-        .collect()
+    tokens(text).into_iter().filter(|t| is_number(t)).collect()
+}
+
+/// What a number in a recipe counts.
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+enum Quantity {
+    Servings,
+    Time,
+    Nutrition,
+}
+
+/// The quantity a word says its neighbouring numbers count ("serves 4",
+/// "30 minutes", "410 calories").
+fn cue(word: &str) -> Option<Quantity> {
+    let any = |prefixes: &[&str]| prefixes.iter().any(|p| word.starts_with(p));
+    if any(&["serv", "makes", "yield", "people", "portion"]) {
+        Some(Quantity::Servings)
+    } else if any(&["minute", "hour", "second"]) || matches!(word, "min" | "mins" | "hr" | "hrs") {
+        Some(Quantity::Time)
+    } else if any(&[
+        "cal", "kcal", "fat", "protein", "carb", "sodium", "sugar", "fiber",
+    ]) {
+        Some(Quantity::Nutrition)
+    } else {
+        None
+    }
+}
+
+/// Each number a text states, with what it counts: the cue word nearest it
+/// in its sentence. So "Serves 4. Bake 30 minutes" states 4 servings and 30
+/// minutes, and neither a 30-serving nor a 4-minute answer.
+fn quantities(text: &str) -> HashSet<(String, Quantity)> {
+    let mut stated = HashSet::new();
+    for sentence in text.split(['.', ';', '\n']) {
+        let words = tokens(sentence);
+        let cues: Vec<(usize, Quantity)> = words
+            .iter()
+            .enumerate()
+            .filter_map(|(i, word)| cue(word).map(|q| (i, q)))
+            .collect();
+        for (i, word) in words.iter().enumerate().filter(|(_, w)| is_number(w)) {
+            if let Some((_, quantity)) = cues.iter().min_by_key(|(j, _)| i.abs_diff(*j)) {
+                stated.insert((word.clone(), *quantity));
+            }
+        }
+    }
+    stated
 }
 
 /// One case's score.
@@ -315,6 +367,9 @@ struct Score {
     instructions_recall: f64,
     instructions_precision: f64,
     invented: Vec<&'static str>,
+    /// Words of the description and notes, and those the source never uses.
+    note_words: usize,
+    unsourced_note_words: usize,
 }
 
 /// Scores an answer against the expected recipe. `source` is all the text
@@ -341,22 +396,41 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
     let kept = counts(answer_tokens.iter().chain(&notes));
     let allowed = counts(expected_tokens.iter().chain(&also_allowed));
 
-    let stated: HashSet<String> = numbers(source).into_iter().collect();
+    let stated = quantities(source);
     let invented = [
-        ("servings", &answer.servings),
-        ("prep_time", &answer.prep_time),
-        ("cook_time", &answer.cook_time),
-        ("total_time", &answer.total_time),
-        ("nutritional_info", &answer.nutritional_info),
+        ("servings", &answer.servings, Quantity::Servings),
+        ("prep_time", &answer.prep_time, Quantity::Time),
+        ("cook_time", &answer.cook_time, Quantity::Time),
+        ("total_time", &answer.total_time, Quantity::Time),
+        (
+            "nutritional_info",
+            &answer.nutritional_info,
+            Quantity::Nutrition,
+        ),
     ]
     .into_iter()
-    .filter(|(_, value)| {
-        value
-            .as_deref()
-            .is_some_and(|v| numbers(v).iter().any(|n| !stated.contains(n)))
+    .filter(|(_, value, quantity)| {
+        value.as_deref().is_some_and(|v| {
+            numbers(v)
+                .into_iter()
+                .any(|n| !stated.contains(&(n, *quantity)))
+        })
     })
-    .map(|(name, _)| name)
+    .map(|(name, _, _)| name)
     .collect();
+
+    // Notes and the description are free text, so they're checked only for
+    // words the source never uses.
+    let source_words: HashSet<String> = tokens(source).into_iter().collect();
+    let note_words: Vec<String> = if expected.prose_untranscribed {
+        Vec::new()
+    } else {
+        [&answer.description, &answer.notes]
+            .into_iter()
+            .flatten()
+            .flat_map(|text| tokens(text))
+            .collect()
+    };
 
     Score {
         title_right: normalize_line(&answer.title) == normalize_line(&expected.title),
@@ -373,6 +447,11 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
             answer_tokens.len(),
         ),
         invented,
+        unsourced_note_words: note_words
+            .iter()
+            .filter(|w| !source_words.contains(*w))
+            .count(),
+        note_words: note_words.len(),
     }
 }
 
@@ -398,6 +477,8 @@ struct Totals {
     recall: Vec<f64>,
     precision: Vec<f64>,
     invented: usize,
+    note_words: usize,
+    unsourced_note_words: usize,
     misses: Vec<(f64, String)>,
 }
 
@@ -412,11 +493,14 @@ impl Totals {
         self.recall.push(score.instructions_recall);
         self.precision.push(score.instructions_precision);
         self.invented += score.invented.len();
+        self.note_words += score.note_words;
+        self.unsourced_note_words += score.unsourced_note_words;
         let badness = ratio(score.missing.len(), score.lines_expected.max(1))
             + 0.5 * ratio(score.extra.len(), score.lines_answered.max(1))
             + (1.0 - score.instructions_recall)
             + (1.0 - score.instructions_precision)
             + 0.25 * score.invented.len() as f64
+            + ratio(score.unsourced_note_words, score.note_words.max(1))
             + if score.title_right { 0.0 } else { 0.25 };
         if badness > 0.0 {
             let mut parts = Vec::new();
@@ -437,6 +521,12 @@ impl Totals {
             if !score.invented.is_empty() {
                 parts.push(format!("invented {}", score.invented.join(", ")));
             }
+            if score.unsourced_note_words > 0 {
+                parts.push(format!(
+                    "{} of {} note/description words not in the source",
+                    score.unsourced_note_words, score.note_words
+                ));
+            }
             self.misses
                 .push((badness, format!("{id}: {}", parts.join("; "))));
         }
@@ -454,6 +544,7 @@ impl Totals {
             mean(&self.recall),
             mean(&self.precision),
             self.invented.to_string(),
+            pct(self.unsourced_note_words, self.note_words),
         ]
     }
 }
@@ -469,6 +560,7 @@ pub const TEXT_COLUMNS: &[&str] = &[
     "Instructions recall",
     "Instructions precision",
     "Invented fields",
+    "Unsourced note words",
     "Invalid",
     "Not a recipe: left empty",
 ];
@@ -654,6 +746,7 @@ mod tests {
             ingredients: vec!["1 cup rice".into(), "1 bay leaf".into()],
             instructions: "Simmer the rice.".into(),
             also_allowed: "Stir in cumin.".into(),
+            prose_untranscribed: false,
             servings: Some("4".into()),
             prep_time: None,
             cook_time: None,
@@ -669,6 +762,7 @@ mod tests {
         );
         answer.cook_time = Some("20 to 25 minutes".into());
         answer.total_time = Some("45 minutes".into());
+        answer.notes = Some("Simmer gently. Garnish with chives.".into());
         let score = score(&answer, &expected(), "Serves 4. Simmer 20 to 25 minutes.");
         assert!(score.title_right);
         assert_eq!((score.missing.len(), score.lines_expected), (1, 2));
@@ -679,5 +773,20 @@ mod tests {
         assert_eq!(score.instructions_precision, 6.0 / 8.0);
         // The cook time is stated; the total isn't.
         assert_eq!(score.invented, vec!["total_time"]);
+        // Only "simmer" is in the source.
+        assert_eq!((score.unsourced_note_words, score.note_words), (4, 5));
+    }
+
+    #[test]
+    fn numbers_count_what_their_nearest_cue_says() {
+        let stated = quantities(
+            "Serves 4. Bake 30 minutes, then rest 11 to 12 minutes.\nyield: approximately 18 to 24 cookies",
+        );
+        assert!(stated.contains(&("24".into(), Quantity::Servings)));
+        assert!(stated.contains(&("4".into(), Quantity::Servings)));
+        assert!(stated.contains(&("30".into(), Quantity::Time)));
+        assert!(stated.contains(&("11".into(), Quantity::Time)));
+        assert!(!stated.contains(&("30".into(), Quantity::Servings)));
+        assert!(!stated.contains(&("4".into(), Quantity::Time)));
     }
 }
