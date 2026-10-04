@@ -266,6 +266,8 @@ pub struct StoredName {
     pub disposition: Option<String>,
     pub catalog_key: Option<String>,
     pub candidates: Option<Vec<Option<String>>>,
+    /// Why the last re-ask failed; Retry, not a restart, asks again.
+    pub reask_error: Option<String>,
 }
 
 /// What the committed catalog means for a stored name, if anything.
@@ -285,7 +287,9 @@ pub fn catalog_sync(row: &StoredName) -> Option<CatalogSync> {
         (Some("estimate" | "not_food"), _) if is_ambiguous(&row.name) => {
             Some(CatalogSync::NowAmbiguous)
         }
-        (Some("unknown" | "estimate"), _) if row.candidates != Some(stored(offered(&row.name))) => {
+        (Some("unknown" | "estimate"), _)
+            if row.reask_error.is_none() && row.candidates != Some(stored(offered(&row.name))) =>
+        {
             Some(CatalogSync::NewCandidates)
         }
         _ => None,
@@ -317,6 +321,7 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
             names::disposition,
             names::catalog_key,
             names::candidates,
+            names::reask_error,
         ))
         .load(&mut conn)
         .map_err(|e| e.to_string())?;
@@ -937,6 +942,7 @@ mod tests {
             disposition: disposition.map(str::to_string),
             catalog_key: key.map(str::to_string),
             candidates: None,
+            reask_error: None,
         }
     }
 
@@ -985,8 +991,14 @@ mod tests {
 
     #[test]
     fn estimates_are_asked_again_when_the_candidates_change() {
-        let estimate = row("zorblax flour", RESOLVED, Some("estimate"), None);
+        let mut estimate = row("zorblax flour", RESOLVED, Some("estimate"), None);
         assert_eq!(catalog_sync(&estimate), Some(CatalogSync::NewCandidates));
+        estimate.reask_error = Some("bad answer".to_string());
+        assert_eq!(
+            catalog_sync(&estimate),
+            None,
+            "a failed re-ask waits for Retry"
+        );
     }
 
     #[test]
