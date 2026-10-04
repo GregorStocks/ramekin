@@ -58,7 +58,13 @@ pub struct IngredientWeightsStatus {
     pub pending: i64,
     /// The last attempt failed; retry to try again.
     pub failed: i64,
-    /// The most recent failures.
+    /// Being asked again by the current model; the earlier model's estimate
+    /// is used meanwhile (and counted above).
+    pub reasking: i64,
+    /// Re-asking with the current model failed; the earlier model's estimate
+    /// is still used (and counted above). Retry to try again.
+    pub reask_failed: i64,
+    /// The most recent failures, failed re-asks included.
     pub failures: Vec<IngredientWeightFailure>,
 }
 
@@ -78,7 +84,13 @@ pub struct IngredientNamesStatusResponse {
     pub pending: i64,
     /// The last attempt failed; retry to try again.
     pub failed: i64,
-    /// The most recent failures.
+    /// Being asked again by the current model; the earlier model's answer
+    /// is used meanwhile (and counted above).
+    pub reasking: i64,
+    /// Re-asking with the current model failed; the earlier model's answer
+    /// is still used (and counted above). Retry to try again.
+    pub reask_failed: i64,
+    /// The most recent failures, failed re-asks included.
     pub failures: Vec<IngredientNameFailure>,
     pub weights: IngredientWeightsStatus,
 }
@@ -200,12 +212,33 @@ pub async fn get_ingredient_names_status(
                 .map(|(_, _, n)| n)
                 .sum::<i64>()
         };
-        let failures: Vec<(String, Option<String>, i32)> = names::table
+        let reasking: i64 = names::table
             .filter(names::name.eq_any(&own))
-            .filter(names::status.eq(FAILED))
+            .filter(names::reasked)
+            .count()
+            .get_result(conn)
+            .map_err(db_error)?;
+        let reask_failed: i64 = names::table
+            .filter(names::name.eq_any(&own))
+            .filter(names::reask_error.is_not_null())
+            .count()
+            .get_result(conn)
+            .map_err(db_error)?;
+        let failures: Vec<(String, Option<String>, Option<String>, i32)> = names::table
+            .filter(names::name.eq_any(&own))
+            .filter(
+                names::status
+                    .eq(FAILED)
+                    .or(names::reask_error.is_not_null()),
+            )
             .order(names::updated_at.desc())
             .limit(FAILURES_SHOWN)
-            .select((names::name, names::error, names::attempts))
+            .select((
+                names::name,
+                names::error,
+                names::reask_error,
+                names::attempts,
+            ))
             .load(conn)
             .map_err(db_error)?;
         let foods = own_foods(conn, &recipes)?;
@@ -217,21 +250,27 @@ pub async fn get_ingredient_names_status(
             unknown: count(RESOLVED, Some("unknown")),
             pending: count(PENDING, None),
             failed: count(FAILED, None),
+            reasking,
+            reask_failed,
             failures: failures
                 .into_iter()
-                .map(|(name, error, attempts)| IngredientNameFailure {
-                    name,
-                    error: error.unwrap_or_default(),
-                    attempts,
-                })
+                .map(
+                    |(name, error, reask_error, attempts)| IngredientNameFailure {
+                        name,
+                        error: error.or(reask_error).unwrap_or_default(),
+                        attempts,
+                    },
+                )
                 .collect(),
             weights: IngredientWeightsStatus {
                 estimated: weights.estimated,
                 no_typical_weight: weights.no_typical_weight,
                 pending: weights.pending,
-                failed: weights.failed.len() as i64,
+                failed: weights.failed,
+                reasking: weights.reasking,
+                reask_failed: weights.reask_failed,
                 failures: weights
-                    .failed
+                    .failures
                     .into_iter()
                     .take(FAILURES_SHOWN as usize)
                     .map(|(key, error, attempts)| IngredientWeightFailure {

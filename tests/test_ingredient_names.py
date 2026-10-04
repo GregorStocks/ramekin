@@ -6,6 +6,7 @@ import threading
 import time
 import uuid
 
+import psycopg
 import pytest
 import requests
 
@@ -168,6 +169,64 @@ def test_failures_are_visible_and_retryable(authed_api_client):
     wait_for(lambda: line_text(api, item) != "Not recognized")
     status = names_api.get_ingredient_names_status()
     assert all(f.name != item.lower() for f in status.failures)
+
+
+def reask_state(database_url, name: str):
+    with psycopg.connect(database_url, autocommit=True) as conn:
+        return conn.execute(
+            "SELECT reasked, reask_error FROM ingredient_name_resolutions"
+            " WHERE name = %s",
+            (name,),
+        ).fetchone()
+
+
+def test_failed_reasks_keep_the_answer_and_are_retryable(
+    authed_api_client, database_url
+):
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    names_api = IngredientNamesApi(client)
+    item = unique("sugar")
+    name = item.lower()
+    create_recipe(api, item)
+    answered = wait_for(lambda: (t := line_text(api, item)) != "Not recognized" and t)
+
+    # What startup does for answers from another model.
+    mock_fail(name, True)
+    with psycopg.connect(database_url, autocommit=True) as conn:
+        conn.execute(
+            "UPDATE ingredient_name_resolutions SET reasked = true WHERE name = %s",
+            (name,),
+        )
+    names_api.retry_ingredient_names()  # wakes the worker
+
+    # The invalid re-answer is recorded, not retried forever, and the earlier
+    # answer is still served.
+    failure = wait_for(
+        lambda: next(
+            (
+                f
+                for f in names_api.get_ingredient_names_status().failures
+                if f.name == name
+            ),
+            None,
+        ),
+        timeout=60.0,
+    )
+    assert failure.error
+    assert names_api.get_ingredient_names_status().reask_failed >= 1
+    reasked, reask_error = reask_state(database_url, name)
+    assert not reasked and reask_error
+    assert line_text(api, item) == answered
+
+    # Retry asks again, and a valid answer clears the failure.
+    mock_fail(name, False)
+    answers = mock_answers(name)
+    assert names_api.retry_ingredient_names().queued >= 1
+    wait_for(lambda: mock_answers(name) > answers, timeout=60.0)
+    wait_for(lambda: reask_state(database_url, name) == (False, None))
+    status = names_api.get_ingredient_names_status()
+    assert all(f.name != name for f in status.failures)
 
 
 def import_recipe(client, item: str):
