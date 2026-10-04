@@ -125,7 +125,7 @@
     "photos": [
       "shishkabobs-sideways-community-cookbook.jpeg"
     ],
-    "note": "Old spiral-bound community cookbook photographed sideways, in shadow: ingredients in two columns with a centred last line, the tail of the previous recipe above, and the next recipe (Beefkabobs) cut off below. Its servings (\"Serves 6.\") and cook time (\"20-30 minutes\") are only in the method text. \"Mrs. David Campbell\" signs the previous recipe, not this one.",
+    "note": "Old spiral-bound community cookbook photographed sideways, in shadow: ingredients in two columns with a centred last line, the tail of the previous recipe above, and the next recipe (Beefkabobs) cut off below. Its servings (\"Serves 6.\") are only in the method text, and its 20-30 minute broil is a step, not a stated cook time. \"Mrs. David Campbell\" signs the previous recipe, not this one.",
     "expected": {
       "title": "Grill-Bound Shishkabobs",
       "ingredients": [
@@ -144,7 +144,7 @@
       "also_allowed": "Serves 6. The Editors",
       "servings": "Serves 6",
       "prep_time": null,
-      "cook_time": "20-30 minutes",
+      "cook_time": null,
       "total_time": null
     }
   }

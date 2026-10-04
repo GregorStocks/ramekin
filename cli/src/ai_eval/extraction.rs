@@ -61,19 +61,21 @@ impl Expected {
     /// Everything a photo case's page says, as text: what its fields
     /// transcribe.
     fn source(&self) -> String {
-        let mut parts = vec![self.title.as_str(), &self.instructions, &self.also_allowed];
-        parts.extend(self.ingredients.iter().map(String::as_str));
-        parts.extend(
-            [
-                &self.servings,
-                &self.prep_time,
-                &self.cook_time,
-                &self.total_time,
-            ]
-            .into_iter()
-            .flatten()
-            .map(String::as_str),
-        );
+        let mut parts = vec![
+            self.title.clone(),
+            self.instructions.clone(),
+            self.also_allowed.clone(),
+        ];
+        parts.extend(self.ingredients.iter().cloned());
+        parts.extend(self.servings.clone());
+        // Labelled as the page labels them, so they count as stated times.
+        for (label, time) in [
+            ("Prep time", &self.prep_time),
+            ("Cook time", &self.cook_time),
+            ("Total time", &self.total_time),
+        ] {
+            parts.extend(time.as_ref().map(|time| format!("{label}: {time}")));
+        }
         parts.join("\n")
     }
 }
@@ -269,10 +271,11 @@ fn normalize_line(line: &str) -> String {
         .replace("( ", "(")
 }
 
-/// Whether the character at `i` is a decimal point ("12.5"), which stays in
-/// its number rather than ending a word or sentence.
+/// Whether the character at `i` is a decimal point ("12.5") or fraction
+/// slash ("1/2"), which stays in its number rather than ending a word or
+/// sentence.
 fn decimal_point(chars: &[char], i: usize) -> bool {
-    chars[i] == '.'
+    matches!(chars[i], '.' | '/')
         && i > 0
         && chars[i - 1].is_ascii_digit()
         && chars.get(i + 1).is_some_and(char::is_ascii_digit)
@@ -283,7 +286,11 @@ fn tokens(text: &str) -> Vec<String> {
     let mut words = Vec::new();
     let mut word = String::new();
     for (i, &c) in chars.iter().enumerate() {
-        if c.is_alphanumeric() || c == '/' || decimal_point(&chars, i) {
+        if c.is_alphabetic() && !word.is_empty() && is_number(&word) {
+            // "227g" is 227 g: the number on its own, as in "227 g".
+            words.push(std::mem::take(&mut word));
+            word.push(c);
+        } else if c.is_alphanumeric() || decimal_point(&chars, i) {
             word.push(c);
         } else if !word.is_empty() {
             words.push(std::mem::take(&mut word));
@@ -401,12 +408,23 @@ fn cue(word: &str) -> Option<Quantity> {
 /// minutes", "410 calories", or "cal 410" before it). Otherwise it counts
 /// servings if a servings word came earlier in its sentence ("serves 4
 /// generously, 6 moderately"), and nothing if not ("130 to 135 degrees").
-/// Counted, so a quantity stated once backs one answered field.
+/// The servings, times and nutrition a text states as a recipe's metadata,
+/// counted so a quantity stated once backs one answered field. A time counts
+/// only in a sentence that labels one ("Prep: 10 minutes", "Total time",
+/// "ready in"): a step's "chill 30 minutes" isn't the recipe's total time.
 fn quantities(text: &str) -> HashMap<(String, Quantity), usize> {
     let mut stated = HashMap::new();
-    for (number, quantity) in classify(text) {
-        if let Some(quantity) = quantity {
-            *stated.entry((number, quantity)).or_insert(0) += 1;
+    for sentence in sentences(text) {
+        let labelled = tokens(&sentence).iter().any(|w| {
+            matches!(
+                w.as_str(),
+                "prep" | "cook" | "cooking" | "total" | "time" | "ready" | "active"
+            )
+        });
+        for (number, quantity) in classify(&sentence) {
+            if let Some(quantity) = quantity.filter(|q| labelled || !q.is_time()) {
+                *stated.entry((number, quantity)).or_insert(0) += 1;
+            }
         }
     }
     stated
@@ -1075,7 +1093,11 @@ mod tests {
         answer.cook_time = Some("20 to 25 minutes".into());
         answer.total_time = Some("45 minutes".into());
         answer.notes = Some("Simmer gently. Garnish with chives.".into());
-        let score = score(&answer, &expected(), "Serves 4. Simmer 20 to 25 minutes.");
+        let score = score(
+            &answer,
+            &expected(),
+            "Serves 4. Cook time: 20 to 25 minutes.",
+        );
         assert!(score.title_right);
         assert_eq!((score.missing.len(), score.lines_expected), (1, 2));
         assert_eq!(score.missing, vec!["1 bay leaf"]);
@@ -1129,28 +1151,54 @@ mod tests {
         let mut answer = recipe("1 cup rice\n1 bay leaf", "Bake 30 minutes.");
         answer.prep_time = Some("30 minutes".into());
         answer.cook_time = Some("30 minutes".into());
-        let score = score(&answer, &expected(), "Serves 4. Bake 30 minutes.");
+        let score = score(&answer, &expected(), "Serves 4. Prep time: 30 minutes.");
         assert_eq!(score.invented, vec!["cook_time"]);
+    }
+
+    /// Every number a text gives a quantity, labelled or not.
+    fn typed(text: &str) -> HashSet<(String, Quantity)> {
+        classify(text)
+            .into_iter()
+            .filter_map(|(number, quantity)| Some((number, quantity?)))
+            .collect()
+    }
+
+    #[test]
+    fn only_labelled_times_are_metadata() {
+        let stated = quantities("Chill 30 minutes. Total time: 45 minutes. Serves 4.");
+        assert!(!stated.contains_key(&("30".into(), Quantity::Minutes)));
+        assert!(stated.contains_key(&("45".into(), Quantity::Minutes)));
+        assert!(stated.contains_key(&("4".into(), Quantity::Servings)));
+    }
+
+    #[test]
+    fn attached_units_split_from_their_numbers() {
+        assert_eq!(
+            tokens("1/2 cup, 8 oz/227g butter"),
+            ["1/2", "cup", "8", "oz", "227", "g", "butter"]
+        );
+        assert!(typed("Total Fat 36g").contains(&("36".into(), Quantity::Nutrition)));
+        assert!(!typed("8 oz (227g) butter").contains(&("227".into(), Quantity::Nutrition)));
     }
 
     #[test]
     fn numbers_count_what_their_nearest_cue_says() {
-        let stated = quantities(
+        let stated = typed(
             "Serves 4. Bake 30 minutes, then rest 11 to 12 minutes.\nyield: approximately 18 to 24 cookies\nCook until it registers 130 to 135 degrees, 5 to 6 minutes per side.\nPer serving: Cal 410",
         );
-        assert!(stated.contains_key(&("6".into(), Quantity::Minutes)));
-        assert!(!stated.contains_key(&("130".into(), Quantity::Minutes)));
-        assert!(stated.contains_key(&("410".into(), Quantity::Nutrition)));
-        assert!(!stated.contains_key(&("30".into(), Quantity::Hours)));
-        let decimal = quantities("Cook 12.5 minutes. Serves 4.");
-        assert!(decimal.contains_key(&("12.5".into(), Quantity::Minutes)));
-        let prose = quantities("Transfer to a serving bowl and garnish with about 1/3 cup chives.");
-        assert!(!prose.contains_key(&("1/3".into(), Quantity::Servings)));
-        assert!(stated.contains_key(&("24".into(), Quantity::Servings)));
-        assert!(stated.contains_key(&("4".into(), Quantity::Servings)));
-        assert!(stated.contains_key(&("30".into(), Quantity::Minutes)));
-        assert!(stated.contains_key(&("11".into(), Quantity::Minutes)));
-        assert!(!stated.contains_key(&("30".into(), Quantity::Servings)));
-        assert!(!stated.contains_key(&("4".into(), Quantity::Minutes)));
+        assert!(stated.contains(&("6".into(), Quantity::Minutes)));
+        assert!(!stated.contains(&("130".into(), Quantity::Minutes)));
+        assert!(stated.contains(&("410".into(), Quantity::Nutrition)));
+        assert!(!stated.contains(&("30".into(), Quantity::Hours)));
+        let decimal = typed("Cook 12.5 minutes. Serves 4.");
+        assert!(decimal.contains(&("12.5".into(), Quantity::Minutes)));
+        let prose = typed("Transfer to a serving bowl and garnish with about 1/3 cup chives.");
+        assert!(!prose.contains(&("1/3".into(), Quantity::Servings)));
+        assert!(stated.contains(&("24".into(), Quantity::Servings)));
+        assert!(stated.contains(&("4".into(), Quantity::Servings)));
+        assert!(stated.contains(&("30".into(), Quantity::Minutes)));
+        assert!(stated.contains(&("11".into(), Quantity::Minutes)));
+        assert!(!stated.contains(&("30".into(), Quantity::Servings)));
+        assert!(!stated.contains(&("4".into(), Quantity::Minutes)));
     }
 }
