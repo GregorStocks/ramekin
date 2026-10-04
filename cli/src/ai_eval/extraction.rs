@@ -320,38 +320,74 @@ enum Quantity {
     Nutrition,
 }
 
-/// The quantity a word says its neighbouring numbers count ("serves 4",
-/// "30 minutes", "410 calories").
+/// The quantity a word says its numbers count ("serves 4", "30 minutes",
+/// "410 calories").
 fn cue(word: &str) -> Option<Quantity> {
-    let any = |prefixes: &[&str]| prefixes.iter().any(|p| word.starts_with(p));
-    if any(&["serv", "makes", "yield", "people", "portion"]) {
+    if matches!(
+        word,
+        "serves" | "serving" | "servings" | "makes" | "yield" | "yields" | "people" | "portions"
+    ) {
         Some(Quantity::Servings)
-    } else if any(&["minute", "hour", "second"]) || matches!(word, "min" | "mins" | "hr" | "hrs") {
+    } else if ["minute", "hour", "second"]
+        .iter()
+        .any(|p| word.starts_with(p))
+        || matches!(word, "min" | "mins" | "hr" | "hrs")
+    {
         Some(Quantity::Time)
-    } else if any(&[
+    } else if [
         "cal", "kcal", "fat", "protein", "carb", "sodium", "sugar", "fiber",
-    ]) {
+    ]
+    .iter()
+    .any(|p| word.starts_with(p))
+    {
         Some(Quantity::Nutrition)
     } else {
         None
     }
 }
 
-/// Each number a text states, with what it counts: the cue word nearest it
-/// in its sentence. So "Serves 4. Bake 30 minutes" states 4 servings and 30
-/// minutes, and neither a 30-serving nor a 4-minute answer.
+/// Each number a text states, with what it counts. A run of numbers ("5 to
+/// 6", "1 1/2") counts the time or nutrition word right after it ("5 to 6
+/// minutes", "410 calories", or "cal 410" before it). Otherwise it counts
+/// servings if a servings word came earlier in its sentence ("serves 4
+/// generously, 6 moderately"), and nothing if not ("130 to 135 degrees").
 fn quantities(text: &str) -> HashSet<(String, Quantity)> {
     let mut stated = HashSet::new();
     for sentence in text.split(['.', ';', '\n']) {
         let words = tokens(sentence);
-        let cues: Vec<(usize, Quantity)> = words
-            .iter()
-            .enumerate()
-            .filter_map(|(i, word)| cue(word).map(|q| (i, q)))
-            .collect();
-        for (i, word) in words.iter().enumerate().filter(|(_, w)| is_number(w)) {
-            if let Some((_, quantity)) = cues.iter().min_by_key(|(j, _)| i.abs_diff(*j)) {
-                stated.insert((word.clone(), *quantity));
+        let mut after_servings_word = false;
+        let mut i = 0;
+        while i < words.len() {
+            if !is_number(&words[i]) {
+                after_servings_word |= cue(&words[i]) == Some(Quantity::Servings);
+                i += 1;
+                continue;
+            }
+            let start = i;
+            loop {
+                if i < words.len() && is_number(&words[i]) {
+                    i += 1;
+                } else if i + 1 < words.len()
+                    && matches!(words[i].as_str(), "to" | "or" | "and")
+                    && is_number(&words[i + 1])
+                {
+                    i += 2;
+                } else {
+                    break;
+                }
+            }
+            let before = start.checked_sub(1).and_then(|b| cue(&words[b]));
+            let quantity = match (before, words.get(i).and_then(|w| cue(w))) {
+                (_, Some(q @ (Quantity::Time | Quantity::Nutrition))) => Some(q),
+                (Some(Quantity::Nutrition), _) => Some(Quantity::Nutrition),
+                (_, Some(Quantity::Servings)) => Some(Quantity::Servings),
+                _ if after_servings_word => Some(Quantity::Servings),
+                _ => None,
+            };
+            if let Some(quantity) = quantity {
+                for word in words[start..i].iter().filter(|w| is_number(w)) {
+                    stated.insert((word.clone(), quantity));
+                }
             }
         }
     }
@@ -828,8 +864,11 @@ mod tests {
     #[test]
     fn numbers_count_what_their_nearest_cue_says() {
         let stated = quantities(
-            "Serves 4. Bake 30 minutes, then rest 11 to 12 minutes.\nyield: approximately 18 to 24 cookies",
+            "Serves 4. Bake 30 minutes, then rest 11 to 12 minutes.\nyield: approximately 18 to 24 cookies\nCook until it registers 130 to 135 degrees, 5 to 6 minutes per side.\nPer serving: Cal 410",
         );
+        assert!(stated.contains(&("6".into(), Quantity::Time)));
+        assert!(!stated.contains(&("130".into(), Quantity::Time)));
+        assert!(stated.contains(&("410".into(), Quantity::Nutrition)));
         assert!(stated.contains(&("24".into(), Quantity::Servings)));
         assert!(stated.contains(&("4".into(), Quantity::Servings)));
         assert!(stated.contains(&("30".into(), Quantity::Time)));
