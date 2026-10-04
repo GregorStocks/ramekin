@@ -27,7 +27,7 @@ struct TagManagementView: View {
                 Section {
                     HStack {
                         Spacer()
-                        ProgressView("Loading tags...")
+                        ProgressView("Loading tags…")
                         Spacer()
                     }
                     .padding(.vertical, 12)
@@ -36,7 +36,7 @@ struct TagManagementView: View {
                 Section {
                     VStack(spacing: 12) {
                         Image(systemName: "tag.slash")
-                            .font(.system(size: 32))
+                            .scaledIconFont(size: 32)
                             .foregroundColor(.secondary)
                         Text("No tags yet")
                             .font(.headline)

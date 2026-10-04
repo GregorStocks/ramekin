@@ -26,7 +26,7 @@ struct RecipeVersionCompareSheet: View {
     @ViewBuilder
     private var content: some View {
         if isLoading {
-            ProgressView("Loading versions...")
+            ProgressView("Loading versions…")
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.top, 40)
         } else if let error {
@@ -117,7 +117,8 @@ struct RecipeVersionCompareSheet: View {
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(.red)
-                        .frame(width: 50, alignment: .leading)
+                        .frame(minWidth: 50, alignment: .leading)
+                        .fixedSize()
                     Text(diff.before.isEmpty ? "(empty)" : diff.before)
                         .font(.body)
                         .foregroundColor(diff.before.isEmpty ? .secondary : .primary)
@@ -128,7 +129,8 @@ struct RecipeVersionCompareSheet: View {
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(.green)
-                        .frame(width: 50, alignment: .leading)
+                        .frame(minWidth: 50, alignment: .leading)
+                        .fixedSize()
                     Text(diff.after.isEmpty ? "(empty)" : diff.after)
                         .font(.body)
                         .foregroundColor(diff.after.isEmpty ? .secondary : .primary)

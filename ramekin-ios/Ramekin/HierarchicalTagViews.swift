@@ -55,13 +55,15 @@ struct HierarchicalTagChip: View {
             name: name,
             valueFont: valueFont,
             namespaceFont: namespaceFont,
-            valueColor: isSelected ? .white : baseColor,
-            namespaceColor: isSelected ? Color.white.opacity(0.78) : .secondary
+            // Black, not white, on the filled chip: white on orange is ~2:1.
+            valueColor: isSelected ? .black : baseColor,
+            namespaceColor: isSelected ? Color.black.opacity(0.7) : .secondary
         )
         .padding(.horizontal, 10)
         .padding(.vertical, 6)
         .background(backgroundColor)
         .clipShape(Capsule())
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 
     private var backgroundColor: Color {

@@ -135,10 +135,10 @@ extension RecipeDetailViewModel {
     }
 
     var autoEnrichmentProgressLabel: String? {
-        if isEnriching { return "Enriching recipe..." }
-        if isGeneratingPhoto { return "Generating AI photo..." }
-        if isGeneratingDescription { return "Generating description..." }
-        if isNormalizingTitle { return "Renaming recipe..." }
+        if isEnriching { return "Enriching recipe…" }
+        if isGeneratingPhoto { return "Generating AI photo…" }
+        if isGeneratingDescription { return "Generating description…" }
+        if isNormalizingTitle { return "Renaming recipe…" }
         return nil
     }
 

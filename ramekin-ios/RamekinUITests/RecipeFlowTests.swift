@@ -36,8 +36,7 @@ final class RecipeFlowTests: XCTestCase {
         XCTAssertTrue(text.waitForExistence(timeout: slowSimulatorTimeout))
         text.tap()
         text.typeText("Text Pancakes\n1 cup all-purpose flour\nMix and cook.")
-        app.swipeUp()
-        app.buttons["Review recipe"].tap()
+        app.navigationBars.buttons["Review"].tap()
         let title = app.textFields["Recipe title"]
         XCTAssertTrue(title.waitForExistence(timeout: slowSimulatorTimeout))
         replaceText(in: title, with: "iOS text pancakes")
@@ -155,7 +154,7 @@ final class RecipeFlowTests: XCTestCase {
 
         // The login screen is a Form whose rows also match `app.cells`, so the
         // logged-in check must be something only the recipe list has: its
-        // "Recipes" navigation bar (the login screen's bar is "Sign In").
+        // "Recipes" navigation bar (the login screen has no navigation bar).
         let recipesBar = app.navigationBars["Recipes"]
         let loginError = app.staticTexts["login-error-message"]
         let loginFinished = XCTNSPredicateExpectation(

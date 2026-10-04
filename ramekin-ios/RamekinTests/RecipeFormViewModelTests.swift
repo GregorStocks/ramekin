@@ -203,6 +203,68 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.newTagValue, "")
     }
 
+    func testCreateHasUnsavedChangesOnceTextIsTyped() async {
+        let content = RecipeContent(ingredients: [], instructions: "Mix.", title: "Pancakes")
+        let model = RecipeFormViewModel(mode: .create, api: RecipeFormViewAPIClient(
+            createRecipe: { _ in throw TestError.unexpectedCall },
+            updateRecipe: { _, _ in throw TestError.unexpectedCall },
+            getRecipe: { _ in throw TestError.unexpectedCall },
+            listAllTags: { TagsListResponse(tags: []) },
+            uploadPhoto: { _ in throw TestError.unexpectedCall },
+            prepareTextRecipe: { _ in
+                PrepareTextRecipeResponse(content: content, derivedMeasurements: [], rawIngredients: "", warnings: [])
+            }
+        ))
+        XCTAssertFalse(model.hasUnsavedChanges)
+        model.recipeText = "  \n"
+        XCTAssertFalse(model.hasUnsavedChanges)
+        model.recipeText = "Pancakes"
+        XCTAssertTrue(model.hasUnsavedChanges)
+        await model.prepareRecipe()
+        model.recipeText = ""
+        XCTAssertTrue(model.hasUnsavedChanges, "A prepared draft is unsaved work")
+    }
+
+    func testEditHasUnsavedChangesOnlyAfterAnEdit() async {
+        let recipe = RecipeResponse(
+            cookTime: nil,
+            createdAt: Date(timeIntervalSince1970: 100),
+            derivedMeasurements: [],
+            description: nil,
+            difficulty: nil,
+            id: UUID(),
+            ingredients: [],
+            instructions: "Mix",
+            notes: nil,
+            nutritionalInfo: nil,
+            photoIds: [],
+            prepTime: nil,
+            rating: nil,
+            servings: nil,
+            sourceName: nil,
+            sourceUrl: nil,
+            tags: [],
+            title: "Plain",
+            totalTime: nil,
+            updatedAt: Date(timeIntervalSince1970: 200),
+            versionId: UUID(),
+            versionSource: "user"
+        )
+        let model = RecipeFormViewModel(mode: .edit(recipeId: recipe.id), api: RecipeFormViewAPIClient(
+            createRecipe: { _ in throw TestError.unexpectedCall },
+            updateRecipe: { _, _ in throw TestError.unexpectedCall },
+            getRecipe: { _ in recipe },
+            listAllTags: { TagsListResponse(tags: []) },
+            uploadPhoto: { _ in throw TestError.unexpectedCall }
+        ))
+        await model.loadRecipe(id: recipe.id)
+        XCTAssertFalse(model.hasUnsavedChanges)
+        model.formData.title = "Plainer"
+        XCTAssertTrue(model.hasUnsavedChanges)
+        model.formData.title = "Plain"
+        XCTAssertFalse(model.hasUnsavedChanges)
+    }
+
     private enum TestError: Error {
         case unexpectedCall
     }

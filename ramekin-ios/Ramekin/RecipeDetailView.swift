@@ -5,6 +5,7 @@ struct RecipeDetailView: View {
 
     @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: RecipeDetailViewModel
+    @FocusState var customScaleFocused: Bool
 
     init(recipeId: UUID) {
         self.recipeId = recipeId
@@ -38,6 +39,7 @@ struct RecipeDetailView: View {
                 recipeContent(recipe)
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .navigationTitle(viewModel.recipe?.title ?? "Recipe")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -69,7 +71,7 @@ struct RecipeDetailView: View {
                         Button {
                             Task { await viewModel.normalizeTitle() }
                         } label: {
-                            Label("Auto-rename", systemImage: "textformat")
+                            Label("Auto-Rename", systemImage: "textformat")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
@@ -268,6 +270,7 @@ struct RecipeDetailView: View {
     }
 
     func applyCustomScale() {
+        customScaleFocused = false
         viewModel.applyCustomScale()
     }
 }

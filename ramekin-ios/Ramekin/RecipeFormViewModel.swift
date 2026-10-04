@@ -51,6 +51,9 @@ final class RecipeFormViewModel: ObservableObject {
     @Published var draft: PrepareTextRecipeResponse?
     @Published var isPreparing = false
 
+    /// The form as last loaded or prepared, to tell whether the user has
+    /// edited anything since.
+    private var savedFormData = RecipeFormData()
     private let api: RecipeFormViewAPIClient
 
     init(mode: RecipeFormMode, api: RecipeFormViewAPIClient = .live) {
@@ -60,6 +63,17 @@ final class RecipeFormViewModel: ObservableObject {
 }
 
 extension RecipeFormViewModel {
+    /// Whether closing the form would throw away the user's work. In create
+    /// mode that's any typed text or a prepared draft.
+    var hasUnsavedChanges: Bool {
+        switch mode {
+        case .create:
+            draft != nil || !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        case .edit:
+            formData != savedFormData
+        }
+    }
+
     var canSave: Bool {
         let hasRequiredVersion = switch mode {
         case .create:
@@ -81,6 +95,7 @@ extension RecipeFormViewModel {
         do {
             let result = try await api.prepareTextRecipe(recipeText)
             formData = RecipeFormData(content: result.content)
+            savedFormData = formData
             rawIngredients = result.rawIngredients
             draft = result
         } catch {
@@ -255,6 +270,7 @@ extension RecipeFormViewModel {
         do {
             let recipe = try await api.getRecipe(id)
             formData = RecipeFormData(recipe: recipe)
+            savedFormData = formData
             isLoading = false
         } catch is CancellationError {
             isLoading = false

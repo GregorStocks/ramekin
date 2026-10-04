@@ -7,6 +7,7 @@ struct RecipeFormView: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel: RecipeFormViewModel
     @FocusState private var focusedSectionId: UUID?
+    @State private var showingDiscardConfirmation = false
 
     init(mode: RecipeFormMode, onSaved: (() -> Void)? = nil) {
         self.onSaved = onSaved
@@ -40,12 +41,20 @@ struct RecipeFormView: View {
         .navigationTitle(viewModel.mode == .create ? "New Recipe" : "Edit Recipe")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button("Cancel") { dismiss() }
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancel") {
+                    if viewModel.hasUnsavedChanges {
+                        showingDiscardConfirmation = true
+                    } else {
+                        dismiss()
+                    }
+                }
             }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                if viewModel.mode != .create || viewModel.draft != nil {
-                    Button(viewModel.isSaving ? "Saving..." : "Save") {
+            ToolbarItem(placement: .confirmationAction) {
+                if viewModel.mode == .create && viewModel.draft == nil {
+                    reviewButton
+                } else {
+                    Button(viewModel.isSaving ? "Saving…" : "Save") {
                         Task {
                             if await viewModel.save() {
                                 onSaved?()
@@ -58,8 +67,18 @@ struct RecipeFormView: View {
                 }
             }
         }
+        .scrollDismissesKeyboard(.interactively)
+        .interactiveDismissDisabled(viewModel.hasUnsavedChanges)
+        .confirmationDialog(
+            "Discard changes?",
+            isPresented: $showingDiscardConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("Discard Changes", role: .destructive) { dismiss() }
+            Button("Keep Editing", role: .cancel) {}
+        }
         .disabled(viewModel.isSaving)
-        .overlay { if viewModel.isLoading { ProgressView("Loading recipe...") } }
+        .overlay { if viewModel.isLoading { ProgressView("Loading recipe…") } }
         .task {
             await viewModel.start()
         }
@@ -75,18 +94,29 @@ struct RecipeFormView: View {
 
 extension RecipeFormView {
     private var recipeTextSection: some View {
-        Section("Recipe text") {
+        Section {
             TextEditor(text: $viewModel.recipeText)
                 .frame(minHeight: 240)
                 .accessibilityLabel("Recipe text")
-            Text("Type or paste a whole recipe: title, ingredients, instructions, and any details.")
-                .font(.caption).foregroundStyle(.secondary)
-            Button(viewModel.isPreparing ? "Reading recipe…" : "Review recipe") {
-                Task { await viewModel.prepareRecipe() }
-            }
-            .disabled(viewModel.isPreparing || viewModel.recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+        } header: {
+            Text("Recipe text")
+        } footer: {
+            Text("Type or paste a whole recipe: title, ingredients, instructions, and any details, then tap Review.")
         }
         .disabled(viewModel.isPreparing)
+    }
+
+    /// The step's primary action lives in the navigation bar so it stays
+    /// reachable above the keyboard however long the pasted text is.
+    @ViewBuilder private var reviewButton: some View {
+        if viewModel.isPreparing {
+            ProgressView().accessibilityLabel("Reading recipe")
+        } else {
+            Button("Review") {
+                Task { await viewModel.prepareRecipe() }
+            }
+            .disabled(viewModel.recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+        }
     }
 
     @ViewBuilder private var draftReviewSection: some View {
@@ -155,10 +185,13 @@ extension RecipeFormView {
                             .font(.title2).foregroundColor(.accentColor)
                     }
                     .buttonStyle(.plain)
+                    .accessibilityLabel(star == 1 ? "1 star" : "\(star) stars")
+                    .accessibilityAddTraits(viewModel.formData.rating == star ? .isSelected : [])
                 }
                 Spacer()
                 if viewModel.formData.rating != nil {
                     Button("Clear") { viewModel.formData.rating = nil }
+                        .buttonStyle(.borderless)
                         .font(.caption).foregroundColor(.secondary)
                 }
             }
@@ -236,7 +269,7 @@ extension RecipeFormView {
         Section("Photos") {
             if !viewModel.formData.photoIds.isEmpty { photoGrid }
             PhotosPicker(selection: $viewModel.selectedPhotoItems, maxSelectionCount: 5, matching: .images) {
-                Label(viewModel.isUploadingPhoto ? "Uploading..." : "Add Photo", systemImage: "photo.badge.plus")
+                Label(viewModel.isUploadingPhoto ? "Uploading…" : "Add Photo", systemImage: "photo.badge.plus")
             }
             .disabled(viewModel.isUploadingPhoto)
         }
@@ -315,8 +348,11 @@ extension RecipeFormView {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.white)
                                 .background(Circle().fill(Color.black.opacity(0.6)))
+                                .frame(width: 44, height: 44, alignment: .topTrailing)
+                                .contentShape(Rectangle())
                         }
-                        .offset(x: 4, y: -4)
+                        .buttonStyle(.borderless)
+                        .accessibilityLabel("Remove photo")
                     }
                 }
             }

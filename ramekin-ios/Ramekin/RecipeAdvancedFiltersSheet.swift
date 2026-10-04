@@ -119,11 +119,14 @@ struct RecipeAdvancedFiltersSheet: View {
                 )
 
                 Section {
-                    Button("Clear Filters", role: .destructive) {
+                    // Not destructive: it only resets the unapplied choices here.
+                    Button("Clear Filters") {
                         resetDraftFilters()
                     }
                 }
             }
+            // Number pads have no Return key; let a scroll put the keyboard away.
+            .scrollDismissesKeyboard(.interactively)
             .navigationTitle("Advanced Filters")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -162,6 +165,7 @@ struct RecipeAdvancedFiltersSheet: View {
 
                 TextField(placeholder, text: value)
                     .keyboardType(.numberPad)
+                    .accessibilityLabel("\(title): \(placeholder)")
             }
         }
     }

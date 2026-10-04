@@ -26,7 +26,7 @@ struct SettingsView: View {
             Section {
                 VStack(spacing: 16) {
                     Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 64))
+                        .scaledIconFont(size: 64)
                         .foregroundColor(.green)
 
                     Text("You're all set!")
@@ -147,7 +147,7 @@ struct SettingsView: View {
                     showingDebugLogs = true
                 }
 
-                Button("Clear Logs") {
+                Button("Clear Logs", role: .destructive) {
                     DebugLogger.shared.clearLogs()
                     debugLogs = ""
                 }
@@ -183,11 +183,12 @@ struct SettingsView: View {
                 .navigationTitle("Debug Logs")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
+                    ToolbarItem(placement: .navigationBarLeading) {
                         if !debugLogs.isEmpty {
                             ShareLink(item: debugLogs) {
                                 Image(systemName: "square.and.arrow.up")
                             }
+                            .accessibilityLabel("Share Logs")
                         }
                     }
                     ToolbarItem(placement: .confirmationAction) {
@@ -198,7 +199,7 @@ struct SettingsView: View {
                 }
             }
         }
-        .navigationTitle("Ramekin")
+        .navigationTitle("Settings")
         .confirmationDialog(
             "Sign out of Ramekin?",
             isPresented: $showingLogoutConfirmation,

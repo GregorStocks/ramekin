@@ -4,7 +4,7 @@ extension RecipeDetailView {
     func rescrapeProgressBanner() -> some View {
         HStack(spacing: 10) {
             ProgressView()
-            Text("Rescraping from source...")
+            Text("Rescraping from source…")
                 .font(.subheadline)
                 .foregroundColor(.primary)
             Spacer()
