@@ -359,7 +359,12 @@ fn quantities(text: &str) -> HashSet<(String, Quantity)> {
         let mut i = 0;
         while i < words.len() {
             if !is_number(&words[i]) {
-                after_servings_word |= cue(&words[i]) == Some(Quantity::Servings);
+                // "serving" and "people" also name things ("a serving bowl"),
+                // so only these reach past the next number.
+                after_servings_word |= matches!(
+                    words[i].as_str(),
+                    "serves" | "servings" | "makes" | "yield" | "yields"
+                );
                 i += 1;
                 continue;
             }
@@ -459,9 +464,12 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
     .map(|(name, _, _)| name)
     .collect();
 
+    // Every number, as often as it appears: "2 hours, plus 2 hours
+    // chilling" isn't kept by "2 hours".
     let has_numbers = |value: &Option<String>, of: &str| {
         let have = numbers(value.as_deref().unwrap_or_default());
-        numbers(of).iter().all(|n| have.contains(n))
+        let want = numbers(of);
+        matched(&counts(&want), &counts(&have)) == want.len()
     };
     let answered_times = [&answer.prep_time, &answer.cook_time, &answer.total_time];
     let stated_metadata: Vec<bool> = [
@@ -881,6 +889,23 @@ mod tests {
     }
 
     #[test]
+    fn a_kept_time_needs_each_of_its_numbers() {
+        let mut answer = recipe("1 cup rice\n1 bay leaf", "Simmer the rice.");
+        answer.total_time = Some("2 hours".into());
+        let expected = Expected {
+            total_time: Some("2 hours, plus 2 hours chilling".into()),
+            ..expected()
+        };
+        let score = score(
+            &answer,
+            &expected,
+            "Serves 4. 2 hours, plus 2 hours chilling.",
+        );
+        // The servings are kept; the chilling time isn't.
+        assert_eq!((score.metadata_kept, score.metadata_expected), (1, 2));
+    }
+
+    #[test]
     fn numbers_count_what_their_nearest_cue_says() {
         let stated = quantities(
             "Serves 4. Bake 30 minutes, then rest 11 to 12 minutes.\nyield: approximately 18 to 24 cookies\nCook until it registers 130 to 135 degrees, 5 to 6 minutes per side.\nPer serving: Cal 410",
@@ -888,6 +913,8 @@ mod tests {
         assert!(stated.contains(&("6".into(), Quantity::Time)));
         assert!(!stated.contains(&("130".into(), Quantity::Time)));
         assert!(stated.contains(&("410".into(), Quantity::Nutrition)));
+        let prose = quantities("Transfer to a serving bowl and garnish with about 1/3 cup chives.");
+        assert!(!prose.contains(&("1/3".into(), Quantity::Servings)));
         assert!(stated.contains(&("24".into(), Quantity::Servings)));
         assert!(stated.contains(&("4".into(), Quantity::Servings)));
         assert!(stated.contains(&("30".into(), Quantity::Time)));
