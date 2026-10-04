@@ -47,6 +47,11 @@ def shopping_categories(source: str) -> set[str]:
     return set(re.findall(r'"([^"]+)"', match.group(1)))
 
 
+def nonempty_str(value: object) -> bool:
+    """Whether a decision field is text the catalog loader can read."""
+    return isinstance(value, str) and bool(value.strip())
+
+
 def load_decisions(path: Path) -> list[dict]:
     data = json.loads(path.read_text(encoding="utf-8"))
     decisions = data["decisions"] if isinstance(data, dict) else data
@@ -67,8 +72,7 @@ def cited(decision: dict, field: str) -> dict | None:
         and not isinstance(value, bool)
         and math.isfinite(value)
         and value > 0
-        and isinstance(source, str)
-        and source.strip()
+        and nonempty_str(source)
     ):
         raise ValueError(f"{field} needs a positive value and a source")
     out = {"value": float(value), "source": source}
@@ -170,7 +174,7 @@ def apply(
         if action == "category":
             category = decision.get("category")
             target = category_target(curated, usda, description_counts, name)
-            if category not in categories:
+            if not nonempty_str(category) or category not in categories:
                 reject(f"unknown category {category!r}")
             elif target is None:
                 reject("not a food entry, USDA name, or ambiguous name")
@@ -185,7 +189,7 @@ def apply(
             continue
         if action == "alias":
             target = decision.get("target")
-            if target not in targets:
+            if not nonempty_str(target) or target not in targets:
                 reject(
                     f"target {target!r} is not an entry, USDA name, "
                     "or unique description"
@@ -195,13 +199,13 @@ def apply(
         elif action == "ambiguous":
             curated["aliases"][name] = None
         elif action == "not_food":
-            if not decision.get("reason"):
+            if not nonempty_str(decision.get("reason")):
                 reject("not_food needs a reason")
                 continue
             curated["not_food"][name] = decision["reason"]
         elif action == "product":
             category = decision.get("category")
-            if category not in categories:
+            if not nonempty_str(category) or category not in categories:
                 reject(f"unknown category {category!r}")
                 continue
             curated["entries"][name] = {"kind": "product", "category": category}
@@ -224,7 +228,7 @@ def apply(
         elif action == "trace":
             # A spice or herb no source gives citable calories for: small
             # amounts are negligible, anything more stays unknown.
-            if not decision.get("reason"):
+            if not nonempty_str(decision.get("reason")):
                 reject("trace needs a reason")
                 continue
             curated["entries"][name] = {"trace_ok": True}
