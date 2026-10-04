@@ -265,9 +265,8 @@ pub struct StoredName {
     pub status: String,
     pub disposition: Option<String>,
     pub catalog_key: Option<String>,
+    /// The candidates last asked about, answered or not.
     pub candidates: Option<Vec<Option<String>>>,
-    /// Why the last re-ask failed; Retry, not a restart, asks again.
-    pub reask_error: Option<String>,
 }
 
 /// What the committed catalog means for a stored name, if anything.
@@ -287,9 +286,7 @@ pub fn catalog_sync(row: &StoredName) -> Option<CatalogSync> {
         (Some("estimate" | "not_food"), _) if is_ambiguous(&row.name) => {
             Some(CatalogSync::NowAmbiguous)
         }
-        (Some("unknown" | "estimate"), _)
-            if row.reask_error.is_none() && row.candidates != Some(stored(offered(&row.name))) =>
-        {
+        (Some("unknown" | "estimate"), _) if row.candidates != Some(stored(offered(&row.name))) => {
             Some(CatalogSync::NewCandidates)
         }
         _ => None,
@@ -321,7 +318,6 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
             names::disposition,
             names::catalog_key,
             names::candidates,
-            names::reask_error,
         ))
         .load(&mut conn)
         .map_err(|e| e.to_string())?;
@@ -562,34 +558,24 @@ async fn work_pass(pool: &Arc<DbPool>) -> Result<(), String> {
     // A queue whose provider failed sits out the rest of the pass: its next
     // batch would fail the same way, so it waits for the worker's retry. An
     // idle queue is checked again every turn, since saves keep adding work.
-    // Pending work in either queue goes first; an answer being re-asked of a
-    // newer model is still served, so its batch waits until nothing is
-    // pending, one at a time, so new work never waits behind a backlog.
+    // Pending work goes first in each turn: an answer being re-asked is still
+    // served meanwhile. Each turn then takes one re-ask batch per queue, so
+    // new work waits behind at most one batch, and a steady stream of new
+    // work can't starve re-asks.
     let (mut names_down, mut weights_down) = (false, false);
     loop {
         let mut worked = false;
-        if !names_down {
-            let step = resolve_next_batch(pool, None, Work::Pending).await?;
-            names_down = matches!(step, Step::ProviderFailed(_));
-            worked |= record(step, &mut first_error);
-        }
-        if !weights_down {
-            let step = crate::ingredient_weights::estimate_next_batch(pool, Work::Pending).await?;
-            weights_down = matches!(step, Step::ProviderFailed(_));
-            worked |= record(step, &mut first_error);
-        }
-        if worked {
-            continue;
-        }
-        if !names_down {
-            let step = resolve_next_batch(pool, None, Work::Reasked).await?;
-            names_down = matches!(step, Step::ProviderFailed(_));
-            worked |= record(step, &mut first_error);
-        }
-        if !worked && !weights_down {
-            let step = crate::ingredient_weights::estimate_next_batch(pool, Work::Reasked).await?;
-            weights_down = matches!(step, Step::ProviderFailed(_));
-            worked |= record(step, &mut first_error);
+        for work in [Work::Pending, Work::Reasked] {
+            if !names_down {
+                let step = resolve_next_batch(pool, None, work).await?;
+                names_down = matches!(step, Step::ProviderFailed(_));
+                worked |= record(step, &mut first_error);
+            }
+            if !weights_down {
+                let step = crate::ingredient_weights::estimate_next_batch(pool, work).await?;
+                weights_down = matches!(step, Step::ProviderFailed(_));
+                worked |= record(step, &mut first_error);
+            }
         }
         if !worked {
             break;
@@ -904,18 +890,26 @@ async fn save_failed(
             if provider_wide {
                 return QueryResult::Ok(0);
             }
-            diesel::update(
-                names::table
-                    .filter(names::name.eq_any(&failed))
-                    .filter(names::reasked),
-            )
-            .set((
-                names::reasked.eq(false),
-                names::reask_error.eq(&message),
-                names::attempts.eq(names::attempts + 1),
-                names::updated_at.eq(now),
-            ))
-            .execute(conn)
+            // The candidates the failed re-ask offered are recorded, so a
+            // restart doesn't ask about the same ones again (only Retry or
+            // a catalog that offers different ones does).
+            let mut given_up = 0;
+            for name in &failed {
+                given_up += diesel::update(
+                    names::table
+                        .filter(names::name.eq(name))
+                        .filter(names::reasked),
+                )
+                .set((
+                    names::reasked.eq(false),
+                    names::reask_error.eq(&message),
+                    names::candidates.eq(stored(offered(name))),
+                    names::attempts.eq(names::attempts + 1),
+                    names::updated_at.eq(now),
+                ))
+                .execute(conn)?;
+            }
+            Ok(given_up)
         })
     })
     .await
@@ -942,7 +936,6 @@ mod tests {
             disposition: disposition.map(str::to_string),
             catalog_key: key.map(str::to_string),
             candidates: None,
-            reask_error: None,
         }
     }
 
@@ -991,14 +984,8 @@ mod tests {
 
     #[test]
     fn estimates_are_asked_again_when_the_candidates_change() {
-        let mut estimate = row("zorblax flour", RESOLVED, Some("estimate"), None);
+        let estimate = row("zorblax flour", RESOLVED, Some("estimate"), None);
         assert_eq!(catalog_sync(&estimate), Some(CatalogSync::NewCandidates));
-        estimate.reask_error = Some("bad answer".to_string());
-        assert_eq!(
-            catalog_sync(&estimate),
-            None,
-            "a failed re-ask waits for Retry"
-        );
     }
 
     #[test]
