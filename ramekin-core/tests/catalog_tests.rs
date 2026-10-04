@@ -333,8 +333,19 @@ fn products_carry_only_a_shopping_category() {
         category("wooden skewers, soaked in cold water"),
         Some("Household")
     );
-    // Foods have no catalog category yet; the keyword categorizer decides.
-    assert_eq!(category("butter"), None);
+}
+
+#[test]
+fn foods_and_ambiguous_names_carry_curated_categories() {
+    // A USDA food, reached through a curated entry and through an alias.
+    assert_eq!(category("butter"), Some("Dairy & Eggs"));
+    assert_eq!(category("canned pumpkin"), Some("Canned Goods"));
+    // An ambiguous name has its own category but still no food.
+    assert!(matches!(resolve("cheese"), Resolution::Ambiguous(_)));
+    assert_eq!(category("cheese"), Some("Cheese"));
+    // A compound line takes its first food's category.
+    assert_eq!(category("salt and pepper"), Some("Spices & Seasonings"));
+    assert_eq!(category("moon dust"), None);
 }
 
 #[test]

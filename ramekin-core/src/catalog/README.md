@@ -454,7 +454,14 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
 | 2026-09-28 | Top 2,000 unresolved names (seen ≥ 4 times across pipeline and Paprika fixtures and prod) | Claude Opus 5.5 via a Claude Code Workflow: 8 classifiers + 3 verifiers | 1,670 aliases, 16 ambiguous, 6 not-food, 4 products, 1 entry | 303 |
 | 2026-09-29 | Tier 2: every remaining name seen ≥ 2 times, plus every prod name, minus tier-1 skips (2,568 names, 5,836 lines) | Claude Opus 5.5 via a Claude Code Workflow: 11 classifiers + 3 verifiers | 1,884 aliases, 128 ambiguous, 112 not-food, 4 products | 440 |
 | 2026-10-01 | Secondary sources: earlier skips still unresolved, prod names the step-3 resolver answered "unknown", and every unresolved prod name (1,099 names, 3,492 lines) | Claude Opus 5.5 via a Claude Code Workflow: 6 classifiers + 3 verifiers | 487 aliases, 83 cited Branded foods, 28 FNDDS entries, 64 ambiguous, 4 not-food, 11 products | 422 |
+| 2026-10-03 | Shopping categories: every uncategorized food entry or ambiguous name the fixtures, shopping-list corpus or curated names reach (1,095) | Claude Opus 5.5 via a Claude Code Workflow: 4 classifiers + 2 verifiers | 1,091 categories | 4 |
 
+- **Shopping categories (2026-10-03):** one verifier read all 173 departures from the keyword
+  rules plus a 1/7 sample of the rest, the other checked consistency; 11 corrections. All
+  dried coconut is Baking. The shopping-list labels then moved canned fish, clams, canned
+  meat and edamame back to Meat & Seafood and Produce. Lines categorized went from 98.2% to
+  98.8% (pipeline fixtures), 98.3% to 99.4% (Paprika), and 98.9% to 99.8% (snapshots); the
+  shopping-list scorecard stayed at 2 mismatches and 3 Other.
 - **Verification:** the verifiers checked every mapping to a ≥ 300 kcal/100 g food (543), a
   ~1/7 sample of the rest, and consistency across all decisions. They corrected 34 decisions.
   On review, 8 generic dish names ("soup", "meatballs") were changed from not-food to skip,

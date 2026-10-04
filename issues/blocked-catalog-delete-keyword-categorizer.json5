@@ -4,6 +4,7 @@
 The keyword rules in data/ingredients.json remain only for names the catalog doesn't resolve. \n\
 Delete data/ingredients.json, its loader and the keyword fallback in categorize()/categorize_with() once catalog-only categorization meets the same bars as today: make shopping-list-categorizer-test passing with the fallback removed (<=2 mismatches / <=3 Other), and the audit's 'Lines categorized' share not dropping. \
 Shopping-list items that are not foods (\"Dish soap\", \"Cascade Platinum\", \"Ibuprofen\", \"cat litter\") will need product entries first. \
+Also check names whose form the catalog drops before lookup: \"frozen peaches\" and \"frozen mango\" resolve to the raw fruit (\"frozen\" is a stripped leading modifier) and so are Produce, not Frozen. \
 Expect ingredient fixture diffs; rerun make ingredient-tests-update and make pipeline and commit them.",
   "status": "open",
   "priority": 3,
