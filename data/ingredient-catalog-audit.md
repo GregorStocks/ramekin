@@ -14,9 +14,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60510 | 305 | 53315/60205 (88.6%) | 49473/60205 (82.2%) | 1104/5408 (20.4%) | n/a (no servings) | 31742/37260 (85.2%) | 59783/60510 (98.8%) |
-| Paprika fixtures | 462 | 5377 | 22 | 5143/5355 (96.0%) | 4665/5355 (87.1%) | 148/462 (32.0%) | n/a (no servings) | 2543/2886 (88.1%) | 5345/5377 (99.4%) |
-| Pipeline snapshots | 445 | 5177 | 17 | 4975/5160 (96.4%) | 4573/5160 (88.6%) | 143/445 (32.1%) | 72/445 (16.2%) | 2517/2846 (88.4%) | 5165/5177 (99.8%) |
+| Pipeline fixtures | 5408 | 60510 | 305 | 53315/60205 (88.6%) | 49473/60205 (82.2%) | 1104/5408 (20.4%) | n/a (no servings) | 31741/37260 (85.2%) | 59783/60510 (98.8%) |
+| Paprika fixtures | 462 | 5377 | 22 | 5143/5355 (96.0%) | 4665/5355 (87.1%) | 148/462 (32.0%) | n/a (no servings) | 2542/2886 (88.1%) | 5345/5377 (99.4%) |
+| Pipeline snapshots | 445 | 5177 | 17 | 4975/5160 (96.4%) | 4573/5160 (88.6%) | 143/445 (32.1%) | 72/445 (16.2%) | 2516/2846 (88.4%) | 5165/5177 (99.8%) |
 
 ## Pipeline fixtures
 
@@ -53,7 +53,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 331
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
 | Nutrition (all failures) | 7924 | `b0c2be1d7f2d` |
-| Density | 2776 | `eb7e9ff0ef36` |
+| Density | 2777 | `240068df541d` |
 | Shopping category | 585 | `9a3489823ccf` |
 
 ## Paprika fixtures
@@ -91,7 +91,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 75
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
 | Nutrition (all failures) | 576 | `d3f1377beb13` |
-| Density | 195 | `c13af3753fbe` |
+| Density | 196 | `eff4a177d1b9` |
 | Shopping category | 30 | `a4d992035336` |
 
 ## Pipeline snapshots
@@ -129,7 +129,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 74
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
 | Nutrition (all failures) | 501 | `ed280ba2a69f` |
-| Density | 191 | `4856aff94f3d` |
+| Density | 192 | `af975e01f382` |
 | Shopping category | 12 | `cdc3abdf23c6` |
 
 ## Shopping-list corpus
