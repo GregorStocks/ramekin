@@ -5,8 +5,11 @@
 //! rules from `data/ingredients.json` (loaded at compile time) cover the rest.
 
 use serde::Deserialize;
+use sha2::{Digest, Sha256};
 use std::collections::HashMap;
 use std::sync::LazyLock;
+
+const INGREDIENTS_JSON: &str = include_str!("../../data/ingredients.json");
 
 /// The raw JSON structure for ingredients data file.
 #[derive(Deserialize)]
@@ -23,7 +26,7 @@ struct IngredientRule {
 }
 
 static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
-    let json = include_str!("../../data/ingredients.json");
+    let json = INGREDIENTS_JSON;
     let data: IngredientsData =
         serde_json::from_str(json).expect("Failed to parse ingredients.json");
 
@@ -55,6 +58,23 @@ static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
     });
     map
 });
+
+static VERSION: LazyLock<String> = LazyLock::new(|| {
+    let hash = Sha256::digest(INGREDIENTS_JSON);
+    let hash: String = hash
+        .iter()
+        .take(8)
+        .map(|byte| format!("{byte:02x}"))
+        .collect();
+    format!("{}-keywords-{hash}", crate::catalog::version())
+});
+
+/// A stable identifier for everything `categorize` reads: the catalog and the
+/// keyword rules. A stored category computed under another version may be
+/// stale.
+pub fn version() -> &'static str {
+    &VERSION
+}
 
 /// The canonical set of grocery-aisle categories the categorizer can return.
 /// `categorize` always returns one of these (defaulting to "Other").
@@ -303,6 +323,14 @@ mod tests {
         assert_eq!(categorize("strawberries"), "Produce");
         assert_eq!(categorize("french fries"), "Frozen");
         assert_eq!(categorize("tater tots"), "Frozen");
+    }
+
+    #[test]
+    fn test_version_covers_catalog_and_keywords() {
+        let version = version();
+        assert!(version.starts_with(crate::catalog::version()));
+        assert!(version.contains("-keywords-"));
+        assert_eq!(version, super::version(), "stable within a process");
     }
 
     #[test]

@@ -6,6 +6,7 @@ use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
 use diesel::upsert::on_constraint;
+use ramekin_core::ingredient_categorizer;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -93,6 +94,7 @@ pub async fn create_items(
                     sort_order: max_sort_order + 1 + i as i32,
                     category_override: item_req.category_override.as_deref(),
                     client_id: item_req.client_id,
+                    categorizer_version: ingredient_categorizer::version(),
                 };
 
                 let id = if let Some(client_id) = item_req.client_id {

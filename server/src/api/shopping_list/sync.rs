@@ -7,6 +7,7 @@ use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use diesel::upsert::on_constraint;
+use ramekin_core::ingredient_categorizer;
 use serde::{Deserialize, Serialize};
 use serde_with::rust::double_option;
 use std::collections::{HashMap, HashSet};
@@ -206,6 +207,7 @@ pub async fn sync_items(
                         sort_order: c.sort_order,
                         category_override: c.category_override.as_deref(),
                         client_id: Some(c.client_id),
+                        categorizer_version: ingredient_categorizer::version(),
                     })
                     .collect();
 

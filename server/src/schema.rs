@@ -178,6 +178,7 @@ diesel::table! {
         version -> Int4,
         deleted_at -> Nullable<Timestamptz>,
         category_override -> Nullable<Text>,
+        categorizer_version -> Nullable<Text>,
     }
 }
 

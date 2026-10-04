@@ -218,6 +218,16 @@ async fn main() {
     }
     // Answers from an earlier ingredient model are asked again (and served
     // until replaced), so a model change reaches the stored answers.
+    let recategorized = api::shopping_list::list::touch_recategorized_items(&pool)
+        .expect("Failed to touch shopping items for the new categorizer");
+    if recategorized > 0 {
+        tracing::info!(
+            recategorized,
+            categorizer = ramekin_core::ingredient_categorizer::version(),
+            "re-sending shopping items whose category may have changed"
+        );
+    }
+
     // With no API key AI is off (a supported setup) and there's nothing to ask;
     // any other configuration error is a broken deploy.
     match ramekin_core::ai::AiConfig::from_env() {
