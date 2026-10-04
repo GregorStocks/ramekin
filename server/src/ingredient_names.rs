@@ -642,11 +642,17 @@ async fn save_resolved(
                     NameResolution::NotFood => ("not_food", None, None),
                     NameResolution::Unknown => ("unknown", None, None),
                 };
-                // Only entries and non-foods can change a shopping category.
-                if matches!(
-                    resolution,
-                    NameResolution::Entry(_) | NameResolution::NotFood
-                ) {
+                // Only entries and non-foods give a shopping category, so the
+                // items' computed category changes when the new answer or the
+                // one it replaces (a re-asked row) is one of them.
+                let previous: Option<String> = names::table
+                    .find(name)
+                    .select(names::disposition)
+                    .first(conn)?;
+                let categorizes = |disposition: Option<&str>| {
+                    matches!(disposition, Some("entry") | Some("not_food"))
+                };
+                if categorizes(Some(disposition)) || categorizes(previous.as_deref()) {
                     touch_shopping_items(conn, name, now)?;
                 }
                 diesel::update(names::table.find(name))

@@ -218,18 +218,26 @@ async fn main() {
     }
     // Answers from an earlier ingredient model are asked again (and served
     // until replaced), so a model change reaches the stored answers.
-    if let Ok(config) = ramekin_core::ai::AiConfig::from_env() {
-        let model = config.for_ingredients().model;
-        let (names, weights) = ingredient_names::reask_other_models(&pool, &model)
-            .expect("Failed to flag ingredient answers from other models");
-        if names + weights > 0 {
-            tracing::info!(
-                names,
-                weights,
-                model,
-                "re-asking ingredient answers from other models"
-            );
+    // With no API key AI is off (a supported setup) and there's nothing to ask;
+    // any other configuration error is a broken deploy.
+    match ramekin_core::ai::AiConfig::from_env() {
+        Ok(config) => {
+            let model = config.for_ingredients().model;
+            let (names, weights) = ingredient_names::reask_other_models(&pool, &model)
+                .expect("Failed to flag ingredient answers from other models");
+            if names + weights > 0 {
+                tracing::info!(
+                    names,
+                    weights,
+                    model,
+                    "re-asking ingredient answers from other models"
+                );
+            }
         }
+        Err(ramekin_core::ai::ConfigError::MissingEnvVar(var)) => {
+            tracing::info!("AI is off ({var} unset); not re-asking ingredient answers");
+        }
+        Err(e) => panic!("Invalid AI configuration: {e}"),
     }
     ingredient_names::spawn_worker(pool.clone());
 
