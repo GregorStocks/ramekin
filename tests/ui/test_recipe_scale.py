@@ -36,15 +36,15 @@ SCALE_TEST_INGREDIENTS: List[Ingredient] = [
     Ingredient(item="cardamom", measurements=[Measurement(amount="6-8", unit="pods")]),
 ]
 
-# Every line is known: flour (910 kcal), sugar (387), milk (373.6), 1 1/2
+# Every line is known: flour (910 kcal), sugar (387), milk (372.1), 1 1/2
 # sticks of butter (169.5 g, 1215.3), 3 large eggs (150 g, 214.5), and salt to
-# taste and a few cardamom pods (negligible) sum to 3100.4 kcal, 775.1 per serving
+# taste and a few cardamom pods (negligible) sum to 3098.9 kcal, 774.7 per serving
 # of 4. At 2x, 12-16 pods are past the trace limit, so they become
 # uncounted and the figures become lower bounds.
-SCALE_TEST_HEADLINE_1X = "~780 kcal per serving"
+SCALE_TEST_HEADLINE_1X = "~770 kcal per serving"
 SCALE_TEST_TOTAL_1X = "~3,100 kcal for the whole recipe"
 SCALE_TEST_HEADLINE_2X = "At least ~770 kcal per serving"
-SCALE_TEST_TOTAL_2X = "At least ~6,200 kcal for the whole recipe"
+SCALE_TEST_TOTAL_2X = "At least ~6,190 kcal for the whole recipe"
 
 
 def _estimate_json(headline: str, resolving: bool = False) -> dict:

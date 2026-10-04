@@ -138,9 +138,17 @@ fn curated_densities_keep_their_values() {
     assert_close(density("sake"), 240.0);
     assert_close(density("grated parmesan cheese"), 100.0);
     assert_close(density("shredded parmesan cheese"), 80.0);
-    // Manual baking values override the linked USDA food's density.
+    // Baking staples inherit the linked USDA food's density.
     assert_close(density("all-purpose flour"), 125.0);
     assert_close(density("butter"), 227.0);
+    // USDA cup rows the imported average misses: brown sugar's "cup packed"
+    // and heavy cream's fluid (not whipped) cup.
+    assert_close(density("brown sugar"), 220.0);
+    assert_close(density("heavy cream"), 238.0);
+    // Flours USDA doesn't weigh by the cup the way recipes measure them.
+    assert_close(density("almond flour"), 96.0);
+    assert_close(density("cake flour"), 112.0);
+    assert_close(density("coconut flour"), 112.0);
 }
 
 #[test]
@@ -621,6 +629,52 @@ fn a_cooked_note_selects_the_cooked_food() {
     assert_eq!(
         line_fdc("cooked brown rice", Some("cooked")),
         fdc_id("cooked brown rice")
+    );
+    // An uncooked entry doesn't name a cooked food.
+    assert!(matches!(
+        resolve_line("dried apricots", Some("cooked")),
+        Resolution::Unresolved
+    ));
+}
+
+#[test]
+fn a_beverage_note_selects_the_beverage_milk() {
+    let line_fdc = |item, note| match resolve_line(item, note) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    let kcal = |fdc: Option<u32>| food(fdc.unwrap()).unwrap().kcal_per_100g.unwrap();
+    let canned = fdc_id("canned coconut milk");
+    let beverage = fdc_id("coconut milk beverage");
+    assert!(kcal(beverage) * 5.0 < kcal(canned));
+    assert_eq!(line_fdc("coconut milk", None), canned);
+    for note in [
+        "refrigerated kind, such as Silk",
+        "from a carton",
+        "beverage",
+    ] {
+        assert_eq!(line_fdc("coconut milk", Some(note)), beverage, "{note}");
+    }
+    assert_eq!(line_fdc("unsweetened coconut milk", None), canned);
+    assert_eq!(
+        line_fdc("unsweetened coconut milk", Some("from a carton")),
+        beverage
+    );
+    // A chilled can (for whipping) is still canned, and brands aren't signals.
+    for note in [
+        "refrigerated",
+        "refrigerated overnight",
+        "not refrigerated, divided",
+        "chilled overnight",
+        "such as Silk",
+        "so delicious",
+    ] {
+        assert_eq!(line_fdc("coconut milk", Some(note)), canned, "{note}");
+    }
+    // Milks that already default to the beverage keep it.
+    assert_eq!(
+        line_fdc("almond milk", Some("carton")),
+        line_fdc("almond milk", None)
     );
 }
 
