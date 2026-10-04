@@ -7,7 +7,7 @@ Golden set: `data/ai-evals/golden/ingredient-names.json` (130 cases), asked 40 p
 | Model | Correct food | Wrong food | Unknown | Not food right | Invalid | Rejected calls | Truncated calls | Cost of accepted calls |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | google/gemini-2.5-flash | 89% | 8% | 1% | 97% | 2% | 4 | 0 | $0.0340 |
-| google/gemini-3.8-flash | 90% | 10% | 0% | 97% | 0% | 1 | 0 | $0.1679 |
+| google/gemini-3.8-flash | 90% | 10% | 0% | 97% | 0% | 1 | 1 | $0.1679 |
 | google/gemini-3.1-pro-preview | 93% | 7% | 0% | 97% | 0% | 0 | 0 | $0.3162 |
 | anthropic/claude-sonnet-5.5 | 93% | 7% | 0% | 97% | 0% | 1 | 0 | $0.2035 |
 | anthropic/claude-opus-5.5 | 94% | 6% | 0% | 97% | 0% | 0 | 0 | $0.2842 |

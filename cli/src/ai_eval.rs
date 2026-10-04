@@ -119,27 +119,32 @@ fn plain_name(name: &str) -> bool {
 /// Whether the answered key names the expected food. The catalog has several
 /// entries for many foods (a curated "whole-milk ricotta" beside USDA's
 /// "cheese, ricotta, whole milk"), so an equivalent entry counts: the same
-/// entry, the same USDA food, or calories within 10%.
-fn same_food(key: &str, name: &str, expected: &str) -> bool {
-    let (
-        Resolution::Entry {
-            entry: answered, ..
-        },
-        Resolution::Entry { entry: wanted, .. },
-    ) = (catalog::resolve(key), catalog::resolve(name))
-    else {
-        return false;
+/// entry, the same USDA food, or calories within 10%. The reference is the
+/// golden set's stored entry, never the alias's current target, so a catalog
+/// change can't quietly change what a committed case means.
+fn same_food(key: &str, expected: &str) -> Result<bool> {
+    let wanted = match catalog::resolve(expected) {
+        Resolution::Entry { entry, .. } if entry.id == expected => entry,
+        _ => bail!(
+            "Golden entry {expected:?} no longer names a catalog entry; regenerate with make ai-eval-golden"
+        ),
     };
-    if answered.id == expected || answered.id == wanted.id {
-        return true;
+    let Resolution::Entry {
+        entry: answered, ..
+    } = catalog::resolve(key)
+    else {
+        return Ok(false);
+    };
+    if answered.id == wanted.id {
+        return Ok(true);
     }
     if answered.fdc_id.is_some() && answered.fdc_id == wanted.fdc_id {
-        return true;
+        return Ok(true);
     }
-    match (answered.kcal_per_100g, wanted.kcal_per_100g) {
+    Ok(match (answered.kcal_per_100g, wanted.kcal_per_100g) {
         (Some(a), Some(w)) if w > 0.0 => (a - w).abs() / w <= 0.1,
         _ => false,
-    }
+    })
 }
 
 fn entry_id(name: &str) -> Option<String> {
@@ -688,7 +693,7 @@ async fn eval_names(
             Some(expected) => {
                 foods += 1;
                 match answer {
-                    Some(NameResolution::Entry(key)) if same_food(key, &case.name, expected) => {
+                    Some(NameResolution::Entry(key)) if same_food(key, expected)? => {
                         right_food += 1
                     }
                     Some(NameResolution::Unknown) => unknown += 1,
