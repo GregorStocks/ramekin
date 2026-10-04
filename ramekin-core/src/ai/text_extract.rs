@@ -35,7 +35,10 @@ Preserve the supplied title, quantities, wording, instruction numbering, and met
 Ingredients must be newline-separated, retaining section headings as colon-terminated lines.
 Missing title, ingredients or instructions must be empty strings; other missing fields must be null.
 Never invent ingredients, amounts, instructions, times, servings or nutritional information.
-Explain ambiguous fields or multiple recipes in warnings so the user can correct them.
+Warnings are only for problems the user must fix before saving: more than one recipe,
+text you could not tell apart (ingredients mixed into the steps), or a quantity you could not read.
+Leave warnings empty otherwise. Do not warn about missing optional fields, typos kept as written,
+references to notes or other recipes that were not supplied, or anything you preserved unchanged.
 Do not turn non-recipe text into a recipe. Return empty fields and a warning instead.
 Return only JSON."#,
             ),

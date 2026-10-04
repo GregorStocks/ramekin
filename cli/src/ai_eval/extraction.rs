@@ -412,6 +412,8 @@ struct Score {
     /// Servings and time fields the source states, and those the answer kept.
     metadata_expected: usize,
     metadata_kept: usize,
+    /// The share of the page's other text kept, if it has any.
+    extra_text_kept: Option<f64>,
     /// Words of the description and notes, and those the source never uses.
     note_words: usize,
     unsourced_note_words: usize,
@@ -442,6 +444,7 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
     let allowed = counts(expected_tokens.iter().chain(&also_allowed));
 
     let stated = quantities(source);
+    let source_words: HashSet<String> = tokens(source).into_iter().collect();
     let invented = [
         ("servings", &answer.servings, Quantity::Servings),
         ("prep_time", &answer.prep_time, Quantity::Time),
@@ -456,9 +459,15 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
     .into_iter()
     .filter(|(_, value, quantity)| {
         value.as_deref().is_some_and(|v| {
-            numbers(v)
-                .into_iter()
-                .any(|n| !stated.contains(&(n, *quantity)))
+            let numbers = numbers(v);
+            if numbers.is_empty() {
+                // "serves a crowd", "quick": words the source never uses.
+                tokens(v).iter().any(|w| !source_words.contains(w))
+            } else {
+                numbers
+                    .into_iter()
+                    .any(|n| !stated.contains(&(n, *quantity)))
+            }
         })
     })
     .map(|(name, _, _)| name)
@@ -496,7 +505,14 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
 
     // Notes and the description are free text, so they're checked only for
     // words the source never uses.
-    let source_words: HashSet<String> = tokens(source).into_iter().collect();
+    // The page's other text (a description, headnote or variation) should
+    // survive somewhere: the description, notes or instructions.
+    let extra_text = tokens(&expected.also_allowed);
+    let description = tokens(answer.description.as_deref().unwrap_or_default());
+    let extra_text_kept = (!extra_text.is_empty()).then(|| {
+        let answered = counts(answer_tokens.iter().chain(&notes).chain(&description));
+        ratio(matched(&counts(&extra_text), &answered), extra_text.len())
+    });
     let note_words: Vec<String> = if expected.prose_untranscribed {
         Vec::new()
     } else {
@@ -522,6 +538,7 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
             answer_tokens.len(),
         ),
         invented,
+        extra_text_kept,
         metadata_expected: stated_metadata.len(),
         metadata_kept: stated_metadata.iter().filter(|kept| **kept).count(),
         unsourced_note_words: note_words
@@ -553,6 +570,7 @@ struct Totals {
     lines_extra: usize,
     recall: Vec<f64>,
     precision: Vec<f64>,
+    extra_text: Vec<f64>,
     invented: usize,
     metadata_expected: usize,
     metadata_kept: usize,
@@ -570,6 +588,7 @@ impl Totals {
         self.lines_answered += score.lines_answered;
         self.lines_extra += score.extra.len();
         self.recall.push(score.instructions_recall);
+        self.extra_text.extend(score.extra_text_kept);
         self.precision.push(score.instructions_precision);
         self.invented += score.invented.len();
         self.metadata_expected += score.metadata_expected;
@@ -580,6 +599,7 @@ impl Totals {
             + 0.5 * ratio(score.extra.len(), score.lines_answered.max(1))
             + (1.0 - score.instructions_recall)
             + (1.0 - score.instructions_precision)
+            + (1.0 - score.extra_text_kept.unwrap_or(1.0))
             + 0.25 * score.invented.len() as f64
             + 0.25 * (score.metadata_expected - score.metadata_kept) as f64
             + ratio(score.unsourced_note_words, score.note_words.max(1))
@@ -602,6 +622,9 @@ impl Totals {
             ));
             if !score.invented.is_empty() {
                 parts.push(format!("invented {}", score.invented.join(", ")));
+            }
+            if let Some(kept) = score.extra_text_kept.filter(|k| *k < 1.0) {
+                parts.push(format!("kept {:.0}% of the other text", 100.0 * kept));
             }
             if score.metadata_kept < score.metadata_expected {
                 parts.push(format!(
@@ -631,6 +654,7 @@ impl Totals {
             pct(self.lines_extra, self.lines_answered),
             mean(&self.recall),
             mean(&self.precision),
+            mean(&self.extra_text),
             pct(self.metadata_kept, self.metadata_expected),
             self.invented.to_string(),
             pct(self.unsourced_note_words, self.note_words),
@@ -648,15 +672,25 @@ pub const TEXT_COLUMNS: &[&str] = &[
     "Extra ingredient lines",
     "Instructions recall",
     "Instructions precision",
+    "Other text kept",
     "Servings and times kept",
     "Invented fields",
     "Unsourced note words",
     "Invalid",
     "Not a recipe: left empty",
+    "Recipes with warnings",
 ];
 
-/// The text columns without the non-recipe one.
-pub const PHOTO_COLUMNS: &[&str] = TEXT_COLUMNS.split_at(TEXT_COLUMNS.len() - 1).0;
+/// The text columns without the two that only text extraction has.
+pub const PHOTO_COLUMNS: &[&str] = TEXT_COLUMNS.split_at(TEXT_COLUMNS.len() - 2).0;
+
+/// An extraction: the recipe, and the warnings text import shows (and that
+/// make it skip enrichment). Photo import has none.
+#[derive(Clone, Serialize)]
+struct Answer {
+    recipe: RawRecipe,
+    warnings: Vec<String>,
+}
 
 /// Asks every case once, as production does (no retry), and dumps the
 /// answers. Returns each case's answer (None if invalid) and the invalid
@@ -666,8 +700,8 @@ async fn extract_all<C: Serialize>(
     model: &str,
     cases: &[C],
     spend: &mut Spend,
-    mut ask: impl AsyncFnMut(usize) -> Result<(RawRecipe, Usage), AiError>,
-) -> Result<(Vec<Option<RawRecipe>>, usize)> {
+    mut ask: impl AsyncFnMut(usize) -> Result<(Answer, Usage), AiError>,
+) -> Result<(Vec<Option<Answer>>, usize)> {
     let indexes: Vec<usize> = (0..cases.len()).collect();
     let mut answers = vec![None; cases.len()];
     let invalid = in_batches(
@@ -677,9 +711,9 @@ async fn extract_all<C: Serialize>(
         spend,
         async |batch: &[usize]| {
             let i = batch[0];
-            ask(i).await.map(|(recipe, usage)| ((i, recipe), usage))
+            ask(i).await.map(|(answer, usage)| ((i, answer), usage))
         },
-        |(i, recipe)| answers[i] = Some(recipe),
+        |(i, answer)| answers[i] = Some(answer),
     )
     .await?;
     dump(
@@ -719,17 +753,38 @@ pub async fn eval_text(model: &str, cases: &[TextCase], spend: &mut Spend) -> Re
     let (answers, invalid) = extract_all("text-extraction", model, cases, spend, async |i| {
         extract_recipe_from_text(&client, &cases[i].text)
             .await
-            .map(|result| (result.raw_recipe, result.usage))
+            .map(|result| {
+                let answer = Answer {
+                    recipe: result.raw_recipe,
+                    warnings: result.warnings,
+                };
+                (answer, result.usage)
+            })
     })
     .await?;
     let mut totals = Totals::default();
-    let mut left_empty = 0;
+    let (mut left_empty, mut recipes, mut warned) = (0, 0, 0);
     for (case, answer) in cases.iter().zip(&answers) {
-        let Some(answer) = answer else {
+        let Some(Answer {
+            recipe: answer,
+            warnings,
+        }) = answer
+        else {
             continue;
         };
         match &case.expected {
-            Some(expected) => totals.add(&case.id, score(answer, expected, &case.text)),
+            Some(expected) => {
+                totals.add(&case.id, score(answer, expected, &case.text));
+                recipes += 1;
+                // Text import skips title, description and tag enrichment
+                // when there's any warning.
+                if let Some(warning) = warnings.first() {
+                    warned += 1;
+                    totals
+                        .misses
+                        .push((0.5, format!("{}: warned {warning:?}", case.id)));
+                }
+            }
             None if left_blank(answer) => left_empty += 1,
             None => totals.misses.push((
                 2.0,
@@ -744,6 +799,7 @@ pub async fn eval_text(model: &str, cases: &[TextCase], spend: &mut Spend) -> Re
     let mut cells = totals.cells();
     cells.push(pct(invalid, cases.len()));
     cells.push(pct(left_empty, not_recipes));
+    cells.push(pct(warned, recipes));
     Ok(ModelResult {
         model: model.into(),
         cells,
@@ -785,7 +841,13 @@ pub async fn eval_photos(
     let (answers, invalid) = extract_all("photo-extraction", model, cases, spend, async |i| {
         extract_recipe_from_photos(&client, images[i].clone())
             .await
-            .map(|result| (result.raw_recipe, result.usage))
+            .map(|result| {
+                let answer = Answer {
+                    recipe: result.raw_recipe,
+                    warnings: Vec::new(),
+                };
+                (answer, result.usage)
+            })
     })
     .await?;
     let mut totals = Totals::default();
@@ -793,7 +855,7 @@ pub async fn eval_photos(
         if let Some(answer) = answer {
             totals.add(
                 &case.id,
-                score(answer, &case.expected, &case.expected.source()),
+                score(&answer.recipe, &case.expected, &case.expected.source()),
             );
         }
     }
@@ -880,6 +942,8 @@ mod tests {
         assert_eq!(score.instructions_recall, 1.0);
         // "serve" and "hot" are neither expected nor allowed.
         assert_eq!(score.instructions_precision, 6.0 / 8.0);
+        // The page's other text ("Stir in cumin") is kept in the instructions.
+        assert_eq!(score.extra_text_kept, Some(1.0));
         // The cook time is stated; the total isn't.
         assert_eq!(score.invented, vec!["total_time"]);
         // The stated servings are kept.

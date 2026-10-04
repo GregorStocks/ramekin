@@ -1,18 +1,18 @@
 # AI eval: Text extraction
 
-Written by `make ai-eval`. A recipe read from pasted text (`extract_recipe_from_text`), for 30 pipeline snapshots rendered as the plain text a user would paste (a third wrapped in blog chatter, a third with no description or servings) and 3 texts that aren't recipes. Ingredient lines are compared whole after lowercasing, writing fractions as 1/2, and dropping bullets and extra spaces; section headings are colon-terminated lines and count too. Found is the expected lines answered, extra the answered lines not expected (prose, a neighbouring recipe). Instructions are compared as words: recall is the expected words kept in the instructions or notes, precision the answered instruction words that are expected or allowed (a variation or headnote the source contains). Invented fields counts servings, times and nutrition with a number the source doesn't state as that kind of quantity (a total summed from the steps, or the 4 of "serves 4" given as minutes), judged by the word each number phrase measures ("5 to 6 minutes", "serves 4"; not "130 degrees"), over all cases. Servings and times kept is the share of the servings and times the source states that the answer gives with the same numbers (a time in any time field). Unsourced note words is the share of the description and notes words that appear nowhere in the source. Columns are over the recipes a model answered validly. "Not a recipe: left empty" counts the non-recipes answered with every field a user would see (title, ingredients, instructions, description, servings, times, nutrition, notes) empty.
+Written by `make ai-eval`. A recipe read from pasted text (`extract_recipe_from_text`), for 30 pipeline snapshots rendered as the plain text a user would paste (a third wrapped in blog chatter, a third with no description or servings) and 3 texts that aren't recipes. Ingredient lines are compared whole after lowercasing, writing fractions as 1/2, and dropping bullets and extra spaces; section headings are colon-terminated lines and count too. Found is the expected lines answered, extra the answered lines not expected (prose, a neighbouring recipe). Instructions are compared as words: recall is the expected words kept in the instructions or notes, precision the answered instruction words that are expected or allowed (a variation or headnote the source contains). Other text kept is the share of the page's other text (a description, headnote, variation or nutrition panel) found in the answer's description, notes or instructions. Invented fields counts servings, times and nutrition with words the source never uses or a number the source doesn't state as that kind of quantity (a total summed from the steps, or the 4 of "serves 4" given as minutes), judged by the word each number phrase measures ("5 to 6 minutes", "serves 4"; not "130 degrees"), over all cases. Servings and times kept is the share of the servings and times the source states that the answer gives with the same numbers (a time in any time field). Unsourced note words is the share of the description and notes words that appear nowhere in the source. Columns are over the recipes a model answered validly. "Recipes with warnings" counts recipes answered with any warning: text import shows them and skips title, description and tag enrichment. "Not a recipe: left empty" counts the non-recipes answered with every field a user would see (title, ingredients, instructions, description, servings, times, nutrition, notes) empty.
 
 Golden set: `data/ai-evals/golden/text-extraction.json` (33 cases), one call per case, as in production. Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated), and are invalid: production doesn't retry them. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
 
-| Model | Title right | Ingredient lines found | Extra ingredient lines | Instructions recall | Instructions precision | Servings and times kept | Invented fields | Unsourced note words | Invalid | Not a recipe: left empty | Rejected calls | Truncated calls | Cost of accepted calls |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| google/gemini-2.5-flash | 100% | 100% | 0% | 99% | 100% | 100% | 0 | 0% | 0% | 100% | 0 | 0 | $0.0562 |
-| google/gemini-3.8-flash | 100% | 100% | 0% | 100% | 100% | 100% | 0 | 0% | 0% | 100% | 0 | 0 | $0.1233 |
-| openai/gpt-6-luna | 100% | 100% | 0% | 100% | 100% | 100% | 0 | 0% | 6% | 100% | 2 | 0 | $0.0129 |
-| deepseek/deepseek-v4.1-flash | 100% | 100% | 1% | 100% | 100% | 100% | 0 | 0% | 0% | 100% | 0 | 0 | $0.1898 |
-| anthropic/claude-sonnet-5.5 | 100% | 100% | 0% | 100% | 100% | 100% | 0 | 0% | 0% | 100% | 0 | 0 | $0.4292 |
-| openai/gpt-6.1-sol | 100% | 100% | 0% | 100% | 100% | 100% | 0 | 0% | 6% | 100% | 2 | 0 | $0.2348 |
-| anthropic/claude-opus-5.5 | 100% | 100% | 0% | 100% | 100% | 100% | 0 | 0% | 0% | 100% | 0 | 0 | $1.0110 |
+| Model | Title right | Ingredient lines found | Extra ingredient lines | Instructions recall | Instructions precision | Other text kept | Servings and times kept | Invented fields | Unsourced note words | Invalid | Not a recipe: left empty | Recipes with warnings | Rejected calls | Truncated calls | Cost of accepted calls |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| google/gemini-2.5-flash | 100% | 100% | 1% | 100% | 100% | 100% | 100% | 0 | 0% | 0% | 100% | 0% | 0 | 0 | $0.0566 |
+| google/gemini-3.8-flash | 100% | 100% | 0% | 100% | 100% | 99% | 100% | 0 | 0% | 0% | 100% | 0% | 0 | 0 | $0.1192 |
+| openai/gpt-6-luna | 100% | 100% | 2% | 100% | 100% | 99% | 100% | 0 | 0% | 6% | 100% | 0% | 2 | 0 | $0.0126 |
+| deepseek/deepseek-v4.1-flash | 100% | 100% | 0% | 100% | 100% | 99% | 100% | 0 | 0% | 12% | 100% | 0% | 4 | 0 | $0.1511 |
+| anthropic/claude-sonnet-5.5 | 100% | 100% | 0% | 100% | 100% | 99% | 100% | 0 | 0% | 0% | 100% | 0% | 0 | 0 | $0.4024 |
+| openai/gpt-6.1-sol | 100% | 100% | 0% | 100% | 100% | 100% | 100% | 0 | 0% | 6% | 100% | 0% | 2 | 0 | $0.2289 |
+| anthropic/claude-opus-5.5 | 100% | 100% | 0% | 100% | 100% | 99% | 100% | 0 | 0% | 0% | 100% | 0% | 0 | 0 | $0.8644 |
 
 ## Rejected answers
 
@@ -23,6 +23,13 @@ The first few items each model answered invalidly even alone.
 - Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\"raw_recipe\":{\"title\":\"Shakshuka With Feta\",\"ingredients\":\"3 tablespoons extra-virgin olive oil\\n1 large onion, halved and thinly sliced\\n1 large red bell pepper, seeded and thinly sliced\\n3 garlic 
 - Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\"raw_recipe\":{\"title\":\"Red Lentil Soup with Warm Spices\",\"ingredients\":\"4 tablespoons unsalted butter\\n1 large onion , chopped fine\\nSalt and pepper\\n3/4 teaspoon ground coriander\\n1/2 teaspoon gro
 
+### deepseek/deepseek-v4.1-flash
+
+- Failed to parse response: Failed to parse text_extract response: missing field `raw_recipe` at line 1 column 3013; content: "{\"raw_recipe{\": null, \"title\": \"Crispy Potato, Chorizo, and Green Chili Hash With Avocado and Eggs Recipe\", \"ingredients\": \"1 1/2 pounds russet or Yukon gold potatoes
+- Failed to parse response: Failed to parse text_extract response: missing field `raw_recipe` at line 1 column 2382; content: "{\"raw_recipe{\": null, \"title\": \"Rigatoni and Cauliflower al Forno\", \"ingredients\": \"1 pound rigatoni or other large pasta shape\\n1 medium cauliflower, about 1 1/2 po
+- Failed to parse response: Failed to parse text_extract response: missing field `raw_recipe` at line 1 column 2371; content: "{\"raw_recipe{\": null, \"title\": \"Spaghetti al Tonno\", \"ingredients\": \"2 (5- to 7-ounce) jars/cans olive oil-packed tuna , drained\\n1 tablespoon lemon juice\\n1 teaspo
+- Failed to parse response: Failed to parse text_extract response: missing field `raw_recipe` at line 1 column 1738; content: "{\"raw_recipe{\": {\"title\": \"Easiest Baked Macaroni and Cheese\", \"ingredients\": \"2 tablespoons unsalted butter\\n1 cup full-fat cottage cheese, sour cream, or see Note 
+
 ### openai/gpt-6.1-sol
 
 - Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\n  \"raw_recipe\": {\n    \"title\": \"Shakshuka With Feta\",\n    \"ingredients\": \"3 tablespoons extra-virgin olive oil\\n1 large onion, halved and thinly sliced\\n1 large red bell pepper, seeded and thinly
@@ -32,30 +39,34 @@ The first few items each model answered invalidly even alone.
 
 ### google/gemini-2.5-flash
 
-- Nolita-Style Avocado Toast: instructions recall 75%, precision 100%
+- Grilled Ham and Cheese Sandwiches with Spicy Tomato Soup: missing ["2 tablespoons unsalted butter, plus 6 tablespoons melted"]; extra ["2 tablespoons unsalted butter", "6 tablespoons melted unsalted butter"]; instructions recall 100%, precision 100%
 - Braised Ginger Meatballs in Coconut Broth: instructions recall 87%, precision 100%
 - Hash Brown Patties: instructions recall 100%, precision 99%
-- Focaccia Onion Board: instructions recall 100%, precision 100%
 - Chicken, Leek, and Rice Soup: instructions recall 99%, precision 100%
+- Focaccia Onion Board: instructions recall 100%, precision 100%
 
 ### google/gemini-3.8-flash
 
+- Son-in-Law Eggs: Thai Fried Hard-Boiled Eggs in Tamarind Sauce Recipe: instructions recall 100%, precision 100%; kept 93% of the other text
 - Chicken, Leek, and Rice Soup: instructions recall 99%, precision 100%
+- Focaccia Onion Board: instructions recall 100%, precision 100%
 
 ### openai/gpt-6-luna
 
-- Focaccia Onion Board: instructions recall 100%, precision 100%
+- Hash Brown Patties: extra ["ingredients:"]; instructions recall 100%, precision 100%
+- Son-in-Law Eggs: Thai Fried Hard-Boiled Eggs in Tamarind Sauce Recipe: instructions recall 100%, precision 100%; kept 93% of the other text
+- Focaccia Onion Board: extra ["ingredients:"]; instructions recall 100%, precision 100%
+- Baked Feta with Tomatoes and Chickpeas: extra ["ingredients:"]; instructions recall 100%, precision 100%
+- Salted Chocolate Chunk Cookies: extra ["ingredients:"]; instructions recall 100%, precision 100%
 
 ### deepseek/deepseek-v4.1-flash
 
-- Rice Krispie Treats: extra ["ingredients:"]; instructions recall 100%, precision 100%
-- Shakshuka With Feta: extra ["ingredients:"]; instructions recall 100%, precision 100%
+- Son-in-Law Eggs: Thai Fried Hard-Boiled Eggs in Tamarind Sauce Recipe: extra ["ingredients:"]; instructions recall 100%, precision 100%; kept 93% of the other text
 - Chicken, Leek, and Rice Soup: instructions recall 99%, precision 100%
 
 ### anthropic/claude-sonnet-5.5
 
-- Red Lentil Soup with Warm Spices: instructions recall 100%, precision 97%
-- Shakshuka With Feta: instructions recall 100%, precision 100%; 2 of 173 note/description words not in the source
+- Son-in-Law Eggs: Thai Fried Hard-Boiled Eggs in Tamarind Sauce Recipe: instructions recall 100%, precision 100%; kept 93% of the other text
 - Chicken, Leek, and Rice Soup: instructions recall 99%, precision 100%
 - Focaccia Onion Board: instructions recall 100%, precision 100%
 
@@ -65,4 +76,5 @@ None.
 
 ### anthropic/claude-opus-5.5
 
+- Son-in-Law Eggs: Thai Fried Hard-Boiled Eggs in Tamarind Sauce Recipe: instructions recall 100%, precision 100%; kept 93% of the other text
 - Chicken, Leek, and Rice Soup: instructions recall 99%, precision 100%
