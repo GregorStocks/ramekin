@@ -241,6 +241,9 @@ pub enum CatalogSync {
     /// The learned key no longer names one entry (removed or split): ask
     /// again rather than silently reading as unknown.
     StaleKey,
+    /// The catalog now calls the name ambiguous, which rules out an estimate
+    /// or a non-food answer: ask again for the food a recipe most likely means.
+    NowAmbiguous,
     /// Answered unknown, and the catalog now offers different candidates:
     /// ask again in case one fits.
     NewCandidates,
@@ -278,6 +281,9 @@ pub fn catalog_sync(row: &StoredName) -> Option<CatalogSync> {
     }
     match (row.disposition.as_deref(), row.catalog_key.as_deref()) {
         (Some("entry"), Some(key)) if !learned_key_resolves(key) => Some(CatalogSync::StaleKey),
+        (Some("estimate" | "not_food"), _) if is_ambiguous(&row.name) => {
+            Some(CatalogSync::NowAmbiguous)
+        }
         (Some("unknown"), _) if row.candidates != Some(stored(offered(&row.name))) => {
             Some(CatalogSync::NewCandidates)
         }
@@ -938,6 +944,14 @@ mod tests {
     fn harvested_names_the_catalog_lost_are_asked_again() {
         let lost = row("zorblax paste", HARVESTED, Some("not_food"), None);
         assert_eq!(catalog_sync(&lost), Some(CatalogSync::Unharvest));
+    }
+
+    #[test]
+    fn answers_an_ambiguous_name_cannot_have_are_asked_again() {
+        for disposition in ["estimate", "not_food"] {
+            let cheese = row("cheese", RESOLVED, Some(disposition), None);
+            assert_eq!(catalog_sync(&cheese), Some(CatalogSync::NowAmbiguous));
+        }
     }
 
     #[test]

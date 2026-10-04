@@ -427,6 +427,8 @@ every row with the committed catalog (`sync_with_catalog`):
   `harvested` (never deleted) and keeps its last answer;
 - a harvested name the catalog lost again is asked again;
 - an answer whose key no longer names one entry is asked again;
+- an estimate or not-food answer for a name the catalog now calls ambiguous
+  is asked again, since an ambiguous name takes neither;
 - an "unknown" answer is asked again once the catalog offers different
   candidates than the ones stored with it.
 
