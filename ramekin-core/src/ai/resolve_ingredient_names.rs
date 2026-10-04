@@ -57,10 +57,12 @@ pub struct ResolveIngredientNamesResult {
 /// Resolve a batch of names, each with its candidate catalog keys, in one
 /// call. The answer must cover every name exactly once and may only choose a
 /// listed candidate; anything else is an invalid response, evicted from the
-/// cache so a retry asks again.
+/// cache so a retry asks again. `fresh` skips any cached answer: a re-ask
+/// wants the model's answer now, not the one it gave this prompt before.
 pub async fn resolve_ingredient_names(
     ai_client: &dyn AiClient,
     names: &[NameQuery],
+    fresh: bool,
 ) -> Result<ResolveIngredientNamesResult, AiError> {
     let request = ChatRequest {
         messages: vec![ChatMessage::user(render_resolve_ingredient_names_prompt(
@@ -70,6 +72,9 @@ pub async fn resolve_ingredient_names(
         max_tokens: Some(INGREDIENT_MAX_TOKENS),
         temperature: Some(0.0),
     };
+    if fresh {
+        ai_client.forget(RESOLVE_INGREDIENT_NAMES_PROMPT_NAME, &request.messages);
+    }
     let (parsed, response): (Response, _) =
         complete_json(ai_client, RESOLVE_INGREDIENT_NAMES_PROMPT_NAME, &request).await?;
     match validate(names, parsed) {
@@ -253,6 +258,51 @@ mod tests {
                 r#"{{"resolutions": [{{"name": "moon sugar", "answer": "unknown"}}, {{"name": "platter", "answer": "unknown"}}, {cheese}]}}"#
             );
             assert!(validate(&names(), response(&json)).is_err(), "{json}");
+        }
+    }
+    /// Logs each call, answering every request with `sugar`'s entry.
+    #[derive(Default)]
+    struct LoggingClient {
+        calls: std::sync::Mutex<Vec<&'static str>>,
+    }
+
+    #[async_trait::async_trait]
+    impl AiClient for LoggingClient {
+        async fn complete(
+            &self,
+            _prompt_name: &str,
+            _request: &ChatRequest,
+        ) -> Result<crate::ai::ChatResponse, AiError> {
+            self.calls.lock().unwrap().push("complete");
+            Ok(crate::ai::ChatResponse {
+                content: r#"{"resolutions": [{"name": "sugar", "answer": "entry", "key": "granulated sugar"}]}"#
+                    .to_string(),
+                usage: Usage::default(),
+                cached: true,
+            })
+        }
+
+        fn forget(&self, _prompt_name: &str, _messages: &[ChatMessage]) {
+            self.calls.lock().unwrap().push("forget");
+        }
+    }
+
+    #[tokio::test]
+    async fn a_fresh_ask_skips_the_cached_answer() {
+        let sugar = [NameQuery {
+            name: "sugar".into(),
+            candidates: vec!["granulated sugar".into()],
+            ambiguous: false,
+        }];
+        for (fresh, calls) in [
+            (false, vec!["complete"]),
+            (true, vec!["forget", "complete"]),
+        ] {
+            let client = LoggingClient::default();
+            resolve_ingredient_names(&client, &sugar, fresh)
+                .await
+                .unwrap();
+            assert_eq!(*client.calls.lock().unwrap(), calls, "fresh: {fresh}");
         }
     }
 }

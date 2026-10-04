@@ -195,13 +195,15 @@ async fn main() {
     photos::spawn_dimension_backfill(pool.clone());
 
     // Resolve ingredient names the catalog doesn't know, starting with any
-    // left pending by a previous run or whose learned key this catalog lost.
-    let requeued = ingredient_names::requeue_stale_keys(&pool)
-        .expect("Failed to requeue stale learned ingredient names");
-    if requeued > 0 {
+    // left pending by a previous run or that this catalog changed (learned,
+    // lost, or offers new candidates for).
+    let synced = ingredient_names::sync_with_catalog(&pool)
+        .expect("Failed to sync learned ingredient names with the catalog");
+    for (sync, names) in synced {
         tracing::info!(
-            requeued,
-            "requeued learned ingredient names the catalog lost"
+            ?sync,
+            names,
+            "synced learned ingredient names with the catalog"
         );
     }
     // Everything stored recipes need, so a deploy doesn't wait on each being

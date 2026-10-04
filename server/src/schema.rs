@@ -29,6 +29,7 @@ diesel::table! {
         grams_per_piece -> Nullable<Float8>,
         reasked -> Bool,
         reask_error -> Nullable<Text>,
+        candidates -> Nullable<Array<Nullable<Text>>>,
     }
 }
 

@@ -10,7 +10,7 @@
 //! reads never call the LLM, and a failed batch stays visible (Settings ->
 //! Ingredient recognition) until retried.
 
-use std::collections::BTreeSet;
+use std::collections::{BTreeMap, BTreeSet, HashSet};
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, LazyLock};
 use std::time::Duration;
@@ -22,8 +22,8 @@ use ramekin_core::ai::{
     NameResolution,
 };
 use ramekin_core::catalog::{
-    candidates, is_ambiguous, learned_key_resolves, unlearned_name, EstimatedFood, Learned,
-    LearnedTarget,
+    candidates, is_ambiguous, learned_key_resolves, normalize, unlearned_name, EstimatedFood,
+    Learned, LearnedTarget,
 };
 use tokio::sync::{Mutex, Notify};
 
@@ -42,6 +42,8 @@ const RETRY_MAX: Duration = Duration::from_secs(60 * 60);
 pub const PENDING: &str = "pending";
 pub const RESOLVED: &str = "resolved";
 pub const FAILED: &str = "failed";
+/// The committed catalog knows the name now; the row keeps its last answer.
+pub const HARVESTED: &str = "harvested";
 
 static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
 /// Set whenever names are saved resolved, so the worker sweeps stored recipes
@@ -226,45 +228,158 @@ pub fn any_pending<'a>(
     .get_result(conn)
 }
 
-/// Requeue learned answers whose catalog key no longer names one entry (a
-/// catalog change removed or split it), so they're asked about again rather
-/// than silently reading as unknown. Runs at startup, before serving, since
-/// the catalog only changes with a deploy.
-pub fn requeue_stale_keys(pool: &DbPool) -> Result<usize, String> {
+/// What the startup sync does to a stored name after a catalog change.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub enum CatalogSync {
+    /// The committed catalog knows the name now (its answer was harvested
+    /// into `curated.json`, or a classification pass added it), so its row
+    /// is retired, keeping its last answer.
+    Harvest,
+    /// A harvested name the catalog no longer knows (an alias was removed):
+    /// ask again.
+    Unharvest,
+    /// The learned key no longer names one entry (removed or split): ask
+    /// again rather than silently reading as unknown.
+    StaleKey,
+    /// The catalog now calls the name ambiguous, which rules out an estimate
+    /// or a non-food answer: ask again for the food a recipe most likely means.
+    NowAmbiguous,
+    /// Answered unknown or estimated (both mean no candidate fit), and the
+    /// catalog now offers different candidates: re-ask in case one fits,
+    /// serving the old answer until the new one replaces it.
+    NewCandidates,
+}
+
+impl CatalogSync {
+    /// Whether the name's computed shopping category may change, so items
+    /// with it must be sent again by incremental sync.
+    fn changes_category(self) -> bool {
+        !matches!(self, Self::NewCandidates)
+    }
+}
+
+/// A stored name as the startup sync reads it.
+#[derive(Debug, Queryable)]
+pub struct StoredName {
+    pub name: String,
+    pub status: String,
+    pub disposition: Option<String>,
+    pub catalog_key: Option<String>,
+    /// The candidates last asked about, answered or not.
+    pub candidates: Option<Vec<Option<String>>>,
+}
+
+/// What the committed catalog means for a stored name, if anything.
+pub fn catalog_sync(row: &StoredName) -> Option<CatalogSync> {
+    let known = unlearned_name(&row.name).is_none();
+    if row.status == HARVESTED {
+        return (!known).then_some(CatalogSync::Unharvest);
+    }
+    if known {
+        return Some(CatalogSync::Harvest);
+    }
+    if row.status != RESOLVED {
+        return None;
+    }
+    match (row.disposition.as_deref(), row.catalog_key.as_deref()) {
+        (Some("entry"), Some(key)) if !learned_key_resolves(key) => Some(CatalogSync::StaleKey),
+        (Some("estimate" | "not_food"), _) if is_ambiguous(&row.name) => {
+            Some(CatalogSync::NowAmbiguous)
+        }
+        (Some("unknown" | "estimate"), _) if row.candidates != Some(stored(offered(&row.name))) => {
+            Some(CatalogSync::NewCandidates)
+        }
+        _ => None,
+    }
+}
+
+/// The candidate keys the model is offered for `name`.
+fn offered(name: &str) -> Vec<String> {
+    candidates(name, CANDIDATES)
+        .into_iter()
+        .map(str::to_string)
+        .collect()
+}
+
+/// Candidate keys as the `candidates` column holds them.
+fn stored(keys: Vec<String>) -> Vec<Option<String>> {
+    keys.into_iter().map(Some).collect()
+}
+
+/// Bring stored names in line with the committed catalog (see
+/// `CatalogSync`), returning how many of each changed. Runs at startup,
+/// before serving, since the catalog only changes with a deploy.
+pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, String> {
     let mut conn = pool.get().map_err(|e| e.to_string())?;
-    let keys: Vec<(String, String)> = names::table
-        .filter(names::status.eq(RESOLVED))
-        .filter(names::catalog_key.is_not_null())
-        .select((names::name, names::catalog_key.assume_not_null()))
+    let rows: Vec<StoredName> = names::table
+        .select((
+            names::name,
+            names::status,
+            names::disposition,
+            names::catalog_key,
+            names::candidates,
+        ))
         .load(&mut conn)
         .map_err(|e| e.to_string())?;
-    let stale: Vec<String> = keys
-        .into_iter()
-        .filter(|(_, key)| !learned_key_resolves(key))
-        .map(|(name, _)| name)
-        .collect();
-    if stale.is_empty() {
-        return Ok(0);
+    let mut changes: BTreeMap<CatalogSync, Vec<String>> = BTreeMap::new();
+    for row in rows {
+        if let Some(sync) = catalog_sync(&row) {
+            changes.entry(sync).or_default().push(row.name);
+        }
     }
     conn.transaction(|conn| {
         let now = Utc::now();
-        // Their items' computed category changes now, so incremental sync
-        // must send them again.
-        for name in &stale {
-            touch_shopping_items(conn, name, now)?;
+        let recategorized: HashSet<&str> = changes
+            .iter()
+            .filter(|(sync, _)| sync.changes_category())
+            .flat_map(|(_, changed)| changed.iter().map(String::as_str))
+            .collect();
+        touch_shopping_items(conn, &recategorized, now)?;
+        for (sync, changed) in &changes {
+            let rows = names::table.filter(names::name.eq_any(changed));
+            match sync {
+                CatalogSync::Harvest => diesel::update(rows)
+                    .set((
+                        names::status.eq(HARVESTED),
+                        names::reasked.eq(false),
+                        names::reask_error.eq(None::<String>),
+                        names::error.eq(None::<String>),
+                        names::updated_at.eq(now),
+                    ))
+                    .execute(conn)?,
+                CatalogSync::NewCandidates => diesel::update(rows)
+                    .set((
+                        names::reasked.eq(true),
+                        names::reask_error.eq(None::<String>),
+                        names::updated_at.eq(now),
+                    ))
+                    .execute(conn)?,
+                CatalogSync::Unharvest | CatalogSync::StaleKey | CatalogSync::NowAmbiguous => {
+                    diesel::update(rows)
+                        .set((
+                            names::status.eq(PENDING),
+                            names::reasked.eq(false),
+                            names::reask_error.eq(None::<String>),
+                            names::disposition.eq(None::<String>),
+                            names::catalog_key.eq(None::<String>),
+                            names::kcal_per_100g.eq(None::<f64>),
+                            names::grams_per_cup.eq(None::<f64>),
+                            names::grams_per_piece.eq(None::<f64>),
+                            names::candidates.eq(None::<Vec<Option<String>>>),
+                            names::error.eq(None::<String>),
+                            names::updated_at.eq(now),
+                        ))
+                        .execute(conn)?
+                }
+            };
         }
-        diesel::update(names::table.filter(names::name.eq_any(&stale)))
-            .set((
-                names::status.eq(PENDING),
-                names::reasked.eq(false),
-                names::reask_error.eq(None::<String>),
-                names::disposition.eq(None::<String>),
-                names::catalog_key.eq(None::<String>),
-                names::updated_at.eq(now),
-            ))
-            .execute(conn)
+        QueryResult::Ok(())
     })
-    .map_err(|e: diesel::result::Error| e.to_string())
+    .map_err(|e| e.to_string())?;
+    Ok(changes
+        .into_iter()
+        .map(|(sync, changed)| (sync, changed.len()))
+        .collect())
 }
 
 /// Flag resolved answers from a model other than `model` to be asked again.
@@ -528,7 +643,7 @@ async fn resolve_next_batch(
     }
     // A failed answer is recorded on its names; failing to record it would
     // leave them pending, so `Err` stops rather than asking again.
-    Ok(match resolve_batch(pool, batch).await? {
+    Ok(match resolve_batch(pool, batch, work).await? {
         Batch::Resolved => Step::Done,
         Batch::NamesFailed(e) => Step::Failed(e),
         Batch::ProviderFailed(e) => Step::ProviderFailed(e),
@@ -580,8 +695,12 @@ enum Batch {
 /// doesn't fail the others; only the names that fail on their own are marked
 /// failed. Provider and configuration errors fail the batch at once. `Err`
 /// means an outcome couldn't be saved.
-async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, String> {
-    let error = match ask(&batch).await {
+async fn resolve_batch(
+    pool: &Arc<DbPool>,
+    batch: Vec<String>,
+    work: Work,
+) -> Result<Batch, String> {
+    let error = match ask(&batch, work).await {
         Ok((resolutions, model)) => {
             save_resolved(pool, resolutions, model).await?;
             return Ok(Batch::Resolved);
@@ -597,7 +716,7 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, 
     let mut outcome = Batch::Resolved;
     for name in batch {
         let single = vec![name];
-        match ask(&single).await {
+        match ask(&single, work).await {
             Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await?,
             Err(error) => match fail(pool, single, error).await? {
                 Batch::NamesFailed(e) => {
@@ -625,55 +744,73 @@ async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<
     })
 }
 
+/// One name's answer and the candidate keys it was offered.
+type Answer = (String, NameResolution, Vec<String>);
+
 /// One LLM call for `batch`: each name's answer, and the model that gave it.
-async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String), AiError> {
+/// A re-ask skips the cache, which holds the answer being questioned.
+async fn ask(batch: &[String], work: Work) -> Result<(Vec<Answer>, String), AiError> {
     let prompt: Vec<NameQuery> = batch
         .iter()
         .map(|name| NameQuery {
             name: name.clone(),
-            candidates: candidates(name, CANDIDATES)
-                .into_iter()
-                .map(str::to_string)
-                .collect(),
+            candidates: offered(name),
             ambiguous: is_ambiguous(name),
         })
         .collect();
     let (client, model) = CLIENT.as_ref().map_err(|e| AiError::Config(e.clone()))?;
-    let result = resolve_ingredient_names(client, &prompt).await?;
-    Ok((result.resolutions.into_iter().collect(), model.clone()))
+    let fresh = matches!(work, Work::Reasked);
+    let mut result = resolve_ingredient_names(client, &prompt, fresh).await?;
+    let answers = prompt
+        .into_iter()
+        .filter_map(|query| {
+            let resolution = result.resolutions.remove(&query.name)?;
+            Some((query.name, resolution, query.candidates))
+        })
+        .collect();
+    Ok((answers, model.clone()))
 }
 
 async fn save_resolved(
     pool: &Arc<DbPool>,
-    resolutions: Vec<(String, NameResolution)>,
+    answers: Vec<Answer>,
     model: String,
 ) -> Result<(), String> {
-    let resolved = resolutions.len();
+    let resolved = answers.len();
     run_blocking(pool, move |conn| {
         conn.transaction(|conn| {
             // Taken once the connection is ours, to keep the touch as close
             // to its commit as possible for incremental sync.
             let now = Utc::now();
-            for (name, resolution) in &resolutions {
+            // Only entries and non-foods give a shopping category, so the
+            // items' computed category changes when the new answer or the
+            // one it replaces (a re-asked row) is one of them.
+            let asked: Vec<&str> = answers.iter().map(|(name, _, _)| name.as_str()).collect();
+            let previously_categorized: HashSet<String> = names::table
+                .filter(names::name.eq_any(&asked))
+                .filter(names::disposition.eq_any(["entry", "not_food"]))
+                .select(names::name)
+                .load::<String>(conn)?
+                .into_iter()
+                .collect();
+            let recategorized: HashSet<&str> = answers
+                .iter()
+                .filter(|(name, resolution, _)| {
+                    matches!(
+                        resolution,
+                        NameResolution::Entry(_) | NameResolution::NotFood
+                    ) || previously_categorized.contains(name)
+                })
+                .map(|(name, _, _)| name.as_str())
+                .collect();
+            touch_shopping_items(conn, &recategorized, now)?;
+            for (name, resolution, offered) in &answers {
                 let (disposition, key, estimate) = match resolution {
                     NameResolution::Entry(key) => ("entry", Some(key.as_str()), None),
                     NameResolution::Estimate(estimate) => ("estimate", None, Some(estimate)),
                     NameResolution::NotFood => ("not_food", None, None),
                     NameResolution::Unknown => ("unknown", None, None),
                 };
-                // Only entries and non-foods give a shopping category, so the
-                // items' computed category changes when the new answer or the
-                // one it replaces (a re-asked row) is one of them.
-                let previous: Option<String> = names::table
-                    .find(name)
-                    .select(names::disposition)
-                    .first(conn)?;
-                let categorizes = |disposition: Option<&str>| {
-                    matches!(disposition, Some("entry") | Some("not_food"))
-                };
-                if categorizes(Some(disposition)) || categorizes(previous.as_deref()) {
-                    touch_shopping_items(conn, name, now)?;
-                }
                 diesel::update(names::table.find(name))
                     .set((
                         names::status.eq(RESOLVED),
@@ -684,6 +821,7 @@ async fn save_resolved(
                         names::kcal_per_100g.eq(estimate.map(|e| e.kcal_per_100g)),
                         names::grams_per_cup.eq(estimate.and_then(|e| e.grams_per_cup)),
                         names::grams_per_piece.eq(estimate.and_then(|e| e.grams_per_piece)),
+                        names::candidates.eq(stored(offered.clone())),
                         names::model.eq(&model),
                         names::error.eq(None::<String>),
                         names::attempts.eq(names::attempts + 1),
@@ -703,32 +841,27 @@ async fn save_resolved(
     Ok(())
 }
 
-/// Mark shopping-list items with this name as changed, so incremental sync
-/// sends their new computed category. Only `updated_at` moves: the item
-/// itself is unchanged, so its version (and clients' pending edits) stay valid.
+/// Mark shopping-list items with any of these names as changed, so
+/// incremental sync sends their new computed category. Only `updated_at`
+/// moves: the item itself is unchanged, so its version (and clients' pending
+/// edits) stay valid. Names match by catalog normalization, which no SQL
+/// pattern expresses, so the live items are read once and matched here.
 fn touch_shopping_items(
     conn: &mut PgConnection,
-    name: &str,
+    changed: &HashSet<&str>,
     now: chrono::DateTime<Utc>,
 ) -> QueryResult<()> {
     use crate::schema::shopping_list_items as items;
-    // Case-insensitive prefilter; the exact match is the catalog normalization.
-    let pattern = name
-        .replace('\\', "\\\\")
-        .replace('%', "\\%")
-        .replace('_', "\\_")
-        .replace(' ', "%");
-    // Unanchored, so spellings with surrounding text or whitespace that
-    // normalize to `name` still reach the exact check below.
-    let pattern = format!("%{pattern}%");
-    let candidates: Vec<(uuid::Uuid, String)> = items::table
+    if changed.is_empty() {
+        return Ok(());
+    }
+    let live: Vec<(uuid::Uuid, String)> = items::table
         .filter(items::deleted_at.is_null())
-        .filter(items::item.ilike(pattern).escape('\\'))
         .select((items::id, items::item))
         .load(conn)?;
-    let ids: Vec<uuid::Uuid> = candidates
+    let ids: Vec<uuid::Uuid> = live
         .into_iter()
-        .filter(|(_, item)| unlearned_name(item).as_deref() == Some(name))
+        .filter(|(_, item)| changed.contains(normalize(item).as_str()))
         .map(|(id, _)| id)
         .collect();
     if !ids.is_empty() {
@@ -773,18 +906,26 @@ async fn save_failed(
             if provider_wide {
                 return QueryResult::Ok(0);
             }
-            diesel::update(
-                names::table
-                    .filter(names::name.eq_any(&failed))
-                    .filter(names::reasked),
-            )
-            .set((
-                names::reasked.eq(false),
-                names::reask_error.eq(&message),
-                names::attempts.eq(names::attempts + 1),
-                names::updated_at.eq(now),
-            ))
-            .execute(conn)
+            // The candidates the failed re-ask offered are recorded, so a
+            // restart doesn't ask about the same ones again (only Retry or
+            // a catalog that offers different ones does).
+            let mut given_up = 0;
+            for name in &failed {
+                given_up += diesel::update(
+                    names::table
+                        .filter(names::name.eq(name))
+                        .filter(names::reasked),
+                )
+                .set((
+                    names::reasked.eq(false),
+                    names::reask_error.eq(&message),
+                    names::candidates.eq(stored(offered(name))),
+                    names::attempts.eq(names::attempts + 1),
+                    names::updated_at.eq(now),
+                ))
+                .execute(conn)?;
+            }
+            Ok(given_up)
         })
     })
     .await
@@ -798,4 +939,97 @@ async fn save_failed(
         );
     }
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn row(name: &str, status: &str, disposition: Option<&str>, key: Option<&str>) -> StoredName {
+        StoredName {
+            name: name.to_string(),
+            status: status.to_string(),
+            disposition: disposition.map(str::to_string),
+            catalog_key: key.map(str::to_string),
+            candidates: None,
+        }
+    }
+
+    #[test]
+    fn names_the_catalog_knows_are_harvested_whatever_their_state() {
+        for status in [PENDING, FAILED, RESOLVED] {
+            let known = row("all-purpose flour", status, None, None);
+            assert_eq!(catalog_sync(&known), Some(CatalogSync::Harvest), "{status}");
+        }
+        let harvested = row("all-purpose flour", HARVESTED, Some("entry"), Some("flour"));
+        assert_eq!(catalog_sync(&harvested), None);
+    }
+
+    #[test]
+    fn harvested_names_the_catalog_lost_are_asked_again() {
+        let lost = row("zorblax paste", HARVESTED, Some("not_food"), None);
+        assert_eq!(catalog_sync(&lost), Some(CatalogSync::Unharvest));
+    }
+
+    #[test]
+    fn answers_an_ambiguous_name_cannot_have_are_asked_again() {
+        for disposition in ["estimate", "not_food"] {
+            let cheese = row("cheese", RESOLVED, Some(disposition), None);
+            assert_eq!(catalog_sync(&cheese), Some(CatalogSync::NowAmbiguous));
+        }
+    }
+
+    #[test]
+    fn ambiguous_names_are_never_harvested() {
+        let cheese = row("cheese", RESOLVED, Some("entry"), Some("cheddar cheese"));
+        assert_eq!(catalog_sync(&cheese), None);
+    }
+
+    #[test]
+    fn keys_the_catalog_lost_are_asked_again() {
+        let stale = row("zorblax paste", RESOLVED, Some("entry"), Some("zorblax"));
+        assert_eq!(catalog_sync(&stale), Some(CatalogSync::StaleKey));
+        let good = row(
+            "zorblax paste",
+            RESOLVED,
+            Some("entry"),
+            Some("all-purpose flour"),
+        );
+        assert_eq!(catalog_sync(&good), None);
+    }
+
+    #[test]
+    fn estimates_are_asked_again_when_the_candidates_change() {
+        let estimate = row("zorblax flour", RESOLVED, Some("estimate"), None);
+        assert_eq!(catalog_sync(&estimate), Some(CatalogSync::NewCandidates));
+    }
+
+    #[test]
+    fn unknown_answers_are_asked_again_when_the_candidates_change() {
+        let mut unknown = row("zorblax flour", RESOLVED, Some("unknown"), None);
+        assert_eq!(
+            catalog_sync(&unknown),
+            Some(CatalogSync::NewCandidates),
+            "answered before candidates were stored"
+        );
+        unknown.candidates = Some(stored(offered("zorblax flour")));
+        assert_eq!(catalog_sync(&unknown), None);
+        unknown.candidates = Some(vec![Some("all-purpose flour".to_string())]);
+        assert_eq!(catalog_sync(&unknown), Some(CatalogSync::NewCandidates));
+    }
+
+    #[test]
+    fn other_answers_and_open_names_are_left_alone() {
+        for (status, disposition) in [
+            (PENDING, None),
+            (FAILED, None),
+            (RESOLVED, Some("not_food")),
+        ] {
+            assert_eq!(
+                catalog_sync(&row("zorblax paste", status, disposition, None)),
+                None,
+                "{status} {disposition:?}"
+            );
+        }
+    }
 }
