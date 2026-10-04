@@ -12,6 +12,8 @@ Name | Type
 `failures` | [Array&lt;IngredientWeightFailure&gt;](IngredientWeightFailure.md)
 `noTypicalWeight` | number
 `pending` | number
+`reaskFailed` | number
+`reasking` | number
 
 ## Example
 
@@ -25,6 +27,8 @@ const example = {
   "failures": null,
   "noTypicalWeight": null,
   "pending": null,
+  "reaskFailed": null,
+  "reasking": null,
 } satisfies IngredientWeightsStatus
 
 console.log(example)

@@ -8,9 +8,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **estimated** | **int** | Estimated; lines using one say \&quot;estimated weight\&quot;. | 
 **failed** | **int** | The last attempt failed; retry to try again. | 
-**failures** | [**List[IngredientWeightFailure]**](IngredientWeightFailure.md) | The most recent failures. | 
+**failures** | [**List[IngredientWeightFailure]**](IngredientWeightFailure.md) | The most recent failures, failed re-asks included. | 
 **no_typical_weight** | **int** | The model said there&#39;s no typical weight; still unknown in estimates. | 
 **pending** | **int** | Waiting for the background estimator (queued when an estimate is shown). | 
+**reask_failed** | **int** | Re-asking with the current model failed; the earlier model&#39;s estimate is still used (and counted above). Retry to try again. | 
+**reasking** | **int** | Being asked again by the current model; the earlier model&#39;s estimate is used meanwhile (and counted above). | 
 
 ## Example
 

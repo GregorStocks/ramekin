@@ -27,6 +27,10 @@ export function instanceOfIngredientNamesStatusResponse(value) {
         return false;
     if (!('pending' in value) || value['pending'] === undefined)
         return false;
+    if (!('reaskFailed' in value) || value['reaskFailed'] === undefined)
+        return false;
+    if (!('reasking' in value) || value['reasking'] === undefined)
+        return false;
     if (!('recognized' in value) || value['recognized'] === undefined)
         return false;
     if (!('unknown' in value) || value['unknown'] === undefined)
@@ -48,6 +52,8 @@ export function IngredientNamesStatusResponseFromJSONTyped(json, ignoreDiscrimin
         'failures': (json['failures'].map(IngredientNameFailureFromJSON)),
         'notFood': json['not_food'],
         'pending': json['pending'],
+        'reaskFailed': json['reask_failed'],
+        'reasking': json['reasking'],
         'recognized': json['recognized'],
         'unknown': json['unknown'],
         'weights': IngredientWeightsStatusFromJSON(json['weights']),
@@ -66,6 +72,8 @@ export function IngredientNamesStatusResponseToJSONTyped(value, ignoreDiscrimina
         'failures': (value['failures'].map(IngredientNameFailureToJSON)),
         'not_food': value['notFood'],
         'pending': value['pending'],
+        'reask_failed': value['reaskFailed'],
+        'reasking': value['reasking'],
         'recognized': value['recognized'],
         'unknown': value['unknown'],
         'weights': IngredientWeightsStatusToJSON(value['weights']),

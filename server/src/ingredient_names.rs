@@ -88,15 +88,27 @@ pub fn enqueue(conn: &mut PgConnection, new_names: &[String]) -> QueryResult<usi
 }
 
 /// Put failed names back in the queue, clearing their error, so the next
-/// pass asks about them again.
+/// pass asks about them again. That includes failed re-asks, which keep
+/// their earlier answer meanwhile.
 pub fn requeue_failed(conn: &mut PgConnection, failed: &[String]) -> QueryResult<usize> {
-    diesel::update(
+    let pending = diesel::update(
         names::table
             .filter(names::status.eq(FAILED))
             .filter(names::name.eq_any(failed)),
     )
     .set((names::status.eq(PENDING), names::error.eq(None::<String>)))
-    .execute(conn)
+    .execute(conn)?;
+    let reasked = diesel::update(
+        names::table
+            .filter(names::reask_error.is_not_null())
+            .filter(names::name.eq_any(failed)),
+    )
+    .set((
+        names::reasked.eq(true),
+        names::reask_error.eq(None::<String>),
+    ))
+    .execute(conn)?;
+    Ok(pending + reasked)
 }
 
 /// Queue the unknown names in `items`. Write paths call this inside their
@@ -321,6 +333,8 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
                 CatalogSync::Harvest => diesel::update(rows)
                     .set((
                         names::status.eq(HARVESTED),
+                        names::reasked.eq(false),
+                        names::reask_error.eq(None::<String>),
                         names::error.eq(None::<String>),
                         names::updated_at.eq(now),
                     ))
@@ -328,6 +342,8 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
                 _ => diesel::update(rows)
                     .set((
                         names::status.eq(PENDING),
+                        names::reasked.eq(false),
+                        names::reask_error.eq(None::<String>),
                         names::disposition.eq(None::<String>),
                         names::catalog_key.eq(None::<String>),
                         names::kcal_per_100g.eq(None::<f64>),
@@ -347,6 +363,38 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
         .into_iter()
         .map(|(sync, changed)| (sync, changed.len()))
         .collect())
+}
+
+/// Flag resolved answers from a model other than `model` to be asked again.
+/// They keep being served until the new answer replaces them. Runs at
+/// startup, so a model change upgrades the stored answers.
+pub fn reask_other_models(pool: &DbPool, model: &str) -> Result<(usize, usize), String> {
+    use crate::schema::ingredient_weight_estimates as weights;
+    let mut conn = pool.get().map_err(|e| e.to_string())?;
+    conn.transaction(|conn| {
+        let names = diesel::update(
+            names::table
+                .filter(names::status.eq(RESOLVED))
+                .filter(names::model.is_distinct_from(model)),
+        )
+        .set((
+            names::reasked.eq(true),
+            names::reask_error.eq(None::<String>),
+        ))
+        .execute(conn)?;
+        let weights = diesel::update(
+            weights::table
+                .filter(weights::status.eq(RESOLVED))
+                .filter(weights::model.is_distinct_from(model)),
+        )
+        .set((
+            weights::reasked.eq(true),
+            weights::reask_error.eq(None::<String>),
+        ))
+        .execute(conn)?;
+        QueryResult::Ok((names, weights))
+    })
+    .map_err(|e| e.to_string())
 }
 
 /// Start the worker. It first drains whatever was pending at startup, then
@@ -463,6 +511,15 @@ pub fn queue_stored(conn: &mut PgConnection, queue_names: bool) -> Result<(usize
     Ok((queued_names, queued_weights))
 }
 
+/// Which rows a batch is taken from.
+#[derive(Clone, Copy)]
+pub(crate) enum Work {
+    /// Never answered, or asked again with nothing to serve meanwhile.
+    Pending,
+    /// Answered by another model and asked again; the old answer is served.
+    Reasked,
+}
+
 /// How taking one batch from a queue went. Failures are already recorded on
 /// their rows.
 pub(crate) enum Step {
@@ -484,16 +541,32 @@ async fn work_pass(pool: &Arc<DbPool>) -> Result<(), String> {
     // A queue whose provider failed sits out the rest of the pass: its next
     // batch would fail the same way, so it waits for the worker's retry. An
     // idle queue is checked again every turn, since saves keep adding work.
+    // Pending work in either queue goes first; an answer being re-asked of a
+    // newer model is still served, so its batch waits until nothing is
+    // pending, one at a time, so new work never waits behind a backlog.
     let (mut names_down, mut weights_down) = (false, false);
     loop {
         let mut worked = false;
         if !names_down {
-            let step = resolve_next_batch(pool, None).await?;
+            let step = resolve_next_batch(pool, None, Work::Pending).await?;
             names_down = matches!(step, Step::ProviderFailed(_));
             worked |= record(step, &mut first_error);
         }
         if !weights_down {
-            let step = crate::ingredient_weights::estimate_next_batch(pool).await?;
+            let step = crate::ingredient_weights::estimate_next_batch(pool, Work::Pending).await?;
+            weights_down = matches!(step, Step::ProviderFailed(_));
+            worked |= record(step, &mut first_error);
+        }
+        if worked {
+            continue;
+        }
+        if !names_down {
+            let step = resolve_next_batch(pool, None, Work::Reasked).await?;
+            names_down = matches!(step, Step::ProviderFailed(_));
+            worked |= record(step, &mut first_error);
+        }
+        if !worked && !weights_down {
+            let step = crate::ingredient_weights::estimate_next_batch(pool, Work::Reasked).await?;
             weights_down = matches!(step, Step::ProviderFailed(_));
             worked |= record(step, &mut first_error);
         }
@@ -524,15 +597,22 @@ fn record(step: Step, first_error: &mut Option<String>) -> bool {
 /// Resolve one batch of pending names, or only of `only`. The batch is taken
 /// under the batch lock, so no name is asked about twice, and one at a time,
 /// so a scrape job's few names wait for at most the batch in flight.
-async fn resolve_next_batch(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> Result<Step, String> {
+async fn resolve_next_batch(
+    pool: &Arc<DbPool>,
+    only: Option<Vec<String>>,
+    work: Work,
+) -> Result<Step, String> {
     let _batch = BATCH.lock().await;
     let batch: Vec<String> = run_blocking(pool, move |conn| {
         let mut query = names::table
-            .filter(names::status.eq(PENDING))
             .select(names::name)
             .order(names::name)
             .limit(BATCH_SIZE)
             .into_boxed();
+        query = match work {
+            Work::Pending => query.filter(names::status.eq(PENDING)),
+            Work::Reasked => query.filter(names::reasked),
+        };
         if let Some(only) = only {
             query = query.filter(names::name.eq_any(only));
         }
@@ -559,7 +639,7 @@ async fn resolve_next_batch(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> Re
 pub async fn resolve_pending(pool: &Arc<DbPool>, only: Vec<String>) -> Result<(), String> {
     let mut first_error = None;
     while record(
-        resolve_next_batch(pool, Some(only.clone())).await?,
+        resolve_next_batch(pool, Some(only.clone()), Work::Pending).await?,
         &mut first_error,
     ) {}
     if let Some(e) = first_error {
@@ -635,7 +715,7 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, 
 async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<Batch, String> {
     let provider_wide = !error.is_answer_specific();
     let error = error.to_string();
-    save_failed(pool, names, error.clone()).await?;
+    save_failed(pool, names, error.clone(), provider_wide).await?;
     Ok(if provider_wide {
         Batch::ProviderFailed(error)
     } else {
@@ -679,14 +759,24 @@ async fn save_resolved(
             // Taken once the connection is ours, to keep the touch as close
             // to its commit as possible for incremental sync.
             let now = Utc::now();
-            // Only entries and non-foods can change a shopping category.
+            // Only entries and non-foods give a shopping category, so the
+            // items' computed category changes when the new answer or the
+            // one it replaces (a re-asked row) is one of them.
+            let asked: Vec<&str> = answers.iter().map(|(name, _, _)| name.as_str()).collect();
+            let previously_categorized: HashSet<String> = names::table
+                .filter(names::name.eq_any(&asked))
+                .filter(names::disposition.eq_any(["entry", "not_food"]))
+                .select(names::name)
+                .load::<String>(conn)?
+                .into_iter()
+                .collect();
             let recategorized: HashSet<&str> = answers
                 .iter()
-                .filter(|(_, resolution, _)| {
+                .filter(|(name, resolution, _)| {
                     matches!(
                         resolution,
                         NameResolution::Entry(_) | NameResolution::NotFood
-                    )
+                    ) || previously_categorized.contains(name)
                 })
                 .map(|(name, _, _)| name.as_str())
                 .collect();
@@ -701,6 +791,8 @@ async fn save_resolved(
                 diesel::update(names::table.find(name))
                     .set((
                         names::status.eq(RESOLVED),
+                        names::reasked.eq(false),
+                        names::reask_error.eq(None::<String>),
                         names::disposition.eq(disposition),
                         names::catalog_key.eq(key),
                         names::kcal_per_100g.eq(estimate.map(|e| e.kcal_per_100g)),
@@ -757,26 +849,64 @@ fn touch_shopping_items(
     Ok(())
 }
 
-async fn save_failed(pool: &Arc<DbPool>, failed: Vec<String>, error: String) -> Result<(), String> {
+/// Record a failed attempt. A pending name is marked failed. A name being
+/// re-asked keeps its old answer: after a provider failure it stays queued for
+/// the worker's retry; after an invalid answer the re-ask stops with its
+/// error recorded, for the status page and its Retry.
+async fn save_failed(
+    pool: &Arc<DbPool>,
+    failed: Vec<String>,
+    error: String,
+    provider_wide: bool,
+) -> Result<(), String> {
     tracing::warn!(
         names = failed.len(),
         "ingredient name resolution failed: {}",
         error
     );
     let now = Utc::now();
-    run_blocking(pool, move |conn| {
-        diesel::update(names::table.filter(names::name.eq_any(&failed)))
+    let message = error.clone();
+    let given_up = run_blocking(pool, move |conn| {
+        conn.transaction(|conn| {
+            diesel::update(
+                names::table
+                    .filter(names::name.eq_any(&failed))
+                    .filter(names::status.eq(PENDING)),
+            )
             .set((
                 names::status.eq(FAILED),
-                names::error.eq(&error),
+                names::error.eq(&message),
+                names::attempts.eq(names::attempts + 1),
+                names::updated_at.eq(now),
+            ))
+            .execute(conn)?;
+            if provider_wide {
+                return QueryResult::Ok(0);
+            }
+            diesel::update(
+                names::table
+                    .filter(names::name.eq_any(&failed))
+                    .filter(names::reasked),
+            )
+            .set((
+                names::reasked.eq(false),
+                names::reask_error.eq(&message),
                 names::attempts.eq(names::attempts + 1),
                 names::updated_at.eq(now),
             ))
             .execute(conn)
+        })
     })
     .await
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
+    if given_up > 0 {
+        tracing::error!(
+            names = given_up,
+            "re-asking ingredient names failed; keeping their earlier answers: {}",
+            error
+        );
+    }
     Ok(())
 }
 

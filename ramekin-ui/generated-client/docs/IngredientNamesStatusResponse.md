@@ -11,6 +11,8 @@ Name | Type
 `failures` | [Array&lt;IngredientNameFailure&gt;](IngredientNameFailure.md)
 `notFood` | number
 `pending` | number
+`reaskFailed` | number
+`reasking` | number
 `recognized` | number
 `unknown` | number
 `weights` | [IngredientWeightsStatus](IngredientWeightsStatus.md)
@@ -27,6 +29,8 @@ const example = {
   "failures": null,
   "notFood": null,
   "pending": null,
+  "reaskFailed": null,
+  "reasking": null,
   "recognized": null,
   "unknown": null,
   "weights": null,
