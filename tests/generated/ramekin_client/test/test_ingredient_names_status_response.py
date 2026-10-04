@@ -45,6 +45,8 @@ class TestIngredientNamesStatusResponse(unittest.TestCase):
                     ],
                 not_food = 56,
                 pending = 56,
+                reask_failed = 56,
+                reasking = 56,
                 recognized = 56,
                 unknown = 56,
                 weights = ramekin_client.models.ingredient_weights_status.IngredientWeightsStatus(
@@ -58,7 +60,9 @@ class TestIngredientNamesStatusResponse(unittest.TestCase):
                             unit = '', )
                         ], 
                     no_typical_weight = 56, 
-                    pending = 56, )
+                    pending = 56, 
+                    reask_failed = 56, 
+                    reasking = 56, )
             )
         else:
             return IngredientNamesStatusResponse(
@@ -72,6 +76,8 @@ class TestIngredientNamesStatusResponse(unittest.TestCase):
                     ],
                 not_food = 56,
                 pending = 56,
+                reask_failed = 56,
+                reasking = 56,
                 recognized = 56,
                 unknown = 56,
                 weights = ramekin_client.models.ingredient_weights_status.IngredientWeightsStatus(
@@ -85,7 +91,9 @@ class TestIngredientNamesStatusResponse(unittest.TestCase):
                             unit = '', )
                         ], 
                     no_typical_weight = 56, 
-                    pending = 56, ),
+                    pending = 56, 
+                    reask_failed = 56, 
+                    reasking = 56, ),
         )
         """
 

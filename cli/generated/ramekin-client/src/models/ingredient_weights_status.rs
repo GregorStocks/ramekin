@@ -20,7 +20,7 @@ pub struct IngredientWeightsStatus {
     /// The last attempt failed; retry to try again.
     #[serde(rename = "failed")]
     pub failed: i64,
-    /// The most recent failures.
+    /// The most recent failures, failed re-asks included.
     #[serde(rename = "failures")]
     pub failures: Vec<models::IngredientWeightFailure>,
     /// The model said there's no typical weight; still unknown in estimates.
@@ -29,6 +29,12 @@ pub struct IngredientWeightsStatus {
     /// Waiting for the background estimator (queued when an estimate is shown).
     #[serde(rename = "pending")]
     pub pending: i64,
+    /// Re-asking with the current model failed; the earlier model's estimate is still used (and counted above). Retry to try again.
+    #[serde(rename = "reask_failed")]
+    pub reask_failed: i64,
+    /// Being asked again by the current model; the earlier model's estimate is used meanwhile (and counted above).
+    #[serde(rename = "reasking")]
+    pub reasking: i64,
 }
 
 impl IngredientWeightsStatus {
@@ -39,6 +45,8 @@ impl IngredientWeightsStatus {
         failures: Vec<models::IngredientWeightFailure>,
         no_typical_weight: i64,
         pending: i64,
+        reask_failed: i64,
+        reasking: i64,
     ) -> IngredientWeightsStatus {
         IngredientWeightsStatus {
             estimated,
@@ -46,6 +54,8 @@ impl IngredientWeightsStatus {
             failures,
             no_typical_weight,
             pending,
+            reask_failed,
+            reasking,
         }
     }
 }

@@ -31,7 +31,7 @@ export interface IngredientNamesStatusResponse {
      */
     failed: number;
     /**
-     * The most recent failures.
+     * The most recent failures, failed re-asks included.
      * @type {Array<IngredientNameFailure>}
      * @memberof IngredientNamesStatusResponse
      */
@@ -48,6 +48,20 @@ export interface IngredientNamesStatusResponse {
      * @memberof IngredientNamesStatusResponse
      */
     pending: number;
+    /**
+     * Re-asking with the current model failed; the earlier model's answer
+     * is still used (and counted above). Retry to try again.
+     * @type {number}
+     * @memberof IngredientNamesStatusResponse
+     */
+    reaskFailed: number;
+    /**
+     * Being asked again by the current model; the earlier model's answer
+     * is used meanwhile (and counted above).
+     * @type {number}
+     * @memberof IngredientNamesStatusResponse
+     */
+    reasking: number;
     /**
      * Resolved to a catalog food or product (for an ambiguous name, the one
      * a recipe most likely means).
