@@ -26,6 +26,8 @@ struct RecipePickerSheet: View {
                     RecipeRowView(recipe: recipe)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel(recipe.title)
+                .accessibilityHint("Adds to \(mealType.displayLabel)")
             }
             .listStyle(.plain)
             .overlay { statusOverlay }
