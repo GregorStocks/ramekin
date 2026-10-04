@@ -279,8 +279,6 @@ that appears in both releases.
   - `grams_per_cup` is either a cited value, or `{"none": reason}` to suppress
     the linked food's density. Omit it to inherit the linked food's density.
   - Every value needs a `source`.
-  - The 23 manual baking values still lack individual citations. See
-    `issues/p3-cite-embedded-manual-density-values`.
   - `category` is only for products (below); foods take theirs from
     `categories`.
   - `trace_ok: true` marks a food commonly listed without an amount, for foods
