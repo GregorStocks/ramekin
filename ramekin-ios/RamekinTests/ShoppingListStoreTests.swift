@@ -166,7 +166,7 @@ final class ShoppingListStoreTests: XCTestCase {
             syncItems: { _ in Self.emptyResponse() }
         )
 
-        store.addItem(name: "Apples")
+        XCTAssertFalse(store.addItem(name: "Apples"))
         XCTAssertThrowsError(
             try store.addItemsFromRecipe(
                 ingredients: [(name: "Flour", amount: "2 cups")],

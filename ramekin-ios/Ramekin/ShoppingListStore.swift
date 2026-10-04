@@ -98,16 +98,18 @@ extension ShoppingListStore {
         items = (try? coreDataStack.viewContext.fetch(request)) ?? []
     }
 
+    /// False when there is no active account to add to (e.g. mid-logout).
+    @discardableResult
     func addItem(
         name: String,
         amount: String? = nil,
         note: String? = nil,
         sourceRecipeId: UUID? = nil,
         sourceRecipeTitle: String? = nil
-    ) {
+    ) -> Bool {
         guard let activeAccountKey else {
             DebugLogger.shared.log("Ignoring shopping item add with no active account", source: "ShoppingList")
-            return
+            return false
         }
         let maxSort = items.map(\.sortOrder).max() ?? -1
         _ = ShoppingItem.create(
@@ -116,6 +118,7 @@ extension ShoppingListStore {
             sourceRecipeId: sourceRecipeId, sourceRecipeTitle: sourceRecipeTitle, sortOrder: maxSort + 1
         )
         saveAndSync()
+        return true
     }
 
     func addItemsFromRecipe(

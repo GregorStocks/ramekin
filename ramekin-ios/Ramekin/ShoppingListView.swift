@@ -193,10 +193,11 @@ struct ShoppingListView: View {
         guard !name.isEmpty else { return }
 
         let trimmedAmount = amount.trimmingCharacters(in: .whitespaces)
-        store.addItem(
+        // Keep the entry for a retry if it wasn't added.
+        guard store.addItem(
             name: name,
             amount: trimmedAmount.isEmpty ? nil : trimmedAmount
-        )
+        ) else { return }
 
         ingredientName = ""
         amount = ""
