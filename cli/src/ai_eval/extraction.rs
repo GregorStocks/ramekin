@@ -765,8 +765,8 @@ pub const TEXT_COLUMNS: &[&str] = &[
 /// The text columns without the two that only text extraction has.
 pub const PHOTO_COLUMNS: &[&str] = TEXT_COLUMNS.split_at(TEXT_COLUMNS.len() - 2).0;
 
-/// An extraction: the recipe, and the warnings text import shows (and that
-/// make it skip enrichment). Photo import has none.
+/// An extraction: the recipe, and the warnings text import shows. Photo
+/// import has none.
 #[derive(Clone, Serialize)]
 struct Answer {
     recipe: RawRecipe,
@@ -862,8 +862,8 @@ pub async fn eval_text(model: &str, cases: &[TextCase], spend: &mut Spend) -> Re
             Some(expected) => {
                 totals.add(&case.id, score(answer, expected, &case.text));
                 recipes += 1;
-                // Text import skips title, description and tag enrichment
-                // when there's any warning.
+                // Text import shows warnings to the user, so one on a sound
+                // recipe is noise.
                 if let Some(warning) = warnings.first() {
                     warned += 1;
                     totals

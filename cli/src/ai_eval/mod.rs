@@ -789,7 +789,7 @@ fn spec(suite: &str) -> SuiteSpec {
             about: concat!(
                 "A recipe read from pasted text (`extract_recipe_from_text`), for 30 pipeline snapshots rendered as the plain text a user would paste (a third wrapped in blog chatter, a third with no description or servings) and 3 texts that aren't recipes. ",
                 extraction_scoring!(),
-                " \"Recipes with warnings\" counts recipes answered with any warning: text import shows them and skips title, description and tag enrichment. \"Not a recipe: left empty\" counts the non-recipes answered with every field a user would see (title, ingredients, instructions, description, servings, times, nutrition, notes, difficulty, source, categories, rating) empty."
+                " \"Recipes with warnings\" counts valid recipes answered with any warning: text import shows them to the user, so a warning on a sound recipe is noise. \"Not a recipe: left empty\" counts the non-recipes answered with every field a user would see (title, ingredients, instructions, description, servings, times, nutrition, notes, difficulty, source, categories, rating) empty."
             ),
             columns: extraction::TEXT_COLUMNS,
             batched: false,

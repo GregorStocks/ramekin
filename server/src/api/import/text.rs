@@ -134,19 +134,23 @@ pub async fn prepare_text_recipe(
             )
         })?;
     let raw = extracted.raw_recipe;
+    // The model's warnings are for the user to read. Whether the draft is
+    // complete enough to enrich is decided here, the same way for every model
+    // (non-recipe text comes back with these fields empty).
     let mut warnings = extracted.warnings;
+    let mut incomplete = Vec::new();
     for (name, value) in [
         ("title", &raw.title),
         ("ingredients", &raw.ingredients),
         ("instructions", &raw.instructions),
     ] {
         if value.trim().is_empty() {
-            warnings.push(format!("Missing {name}. Add it before saving."));
+            incomplete.push(format!("Missing {name}. Add it before saving."));
         }
     }
     let ingredients = parse_draft_ingredients(&raw).await?;
     if ingredients.is_empty() && !raw.ingredients.trim().is_empty() {
-        warnings.push("No ingredients found. Add ingredient lines before saving.".to_string());
+        incomplete.push("No ingredients found. Add ingredient lines before saving.".to_string());
     }
     let mut value =
         serde_json::to_value(&raw).map_err(|_| ApiError::internal("Invalid extracted recipe"))?;
@@ -154,8 +158,10 @@ pub async fn prepare_text_recipe(
     value["tags"] = json!(raw.categories.clone().unwrap_or_default());
     let mut content: RecipeContent = serde_json::from_value(value)
         .map_err(|_| ApiError::internal("Invalid extracted recipe"))?;
-    // Incomplete/ambiguous recipes need correction before AI enrichment can be grounded.
-    if warnings.is_empty() {
+    // An incomplete recipe needs correction before AI enrichment can be grounded.
+    let enrich = incomplete.is_empty();
+    warnings.extend(incomplete);
+    if enrich {
         let tags = run_db(&pool, move |conn| {
             user_tags::table
                 .filter(user_tags::user_id.eq(user.id))
