@@ -1,9 +1,14 @@
-use std::{collections::HashMap, error::Error, sync::Arc};
+use std::{
+    collections::{HashMap, HashSet},
+    error::Error,
+    sync::Arc,
+};
 
 use async_trait::async_trait;
 use axum::{extract::State, Json};
 use diesel::prelude::*;
 use ramekin_core::ai::{text_extract::extract_recipe_from_text, AiClient, CachingAiClient};
+use ramekin_core::metric_weights::is_metric_weight_unit;
 use ramekin_core::pipeline::{
     scrape_auto_applied_ai_enrichments, steps::EnrichAutoTagStep,
     steps::EnrichGenerateDescriptionStep, steps::EnrichNormalizeTitleStep,
@@ -197,13 +202,14 @@ pub async fn prepare_text_recipe(
         }
     }
     let derived_measurements = derived_measurements(&content.ingredients);
+    let derived_indices: HashSet<usize> = derived_measurements
+        .iter()
+        .map(|derived| derived.ingredient_index)
+        .collect();
     for (index, ingredient) in content.ingredients.iter().enumerate() {
-        let has_weight = derived_measurements
-            .iter()
-            .any(|derived| derived.ingredient_index == index)
+        let has_weight = derived_indices.contains(&index)
             || ingredient.measurements.iter().any(|measurement| {
-                measurement.amount.is_some()
-                    && matches!(measurement.unit.as_deref(), Some("g" | "kg" | "mg"))
+                measurement.amount.is_some() && is_metric_weight_unit(measurement.unit.as_deref())
             });
         if !has_weight {
             warnings.push(format!(

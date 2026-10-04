@@ -3,7 +3,7 @@
 //! Provides deterministic conversion of imperial weight measurements to metric.
 //! Handles oz → grams and lb → grams conversions.
 
-use crate::ingredient_parser::{Measurement, ParsedIngredient};
+use crate::ingredient_parser::Measurement;
 
 const GRAMS_PER_OZ: f64 = 28.3495;
 const GRAMS_PER_LB: f64 = 453.592;
@@ -18,77 +18,60 @@ pub struct MetricConversionStats {
     pub skipped_unparseable: usize,
 }
 
-/// Add a metric weight alternative to an ingredient if applicable.
-///
-/// Converts measurements with unit "oz" or "lb" to grams.
-/// Returns the ingredient with the metric alternative added to measurements.
-pub(crate) fn add_metric_weight_alternative(
-    mut ingredient: ParsedIngredient,
+/// Grams for the first oz or lb measurement, unless one is already metric.
+pub(crate) fn metric_grams(
+    measurements: &[Measurement],
     stats: &mut MetricConversionStats,
-) -> ParsedIngredient {
-    // Check if any measurement already has metric weight
-    if has_metric_weight(&ingredient.measurements) {
+) -> Option<String> {
+    if has_metric_weight(measurements) {
         stats.skipped_already_metric += 1;
-        return ingredient;
+        return None;
     }
 
-    // Find the first US weight measurement (oz or lb) and extract needed values
-    let conversion_info = ingredient
-        .measurements
-        .iter()
-        .find_map(|m| match m.unit.as_deref() {
-            Some("oz") => Some(("oz", GRAMS_PER_OZ, m.amount.clone())),
-            Some("lb") => Some(("lb", GRAMS_PER_LB, m.amount.clone())),
+    let Some((unit, grams_per_unit, amount)) =
+        measurements.iter().find_map(|m| match m.unit.as_deref() {
+            Some("oz") => Some(("oz", GRAMS_PER_OZ, m.amount.as_deref())),
+            Some("lb") => Some(("lb", GRAMS_PER_LB, m.amount.as_deref())),
             _ => None,
-        });
-
-    let Some((unit, grams_per_unit, amount_opt)) = conversion_info else {
+        })
+    else {
         stats.skipped_no_us_weight += 1;
-        return ingredient;
+        return None;
     };
 
-    let Some(amount_str) = amount_opt else {
+    let Some(grams) = amount.and_then(|amount| convert_amount_to_grams(amount, grams_per_unit))
+    else {
         stats.skipped_unparseable += 1;
-        return ingredient;
+        return None;
     };
-
-    // Convert the amount to grams
-    let gram_amount = match convert_amount_to_grams(&amount_str, grams_per_unit) {
-        Some(g) => g,
-        None => {
-            stats.skipped_unparseable += 1;
-            return ingredient;
-        }
-    };
-
-    // Add the metric alternative
-    ingredient.measurements.push(Measurement {
-        amount: Some(gram_amount),
-        unit: Some("g".to_string()),
-    });
 
     if unit == "lb" {
         stats.converted_lb += 1;
     } else {
         stats.converted_oz += 1;
     }
-    ingredient
+    Some(grams)
 }
 
-/// Check if any measurement already has a metric weight unit.
-fn has_metric_weight(measurements: &[Measurement]) -> bool {
-    measurements.iter().any(|m| {
-        matches!(
-            m.unit.as_deref(),
-            Some("g")
-                | Some("kg")
-                | Some("mg")
-                | Some("gram")
-                | Some("grams")
-                | Some("kilogram")
-                | Some("kilograms")
-        )
-    })
+/// Whether any measurement already has a metric weight unit.
+pub(crate) fn has_metric_weight(measurements: &[Measurement]) -> bool {
+    measurements
+        .iter()
+        .any(|m| is_metric_weight_unit(m.unit.as_deref()))
+}
+
+/// Whether a unit is a metric weight ("g", "kilograms", ...).
+pub fn is_metric_weight_unit(unit: Option<&str>) -> bool {
+    matches!(
+        unit,
+        Some("g")
+            | Some("kg")
+            | Some("mg")
+            | Some("gram")
+            | Some("grams")
+            | Some("kilogram")
+            | Some("kilograms")
+    )
 }
 
 /// Convert an amount string to grams, returning formatted string.
@@ -302,118 +285,54 @@ mod tests {
         );
     }
 
+    fn measurements(pairs: &[(&str, &str)]) -> Vec<Measurement> {
+        pairs
+            .iter()
+            .map(|(amount, unit)| Measurement {
+                amount: Some(amount.to_string()),
+                unit: Some(unit.to_string()),
+            })
+            .collect()
+    }
+
     #[test]
-    fn test_add_metric_weight_oz() {
-        let ingredient = ParsedIngredient {
-            item: "butter".to_string(),
-            measurements: vec![Measurement {
-                amount: Some("8".to_string()),
-                unit: Some("oz".to_string()),
-            }],
-            note: None,
-            raw: Some("8 oz butter".to_string()),
-            section: None,
-        };
-
+    fn test_metric_grams_oz() {
         let mut stats = MetricConversionStats::default();
-        let result = add_metric_weight_alternative(ingredient, &mut stats);
-
-        assert_eq!(result.measurements.len(), 2);
-        assert_eq!(result.measurements[0].amount, Some("8".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("oz".to_string()));
-        assert_eq!(result.measurements[1].amount, Some("227".to_string()));
-        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+        let grams = metric_grams(&measurements(&[("8", "oz")]), &mut stats);
+        assert_eq!(grams, Some("227".to_string()));
         assert_eq!(stats.converted_oz, 1);
     }
 
     #[test]
-    fn test_add_metric_weight_lb() {
-        let ingredient = ParsedIngredient {
-            item: "chicken".to_string(),
-            measurements: vec![Measurement {
-                amount: Some("2".to_string()),
-                unit: Some("lb".to_string()),
-            }],
-            note: None,
-            raw: Some("2 lb chicken".to_string()),
-            section: None,
-        };
-
+    fn test_metric_grams_lb() {
         let mut stats = MetricConversionStats::default();
-        let result = add_metric_weight_alternative(ingredient, &mut stats);
-
-        assert_eq!(result.measurements.len(), 2);
-        assert_eq!(result.measurements[0].amount, Some("2".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("lb".to_string()));
-        assert_eq!(result.measurements[1].amount, Some("907".to_string()));
-        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+        let grams = metric_grams(&measurements(&[("2", "lb")]), &mut stats);
+        assert_eq!(grams, Some("907".to_string()));
         assert_eq!(stats.converted_lb, 1);
     }
 
     #[test]
     fn test_skip_non_us_weight() {
-        let ingredient = ParsedIngredient {
-            item: "flour".to_string(),
-            measurements: vec![Measurement {
-                amount: Some("2".to_string()),
-                unit: Some("cups".to_string()),
-            }],
-            note: None,
-            raw: Some("2 cups flour".to_string()),
-            section: None,
-        };
-
         let mut stats = MetricConversionStats::default();
-        let result = add_metric_weight_alternative(ingredient, &mut stats);
-
-        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(
+            metric_grams(&measurements(&[("2", "cups")]), &mut stats),
+            None
+        );
         assert_eq!(stats.skipped_no_us_weight, 1);
     }
 
     #[test]
     fn test_skip_already_metric() {
-        let ingredient = ParsedIngredient {
-            item: "butter".to_string(),
-            measurements: vec![
-                Measurement {
-                    amount: Some("8".to_string()),
-                    unit: Some("oz".to_string()),
-                },
-                Measurement {
-                    amount: Some("227".to_string()),
-                    unit: Some("g".to_string()),
-                },
-            ],
-            note: None,
-            raw: Some("8 oz (227g) butter".to_string()),
-            section: None,
-        };
-
         let mut stats = MetricConversionStats::default();
-        let result = add_metric_weight_alternative(ingredient, &mut stats);
-
-        assert_eq!(result.measurements.len(), 2);
+        let grams = metric_grams(&measurements(&[("8", "oz"), ("227", "grams")]), &mut stats);
+        assert_eq!(grams, None);
         assert_eq!(stats.skipped_already_metric, 1);
     }
 
     #[test]
     fn test_range_preserved() {
-        let ingredient = ParsedIngredient {
-            item: "chicken".to_string(),
-            measurements: vec![Measurement {
-                amount: Some("6-8".to_string()),
-                unit: Some("oz".to_string()),
-            }],
-            note: None,
-            raw: Some("6-8 oz chicken".to_string()),
-            section: None,
-        };
-
         let mut stats = MetricConversionStats::default();
-        let result = add_metric_weight_alternative(ingredient, &mut stats);
-
-        assert_eq!(result.measurements.len(), 2);
-        assert_eq!(result.measurements[1].amount, Some("170-227".to_string()));
-        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+        let grams = metric_grams(&measurements(&[("6-8", "oz")]), &mut stats);
+        assert_eq!(grams, Some("170-227".to_string()));
     }
 }

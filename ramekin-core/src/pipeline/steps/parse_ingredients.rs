@@ -88,7 +88,13 @@ impl PipelineStep for ParseIngredientsStep {
             .map(|ing| ing.normalize_amounts())
             .collect();
         for ingredient in &ingredients {
-            derived_grams_with_stats(ingredient, &mut weight_stats, &mut volume_stats);
+            derived_grams_with_stats(
+                &ingredient.item,
+                ingredient.note.as_deref(),
+                &ingredient.measurements,
+                &mut weight_stats,
+                &mut volume_stats,
+            );
         }
 
         let output = ParseIngredientsOutput {

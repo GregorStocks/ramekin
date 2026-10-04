@@ -58,7 +58,7 @@ pub(super) fn find_range_hyphen_in_amount(s: &str) -> Option<usize> {
 /// Repeating fractions round to 2 decimal places: "1/3" -> "0.33"
 /// Ugly decimals: "0.33333334326744" -> "0.33"
 /// Clean values pass through unchanged.
-pub(super) fn normalize_fraction_to_decimal(amount: &str) -> String {
+pub(crate) fn normalize_fraction_to_decimal(amount: &str) -> String {
     let amount = amount.trim();
 
     // Handle ranges with " to "

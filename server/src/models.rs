@@ -107,7 +107,11 @@ pub fn derived_measurements(ingredients: &[Ingredient]) -> Vec<DerivedMeasuremen
         .iter()
         .enumerate()
         .filter_map(|(ingredient_index, ingredient)| {
-            let derived = ramekin_core::derived_grams(&ingredient.clone().into())?;
+            let derived = derived_grams(
+                &ingredient.item,
+                ingredient.note.as_deref(),
+                &ingredient.measurements,
+            )?;
             Some(DerivedMeasurement {
                 ingredient_index,
                 amount: derived.amount?,
@@ -115,6 +119,25 @@ pub fn derived_measurements(ingredients: &[Ingredient]) -> Vec<DerivedMeasuremen
             })
         })
         .collect()
+}
+
+/// `ramekin_core::derived_grams` for a stored line.
+pub fn derived_grams(
+    item: &str,
+    note: Option<&str>,
+    measurements: &[Measurement],
+) -> Option<Measurement> {
+    let measurements: Vec<_> = measurements
+        .iter()
+        .map(|m| ramekin_core::ingredient_parser::Measurement {
+            amount: m.amount.clone(),
+            unit: m.unit.clone(),
+        })
+        .collect();
+    ramekin_core::derived_grams(item, note, &measurements).map(|m| Measurement {
+        amount: m.amount,
+        unit: m.unit,
+    })
 }
 
 #[derive(Queryable, Selectable, Debug)]

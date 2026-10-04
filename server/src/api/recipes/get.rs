@@ -55,7 +55,7 @@ impl RecipeResponse {
         version: RecipeVersion,
         tags: Vec<String>,
     ) -> Result<Self, serde_json::Error> {
-        let ingredients: Vec<Ingredient> = serde_json::from_value(version.ingredients.clone())?;
+        let ingredients = Vec::<Ingredient>::deserialize(&version.ingredients)?;
         let derived_measurements = derived_measurements(&ingredients);
 
         Ok(Self {

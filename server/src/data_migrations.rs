@@ -7,13 +7,14 @@
 //! Migrations use the current models and Diesel DSL, so one that has run in
 //! production can be deleted once it no longer compiles; its row stays.
 
-use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
+use crate::models::{derived_grams, Ingredient, NewRecipeVersion, RecipeVersion};
 use crate::recipes::{create_new_version_cas, TagSource};
 use crate::schema::{data_migrations, recipe_versions, recipes};
 use anyhow::{anyhow, Context};
 use diesel::pg::PgConnection;
 use diesel::prelude::*;
 use ramekin_core::catalog::is_volume_unit;
+use serde::Deserialize;
 use std::collections::HashSet;
 
 type DataMigration = fn(&mut PgConnection) -> anyhow::Result<()>;
@@ -67,23 +68,18 @@ fn strip_ingredients(ingredients: Vec<Ingredient>) -> Stripped {
     let mut kept = 0;
     let ingredients = ingredients
         .into_iter()
-        .map(|ingredient| {
+        .map(|mut ingredient| {
             let Some((last, rest)) = ingredient.measurements.split_last() else {
                 return ingredient;
             };
             if rest.is_empty() || last.unit.as_deref() != Some("g") {
                 return ingredient;
             }
-            let without = Ingredient {
-                measurements: rest.to_vec(),
-                ..ingredient.clone()
-            };
-            let derived = ramekin_core::derived_grams(&without.clone().into());
+            let derived = derived_grams(&ingredient.item, ingredient.note.as_deref(), rest);
             if derived.is_some_and(|derived| derived.amount == last.amount) {
                 removed += 1;
-                return without;
-            }
-            if rest.iter().any(|m| {
+                ingredient.measurements.pop();
+            } else if rest.iter().any(|m| {
                 is_volume_unit(m.unit.as_deref()) || matches!(m.unit.as_deref(), Some("oz" | "lb"))
             }) {
                 kept += 1;
@@ -114,7 +110,7 @@ fn strip_materialized_grams(conn: &mut PgConnection) -> anyhow::Result<()> {
 
     let (mut recipes_updated, mut removed, mut kept) = (0, 0, 0);
     for current in &versions {
-        let ingredients: Vec<Ingredient> = serde_json::from_value(current.ingredients.clone())
+        let ingredients = Vec::<Ingredient>::deserialize(&current.ingredients)
             .with_context(|| format!("recipe version {} has invalid ingredients", current.id))?;
         let stripped = strip_ingredients(ingredients);
         kept += stripped.kept;
