@@ -686,6 +686,26 @@ async fn extract_all<C: Serialize>(
     Ok((answers, invalid))
 }
 
+/// Whether an answer to a text that isn't a recipe left every field a user
+/// would see empty, as the prompt asks.
+fn left_blank(answer: &RawRecipe) -> bool {
+    [&answer.title, &answer.ingredients, &answer.instructions]
+        .into_iter()
+        .all(|field| field.trim().is_empty())
+        && [
+            &answer.description,
+            &answer.servings,
+            &answer.prep_time,
+            &answer.cook_time,
+            &answer.total_time,
+            &answer.nutritional_info,
+            &answer.notes,
+            &answer.difficulty,
+        ]
+        .into_iter()
+        .all(|field| field.as_deref().is_none_or(|v| v.trim().is_empty()))
+}
+
 pub async fn eval_text(model: &str, cases: &[TextCase], spend: &mut Spend) -> Result<ModelResult> {
     let client = client_for(model, AiConfig::for_extraction)?;
     let (answers, invalid) = extract_all("text-extraction", model, cases, spend, async |i| {
@@ -702,14 +722,13 @@ pub async fn eval_text(model: &str, cases: &[TextCase], spend: &mut Spend) -> Re
         };
         match &case.expected {
             Some(expected) => totals.add(&case.id, score(answer, expected, &case.text)),
-            None if answer.ingredients.trim().is_empty()
-                && answer.instructions.trim().is_empty() =>
-            {
-                left_empty += 1
-            }
+            None if left_blank(answer) => left_empty += 1,
             None => totals.misses.push((
                 2.0,
-                format!("{}: made a recipe of {:?}", case.id, answer.title),
+                format!(
+                    "{}: filled in fields of a non-recipe (title {:?})",
+                    case.id, answer.title
+                ),
             )),
         }
     }

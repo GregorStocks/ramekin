@@ -789,7 +789,7 @@ fn spec(suite: &str) -> SuiteSpec {
             about: concat!(
                 "A recipe read from pasted text (`extract_recipe_from_text`), for 30 pipeline snapshots rendered as the plain text a user would paste (a third wrapped in blog chatter, a third with no description or servings) and 3 texts that aren't recipes. ",
                 extraction_scoring!(),
-                " \"Not a recipe: left empty\" counts the non-recipes answered with no ingredients or instructions."
+                " \"Not a recipe: left empty\" counts the non-recipes answered with every field a user would see (title, ingredients, instructions, description, servings, times, nutrition, notes) empty."
             ),
             columns: extraction::TEXT_COLUMNS,
             batched: false,
