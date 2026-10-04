@@ -430,8 +430,27 @@ Pending, failed and "unknown" names stay unknown (an ambiguous one stays
 ambiguous). The server side (queueing on
 every recipe and shopping-list save, the background worker, the scrape step
 `resolve_ingredient_names`, and Settings → Ingredient recognition) is in
-`server/src/ingredient_names.rs`. Harvesting good answers back into
-`curated.json` is `p2-catalog-harvest-learned-names`.
+`server/src/ingredient_names.rs`.
+
+The table shrinks back into committed data. `make catalog-harvest-learned
+LEARNED=<export>` turns resolved entry and not-food answers into step-2
+decisions (entries become aliases of their key; estimates, unknowns and
+ambiguous names are left out), to verify and apply like any classification
+pass (`docs/agent/catalog-classification.md`). At startup the server syncs
+every row with the committed catalog (`sync_with_catalog`):
+- a name the catalog now knows, harvested or classified, is marked
+  `harvested` (never deleted) and keeps its last answer;
+- a harvested name the catalog lost again is asked again;
+- an answer whose key no longer names one entry is asked again;
+- an estimate or not-food answer for a name the catalog now calls ambiguous
+  is asked again, since an ambiguous name takes neither;
+- an "unknown" or estimated answer (no candidate fit) is re-asked once the
+  catalog offers different candidates than the ones stored with it, and
+  served until the new answer replaces it.
+
+Learned names don't add gram alternatives: those are fixed at ingest from the
+committed catalog. A harvested name gets them for recipes saved after its
+deploy; reaching existing recipes is `p2-compute-gram-alternatives-at-read-time`.
 
 Weights work the same way one level down. A known food with no density, or no
 piece weight for a counted unit, makes `nutrition::estimate_with` report a

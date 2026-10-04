@@ -57,8 +57,8 @@ pub struct ResolveIngredientNamesResult {
 /// Resolve a batch of names, each with its candidate catalog keys, in one
 /// call. The answer must cover every name exactly once and may only choose a
 /// listed candidate; anything else is an invalid response, evicted from the
-/// cache so a retry asks again. `fresh` skips a cached reply: re-asking a name
-/// must reach the model, not return the answer being replaced.
+/// cache so a retry asks again. `fresh` skips any cached answer: a re-ask
+/// wants the model's answer now, not the one it gave this prompt before.
 pub async fn resolve_ingredient_names(
     ai_client: &dyn AiClient,
     names: &[NameQuery],
@@ -256,6 +256,52 @@ mod tests {
                 r#"{{"resolutions": [{{"name": "moon sugar", "answer": "unknown"}}, {{"name": "platter", "answer": "unknown"}}, {cheese}]}}"#
             );
             assert!(validate(&names(), response(&json)).is_err(), "{json}");
+        }
+    }
+    /// Logs each call, answering every request with `sugar`'s entry.
+    #[derive(Default)]
+    struct LoggingClient {
+        calls: std::sync::Mutex<Vec<&'static str>>,
+    }
+
+    #[async_trait::async_trait]
+    impl AiClient for LoggingClient {
+        async fn complete(
+            &self,
+            _prompt_name: &str,
+            request: &ChatRequest,
+        ) -> Result<crate::ai::ChatResponse, AiError> {
+            self.calls.lock().unwrap().push(if request.fresh {
+                "complete fresh"
+            } else {
+                "complete"
+            });
+            Ok(crate::ai::ChatResponse {
+                content: r#"{"resolutions": [{"name": "sugar", "answer": "entry", "key": "granulated sugar"}]}"#
+                    .to_string(),
+                usage: Usage::default(),
+                cached: true,
+            })
+        }
+
+        fn forget(&self, _prompt_name: &str, _messages: &[ChatMessage]) {
+            self.calls.lock().unwrap().push("forget");
+        }
+    }
+
+    #[tokio::test]
+    async fn a_fresh_ask_skips_the_cached_answer() {
+        let sugar = [NameQuery {
+            name: "sugar".into(),
+            candidates: vec!["granulated sugar".into()],
+            ambiguous: false,
+        }];
+        for (fresh, calls) in [(false, vec!["complete"]), (true, vec!["complete fresh"])] {
+            let client = LoggingClient::default();
+            resolve_ingredient_names(&client, &sugar, fresh)
+                .await
+                .unwrap();
+            assert_eq!(*client.calls.lock().unwrap(), calls, "fresh: {fresh}");
         }
     }
 }

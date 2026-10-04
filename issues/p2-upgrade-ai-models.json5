@@ -10,7 +10,7 @@ Check OpenRouter's current catalog (don't rely on training data) for current fas
 Consider per-feature models rather than one global model. \
 Extraction (text/photo) and ingredient resolution reward accuracy; tagging and descriptions can use the cheapest good model.\n\
 3. \
-Compare candidates with the existing cached harnesses (make title-normalization-test, make description-generation-test) plus the text-import eval from p2-text-import-structured-ingredients, and record results in the PR. \
+Compare candidates with the existing cached harnesses (make title-normalization-test, make description-generation-test) plus a text-extraction suite in the `make ai-eval` framework (see Progress below), and record results in the PR. \
 These are text-only, but the text model also serves the multimodal request in ramekin-core/src/ai/photo_extract.rs, and the image model serves recipe-photo generation (generate_recipe_photo.rs). \
 Before changing either default, confirm on OpenRouter that the candidate supports image input (text model) or image output (image model), and add small cached evals: photo extraction over a handful of real recipe photos (printed cookbook page, handwritten card, screenshot), and image generation over a few recipes, reviewed by eye. \
 Changing only the text model while keeping a vision-capable one for photo extraction is fine if that is what the evals show.\n\

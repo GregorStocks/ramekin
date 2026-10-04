@@ -159,7 +159,15 @@ A separate, cheaper pass gives foods their shopping-list aisle
 
 ## Promoting step 3 resolutions
 
-Once runtime LLM resolution exists (`ingredient-catalog-step3-ingest-resolution`),
-its `ingredient_resolutions` rows can be exported into the same decisions format.
-Review them with the verify phase, then apply them the same way, so the runtime
-table shrinks into committed data.
+The server's learned names (`ingredient_name_resolutions`) shrink back into
+committed data:
+
+1. Gregor exports the table's rows from prod as a JSON array (the `LEARNED=`
+   format in `data/README.md`).
+2. `make catalog-harvest-learned LEARNED=<export>` writes
+   `logs/catalog-harvest-learned.json`. Entry answers become `alias` decisions and
+   non-foods become `not_food` decisions. Estimates, unknowns, ambiguous names and
+   names the catalog already knows are skipped and counted.
+3. Run the verify phase over it, then `make catalog-apply-classification` and
+   `make catalog-clean-aliases` as in steps 2 to 4 above.
+4. After the deploy, the server marks the applied rows `harvested` at startup.

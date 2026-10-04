@@ -13,6 +13,7 @@ Mark computed alternatives so clients can render them as derived, and make sure 
 This touches the recipe read path and response shape, both clients (web and iOS render measurements and send them back on save), recipe scaling (clients scale measurements; derived grams must scale too), exports (Paprika export should include the derived grams or not; decide), and a one-off migration that strips previously materialized density alternatives from stored versions (new versions through the normal save path; no raw SQL). \
 Per doc/client-logic-sharing.md the derivation stays server-side.\n\
 \n\
+Read-time grams could also use the server's learned names (catalog step 3: load_learned + line_grams_per_cup_with), which today feed only calories and categories; until then a learned name reaches gram alternatives only once harvested into curated.json (make catalog-harvest-learned). \
 The decision was deferred from catalog step 1 (owner, 2026-09-27). \
 Pipeline impact: make pipeline output changes if the parse step stops adding alternatives; commit the data/ diffs.",
   "status": "open",
@@ -26,5 +27,5 @@ Pipeline impact: make pipeline output changes if the parse step stops adding alt
     "pipeline",
   ],
   "created_at": "2026-09-27T17:02:11-07:00",
-  "updated_at": "2026-09-27T17:02:11-07:00",
+  "updated_at": "2026-10-03T22:30:00-07:00",
 }
