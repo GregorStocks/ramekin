@@ -31,6 +31,9 @@ class CoreDataStack: ObservableObject {
     }
 
     let container: NSPersistentContainer
+    /// True when the on-disk store failed to load and the app is running on
+    /// an in-memory store: local edits survive only once synced.
+    private(set) var isUsingVolatileStore = false
 
     /// The main view context for UI operations
     var viewContext: NSManagedObjectContext {
@@ -64,6 +67,7 @@ class CoreDataStack: ObservableObject {
             let memoryDescription = NSPersistentStoreDescription()
             memoryDescription.type = NSInMemoryStoreType
             container.persistentStoreDescriptions = [memoryDescription]
+            isUsingVolatileStore = true
             container.loadPersistentStores { _, error in
                 if let error {
                     self.logger.log("Failed to load in-memory Core Data store: \(error)", source: "CoreDataStack")

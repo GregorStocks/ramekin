@@ -27,6 +27,8 @@ class ShoppingListStore: ObservableObject {
     @Published var categoryOrder: [String] = []
 
     private let coreDataStack: CoreDataStack
+    /// Unsynced edits are lost on quit; the UI warns about it.
+    var isUsingVolatileStorage: Bool { coreDataStack.isUsingVolatileStore }
     private let userDefaults: UserDefaults
     private let syncItems: (SyncRequest) async throws -> SyncResponse
     private let networkMonitor = NWPathMonitor()
