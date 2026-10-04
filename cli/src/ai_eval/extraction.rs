@@ -42,8 +42,9 @@ pub struct Expected {
     /// answer's description and notes can't be checked against the source.
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     prose_untranscribed: bool,
-    /// What the source states for these, for reading; an answer is scored
-    /// only on not inventing numbers.
+    /// What the source states for these. An answer must keep their numbers
+    /// (a stated time in any of its time fields, since pages label times
+    /// loosely) and invent none.
     servings: Option<String>,
     prep_time: Option<String>,
     cook_time: Option<String>,
@@ -367,6 +368,9 @@ struct Score {
     instructions_recall: f64,
     instructions_precision: f64,
     invented: Vec<&'static str>,
+    /// Servings and time fields the source states, and those the answer kept.
+    metadata_expected: usize,
+    metadata_kept: usize,
     /// Words of the description and notes, and those the source never uses.
     note_words: usize,
     unsourced_note_words: usize,
@@ -419,6 +423,33 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
     .map(|(name, _, _)| name)
     .collect();
 
+    let has_numbers = |value: &Option<String>, of: &str| {
+        let have = numbers(value.as_deref().unwrap_or_default());
+        numbers(of).iter().all(|n| have.contains(n))
+    };
+    let answered_times = [&answer.prep_time, &answer.cook_time, &answer.total_time];
+    let stated_metadata: Vec<bool> = [
+        expected
+            .servings
+            .as_ref()
+            .map(|servings| has_numbers(&answer.servings, servings)),
+        expected
+            .prep_time
+            .as_ref()
+            .map(|t| answered_times.iter().any(|a| has_numbers(a, t))),
+        expected
+            .cook_time
+            .as_ref()
+            .map(|t| answered_times.iter().any(|a| has_numbers(a, t))),
+        expected
+            .total_time
+            .as_ref()
+            .map(|t| answered_times.iter().any(|a| has_numbers(a, t))),
+    ]
+    .into_iter()
+    .flatten()
+    .collect();
+
     // Notes and the description are free text, so they're checked only for
     // words the source never uses.
     let source_words: HashSet<String> = tokens(source).into_iter().collect();
@@ -447,6 +478,8 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
             answer_tokens.len(),
         ),
         invented,
+        metadata_expected: stated_metadata.len(),
+        metadata_kept: stated_metadata.iter().filter(|kept| **kept).count(),
         unsourced_note_words: note_words
             .iter()
             .filter(|w| !source_words.contains(*w))
@@ -477,6 +510,8 @@ struct Totals {
     recall: Vec<f64>,
     precision: Vec<f64>,
     invented: usize,
+    metadata_expected: usize,
+    metadata_kept: usize,
     note_words: usize,
     unsourced_note_words: usize,
     misses: Vec<(f64, String)>,
@@ -493,6 +528,8 @@ impl Totals {
         self.recall.push(score.instructions_recall);
         self.precision.push(score.instructions_precision);
         self.invented += score.invented.len();
+        self.metadata_expected += score.metadata_expected;
+        self.metadata_kept += score.metadata_kept;
         self.note_words += score.note_words;
         self.unsourced_note_words += score.unsourced_note_words;
         let badness = ratio(score.missing.len(), score.lines_expected.max(1))
@@ -500,6 +537,7 @@ impl Totals {
             + (1.0 - score.instructions_recall)
             + (1.0 - score.instructions_precision)
             + 0.25 * score.invented.len() as f64
+            + 0.25 * (score.metadata_expected - score.metadata_kept) as f64
             + ratio(score.unsourced_note_words, score.note_words.max(1))
             + if score.title_right { 0.0 } else { 0.25 };
         if badness > 0.0 {
@@ -520,6 +558,12 @@ impl Totals {
             ));
             if !score.invented.is_empty() {
                 parts.push(format!("invented {}", score.invented.join(", ")));
+            }
+            if score.metadata_kept < score.metadata_expected {
+                parts.push(format!(
+                    "kept {} of {} stated servings and times",
+                    score.metadata_kept, score.metadata_expected
+                ));
             }
             if score.unsourced_note_words > 0 {
                 parts.push(format!(
@@ -543,6 +587,7 @@ impl Totals {
             pct(self.lines_extra, self.lines_answered),
             mean(&self.recall),
             mean(&self.precision),
+            pct(self.metadata_kept, self.metadata_expected),
             self.invented.to_string(),
             pct(self.unsourced_note_words, self.note_words),
         ]
@@ -559,6 +604,7 @@ pub const TEXT_COLUMNS: &[&str] = &[
     "Extra ingredient lines",
     "Instructions recall",
     "Instructions precision",
+    "Servings and times kept",
     "Invented fields",
     "Unsourced note words",
     "Invalid",
@@ -773,6 +819,8 @@ mod tests {
         assert_eq!(score.instructions_precision, 6.0 / 8.0);
         // The cook time is stated; the total isn't.
         assert_eq!(score.invented, vec!["total_time"]);
+        // The stated servings are kept.
+        assert_eq!((score.metadata_kept, score.metadata_expected), (1, 1));
         // Only "simmer" is in the source.
         assert_eq!((score.unsourced_note_words, score.note_words), (4, 5));
     }
