@@ -1,5 +1,6 @@
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
+use ramekin_core::catalog::Learned;
 use serde::{Deserialize, Serialize};
 use serde_json::Value as JsonValue;
 use uuid::Uuid;
@@ -101,8 +102,12 @@ pub struct DerivedMeasurement {
 }
 
 /// The derived measurements for a recipe's ingredients, in ingredient order;
-/// lines with no derivable grams are absent.
-pub fn derived_measurements(ingredients: &[Ingredient]) -> Vec<DerivedMeasurement> {
+/// lines with no derivable grams are absent. `learned` holds the stored
+/// answers for names the catalog doesn't know (`ingredient_names::load_learned`).
+pub fn derived_measurements(
+    ingredients: &[Ingredient],
+    learned: &Learned,
+) -> Vec<DerivedMeasurement> {
     ingredients
         .iter()
         .enumerate()
@@ -111,6 +116,7 @@ pub fn derived_measurements(ingredients: &[Ingredient]) -> Vec<DerivedMeasuremen
                 &ingredient.item,
                 ingredient.note.as_deref(),
                 &ingredient.measurements,
+                learned,
             )?;
             Some(DerivedMeasurement {
                 ingredient_index,
@@ -126,6 +132,7 @@ pub fn derived_grams(
     item: &str,
     note: Option<&str>,
     measurements: &[Measurement],
+    learned: &Learned,
 ) -> Option<Measurement> {
     let measurements: Vec<_> = measurements
         .iter()
@@ -134,7 +141,7 @@ pub fn derived_grams(
             unit: m.unit.clone(),
         })
         .collect();
-    ramekin_core::derived_grams(item, note, &measurements).map(|m| Measurement {
+    ramekin_core::derived_grams(item, note, &measurements, learned).map(|m| Measurement {
         amount: m.amount,
         unit: m.unit,
     })

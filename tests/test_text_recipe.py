@@ -11,7 +11,7 @@ RECIPE_TEXT = """Text Pancakes
 Serves 4. Prep: 10 minutes
 1 cup all-purpose flour
 8 oz butter
-1 cup mystery powder
+1 cup unknowable powder
 Mix ingredients.
 
 Cook in a pan.
@@ -32,7 +32,9 @@ def test_text_draft_review_save_and_import_parity(authed_api_client):
     assert draft.content.prep_time == "10 minutes"
     assert draft.content.source_name == "Family notebook"
     assert draft.content.notes == "Serve warm."
-    assert draft.warnings == ["Weight estimate unavailable for mystery powder."]
+    # The mock answers "unknowable" names unknown, so once saved and learned
+    # this line still gets no grams.
+    assert draft.warnings == ["Weight estimate unavailable for unknowable powder."]
     assert draft.content.description == "A delicious test recipe."
     ingredients = draft.content.ingredients
     assert [len(i.measurements) for i in ingredients] == [1, 1, 1]
@@ -75,7 +77,7 @@ def test_reviewed_ingredient_changes_recompute_weights(authed_api_client):
         {
             **draft.content.to_dict(),
             "title": "Corrected Pancakes",
-            "raw_ingredients": "2 cups all-purpose flour\n1 cup mystery powder",
+            "raw_ingredients": "2 cups all-purpose flour\n1 cup unknowable powder",
         }
     )
     recipe = RecipesApi(client).get_recipe(saved.id)
