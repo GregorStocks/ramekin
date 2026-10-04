@@ -482,19 +482,27 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
     .into_iter()
     .filter(|(_, value, quantity)| {
         value.as_deref().is_some_and(|v| {
-            let numbers = classify(v);
-            if numbers.is_empty() {
-                // "serves a crowd", "quick": words the source never uses.
-                unsourced(v)
-            } else {
-                // "30 hours" isn't the source's "30 minutes".
-                numbers
+            // Everything but the numbers and their labels must be the
+            // source's: "serves a crowd", "quick", "Total Fat 999g".
+            let unsourced_rest = tokens(v).iter().any(|w| {
+                !is_number(w)
+                    && cue(w).is_none()
+                    // Connectors and field labels ("TOTAL TIME: 2 hours").
+                    && !matches!(
+                        w.as_str(),
+                        "to" | "or" | "and" | "plus" | "about" | "approximately"
+                            | "total" | "time" | "prep" | "cook" | "active"
+                    )
+                    && !source_words.contains(w)
+            });
+            // "30 hours" isn't the source's "30 minutes".
+            unsourced_rest
+                || classify(v)
                     .into_iter()
                     .any(|(n, said)| match said.or(*quantity) {
                         Some(q) => !stated.contains(&(n, q)),
                         None => !stated.iter().any(|(m, q)| *m == n && q.is_time()),
                     })
-            }
         })
     })
     .map(|(name, _, _)| name)
@@ -517,10 +525,19 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
     {
         invented.push("categories");
     }
-    if answer
-        .rating
-        .is_some_and(|rating| !source_words.contains(&rating.to_string()))
-    {
+    // A rating needs the source to rate ("4 stars", "rated 5"), not just to
+    // contain the digit somewhere.
+    let source_tokens = tokens(source);
+    let rated = |rating: i32| {
+        let rating = rating.to_string();
+        source_tokens.iter().enumerate().any(|(i, word)| {
+            *word == rating
+                && source_tokens[i.saturating_sub(2)..(i + 3).min(source_tokens.len())]
+                    .iter()
+                    .any(|w| w.starts_with("star") || w.starts_with("rat"))
+        })
+    };
+    if answer.rating.is_some_and(|rating| !rated(rating)) {
         invented.push("rating");
     }
 
@@ -1017,9 +1034,18 @@ mod tests {
         assert_eq!(score.invented, vec!["total_time"]);
         let mut tagged = recipe("1 cup rice", "Simmer the rice.");
         tagged.categories = Some(vec!["rice".into(), "weeknight".into()]);
+        // The source has a 5, but no rating.
         tagged.rating = Some(5);
-        let tagged = super::score(&tagged, &expected(), "Serves 4. Simmer the rice.");
-        assert_eq!(tagged.invented, vec!["categories", "rating"]);
+        tagged.nutritional_info = Some("Cal 410 • Total Fat 999g".into());
+        let tagged = super::score(
+            &tagged,
+            &expected(),
+            "Serves 4. Simmer the rice 5 minutes. Cal 410.",
+        );
+        assert_eq!(
+            tagged.invented,
+            vec!["nutritional_info", "categories", "rating"]
+        );
         // The stated servings are kept.
         assert_eq!((score.metadata_kept, score.metadata_expected), (1, 1));
         // Only "simmer" is in the source.
