@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -88,10 +80,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "747",
-            "unit": "g"
           }
         ],
         "note": "low-sodium, or vegetable broth",
@@ -106,10 +94,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "176",
-            "unit": "g"
           }
         ],
         "note": "cut into small pieces",
@@ -119,15 +103,11 @@
     {
       "raw": "½ teaspoon salt (or to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -156,10 +136,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "163",
-            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -174,10 +150,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
         "note": "or half-and-half",
@@ -192,10 +164,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "12",
-            "unit": "g"
           }
         ],
         "note": "grated",

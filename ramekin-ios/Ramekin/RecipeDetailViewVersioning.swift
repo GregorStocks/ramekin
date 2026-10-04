@@ -251,7 +251,10 @@ extension RecipeDetailView {
 }
 
 extension RecipeDetailView {
-    func groupIngredientsBySection(_ ingredients: [Ingredient]) -> [(section: String?, items: [Ingredient])] {
-        groupConsecutiveItemsBySection(ingredients) { $0.section }
+    /// Groups keep each ingredient's index, which keys its derived grams.
+    func groupIngredientsBySection(
+        _ ingredients: [Ingredient]
+    ) -> [(section: String?, items: [(offset: Int, element: Ingredient)])] {
+        groupConsecutiveItemsBySection(Array(ingredients.enumerated())) { $0.element.section }
     }
 }

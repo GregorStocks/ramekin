@@ -56,6 +56,7 @@ final class RecipePDFRendererTests: XCTestCase {
         return RecipeResponse(
             cookTime: "10 min",
             createdAt: Date(),
+            derivedMeasurements: [],
             description: "A simple test recipe.",
             difficulty: "easy",
             id: UUID(),

@@ -19,10 +19,6 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "156",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -37,10 +33,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -55,10 +47,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -68,15 +56,11 @@
     {
       "raw": "1/4 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -91,10 +75,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "114",
-            "unit": "g"
           }
         ],
         "note": "room temperature",
@@ -109,10 +89,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "129",
-            "unit": "g"
           }
         ],
         "note": "national brand",
@@ -127,10 +103,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "200",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -159,10 +131,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -200,10 +168,6 @@
           {
             "amount": "3",
             "unit": "oz"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -218,10 +182,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "258",
-            "unit": "g"
           }
         ],
         "note": "national brand",
@@ -236,10 +196,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,

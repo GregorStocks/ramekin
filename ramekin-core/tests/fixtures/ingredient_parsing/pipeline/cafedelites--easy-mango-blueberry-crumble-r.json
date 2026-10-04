@@ -10,10 +10,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "444",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3.9",
-            "unit": "g"
           }
         ],
         "note": "light spelt, all purpose or plain",
@@ -60,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -78,10 +66,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "or coconut sugar",
@@ -96,10 +80,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -114,10 +94,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "42",
-            "unit": "g"
           }
         ],
         "note": "or all purpose flour, light spelt to almond flour are fine to use",
@@ -146,10 +122,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "42",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -164,10 +136,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "42",
-            "unit": "g"
           }
         ],
         "note": "melted, or coconut oil",
@@ -182,10 +150,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "or coconut sugar",
@@ -195,7 +159,7 @@
     {
       "raw": "1 pinch salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",

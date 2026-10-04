@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -97,10 +89,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,15 +98,11 @@
     {
       "raw": "2 Tablespoons Salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "17",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -133,10 +117,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -151,10 +131,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -183,10 +159,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2.6",
-            "unit": "g"
           }
         ],
         "note": null,

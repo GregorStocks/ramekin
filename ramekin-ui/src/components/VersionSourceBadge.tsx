@@ -16,6 +16,8 @@ export default function VersionSourceBadge(props: VersionSourceBadgeProps) {
         return "AI Photo";
       case "reparse":
         return "Re-parsed";
+      case "migration":
+        return "Migrated";
       default:
         return props.source;
     }

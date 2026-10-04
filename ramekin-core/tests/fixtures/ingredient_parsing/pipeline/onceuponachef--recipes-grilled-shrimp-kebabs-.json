@@ -10,10 +10,6 @@
           {
             "amount": "2.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "41",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "81",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -106,10 +94,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2.4",
-            "unit": "g"
           }
         ],
         "note": "or 1 teaspoon dried",
@@ -124,10 +108,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -142,10 +122,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "6.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -155,15 +131,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -178,10 +150,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "21-25 per pound, leave tails on if desired, peeled and de-veined, thawed if frozen",

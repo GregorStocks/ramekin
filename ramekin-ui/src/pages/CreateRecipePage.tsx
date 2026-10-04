@@ -1,6 +1,9 @@
 import { createSignal, createMemo, Show, For } from "solid-js";
 import type { PrepareTextRecipeResponse } from "ramekin-client";
-import { formatIngredient } from "../utils/ingredientFormatting";
+import {
+  derivedMeasurementAt,
+  formatIngredient,
+} from "../utils/ingredientFormatting";
 import bookmarkletSource from "../bookmarklet.js?raw";
 import { useNavigate } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
@@ -226,11 +229,15 @@ export default function CreateRecipePage() {
                   >
                     <ul>
                       <For each={review().content.ingredients}>
-                        {(ingredient) => (
+                        {(ingredient, i) => (
                           <li>
                             {formatIngredient(ingredient, {
                               includeAlternatives: true,
                               includeNote: true,
+                              derived: derivedMeasurementAt(
+                                review().derivedMeasurements,
+                                i(),
+                              ),
                             })}
                           </li>
                         )}

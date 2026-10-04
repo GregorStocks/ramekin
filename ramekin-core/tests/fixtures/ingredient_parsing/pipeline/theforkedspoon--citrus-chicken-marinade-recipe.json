@@ -24,10 +24,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": "approx. 2-3 limes",
@@ -42,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "finely grated",
@@ -60,10 +52,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "61",
-            "unit": "g"
           }
         ],
         "note": "approx. 2-3 lemons",
@@ -78,10 +66,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "finely grated",
@@ -96,10 +80,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "124",
-            "unit": "g"
           }
         ],
         "note": "approx. 2 large oranges",
@@ -128,10 +108,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "73",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -146,10 +122,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -164,10 +136,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -182,10 +150,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "12",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -195,15 +159,11 @@
     {
       "raw": "2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -218,10 +178,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -236,10 +192,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.5",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -50,10 +50,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -63,15 +59,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -158,10 +150,6 @@
           {
             "amount": "240",
             "unit": "ml"
-          },
-          {
-            "amount": "244",
-            "unit": "g"
           }
         ],
         "note": "about 4 lemons",

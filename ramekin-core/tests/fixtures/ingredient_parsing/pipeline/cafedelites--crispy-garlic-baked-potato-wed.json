@@ -24,10 +24,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "54",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.5",
-            "unit": "g"
           }
         ],
         "note": "minced, or 3 teaspoons garlic powder",
@@ -60,10 +52,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -73,15 +61,11 @@
     {
       "raw": "2 teaspoons salt (adjust to your tastes)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": "adjust to your tastes",
@@ -96,10 +80,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -128,10 +108,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "67",
-            "unit": "g"
           }
         ],
         "note": "finely grated or shredded, divided",
@@ -146,10 +122,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": "chopped",

@@ -24,10 +24,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "120",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "69",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -88,10 +80,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "165",
-            "unit": "g"
           }
         ],
         "note": "preferably homemade",
@@ -106,10 +94,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -119,7 +103,7 @@
     {
       "raw": "salt to taste, if desired",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "to taste, if desired",
         "category": "Spices & Seasonings"
@@ -142,10 +126,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -160,10 +140,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "12",
-            "unit": "g"
           }
         ],
         "note": null,

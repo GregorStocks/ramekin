@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
+from ramekin_client.models.derived_measurement import DerivedMeasurement
 from ramekin_client.models.recipe_content import RecipeContent
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +29,10 @@ class PrepareTextRecipeResponse(BaseModel):
     PrepareTextRecipeResponse
     """ # noqa: E501
     content: RecipeContent
+    derived_measurements: List[DerivedMeasurement] = Field(description="Approximate grams for `content.ingredients` that have them, for previewing the draft. Never saved.")
     raw_ingredients: StrictStr = Field(description="Editable ingredient lines. Send these as raw_ingredients when saving.")
     warnings: List[StrictStr]
-    __properties: ClassVar[List[str]] = ["content", "raw_ingredients", "warnings"]
+    __properties: ClassVar[List[str]] = ["content", "derived_measurements", "raw_ingredients", "warnings"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,6 +76,13 @@ class PrepareTextRecipeResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of content
         if self.content:
             _dict['content'] = self.content.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in derived_measurements (list)
+        _items = []
+        if self.derived_measurements:
+            for _item_derived_measurements in self.derived_measurements:
+                if _item_derived_measurements:
+                    _items.append(_item_derived_measurements.to_dict())
+            _dict['derived_measurements'] = _items
         return _dict
 
     @classmethod
@@ -87,6 +96,7 @@ class PrepareTextRecipeResponse(BaseModel):
 
         _obj = cls.model_validate({
             "content": RecipeContent.from_dict(obj["content"]) if obj.get("content") is not None else None,
+            "derived_measurements": [DerivedMeasurement.from_dict(_item) for _item in obj["derived_measurements"]] if obj.get("derived_measurements") is not None else None,
             "raw_ingredients": obj.get("raw_ingredients"),
             "warnings": obj.get("warnings")
         })

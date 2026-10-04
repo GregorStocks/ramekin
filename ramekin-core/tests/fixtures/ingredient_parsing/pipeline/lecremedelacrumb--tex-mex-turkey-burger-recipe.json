@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -65,10 +61,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "120",
-            "unit": "g"
           }
         ],
         "note": "or sour cream",
@@ -83,10 +75,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -115,10 +103,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -128,15 +112,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -151,10 +131,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -169,10 +145,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -187,10 +159,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
         "note": null,

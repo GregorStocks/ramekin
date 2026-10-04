@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "quartered",
@@ -64,10 +52,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "275",
-            "unit": "g"
           }
         ],
         "note": "white or yellow",
@@ -82,10 +66,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +80,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +94,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "31",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -136,10 +108,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "119",
-            "unit": "g"
           }
         ],
         "note": "room temperature",
@@ -154,10 +122,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "245",
-            "unit": "g"
           }
         ],
         "note": "room temperature",
@@ -172,10 +136,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -190,10 +150,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -203,15 +159,11 @@
     {
       "raw": "1/4 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,

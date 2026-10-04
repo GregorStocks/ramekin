@@ -10,10 +10,6 @@
           {
             "amount": "2.5",
             "unit": "cup"
-          },
-          {
-            "amount": "312",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "25",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -41,15 +33,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "13",
             "unit": "tbsp"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
         "note": "cold, cut into 1/4-inch cubes",
@@ -82,10 +66,6 @@
           {
             "amount": "7",
             "unit": "tbsp"
-          },
-          {
-            "amount": "90",
-            "unit": "g"
           }
         ],
         "note": "cold, cut into pieces",
@@ -114,10 +94,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -146,10 +122,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -164,10 +136,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -182,10 +150,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -200,10 +164,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "drained and cut into bite-size pieces",
@@ -218,10 +178,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "drained",
@@ -236,10 +192,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": "shredded (about 1 cup)",
@@ -254,10 +206,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": "shredded (about 1 cup)",
@@ -272,10 +220,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "25",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -327,10 +271,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -59,15 +59,11 @@
     {
       "raw": "1/4 teaspoon salt (or a heaping 1/4 teaspoon flaky salt, as I used)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": "or a heaping 1/4 teaspoon flaky salt, as I used",
@@ -82,10 +78,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.2",
-            "unit": "g"
           }
         ],
         "note": null,

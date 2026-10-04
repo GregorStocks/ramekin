@@ -12,11 +12,14 @@
  * Do not edit the class manually.
  */
 import { IngredientFromJSON, IngredientToJSON, } from './Ingredient';
+import { DerivedMeasurementFromJSON, DerivedMeasurementToJSON, } from './DerivedMeasurement';
 /**
  * Check if a given object implements the RecipeResponse interface.
  */
 export function instanceOfRecipeResponse(value) {
     if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
+    if (!('derivedMeasurements' in value) || value['derivedMeasurements'] === undefined)
         return false;
     if (!('id' in value) || value['id'] === undefined)
         return false;
@@ -48,6 +51,7 @@ export function RecipeResponseFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'cookTime': json['cook_time'] == null ? undefined : json['cook_time'],
         'createdAt': (new Date(json['created_at'])),
+        'derivedMeasurements': (json['derived_measurements'].map(DerivedMeasurementFromJSON)),
         'description': json['description'] == null ? undefined : json['description'],
         'difficulty': json['difficulty'] == null ? undefined : json['difficulty'],
         'id': json['id'],
@@ -79,6 +83,7 @@ export function RecipeResponseToJSONTyped(value, ignoreDiscriminator = false) {
     return {
         'cook_time': value['cookTime'],
         'created_at': value['createdAt'].toISOString(),
+        'derived_measurements': (value['derivedMeasurements'].map(DerivedMeasurementToJSON)),
         'description': value['description'],
         'difficulty': value['difficulty'],
         'id': value['id'],

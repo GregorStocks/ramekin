@@ -14,10 +14,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "239",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -33,10 +29,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "38",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -47,15 +39,11 @@
     {
       "raw": "1 tbsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -71,10 +59,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "237",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -124,10 +108,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "or other high smoke point oil",
@@ -143,10 +123,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -162,10 +138,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -191,15 +163,11 @@
     {
       "raw": "½ tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,

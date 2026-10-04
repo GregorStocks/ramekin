@@ -107,9 +107,13 @@ extension RecipeFormView {
                 TextEditor(text: $viewModel.rawIngredients)
                     .frame(minHeight: 150).accessibilityLabel("Ingredients")
                 if viewModel.rawIngredients == draft.rawIngredients {
-                    ForEach(Array(draft.content.ingredients.enumerated()), id: \.offset) { _, ingredient in
-                        Text(ingredient.formatted(includeAlternatives: true, includeNote: true))
-                            .font(.caption)
+                    ForEach(Array(draft.content.ingredients.enumerated()), id: \.offset) { index, ingredient in
+                        Text(ingredient.formatted(
+                            includeAlternatives: true,
+                            includeNote: true,
+                            derived: draft.derivedMeasurements.measurement(forIngredientAt: index)
+                        ))
+                        .font(.caption)
                     }
                 } else {
                     Text("Weight estimates will be recalculated when you save.").font(.caption)

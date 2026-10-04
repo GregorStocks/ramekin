@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "see below for cooking times for specific beans",
@@ -28,10 +24,6 @@
           {
             "amount": "8",
             "unit": "cup"
-          },
-          {
-            "amount": "1896",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -59,7 +47,7 @@
     {
       "raw": "1 to 2 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1 to 2",

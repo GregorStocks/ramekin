@@ -29,7 +29,10 @@ import {
   isValidRecipeScale,
   MAX_RECIPE_SCALE,
 } from "../utils/scaleAmount";
-import { formatIngredientParts } from "../utils/ingredientFormatting";
+import {
+  derivedMeasurementAt,
+  formatIngredientParts,
+} from "../utils/ingredientFormatting";
 import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
 import { pollScrapeJob } from "../utils/pollScrapeJob";
 import { createRequestTracker } from "../utils/requestTracker";
@@ -812,12 +815,16 @@ export default function ViewRecipePage() {
                           </Show>
                           <ul class="ingredients-list">
                             <For each={group.ingredients}>
-                              {(ing) => {
+                              {(ing, i) => {
                                 const parts = createMemo(() =>
                                   formatIngredientParts(ing, {
                                     scale: scale(),
                                     includeAlternatives: true,
                                     includeNote: true,
+                                    derived: derivedMeasurementAt(
+                                      r().derivedMeasurements,
+                                      group.startIndex + i(),
+                                    ),
                                   }),
                                 );
                                 return (

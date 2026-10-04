@@ -14,10 +14,6 @@
           {
             "amount": "1",
             "unit": "oz"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": "finely chopped",
@@ -32,10 +28,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "114",
-            "unit": "g"
           }
         ],
         "note": "cut into 8 pieces",
@@ -64,10 +56,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "67",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +70,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +84,6 @@
           {
             "amount": "4",
             "unit": "tsp"
-          },
-          {
-            "amount": "7.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -113,7 +93,7 @@
     {
       "raw": "1 pinch salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",

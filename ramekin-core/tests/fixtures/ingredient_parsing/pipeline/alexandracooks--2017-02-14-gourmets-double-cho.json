@@ -10,10 +10,6 @@
           {
             "amount": "1.5",
             "unit": "oz"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": "chips are fine, too",
@@ -28,10 +24,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "178",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "300",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +88,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +102,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -131,15 +111,11 @@
     {
       "raw": "¾ teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -168,10 +144,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "73",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -186,10 +158,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -204,10 +172,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -222,10 +186,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "chips are fine, too",
@@ -240,10 +200,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "119",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -258,10 +214,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "12",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -276,10 +228,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "21",
-            "unit": "g"
           }
         ],
         "note": "optional",
@@ -294,10 +242,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,

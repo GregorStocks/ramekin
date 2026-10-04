@@ -88,6 +88,58 @@ impl From<Ingredient> for ramekin_core::ingredient_parser::ParsedIngredient {
     }
 }
 
+/// Approximate grams for one ingredient line: oz/lb converted, or a volume
+/// through the catalog's density for the food. Computed on every read and
+/// never stored, so catalog improvements reach every recipe; never send these
+/// back when saving.
+#[derive(Debug, Clone, PartialEq, Serialize, utoipa::ToSchema)]
+pub struct DerivedMeasurement {
+    /// Index of the ingredient this belongs to.
+    pub ingredient_index: usize,
+    pub amount: String,
+    pub unit: String,
+}
+
+/// The derived measurements for a recipe's ingredients, in ingredient order;
+/// lines with no derivable grams are absent.
+pub fn derived_measurements(ingredients: &[Ingredient]) -> Vec<DerivedMeasurement> {
+    ingredients
+        .iter()
+        .enumerate()
+        .filter_map(|(ingredient_index, ingredient)| {
+            let derived = derived_grams(
+                &ingredient.item,
+                ingredient.note.as_deref(),
+                &ingredient.measurements,
+            )?;
+            Some(DerivedMeasurement {
+                ingredient_index,
+                amount: derived.amount?,
+                unit: derived.unit?,
+            })
+        })
+        .collect()
+}
+
+/// `ramekin_core::derived_grams` for a stored line.
+pub fn derived_grams(
+    item: &str,
+    note: Option<&str>,
+    measurements: &[Measurement],
+) -> Option<Measurement> {
+    let measurements: Vec<_> = measurements
+        .iter()
+        .map(|m| ramekin_core::ingredient_parser::Measurement {
+            amount: m.amount.clone(),
+            unit: m.unit.clone(),
+        })
+        .collect();
+    ramekin_core::derived_grams(item, note, &measurements).map(|m| Measurement {
+        amount: m.amount,
+        unit: m.unit,
+    })
+}
+
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::photos)]
 #[diesel(check_for_backend(diesel::pg::Pg))]

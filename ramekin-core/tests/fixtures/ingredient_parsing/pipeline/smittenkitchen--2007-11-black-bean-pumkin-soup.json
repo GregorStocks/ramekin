@@ -42,10 +42,6 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "172",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -97,15 +93,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -138,10 +130,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -156,10 +144,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "960",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -188,10 +172,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -206,10 +186,6 @@
           {
             "amount": "0.5",
             "unit": "lb"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "cut into 1/8-inch dice",

@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "Drumsticks or Breasts (bone in, skin on *see head note)",
@@ -28,10 +24,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -74,10 +66,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "sliced",
@@ -92,10 +80,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -124,10 +108,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -142,10 +122,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "124",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -183,15 +159,11 @@
     {
       "raw": "1/2 teaspoon salt (for sauce) (, or more to taste + additional for seasoning chicken)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "for sauce, or more to taste + additional for seasoning chicken",

@@ -28,10 +28,6 @@
           {
             "amount": "720",
             "unit": "ml"
-          },
-          {
-            "amount": "711",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -41,15 +37,11 @@
     {
       "raw": "1 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +56,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +70,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "232",
-            "unit": "g"
           }
         ],
         "note": "peel and cut into 1-1.5 inch cubes",

@@ -10,10 +10,6 @@
           {
             "amount": "1.67",
             "unit": "cup"
-          },
-          {
-            "amount": "377",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "86",
-            "unit": "g"
           }
         ],
         "note": "all natural preferable",
@@ -46,10 +38,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": "sweet soy sauce",
@@ -64,10 +52,6 @@
           {
             "amount": "2.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": "packed",
@@ -82,10 +66,6 @@
           {
             "amount": "2.25",
             "unit": "tbsp"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +80,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "36",
-            "unit": "g"
           }
         ],
         "note": "optional - replace with soy sauce if desired",
@@ -127,7 +103,7 @@
     {
       "raw": "1 pinch salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
@@ -146,10 +122,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.8",
-            "unit": "g"
           }
         ],
         "note": "minced",

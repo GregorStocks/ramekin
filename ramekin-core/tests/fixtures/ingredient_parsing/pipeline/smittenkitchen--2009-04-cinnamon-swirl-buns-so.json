@@ -14,10 +14,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "245",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -33,10 +29,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -52,10 +44,6 @@
           {
             "amount": "3.5",
             "unit": "cup"
-          },
-          {
-            "amount": "438",
-            "unit": "g"
           }
         ],
         "note": "or more, divided",
@@ -71,10 +59,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "100",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -105,10 +89,6 @@
           {
             "amount": "2.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "9",
-            "unit": "g"
           }
         ],
         "note": "from 1 envelope yeast",
@@ -119,15 +99,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -157,10 +133,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "165",
-            "unit": "g"
           }
         ],
         "note": "packed",
@@ -176,10 +148,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -199,10 +167,6 @@
           {
             "amount": "0.5",
             "unit": "stick"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -213,7 +177,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -237,10 +201,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -256,10 +216,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "120",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -279,10 +235,6 @@
           {
             "amount": "0.5",
             "unit": "stick"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": "room temperature",
@@ -298,10 +250,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.2",
-            "unit": "g"
           }
         ],
         "note": null,

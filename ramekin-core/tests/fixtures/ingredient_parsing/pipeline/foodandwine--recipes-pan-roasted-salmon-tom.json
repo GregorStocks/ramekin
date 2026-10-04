@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "pint"
-          },
-          {
-            "amount": "360",
-            "unit": "g"
           }
         ],
         "note": "halved",
@@ -56,10 +52,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -69,7 +61,7 @@
     {
       "raw": "Salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -83,10 +75,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -128,10 +116,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -146,10 +130,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -164,10 +144,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3.8",
-            "unit": "g"
           }
         ],
         "note": null,

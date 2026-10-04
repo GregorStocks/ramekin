@@ -56,10 +56,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "10",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -74,10 +70,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +84,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -124,10 +112,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "minced",
@@ -142,10 +126,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "79",
-            "unit": "g"
           }
         ],
         "note": "cold",
@@ -160,10 +140,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -201,10 +177,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -289,10 +261,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "6.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -311,7 +279,7 @@
     {
       "raw": "salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"

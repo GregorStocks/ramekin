@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "cod, halibut, mahi mahi, tilapia, snapper, sea bass",
@@ -56,10 +52,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -69,15 +61,11 @@
     {
       "raw": "2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -143,15 +131,11 @@
     {
       "raw": "3 teaspoon salt (divided)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "3",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.6",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -231,10 +215,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,

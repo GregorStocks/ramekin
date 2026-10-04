@@ -24,10 +24,6 @@
           {
             "amount": "4",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -37,15 +33,11 @@
     {
       "raw": "2 teaspoon salt (divided)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -60,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -78,10 +66,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.2",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -96,10 +80,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -114,10 +94,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,

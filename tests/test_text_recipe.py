@@ -34,10 +34,11 @@ def test_text_draft_review_save_and_import_parity(authed_api_client):
     assert draft.content.notes == "Serve warm."
     assert draft.warnings == ["Weight estimate unavailable for mystery powder."]
     ingredients = draft.content.ingredients
-    assert ingredients[0].measurements[-1].amount == "125"
-    assert ingredients[0].measurements[-1].unit == "g"
-    assert ingredients[1].measurements[-1].amount == "227"
-    assert len(ingredients[2].measurements) == 1
+    assert [len(i.measurements) for i in ingredients] == [1, 1, 1]
+    assert [d.to_dict() for d in draft.derived_measurements] == [
+        {"ingredient_index": 0, "amount": "125", "unit": "g"},
+        {"ingredient_index": 1, "amount": "227", "unit": "g"},
+    ]
     assert recipes.list_recipes().recipes == []
 
     saved = recipes.create_recipe(
@@ -48,6 +49,7 @@ def test_text_draft_review_save_and_import_parity(authed_api_client):
     )
     recipe = recipes.get_recipe(saved.id)
     assert recipe.ingredients == ingredients
+    assert recipe.derived_measurements == draft.derived_measurements
 
     imported = ImportApi(client).import_recipe(
         {
@@ -77,7 +79,7 @@ def test_reviewed_ingredient_changes_recompute_weights(authed_api_client):
     )
     recipe = RecipesApi(client).get_recipe(saved.id)
     assert recipe.title == "Corrected Pancakes"
-    assert recipe.ingredients[0].measurements[-1].amount == "250"
+    assert recipe.derived_measurements[0].amount == "250"
     assert len(recipe.ingredients[1].measurements) == 1
 
 
@@ -97,10 +99,9 @@ def test_structured_creation_gets_weight_estimates(authed_api_client):
             ],
         }
     )
-    assert (
-        RecipesApi(client).get_recipe(saved.id).ingredients[0].measurements[-1].amount
-        == "125"
-    )
+    recipe = RecipesApi(client).get_recipe(saved.id)
+    assert len(recipe.ingredients[0].measurements) == 1
+    assert recipe.derived_measurements[0].amount == "125"
 
 
 def test_incomplete_text_exposes_missing_fields(authed_api_client):

@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "extra lean",
@@ -74,10 +66,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +80,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "ground",
@@ -110,10 +94,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -137,15 +117,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -160,10 +136,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "240",
-            "unit": "g"
           }
         ],
         "note": "drained and rinsed",
@@ -178,10 +150,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "256",
-            "unit": "g"
           }
         ],
         "note": "drained and rinsed",
@@ -200,10 +168,6 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "737",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -218,10 +182,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "996",
-            "unit": "g"
           }
         ],
         "note": "low sodium, or beef broth",
@@ -236,10 +196,6 @@
           {
             "amount": "10",
             "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
         "note": "uncooked",
@@ -254,10 +210,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "326",
-            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -272,10 +224,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": "chopped",

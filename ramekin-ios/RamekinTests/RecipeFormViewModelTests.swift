@@ -17,7 +17,7 @@ final class RecipeFormViewModelTests: XCTestCase {
             uploadPhoto: { _ in throw TestError.unexpectedCall },
             prepareTextRecipe: { text in
                 XCTAssertEqual(text, "Pasted recipe")
-                return PrepareTextRecipeResponse(content: content, rawIngredients: "1 cup flour", warnings: [])
+                return PrepareTextRecipeResponse(content: content, derivedMeasurements: [], rawIngredients: "1 cup flour", warnings: [])
             }
         ))
         model.recipeText = "Pasted recipe"

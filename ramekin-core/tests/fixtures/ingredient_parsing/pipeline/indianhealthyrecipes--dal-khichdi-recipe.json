@@ -66,10 +66,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": "finely chopped (1 very small, optional)",
@@ -98,10 +94,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "90",
-            "unit": "g"
           }
         ],
         "note": "deseeded & fine chopped or pureed (1 medium)",
@@ -116,10 +108,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -129,15 +117,11 @@
     {
       "raw": "⅓ teaspoon salt ((adjust to taste))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": "adjust to taste",
@@ -166,10 +150,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "104",
-            "unit": "g"
           }
         ],
         "note": "skinless petite yellow lentils, or any other dal",
@@ -184,10 +164,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "948",
-            "unit": "g"
           }
         ],
         "note": "more to adjust, for porridge consistency",

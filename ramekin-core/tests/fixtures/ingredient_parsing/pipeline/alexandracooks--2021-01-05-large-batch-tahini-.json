@@ -10,10 +10,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "160",
-            "unit": "g"
           }
         ],
         "note": "see notes above",
@@ -28,10 +24,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "216",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "1.33",
             "unit": "cup"
-          },
-          {
-            "amount": "316",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -77,7 +61,7 @@
     {
       "raw": "2 to 3 teaspoons salt, see notes above",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2 to 3",
@@ -110,10 +94,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": null,

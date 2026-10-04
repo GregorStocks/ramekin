@@ -24,10 +24,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "2 sticks/1/2 pound/230g, at room temperature",
@@ -42,10 +38,6 @@
           {
             "amount": "4.75",
             "unit": "cup"
-          },
-          {
-            "amount": "594",
-            "unit": "g"
           }
         ],
         "note": "620g, divided",
@@ -91,7 +83,7 @@
     {
       "raw": "1½ teaspoons salt ((8g))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1.5",
@@ -118,10 +110,6 @@
           {
             "amount": "120",
             "unit": "ml"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": "120 ml, about 120 degrees F/49 degrees C",

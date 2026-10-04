@@ -68,10 +68,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "249",
-            "unit": "g"
           }
         ],
         "note": "240g/ml, I use reduced-sodium",
@@ -163,15 +159,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -186,10 +178,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -204,10 +192,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.3",
-            "unit": "g"
           }
         ],
         "note": "reduce to 1 teaspoon for less spicy chili",
@@ -222,10 +206,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6",
-            "unit": "g"
           }
         ],
         "note": null,

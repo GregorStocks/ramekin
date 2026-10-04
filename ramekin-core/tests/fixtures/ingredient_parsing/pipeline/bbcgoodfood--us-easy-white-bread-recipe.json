@@ -10,10 +10,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "508",
-            "unit": "g"
           }
         ],
         "note": "plus extra for dusting",
@@ -23,15 +19,11 @@
     {
       "raw": "2 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "2.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -28,10 +28,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +42,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -59,15 +51,11 @@
     {
       "raw": "1/4 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +70,6 @@
           {
             "amount": "1.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +84,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +98,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -137,10 +113,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -188,10 +160,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "163",
-            "unit": "g"
           }
         ],
         "note": "at room temperature if refrigerated",
@@ -206,10 +174,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -228,10 +192,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -282,10 +242,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,

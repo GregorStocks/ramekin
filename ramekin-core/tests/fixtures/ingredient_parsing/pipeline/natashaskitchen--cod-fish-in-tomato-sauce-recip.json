@@ -10,10 +10,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -56,10 +52,6 @@
           {
             "amount": "6",
             "unit": "oz"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -74,10 +66,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "442",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -106,10 +94,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -138,10 +122,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "21",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -156,10 +136,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "cut into 3-inch pieces (drain well, and pat dry with paper towels)",
@@ -174,10 +150,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "83",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -187,15 +159,11 @@
     {
       "raw": "1 tsp salt (I used sea salt)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "I used sea salt",
@@ -224,10 +192,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "54",
-            "unit": "g"
           }
         ],
         "note": "to sautee fish",

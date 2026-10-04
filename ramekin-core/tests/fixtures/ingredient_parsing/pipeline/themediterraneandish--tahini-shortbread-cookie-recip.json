@@ -14,10 +14,6 @@
           {
             "amount": "7",
             "unit": "oz"
-          },
-          {
-            "amount": "198",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -32,10 +28,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "200",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -50,10 +42,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "240",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -68,10 +56,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "250",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -86,10 +70,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -99,7 +79,7 @@
     {
       "raw": "pinch salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,

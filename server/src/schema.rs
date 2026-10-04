@@ -14,6 +14,13 @@ diesel::table! {
 }
 
 diesel::table! {
+    data_migrations (name) {
+        name -> Text,
+        run_at -> Timestamptz,
+    }
+}
+
+diesel::table! {
     ingredient_name_resolutions (name) {
         name -> Text,
         status -> Text,
@@ -241,6 +248,7 @@ diesel::joinable!(user_tags -> users (user_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
     client_log_uploads,
+    data_migrations,
     ingredient_name_resolutions,
     ingredient_weight_estimates,
     meal_plans,

@@ -2,7 +2,7 @@ use super::read::fetch_current_recipe_with_version_and_tags;
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::models::{Ingredient, RecipeVersion};
+use crate::models::{derived_measurements, DerivedMeasurement, Ingredient, RecipeVersion};
 use crate::raw_sql;
 use crate::schema::{recipe_versions, recipes};
 use axum::{
@@ -24,6 +24,8 @@ pub struct RecipeResponse {
     pub title: String,
     pub description: Option<String>,
     pub ingredients: Vec<Ingredient>,
+    /// Approximate grams for ingredients that have them, in ingredient order.
+    pub derived_measurements: Vec<DerivedMeasurement>,
     pub instructions: String,
     pub source_url: Option<String>,
     pub source_name: Option<String>,
@@ -53,13 +55,15 @@ impl RecipeResponse {
         version: RecipeVersion,
         tags: Vec<String>,
     ) -> Result<Self, serde_json::Error> {
-        let ingredients = serde_json::from_value(version.ingredients.clone())?;
+        let ingredients = Vec::<Ingredient>::deserialize(&version.ingredients)?;
+        let derived_measurements = derived_measurements(&ingredients);
 
         Ok(Self {
             id,
             title: version.title,
             description: version.description,
             ingredients,
+            derived_measurements,
             instructions: version.instructions,
             source_url: version.source_url,
             source_name: version.source_name,

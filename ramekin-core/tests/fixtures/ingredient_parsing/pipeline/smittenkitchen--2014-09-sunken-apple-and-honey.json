@@ -29,10 +29,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -48,10 +44,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "25",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -94,10 +86,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "75",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -113,10 +101,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "any variety you like to eat",
@@ -132,10 +116,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -161,7 +141,7 @@
     {
       "raw": "2 good pinches of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
@@ -181,10 +161,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "9.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -200,10 +176,6 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "156",
-            "unit": "g"
           }
         ],
         "note": null,

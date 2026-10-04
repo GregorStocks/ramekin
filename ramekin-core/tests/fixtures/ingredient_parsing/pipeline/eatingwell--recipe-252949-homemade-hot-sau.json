@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "138",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +84,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "about 3 cups, diced",
@@ -110,10 +98,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "238",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -123,15 +107,11 @@
     {
       "raw": "2 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,

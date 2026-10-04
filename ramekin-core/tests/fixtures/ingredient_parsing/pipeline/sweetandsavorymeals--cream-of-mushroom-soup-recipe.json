@@ -10,10 +10,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": "unsalted",
@@ -56,10 +52,6 @@
           {
             "amount": "5",
             "unit": "cup"
-          },
-          {
-            "amount": "415",
-            "unit": "g"
           }
         ],
         "note": "sliced",
@@ -74,10 +66,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "47",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +80,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "996",
-            "unit": "g"
           }
         ],
         "note": "vegetable broth or water",
@@ -110,10 +94,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -128,10 +108,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": "or use more broth for an alcohol-free version",
@@ -146,10 +122,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -164,10 +136,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -196,10 +164,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": "optional",
@@ -209,15 +173,11 @@
     {
       "raw": "1/2 teaspoon salt or to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -246,10 +206,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "238",
-            "unit": "g"
           }
         ],
         "note": null,

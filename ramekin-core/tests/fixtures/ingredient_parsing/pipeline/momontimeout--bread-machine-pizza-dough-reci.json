@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "250",
-            "unit": "g"
           }
         ],
         "note": "I like to use bread flour but all purpose and even a combination of AP and wheat flour works",
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "softened",
@@ -46,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "12",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -77,15 +61,11 @@
     {
       "raw": "1 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +80,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": "105-110 degrees",
@@ -118,10 +94,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": "additional",
@@ -136,10 +108,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "500",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -154,10 +122,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": "softened",
@@ -172,10 +136,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "25",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -190,10 +150,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -203,15 +159,11 @@
     {
       "raw": "2 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -226,10 +178,6 @@
           {
             "amount": "1.33",
             "unit": "cup"
-          },
-          {
-            "amount": "316",
-            "unit": "g"
           }
         ],
         "note": "105-110 degrees",

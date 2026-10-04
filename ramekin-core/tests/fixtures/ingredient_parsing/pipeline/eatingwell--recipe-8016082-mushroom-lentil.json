@@ -10,10 +10,6 @@
           {
             "amount": "1.5",
             "unit": "oz"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": "such as shiitake and porcini",
@@ -28,10 +24,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "711",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "69",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -96,10 +80,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -114,10 +94,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -146,10 +122,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "33",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -178,10 +150,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "4.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -196,10 +164,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -228,10 +192,6 @@
           {
             "amount": "5",
             "unit": "cup"
-          },
-          {
-            "amount": "1105",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -246,10 +206,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "20",
-            "unit": "g"
           }
         ],
         "note": "plus more for garnish",
@@ -264,10 +220,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -282,10 +234,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "10",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -295,15 +243,11 @@
     {
       "raw": "0.75 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": null,

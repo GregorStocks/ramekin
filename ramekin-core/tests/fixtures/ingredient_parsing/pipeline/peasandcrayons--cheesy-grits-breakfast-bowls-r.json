@@ -24,10 +24,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "474",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": "g"
           }
         ],
         "note": "to taste",
@@ -73,15 +61,11 @@
     {
       "raw": "¼ teaspoon salt (plus extra to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": "plus extra to taste",
@@ -96,10 +80,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
         "note": "or extra to taste",
@@ -114,10 +94,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -132,10 +108,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "31",
-            "unit": "g"
           }
         ],
         "note": "plus extra if desired to thin",

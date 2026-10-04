@@ -62,6 +62,7 @@ describe("recipe form request serialization", () => {
       description: null,
       instructions: "Toast bread.",
       ingredients: [],
+      derivedMeasurements: [],
       photoIds: ["photo-1"],
       tags: ["breakfast"],
       createdAt: new Date("2026-01-01T00:00:00Z"),

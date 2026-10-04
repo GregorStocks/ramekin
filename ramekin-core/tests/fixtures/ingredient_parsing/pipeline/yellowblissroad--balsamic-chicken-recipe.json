@@ -10,10 +10,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "83",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "64",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -78,10 +70,6 @@
           {
             "amount": "10-12",
             "unit": "piece"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": "about 10-12 pieces",
@@ -96,10 +84,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -109,7 +93,7 @@
     {
       "raw": "salt to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"

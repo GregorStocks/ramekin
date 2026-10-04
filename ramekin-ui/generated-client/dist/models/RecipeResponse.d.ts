@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 import type { Ingredient } from './Ingredient';
+import type { DerivedMeasurement } from './DerivedMeasurement';
 /**
  *
  * @export
@@ -28,6 +29,12 @@ export interface RecipeResponse {
      * @memberof RecipeResponse
      */
     createdAt: Date;
+    /**
+     * Approximate grams for ingredients that have them, in ingredient order.
+     * @type {Array<DerivedMeasurement>}
+     * @memberof RecipeResponse
+     */
+    derivedMeasurements: Array<DerivedMeasurement>;
     /**
      *
      * @type {string}

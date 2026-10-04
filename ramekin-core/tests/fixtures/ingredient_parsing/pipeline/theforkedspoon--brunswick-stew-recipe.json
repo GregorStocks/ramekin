@@ -10,10 +10,6 @@
           {
             "amount": "3-4",
             "unit": "lb"
-          },
-          {
-            "amount": "1361-1814",
-            "unit": "g"
           }
         ],
         "note": "see notes",
@@ -37,10 +33,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -55,10 +47,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -119,10 +107,6 @@
           {
             "amount": "15",
             "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
         "note": "drained (or frozen corn)",
@@ -137,10 +121,6 @@
           {
             "amount": "12",
             "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -159,10 +139,6 @@
           {
             "amount": "15",
             "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -177,10 +153,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "996",
-            "unit": "g"
           }
         ],
         "note": "or chicken stock",
@@ -195,10 +167,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "282",
-            "unit": "g"
           }
         ],
         "note": "plus more to taste",
@@ -213,10 +181,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -231,10 +195,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -244,15 +204,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -281,10 +237,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.9",
-            "unit": "g"
           }
         ],
         "note": "optional",

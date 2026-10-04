@@ -10,10 +10,6 @@
           {
             "amount": "4",
             "unit": "lb"
-          },
-          {
-            "amount": "1814",
-            "unit": "g"
           }
         ],
         "note": "some swear by romas, I’ve had success with all varieties",
@@ -28,10 +24,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "54",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -97,15 +89,11 @@
     {
       "raw": "1/2 teaspoon salt plus more to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "plus more to taste",

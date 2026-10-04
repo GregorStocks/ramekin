@@ -14,10 +14,6 @@
           {
             "amount": "8",
             "unit": "cup"
-          },
-          {
-            "amount": "1134",
-            "unit": "g"
           }
         ],
         "note": "about 8 cups, cut into 1/4-inch slices",
@@ -32,10 +28,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -54,10 +46,6 @@
           {
             "amount": "2",
             "unit": "oz"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": "about 2 ounces, chopped",
@@ -76,10 +64,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "138",
-            "unit": "g"
           }
         ],
         "note": "about 1 cup, finely chopped",
@@ -94,10 +78,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "23",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -107,15 +87,11 @@
     {
       "raw": "0.5 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -144,10 +120,6 @@
           {
             "amount": "2.5",
             "unit": "cup"
-          },
-          {
-            "amount": "610",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -162,10 +134,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "82",
-            "unit": "g"
           }
         ],
         "note": "divided",

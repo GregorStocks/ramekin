@@ -10,10 +10,6 @@
           {
             "amount": "0.5",
             "unit": "lb"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "38",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -74,10 +66,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "12",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +80,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,10 +94,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -142,10 +122,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -160,10 +136,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -178,10 +150,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "9.1",
-            "unit": "g"
           }
         ],
         "note": "I replace 1 teaspoon with hot sesame oil - delicious",
@@ -210,10 +178,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -256,10 +220,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "83",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -274,10 +234,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "64",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -292,10 +248,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -310,10 +262,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "or 1/2 tablespoon dark, 1/2 tablespoon hot sesame oil",
@@ -356,10 +304,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "64",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -374,10 +318,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "41",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -392,10 +332,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": "not seasoned",
@@ -410,10 +346,6 @@
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "19",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -428,10 +360,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -455,15 +383,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,

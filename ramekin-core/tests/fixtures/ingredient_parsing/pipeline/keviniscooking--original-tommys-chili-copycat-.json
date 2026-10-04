@@ -66,10 +66,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "711",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -84,10 +80,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "See Note 1",
@@ -102,10 +94,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "24",
-            "unit": "g"
           }
         ],
         "note": "mine in link or your favorite",
@@ -148,10 +136,6 @@
           {
             "amount": "4",
             "unit": "tsp"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -166,10 +150,6 @@
           {
             "amount": "4",
             "unit": "tsp"
-          },
-          {
-            "amount": "9.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -179,15 +159,11 @@
     {
       "raw": "3 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "3",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -202,10 +178,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "9.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -220,10 +192,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -252,10 +220,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "83",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -270,10 +234,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "38",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -288,10 +248,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "474",
-            "unit": "g"
           }
         ],
         "note": null,

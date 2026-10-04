@@ -38,10 +38,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "59",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -56,10 +52,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -74,10 +66,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +80,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,10 +94,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -128,10 +108,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -141,15 +117,11 @@
     {
       "raw": "1 teaspoon salt (I start with a teaspoon and taste, adding more if necessary)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "I start with a teaspoon and taste, adding more if necessary",
@@ -178,10 +150,6 @@
           {
             "amount": "29",
             "unit": "oz"
-          },
-          {
-            "amount": "822",
-            "unit": "g"
           }
         ],
         "note": "29 ounces is two 14.5 ounce cans or about 4 cups of diced tomatoes with juices",
@@ -196,10 +164,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "498",
-            "unit": "g"
           }
         ],
         "note": "low sodium",
@@ -214,10 +178,6 @@
           {
             "amount": "46.5",
             "unit": "oz"
-          },
-          {
-            "amount": "1318",
-            "unit": "g"
           }
         ],
         "note": "46.5 ounces equals 3 15.5 ounce cans, or about 5 1/2 cups of canned kidney beans",
@@ -246,10 +206,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": "optional",

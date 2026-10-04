@@ -45,7 +45,7 @@
     {
       "raw": "1 teaspoon (6.6 grams) salt (the more authentic bialys I have had use a bit more salt, so feel free to dial it up if you like a saltier roll)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
@@ -94,10 +94,6 @@
           {
             "amount": "2.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "10",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -136,10 +132,6 @@
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.2",
-            "unit": "g"
           }
         ],
         "note": "I love poppy seeds on a bialy, but this did seem more than I was used to; I might dial it back next time",

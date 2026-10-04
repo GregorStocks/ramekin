@@ -10,10 +10,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "114",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "71",
-            "unit": "g"
           }
         ],
         "note": "softened",
@@ -59,15 +51,11 @@
     {
       "raw": "1/2 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -95,10 +83,6 @@
           {
             "amount": "4 to 5",
             "unit": "cup"
-          },
-          {
-            "amount": "480",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -113,10 +97,6 @@
           {
             "amount": "10",
             "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
         "note": "I used CandiQuik",

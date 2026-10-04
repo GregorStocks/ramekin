@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -74,10 +66,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": "minced",
@@ -92,10 +80,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,10 +94,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -123,7 +103,7 @@
     {
       "raw": "salt, to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"
@@ -146,10 +126,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "132",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -164,10 +140,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "470",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -182,10 +154,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "960",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -200,10 +168,6 @@
           {
             "amount": "15",
             "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -232,10 +196,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "80",
-            "unit": "g"
           }
         ],
         "note": "plus more to taste",
@@ -250,10 +210,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -277,7 +233,7 @@
     {
       "raw": "salt, to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"
@@ -300,10 +256,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "cooked",

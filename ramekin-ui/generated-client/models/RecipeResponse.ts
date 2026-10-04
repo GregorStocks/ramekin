@@ -20,6 +20,13 @@ import {
     IngredientToJSON,
     IngredientToJSONTyped,
 } from './Ingredient';
+import type { DerivedMeasurement } from './DerivedMeasurement';
+import {
+    DerivedMeasurementFromJSON,
+    DerivedMeasurementFromJSONTyped,
+    DerivedMeasurementToJSON,
+    DerivedMeasurementToJSONTyped,
+} from './DerivedMeasurement';
 
 /**
  * 
@@ -39,6 +46,12 @@ export interface RecipeResponse {
      * @memberof RecipeResponse
      */
     createdAt: Date;
+    /**
+     * Approximate grams for ingredients that have them, in ingredient order.
+     * @type {Array<DerivedMeasurement>}
+     * @memberof RecipeResponse
+     */
+    derivedMeasurements: Array<DerivedMeasurement>;
     /**
      * 
      * @type {string}
@@ -160,6 +173,7 @@ export interface RecipeResponse {
  */
 export function instanceOfRecipeResponse(value: object): value is RecipeResponse {
     if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
+    if (!('derivedMeasurements' in value) || value['derivedMeasurements'] === undefined) return false;
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('ingredients' in value) || value['ingredients'] === undefined) return false;
     if (!('instructions' in value) || value['instructions'] === undefined) return false;
@@ -184,6 +198,7 @@ export function RecipeResponseFromJSONTyped(json: any, ignoreDiscriminator: bool
         
         'cookTime': json['cook_time'] == null ? undefined : json['cook_time'],
         'createdAt': (new Date(json['created_at'])),
+        'derivedMeasurements': ((json['derived_measurements'] as Array<any>).map(DerivedMeasurementFromJSON)),
         'description': json['description'] == null ? undefined : json['description'],
         'difficulty': json['difficulty'] == null ? undefined : json['difficulty'],
         'id': json['id'],
@@ -219,6 +234,7 @@ export function RecipeResponseToJSONTyped(value?: RecipeResponse | null, ignoreD
         
         'cook_time': value['cookTime'],
         'created_at': value['createdAt'].toISOString(),
+        'derived_measurements': ((value['derivedMeasurements'] as Array<any>).map(DerivedMeasurementToJSON)),
         'description': value['description'],
         'difficulty': value['difficulty'],
         'id': value['id'],

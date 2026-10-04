@@ -24,10 +24,6 @@
           {
             "amount": "1.75",
             "unit": "cup"
-          },
-          {
-            "amount": "285",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -51,7 +47,7 @@
     {
       "raw": "salt, to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"

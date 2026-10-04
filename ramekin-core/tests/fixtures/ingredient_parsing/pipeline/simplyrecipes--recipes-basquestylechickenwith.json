@@ -33,10 +33,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -55,10 +51,6 @@
           {
             "amount": "3",
             "unit": "lb"
-          },
-          {
-            "amount": "1361",
-            "unit": "g"
           }
         ],
         "note": "about 3 pounds",
@@ -68,15 +60,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -119,10 +107,6 @@
           {
             "amount": "0.25",
             "unit": "lb"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": "one thick piece, cut into matchsticks",
@@ -179,10 +163,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "249",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -211,10 +191,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": null,

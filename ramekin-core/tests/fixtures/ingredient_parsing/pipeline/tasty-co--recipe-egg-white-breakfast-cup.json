@@ -19,10 +19,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -51,10 +47,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "486",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,7 +56,7 @@
     {
       "raw": "salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"

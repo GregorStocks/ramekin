@@ -14,10 +14,6 @@
           {
             "amount": "555",
             "unit": "ml"
-          },
-          {
-            "amount": "533",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -63,7 +59,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -100,10 +96,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.2",
-            "unit": "g"
           }
         ],
         "note": null,

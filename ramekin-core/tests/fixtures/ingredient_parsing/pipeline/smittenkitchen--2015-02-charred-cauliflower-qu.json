@@ -116,10 +116,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": "plus more for cooking quesadillas",
@@ -148,10 +144,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -170,10 +162,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "about 8 ounces",
@@ -202,10 +190,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "121",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -229,10 +213,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -247,10 +227,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -260,7 +236,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -343,10 +319,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,

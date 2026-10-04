@@ -10,10 +10,6 @@
           {
             "amount": "1.5 to 2",
             "unit": "lb"
-          },
-          {
-            "amount": "680 to 907",
-            "unit": "g"
           }
         ],
         "note": "such as halibut, swordfish, or cod, rinsed in cold water, pin bones removed, cut into large portions",
@@ -42,10 +38,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -55,7 +47,7 @@
     {
       "raw": "Salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -87,10 +79,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "100",
-            "unit": "g"
           }
         ],
         "note": "or 1 medium yellow onion, chopped or sliced",
@@ -133,10 +121,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "360",
-            "unit": "g"
           }
         ],
         "note": "or sliced",
@@ -151,10 +135,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6.8",
-            "unit": "g"
           }
         ],
         "note": "Hungarian sweet",
@@ -211,10 +191,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -257,10 +233,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "185",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -275,10 +247,6 @@
           {
             "amount": "1.75",
             "unit": "cup"
-          },
-          {
-            "amount": "415",
-            "unit": "g"
           }
         ],
         "note": "check your rice package for the appropriate ratio of liquid to rice for the type of rice you are using",
@@ -288,15 +256,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,

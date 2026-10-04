@@ -10,10 +10,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "330",
-            "unit": "g"
           }
         ],
         "note": "without the fruit or nuts",
@@ -28,10 +24,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "116",
-            "unit": "g"
           }
         ],
         "note": "regular or golden",
@@ -46,10 +38,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "73",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "55",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +66,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "46",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +80,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "38",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -122,10 +98,6 @@
           {
             "amount": "7",
             "unit": "oz"
-          },
-          {
-            "amount": "198",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -140,10 +112,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "165",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -158,10 +126,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -185,15 +149,11 @@
     {
       "raw": "¼ teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -208,10 +168,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "125",
-            "unit": "g"
           }
         ],
         "note": null,

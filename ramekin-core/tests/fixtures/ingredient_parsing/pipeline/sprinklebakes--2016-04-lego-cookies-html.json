@@ -10,10 +10,6 @@
           {
             "amount": "0.5",
             "unit": "lb"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -56,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -87,7 +79,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -106,10 +98,6 @@
           {
             "amount": "12",
             "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -124,10 +112,6 @@
           {
             "amount": "12",
             "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -142,10 +126,6 @@
           {
             "amount": "1.5",
             "unit": "lb"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": null,

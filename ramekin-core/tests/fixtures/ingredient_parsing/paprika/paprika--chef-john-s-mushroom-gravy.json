@@ -10,10 +10,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "16",
             "unit": "oz"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -41,7 +33,7 @@
     {
       "raw": "salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -55,10 +47,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "31",
-            "unit": "g"
           }
         ],
         "note": "or as needed",
@@ -73,10 +61,6 @@
           {
             "amount": "1",
             "unit": "quart"
-          },
-          {
-            "amount": "960",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -24,10 +24,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "126",
-            "unit": "g"
           }
         ],
         "note": "plus 1/4 cup extra for serving. Use this recipe for homemade pesto or you can use store bought.",
@@ -37,15 +33,11 @@
     {
       "raw": "1/4 teaspoon salt (optional - adjust to your tastes)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": "optional - adjust to your tastes",

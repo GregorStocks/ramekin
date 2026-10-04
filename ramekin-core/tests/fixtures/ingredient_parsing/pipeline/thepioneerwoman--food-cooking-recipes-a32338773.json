@@ -10,10 +10,6 @@
           {
             "amount": "3",
             "unit": "lb"
-          },
-          {
-            "amount": "1361",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -23,15 +19,11 @@
     {
       "raw": "1 tbsp. salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -74,10 +66,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.5",
-            "unit": "g"
           }
         ],
         "note": "plus more for grilling",

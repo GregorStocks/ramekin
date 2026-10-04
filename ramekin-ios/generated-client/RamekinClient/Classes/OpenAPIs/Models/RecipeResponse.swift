@@ -14,6 +14,8 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
 
     public var cookTime: String?
     public var createdAt: Date
+    /** Approximate grams for ingredients that have them, in ingredient order. */
+    public var derivedMeasurements: [DerivedMeasurement]
     public var description: String?
     public var difficulty: String?
     public var id: UUID
@@ -36,9 +38,10 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
     public var versionId: UUID
     public var versionSource: String
 
-    public init(cookTime: String? = nil, createdAt: Date, description: String? = nil, difficulty: String? = nil, id: UUID, ingredients: [Ingredient], instructions: String, notes: String? = nil, nutritionalInfo: String? = nil, photoIds: [UUID], prepTime: String? = nil, rating: Int? = nil, servings: String? = nil, sourceName: String? = nil, sourceUrl: String? = nil, tags: [String], title: String, totalTime: String? = nil, updatedAt: Date, versionId: UUID, versionSource: String) {
+    public init(cookTime: String? = nil, createdAt: Date, derivedMeasurements: [DerivedMeasurement], description: String? = nil, difficulty: String? = nil, id: UUID, ingredients: [Ingredient], instructions: String, notes: String? = nil, nutritionalInfo: String? = nil, photoIds: [UUID], prepTime: String? = nil, rating: Int? = nil, servings: String? = nil, sourceName: String? = nil, sourceUrl: String? = nil, tags: [String], title: String, totalTime: String? = nil, updatedAt: Date, versionId: UUID, versionSource: String) {
         self.cookTime = cookTime
         self.createdAt = createdAt
+        self.derivedMeasurements = derivedMeasurements
         self.description = description
         self.difficulty = difficulty
         self.id = id
@@ -63,6 +66,7 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case cookTime = "cook_time"
         case createdAt = "created_at"
+        case derivedMeasurements = "derived_measurements"
         case description
         case difficulty
         case id
@@ -90,6 +94,7 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(cookTime, forKey: .cookTime)
         try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(derivedMeasurements, forKey: .derivedMeasurements)
         try container.encodeIfPresent(description, forKey: .description)
         try container.encodeIfPresent(difficulty, forKey: .difficulty)
         try container.encode(id, forKey: .id)

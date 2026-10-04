@@ -14,10 +14,6 @@
           {
             "amount": "13.66",
             "unit": "oz"
-          },
-          {
-            "amount": "387",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -32,10 +28,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "185",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -50,10 +42,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -77,15 +65,11 @@
     {
       "raw": "1/2 teaspoon salt, divided",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -100,10 +84,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "31-40 per pound, peeled and deveined",

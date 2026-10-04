@@ -14,10 +14,6 @@
           {
             "amount": "1 to 1.5",
             "unit": "lb"
-          },
-          {
-            "amount": "454 to 680",
-            "unit": "g"
           }
         ],
         "note": "skin removed",
@@ -32,10 +28,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "185",
-            "unit": "g"
           }
         ],
         "note": "like basmati",
@@ -101,15 +93,11 @@
     {
       "raw": "1 teaspoon salt, plus more to taste (see Recipe Note)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "see Recipe Note, plus more to taste",
@@ -138,10 +126,6 @@
           {
             "amount": "2",
             "unit": "quart"
-          },
-          {
-            "amount": "1992",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -156,10 +140,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "46",
-            "unit": "g"
           }
         ],
         "note": "about 3 tablespoons",

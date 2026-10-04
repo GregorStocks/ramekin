@@ -14,10 +14,6 @@
           {
             "amount": "4",
             "unit": "lb"
-          },
-          {
-            "amount": "1814",
-            "unit": "g"
           }
         ],
         "note": "about 4 pounds",
@@ -55,10 +51,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "124",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -68,15 +60,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -109,10 +97,6 @@
           {
             "amount": "12",
             "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": "about 12 ounces, cut in half with scissors",

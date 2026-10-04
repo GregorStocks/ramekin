@@ -24,10 +24,6 @@
           {
             "amount": "5",
             "unit": "oz"
-          },
-          {
-            "amount": "142",
-            "unit": "g"
           }
         ],
         "note": "skin off",
@@ -42,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -55,7 +47,7 @@
     {
       "raw": "1 pinch salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
@@ -172,10 +164,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "46",
-            "unit": "g"
           }
         ],
         "note": "full fat or reduced fat",
@@ -190,10 +178,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -250,10 +234,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6.2",
-            "unit": "g"
           }
         ],
         "note": null,

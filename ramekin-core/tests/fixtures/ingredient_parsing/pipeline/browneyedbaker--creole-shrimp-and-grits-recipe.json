@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "26/30 count",
@@ -28,10 +24,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "948",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "42",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -152,10 +136,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -170,10 +150,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -188,10 +164,6 @@
           {
             "amount": "6",
             "unit": "oz"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -220,10 +192,6 @@
           {
             "amount": "2.5",
             "unit": "cup"
-          },
-          {
-            "amount": "612",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -238,10 +206,6 @@
           {
             "amount": "2.5",
             "unit": "cup"
-          },
-          {
-            "amount": "592",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -251,15 +215,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,

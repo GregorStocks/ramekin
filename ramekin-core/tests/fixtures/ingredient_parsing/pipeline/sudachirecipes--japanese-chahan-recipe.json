@@ -10,10 +10,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -107,7 +103,7 @@
     {
       "raw": "2 g salt (1% of the rice quantity, approx ¼ tsp per 200g)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
@@ -126,10 +122,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,

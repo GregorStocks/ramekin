@@ -1,0 +1,21 @@
+{
+  "title": "Use learned ingredient names for read-time derived grams",
+  "description": "RecipeResponse.derived_measurements (server/src/models.rs derived_measurements -> ramekin_core::derived_grams) resolves densities through the committed catalog only (catalog::line_grams_per_cup). \
+Calorie estimates also consult learned names (catalog::line_grams_per_cup_with with ingredient_names::load_learned), so a name the LLM mapped to a catalog entry ('heaping cups of AP flour' -> 'all-purpose flour') gets calories but no gram amount.\n\
+\n\
+Load the learned map for a recipe's items on GET /api/recipes/{id} and POST /api/import/text, and pass it through derived_grams. \
+Learned estimates (LearnedTarget::Estimate) must stay excluded, as the catalog README says. \
+Until then, a learned name reaches derived grams only once it's harvested into curated.json (make catalog-harvest-learned). \
+Watch the read path's query count (one extra indexed lookup per recipe read). \
+The iOS offline cache stores no derived grams (it only feeds local search), so no cache invalidation is needed. \
+No pipeline impact.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "nutrition",
+    "api",
+  ],
+  "created_at": "2026-10-04T00:00:00-07:00",
+  "updated_at": "2026-10-04T00:00:00-07:00",
+}

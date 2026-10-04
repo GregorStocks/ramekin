@@ -38,10 +38,6 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "150",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -51,15 +47,11 @@
     {
       "raw": "1/4 teaspoon salt plus additional to taste (I used an extra 1/8 teaspoon)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": "I used an extra 1/8 teaspoon, plus additional to taste",
@@ -74,10 +66,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,

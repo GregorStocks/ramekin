@@ -11,12 +11,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { DerivedMeasurementFromJSON, DerivedMeasurementToJSON, } from './DerivedMeasurement';
 import { RecipeContentFromJSON, RecipeContentToJSON, } from './RecipeContent';
 /**
  * Check if a given object implements the PrepareTextRecipeResponse interface.
  */
 export function instanceOfPrepareTextRecipeResponse(value) {
     if (!('content' in value) || value['content'] === undefined)
+        return false;
+    if (!('derivedMeasurements' in value) || value['derivedMeasurements'] === undefined)
         return false;
     if (!('rawIngredients' in value) || value['rawIngredients'] === undefined)
         return false;
@@ -33,6 +36,7 @@ export function PrepareTextRecipeResponseFromJSONTyped(json, ignoreDiscriminator
     }
     return {
         'content': RecipeContentFromJSON(json['content']),
+        'derivedMeasurements': (json['derived_measurements'].map(DerivedMeasurementFromJSON)),
         'rawIngredients': json['raw_ingredients'],
         'warnings': json['warnings'],
     };
@@ -46,6 +50,7 @@ export function PrepareTextRecipeResponseToJSONTyped(value, ignoreDiscriminator 
     }
     return {
         'content': RecipeContentToJSON(value['content']),
+        'derived_measurements': (value['derivedMeasurements'].map(DerivedMeasurementToJSON)),
         'raw_ingredients': value['rawIngredients'],
         'warnings': value['warnings'],
     };

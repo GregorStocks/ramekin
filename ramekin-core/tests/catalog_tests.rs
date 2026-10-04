@@ -1,6 +1,6 @@
 use ramekin_core::catalog::{
     category, chosen_alternative, food, grams_per_cup, grams_per_piece, resolve, resolve_line,
-    rewrite, version, Kind, Resolution, Via,
+    version, Kind, Resolution, Via,
 };
 
 fn density(item: &str) -> f64 {
@@ -201,11 +201,7 @@ fn resolution_reports_how_it_matched() {
 }
 
 #[test]
-fn rewrites_and_version() {
-    assert_eq!(rewrite("salt"), Some("kosher salt"));
-    assert_eq!(rewrite(" Salt "), Some("kosher salt"));
-    assert_eq!(rewrite("kosher salt"), None);
-    assert_eq!(rewrite("flour"), None);
+fn version_is_stable() {
     assert!(version().starts_with("catalog-v2-sr2018-"));
     assert_eq!(version(), version());
 }

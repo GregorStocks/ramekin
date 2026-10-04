@@ -27,15 +27,11 @@
     {
       "raw": "1/2 teaspoon salt (, or to personal taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "or to personal taste",
@@ -59,10 +55,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -77,10 +69,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": "softened (not melted)",
@@ -95,10 +83,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "17",
-            "unit": "g"
           }
         ],
         "note": "about 3 large cloves",
@@ -113,10 +97,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3.8",
-            "unit": "g"
           }
         ],
         "note": null,

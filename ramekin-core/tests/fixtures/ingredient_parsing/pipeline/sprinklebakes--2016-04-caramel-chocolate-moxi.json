@@ -10,10 +10,6 @@
           {
             "amount": "3",
             "unit": "oz"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "356",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +92,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "9.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +106,6 @@
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -131,15 +115,11 @@
     {
       "raw": "1 1/4 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -168,10 +148,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "164",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -204,10 +180,6 @@
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -240,10 +212,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "59",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -258,10 +226,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "119",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -276,10 +240,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -294,10 +254,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -344,10 +300,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -366,10 +318,6 @@
           {
             "amount": "120",
             "unit": "ml"
-          },
-          {
-            "amount": "119",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -402,10 +350,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,

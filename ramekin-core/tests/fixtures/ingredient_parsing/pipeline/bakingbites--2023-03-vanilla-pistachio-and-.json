@@ -19,10 +19,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "250",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -37,10 +33,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -55,10 +47,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -68,15 +56,11 @@
     {
       "raw": "1/2 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -91,10 +75,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "114",
-            "unit": "g"
           }
         ],
         "note": "room temperature",
@@ -109,10 +89,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "200",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -141,10 +117,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -159,10 +131,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "163",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -177,10 +145,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "62",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -195,10 +159,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "10",
-            "unit": "g"
           }
         ],
         "note": "finely chopped",

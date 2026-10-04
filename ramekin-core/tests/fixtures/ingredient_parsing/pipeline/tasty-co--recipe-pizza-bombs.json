@@ -10,10 +10,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": "for greasing the pan",
@@ -28,10 +24,6 @@
           {
             "amount": "16.5",
             "unit": "oz"
-          },
-          {
-            "amount": "468",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +56,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "cut into cubes",
@@ -100,7 +88,7 @@
     {
       "raw": "salt, to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"

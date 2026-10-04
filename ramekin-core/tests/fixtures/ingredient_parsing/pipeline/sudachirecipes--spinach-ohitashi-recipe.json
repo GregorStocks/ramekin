@@ -24,10 +24,6 @@
           {
             "amount": "240",
             "unit": "ml"
-          },
-          {
-            "amount": "248",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
         "note": "koikuchi shoyu",
@@ -60,10 +52,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -78,10 +66,6 @@
           {
             "amount": "2",
             "unit": "l"
-          },
-          {
-            "amount": "2003",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -91,15 +75,11 @@
     {
       "raw": "1 tbsp salt (1% the weight of cooking water)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.6",
-            "unit": "g"
           }
         ],
         "note": "1% the weight of cooking water",

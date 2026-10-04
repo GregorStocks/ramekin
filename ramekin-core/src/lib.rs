@@ -38,7 +38,7 @@ pub use types::{
     FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, ParseIngredientsOutput, PipelineStep,
     RawRecipe, SaveRecipeOutput, StepOutput,
 };
-pub use volume_to_weight::enrich_ingredient_measurements;
+pub use volume_to_weight::derived_grams;
 
 /// Unique identifier for this build, generated at compile time.
 /// Used to detect stale pipeline step outputs.

@@ -14,10 +14,6 @@
           {
             "amount": "3-4",
             "unit": "lb"
-          },
-          {
-            "amount": "1361-1814",
-            "unit": "g"
           }
         ],
         "note": "cut into 8 pieces",
@@ -32,10 +28,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "109",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -50,10 +42,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "26",
-            "unit": "g"
           }
         ],
         "note": "minced",
@@ -63,15 +51,11 @@
     {
       "raw": "2 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +84,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +98,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -150,10 +126,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "124",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -168,10 +140,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,

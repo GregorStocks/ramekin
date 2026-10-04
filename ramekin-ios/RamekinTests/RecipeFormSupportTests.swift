@@ -7,6 +7,7 @@ final class RecipeFormSupportTests: XCTestCase {
         let recipe = RecipeResponse(
             cookTime: "20 min",
             createdAt: Date(timeIntervalSince1970: 100),
+            derivedMeasurements: [],
             description: "Tangy and rich",
             difficulty: "Easy",
             id: UUID(),
@@ -67,6 +68,7 @@ final class RecipeFormSupportTests: XCTestCase {
         let recipe = RecipeResponse(
             cookTime: nil,
             createdAt: Date(timeIntervalSince1970: 100),
+            derivedMeasurements: [],
             description: nil,
             difficulty: nil,
             id: UUID(),

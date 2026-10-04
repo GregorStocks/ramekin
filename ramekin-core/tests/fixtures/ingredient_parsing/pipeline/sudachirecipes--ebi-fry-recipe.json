@@ -38,10 +38,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "55",
-            "unit": "g"
           }
         ],
         "note": "I use Kewpie Mayonnaise",
@@ -56,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -74,10 +66,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -143,7 +131,7 @@
     {
       "raw": "2 pinches salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
@@ -162,10 +150,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
         "note": null,

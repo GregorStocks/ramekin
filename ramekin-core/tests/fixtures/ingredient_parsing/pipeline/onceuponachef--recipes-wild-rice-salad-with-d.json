@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "160",
-            "unit": "g"
           }
         ],
         "note": "rinsed",
@@ -23,15 +19,11 @@
     {
       "raw": "1¼ teaspoons salt, divided",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.6",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -46,10 +38,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "62",
-            "unit": "g"
           }
         ],
         "note": "from 1 orange",
@@ -82,10 +66,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "54",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +80,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "45",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +94,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "42",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -136,10 +108,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -168,10 +136,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "104",
-            "unit": "g"
           }
         ],
         "note": "see note, toasted and coarsely chopped",
@@ -186,10 +150,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "80",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -204,10 +164,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,

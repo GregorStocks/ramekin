@@ -24,10 +24,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "138",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "casings removed",
@@ -78,10 +66,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,10 +94,6 @@
           {
             "amount": "16",
             "unit": "oz"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -128,10 +108,6 @@
           {
             "amount": "10",
             "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
         "note": "or 10 ounces chopped fresh spinach, thawed, squeezed dry, chopped further",
@@ -146,10 +122,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "100",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -178,10 +150,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -191,15 +159,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.5",
-            "unit": "g"
           }
         ],
         "note": "neutral",
@@ -37,7 +33,7 @@
     {
       "raw": "salt (for seasoning chicken)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "for seasoning chicken",
         "category": "Spices & Seasonings"
@@ -93,10 +89,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "44",
-            "unit": "g"
           }
         ],
         "note": "for chicken mixture",
@@ -111,10 +103,6 @@
           {
             "amount": "300",
             "unit": "ml"
-          },
-          {
-            "amount": "301",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -129,10 +117,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "44",
-            "unit": "g"
           }
         ],
         "note": "for sauce",
@@ -156,15 +140,11 @@
     {
       "raw": "¼ tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -221,10 +201,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "or all-purpose flour",
@@ -239,10 +215,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -257,10 +229,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -275,10 +243,6 @@
           {
             "amount": "100",
             "unit": "ml"
-          },
-          {
-            "amount": "101",
-            "unit": "g"
           }
         ],
         "note": "I used 35% fat",
@@ -293,10 +257,6 @@
           {
             "amount": "100",
             "unit": "ml"
-          },
-          {
-            "amount": "104",
-            "unit": "g"
           }
         ],
         "note": null,

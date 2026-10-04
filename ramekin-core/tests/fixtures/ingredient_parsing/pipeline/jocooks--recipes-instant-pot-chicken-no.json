@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": "unsalted",
@@ -65,15 +61,11 @@
     {
       "raw": "1 teaspoon salt (or to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -102,10 +94,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": "g"
           }
         ],
         "note": "dry, 1 tbsp if using fresh",
@@ -120,10 +108,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3.8",
-            "unit": "g"
           }
         ],
         "note": "fresh, chopped",
@@ -138,10 +122,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3",
-            "unit": "g"
           }
         ],
         "note": "fresh, chopped, 1 tsp if using dry",
@@ -170,10 +150,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "996",
-            "unit": "g"
           }
         ],
         "note": "or vegetable broth, no sodium added",
@@ -188,10 +164,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "with skin and bones, use at least 1 chicken breast",
@@ -206,10 +178,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "948",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -224,10 +192,6 @@
           {
             "amount": "5",
             "unit": "oz"
-          },
-          {
-            "amount": "142",
-            "unit": "g"
           }
         ],
         "note": "uncooked, (about 2 cups)",

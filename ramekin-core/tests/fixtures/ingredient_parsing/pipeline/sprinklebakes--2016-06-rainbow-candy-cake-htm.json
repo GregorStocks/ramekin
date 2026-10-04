@@ -28,10 +28,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "41",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +60,6 @@
           {
             "amount": "500",
             "unit": "ml"
-          },
-          {
-            "amount": "551",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +74,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "26",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -186,15 +174,11 @@
     {
       "raw": "1/4 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -209,10 +193,6 @@
           {
             "amount": "2.5",
             "unit": "lb"
-          },
-          {
-            "amount": "1134",
-            "unit": "g"
           }
         ],
         "note": "softened",
@@ -227,10 +207,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -259,10 +235,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": "jimmies",

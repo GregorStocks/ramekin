@@ -1,9 +1,14 @@
-use std::{collections::HashMap, error::Error, sync::Arc};
+use std::{
+    collections::{HashMap, HashSet},
+    error::Error,
+    sync::Arc,
+};
 
 use async_trait::async_trait;
 use axum::{extract::State, Json};
 use diesel::prelude::*;
 use ramekin_core::ai::{text_extract::extract_recipe_from_text, AiClient, CachingAiClient};
+use ramekin_core::metric_weights::is_metric_weight_unit;
 use ramekin_core::pipeline::{
     scrape_auto_applied_ai_enrichments, steps::EnrichAutoTagStep,
     steps::EnrichGenerateDescriptionStep, steps::EnrichNormalizeTitleStep,
@@ -18,7 +23,7 @@ use utoipa::ToSchema;
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::models::Ingredient;
+use crate::models::{derived_measurements, DerivedMeasurement, Ingredient};
 use crate::schema::user_tags;
 use crate::types::RecipeContent;
 
@@ -33,6 +38,9 @@ pub struct PrepareTextRecipeResponse {
     pub content: RecipeContent,
     /// Editable ingredient lines. Send these as raw_ingredients when saving.
     pub raw_ingredients: String,
+    /// Approximate grams for `content.ingredients` that have them, for
+    /// previewing the draft. Never saved.
+    pub derived_measurements: Vec<DerivedMeasurement>,
     pub warnings: Vec<String>,
 }
 
@@ -193,14 +201,16 @@ pub async fn prepare_text_recipe(
             }
         }
     }
-    for ingredient in &content.ingredients {
-        let has_weight = ingredient.measurements.iter().any(|measurement| {
-            measurement.amount.is_some()
-                && matches!(
-                    measurement.unit.as_deref(),
-                    Some("g" | "kg" | "mg" | "oz" | "lb")
-                )
-        });
+    let derived_measurements = derived_measurements(&content.ingredients);
+    let derived_indices: HashSet<usize> = derived_measurements
+        .iter()
+        .map(|derived| derived.ingredient_index)
+        .collect();
+    for (index, ingredient) in content.ingredients.iter().enumerate() {
+        let has_weight = derived_indices.contains(&index)
+            || ingredient.measurements.iter().any(|measurement| {
+                measurement.amount.is_some() && is_metric_weight_unit(measurement.unit.as_deref())
+            });
         if !has_weight {
             warnings.push(format!(
                 "Weight estimate unavailable for {}.",
@@ -211,6 +221,7 @@ pub async fn prepare_text_recipe(
     Ok(Json(PrepareTextRecipeResponse {
         content,
         raw_ingredients: raw.ingredients,
+        derived_measurements,
         warnings,
     }))
 }

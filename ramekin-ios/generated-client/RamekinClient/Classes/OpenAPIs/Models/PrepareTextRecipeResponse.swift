@@ -13,18 +13,22 @@ import AnyCodable
 public struct PrepareTextRecipeResponse: Codable, JSONEncodable, Hashable {
 
     public var content: RecipeContent
+    /** Approximate grams for `content.ingredients` that have them, for previewing the draft. Never saved. */
+    public var derivedMeasurements: [DerivedMeasurement]
     /** Editable ingredient lines. Send these as raw_ingredients when saving. */
     public var rawIngredients: String
     public var warnings: [String]
 
-    public init(content: RecipeContent, rawIngredients: String, warnings: [String]) {
+    public init(content: RecipeContent, derivedMeasurements: [DerivedMeasurement], rawIngredients: String, warnings: [String]) {
         self.content = content
+        self.derivedMeasurements = derivedMeasurements
         self.rawIngredients = rawIngredients
         self.warnings = warnings
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case content
+        case derivedMeasurements = "derived_measurements"
         case rawIngredients = "raw_ingredients"
         case warnings
     }
@@ -34,6 +38,7 @@ public struct PrepareTextRecipeResponse: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(content, forKey: .content)
+        try container.encode(derivedMeasurements, forKey: .derivedMeasurements)
         try container.encode(rawIngredients, forKey: .rawIngredients)
         try container.encode(warnings, forKey: .warnings)
     }

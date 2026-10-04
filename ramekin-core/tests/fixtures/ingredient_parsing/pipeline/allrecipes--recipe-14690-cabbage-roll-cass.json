@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "3.5",
             "unit": "lb"
-          },
-          {
-            "amount": "1588",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -50,10 +42,6 @@
           {
             "amount": "29",
             "unit": "oz"
-          },
-          {
-            "amount": "822",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -68,10 +56,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "138",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -86,10 +70,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "185",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -99,15 +79,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -126,10 +102,6 @@
           {
             "amount": "14",
             "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
         "note": null,

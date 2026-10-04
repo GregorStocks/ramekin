@@ -67,7 +67,7 @@
     {
       "raw": "3/4 teaspoon (4 grams) salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
@@ -140,10 +140,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "163",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -162,10 +158,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": "about 4 cups",
@@ -180,10 +172,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -258,10 +246,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -272,7 +256,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,

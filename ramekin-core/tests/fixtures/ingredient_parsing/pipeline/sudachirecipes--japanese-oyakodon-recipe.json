@@ -19,7 +19,7 @@
     {
       "raw": "1 pinch salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
@@ -38,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.8",
-            "unit": "g"
           }
         ],
         "note": "for coating",
@@ -56,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.5",
-            "unit": "g"
           }
         ],
         "note": "neutral flavor",
@@ -74,10 +66,6 @@
           {
             "amount": "100",
             "unit": "ml"
-          },
-          {
-            "amount": "103",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +80,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "45",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,10 +94,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "or granulated sugar",
@@ -128,10 +108,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "or regular chicken bouillon powder",
@@ -160,10 +136,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
         "note": "koikuchi shoyu",

@@ -10,10 +10,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "82",
-            "unit": "g"
           }
         ],
         "note": "about 105°F",
@@ -28,10 +24,6 @@
           {
             "amount": "2.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "9",
-            "unit": "g"
           }
         ],
         "note": "1 packet",
@@ -46,10 +38,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": "packed",
@@ -64,10 +52,6 @@
           {
             "amount": "3.5",
             "unit": "cup"
-          },
-          {
-            "amount": "438",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +66,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "optional or use orange zest",
@@ -95,15 +75,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +94,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -150,10 +122,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "306",
-            "unit": "g"
           }
         ],
         "note": null,

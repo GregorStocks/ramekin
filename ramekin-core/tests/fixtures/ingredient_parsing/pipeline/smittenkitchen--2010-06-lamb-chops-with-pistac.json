@@ -10,10 +10,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "62",
-            "unit": "g"
           }
         ],
         "note": "shelled and toasted",
@@ -84,10 +80,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -134,7 +126,7 @@
     {
       "raw": "Salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"

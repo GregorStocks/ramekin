@@ -46,10 +46,6 @@
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -59,15 +55,11 @@
     {
       "raw": "1/4 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -154,10 +146,6 @@
           {
             "amount": "8",
             "unit": "ml"
-          },
-          {
-            "amount": "6.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -176,10 +164,6 @@
           {
             "amount": "175",
             "unit": "ml"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -194,10 +178,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -216,10 +196,6 @@
           {
             "amount": "30",
             "unit": "ml"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -238,10 +214,6 @@
           {
             "amount": "120",
             "unit": "ml"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -278,10 +250,6 @@
           {
             "amount": "15",
             "unit": "ml"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "Deb note: I used brandy",
@@ -336,10 +304,6 @@
           {
             "amount": "8",
             "unit": "ml"
-          },
-          {
-            "amount": "6.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -358,10 +322,6 @@
           {
             "amount": "15",
             "unit": "ml"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "Deb note: I used brandy",
@@ -380,10 +340,6 @@
           {
             "amount": "235",
             "unit": "ml"
-          },
-          {
-            "amount": "238",
-            "unit": "g"
           }
         ],
         "note": null,

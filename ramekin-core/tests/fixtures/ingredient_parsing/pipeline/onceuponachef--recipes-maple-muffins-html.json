@@ -10,10 +10,6 @@
           {
             "amount": "2.25",
             "unit": "cup"
-          },
-          {
-            "amount": "281",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "90",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -59,15 +47,11 @@
     {
       "raw": "½ teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +66,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "472",
-            "unit": "g"
           }
         ],
         "note": "Grade A works fine too, preferably Grade B",
@@ -104,10 +84,6 @@
           {
             "amount": "1.5",
             "unit": "stick"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": "melted",
@@ -122,10 +98,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -168,10 +140,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "75",
-            "unit": "g"
           }
         ],
         "note": "optional, toasted if desired",

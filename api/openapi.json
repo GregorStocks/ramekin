@@ -182,7 +182,7 @@
           "enrich"
         ],
         "summary": "Enrich a recipe",
-        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nEnriches:\n- Ingredient measurements with gram conversions (volume/weight → grams)\n- Tags by suggesting from the user's existing tag library (requires AI; returns 503 if unavailable)",
+        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nSuggests tags from the user's existing tag library (requires AI; returns\n503 if unavailable). Gram amounts are computed when a recipe is read, so\ningredients come back unchanged.",
         "operationId": "enrich_recipe",
         "requestBody": {
           "content": {
@@ -3385,6 +3385,28 @@
           }
         }
       },
+      "DerivedMeasurement": {
+        "type": "object",
+        "description": "Approximate grams for one ingredient line: oz/lb converted, or a volume\nthrough the catalog's density for the food. Computed on every read and\nnever stored, so catalog improvements reach every recipe; never send these\nback when saving.",
+        "required": [
+          "ingredient_index",
+          "amount",
+          "unit"
+        ],
+        "properties": {
+          "amount": {
+            "type": "string"
+          },
+          "ingredient_index": {
+            "type": "integer",
+            "description": "Index of the ingredient this belongs to.",
+            "minimum": 0
+          },
+          "unit": {
+            "type": "string"
+          }
+        }
+      },
       "Direction": {
         "type": "string",
         "description": "Sort direction",
@@ -4118,11 +4140,19 @@
         "required": [
           "content",
           "raw_ingredients",
+          "derived_measurements",
           "warnings"
         ],
         "properties": {
           "content": {
             "$ref": "#/components/schemas/RecipeContent"
+          },
+          "derived_measurements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DerivedMeasurement"
+            },
+            "description": "Approximate grams for `content.ingredients` that have them, for\npreviewing the draft. Never saved."
           },
           "raw_ingredients": {
             "type": "string",
@@ -4238,6 +4268,7 @@
           "id",
           "title",
           "ingredients",
+          "derived_measurements",
           "instructions",
           "photo_ids",
           "tags",
@@ -4256,6 +4287,13 @@
           "created_at": {
             "type": "string",
             "format": "date-time"
+          },
+          "derived_measurements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DerivedMeasurement"
+            },
+            "description": "Approximate grams for ingredients that have them, in ingredient order."
           },
           "description": {
             "type": [

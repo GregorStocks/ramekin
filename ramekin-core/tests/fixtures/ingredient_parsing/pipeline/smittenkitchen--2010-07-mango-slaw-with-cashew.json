@@ -24,10 +24,6 @@
           {
             "amount": "1 to 1.25",
             "unit": "lb"
-          },
-          {
-            "amount": "454 to 567",
-            "unit": "g"
           }
         ],
         "note": "halved and sliced very thinly",
@@ -70,10 +66,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "91",
-            "unit": "g"
           }
         ],
         "note": "from about two limes",
@@ -88,10 +80,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -115,15 +103,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -138,10 +122,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": "or omit this and whisk in a chile paste to taste; or to taste",
@@ -156,10 +136,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "23",
-            "unit": "g"
           }
         ],
         "note": null,

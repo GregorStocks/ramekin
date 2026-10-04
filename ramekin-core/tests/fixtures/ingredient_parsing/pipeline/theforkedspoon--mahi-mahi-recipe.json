@@ -14,10 +14,6 @@
           {
             "amount": "4-6",
             "unit": "oz"
-          },
-          {
-            "amount": "113-170",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -27,7 +23,7 @@
     {
       "raw": "salt (to season)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "to season",
         "category": "Spices & Seasonings"
@@ -92,10 +88,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,10 +102,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -142,10 +130,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": "minced",

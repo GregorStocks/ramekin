@@ -75,10 +75,6 @@
           {
             "amount": "8",
             "unit": "cup"
-          },
-          {
-            "amount": "1896",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -93,10 +89,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -106,15 +98,11 @@
     {
       "raw": "2 teaspoon salt (divided)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -143,10 +131,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -161,10 +145,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "peeled and deveined",
@@ -179,10 +159,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -239,10 +215,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "390",
-            "unit": "g"
           }
         ],
         "note": "do not wash",
@@ -257,10 +229,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "177",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -275,10 +243,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "200",
-            "unit": "g"
           }
         ],
         "note": "divided",

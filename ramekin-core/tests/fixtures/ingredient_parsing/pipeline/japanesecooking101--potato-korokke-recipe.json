@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "0.5",
             "unit": "lb"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -73,7 +61,7 @@
     {
       "raw": "1/4-1/2 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1/4-1/2",
@@ -101,10 +89,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "31",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -133,10 +117,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "56",
-            "unit": "g"
           }
         ],
         "note": "bread crumbs",

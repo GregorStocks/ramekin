@@ -36,7 +36,7 @@ extension RecipeDetailView {
                 Divider()
 
                 if !recipe.ingredients.isEmpty {
-                    ingredientsSection(recipe.ingredients)
+                    ingredientsSection(recipe.ingredients, derived: recipe.derivedMeasurements)
                     Divider()
                 }
 
@@ -143,7 +143,7 @@ extension RecipeDetailView {
         }
     }
 
-    func ingredientsSection(_ ingredients: [Ingredient]) -> some View {
+    func ingredientsSection(_ ingredients: [Ingredient], derived: [DerivedMeasurement]) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 8) {
                 Text("Ingredients")
@@ -165,8 +165,12 @@ extension RecipeDetailView {
                         .padding(.top, 8)
                 }
 
-                ForEach(Array(group.items.enumerated()), id: \.offset) { _, ingredient in
-                    ingredientRow(ingredient, scale: viewModel.recipeScale)
+                ForEach(group.items, id: \.offset) { index, ingredient in
+                    ingredientRow(
+                        ingredient,
+                        scale: viewModel.recipeScale,
+                        derived: derived.measurement(forIngredientAt: index)
+                    )
                 }
             }
         }
@@ -229,7 +233,7 @@ extension RecipeDetailView {
             .clipShape(Capsule())
     }
 
-    func ingredientRow(_ ingredient: Ingredient, scale: Double) -> some View {
+    func ingredientRow(_ ingredient: Ingredient, scale: Double, derived: Measurement?) -> some View {
         HStack(alignment: .top, spacing: 8) {
             Circle()
                 .fill(Color.accentColor)
@@ -237,7 +241,7 @@ extension RecipeDetailView {
                 .padding(.top, 6)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(ingredient.formatted(scale: scale, includeAlternatives: true))
+                Text(ingredient.formatted(scale: scale, includeAlternatives: true, derived: derived))
                     .font(.body)
 
                 if let note = ingredient.note, !note.isEmpty {

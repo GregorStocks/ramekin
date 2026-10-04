@@ -47,10 +47,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -65,10 +61,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -83,10 +75,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -101,10 +89,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -119,10 +103,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "192",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -137,10 +117,6 @@
           {
             "amount": "15",
             "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -164,7 +140,7 @@
     {
       "raw": "Salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -220,10 +196,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": "toasted in olive oil",

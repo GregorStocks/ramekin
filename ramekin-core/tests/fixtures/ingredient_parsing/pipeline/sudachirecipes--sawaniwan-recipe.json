@@ -80,10 +80,6 @@
           {
             "amount": "850",
             "unit": "ml"
-          },
-          {
-            "amount": "877",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -98,10 +94,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "64",
-            "unit": "g"
           }
         ],
         "note": "usukuchi shoyu",
@@ -116,10 +108,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -129,7 +117,7 @@
     {
       "raw": "salt (to taste (if necessary))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "to taste (if necessary)",
         "category": "Spices & Seasonings"

@@ -14,10 +14,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "125",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -33,10 +29,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -47,15 +39,11 @@
     {
       "raw": "1/8 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -79,10 +67,6 @@
           {
             "amount": "3",
             "unit": "oz"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "chilled, cut into 1/2-inch pieces",
@@ -102,10 +86,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -121,10 +101,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -170,10 +146,6 @@
           {
             "amount": "10",
             "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
         "note": "rolled into a 14-inch circle and chilled",
@@ -193,10 +165,6 @@
           {
             "amount": "4",
             "unit": "large"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": "about 4 large",
@@ -212,10 +180,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "melted",
@@ -231,10 +195,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": "optional",

@@ -28,10 +28,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "9.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -41,15 +37,11 @@
     {
       "raw": "1/4 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +56,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "2 sticks - 227g, room temperature, plus additional for greasing pans",
@@ -100,10 +88,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -136,10 +120,6 @@
           {
             "amount": "240",
             "unit": "ml"
-          },
-          {
-            "amount": "245",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -158,10 +138,6 @@
           {
             "amount": "240",
             "unit": "ml"
-          },
-          {
-            "amount": "245",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -198,10 +174,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -256,10 +228,6 @@
           {
             "amount": "240",
             "unit": "ml"
-          },
-          {
-            "amount": "320",
-            "unit": "g"
           }
         ],
         "note": "(we used our homemade strawberry peach jam, but use whichever flavor you'd like)",

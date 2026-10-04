@@ -10,10 +10,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "59",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "6",
-            "unit": "g"
           }
         ],
         "note": "or instant, rapid rise",
@@ -64,10 +52,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
         "note": "warm",
@@ -82,10 +66,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
         "note": "or natural plain yogurt",
@@ -100,10 +80,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "54",
-            "unit": "g"
           }
         ],
         "note": "plus 2 tablespoons extra for cooking",
@@ -132,10 +108,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "500",
-            "unit": "g"
           }
         ],
         "note": "plus extra for dusting",
@@ -150,10 +122,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -163,15 +131,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -186,10 +150,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": "melted",
@@ -218,10 +178,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.3",
-            "unit": "g"
           }
         ],
         "note": "or parsley, chopped",

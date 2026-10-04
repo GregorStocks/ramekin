@@ -10,10 +10,6 @@
           {
             "amount": "0.5",
             "unit": "lb"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -69,10 +61,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "72",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -101,10 +89,6 @@
           {
             "amount": "1.67",
             "unit": "cup"
-          },
-          {
-            "amount": "208",
-            "unit": "g"
           }
         ],
         "note": "about 250 grams, plus more for dusting",
@@ -249,10 +233,6 @@
           {
             "amount": "75",
             "unit": "ml"
-          },
-          {
-            "amount": "72",
-            "unit": "g"
           }
         ],
         "note": "or corn oil, about 75 ml",
@@ -290,15 +270,11 @@
     {
       "raw": "½ teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -345,10 +321,6 @@
           {
             "amount": "120",
             "unit": "ml"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": "about 120 ml",
@@ -386,10 +358,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "44",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -32,10 +32,6 @@
           {
             "amount": "60",
             "unit": "ml"
-          },
-          {
-            "amount": "61",
-            "unit": "g"
           }
         ],
         "note": "from 1 large lemon",
@@ -54,10 +50,6 @@
           {
             "amount": "60",
             "unit": "ml"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -90,10 +82,6 @@
           {
             "amount": "30",
             "unit": "ml"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": "plus more for serving",
@@ -108,10 +96,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -121,7 +105,7 @@
     {
       "raw": "Salt to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"

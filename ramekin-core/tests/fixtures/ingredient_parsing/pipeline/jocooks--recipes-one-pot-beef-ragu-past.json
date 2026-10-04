@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -84,10 +80,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": "or 1 tbsp fresh oregano chopped",
@@ -102,10 +94,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -120,10 +108,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "480",
-            "unit": "g"
           }
         ],
         "note": "low sodium or no sodium added",
@@ -138,10 +122,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "242",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -151,15 +131,11 @@
     {
       "raw": "½ teaspoon salt (or to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -188,10 +164,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "uncooked, or pasta of your choice",
@@ -206,10 +178,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "884",
-            "unit": "g"
           }
         ],
         "note": "low sodium",
@@ -224,10 +192,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": "chopped, for garnish",

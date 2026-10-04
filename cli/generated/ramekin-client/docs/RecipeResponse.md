@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cook_time** | Option<**String**> |  | [optional]
 **created_at** | **String** |  | 
+**derived_measurements** | [**Vec<models::DerivedMeasurement>**](DerivedMeasurement.md) | Approximate grams for ingredients that have them, in ingredient order. | 
 **description** | Option<**String**> |  | [optional]
 **difficulty** | Option<**String**> |  | [optional]
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 

@@ -38,10 +38,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
         "note": "or cream",
@@ -51,15 +47,11 @@
     {
       "raw": "¾ teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -88,10 +80,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "140",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -106,10 +94,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "244",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -124,10 +108,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "19",
-            "unit": "g"
           }
         ],
         "note": null,

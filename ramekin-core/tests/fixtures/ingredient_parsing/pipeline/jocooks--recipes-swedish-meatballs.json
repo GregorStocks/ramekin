@@ -24,10 +24,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "61",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "or mixed with ground chicken",
@@ -83,15 +75,11 @@
     {
       "raw": "½ teaspoon salt (or to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -120,10 +108,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.6",
-            "unit": "g"
           }
         ],
         "note": "ground",
@@ -138,10 +122,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.5",
-            "unit": "g"
           }
         ],
         "note": "ground",
@@ -156,10 +136,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": "unsalted",
@@ -174,10 +150,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -192,10 +164,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": "unsalted",
@@ -210,10 +178,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "42",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -228,10 +192,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "747",
-            "unit": "g"
           }
         ],
         "note": "low sodium, or beef broth",
@@ -241,15 +201,11 @@
     {
       "raw": "¼ teaspoon salt (or to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -278,10 +234,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "182",
-            "unit": "g"
           }
         ],
         "note": null,

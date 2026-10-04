@@ -34,9 +34,10 @@ final class IngredientSectionGroupingTests: XCTestCase {
 
         XCTAssertEqual(groups.map(\.section), [nil, "Batter", nil])
         XCTAssertEqual(
-            groups.map { $0.items.map(\.item) },
+            groups.map { $0.items.map(\.element.item) },
             [["salt", "pepper"], ["flour", "milk"], ["oil"]]
         )
+        XCTAssertEqual(groups.map { $0.items.map(\.offset) }, [[0, 1], [2, 3], [4]])
     }
 }
 

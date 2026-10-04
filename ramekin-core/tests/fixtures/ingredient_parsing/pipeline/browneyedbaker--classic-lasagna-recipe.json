@@ -10,10 +10,6 @@
           {
             "amount": "1.75",
             "unit": "cup"
-          },
-          {
-            "amount": "432",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "100",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -69,15 +61,11 @@
     {
       "raw": "¼ teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -134,10 +122,6 @@
           {
             "amount": "20",
             "unit": "oz"
-          },
-          {
-            "amount": "567",
-            "unit": "g"
           }
         ],
         "note": "shredded (5 cups)",
@@ -152,10 +136,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "25",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -32,7 +32,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -51,10 +51,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -87,10 +83,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -105,10 +97,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -132,10 +120,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "238",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -150,10 +134,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "12",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -168,10 +148,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -190,10 +166,6 @@
           {
             "amount": "0.5",
             "unit": "pint"
-          },
-          {
-            "amount": "174",
-            "unit": "g"
           }
         ],
         "note": "hulled and sliced",
@@ -209,10 +181,6 @@
           {
             "amount": "0.5",
             "unit": "pint"
-          },
-          {
-            "amount": "148",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -228,10 +196,6 @@
           {
             "amount": "0.5",
             "unit": "pint"
-          },
-          {
-            "amount": "123",
-            "unit": "g"
           }
         ],
         "note": null,

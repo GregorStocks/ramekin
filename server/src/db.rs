@@ -121,6 +121,7 @@ pub fn create_pool(database_url: &str) -> DbPool {
         .expect("Failed to get DB connection for migrations");
     conn.run_pending_migrations(MIGRATIONS)
         .expect("Failed to run database migrations");
+    crate::data_migrations::run_pending(&mut conn).expect("Failed to run data migrations");
 
     pool
 }

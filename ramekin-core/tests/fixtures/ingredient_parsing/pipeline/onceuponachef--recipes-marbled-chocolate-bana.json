@@ -10,10 +10,6 @@
           {
             "amount": "1.75",
             "unit": "cup"
-          },
-          {
-            "amount": "219",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -41,15 +33,11 @@
     {
       "raw": "¾ teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "200",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -86,10 +70,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "114",
-            "unit": "g"
           }
         ],
         "note": "softened",
@@ -118,10 +98,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "188",
-            "unit": "g"
           }
         ],
         "note": "from 2-3 bananas",
@@ -136,10 +112,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "121",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -154,10 +126,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -172,10 +140,6 @@
           {
             "amount": "3",
             "unit": "oz"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "a heaping 1/2 cup, chopped",
@@ -190,10 +154,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.6",
-            "unit": "g"
           }
         ],
         "note": "such as Hershey's",

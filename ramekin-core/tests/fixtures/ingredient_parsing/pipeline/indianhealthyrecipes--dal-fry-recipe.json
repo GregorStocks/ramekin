@@ -24,10 +24,6 @@
           {
             "amount": "2.5",
             "unit": "cup"
-          },
-          {
-            "amount": "592",
-            "unit": "g"
           }
         ],
         "note": "3 cups for Instant pot, more for regular pot",
@@ -140,10 +136,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.3",
-            "unit": "g"
           }
         ],
         "note": "or 1/2 inch ginger & 2 garlic cloves fine chopped",
@@ -172,10 +164,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -213,7 +201,7 @@
     {
       "raw": "¾ to 1 teaspoon salt  ((adjust to taste))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75 to 1",
@@ -232,10 +220,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": "to use for consistency",
@@ -264,10 +248,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "finely chopped",

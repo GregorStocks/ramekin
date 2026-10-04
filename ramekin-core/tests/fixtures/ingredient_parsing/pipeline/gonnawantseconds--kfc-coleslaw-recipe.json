@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.6",
-            "unit": "g"
           }
         ],
         "note": "finely grated",
@@ -28,10 +24,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "67",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "110",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "61",
-            "unit": "g"
           }
         ],
         "note": "well shaken",
@@ -82,10 +66,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "61",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +80,6 @@
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "22",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +94,6 @@
           {
             "amount": "2.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "38",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -131,15 +103,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -172,10 +140,6 @@
           {
             "amount": "1-16",
             "unit": "oz"
-          },
-          {
-            "amount": "28-454",
-            "unit": "g"
           }
         ],
         "note": "finely diced",

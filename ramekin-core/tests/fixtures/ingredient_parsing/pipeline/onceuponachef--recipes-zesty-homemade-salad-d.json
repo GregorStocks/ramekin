@@ -10,10 +10,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "162",
-            "unit": "g"
           }
         ],
         "note": "such as Colavita or Lucini",
@@ -28,10 +24,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "80",
-            "unit": "g"
           }
         ],
         "note": "such as Pompeian Gourmet or Domaine des Vignes",
@@ -46,10 +38,6 @@
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -59,15 +47,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -96,10 +80,6 @@
           {
             "amount": "2.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,

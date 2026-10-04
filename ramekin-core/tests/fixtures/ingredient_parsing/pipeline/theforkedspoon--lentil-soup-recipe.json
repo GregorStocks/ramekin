@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -102,10 +94,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -134,10 +122,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -147,15 +131,11 @@
     {
       "raw": "1 teaspoon salt (plus more to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "plus more to taste",
@@ -202,10 +182,6 @@
           {
             "amount": "15",
             "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -220,10 +196,6 @@
           {
             "amount": "8",
             "unit": "cup"
-          },
-          {
-            "amount": "1768",
-            "unit": "g"
           }
         ],
         "note": "or chicken broth/water, see notes",
@@ -252,10 +224,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
         "note": "grated",

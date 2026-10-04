@@ -10,10 +10,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "375",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -59,15 +47,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +66,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +80,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "75",
-            "unit": "g"
           }
         ],
         "note": "optional",
@@ -118,10 +94,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": "softened, or 3/4 cup vegetable oil",
@@ -150,10 +122,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "400",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -182,10 +150,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.7",
-            "unit": "g"
           }
         ],
         "note": null,

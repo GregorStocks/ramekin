@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "shelled and deveined or pre-cooked and defrosted",
@@ -42,10 +38,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "360",
-            "unit": "g"
           }
         ],
         "note": "or 2 cups chopped tomatoes; drained a little",
@@ -101,7 +93,7 @@
     {
       "raw": "Salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"

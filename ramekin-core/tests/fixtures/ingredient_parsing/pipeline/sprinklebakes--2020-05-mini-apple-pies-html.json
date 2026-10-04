@@ -27,7 +27,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -46,10 +46,6 @@
           {
             "amount": "0.88",
             "unit": "cup"
-          },
-          {
-            "amount": "199",
-            "unit": "g"
           }
         ],
         "note": "cold and cubed",
@@ -78,10 +74,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -146,10 +138,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "23",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -164,10 +152,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -182,10 +166,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -200,10 +180,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -232,10 +208,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,

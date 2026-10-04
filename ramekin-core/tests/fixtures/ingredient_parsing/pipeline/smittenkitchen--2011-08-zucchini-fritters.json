@@ -14,10 +14,6 @@
           {
             "amount": "2",
             "unit": "medium"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "about 2 medium",
@@ -32,10 +28,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "plus extra to taste",
@@ -87,10 +79,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "62",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -105,10 +93,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -141,10 +125,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "242",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -173,10 +153,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -186,7 +162,7 @@
     {
       "raw": "Pinches of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,

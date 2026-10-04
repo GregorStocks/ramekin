@@ -28,10 +28,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +42,6 @@
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -73,15 +65,11 @@
     {
       "raw": "¼ tsp salt  (or as needed)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": "or as needed",
@@ -96,10 +84,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "adjust as needed",
@@ -165,15 +149,11 @@
     {
       "raw": "½ tsp salt ((adjust to taste))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "adjust to taste",
@@ -188,10 +168,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.8",
-            "unit": "g"
           }
         ],
         "note": "adjust as needed",
@@ -206,10 +182,6 @@
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -252,10 +224,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": "+1 tbsp to fry the fish",

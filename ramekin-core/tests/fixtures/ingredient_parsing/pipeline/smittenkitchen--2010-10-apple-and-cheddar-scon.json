@@ -14,10 +14,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "1 pound or 2 454 grams",
@@ -85,7 +81,7 @@
     {
       "raw": "1/2 teaspoon salt (3 grams) plus additional for egg wash",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
@@ -156,10 +152,6 @@
           {
             "amount": "2",
             "unit": "oz"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,

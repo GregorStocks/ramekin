@@ -10,10 +10,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": "salted or unsalted",
@@ -42,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.8",
-            "unit": "g"
           }
         ],
         "note": "optional, see notes",
@@ -55,15 +47,11 @@
     {
       "raw": "¼ teaspoon salt (plus more to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": "plus more to taste",
@@ -92,10 +80,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "476",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,10 +94,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "100",
-            "unit": "g"
           }
         ],
         "note": "freshly grated",

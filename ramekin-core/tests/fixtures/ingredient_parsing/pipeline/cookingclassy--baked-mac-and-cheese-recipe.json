@@ -14,10 +14,6 @@
           {
             "amount": "2.5",
             "unit": "oz"
-          },
-          {
-            "amount": "71",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -36,10 +32,6 @@
           {
             "amount": "3",
             "unit": "oz"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -58,10 +50,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -71,15 +59,11 @@
     {
       "raw": "1 tsp salt, (more or less to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "more or less to taste",
@@ -107,10 +91,6 @@
           {
             "amount": "1.6",
             "unit": "oz"
-          },
-          {
-            "amount": "45",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -129,10 +109,6 @@
           {
             "amount": "590",
             "unit": "ml"
-          },
-          {
-            "amount": "612",
-            "unit": "g"
           }
         ],
         "note": "warmed",
@@ -151,10 +127,6 @@
           {
             "amount": "235",
             "unit": "ml"
-          },
-          {
-            "amount": "242",
-            "unit": "g"
           }
         ],
         "note": "warmed",
@@ -173,10 +145,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "shredded (I like to use Cracker Barrel)",
@@ -195,10 +163,6 @@
           {
             "amount": "7.5",
             "unit": "oz"
-          },
-          {
-            "amount": "213",
-            "unit": "g"
           }
         ],
         "note": "shredded, divided (I like to use Murray's)",

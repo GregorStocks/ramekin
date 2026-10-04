@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { DerivedMeasurement } from './DerivedMeasurement';
 import type { RecipeContent } from './RecipeContent';
 /**
  *
@@ -22,6 +23,13 @@ export interface PrepareTextRecipeResponse {
      * @memberof PrepareTextRecipeResponse
      */
     content: RecipeContent;
+    /**
+     * Approximate grams for `content.ingredients` that have them, for
+     * previewing the draft. Never saved.
+     * @type {Array<DerivedMeasurement>}
+     * @memberof PrepareTextRecipeResponse
+     */
+    derivedMeasurements: Array<DerivedMeasurement>;
     /**
      * Editable ingredient lines. Send these as raw_ingredients when saving.
      * @type {string}

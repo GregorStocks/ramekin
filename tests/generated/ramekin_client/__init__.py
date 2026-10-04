@@ -61,6 +61,7 @@ __all__ = [
     "CreateTagRequest",
     "CreateTagResponse",
     "CustomEnrichRequest",
+    "DerivedMeasurement",
     "Direction",
     "ErrorCode",
     "ErrorResponse",
@@ -174,6 +175,7 @@ from ramekin_client.models.create_shopping_list_response import CreateShoppingLi
 from ramekin_client.models.create_tag_request import CreateTagRequest as CreateTagRequest
 from ramekin_client.models.create_tag_response import CreateTagResponse as CreateTagResponse
 from ramekin_client.models.custom_enrich_request import CustomEnrichRequest as CustomEnrichRequest
+from ramekin_client.models.derived_measurement import DerivedMeasurement as DerivedMeasurement
 from ramekin_client.models.direction import Direction as Direction
 from ramekin_client.models.error_code import ErrorCode as ErrorCode
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse

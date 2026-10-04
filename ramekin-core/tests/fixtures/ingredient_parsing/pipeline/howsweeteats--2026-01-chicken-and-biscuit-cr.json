@@ -10,10 +10,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -93,10 +89,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "42",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -125,10 +117,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "210",
-            "unit": "g"
           }
         ],
         "note": "from a rotisserie",
@@ -143,10 +131,6 @@
           {
             "amount": "1.75",
             "unit": "cup"
-          },
-          {
-            "amount": "219",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -161,10 +145,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "9.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -174,15 +154,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -197,10 +173,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "cut into tiny pieces",
@@ -215,10 +187,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "159",
-            "unit": "g"
           }
         ],
         "note": null,

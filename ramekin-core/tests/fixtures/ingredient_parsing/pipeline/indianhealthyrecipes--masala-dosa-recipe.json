@@ -10,10 +10,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "104",
-            "unit": "g"
           }
         ],
         "note": "skinned black gram",
@@ -28,10 +24,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "38",
-            "unit": "g"
           }
         ],
         "note": "bengal gram, or 2 tbsps chana dal & 1 tbsp toor dal",
@@ -88,10 +80,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.8",
-            "unit": "g"
           }
         ],
         "note": "fenugreek seeds",
@@ -106,10 +94,6 @@
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": "or as needed",
@@ -174,10 +158,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -206,10 +186,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": "jeera",
@@ -224,10 +200,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.2",
-            "unit": "g"
           }
         ],
         "note": "bengal gram, optional",
@@ -242,10 +214,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": "skinned black gram, optional",
@@ -274,10 +242,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "grated or paste",
@@ -334,10 +298,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": "g"
           }
         ],
         "note": "haldi",
@@ -347,7 +307,7 @@
     {
       "raw": "½ to ¾ teaspoon salt  ((adjust to taste))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5 to 0.75",
@@ -366,10 +326,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "finely chopped",

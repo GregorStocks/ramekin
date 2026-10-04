@@ -10,10 +10,6 @@
           {
             "amount": "6",
             "unit": "oz"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "7",
             "unit": "oz"
-          },
-          {
-            "amount": "198",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -50,7 +42,7 @@
     {
       "raw": "salt, to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"
@@ -87,10 +79,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -105,10 +93,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "25",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -123,10 +107,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3.8",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -136,7 +116,7 @@
     {
       "raw": "salt, to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"

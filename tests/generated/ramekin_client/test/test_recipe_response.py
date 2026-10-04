@@ -37,6 +37,12 @@ class TestRecipeResponse(unittest.TestCase):
             return RecipeResponse(
                 cook_time = '',
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                derived_measurements = [
+                    ramekin_client.models.derived_measurement.DerivedMeasurement(
+                        amount = '', 
+                        ingredient_index = 0, 
+                        unit = '', )
+                    ],
                 description = '',
                 difficulty = '',
                 id = '',
@@ -74,6 +80,12 @@ class TestRecipeResponse(unittest.TestCase):
         else:
             return RecipeResponse(
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                derived_measurements = [
+                    ramekin_client.models.derived_measurement.DerivedMeasurement(
+                        amount = '', 
+                        ingredient_index = 0, 
+                        unit = '', )
+                    ],
                 id = '',
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(

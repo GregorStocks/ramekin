@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "168",
-            "unit": "g"
           }
         ],
         "note": "about 32 squares",
@@ -42,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -55,7 +47,7 @@
     {
       "raw": "Pinch salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -78,10 +70,6 @@
           {
             "amount": "14",
             "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
         "note": null,

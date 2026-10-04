@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "80/20",
@@ -23,15 +19,11 @@
     {
       "raw": "1  1/2 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -106,10 +94,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "31",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -142,10 +126,6 @@
           {
             "amount": "14.5",
             "unit": "oz"
-          },
-          {
-            "amount": "411",
-            "unit": "g"
           }
         ],
         "note": "undrained",
@@ -174,10 +154,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "17",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -206,10 +182,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "66",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -228,10 +200,6 @@
           {
             "amount": "2",
             "unit": "large"
-          },
-          {
-            "amount": "900",
-            "unit": "g"
           }
         ],
         "note": "about 2 large, diced",
@@ -260,10 +228,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": null,

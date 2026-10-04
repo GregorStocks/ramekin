@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.5",
-            "unit": "g"
           }
         ],
         "note": "minced, or more to taste",
@@ -106,10 +94,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "498",
-            "unit": "g"
           }
         ],
         "note": "or broth",
@@ -124,10 +108,6 @@
           {
             "amount": "14",
             "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
         "note": "Passata",
@@ -142,10 +122,6 @@
           {
             "amount": "14",
             "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
         "note": "canned",
@@ -160,10 +136,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "474",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -178,10 +150,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "66",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -196,10 +164,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -228,10 +192,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -255,7 +215,7 @@
     {
       "raw": "1 pinch salt (to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
@@ -302,10 +262,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "86",
-            "unit": "g"
           }
         ],
         "note": "reduced fat",
@@ -320,10 +276,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -338,10 +290,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "33",
-            "unit": "g"
           }
         ],
         "note": "finely shredded, plus extra to garnish",
@@ -356,10 +304,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": "chopped, plus extra to garnish",
@@ -383,7 +327,7 @@
     {
       "raw": "1 pinch salt (to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",

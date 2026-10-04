@@ -10,10 +10,6 @@
           {
             "amount": "5",
             "unit": "oz"
-          },
-          {
-            "amount": "142",
-            "unit": "g"
           }
         ],
         "note": "(I like the 50/50 mix with half spring mix and half spinach",
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "pint"
-          },
-          {
-            "amount": "347",
-            "unit": "g"
           }
         ],
         "note": "washed, hulled, sliced",
@@ -46,10 +38,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "75",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "3",
             "unit": "oz"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "look for the Gorgonzola that doesn't just crumble apart, you want the really creamy kind",
@@ -82,10 +66,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "46",
-            "unit": "g"
           }
         ],
         "note": "chiffonade",
@@ -100,10 +80,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "162",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +94,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "64",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -131,15 +103,11 @@
     {
       "raw": "½ teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,

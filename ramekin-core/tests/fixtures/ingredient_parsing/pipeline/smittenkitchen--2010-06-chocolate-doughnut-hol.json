@@ -71,7 +71,7 @@
     {
       "raw": "1/2 teaspoon (about 1/8 ounces or 4 grams) salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
@@ -187,10 +187,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -205,10 +201,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "44",
-            "unit": "g"
           }
         ],
         "note": "what I used, highly recommended",
@@ -223,10 +215,6 @@
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.5",
-            "unit": "g"
           }
         ],
         "note": null,

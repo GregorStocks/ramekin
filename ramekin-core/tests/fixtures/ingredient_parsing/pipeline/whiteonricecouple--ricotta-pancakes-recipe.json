@@ -46,10 +46,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -59,7 +55,7 @@
     {
       "raw": "pinch of&nbsp;salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -100,10 +96,6 @@
           {
             "amount": "125",
             "unit": "ml"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +110,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.2",
-            "unit": "g"
           }
         ],
         "note": null,

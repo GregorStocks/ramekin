@@ -10,10 +10,6 @@
           {
             "amount": "8",
             "unit": "cup"
-          },
-          {
-            "amount": "1000",
-            "unit": "g"
           }
         ],
         "note": "peeled and sliced 1/4\" thick (about 6 large apples)",
@@ -46,10 +42,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -59,15 +51,11 @@
     {
       "raw": "1/4 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +106,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -131,15 +115,11 @@
     {
       "raw": "1/4 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -158,10 +138,6 @@
           {
             "amount": "125",
             "unit": "ml"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -176,10 +152,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,

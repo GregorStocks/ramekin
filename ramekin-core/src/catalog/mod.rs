@@ -3,8 +3,7 @@
 //!
 //! Every food in the pinned USDA SR Legacy release is an entry, and
 //! `data/curated.json` adds hand-maintained entries (with cited densities and,
-//! for foods no database has, cited calories), aliases, and display rewrites
-//! on top. Curated entries may also link foods from the secondary USDA FNDDS
+//! for foods no database has, cited calories) and aliases on top. Curated entries may also link foods from the secondary USDA FNDDS
 //! release, which are not entries or names on their own. Resolution (which
 //! food a name is) is separate from attributes (calories via `fdc_id` or a
 //! cited value, density via `grams_per_cup`), so an entry can be recognized
@@ -181,7 +180,6 @@ struct CuratedFile {
     aliases: BTreeMap<String, Option<String>>,
     /// Names that are not ingredients at all ("to serve"), with the reason.
     not_food: BTreeMap<String, String>,
-    rewrites: BTreeMap<String, String>,
     /// Corrections to SR Legacy foods, keyed by their (unique) description.
     food_overrides: BTreeMap<String, FoodOverride>,
     /// Shopping-list categories for foods and ambiguous names, keyed by a
@@ -251,7 +249,6 @@ struct Catalog {
     ambiguous: Vec<AmbiguousName>,
     foods: HashMap<u32, UsdaFood>,
     index: HashMap<String, Target>,
-    rewrites: HashMap<String, String>,
     version: String,
 }
 
@@ -603,14 +600,6 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         }
     }
 
-    for (from, to) in &curated.rewrites {
-        assert_eq!(*from, normalize(from), "rewrite sources must be normalized");
-        assert!(
-            matches!(index.get(&normalize(to)), Some(Target::Entry(_))),
-            "rewrite {from:?} -> {to:?} must resolve"
-        );
-    }
-
     let hash = Sha256::digest(format!(
         "{RULE_VERSION}\n{USDA_JSON}\n{FNDDS_JSON}\n{CURATED_JSON}\n{BESPOKE_JSON}"
     ));
@@ -620,7 +609,6 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         ambiguous,
         foods,
         index,
-        rewrites: curated.rewrites.into_iter().collect(),
         version: format!("{RULE_VERSION}-sr2018-fndds2024-{hash}"),
     }
 });
@@ -720,11 +708,6 @@ pub fn category(item: &str) -> Option<&'static str> {
         Resolution::NotFood | Resolution::Unresolved => return None,
     };
     entry.category.as_deref()
-}
-
-/// The display rewrite for an ingredient name (e.g. "salt" -> "kosher salt").
-pub fn rewrite(item: &str) -> Option<&'static str> {
-    CATALOG.rewrites.get(&normalize(item)).map(String::as_str)
 }
 
 /// Size words a count can carry ("2 large eggs").

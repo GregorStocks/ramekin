@@ -41,15 +41,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +60,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +74,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -100,10 +88,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +102,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -172,10 +152,6 @@
           {
             "amount": "240",
             "unit": "ml"
-          },
-          {
-            "amount": "245",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -204,10 +180,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "128",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -222,10 +194,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "89",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -240,10 +208,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "6.5",
-            "unit": "g"
           }
         ],
         "note": null,

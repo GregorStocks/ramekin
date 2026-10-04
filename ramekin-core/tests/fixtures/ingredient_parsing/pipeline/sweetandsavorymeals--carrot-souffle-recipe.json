@@ -10,10 +10,6 @@
           {
             "amount": "2.5",
             "unit": "lb"
-          },
-          {
-            "amount": "1134",
-            "unit": "g"
           }
         ],
         "note": "peeled and thinly sliced or chopped",
@@ -28,10 +24,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "114",
-            "unit": "g"
           }
         ],
         "note": "melted",
@@ -46,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +66,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -114,10 +94,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "31",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -132,10 +108,6 @@
           {
             "amount": "1.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -150,10 +122,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "3",
-            "unit": "g"
           }
         ],
         "note": "optional but best to use - or 1 teaspoon lemon juicee",
@@ -163,15 +131,11 @@
     {
       "raw": "3/4 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -186,10 +150,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "100",
-            "unit": "g"
           }
         ],
         "note": null,

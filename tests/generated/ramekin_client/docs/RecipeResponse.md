@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cook_time** | **str** |  | [optional] 
 **created_at** | **datetime** |  | 
+**derived_measurements** | [**List[DerivedMeasurement]**](DerivedMeasurement.md) | Approximate grams for ingredients that have them, in ingredient order. | 
 **description** | **str** |  | [optional] 
 **difficulty** | **str** |  | [optional] 
 **id** | **UUID** |  | 

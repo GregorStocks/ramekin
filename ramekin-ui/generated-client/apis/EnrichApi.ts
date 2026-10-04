@@ -91,7 +91,7 @@ export class EnrichApi extends runtime.BaseAPI {
     }
 
     /**
-     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user\'s existing tag library (requires AI; returns 503 if unavailable)
+     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Suggests tags from the user\'s existing tag library (requires AI; returns 503 if unavailable). Gram amounts are computed when a recipe is read, so ingredients come back unchanged.
      * Enrich a recipe
      */
     async enrichRecipeRaw(requestParameters: EnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RecipeContent>> {
@@ -131,7 +131,7 @@ export class EnrichApi extends runtime.BaseAPI {
     }
 
     /**
-     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user\'s existing tag library (requires AI; returns 503 if unavailable)
+     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Suggests tags from the user\'s existing tag library (requires AI; returns 503 if unavailable). Gram amounts are computed when a recipe is read, so ingredients come back unchanged.
      * Enrich a recipe
      */
     async enrichRecipe(requestParameters: EnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RecipeContent> {

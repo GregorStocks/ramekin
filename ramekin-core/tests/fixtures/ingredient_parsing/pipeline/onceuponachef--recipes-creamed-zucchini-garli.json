@@ -10,10 +10,6 @@
           {
             "amount": "1.75",
             "unit": "lb"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
         "note": "preferably smaller zucchini, as they are less watery",
@@ -28,10 +24,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "74",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -73,15 +61,11 @@
     {
       "raw": "¾ teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": null,

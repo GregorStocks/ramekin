@@ -10,10 +10,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "110",
-            "unit": "g"
           }
         ],
         "note": "best quality such as Hellmann's or Duke's",
@@ -28,10 +24,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "121",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "6",
             "unit": "oz"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": "crumbled",
@@ -64,10 +52,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "31",
-            "unit": "g"
           }
         ],
         "note": "skim, low fat or whole",
@@ -110,10 +94,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -123,15 +103,11 @@
     {
       "raw": "¼ teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,

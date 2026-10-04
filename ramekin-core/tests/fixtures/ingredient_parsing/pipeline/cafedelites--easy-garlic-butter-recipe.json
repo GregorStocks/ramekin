@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "or spread of choice, softened at room temperature",
@@ -42,10 +38,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": "or 2 teaspoon dry parsley",
@@ -55,7 +47,7 @@
     {
       "raw": "2 pinches salt to taste (if using unsalted butter)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",

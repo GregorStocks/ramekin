@@ -139,6 +139,7 @@ Class | Method | HTTP request | Description
  - [CreateTagRequest](ramekin_client/docs/CreateTagRequest.md)
  - [CreateTagResponse](ramekin_client/docs/CreateTagResponse.md)
  - [CustomEnrichRequest](ramekin_client/docs/CustomEnrichRequest.md)
+ - [DerivedMeasurement](ramekin_client/docs/DerivedMeasurement.md)
  - [Direction](ramekin_client/docs/Direction.md)
  - [ErrorCode](ramekin_client/docs/ErrorCode.md)
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)

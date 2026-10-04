@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "109",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "412",
-            "unit": "g"
           }
         ],
         "note": "rough diced",
@@ -92,10 +80,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "120",
-            "unit": "g"
           }
         ],
         "note": "rough diced",
@@ -152,10 +136,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "33",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -170,10 +150,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "236",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -188,10 +164,6 @@
           {
             "amount": "2",
             "unit": "quart"
-          },
-          {
-            "amount": "1992",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -206,10 +178,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -224,10 +192,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -260,7 +224,7 @@
     {
       "raw": "salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"

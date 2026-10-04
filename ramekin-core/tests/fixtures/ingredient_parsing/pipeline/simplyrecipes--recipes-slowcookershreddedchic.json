@@ -10,10 +10,6 @@
           {
             "amount": "2 to 2.5",
             "unit": "lb"
-          },
-          {
-            "amount": "907 to 1134",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +56,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "750",
-            "unit": "g"
           }
         ],
         "note": "15-ounce, about 3 cups",
@@ -78,10 +70,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "249",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,10 +98,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -128,10 +112,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -146,10 +126,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -159,15 +135,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -196,10 +168,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "136",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -214,10 +182,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,

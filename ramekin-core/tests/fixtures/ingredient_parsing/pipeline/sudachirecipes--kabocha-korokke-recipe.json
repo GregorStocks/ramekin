@@ -38,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -56,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.3",
-            "unit": "g"
           }
         ],
         "note": "koikuchi shoyu",
@@ -69,15 +61,11 @@
     {
       "raw": "¼ tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -148,10 +136,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -166,10 +150,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -184,10 +164,6 @@
           {
             "amount": "50",
             "unit": "ml"
-          },
-          {
-            "amount": "52",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -202,10 +178,6 @@
           {
             "amount": "50",
             "unit": "ml"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -234,10 +206,6 @@
           {
             "amount": "5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "39",
-            "unit": "g"
           }
         ],
         "note": "for batter",
@@ -252,10 +220,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "23",
-            "unit": "g"
           }
         ],
         "note": "for coating",
@@ -302,10 +266,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -320,10 +280,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "207",
-            "unit": "g"
           }
         ],
         "note": "or skinned black gram",
@@ -23,15 +19,11 @@
     {
       "raw": "⅓ teaspoon salt ((adjust to taste))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": "adjust to taste",
@@ -96,10 +88,6 @@
           {
             "amount": "1",
             "unit": "small"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -142,10 +130,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "fine grated",

@@ -10,10 +10,6 @@
           {
             "amount": "200",
             "unit": "ml"
-          },
-          {
-            "amount": "207",
-            "unit": "g"
           }
         ],
         "note": "lukewarm",
@@ -79,7 +75,7 @@
     {
       "raw": "5 g salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "5",

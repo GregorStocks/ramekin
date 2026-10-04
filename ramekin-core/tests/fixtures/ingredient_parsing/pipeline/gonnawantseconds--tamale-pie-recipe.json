@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "138",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -74,10 +66,6 @@
           {
             "amount": "24",
             "unit": "oz"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +80,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "136",
-            "unit": "g"
           }
         ],
         "note": "thawed and well drained",
@@ -138,10 +122,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -198,10 +178,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -216,10 +192,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "9.2",
-            "unit": "g"
           }
         ],
         "note": "packed",
@@ -229,15 +201,11 @@
     {
       "raw": "2 1/2 teaspoons salt, (or more to taste )",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "7.1",
-            "unit": "g"
           }
         ],
         "note": "or more to taste",
@@ -252,10 +220,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.2",
-            "unit": "g"
           }
         ],
         "note": "or more to taste",
@@ -284,10 +248,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -316,10 +276,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "82",
-            "unit": "g"
           }
         ],
         "note": "shredded",

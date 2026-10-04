@@ -24,10 +24,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "69",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -73,15 +61,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -96,10 +80,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -150,10 +130,6 @@
           {
             "amount": "10",
             "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -172,10 +148,6 @@
           {
             "amount": "12",
             "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -190,10 +162,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "163",
-            "unit": "g"
           }
         ],
         "note": null,

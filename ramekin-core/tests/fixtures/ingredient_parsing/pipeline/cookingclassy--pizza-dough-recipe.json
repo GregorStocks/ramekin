@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
         "note": "or instant yeast (see notes*)",
@@ -28,10 +24,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "356",
-            "unit": "g"
           }
         ],
         "note": "heated to 110 - 115 degrees for active dry yeast, 120 - 130 degrees for instant yeast",
@@ -64,10 +52,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": "plus more for brushing",
@@ -77,15 +61,11 @@
     {
       "raw": "1 1/4 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -104,10 +84,6 @@
           {
             "amount": "17",
             "unit": "oz"
-          },
-          {
-            "amount": "482",
-            "unit": "g"
           }
         ],
         "note": "or bread flour, then more as needed (scoop and level to measure)",

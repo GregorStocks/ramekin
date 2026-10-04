@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -56,10 +52,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -88,10 +80,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -106,10 +94,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -124,10 +108,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.9",
-            "unit": "g"
           }
         ],
         "note": "I used a quarter of this because my cayenne is extremely hot",
@@ -142,10 +122,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -174,10 +150,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "10",
-            "unit": "g"
           }
         ],
         "note": "see note",
@@ -192,10 +164,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -210,10 +178,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -228,10 +192,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "360",
-            "unit": "g"
           }
         ],
         "note": "chopped small",
@@ -246,10 +206,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "158",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -264,10 +220,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "656",
-            "unit": "g"
           }
         ],
         "note": "15-ounce, drained and rinsed",
@@ -277,15 +229,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -34,10 +34,6 @@ use ramekin_core::ingredient_categorizer;
 use ramekin_core::ingredient_parser::{
     parse_ingredient, parse_ingredients, Measurement, ParsedIngredient,
 };
-use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
-use ramekin_core::volume_to_weight::{
-    add_volume_to_weight_alternative, apply_ingredient_rewrites, VolumeConversionStats,
-};
 use serde::Deserialize;
 use std::fs;
 use std::path::PathBuf;
@@ -116,16 +112,9 @@ impl From<ParsedIngredient> for Expected {
 }
 
 /// Run the ingredient parsing pipeline on a raw ingredient string (single line).
-/// Includes metric weight conversion (oz/lb → g) and volume-to-weight conversion.
+/// Gram amounts are computed at read time, so they aren't part of the output.
 fn run_pipeline(raw: &str) -> Expected {
-    let parsed = parse_ingredient(raw);
-    let mut weight_stats = MetricConversionStats::default();
-    let mut volume_stats = VolumeConversionStats::default();
-    let result = apply_ingredient_rewrites(parsed);
-    let result = add_metric_weight_alternative(result, &mut weight_stats);
-    let result = add_volume_to_weight_alternative(result, &mut volume_stats);
-    let result = result.normalize_amounts();
-    Expected::from(result)
+    Expected::from(parse_ingredient(raw).normalize_amounts())
 }
 
 /// Run the ingredient parsing pipeline on a multi-line blob.
@@ -135,15 +124,7 @@ fn run_pipeline_batch(raw_lines: &[String]) -> Vec<Expected> {
     let parsed = parse_ingredients(&blob);
     parsed
         .into_iter()
-        .map(|ing| {
-            let mut weight_stats = MetricConversionStats::default();
-            let mut volume_stats = VolumeConversionStats::default();
-            let result = apply_ingredient_rewrites(ing);
-            let result = add_metric_weight_alternative(result, &mut weight_stats);
-            let result = add_volume_to_weight_alternative(result, &mut volume_stats);
-            let result = result.normalize_amounts();
-            Expected::from(result)
-        })
+        .map(|ing| Expected::from(ing.normalize_amounts()))
         .collect()
 }
 

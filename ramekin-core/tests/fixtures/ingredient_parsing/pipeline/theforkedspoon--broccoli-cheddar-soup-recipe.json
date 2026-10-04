@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -116,10 +108,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "884",
-            "unit": "g"
           }
         ],
         "note": "or chicken broth, chicken stock, or bone broth",
@@ -129,15 +117,11 @@
     {
       "raw": "2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -166,10 +150,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -184,10 +164,6 @@
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "12",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -202,10 +178,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "490",
-            "unit": "g"
           }
         ],
         "note": "plus more as needed",
@@ -220,10 +192,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "326",
-            "unit": "g"
           }
         ],
         "note": "plus more to garnish",

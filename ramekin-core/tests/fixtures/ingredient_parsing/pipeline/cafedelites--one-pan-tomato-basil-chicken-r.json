@@ -24,10 +24,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -84,10 +80,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "37",
-            "unit": "g"
           }
         ],
         "note": "chopped, optional: but adds flavour",
@@ -102,10 +94,6 @@
           {
             "amount": "1.33",
             "unit": "cup"
-          },
-          {
-            "amount": "247",
-            "unit": "g"
           }
         ],
         "note": "uncooked, rinsed (arborio rice may also be used for a risotto-like consistency)",
@@ -120,10 +108,6 @@
           {
             "amount": "14.5",
             "unit": "oz"
-          },
-          {
-            "amount": "411",
-            "unit": "g"
           }
         ],
         "note": "with liquid",
@@ -138,10 +122,6 @@
           {
             "amount": "1.75",
             "unit": "cup"
-          },
-          {
-            "amount": "436",
-            "unit": "g"
           }
         ],
         "note": "or chicken stock",
@@ -151,7 +131,7 @@
     {
       "raw": "1-2 teaspoons salt (adjust to your taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1-2",

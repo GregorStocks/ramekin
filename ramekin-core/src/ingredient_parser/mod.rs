@@ -16,6 +16,7 @@ mod item;
 mod parentheticals;
 mod units;
 
+pub(crate) use amounts::normalize_fraction_to_decimal;
 use amounts::*;
 use item::*;
 use parentheticals::*;

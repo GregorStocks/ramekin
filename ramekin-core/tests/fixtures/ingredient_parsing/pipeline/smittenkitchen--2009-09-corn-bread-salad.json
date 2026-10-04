@@ -28,10 +28,6 @@
           {
             "amount": "4 to 6",
             "unit": "medium"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -102,10 +98,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
         "note": "whole preferred",
@@ -134,10 +126,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -152,10 +140,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": "optional, this was my addition to give it more zing",
@@ -170,10 +154,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "21",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -202,10 +182,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -220,10 +196,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "25",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -233,15 +205,11 @@
     {
       "raw": "1/2 teaspoon salt, plus more to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "plus more to taste",
@@ -256,10 +224,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -274,10 +238,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "183",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -292,10 +252,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -310,10 +266,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -323,15 +275,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -346,10 +294,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -378,10 +322,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "368",
-            "unit": "g"
           }
         ],
         "note": "whole is preferred, here’s how you can make your own",
@@ -396,10 +336,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,

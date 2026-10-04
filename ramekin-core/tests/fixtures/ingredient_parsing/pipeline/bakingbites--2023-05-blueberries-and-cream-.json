@@ -33,10 +33,6 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "298",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -51,10 +47,6 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "306",
-            "unit": "g"
           }
         ],
         "note": "whole or lowfat",
@@ -83,10 +75,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "133",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -101,10 +89,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -119,10 +103,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -132,15 +112,11 @@
     {
       "raw": "1/4 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -155,10 +131,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "296",
-            "unit": "g"
           }
         ],
         "note": "fresh or frozen",

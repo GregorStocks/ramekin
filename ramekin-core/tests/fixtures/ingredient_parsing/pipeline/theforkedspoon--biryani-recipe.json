@@ -24,10 +24,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "327",
-            "unit": "g"
           }
         ],
         "note": "sunflower oil or peanut oil",
@@ -140,10 +136,6 @@
           {
             "amount": "2.5",
             "unit": "lb"
-          },
-          {
-            "amount": "1134",
-            "unit": "g"
           }
         ],
         "note": "boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb)",
@@ -158,10 +150,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6",
-            "unit": "g"
           }
         ],
         "note": "minced",
@@ -185,15 +173,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -208,10 +192,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -226,10 +206,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -258,10 +234,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "245",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -285,15 +257,11 @@
     {
       "raw": "1  teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -308,10 +276,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -382,10 +346,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -400,10 +360,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "23",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -446,10 +402,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": "optional",

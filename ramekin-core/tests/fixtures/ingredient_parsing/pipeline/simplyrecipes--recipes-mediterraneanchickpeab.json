@@ -10,10 +10,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -28,10 +24,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "59",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "7.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +80,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -105,15 +89,11 @@
     {
       "raw": "1/4 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -156,10 +136,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3.4",
-            "unit": "g"
           }
         ],
         "note": "either sweet or hot",
@@ -174,10 +150,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -192,10 +164,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -205,15 +173,11 @@
     {
       "raw": "1/4 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -242,10 +206,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -288,10 +248,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": "I like the combination of parsley, mint, and cilantro",
@@ -306,10 +262,6 @@
           {
             "amount": "6",
             "unit": "cup"
-          },
-          {
-            "amount": "180",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -324,10 +276,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "404",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -342,10 +290,6 @@
           {
             "amount": "1",
             "unit": "pint"
-          },
-          {
-            "amount": "360",
-            "unit": "g"
           }
         ],
         "note": "halved",
@@ -378,10 +322,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "17",
-            "unit": "g"
           }
         ],
         "note": "about 2 tablespoons, finely diced",

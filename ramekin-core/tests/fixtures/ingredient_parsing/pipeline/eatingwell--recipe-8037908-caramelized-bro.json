@@ -10,10 +10,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "trimmed and cut into 2- to 3-inch pieces",
@@ -46,10 +38,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "89",
-            "unit": "g"
           }
         ],
         "note": "white and light green parts only",
@@ -64,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -86,10 +70,6 @@
           {
             "amount": "15",
             "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
         "note": "rinsed",
@@ -104,10 +84,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -122,10 +98,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": "see Tip, toasted",
@@ -140,10 +112,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -158,10 +126,6 @@
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "23",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -185,15 +149,11 @@
     {
       "raw": "0.25 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,

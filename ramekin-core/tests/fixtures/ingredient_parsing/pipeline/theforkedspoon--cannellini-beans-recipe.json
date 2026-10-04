@@ -66,10 +66,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "81",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -79,7 +75,7 @@
     {
       "raw": "salt ((cook to taste))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "cook to taste",
         "category": "Spices & Seasonings"
@@ -93,10 +89,6 @@
           {
             "amount": "6",
             "unit": "cup"
-          },
-          {
-            "amount": "1422",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -111,10 +103,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": "optional",

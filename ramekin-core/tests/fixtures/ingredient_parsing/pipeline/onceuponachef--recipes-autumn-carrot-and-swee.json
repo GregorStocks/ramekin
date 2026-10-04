@@ -10,10 +10,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6.3",
-            "unit": "g"
           }
         ],
         "note": "plus a bit more for serving",
@@ -60,10 +52,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "peeled and chopped into 1-inch (2.5-cm) pieces",
@@ -82,10 +70,6 @@
           {
             "amount": "2",
             "unit": "small"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": "about 2 small, 2.5-cm, peeled and chopped into 1-inch pieces",
@@ -100,10 +84,6 @@
           {
             "amount": "8",
             "unit": "cup"
-          },
-          {
-            "amount": "1992",
-            "unit": "g"
           }
         ],
         "note": "best quality such as Swanson",
@@ -113,15 +93,11 @@
     {
       "raw": "1¾ teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -150,10 +126,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "42",
-            "unit": "g"
           }
         ],
         "note": null,

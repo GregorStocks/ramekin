@@ -9,7 +9,7 @@
     {
       "raw": "3 tablespoons + 1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "3 tablespoons plus 1 teaspoon",
@@ -44,10 +44,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -122,10 +118,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -141,10 +133,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -175,10 +163,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "656",
-            "unit": "g"
           }
         ],
         "note": "drained",

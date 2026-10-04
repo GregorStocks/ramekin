@@ -96,15 +96,11 @@
     {
       "raw": "¼ teaspoon salt ((adjust to taste))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": "adjust to taste",
@@ -119,10 +115,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": "more if needed",
@@ -137,10 +129,6 @@
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "20",
-            "unit": "g"
           }
         ],
         "note": "for sauce",
@@ -155,10 +143,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.5",
-            "unit": "g"
           }
         ],
         "note": "fine chopped",
@@ -173,10 +157,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3",
-            "unit": "g"
           }
         ],
         "note": "fine chopped",
@@ -205,10 +185,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "46",
-            "unit": "g"
           }
         ],
         "note": "or spring onions/ scallions fine chopped - green & white separated",
@@ -223,10 +199,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": "capsicum chopped fine, optional",
@@ -241,10 +213,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
         "note": "organic or naturally brewed, or tamari",
@@ -287,10 +255,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.9",
-            "unit": "g"
           }
         ],
         "note": "or paprika optional",
@@ -305,10 +269,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.5",
-            "unit": "g"
           }
         ],
         "note": "I used apple cider vinegar",
@@ -323,10 +283,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.2",
-            "unit": "g"
           }
         ],
         "note": "adjust to taste",
@@ -336,7 +292,7 @@
     {
       "raw": "salt (as needed)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": "as needed",
         "category": "Spices & Seasonings"
@@ -373,15 +329,11 @@
     {
       "raw": "⅛ teaspoon salt ((adjust to taste))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": "adjust to taste",

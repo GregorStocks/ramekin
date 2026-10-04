@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "9.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "or Western breadcrumbs, avoid seasoned types",
@@ -60,10 +52,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "46",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -101,15 +89,11 @@
     {
       "raw": "½ tsp salt (0.8-1.0% of meat weight)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "0.8-1.0% of meat weight",
@@ -152,10 +136,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6.4",
-            "unit": "g"
           }
         ],
         "note": "optional, use if meat is lean",
@@ -170,10 +150,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -188,10 +164,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -206,10 +178,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -224,10 +192,6 @@
           {
             "amount": "2.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "38",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -242,10 +206,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "17",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -260,10 +220,6 @@
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -278,10 +234,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.6",
-            "unit": "g"
           }
         ],
         "note": "avoid whole-grain",
@@ -296,10 +248,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
         "note": "koikuchi shoyu",
@@ -328,10 +276,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.7",
-            "unit": "g"
           }
         ],
         "note": null,
