@@ -33,7 +33,10 @@ required.
 The iOS app already has a SQLite-backed Core Data store. Since PR #643,
 `RecipeCacheStore` stores every active recipe's summary, structured ingredients,
 instructions, and notes for an account in `CachedRecipe`. The endpoint
-`GET /api/recipes/sync` maintains it using an opaque integer cursor:
+`GET /api/recipes/sync` maintains it using an opaque integer cursor. Applying
+sync pages, loading the cached corpus, and ranking it all run off the main
+thread (the store owns a private background context), because a full first
+sync on the main thread stalled the app for tens of seconds:
 
 - The first request returns all active recipe summaries.
 - Later requests return current recipe versions changed at or after the previous

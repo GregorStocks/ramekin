@@ -26,6 +26,8 @@ We do not need backwards compatibility. This does not exist in production. Do no
 
 Never fail gracefully, always fail fast. Check with me if you're not sure. (This is another training issue.)
 
+The fail-fast rule does not apply to the iOS app (`ramekin-ios`). A crash there loses the user's session, so handle recoverable problems (corrupt cached data, unexpected nils, bad server responses) by skipping, logging with `DebugLogger`, or showing an error instead of calling `fatalError`/`precondition`.
+
 # Pipeline
 
 When you change extraction or parsing behavior, rerun `make pipeline` and commit the resulting data/ diffs. Those diffs are the point — they show the impact of your change and reviewers need to see them.

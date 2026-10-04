@@ -18,14 +18,14 @@ final class RecipeCacheStoreTests: XCTestCase {
         XCTAssertNil(store.syncCursor(accountKey: accountKey))
     }
 
-    func testRowsWrittenByOlderSchemaArePurgedNotServed() throws {
+    func testRowsWrittenByOlderSchemaArePurgedNotServed() async throws {
         // Simulate an upgrade: rows exist, but the marker recording which
         // schema wrote them predates the current version (or is absent, as
         // for any pre-v4 install). Core Data migration backfills new columns
         // with defaults, so serving such rows would under-match searches.
         let (store, defaults) = makeStore()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        try store.apply(
+        try await store.apply(
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
@@ -40,10 +40,11 @@ final class RecipeCacheStoreTests: XCTestCase {
         }
         defaults.removeObject(forKey: try XCTUnwrap(markerKey))
 
-        XCTAssertTrue(try store.loadSearchDocuments(accountKey: accountKey).isEmpty)
+        let remaining = try await store.loadSearchDocuments(accountKey: accountKey)
+        XCTAssertTrue(remaining.isEmpty)
 
         // A fresh apply stamps the current schema version, so its rows serve.
-        try store.apply(
+        try await store.apply(
             syncResponse: SyncRecipesResponse(
                 cursor: 400,
                 deleted: [],
@@ -53,10 +54,11 @@ final class RecipeCacheStoreTests: XCTestCase {
             ),
             accountKey: accountKey
         )
-        XCTAssertEqual(try store.loadSearchDocuments(accountKey: accountKey).count, 1)
+        let served = try await store.loadSearchDocuments(accountKey: accountKey)
+        XCTAssertEqual(served.count, 1)
     }
 
-    func testApplyPopulatesSearchableRecipeBody() throws {
+    func testApplyPopulatesSearchableRecipeBody() async throws {
         let (store, defaults) = makeStore()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
         let recipe = makeRecipe(
@@ -73,7 +75,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             notes: "Cool completely."
         )
 
-        try store.apply(
+        try await store.apply(
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
@@ -84,7 +86,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             accountKey: accountKey
         )
 
-        let documents = try store.loadSearchDocuments(accountKey: accountKey)
+        let documents = try await store.loadSearchDocuments(accountKey: accountKey)
         let document = try XCTUnwrap(documents.first)
         XCTAssertEqual(documents.count, 1)
         XCTAssertEqual(document.summary.id, recipe.id)
@@ -117,11 +119,11 @@ final class RecipeCacheStoreTests: XCTestCase {
         XCTAssertNil(store.pendingSyncSweep(accountKey: accountKey))
     }
 
-    func testApplyReplacesSearchableFieldsOnUpdate() throws {
+    func testApplyReplacesSearchableFieldsOnUpdate() async throws {
         let (store, defaults) = makeStore()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
         let id = UUID()
-        try store.apply(
+        try await store.apply(
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
@@ -139,7 +141,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             updatedAt: Date(timeIntervalSince1970: 400)
         )
 
-        try store.apply(
+        try await store.apply(
             syncResponse: SyncRecipesResponse(
                 cursor: 500,
                 deleted: [],
@@ -150,18 +152,18 @@ final class RecipeCacheStoreTests: XCTestCase {
             accountKey: accountKey
         )
 
-        let documents = try store.loadSearchDocuments(accountKey: accountKey)
+        let documents = try await store.loadSearchDocuments(accountKey: accountKey)
         XCTAssertEqual(documents.count, 1)
         XCTAssertEqual(documents[0].ingredients, updated.ingredients)
         XCTAssertEqual(documents[0].instructions, "New instructions")
         XCTAssertNil(documents[0].notes)
     }
 
-    func testApplyRemovesDeletedRecipe() throws {
+    func testApplyRemovesDeletedRecipe() async throws {
         let (store, defaults) = makeStore()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
         let recipe = makeRecipe()
-        try store.apply(
+        try await store.apply(
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
@@ -172,7 +174,7 @@ final class RecipeCacheStoreTests: XCTestCase {
             accountKey: accountKey
         )
 
-        try store.apply(
+        try await store.apply(
             syncResponse: SyncRecipesResponse(
                 cursor: 400,
                 deleted: [recipe.id],
@@ -183,7 +185,102 @@ final class RecipeCacheStoreTests: XCTestCase {
             accountKey: accountKey
         )
 
-        XCTAssertTrue(try store.loadSearchDocuments(accountKey: accountKey).isEmpty)
+        let remaining = try await store.loadSearchDocuments(accountKey: accountKey)
+        XCTAssertTrue(remaining.isEmpty)
+    }
+
+    func testApplyUpdatesInsertsAndDeletesInOnePage() async throws {
+        let (store, defaults) = makeStore()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let kept = makeRecipe(instructions: "Old instructions")
+        let deleted = makeRecipe()
+        try await store.apply(
+            syncResponse: SyncRecipesResponse(
+                cursor: 300,
+                deleted: [],
+                hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                recipes: [kept, deleted]
+            ),
+            accountKey: accountKey
+        )
+        let added = makeRecipe(updatedAt: Date(timeIntervalSince1970: 100))
+
+        try await store.apply(
+            syncResponse: SyncRecipesResponse(
+                cursor: 400,
+                deleted: [deleted.id, UUID()],
+                hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                recipes: [makeRecipe(id: kept.id, instructions: "New instructions"), added]
+            ),
+            accountKey: accountKey
+        )
+
+        let documents = try await store.loadSearchDocuments(accountKey: accountKey)
+        XCTAssertEqual(documents.map(\.summary.id), [kept.id, added.id])
+        XCTAssertEqual(documents[0].instructions, "New instructions")
+    }
+
+    func testApplyLeavesOtherAccountsRowsAlone() async throws {
+        let (store, defaults) = makeStore()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let otherAccountKey = "https://example.test|other"
+        let recipe = makeRecipe()
+        for key in [accountKey, otherAccountKey] {
+            try await store.apply(
+                syncResponse: SyncRecipesResponse(
+                    cursor: 300,
+                    deleted: [],
+                    hasMore: false,
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                    recipes: [recipe]
+                ),
+                accountKey: key
+            )
+        }
+
+        try await store.apply(
+            syncResponse: SyncRecipesResponse(
+                cursor: 400,
+                deleted: [recipe.id],
+                hasMore: false,
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                recipes: []
+            ),
+            accountKey: accountKey
+        )
+
+        let mine = try await store.loadSearchDocuments(accountKey: accountKey)
+        let theirs = try await store.loadSearchDocuments(accountKey: otherAccountKey)
+        XCTAssertTrue(mine.isEmpty)
+        XCTAssertEqual(theirs.map(\.summary.id), [recipe.id])
+    }
+
+    func testStoreWorksOffTheMainActor() async throws {
+        // Applying a full sync on the main thread stalled the app for tens of
+        // seconds on CI; the store must not be bound to the main actor.
+        let (store, defaults) = makeStore()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let recipe = makeRecipe()
+        let accountKey = accountKey
+
+        let documents = try await Task.detached {
+            XCTAssertFalse(Thread.isMainThread)
+            try await store.apply(
+                syncResponse: SyncRecipesResponse(
+                    cursor: 300,
+                    deleted: [],
+                    hasMore: false,
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                    recipes: [recipe]
+                ),
+                accountKey: accountKey
+            )
+            return try await store.loadSearchDocuments(accountKey: accountKey)
+        }.value
+
+        XCTAssertEqual(documents.map(\.summary.id), [recipe.id])
     }
 
     private var accountKey: String { "https://example.test|chef" }

@@ -118,7 +118,7 @@ extension RecipeListViewModel {
     func start() async {
         loadPersistedTags()
         loadPersistedAvailableTags()
-        loadCachedRecipesForCurrentQuery()
+        await loadCachedRecipesForCurrentQuery()
         await loadTags()
         await loadRecipes(reset: true)
     }
@@ -298,7 +298,7 @@ extension RecipeListViewModel {
         }
     }
 
-    func loadCachedRecipesForCurrentQuery() {
+    func loadCachedRecipesForCurrentQuery() async {
         guard RecipeSummaryCacheSupport.canServeFromCache(filterState: currentFilterState, sortOrder: sortOrder),
               let accountKey = cache.currentAccountKey()
         else {
@@ -306,8 +306,8 @@ extension RecipeListViewModel {
         }
 
         do {
-            let cachedDocuments = try cache.loadSearchDocuments(accountKey)
-            applyCachedRecipes(cachedDocuments)
+            let cachedDocuments = try await cache.loadSearchDocuments(accountKey)
+            await applyCachedRecipes(cachedDocuments)
         } catch {
             DebugLogger.shared.log("loadCachedRecipes error: \(error.localizedDescription)", source: "RecipeList")
         }
@@ -373,14 +373,13 @@ private extension RecipeListViewModel {
         // error — an empty `recipes` can just mean the filters match nothing.
         var appliedCachedRecipes = false
         do {
-            let cachedBeforeSync = try cache.loadSearchDocuments(accountKey)
+            let cachedBeforeSync = try await cache.loadSearchDocuments(accountKey)
             // Sorting, tag filters, and clearing a search are answerable from
             // the cache alone, so apply them before the network round-trip.
             // The sync below only freshens the data: if it fails or hangs, the
             // list must not stay stuck on the previous filter+sort.
             if !cachedBeforeSync.isEmpty {
-                applyCachedRecipes(cachedBeforeSync)
-                appliedCachedRecipes = true
+                appliedCachedRecipes = await applyCachedRecipes(cachedBeforeSync)
             }
             let cursor = cachedBeforeSync.isEmpty ? nil : cache.syncCursor(accountKey)
             try await logger.timed("syncRecipeCache API", source: "RecipeList") {
@@ -396,13 +395,13 @@ private extension RecipeListViewModel {
                     try await runSyncSweep(cursor: cursor, accountKey: accountKey)
                 }
             }
-            let cachedDocuments = try cache.loadSearchDocuments(accountKey)
+            let cachedDocuments = try await cache.loadSearchDocuments(accountKey)
 
             guard isCurrentRequest(generation, key) else {
                 logger.log("syncCachedRecipes: superseded request, discarding results", source: "RecipeList")
                 return
             }
-            applyCachedRecipes(cachedDocuments)
+            await applyCachedRecipes(cachedDocuments)
             logger.log("syncCachedRecipes: cache has \(cachedDocuments.count) recipes", source: "RecipeList")
         } catch is CancellationError {
             logger.log("syncCachedRecipes: cancelled", source: "RecipeList")
@@ -431,12 +430,34 @@ private extension RecipeListViewModel {
         )
     }
 
-    func applyCachedRecipes(_ cachedDocuments: [CachedRecipeSearchDocument]) {
-        let visibleRecipes = RecipeSummaryCacheSupport.visibleRecipes(
-            documents: cachedDocuments,
-            filterState: currentFilterState,
-            sortOrder: sortOrder
-        )
+    /// Filters and ranks the cached corpus off the main thread, then
+    /// publishes it unless the filter+sort changed or a newer reset load
+    /// started meanwhile. Returns whether it published.
+    @discardableResult
+    func applyCachedRecipes(_ cachedDocuments: [CachedRecipeSearchDocument]) async -> Bool {
+        let key = currentKey()
+        let generation = requestGeneration
+        let filterState = currentFilterState
+        let sortOrder = self.sortOrder
+        // The filters can move to a server-only query between the caller's
+        // routing check and here; the reload that change schedules owns the
+        // list then.
+        guard RecipeSummaryCacheSupport.canServeFromCache(filterState: filterState, sortOrder: sortOrder) else {
+            return false
+        }
+        let visibleRecipes = await Task.detached(priority: .userInitiated) {
+            RecipeSummaryCacheSupport.visibleRecipes(
+                documents: cachedDocuments,
+                filterState: filterState,
+                sortOrder: sortOrder
+            )
+        }.value
+        // A newer reset with the same filter+sort (pull-to-refresh, a reload
+        // after a delete) owns the list; this older corpus must not overwrite it.
+        guard key == currentKey(), generation == requestGeneration else {
+            DebugLogger.shared.log("applyCachedRecipes: superseded while ranking, discarding", source: "RecipeList")
+            return false
+        }
         recipes = visibleRecipes
         totalCount = visibleRecipes.count
         hasMore = false
@@ -444,7 +465,8 @@ private extension RecipeListViewModel {
         isLoadingMore = false
         loadMoreFailed = false
         isUsingLocalCache = true
-        activeKey = currentKey()
+        activeKey = key
+        return true
     }
 
     static let sortOrderKey = "recipeSortOrder"
