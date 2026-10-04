@@ -24,7 +24,10 @@ jobs:
   ios-unit:
     name: iOS Unit Tests
     runs-on: macos-latest
-    timeout-minutes: 30
+    # Backstop only: the step timeouts below are the real limits. A step that
+    # times out fails (rather than the whole job being cancelled), so the
+    # result upload still runs.
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
 
@@ -32,10 +35,11 @@ jobs:
         run: brew install xcodegen
 
       - name: Run unit tests
+        timeout-minutes: 25
         run: make ios-test
 
       - name: Upload test results on failure
-        if: failure()
+        if: failure() || cancelled()
         uses: actions/upload-artifact@v4
         with:
           name: ios-unit-test-results
@@ -45,7 +49,11 @@ jobs:
   ios-ui:
     name: iOS UI Tests
     runs-on: macos-latest
-    timeout-minutes: 30
+    # Backstop only, above the sum of the step timeouts below. Hitting a job
+    # timeout cancels the job, which skips the cache post-steps and loses the
+    # cold build; a step timeout instead fails the step, so diagnostics upload
+    # and the Rust cache (cache-on-failure) still saves for the next run.
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -95,14 +103,17 @@ jobs:
             cli -> target
             ramekin-core -> target
           shared-key: ios-ci
+          cache-on-failure: true
 
-      - name: Cache cargo binaries
-        uses: actions/cache@v4
+      - name: Restore cargo binaries
+        id: cargo-bin-cache
+        uses: actions/cache/restore@v6
         with:
           path: ~/.cargo/bin
           key: cargo-bin-macos-diesel-3.2
 
       - name: Install diesel CLI
+        timeout-minutes: 10
         run: |
           if ! command -v diesel &> /dev/null; then
             echo "Installing diesel_cli..."
@@ -115,13 +126,32 @@ jobs:
           LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib:/usr/local/opt/postgresql@16/lib
           PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
 
+      # Save right away rather than in a post-step, so a later failure or
+      # cancellation can't throw away the diesel_cli build.
+      - name: Save cargo binaries
+        if: steps.cargo-bin-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: ~/.cargo/bin
+          key: cargo-bin-macos-diesel-3.2
+
       - name: Run migrations
         run: cd server && diesel migration run
         env:
           DATABASE_URL: postgres://ramekin@localhost:5432/ramekin_ios
 
       - name: Build server
+        timeout-minutes: 20
         run: make server-release-build
+        env:
+          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
+          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
+
+      - name: Build CLI
+        timeout-minutes: 15
+        # This CLI only seeds test data. Avoid a second optimized Rust build
+        # consuming the job budget on a cold cache.
+        run: make cli/target/debug/ramekin-cli
         env:
           LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
           PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
@@ -161,20 +191,15 @@ jobs:
           RAMEKIN_AI_BASE_URL: http://localhost:55002/v1
           RAMEKIN_AI_RATE_LIMIT_MS: 0
 
-      - name: Build CLI and seed database
+      - name: Seed database
+        timeout-minutes: 10
         run: |
-          # This CLI only seeds test data. Avoid a second optimized Rust build
-          # consuming the simulator test budget on a cold cache.
-          make cli/target/debug/ramekin-cli
           ./cli/target/debug/ramekin-cli seed \
             --server-url http://localhost:55000 \
             --username t --password t \
             --tags-file data/eval-tags.json \
             --preserve-tags=false \
             data/dev/seed.paprikarecipes
-        env:
-          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
-          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
 
       - name: Verify seeded recipes are queryable
         run: |
@@ -200,6 +225,7 @@ jobs:
           exit 1
 
       - name: Run UI tests
+        timeout-minutes: 25
         run: make ios-test-ui
 
       - name: Upload UI test results and screenshots
