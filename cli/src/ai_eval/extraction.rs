@@ -445,7 +445,8 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
 
     let stated = quantities(source);
     let source_words: HashSet<String> = tokens(source).into_iter().collect();
-    let invented = [
+    let unsourced = |text: &str| tokens(text).iter().any(|w| !source_words.contains(w));
+    let mut invented: Vec<&'static str> = [
         ("servings", &answer.servings, Quantity::Servings),
         ("prep_time", &answer.prep_time, Quantity::Time),
         ("cook_time", &answer.cook_time, Quantity::Time),
@@ -462,7 +463,7 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
             let numbers = numbers(v);
             if numbers.is_empty() {
                 // "serves a crowd", "quick": words the source never uses.
-                tokens(v).iter().any(|w| !source_words.contains(w))
+                unsourced(v)
             } else {
                 numbers
                     .into_iter()
@@ -472,6 +473,30 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
     })
     .map(|(name, _, _)| name)
     .collect();
+    // The rest of the draft a user sees: tags come from categories.
+    for (name, value) in [
+        ("difficulty", &answer.difficulty),
+        ("source_name", &answer.source_name),
+        ("source_url", &answer.source_url),
+    ] {
+        if value.as_deref().is_some_and(unsourced) {
+            invented.push(name);
+        }
+    }
+    if answer
+        .categories
+        .iter()
+        .flatten()
+        .any(|category| unsourced(category))
+    {
+        invented.push("categories");
+    }
+    if answer
+        .rating
+        .is_some_and(|rating| !source_words.contains(&rating.to_string()))
+    {
+        invented.push("rating");
+    }
 
     // Every number, as often as it appears: "2 hours, plus 2 hours
     // chilling" isn't kept by "2 hours".
@@ -746,6 +771,11 @@ fn left_blank(answer: &RawRecipe) -> bool {
         ]
         .into_iter()
         .all(|field| field.as_deref().is_none_or(|v| v.trim().is_empty()))
+        && [&answer.source_name, &answer.source_url]
+            .into_iter()
+            .all(Option::is_none)
+        && answer.categories.as_ref().is_none_or(Vec::is_empty)
+        && answer.rating.is_none()
 }
 
 pub async fn eval_text(model: &str, cases: &[TextCase], spend: &mut Spend) -> Result<ModelResult> {
@@ -946,6 +976,11 @@ mod tests {
         assert_eq!(score.extra_text_kept, Some(1.0));
         // The cook time is stated; the total isn't.
         assert_eq!(score.invented, vec!["total_time"]);
+        let mut tagged = recipe("1 cup rice", "Simmer the rice.");
+        tagged.categories = Some(vec!["rice".into(), "weeknight".into()]);
+        tagged.rating = Some(5);
+        let tagged = super::score(&tagged, &expected(), "Serves 4. Simmer the rice.");
+        assert_eq!(tagged.invented, vec!["categories", "rating"]);
         // The stated servings are kept.
         assert_eq!((score.metadata_kept, score.metadata_expected), (1, 1));
         // Only "simmer" is in the source.
