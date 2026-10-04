@@ -13,6 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
+import type { DerivedMeasurement } from './DerivedMeasurement';
+import {
+    DerivedMeasurementFromJSON,
+    DerivedMeasurementFromJSONTyped,
+    DerivedMeasurementToJSON,
+    DerivedMeasurementToJSONTyped,
+} from './DerivedMeasurement';
 import type { RecipeContent } from './RecipeContent';
 import {
     RecipeContentFromJSON,
@@ -34,6 +41,13 @@ export interface PrepareTextRecipeResponse {
      */
     content: RecipeContent;
     /**
+     * Approximate grams for `content.ingredients` that have them, for
+     * previewing the draft. Never saved.
+     * @type {Array<DerivedMeasurement>}
+     * @memberof PrepareTextRecipeResponse
+     */
+    derivedMeasurements: Array<DerivedMeasurement>;
+    /**
      * Editable ingredient lines. Send these as raw_ingredients when saving.
      * @type {string}
      * @memberof PrepareTextRecipeResponse
@@ -52,6 +66,7 @@ export interface PrepareTextRecipeResponse {
  */
 export function instanceOfPrepareTextRecipeResponse(value: object): value is PrepareTextRecipeResponse {
     if (!('content' in value) || value['content'] === undefined) return false;
+    if (!('derivedMeasurements' in value) || value['derivedMeasurements'] === undefined) return false;
     if (!('rawIngredients' in value) || value['rawIngredients'] === undefined) return false;
     if (!('warnings' in value) || value['warnings'] === undefined) return false;
     return true;
@@ -68,6 +83,7 @@ export function PrepareTextRecipeResponseFromJSONTyped(json: any, ignoreDiscrimi
     return {
         
         'content': RecipeContentFromJSON(json['content']),
+        'derivedMeasurements': ((json['derived_measurements'] as Array<any>).map(DerivedMeasurementFromJSON)),
         'rawIngredients': json['raw_ingredients'],
         'warnings': json['warnings'],
     };
@@ -85,6 +101,7 @@ export function PrepareTextRecipeResponseToJSONTyped(value?: PrepareTextRecipeRe
     return {
         
         'content': RecipeContentToJSON(value['content']),
+        'derived_measurements': ((value['derivedMeasurements'] as Array<any>).map(DerivedMeasurementToJSON)),
         'raw_ingredients': value['rawIngredients'],
         'warnings': value['warnings'],
     };

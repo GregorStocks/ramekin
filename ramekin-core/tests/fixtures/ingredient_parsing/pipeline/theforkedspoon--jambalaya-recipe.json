@@ -10,10 +10,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "or any smoked sausage",
@@ -46,10 +38,6 @@
           {
             "amount": "1.5",
             "unit": "lb"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": "chopped into 1-inch cubes",
@@ -143,15 +131,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -180,10 +164,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -212,10 +192,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -234,10 +210,6 @@
           {
             "amount": "14",
             "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -252,10 +224,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -284,10 +252,6 @@
           {
             "amount": "2.75",
             "unit": "cup"
-          },
-          {
-            "amount": "685",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -302,10 +266,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "100",
-            "unit": "g"
           }
         ],
         "note": "thinly sliced (or 1 tsp file powder), optional",
@@ -320,10 +280,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "thawed, peeled, and deveined",

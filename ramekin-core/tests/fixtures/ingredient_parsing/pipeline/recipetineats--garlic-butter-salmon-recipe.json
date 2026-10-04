@@ -27,15 +27,11 @@
     {
       "raw": "1/2 tsp salt (, cooking / kosher)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "cooking / kosher",
@@ -64,10 +60,6 @@
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "20",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -86,10 +78,6 @@
           {
             "amount": "2",
             "unit": "clove"
-          },
-          {
-            "amount": "8.5",
-            "unit": "g"
           }
         ],
         "note": "~2 cloves, finely minced by hand (don't use a garlic press)",
@@ -122,10 +110,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.1",
-            "unit": "g"
           }
         ],
         "note": "plus more to taste",
@@ -140,10 +124,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.5",
-            "unit": "g"
           }
         ],
         "note": "finely chopped",

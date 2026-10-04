@@ -33,7 +33,7 @@
     {
       "raw": "20 g salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "20",
@@ -52,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "20",
-            "unit": "g"
           }
         ],
         "note": null,

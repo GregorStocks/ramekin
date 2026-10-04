@@ -10,10 +10,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "54",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -70,10 +66,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -88,10 +80,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -106,10 +94,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -128,10 +112,6 @@
           {
             "amount": "28",
             "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
         "note": "lightly drained",
@@ -146,10 +126,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "192",
-            "unit": "g"
           }
         ],
         "note": "picked over and rinsed",
@@ -164,10 +140,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "884",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -182,10 +154,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "474",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -195,15 +163,11 @@
     {
       "raw": "1 teaspoon salt, more to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "more to taste",
@@ -241,10 +205,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "36",
-            "unit": "g"
           }
         ],
         "note": "tough ribs removed",

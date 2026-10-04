@@ -2,37 +2,17 @@ use crate::api::ai::ai_client_from_env;
 use crate::api::ApiError;
 use crate::auth::AuthUser;
 use crate::db::{run_blocking, DbPool};
-use crate::models::Ingredient;
 use crate::photos::{load_photo_images, PhotoImageLoadError};
 use crate::schema::user_tags;
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
 use ramekin_core::ai::{custom_enrich, suggest_tags};
-use ramekin_core::enrich_ingredient_measurements;
-use ramekin_core::ingredient_parser::ParsedIngredient;
 use serde::Deserialize;
 use std::fmt;
 use std::sync::Arc;
 use utoipa::OpenApi;
 use utoipa::ToSchema;
-
-/// Enrich ingredient measurements by adding gram conversions.
-///
-/// Converts volume units (cups, tbsp, tsp) and imperial weights (oz, lb)
-/// to grams when density data is available.
-pub(crate) fn enrich_ingredients(
-    ingredients: Vec<Ingredient>,
-) -> Result<Vec<Ingredient>, serde_json::Error> {
-    ingredients
-        .into_iter()
-        .map(|ing| {
-            let parsed: ParsedIngredient = serde_json::from_value(serde_json::to_value(&ing)?)?;
-            let enriched = enrich_ingredient_measurements(parsed);
-            serde_json::from_value(serde_json::to_value(&enriched)?)
-        })
-        .collect()
-}
 
 #[derive(Debug)]
 enum TagEnrichmentError {
@@ -70,9 +50,9 @@ impl fmt::Display for TagEnrichmentError {
 /// It does NOT modify any database records. The client can apply the enriched data
 /// via a normal PUT /api/recipes/{id} call.
 ///
-/// Enriches:
-/// - Ingredient measurements with gram conversions (volume/weight → grams)
-/// - Tags by suggesting from the user's existing tag library (requires AI; returns 503 if unavailable)
+/// Suggests tags from the user's existing tag library (requires AI; returns
+/// 503 if unavailable). Gram amounts are computed when a recipe is read, so
+/// ingredients come back unchanged.
 #[utoipa::path(
     post,
     path = "/api/enrich",
@@ -97,19 +77,7 @@ pub async fn enrich_recipe(
         .await
         .map_err(|e| e.into_api_error())?;
 
-    // Enrich ingredient measurements (no AI needed - uses density database)
-    let ingredients = enrich_ingredients(request.ingredients).map_err(|e| {
-        tracing::error!("Failed to enrich ingredients: {}", e);
-        ApiError::internal("Failed to enrich ingredients")
-    })?;
-
-    // Return enriched recipe
-    let enriched = RecipeContent {
-        tags,
-        ingredients,
-        ..request
-    };
-    Ok((StatusCode::OK, Json(enriched)))
+    Ok((StatusCode::OK, Json(RecipeContent { tags, ..request })))
 }
 
 /// Try to enrich tags using AI.

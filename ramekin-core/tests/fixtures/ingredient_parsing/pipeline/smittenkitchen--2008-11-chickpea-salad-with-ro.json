@@ -24,10 +24,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "492",
-            "unit": "g"
           }
         ],
         "note": "about 2 15-ounce cans, rinsed if canned",
@@ -42,10 +38,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -60,10 +52,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +80,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -105,15 +89,11 @@
     {
       "raw": "1/4  teaspoon of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -142,10 +122,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "54",
-            "unit": "g"
           }
         ],
         "note": null,

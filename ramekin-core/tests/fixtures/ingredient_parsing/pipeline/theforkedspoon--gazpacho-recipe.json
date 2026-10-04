@@ -10,10 +10,6 @@
           {
             "amount": "3",
             "unit": "lb"
-          },
-          {
-            "amount": "1361",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -126,10 +122,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "54",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -144,10 +136,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": "or red wine vinegar",
@@ -157,15 +145,11 @@
     {
       "raw": "1 teaspoon salt (plus more to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "plus more to taste",
@@ -194,10 +178,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.5",
-            "unit": "g"
           }
         ],
         "note": null,

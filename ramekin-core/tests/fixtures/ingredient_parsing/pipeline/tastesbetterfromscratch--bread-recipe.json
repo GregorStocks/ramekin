@@ -28,10 +28,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "12",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +42,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "85g honey, 50g sugar",
@@ -59,15 +51,11 @@
     {
       "raw": "2 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -86,10 +74,6 @@
           {
             "amount": "30",
             "unit": "ml"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": "canola or vegetable",

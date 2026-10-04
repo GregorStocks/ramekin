@@ -24,10 +24,6 @@
           {
             "amount": "2000",
             "unit": "ml"
-          },
-          {
-            "amount": "2003",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -37,15 +33,11 @@
     {
       "raw": "½ tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,

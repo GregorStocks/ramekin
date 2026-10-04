@@ -14,10 +14,6 @@
           {
             "amount": "3-4",
             "unit": "lb"
-          },
-          {
-            "amount": "1361-1814",
-            "unit": "g"
           }
         ],
         "note": "about 3-4 lbs",
@@ -209,15 +205,11 @@
     {
       "raw": "2 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,

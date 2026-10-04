@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "oz"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "1.5",
             "unit": "lb"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -78,10 +66,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -124,10 +108,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "236",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -156,10 +136,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "747",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -174,10 +150,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2.4",
-            "unit": "g"
           }
         ],
         "note": "or 2 teaspoons dried",
@@ -201,7 +173,7 @@
     {
       "raw": "Salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -215,10 +187,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": null,

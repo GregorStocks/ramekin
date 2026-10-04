@@ -22,7 +22,7 @@ pub struct MetricConversionStats {
 ///
 /// Converts measurements with unit "oz" or "lb" to grams.
 /// Returns the ingredient with the metric alternative added to measurements.
-pub fn add_metric_weight_alternative(
+pub(crate) fn add_metric_weight_alternative(
     mut ingredient: ParsedIngredient,
     stats: &mut MetricConversionStats,
 ) -> ParsedIngredient {

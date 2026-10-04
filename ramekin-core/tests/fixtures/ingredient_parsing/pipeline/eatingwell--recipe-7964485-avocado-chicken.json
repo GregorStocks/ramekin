@@ -66,10 +66,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "g"
           }
         ],
         "note": "plus more for garnish",
@@ -84,10 +80,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -111,15 +103,11 @@
     {
       "raw": "0.75 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -162,10 +150,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "73",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -194,10 +178,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "420",
-            "unit": "g"
           }
         ],
         "note": null,

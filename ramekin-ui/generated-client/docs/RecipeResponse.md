@@ -8,6 +8,7 @@ Name | Type
 ------------ | -------------
 `cookTime` | string
 `createdAt` | Date
+`derivedMeasurements` | [Array&lt;DerivedMeasurement&gt;](DerivedMeasurement.md)
 `description` | string
 `difficulty` | string
 `id` | string
@@ -37,6 +38,7 @@ import type { RecipeResponse } from ''
 const example = {
   "cookTime": null,
   "createdAt": null,
+  "derivedMeasurements": null,
   "description": null,
   "difficulty": null,
   "id": null,

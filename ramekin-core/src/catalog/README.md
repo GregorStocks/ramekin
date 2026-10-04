@@ -254,7 +254,6 @@ that appears in both releases.
     "cheese": null
   },
   "not_food": { "to serve": "A serving suggestion, not an ingredient." },
-  "rewrites": { "salt": "kosher salt" },
   "food_overrides": {
     "egg, whole, raw, fresh": { "default_portion": "large" },
     "thyme, fresh": { "trace_ok": true }
@@ -339,7 +338,6 @@ that appears in both releases.
   saved a new version (source "reparse") for recipes that changed.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
-- `rewrites` rename the stored ingredient at import ("salt" → "kosher salt").
 - `food_overrides` correct SR Legacy foods by their unique description:
   - `default_portion` picks the piece a bare count means: "3 eggs" are large,
     the US recipe convention, and "4 strips bacon" are slices, although the

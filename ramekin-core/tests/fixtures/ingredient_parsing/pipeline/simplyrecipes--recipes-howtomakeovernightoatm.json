@@ -10,10 +10,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "39",
-            "unit": "g"
           }
         ],
         "note": "not instant oats; use gluten-free oats if needed",
@@ -37,7 +33,7 @@
     {
       "raw": "Pinch salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,

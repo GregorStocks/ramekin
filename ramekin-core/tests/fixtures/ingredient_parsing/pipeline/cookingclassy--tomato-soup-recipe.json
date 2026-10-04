@@ -10,10 +10,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "76",
-            "unit": "g"
           }
         ],
         "note": "cut into 5 pieces",
@@ -32,10 +28,6 @@
           {
             "amount": "2",
             "unit": "medium"
-          },
-          {
-            "amount": "481",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -54,10 +46,6 @@
           {
             "amount": "6",
             "unit": "clove"
-          },
-          {
-            "amount": "17",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -72,10 +60,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "42",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -90,10 +74,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "996",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -112,10 +92,6 @@
           {
             "amount": "28",
             "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -162,10 +138,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.3",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -175,7 +147,7 @@
     {
       "raw": "Salt (and freshly ground black pepper)",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": "and freshly ground black pepper",
         "category": "Spices & Seasonings"

@@ -10,10 +10,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "19",
-            "unit": "g"
           }
         ],
         "note": "toasted",
@@ -56,10 +52,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": "use what you have handy!",
@@ -69,15 +61,11 @@
     {
       "raw": "1/2 tsp salt (plus extra to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "plus extra to taste",
@@ -120,10 +108,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "72",
-            "unit": "g"
           }
         ],
         "note": null,

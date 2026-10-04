@@ -67,7 +67,7 @@
     {
       "raw": "1/4 teaspoon (1g) salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
@@ -134,10 +134,6 @@
           {
             "amount": "5",
             "unit": "ml"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,

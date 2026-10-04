@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "optional",
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "156",
-            "unit": "g"
           }
         ],
         "note": "certified gluten-free if necessary",
@@ -60,10 +52,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "948",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -73,7 +61,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,

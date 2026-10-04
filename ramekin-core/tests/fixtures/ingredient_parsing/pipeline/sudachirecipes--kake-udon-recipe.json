@@ -52,10 +52,6 @@
           {
             "amount": "1000",
             "unit": "ml"
-          },
-          {
-            "amount": "1002",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -70,10 +66,6 @@
           {
             "amount": "5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "80",
-            "unit": "g"
           }
         ],
         "note": "koikuchi shoyu",
@@ -88,10 +80,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -101,15 +89,11 @@
     {
       "raw": "½ tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -138,10 +122,6 @@
           {
             "amount": "5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "31",
-            "unit": "g"
           }
         ],
         "note": null,

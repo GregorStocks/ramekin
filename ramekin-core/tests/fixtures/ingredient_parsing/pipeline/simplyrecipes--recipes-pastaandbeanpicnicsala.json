@@ -5,15 +5,11 @@
     {
       "raw": "3 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "3",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "curly, twisted, corkscrew, shells, or bow-ties",
@@ -46,10 +38,6 @@
           {
             "amount": "7",
             "unit": "tbsp"
-          },
-          {
-            "amount": "94",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -87,10 +75,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -133,10 +117,6 @@
           {
             "amount": "1",
             "unit": "pint"
-          },
-          {
-            "amount": "360",
-            "unit": "g"
           }
         ],
         "note": "sliced or cut into quarters",
@@ -179,10 +159,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,

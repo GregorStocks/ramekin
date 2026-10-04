@@ -22,6 +22,9 @@ pub struct RecipeResponse {
     pub cook_time: Option<Option<String>>,
     #[serde(rename = "created_at")]
     pub created_at: String,
+    /// Approximate grams for ingredients that have them, in ingredient order.
+    #[serde(rename = "derived_measurements")]
+    pub derived_measurements: Vec<models::DerivedMeasurement>,
     #[serde(
         rename = "description",
         default,
@@ -117,6 +120,7 @@ pub struct RecipeResponse {
 impl RecipeResponse {
     pub fn new(
         created_at: String,
+        derived_measurements: Vec<models::DerivedMeasurement>,
         id: uuid::Uuid,
         ingredients: Vec<models::Ingredient>,
         instructions: String,
@@ -130,6 +134,7 @@ impl RecipeResponse {
         RecipeResponse {
             cook_time: None,
             created_at,
+            derived_measurements,
             description: None,
             difficulty: None,
             id,

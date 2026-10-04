@@ -95,7 +95,7 @@
     {
       "raw": "Two pinches of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
@@ -168,10 +168,6 @@
           {
             "amount": "5",
             "unit": "ml"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -190,10 +186,6 @@
           {
             "amount": "15",
             "unit": "ml"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": "optional",
@@ -226,10 +218,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -244,10 +232,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -262,10 +246,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -280,10 +260,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -366,10 +342,6 @@
           {
             "amount": "15",
             "unit": "ml"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": "optional",

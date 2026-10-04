@@ -9,10 +9,6 @@ use ramekin_core::ingredient_parser::{
     detect_peer_section_header, detect_section_header, next_peer_section_anchor, parse_ingredient,
     parse_ingredients, should_ignore_line, Measurement, ParsedIngredient,
 };
-use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
-use ramekin_core::volume_to_weight::{
-    add_volume_to_weight_alternative, apply_ingredient_rewrites, VolumeConversionStats,
-};
 use serde::{Deserialize, Serialize};
 use std::fs::{self, File};
 use std::io::Read;
@@ -81,16 +77,9 @@ fn default_fixtures_dir() -> PathBuf {
 }
 
 /// Run the ingredient parsing pipeline on a raw ingredient string (single line).
-/// Includes metric weight conversion (oz/lb → g) and volume-to-weight conversion.
+/// Gram amounts are computed at read time, so they aren't part of the output.
 fn run_pipeline(raw: &str) -> Expected {
-    let parsed = parse_ingredient(raw);
-    let mut weight_stats = MetricConversionStats::default();
-    let mut volume_stats = VolumeConversionStats::default();
-    let result = apply_ingredient_rewrites(parsed);
-    let result = add_metric_weight_alternative(result, &mut weight_stats);
-    let result = add_volume_to_weight_alternative(result, &mut volume_stats);
-    let result = result.normalize_amounts();
-    Expected::from(result)
+    Expected::from(parse_ingredient(raw).normalize_amounts())
 }
 
 /// Result of batch processing ingredients, including the raw line for each output.
@@ -109,12 +98,7 @@ fn run_pipeline_batch(raw_lines: &[String]) -> Vec<BatchResult> {
         .into_iter()
         .map(|ing| {
             let raw = ing.raw.clone().unwrap_or_default();
-            let mut weight_stats = MetricConversionStats::default();
-            let mut volume_stats = VolumeConversionStats::default();
-            let result = apply_ingredient_rewrites(ing);
-            let result = add_metric_weight_alternative(result, &mut weight_stats);
-            let result = add_volume_to_weight_alternative(result, &mut volume_stats);
-            let result = result.normalize_amounts();
+            let result = ing.normalize_amounts();
             BatchResult {
                 raw,
                 expected: Expected::from(result),

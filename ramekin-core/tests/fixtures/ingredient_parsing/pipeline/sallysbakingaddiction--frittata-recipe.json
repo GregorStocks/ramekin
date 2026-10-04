@@ -28,10 +28,6 @@
           {
             "amount": "120",
             "unit": "ml"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -41,15 +37,11 @@
     {
       "raw": "1/2 teaspoon salt, plus more for cooking vegetables",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "plus more for cooking vegetables",
@@ -78,10 +70,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "163",
-            "unit": "g"
           }
         ],
         "note": "about 100-120g, divided",
@@ -96,10 +84,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,

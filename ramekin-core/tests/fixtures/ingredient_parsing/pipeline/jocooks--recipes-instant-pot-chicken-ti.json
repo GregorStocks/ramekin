@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "skinless and boneless, I used both chicken breast and thighs, cut into cubes",
@@ -28,10 +24,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "368",
-            "unit": "g"
           }
         ],
         "note": "I used Greek",
@@ -46,10 +38,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "46",
-            "unit": "g"
           }
         ],
         "note": "freshly squeezed",
@@ -64,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "10",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -82,10 +66,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6",
-            "unit": "g"
           }
         ],
         "note": "minced",
@@ -109,15 +89,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -132,10 +108,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "41",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -178,10 +150,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "6",
-            "unit": "g"
           }
         ],
         "note": "minced",
@@ -196,10 +164,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -214,10 +178,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "6.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -232,10 +192,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.3",
-            "unit": "g"
           }
         ],
         "note": "ground",
@@ -250,10 +206,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": "ground",
@@ -268,10 +220,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -286,10 +234,6 @@
           {
             "amount": "14",
             "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
         "note": "or regular diced tomatoes",
@@ -304,10 +248,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "490",
-            "unit": "g"
           }
         ],
         "note": "or passata",
@@ -331,15 +271,11 @@
     {
       "raw": "1 teaspoon salt (or to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -354,10 +290,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": "unsalted",
@@ -372,10 +304,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3",
-            "unit": "g"
           }
         ],
         "note": "fresh, chopped for garnish",

@@ -10,10 +10,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "84",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "melted",
@@ -46,10 +38,6 @@
           {
             "amount": "12",
             "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "1.5",
             "unit": "lb"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": "about 4 1/2-5 cups cubed, cut into 1/2 cubes",
@@ -96,10 +80,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "138",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -114,10 +94,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "120",
-            "unit": "g"
           }
         ],
         "note": "finely minced",
@@ -146,10 +122,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "62",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -164,10 +136,6 @@
           {
             "amount": "5.5",
             "unit": "cup"
-          },
-          {
-            "amount": "1348",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -182,10 +150,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -200,10 +164,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -213,15 +173,11 @@
     {
       "raw": "1 1/2 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -250,10 +206,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2.4",
-            "unit": "g"
           }
         ],
         "note": "stripped off stems",
@@ -282,10 +234,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "326",
-            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -300,10 +248,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": "softened",

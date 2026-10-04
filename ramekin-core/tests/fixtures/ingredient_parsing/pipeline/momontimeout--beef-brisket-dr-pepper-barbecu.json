@@ -14,10 +14,6 @@
           {
             "amount": "7 to 9",
             "unit": "lb"
-          },
-          {
-            "amount": "3175 to 4082",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -36,10 +32,6 @@
           {
             "amount": "1",
             "unit": "bottle"
-          },
-          {
-            "amount": "479",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -49,15 +41,11 @@
     {
       "raw": "2 tsp salt (used smoked sea salt for a wonderful smoky flavor)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": "used smoked sea salt for a wonderful smoky flavor",
@@ -86,10 +74,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -104,10 +88,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -154,10 +134,6 @@
           {
             "amount": "1",
             "unit": "bottle"
-          },
-          {
-            "amount": "479",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -172,10 +148,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "240",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -190,10 +162,6 @@
           {
             "amount": "6",
             "unit": "oz"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -208,10 +176,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -226,10 +190,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -244,10 +204,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -262,10 +218,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -289,15 +241,11 @@
     {
       "raw": "1 tsp salt (smoked sea salt is great if you have it)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "smoked sea salt is great if you have it",

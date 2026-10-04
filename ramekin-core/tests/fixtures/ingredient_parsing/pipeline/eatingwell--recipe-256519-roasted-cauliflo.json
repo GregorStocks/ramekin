@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -28,10 +24,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -46,10 +38,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +52,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -77,15 +61,11 @@
     {
       "raw": "1.25 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -114,10 +94,6 @@
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.2",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -150,10 +126,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -210,10 +182,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -246,10 +214,6 @@
           {
             "amount": "14",
             "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -264,10 +228,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "884",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -282,10 +242,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "450",
-            "unit": "g"
           }
         ],
         "note": "1/2-inch",
@@ -300,10 +256,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "399",
-            "unit": "g"
           }
         ],
         "note": "1/2-inch",
@@ -318,10 +270,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -336,10 +284,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -358,10 +302,6 @@
           {
             "amount": "14",
             "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
         "note": null,

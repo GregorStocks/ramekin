@@ -42,10 +42,6 @@
           {
             "amount": "120",
             "unit": "ml"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +60,6 @@
           {
             "amount": "120",
             "unit": "ml"
-          },
-          {
-            "amount": "119",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -77,15 +69,11 @@
     {
       "raw": "1/4 teaspoon each salt and pepper*",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,

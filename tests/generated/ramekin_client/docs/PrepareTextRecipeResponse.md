@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | [**RecipeContent**](RecipeContent.md) |  | 
+**derived_measurements** | [**List[DerivedMeasurement]**](DerivedMeasurement.md) | Approximate grams for &#x60;content.ingredients&#x60; that have them, for previewing the draft. Never saved. | 
 **raw_ingredients** | **str** | Editable ingredient lines. Send these as raw_ingredients when saving. | 
 **warnings** | **List[str]** |  | 
 

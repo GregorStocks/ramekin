@@ -35,6 +35,7 @@ class TestSyncRecipesResponse(unittest.TestCase):
         model = SyncRecipesResponse()
         if include_optional:
             return SyncRecipesResponse(
+                catalog_version = '',
                 cursor = 56,
                 deleted = [
                     ''
@@ -44,6 +45,12 @@ class TestSyncRecipesResponse(unittest.TestCase):
                 recipes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        derived_measurements = [
+                            ramekin_client.models.derived_measurement.DerivedMeasurement(
+                                amount = '', 
+                                ingredient_index = 0, 
+                                unit = '', )
+                            ], 
                         description = '', 
                         id = '', 
                         ingredient_match_text = '', 
@@ -71,6 +78,7 @@ class TestSyncRecipesResponse(unittest.TestCase):
             )
         else:
             return SyncRecipesResponse(
+                catalog_version = '',
                 cursor = 56,
                 deleted = [
                     ''
@@ -80,6 +88,12 @@ class TestSyncRecipesResponse(unittest.TestCase):
                 recipes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        derived_measurements = [
+                            ramekin_client.models.derived_measurement.DerivedMeasurement(
+                                amount = '', 
+                                ingredient_index = 0, 
+                                unit = '', )
+                            ], 
                         description = '', 
                         id = '', 
                         ingredient_match_text = '', 

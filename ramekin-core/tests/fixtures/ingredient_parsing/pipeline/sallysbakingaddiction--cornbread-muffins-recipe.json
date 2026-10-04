@@ -46,10 +46,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +60,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -77,15 +69,11 @@
     {
       "raw": "1/8 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -126,10 +114,6 @@
           {
             "amount": "30",
             "unit": "ml"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -198,10 +182,6 @@
           {
             "amount": "240",
             "unit": "ml"
-          },
-          {
-            "amount": "245",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",

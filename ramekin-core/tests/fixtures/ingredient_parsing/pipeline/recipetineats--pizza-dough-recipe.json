@@ -41,7 +41,7 @@
     {
       "raw": "2.5 tsp (15g)  salt (, kosher / cooking salt (Note 3))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2.5",
@@ -82,10 +82,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "54",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -168,10 +164,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "63",
-            "unit": "g"
           }
         ],
         "note": "per pizza",

@@ -18,10 +18,6 @@
           {
             "amount": "2",
             "unit": "stick"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "room temperature",
@@ -32,15 +28,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -56,10 +48,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "150",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -75,10 +63,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "250",
-            "unit": "g"
           }
         ],
         "note": "I used King Arthur",
@@ -98,10 +82,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "440",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -117,10 +97,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.8",
-            "unit": "g"
           }
         ],
         "note": "I used King Arthur",
@@ -136,10 +112,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -170,10 +142,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "93",
-            "unit": "g"
           }
         ],
         "note": "toasting is optional, toasted",
@@ -189,10 +157,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "75",
-            "unit": "g"
           }
         ],
         "note": null,

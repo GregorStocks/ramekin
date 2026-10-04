@@ -98,10 +98,6 @@
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -178,10 +174,6 @@
           {
             "amount": "3.75",
             "unit": "quart"
-          },
-          {
-            "amount": "3506",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -196,10 +188,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "25",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -209,15 +197,11 @@
     {
       "raw": "1 tbsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -236,10 +220,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "49",
-            "unit": "g"
           }
         ],
         "note": "Note 2",

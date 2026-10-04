@@ -14,10 +14,6 @@
           {
             "amount": "40",
             "unit": "ml"
-          },
-          {
-            "amount": "37",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -45,7 +41,7 @@
     {
       "raw": "Salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"

@@ -61,10 +61,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -83,10 +79,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.3",
-            "unit": "g"
           }
         ],
         "note": "toasted and ground",
@@ -127,7 +119,7 @@
     {
       "raw": "Salt (Maldon or another flaky sea salt if you’ve got it)",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": "Maldon or another flaky sea salt if you’ve got it",
         "section": "For the Dressing and Salad",
@@ -157,10 +149,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "61",
-            "unit": "g"
           }
         ],
         "note": "plus more to taste",
@@ -256,10 +244,6 @@
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "toasted in a dry pan until a shade or two darker",

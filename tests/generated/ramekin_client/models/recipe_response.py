@@ -21,6 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
+from ramekin_client.models.derived_measurement import DerivedMeasurement
 from ramekin_client.models.ingredient import Ingredient
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,6 +32,7 @@ class RecipeResponse(BaseModel):
     """ # noqa: E501
     cook_time: Optional[StrictStr] = None
     created_at: datetime
+    derived_measurements: List[DerivedMeasurement] = Field(description="Approximate grams for ingredients that have them, in ingredient order.")
     description: Optional[StrictStr] = None
     difficulty: Optional[StrictStr] = None
     id: UUID
@@ -50,7 +52,7 @@ class RecipeResponse(BaseModel):
     updated_at: datetime = Field(description="When viewing a specific version, this is the version's created_at")
     version_id: UUID = Field(description="Version metadata")
     version_source: StrictStr
-    __properties: ClassVar[List[str]] = ["cook_time", "created_at", "description", "difficulty", "id", "ingredients", "instructions", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "updated_at", "version_id", "version_source"]
+    __properties: ClassVar[List[str]] = ["cook_time", "created_at", "derived_measurements", "description", "difficulty", "id", "ingredients", "instructions", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "updated_at", "version_id", "version_source"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +93,13 @@ class RecipeResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in derived_measurements (list)
+        _items = []
+        if self.derived_measurements:
+            for _item_derived_measurements in self.derived_measurements:
+                if _item_derived_measurements:
+                    _items.append(_item_derived_measurements.to_dict())
+            _dict['derived_measurements'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in ingredients (list)
         _items = []
         if self.ingredients:
@@ -167,6 +176,7 @@ class RecipeResponse(BaseModel):
         _obj = cls.model_validate({
             "cook_time": obj.get("cook_time"),
             "created_at": obj.get("created_at"),
+            "derived_measurements": [DerivedMeasurement.from_dict(_item) for _item in obj["derived_measurements"]] if obj.get("derived_measurements") is not None else None,
             "description": obj.get("description"),
             "difficulty": obj.get("difficulty"),
             "id": obj.get("id"),

@@ -36,10 +36,6 @@
           {
             "amount": "60",
             "unit": "ml"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -95,15 +91,11 @@
     {
       "raw": "1/4 teaspoon salt, plus more for step 1",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": "plus more for step 1",
@@ -132,10 +124,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.5",
-            "unit": "g"
           }
         ],
         "note": "or 2 teaspoons fresh",
@@ -150,10 +138,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": "g"
           }
         ],
         "note": "or 1/2 teaspoon dried",
@@ -218,10 +202,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "10",
-            "unit": "g"
           }
         ],
         "note": "optional",

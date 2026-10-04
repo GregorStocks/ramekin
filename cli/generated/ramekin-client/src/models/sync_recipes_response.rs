@@ -13,6 +13,9 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SyncRecipesResponse {
+    /// Identifies the ingredient catalog that computed `derived_measurements`. A client caching recipes must run a full sync when this changes: catalog changes alter every recipe's derived grams without changing the recipes themselves.
+    #[serde(rename = "catalog_version")]
+    pub catalog_version: String,
     /// This page's snapshot watermark. Once a sweep completes, persist the *first* page's cursor and pass it to the next sync: changes committed mid-sweep can land in id ranges the sweep already passed, and only the first watermark is low enough to redeliver all of them. Changes may be redelivered across syncs, but none can be skipped.
     #[serde(rename = "cursor")]
     pub cursor: i64,
@@ -32,6 +35,7 @@ pub struct SyncRecipesResponse {
 
 impl SyncRecipesResponse {
     pub fn new(
+        catalog_version: String,
         cursor: i64,
         deleted: Vec<uuid::Uuid>,
         has_more: bool,
@@ -39,6 +43,7 @@ impl SyncRecipesResponse {
         recipes: Vec<models::SyncRecipe>,
     ) -> SyncRecipesResponse {
         SyncRecipesResponse {
+            catalog_version,
             cursor,
             deleted,
             has_more,

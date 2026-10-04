@@ -28,10 +28,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "46",
-            "unit": "g"
           }
         ],
         "note": "curd or dahi",
@@ -46,10 +42,6 @@
           {
             "amount": "1.25",
             "unit": "tbsp"
-          },
-          {
-            "amount": "20",
-            "unit": "g"
           }
         ],
         "note": "1 inch ginger & 4 garlic cloves crushed",
@@ -59,7 +51,7 @@
     {
       "raw": "½ to ¾ teaspoon salt ((adjust to tase))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5 to 0.75",
@@ -78,10 +70,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -124,10 +112,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
         "note": "optional",
@@ -240,10 +224,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "370",
-            "unit": "g"
           }
         ],
         "note": "aged rice only",
@@ -314,10 +294,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "61",
-            "unit": "g"
           }
         ],
         "note": "Indian curd",
@@ -346,10 +322,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.3",
-            "unit": "g"
           }
         ],
         "note": "or biryani masala",
@@ -364,10 +336,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "711",
-            "unit": "g"
           }
         ],
         "note": "3 1/2 cups for pot, refer notes, more if needed",
@@ -377,15 +345,11 @@
     {
       "raw": "¾ teaspoon salt ((to stir in water))",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": "to stir in water",

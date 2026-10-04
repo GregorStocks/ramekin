@@ -24,10 +24,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "41",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -56,10 +52,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -69,15 +61,11 @@
     {
       "raw": "2 teaspoons salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -92,10 +80,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -124,10 +108,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -156,10 +136,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -174,10 +150,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -192,10 +164,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "480",
-            "unit": "g"
           }
         ],
         "note": "unsalted or low salt",
@@ -210,10 +178,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "240",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -228,10 +192,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "273",
-            "unit": "g"
           }
         ],
         "note": "I’m realizing from comments that there are many many types; I used Heinz, which is not exactly spicy",
@@ -246,10 +206,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "220",
-            "unit": "g"
           }
         ],
         "note": "light or dark",
@@ -264,10 +220,6 @@
           {
             "amount": "8 to 10",
             "unit": "lb"
-          },
-          {
-            "amount": "3629 to 4536",
-            "unit": "g"
           }
         ],
         "note": null,

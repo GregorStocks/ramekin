@@ -14,10 +14,6 @@
           {
             "amount": "0.5",
             "unit": "lb"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "peeled and cut into 1-inch dice",
@@ -32,10 +28,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "711",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -64,10 +56,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "38",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -96,10 +84,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "245",
-            "unit": "g"
           }
         ],
         "note": "scalded and cooled",
@@ -128,10 +112,6 @@
           {
             "amount": "7",
             "unit": "tbsp"
-          },
-          {
-            "amount": "99",
-            "unit": "g"
           }
         ],
         "note": "melted",
@@ -146,10 +126,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "51",
-            "unit": "g"
           }
         ],
         "note": "melted and cooled",
@@ -159,15 +135,11 @@
     {
       "raw": "1 tablespoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.6",
-            "unit": "g"
           }
         ],
         "note": null,

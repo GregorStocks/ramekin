@@ -14,10 +14,6 @@
           {
             "amount": "10",
             "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -36,10 +32,6 @@
           {
             "amount": "1",
             "unit": "large"
-          },
-          {
-            "amount": "206",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -54,10 +46,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -67,15 +55,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -104,10 +88,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -126,10 +106,6 @@
           {
             "amount": "0.5",
             "unit": "lb"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -148,10 +124,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -170,10 +142,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -188,10 +156,6 @@
           {
             "amount": "2.75",
             "unit": "cup"
-          },
-          {
-            "amount": "674",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -220,10 +184,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "31",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -24,10 +24,6 @@
           {
             "amount": "4",
             "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
         "note": "60 to 65 percent, chopped small",
@@ -60,10 +56,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -127,15 +119,11 @@
     {
       "raw": "1/4 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -168,10 +156,6 @@
           {
             "amount": "710",
             "unit": "ml"
-          },
-          {
-            "amount": "735",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -190,10 +174,6 @@
           {
             "amount": "295",
             "unit": "ml"
-          },
-          {
-            "amount": "298",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -226,10 +206,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": null,

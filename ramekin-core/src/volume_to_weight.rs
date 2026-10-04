@@ -1,11 +1,14 @@
-//! Volume-to-weight conversion for ingredients with known densities.
+//! Gram amounts computed for ingredient lines when a recipe is read.
 //!
-//! Converts volume measurements (cups, tbsp, tsp, etc.) to grams for
-//! ingredients where we have reliable density data.
+//! Converts oz/lb exactly, and volume measurements (cups, tbsp, tsp, etc.)
+//! through the catalog's density for the food. The result is never stored, so
+//! catalog improvements reach every recipe.
 
-use crate::catalog::{is_volume_unit, line_grams_per_cup, rewrite, volume_to_cups};
+use crate::catalog::{is_volume_unit, line_grams_per_cup, volume_to_cups};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
-use crate::metric_weights::{format_grams, parse_amount};
+use crate::metric_weights::{
+    add_metric_weight_alternative, format_grams, parse_amount, MetricConversionStats,
+};
 
 /// Statistics about volume-to-weight conversion.
 #[derive(Debug, Default, Clone, serde::Serialize, serde::Deserialize)]
@@ -26,7 +29,7 @@ pub struct VolumeConversionStats {
 /// 1. The ingredient has a volume measurement (cup, tbsp, tsp, etc.)
 /// 2. No weight measurement already exists
 /// 3. The ingredient name matches a known density entry
-pub fn add_volume_to_weight_alternative(
+fn add_volume_to_weight_alternative(
     mut ingredient: ParsedIngredient,
     stats: &mut VolumeConversionStats,
 ) -> ParsedIngredient {
@@ -107,29 +110,37 @@ fn convert_volume_to_grams(amount: &str, unit: &str, grams_per_cup: f64) -> Opti
     Some(format_grams(grams))
 }
 
-/// Apply ingredient name rewrites from curated rules.
-///
-/// Rewrites normalize ingredient items before measurement enrichment
-/// (e.g. "salt" -> "kosher salt").
-pub fn apply_ingredient_rewrites(mut ingredient: ParsedIngredient) -> ParsedIngredient {
-    if let Some(rewritten) = rewrite(&ingredient.item) {
-        ingredient.item = rewritten.to_string();
-    }
-    ingredient
+/// The gram amount computed for an ingredient line, shown beside what the
+/// source gave and never stored. It converts oz/lb exactly, or a volume
+/// through the catalog's density for the food. None when a weight is already
+/// metric, or when nothing converts.
+pub fn derived_grams(ingredient: &ParsedIngredient) -> Option<Measurement> {
+    derived_grams_with_stats(
+        ingredient,
+        &mut MetricConversionStats::default(),
+        &mut VolumeConversionStats::default(),
+    )
 }
 
-/// Apply all measurement enrichments to a single ingredient.
-///
-/// Adds metric weight alternatives (oz/lb → g) and volume-to-weight
-/// alternatives (cups/tbsp/tsp → g) when density data is available.
-/// Useful for enriching already-stored ingredients outside the pipeline.
-pub fn enrich_ingredient_measurements(ingredient: ParsedIngredient) -> ParsedIngredient {
-    let mut weight_stats = crate::metric_weights::MetricConversionStats::default();
-    let mut volume_stats = VolumeConversionStats::default();
-    let ingredient = apply_ingredient_rewrites(ingredient);
-    let ingredient =
-        crate::metric_weights::add_metric_weight_alternative(ingredient, &mut weight_stats);
-    add_volume_to_weight_alternative(ingredient, &mut volume_stats)
+/// `derived_grams`, counting why each line did or didn't convert.
+pub fn derived_grams_with_stats(
+    ingredient: &ParsedIngredient,
+    metric_stats: &mut MetricConversionStats,
+    volume_stats: &mut VolumeConversionStats,
+) -> Option<Measurement> {
+    let probe = ParsedIngredient {
+        item: ingredient.item.clone(),
+        measurements: ingredient.measurements.clone(),
+        note: ingredient.note.clone(),
+        raw: None,
+        section: None,
+    };
+    let probe = add_metric_weight_alternative(probe, metric_stats);
+    let mut probe = add_volume_to_weight_alternative(probe, volume_stats).normalize_amounts();
+    if probe.measurements.len() == ingredient.measurements.len() {
+        return None;
+    }
+    probe.measurements.pop()
 }
 
 #[cfg(test)]
@@ -288,5 +299,82 @@ mod tests {
         assert_eq!(result.measurements.len(), 2);
         assert_eq!(result.measurements[1].amount, Some("227".to_string()));
         assert_eq!(stats.converted, 1);
+    }
+
+    fn line(item: &str, measurements: &[(&str, &str)]) -> ParsedIngredient {
+        ParsedIngredient {
+            item: item.to_string(),
+            measurements: measurements
+                .iter()
+                .map(|(amount, unit)| Measurement {
+                    amount: Some(amount.to_string()),
+                    unit: Some(unit.to_string()),
+                })
+                .collect(),
+            note: None,
+            raw: None,
+            section: None,
+        }
+    }
+
+    fn grams(amount: &str) -> Option<Measurement> {
+        Some(Measurement {
+            amount: Some(amount.to_string()),
+            unit: Some("g".to_string()),
+        })
+    }
+
+    #[test]
+    fn derived_grams_converts_volume_through_density() {
+        assert_eq!(
+            derived_grams(&line("all-purpose flour", &[("2", "cup")])),
+            grams("250")
+        );
+    }
+
+    #[test]
+    fn derived_grams_converts_imperial_weight() {
+        assert_eq!(derived_grams(&line("butter", &[("8", "oz")])), grams("227"));
+    }
+
+    #[test]
+    fn derived_grams_prefers_a_weight_over_a_volume() {
+        // 4 oz, not the density of 1/2 cup of butter (114 g).
+        assert_eq!(
+            derived_grams(&line("butter", &[("0.5", "cup"), ("4", "oz")])),
+            grams("113")
+        );
+    }
+
+    #[test]
+    fn derived_grams_normalizes_like_stored_amounts() {
+        assert_eq!(
+            derived_grams(&line("butter", &[("1/4", "oz")])),
+            grams("7.1")
+        );
+    }
+
+    #[test]
+    fn derived_grams_skips_lines_with_metric_weight() {
+        assert_eq!(
+            derived_grams(&line("flour", &[("1", "cup"), ("120", "g")])),
+            None
+        );
+    }
+
+    #[test]
+    fn derived_grams_skips_unknown_foods_and_counts() {
+        assert_eq!(derived_grams(&line("unicorn tears", &[("1", "cup")])), None);
+        assert_eq!(derived_grams(&line("egg", &[("2", "")])), None);
+    }
+
+    #[test]
+    fn derived_grams_counts_stats() {
+        let mut metric = MetricConversionStats::default();
+        let mut volume = VolumeConversionStats::default();
+        derived_grams_with_stats(&line("sugar", &[("2", "tbsp")]), &mut metric, &mut volume);
+        derived_grams_with_stats(&line("butter", &[("8", "oz")]), &mut metric, &mut volume);
+        assert_eq!(volume.converted, 1);
+        assert_eq!(metric.converted_oz, 1);
     }
 }

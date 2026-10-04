@@ -10,10 +10,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -78,10 +66,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "185",
-            "unit": "g"
           }
         ],
         "note": "Jasmine or basmati rice works too",
@@ -96,10 +80,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "21",
-            "unit": "g"
           }
         ],
         "note": "optional",
@@ -114,10 +94,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
         "note": "optional",
@@ -132,10 +108,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "498",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -145,15 +117,11 @@
     {
       "raw": "½ teaspoon salt (or more to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "or more to taste",

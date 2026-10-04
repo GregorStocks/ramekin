@@ -14,10 +14,6 @@
           {
             "amount": "11.25",
             "unit": "oz"
-          },
-          {
-            "amount": "319",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -36,10 +32,6 @@
           {
             "amount": "6.75",
             "unit": "oz"
-          },
-          {
-            "amount": "191",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -58,10 +50,6 @@
           {
             "amount": ".75",
             "unit": "oz"
-          },
-          {
-            "amount": "21",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -71,7 +59,7 @@
     {
       "raw": "1 1/2 teaspoons (.38 oz.) salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1.5",
@@ -80,10 +68,6 @@
           {
             "amount": ".38",
             "unit": "oz"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -102,10 +86,6 @@
           {
             "amount": "1",
             "unit": "oz"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -124,10 +104,6 @@
           {
             "amount": ".17",
             "unit": "oz"
-          },
-          {
-            "amount": "4.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -146,10 +122,6 @@
           {
             "amount": "1",
             "unit": "oz"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",
@@ -168,10 +140,6 @@
           {
             "amount": "10",
             "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
         "note": "at room temperature",

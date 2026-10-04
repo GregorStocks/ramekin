@@ -52,7 +52,7 @@ pub async fn create_recipe(
         return Err(ApiError::invalid_request("Instructions cannot be empty"));
     }
 
-    request.content.ingredients = if let Some(lines) = &request.raw_ingredients {
+    if let Some(lines) = &request.raw_ingredients {
         if lines.trim().is_empty() || lines.len() > 50_000 {
             return Err(ApiError::invalid_request(
                 "Enter ingredient lines between 1 and 50,000 bytes.",
@@ -70,11 +70,8 @@ pub async fn create_recipe(
                 "Add ingredient lines before saving.",
             ));
         }
-        ingredients
-    } else {
-        crate::api::enrich::enrich_ingredients(request.content.ingredients)
-            .map_err(|_| ApiError::internal("Could not process ingredient measurements"))?
-    };
+        request.content.ingredients = ingredients;
+    }
 
     let ingredients_json = match serde_json::to_value(&request.content.ingredients) {
         Ok(v) => v,

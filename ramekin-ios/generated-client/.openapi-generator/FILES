@@ -47,6 +47,7 @@ RamekinClient/Classes/OpenAPIs/Models/CreateShoppingListResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateTagRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateTagResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CustomEnrichRequest.swift
+RamekinClient/Classes/OpenAPIs/Models/DerivedMeasurement.swift
 RamekinClient/Classes/OpenAPIs/Models/Direction.swift
 RamekinClient/Classes/OpenAPIs/Models/ErrorCode.swift
 RamekinClient/Classes/OpenAPIs/Models/EstimateCaloriesRequest.swift
@@ -137,6 +138,7 @@ docs/CreateShoppingListResponse.md
 docs/CreateTagRequest.md
 docs/CreateTagResponse.md
 docs/CustomEnrichRequest.md
+docs/DerivedMeasurement.md
 docs/Direction.md
 docs/EnrichAPI.md
 docs/ErrorCode.md

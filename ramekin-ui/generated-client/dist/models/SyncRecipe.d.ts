@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 import type { Ingredient } from './Ingredient';
+import type { DerivedMeasurement } from './DerivedMeasurement';
 /**
  * Read-only recipe data needed to populate the iOS cache and mirror server search.
  * @export
@@ -22,6 +23,12 @@ export interface SyncRecipe {
      * @memberof SyncRecipe
      */
     createdAt: Date;
+    /**
+     * Approximate grams for ingredients that have them, in ingredient order.
+     * @type {Array<DerivedMeasurement>}
+     * @memberof SyncRecipe
+     */
+    derivedMeasurements: Array<DerivedMeasurement>;
     /**
      *
      * @type {string}

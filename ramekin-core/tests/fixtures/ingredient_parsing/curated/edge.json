@@ -25,10 +25,6 @@
           {
             "amount": "2.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "6.5",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -123,10 +119,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "73",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -146,10 +138,6 @@
           {
             "amount": "4",
             "unit": "clove"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": "about 4 cloves",
@@ -195,10 +183,6 @@
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -244,10 +228,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -323,10 +303,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": "or 1/2 cup beef broth",
@@ -376,10 +352,6 @@
           {
             "amount": "3",
             "unit": "heaping cup"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -410,10 +382,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": "plus 1 tablespoon chilled",
@@ -429,10 +397,6 @@
           {
             "amount": "6",
             "unit": "oz"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -678,10 +642,6 @@
           {
             "amount": "45",
             "unit": "ml"
-          },
-          {
-            "amount": "45",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -697,10 +657,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "188",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -761,10 +717,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -820,7 +772,7 @@
       "name": "leading_paren_modifier",
       "raw": "(heaping) salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -840,10 +792,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "22",
-            "unit": "g"
           }
         ],
         "note": "optional",
@@ -869,10 +817,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "118",
-            "unit": "g"
           }
         ],
         "note": "optional",
@@ -958,10 +902,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "884",
-            "unit": "g"
           }
         ],
         "note": "for dried but soaked chickpeas; or 1 1/2 cup for cooked chickpeas",
@@ -1007,10 +947,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,

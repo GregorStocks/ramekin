@@ -13,6 +13,8 @@ import AnyCodable
 public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
 
     public static let normalizationContractVersionRule = NumericRule<Int>(minimum: 0, exclusiveMinimum: false, maximum: nil, exclusiveMaximum: false, multipleOf: nil)
+    /** Identifies the ingredient catalog that computed `derived_measurements`. A client caching recipes must run a full sync when this changes: catalog changes alter every recipe's derived grams without changing the recipes themselves. */
+    public var catalogVersion: String
     /** This page's snapshot watermark. Once a sweep completes, persist the *first* page's cursor and pass it to the next sync: changes committed mid-sweep can land in id ranges the sweep already passed, and only the first watermark is low enough to redeliver all of them. Changes may be redelivered across syncs, but none can be skipped. */
     public var cursor: Int64
     /** Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first page; later pages return an empty list. */
@@ -24,7 +26,8 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
     /** The next `limit` active recipes (by ascending recipe ID, starting past `after_id`) changed at or after `cursor`. All active recipes match when `cursor` is absent. */
     public var recipes: [SyncRecipe]
 
-    public init(cursor: Int64, deleted: [UUID], hasMore: Bool, normalizationContractVersion: Int, recipes: [SyncRecipe]) {
+    public init(catalogVersion: String, cursor: Int64, deleted: [UUID], hasMore: Bool, normalizationContractVersion: Int, recipes: [SyncRecipe]) {
+        self.catalogVersion = catalogVersion
         self.cursor = cursor
         self.deleted = deleted
         self.hasMore = hasMore
@@ -33,6 +36,7 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case catalogVersion = "catalog_version"
         case cursor
         case deleted
         case hasMore = "has_more"
@@ -44,6 +48,7 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(catalogVersion, forKey: .catalogVersion)
         try container.encode(cursor, forKey: .cursor)
         try container.encode(deleted, forKey: .deleted)
         try container.encode(hasMore, forKey: .hasMore)

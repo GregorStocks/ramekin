@@ -14,10 +14,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "30",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -33,10 +29,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -47,7 +39,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -86,10 +78,6 @@
           {
             "amount": "0.5",
             "unit": "stick"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": "cut into pieces",
@@ -113,10 +101,6 @@
           {
             "amount": "4 to 5",
             "unit": "medium"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": "pitted and quartered",
@@ -142,7 +126,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -162,10 +146,6 @@
           {
             "amount": "5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "70",
-            "unit": "g"
           }
         ],
         "note": null,

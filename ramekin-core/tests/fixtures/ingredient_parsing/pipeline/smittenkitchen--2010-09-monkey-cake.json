@@ -67,7 +67,7 @@
     {
       "raw": "1 teaspoon (6 grams) salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
@@ -196,10 +196,6 @@
           {
             "amount": "8",
             "unit": "large"
-          },
-          {
-            "amount": "562",
-            "unit": "g"
           }
         ],
         "note": "about 8 large",
@@ -240,10 +236,6 @@
           {
             "amount": "15",
             "unit": "ml"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -311,7 +303,7 @@
     {
       "raw": "3/4 teaspoon (5 grams) salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
@@ -440,10 +432,6 @@
           {
             "amount": "5 to 6",
             "unit": "large"
-          },
-          {
-            "amount": "375",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -484,10 +472,6 @@
           {
             "amount": "10",
             "unit": "ml"
-          },
-          {
-            "amount": "8.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -550,10 +534,6 @@
           {
             "amount": "135",
             "unit": "ml"
-          },
-          {
-            "amount": "136",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -572,10 +552,6 @@
           {
             "amount": "23",
             "unit": "ml"
-          },
-          {
-            "amount": "20",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -660,10 +636,6 @@
           {
             "amount": "90",
             "unit": "ml"
-          },
-          {
-            "amount": "91",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -682,10 +654,6 @@
           {
             "amount": "15",
             "unit": "ml"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": null,

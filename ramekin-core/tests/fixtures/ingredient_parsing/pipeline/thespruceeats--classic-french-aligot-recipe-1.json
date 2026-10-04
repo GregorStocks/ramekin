@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "peeled and cut into quarters",
@@ -23,15 +19,11 @@
     {
       "raw": "3/4 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -78,10 +66,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "56",
-            "unit": "g"
           }
         ],
         "note": "or substitute equal parts sour cream and heavy cream",
@@ -110,10 +94,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "489",
-            "unit": "g"
           }
         ],
         "note": "or substitute good-quality sharp cheddar, grated",

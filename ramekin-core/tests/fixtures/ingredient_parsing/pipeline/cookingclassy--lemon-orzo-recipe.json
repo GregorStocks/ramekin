@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -32,10 +28,6 @@
           {
             "amount": "2",
             "unit": "clove"
-          },
-          {
-            "amount": "5.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -50,10 +42,6 @@
           {
             "amount": "2.67",
             "unit": "cup"
-          },
-          {
-            "amount": "664",
-            "unit": "g"
           }
         ],
         "note": "then more as needed",
@@ -63,7 +51,7 @@
     {
       "raw": "Salt, (to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"
@@ -77,10 +65,6 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "3",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -99,10 +83,6 @@
           {
             "amount": "1.33",
             "unit": "cup"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -117,10 +97,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -135,10 +111,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "46",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -167,10 +139,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3.8",
-            "unit": "g"
           }
         ],
         "note": "optional for garnish",

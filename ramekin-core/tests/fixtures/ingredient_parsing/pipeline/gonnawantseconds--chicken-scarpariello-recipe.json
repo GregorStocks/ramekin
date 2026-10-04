@@ -10,10 +10,6 @@
           {
             "amount": "1.5",
             "unit": "lb"
-          },
-          {
-            "amount": "680",
-            "unit": "g"
           }
         ],
         "note": "halved lengthwise",
@@ -28,10 +24,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -41,7 +33,7 @@
     {
       "raw": "salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -64,10 +56,6 @@
           {
             "amount": "2.5",
             "unit": "lb"
-          },
-          {
-            "amount": "1134",
-            "unit": "g"
           }
         ],
         "note": "bone-in and skin on",
@@ -77,7 +65,7 @@
     {
       "raw": "salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -100,10 +88,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +102,6 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "casing removed",
@@ -178,10 +158,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "236",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -196,10 +172,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "249",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -228,10 +200,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -260,10 +228,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.6",
-            "unit": "g"
           }
         ],
         "note": "chopped",

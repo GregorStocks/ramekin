@@ -10,10 +10,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "I used top sirloin, cut into 1 1/2\" pieces",
@@ -70,10 +66,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "216",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -88,10 +80,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
         "note": "from 2 medium lemons",
@@ -101,15 +89,11 @@
     {
       "raw": "1 tsp salt (we love fine sea salt)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": "we love fine sea salt",

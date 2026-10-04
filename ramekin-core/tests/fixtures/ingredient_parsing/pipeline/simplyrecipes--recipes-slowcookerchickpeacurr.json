@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "rinsed",
@@ -60,10 +52,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -96,10 +84,6 @@
           {
             "amount": "0.5",
             "unit": "lb"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "red or yellow, about 1/2 pound, diced",
@@ -132,10 +116,6 @@
           {
             "amount": "15.5",
             "unit": "oz"
-          },
-          {
-            "amount": "439",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -150,10 +130,6 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "296",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -191,15 +167,11 @@
     {
       "raw": "1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -214,10 +186,6 @@
           {
             "amount": "6",
             "unit": "cup"
-          },
-          {
-            "amount": "180",
-            "unit": "g"
           }
         ],
         "note": "roughly chopped, to serve",

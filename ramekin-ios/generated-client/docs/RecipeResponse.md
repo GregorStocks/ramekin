@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cookTime** | **String** |  | [optional] 
 **createdAt** | **Date** |  | 
+**derivedMeasurements** | [DerivedMeasurement] | Approximate grams for ingredients that have them, in ingredient order. | 
 **description** | **String** |  | [optional] 
 **difficulty** | **String** |  | [optional] 
 **id** | **UUID** |  | 

@@ -40,6 +40,7 @@ ramekin_client/docs/CreateShoppingListResponse.md
 ramekin_client/docs/CreateTagRequest.md
 ramekin_client/docs/CreateTagResponse.md
 ramekin_client/docs/CustomEnrichRequest.md
+ramekin_client/docs/DerivedMeasurement.md
 ramekin_client/docs/Direction.md
 ramekin_client/docs/EnrichApi.md
 ramekin_client/docs/ErrorCode.md
@@ -137,6 +138,7 @@ ramekin_client/models/create_shopping_list_response.py
 ramekin_client/models/create_tag_request.py
 ramekin_client/models/create_tag_response.py
 ramekin_client/models/custom_enrich_request.py
+ramekin_client/models/derived_measurement.py
 ramekin_client/models/direction.py
 ramekin_client/models/error_code.py
 ramekin_client/models/error_response.py
@@ -225,6 +227,7 @@ ramekin_client/test/test_create_shopping_list_response.py
 ramekin_client/test/test_create_tag_request.py
 ramekin_client/test/test_create_tag_response.py
 ramekin_client/test/test_custom_enrich_request.py
+ramekin_client/test/test_derived_measurement.py
 ramekin_client/test/test_direction.py
 ramekin_client/test/test_enrich_api.py
 ramekin_client/test/test_error_code.py

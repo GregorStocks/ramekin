@@ -18,10 +18,6 @@
           {
             "amount": "2",
             "unit": "large"
-          },
-          {
-            "amount": "2722-2948",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -36,10 +32,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -54,10 +46,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -76,10 +64,6 @@
           {
             "amount": "4",
             "unit": "clove"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": "about 4 cloves",
@@ -94,10 +78,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "7.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -112,10 +92,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "100",
-            "unit": "g"
           }
         ],
         "note": "imported",
@@ -130,10 +106,6 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "153",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -148,10 +120,6 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "302",
-            "unit": "g"
           }
         ],
         "note": "then a little more if needed",
@@ -161,7 +129,7 @@
     {
       "raw": "Salt  (and freshly ground black pepper, to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": "and freshly ground black pepper, to taste",
         "category": "Spices & Seasonings"
@@ -175,10 +143,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3.8",
-            "unit": "g"
           }
         ],
         "note": "for garnish (optional)",

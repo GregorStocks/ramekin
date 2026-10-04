@@ -14,10 +14,6 @@
           {
             "amount": "28",
             "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
         "note": "with their juices",
@@ -74,10 +70,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.8",
-            "unit": "g"
           }
         ],
         "note": "or more to taste",
@@ -110,10 +102,6 @@
           {
             "amount": "3",
             "unit": "lb"
-          },
-          {
-            "amount": "1361",
-            "unit": "g"
           }
         ],
         "note": "about 3 pounds",
@@ -123,15 +111,11 @@
     {
       "raw": "1/2 teaspoon salt, or more to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "or more to taste",
@@ -160,10 +144,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": "divided",

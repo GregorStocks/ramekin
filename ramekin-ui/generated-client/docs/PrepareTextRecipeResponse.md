@@ -7,6 +7,7 @@
 Name | Type
 ------------ | -------------
 `content` | [RecipeContent](RecipeContent.md)
+`derivedMeasurements` | [Array&lt;DerivedMeasurement&gt;](DerivedMeasurement.md)
 `rawIngredients` | string
 `warnings` | Array&lt;string&gt;
 
@@ -18,6 +19,7 @@ import type { PrepareTextRecipeResponse } from ''
 // TODO: Update the object below with actual values
 const example = {
   "content": null,
+  "derivedMeasurements": null,
   "rawIngredients": null,
   "warnings": null,
 } satisfies PrepareTextRecipeResponse

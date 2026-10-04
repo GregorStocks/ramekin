@@ -10,10 +10,6 @@
           {
             "amount": "4.5",
             "unit": "lb"
-          },
-          {
-            "amount": "2041",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -42,10 +38,6 @@
           {
             "amount": "1 to 1.5",
             "unit": "lb"
-          },
-          {
-            "amount": "454 to 680",
-            "unit": "g"
           }
         ],
         "note": "thickly sliced",
@@ -92,10 +84,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "42",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,10 +98,6 @@
           {
             "amount": "1",
             "unit": "oz"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -142,10 +126,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "498",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -160,10 +140,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "238",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -173,7 +149,7 @@
     {
       "raw": "Salt to taste (I added 1 tsp.)",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": "I added 1 tsp., to taste",
         "category": "Spices & Seasonings"

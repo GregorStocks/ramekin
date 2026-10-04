@@ -28,10 +28,6 @@
           {
             "amount": "2.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.7",
-            "unit": "g"
           }
         ],
         "note": "or 1 teaspoon cinnamon, 1/2 teaspoon ginger, 1/2 teaspoon nutmeg, & 1/8 teaspoon cloves",
@@ -46,10 +42,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "79",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -78,10 +70,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "8.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -91,7 +79,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,

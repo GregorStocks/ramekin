@@ -59,7 +59,7 @@
     {
       "raw": "pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -82,10 +82,6 @@
           {
             "amount": "250",
             "unit": "ml"
-          },
-          {
-            "amount": "226",
-            "unit": "g"
           }
         ],
         "note": "10% M.F., 18% M.F., see notes below",

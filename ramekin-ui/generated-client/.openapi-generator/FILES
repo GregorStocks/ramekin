@@ -36,6 +36,7 @@ docs/CreateShoppingListResponse.md
 docs/CreateTagRequest.md
 docs/CreateTagResponse.md
 docs/CustomEnrichRequest.md
+docs/DerivedMeasurement.md
 docs/Direction.md
 docs/EnrichApi.md
 docs/ErrorCode.md
@@ -132,6 +133,7 @@ models/CreateShoppingListResponse.ts
 models/CreateTagRequest.ts
 models/CreateTagResponse.ts
 models/CustomEnrichRequest.ts
+models/DerivedMeasurement.ts
 models/Direction.ts
 models/ErrorCode.ts
 models/ErrorResponse.ts

@@ -19,15 +19,11 @@
     {
       "raw": "1/2 tbsp salt (fine sea salt is recommended)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": "fine sea salt is recommended",

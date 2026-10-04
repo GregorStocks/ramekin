@@ -38,10 +38,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "242",
-            "unit": "g"
           }
         ],
         "note": "or, 1/2 cup heavy cream + 1/2 cup milk",
@@ -51,7 +47,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
@@ -70,10 +66,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "252",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -75,7 +75,7 @@
     {
       "raw": "1/2-1 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5-1",
@@ -122,10 +122,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "23",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -140,10 +136,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "663",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -158,10 +150,6 @@
           {
             "amount": "14.5",
             "unit": "oz"
-          },
-          {
-            "amount": "411",
-            "unit": "g"
           }
         ],
         "note": "crushed or diced",
@@ -176,10 +164,6 @@
           {
             "amount": "15.5",
             "unit": "oz"
-          },
-          {
-            "amount": "439",
-            "unit": "g"
           }
         ],
         "note": "drained and rinsed",
@@ -194,10 +178,6 @@
           {
             "amount": "9",
             "unit": "oz"
-          },
-          {
-            "amount": "255",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -212,10 +192,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "238",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -230,10 +206,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "60",
-            "unit": "g"
           }
         ],
         "note": null,

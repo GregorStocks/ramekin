@@ -14,10 +14,6 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "412",
-            "unit": "g"
           }
         ],
         "note": "chopped",
@@ -32,10 +28,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -50,10 +42,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -68,10 +56,6 @@
           {
             "amount": "5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "90",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -90,10 +74,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "about 2 cups",
@@ -108,10 +88,6 @@
           {
             "amount": "2",
             "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
         "note": "trimmed of excess fat, cut into medium size pieces, patted dry and salted",
@@ -126,10 +102,6 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "498",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -158,10 +130,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -176,10 +144,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -194,10 +158,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -221,7 +181,7 @@
     {
       "raw": "Salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "Salt",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"

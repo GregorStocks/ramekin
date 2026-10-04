@@ -10,10 +10,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +56,6 @@
           {
             "amount": "19",
             "unit": "oz"
-          },
-          {
-            "amount": "539",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -106,10 +98,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -124,10 +112,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -142,10 +126,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -160,10 +140,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -173,15 +149,11 @@
     {
       "raw": "0.5 teaspoon salt, or to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "or to taste",
@@ -196,10 +168,6 @@
           {
             "amount": "6",
             "unit": "cup"
-          },
-          {
-            "amount": "1494",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -214,10 +182,6 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "84",
-            "unit": "g"
           }
         ],
         "note": "or spinach",
@@ -232,10 +196,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "3.1",
-            "unit": "g"
           }
         ],
         "note": null,

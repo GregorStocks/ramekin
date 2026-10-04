@@ -63,6 +63,12 @@ class TestPrepareTextRecipeResponse(unittest.TestCase):
                         ], 
                     title = '', 
                     total_time = '', ),
+                derived_measurements = [
+                    ramekin_client.models.derived_measurement.DerivedMeasurement(
+                        amount = '', 
+                        ingredient_index = 0, 
+                        unit = '', )
+                    ],
                 raw_ingredients = '',
                 warnings = [
                     ''
@@ -98,6 +104,12 @@ class TestPrepareTextRecipeResponse(unittest.TestCase):
                         ], 
                     title = '', 
                     total_time = '', ),
+                derived_measurements = [
+                    ramekin_client.models.derived_measurement.DerivedMeasurement(
+                        amount = '', 
+                        ingredient_index = 0, 
+                        unit = '', )
+                    ],
                 raw_ingredients = '',
                 warnings = [
                     ''

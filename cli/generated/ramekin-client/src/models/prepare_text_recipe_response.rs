@@ -15,6 +15,9 @@ use serde::{Deserialize, Serialize};
 pub struct PrepareTextRecipeResponse {
     #[serde(rename = "content")]
     pub content: Box<models::RecipeContent>,
+    /// Approximate grams for `content.ingredients` that have them, for previewing the draft. Never saved.
+    #[serde(rename = "derived_measurements")]
+    pub derived_measurements: Vec<models::DerivedMeasurement>,
     /// Editable ingredient lines. Send these as raw_ingredients when saving.
     #[serde(rename = "raw_ingredients")]
     pub raw_ingredients: String,
@@ -25,11 +28,13 @@ pub struct PrepareTextRecipeResponse {
 impl PrepareTextRecipeResponse {
     pub fn new(
         content: models::RecipeContent,
+        derived_measurements: Vec<models::DerivedMeasurement>,
         raw_ingredients: String,
         warnings: Vec<String>,
     ) -> PrepareTextRecipeResponse {
         PrepareTextRecipeResponse {
             content: Box::new(content),
+            derived_measurements,
             raw_ingredients,
             warnings,
         }

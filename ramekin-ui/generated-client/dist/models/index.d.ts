@@ -19,6 +19,7 @@ export * from './CreateShoppingListResponse';
 export * from './CreateTagRequest';
 export * from './CreateTagResponse';
 export * from './CustomEnrichRequest';
+export * from './DerivedMeasurement';
 export * from './Direction';
 export * from './ErrorCode';
 export * from './ErrorResponse';

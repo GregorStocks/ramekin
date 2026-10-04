@@ -10,10 +10,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
         "note": "room temperature",
@@ -28,10 +24,6 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "250",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +52,6 @@
           {
             "amount": "2.25",
             "unit": "cup"
-          },
-          {
-            "amount": "281",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -73,15 +61,11 @@
     {
       "raw": "1 teaspoon of salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -96,10 +80,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.6",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -114,10 +94,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "226",
-            "unit": "g"
           }
         ],
         "note": "full fat is best",
@@ -132,10 +108,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -150,10 +122,6 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "46",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -172,10 +140,6 @@
           {
             "amount": "1",
             "unit": "stick"
-          },
-          {
-            "amount": "114",
-            "unit": "g"
           }
         ],
         "note": "room temperature",
@@ -194,10 +158,6 @@
           {
             "amount": "1",
             "unit": "package"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": "room temperature",
@@ -226,10 +186,6 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "23",
-            "unit": "g"
           }
         ],
         "note": null,

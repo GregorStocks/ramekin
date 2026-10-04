@@ -36,10 +36,6 @@
           {
             "amount": "7.5",
             "unit": "oz"
-          },
-          {
-            "amount": "213",
-            "unit": "g"
           }
         ],
         "note": "a lowfat cottage/ricotta-style cheese; I buy mine from Friendship",
@@ -76,10 +72,6 @@
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.1",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -111,15 +103,11 @@
     {
       "raw": "1/4 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -1,19 +1,18 @@
-//! ParseIngredients step - parses raw ingredient strings into structured data
-//! and enriches them with metric weight and volume-to-weight alternatives.
+//! ParseIngredients step - parses raw ingredient strings into structured data.
+//! Gram amounts are computed when a recipe is read, never stored; this step
+//! only counts which lines would get one.
 
 use std::time::Instant;
 
 use async_trait::async_trait;
 
 use crate::ingredient_parser::{parse_ingredients, ParsedIngredient};
-use crate::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
+use crate::metric_weights::MetricConversionStats;
 use crate::pipeline::{
     deserialize_required_output_field, PipelineStep, StepContext, StepMetadata, StepResult,
 };
 use crate::types::{ParseIngredientsOutput, RawRecipe};
-use crate::volume_to_weight::{
-    add_volume_to_weight_alternative, apply_ingredient_rewrites, VolumeConversionStats,
-};
+use crate::volume_to_weight::{derived_grams_with_stats, VolumeConversionStats};
 
 /// Step that parses raw ingredient strings into structured data.
 ///
@@ -82,20 +81,18 @@ impl PipelineStep for ParseIngredientsStep {
             apply_footnotes_to_ingredients(&mut parsed, footnotes);
         }
 
-        // Enrich with metric weight alternatives (oz/lb → g)
         let mut weight_stats = MetricConversionStats::default();
-        // Enrich with volume-to-weight alternatives for known ingredients
         let mut volume_stats = VolumeConversionStats::default();
-        let enriched: Vec<_> = parsed
+        let ingredients: Vec<_> = parsed
             .into_iter()
-            .map(apply_ingredient_rewrites)
-            .map(|ing| add_metric_weight_alternative(ing, &mut weight_stats))
-            .map(|ing| add_volume_to_weight_alternative(ing, &mut volume_stats))
             .map(|ing| ing.normalize_amounts())
             .collect();
+        for ingredient in &ingredients {
+            derived_grams_with_stats(ingredient, &mut weight_stats, &mut volume_stats);
+        }
 
         let output = ParseIngredientsOutput {
-            ingredients: enriched,
+            ingredients,
             volume_stats: Some(volume_stats),
             metric_stats: Some(weight_stats),
         };

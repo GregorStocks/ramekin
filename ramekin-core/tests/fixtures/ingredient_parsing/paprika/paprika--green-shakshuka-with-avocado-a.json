@@ -10,10 +10,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "40",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -60,10 +56,6 @@
           {
             "amount": "9",
             "unit": "cup"
-          },
-          {
-            "amount": "324",
-            "unit": "g"
           }
         ],
         "note": "about 9 cups, stems and leaves separated and chopped",
@@ -73,15 +65,11 @@
     {
       "raw": "1/2 teaspoon salt, plus more as needed",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": "plus more as needed",
@@ -96,10 +84,6 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "81",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -146,10 +130,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
         "note": "about 3/4 cup, crumbled",

@@ -55,15 +55,11 @@
     {
       "raw": "1/2 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -78,10 +74,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -118,10 +110,6 @@
           {
             "amount": "240",
             "unit": "ml"
-          },
-          {
-            "amount": "245",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -140,10 +128,6 @@
           {
             "amount": "180",
             "unit": "ml"
-          },
-          {
-            "amount": "189",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -162,10 +146,6 @@
           {
             "amount": "120",
             "unit": "ml"
-          },
-          {
-            "amount": "109",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -184,10 +164,6 @@
           {
             "amount": "60",
             "unit": "ml"
-          },
-          {
-            "amount": "56",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -202,10 +178,6 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
         "note": null,

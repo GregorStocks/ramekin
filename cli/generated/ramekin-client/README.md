@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
  - [CreateTagRequest](docs/CreateTagRequest.md)
  - [CreateTagResponse](docs/CreateTagResponse.md)
  - [CustomEnrichRequest](docs/CustomEnrichRequest.md)
+ - [DerivedMeasurement](docs/DerivedMeasurement.md)
  - [Direction](docs/Direction.md)
  - [ErrorCode](docs/ErrorCode.md)
  - [ErrorResponse](docs/ErrorResponse.md)

@@ -24,10 +24,6 @@
           {
             "amount": "1",
             "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "large, prawns, peeled and deveined with tails on",
@@ -42,10 +38,6 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8.5",
-            "unit": "g"
           }
         ],
         "note": "minced or crushed",
@@ -60,10 +52,6 @@
           {
             "amount": "3.5",
             "unit": "oz"
-          },
-          {
-            "amount": "99",
-            "unit": "g"
           }
         ],
         "note": "drained",
@@ -78,10 +66,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "180",
-            "unit": "g"
           }
         ],
         "note": "cherry tomatoes, halved",
@@ -91,15 +75,11 @@
     {
       "raw": "3/4 teaspoon salt (or to taste)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.1",
-            "unit": "g"
           }
         ],
         "note": "or to taste",

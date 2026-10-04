@@ -52,10 +52,6 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "162",
-            "unit": "g"
           }
         ],
         "note": "such as Lucini",
@@ -65,7 +61,7 @@
     {
       "raw": "Scant 1 teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
@@ -98,10 +94,6 @@
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
         "note": null,

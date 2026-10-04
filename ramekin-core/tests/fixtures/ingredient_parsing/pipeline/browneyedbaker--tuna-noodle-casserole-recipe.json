@@ -10,10 +10,6 @@
           {
             "amount": "0.5",
             "unit": "oz"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -28,10 +24,6 @@
           {
             "amount": "0.5",
             "unit": "oz"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -74,10 +66,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -87,15 +75,11 @@
     {
       "raw": "¼ teaspoon salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -138,10 +122,6 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -156,10 +136,6 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "10",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -169,7 +145,7 @@
     {
       "raw": "1 tablespoon + 1¼ teaspoons salt (divided)",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1 tablespoon plus 1 1/4 teaspoons",
@@ -202,10 +178,6 @@
           {
             "amount": "12",
             "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -220,10 +192,6 @@
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
         "note": "divided",
@@ -238,10 +206,6 @@
           {
             "amount": "10",
             "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
         "note": "sliced 1/4-inch thick",
@@ -284,10 +248,6 @@
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "23",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -302,10 +262,6 @@
           {
             "amount": "3.5",
             "unit": "cup"
-          },
-          {
-            "amount": "847",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -320,10 +276,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "374",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -338,10 +290,6 @@
           {
             "amount": "3.5",
             "unit": "oz"
-          },
-          {
-            "amount": "99",
-            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -356,10 +304,6 @@
           {
             "amount": "3.5",
             "unit": "oz"
-          },
-          {
-            "amount": "99",
-            "unit": "g"
           }
         ],
         "note": "shredded",
@@ -374,10 +318,6 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "201",
-            "unit": "g"
           }
         ],
         "note": null,

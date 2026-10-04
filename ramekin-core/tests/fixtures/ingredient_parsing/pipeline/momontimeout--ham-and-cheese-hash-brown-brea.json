@@ -14,10 +14,6 @@
           {
             "amount": "1 to 2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -55,15 +51,11 @@
     {
       "raw": "1 tsp salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -110,10 +102,6 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -142,10 +130,6 @@
           {
             "amount": "30",
             "unit": "oz"
-          },
-          {
-            "amount": "850",
-            "unit": "g"
           }
         ],
         "note": "1 bag - keep frozen",
@@ -160,10 +144,6 @@
           {
             "amount": "12",
             "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": null,
