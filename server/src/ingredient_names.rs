@@ -10,7 +10,7 @@
 //! reads never call the LLM, and a failed batch stays visible (Settings ->
 //! Ingredient recognition) until retried.
 
-use std::collections::BTreeSet;
+use std::collections::{BTreeMap, BTreeSet};
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, LazyLock};
 use std::time::Duration;
@@ -42,6 +42,8 @@ const RETRY_MAX: Duration = Duration::from_secs(60 * 60);
 pub const PENDING: &str = "pending";
 pub const RESOLVED: &str = "resolved";
 pub const FAILED: &str = "failed";
+/// The committed catalog knows the name now; the row keeps its last answer.
+pub const HARVESTED: &str = "harvested";
 
 static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
 /// Set whenever names are saved resolved, so the worker sweeps stored recipes
@@ -214,43 +216,131 @@ pub fn any_pending<'a>(
     .get_result(conn)
 }
 
-/// Requeue learned answers whose catalog key no longer names one entry (a
-/// catalog change removed or split it), so they're asked about again rather
-/// than silently reading as unknown. Runs at startup, before serving, since
-/// the catalog only changes with a deploy.
-pub fn requeue_stale_keys(pool: &DbPool) -> Result<usize, String> {
+/// What the startup sync does to a stored name after a catalog change.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub enum CatalogSync {
+    /// The committed catalog knows the name now (its answer was harvested
+    /// into `curated.json`, or a classification pass added it), so its row
+    /// is retired, keeping its last answer.
+    Harvest,
+    /// A harvested name the catalog no longer knows (an alias was removed):
+    /// ask again.
+    Unharvest,
+    /// The learned key no longer names one entry (removed or split): ask
+    /// again rather than silently reading as unknown.
+    StaleKey,
+    /// Answered unknown, and the catalog now offers different candidates:
+    /// ask again in case one fits.
+    NewCandidates,
+}
+
+impl CatalogSync {
+    /// Whether the name's computed shopping category may change, so items
+    /// with it must be sent again by incremental sync.
+    fn changes_category(self) -> bool {
+        !matches!(self, Self::NewCandidates)
+    }
+}
+
+/// A stored name as the startup sync reads it.
+#[derive(Debug, Queryable)]
+pub struct StoredName {
+    pub name: String,
+    pub status: String,
+    pub disposition: Option<String>,
+    pub catalog_key: Option<String>,
+    pub candidates: Option<Vec<Option<String>>>,
+}
+
+/// What the committed catalog means for a stored name, if anything.
+pub fn catalog_sync(row: &StoredName) -> Option<CatalogSync> {
+    let known = unlearned_name(&row.name).is_none();
+    if row.status == HARVESTED {
+        return (!known).then_some(CatalogSync::Unharvest);
+    }
+    if known {
+        return Some(CatalogSync::Harvest);
+    }
+    if row.status != RESOLVED {
+        return None;
+    }
+    match (row.disposition.as_deref(), row.catalog_key.as_deref()) {
+        (Some("entry"), Some(key)) if !learned_key_resolves(key) => Some(CatalogSync::StaleKey),
+        (Some("unknown"), _) if row.candidates != Some(offered(&row.name)) => {
+            Some(CatalogSync::NewCandidates)
+        }
+        _ => None,
+    }
+}
+
+/// The candidate keys the model is offered for `name`, as stored.
+fn offered(name: &str) -> Vec<Option<String>> {
+    candidates(name, CANDIDATES)
+        .into_iter()
+        .map(|key| Some(key.to_string()))
+        .collect()
+}
+
+/// Bring stored names in line with the committed catalog (see
+/// `CatalogSync`), returning how many of each changed. Runs at startup,
+/// before serving, since the catalog only changes with a deploy.
+pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, String> {
     let mut conn = pool.get().map_err(|e| e.to_string())?;
-    let keys: Vec<(String, String)> = names::table
-        .filter(names::status.eq(RESOLVED))
-        .filter(names::catalog_key.is_not_null())
-        .select((names::name, names::catalog_key.assume_not_null()))
+    let rows: Vec<StoredName> = names::table
+        .select((
+            names::name,
+            names::status,
+            names::disposition,
+            names::catalog_key,
+            names::candidates,
+        ))
         .load(&mut conn)
         .map_err(|e| e.to_string())?;
-    let stale: Vec<String> = keys
-        .into_iter()
-        .filter(|(_, key)| !learned_key_resolves(key))
-        .map(|(name, _)| name)
-        .collect();
-    if stale.is_empty() {
-        return Ok(0);
+    let mut changes: BTreeMap<CatalogSync, Vec<String>> = BTreeMap::new();
+    for row in rows {
+        if let Some(sync) = catalog_sync(&row) {
+            changes.entry(sync).or_default().push(row.name);
+        }
     }
     conn.transaction(|conn| {
         let now = Utc::now();
-        // Their items' computed category changes now, so incremental sync
-        // must send them again.
-        for name in &stale {
-            touch_shopping_items(conn, name, now)?;
+        for (sync, changed) in &changes {
+            if sync.changes_category() {
+                for name in changed {
+                    touch_shopping_items(conn, name, now)?;
+                }
+            }
+            let rows = names::table.filter(names::name.eq_any(changed));
+            match sync {
+                CatalogSync::Harvest => diesel::update(rows)
+                    .set((
+                        names::status.eq(HARVESTED),
+                        names::error.eq(None::<String>),
+                        names::updated_at.eq(now),
+                    ))
+                    .execute(conn)?,
+                _ => diesel::update(rows)
+                    .set((
+                        names::status.eq(PENDING),
+                        names::disposition.eq(None::<String>),
+                        names::catalog_key.eq(None::<String>),
+                        names::kcal_per_100g.eq(None::<f64>),
+                        names::grams_per_cup.eq(None::<f64>),
+                        names::grams_per_piece.eq(None::<f64>),
+                        names::candidates.eq(None::<Vec<Option<String>>>),
+                        names::error.eq(None::<String>),
+                        names::updated_at.eq(now),
+                    ))
+                    .execute(conn)?,
+            };
         }
-        diesel::update(names::table.filter(names::name.eq_any(&stale)))
-            .set((
-                names::status.eq(PENDING),
-                names::disposition.eq(None::<String>),
-                names::catalog_key.eq(None::<String>),
-                names::updated_at.eq(now),
-            ))
-            .execute(conn)
+        QueryResult::Ok(())
     })
-    .map_err(|e: diesel::result::Error| e.to_string())
+    .map_err(|e| e.to_string())?;
+    Ok(changes
+        .into_iter()
+        .map(|(sync, changed)| (sync, changed.len()))
+        .collect())
 }
 
 /// Start the worker. It first drains whatever was pending at startup, then
@@ -598,6 +688,9 @@ async fn save_resolved(
                         names::kcal_per_100g.eq(estimate.map(|e| e.kcal_per_100g)),
                         names::grams_per_cup.eq(estimate.and_then(|e| e.grams_per_cup)),
                         names::grams_per_piece.eq(estimate.and_then(|e| e.grams_per_piece)),
+                        // The same keys `ask` offered: the catalog is fixed
+                        // for the process's lifetime.
+                        names::candidates.eq(offered(name)),
                         names::model.eq(&model),
                         names::error.eq(None::<String>),
                         names::attempts.eq(names::attempts + 1),
@@ -674,4 +767,84 @@ async fn save_failed(pool: &Arc<DbPool>, failed: Vec<String>, error: String) -> 
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn row(name: &str, status: &str, disposition: Option<&str>, key: Option<&str>) -> StoredName {
+        StoredName {
+            name: name.to_string(),
+            status: status.to_string(),
+            disposition: disposition.map(str::to_string),
+            catalog_key: key.map(str::to_string),
+            candidates: None,
+        }
+    }
+
+    #[test]
+    fn names_the_catalog_knows_are_harvested_whatever_their_state() {
+        for status in [PENDING, FAILED, RESOLVED] {
+            let known = row("all-purpose flour", status, None, None);
+            assert_eq!(catalog_sync(&known), Some(CatalogSync::Harvest), "{status}");
+        }
+        let harvested = row("all-purpose flour", HARVESTED, Some("entry"), Some("flour"));
+        assert_eq!(catalog_sync(&harvested), None);
+    }
+
+    #[test]
+    fn harvested_names_the_catalog_lost_are_asked_again() {
+        let lost = row("zorblax paste", HARVESTED, Some("not_food"), None);
+        assert_eq!(catalog_sync(&lost), Some(CatalogSync::Unharvest));
+    }
+
+    #[test]
+    fn ambiguous_names_are_never_harvested() {
+        let cheese = row("cheese", RESOLVED, Some("entry"), Some("cheddar cheese"));
+        assert_eq!(catalog_sync(&cheese), None);
+    }
+
+    #[test]
+    fn keys_the_catalog_lost_are_asked_again() {
+        let stale = row("zorblax paste", RESOLVED, Some("entry"), Some("zorblax"));
+        assert_eq!(catalog_sync(&stale), Some(CatalogSync::StaleKey));
+        let good = row(
+            "zorblax paste",
+            RESOLVED,
+            Some("entry"),
+            Some("all-purpose flour"),
+        );
+        assert_eq!(catalog_sync(&good), None);
+    }
+
+    #[test]
+    fn unknown_answers_are_asked_again_when_the_candidates_change() {
+        let mut unknown = row("zorblax flour", RESOLVED, Some("unknown"), None);
+        assert_eq!(
+            catalog_sync(&unknown),
+            Some(CatalogSync::NewCandidates),
+            "answered before candidates were stored"
+        );
+        unknown.candidates = Some(offered("zorblax flour"));
+        assert_eq!(catalog_sync(&unknown), None);
+        unknown.candidates = Some(vec![Some("all-purpose flour".to_string())]);
+        assert_eq!(catalog_sync(&unknown), Some(CatalogSync::NewCandidates));
+    }
+
+    #[test]
+    fn other_answers_and_open_names_are_left_alone() {
+        for (status, disposition) in [
+            (PENDING, None),
+            (FAILED, None),
+            (RESOLVED, Some("not_food")),
+            (RESOLVED, Some("estimate")),
+        ] {
+            assert_eq!(
+                catalog_sync(&row("zorblax paste", status, disposition, None)),
+                None,
+                "{status} {disposition:?}"
+            );
+        }
+    }
 }

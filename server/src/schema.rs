@@ -27,6 +27,7 @@ diesel::table! {
         kcal_per_100g -> Nullable<Float8>,
         grams_per_cup -> Nullable<Float8>,
         grams_per_piece -> Nullable<Float8>,
+        candidates -> Nullable<Array<Nullable<Text>>>,
     }
 }
 

@@ -169,7 +169,7 @@ fn sorted_json_files(dir: &Path) -> Result<Vec<PathBuf>> {
     Ok(files)
 }
 
-fn read_json<T: serde::de::DeserializeOwned>(path: &Path) -> Result<T> {
+pub(crate) fn read_json<T: serde::de::DeserializeOwned>(path: &Path) -> Result<T> {
     let content =
         fs::read_to_string(path).with_context(|| format!("Failed to read {}", path.display()))?;
     serde_json::from_str(&content).with_context(|| format!("Failed to parse {}", path.display()))
@@ -279,13 +279,16 @@ fn load_pipeline_run_corpus(runs_dir: &Path) -> Result<Corpus> {
 }
 
 /// A row of the server's `ingredient_name_resolutions` table, as exported
-/// for `--learned`.
+/// for `--learned` and `catalog-harvest-learned`.
 #[derive(Deserialize)]
-struct LearnedRow {
-    name: String,
-    status: String,
-    disposition: Option<String>,
-    catalog_key: Option<String>,
+pub(crate) struct LearnedRow {
+    pub name: String,
+    pub status: String,
+    pub disposition: Option<String>,
+    pub catalog_key: Option<String>,
+    /// The model that answered.
+    #[serde(default)]
+    pub model: Option<String>,
     #[serde(default)]
     kcal_per_100g: Option<f64>,
     #[serde(default)]
@@ -839,7 +842,7 @@ pub fn run(
     Ok(())
 }
 
-const CURATED_PATH: &str = "ramekin-core/src/catalog/data/curated.json";
+pub(crate) const CURATED_PATH: &str = "ramekin-core/src/catalog/data/curated.json";
 const CLEANUP_REPORT: &str = "logs/catalog-alias-cleanup.md";
 
 /// Re-key or remove curated names the parser no longer produces, writing

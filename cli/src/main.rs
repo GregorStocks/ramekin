@@ -1,6 +1,7 @@
 #![deny(clippy::print_stdout, clippy::print_stderr)]
 
 mod ai_eval;
+mod catalog_harvest;
 mod description_generation;
 mod export;
 mod generate_test_urls;
@@ -263,6 +264,12 @@ enum Commands {
         #[arg(long)]
         prod_recipes: Option<PathBuf>,
     },
+    /// Write the server's learned names as classification decisions to review and apply
+    CatalogHarvestLearned {
+        /// A JSON array of ingredient_name_resolutions rows
+        #[arg(long)]
+        learned: PathBuf,
+    },
     /// Report how much of each ingredient corpus the nutrition, density, and category matchers recognize
     IngredientCatalogAudit {
         /// Also audit the latest pipeline run in this directory (local report only)
@@ -505,6 +512,9 @@ async fn main() -> Result<()> {
         Commands::IngredientCatalogUnresolved { prod_recipes } => {
             ingredient_catalog_audit::export_unresolved(Path::new("."), prod_recipes.as_deref())?;
         }
+        Commands::CatalogHarvestLearned { learned } => {
+            catalog_harvest::export(Path::new("."), &learned)?;
+        }
         Commands::IngredientCatalogAudit {
             runs_dir,
             prod_recipes,
@@ -649,6 +659,7 @@ fn command_slug(cmd: &Commands) -> &'static str {
         Commands::IngredientTestsMigrateCurated { .. } => "ingredient-tests-migrate-curated",
         Commands::IngredientCatalogAudit { .. } => "ingredient-catalog-audit",
         Commands::CatalogCleanAliases => "catalog-clean-aliases",
+        Commands::CatalogHarvestLearned { .. } => "catalog-harvest-learned",
         Commands::IngredientCatalogUnresolved { .. } => "ingredient-catalog-unresolved",
         Commands::AiEval { .. } => "ai-eval",
         Commands::TitleNormalizationTest { .. } => "title-normalization-test",
