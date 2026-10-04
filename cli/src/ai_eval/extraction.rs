@@ -39,8 +39,9 @@ pub struct Expected {
     #[serde(default)]
     also_allowed: String,
     /// Source text that may appear in an answer's description or notes but
-    /// needn't (a personal aside around a pasted recipe), unlike the
-    /// boilerplate beside it.
+    /// needn't: a personal aside around a pasted recipe (unlike the
+    /// boilerplate beside it), or a photo's nutrition panel, which photo
+    /// import has no field for.
     #[serde(default, skip_serializing_if = "String::is_empty")]
     incidental: String,
     /// The page has prose not transcribed here (a long headnote), so an
