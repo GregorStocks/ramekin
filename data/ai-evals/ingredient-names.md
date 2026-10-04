@@ -1,18 +1,18 @@
 # AI eval: Ingredient names
 
-Written by `make ai-eval`. Picking the catalog food a name means from its candidates (`resolve_ingredient_names`), for 100 curated aliases (correct if the answer resolves to the alias's food or another entry linked to the same USDA food, since the catalog has several entries for many foods; the alias itself is not offered) and 30 curated not-food names. Some curated aliases are judgment calls (delicata squash counts as acorn squash), so a sensible answer can score as wrong: compare models with each other rather than reading this as absolute accuracy.
+Written by `make ai-eval`. Picking the catalog food a name means from its candidates (`resolve_ingredient_names`), for 100 curated aliases (correct if the answer resolves to the alias's food or another entry the catalog computes identically, with the same calories, density and piece weights, since the catalog has several entries for many foods; the alias itself is not offered) and 30 curated not-food names. Some curated aliases are judgment calls (delicata squash counts as acorn squash), so a sensible answer can score as wrong: compare models with each other rather than reading this as absolute accuracy.
 
 Golden set: `data/ai-evals/golden/ingredient-names.json` (130 cases), asked 40 per call (production asks 40). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated); a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.
 
 | Model | Correct food | Wrong food | Unknown | Not food right | Invalid | Rejected calls | Truncated calls | Cost of accepted calls |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | google/gemini-2.5-flash | 84% | 13% | 1% | 97% | 2% | 4 | 0 | $0.0340 |
-| google/gemini-3.8-flash | 86% | 14% | 0% | 97% | 0% | 1 | 0 | $0.1679 |
-| google/gemini-3.1-pro-preview | 86% | 14% | 0% | 97% | 0% | 0 | 0 | $0.3162 |
+| google/gemini-3.8-flash | 85% | 15% | 0% | 97% | 0% | 1 | 0 | $0.1679 |
+| google/gemini-3.1-pro-preview | 85% | 15% | 0% | 97% | 0% | 0 | 0 | $0.3162 |
 | anthropic/claude-sonnet-5.5 | 90% | 10% | 0% | 97% | 0% | 1 | 0 | $0.2035 |
 | anthropic/claude-opus-5.5 | 91% | 9% | 0% | 97% | 0% | 0 | 0 | $0.2842 |
 | openai/gpt-6.1-sol | 90% | 9% | 1% | 97% | 0% | 0 | 0 | $0.0745 |
-| openai/gpt-6-luna | 86% | 14% | 0% | 93% | 0% | 1 | 0 | $0.0081 |
+| openai/gpt-6-luna | 85% | 15% | 0% | 93% | 0% | 1 | 0 | $0.0081 |
 
 ## Rejected answers
 
