@@ -12,6 +12,7 @@ Name | Type
 `notFood` | number
 `pending` | number
 `reaskFailed` | number
+`reasking` | number
 `recognized` | number
 `unknown` | number
 `weights` | [IngredientWeightsStatus](IngredientWeightsStatus.md)
@@ -29,6 +30,7 @@ const example = {
   "notFood": null,
   "pending": null,
   "reaskFailed": null,
+  "reasking": null,
   "recognized": null,
   "unknown": null,
   "weights": null,

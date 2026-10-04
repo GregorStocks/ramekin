@@ -32,6 +32,9 @@ pub struct IngredientWeightsStatus {
     /// Re-asking with the current model failed; the earlier model's estimate is still used (and counted above). Retry to try again.
     #[serde(rename = "reask_failed")]
     pub reask_failed: i64,
+    /// Being asked again by the current model; the earlier model's estimate is used meanwhile (and counted above).
+    #[serde(rename = "reasking")]
+    pub reasking: i64,
 }
 
 impl IngredientWeightsStatus {
@@ -43,6 +46,7 @@ impl IngredientWeightsStatus {
         no_typical_weight: i64,
         pending: i64,
         reask_failed: i64,
+        reasking: i64,
     ) -> IngredientWeightsStatus {
         IngredientWeightsStatus {
             estimated,
@@ -51,6 +55,7 @@ impl IngredientWeightsStatus {
             no_typical_weight,
             pending,
             reask_failed,
+            reasking,
         }
     }
 }

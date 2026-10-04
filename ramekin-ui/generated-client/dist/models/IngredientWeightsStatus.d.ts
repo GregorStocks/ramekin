@@ -55,6 +55,13 @@ export interface IngredientWeightsStatus {
      * @memberof IngredientWeightsStatus
      */
     reaskFailed: number;
+    /**
+     * Being asked again by the current model; the earlier model's estimate
+     * is used meanwhile (and counted above).
+     * @type {number}
+     * @memberof IngredientWeightsStatus
+     */
+    reasking: number;
 }
 /**
  * Check if a given object implements the IngredientWeightsStatus interface.

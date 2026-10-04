@@ -25,14 +25,17 @@ public struct IngredientWeightsStatus: Codable, JSONEncodable, Hashable {
     public var pending: Int64
     /** Re-asking with the current model failed; the earlier model's estimate is still used (and counted above). Retry to try again. */
     public var reaskFailed: Int64
+    /** Being asked again by the current model; the earlier model's estimate is used meanwhile (and counted above). */
+    public var reasking: Int64
 
-    public init(estimated: Int64, failed: Int64, failures: [IngredientWeightFailure], noTypicalWeight: Int64, pending: Int64, reaskFailed: Int64) {
+    public init(estimated: Int64, failed: Int64, failures: [IngredientWeightFailure], noTypicalWeight: Int64, pending: Int64, reaskFailed: Int64, reasking: Int64) {
         self.estimated = estimated
         self.failed = failed
         self.failures = failures
         self.noTypicalWeight = noTypicalWeight
         self.pending = pending
         self.reaskFailed = reaskFailed
+        self.reasking = reasking
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
@@ -42,6 +45,7 @@ public struct IngredientWeightsStatus: Codable, JSONEncodable, Hashable {
         case noTypicalWeight = "no_typical_weight"
         case pending
         case reaskFailed = "reask_failed"
+        case reasking
     }
 
     // Encodable protocol methods
@@ -54,6 +58,7 @@ public struct IngredientWeightsStatus: Codable, JSONEncodable, Hashable {
         try container.encode(noTypicalWeight, forKey: .noTypicalWeight)
         try container.encode(pending, forKey: .pending)
         try container.encode(reaskFailed, forKey: .reaskFailed)
+        try container.encode(reasking, forKey: .reasking)
     }
 }
 

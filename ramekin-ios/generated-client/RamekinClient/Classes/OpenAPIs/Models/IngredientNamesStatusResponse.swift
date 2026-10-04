@@ -24,19 +24,22 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
     public var pending: Int64
     /** Re-asking with the current model failed; the earlier model's answer is still used (and counted above). Retry to try again. */
     public var reaskFailed: Int64
+    /** Being asked again by the current model; the earlier model's answer is used meanwhile (and counted above). */
+    public var reasking: Int64
     /** Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means). */
     public var recognized: Int64
     /** Resolved, but the model couldn't tell; still unknown in estimates. */
     public var unknown: Int64
     public var weights: IngredientWeightsStatus
 
-    public init(estimated: Int64, failed: Int64, failures: [IngredientNameFailure], notFood: Int64, pending: Int64, reaskFailed: Int64, recognized: Int64, unknown: Int64, weights: IngredientWeightsStatus) {
+    public init(estimated: Int64, failed: Int64, failures: [IngredientNameFailure], notFood: Int64, pending: Int64, reaskFailed: Int64, reasking: Int64, recognized: Int64, unknown: Int64, weights: IngredientWeightsStatus) {
         self.estimated = estimated
         self.failed = failed
         self.failures = failures
         self.notFood = notFood
         self.pending = pending
         self.reaskFailed = reaskFailed
+        self.reasking = reasking
         self.recognized = recognized
         self.unknown = unknown
         self.weights = weights
@@ -49,6 +52,7 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
         case notFood = "not_food"
         case pending
         case reaskFailed = "reask_failed"
+        case reasking
         case recognized
         case unknown
         case weights
@@ -64,6 +68,7 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
         try container.encode(notFood, forKey: .notFood)
         try container.encode(pending, forKey: .pending)
         try container.encode(reaskFailed, forKey: .reaskFailed)
+        try container.encode(reasking, forKey: .reasking)
         try container.encode(recognized, forKey: .recognized)
         try container.encode(unknown, forKey: .unknown)
         try container.encode(weights, forKey: .weights)

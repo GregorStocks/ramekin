@@ -107,17 +107,23 @@ pub struct Counts {
     pub estimated: i64,
     pub no_typical_weight: i64,
     pub pending: i64,
-    pub failed: Vec<(WeightKey, String, i32)>,
+    pub failed: i64,
+    /// Estimates being asked again by the current model; their earlier
+    /// estimate is used meanwhile.
+    pub reasking: i64,
     /// Estimates whose re-ask failed; their earlier estimate is still used.
-    pub reask_failed: Vec<(WeightKey, String, i32)>,
+    pub reask_failed: i64,
+    /// Failed estimates and failed re-asks, most recent first.
+    pub failures: Vec<(WeightKey, String, i32)>,
 }
 
-/// Food, unit, status, grams, error, reask error, attempts.
+/// Food, unit, status, grams, reasked, error, reask error, attempts.
 type CountRow = (
     String,
     String,
     String,
     Option<f64>,
+    bool,
     Option<String>,
     Option<String>,
     i32,
@@ -135,6 +141,7 @@ pub fn counts(conn: &mut PgConnection, foods: &[String]) -> QueryResult<Counts> 
             weights::unit,
             weights::status,
             weights::grams,
+            weights::reasked,
             weights::error,
             weights::reask_error,
             weights::attempts,
@@ -144,29 +151,31 @@ pub fn counts(conn: &mut PgConnection, foods: &[String]) -> QueryResult<Counts> 
         estimated: 0,
         no_typical_weight: 0,
         pending: 0,
-        failed: Vec::new(),
-        reask_failed: Vec::new(),
+        failed: 0,
+        reasking: 0,
+        reask_failed: 0,
+        failures: Vec::new(),
     };
-    for (food, unit, status, grams, error, reask_error, attempts) in rows {
-        if let Some(reask_error) = reask_error {
-            counts.reask_failed.push((
-                WeightKey {
-                    food: food.clone(),
-                    unit: unit.clone(),
-                },
-                reask_error,
-                attempts,
-            ));
-        }
+    for (food, unit, status, grams, reasked, error, reask_error, attempts) in rows {
+        counts.reasking += i64::from(reasked);
         match (status.as_str(), grams) {
             (RESOLVED, Some(_)) => counts.estimated += 1,
             (RESOLVED, None) => counts.no_typical_weight += 1,
             (PENDING, _) => counts.pending += 1,
-            _ => counts.failed.push((
-                WeightKey { food, unit },
-                error.unwrap_or_default(),
-                attempts,
-            )),
+            _ => counts.failed += 1,
+        }
+        let error = match (status.as_str(), reask_error) {
+            (FAILED, _) => error,
+            (_, Some(reask_error)) => {
+                counts.reask_failed += 1;
+                Some(reask_error)
+            }
+            _ => None,
+        };
+        if let Some(error) = error {
+            counts
+                .failures
+                .push((WeightKey { food, unit }, error, attempts));
         }
     }
     Ok(counts)

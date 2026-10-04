@@ -3768,6 +3768,7 @@
           "unknown",
           "pending",
           "failed",
+          "reasking",
           "reask_failed",
           "failures",
           "weights"
@@ -3804,6 +3805,11 @@
             "type": "integer",
             "format": "int64",
             "description": "Re-asking with the current model failed; the earlier model's answer\nis still used (and counted above). Retry to try again."
+          },
+          "reasking": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Being asked again by the current model; the earlier model's answer\nis used meanwhile (and counted above)."
           },
           "recognized": {
             "type": "integer",
@@ -3853,6 +3859,7 @@
           "no_typical_weight",
           "pending",
           "failed",
+          "reasking",
           "reask_failed",
           "failures"
         ],
@@ -3888,6 +3895,11 @@
             "type": "integer",
             "format": "int64",
             "description": "Re-asking with the current model failed; the earlier model's estimate\nis still used (and counted above). Retry to try again."
+          },
+          "reasking": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Being asked again by the current model; the earlier model's estimate\nis used meanwhile (and counted above)."
           }
         }
       },

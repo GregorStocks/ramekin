@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **notFood** | **Int64** | Resolved as not an ingredient (a heading, a serving note). | 
 **pending** | **Int64** | Waiting for the background resolver. | 
 **reaskFailed** | **Int64** | Re-asking with the current model failed; the earlier model&#39;s answer is still used (and counted above). Retry to try again. | 
+**reasking** | **Int64** | Being asked again by the current model; the earlier model&#39;s answer is used meanwhile (and counted above). | 
 **recognized** | **Int64** | Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means). | 
 **unknown** | **Int64** | Resolved, but the model couldn&#39;t tell; still unknown in estimates. | 
 **weights** | [**IngredientWeightsStatus**](IngredientWeightsStatus.md) |  | 

@@ -28,6 +28,8 @@ export function instanceOfIngredientWeightsStatus(value) {
         return false;
     if (!('reaskFailed' in value) || value['reaskFailed'] === undefined)
         return false;
+    if (!('reasking' in value) || value['reasking'] === undefined)
+        return false;
     return true;
 }
 export function IngredientWeightsStatusFromJSON(json) {
@@ -44,6 +46,7 @@ export function IngredientWeightsStatusFromJSONTyped(json, ignoreDiscriminator) 
         'noTypicalWeight': json['no_typical_weight'],
         'pending': json['pending'],
         'reaskFailed': json['reask_failed'],
+        'reasking': json['reasking'],
     };
 }
 export function IngredientWeightsStatusToJSON(json) {
@@ -60,5 +63,6 @@ export function IngredientWeightsStatusToJSONTyped(value, ignoreDiscriminator = 
         'no_typical_weight': value['noTypicalWeight'],
         'pending': value['pending'],
         'reask_failed': value['reaskFailed'],
+        'reasking': value['reasking'],
     };
 }

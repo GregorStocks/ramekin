@@ -33,7 +33,8 @@ class IngredientWeightsStatus(BaseModel):
     no_typical_weight: StrictInt = Field(description="The model said there's no typical weight; still unknown in estimates.")
     pending: StrictInt = Field(description="Waiting for the background estimator (queued when an estimate is shown).")
     reask_failed: StrictInt = Field(description="Re-asking with the current model failed; the earlier model's estimate is still used (and counted above). Retry to try again.")
-    __properties: ClassVar[List[str]] = ["estimated", "failed", "failures", "no_typical_weight", "pending", "reask_failed"]
+    reasking: StrictInt = Field(description="Being asked again by the current model; the earlier model's estimate is used meanwhile (and counted above).")
+    __properties: ClassVar[List[str]] = ["estimated", "failed", "failures", "no_typical_weight", "pending", "reask_failed", "reasking"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +99,8 @@ class IngredientWeightsStatus(BaseModel):
             "failures": [IngredientWeightFailure.from_dict(_item) for _item in obj["failures"]] if obj.get("failures") is not None else None,
             "no_typical_weight": obj.get("no_typical_weight"),
             "pending": obj.get("pending"),
-            "reask_failed": obj.get("reask_failed")
+            "reask_failed": obj.get("reask_failed"),
+            "reasking": obj.get("reasking")
         })
         return _obj
 

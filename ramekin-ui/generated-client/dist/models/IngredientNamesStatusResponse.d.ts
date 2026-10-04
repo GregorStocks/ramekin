@@ -56,6 +56,13 @@ export interface IngredientNamesStatusResponse {
      */
     reaskFailed: number;
     /**
+     * Being asked again by the current model; the earlier model's answer
+     * is used meanwhile (and counted above).
+     * @type {number}
+     * @memberof IngredientNamesStatusResponse
+     */
+    reasking: number;
+    /**
      * Resolved to a catalog food or product (for an ambiguous name, the one
      * a recipe most likely means).
      * @type {number}

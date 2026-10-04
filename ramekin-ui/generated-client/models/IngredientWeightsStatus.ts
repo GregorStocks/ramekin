@@ -66,6 +66,13 @@ export interface IngredientWeightsStatus {
      * @memberof IngredientWeightsStatus
      */
     reaskFailed: number;
+    /**
+     * Being asked again by the current model; the earlier model's estimate
+     * is used meanwhile (and counted above).
+     * @type {number}
+     * @memberof IngredientWeightsStatus
+     */
+    reasking: number;
 }
 
 /**
@@ -78,6 +85,7 @@ export function instanceOfIngredientWeightsStatus(value: object): value is Ingre
     if (!('noTypicalWeight' in value) || value['noTypicalWeight'] === undefined) return false;
     if (!('pending' in value) || value['pending'] === undefined) return false;
     if (!('reaskFailed' in value) || value['reaskFailed'] === undefined) return false;
+    if (!('reasking' in value) || value['reasking'] === undefined) return false;
     return true;
 }
 
@@ -97,6 +105,7 @@ export function IngredientWeightsStatusFromJSONTyped(json: any, ignoreDiscrimina
         'noTypicalWeight': json['no_typical_weight'],
         'pending': json['pending'],
         'reaskFailed': json['reask_failed'],
+        'reasking': json['reasking'],
     };
 }
 
@@ -117,6 +126,7 @@ export function IngredientWeightsStatusToJSONTyped(value?: IngredientWeightsStat
         'no_typical_weight': value['noTypicalWeight'],
         'pending': value['pending'],
         'reask_failed': value['reaskFailed'],
+        'reasking': value['reasking'],
     };
 }
 

@@ -86,10 +86,16 @@ export default function SettingsPage() {
     (nameStatus()?.reaskFailed ?? 0) +
     (nameStatus()?.weights.failed ?? 0) +
     (nameStatus()?.weights.reaskFailed ?? 0);
-  // Keep the counts current while names or weights are waiting.
+  // Keep the counts current while names or weights are waiting, or being
+  // asked again by the current model (which can still fail).
   createEffect(() => {
     const status = nameStatus();
-    if ((status?.pending ?? 0) + (status?.weights.pending ?? 0) === 0) return;
+    const waiting =
+      (status?.pending ?? 0) +
+      (status?.weights.pending ?? 0) +
+      (status?.reasking ?? 0) +
+      (status?.weights.reasking ?? 0);
+    if (waiting === 0) return;
     const timer = setTimeout(() => refetchNameStatus(), 2000);
     onCleanup(() => clearTimeout(timer));
   });

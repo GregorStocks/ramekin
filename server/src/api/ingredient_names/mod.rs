@@ -58,6 +58,9 @@ pub struct IngredientWeightsStatus {
     pub pending: i64,
     /// The last attempt failed; retry to try again.
     pub failed: i64,
+    /// Being asked again by the current model; the earlier model's estimate
+    /// is used meanwhile (and counted above).
+    pub reasking: i64,
     /// Re-asking with the current model failed; the earlier model's estimate
     /// is still used (and counted above). Retry to try again.
     pub reask_failed: i64,
@@ -81,6 +84,9 @@ pub struct IngredientNamesStatusResponse {
     pub pending: i64,
     /// The last attempt failed; retry to try again.
     pub failed: i64,
+    /// Being asked again by the current model; the earlier model's answer
+    /// is used meanwhile (and counted above).
+    pub reasking: i64,
     /// Re-asking with the current model failed; the earlier model's answer
     /// is still used (and counted above). Retry to try again.
     pub reask_failed: i64,
@@ -206,6 +212,12 @@ pub async fn get_ingredient_names_status(
                 .map(|(_, _, n)| n)
                 .sum::<i64>()
         };
+        let reasking: i64 = names::table
+            .filter(names::name.eq_any(&own))
+            .filter(names::reasked)
+            .count()
+            .get_result(conn)
+            .map_err(db_error)?;
         let reask_failed: i64 = names::table
             .filter(names::name.eq_any(&own))
             .filter(names::reask_error.is_not_null())
@@ -238,6 +250,7 @@ pub async fn get_ingredient_names_status(
             unknown: count(RESOLVED, Some("unknown")),
             pending: count(PENDING, None),
             failed: count(FAILED, None),
+            reasking,
             reask_failed,
             failures: failures
                 .into_iter()
@@ -253,12 +266,12 @@ pub async fn get_ingredient_names_status(
                 estimated: weights.estimated,
                 no_typical_weight: weights.no_typical_weight,
                 pending: weights.pending,
-                failed: weights.failed.len() as i64,
-                reask_failed: weights.reask_failed.len() as i64,
+                failed: weights.failed,
+                reasking: weights.reasking,
+                reask_failed: weights.reask_failed,
                 failures: weights
-                    .failed
+                    .failures
                     .into_iter()
-                    .chain(weights.reask_failed)
                     .take(FAILURES_SHOWN as usize)
                     .map(|(key, error, attempts)| IngredientWeightFailure {
                         food: key.food,

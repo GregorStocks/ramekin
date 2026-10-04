@@ -73,6 +73,13 @@ export interface IngredientNamesStatusResponse {
      */
     reaskFailed: number;
     /**
+     * Being asked again by the current model; the earlier model's answer
+     * is used meanwhile (and counted above).
+     * @type {number}
+     * @memberof IngredientNamesStatusResponse
+     */
+    reasking: number;
+    /**
      * Resolved to a catalog food or product (for an ambiguous name, the one
      * a recipe most likely means).
      * @type {number}
@@ -103,6 +110,7 @@ export function instanceOfIngredientNamesStatusResponse(value: object): value is
     if (!('notFood' in value) || value['notFood'] === undefined) return false;
     if (!('pending' in value) || value['pending'] === undefined) return false;
     if (!('reaskFailed' in value) || value['reaskFailed'] === undefined) return false;
+    if (!('reasking' in value) || value['reasking'] === undefined) return false;
     if (!('recognized' in value) || value['recognized'] === undefined) return false;
     if (!('unknown' in value) || value['unknown'] === undefined) return false;
     if (!('weights' in value) || value['weights'] === undefined) return false;
@@ -125,6 +133,7 @@ export function IngredientNamesStatusResponseFromJSONTyped(json: any, ignoreDisc
         'notFood': json['not_food'],
         'pending': json['pending'],
         'reaskFailed': json['reask_failed'],
+        'reasking': json['reasking'],
         'recognized': json['recognized'],
         'unknown': json['unknown'],
         'weights': IngredientWeightsStatusFromJSON(json['weights']),
@@ -148,6 +157,7 @@ export function IngredientNamesStatusResponseToJSONTyped(value?: IngredientNames
         'not_food': value['notFood'],
         'pending': value['pending'],
         'reask_failed': value['reaskFailed'],
+        'reasking': value['reasking'],
         'recognized': value['recognized'],
         'unknown': value['unknown'],
         'weights': IngredientWeightsStatusToJSON(value['weights']),
