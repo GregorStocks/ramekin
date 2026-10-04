@@ -269,12 +269,45 @@ fn normalize_line(line: &str) -> String {
         .replace("( ", "(")
 }
 
+/// Whether the character at `i` is a decimal point ("12.5"), which stays in
+/// its number rather than ending a word or sentence.
+fn decimal_point(chars: &[char], i: usize) -> bool {
+    chars[i] == '.'
+        && i > 0
+        && chars[i - 1].is_ascii_digit()
+        && chars.get(i + 1).is_some_and(char::is_ascii_digit)
+}
+
 fn tokens(text: &str) -> Vec<String> {
-    normalize_line(text)
-        .split(|c: char| !c.is_alphanumeric() && c != '/')
-        .filter(|t| !t.is_empty())
-        .map(str::to_string)
-        .collect()
+    let chars: Vec<char> = normalize_line(text).chars().collect();
+    let mut words = Vec::new();
+    let mut word = String::new();
+    for (i, &c) in chars.iter().enumerate() {
+        if c.is_alphanumeric() || c == '/' || decimal_point(&chars, i) {
+            word.push(c);
+        } else if !word.is_empty() {
+            words.push(std::mem::take(&mut word));
+        }
+    }
+    if !word.is_empty() {
+        words.push(word);
+    }
+    words
+}
+
+/// A text's sentences: split at periods (not decimal points), semicolons
+/// and line breaks.
+fn sentences(text: &str) -> Vec<String> {
+    let chars: Vec<char> = text.chars().collect();
+    let mut sentences = vec![String::new()];
+    for (i, &c) in chars.iter().enumerate() {
+        if matches!(c, ';' | '\n') || (c == '.' && !decimal_point(&chars, i)) {
+            sentences.push(String::new());
+        } else if let Some(sentence) = sentences.last_mut() {
+            sentence.push(c);
+        }
+    }
+    sentences
 }
 
 fn counts<'a>(items: impl IntoIterator<Item = &'a String>) -> HashMap<&'a str, usize> {
@@ -316,7 +349,9 @@ fn ratio(n: usize, of: usize) -> f64 {
 }
 
 fn is_number(token: &str) -> bool {
-    token.chars().all(|c| c.is_ascii_digit() || c == '/')
+    token
+        .chars()
+        .all(|c| c.is_ascii_digit() || c == '/' || c == '.')
 }
 
 /// What a number in a recipe counts.
@@ -366,19 +401,23 @@ fn cue(word: &str) -> Option<Quantity> {
 /// minutes", "410 calories", or "cal 410" before it). Otherwise it counts
 /// servings if a servings word came earlier in its sentence ("serves 4
 /// generously, 6 moderately"), and nothing if not ("130 to 135 degrees").
-fn quantities(text: &str) -> HashSet<(String, Quantity)> {
-    classify(text)
-        .into_iter()
-        .filter_map(|(number, quantity)| Some((number, quantity?)))
-        .collect()
+/// Counted, so a quantity stated once backs one answered field.
+fn quantities(text: &str) -> HashMap<(String, Quantity), usize> {
+    let mut stated = HashMap::new();
+    for (number, quantity) in classify(text) {
+        if let Some(quantity) = quantity {
+            *stated.entry((number, quantity)).or_insert(0) += 1;
+        }
+    }
+    stated
 }
 
 /// Every number in a text, in order, with what it counts if anything says
 /// (see `quantities`).
 fn classify(text: &str) -> Vec<(String, Option<Quantity>)> {
     let mut stated = Vec::new();
-    for sentence in text.split(['.', ';', '\n']) {
-        let words = tokens(sentence);
+    for sentence in sentences(text) {
+        let words = tokens(&sentence);
         let mut after_servings_word = false;
         let mut i = 0;
         while i < words.len() {
@@ -465,12 +504,30 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
     let kept = counts(answer_tokens.iter().chain(&notes));
     let allowed = counts(expected_tokens.iter().chain(&also_allowed));
 
-    let stated = quantities(source);
+    // Each quantity the source states backs one answered value: "Bake 30
+    // minutes" doesn't make prep, cook and total time all 30 minutes.
+    let mut stated = quantities(source);
+    let mut take = |number: String, quantity: Option<Quantity>| {
+        // A bare number in a time field may be in any unit the source uses.
+        let units = match quantity {
+            Some(quantity) => vec![quantity],
+            None => vec![Quantity::Seconds, Quantity::Minutes, Quantity::Hours],
+        };
+        units
+            .into_iter()
+            .any(|unit| match stated.get_mut(&(number.clone(), unit)) {
+                Some(left) if *left > 0 => {
+                    *left -= 1;
+                    true
+                }
+                _ => false,
+            })
+    };
     let source_words: HashSet<String> = tokens(source).into_iter().collect();
     let unsourced = |text: &str| tokens(text).iter().any(|w| !source_words.contains(w));
-    let mut invented: Vec<&'static str> = [
+    let mut invented: Vec<&'static str> = Vec::new();
+    for (name, value, quantity) in [
         ("servings", &answer.servings, Some(Quantity::Servings)),
-        // A bare number in a time field may be in any unit the source uses.
         ("prep_time", &answer.prep_time, None),
         ("cook_time", &answer.cook_time, None),
         ("total_time", &answer.total_time, None),
@@ -479,35 +536,32 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
             &answer.nutritional_info,
             Some(Quantity::Nutrition),
         ),
-    ]
-    .into_iter()
-    .filter(|(_, value, quantity)| {
-        value.as_deref().is_some_and(|v| {
-            // Everything but the numbers and their labels must be the
-            // source's: "serves a crowd", "quick", "Total Fat 999g".
-            let unsourced_rest = tokens(v).iter().any(|w| {
-                !is_number(w)
-                    && cue(w).is_none()
-                    // Connectors and field labels ("TOTAL TIME: 2 hours").
-                    && !matches!(
-                        w.as_str(),
-                        "to" | "or" | "and" | "plus" | "about" | "approximately"
-                            | "total" | "time" | "prep" | "cook" | "active"
-                    )
-                    && !source_words.contains(w)
-            });
-            // "30 hours" isn't the source's "30 minutes".
-            unsourced_rest
-                || classify(v)
-                    .into_iter()
-                    .any(|(n, said)| match said.or(*quantity) {
-                        Some(q) => !stated.contains(&(n, q)),
-                        None => !stated.iter().any(|(m, q)| *m == n && q.is_time()),
-                    })
-        })
-    })
-    .map(|(name, _, _)| name)
-    .collect();
+    ] {
+        let Some(value) = value.as_deref() else {
+            continue;
+        };
+        // Everything but the numbers and their labels must be the source's:
+        // "serves a crowd", "quick", "Total Fat 999g".
+        let unsourced_rest = tokens(value).iter().any(|w| {
+            !is_number(w)
+                && cue(w).is_none()
+                // Connectors and field labels ("TOTAL TIME: 2 hours").
+                && !matches!(
+                    w.as_str(),
+                    "to" | "or" | "and" | "plus" | "about" | "approximately"
+                        | "total" | "time" | "prep" | "cook" | "active"
+                )
+                && !source_words.contains(w)
+        });
+        // "30 hours" isn't the source's "30 minutes".
+        let mut unstated = false;
+        for (number, said) in classify(value) {
+            unstated |= !take(number, said.or(quantity));
+        }
+        if unsourced_rest || unstated {
+            invented.push(name);
+        }
+    }
     // The rest of the draft a user sees: tags come from categories.
     for (name, value) in [
         ("difficulty", &answer.difficulty),
@@ -1071,21 +1125,32 @@ mod tests {
     }
 
     #[test]
+    fn one_stated_time_backs_one_field() {
+        let mut answer = recipe("1 cup rice\n1 bay leaf", "Bake 30 minutes.");
+        answer.prep_time = Some("30 minutes".into());
+        answer.cook_time = Some("30 minutes".into());
+        let score = score(&answer, &expected(), "Serves 4. Bake 30 minutes.");
+        assert_eq!(score.invented, vec!["cook_time"]);
+    }
+
+    #[test]
     fn numbers_count_what_their_nearest_cue_says() {
         let stated = quantities(
             "Serves 4. Bake 30 minutes, then rest 11 to 12 minutes.\nyield: approximately 18 to 24 cookies\nCook until it registers 130 to 135 degrees, 5 to 6 minutes per side.\nPer serving: Cal 410",
         );
-        assert!(stated.contains(&("6".into(), Quantity::Minutes)));
-        assert!(!stated.contains(&("130".into(), Quantity::Minutes)));
-        assert!(stated.contains(&("410".into(), Quantity::Nutrition)));
-        assert!(!stated.contains(&("30".into(), Quantity::Hours)));
+        assert!(stated.contains_key(&("6".into(), Quantity::Minutes)));
+        assert!(!stated.contains_key(&("130".into(), Quantity::Minutes)));
+        assert!(stated.contains_key(&("410".into(), Quantity::Nutrition)));
+        assert!(!stated.contains_key(&("30".into(), Quantity::Hours)));
+        let decimal = quantities("Cook 12.5 minutes. Serves 4.");
+        assert!(decimal.contains_key(&("12.5".into(), Quantity::Minutes)));
         let prose = quantities("Transfer to a serving bowl and garnish with about 1/3 cup chives.");
-        assert!(!prose.contains(&("1/3".into(), Quantity::Servings)));
-        assert!(stated.contains(&("24".into(), Quantity::Servings)));
-        assert!(stated.contains(&("4".into(), Quantity::Servings)));
-        assert!(stated.contains(&("30".into(), Quantity::Minutes)));
-        assert!(stated.contains(&("11".into(), Quantity::Minutes)));
-        assert!(!stated.contains(&("30".into(), Quantity::Servings)));
-        assert!(!stated.contains(&("4".into(), Quantity::Minutes)));
+        assert!(!prose.contains_key(&("1/3".into(), Quantity::Servings)));
+        assert!(stated.contains_key(&("24".into(), Quantity::Servings)));
+        assert!(stated.contains_key(&("4".into(), Quantity::Servings)));
+        assert!(stated.contains_key(&("30".into(), Quantity::Minutes)));
+        assert!(stated.contains_key(&("11".into(), Quantity::Minutes)));
+        assert!(!stated.contains_key(&("30".into(), Quantity::Servings)));
+        assert!(!stated.contains_key(&("4".into(), Quantity::Minutes)));
     }
 }

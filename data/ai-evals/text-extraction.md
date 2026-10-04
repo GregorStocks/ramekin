@@ -21,12 +21,12 @@ The first few items each model answered invalidly even alone.
 ### openai/gpt-6-luna
 
 - Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\""
-- Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\""
+- Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\"raw_recipe\":{\"title\":\"Red Lentil Soup with Warm Spices\",\"ingredients\":\"4 tablespoons unsalted butter\\n1 large onion , chopped fine\\nSalt and pepper\\n3/4 teaspoon ground coriander\\n1/2 teaspoon gro
 
 ### openai/gpt-6.1-sol
 
 - Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\n  \"raw_recipe\": {\n    \"title\": \"Shakshuka With Feta\",\n    \"ingredients\": \"3 tablespoons extra-virgin olive oil\\n1 large onion, halved and thinly sliced\\n1 large red bell pepper, seeded and thinly
-- Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\n  \"raw_recipe\": {\n    \"title\": \"Red Lentil Soup with Warm Spices\",\n    \"ingredients\": \"4 tablespoons unsalted butter\\n1 large onion , chopped fine\\nSalt and pepper\\n3/4 teaspoon ground coriander
+- Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\"raw_recipe\":{\"title\":\"Red Lentil Soup with Warm Spices\",\"ingredients\":\"4 tablespoons unsalted butter\\n1 large onion , chopped fine\\nSalt and pepper\\n3/4 teaspoon ground coriander\\n1/2 teaspoon gro
 
 ## Worst misses
 
