@@ -136,10 +136,9 @@ final class RecipeCacheStore {
             )
             var existingById: [UUID: CachedRecipe] = [:]
             for row in try context.fetch(request) {
-                guard let id = row.id else {
-                    fatalError("CachedRecipe is missing its id")
+                if let id = row.id {
+                    existingById[id] = row
                 }
-                existingById[id] = row
             }
 
             for id in syncResponse.deleted {
