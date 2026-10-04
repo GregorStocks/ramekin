@@ -12,7 +12,7 @@ private struct IngredientFormattingOptions: Decodable {
     let scale: Double?
     let includeAlternatives: Bool
     let includeNote: Bool
-    let derived: Measurement?
+    let derived: Ramekin.Measurement?
 
     private enum CodingKeys: String, CodingKey {
         case scale
@@ -29,7 +29,7 @@ private struct IngredientFormattingOptions: Decodable {
             forKey: .includeAlternatives
         ) ?? false
         includeNote = try container.decodeIfPresent(Bool.self, forKey: .includeNote) ?? false
-        derived = try container.decodeIfPresent(Measurement.self, forKey: .derived)
+        derived = try container.decodeIfPresent(Ramekin.Measurement.self, forKey: .derived)
     }
 }
 
@@ -65,7 +65,7 @@ final class DerivedMeasurementLookupTests: XCTestCase {
             DerivedMeasurement(amount: "227", ingredientIndex: 2, unit: "g")
         ]
 
-        XCTAssertEqual(derived.measurement(forIngredientAt: 2), Measurement(amount: "227", unit: "g"))
+        XCTAssertEqual(derived.measurement(forIngredientAt: 2), Ramekin.Measurement(amount: "227", unit: "g"))
         XCTAssertNil(derived.measurement(forIngredientAt: 1))
     }
 }
