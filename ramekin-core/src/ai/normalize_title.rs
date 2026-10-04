@@ -35,6 +35,7 @@ pub async fn normalize_title(
     let request = ChatRequest {
         messages: vec![ChatMessage::user(prompt)],
         json_response: true,
+        fresh: false,
         max_tokens: Some(SHORT_JSON_ANSWER_MAX_TOKENS),
         temperature: Some(0.0),
     };

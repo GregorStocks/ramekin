@@ -618,7 +618,7 @@ fn contribution(
                     Err("Several ingredients share one amount")
                 };
             }
-            Resolution::Ambiguous => return Err("Ambiguous ingredient"),
+            Resolution::Ambiguous(_) => return Err("Ambiguous ingredient"),
             Resolution::Unresolved => {
                 return match catalog::learned_estimate(&ingredient.item, learned) {
                     Some(estimate) => estimated_food_calories(ingredient, estimate, estimated),

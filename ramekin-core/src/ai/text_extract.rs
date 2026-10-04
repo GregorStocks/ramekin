@@ -36,6 +36,7 @@ Return only JSON."#,
             ChatMessage::user(text),
         ],
         json_response: true,
+        fresh: false,
         max_tokens: Some(8192),
         temperature: Some(0.1),
     };

@@ -174,7 +174,7 @@ fn shared_defaults_and_ambiguous_names() {
     );
     for item in ["rice", "chicken", "cheese", "yogurt"] {
         assert!(
-            matches!(resolve(item), Resolution::Ambiguous),
+            matches!(resolve(item), Resolution::Ambiguous(_)),
             "{item} stays ambiguous"
         );
         assert_eq!(grams_per_cup(item), None);
@@ -258,7 +258,10 @@ fn trimming_never_settles_for_a_non_food() {
         }
     }
     // A stripped name that is ambiguous stays ambiguous.
-    assert!(matches!(resolve("shredded cheese"), Resolution::Ambiguous));
+    assert!(matches!(
+        resolve("shredded cheese"),
+        Resolution::Ambiguous(_)
+    ));
 }
 
 #[test]
@@ -330,8 +333,19 @@ fn products_carry_only_a_shopping_category() {
         category("wooden skewers, soaked in cold water"),
         Some("Household")
     );
-    // Foods have no catalog category yet; the keyword categorizer decides.
-    assert_eq!(category("butter"), None);
+}
+
+#[test]
+fn foods_and_ambiguous_names_carry_curated_categories() {
+    // A USDA food, reached through a curated entry and through an alias.
+    assert_eq!(category("butter"), Some("Dairy & Eggs"));
+    assert_eq!(category("canned pumpkin"), Some("Canned Goods"));
+    // An ambiguous name has its own category but still no food.
+    assert!(matches!(resolve("cheese"), Resolution::Ambiguous(_)));
+    assert_eq!(category("cheese"), Some("Cheese"));
+    // A compound line takes its first food's category.
+    assert_eq!(category("salt and pepper"), Some("Spices & Seasonings"));
+    assert_eq!(category("moon dust"), None);
 }
 
 #[test]
@@ -549,7 +563,7 @@ fn dissimilar_alternatives_and_bare_herbs() {
     // Bare herbs follow how recipes use them.
     assert_eq!(fdc_id("rosemary"), fdc_id("rosemary, fresh"));
     assert_eq!(fdc_id("ginger"), fdc_id("fresh ginger"));
-    assert!(matches!(resolve("sage"), Resolution::Ambiguous));
+    assert!(matches!(resolve("sage"), Resolution::Ambiguous(_)));
     assert!(matches!(resolve("oregano"), Resolution::Entry { .. }));
 }
 
@@ -618,7 +632,7 @@ fn a_cooked_note_selects_the_cooked_food() {
 fn bone_in_weights_are_not_priced_as_meat() {
     for item in ["whole chicken", "bone-in chicken thighs", "chicken wings"] {
         assert!(
-            matches!(resolve(item), Resolution::Ambiguous),
+            matches!(resolve(item), Resolution::Ambiguous(_)),
             "{item:?} includes bone weight"
         );
     }

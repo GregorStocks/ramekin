@@ -52,12 +52,10 @@ pub async fn estimate_ingredient_weights(
             render_estimate_ingredient_weights_prompt(items),
         )],
         json_response: true,
+        fresh,
         max_tokens: Some(INGREDIENT_MAX_TOKENS),
         temperature: Some(0.0),
     };
-    if fresh {
-        ai_client.forget(ESTIMATE_INGREDIENT_WEIGHTS_PROMPT_NAME, &request.messages);
-    }
     let (parsed, response): (Response, _) =
         complete_json(ai_client, ESTIMATE_INGREDIENT_WEIGHTS_PROMPT_NAME, &request).await?;
     match validate(items, parsed) {

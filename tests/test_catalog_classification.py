@@ -22,8 +22,11 @@ USDA = {
     "names": {"garlic": 1},
 }
 CURATED = {
-    "entries": {"kosher salt": {"fdc_id": 1}},
-    "aliases": {"egg yolk": "egg, yolk, raw, fresh"},
+    "entries": {
+        "kosher salt": {"fdc_id": 1},
+        "foil": {"kind": "product", "category": "Household"},
+    },
+    "aliases": {"egg yolk": "egg, yolk, raw, fresh", "cheese": None},
     "not_food": {"to serve": "A serving suggestion."},
     "rewrites": {},
 }
@@ -185,3 +188,75 @@ def test_trace_entries_carry_only_trace_ok():
     assert updated["aliases"]["ground sumac"] == "sumac"
     _, _, rejections = run({"name": "sumac", "action": "trace"})
     assert rejections and "reason" in rejections[0]
+
+
+def test_categories_key_foods_and_ambiguous_names():
+    updated, counts, rejections = run(
+        {"name": "kosher salt", "action": "category", "category": "Produce"},
+        {"name": "garlic", "action": "category", "category": "Produce"},
+        {"name": "egg, yolk, raw, fresh", "action": "category", "category": "Produce"},
+        {"name": "twin", "action": "category", "category": "Produce"},
+        {"name": "cheese", "action": "category", "category": "Produce"},
+    )
+    assert rejections == [] and counts["category"] == 5
+    assert updated["categories"] == {
+        "kosher salt": "Produce",
+        "garlic": "Produce",
+        "egg, yolk, raw, fresh": "Produce",
+        "twin": "Produce",
+        "cheese": "Produce",
+    }
+    assert "categories" not in CURATED, "inputs are not mutated"
+
+
+@pytest.mark.parametrize(
+    ("decision", "why"),
+    [
+        ({"name": "garlic", "action": "category", "category": "Aisle 9"}, "category"),
+        (
+            {"name": "egg yolk", "action": "category", "category": "Produce"},
+            "not a food",
+        ),
+        ({"name": "foil", "action": "category", "category": "Household"}, "not a food"),
+        (
+            {"name": "to serve", "action": "category", "category": "Produce"},
+            "not a food",
+        ),
+        (
+            {"name": "moon dust", "action": "category", "category": "Produce"},
+            "not a food",
+        ),
+    ],
+)
+def test_invalid_categories_are_rejected(decision, why):
+    _, _, rejections = run(decision)
+    assert len(rejections) == 1 and why in rejections[0], rejections
+
+
+def test_two_spellings_of_one_entry_are_categorized_once():
+    _, _, rejections = run(
+        {"name": "garlic", "action": "category", "category": "Produce"},
+        {"name": "garlic, raw", "action": "category", "category": "Produce"},
+    )
+    assert rejections == ["'garlic, raw': already categorized"]
+    curated = {**CURATED, "categories": {"garlic, raw": "Produce"}}
+    _, _, rejections = APPLY.apply(
+        curated,
+        USDA,
+        CATEGORIES,
+        [{"name": "garlic", "action": "category", "category": "Produce"}],
+        FNDDS,
+    )
+    assert rejections == ["'garlic': already categorized"]
+
+
+def test_categorized_names_are_not_recategorized():
+    curated = {**CURATED, "categories": {"garlic": "Produce"}}
+    _, _, rejections = APPLY.apply(
+        curated,
+        USDA,
+        CATEGORIES,
+        [{"name": "garlic", "action": "category", "category": "Produce"}],
+        FNDDS,
+    )
+    assert rejections == ["'garlic': already categorized"]

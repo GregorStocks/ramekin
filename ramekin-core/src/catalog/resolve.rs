@@ -4,7 +4,7 @@ use std::sync::LazyLock;
 
 use regex::Regex;
 
-use super::{normalize, Entry, Target, CATALOG};
+use super::{normalize, AmbiguousName, Entry, Target, CATALOG};
 
 /// What a written ingredient name refers to.
 #[derive(Debug)]
@@ -19,8 +19,8 @@ pub enum Resolution {
     /// curated phrase like "to serve".
     NotFood,
     /// The name could mean several foods (e.g. "cheese"), so no attribute is
-    /// reported for it.
-    Ambiguous,
+    /// reported for it except a curated shopping category.
+    Ambiguous(&'static AmbiguousName),
     Unresolved,
 }
 
@@ -234,7 +234,7 @@ fn resolve_single(normalized: &str) -> Resolution {
     }
     let says_dried = normalized.contains("dried") || normalized.contains("ground");
 
-    let mut ambiguous = false;
+    let mut ambiguous = None;
     let mut tried = std::collections::HashSet::new();
     for (name, step) in candidates {
         if !tried.insert(name.clone()) {
@@ -261,7 +261,15 @@ fn resolve_single(normalized: &str) -> Resolution {
                     via: step.unwrap_or(via),
                 };
             }
-            Some((Target::Ambiguous, _)) => ambiguous = true,
+            // The first ambiguous name with a shopping category wins.
+            Some((Target::Ambiguous(index), _)) => {
+                let name = &CATALOG.ambiguous[index];
+                if ambiguous.is_none_or(|found: &AmbiguousName| {
+                    found.category.is_none() && name.category.is_some()
+                }) {
+                    ambiguous = Some(name);
+                }
+            }
             // Trimming a clause or leading words never settles for a non-food.
             Some((Target::NotFood, _)) if matches!(step, None | Some(Via::Modifiers)) => {
                 return Resolution::NotFood;
@@ -269,11 +277,7 @@ fn resolve_single(normalized: &str) -> Resolution {
             Some((Target::NotFood, _)) | None => {}
         }
     }
-    if ambiguous {
-        Resolution::Ambiguous
-    } else {
-        Resolution::Unresolved
-    }
+    ambiguous.map_or(Resolution::Unresolved, Resolution::Ambiguous)
 }
 
 /// Several foods joined by "and" or "&" in one ingredient name. Only tried
@@ -332,7 +336,7 @@ fn resolve_name(normalized: &str) -> Resolution {
         }
     }
     match resolve_single(normalized) {
-        unresolved @ (Resolution::Ambiguous | Resolution::Unresolved) => compound(normalized)
+        unresolved @ (Resolution::Ambiguous(_) | Resolution::Unresolved) => compound(normalized)
             .or_else(|| {
                 first_alternative(normalized).map(|(entry, _)| Resolution::Entry {
                     entry,

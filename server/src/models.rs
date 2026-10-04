@@ -354,6 +354,7 @@ pub struct ShoppingListItem {
     pub version: i32,
     pub deleted_at: Option<DateTime<Utc>>,
     pub category_override: Option<String>,
+    pub categorizer_version: Option<String>,
 }
 
 #[derive(Insertable)]
@@ -369,4 +370,6 @@ pub struct NewShoppingListItem<'a> {
     pub sort_order: i32,
     pub category_override: Option<&'a str>,
     pub client_id: Option<Uuid>,
+    /// `ingredient_categorizer::version()` when the item was saved.
+    pub categorizer_version: &'a str,
 }

@@ -82,6 +82,10 @@ pub struct ChatRequest {
     /// If true, request JSON response format.
     #[serde(skip)]
     pub json_response: bool,
+    /// If true, skip any cached reply and ask the provider (the new reply is
+    /// still cached).
+    #[serde(skip)]
+    pub fresh: bool,
 }
 
 /// Token usage information.

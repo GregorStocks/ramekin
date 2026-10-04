@@ -56,6 +56,26 @@ pub fn computed_category(item: &str, learned: &ramekin_core::catalog::Learned) -
     ingredient_categorizer::categorize_with(item, learned).to_string()
 }
 
+/// Touch items whose category was computed by another categorizer version
+/// (a deploy that changed the catalog or keyword rules), so incremental sync
+/// sends their recomputed category. Only `updated_at` moves, as for a changed
+/// learned answer. Runs at startup; returns how many items were touched.
+pub fn touch_recategorized_items(pool: &DbPool) -> Result<usize, String> {
+    let version = ingredient_categorizer::version();
+    let mut conn = pool.get().map_err(|e| e.to_string())?;
+    diesel::update(
+        shopping_list_items::table
+            .filter(shopping_list_items::deleted_at.is_null())
+            .filter(shopping_list_items::categorizer_version.is_distinct_from(version)),
+    )
+    .set((
+        shopping_list_items::categorizer_version.eq(version),
+        shopping_list_items::updated_at.eq(Utc::now()),
+    ))
+    .execute(&mut conn)
+    .map_err(|e| e.to_string())
+}
+
 pub fn item_category(computed_category: &str, category_override: Option<&str>) -> String {
     category_override.unwrap_or(computed_category).to_string()
 }

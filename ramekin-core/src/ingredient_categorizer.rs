@@ -1,11 +1,18 @@
 //! Ingredient categorization for shopping list grouping.
 //!
-//! Maps ingredient names to grocery store aisle categories based on keyword matching.
-//! Category data is loaded from `data/ingredients.json` at compile time.
+//! Maps ingredient names to grocery store aisle categories. The ingredient
+//! catalog's curated categories decide when the catalog knows the name; keyword
+//! rules from `data/ingredients.json` (loaded at compile time) cover the rest.
 
 use serde::Deserialize;
+use sha2::{Digest, Sha256};
 use std::collections::HashMap;
 use std::sync::LazyLock;
+
+const INGREDIENTS_JSON: &str = include_str!("../../data/ingredients.json");
+/// Bump when `categorize_with`'s own rules change (precedence, the "frozen"
+/// rule), so `version()` changes and synced clients get recomputed categories.
+const RULE_VERSION: &str = "categorizer-v1";
 
 /// The raw JSON structure for ingredients data file.
 #[derive(Deserialize)]
@@ -22,7 +29,7 @@ struct IngredientRule {
 }
 
 static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
-    let json = include_str!("../../data/ingredients.json");
+    let json = INGREDIENTS_JSON;
     let data: IngredientsData =
         serde_json::from_str(json).expect("Failed to parse ingredients.json");
 
@@ -54,6 +61,26 @@ static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
     });
     map
 });
+
+static VERSION: LazyLock<String> = LazyLock::new(|| {
+    let hash = Sha256::digest(INGREDIENTS_JSON);
+    let hash: String = hash
+        .iter()
+        .take(8)
+        .map(|byte| format!("{byte:02x}"))
+        .collect();
+    format!(
+        "{RULE_VERSION}-{}-keywords-{hash}",
+        crate::catalog::version()
+    )
+});
+
+/// A stable identifier for everything `categorize` depends on: its rules, the
+/// catalog, and the keyword data. A stored category computed under another version may be
+/// stale.
+pub fn version() -> &'static str {
+    &VERSION
+}
 
 /// The canonical set of grocery-aisle categories the categorizer can return.
 /// `categorize` always returns one of these (defaulting to "Other").
@@ -89,10 +116,10 @@ fn category_to_static(category: &str) -> &'static str {
 
 /// Categorize an ingredient by name.
 ///
-/// The ingredient catalog's category wins when it has one (products such as
-/// parchment paper, and the first food of a "salt and pepper" line). Otherwise
-/// keyword rules from `data/ingredients.json` apply; they remain the fallback
-/// until catalog entries carry categories.
+/// The ingredient catalog's category wins when it has one (the food a name
+/// resolves to, a product such as parchment paper, an ambiguous name such as
+/// "cheese", or the first food of a "salt and pepper" line). Otherwise keyword
+/// rules from `data/ingredients.json` apply.
 ///
 /// Returns the category name, or "Other" if no match is found.
 /// Matching is case-insensitive and looks for keyword containment.
@@ -101,28 +128,36 @@ pub fn categorize(item: &str) -> &'static str {
 }
 
 /// `categorize`, using a stored answer for a name the catalog doesn't know.
-/// A learned entry's catalog category wins; otherwise the item's own keywords
-/// decide, then the learned key's. A learned non-food is treated like a
-/// committed one: keywords still apply, since a shopping list can hold it.
+/// A name starting with "frozen" is Frozen; otherwise the committed catalog's
+/// category wins, then the learned entry's; otherwise
+/// the item's own keywords decide, then the learned key's. A learned non-food
+/// is treated like a committed one: keywords still apply, since a shopping list
+/// can hold it.
 pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'static str {
     use crate::catalog::{normalize, unlearned_name, LearnedTarget};
+    // The catalog drops "frozen" to find the food ("frozen peaches" are
+    // peaches), but the shopper still buys them in the freezer aisle.
+    if normalize(item).starts_with("frozen ") {
+        return "Frozen";
+    }
+    if let Some(category) = crate::catalog::category(item) {
+        return category;
+    }
     let key = match unlearned_name(item).and_then(|name| learned.get(&normalize(&name))) {
         Some(LearnedTarget::Entry(key)) => key,
-        _ => return categorize_known(item),
+        _ => return keyword_category(item),
     };
     if let Some(category) = crate::catalog::category(key) {
-        return category_to_static(category);
+        return category;
     }
-    match categorize_known(item) {
-        "Other" => categorize_known(key),
+    match keyword_category(item) {
+        "Other" => keyword_category(key),
         category => category,
     }
 }
 
-fn categorize_known(item: &str) -> &'static str {
-    if let Some(category) = crate::catalog::category(item) {
-        return category_to_static(category);
-    }
+/// The first keyword rule matching `item`, or "Other", ignoring the catalog.
+pub fn keyword_category(item: &str) -> &'static str {
     let lower = item.to_lowercase();
     let item_tokens = word_tokens(&lower);
 
@@ -294,6 +329,25 @@ mod tests {
         assert_eq!(categorize("strawberries"), "Produce");
         assert_eq!(categorize("french fries"), "Frozen");
         assert_eq!(categorize("tater tots"), "Frozen");
+    }
+
+    #[test]
+    fn test_version_covers_catalog_and_keywords() {
+        let version = version();
+        assert!(version.starts_with(RULE_VERSION));
+        assert!(version.contains(crate::catalog::version()));
+        assert!(version.contains("-keywords-"));
+        assert_eq!(version, super::version(), "stable within a process");
+    }
+
+    #[test]
+    fn test_frozen_beats_the_catalog_food() {
+        // The catalog resolves these to the fresh fruit.
+        assert_eq!(categorize("frozen peaches"), "Frozen");
+        assert_eq!(categorize("Frozen mango chunks"), "Frozen");
+        assert_eq!(categorize("peaches"), "Produce");
+        // The first alternative decides.
+        assert_eq!(categorize("fresh or frozen corn kernels"), "Produce");
     }
 
     #[test]

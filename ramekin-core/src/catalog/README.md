@@ -3,10 +3,11 @@
 One place that turns a written ingredient name ("softened butter", "Dry  White
 Wine") into a known food. Density lookup (`volume_to_weight.rs`) and calorie
 estimates (`nutrition/`) both go through it, so a name the catalog learns helps
-both. The shopping-list categorizer (`ingredient_categorizer.rs`) uses an
-entry's catalog `category` when it has one. Until catalog entries carry
-categories (`issues/*ingredient-catalog-step2*`), its keyword rules in
-`data/ingredients.json` remain the fallback.
+both. The shopping-list categorizer (`ingredient_categorizer.rs`) uses the
+catalog's category (`curated.json` `categories`, or a product's own) whenever
+the name resolves to a categorized entry or ambiguous name. Its keyword rules
+in `data/ingredients.json` cover only the names the catalog doesn't know; see
+`issues/*catalog-delete-keyword-categorizer*` for when they can go.
 
 Coverage of every matcher is tracked in `data/ingredient-catalog-audit.md`
 (`make ingredient-catalog-audit`); a change here should show up there.
@@ -257,6 +258,11 @@ that appears in both releases.
   "food_overrides": {
     "egg, whole, raw, fresh": { "default_portion": "large" },
     "thyme, fresh": { "trace_ok": true }
+  },
+  "categories": {
+    "diamond crystal kosher salt": "Spices & Seasonings",
+    "onions, raw": "Produce",
+    "cheese": "Cheese"
   }
 }
 ```
@@ -276,8 +282,8 @@ that appears in both releases.
   - Every value needs a `source`.
   - The 23 manual baking values still lack individual citations. See
     `issues/p3-cite-embedded-manual-density-values`.
-  - `category` (one of `ingredient_categorizer::CATEGORIES`) overrides the
-    keyword categorizer.
+  - `category` is only for products (below); foods take theirs from
+    `categories`.
   - `trace_ok: true` marks a food commonly listed without an amount, for foods
     the "spices, …" rule doesn't cover. An entry with only `trace_ok` (no
     `fdc_id`, calories or density) is a trace-only spice or herb whose calories
@@ -344,6 +350,14 @@ that appears in both releases.
   - `trace_ok` marks fresh herbs, which recipes list by the sprig.
   FNDDS foods are reached through curated entries, so their corrections live on
   those entries.
+- `categories` gives foods and ambiguous names their shopping-list category
+  (one of `ingredient_categorizer::CATEGORIES`), which beats the keyword
+  rules. Keys are a curated food entry id, a USDA stripped name or unique
+  description, or an ambiguous name (`null` alias) — never an alias of a
+  food or a product, and at most one key per entry. Every written name that
+  resolves to the entry shares its category, so judge the food as bought (the
+  frozen, canned and dried forms are separate USDA foods). A compound line
+  takes its first food's category.
 - Piece sources, in order: the food's own USDA portions, then USDA FNDDS
   portions for the same food, the Canadian Nutrient File's household measures,
   or a USDA Branded label, in `curated.json`; then `bespoke.json` (below).
@@ -406,10 +420,11 @@ is the pure half:
   densities, categories and `resolve_line_with` ignore it; only
   `nutrition::estimate_with` counts it (`learned_estimate`), as a stand-in
   entry labeled "(estimated calories)". An ambiguous name is never estimated.
-- `categorize_with(item, &Learned)` uses a learned entry's catalog category when
-  it has one. Otherwise the item's own keywords decide, then the key's, so a
-  learned answer never loses a category the keywords already gave. A learned
-  non-food is categorized by keywords, like a committed one.
+- `categorize_with(item, &Learned)` uses the committed catalog's category
+  first (an ambiguous name's own included), then a learned entry's. Otherwise
+  the item's own keywords decide, then the key's, so a learned answer never
+  loses a category the keywords already gave. A learned non-food is
+  categorized by keywords, like a committed one.
 
 Pending, failed and "unknown" names stay unknown (an ambiguous one stays
 ambiguous). The server side (queueing on
@@ -458,7 +473,14 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
 | 2026-09-28 | Top 2,000 unresolved names (seen ≥ 4 times across pipeline and Paprika fixtures and prod) | Claude Opus 5.5 via a Claude Code Workflow: 8 classifiers + 3 verifiers | 1,670 aliases, 16 ambiguous, 6 not-food, 4 products, 1 entry | 303 |
 | 2026-09-29 | Tier 2: every remaining name seen ≥ 2 times, plus every prod name, minus tier-1 skips (2,568 names, 5,836 lines) | Claude Opus 5.5 via a Claude Code Workflow: 11 classifiers + 3 verifiers | 1,884 aliases, 128 ambiguous, 112 not-food, 4 products | 440 |
 | 2026-10-01 | Secondary sources: earlier skips still unresolved, prod names the step-3 resolver answered "unknown", and every unresolved prod name (1,099 names, 3,492 lines) | Claude Opus 5.5 via a Claude Code Workflow: 6 classifiers + 3 verifiers | 487 aliases, 83 cited Branded foods, 28 FNDDS entries, 64 ambiguous, 4 not-food, 11 products | 422 |
+| 2026-10-03 | Shopping categories: every uncategorized food entry or ambiguous name the fixtures, shopping-list corpus or curated names reach (1,095) | Claude Opus 5.5 via a Claude Code Workflow: 4 classifiers + 2 verifiers | 1,091 categories | 4 |
 
+- **Shopping categories (2026-10-03):** one verifier read all 173 departures from the keyword
+  rules plus a 1/7 sample of the rest, the other checked consistency; 11 corrections. All
+  dried coconut is Baking. The shopping-list labels then moved canned fish, clams, canned
+  meat and edamame back to Meat & Seafood and Produce. Lines categorized went from 98.2% to
+  98.8% (pipeline fixtures), 98.3% to 99.4% (Paprika), and 98.9% to 99.8% (snapshots); the
+  shopping-list scorecard stayed at 2 mismatches and 3 Other.
 - **Verification:** the verifiers checked every mapping to a ≥ 300 kcal/100 g food (543), a
   ~1/7 sample of the rest, and consistency across all decisions. They corrected 34 decisions.
   On review, 8 generic dish names ("soup", "meatballs") were changed from not-food to skip,

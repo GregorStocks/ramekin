@@ -1,0 +1,20 @@
+{
+  "title": "Delete the keyword categorizer once the catalog categorizes names on its own",
+  "description": "Catalog foods and ambiguous names now carry shopping categories (curated.json `categories`), and categorize() uses them first. \
+The keyword rules in data/ingredients.json remain only for names the catalog doesn't resolve. \n\
+Delete data/ingredients.json, its loader and the keyword fallback in categorize()/categorize_with() once catalog-only categorization meets the same bars as today: make shopping-list-categorizer-test passing with the fallback removed (<=2 mismatches / <=3 Other), and the audit's 'Lines categorized' share not dropping. \
+Shopping-list items that are not foods (\"Dish soap\", \"Cascade Platinum\", \"Ibuprofen\", \"cat litter\") will need product entries first. \
+Expect ingredient fixture diffs; rerun make ingredient-tests-update and make pipeline and commit them.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "api",
+  ],
+  "blocked": "The catalog resolves only about 89% of pipeline-fixture lines (resolved plus ambiguous), while keyword rules categorize 98.2%. \
+Removing the fallback today would turn the long tail of one-off names ('kombu seaweed', 'earl grey tea leaves') into Other. \
+Unblock when further classification passes (or counting prod's learned names in the gate) close that gap.",
+  "created_at": "2026-10-03T00:00:00-07:00",
+  "updated_at": "2026-10-03T00:00:00-07:00",
+}

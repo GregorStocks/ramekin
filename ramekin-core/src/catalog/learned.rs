@@ -45,7 +45,7 @@ pub fn unlearned_name(item: &str) -> Option<String> {
     (!name.is_empty()
         && matches!(
             resolve(&name),
-            Resolution::Unresolved | Resolution::Ambiguous
+            Resolution::Unresolved | Resolution::Ambiguous(_)
         ))
     .then_some(name)
 }
@@ -53,7 +53,7 @@ pub fn unlearned_name(item: &str) -> Option<String> {
 /// Whether the committed catalog calls this name ambiguous, so a learned
 /// entry for it is an assumption to label.
 pub fn is_ambiguous(item: &str) -> bool {
-    matches!(resolve(item), Resolution::Ambiguous)
+    matches!(resolve(item), Resolution::Ambiguous(_))
 }
 
 /// The model's estimate for a name no catalog entry matches.
@@ -76,7 +76,7 @@ pub fn learned_key_resolves(key: &str) -> bool {
 /// catalog entry and stays `Unresolved` here (see `learned_estimate`).
 pub fn resolve_line_with(item: &str, note: Option<&str>, learned: &Learned) -> Resolution {
     match resolve_line(item, note) {
-        unknown @ (Resolution::Unresolved | Resolution::Ambiguous) => {
+        unknown @ (Resolution::Unresolved | Resolution::Ambiguous(_)) => {
             resolve_learned(item, note, learned).unwrap_or(unknown)
         }
         resolved => resolved,
@@ -86,7 +86,7 @@ pub fn resolve_line_with(item: &str, note: Option<&str>, learned: &Learned) -> R
 /// `resolve`, then a learned answer.
 pub fn resolve_with(item: &str, learned: &Learned) -> Resolution {
     match resolve(item) {
-        unknown @ (Resolution::Unresolved | Resolution::Ambiguous) => {
+        unknown @ (Resolution::Unresolved | Resolution::Ambiguous(_)) => {
             resolve_learned(item, None, learned).unwrap_or(unknown)
         }
         resolved => resolved,
