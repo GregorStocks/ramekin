@@ -742,7 +742,6 @@
     "coconut extract": "vanilla extract",
     "coconut flakes": null,
     "coconut milk": "nuts, coconut milk, canned (liquid expressed from grated meat and water)",
-    "coconut milk beverage": "beverages, coconut milk, sweetened, fortified with calcium, vitamins a, b12, d2",
     "coconut water": "nuts, coconut water (liquid from coconuts)",
     "cod": "fish, cod, atlantic, raw",
     "cod fillets": "fish, cod, atlantic, raw",
@@ -3356,6 +3355,7 @@
     "unsweetened cocoa powder": "cocoa powder",
     "unsweetened coconut flakes": "nuts, coconut meat, dried (desiccated), not sweetened",
     "unsweetened coconut milk": "nuts, coconut milk, canned (liquid expressed from grated meat and water)",
+    "unsweetened coconut milk beverage": "coconut milk beverage",
     "unsweetened dutch process cocoa": "cocoa, dry powder, unsweetened, processed with alkali",
     "unsweetened dutch-process cocoa powder": "cocoa, dry powder, unsweetened, processed with alkali",
     "unsweetened finely shredded coconut": "nuts, coconut meat, dried (desiccated), not sweetened",
@@ -5130,6 +5130,9 @@
         "source": "Manual baking chart carried over from the original density import (\"King Arthur Baking weight chart, various baking references\"); individual citations pending, see issues/p3-cite-embedded-manual-density-values",
         "value": 112.0
       }
+    },
+    "coconut milk beverage": {
+      "fdc_id": 2705413
     },
     "coconut oil": {
       "fdc_id": 171412,

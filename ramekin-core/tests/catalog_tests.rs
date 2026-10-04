@@ -642,6 +642,11 @@ fn a_beverage_note_selects_the_beverage_milk() {
     ] {
         assert_eq!(line_fdc("coconut milk", Some(note)), beverage, "{note}");
     }
+    assert_eq!(line_fdc("unsweetened coconut milk", None), canned);
+    assert_eq!(
+        line_fdc("unsweetened coconut milk", Some("from a carton")),
+        beverage
+    );
     // A chilled can (for whipping) is still canned, and brands aren't signals.
     for note in [
         "refrigerated",
