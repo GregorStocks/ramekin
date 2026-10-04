@@ -610,9 +610,10 @@ fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
         // food of its own ("potatoes or sweet potatoes"), as is anything but
         // produce ("butter or coconut oil"). The noun is shared only when the
         // last alternative is no known food, or a variant the catalog keeps
-        // under that very name in the noun's aisle ("yellow food coloring"):
-        // "banana or peanut butter" is banana, and so is "lemon or clarified
-        // butter", an alias of ghee.
+        // under that very name in the noun's aisle whose qualifier names no
+        // food ("yellow food coloring"): "banana or peanut butter" and "banana
+        // or coconut oil" are banana, and so is "lemon or clarified butter",
+        // an alias of ghee.
         let produce = |entry: &Entry| entry.category.as_deref() == Some("Produce");
         if name == piece && one_word && !piece.ends_with('s') && produce(entry) {
             let written = entry_of(last);
@@ -621,7 +622,13 @@ fn first_alternative(normalized: &str) -> Option<(&'static Entry, String)> {
                     .filter(|shared| {
                         !produce(shared)
                             && written.is_none_or(|written| {
-                                written.id == last && written.category == shared.category
+                                let qualifier = last.strip_suffix(tail.as_str()).unwrap_or(last);
+                                written.id == last
+                                    && written.category == shared.category
+                                    && matches!(
+                                        resolve_single(qualifier.trim_end()),
+                                        Resolution::Unresolved
+                                    )
                             })
                     })
                     .map(|shared| (shared, tail.clone()))
