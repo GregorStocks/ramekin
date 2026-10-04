@@ -29,6 +29,7 @@ ACTIONS = {
     "product",
     "not_food",
     "ambiguous",
+    "category",
     "skip",
 }
 
@@ -79,6 +80,19 @@ def cited(decision: dict, field: str) -> dict | None:
     return out
 
 
+def categorizable(
+    curated: dict, targets: set[str], description_counts: dict[str, int], name: str
+) -> bool:
+    """Whether `name` may key `categories`: a food entry, USDA name, or unique
+    description, or an ambiguous name. Products carry their own category."""
+    entry = curated["entries"].get(name)
+    if entry is not None:
+        return entry.get("kind") != "product"
+    if name in curated["aliases"]:
+        return curated["aliases"][name] is None
+    return name in targets or description_counts.get(name, 0) > 1
+
+
 def apply(
     curated: dict,
     usda: dict,
@@ -90,8 +104,11 @@ def apply(
 
     `entry` decisions may link an SR Legacy or FNDDS food; `food` decisions
     add a hand-curated food with cited calories for foods neither has.
+    `category` decisions give an existing food or ambiguous name its shopping
+    category.
     """
     curated = json.loads(json.dumps(curated))
+    curated.setdefault("categories", {})
     fdc_ids = {food["fdc_id"] for food in usda["foods"]}
     fdc_ids |= {food["fdc_id"] for food in (fndds or {"foods": []})["foods"]}
     description_counts: dict[str, int] = {}
@@ -136,6 +153,17 @@ def apply(
         seen.add(name)
         counts[action] += 1
         if action == "skip":
+            continue
+        if action == "category":
+            category = decision.get("category")
+            if category not in categories:
+                reject(f"unknown category {category!r}")
+            elif not categorizable(curated, targets, description_counts, name):
+                reject("not a food entry, USDA name, or ambiguous name")
+            elif name in curated["categories"]:
+                reject("already categorized")
+            else:
+                curated["categories"][name] = category
             continue
         if name in taken:
             reject("already a catalog name")

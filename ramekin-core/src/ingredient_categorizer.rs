@@ -1,7 +1,8 @@
 //! Ingredient categorization for shopping list grouping.
 //!
-//! Maps ingredient names to grocery store aisle categories based on keyword matching.
-//! Category data is loaded from `data/ingredients.json` at compile time.
+//! Maps ingredient names to grocery store aisle categories. The ingredient
+//! catalog's curated categories decide when the catalog knows the name; keyword
+//! rules from `data/ingredients.json` (loaded at compile time) cover the rest.
 
 use serde::Deserialize;
 use std::collections::HashMap;
@@ -89,10 +90,10 @@ fn category_to_static(category: &str) -> &'static str {
 
 /// Categorize an ingredient by name.
 ///
-/// The ingredient catalog's category wins when it has one (products such as
-/// parchment paper, and the first food of a "salt and pepper" line). Otherwise
-/// keyword rules from `data/ingredients.json` apply; they remain the fallback
-/// until catalog entries carry categories.
+/// The ingredient catalog's category wins when it has one (the food a name
+/// resolves to, a product such as parchment paper, an ambiguous name such as
+/// "cheese", or the first food of a "salt and pepper" line). Otherwise keyword
+/// rules from `data/ingredients.json` apply.
 ///
 /// Returns the category name, or "Other" if no match is found.
 /// Matching is case-insensitive and looks for keyword containment.
@@ -101,28 +102,30 @@ pub fn categorize(item: &str) -> &'static str {
 }
 
 /// `categorize`, using a stored answer for a name the catalog doesn't know.
-/// A learned entry's catalog category wins; otherwise the item's own keywords
-/// decide, then the learned key's. A learned non-food is treated like a
-/// committed one: keywords still apply, since a shopping list can hold it.
+/// The committed catalog's category wins, then the learned entry's; otherwise
+/// the item's own keywords decide, then the learned key's. A learned non-food
+/// is treated like a committed one: keywords still apply, since a shopping list
+/// can hold it.
 pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'static str {
     use crate::catalog::{normalize, unlearned_name, LearnedTarget};
+    if let Some(category) = crate::catalog::category(item) {
+        return category;
+    }
     let key = match unlearned_name(item).and_then(|name| learned.get(&normalize(&name))) {
         Some(LearnedTarget::Entry(key)) => key,
-        _ => return categorize_known(item),
+        _ => return keyword_category(item),
     };
     if let Some(category) = crate::catalog::category(key) {
-        return category_to_static(category);
+        return category;
     }
-    match categorize_known(item) {
-        "Other" => categorize_known(key),
+    match keyword_category(item) {
+        "Other" => keyword_category(key),
         category => category,
     }
 }
 
-fn categorize_known(item: &str) -> &'static str {
-    if let Some(category) = crate::catalog::category(item) {
-        return category_to_static(category);
-    }
+/// The first keyword rule matching `item`, or "Other".
+fn keyword_category(item: &str) -> &'static str {
     let lower = item.to_lowercase();
     let item_tokens = word_tokens(&lower);
 

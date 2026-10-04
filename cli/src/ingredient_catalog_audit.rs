@@ -6,8 +6,8 @@
 
 use anyhow::{Context, Result};
 use ramekin_core::catalog::{
-    is_non_food, is_non_food_with, is_volume_unit, line_grams_per_cup_with, resolve, Learned,
-    LearnedTarget, Resolution,
+    is_non_food, is_non_food_with, is_volume_unit, line_grams_per_cup_with, resolve, Entry, Kind,
+    Learned, LearnedTarget, Resolution, Via, CURATED_JSON,
 };
 use ramekin_core::final_recipe::FinalRecipe;
 use ramekin_core::ingredient_categorizer::{categorize, categorize_with};
@@ -27,6 +27,7 @@ const SHOPPING_CORPUS: &str = "data/shopping-list-categories.json";
 const COMMITTED_REPORT: &str = "data/ingredient-catalog-audit.md";
 const LOCAL_REPORT: &str = "logs/ingredient-catalog-audit-local.md";
 const UNRESOLVED_QUEUE: &str = "logs/catalog-unresolved.json";
+const UNCATEGORIZED_QUEUE: &str = "logs/catalog-uncategorized.json";
 const MAX_EXAMPLES: usize = 3;
 const TOP_NAMES: usize = 30;
 
@@ -956,6 +957,167 @@ pub fn export_unresolved(root: &Path, prod_recipes: Option<&Path>) -> Result<()>
         "{} unresolved names ({} lines) saved to: {UNRESOLVED_QUEUE}",
         names.len(),
         names.iter().map(|name| name.count).sum::<usize>()
+    );
+    Ok(())
+}
+
+/// A food entry or ambiguous name with no shopping category, as a
+/// classification work item.
+#[derive(Serialize)]
+struct UncategorizedName {
+    /// The `categories` key: an entry id or an ambiguous name.
+    name: String,
+    /// "entry" or "ambiguous".
+    kind: &'static str,
+    /// Corpus lines plus shopping-list adds that reach it; curated names add none.
+    count: u64,
+    /// Up to five written names that reach it, most frequent first.
+    examples: Vec<String>,
+    /// What the keyword rules say for those lines, by count.
+    keyword_categories: BTreeMap<&'static str, u64>,
+    #[serde(skip)]
+    example_counts: HashMap<String, u64>,
+}
+
+/// Every uncategorized food entry or ambiguous name a written name reaches,
+/// with how often. A compound line reaches each of its foods.
+#[derive(Default)]
+struct UncategorizedNames {
+    names: HashMap<String, UncategorizedName>,
+    /// Entries whose id resolves to a different entry, so it can't key them.
+    shadowed: BTreeSet<String>,
+}
+
+impl UncategorizedNames {
+    fn add(&mut self, item: &str, count: u64) {
+        let targets: Vec<(&str, &'static str)> = match resolve(item) {
+            Resolution::Entry { entry, .. } => self.entry_key(entry).into_iter().collect(),
+            Resolution::Compound(entries) => entries
+                .into_iter()
+                .filter_map(|entry| self.entry_key(entry))
+                .collect(),
+            Resolution::Ambiguous(ambiguous) if ambiguous.category.is_none() => {
+                vec![(ambiguous.name.as_str(), "ambiguous")]
+            }
+            Resolution::Ambiguous(_) | Resolution::NotFood | Resolution::Unresolved => vec![],
+        };
+        let keyword = categorize(item);
+        let example = normalize_name(item);
+        for (key, kind) in targets {
+            let name = self
+                .names
+                .entry(key.to_string())
+                .or_insert_with(|| UncategorizedName {
+                    name: key.to_string(),
+                    kind,
+                    count: 0,
+                    examples: Vec::new(),
+                    keyword_categories: BTreeMap::new(),
+                    example_counts: HashMap::new(),
+                });
+            name.count += count;
+            *name.example_counts.entry(example.clone()).or_default() += count.max(1);
+            if count > 0 {
+                *name.keyword_categories.entry(keyword).or_default() += count;
+            }
+        }
+    }
+
+    /// The `categories` key for an uncategorized food entry, if its id
+    /// resolves back to it.
+    fn entry_key(&mut self, entry: &'static Entry) -> Option<(&'static str, &'static str)> {
+        if entry.kind != Kind::Food || entry.category.is_some() {
+            return None;
+        }
+        match resolve(&entry.id) {
+            Resolution::Entry {
+                entry: found,
+                via: Via::Exact,
+            } if std::ptr::eq(found, entry) => Some((entry.id.as_str(), "entry")),
+            _ => {
+                self.shadowed.insert(entry.id.clone());
+                None
+            }
+        }
+    }
+
+    fn into_sorted(self) -> Vec<UncategorizedName> {
+        let mut names: Vec<_> = self
+            .names
+            .into_values()
+            .map(|mut name| {
+                let mut examples: Vec<_> = name.example_counts.drain().collect();
+                examples.sort_by(|a, b| b.1.cmp(&a.1).then_with(|| a.0.cmp(&b.0)));
+                name.examples = examples
+                    .into_iter()
+                    .take(5)
+                    .map(|(example, _)| example)
+                    .collect();
+                name
+            })
+            .collect();
+        names.sort_by(|a, b| b.count.cmp(&a.count).then_with(|| a.name.cmp(&b.name)));
+        names
+    }
+}
+
+/// The curated alias and entry names, which reach every curated target.
+fn curated_names() -> Result<Vec<String>> {
+    let curated: serde_json::Value = serde_json::from_str(CURATED_JSON)?;
+    let keys = |field: &str| -> Result<Vec<String>> {
+        Ok(curated[field]
+            .as_object()
+            .with_context(|| format!("curated.json has no {field} object"))?
+            .keys()
+            .cloned()
+            .collect())
+    };
+    Ok([keys("aliases")?, keys("entries")?].concat())
+}
+
+/// Write the category classification work queue
+/// (`make ingredient-catalog-uncategorized`): every uncategorized food entry
+/// or ambiguous name reached by the fixtures, the shopping-list corpus, prod
+/// recipes if given, or a curated name, most used first.
+pub fn export_uncategorized(root: &Path, prod_recipes: Option<&Path>) -> Result<()> {
+    let mut corpora = vec![
+        load_fixture_corpus(root, "pipeline", "Pipeline fixtures")?,
+        load_fixture_corpus(root, "paprika", "Paprika fixtures")?,
+    ];
+    if let Some(path) = prod_recipes {
+        corpora.push(load_prod_corpus(path, None, None)?);
+    }
+    let mut uncategorized = UncategorizedNames::default();
+    for ingredient in corpora
+        .iter()
+        .flat_map(|corpus| &corpus.recipes)
+        .flat_map(|recipe| &recipe.ingredients)
+    {
+        uncategorized.add(&ingredient.item, 1);
+    }
+    let shopping_items: Vec<ShoppingItem> = read_json(&root.join(SHOPPING_CORPUS))?;
+    for item in &shopping_items {
+        uncategorized.add(&item.item, item.count);
+    }
+    for name in curated_names()? {
+        uncategorized.add(&name, 0);
+    }
+    if !uncategorized.shadowed.is_empty() {
+        tracing::warn!(
+            "{} entries can't be keyed by their id: {:?}",
+            uncategorized.shadowed.len(),
+            uncategorized.shadowed
+        );
+    }
+    let names = uncategorized.into_sorted();
+    let path = root.join(UNCATEGORIZED_QUEUE);
+    fs::create_dir_all(root.join("logs"))?;
+    fs::write(&path, serde_json::to_string_pretty(&names)? + "\n")
+        .with_context(|| format!("Failed to write {}", path.display()))?;
+    tracing::info!(
+        "{} uncategorized names ({} used) saved to: {UNCATEGORIZED_QUEUE}",
+        names.len(),
+        names.iter().filter(|name| name.count > 0).count()
     );
     Ok(())
 }

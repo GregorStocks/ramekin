@@ -93,7 +93,7 @@ fn outcome(name: &str) -> String {
                 .join(" + ")
         ),
         Resolution::NotFood => "not food".to_string(),
-        Resolution::Ambiguous => "ambiguous".to_string(),
+        Resolution::Ambiguous(_) => "ambiguous".to_string(),
         Resolution::Unresolved => "unresolved".to_string(),
     }
 }

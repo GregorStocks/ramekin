@@ -59,7 +59,7 @@ fn ambiguous_names_take_a_learned_default_and_say_so() {
     let unknown = self::learned(&[("cheese", LearnedTarget::Unknown)]);
     assert!(matches!(
         resolve_line_with("cheese", None, &unknown),
-        Resolution::Ambiguous
+        Resolution::Ambiguous(_)
     ));
 }
 

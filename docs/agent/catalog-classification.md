@@ -57,6 +57,7 @@ Each agent returns one schema-validated decision per name:
 | `not_food` | `reason` | a note or heading, not an ingredient |
 | `ambiguous` | `reason` | spans foods with very different calories ("cheese") |
 | `skip` | `reason` | not confident, no USDA match, or a compound ("x and y") |
+| `category` | `category` | shopping category for an existing food entry or ambiguous name (category passes only; see below) |
 
 The prompt carries the README's alias rules plus the lessons from review:
 - use the real food, not a stand-in, when USDA has it;
@@ -131,6 +132,30 @@ make ingredient-catalog-audit
 - Recompute `tests/ui/test_recipe_scale.py`'s expected subtotals if the scale-test recipe's
   ingredients change status.
 - Record the pass (date, model, tier, counts, before/after numbers) in the catalog README.
+
+## Shopping categories
+
+A separate, cheaper pass gives foods their shopping-list aisle
+(`curated.json` `categories`; rules in the catalog README).
+
+1. `make ingredient-catalog-uncategorized` writes `logs/catalog-uncategorized.json`:
+   every food entry or ambiguous name without a category that the fixtures, the
+   shopping-list corpus or a curated name reaches. Each item has its
+   `categories` key, line count, example names, and what the keyword rules
+   say for those lines (`keyword_categories`).
+2. Classify it with a Workflow: a few sharded classifiers returning
+   `{name, action: "category", category}` (or `skip`). The keyword rules
+   (`data/ingredients.json`) are the house style, so classifiers keep the
+   dominant keyword category unless it is wrong for the entry's food (frozen,
+   canned or dried forms, a keyword hit on an unrelated word) and give a reason
+   for every departure.
+3. Verify with two reviewers: one over every departure and skip plus a ~1/7
+   sample of the rest, one for consistency across all decisions (all cheeses
+   together, fresh vs dried herbs, frozen vs fresh, canned vs fresh). Review
+   every correction and departure by hand.
+4. `make catalog-apply-classification FILE=...`, then `make
+   shopping-list-categorizer-test`, `make ingredient-tests-update` and `make
+   pipeline`. The fixture `category` diffs are the departures; read them all.
 
 ## Promoting step 3 resolutions
 

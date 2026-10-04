@@ -263,6 +263,12 @@ enum Commands {
         #[arg(long)]
         prod_recipes: Option<PathBuf>,
     },
+    /// Write the catalog foods and ambiguous names with no shopping category, most used first (category classification work queue)
+    IngredientCatalogUncategorized {
+        /// Also include a JSON array of {servings, ingredients} prod recipes
+        #[arg(long)]
+        prod_recipes: Option<PathBuf>,
+    },
     /// Report how much of each ingredient corpus the nutrition, density, and category matchers recognize
     IngredientCatalogAudit {
         /// Also audit the latest pipeline run in this directory (local report only)
@@ -505,6 +511,12 @@ async fn main() -> Result<()> {
         Commands::IngredientCatalogUnresolved { prod_recipes } => {
             ingredient_catalog_audit::export_unresolved(Path::new("."), prod_recipes.as_deref())?;
         }
+        Commands::IngredientCatalogUncategorized { prod_recipes } => {
+            ingredient_catalog_audit::export_uncategorized(
+                Path::new("."),
+                prod_recipes.as_deref(),
+            )?;
+        }
         Commands::IngredientCatalogAudit {
             runs_dir,
             prod_recipes,
@@ -650,6 +662,7 @@ fn command_slug(cmd: &Commands) -> &'static str {
         Commands::IngredientCatalogAudit { .. } => "ingredient-catalog-audit",
         Commands::CatalogCleanAliases => "catalog-clean-aliases",
         Commands::IngredientCatalogUnresolved { .. } => "ingredient-catalog-unresolved",
+        Commands::IngredientCatalogUncategorized { .. } => "ingredient-catalog-uncategorized",
         Commands::AiEval { .. } => "ai-eval",
         Commands::TitleNormalizationTest { .. } => "title-normalization-test",
         Commands::DescriptionGenerationTest { .. } => "description-generation-test",

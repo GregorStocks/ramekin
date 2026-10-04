@@ -76,7 +76,8 @@ struct CuratedEntry {
     /// Cited calories for a food no linked USDA food covers.
     kcal_per_100g: Option<CitedValue>,
     grams_per_cup: Option<CuratedDensity>,
-    /// Shopping-list category; overrides the keyword categorizer.
+    /// A product's shopping-list category; foods take theirs from the
+    /// top-level `categories`.
     category: Option<String>,
     /// Commonly listed without an amount ("pepper"); such lines are negligible.
     #[serde(default)]
@@ -183,6 +184,10 @@ struct CuratedFile {
     rewrites: BTreeMap<String, String>,
     /// Corrections to SR Legacy foods, keyed by their (unique) description.
     food_overrides: BTreeMap<String, FoodOverride>,
+    /// Shopping-list categories for foods and ambiguous names, keyed by a
+    /// curated entry id, USDA name, or ambiguous name (never an alias of a
+    /// food).
+    categories: BTreeMap<String, String>,
 }
 
 #[derive(Deserialize)]
@@ -228,12 +233,22 @@ pub struct Entry {
 #[derive(Clone, Copy)]
 enum Target {
     Entry(usize),
-    Ambiguous,
+    /// An index into `Catalog::ambiguous`.
+    Ambiguous(usize),
     NotFood,
+}
+
+/// A name that could mean several foods ("cheese").
+#[derive(Debug)]
+pub struct AmbiguousName {
+    pub name: String,
+    /// Shopping-list category, when curated.
+    pub category: Option<&'static str>,
 }
 
 struct Catalog {
     entries: Vec<Entry>,
+    ambiguous: Vec<AmbiguousName>,
     foods: HashMap<u32, UsdaFood>,
     index: HashMap<String, Target>,
     rewrites: HashMap<String, String>,
@@ -392,6 +407,10 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             );
         }
         if curated_entry.kind == Kind::Food {
+            assert!(
+                curated_entry.category.is_none(),
+                "food entry {id:?} must take its category from `categories`"
+            );
             // A trace-only entry (a spice with no citable calories) is fine:
             // small amounts are negligible and larger ones stay unknown.
             assert!(
@@ -459,6 +478,7 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             .values()
             .filter(|food| sr_food_ids.contains(&food.fdc_id))
     };
+    let mut ambiguous = Vec::new();
     let mut description_counts: HashMap<&str, usize> = HashMap::new();
     for food in sr_foods() {
         *description_counts.entry(&food.description).or_default() += 1;
@@ -467,7 +487,11 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         let target = if description_counts[food.description.as_str()] == 1 {
             Target::Entry(entry_for_food[&food.fdc_id])
         } else {
-            Target::Ambiguous
+            ambiguous.push(AmbiguousName {
+                name: food.description.clone(),
+                category: None,
+            });
+            Target::Ambiguous(ambiguous.len() - 1)
         };
         index.entry(food.description.clone()).or_insert(target);
     }
@@ -481,7 +505,13 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
             "alias {alias:?} shadows a catalog name"
         );
         let resolved = match target {
-            None => Target::Ambiguous,
+            None => {
+                ambiguous.push(AmbiguousName {
+                    name: alias.clone(),
+                    category: None,
+                });
+                Target::Ambiguous(ambiguous.len() - 1)
+            }
             Some(target) => match index.get(target) {
                 Some(Target::Entry(entry)) => Target::Entry(*entry),
                 _ => panic!("alias {alias:?} targets unknown or ambiguous name {target:?}"),
@@ -540,6 +570,39 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         }
     }
 
+    for (name, category) in curated.categories {
+        assert_eq!(name, normalize(&name), "category names must be normalized");
+        let category = CATEGORIES
+            .into_iter()
+            .find(|&c| c == category)
+            .unwrap_or_else(|| panic!("{name:?} has unknown category {category:?}"));
+        assert!(
+            !matches!(curated.aliases.get(&name), Some(Some(_))),
+            "category for alias {name:?}: categorize the entry it targets instead"
+        );
+        match index.get(&name) {
+            Some(Target::Entry(entry_index)) => {
+                let entry = &mut entries[*entry_index];
+                assert!(
+                    entry.kind == Kind::Food && entry.category.is_none(),
+                    "{name:?} names a product or an already categorized entry"
+                );
+                entry.category = Some(category.to_string());
+            }
+            Some(Target::Ambiguous(ambiguous_index)) => {
+                let ambiguous_name = &mut ambiguous[*ambiguous_index];
+                assert!(
+                    ambiguous_name.category.is_none(),
+                    "{name:?} names an already categorized ambiguous name"
+                );
+                ambiguous_name.category = Some(category);
+            }
+            Some(Target::NotFood) | None => {
+                panic!("category for {name:?}, which names no entry or ambiguous name")
+            }
+        }
+    }
+
     for (from, to) in &curated.rewrites {
         assert_eq!(*from, normalize(from), "rewrite sources must be normalized");
         assert!(
@@ -554,6 +617,7 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
     let hash: String = hash.iter().map(|byte| format!("{byte:02x}")).collect();
     Catalog {
         entries,
+        ambiguous,
         foods,
         index,
         rewrites: curated.rewrites.into_iter().collect(),
@@ -620,7 +684,7 @@ pub fn grams_per_cup(item: &str) -> Option<f64> {
         Resolution::Entry { entry, .. } => entry.grams_per_cup,
         Resolution::Compound(_)
         | Resolution::NotFood
-        | Resolution::Ambiguous
+        | Resolution::Ambiguous(_)
         | Resolution::Unresolved => None,
     }
 }
@@ -641,17 +705,19 @@ fn resolution_is_non_food(resolution: Resolution) -> bool {
         Resolution::NotFood => true,
         Resolution::Entry { entry, .. } => entry.kind == Kind::Product,
         Resolution::Compound(entries) => entries.iter().all(|entry| entry.kind == Kind::Product),
-        Resolution::Ambiguous | Resolution::Unresolved => false,
+        Resolution::Ambiguous(_) | Resolution::Unresolved => false,
     }
 }
 
 /// The shopping-list category the catalog assigns a written name, if any. A
-/// compound line ("salt and pepper") takes its first food's category.
+/// compound line ("salt and pepper") takes its first food's category, and an
+/// ambiguous name ("cheese") its own.
 pub fn category(item: &str) -> Option<&'static str> {
     let entry = match resolve(item) {
         Resolution::Entry { entry, .. } => entry,
         Resolution::Compound(entries) => entries[0],
-        Resolution::NotFood | Resolution::Ambiguous | Resolution::Unresolved => return None,
+        Resolution::Ambiguous(ambiguous) => return ambiguous.category,
+        Resolution::NotFood | Resolution::Unresolved => return None,
     };
     entry.category.as_deref()
 }
