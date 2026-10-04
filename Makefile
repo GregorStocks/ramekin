@@ -26,6 +26,10 @@ RAMEKIN_IOS_APPLINKS_URL ?= https://ramekin.app
 # Override with IOS_TEST_DESTINATION / IOS_UI_DESTINATION to pin a device.
 IOS_TEST_DESTINATION ?=
 IOS_UI_DESTINATION ?= $(IOS_TEST_DESTINATION)
+# Times to rerun a failed UI test. CI sets this to 1: a degraded CI simulator
+# can stop answering accessibility queries for minutes (SpringBoard
+# kAXErrorIPCTimeout), which no test timeout survives. Local runs fail fast.
+IOS_UI_TEST_RETRIES ?= 0
 
 # Shell snippet that expands $$DEST to a usable -destination value. Uses the
 # override if set, otherwise asks simctl. Sourcing `xcrun simctl list` also
@@ -343,6 +347,7 @@ ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
 		-scheme Ramekin \
 		-destination "$$DEST" \
 		-only-testing:RamekinUITests \
+		$(if $(filter-out 0,$(IOS_UI_TEST_RETRIES)),-retry-tests-on-failure -test-iterations $$(($(IOS_UI_TEST_RETRIES) + 1))) \
 		-resultBundlePath ../logs/ios-ui-tests.xcresult
 	@echo "UI test results at logs/ios-ui-tests.xcresult"
 

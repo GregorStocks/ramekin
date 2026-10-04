@@ -1,0 +1,18 @@
+{
+  "title": "iOS UI tests: investigate tests that pass only on CI retry",
+  "description": "CI now reruns a failed iOS UI test once (IOS_UI_TEST_RETRIES=1 in .github/workflows/ios.yml) so simulator SpringBoard stalls (kAXErrorIPCTimeout, 'Failed to launch', 'Timed out while evaluating UI query') don't fail PRs. \
+A test that passed only on retry emits a '::warning::iOS UI tests passed only on retry: <tests>' annotation, and logs/ios-ui-tests.log is uploaded in the ios-ui-test-results artifact. \
+Not every recent failure looks like a simulator stall: around 2026-10-04 there were assertion failures at RecipeFlowTests.swift:212 (testRecipeFlow, run 37183180449), :57 (testTextRecipeReviewAndSave, run 36675521178) and :123 'Sign In must be visible before tapping' (testLoginFailure, run 37175844521). \
+Some may come from bugs on those branches, but a retry would now hide a real flake. \
+Check the retry warnings on recent iOS runs. \
+Any test that keeps needing a retry for something other than an AX IPC timeout or a launch failure deserves a real fix.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "flaky-test",
+  ],
+  "created_at": "2026-10-04T16:00:00.000000-07:00",
+  "updated_at": "2026-10-04T16:00:00.000000-07:00",
+}
