@@ -35,6 +35,22 @@ class CoreDataStack: ObservableObject {
     /// an in-memory store: local edits survive only once synced.
     private(set) var isUsingVolatileStore = false
 
+    /// Sync cursors and similar state describe what the on-disk store holds.
+    /// On the in-memory fallback they must neither be read (the empty store
+    /// would skip the sync that fills it) nor advanced (the disk store would
+    /// skip changes on the next launch that loads it), so callers keep that
+    /// state in a throwaway domain cleared at launch.
+    func syncStateDefaults(_ defaults: UserDefaults) -> UserDefaults {
+        isUsingVolatileStore ? Self.volatileSyncStateDefaults ?? defaults : defaults
+    }
+
+    private static let volatileSyncStateDefaults: UserDefaults? = {
+        let suiteName = "com.ramekin.volatile-store-sync-state"
+        let defaults = UserDefaults(suiteName: suiteName)
+        defaults?.removePersistentDomain(forName: suiteName)
+        return defaults
+    }()
+
     /// The main view context for UI operations
     var viewContext: NSManagedObjectContext {
         container.viewContext

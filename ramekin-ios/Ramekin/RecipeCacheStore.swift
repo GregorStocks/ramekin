@@ -53,7 +53,7 @@ final class RecipeCacheStore {
 
     init(coreDataStack: CoreDataStack = .shared, userDefaults: UserDefaults = .standard) {
         backgroundContext = coreDataStack.newBackgroundContext()
-        self.userDefaults = userDefaults
+        self.userDefaults = coreDataStack.syncStateDefaults(userDefaults)
     }
 
     func currentAccountKey() -> String? {

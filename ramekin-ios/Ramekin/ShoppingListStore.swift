@@ -50,7 +50,7 @@ class ShoppingListStore: ObservableObject {
         }
     ) {
         self.coreDataStack = coreDataStack
-        self.userDefaults = userDefaults
+        self.userDefaults = coreDataStack.syncStateDefaults(userDefaults)
         self.automaticallySync = automaticallySync
         self.syncItems = syncItems
 
