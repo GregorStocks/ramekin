@@ -7,6 +7,7 @@ mod prep_notes;
 pub(in crate::ingredient_parser) use line_classifiers::normalize_section_name;
 pub use line_classifiers::{detect_section_header, should_ignore_line};
 pub(in crate::ingredient_parser) use normalize::*;
+pub use normalize::{normalize_unicode, strip_leading_list_marker};
 pub(in crate::ingredient_parser) use prep_notes::*;
 
 pub(super) fn split_compound_items(item: &str) -> Vec<String> {

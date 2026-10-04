@@ -10,7 +10,7 @@ use crate::ingredient_parser::unicode_fraction_ascii;
 /// - Unicode fractions (½, ⅓, etc.) → ASCII fractions (1/2, 1/3, etc.)
 /// - Unicode fraction slash (⁄) → ASCII slash
 /// - Unicode dashes (en-dash, em-dash) → ASCII hyphen
-pub(in crate::ingredient_parser) fn normalize_unicode(s: &str) -> String {
+pub fn normalize_unicode(s: &str) -> String {
     let mut result = String::with_capacity(s.len() + 10);
     let chars: Vec<char> = s.chars().collect();
 
@@ -41,7 +41,8 @@ pub(in crate::ingredient_parser) fn normalize_unicode(s: &str) -> String {
     result
 }
 
-pub(in crate::ingredient_parser) fn strip_leading_list_marker(s: &str) -> String {
+/// The line without leading list bullets, checkboxes and dashes.
+pub fn strip_leading_list_marker(s: &str) -> String {
     let mut remaining = s.trim_start();
     loop {
         let mut chars = remaining.chars();

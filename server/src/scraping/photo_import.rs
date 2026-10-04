@@ -4,7 +4,7 @@ use diesel::prelude::*;
 use tracing::Instrument;
 use uuid::Uuid;
 
-use ramekin_core::ai::{extract_recipe_from_photos, AiClient, CachingAiClient};
+use ramekin_core::ai::{extract_recipe_from_photos, AiConfig, AiError, CachingAiClient};
 use ramekin_core::pipeline::steps::{ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep};
 use ramekin_core::{ExtractRecipeOutput, ExtractionMethod, FetchImagesOutput};
 
@@ -101,8 +101,12 @@ async fn run_photo_import_job_inner(
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
     // Step 2: Call vision AI to extract recipe
-    let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
-    let extract_result = extract_recipe_from_photos(ai_client.as_ref(), images).await?;
+    let ai_client = CachingAiClient::new(
+        AiConfig::from_env()
+            .map_err(AiError::from)?
+            .for_extraction(),
+    );
+    let extract_result = extract_recipe_from_photos(&ai_client, images).await?;
 
     tracing::info!(
         "Extracted recipe '{}' from photos (cached={})",

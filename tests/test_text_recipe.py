@@ -33,6 +33,7 @@ def test_text_draft_review_save_and_import_parity(authed_api_client):
     assert draft.content.source_name == "Family notebook"
     assert draft.content.notes == "Serve warm."
     assert draft.warnings == ["Weight estimate unavailable for mystery powder."]
+    assert draft.content.description == "A delicious test recipe."
     ingredients = draft.content.ingredients
     assert [len(i.measurements) for i in ingredients] == [1, 1, 1]
     assert [d.to_dict() for d in draft.derived_measurements] == [
@@ -104,6 +105,13 @@ def test_structured_creation_gets_weight_estimates(authed_api_client):
     assert recipe.derived_measurements[0].amount == "125"
 
 
+def test_model_warnings_are_shown_without_blocking_enrichment(authed_api_client):
+    client, _ = authed_api_client
+    draft = prepare(client, "TEXT_MODEL_WARNING\n" + RECIPE_TEXT)
+    assert draft.warnings[0] == "The source mentions a note that was not supplied."
+    assert draft.content.description == "A delicious test recipe."
+
+
 def test_incomplete_text_exposes_missing_fields(authed_api_client):
     client, _ = authed_api_client
     draft = prepare(client, "TEXT_INCOMPLETE\n1 cup all-purpose flour")
@@ -111,6 +119,8 @@ def test_incomplete_text_exposes_missing_fields(authed_api_client):
     assert draft.content.instructions == ""
     assert "Missing title. Add it before saving." in draft.warnings
     assert "Missing instructions. Add it before saving." in draft.warnings
+    # Missing fields block enrichment, which would have nothing to ground it.
+    assert draft.content.description is None
     with pytest.raises(ApiException) as error:
         RecipesApi(client).create_recipe(
             {**draft.content.to_dict(), "raw_ingredients": draft.raw_ingredients}

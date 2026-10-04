@@ -7,7 +7,9 @@ use std::{
 use async_trait::async_trait;
 use axum::{extract::State, Json};
 use diesel::prelude::*;
-use ramekin_core::ai::{text_extract::extract_recipe_from_text, AiClient, CachingAiClient};
+use ramekin_core::ai::{
+    text_extract::extract_recipe_from_text, AiClient, AiConfig, CachingAiClient,
+};
 use ramekin_core::metric_weights::is_metric_weight_unit;
 use ramekin_core::pipeline::{
     scrape_auto_applied_ai_enrichments, steps::EnrichAutoTagStep,
@@ -117,11 +119,13 @@ pub async fn prepare_text_recipe(
             "Enter recipe text between 1 and 50,000 bytes.",
         ));
     }
-    let client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env().map_err(|e| {
+    let config = AiConfig::from_env().map_err(|e| {
         tracing::warn!(error = %e, "Text extraction unavailable");
         ApiError::service_unavailable("Recipe text processing is unavailable. Ask your server administrator to configure AI access, then retry.")
-    })?);
-    let extracted = extract_recipe_from_text(client.as_ref(), &request.text)
+    })?;
+    let extractor = CachingAiClient::new(config.for_extraction());
+    let client: Arc<dyn AiClient> = Arc::new(CachingAiClient::new(config));
+    let extracted = extract_recipe_from_text(&extractor, &request.text)
         .await
         .map_err(|e| {
             tracing::warn!(error = %e, "Text extraction failed");
@@ -130,19 +134,23 @@ pub async fn prepare_text_recipe(
             )
         })?;
     let raw = extracted.raw_recipe;
+    // The model's warnings are for the user to read. Whether the draft is
+    // complete enough to enrich is decided here, the same way for every model
+    // (non-recipe text comes back with these fields empty).
     let mut warnings = extracted.warnings;
+    let mut incomplete = Vec::new();
     for (name, value) in [
         ("title", &raw.title),
         ("ingredients", &raw.ingredients),
         ("instructions", &raw.instructions),
     ] {
         if value.trim().is_empty() {
-            warnings.push(format!("Missing {name}. Add it before saving."));
+            incomplete.push(format!("Missing {name}. Add it before saving."));
         }
     }
     let ingredients = parse_draft_ingredients(&raw).await?;
     if ingredients.is_empty() && !raw.ingredients.trim().is_empty() {
-        warnings.push("No ingredients found. Add ingredient lines before saving.".to_string());
+        incomplete.push("No ingredients found. Add ingredient lines before saving.".to_string());
     }
     let mut value =
         serde_json::to_value(&raw).map_err(|_| ApiError::internal("Invalid extracted recipe"))?;
@@ -150,8 +158,10 @@ pub async fn prepare_text_recipe(
     value["tags"] = json!(raw.categories.clone().unwrap_or_default());
     let mut content: RecipeContent = serde_json::from_value(value)
         .map_err(|_| ApiError::internal("Invalid extracted recipe"))?;
-    // Incomplete/ambiguous recipes need correction before AI enrichment can be grounded.
-    if warnings.is_empty() {
+    // An incomplete recipe needs correction before AI enrichment can be grounded.
+    let enrich = incomplete.is_empty();
+    warnings.extend(incomplete);
+    if enrich {
         let tags = run_db(&pool, move |conn| {
             user_tags::table
                 .filter(user_tags::user_id.eq(user.id))

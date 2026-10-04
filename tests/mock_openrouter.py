@@ -330,7 +330,15 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                         "source_name": "Family notebook",
                         "notes": "Serve warm.",
                     },
-                    "warnings": ["Check the missing fields."] if incomplete else [],
+                    "warnings": (
+                        ["Check the missing fields."]
+                        if incomplete
+                        else (
+                            ["The source mentions a note that was not supplied."]
+                            if "TEXT_MODEL_WARNING" in all_text
+                            else []
+                        )
+                    ),
                 }
             )
 

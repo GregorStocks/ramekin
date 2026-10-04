@@ -7,6 +7,8 @@
 //! `data/ai-evals/<suite>.md` with one row per model. Responses are cached by
 //! model and prompt, so reruns are free and a new model only pays for itself.
 
+mod extraction;
+
 use anyhow::{bail, Context, Result};
 use ramekin_core::ai::{
     estimate_ingredient_weights, resolve_ingredient_names, AiConfig, AiError, CachingAiClient,
@@ -30,7 +32,13 @@ pub const BATCH: usize = 40;
 /// Candidate keys offered per name, as the server does.
 const CANDIDATES: usize = 12;
 
-pub const SUITES: [&str; 3] = ["ingredient-weights", "food-estimates", "ingredient-names"];
+pub const SUITES: [&str; 5] = [
+    "ingredient-weights",
+    "food-estimates",
+    "ingredient-names",
+    "text-extraction",
+    "photo-extraction",
+];
 
 // ---------------------------------------------------------------------------
 // Golden sets
@@ -255,6 +263,10 @@ fn write_golden(root: &Path) -> Result<()> {
         ),
         ("food-estimates", serde_json::to_string_pretty(&foods)?),
         ("ingredient-names", serde_json::to_string_pretty(&names)?),
+        (
+            "text-extraction",
+            serde_json::to_string_pretty(&extraction::write_golden(root)?)?,
+        ),
     ] {
         let path = dir.join(format!("{suite}.json"));
         fs::write(&path, json + "\n")?;
@@ -337,12 +349,12 @@ impl Spend {
     }
 }
 
-fn client_for(model: &str) -> Result<CachingAiClient> {
-    // The ingredient calls' production settings (their timeout), with the
-    // candidate model in place of the ingredient model.
-    let mut config = AiConfig::from_env()
-        .context("AI is not configured (OPENROUTER_API_KEY)")?
-        .for_ingredients();
+/// A client with the use case's production settings (`for_ingredients`,
+/// `for_extraction`: its timeout), with the candidate model in place of the
+/// use case's model.
+fn client_for(model: &str, use_case: fn(&AiConfig) -> AiConfig) -> Result<CachingAiClient> {
+    let mut config =
+        use_case(&AiConfig::from_env().context("AI is not configured (OPENROUTER_API_KEY)")?);
     config.model = model.to_string();
     Ok(CachingAiClient::new(config))
 }
@@ -477,7 +489,7 @@ async fn eval_weights(
     batch_size: usize,
     spend: &mut Spend,
 ) -> Result<ModelResult> {
-    let client = client_for(model)?;
+    let client = client_for(model, AiConfig::for_ingredients)?;
     let items: Vec<(String, String)> = cases
         .iter()
         .map(|case| (case.food.clone(), case.unit.clone()))
@@ -552,7 +564,7 @@ async fn eval_foods(
     batch_size: usize,
     spend: &mut Spend,
 ) -> Result<ModelResult> {
-    let client = client_for(model)?;
+    let client = client_for(model, AiConfig::for_ingredients)?;
     let queries: Vec<String> = cases.iter().map(|case| case.name.clone()).collect();
     let mut answers = HashMap::new();
     let invalid = in_batches(
@@ -646,7 +658,7 @@ async fn eval_names(
     batch_size: usize,
     spend: &mut Spend,
 ) -> Result<ModelResult> {
-    let client = client_for(model)?;
+    let client = client_for(model, AiConfig::for_ingredients)?;
     let indexes: Vec<usize> = (0..cases.len()).collect();
     let mut answers = HashMap::new();
     let invalid = in_batches(
@@ -740,6 +752,16 @@ struct SuiteSpec {
     title: &'static str,
     about: &'static str,
     columns: &'static [&'static str],
+    /// Whether production asks many items per call, so `BATCH=n` applies.
+    batched: bool,
+}
+
+/// How both extraction suites score, for their reports (a macro so `concat!`
+/// can use it).
+macro_rules! extraction_scoring {
+    () => {
+        "Ingredient lines are compared whole after lowercasing, writing fractions as 1/2, and dropping bullets and extra spaces; section headings are colon-terminated lines and count too. Found is the expected lines answered, extra the answered lines not expected (prose, a neighbouring recipe). Instructions are compared as words: recall is the expected words kept in the instructions (or notes, for a moved tip, once the instructions hold at least half), precision the answered instruction words that are expected or allowed (a variation or headnote the source contains). Other text kept is the share of the page's other text (a description, headnote or variation; not a nutrition panel, which photo import has no field for) found in the answer's description, notes or instructions. Invented fields counts difficulty, source, categories (the draft's tags) and rating with words the source never uses, rating unless the source rates it, and servings, times and nutrition with such words or a number the source doesn't state as that kind of quantity (a total summed from the steps, or the 4 of \"serves 4\" given as minutes), judged by the word each number phrase measures (\"5 to 6 minutes\", \"serves 4\"; not \"130 degrees\"). A time counts as stated only where the source labels one (\"Prep time:\", \"Total time\", \"Ready in\"), so a step's \"chill 30 minutes\" given as the total time is invented. Each stated quantity backs one answered value. Counted over all cases. Servings and times kept is the share of the servings and times the source states that the answer gives with the same numbers (a time in any time field). Unsourced note words is the share of the description and notes words that appear nowhere in the source. Columns are over the recipes a model answered validly."
+    };
 }
 
 fn spec(suite: &str) -> SuiteSpec {
@@ -748,16 +770,39 @@ fn spec(suite: &str) -> SuiteSpec {
             title: "Ingredient weights",
             about: "Grams in one unit of a catalog food (`estimate_ingredient_weights`), against USDA: 60 densities (cup) and 60 piece weights in estimable units. Error is |estimate − USDA| / USDA; null means the model said there's no typical weight.",
             columns: &["Within 20%", "Within 50%", "Median error", "P90 error", "Null", "Invalid"],
+            batched: true,
         },
         "food-estimates" => SuiteSpec {
             title: "Food estimates",
             about: "Calories (and cup and piece weights) for a food with no catalog candidates (`resolve_ingredient_names`, answer \"estimate\"), against USDA for 80 foods given by their USDA description. Calorie error is against at least 20 kcal/100 g, so near-zero foods don't dominate. Cup and piece columns count foods where USDA has the weight. The piece is USDA's default portion, which is sometimes a whole pizza, roast or bird where a model gives one slice or serving, so with ~25 cases that column is low-signal.",
             columns: &["kcal within 20%", "kcal median error", "kcal P90 error", "Cup within 25%", "Piece answered", "Piece within 25% of answered", "Unknown", "Invalid"],
+            batched: true,
         },
         "ingredient-names" => SuiteSpec {
             title: "Ingredient names",
             about: "Picking the catalog food a name means from its candidates (`resolve_ingredient_names`), for 100 curated aliases (correct if the answer resolves to the alias's food or another entry the catalog computes identically, with the same calories, density and piece weights, since the catalog has several entries for many foods; the alias itself is not offered) and 30 curated not-food names. Some curated aliases are judgment calls (delicata squash counts as acorn squash), so a sensible answer can score as wrong: compare models with each other rather than reading this as absolute accuracy.",
             columns: &["Correct food", "Wrong food", "Unknown", "Not food right", "Invalid"],
+            batched: true,
+        },
+        "text-extraction" => SuiteSpec {
+            title: "Text extraction",
+            about: concat!(
+                "A recipe read from pasted text (`extract_recipe_from_text`), for 30 pipeline snapshots rendered as the plain text a user would paste (a third wrapped in blog chatter, a third with no description or servings) and 3 texts that aren't recipes. ",
+                extraction_scoring!(),
+                " \"Recipes with warnings\" counts valid recipes answered with any warning: text import shows them to the user, so a warning on a sound recipe is noise. \"Not a recipe: left empty\" counts the non-recipes answered with a warning and every field a user would see (title, ingredients, instructions, description, servings, times, nutrition, notes, difficulty, source, categories, rating) empty."
+            ),
+            columns: extraction::TEXT_COLUMNS,
+            batched: false,
+        },
+        "photo-extraction" => SuiteSpec {
+            title: "Photo extraction",
+            about: concat!(
+                "A recipe read from photos of real pages (`extract_recipe_from_photos`), from `data/ai-evals/photos/` with hand-checked transcriptions; each case's `note` in the golden set says what makes it hard. The photos are sent as uploaded, EXIF rotation and all, as photo import does. With 5 cases, one case moves a column by 20 points. ",
+                extraction_scoring!(),
+                " Kalbi Burgers has no ingredient list (its ingredients are bold words in the steps), so its expected lines are those words: a judgment call."
+            ),
+            columns: extraction::PHOTO_COLUMNS,
+            batched: false,
         },
         other => unreachable!("unknown suite {other}"),
     }
@@ -771,8 +816,14 @@ fn render(
 ) -> String {
     let spec = spec(suite);
     let mut out = format!(
-        "# AI eval: {}\n\nWritten by `make ai-eval`. {}\n\nGolden set: `{GOLDEN_DIR}/{suite}.json` ({cases} cases), asked {batch_size} per call (production asks {BATCH}). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated); a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.\n\n",
-        spec.title, spec.about
+        "# AI eval: {}\n\nWritten by `make ai-eval`. {}\n\nGolden set: `{GOLDEN_DIR}/{suite}.json` ({cases} cases), {}. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.\n\n",
+        spec.title,
+        spec.about,
+        if spec.batched {
+            format!("asked {batch_size} per call (production asks {BATCH}). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated); a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid")
+        } else {
+            "one call per case, as in production. Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated), and are invalid: production doesn't retry them".to_string()
+        }
     );
     let _ = writeln!(
         out,
@@ -846,6 +897,13 @@ pub async fn run(
         let path: PathBuf = root.join(GOLDEN_DIR).join(format!("{suite}.json"));
         let mut rows = Vec::new();
         let mut cases = 0;
+        // Read once for every model: they're megabytes.
+        let photos = match suite {
+            "photo-extraction" => {
+                extraction::load_photos(root, &read_json::<Vec<extraction::PhotoCase>>(&path)?)?
+            }
+            _ => Vec::new(),
+        };
         for model in models {
             let mut spend = Spend::default();
             let outcome = match suite {
@@ -859,11 +917,22 @@ pub async fn run(
                     cases = golden.len();
                     eval_foods(model, &golden, batch_size, &mut spend).await
                 }
-                _ => {
+                "ingredient-names" => {
                     let golden: Vec<NameCase> = read_json(&path)?;
                     cases = golden.len();
                     eval_names(model, &golden, batch_size, &mut spend).await
                 }
+                "text-extraction" => {
+                    let golden: Vec<extraction::TextCase> = read_json(&path)?;
+                    cases = golden.len();
+                    extraction::eval_text(model, &golden, &mut spend).await
+                }
+                "photo-extraction" => {
+                    let golden: Vec<extraction::PhotoCase> = read_json(&path)?;
+                    cases = golden.len();
+                    extraction::eval_photos(model, &golden, &photos, &mut spend).await
+                }
+                other => unreachable!("unknown suite {other}"),
             };
             // A failing model (a timeout) stops the run before any report is
             // overwritten; everything already answered is cached, so a rerun
@@ -880,7 +949,7 @@ pub async fn run(
             ));
         }
         // Production's batch size is the main report; others sit beside it.
-        let name = if batch_size == BATCH {
+        let name = if batch_size == BATCH || !spec(suite).batched {
             format!("{suite}.md")
         } else {
             format!("{suite}-batch-{batch_size}.md")
