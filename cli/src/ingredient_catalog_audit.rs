@@ -10,7 +10,7 @@ use ramekin_core::catalog::{
     Learned, LearnedTarget, Resolution, Via, CURATED_JSON,
 };
 use ramekin_core::final_recipe::FinalRecipe;
-use ramekin_core::ingredient_categorizer::{categorize, categorize_with};
+use ramekin_core::ingredient_categorizer::{categorize, categorize_with, keyword_category};
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
 use ramekin_core::nutrition;
 use ramekin_core::types::ParseIngredientsOutput;
@@ -1001,7 +1001,7 @@ impl UncategorizedNames {
             }
             Resolution::Ambiguous(_) | Resolution::NotFood | Resolution::Unresolved => vec![],
         };
-        let keyword = categorize(item);
+        let keyword = keyword_category(item);
         let example = normalize_name(item);
         for (key, kind) in targets {
             let name = self

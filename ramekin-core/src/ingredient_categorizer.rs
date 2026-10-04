@@ -124,8 +124,8 @@ pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'stati
     }
 }
 
-/// The first keyword rule matching `item`, or "Other".
-fn keyword_category(item: &str) -> &'static str {
+/// The first keyword rule matching `item`, or "Other", ignoring the catalog.
+pub fn keyword_category(item: &str) -> &'static str {
     let lower = item.to_lowercase();
     let item_tokens = word_tokens(&lower);
 
