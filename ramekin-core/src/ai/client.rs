@@ -75,7 +75,7 @@ pub async fn complete_json<T: serde::de::DeserializeOwned>(
 ) -> Result<(T, ChatResponse), AiError> {
     let response = ai_client.complete(prompt_name, request).await?;
 
-    let parse_err = match serde_json::from_str::<T>(&response.content) {
+    let parse_err = match parse_json::<T>(&response.content) {
         Ok(parsed) => return Ok((parsed, response)),
         Err(e) => e,
     };
@@ -93,7 +93,7 @@ pub async fn complete_json<T: serde::de::DeserializeOwned>(
         parse_err
     );
     let retry = ai_client.complete(prompt_name, request).await?;
-    match serde_json::from_str::<T>(&retry.content) {
+    match parse_json::<T>(&retry.content) {
         Ok(parsed) => Ok((parsed, retry)),
         Err(e) => {
             ai_client.forget(prompt_name, &request.messages);
@@ -211,43 +211,22 @@ impl CachingAiClient {
 /// Non-JSON requests just need non-empty content.
 fn response_content_usable(json_response: bool, content: &str) -> bool {
     if json_response {
-        serde_json::from_str::<serde_json::Value>(content).is_ok()
+        json_candidates(content)
+            .iter()
+            .any(|candidate| serde_json::from_str::<serde_json::Value>(candidate).is_ok())
     } else {
         !content.trim().is_empty()
     }
 }
 
-/// JSON wrapped in a markdown code fence (```json ... ```), unwrapped; any
-/// other content unchanged.
-fn unfence_json(content: &str) -> &str {
-    let trimmed = content.trim();
-    let Some(rest) = trimmed.strip_prefix("```") else {
-        return content;
-    };
-    let Some(body) = rest.strip_suffix("```") else {
-        return content;
-    };
-    // Drop the info string ("json") on the opening fence's line.
-    match body.split_once('\n') {
-        Some((info, inner)) if !info.contains('{') && !info.contains('[') => inner.trim(),
-        _ => body.trim(),
-    }
-}
-
-/// The JSON in a JSON-mode response: the whole content when it parses, else
-/// a fenced block, else the object the content ends with ("I chose X.\n\n{...}").
-/// Content with none of these is returned unchanged, to fail validation.
-fn extract_json(content: &str) -> &str {
-    let parses = |text: &str| serde_json::from_str::<serde_json::Value>(text).is_ok();
-    if parses(content) {
-        return content;
-    }
-    let unfenced = unfence_json(content);
-    if parses(unfenced) {
-        return unfenced;
-    }
-    // Each fenced block, opening fence through its closing fence, in order,
-    // whatever text surrounds it.
+/// Where the JSON may be in a JSON-mode response, in order: the whole
+/// content, each fenced block (opening fence through its closing fence,
+/// whatever text surrounds it, without its "json" info string), and the object
+/// the content ends with ("I chose X.\n\n{...}"). Some providers (Anthropic
+/// models through OpenRouter) don't honor JSON mode and answer these ways.
+/// Callers try each against the type they want (`complete_json`).
+fn json_candidates(content: &str) -> Vec<&str> {
+    let mut candidates = vec![content.trim()];
     let mut rest = content;
     while let Some(open) = rest.find("```") {
         let Some(after_open) = rest.get(open + 3..) else {
@@ -260,26 +239,39 @@ fn extract_json(content: &str) -> &str {
         else {
             break;
         };
-        // Drop the info string ("json") on the opening fence's line.
-        let block = match inner.split_once('\n') {
+        candidates.push(match inner.split_once('\n') {
             Some((info, body)) if !info.contains('{') && !info.contains('[') => body.trim(),
             _ => inner.trim(),
-        };
-        if parses(block) {
-            return block;
-        }
+        });
         rest = next;
     }
     let trimmed = content.trim_end();
     if trimmed.ends_with('}') {
-        // The earliest '{' from which the rest parses is the whole object.
-        for (start, _) in trimmed.match_indices('{') {
-            if let Some(tail) = trimmed.get(start..).filter(|tail| parses(tail)) {
-                return tail;
+        // The earliest '{' from which the rest is valid JSON is the object.
+        if let Some(tail) = trimmed
+            .match_indices('{')
+            .filter_map(|(start, _)| trimmed.get(start..))
+            .find(|tail| serde_json::from_str::<serde_json::Value>(tail).is_ok())
+        {
+            candidates.push(tail);
+        }
+    }
+    candidates
+}
+
+/// The first JSON candidate that deserializes as `T`, or the whole content's
+/// error.
+fn parse_json<T: serde::de::DeserializeOwned>(content: &str) -> Result<T, serde_json::Error> {
+    let mut first_error = None;
+    for candidate in json_candidates(content) {
+        match serde_json::from_str::<T>(candidate) {
+            Ok(parsed) => return Ok(parsed),
+            Err(e) => {
+                first_error.get_or_insert(e);
             }
         }
     }
-    content
+    Err(first_error.expect("there is always the whole-content candidate"))
 }
 
 /// First ~200 chars of a response, for inclusion in error messages.
@@ -365,14 +357,6 @@ impl AiClient for CachingAiClient {
         let content = choice
             .and_then(|c| c.message.content.clone())
             .unwrap_or_default();
-        // Some providers (Anthropic models through OpenRouter) don't honor
-        // JSON mode: they wrap the JSON in a markdown code fence, or explain
-        // first and end with the JSON.
-        let content = if request.json_response {
-            extract_json(&content).to_string()
-        } else {
-            content
-        };
 
         // An unusable response must fail fast and must NOT be cached: caching
         // it would turn a transient provider problem into a permanent,
@@ -597,39 +581,35 @@ mod tests {
         assert!(cache.get(&key).is_none());
     }
 
-    #[test]
-    fn fenced_json_is_unwrapped() {
-        for fenced in [
-            "```json\n{\"a\": 1}\n```",
-            "```\n{\"a\": 1}\n```",
-            "  ```json\n{\"a\": 1}\n```  ",
-        ] {
-            assert_eq!(unfence_json(fenced), "{\"a\": 1}", "{fenced:?}");
-        }
-        // Anything else is left alone, to fail validation as before.
-        for other in [
-            "{\"a\": 1}",
-            "Here you go: {\"a\": 1}",
-            "```json\n{\"a\": 1}",
-        ] {
-            assert_eq!(unfence_json(other), other);
-        }
+    #[derive(Debug, PartialEq, serde::Deserialize)]
+    struct Answer {
+        answer: u32,
     }
 
     #[test]
-    fn json_is_extracted_after_reasoning_or_inside_a_fence() {
+    fn json_is_parsed_from_fences_or_after_reasoning() {
         for content in [
-            "{\"a\": {\"b\": 1}}",
-            "```json\n{\"a\": {\"b\": 1}}\n```",
-            "The name means X, so I chose it.\n\n{\"a\": {\"b\": 1}}",
-            "Reasoning first.\n```json\n{\"a\": {\"b\": 1}}\n```\n",
-            "```json\n{\"a\": {\"b\": 1}}\n```\nThat's my answer.",
-            "Example:\n```\nnot json\n```\nAnswer:\n```json\n{\"a\": {\"b\": 1}}\n```\nDone.",
+            "{\"answer\": 1}",
+            "```json\n{\"answer\": 1}\n```",
+            "  ```\n{\"answer\": 1}\n```  ",
+            "The name means X, so I chose it.\n\n{\"answer\": 1}",
+            "Reasoning first.\n```json\n{\"answer\": 1}\n```\n",
+            "```json\n{\"answer\": 1}\n```\nThat's my answer.",
+            "Example:\n```\nnot json\n```\nAnswer:\n```json\n{\"answer\": 1}\n```\nDone.",
+            // Valid JSON of the wrong shape first (an echoed input), then the answer.
+            "Input:\n```json\n{\"name\": \"x\"}\n```\nAnswer:\n```json\n{\"answer\": 1}\n```",
         ] {
-            assert_eq!(extract_json(content), "{\"a\": {\"b\": 1}}", "{content:?}");
+            assert_eq!(
+                parse_json::<Answer>(content).unwrap(),
+                Answer { answer: 1 },
+                "{content:?}"
+            );
+            assert!(response_content_usable(true, content), "{content:?}");
         }
-        let prose = "No JSON here at all.";
-        assert_eq!(extract_json(prose), prose);
+        for content in ["No JSON here at all.", "```json\n{\"answer\": \n```"] {
+            assert!(parse_json::<Answer>(content).is_err(), "{content:?}");
+        }
+        assert!(!response_content_usable(true, "No JSON here at all."));
     }
 
     #[test]
@@ -666,9 +646,15 @@ mod tests {
         assert!(!response_content_usable(true, r#"{""#));
         assert!(!response_content_usable(true, r#"{"normalized_title": ""#));
         assert!(!response_content_usable(true, ""));
-        assert!(!response_content_usable(
+        // Fenced JSON is usable: some providers ignore JSON mode and fence it.
+        assert!(response_content_usable(
             true,
             "```json\n{\"normalized_title\": \"Tuna Boats\"}\n```"
+        ));
+        // A fence around truncated JSON isn't.
+        assert!(!response_content_usable(
+            true,
+            "```json\n{\"normalized_title\": \n```"
         ));
     }
 
