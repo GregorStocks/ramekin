@@ -57,10 +57,12 @@ pub struct ResolveIngredientNamesResult {
 /// Resolve a batch of names, each with its candidate catalog keys, in one
 /// call. The answer must cover every name exactly once and may only choose a
 /// listed candidate; anything else is an invalid response, evicted from the
-/// cache so a retry asks again.
+/// cache so a retry asks again. `fresh` skips a cached reply: re-asking a name
+/// must reach the model, not return the answer being replaced.
 pub async fn resolve_ingredient_names(
     ai_client: &dyn AiClient,
     names: &[NameQuery],
+    fresh: bool,
 ) -> Result<ResolveIngredientNamesResult, AiError> {
     let request = ChatRequest {
         messages: vec![ChatMessage::user(render_resolve_ingredient_names_prompt(
@@ -70,6 +72,9 @@ pub async fn resolve_ingredient_names(
         max_tokens: Some(INGREDIENT_MAX_TOKENS),
         temperature: Some(0.0),
     };
+    if fresh {
+        ai_client.forget(RESOLVE_INGREDIENT_NAMES_PROMPT_NAME, &request.messages);
+    }
     let (parsed, response): (Response, _) =
         complete_json(ai_client, RESOLVE_INGREDIENT_NAMES_PROMPT_NAME, &request).await?;
     match validate(names, parsed) {

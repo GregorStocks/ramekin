@@ -40,9 +40,12 @@ pub struct EstimateIngredientWeightsResult {
 /// Estimate a batch of (food, unit) weights in one call. The answer must cover
 /// every pair exactly once with a plausible weight or null; anything else is
 /// an invalid response, evicted from the cache so a retry asks again.
+/// `fresh` skips a cached reply: a re-asked weight must reach the model, not
+/// return the estimate being replaced.
 pub async fn estimate_ingredient_weights(
     ai_client: &dyn AiClient,
     items: &[(String, String)],
+    fresh: bool,
 ) -> Result<EstimateIngredientWeightsResult, AiError> {
     let request = ChatRequest {
         messages: vec![ChatMessage::user(
@@ -52,6 +55,9 @@ pub async fn estimate_ingredient_weights(
         max_tokens: Some(INGREDIENT_MAX_TOKENS),
         temperature: Some(0.0),
     };
+    if fresh {
+        ai_client.forget(ESTIMATE_INGREDIENT_WEIGHTS_PROMPT_NAME, &request.messages);
+    }
     let (parsed, response): (Response, _) =
         complete_json(ai_client, ESTIMATE_INGREDIENT_WEIGHTS_PROMPT_NAME, &request).await?;
     match validate(items, parsed) {

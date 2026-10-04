@@ -228,11 +228,13 @@ pub(crate) async fn estimate_next_batch(pool: &Arc<DbPool>, work: Work) -> Resul
     if batch.is_empty() {
         return Ok(Step::Idle);
     }
-    Ok(match estimate_batch(pool, batch).await? {
-        None => Step::Done,
-        Some((error, true)) => Step::ProviderFailed(error),
-        Some((error, false)) => Step::Failed(error),
-    })
+    Ok(
+        match estimate_batch(pool, batch, matches!(work, Work::Reasked)).await? {
+            None => Step::Done,
+            Some((error, true)) => Step::ProviderFailed(error),
+            Some((error, false)) => Step::Failed(error),
+        },
+    )
 }
 
 /// A batch's first failure and whether it was the provider's, or `Err` when an
@@ -244,10 +246,15 @@ type BatchFuture<'a> =
 /// invalid, each half is retried on its own, down to single items, so one item
 /// the model can't handle fails alone in about 2·log2(n) calls rather than n.
 /// Returns the first failure and whether it was the provider's (so later
-/// batches would fail too); `Err` means an outcome couldn't be saved.
-fn estimate_batch(pool: &Arc<DbPool>, batch: Vec<(String, String)>) -> BatchFuture<'_> {
+/// batches would fail too); `Err` means an outcome couldn't be saved. A
+/// re-asked batch (`fresh`) skips cached replies.
+fn estimate_batch(
+    pool: &Arc<DbPool>,
+    batch: Vec<(String, String)>,
+    fresh: bool,
+) -> BatchFuture<'_> {
     Box::pin(async move {
-        let error = match ask(&batch).await {
+        let error = match ask(&batch, fresh).await {
             Ok((estimates, model)) => {
                 save_estimated(pool, estimates, model).await?;
                 return Ok(None);
@@ -262,11 +269,11 @@ fn estimate_batch(pool: &Arc<DbPool>, batch: Vec<(String, String)>) -> BatchFutu
         );
         let mut first = batch;
         let second = first.split_off(first.len() / 2);
-        let outcome = estimate_batch(pool, first).await?;
+        let outcome = estimate_batch(pool, first, fresh).await?;
         if matches!(outcome, Some((_, true))) {
             return Ok(outcome);
         }
-        let later = estimate_batch(pool, second).await?;
+        let later = estimate_batch(pool, second, fresh).await?;
         Ok(match (outcome, later) {
             (_, provider @ Some((_, true))) => provider,
             (Some(first), _) => Some(first),
@@ -278,9 +285,10 @@ fn estimate_batch(pool: &Arc<DbPool>, batch: Vec<(String, String)>) -> BatchFutu
 /// One LLM call: each item's grams (None: no typical weight), and the model.
 async fn ask(
     batch: &[(String, String)],
+    fresh: bool,
 ) -> Result<(Vec<(WeightKey, Option<f64>)>, String), AiError> {
     let (client, model) = CLIENT.as_ref().map_err(|e| AiError::Config(e.clone()))?;
-    let result = estimate_ingredient_weights(client, batch).await?;
+    let result = estimate_ingredient_weights(client, batch, fresh).await?;
     Ok((
         result
             .weights

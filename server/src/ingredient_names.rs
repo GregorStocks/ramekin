@@ -528,11 +528,13 @@ async fn resolve_next_batch(
     }
     // A failed answer is recorded on its names; failing to record it would
     // leave them pending, so `Err` stops rather than asking again.
-    Ok(match resolve_batch(pool, batch).await? {
-        Batch::Resolved => Step::Done,
-        Batch::NamesFailed(e) => Step::Failed(e),
-        Batch::ProviderFailed(e) => Step::ProviderFailed(e),
-    })
+    Ok(
+        match resolve_batch(pool, batch, matches!(work, Work::Reasked)).await? {
+            Batch::Resolved => Step::Done,
+            Batch::NamesFailed(e) => Step::Failed(e),
+            Batch::ProviderFailed(e) => Step::ProviderFailed(e),
+        },
+    )
 }
 
 /// Resolve pending names among `only` in batches (a scrape job's names).
@@ -579,9 +581,14 @@ enum Batch {
 /// invalid, each name is retried alone, so one name the model can't handle
 /// doesn't fail the others; only the names that fail on their own are marked
 /// failed. Provider and configuration errors fail the batch at once. `Err`
-/// means an outcome couldn't be saved.
-async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, String> {
-    let error = match ask(&batch).await {
+/// means an outcome couldn't be saved. A re-asked batch (`fresh`) skips cached
+/// replies.
+async fn resolve_batch(
+    pool: &Arc<DbPool>,
+    batch: Vec<String>,
+    fresh: bool,
+) -> Result<Batch, String> {
+    let error = match ask(&batch, fresh).await {
         Ok((resolutions, model)) => {
             save_resolved(pool, resolutions, model).await?;
             return Ok(Batch::Resolved);
@@ -597,7 +604,7 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, 
     let mut outcome = Batch::Resolved;
     for name in batch {
         let single = vec![name];
-        match ask(&single).await {
+        match ask(&single, fresh).await {
             Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await?,
             Err(error) => match fail(pool, single, error).await? {
                 Batch::NamesFailed(e) => {
@@ -626,7 +633,10 @@ async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<
 }
 
 /// One LLM call for `batch`: each name's answer, and the model that gave it.
-async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String), AiError> {
+async fn ask(
+    batch: &[String],
+    fresh: bool,
+) -> Result<(Vec<(String, NameResolution)>, String), AiError> {
     let prompt: Vec<NameQuery> = batch
         .iter()
         .map(|name| NameQuery {
@@ -639,7 +649,7 @@ async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String)
         })
         .collect();
     let (client, model) = CLIENT.as_ref().map_err(|e| AiError::Config(e.clone()))?;
-    let result = resolve_ingredient_names(client, &prompt).await?;
+    let result = resolve_ingredient_names(client, &prompt, fresh).await?;
     Ok((result.resolutions.into_iter().collect(), model.clone()))
 }
 
