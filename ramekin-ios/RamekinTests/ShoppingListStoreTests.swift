@@ -155,6 +155,49 @@ final class ShoppingListStoreTests: XCTestCase {
         )
     }
 
+    func testAddingRecipeItemsWithoutAccountThrowsInsteadOfCrashing() {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: nil,
+            automaticallySync: false,
+            syncItems: { _ in Self.emptyResponse() }
+        )
+
+        store.addItem(name: "Apples")
+        XCTAssertThrowsError(
+            try store.addItemsFromRecipe(
+                ingredients: [(name: "Flour", amount: "2 cups")],
+                recipeId: UUID(),
+                recipeTitle: "Bread"
+            )
+        )
+        XCTAssertTrue(store.items.isEmpty)
+    }
+
+    func testMutatingItemFromAnotherAccountIsIgnored() throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { _ in Self.emptyResponse() }
+        )
+        store.addItem(name: "Apples")
+        let staleItem = try XCTUnwrap(store.items.first)
+
+        store.setActiveAccountKey(secondUserAccount)
+        store.toggleChecked(staleItem)
+        store.updateItem(staleItem, name: "Bananas")
+
+        XCTAssertFalse(staleItem.isChecked)
+        XCTAssertEqual(staleItem.item, "Apples")
+    }
+
     private static func emptyResponse() -> SyncResponse {
         SyncResponse(
             categoryOrder: [],

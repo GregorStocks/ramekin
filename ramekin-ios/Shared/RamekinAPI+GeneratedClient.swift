@@ -77,9 +77,9 @@ extension RamekinAPI {
         }
     }
 
-    func generatedMealType(from rawValue: String) -> MealType {
+    func generatedMealType(from rawValue: String) throws -> MealType {
         guard let mealType = MealType(rawValue: rawValue) else {
-            fatalError("Unsupported meal type: \(rawValue)")
+            throw APIError.unsupportedMealType(rawValue)
         }
         return mealType
     }

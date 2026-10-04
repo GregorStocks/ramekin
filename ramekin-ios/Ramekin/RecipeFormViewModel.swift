@@ -234,7 +234,7 @@ extension RecipeFormViewModel {
                 request.rawIngredients = rawIngredients
                 try await api.createRecipe(request)
             case .edit(let recipeId):
-                try await api.updateRecipe(recipeId, formData.makeUpdateRequest())
+                try await api.updateRecipe(recipeId, try formData.makeUpdateRequest())
             }
             isSaving = false
             return true

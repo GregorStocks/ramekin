@@ -49,10 +49,25 @@ class CoreDataStack: ObservableObject {
             container.persistentStoreDescriptions = [storeDescription]
         }
 
+        var loadError: NSError?
         container.loadPersistentStores { _, error in
-            if let error = error as NSError? {
-                // In a production app, handle this more gracefully
-                fatalError("Failed to load Core Data stores: \(error), \(error.userInfo)")
+            loadError = error as NSError?
+        }
+        if let loadError {
+            // Run on an in-memory store rather than crash. The on-disk store
+            // (and any pending shopping-list edits in it) stays untouched, so
+            // the next launch tries it again.
+            logger.log(
+                "Failed to load Core Data stores, falling back to memory: \(loadError), \(loadError.userInfo)",
+                source: "CoreDataStack"
+            )
+            let memoryDescription = NSPersistentStoreDescription()
+            memoryDescription.type = NSInMemoryStoreType
+            container.persistentStoreDescriptions = [memoryDescription]
+            container.loadPersistentStores { _, error in
+                if let error {
+                    self.logger.log("Failed to load in-memory Core Data store: \(error)", source: "CoreDataStack")
+                }
             }
         }
 

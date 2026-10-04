@@ -26,6 +26,17 @@ struct PendingSyncSweep: Codable, Equatable {
     let watermark: Int64
 }
 
+enum RecipeCacheError: LocalizedError {
+    case unencodableField(String)
+
+    var errorDescription: String? {
+        switch self {
+        case let .unencodableField(field):
+            return "Could not encode recipe \(field) for the offline cache"
+        }
+    }
+}
+
 /// Core Data work runs on a private background context: applying a full
 /// sync and decoding the whole cache on the main thread stalled the UI for
 /// tens of seconds on slow devices.
@@ -38,6 +49,7 @@ final class RecipeCacheStore {
     /// Only touched inside `perform`.
     private let backgroundContext: NSManagedObjectContext
     private let userDefaults: UserDefaults
+    private let logger = DebugLogger.shared
 
     init(coreDataStack: CoreDataStack = .shared, userDefaults: UserDefaults = .standard) {
         backgroundContext = coreDataStack.newBackgroundContext()
@@ -68,7 +80,10 @@ final class RecipeCacheStore {
         do {
             return try JSONDecoder().decode(PendingSyncSweep.self, from: data)
         } catch {
-            fatalError("Pending sync sweep is invalid JSON: \(error)")
+            // Dropping it only costs re-fetching the pages it had covered.
+            logger.log("Discarding invalid pending sync sweep: \(error)", source: "RecipeCache")
+            clearPendingSyncSweep(accountKey: accountKey)
+            return nil
         }
     }
 
@@ -77,7 +92,8 @@ final class RecipeCacheStore {
             let data = try JSONEncoder().encode(sweep)
             userDefaults.set(data, forKey: pendingSweepKey(accountKey: accountKey))
         } catch {
-            fatalError("Failed to encode pending sync sweep: \(error)")
+            // Without it an interrupted sweep restarts from its first page.
+            logger.log("Failed to encode pending sync sweep: \(error)", source: "RecipeCache")
         }
     }
 
@@ -94,7 +110,22 @@ final class RecipeCacheStore {
                 NSSortDescriptor(keyPath: \CachedRecipe.updatedAt, ascending: false),
                 NSSortDescriptor(keyPath: \CachedRecipe.id, ascending: true)
             ]
-            return try backgroundContext.fetch(request).map(searchDocument)
+            var documents: [CachedRecipeSearchDocument] = []
+            var droppedRows = false
+            for row in try backgroundContext.fetch(request) {
+                if let document = searchDocument(from: row) {
+                    documents.append(document)
+                } else {
+                    droppedRows = true
+                    backgroundContext.delete(row)
+                }
+            }
+            if droppedRows {
+                // A full re-sync rewrites the dropped recipes.
+                try backgroundContext.save()
+                clearSyncCursor(accountKey: accountKey)
+            }
+            return documents
         }
     }
 
@@ -172,7 +203,10 @@ final class RecipeCacheStore {
         }
     }
 
-    private func searchDocument(from cachedRecipe: CachedRecipe) -> CachedRecipeSearchDocument {
+    /// Nil for a corrupt row, which the caller drops so a re-sync can
+    /// replace it; crashing would repeat on every launch.
+    private func searchDocument(from cachedRecipe: CachedRecipe) -> CachedRecipeSearchDocument? {
+        let rowId = cachedRecipe.id?.uuidString ?? "<no id>"
         guard let createdAt = cachedRecipe.createdAt,
               let id = cachedRecipe.id,
               let ingredientMatchText = cachedRecipe.ingredientMatchText,
@@ -182,7 +216,13 @@ final class RecipeCacheStore {
               let title = cachedRecipe.title,
               let updatedAt = cachedRecipe.updatedAt
         else {
-            fatalError("CachedRecipe is missing required fields")
+            logger.log("Dropping cached recipe \(rowId): missing required fields", source: "RecipeCache")
+            return nil
+        }
+        guard let ingredients = decodeCachedJSON([Ingredient].self, from: ingredientsJSON, field: "ingredients", rowId: rowId),
+              let tags = decodeCachedJSON([String].self, from: tagsJSON, field: "tags", rowId: rowId)
+        else {
+            return nil
         }
 
         let summary = RecipeSummary(
@@ -190,14 +230,14 @@ final class RecipeCacheStore {
             description: cachedRecipe.summaryDescription,
             id: id,
             rating: cachedRecipe.rating.flatMap(Int.init),
-            tags: tags(from: tagsJSON),
+            tags: tags,
             thumbnailPhotoId: cachedRecipe.thumbnailPhotoId,
             title: title,
             updatedAt: updatedAt
         )
         return CachedRecipeSearchDocument(
             summary: summary,
-            ingredients: ingredients(from: ingredientsJSON),
+            ingredients: ingredients,
             ingredientMatchText: ingredientMatchText,
             instructions: instructions,
             notes: cachedRecipe.notes
@@ -205,40 +245,27 @@ final class RecipeCacheStore {
     }
 
     private func ingredientsJSON(_ ingredients: [Ingredient]) throws -> String {
-        let data = try JSONEncoder().encode(ingredients)
-        guard let json = String(data: data, encoding: .utf8) else {
-            fatalError("Failed to encode cached recipe ingredients as UTF-8")
-        }
-        return json
-    }
-
-    private func ingredients(from json: String) -> [Ingredient] {
-        guard let data = json.data(using: .utf8) else {
-            fatalError("Cached recipe ingredients are not UTF-8")
-        }
-        do {
-            return try JSONDecoder().decode([Ingredient].self, from: data)
-        } catch {
-            fatalError("Cached recipe ingredients are invalid JSON: \(error)")
-        }
+        try encodeCachedJSON(ingredients, field: "ingredients")
     }
 
     private func tagsJSON(_ tags: [String]) throws -> String {
-        let data = try JSONEncoder().encode(tags)
+        try encodeCachedJSON(tags, field: "tags")
+    }
+
+    private func encodeCachedJSON<T: Encodable>(_ value: T, field: String) throws -> String {
+        let data = try JSONEncoder().encode(value)
         guard let json = String(data: data, encoding: .utf8) else {
-            fatalError("Failed to encode cached recipe tags as UTF-8")
+            throw RecipeCacheError.unencodableField(field)
         }
         return json
     }
 
-    private func tags(from json: String) -> [String] {
-        guard let data = json.data(using: .utf8) else {
-            fatalError("Cached recipe tags are not UTF-8")
-        }
+    private func decodeCachedJSON<T: Decodable>(_ type: T.Type, from json: String, field: String, rowId: String) -> T? {
         do {
-            return try JSONDecoder().decode([String].self, from: data)
+            return try JSONDecoder().decode(type, from: Data(json.utf8))
         } catch {
-            fatalError("Cached recipe tags are invalid JSON: \(error)")
+            logger.log("Dropping cached recipe \(rowId): invalid \(field) JSON: \(error)", source: "RecipeCache")
+            return nil
         }
     }
 
