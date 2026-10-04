@@ -138,9 +138,17 @@ fn curated_densities_keep_their_values() {
     assert_close(density("sake"), 240.0);
     assert_close(density("grated parmesan cheese"), 100.0);
     assert_close(density("shredded parmesan cheese"), 80.0);
-    // Manual baking values override the linked USDA food's density.
+    // Baking staples inherit the linked USDA food's density.
     assert_close(density("all-purpose flour"), 125.0);
     assert_close(density("butter"), 227.0);
+    // USDA cup rows the imported average misses: brown sugar's "cup packed"
+    // and heavy cream's fluid (not whipped) cup.
+    assert_close(density("brown sugar"), 220.0);
+    assert_close(density("heavy cream"), 238.0);
+    // Flours USDA doesn't weigh by the cup the way recipes measure them.
+    assert_close(density("almond flour"), 96.0);
+    assert_close(density("cake flour"), 112.0);
+    assert_close(density("coconut flour"), 112.0);
 }
 
 #[test]
