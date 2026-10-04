@@ -10,7 +10,7 @@
 //! reads never call the LLM, and a failed batch stays visible (Settings ->
 //! Ingredient recognition) until retried.
 
-use std::collections::{BTreeMap, BTreeSet};
+use std::collections::{BTreeMap, BTreeSet, HashSet};
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, LazyLock};
 use std::time::Duration;
@@ -22,8 +22,8 @@ use ramekin_core::ai::{
     NameResolution,
 };
 use ramekin_core::catalog::{
-    candidates, is_ambiguous, learned_key_resolves, unlearned_name, EstimatedFood, Learned,
-    LearnedTarget,
+    candidates, is_ambiguous, learned_key_resolves, normalize, unlearned_name, EstimatedFood,
+    Learned, LearnedTarget,
 };
 use tokio::sync::{Mutex, Notify};
 
@@ -266,19 +266,24 @@ pub fn catalog_sync(row: &StoredName) -> Option<CatalogSync> {
     }
     match (row.disposition.as_deref(), row.catalog_key.as_deref()) {
         (Some("entry"), Some(key)) if !learned_key_resolves(key) => Some(CatalogSync::StaleKey),
-        (Some("unknown"), _) if row.candidates != Some(offered(&row.name)) => {
+        (Some("unknown"), _) if row.candidates != Some(stored(offered(&row.name))) => {
             Some(CatalogSync::NewCandidates)
         }
         _ => None,
     }
 }
 
-/// The candidate keys the model is offered for `name`, as stored.
-fn offered(name: &str) -> Vec<Option<String>> {
+/// The candidate keys the model is offered for `name`.
+fn offered(name: &str) -> Vec<String> {
     candidates(name, CANDIDATES)
         .into_iter()
-        .map(|key| Some(key.to_string()))
+        .map(str::to_string)
         .collect()
+}
+
+/// Candidate keys as the `candidates` column holds them.
+fn stored(keys: Vec<String>) -> Vec<Option<String>> {
+    keys.into_iter().map(Some).collect()
 }
 
 /// Bring stored names in line with the committed catalog (see
@@ -304,12 +309,13 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
     }
     conn.transaction(|conn| {
         let now = Utc::now();
+        let recategorized: HashSet<&str> = changes
+            .iter()
+            .filter(|(sync, _)| sync.changes_category())
+            .flat_map(|(_, changed)| changed.iter().map(String::as_str))
+            .collect();
+        touch_shopping_items(conn, &recategorized, now)?;
         for (sync, changed) in &changes {
-            if sync.changes_category() {
-                for name in changed {
-                    touch_shopping_items(conn, name, now)?;
-                }
-            }
             let rows = names::table.filter(names::name.eq_any(changed));
             match sync {
                 CatalogSync::Harvest => diesel::update(rows)
@@ -637,49 +643,61 @@ async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<
     })
 }
 
+/// One name's answer and the candidate keys it was offered.
+type Answer = (String, NameResolution, Vec<String>);
+
 /// One LLM call for `batch`: each name's answer, and the model that gave it.
-async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String), AiError> {
+async fn ask(batch: &[String]) -> Result<(Vec<Answer>, String), AiError> {
     let prompt: Vec<NameQuery> = batch
         .iter()
         .map(|name| NameQuery {
             name: name.clone(),
-            candidates: candidates(name, CANDIDATES)
-                .into_iter()
-                .map(str::to_string)
-                .collect(),
+            candidates: offered(name),
             ambiguous: is_ambiguous(name),
         })
         .collect();
     let (client, model) = CLIENT.as_ref().map_err(|e| AiError::Config(e.clone()))?;
-    let result = resolve_ingredient_names(client, &prompt).await?;
-    Ok((result.resolutions.into_iter().collect(), model.clone()))
+    let mut result = resolve_ingredient_names(client, &prompt).await?;
+    let answers = prompt
+        .into_iter()
+        .filter_map(|query| {
+            let resolution = result.resolutions.remove(&query.name)?;
+            Some((query.name, resolution, query.candidates))
+        })
+        .collect();
+    Ok((answers, model.clone()))
 }
 
 async fn save_resolved(
     pool: &Arc<DbPool>,
-    resolutions: Vec<(String, NameResolution)>,
+    answers: Vec<Answer>,
     model: String,
 ) -> Result<(), String> {
-    let resolved = resolutions.len();
+    let resolved = answers.len();
     run_blocking(pool, move |conn| {
         conn.transaction(|conn| {
             // Taken once the connection is ours, to keep the touch as close
             // to its commit as possible for incremental sync.
             let now = Utc::now();
-            for (name, resolution) in &resolutions {
+            // Only entries and non-foods can change a shopping category.
+            let recategorized: HashSet<&str> = answers
+                .iter()
+                .filter(|(_, resolution, _)| {
+                    matches!(
+                        resolution,
+                        NameResolution::Entry(_) | NameResolution::NotFood
+                    )
+                })
+                .map(|(name, _, _)| name.as_str())
+                .collect();
+            touch_shopping_items(conn, &recategorized, now)?;
+            for (name, resolution, offered) in &answers {
                 let (disposition, key, estimate) = match resolution {
                     NameResolution::Entry(key) => ("entry", Some(key.as_str()), None),
                     NameResolution::Estimate(estimate) => ("estimate", None, Some(estimate)),
                     NameResolution::NotFood => ("not_food", None, None),
                     NameResolution::Unknown => ("unknown", None, None),
                 };
-                // Only entries and non-foods can change a shopping category.
-                if matches!(
-                    resolution,
-                    NameResolution::Entry(_) | NameResolution::NotFood
-                ) {
-                    touch_shopping_items(conn, name, now)?;
-                }
                 diesel::update(names::table.find(name))
                     .set((
                         names::status.eq(RESOLVED),
@@ -688,9 +706,7 @@ async fn save_resolved(
                         names::kcal_per_100g.eq(estimate.map(|e| e.kcal_per_100g)),
                         names::grams_per_cup.eq(estimate.and_then(|e| e.grams_per_cup)),
                         names::grams_per_piece.eq(estimate.and_then(|e| e.grams_per_piece)),
-                        // The same keys `ask` offered: the catalog is fixed
-                        // for the process's lifetime.
-                        names::candidates.eq(offered(name)),
+                        names::candidates.eq(stored(offered.clone())),
                         names::model.eq(&model),
                         names::error.eq(None::<String>),
                         names::attempts.eq(names::attempts + 1),
@@ -710,32 +726,27 @@ async fn save_resolved(
     Ok(())
 }
 
-/// Mark shopping-list items with this name as changed, so incremental sync
-/// sends their new computed category. Only `updated_at` moves: the item
-/// itself is unchanged, so its version (and clients' pending edits) stay valid.
+/// Mark shopping-list items with any of these names as changed, so
+/// incremental sync sends their new computed category. Only `updated_at`
+/// moves: the item itself is unchanged, so its version (and clients' pending
+/// edits) stay valid. Names match by catalog normalization, which no SQL
+/// pattern expresses, so the live items are read once and matched here.
 fn touch_shopping_items(
     conn: &mut PgConnection,
-    name: &str,
+    changed: &HashSet<&str>,
     now: chrono::DateTime<Utc>,
 ) -> QueryResult<()> {
     use crate::schema::shopping_list_items as items;
-    // Case-insensitive prefilter; the exact match is the catalog normalization.
-    let pattern = name
-        .replace('\\', "\\\\")
-        .replace('%', "\\%")
-        .replace('_', "\\_")
-        .replace(' ', "%");
-    // Unanchored, so spellings with surrounding text or whitespace that
-    // normalize to `name` still reach the exact check below.
-    let pattern = format!("%{pattern}%");
-    let candidates: Vec<(uuid::Uuid, String)> = items::table
+    if changed.is_empty() {
+        return Ok(());
+    }
+    let live: Vec<(uuid::Uuid, String)> = items::table
         .filter(items::deleted_at.is_null())
-        .filter(items::item.ilike(pattern).escape('\\'))
         .select((items::id, items::item))
         .load(conn)?;
-    let ids: Vec<uuid::Uuid> = candidates
+    let ids: Vec<uuid::Uuid> = live
         .into_iter()
-        .filter(|(_, item)| unlearned_name(item).as_deref() == Some(name))
+        .filter(|(_, item)| changed.contains(normalize(item).as_str()))
         .map(|(id, _)| id)
         .collect();
     if !ids.is_empty() {
@@ -826,7 +837,7 @@ mod tests {
             Some(CatalogSync::NewCandidates),
             "answered before candidates were stored"
         );
-        unknown.candidates = Some(offered("zorblax flour"));
+        unknown.candidates = Some(stored(offered("zorblax flour")));
         assert_eq!(catalog_sync(&unknown), None);
         unknown.candidates = Some(vec![Some("all-purpose flour".to_string())]);
         assert_eq!(catalog_sync(&unknown), Some(CatalogSync::NewCandidates));

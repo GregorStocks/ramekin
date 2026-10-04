@@ -297,32 +297,41 @@ pub(crate) struct LearnedRow {
     grams_per_piece: Option<f64>,
 }
 
-/// The resolved rows of a learned-names export, as the server reads them.
-fn load_learned(path: &Path) -> Result<Learned> {
-    let rows: Vec<LearnedRow> = read_json(path)?;
-    rows.into_iter()
-        .filter(|row| row.status == "resolved")
-        .map(|row| {
-            let target = match (
-                row.disposition.as_deref(),
-                row.catalog_key,
-                row.kcal_per_100g,
+impl LearnedRow {
+    /// A resolved row's answer, as the server reads it.
+    pub fn target(&self) -> Result<LearnedTarget> {
+        Ok(
+            match (
+                self.disposition.as_deref(),
+                &self.catalog_key,
+                self.kcal_per_100g,
             ) {
-                (Some("entry"), Some(key), None) => LearnedTarget::Entry(key),
+                (Some("entry"), Some(key), None) => LearnedTarget::Entry(key.clone()),
                 (Some("estimate"), None, Some(kcal_per_100g)) => {
                     LearnedTarget::Estimate(ramekin_core::catalog::EstimatedFood {
                         kcal_per_100g,
-                        grams_per_cup: row.grams_per_cup,
-                        grams_per_piece: row.grams_per_piece,
+                        grams_per_cup: self.grams_per_cup,
+                        grams_per_piece: self.grams_per_piece,
                     })
                 }
                 (Some("not_food"), None, None) => LearnedTarget::NotFood,
                 (Some("unknown"), None, None) => LearnedTarget::Unknown,
                 (disposition, key, _) => anyhow::bail!(
                     "Bad learned row for {:?}: disposition {disposition:?}, key {key:?}",
-                    row.name
+                    self.name
                 ),
-            };
+            },
+        )
+    }
+}
+
+/// The resolved rows of a learned-names export, as the server reads them.
+fn load_learned(path: &Path) -> Result<Learned> {
+    let rows: Vec<LearnedRow> = read_json(path)?;
+    rows.into_iter()
+        .filter(|row| row.status == "resolved")
+        .map(|row| {
+            let target = row.target()?;
             Ok((row.name, target))
         })
         .collect()
@@ -842,7 +851,7 @@ pub fn run(
     Ok(())
 }
 
-pub(crate) const CURATED_PATH: &str = "ramekin-core/src/catalog/data/curated.json";
+const CURATED_PATH: &str = "ramekin-core/src/catalog/data/curated.json";
 const CLEANUP_REPORT: &str = "logs/catalog-alias-cleanup.md";
 
 /// Re-key or remove curated names the parser no longer produces, writing

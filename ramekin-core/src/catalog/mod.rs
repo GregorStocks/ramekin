@@ -241,7 +241,7 @@ struct Catalog {
 }
 
 /// Lowercase and collapse whitespace; every catalog key is stored this way.
-pub(crate) fn normalize(value: &str) -> String {
+pub fn normalize(value: &str) -> String {
     value
         .split_whitespace()
         .collect::<Vec<_>>()
