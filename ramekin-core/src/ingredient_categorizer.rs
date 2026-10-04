@@ -102,12 +102,18 @@ pub fn categorize(item: &str) -> &'static str {
 }
 
 /// `categorize`, using a stored answer for a name the catalog doesn't know.
-/// The committed catalog's category wins, then the learned entry's; otherwise
+/// A name starting with "frozen" is Frozen; otherwise the committed catalog's
+/// category wins, then the learned entry's; otherwise
 /// the item's own keywords decide, then the learned key's. A learned non-food
 /// is treated like a committed one: keywords still apply, since a shopping list
 /// can hold it.
 pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'static str {
     use crate::catalog::{normalize, unlearned_name, LearnedTarget};
+    // The catalog drops "frozen" to find the food ("frozen peaches" are
+    // peaches), but the shopper still buys them in the freezer aisle.
+    if normalize(item).starts_with("frozen ") {
+        return "Frozen";
+    }
     if let Some(category) = crate::catalog::category(item) {
         return category;
     }
@@ -297,6 +303,16 @@ mod tests {
         assert_eq!(categorize("strawberries"), "Produce");
         assert_eq!(categorize("french fries"), "Frozen");
         assert_eq!(categorize("tater tots"), "Frozen");
+    }
+
+    #[test]
+    fn test_frozen_beats_the_catalog_food() {
+        // The catalog resolves these to the fresh fruit.
+        assert_eq!(categorize("frozen peaches"), "Frozen");
+        assert_eq!(categorize("Frozen mango chunks"), "Frozen");
+        assert_eq!(categorize("peaches"), "Produce");
+        // The first alternative decides.
+        assert_eq!(categorize("fresh or frozen corn kernels"), "Produce");
     }
 
     #[test]
