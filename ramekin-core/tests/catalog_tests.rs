@@ -564,6 +564,35 @@ fn dissimilar_alternatives_and_bare_herbs() {
 }
 
 #[test]
+fn bare_produce_alternative_shares_a_product_noun() {
+    let id = |item: &str| match resolve(item) {
+        Resolution::Entry { entry, .. } => entry.id.as_str(),
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    // "Orange food coloring" isn't a catalog name, but the orange is a color
+    // of food coloring, not the fruit.
+    for (item, assumed) in [
+        ("orange or yellow food coloring", "food coloring"),
+        ("peach or nectarine jam", "jam"),
+        // A food standing on its own keeps its own name: a plural, anything
+        // but produce, or produce before a produce noun.
+        ("potatoes or sweet potatoes", "potatoes"),
+        ("butter or coconut oil", "butter"),
+        ("water or chicken broth", "water"),
+        ("lime or blood orange slices", "lime"),
+        // The borrowed noun still comes first.
+        ("red or green bell pepper", "red bell pepper"),
+    ] {
+        assert_eq!(
+            chosen_alternative(item).as_deref(),
+            Some(assumed),
+            "{item:?}"
+        );
+        assert_eq!(id(item), id(assumed), "{item:?}");
+    }
+}
+
+#[test]
 fn salmon_defaults_to_farmed_unless_named() {
     let kcal = |item| food(fdc_id(item).unwrap()).unwrap().kcal_per_100g.unwrap();
     assert_eq!(fdc_id("salmon"), fdc_id("fish, salmon, atlantic, farmed"));
