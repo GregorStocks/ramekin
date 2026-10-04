@@ -1,4 +1,5 @@
 import os
+import shutil
 import signal
 import socket
 import stat
@@ -8,7 +9,6 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SCRIPT_PATH = REPO_ROOT / "scripts" / "run-ui-tests.sh"
 SERVICE_PORT_VARIABLES = (
     "PORT",
     "FIXTURE_PORT",
@@ -17,6 +17,16 @@ SERVICE_PORT_VARIABLES = (
     "UI_PORT_HTTP",
     "PROCESS_COMPOSE_PORT",
 )
+
+
+def _script_copy(tmp_path: Path) -> Path:
+    """Copy the runner into a scratch repo so its logs/ is private to the test:
+    the script cds to its repo root, and parallel tests share the real one."""
+    scripts = tmp_path / "repo" / "scripts"
+    scripts.mkdir(parents=True)
+    for name in ("run-ui-tests.sh", "test-orchestration.sh"):
+        shutil.copy2(REPO_ROOT / "scripts" / name, scripts / name)
+    return scripts / "run-ui-tests.sh"
 
 
 def _write_executable(path: Path, contents: str) -> None:
@@ -67,29 +77,20 @@ exit 7
 """,
     )
 
-    log_path = REPO_ROOT / "logs" / "test-ui.log"
-    original_log = log_path.read_bytes() if log_path.exists() else None
-
     env = _script_env()
     env["PATH"] = f"{bin_dir}:{env['PATH']}"
     env["TEST_ENV_FILE"] = str(env_file)
     env["PROCESS_COMPOSE_PORT"] = "4318"
     env.pop("CI", None)
 
-    try:
-        result = subprocess.run(
-            ["bash", str(SCRIPT_PATH)],
-            cwd=REPO_ROOT,
-            env=env,
-            capture_output=True,
-            text=True,
-            check=False,
-        )
-    finally:
-        if original_log is None:
-            log_path.unlink(missing_ok=True)
-        else:
-            log_path.write_bytes(original_log)
+    result = subprocess.run(
+        ["bash", str(_script_copy(tmp_path))],
+        cwd=tmp_path / "repo",
+        env=env,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
 
     assert marker_path.exists()
     assert result.returncode == 7
@@ -148,8 +149,8 @@ exit 1
     env.pop("CI", None)
 
     proc = subprocess.Popen(
-        ["bash", str(SCRIPT_PATH)],
-        cwd=REPO_ROOT,
+        ["bash", str(_script_copy(tmp_path))],
+        cwd=tmp_path / "repo",
         env=env,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -210,8 +211,8 @@ exit 0
 
     try:
         result = subprocess.run(
-            ["bash", str(SCRIPT_PATH)],
-            cwd=REPO_ROOT,
+            ["bash", str(_script_copy(tmp_path))],
+            cwd=tmp_path / "repo",
             env=env,
             capture_output=True,
             text=True,
@@ -270,8 +271,8 @@ exit 1
     env.pop("CI", None)
 
     proc = subprocess.Popen(
-        ["bash", str(SCRIPT_PATH)],
-        cwd=REPO_ROOT,
+        ["bash", str(_script_copy(tmp_path))],
+        cwd=tmp_path / "repo",
         env=env,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
