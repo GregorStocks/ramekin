@@ -622,6 +622,11 @@ fn a_cooked_note_selects_the_cooked_food() {
         line_fdc("cooked brown rice", Some("cooked")),
         fdc_id("cooked brown rice")
     );
+    // An uncooked entry doesn't name a cooked food.
+    assert!(matches!(
+        resolve_line("dried apricots", Some("cooked")),
+        Resolution::Unresolved
+    ));
 }
 
 #[test]

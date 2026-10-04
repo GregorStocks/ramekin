@@ -94,6 +94,24 @@ def test_valid_decisions_apply():
             "positive value",
         ),
         ({"name": "x", "action": "not_food"}, "reason"),
+        ({"name": "x", "action": "not_food", "reason": True}, "reason"),
+        ({"name": "x", "action": "not_food", "reason": ""}, "reason"),
+        ({"name": "x", "action": "not_food", "reason": "  "}, "reason"),
+        ({"name": "x", "action": "trace", "reason": True}, "reason"),
+        ({"name": "x", "action": "alias", "target": ["garlic"]}, "target"),
+        ({"name": "x", "action": "alias", "target": 1}, "target"),
+        ({"name": "x", "action": "product", "category": ["Produce"]}, "category"),
+        ({"name": "garlic", "action": "category", "category": ["Produce"]}, "category"),
+        (
+            {
+                "name": "x",
+                "action": "entry",
+                "fdc_id": 1,
+                "grams_per_cup_value": 5,
+                "grams_per_cup_source": 5,
+            },
+            "source",
+        ),
     ],
 )
 def test_invalid_decisions_are_rejected(decision, why):
