@@ -1,0 +1,15 @@
+{
+  "title": "Add a handwritten recipe card and a phone screenshot to the photo-extraction eval",
+  "description": "The photo-extraction suite (data/ai-evals/photos/, golden/photo-extraction.json) has five photos, all of printed pages, so it says nothing about the two other kinds of photo users import: a handwritten recipe card and a phone screenshot of a recipe page or app. \
+Take one of each, add them under data/ai-evals/photos/, transcribe them by hand into golden/photo-extraction.json with a `note` on what makes each hard (handwriting, abbreviations, crossed-out amounts; status bar, cut-off text, UI chrome), and rerun `make ai-eval SUITE=photo-extraction` over the current extraction model (anthropic/claude-sonnet-5.5) and the runners-up. \
+This was item 3 of p2-upgrade-ai-models. \
+It was split out because it needs real photos and transcriptions from a person.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ai",
+  ],
+  "created_at": "2026-10-04T16:30:00-07:00",
+  "updated_at": "2026-10-04T16:30:00-07:00",
+}

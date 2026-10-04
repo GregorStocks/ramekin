@@ -16,6 +16,9 @@ pub const GENERATE_RECIPE_PHOTO_PROMPT_NAME: &str = "generate_recipe_photo";
 pub struct GenerateRecipePhotoResult {
     /// Image returned by the provider as a data URL.
     pub image_data_url: String,
+    /// What the provider says the call cost in dollars (OpenRouter's
+    /// `usage.cost`), if it says.
+    pub cost: Option<f64>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -40,8 +43,16 @@ struct Choice {
 }
 
 #[derive(Debug, Deserialize)]
+struct ImageUsage {
+    #[serde(default)]
+    cost: Option<f64>,
+}
+
+#[derive(Debug, Deserialize)]
 struct ImageCompletionResponse {
     choices: Vec<Choice>,
+    #[serde(default)]
+    usage: Option<ImageUsage>,
 }
 
 /// Generate a recipe photo using the configured AI image model.
@@ -92,11 +103,17 @@ pub async fn generate_recipe_photo(
         )));
     }
 
-    let parsed: ImageCompletionResponse = response
-        .json()
-        .await
-        .map_err(|e| AiError::ParseError(format!("Failed to parse image response: {}", e)))?;
+    let parsed: ImageCompletionResponse = response.json().await.map_err(|e| {
+        // The timeout covers reading the body too, which a slow model's
+        // image can outlast: that's the provider, not the answer.
+        if e.is_timeout() {
+            AiError::Api(format!("Image generation timed out: {}", e))
+        } else {
+            AiError::ParseError(format!("Failed to parse image response: {}", e))
+        }
+    })?;
 
+    let cost = parsed.usage.and_then(|usage| usage.cost);
     let image_data_url = parsed
         .choices
         .into_iter()
@@ -107,5 +124,8 @@ pub async fn generate_recipe_photo(
             AiError::ParseError("Image generation response did not include an image".to_string())
         })?;
 
-    Ok(GenerateRecipePhotoResult { image_data_url })
+    Ok(GenerateRecipePhotoResult {
+        image_data_url,
+        cost,
+    })
 }

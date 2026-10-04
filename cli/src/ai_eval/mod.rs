@@ -8,6 +8,7 @@
 //! model and prompt, so reruns are free and a new model only pays for itself.
 
 mod extraction;
+mod judged;
 
 use anyhow::{bail, Context, Result};
 use ramekin_core::ai::{
@@ -24,6 +25,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 const GOLDEN_DIR: &str = "data/ai-evals/golden";
+const SNAPSHOTS_DIR: &str = "data/pipeline-snapshots";
 const RESULTS_DIR: &str = "data/ai-evals";
 const USDA: &str = "ramekin-core/src/catalog/data/usda.json";
 const CURATED: &str = "ramekin-core/src/catalog/data/curated.json";
@@ -32,12 +34,27 @@ pub const BATCH: usize = 40;
 /// Candidate keys offered per name, as the server does.
 const CANDIDATES: usize = 12;
 
-pub const SUITES: [&str; 5] = [
+pub const SUITES: [&str; 10] = [
     "ingredient-weights",
     "food-estimates",
     "ingredient-names",
     "text-extraction",
     "photo-extraction",
+    "tags",
+    "titles",
+    "descriptions",
+    "custom-enrich",
+    "recipe-photos",
+];
+
+/// The suites a person judges (`judged`): their reports need judgments, and
+/// their models are general (or, for photos, image) models.
+const JUDGED: [&str; 5] = [
+    "tags",
+    "titles",
+    "descriptions",
+    "custom-enrich",
+    "recipe-photos",
 ];
 
 // ---------------------------------------------------------------------------
@@ -267,7 +284,10 @@ fn write_golden(root: &Path) -> Result<()> {
             "text-extraction",
             serde_json::to_string_pretty(&extraction::write_golden(root)?)?,
         ),
-    ] {
+    ]
+    .into_iter()
+    .chain(judged::write_golden(root)?)
+    {
         let path = dir.join(format!("{suite}.json"));
         fs::write(&path, json + "\n")?;
         tracing::info!("Wrote {}", path.display());
@@ -335,6 +355,9 @@ struct Spend {
     rejected_calls: usize,
     prompt_tokens: u64,
     completion_tokens: u64,
+    /// Dollars the provider reported for calls that carry no token usage
+    /// (image generation, whose image tokens are priced apart from text).
+    reported_dollars: f64,
 }
 
 impl Spend {
@@ -345,7 +368,9 @@ impl Spend {
     }
 
     fn dollars(&self, price: &Price) -> f64 {
-        self.prompt_tokens as f64 * price.prompt + self.completion_tokens as f64 * price.completion
+        self.prompt_tokens as f64 * price.prompt
+            + self.completion_tokens as f64 * price.completion
+            + self.reported_dollars
     }
 }
 
@@ -764,6 +789,20 @@ macro_rules! extraction_scoring {
     };
 }
 
+/// How the judged suites are judged, for their reports.
+macro_rules! judging {
+    () => {
+        "Judged by a person on a blind page (`logs/ai-evals/<suite>/judge.html`, written by each run): model names hidden, answers shuffled, identical answers merged. Unjudged counts the valid answers no judgment covers yet; judge them and rerun."
+    };
+}
+
+/// How the verdict suites score.
+macro_rules! verdicts {
+    () => {
+        "Each distinct answer is judged best, good or bad (`data/ai-evals/judgments/<suite>.json`, keyed by a hash of the answer, so a model giving an answer already judged reuses its judgment). Good counts best and good answers, over the model's judged answers; best is the share judged among the best for their case."
+    };
+}
+
 fn spec(suite: &str) -> SuiteSpec {
     match suite {
         "ingredient-weights" => SuiteSpec {
@@ -804,16 +843,64 @@ fn spec(suite: &str) -> SuiteSpec {
             columns: extraction::PHOTO_COLUMNS,
             batched: false,
         },
+        "tags" => SuiteSpec {
+            title: "Tags",
+            about: concat!(
+                "Tags picked from a user's tags for a recipe (`suggest_tags`), for 20 pipeline snapshots and a fixed vocabulary of 33 tags (`TAG_VOCABULARY`), against the tags a person ticked as applying (`data/ai-evals/judgments/tags.json`). Exact is the recipes answered with exactly the judged tags; precision and recall count tags over all judged recipes. ",
+                judging!()
+            ),
+            columns: judged::TAG_COLUMNS,
+            batched: false,
+        },
+        "titles" => SuiteSpec {
+            title: "Titles",
+            about: concat!(
+                "A tidied recipe title (`normalize_title`) for 20 pipeline snapshots: 14 with decoration to remove (praise, \"recipe\", a parenthetical, a subtitle) and 6 already plain, which should come back unchanged. ",
+                judging!(),
+                " ",
+                verdicts!()
+            ),
+            columns: judged::VERDICT_COLUMNS,
+            batched: false,
+        },
+        "descriptions" => SuiteSpec {
+            title: "Descriptions",
+            about: concat!(
+                "A menu-style description (`generate_description`) for 15 pipeline snapshots. ",
+                judging!(),
+                " ",
+                verdicts!()
+            ),
+            columns: judged::VERDICT_COLUMNS,
+            batched: false,
+        },
+        "custom-enrich" => SuiteSpec {
+            title: "Custom enrich",
+            about: concat!(
+                "A recipe changed by a user's instruction (`custom_enrich`), for 10 pipeline snapshots each paired with an instruction that suits it (`ENRICH_CASES`: make it vegetarian, halve it, convert to metric…). An answer that doesn't parse as the server's recipe shape is invalid, as in production. ",
+                judging!(),
+                " ",
+                verdicts!()
+            ),
+            columns: judged::VERDICT_COLUMNS,
+            batched: false,
+        },
+        "recipe-photos" => SuiteSpec {
+            title: "Recipe photos",
+            about: concat!(
+                "A generated recipe photo (`generate_recipe_photo`; the models are image models) for 8 pipeline snapshots. Photos are cached under the AI cache directory by model and prompt, since the provider doesn't cache them. Cost is what OpenRouter reported for each photo. ",
+                judging!(),
+                " ",
+                verdicts!()
+            ),
+            columns: judged::VERDICT_COLUMNS,
+            batched: false,
+        },
         other => unreachable!("unknown suite {other}"),
     }
 }
 
-fn render(
-    suite: &str,
-    cases: usize,
-    batch_size: usize,
-    rows: &[(ModelResult, f64, usize, usize, Vec<String>)],
-) -> String {
+fn render(suite: &str, cases: usize, batch_size: usize, rows: &[Row]) -> String {
     let spec = spec(suite);
     let mut out = format!(
         "# AI eval: {}\n\nWritten by `make ai-eval`. {}\n\nGolden set: `{GOLDEN_DIR}/{suite}.json` ({cases} cases), {}. Cost is what the accepted calls cost at OpenRouter's current prices: rejected calls were billed too but carry no usage, so the cost understates models with many of them. A cached rerun spends nothing.\n\n",
@@ -868,6 +955,28 @@ fn render(
     out
 }
 
+/// A model's report row: its result, cost, rejected and truncated calls, and
+/// first rejections.
+type Row = (ModelResult, f64, usize, usize, Vec<String>);
+
+fn row(suite: &str, result: ModelResult, spend: Spend, price: &Price) -> Row {
+    let dollars = spend.dollars(price);
+    tracing::info!(
+        suite,
+        model = result.model,
+        calls = spend.calls,
+        dollars,
+        "evaluated"
+    );
+    (
+        result,
+        dollars,
+        spend.rejected_calls,
+        spend.truncated,
+        spend.rejections,
+    )
+}
+
 pub async fn run(
     root: &Path,
     suite: &str,
@@ -885,7 +994,12 @@ pub async fn run(
         bail!("The batch size must be at least 1");
     }
     let suites: Vec<&str> = match suite {
-        "all" => SUITES.to_vec(),
+        // Recipe photos take image models, so "all" (text models) leaves
+        // them out.
+        "all" => SUITES
+            .into_iter()
+            .filter(|s| *s != "recipe-photos")
+            .collect(),
         name if SUITES.contains(&name) => vec![name],
         other => bail!("Unknown suite {other:?}; one of {SUITES:?} or all"),
     };
@@ -904,49 +1018,54 @@ pub async fn run(
             }
             _ => Vec::new(),
         };
-        for model in models {
-            let mut spend = Spend::default();
-            let outcome = match suite {
-                "ingredient-weights" => {
-                    let golden: Vec<WeightCase> = read_json(&path)?;
-                    cases = golden.len();
-                    eval_weights(model, &golden, batch_size, &mut spend).await
-                }
-                "food-estimates" => {
-                    let golden: Vec<FoodCase> = read_json(&path)?;
-                    cases = golden.len();
-                    eval_foods(model, &golden, batch_size, &mut spend).await
-                }
-                "ingredient-names" => {
-                    let golden: Vec<NameCase> = read_json(&path)?;
-                    cases = golden.len();
-                    eval_names(model, &golden, batch_size, &mut spend).await
-                }
-                "text-extraction" => {
-                    let golden: Vec<extraction::TextCase> = read_json(&path)?;
-                    cases = golden.len();
-                    extraction::eval_text(model, &golden, &mut spend).await
-                }
-                "photo-extraction" => {
-                    let golden: Vec<extraction::PhotoCase> = read_json(&path)?;
-                    cases = golden.len();
-                    extraction::eval_photos(model, &golden, &photos, &mut spend).await
-                }
-                other => unreachable!("unknown suite {other}"),
-            };
-            // A failing model (a timeout) stops the run before any report is
-            // overwritten; everything already answered is cached, so a rerun
-            // without it (or after fixing the cause) is nearly free.
-            let result = outcome.with_context(|| format!("{suite} / {model} failed"))?;
-            let dollars = spend.dollars(&prices[model]);
-            tracing::info!(suite, model, calls = spend.calls, dollars, "evaluated");
-            rows.push((
-                result,
-                dollars,
-                spend.rejected_calls,
-                spend.truncated,
-                spend.rejections,
-            ));
+        if JUDGED.contains(&suite) {
+            // A judged suite asks every model before it can write the page
+            // of their answers, so it runs as a whole.
+            let run = judged::eval(root, suite, models)
+                .await
+                .with_context(|| format!("{suite} failed"))?;
+            cases = run.cases;
+            for (result, spend) in run.results {
+                let price = &prices[&result.model];
+                rows.push(row(suite, result, spend, price));
+            }
+        } else {
+            for model in models {
+                let mut spend = Spend::default();
+                let outcome = match suite {
+                    "ingredient-weights" => {
+                        let golden: Vec<WeightCase> = read_json(&path)?;
+                        cases = golden.len();
+                        eval_weights(model, &golden, batch_size, &mut spend).await
+                    }
+                    "food-estimates" => {
+                        let golden: Vec<FoodCase> = read_json(&path)?;
+                        cases = golden.len();
+                        eval_foods(model, &golden, batch_size, &mut spend).await
+                    }
+                    "ingredient-names" => {
+                        let golden: Vec<NameCase> = read_json(&path)?;
+                        cases = golden.len();
+                        eval_names(model, &golden, batch_size, &mut spend).await
+                    }
+                    "text-extraction" => {
+                        let golden: Vec<extraction::TextCase> = read_json(&path)?;
+                        cases = golden.len();
+                        extraction::eval_text(model, &golden, &mut spend).await
+                    }
+                    "photo-extraction" => {
+                        let golden: Vec<extraction::PhotoCase> = read_json(&path)?;
+                        cases = golden.len();
+                        extraction::eval_photos(model, &golden, &photos, &mut spend).await
+                    }
+                    other => unreachable!("unknown suite {other}"),
+                };
+                // A failing model (a timeout) stops the run before any report is
+                // overwritten; everything already answered is cached, so a rerun
+                // without it (or after fixing the cause) is nearly free.
+                let result = outcome.with_context(|| format!("{suite} / {model} failed"))?;
+                rows.push(row(suite, result, spend, &prices[model]));
+            }
         }
         // Production's batch size is the main report; others sit beside it.
         let name = if batch_size == BATCH || !spec(suite).batched {

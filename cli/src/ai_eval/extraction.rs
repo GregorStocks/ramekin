@@ -22,10 +22,10 @@ use std::path::Path;
 
 use super::{
     client_for, dump, in_batches, pct, read_json, sample, worst, ModelResult, Spend, Split,
+    SNAPSHOTS_DIR,
 };
 
 pub const PHOTOS_DIR: &str = "data/ai-evals/photos";
-const SNAPSHOTS_DIR: &str = "data/pipeline-snapshots";
 
 /// The recipe an extraction should produce.
 #[derive(Debug, Serialize, Deserialize)]
