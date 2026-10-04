@@ -5,9 +5,12 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   resolve: {
-    alias: {
-      'solid-js': 'solid-js/dist/solid.js',
-    },
+    // Exact matches: a bare 'solid-js' key would also rewrite 'solid-js/store'.
+    // Both point at the client builds so signals and effects actually run.
+    alias: [
+      { find: /^solid-js$/, replacement: 'solid-js/dist/solid.js' },
+      { find: /^solid-js\/store$/, replacement: 'solid-js/store/dist/store.js' },
+    ],
   },
   test: {
     include: ['src/**/*.test.ts'],

@@ -67,6 +67,10 @@ export interface RecipeFormState {
   loadDraft: (content: RecipeContent) => void;
   toCreateRecipeRequest: () => CreateRecipeRequest;
   toUpdateRecipeRequest: () => UpdateRecipeRequest;
+  /** Whether the fields differ from what was last loaded or saved. */
+  hasUnsavedChanges: () => boolean;
+  /** Treat the current fields as saved, e.g. right before leaving after a save. */
+  markSaved: () => void;
 }
 
 interface CreateRecipeFormStateOptions {
@@ -131,6 +135,10 @@ export function createRecipeFormState(
     notes: notes(),
   });
 
+  const serializedValues = () => JSON.stringify(values());
+  const [savedValues, setSavedValues] = createSignal(serializedValues());
+  const markSaved = () => setSavedValues(serializedValues());
+
   const loadValues = (nextValues: RecipeFormValues) => {
     setTitle(nextValues.title);
     setDescription(nextValues.description);
@@ -148,6 +156,7 @@ export function createRecipeFormState(
     setDifficulty(nextValues.difficulty);
     setNutritionalInfo(nextValues.nutritionalInfo);
     setNotes(nextValues.notes);
+    markSaved();
   };
 
   const uploadPhotoFile = async (file: File) => {
@@ -248,5 +257,7 @@ export function createRecipeFormState(
       }
       return buildUpdateRecipeRequest(values(), versionId);
     },
+    hasUnsavedChanges: () => serializedValues() !== savedValues(),
+    markSaved,
   };
 }
