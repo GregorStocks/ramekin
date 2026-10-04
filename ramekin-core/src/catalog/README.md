@@ -141,9 +141,13 @@ food is cooked and tries "cooked <item>" first. If the catalog has no cooked for
 stays unresolved rather than being charged as the raw food (unless the item
 already names a cooked food). Anything longer ("cooked and
 crumbled", "cooked, drained, and cut") is a cooking instruction for a raw or dry
-measure. Oil listed "for frying" in a deep-frying amount (over about 500 kcal, roughly
-1/4 cup) is a cooking medium that is mostly discarded, so the calorie estimate
-reports it as unknown instead of charging the full amount. A spoonful for
+measure. A note naming the beverage form of a milk ("carton", "beverage",
+"refrigerated kind") tries "<item> beverage" first, so "coconut milk
+(refrigerated kind, such as Silk)" is the carton drink rather than the canned
+default. Brand names and a bare "refrigerated" don't count: a can of coconut
+milk is often "refrigerated overnight". Oil listed "for frying" in a
+deep-frying amount (over about 500 kcal, roughly 1/4 cup) is a cooking medium
+that is mostly discarded, so the calorie estimate reports it as unknown instead of charging the full amount. A spoonful for
 browning still counts.
 
 Only a match to a specific food ends the search. Trimming never settles for

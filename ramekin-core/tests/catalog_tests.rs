@@ -633,6 +633,47 @@ fn a_cooked_note_selects_the_cooked_food() {
 }
 
 #[test]
+fn a_beverage_note_selects_the_beverage_milk() {
+    let line_fdc = |item, note| match resolve_line(item, note) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    let kcal = |fdc: Option<u32>| food(fdc.unwrap()).unwrap().kcal_per_100g.unwrap();
+    let canned = fdc_id("canned coconut milk");
+    let beverage = fdc_id("coconut milk beverage");
+    assert!(kcal(beverage) * 5.0 < kcal(canned));
+    assert_eq!(line_fdc("coconut milk", None), canned);
+    for note in [
+        "refrigerated kind, such as Silk",
+        "from a carton",
+        "beverage",
+    ] {
+        assert_eq!(line_fdc("coconut milk", Some(note)), beverage, "{note}");
+    }
+    assert_eq!(line_fdc("unsweetened coconut milk", None), canned);
+    assert_eq!(
+        line_fdc("unsweetened coconut milk", Some("from a carton")),
+        beverage
+    );
+    // A chilled can (for whipping) is still canned, and brands aren't signals.
+    for note in [
+        "refrigerated",
+        "refrigerated overnight",
+        "not refrigerated, divided",
+        "chilled overnight",
+        "such as Silk",
+        "so delicious",
+    ] {
+        assert_eq!(line_fdc("coconut milk", Some(note)), canned, "{note}");
+    }
+    // Milks that already default to the beverage keep it.
+    assert_eq!(
+        line_fdc("almond milk", Some("carton")),
+        line_fdc("almond milk", None)
+    );
+}
+
+#[test]
 fn bone_in_weights_are_not_priced_as_meat() {
     for item in ["whole chicken", "bone-in chicken thighs", "chicken wings"] {
         assert!(
