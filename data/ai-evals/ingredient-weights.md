@@ -13,7 +13,6 @@ Golden set: `data/ai-evals/golden/ingredient-weights.json` (120 cases), asked 40
 | anthropic/claude-opus-5.5 | 82% | 93% | 3% | 34% | 0% | 0% | 0 | 0 | $0.2136 |
 | openai/gpt-6.1-sol | 72% | 93% | 3% | 39% | 0% | 0% | 0 | 0 | $0.0634 |
 | openai/gpt-6-luna | 67% | 86% | 8% | 60% | 0% | 0% | 0 | 0 | $0.0034 |
-| x-ai/grok-4.7 | 72% | 90% | 5% | 50% | 0% | 0% | 0 | 0 | $0.2043 |
 
 ## Rejected answers
 
@@ -76,11 +75,3 @@ The first few items each model answered invalidly even alone.
 - pork, oriental style, dehydrated | cup: 50 g (USDA 22 g)
 - restaurant, latino, arroz con grandules (rice and pigeonpeas) | cup: 230 g (USDA 115 g)
 - soybeans, mature seeds, sprouted, cooked, steamed, with salt | cup: 180 g (USDA 94 g)
-
-### x-ai/grok-4.7
-
-- candies, hershey's, almond joy bites | piece: 8 g (USDA 2.2222222222222223 g)
-- pork, oriental style, dehydrated | cup: 70 g (USDA 22 g)
-- duck, young duckling, domesticated, white pekin, leg, meat and skin, bone in, cooked, roasted | leg: 250 g (USDA 92 g)
-- domino's 14" cheese pizza, ultimate deep dish crust | slice: 210 g (USDA 118 g)
-- restaurant, latino, arroz con grandules (rice and pigeonpeas) | cup: 201 g (USDA 115 g)

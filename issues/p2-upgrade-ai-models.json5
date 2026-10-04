@@ -20,10 +20,13 @@ The AI cache key includes the model, so stale cached responses won't leak throug
 \n\
 Also relevant: a 2026-07-28 prod job failed on an upstream Gemini rate limit (see p3-openrouter-finish-reason-error).\n\
 \n\
-Progress (2026-10-03): `make ai-eval` (data/ai-evals/) now scores models on committed golden sets for the three ingredient prompts. \
-Ingredient names and weights moved to google/gemini-3.8-flash via RAMEKIN_AI_INGREDIENT_MODEL / AiConfig::for_ingredients (with a 120 s timeout and 16k max_tokens). \
+Progress (2026-10-03): `make ai-eval` (data/ai-evals/) scores models on committed golden sets for the three ingredient prompts. \
+Ingredient names and weights use RAMEKIN_AI_INGREDIENT_MODEL / AiConfig::for_ingredients (120 s timeout, 16k max_tokens), now anthropic/claude-opus-5.5: best or tied on every reliable measure once the eval and client bugs below were fixed. \
 Remaining, as further suites in the same framework: text and photo extraction (scored against pipeline recipes and a few hand-checked photos), then human-judged suites (tags, since existing tags aren't reliable ground truth; titles; descriptions; custom enrich; recipe photos to replace gemini-2.5-flash-image) that render a blind side-by-side page whose picks become golden answers. \
-Findings so far: Anthropic models ignore json_object mode via OpenRouter and answer in prose (about 45% of items rejected), so using them needs json_schema structured output; reasoning models need far more than 4096 max_tokens; gemini-2.5-flash alone (batch of 1) answers 'unknown' for 46% of foods it estimates fine in a batch.",
+Lessons for the next suites: when a strong model looks weak, check the measurement first. \
+Anthropic models wrap JSON in markdown fences or explain before it (the client now extracts it); prompts need to spell out edge cases (not-food fragments, cuts counting as pieces), and a vague prompt penalizes careful models most; golden sets drawn from catalog aliases need equivalence scoring (the catalog has several entries per food). \
+Reasoning models need far more than 4096 max_tokens. \
+Batch size (40 vs 1) changed current models by under 5 points.",
   "status": "open",
   "priority": 2,
   "type": "task",

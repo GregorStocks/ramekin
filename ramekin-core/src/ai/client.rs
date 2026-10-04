@@ -75,7 +75,7 @@ pub async fn complete_json<T: serde::de::DeserializeOwned>(
 ) -> Result<(T, ChatResponse), AiError> {
     let response = ai_client.complete(prompt_name, request).await?;
 
-    let parse_err = match serde_json::from_str::<T>(&response.content) {
+    let parse_err = match parse_json::<T>(&response.content) {
         Ok(parsed) => return Ok((parsed, response)),
         Err(e) => e,
     };
@@ -93,7 +93,7 @@ pub async fn complete_json<T: serde::de::DeserializeOwned>(
         parse_err
     );
     let retry = ai_client.complete(prompt_name, request).await?;
-    match serde_json::from_str::<T>(&retry.content) {
+    match parse_json::<T>(&retry.content) {
         Ok(parsed) => Ok((parsed, retry)),
         Err(e) => {
             ai_client.forget(prompt_name, &request.messages);
@@ -211,10 +211,67 @@ impl CachingAiClient {
 /// Non-JSON requests just need non-empty content.
 fn response_content_usable(json_response: bool, content: &str) -> bool {
     if json_response {
-        serde_json::from_str::<serde_json::Value>(content).is_ok()
+        json_candidates(content)
+            .iter()
+            .any(|candidate| serde_json::from_str::<serde_json::Value>(candidate).is_ok())
     } else {
         !content.trim().is_empty()
     }
+}
+
+/// Where the JSON may be in a JSON-mode response, in order: the whole
+/// content, each fenced block (opening fence through its closing fence,
+/// whatever text surrounds it, without its "json" info string), and the object
+/// the content ends with ("I chose X.\n\n{...}"). Some providers (Anthropic
+/// models through OpenRouter) don't honor JSON mode and answer these ways.
+/// Callers try each against the type they want (`complete_json`).
+fn json_candidates(content: &str) -> Vec<&str> {
+    let mut candidates = vec![content.trim()];
+    let mut rest = content;
+    while let Some(open) = rest.find("```") {
+        let Some(after_open) = rest.get(open + 3..) else {
+            break;
+        };
+        let Some(close) = after_open.find("```") else {
+            break;
+        };
+        let (Some(inner), Some(next)) = (after_open.get(..close), after_open.get(close + 3..))
+        else {
+            break;
+        };
+        candidates.push(match inner.split_once('\n') {
+            Some((info, body)) if !info.contains('{') && !info.contains('[') => body.trim(),
+            _ => inner.trim(),
+        });
+        rest = next;
+    }
+    let trimmed = content.trim_end();
+    if trimmed.ends_with('}') {
+        // The earliest '{' from which the rest is valid JSON is the object.
+        if let Some(tail) = trimmed
+            .match_indices('{')
+            .filter_map(|(start, _)| trimmed.get(start..))
+            .find(|tail| serde_json::from_str::<serde_json::Value>(tail).is_ok())
+        {
+            candidates.push(tail);
+        }
+    }
+    candidates
+}
+
+/// The first JSON candidate that deserializes as `T`, or the whole content's
+/// error.
+fn parse_json<T: serde::de::DeserializeOwned>(content: &str) -> Result<T, serde_json::Error> {
+    let mut first_error = None;
+    for candidate in json_candidates(content) {
+        match serde_json::from_str::<T>(candidate) {
+            Ok(parsed) => return Ok(parsed),
+            Err(e) => {
+                first_error.get_or_insert(e);
+            }
+        }
+    }
+    Err(first_error.expect("there is always the whole-content candidate"))
 }
 
 /// First ~200 chars of a response, for inclusion in error messages.
@@ -524,6 +581,37 @@ mod tests {
         assert!(cache.get(&key).is_none());
     }
 
+    #[derive(Debug, PartialEq, serde::Deserialize)]
+    struct Answer {
+        answer: u32,
+    }
+
+    #[test]
+    fn json_is_parsed_from_fences_or_after_reasoning() {
+        for content in [
+            "{\"answer\": 1}",
+            "```json\n{\"answer\": 1}\n```",
+            "  ```\n{\"answer\": 1}\n```  ",
+            "The name means X, so I chose it.\n\n{\"answer\": 1}",
+            "Reasoning first.\n```json\n{\"answer\": 1}\n```\n",
+            "```json\n{\"answer\": 1}\n```\nThat's my answer.",
+            "Example:\n```\nnot json\n```\nAnswer:\n```json\n{\"answer\": 1}\n```\nDone.",
+            // Valid JSON of the wrong shape first (an echoed input), then the answer.
+            "Input:\n```json\n{\"name\": \"x\"}\n```\nAnswer:\n```json\n{\"answer\": 1}\n```",
+        ] {
+            assert_eq!(
+                parse_json::<Answer>(content).unwrap(),
+                Answer { answer: 1 },
+                "{content:?}"
+            );
+            assert!(response_content_usable(true, content), "{content:?}");
+        }
+        for content in ["No JSON here at all.", "```json\n{\"answer\": \n```"] {
+            assert!(parse_json::<Answer>(content).is_err(), "{content:?}");
+        }
+        assert!(!response_content_usable(true, "No JSON here at all."));
+    }
+
     #[test]
     fn invalid_and_truncated_answers_are_answer_specific() {
         // A smaller request may fix these, so batch callers split rather than
@@ -558,9 +646,15 @@ mod tests {
         assert!(!response_content_usable(true, r#"{""#));
         assert!(!response_content_usable(true, r#"{"normalized_title": ""#));
         assert!(!response_content_usable(true, ""));
-        assert!(!response_content_usable(
+        // Fenced JSON is usable: some providers ignore JSON mode and fence it.
+        assert!(response_content_usable(
             true,
             "```json\n{\"normalized_title\": \"Tuna Boats\"}\n```"
+        ));
+        // A fence around truncated JSON isn't.
+        assert!(!response_content_usable(
+            true,
+            "```json\n{\"normalized_title\": \n```"
         ));
     }
 
