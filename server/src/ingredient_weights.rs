@@ -18,7 +18,7 @@ use ramekin_core::ai::{estimate_ingredient_weights, AiError};
 use ramekin_core::nutrition::{WeightKey, Weights};
 
 use crate::db::{run_blocking, DbPool};
-use crate::ingredient_names::{Step, BATCH, BATCH_SIZE, CLIENT, FAILED, PENDING, RESOLVED};
+use crate::ingredient_names::{Step, Work, BATCH, BATCH_SIZE, CLIENT, FAILED, PENDING, RESOLVED};
 use crate::schema::ingredient_weight_estimates as weights;
 
 /// Queue weight gaps for estimating. Gaps already queued or estimated are
@@ -165,15 +165,19 @@ pub fn requeue_failed(conn: &mut PgConnection, foods: &[String]) -> QueryResult<
 }
 
 /// Estimate one batch of pending weights, taken under the shared batch lock.
-pub(crate) async fn estimate_next_batch(pool: &Arc<DbPool>) -> Result<Step, String> {
+pub(crate) async fn estimate_next_batch(pool: &Arc<DbPool>, work: Work) -> Result<Step, String> {
     let _batch = BATCH.lock().await;
     let batch: Vec<(String, String)> = run_blocking(pool, move |conn| {
-        weights::table
-            .filter(weights::status.eq(PENDING))
+        let query = weights::table
             .select((weights::food, weights::unit))
             .order((weights::food, weights::unit))
             .limit(BATCH_SIZE)
-            .load(conn)
+            .into_boxed();
+        match work {
+            Work::Pending => query.filter(weights::status.eq(PENDING)),
+            Work::Reasked => query.filter(weights::reasked),
+        }
+        .load(conn)
     })
     .await
     .map_err(|e| e.to_string())?
@@ -257,6 +261,7 @@ async fn save_estimated(
                 diesel::update(weights::table.find((&key.food, &key.unit)))
                     .set((
                         weights::status.eq(RESOLVED),
+                        weights::reasked.eq(false),
                         weights::grams.eq(grams),
                         weights::model.eq(&model),
                         weights::error.eq(None::<String>),
@@ -276,6 +281,9 @@ async fn save_estimated(
 }
 
 /// Record `error` on `items`, and whether it was the provider's.
+/// Record a failed attempt. A pending gap is marked failed. An estimate being
+/// re-asked keeps its old value: after a provider failure it stays queued for
+/// the worker's retry; after an invalid answer the re-ask is given up.
 async fn fail(
     pool: &Arc<DbPool>,
     items: Vec<(String, String)>,
@@ -290,23 +298,45 @@ async fn fail(
     );
     let message = error.clone();
     let now = Utc::now();
-    run_blocking(pool, move |conn| {
+    let given_up = run_blocking(pool, move |conn| {
         conn.transaction(|conn| {
+            let mut given_up = 0;
             for (food, unit) in &items {
-                diesel::update(weights::table.find((food, unit)))
-                    .set((
-                        weights::status.eq(FAILED),
-                        weights::error.eq(&message),
-                        weights::attempts.eq(weights::attempts + 1),
-                        weights::updated_at.eq(now),
-                    ))
-                    .execute(conn)?;
+                diesel::update(
+                    weights::table
+                        .find((food, unit))
+                        .filter(weights::status.eq(PENDING)),
+                )
+                .set((
+                    weights::status.eq(FAILED),
+                    weights::error.eq(&message),
+                    weights::attempts.eq(weights::attempts + 1),
+                    weights::updated_at.eq(now),
+                ))
+                .execute(conn)?;
+                if !provider_wide {
+                    given_up +=
+                        diesel::update(weights::table.find((food, unit)).filter(weights::reasked))
+                            .set((
+                                weights::reasked.eq(false),
+                                weights::attempts.eq(weights::attempts + 1),
+                                weights::updated_at.eq(now),
+                            ))
+                            .execute(conn)?;
+                }
             }
-            QueryResult::Ok(())
+            QueryResult::Ok(given_up)
         })
     })
     .await
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
+    if given_up > 0 {
+        tracing::error!(
+            weights = given_up,
+            "re-asking ingredient weights failed; keeping their earlier estimates: {}",
+            error
+        );
+    }
     Ok((error, provider_wide))
 }

@@ -216,6 +216,21 @@ async fn main() {
     if names + weights > 0 {
         tracing::info!(names, weights, "queued stored ingredient names and weights");
     }
+    // Answers from an earlier ingredient model are asked again (and served
+    // until replaced), so a model change reaches the stored answers.
+    if let Ok(config) = ramekin_core::ai::AiConfig::from_env() {
+        let model = config.for_ingredients().model;
+        let (names, weights) = ingredient_names::reask_other_models(&pool, &model)
+            .expect("Failed to flag ingredient answers from other models");
+        if names + weights > 0 {
+            tracing::info!(
+                names,
+                weights,
+                model,
+                "re-asking ingredient answers from other models"
+            );
+        }
+    }
     ingredient_names::spawn_worker(pool.clone());
 
     // Public routes (no auth required)

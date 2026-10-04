@@ -27,6 +27,7 @@ diesel::table! {
         kcal_per_100g -> Nullable<Float8>,
         grams_per_cup -> Nullable<Float8>,
         grams_per_piece -> Nullable<Float8>,
+        reasked -> Bool,
     }
 }
 
@@ -41,6 +42,7 @@ diesel::table! {
         attempts -> Int4,
         created_at -> Timestamptz,
         updated_at -> Timestamptz,
+        reasked -> Bool,
     }
 }
 

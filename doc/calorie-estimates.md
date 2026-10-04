@@ -106,6 +106,10 @@ is stored once per name and used by later estimates:
   rejected), labeled "(estimated calories)";
 - "not food".
 
+When the ingredient model changes, the server flags answers made by any other
+model at startup and asks them again, serving the old answer until the new one
+replaces it (an invalid new answer leaves the old one in place).
+
 Saving never waits for it, and estimating never calls the LLM:
 - a name not resolved yet reads as unknown ("Not recognized");
 - so does a name the model couldn't place;
