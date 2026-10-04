@@ -408,6 +408,27 @@ fn cue(word: &str) -> Option<Quantity> {
 /// minutes", "410 calories", or "cal 410" before it). Otherwise it counts
 /// servings if a servings word came earlier in its sentence ("serves 4
 /// generously, 6 moderately"), and nothing if not ("130 to 135 degrees").
+/// Whether a sentence labels a recipe time ("Prep time: 10 minutes", "Cook:
+/// 20 min", "TOTAL TIME", "Ready in 30 minutes"), as opposed to a step that
+/// happens to say "cook ... about 2 minutes".
+fn labels_a_time(sentence: &str) -> bool {
+    let words: Vec<&str> = sentence.split_whitespace().collect();
+    let text = words.join(" ").to_lowercase();
+    ["prep", "cook", "cooking", "total", "active", "time"]
+        .iter()
+        .any(|label| text.contains(&format!("{label}:")) || text.contains(&format!("{label} :")))
+        || [
+            "prep time",
+            "cook time",
+            "cooking time",
+            "total time",
+            "active time",
+            "ready in",
+        ]
+        .iter()
+        .any(|phrase| text.contains(phrase))
+}
+
 /// The servings, times and nutrition a text states as a recipe's metadata,
 /// counted so a quantity stated once backs one answered field. A time counts
 /// only in a sentence that labels one ("Prep: 10 minutes", "Total time",
@@ -415,12 +436,7 @@ fn cue(word: &str) -> Option<Quantity> {
 fn quantities(text: &str) -> HashMap<(String, Quantity), usize> {
     let mut stated = HashMap::new();
     for sentence in sentences(text) {
-        let labelled = tokens(&sentence).iter().any(|w| {
-            matches!(
-                w.as_str(),
-                "prep" | "cook" | "cooking" | "total" | "time" | "ready" | "active"
-            )
-        });
+        let labelled = labels_a_time(&sentence);
         for (number, quantity) in classify(&sentence) {
             if let Some(quantity) = quantity.filter(|q| labelled || !q.is_time()) {
                 *stated.entry((number, quantity)).or_insert(0) += 1;
@@ -682,10 +698,21 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
         lines_answered: answered.len(),
         missing: unmatched(&wanted, &answered),
         extra: unmatched(&answered, &wanted),
-        instructions_recall: ratio(
-            matched(&counts(&expected_tokens), &kept),
-            expected_tokens.len(),
-        ),
+        instructions_recall: {
+            let in_field = ratio(
+                matched(&counts(&expected_tokens), &counts(&answer_tokens)),
+                expected_tokens.len(),
+            );
+            // Notes can hold a moved closing tip, not stand in for the steps.
+            if in_field >= 0.5 {
+                ratio(
+                    matched(&counts(&expected_tokens), &kept),
+                    expected_tokens.len(),
+                )
+            } else {
+                in_field
+            }
+        },
         instructions_precision: ratio(
             matched(&counts(&answer_tokens), &allowed),
             answer_tokens.len(),
@@ -943,7 +970,8 @@ pub async fn eval_text(model: &str, cases: &[TextCase], spend: &mut Spend) -> Re
                         .push((0.5, format!("{}: warned {warning:?}", case.id)));
                 }
             }
-            None if left_blank(answer) => left_empty += 1,
+            // The prompt asks for empty fields and a warning saying why.
+            None if left_blank(answer) && !warnings.is_empty() => left_empty += 1,
             None => totals.misses.push((
                 2.0,
                 format!(
@@ -1147,6 +1175,14 @@ mod tests {
     }
 
     #[test]
+    fn steps_in_notes_alone_dont_count() {
+        let mut answer = recipe("1 cup rice\n1 bay leaf", "");
+        answer.notes = Some("Simmer the rice.".into());
+        let score = score(&answer, &expected(), "Serves 4. Simmer the rice.");
+        assert_eq!(score.instructions_recall, 0.0);
+    }
+
+    #[test]
     fn one_stated_time_backs_one_field() {
         let mut answer = recipe("1 cup rice\n1 bay leaf", "Bake 30 minutes.");
         answer.prep_time = Some("30 minutes".into());
@@ -1165,6 +1201,9 @@ mod tests {
 
     #[test]
     fn only_labelled_times_are_metadata() {
+        assert!(!labels_a_time("Cook, stirring, about 2 minutes"));
+        assert!(labels_a_time("SERVES 4 TIME: 30 MINUTES"));
+        assert!(labels_a_time("Ready in 1 hour"));
         let stated = quantities("Chill 30 minutes. Total time: 45 minutes. Serves 4.");
         assert!(!stated.contains_key(&("30".into(), Quantity::Minutes)));
         assert!(stated.contains_key(&("45".into(), Quantity::Minutes)));
