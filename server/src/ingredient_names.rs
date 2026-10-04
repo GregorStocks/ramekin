@@ -558,24 +558,34 @@ async fn work_pass(pool: &Arc<DbPool>) -> Result<(), String> {
     // A queue whose provider failed sits out the rest of the pass: its next
     // batch would fail the same way, so it waits for the worker's retry. An
     // idle queue is checked again every turn, since saves keep adding work.
-    // Pending work goes first in each turn: an answer being re-asked is still
-    // served meanwhile. Each turn then takes one re-ask batch per queue, so
-    // new work waits behind at most one batch, and a steady stream of new
-    // work can't starve re-asks.
+    // Pending work in either queue goes first; an answer being re-asked of a
+    // newer model is still served, so its batch waits until nothing is
+    // pending, one at a time, so new work never waits behind a backlog.
     let (mut names_down, mut weights_down) = (false, false);
     loop {
         let mut worked = false;
-        for work in [Work::Pending, Work::Reasked] {
-            if !names_down {
-                let step = resolve_next_batch(pool, None, work).await?;
-                names_down = matches!(step, Step::ProviderFailed(_));
-                worked |= record(step, &mut first_error);
-            }
-            if !weights_down {
-                let step = crate::ingredient_weights::estimate_next_batch(pool, work).await?;
-                weights_down = matches!(step, Step::ProviderFailed(_));
-                worked |= record(step, &mut first_error);
-            }
+        if !names_down {
+            let step = resolve_next_batch(pool, None, Work::Pending).await?;
+            names_down = matches!(step, Step::ProviderFailed(_));
+            worked |= record(step, &mut first_error);
+        }
+        if !weights_down {
+            let step = crate::ingredient_weights::estimate_next_batch(pool, Work::Pending).await?;
+            weights_down = matches!(step, Step::ProviderFailed(_));
+            worked |= record(step, &mut first_error);
+        }
+        if worked {
+            continue;
+        }
+        if !names_down {
+            let step = resolve_next_batch(pool, None, Work::Reasked).await?;
+            names_down = matches!(step, Step::ProviderFailed(_));
+            worked |= record(step, &mut first_error);
+        }
+        if !worked && !weights_down {
+            let step = crate::ingredient_weights::estimate_next_batch(pool, Work::Reasked).await?;
+            weights_down = matches!(step, Step::ProviderFailed(_));
+            worked |= record(step, &mut first_error);
         }
         if !worked {
             break;
@@ -633,7 +643,7 @@ async fn resolve_next_batch(
     }
     // A failed answer is recorded on its names; failing to record it would
     // leave them pending, so `Err` stops rather than asking again.
-    Ok(match resolve_batch(pool, batch).await? {
+    Ok(match resolve_batch(pool, batch, work).await? {
         Batch::Resolved => Step::Done,
         Batch::NamesFailed(e) => Step::Failed(e),
         Batch::ProviderFailed(e) => Step::ProviderFailed(e),
@@ -685,8 +695,12 @@ enum Batch {
 /// doesn't fail the others; only the names that fail on their own are marked
 /// failed. Provider and configuration errors fail the batch at once. `Err`
 /// means an outcome couldn't be saved.
-async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, String> {
-    let error = match ask(&batch).await {
+async fn resolve_batch(
+    pool: &Arc<DbPool>,
+    batch: Vec<String>,
+    work: Work,
+) -> Result<Batch, String> {
+    let error = match ask(&batch, work).await {
         Ok((resolutions, model)) => {
             save_resolved(pool, resolutions, model).await?;
             return Ok(Batch::Resolved);
@@ -702,7 +716,7 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, 
     let mut outcome = Batch::Resolved;
     for name in batch {
         let single = vec![name];
-        match ask(&single).await {
+        match ask(&single, work).await {
             Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await?,
             Err(error) => match fail(pool, single, error).await? {
                 Batch::NamesFailed(e) => {
@@ -734,7 +748,8 @@ async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<
 type Answer = (String, NameResolution, Vec<String>);
 
 /// One LLM call for `batch`: each name's answer, and the model that gave it.
-async fn ask(batch: &[String]) -> Result<(Vec<Answer>, String), AiError> {
+/// A re-ask skips the cache, which holds the answer being questioned.
+async fn ask(batch: &[String], work: Work) -> Result<(Vec<Answer>, String), AiError> {
     let prompt: Vec<NameQuery> = batch
         .iter()
         .map(|name| NameQuery {
@@ -744,7 +759,8 @@ async fn ask(batch: &[String]) -> Result<(Vec<Answer>, String), AiError> {
         })
         .collect();
     let (client, model) = CLIENT.as_ref().map_err(|e| AiError::Config(e.clone()))?;
-    let mut result = resolve_ingredient_names(client, &prompt).await?;
+    let fresh = matches!(work, Work::Reasked);
+    let mut result = resolve_ingredient_names(client, &prompt, fresh).await?;
     let answers = prompt
         .into_iter()
         .filter_map(|query| {
