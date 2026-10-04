@@ -38,6 +38,11 @@ pub struct Expected {
     /// headnote), in its instructions or notes.
     #[serde(default)]
     also_allowed: String,
+    /// Source text that may appear in an answer's description or notes but
+    /// needn't (a personal aside around a pasted recipe), unlike the
+    /// boilerplate beside it.
+    #[serde(default, skip_serializing_if = "String::is_empty")]
+    incidental: String,
     /// The page has prose not transcribed here (a long headnote), so an
     /// answer's description and notes can't be checked against the source.
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
@@ -110,14 +115,19 @@ struct SnapshotIngredient {
     section: Option<String>,
 }
 
-const CHATTER: [(&str, &str); 2] = [
+/// Blog or personal text around a pasted recipe: before it, after it, and
+/// the personal asides in it that a description or note may keep (the rest
+/// is boilerplate that shouldn't reach the draft).
+const CHATTER: [(&str, &str, &str); 2] = [
     (
         "Posted by Jen · March 3 · 14 comments\n\nThis has been our family's favorite for years! The kids ask for it every single week, and it freezes beautifully. Scroll down for the printable recipe card.\n\nJump to Recipe · Print Recipe\n",
         "\nDid you make this? Leave a star rating and tag us on Instagram!\n\nYou might also like: Easy Weeknight Chili · The Best Banana Bread · 5-Minute Guacamole\n\n© 2025 Jen's Kitchen. All rights reserved.",
+        "This has been our family's favorite for years! The kids ask for it every single week, and it freezes beautifully.",
     ),
     (
         "Mom's recipe, copied from the card in her recipe box. She always made this for Sunday dinner.\n\n",
         "\nNote to self: double it next time, it went fast.",
+        "Mom's recipe, copied from the card in her recipe box. She always made this for Sunday dinner. Note to self: double it next time, it went fast.",
     ),
 ];
 
@@ -178,7 +188,7 @@ pub fn write_golden(root: &Path) -> Result<Vec<TextCase>> {
             let description = snapshot.description.filter(|_| !bare);
             let servings = snapshot.servings.filter(|_| !bare);
             let mut text = String::new();
-            if let Some((before, _)) = chatter {
+            if let Some((before, _, _)) = chatter {
                 text.push_str(before);
                 text.push('\n');
             }
@@ -201,7 +211,7 @@ pub fn write_golden(root: &Path) -> Result<Vec<TextCase>> {
             text.push_str("\n\nInstructions\n");
             text.push_str(&snapshot.instructions);
             text.push('\n');
-            if let Some((_, after)) = chatter {
+            if let Some((_, after, _)) = chatter {
                 text.push_str(after);
                 text.push('\n');
             }
@@ -213,6 +223,7 @@ pub fn write_golden(root: &Path) -> Result<Vec<TextCase>> {
                     ingredients,
                     instructions: snapshot.instructions,
                     also_allowed: description.unwrap_or_default(),
+                    incidental: chatter.map_or("", |(_, _, aside)| aside).into(),
                     prose_untranscribed: false,
                     servings,
                     prep_time: None,
@@ -307,17 +318,20 @@ fn is_number(token: &str) -> bool {
     token.chars().all(|c| c.is_ascii_digit() || c == '/')
 }
 
-/// The numbers in a text ("2 to 2½ hours" has 2, 2 and 1/2).
-fn numbers(text: &str) -> Vec<String> {
-    tokens(text).into_iter().filter(|t| is_number(t)).collect()
-}
-
 /// What a number in a recipe counts.
 #[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
 enum Quantity {
     Servings,
-    Time,
+    Seconds,
+    Minutes,
+    Hours,
     Nutrition,
+}
+
+impl Quantity {
+    fn is_time(self) -> bool {
+        matches!(self, Self::Seconds | Self::Minutes | Self::Hours)
+    }
 }
 
 /// The quantity a word says its numbers count ("serves 4", "30 minutes",
@@ -328,12 +342,12 @@ fn cue(word: &str) -> Option<Quantity> {
         "serves" | "serving" | "servings" | "makes" | "yield" | "yields" | "people" | "portions"
     ) {
         Some(Quantity::Servings)
-    } else if ["minute", "hour", "second"]
-        .iter()
-        .any(|p| word.starts_with(p))
-        || matches!(word, "min" | "mins" | "hr" | "hrs")
-    {
-        Some(Quantity::Time)
+    } else if word.starts_with("second") {
+        Some(Quantity::Seconds)
+    } else if word.starts_with("minute") || matches!(word, "min" | "mins") {
+        Some(Quantity::Minutes)
+    } else if word.starts_with("hour") || matches!(word, "hr" | "hrs") {
+        Some(Quantity::Hours)
     } else if [
         "cal", "kcal", "fat", "protein", "carb", "sodium", "sugar", "fiber",
     ]
@@ -352,7 +366,16 @@ fn cue(word: &str) -> Option<Quantity> {
 /// servings if a servings word came earlier in its sentence ("serves 4
 /// generously, 6 moderately"), and nothing if not ("130 to 135 degrees").
 fn quantities(text: &str) -> HashSet<(String, Quantity)> {
-    let mut stated = HashSet::new();
+    classify(text)
+        .into_iter()
+        .filter_map(|(number, quantity)| Some((number, quantity?)))
+        .collect()
+}
+
+/// Every number in a text, in order, with what it counts if anything says
+/// (see `quantities`).
+fn classify(text: &str) -> Vec<(String, Option<Quantity>)> {
+    let mut stated = Vec::new();
     for sentence in text.split(['.', ';', '\n']) {
         let words = tokens(sentence);
         let mut after_servings_word = false;
@@ -383,16 +406,14 @@ fn quantities(text: &str) -> HashSet<(String, Quantity)> {
             }
             let before = start.checked_sub(1).and_then(|b| cue(&words[b]));
             let quantity = match (before, words.get(i).and_then(|w| cue(w))) {
-                (_, Some(q @ (Quantity::Time | Quantity::Nutrition))) => Some(q),
+                (_, Some(q)) if q != Quantity::Servings => Some(q),
                 (Some(Quantity::Nutrition), _) => Some(Quantity::Nutrition),
                 (_, Some(Quantity::Servings)) => Some(Quantity::Servings),
                 _ if after_servings_word => Some(Quantity::Servings),
                 _ => None,
             };
-            if let Some(quantity) = quantity {
-                for word in words[start..i].iter().filter(|w| is_number(w)) {
-                    stated.insert((word.clone(), quantity));
-                }
+            for word in words[start..i].iter().filter(|w| is_number(w)) {
+                stated.push((word.clone(), quantity));
             }
         }
     }
@@ -447,27 +468,32 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
     let source_words: HashSet<String> = tokens(source).into_iter().collect();
     let unsourced = |text: &str| tokens(text).iter().any(|w| !source_words.contains(w));
     let mut invented: Vec<&'static str> = [
-        ("servings", &answer.servings, Quantity::Servings),
-        ("prep_time", &answer.prep_time, Quantity::Time),
-        ("cook_time", &answer.cook_time, Quantity::Time),
-        ("total_time", &answer.total_time, Quantity::Time),
+        ("servings", &answer.servings, Some(Quantity::Servings)),
+        // A bare number in a time field may be in any unit the source uses.
+        ("prep_time", &answer.prep_time, None),
+        ("cook_time", &answer.cook_time, None),
+        ("total_time", &answer.total_time, None),
         (
             "nutritional_info",
             &answer.nutritional_info,
-            Quantity::Nutrition,
+            Some(Quantity::Nutrition),
         ),
     ]
     .into_iter()
     .filter(|(_, value, quantity)| {
         value.as_deref().is_some_and(|v| {
-            let numbers = numbers(v);
+            let numbers = classify(v);
             if numbers.is_empty() {
                 // "serves a crowd", "quick": words the source never uses.
                 unsourced(v)
             } else {
+                // "30 hours" isn't the source's "30 minutes".
                 numbers
                     .into_iter()
-                    .any(|n| !stated.contains(&(n, *quantity)))
+                    .any(|(n, said)| match said.or(*quantity) {
+                        Some(q) => !stated.contains(&(n, q)),
+                        None => !stated.iter().any(|(m, q)| *m == n && q.is_time()),
+                    })
             }
         })
     })
@@ -498,11 +524,17 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
         invented.push("rating");
     }
 
-    // Every number, as often as it appears: "2 hours, plus 2 hours
-    // chilling" isn't kept by "2 hours".
+    // Every number with its unit, as often as it appears: "2 hours, plus 2
+    // hours chilling" isn't kept by "2 hours", nor "30 minutes" by "30 hours".
     let has_numbers = |value: &Option<String>, of: &str| {
-        let have = numbers(value.as_deref().unwrap_or_default());
-        let want = numbers(of);
+        let keyed = |text: &str| -> Vec<String> {
+            classify(text)
+                .into_iter()
+                .map(|(n, q)| format!("{n} {:?}", q.filter(|q| q.is_time())))
+                .collect()
+        };
+        let have = keyed(value.as_deref().unwrap_or_default());
+        let want = keyed(of);
         matched(&counts(&want), &counts(&have)) == want.len()
     };
     let answered_times = [&answer.prep_time, &answer.cook_time, &answer.total_time];
@@ -538,6 +570,12 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
         let answered = counts(answer_tokens.iter().chain(&notes).chain(&description));
         ratio(matched(&counts(&extra_text), &answered), extra_text.len())
     });
+    // Against the recipe's own text, not the whole input: blog comments and
+    // a copyright line copied into notes still pollute the draft.
+    let recipe_words: HashSet<String> = tokens(&expected.source())
+        .into_iter()
+        .chain(tokens(&expected.incidental))
+        .collect();
     let note_words: Vec<String> = if expected.prose_untranscribed {
         Vec::new()
     } else {
@@ -568,7 +606,7 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
         metadata_kept: stated_metadata.iter().filter(|kept| **kept).count(),
         unsourced_note_words: note_words
             .iter()
-            .filter(|w| !source_words.contains(*w))
+            .filter(|w| !recipe_words.contains(*w))
             .count(),
         note_words: note_words.len(),
     }
@@ -947,6 +985,7 @@ mod tests {
             ingredients: vec!["1 cup rice".into(), "1 bay leaf".into()],
             instructions: "Simmer the rice.".into(),
             also_allowed: "Stir in cumin.".into(),
+            incidental: String::new(),
             prose_untranscribed: false,
             servings: Some("4".into()),
             prep_time: None,
@@ -1009,16 +1048,17 @@ mod tests {
         let stated = quantities(
             "Serves 4. Bake 30 minutes, then rest 11 to 12 minutes.\nyield: approximately 18 to 24 cookies\nCook until it registers 130 to 135 degrees, 5 to 6 minutes per side.\nPer serving: Cal 410",
         );
-        assert!(stated.contains(&("6".into(), Quantity::Time)));
-        assert!(!stated.contains(&("130".into(), Quantity::Time)));
+        assert!(stated.contains(&("6".into(), Quantity::Minutes)));
+        assert!(!stated.contains(&("130".into(), Quantity::Minutes)));
         assert!(stated.contains(&("410".into(), Quantity::Nutrition)));
+        assert!(!stated.contains(&("30".into(), Quantity::Hours)));
         let prose = quantities("Transfer to a serving bowl and garnish with about 1/3 cup chives.");
         assert!(!prose.contains(&("1/3".into(), Quantity::Servings)));
         assert!(stated.contains(&("24".into(), Quantity::Servings)));
         assert!(stated.contains(&("4".into(), Quantity::Servings)));
-        assert!(stated.contains(&("30".into(), Quantity::Time)));
-        assert!(stated.contains(&("11".into(), Quantity::Time)));
+        assert!(stated.contains(&("30".into(), Quantity::Minutes)));
+        assert!(stated.contains(&("11".into(), Quantity::Minutes)));
         assert!(!stated.contains(&("30".into(), Quantity::Servings)));
-        assert!(!stated.contains(&("4".into(), Quantity::Time)));
+        assert!(!stated.contains(&("4".into(), Quantity::Minutes)));
     }
 }

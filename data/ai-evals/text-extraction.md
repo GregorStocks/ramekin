@@ -7,9 +7,9 @@ Golden set: `data/ai-evals/golden/text-extraction.json` (33 cases), one call per
 | Model | Title right | Ingredient lines found | Extra ingredient lines | Instructions recall | Instructions precision | Other text kept | Servings and times kept | Invented fields | Unsourced note words | Invalid | Not a recipe: left empty | Recipes with warnings | Rejected calls | Truncated calls | Cost of accepted calls |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | google/gemini-2.5-flash | 100% | 100% | 1% | 100% | 100% | 100% | 100% | 0 | 0% | 0% | 100% | 0% | 0 | 0 | $0.0566 |
-| google/gemini-3.8-flash | 100% | 100% | 0% | 100% | 100% | 99% | 100% | 0 | 0% | 0% | 100% | 0% | 0 | 0 | $0.1192 |
+| google/gemini-3.8-flash | 100% | 100% | 0% | 100% | 100% | 99% | 100% | 0 | 2% | 0% | 100% | 0% | 0 | 0 | $0.1192 |
 | openai/gpt-6-luna | 100% | 100% | 2% | 100% | 100% | 99% | 100% | 0 | 0% | 6% | 100% | 0% | 2 | 0 | $0.0126 |
-| deepseek/deepseek-v4.1-flash | 100% | 100% | 0% | 100% | 100% | 99% | 100% | 0 | 0% | 12% | 100% | 0% | 4 | 0 | $0.1511 |
+| deepseek/deepseek-v4.1-flash | 100% | 100% | 0% | 100% | 100% | 99% | 100% | 0 | 1% | 6% | 100% | 0% | 2 | 0 | $0.1573 |
 | anthropic/claude-sonnet-5.5 | 100% | 100% | 0% | 100% | 100% | 99% | 100% | 0 | 0% | 0% | 100% | 0% | 0 | 0 | $0.4024 |
 | openai/gpt-6.1-sol | 100% | 100% | 0% | 100% | 100% | 100% | 100% | 0 | 0% | 6% | 100% | 0% | 2 | 0 | $0.2289 |
 | anthropic/claude-opus-5.5 | 100% | 100% | 0% | 100% | 100% | 99% | 100% | 0 | 0% | 0% | 100% | 0% | 0 | 0 | $0.8644 |
@@ -21,14 +21,12 @@ The first few items each model answered invalidly even alone.
 ### openai/gpt-6-luna
 
 - Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\""
-- Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\"raw_recipe\":{\"title\":\"Red Lentil Soup with Warm Spices\",\"ingredients\":\"Ingredients:\\n4 tablespoons unsalted butter\\n1 large onion , chopped fine\\nSalt and pepper\\n3/4 teaspoon ground coriander\\n1
+- Failed to parse response: Unusable model response (finish_reason=Some(content_filter)): "{\"raw_recipe\":{\"title\":\"Red Lentil Soup with Warm Spices\",\"ingredients\":\"4 tablespoons unsalted"
 
 ### deepseek/deepseek-v4.1-flash
 
-- Failed to parse response: Failed to parse text_extract response: missing field `raw_recipe` at line 1 column 3013; content: "{\"raw_recipe{\": null, \"title\": \"Crispy Potato, Chorizo, and Green Chili Hash With Avocado and Eggs Recipe\", \"ingredients\": \"1 1/2 pounds russet or Yukon gold potatoes
-- Failed to parse response: Failed to parse text_extract response: missing field `raw_recipe` at line 1 column 2395; content: "{\"raw_recipe {\": {\"title\": \"Rigatoni and Cauliflower al Forno\", \"ingredients\": \"1 pound rigatoni or other large pasta shape\\n1 medium cauliflower, about 1 1/2 pounds
-- Failed to parse response: Failed to parse text_extract response: missing field `raw_recipe` at line 1 column 2367; content: "{\"raw_recipe{\": {\"title\": \"Spaghetti al Tonno\", \"ingredients\": \"2 (5- to 7-ounce) jars/cans olive oil-packed tuna , drained\\n1 tablespoon lemon juice\\n1 teaspoon ta
-- Failed to parse response: Failed to parse text_extract response: missing field `raw_recipe` at line 1 column 1742; content: "{\"raw_recipe{\": null, \"title\": \"Easiest Baked Macaroni and Cheese\", \"ingredients\": \"2 tablespoons unsalted butter\\n1 cup full-fat cottage cheese, sour cream, or see 
+- Failed to parse response: Failed to parse text_extract response: missing field `raw_recipe` at line 1 column 2371; content: "{\"raw_recipe{\": null, \"title\": \"Spaghetti al Tonno\", \"ingredients\": \"2 (5- to 7-ounce) jars/cans olive oil-packed tuna , drained\\n1 tablespoon lemon juice\\n1 teaspo
+- Failed to parse response: Failed to parse text_extract response: missing field `raw_recipe` at line 1 column 1743; content: "{\"raw_recipe {\": null, \"title\": \"Easiest Baked Macaroni and Cheese\", \"ingredients\": \"2 tablespoons unsalted butter\\n1 cup full-fat cottage cheese, sour cream, or see
 
 ### openai/gpt-6.1-sol
 
@@ -47,9 +45,11 @@ The first few items each model answered invalidly even alone.
 
 ### google/gemini-3.8-flash
 
+- Cold Rice Noodles with Peanut-Lime Chicken: instructions recall 100%, precision 100%; 5 of 28 note/description words not in the source
+- Braised Ginger Meatballs in Coconut Broth: instructions recall 100%, precision 100%; 5 of 28 note/description words not in the source
+- Takeout-Style Sesame Noodles with Cucumber: instructions recall 100%, precision 100%; 5 of 28 note/description words not in the source
 - Son-in-Law Eggs: Thai Fried Hard-Boiled Eggs in Tamarind Sauce Recipe: instructions recall 100%, precision 100%; kept 93% of the other text
 - Chicken, Leek, and Rice Soup: instructions recall 99%, precision 100%
-- Focaccia Onion Board: instructions recall 100%, precision 100%
 
 ### openai/gpt-6-luna
 
@@ -61,6 +61,7 @@ The first few items each model answered invalidly even alone.
 
 ### deepseek/deepseek-v4.1-flash
 
+- Takeout-Style Sesame Noodles with Cucumber: instructions recall 100%, precision 100%; 5 of 28 note/description words not in the source
 - Son-in-Law Eggs: Thai Fried Hard-Boiled Eggs in Tamarind Sauce Recipe: extra ["ingredients:"]; instructions recall 100%, precision 100%; kept 93% of the other text
 - Chicken, Leek, and Rice Soup: instructions recall 99%, precision 100%
 
