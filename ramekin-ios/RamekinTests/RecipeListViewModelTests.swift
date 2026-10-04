@@ -247,6 +247,33 @@ final class RecipeListViewModelTests: XCTestCase {
         XCTAssertFalse(viewModel.isLoading)
     }
 
+    func testFilterMovingServerOnlyDuringSyncLeavesListToItsReload() async {
+        // Editing the advanced filters mutates them without reloading until
+        // the sheet is applied, so a sync can finish under a source: filter
+        // the cache cannot answer. Ranking the cache then must not happen.
+        let cached = RecipeListTestSupport.makeRecipe(title: "Aioli")
+        var cachedRecipes: [RecipeSummary] = []
+        var viewModel: RecipeListViewModel?
+        viewModel = RecipeListViewModel(
+            api: RecipeListTestSupport.emptyAPIClient(),
+            cache: RecipeListTestSupport.cacheClient(
+                currentAccountKey: { "account" },
+                loadRecipes: { _ in cachedRecipes },
+                apply: { _, _ in
+                    cachedRecipes = [cached]
+                    viewModel?.sourceFilter = "Bakery"
+                }
+            ),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
+            pageSize: 20
+        )
+
+        await viewModel?.loadRecipes(reset: true)
+
+        XCTAssertEqual(viewModel?.recipes.isEmpty, true)
+        XCTAssertNil(viewModel?.error)
+    }
+
     private struct ListRequest {
         let limit: Int64
         let offset: Int64

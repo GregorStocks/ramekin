@@ -26,18 +26,21 @@ struct PendingSyncSweep: Codable, Equatable {
     let watermark: Int64
 }
 
-@MainActor
+/// Core Data work runs on a private background context: applying a full
+/// sync and decoding the whole cache on the main thread stalled the UI for
+/// tens of seconds on slow devices.
 final class RecipeCacheStore {
     static let shared = RecipeCacheStore()
     // v4 added ingredientMatchText; bumping forces a full re-sync so every
     // cached recipe carries it.
     private static let cacheSchemaVersion = 4
 
-    private let coreDataStack: CoreDataStack
+    /// Only touched inside `perform`.
+    private let backgroundContext: NSManagedObjectContext
     private let userDefaults: UserDefaults
 
     init(coreDataStack: CoreDataStack = .shared, userDefaults: UserDefaults = .standard) {
-        self.coreDataStack = coreDataStack
+        backgroundContext = coreDataStack.newBackgroundContext()
         self.userDefaults = userDefaults
     }
 
@@ -82,15 +85,17 @@ final class RecipeCacheStore {
         userDefaults.removeObject(forKey: pendingSweepKey(accountKey: accountKey))
     }
 
-    func loadSearchDocuments(accountKey: String) throws -> [CachedRecipeSearchDocument] {
-        try purgeRowsWrittenByOlderSchema(accountKey: accountKey)
-        let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
-        request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
-        request.sortDescriptors = [
-            NSSortDescriptor(keyPath: \CachedRecipe.updatedAt, ascending: false),
-            NSSortDescriptor(keyPath: \CachedRecipe.id, ascending: true)
-        ]
-        return try coreDataStack.viewContext.fetch(request).map(searchDocument)
+    func loadSearchDocuments(accountKey: String) async throws -> [CachedRecipeSearchDocument] {
+        try await backgroundContext.perform { [self] in
+            try purgeRowsWrittenByOlderSchema(accountKey: accountKey)
+            let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
+            request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
+            request.sortDescriptors = [
+                NSSortDescriptor(keyPath: \CachedRecipe.updatedAt, ascending: false),
+                NSSortDescriptor(keyPath: \CachedRecipe.id, ascending: true)
+            ]
+            return try backgroundContext.fetch(request).map(searchDocument)
+        }
     }
 
     /// Rows written under an older cache schema must never be served: Core
@@ -99,62 +104,73 @@ final class RecipeCacheStore {
     /// would silently omit recipes the server would return. The schema bump
     /// already forces a full re-sync; this drops the migrated rows so the
     /// window before that sync completes serves nothing instead of wrong
-    /// results.
+    /// results. Runs on `backgroundContext`'s queue.
     private func purgeRowsWrittenByOlderSchema(accountKey: String) throws {
         let key = rowsSchemaVersionKey(accountKey: accountKey)
         guard userDefaults.integer(forKey: key) != Self.cacheSchemaVersion else {
             return
         }
-        let context = coreDataStack.viewContext
         let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
         request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
-        let staleRows = try context.fetch(request)
+        let staleRows = try backgroundContext.fetch(request)
         guard !staleRows.isEmpty else {
             return
         }
         for row in staleRows {
-            context.delete(row)
+            backgroundContext.delete(row)
         }
-        try coreDataStack.saveContextOrThrow()
+        try backgroundContext.save()
     }
 
-    func apply(syncResponse: SyncRecipesResponse, accountKey: String) throws {
-        let context = coreDataStack.viewContext
-
-        for id in syncResponse.deleted {
-            let request = fetchRequest(accountKey: accountKey, id: id)
-            if let cachedRecipe = try context.fetch(request).first {
-                context.delete(cachedRecipe)
+    func apply(syncResponse: SyncRecipesResponse, accountKey: String) async throws {
+        try await backgroundContext.perform { [self] in
+            let context = backgroundContext
+            // One lookup for the whole page; a fetch per recipe dominated
+            // applying a 100-recipe page.
+            let pageIds = syncResponse.deleted + syncResponse.recipes.map(\.id)
+            let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
+            request.predicate = NSPredicate(
+                format: "accountKey == %@ AND id IN %@",
+                accountKey,
+                pageIds as NSArray
+            )
+            var existingById: [UUID: CachedRecipe] = [:]
+            for row in try context.fetch(request) {
+                guard let id = row.id else {
+                    fatalError("CachedRecipe is missing its id")
+                }
+                existingById[id] = row
             }
+
+            for id in syncResponse.deleted {
+                if let cachedRecipe = existingById.removeValue(forKey: id) {
+                    context.delete(cachedRecipe)
+                }
+            }
+
+            for recipe in syncResponse.recipes {
+                let cachedRecipe = existingById[recipe.id] ?? CachedRecipe(context: context)
+                existingById[recipe.id] = cachedRecipe
+                cachedRecipe.accountKey = accountKey
+                cachedRecipe.id = recipe.id
+                cachedRecipe.ingredientMatchText = recipe.ingredientMatchText
+                cachedRecipe.ingredientsJSON = try ingredientsJSON(recipe.ingredients)
+                cachedRecipe.instructions = recipe.instructions
+                cachedRecipe.notes = recipe.notes
+                cachedRecipe.title = recipe.title
+                cachedRecipe.summaryDescription = recipe.description
+                cachedRecipe.tagsJSON = try tagsJSON(recipe.tags)
+                cachedRecipe.thumbnailPhotoId = recipe.thumbnailPhotoId
+                cachedRecipe.rating = recipe.rating.map(String.init)
+                cachedRecipe.createdAt = recipe.createdAt
+                cachedRecipe.updatedAt = recipe.updatedAt
+            }
+
+            if context.hasChanges {
+                try context.save()
+            }
+            userDefaults.set(Self.cacheSchemaVersion, forKey: rowsSchemaVersionKey(accountKey: accountKey))
         }
-
-        for recipe in syncResponse.recipes {
-            let cachedRecipe = try context.fetch(fetchRequest(accountKey: accountKey, id: recipe.id)).first
-                ?? CachedRecipe(context: context)
-            cachedRecipe.accountKey = accountKey
-            cachedRecipe.id = recipe.id
-            cachedRecipe.ingredientMatchText = recipe.ingredientMatchText
-            cachedRecipe.ingredientsJSON = try ingredientsJSON(recipe.ingredients)
-            cachedRecipe.instructions = recipe.instructions
-            cachedRecipe.notes = recipe.notes
-            cachedRecipe.title = recipe.title
-            cachedRecipe.summaryDescription = recipe.description
-            cachedRecipe.tagsJSON = try tagsJSON(recipe.tags)
-            cachedRecipe.thumbnailPhotoId = recipe.thumbnailPhotoId
-            cachedRecipe.rating = recipe.rating.map(String.init)
-            cachedRecipe.createdAt = recipe.createdAt
-            cachedRecipe.updatedAt = recipe.updatedAt
-        }
-
-        try coreDataStack.saveContextOrThrow()
-        userDefaults.set(Self.cacheSchemaVersion, forKey: rowsSchemaVersionKey(accountKey: accountKey))
-    }
-
-    private func fetchRequest(accountKey: String, id: UUID) -> NSFetchRequest<CachedRecipe> {
-        let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
-        request.predicate = NSPredicate(format: "accountKey == %@ AND id == %@", accountKey, id as CVarArg)
-        request.fetchLimit = 1
-        return request
     }
 
     private func searchDocument(from cachedRecipe: CachedRecipe) -> CachedRecipeSearchDocument {

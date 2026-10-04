@@ -48,7 +48,7 @@ enum RecipeSyncSweep {
                     supported: SearchNormalizationSupport.contractVersion
                 )
             }
-            try cache.apply(response, accountKey)
+            try await cache.apply(response, accountKey)
             let watermark = sweepWatermark ?? response.cursor
             sweepWatermark = watermark
 
