@@ -431,11 +431,12 @@ private extension RecipeListViewModel {
     }
 
     /// Filters and ranks the cached corpus off the main thread, then
-    /// publishes it unless the filter+sort changed meanwhile. Returns whether
-    /// it published.
+    /// publishes it unless the filter+sort changed or a newer reset load
+    /// started meanwhile. Returns whether it published.
     @discardableResult
     func applyCachedRecipes(_ cachedDocuments: [CachedRecipeSearchDocument]) async -> Bool {
         let key = currentKey()
+        let generation = requestGeneration
         let filterState = currentFilterState
         let sortOrder = self.sortOrder
         // The filters can move to a server-only query between the caller's
@@ -451,8 +452,10 @@ private extension RecipeListViewModel {
                 sortOrder: sortOrder
             )
         }.value
-        guard key == currentKey() else {
-            DebugLogger.shared.log("applyCachedRecipes: filters changed while ranking, discarding", source: "RecipeList")
+        // A newer reset with the same filter+sort (pull-to-refresh, a reload
+        // after a delete) owns the list; this older corpus must not overwrite it.
+        guard key == currentKey(), generation == requestGeneration else {
+            DebugLogger.shared.log("applyCachedRecipes: superseded while ranking, discarding", source: "RecipeList")
             return false
         }
         recipes = visibleRecipes
