@@ -106,6 +106,7 @@ final class RecipeVersionSupportTests: XCTestCase {
         let clearedRecipe = RecipeResponse(
             cookTime: nil,
             createdAt: recipe.createdAt,
+            derivedMeasurements: [],
             description: nil,
             difficulty: nil,
             id: recipe.id,
@@ -179,6 +180,7 @@ final class RecipeVersionSupportTests: XCTestCase {
         recipe = RecipeResponse(
             cookTime: recipe.cookTime,
             createdAt: recipe.createdAt,
+            derivedMeasurements: [],
             description: recipe.description,
             difficulty: recipe.difficulty,
             id: recipe.id,
@@ -204,6 +206,7 @@ final class RecipeVersionSupportTests: XCTestCase {
         recipe = RecipeResponse(
             cookTime: recipe.cookTime,
             createdAt: recipe.createdAt,
+            derivedMeasurements: [],
             description: recipe.description,
             difficulty: recipe.difficulty,
             id: recipe.id,
@@ -234,6 +237,7 @@ final class RecipeVersionSupportTests: XCTestCase {
         RecipeResponse(
             cookTime: "20 min",
             createdAt: Date(timeIntervalSince1970: 50),
+            derivedMeasurements: [],
             description: "Test description",
             difficulty: "Easy",
             id: UUID(),

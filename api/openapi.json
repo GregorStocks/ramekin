@@ -4875,7 +4875,6 @@
           "created_at",
           "updated_at",
           "ingredients",
-          "derived_measurements",
           "ingredient_match_text",
           "instructions"
         ],
@@ -4883,13 +4882,6 @@
           "created_at": {
             "type": "string",
             "format": "date-time"
-          },
-          "derived_measurements": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DerivedMeasurement"
-            },
-            "description": "Approximate grams for ingredients that have them, in ingredient order."
           },
           "description": {
             "type": [
@@ -4956,14 +4948,9 @@
           "deleted",
           "cursor",
           "has_more",
-          "normalization_contract_version",
-          "catalog_version"
+          "normalization_contract_version"
         ],
         "properties": {
-          "catalog_version": {
-            "type": "string",
-            "description": "Identifies the ingredient catalog that computed `derived_measurements`.\nA client caching recipes must run a full sync when this changes:\ncatalog changes alter every recipe's derived grams without changing\nthe recipes themselves."
-          },
           "cursor": {
             "type": "integer",
             "format": "int64",

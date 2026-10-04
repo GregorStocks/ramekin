@@ -14,6 +14,7 @@ function recipe(versionId: string): RecipeResponse {
     title: "Soup",
     description: null,
     ingredients: [],
+    derivedMeasurements: [],
     instructions: "Simmer",
     photoIds: [],
     tags: [],

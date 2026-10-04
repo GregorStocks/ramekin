@@ -8,7 +8,6 @@ Read-only recipe data needed to populate the iOS cache and mirror server search.
 Name | Type
 ------------ | -------------
 `createdAt` | Date
-`derivedMeasurements` | [Array&lt;DerivedMeasurement&gt;](DerivedMeasurement.md)
 `description` | string
 `id` | string
 `ingredientMatchText` | string
@@ -29,7 +28,6 @@ import type { SyncRecipe } from ''
 // TODO: Update the object below with actual values
 const example = {
   "createdAt": null,
-  "derivedMeasurements": null,
   "description": null,
   "id": null,
   "ingredientMatchText": null,

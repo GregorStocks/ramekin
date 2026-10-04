@@ -20,13 +20,6 @@ import {
     IngredientToJSON,
     IngredientToJSONTyped,
 } from './Ingredient';
-import type { DerivedMeasurement } from './DerivedMeasurement';
-import {
-    DerivedMeasurementFromJSON,
-    DerivedMeasurementFromJSONTyped,
-    DerivedMeasurementToJSON,
-    DerivedMeasurementToJSONTyped,
-} from './DerivedMeasurement';
 
 /**
  * Read-only recipe data needed to populate the iOS cache and mirror server search.
@@ -40,12 +33,6 @@ export interface SyncRecipe {
      * @memberof SyncRecipe
      */
     createdAt: Date;
-    /**
-     * Approximate grams for ingredients that have them, in ingredient order.
-     * @type {Array<DerivedMeasurement>}
-     * @memberof SyncRecipe
-     */
-    derivedMeasurements: Array<DerivedMeasurement>;
     /**
      * 
      * @type {string}
@@ -122,7 +109,6 @@ export interface SyncRecipe {
  */
 export function instanceOfSyncRecipe(value: object): value is SyncRecipe {
     if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
-    if (!('derivedMeasurements' in value) || value['derivedMeasurements'] === undefined) return false;
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('ingredientMatchText' in value) || value['ingredientMatchText'] === undefined) return false;
     if (!('ingredients' in value) || value['ingredients'] === undefined) return false;
@@ -144,7 +130,6 @@ export function SyncRecipeFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     return {
         
         'createdAt': (new Date(json['created_at'])),
-        'derivedMeasurements': ((json['derived_measurements'] as Array<any>).map(DerivedMeasurementFromJSON)),
         'description': json['description'] == null ? undefined : json['description'],
         'id': json['id'],
         'ingredientMatchText': json['ingredient_match_text'],
@@ -171,7 +156,6 @@ export function SyncRecipeToJSONTyped(value?: SyncRecipe | null, ignoreDiscrimin
     return {
         
         'created_at': value['createdAt'].toISOString(),
-        'derived_measurements': ((value['derivedMeasurements'] as Array<any>).map(DerivedMeasurementToJSON)),
         'description': value['description'],
         'id': value['id'],
         'ingredient_match_text': value['ingredientMatchText'],

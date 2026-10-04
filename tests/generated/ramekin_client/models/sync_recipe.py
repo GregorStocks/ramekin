@@ -21,7 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
-from ramekin_client.models.derived_measurement import DerivedMeasurement
 from ramekin_client.models.ingredient import Ingredient
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +30,6 @@ class SyncRecipe(BaseModel):
     Read-only recipe data needed to populate the iOS cache and mirror server search.
     """ # noqa: E501
     created_at: datetime
-    derived_measurements: List[DerivedMeasurement] = Field(description="Approximate grams for ingredients that have them, in ingredient order.")
     description: Optional[StrictStr] = None
     id: UUID
     ingredient_match_text: StrictStr = Field(description="The database's text rendering of the stored ingredients JSONB — the exact haystack the server's bare-text search filter matches (JSON keys and syntax included). Local search must match against this string, not a re-encoding of `ingredients`, to reproduce server result membership.")
@@ -43,7 +41,7 @@ class SyncRecipe(BaseModel):
     thumbnail_photo_id: Optional[UUID] = None
     title: StrictStr
     updated_at: datetime
-    __properties: ClassVar[List[str]] = ["created_at", "derived_measurements", "description", "id", "ingredient_match_text", "ingredients", "instructions", "notes", "rating", "tags", "thumbnail_photo_id", "title", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "ingredient_match_text", "ingredients", "instructions", "notes", "rating", "tags", "thumbnail_photo_id", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,13 +82,6 @@ class SyncRecipe(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in derived_measurements (list)
-        _items = []
-        if self.derived_measurements:
-            for _item_derived_measurements in self.derived_measurements:
-                if _item_derived_measurements:
-                    _items.append(_item_derived_measurements.to_dict())
-            _dict['derived_measurements'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in ingredients (list)
         _items = []
         if self.ingredients:
@@ -131,7 +122,6 @@ class SyncRecipe(BaseModel):
 
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
-            "derived_measurements": [DerivedMeasurement.from_dict(_item) for _item in obj["derived_measurements"]] if obj.get("derived_measurements") is not None else None,
             "description": obj.get("description"),
             "id": obj.get("id"),
             "ingredient_match_text": obj.get("ingredient_match_text"),

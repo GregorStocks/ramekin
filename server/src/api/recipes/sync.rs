@@ -4,7 +4,7 @@ use crate::api::recipes::read::{
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::models::{derived_measurements, DerivedMeasurement, Ingredient};
+use crate::models::Ingredient;
 use crate::raw_sql;
 use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
@@ -61,11 +61,6 @@ pub struct SyncRecipesResponse {
     /// it does not support this version: matching with a stale contract would
     /// silently drop or add results relative to server search.
     pub normalization_contract_version: u32,
-    /// Identifies the ingredient catalog that computed `derived_measurements`.
-    /// A client caching recipes must run a full sync when this changes:
-    /// catalog changes alter every recipe's derived grams without changing
-    /// the recipes themselves.
-    pub catalog_version: String,
 }
 
 /// Read-only recipe data needed to populate the iOS cache and mirror server search.
@@ -80,8 +75,6 @@ pub struct SyncRecipe {
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
     pub ingredients: Vec<Ingredient>,
-    /// Approximate grams for ingredients that have them, in ingredient order.
-    pub derived_measurements: Vec<DerivedMeasurement>,
     /// The database's text rendering of the stored ingredients JSONB — the
     /// exact haystack the server's bare-text search filter matches (JSON keys
     /// and syntax included). Local search must match against this string, not
@@ -93,8 +86,7 @@ pub struct SyncRecipe {
 
 impl SyncRecipe {
     fn try_from_row(row: RecipeSyncRow) -> Result<Self, serde_json::Error> {
-        let ingredients: Vec<Ingredient> = serde_json::from_value(row.ingredients)?;
-        let derived_measurements = derived_measurements(&ingredients);
+        let ingredients = serde_json::from_value(row.ingredients)?;
         Ok(Self {
             id: row.id,
             title: row.title,
@@ -105,7 +97,6 @@ impl SyncRecipe {
             created_at: row.created_at,
             updated_at: row.updated_at,
             ingredients,
-            derived_measurements,
             ingredient_match_text: row.ingredient_match_text,
             instructions: row.instructions,
             notes: row.notes,
@@ -236,7 +227,6 @@ pub async fn sync_recipes(
             cursor,
             has_more,
             normalization_contract_version: ramekin_core::search::normalization_contract_version(),
-            catalog_version: ramekin_core::catalog::version().to_string(),
         }),
     ))
 }

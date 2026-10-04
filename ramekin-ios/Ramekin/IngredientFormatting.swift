@@ -4,7 +4,8 @@ extension Ingredient {
     func formatted(
         scale: Double = 1,
         includeAlternatives: Bool = false,
-        includeNote: Bool = false
+        includeNote: Bool = false,
+        derived: Measurement? = nil
     ) -> String {
         var parts: [String] = []
 
@@ -19,16 +20,13 @@ extension Ingredient {
         }
 
         if includeAlternatives {
-            let alternatives = measurements.dropFirst().compactMap { measurement -> String? in
-                let amount = RecipeScaleSupport.scaleAmount(measurement.amount, by: scale)
-                let values = [amount, measurement.unit]
-                    .compactMap(Self.trimmedValue)
-
-                guard !values.isEmpty else {
-                    return nil
-                }
-
-                return values.joined(separator: " ")
+            // Derived grams the server computed come after the stored
+            // alternatives, marked approximate ("~120 g").
+            var alternatives = measurements.dropFirst().compactMap { measurement in
+                Self.formattedMeasurement(measurement, scale: scale)
+            }
+            if let derived, let formatted = Self.formattedMeasurement(derived, scale: scale) {
+                alternatives.append("~\(formatted)")
             }
 
             if !alternatives.isEmpty {
@@ -48,6 +46,12 @@ extension Ingredient {
         return parts.joined(separator: " ")
     }
 
+    private static func formattedMeasurement(_ measurement: Measurement, scale: Double) -> String? {
+        let amount = RecipeScaleSupport.scaleAmount(measurement.amount, by: scale)
+        let values = [amount, measurement.unit].compactMap(Self.trimmedValue)
+        return values.isEmpty ? nil : values.joined(separator: " ")
+    }
+
     private static func trimmedValue(_ value: String?) -> String? {
         guard let value else {
             return nil
@@ -55,5 +59,12 @@ extension Ingredient {
 
         let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
         return trimmed.isEmpty ? nil : trimmed
+    }
+}
+
+extension Array where Element == DerivedMeasurement {
+    /// The derived grams the server computed for the ingredient at `index`.
+    func measurement(forIngredientAt index: Int) -> Measurement? {
+        first { $0.ingredientIndex == index }.map { Measurement(amount: $0.amount, unit: $0.unit) }
     }
 }

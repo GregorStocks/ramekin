@@ -14,8 +14,6 @@ import AnyCodable
 public struct SyncRecipe: Codable, JSONEncodable, Hashable {
 
     public var createdAt: Date
-    /** Approximate grams for ingredients that have them, in ingredient order. */
-    public var derivedMeasurements: [DerivedMeasurement]
     public var description: String?
     public var id: UUID
     /** The database's text rendering of the stored ingredients JSONB — the exact haystack the server's bare-text search filter matches (JSON keys and syntax included). Local search must match against this string, not a re-encoding of `ingredients`, to reproduce server result membership. */
@@ -29,9 +27,8 @@ public struct SyncRecipe: Codable, JSONEncodable, Hashable {
     public var title: String
     public var updatedAt: Date
 
-    public init(createdAt: Date, derivedMeasurements: [DerivedMeasurement], description: String? = nil, id: UUID, ingredientMatchText: String, ingredients: [Ingredient], instructions: String, notes: String? = nil, rating: Int? = nil, tags: [String], thumbnailPhotoId: UUID? = nil, title: String, updatedAt: Date) {
+    public init(createdAt: Date, description: String? = nil, id: UUID, ingredientMatchText: String, ingredients: [Ingredient], instructions: String, notes: String? = nil, rating: Int? = nil, tags: [String], thumbnailPhotoId: UUID? = nil, title: String, updatedAt: Date) {
         self.createdAt = createdAt
-        self.derivedMeasurements = derivedMeasurements
         self.description = description
         self.id = id
         self.ingredientMatchText = ingredientMatchText
@@ -47,7 +44,6 @@ public struct SyncRecipe: Codable, JSONEncodable, Hashable {
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case createdAt = "created_at"
-        case derivedMeasurements = "derived_measurements"
         case description
         case id
         case ingredientMatchText = "ingredient_match_text"
@@ -66,7 +62,6 @@ public struct SyncRecipe: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(createdAt, forKey: .createdAt)
-        try container.encode(derivedMeasurements, forKey: .derivedMeasurements)
         try container.encodeIfPresent(description, forKey: .description)
         try container.encode(id, forKey: .id)
         try container.encode(ingredientMatchText, forKey: .ingredientMatchText)

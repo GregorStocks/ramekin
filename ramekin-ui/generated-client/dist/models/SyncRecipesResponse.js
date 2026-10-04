@@ -16,8 +16,6 @@ import { SyncRecipeFromJSON, SyncRecipeToJSON, } from './SyncRecipe';
  * Check if a given object implements the SyncRecipesResponse interface.
  */
 export function instanceOfSyncRecipesResponse(value) {
-    if (!('catalogVersion' in value) || value['catalogVersion'] === undefined)
-        return false;
     if (!('cursor' in value) || value['cursor'] === undefined)
         return false;
     if (!('deleted' in value) || value['deleted'] === undefined)
@@ -38,7 +36,6 @@ export function SyncRecipesResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'catalogVersion': json['catalog_version'],
         'cursor': json['cursor'],
         'deleted': json['deleted'],
         'hasMore': json['has_more'],
@@ -54,7 +51,6 @@ export function SyncRecipesResponseToJSONTyped(value, ignoreDiscriminator = fals
         return value;
     }
     return {
-        'catalog_version': value['catalogVersion'],
         'cursor': value['cursor'],
         'deleted': value['deleted'],
         'has_more': value['hasMore'],

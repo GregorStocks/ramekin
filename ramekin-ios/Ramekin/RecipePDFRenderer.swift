@@ -50,7 +50,7 @@ enum RecipePDFRenderer {
 
             if !recipe.ingredients.isEmpty {
                 cursor.advance(by: 16)
-                drawIngredients(recipe.ingredients, cursor: &cursor)
+                drawIngredients(recipe.ingredients, derived: recipe.derivedMeasurements, cursor: &cursor)
             }
 
             cursor.advance(by: 16)
@@ -181,10 +181,14 @@ enum RecipePDFRenderer {
         )
     }
 
-    private static func drawIngredients(_ ingredients: [Ingredient], cursor: inout PageCursor) {
+    private static func drawIngredients(
+        _ ingredients: [Ingredient],
+        derived: [DerivedMeasurement],
+        cursor: inout PageCursor
+    ) {
         drawSectionHeader("Ingredients", cursor: &cursor)
         var currentSection: String?
-        for ingredient in ingredients {
+        for (index, ingredient) in ingredients.enumerated() {
             let section = ingredient.section?.trimmingCharacters(in: .whitespacesAndNewlines)
             if let section, !section.isEmpty, section != currentSection {
                 currentSection = section
@@ -203,7 +207,8 @@ enum RecipePDFRenderer {
             let text = ingredient.formatted(
                 scale: 1,
                 includeAlternatives: true,
-                includeNote: true
+                includeNote: true,
+                derived: derived.measurement(forIngredientAt: index)
             )
             drawParagraph(
                 "• \(text)",

@@ -1,6 +1,10 @@
 // Web counterpart of ramekin-ios/Ramekin/IngredientFormatting.swift. Shared
 // vectors pin the two implementations; see doc/client-logic-sharing.md.
-import type { Ingredient, Measurement } from "ramekin-client";
+import type {
+  DerivedMeasurement,
+  Ingredient,
+  Measurement,
+} from "ramekin-client";
 
 import { scaleAmount } from "./scaleAmount";
 
@@ -8,6 +12,11 @@ export interface FormatIngredientOptions {
   scale?: number;
   includeAlternatives?: boolean;
   includeNote?: boolean;
+  /**
+   * Approximate grams the server computed for this line, shown after the
+   * stored alternatives as "~120 g" when alternatives are included.
+   */
+  derived?: Measurement | null;
 }
 
 /**
@@ -18,7 +27,10 @@ export interface FormatIngredientOptions {
 export interface IngredientParts {
   amount: string | null;
   unit: string | null;
-  /** Alternative measurements joined with ", " — no surrounding parens. */
+  /**
+   * Alternative measurements, then the derived grams prefixed "~", joined
+   * with ", " — no surrounding parens.
+   */
   alternatives: string | null;
   item: string;
   /** Trimmed note — no surrounding parens. */
@@ -49,10 +61,15 @@ export function formatIngredientParts(
 
   let alternatives: string | null = null;
   if (options.includeAlternatives) {
-    const formatted = ingredient.measurements
-      .slice(1)
-      .map((m) => formatMeasurement(m, scale))
-      .filter((v): v is string => v !== null);
+    const derived = options.derived
+      ? formatMeasurement(options.derived, scale)
+      : null;
+    const formatted = [
+      ...ingredient.measurements
+        .slice(1)
+        .map((m) => formatMeasurement(m, scale)),
+      derived && `~${derived}`,
+    ].filter((v): v is string => !!v);
     alternatives = formatted.length > 0 ? formatted.join(", ") : null;
   }
 
@@ -65,7 +82,9 @@ export function formatIngredientParts(
   };
 }
 
-/** Mirrors `Ingredient.formatted(scale:includeAlternatives:includeNote:)`. */
+/**
+ * Mirrors `Ingredient.formatted(scale:includeAlternatives:includeNote:derived:)`.
+ */
 export function formatIngredient(
   ingredient: Ingredient,
   options: FormatIngredientOptions = {},
@@ -100,4 +119,12 @@ export function formatIngredientAmount(
     return undefined;
   }
   return formatMeasurement(primary, scale) ?? undefined;
+}
+
+/** The derived grams the server computed for the ingredient at `index`. */
+export function derivedMeasurementAt(
+  derived: DerivedMeasurement[],
+  index: number,
+): Measurement | null {
+  return derived.find((d) => d.ingredientIndex === index) ?? null;
 }

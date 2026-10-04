@@ -28,7 +28,6 @@ CURATED = {
     },
     "aliases": {"egg yolk": "egg, yolk, raw, fresh", "cheese": None},
     "not_food": {"to serve": "A serving suggestion."},
-    "rewrites": {},
 }
 CATEGORIES = {"Household", "Produce"}
 FNDDS = {"foods": [{"fdc_id": 50, "description": "guacamole, nfs"}]}

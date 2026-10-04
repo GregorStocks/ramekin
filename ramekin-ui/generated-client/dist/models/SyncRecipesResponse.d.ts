@@ -17,15 +17,6 @@ import type { SyncRecipe } from './SyncRecipe';
  */
 export interface SyncRecipesResponse {
     /**
-     * Identifies the ingredient catalog that computed `derived_measurements`.
-     * A client caching recipes must run a full sync when this changes:
-     * catalog changes alter every recipe's derived grams without changing
-     * the recipes themselves.
-     * @type {string}
-     * @memberof SyncRecipesResponse
-     */
-    catalogVersion: string;
-    /**
      * This page's snapshot watermark. Once a sweep completes, persist the
      * *first* page's cursor and pass it to the next sync: changes committed
      * mid-sweep can land in id ranges the sweep already passed, and only the

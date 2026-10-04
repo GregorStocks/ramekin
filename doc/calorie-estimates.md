@@ -75,7 +75,7 @@ fluid-ounce portions (zero-amount rows excluded). An entry without a density pro
   has no piece weight for ("1 head garlic") is unknown.
 - Use the first supported measurement once; subsequent measurements are
   alternatives, not additional ingredients. This preserves precise primary
-  amounts ahead of rounded gram alternatives. As with ingredient display,
+  amounts ahead of a source's rounded alternatives. As with ingredient display,
   quantities are interpreted as the listed edible ingredient amounts; estimates
   do not model cooking losses, absorption, leftovers, or optional consumption.
 - Sum lower and upper bounds separately and apply scale to both. Reject totals

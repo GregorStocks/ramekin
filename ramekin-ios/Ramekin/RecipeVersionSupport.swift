@@ -13,6 +13,8 @@ enum RecipeVersionSupport {
             return "AI Photo"
         case "reparse":
             return "Re-parsed"
+        case "migration":
+            return "Migrated"
         default:
             return source
         }

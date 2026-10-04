@@ -125,8 +125,9 @@ make pipeline
 make ingredient-catalog-audit
 ```
 
-- Fixture churn is expected: gram alternatives are added for newly resolved names. Existing
-  gram values should only change where a previously unresolved name now resolves.
+- Gram amounts are computed when a recipe is read (`RecipeResponse.derived_measurements`), so
+  newly resolved names don't change the parsing fixtures or snapshots; the density gap report
+  and audit show the coverage change.
 - Check `logs/ingredient-catalog-audit-local.md` for what's still unresolved, and the
   committed audit for the coverage change.
 - Recompute `tests/ui/test_recipe_scale.py`'s expected subtotals if the scale-test recipe's

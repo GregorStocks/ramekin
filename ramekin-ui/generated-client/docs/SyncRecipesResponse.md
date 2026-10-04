@@ -6,7 +6,6 @@
 
 Name | Type
 ------------ | -------------
-`catalogVersion` | string
 `cursor` | number
 `deleted` | Array&lt;string&gt;
 `hasMore` | boolean
@@ -20,7 +19,6 @@ import type { SyncRecipesResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "catalogVersion": null,
   "cursor": null,
   "deleted": null,
   "hasMore": null,

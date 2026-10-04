@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
 
-import type { Ingredient } from "ramekin-client";
+import type { Ingredient, Measurement } from "ramekin-client";
 import vectorsJson from "../../../shared-test-vectors/ingredient-formatting.json?raw";
 
 import {
+  derivedMeasurementAt,
   formatIngredient,
   formatIngredientAmount,
   formatIngredientParts,
@@ -20,6 +21,7 @@ type IngredientFormattingVector = {
     scale?: number;
     includeAlternatives?: boolean;
     includeNote?: boolean;
+    derived?: Measurement | null;
   };
   expected: string;
 };
@@ -116,5 +118,17 @@ describe("formatIngredientAmount", () => {
         1,
       ),
     ).toBe("pinch");
+  });
+});
+
+describe("derivedMeasurementAt", () => {
+  it("finds the derived grams for an ingredient index", () => {
+    const derived = [
+      { ingredientIndex: 0, amount: "120", unit: "g" },
+      { ingredientIndex: 2, amount: "227", unit: "g" },
+    ];
+
+    expect(derivedMeasurementAt(derived, 2)).toEqual(derived[1]);
+    expect(derivedMeasurementAt(derived, 1)).toBe(null);
   });
 });

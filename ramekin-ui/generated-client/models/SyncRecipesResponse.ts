@@ -28,15 +28,6 @@ import {
  */
 export interface SyncRecipesResponse {
     /**
-     * Identifies the ingredient catalog that computed `derived_measurements`.
-     * A client caching recipes must run a full sync when this changes:
-     * catalog changes alter every recipe's derived grams without changing
-     * the recipes themselves.
-     * @type {string}
-     * @memberof SyncRecipesResponse
-     */
-    catalogVersion: string;
-    /**
      * This page's snapshot watermark. Once a sweep completes, persist the
      * *first* page's cursor and pass it to the next sync: changes committed
      * mid-sweep can land in id ranges the sweep already passed, and only the
@@ -84,7 +75,6 @@ export interface SyncRecipesResponse {
  * Check if a given object implements the SyncRecipesResponse interface.
  */
 export function instanceOfSyncRecipesResponse(value: object): value is SyncRecipesResponse {
-    if (!('catalogVersion' in value) || value['catalogVersion'] === undefined) return false;
     if (!('cursor' in value) || value['cursor'] === undefined) return false;
     if (!('deleted' in value) || value['deleted'] === undefined) return false;
     if (!('hasMore' in value) || value['hasMore'] === undefined) return false;
@@ -103,7 +93,6 @@ export function SyncRecipesResponseFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
-        'catalogVersion': json['catalog_version'],
         'cursor': json['cursor'],
         'deleted': json['deleted'],
         'hasMore': json['has_more'],
@@ -123,7 +112,6 @@ export function SyncRecipesResponseToJSONTyped(value?: SyncRecipesResponse | nul
 
     return {
         
-        'catalog_version': value['catalogVersion'],
         'cursor': value['cursor'],
         'deleted': value['deleted'],
         'has_more': value['hasMore'],

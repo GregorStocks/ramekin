@@ -53,6 +53,7 @@ final class RecipeScaleSupportTests: XCTestCase {
         let recipe = RecipeResponse(
             cookTime: nil,
             createdAt: Date(),
+            derivedMeasurements: [],
             description: nil,
             difficulty: nil,
             id: UUID(),

@@ -7,7 +7,6 @@ Read-only recipe data needed to populate the iOS cache and mirror server search.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | 
-**derived_measurements** | [**List[DerivedMeasurement]**](DerivedMeasurement.md) | Approximate grams for ingredients that have them, in ingredient order. | 
 **description** | **str** |  | [optional] 
 **id** | **UUID** |  | 
 **ingredient_match_text** | **str** | The database&#39;s text rendering of the stored ingredients JSONB — the exact haystack the server&#39;s bare-text search filter matches (JSON keys and syntax included). Local search must match against this string, not a re-encoding of &#x60;ingredients&#x60;, to reproduce server result membership. | 

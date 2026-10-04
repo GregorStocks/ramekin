@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**catalog_version** | **str** | Identifies the ingredient catalog that computed &#x60;derived_measurements&#x60;. A client caching recipes must run a full sync when this changes: catalog changes alter every recipe&#39;s derived grams without changing the recipes themselves. | 
 **cursor** | **int** | This page&#39;s snapshot watermark. Once a sweep completes, persist the *first* page&#39;s cursor and pass it to the next sync: changes committed mid-sweep can land in id ranges the sweep already passed, and only the first watermark is low enough to redeliver all of them. Changes may be redelivered across syncs, but none can be skipped. | 
 **deleted** | **List[UUID]** | Recipe IDs deleted at or after &#x60;cursor&#x60;. Only sent on a sweep&#39;s first page; later pages return an empty list. | 
 **has_more** | **bool** | True when the sweep has more pages. Request the next one with the same &#x60;cursor&#x60; and &#x60;after_id&#x60; set to this page&#39;s last recipe ID. | 
