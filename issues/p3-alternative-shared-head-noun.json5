@@ -1,0 +1,15 @@
+{
+  "title": "Resolve \"a or b c\" alternatives that share a head noun",
+  "description": "catalog::resolve picks the first-listed alternative of \"x or y\" (Via::Alternative). \
+When the alternatives share a trailing head noun, \"a or b c\" means \"(a or b) c\", but the resolver takes the bare \"a\": \"orange or yellow food coloring\" resolved to the orange fruit, giving it fruit calories and the Produce aisle (PR #740 aliased that one name). \
+Prefer \"a c\" when it resolves (\"orange food coloring\") or when b c names the same kind of food, before falling back to the bare first alternative. \
+Measure with make pipeline (calorie and category diffs) and look for similar lines such as \"red or green bell pepper\" and \"white or yellow onion\", which already work only because the bare first word happens to name the right food.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-10-04T09:00:00-07:00",
+  "updated_at": "2026-10-04T09:00:00-07:00",
+}

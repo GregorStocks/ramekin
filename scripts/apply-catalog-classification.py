@@ -80,17 +80,26 @@ def cited(decision: dict, field: str) -> dict | None:
     return out
 
 
-def categorizable(
-    curated: dict, targets: set[str], description_counts: dict[str, int], name: str
-) -> bool:
-    """Whether `name` may key `categories`: a food entry, USDA name, or unique
-    description, or an ambiguous name. Products carry their own category."""
+def category_target(
+    curated: dict, usda: dict, description_counts: dict[str, int], name: str
+) -> tuple[str, object] | None:
+    """What a `categories` key names, so two spellings of one entry ("garlic"
+    and "garlic, raw") are caught: a food entry, a USDA food (by USDA name or
+    unique description), or an ambiguous name. None when the key may not be
+    used; products carry their own category. Curated entries shadow USDA names,
+    as in the catalog loader."""
     entry = curated["entries"].get(name)
     if entry is not None:
-        return entry.get("kind") != "product"
+        return None if entry.get("kind") == "product" else ("entry", name)
     if name in curated["aliases"]:
-        return curated["aliases"][name] is None
-    return name in targets or description_counts.get(name, 0) > 1
+        return ("ambiguous", name) if curated["aliases"][name] is None else None
+    if name in usda["names"]:
+        return ("food", usda["names"][name])
+    count = description_counts.get(name, 0)
+    if count == 1:
+        fdc_id = next(f["fdc_id"] for f in usda["foods"] if f["description"] == name)
+        return ("food", fdc_id)
+    return ("ambiguous", name) if count > 1 else None
 
 
 def apply(
@@ -126,6 +135,10 @@ def apply(
         | set(curated["not_food"])
     )
 
+    categorized = {
+        category_target(curated, usda, description_counts, key)
+        for key in curated["categories"]
+    }
     counts = {action: 0 for action in sorted(ACTIONS)}
     rejections = []
     seen = set()
@@ -156,14 +169,16 @@ def apply(
             continue
         if action == "category":
             category = decision.get("category")
+            target = category_target(curated, usda, description_counts, name)
             if category not in categories:
                 reject(f"unknown category {category!r}")
-            elif not categorizable(curated, targets, description_counts, name):
+            elif target is None:
                 reject("not a food entry, USDA name, or ambiguous name")
-            elif name in curated["categories"]:
+            elif target in categorized:
                 reject("already categorized")
             else:
                 curated["categories"][name] = category
+                categorized.add(target)
             continue
         if name in taken:
             reject("already a catalog name")

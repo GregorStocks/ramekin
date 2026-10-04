@@ -233,6 +233,23 @@ def test_invalid_categories_are_rejected(decision, why):
     assert len(rejections) == 1 and why in rejections[0], rejections
 
 
+def test_two_spellings_of_one_entry_are_categorized_once():
+    _, _, rejections = run(
+        {"name": "garlic", "action": "category", "category": "Produce"},
+        {"name": "garlic, raw", "action": "category", "category": "Produce"},
+    )
+    assert rejections == ["'garlic, raw': already categorized"]
+    curated = {**CURATED, "categories": {"garlic, raw": "Produce"}}
+    _, _, rejections = APPLY.apply(
+        curated,
+        USDA,
+        CATEGORIES,
+        [{"name": "garlic", "action": "category", "category": "Produce"}],
+        FNDDS,
+    )
+    assert rejections == ["'garlic': already categorized"]
+
+
 def test_categorized_names_are_not_recategorized():
     curated = {**CURATED, "categories": {"garlic": "Produce"}}
     _, _, rejections = APPLY.apply(
