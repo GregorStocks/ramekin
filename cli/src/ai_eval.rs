@@ -118,8 +118,8 @@ fn plain_name(name: &str) -> bool {
 
 /// Whether the answered key names the expected food. The catalog has several
 /// entries for many foods (a curated "whole-milk ricotta" beside USDA's
-/// "cheese, ricotta, whole milk"), so an equivalent entry counts: the same
-/// entry, the same USDA food, or calories within 10%. The reference is the
+/// "cheese, ricotta, whole milk"), so an entry linked to the same USDA food
+/// counts. Similar calories don't: a Caramello bar isn't a Butterfinger. The reference is the
 /// golden set's stored entry, never the alias's current target, so a catalog
 /// change can't quietly change what a committed case means.
 fn same_food(key: &str, expected: &str) -> Result<bool> {
@@ -138,13 +138,7 @@ fn same_food(key: &str, expected: &str) -> Result<bool> {
     if answered.id == wanted.id {
         return Ok(true);
     }
-    if answered.fdc_id.is_some() && answered.fdc_id == wanted.fdc_id {
-        return Ok(true);
-    }
-    Ok(match (answered.kcal_per_100g, wanted.kcal_per_100g) {
-        (Some(a), Some(w)) if w > 0.0 => (a - w).abs() / w <= 0.1,
-        _ => false,
-    })
+    Ok(answered.fdc_id.is_some() && answered.fdc_id == wanted.fdc_id)
 }
 
 fn entry_id(name: &str) -> Option<String> {
@@ -755,7 +749,7 @@ fn spec(suite: &str) -> SuiteSpec {
         },
         "ingredient-names" => SuiteSpec {
             title: "Ingredient names",
-            about: "Picking the catalog food a name means from its candidates (`resolve_ingredient_names`), for 100 curated aliases (correct if the answer resolves to the alias's food, or an equivalent entry: the same USDA food or calories within 10%, since the catalog has several entries for many foods; the alias itself is not offered) and 30 curated not-food names. Some curated aliases are judgment calls (delicata squash counts as acorn squash), so a sensible answer can score as wrong: compare models with each other rather than reading this as absolute accuracy.",
+            about: "Picking the catalog food a name means from its candidates (`resolve_ingredient_names`), for 100 curated aliases (correct if the answer resolves to the alias's food or another entry linked to the same USDA food, since the catalog has several entries for many foods; the alias itself is not offered) and 30 curated not-food names. Some curated aliases are judgment calls (delicata squash counts as acorn squash), so a sensible answer can score as wrong: compare models with each other rather than reading this as absolute accuracy.",
             columns: &["Correct food", "Wrong food", "Unknown", "Not food right", "Invalid"],
         },
         other => unreachable!("unknown suite {other}"),

@@ -246,11 +246,29 @@ fn extract_json(content: &str) -> &str {
     if parses(unfenced) {
         return unfenced;
     }
-    if let Some(fenced) = content.find("```").and_then(|start| content.get(start..)) {
-        let block = unfence_json(fenced);
+    // Each fenced block, opening fence through its closing fence, in order,
+    // whatever text surrounds it.
+    let mut rest = content;
+    while let Some(open) = rest.find("```") {
+        let Some(after_open) = rest.get(open + 3..) else {
+            break;
+        };
+        let Some(close) = after_open.find("```") else {
+            break;
+        };
+        let (Some(inner), Some(next)) = (after_open.get(..close), after_open.get(close + 3..))
+        else {
+            break;
+        };
+        // Drop the info string ("json") on the opening fence's line.
+        let block = match inner.split_once('\n') {
+            Some((info, body)) if !info.contains('{') && !info.contains('[') => body.trim(),
+            _ => inner.trim(),
+        };
         if parses(block) {
             return block;
         }
+        rest = next;
     }
     let trimmed = content.trim_end();
     if trimmed.ends_with('}') {
@@ -605,6 +623,8 @@ mod tests {
             "```json\n{\"a\": {\"b\": 1}}\n```",
             "The name means X, so I chose it.\n\n{\"a\": {\"b\": 1}}",
             "Reasoning first.\n```json\n{\"a\": {\"b\": 1}}\n```\n",
+            "```json\n{\"a\": {\"b\": 1}}\n```\nThat's my answer.",
+            "Example:\n```\nnot json\n```\nAnswer:\n```json\n{\"a\": {\"b\": 1}}\n```\nDone.",
         ] {
             assert_eq!(extract_json(content), "{\"a\": {\"b\": 1}}", "{content:?}");
         }
