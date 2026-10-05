@@ -12,7 +12,7 @@ enum RecipeFormError: LocalizedError {
     }
 }
 
-struct RecipeFormData {
+struct RecipeFormData: Equatable {
     var title: String = ""
     var recipeDescription: String = ""
     var instructions: String = ""

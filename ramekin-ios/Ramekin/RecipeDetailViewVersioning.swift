@@ -46,7 +46,7 @@ extension RecipeDetailView {
         DisclosureGroup(isExpanded: $viewModel.isVersionHistoryExpanded) {
             VStack(alignment: .leading, spacing: 12) {
                 if viewModel.isLoadingVersions {
-                    ProgressView("Loading versions...")
+                    ProgressView("Loading versions…")
                 }
 
                 if let versionHistoryError = viewModel.versionHistoryError {
@@ -99,6 +99,7 @@ extension RecipeDetailView {
                 Text("Version History")
                     .font(.title3)
                     .fontWeight(.bold)
+                    .accessibilityAddTraits(.isHeader)
 
                 if !viewModel.versionHistory.isEmpty {
                     Text("(\(viewModel.versionHistory.count))")
@@ -164,8 +165,12 @@ extension RecipeDetailView {
                     Image(systemName: isSelectedForCompare ? "checkmark.circle.fill" : "circle")
                         .font(.title3)
                         .foregroundColor(isSelectedForCompare ? .accentColor : .secondary)
+                        .frame(minWidth: 44, minHeight: 44)
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("Compare this version")
+                .accessibilityAddTraits(isSelectedForCompare ? .isSelected : [])
                 .disabled(viewModel.isLoading || viewModel.isLoadingCompare || viewModel.isReverting)
                 .accessibilityIdentifier("version-select-\(version.id.uuidString)")
 

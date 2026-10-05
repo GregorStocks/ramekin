@@ -34,15 +34,21 @@ struct MealPlanItemCard: View {
                 Image(systemName: "pencil.circle")
                     .foregroundColor(.secondary)
                     .font(.body)
+                    .frame(minWidth: 44, minHeight: 44)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Edit Meal")
 
             Button(action: onDelete) {
                 Image(systemName: "xmark.circle.fill")
                     .foregroundColor(.secondary)
                     .font(.body)
+                    .frame(minWidth: 44, minHeight: 44)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Remove from Meal Plan")
         }
         .padding(.vertical, 4)
         .padding(.horizontal, 8)

@@ -118,7 +118,9 @@ struct AddToShoppingListSheet: View {
                     Button("Add \(selectedIngredients.count)") {
                         addToShoppingList()
                     }
-                    .disabled(selectedIngredients.isEmpty)
+                    // Stays disabled during the success overlay so a second
+                    // tap can't add the ingredients twice.
+                    .disabled(selectedIngredients.isEmpty || showingConfirmation)
                 }
             }
             .onAppear {
@@ -140,7 +142,7 @@ struct AddToShoppingListSheet: View {
     private var confirmationOverlay: some View {
         VStack(spacing: 12) {
             Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 50))
+                .scaledIconFont(size: 50)
                 .foregroundColor(.green)
             Text("Added \(selectedIngredients.count) items")
                 .font(.headline)
@@ -167,6 +169,7 @@ struct AddToShoppingListSheet: View {
             )
 
             showingConfirmation = true
+            UIAccessibility.post(notification: .announcement, argument: "Added \(selectedIngredients.count) items")
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 isPresented = false

@@ -8,6 +8,7 @@ struct ShoppingListView: View {
     @State private var amount = ""
     @State private var addedCount = 0
     @State private var addTapTime: CFAbsoluteTime?
+    @State private var showingClearCheckedConfirmation = false
     @FocusState private var addFieldFocused: Bool
 
     var body: some View {
@@ -21,25 +22,33 @@ struct ShoppingListView: View {
             }
             .navigationTitle("Shopping List")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 12) {
-                        Button {
-                            addTapTime = CFAbsoluteTimeGetCurrent()
-                            DebugLogger.shared.log("add tapped", source: "Shopping")
-                            if isAddingItem {
-                                addFieldFocused = true
-                            } else {
-                                isAddingItem = true
-                            }
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                        if store.items.contains(where: \.isChecked) {
-                            Button("Clear Checked") {
-                                store.clearChecked()
-                            }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    if store.items.contains(where: \.isChecked) {
+                        Button("Clear Checked", role: .destructive) {
+                            showingClearCheckedConfirmation = true
                         }
                     }
+                    Button {
+                        addTapTime = CFAbsoluteTimeGetCurrent()
+                        DebugLogger.shared.log("add tapped", source: "Shopping")
+                        if isAddingItem {
+                            addFieldFocused = true
+                        } else {
+                            isAddingItem = true
+                        }
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .accessibilityLabel("Add Item")
+                }
+            }
+            .confirmationDialog(
+                "Remove all checked items?",
+                isPresented: $showingClearCheckedConfirmation,
+                titleVisibility: .visible
+            ) {
+                Button("Clear Checked", role: .destructive) {
+                    store.clearChecked()
                 }
             }
             .onChange(of: isAddingItem) { adding in
@@ -68,10 +77,10 @@ struct ShoppingListView: View {
                 if store.isUsingVolatileStorage {
                     statusBanner(
                         systemImage: "exclamationmark.triangle",
-                        text: "Storage unavailable - unsynced changes are lost when the app closes"
+                        text: "Storage unavailable – unsynced changes are lost when the app closes"
                     )
                 } else if !store.isOnline {
-                    statusBanner(systemImage: "wifi.slash", text: "Offline - changes will sync when connected")
+                    statusBanner(systemImage: "wifi.slash", text: "Offline – changes will sync when connected")
                 }
             }
             .overlay(alignment: .bottom) {
@@ -96,7 +105,7 @@ struct ShoppingListView: View {
     private var emptyState: some View {
         VStack(spacing: 16) {
             Image(systemName: "cart")
-                .font(.system(size: 60))
+                .scaledIconFont(size: 60)
                 .foregroundColor(.secondary)
             Text("Your shopping list is empty")
                 .font(.headline)
@@ -135,7 +144,10 @@ struct ShoppingListView: View {
                 .submitLabel(.done)
                 .onSubmit(addItem)
             HStack {
+                // Borderless so each button keeps its own hit area; a row with
+                // several default-style buttons fires all of them on any tap.
                 Button("Add to List", action: addItem)
+                    .buttonStyle(.borderless)
                     .disabled(ingredientName.trimmingCharacters(in: .whitespaces).isEmpty)
                 Spacer()
                 Button("Done") {
@@ -144,6 +156,7 @@ struct ShoppingListView: View {
                     ingredientName = ""
                     amount = ""
                 }
+                .buttonStyle(.borderless)
                 .foregroundColor(.secondary)
             }
         }
@@ -216,8 +229,9 @@ struct ShoppingListView: View {
         .font(.caption)
         .padding(.horizontal, 12)
         .padding(.vertical, 6)
+        // Black on system orange keeps text contrast; white on orange is ~2:1.
         .background(Color.orange)
-        .foregroundColor(.white)
+        .foregroundColor(.black)
         .clipShape(Capsule())
         .padding(.top, 8)
     }
@@ -263,6 +277,7 @@ struct ShoppingItemRow: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            .accessibilityValue(item.isChecked ? "Checked" : "Not checked")
 
             Menu {
                 Button("Auto") {

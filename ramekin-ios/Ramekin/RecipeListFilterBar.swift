@@ -31,6 +31,7 @@ struct RecipeListFilterBar: View {
                         HierarchicalTagChip(name: tagName, isSelected: true)
                     }
                     .buttonStyle(.plain)
+                    .accessibilityHint("Removes this tag filter")
                 }
 
                 if hasActiveFilters {
@@ -39,8 +40,11 @@ struct RecipeListFilterBar: View {
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .foregroundColor(.secondary)
+                            .frame(minWidth: 44, minHeight: 44)
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
+                    .accessibilityLabel("Clear Filters")
                 }
             }
             .padding(.horizontal)
@@ -88,6 +92,7 @@ struct RecipeListFilterBar: View {
                 isSelected: photoFilter != .any
             )
         }
+        .accessibilityLabel("Photo filter: \(photoFilter.label)")
     }
 
     private var tagFiltersButton: some View {
@@ -119,8 +124,9 @@ struct RecipeListFilterBar: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 6)
         .background(isSelected ? Color.orange : Color(.systemGray5))
-        .foregroundColor(isSelected ? .white : .primary)
+        .foregroundColor(isSelected ? .black : .primary)
         .clipShape(Capsule())
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
 
@@ -155,7 +161,7 @@ private struct RecipeTagFiltersSheet: View {
             .navigationTitle("Tag Filters")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
                         dismiss()
                     }
