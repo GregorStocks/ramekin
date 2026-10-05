@@ -13,6 +13,21 @@ name: iOS
       - 'Makefile'
       - 'scripts/find-ios-simulator.py'
       - 'scripts/prepare-ios-ui-simulator.sh'
+  # Caches saved by pull_request runs are visible only to reruns of that PR.
+  # Build the backend on master too, so every PR can restore its cache. Keep
+  # these paths in sync with the backend cache key below.
+  push:
+    branches: [master]
+    paths:
+      - 'rust-toolchain.toml'
+      - 'server/**'
+      - 'cli/**'
+      - 'ramekin-core/**'
+      - 'migrations/**'
+      - 'data/ingredients.json'
+      - 'shared-test-vectors/**'
+      - 'Makefile'
+      - '.github/workflows/ios.yml'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -24,6 +39,7 @@ jobs:
   # flake rerun doesn't rebuild/reseed anything it doesn't need).
   ios-unit:
     name: iOS Unit Tests
+    if: github.event_name == 'pull_request'
     runs-on: macos-latest
     # Backstop only: the step timeouts below are the real limits. A step that
     # times out fails (rather than the whole job being cancelled), so the
@@ -66,8 +82,9 @@ jobs:
 
       # The binaries depend only on these inputs, so a PR that leaves the Rust
       # side alone (most iOS PRs) skips the Rust build entirely. Keep this list
-      # in sync with what the server and CLI compile in: crate sources,
-      # embed_migrations!, and include_str! of files outside the crates.
+      # in sync with what the server and CLI compile in (crate sources,
+      # embed_migrations!, include_str! of files outside the crates) and how
+      # they are built (Makefile, this workflow).
       - name: Restore backend binaries
         id: backend-cache
         uses: actions/cache/restore@v6
@@ -76,7 +93,8 @@ jobs:
           key: >-
             ios-ui-backend-${{ env.ImageOS }}-${{ runner.arch }}-${{ hashFiles(
               'rust-toolchain.toml', 'server/**', 'cli/**', 'ramekin-core/**',
-              'migrations/**', 'data/ingredients.json', 'shared-test-vectors/**') }}
+              'migrations/**', 'data/ingredients.json', 'shared-test-vectors/**',
+              'Makefile', '.github/workflows/ios.yml') }}
 
       - name: Install dependencies
         if: steps.backend-cache.outputs.cache-hit != 'true'
@@ -124,6 +142,7 @@ jobs:
           key: ${{ steps.backend-cache.outputs.cache-primary-key }}
 
       - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
         with:
           name: ios-ui-backend
           path: ios-ui-backend.tar
@@ -131,6 +150,7 @@ jobs:
 
   ios-ui-build-app:
     name: iOS UI Tests / Build app
+    if: github.event_name == 'pull_request'
     runs-on: macos-latest
     timeout-minutes: 30
     steps:
