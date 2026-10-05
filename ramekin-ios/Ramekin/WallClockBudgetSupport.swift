@@ -21,10 +21,8 @@ func withWallClockBudget(
             return false
         }
         defer { group.cancelAll() }
-        guard let operationFinishedFirst = try await group.next() else {
-            fatalError("Task group must produce a result")
-        }
-        if !operationFinishedFirst {
+        // next() is never nil with two tasks added; treat it as a timeout anyway.
+        guard let operationFinishedFirst = try await group.next(), operationFinishedFirst else {
             throw WallClockBudgetExceeded()
         }
     }

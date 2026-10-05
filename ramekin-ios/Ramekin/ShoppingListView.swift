@@ -74,8 +74,13 @@ struct ShoppingListView: View {
                 }
             }
             .overlay(alignment: .top) {
-                if !store.isOnline {
-                    offlineBanner
+                if store.isUsingVolatileStorage {
+                    statusBanner(
+                        systemImage: "exclamationmark.triangle",
+                        text: "Storage unavailable – unsynced changes are lost when the app closes"
+                    )
+                } else if !store.isOnline {
+                    statusBanner(systemImage: "wifi.slash", text: "Offline – changes will sync when connected")
                 }
             }
             .overlay(alignment: .bottom) {
@@ -201,10 +206,11 @@ struct ShoppingListView: View {
         guard !name.isEmpty else { return }
 
         let trimmedAmount = amount.trimmingCharacters(in: .whitespaces)
-        store.addItem(
+        // Keep the entry for a retry if it wasn't added.
+        guard store.addItem(
             name: name,
             amount: trimmedAmount.isEmpty ? nil : trimmedAmount
-        )
+        ) else { return }
 
         ingredientName = ""
         amount = ""
@@ -215,10 +221,10 @@ struct ShoppingListView: View {
         }
     }
 
-    private var offlineBanner: some View {
+    private func statusBanner(systemImage: String, text: String) -> some View {
         HStack {
-            Image(systemName: "wifi.slash")
-            Text("Offline – changes will sync when connected")
+            Image(systemName: systemImage)
+            Text(text)
         }
         .font(.caption)
         .padding(.horizontal, 12)

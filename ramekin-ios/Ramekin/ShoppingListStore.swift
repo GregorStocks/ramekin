@@ -5,6 +5,17 @@ import Network
 /// Manages shopping list operations with offline-first CoreData storage and server sync
 @MainActor
 class ShoppingListStore: ObservableObject {
+    enum ShoppingListError: LocalizedError {
+        case noActiveAccount
+
+        var errorDescription: String? {
+            switch self {
+            case .noActiveAccount:
+                return "Sign in to add items to your shopping list."
+            }
+        }
+    }
+
     static let shared = ShoppingListStore()
 
     @Published var items: [ShoppingItem] = []
@@ -16,6 +27,8 @@ class ShoppingListStore: ObservableObject {
     @Published var categoryOrder: [String] = []
 
     private let coreDataStack: CoreDataStack
+    /// Unsynced edits are lost on quit; the UI warns about it.
+    var isUsingVolatileStorage: Bool { coreDataStack.isUsingVolatileStore }
     private let userDefaults: UserDefaults
     private let syncItems: (SyncRequest) async throws -> SyncResponse
     private let networkMonitor = NWPathMonitor()
@@ -37,7 +50,7 @@ class ShoppingListStore: ObservableObject {
         }
     ) {
         self.coreDataStack = coreDataStack
-        self.userDefaults = userDefaults
+        self.userDefaults = coreDataStack.syncStateDefaults(userDefaults)
         self.automaticallySync = automaticallySync
         self.syncItems = syncItems
 
@@ -85,15 +98,18 @@ extension ShoppingListStore {
         items = (try? coreDataStack.viewContext.fetch(request)) ?? []
     }
 
+    /// False when there is no active account to add to (e.g. mid-logout).
+    @discardableResult
     func addItem(
         name: String,
         amount: String? = nil,
         note: String? = nil,
         sourceRecipeId: UUID? = nil,
         sourceRecipeTitle: String? = nil
-    ) {
+    ) -> Bool {
         guard let activeAccountKey else {
-            preconditionFailure("Cannot add a shopping item without an active account")
+            DebugLogger.shared.log("Ignoring shopping item add with no active account", source: "ShoppingList")
+            return false
         }
         let maxSort = items.map(\.sortOrder).max() ?? -1
         _ = ShoppingItem.create(
@@ -102,6 +118,7 @@ extension ShoppingListStore {
             sourceRecipeId: sourceRecipeId, sourceRecipeTitle: sourceRecipeTitle, sortOrder: maxSort + 1
         )
         saveAndSync()
+        return true
     }
 
     func addItemsFromRecipe(
@@ -110,7 +127,7 @@ extension ShoppingListStore {
         recipeTitle: String
     ) throws {
         guard let activeAccountKey else {
-            preconditionFailure("Cannot add recipe items without an active account")
+            throw ShoppingListError.noActiveAccount
         }
         try ShoppingListMutationSupport.addItemsFromRecipe(
             ingredients: ingredients,
@@ -124,14 +141,14 @@ extension ShoppingListStore {
     }
 
     func toggleChecked(_ item: ShoppingItem) {
-        validateActiveAccount(for: item)
+        guard isActiveAccountItem(item) else { return }
         item.isChecked.toggle()
         item.markUpdated()
         saveAndSync()
     }
 
     func updateItem(_ item: ShoppingItem, name: String? = nil, amount: String? = nil, note: String? = nil) {
-        validateActiveAccount(for: item)
+        guard isActiveAccountItem(item) else { return }
         if let name = name { item.item = name }
         if let amount = amount { item.amount = amount }
         if let note = note { item.note = note }
@@ -140,14 +157,14 @@ extension ShoppingListStore {
     }
 
     func updateCategoryOverride(_ item: ShoppingItem, categoryOverride: String?) {
-        validateActiveAccount(for: item)
+        guard isActiveAccountItem(item) else { return }
         guard item.categoryOverride != categoryOverride else { return }
         ShoppingListMutationSupport.updateCategoryOverride(item, categoryOverride: categoryOverride)
         saveAndSync()
     }
 
     func deleteItem(_ item: ShoppingItem) {
-        validateActiveAccount(for: item)
+        guard isActiveAccountItem(item) else { return }
         if item.syncStatusEnum == .pendingCreate {
             coreDataStack.viewContext.delete(item)
         } else {
@@ -386,11 +403,14 @@ extension ShoppingListStore {
         }
     }
 
-    private func validateActiveAccount(for item: ShoppingItem) {
-        precondition(
-            item.accountKey == activeAccountKey && activeAccountKey != nil,
-            "Shopping item does not belong to the active account"
-        )
+    /// False for a stale item from another account (e.g. the account
+    /// switched while a row was on screen); callers skip the mutation.
+    private func isActiveAccountItem(_ item: ShoppingItem) -> Bool {
+        guard item.accountKey == activeAccountKey, activeAccountKey != nil else {
+            DebugLogger.shared.log("Ignoring mutation of a shopping item outside the active account", source: "ShoppingList")
+            return false
+        }
+        return true
     }
 
     private func lastSyncAt(accountKey: String) -> Date? {
@@ -422,7 +442,10 @@ extension ShoppingListStore {
             }
             try coreDataStack.saveContextOrThrow()
         } catch {
-            fatalError("Failed to migrate unscoped shopping items: \(error)")
+            // Leave the migration flag unset so the next launch retries.
+            coreDataStack.viewContext.rollback()
+            DebugLogger.shared.log("Failed to migrate unscoped shopping items: \(error)", source: "ShoppingList")
+            return
         }
 
         if let legacyLastSyncAt = userDefaults.object(forKey: Self.lastSyncAtKeyPrefix) as? Date {

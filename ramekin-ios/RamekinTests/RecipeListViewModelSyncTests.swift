@@ -149,6 +149,34 @@ final class RecipeListViewModelSyncTests: XCTestCase {
         XCTAssertFalse(viewModel.isLoading)
     }
 
+    func testEmptyPageClaimingMoreFailsSyncInsteadOfCrashing() async {
+        let cached = RecipeListTestSupport.makeRecipe(title: "Cached")
+        var persistedCursor: Int64?
+        let viewModel = makeViewModel(
+            syncRecipes: { _, _, _ in
+                SyncRecipesResponse(
+                    cursor: 400,
+                    deleted: [],
+                    hasMore: true,
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                    recipes: []
+                )
+            },
+            cache: RecipeListTestSupport.cacheClient(
+                currentAccountKey: { "account" },
+                syncCursor: { _ in 300 },
+                setSyncCursor: { cursor, _ in persistedCursor = cursor },
+                loadRecipes: { _ in [cached] }
+            )
+        )
+
+        await viewModel.loadRecipes(reset: true)
+
+        XCTAssertTrue(viewModel.syncFailed)
+        XCTAssertNil(persistedCursor)
+        XCTAssertEqual(viewModel.recipes.map(\.id), [cached.id])
+    }
+
     func testSuccessfulRetryClearsStaleBanner() async {
         let cached = RecipeListTestSupport.makeRecipe(title: "Cached")
         var failSync = true
