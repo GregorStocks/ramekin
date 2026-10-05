@@ -33,8 +33,9 @@ pub const DEFAULT_REQUEST_TIMEOUT_SECS: u64 = 30;
 /// background, and a batch of 40 takes the ingredient model 20-40 s.
 pub const INGREDIENT_TIMEOUT_SECS: u64 = 120;
 /// The least request timeout for extraction calls, which write out a whole
-/// recipe: 10-20 s for a long one. Text import waits on it in the request, so
-/// it stays within the clients' 60 s.
+/// recipe: 10-20 s for a long one. Text import waits on it and then on the
+/// enrichments in the request, so iOS gives that request 180 s and the web
+/// client sets no timeout.
 pub const EXTRACTION_TIMEOUT_SECS: u64 = 60;
 /// The least request timeout for generating a recipe photo: 10-30 s for the
 /// current image models (the default about 13 s). The user waits on it in the
