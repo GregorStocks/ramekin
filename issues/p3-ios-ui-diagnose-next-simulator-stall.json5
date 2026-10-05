@@ -12,7 +12,15 @@ Findings so far (PR #748 runs 37248606933 and 37251142452): Before Spotlight was
 On a booted simulator, diagnosticd (the simulator's and the host's) takes about half a core all the time, and nothing known streams the logs. \
 In the green run, the simulator's mediaanalysisd (photo/media analysis) used up to 190% CPU in bursts during the UI tests. \
 Turning it off, or finding which setting triggers it, is the next candidate. \
-The macOS load average stays above 35 on these runners even when idle-ish, so don't gate on it.",
+The macOS load average stays above 35 on these runners even when idle-ish, so don't gate on it. \
+A second kind of stall is not CPU starvation. \
+In green run 37252858637, testMealPlanRecipePicker spent about 275 s inside 'Launch com.ramekin.app'. \
+The log shows the previous instance terminated, xcodebuild logged 'IDELaunchParametersSnapshot: The operation couldn't be completed. \
+(DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)' and 'no debugger version', and nothing else happened until 'Setting up automation session' at t=279 s. runner-load.log shows the runner mostly idle at the time (diagnosticd about 27%, nothing else above 10%). \
+The test survived only because XCUITest's launch timeout is long. \
+The 'Failed to launch com.ramekin.app' failure in run 37211763439 is probably the same hang. \
+Possible leads, all unconfirmed: the LLDB debugger-version error suggests xcodebuild is attaching a debugger to the launched app, and might not need to; check whether the scheme's test action can launch it without the debugger. \
+Also check whether the hang follows a terminate-then-relaunch of the app, which every test does: XCUIApplication.launch terminates the previous instance first.",
   "status": "open",
   "priority": 3,
   "type": "task",
