@@ -1,0 +1,16 @@
+{
+  "title": "Label icon-only meal-plan card edit/remove buttons on iOS",
+  "description": "MealPlanItemCard.swift renders the edit (pencil.circle) and remove (xmark.circle.fill) actions as Image-only Buttons with no accessibilityLabel, so VoiceOver announces SF Symbol names instead of what the button does or which meal it affects. \
+Add labels like \"Edit <recipe title>\" / \"Remove <recipe title>\" and cover them in RamekinUITests. \
+Web's MealPlanPage.tsx edit/remove buttons only have title=\"Edit\"/\"Remove\"; consider including the recipe title there too so repeated buttons are distinguishable.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "web",
+    "accessibility",
+  ],
+  "created_at": "2026-10-04T00:00:00Z",
+  "updated_at": "2026-10-04T00:00:00Z",
+}

@@ -221,6 +221,7 @@ struct MealPlanView: View {
                     .font(.caption)
                     .foregroundColor(.orange)
             }
+            .accessibilityLabel("Add \(mealType.displayLabel) on \(dayHeaderText(date))")
             .padding(.bottom, 4)
         }
     }
