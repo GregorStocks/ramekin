@@ -1,5 +1,5 @@
 {
-  "title": "Paprika export sections don't round-trip (digit-bearing/long labels, returns to no section)",
+  "title": "Paprika export doesn't fully round-trip through Ramekin's importer (sections, partial alternatives)",
   "description": "The Paprika export (server/src/api/recipes/paprika.rs, format_ingredients_text) writes a 'Section:' line before each section change. \
 On re-import, detect_section_header (ramekin-core/src/ingredient_parser/item/line_classifiers.rs) only accepts generic colon-terminated labels when they're short and digit-free, unless they match another known pattern. \
 So a stored section like 'Part 1' is exported as 'Part 1:' and re-imported as an ingredient line, and the following ingredients lose their section. \
@@ -7,6 +7,9 @@ Recognized labels are also title-cased by normalize_section_name, so the round t
 \n\
 A return to no section is lost too. \
 The recipe form lets a blank section row end a section, but the export writes no reset line and parse_ingredients keeps current_section until the next header, so those ingredients re-import under the previous section.\n\
+\n\
+Alternative measurements with only an amount or only a unit are exported as '(3)' or '(pinch)' (the shared ingredient-formatting.json shape), but try_parse_parenthetical_measurement needs both, so on re-import that text lands in the note instead of becoming an alternative measurement. \
+The text survives; the structure doesn't.\n\
 \n\
 Paprika's ingredients field is plain text with no section syntax, so a fix probably belongs in the importer: for example, trust colon-terminated lines in a Paprika import more than in scraped HTML. \
 Loosening detect_section_header globally risks misclassifying real ingredient lines, so check `make pipeline` diffs before doing that.",

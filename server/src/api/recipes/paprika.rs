@@ -52,7 +52,7 @@ struct PaprikaPhoto {
 /// precedes each change of section so the importer's section-header detection
 /// restores the grouping on re-import. Paprika's plain text has no way to end a
 /// section, so ingredients that return to no section re-import under the
-/// header above them (issues/p4-paprika-section-round-trip.json5).
+/// header above them (issues/p4-paprika-export-round-trip.json5).
 ///
 /// Read-time derived grams are left out: they're approximate, and Paprika
 /// would store them as source text.
