@@ -67,7 +67,10 @@ export interface RecipeFormState {
   loadDraft: (content: RecipeContent) => void;
   toCreateRecipeRequest: () => CreateRecipeRequest;
   toUpdateRecipeRequest: () => UpdateRecipeRequest;
-  /** Whether the fields differ from what was last loaded or saved. */
+  /**
+   * Whether leaving would lose work: the fields differ from what was last
+   * loaded or saved, or a photo is still uploading.
+   */
   hasUnsavedChanges: () => boolean;
   /** Treat the current fields as saved, e.g. right before leaving after a save. */
   markSaved: () => void;
@@ -257,7 +260,8 @@ export function createRecipeFormState(
       }
       return buildUpdateRecipeRequest(values(), versionId);
     },
-    hasUnsavedChanges: () => serializedValues() !== savedValues(),
+    hasUnsavedChanges: () =>
+      uploading() || serializedValues() !== savedValues(),
     markSaved,
   };
 }

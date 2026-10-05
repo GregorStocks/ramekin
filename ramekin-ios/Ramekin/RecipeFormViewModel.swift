@@ -69,9 +69,11 @@ final class RecipeFormViewModel: ObservableObject {
 
 extension RecipeFormViewModel {
     /// Whether closing the form would throw away the user's work. In create
-    /// mode that's any typed text or a prepared draft.
+    /// mode that's any typed text or a prepared draft; a photo still
+    /// uploading counts in either mode.
     var hasUnsavedChanges: Bool {
-        switch mode {
+        if isUploadingPhoto { return true }
+        return switch mode {
         case .create:
             draft != nil || !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         case .edit:

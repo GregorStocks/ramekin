@@ -264,6 +264,8 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertTrue(model.hasUnsavedChanges)
         model.formData.title = "Plain"
         XCTAssertFalse(model.hasUnsavedChanges)
+        model.isUploadingPhoto = true
+        XCTAssertTrue(model.hasUnsavedChanges, "A pending photo upload would be lost")
     }
 
     private enum TestError: Error {

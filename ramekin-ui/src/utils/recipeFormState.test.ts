@@ -115,6 +115,20 @@ describe("createRecipeFormState unsaved changes", () => {
     });
   });
 
+  it("counts a photo upload in progress as unsaved", () => {
+    createRoot((dispose) => {
+      const form = createRecipeFormState({
+        getPhotosApi: () =>
+          ({ upload: () => new Promise(() => {}) }) as unknown as PhotosApi,
+      });
+      const input = { files: [new Blob(["x"])], value: "photo.jpg" };
+      void form.onPhotoUpload({ target: input } as unknown as Event);
+      expect(form.uploading()).toBe(true);
+      expect(form.hasUnsavedChanges()).toBe(true);
+      dispose();
+    });
+  });
+
   it("treats loaded and saved values as the new baseline", () => {
     withForm((form) => {
       const content: RecipeContent = {
