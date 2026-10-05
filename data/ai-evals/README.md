@@ -27,7 +27,7 @@ a model that answers invalidly is asked (and billed) again on every run. Models 
 model list, which also supplies the prices in the cost column. A model whose
 calls fail (a timeout) stops the run before any report is written; rerun
 without it, or after fixing the cause, which is nearly free since everything
-answered is cached. The exception is a photo that outlasts photo generation's 60 s timeout:
+answered is cached. The exception is a photo that outlasts photo generation's 45 s timeout:
 production fails that photo too, so it counts as the model's rejected answer
 and the run goes on.
 

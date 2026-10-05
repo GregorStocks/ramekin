@@ -36,10 +36,11 @@ pub const INGREDIENT_TIMEOUT_SECS: u64 = 120;
 /// recipe: 10-20 s for a long one. Text import waits on it in the request, so
 /// it stays within the clients' 60 s.
 pub const EXTRACTION_TIMEOUT_SECS: u64 = 60;
-/// The least request timeout for generating a recipe photo: 10-25 s for the
-/// current image models (FLUX 3 about 20 s). The user waits on it in the
-/// request, so it stays within the clients' 60 s, as extraction does.
-pub const IMAGE_TIMEOUT_SECS: u64 = 60;
+/// The least request timeout for generating a recipe photo: 10-30 s for the
+/// current image models (the default about 13 s). The user waits on it in the
+/// request, and the server still processes and stores the image after, so it
+/// stays well inside the clients' 60 s (URLSession's default included).
+pub const IMAGE_TIMEOUT_SECS: u64 = 45;
 
 #[derive(Error, Debug, Clone)]
 pub enum ConfigError {
