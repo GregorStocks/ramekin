@@ -123,7 +123,7 @@ extension RecipeDetailViewModel {
     }
 
     var actionsDisabledForHistoricalVersion: Bool {
-        isViewingHistoricalVersion || isReverting || isRescraping || isAutoEnrichmentRunning
+        isViewingHistoricalVersion || isReverting || isRescraping || isAutoEnrichmentRunning || isDeleting
     }
 
     var isAutoEnrichmentRunning: Bool {
@@ -156,11 +156,17 @@ extension RecipeDetailViewModel {
         recipeScale = value
     }
 
-    func applyCustomScale() {
+    /// The custom scale field's text as a usable scale, or nil.
+    var parsedCustomScale: Double? {
         guard let value = RecipeScaleSupport.parseDecimal(customScaleInput),
               RecipeScaleSupport.isValidScale(value) else {
-            return
+            return nil
         }
+        return value
+    }
+
+    func applyCustomScale() {
+        guard let value = parsedCustomScale else { return }
         setRecipeScale(value)
     }
 }

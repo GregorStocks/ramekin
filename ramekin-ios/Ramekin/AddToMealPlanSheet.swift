@@ -57,6 +57,7 @@ struct AddToMealPlanSheet: View {
         VStack(spacing: 12) {
             Image(systemName: "checkmark.circle.fill")
                 .scaledIconFont(size: 50)
+                .accessibilityHidden(true)
                 .foregroundColor(.green)
             Text("Added to meal plan")
                 .font(.headline)
@@ -78,6 +79,7 @@ struct AddToMealPlanSheet: View {
             )
             await MainActor.run {
                 showingConfirmation = true
+                UIAccessibility.post(notification: .announcement, argument: "Added to meal plan")
             }
             try? await Task.sleep(nanoseconds: 1_000_000_000)
             await MainActor.run {

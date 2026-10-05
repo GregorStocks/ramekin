@@ -1,10 +1,12 @@
 import Foundation
 
 extension RecipeDetailViewModel {
-    func applyEnrichment(_ modified: RecipeContent) async {
+    /// Saves the reviewed changes and returns nil, or returns why it failed so
+    /// the review sheet, which covers the recipe, can show it.
+    @discardableResult
+    func applyEnrichment(_ modified: RecipeContent) async -> String? {
         guard let currentVersionId else {
-            error = "Reload the recipe and try again."
-            return
+            return "Reload the recipe and try again."
         }
         let updateRequest = UpdateRecipeRequest(
             cookTime: modified.cookTime,
@@ -29,9 +31,11 @@ extension RecipeDetailViewModel {
             try await submitUpdate(updateRequest)
             enrichResult = nil
             await loadRecipe()
+            return nil
         } catch is CancellationError {
+            return nil
         } catch {
-            self.error = APIErrorFormatter.userMessage(
+            return APIErrorFormatter.userMessage(
                 from: error,
                 fallback: "Failed to apply enrichment"
             )

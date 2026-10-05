@@ -1,10 +1,10 @@
 import SwiftUI
 
 extension RecipeDetailView {
-    func rescrapeProgressBanner() -> some View {
+    func progressBanner(_ message: String) -> some View {
         HStack(spacing: 10) {
             ProgressView()
-            Text("Rescraping from source…")
+            Text(message)
                 .font(.subheadline)
                 .foregroundColor(.primary)
             Spacer()

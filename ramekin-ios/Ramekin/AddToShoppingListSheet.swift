@@ -95,6 +95,8 @@ struct AddToShoppingListSheet: View {
                             }
                         }
                         .font(.caption)
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
                     }
                 }
 
@@ -143,6 +145,7 @@ struct AddToShoppingListSheet: View {
         VStack(spacing: 12) {
             Image(systemName: "checkmark.circle.fill")
                 .scaledIconFont(size: 50)
+                .accessibilityHidden(true)
                 .foregroundColor(.green)
             Text("Added \(selectedIngredients.count) items")
                 .font(.headline)

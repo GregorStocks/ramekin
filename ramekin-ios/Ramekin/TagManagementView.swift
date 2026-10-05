@@ -9,6 +9,8 @@ struct TagManagementView: View {
     @State private var editError: String?
     @State private var isSaving = false
     @State private var deletingTag: TagItem?
+    /// Shown as an alert: the tag may be far down the list from the error section.
+    @State private var deleteError: String?
 
     private var groupedTags: [TagHierarchySupport.TagGroup<TagItem>] {
         TagHierarchySupport.groups(for: tags)
@@ -37,6 +39,7 @@ struct TagManagementView: View {
                     VStack(spacing: 12) {
                         Image(systemName: "tag.slash")
                             .scaledIconFont(size: 32)
+                            .accessibilityHidden(true)
                             .foregroundColor(.secondary)
                         Text("No tags yet")
                             .font(.headline)
@@ -95,6 +98,15 @@ struct TagManagementView: View {
                     Text("Remove \"\(tag.name)\" from \(TagManagementSupport.recipeCountText(for: tag.recipeCount))?")
                 }
             }
+        )
+        .alert(
+            "Couldn't Delete Tag",
+            isPresented: Binding(
+                get: { deleteError != nil },
+                set: { if !$0 { deleteError = nil } }
+            ),
+            actions: { Button("OK", role: .cancel) {} },
+            message: { Text(deleteError ?? "") }
         )
     }
 }
@@ -312,7 +324,7 @@ private extension TagManagementView {
         } catch is CancellationError {
         } catch {
             await MainActor.run {
-                self.error = APIErrorFormatter.userMessage(
+                deleteError = APIErrorFormatter.userMessage(
                     from: error,
                     fallback: "Failed to delete tag"
                 )

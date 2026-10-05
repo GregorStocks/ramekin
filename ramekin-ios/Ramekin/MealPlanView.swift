@@ -84,6 +84,9 @@ struct MealPlanView: View {
                 await loadMealPlans()
             }
             .onChange(of: weekStart) { _ in
+                // The old week's meals don't belong to the new dates; clearing
+                // them shows the loading state instead of an empty week.
+                mealPlans = []
                 Task { await loadMealPlans() }
             }
             .onReceive(NotificationCenter.default.publisher(for: .recipeDeleted)) { _ in
@@ -125,7 +128,7 @@ struct MealPlanView: View {
                 }
             }
             .alert(
-                "Meal Plan",
+                "Couldn't Update Meal Plan",
                 isPresented: Binding(
                     get: { actionError != nil },
                     set: { if !$0 { actionError = nil } }
@@ -246,6 +249,7 @@ struct MealPlanView: View {
     private func errorView(message: String) -> some View {
         VStack(spacing: 16) {
             Image(systemName: "exclamationmark.triangle")
+                .accessibilityHidden(true)
                 .font(.largeTitle)
                 .foregroundColor(.orange)
             Text(message)
@@ -274,21 +278,28 @@ struct MealPlanView: View {
         SharedDateFormatters.localDateOnly.string(from: date)
     }
 
-    // MARK: - Data Loading
+}
 
+// MARK: - Data Loading
+
+extension MealPlanView {
     private func loadMealPlans() async {
         await MainActor.run {
             isLoading = true
             error = nil
         }
 
-        let endDate = Calendar.current.date(byAdding: .day, value: 6, to: weekStart)!
+        let requestedWeek = weekStart
+        let endDate = Calendar.current.date(byAdding: .day, value: 6, to: requestedWeek)!
 
         do {
             let response = try await logger.timed("listMealPlans API", source: "MealPlan") {
-                try await RamekinAPI.shared.listMealPlans(startDate: weekStart, endDate: endDate)
+                try await RamekinAPI.shared.listMealPlans(startDate: requestedWeek, endDate: endDate)
             }
             await MainActor.run {
+                // A slow response for a week the user has left must not
+                // replace the week on screen.
+                guard weekStart == requestedWeek else { return }
                 mealPlans = response.mealPlans
                 isLoading = false
             }
@@ -296,8 +307,11 @@ struct MealPlanView: View {
             logger.log("loadMealPlans cancelled", source: "MealPlan")
         } catch {
             await MainActor.run {
+                guard weekStart == requestedWeek else { return }
                 if mealPlans.isEmpty {
                     self.error = "Could not load meal plans. Please try again."
+                } else {
+                    actionError = "Couldn't refresh this week. Pull down to try again."
                 }
                 isLoading = false
             }

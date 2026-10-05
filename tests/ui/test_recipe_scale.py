@@ -336,6 +336,21 @@ def test_custom_input_overrides_presets(scale_recipe, page: Page):
         )
 
 
+def test_invalid_custom_scale_explains_itself(scale_recipe, page: Page):
+    _recipe_id, _token = scale_recipe
+    custom = page.locator(".scale-custom-input")
+    error = page.locator("#scale-custom-error")
+    custom.fill("0")
+    custom.press("Enter")
+    expect(error).to_be_visible()
+    expect(error).to_have_attribute("role", "alert")
+    expect(custom).to_have_attribute("aria-invalid", "true")
+    assert "scale=" not in page.url
+
+    custom.fill("2")
+    expect(error).to_have_count(0)
+
+
 def test_scale_2x_doubles_amounts(scale_recipe, page: Page):
     _recipe_id, _token = scale_recipe
     page.locator(".scale-preset", has_text="2×").click()

@@ -104,6 +104,7 @@ struct ShareExtensionView: View {
             VStack(spacing: 24) {
                 statusIcon
                     .scaledIconFont(size: 64)
+                    .accessibilityHidden(true)
                     .padding(.top, 32)
 
                 statusText

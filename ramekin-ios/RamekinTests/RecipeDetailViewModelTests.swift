@@ -226,6 +226,27 @@ final class RecipeDetailViewModelTests: XCTestCase {
     }
 
     @MainActor
+    func testFailedEnrichmentApplyReturnsErrorAndKeepsReview() async {
+        let recipeId = UUID()
+        let original = makeRecipe(id: recipeId, versionId: UUID())
+        let modified = RecipeContent(ingredients: [], instructions: "New", title: "New")
+        let viewModel = RecipeDetailViewModel(
+            recipeId: recipeId,
+            api: makeAPI(
+                getRecipe: { _, _ in original },
+                updateRecipe: { _, _ in throw URLError(.timedOut) }
+            )
+        )
+        viewModel.enrichResult = modified
+
+        await viewModel.loadRecipe()
+        let failure = await viewModel.applyEnrichment(modified)
+
+        XCTAssertNotNil(failure, "The review sheet needs the reason to show it")
+        XCTAssertNotNil(viewModel.enrichResult, "The review stays open to retry")
+    }
+
+    @MainActor
     func testGenerateDescriptionReloadsRecipeOnlyWhenChanged() async {
         let recipeId = UUID()
         var loadCount = 0

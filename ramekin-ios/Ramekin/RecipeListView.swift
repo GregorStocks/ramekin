@@ -20,8 +20,11 @@ struct RecipeListView: View {
     var body: some View {
         VStack(spacing: 0) {
             if showsListChrome {
-                if viewModel.syncFailed {
-                    syncFailedBanner
+                if viewModel.reloadFailed {
+                    failureBanner("Couldn't update results — these may be out of date")
+                    Divider()
+                } else if viewModel.syncFailed {
+                    failureBanner("Couldn't refresh — showing saved recipes")
                     Divider()
                 }
                 filterBar
@@ -121,11 +124,12 @@ struct RecipeListView: View {
         }
     }
 
-    private var syncFailedBanner: some View {
+    private func failureBanner(_ message: String) -> some View {
         HStack(spacing: 8) {
             Image(systemName: "exclamationmark.triangle.fill")
                 .foregroundColor(.orange)
-            Text("Couldn't refresh — showing saved recipes")
+                .accessibilityHidden(true)
+            Text(message)
                 .font(.footnote)
                 .foregroundColor(.secondary)
             Spacer()
@@ -133,6 +137,8 @@ struct RecipeListView: View {
                 viewModel.reloadRecipes()
             }
             .font(.footnote.weight(.semibold))
+            .frame(minWidth: 44, minHeight: 44)
+            .contentShape(Rectangle())
         }
         .padding(.horizontal)
         .padding(.vertical, 8)
@@ -205,6 +211,7 @@ struct RecipeListView: View {
         VStack(spacing: 16) {
             Image(systemName: "book.closed")
                 .scaledIconFont(size: 48)
+                .accessibilityHidden(true)
                 .foregroundColor(.secondary)
             Text("No recipes yet")
                 .font(.title2)
@@ -220,6 +227,7 @@ struct RecipeListView: View {
         VStack(spacing: 16) {
             Image(systemName: "magnifyingglass")
                 .scaledIconFont(size: 48)
+                .accessibilityHidden(true)
                 .foregroundColor(.secondary)
             Text("No matching recipes")
                 .font(.title2)
@@ -236,6 +244,7 @@ struct RecipeListView: View {
     private func errorView(message: String) -> some View {
         VStack(spacing: 16) {
             Image(systemName: "exclamationmark.triangle")
+                .accessibilityHidden(true)
                 .font(.largeTitle)
                 .foregroundColor(.orange)
             Text(message)

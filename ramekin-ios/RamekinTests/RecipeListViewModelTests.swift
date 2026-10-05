@@ -222,6 +222,42 @@ final class RecipeListViewModelTests: XCTestCase {
         XCTAssertFalse(viewModel.isLoading)
     }
 
+    func testFailedReloadOverExistingResultsIsFlagged() async {
+        let recipe = RecipeListTestSupport.makeRecipe(title: "Pasta")
+        var calls = 0
+        let viewModel = RecipeListViewModel(
+            api: RecipeListViewAPIClient(
+                listAllTags: { TagsListResponse(tags: []) },
+                listRecipes: { limit, offset, _, _, _ in
+                    calls += 1
+                    if calls > 1 { throw URLError(.timedOut) }
+                    return ListRecipesResponse(
+                        pagination: PaginationMetadata(limit: limit, offset: offset, total: 1),
+                        recipes: [recipe]
+                    )
+                },
+                syncRecipes: { _, _, _ in RecipeListTestSupport.emptySyncResponse() }
+            ),
+            cache: RecipeListTestSupport.noCacheClient(),
+            userDefaults: RecipeListTestSupport.isolatedDefaults(),
+            pageSize: 20
+        )
+
+        viewModel.searchText = "pasta"
+        await viewModel.loadRecipes(reset: true)
+        XCTAssertFalse(viewModel.reloadFailed)
+
+        viewModel.searchText = "pastas"
+        await viewModel.loadRecipes(reset: true)
+        XCTAssertTrue(viewModel.reloadFailed, "Stale results must not pass for the new search")
+        XCTAssertNil(viewModel.error)
+        XCTAssertEqual(viewModel.recipes.map(\.id), [recipe.id])
+
+        calls = 0
+        await viewModel.loadRecipes(reset: true)
+        XCTAssertFalse(viewModel.reloadFailed)
+    }
+
     func testSyncFailureWithEmptyCacheStillShowsError() async {
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(

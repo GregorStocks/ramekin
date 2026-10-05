@@ -4,6 +4,7 @@ struct SettingsView: View {
     @EnvironmentObject var appState: AppState
 
     @State private var showingLogoutConfirmation = false
+    @State private var showingClearLogsConfirmation = false
     @State private var connectionStatus: ConnectionStatus = .unknown
     @State private var showingDebugLogs = false
     @State private var debugLogs = ""
@@ -27,6 +28,7 @@ struct SettingsView: View {
                 VStack(spacing: 16) {
                     Image(systemName: "checkmark.circle.fill")
                         .scaledIconFont(size: 64)
+                        .accessibilityHidden(true)
                         .foregroundColor(.green)
 
                     Text("You're all set!")
@@ -148,8 +150,7 @@ struct SettingsView: View {
                 }
 
                 Button("Clear Logs", role: .destructive) {
-                    DebugLogger.shared.clearLogs()
-                    debugLogs = ""
+                    showingClearLogsConfirmation = true
                 }
 
                 Button {
@@ -201,6 +202,16 @@ struct SettingsView: View {
         }
         .navigationTitle("Settings")
         .confirmationDialog(
+            "Clear all debug logs?",
+            isPresented: $showingClearLogsConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("Clear Logs", role: .destructive) {
+                DebugLogger.shared.clearLogs()
+                debugLogs = ""
+            }
+        }
+        .confirmationDialog(
             "Sign out of Ramekin?",
             isPresented: $showingLogoutConfirmation,
             titleVisibility: .visible
@@ -228,6 +239,11 @@ struct SettingsView: View {
         ))
     }
 
+}
+
+// MARK: - Actions
+
+extension SettingsView {
     @MainActor
     private func exportAllRecipes() async {
         guard !isExportingAll else { return }

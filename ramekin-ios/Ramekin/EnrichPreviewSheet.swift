@@ -3,10 +3,12 @@ import SwiftUI
 struct EnrichPreviewSheet: View {
     let original: RecipeResponse
     let modified: RecipeContent
-    let onApply: () -> Void
+    /// Returns nil on success (the caller dismisses the sheet), or an error message.
+    let onApply: () async -> String?
     let onCancel: () -> Void
 
     @State private var isApplying = false
+    @State private var applyError: String?
 
     var body: some View {
         NavigationStack {
@@ -69,6 +71,18 @@ struct EnrichPreviewSheet: View {
                 }
                 .padding()
             }
+            // An alert, not an inline message: the review may be scrolled
+            // far from any spot an inline error could sit, and VoiceOver
+            // announces alerts.
+            .alert(
+                "Couldn't Apply Changes",
+                isPresented: Binding(
+                    get: { applyError != nil },
+                    set: { if !$0 { applyError = nil } }
+                ),
+                actions: { Button("OK", role: .cancel) {} },
+                message: { Text(applyError ?? "") }
+            )
             .navigationTitle("Review Changes")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -76,11 +90,19 @@ struct EnrichPreviewSheet: View {
                     Button("Cancel", action: onCancel)
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Apply Changes") {
-                        isApplying = true
-                        onApply()
+                    if isApplying {
+                        ProgressView().accessibilityLabel("Applying changes")
+                    } else {
+                        Button("Apply Changes") {
+                            Task {
+                                isApplying = true
+                                applyError = nil
+                                applyError = await onApply()
+                                isApplying = false
+                            }
+                        }
+                        .disabled(!hasAnyChanges)
                     }
-                    .disabled(isApplying || !hasAnyChanges)
                 }
             }
         }

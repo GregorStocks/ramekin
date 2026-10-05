@@ -152,6 +152,8 @@ struct RecipeFormTagsSection: View {
                         $0.caseInsensitiveCompare(tag.name) == .orderedSame
                     }
                 )
+                .frame(minHeight: 44)
+                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
         }
