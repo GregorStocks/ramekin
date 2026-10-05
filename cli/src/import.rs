@@ -228,6 +228,36 @@ async fn import_recipe(
     Ok(import_response)
 }
 
+/// Decode a recipe's photos: the full-resolution `photos` array, or the
+/// `photo_data` thumbnail when that array is empty. Blank entries are skipped.
+fn decode_photos(recipe: &PaprikaRecipe) -> Result<Vec<Vec<u8>>> {
+    let encoded: Vec<&str> = if recipe.photos.is_empty() {
+        recipe.photo_data.as_deref().into_iter().collect()
+    } else {
+        recipe
+            .photos
+            .iter()
+            .filter_map(|photo| photo.data.as_deref())
+            .collect()
+    };
+    encoded
+        .into_iter()
+        .filter(|data| !data.is_empty())
+        .enumerate()
+        .map(|(n, data)| {
+            base64::engine::general_purpose::STANDARD
+                .decode(data)
+                .with_context(|| {
+                    format!(
+                        "Failed to decode photo {} of recipe '{}'",
+                        n + 1,
+                        recipe.name
+                    )
+                })
+        })
+        .collect()
+}
+
 pub async fn import(
     server: &str,
     username: &str,
@@ -261,102 +291,70 @@ pub async fn import(
     tracing::info!("Found {} recipes in archive", archive.len());
 
     let mut jobs = Vec::new();
+    // Stop at the first bad recipe, but say what the server already has so the
+    // user knows the import was partial rather than rolled back.
+    let submitted: Result<()> = async {
+        for i in 0..archive.len() {
+            let mut entry = archive.by_index(i)?;
+            let entry_name = entry.name().to_string();
 
-    for i in 0..archive.len() {
-        let mut entry = archive.by_index(i)?;
-        let entry_name = entry.name().to_string();
-
-        if !entry_name.ends_with(".paprikarecipe") {
-            tracing::debug!(file = %entry_name, "Skipping non-recipe file");
-            continue;
-        }
-
-        // Read the gzipped content
-        let mut compressed_data = Vec::new();
-        entry.read_to_end(&mut compressed_data)?;
-
-        // Decompress with gzip
-        let mut decoder = GzDecoder::new(&compressed_data[..]);
-        let mut json_content = String::new();
-        decoder
-            .read_to_string(&mut json_content)
-            .with_context(|| format!("Failed to decompress recipe: {}", entry_name))?;
-
-        // Parse the recipe JSON
-        let recipe: PaprikaRecipe = serde_json::from_str(&json_content)
-            .with_context(|| format!("Failed to parse recipe JSON: {}", entry_name))?;
-
-        let recipe_name = recipe.name.clone();
-
-        // Upload all photos from the photos array (these are full resolution)
-        // Fall back to photo_data if photos array is empty
-        let mut photo_ids = Vec::new();
-        if !recipe.photos.is_empty() {
-            for (i, photo) in recipe.photos.iter().enumerate() {
-                if let Some(ref data) = photo.data {
-                    if !data.is_empty() {
-                        match base64::engine::general_purpose::STANDARD.decode(data) {
-                            Ok(image_bytes) => match upload_photo(&config, &image_bytes).await {
-                                Ok(id) => photo_ids.push(id),
-                                Err(e) => {
-                                    tracing::warn!(
-                                        photo_num = i + 1,
-                                        recipe = %recipe_name,
-                                        error = %e,
-                                        "Failed to upload photo"
-                                    );
-                                }
-                            },
-                            Err(e) => {
-                                tracing::warn!(
-                                    photo_num = i + 1,
-                                    recipe = %recipe_name,
-                                    error = %e,
-                                    "Failed to decode photo"
-                                );
-                            }
-                        }
-                    }
-                }
+            if !entry_name.ends_with(".paprikarecipe") {
+                tracing::debug!(file = %entry_name, "Skipping non-recipe file");
+                continue;
             }
-        } else if let Some(ref data) = recipe.photo_data {
-            // Fall back to photo_data (may be a thumbnail, but better than nothing)
-            if !data.is_empty() {
-                match base64::engine::general_purpose::STANDARD.decode(data) {
-                    Ok(image_bytes) => match upload_photo(&config, &image_bytes).await {
-                        Ok(id) => photo_ids.push(id),
-                        Err(e) => {
-                            tracing::warn!(
-                                recipe = %recipe_name,
-                                error = %e,
-                                "Failed to upload photo"
-                            );
-                        }
-                    },
-                    Err(e) => {
-                        tracing::warn!(
-                            recipe = %recipe_name,
-                            error = %e,
-                            "Failed to decode photo"
-                        );
-                    }
-                }
+
+            // Read the gzipped content
+            let mut compressed_data = Vec::new();
+            entry.read_to_end(&mut compressed_data)?;
+
+            // Decompress with gzip
+            let mut decoder = GzDecoder::new(&compressed_data[..]);
+            let mut json_content = String::new();
+            decoder
+                .read_to_string(&mut json_content)
+                .with_context(|| format!("Failed to decompress recipe: {}", entry_name))?;
+
+            // Parse the recipe JSON
+            let recipe: PaprikaRecipe = serde_json::from_str(&json_content)
+                .with_context(|| format!("Failed to parse recipe JSON: {}", entry_name))?;
+
+            let recipe_name = recipe.name.clone();
+
+            // Decode every photo before uploading any, so a corrupt photo doesn't
+            // leave this recipe's other photos uploaded but unattached.
+            let mut photo_ids = Vec::new();
+            for (n, image_bytes) in decode_photos(&recipe)?.iter().enumerate() {
+                let id = upload_photo(&config, image_bytes).await.with_context(|| {
+                    format!("Failed to upload photo {} of recipe '{recipe_name}'", n + 1)
+                })?;
+                photo_ids.push(id);
             }
+
+            // Convert to RawRecipe format and call the import endpoint
+            let raw_recipe = convert_to_raw_recipe(&recipe, preserve_tags);
+
+            let response = import_recipe(&config, raw_recipe, photo_ids)
+                .await
+                .with_context(|| format!("Failed to submit recipe '{recipe_name}'"))?;
+            tracing::info!(
+                "  Submitted: {} (job_id: {}, status: {})",
+                recipe_name,
+                response.job_id,
+                response.status
+            );
+            jobs.push(response.job_id);
         }
-
-        // Convert to RawRecipe format and call the import endpoint
-        let raw_recipe = convert_to_raw_recipe(&recipe, preserve_tags);
-
-        let response = import_recipe(&config, raw_recipe, photo_ids)
-            .await
-            .with_context(|| format!("Failed to submit recipe '{recipe_name}'"))?;
-        tracing::info!(
-            "  Submitted: {} (job_id: {}, status: {})",
-            recipe_name,
-            response.job_id,
-            response.status
-        );
-        jobs.push(response.job_id);
+        Ok(())
+    }
+    .await;
+    if let Err(e) = submitted {
+        if jobs.is_empty() {
+            return Err(e);
+        }
+        return Err(e.context(format!(
+            "Import stopped; {} recipe(s) were already submitted and remain on the server",
+            jobs.len()
+        )));
     }
 
     let saved_count = jobs.len();
@@ -490,6 +488,48 @@ mod tests {
                 .push(StepState::new(true, step.into(), "failed".into()));
         }
         job
+    }
+
+    fn recipe(photos: Vec<Option<&str>>, photo_data: Option<&str>) -> PaprikaRecipe {
+        let mut recipe: PaprikaRecipe = serde_json::from_str(r#"{"name": "Soup"}"#).unwrap();
+        recipe.photos = photos
+            .into_iter()
+            .map(|data| PaprikaPhoto {
+                data: data.map(String::from),
+            })
+            .collect();
+        recipe.photo_data = photo_data.map(String::from);
+        recipe
+    }
+
+    #[test]
+    fn decode_photos_prefers_full_resolution_and_skips_blanks() {
+        let photos = decode_photos(&recipe(
+            vec![Some("YQ=="), None, Some(""), Some("Yg==")],
+            Some("Yw=="),
+        ))
+        .unwrap();
+        assert_eq!(photos, vec![b"a".to_vec(), b"b".to_vec()]);
+    }
+
+    #[test]
+    fn decode_photos_falls_back_to_photo_data() {
+        assert_eq!(
+            decode_photos(&recipe(vec![], Some("Yw=="))).unwrap(),
+            vec![b"c".to_vec()]
+        );
+        assert!(decode_photos(&recipe(vec![], Some(""))).unwrap().is_empty());
+        assert!(decode_photos(&recipe(vec![], None)).unwrap().is_empty());
+    }
+
+    #[test]
+    fn decode_photos_reports_invalid_base64() {
+        let error =
+            decode_photos(&recipe(vec![Some("YQ=="), Some("not base64!")], None)).unwrap_err();
+        assert_eq!(
+            error.to_string(),
+            "Failed to decode photo 2 of recipe 'Soup'"
+        );
     }
 
     #[tokio::test]
