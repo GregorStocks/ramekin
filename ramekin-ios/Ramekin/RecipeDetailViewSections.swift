@@ -248,7 +248,7 @@ extension RecipeDetailView {
             }
 
             if !viewModel.customScaleInput.isEmpty && viewModel.parsedCustomScale == nil {
-                Text("Enter a number greater than 0, like 1.5 or 3/4.")
+                Text("Enter a number greater than 0 and at most \(RecipeScaleSupport.maximumScale.formatted()).")
                     .font(.caption)
                     .foregroundColor(.red)
             }

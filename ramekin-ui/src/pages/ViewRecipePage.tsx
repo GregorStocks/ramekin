@@ -102,6 +102,10 @@ export default function ViewRecipePage() {
   };
 
   const [customScaleInput, setCustomScaleInput] = createSignal("");
+  // Say why a custom scale wasn't applied instead of silently ignoring it.
+  const customScaleInvalid = () =>
+    customScaleInput().trim() !== "" &&
+    !isValidRecipeScale(Number(customScaleInput()));
   const applyCustomScale = () => {
     const v = Number(customScaleInput());
     if (isValidRecipeScale(v)) {
@@ -793,6 +797,12 @@ export default function ViewRecipePage() {
                         class="scale-custom-input"
                         placeholder="Custom"
                         aria-label="Custom recipe scale"
+                        aria-invalid={customScaleInvalid()}
+                        aria-describedby={
+                          customScaleInvalid()
+                            ? "scale-custom-error"
+                            : undefined
+                        }
                         value={customScaleInput()}
                         onInput={(e) =>
                           setCustomScaleInput(e.currentTarget.value)
@@ -803,6 +813,16 @@ export default function ViewRecipePage() {
                         onBlur={applyCustomScale}
                       />
                     </div>
+                    <Show when={customScaleInvalid()}>
+                      <p
+                        id="scale-custom-error"
+                        class="scale-custom-error"
+                        role="alert"
+                      >
+                        Enter a number greater than 0 and at most{" "}
+                        {MAX_RECIPE_SCALE.toLocaleString()}.
+                      </p>
+                    </Show>
                     <For
                       each={groupIngredientsBySection(r().ingredients ?? [])}
                     >
