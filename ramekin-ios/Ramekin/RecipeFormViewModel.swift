@@ -36,7 +36,7 @@ struct RecipeFormViewAPIClient {
 final class RecipeFormViewModel: ObservableObject {
     let mode: RecipeFormMode
 
-    @Published var formData = RecipeFormData()
+    @Published var formData: RecipeFormData
     @Published var availableTags: [TagItem] = []
     @Published var selectedTagNamespace: String?
     @Published var newTagValue = ""
@@ -53,12 +53,17 @@ final class RecipeFormViewModel: ObservableObject {
 
     /// The form as last loaded or prepared, to tell whether the user has
     /// edited anything since.
-    private var savedFormData = RecipeFormData()
+    private var savedFormData: RecipeFormData
     private let api: RecipeFormViewAPIClient
 
     init(mode: RecipeFormMode, api: RecipeFormViewAPIClient = .live) {
         self.mode = mode
         self.api = api
+        // One shared value: each RecipeFormData() starts with a fresh
+        // ingredient row id, so two defaults would never compare equal.
+        let initialFormData = RecipeFormData()
+        _formData = Published(initialValue: initialFormData)
+        savedFormData = initialFormData
     }
 }
 

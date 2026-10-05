@@ -257,6 +257,7 @@ final class RecipeFormViewModelTests: XCTestCase {
             listAllTags: { TagsListResponse(tags: []) },
             uploadPhoto: { _ in throw TestError.unexpectedCall }
         ))
+        XCTAssertFalse(model.hasUnsavedChanges, "Nothing to lose before the recipe loads")
         await model.loadRecipe(id: recipe.id)
         XCTAssertFalse(model.hasUnsavedChanges)
         model.formData.title = "Plainer"
