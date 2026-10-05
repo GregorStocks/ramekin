@@ -4,6 +4,10 @@
 Reads JSON from stdin (output of `xcrun simctl list devices available -j`)
 and prints the UDID of the newest iPhone on the newest iOS runtime.
 
+With --base-model, prefers the newest base iPhone (no Pro, Max, Plus or Air)
+on that runtime: a smaller screen is less work for a CI runner's simulator.
+Falls back to any iPhone when the runtime has no base model.
+
 Returning a UDID (rather than a name) is unambiguous: the same device name
 can appear on multiple runtimes (e.g. "iPhone 15" on both iOS 17.2 and iOS
 26.4), and `-destination name=...` will pick whichever xcodebuild finds
@@ -28,7 +32,11 @@ def iphone_rank(name: str) -> tuple[int, int, int, str]:
     return (model, is_pro_max, is_pro, name)
 
 
-def find_simulator(data: dict) -> str:
+def is_base_model(name: str) -> bool:
+    return not re.search(r"\b(Pro|Max|Plus|Air)\b", name)
+
+
+def find_simulator(data: dict, base_model: bool = False) -> str:
     runtimes = sorted(
         (k for k in data["devices"] if "iOS" in k),
         key=runtime_version,
@@ -36,10 +44,14 @@ def find_simulator(data: dict) -> str:
     )
     for runtime in runtimes:
         iphones = [d for d in data["devices"][runtime] if "iPhone" in d["name"]]
+        if base_model and any(is_base_model(d["name"]) for d in iphones):
+            iphones = [d for d in iphones if is_base_model(d["name"])]
         if iphones:
             return max(iphones, key=lambda d: iphone_rank(d["name"]))["udid"]
     sys.exit("No iPhone simulator available")
 
 
 if __name__ == "__main__":
-    print(find_simulator(json.load(sys.stdin)))
+    print(
+        find_simulator(json.load(sys.stdin), base_model="--base-model" in sys.argv[1:])
+    )

@@ -49,6 +49,16 @@ struct RamekinApp: App {
         if ProcessInfo.processInfo.arguments.contains("--uitest-reset-auth") {
             RamekinAPI.shared.logout()
         }
+        #if DEBUG
+        // UI tests that aren't about the login form sign in over HTTP and
+        // hand the app the session, so they skip typing into the login form.
+        let environment = ProcessInfo.processInfo.environment
+        if let serverURL = environment["RAMEKIN_UITEST_SERVER_URL"],
+           let token = environment["RAMEKIN_UITEST_TOKEN"],
+           let username = environment["RAMEKIN_UITEST_USERNAME"] {
+            RamekinAPI.shared.adoptSession(serverURL: serverURL, token: token, username: username)
+        }
+        #endif
     }
 
     var body: some Scene {

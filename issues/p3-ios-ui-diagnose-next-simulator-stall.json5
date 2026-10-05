@@ -1,0 +1,20 @@
+{
+  "title": "iOS UI tests: read the new diagnostics on the next CI simulator stall",
+  "description": "PR #748 left flaky iOS UI tests without a retry. \
+It booted a lighter base-model iPhone, turned off keyboard extras, and stopped typing the login in tests that aren't about login. \
+It also added diagnostics to the ios-ui-test-results artifact: logs/runner-load.log (load average, memory pressure and top processes every 15 s during the UI tests) and, on failure only, logs/simulator-system.log.gz (the simulator's own system log for the last 40 minutes). \
+The stall that prompted this (run 37082683506 attempt 2) had SpringBoard ignore accessibility queries for about 2.5 minutes (kAXErrorIPCTimeout) while the app stayed responsive, and the runner's side of the log could not say why. \
+When the iOS UI job next fails with kAXErrorIPCTimeout, 'Failed to launch', or 'Timed out while evaluating UI query', check runner-load.log for CPU or memory starvation at the time of the stall, and check the SpringBoard and backboardd lines in simulator-system.log.gz. \
+Then decide on a targeted fix, such as larger or split jobs if the runner is starved. \
+Separately, a few recent failures were plain assertion failures rather than stalls: RecipeFlowTests.swift:212 (testRecipeFlow, run 37183180449), :57 (testTextRecipeReviewAndSave, run 36675521178), and 'Sign In must be visible before tapping' (testLoginFailure, run 37175844521). \
+Line numbers predate PR #748's test restructuring.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "flaky-test",
+  ],
+  "created_at": "2026-10-04T17:00:00.000000-07:00",
+  "updated_at": "2026-10-04T17:00:00.000000-07:00",
+}

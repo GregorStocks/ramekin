@@ -8,15 +8,18 @@ final class RecipeFlowTests: XCTestCase {
     /// couple of slow snapshots flakes on such runners.
     let slowSimulatorTimeout: TimeInterval = 60
 
+    /// The seeded backend CI starts for these tests.
+    let serverURL = "http://localhost:55000"
+
     var app: XCUIApplication!
 
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
         // Keychain state survives reinstalls on the simulator; make the app
-        // clear credentials so every test starts from the login screen.
+        // clear stored credentials at launch. Each test launches the app
+        // itself: at the login screen, or with a session (launchSignedIn).
         app.launchArguments = ["--uitest-reset-auth"]
-        app.launch()
     }
 
     override func tearDownWithError() throws {
@@ -24,13 +27,7 @@ final class RecipeFlowTests: XCTestCase {
     }
 
     func testTextRecipeReviewAndSave() throws {
-        let server = app.textFields["https://ramekin.app"]
-        XCTAssertTrue(server.waitForExistence(timeout: slowSimulatorTimeout))
-        replaceText(in: server, with: "http://localhost:55000")
-        replaceText(in: app.textFields["Username"], with: "t")
-        replaceText(in: app.secureTextFields["Password"], with: "t")
-        submitLogin()
-        XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
+        try launchSignedIn()
         app.buttons["New Recipe"].tap()
         let text = app.textViews["Recipe text"]
         XCTAssertTrue(text.waitForExistence(timeout: slowSimulatorTimeout))
@@ -51,6 +48,62 @@ final class RecipeFlowTests: XCTestCase {
             NSPredicate(format: "label BEGINSWITH %@", "iOS text pancakes")
         ).firstMatch
         XCTAssertTrue(savedRecipe.waitForExistence(timeout: slowSimulatorTimeout))
+    }
+
+    /// Launch already signed in as the seeded user and wait for the recipe
+    /// list. Only the login tests type into the login form: every keystroke
+    /// is more accessibility traffic for a degraded CI simulator to stall on.
+    private func launchSignedIn(file: StaticString = #filePath, line: UInt = #line) throws {
+        let token = try signInOverHTTP(username: "t", password: "t")
+        app.launchEnvironment["RAMEKIN_UITEST_SERVER_URL"] = serverURL
+        app.launchEnvironment["RAMEKIN_UITEST_TOKEN"] = token
+        app.launchEnvironment["RAMEKIN_UITEST_USERNAME"] = "t"
+        app.launch()
+        XCTAssertTrue(
+            app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout),
+            "Launching with a session should open the recipe list",
+            file: file,
+            line: line
+        )
+    }
+
+    /// Sign in against the test backend directly and return the session token.
+    private func signInOverHTTP(username: String, password: String) throws -> String {
+        let url = try XCTUnwrap(URL(string: "\(serverURL)/api/auth/login"))
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try JSONSerialization.data(
+            withJSONObject: ["username": username, "password": password]
+        )
+        let response = HTTPResponseBox()
+        let finished = expectation(description: "Sign in over HTTP")
+        URLSession.shared.dataTask(with: request) { data, urlResponse, error in
+            response.data = data
+            response.status = (urlResponse as? HTTPURLResponse)?.statusCode
+            response.error = error
+            finished.fulfill()
+        }.resume()
+        wait(for: [finished], timeout: slowSimulatorTimeout)
+        if let error = response.error {
+            throw error
+        }
+        XCTAssertEqual(response.status, 200, "Sign in over HTTP failed")
+        let body = try JSONSerialization.jsonObject(with: try XCTUnwrap(response.data))
+        return try XCTUnwrap((body as? [String: Any])?["token"] as? String)
+    }
+
+    /// Launch to the login screen and fill in the form.
+    private func fillLoginForm(username: String, password: String) {
+        app.launch()
+        let serverField = app.textFields["https://ramekin.app"]
+        XCTAssertTrue(
+            serverField.waitForExistence(timeout: slowSimulatorTimeout),
+            "Server URL field should exist"
+        )
+        replaceText(in: serverField, with: serverURL)
+        replaceText(in: app.textFields["Username"], with: username)
+        replaceText(in: app.secureTextFields["Password"], with: password)
     }
 
     /// Replace a field's contents, then synchronize on the resulting value.
@@ -124,34 +177,11 @@ final class RecipeFlowTests: XCTestCase {
         button.tap()
     }
 
-    /// Test the full recipe flow: login -> recipe list -> recipe detail
-    func testRecipeFlow() throws {
-        // MARK: - Login
-
-        // Find and fill server URL field (clear default value first)
-        let serverField = app.textFields["https://ramekin.app"]
-        XCTAssertTrue(
-            serverField.waitForExistence(timeout: slowSimulatorTimeout),
-            "Server URL field should exist"
-        )
-        replaceText(in: serverField, with: "http://localhost:55000")
-
-        // Find and fill username field (clear default value first)
-        let usernameField = app.textFields["Username"]
-        XCTAssertTrue(usernameField.exists, "Username field should exist")
-        replaceText(in: usernameField, with: "t")
-
-        // Find and fill password field (clear default value first)
-        let passwordField = app.secureTextFields["Password"]
-        XCTAssertTrue(passwordField.exists, "Password field should exist")
-        replaceText(in: passwordField, with: "t")
-
+    /// Test signing in through the login form
+    func testLoginSuccess() throws {
+        fillLoginForm(username: "t", password: "t")
         attachScreenshot(named: "01-LoginForm")
-
-        // Tap Sign In button
         submitLogin()
-
-        // MARK: - Recipe List
 
         // The login screen is a Form whose rows also match `app.cells`, so the
         // logged-in check must be something only the recipe list has: its
@@ -169,6 +199,13 @@ final class RecipeFlowTests: XCTestCase {
             XCTFail("Never reached Recipes after Sign In: \(error).\n\(app.debugDescription)")
             return
         }
+    }
+
+    /// Test the recipe flow: recipe list -> recipe detail -> sheets
+    func testRecipeFlow() throws {
+        try launchSignedIn()
+
+        // MARK: - Recipe List
 
         // Wait for recipe rows to load (requires seeded data from make seed).
         // A fresh install must first sync the full seed corpus (~475 recipes)
@@ -268,12 +305,7 @@ final class RecipeFlowTests: XCTestCase {
 
     /// Test that login fails with invalid credentials
     func testLoginFailure() throws {
-        let serverField = app.textFields["https://ramekin.app"]
-        XCTAssertTrue(serverField.waitForExistence(timeout: slowSimulatorTimeout))
-        replaceText(in: serverField, with: "http://localhost:55000")
-        replaceText(in: app.textFields["Username"], with: "invalid")
-        replaceText(in: app.secureTextFields["Password"], with: "wrong")
-
+        fillLoginForm(username: "invalid", password: "wrong")
         submitLogin()
 
         // The error message renders in the same UI update that ends the
@@ -298,4 +330,11 @@ final class RecipeFlowTests: XCTestCase {
             }
         }
     }
+}
+
+/// Carries a URLSession response out of its completion handler.
+private final class HTTPResponseBox {
+    var data: Data?
+    var status: Int?
+    var error: Error?
 }

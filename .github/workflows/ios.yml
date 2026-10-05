@@ -12,6 +12,7 @@ name: iOS
       # the simulator picker they call) need this job to run.
       - 'Makefile'
       - 'scripts/find-ios-simulator.py'
+      - 'scripts/prepare-ios-ui-simulator.sh'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -224,20 +225,40 @@ jobs:
           echo "Seeded recipes never became queryable — import jobs likely failed"
           exit 1
 
+      - name: Prepare simulator
+        timeout-minutes: 10
+        # Boot a base-model iPhone up front and turn off keyboard extras; see
+        # the script. Exports IOS_UI_DESTINATION, which make ios-test-ui uses.
+        run: scripts/prepare-ios-ui-simulator.sh >> "$GITHUB_ENV"
+
+      - name: Start runner load sampler
+        # A degraded simulator can stop answering accessibility queries for
+        # minutes (SpringBoard kAXErrorIPCTimeout). Record runner CPU and
+        # memory through the UI tests so a failure shows whether the runner
+        # was starved at the time.
+        run: |
+          # GitHub runs steps with -eo pipefail; ps | head can exit with
+          # SIGPIPE, which must not end the sampler.
+          (set +eo pipefail; while true; do
+            echo "== $(date -u +%H:%M:%S) $(uptime | sed 's/.*load/load/')"
+            memory_pressure -Q | tail -1
+            ps -Ao pcpu,rss,comm -r | head -12
+            sleep 15
+          done) > logs/runner-load.log 2>&1 &
+
       - name: Run UI tests
         timeout-minutes: 25
-        # One retry rides out a simulator whose SpringBoard stops answering
-        # accessibility queries mid-run (kAXErrorIPCTimeout). A test that only
-        # passed on retry still gets a warning, so flakes stay visible.
+        run: make ios-test-ui
+
+      - name: Collect simulator system log
+        if: failure()
+        timeout-minutes: 5
+        # The xcresult only has the test runner's side of a stall; the
+        # simulator's own log shows what SpringBoard and the app were doing.
         run: |
-          set -o pipefail
-          make ios-test-ui IOS_UI_TEST_RETRIES=1 | tee logs/ios-ui-tests.log
-          # grep exits 1 when nothing was retried, the normal case.
-          RETRIED=$( (grep -oE "Test Case '-\[[^]]+\]' failed" logs/ios-ui-tests.log || true) \
-            | sed -E "s/.* ([A-Za-z0-9_]+)\]' failed/\1/" | sort -u | paste -sd ' ' -)
-          if [ -n "$RETRIED" ]; then
-            echo "::warning::iOS UI tests passed only on retry: $RETRIED"
-          fi
+          xcrun simctl spawn "$IOS_UI_UDID" log show --last 40m --style compact \
+            > logs/simulator-system.log 2>&1 || true
+          gzip -f logs/simulator-system.log
 
       - name: Upload UI test results and screenshots
         if: always()
@@ -246,5 +267,6 @@ jobs:
           name: ios-ui-test-results
           path: |
             logs/*.xcresult
-            logs/ios-ui-tests.log
+            logs/runner-load.log
+            logs/simulator-system.log.gz
           if-no-files-found: ignore

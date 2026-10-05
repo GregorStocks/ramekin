@@ -328,6 +328,16 @@ class RamekinAPI {
         return trimmed.isEmpty ? nil : trimmed
     }
 
+    /// Adopt a session that was signed in outside the app. UI tests that
+    /// aren't about the login form use this to start on the recipe list
+    /// without typing credentials.
+    func adoptSession(serverURL: String, token: String, username: String) {
+        _ = KeychainHelper.shared.saveServerURL(Self.normalizeServerURL(serverURL))
+        _ = KeychainHelper.shared.saveToken(token)
+        _ = KeychainHelper.shared.saveUsername(username)
+        updateGeneratedClientConfig()
+    }
+
     /// Logout and clear credentials
     func logout() {
         KeychainHelper.shared.clearAll()
