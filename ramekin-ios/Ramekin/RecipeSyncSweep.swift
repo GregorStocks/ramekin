@@ -6,11 +6,15 @@ enum RecipeSyncError: LocalizedError {
     /// local search silently disagree with server search, so the sync fails
     /// instead.
     case normalizationContractMismatch(server: Int, supported: Int)
+    /// The server claimed more pages but sent no recipe to resume after.
+    case emptyPageWithMore
 
     var errorDescription: String? {
         switch self {
         case let .normalizationContractMismatch(server, supported):
             return "Server search contract v\(server) is not supported (app supports v\(supported)); update the app."
+        case .emptyPageWithMore:
+            return "The server returned an empty sync page that claims more pages follow."
         }
     }
 }
@@ -54,7 +58,7 @@ enum RecipeSyncSweep {
 
             if response.hasMore {
                 guard let lastId = response.recipes.last?.id else {
-                    fatalError("Sync page claims more pages but contains no recipes")
+                    throw RecipeSyncError.emptyPageWithMore
                 }
                 afterId = lastId
                 cache.setPendingSyncSweep(
