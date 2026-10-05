@@ -29,6 +29,8 @@ struct RecipeListFilterBar: View {
                         onToggleTag(tagName)
                     } label: {
                         HierarchicalTagChip(name: tagName, isSelected: true)
+                            .frame(minHeight: 44)
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .accessibilityHint("Removes this tag filter")
@@ -47,8 +49,8 @@ struct RecipeListFilterBar: View {
                     .accessibilityLabel("Clear Filters")
                 }
             }
+            // The chips' 44pt hit areas supply the bar's vertical spacing.
             .padding(.horizontal)
-            .padding(.vertical, 8)
         }
         .sheet(isPresented: $showingTagFilters) {
             RecipeTagFiltersSheet(
@@ -126,6 +128,9 @@ struct RecipeListFilterBar: View {
         .background(isSelected ? Color.orange : Color(.systemGray5))
         .foregroundColor(isSelected ? .black : .primary)
         .clipShape(Capsule())
+        // Grow the hit area to 44pt without changing the capsule's look.
+        .frame(minHeight: 44)
+        .contentShape(Rectangle())
         .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
@@ -179,6 +184,8 @@ private struct RecipeTagFiltersSheet: View {
                     name: tag.name,
                     isSelected: selectedTags.contains(tag.name)
                 )
+                .frame(minHeight: 44)
+                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
         }

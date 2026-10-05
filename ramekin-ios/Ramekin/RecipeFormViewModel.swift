@@ -93,6 +93,8 @@ extension RecipeFormViewModel {
             && hasRequiredVersion
             && !isSaving
             && !isPreparing
+            // Saving mid-upload would drop the photo being uploaded.
+            && !isUploadingPhoto
     }
 
     func prepareRecipe() async {

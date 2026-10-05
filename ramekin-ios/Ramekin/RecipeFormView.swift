@@ -14,29 +14,20 @@ struct RecipeFormView: View {
         _viewModel = StateObject(wrappedValue: RecipeFormViewModel(mode: mode))
     }
 
+    private static let errorSectionId = "recipe-form-error"
+
     var body: some View {
-        Form {
-            if viewModel.mode == .create && viewModel.draft == nil {
-                recipeTextSection
-            } else {
-                draftReviewSection
-                titleSection
-                descriptionSection
-                metadataSection
-                ratingSection
-                if viewModel.draft != nil {
-                    draftIngredientsSection
-                } else {
-                    ingredientsFormSection
+        // Save and Review live in the navigation bar, so a failure must be
+        // brought into view rather than left at the bottom of a long form.
+        ScrollViewReader { proxy in
+            form
+                .onChange(of: viewModel.error) { error in
+                    guard error != nil else { return }
+                    // Next run loop, once the error section exists to scroll to.
+                    DispatchQueue.main.async {
+                        withAnimation { proxy.scrollTo(Self.errorSectionId, anchor: .top) }
+                    }
                 }
-                instructionsSection
-                sourceSection
-                tagsSection
-                notesSection
-                nutritionalInfoSection
-                photosSection
-            }
-            errorSection
         }
         .navigationTitle(viewModel.mode == .create ? "New Recipe" : "Edit Recipe")
         .navigationBarTitleDisplayMode(.inline)
@@ -85,6 +76,32 @@ struct RecipeFormView: View {
         .onChange(of: viewModel.selectedPhotoItems) { items in
             if !items.isEmpty {
                 Task { await viewModel.uploadSelectedPhotos() }
+            }
+        }
+    }
+    private var form: some View {
+        Form {
+            errorSection
+                .id(Self.errorSectionId)
+            if viewModel.mode == .create && viewModel.draft == nil {
+                recipeTextSection
+            } else {
+                draftReviewSection
+                titleSection
+                descriptionSection
+                metadataSection
+                ratingSection
+                if viewModel.draft != nil {
+                    draftIngredientsSection
+                } else {
+                    ingredientsFormSection
+                }
+                instructionsSection
+                sourceSection
+                tagsSection
+                notesSection
+                nutritionalInfoSection
+                photosSection
             }
         }
     }
@@ -176,13 +193,15 @@ extension RecipeFormView {
 
     private var ratingSection: some View {
         Section("Rating") {
-            HStack(spacing: 8) {
+            HStack(spacing: 0) {
                 ForEach(1...5, id: \.self) { star in
                     Button {
                         viewModel.formData.rating = viewModel.formData.rating == star ? nil : star
                     } label: {
                         Image(systemName: star <= (viewModel.formData.rating ?? 0) ? "star.fill" : "star")
                             .font(.title2).foregroundColor(.accentColor)
+                            .frame(minWidth: 44, minHeight: 44)
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel(star == 1 ? "1 star" : "\(star) stars")
@@ -228,20 +247,22 @@ extension RecipeFormView {
             HStack {
                 Text("Ingredients")
                 Spacer()
-                EditButton().font(.caption)
+                EditButton()
+                    .frame(minHeight: 44)
             }
         }
     }
 
     private var instructionsSection: some View {
-        Section { TextEditor(text: $viewModel.formData.instructions).frame(minHeight: 150) }
+        Section { TextEditor(text: $viewModel.formData.instructions).frame(minHeight: 150)
+            .accessibilityLabel("Instructions") }
             header: { Text("Instructions *") }
     }
 
     private var sourceSection: some View {
         Section("Source") {
             TextField("URL", text: $viewModel.formData.sourceUrl)
-                .keyboardType(.URL).autocapitalization(.none).autocorrectionDisabled()
+                .keyboardType(.URL).textContentType(.URL).autocapitalization(.none).autocorrectionDisabled()
             TextField("Source name", text: $viewModel.formData.sourceName)
         }
     }
@@ -258,11 +279,13 @@ extension RecipeFormView {
     }
 
     private var notesSection: some View {
-        Section("Notes") { TextEditor(text: $viewModel.formData.notes).frame(minHeight: 80) }
+        Section("Notes") { TextEditor(text: $viewModel.formData.notes).frame(minHeight: 80)
+            .accessibilityLabel("Notes") }
     }
 
     private var nutritionalInfoSection: some View {
-        Section("Nutritional Info") { TextEditor(text: $viewModel.formData.nutritionalInfo).frame(minHeight: 60) }
+        Section("Nutritional Info") { TextEditor(text: $viewModel.formData.nutritionalInfo).frame(minHeight: 60)
+            .accessibilityLabel("Nutritional Info") }
     }
 
     private var photosSection: some View {

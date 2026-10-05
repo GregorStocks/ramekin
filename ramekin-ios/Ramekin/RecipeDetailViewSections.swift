@@ -9,17 +9,7 @@ extension RecipeDetailView {
             }
 
             VStack(alignment: .leading, spacing: 20) {
-                if viewModel.isRescraping {
-                    rescrapeProgressBanner()
-                }
-
-                if let banner = viewModel.autoEnrichmentProgressLabel {
-                    autoEnrichmentProgressBanner(banner)
-                }
-
-                if let error = viewModel.error {
-                    inlineErrorBanner(message: error)
-                }
+                statusBanners
 
                 headerSection(recipe)
 
@@ -65,6 +55,30 @@ extension RecipeDetailView {
                 }
             }
             .padding()
+        }
+    }
+
+    @ViewBuilder var statusBanners: some View {
+        if viewModel.isRescraping {
+            progressBanner("Rescraping from source…")
+        }
+
+        // Export and delete run after their menu or dialog closes, so
+        // without this nothing would show that they're under way.
+        if viewModel.isExporting {
+            progressBanner("Preparing export…")
+        }
+
+        if viewModel.isDeleting {
+            progressBanner("Deleting recipe…")
+        }
+
+        if let banner = viewModel.autoEnrichmentProgressLabel {
+            autoEnrichmentProgressBanner(banner)
+        }
+
+        if let error = viewModel.error {
+            inlineErrorBanner(message: error)
         }
     }
 
@@ -207,6 +221,8 @@ extension RecipeDetailView {
                                     )
                             )
                             .foregroundColor(viewModel.recipeScale == preset.value ? Color(.systemBackground) : .primary)
+                            .frame(minHeight: 44)
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .accessibilityAddTraits(viewModel.recipeScale == preset.value ? .isSelected : [])
@@ -228,6 +244,13 @@ extension RecipeDetailView {
                     applyCustomScale()
                 }
                 .buttonStyle(.bordered)
+                .disabled(viewModel.parsedCustomScale == nil)
+            }
+
+            if !viewModel.customScaleInput.isEmpty && viewModel.parsedCustomScale == nil {
+                Text("Enter a number greater than 0, like 1.5 or 3/4.")
+                    .font(.caption)
+                    .foregroundColor(.red)
             }
         }
     }

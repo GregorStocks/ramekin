@@ -166,9 +166,7 @@ struct RecipeDetailView: View {
                 EnrichPreviewSheet(
                     original: recipe,
                     modified: modified,
-                    onApply: {
-                        Task { await viewModel.applyEnrichment(modified) }
-                    },
+                    onApply: { await viewModel.applyEnrichment(modified) },
                     onCancel: { viewModel.enrichResult = nil }
                 )
             }
@@ -280,9 +278,12 @@ struct PhotoCarouselView: View {
 
     var body: some View {
         TabView {
-            ForEach(photoIds, id: \.self) { photoId in
+            ForEach(Array(photoIds.enumerated()), id: \.element) { index, photoId in
                 AuthenticatedImage(url: photoURL(for: photoId))
                     .clipped()
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("Recipe photo \(index + 1) of \(photoIds.count)")
+                    .accessibilityAddTraits(.isImage)
             }
         }
         .tabViewStyle(.page)

@@ -22,6 +22,9 @@ final class RecipeListViewModel: ObservableObject {
     /// A cache-served list could not be freshened: the list on screen may be
     /// stale, and the user needs a signal plus a way to retry.
     @Published var syncFailed = false
+    /// A server load failed while earlier results were still on screen, so
+    /// the list may not match the current search, filters, or sort.
+    @Published var reloadFailed = false
     @Published var selectedTags: Set<String> = []
     @Published var availableTags: [TagItem] = []
     @Published var showingAdvancedFilters = false
@@ -199,6 +202,7 @@ extension RecipeListViewModel {
             isLoadingMore = false
             isUsingLocalCache = false
             syncFailed = false
+            reloadFailed = false
             requestGeneration += 1
         }
         let key = ListRequestKey(query: queryValue, sortOrder: sortOrder)
@@ -248,6 +252,8 @@ extension RecipeListViewModel {
             guard isCurrentRequest(generation, key) else { return }
             if recipes.isEmpty {
                 self.error = "Could not load recipes. Please try again."
+            } else {
+                reloadFailed = true
             }
             isLoading = false
         }
@@ -360,6 +366,7 @@ private extension RecipeListViewModel {
         isLoading = recipes.isEmpty
         error = nil
         syncFailed = false
+        reloadFailed = false
         requestGeneration += 1
         let generation = requestGeneration
 

@@ -65,6 +65,7 @@ struct RecipePickerSheet: View {
             VStack(spacing: 16) {
                 Image(systemName: "magnifyingglass")
                     .scaledIconFont(size: 48)
+                    .accessibilityHidden(true)
                     .foregroundColor(.secondary)
                 Text("No recipes found")
                     .font(.title2)
@@ -76,6 +77,7 @@ struct RecipePickerSheet: View {
     private func errorView(message: String) -> some View {
         VStack(spacing: 16) {
             Image(systemName: "exclamationmark.triangle")
+                .accessibilityHidden(true)
                 .font(.largeTitle)
                 .foregroundColor(.orange)
             Text(message)

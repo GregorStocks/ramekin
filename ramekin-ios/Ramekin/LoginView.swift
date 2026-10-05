@@ -2,12 +2,22 @@ import SwiftUI
 
 private let defaultServerURL = "https://ramekin.app"
 
+// The dev seed account, for local builds only; shipping builds start empty so
+// Password AutoFill can offer saved credentials.
+#if DEBUG
+private let defaultUsername = "t"
+private let defaultPassword = "t"
+#else
+private let defaultUsername = ""
+private let defaultPassword = ""
+#endif
+
 struct LoginView: View {
     @EnvironmentObject var appState: AppState
 
     @State private var serverURL: String = defaultServerURL
-    @State private var username: String = "t"
-    @State private var password: String = "t"
+    @State private var username: String = defaultUsername
+    @State private var password: String = defaultPassword
     @State private var accessClientId: String = ""
     @State private var accessClientSecret: String = ""
 
@@ -26,6 +36,7 @@ struct LoginView: View {
                 VStack(spacing: 16) {
                     Image(systemName: "fork.knife.circle.fill")
                         .scaledIconFont(size: 64)
+                        .accessibilityHidden(true)
                         .foregroundColor(.accentColor)
 
                     Text("Ramekin")

@@ -81,6 +81,11 @@ struct ShoppingListView: View {
                     )
                 } else if !store.isOnline {
                     statusBanner(systemImage: "wifi.slash", text: "Offline – changes will sync when connected")
+                } else if store.lastSyncError != nil {
+                    statusBanner(
+                        systemImage: "exclamationmark.icloud",
+                        text: "Couldn't sync – pull down to try again"
+                    )
                 }
             }
             .overlay(alignment: .bottom) {
@@ -106,6 +111,7 @@ struct ShoppingListView: View {
         VStack(spacing: 16) {
             Image(systemName: "cart")
                 .scaledIconFont(size: 60)
+                .accessibilityHidden(true)
                 .foregroundColor(.secondary)
             Text("Your shopping list is empty")
                 .font(.headline)
@@ -219,6 +225,7 @@ struct ShoppingListView: View {
         withAnimation {
             addedCount += 1
         }
+        UIAccessibility.post(notification: .announcement, argument: "Added \(name)")
     }
 
     private func statusBanner(systemImage: String, text: String) -> some View {
@@ -299,10 +306,13 @@ struct ShoppingItemRow: View {
             } label: {
                 Image(systemName: item.categoryOverride == nil ? "tag" : "tag.fill")
                     .foregroundColor(.secondary)
+                    .frame(minWidth: 44, minHeight: 44)
+                    .contentShape(Rectangle())
             }
             .accessibilityLabel("Category")
         }
-        .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+        // The 44pt category menu sets the row height, so no extra vertical inset.
+        .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
 }
 
