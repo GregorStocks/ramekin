@@ -19,6 +19,7 @@ The log shows the previous instance terminated, xcodebuild logged 'IDELaunchPara
 (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)' and 'no debugger version', and nothing else happened until 'Setting up automation session' at t=279 s. runner-load.log shows the runner mostly idle at the time (diagnosticd about 27%, nothing else above 10%). \
 The test survived only because XCUITest's launch timeout is long. \
 The 'Failed to launch com.ramekin.app' failure in run 37211763439 is probably the same hang. \
+It also happens with test-without-building on a prebuilt app: in green run 37333289156 (PR #761), testLoginFailure, the first test, spent about 290 s between 'Launch com.ramekin.app' and 'Setting up automation session', with the same LLDB StoreError line. So it is not caused by xcodebuild building the app in the same invocation. \
 Possible leads, all unconfirmed: the LLDB debugger-version error suggests xcodebuild is attaching a debugger to the launched app, and might not need to; check whether the scheme's test action can launch it without the debugger. \
 Also check whether the hang follows a terminate-then-relaunch of the app, which every test does: XCUIApplication.launch terminates the previous instance first.",
   "status": "open",
@@ -29,5 +30,5 @@ Also check whether the hang follows a terminate-then-relaunch of the app, which 
     "flaky-test",
   ],
   "created_at": "2026-10-04T17:00:00.000000-07:00",
-  "updated_at": "2026-10-04T17:00:00.000000-07:00",
+  "updated_at": "2026-10-05T09:00:00.000000-07:00",
 }

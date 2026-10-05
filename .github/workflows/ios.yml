@@ -191,6 +191,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Before the simulator boots: this takes seconds on an idle runner but
+      # minutes during the boot storm.
+      - name: Install dependencies
+        run: brew install postgresql@16 uv
+
       - name: Start runner load sampler
         # A degraded simulator can stop answering accessibility queries for
         # minutes (SpringBoard kAXErrorIPCTimeout). Record runner CPU and
@@ -217,9 +222,6 @@ jobs:
         # A fresh simulator saturates the runner for minutes after booting;
         # start it now so that overlaps the setup below. See the script.
         run: scripts/prepare-ios-ui-simulator.sh boot >> "$GITHUB_ENV"
-
-      - name: Install dependencies
-        run: brew install postgresql@16 uv
 
       - name: Start PostgreSQL
         run: |
