@@ -335,8 +335,9 @@ jobs:
 
       - name: Configure simulator
         timeout-minutes: 10
-        # Finish booting and turn off keyboard extras; see the script.
-        # make ios-test-ui uses IOS_UI_DESTINATION from the boot step.
+        # Finish booting, turn off keyboard extras and unload mediaanalysisd;
+        # see the script.
+        # make ios-test-ui-prebuilt uses IOS_UI_DESTINATION from the boot step.
         run: scripts/prepare-ios-ui-simulator.sh configure
 
       - name: Run UI tests

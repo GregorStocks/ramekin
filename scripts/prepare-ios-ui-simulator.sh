@@ -11,7 +11,8 @@
 #              job so the boot storm overlaps the Rust builds.
 #   configure  Wait for the boot to finish, then turn off keyboard extras
 #              (autocorrect, predictions, slide-to-type and its first-use
-#              tutorials). Needs IOS_UI_UDID from the boot phase.
+#              tutorials) and unload mediaanalysisd. Needs IOS_UI_UDID from
+#              the boot phase.
 #
 # The boot phase prints GITHUB_ENV lines on stdout; progress goes to stderr:
 #   IOS_UI_UDID=<udid>
@@ -52,6 +53,27 @@ configure() {
         KeyboardDidShowProductivityTutorial; do
         xcrun simctl spawn "$udid" defaults write com.apple.Preferences "$key" -bool YES
     done
+
+    # The simulator's photo/media analysis daemon used 190-380% CPU, on a
+    # 3-core runner, for the whole UI test run (run 37251142452). The UI
+    # tests don't use Photos. Failing to unload it only costs speed, so warn
+    # rather than fail; runner-load.log shows whether it still runs.
+    local labels label
+    labels=$(mediaanalysis_labels "$udid")
+    if [ -z "$labels" ]; then
+        echo "No mediaanalysisd job loaded in the simulator" >&2
+    fi
+    for label in $labels; do
+        echo "Unloading $label" >&2
+        xcrun simctl spawn "$udid" launchctl remove "$label" >&2 || true
+    done
+    if [ -n "$labels" ] && [ -n "$(mediaanalysis_labels "$udid")" ]; then
+        echo "::warning::mediaanalysisd is still loaded in the simulator" >&2
+    fi
+}
+
+mediaanalysis_labels() {
+    xcrun simctl spawn "$1" launchctl list | awk 'tolower($3) ~ /mediaanalysis/ { print $3 }'
 }
 
 case "${1:-}" in

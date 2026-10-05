@@ -340,6 +340,9 @@ final class RecipeFlowTests: XCTestCase {
         XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: slowSimulatorTimeout), .completed)
         let card = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", title)).firstMatch
         XCTAssertTrue(card.waitForExistence(timeout: slowSimulatorTimeout))
+        // Icon-only card actions name the meal they act on.
+        XCTAssertTrue(app.buttons["Edit \(title)"].firstMatch.exists)
+        XCTAssertTrue(app.buttons["Remove \(title)"].firstMatch.exists)
     }
 
     /// Test that login fails with invalid credentials
