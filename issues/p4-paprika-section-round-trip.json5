@@ -1,10 +1,15 @@
 {
-  "title": "Paprika export section headers don't round-trip for digit-bearing or long labels",
+  "title": "Paprika export sections don't round-trip (digit-bearing/long labels, returns to no section)",
   "description": "The Paprika export (server/src/api/recipes/paprika.rs, format_ingredients_text) writes a 'Section:' line before each section change. \
 On re-import, detect_section_header (ramekin-core/src/ingredient_parser/item/line_classifiers.rs) only accepts generic colon-terminated labels when they're short and digit-free, unless they match another known pattern. \
-So a stored section like 'Part 1' is exported as 'Part 1:' and re-imported as an ingredient line, and the following ingredients lose their section. Recognized labels are also title-cased by normalize_section_name, so the round trip isn't exact even when detection works.\n\
+So a stored section like 'Part 1' is exported as 'Part 1:' and re-imported as an ingredient line, and the following ingredients lose their section. \
+Recognized labels are also title-cased by normalize_section_name, so the round trip isn't exact even when detection works.\n\
 \n\
-Paprika's ingredients field is plain text with no section syntax, so a fix probably belongs in the importer: for example, trust colon-terminated lines in a Paprika import more than in scraped HTML. Loosening detect_section_header globally risks misclassifying real ingredient lines, so check `make pipeline` diffs before doing that.",
+A return to no section is lost too. \
+The recipe form lets a blank section row end a section, but the export writes no reset line and parse_ingredients keeps current_section until the next header, so those ingredients re-import under the previous section.\n\
+\n\
+Paprika's ingredients field is plain text with no section syntax, so a fix probably belongs in the importer: for example, trust colon-terminated lines in a Paprika import more than in scraped HTML. \
+Loosening detect_section_header globally risks misclassifying real ingredient lines, so check `make pipeline` diffs before doing that.",
   "status": "open",
   "priority": 4,
   "type": "bug",

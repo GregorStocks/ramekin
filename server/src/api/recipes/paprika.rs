@@ -50,8 +50,12 @@ struct PaprikaPhoto {
 ///
 /// Each line matches the clients' display format, and a `Section:` header line
 /// precedes each change of section so the importer's section-header detection
-/// restores the grouping on re-import. Read-time derived grams are left out:
-/// they're approximate, and Paprika would store them as source text.
+/// restores the grouping on re-import. Paprika's plain text has no way to end a
+/// section, so ingredients that return to no section re-import under the
+/// header above them (issues/p4-paprika-section-round-trip.json5).
+///
+/// Read-time derived grams are left out: they're approximate, and Paprika
+/// would store them as source text.
 fn format_ingredients_text(ingredients: &[Ingredient]) -> String {
     let mut lines = Vec::new();
     let mut current_section: Option<&str> = None;
