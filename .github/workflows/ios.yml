@@ -37,10 +37,13 @@ jobs:
   # Unit tests run in their own job, without the backend stack, so a UI-test
   # host stall on a slow simulator can never fail the unit suite (and a UI
   # flake rerun doesn't rebuild/reseed anything it doesn't need).
+  # All jobs pin one image: the UI test job runs binaries and an .xctestrun
+  # built by the other jobs, and macos-latest moves to a new image gradually,
+  # so jobs in one run could land on different images. Bump these together.
   ios-unit:
     name: iOS Unit Tests
     if: github.event_name == 'pull_request'
-    runs-on: macos-latest
+    runs-on: macos-26
     # Backstop only: the step timeouts below are the real limits. A step that
     # times out fails (rather than the whole job being cancelled), so the
     # result upload still runs.
@@ -68,7 +71,7 @@ jobs:
   # only downloads them. Rerunning a failed test job reuses these artifacts.
   ios-ui-build-backend:
     name: iOS UI Tests / Build backend
-    runs-on: macos-latest
+    runs-on: macos-26
     # Backstop only, above the sum of the step timeouts below. A step timeout
     # fails the step, so the Rust cache (cache-on-failure) still saves; a job
     # timeout cancels the job and loses the cold build.
@@ -84,20 +87,14 @@ jobs:
       # side alone (most iOS PRs) skips the Rust build entirely. Keep this list
       # in sync with what the server and CLI compile in (crate sources,
       # embed_migrations!, include_str! of files outside the crates) and how
-      # they are built (Makefile, this workflow).
-      # The env context can't see runner variables like ImageOS, so read it
-      # here. A new macOS image can ship different Homebrew libpq.
-      - name: Read runner image
-        id: image
-        run: echo "os=$ImageOS" >> "$GITHUB_OUTPUT"
-
+      # they are built (Makefile, this workflow, which also pins the image).
       - name: Restore backend binaries
         id: backend-cache
         uses: actions/cache/restore@v6
         with:
           path: ios-ui-backend.tar
           key: >-
-            ios-ui-backend-${{ steps.image.outputs.os }}-${{ runner.arch }}-${{ hashFiles(
+            ios-ui-backend-${{ runner.arch }}-${{ hashFiles(
               'rust-toolchain.toml', 'server/**', 'cli/**', 'ramekin-core/**',
               'migrations/**', 'data/ingredients.json', 'shared-test-vectors/**',
               'Makefile', '.github/workflows/ios.yml') }}
@@ -157,7 +154,7 @@ jobs:
   ios-ui-build-app:
     name: iOS UI Tests / Build app
     if: github.event_name == 'pull_request'
-    runs-on: macos-latest
+    runs-on: macos-26
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -183,7 +180,7 @@ jobs:
   ios-ui:
     name: iOS UI Tests
     needs: [ios-ui-build-backend, ios-ui-build-app]
-    runs-on: macos-latest
+    runs-on: macos-26
     # Backstop only, above the sum of the step timeouts below. A step timeout
     # fails the step (rather than the whole job being cancelled), so the
     # diagnostics upload still runs.
