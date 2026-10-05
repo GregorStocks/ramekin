@@ -11,7 +11,7 @@
 //! Set these environment variables:
 //!
 //! - `OPENROUTER_API_KEY` (required): Your OpenRouter API key
-//! - `RAMEKIN_AI_MODEL` (optional): Model name, e.g., "google/gemini-2.5-flash"
+//! - `RAMEKIN_AI_MODEL` (optional): Model name, e.g., "google/gemini-3.8-flash"
 //! - `RAMEKIN_AI_BASE_URL` (optional): API base URL. Non-default endpoints
 //!   (e.g. a mock server) cache under an `endpoints/<base-url>/` subdirectory
 //!   so they never share entries with the real provider.

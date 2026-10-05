@@ -32,14 +32,27 @@ pub enum AiError {
 
     #[error("Configuration error: {0}")]
     Config(#[from] super::config::ConfigError),
+
+    /// The provider took longer than the request timeout (image generation,
+    /// whose slow models can).
+    #[error("Timed out: {0}")]
+    Timeout(String),
+    /// The provider's content filter refused this request (image
+    /// generation): another request may pass.
+    #[error("Refused: {0}")]
+    Refused(String),
 }
 
 impl AiError {
-    /// Whether the failure is this request's answer (invalid, or cut off by
-    /// max_tokens) rather than the provider or configuration, so asking about
+    /// Whether the failure is this request's answer (invalid, cut off by
+    /// max_tokens, or refused by a content filter) rather than the provider
+    /// or configuration, so asking about
     /// fewer items may succeed where retrying the same request won't.
     pub fn is_answer_specific(&self) -> bool {
-        matches!(self, AiError::ParseError(_) | AiError::Truncated(_))
+        matches!(
+            self,
+            AiError::ParseError(_) | AiError::Truncated(_) | AiError::Refused(_)
+        )
     }
 }
 
@@ -572,6 +585,7 @@ mod tests {
             api_key: "test-key".to_string(),
             model: "test/model".to_string(),
             image_model: "test/image-model".to_string(),
+            image_quality: None,
             ingredient_model: "test-ingredient-model".to_string(),
             extraction_model: "test-extraction-model".to_string(),
             base_url: DEFAULT_BASE_URL.to_string(),
@@ -600,6 +614,7 @@ mod tests {
             api_key: "test-key".to_string(),
             model: "test/model".to_string(),
             image_model: "test/image-model".to_string(),
+            image_quality: None,
             ingredient_model: "test-ingredient-model".to_string(),
             extraction_model: "test-extraction-model".to_string(),
             // Nothing listens here, so reaching the provider fails.

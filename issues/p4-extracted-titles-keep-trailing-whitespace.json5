@@ -1,0 +1,15 @@
+{
+  "title": "Extracted titles keep a trailing space or newline",
+  "description": "Three pipeline snapshots have titles with trailing whitespace: \"Loco Moco (White Rice With Hamburger Patties and Fried Eggs)\\n\" (seriouseats-com_loco-moco-recipe-11735563), \"Reverse-Seared Steak \" (seriouseats-com_reverse-seared-steak-recipe) and \"Bless This Pickle Sandwich \" (food52-com_recipes-85546-pickle-sandwich-recipe). \
+A title like that is saved as is, so it sorts, matches and displays slightly wrong. \
+A newline also broke the judged ai-eval suites' golden sets, which now trim titles themselves (cli/src/ai_eval/judged.rs). \
+Trim the title wherever extraction produces it (ramekin-core/src/extract/), check that the server trims titles on save, then rerun `make pipeline` and commit the snapshot diffs.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "pipeline",
+  ],
+  "created_at": "2026-10-04T16:30:00-07:00",
+  "updated_at": "2026-10-04T16:30:00-07:00",
+}

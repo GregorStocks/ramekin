@@ -2,7 +2,6 @@
 
 mod ai_eval;
 mod catalog_harvest;
-mod description_generation;
 mod export;
 mod generate_test_urls;
 mod import;
@@ -14,7 +13,6 @@ mod pipeline;
 mod pipeline_cache_capture;
 mod pipeline_orchestrator;
 mod seed;
-mod title_normalization;
 
 use anyhow::{Context, Result};
 use chrono::Utc;
@@ -295,7 +293,7 @@ enum Commands {
     },
     /// Evaluate AI models against the committed golden sets (data/ai-evals)
     AiEval {
-        /// Suite to run: ingredient-weights, food-estimates, ingredient-names, text-extraction, photo-extraction, or all
+        /// Suite to run: ingredient-weights, food-estimates, ingredient-names, text-extraction, photo-extraction, tags, titles, descriptions, custom-enrich, recipe-photos (image models), or all (every suite but recipe-photos)
         #[arg(long, default_value = "all")]
         suite: String,
         /// Comma-separated OpenRouter model ids
@@ -304,36 +302,9 @@ enum Commands {
         /// Items per call (production asks 40)
         #[arg(long, default_value_t = ai_eval::BATCH)]
         batch_size: usize,
-        /// Regenerate the golden sets from the committed catalog instead of running
+        /// Regenerate the golden sets from the committed catalog and pipeline snapshots instead of running
         #[arg(long)]
         write_golden: bool,
-    },
-    /// Generate a title-normalization mapping from a .paprikarecipes file
-    TitleNormalizationTest {
-        /// Path to the .paprikarecipes file
-        #[arg(long, default_value = "data/dev/seed.paprikarecipes")]
-        file: PathBuf,
-        /// Path to write the input titles (one per line)
-        #[arg(long, default_value = "data/title-normalization-input.txt")]
-        titles_file: PathBuf,
-        /// Path to write the normalized mapping output
-        #[arg(long, default_value = "data/title-normalization.txt")]
-        output: PathBuf,
-        /// Max number of recipes to process (default: 500)
-        #[arg(long)]
-        limit: Option<usize>,
-    },
-    /// Generate menu-style descriptions from a .paprikarecipes file
-    DescriptionGenerationTest {
-        /// Path to the .paprikarecipes file
-        #[arg(long, default_value = "data/dev/seed.paprikarecipes")]
-        file: PathBuf,
-        /// Path to write the description mapping output
-        #[arg(long, default_value = "data/description-generation.txt")]
-        output: PathBuf,
-        /// Max number of recipes to process (default: 500)
-        #[arg(long)]
-        limit: Option<usize>,
     },
 }
 
@@ -549,21 +520,6 @@ async fn main() -> Result<()> {
         } => {
             ai_eval::run(Path::new("."), &suite, &models, batch_size, write_golden).await?;
         }
-        Commands::TitleNormalizationTest {
-            file,
-            titles_file,
-            output,
-            limit,
-        } => {
-            title_normalization::run(&file, &titles_file, &output, limit).await?;
-        }
-        Commands::DescriptionGenerationTest {
-            file,
-            output,
-            limit,
-        } => {
-            description_generation::run(&file, &output, limit).await?;
-        }
     }
 
     Ok(())
@@ -675,7 +631,5 @@ fn command_slug(cmd: &Commands) -> &'static str {
         Commands::IngredientCatalogUnresolved { .. } => "ingredient-catalog-unresolved",
         Commands::IngredientCatalogUncategorized { .. } => "ingredient-catalog-uncategorized",
         Commands::AiEval { .. } => "ai-eval",
-        Commands::TitleNormalizationTest { .. } => "title-normalization-test",
-        Commands::DescriptionGenerationTest { .. } => "description-generation-test",
     }
 }

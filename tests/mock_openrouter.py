@@ -41,7 +41,7 @@ HELD_INGREDIENT_NAMES = set()
 INGREDIENT_NAME_HOLD_LIMIT_SECONDS = 15
 
 
-def mock_png_data_url():
+def mock_png_base64():
     image_path = (
         Path(__file__).resolve().parent.parent
         / "cli"
@@ -49,8 +49,7 @@ def mock_png_data_url():
         / "seed_images"
         / "bread.png"
     )
-    encoded = base64.b64encode(image_path.read_bytes()).decode()
-    return f"data:image/png;base64,{encoded}"
+    return base64.b64encode(image_path.read_bytes()).decode()
 
 
 class MockOpenRouterHandler(BaseHTTPRequestHandler):
@@ -122,6 +121,23 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         self.wfile.write(b'{"status": "ok"}')
 
     def do_POST(self):
+        if self.path == "/v1/images":
+            content_length = int(self.headers.get("Content-Length", 0))
+            try:
+                request = json.loads(self.rfile.read(content_length))
+            except json.JSONDecodeError:
+                self.send_error(400, "Invalid JSON")
+                return
+            try:
+                response = self._mock_image_generation_response(request)
+            except TimeoutError as exc:
+                self.send_error(500, str(exc))
+                return
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            self.wfile.write(json.dumps(response).encode())
+            return
         if self.path == "/v1/chat/completions":
             # Read request body
             content_length = int(self.headers.get("Content-Length", 0))
@@ -142,18 +158,6 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 self.wfile.write(
                     b'{"error":{"message":"Missing Authentication header","code":401}}'
                 )
-                return
-
-            if "image" in request.get("modalities", []):
-                try:
-                    response = self._mock_image_generation_response(request)
-                except TimeoutError as exc:
-                    self.send_error(500, str(exc))
-                    return
-                self.send_response(200)
-                self.send_header("Content-Type", "application/json")
-                self.end_headers()
-                self.wfile.write(json.dumps(response).encode())
                 return
 
             content = self._generate_response_content(request)
@@ -274,8 +278,6 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
 
     def _generate_response_content(self, request):
         """Generate appropriate mock response based on the request type."""
-        if "image" in request.get("modalities", []):
-            return self._mock_image_generation_content()
 
         messages = request.get("messages", [])
         has_images = False
@@ -358,47 +360,26 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         # Default: auto-tag response
         return '{"suggested_tags": ["test-auto-tag"]}'
 
-    def _mock_image_generation_content(self):
-        return "Generated recipe photo."
-
     def _mock_image_generation_response(self, request):
-        messages = request.get("messages", [])
-        all_text = " ".join(
-            content
-            for message in messages
-            for content in [message.get("content", "")]
-            if isinstance(content, str)
-        )
-        if "Slow Generated Photo" in all_text:
+        """An images-endpoint answer: one base64 PNG and its cost."""
+        if "Slow Generated Photo" in request.get("prompt", ""):
             SLOW_IMAGE_GENERATION_BARRIER.started.set()
             if not SLOW_IMAGE_GENERATION_BARRIER.release.wait(10.0):
                 raise TimeoutError("Slow image generation was never released")
 
         return {
-            "id": "mock-image-generation-id",
-            "object": "chat.completion",
             "created": 1234567890,
-            "model": request.get("model", "mock-model"),
-            "choices": [
+            "data": [
                 {
-                    "index": 0,
-                    "message": {
-                        "role": "assistant",
-                        "content": self._mock_image_generation_content(),
-                        "images": [
-                            {
-                                "type": "image_url",
-                                "image_url": {"url": mock_png_data_url()},
-                            }
-                        ],
-                    },
-                    "finish_reason": "stop",
+                    "b64_json": mock_png_base64(),
+                    "media_type": "image/png",
                 }
             ],
             "usage": {
                 "prompt_tokens": 10,
                 "completion_tokens": 5,
                 "total_tokens": 15,
+                "cost": 0.0,
             },
         }
 
