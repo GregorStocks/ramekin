@@ -1,6 +1,6 @@
 use super::read::RecipeWithVersion;
 use crate::db::DbConn;
-use crate::models::Ingredient;
+use crate::models::{Ingredient, Measurement};
 use crate::photos::processing::{generate_thumbnail, resize_for_export, EXPORT_PHOTO_DATA_SIZE};
 use crate::schema::{photos, recipe_version_tags, user_tags};
 use base64::Engine;
@@ -46,6 +46,77 @@ struct PaprikaPhoto {
     data: String,
 }
 
+/// Render stored ingredients as Paprika's newline-separated ingredients text.
+///
+/// Each line matches the clients' display format, and a `Section:` header line
+/// precedes each change of section so the importer's section-header detection
+/// restores the grouping on re-import. Read-time derived grams are left out:
+/// they're approximate, and Paprika would store them as source text.
+fn format_ingredients_text(ingredients: &[Ingredient]) -> String {
+    let mut lines = Vec::new();
+    let mut current_section: Option<&str> = None;
+    for ingredient in ingredients {
+        let section = ingredient
+            .section
+            .as_deref()
+            .map(str::trim)
+            .filter(|s| !s.is_empty());
+        if section.is_some() && section != current_section {
+            lines.push(format!("{}:", section.unwrap_or_default()));
+        }
+        current_section = section;
+        lines.push(format_ingredient_line(ingredient, true, true));
+    }
+    lines.join("\n")
+}
+
+/// Format one ingredient like the clients do
+/// (shared-test-vectors/ingredient-formatting.json), without scaling or
+/// derived grams: `primary (alt, alt) item (note)`.
+fn format_ingredient_line(
+    ingredient: &Ingredient,
+    include_alternatives: bool,
+    include_note: bool,
+) -> String {
+    let mut parts = Vec::new();
+    let mut measurements = ingredient.measurements.iter();
+
+    if let Some(primary) = measurements.next().and_then(format_measurement) {
+        parts.push(primary);
+    }
+
+    if include_alternatives {
+        let alternatives: Vec<String> = measurements.filter_map(format_measurement).collect();
+        if !alternatives.is_empty() {
+            parts.push(format!("({})", alternatives.join(", ")));
+        }
+    }
+
+    parts.push(ingredient.item.clone());
+
+    if include_note {
+        if let Some(note) = ingredient.note.as_deref().and_then(non_blank) {
+            parts.push(format!("({})", note));
+        }
+    }
+
+    parts.join(" ")
+}
+
+fn format_measurement(measurement: &Measurement) -> Option<String> {
+    let values: Vec<&str> = [measurement.amount.as_deref(), measurement.unit.as_deref()]
+        .into_iter()
+        .flatten()
+        .filter_map(non_blank)
+        .collect();
+    (!values.is_empty()).then(|| values.join(" "))
+}
+
+fn non_blank(value: &str) -> Option<&str> {
+    let trimmed = value.trim();
+    (!trimmed.is_empty()).then_some(trimmed)
+}
+
 /// Convert a Ramekin recipe to Paprika format.
 fn convert_to_paprika(
     recipe: &RecipeWithVersion,
@@ -54,14 +125,9 @@ fn convert_to_paprika(
 ) -> Result<PaprikaRecipe, String> {
     let version = &recipe.version;
 
-    // Parse ingredients back to newline-separated format.
     let ingredients: Vec<Ingredient> = serde_json::from_value(version.ingredients.clone())
         .map_err(|e| format!("stored ingredients JSON failed to deserialize: {}", e))?;
-    let ingredients_str = ingredients
-        .iter()
-        .map(|i| i.item.clone())
-        .collect::<Vec<_>>()
-        .join("\n");
+    let ingredients_str = format_ingredients_text(&ingredients);
 
     let fallback_photo_data = photos_data.first().and_then(|(id, raw)| {
         match generate_thumbnail(raw, EXPORT_PHOTO_DATA_SIZE) {
@@ -242,4 +308,95 @@ pub(super) fn export_recipe_to_paprikarecipe(
     let filename = format!("{}{}", filename, PAPRIKARECIPE_EXTENSION);
 
     Ok(ExportedRecipe { filename, data })
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use serde::Deserialize;
+
+    #[derive(Deserialize)]
+    struct FormattingCase {
+        name: String,
+        ingredient: Ingredient,
+        options: FormattingOptions,
+        expected: String,
+    }
+
+    #[derive(Deserialize)]
+    #[serde(rename_all = "camelCase")]
+    struct FormattingOptions {
+        #[serde(default)]
+        include_alternatives: bool,
+        #[serde(default)]
+        include_note: bool,
+        scale: Option<f64>,
+        derived: Option<Measurement>,
+    }
+
+    fn ingredient(item: &str, measurements: &[(&str, &str)], section: Option<&str>) -> Ingredient {
+        Ingredient {
+            item: item.to_string(),
+            measurements: measurements
+                .iter()
+                .map(|(amount, unit)| Measurement {
+                    amount: Some(amount.to_string()),
+                    unit: Some(unit.to_string()),
+                })
+                .collect(),
+            note: None,
+            section: section.map(str::to_string),
+        }
+    }
+
+    #[test]
+    fn shared_ingredient_formatting_vectors_match() {
+        let cases: Vec<FormattingCase> = serde_json::from_str(include_str!(
+            "../../../../shared-test-vectors/ingredient-formatting.json"
+        ))
+        .unwrap();
+
+        // The export never scales or adds derived grams, so only the cases
+        // without those options apply to the server.
+        let mut checked = 0;
+        for case in cases {
+            if case.options.scale.is_some() || case.options.derived.is_some() {
+                continue;
+            }
+            assert_eq!(
+                format_ingredient_line(
+                    &case.ingredient,
+                    case.options.include_alternatives,
+                    case.options.include_note
+                ),
+                case.expected,
+                "{}",
+                case.name
+            );
+            checked += 1;
+        }
+        assert!(checked > 0, "no applicable ingredient-formatting vectors");
+    }
+
+    #[test]
+    fn ingredients_text_adds_a_header_line_per_section_change() {
+        let ingredients = vec![
+            ingredient("flour", &[("2", "cups"), ("240", "g")], None),
+            ingredient("butter", &[("1", "stick")], Some("For the crust")),
+            ingredient("water", &[("2", "tbsp")], Some("For the crust")),
+            ingredient("apples", &[("6", "")], Some(" Filling ")),
+            ingredient("salt", &[], Some("  ")),
+        ];
+
+        assert_eq!(
+            format_ingredients_text(&ingredients),
+            "2 cups (240 g) flour\n\
+             For the crust:\n\
+             1 stick butter\n\
+             2 tbsp water\n\
+             Filling:\n\
+             6 apples\n\
+             salt"
+        );
+    }
 }
