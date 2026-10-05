@@ -306,13 +306,7 @@ final class RecipeFlowTests: XCTestCase {
     /// Search the meal-plan recipe picker and add a result through its
     /// accessible button, the path VoiceOver and keyboard users take.
     func testMealPlanRecipePicker() throws {
-        let server = app.textFields["https://ramekin.app"]
-        XCTAssertTrue(server.waitForExistence(timeout: slowSimulatorTimeout))
-        replaceText(in: server, with: "http://localhost:55000")
-        replaceText(in: app.textFields["Username"], with: "t")
-        replaceText(in: app.secureTextFields["Password"], with: "t")
-        submitLogin()
-        XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
+        try launchSignedIn()
 
         app.tabBars.buttons["Meal Plan"].tap()
         // Matches MealPlanView.dayHeaderFormatter.
