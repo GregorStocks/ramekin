@@ -6,7 +6,7 @@ from playwright.sync_api import expect
 RECIPE_TEXT = """Text Pancakes
 1 cup all-purpose flour
 8 oz butter
-1 cup mystery powder
+1 cup unknowable powder
 Mix ingredients. Cook in a pan.
 """
 

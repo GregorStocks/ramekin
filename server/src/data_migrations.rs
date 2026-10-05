@@ -13,7 +13,7 @@ use crate::schema::{data_migrations, recipe_versions, recipes};
 use anyhow::{anyhow, Context};
 use diesel::pg::PgConnection;
 use diesel::prelude::*;
-use ramekin_core::catalog::is_volume_unit;
+use ramekin_core::catalog::{is_volume_unit, Learned};
 use serde::Deserialize;
 use std::collections::HashSet;
 
@@ -75,7 +75,13 @@ fn strip_ingredients(ingredients: Vec<Ingredient>) -> Stripped {
             if rest.is_empty() || last.unit.as_deref() != Some("g") {
                 return ingredient;
             }
-            let derived = derived_grams(&ingredient.item, ingredient.note.as_deref(), rest);
+            // Catalog only: the stored grams came from the catalog at ingest.
+            let derived = derived_grams(
+                &ingredient.item,
+                ingredient.note.as_deref(),
+                rest,
+                &Learned::new(),
+            );
             if derived.is_some_and(|derived| derived.amount == last.amount) {
                 removed += 1;
                 ingredient.measurements.pop();

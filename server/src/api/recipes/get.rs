@@ -2,6 +2,7 @@ use super::read::fetch_current_recipe_with_version_and_tags;
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ingredient_names::load_learned;
 use crate::models::{derived_measurements, DerivedMeasurement, Ingredient, RecipeVersion};
 use crate::raw_sql;
 use crate::schema::{recipe_versions, recipes};
@@ -13,6 +14,7 @@ use axum::{
 };
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
+use ramekin_core::catalog::Learned;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
@@ -53,12 +55,13 @@ impl RecipeResponse {
         id: Uuid,
         recipe_created_at: DateTime<Utc>,
         version: RecipeVersion,
+        ingredients: Vec<Ingredient>,
+        learned: &Learned,
         tags: Vec<String>,
-    ) -> Result<Self, serde_json::Error> {
-        let ingredients = Vec::<Ingredient>::deserialize(&version.ingredients)?;
-        let derived_measurements = derived_measurements(&ingredients);
+    ) -> Self {
+        let derived_measurements = derived_measurements(&ingredients, learned);
 
-        Ok(Self {
+        Self {
             id,
             title: version.title,
             description: version.description,
@@ -81,7 +84,7 @@ impl RecipeResponse {
             notes: version.notes,
             version_id: version.id,
             version_source: version.version_source,
-        })
+        }
     }
 }
 
@@ -150,29 +153,47 @@ pub async fn get_recipe(
             },
         };
 
-        result.map_err(|e| {
+        let Some((recipe_created_at, version, tags)) = result.map_err(|e| {
             tracing::error!(recipe_id = %id, error = %e, "failed to fetch recipe");
             ApiError::internal("Failed to fetch recipe")
-        })
-    })
-    .await?;
+        })?
+        else {
+            return Ok(None);
+        };
 
-    let Some((recipe_created_at, version, tags)) = row else {
-        return Err(ApiError::not_found("Recipe not found"));
-    };
-
-    let version_id = version.id;
-
-    let response =
-        RecipeResponse::from_version(id, recipe_created_at, version, tags).map_err(|e| {
+        let ingredients = Vec::<Ingredient>::deserialize(&version.ingredients).map_err(|e| {
             tracing::error!(
                 recipe_id = %id,
-                version_id = %version_id,
+                version_id = %version.id,
                 error = %e,
                 "stored ingredients JSON failed to deserialize"
             );
             ApiError::internal("Recipe ingredients are corrupt")
         })?;
+        // Stored answers for names the catalog doesn't know, so their grams
+        // match what calorie estimates use.
+        let learned =
+            load_learned(conn, ingredients.iter().map(|i| i.item.as_str())).map_err(|e| {
+                tracing::error!(recipe_id = %id, error = %e, "failed to load learned names");
+                ApiError::internal("Failed to load ingredient names")
+            })?;
+
+        Ok(Some((
+            recipe_created_at,
+            version,
+            ingredients,
+            learned,
+            tags,
+        )))
+    })
+    .await?;
+
+    let Some((recipe_created_at, version, ingredients, learned, tags)) = row else {
+        return Err(ApiError::not_found("Recipe not found"));
+    };
+
+    let response =
+        RecipeResponse::from_version(id, recipe_created_at, version, ingredients, &learned, tags);
 
     Ok((StatusCode::OK, Json(response)))
 }

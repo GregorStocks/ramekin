@@ -319,7 +319,8 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                             else "Text Pancakes"
                         ),
                         "ingredients": (
-                            "1 cup all-purpose flour\n8 oz butter\n1 cup mystery powder"
+                            "1 cup all-purpose flour\n8 oz butter\n"
+                            "1 cup unknowable powder"
                         ),
                         "instructions": ""
                         if incomplete
