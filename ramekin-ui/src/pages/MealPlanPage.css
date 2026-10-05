@@ -168,7 +168,9 @@
 }
 
 .meal-card:hover .meal-edit,
-.meal-card:hover .meal-remove {
+.meal-card:hover .meal-remove,
+.meal-card:focus-within .meal-edit,
+.meal-card:focus-within .meal-remove {
   opacity: 1;
 }
 
