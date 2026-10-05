@@ -24,6 +24,9 @@ struct MealPlanView: View {
     @State private var mealPlans: [MealPlanItem] = []
     @State private var isLoading = false
     @State private var error: String?
+    /// Failures of add/remove once the week is on screen; shown as an alert
+    /// because `error` only replaces an empty calendar.
+    @State private var actionError: String?
 
     @State private var showingRecipePicker = false
     @State private var pickerDate: Date = Date()
@@ -38,7 +41,7 @@ struct MealPlanView: View {
         NavigationStack {
             Group {
                 if isLoading && mealPlans.isEmpty {
-                    ProgressView("Loading meal plans...")
+                    ProgressView("Loading meal plans…")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else if let error = error, mealPlans.isEmpty {
                     errorView(message: error)
@@ -54,6 +57,7 @@ struct MealPlanView: View {
                     } label: {
                         Image(systemName: "chevron.left")
                     }
+                    .accessibilityLabel("Previous Week")
 
                     Spacer()
 
@@ -68,6 +72,7 @@ struct MealPlanView: View {
                     } label: {
                         Image(systemName: "chevron.right")
                     }
+                    .accessibilityLabel("Next Week")
                 }
             }
             .refreshable {
@@ -119,16 +124,23 @@ struct MealPlanView: View {
                     }
                 }
             }
+            .alert(
+                "Meal Plan",
+                isPresented: Binding(
+                    get: { actionError != nil },
+                    set: { if !$0 { actionError = nil } }
+                )
+            ) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(actionError ?? "")
+            }
             .navigationDestination(for: NavigationDestination.self) { destination in
                 switch destination {
                 case .recipe(let id):
                     RecipeDetailView(recipeId: id)
                 case .settings:
                     SettingsView()
-                case .createRecipe:
-                    RecipeFormView(mode: .create)
-                case .editRecipe(let id):
-                    RecipeFormView(mode: .edit(recipeId: id))
                 }
             }
         }
@@ -171,7 +183,9 @@ struct MealPlanView: View {
             HStack {
                 Text(dayHeaderText(date))
                     .font(.headline)
-                    .foregroundColor(isToday ? .white : .primary)
+                    // Black on orange; white on orange is ~2:1 contrast.
+                    .foregroundColor(isToday ? .black : .primary)
+                    .accessibilityAddTraits(.isHeader)
                 Spacer()
             }
             .padding(.horizontal)
@@ -220,8 +234,10 @@ struct MealPlanView: View {
                 Label("Add", systemImage: "plus.circle")
                     .font(.caption)
                     .foregroundColor(.orange)
+                    .frame(minHeight: 44)
+                    .contentShape(Rectangle())
             }
-            .padding(.bottom, 4)
+            .accessibilityLabel("Add \(mealType.displayLabel) on \(dayHeaderText(date))")
         }
     }
 
@@ -306,7 +322,7 @@ struct MealPlanView: View {
                 ? "This recipe is already planned for this meal."
                 : APIErrorFormatter.userMessage(from: error, fallback: "Failed to add to meal plan")
             await MainActor.run {
-                self.error = message
+                actionError = message
             }
         }
     }
@@ -322,7 +338,9 @@ struct MealPlanView: View {
         } catch {
             logger.log("deleteMealPlan error: \(error.localizedDescription)", source: "MealPlan")
             await MainActor.run {
-                self.error = error.localizedDescription
+                actionError = APIErrorFormatter.userMessage(
+                    from: error, fallback: "Failed to remove from meal plan"
+                )
             }
         }
     }

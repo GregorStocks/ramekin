@@ -67,6 +67,7 @@ struct RecipeFormTagsSection: View {
                             }
                         }
                     Button("Add") { onAddTag() }
+                        .buttonStyle(.borderless)
                         .disabled(!canAddTag)
                 }
             }
@@ -130,9 +131,12 @@ struct RecipeFormTagsSection: View {
                     self.tags.removeAll { $0 == tag.name }
                 } label: {
                     Image(systemName: "xmark.circle.fill")
-                        .font(.caption)
                         .foregroundColor(.secondary)
+                        .frame(minWidth: 44, minHeight: 44)
+                        .contentShape(Rectangle())
                 }
+                .buttonStyle(.borderless)
+                .accessibilityLabel("Remove tag \(tag.name)")
             }
         }
     }

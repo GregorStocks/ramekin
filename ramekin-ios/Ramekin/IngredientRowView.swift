@@ -107,7 +107,7 @@ struct IngredientRowView: View {
             Button {
                 ingredient.measurements.append(EditableMeasurement())
             } label: {
-                Label("Alt measurement", systemImage: "plus.circle")
+                Label("Add Measurement", systemImage: "plus.circle")
                     .font(.subheadline)
                     .foregroundColor(.primary)
                     .frame(minHeight: 44)

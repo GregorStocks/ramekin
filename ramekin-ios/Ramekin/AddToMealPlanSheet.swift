@@ -56,7 +56,7 @@ struct AddToMealPlanSheet: View {
     private var confirmationOverlay: some View {
         VStack(spacing: 12) {
             Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 50))
+                .scaledIconFont(size: 50)
                 .foregroundColor(.green)
             Text("Added to meal plan")
                 .font(.headline)

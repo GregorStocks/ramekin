@@ -36,7 +36,7 @@ struct RecipeFormViewAPIClient {
 final class RecipeFormViewModel: ObservableObject {
     let mode: RecipeFormMode
 
-    @Published var formData = RecipeFormData()
+    @Published var formData: RecipeFormData
     @Published var availableTags: [TagItem] = []
     @Published var selectedTagNamespace: String?
     @Published var newTagValue = ""
@@ -51,15 +51,36 @@ final class RecipeFormViewModel: ObservableObject {
     @Published var draft: PrepareTextRecipeResponse?
     @Published var isPreparing = false
 
+    /// The form as last loaded or prepared, to tell whether the user has
+    /// edited anything since.
+    private var savedFormData: RecipeFormData
     private let api: RecipeFormViewAPIClient
 
     init(mode: RecipeFormMode, api: RecipeFormViewAPIClient = .live) {
         self.mode = mode
         self.api = api
+        // One shared value: each RecipeFormData() starts with a fresh
+        // ingredient row id, so two defaults would never compare equal.
+        let initialFormData = RecipeFormData()
+        _formData = Published(initialValue: initialFormData)
+        savedFormData = initialFormData
     }
 }
 
 extension RecipeFormViewModel {
+    /// Whether closing the form would throw away the user's work. In create
+    /// mode that's any typed text or a prepared draft; a photo still
+    /// uploading counts in either mode.
+    var hasUnsavedChanges: Bool {
+        if isUploadingPhoto { return true }
+        return switch mode {
+        case .create:
+            draft != nil || !recipeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        case .edit:
+            formData != savedFormData
+        }
+    }
+
     var canSave: Bool {
         let hasRequiredVersion = switch mode {
         case .create:
@@ -81,6 +102,7 @@ extension RecipeFormViewModel {
         do {
             let result = try await api.prepareTextRecipe(recipeText)
             formData = RecipeFormData(content: result.content)
+            savedFormData = formData
             rawIngredients = result.rawIngredients
             draft = result
         } catch {
@@ -234,7 +256,7 @@ extension RecipeFormViewModel {
                 request.rawIngredients = rawIngredients
                 try await api.createRecipe(request)
             case .edit(let recipeId):
-                try await api.updateRecipe(recipeId, formData.makeUpdateRequest())
+                try await api.updateRecipe(recipeId, try formData.makeUpdateRequest())
             }
             isSaving = false
             return true
@@ -255,6 +277,7 @@ extension RecipeFormViewModel {
         do {
             let recipe = try await api.getRecipe(id)
             formData = RecipeFormData(recipe: recipe)
+            savedFormData = formData
             isLoading = false
         } catch is CancellationError {
             isLoading = false

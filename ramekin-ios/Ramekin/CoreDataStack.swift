@@ -31,6 +31,25 @@ class CoreDataStack: ObservableObject {
     }
 
     let container: NSPersistentContainer
+    /// True when the on-disk store failed to load and the app is running on
+    /// an in-memory store: local edits survive only once synced.
+    private(set) var isUsingVolatileStore = false
+
+    /// Sync cursors and similar state describe what the on-disk store holds.
+    /// On the in-memory fallback they must neither be read (the empty store
+    /// would skip the sync that fills it) nor advanced (the disk store would
+    /// skip changes on the next launch that loads it), so callers keep that
+    /// state in a throwaway domain cleared at launch.
+    func syncStateDefaults(_ defaults: UserDefaults) -> UserDefaults {
+        isUsingVolatileStore ? Self.volatileSyncStateDefaults ?? defaults : defaults
+    }
+
+    private static let volatileSyncStateDefaults: UserDefaults? = {
+        let suiteName = "com.ramekin.volatile-store-sync-state"
+        let defaults = UserDefaults(suiteName: suiteName)
+        defaults?.removePersistentDomain(forName: suiteName)
+        return defaults
+    }()
 
     /// The main view context for UI operations
     var viewContext: NSManagedObjectContext {
@@ -49,10 +68,26 @@ class CoreDataStack: ObservableObject {
             container.persistentStoreDescriptions = [storeDescription]
         }
 
+        var loadError: NSError?
         container.loadPersistentStores { _, error in
-            if let error = error as NSError? {
-                // In a production app, handle this more gracefully
-                fatalError("Failed to load Core Data stores: \(error), \(error.userInfo)")
+            loadError = error as NSError?
+        }
+        if let loadError {
+            // Run on an in-memory store rather than crash. The on-disk store
+            // (and any pending shopping-list edits in it) stays untouched, so
+            // the next launch tries it again.
+            logger.log(
+                "Failed to load Core Data stores, falling back to memory: \(loadError), \(loadError.userInfo)",
+                source: "CoreDataStack"
+            )
+            let memoryDescription = NSPersistentStoreDescription()
+            memoryDescription.type = NSInMemoryStoreType
+            container.persistentStoreDescriptions = [memoryDescription]
+            isUsingVolatileStore = true
+            container.loadPersistentStores { _, error in
+                if let error {
+                    self.logger.log("Failed to load in-memory Core Data store: \(error)", source: "CoreDataStack")
+                }
             }
         }
 

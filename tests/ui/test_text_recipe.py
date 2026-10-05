@@ -6,7 +6,7 @@ from playwright.sync_api import expect
 RECIPE_TEXT = """Text Pancakes
 1 cup all-purpose flour
 8 oz butter
-1 cup mystery powder
+1 cup unknowable powder
 Mix ingredients. Cook in a pan.
 """
 
@@ -66,3 +66,24 @@ def test_failed_save_preserves_review_edits(logged_in_page, ui_url):
     expect(page.get_by_label("Ingredients", exact=True)).to_have_value(
         "3 cups all-purpose flour"
     )
+
+
+def test_leaving_review_with_unsaved_work_asks_first(logged_in_page, ui_url):
+    page = logged_in_page
+    page.goto(f"{ui_url}/recipes/new")
+    page.get_by_label("Recipe text", exact=True).fill(RECIPE_TEXT)
+    page.get_by_role("button", name="Review recipe", exact=True).click()
+    review = page.get_by_role("heading", name="Review recipe")
+    expect(review).to_be_visible(timeout=30000)
+    cancel = page.locator(".form-actions").get_by_role("link", name="Cancel")
+
+    with page.expect_event("dialog") as dialog_info:
+        cancel.click()
+    assert "unsaved changes" in dialog_info.value.message
+    dialog_info.value.dismiss()
+    expect(review).to_be_visible()
+
+    with page.expect_event("dialog") as dialog_info:
+        cancel.click()
+    dialog_info.value.accept()
+    expect(page).not_to_have_url(f"{ui_url}/recipes/new")

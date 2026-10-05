@@ -1,6 +1,18 @@
 import Foundation
 
-struct RecipeFormData {
+enum RecipeFormError: LocalizedError {
+    /// Saving an edit needs the version it was based on.
+    case versionNotLoaded
+
+    var errorDescription: String? {
+        switch self {
+        case .versionNotLoaded:
+            return "Reload the recipe and try again."
+        }
+    }
+}
+
+struct RecipeFormData: Equatable {
     var title: String = ""
     var recipeDescription: String = ""
     var instructions: String = ""
@@ -125,9 +137,9 @@ struct RecipeFormData {
         )
     }
 
-    func makeUpdateRequest() -> UpdateRecipeRequest {
+    func makeUpdateRequest() throws -> UpdateRecipeRequest {
         guard let expectedVersionId else {
-            preconditionFailure("Cannot update a recipe before loading its version")
+            throw RecipeFormError.versionNotLoaded
         }
         return UpdateRecipeRequest(
             cookTime: cookTime.isEmpty ? nil : cookTime,

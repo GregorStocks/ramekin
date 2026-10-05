@@ -1,6 +1,7 @@
 use crate::import;
 use anyhow::{Context, Result};
 use ramekin_client::apis::configuration::Configuration;
+use ramekin_client::apis::tags_api::CreateTagError;
 use ramekin_client::apis::{auth_api, tags_api};
 use ramekin_client::models::{CreateTagRequest, LoginRequest, SignupRequest};
 use serde::Deserialize;
@@ -62,21 +63,25 @@ pub async fn seed(
 
         tracing::info!("Creating {} tags...", tags_data.tags.len());
         for tag_name in &tags_data.tags {
-            match tags_api::create_tag(
+            let result = tags_api::create_tag(
                 &config,
                 CreateTagRequest {
                     name: tag_name.clone(),
                 },
             )
-            .await
-            {
-                Ok(_) => {}
-                Err(e) => {
-                    // Ignore 409 conflicts (tag already exists)
-                    let is_conflict = matches!(&e, ramekin_client::apis::Error::ResponseError(resp) if resp.status == reqwest::StatusCode::CONFLICT);
-                    if !is_conflict {
-                        tracing::warn!(tag = %tag_name, error = %e, "Failed to create tag");
-                    }
+            .await;
+            match result {
+                Err(e) if is_tag_conflict(&e) => {
+                    tracing::debug!(tag = %tag_name, "Tag already exists");
+                }
+                result => {
+                    result.with_context(|| {
+                        format!(
+                            "Failed to create tag '{tag_name}'. User '{username}' was already \
+                             created, so rerunning seed will skip it; use a new username or \
+                             run `import` directly"
+                        )
+                    })?;
                 }
             }
         }
@@ -85,4 +90,33 @@ pub async fn seed(
 
     // Import recipes from file
     import::import(server, username, password, preserve_tags, file).await
+}
+
+/// Creating a tag that already exists is expected when seeding; anything else is a real failure.
+fn is_tag_conflict(error: &ramekin_client::apis::Error<CreateTagError>) -> bool {
+    matches!(error, ramekin_client::apis::Error::ResponseError(resp) if resp.status == reqwest::StatusCode::CONFLICT)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use ramekin_client::apis::{Error, ResponseContent};
+
+    fn response_error(status: reqwest::StatusCode) -> Error<CreateTagError> {
+        Error::ResponseError(ResponseContent {
+            status,
+            content: String::new(),
+            entity: None,
+        })
+    }
+
+    #[test]
+    fn only_conflicts_are_ignored() {
+        assert!(is_tag_conflict(&response_error(
+            reqwest::StatusCode::CONFLICT
+        )));
+        assert!(!is_tag_conflict(&response_error(
+            reqwest::StatusCode::INTERNAL_SERVER_ERROR
+        )));
+    }
 }

@@ -66,8 +66,9 @@ struct CalorieEstimateSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Estimated calories")
+            Text("Estimated Calories")
                 .font(.headline)
+                .accessibilityAddTraits(.isHeader)
             if model.request != request || model.isLoading {
                 ProgressView("Calculating calories…")
             } else if let error = model.error {

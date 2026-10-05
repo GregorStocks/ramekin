@@ -2,6 +2,7 @@ import SwiftUI
 
 struct RecipeListView: View {
     @StateObject private var viewModel: RecipeListViewModel
+    @State private var showingNewRecipe = false
 
     @MainActor
     init() {
@@ -42,17 +43,26 @@ struct RecipeListView: View {
         }
         .navigationTitle("Recipes")
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                HStack(spacing: 16) {
-                    NavigationLink(value: NavigationDestination.createRecipe) {
-                        Image(systemName: "plus")
-                    }
-                    .accessibilityLabel("New Recipe")
-                    sortMenu
-                    NavigationLink(value: NavigationDestination.settings) {
-                        Image(systemName: "gear")
-                    }
-                    .accessibilityLabel("Settings")
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button {
+                    showingNewRecipe = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+                .accessibilityLabel("New Recipe")
+                sortMenu
+                NavigationLink(value: NavigationDestination.settings) {
+                    Image(systemName: "gear")
+                }
+                .accessibilityLabel("Settings")
+            }
+        }
+        // Creating a recipe is a self-contained task, so it's a modal with
+        // Cancel/Save rather than a push whose back swipe drops the draft.
+        .sheet(isPresented: $showingNewRecipe) {
+            NavigationStack {
+                RecipeFormView(mode: .create) {
+                    Task { await viewModel.refresh() }
                 }
             }
         }
@@ -99,7 +109,7 @@ struct RecipeListView: View {
     @ViewBuilder
     private var statusOverlay: some View {
         if viewModel.isLoading && viewModel.recipes.isEmpty {
-            ProgressView("Loading recipes...")
+            ProgressView("Loading recipes…")
         } else if let error = viewModel.error, viewModel.recipes.isEmpty {
             errorView(message: error)
         } else if viewModel.recipes.isEmpty
@@ -194,7 +204,7 @@ struct RecipeListView: View {
     private var emptyStateView: some View {
         VStack(spacing: 16) {
             Image(systemName: "book.closed")
-                .font(.system(size: 48))
+                .scaledIconFont(size: 48)
                 .foregroundColor(.secondary)
             Text("No recipes yet")
                 .font(.title2)
@@ -209,12 +219,12 @@ struct RecipeListView: View {
     private var noResultsView: some View {
         VStack(spacing: 16) {
             Image(systemName: "magnifyingglass")
-                .font(.system(size: 48))
+                .scaledIconFont(size: 48)
                 .foregroundColor(.secondary)
             Text("No matching recipes")
                 .font(.title2)
             if viewModel.hasActiveFilters {
-                Button("Clear filters") {
+                Button("Clear Filters") {
                     viewModel.clearFilters()
                 }
                 .buttonStyle(.borderedProminent)

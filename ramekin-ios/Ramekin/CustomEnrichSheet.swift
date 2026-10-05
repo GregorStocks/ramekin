@@ -8,12 +8,14 @@ struct CustomEnrichSheet: View {
     @State private var instruction = ""
     @State private var isLoading = false
     @State private var error: String?
+    @State private var submitTask: Task<Void, Never>?
 
     var body: some View {
         NavigationStack {
             Form {
                 Section("What would you like to change?") {
-                    TextField("e.g., make this vegan, double the servings...", text: $instruction)
+                    TextField("e.g., make this vegan, double the servings…", text: $instruction, axis: .vertical)
+                        .lineLimit(2...5)
                 }
 
                 if let error {
@@ -27,7 +29,7 @@ struct CustomEnrichSheet: View {
                     Section {
                         HStack {
                             Spacer()
-                            ProgressView("Customizing recipe...")
+                            ProgressView("Customizing recipe…")
                             Spacer()
                         }
                     }
@@ -38,17 +40,22 @@ struct CustomEnrichSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
+                        submitTask?.cancel()
                         isPresented = false
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Submit") {
-                        Task { await submit() }
+                        submitTask = Task { await submit() }
                     }
                     .disabled(instruction.trimmingCharacters(in: .whitespaces).isEmpty || isLoading)
                 }
             }
+            .interactiveDismissDisabled(isLoading)
         }
+        // Closing the sheet abandons the request, so a late result must not
+        // pop open the review sheet.
+        .onDisappear { submitTask?.cancel() }
     }
 
     private func submit() async {
@@ -75,11 +82,13 @@ struct CustomEnrichSheet: View {
             )
             let request = CustomEnrichRequest(instruction: instruction, recipe: recipeContent)
             let result = try await EnrichAPI.customEnrichRecipe(customEnrichRequest: request)
+            guard !Task.isCancelled else { return }
             await MainActor.run {
                 onResult(result)
                 isPresented = false
             }
         } catch {
+            guard !Task.isCancelled else { return }
             await MainActor.run {
                 self.error = error.localizedDescription
                 isLoading = false

@@ -1,10 +1,11 @@
 //! Gram amounts computed for ingredient lines when a recipe is read.
 //!
 //! Converts oz/lb exactly, and volume measurements (cups, tbsp, tsp, etc.)
-//! through the catalog's density for the food. The result is never stored, so
+//! through the catalog's density for the food, found by name or through a
+//! learned name's catalog entry. The result is never stored, so
 //! catalog improvements reach every recipe.
 
-use crate::catalog::{is_volume_unit, line_grams_per_cup, volume_to_cups};
+use crate::catalog::{is_volume_unit, line_grams_per_cup_with, volume_to_cups, Learned};
 use crate::ingredient_parser::{normalize_fraction_to_decimal, Measurement};
 use crate::metric_weights::{
     format_grams, has_metric_weight, metric_grams, parse_amount, MetricConversionStats,
@@ -24,11 +25,13 @@ pub struct VolumeConversionStats {
 }
 
 /// Grams for the first volume measurement, through the catalog's density for
-/// the line's food, unless the line already has a weight.
+/// the line's food, unless the line already has a weight. A learned name
+/// counts only through its catalog entry; a model's own estimate never does.
 fn volume_grams(
     item: &str,
     note: Option<&str>,
     measurements: &[Measurement],
+    learned: &Learned,
     stats: &mut VolumeConversionStats,
 ) -> Option<String> {
     if has_weight_measurement(measurements) {
@@ -47,7 +50,7 @@ fn volume_grams(
         return None;
     };
 
-    let Some(grams_per_cup) = line_grams_per_cup(item, note) else {
+    let Some(grams_per_cup) = line_grams_per_cup_with(item, note, learned) else {
         stats.skipped_unknown_ingredient += 1;
         stats.unknown_ingredients.push(item.to_string());
         return None;
@@ -84,17 +87,19 @@ fn convert_volume_to_grams(amount: &str, unit: &str, grams_per_cup: f64) -> Opti
 
 /// The gram amount computed for an ingredient line, shown beside what the
 /// source gave and never stored. It converts oz/lb exactly, or a volume
-/// through the catalog's density for the food. None when a weight is already
-/// metric, or when nothing converts.
+/// through the catalog's density for the food (see `volume_grams`). None when
+/// a weight is already metric, or when nothing converts.
 pub fn derived_grams(
     item: &str,
     note: Option<&str>,
     measurements: &[Measurement],
+    learned: &Learned,
 ) -> Option<Measurement> {
     derived_grams_with_stats(
         item,
         note,
         measurements,
+        learned,
         &mut MetricConversionStats::default(),
         &mut VolumeConversionStats::default(),
     )
@@ -105,13 +110,14 @@ pub fn derived_grams_with_stats(
     item: &str,
     note: Option<&str>,
     measurements: &[Measurement],
+    learned: &Learned,
     metric_stats: &mut MetricConversionStats,
     volume_stats: &mut VolumeConversionStats,
 ) -> Option<Measurement> {
     // Both always run so each counts every line. They never both convert: a
     // line with oz/lb already has a weight for the volume conversion.
     let metric = metric_grams(measurements, metric_stats);
-    let volume = volume_grams(item, note, measurements, volume_stats);
+    let volume = volume_grams(item, note, measurements, learned, volume_stats);
     let grams = metric.or(volume)?;
     Some(Measurement {
         amount: Some(normalize_fraction_to_decimal(&grams)),
@@ -134,7 +140,7 @@ mod tests {
     }
 
     fn derived(item: &str, pairs: &[(&str, &str)]) -> Option<Measurement> {
-        derived_grams(item, None, &measurements(pairs))
+        derived_grams(item, None, &measurements(pairs), &Learned::new())
     }
 
     fn grams(amount: &str) -> Option<Measurement> {
@@ -189,11 +195,43 @@ mod tests {
     }
 
     #[test]
+    fn derived_grams_uses_learned_entries_but_not_estimates() {
+        use crate::catalog::{EstimatedFood, LearnedTarget};
+        let learned = Learned::from([
+            (
+                "moon sugar".to_string(),
+                LearnedTarget::Entry("granulated sugar".into()),
+            ),
+            (
+                "moon dust".to_string(),
+                LearnedTarget::Estimate(EstimatedFood {
+                    kcal_per_100g: 200.0,
+                    grams_per_cup: Some(150.0),
+                    grams_per_piece: None,
+                }),
+            ),
+        ]);
+        let derived = |item: &str, learned: &Learned| {
+            derived_grams(item, None, &measurements(&[("2", "tbsp")]), learned)
+        };
+        assert_eq!(derived("moon sugar", &Learned::new()), None);
+        assert_eq!(derived("moon sugar", &learned), grams("25"));
+        assert_eq!(derived("moon dust", &learned), None);
+    }
+
+    #[test]
     fn derived_grams_counts_stats() {
         let mut metric = MetricConversionStats::default();
         let mut volume = VolumeConversionStats::default();
         let mut count = |item: &str, pairs: &[(&str, &str)]| {
-            derived_grams_with_stats(item, None, &measurements(pairs), &mut metric, &mut volume)
+            derived_grams_with_stats(
+                item,
+                None,
+                &measurements(pairs),
+                &Learned::new(),
+                &mut metric,
+                &mut volume,
+            )
         };
         count("sugar", &[("2", "tbsp")]);
         count("butter", &[("8", "oz")]);

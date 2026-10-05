@@ -135,10 +135,10 @@ extension RecipeDetailViewModel {
     }
 
     var autoEnrichmentProgressLabel: String? {
-        if isEnriching { return "Enriching recipe..." }
-        if isGeneratingPhoto { return "Generating AI photo..." }
-        if isGeneratingDescription { return "Generating description..." }
-        if isNormalizingTitle { return "Renaming recipe..." }
+        if isEnriching { return "Enriching recipe…" }
+        if isGeneratingPhoto { return "Generating AI photo…" }
+        if isGeneratingDescription { return "Generating description…" }
+        if isNormalizingTitle { return "Renaming recipe…" }
         return nil
     }
 
@@ -287,7 +287,9 @@ extension RecipeDetailViewModel {
         do {
             let historicalRecipe = try await api.getRecipe(recipeId, version.id)
             guard let currentVersionId else {
-                preconditionFailure("Cannot revert before loading the current recipe version")
+                error = "Reload the recipe and try again."
+                isReverting = false
+                return
             }
             try await api.revertRecipe(recipeId, historicalRecipe, currentVersionId)
 

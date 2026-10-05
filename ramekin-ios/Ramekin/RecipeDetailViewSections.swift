@@ -73,6 +73,7 @@ extension RecipeDetailView {
             Text(recipe.title)
                 .font(.title)
                 .fontWeight(.bold)
+                .accessibilityAddTraits(.isHeader)
 
             if let description = recipe.description, !description.isEmpty {
                 Text(description)
@@ -123,6 +124,8 @@ extension RecipeDetailView {
                             .foregroundColor(.accentColor)
                     }
                 }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("Rated \(rating) of 5")
             }
 
             if let difficulty = recipe.difficulty, !difficulty.isEmpty {
@@ -149,6 +152,7 @@ extension RecipeDetailView {
                 Text("Ingredients")
                     .font(.title2)
                     .fontWeight(.bold)
+                    .accessibilityAddTraits(.isHeader)
                 if viewModel.recipeScale != 1 {
                     scaleBadge
                 }
@@ -163,6 +167,7 @@ extension RecipeDetailView {
                     Text(section)
                         .font(.headline)
                         .padding(.top, 8)
+                        .accessibilityAddTraits(.isHeader)
                 }
 
                 ForEach(group.items, id: \.offset) { index, ingredient in
@@ -204,15 +209,20 @@ extension RecipeDetailView {
                             .foregroundColor(viewModel.recipeScale == preset.value ? Color(.systemBackground) : .primary)
                     }
                     .buttonStyle(.plain)
+                    .accessibilityAddTraits(viewModel.recipeScale == preset.value ? .isSelected : [])
                 }
             }
 
             HStack(spacing: 8) {
+                // A decimal pad has no Return key, so Apply is the way to
+                // commit; it also dismisses the keyboard.
                 TextField("Custom", text: $viewModel.customScaleInput)
                     .keyboardType(.decimalPad)
                     .textFieldStyle(.roundedBorder)
-                    .frame(width: 100)
-                    .onSubmit(applyCustomScale)
+                    .frame(minWidth: 100)
+                    .fixedSize()
+                    .focused($customScaleFocused)
+                    .accessibilityLabel("Custom scale")
 
                 Button("Apply") {
                     applyCustomScale()
@@ -259,6 +269,7 @@ extension RecipeDetailView {
             Text("Instructions")
                 .font(.title2)
                 .fontWeight(.bold)
+                .accessibilityAddTraits(.isHeader)
 
             Text(instructions)
                 .font(.body)
@@ -270,6 +281,7 @@ extension RecipeDetailView {
             Text("Notes")
                 .font(.title3)
                 .fontWeight(.bold)
+                .accessibilityAddTraits(.isHeader)
 
             Text(notes)
                 .font(.body)
@@ -282,6 +294,7 @@ extension RecipeDetailView {
             Text("Nutritional Info")
                 .font(.title3)
                 .fontWeight(.bold)
+                .accessibilityAddTraits(.isHeader)
 
             Text(nutritionalInfo)
                 .font(.body)

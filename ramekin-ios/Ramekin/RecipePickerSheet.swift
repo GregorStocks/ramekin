@@ -26,6 +26,8 @@ struct RecipePickerSheet: View {
                     RecipeRowView(recipe: recipe)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel(recipe.title)
+                .accessibilityHint("Adds to \(mealType.displayLabel)")
             }
             .listStyle(.plain)
             .overlay { statusOverlay }
@@ -56,13 +58,13 @@ struct RecipePickerSheet: View {
     @ViewBuilder
     private var statusOverlay: some View {
         if isLoading && recipes.isEmpty {
-            ProgressView("Loading recipes...")
+            ProgressView("Loading recipes…")
         } else if let error = error, recipes.isEmpty {
             errorView(message: error)
         } else if recipes.isEmpty {
             VStack(spacing: 16) {
                 Image(systemName: "magnifyingglass")
-                    .font(.system(size: 48))
+                    .scaledIconFont(size: 48)
                     .foregroundColor(.secondary)
                 Text("No recipes found")
                     .font(.title2)

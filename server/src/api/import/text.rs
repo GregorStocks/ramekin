@@ -211,7 +211,17 @@ pub async fn prepare_text_recipe(
             }
         }
     }
-    let derived_measurements = derived_measurements(&content.ingredients);
+    let items: Vec<String> = content
+        .ingredients
+        .iter()
+        .map(|ingredient| ingredient.item.clone())
+        .collect();
+    let learned = run_db(&pool, move |conn| {
+        crate::ingredient_names::load_learned(conn, items.iter().map(String::as_str))
+            .map_err(|_| ApiError::internal("Failed to load ingredient names"))
+    })
+    .await?;
+    let derived_measurements = derived_measurements(&content.ingredients, &learned);
     let derived_indices: HashSet<usize> = derived_measurements
         .iter()
         .map(|derived| derived.ingredient_index)

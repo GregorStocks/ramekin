@@ -25,7 +25,7 @@ struct LoginView: View {
             Section {
                 VStack(spacing: 16) {
                     Image(systemName: "fork.knife.circle.fill")
-                        .font(.system(size: 64))
+                        .scaledIconFont(size: 64)
                         .foregroundColor(.accentColor)
 
                     Text("Ramekin")
@@ -121,8 +121,6 @@ struct LoginView: View {
                 }
             }
         }
-        .navigationTitle("Sign In")
-        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             // Pre-fill saved credentials if available
             if let savedURL = KeychainHelper.shared.getServerURL() {

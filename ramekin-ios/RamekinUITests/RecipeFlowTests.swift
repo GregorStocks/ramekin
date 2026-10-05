@@ -36,8 +36,7 @@ final class RecipeFlowTests: XCTestCase {
         XCTAssertTrue(text.waitForExistence(timeout: slowSimulatorTimeout))
         text.tap()
         text.typeText("Text Pancakes\n1 cup all-purpose flour\nMix and cook.")
-        app.swipeUp()
-        app.buttons["Review recipe"].tap()
+        app.navigationBars.buttons["Review"].tap()
         let title = app.textFields["Recipe title"]
         XCTAssertTrue(title.waitForExistence(timeout: slowSimulatorTimeout))
         replaceText(in: title, with: "iOS text pancakes")
@@ -155,7 +154,7 @@ final class RecipeFlowTests: XCTestCase {
 
         // The login screen is a Form whose rows also match `app.cells`, so the
         // logged-in check must be something only the recipe list has: its
-        // "Recipes" navigation bar (the login screen's bar is "Sign In").
+        // "Recipes" navigation bar (the login screen has no navigation bar).
         let recipesBar = app.navigationBars["Recipes"]
         let loginError = app.staticTexts["login-error-message"]
         let loginFinished = XCTNSPredicateExpectation(
@@ -264,6 +263,52 @@ final class RecipeFlowTests: XCTestCase {
         mealPlanBar.buttons["Cancel"].tap()
         XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
         XCTAssertTrue(moreActions.isHittable)
+    }
+
+    /// Search the meal-plan recipe picker and add a result through its
+    /// accessible button, the path VoiceOver and keyboard users take.
+    func testMealPlanRecipePicker() throws {
+        let server = app.textFields["https://ramekin.app"]
+        XCTAssertTrue(server.waitForExistence(timeout: slowSimulatorTimeout))
+        replaceText(in: server, with: "http://localhost:55000")
+        replaceText(in: app.textFields["Username"], with: "t")
+        replaceText(in: app.secureTextFields["Password"], with: "t")
+        submitLogin()
+        XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
+
+        app.tabBars.buttons["Meal Plan"].tap()
+        // Matches MealPlanView.dayHeaderFormatter.
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, MMM d"
+        let addDinner = app.buttons["Add Dinner on \(formatter.string(from: Date()))"]
+        XCTAssertTrue(addDinner.waitForExistence(timeout: slowSimulatorTimeout))
+        for _ in 0..<8 where !addDinner.isHittable {
+            app.swipeUp()
+        }
+        addDinner.tap()
+
+        let pickerBar = app.navigationBars["Add Dinner"]
+        XCTAssertTrue(pickerBar.waitForExistence(timeout: slowSimulatorTimeout))
+        let firstResult = app.cells.firstMatch.buttons.firstMatch
+        XCTAssertTrue(firstResult.waitForExistence(timeout: slowSimulatorTimeout))
+        let title = firstResult.label
+        XCTAssertFalse(title.isEmpty, "Picker results need the recipe title as their label")
+
+        let search = app.searchFields.firstMatch
+        search.tap()
+        search.typeText(title)
+        let result = app.buttons.matching(NSPredicate(format: "label == %@", title)).firstMatch
+        XCTAssertTrue(result.waitForExistence(timeout: slowSimulatorTimeout))
+        attachScreenshot(named: "MealPlanPicker")
+        result.tap()
+
+        let dismissed = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "exists == false"),
+            object: pickerBar
+        )
+        XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: slowSimulatorTimeout), .completed)
+        let card = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", title)).firstMatch
+        XCTAssertTrue(card.waitForExistence(timeout: slowSimulatorTimeout))
     }
 
     /// Test that login fails with invalid credentials

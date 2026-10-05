@@ -11,6 +11,7 @@ import RecipeForm from "../components/RecipeForm";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { createRecipeFormState } from "../utils/recipeFormState";
 import { usePageTitle } from "../utils/pageTitle";
+import { useUnsavedChangesGuard } from "../utils/unsavedChangesGuard";
 
 declare const __EXTERNAL_URL__: string;
 
@@ -33,6 +34,12 @@ export default function CreateRecipePage() {
   );
   const [rawIngredients, setRawIngredients] = createSignal("");
   const [preparing, setPreparing] = createSignal(false);
+  const [saved, setSaved] = createSignal(false);
+
+  // Pasted text or a prepared draft is work worth asking about before leaving.
+  useUnsavedChangesGuard(
+    () => !saved() && (draft() !== null || recipeText().trim() !== ""),
+  );
 
   const prepareRecipe = async () => {
     setPreparing(true);
@@ -147,6 +154,7 @@ export default function CreateRecipePage() {
       // Refresh tags cache in case new tags were created
       refreshTags();
 
+      setSaved(true);
       navigate(`/recipes/${response.id}`);
     } catch (err) {
       const errorMessage = await extractApiError(

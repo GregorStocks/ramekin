@@ -364,6 +364,7 @@ export default function MealPlanPage() {
                           class="add-meal-btn"
                           onClick={() => openPicker(day, mealType)}
                           title="Add recipe"
+                          aria-label={`Add ${MEAL_TYPE_LABELS[mealType]} on ${formatDayHeader(day)}`}
                         >
                           +
                         </button>
@@ -413,8 +414,10 @@ export default function MealPlanPage() {
         <div class="recipe-picker-list">
           <For each={recipes()}>
             {(recipe) => (
-              <div
+              <button
+                type="button"
                 class="recipe-picker-item"
+                aria-label={recipe.title}
                 onClick={() => addMealPlan(recipe)}
               >
                 <Show when={recipe.thumbnailPhotoId}>
@@ -426,7 +429,7 @@ export default function MealPlanPage() {
                   />
                 </Show>
                 <span class="recipe-picker-title">{recipe.title}</span>
-              </div>
+              </button>
             )}
           </For>
         </div>

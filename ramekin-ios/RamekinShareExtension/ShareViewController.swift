@@ -103,7 +103,7 @@ struct ShareExtensionView: View {
         NavigationStack {
             VStack(spacing: 24) {
                 statusIcon
-                    .font(.system(size: 64))
+                    .scaledIconFont(size: 64)
                     .padding(.top, 32)
 
                 statusText
@@ -126,9 +126,18 @@ struct ShareExtensionView: View {
             .navigationTitle("Save to Ramekin")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        onCancel()
+                switch status {
+                case .success:
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done") { onComplete() }
+                    }
+                case .notLoggedIn:
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("OK") { onCancel() }
+                    }
+                case .ready, .sending, .error:
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") { onCancel() }
                     }
                 }
             }
@@ -160,11 +169,11 @@ struct ShareExtensionView: View {
     private var statusText: some View {
         switch status {
         case .ready:
-            Text("Preparing...")
+            Text("Preparing…")
                 .font(.title2)
         case .sending:
             VStack(spacing: 8) {
-                Text("Saving Recipe...")
+                Text("Saving Recipe…")
                     .font(.title2)
                 Text("The recipe will be processed in the background")
                     .font(.subheadline)
@@ -204,72 +213,32 @@ struct ShareExtensionView: View {
         }
     }
 
+    /// Finishing actions (Done, OK, Cancel) live in the navigation bar; the
+    /// body only offers what the bar can't: retrying, or leaving a slow save.
     @ViewBuilder
     private var actionButton: some View {
         switch status {
-        case .ready:
-            EmptyView()
-        case .sending:
-            if showSlowAffordance {
-                Button {
-                    onComplete()
-                } label: {
-                    Text("Still working, tap to close")
-                        .fontWeight(.semibold)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.secondary.opacity(0.2))
-                        .foregroundColor(.primary)
-                        .cornerRadius(12)
-                }
-            } else {
-                EmptyView()
-            }
-        case .success:
+        case .sending where showSlowAffordance:
             Button {
                 onComplete()
             } label: {
-                Text("Done")
-                    .fontWeight(.semibold)
+                Text("Still working, tap to close")
                     .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
             }
+            .buttonStyle(.bordered)
+            .controlSize(.large)
         case .error:
-            VStack(spacing: 12) {
-                Button {
-                    checkLoginAndSend()
-                } label: {
-                    Text("Try Again")
-                        .fontWeight(.semibold)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.orange)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                }
-
-                Button {
-                    onCancel()
-                } label: {
-                    Text("Cancel")
-                        .foregroundColor(.secondary)
-                }
-            }
-        case .notLoggedIn:
             Button {
-                onCancel()
+                checkLoginAndSend()
             } label: {
-                Text("OK")
+                Text("Try Again")
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.orange)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
             }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+        case .ready, .sending, .success, .notLoggedIn:
+            EmptyView()
         }
     }
 

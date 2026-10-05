@@ -10,6 +10,7 @@ import { createRecipeFormState } from "../utils/recipeFormState";
 import { emptyEditRecipeFormValues } from "../utils/recipeFormSerialization";
 import { ErrorCode } from "ramekin-client";
 import { usePageTitle } from "../utils/pageTitle";
+import { useUnsavedChangesGuard } from "../utils/unsavedChangesGuard";
 import type { RecipeResponse } from "ramekin-client";
 
 export default function EditRecipePage() {
@@ -22,6 +23,8 @@ export default function EditRecipePage() {
     initialValues: emptyEditRecipeFormValues(),
     pasteEnabled: () => !loading(),
   });
+
+  useUnsavedChangesGuard(() => !loading() && form.hasUnsavedChanges());
 
   usePageTitle(() => (form.title() ? `Edit: ${form.title()}` : "Edit Recipe"));
 
@@ -63,6 +66,7 @@ export default function EditRecipePage() {
       // Refresh tags cache in case new tags were created
       refreshTags();
 
+      form.markSaved();
       navigate(`/recipes/${params.id}`);
     } catch (err) {
       const parsed = await parseApiError(err, "Failed to update recipe");
