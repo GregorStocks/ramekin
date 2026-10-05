@@ -171,9 +171,6 @@ struct RecipeThumbnail: View {
         AuthenticatedImage(url: thumbnailURL)
             .frame(width: size, height: size)
             .clipShape(RoundedRectangle(cornerRadius: 8))
-            // Thumbnails sit beside the recipe title they illustrate; read
-            // aloud they only add "photo" to every row.
-            .accessibilityHidden(true)
     }
 
     private var thumbnailURL: URL? {

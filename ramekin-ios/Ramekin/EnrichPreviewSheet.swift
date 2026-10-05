@@ -14,11 +14,6 @@ struct EnrichPreviewSheet: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    if let applyError {
-                        Label(applyError, systemImage: "exclamationmark.triangle.fill")
-                            .foregroundColor(.red)
-                    }
-
                     if original.title != modified.title {
                         fieldDiff("Title", old: original.title, new: modified.title)
                     }
@@ -76,6 +71,18 @@ struct EnrichPreviewSheet: View {
                 }
                 .padding()
             }
+            // An alert, not an inline message: the review may be scrolled
+            // far from any spot an inline error could sit, and VoiceOver
+            // announces alerts.
+            .alert(
+                "Couldn't Apply Changes",
+                isPresented: Binding(
+                    get: { applyError != nil },
+                    set: { if !$0 { applyError = nil } }
+                ),
+                actions: { Button("OK", role: .cancel) {} },
+                message: { Text(applyError ?? "") }
+            )
             .navigationTitle("Review Changes")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

@@ -364,9 +364,14 @@ extension RecipeFormView {
     private var photoGrid: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 12) {
-                ForEach(viewModel.formData.photoIds, id: \.self) { photoId in
+                let photoIds = viewModel.formData.photoIds
+                ForEach(Array(photoIds.enumerated()), id: \.element) { index, photoId in
+                    let position = "\(index + 1) of \(photoIds.count)"
                     ZStack(alignment: .topTrailing) {
                         RecipeThumbnail(photoId: photoId, size: 80)
+                            .accessibilityElement(children: .ignore)
+                            .accessibilityLabel("Photo \(position)")
+                            .accessibilityAddTraits(.isImage)
                         Button { viewModel.removePhoto(id: photoId) } label: {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.white)
@@ -375,7 +380,7 @@ extension RecipeFormView {
                                 .contentShape(Rectangle())
                         }
                         .buttonStyle(.borderless)
-                        .accessibilityLabel("Remove photo")
+                        .accessibilityLabel("Remove photo \(position)")
                     }
                 }
             }

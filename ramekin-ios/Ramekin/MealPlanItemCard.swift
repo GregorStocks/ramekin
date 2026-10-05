@@ -10,6 +10,8 @@ struct MealPlanItemCard: View {
             NavigationLink(value: NavigationDestination.recipe(meal.recipeId)) {
                 HStack(spacing: 10) {
                     RecipeThumbnail(photoId: meal.thumbnailPhotoId, size: 44)
+                        // Beside the title it illustrates; read aloud it only adds "photo".
+                        .accessibilityHidden(true)
 
                     VStack(alignment: .leading, spacing: 2) {
                         Text(meal.recipeTitle)

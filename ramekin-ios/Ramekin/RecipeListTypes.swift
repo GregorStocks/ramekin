@@ -90,6 +90,8 @@ struct RecipeRowView: View {
     var body: some View {
         HStack(spacing: 12) {
             RecipeThumbnail(photoId: recipe.thumbnailPhotoId, size: 60)
+                // Beside the title it illustrates; read aloud it only adds "photo".
+                .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(recipe.title)
