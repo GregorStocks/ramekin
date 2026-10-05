@@ -346,14 +346,16 @@ export default function MealPlanPage() {
                               <button
                                 class="meal-edit"
                                 onClick={() => openEdit(mp)}
-                                title="Edit"
+                                title={`Edit ${mp.recipeTitle}`}
+                                aria-label={`Edit ${mp.recipeTitle}`}
                               >
                                 ✎
                               </button>
                               <button
                                 class="meal-remove"
                                 onClick={() => confirmDelete(mp)}
-                                title="Remove"
+                                title={`Remove ${mp.recipeTitle}`}
+                                aria-label={`Remove ${mp.recipeTitle}`}
                               >
                                 &times;
                               </button>

@@ -40,7 +40,7 @@ struct MealPlanItemCard: View {
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
-            .accessibilityLabel("Edit Meal")
+            .accessibilityLabel("Edit \(meal.recipeTitle)")
 
             Button(action: onDelete) {
                 Image(systemName: "xmark.circle.fill")
@@ -50,7 +50,7 @@ struct MealPlanItemCard: View {
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
-            .accessibilityLabel("Remove from Meal Plan")
+            .accessibilityLabel("Remove \(meal.recipeTitle)")
         }
         .padding(.vertical, 4)
         .padding(.horizontal, 8)
