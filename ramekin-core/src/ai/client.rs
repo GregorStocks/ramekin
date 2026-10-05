@@ -6,6 +6,7 @@ use openai_api_rs::v1::chat_completion::chat_completion::ChatCompletionRequest;
 use openai_api_rs::v1::chat_completion::{
     ChatCompletionMessage, Content, ContentType, FinishReason, ImageUrl, ImageUrlType, MessageRole,
 };
+use openai_api_rs::v1::error::APIError;
 use serde_json::json;
 use std::sync::Arc;
 use std::time::Duration;
@@ -41,6 +42,10 @@ pub enum AiError {
     /// generation): another request may pass.
     #[error("Refused: {0}")]
     Refused(String),
+    /// The provider (or the model's upstream host) is rate limiting us: a
+    /// transient outage, not a problem with this request.
+    #[error("Provider rate limited: {0}")]
+    RateLimited(String),
 }
 
 impl AiError {
@@ -294,6 +299,45 @@ fn parse_json<T: serde::de::DeserializeOwned>(content: &str) -> Result<T, serde_
         .expect("there is always the whole-content candidate"))
 }
 
+/// The `AiError` for a failed `chat_completion` call.
+///
+/// OpenRouter can answer HTTP 200 with a choice whose `finish_reason` is
+/// `"error"` and which carries an `error` object (e.g. an upstream rate
+/// limit). openai-api-rs has no `error` finish reason, so it fails to parse
+/// the body and reports `Failed to parse JSON: ... / response {body}`; recover
+/// the provider's error from that body rather than surfacing serde's message.
+fn chat_completion_error(e: APIError) -> AiError {
+    let choice_error = match &e {
+        APIError::CustomError { message } if message.starts_with("Failed to parse JSON: ") => {
+            message
+                .split_once(" / response ")
+                .and_then(|(_, body)| serde_json::from_str::<serde_json::Value>(body).ok())
+                .and_then(|body| {
+                    body["choices"]
+                        .as_array()?
+                        .iter()
+                        .find_map(|choice| choice.get("error").cloned())
+                })
+        }
+        _ => None,
+    };
+    let Some(error) = choice_error else {
+        return AiError::Api(e.to_string());
+    };
+    let message = error["message"]
+        .as_str()
+        .unwrap_or("(no message)")
+        .to_string();
+    if error["code"] == 429 || error["metadata"]["error_type"] == "rate_limit_exceeded" {
+        AiError::RateLimited(message)
+    } else {
+        AiError::Api(format!(
+            "Provider error (code {}): {}",
+            error["code"], message
+        ))
+    }
+}
+
 /// First ~200 chars of a response, for inclusion in error messages.
 fn content_snippet(content: &str) -> String {
     content.chars().take(200).collect()
@@ -371,7 +415,7 @@ impl AiClient for CachingAiClient {
                 self.config.request_timeout_secs
             ))
         })?
-        .map_err(|e| AiError::Api(e.to_string()))?
+        .map_err(chat_completion_error)?
         .inner;
 
         // Extract the response content
@@ -684,6 +728,88 @@ mod tests {
         assert!(AiError::ParseError("bad json".into()).is_answer_specific());
         assert!(AiError::Truncated("finish_reason=length".into()).is_answer_specific());
         assert!(!AiError::Api("Request timed out".into()).is_answer_specific());
+        assert!(!AiError::RateLimited("upstream".into()).is_answer_specific());
+    }
+
+    /// How openai-api-rs reports a 200 body it can't deserialize.
+    fn unparseable_body_error(body: &serde_json::Value) -> APIError {
+        APIError::CustomError {
+            message: format!(
+                "Failed to parse JSON: unknown variant `error`, expected one of `stop`, \
+                 `length`, `content_filter`, `tool_calls`, `null` at line 1 column 300 / response {body}"
+            ),
+        }
+    }
+
+    /// A choice-level error body like OpenRouter's prod reply for the
+    /// whole-tomato-salad auto-tag on 2026-07-28.
+    fn choice_error_body(error: serde_json::Value) -> serde_json::Value {
+        json!({
+            "id": "gen-1753731234-abc",
+            "provider": "Google",
+            "model": "google/gemini-2.5-flash",
+            "object": "chat.completion",
+            "created": 1753731234,
+            "choices": [{
+                "error": error,
+                "logprobs": null,
+                "finish_reason": "error",
+                "native_finish_reason": "error",
+                "index": 0,
+                "message": {"role": "assistant", "content": "", "refusal": null, "reasoning": null}
+            }],
+            "usage": {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+        })
+    }
+
+    #[test]
+    fn upstream_rate_limit_in_choice_is_rate_limited() {
+        let message = "google/gemini-2.5-flash is temporarily rate-limited upstream. \
+                       Please retry shortly, or add your own key to accumulate your rate limits";
+        let body = choice_error_body(json!({
+            "code": 429,
+            "message": message,
+            "metadata": {
+                "error_type": "rate_limit_exceeded",
+                "provider_name": "Google",
+                "raw": "google/gemini-2.5-flash is temporarily rate-limited upstream"
+            }
+        }));
+
+        match chat_completion_error(unparseable_body_error(&body)) {
+            AiError::RateLimited(m) => assert_eq!(m, message),
+            other => panic!("expected RateLimited, got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn other_choice_error_reports_the_provider_message() {
+        let body = choice_error_body(json!({"code": 502, "message": "Upstream overloaded"}));
+
+        let err = chat_completion_error(unparseable_body_error(&body));
+
+        assert!(matches!(err, AiError::Api(_)), "{err:?}");
+        assert_eq!(
+            err.to_string(),
+            "API error: Provider error (code 502): Upstream overloaded"
+        );
+    }
+
+    #[test]
+    fn errors_without_a_choice_error_are_unchanged() {
+        for e in [
+            APIError::CustomError {
+                message: "500 Internal Server Error: oops".to_string(),
+            },
+            APIError::CustomError {
+                message: "Failed to parse JSON: EOF / response not json".to_string(),
+            },
+        ] {
+            let expected = format!("API error: {e}");
+            let err = chat_completion_error(e);
+            assert!(matches!(err, AiError::Api(_)), "{err:?}");
+            assert_eq!(err.to_string(), expected);
+        }
     }
 
     #[test]
