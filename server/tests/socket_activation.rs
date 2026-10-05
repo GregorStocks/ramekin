@@ -27,6 +27,26 @@ fn bind_listener_falls_back_to_direct_bind_without_socket_activation() {
     assert!(addr.port() > 0);
 }
 
+/// `localhost` clients may try ::1 before 127.0.0.1; both must reach the
+/// server, or a ::1 connection can occasionally connect to itself.
+#[test]
+fn direct_bind_accepts_ipv4_and_ipv6_loopback() {
+    let _guard = env_lock().lock().unwrap();
+    unsafe {
+        std::env::remove_var("LISTEN_FDS");
+        std::env::remove_var("LISTEN_PID");
+    }
+
+    let runtime = tokio::runtime::Runtime::new().unwrap();
+    let (listener, _) = runtime.block_on(bind_listener(0));
+    let port = listener.local_addr().unwrap().port();
+
+    std::net::TcpStream::connect(("127.0.0.1", port)).expect("IPv4 loopback connect");
+    if std::net::TcpListener::bind("[::1]:0").is_ok() {
+        std::net::TcpStream::connect(("::1", port)).expect("IPv6 loopback connect");
+    }
+}
+
 #[cfg(unix)]
 #[test]
 fn bind_listener_uses_socket_activation_when_listener_is_present() {
