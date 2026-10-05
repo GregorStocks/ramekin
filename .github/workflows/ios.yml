@@ -85,13 +85,19 @@ jobs:
       # in sync with what the server and CLI compile in (crate sources,
       # embed_migrations!, include_str! of files outside the crates) and how
       # they are built (Makefile, this workflow).
+      # The env context can't see runner variables like ImageOS, so read it
+      # here. A new macOS image can ship different Homebrew libpq.
+      - name: Read runner image
+        id: image
+        run: echo "os=$ImageOS" >> "$GITHUB_OUTPUT"
+
       - name: Restore backend binaries
         id: backend-cache
         uses: actions/cache/restore@v6
         with:
           path: ios-ui-backend.tar
           key: >-
-            ios-ui-backend-${{ env.ImageOS }}-${{ runner.arch }}-${{ hashFiles(
+            ios-ui-backend-${{ steps.image.outputs.os }}-${{ runner.arch }}-${{ hashFiles(
               'rust-toolchain.toml', 'server/**', 'cli/**', 'ramekin-core/**',
               'migrations/**', 'data/ingredients.json', 'shared-test-vectors/**',
               'Makefile', '.github/workflows/ios.yml') }}
