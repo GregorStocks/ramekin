@@ -197,6 +197,10 @@ jobs:
           cat logs/mock-openrouter.log
           exit 1
 
+      # The server and mock AI service listen on both IPv4 and IPv6 loopback.
+      # macOS tries `localhost` as ::1 first, and with no ::1 listener a
+      # connection to these ephemeral-range ports can occasionally connect to
+      # itself (seen as "invalid HTTP version parsed" while seeding).
       - name: Start server
         run: |
           cd server

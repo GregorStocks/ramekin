@@ -6,6 +6,7 @@ Returns valid OpenAI-compatible chat completion responses.
 
 import base64
 import json
+import socket
 import sys
 import threading
 import time
@@ -457,13 +458,31 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         pass
 
 
+class DualStackHTTPServer(ThreadingHTTPServer):
+    address_family = socket.AF_INET6
+
+    def server_bind(self):
+        self.socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0)
+        super().server_bind()
+
+
+def make_server(port):
+    """Listen on ::1 as well as 127.0.0.1. A `localhost` client that tries ::1
+    first and finds no listener can occasionally connect to itself when the
+    port is in the ephemeral range, and read back its own request."""
+    try:
+        return DualStackHTTPServer(("::", port), MockOpenRouterHandler)
+    except OSError:
+        return ThreadingHTTPServer(("", port), MockOpenRouterHandler)
+
+
 def main():
     if len(sys.argv) < 2:
         print("Error: Port argument required", file=sys.stderr)
         print("Usage: python mock_openrouter.py <port>", file=sys.stderr)
         sys.exit(1)
     port = int(sys.argv[1])
-    server = ThreadingHTTPServer(("", port), MockOpenRouterHandler)
+    server = make_server(port)
     print(f"Mock OpenRouter server running on port {port}", file=sys.stderr)
     server.serve_forever()
 
