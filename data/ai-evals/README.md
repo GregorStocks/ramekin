@@ -27,7 +27,9 @@ a model that answers invalidly is asked (and billed) again on every run. Models 
 model list, which also supplies the prices in the cost column. A model whose
 calls fail (a timeout) stops the run before any report is written; rerun
 without it, or after fixing the cause, which is nearly free since everything
-answered is cached.
+answered is cached. The exception is a photo that outlasts photo generation's 60 s timeout:
+production fails that photo too, so it counts as the model's rejected answer
+and the run goes on.
 
 | Suite | Use case | Scored against |
 | --- | --- | --- |
@@ -50,11 +52,22 @@ No rule can score a tag set, a title, prose or a photo, so a person judges
 them. Each run writes a blind page per suite,
 `logs/ai-evals/<suite>/judge.html`. It shows each case's source and the answers
 nobody has judged yet, shuffled, with model names hidden and identical answers
-merged. Open it in a browser and mark each answer best, good or bad (for tags,
-tick the tags that apply to each recipe). Then click "Download judgments", save
-the file over `judgments/<suite>.json`, and rerun: the report then scores every
+merged. `make ai-eval-judge` serves the pages (`HOST=` to reach them from
+another machine); mark each answer best, good or bad (for tags, tick the tags
+that apply to each recipe), then click Save, which writes
+`judgments/<suite>.json` (opened as a file instead, the page copies the JSON
+for you to paste there). Rerun: the report then scores every
 model, and the page holds only what's still unjudged. Your clicks survive a
-reload of the page.
+reload of the page. Beside it, `results.html` shows every model's answers
+named and with their judgments, one model at a time or side by side.
+
+Who judged: titles, descriptions, recipe photos and 13 of the 49
+custom-enrich answers were judged by the maintainer; the tag sets and the
+other 36 custom-enrich answers by Claude, at the maintainer's request.
+
+Pick image candidates from the public blind-vote leaderboards (the LMArena
+and Artificial Analysis text-to-image arenas), not from OpenRouter's catalog
+alone: its default model list leaves out image-only models.
 
 Answers are keyed by a hash of the answer (the photo's bytes for photos), so a
 new model only adds its own new answers to the page. Tags are judged once per

@@ -113,6 +113,23 @@ const ENRICH_CASES: [(&str, &str); 10] = [
     ),
 ];
 
+/// Recipe photo cases: dishes whose real look is crisp, structured or
+/// colorful, so a model that renders everything as brown mush (or noodles as
+/// worms) is caught. Soft brown dishes (risotto, pâté, a braise) look like
+/// that anyway, so they can't tell models apart.
+const PHOTO_CASES: [&str; 10] = [
+    "seriouseats-com_real-texas-nachos-recipe",
+    "smittenkitchen-com_2015-09-oat-and-wheat-sandwich-bread",
+    "smittenkitchen-com_2013-02-italian-stuffed-cabbage",
+    "smittenkitchen-com_2023-04-hash-brown-patties",
+    "seriouseats-com_cheese-frenchee-recipe-11686537",
+    "smittenkitchen-com_2015-08-takeout-style-sesame-noodles-with-cucumber",
+    "cooking-nytimes-com_recipes-1019430-omurice-japanese-rice-omelet",
+    "smittenkitchen-com_2016-05-chicken-gyro-salad",
+    "smittenkitchen-com_2014-12-jelly-doughnuts",
+    "americastestkitchen-com_recipes-14919-san-diego-fish-tacos",
+];
+
 /// Words of a decorated title, the kind title normalization should tidy.
 const DECORATIONS: [&str; 10] = [
     "best",
@@ -335,7 +352,15 @@ pub fn write_golden(root: &Path) -> Result<Vec<(&'static str, String)>> {
     titles.extend(pick("titles", plain_titles, 6));
     let tags = pick("tags", recipes.clone(), 20);
     let descriptions = pick("descriptions", recipes.clone(), 15);
-    let photos = pick("recipe-photos", recipes, 8);
+    let photos = PHOTO_CASES
+        .iter()
+        .map(|id| {
+            let snapshot = snapshots
+                .get(*id)
+                .with_context(|| format!("No pipeline snapshot {id} for a recipe-photos case"))?;
+            Ok(recipe_case(id, snapshot))
+        })
+        .collect::<Result<Vec<_>>>()?;
 
     let mut enrich = Vec::new();
     for (id, instruction) in ENRICH_CASES {
@@ -511,6 +536,15 @@ fn source_text(case: &RecipeCase, with_description: bool) -> String {
     out
 }
 
+/// A photo model named as `model@quality`: the OpenRouter id and the quality
+/// to ask for.
+pub fn split_quality(model: &str) -> (&str, Option<&str>) {
+    match model.split_once('@') {
+        Some((id, quality)) => (id, Some(quality)),
+        None => (model, None),
+    }
+}
+
 /// A generated photo, as cached: the provider's data URL and reported cost.
 #[derive(Serialize, Deserialize)]
 struct CachedPhoto {
@@ -551,7 +585,10 @@ async fn photo(config: &AiConfig, case: &RecipeCase) -> Result<CachedPhoto, AiEr
     let path = config
         .namespaced_cache_dir()
         .join("recipe-photos")
-        .join(config.image_model.replace('/', "_"))
+        .join(match &config.image_quality {
+            Some(quality) => format!("{}@{quality}", config.image_model.replace('/', "_")),
+            None => config.image_model.replace('/', "_"),
+        })
         .join(format!("{}.json", answer_key(prompt.as_bytes())));
     if let Some(cached) = fs::read_to_string(&path)
         .ok()
@@ -770,6 +807,8 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
     let page_dir = Path::new("logs/ai-evals").join(suite);
     let mut results = Vec::new();
     let mut page = Vec::new();
+    // Each model's answers, for the unblinded results page.
+    let mut answered: Vec<(String, Vec<Option<Shown>>)> = Vec::new();
     let cases;
     match suite {
         "tags" => {
@@ -850,6 +889,7 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                         unjudged.add(id, &verdicts, answer);
                     }
                 }
+                answered.push((model.clone(), shown.clone()));
                 results.push((
                     score_verdicts(model, &ids, &shown, invalid, &verdicts),
                     spend,
@@ -870,6 +910,16 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                 }
             }
             write_page(&page_dir, suite, &page, &verdicts)?;
+            write_results(
+                &page_dir,
+                suite,
+                &golden
+                    .iter()
+                    .map(|c| (c.id.clone(), c.title.clone()))
+                    .collect::<Vec<_>>(),
+                &answered,
+                &verdicts,
+            )?;
         }
         "custom-enrich" => {
             let golden: Vec<EnrichCase> = read_json(&golden)?;
@@ -908,6 +958,7 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                         unjudged.add(id, &verdicts, answer);
                     }
                 }
+                answered.push((model.clone(), shown.clone()));
                 results.push((
                     score_verdicts(model, &ids, &shown, invalid, &verdicts),
                     spend,
@@ -927,6 +978,21 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                 }
             }
             write_page(&page_dir, suite, &page, &verdicts)?;
+            write_results(
+                &page_dir,
+                suite,
+                &golden
+                    .iter()
+                    .map(|c| {
+                        (
+                            c.id.clone(),
+                            format!("{}: {}", c.recipe.title, c.instruction),
+                        )
+                    })
+                    .collect::<Vec<_>>(),
+                &answered,
+                &verdicts,
+            )?;
         }
         "recipe-photos" => {
             let golden: Vec<RecipeCase> = read_json(&golden)?;
@@ -939,7 +1005,11 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
             for model in models {
                 let mut config =
                     AiConfig::from_env().context("AI is not configured (OPENROUTER_API_KEY)")?;
-                config.image_model = model.clone();
+                // `model@high` asks for that image quality; plain, the
+                // model's own default.
+                let (id, quality) = split_quality(model);
+                config.image_model = id.to_string();
+                config.image_quality = quality.map(str::to_string);
                 let mut spend = Spend::default();
                 // Image tokens are priced apart from text, so the cost is
                 // what the provider reports.
@@ -968,6 +1038,7 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                         unjudged.add(id, &verdicts, answer);
                     }
                 }
+                answered.push((model.clone(), answers.clone()));
                 results.push((
                     score_verdicts(model, &ids, &answers, invalid, &verdicts),
                     spend,
@@ -986,6 +1057,16 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                 }
             }
             write_page(&page_dir, suite, &page, &verdicts)?;
+            write_results(
+                &page_dir,
+                suite,
+                &golden
+                    .iter()
+                    .map(|c| (c.id.clone(), c.title.clone()))
+                    .collect::<Vec<_>>(),
+                &answered,
+                &verdicts,
+            )?;
         }
         other => bail!("{other} is not a judged suite"),
     }
@@ -996,6 +1077,42 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
 // Judging page
 
 const PAGE: &str = include_str!("judge.html");
+const RESULTS: &str = include_str!("results.html");
+
+/// Writes `<dir>/results.html`: every model's answer to every case, named
+/// and with its judgment, for looking at one model's answers after judging.
+fn write_results(
+    dir: &Path,
+    suite: &str,
+    cases: &[(String, String)],
+    answered: &[(String, Vec<Option<Shown>>)],
+    verdicts: &Verdicts,
+) -> Result<()> {
+    fs::create_dir_all(dir)?;
+    let rows: Vec<serde_json::Value> = cases
+        .iter()
+        .enumerate()
+        .map(|(i, (id, title))| {
+            let answers: Vec<serde_json::Value> = answered
+                .iter()
+                .map(|(model, answers)| {
+                    let answer = answers[i].as_ref();
+                    let verdict = answer
+                        .and_then(|a| verdicts.get(id).and_then(|v| v.get(&a.key)))
+                        .map(|j| j.verdict);
+                    serde_json::json!({ "model": model, "answer": answer, "verdict": verdict })
+                })
+                .collect();
+            serde_json::json!({ "id": id, "title": title, "answers": answers })
+        })
+        .collect();
+    let models: Vec<&str> = answered.iter().map(|(m, _)| m.as_str()).collect();
+    let data = serde_json::json!({ "suite": suite, "models": models, "cases": rows });
+    let data = serde_json::to_string(&data)?.replace("</", "<\\/");
+    let path = dir.join("results.html");
+    fs::write(&path, RESULTS.replace("__DATA__", &data))
+        .with_context(|| format!("Failed to write {}", path.display()))
+}
 
 /// Writes `<dir>/judge.html`: the cases to judge, and the suite's judgments
 /// so far, which its download merges the new ones into.
@@ -1129,6 +1246,15 @@ mod tests {
         texts.sort();
         assert_eq!(texts, ["New", "Other"]);
         assert!(unjudged.take("a").is_empty());
+    }
+
+    #[test]
+    fn photo_models_name_a_quality_after_an_at() {
+        assert_eq!(
+            split_quality("openai/gpt-image-2.5-flare@high"),
+            ("openai/gpt-image-2.5-flare", Some("high"))
+        );
+        assert_eq!(split_quality("meta/muse-image"), ("meta/muse-image", None));
     }
 
     #[test]

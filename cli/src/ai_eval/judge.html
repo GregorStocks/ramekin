@@ -33,7 +33,16 @@
   .answer.best { border-color: var(--best); } .answer.good { border-color: var(--good); } .answer.bad { border-color: var(--bad); }
   .answer .text { font-size: 15px; white-space: pre-wrap; }
   .answer pre .added { background: var(--added); display: block; }
-  .answer img { width: 100%; border-radius: 6px; }
+  .answers.images { grid-template-columns: repeat(auto-fit, minmax(min(100%, 560px), 1fr)); }
+  .answer img { width: 100%; border-radius: 6px; cursor: zoom-in; }
+  #viewer { position: fixed; inset: 0; z-index: 2; background: rgba(0, 0, 0, 0.92); color: #fff;
+    display: none; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 12px; }
+  #viewer.open { display: flex; }
+  #viewer img { max-width: 100%; max-height: calc(100vh - 120px); object-fit: contain; border-radius: 6px; cursor: default; }
+  #viewer .bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; justify-content: center; }
+  #viewer button { background: #2a2a28; color: #fff; border-color: #555; }
+  #viewer button.on { background: #fff; color: #000; }
+  #viewer .hint { color: #aaa; font-size: 13px; }
   .verdicts { display: flex; gap: 12px; margin-top: auto; }
   .verdicts label { cursor: pointer; }
   .tags { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 4px 12px; }
@@ -47,9 +56,19 @@
   <h1 id="title"></h1>
   <p id="help"></p>
   <span id="progress"></span>
-  <button id="download">Download judgments</button>
+  <button id="save">Save judgments</button>
 </header>
 <main id="cases"></main>
+<div id="viewer">
+  <img alt="Generated photo">
+  <div class="bar">
+    <span id="viewer-where"></span>
+    <button data-verdict="best">1 best</button>
+    <button data-verdict="good">2 good</button>
+    <button data-verdict="bad">3 bad</button>
+  </div>
+  <div class="hint">← → previous / next photo · 1 2 3 judge and move on · Esc close</div>
+</div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 const DATA = JSON.parse(document.getElementById("data").textContent);
@@ -60,8 +79,8 @@ const save = () => { try { localStorage.setItem(STORE, JSON.stringify(picks)); }
 
 document.getElementById("title").textContent = "Judge: " + DATA.suite;
 document.getElementById("help").textContent = DATA.kind === "tags"
-  ? "Tick every tag that applies to each recipe (or “none apply”). Then download and save as data/ai-evals/judgments/" + DATA.suite + ".json."
-  : "Mark each answer best, good or bad; several can be best. Model names are hidden and identical answers are merged. Then download and save as data/ai-evals/judgments/" + DATA.suite + ".json.";
+  ? "Tick every tag that applies to each recipe (or “none apply”). Then save: this writes data/ai-evals/judgments/" + DATA.suite + ".json when served by make ai-eval-judge, or copies the JSON to paste there."
+  : "Mark each answer best, good or bad; several can be best. Model names are hidden and identical answers are merged. Then save: this writes data/ai-evals/judgments/" + DATA.suite + ".json when served by make ai-eval-judge, or copies the JSON to paste there.";
 
 const el = (tag, props = {}, children = []) => {
   const node = Object.assign(document.createElement(tag), props);
@@ -89,6 +108,47 @@ function diffed(text, original) {
   }
   return pre;
 }
+
+// Every photo on the page, in order, for the full-screen viewer.
+const photos = [];
+
+// Records a verdict for an answer and shows it on its card.
+function judge(c, a, card, verdict) {
+  (picks[c.id] ||= {})[a.key] = verdict;
+  card.className = "answer " + verdict;
+  for (const input of card.querySelectorAll("input")) input.checked = input.value === verdict;
+  save(); progress();
+}
+
+const viewer = document.getElementById("viewer");
+let viewing = 0;
+function view(index) {
+  viewing = (index + photos.length) % photos.length;
+  const { c, a } = photos[viewing];
+  viewer.querySelector("img").src = a.image;
+  const sameCase = photos.filter(p => p.c === c);
+  document.getElementById("viewer-where").textContent =
+    `${c.source.split("\n")[0]} \u00b7 photo ${sameCase.findIndex(p => p.a === a) + 1} of ${sameCase.length}`;
+  for (const button of viewer.querySelectorAll("button"))
+    button.classList.toggle("on", picks[c.id]?.[a.key] === button.dataset.verdict);
+  viewer.classList.add("open");
+}
+const close = () => viewer.classList.remove("open");
+function verdictInViewer(verdict) {
+  const { c, a, card } = photos[viewing];
+  judge(c, a, card, verdict);
+  view(viewing + 1);
+}
+for (const button of viewer.querySelectorAll("button"))
+  button.onclick = () => verdictInViewer(button.dataset.verdict);
+viewer.onclick = e => { if (e.target === viewer) close(); };
+document.addEventListener("keydown", e => {
+  if (!viewer.classList.contains("open")) return;
+  if (e.key === "Escape") close();
+  else if (e.key === "ArrowRight") view(viewing + 1);
+  else if (e.key === "ArrowLeft") view(viewing - 1);
+  else if (["1", "2", "3"].includes(e.key)) verdictInViewer(["best", "good", "bad"][Number(e.key) - 1]);
+});
 
 const main = document.getElementById("cases");
 if (!DATA.cases.length) main.append(el("p", { className: "done", textContent: "Nothing left to judge." }));
@@ -118,10 +178,14 @@ for (const c of DATA.cases) {
     box.append(el("label", { className: "none" }, [none, " None apply"]));
     section.append(box);
   } else {
-    const grid = el("div", { className: "answers" });
+    const grid = el("div", { className: c.answers.some(a => a.image) ? "answers images" : "answers" });
     for (const a of c.answers) {
       const card = el("div", { className: "answer " + (picks[c.id]?.[a.key] || "") });
-      if (a.image) card.append(el("img", { src: a.image, loading: "lazy", alt: "Generated photo" }));
+      if (a.image) {
+        const index = photos.length;
+        photos.push({ c, a, card });
+        card.append(el("img", { src: a.image, loading: "lazy", alt: "Generated photo", onclick: () => view(index) }));
+      }
       else if (c.original) card.append(diffed(a.text, c.original));
       else card.append(el("div", { className: "text", textContent: a.text }));
       const row = el("div", { className: "verdicts" });
@@ -129,11 +193,7 @@ for (const c of DATA.cases) {
         const input = el("input", {
           type: "radio", name: c.id + "/" + a.key, value: verdict,
           checked: picks[c.id]?.[a.key] === verdict,
-          onchange: () => {
-            (picks[c.id] ||= {})[a.key] = verdict;
-            card.className = "answer " + verdict;
-            save(); progress();
-          },
+          onchange: () => judge(c, a, card, verdict),
         });
         row.append(el("label", {}, [input, " " + verdict]));
       }
@@ -154,7 +214,7 @@ function sorted(value) {
   return value;
 }
 
-document.getElementById("download").onclick = () => {
+document.getElementById("save").onclick = async () => {
   const merged = structuredClone(DATA.existing);
   for (const c of DATA.cases) {
     if (DATA.kind === "tags") {
@@ -169,11 +229,29 @@ document.getElementById("download").onclick = () => {
       (merged[c.id] ||= {})[a.key] = judgment;
     }
   }
-  const blob = new Blob([JSON.stringify(sorted(merged), null, 2) + "\n"], { type: "application/json" });
-  const link = el("a", { href: URL.createObjectURL(blob), download: DATA.suite + ".json" });
-  document.body.append(link);
-  link.click();
-  link.remove();
+  const json = JSON.stringify(sorted(merged), null, 2) + "\n";
+  // Served by `make ai-eval-judge`, the judgments are saved straight into
+  // the repo; otherwise they're copied to the clipboard, to paste there.
+  const button = document.getElementById("save");
+  try {
+    const response = await fetch("/judgments/" + DATA.suite + ".json", { method: "PUT", body: json });
+    if (response.ok) {
+      button.textContent = "\u2713 Saved " + new Date().toLocaleTimeString();
+      return;
+    }
+  } catch (e) {}
+  // navigator.clipboard needs a secure context, which a plain-http page on
+  // another machine isn't, so fall back to a selected textarea.
+  try {
+    await navigator.clipboard.writeText(json);
+  } catch (e) {
+    const area = el("textarea", { value: json });
+    document.body.append(area);
+    area.select();
+    document.execCommand("copy");
+    area.remove();
+  }
+  button.textContent = "\u2713 Copied JSON for data/ai-evals/judgments/" + DATA.suite + ".json";
 };
 </script>
 </body>

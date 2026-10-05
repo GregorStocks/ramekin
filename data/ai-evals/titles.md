@@ -6,12 +6,12 @@ Golden set: `data/ai-evals/golden/titles.json` (20 cases), one call per case, as
 
 | Model | Good | Best | Unjudged | Invalid | Rejected calls | Truncated calls | Cost of accepted calls |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| google/gemini-2.5-flash | – | – | 20 | 0% | 0 | 0 | $0.0085 |
-| google/gemini-3.8-flash | – | – | 20 | 0% | 0 | 0 | $0.0529 |
-| google/gemini-3.5-flash-lite | – | – | 20 | 0% | 0 | 0 | $0.0085 |
-| anthropic/claude-haiku-4.5 | – | – | 20 | 0% | 0 | 0 | $0.0346 |
-| anthropic/claude-sonnet-5.5 | – | – | 20 | 0% | 0 | 0 | $0.0966 |
-| deepseek/deepseek-v4.1-flash | – | – | 20 | 0% | 0 | 0 | $0.0090 |
+| google/gemini-2.5-flash | 100% | 95% | 0 | 0% | 0 | 0 | $0.0085 |
+| google/gemini-3.8-flash | 100% | 85% | 0 | 0% | 0 | 0 | $0.0529 |
+| google/gemini-3.5-flash-lite | 100% | 100% | 0 | 0% | 0 | 0 | $0.0085 |
+| anthropic/claude-haiku-4.5 | 100% | 100% | 0 | 0% | 0 | 0 | $0.0346 |
+| anthropic/claude-sonnet-5.5 | 95% | 90% | 0 | 0% | 0 | 0 | $0.0966 |
+| deepseek/deepseek-v4.1-flash | 100% | 90% | 0 | 0% | 0 | 0 | $0.0090 |
 
 ## Rejected answers
 
@@ -37,7 +37,7 @@ None.
 
 ### anthropic/claude-sonnet-5.5
 
-None.
+- seriouseats-com_sous-vide-carnitas-crispy-mexican-style-pulled-pork-recipe: judged bad: "Sous Vide Carnitas (Crispy Mexican-Style Pulled Pork) for Tacos"
 
 ### deepseek/deepseek-v4.1-flash
 

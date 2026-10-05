@@ -6,8 +6,11 @@ use thiserror::Error;
 /// Default OpenRouter base URL.
 pub const DEFAULT_BASE_URL: &str = "https://openrouter.ai/api/v1";
 
-/// Default model to use.
-pub const DEFAULT_MODEL: &str = "google/gemini-2.5-flash";
+/// Default model for tags, titles, descriptions and custom enrich, chosen
+/// with `make ai-eval` (data/ai-evals/): judged good as often as any model on
+/// titles and descriptions, tied best on custom enrich at under half
+/// claude-sonnet-5.5's cost, and well ahead of gemini-2.5-flash on tags.
+pub const DEFAULT_MODEL: &str = "google/gemini-3.8-flash";
 /// Default model for ingredient names and weights, chosen with `make ai-eval`
 /// (data/ai-evals/): the most accurate on all three ingredient suites once its
 /// fenced JSON is accepted, at about $0.002 per item.
@@ -17,8 +20,10 @@ pub const DEFAULT_INGREDIENT_MODEL: &str = "anthropic/claude-opus-5.5";
 /// both suites, the fastest of the exact models (10-15 s a recipe), at about
 /// $0.02 a recipe.
 pub const DEFAULT_EXTRACTION_MODEL: &str = "anthropic/claude-sonnet-5.5";
-/// Default model to use for image generation.
-pub const DEFAULT_IMAGE_MODEL: &str = "google/gemini-2.5-flash-image";
+/// Default model for recipe photos, chosen with `make ai-eval SUITE=recipe-photos`
+/// over the leaderboard leaders: judged best most often, with no refusals or
+/// timeouts, at about $0.07 a photo.
+pub const DEFAULT_IMAGE_MODEL: &str = "google/gemini-3.1-flash-image";
 
 /// Default rate limit between requests in milliseconds.
 pub const DEFAULT_RATE_LIMIT_MS: u64 = 500;
@@ -31,6 +36,10 @@ pub const INGREDIENT_TIMEOUT_SECS: u64 = 120;
 /// recipe: 10-20 s for a long one. Text import waits on it in the request, so
 /// it stays within the clients' 60 s.
 pub const EXTRACTION_TIMEOUT_SECS: u64 = 60;
+/// The least request timeout for generating a recipe photo: 10-25 s for the
+/// current image models (FLUX 3 about 20 s). The user waits on it in the
+/// request, so it stays within the clients' 60 s, as extraction does.
+pub const IMAGE_TIMEOUT_SECS: u64 = 60;
 
 #[derive(Error, Debug, Clone)]
 pub enum ConfigError {
@@ -47,10 +56,13 @@ pub enum ConfigError {
 pub struct AiConfig {
     /// API key for OpenRouter.
     pub api_key: String,
-    /// Model name (e.g., "google/gemini-2.5-flash", "openai/gpt-4.1-mini").
+    /// Model name for tags, titles, descriptions and custom enrich.
     pub model: String,
     /// Model name for image generation.
     pub image_model: String,
+    /// Image quality to ask for (`auto`, `low`, `medium`, `high`), or the
+    /// model's default. Models without the setting ignore it.
+    pub image_quality: Option<String>,
     /// Model name for ingredient names and weights (`for_ingredients`).
     pub ingredient_model: String,
     /// Model name for recipe extraction from text and photos (`for_extraction`).
@@ -72,8 +84,9 @@ impl AiConfig {
     /// - `OPENROUTER_API_KEY`: API key for OpenRouter
     ///
     /// Optional:
-    /// - `RAMEKIN_AI_MODEL`: Model name (default: "google/gemini-2.5-flash")
-    /// - `RAMEKIN_AI_IMAGE_MODEL`: Image model name (default: "google/gemini-2.5-flash-image")
+    /// - `RAMEKIN_AI_MODEL`: Model name (default: DEFAULT_MODEL)
+    /// - `RAMEKIN_AI_IMAGE_MODEL`: Image model name (default: DEFAULT_IMAGE_MODEL)
+    /// - `RAMEKIN_AI_IMAGE_QUALITY`: Image quality, auto/low/medium/high (default: the model's own)
     /// - `RAMEKIN_AI_INGREDIENT_MODEL`: Ingredient names and weights model (default: "anthropic/claude-opus-5.5")
     /// - `RAMEKIN_AI_EXTRACTION_MODEL`: Text and photo extraction model (default: DEFAULT_EXTRACTION_MODEL)
     /// - `RAMEKIN_AI_BASE_URL`: API base URL (default: "https://openrouter.ai/api/v1")
@@ -86,6 +99,9 @@ impl AiConfig {
         let model = env::var("RAMEKIN_AI_MODEL").unwrap_or_else(|_| DEFAULT_MODEL.to_string());
         let image_model =
             env::var("RAMEKIN_AI_IMAGE_MODEL").unwrap_or_else(|_| DEFAULT_IMAGE_MODEL.to_string());
+        let image_quality = env::var("RAMEKIN_AI_IMAGE_QUALITY")
+            .ok()
+            .filter(|quality| !quality.trim().is_empty());
         let ingredient_model = env::var("RAMEKIN_AI_INGREDIENT_MODEL")
             .unwrap_or_else(|_| DEFAULT_INGREDIENT_MODEL.to_string());
         let extraction_model = env::var("RAMEKIN_AI_EXTRACTION_MODEL")
@@ -112,6 +128,7 @@ impl AiConfig {
             api_key,
             model,
             image_model,
+            image_quality,
             ingredient_model,
             extraction_model,
             base_url,
@@ -226,6 +243,7 @@ mod tests {
             api_key: "test-key".to_string(),
             model: DEFAULT_MODEL.to_string(),
             image_model: DEFAULT_IMAGE_MODEL.to_string(),
+            image_quality: None,
             ingredient_model: DEFAULT_INGREDIENT_MODEL.to_string(),
             extraction_model: DEFAULT_EXTRACTION_MODEL.to_string(),
             base_url: base_url.to_string(),

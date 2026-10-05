@@ -319,7 +319,8 @@ async fn prices(models: &[String]) -> Result<HashMap<String, Price>> {
         prompt: String,
         completion: String,
     }
-    let list: List = reqwest::get("https://openrouter.ai/api/v1/models")
+    // The default list leaves out models that only make images.
+    let list: List = reqwest::get("https://openrouter.ai/api/v1/models?output_modalities=all")
         .await?
         .error_for_status()?
         .json()
@@ -327,7 +328,8 @@ async fn prices(models: &[String]) -> Result<HashMap<String, Price>> {
         .context("Failed to read OpenRouter's model list")?;
     let mut prices = HashMap::new();
     for model in models {
-        let Some(found) = list.data.iter().find(|m| &m.id == model) else {
+        let (id, _) = judged::split_quality(model);
+        let Some(found) = list.data.iter().find(|m| m.id == id) else {
             bail!("OpenRouter has no model {model:?}");
         };
         prices.insert(
@@ -413,7 +415,9 @@ async fn in_batches<I: Clone, A>(
                 spend.add(&usage);
                 take(answers);
             }
-            Err(e) if e.is_answer_specific() => {
+            // Only photo generation times out this way: a slow image model
+            // fails that photo in production too, so it's the model's miss.
+            Err(e) if e.is_answer_specific() || matches!(e, AiError::Timeout(_)) => {
                 spend.rejected_calls += 1;
                 spend.truncated += usize::from(matches!(e, AiError::Truncated(_)));
                 if batch.len() == 1 {
@@ -888,7 +892,7 @@ fn spec(suite: &str) -> SuiteSpec {
         "recipe-photos" => SuiteSpec {
             title: "Recipe photos",
             about: concat!(
-                "A generated recipe photo (`generate_recipe_photo`; the models are image models) for 8 pipeline snapshots. Photos are cached under the AI cache directory by model and prompt, since the provider doesn't cache them. Cost is what OpenRouter reported for each photo. ",
+                "A generated recipe photo (`generate_recipe_photo`; the models are image models, `model@high` asking for that quality) for 10 hand-picked pipeline snapshots (`PHOTO_CASES`): dishes whose real look is crisp, structured or colorful, so a model that renders food as brown mush is caught. Photos are cached under the AI cache directory by model and prompt, since the provider doesn't cache them. Cost is what OpenRouter reported for each photo. ",
                 judging!(),
                 " ",
                 verdicts!()
