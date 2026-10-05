@@ -16,6 +16,7 @@ import argparse
 import functools
 import json
 import re
+import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -25,6 +26,24 @@ JUDGMENTS = ROOT / "data" / "ai-evals" / "judgments"
 SAVE_PATH = re.compile(r"^/judgments/([a-z-]+)\.json$")
 SUITES = {"tags", "titles", "descriptions", "custom-enrich", "recipe-photos"}
 MAX_BYTES = 5_000_000
+# A save reads, merges and writes the file, so two at once could lose one.
+SAVE_LOCK = threading.Lock()
+
+
+def merge(on_disk: dict, saved: dict) -> dict:
+    """A page's judgments merged into the file's.
+
+    Per case, a verdict suite's answers are merged, so a page opened before
+    another page saved can't drop that page's verdicts; a tag set is replaced.
+    """
+    merged = dict(on_disk)
+    for case, judgments in saved.items():
+        current = merged.get(case)
+        if isinstance(current, dict) and isinstance(judgments, dict):
+            merged[case] = {**current, **judgments}
+        else:
+            merged[case] = judgments
+    return merged
 
 
 class Handler(SimpleHTTPRequestHandler):
@@ -48,9 +67,12 @@ class Handler(SimpleHTTPRequestHandler):
             return
         JUDGMENTS.mkdir(parents=True, exist_ok=True)
         path = JUDGMENTS / f"{match.group(1)}.json"
-        path.write_text(
-            json.dumps(judgments, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
-        )
+        with SAVE_LOCK:
+            on_disk = json.loads(path.read_text()) if path.exists() else {}
+            merged = merge(on_disk, judgments)
+            path.write_text(
+                json.dumps(merged, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
+            )
         self.send_response(204)
         self.end_headers()
         print(f"Saved {path.relative_to(ROOT)}")
