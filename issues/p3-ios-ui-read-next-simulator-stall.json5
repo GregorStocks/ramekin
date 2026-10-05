@@ -11,6 +11,8 @@ In green run 37252858637, testMealPlanRecipePicker spent about 275 s inside 'Lau
 Ruled out: the 'IDELaunchParametersSnapshot ... \
 DebuggerVersionStore.StoreError' / 'no debugger version' lines appear on every launch, in fast runs as well as the stalled one (10 times in both 37251142452 and 37252858637), so they don't explain the hang. \
 Still open: whether the hang follows the terminate-then-relaunch of the app that XCUIApplication.launch does in every test. \
+In green run 37333289156 (PR #761), testLoginFailure, the first test of the run, spent about 290 s between 'Launch com.ramekin.app' and 'Setting up automation session'. \
+No earlier app instance existed to terminate, and the app was prebuilt (test-without-building), so the hang is not only a relaunch effect and not tied to building in the same xcodebuild run. \
 Separately, a few failures were plain assertion failures rather than stalls: RecipeFlowTests.swift:212 (testRecipeFlow, run 37183180449), :57 (testTextRecipeReviewAndSave, run 36675521178), and 'Sign In must be visible before tapping' (testLoginFailure, run 37175844521). \
 Line numbers predate PR #748's test restructuring.",
   "status": "open",
@@ -21,5 +23,5 @@ Line numbers predate PR #748's test restructuring.",
     "flaky-test",
   ],
   "created_at": "2026-10-04T20:45:00.000000-07:00",
-  "updated_at": "2026-10-04T20:45:00.000000-07:00",
+  "updated_at": "2026-10-05T10:00:00.000000-07:00",
 }

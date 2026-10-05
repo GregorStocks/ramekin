@@ -13,6 +13,21 @@ name: iOS
       - 'Makefile'
       - 'scripts/find-ios-simulator.py'
       - 'scripts/prepare-ios-ui-simulator.sh'
+  # Caches saved by pull_request runs are visible only to reruns of that PR.
+  # Build the backend on master too, so every PR can restore its cache. Keep
+  # these paths in sync with the backend cache key below.
+  push:
+    branches: [master]
+    paths:
+      - 'rust-toolchain.toml'
+      - 'server/**'
+      - 'cli/**'
+      - 'ramekin-core/**'
+      - 'migrations/**'
+      - 'data/ingredients.json'
+      - 'shared-test-vectors/**'
+      - 'Makefile'
+      - '.github/workflows/ios.yml'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -22,9 +37,13 @@ jobs:
   # Unit tests run in their own job, without the backend stack, so a UI-test
   # host stall on a slow simulator can never fail the unit suite (and a UI
   # flake rerun doesn't rebuild/reseed anything it doesn't need).
+  # All jobs pin one image: the UI test job runs binaries and an .xctestrun
+  # built by the other jobs, and macos-latest moves to a new image gradually,
+  # so jobs in one run could land on different images. Bump these together.
   ios-unit:
     name: iOS Unit Tests
-    runs-on: macos-latest
+    if: github.event_name == 'pull_request'
+    runs-on: macos-26
     # Backstop only: the step timeouts below are the real limits. A step that
     # times out fails (rather than the whole job being cancelled), so the
     # result upload still runs.
@@ -47,19 +66,132 @@ jobs:
           path: logs/*.xcresult
           if-no-files-found: ignore
 
-  ios-ui:
-    name: iOS UI Tests
-    runs-on: macos-latest
-    # Backstop only, above the sum of the step timeouts below. Hitting a job
-    # timeout cancels the job, which skips the cache post-steps and loses the
-    # cold build; a step timeout instead fails the step, so diagnostics upload
-    # and the Rust cache (cache-on-failure) still saves for the next run.
-    timeout-minutes: 90
+  # The UI test job needs a release server, a seeding CLI and the built app.
+  # Each build gets its own runner so they run in parallel, and the test job
+  # only downloads them. Rerunning a failed test job reuses these artifacts.
+  ios-ui-build-backend:
+    name: iOS UI Tests / Build backend
+    runs-on: macos-26
+    # Backstop only, above the sum of the step timeouts below. A step timeout
+    # fails the step, so the Rust cache (cache-on-failure) still saves; a job
+    # timeout cancels the job and loses the cold build.
+    timeout-minutes: 45
+    env:
+      # Help the linker find libpq from Homebrew.
+      LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
+      PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
+    steps:
+      - uses: actions/checkout@v4
+
+      # The binaries depend only on these inputs, so a PR that leaves the Rust
+      # side alone (most iOS PRs) skips the Rust build entirely. Keep this list
+      # in sync with what the server and CLI compile in (crate sources,
+      # embed_migrations!, include_str! of files outside the crates) and how
+      # they are built (Makefile, this workflow, which also pins the image).
+      - name: Restore backend binaries
+        id: backend-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ios-ui-backend.tar
+          key: >-
+            ios-ui-backend-${{ runner.arch }}-${{ hashFiles(
+              'rust-toolchain.toml', 'server/**', 'cli/**', 'ramekin-core/**',
+              'migrations/**', 'data/ingredients.json', 'shared-test-vectors/**',
+              'Makefile', '.github/workflows/ios.yml') }}
+
+      - name: Install dependencies
+        if: steps.backend-cache.outputs.cache-hit != 'true'
+        run: brew install postgresql@16
+
+      - name: Install Rust
+        if: steps.backend-cache.outputs.cache-hit != 'true'
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Rust
+        if: steps.backend-cache.outputs.cache-hit != 'true'
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            server -> target
+            cli -> target
+            ramekin-core -> target
+          shared-key: ios-ci
+          cache-on-failure: true
+
+      - name: Build server
+        if: steps.backend-cache.outputs.cache-hit != 'true'
+        timeout-minutes: 20
+        run: make server-release-build
+
+      - name: Build CLI
+        if: steps.backend-cache.outputs.cache-hit != 'true'
+        timeout-minutes: 15
+        # This CLI only seeds test data. Avoid a second optimized Rust build
+        # consuming the job budget on a cold cache.
+        run: make cli/target/debug/ramekin-cli
+
+      # tar keeps the executable bits, which upload-artifact drops.
+      - name: Package binaries
+        if: steps.backend-cache.outputs.cache-hit != 'true'
+        run: tar -cf ios-ui-backend.tar server/target/release/ramekin-server cli/target/debug/ramekin-cli
+
+      # Save right away rather than in a post-step, so a later failure or
+      # cancellation can't throw away the build.
+      - name: Save backend binaries
+        if: steps.backend-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: ios-ui-backend.tar
+          key: ${{ steps.backend-cache.outputs.cache-primary-key }}
+
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: ios-ui-backend
+          path: ios-ui-backend.tar
+          retention-days: 3
+
+  ios-ui-build-app:
+    name: iOS UI Tests / Build app
+    if: github.event_name == 'pull_request'
+    runs-on: macos-26
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: brew install xcodegen postgresql@16 uv
+        run: brew install xcodegen
+
+      - name: Build app and UI tests
+        timeout-minutes: 20
+        run: make ios-build-ui-tests
+
+      # Products holds the .xctestrun plus the app and test-runner bundles;
+      # tar keeps the bundles' executable bits and symlinks.
+      - name: Package build products
+        run: tar -cf ios-ui-app.tar ramekin-ios/build/ui-tests/Build/Products
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ios-ui-app
+          path: ios-ui-app.tar
+          retention-days: 3
+
+  ios-ui:
+    name: iOS UI Tests
+    needs: [ios-ui-build-backend, ios-ui-build-app]
+    runs-on: macos-26
+    # Backstop only, above the sum of the step timeouts below. A step timeout
+    # fails the step (rather than the whole job being cancelled), so the
+    # diagnostics upload still runs.
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      # Before the simulator boots: this takes seconds on an idle runner but
+      # minutes during the boot storm.
+      - name: Install dependencies
+        run: brew install postgresql@16 uv
 
       - name: Start runner load sampler
         # A degraded simulator can stop answering accessibility queries for
@@ -85,7 +217,7 @@ jobs:
 
       - name: Start booting simulator
         # A fresh simulator saturates the runner for minutes after booting;
-        # start it now so that overlaps the Rust builds. See the script.
+        # start it now so that overlaps the setup below. See the script.
         run: scripts/prepare-ios-ui-simulator.sh boot >> "$GITHUB_ENV"
 
       - name: Start PostgreSQL
@@ -120,69 +252,15 @@ jobs:
           createuser -s ramekin 2>/dev/null || true
           createdb -O ramekin ramekin_ios 2>/dev/null || true
 
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Cache Rust
-        uses: Swatinem/rust-cache@v2
+      - uses: actions/download-artifact@v4
         with:
-          workspaces: |
-            server -> target
-            cli -> target
-            ramekin-core -> target
-          shared-key: ios-ci
-          cache-on-failure: true
+          pattern: ios-ui-*
+          merge-multiple: true
 
-      - name: Restore cargo binaries
-        id: cargo-bin-cache
-        uses: actions/cache/restore@v6
-        with:
-          path: ~/.cargo/bin
-          key: cargo-bin-macos-diesel-3.2
-
-      - name: Install diesel CLI
-        timeout-minutes: 10
+      - name: Unpack builds
         run: |
-          if ! command -v diesel &> /dev/null; then
-            echo "Installing diesel_cli..."
-            cargo install diesel_cli --no-default-features --features postgres
-          else
-            echo "diesel_cli already cached"
-          fi
-        env:
-          # Help linker find libpq from Homebrew
-          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib:/usr/local/opt/postgresql@16/lib
-          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
-
-      # Save right away rather than in a post-step, so a later failure or
-      # cancellation can't throw away the diesel_cli build.
-      - name: Save cargo binaries
-        if: steps.cargo-bin-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v6
-        with:
-          path: ~/.cargo/bin
-          key: cargo-bin-macos-diesel-3.2
-
-      - name: Run migrations
-        run: cd server && diesel migration run
-        env:
-          DATABASE_URL: postgres://ramekin@localhost:5432/ramekin_ios
-
-      - name: Build server
-        timeout-minutes: 20
-        run: make server-release-build
-        env:
-          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
-          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
-
-      - name: Build CLI
-        timeout-minutes: 15
-        # This CLI only seeds test data. Avoid a second optimized Rust build
-        # consuming the job budget on a cold cache.
-        run: make cli/target/debug/ramekin-cli
-        env:
-          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
-          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
+          tar -xf ios-ui-backend.tar
+          tar -xf ios-ui-app.tar
 
       - name: Start mock AI service
         run: |
@@ -260,12 +338,12 @@ jobs:
         timeout-minutes: 10
         # Finish booting, turn off keyboard extras and unload mediaanalysisd;
         # see the script.
-        # make ios-test-ui uses IOS_UI_DESTINATION from the boot step.
+        # make ios-test-ui-prebuilt uses IOS_UI_DESTINATION from the boot step.
         run: scripts/prepare-ios-ui-simulator.sh configure
 
       - name: Run UI tests
-        timeout-minutes: 25
-        run: make ios-test-ui
+        timeout-minutes: 20
+        run: make ios-test-ui-prebuilt
 
       - name: Collect simulator system log
         if: failure()

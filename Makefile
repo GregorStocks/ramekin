@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import catalog-apply-classification catalog-harvest-learned catalog-clean-aliases shopping-list-categorizer-test ingredient-catalog-audit ingredient-catalog-unresolved ingredient-catalog-uncategorized ai-eval ai-eval-golden ai-eval-judge server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ios-build-ui-tests ios-test-ui-prebuilt ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import catalog-apply-classification catalog-harvest-learned catalog-clean-aliases shopping-list-categorizer-test ingredient-catalog-audit ingredient-catalog-unresolved ingredient-catalog-uncategorized ai-eval ai-eval-golden ai-eval-judge server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -26,6 +26,8 @@ RAMEKIN_IOS_APPLINKS_URL ?= https://ramekin.app
 # Override with IOS_TEST_DESTINATION / IOS_UI_DESTINATION to pin a device.
 IOS_TEST_DESTINATION ?=
 IOS_UI_DESTINATION ?= $(IOS_TEST_DESTINATION)
+# Relative to ramekin-ios/ (gitignored build/).
+IOS_UI_DERIVED_DATA ?= build/ui-tests
 
 # Shell snippet that expands $$DEST to a usable -destination value. Uses the
 # override if set, otherwise asks simctl. Sourcing `xcrun simctl list` also
@@ -334,16 +336,31 @@ ios-test: ios-generate ## Run iOS unit tests
 		-resultBundlePath ../logs/ios-tests.xcresult
 	@echo "Unit test results at logs/ios-tests.xcresult"
 
-ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
-	@mkdir -p logs
-	@rm -rf logs/ios-ui-tests.xcresult
+ios-test-ui: ios-build-ui-tests ## Run iOS UI tests (requires dev server running)
+	@$(MAKE) --no-print-directory ios-test-ui-prebuilt
+
+# CI builds the UI tests and runs them on separate runners; the Products
+# directory under IOS_UI_DERIVED_DATA is everything the test run needs.
+ios-build-ui-tests: ios-generate ## Build the app and UI tests without running them
 	@$(call ios_resolve_destination,$(IOS_UI_DESTINATION)); \
-	cd ramekin-ios && xcodebuild test \
+	cd ramekin-ios && xcodebuild build-for-testing \
 		-project Ramekin.xcodeproj \
 		-scheme Ramekin \
 		-destination "$$DEST" \
+		-derivedDataPath $(IOS_UI_DERIVED_DATA) \
+		-only-testing:RamekinUITests
+
+ios-test-ui-prebuilt: ## Run iOS UI tests built by ios-build-ui-tests (requires dev server running)
+	@mkdir -p logs
+	@rm -rf logs/ios-ui-tests.xcresult
+	@XCTESTRUN=$$(ls ramekin-ios/$(IOS_UI_DERIVED_DATA)/Build/Products/*.xctestrun 2>/dev/null | head -1); \
+	if [ -z "$$XCTESTRUN" ]; then echo "No .xctestrun found; run make ios-build-ui-tests" >&2; exit 1; fi; \
+	$(call ios_resolve_destination,$(IOS_UI_DESTINATION)); \
+	xcodebuild test-without-building \
+		-xctestrun "$$XCTESTRUN" \
+		-destination "$$DEST" \
 		-only-testing:RamekinUITests \
-		-resultBundlePath ../logs/ios-ui-tests.xcresult
+		-resultBundlePath logs/ios-ui-tests.xcresult
 	@echo "UI test results at logs/ios-ui-tests.xcresult"
 
 ingredient-tests-generate: ## Generate ingredient parsing test fixtures from latest pipeline run
