@@ -3,7 +3,8 @@ import Foundation
 extension RecipeDetailViewModel {
     func applyEnrichment(_ modified: RecipeContent) async {
         guard let currentVersionId else {
-            preconditionFailure("Cannot apply enrichment before loading the current recipe version")
+            error = "Reload the recipe and try again."
+            return
         }
         let updateRequest = UpdateRecipeRequest(
             cookTime: modified.cookTime,

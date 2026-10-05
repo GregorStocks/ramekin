@@ -6,6 +6,7 @@ use std::time::Instant;
 
 use async_trait::async_trait;
 
+use crate::catalog::Learned;
 use crate::ingredient_parser::{parse_ingredients, ParsedIngredient};
 use crate::metric_weights::MetricConversionStats;
 use crate::pipeline::{
@@ -92,6 +93,8 @@ impl PipelineStep for ParseIngredientsStep {
                 &ingredient.item,
                 ingredient.note.as_deref(),
                 &ingredient.measurements,
+                // The pipeline has no learned names; it measures the catalog.
+                &Learned::new(),
                 &mut weight_stats,
                 &mut volume_stats,
             );

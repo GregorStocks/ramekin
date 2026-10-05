@@ -98,6 +98,7 @@ class RamekinAPI {
         case httpError(Int, ErrorCode?, String?)
         case networkError(Error)
         case decodingError(Error)
+        case unsupportedMealType(String)
 
         var errorDescription: String? {
             switch self {
@@ -115,6 +116,8 @@ class RamekinAPI {
                 return "Network error: \(error.localizedDescription)"
             case .decodingError(let error):
                 return "Failed to parse response: \(error.localizedDescription)"
+            case .unsupportedMealType(let rawValue):
+                return "Unsupported meal type: \(rawValue)"
             }
         }
 
@@ -390,7 +393,7 @@ extension RamekinAPI {
 
         let request = CreateMealPlanRequest(
             mealDate: mealDate,
-            mealType: generatedMealType(from: mealType),
+            mealType: try generatedMealType(from: mealType),
             notes: normalizedNotes,
             recipeId: recipeId
         )
@@ -410,7 +413,7 @@ extension RamekinAPI {
     ) async throws {
         let request = UpdateMealPlanRequest(
             mealDate: mealDate,
-            mealType: generatedMealType(from: mealType),
+            mealType: try generatedMealType(from: mealType),
             notes: notes
         )
         try await executeGenerated {
