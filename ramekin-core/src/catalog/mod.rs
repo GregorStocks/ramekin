@@ -777,6 +777,13 @@ pub fn grams_per_piece(entry: &Entry, unit: Option<&str>) -> Option<f64> {
     if let Some(&grams) = portions.get(&key) {
         return Some(grams);
     }
+    // A sized piece with no exact portion ("large lemon") is the piece.
+    let unsized_piece = SIZES
+        .iter()
+        .find_map(|size| key.strip_prefix(size)?.strip_prefix(' '));
+    if let Some(&grams) = unsized_piece.and_then(|piece| portions.get(&piece_unit(piece))) {
+        return Some(grams);
+    }
     if SIZES.contains(&key.as_str()) {
         let suffix = format!(" {key}");
         let mut sized = portions.iter().filter(|(piece, _)| {

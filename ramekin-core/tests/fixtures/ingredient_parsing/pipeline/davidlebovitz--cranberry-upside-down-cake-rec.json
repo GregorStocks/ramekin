@@ -171,9 +171,14 @@
     {
       "raw": "grated zest of one lemon",
       "expected": {
-        "item": "grated zest of one lemon",
-        "measurements": [],
-        "note": null,
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": "grated",
         "category": "Produce"
       }
     },

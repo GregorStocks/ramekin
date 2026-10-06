@@ -125,11 +125,31 @@
     {
       "raw": "Grated zest and juice of 1 small orange",
       "expected": {
-        "item": "Grated zest and juice of 1 small orange",
-        "measurements": [],
-        "note": null,
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small orange"
+          }
+        ],
+        "note": "grated",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Grated zest and juice of 1 small orange",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small orange"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      },
+      "expanded": true
     },
     {
       "raw": "1 7-ounce container plain Greek yogurt (about 3/4 cup)",

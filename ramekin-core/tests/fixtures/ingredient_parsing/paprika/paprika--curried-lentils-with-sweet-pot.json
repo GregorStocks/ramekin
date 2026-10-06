@@ -219,17 +219,27 @@
     {
       "raw": "Finely grated zest of 1 lime",
       "expected": {
-        "item": "Finely grated zest of 1 lime",
-        "measurements": [],
-        "note": null,
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lime"
+          }
+        ],
+        "note": "finely grated",
         "category": "Produce"
       }
     },
     {
       "raw": "Juice of 1/2 lime",
       "expected": {
-        "item": "Juice of 1/2 lime",
-        "measurements": [],
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lime"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

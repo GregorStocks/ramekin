@@ -134,8 +134,42 @@
     {
       "raw": "Zest and juice of 1 small orange",
       "expected": {
-        "item": "Zest and juice of 1 small orange",
-        "measurements": [],
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small orange"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Zest and juice of 1 small orange",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small orange"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "Zest and juice of 1 medium lemon",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -143,11 +177,17 @@
     {
       "raw": "Zest and juice of 1 medium lemon",
       "expected": {
-        "item": "Zest and juice of 1 medium lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
-      }
+      },
+      "expanded": true
     },
     {
       "raw": "2½ cups whole-milk fresh ricotta",
@@ -226,8 +266,13 @@
     {
       "raw": "Juice of 1 medium lemon",
       "expected": {
-        "item": "Juice of 1 medium lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

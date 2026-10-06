@@ -141,9 +141,14 @@
     {
       "raw": "Juice of half a lemon or lime (optional)",
       "expected": {
-        "item": "Juice of half a lemon or lime",
-        "measurements": [],
-        "note": "optional",
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
+        "note": "or lime, optional",
         "category": "Produce"
       }
     },

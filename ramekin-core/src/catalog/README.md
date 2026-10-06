@@ -202,7 +202,8 @@ Piece rules (`portions`):
 At lookup, a counted unit is normalized the same way ("extra-large" → "extra
 large"). A size with no exact portion uses the food's one sized piece ("2 medium
 potatoes" → "potato medium"), else its default piece ("1 large lemon" → the
-lemon). A piece with sizes uses its medium ("1 stalk celery" → "stalk medium").
+lemon). A sized piece with no exact portion is the piece ("large lemon" →
+"lemon"). A piece with sizes uses its medium ("1 stalk celery" → "stalk medium").
 
 Name rules:
 

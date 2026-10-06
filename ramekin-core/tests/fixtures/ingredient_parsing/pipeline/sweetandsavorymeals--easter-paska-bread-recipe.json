@@ -149,8 +149,13 @@
     {
       "raw": "zest of two oranges",
       "expected": {
-        "item": "zest of two oranges",
-        "measurements": [],
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oranges"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

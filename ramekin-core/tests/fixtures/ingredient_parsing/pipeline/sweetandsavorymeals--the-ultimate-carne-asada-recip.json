@@ -19,8 +19,13 @@
     {
       "raw": "Zest of 2 limes",
       "expected": {
-        "item": "Zest of 2 limes",
-        "measurements": [],
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "limes"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -28,8 +33,13 @@
     {
       "raw": "Juice of 2 limes",
       "expected": {
-        "item": "Juice of 2 limes",
-        "measurements": [],
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "limes"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

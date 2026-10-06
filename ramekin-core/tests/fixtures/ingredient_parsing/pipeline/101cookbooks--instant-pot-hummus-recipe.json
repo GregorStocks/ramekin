@@ -37,8 +37,13 @@
     {
       "raw": "Juice of 1 lemon, plus more as needed",
       "expected": {
-        "item": "Juice of 1 lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": "plus more as needed",
         "category": "Produce"
       }

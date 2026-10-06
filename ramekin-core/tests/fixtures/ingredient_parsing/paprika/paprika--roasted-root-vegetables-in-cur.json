@@ -114,12 +114,33 @@
     {
       "raw": "Grated zest and juice of 1/2 lime",
       "expected": {
-        "item": "Grated zest and juice of 1/2 lime",
-        "measurements": [],
-        "note": null,
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lime"
+          }
+        ],
+        "note": "grated",
         "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Grated zest and juice of 1/2 lime",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lime"
+          }
+        ],
+        "note": null,
+        "section": "Curry Sauce (Makes 2 Cups)",
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "1/2 tsp salt",

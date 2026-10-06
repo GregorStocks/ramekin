@@ -131,11 +131,31 @@
     {
       "raw": "Grated zest and juice of 1/2 lemon",
       "expected": {
-        "item": "Grated zest and juice of 1/2 lemon",
-        "measurements": [],
-        "note": null,
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
+        "note": "grated",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Grated zest and juice of 1/2 lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "2 tbsp. pure maple syrup",

@@ -37,9 +37,14 @@
     {
       "raw": "Finely grated zest of 1 orange",
       "expected": {
-        "item": "Finely grated zest of 1 orange",
-        "measurements": [],
-        "note": null,
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "orange"
+          }
+        ],
+        "note": "finely grated",
         "category": "Produce"
       }
     },
