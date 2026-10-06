@@ -36,7 +36,10 @@ pub async fn custom_enrich<T: serde::de::DeserializeOwned>(
         messages: vec![ChatMessage::system(system_prompt), user_message],
         json_response: true,
         fresh: false,
-        max_tokens: Some(4096),
+        // The answer is a whole recipe (often 1500+ tokens) after the model's
+        // hidden reasoning; answers have used up to 3400 tokens, and 4096
+        // truncated some mid-recipe.
+        max_tokens: Some(16384),
         temperature: Some(0.7),
     };
 

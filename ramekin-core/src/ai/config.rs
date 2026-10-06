@@ -37,6 +37,11 @@ pub const INGREDIENT_TIMEOUT_SECS: u64 = 120;
 /// enrichments in the request, so iOS gives that request 180 s and the web
 /// client sets no timeout.
 pub const EXTRACTION_TIMEOUT_SECS: u64 = 60;
+/// The least request timeout for custom enrich, which also writes out a whole
+/// recipe, after the default model's hidden reasoning: a 4096-token answer
+/// took it 25 s. The user waits on it in the request, so it stays inside the
+/// clients' 60 s (URLSession's default included).
+pub const CUSTOM_ENRICH_TIMEOUT_SECS: u64 = 50;
 /// The least request timeout for generating a recipe photo: 10-30 s for the
 /// current image models (the default about 13 s). The user waits on it in the
 /// request, and the server still processes and stores the image after, so it
@@ -156,6 +161,15 @@ impl AiConfig {
         Self {
             model: self.extraction_model.clone(),
             request_timeout_secs: self.request_timeout_secs.max(EXTRACTION_TIMEOUT_SECS),
+            ..self.clone()
+        }
+    }
+
+    /// This configuration for custom enrich: the default model, and a timeout
+    /// long enough to write out a whole recipe.
+    pub fn for_custom_enrich(&self) -> Self {
+        Self {
+            request_timeout_secs: self.request_timeout_secs.max(CUSTOM_ENRICH_TIMEOUT_SECS),
             ..self.clone()
         }
     }
@@ -280,6 +294,22 @@ mod tests {
             ..config
         };
         assert_eq!(patient.for_extraction().request_timeout_secs, 600);
+    }
+
+    #[test]
+    fn custom_enrich_calls_use_the_default_model_and_a_recipe_length_timeout() {
+        let config = config_with_base_url(DEFAULT_BASE_URL);
+        let custom_enrich = config.for_custom_enrich();
+        assert_eq!(custom_enrich.model, config.model);
+        assert_eq!(
+            custom_enrich.request_timeout_secs,
+            CUSTOM_ENRICH_TIMEOUT_SECS
+        );
+        let patient = AiConfig {
+            request_timeout_secs: 600,
+            ..config
+        };
+        assert_eq!(patient.for_custom_enrich().request_timeout_secs, 600);
     }
 
     #[test]
