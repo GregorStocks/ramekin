@@ -407,19 +407,19 @@ const PROVIDER_RETRY_DELAY: Duration = if cfg!(test) {
     Duration::from_secs(5)
 };
 
-/// Batches in a row whose provider errors outlast their retries before the
-/// run stops: past this the provider (or the key) is down, and counting
-/// every remaining case invalid would only write a misleading report.
-const MAX_CONSECUTIVE_PROVIDER_FAILURES: usize = 5;
+/// Batches whose provider errors outlast their retries before the run stops:
+/// past this the provider (or the key) is down, and counting every remaining
+/// case invalid would only write a misleading report. A total, not a run in
+/// a row, since cached answers succeed through an outage.
+const MAX_PROVIDER_FAILURES: usize = 5;
 
 /// Ask `items` `batch_size` at a time, retrying a rejected batch (invalid, or
 /// truncated) the way the production worker does; a rejected single item is
 /// invalid, with no second chance, as in production. A provider error is
 /// retried a few times, then fails the whole batch (production doesn't split
 /// on those either), so one flaky case doesn't abort the suite.
-/// Configuration errors, and provider errors on
-/// `MAX_CONSECUTIVE_PROVIDER_FAILURES` batches in a row or on every batch,
-/// stop the run.
+/// Configuration errors, and provider errors on `MAX_PROVIDER_FAILURES`
+/// batches or on more than half of them, stop the run.
 async fn in_batches<I: Clone, A>(
     items: &[I],
     batch_size: usize,
@@ -430,15 +430,12 @@ async fn in_batches<I: Clone, A>(
 ) -> Result<usize> {
     let mut invalid = 0;
     let mut provider_failures = 0;
-    // Whether any batch got an answer (accepted or rejected) from the model.
-    let mut answered = false;
     let mut last_provider_error = None;
     let mut queue: VecDeque<Vec<I>> = items.chunks(batch_size).map(<[I]>::to_vec).collect();
+    let batches = queue.len();
     while let Some(batch) = queue.pop_front() {
         let e = match ask_with_retries(&mut ask, &batch).await {
             Ok((answers, usage)) => {
-                provider_failures = 0;
-                answered = true;
                 spend.add(&usage);
                 take(answers);
                 continue;
@@ -454,14 +451,11 @@ async fn in_batches<I: Clone, A>(
         };
         if provider_failure {
             provider_failures += 1;
-            if provider_failures >= MAX_CONSECUTIVE_PROVIDER_FAILURES {
+            if provider_failures >= MAX_PROVIDER_FAILURES {
                 return Err(anyhow::Error::from(e).context(format!(
-                    "{provider_failures} batches in a row failed with provider errors"
+                    "{provider_failures} batches failed with provider errors"
                 )));
             }
-        } else {
-            provider_failures = 0;
-            answered = true;
         }
         spend.rejected_calls += 1;
         spend.truncated += usize::from(matches!(e, AiError::Truncated(_)));
@@ -491,11 +485,11 @@ async fn in_batches<I: Clone, A>(
             }
         }
     }
-    // A suite of fewer batches than the outage limit can fail every one.
+    // A suite of fewer batches than the limit can fail most of them.
     match last_provider_error {
-        Some(e) if !answered => {
-            Err(anyhow::Error::from(e).context("every batch failed with provider errors"))
-        }
+        Some(e) if provider_failures * 2 > batches => Err(anyhow::Error::from(e).context(format!(
+            "{provider_failures} of {batches} batches failed with provider errors"
+        ))),
         _ => Ok(invalid),
     }
 }
@@ -1254,8 +1248,22 @@ mod tests {
         let (result, _, _, calls) = run(&[1, 2], 1, Split::Singles, |_, _| Some(timed_out())).await;
 
         let message = format!("{:#}", result.unwrap_err());
-        assert!(message.contains("every batch failed"), "{message}");
+        assert!(message.contains("2 of 2 batches"), "{message}");
         assert_eq!(calls, 2 * PROVIDER_ATTEMPTS as usize);
+    }
+
+    #[tokio::test]
+    async fn answers_between_provider_failures_dont_hide_an_outage() {
+        // As cached answers keep coming during an outage.
+        let items: Vec<u32> = (0..20).collect();
+        let (result, answered, _, _) = run(&items, 1, Split::Singles, |batch, _| {
+            (batch[0] % 2 == 0).then(timed_out)
+        })
+        .await;
+
+        let message = format!("{:#}", result.unwrap_err());
+        assert!(message.contains("5 batches failed"), "{message}");
+        assert_eq!(answered, [1, 3, 5, 7]);
     }
 
     #[tokio::test]
@@ -1264,10 +1272,7 @@ mod tests {
         let (result, _, _, calls) = run(&items, 1, Split::Singles, |_, _| Some(timed_out())).await;
 
         let message = format!("{:#}", result.unwrap_err());
-        assert!(message.contains("5 batches in a row"), "{message}");
-        assert_eq!(
-            calls,
-            MAX_CONSECUTIVE_PROVIDER_FAILURES * PROVIDER_ATTEMPTS as usize
-        );
+        assert!(message.contains("5 batches failed"), "{message}");
+        assert_eq!(calls, MAX_PROVIDER_FAILURES * PROVIDER_ATTEMPTS as usize);
     }
 }
