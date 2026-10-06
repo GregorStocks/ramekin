@@ -33,14 +33,14 @@
     {
       "raw": "1&nbsp;14-oz block extra-firm tofu, patted dry, cut into 1-inch cubes",
       "expected": {
-        "item": "14-oz block extra-firm tofu, patted dry",
+        "item": "14-oz block extra-firm tofu",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cut into 1-inch cubes",
+        "note": "patted dry, cut into 1-inch cubes",
         "category": "Produce"
       }
     },

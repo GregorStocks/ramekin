@@ -96,6 +96,15 @@ pub(super) fn normalize_word_numbers(s: &str) -> String {
     let fraction_to_digit = [("half", "1/2"), ("quarter", "1/4")];
 
     let s_lower = s.to_lowercase();
+    // Names that start with a number word: "five spice powder", "half and half".
+    const NUMBER_WORD_NAMES: &[&str] = &["five spice", "half and half", "half & half"];
+    if NUMBER_WORD_NAMES.iter().any(|name| {
+        s_lower
+            .strip_prefix(name)
+            .is_some_and(|after| !after.starts_with(char::is_alphanumeric))
+    }) {
+        return s.to_string();
+    }
     for (word, digit) in fraction_to_digit {
         if s_lower.starts_with(word) {
             if let Some(after) = s.get(word.len()..) {

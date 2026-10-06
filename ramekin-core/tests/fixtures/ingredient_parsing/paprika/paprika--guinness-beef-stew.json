@@ -154,14 +154,14 @@
     {
       "raw": "1 ½ pounds Yukon Gold potatoes, unpeeled, cut into 1-inch pieces",
       "expected": {
-        "item": "Yukon Gold potatoes, unpeeled",
+        "item": "Yukon Gold potatoes",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "lb"
           }
         ],
-        "note": "cut into 1-inch pieces",
+        "note": "unpeeled, cut into 1-inch pieces",
         "category": "Produce"
       }
     },

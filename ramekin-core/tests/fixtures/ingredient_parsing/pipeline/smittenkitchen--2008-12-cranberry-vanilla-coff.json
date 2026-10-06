@@ -5,14 +5,14 @@
     {
       "raw": "1/2 vanilla bean, split lengthwise",
       "expected": {
-        "item": "vanilla bean, split lengthwise",
+        "item": "vanilla bean",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split lengthwise",
         "category": "Spices & Seasonings"
       }
     },

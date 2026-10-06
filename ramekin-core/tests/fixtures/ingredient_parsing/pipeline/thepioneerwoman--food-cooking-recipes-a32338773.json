@@ -126,14 +126,14 @@
     {
       "raw": "6 kaiser rolls or hamburger buns, split",
       "expected": {
-        "item": "kaiser rolls or hamburger buns, split",
+        "item": "kaiser rolls or hamburger buns",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split",
         "category": "Bakery & Bread"
       }
     },

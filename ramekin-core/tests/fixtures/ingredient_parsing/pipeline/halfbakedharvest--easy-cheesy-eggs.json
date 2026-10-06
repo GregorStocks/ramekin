@@ -126,14 +126,14 @@
     {
       "raw": "▢ 1 small avocado, lightly mashed",
       "expected": {
-        "item": "avocado, lightly mashed",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "lightly mashed",
         "category": "Produce"
       }
     },

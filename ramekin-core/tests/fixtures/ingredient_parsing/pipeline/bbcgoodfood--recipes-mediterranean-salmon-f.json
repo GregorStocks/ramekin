@@ -33,14 +33,14 @@
     {
       "raw": "18 black olives preferably Niçoise, pitted",
       "expected": {
-        "item": "black olives preferably Niçoise, pitted",
+        "item": "black olives preferably Niçoise",
         "measurements": [
           {
             "amount": "18",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pitted",
         "category": "Canned Goods"
       }
     },

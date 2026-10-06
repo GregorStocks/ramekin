@@ -952,6 +952,441 @@
         "note": null,
         "category": "Bakery & Bread"
       }
+    },
+    {
+      "name": "prep_participle_comma_tail",
+      "raw": "3 cloves garlic, smashed",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "smashed",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "prep_participle_chain",
+      "raw": "1 pound medium shrimp, shelled and deveined",
+      "expected": {
+        "item": "medium shrimp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          }
+        ],
+        "note": "shelled and deveined",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "name": "prep_participle_inside_food_name_kept",
+      "raw": "12 ounces small peeled, deveined raw shrimp",
+      "expected": {
+        "item": "small peeled, deveined raw shrimp",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "name": "prep_chain_and_prep_tail",
+      "raw": "1 serrano chile, stemmed, seeded, and minced",
+      "expected": {
+        "item": "serrano chile",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "stemmed, seeded, and minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "dash_prep_chain",
+      "raw": "4 large apples - peeled, cored, and sliced",
+      "expected": {
+        "item": "apples",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled, cored, and sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "reassurance_comma_tail",
+      "raw": "1 cup crisp, dry white wine, doesn't have to be fancy",
+      "expected": {
+        "item": "crisp, dry white wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "doesn't have to be fancy",
+        "category": "Beverages"
+      }
+    },
+    {
+      "name": "count_only_or_alternative",
+      "raw": "1 large carrot or 2 slim ones",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "or 2 slim ones",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "count_only_or_after_variety_kept",
+      "raw": "1 Turkish or 1/2 California bay leaf",
+      "expected": {
+        "item": "Turkish or 1/2 California bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "name": "count_only_or_after_size_kept",
+      "raw": "1 thick or 2 slimmer leeks",
+      "expected": {
+        "item": "thick or 2 slimmer leeks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "count_only_or_after_unit_kept",
+      "raw": "1 large can or 2 small cans diced tomatoes",
+      "expected": {
+        "item": "can or 2 small cans diced tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "name": "mixed_with_measured_liquid",
+      "raw": "1 tablespoon cornstarch mixed with 1 tablespoon cold water",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "mixed with 1 tablespoon cold water",
+        "category": "Baking"
+      }
+    },
+    {
+      "name": "beaten_with_measured_liquid",
+      "raw": "1 large egg lightly beaten with 1 teaspoon water",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "lightly beaten with 1 teaspoon water",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "name": "colon_label_before_amount",
+      "raw": "Egg wash: 1 egg beaten with 1 tablespoon water",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "Egg wash, beaten with 1 tablespoon water",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "name": "colon_label_before_list_kept",
+      "raw": "Optional add ins: 1/2 teaspoon vanilla extract, 1/4 teaspoon cinnamon",
+      "expected": {
+        "item": "Optional add ins: 1/2 teaspoon vanilla extract, 1/4 teaspoon cinnamon",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "name": "article_before_size_without_unit_kept",
+      "raw": "A 3-inch piece of ginger, peeled and sliced",
+      "expected": {
+        "item": "A 3-inch piece of ginger",
+        "measurements": [],
+        "note": "peeled and sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "container_source_note",
+      "raw": "2 to 3 cups tomato puree from a 28-ounce can",
+      "expected": {
+        "item": "tomato puree",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "cup"
+          }
+        ],
+        "note": "from a 28-ounce can",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "name": "five_spice_name_without_amount",
+      "raw": "five spice powder",
+      "expected": {
+        "item": "five spice powder",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "name": "half_and_half_without_amount",
+      "raw": "half and half",
+      "expected": {
+        "item": "half and half",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "name": "count_only_or_after_article_and_size_kept",
+      "raw": "1/2 a large or 1 small white onion, chopped",
+      "expected": {
+        "item": "a large or 1 small white onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "count_only_or_after_sized_unit_kept",
+      "raw": "1 big clove or 2 small cloves garlic",
+      "expected": {
+        "item": "big clove or 2 small cloves garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "name": "count_only_or_after_food_and_unit",
+      "raw": "2 garlic cloves or 1 large, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "or 1 large; minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "colon_label_long",
+      "raw": "egg wash for pie crust: 1 large egg beaten with 1 Tablespoon milk",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "egg wash for pie crust, beaten with 1 Tablespoon milk",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "name": "article_before_sized_container_of",
+      "raw": "A 14-ounce can of crushed tomatoes",
+      "expected": {
+        "item": "crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14-ounce can"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "name": "count_only_or_after_portion_kept",
+      "raw": "1 whole or 2 half chicken breasts",
+      "expected": {
+        "item": "whole or 2 half chicken breasts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "name": "count_only_or_parenthetical_follows_alternative",
+      "raw": "1 teaspoon vanilla or 1 vanilla bean (scraped)",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 vanilla bean (scraped)",
+        "category": "Baking"
+      }
+    },
+    {
+      "name": "count_only_or_after_quoted_unit_kept",
+      "raw": "3 “hearts” or 2 full heads of romaine, chopped",
+      "expected": {
+        "item": "“hearts” or 2 full heads of romaine",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "colon_label_before_fraction_list_kept",
+      "raw": "Egg wash: 1 egg and ½ cup milk",
+      "expected": {
+        "item": "Egg wash: 1 egg and 1/2 cup milk",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "name": "count_only_or_after_full_kept",
+      "raw": "1 full or 2 half heads of cabbage",
+      "expected": {
+        "item": "full or 2 half heads of cabbage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "colon_label_before_plus_list_kept",
+      "raw": "Egg wash: 1 egg plus 1 tablespoon water",
+      "expected": {
+        "item": "Egg wash: 1 egg plus 1 tablespoon water",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "name": "colon_label_before_compound_amount",
+      "raw": "Coating: 1 cup plus 2 tablespoons flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1 cup plus 2 tablespoons",
+            "unit": null
+          }
+        ],
+        "note": "Coating",
+        "category": "Baking"
+      }
+    },
+    {
+      "name": "colon_label_before_half_and_half",
+      "raw": "Cream mixture: 1 cup half and half",
+      "expected": {
+        "item": "half and half",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "Cream mixture",
+        "category": "Dairy & Eggs"
+      }
     }
   ]
 }

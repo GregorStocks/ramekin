@@ -101,14 +101,14 @@
     {
       "raw": "1 vanilla bean, split and seeds scraped, or 2 teaspoons vanilla extract",
       "expected": {
-        "item": "vanilla bean, split and seeds scraped",
+        "item": "vanilla bean",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 2 teaspoons vanilla extract",
+        "note": "split and seeds scraped, or 2 teaspoons vanilla extract",
         "category": "Spices & Seasonings"
       }
     },

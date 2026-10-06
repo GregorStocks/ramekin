@@ -208,14 +208,14 @@
     {
       "raw": "1 teaspoon worcestershire sauce or 1 to 2 anchovies, minced",
       "expected": {
-        "item": "worcestershire sauce or 1 to 2 anchovies",
+        "item": "worcestershire sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "minced",
+        "note": "or 1 to 2 anchovies; minced",
         "category": "Condiments & Sauces"
       }
     },

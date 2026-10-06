@@ -89,14 +89,14 @@
     {
       "raw": "1/4 cup powdered sugar mixed with 2 tablespoons corn starch, for coating",
       "expected": {
-        "item": "powdered sugar mixed with 2 tablespoons corn starch",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "for coating",
+        "note": "mixed with 2 tablespoons corn starch, for coating",
         "category": "Baking"
       }
     }

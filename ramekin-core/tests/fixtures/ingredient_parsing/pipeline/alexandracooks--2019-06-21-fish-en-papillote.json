@@ -98,14 +98,14 @@
     {
       "raw": "½ cup Nicoise or Kalamata olives, pitted, optional",
       "expected": {
-        "item": "Nicoise or Kalamata olives, pitted",
+        "item": "Nicoise or Kalamata olives",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "pitted, optional",
         "category": "Canned Goods"
       }
     },

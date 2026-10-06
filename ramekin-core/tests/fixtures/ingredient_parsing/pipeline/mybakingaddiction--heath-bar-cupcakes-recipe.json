@@ -107,14 +107,14 @@
     {
       "raw": "1 tablespoon instant espresso granules dissolved in 1/2 cup warm water",
       "expected": {
-        "item": "instant espresso granules dissolved in 1/2 cup warm water",
+        "item": "instant espresso granules",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "dissolved in 1/2 cup warm water",
         "section": "For the Cupcakes",
         "category": "Beverages"
       }

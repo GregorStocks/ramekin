@@ -238,14 +238,14 @@
     {
       "raw": "1/2 teaspoon cayenne pepper or 1 small red chili (, sliced)",
       "expected": {
-        "item": "cayenne pepper or 1 small red chili",
+        "item": "cayenne pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "sliced",
+        "note": "or 1 small red chili (sliced)",
         "category": "Spices & Seasonings"
       }
     },

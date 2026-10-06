@@ -47,14 +47,14 @@
     {
       "raw": "1 1/2 teaspoons cornstarch dissolved in 1 tablespoon of water",
       "expected": {
-        "item": "cornstarch dissolved in 1 tablespoon of water",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "dissolved in 1 tablespoon of water",
         "category": "Baking"
       }
     },
@@ -163,14 +163,14 @@
     {
       "raw": "1 pound medium shrimp, shelled and deveined",
       "expected": {
-        "item": "medium shrimp, shelled and deveined",
+        "item": "medium shrimp",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "shelled and deveined",
         "category": "Meat & Seafood"
       }
     },

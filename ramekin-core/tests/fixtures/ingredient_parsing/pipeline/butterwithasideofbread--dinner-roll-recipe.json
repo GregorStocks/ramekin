@@ -103,15 +103,15 @@
     {
       "raw": "1  egg whisked with 1 tsp water (for textured top)",
       "expected": {
-        "item": "egg whisked with 1 tsp water",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "for textured top",
-        "category": "Beverages"
+        "note": "for textured top, whisked with 1 tsp water",
+        "category": "Dairy & Eggs"
       }
     },
     {

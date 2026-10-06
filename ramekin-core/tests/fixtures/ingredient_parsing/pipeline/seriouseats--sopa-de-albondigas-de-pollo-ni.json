@@ -33,14 +33,14 @@
     {
       "raw": "1 medium green bell pepper, stemmed, seeded, and quartered",
       "expected": {
-        "item": "green bell pepper, stemmed, seeded, and quartered",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "stemmed, seeded, and quartered",
         "category": "Produce"
       }
     },
@@ -61,14 +61,14 @@
     {
       "raw": "1 sour orange, split in half (see notes)",
       "expected": {
-        "item": "sour orange, split in half",
+        "item": "sour orange",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "see notes",
+        "note": "see notes, split in half",
         "category": "Produce"
       }
     },
@@ -159,14 +159,14 @@
     {
       "raw": "1/2 medium green bell pepper, stemmed, seeded, and coarsely chopped",
       "expected": {
-        "item": "green bell pepper, stemmed, seeded, and coarsely chopped",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "stemmed, seeded, and coarsely chopped",
         "category": "Produce"
       }
     },

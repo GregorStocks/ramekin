@@ -191,14 +191,14 @@
     {
       "raw": "1/4 cup thinly black olives, Niçoise or oil-cured, pitted or unpitted",
       "expected": {
-        "item": "thinly black olives, Niçoise or oil-cured, pitted or unpitted",
+        "item": "thinly black olives, Niçoise or oil-cured",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pitted or unpitted",
         "category": "Canned Goods"
       }
     },

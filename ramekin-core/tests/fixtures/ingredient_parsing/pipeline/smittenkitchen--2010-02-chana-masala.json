@@ -187,14 +187,14 @@
     {
       "raw": "2 cups tomatoes, chopped small or 1 15-ounce can of whole tomatoes with their juices, chopped small",
       "expected": {
-        "item": "tomatoes, chopped small or 1 15-ounce can of whole tomatoes with their juices",
+        "item": "tomatoes, chopped small",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "chopped small",
+        "note": "or 1 15-ounce can of whole tomatoes with their juices; chopped small",
         "category": "Produce"
       }
     },
@@ -215,14 +215,14 @@
     {
       "raw": "4 cups cooked chickpeas or 2 (15-ounce) cans chickpeas, drained and rinsed",
       "expected": {
-        "item": "cooked chickpeas or 2 cans chickpeas",
+        "item": "cooked chickpeas",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "15-ounce, drained and rinsed",
+        "note": "or 2 cans chickpeas (15-ounce); drained and rinsed",
         "category": "Canned Goods"
       }
     },

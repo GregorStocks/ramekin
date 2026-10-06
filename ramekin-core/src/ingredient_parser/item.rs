@@ -77,13 +77,169 @@ const COMPONENT_TAIL_WORDS: &[&str] = &[
     "stalks", "stems", "tops", "whites", "yolks", "zest",
 ];
 
+/// Split a short label off a line that measures one ingredient after it
+/// ("Egg wash: 1 large egg ...", "Important: 4 teaspoons onion powder").
+pub(super) fn split_label_before_amount(line: &str) -> Option<(&str, &str)> {
+    // List labels ("To serve:", "Optional additions:") and recipe metadata
+    // ("Yield:", "Serves:", "Prep time:") never introduce a single ingredient.
+    const NON_INGREDIENT_LABEL_WORDS: &[&str] = &[
+        "add",
+        "addition",
+        "additions",
+        "ago",
+        "if",
+        "makes",
+        "note",
+        "notes",
+        "optional",
+        "serve",
+        "serves",
+        "serving",
+        "servings",
+        "suggestions",
+        "time",
+        "yield",
+        "yields",
+    ];
+    let (label, rest) = line.split_once(':')?;
+    let label = label.trim();
+    let rest = rest.trim();
+    let label_words: Vec<String> = label
+        .split_whitespace()
+        .map(|word| word.to_lowercase())
+        .collect();
+    if label_words.is_empty()
+        || label_words.len() > 6
+        || !label
+            .chars()
+            .all(|c| c.is_alphabetic() || c == ' ' || c == '-')
+        || label_words
+            .iter()
+            .any(|word| NON_INGREDIENT_LABEL_WORDS.contains(&word.as_str()))
+        || has_generic_head(label)
+    {
+        return None;
+    }
+    let normalized = super::amounts::normalize_word_numbers(rest);
+    super::amounts::extract_amount(&normalized).0?;
+    // "5 parsley sprigs, 1 thyme sprig, and 1 bay leaf" lists several foods.
+    // "1 cup half and half" names one food; its second "half" isn't an amount.
+    let list_text = rest
+        .to_lowercase()
+        .replace("half and half", "half-and-half");
+    let more_amounts = list_text
+        .split([',', ';'])
+        .skip(1)
+        .chain(list_text.split(" and ").skip(1))
+        .any(|part| {
+            let part = part.trim().trim_start_matches("and ").trim_start();
+            let part = super::normalize_unicode(part);
+            let part = super::amounts::normalize_word_numbers(&part);
+            super::amounts::extract_amount(&part).0.is_some()
+        });
+    // "Egg wash: 1 egg plus 1 tablespoon water" adds a second ingredient;
+    // "1 cup plus 2 tablespoons flour" is one compound amount.
+    let plus_ingredient = [" plus ", " + "].iter().any(|separator| {
+        rest.split_once(separator).is_some_and(|(before, after)| {
+            let after = super::amounts::normalize_word_numbers(&super::normalize_unicode(after));
+            super::amounts::extract_amount(&after).0.is_some()
+                && !super::leading_measurement_consumes_all(before)
+        })
+    });
+    if more_amounts || plus_ingredient {
+        return None;
+    }
+    Some((label, rest))
+}
+
+/// Sizes, shapes and portions that, before "or", describe the food named
+/// after it ("thick or 2 slimmer leeks", "1 whole or 2 half chicken breasts").
+const SIZE_WORDS: &[&str] = &[
+    "average",
+    "extra-large",
+    "fat",
+    "full",
+    "giant",
+    "half",
+    "huge",
+    "jumbo",
+    "long",
+    "mini",
+    "regular",
+    "short",
+    "super",
+    "sized",
+    "skinny",
+    "slim",
+    "thick",
+    "thin",
+    "tiny",
+    "whole",
+];
+
+/// Whether the text before "or <count> ..." names the item itself, so the
+/// count alternative can go to the note. Text ending in a size, color or
+/// unit word qualifies the food after "or" instead ("thick or 2 slimmer
+/// leeks", "1/2 a large or 1 small onion", "1 big clove or 2 small cloves
+/// garlic"), as does a capitalized variety ("Turkish or 1/2 California bay
+/// leaf", "Yukon Gold or 3 smallish Russet potatoes").
+pub(super) fn names_item_before_count_alternative(before_or: &str) -> bool {
+    let words: Vec<&str> = before_or
+        .split(|c: char| c.is_whitespace() || c == '/' || c == '-')
+        // "3 “hearts” or 2 full heads of romaine": quotes don't change the word.
+        .map(|word| word.trim_matches(['"', '“', '”', '\'', '‘', '’']))
+        .filter(|word| !word.is_empty())
+        .filter(|word| !["a", "an", "the"].contains(&word.to_lowercase().as_str()))
+        .collect();
+    let Some(last) = words.last() else {
+        return false;
+    };
+    // "12-inch round or 9x13 ...", "1/2 cup or 113g ...", "zest of 1 large
+    // lime or 2 small limes": a size or measurement before "or" means the
+    // alternative replaces part of it, not the whole item.
+    if before_or.chars().any(|c| c.is_ascii_digit()) {
+        return false;
+    }
+    if words
+        .iter()
+        .all(|word| word.chars().next().is_some_and(char::is_uppercase))
+    {
+        return false;
+    }
+    let is_modifier = |word: &str| {
+        let lower = word.to_lowercase();
+        MODIFIER_ONLY_WORDS.contains(&lower.as_str()) || SIZE_WORDS.contains(&lower.as_str())
+    };
+    // "tomatoes, chopped small or 1 can ...": the size word belongs to a
+    // prep note after the item.
+    if is_modifier(last) && !before_or.contains(',') {
+        return false;
+    }
+    // "garlic cloves or 1 large" names garlic; "big clove or 2 small cloves
+    // garlic" names only the unit.
+    let lower_last = last.to_lowercase();
+    let is_unit = ["ear", "ears", "heart", "hearts"].contains(&lower_last.as_str())
+        || super::units::UNITS_RAW
+            .iter()
+            .any(|unit| *unit == lower_last || *unit == lower_last.trim_end_matches('s'));
+    let food_words = if is_unit {
+        &words[..words.len() - 1]
+    } else {
+        &words[..]
+    };
+    !food_words.iter().all(|word| is_modifier(word))
+}
+
 /// A prep word followed by a preposition ("beaten with 1 teaspoon water",
 /// "cut into strips", "packed in oil"): a preparation, never a food name.
 pub(super) fn is_prep_phrase(part: &str) -> bool {
     let lower = part.to_lowercase();
     let words: Vec<&str> = lower.split_whitespace().collect();
-    let is_prep_word =
-        |word: &str| PREP_NOTES.contains(&word) || ACTIVE_PREP_PREFIXES.contains(&word);
+    let is_prep_word = |word: &str| {
+        PREP_NOTES.contains(&word)
+            || ACTIVE_PREP_PREFIXES.contains(&word)
+            || WHOLE_PART_PREP_WORDS.contains(&word)
+    };
     matches!(
         (words.first(), words.get(1)),
         (Some(first), Some(second)) if is_prep_word(first) && PREP_PHRASE_PREPOSITIONS.contains(second)
@@ -129,7 +285,7 @@ fn is_non_item_part(part: &str) -> bool {
     // describes the preceding item rather than naming a new one.
     if words.len() >= 2 {
         if let Some(last) = words.last() {
-            if ACTIVE_PREP_PREFIXES.contains(last) {
+            if ACTIVE_PREP_PREFIXES.contains(last) || WHOLE_PART_PREP_WORDS.contains(last) {
                 return true;
             }
         }

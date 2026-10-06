@@ -5,14 +5,14 @@
     {
       "raw": "1 whole egg or 1 egg yolk",
       "expected": {
-        "item": "whole egg or 1 egg yolk",
+        "item": "whole egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 egg yolk",
         "category": "Dairy & Eggs"
       }
     },

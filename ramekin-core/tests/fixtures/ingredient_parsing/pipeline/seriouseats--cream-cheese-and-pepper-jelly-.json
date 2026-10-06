@@ -5,7 +5,7 @@
     {
       "raw": "1 (8.6 ounce; 245 g) sheet puff pastry from 1 (17.3 ounce) package, thawed",
       "expected": {
-        "item": "sheet puff pastry from 1 package",
+        "item": "sheet puff pastry",
         "measurements": [
           {
             "amount": "1",
@@ -24,7 +24,7 @@
             "unit": "oz"
           }
         ],
-        "note": "thawed",
+        "note": "from 1 package, thawed",
         "category": "Frozen"
       }
     },

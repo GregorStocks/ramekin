@@ -40,7 +40,7 @@
             "unit": "15-ounce cans"
           }
         ],
-        "note": "or 1 pound dried, cooked, drained and rinsed",
+        "note": "drained and rinsed; or 1 pound dried, cooked",
         "category": "Canned Goods"
       }
     },
@@ -89,14 +89,14 @@
     {
       "raw": "2 garlic cloves or 1 large, minced with a teaspoon or two of oregano",
       "expected": {
-        "item": "garlic cloves or 1 large",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "minced with a teaspoon or two of oregano",
+        "note": "or 1 large; minced with a teaspoon or two of oregano",
         "category": "Produce"
       }
     },

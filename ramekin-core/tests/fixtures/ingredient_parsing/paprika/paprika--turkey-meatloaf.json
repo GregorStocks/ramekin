@@ -24,14 +24,14 @@
     {
       "raw": "1 garlic clove, smashed",
       "expected": {
-        "item": "garlic clove, smashed",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "smashed",
         "section": "Meatloaf",
         "category": "Produce"
       }

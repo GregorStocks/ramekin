@@ -61,14 +61,14 @@
     {
       "raw": "1 lb. large shrimp, peeled, deveined and cut into chunks",
       "expected": {
-        "item": "large shrimp, peeled, deveined and cut into chunks",
+        "item": "large shrimp",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "peeled, deveined and cut into chunks",
         "category": "Meat & Seafood"
       }
     },

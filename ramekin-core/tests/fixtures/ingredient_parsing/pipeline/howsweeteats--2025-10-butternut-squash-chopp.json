@@ -84,14 +84,14 @@
     {
       "raw": "1  shallot or ¼ red onion, (diced)",
       "expected": {
-        "item": "shallot or 1/4 red onion",
+        "item": "shallot",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "diced",
+        "note": "or 1/4 red onion (diced)",
         "category": "Produce"
       }
     },

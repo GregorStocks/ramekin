@@ -140,7 +140,7 @@
     {
       "raw": "1 heaped quart strawberries (510 grams), hulled, quartered",
       "expected": {
-        "item": "strawberries, hulled",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "1",
@@ -151,7 +151,7 @@
             "unit": "g"
           }
         ],
-        "note": "quartered",
+        "note": "hulled, quartered",
         "category": "Produce"
       }
     },

@@ -135,14 +135,14 @@
     {
       "raw": "1 10-ounce package frozen chopped spinach, defrosted and wrung free of water",
       "expected": {
-        "item": "frozen chopped spinach, defrosted and wrung free of water",
+        "item": "frozen chopped spinach",
         "measurements": [
           {
             "amount": "1",
             "unit": "10-ounce package"
           }
         ],
-        "note": null,
+        "note": "defrosted and wrung free of water",
         "category": "Frozen"
       }
     }

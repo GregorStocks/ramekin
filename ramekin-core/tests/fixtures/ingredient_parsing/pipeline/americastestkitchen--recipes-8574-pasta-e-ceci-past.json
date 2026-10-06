@@ -103,14 +103,14 @@
     {
       "raw": "1 anchovy fillet , rinsed, patted dry, and minced",
       "expected": {
-        "item": "anchovy fillet, rinsed, patted dry, and minced",
+        "item": "anchovy fillet",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "rinsed, patted dry, and minced",
         "category": "Meat & Seafood"
       }
     },

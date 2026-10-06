@@ -119,14 +119,14 @@
     {
       "raw": "1 cup crushed tomatoes from a can",
       "expected": {
-        "item": "crushed tomatoes from a can",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from a can",
         "category": "Canned Goods"
       }
     },
@@ -156,14 +156,14 @@
     {
       "raw": "1 tablespoon finely chopped rosemary or 6 fresh basil leaves, coarsely chopped",
       "expected": {
-        "item": "finely chopped rosemary or 6 fresh basil leaves",
+        "item": "finely chopped rosemary",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "coarsely chopped",
+        "note": "or 6 fresh basil leaves; coarsely chopped",
         "category": "Produce"
       }
     },

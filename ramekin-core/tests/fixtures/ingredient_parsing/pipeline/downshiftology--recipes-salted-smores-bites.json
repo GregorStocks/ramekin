@@ -201,9 +201,14 @@
     {
       "raw": "Coating: 2 tbsp organic powdered sugar or arrowroot flour",
       "expected": {
-        "item": "Coating: 2 tbsp organic powdered sugar or arrowroot flour",
-        "measurements": [],
-        "note": null,
+        "item": "organic powdered sugar or arrowroot flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "Coating",
         "category": "Baking"
       }
     },

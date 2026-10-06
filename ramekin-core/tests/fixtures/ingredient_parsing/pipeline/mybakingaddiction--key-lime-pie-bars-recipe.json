@@ -19,14 +19,14 @@
     {
       "raw": "1 cup all-purpose flour or 1-to-1 gluten-free baking flour*",
       "expected": {
-        "item": "all-purpose flour or 1-to-1 gluten-free baking flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or 1-to-1 gluten-free baking flour",
         "category": "Baking"
       }
     },

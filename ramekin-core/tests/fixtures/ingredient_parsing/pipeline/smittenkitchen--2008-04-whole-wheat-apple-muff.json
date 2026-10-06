@@ -187,14 +187,14 @@
     {
       "raw": "2 large apples, peeled, cored, and coarsely chopped",
       "expected": {
-        "item": "apples, peeled, cored, and coarsely chopped",
+        "item": "apples",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "peeled, cored, and coarsely chopped",
         "category": "Produce"
       }
     }

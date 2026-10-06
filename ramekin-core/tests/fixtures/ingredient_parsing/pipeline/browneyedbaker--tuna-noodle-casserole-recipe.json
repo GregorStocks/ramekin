@@ -47,14 +47,14 @@
     {
       "raw": "2 slices white sandwich bread, torn into 1-inch pieces",
       "expected": {
-        "item": "white sandwich bread, torn into 1-inch pieces",
+        "item": "white sandwich bread",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "torn into 1-inch pieces",
         "category": "Bakery & Bread"
       }
     },

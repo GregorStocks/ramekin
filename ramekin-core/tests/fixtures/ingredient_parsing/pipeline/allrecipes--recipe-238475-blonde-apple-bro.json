@@ -103,14 +103,14 @@
     {
       "raw": "6 McIntosh apples - peeled, cored, and diced",
       "expected": {
-        "item": "McIntosh apples - peeled, cored, and diced",
+        "item": "McIntosh apples",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled, cored, and diced",
         "category": "Produce"
       }
     }

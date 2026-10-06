@@ -61,14 +61,14 @@
     {
       "raw": "3 pounds (about 8 ears) fresh corn, shucked",
       "expected": {
-        "item": "fresh corn, shucked",
+        "item": "fresh corn",
         "measurements": [
           {
             "amount": "3",
             "unit": "lb"
           }
         ],
-        "note": "about 8 ears",
+        "note": "about 8 ears, shucked",
         "category": "Produce"
       }
     },

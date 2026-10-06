@@ -103,14 +103,14 @@
     {
       "raw": "3 cups fresh cherries or other fruit, pitted",
       "expected": {
-        "item": "fresh cherries or other fruit, pitted",
+        "item": "fresh cherries or other fruit",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pitted",
         "category": "Produce"
       }
     },

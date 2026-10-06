@@ -5,14 +5,14 @@
     {
       "raw": "4 ripe avocados, pitted and mashed",
       "expected": {
-        "item": "ripe avocados, pitted and mashed",
+        "item": "ripe avocados",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pitted and mashed",
         "category": "Produce"
       }
     },

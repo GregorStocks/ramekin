@@ -215,14 +215,14 @@
     {
       "raw": "1 tablespoon cornstarch mixed with 1 tablespoon cold water",
       "expected": {
-        "item": "cornstarch mixed with 1 tablespoon cold water",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "mixed with 1 tablespoon cold water",
         "section": "Jam Filling",
         "category": "Baking"
       }

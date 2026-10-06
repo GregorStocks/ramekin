@@ -140,14 +140,14 @@
     {
       "raw": "4 ounces mozzarella cheese, torn",
       "expected": {
-        "item": "mozzarella cheese, torn",
+        "item": "mozzarella cheese",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "torn",
         "category": "Cheese"
       }
     }

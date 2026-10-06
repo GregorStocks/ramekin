@@ -98,14 +98,14 @@
     {
       "raw": "1 ball burrata, torn",
       "expected": {
-        "item": "ball burrata, torn",
+        "item": "ball burrata",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "torn",
         "category": "Cheese"
       }
     },

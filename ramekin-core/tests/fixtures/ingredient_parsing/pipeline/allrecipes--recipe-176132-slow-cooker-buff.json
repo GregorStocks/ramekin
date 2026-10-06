@@ -69,14 +69,14 @@
     {
       "raw": "6 hoagie rolls, split lengthwise",
       "expected": {
-        "item": "hoagie rolls, split lengthwise",
+        "item": "hoagie rolls",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split lengthwise",
         "category": "Bakery & Bread"
       }
     }

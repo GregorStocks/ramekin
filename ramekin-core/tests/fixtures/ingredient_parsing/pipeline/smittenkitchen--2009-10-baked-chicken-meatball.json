@@ -5,7 +5,7 @@
     {
       "raw": "3 slices Italian or white bread, torn into small bits (1 cup) or 3/4 cup panko-style breadcrumbs",
       "expected": {
-        "item": "Italian or white bread, torn into small bits or 3/4 cup panko-style breadcrumbs",
+        "item": "Italian or white bread",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "torn into small bits or 3/4 cup panko-style breadcrumbs",
         "category": "Bakery & Bread"
       }
     },

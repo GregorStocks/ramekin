@@ -124,7 +124,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or more, divided",
+        "note": "divided; or more",
         "category": "Oils & Vinegars"
       }
     },
@@ -173,14 +173,14 @@
     {
       "raw": "12 oz. white American cheese slices, torn into pieces",
       "expected": {
-        "item": "white American cheese slices, torn into pieces",
+        "item": "white American cheese slices",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "torn into pieces",
         "category": "Cheese"
       }
     },

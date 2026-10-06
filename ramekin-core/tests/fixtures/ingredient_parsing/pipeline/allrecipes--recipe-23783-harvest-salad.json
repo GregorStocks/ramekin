@@ -47,14 +47,14 @@
     {
       "raw": "1 avocado - peeled, pitted and diced",
       "expected": {
-        "item": "avocado - peeled",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "pitted and diced",
+        "note": "peeled, pitted and diced",
         "category": "Produce"
       }
     },

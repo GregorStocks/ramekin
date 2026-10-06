@@ -19,14 +19,14 @@
     {
       "raw": "1 pound peanuts, raw, shelled and skinned",
       "expected": {
-        "item": "peanuts, raw, shelled and skinned",
+        "item": "peanuts",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "raw, shelled and skinned",
         "category": "Nuts & Dried Fruit"
       }
     },

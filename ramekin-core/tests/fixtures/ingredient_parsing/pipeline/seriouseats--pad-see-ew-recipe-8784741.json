@@ -429,7 +429,7 @@
     {
       "raw": "10 cloves garlic (50g), smashed and roughly chopped, divided",
       "expected": {
-        "item": "garlic, smashed and roughly chopped",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "10",
@@ -440,7 +440,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "smashed and roughly chopped, divided",
         "category": "Produce"
       }
     },

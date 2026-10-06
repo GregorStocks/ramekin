@@ -75,14 +75,14 @@
     {
       "raw": "3 Medjool dates, pitted",
       "expected": {
-        "item": "Medjool dates, pitted",
+        "item": "Medjool dates",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pitted",
         "category": "Nuts & Dried Fruit"
       }
     },

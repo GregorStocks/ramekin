@@ -117,7 +117,7 @@
     {
       "raw": "8 whole chicken legs, split, or 8 drumsticks and 8 thighs (about 5 pounds total)",
       "expected": {
-        "item": "whole chicken legs, split",
+        "item": "whole chicken legs",
         "measurements": [
           {
             "amount": "8",
@@ -128,7 +128,7 @@
             "unit": "lb"
           }
         ],
-        "note": "about 5 pounds total; or 8 drumsticks and 8 thighs",
+        "note": "split, or 8 drumsticks and 8 thighs (about 5 pounds total)",
         "category": "Meat & Seafood"
       }
     },

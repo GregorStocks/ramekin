@@ -159,14 +159,14 @@
     {
       "raw": "1 c. fresh mint leaves, torn",
       "expected": {
-        "item": "fresh mint leaves, torn",
+        "item": "fresh mint leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "torn",
         "category": "Produce"
       }
     },
