@@ -150,9 +150,19 @@ fn strip_article(s: &str) -> Option<&str> {
 
 /// Whether what follows the fruit is a note rather than more of the name:
 /// nothing, punctuation (", see notes", "(to taste)"), or an "or" alternative.
-/// "Juice of 2 lime wedges" counts wedges, not limes, so it isn't one of these.
+/// "Juice of 2 lime wedges" counts wedges, not limes, so it isn't one of these,
+/// and neither is a measured addition (", plus 1 tablespoon lemon juice"),
+/// which is another ingredient.
 fn trailer_is_note(trailer: &str) -> bool {
     let trimmed = trailer.trim_start();
+    let words: Vec<&str> = trimmed.split_whitespace().collect();
+    let adds_measured_ingredient = words.windows(2).any(|pair| {
+        pair[0].eq_ignore_ascii_case("plus")
+            && pair[1].chars().next().is_some_and(|c| c.is_ascii_digit())
+    });
+    if adds_measured_ingredient {
+        return false;
+    }
     match trimmed.chars().next() {
         None => true,
         Some(c) if !c.is_alphanumeric() => true,
@@ -311,6 +321,7 @@ mod tests {
             "1 lemon, zest and juice",
             "2 tablespoons lemon juice",
             "zest of 1 lemongrass stalk",
+            "Grated zest of 1 lemon, plus 1 tablespoon lemon juice",
         ] {
             assert_eq!(parse_citrus_part_line(line), None, "{line}");
         }

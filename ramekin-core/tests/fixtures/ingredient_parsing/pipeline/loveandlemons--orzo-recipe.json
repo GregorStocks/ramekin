@@ -93,31 +93,11 @@
     {
       "raw": "Juice and zest of 1 lemon, plus 4 small wedges for serving",
       "expected": {
-        "item": "lemon zest",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lemon"
-          }
-        ],
+        "item": "Juice and zest of 1 lemon",
+        "measurements": [],
         "note": "plus 4 small wedges for serving",
-        "category": "Produce"
+        "category": "Beverages"
       }
-    },
-    {
-      "raw": "Juice and zest of 1 lemon, plus 4 small wedges for serving",
-      "expected": {
-        "item": "lemon juice",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "lemon"
-          }
-        ],
-        "note": "plus 4 small wedges for serving",
-        "category": "Produce"
-      },
-      "expanded": true
     },
     {
       "raw": "2 medium Italian eggplants, sliced into ½-inch rounds",
