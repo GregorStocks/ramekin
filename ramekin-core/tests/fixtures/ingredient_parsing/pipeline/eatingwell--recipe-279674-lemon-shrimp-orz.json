@@ -61,11 +61,31 @@
     {
       "raw": "Zest &amp; juice of 1 lemon",
       "expected": {
-        "item": "Zest & juice of 1 lemon",
-        "measurements": [],
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Zest &amp; juice of 1 lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "0.25 cup finely chopped dill, plus more for garnish",

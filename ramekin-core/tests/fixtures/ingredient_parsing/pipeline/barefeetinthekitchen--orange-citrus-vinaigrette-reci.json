@@ -19,11 +19,15 @@
     {
       "raw": "juice of 1 medium lemon (about 2 1/2 tablespoons)",
       "expected": {
-        "item": "juice of 1 medium lemon",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "medium lemon"
           }
         ],
         "note": "about 2 1/2 tablespoons",
@@ -33,15 +37,19 @@
     {
       "raw": "juice of 1 medium orange (about 5 tablespoons)",
       "expected": {
-        "item": "juice of 1 medium orange",
+        "item": "orange juice",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "medium orange"
           }
         ],
         "note": "about 5 tablespoons",
-        "category": "Produce"
+        "category": "Beverages"
       }
     },
     {

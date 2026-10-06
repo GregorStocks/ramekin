@@ -24,8 +24,13 @@
     {
       "raw": "juice of 2 limes (about 1/4 cup's worth)",
       "expected": {
-        "item": "juice of 2 limes",
-        "measurements": [],
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "limes"
+          }
+        ],
         "note": "about 1/4 cup's worth",
         "section": "Marinade Ingredients",
         "category": "Produce"

@@ -135,9 +135,14 @@
     {
       "raw": "Grated&nbsp;zest of 1 orange",
       "expected": {
-        "item": "Grated zest of 1 orange",
-        "measurements": [],
-        "note": null,
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "orange"
+          }
+        ],
+        "note": "grated",
         "category": "Produce"
       }
     },
@@ -200,9 +205,14 @@
     {
       "raw": "Grated zest of 1 lemon",
       "expected": {
-        "item": "Grated zest of 1 lemon",
-        "measurements": [],
-        "note": null,
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": "grated",
         "category": "Produce"
       }
     },

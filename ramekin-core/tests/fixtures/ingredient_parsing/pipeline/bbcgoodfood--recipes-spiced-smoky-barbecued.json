@@ -19,11 +19,31 @@
     {
       "raw": "grated zest and juice of 1  lemon",
       "expected": {
-        "item": "grated zest and juice of 1  lemon",
-        "measurements": [],
-        "note": null,
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": "grated",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "grated zest and juice of 1  lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "2 tbsp Kashmiri  spice mix, or good-quality curry powder",

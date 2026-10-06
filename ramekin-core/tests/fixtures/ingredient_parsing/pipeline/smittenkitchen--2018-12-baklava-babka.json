@@ -191,9 +191,14 @@
     {
       "raw": "Finely grated zest of half a lemon or orange",
       "expected": {
-        "item": "Finely grated zest of half a lemon or orange",
-        "measurements": [],
-        "note": null,
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
+        "note": "finely grated, or orange",
         "category": "Produce"
       }
     },

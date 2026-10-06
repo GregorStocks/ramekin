@@ -173,11 +173,31 @@
     {
       "raw": "Finely grated zest and juice of 1/2 lime",
       "expected": {
-        "item": "Finely grated zest and juice of 1/2 lime",
-        "measurements": [],
-        "note": null,
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lime"
+          }
+        ],
+        "note": "finely grated",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Finely grated zest and juice of 1/2 lime",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lime"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "1 tablespoon fish sauce",

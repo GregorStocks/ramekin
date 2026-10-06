@@ -29,6 +29,70 @@
         "note": null,
         "category": "Beverages"
       }
+    },
+    {
+      "name": "juice_of_half_a_lemon",
+      "raw": "Juice of half a lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "grated_zest_of_one_lemon",
+      "raw": "Finely grated zest of one lemon",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": "finely grated",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "zest_of_sized_oranges",
+      "raw": "Zest of 2 large oranges, or more to taste",
+      "expected": {
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large oranges"
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "juice_of_lime_with_volume",
+      "raw": "Juice of half a lime (2 to 3 tablespoons)",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "lime"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
     }
   ]
 }

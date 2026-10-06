@@ -82,8 +82,13 @@
       "section": null
     },
     {
-      "item": "Zest of 1 lemon",
-      "measurements": [],
+      "item": "lemon zest",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lemon"
+        }
+      ],
       "note": null,
       "raw": "Zest of 1 lemon",
       "section": null

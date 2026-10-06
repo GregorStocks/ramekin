@@ -62,9 +62,14 @@
     {
       "raw": "Grated zest of 1 small lemon or half an orange (our preference)",
       "expected": {
-        "item": "Grated zest of 1 small lemon or half an orange",
-        "measurements": [],
-        "note": "our preference",
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small lemon"
+          }
+        ],
+        "note": "grated, or half an orange, our preference",
         "section": "Dough",
         "category": "Produce"
       }

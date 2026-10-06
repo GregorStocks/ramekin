@@ -47,20 +47,60 @@
     {
       "raw": "Grated zest and juice of 1 orange",
       "expected": {
-        "item": "Grated zest and juice of 1 orange",
-        "measurements": [],
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "orange"
+          }
+        ],
+        "note": "grated",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Grated zest and juice of 1 orange",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "orange"
+          }
+        ],
         "note": null,
+        "category": "Beverages"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "Grated zest and juice of 1 lemon",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": "grated",
         "category": "Produce"
       }
     },
     {
       "raw": "Grated zest and juice of 1 lemon",
       "expected": {
-        "item": "Grated zest and juice of 1 lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
-      }
+      },
+      "expanded": true
     }
   ]
 }
