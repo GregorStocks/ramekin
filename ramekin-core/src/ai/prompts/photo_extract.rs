@@ -15,6 +15,7 @@ Extract the complete recipe from the photos and return it as JSON with this exac
   "prep_time": "Prep time if present (optional, null if not present)",
   "cook_time": "Cook time if present (optional, null if not present)",
   "total_time": "Total time if present (optional, null if not present)",
+  "nutritional_info": "Nutrition facts exactly as printed, such as a per-serving panel (optional, null if not present)",
   "notes": "Any notes, tips, or variations mentioned (optional, null if not present)"
 }
 
@@ -23,6 +24,7 @@ Rules:
 - For ingredients, put each ingredient on its own line separated by newlines
 - For instructions, preserve the original step numbering and paragraph structure
 - If information is not present in the photos, use null for that field
+- Never estimate or calculate nutrition; only copy what the page prints
 - Return ONLY the JSON, no other text"#
         .to_string()
 }

@@ -22,6 +22,8 @@ struct PhotoExtractResponse {
     #[serde(default, deserialize_with = "text_or_number")]
     total_time: Option<String>,
     #[serde(default)]
+    nutritional_info: Option<String>,
+    #[serde(default)]
     notes: Option<String>,
 }
 
@@ -63,7 +65,7 @@ pub async fn extract_recipe_from_photos(
         total_time: extracted.total_time,
         rating: None,
         difficulty: None,
-        nutritional_info: None,
+        nutritional_info: extracted.nutritional_info,
         notes: extracted.notes,
         categories: None,
         footnotes: None,
@@ -74,4 +76,27 @@ pub async fn extract_recipe_from_photos(
         cached: response.cached,
         usage: response.usage,
     })
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn nutrition_panel_is_read_when_present() {
+        let with: PhotoExtractResponse = serde_json::from_str(
+            r#"{"title":"Doughnuts","ingredients":"1 cup flour","instructions":"Fry.",
+            "nutritional_info":"Per serving: Cal 410 • Total Fat 10g"}"#,
+        )
+        .unwrap();
+        assert_eq!(
+            with.nutritional_info.as_deref(),
+            Some("Per serving: Cal 410 • Total Fat 10g")
+        );
+        let without: PhotoExtractResponse = serde_json::from_str(
+            r#"{"title":"Doughnuts","ingredients":"1 cup flour","instructions":"Fry."}"#,
+        )
+        .unwrap();
+        assert_eq!(without.nutritional_info, None);
+    }
 }

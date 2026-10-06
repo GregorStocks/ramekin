@@ -40,8 +40,7 @@ pub struct Expected {
     also_allowed: String,
     /// Source text that may appear in an answer's description or notes but
     /// needn't: a personal aside around a pasted recipe (unlike the
-    /// boilerplate beside it), or a photo's nutrition panel, which photo
-    /// import has no field for.
+    /// boilerplate beside it).
     #[serde(default, skip_serializing_if = "String::is_empty")]
     incidental: String,
     /// The page has prose not transcribed here (a long headnote), so an
@@ -55,6 +54,10 @@ pub struct Expected {
     prep_time: Option<String>,
     cook_time: Option<String>,
     total_time: Option<String>,
+    /// The nutrition the source prints (a per-serving panel), which an
+    /// answer must keep in its nutrition field with the same numbers.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    nutritional_info: Option<String>,
 }
 
 impl Expected {
@@ -68,6 +71,7 @@ impl Expected {
         ];
         parts.extend(self.ingredients.iter().cloned());
         parts.extend(self.servings.clone());
+        parts.extend(self.nutritional_info.clone());
         // Labelled as the page labels them, so they count as stated times.
         for (label, time) in [
             ("Prep time", &self.prep_time),
@@ -232,6 +236,7 @@ pub fn write_golden(root: &Path) -> Result<Vec<TextCase>> {
                     prep_time: None,
                     cook_time: None,
                     total_time: None,
+                    nutritional_info: None,
                 }),
             }
         })
@@ -392,7 +397,7 @@ fn cue(word: &str) -> Option<Quantity> {
     } else if word.starts_with("hour") || matches!(word, "hr" | "hrs") {
         Some(Quantity::Hours)
     } else if [
-        "cal", "kcal", "fat", "protein", "carb", "sodium", "sugar", "fiber",
+        "cal", "kcal", "fat", "chol", "protein", "carb", "sodium", "sugar", "fiber",
     ]
     .iter()
     .any(|p| word.starts_with(p))
@@ -504,7 +509,8 @@ struct Score {
     instructions_recall: f64,
     instructions_precision: f64,
     invented: Vec<&'static str>,
-    /// Servings and time fields the source states, and those the answer kept.
+    /// Servings, time and nutrition fields the source states, and those the
+    /// answer kept.
     metadata_expected: usize,
     metadata_kept: usize,
     /// The share of the page's other text kept, if it has any.
@@ -661,6 +667,12 @@ fn score(answer: &RawRecipe, expected: &Expected, source: &str) -> Score {
             .total_time
             .as_ref()
             .map(|t| answered_times.iter().any(|a| has_numbers(a, t))),
+        // In its field: a panel copied into the notes isn't nutrition the
+        // recipe has.
+        expected
+            .nutritional_info
+            .as_ref()
+            .map(|nutrition| has_numbers(&answer.nutritional_info, nutrition)),
     ]
     .into_iter()
     .flatten()
@@ -808,7 +820,7 @@ impl Totals {
             }
             if score.metadata_kept < score.metadata_expected {
                 parts.push(format!(
-                    "kept {} of {} stated servings and times",
+                    "kept {} of {} stated servings, times and nutrition",
                     score.metadata_kept, score.metadata_expected
                 ));
             }
@@ -853,7 +865,7 @@ pub const TEXT_COLUMNS: &[&str] = &[
     "Instructions recall",
     "Instructions precision",
     "Other text kept",
-    "Servings and times kept",
+    "Servings, times and nutrition kept",
     "Invented fields",
     "Unsourced note words",
     "Invalid",
@@ -1109,6 +1121,7 @@ mod tests {
             prep_time: None,
             cook_time: None,
             total_time: None,
+            nutritional_info: None,
         }
     }
 
@@ -1172,6 +1185,50 @@ mod tests {
         );
         // The servings are kept; the chilling time isn't.
         assert_eq!((score.metadata_kept, score.metadata_expected), (1, 2));
+    }
+
+    #[test]
+    fn a_printed_panel_is_kept_only_in_its_field() {
+        let panel = "Per serving: Cal 410 • Total Fat 10g • Protein 7g";
+        let expected = Expected {
+            nutritional_info: Some(panel.into()),
+            ..expected()
+        };
+        let source = format!("Serves 4. {panel}");
+        let mut answer = recipe("1 cup rice\n1 bay leaf", "Simmer the rice.");
+        answer.servings = Some("Serves 4".into());
+        answer.nutritional_info = Some("Cal 410, Total Fat 10g, Protein 7g".into());
+        let kept = score(&answer, &expected, &source);
+        assert_eq!((kept.metadata_kept, kept.metadata_expected), (2, 2));
+        assert!(kept.invented.is_empty());
+
+        answer.nutritional_info = None;
+        answer.notes = Some(panel.into());
+        let in_notes = score(&answer, &expected, &source);
+        assert_eq!((in_notes.metadata_kept, in_notes.metadata_expected), (1, 2));
+
+        answer.notes = None;
+        answer.nutritional_info = Some("Cal 410 • Total Fat 18g • Protein 7g".into());
+        let misread = score(&answer, &expected, &source);
+        assert_eq!((misread.metadata_kept, misread.metadata_expected), (1, 2));
+        assert_eq!(misread.invented, vec!["nutritional_info"]);
+    }
+
+    #[test]
+    fn a_full_panel_copied_as_printed_is_stated() {
+        let panel = "Per serving: Cal 410 • Total Fat 10g • Sat Fat 4g • Chol 55mg • \
+            Sodium 380mg • Total Carbs 73g • Dietary Fiber 0g • Total Sugar 41g • \
+            Added Sugar 28g • Protein 7g";
+        let expected = Expected {
+            servings: Some("Serves 4".into()),
+            nutritional_info: Some(panel.into()),
+            ..expected()
+        };
+        let mut answer = recipe("1 cup rice\n1 bay leaf", "Simmer the rice.");
+        answer.nutritional_info = Some(panel.to_uppercase());
+        let score = score(&answer, &expected, &expected.source());
+        assert_eq!((score.metadata_kept, score.metadata_expected), (2, 2));
+        assert!(score.invented.is_empty(), "{:?}", score.invented);
     }
 
     #[test]
