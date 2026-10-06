@@ -38,6 +38,7 @@ class TestPhotoImport:
         assert recipe.title == "Photo Imported Recipe"
         assert len(recipe.ingredients) > 0
         assert len(recipe.instructions) > 0
+        assert recipe.nutritional_info == "Per serving: Cal 410 • Total Fat 10g"
         assert photo_id in recipe.photo_ids
 
     def test_import_with_empty_photo_list_fails(self, authed_api_client):

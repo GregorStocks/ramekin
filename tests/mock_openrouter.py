@@ -450,6 +450,7 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 "prep_time": "10 minutes",
                 "cook_time": "30 minutes",
                 "total_time": "40 minutes",
+                "nutritional_info": "Per serving: Cal 410 • Total Fat 10g",
                 "notes": None,
             }
         )
