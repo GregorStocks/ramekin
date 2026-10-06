@@ -373,7 +373,7 @@ jobs:
           kernel='eventMessage CONTAINS[c] "AMFI" OR eventMessage CONTAINS[c] "codesign"'
           kernel="$kernel OR eventMessage CONTAINS[c] \"xpcproxy_sim\""
           predicate="$predicate OR (process == \"kernel\" AND ($kernel))"
-          log show --last 40m --style compact --predicate "$predicate" \
+          log show --last 40m --style compact --info --debug --predicate "$predicate" \
             > logs/host-exec.log 2>&1 || true
           gzip -f logs/host-exec.log
 
