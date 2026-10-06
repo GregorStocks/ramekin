@@ -382,14 +382,16 @@ impl Quantity {
     }
 }
 
-/// What a nutrition panel's words start with, one per nutrient: "Cal",
-/// "Calories" and "kcal" all count calories.
+/// What a nutrition panel's words start with, one per nutrient. Calcium
+/// comes before calories, which "Cal" would otherwise also match.
 const NUTRIENTS: [&str; 9] = [
-    "cal", "kcal", "fat", "chol", "protein", "carb", "sodium", "sugar", "fiber",
+    "calcium", "cal", "fat", "chol", "protein", "carb", "sodium", "sugar", "fiber",
 ];
 
-/// The nutrient a word names, as its `NUTRIENTS` prefix.
+/// The nutrient a word names, as its `NUTRIENTS` prefix: "Cal",
+/// "Calories" and "kcal" all name calories.
 fn nutrient(word: &str) -> Option<&'static str> {
+    let word = if word == "kcal" { "cal" } else { word };
     NUTRIENTS.iter().find(|p| word.starts_with(**p)).copied()
 }
 
@@ -1276,6 +1278,10 @@ mod tests {
         assert_eq!(
             nutrients("410 calories, 7 g protein, added sugars 28g"),
             vec!["cal 410", "protein 7", "add sugar 28"]
+        );
+        assert_eq!(
+            nutrients("410 kcal • Calcium 120mg"),
+            vec!["cal 410", "calcium 120"]
         );
     }
 
