@@ -91,7 +91,7 @@ pub(super) fn parse_citrus_part_line(raw: &str) -> Option<Vec<ParsedIngredient>>
     Some(ingredients)
 }
 
-/// One part's ingredient. The trailer (", or more to taste", " (2 to 3
+/// One part's ingredient; a measurement in the trailer leads. The trailer (", or more to taste", " (2 to 3
 /// tablespoons)", " or lime (about 2 tablespoons)") is parsed after the item
 /// so its measurements and notes come out the usual way; words left after
 /// the item ("or lime") join the note. None if the parse cuts into the item.
@@ -108,8 +108,10 @@ fn part_ingredient(
     if !trailer.is_empty() {
         let parsed = parse_ingredient(&format!("{item}{trailer}"));
         let leftover = parsed.item.strip_prefix(item)?;
+        // An explicit volume ("(about 3 tablespoons)") is the author's
+        // measure, so it comes first and the fruit count is the alternative.
         if keep_trailer_measurements {
-            measurements.extend(parsed.measurements);
+            measurements.splice(0..0, parsed.measurements);
         }
         notes.extend(
             [
@@ -245,7 +247,7 @@ mod tests {
     fn trailing_measurement_is_an_alternative() {
         let parsed = parse_one("Juice of half a lime (2 to 3 tablespoons)");
         assert_eq!(parsed.item, "lime juice");
-        assert_eq!(parsed.measurements[0], measurement("1/2", "lime"));
+        assert_eq!(parsed.measurements[1], measurement("1/2", "lime"));
         assert_eq!(parsed.measurements.len(), 2);
     }
 
@@ -254,7 +256,7 @@ mod tests {
         let parsed =
             parse_one("Juice of 1 lemon or lime (about 2 tablespoons), plus more to taste");
         assert_eq!(parsed.item, "lemon juice");
-        assert_eq!(parsed.measurements[0], measurement("1", "lemon"));
+        assert_eq!(parsed.measurements[1], measurement("1", "lemon"));
         assert_eq!(parsed.measurements.len(), 2, "{:?}", parsed.measurements);
         assert_eq!(
             parsed.note.as_deref(),
