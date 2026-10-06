@@ -66,6 +66,16 @@ pub(super) fn parse_citrus_part_line(raw: &str) -> Option<Vec<ParsedIngredient>>
         let prep = (part == "zest" || !has_zest)
             .then_some(prep.as_str())
             .filter(|prep| !prep.is_empty());
+        // On a "zest and juice" line, a trailer naming one part ("(zest
+        // reserved for serving)") is that part's, and a volume ("(about 2
+        // tablespoons)") measures the juice.
+        let both = has_zest && has_juice;
+        let trailer = if both && names_only_other_part(trailer, part) {
+            ""
+        } else {
+            trailer
+        };
+        let keep_trailer_measurements = !both || part == "juice";
         ingredients.push(part_ingredient(
             &format!("{fruit} {part}"),
             Measurement {
@@ -74,6 +84,7 @@ pub(super) fn parse_citrus_part_line(raw: &str) -> Option<Vec<ParsedIngredient>>
             },
             prep,
             trailer,
+            keep_trailer_measurements,
             raw,
         )?);
     }
@@ -89,6 +100,7 @@ fn part_ingredient(
     measurement: Measurement,
     prep: Option<&str>,
     trailer: &str,
+    keep_trailer_measurements: bool,
     raw: &str,
 ) -> Option<ParsedIngredient> {
     let mut measurements = vec![measurement];
@@ -96,7 +108,9 @@ fn part_ingredient(
     if !trailer.is_empty() {
         let parsed = parse_ingredient(&format!("{item}{trailer}"));
         let leftover = parsed.item.strip_prefix(item)?;
-        measurements.extend(parsed.measurements);
+        if keep_trailer_measurements {
+            measurements.extend(parsed.measurements);
+        }
         notes.extend(
             [
                 leftover.trim_start_matches(|c: char| c == ',' || c.is_whitespace()),
@@ -116,6 +130,13 @@ fn part_ingredient(
         raw: Some(raw.to_string()),
         section: None,
     })
+}
+
+/// Whether the trailer names the other part ("zest" or "juice") and not this one.
+fn names_only_other_part(trailer: &str, part: &str) -> bool {
+    let lower = trailer.to_lowercase();
+    let other = if part == "zest" { "juice" } else { "zest" };
+    lower.contains(other) && !lower.contains(part)
 }
 
 /// Text after "a"/"an" ("half a lemon" is "1/2 a lemon" by now).
@@ -257,6 +278,25 @@ mod tests {
         assert_eq!(parsed[0].item, "lemon zest");
         assert_eq!(parsed[1].item, "lemon juice");
         assert_eq!(parsed[1].measurements, vec![measurement("1", "lemon")]);
+    }
+
+    #[test]
+    fn zest_and_juice_trailer_goes_to_its_part() {
+        let parsed =
+            parse_citrus_part_line("Zest and juice of 2 lemons (zest reserved for serving)")
+                .unwrap();
+        assert_eq!(parsed[0].note.as_deref(), Some("zest reserved for serving"));
+        assert_eq!(parsed[1].note, None);
+
+        let parsed =
+            parse_citrus_part_line("Zest and juice of 1 lime (about 2 tablespoons)").unwrap();
+        assert_eq!(parsed[0].measurements, vec![measurement("1", "lime")]);
+        assert_eq!(parsed[1].measurements.len(), 2);
+
+        let parsed =
+            parse_citrus_part_line("Zest and juice of 1 lime (plus more for serving)").unwrap();
+        assert_eq!(parsed[0].note, parsed[1].note);
+        assert!(parsed[0].note.is_some());
     }
 
     #[test]
