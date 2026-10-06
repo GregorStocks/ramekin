@@ -135,8 +135,12 @@
     {
       "raw": "Juice of 1/2 lemon (about 3 tablespoons)",
       "expected": {
-        "item": "Juice of 1/2 lemon",
+        "item": "lemon juice",
         "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          },
           {
             "amount": "3",
             "unit": "tbsp"

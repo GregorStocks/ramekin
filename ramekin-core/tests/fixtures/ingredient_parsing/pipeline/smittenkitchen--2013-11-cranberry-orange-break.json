@@ -87,8 +87,13 @@
     {
       "raw": "Zest of 1 orange, finely grated (to be used in dough and filling, below)",
       "expected": {
-        "item": "Zest of 1 orange",
-        "measurements": [],
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "orange"
+          }
+        ],
         "note": "to be used in dough and filling, below, finely grated",
         "category": "Produce"
       }

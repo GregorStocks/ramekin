@@ -140,11 +140,31 @@
     {
       "raw": "juice and zest of 1 lemon",
       "expected": {
-        "item": "juice and zest of 1 lemon",
-        "measurements": [],
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
-        "category": "Beverages"
+        "category": "Produce"
       }
+    },
+    {
+      "raw": "juice and zest of 1 lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "1 teaspoon dried oregano",

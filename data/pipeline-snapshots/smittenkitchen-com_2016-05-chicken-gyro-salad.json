@@ -21,8 +21,25 @@
       "section": "Chicken"
     },
     {
-      "item": "Zest and juice of 1 lemon",
-      "measurements": [],
+      "item": "lemon zest",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lemon"
+        }
+      ],
+      "note": null,
+      "raw": "Zest and juice of 1 lemon",
+      "section": "Chicken"
+    },
+    {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lemon"
+        }
+      ],
       "note": null,
       "raw": "Zest and juice of 1 lemon",
       "section": "Chicken"

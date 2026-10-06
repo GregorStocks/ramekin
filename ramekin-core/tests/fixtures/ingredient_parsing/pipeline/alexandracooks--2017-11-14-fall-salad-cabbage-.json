@@ -33,8 +33,13 @@
     {
       "raw": "juice of one orange",
       "expected": {
-        "item": "juice of one orange",
-        "measurements": [],
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "orange"
+          }
+        ],
         "note": null,
         "category": "Beverages"
       }

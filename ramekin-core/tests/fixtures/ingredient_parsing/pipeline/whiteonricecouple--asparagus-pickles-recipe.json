@@ -33,11 +33,31 @@
     {
       "raw": "Zest &amp;amp; Juice of 1 Lemon",
       "expected": {
-        "item": "Zest & Juice of 1 Lemon",
-        "measurements": [],
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Zest &amp;amp; Juice of 1 Lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "4 sprigs fresh Tarragon or Dill",

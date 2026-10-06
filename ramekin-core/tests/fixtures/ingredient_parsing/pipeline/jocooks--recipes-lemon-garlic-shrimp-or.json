@@ -145,8 +145,13 @@
     {
       "raw": "Zest of 1 lemon",
       "expected": {
-        "item": "Zest of 1 lemon",
-        "measurements": [],
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -154,8 +159,12 @@
     {
       "raw": "Juice of 1 lemon (about 3 tablespoons)",
       "expected": {
-        "item": "Juice of 1 lemon",
+        "item": "lemon juice",
         "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          },
           {
             "amount": "3",
             "unit": "tbsp"

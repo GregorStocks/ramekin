@@ -135,8 +135,13 @@
     {
       "raw": "Juice of 1 to 2 lemons (I always use 2)",
       "expected": {
-        "item": "Juice of 1 to 2 lemons",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "lemons"
+          }
+        ],
         "note": "I always use 2",
         "category": "Produce"
       }

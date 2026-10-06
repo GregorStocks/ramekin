@@ -39,8 +39,13 @@
     {
       "raw": "zest of 3 medium limes",
       "expected": {
-        "item": "zest of 3 medium limes",
-        "measurements": [],
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium limes"
+          }
+        ],
         "note": null,
         "section": "For the Cake",
         "category": "Produce"
@@ -203,8 +208,13 @@
     {
       "raw": "zest of 1 medium lime",
       "expected": {
-        "item": "zest of 1 medium lime",
-        "measurements": [],
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium lime"
+          }
+        ],
         "note": null,
         "section": "For the Lime Glaze",
         "category": "Produce"

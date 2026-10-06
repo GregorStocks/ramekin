@@ -75,8 +75,13 @@
     {
       "raw": "Zest of 1 large lemon",
       "expected": {
-        "item": "Zest of 1 large lemon",
-        "measurements": [],
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

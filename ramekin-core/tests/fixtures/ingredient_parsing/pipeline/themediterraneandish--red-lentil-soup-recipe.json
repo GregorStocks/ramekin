@@ -177,8 +177,13 @@
     {
       "raw": "Zest of 1 lemon",
       "expected": {
-        "item": "Zest of 1 lemon",
-        "measurements": [],
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -186,8 +191,13 @@
     {
       "raw": "Juice of 2 lemons",
       "expected": {
-        "item": "Juice of 2 lemons",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lemons"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

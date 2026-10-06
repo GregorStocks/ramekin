@@ -59,8 +59,13 @@
     {
       "raw": "Juice of one lemon",
       "expected": {
-        "item": "Juice of one lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

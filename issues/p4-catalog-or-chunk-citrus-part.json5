@@ -1,0 +1,15 @@
+{
+  "title": "Catalog: resolve a \"juice of half a lemon\" alternative inside an \"or\" line",
+  "description": "\"1/2 teaspoon amchur (dried mango) powder or juice of half a lemon\" (smittenkitchen cauliflower and tomato masala, pipeline and paprika fixtures) used to get a density through its \"or\" chunk, because curated.json had a per-line alias \"juice of half a lemon\" -> lemon juice. \
+The parser now reads whole \"zest/juice of <count> <citrus>\" lines itself (ingredient_parser/citrus.rs), so that alias was removed as dead, and the chunk no longer resolves; data/density-gap-report.txt gained the line. \
+Fix by letting the catalog's or-chunk resolution parse a chunk with the citrus parser (item \"lemon juice\"), or by aliasing amchur powder. One line in the corpora, half a teaspoon, so low priority.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "catalog",
+    "ingredient-parser",
+  ],
+  "created_at": "2026-10-05T23:00:00-07:00",
+  "updated_at": "2026-10-05T23:00:00-07:00",
+}

@@ -11,6 +11,7 @@ use crate::metric_weights::parse_amount;
 use crate::text::decode_html_entities;
 
 mod amounts;
+mod citrus;
 mod fractions;
 mod item;
 mod parentheticals;
@@ -18,6 +19,7 @@ mod units;
 
 pub(crate) use amounts::normalize_fraction_to_decimal;
 use amounts::*;
+use citrus::parse_citrus_part_line;
 use item::*;
 use parentheticals::*;
 use units::*;
@@ -311,6 +313,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             raw: Some(raw.to_string()),
             section: None,
         };
+    }
+
+    // "Juice of 1 lemon": a line naming two parts ("zest and juice of ...")
+    // only splits in parse_ingredients.
+    if let Some(mut parts) = parse_citrus_part_line(raw).filter(|parts| parts.len() == 1) {
+        return parts.remove(0);
     }
 
     // Decode HTML entities and normalize unicode before processing
@@ -1477,6 +1485,17 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
         {
             peer_section_anchor = Some(section_name.clone());
             current_section = Some(section_name);
+            continue;
+        }
+
+        // "Zest and juice of 1 lemon" names two ingredients; each keeps the
+        // original line as its raw text.
+        if let Some(parts) = parse_citrus_part_line(trimmed) {
+            for mut ingredient in parts {
+                ingredient.raw = Some(original.clone());
+                ingredient.section = current_section.clone();
+                results.push(ingredient);
+            }
             continue;
         }
 

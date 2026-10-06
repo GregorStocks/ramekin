@@ -179,11 +179,31 @@
     {
       "raw": "Zest and juice of 2 lemons (zest reserved for serving)",
       "expected": {
-        "item": "Zest and juice of 2 lemons",
-        "measurements": [],
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lemons"
+          }
+        ],
         "note": "zest reserved for serving",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Zest and juice of 2 lemons (zest reserved for serving)",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lemons"
+          }
+        ],
+        "note": "zest reserved for serving",
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "Cooked jasmine rice, to taste (see Note)",

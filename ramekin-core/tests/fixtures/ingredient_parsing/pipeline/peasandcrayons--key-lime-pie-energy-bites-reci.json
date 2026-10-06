@@ -61,8 +61,13 @@
     {
       "raw": "zest of 1 lime",
       "expected": {
-        "item": "zest of 1 lime",
-        "measurements": [],
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lime"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

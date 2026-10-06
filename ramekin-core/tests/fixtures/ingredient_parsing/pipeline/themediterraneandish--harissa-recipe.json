@@ -140,8 +140,13 @@
     {
       "raw": "Juice of 1 large lemon, (2 tbsp fresh lemon juice)",
       "expected": {
-        "item": "Juice of 1 large lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large lemon"
+          }
+        ],
         "note": "2 tbsp fresh lemon juice",
         "category": "Produce"
       }

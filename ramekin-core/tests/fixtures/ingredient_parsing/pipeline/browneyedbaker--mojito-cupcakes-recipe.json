@@ -117,11 +117,31 @@
     {
       "raw": "Zest and juice of 1½ limes",
       "expected": {
-        "item": "Zest and juice of 1 1/2 limes",
-        "measurements": [],
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "limes"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Zest and juice of 1½ limes",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "limes"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "2 tablespoons white rum",

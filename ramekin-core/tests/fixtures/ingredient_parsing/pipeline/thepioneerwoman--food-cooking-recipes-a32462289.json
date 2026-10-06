@@ -140,9 +140,14 @@
     {
       "raw": "Grated zest of 1 lemon, plus 1 tablespoon lemon juice",
       "expected": {
-        "item": "Grated zest of 1 lemon",
-        "measurements": [],
-        "note": "plus 1 tablespoon lemon juice",
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": "grated, plus 1 tablespoon lemon juice",
         "category": "Produce"
       }
     },

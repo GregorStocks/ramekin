@@ -27,8 +27,12 @@
     {
       "raw": "juice of 3 large   lemons (about 200ml/7fl oz)",
       "expected": {
-        "item": "juice of 3 large   lemons",
+        "item": "lemon juice",
         "measurements": [
+          {
+            "amount": "3",
+            "unit": "large lemons"
+          },
           {
             "amount": "200",
             "unit": "ml"
