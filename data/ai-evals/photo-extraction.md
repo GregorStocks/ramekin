@@ -9,7 +9,7 @@ Golden set: `data/ai-evals/golden/photo-extraction.json` (5 cases), one call per
 | google/gemini-2.5-flash | 100% | 96% | 4% | 100% | 100% | 80% | 75% | 4 | 0% | 20% | 1 | 0 | $0.0123 |
 | google/gemini-3.8-flash | 100% | 100% | 0% | 100% | 100% | 95% | 90% | 2 | 1% | 0% | 0 | 0 | $0.0427 |
 | openai/gpt-6-luna | 80% | 95% | 4% | 100% | 100% | 89% | 100% | 0 | 0% | 0% | 0 | 0 | $0.0113 |
-| deepseek/deepseek-v4.1-flash | 100% | 78% | 12% | 99% | 99% | 75% | 78% | 1 | 0% | 20% | 1 | 0 | $0.0174 |
+| deepseek/deepseek-v4.1-flash | 100% | 82% | 10% | 99% | 99% | 79% | 80% | 1 | 0% | 0% | 0 | 0 | $0.0246 |
 | anthropic/claude-sonnet-5.5 | 100% | 100% | 0% | 100% | 100% | 90% | 100% | 1 | 2% | 0% | 0 | 0 | $0.1081 |
 | openai/gpt-6.1-sol | 100% | 100% | 0% | 100% | 100% | 85% | 100% | 1 | 1% | 0% | 0 | 0 | $0.1871 |
 | anthropic/claude-opus-5.5 | 100% | 100% | 0% | 100% | 100% | 95% | 100% | 1 | 1% | 0% | 0 | 0 | $0.2406 |
@@ -21,10 +21,6 @@ The first few items each model answered invalidly even alone.
 ### google/gemini-2.5-flash
 
 - Failed to parse response: Failed to parse photo_extract response: invalid type: map, expected a string at line 2 column 2; content: "[\n  {\n    \"title\": \"KALBI BURGERS WITH SSAMJANG MAYONNAISE\",\n    \"description\": \"We've brought the robust, savory-sweet flavors of Korean barbecued beef shor
-
-### deepseek/deepseek-v4.1-flash
-
-- Failed to parse response: Failed to parse photo_extract response: missing field `title` at line 1 column 115; content: "{\". The caption from the image? Actually, the extracted text from the photo: \": \"The photo. Let's produce. Let's \"}"
 
 ## Worst misses
 
@@ -52,6 +48,7 @@ The first few items each model answered invalidly even alone.
 - Kalbi Burgers with Ssamjang Mayonnaise: missing ["1 peeled red onion", "3 tablespoons soy sauce", "4 minced garlic cloves"]; extra ["1. slice four 1/4-inch-thick rounds from 1 peeled red onion and set aside for garnish. grate remaining onion into large bowl and drain off any liquid. stir in 3 tablespoons soy sauce, 4 minced garlic cloves, and 4 teaspoons sugar until sugar is fully dissolved.", "2. add 1 1/2 pounds 85 percent lean ground beef to onion mixture and mix gently until thoroughly combined. gently shape into four 3/4-inch-thick patties, about 4 1/2 inches in diameter. using your thumb, make 1-inch-wide by 1/2-inch-deep depression in center of each patty.", "3. heat 2 teaspoons vegetable oil in 12-inch nonstick skillet over medium-high heat until just smoking. add patties and cook until well browned and meat registers 130 to 135 degrees (for medium), 5 to 6 minutes per side. transfer burgers to plate and tent with aluminum foil."]; instructions recall 99%, precision 99%; kept 97% of the other text; 1 of 78 note/description words not in the source
 - Potato Doughnuts: extra ["you'll need 3-inch and 1 1/4-inch round cutters and a dutch oven that holds at least 6 quarts. for the best results, weigh the flour and sugars. heating the oil slowly will make it easier to control the temperature when frying. we like the extra moistness and uniform fluffiness of fresh potatoes, but you can substitute instant mashed potato flakes. skip step 1 and stir 1 1/2 cups (4 ounces/113 grams) flakes with 2 cups boiling water; measure out 2 cups (1 pound/454 grams) and use in place of the potatoes in step 2."]; instructions recall 98%, precision 98%; invented nutritional_info; kept 76% of the other text; kept 1 of 3 stated servings, times and nutrition
 - Grill-Bound Shishkabobs: instructions recall 100%, precision 100%; kept 25% of the other text
+- Red Rice: instructions recall 100%, precision 100%; kept 97% of the other text
 
 ### anthropic/claude-sonnet-5.5
 
