@@ -431,9 +431,11 @@ async fn in_batches<I: Clone, A>(
     let mut invalid = 0;
     let mut provider_failures = 0;
     let mut last_provider_error = None;
+    // Batches asked, counting those split off a rejected one.
+    let mut batches = 0;
     let mut queue: VecDeque<Vec<I>> = items.chunks(batch_size).map(<[I]>::to_vec).collect();
-    let batches = queue.len();
     while let Some(batch) = queue.pop_front() {
+        batches += 1;
         let e = match ask_with_retries(&mut ask, &batch).await {
             Ok((answers, usage)) => {
                 spend.add(&usage);
@@ -1250,6 +1252,22 @@ mod tests {
         let message = format!("{:#}", result.unwrap_err());
         assert!(message.contains("2 of 2 batches"), "{message}");
         assert_eq!(calls, 2 * PROVIDER_ATTEMPTS as usize);
+    }
+
+    #[tokio::test]
+    async fn split_batches_count_toward_the_provider_failure_share() {
+        // The one batch is rejected and split into four singles, one of
+        // which fails at the provider: one failure in five batches asked.
+        let (result, answered, _, _) =
+            run(&[1, 2, 3, 4], 4, Split::Singles, |batch, _| match batch {
+                [_, _, ..] => Some(AiError::ParseError("bad json".into())),
+                [3] => Some(timed_out()),
+                _ => None,
+            })
+            .await;
+
+        assert_eq!(result.unwrap(), 1);
+        assert_eq!(answered, [1, 2, 4]);
     }
 
     #[tokio::test]
