@@ -8,7 +8,9 @@ client match it in the same PR.
 - `scale-amount.json`: web and iOS recipe amount scaling.
 - `tag-hierarchy.json`: Rust, web, and iOS tag parsing and client ordering.
 - `meal-plan-dates.json`: web and iOS local date formatting and Monday starts.
-- `ingredient-formatting.json`: web and iOS ingredient display formatting.
+- `ingredient-formatting.json`: web and iOS ingredient display formatting, and
+  the Rust server's Paprika export lines (the cases without scaling or derived
+  grams, which the export never applies).
 - `ingredient-editor-rows.json`: web and iOS conversion between a recipe's
   ingredients and the recipe form's flat list of section-heading and
   ingredient rows.

@@ -11,7 +11,7 @@ from PIL import Image
 
 from conftest import make_ingredient
 from ramekin_client.api import PhotosApi, RecipesApi
-from ramekin_client.models import CreateRecipeRequest
+from ramekin_client.models import CreateRecipeRequest, Ingredient, Measurement
 
 # Must match server::photos::processing::EXPORT_PHOTO_MAX_DIMENSION
 EXPORT_PHOTO_MAX_DIMENSION = 1600
@@ -131,8 +131,22 @@ def test_export_single_recipe(authed_api_client, server_url):
             title="Export Test Recipe",
             instructions="Step 1: Do the thing.\nStep 2: Profit.",
             ingredients=[
-                make_ingredient(item="flour", amount="2", unit="cups"),
+                Ingredient(
+                    item="flour",
+                    measurements=[
+                        Measurement(amount="2", unit="cups"),
+                        Measurement(amount="240", unit="g"),
+                    ],
+                    note="sifted",
+                ),
                 make_ingredient(item="sugar", amount="1", unit="cup"),
+                Ingredient(
+                    item="butter",
+                    measurements=[Measurement(amount="1", unit="stick")],
+                    note="softened",
+                    section="For the topping",
+                ),
+                make_ingredient(item="salt"),
             ],
             description="A recipe to test export",
             tags=["test", "export"],
@@ -166,8 +180,13 @@ def test_export_single_recipe(authed_api_client, server_url):
     # Verify exported fields
     assert exported["name"] == "Export Test Recipe"
     assert exported["directions"] == "Step 1: Do the thing.\nStep 2: Profit."
-    assert "flour" in exported["ingredients"]
-    assert "sugar" in exported["ingredients"]
+    assert exported["ingredients"] == (
+        "2 cups (240 g) flour (sifted)\n"
+        "1 cup sugar\n"
+        "For the topping:\n"
+        "1 stick butter (softened)\n"
+        "salt"
+    )
     assert exported["description"] == "A recipe to test export"
     assert exported["categories"] == ["export", "test"]
     assert exported["source"] == "Test Kitchen"
