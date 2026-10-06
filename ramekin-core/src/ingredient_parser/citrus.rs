@@ -75,49 +75,47 @@ pub(super) fn parse_citrus_part_line(raw: &str) -> Option<Vec<ParsedIngredient>>
             prep,
             trailer,
             raw,
-        ));
+        )?);
     }
     Some(ingredients)
 }
 
 /// One part's ingredient. The trailer (", or more to taste", " (2 to 3
-/// tablespoons)") is parsed after the item so its parentheticals become
-/// alternative measurements or notes the usual way.
+/// tablespoons)", " or lime (about 2 tablespoons)") is parsed after the item
+/// so its measurements and notes come out the usual way; words left after
+/// the item ("or lime") join the note. None if the parse cuts into the item.
 fn part_ingredient(
     item: &str,
     measurement: Measurement,
     prep: Option<&str>,
     trailer: &str,
     raw: &str,
-) -> ParsedIngredient {
+) -> Option<ParsedIngredient> {
     let mut measurements = vec![measurement];
-    let mut trailer_note = None;
+    let mut notes: Vec<String> = prep.map(str::to_string).into_iter().collect();
     if !trailer.is_empty() {
         let parsed = parse_ingredient(&format!("{item}{trailer}"));
-        if parsed.item == item {
-            measurements.extend(parsed.measurements);
-            trailer_note = parsed.note;
-        } else {
-            trailer_note = Some(
-                trailer
-                    .trim_start_matches(|c: char| c == ',' || c.is_whitespace())
-                    .to_string(),
-            );
-        }
+        let leftover = parsed.item.strip_prefix(item)?;
+        measurements.extend(parsed.measurements);
+        notes.extend(
+            [
+                leftover.trim_start_matches(|c: char| c == ',' || c.is_whitespace()),
+                parsed.note.as_deref().unwrap_or_default(),
+            ]
+            .into_iter()
+            .map(str::trim)
+            .filter(|note| !note.is_empty())
+            .map(str::to_string),
+        );
     }
-    let note = [prep.map(str::to_string), trailer_note]
-        .into_iter()
-        .flatten()
-        .filter(|note| !note.is_empty())
-        .collect::<Vec<_>>()
-        .join(", ");
-    ParsedIngredient {
+    let note = notes.join(", ");
+    Some(ParsedIngredient {
         item: item.to_string(),
         measurements,
         note: (!note.is_empty()).then_some(note),
         raw: Some(raw.to_string()),
         section: None,
-    }
+    })
 }
 
 /// Text after "a"/"an" ("half a lemon" is "1/2 a lemon" by now).
@@ -228,6 +226,19 @@ mod tests {
         assert_eq!(parsed.item, "lime juice");
         assert_eq!(parsed.measurements[0], measurement("1/2", "lime"));
         assert_eq!(parsed.measurements.len(), 2);
+    }
+
+    #[test]
+    fn measurement_after_an_alternative_fruit_is_kept() {
+        let parsed =
+            parse_one("Juice of 1 lemon or lime (about 2 tablespoons), plus more to taste");
+        assert_eq!(parsed.item, "lemon juice");
+        assert_eq!(parsed.measurements[0], measurement("1", "lemon"));
+        assert_eq!(parsed.measurements.len(), 2, "{:?}", parsed.measurements);
+        assert_eq!(
+            parsed.note.as_deref(),
+            Some("or lime, about 2 tablespoons, plus more to taste")
+        );
     }
 
     #[test]
