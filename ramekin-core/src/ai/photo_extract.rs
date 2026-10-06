@@ -21,7 +21,7 @@ struct PhotoExtractResponse {
     cook_time: Option<String>,
     #[serde(default, deserialize_with = "text_or_number")]
     total_time: Option<String>,
-    #[serde(default)]
+    #[serde(default, deserialize_with = "text_or_number")]
     nutritional_info: Option<String>,
     #[serde(default)]
     notes: Option<String>,
@@ -98,5 +98,11 @@ mod tests {
         )
         .unwrap();
         assert_eq!(without.nutritional_info, None);
+        let bare: PhotoExtractResponse = serde_json::from_str(
+            r#"{"title":"Doughnuts","ingredients":"1 cup flour","instructions":"Fry.",
+            "nutritional_info":410}"#,
+        )
+        .unwrap();
+        assert_eq!(bare.nutritional_info.as_deref(), Some("410"));
     }
 }
