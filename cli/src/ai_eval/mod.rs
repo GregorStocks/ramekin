@@ -407,19 +407,18 @@ const PROVIDER_RETRY_DELAY: Duration = if cfg!(test) {
     Duration::from_secs(5)
 };
 
-/// Single items in a row whose provider errors outlast their retries before
-/// the run stops: past this the provider (or the key) is down, and counting
-/// every remaining case invalid would only write a misleading report. (A
-/// failing batch doesn't count: halving one down to its bad item fails
-/// several in a row.)
+/// Batches in a row whose provider errors outlast their retries before the
+/// run stops: past this the provider (or the key) is down, and counting
+/// every remaining case invalid would only write a misleading report.
 const MAX_CONSECUTIVE_PROVIDER_FAILURES: usize = 5;
 
 /// Ask `items` `batch_size` at a time, retrying a rejected batch (invalid, or
 /// truncated) the way the production worker does; a rejected single item is
 /// invalid, with no second chance, as in production. A provider error is
-/// retried a few times, then rejected the same way, so one flaky case doesn't
-/// abort the suite. Configuration errors, and provider errors on
-/// `MAX_CONSECUTIVE_PROVIDER_FAILURES` single items in a row, stop the run.
+/// retried a few times, then fails the whole batch (production doesn't split
+/// on those either), so one flaky case doesn't abort the suite.
+/// Configuration errors, and provider errors on
+/// `MAX_CONSECUTIVE_PROVIDER_FAILURES` batches in a row, stop the run.
 async fn in_batches<I: Clone, A>(
     items: &[I],
     batch_size: usize,
@@ -441,26 +440,27 @@ async fn in_batches<I: Clone, A>(
             }
             Err(e) => e,
         };
-        match e {
+        let provider_failure = match e {
             // Only photo generation times out this way: a slow image model
             // fails that photo in production too, so it's the model's miss.
-            _ if e.is_answer_specific() || matches!(e, AiError::Timeout(_)) => {
-                provider_failures = 0;
-            }
-            AiError::Api(_) | AiError::RateLimited(_) => {
-                provider_failures += usize::from(batch.len() == 1);
-                if provider_failures >= MAX_CONSECUTIVE_PROVIDER_FAILURES {
-                    return Err(anyhow::Error::from(e).context(format!(
-                        "{provider_failures} items in a row failed with provider errors"
-                    )));
-                }
-            }
+            _ if e.is_answer_specific() || matches!(e, AiError::Timeout(_)) => false,
+            AiError::Api(_) | AiError::RateLimited(_) => true,
             _ => return Err(e.into()),
+        };
+        if provider_failure {
+            provider_failures += 1;
+            if provider_failures >= MAX_CONSECUTIVE_PROVIDER_FAILURES {
+                return Err(anyhow::Error::from(e).context(format!(
+                    "{provider_failures} batches in a row failed with provider errors"
+                )));
+            }
+        } else {
+            provider_failures = 0;
         }
         spend.rejected_calls += 1;
         spend.truncated += usize::from(matches!(e, AiError::Truncated(_)));
-        if batch.len() == 1 {
-            invalid += 1;
+        if provider_failure || batch.len() == 1 {
+            invalid += batch.len();
             if spend.rejections.len() < 5 {
                 spend
                     .rejections
@@ -968,7 +968,7 @@ fn render(suite: &str, cases: usize, batch_size: usize, rows: &[Row]) -> String 
         spec.title,
         spec.about,
         if spec.batched {
-            format!("asked {batch_size} per call (production asks {BATCH}). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated), or a provider error that outlasted its retries; a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid")
+            format!("asked {batch_size} per call (production asks {BATCH}). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated), or a provider error that outlasted its retries; a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid, as is every item of a batch the provider kept failing (production doesn't split those)")
         } else {
             "one call per case, as in production. Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated), or a provider error that outlasted its retries, and are invalid: production doesn't retry them".to_string()
         }
@@ -1210,18 +1210,17 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn a_batch_with_a_persistent_provider_error_is_narrowed_to_the_failing_item() {
-        // Halving 64 down to item 3 fails seven batches in a row, more than
-        // the outage limit, without being an outage.
-        let items: Vec<u32> = (0..64).collect();
-        let (result, mut answered, _, _) = run(&items, 64, Split::Halves, |batch, _| {
+    async fn a_persistent_provider_error_fails_the_whole_batch_unsplit() {
+        // As in production, which splits only on answer-specific errors.
+        let (result, answered, spend, calls) = run(&[1, 2, 3, 4], 2, Split::Halves, |batch, _| {
             batch.contains(&3).then(timed_out)
         })
         .await;
 
-        answered.sort_unstable();
-        assert_eq!(result.unwrap(), 1);
-        assert_eq!(answered, [&items[..3], &items[4..]].concat());
+        assert_eq!(result.unwrap(), 2);
+        assert_eq!(answered, [1, 2]);
+        assert_eq!(calls, 1 + PROVIDER_ATTEMPTS as usize);
+        assert_eq!(spend.rejected_calls, 1);
     }
 
     #[tokio::test]
@@ -1241,7 +1240,7 @@ mod tests {
         let (result, _, _, calls) = run(&items, 1, Split::Singles, |_, _| Some(timed_out())).await;
 
         let message = format!("{:#}", result.unwrap_err());
-        assert!(message.contains("5 items in a row"), "{message}");
+        assert!(message.contains("5 batches in a row"), "{message}");
         assert_eq!(
             calls,
             MAX_CONSECUTIVE_PROVIDER_FAILURES * PROVIDER_ATTEMPTS as usize
