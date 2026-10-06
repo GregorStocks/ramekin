@@ -418,7 +418,8 @@ const MAX_CONSECUTIVE_PROVIDER_FAILURES: usize = 5;
 /// retried a few times, then fails the whole batch (production doesn't split
 /// on those either), so one flaky case doesn't abort the suite.
 /// Configuration errors, and provider errors on
-/// `MAX_CONSECUTIVE_PROVIDER_FAILURES` batches in a row, stop the run.
+/// `MAX_CONSECUTIVE_PROVIDER_FAILURES` batches in a row or on every batch,
+/// stop the run.
 async fn in_batches<I: Clone, A>(
     items: &[I],
     batch_size: usize,
@@ -429,11 +430,15 @@ async fn in_batches<I: Clone, A>(
 ) -> Result<usize> {
     let mut invalid = 0;
     let mut provider_failures = 0;
+    // Whether any batch got an answer (accepted or rejected) from the model.
+    let mut answered = false;
+    let mut last_provider_error = None;
     let mut queue: VecDeque<Vec<I>> = items.chunks(batch_size).map(<[I]>::to_vec).collect();
     while let Some(batch) = queue.pop_front() {
         let e = match ask_with_retries(&mut ask, &batch).await {
             Ok((answers, usage)) => {
                 provider_failures = 0;
+                answered = true;
                 spend.add(&usage);
                 take(answers);
                 continue;
@@ -456,6 +461,7 @@ async fn in_batches<I: Clone, A>(
             }
         } else {
             provider_failures = 0;
+            answered = true;
         }
         spend.rejected_calls += 1;
         spend.truncated += usize::from(matches!(e, AiError::Truncated(_)));
@@ -465,6 +471,9 @@ async fn in_batches<I: Clone, A>(
                 spend
                     .rejections
                     .push(e.to_string().chars().take(300).collect());
+            }
+            if provider_failure {
+                last_provider_error = Some(e);
             }
             continue;
         }
@@ -482,7 +491,13 @@ async fn in_batches<I: Clone, A>(
             }
         }
     }
-    Ok(invalid)
+    // A suite of fewer batches than the outage limit can fail every one.
+    match last_provider_error {
+        Some(e) if !answered => {
+            Err(anyhow::Error::from(e).context("every batch failed with provider errors"))
+        }
+        _ => Ok(invalid),
+    }
 }
 
 /// `ask(batch)`, asked again after a provider error up to
@@ -1232,6 +1247,15 @@ mod tests {
 
         assert!(result.is_err());
         assert_eq!(calls, 1);
+    }
+
+    #[tokio::test]
+    async fn a_provider_outage_on_a_short_suite_stops_the_run() {
+        let (result, _, _, calls) = run(&[1, 2], 1, Split::Singles, |_, _| Some(timed_out())).await;
+
+        let message = format!("{:#}", result.unwrap_err());
+        assert!(message.contains("every batch failed"), "{message}");
+        assert_eq!(calls, 2 * PROVIDER_ATTEMPTS as usize);
     }
 
     #[tokio::test]

@@ -30,8 +30,7 @@ retried a couple of times, then counts as the model's rejected answer for
 every case in that call (its message is listed under Rejected answers) and the
 run goes on. A photo that outlasts photo generation's 45 s timeout counts the
 same way at once, since production fails that photo too. Five calls in a row
-failing at the provider,
-or a configuration error, stops the run before any report is written; rerun
+(or every call) failing at the provider, or a configuration error, stops the run before any report is written; rerun
 without that model, or after fixing the cause, which is nearly free since
 everything answered is cached.
 
