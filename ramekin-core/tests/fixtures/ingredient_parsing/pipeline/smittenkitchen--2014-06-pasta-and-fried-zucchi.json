@@ -172,14 +172,14 @@
     {
       "raw": "7 ounces buffalo mozzarella, torn into chunks",
       "expected": {
-        "item": "buffalo mozzarella, torn into chunks",
+        "item": "buffalo mozzarella",
         "measurements": [
           {
             "amount": "7",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "torn into chunks",
         "category": "Cheese"
       }
     }

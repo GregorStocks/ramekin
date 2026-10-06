@@ -163,14 +163,14 @@
     {
       "raw": "2 slices firm white sandwich bread, torn into small pieces",
       "expected": {
-        "item": "firm white sandwich bread, torn into small pieces",
+        "item": "firm white sandwich bread",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "torn into small pieces",
         "category": "Bakery & Bread"
       }
     },

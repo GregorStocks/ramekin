@@ -187,15 +187,15 @@
     {
       "raw": "1 egg beaten with 1 teaspoon water (optional)",
       "expected": {
-        "item": "egg beaten with 1 teaspoon water",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
-        "category": "Beverages"
+        "note": "optional, beaten with 1 teaspoon water",
+        "category": "Dairy & Eggs"
       }
     },
     {

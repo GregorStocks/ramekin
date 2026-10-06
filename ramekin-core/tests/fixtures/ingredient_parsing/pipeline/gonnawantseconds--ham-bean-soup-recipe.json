@@ -173,14 +173,14 @@
     {
       "raw": "1 large  ham bone or 2 ham hocks",
       "expected": {
-        "item": "ham bone or 2 ham hocks",
+        "item": "ham bone",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "or 2 ham hocks",
         "category": "Meat & Seafood"
       }
     },

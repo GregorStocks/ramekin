@@ -161,28 +161,28 @@
     {
       "raw": "16 kalamata or other black olives, pitted, roughly torn",
       "expected": {
-        "item": "kalamata or other black olives, pitted, roughly torn",
+        "item": "kalamata or other black olives",
         "measurements": [
           {
             "amount": "16",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pitted, roughly torn",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "6 ounces mozzarella, drained if it came in water, torn into bite-sized scraps",
       "expected": {
-        "item": "mozzarella, drained if it came in water, torn into bite-sized scraps",
+        "item": "mozzarella, drained if it came in water",
         "measurements": [
           {
             "amount": "6",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "torn into bite-sized scraps",
         "category": "Cheese"
       }
     },

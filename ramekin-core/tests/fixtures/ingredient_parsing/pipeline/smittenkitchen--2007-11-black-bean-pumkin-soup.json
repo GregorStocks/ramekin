@@ -153,15 +153,19 @@
     {
       "raw": "a 16-ounce can pumpkin puree (about 1 1/2 cups)",
       "expected": {
-        "item": "a 16-ounce can pumpkin puree",
+        "item": "pumpkin puree",
         "measurements": [
+          {
+            "amount": "1",
+            "unit": "16-ounce can"
+          },
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
         "note": "about 1 1/2 cups",
-        "category": "Produce"
+        "category": "Canned Goods"
       }
     },
     {

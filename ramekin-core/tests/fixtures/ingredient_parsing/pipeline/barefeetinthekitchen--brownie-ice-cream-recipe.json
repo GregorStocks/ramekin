@@ -89,9 +89,14 @@
     {
       "raw": "Stir ins: 3 large brownies (chopped into 1/2\" pieces, about 2 cups worth)",
       "expected": {
-        "item": "Stir ins: 3 large brownies",
-        "measurements": [],
-        "note": "chopped into 1/2\" pieces, about 2 cups worth",
+        "item": "brownies",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "Stir ins, chopped into 1/2\" pieces, about 2 cups worth",
         "category": "Other"
       }
     }

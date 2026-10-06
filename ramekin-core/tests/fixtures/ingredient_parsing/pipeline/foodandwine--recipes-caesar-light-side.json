@@ -19,14 +19,14 @@
     {
       "raw": "2 anchovy fillets, mashed",
       "expected": {
-        "item": "anchovy fillets, mashed",
+        "item": "anchovy fillets",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "mashed",
         "category": "Meat & Seafood"
       }
     },
@@ -121,14 +121,14 @@
     {
       "raw": "1 large head of romaine lettuce, torn into bite-size pieces",
       "expected": {
-        "item": "head of romaine lettuce, torn into bite-size pieces",
+        "item": "head of romaine lettuce",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "torn into bite-size pieces",
         "category": "Produce"
       }
     }

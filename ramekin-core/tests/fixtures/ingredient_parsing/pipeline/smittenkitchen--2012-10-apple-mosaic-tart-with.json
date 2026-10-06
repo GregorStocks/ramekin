@@ -14,14 +14,14 @@
     {
       "raw": "14-ounce package puff pastry, defrosted in fridge overnight",
       "expected": {
-        "item": "puff pastry, defrosted in fridge overnight",
+        "item": "puff pastry",
         "measurements": [
           {
             "amount": "1",
             "unit": "14-ounce package"
           }
         ],
-        "note": null,
+        "note": "defrosted in fridge overnight",
         "category": "Frozen"
       }
     },

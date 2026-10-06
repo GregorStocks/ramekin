@@ -33,14 +33,14 @@
     {
       "raw": "2 ears corn, shucked and kernels cut from cob",
       "expected": {
-        "item": "ears corn, shucked and kernels cut from cob",
+        "item": "ears corn",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "shucked and kernels cut from cob",
         "category": "Produce"
       }
     },

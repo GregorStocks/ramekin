@@ -59,7 +59,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, cold is fine, diced",
       "expected": {
-        "item": "unsalted butter, cold is fine",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": "diced",
+        "note": "cold is fine, diced",
         "category": "Dairy & Eggs"
       }
     },

@@ -61,14 +61,14 @@
     {
       "raw": "3 soft Medjool dates, pitted (or 2 additional tablespoons of maple syrup)",
       "expected": {
-        "item": "soft Medjool dates, pitted",
+        "item": "soft Medjool dates",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "or 2 additional tablespoons of maple syrup",
+        "note": "pitted; or 2 additional tablespoons of maple syrup",
         "category": "Nuts & Dried Fruit"
       }
     },

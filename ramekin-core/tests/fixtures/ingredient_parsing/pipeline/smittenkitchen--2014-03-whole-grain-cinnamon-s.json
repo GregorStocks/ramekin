@@ -244,16 +244,16 @@
     {
       "raw": "1 large egg beaten with 1 tablespoon water",
       "expected": {
-        "item": "egg beaten with 1 tablespoon water",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "beaten with 1 tablespoon water",
         "section": "Filling",
-        "category": "Beverages"
+        "category": "Dairy & Eggs"
       }
     }
   ]

@@ -5,14 +5,14 @@
     {
       "raw": "8 ounces Medjool dates, pitted",
       "expected": {
-        "item": "Medjool dates, pitted",
+        "item": "Medjool dates",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "pitted",
         "category": "Nuts & Dried Fruit"
       }
     },

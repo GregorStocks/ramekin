@@ -156,14 +156,14 @@
     {
       "raw": "4 to 5 small nectarines, halved, pitted, cut into thin slices",
       "expected": {
-        "item": "nectarines, halved, pitted",
+        "item": "nectarines",
         "measurements": [
           {
             "amount": "4 to 5",
             "unit": "small"
           }
         ],
-        "note": "cut into thin slices",
+        "note": "halved, pitted, cut into thin slices",
         "section": "Topping",
         "category": "Produce"
       }

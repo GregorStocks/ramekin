@@ -19,14 +19,14 @@
     {
       "raw": "3 cloves garlic, smashed",
       "expected": {
-        "item": "garlic, smashed",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "3",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "smashed",
         "category": "Produce"
       }
     },
@@ -145,14 +145,14 @@
     {
       "raw": "1 (13-ounce) can coconut milk mixed with 1/2 cup water",
       "expected": {
-        "item": "coconut milk mixed with 1/2 cup water",
+        "item": "coconut milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "13-ounce",
+        "note": "13-ounce, mixed with 1/2 cup water",
         "category": "Canned Goods"
       }
     },

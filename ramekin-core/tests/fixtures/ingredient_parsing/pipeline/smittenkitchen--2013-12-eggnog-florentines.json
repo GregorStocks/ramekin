@@ -160,14 +160,14 @@
     {
       "raw": "4 large eggs, hard-boiled",
       "expected": {
-        "item": "eggs, hard-boiled",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "hard-boiled",
         "section": "Eggnog Filling",
         "category": "Dairy & Eggs"
       }

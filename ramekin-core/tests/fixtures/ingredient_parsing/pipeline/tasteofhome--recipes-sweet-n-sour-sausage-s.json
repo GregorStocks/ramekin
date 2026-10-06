@@ -51,7 +51,7 @@
     {
       "raw": "1 can (8 ounces) unsweetened pineapple chunks, undrained",
       "expected": {
-        "item": "unsweetened pineapple chunks, undrained",
+        "item": "unsweetened pineapple chunks",
         "measurements": [
           {
             "amount": "1",
@@ -62,7 +62,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "undrained",
         "category": "Produce"
       }
     },

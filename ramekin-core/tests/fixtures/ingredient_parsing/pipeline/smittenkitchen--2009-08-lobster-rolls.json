@@ -70,14 +70,14 @@
     {
       "raw": "2 top-loading hot dog buns or 64 miniature burger buns (described above) or small dinner rolls",
       "expected": {
-        "item": "top-loading hot dog buns or 64 miniature burger buns or small dinner rolls",
+        "item": "top-loading hot dog buns",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "described above",
+        "note": "or 64 miniature burger buns or small dinner rolls (described above)",
         "category": "Bakery & Bread"
       }
     },

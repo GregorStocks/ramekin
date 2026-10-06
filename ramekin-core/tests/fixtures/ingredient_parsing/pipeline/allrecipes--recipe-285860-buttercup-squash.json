@@ -61,14 +61,14 @@
     {
       "raw": "2.5 pounds buttercup squash - seeded, peeled, and cubed",
       "expected": {
-        "item": "buttercup squash - seeded, peeled, and cubed",
+        "item": "buttercup squash",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "seeded, peeled, and cubed",
         "category": "Produce"
       }
     },

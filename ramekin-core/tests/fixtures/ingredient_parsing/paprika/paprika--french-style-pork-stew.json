@@ -131,7 +131,7 @@
     {
       "raw": "1 meaty smoked ham shank or 2 to 3 smoked ham hocks (1 ¼ pounds)",
       "expected": {
-        "item": "meaty smoked ham shank or 2 to 3 smoked ham hocks",
+        "item": "meaty smoked ham shank",
         "measurements": [
           {
             "amount": "1",
@@ -142,7 +142,7 @@
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "or 2 to 3 smoked ham hocks",
         "category": "Meat & Seafood"
       }
     },
@@ -177,14 +177,14 @@
     {
       "raw": "1 pound Yukon Gold potatoes, unpeeled, cut into ¾-inch pieces",
       "expected": {
-        "item": "Yukon Gold potatoes, unpeeled",
+        "item": "Yukon Gold potatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "cut into 3/4-inch pieces",
+        "note": "unpeeled, cut into 3/4-inch pieces",
         "category": "Produce"
       }
     },

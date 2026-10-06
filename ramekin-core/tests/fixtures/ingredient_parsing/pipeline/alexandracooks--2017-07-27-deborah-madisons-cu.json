@@ -5,14 +5,14 @@
     {
       "raw": "4&nbsp;ears corn, yellow or white varieties, shucked",
       "expected": {
-        "item": "ears corn, yellow or white varieties, shucked",
+        "item": "ears corn, yellow or white varieties",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "shucked",
         "category": "Produce"
       }
     },

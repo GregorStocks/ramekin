@@ -109,7 +109,7 @@
     {
       "raw": "1 (15-ounce/425g) can corn (rinsed and drained) or 1 package of frozen&nbsp;corn",
       "expected": {
-        "item": "corn or 1 package of frozen corn",
+        "item": "corn",
         "measurements": [
           {
             "amount": "1",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": "15-ounce/425g, rinsed and drained",
+        "note": "15-ounce/425g, rinsed and drained; or 1 package of frozen corn",
         "category": "Produce"
       }
     },

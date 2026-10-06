@@ -177,14 +177,14 @@
     {
       "raw": "1 medium head bok choy, torn into 2-inch pieces",
       "expected": {
-        "item": "head bok choy, torn into 2-inch pieces",
+        "item": "head bok choy",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "torn into 2-inch pieces",
         "category": "Produce"
       }
     },

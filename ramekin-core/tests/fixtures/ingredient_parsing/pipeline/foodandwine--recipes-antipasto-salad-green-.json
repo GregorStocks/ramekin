@@ -5,29 +5,29 @@
     {
       "raw": "3 tablespoons green-olive tapenade from a jar",
       "expected": {
-        "item": "green-olive tapenade from a jar",
+        "item": "green-olive tapenade",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from a jar",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1/4 cup pepperoncini — stemmed, seeded and finely chopped",
       "expected": {
-        "item": "pepperoncini - stemmed",
+        "item": "pepperoncini",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "seeded and finely chopped",
-        "category": "Other"
+        "note": "stemmed, seeded and finely chopped",
+        "category": "Canned Goods"
       }
     },
     {

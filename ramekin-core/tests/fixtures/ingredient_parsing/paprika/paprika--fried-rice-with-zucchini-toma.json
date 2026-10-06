@@ -135,14 +135,14 @@
     {
       "raw": "2 large eggs (for scrambled method) or 4 large eggs (for an egg on top of each portion)",
       "expected": {
-        "item": "eggs or 4 large eggs",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "for scrambled method, for an egg on top of each portion",
+        "note": "for scrambled method; or 4 large eggs (for an egg on top of each portion)",
         "category": "Dairy & Eggs"
       }
     }

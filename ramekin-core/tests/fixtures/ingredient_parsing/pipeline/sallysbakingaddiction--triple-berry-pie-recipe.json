@@ -164,14 +164,18 @@
     {
       "raw": "egg wash: 1 large egg beaten with 1 Tablespoon (15ml) milk",
       "expected": {
-        "item": "egg wash: 1 large egg beaten with 1 Tablespoon milk",
+        "item": "egg",
         "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
           {
             "amount": "15",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "egg wash, beaten with 1 Tablespoon milk",
         "category": "Dairy & Eggs"
       }
     },

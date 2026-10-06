@@ -51,14 +51,14 @@
     {
       "raw": "1 1/2 cups cooked pinto beans or 1 can (drained and rinsed)",
       "expected": {
-        "item": "cooked pinto beans or 1 can",
+        "item": "cooked pinto beans",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "or 1 can (drained and rinsed)",
         "category": "Canned Goods"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "5 quarts very ripe plums, pitted, or as needed",
       "expected": {
-        "item": "very ripe plums, pitted",
+        "item": "very ripe plums",
         "measurements": [
           {
             "amount": "5",
             "unit": "quart"
           }
         ],
-        "note": "or as needed",
+        "note": "pitted, or as needed",
         "category": "Produce"
       }
     },
@@ -33,14 +33,14 @@
     {
       "raw": "4 cloves garlic, pressed",
       "expected": {
-        "item": "garlic, pressed",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "4",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "pressed",
         "category": "Produce"
       }
     },

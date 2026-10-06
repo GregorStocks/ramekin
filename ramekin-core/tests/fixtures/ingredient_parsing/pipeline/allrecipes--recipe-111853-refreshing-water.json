@@ -5,14 +5,14 @@
     {
       "raw": "1 cup sliced red onion, cut lengthwise",
       "expected": {
-        "item": "sliced red onion, cut lengthwise",
+        "item": "sliced red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut lengthwise",
         "category": "Produce"
       }
     },

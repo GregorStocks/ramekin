@@ -65,14 +65,14 @@
     {
       "raw": "12 large fresh strawberries, hulled",
       "expected": {
-        "item": "fresh strawberries, hulled",
+        "item": "fresh strawberries",
         "measurements": [
           {
             "amount": "12",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "hulled",
         "category": "Produce"
       }
     },

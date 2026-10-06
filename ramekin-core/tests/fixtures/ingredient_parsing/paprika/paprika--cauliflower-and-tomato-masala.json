@@ -167,14 +167,14 @@
     {
       "raw": "2 to 3 cups tomato puree from a 28-ounce can",
       "expected": {
-        "item": "tomato puree from a 28-ounce can",
+        "item": "tomato puree",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from a 28-ounce can",
         "category": "Canned Goods"
       }
     },

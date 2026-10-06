@@ -126,14 +126,14 @@
     {
       "raw": "2 cloves garlic or 1 shallot, minced",
       "expected": {
-        "item": "garlic or 1 shallot",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": "clove"
           }
         ],
-        "note": "minced",
+        "note": "or 1 shallot; minced",
         "category": "Produce"
       }
     },
@@ -154,14 +154,14 @@
     {
       "raw": "1 fresh red chile, stemmed, seeded and minced or red pepper flakes, to taste",
       "expected": {
-        "item": "fresh red chile, stemmed",
+        "item": "fresh red chile",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "seeded and minced or red pepper flakes, to taste",
+        "note": "stemmed, seeded and minced or red pepper flakes, to taste",
         "category": "Produce"
       }
     },

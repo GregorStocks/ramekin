@@ -95,14 +95,14 @@
     {
       "raw": "4 garlic cloves, lightly smashed",
       "expected": {
-        "item": "garlic cloves, lightly smashed",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "lightly smashed",
         "category": "Produce"
       }
     },

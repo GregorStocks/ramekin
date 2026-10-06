@@ -111,14 +111,14 @@
     {
       "raw": "4-5  big handfuls of kale, torn into bite-sized pieces",
       "expected": {
-        "item": "big handfuls of kale, torn into bite-sized pieces",
+        "item": "big handfuls of kale",
         "measurements": [
           {
             "amount": "4-5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "torn into bite-sized pieces",
         "category": "Produce"
       }
     },

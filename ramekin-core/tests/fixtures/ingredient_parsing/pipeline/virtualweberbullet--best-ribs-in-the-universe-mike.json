@@ -266,18 +266,28 @@
     {
       "raw": "Important: 4 teaspoons granulated garlic powder",
       "expected": {
-        "item": "Important: 4 teaspoons granulated garlic powder",
-        "measurements": [],
-        "note": null,
+        "item": "granulated garlic powder",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "Important",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Important: 4 teaspoons onion powder",
       "expected": {
-        "item": "Important: 4 teaspoons onion powder",
-        "measurements": [],
-        "note": null,
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "Important",
         "category": "Spices & Seasonings"
       }
     }

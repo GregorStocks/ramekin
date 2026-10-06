@@ -5,14 +5,14 @@
     {
       "raw": "6 cups sour cherries, pitted (fresh or frozen will work; if frozen, defrost and drain first)",
       "expected": {
-        "item": "sour cherries, pitted",
+        "item": "sour cherries",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": "fresh or frozen will work; if frozen, defrost and drain first",
+        "note": "fresh or frozen will work; if frozen, defrost and drain first, pitted",
         "category": "Produce"
       }
     },
@@ -75,14 +75,14 @@
     {
       "raw": "2 tablespoons heavy cream or one egg, beaten with a tablespoon of water",
       "expected": {
-        "item": "heavy cream or one egg",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "beaten with a tablespoon of water",
+        "note": "or one egg; beaten with a tablespoon of water",
         "category": "Dairy & Eggs"
       }
     },

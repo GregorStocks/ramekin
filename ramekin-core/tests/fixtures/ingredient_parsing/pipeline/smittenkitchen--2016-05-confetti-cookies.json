@@ -145,14 +145,14 @@
     {
       "raw": "2 teaspoons vanilla extract or 1/2 a vanilla bean, split and scraped (see Note up top)",
       "expected": {
-        "item": "vanilla extract or 1/2 a vanilla bean, split and scraped",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "see Note up top",
+        "note": "or 1/2 a vanilla bean (see Note up top); split and scraped",
         "category": "Baking"
       }
     },

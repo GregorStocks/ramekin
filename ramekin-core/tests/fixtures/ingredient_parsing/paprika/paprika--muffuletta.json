@@ -75,14 +75,14 @@
     {
       "raw": "1 medium red bell pepper, roasted, peeled, seeded, and diced fine",
       "expected": {
-        "item": "red bell pepper, roasted, peeled, seeded, and diced fine",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "roasted, peeled, seeded, and diced fine",
         "category": "Produce"
       }
     },
@@ -117,28 +117,28 @@
     {
       "raw": "1 loaf Italian bread or French bread, large, (about 9-inch diameter), halved crosswise, most of the inner crumb removed",
       "expected": {
-        "item": "loaf Italian bread or French bread, large, halved crosswise",
+        "item": "loaf Italian bread or French bread, large",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "about 9-inch diameter, most of the inner crumb removed",
+        "note": "about 9-inch diameter, halved crosswise, most of the inner crumb removed",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "2 cups leaf lettuce, any type or combination, torn into bite size pieces, if necessary",
       "expected": {
-        "item": "leaf lettuce, any type or combination, torn into bite size pieces",
+        "item": "leaf lettuce",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "if necessary",
+        "note": "any type or combination, torn into bite size pieces, if necessary",
         "category": "Produce"
       }
     },
@@ -152,7 +152,7 @@
             "unit": "lb"
           }
         ],
-        "note": "or other soft salami, thin-sliced",
+        "note": "thin-sliced; or other soft salami",
         "category": "Meat & Seafood"
       }
     },
@@ -180,7 +180,7 @@
             "unit": "lb"
           }
         ],
-        "note": "or other hard salami, thin-sliced",
+        "note": "thin-sliced; or other hard salami",
         "category": "Meat & Seafood"
       }
     }

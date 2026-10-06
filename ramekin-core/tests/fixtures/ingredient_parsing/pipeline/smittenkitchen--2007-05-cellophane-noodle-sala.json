@@ -263,14 +263,14 @@
     {
       "raw": "1 firm-ripe mango, peeled, pitted, and thinly sliced",
       "expected": {
-        "item": "firm-ripe mango, peeled, pitted, and thinly sliced",
+        "item": "firm-ripe mango",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled, pitted, and thinly sliced",
         "section": "For Salad",
         "category": "Produce"
       }

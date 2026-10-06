@@ -126,14 +126,14 @@
     {
       "raw": "1 baguette or 4 ciabatta rolls",
       "expected": {
-        "item": "baguette or 4 ciabatta rolls",
+        "item": "baguette",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 4 ciabatta rolls",
         "category": "Bakery & Bread"
       }
     },

@@ -148,14 +148,14 @@
     {
       "raw": "0.25 cup fresh basil leaves, torn, plus more for serving",
       "expected": {
-        "item": "fresh basil leaves, torn",
+        "item": "fresh basil leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "plus more for serving",
+        "note": "torn, plus more for serving",
         "category": "Produce"
       }
     },

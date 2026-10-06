@@ -73,14 +73,14 @@
     {
       "raw": "1 oz. dark chocolate fondant or 16 chocolate chews (Tootsie Rolls)",
       "expected": {
-        "item": "dark chocolate fondant or 16 chocolate chews",
+        "item": "dark chocolate fondant",
         "measurements": [
           {
             "amount": "1",
             "unit": "oz"
           }
         ],
-        "note": "Tootsie Rolls",
+        "note": "or 16 chocolate chews (Tootsie Rolls)",
         "category": "Baking"
       }
     }

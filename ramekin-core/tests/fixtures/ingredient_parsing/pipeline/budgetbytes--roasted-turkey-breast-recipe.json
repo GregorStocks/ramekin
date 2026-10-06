@@ -19,14 +19,14 @@
     {
       "raw": "2  cloves of garlic, pressed ($0.16)",
       "expected": {
-        "item": "garlic, pressed",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "pressed",
         "category": "Produce"
       }
     },

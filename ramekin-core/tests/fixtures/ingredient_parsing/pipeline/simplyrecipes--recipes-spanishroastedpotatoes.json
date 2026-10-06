@@ -93,8 +93,13 @@
     {
       "raw": "A 14-ounce can of crushed tomatoes",
       "expected": {
-        "item": "A 14-ounce can of crushed tomatoes",
-        "measurements": [],
+        "item": "crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14-ounce can"
+          }
+        ],
         "note": null,
         "category": "Canned Goods"
       }

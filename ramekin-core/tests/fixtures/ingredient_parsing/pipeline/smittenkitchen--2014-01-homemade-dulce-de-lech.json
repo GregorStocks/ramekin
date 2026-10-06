@@ -75,14 +75,14 @@
     {
       "raw": "1/4 teaspoon baking soda dissolved in 2 teaspoons water",
       "expected": {
-        "item": "baking soda dissolved in 2 teaspoons water",
+        "item": "baking soda",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "dissolved in 2 teaspoons water",
         "category": "Baking"
       }
     }

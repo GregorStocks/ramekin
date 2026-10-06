@@ -187,14 +187,14 @@
     {
       "raw": "1 tart yet sweet apple (such as Honeycrisp or Fuji), peeled, cored, and diced",
       "expected": {
-        "item": "tart yet sweet apple, peeled, cored, and diced",
+        "item": "tart yet sweet apple",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "such as Honeycrisp or Fuji",
+        "note": "such as Honeycrisp or Fuji, peeled, cored, and diced",
         "category": "Produce"
       }
     },

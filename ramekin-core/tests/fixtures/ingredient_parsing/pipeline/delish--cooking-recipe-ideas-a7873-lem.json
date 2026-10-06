@@ -51,14 +51,14 @@
     {
       "raw": "1/2 c. fresh lemon juice, strained",
       "expected": {
-        "item": "fresh lemon juice, strained",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "strained",
         "category": "Produce"
       }
     },

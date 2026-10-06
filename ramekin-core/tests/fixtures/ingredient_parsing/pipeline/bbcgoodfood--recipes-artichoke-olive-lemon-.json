@@ -56,14 +56,14 @@
     {
       "raw": "100g artichoke heart from a jar",
       "expected": {
-        "item": "artichoke heart from a jar",
+        "item": "artichoke heart",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from a jar",
         "category": "Canned Goods"
       }
     },

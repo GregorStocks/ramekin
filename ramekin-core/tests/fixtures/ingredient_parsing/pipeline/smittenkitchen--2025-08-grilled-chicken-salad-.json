@@ -149,21 +149,21 @@
     {
       "raw": "2 ears corn on the cob, shucked",
       "expected": {
-        "item": "ears corn on the cob, shucked",
+        "item": "ears corn on the cob",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "shucked",
         "category": "Produce"
       }
     },
     {
       "raw": "1 5-ounce package of leafy green lettuce",
       "expected": {
-        "item": "of leafy green lettuce",
+        "item": "leafy green lettuce",
         "measurements": [
           {
             "amount": "1",

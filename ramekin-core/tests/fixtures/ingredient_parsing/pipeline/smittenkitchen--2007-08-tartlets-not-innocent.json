@@ -186,14 +186,14 @@
     {
       "raw": "12 ounces ripe red-skinned plums, pitted, cut into 3/4-inch-thick wedges",
       "expected": {
-        "item": "ripe red-skinned plums, pitted",
+        "item": "ripe red-skinned plums",
         "measurements": [
           {
             "amount": "12",
             "unit": "oz"
           }
         ],
-        "note": "cut into 3/4-inch-thick wedges",
+        "note": "pitted, cut into 3/4-inch-thick wedges",
         "section": "For Filling",
         "category": "Produce"
       }

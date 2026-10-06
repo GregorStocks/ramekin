@@ -153,7 +153,7 @@
     {
       "raw": "2 (14.5 ounce) cans diced tomatoes and green chile peppers, undrained",
       "expected": {
-        "item": "diced tomatoes and green chile peppers, undrained",
+        "item": "diced tomatoes and green chile peppers",
         "measurements": [
           {
             "amount": "2",
@@ -164,7 +164,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "undrained",
         "category": "Canned Goods"
       }
     }

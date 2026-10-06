@@ -33,7 +33,7 @@
     {
       "raw": "3 1/2 cups (about 1 pound) strawberries, hulled and sliced if big, halved if tiny",
       "expected": {
-        "item": "strawberries, hulled and sliced if big",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "3.5",
@@ -44,7 +44,7 @@
             "unit": "lb"
           }
         ],
-        "note": "about 1 pound, halved if tiny",
+        "note": "about 1 pound, hulled and sliced if big, halved if tiny",
         "category": "Produce"
       }
     },

@@ -261,14 +261,14 @@
     {
       "raw": "3 1/2 to 4 cups (to be safe) fresh strawberries, hulled",
       "expected": {
-        "item": "fresh strawberries, hulled",
+        "item": "fresh strawberries",
         "measurements": [
           {
             "amount": "3.5 to 4",
             "unit": "cup"
           }
         ],
-        "note": "to be safe",
+        "note": "to be safe, hulled",
         "category": "Produce"
       }
     }

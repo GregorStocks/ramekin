@@ -19,28 +19,28 @@
     {
       "raw": "1 pound seedless (English) or Persian cucumbers, unpeeled, cubed",
       "expected": {
-        "item": "seedless or Persian cucumbers, unpeeled",
+        "item": "seedless or Persian cucumbers",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "English, cubed",
+        "note": "English, unpeeled, cubed",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 medium red onion or 4 scallions, finely chopped",
       "expected": {
-        "item": "red onion or 4 scallions",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": "finely chopped",
+        "note": "or 4 scallions; finely chopped",
         "category": "Produce"
       }
     },

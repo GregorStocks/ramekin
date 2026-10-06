@@ -121,14 +121,14 @@
     {
       "raw": "1 6-8-ounce bundle kale, stemmed, or 4 to 5 ounces kale leaves, cut into thin ribbons",
       "expected": {
-        "item": "6-8-ounce bundle kale, stemmed",
+        "item": "6-8-ounce bundle kale",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 4 to 5 ounces kale leaves, cut into thin ribbons",
+        "note": "stemmed, or 4 to 5 ounces kale leaves, cut into thin ribbons",
         "category": "Produce"
       }
     },

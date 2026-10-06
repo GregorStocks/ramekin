@@ -207,14 +207,14 @@
     {
       "raw": "1 egg yolk beaten with 1 teaspoon water",
       "expected": {
-        "item": "egg yolk beaten with 1 teaspoon water",
+        "item": "egg yolk",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten with 1 teaspoon water",
         "section": "Glaze",
         "category": "Dairy & Eggs"
       }

@@ -51,14 +51,14 @@
     {
       "raw": "1/2 cup frozen peas, no need to defrost",
       "expected": {
-        "item": "frozen peas, no need to defrost",
+        "item": "frozen peas",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "no need to defrost",
         "category": "Frozen"
       }
     },

@@ -251,14 +251,14 @@
     {
       "raw": "20 large basil leaves, roughly torn",
       "expected": {
-        "item": "basil leaves, roughly torn",
+        "item": "basil leaves",
         "measurements": [
           {
             "amount": "20",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "roughly torn",
         "category": "Produce"
       }
     },

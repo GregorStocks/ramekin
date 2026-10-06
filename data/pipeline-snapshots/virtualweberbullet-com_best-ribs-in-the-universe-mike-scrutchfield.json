@@ -232,16 +232,26 @@
       "section": "Ingredients List"
     },
     {
-      "item": "Important: 4 teaspoons granulated garlic powder",
-      "measurements": [],
-      "note": null,
+      "item": "granulated garlic powder",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "Important",
       "raw": "Important: 4 teaspoons granulated garlic powder",
       "section": "Ingredients List"
     },
     {
-      "item": "Important: 4 teaspoons onion powder",
-      "measurements": [],
-      "note": null,
+      "item": "onion powder",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "Important",
       "raw": "Important: 4 teaspoons onion powder",
       "section": "Ingredients List"
     }

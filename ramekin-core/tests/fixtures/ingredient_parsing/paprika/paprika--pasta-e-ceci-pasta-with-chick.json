@@ -114,7 +114,7 @@
     {
       "raw": "3 cups (1 pound 2 ounces; 510 g) cooked dry chickpeas or 2 (15-ounce; 425 g) cans low-sodium chickpeas, drained and rinsed, divided (see note)",
       "expected": {
-        "item": "cooked dry chickpeas or 2 cans low-sodium chickpeas",
+        "item": "cooked dry chickpeas",
         "measurements": [
           {
             "amount": "3",
@@ -129,7 +129,7 @@
             "unit": "g"
           }
         ],
-        "note": "1 pound 2 ounces; 510 g, 15-ounce; 425 g, see note, drained and rinsed, divided",
+        "note": "1 pound 2 ounces; 510 g, 15-ounce; 425 g; or 2 cans low-sodium chickpeas (see note); drained and rinsed, divided",
         "category": "Canned Goods"
       }
     },

@@ -116,14 +116,14 @@
     {
       "raw": "6 soft hoagie rolls, split",
       "expected": {
-        "item": "soft hoagie rolls, split",
+        "item": "soft hoagie rolls",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split",
         "category": "Bakery & Bread"
       }
     },

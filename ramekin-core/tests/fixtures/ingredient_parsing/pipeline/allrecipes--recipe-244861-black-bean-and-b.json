@@ -5,14 +5,14 @@
     {
       "raw": "1 butternut squash - peeled, halved lengthwise, and seeded",
       "expected": {
-        "item": "butternut squash - peeled, halved lengthwise, and seeded",
+        "item": "butternut squash",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled, halved lengthwise, and seeded",
         "category": "Produce"
       }
     },

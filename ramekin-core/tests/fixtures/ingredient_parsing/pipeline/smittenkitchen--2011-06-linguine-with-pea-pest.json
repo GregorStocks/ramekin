@@ -5,14 +5,14 @@
     {
       "raw": "1 1/2 cups (from approximately 1 1/2 pounds peas in pods) fresh pea or a 10-ounce package frozen peas, defrosted",
       "expected": {
-        "item": "fresh pea or a 10-ounce package frozen peas, defrosted",
+        "item": "fresh pea or a 10-ounce package frozen peas",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "from approximately 1 1/2 pounds peas in pods",
+        "note": "from approximately 1 1/2 pounds peas in pods, defrosted",
         "category": "Produce"
       }
     },

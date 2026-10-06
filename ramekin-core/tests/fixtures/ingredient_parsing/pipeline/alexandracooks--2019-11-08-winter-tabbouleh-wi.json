@@ -47,14 +47,14 @@
     {
       "raw": "1 large delicata squash, halved, seeds removed, and sliced into 1/2-inch thick pieces",
       "expected": {
-        "item": "delicata squash, halved, seeds removed, and sliced into 1/2-inch thick pieces",
+        "item": "delicata squash",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "halved, seeds removed, and sliced into 1/2-inch thick pieces",
         "category": "Produce"
       }
     },

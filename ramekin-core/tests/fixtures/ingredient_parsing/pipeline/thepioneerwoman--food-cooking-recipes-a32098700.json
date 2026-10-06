@@ -117,7 +117,7 @@
     {
       "raw": "6 c. fresh Bing or other sweet cherries, pitted (about 2 pounds)",
       "expected": {
-        "item": "fresh Bing or other sweet cherries, pitted",
+        "item": "fresh Bing or other sweet cherries",
         "measurements": [
           {
             "amount": "6",
@@ -128,7 +128,7 @@
             "unit": "lb"
           }
         ],
-        "note": "about 2 pounds",
+        "note": "about 2 pounds, pitted",
         "category": "Produce"
       }
     },

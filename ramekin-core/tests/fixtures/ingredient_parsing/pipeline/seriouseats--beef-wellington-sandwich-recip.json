@@ -5,14 +5,14 @@
     {
       "raw": "4 large croissants, homemade or store-bought, split",
       "expected": {
-        "item": "croissants, homemade or store-bought, split",
+        "item": "croissants",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought, split",
         "category": "Bakery & Bread"
       }
     },

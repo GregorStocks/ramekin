@@ -121,14 +121,14 @@
     {
       "raw": "2 pounds strawberries, hulled",
       "expected": {
-        "item": "strawberries, hulled",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "hulled",
         "category": "Produce"
       }
     },
