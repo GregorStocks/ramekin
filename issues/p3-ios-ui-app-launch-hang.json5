@@ -1,0 +1,26 @@
+{
+  "title": "iOS UI tests: find what the simulator waits on during ~5 minute app launch hangs",
+  "description": "In about 3 of 11 iOS UI runs, XCUIApplication.launch() spends 3-5 minutes between 'Launch com.ramekin.app' and 'Setting up automation session'. \
+The runs still pass. \
+Seen: run 37256369854 (testLoginFailure, 185 s, first launch of the run), 37252858637 (testMealPlanRecipePicker, 276 s, third launch), 37333289156 (testLoginFailure, 293 s, first launch; the app was prebuilt with test-without-building and no earlier instance existed). \
+Other launches take 1-49 s. The 'Failed to launch com.ramekin.app' failure in run 37211763439 is probably the same hang running past XCTest's limit. \
+This is not CPU starvation. \
+During the 293 s hang (15:47-15:52 UTC in 37333289156), runner-load.log shows the 1-minute load falling to about 7, no process above about 50% CPU, and no Ramekin process until about 15:52:21. \
+Something in the simulator is waiting, so bigger or split runners would not help. \
+Ruled out: CPU starvation; the 'IDELaunchParametersSnapshot ... no debugger version' lines (they appear on every launch); a relaunch-only effect; building in the same xcodebuild run. mediaanalysisd stays unloaded after scripts/prepare-ios-ui-simulator.sh configure (checked in runs 37262135994, 37333289156 and 37358741518). \
+The CI job now uploads logs/simulator-system.log.gz on green runs too. \
+Next step: find a run whose xcodebuild log has a launch over 60 s (compare 't = ...s Launch com.ramekin.app' with the following 'Setting up automation session'). \
+Then read the SpringBoard, runningboardd, launchd_sim, testmanagerd and installd lines in simulator-system.log.gz for that window, and pick a targeted fix. \
+Separately, a few older failures were plain assertion failures rather than stalls: RecipeFlowTests.swift:212 (testRecipeFlow, run 37183180449), :57 (testTextRecipeReviewAndSave, run 36675521178), and 'Sign In must be visible before tapping' (testLoginFailure, run 37175844521). \
+Line numbers predate PR #748's test restructuring. \
+None has recurred since #748.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "flaky-test",
+  ],
+  "created_at": "2026-10-05T16:30:00.000000-07:00",
+  "updated_at": "2026-10-05T16:30:00.000000-07:00",
+}
