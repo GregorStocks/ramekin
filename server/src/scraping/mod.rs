@@ -9,7 +9,7 @@ pub mod steps;
 pub use allowlist::is_host_allowed;
 pub use jobs::{
     create_import_job, create_job, create_job_with_html, create_photo_rescrape_job,
-    create_rescrape_job, find_import_jobs_by_key, get_job,
+    create_rescrape_job, find_import_jobs_by_key, get_job, saved_recipe_id,
 };
 pub use photo_import::{create_pending_photo_job, spawn_photo_import_job};
 pub use runner::{resume_interrupted_jobs, retry_job, spawn_import_job, spawn_scrape_job};
@@ -73,5 +73,8 @@ where
 pub const STATUS_PENDING: &str = "pending";
 pub const STATUS_SCRAPING: &str = "scraping";
 pub const STATUS_PARSING: &str = "parsing";
+/// The recipe is saved and visible; post-save steps (AI enrichment) are still
+/// running and may update it.
+pub const STATUS_ENRICHING: &str = "enriching";
 pub const STATUS_COMPLETED: &str = "completed";
 pub const STATUS_FAILED: &str = "failed";

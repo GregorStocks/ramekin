@@ -34,7 +34,10 @@ import {
   formatIngredientParts,
 } from "../utils/ingredientFormatting";
 import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
-import { pollScrapeJob } from "../utils/pollScrapeJob";
+import {
+  PollScrapeJobAbortedError,
+  pollScrapeJob,
+} from "../utils/pollScrapeJob";
 import { createRequestTracker } from "../utils/requestTracker";
 import type { RecipeResponse, VersionSummary } from "ramekin-client";
 import { ErrorCode } from "ramekin-client";
@@ -157,6 +160,16 @@ export default function ViewRecipePage() {
 
   // Rescrape state
   const [rescraping, setRescraping] = createSignal(false);
+
+  // A scrape job whose recipe is saved but whose AI enrichment (title,
+  // description, tags) is still running. The scrape status page links here
+  // with ?scrapeJob= so the recipe shows right away; reload when it lands.
+  const [enrichingJobId, setEnrichingJobId] = createSignal<string | null>(
+    typeof searchParams.scrapeJob === "string" ? searchParams.scrapeJob : null,
+  );
+  const [enrichmentFailedJobId, setEnrichmentFailedJobId] = createSignal<
+    string | null
+  >(null);
 
   // Shopping list modal state
   const [showShoppingListModal, setShowShoppingListModal] = createSignal(false);
@@ -350,6 +363,35 @@ export default function ViewRecipePage() {
     setError,
   });
 
+  createEffect(() => {
+    const jobId = enrichingJobId();
+    if (!jobId) return;
+    const controller = new AbortController();
+    onCleanup(() => controller.abort());
+    setEnrichmentFailedJobId(null);
+    void pollScrapeJob(getScrapeApi(), jobId, {
+      signal: controller.signal,
+      // Track the job until it ends; leaving the page aborts the poll.
+      timeoutMs: null,
+    })
+      .then(async (result) => {
+        if (result.status === "failed") setEnrichmentFailedJobId(jobId);
+        await loadRecipe();
+      })
+      .catch((err: unknown) => {
+        if (err instanceof PollScrapeJobAbortedError) return;
+        // The recipe is already shown; a lost poll only means it won't
+        // refresh on its own.
+      })
+      .finally(() => {
+        if (controller.signal.aborted) return;
+        setEnrichingJobId(null);
+        if (searchParams.scrapeJob) {
+          setSearchParams({ scrapeJob: undefined }, { replace: true });
+        }
+      });
+  });
+
   // Rescrape handler
   const handleRescrape = async () => {
     const r = recipe();
@@ -362,9 +404,14 @@ export default function ViewRecipePage() {
       const response = await getRecipesApi().rescrape({ id: params.id });
       const jobId = response.jobId;
 
-      const result = await pollScrapeJob(getScrapeApi(), jobId);
+      const result = await pollScrapeJob(getScrapeApi(), jobId, {
+        untilRecipeReady: true,
+      });
       if (result.status === "completed") {
         await loadRecipe();
+      } else if (result.status === "recipe_ready") {
+        await loadRecipe();
+        setEnrichingJobId(jobId);
       } else if (result.status === "failed") {
         setError(`Rescrape failed: ${result.error}`);
       } else {
@@ -506,7 +553,9 @@ export default function ViewRecipePage() {
                           class="btn"
                           onClick={handleRescrape}
                           disabled={
-                            rescraping() || isViewingHistoricalVersion()
+                            rescraping() ||
+                            !!enrichingJobId() ||
+                            isViewingHistoricalVersion()
                           }
                         >
                           {rescraping() ? "Rescraping..." : "Rescrape"}
@@ -628,6 +677,20 @@ export default function ViewRecipePage() {
                 </div>
               </Show>
             </div>
+
+            <Show when={enrichingJobId()}>
+              <div class="enrichment-notice" role="status">
+                Adding an AI title, description, and tags…
+              </div>
+            </Show>
+            <Show when={enrichmentFailedJobId()}>
+              {(jobId) => (
+                <div class="enrichment-notice enrichment-notice-failed">
+                  AI enrichment didn't finish.{" "}
+                  <A href={`/scrape/${jobId()}`}>See what happened</A>
+                </div>
+              )}
+            </Show>
 
             {/* Historical version banner */}
             <Show when={isViewingHistoricalVersion()}>

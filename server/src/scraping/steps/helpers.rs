@@ -8,6 +8,24 @@ use ramekin_core::pipeline::{
     StepResult,
 };
 
+use crate::recipes::VersionWriteError;
+
+/// Why an apply step wrote nothing because the recipe moved on without it.
+pub(super) const EDITED_SINCE_SAVE: &str = "recipe was edited after it was saved";
+
+/// Treat a stale compare-and-swap as "skip": the recipe is visible as soon as
+/// it is saved, so the user may edit it while enrichment runs, and their edit
+/// wins over the AI's. Returns `None` when the write was skipped.
+pub(super) fn skip_if_edited(
+    result: Result<Uuid, VersionWriteError>,
+) -> Result<Option<Uuid>, String> {
+    match result {
+        Ok(version_id) => Ok(Some(version_id)),
+        Err(VersionWriteError::Stale) => Ok(None),
+        Err(e) => Err(e.to_string()),
+    }
+}
+
 pub(super) enum SaveOutputReadError {
     MissingSaveRecipeOutput,
     MissingRecipeId,

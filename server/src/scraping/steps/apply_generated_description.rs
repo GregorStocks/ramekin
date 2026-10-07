@@ -13,11 +13,12 @@ use ramekin_core::pipeline::{
 
 use crate::db::{run_blocking, DbPool};
 use crate::models::NewRecipeVersion;
-use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
+use crate::recipes::{create_new_version_cas, TagSource};
 use crate::schema::recipe_versions;
 
 use super::helpers::{
-    recipe_id_from_save_output, version_id_from_pipeline_outputs, SaveOutputReadErrorExt,
+    recipe_id_from_save_output, skip_if_edited, version_id_from_pipeline_outputs,
+    SaveOutputReadErrorExt, EDITED_SINCE_SAVE,
 };
 
 /// Server implementation of ApplyGeneratedDescription step.
@@ -140,7 +141,15 @@ impl PipelineStep for ApplyGeneratedDescriptionStep {
             .apply_description(recipe_id, expected_version_id, &generated_description)
             .await
         {
-            Ok(version_id) => StepResult {
+            Ok(None) => StepResult {
+                step_name: Self::NAME.to_string(),
+                success: true,
+                output: json!({ "changed": false, "skipped": EDITED_SINCE_SAVE }),
+                error: None,
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
+            },
+            Ok(Some(version_id)) => StepResult {
                 step_name: Self::NAME.to_string(),
                 success: true,
                 output: json!({
@@ -170,12 +179,12 @@ impl ApplyGeneratedDescriptionStep {
         recipe_id: Uuid,
         expected_version_id: Uuid,
         description: &str,
-    ) -> Result<Uuid, String> {
+    ) -> Result<Option<Uuid>, String> {
         use crate::models::RecipeVersion;
 
         let description = description.to_string();
         run_blocking(&self.pool, move |conn| {
-            conn.transaction(|conn| {
+            skip_if_edited(conn.transaction(|conn| {
                 let current: RecipeVersion = recipe_versions::table
                     .filter(recipe_versions::id.eq(expected_version_id))
                     .filter(recipe_versions::recipe_id.eq(recipe_id))
@@ -199,8 +208,7 @@ impl ApplyGeneratedDescriptionStep {
                 )?;
 
                 Ok(new_version_id)
-            })
-            .map_err(|e: VersionWriteError| e.to_string())
+            }))
         })
         .await
         .map_err(|e| e.to_string())?

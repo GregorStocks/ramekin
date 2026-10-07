@@ -16,7 +16,9 @@ use uuid::Uuid;
 use crate::db::DbPool;
 use crate::schema::step_outputs;
 use crate::scraping::{run_scrape_db, ScrapeError};
-use ramekin_core::pipeline::scrape_pipeline_step_names;
+use ramekin_core::pipeline::{
+    is_scrape_post_save_step, scrape_pipeline_step_names, scrape_post_save_step_dependencies,
+};
 
 /// Row shape read by `build_step_states_from_outputs`:
 /// `(step_name, created_at, duration_ms, summary, success, error)`. The full
@@ -57,6 +59,11 @@ pub struct StepState {
 /// Each arm mirrors the actual output shape written by the corresponding
 /// `PipelineStep` implementation — keep these in sync.
 pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
+    // Apply steps store `{ skipped: <reason>, ... }` when the user edited the
+    // recipe before the enrichment landed.
+    if let Some(reason) = output.get("skipped").and_then(|v| v.as_str()) {
+        return Some(format!("skipped: {reason}"));
+    }
     match step_name {
         // FetchHtmlStep stores `{ "html": "<...>" }`; derive byte length from it.
         "fetch_html" => {
@@ -302,6 +309,38 @@ fn build_step_states_from_outputs(
 
     let terminal = matches!(job_status, "completed" | "failed");
     let pipeline_steps = scrape_pipeline_step_names();
+    // Post-save steps run concurrently, but the job row names only the
+    // earliest running one. A later post-save step that hasn't written output
+    // but whose dependencies all have is running alongside it.
+    let post_save = scrape_post_save_step_dependencies();
+    let post_save_index = |name: &str| post_save.iter().position(|(n, _)| *n == name);
+    // During the post-save phase `current_step_started_at` is when the phase
+    // started. A retry reruns every post-save step after its resume point, so
+    // a later step's row from before then is a previous attempt's: drop it.
+    if let (false, Some(current_idx), Some(phase_start)) = (
+        terminal,
+        current_step.and_then(post_save_index),
+        current_step_started_at,
+    ) {
+        by_name.retain(|name, (created_at, _, _, _, _)| {
+            post_save_index(name).is_none_or(|idx| idx <= current_idx) || *created_at >= phase_start
+        });
+    }
+    let running_alongside_current = |name: &str| -> bool {
+        let Some(current) = current_step.filter(|s| !terminal && is_scrape_post_save_step(s))
+        else {
+            return false;
+        };
+        let (Some(idx), Some(current_idx)) = (post_save_index(name), post_save_index(current))
+        else {
+            return false;
+        };
+        // A failed dependency stops the job from starting its dependents.
+        let succeeded = |dep: &str| by_name.get(dep).is_some_and(|(_, _, _, ok, _)| *ok);
+        idx > current_idx
+            && !by_name.contains_key(name)
+            && post_save[idx].1.iter().all(|dep| succeeded(dep))
+    };
     let mut states = Vec::with_capacity(pipeline_steps.len());
 
     for step_name in pipeline_steps {
@@ -345,6 +384,17 @@ fn build_step_states_from_outputs(
                 name: name.clone(),
                 status: "running".to_string(),
                 started_at: current_step_started_at,
+                finished_at: None,
+                duration_ms: None,
+                summary: None,
+                error: None,
+                has_output: false,
+            });
+        } else if running_alongside_current(&name) {
+            states.push(StepState {
+                name: name.clone(),
+                status: "running".to_string(),
+                started_at: None,
                 finished_at: None,
                 duration_ms: None,
                 summary: None,
@@ -638,6 +688,157 @@ mod tests {
         assert_eq!(enrich.finished_at, Some(finished));
         assert_eq!(enrich.duration_ms, Some(500));
         assert!(enrich.has_output);
+    }
+
+    #[test]
+    fn step_summary_skipped_apply() {
+        let output =
+            json!({ "tags_applied": [], "skipped": "recipe was edited after it was saved" });
+        assert_eq!(
+            step_summary("apply_auto_tags", &output).as_deref(),
+            Some("skipped: recipe was edited after it was saved")
+        );
+    }
+
+    #[test]
+    fn concurrent_post_save_steps_render_as_running() {
+        // The job row names only the earliest running post-save step; the
+        // others whose dependencies have finished are running alongside it.
+        let at = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let done = |name: &str| (name.to_string(), at, Some(10), None, true, None);
+        let outputs = vec![
+            done("save_recipe"),
+            done("enrich_normalize_title"),
+            done("apply_normalized_title"),
+        ];
+        let states = build_step_states_from_outputs(
+            outputs,
+            "enriching",
+            Some("resolve_ingredient_names"),
+            Some(at),
+            None,
+            None,
+        );
+        let status = |name: &str| {
+            states
+                .iter()
+                .find(|s| s.name == name)
+                .map(|s| s.status.as_str())
+                .unwrap()
+        };
+        assert_eq!(status("resolve_ingredient_names"), "running");
+        assert_eq!(status("apply_normalized_title"), "completed");
+        assert_eq!(status("enrich_generate_description"), "running");
+        assert_eq!(status("enrich_auto_tag"), "running");
+        // Waits on enrich_generate_description.
+        assert_eq!(status("apply_generated_description"), "pending");
+        assert_eq!(status("apply_auto_tags"), "pending");
+    }
+
+    #[test]
+    fn retried_post_save_steps_ignore_previous_attempt_rows() {
+        // A retry resumed at enrich_normalize_title reruns enrich_auto_tag
+        // too; its row from the failed attempt must not show as finished.
+        let before = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let phase_start = DateTime::parse_from_rfc3339("2025-01-01T00:01:00Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let outputs = vec![
+            (
+                "save_recipe".to_string(),
+                before,
+                Some(10),
+                None,
+                true,
+                None,
+            ),
+            (
+                "resolve_ingredient_names".to_string(),
+                before,
+                Some(10),
+                None,
+                true,
+                None,
+            ),
+            (
+                "enrich_normalize_title".to_string(),
+                before,
+                Some(10),
+                None,
+                false,
+                Some("AI call failed".to_string()),
+            ),
+            (
+                "enrich_auto_tag".to_string(),
+                before,
+                Some(10),
+                None,
+                true,
+                None,
+            ),
+        ];
+        let states = build_step_states_from_outputs(
+            outputs,
+            "enriching",
+            Some("enrich_normalize_title"),
+            Some(phase_start),
+            None,
+            None,
+        );
+        let status = |name: &str| {
+            states
+                .iter()
+                .find(|s| s.name == name)
+                .map(|s| s.status.as_str())
+                .unwrap()
+        };
+        assert_eq!(status("save_recipe"), "completed");
+        assert_eq!(status("resolve_ingredient_names"), "completed");
+        assert_eq!(status("enrich_normalize_title"), "running");
+        assert_eq!(status("enrich_auto_tag"), "running");
+        assert_eq!(status("apply_auto_tags"), "pending");
+    }
+
+    #[test]
+    fn dependents_of_a_failed_post_save_step_are_not_running() {
+        // A failed enrich step stops new work; its dependents never start
+        // while the job waits for steps already in flight.
+        let at = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let outputs = vec![
+            ("save_recipe".to_string(), at, Some(10), None, true, None),
+            (
+                "enrich_normalize_title".to_string(),
+                at,
+                Some(10),
+                None,
+                false,
+                Some("AI call failed".to_string()),
+            ),
+        ];
+        let states = build_step_states_from_outputs(
+            outputs,
+            "enriching",
+            Some("resolve_ingredient_names"),
+            Some(at),
+            None,
+            None,
+        );
+        let status = |name: &str| {
+            states
+                .iter()
+                .find(|s| s.name == name)
+                .map(|s| s.status.as_str())
+                .unwrap()
+        };
+        assert_eq!(status("apply_normalized_title"), "pending");
+        assert_eq!(status("enrich_generate_description"), "pending");
+        assert_eq!(status("enrich_auto_tag"), "running");
     }
 
     #[test]

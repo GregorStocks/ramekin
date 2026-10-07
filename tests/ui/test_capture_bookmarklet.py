@@ -79,7 +79,7 @@ def test_capture_happy_path_logs_and_saves(
         "POST /api/scrape/capture",
         "capture ok, job=",
         "poll #1",
-        "completed, recipe=",
+        ", recipe=",
     ]:
         assert needle in joined, f"missing {needle!r} in console:\n{joined}"
 

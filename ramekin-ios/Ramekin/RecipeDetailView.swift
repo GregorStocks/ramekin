@@ -111,7 +111,11 @@ struct RecipeDetailView: View {
                             } label: {
                                 Label("Rescrape from Source", systemImage: "arrow.triangle.2.circlepath")
                             }
-                            .disabled(actionsDisabledForHistoricalVersion || viewModel.isRescraping)
+                            .disabled(
+                                actionsDisabledForHistoricalVersion
+                                    || viewModel.isRescraping
+                                    || viewModel.isFinishingRescrapeEnrichment
+                            )
                         }
 
                         exportMenu(for: recipe)

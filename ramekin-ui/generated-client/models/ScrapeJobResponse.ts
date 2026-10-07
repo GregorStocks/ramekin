@@ -58,7 +58,8 @@ export interface ScrapeJobResponse {
      */
     id: string;
     /**
-     * Recipe ID if completed successfully
+     * Recipe ID once the recipe is saved (also set on a job that failed
+     * after saving; rescrapes have it from the start)
      * @type {string}
      * @memberof ScrapeJobResponse
      */
@@ -70,7 +71,9 @@ export interface ScrapeJobResponse {
      */
     retryCount: number;
     /**
-     * Current job status (pending, scraping, parsing, completed, failed)
+     * Current job status (pending, scraping, parsing, enriching, completed,
+     * failed). While "enriching" the recipe is saved and `recipe_id` is set;
+     * AI enrichment may still update it until the job completes.
      * @type {string}
      * @memberof ScrapeJobResponse
      */

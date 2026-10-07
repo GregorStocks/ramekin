@@ -9,6 +9,7 @@ license = "LicenseRef-Proprietary"
 # Async runtime
 tokio = { version = "1.52", features = ["full"] }
 tokio-stream = "0.1"
+futures = "0.3"
 bytes = "1"
 
 # Web framework

@@ -12,8 +12,9 @@ mod step;
 pub mod steps;
 
 pub use auto_enrichments::{
-    first_scrape_auto_applied_ai_step_name, scrape_auto_applied_ai_enrichments,
-    scrape_auto_applied_ai_step_names, scrape_pipeline_step_names,
+    first_scrape_auto_applied_ai_step_name, is_scrape_post_save_step,
+    scrape_auto_applied_ai_enrichments, scrape_auto_applied_ai_step_names,
+    scrape_pipeline_step_names, scrape_post_save_step_dependencies,
     step_after_scrape_auto_applied_ai_step, ScrapeAutoAppliedAiEnrichment,
     RESOLVE_INGREDIENT_NAMES_STEP,
 };

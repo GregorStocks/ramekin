@@ -13,11 +13,12 @@ use ramekin_core::pipeline::{
 
 use crate::db::{run_blocking, DbPool};
 use crate::models::NewRecipeVersion;
-use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
+use crate::recipes::{create_new_version_cas, TagSource};
 use crate::schema::{recipe_versions, recipes};
 
 use super::helpers::{
-    recipe_id_from_save_output, version_id_from_pipeline_outputs, SaveOutputReadErrorExt,
+    recipe_id_from_save_output, skip_if_edited, version_id_from_pipeline_outputs,
+    SaveOutputReadErrorExt, EDITED_SINCE_SAVE,
 };
 
 /// Server implementation of ApplyAutoTags step.
@@ -118,7 +119,15 @@ impl PipelineStep for ApplyAutoTagsStep {
             .apply_tags(recipe_id, expected_version_id, &suggested_tags)
             .await
         {
-            Ok(version_id) => StepResult {
+            Ok(None) => StepResult {
+                step_name: Self::NAME.to_string(),
+                success: true,
+                output: json!({ "tags_applied": [], "skipped": EDITED_SINCE_SAVE }),
+                error: None,
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
+            },
+            Ok(Some(version_id)) => StepResult {
                 step_name: Self::NAME.to_string(),
                 success: true,
                 output: json!({
@@ -147,7 +156,7 @@ impl ApplyAutoTagsStep {
         recipe_id: Uuid,
         expected_version_id: Uuid,
         new_tags: &[String],
-    ) -> Result<Uuid, String> {
+    ) -> Result<Option<Uuid>, String> {
         use crate::models::{Recipe, RecipeVersion};
 
         let new_tags = new_tags.to_vec();
@@ -168,7 +177,7 @@ impl ApplyAutoTagsStep {
                 .map_err(|e| e.to_string())?;
 
             // Create new version with AI-suggested tags
-            conn.transaction(|conn| {
+            skip_if_edited(conn.transaction(|conn| {
                 // 1. Create new version (copy all data, change version_source to "enrichment")
                 let new_version = NewRecipeVersion::copy_of(&current_version, "enrichment");
 
@@ -185,8 +194,7 @@ impl ApplyAutoTagsStep {
                 )?;
 
                 Ok(new_version_id)
-            })
-            .map_err(|e: VersionWriteError| e.to_string())
+            }))
         })
         .await
         .map_err(|e| e.to_string())?

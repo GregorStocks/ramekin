@@ -4683,7 +4683,7 @@
               "null"
             ],
             "format": "uuid",
-            "description": "Recipe ID if completed successfully"
+            "description": "Recipe ID once the recipe is saved (also set on a job that failed\nafter saving; rescrapes have it from the start)"
           },
           "retry_count": {
             "type": "integer",
@@ -4692,7 +4692,7 @@
           },
           "status": {
             "type": "string",
-            "description": "Current job status (pending, scraping, parsing, completed, failed)"
+            "description": "Current job status (pending, scraping, parsing, enriching, completed,\nfailed). While \"enriching\" the recipe is saved and `recipe_id` is set;\nAI enrichment may still update it until the job completes."
           },
           "steps": {
             "type": "array",

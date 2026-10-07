@@ -3,7 +3,9 @@ use diesel::prelude::*;
 use diesel::result::{DatabaseErrorKind, Error as DieselError};
 use uuid::Uuid;
 
-use ramekin_core::pipeline::steps::{ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep};
+use ramekin_core::pipeline::steps::{
+    ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
+};
 use ramekin_core::{ExtractRecipeOutput, ExtractionMethod, FetchHtmlOutput, FetchImagesOutput};
 use ramekin_core::{RawRecipe, BUILD_ID};
 
@@ -258,6 +260,28 @@ fn get_job_conn(conn: &mut DbConn, job_id: Uuid) -> Result<ScrapeJob, ScrapeErro
         .ok_or(ScrapeError::JobNotFound)
 }
 
+/// The recipe a job's `save_recipe` step saved, if it has run. New-recipe
+/// jobs only record `recipe_id` on the job row when they complete.
+pub async fn saved_recipe_id(pool: &DbPool, job_id: Uuid) -> Result<Option<Uuid>, ScrapeError> {
+    let output: Option<serde_json::Value> = run_scrape_db(pool, move |conn| {
+        step_outputs::table
+            .filter(step_outputs::scrape_job_id.eq(job_id))
+            .filter(step_outputs::step_name.eq(SaveRecipeStepMeta::NAME))
+            .filter(step_outputs::success.eq(true))
+            .order(step_outputs::created_at.desc())
+            .select(step_outputs::output)
+            .first(conn)
+            .optional()
+            .map_err(|e| ScrapeError::Database(e.to_string()))
+    })
+    .await?;
+    Ok(output
+        .as_ref()
+        .and_then(|o| o.get("recipe_id"))
+        .and_then(|v| v.as_str())
+        .and_then(|s| Uuid::parse_str(s).ok()))
+}
+
 /// Update job status and current_step.
 ///
 /// Also sets `current_step_started_at` to `NOW()` when a step is provided, or
@@ -298,6 +322,29 @@ pub(super) async fn update_status_and_step(
             }
         }
 
+        Ok(())
+    })
+    .await
+}
+
+/// Point `current_step` at another step without touching
+/// `current_step_started_at`. Post-save steps run concurrently, so the job row
+/// keeps the time the phase started; the status API uses it to tell this
+/// attempt's outputs from a previous attempt's.
+pub(super) async fn update_current_step_keeping_start(
+    pool: &DbPool,
+    job_id: Uuid,
+    current_step: &str,
+) -> Result<(), ScrapeError> {
+    let current_step = current_step.to_string();
+    run_scrape_db(pool, move |conn| {
+        diesel::update(scrape_jobs::table.find(job_id))
+            .set((
+                scrape_jobs::current_step.eq(Some(current_step.as_str())),
+                scrape_jobs::updated_at.eq(Utc::now()),
+            ))
+            .execute(conn)
+            .map_err(|e| ScrapeError::Database(e.to_string()))?;
         Ok(())
     })
     .await
