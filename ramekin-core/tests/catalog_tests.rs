@@ -595,7 +595,15 @@ fn a_peeled_note_selects_the_peeled_food() {
         assert_eq!(line_fdc("apples", Some(note)), peeled, "{note}");
         assert_eq!(line_fdc("tart apple", Some(note)), peeled, "{note}");
     }
-    for note in [None, Some("unpeeled"), Some("no need to peel, cored")] {
+    for note in [
+        None,
+        Some("unpeeled"),
+        Some("no need to peel, cored"),
+        Some("not peeled"),
+        Some("should not be peeled"),
+        Some("peeled only if desired"),
+        Some("don't bother, peeled or unpeeled"),
+    ] {
         assert_eq!(line_fdc("apples", note), fdc_id("apples"), "{note:?}");
     }
     // USDA weighs peeled apples by the cup of slices.
