@@ -233,7 +233,8 @@ pub(in crate::ingredient_parser) const ACTIVE_PREP_PREFIXES: &[&str] = &[
 /// PREP_NOTES, whose substring match would catch food names ("split peas"),
 /// and out of ACTIVE_PREP_PREFIXES, which also match inside a part that
 /// still names the food ("deveined raw shrimp"). "juiced" and "zested" stay
-/// out: "lemon, juiced" means the juice, not the whole fruit.
+/// out: "lemon, juiced" means the juice, not the whole fruit, and citrus.rs
+/// reads it that way.
 pub(in crate::ingredient_parser) const WHOLE_PART_PREP_WORDS: &[&str] = &[
     "boiled",
     "defrosted",

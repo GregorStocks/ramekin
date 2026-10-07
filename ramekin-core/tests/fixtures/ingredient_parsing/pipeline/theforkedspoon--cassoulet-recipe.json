@@ -33,11 +33,11 @@
     {
       "raw": "1  orange (zested)",
       "expected": {
-        "item": "orange zested",
+        "item": "orange zest",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "orange"
           }
         ],
         "note": null,

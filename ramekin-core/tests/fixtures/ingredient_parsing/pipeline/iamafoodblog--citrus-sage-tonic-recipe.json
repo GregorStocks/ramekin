@@ -51,15 +51,15 @@
     {
       "raw": "1 large lemon, juiced (about 1/4 cup)",
       "expected": {
-        "item": "lemon, juiced",
+        "item": "lemon juice",
         "measurements": [
-          {
-            "amount": "1",
-            "unit": "large"
-          },
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "large lemon"
           }
         ],
         "note": "about 1/4 cup",
@@ -69,15 +69,15 @@
     {
       "raw": "1 lime, juiced (about 2 tablespoons)",
       "expected": {
-        "item": "lime, juiced",
+        "item": "lime juice",
         "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          },
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "lime"
           }
         ],
         "note": "about 2 tablespoons",

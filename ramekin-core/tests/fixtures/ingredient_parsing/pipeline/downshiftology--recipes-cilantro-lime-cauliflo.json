@@ -70,16 +70,31 @@
     {
       "raw": "1  lime (juiced and zested)",
       "expected": {
-        "item": "lime",
+        "item": "lime zest",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lime"
           }
         ],
-        "note": "juiced and zested",
+        "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "1  lime (juiced and zested)",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lime"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "1/2 cup cilantro (finely chopped)",

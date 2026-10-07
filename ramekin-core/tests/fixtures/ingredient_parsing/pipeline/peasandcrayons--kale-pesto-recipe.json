@@ -75,11 +75,11 @@
     {
       "raw": "1  lemon, juiced ((approx. 2 TBSP lemon juice))",
       "expected": {
-        "item": "lemon, juiced",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lemon"
           }
         ],
         "note": "approx. 2 TBSP lemon juice",

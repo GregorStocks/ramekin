@@ -89,11 +89,11 @@
     {
       "raw": "1  orange (juiced)",
       "expected": {
-        "item": "orange juiced",
+        "item": "orange juice",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "orange"
           }
         ],
         "note": null,
@@ -117,28 +117,28 @@
     {
       "raw": "2  lemons (juiced)",
       "expected": {
-        "item": "lemons",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "lemons"
           }
         ],
-        "note": "juiced",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "10  limes (juiced)",
       "expected": {
-        "item": "limes",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "10",
-            "unit": null
+            "unit": "limes"
           }
         ],
-        "note": "juiced",
+        "note": null,
         "category": "Produce"
       }
     },

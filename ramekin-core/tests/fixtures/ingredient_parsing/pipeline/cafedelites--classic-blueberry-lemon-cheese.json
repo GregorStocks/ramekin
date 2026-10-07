@@ -47,14 +47,14 @@
     {
       "raw": "1  lemon (juiced, about 1/4 cup fresh lemon juice)",
       "expected": {
-        "item": "lemon",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lemon"
           }
         ],
-        "note": "juiced, about 1/4 cup fresh lemon juice",
+        "note": "about 1/4 cup fresh lemon juice",
         "category": "Produce"
       }
     },
