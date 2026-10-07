@@ -115,10 +115,13 @@
     }
   }
 
-  function showActions(recipeId) {
+  // While enrichment is still running, the recipe page polls the job and
+  // reloads once the AI title, description, and tags land.
+  function showActions(recipeId, enrichingJobId) {
+    var query = enrichingJobId ? "?scrapeJob=" + enrichingJobId : "";
     actionsEl.style.display = "flex";
     actionsEl.innerHTML = [
-      '<a href="', externalOrigin, '/recipes/', recipeId, '" target="_blank" ',
+      '<a href="', externalOrigin, '/recipes/', recipeId, query, '" target="_blank" ',
       'style="padding:8px 16px;background:#4a9eff;color:#fff;text-decoration:none;',
       'border-radius:6px;font-weight:500;">View Recipe</a>',
       '<button id="ramekin-close" style="padding:8px 16px;background:#e0e0e0;',
@@ -192,11 +195,13 @@
     .then(function (r) { return r.json(); })
     .then(function (job) {
       log("poll #" + attempt + " -> " + job.status);
-      if (job.status === "completed" && job.recipe_id) {
+      // "enriching": the recipe is saved and viewable; AI enrichment
+      // finishes in the background.
+      if ((job.status === "completed" || job.status === "enriching") && job.recipe_id) {
         clearStallWatchdog();
-        log("completed, recipe=" + job.recipe_id);
+        log(job.status + ", recipe=" + job.recipe_id);
         setStatus("Recipe saved!", false, true);
-        showActions(job.recipe_id);
+        showActions(job.recipe_id, job.status === "enriching" ? jobId : null);
       } else if (job.status === "failed") {
         clearStallWatchdog();
         warn("failed: " + (job.error || "unknown"));

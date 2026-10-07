@@ -323,12 +323,11 @@ fn build_step_states_from_outputs(
         else {
             return false;
         };
+        // A failed dependency stops the job from starting its dependents.
+        let succeeded = |dep: &str| by_name.get(dep).is_some_and(|(_, _, _, ok, _)| *ok);
         idx > current_idx
             && !by_name.contains_key(name)
-            && post_save[idx]
-                .1
-                .iter()
-                .all(|dep| by_name.contains_key(*dep))
+            && post_save[idx].1.iter().all(|dep| succeeded(dep))
     };
     let mut states = Vec::with_capacity(pipeline_steps.len());
 
@@ -724,6 +723,44 @@ mod tests {
         // Waits on enrich_generate_description.
         assert_eq!(status("apply_generated_description"), "pending");
         assert_eq!(status("apply_auto_tags"), "pending");
+    }
+
+    #[test]
+    fn dependents_of_a_failed_post_save_step_are_not_running() {
+        // A failed enrich step stops new work; its dependents never start
+        // while the job waits for steps already in flight.
+        let at = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let outputs = vec![
+            ("save_recipe".to_string(), at, Some(10), None, true, None),
+            (
+                "enrich_normalize_title".to_string(),
+                at,
+                Some(10),
+                None,
+                false,
+                Some("AI call failed".to_string()),
+            ),
+        ];
+        let states = build_step_states_from_outputs(
+            outputs,
+            "enriching",
+            Some("resolve_ingredient_names"),
+            Some(at),
+            None,
+            None,
+        );
+        let status = |name: &str| {
+            states
+                .iter()
+                .find(|s| s.name == name)
+                .map(|s| s.status.as_str())
+                .unwrap()
+        };
+        assert_eq!(status("apply_normalized_title"), "pending");
+        assert_eq!(status("enrich_generate_description"), "pending");
+        assert_eq!(status("enrich_auto_tag"), "running");
     }
 
     #[test]
