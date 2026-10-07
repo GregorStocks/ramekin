@@ -1,0 +1,18 @@
+{
+  "title": "Catalog: let a prep note pick the food (peeled apples, rinsed chickpeas, 85/15 beef)",
+  "description": "Now that the parser splits prep notes off the item, a few curated aliases that keyed on the note became dead and were deleted in the alias-conflict cleanup: \"apples - peeled\" / \"tart apple, peeled\" (apples without skin), \"chickpeas, rinsed\" (canned, drained and rinsed), \"ground beef, at least 15% fat\" (85/15) and \"salt (or 1 teaspoon diamond crystal kosher salt)\" (table salt). \
+Those lines now resolve through the bare name (apples with skin, canned chickpeas with their liquid, 80/20 beef, Diamond Crystal). resolve_line (ramekin-core/src/catalog/mod.rs) already uses the note for \"cooked\" and for milk's beverage form. \
+Extend it so a note naming the prepared form tries that form first: peeled/cored -> \"peeled <item>\" or the without-skin entry, drained/rinsed -> \"drained <item>\", and maybe \"N% fat\" for ground meat. \
+Keep the rule narrow, like the cooked rule: only when the note says the measured food is in that state, not when it is an instruction to do later. \
+Citrus \"juiced\" lines are covered by p3-parse-citrus-juiced-zested-tails, which includes the parenthesized \"1/2 lemon (juiced) (see note; ...)\" form. \
+Expect small intentional data/ diffs from make pipeline (nutrition and density reports).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "catalog",
+    "nutrition",
+  ],
+  "created_at": "2026-10-06T18:00:00-07:00",
+  "updated_at": "2026-10-06T18:00:00-07:00",
+}

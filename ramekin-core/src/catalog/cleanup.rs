@@ -36,10 +36,19 @@ pub enum CuratedChange {
 
 /// The item the parser stores for a name read as an ingredient line, or the
 /// name itself when re-parsing would cut into it (see `reparse_item`).
+///
+/// A name a measured line keeps whole is already what the parser stores, even
+/// if the bare name reads differently: alone, "medium grain rice" and "small
+/// new potatoes" lose their first word as a size, but "1 cup medium grain
+/// rice" keeps it.
 pub fn parsed_name(name: &str) -> String {
+    let normalized = normalize(name);
+    if normalize(&parse_ingredient(&format!("1 cup {name}")).item) == normalized {
+        return normalized;
+    }
     crate::ingredient_parser::reparse_item(name)
         .map(|parsed| normalize(&parsed.item))
-        .unwrap_or_else(|| normalize(name))
+        .unwrap_or(normalized)
 }
 
 /// Whether re-parsing drops text that could say which food the name meant:
@@ -189,6 +198,22 @@ pub fn clean_curated(json: &str) -> (String, Vec<CuratedChange>) {
                 }
                 _ => {}
             }
+        }
+    }
+    // A shopping category keyed on a removed or renamed name follows it: the
+    // catalog refuses a category for a name that no longer resolves.
+    let categories = curated["categories"].as_object_mut().expect("object");
+    for change in &changes {
+        match change {
+            CuratedChange::Remove { name, .. } => {
+                categories.remove(name);
+            }
+            CuratedChange::Rename { from, to, .. } => {
+                if let Some(category) = categories.remove(from) {
+                    categories.insert(to.clone(), category);
+                }
+            }
+            CuratedChange::Conflict { .. } => {}
         }
     }
     let text = serde_json::to_string_pretty(&Value::Object(curated)).expect("serializes") + "\n";

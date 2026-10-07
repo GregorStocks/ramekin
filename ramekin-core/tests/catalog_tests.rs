@@ -778,6 +778,21 @@ fn parsed_name_never_cuts_into_a_name() {
         ramekin_core::catalog::parsed_name("about 7 cloves garlic, minced"),
         "garlic"
     );
+    // A leading size or count a measured line keeps ("1 cup medium grain
+    // rice") is part of the stored name, though the bare name reads it as one.
+    for name in [
+        "medium grain rice",
+        "small new potatoes",
+        "packed dark-brown sugar",
+        "1-inch bread cubes",
+        "two us sticks unsalted butter",
+    ] {
+        assert_eq!(ramekin_core::catalog::parsed_name(name), name);
+    }
+    assert_eq!(
+        ramekin_core::catalog::parsed_name("chickpeas, rinsed"),
+        "chickpeas"
+    );
 }
 
 fn entry_kcal(item: &str) -> Option<f64> {
@@ -899,4 +914,24 @@ fn name_specific_pieces_replace_the_foods() {
     // A can of corn is canned corn's, not raw corn's.
     assert_eq!(piece("canned corn", Some("can")), Some(432.0));
     assert_eq!(piece("corn", Some("can")), None);
+}
+
+#[test]
+fn clean_curated_drops_the_category_of_a_removed_name() {
+    // Neither name resolves, so the key goes; a category left on it would
+    // name nothing and the catalog would refuse to load.
+    let json = r#"{"aliases": {"zzfood, chopped": "zzfood"}, "not_food": {}, "categories": {"zzfood, chopped": "Produce", "zzother": "Produce"}}"#;
+    let (cleaned, changes) = ramekin_core::catalog::clean_curated(json);
+    assert_eq!(
+        changes,
+        vec![ramekin_core::catalog::CuratedChange::Remove {
+            section: "aliases",
+            name: "zzfood, chopped".to_string(),
+        }]
+    );
+    let cleaned: serde_json::Value = serde_json::from_str(&cleaned).unwrap();
+    assert_eq!(
+        cleaned["categories"],
+        serde_json::json!({"zzother": "Produce"})
+    );
 }
