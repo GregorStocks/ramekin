@@ -444,12 +444,14 @@ fn collect_unstructured_ingredient_lines(
 ) -> Vec<String> {
     let is_multi_block = blocks.len() > 1;
     let mut ingredient_lines = Vec::new();
+    let mut is_first_list = true;
     for (block_idx, block) in blocks.iter().enumerate() {
         if is_multi_block && block_idx > 0 {
             push_normalized_block_section_header(&mut ingredient_lines, block.title.as_deref());
         }
         for &idx in &block.ingredient_chunk_indices {
-            extract_ingredient_lines_from_chunk(chunks[idx], &mut ingredient_lines);
+            extract_ingredient_lines_from_chunk(chunks[idx], !is_first_list, &mut ingredient_lines);
+            is_first_list = false;
         }
     }
     ingredient_lines
@@ -1090,7 +1092,7 @@ pub(super) fn looks_like_ingredient_list(chunk: &str) -> bool {
 /// ingredients), the way a sub-recipe is introduced. A bold ingredient at the
 /// top of the first list ("Fresh Parsley", "Chopped parsley") stays an
 /// ingredient, and a bare "Ingredients" label is left for the parser to ignore.
-fn leading_bold_section_title(part: &str, follows_ingredients: bool) -> Option<String> {
+fn leading_bold_section_title(part: &str, is_later_list: bool) -> Option<String> {
     const SMALL_WORDS: &[&str] = &["a", "and", "or", "the", "of", "for", "to", "in", "with"];
     let title = fragment_to_text(&bold_only_heading(part)?);
     let title = title.trim_end_matches(':').trim();
@@ -1103,7 +1105,7 @@ fn leading_bold_section_title(part: &str, follows_ingredients: bool) -> Option<S
             || word.starts_with(char::is_uppercase)
     });
     let is_header = detect_section_header(title).is_some()
-        || (follows_ingredients
+        || (is_later_list
             && is_title_case
             && detect_section_header(&format!("{title}:")).is_some());
     is_header.then(|| title.to_string())
@@ -1118,8 +1120,16 @@ fn leading_bold_section_title(part: &str, follows_ingredients: bool) -> Option<S
 /// a single ingredient, and turning that into a section header would drop the
 /// ingredient from the recipe. A leading standalone bold heading is treated the
 /// same way when it reads as one (see [`leading_bold_section_title`]).
-pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
-    let follows_ingredients = !lines.is_empty();
+///
+/// `is_later_list` is true for every ingredient paragraph after the first. A
+/// separate paragraph that opens with a bold Title-Case line ("Curry-Lime
+/// Yogurt") is the source's own grouping even when no instructions sit
+/// between it and the previous list.
+pub(super) fn extract_ingredient_lines_from_chunk(
+    chunk: &str,
+    is_later_list: bool,
+    lines: &mut Vec<String>,
+) {
     let mut seen_text_line = false;
     for part in BR_TAG_REGEX.split(chunk) {
         let part = part.trim();
@@ -1168,7 +1178,7 @@ pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<S
         // gets the colon the ingredient parser needs to treat it as a
         // section header.
         if !seen_text_line {
-            if let Some(header) = leading_bold_section_title(part, follows_ingredients) {
+            if let Some(header) = leading_bold_section_title(part, is_later_list) {
                 push_colon_header(lines, &header);
                 seen_text_line = true;
                 continue;
@@ -1214,15 +1224,15 @@ mod tests {
 
     fn chunk_lines(chunk: &str) -> Vec<String> {
         let mut lines = Vec::new();
-        extract_ingredient_lines_from_chunk(chunk, &mut lines);
+        extract_ingredient_lines_from_chunk(chunk, false, &mut lines);
         lines
     }
 
     /// Lines from a chunk that comes after an earlier ingredient list.
     fn later_chunk_lines(chunk: &str) -> Vec<String> {
-        let mut lines = vec!["1 pound skirt steak".to_string()];
-        extract_ingredient_lines_from_chunk(chunk, &mut lines);
-        lines.split_off(1)
+        let mut lines = Vec::new();
+        extract_ingredient_lines_from_chunk(chunk, true, &mut lines);
+        lines
     }
 
     #[test]
