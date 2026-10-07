@@ -6,7 +6,7 @@ Command-line client using an auto-generated Rust client from the server's OpenAP
 
 ```bash
 cargo run -p ramekin-cli -- --help
-cargo run -p ramekin-cli -- seed --username t --password t ../data/dev/seed.paprikarecipes
+cargo run -p ramekin-cli -- seed --username t --password t --state-file ../logs/seed-state.json ../data/dev/seed.paprikarecipes
 ```
 
 ## Client Regeneration

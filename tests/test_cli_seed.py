@@ -14,6 +14,96 @@ from ramekin_client import ApiClient, Configuration
 from ramekin_client.api import AuthApi, RecipesApi, ScrapeApi
 
 
+def write_archive(path, titles):
+    with zipfile.ZipFile(path, "w") as output:
+        for title in titles:
+            output.writestr(
+                f"{title}.paprikarecipe",
+                gzip.compress(
+                    json.dumps(
+                        {
+                            "name": title,
+                            "ingredients": "1 cup water",
+                            "directions": "Boil the water.",
+                        }
+                    ).encode()
+                ),
+            )
+
+
+def run_seed(server_url, username, archive, state_file):
+    result = subprocess.run(
+        [
+            os.environ["CLI_PATH"],
+            "seed",
+            "--server-url",
+            server_url,
+            "--username",
+            username,
+            "--password",
+            "seed-password",
+            "--state-file",
+            str(state_file),
+            str(archive),
+        ],
+        capture_output=True,
+        text=True,
+        timeout=60,
+        env={**os.environ, "RUST_LOG": "info"},
+    )
+    assert result.returncode == 0, result.stderr
+    return result.stderr
+
+
+def recipe_titles(server_url, username):
+    config = Configuration(host=server_url)
+    with ApiClient(config) as client:
+        login = AuthApi(client).login(
+            {"username": username, "password": "seed-password"}
+        )
+        config.access_token = login.token
+        return sorted(r.title for r in RecipesApi(client).list_recipes().recipes)
+
+
+def test_seed_resumes_incomplete_import_without_duplicates(server_url, tmp_path):
+    username = f"seed-{uuid.uuid4()}"
+    state_file = tmp_path / "seed-state.json"
+    first = tmp_path / "first.paprikarecipes"
+    write_archive(first, ["Seed Soup"])
+    run_seed(server_url, username, first, state_file)
+
+    # Simulate a run interrupted after submitting only the first recipe.
+    state = json.loads(state_file.read_text())
+    assert state["complete"] is True
+    state["complete"] = False
+    state_file.write_text(json.dumps(state))
+
+    full = tmp_path / "full.paprikarecipes"
+    write_archive(full, ["Seed Soup", "Seed Bread"])
+    stderr = run_seed(server_url, username, full, state_file)
+    assert "Resuming incomplete seed" in stderr
+    assert "Submitted: Seed Bread" in stderr
+    assert "Submitted: Seed Soup" not in stderr
+    assert "Recipes saved: 2" in stderr
+    assert recipe_titles(server_url, username) == ["Seed Bread", "Seed Soup"]
+    assert json.loads(state_file.read_text())["complete"] is True
+
+    stderr = run_seed(server_url, username, full, state_file)
+    assert "already seeded, skipping seed" in stderr
+    assert recipe_titles(server_url, username) == ["Seed Bread", "Seed Soup"]
+
+
+def test_seed_skips_existing_user_without_seed_record(server_url, tmp_path):
+    username = f"seed-{uuid.uuid4()}"
+    archive = tmp_path / "seed.paprikarecipes"
+    write_archive(archive, ["Seed Soup"])
+    run_seed(server_url, username, archive, tmp_path / "seed-state.json")
+
+    stderr = run_seed(server_url, username, archive, tmp_path / "other-state.json")
+    assert "no seed record" in stderr
+    assert recipe_titles(server_url, username) == ["Seed Soup"]
+
+
 @pytest.mark.parametrize("auth_failure", [False, True])
 def test_seed_reports_finished_jobs_and_preserves_recipes(
     server_url, tmp_path, auth_failure
@@ -48,6 +138,8 @@ def test_seed_reports_finished_jobs_and_preserves_recipes(
             "seed-password",
             "--tags-file",
             str(tags),
+            "--state-file",
+            str(tmp_path / "seed-state.json"),
             str(archive),
         ],
         capture_output=True,

@@ -3,8 +3,9 @@ use base64::Engine;
 use flate2::read::GzDecoder;
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::{auth_api, scrape_api};
-use ramekin_client::models::LoginRequest;
+use ramekin_client::models::{LoginRequest, ScrapeJobResponse};
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::Read;
 use std::path::Path;
@@ -281,6 +282,50 @@ pub async fn import(
 
     config.bearer_access_token = Some(login_response.token);
 
+    import_archive(
+        &config,
+        preserve_tags,
+        file_path,
+        &HashMap::new(),
+        |_, _| Ok(()),
+    )
+    .await
+}
+
+/// What to do with an archive entry whose job a previous run already submitted.
+#[derive(Debug, PartialEq)]
+enum ResumeAction {
+    /// The job saved its recipe or is still running; wait on it instead of resubmitting.
+    Wait,
+    /// The job never saved a recipe, so submitting again cannot duplicate one.
+    Resubmit,
+}
+
+fn resume_action(job: &ScrapeJobResponse) -> ResumeAction {
+    let saved = job
+        .steps
+        .iter()
+        .any(|step| step.name == "save_recipe" && step.status == "completed");
+    if saved || job.status != "failed" {
+        ResumeAction::Wait
+    } else {
+        ResumeAction::Resubmit
+    }
+}
+
+/// Import every recipe in a Paprika archive using an authenticated config.
+///
+/// `previous` maps archive entry names to jobs an earlier, interrupted run
+/// submitted; those entries are waited on rather than resubmitted unless their
+/// job never saved a recipe. `on_submit` is called with each newly submitted
+/// job so callers can record progress before the next submission.
+pub async fn import_archive(
+    config: &Configuration,
+    preserve_tags: bool,
+    file_path: &Path,
+    previous: &HashMap<String, uuid::Uuid>,
+    mut on_submit: impl FnMut(&str, uuid::Uuid) -> Result<()>,
+) -> Result<()> {
     // Open the paprikarecipes file
     let file = File::open(file_path)
         .with_context(|| format!("Failed to open file: {}", file_path.display()))?;
@@ -291,6 +336,7 @@ pub async fn import(
     tracing::info!("Found {} recipes in archive", archive.len());
 
     let mut jobs = Vec::new();
+    let mut resumed = 0;
     // Stop at the first bad recipe, but say what the server already has so the
     // user knows the import was partial rather than rolled back.
     let submitted: Result<()> = async {
@@ -301,6 +347,29 @@ pub async fn import(
             if !entry_name.ends_with(".paprikarecipe") {
                 tracing::debug!(file = %entry_name, "Skipping non-recipe file");
                 continue;
+            }
+
+            if let Some(&job_id) = previous.get(&entry_name) {
+                let action = match scrape_api::get_scrape(config, &job_id.to_string()).await {
+                    Ok(job) => resume_action(&job),
+                    Err(ramekin_client::apis::Error::ResponseError(resp))
+                        if resp.status == reqwest::StatusCode::NOT_FOUND =>
+                    {
+                        ResumeAction::Resubmit
+                    }
+                    Err(e) => {
+                        return Err(e).with_context(|| {
+                            format!("Failed to read previous import job {job_id}")
+                        })
+                    }
+                };
+                if action == ResumeAction::Wait {
+                    tracing::debug!(file = %entry_name, %job_id, "Already submitted");
+                    jobs.push(job_id);
+                    resumed += 1;
+                    continue;
+                }
+                tracing::info!(file = %entry_name, %job_id, "Previous job saved nothing; resubmitting");
             }
 
             // Read the gzipped content
@@ -324,7 +393,7 @@ pub async fn import(
             // leave this recipe's other photos uploaded but unattached.
             let mut photo_ids = Vec::new();
             for (n, image_bytes) in decode_photos(&recipe)?.iter().enumerate() {
-                let id = upload_photo(&config, image_bytes).await.with_context(|| {
+                let id = upload_photo(config, image_bytes).await.with_context(|| {
                     format!("Failed to upload photo {} of recipe '{recipe_name}'", n + 1)
                 })?;
                 photo_ids.push(id);
@@ -333,7 +402,7 @@ pub async fn import(
             // Convert to RawRecipe format and call the import endpoint
             let raw_recipe = convert_to_raw_recipe(&recipe, preserve_tags);
 
-            let response = import_recipe(&config, raw_recipe, photo_ids)
+            let response = import_recipe(config, raw_recipe, photo_ids)
                 .await
                 .with_context(|| format!("Failed to submit recipe '{recipe_name}'"))?;
             tracing::info!(
@@ -343,6 +412,7 @@ pub async fn import(
                 response.status
             );
             jobs.push(response.job_id);
+            on_submit(&entry_name, response.job_id)?;
         }
         Ok(())
     }
@@ -357,9 +427,12 @@ pub async fn import(
         )));
     }
 
+    if resumed > 0 {
+        tracing::info!("Resumed {} recipe(s) submitted by a previous run", resumed);
+    }
     let saved_count = jobs.len();
     let enrichment_failures =
-        tokio::time::timeout(Duration::from_secs(600), wait_for_imports(&config, jobs))
+        tokio::time::timeout(Duration::from_secs(600), wait_for_imports(config, jobs))
             .await
             .context(
                 "Timed out waiting for import jobs; submitted recipes remain on the server",
@@ -428,7 +501,7 @@ async fn wait_for_imports(config: &Configuration, mut jobs: Vec<uuid::Uuid>) -> 
 mod tests {
     use super::*;
     use axum::{extract::State, routing::get, Json, Router};
-    use ramekin_client::models::{ScrapeJobResponse, StepState};
+    use ramekin_client::models::StepState;
     use std::collections::VecDeque;
     use std::sync::{Arc, Mutex};
 
@@ -530,6 +603,29 @@ mod tests {
             error.to_string(),
             "Failed to decode photo 2 of recipe 'Soup'"
         );
+    }
+
+    #[test]
+    fn resume_waits_on_saved_or_running_jobs_and_resubmits_unsaved_failures() {
+        for (status, saved, step, expected) in [
+            ("completed", true, None, ResumeAction::Wait),
+            ("failed", true, Some("enrich_auto_tag"), ResumeAction::Wait),
+            ("failed", true, Some("apply_auto_tags"), ResumeAction::Wait),
+            ("pending", false, None, ResumeAction::Wait),
+            ("parsing", false, None, ResumeAction::Wait),
+            (
+                "failed",
+                false,
+                Some("parse_ingredients"),
+                ResumeAction::Resubmit,
+            ),
+        ] {
+            assert_eq!(
+                resume_action(&job(status, saved, step)),
+                expected,
+                "{status} saved={saved}"
+            );
+        }
     }
 
     #[tokio::test]

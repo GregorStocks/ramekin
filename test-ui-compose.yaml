@@ -26,6 +26,7 @@ processes:
       cargo run -q -- seed \
         --server-url http://localhost:${PORT} \
         --username t --password t \
+        --state-file ../logs/test-ui-seed-state.json \
         ../data/dev/seed.paprikarecipes
       echo "[TIMING] seed completed in $(($(date +%s) - START))s"
     working_dir: ./cli

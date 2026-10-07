@@ -253,7 +253,7 @@ db-migrate: db-up ## Apply pending diesel migrations against the dev database
 	    diesel migration run
 
 seed: ## Create test user with sample recipes (requires dev server running)
-	@cd cli && cargo run -q -- seed --username t --password t ../data/dev/seed.paprikarecipes
+	@cd cli && cargo run -q -- seed --username t --password t --state-file ../logs/seed-state.json ../data/dev/seed.paprikarecipes
 
 load-test: ## Run load test creating users with recipes and photos (for performance testing)
 	@cd cli && cargo run -q -- load-test
