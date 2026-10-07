@@ -31,19 +31,17 @@ def write_archive(path, titles):
             )
 
 
-def run_seed(server_url, username, archive, state_file):
+def run_cli(command, server_url, username, archive):
     result = subprocess.run(
         [
             os.environ["CLI_PATH"],
-            "seed",
+            command,
             "--server-url",
             server_url,
             "--username",
             username,
             "--password",
             "seed-password",
-            "--state-file",
-            str(state_file),
             str(archive),
         ],
         capture_output=True,
@@ -67,40 +65,37 @@ def recipe_titles(server_url, username):
 
 def test_seed_resumes_incomplete_import_without_duplicates(server_url, tmp_path):
     username = f"seed-{uuid.uuid4()}"
-    state_file = tmp_path / "seed-state.json"
+    # A seed interrupted after submitting only its first recipe.
     first = tmp_path / "first.paprikarecipes"
     write_archive(first, ["Seed Soup"])
-    run_seed(server_url, username, first, state_file)
-
-    # Simulate a run interrupted after submitting only the first recipe.
-    state = json.loads(state_file.read_text())
-    assert state["complete"] is True
-    state["complete"] = False
-    state_file.write_text(json.dumps(state))
+    run_cli("seed", server_url, username, first)
 
     full = tmp_path / "full.paprikarecipes"
     write_archive(full, ["Seed Soup", "Seed Bread"])
-    stderr = run_seed(server_url, username, full, state_file)
-    assert "Resuming incomplete seed" in stderr
+    stderr = run_cli("seed", server_url, username, full)
+    assert "1 of 2 seed recipe(s) already submitted" in stderr
     assert "Submitted: Seed Bread" in stderr
     assert "Submitted: Seed Soup" not in stderr
     assert "Recipes saved: 2" in stderr
     assert recipe_titles(server_url, username) == ["Seed Bread", "Seed Soup"]
-    assert json.loads(state_file.read_text())["complete"] is True
 
-    stderr = run_seed(server_url, username, full, state_file)
-    assert "already seeded, skipping seed" in stderr
+    stderr = run_cli("seed", server_url, username, full)
+    assert "2 of 2 seed recipe(s) already submitted" in stderr
+    assert "Submitted:" not in stderr
     assert recipe_titles(server_url, username) == ["Seed Bread", "Seed Soup"]
 
 
-def test_seed_skips_existing_user_without_seed_record(server_url, tmp_path):
+def test_seed_skips_user_seeded_without_import_keys(server_url, tmp_path):
     username = f"seed-{uuid.uuid4()}"
     archive = tmp_path / "seed.paprikarecipes"
     write_archive(archive, ["Seed Soup"])
-    run_seed(server_url, username, archive, tmp_path / "seed-state.json")
+    with ApiClient(Configuration(host=server_url)) as client:
+        AuthApi(client).signup({"username": username, "password": "seed-password"})
+    # `import` sends no idempotency keys, like seeds made before them.
+    run_cli("import", server_url, username, archive)
 
-    stderr = run_seed(server_url, username, archive, tmp_path / "other-state.json")
-    assert "no seed record" in stderr
+    stderr = run_cli("seed", server_url, username, archive)
+    assert "seed without import keys, skipping seed" in stderr
     assert recipe_titles(server_url, username) == ["Seed Soup"]
 
 
@@ -138,8 +133,6 @@ def test_seed_reports_finished_jobs_and_preserves_recipes(
             "seed-password",
             "--tags-file",
             str(tags),
-            "--state-file",
-            str(tmp_path / "seed-state.json"),
             str(archive),
         ],
         capture_output=True,

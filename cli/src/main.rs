@@ -67,9 +67,6 @@ enum Commands {
         /// Whether to preserve categories/tags from the input file (default: true)
         #[arg(long, default_value_t = true, action = clap::ArgAction::Set)]
         preserve_tags: bool,
-        /// Where to record seed progress so an interrupted seed resumes on rerun
-        #[arg(long)]
-        state_file: PathBuf,
         /// Path to the .paprikarecipes file
         #[arg(value_name = "FILE")]
         file: PathBuf,
@@ -333,7 +330,6 @@ async fn main() -> Result<()> {
             tags_file,
             preserve_tags,
             file,
-            state_file,
         } => {
             seed::seed(
                 &server_url,
@@ -342,7 +338,6 @@ async fn main() -> Result<()> {
                 tags_file.as_deref(),
                 preserve_tags,
                 &file,
-                &state_file,
             )
             .await?;
         }

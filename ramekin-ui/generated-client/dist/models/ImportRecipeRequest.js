@@ -34,6 +34,7 @@ export function ImportRecipeRequestFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'extractionMethod': ImportExtractionMethodFromJSON(json['extraction_method']),
+        'idempotencyKey': json['idempotency_key'] == null ? undefined : json['idempotency_key'],
         'photoIds': json['photo_ids'],
         'rawRecipe': ImportRawRecipeFromJSON(json['raw_recipe']),
     };
@@ -47,6 +48,7 @@ export function ImportRecipeRequestToJSONTyped(value, ignoreDiscriminator = fals
     }
     return {
         'extraction_method': ImportExtractionMethodToJSON(value['extractionMethod']),
+        'idempotency_key': value['idempotencyKey'],
         'photo_ids': value['photoIds'],
         'raw_recipe': ImportRawRecipeToJSON(value['rawRecipe']),
     };

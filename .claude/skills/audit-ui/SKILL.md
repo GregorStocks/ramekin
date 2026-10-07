@@ -52,7 +52,7 @@ If login fails, the seed is missing. Note: `make seed` in this repo
 currently errors with "missing --server-url" — rather than fixing that
 ad-hoc, escalate or work around by calling `cd cli && cargo run -q -- seed
 --server-url http://localhost:$PORT --username t --password t
---state-file ../logs/seed-state.json ../data/dev/seed.paprikarecipes` — but confirm with the user first, since
+../data/dev/seed.paprikarecipes` — but confirm with the user first, since
 the project rule is "always use existing Makefile commands."
 
 ## 3. Drive the browser

@@ -101,6 +101,23 @@ pub struct ImportRecipeRequest {
     pub photo_ids: Vec<Uuid>,
     /// The extraction/import method used
     pub extraction_method: ImportExtractionMethod,
+    /// Client-chosen key for this import. Resubmitting a key the user already
+    /// used returns the original job (200) instead of creating another recipe;
+    /// the resubmission's photo_ids are then ignored.
+    #[serde(default)]
+    pub idempotency_key: Option<String>,
+}
+
+const MAX_IDEMPOTENCY_KEY_LEN: usize = 255;
+const MAX_LOOKUP_KEYS: usize = 1000;
+
+fn validate_key(key: &str) -> Result<(), ApiError> {
+    if key.is_empty() || key.len() > MAX_IDEMPOTENCY_KEY_LEN {
+        return Err(ApiError::invalid_request(format!(
+            "idempotency_key must be 1-{MAX_IDEMPOTENCY_KEY_LEN} bytes"
+        )));
+    }
+    Ok(())
 }
 
 /// Response from recipe import
@@ -118,6 +135,7 @@ pub struct ImportRecipeResponse {
     tag = "import",
     request_body = ImportRecipeRequest,
     responses(
+        (status = 200, description = "Existing job for a repeated idempotency_key", body = ImportRecipeResponse),
         (status = 201, description = "Import job created", body = ImportRecipeResponse),
         (status = 400, description = "Invalid request", body = ErrorResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse)
@@ -131,19 +149,25 @@ pub async fn import_recipe(
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<ImportRecipeRequest>,
 ) -> impl IntoResponse {
+    if let Some(key) = request.idempotency_key.as_deref() {
+        if let Err(e) = validate_key(key) {
+            return e.into_response();
+        }
+    }
     let raw_recipe: RawRecipe = request.raw_recipe.into();
     let extraction_method: ExtractionMethod = request.extraction_method.into();
     let source_url = raw_recipe.source_url.clone();
     let title = raw_recipe.title.clone();
 
     // Create import job with pre-populated step outputs
-    let job = match scraping::create_import_job(
+    let (job, created) = match scraping::create_import_job(
         &pool,
         user.id,
         source_url.as_deref(),
         raw_recipe,
         extraction_method,
         request.photo_ids,
+        request.idempotency_key,
     )
     .await
     {
@@ -155,17 +179,88 @@ pub async fn import_recipe(
         }
     };
 
-    tracing::info!("Created import job {} for recipe '{}'", job.id, title);
-
-    // Spawn background task to run the pipeline
-    scraping::spawn_import_job(pool.clone(), job.id);
+    let status = if created {
+        tracing::info!("Created import job {} for recipe '{}'", job.id, title);
+        // Spawn background task to run the pipeline
+        scraping::spawn_import_job(pool.clone(), job.id);
+        StatusCode::CREATED
+    } else {
+        tracing::info!("Import of '{}' repeats job {}", title, job.id);
+        StatusCode::OK
+    };
 
     (
-        StatusCode::CREATED,
+        status,
         Json(ImportRecipeResponse {
             job_id: job.id,
             status: job.status,
         }),
     )
         .into_response()
+}
+
+/// Request body for looking up import jobs by idempotency key
+#[derive(Debug, Clone, Deserialize, ToSchema)]
+pub struct LookupImportJobsRequest {
+    /// Keys previously sent as ImportRecipeRequest.idempotency_key (at most 1000)
+    pub idempotency_keys: Vec<String>,
+}
+
+/// An import job submitted with an idempotency key
+#[derive(Debug, Clone, Serialize, ToSchema)]
+pub struct ImportJobKey {
+    pub idempotency_key: String,
+    pub job_id: Uuid,
+}
+
+/// The caller's import jobs for the requested keys; unknown keys are omitted
+#[derive(Debug, Clone, Serialize, ToSchema)]
+pub struct LookupImportJobsResponse {
+    pub jobs: Vec<ImportJobKey>,
+}
+
+#[utoipa::path(
+    post,
+    path = "/api/import/recipe/lookup",
+    tag = "import",
+    request_body = LookupImportJobsRequest,
+    responses(
+        (status = 200, description = "Jobs for the keys this user has used", body = LookupImportJobsResponse),
+        (status = 400, description = "Invalid request", body = ErrorResponse),
+        (status = 401, description = "Unauthorized", body = ErrorResponse)
+    ),
+    security(
+        ("bearer_auth" = [])
+    )
+)]
+pub async fn lookup_import_jobs(
+    AuthUser(user): AuthUser,
+    State(pool): State<Arc<DbPool>>,
+    Json(request): Json<LookupImportJobsRequest>,
+) -> impl IntoResponse {
+    if request.idempotency_keys.len() > MAX_LOOKUP_KEYS {
+        return ApiError::invalid_request(format!("At most {MAX_LOOKUP_KEYS} keys per lookup"))
+            .into_response();
+    }
+    for key in &request.idempotency_keys {
+        if let Err(e) = validate_key(key) {
+            return e.into_response();
+        }
+    }
+    match scraping::find_import_jobs_by_key(&pool, user.id, request.idempotency_keys).await {
+        Ok(jobs) => Json(LookupImportJobsResponse {
+            jobs: jobs
+                .into_iter()
+                .map(|(idempotency_key, job_id)| ImportJobKey {
+                    idempotency_key,
+                    job_id,
+                })
+                .collect(),
+        })
+        .into_response(),
+        Err(e) => {
+            tracing::error!("Failed to look up import jobs: {}", e);
+            ApiError::internal(format!("Failed to look up import jobs: {}", e)).into_response()
+        }
+    }
 }

@@ -52,6 +52,7 @@ ramekin_client/docs/ImportApi.md
 ramekin_client/docs/ImportExtractionMethod.md
 ramekin_client/docs/ImportFromPhotosRequest.md
 ramekin_client/docs/ImportFromPhotosResponse.md
+ramekin_client/docs/ImportJobKey.md
 ramekin_client/docs/ImportRawRecipe.md
 ramekin_client/docs/ImportRecipeRequest.md
 ramekin_client/docs/ImportRecipeResponse.md
@@ -65,6 +66,8 @@ ramekin_client/docs/IngredientWeightsStatus.md
 ramekin_client/docs/ListRecipesResponse.md
 ramekin_client/docs/LoginRequest.md
 ramekin_client/docs/LoginResponse.md
+ramekin_client/docs/LookupImportJobsRequest.md
+ramekin_client/docs/LookupImportJobsResponse.md
 ramekin_client/docs/MeResponse.md
 ramekin_client/docs/MealPlanItem.md
 ramekin_client/docs/MealPlanListResponse.md
@@ -148,6 +151,7 @@ ramekin_client/models/generate_photo_response.py
 ramekin_client/models/import_extraction_method.py
 ramekin_client/models/import_from_photos_request.py
 ramekin_client/models/import_from_photos_response.py
+ramekin_client/models/import_job_key.py
 ramekin_client/models/import_raw_recipe.py
 ramekin_client/models/import_recipe_request.py
 ramekin_client/models/import_recipe_response.py
@@ -160,6 +164,8 @@ ramekin_client/models/ingredient_weights_status.py
 ramekin_client/models/list_recipes_response.py
 ramekin_client/models/login_request.py
 ramekin_client/models/login_response.py
+ramekin_client/models/lookup_import_jobs_request.py
+ramekin_client/models/lookup_import_jobs_response.py
 ramekin_client/models/me_response.py
 ramekin_client/models/meal_plan_item.py
 ramekin_client/models/meal_plan_list_response.py
@@ -239,6 +245,7 @@ ramekin_client/test/test_import_api.py
 ramekin_client/test/test_import_extraction_method.py
 ramekin_client/test/test_import_from_photos_request.py
 ramekin_client/test/test_import_from_photos_response.py
+ramekin_client/test/test_import_job_key.py
 ramekin_client/test/test_import_raw_recipe.py
 ramekin_client/test/test_import_recipe_request.py
 ramekin_client/test/test_import_recipe_response.py
@@ -252,6 +259,8 @@ ramekin_client/test/test_ingredient_weights_status.py
 ramekin_client/test/test_list_recipes_response.py
 ramekin_client/test/test_login_request.py
 ramekin_client/test/test_login_response.py
+ramekin_client/test/test_lookup_import_jobs_request.py
+ramekin_client/test/test_lookup_import_jobs_response.py
 ramekin_client/test/test_me_response.py
 ramekin_client/test/test_meal_plan_item.py
 ramekin_client/test/test_meal_plan_list_response.py

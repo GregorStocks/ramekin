@@ -48,6 +48,7 @@ docs/ImportApi.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md
 docs/ImportFromPhotosResponse.md
+docs/ImportJobKey.md
 docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
 docs/ImportRecipeResponse.md
@@ -61,6 +62,8 @@ docs/IngredientWeightsStatus.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
+docs/LookupImportJobsRequest.md
+docs/LookupImportJobsResponse.md
 docs/MeResponse.md
 docs/MealPlanItem.md
 docs/MealPlanListResponse.md
@@ -143,6 +146,7 @@ models/GeneratePhotoResponse.ts
 models/ImportExtractionMethod.ts
 models/ImportFromPhotosRequest.ts
 models/ImportFromPhotosResponse.ts
+models/ImportJobKey.ts
 models/ImportRawRecipe.ts
 models/ImportRecipeRequest.ts
 models/ImportRecipeResponse.ts
@@ -155,6 +159,8 @@ models/IngredientWeightsStatus.ts
 models/ListRecipesResponse.ts
 models/LoginRequest.ts
 models/LoginResponse.ts
+models/LookupImportJobsRequest.ts
+models/LookupImportJobsResponse.ts
 models/MeResponse.ts
 models/MealPlanItem.ts
 models/MealPlanListResponse.ts

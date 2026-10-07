@@ -36,6 +36,7 @@ class TestImportRecipeRequest(unittest.TestCase):
         if include_optional:
             return ImportRecipeRequest(
                 extraction_method = 'json_ld',
+                idempotency_key = '',
                 photo_ids = [
                     ''
                     ],

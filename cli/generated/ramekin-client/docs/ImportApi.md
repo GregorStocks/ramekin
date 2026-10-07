@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**import_from_photos**](ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 [**import_recipe**](ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
+[**lookup_import_jobs**](ImportApi.md#lookup_import_jobs) | **POST** /api/import/recipe/lookup | 
 [**prepare_text_recipe**](ImportApi.md#prepare_text_recipe) | **POST** /api/import/text | 
 
 
@@ -53,6 +54,34 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::ImportRecipeResponse**](ImportRecipeResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## lookup_import_jobs
+
+> models::LookupImportJobsResponse lookup_import_jobs(lookup_import_jobs_request)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**lookup_import_jobs_request** | [**LookupImportJobsRequest**](LookupImportJobsRequest.md) |  | [required] |
+
+### Return type
+
+[**models::LookupImportJobsResponse**](LookupImportJobsResponse.md)
 
 ### Authorization
 

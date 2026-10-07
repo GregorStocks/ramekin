@@ -9,7 +9,7 @@ pub mod steps;
 pub use allowlist::is_host_allowed;
 pub use jobs::{
     create_import_job, create_job, create_job_with_html, create_photo_rescrape_job,
-    create_rescrape_job, get_job,
+    create_rescrape_job, find_import_jobs_by_key, get_job,
 };
 pub use photo_import::{create_pending_photo_job, spawn_photo_import_job};
 pub use runner::{retry_job, spawn_import_job, spawn_interrupted_jobs, spawn_scrape_job};
@@ -42,8 +42,17 @@ pub enum ScrapeError {
     #[error("Max retries exceeded")]
     MaxRetriesExceeded,
 
+    #[error("Idempotency key already used")]
+    DuplicateIdempotencyKey,
+
     #[error("AI configuration error: {0}")]
     AiConfig(#[from] ramekin_core::ai::AiError),
+}
+
+impl From<diesel::result::Error> for ScrapeError {
+    fn from(e: diesel::result::Error) -> Self {
+        ScrapeError::Database(e.to_string())
+    }
 }
 
 /// Run scraping-side blocking Diesel work off the runtime threads.

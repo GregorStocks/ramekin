@@ -286,6 +286,10 @@ async fn main() {
             post(api::enrich::custom_enrich_recipe),
         )
         .route("/api/import/recipe", post(api::import::import_recipe))
+        .route(
+            "/api/import/recipe/lookup",
+            post(api::import::lookup_import_jobs),
+        )
         .route("/api/import/text", post(api::import::prepare_text_recipe))
         .route("/api/import/photos", post(api::import::import_from_photos))
         .layer(middleware::from_fn_with_state(

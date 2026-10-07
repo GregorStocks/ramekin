@@ -2,7 +2,7 @@
   "title": "Rerunning save_recipe after its recipe committed creates a duplicate",
   "description": "save_recipe commits the recipe, then the runner writes the step_outputs row separately (server/src/scraping/runner.rs save_output). \
 If that insert fails, or the server dies between the two writes, the job has no completed save_recipe output and looks unsaved. \
-Retrying the job (UI retry, retry_job), resuming it after a restart (spawn_interrupted_jobs), or a CLI seed resume (cli/src/import.rs resume_action) then runs save_recipe again and creates a second recipe. \
+Retrying the job (UI retry, retry_job), resuming it after a restart (spawn_interrupted_jobs), then runs save_recipe again and creates a second recipe. \
 Make the save idempotent per job, for example by recording the saved recipe id on scrape_jobs in the same transaction as the recipe insert and having save_recipe reuse it.",
   "status": "open",
   "priority": 3,
