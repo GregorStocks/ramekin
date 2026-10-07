@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60548 | 306 | 53434/60242 (88.7%) | 49757/60242 (82.6%) | 1140/5408 (21.1%) | n/a (no servings) | 31760/37265 (85.2%) | 59822/60548 (98.8%) |
+| Pipeline fixtures | 5408 | 60548 | 306 | 53437/60242 (88.7%) | 49760/60242 (82.6%) | 1140/5408 (21.1%) | n/a (no servings) | 31760/37265 (85.2%) | 59822/60548 (98.8%) |
 | Paprika fixtures | 462 | 5379 | 22 | 5146/5357 (96.1%) | 4683/5357 (87.4%) | 150/462 (32.5%) | n/a (no servings) | 2543/2888 (88.1%) | 5347/5379 (99.4%) |
 | Pipeline snapshots | 445 | 5179 | 17 | 4979/5162 (96.5%) | 4590/5162 (88.9%) | 146/445 (32.8%) | 74/445 (16.6%) | 2518/2848 (88.4%) | 5167/5179 (99.8%) |
 
@@ -28,7 +28,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Frying oil: only part of it is absorbed | 98 | 0.2% |
 | Missing density for this food | 1125 | 1.9% |
 | Missing quantity | 1873 | 3.1% |
-| No supported nutrition match | 6333 | 10.5% |
+| No supported nutrition match | 6330 | 10.5% |
 | Several ingredients share one amount | 55 | 0.1% |
 | Unsupported or missing quantity | 50 | 0.1% |
 | Unsupported quantity unit | 476 | 0.8% |
@@ -38,8 +38,8 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
 | 0 | 1731 | 32.0% |
-| 1 | 1742 | 32.2% |
-| 2 | 1049 | 19.4% |
+| 1 | 1745 | 32.3% |
+| 2 | 1046 | 19.3% |
 | 3 | 510 | 9.4% |
 | 4-5 | 304 | 5.6% |
 | 6+ | 72 | 1.3% |
@@ -52,8 +52,8 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 330
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 7784 | `f73f06d99721` |
-| Density | 2756 | `1d9705fe9ef9` |
+| Nutrition (all failures) | 7784 | `12784b6b26e8` |
+| Density | 2757 | `3caf3d9aa1e7` |
 | Shopping category | 583 | `686969d39add` |
 
 ## Paprika fixtures

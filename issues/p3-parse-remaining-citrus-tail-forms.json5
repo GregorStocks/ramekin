@@ -1,6 +1,7 @@
 {
   "title": "Ingredient parser: cover the citrus juiced/zested lines citrus.rs still skips",
   "description": "ingredient_parser/citrus.rs reads \"1 lemon, juiced\" / \"2 limes (zested and juiced)\" as lemon juice / lime zest, but some fixture lines still fall through to the generic parser: \
+\"1 large grapefruit (juiced)\" and \"2 large grapefruits, juiced (about 2 cups)\" (parse_prep_tail only takes lemon/lime/orange because bespoke.json has no per-grapefruit juice yield; add one, then widen the list), \
 \"1 blood orange, juiced\" (FRUIT_REGEX has no blood orange; the catalog may need a blood orange juice mapping too), \
 \"1 lemon, juiced and zest freshly grated\" (mixed participle + noun phrase), \
 \"1 lemon (zested for topping)\" (a word follows the phrase, which the parser refuses to guess at), \

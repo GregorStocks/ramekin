@@ -91,6 +91,13 @@ fn parse_prep_tail(line: &str) -> Option<CitrusLine> {
     let (amount, after_amount) = extract_amount(&line);
     let amount = amount?;
     let fruit_captures = FRUIT_REGEX.captures(after_amount.trim())?;
+    // Only fruits whose juice and zest the catalog can count per fruit
+    // (bespoke.json); "1 grapefruit (juiced)" stays the whole fruit, which
+    // at least resolves, until a grapefruit juice yield exists.
+    let fruit = collapse_whitespace(&fruit_captures["fruit"]).to_lowercase();
+    if !["lemon", "lime", "orange"].contains(&fruit.as_str()) {
+        return None;
+    }
     let tail = PREP_TAIL_REGEX.captures(&fruit_captures["trailer"])?;
     let rest = tail["rest"].trim_end();
     if rest.trim_start().starts_with(|c: char| c.is_alphanumeric()) {
@@ -117,7 +124,7 @@ fn parse_prep_tail(line: &str) -> Option<CitrusLine> {
     Some(CitrusLine {
         amount,
         unit: collapse_whitespace(&fruit_captures["unit"]).to_lowercase(),
-        fruit: collapse_whitespace(&fruit_captures["fruit"]).to_lowercase(),
+        fruit,
         prep: collapse_whitespace(&tail["prep"]).to_lowercase(),
         parts: tail["parts"].to_lowercase(),
         trailer,
@@ -521,6 +528,7 @@ mod tests {
             "2 oranges juiced, plus 2 slices to garnish",
             "3 cups fresh clementine juice (about 12 clementines, juiced)",
             "1 lemon juice",
+            "1 large grapefruit (juiced)",
         ] {
             assert_eq!(parse_citrus_part_line(line), None, "{line}");
         }
