@@ -61,14 +61,14 @@
     {
       "raw": "1/2 medium lemon (juiced)",
       "expected": {
-        "item": "lemon",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": "medium"
+            "unit": "medium lemon"
           }
         ],
-        "note": "juiced",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -1,6 +1,7 @@
-//! "Zest/juice of <count> <citrus>" lines ("Juice of half a lemon", "Finely
-//! grated zest and juice of 1 lime"): the fruit is the counted unit and the
-//! item names the part, so "Juice of 1 lemon" is 1 lemon of lemon juice.
+//! Citrus lines naming the zest or juice ("Juice of half a lemon", "Finely
+//! grated zest and juice of 1 lime", "1 lemon, juiced", "2 limes (zested and
+//! juiced)"): the fruit is the counted unit and the item names the part, so
+//! "Juice of 1 lemon" and "1 lemon, juiced" are both 1 lemon of lemon juice.
 
 use std::sync::LazyLock;
 
@@ -28,67 +29,162 @@ static FRUIT_REGEX: LazyLock<Regex> = LazyLock::new(|| {
     .expect("Invalid citrus fruit regex")
 });
 
-/// Parse a "zest/juice of <count> <citrus>" line into one ingredient per part
-/// it names ("zest and juice" is two), or None for any other line.
+/// "[,] [(] [finely|freshly] juiced|zested|zested and juiced|juiced and
+/// zested <rest>", the tail after "<count> <citrus>".
+static PREP_TAIL_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r"(?i)^\s*,?\s*(?P<open>\(*)\s*(?P<prep>(?:(?:finely|freshly)\s+)?)(?P<parts>zested\s+(?:and|&)\s+juiced|juiced\s+(?:and|&)\s+zested|zested|juiced)(?P<rest>.*)$",
+    )
+    .expect("Invalid citrus prep tail regex")
+});
+
+/// Parse a citrus line naming the zest or juice ("Juice of 1 lemon", "1
+/// lemon, juiced", "2 limes (zested and juiced)") into one ingredient per
+/// part it names ("zest and juice" is two), or None for any other line.
 pub(super) fn parse_citrus_part_line(raw: &str) -> Option<Vec<ParsedIngredient>> {
     let decoded = decode_html_entities(raw.trim());
     let normalized = normalize_unicode(&decoded);
     let line = strip_leading_list_marker(&normalized);
-    let captures = PART_OF_REGEX.captures(line.trim())?;
+    let line = line.trim();
+    let citrus = parse_part_of(line).or_else(|| parse_prep_tail(line))?;
+    citrus.ingredients(raw)
+}
 
+/// A citrus line taken apart: "<prep> <parts> of <amount> <unit><trailer>".
+struct CitrusLine {
+    amount: String,
+    /// The size and fruit as written: "lemons", "large lemon".
+    unit: String,
+    fruit: String,
+    prep: String,
+    parts: String,
+    trailer: String,
+}
+
+/// "Zest and juice of 1 lemon".
+fn parse_part_of(line: &str) -> Option<CitrusLine> {
+    let captures = PART_OF_REGEX.captures(line)?;
     let rest = normalize_word_numbers(captures["rest"].trim());
     let (amount, after_amount) = match strip_article(&rest) {
         Some(after) => (Some("1".to_string()), after.to_string()),
         None => extract_amount(&rest),
     };
-    let amount = amount?;
     let after_amount = strip_article(&after_amount).unwrap_or(&after_amount);
     let fruit_captures = FRUIT_REGEX.captures(after_amount.trim())?;
+    Some(CitrusLine {
+        amount: amount?,
+        unit: collapse_whitespace(&fruit_captures["unit"]).to_lowercase(),
+        fruit: collapse_whitespace(&fruit_captures["fruit"]).to_lowercase(),
+        prep: collapse_whitespace(&captures["prep"]).to_lowercase(),
+        parts: captures["parts"].to_lowercase(),
+        trailer: fruit_captures["trailer"].trim_end().to_string(),
+    })
+}
 
-    let trailer = fruit_captures["trailer"].trim_end();
-    if !trailer_is_note(trailer) {
+/// "1 lemon, juiced", "2 limes (zested and juiced, about 1/4 cup)": the
+/// juiced/zested tail is rebuilt as an ordinary trailer (" (about 1/4 cup)").
+/// The phrase must end the tail or be followed by punctuation, so "1 lime,
+/// juiced and zest freshly grated" and "1 lemon (zested for topping)" are
+/// left alone.
+fn parse_prep_tail(line: &str) -> Option<CitrusLine> {
+    let line = normalize_word_numbers(line);
+    let (amount, after_amount) = extract_amount(&line);
+    let amount = amount?;
+    let fruit_captures = FRUIT_REGEX.captures(after_amount.trim())?;
+    let tail = PREP_TAIL_REGEX.captures(&fruit_captures["trailer"])?;
+    let rest = tail["rest"].trim_end();
+    if rest.trim_start().starts_with(|c: char| c.is_alphanumeric()) {
         return None;
     }
-    let fruit = collapse_whitespace(&fruit_captures["fruit"]).to_lowercase();
-    // The size and fruit as written: "lemons", "large lemon".
-    let unit = collapse_whitespace(&fruit_captures["unit"]).to_lowercase();
-    let prep = collapse_whitespace(&captures["prep"]).to_lowercase();
-    let parts = captures["parts"].to_lowercase();
-    let has_zest = parts.contains("zest");
-    let has_juice = parts.contains("juice");
-
-    let mut ingredients = Vec::new();
-    for (part, wanted) in [("zest", has_zest), ("juice", has_juice)] {
-        if !wanted {
-            continue;
-        }
-        // Prep words describe the zest ("grated zest and juice of 1 lemon").
-        let prep = (part == "zest" || !has_zest)
-            .then_some(prep.as_str())
-            .filter(|prep| !prep.is_empty());
-        // On a "zest and juice" line, a trailer naming one part ("(zest
-        // reserved for serving)") is that part's, and a volume ("(about 2
-        // tablespoons)") measures the juice.
-        let both = has_zest && has_juice;
-        let trailer = if both && names_only_other_part(trailer, part) {
-            ""
+    let opened = tail["open"].len();
+    let trailer = if opened == 0 {
+        rest.to_string()
+    } else {
+        // Close the parens the phrase opened; what was inside them alongside
+        // the phrase ("about 1/4 cup") stays parenthesized.
+        let (inside, after) = rest.split_at_checked(closing_paren_index(rest, opened)?)?;
+        // Leading ")"s close the extra parens of "((juiced))".
+        let inside = inside
+            .trim_start_matches(|c: char| c == ')' || c == ',' || c.is_whitespace())
+            .trim_end();
+        let after = after.strip_prefix(')')?;
+        if inside.is_empty() {
+            after.to_string()
         } else {
-            trailer
-        };
-        let keep_trailer_measurements = !both || part == "juice";
-        ingredients.push(part_ingredient(
-            &format!("{fruit} {part}"),
-            Measurement {
-                amount: Some(amount.clone()),
-                unit: Some(unit.clone()),
-            },
-            prep,
-            trailer,
-            keep_trailer_measurements,
-            raw,
-        )?);
+            format!(" ({inside}){after}")
+        }
+    };
+    Some(CitrusLine {
+        amount,
+        unit: collapse_whitespace(&fruit_captures["unit"]).to_lowercase(),
+        fruit: collapse_whitespace(&fruit_captures["fruit"]).to_lowercase(),
+        prep: collapse_whitespace(&tail["prep"]).to_lowercase(),
+        parts: tail["parts"].to_lowercase(),
+        trailer,
+    })
+}
+
+/// Byte index of the `)` closing `depth` already-open parens, or None if
+/// they never close.
+fn closing_paren_index(s: &str, depth: usize) -> Option<usize> {
+    let mut depth = depth;
+    for (i, c) in s.char_indices() {
+        match c {
+            '(' => depth += 1,
+            ')' => {
+                depth -= 1;
+                if depth == 0 {
+                    return Some(i);
+                }
+            }
+            _ => {}
+        }
     }
-    Some(ingredients)
+    None
+}
+
+impl CitrusLine {
+    fn ingredients(&self, raw: &str) -> Option<Vec<ParsedIngredient>> {
+        let trailer = self.trailer.as_str();
+        if !trailer_is_note(trailer) {
+            return None;
+        }
+        let has_zest = self.parts.contains("zest");
+        let has_juice = self.parts.contains("juice");
+
+        let mut ingredients = Vec::new();
+        for (part, wanted) in [("zest", has_zest), ("juice", has_juice)] {
+            if !wanted {
+                continue;
+            }
+            // Prep words describe the zest ("grated zest and juice of 1 lemon").
+            let prep = (part == "zest" || !has_zest)
+                .then_some(self.prep.as_str())
+                .filter(|prep| !prep.is_empty());
+            // On a "zest and juice" line, a trailer naming one part ("(zest
+            // reserved for serving)") is that part's, and a volume ("(about 2
+            // tablespoons)") measures the juice.
+            let both = has_zest && has_juice;
+            let trailer = if both && names_only_other_part(trailer, part) {
+                ""
+            } else {
+                trailer
+            };
+            let keep_trailer_measurements = !both || part == "juice";
+            ingredients.push(part_ingredient(
+                &format!("{} {part}", self.fruit),
+                Measurement {
+                    amount: Some(self.amount.clone()),
+                    unit: Some(self.unit.clone()),
+                },
+                prep,
+                trailer,
+                keep_trailer_measurements,
+                raw,
+            )?);
+        }
+        Some(ingredients)
+    }
 }
 
 /// One part's ingredient; a measurement in the trailer leads. The trailer (", or more to taste", " (2 to 3
@@ -312,6 +408,99 @@ mod tests {
     }
 
     #[test]
+    fn juiced_or_zested_fruit() {
+        for (line, amount, unit, item, note) in [
+            ("1 lemon, juiced", "1", "lemon", "lemon juice", None),
+            ("2 limes, juiced", "2", "limes", "lime juice", None),
+            ("1&nbsp;lemon, juiced", "1", "lemon", "lemon juice", None),
+            ("½  lemon juiced", "1/2", "lemon", "lemon juice", None),
+            ("1  lime (juiced)", "1", "lime", "lime juice", None),
+            ("1  lemon, (juiced)", "1", "lemon", "lemon juice", None),
+            ("1  limes ((juiced))", "1", "limes", "lime juice", None),
+            (
+                "2 medium lemons, juiced",
+                "2",
+                "medium lemons",
+                "lemon juice",
+                None,
+            ),
+            ("1  orange (zested)", "1", "orange", "orange zest", None),
+            (
+                "1  lemon finely zested",
+                "1",
+                "lemon",
+                "lemon zest",
+                Some("finely"),
+            ),
+            (
+                "2  limes, (freshly juiced)",
+                "2",
+                "limes",
+                "lime juice",
+                Some("freshly"),
+            ),
+            (
+                "½  lemon juiced, to serve",
+                "1/2",
+                "lemon",
+                "lemon juice",
+                Some("to serve"),
+            ),
+            (
+                "½ lemon, zested, plus more for garnish",
+                "1/2",
+                "lemon",
+                "lemon zest",
+                Some("plus more for garnish"),
+            ),
+            (
+                "1/2 lemon (juiced) (see note)",
+                "1/2",
+                "lemon",
+                "lemon juice",
+                Some("see note"),
+            ),
+        ] {
+            let parsed = parse_one(line);
+            assert_eq!(parsed.item, item, "{line}");
+            assert_eq!(
+                parsed.measurements,
+                vec![measurement(amount, unit)],
+                "{line}"
+            );
+            assert_eq!(parsed.note.as_deref(), note, "{line}");
+            assert_eq!(parsed.raw.as_deref(), Some(line));
+        }
+    }
+
+    #[test]
+    fn juiced_volume_leads() {
+        for line in [
+            "1 large lemon, juiced (about 1/4 cup)",
+            "1  lemon (juiced, about 1/4 cup)",
+        ] {
+            let parsed = parse_one(line);
+            assert_eq!(parsed.item, "lemon juice", "{line}");
+            assert_eq!(parsed.measurements[0], measurement("1/4", "cup"), "{line}");
+            assert_eq!(parsed.measurements.len(), 2, "{line}");
+        }
+    }
+
+    #[test]
+    fn zested_and_juiced_is_two_ingredients() {
+        for line in [
+            "1 lemon, zested and juiced",
+            "1  lemon (juiced and zested)",
+            "2 lemons, juiced and zested",
+        ] {
+            let parsed = parse_citrus_part_line(line).unwrap();
+            assert_eq!(parsed.len(), 2, "{line}");
+            assert_eq!(parsed[0].item, "lemon zest", "{line}");
+            assert_eq!(parsed[1].item, "lemon juice", "{line}");
+        }
+    }
+
+    #[test]
     fn other_lines_are_left_alone() {
         for line in [
             "Juice of the above lemon",
@@ -322,6 +511,16 @@ mod tests {
             "2 tablespoons lemon juice",
             "zest of 1 lemongrass stalk",
             "Grated zest of 1 lemon, plus 1 tablespoon lemon juice",
+            "1 lemon",
+            "2 lemons, sliced",
+            "1  lime, (juiced and zest freshly grated)",
+            "1  lemon (zested for topping)",
+            "3 limes (1/2 lime zested and 3 limes juiced)",
+            "2 lemons, 1 juiced, 1 sliced into half-moons",
+            "1  large orange or 2 small ones, juiced",
+            "2 oranges juiced, plus 2 slices to garnish",
+            "3 cups fresh clementine juice (about 12 clementines, juiced)",
+            "1 lemon juice",
         ] {
             assert_eq!(parse_citrus_part_line(line), None, "{line}");
         }

@@ -116,16 +116,31 @@
     {
       "raw": "3 limes, juiced and zested",
       "expected": {
-        "item": "limes, juiced and zested",
+        "item": "lime zest",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "limes"
           }
         ],
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "3 limes, juiced and zested",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "limes"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     }
   ]
 }

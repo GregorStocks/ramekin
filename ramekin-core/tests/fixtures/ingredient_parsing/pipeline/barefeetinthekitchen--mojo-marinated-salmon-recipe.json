@@ -89,29 +89,33 @@
     {
       "raw": "2  limes (juiced, about 1/4 cup)",
       "expected": {
-        "item": "limes",
+        "item": "lime juice",
         "measurements": [
-          {
-            "amount": "2",
-            "unit": null
-          },
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "limes"
           }
         ],
-        "note": "juiced, about 1/4 cup",
+        "note": "about 1/4 cup",
         "category": "Produce"
       }
     },
     {
       "raw": "1  orange (juiced, about 1/2 cup)",
       "expected": {
-        "item": "orange juiced",
+        "item": "orange juice",
         "measurements": [
           {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
             "amount": "1",
-            "unit": null
+            "unit": "orange"
           }
         ],
         "note": "about 1/2 cup",

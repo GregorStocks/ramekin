@@ -89,11 +89,11 @@
     {
       "raw": "2 medium lemons, juiced",
       "expected": {
-        "item": "lemons, juiced",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
-            "unit": "medium"
+            "unit": "medium lemons"
           }
         ],
         "note": null,
@@ -103,11 +103,11 @@
     {
       "raw": "2 medium limes, juiced",
       "expected": {
-        "item": "limes, juiced",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "2",
-            "unit": "medium"
+            "unit": "medium limes"
           }
         ],
         "note": null,

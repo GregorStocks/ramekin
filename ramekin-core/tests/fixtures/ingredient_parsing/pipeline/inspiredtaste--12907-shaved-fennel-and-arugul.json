@@ -5,16 +5,31 @@
     {
       "raw": "1 medium orange, zested and juiced",
       "expected": {
-        "item": "orange, zested and juiced",
+        "item": "orange zest",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium orange"
           }
         ],
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "1 medium orange, zested and juiced",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium orange"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      },
+      "expanded": true
     },
     {
       "raw": "1 tablespoon apple cider vinegar",

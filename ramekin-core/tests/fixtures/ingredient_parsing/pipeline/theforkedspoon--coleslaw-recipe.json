@@ -61,14 +61,14 @@
     {
       "raw": "1/2 large lemon (juiced)",
       "expected": {
-        "item": "lemon",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": "large"
+            "unit": "large lemon"
           }
         ],
-        "note": "juiced",
+        "note": null,
         "category": "Produce"
       }
     },

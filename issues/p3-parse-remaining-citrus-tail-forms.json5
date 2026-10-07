@@ -1,0 +1,19 @@
+{
+  "title": "Ingredient parser: cover the citrus juiced/zested lines citrus.rs still skips",
+  "description": "ingredient_parser/citrus.rs reads \"1 lemon, juiced\" / \"2 limes (zested and juiced)\" as lemon juice / lime zest, but some fixture lines still fall through to the generic parser: \
+\"1 blood orange, juiced\" (FRUIT_REGEX has no blood orange; the catalog may need a blood orange juice mapping too), \
+\"1 lemon, juiced and zest freshly grated\" (mixed participle + noun phrase), \
+\"1 lemon (zested for topping)\" (a word follows the phrase, which the parser refuses to guess at), \
+\"3 medium clementines (zested and fruit inside blended)\", and \
+\"1 lemon (juiced, about 1/4 cup fresh lemon juice)\" / \"1 lemon, juiced ((approx. 2 TBSP lemon juice))\", where the volume ends up in the note instead of leading the measurements because the trailing \"lemon juice\" words stop parse_ingredient from reading it. \
+Each of these gives a whole-fruit or unmatched item today. Expect small data/ diffs from make pipeline.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+    "nutrition",
+  ],
+  "created_at": "2026-10-06T18:40:00-07:00",
+  "updated_at": "2026-10-06T18:40:00-07:00",
+}

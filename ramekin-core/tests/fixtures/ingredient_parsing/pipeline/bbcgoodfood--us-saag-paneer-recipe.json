@@ -140,11 +140,11 @@
     {
       "raw": "½  lemon juiced, to serve",
       "expected": {
-        "item": "lemon juiced",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "lemon"
           }
         ],
         "note": "to serve",
