@@ -19,7 +19,9 @@ use ramekin_core::pipeline::{
 use crate::db::DbPool;
 use crate::schema::{scrape_jobs, step_outputs, user_tags};
 
-use super::jobs::{get_job, mark_completed, mark_failed, update_status_and_step};
+use super::jobs::{
+    get_job, mark_completed, mark_failed, update_current_step_keeping_start, update_status_and_step,
+};
 use super::output_store::DbOutputStore;
 use super::steps::{
     ApplyAutoTagsStep, ApplyGeneratedDescriptionStep, ApplyNormalizedTitleStep, FetchHtmlStep,
@@ -514,9 +516,14 @@ async fn run_post_save_steps(
             .iter()
             .copied()
             .min_by_key(|name| canonical_index(name));
-        if earliest.is_some() && earliest != reported_step {
-            update_status_and_step(pool, job_id, STATUS_ENRICHING, earliest).await?;
-            reported_step = earliest;
+        if let Some(step) = earliest.filter(|step| Some(*step) != reported_step) {
+            if reported_step.is_none() {
+                // Stamps current_step_started_at with the phase start.
+                update_status_and_step(pool, job_id, STATUS_ENRICHING, Some(step)).await?;
+            } else {
+                update_current_step_keeping_start(pool, job_id, step).await?;
+            }
+            reported_step = Some(step);
         }
 
         let Some((name, continues_on_failure, result)) = running.next().await else {

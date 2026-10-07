@@ -314,6 +314,18 @@ fn build_step_states_from_outputs(
     // but whose dependencies all have is running alongside it.
     let post_save = scrape_post_save_step_dependencies();
     let post_save_index = |name: &str| post_save.iter().position(|(n, _)| *n == name);
+    // During the post-save phase `current_step_started_at` is when the phase
+    // started. A retry reruns every post-save step after its resume point, so
+    // a later step's row from before then is a previous attempt's: drop it.
+    if let (false, Some(current_idx), Some(phase_start)) = (
+        terminal,
+        current_step.and_then(post_save_index),
+        current_step_started_at,
+    ) {
+        by_name.retain(|name, (created_at, _, _, _, _)| {
+            post_save_index(name).is_none_or(|idx| idx <= current_idx) || *created_at >= phase_start
+        });
+    }
     let running_alongside_current = |name: &str| -> bool {
         let Some(current) = current_step.filter(|s| !terminal && is_scrape_post_save_step(s))
         else {
@@ -722,6 +734,72 @@ mod tests {
         assert_eq!(status("enrich_auto_tag"), "running");
         // Waits on enrich_generate_description.
         assert_eq!(status("apply_generated_description"), "pending");
+        assert_eq!(status("apply_auto_tags"), "pending");
+    }
+
+    #[test]
+    fn retried_post_save_steps_ignore_previous_attempt_rows() {
+        // A retry resumed at enrich_normalize_title reruns enrich_auto_tag
+        // too; its row from the failed attempt must not show as finished.
+        let before = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let phase_start = DateTime::parse_from_rfc3339("2025-01-01T00:01:00Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let outputs = vec![
+            (
+                "save_recipe".to_string(),
+                before,
+                Some(10),
+                None,
+                true,
+                None,
+            ),
+            (
+                "resolve_ingredient_names".to_string(),
+                before,
+                Some(10),
+                None,
+                true,
+                None,
+            ),
+            (
+                "enrich_normalize_title".to_string(),
+                before,
+                Some(10),
+                None,
+                false,
+                Some("AI call failed".to_string()),
+            ),
+            (
+                "enrich_auto_tag".to_string(),
+                before,
+                Some(10),
+                None,
+                true,
+                None,
+            ),
+        ];
+        let states = build_step_states_from_outputs(
+            outputs,
+            "enriching",
+            Some("enrich_normalize_title"),
+            Some(phase_start),
+            None,
+            None,
+        );
+        let status = |name: &str| {
+            states
+                .iter()
+                .find(|s| s.name == name)
+                .map(|s| s.status.as_str())
+                .unwrap()
+        };
+        assert_eq!(status("save_recipe"), "completed");
+        assert_eq!(status("resolve_ingredient_names"), "completed");
+        assert_eq!(status("enrich_normalize_title"), "running");
+        assert_eq!(status("enrich_auto_tag"), "running");
         assert_eq!(status("apply_auto_tags"), "pending");
     }
 

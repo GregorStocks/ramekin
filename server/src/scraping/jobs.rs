@@ -269,6 +269,29 @@ pub(super) async fn update_status_and_step(
     .await
 }
 
+/// Point `current_step` at another step without touching
+/// `current_step_started_at`. Post-save steps run concurrently, so the job row
+/// keeps the time the phase started; the status API uses it to tell this
+/// attempt's outputs from a previous attempt's.
+pub(super) async fn update_current_step_keeping_start(
+    pool: &DbPool,
+    job_id: Uuid,
+    current_step: &str,
+) -> Result<(), ScrapeError> {
+    let current_step = current_step.to_string();
+    run_scrape_db(pool, move |conn| {
+        diesel::update(scrape_jobs::table.find(job_id))
+            .set((
+                scrape_jobs::current_step.eq(Some(current_step.as_str())),
+                scrape_jobs::updated_at.eq(Utc::now()),
+            ))
+            .execute(conn)
+            .map_err(|e| ScrapeError::Database(e.to_string()))?;
+        Ok(())
+    })
+    .await
+}
+
 /// Save a step output to the database (append-only).
 pub(super) fn save_step_output(
     conn: &mut DbConn,
