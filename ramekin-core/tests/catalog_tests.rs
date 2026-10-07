@@ -592,6 +592,7 @@ fn a_peeled_note_selects_the_peeled_food() {
         "peeled and cored",
         "peeled, seeded and coarsely chopped",
         "peeled, but not cored",
+        "peeled but not cored",
         "thawed if frozen, peeled",
     ] {
         assert_eq!(line_fdc("apples", Some(note)), peeled, "{note}");
@@ -659,6 +660,9 @@ fn a_fat_note_selects_the_ground_meat_blend() {
         line_fdc("ground beef", Some("preferably a leaner meat, 85-93% lean")),
         blend(80)
     );
+    for note in ["85%-93% lean", "85% to 93% lean", "15-20% fat"] {
+        assert_eq!(line_fdc("ground beef", Some(note)), blend(80), "{note}");
+    }
     // A percentage describing an alternative doesn't change this food.
     assert_eq!(
         line_fdc(

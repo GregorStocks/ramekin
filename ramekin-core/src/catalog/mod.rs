@@ -689,7 +689,7 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     static PEELED: LazyLock<regex::Regex> =
         LazyLock::new(|| regex::Regex::new(r"(?i)\bpeeled\b").unwrap());
     // "not peeled", "peeled only if desired": the skin may stay on. Checked
-    // within the clause naming peeled, so "peeled, but not cored" is peeled.
+    // within the clause naming peeled, so "peeled but not cored" is peeled.
     static MAYBE_UNPEELED: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(
             r"(?i)\b(not|never|no|without|unpeeled|if|optional|optionally)\b|n['’]t\b",
@@ -704,12 +704,13 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
         )
         .unwrap()
     });
-    // The first group catches a range ("85-93% lean"), which names no blend.
+    // The first group catches a range ("85-93% lean", "85% to 93% lean"),
+    // which names no blend.
     static LEAN: LazyLock<regex::Regex> = LazyLock::new(|| {
-        regex::Regex::new(r"(?i)(\d\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*%\s*lean\b").unwrap()
+        regex::Regex::new(r"(?i)(\d\s*%?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*%\s*lean\b").unwrap()
     });
     static FAT: LazyLock<regex::Regex> = LazyLock::new(|| {
-        regex::Regex::new(r"(?i)(\d\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*%\s*fat\b").unwrap()
+        regex::Regex::new(r"(?i)(\d\s*%?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*%\s*fat\b").unwrap()
     });
     static RATIO: LazyLock<regex::Regex> =
         LazyLock::new(|| regex::Regex::new(r"\b(\d{2})\s*/\s*(\d{1,2})\b").unwrap());
@@ -722,6 +723,7 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     let line = format!("{item}; {note}");
     let clauses = || {
         line.split([',', ';', '(', ')'])
+            .flat_map(|clause| clause.split(" but "))
             .take_while(|clause| !clause.trim_start().to_lowercase().starts_with("or "))
     };
     let peeled = clauses()
