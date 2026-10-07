@@ -613,6 +613,7 @@ fn a_peeled_note_selects_the_peeled_food() {
     ] {
         assert_eq!(line_fdc("apples", note), fdc_id("apples"), "{note:?}");
     }
+    assert_eq!(line_fdc("apples, or pears", Some("peeled")), peeled);
     // The parser can leave the peeling in the item.
     assert_eq!(line_fdc("chopped peeled apples", None), peeled);
     // USDA weighs peeled apples by the cup of slices.

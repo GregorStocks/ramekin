@@ -726,12 +726,14 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     let id = id.split(" (includes ").next().unwrap_or(id);
     // Clauses from an alternative on ("or other ground beef, with around 20%
     // fat") describe that food, not this one.
-    let line = format!("{item}; {note}");
-    let clauses = || {
-        line.split([',', ';', '(', ')'])
+    // The item and note are cut separately, so "apples, or pears" still
+    // reads a "peeled" note.
+    fn clauses_of(text: &str) -> impl Iterator<Item = &str> {
+        text.split([',', ';', '(', ')'])
             .flat_map(|clause| clause.split(" but "))
             .take_while(|clause| !clause.trim_start().to_lowercase().starts_with("or "))
-    };
+    }
+    let clauses = || clauses_of(item).chain(clauses_of(note));
     let peeled = clauses()
         .any(|clause| PEELED.is_match(clause) && !MAYBE_UNPEELED.is_match(clause))
         && !clauses().any(|clause| OPTIONAL.is_match(clause));
