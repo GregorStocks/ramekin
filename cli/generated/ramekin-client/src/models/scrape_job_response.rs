@@ -38,7 +38,7 @@ pub struct ScrapeJobResponse {
     /// The scrape job ID
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
-    /// Recipe ID once the recipe is saved (status enriching or completed; rescrapes have it from the start)
+    /// Recipe ID once the recipe is saved (also set on a job that failed after saving; rescrapes have it from the start)
     #[serde(
         rename = "recipe_id",
         default,

@@ -22,7 +22,7 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
     public var failedAtStep: String?
     /** The scrape job ID */
     public var id: UUID
-    /** Recipe ID once the recipe is saved (status enriching or completed; rescrapes have it from the start) */
+    /** Recipe ID once the recipe is saved (also set on a job that failed after saving; rescrapes have it from the start) */
     public var recipeId: UUID?
     /** Number of retry attempts */
     public var retryCount: Int

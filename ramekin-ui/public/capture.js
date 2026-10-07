@@ -206,7 +206,12 @@
         clearStallWatchdog();
         warn("failed: " + (job.error || "unknown"));
         setStatus(job.error || "Failed to extract recipe", true);
-        showCloseButton();
+        // A job that fails during enrichment has still saved the recipe.
+        if (job.recipe_id) {
+          showActions(job.recipe_id, null);
+        } else {
+          showCloseButton();
+        }
       } else {
         if (job.status === "parsing") {
           setPhase("Extracting recipe...");

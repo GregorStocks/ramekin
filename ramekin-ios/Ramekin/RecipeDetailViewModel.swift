@@ -339,7 +339,7 @@ extension RecipeDetailViewModel {
             let response = try await api.rescrape(recipeId)
             let jobId = response.jobId
 
-            let pollStartTime = Date()
+            var pollStartTime = Date()
             let timeoutInterval: TimeInterval = 120
 
             while true {
@@ -359,6 +359,8 @@ extension RecipeDetailViewModel {
                     await loadRecipe()
                     isRescraping = false
                     isFinishingRescrapeEnrichment = true
+                    // Enrichment gets its own window, however long parsing took.
+                    pollStartTime = Date()
                 }
 
                 if Date().timeIntervalSince(pollStartTime) > timeoutInterval {

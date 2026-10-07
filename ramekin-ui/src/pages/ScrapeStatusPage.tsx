@@ -309,7 +309,12 @@ export default function ScrapeStatusPage() {
               </For>
             </ol>
 
-            <Show when={isScrapeRecipeReady(j())}>
+            <Show
+              when={
+                isScrapeRecipeReady(j()) ||
+                (j().status === "failed" && j().recipeId)
+              }
+            >
               <div class="terminal-actions">
                 <button
                   type="button"

@@ -212,6 +212,8 @@ def test_failure_lets_earlier_steps_finish_so_retry_resumes_correctly(
     job = wait_for_job_completion(scrape_api, job_id)
     assert job.status == "failed"
     assert job.failed_at_step == "enrich_auto_tag"
+    # The recipe was saved before enrichment failed; clients can still open it.
+    assert job.recipe_id is not None
     for name in (
         "apply_normalized_title",
         "enrich_generate_description",

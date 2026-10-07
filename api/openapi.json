@@ -4563,7 +4563,7 @@
               "null"
             ],
             "format": "uuid",
-            "description": "Recipe ID once the recipe is saved (status enriching or completed;\nrescrapes have it from the start)"
+            "description": "Recipe ID once the recipe is saved (also set on a job that failed\nafter saving; rescrapes have it from the start)"
           },
           "retry_count": {
             "type": "integer",

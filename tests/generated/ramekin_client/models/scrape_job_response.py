@@ -34,7 +34,7 @@ class ScrapeJobResponse(BaseModel):
     error: Optional[StrictStr] = Field(default=None, description="Error message if failed")
     failed_at_step: Optional[StrictStr] = Field(default=None, description="Which step failed (for retry logic)")
     id: UUID = Field(description="The scrape job ID")
-    recipe_id: Optional[UUID] = Field(default=None, description="Recipe ID once the recipe is saved (status enriching or completed; rescrapes have it from the start)")
+    recipe_id: Optional[UUID] = Field(default=None, description="Recipe ID once the recipe is saved (also set on a job that failed after saving; rescrapes have it from the start)")
     retry_count: StrictInt = Field(description="Number of retry attempts")
     status: StrictStr = Field(description="Current job status (pending, scraping, parsing, enriching, completed, failed). While \"enriching\" the recipe is saved and `recipe_id` is set; AI enrichment may still update it until the job completes.")
     steps: List[StepState] = Field(description="Per-step state for the status page (ordered by pipeline step).")

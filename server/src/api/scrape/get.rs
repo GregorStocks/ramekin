@@ -25,8 +25,8 @@ pub struct ScrapeJobResponse {
     /// URL being scraped (optional for imports)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
-    /// Recipe ID once the recipe is saved (status enriching or completed;
-    /// rescrapes have it from the start)
+    /// Recipe ID once the recipe is saved (also set on a job that failed
+    /// after saving; rescrapes have it from the start)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub recipe_id: Option<Uuid>,
     /// Error message if failed
@@ -85,7 +85,10 @@ pub async fn get_scrape(
     let can_retry = job.status == scraping::STATUS_FAILED;
 
     let recipe_id = match job.recipe_id {
-        None if job.status == scraping::STATUS_ENRICHING => {
+        // A job that fails during enrichment has still saved its recipe.
+        None if job.status == scraping::STATUS_ENRICHING
+            || job.status == scraping::STATUS_FAILED =>
+        {
             match scraping::saved_recipe_id(&pool, job.id).await {
                 Ok(id) => id,
                 Err(e) => {
