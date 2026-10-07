@@ -92,20 +92,12 @@ fn parse_prep_tail(line: &str) -> Option<CitrusLine> {
     let (amount, after_amount) = extract_amount(&line);
     let amount = amount?;
     let fruit_captures = FRUIT_REGEX.captures(after_amount.trim())?;
-    // Only fruits whose juice the catalog can count per fruit (bespoke.json;
-    // grapefruit zest is a trace); "1 clementine (juiced)" stays the whole
-    // fruit, which at least resolves.
+    // Only parts the catalog can count per fruit (bespoke.json): grapefruit
+    // has a juice yield but no zest weight, so "1 grapefruit, zested" and
+    // "1 clementine (juiced)" stay the whole fruit, which at least resolves.
     let fruit = collapse_whitespace(&fruit_captures["fruit"]).to_lowercase();
-    if ![
-        "lemon",
-        "lime",
-        "orange",
-        "blood orange",
-        "grapefruit",
-        "pink grapefruit",
-    ]
-    .contains(&fruit.as_str())
-    {
+    let zest_counts = ["lemon", "lime", "orange", "blood orange"].contains(&fruit.as_str());
+    if !zest_counts && !["grapefruit", "pink grapefruit"].contains(&fruit.as_str()) {
         return None;
     }
     let tail = PREP_TAIL_REGEX.captures(&fruit_captures["trailer"])?;
@@ -114,6 +106,9 @@ fn parse_prep_tail(line: &str) -> Option<CitrusLine> {
         Some(parts) => (parts.as_str(), &tail["zest_prep"]),
         None => (&tail["parts"], &tail["prep"]),
     };
+    if !zest_counts && parts.to_lowercase().contains("zest") {
+        return None;
+    }
     let rest = tail["rest"].trim_end();
     let words_follow = rest.trim_start().starts_with(|c: char| c.is_alphanumeric());
     // "for topping" is the part's use, so it joins the note, unless it goes
@@ -702,6 +697,8 @@ mod tests {
             "1 lemon, juiced and zest of another",
             "1 lemon (zested over the top)",
             "1 lemon, zested for topping and juiced",
+            "1 pink grapefruit, zested",
+            "1 grapefruit, zested and juiced",
             "3 limes (1/2 lime zested and 3 limes juiced)",
             "2 lemons, 1 juiced, 1 sliced into half-moons",
             "1  large orange or 2 small ones, juiced",
