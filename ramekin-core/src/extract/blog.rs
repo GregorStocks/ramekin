@@ -1084,27 +1084,29 @@ pub(super) fn looks_like_ingredient_list(chunk: &str) -> bool {
 }
 
 /// The section name for a bold-only line at the top of an ingredient chunk,
-/// when it reads as a heading: Title Case ("Steakhouse Mustard Vinaigrette",
-/// "For the Crust"), no digits, and accepted by `detect_section_header` once
-/// given a colon. A bold ingredient ("Chopped parsley") isn't Title Case, and
-/// a bare "Ingredients" label is left for the parser to ignore.
-fn leading_bold_section_title(part: &str) -> Option<String> {
+/// when it reads as a heading. Either it is a header as written ("For the
+/// Crust", "FILLING", "Topping"), or it opens a later ingredient list in Title
+/// Case with no digits ("Steakhouse Mustard Vinaigrette" after the salad's
+/// ingredients), the way a sub-recipe is introduced. A bold ingredient at the
+/// top of the first list ("Fresh Parsley", "Chopped parsley") stays an
+/// ingredient, and a bare "Ingredients" label is left for the parser to ignore.
+fn leading_bold_section_title(part: &str, follows_ingredients: bool) -> Option<String> {
     const SMALL_WORDS: &[&str] = &["a", "and", "or", "the", "of", "for", "to", "in", "with"];
     let title = fragment_to_text(&bold_only_heading(part)?);
     let title = title.trim_end_matches(':').trim();
+    if title.chars().any(|c| c.is_ascii_digit()) || should_ignore_line(title) {
+        return None;
+    }
     let is_title_case = title.split_whitespace().all(|word| {
         SMALL_WORDS.contains(&word.to_lowercase().as_str())
             || !word.starts_with(char::is_alphabetic)
             || word.starts_with(char::is_uppercase)
     });
-    if !is_title_case
-        || title.chars().any(|c| c.is_ascii_digit())
-        || should_ignore_line(title)
-        || detect_section_header(&format!("{title}:")).is_none()
-    {
-        return None;
-    }
-    Some(title.to_string())
+    let is_header = detect_section_header(title).is_some()
+        || (follows_ingredients
+            && is_title_case
+            && detect_section_header(&format!("{title}:")).is_some());
+    is_header.then(|| title.to_string())
 }
 
 /// Extract individual ingredient lines from a `<br>`-delimited HTML chunk.
@@ -1117,6 +1119,7 @@ fn leading_bold_section_title(part: &str) -> Option<String> {
 /// ingredient from the recipe. A leading standalone bold heading is treated the
 /// same way when it reads as one (see [`leading_bold_section_title`]).
 pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
+    let follows_ingredients = !lines.is_empty();
     let mut seen_text_line = false;
     for part in BR_TAG_REGEX.split(chunk) {
         let part = part.trim();
@@ -1165,7 +1168,7 @@ pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<S
         // gets the colon the ingredient parser needs to treat it as a
         // section header.
         if !seen_text_line {
-            if let Some(header) = leading_bold_section_title(part) {
+            if let Some(header) = leading_bold_section_title(part, follows_ingredients) {
                 push_colon_header(lines, &header);
                 seen_text_line = true;
                 continue;
@@ -1215,10 +1218,17 @@ mod tests {
         lines
     }
 
+    /// Lines from a chunk that comes after an earlier ingredient list.
+    fn later_chunk_lines(chunk: &str) -> Vec<String> {
+        let mut lines = vec!["1 pound skirt steak".to_string()];
+        extract_ingredient_lines_from_chunk(chunk, &mut lines);
+        lines.split_off(1)
+    }
+
     #[test]
     fn leading_bold_title_case_heading_becomes_section_header() {
         assert_eq!(
-            chunk_lines(
+            later_chunk_lines(
                 "<b>Curry-Lime Yogurt</b><br />\n2 cups plain yogurt<br />\n1 teaspoon sugar"
             ),
             vec![
@@ -1237,12 +1247,16 @@ mod tests {
     fn leading_bold_ingredient_stays_an_ingredient() {
         for heading in [
             "<b>Chopped parsley</b>",
+            "<b>Fresh Parsley</b>",
             "<b>5-Minute Sauce</b>",
             "<b>Ingredients</b>",
         ] {
             let lines = chunk_lines(&format!("{heading}<br />2 cups flour<br />1 cup sugar"));
             assert!(!lines[0].ends_with(':'), "{heading} became {:?}", lines[0]);
         }
+        // Lowercase stays an ingredient even when it opens a later list.
+        let lines = later_chunk_lines("<b>Chopped parsley</b><br />2 cups flour<br />1 cup sugar");
+        assert_eq!(lines[0], "Chopped parsley");
     }
 
     #[test]
