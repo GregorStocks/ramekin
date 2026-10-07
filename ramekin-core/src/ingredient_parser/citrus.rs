@@ -116,10 +116,11 @@ fn parse_prep_tail(line: &str) -> Option<CitrusLine> {
     };
     let rest = tail["rest"].trim_end();
     let words_follow = rest.trim_start().starts_with(|c: char| c.is_alphanumeric());
-    // "for topping" is the part's use, so it joins the note.
+    // "for topping" is the part's use, so it joins the note, unless it goes
+    // on to another part ("zested for topping and juiced").
     let rest = if !words_follow {
         rest.to_string()
-    } else if starts_with_word(rest, "for") {
+    } else if starts_with_word(rest, "for") && !names_a_part(rest) {
         format!(",{rest}")
     } else {
         return None;
@@ -150,6 +151,12 @@ fn parse_prep_tail(line: &str) -> Option<CitrusLine> {
         parts: collapse_whitespace(parts).to_lowercase(),
         trailer,
     })
+}
+
+/// Whether `s` mentions juicing or zesting.
+fn names_a_part(s: &str) -> bool {
+    let lower = s.to_lowercase();
+    lower.contains("juic") || lower.contains("zest")
 }
 
 /// Whether `s` starts with `word` as a whole word, ignoring case.
@@ -694,6 +701,7 @@ mod tests {
             "2 lemons, sliced",
             "1 lemon, juiced and zest of another",
             "1 lemon (zested over the top)",
+            "1 lemon, zested for topping and juiced",
             "3 limes (1/2 lime zested and 3 limes juiced)",
             "2 lemons, 1 juiced, 1 sliced into half-moons",
             "1  large orange or 2 small ones, juiced",
