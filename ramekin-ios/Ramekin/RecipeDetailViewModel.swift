@@ -339,7 +339,7 @@ extension RecipeDetailViewModel {
             let response = try await api.rescrape(recipeId)
             let jobId = response.jobId
 
-            var pollStartTime = Date()
+            let pollStartTime = Date()
             let timeoutInterval: TimeInterval = 120
 
             while true {
@@ -364,11 +364,12 @@ extension RecipeDetailViewModel {
                     await loadRecipe()
                     isRescraping = false
                     isFinishingRescrapeEnrichment = true
-                    // Enrichment gets its own window, however long parsing took.
-                    pollStartTime = Date()
                 }
 
-                if Date().timeIntervalSince(pollStartTime) > timeoutInterval {
+                // Enrichment has no deadline here: AI calls can take longer
+                // than this window, and leaving the view cancels the task.
+                if !isFinishingRescrapeEnrichment
+                    && Date().timeIntervalSince(pollStartTime) > timeoutInterval {
                     rescrapeError = "Rescrape timed out"
                     return
                 }
