@@ -24,6 +24,14 @@ export interface ImportRecipeRequest {
      */
     extractionMethod: ImportExtractionMethod;
     /**
+     * Client-chosen key for this import. Resubmitting a key the user already
+     * used returns the original job (200) instead of creating another recipe;
+     * the resubmission's photo_ids are then ignored.
+     * @type {string}
+     * @memberof ImportRecipeRequest
+     */
+    idempotencyKey?: string | null;
+    /**
      * Photo IDs that have already been uploaded via POST /api/photos
      * @type {Array<string>}
      * @memberof ImportRecipeRequest

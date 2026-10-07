@@ -44,6 +44,7 @@ from ramekin_client.models.generate_photo_response import GeneratePhotoResponse
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod
 from ramekin_client.models.import_from_photos_request import ImportFromPhotosRequest
 from ramekin_client.models.import_from_photos_response import ImportFromPhotosResponse
+from ramekin_client.models.import_job_key import ImportJobKey
 from ramekin_client.models.import_raw_recipe import ImportRawRecipe
 from ramekin_client.models.import_recipe_request import ImportRecipeRequest
 from ramekin_client.models.import_recipe_response import ImportRecipeResponse
@@ -56,6 +57,8 @@ from ramekin_client.models.ingredient_weights_status import IngredientWeightsSta
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse
+from ramekin_client.models.lookup_import_jobs_request import LookupImportJobsRequest
+from ramekin_client.models.lookup_import_jobs_response import LookupImportJobsResponse
 from ramekin_client.models.me_response import MeResponse
 from ramekin_client.models.meal_plan_item import MealPlanItem
 from ramekin_client.models.meal_plan_list_response import MealPlanListResponse

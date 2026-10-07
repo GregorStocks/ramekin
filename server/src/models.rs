@@ -310,6 +310,7 @@ pub struct ScrapeJob {
     pub photo_only: bool,
     pub current_step_started_at: Option<DateTime<Utc>>,
     pub expected_version_id: Option<Uuid>,
+    pub idempotency_key: Option<String>,
 }
 
 #[derive(Insertable)]
@@ -317,6 +318,14 @@ pub struct ScrapeJob {
 pub struct NewScrapeJob<'a> {
     pub user_id: Uuid,
     pub url: Option<&'a str>,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::scrape_jobs)]
+pub struct NewImportJob<'a> {
+    pub user_id: Uuid,
+    pub url: Option<&'a str>,
+    pub idempotency_key: Option<&'a str>,
 }
 
 // Step output for pipeline step results (append-only log)

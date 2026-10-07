@@ -41,6 +41,14 @@ export interface ImportRecipeRequest {
      */
     extractionMethod: ImportExtractionMethod;
     /**
+     * Client-chosen key for this import. Resubmitting a key the user already
+     * used returns the original job (200) instead of creating another recipe;
+     * the resubmission's photo_ids are then ignored.
+     * @type {string}
+     * @memberof ImportRecipeRequest
+     */
+    idempotencyKey?: string | null;
+    /**
      * Photo IDs that have already been uploaded via POST /api/photos
      * @type {Array<string>}
      * @memberof ImportRecipeRequest
@@ -77,6 +85,7 @@ export function ImportRecipeRequestFromJSONTyped(json: any, ignoreDiscriminator:
     return {
         
         'extractionMethod': ImportExtractionMethodFromJSON(json['extraction_method']),
+        'idempotencyKey': json['idempotency_key'] == null ? undefined : json['idempotency_key'],
         'photoIds': json['photo_ids'],
         'rawRecipe': ImportRawRecipeFromJSON(json['raw_recipe']),
     };
@@ -94,6 +103,7 @@ export function ImportRecipeRequestToJSONTyped(value?: ImportRecipeRequest | nul
     return {
         
         'extraction_method': ImportExtractionMethodToJSON(value['extractionMethod']),
+        'idempotency_key': value['idempotencyKey'],
         'photo_ids': value['photoIds'],
         'raw_recipe': ImportRawRecipeToJSON(value['rawRecipe']),
     };

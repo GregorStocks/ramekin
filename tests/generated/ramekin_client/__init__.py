@@ -71,6 +71,7 @@ __all__ = [
     "ImportExtractionMethod",
     "ImportFromPhotosRequest",
     "ImportFromPhotosResponse",
+    "ImportJobKey",
     "ImportRawRecipe",
     "ImportRecipeRequest",
     "ImportRecipeResponse",
@@ -83,6 +84,8 @@ __all__ = [
     "ListRecipesResponse",
     "LoginRequest",
     "LoginResponse",
+    "LookupImportJobsRequest",
+    "LookupImportJobsResponse",
     "MeResponse",
     "MealPlanItem",
     "MealPlanListResponse",
@@ -185,6 +188,7 @@ from ramekin_client.models.generate_photo_response import GeneratePhotoResponse 
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod as ImportExtractionMethod
 from ramekin_client.models.import_from_photos_request import ImportFromPhotosRequest as ImportFromPhotosRequest
 from ramekin_client.models.import_from_photos_response import ImportFromPhotosResponse as ImportFromPhotosResponse
+from ramekin_client.models.import_job_key import ImportJobKey as ImportJobKey
 from ramekin_client.models.import_raw_recipe import ImportRawRecipe as ImportRawRecipe
 from ramekin_client.models.import_recipe_request import ImportRecipeRequest as ImportRecipeRequest
 from ramekin_client.models.import_recipe_response import ImportRecipeResponse as ImportRecipeResponse
@@ -197,6 +201,8 @@ from ramekin_client.models.ingredient_weights_status import IngredientWeightsSta
 from ramekin_client.models.list_recipes_response import ListRecipesResponse as ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest as LoginRequest
 from ramekin_client.models.login_response import LoginResponse as LoginResponse
+from ramekin_client.models.lookup_import_jobs_request import LookupImportJobsRequest as LookupImportJobsRequest
+from ramekin_client.models.lookup_import_jobs_response import LookupImportJobsResponse as LookupImportJobsResponse
 from ramekin_client.models.me_response import MeResponse as MeResponse
 from ramekin_client.models.meal_plan_item import MealPlanItem as MealPlanItem
 from ramekin_client.models.meal_plan_list_response import MealPlanListResponse as MealPlanListResponse

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ImportFromPhotosRequestToJSON, ImportFromPhotosResponseFromJSON, ImportRecipeRequestToJSON, ImportRecipeResponseFromJSON, PrepareTextRecipeRequestToJSON, PrepareTextRecipeResponseFromJSON, } from '../models/index';
+import { ImportFromPhotosRequestToJSON, ImportFromPhotosResponseFromJSON, ImportRecipeRequestToJSON, ImportRecipeResponseFromJSON, LookupImportJobsRequestToJSON, LookupImportJobsResponseFromJSON, PrepareTextRecipeRequestToJSON, PrepareTextRecipeResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -79,6 +79,38 @@ export class ImportApi extends runtime.BaseAPI {
      */
     async importRecipe(requestParameters, initOverrides) {
         const response = await this.importRecipeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+    /**
+     */
+    async lookupImportJobsRaw(requestParameters, initOverrides) {
+        if (requestParameters['lookupImportJobsRequest'] == null) {
+            throw new runtime.RequiredError('lookupImportJobsRequest', 'Required parameter "lookupImportJobsRequest" was null or undefined when calling lookupImportJobs().');
+        }
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+        let urlPath = `/api/import/recipe/lookup`;
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LookupImportJobsRequestToJSON(requestParameters['lookupImportJobsRequest']),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => LookupImportJobsResponseFromJSON(jsonValue));
+    }
+    /**
+     */
+    async lookupImportJobs(requestParameters, initOverrides) {
+        const response = await this.lookupImportJobsRaw(requestParameters, initOverrides);
         return await response.value();
     }
     /**

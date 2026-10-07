@@ -15,19 +15,23 @@ public struct ImportRecipeRequest: Codable, JSONEncodable, Hashable {
 
     /** The extraction/import method used */
     public var extractionMethod: ImportExtractionMethod
+    /** Client-chosen key for this import. Resubmitting a key the user already used returns the original job (200) instead of creating another recipe; the resubmission's photo_ids are then ignored. */
+    public var idempotencyKey: String?
     /** Photo IDs that have already been uploaded via POST /api/photos */
     public var photoIds: [UUID]
     /** The raw recipe data (converted from import source by client) */
     public var rawRecipe: ImportRawRecipe
 
-    public init(extractionMethod: ImportExtractionMethod, photoIds: [UUID], rawRecipe: ImportRawRecipe) {
+    public init(extractionMethod: ImportExtractionMethod, idempotencyKey: String? = nil, photoIds: [UUID], rawRecipe: ImportRawRecipe) {
         self.extractionMethod = extractionMethod
+        self.idempotencyKey = idempotencyKey
         self.photoIds = photoIds
         self.rawRecipe = rawRecipe
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case extractionMethod = "extraction_method"
+        case idempotencyKey = "idempotency_key"
         case photoIds = "photo_ids"
         case rawRecipe = "raw_recipe"
     }
@@ -37,6 +41,7 @@ public struct ImportRecipeRequest: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(extractionMethod, forKey: .extractionMethod)
+        try container.encodeIfPresent(idempotencyKey, forKey: .idempotencyKey)
         try container.encode(photoIds, forKey: .photoIds)
         try container.encode(rawRecipe, forKey: .rawRecipe)
     }
