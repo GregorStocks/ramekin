@@ -862,7 +862,12 @@ pub fn clean_aliases(root: &Path) -> Result<()> {
     let path = root.join(CURATED_PATH);
     let json =
         fs::read_to_string(&path).with_context(|| format!("Failed to read {CURATED_PATH}"))?;
-    let (cleaned, changes) = clean_curated(&json);
+    let shopping_items: Vec<ShoppingItem> = read_json(&root.join(SHOPPING_CORPUS))?;
+    let typed = shopping_items
+        .iter()
+        .map(|item| ramekin_core::catalog::normalize(&item.item))
+        .collect();
+    let (cleaned, changes) = clean_curated(&json, &typed);
     fs::write(&path, cleaned).with_context(|| format!("Failed to write {CURATED_PATH}"))?;
     let (mut removed, mut renamed, mut conflicts) = (Vec::new(), Vec::new(), Vec::new());
     for change in &changes {

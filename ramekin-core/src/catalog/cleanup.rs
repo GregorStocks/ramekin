@@ -8,7 +8,7 @@
 //! - renames it to the parsed name when that name resolves to nothing;
 //! - otherwise reports a conflict and keeps it.
 
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
 
 use serde_json::{Map, Value};
 
@@ -109,7 +109,11 @@ fn outcome(name: &str) -> String {
 
 /// Plan and apply the cleanup to curated.json's text. Returns the new text
 /// (formatted like the file: 2-space indent, sorted keys) and the changes.
-pub fn clean_curated(json: &str) -> (String, Vec<CuratedChange>) {
+///
+/// `typed` holds names people type as-is, such as hand-typed shopping-list
+/// items (normalized). The shopping list matches them without parsing, so a
+/// key among them stays even when the parser would never produce it.
+pub fn clean_curated(json: &str, typed: &BTreeSet<String>) -> (String, Vec<CuratedChange>) {
     let mut curated: Map<String, Value> =
         serde_json::from_str(json).expect("curated.json is an object");
     let mut changes = Vec::new();
@@ -123,7 +127,7 @@ pub fn clean_curated(json: &str) -> (String, Vec<CuratedChange>) {
         let mut renames: BTreeMap<String, Vec<String>> = BTreeMap::new();
         for name in names.keys() {
             let parsed = parsed_name(name);
-            if parsed.is_empty() || parsed == *name {
+            if parsed.is_empty() || parsed == *name || typed.contains(name) {
                 continue;
             }
             let current = outcome(name);

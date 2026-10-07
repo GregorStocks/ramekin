@@ -747,7 +747,8 @@ fn curated_names_are_what_the_parser_produces() {
     // "chickpeas, rinsed") never match a newly parsed line. `make
     // catalog-clean-aliases` removes or re-keys them; only conflicts, which
     // need a person to decide, may remain.
-    let (_, changes) = ramekin_core::catalog::clean_curated(ramekin_core::catalog::CURATED_JSON);
+    let (_, changes) =
+        ramekin_core::catalog::clean_curated(ramekin_core::catalog::CURATED_JSON, &typed_names());
     let stale: Vec<_> = changes
         .iter()
         .filter(|change| {
@@ -921,7 +922,8 @@ fn clean_curated_drops_the_category_of_a_removed_name() {
     // Neither name resolves, so the key goes; a category left on it would
     // name nothing and the catalog would refuse to load.
     let json = r#"{"aliases": {"zzfood, chopped": "zzfood"}, "not_food": {}, "categories": {"zzfood, chopped": "Produce", "zzother": "Produce"}}"#;
-    let (cleaned, changes) = ramekin_core::catalog::clean_curated(json);
+    let (cleaned, changes) =
+        ramekin_core::catalog::clean_curated(json, &std::collections::BTreeSet::new());
     assert_eq!(
         changes,
         vec![ramekin_core::catalog::CuratedChange::Remove {
@@ -934,4 +936,30 @@ fn clean_curated_drops_the_category_of_a_removed_name() {
         cleaned["categories"],
         serde_json::json!({"zzother": "Produce"})
     );
+}
+
+#[test]
+fn clean_curated_keeps_names_people_type() {
+    // A hand-typed shopping-list item is matched as typed, never parsed.
+    let json = r#"{"aliases": {"zzfood, chopped": "zzfood"}, "not_food": {}, "categories": {}}"#;
+    let typed = std::collections::BTreeSet::from(["zzfood, chopped".to_string()]);
+    let (_, changes) = ramekin_core::catalog::clean_curated(json, &typed);
+    assert!(changes.is_empty(), "{changes:?}");
+}
+
+/// Normalized hand-typed shopping-list items, which curated keys must keep
+/// matching (see `clean_curated`).
+fn typed_names() -> std::collections::BTreeSet<String> {
+    #[derive(serde::Deserialize)]
+    struct ShoppingItem {
+        item: String,
+    }
+    let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("../data/shopping-list-categories.json");
+    let items: Vec<ShoppingItem> =
+        serde_json::from_str(&std::fs::read_to_string(path).unwrap()).unwrap();
+    items
+        .iter()
+        .map(|item| ramekin_core::catalog::normalize(&item.item))
+        .collect()
 }

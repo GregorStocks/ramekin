@@ -335,7 +335,10 @@ that appears in both releases.
 
   A key that a measured line keeps whole ("1 cup medium grain rice") counts as
   already parsed, even if the bare key would lose a leading size or count. A
-  removed or re-keyed name takes its `categories` entry with it.
+  key that a hand-typed shopping-list item in
+  `data/shopping-list-categories.json` uses verbatim stays too, because the
+  shopping list matches typed text without parsing it. A removed or re-keyed
+  name takes its `categories` entry with it.
 
   The `curated_names_are_what_the_parser_produces` test fails until it has
   been run. The first run (2026-09-29, alongside the parser fix) removed 571
