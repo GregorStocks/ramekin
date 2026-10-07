@@ -145,15 +145,17 @@ measure. A note naming the beverage form of a milk ("carton", "beverage",
 "refrigerated kind") tries "<item> beverage" first, so "coconut milk
 (refrigerated kind, such as Silk)" is the carton drink rather than the canned
 default. Brand names and a bare "refrigerated" don't count: a can of coconut
-milk is often "refrigerated overnight". A note saying the food is peeled
-("peeled and cored", but not "unpeeled", "not peeled" or "peeled if
-desired") swaps a USDA food "with skin" or "with peel" for its exact peeled
-counterpart ("apples, raw, without skin"),
-since the skin is discarded whenever the peeling happens; a food with no
-counterpart (granny smith apples) stays as written. A note (or the item) giving a fat or lean
-percentage ("at least 15% fat", "93% lean", "90/10") picks that blend when the
-item resolves to a USDA "N% lean meat / M% fat" food and USDA has the blend.
-"Drained" and "rinsed" notes are deliberately ignored: the amount is nearly
+milk is often "refrigerated overnight". A line saying the food is peeled, in
+its note or item ("peeled and cored", "chopped peeled apples", but not
+"unpeeled", "not peeled" or "peeled if desired"), swaps a USDA food "with
+skin" or "with peel" for its exact peeled counterpart ("apples, raw, without
+skin"), since the skin is discarded whenever the peeling happens; a food with
+no counterpart (granny smith apples) stays as written. A fat or lean
+percentage in the note or item ("at least 15% fat", "ground beef, 93% lean",
+"90/10", but not a range like "85-93% lean") picks that blend when the item
+resolves to a USDA "N% lean meat / M% fat" food and USDA has the blend.
+Clauses from an "or ..." alternative on describe another food and are
+skipped. "Drained" and "rinsed" notes are deliberately ignored: the amount is nearly
 always the can or net weight before draining, and the with-liquid food prices
 that about right, while the drained food would overcharge it and lose the can
 size and density. Oil listed "for frying" in a

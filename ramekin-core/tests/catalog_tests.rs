@@ -612,6 +612,8 @@ fn a_peeled_note_selects_the_peeled_food() {
     ] {
         assert_eq!(line_fdc("apples", note), fdc_id("apples"), "{note:?}");
     }
+    // The parser can leave the peeling in the item.
+    assert_eq!(line_fdc("chopped peeled apples", None), peeled);
     // USDA weighs peeled apples by the cup of slices.
     assert_eq!(
         line_grams_per_cup("apples", Some("peeled and cored")),
@@ -652,6 +654,11 @@ fn a_fat_note_selects_the_ground_meat_blend() {
     assert_eq!(line_fdc("ground beef", Some("90/10")), blend(90));
     // The parser can leave the percentage in the item.
     assert_eq!(line_fdc("ground beef, 90% lean", None), blend(90));
+    // A range allows any blend in it.
+    assert_eq!(
+        line_fdc("ground beef", Some("preferably a leaner meat, 85-93% lean")),
+        blend(80)
+    );
     // A percentage describing an alternative doesn't change this food.
     assert_eq!(
         line_fdc(

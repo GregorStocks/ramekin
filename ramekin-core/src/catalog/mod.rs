@@ -680,9 +680,10 @@ pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
     prepared_form(&entry.id, item, note.unwrap_or_default()).unwrap_or(resolved)
 }
 
-/// The food entry `id` names, in the state the line describes: peeled (per
-/// the note), or ground meat of a stated fat percentage (in the note or the
-/// item: "ground beef, 90% lean"). See `resolve_line`.
+/// The food entry `id` names, in the state the line describes: peeled, or
+/// ground meat of a stated fat percentage. Both read the item as well as the
+/// note, since the parser can leave them there ("chopped peeled apples",
+/// "ground beef, 90% lean"). See `resolve_line`.
 fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     // A whole word, so "unpeeled" doesn't count.
     static PEELED: LazyLock<regex::Regex> =
@@ -703,10 +704,13 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
         )
         .unwrap()
     });
-    static LEAN: LazyLock<regex::Regex> =
-        LazyLock::new(|| regex::Regex::new(r"(?i)\b(\d{1,2})\s*%\s*lean\b").unwrap());
-    static FAT: LazyLock<regex::Regex> =
-        LazyLock::new(|| regex::Regex::new(r"(?i)\b(\d{1,2})\s*%\s*fat\b").unwrap());
+    // The first group catches a range ("85-93% lean"), which names no blend.
+    static LEAN: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(r"(?i)(\d\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*%\s*lean\b").unwrap()
+    });
+    static FAT: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(r"(?i)(\d\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*%\s*fat\b").unwrap()
+    });
     static RATIO: LazyLock<regex::Regex> =
         LazyLock::new(|| regex::Regex::new(r"\b(\d{2})\s*/\s*(\d{1,2})\b").unwrap());
     static BLEND: LazyLock<regex::Regex> =
@@ -715,8 +719,9 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     let id = id.split(" (includes ").next().unwrap_or(id);
     // Clauses from an alternative on ("or other ground beef, with around 20%
     // fat") describe that food, not this one.
+    let line = format!("{item}; {note}");
     let clauses = || {
-        note.split([',', ';', '(', ')'])
+        line.split([',', ';', '(', ')'])
             .take_while(|clause| !clause.trim_start().to_lowercase().starts_with("or "))
     };
     let peeled = clauses()
@@ -728,10 +733,10 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
             .find(|(unpeeled, _)| id.contains(unpeeled))
             .map(|(unpeeled, peeled)| id.replace(unpeeled, peeled))
     } else {
-        let written = format!("{item}; {}", clauses().collect::<Vec<_>>().join(";"));
+        let written = clauses().collect::<Vec<_>>().join(";");
         let percent = |re: &regex::Regex| {
-            re.captures(&written)
-                .and_then(|caps| caps[1].parse::<u32>().ok())
+            let caps = re.captures(&written)?;
+            caps.get(1).is_none().then(|| caps[2].parse::<u32>().ok())?
         };
         let lean = percent(&LEAN)
             .or_else(|| percent(&FAT).map(|fat| 100 - fat))
