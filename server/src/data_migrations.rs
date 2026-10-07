@@ -157,10 +157,11 @@ struct Promoted {
 }
 
 /// Turn each stored line that is really a section header ("To serve:",
-/// "FOR THE GLAZE") into the section of the unsectioned lines after it, the
-/// way the ingredient parser does at import. A line only counts when it has
-/// no measurements and the next line has no section yet; a header with
-/// nothing after it is left alone.
+/// "FOR THE GLAZE:") into the section of the unsectioned lines after it, the
+/// way the ingredient parser does at import. Stored lines carry no source
+/// formatting, so only a trailing colon marks a header: a bare "SALT" or
+/// "MSG" stays an ingredient. A line also needs no measurements and a next
+/// line with no section yet; a header with nothing after it is left alone.
 fn promote_headers(ingredients: Vec<Ingredient>) -> Promoted {
     let mut headers = 0;
     let mut current: Option<String> = None;
@@ -172,6 +173,7 @@ fn promote_headers(ingredients: Vec<Ingredient>) -> Promoted {
         }
         let header = (ingredient.measurements.is_empty()
             && ingredient.section.is_none()
+            && ingredient.item.trim_end().ends_with(':')
             && lines.peek().is_some_and(|next| next.section.is_none()))
         .then(|| detect_section_header(&ingredient.item))
         .flatten();
@@ -191,8 +193,8 @@ fn promote_headers(ingredients: Vec<Ingredient>) -> Promoted {
     }
 }
 
-/// Recipes imported before the parser recognized a header (or through a path
-/// that lost its colon) store it as an ingredient with no amount. Every live
+/// Recipes imported before the parser recognized a colon-terminated header
+/// store it as an ingredient with no amount. Every live
 /// recipe whose current version has one gets a new version (source
 /// "migration") with the header moved into the following lines' section.
 /// Earlier versions are kept.
@@ -361,7 +363,7 @@ mod tests {
         let mut sectioned = ingredient("sugar", &[("1", "cup")]);
         sectioned.section = Some("Glaze".to_string());
         let promoted = promote_headers(vec![
-            ingredient("FILLING", &[]),
+            ingredient("FILLING:", &[]),
             ingredient("apples", &[("4", "")]),
             sectioned,
             ingredient("salt", &[]),
@@ -382,6 +384,9 @@ mod tests {
         sectioned.section = Some("Sauce".to_string());
         let promoted = promote_headers(vec![
             ingredient("Salt", &[]),
+            // No colon: a stored all-caps line may be a real ingredient.
+            ingredient("MSG", &[]),
+            ingredient("FILLING", &[]),
             ingredient("Chipotle Sour Cream", &[]),
             ingredient("sour cream", &[("1", "cup")]),
             // The next line already has a section.
@@ -391,6 +396,6 @@ mod tests {
             ingredient("To serve:", &[]),
         ]);
         assert_eq!(promoted.headers, 0);
-        assert_eq!(promoted.ingredients.len(), 6);
+        assert_eq!(promoted.ingredients.len(), 8);
     }
 }
