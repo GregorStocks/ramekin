@@ -178,3 +178,44 @@ def test_edit_during_enrichment_wins_over_ai(authed_api_client, server_url):
     assert recipe.title == "My own title"
     assert recipe.description != "A delicious test recipe."
     assert "test-auto-tag" not in recipe.tags
+
+
+def test_failure_lets_earlier_steps_finish_so_retry_resumes_correctly(
+    authed_api_client, server_url
+):
+    client, _ = authed_api_client
+    scrape_api = ScrapeApi(client)
+    give_user_auto_tag(RecipesApi(client))
+    marker = unique("chili")
+
+    # Auto-tag (later in canonical order) fails while the description
+    # (earlier) is still held. The description branch must still run: a retry
+    # resumes at enrich_auto_tag and treats everything before it as done.
+    hold_description(marker, True)
+    try:
+        job_id = capture(
+            server_url,
+            client.configuration.access_token,
+            f"Force Auto Tag Failure {marker}",
+            "salt",
+        )
+        wait_for(
+            lambda: (
+                step_status(scrape_api.get_scrape(job_id), "enrich_auto_tag")
+                == "failed"
+                or None
+            )
+        )
+    finally:
+        hold_description(marker, False)
+
+    job = wait_for_job_completion(scrape_api, job_id)
+    assert job.status == "failed"
+    assert job.failed_at_step == "enrich_auto_tag"
+    for name in (
+        "apply_normalized_title",
+        "enrich_generate_description",
+        "apply_generated_description",
+    ):
+        assert step_status(job, name) == "completed", name
+    assert step_status(job, "apply_auto_tags") == "pending"

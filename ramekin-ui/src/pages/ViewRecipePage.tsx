@@ -553,7 +553,9 @@ export default function ViewRecipePage() {
                           class="btn"
                           onClick={handleRescrape}
                           disabled={
-                            rescraping() || isViewingHistoricalVersion()
+                            rescraping() ||
+                            !!enrichingJobId() ||
+                            isViewingHistoricalVersion()
                           }
                         >
                           {rescraping() ? "Rescraping..." : "Rescrape"}

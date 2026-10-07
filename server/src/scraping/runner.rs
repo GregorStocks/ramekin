@@ -447,9 +447,9 @@ struct PostSaveOutcome {
 ///
 /// Steps before `first_step` in canonical order count as finished, since a
 /// retry resumes at the step that failed and canonical order is a valid run
-/// order. After a terminal failure no new steps start, but steps already in
-/// flight finish and save their output; the earliest failed step (in
-/// canonical order) is reported so a retry reruns everything after it.
+/// order. After a terminal failure, steps after it in canonical order no
+/// longer start, but earlier ones still run to completion, so the earliest
+/// failed step is a sound retry point: everything before it finished.
 async fn run_post_save_steps(
     pool: &DbPool,
     job_id: Uuid,
@@ -481,23 +481,31 @@ async fn run_post_save_steps(
     let mut outcome = PostSaveOutcome::default();
 
     loop {
-        if failures.is_empty() {
-            let (ready, still_waiting): (Vec<_>, Vec<_>) = waiting
-                .into_iter()
-                .partition(|(_, deps)| deps.iter().all(|dep| finished.contains(dep)));
-            waiting = still_waiting;
-            for (name, _) in ready {
-                let Some(step) = registry.get(name) else {
-                    failures.push((name, format!("Step {name} is not registered")));
-                    continue;
-                };
-                let continues_on_failure = step.metadata().continues_on_failure;
-                running.push(async move {
-                    let result = execute_step_with_tracing(step, url, store, name).await;
-                    (name, continues_on_failure, result)
-                });
-                running_names.push(name);
-            }
+        // After a failure, keep starting only steps that come before it in
+        // canonical order: a retry resumes at the earliest failure and treats
+        // everything before it as finished, so those steps must all run.
+        let earliest_failure = failures
+            .iter()
+            .map(|(name, _)| canonical_index(name))
+            .min()
+            .unwrap_or(usize::MAX);
+        let (ready, still_waiting): (Vec<_>, Vec<_>) =
+            waiting.into_iter().partition(|(name, deps)| {
+                canonical_index(name) < earliest_failure
+                    && deps.iter().all(|dep| finished.contains(dep))
+            });
+        waiting = still_waiting;
+        for (name, _) in ready {
+            let Some(step) = registry.get(name) else {
+                failures.push((name, format!("Step {name} is not registered")));
+                continue;
+            };
+            let continues_on_failure = step.metadata().continues_on_failure;
+            running.push(async move {
+                let result = execute_step_with_tracing(step, url, store, name).await;
+                (name, continues_on_failure, result)
+            });
+            running_names.push(name);
         }
 
         // The job row has room for one current step; report the earliest
