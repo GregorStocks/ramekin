@@ -84,6 +84,9 @@ final class RecipeDetailViewModel: ObservableObject {
     @Published var isDeleting = false
     @Published var deleteError: String?
     @Published var isRescraping = false
+    /// The rescraped recipe is saved and shown; AI enrichment (title,
+    /// description, tags) is still running and will reload it when done.
+    @Published var isFinishingRescrapeEnrichment = false
     @Published var rescrapeError: String?
     @Published var showingRescrapeConfirmation = false
     @Published var isEnriching = false
@@ -99,6 +102,7 @@ final class RecipeDetailViewModel: ObservableObject {
 
     private let api: RecipeDetailViewAPIClient
     private var rescrapeTask: Task<Void, Never>?
+    var rescrapePollIntervalNanoseconds: UInt64 = 500_000_000
 
     init(recipeId: UUID, api: RecipeDetailViewAPIClient = .live) {
         self.recipeId = recipeId
@@ -323,8 +327,13 @@ extension RecipeDetailViewModel {
 
     func rescrapeFromSource() async {
         isRescraping = true
+        isFinishingRescrapeEnrichment = false
         rescrapeError = nil
         error = nil
+        defer {
+            isRescraping = false
+            isFinishingRescrapeEnrichment = false
+        }
 
         do {
             let response = try await api.rescrape(recipeId)
@@ -340,27 +349,29 @@ extension RecipeDetailViewModel {
 
                 if job.status == "completed" {
                     await loadRecipe()
-                    isRescraping = false
                     return
                 } else if job.status == "failed" {
                     rescrapeError = job.error ?? "Unknown error"
-                    isRescraping = false
                     return
+                } else if job.status == "enriching" && !isFinishingRescrapeEnrichment {
+                    // The rescraped recipe is saved: show it now and reload
+                    // again once AI enrichment finishes.
+                    await loadRecipe()
+                    isRescraping = false
+                    isFinishingRescrapeEnrichment = true
                 }
 
                 if Date().timeIntervalSince(pollStartTime) > timeoutInterval {
                     rescrapeError = "Rescrape timed out"
-                    isRescraping = false
                     return
                 }
 
-                try await Task.sleep(nanoseconds: 500_000_000)
+                try await Task.sleep(nanoseconds: rescrapePollIntervalNanoseconds)
             }
         } catch is CancellationError {
-            isRescraping = false
+            return
         } catch {
             rescrapeError = "Failed to rescrape recipe"
-            isRescraping = false
         }
     }
 

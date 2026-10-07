@@ -27,6 +27,39 @@ impl<'a> DbOutputStore<'a> {
     pub fn new(pool: &'a DbPool, job_id: Uuid) -> Self {
         Self { pool, job_id }
     }
+
+    /// Insert a step output row. Takes `&self` so concurrently running steps
+    /// can keep reading the store while finished ones are saved.
+    pub async fn save(
+        &self,
+        step_name: &str,
+        output: &JsonValue,
+        duration_ms: i64,
+        success: bool,
+        error: Option<&str>,
+    ) -> Result<(), Box<dyn Error + Send + Sync>> {
+        let new_output = NewStepOutput {
+            scrape_job_id: self.job_id,
+            step_name: step_name.to_string(),
+            build_id: BUILD_ID.to_string(),
+            output: output.clone(),
+            duration_ms: Some(duration_ms),
+            summary: step_summary(step_name, output),
+            success,
+            error: error.map(|s| s.to_string()),
+        };
+
+        run_blocking(self.pool, move |conn| {
+            diesel::insert_into(step_outputs::table)
+                .values(&new_output)
+                .execute(conn)
+        })
+        .await
+        .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?
+        .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?;
+
+        Ok(())
+    }
 }
 
 #[async_trait]
@@ -57,26 +90,7 @@ impl StepOutputStore for DbOutputStore<'_> {
         success: bool,
         error: Option<&str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
-        let new_output = NewStepOutput {
-            scrape_job_id: self.job_id,
-            step_name: step_name.to_string(),
-            build_id: BUILD_ID.to_string(),
-            output: output.clone(),
-            duration_ms: Some(duration_ms),
-            summary: step_summary(step_name, output),
-            success,
-            error: error.map(|s| s.to_string()),
-        };
-
-        run_blocking(self.pool, move |conn| {
-            diesel::insert_into(step_outputs::table)
-                .values(&new_output)
-                .execute(conn)
-        })
-        .await
-        .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?
-        .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?;
-
-        Ok(())
+        self.save(step_name, output, duration_ms, success, error)
+            .await
     }
 }

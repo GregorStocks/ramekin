@@ -14,7 +14,7 @@ import { useAuth } from "../context/AuthContext";
 import { usePageTitle } from "../utils/pageTitle";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import {
-  isTerminalScrapeJobStatus,
+  isScrapeRecipeReady,
   PollScrapeJobAbortedError,
   pollScrapeJob,
 } from "../utils/pollScrapeJob";
@@ -54,6 +54,8 @@ function statusLabel(status: string): string {
       return "Scraping";
     case "parsing":
       return "Parsing";
+    case "enriching":
+      return "Enriching";
     case "completed":
       return "Completed";
     case "failed":
@@ -189,11 +191,6 @@ export default function ScrapeStatusPage() {
     return `${minutes}m ${remSec}s`;
   });
 
-  const isTerminal = createMemo(() => {
-    const j = job();
-    return j ? isTerminalScrapeJobStatus(j.status) : false;
-  });
-
   return (
     <div class="scrape-status-page">
       <Show when={pollError() && !job()}>
@@ -312,14 +309,18 @@ export default function ScrapeStatusPage() {
               </For>
             </ol>
 
-            <Show
-              when={isTerminal() && j().status === "completed" && j().recipeId}
-            >
+            <Show when={isScrapeRecipeReady(j())}>
               <div class="terminal-actions">
                 <button
                   type="button"
                   class="btn btn-primary view-recipe"
-                  onClick={() => navigate(`/recipes/${j().recipeId}`)}
+                  onClick={() =>
+                    navigate(
+                      j().status === "enriching"
+                        ? `/recipes/${j().recipeId}?scrapeJob=${j().id}`
+                        : `/recipes/${j().recipeId}`,
+                    )
+                  }
                 >
                   View Recipe →
                 </button>

@@ -10,8 +10,19 @@ export function isTerminalScrapeJobStatus(status: string): boolean {
   return TERMINAL_STATUSES.has(status);
 }
 
+/**
+ * The job has saved its recipe. While it is "enriching", AI steps are still
+ * running and may update the recipe before the job completes.
+ */
+export function isScrapeRecipeReady(job: ScrapeJobResponse): boolean {
+  return (
+    (job.status === "enriching" || job.status === "completed") && !!job.recipeId
+  );
+}
+
 export type PollScrapeJobResult =
   | { status: "completed"; job: ScrapeJobResponse }
+  | { status: "recipe_ready"; job: ScrapeJobResponse }
   | { status: "failed"; job: ScrapeJobResponse; error: string }
   | { status: "timeout"; job: ScrapeJobResponse | null };
 
@@ -29,6 +40,8 @@ interface PollScrapeJobOptions {
   onUpdate?: (job: ScrapeJobResponse) => void;
   onPollError?: (err: unknown) => void | Promise<void>;
   beforePoll?: () => Promise<void>;
+  /** Stop as soon as the recipe is saved instead of waiting for enrichment. */
+  untilRecipeReady?: boolean;
   sleep?: (ms: number) => Promise<void>;
 }
 
@@ -69,6 +82,9 @@ export async function pollScrapeJob(
           job,
           error: job.error ?? "Scrape job failed",
         };
+      }
+      if (opts.untilRecipeReady && isScrapeRecipeReady(job)) {
+        return { status: "recipe_ready", job };
       }
     } catch (err) {
       if (err instanceof PollScrapeJobAbortedError) throw err;

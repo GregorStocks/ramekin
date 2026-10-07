@@ -22,11 +22,11 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
     public var failedAtStep: String?
     /** The scrape job ID */
     public var id: UUID
-    /** Recipe ID if completed successfully */
+    /** Recipe ID once the recipe is saved (status enriching or completed; rescrapes have it from the start) */
     public var recipeId: UUID?
     /** Number of retry attempts */
     public var retryCount: Int
-    /** Current job status (pending, scraping, parsing, completed, failed) */
+    /** Current job status (pending, scraping, parsing, enriching, completed, failed). While \"enriching\" the recipe is saved and `recipe_id` is set; AI enrichment may still update it until the job completes. */
     public var status: String
     /** Per-step state for the status page (ordered by pipeline step). */
     public var steps: [StepState]

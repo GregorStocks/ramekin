@@ -1,6 +1,8 @@
+use std::collections::HashSet;
 use std::sync::Arc;
 
 use diesel::prelude::*;
+use futures::stream::{FuturesUnordered, StreamExt};
 use tracing::Instrument;
 use uuid::Uuid;
 
@@ -9,8 +11,9 @@ use ramekin_core::pipeline::steps::{
     EnrichAutoTagStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
 };
 use ramekin_core::pipeline::{
-    scrape_auto_applied_ai_enrichments, scrape_pipeline_step_names, PipelineStep,
-    ScrapeAutoAppliedAiEnrichment, StepContext, StepOutputStore, StepRegistry,
+    is_scrape_post_save_step, scrape_auto_applied_ai_enrichments, scrape_pipeline_step_names,
+    scrape_post_save_step_dependencies, PipelineStep, ScrapeAutoAppliedAiEnrichment, StepContext,
+    StepOutputStore, StepRegistry, StepResult,
 };
 
 use crate::db::DbPool;
@@ -23,7 +26,8 @@ use super::steps::{
     FetchImagesStep, ResolveIngredientNamesStep, SaveRecipeStep,
 };
 use super::{
-    run_scrape_db, ScrapeError, STATUS_COMPLETED, STATUS_FAILED, STATUS_PARSING, STATUS_SCRAPING,
+    run_scrape_db, ScrapeError, STATUS_COMPLETED, STATUS_ENRICHING, STATUS_FAILED, STATUS_PARSING,
+    STATUS_SCRAPING,
 };
 
 /// Maximum retries before hard fail
@@ -280,7 +284,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
             return Err(e);
         }
     };
-    let mut store = DbOutputStore::new(&pool, job_id);
+    let store = DbOutputStore::new(&pool, job_id);
 
     // URL for context (empty string for imports without a URL)
     let url = job.url.as_deref().unwrap_or("");
@@ -294,6 +298,19 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
     let mut terminal_error: Option<(String, String)> = None;
 
     while let Some(step_name) = current_step_name.take() {
+        if is_scrape_post_save_step(&step_name) {
+            let outcome =
+                run_post_save_steps(&pool, job_id, &registry, url, &store, &step_name).await?;
+            if let Some(name) = outcome.last_step_name {
+                last_step_name = name;
+            }
+            if outcome.last_error.is_some() {
+                last_error = outcome.last_error;
+            }
+            terminal_error = outcome.terminal_error;
+            break;
+        }
+
         let step = match registry.get(&step_name) {
             Some(s) => s,
             None => {
@@ -314,60 +331,15 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         update_status_and_step(&pool, job_id, step_status, Some(&step_name)).await?;
 
         // Execute step with OpenTelemetry span
-        let mut result = execute_step_with_tracing(step, url, &store, &step_name).await;
+        let result = execute_step_with_tracing(step, url, &store, &step_name).await;
+        let continues_on_failure = step.metadata().continues_on_failure;
+        let result = record_step_result(&store, &step_name, continues_on_failure, result).await;
 
-        let meta = step.metadata();
-
-        // Save output (for both success and failure - useful for debugging).
-        // If persistence itself fails we normally fail the step: silently
-        // swallowing the error leaves a "successful" step with no output row,
-        // which makes downstream retries think the step already ran and
-        // produces a deadlock where the pipeline can never make progress.
-        //
-        // Exception: for `continues_on_failure` steps (enrichment), a
-        // persistence failure should NOT terminate the pipeline — otherwise a
-        // transient save error after `save_recipe` has already succeeded
-        // would cause the user to silently lose enrichment for that recipe.
-        // We still mark the step as failed on the result so the persisted row
-        // (and status API) reflect the failure, but we preserve `next_step`
-        // so the chain continues.
-        if let Err(e) = store
-            .save_output(
-                &step_name,
-                &result.output,
-                result.duration_ms as i64,
-                result.success,
-                result.error.as_deref(),
-            )
-            .await
-        {
-            let msg = format!("Failed to persist output for step {step_name}: {e}");
-            tracing::error!("{msg}");
-            result.success = false;
-            result.error = Some(msg);
-            if !meta.continues_on_failure {
-                result.next_step = None;
-            }
-        }
-
-        let should_continue = result.success || meta.continues_on_failure;
-
-        if result.success {
-            tracing::debug!(
-                "Step '{}' completed successfully in {}ms",
-                step_name,
-                result.duration_ms
-            );
-        } else {
+        if !result.success {
             last_error = result.error.clone();
-            tracing::debug!(
-                "Step '{}' failed: {}",
-                step_name,
-                last_error.as_deref().unwrap_or("unknown error")
-            );
         }
 
-        if !should_continue {
+        if !(result.success || continues_on_failure) {
             terminal_error = Some((
                 step_name.clone(),
                 result
@@ -404,6 +376,175 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
     }
 
     Ok(())
+}
+
+/// Save a finished step's output and log how it went.
+///
+/// Output is saved for both success and failure (useful for debugging). If
+/// persistence itself fails we normally fail the step: silently swallowing
+/// the error leaves a "successful" step with no output row, which makes
+/// downstream retries think the step already ran and produces a deadlock
+/// where the pipeline can never make progress.
+///
+/// Exception: for `continues_on_failure` steps, a persistence failure should
+/// NOT terminate the pipeline — otherwise a transient save error after
+/// `save_recipe` has already succeeded would cause the user to silently lose
+/// the rest of the job. We still mark the step as failed on the result so the
+/// persisted row (and status API) reflect the failure, but we preserve
+/// `next_step` so the chain continues.
+async fn record_step_result(
+    store: &DbOutputStore<'_>,
+    step_name: &str,
+    continues_on_failure: bool,
+    mut result: StepResult,
+) -> StepResult {
+    if let Err(e) = store
+        .save(
+            step_name,
+            &result.output,
+            result.duration_ms as i64,
+            result.success,
+            result.error.as_deref(),
+        )
+        .await
+    {
+        let msg = format!("Failed to persist output for step {step_name}: {e}");
+        tracing::error!("{msg}");
+        result.success = false;
+        result.error = Some(msg);
+        if !continues_on_failure {
+            result.next_step = None;
+        }
+    }
+
+    if result.success {
+        tracing::debug!(
+            "Step '{}' completed successfully in {}ms",
+            step_name,
+            result.duration_ms
+        );
+    } else {
+        tracing::debug!(
+            "Step '{}' failed: {}",
+            step_name,
+            result.error.as_deref().unwrap_or("unknown error")
+        );
+    }
+
+    result
+}
+
+#[derive(Debug, Default)]
+struct PostSaveOutcome {
+    last_step_name: Option<String>,
+    last_error: Option<String>,
+    terminal_error: Option<(String, String)>,
+}
+
+/// Run the post-save steps from `first_step` on, each as soon as the steps it
+/// depends on have finished, instead of one at a time: the recipe is already
+/// saved, and the AI calls here are independent of each other and slow.
+///
+/// Steps before `first_step` in canonical order count as finished, since a
+/// retry resumes at the step that failed and canonical order is a valid run
+/// order. After a terminal failure no new steps start, but steps already in
+/// flight finish and save their output; the earliest failed step (in
+/// canonical order) is reported so a retry reruns everything after it.
+async fn run_post_save_steps(
+    pool: &DbPool,
+    job_id: Uuid,
+    registry: &StepRegistry,
+    url: &str,
+    store: &DbOutputStore<'_>,
+    first_step: &str,
+) -> Result<PostSaveOutcome, ScrapeError> {
+    let steps = scrape_post_save_step_dependencies();
+    let canonical_index = |name: &str| {
+        steps
+            .iter()
+            .position(|(n, _)| *n == name)
+            .unwrap_or(usize::MAX)
+    };
+    let start = steps
+        .iter()
+        .position(|(name, _)| *name == first_step)
+        .ok_or_else(|| {
+            ScrapeError::InvalidState(format!("{first_step} is not a post-save step"))
+        })?;
+
+    let mut finished: HashSet<&str> = steps[..start].iter().map(|(name, _)| *name).collect();
+    let mut waiting: Vec<(&str, Vec<&str>)> = steps[start..].to_vec();
+    let mut running = FuturesUnordered::new();
+    let mut running_names: Vec<&str> = Vec::new();
+    let mut reported_step: Option<&str> = None;
+    let mut failures: Vec<(&str, String)> = Vec::new();
+    let mut outcome = PostSaveOutcome::default();
+
+    loop {
+        if failures.is_empty() {
+            let (ready, still_waiting): (Vec<_>, Vec<_>) = waiting
+                .into_iter()
+                .partition(|(_, deps)| deps.iter().all(|dep| finished.contains(dep)));
+            waiting = still_waiting;
+            for (name, _) in ready {
+                let Some(step) = registry.get(name) else {
+                    failures.push((name, format!("Step {name} is not registered")));
+                    continue;
+                };
+                let continues_on_failure = step.metadata().continues_on_failure;
+                running.push(async move {
+                    let result = execute_step_with_tracing(step, url, store, name).await;
+                    (name, continues_on_failure, result)
+                });
+                running_names.push(name);
+            }
+        }
+
+        // The job row has room for one current step; report the earliest
+        // running one. The status API infers the others from dependencies.
+        let earliest = running_names
+            .iter()
+            .copied()
+            .min_by_key(|name| canonical_index(name));
+        if earliest.is_some() && earliest != reported_step {
+            update_status_and_step(pool, job_id, STATUS_ENRICHING, earliest).await?;
+            reported_step = earliest;
+        }
+
+        let Some((name, continues_on_failure, result)) = running.next().await else {
+            break;
+        };
+        running_names.retain(|running| *running != name);
+        let result = record_step_result(store, name, continues_on_failure, result).await;
+
+        outcome.last_step_name = Some(name.to_string());
+        if !result.success {
+            outcome.last_error = result.error.clone();
+        }
+        if result.success || continues_on_failure {
+            finished.insert(name);
+        } else {
+            failures.push((
+                name,
+                result.error.unwrap_or_else(|| "Step failed".to_string()),
+            ));
+        }
+    }
+
+    if failures.is_empty() {
+        if let Some((name, deps)) = waiting.first() {
+            failures.push((
+                name,
+                format!("Step {name} never ran: waiting on {}", deps.join(", ")),
+            ));
+        }
+    }
+
+    outcome.terminal_error = failures
+        .into_iter()
+        .min_by_key(|(name, _)| canonical_index(name))
+        .map(|(name, error)| (name.to_string(), error));
+    Ok(outcome)
 }
 
 /// Execute a pipeline step with OpenTelemetry tracing.
@@ -591,6 +732,8 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeErro
 
         let resume_status = if resume_step.as_str() == FetchHtmlStep::NAME {
             STATUS_SCRAPING
+        } else if is_scrape_post_save_step(&resume_step) {
+            STATUS_ENRICHING
         } else {
             STATUS_PARSING
         };

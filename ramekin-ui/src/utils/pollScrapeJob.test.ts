@@ -54,6 +54,34 @@ describe("pollScrapeJob", () => {
     expect(updates).toEqual(["pending", "scraping", "completed"]);
   });
 
+  it("keeps polling through enriching by default", async () => {
+    const api = scrapeApi([
+      scrapeJob("enriching", { recipeId: "recipe-id" }),
+      scrapeJob("completed", { recipeId: "recipe-id" }),
+    ]);
+
+    const result = await pollScrapeJob(api, "job-id", {
+      sleep: async () => {},
+    });
+
+    expect(result.status).toBe("completed");
+  });
+
+  it("returns recipe_ready once enriching when asked", async () => {
+    const api = scrapeApi([
+      scrapeJob("parsing"),
+      scrapeJob("enriching", { recipeId: "recipe-id" }),
+    ]);
+
+    const result = await pollScrapeJob(api, "job-id", {
+      sleep: async () => {},
+      untilRecipeReady: true,
+    });
+
+    expect(result.status).toBe("recipe_ready");
+    expect(result.job?.recipeId).toBe("recipe-id");
+  });
+
   it("returns failed with the job error", async () => {
     const api = scrapeApi([scrapeJob("failed", { error: "Could not parse" })]);
 

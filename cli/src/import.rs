@@ -412,7 +412,7 @@ async fn wait_for_imports(config: &Configuration, mut jobs: Vec<uuid::Uuid>) -> 
                             "Recipe saved, but enrichment failed; inspect the import job for details");
                     }
                 }
-                "pending" | "scraping" | "parsing" => pending.push(id),
+                "pending" | "scraping" | "parsing" | "enriching" => pending.push(id),
                 status => bail!("Import job {id} has unexpected status: {status}"),
             }
         }

@@ -2,7 +2,9 @@ use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use uuid::Uuid;
 
-use ramekin_core::pipeline::steps::{ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep};
+use ramekin_core::pipeline::steps::{
+    ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
+};
 use ramekin_core::{ExtractRecipeOutput, ExtractionMethod, FetchHtmlOutput, FetchImagesOutput};
 use ramekin_core::{RawRecipe, BUILD_ID};
 
@@ -198,6 +200,28 @@ fn get_job_conn(conn: &mut DbConn, job_id: Uuid) -> Result<ScrapeJob, ScrapeErro
         .optional()
         .map_err(|e| ScrapeError::Database(e.to_string()))?
         .ok_or(ScrapeError::JobNotFound)
+}
+
+/// The recipe a job's `save_recipe` step saved, if it has run. New-recipe
+/// jobs only record `recipe_id` on the job row when they complete.
+pub async fn saved_recipe_id(pool: &DbPool, job_id: Uuid) -> Result<Option<Uuid>, ScrapeError> {
+    let output: Option<serde_json::Value> = run_scrape_db(pool, move |conn| {
+        step_outputs::table
+            .filter(step_outputs::scrape_job_id.eq(job_id))
+            .filter(step_outputs::step_name.eq(SaveRecipeStepMeta::NAME))
+            .filter(step_outputs::success.eq(true))
+            .order(step_outputs::created_at.desc())
+            .select(step_outputs::output)
+            .first(conn)
+            .optional()
+            .map_err(|e| ScrapeError::Database(e.to_string()))
+    })
+    .await?;
+    Ok(output
+        .as_ref()
+        .and_then(|o| o.get("recipe_id"))
+        .and_then(|v| v.as_str())
+        .and_then(|s| Uuid::parse_str(s).ok()))
 }
 
 /// Update job status and current_step.

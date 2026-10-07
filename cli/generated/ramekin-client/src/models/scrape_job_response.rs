@@ -38,7 +38,7 @@ pub struct ScrapeJobResponse {
     /// The scrape job ID
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
-    /// Recipe ID if completed successfully
+    /// Recipe ID once the recipe is saved (status enriching or completed; rescrapes have it from the start)
     #[serde(
         rename = "recipe_id",
         default,
@@ -49,7 +49,7 @@ pub struct ScrapeJobResponse {
     /// Number of retry attempts
     #[serde(rename = "retry_count")]
     pub retry_count: i32,
-    /// Current job status (pending, scraping, parsing, completed, failed)
+    /// Current job status (pending, scraping, parsing, enriching, completed, failed). While \"enriching\" the recipe is saved and `recipe_id` is set; AI enrichment may still update it until the job completes.
     #[serde(rename = "status")]
     pub status: String,
     /// Per-step state for the status page (ordered by pipeline step).

@@ -40,6 +40,10 @@ FAILING_INGREDIENT_NAMES = set()
 # observe a name while it is still pending. Never held longer than this.
 HELD_INGREDIENT_NAMES = set()
 INGREDIENT_NAME_HOLD_LIMIT_SECONDS = 15
+# Description requests whose prompt contains one of these markers are held
+# until a test releases the marker (bounded by the same limit), so a test can
+# act while a scrape job's description call is in flight.
+HELD_DESCRIPTION_MARKERS = set()
 
 
 def mock_png_base64():
@@ -98,6 +102,18 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                     HELD_INGREDIENT_NAMES.add(name)
                 else:
                     HELD_INGREDIENT_NAMES.discard(name)
+            self.send_response(204)
+            self.end_headers()
+            return
+
+        if parsed.path == "/test/description-hold":
+            params = parse_qs(parsed.query)
+            marker = params.get("marker", [""])[0]
+            with INGREDIENT_NAME_CALLS_LOCK:
+                if params.get("hold", ["true"])[0] == "true":
+                    HELD_DESCRIPTION_MARKERS.add(marker)
+                else:
+                    HELD_DESCRIPTION_MARKERS.discard(marker)
             self.send_response(204)
             self.end_headers()
             return
@@ -420,7 +436,14 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             )
 
     def _mock_generate_description(self, all_text):
-        """Return a mock generated description."""
+        """Return a mock generated description, once no held marker
+        (/test/description-hold) appears in the prompt."""
+        deadline = time.monotonic() + INGREDIENT_NAME_HOLD_LIMIT_SECONDS
+        while time.monotonic() < deadline:
+            with INGREDIENT_NAME_CALLS_LOCK:
+                if not any(marker in all_text for marker in HELD_DESCRIPTION_MARKERS):
+                    break
+            time.sleep(0.05)
         return json.dumps({"description": "A delicious test recipe."})
 
     def _mock_normalize_title(self, all_text):

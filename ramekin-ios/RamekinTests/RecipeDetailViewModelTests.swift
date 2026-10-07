@@ -279,6 +279,104 @@ final class RecipeDetailViewModelTests: XCTestCase {
     }
 }
 
+final class RecipeDetailViewModelRescrapeTests: XCTestCase {
+    @MainActor
+    func testRescrapeShowsRecipeWhileEnrichingAndReloadsWhenDone() async {
+        let recipeId = UUID()
+        let jobId = UUID()
+        var statuses = ["parsing", "enriching", "enriching", "completed"]
+        var loadCount = 0
+        var viewModel: RecipeDetailViewModel!
+        var stateWhileEnriching: (rescraping: Bool, finishing: Bool)?
+
+        viewModel = RecipeDetailViewModel(
+            recipeId: recipeId,
+            api: makeAPI(
+                getRecipe: { _, _ in
+                    loadCount += 1
+                    return makeRecipe(id: recipeId, title: "Load \(loadCount)")
+                },
+                getScrape: { id in
+                    XCTAssertEqual(id, jobId)
+                    let status = statuses.removeFirst()
+                    if statuses.count == 1 {
+                        // Second "enriching" poll: the first one showed the recipe.
+                        stateWhileEnriching = (viewModel.isRescraping, viewModel.isFinishingRescrapeEnrichment)
+                    }
+                    return makeScrapeJob(id: jobId, status: status, recipeId: recipeId)
+                },
+                rescrape: { _ in RescrapeResponse(jobId: jobId, status: "pending") }
+            )
+        )
+        viewModel.rescrapePollIntervalNanoseconds = 0
+
+        await viewModel.rescrapeFromSource()
+
+        XCTAssertEqual(stateWhileEnriching?.rescraping, false)
+        XCTAssertEqual(stateWhileEnriching?.finishing, true)
+        XCTAssertEqual(loadCount, 2)
+        XCTAssertEqual(viewModel.recipe?.title, "Load 2")
+        XCTAssertFalse(viewModel.isRescraping)
+        XCTAssertFalse(viewModel.isFinishingRescrapeEnrichment)
+        XCTAssertNil(viewModel.rescrapeError)
+    }
+
+    @MainActor
+    func testRescrapeFailureDuringEnrichmentKeepsSavedRecipe() async {
+        let recipeId = UUID()
+        let jobId = UUID()
+        var statuses = ["enriching", "failed"]
+        var loadCount = 0
+
+        let viewModel = RecipeDetailViewModel(
+            recipeId: recipeId,
+            api: makeAPI(
+                getRecipe: { _, _ in
+                    loadCount += 1
+                    return makeRecipe(id: recipeId, title: "Rescraped")
+                },
+                getScrape: { _ in
+                    let status = statuses.removeFirst()
+                    return makeScrapeJob(
+                        id: jobId,
+                        status: status,
+                        recipeId: recipeId,
+                        error: status == "failed" ? "AI call failed" : nil
+                    )
+                },
+                rescrape: { _ in RescrapeResponse(jobId: jobId, status: "pending") }
+            )
+        )
+        viewModel.rescrapePollIntervalNanoseconds = 0
+
+        await viewModel.rescrapeFromSource()
+
+        XCTAssertEqual(loadCount, 1)
+        XCTAssertEqual(viewModel.recipe?.title, "Rescraped")
+        XCTAssertEqual(viewModel.rescrapeError, "AI call failed")
+        XCTAssertFalse(viewModel.isRescraping)
+        XCTAssertFalse(viewModel.isFinishingRescrapeEnrichment)
+    }
+}
+
+private func makeScrapeJob(
+    id: UUID,
+    status: String,
+    recipeId: UUID?,
+    error: String? = nil
+) -> ScrapeJobResponse {
+    ScrapeJobResponse(
+        canRetry: status == "failed",
+        createdAt: Date(timeIntervalSince1970: 1),
+        error: error,
+        id: id,
+        recipeId: recipeId,
+        retryCount: 0,
+        status: status,
+        steps: []
+    )
+}
+
 private enum UnexpectedAPICall: Error {
     case unexpected
 }

@@ -18,12 +18,15 @@ use uuid::Uuid;
 pub struct ScrapeJobResponse {
     /// The scrape job ID
     pub id: Uuid,
-    /// Current job status (pending, scraping, parsing, completed, failed)
+    /// Current job status (pending, scraping, parsing, enriching, completed,
+    /// failed). While "enriching" the recipe is saved and `recipe_id` is set;
+    /// AI enrichment may still update it until the job completes.
     pub status: String,
     /// URL being scraped (optional for imports)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
-    /// Recipe ID if completed successfully
+    /// Recipe ID once the recipe is saved (status enriching or completed;
+    /// rescrapes have it from the start)
     #[serde(skip_serializing_if = "Option::is_none")]
     pub recipe_id: Option<Uuid>,
     /// Error message if failed
@@ -81,6 +84,19 @@ pub async fn get_scrape(
 
     let can_retry = job.status == scraping::STATUS_FAILED;
 
+    let recipe_id = match job.recipe_id {
+        None if job.status == scraping::STATUS_ENRICHING => {
+            match scraping::saved_recipe_id(&pool, job.id).await {
+                Ok(id) => id,
+                Err(e) => {
+                    tracing::error!("Failed to read saved recipe id: {}", e);
+                    return ApiError::internal("Failed to get scrape job").into_response();
+                }
+            }
+        }
+        id => id,
+    };
+
     // Build the per-step state list for the status page. `failed_at_step`
     // now stores the real pipeline step name (e.g. `"fetch_html"`), so we
     // can pass it straight through to the status builder.
@@ -108,7 +124,7 @@ pub async fn get_scrape(
             id: job.id,
             status: job.status,
             url: job.url,
-            recipe_id: job.recipe_id,
+            recipe_id,
             error: job.error_message,
             failed_at_step: job.failed_at_step,
             can_retry,
