@@ -111,14 +111,14 @@
     {
       "raw": "2 tbsp all-purpose flour or cake flour, don't use bread flour",
       "expected": {
-        "item": "all-purpose flour or cake flour, don't use bread flour",
+        "item": "all-purpose flour or cake flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "don't use bread flour",
         "section": "Coating",
         "category": "Baking"
       }

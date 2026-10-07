@@ -111,14 +111,14 @@
     {
       "raw": "2 fresh bay leaves or 1 dry bay leaf",
       "expected": {
-        "item": "fresh bay leaves or 1 dry bay leaf",
+        "item": "fresh bay leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 dry bay leaf",
         "category": "Produce"
       }
     },

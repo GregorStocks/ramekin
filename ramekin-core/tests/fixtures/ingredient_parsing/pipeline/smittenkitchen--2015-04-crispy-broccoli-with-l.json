@@ -79,8 +79,13 @@
     {
       "raw": "Juice of half a lemon, or more to taste, to finish",
       "expected": {
-        "item": "Juice of half a lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
         "note": "or more to taste, to finish",
         "category": "Produce"
       }

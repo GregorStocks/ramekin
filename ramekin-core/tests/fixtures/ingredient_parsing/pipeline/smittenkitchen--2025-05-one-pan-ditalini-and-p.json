@@ -122,7 +122,7 @@
     {
       "raw": "2 cups frozen peas (from 1 10-ounce or 285-gram bag), no need to defrost",
       "expected": {
-        "item": "frozen peas, no need to defrost",
+        "item": "frozen peas",
         "measurements": [
           {
             "amount": "2",
@@ -133,7 +133,7 @@
             "unit": "285-gram bag"
           }
         ],
-        "note": "from 1 10-ounce or 285-gram bag",
+        "note": "from 1 10-ounce or 285-gram bag, no need to defrost",
         "category": "Frozen"
       }
     },
@@ -158,9 +158,14 @@
     {
       "raw": "Finely-grated zest of half a lemon",
       "expected": {
-        "item": "Finely-grated zest of half a lemon",
-        "measurements": [],
-        "note": null,
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
+        "note": "finely-grated",
         "category": "Produce"
       }
     },

@@ -1,0 +1,16 @@
+{
+  "title": "Ingredient parser: read a parenthetical volume followed by words (\"about 1/4 cup worth\", \"2 tbsp fresh lemon juice\")",
+  "description": "A parenthetical like \"(about 2 teaspoons worth)\", \"(about 1/4 cup's worth)\" or \"(2 tbsp fresh lemon juice)\" stays whole in the note instead of becoming an alternative measurement, because parse_parenthetical_measurement_details only takes a measurement that is the entire parenthetical. \
+Citrus lines show it most (\"juice of 1 large lime (about 2 teaspoons worth)\", \"Juice of 1 large lemon, (2 tbsp fresh lemon juice)\" in themediterraneandish--harissa-recipe.json): since p3-parse-zest-juice-of-count they get the fruit count, but nutrition then uses the generic per-fruit yield instead of the author's volume. \"juice of 1 orange or 1/2 cup orange juice\" is the same idea through an \"or\" alternative. \
+Fix in the parenthetical parser for every line, not just citrus: accept a leading measurement followed by \"worth\", \"'s worth\" or a repeat of the line's item, and put the volume first as citrus.rs already does for plain parenthetical volumes. \
+Rerun make pipeline and check the diffs.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+    "nutrition",
+  ],
+  "created_at": "2026-10-05T23:30:00-07:00",
+  "updated_at": "2026-10-05T23:30:00-07:00",
+}

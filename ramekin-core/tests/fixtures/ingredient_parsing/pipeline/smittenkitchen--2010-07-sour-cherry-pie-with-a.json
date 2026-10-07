@@ -131,14 +131,14 @@
     {
       "raw": "2 1/4 pounds fresh sour cherries, pitted, or 2 pounds frozen sour cherries, partially thawed",
       "expected": {
-        "item": "fresh sour cherries, pitted",
+        "item": "fresh sour cherries",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "lb"
           }
         ],
-        "note": "or 2 pounds frozen sour cherries, partially thawed",
+        "note": "pitted, or 2 pounds frozen sour cherries, partially thawed",
         "category": "Produce"
       }
     }

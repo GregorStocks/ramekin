@@ -23,14 +23,14 @@
     {
       "raw": "6 slices white bread, crusts removed, torn into 1/4- to l/2-inch pieces",
       "expected": {
-        "item": "white bread, crusts removed, torn into 1/4- to l/2-inch pieces",
+        "item": "white bread",
         "measurements": [
           {
             "amount": "6",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "crusts removed, torn into 1/4- to l/2-inch pieces",
         "category": "Bakery & Bread"
       }
     },

@@ -82,8 +82,13 @@
       "section": null
     },
     {
-      "item": "Zest of 1 lemon",
-      "measurements": [],
+      "item": "lemon zest",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lemon"
+        }
+      ],
       "note": null,
       "raw": "Zest of 1 lemon",
       "section": null
@@ -108,14 +113,14 @@
       "section": null
     },
     {
-      "item": "baguette or 4 ciabatta rolls",
+      "item": "baguette",
       "measurements": [
         {
           "amount": "1",
           "unit": null
         }
       ],
-      "note": null,
+      "note": "or 4 ciabatta rolls",
       "raw": "1 baguette or 4 ciabatta rolls",
       "section": null
     },

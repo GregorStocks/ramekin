@@ -19,14 +19,14 @@
     {
       "raw": "6 ears of corn, shucked and cut into 4 pieces",
       "expected": {
-        "item": "ears of corn, shucked and cut into 4 pieces",
+        "item": "ears of corn",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "shucked and cut into 4 pieces",
         "category": "Produce"
       }
     },

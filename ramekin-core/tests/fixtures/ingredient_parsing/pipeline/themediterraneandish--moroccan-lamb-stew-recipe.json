@@ -49,7 +49,7 @@
             "unit": null
           }
         ],
-        "note": "or any small potatoes, peeled, cubed",
+        "note": "peeled, cubed; or any small potatoes",
         "category": "Produce"
       }
     },
@@ -177,14 +177,14 @@
     {
       "raw": "6 plum tomatoes from a can, cut in halves",
       "expected": {
-        "item": "plum tomatoes from a can",
+        "item": "plum tomatoes",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "cut in halves",
+        "note": "from a can, cut in halves",
         "category": "Produce"
       }
     },

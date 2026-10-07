@@ -89,14 +89,14 @@
     {
       "raw": "1  chicken breast or 2 thighs (cut into 2\" pieces)",
       "expected": {
-        "item": "chicken breast or 2 thighs",
+        "item": "chicken breast",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cut into 2\" pieces",
+        "note": "or 2 thighs (cut into 2\" pieces)",
         "category": "Meat & Seafood"
       }
     },

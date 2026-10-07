@@ -93,14 +93,14 @@
     {
       "raw": "2 hard-boiled eggs, cold, peeled, and sliced",
       "expected": {
-        "item": "hard-boiled eggs, cold, peeled, and sliced",
+        "item": "hard-boiled eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cold, peeled, and sliced",
         "category": "Dairy & Eggs"
       }
     },
@@ -116,14 +116,14 @@
     {
       "raw": "2 cups fresh arugula, roughly torn",
       "expected": {
-        "item": "fresh arugula, roughly torn",
+        "item": "fresh arugula",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "roughly torn",
         "category": "Produce"
       }
     }

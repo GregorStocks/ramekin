@@ -197,6 +197,60 @@
         }
       }
     },
+    "lemon juice": {
+      "pieces": {
+        "lemon": {
+          "basis": "USDA SR Legacy 167747 (Lemon juice, raw): juice of 1 lemon (\"1 lemon yields\") = 48 g",
+          "grams": 48,
+          "url": "https://fdc.nal.usda.gov/food-details/167747/nutrients"
+        }
+      }
+    },
+    "lemon zest": {
+      "pieces": {
+        "lemon": {
+          "basis": "1 lemon yields 1 tbsp zest (Baking Bites); USDA SR Legacy lemon peel is 96 g per cup, so 6 g per tbsp",
+          "grams": 6,
+          "url": "https://bakingbites.com/2017/01/how-much-zest-does-citrus-lemon-yield/"
+        }
+      }
+    },
+    "lime juice": {
+      "pieces": {
+        "lime": {
+          "basis": "USDA SR Legacy 168156 (Lime juice, raw): juice of 1 lime (\"1 lime yields\") = 44 g",
+          "grams": 44,
+          "url": "https://fdc.nal.usda.gov/food-details/168156/nutrients"
+        }
+      }
+    },
+    "lime zest": {
+      "pieces": {
+        "lime": {
+          "basis": "1 lime yields 1 to 2 tsp zest (Baking Bites), taken as 1 1/2 tsp; USDA SR Legacy lemon peel is 96 g per cup, so 2 g per tsp",
+          "grams": 3,
+          "url": "https://bakingbites.com/2017/01/how-much-zest-does-citrus-lemon-yield/"
+        }
+      }
+    },
+    "orange juice": {
+      "pieces": {
+        "orange": {
+          "basis": "USDA SR Legacy 169098 (Orange juice, raw): juice of 1 orange (\"1 fruit yields\") = 86 g",
+          "grams": 86,
+          "url": "https://fdc.nal.usda.gov/food-details/169098/nutrients"
+        }
+      }
+    },
+    "orange zest": {
+      "pieces": {
+        "orange": {
+          "basis": "1 orange yields 1 to 1 1/2 tbsp zest (Baking Bites), taken as 1 1/4 tbsp; USDA SR Legacy orange peel is 96 g per cup, so 6 g per tbsp",
+          "grams": 7.5,
+          "url": "https://bakingbites.com/2017/01/how-much-zest-does-citrus-lemon-yield/"
+        }
+      }
+    },
     "parsley": {
       "pieces": {
         "bunch": {

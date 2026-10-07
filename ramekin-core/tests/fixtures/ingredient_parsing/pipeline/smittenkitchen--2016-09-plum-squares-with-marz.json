@@ -217,14 +217,14 @@
     {
       "raw": "1 pounds plums (about 6 to 7), halved, pitted, thinly sliced",
       "expected": {
-        "item": "plums, halved, pitted",
+        "item": "plums",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "about 6 to 7, thinly sliced",
+        "note": "about 6 to 7, halved, pitted, thinly sliced",
         "category": "Produce"
       }
     },

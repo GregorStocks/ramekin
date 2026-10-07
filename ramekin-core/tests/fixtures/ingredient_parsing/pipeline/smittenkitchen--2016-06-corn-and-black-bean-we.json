@@ -5,14 +5,14 @@
     {
       "raw": "2 ears corn, husked",
       "expected": {
-        "item": "ears corn, husked",
+        "item": "ears corn",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "husked",
         "category": "Produce"
       }
     },

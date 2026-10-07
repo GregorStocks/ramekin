@@ -74,14 +74,14 @@
     {
       "raw": "1 pound dried chickpeas (garbanzo beans) or 4 15-ounce cans cooked chickpeas",
       "expected": {
-        "item": "dried chickpeas or 4 15-ounce cans cooked chickpeas",
+        "item": "dried chickpeas",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "garbanzo beans",
+        "note": "garbanzo beans; or 4 15-ounce cans cooked chickpeas",
         "section": "For the Chickpeas",
         "category": "Canned Goods"
       }

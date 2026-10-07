@@ -42,14 +42,14 @@
     {
       "raw": "1 small onion or 5 to 6 shallots, sliced",
       "expected": {
-        "item": "onion or 5 to 6 shallots",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "sliced",
+        "note": "or 5 to 6 shallots; sliced",
         "category": "Produce"
       }
     },

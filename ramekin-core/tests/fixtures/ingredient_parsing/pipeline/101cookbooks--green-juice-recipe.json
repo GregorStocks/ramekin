@@ -75,28 +75,28 @@
     {
       "raw": "1/2  lemon, peeled, deseeded",
       "expected": {
-        "item": "lemon, peeled, deseeded",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled, deseeded",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2  lime, peeled, deseeded",
       "expected": {
-        "item": "lime, peeled, deseeded",
+        "item": "lime",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled, deseeded",
         "category": "Produce"
       }
     },

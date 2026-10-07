@@ -61,8 +61,13 @@
     {
       "raw": "Zest of 1 lime, peeled or finely grated",
       "expected": {
-        "item": "Zest of 1 lime",
-        "measurements": [],
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lime"
+          }
+        ],
         "note": "peeled or finely grated",
         "category": "Produce"
       }

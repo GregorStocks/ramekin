@@ -19,14 +19,14 @@
     {
       "raw": "5 Anaheim chiles or 3 jalapeños, stemmed, seeded, and finely chopped",
       "expected": {
-        "item": "Anaheim chiles or 3 jalapeños, stemmed, seeded, and finely chopped",
+        "item": "Anaheim chiles",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 3 jalapeños; stemmed, seeded, and finely chopped",
         "category": "Produce"
       }
     },

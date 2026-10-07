@@ -219,14 +219,14 @@
     {
       "raw": "2 Turkish bay leaves or 1 California",
       "expected": {
-        "item": "Turkish bay leaves or 1 California",
+        "item": "Turkish bay leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 California",
         "category": "Spices & Seasonings"
       }
     },

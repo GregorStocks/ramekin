@@ -196,14 +196,14 @@
     {
       "raw": "1 slice hearty white sandwich bread , crust removed, torn into 1-inch pieces",
       "expected": {
-        "item": "hearty white sandwich bread, crust removed, torn into 1-inch pieces",
+        "item": "hearty white sandwich bread",
         "measurements": [
           {
             "amount": "1",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "crust removed, torn into 1-inch pieces",
         "category": "Bakery & Bread"
       }
     },

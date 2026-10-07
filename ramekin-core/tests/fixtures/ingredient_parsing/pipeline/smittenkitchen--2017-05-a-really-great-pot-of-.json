@@ -42,14 +42,14 @@
     {
       "raw": "2 fresh sage sprigs or 1 sage and 1 rosemary sprig",
       "expected": {
-        "item": "fresh sage sprigs or 1 sage and 1 rosemary sprig",
+        "item": "fresh sage sprigs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 sage and 1 rosemary sprig",
         "category": "Produce"
       }
     },

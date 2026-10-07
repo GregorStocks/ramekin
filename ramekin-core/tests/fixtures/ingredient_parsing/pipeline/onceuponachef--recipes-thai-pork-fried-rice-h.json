@@ -117,14 +117,14 @@
     {
       "raw": "½ cup frozen peas, defrosted",
       "expected": {
-        "item": "frozen peas, defrosted",
+        "item": "frozen peas",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "defrosted",
         "category": "Frozen"
       }
     },

@@ -88,8 +88,26 @@ pub(in crate::ingredient_parser) fn is_trailing_prep_note(s: &str) -> bool {
 
 pub(in crate::ingredient_parser) fn is_strict_trailing_prep_note(s: &str) -> bool {
     const PREP_FILLER_WORDS: &[&str] = &[
-        "and", "but", "clean", "coarsely", "fine", "finely", "firmly", "freshly", "lightly",
-        "loosely", "not", "or", "roughly", "small", "thinly", "to", "very", "well",
+        "and",
+        "but",
+        "clean",
+        "coarsely",
+        "crosswise",
+        "fine",
+        "finely",
+        "firmly",
+        "freshly",
+        "lengthwise",
+        "lightly",
+        "loosely",
+        "not",
+        "or",
+        "roughly",
+        "small",
+        "thinly",
+        "to",
+        "very",
+        "well",
     ];
 
     let mut saw_prep = false;
@@ -118,13 +136,18 @@ pub(in crate::ingredient_parser) fn is_strict_trailing_prep_note(s: &str) -> boo
                 continue;
             }
 
-            if let Some(note_word_count) = PREP_NOTES.iter().find_map(|note| {
-                let note_words = note.split_whitespace().collect::<Vec<_>>();
-                words
-                    .get(word_index..word_index + note_words.len())
-                    .is_some_and(|candidate| candidate == note_words)
-                    .then_some(note_words.len())
-            }) {
+            if let Some(note_word_count) = PREP_NOTES
+                .iter()
+                .chain(ACTIVE_PREP_PREFIXES)
+                .chain(WHOLE_PART_PREP_WORDS)
+                .find_map(|note| {
+                    let note_words = note.split_whitespace().collect::<Vec<_>>();
+                    words
+                        .get(word_index..word_index + note_words.len())
+                        .is_some_and(|candidate| candidate == note_words)
+                        .then_some(note_words.len())
+                })
+            {
                 saw_prep = true;
                 word_index += note_word_count;
             } else {
@@ -145,11 +168,14 @@ pub(in crate::ingredient_parser) fn is_trailing_prep_note_with_context(s: &str) 
         return false;
     }
 
-    ACTIVE_PREP_PREFIXES.iter().any(|prefix| {
-        normalized
-            .strip_prefix(prefix)
-            .is_some_and(is_allowed_trailing_prep_context)
-    })
+    ACTIVE_PREP_PREFIXES
+        .iter()
+        .chain(WHOLE_PART_PREP_WORDS)
+        .any(|prefix| {
+            normalized
+                .strip_prefix(prefix)
+                .is_some_and(is_allowed_trailing_prep_context)
+        })
 }
 
 pub(in crate::ingredient_parser) const ACTIVE_PREP_PREFIXES: &[&str] = &[
@@ -200,6 +226,34 @@ pub(in crate::ingredient_parser) const ACTIVE_PREP_PREFIXES: &[&str] = &[
     "well-shaken",
     "whisked",
     "squeezed",
+];
+
+/// Prep participles matched only as whole comma parts or chain words
+/// ("garlic, smashed", "shrimp, shelled and deveined"). Kept out of
+/// PREP_NOTES, whose substring match would catch food names ("split peas"),
+/// and out of ACTIVE_PREP_PREFIXES, which also match inside a part that
+/// still names the food ("deveined raw shrimp"). "juiced" and "zested" stay
+/// out: "lemon, juiced" means the juice, not the whole fruit.
+pub(in crate::ingredient_parser) const WHOLE_PART_PREP_WORDS: &[&str] = &[
+    "boiled",
+    "defrosted",
+    "deseeded",
+    "deveined",
+    "hard-boiled",
+    "hulled",
+    "husked",
+    "mashed",
+    "pitted",
+    "pressed",
+    "shelled",
+    "shucked",
+    "slivered",
+    "smashed",
+    "split",
+    "strained",
+    "torn",
+    "undrained",
+    "unwrapped",
 ];
 
 pub(in crate::ingredient_parser) fn contains_active_prep_note(s: &str) -> bool {
@@ -341,6 +395,31 @@ pub(in crate::ingredient_parser) fn is_trailing_guidance_note(s: &str) -> bool {
     if GUIDANCE_PREFIXES
         .iter()
         .any(|prefix| normalized.starts_with(prefix))
+    {
+        return true;
+    }
+
+    // "doesn't have to be fancy", "cold is fine": reassurance about the
+    // item, never a food of its own.
+    const REASSURANCE_PREFIXES: &[&str] = &[
+        "doesn't ",
+        "doesn’t ",
+        "does not ",
+        "don't ",
+        "don’t ",
+        "do not ",
+        "no need ",
+    ];
+    const REASSURANCE_SUFFIXES: &[&str] = &[" is fine", " are fine", " will work", " will do"];
+    if REASSURANCE_PREFIXES
+        .iter()
+        .any(|prefix| normalized.starts_with(prefix))
+        // Only a short clause ("cold is fine", "any brand will do"); a longer
+        // one may be the tail of a sentence the comma split.
+        || (normalized.split_whitespace().count() <= 4
+            && REASSURANCE_SUFFIXES
+                .iter()
+                .any(|suffix| normalized.ends_with(suffix)))
     {
         return true;
     }
@@ -676,4 +755,83 @@ pub(in crate::ingredient_parser) fn split_trailing_phrase_note(
         return None;
     }
     Some((item.to_string(), note.replace(['[', ']'], "")))
+}
+
+/// Split a mixing instruction off the item: "cornstarch mixed with 1
+/// tablespoon water", "egg yolk lightly beaten with 1 teaspoon water". The
+/// added ingredient has its own amount, so a digit after the preposition is
+/// required ("yogurt thinned with a little milk, and honey" lists foods).
+pub(in crate::ingredient_parser) fn split_mixing_note(s: &str) -> Option<(String, String)> {
+    const MIXING_VERBS: &[&str] = &[
+        "beaten",
+        "blended",
+        "combined",
+        "diluted",
+        "dissolved",
+        "mixed",
+        "stirred",
+        "thinned",
+        "whisked",
+    ];
+    const ADVERBS: &[&str] = &["gently", "lightly", "well"];
+    let words: Vec<&str> = s.split_whitespace().collect();
+    let verb_idx = (1..words.len().saturating_sub(1)).find(|&idx| {
+        MIXING_VERBS.contains(&words[idx].to_lowercase().as_str())
+            && ["with", "in", "into"].contains(&words[idx + 1].to_lowercase().as_str())
+    })?;
+    let tail = words[verb_idx + 2..].join(" ");
+    if !tail.chars().next().is_some_and(|c| c.is_ascii_digit()) {
+        return None;
+    }
+    let note_start = if ADVERBS.contains(&words[verb_idx - 1].to_lowercase().as_str()) {
+        verb_idx - 1
+    } else {
+        verb_idx
+    };
+    let item = words[..note_start].join(" ");
+    let item = item.trim_end_matches(',').trim();
+    if item.is_empty() || is_only_prep_words(item) {
+        return None;
+    }
+    Some((item.to_string(), words[note_start..].join(" ")))
+}
+
+/// Split where the item comes from off the end: "tomato puree from a
+/// 28-ounce can", "artichoke hearts from a jar".
+pub(in crate::ingredient_parser) fn split_container_source_note(
+    s: &str,
+) -> Option<(String, String)> {
+    const CONTAINERS: &[&str] = &[
+        "bag", "bottle", "box", "can", "carton", "jar", "package", "packet", "pouch", "tin", "tub",
+    ];
+    let lower = s.to_lowercase();
+    // Offsets from the lowercase copy are used on the original.
+    if lower.len() != s.len() {
+        return None;
+    }
+    let idx = lower.rfind(" from ")?;
+    let source: Vec<&str> = lower.get(idx + 6..)?.split_whitespace().collect();
+    let (first, last) = (source.first()?, source.last()?);
+    let counted =
+        ["a", "an", "one"].contains(first) || first.starts_with(|c: char| c.is_ascii_digit());
+    let container = last.strip_suffix('s').unwrap_or(last);
+    if !counted || source.len() > 3 || !CONTAINERS.contains(&container) {
+        return None;
+    }
+    let item = s.get(..idx)?.trim().trim_end_matches(',').trim();
+    let lower_item = item.to_lowercase();
+    // "cooked black beans or from a can": the source is an alternative, and
+    // in "well-shaken if from a can" a condition. In "juice from a pickle
+    // jar" the source names the food.
+    const SOURCE_NAMED_ITEMS: &[&str] = &["brine", "juice", "juices", "liquid", "syrup"];
+    if item.is_empty()
+        || is_only_prep_words(item)
+        || [" or", " and", " if", " when", " unless"]
+            .iter()
+            .any(|word| lower_item.ends_with(word))
+        || SOURCE_NAMED_ITEMS.contains(&lower_item.as_str())
+    {
+        return None;
+    }
+    Some((item.to_string(), s.get(idx + 1..)?.trim().to_string()))
 }

@@ -5,7 +5,7 @@
     {
       "raw": "2 15-ounce cans of chickpeas, drained and rinsed",
       "expected": {
-        "item": "of chickpeas",
+        "item": "chickpeas",
         "measurements": [
           {
             "amount": "2",
@@ -89,14 +89,14 @@
     {
       "raw": "1 pound summer squash or zucchini, quartered lengthwise, thinly sliced",
       "expected": {
-        "item": "summer squash or zucchini, quartered lengthwise",
+        "item": "summer squash or zucchini",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "thinly sliced",
+        "note": "quartered lengthwise, thinly sliced",
         "category": "Produce"
       }
     },

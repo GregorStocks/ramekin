@@ -74,14 +74,14 @@
     {
       "raw": "2 sprigs sweet basil or 2 thin lime wedges (optional, for garnish)",
       "expected": {
-        "item": "sweet basil or 2 thin lime wedges",
+        "item": "sweet basil",
         "measurements": [
           {
             "amount": "2",
             "unit": "sprig"
           }
         ],
-        "note": "optional, for garnish",
+        "note": "or 2 thin lime wedges (optional, for garnish)",
         "category": "Produce"
       }
     }

@@ -87,8 +87,13 @@
     {
       "raw": "Juice of 1 lemon, plus more to taste",
       "expected": {
-        "item": "Juice of 1 lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": "plus more to taste",
         "category": "Produce"
       }
@@ -96,9 +101,9 @@
     {
       "raw": "Few leaves of mint, slivered",
       "expected": {
-        "item": "Few leaves of mint, slivered",
+        "item": "Few leaves of mint",
         "measurements": [],
-        "note": null,
+        "note": "slivered",
         "category": "Spices & Seasonings"
       }
     },

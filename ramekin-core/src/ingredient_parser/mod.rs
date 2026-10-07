@@ -11,6 +11,7 @@ use crate::metric_weights::parse_amount;
 use crate::text::decode_html_entities;
 
 mod amounts;
+mod citrus;
 mod fractions;
 mod item;
 mod parentheticals;
@@ -18,6 +19,7 @@ mod units;
 
 pub(crate) use amounts::normalize_fraction_to_decimal;
 use amounts::*;
+use citrus::parse_citrus_part_line;
 use item::*;
 use parentheticals::*;
 use units::*;
@@ -313,6 +315,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         };
     }
 
+    // "Juice of 1 lemon": a line naming two parts ("zest and juice of ...")
+    // only splits in parse_ingredients.
+    if let Some(mut parts) = parse_citrus_part_line(raw).filter(|parts| parts.len() == 1) {
+        return parts.remove(0);
+    }
+
     // Decode HTML entities and normalize unicode before processing
     let decoded = decode_html_entities(raw);
     let normalized = normalize_unicode(&decoded);
@@ -341,6 +349,21 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     } else if remaining_lower.starts_with("optional-") {
         remaining = remaining.get(9..).unwrap_or("").trim().to_string();
         optional_prefix = true;
+    }
+
+    // "Egg wash: 1 large egg beaten with 1 tablespoon milk": a short label
+    // before a single measured ingredient goes to the note.
+    if let Some((label, rest)) = split_label_before_amount(&remaining) {
+        let mut parsed = parse_ingredient(rest);
+        parsed.note = Some(match parsed.note {
+            Some(existing) => format!("{label}, {existing}"),
+            None => label.to_string(),
+        });
+        if optional_prefix {
+            parsed.note = parsed.note.map(|n| format!("optional, {n}"));
+        }
+        parsed.raw = Some(raw.to_string());
+        return parsed;
     }
 
     // Issue 5: Normalize double-wrapped parentheticals to single
@@ -579,6 +602,24 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
+    // Step 2.95: "A 14-ounce can of crushed tomatoes": the article counts one
+    // of the sized unit, like "1 14-ounce can".
+    for article in ["a ", "an "] {
+        let after_article = remaining
+            .get(..article.len())
+            .filter(|prefix| prefix.eq_ignore_ascii_case(article))
+            .and_then(|_| remaining.get(article.len()..));
+        // Only before a sized container ("a 14-ounce can"); "a 3-inch piece
+        // of ginger" has no unit to count.
+        if let Some(rest) = after_article.filter(|rest| {
+            rest.starts_with(|c: char| c.is_ascii_digit())
+                && try_extract_compound_unit(rest).is_some()
+        }) {
+            remaining = format!("1 {rest}");
+            break;
+        }
+    }
+
     // Step 3: Strip measurement modifiers before amount, preserve for unit
     // Handles "scant 1 teaspoon" - modifier goes on the unit as "scant teaspoon"
     let (pre_amount_modifier, after_modifier) = strip_measurement_modifier(&remaining);
@@ -633,7 +674,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     if base_unit.is_none() {
         if let Some((compound_unit, after_compound)) = try_extract_compound_unit(&remaining) {
             base_unit = Some(compound_unit);
-            after_unit = after_compound;
+            // "1 14-ounce can of crushed tomatoes": the "of" joins unit and food.
+            after_unit = after_compound
+                .trim_start()
+                .strip_prefix("of ")
+                .map(str::to_string)
+                .unwrap_or(after_compound);
         } else if let Some(amount_str) = primary_amount.as_deref() {
             if let Some(((replacement_amount, recovered_unit), after_recovered)) =
                 try_extract_hyphenated_unit_tail(amount_str, &remaining)
@@ -974,7 +1020,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             let examples_of_category = (lower_note.starts_with("like ")
                 || lower_note.starts_with("such as "))
                 && item::has_generic_head(&potential_item);
-            let continues_list = lower_note.starts_with("and ") || examples_of_category;
+            // "and thinly sliced", "and cut into strips" finish a prep chain.
+            let continues_list = lower_note.strip_prefix("and ").is_some_and(|rest| {
+                !is_strict_trailing_prep_note(&potential_note) && !item::is_prep_phrase(rest)
+            }) || examples_of_category;
             // Only the last part may be a prep phrase that names a food
             // ("crumbled queso fresco"); every part before it must be a pure
             // note, or a list of foods ending in "for topping" would lose all
@@ -1012,6 +1061,25 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             peeled.push(extracted_note);
             remaining = potential_item;
         }
+        // "romaine, rinsed, patted dry, and chopped" where only "and chopped"
+        // peeled: the chain's start wasn't recognized, so the "and" part goes
+        // back to the item. Parts after it ("..., the remainder sliced thin")
+        // stay peeled.
+        if peeled.last().is_some_and(|first| {
+            first.to_lowercase().starts_with("and ") && !is_trailing_guidance_note(first)
+        }) {
+            if let Some(and_part) = peeled.pop() {
+                remaining = format!("{remaining}, {and_part}");
+            }
+        }
+        // "apples - peeled, cored, and sliced": a dash sets off the first
+        // prep step.
+        if let Some((item_part, prep)) = remaining.split_once(" - ") {
+            if !item_part.trim().is_empty() && is_strict_trailing_prep_note(prep) {
+                peeled.push(prep.trim().to_string());
+                remaining = item_part.trim().to_string();
+            }
+        }
         if !peeled.is_empty() {
             peeled.reverse();
             let peeled = peeled.join(", ");
@@ -1026,6 +1094,28 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // "oil for frying", "neutral oil such as canola", "spinach [see Note]")
     // is a note, not part of the item.
     if let Some((item_part, trailing)) = split_trailing_phrase_note(&remaining) {
+        note = Some(match note {
+            Some(existing) => format!("{}, {}", trailing, existing),
+            None => trailing,
+        });
+        remaining = item_part;
+    }
+
+    // Step 5.2: A mixing instruction ("cornstarch mixed with 1 tablespoon
+    // water") or the item's source ("tomato puree from a 28-ounce can") is a
+    // note, along with anything after it. A colon left in the item marks a
+    // labeled list ("To flavor: 2 cups juice, ..."), which stays whole.
+    // Inside an "or" branch ("stock or 2 teaspoons base dissolved in 2 cups
+    // water") the instruction belongs to the alternative, which Step 5.5
+    // moves to the note whole.
+    let mixing_or_source = if remaining.contains(':') {
+        None
+    } else {
+        split_mixing_note(&remaining)
+            .or_else(|| split_container_source_note(&remaining))
+            .filter(|(item_part, _)| !item_part.to_lowercase().contains(" or "))
+    };
+    if let Some((item_part, trailing)) = mixing_or_source {
         note = Some(match note {
             Some(existing) => format!("{}, {}", trailing, existing),
             None => trailing,
@@ -1097,7 +1187,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                     .any(|p| word == *p || word.starts_with(p))
             });
             let has_number = without_parens.chars().any(|c| c.is_ascii_digit());
-            let contains_measurement = has_unit && has_number;
+            // "carrot or 2 slim ones", "garlic or 1 shallot": a bare count
+            // alternative, as long as the text before "or" names the item
+            // rather than a size or variety of the food after it ("thick or 2
+            // slimmer leeks", "Turkish or 1/2 California bay leaf").
+            let count_alternative = is_count_alternative_after_item(before_or, after_or);
+            let contains_measurement = (has_unit && has_number) || count_alternative;
 
             // A brand alone before "or" ("Diamond Crystal or 1 1/4 tsp. Morton
             // kosher salt") borrows the food from the alternative: "Diamond
@@ -1477,6 +1572,17 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
         {
             peer_section_anchor = Some(section_name.clone());
             current_section = Some(section_name);
+            continue;
+        }
+
+        // "Zest and juice of 1 lemon" names two ingredients; each keeps the
+        // original line as its raw text.
+        if let Some(parts) = parse_citrus_part_line(trimmed) {
+            for mut ingredient in parts {
+                ingredient.raw = Some(original.clone());
+                ingredient.section = current_section.clone();
+                results.push(ingredient);
+            }
             continue;
         }
 

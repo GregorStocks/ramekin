@@ -107,14 +107,14 @@
     {
       "raw": "3 cups cooked chickpeas or two 15-oz cans, drained and rinsed",
       "expected": {
-        "item": "cooked chickpeas or two 15-oz cans",
+        "item": "cooked chickpeas",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "or two 15-oz cans; drained and rinsed",
         "category": "Canned Goods"
       }
     },

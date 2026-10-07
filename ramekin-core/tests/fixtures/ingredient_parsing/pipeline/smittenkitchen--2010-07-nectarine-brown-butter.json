@@ -149,7 +149,7 @@
     {
       "raw": "1 1/2 pounds nectarines, halved, pitted and cut into 1/2-inch thick wedges (about 4 cups)",
       "expected": {
-        "item": "nectarines, halved, pitted and cut into 1/2-inch thick wedges",
+        "item": "nectarines",
         "measurements": [
           {
             "amount": "1.5",
@@ -160,7 +160,7 @@
             "unit": "cup"
           }
         ],
-        "note": "about 4 cups",
+        "note": "about 4 cups, halved, pitted and cut into 1/2-inch thick wedges",
         "category": "Produce"
       }
     },

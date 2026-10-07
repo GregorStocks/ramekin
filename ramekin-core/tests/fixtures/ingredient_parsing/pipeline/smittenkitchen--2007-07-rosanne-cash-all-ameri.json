@@ -5,14 +5,14 @@
     {
       "raw": "3 pounds medium red-skinned potatoes, unpeeled, scrubbed",
       "expected": {
-        "item": "medium red-skinned potatoes, unpeeled",
+        "item": "medium red-skinned potatoes",
         "measurements": [
           {
             "amount": "3",
             "unit": "lb"
           }
         ],
-        "note": "scrubbed",
+        "note": "unpeeled, scrubbed",
         "category": "Produce"
       }
     },

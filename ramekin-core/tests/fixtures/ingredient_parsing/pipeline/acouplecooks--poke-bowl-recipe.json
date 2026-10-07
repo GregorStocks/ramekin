@@ -163,14 +163,14 @@
     {
       "raw": "1 watermelon radish or 2 radishes",
       "expected": {
-        "item": "watermelon radish or 2 radishes",
+        "item": "watermelon radish",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 2 radishes",
         "category": "Produce"
       }
     },

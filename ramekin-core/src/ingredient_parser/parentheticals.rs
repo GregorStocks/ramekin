@@ -190,12 +190,53 @@ pub(super) fn parenthetical_branch_context(raw_before_parenthetical: &str) -> (b
         .is_some_and(segment_starts_with_measurement);
 
     let before_lower = raw_before_parenthetical.to_lowercase();
-    let follows_or = before_lower
-        .rfind(" or ")
-        .and_then(|or_idx| raw_before_parenthetical.get(or_idx + 4..))
-        .is_some_and(segment_contains_measurement);
+    let follows_or = before_lower.rfind(" or ").is_some_and(|or_idx| {
+        let Some(after_or) = raw_before_parenthetical.get(or_idx + 4..) else {
+            return false;
+        };
+        segment_contains_measurement(after_or)
+            || raw_before_parenthetical
+                .get(..or_idx)
+                .is_some_and(|before_or| is_count_alternative(before_or, after_or))
+    });
 
     (follows_comma, follows_or)
+}
+
+/// "1 teaspoon vanilla or 1 vanilla bean" before a parenthetical: the line's
+/// own measurement leads `before_or`, so it is stripped before checking the
+/// item (see `is_count_alternative_after_item`).
+pub(super) fn is_count_alternative(before_or: &str, after_or: &str) -> bool {
+    let (_, after_pre_amount_modifier) = strip_measurement_modifier(before_or);
+    let (_, after_amount) = extract_amount(&after_pre_amount_modifier);
+    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
+    let (_, item) = extract_unit(&after_pre_unit_modifier);
+    is_count_alternative_after_item(&item, after_or)
+}
+
+/// "carrot or 2 slim ones": a bare count after "or" offers an alternative
+/// when the item itself comes before it (see
+/// `names_item_before_count_alternative`).
+pub(super) fn is_count_alternative_after_item(item: &str, after_or: &str) -> bool {
+    let normalized_after = normalize_word_numbers(after_or);
+    let (amount, after_amount) = extract_amount(&normalized_after);
+    if amount.is_none() {
+        return false;
+    }
+    // A spelled-out count is often an idiom rather than an alternative
+    // ("a squeeze or two of lime juice", "honey or half of each", "several
+    // gratings or two pinches"), so it only counts after a plain item.
+    if normalized_after != after_or {
+        let next_word = after_amount.split_whitespace().next().unwrap_or("");
+        let first_word = item.split_whitespace().next().unwrap_or("").to_lowercase();
+        if ["of", "as", "more", "or"].contains(&next_word.to_lowercase().as_str())
+            || item.contains(',')
+            || ["couple", "few", "several", "some"].contains(&first_word.as_str())
+        {
+            return false;
+        }
+    }
+    names_item_before_count_alternative(item)
 }
 
 pub(super) fn segment_starts_with_measurement(segment: &str) -> bool {
@@ -300,9 +341,38 @@ pub(super) fn prepend_deferred_parenthetical_notes(
         Some(existing_note) if existing_note.starts_with("or ") => {
             format!("{}; {}", parenthetical_note, existing_note)
         }
+        // "banana, mashed (1/2 cup mashed)": a yield note, or a repeated
+        // phrase, already says it. A lone word in prose stays ("do not buy
+        // pre-grated" still needs "grated").
+        Some(existing_note) if repeats_note(&parenthetical_note, &existing_note) => {
+            parenthetical_note
+        }
+        // "dates, pitted (or 2 tablespoons maple syrup)": the prep belongs to
+        // the item, ahead of the alternative.
+        Some(existing_note) if parenthetical_note.starts_with("or ") => {
+            format!("{}; {}", existing_note, parenthetical_note)
+        }
         Some(existing_note) => format!("{}, {}", parenthetical_note, existing_note),
         None => parenthetical_note,
     });
+}
+
+/// Whether a parenthetical note already states the peeled `note`: as a
+/// whole phrase, inside a yield note ("1/2 cup mashed") or as a phrase of
+/// several words.
+fn repeats_note(parenthetical_note: &str, note: &str) -> bool {
+    let parenthetical = parenthetical_note.to_lowercase();
+    let note = note.to_lowercase();
+    let yield_note = parenthetical.starts_with(|c: char| c.is_ascii_digit());
+    (yield_note || note.contains(' '))
+        && parenthetical.match_indices(&note).any(|(idx, _)| {
+            let before = parenthetical.get(..idx).and_then(|s| s.chars().next_back());
+            let after = parenthetical
+                .get(idx + note.len()..)
+                .and_then(|s| s.chars().next());
+            before.is_none_or(|c| c == ' ' || c == ',' || c == ';')
+                && after.is_none_or(|c| c == ' ' || c == ',' || c == ';')
+        })
 }
 
 pub(super) fn join_segments(left: &str, right: &str) -> String {
@@ -777,10 +847,10 @@ mod tests {
         let result = parse_ingredient(
             "1/2 cup cooked black beans from one (15-ounce) can, drained and rinsed",
         );
-        assert_eq!(result.item, "cooked black beans from one can");
+        assert_eq!(result.item, "cooked black beans");
         assert_eq!(
             result.note,
-            Some("15-ounce, drained and rinsed".to_string())
+            Some("15-ounce, from one can, drained and rinsed".to_string())
         );
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("1/2".to_string()));

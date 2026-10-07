@@ -51,14 +51,14 @@
     {
       "raw": "1/2 cup frozen peas, no need to defrost",
       "expected": {
-        "item": "frozen peas, no need to defrost",
+        "item": "frozen peas",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "no need to defrost",
         "category": "Frozen"
       }
     },
@@ -93,8 +93,13 @@
     {
       "raw": "Juice of half a lemon, more or less to taste",
       "expected": {
-        "item": "Juice of half a lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
         "note": "more or less to taste",
         "category": "Produce"
       }

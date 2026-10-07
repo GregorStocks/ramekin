@@ -33,14 +33,14 @@
     {
       "raw": "2 pounds medium shrimp, shelled and deveined",
       "expected": {
-        "item": "medium shrimp, shelled and deveined",
+        "item": "medium shrimp",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "shelled and deveined",
         "category": "Meat & Seafood"
       }
     },

@@ -163,14 +163,14 @@
     {
       "raw": "1/2 vanilla bean, split and seeds scraped",
       "expected": {
-        "item": "vanilla bean, split and seeds scraped",
+        "item": "vanilla bean",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split and seeds scraped",
         "category": "Spices & Seasonings"
       }
     }

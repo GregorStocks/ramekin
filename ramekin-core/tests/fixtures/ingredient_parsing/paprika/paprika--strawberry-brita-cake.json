@@ -92,9 +92,14 @@
     {
       "raw": "Finely grated zest of half a lemon",
       "expected": {
-        "item": "Finely grated zest of half a lemon",
-        "measurements": [],
-        "note": null,
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
+        "note": "finely grated",
         "section": "Cake",
         "category": "Produce"
       }
@@ -178,8 +183,13 @@
     {
       "raw": "Juice of half a lemon",
       "expected": {
-        "item": "Juice of half a lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "section": "Assembly",
         "category": "Produce"

@@ -19,8 +19,13 @@
     {
       "raw": "Juice of 4 limes",
       "expected": {
-        "item": "Juice of 4 limes",
-        "measurements": [],
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "limes"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -154,14 +159,14 @@
     {
       "raw": "1 c. fresh mint leaves, torn",
       "expected": {
-        "item": "fresh mint leaves, torn",
+        "item": "fresh mint leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "torn",
         "category": "Produce"
       }
     },

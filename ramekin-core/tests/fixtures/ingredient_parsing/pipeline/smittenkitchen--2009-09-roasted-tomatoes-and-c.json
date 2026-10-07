@@ -70,7 +70,7 @@
     {
       "raw": "1 15-ounce can of white beans, drained and rinsed or 1 1/2 cups cooked beans of your choice",
       "expected": {
-        "item": "of white beans",
+        "item": "white beans",
         "measurements": [
           {
             "amount": "1",
@@ -93,9 +93,9 @@
     {
       "raw": "Few fresh basil leaves, slivered",
       "expected": {
-        "item": "Few fresh basil leaves, slivered",
+        "item": "Few fresh basil leaves",
         "measurements": [],
-        "note": null,
+        "note": "slivered",
         "category": "Produce"
       }
     }

@@ -95,7 +95,7 @@
     {
       "raw": "2 pounds (910 grams) apples (Golden Delicious or another tart, firm variety), peeled, cored (save peels and cores), and sliced",
       "expected": {
-        "item": "apples, peeled, cored, and sliced",
+        "item": "apples",
         "measurements": [
           {
             "amount": "2",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": "Golden Delicious or another tart, firm variety, save peels and cores",
+        "note": "Golden Delicious or another tart, firm variety, save peels and cores, peeled, cored, and sliced",
         "category": "Produce"
       }
     },

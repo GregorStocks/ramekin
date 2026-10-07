@@ -64,7 +64,7 @@
     {
       "raw": "8 ounces (225 grams) small cucumbers, washed, unpeeled, chopped small",
       "expected": {
-        "item": "small cucumbers, washed, unpeeled",
+        "item": "small cucumbers",
         "measurements": [
           {
             "amount": "8",
@@ -75,7 +75,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped small",
+        "note": "washed, unpeeled, chopped small",
         "category": "Produce"
       }
     },
@@ -96,8 +96,13 @@
     {
       "raw": "Juice of half a lemon",
       "expected": {
-        "item": "Juice of half a lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

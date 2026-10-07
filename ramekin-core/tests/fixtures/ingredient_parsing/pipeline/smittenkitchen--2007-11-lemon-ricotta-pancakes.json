@@ -19,14 +19,14 @@
     {
       "raw": "4 large Granny Smith apples, peeled, cored, and sliced",
       "expected": {
-        "item": "Granny Smith apples, peeled, cored, and sliced",
+        "item": "Granny Smith apples",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "peeled, cored, and sliced",
         "category": "Produce"
       }
     },
@@ -129,8 +129,13 @@
     {
       "raw": "Juice of half a lemon",
       "expected": {
-        "item": "Juice of half a lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

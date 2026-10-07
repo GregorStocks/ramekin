@@ -19,28 +19,28 @@
     {
       "raw": "1  small banana or 1/2 of a large one",
       "expected": {
-        "item": "banana or 1/2 of a large one",
+        "item": "banana",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "or 1/2 of a large one",
         "category": "Produce"
       }
     },
     {
       "raw": "2  clementines or 1 orange (peeled)",
       "expected": {
-        "item": "clementines or 1 orange",
+        "item": "clementines",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "peeled",
+        "note": "or 1 orange (peeled)",
         "category": "Produce"
       }
     },

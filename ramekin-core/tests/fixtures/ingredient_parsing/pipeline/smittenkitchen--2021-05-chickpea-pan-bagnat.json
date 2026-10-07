@@ -33,11 +33,31 @@
     {
       "raw": "Zest and juice of half a lemon",
       "expected": {
-        "item": "Zest and juice of half a lemon",
-        "measurements": [],
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Zest and juice of half a lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "1 tablespoon chopped flat-leaf parsley",
@@ -171,14 +191,14 @@
     {
       "raw": "1/4 cup thinly black olives, Niçoise or oil-cured, pitted or unpitted",
       "expected": {
-        "item": "thinly black olives, Niçoise or oil-cured, pitted or unpitted",
+        "item": "thinly black olives, Niçoise or oil-cured",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pitted or unpitted",
         "category": "Canned Goods"
       }
     },

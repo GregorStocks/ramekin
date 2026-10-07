@@ -93,14 +93,14 @@
     {
       "raw": "1 bag frozen mixed berries, not defrosted",
       "expected": {
-        "item": "frozen mixed berries, not defrosted",
+        "item": "frozen mixed berries",
         "measurements": [
           {
             "amount": "1",
             "unit": "bag"
           }
         ],
-        "note": null,
+        "note": "not defrosted",
         "category": "Frozen"
       }
     },
@@ -163,14 +163,14 @@
     {
       "raw": "8 dried black Mission figs, stemmed, chopped",
       "expected": {
-        "item": "dried black Mission figs, stemmed",
+        "item": "dried black Mission figs",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "chopped",
+        "note": "stemmed, chopped",
         "category": "Produce"
       }
     },

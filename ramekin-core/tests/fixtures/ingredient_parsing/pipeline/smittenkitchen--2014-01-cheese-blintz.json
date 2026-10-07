@@ -153,14 +153,14 @@
     {
       "raw": "2 large egg yolks or 1 large egg (optional, see Note up top)",
       "expected": {
-        "item": "egg yolks or 1 large egg",
+        "item": "egg yolks",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "optional, see Note up top",
+        "note": "or 1 large egg (optional, see Note up top)",
         "section": "Filling",
         "category": "Dairy & Eggs"
       }

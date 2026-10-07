@@ -117,14 +117,14 @@
     {
       "raw": "One batch of buttermilk biscuits, split (see notes)",
       "expected": {
-        "item": "batch of buttermilk biscuits, split",
+        "item": "batch of buttermilk biscuits",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "see notes",
+        "note": "see notes, split",
         "category": "Bakery & Bread"
       }
     }

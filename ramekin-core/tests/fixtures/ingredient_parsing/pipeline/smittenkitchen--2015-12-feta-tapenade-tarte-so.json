@@ -192,14 +192,14 @@
     {
       "raw": "1 egg yolk beaten with 1 teaspoon water (for egg wash)",
       "expected": {
-        "item": "egg yolk beaten with 1 teaspoon water",
+        "item": "egg yolk",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "for egg wash",
+        "note": "for egg wash, beaten with 1 teaspoon water",
         "section": "Assembly",
         "category": "Dairy & Eggs"
       }

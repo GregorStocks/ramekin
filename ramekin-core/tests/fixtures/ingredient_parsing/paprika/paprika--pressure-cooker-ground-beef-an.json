@@ -256,7 +256,7 @@
     {
       "raw": "4 cups cooked and drained red kidney beans or 2 (15.5-ounce; 439 g) cans red kidney beans, drained (see notes)",
       "expected": {
-        "item": "cooked and drained red kidney beans or 2 cans red kidney beans",
+        "item": "cooked and drained red kidney beans",
         "measurements": [
           {
             "amount": "4",
@@ -267,7 +267,7 @@
             "unit": "g"
           }
         ],
-        "note": "15.5-ounce; 439 g, see notes, drained",
+        "note": "15.5-ounce; 439 g; or 2 cans red kidney beans (see notes); drained",
         "category": "Canned Goods"
       }
     },

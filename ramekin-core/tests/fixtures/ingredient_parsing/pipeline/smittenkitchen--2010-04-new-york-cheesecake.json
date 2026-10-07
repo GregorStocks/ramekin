@@ -205,14 +205,14 @@
     {
       "raw": "10 ounces sweet or sour cherries, pitted (they’re not in season here so I used frozen; worked just fine)",
       "expected": {
-        "item": "sweet or sour cherries, pitted",
+        "item": "sweet or sour cherries",
         "measurements": [
           {
             "amount": "10",
             "unit": "oz"
           }
         ],
-        "note": "they’re not in season here so I used frozen; worked just fine",
+        "note": "they’re not in season here so I used frozen; worked just fine, pitted",
         "section": "Cherry Topping",
         "category": "Produce"
       }

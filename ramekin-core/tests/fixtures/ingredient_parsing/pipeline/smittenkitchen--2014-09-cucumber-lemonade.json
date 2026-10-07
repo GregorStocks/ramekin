@@ -5,14 +5,14 @@
     {
       "raw": "1 pound cucumber(s), peeled or unpeeled, cut into large chunks, plus a few extra thin cucumber slices for garnish",
       "expected": {
-        "item": "cucumber, peeled or unpeeled",
+        "item": "cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "s, cut into large chunks, plus a few extra thin cucumber slices for garnish",
+        "note": "s, peeled or unpeeled, cut into large chunks, plus a few extra thin cucumber slices for garnish",
         "category": "Produce"
       }
     },

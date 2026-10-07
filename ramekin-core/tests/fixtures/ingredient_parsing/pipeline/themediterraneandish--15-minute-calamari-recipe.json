@@ -65,8 +65,13 @@
     {
       "raw": "Juice of 1 1/2 limes",
       "expected": {
-        "item": "Juice of 1 1/2 limes",
-        "measurements": [],
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "limes"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

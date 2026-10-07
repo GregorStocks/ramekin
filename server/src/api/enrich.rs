@@ -1,4 +1,4 @@
-use crate::api::ai::ai_client_from_env;
+use crate::api::ai::{ai_client_from_env, ai_config_from_env};
 use crate::api::ApiError;
 use crate::auth::AuthUser;
 use crate::db::{run_blocking, DbPool};
@@ -7,7 +7,7 @@ use crate::schema::user_tags;
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
-use ramekin_core::ai::{custom_enrich, suggest_tags};
+use ramekin_core::ai::{custom_enrich, suggest_tags, CachingAiClient};
 use serde::Deserialize;
 use std::fmt;
 use std::sync::Arc;
@@ -181,9 +181,8 @@ pub async fn custom_enrich_recipe(
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<CustomEnrichRequest>,
 ) -> impl IntoResponse {
-    // Create AI client
-    let ai_client = match ai_client_from_env() {
-        Ok(c) => c,
+    let ai_client = match ai_config_from_env() {
+        Ok(config) => CachingAiClient::new(config.for_custom_enrich()),
         Err(e) => return e.into_response(),
     };
 

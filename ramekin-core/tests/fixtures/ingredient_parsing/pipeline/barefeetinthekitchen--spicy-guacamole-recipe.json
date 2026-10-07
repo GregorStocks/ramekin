@@ -47,8 +47,13 @@
     {
       "raw": "juice of 1 large lime (about 2 teaspoons worth)",
       "expected": {
-        "item": "juice of 1 large lime",
-        "measurements": [],
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large lime"
+          }
+        ],
         "note": "about 2 teaspoons worth",
         "category": "Produce"
       }

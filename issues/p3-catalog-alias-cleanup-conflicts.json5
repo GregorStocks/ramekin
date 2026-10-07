@@ -1,0 +1,17 @@
+{
+  "title": "Catalog: decide the 75 curated alias keys make catalog-clean-aliases keeps as conflicts",
+  "description": "make catalog-clean-aliases (report in logs/catalog-alias-cleanup.md) still keeps 75 curated alias keys in ramekin-core/src/catalog/data/curated.json that look like parse junk, because moving each to its parsed name would change what that name resolves to. \
+Each needs a person to pick the mapping for the clean name, after which the junk key can go. \
+Kinds: the parsed name already resolves differently (\"chickpeas, rinsed\" maps to drained chickpeas while \"chickpeas\" means canned solids and liquids; \"apples - peeled\" and \"tart apple, peeled\" map to apples without skin while \"apples\" keeps the skin; \"lemon, juiced\" / \"lemons, juiced\" map to lemon juice while \"lemon\" is the fruit); the key is ambiguous (null) and the clean name isn't (\"milk (or coconut milk)\"); the parse drops an example or amount (\"dried mushrooms (porcini, morels, or shitakes)\", \"to 4 pounds manila, cherrystone, or little neck clams\"). \
+Leftover parser misses also show up there: a size word before the item is dropped on re-parse (\"small new potatoes\" -> \"new potatoes\", \"medium grain rice\" -> \"grain rice\", \"good quality dark chocolate\" -> \"quality dark chocolate\"), a lowercase variety before \"or N\" splits (\"turkish or 1/2 california bay leaf\" -> \"turkish\"; the capitalized line in recipes stays whole), and a color word before \"or N\" keeps the alternative in the item (\"1 large orange or 2 small ones, juiced\"). \
+No make pipeline data/ diffs are expected from alias decisions alone beyond the catalog audit numbers.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "catalog",
+    "ingredient-parser",
+  ],
+  "created_at": "2026-10-05T17:05:00-07:00",
+  "updated_at": "2026-10-05T17:05:00-07:00",
+}

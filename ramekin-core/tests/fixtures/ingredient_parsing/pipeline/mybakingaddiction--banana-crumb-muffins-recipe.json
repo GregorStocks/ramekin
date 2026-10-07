@@ -69,14 +69,14 @@
     {
       "raw": "3 large bananas, mashed",
       "expected": {
-        "item": "bananas, mashed",
+        "item": "bananas",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "mashed",
         "section": "For the Banana Muffins",
         "category": "Produce"
       }

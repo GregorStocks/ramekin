@@ -78,14 +78,14 @@
     {
       "raw": "2 crispy fried quail eggs or 1 regular fried egg",
       "expected": {
-        "item": "crispy fried quail eggs or 1 regular fried egg",
+        "item": "crispy fried quail eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 regular fried egg",
         "category": "Dairy & Eggs"
       }
     },

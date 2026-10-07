@@ -98,8 +98,13 @@
     {
       "raw": "Juice of half a lemon",
       "expected": {
-        "item": "Juice of half a lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }
@@ -177,7 +182,7 @@
     {
       "raw": "1 19-ounce can of white beans, rinsed and drained or 1 1/2 cups cooked white beans",
       "expected": {
-        "item": "of white beans",
+        "item": "white beans",
         "measurements": [
           {
             "amount": "1",

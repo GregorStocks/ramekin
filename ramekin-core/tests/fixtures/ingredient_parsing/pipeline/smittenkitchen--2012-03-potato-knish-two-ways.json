@@ -256,7 +256,7 @@
     {
       "raw": "1 big leek (about 1/2 pound), white and light-green parts only, halved lengthwise, and thinly sliced (you’ll clean the grit out in a moment)",
       "expected": {
-        "item": "big leek, white and light-green parts only, halved lengthwise, and thinly sliced",
+        "item": "big leek, white and light-green parts only",
         "measurements": [
           {
             "amount": "1",
@@ -267,7 +267,7 @@
             "unit": "lb"
           }
         ],
-        "note": "about 1/2 pound, you’ll clean the grit out in a moment",
+        "note": "about 1/2 pound, you’ll clean the grit out in a moment, halved lengthwise, and thinly sliced",
         "section": "To Finish",
         "category": "Produce"
       }

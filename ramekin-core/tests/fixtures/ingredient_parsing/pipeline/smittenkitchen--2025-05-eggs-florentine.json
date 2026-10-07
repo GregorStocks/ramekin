@@ -152,14 +152,14 @@
     {
       "raw": "3 full English muffins, split into 6 halves",
       "expected": {
-        "item": "full English muffins, split into 6 halves",
+        "item": "full English muffins",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split into 6 halves",
         "category": "Bakery & Bread"
       }
     },

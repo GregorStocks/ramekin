@@ -5,14 +5,14 @@
     {
       "raw": "4&nbsp;ears corn, yellow or white varieties, shucked",
       "expected": {
-        "item": "ears corn, yellow or white varieties, shucked",
+        "item": "ears corn, yellow or white varieties",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "shucked",
         "category": "Produce"
       }
     },
@@ -144,8 +144,13 @@
     {
       "raw": "Juice of 1 lime, or more to taste",
       "expected": {
-        "item": "Juice of 1 lime",
-        "measurements": [],
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lime"
+          }
+        ],
         "note": "or more to taste",
         "category": "Produce"
       }

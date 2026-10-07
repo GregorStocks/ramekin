@@ -78,14 +78,14 @@
     {
       "raw": "1 1/2 tablespoons dill pickle brine from one 16-ounce jar",
       "expected": {
-        "item": "dill pickle brine from one 16-ounce jar",
+        "item": "dill pickle brine",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from one 16-ounce jar",
         "section": "For the Bacon Ranch",
         "category": "Condiments & Sauces"
       }
@@ -123,14 +123,14 @@
     {
       "raw": "1 small garlic clove, mashed to a paste",
       "expected": {
-        "item": "garlic clove, mashed to a paste",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "mashed to a paste",
         "section": "For the Bacon Ranch",
         "category": "Produce"
       }

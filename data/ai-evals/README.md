@@ -24,12 +24,15 @@ set (it reads `cli.env`). Each call goes through the production prompt and
 validation, and responses are cached by model and prompt, so a rerun is free
 and a new model only pays for its own calls. Rejected answers aren't cached, so
 a model that answers invalidly is asked (and billed) again on every run. Models come from OpenRouter's live
-model list, which also supplies the prices in the cost column. A model whose
-calls fail (a timeout) stops the run before any report is written; rerun
-without it, or after fixing the cause, which is nearly free since everything
-answered is cached. The exception is a photo that outlasts photo generation's 45 s timeout:
-production fails that photo too, so it counts as the model's rejected answer
-and the run goes on.
+model list, which also supplies the prices in the cost column. A call that
+fails at the provider (a request timeout, an upstream refusal or rate limit) is
+retried a couple of times, then counts as the model's rejected answer for
+every case in that call (its message is listed under Rejected answers) and the
+run goes on. A photo that outlasts photo generation's 45 s timeout counts the
+same way at once, since production fails that photo too. Five calls
+(or more than half of them) failing at the provider, or a configuration error, stops the run before any report is written; rerun
+without that model, or after fixing the cause, which is nearly free since
+everything answered is cached.
 
 | Suite | Use case | Scored against |
 | --- | --- | --- |

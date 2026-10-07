@@ -1014,13 +1014,15 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                 // Image tokens are priced apart from text, so the cost is
                 // what the provider reports.
                 let mut cost = 0.0;
+                // Written after asking, so a local write failure stops the
+                // run instead of counting as the model's answer.
+                let mut images = Vec::new();
                 let (answers, invalid) = ask_all(suite, model, &golden, &mut spend, async |i| {
                     let cached = photo(&config, &golden[i]).await?;
                     let (bytes, ext) = decode_data_url(&cached.data_url)?;
                     let key = answer_key(&bytes);
                     let file = format!("{key}.{ext}");
-                    fs::write(image_dir.join(&file), &bytes)
-                        .map_err(|e| AiError::Api(format!("Failed to write {file}: {e}")))?;
+                    images.push((file.clone(), bytes));
                     cost += cached.cost.unwrap_or(0.0);
                     Ok((
                         Shown {
@@ -1032,6 +1034,11 @@ pub async fn eval(root: &Path, suite: &str, models: &[String]) -> Result<SuiteRu
                     ))
                 })
                 .await?;
+                for (file, bytes) in images {
+                    let path = image_dir.join(file);
+                    fs::write(&path, bytes)
+                        .with_context(|| format!("Failed to write {}", path.display()))?;
+                }
                 spend.reported_dollars += cost;
                 for (id, answer) in ids.iter().zip(&answers) {
                     if let Some(answer) = answer {

@@ -187,14 +187,14 @@
     {
       "raw": "1½ tablespoons cornstarch whisked into 2 tablespoons water",
       "expected": {
-        "item": "cornstarch whisked into 2 tablespoons water",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "whisked into 2 tablespoons water",
         "category": "Baking"
       }
     }

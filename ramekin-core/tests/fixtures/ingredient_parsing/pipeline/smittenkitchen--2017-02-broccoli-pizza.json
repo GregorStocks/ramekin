@@ -148,14 +148,14 @@
     {
       "raw": "4 ounces mozzarella, torn into small clumps",
       "expected": {
-        "item": "mozzarella, torn into small clumps",
+        "item": "mozzarella",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "torn into small clumps",
         "category": "Cheese"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "2 medium-large yellow onions, unpeeled, halved or 1 large onion plus 1 large leek, cleaned and cut lengthwise",
       "expected": {
-        "item": "medium-large yellow onions, unpeeled, halved or 1 large onion plus 1 large leek",
+        "item": "medium-large yellow onions, unpeeled, halved",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "cleaned and cut lengthwise",
+        "note": "or 1 large onion plus 1 large leek; cleaned and cut lengthwise",
         "category": "Produce"
       }
     },

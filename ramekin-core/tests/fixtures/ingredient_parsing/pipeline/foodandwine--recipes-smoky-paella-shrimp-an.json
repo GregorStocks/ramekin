@@ -19,14 +19,14 @@
     {
       "raw": "1 pound large shrimp, shelled and deveined",
       "expected": {
-        "item": "large shrimp, shelled and deveined",
+        "item": "large shrimp",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "shelled and deveined",
         "category": "Meat & Seafood"
       }
     },

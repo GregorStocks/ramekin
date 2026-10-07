@@ -23,9 +23,14 @@
     {
       "raw": "Finely grated zest of one lemon",
       "expected": {
-        "item": "Finely grated zest of one lemon",
-        "measurements": [],
-        "note": null,
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": "finely grated",
         "category": "Produce"
       }
     },
@@ -114,8 +119,13 @@
     {
       "raw": "Juice of 1 lemon",
       "expected": {
-        "item": "Juice of 1 lemon",
-        "measurements": [],
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

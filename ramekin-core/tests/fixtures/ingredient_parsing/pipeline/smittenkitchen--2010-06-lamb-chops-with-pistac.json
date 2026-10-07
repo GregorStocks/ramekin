@@ -47,14 +47,14 @@
     {
       "raw": "1 clove garlic, smashed",
       "expected": {
-        "item": "garlic, smashed",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "smashed",
         "category": "Produce"
       }
     },
@@ -112,14 +112,14 @@
     {
       "raw": "1 (8-rib) rack of lamb or 6 lamb chops",
       "expected": {
-        "item": "rack of lamb or 6 lamb chops",
+        "item": "rack of lamb",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "8-rib",
+        "note": "8-rib; or 6 lamb chops",
         "category": "Meat & Seafood"
       }
     },

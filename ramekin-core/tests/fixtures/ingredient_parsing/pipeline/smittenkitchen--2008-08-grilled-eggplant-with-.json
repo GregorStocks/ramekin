@@ -47,7 +47,7 @@
     {
       "raw": "5 large green olives, pitted, thinly sliced (about 2 tablespoons)",
       "expected": {
-        "item": "green olives, pitted",
+        "item": "green olives",
         "measurements": [
           {
             "amount": "5",
@@ -58,7 +58,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "about 2 tablespoons, thinly sliced",
+        "note": "about 2 tablespoons, pitted, thinly sliced",
         "category": "Canned Goods"
       }
     },

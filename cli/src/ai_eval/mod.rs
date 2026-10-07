@@ -23,6 +23,7 @@ use std::collections::{BTreeMap, HashMap, VecDeque};
 use std::fmt::Write as _;
 use std::fs;
 use std::path::{Path, PathBuf};
+use std::time::Duration;
 
 const GOLDEN_DIR: &str = "data/ai-evals/golden";
 const SNAPSHOTS_DIR: &str = "data/pipeline-snapshots";
@@ -395,10 +396,30 @@ enum Split {
     Singles,
 }
 
+/// How many times a batch is asked before a provider error (a request
+/// timeout, an upstream refusal, a rate limit) counts as its answer.
+const PROVIDER_ATTEMPTS: u32 = 3;
+
+/// The wait before the first retry of a provider error, doubled each retry.
+const PROVIDER_RETRY_DELAY: Duration = if cfg!(test) {
+    Duration::ZERO
+} else {
+    Duration::from_secs(5)
+};
+
+/// Batches whose provider errors outlast their retries before the run stops:
+/// past this the provider (or the key) is down, and counting every remaining
+/// case invalid would only write a misleading report. A total, not a run in
+/// a row, since cached answers succeed through an outage.
+const MAX_PROVIDER_FAILURES: usize = 5;
+
 /// Ask `items` `batch_size` at a time, retrying a rejected batch (invalid, or
 /// truncated) the way the production worker does; a rejected single item is
-/// invalid, with no second chance, as in production. Provider and
-/// configuration errors stop the run.
+/// invalid, with no second chance, as in production. A provider error is
+/// retried a few times, then fails the whole batch (production doesn't split
+/// on those either), so one flaky case doesn't abort the suite.
+/// Configuration errors, and provider errors on `MAX_PROVIDER_FAILURES`
+/// batches or on more than half of them, stop the run.
 async fn in_batches<I: Clone, A>(
     items: &[I],
     batch_size: usize,
@@ -408,45 +429,92 @@ async fn in_batches<I: Clone, A>(
     mut take: impl FnMut(A),
 ) -> Result<usize> {
     let mut invalid = 0;
+    let mut provider_failures = 0;
+    let mut last_provider_error = None;
+    // Batches asked, counting those split off a rejected one.
+    let mut batches = 0;
     let mut queue: VecDeque<Vec<I>> = items.chunks(batch_size).map(<[I]>::to_vec).collect();
     while let Some(batch) = queue.pop_front() {
-        match ask(&batch).await {
+        batches += 1;
+        let e = match ask_with_retries(&mut ask, &batch).await {
             Ok((answers, usage)) => {
                 spend.add(&usage);
                 take(answers);
+                continue;
             }
+            Err(e) => e,
+        };
+        let provider_failure = match e {
             // Only photo generation times out this way: a slow image model
             // fails that photo in production too, so it's the model's miss.
-            Err(e) if e.is_answer_specific() || matches!(e, AiError::Timeout(_)) => {
-                spend.rejected_calls += 1;
-                spend.truncated += usize::from(matches!(e, AiError::Truncated(_)));
-                if batch.len() == 1 {
-                    invalid += 1;
-                    if spend.rejections.len() < 5 {
-                        spend
-                            .rejections
-                            .push(e.to_string().chars().take(300).collect());
-                    }
-                    continue;
-                }
-                match split {
-                    Split::Halves => {
-                        let mut first = batch;
-                        let second = first.split_off(first.len() / 2);
-                        queue.push_front(second);
-                        queue.push_front(first);
-                    }
-                    Split::Singles => {
-                        for item in batch.into_iter().rev() {
-                            queue.push_front(vec![item]);
-                        }
-                    }
+            _ if e.is_answer_specific() || matches!(e, AiError::Timeout(_)) => false,
+            AiError::Api(_) | AiError::RateLimited(_) => true,
+            _ => return Err(e.into()),
+        };
+        if provider_failure {
+            provider_failures += 1;
+            if provider_failures >= MAX_PROVIDER_FAILURES {
+                return Err(anyhow::Error::from(e).context(format!(
+                    "{provider_failures} batches failed with provider errors"
+                )));
+            }
+        }
+        spend.rejected_calls += 1;
+        spend.truncated += usize::from(matches!(e, AiError::Truncated(_)));
+        if provider_failure || batch.len() == 1 {
+            invalid += batch.len();
+            if spend.rejections.len() < 5 {
+                spend
+                    .rejections
+                    .push(e.to_string().chars().take(300).collect());
+            }
+            if provider_failure {
+                last_provider_error = Some(e);
+            }
+            continue;
+        }
+        match split {
+            Split::Halves => {
+                let mut first = batch;
+                let second = first.split_off(first.len() / 2);
+                queue.push_front(second);
+                queue.push_front(first);
+            }
+            Split::Singles => {
+                for item in batch.into_iter().rev() {
+                    queue.push_front(vec![item]);
                 }
             }
-            Err(e) => return Err(e.into()),
         }
     }
-    Ok(invalid)
+    // A suite of fewer batches than the limit can fail most of them.
+    match last_provider_error {
+        Some(e) if provider_failures * 2 > batches => Err(anyhow::Error::from(e).context(format!(
+            "{provider_failures} of {batches} batches failed with provider errors"
+        ))),
+        _ => Ok(invalid),
+    }
+}
+
+/// `ask(batch)`, asked again after a provider error up to
+/// `PROVIDER_ATTEMPTS` times in all.
+async fn ask_with_retries<I, A>(
+    ask: &mut impl AsyncFnMut(&[I]) -> Result<(A, Usage), AiError>,
+    batch: &[I],
+) -> Result<(A, Usage), AiError> {
+    let mut delay = PROVIDER_RETRY_DELAY;
+    let mut attempt = 1;
+    loop {
+        match ask(batch).await {
+            Err(e @ (AiError::Api(_) | AiError::RateLimited(_))) if attempt < PROVIDER_ATTEMPTS => {
+                tracing::warn!("Provider error (attempt {attempt}), retrying in {delay:?}: {e}");
+                tokio::time::sleep(delay).await;
+                delay *= 2;
+                attempt += 1;
+            }
+            result => return result,
+        }
+    }
 }
 
 // ---------------------------------------------------------------------------
@@ -911,9 +979,9 @@ fn render(suite: &str, cases: usize, batch_size: usize, rows: &[Row]) -> String 
         spec.title,
         spec.about,
         if spec.batched {
-            format!("asked {batch_size} per call (production asks {BATCH}). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated); a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid")
+            format!("asked {batch_size} per call (production asks {BATCH}). Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated), or a provider error that outlasted its retries; a rejected batch is retried as the production worker does (in halves for weights, item by item for names), and a rejected single item is invalid, as is every item of a batch the provider kept failing (production doesn't split those)")
         } else {
-            "one call per case, as in production. Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated), and are invalid: production doesn't retry them".to_string()
+            "one call per case, as in production. Rejected calls got an answer that failed validation or ran out of the production max_tokens (counted again as truncated), or a provider error that outlasted its retries, and are invalid: production doesn't retry them".to_string()
         }
     );
     let _ = writeln!(
@@ -1083,4 +1151,146 @@ pub async fn run(
         tracing::info!("Wrote {}", out.display());
     }
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use ramekin_core::ai::ConfigError;
+
+    /// Runs `in_batches` over `items` with an `ask` that answers each batch
+    /// with its items, or the error `fail` gives for it. Returns the result,
+    /// the items answered, the spend, and how many calls were made.
+    async fn run(
+        items: &[u32],
+        batch_size: usize,
+        split: Split,
+        mut fail: impl FnMut(&[u32], usize) -> Option<AiError>,
+    ) -> (Result<usize>, Vec<u32>, Spend, usize) {
+        let mut spend = Spend::default();
+        let mut answered = Vec::new();
+        let mut calls = 0;
+        let result = in_batches(
+            items,
+            batch_size,
+            split,
+            &mut spend,
+            async |batch: &[u32]| {
+                calls += 1;
+                match fail(batch, calls) {
+                    Some(e) => Err(e),
+                    None => Ok((batch.to_vec(), Usage::default())),
+                }
+            },
+            |answers| answered.extend(answers),
+        )
+        .await;
+        (result, answered, spend, calls)
+    }
+
+    fn timed_out() -> AiError {
+        AiError::Api("Request timed out after 60s".into())
+    }
+
+    #[tokio::test]
+    async fn a_transient_provider_error_is_retried() {
+        let (result, answered, spend, calls) = run(&[1, 2], 2, Split::Halves, |_, call| {
+            (call == 1).then(timed_out)
+        })
+        .await;
+
+        assert_eq!(result.unwrap(), 0);
+        assert_eq!(answered, [1, 2]);
+        assert_eq!(calls, 2);
+        assert_eq!(spend.rejected_calls, 0);
+    }
+
+    #[tokio::test]
+    async fn a_persistent_provider_error_is_an_invalid_answer() {
+        let blocked = "Provider error (code 403): Output blocked by content filtering policy";
+        let (result, answered, spend, calls) = run(&[1, 2], 1, Split::Singles, |batch, _| {
+            (batch == [1]).then(|| AiError::Api(blocked.into()))
+        })
+        .await;
+
+        assert_eq!(result.unwrap(), 1);
+        assert_eq!(answered, [2]);
+        assert_eq!(calls, PROVIDER_ATTEMPTS as usize + 1);
+        assert_eq!(spend.rejected_calls, 1);
+        assert_eq!(spend.rejections, [format!("API error: {blocked}")]);
+    }
+
+    #[tokio::test]
+    async fn a_persistent_provider_error_fails_the_whole_batch_unsplit() {
+        // As in production, which splits only on answer-specific errors.
+        let (result, answered, spend, calls) = run(&[1, 2, 3, 4], 2, Split::Halves, |batch, _| {
+            batch.contains(&3).then(timed_out)
+        })
+        .await;
+
+        assert_eq!(result.unwrap(), 2);
+        assert_eq!(answered, [1, 2]);
+        assert_eq!(calls, 1 + PROVIDER_ATTEMPTS as usize);
+        assert_eq!(spend.rejected_calls, 1);
+    }
+
+    #[tokio::test]
+    async fn a_configuration_error_stops_the_run() {
+        let (result, _, _, calls) = run(&[1, 2], 1, Split::Singles, |_, _| {
+            Some(AiError::Config(ConfigError::PlaceholderApiKey))
+        })
+        .await;
+
+        assert!(result.is_err());
+        assert_eq!(calls, 1);
+    }
+
+    #[tokio::test]
+    async fn a_provider_outage_on_a_short_suite_stops_the_run() {
+        let (result, _, _, calls) = run(&[1, 2], 1, Split::Singles, |_, _| Some(timed_out())).await;
+
+        let message = format!("{:#}", result.unwrap_err());
+        assert!(message.contains("2 of 2 batches"), "{message}");
+        assert_eq!(calls, 2 * PROVIDER_ATTEMPTS as usize);
+    }
+
+    #[tokio::test]
+    async fn split_batches_count_toward_the_provider_failure_share() {
+        // The one batch is rejected and split into four singles, one of
+        // which fails at the provider: one failure in five batches asked.
+        let (result, answered, _, _) =
+            run(&[1, 2, 3, 4], 4, Split::Singles, |batch, _| match batch {
+                [_, _, ..] => Some(AiError::ParseError("bad json".into())),
+                [3] => Some(timed_out()),
+                _ => None,
+            })
+            .await;
+
+        assert_eq!(result.unwrap(), 1);
+        assert_eq!(answered, [1, 2, 4]);
+    }
+
+    #[tokio::test]
+    async fn answers_between_provider_failures_dont_hide_an_outage() {
+        // As cached answers keep coming during an outage.
+        let items: Vec<u32> = (0..20).collect();
+        let (result, answered, _, _) = run(&items, 1, Split::Singles, |batch, _| {
+            (batch[0] % 2 == 0).then(timed_out)
+        })
+        .await;
+
+        let message = format!("{:#}", result.unwrap_err());
+        assert!(message.contains("5 batches failed"), "{message}");
+        assert_eq!(answered, [1, 3, 5, 7]);
+    }
+
+    #[tokio::test]
+    async fn a_provider_outage_stops_the_run() {
+        let items: Vec<u32> = (0..20).collect();
+        let (result, _, _, calls) = run(&items, 1, Split::Singles, |_, _| Some(timed_out())).await;
+
+        let message = format!("{:#}", result.unwrap_err());
+        assert!(message.contains("5 batches failed"), "{message}");
+        assert_eq!(calls, MAX_PROVIDER_FAILURES * PROVIDER_ATTEMPTS as usize);
+    }
 }

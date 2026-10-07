@@ -37,8 +37,13 @@
     {
       "raw": "Juice of 3 limes, plus lime wedges for garnish",
       "expected": {
-        "item": "Juice of 3 limes",
-        "measurements": [],
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "limes"
+          }
+        ],
         "note": "plus lime wedges for garnish",
         "category": "Produce"
       }

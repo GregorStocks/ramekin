@@ -97,9 +97,14 @@
     {
       "raw": "Egg wash: 1 egg beaten with 1 tablespoon water",
       "expected": {
-        "item": "Egg wash: 1 egg beaten with 1 tablespoon water",
-        "measurements": [],
-        "note": null,
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "Egg wash, beaten with 1 tablespoon water",
         "category": "Dairy & Eggs"
       }
     }

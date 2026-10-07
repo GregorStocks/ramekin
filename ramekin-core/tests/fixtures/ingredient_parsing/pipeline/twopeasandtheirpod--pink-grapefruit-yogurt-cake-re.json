@@ -33,8 +33,13 @@
     {
       "raw": "Zest of 1 1/2 pink grapefruits",
       "expected": {
-        "item": "Zest of 1 1/2 pink grapefruits",
-        "measurements": [],
+        "item": "pink grapefruit zest",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "pink grapefruits"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

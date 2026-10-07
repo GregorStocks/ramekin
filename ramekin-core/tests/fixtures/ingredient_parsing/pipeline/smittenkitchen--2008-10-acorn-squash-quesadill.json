@@ -144,14 +144,14 @@
     {
       "raw": "10 tomatillos, husked and well washed, quartered",
       "expected": {
-        "item": "tomatillos, husked and well washed",
+        "item": "tomatillos",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": "quartered",
+        "note": "husked and well washed, quartered",
         "category": "Produce"
       }
     },
@@ -172,14 +172,14 @@
     {
       "raw": "5 garlic cloves, smashed",
       "expected": {
-        "item": "garlic cloves, smashed",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "smashed",
         "category": "Produce"
       }
     },

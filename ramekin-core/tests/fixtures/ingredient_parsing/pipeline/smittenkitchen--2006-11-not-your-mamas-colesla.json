@@ -181,7 +181,7 @@
     {
       "raw": "1 giant carrot (about 6 ounces) or 4 slim ones, scrubbed or peeled and shredded",
       "expected": {
-        "item": "giant carrot or 4 slim ones",
+        "item": "giant carrot",
         "measurements": [
           {
             "amount": "1",
@@ -192,7 +192,7 @@
             "unit": "oz"
           }
         ],
-        "note": "about 6 ounces, scrubbed or peeled and shredded",
+        "note": "about 6 ounces; or 4 slim ones; scrubbed or peeled and shredded",
         "category": "Produce"
       }
     },

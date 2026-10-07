@@ -63,11 +63,31 @@
     {
       "raw": "Finely grated zest and juice of 1 medium lemon",
       "expected": {
-        "item": "Finely grated zest and juice of 1 medium lemon",
-        "measurements": [],
-        "note": null,
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium lemon"
+          }
+        ],
+        "note": "finely grated",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "Finely grated zest and juice of 1 medium lemon",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "Finely grated zest of 2 mini oranges (such as mandarins) or 1 regular one",

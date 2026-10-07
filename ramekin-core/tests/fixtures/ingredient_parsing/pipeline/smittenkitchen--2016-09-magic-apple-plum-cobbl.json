@@ -123,7 +123,7 @@
     {
       "raw": "3 small (I used Italian prune plums) or 2 medium plums, no need to peel",
       "expected": {
-        "item": "plums, no need to peel",
+        "item": "plums",
         "measurements": [
           {
             "amount": "3",
@@ -134,7 +134,7 @@
             "unit": "medium"
           }
         ],
-        "note": "I used Italian prune plums",
+        "note": "I used Italian prune plums, no need to peel",
         "category": "Produce"
       }
     },

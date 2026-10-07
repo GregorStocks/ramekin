@@ -102,14 +102,14 @@
     {
       "raw": "1 medium shallot or 3 scallions, thinly sliced",
       "expected": {
-        "item": "shallot or 3 scallions",
+        "item": "shallot",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "thinly sliced",
+        "note": "or 3 scallions; thinly sliced",
         "category": "Produce"
       }
     },
