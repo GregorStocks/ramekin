@@ -215,56 +215,52 @@ fn interrupted_job_action(url: Option<&str>, current_step: Option<&str>) -> Inte
 
 /// Jobs only run as tasks of the process that created them, so a restart
 /// strands any job still in progress. Pick them back up so they finish.
-/// Assumes this is the only server process running jobs against the database.
-pub fn spawn_interrupted_jobs(pool: Arc<DbPool>) {
-    tokio::spawn(async move {
-        let jobs = run_scrape_db(&pool, |conn| {
-            scrape_jobs::table
-                .filter(scrape_jobs::status.eq_any([
-                    STATUS_PENDING,
-                    STATUS_SCRAPING,
-                    STATUS_PARSING,
-                ]))
-                .select((scrape_jobs::id, scrape_jobs::url, scrape_jobs::current_step))
-                .load::<(Uuid, Option<String>, Option<String>)>(conn)
-                .map_err(|e| ScrapeError::Database(e.to_string()))
-        })
-        .await;
-        let jobs = match jobs {
-            Ok(jobs) => jobs,
-            Err(e) => {
-                tracing::error!("Failed to load interrupted scrape jobs: {e}");
-                return;
-            }
-        };
-        if !jobs.is_empty() {
-            tracing::info!(
-                count = jobs.len(),
-                "Resuming scrape jobs interrupted by a restart"
-            );
+/// Must finish before the server accepts requests, so a job created by a new
+/// request can't also be picked up here. Assumes this is the only server
+/// process running jobs against the database.
+pub async fn resume_interrupted_jobs(pool: &Arc<DbPool>) {
+    let jobs = run_scrape_db(pool, |conn| {
+        scrape_jobs::table
+            .filter(scrape_jobs::status.eq_any([STATUS_PENDING, STATUS_SCRAPING, STATUS_PARSING]))
+            .select((scrape_jobs::id, scrape_jobs::url, scrape_jobs::current_step))
+            .load::<(Uuid, Option<String>, Option<String>)>(conn)
+            .map_err(|e| ScrapeError::Database(e.to_string()))
+    })
+    .await;
+    let jobs = match jobs {
+        Ok(jobs) => jobs,
+        Err(e) => {
+            tracing::error!("Failed to load interrupted scrape jobs: {e}");
+            return;
         }
-        for (job_id, url, current_step) in jobs {
-            match interrupted_job_action(url.as_deref(), current_step.as_deref()) {
-                InterruptedJobAction::Fail => {
-                    let step = current_step.as_deref().unwrap_or(PHOTO_EXTRACT_STEP);
-                    if let Err(e) = mark_failed(
-                        &pool,
-                        job_id,
-                        step,
-                        "Interrupted by a server restart; upload the photos again",
-                    )
-                    .await
-                    {
-                        tracing::error!(%job_id, "Failed to mark interrupted job failed: {e}");
-                    }
+    };
+    if !jobs.is_empty() {
+        tracing::info!(
+            count = jobs.len(),
+            "Resuming scrape jobs interrupted by a restart"
+        );
+    }
+    for (job_id, url, current_step) in jobs {
+        match interrupted_job_action(url.as_deref(), current_step.as_deref()) {
+            InterruptedJobAction::Fail => {
+                let step = current_step.as_deref().unwrap_or(PHOTO_EXTRACT_STEP);
+                if let Err(e) = mark_failed(
+                    pool,
+                    job_id,
+                    step,
+                    "Interrupted by a server restart; upload the photos again",
+                )
+                .await
+                {
+                    tracing::error!(%job_id, "Failed to mark interrupted job failed: {e}");
                 }
-                InterruptedJobAction::Respawn => match url {
-                    Some(url) => spawn_scrape_job(pool.clone(), job_id, &url, "resume"),
-                    None => spawn_import_job(pool.clone(), job_id),
-                },
             }
+            InterruptedJobAction::Respawn => match url {
+                Some(url) => spawn_scrape_job(pool.clone(), job_id, &url, "resume"),
+                None => spawn_import_job(pool.clone(), job_id),
+            },
         }
-    });
+    }
 }
 
 #[derive(Debug, PartialEq, Eq)]

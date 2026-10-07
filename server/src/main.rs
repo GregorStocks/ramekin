@@ -196,7 +196,8 @@ async fn main() {
     photos::spawn_dimension_backfill(pool.clone());
 
     // Finish scrape and import jobs a previous run left in progress.
-    scraping::spawn_interrupted_jobs(pool.clone());
+    // Before serving, so a new request's job isn't also picked up here.
+    scraping::resume_interrupted_jobs(&pool).await;
 
     // Resolve ingredient names the catalog doesn't know, starting with any
     // left pending by a previous run or that this catalog changed (learned,

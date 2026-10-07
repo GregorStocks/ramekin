@@ -12,7 +12,7 @@ pub use jobs::{
     create_rescrape_job, find_import_jobs_by_key, get_job,
 };
 pub use photo_import::{create_pending_photo_job, spawn_photo_import_job};
-pub use runner::{retry_job, spawn_import_job, spawn_interrupted_jobs, spawn_scrape_job};
+pub use runner::{resume_interrupted_jobs, retry_job, spawn_import_job, spawn_scrape_job};
 
 use thiserror::Error;
 
