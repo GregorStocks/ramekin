@@ -8,6 +8,7 @@ Request body for importing a recipe
 Name | Type
 ------------ | -------------
 `extractionMethod` | [ImportExtractionMethod](ImportExtractionMethod.md)
+`idempotencyKey` | string
 `photoIds` | Array&lt;string&gt;
 `rawRecipe` | [ImportRawRecipe](ImportRawRecipe.md)
 
@@ -19,6 +20,7 @@ import type { ImportRecipeRequest } from ''
 // TODO: Update the object below with actual values
 const example = {
   "extractionMethod": null,
+  "idempotencyKey": null,
   "photoIds": null,
   "rawRecipe": null,
 } satisfies ImportRecipeRequest

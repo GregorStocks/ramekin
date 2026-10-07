@@ -86,6 +86,42 @@ open class ImportAPI {
 
     /**
 
+     - parameter lookupImportJobsRequest: (body)  
+     - returns: LookupImportJobsResponse
+     */
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    open class func lookupImportJobs(lookupImportJobsRequest: LookupImportJobsRequest) async throws -> LookupImportJobsResponse {
+        return try await lookupImportJobsWithRequestBuilder(lookupImportJobsRequest: lookupImportJobsRequest).execute().body
+    }
+
+    /**
+     - POST /api/import/recipe/lookup
+     - Bearer Token:
+       - type: http
+       - name: bearer_auth
+     - parameter lookupImportJobsRequest: (body)  
+     - returns: RequestBuilder<LookupImportJobsResponse> 
+     */
+    open class func lookupImportJobsWithRequestBuilder(lookupImportJobsRequest: LookupImportJobsRequest) -> RequestBuilder<LookupImportJobsResponse> {
+        let localVariablePath = "/api/import/recipe/lookup"
+        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: lookupImportJobsRequest)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<LookupImportJobsResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
+
      - parameter prepareTextRecipeRequest: (body)  
      - returns: PrepareTextRecipeResponse
      */

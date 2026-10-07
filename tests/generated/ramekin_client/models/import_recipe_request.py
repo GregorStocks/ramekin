@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod
 from ramekin_client.models.import_raw_recipe import ImportRawRecipe
@@ -30,9 +30,10 @@ class ImportRecipeRequest(BaseModel):
     Request body for importing a recipe
     """ # noqa: E501
     extraction_method: ImportExtractionMethod = Field(description="The extraction/import method used")
+    idempotency_key: Optional[StrictStr] = Field(default=None, description="Client-chosen key for this import. Resubmitting a key the user already used returns the original job (200) instead of creating another recipe; the resubmission's photo_ids are then ignored.")
     photo_ids: List[UUID] = Field(description="Photo IDs that have already been uploaded via POST /api/photos")
     raw_recipe: ImportRawRecipe = Field(description="The raw recipe data (converted from import source by client)")
-    __properties: ClassVar[List[str]] = ["extraction_method", "photo_ids", "raw_recipe"]
+    __properties: ClassVar[List[str]] = ["extraction_method", "idempotency_key", "photo_ids", "raw_recipe"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +77,11 @@ class ImportRecipeRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of raw_recipe
         if self.raw_recipe:
             _dict['raw_recipe'] = self.raw_recipe.to_dict()
+        # set to None if idempotency_key (nullable) is None
+        # and model_fields_set contains the field
+        if self.idempotency_key is None and "idempotency_key" in self.model_fields_set:
+            _dict['idempotency_key'] = None
+
         return _dict
 
     @classmethod
@@ -89,6 +95,7 @@ class ImportRecipeRequest(BaseModel):
 
         _obj = cls.model_validate({
             "extraction_method": obj.get("extraction_method"),
+            "idempotency_key": obj.get("idempotency_key"),
             "photo_ids": obj.get("photo_ids"),
             "raw_recipe": ImportRawRecipe.from_dict(obj["raw_recipe"]) if obj.get("raw_recipe") is not None else None
         })

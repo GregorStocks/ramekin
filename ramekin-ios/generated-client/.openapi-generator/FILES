@@ -56,6 +56,7 @@ RamekinClient/Classes/OpenAPIs/Models/GeneratePhotoResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportExtractionMethod.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/ImportJobKey.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRawRecipe.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRecipeRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRecipeResponse.swift
@@ -68,6 +69,8 @@ RamekinClient/Classes/OpenAPIs/Models/IngredientWeightsStatus.swift
 RamekinClient/Classes/OpenAPIs/Models/ListRecipesResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/LoginRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/LoginResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/LookupImportJobsRequest.swift
+RamekinClient/Classes/OpenAPIs/Models/LookupImportJobsResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/MeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/MealPlanItem.swift
 RamekinClient/Classes/OpenAPIs/Models/MealPlanListResponse.swift
@@ -149,6 +152,7 @@ docs/ImportAPI.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md
 docs/ImportFromPhotosResponse.md
+docs/ImportJobKey.md
 docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
 docs/ImportRecipeResponse.md
@@ -162,6 +166,8 @@ docs/IngredientWeightsStatus.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
+docs/LookupImportJobsRequest.md
+docs/LookupImportJobsResponse.md
 docs/MeResponse.md
 docs/MealPlanItem.md
 docs/MealPlanListResponse.md

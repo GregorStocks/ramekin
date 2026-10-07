@@ -20,6 +20,8 @@ import type {
   ImportFromPhotosResponse,
   ImportRecipeRequest,
   ImportRecipeResponse,
+  LookupImportJobsRequest,
+  LookupImportJobsResponse,
   PrepareTextRecipeRequest,
   PrepareTextRecipeResponse,
 } from '../models/index';
@@ -34,6 +36,10 @@ import {
     ImportRecipeRequestToJSON,
     ImportRecipeResponseFromJSON,
     ImportRecipeResponseToJSON,
+    LookupImportJobsRequestFromJSON,
+    LookupImportJobsRequestToJSON,
+    LookupImportJobsResponseFromJSON,
+    LookupImportJobsResponseToJSON,
     PrepareTextRecipeRequestFromJSON,
     PrepareTextRecipeRequestToJSON,
     PrepareTextRecipeResponseFromJSON,
@@ -46,6 +52,10 @@ export interface ImportFromPhotosOperationRequest {
 
 export interface ImportRecipeOperationRequest {
     importRecipeRequest: ImportRecipeRequest;
+}
+
+export interface LookupImportJobsOperationRequest {
+    lookupImportJobsRequest: LookupImportJobsRequest;
 }
 
 export interface PrepareTextRecipeOperationRequest {
@@ -144,6 +154,51 @@ export class ImportApi extends runtime.BaseAPI {
      */
     async importRecipe(requestParameters: ImportRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImportRecipeResponse> {
         const response = await this.importRecipeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async lookupImportJobsRaw(requestParameters: LookupImportJobsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LookupImportJobsResponse>> {
+        if (requestParameters['lookupImportJobsRequest'] == null) {
+            throw new runtime.RequiredError(
+                'lookupImportJobsRequest',
+                'Required parameter "lookupImportJobsRequest" was null or undefined when calling lookupImportJobs().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/import/recipe/lookup`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LookupImportJobsRequestToJSON(requestParameters['lookupImportJobsRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => LookupImportJobsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async lookupImportJobs(requestParameters: LookupImportJobsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LookupImportJobsResponse> {
+        const response = await this.lookupImportJobsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

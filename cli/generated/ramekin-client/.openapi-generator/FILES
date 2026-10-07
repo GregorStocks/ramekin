@@ -38,6 +38,7 @@ docs/ImportApi.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md
 docs/ImportFromPhotosResponse.md
+docs/ImportJobKey.md
 docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
 docs/ImportRecipeResponse.md
@@ -51,6 +52,8 @@ docs/IngredientWeightsStatus.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
+docs/LookupImportJobsRequest.md
+docs/LookupImportJobsResponse.md
 docs/MeResponse.md
 docs/MealPlanItem.md
 docs/MealPlanListResponse.md
@@ -149,6 +152,7 @@ src/models/generate_photo_response.rs
 src/models/import_extraction_method.rs
 src/models/import_from_photos_request.rs
 src/models/import_from_photos_response.rs
+src/models/import_job_key.rs
 src/models/import_raw_recipe.rs
 src/models/import_recipe_request.rs
 src/models/import_recipe_response.rs
@@ -161,6 +165,8 @@ src/models/ingredient_weights_status.rs
 src/models/list_recipes_response.rs
 src/models/login_request.rs
 src/models/login_response.rs
+src/models/lookup_import_jobs_request.rs
+src/models/lookup_import_jobs_response.rs
 src/models/me_response.rs
 src/models/meal_plan_item.rs
 src/models/meal_plan_list_response.rs

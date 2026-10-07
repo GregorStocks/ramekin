@@ -154,6 +154,7 @@ diesel::table! {
         photo_only -> Bool,
         current_step_started_at -> Nullable<Timestamptz>,
         expected_version_id -> Nullable<Uuid>,
+        idempotency_key -> Nullable<Text>,
     }
 }
 

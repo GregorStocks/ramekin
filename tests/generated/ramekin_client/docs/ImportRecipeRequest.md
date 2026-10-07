@@ -7,6 +7,7 @@ Request body for importing a recipe
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **extraction_method** | [**ImportExtractionMethod**](ImportExtractionMethod.md) | The extraction/import method used | 
+**idempotency_key** | **str** | Client-chosen key for this import. Resubmitting a key the user already used returns the original job (200) instead of creating another recipe; the resubmission&#39;s photo_ids are then ignored. | [optional] 
 **photo_ids** | **List[UUID]** | Photo IDs that have already been uploaded via POST /api/photos | 
 **raw_recipe** | [**ImportRawRecipe**](ImportRawRecipe.md) | The raw recipe data (converted from import source by client) | 
 
