@@ -591,6 +591,8 @@ fn a_peeled_note_selects_the_peeled_food() {
         "peeled",
         "peeled and cored",
         "peeled, seeded and coarsely chopped",
+        "peeled, but not cored",
+        "thawed if frozen, peeled",
     ] {
         assert_eq!(line_fdc("apples", Some(note)), peeled, "{note}");
         assert_eq!(line_fdc("tart apple", Some(note)), peeled, "{note}");

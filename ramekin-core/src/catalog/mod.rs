@@ -687,7 +687,8 @@ fn prepared_form(id: &str, note: &str) -> Option<Resolution> {
     // A whole word, so "unpeeled" doesn't count.
     static PEELED: LazyLock<regex::Regex> =
         LazyLock::new(|| regex::Regex::new(r"(?i)\bpeeled\b").unwrap());
-    // "not peeled", "peeled only if desired": the skin may stay on.
+    // "not peeled", "peeled only if desired": the skin may stay on. Checked
+    // within the clause naming peeled, so "peeled, but not cored" is peeled.
     static MAYBE_UNPEELED: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(r"(?i)\b(not|never|no|unpeeled|if|optional|optionally)\b|n't\b").unwrap()
     });
@@ -701,7 +702,10 @@ fn prepared_form(id: &str, note: &str) -> Option<Resolution> {
         LazyLock::new(|| regex::Regex::new(r"\d+% lean meat / ?\d+% fat").unwrap());
     // USDA names are also indexed without their "(includes foods for ...)".
     let id = id.split(" (includes ").next().unwrap_or(id);
-    let swapped = if PEELED.is_match(note) && !MAYBE_UNPEELED.is_match(note) {
+    let peeled = note
+        .split([',', ';', '(', ')'])
+        .any(|clause| PEELED.is_match(clause) && !MAYBE_UNPEELED.is_match(clause));
+    let swapped = if peeled {
         [("with skin", "without skin"), ("with peel", "peeled")]
             .into_iter()
             .find(|(unpeeled, _)| id.contains(unpeeled))
