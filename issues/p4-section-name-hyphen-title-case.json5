@@ -1,0 +1,15 @@
+{
+  "title": "Section name title-casing lowercases the word after a hyphen",
+  "description": "normalize_section_name / title_case (ramekin-core/src/ingredient_parser/item/line_classifiers.rs) treats a hyphenated word as one word and lowercases everything after its first letter. \
+So the Smitten Kitchen header 'Curry-Lime Yogurt' becomes section 'Curry-lime Yogurt' (see data/pipeline-snapshots/smittenkitchen-com_2006-11-throwing-pancakes-to-the-wind.json). \
+Capitalize each hyphen-separated part when the source capitalized it (or simply keep a mixed-case source header as written and only normalize ALL CAPS / all-lowercase ones). \
+Expect small data/ diffs from make pipeline in section names.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-10-07T08:00:00-07:00",
+  "updated_at": "2026-10-07T08:00:00-07:00",
+}

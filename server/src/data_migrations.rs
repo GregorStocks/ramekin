@@ -14,14 +14,17 @@ use anyhow::{anyhow, Context};
 use diesel::pg::PgConnection;
 use diesel::prelude::*;
 use ramekin_core::catalog::{is_volume_unit, Learned};
+use ramekin_core::ingredient_parser::detect_section_header;
 use serde::Deserialize;
 use std::collections::HashSet;
 
 type DataMigration = fn(&mut PgConnection) -> anyhow::Result<()>;
 
 /// Every data migration, in the order they run. Never rename one that has run.
-const DATA_MIGRATIONS: &[(&str, DataMigration)] =
-    &[("strip_materialized_grams", strip_materialized_grams)];
+const DATA_MIGRATIONS: &[(&str, DataMigration)] = &[
+    ("strip_materialized_grams", strip_materialized_grams),
+    ("promote_section_headers", promote_section_headers),
+];
 
 /// Run each data migration that hasn't run yet.
 pub fn run_pending(conn: &mut PgConnection) -> anyhow::Result<()> {
@@ -146,6 +149,93 @@ fn strip_materialized_grams(conn: &mut PgConnection) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// What promoting stored section headers did to one recipe's ingredients.
+struct Promoted {
+    ingredients: Vec<Ingredient>,
+    /// Header lines turned into the section of the lines after them.
+    headers: usize,
+}
+
+/// Turn each stored line that is really a section header ("To serve:",
+/// "FOR THE GLAZE") into the section of the unsectioned lines after it, the
+/// way the ingredient parser does at import. A line only counts when it has
+/// no measurements and the next line has no section yet; a header with
+/// nothing after it is left alone.
+fn promote_headers(ingredients: Vec<Ingredient>) -> Promoted {
+    let mut headers = 0;
+    let mut current: Option<String> = None;
+    let mut promoted = Vec::with_capacity(ingredients.len());
+    let mut lines = ingredients.into_iter().peekable();
+    while let Some(mut ingredient) = lines.next() {
+        if ingredient.section.is_some() {
+            current = None;
+        }
+        let header = (ingredient.measurements.is_empty()
+            && ingredient.section.is_none()
+            && lines.peek().is_some_and(|next| next.section.is_none()))
+        .then(|| detect_section_header(&ingredient.item))
+        .flatten();
+        if let Some(name) = header {
+            current = Some(name);
+            headers += 1;
+            continue;
+        }
+        if ingredient.section.is_none() {
+            ingredient.section.clone_from(&current);
+        }
+        promoted.push(ingredient);
+    }
+    Promoted {
+        ingredients: promoted,
+        headers,
+    }
+}
+
+/// Recipes imported before the parser recognized a header (or through a path
+/// that lost its colon) store it as an ingredient with no amount. Every live
+/// recipe whose current version has one gets a new version (source
+/// "migration") with the header moved into the following lines' section.
+/// Earlier versions are kept.
+fn promote_section_headers(conn: &mut PgConnection) -> anyhow::Result<()> {
+    let versions: Vec<RecipeVersion> = recipes::table
+        .inner_join(
+            recipe_versions::table
+                .on(recipes::current_version_id.eq(recipe_versions::id.nullable())),
+        )
+        .filter(recipes::deleted_at.is_null())
+        .select(RecipeVersion::as_select())
+        .load(conn)?;
+
+    let (mut recipes_updated, mut headers) = (0, 0);
+    for current in &versions {
+        let ingredients = Vec::<Ingredient>::deserialize(&current.ingredients)
+            .with_context(|| format!("recipe version {} has invalid ingredients", current.id))?;
+        let promoted = promote_headers(ingredients);
+        if promoted.headers == 0 {
+            continue;
+        }
+        create_new_version_cas(
+            conn,
+            &NewRecipeVersion {
+                ingredients: serde_json::to_value(&promoted.ingredients)?,
+                ..NewRecipeVersion::copy_of(current, "migration")
+            },
+            Some(current.id),
+            TagSource::CopyFrom(current.id),
+        )
+        .map_err(|e| anyhow!("failed to save recipe {}: {e}", current.recipe_id))?;
+        recipes_updated += 1;
+        headers += promoted.headers;
+    }
+    tracing::info!(
+        recipes_checked = versions.len(),
+        recipes_updated,
+        headers_promoted = headers,
+        "promoted stored section headers"
+    );
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -231,5 +321,76 @@ mod tests {
             &[("1", "cup"), ("0.25", "kg"), ("250", "g")],
         )]);
         assert_eq!(stripped.removed, 0);
+    }
+
+    fn sections(promoted: &Promoted) -> Vec<(String, Option<String>)> {
+        promoted
+            .ingredients
+            .iter()
+            .map(|i| (i.item.clone(), i.section.clone()))
+            .collect()
+    }
+
+    fn line(item: &str, section: Option<&str>) -> (String, Option<String>) {
+        (item.to_string(), section.map(str::to_string))
+    }
+
+    #[test]
+    fn promotes_a_header_into_the_following_lines_section() {
+        let promoted = promote_headers(vec![
+            ingredient("flour", &[("2", "cup")]),
+            ingredient("To serve:", &[]),
+            ingredient("lime wedges", &[]),
+            ingredient("cilantro", &[("1", "cup")]),
+        ]);
+        assert_eq!(promoted.headers, 1);
+        assert_eq!(
+            sections(&promoted),
+            vec![
+                line("flour", None),
+                line("lime wedges", Some("To Serve")),
+                line("cilantro", Some("To Serve")),
+            ]
+        );
+        // A second pass finds nothing left to promote.
+        assert_eq!(promote_headers(promoted.ingredients).headers, 0);
+    }
+
+    #[test]
+    fn stops_at_lines_that_already_have_a_section() {
+        let mut sectioned = ingredient("sugar", &[("1", "cup")]);
+        sectioned.section = Some("Glaze".to_string());
+        let promoted = promote_headers(vec![
+            ingredient("FILLING", &[]),
+            ingredient("apples", &[("4", "")]),
+            sectioned,
+            ingredient("salt", &[]),
+        ]);
+        assert_eq!(
+            sections(&promoted),
+            vec![
+                line("apples", Some("Filling")),
+                line("sugar", Some("Glaze")),
+                line("salt", None),
+            ]
+        );
+    }
+
+    #[test]
+    fn leaves_ingredients_and_trailing_headers_alone() {
+        let mut sectioned = ingredient("butter", &[("1", "tbsp")]);
+        sectioned.section = Some("Sauce".to_string());
+        let promoted = promote_headers(vec![
+            ingredient("Salt", &[]),
+            ingredient("Chipotle Sour Cream", &[]),
+            ingredient("sour cream", &[("1", "cup")]),
+            // The next line already has a section.
+            ingredient("For the sauce:", &[]),
+            sectioned,
+            // Nothing after it.
+            ingredient("To serve:", &[]),
+        ]);
+        assert_eq!(promoted.headers, 0);
+        assert_eq!(promoted.ingredients.len(), 6);
     }
 }

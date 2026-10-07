@@ -1,7 +1,7 @@
 //! Unstructured blog-post extraction heuristics (bold/underline headings, chunk scanning).
 
 use super::*;
-use crate::ingredient_parser::unicode_fraction_regex_class;
+use crate::ingredient_parser::{should_ignore_line, unicode_fraction_regex_class};
 
 /// Regex to strip trailing parenthetical or bracketed qualifiers from a title
 /// before reusing it as an ingredient section marker.
@@ -103,9 +103,10 @@ pub(super) fn extract_bold_heading(chunk: &str) -> Option<String> {
 /// If a single `<br>`-delimited part is entirely one bold/strong heading
 /// (e.g. `<b>Steakhouse Mustard Vinaigrette</b>`) with no other text on the
 /// line, return the decoded heading. We deliberately do not reject
-/// ingredient-shaped text (a leading quantity, "Fresh…", "Salt…") here: the
-/// heading is used only as a block boundary and is never stripped, so a title
-/// like `<b>Fresh Tomato Salsa</b>` or `<b>5-Minute Sauce</b>` must still count.
+/// ingredient-shaped text (a leading quantity, "Fresh…", "Salt…") here: as a
+/// block boundary, a title like `<b>Fresh Tomato Salsa</b>` or
+/// `<b>5-Minute Sauce</b>` must still count. Whether it also becomes a section
+/// header is decided separately by `leading_bold_section_title`.
 fn bold_only_heading(part: &str) -> Option<String> {
     let title = extract_bold_heading(part)?;
     // The line must be *only* the bold heading — no other text alongside it, so
@@ -408,11 +409,11 @@ fn find_nearest_unstructured_block_title(
     // sub-recipe block — this is how a vinaigrette/sauce after the main recipe is
     // introduced. We use it only as a block *boundary* (so the previous recipe's
     // instructions are attributed correctly), not as a title: the heading text
-    // is left in the ingredient list, where the ingredient parser classifies it
-    // as a section header if it is one — and if it is really a bold ingredient
-    // (e.g. `<b>Chopped parsley</b>`), it survives as an ingredient rather than
-    // being consumed as a title. Gated to non-first blocks so a first-block
-    // heading can't suppress the page-title fallback.
+    // stays in the ingredient list, where `extract_ingredient_lines_from_chunk`
+    // turns it into a section header if it reads as one — and if it is really a
+    // bold ingredient (e.g. `<b>Chopped parsley</b>`), it survives as an
+    // ingredient rather than being consumed as a title. Gated to non-first
+    // blocks so a first-block heading can't suppress the page-title fallback.
     if allow_inline_title && inline_leading_bold_title(chunks[ingredient_idx]).is_some() {
         return (None, Some(ingredient_idx));
     }
@@ -1082,6 +1083,30 @@ pub(super) fn looks_like_ingredient_list(chunk: &str) -> bool {
     total_text_lines >= 2 && quantity_lines > 0 && (quantity_lines * 100 / total_text_lines) >= 40
 }
 
+/// The section name for a bold-only line at the top of an ingredient chunk,
+/// when it reads as a heading: Title Case ("Steakhouse Mustard Vinaigrette",
+/// "For the Crust"), no digits, and accepted by `detect_section_header` once
+/// given a colon. A bold ingredient ("Chopped parsley") isn't Title Case, and
+/// a bare "Ingredients" label is left for the parser to ignore.
+fn leading_bold_section_title(part: &str) -> Option<String> {
+    const SMALL_WORDS: &[&str] = &["a", "and", "or", "the", "of", "for", "to", "in", "with"];
+    let title = fragment_to_text(&bold_only_heading(part)?);
+    let title = title.trim_end_matches(':').trim();
+    let is_title_case = title.split_whitespace().all(|word| {
+        SMALL_WORDS.contains(&word.to_lowercase().as_str())
+            || !word.starts_with(char::is_alphabetic)
+            || word.starts_with(char::is_uppercase)
+    });
+    if !is_title_case
+        || title.chars().any(|c| c.is_ascii_digit())
+        || should_ignore_line(title)
+        || detect_section_header(&format!("{title}:")).is_none()
+    {
+        return None;
+    }
+    Some(title.to_string())
+}
+
 /// Extract individual ingredient lines from a `<br>`-delimited HTML chunk.
 ///
 /// Treats a leading `<u>…</u>` that stands alone (no ingredient text on the
@@ -1089,7 +1114,8 @@ pub(super) fn looks_like_ingredient_list(chunk: &str) -> bool {
 /// ingredient parser picks it up. Underlines elsewhere in the chunk are
 /// stripped as plain inline emphasis — blogs sometimes use `<u>` to highlight
 /// a single ingredient, and turning that into a section header would drop the
-/// ingredient from the recipe.
+/// ingredient from the recipe. A leading standalone bold heading is treated the
+/// same way when it reads as one (see [`leading_bold_section_title`]).
 pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
     let mut seen_text_line = false;
     for part in BR_TAG_REGEX.split(chunk) {
@@ -1134,6 +1160,18 @@ pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<S
             }
         }
 
+        // A standalone bold heading leading the chunk is the source's own
+        // grouping ("<b>Curry-Lime Yogurt</b><br>2 cups yogurt…"), so it
+        // gets the colon the ingredient parser needs to treat it as a
+        // section header.
+        if !seen_text_line {
+            if let Some(header) = leading_bold_section_title(part) {
+                push_colon_header(lines, &header);
+                seen_text_line = true;
+                continue;
+            }
+        }
+
         // Inline emphasis, non-leading <u>, or no <u> at all: keep as a
         // plain ingredient line.
         let text = fragment_to_text(part);
@@ -1168,6 +1206,50 @@ mod tests {
         assert_eq!(
             underlined_section_title("Cinnamon Filling (enough for 9 tarts)"),
             Some("Cinnamon Filling".to_string())
+        );
+    }
+
+    fn chunk_lines(chunk: &str) -> Vec<String> {
+        let mut lines = Vec::new();
+        extract_ingredient_lines_from_chunk(chunk, &mut lines);
+        lines
+    }
+
+    #[test]
+    fn leading_bold_title_case_heading_becomes_section_header() {
+        assert_eq!(
+            chunk_lines(
+                "<b>Curry-Lime Yogurt</b><br />\n2 cups plain yogurt<br />\n1 teaspoon sugar"
+            ),
+            vec![
+                "Curry-Lime Yogurt:",
+                "2 cups plain yogurt",
+                "1 teaspoon sugar"
+            ]
+        );
+        assert_eq!(
+            chunk_lines("<strong>For the Crust:</strong><br />2 cups flour<br />1 stick butter"),
+            vec!["For the Crust:", "2 cups flour", "1 stick butter"]
+        );
+    }
+
+    #[test]
+    fn leading_bold_ingredient_stays_an_ingredient() {
+        for heading in [
+            "<b>Chopped parsley</b>",
+            "<b>5-Minute Sauce</b>",
+            "<b>Ingredients</b>",
+        ] {
+            let lines = chunk_lines(&format!("{heading}<br />2 cups flour<br />1 cup sugar"));
+            assert!(!lines[0].ends_with(':'), "{heading} became {:?}", lines[0]);
+        }
+    }
+
+    #[test]
+    fn bold_heading_after_an_ingredient_line_is_not_a_section() {
+        assert_eq!(
+            chunk_lines("2 cups flour<br /><b>Fresh Herbs</b><br />1 cup sugar"),
+            vec!["2 cups flour", "Fresh Herbs", "1 cup sugar"]
         );
     }
 
