@@ -747,7 +747,8 @@ fn curated_names_are_what_the_parser_produces() {
     // "chickpeas, rinsed") never match a newly parsed line. `make
     // catalog-clean-aliases` removes or re-keys them; only conflicts, which
     // need a person to decide, may remain.
-    let (_, changes) = ramekin_core::catalog::clean_curated(ramekin_core::catalog::CURATED_JSON);
+    let (_, changes) =
+        ramekin_core::catalog::clean_curated(ramekin_core::catalog::CURATED_JSON, &typed_names());
     let stale: Vec<_> = changes
         .iter()
         .filter(|change| {
@@ -777,6 +778,21 @@ fn parsed_name_never_cuts_into_a_name() {
     assert_eq!(
         ramekin_core::catalog::parsed_name("about 7 cloves garlic, minced"),
         "garlic"
+    );
+    // A leading size or count a measured line keeps ("1 cup medium grain
+    // rice") is part of the stored name, though the bare name reads it as one.
+    for name in [
+        "medium grain rice",
+        "small new potatoes",
+        "packed dark-brown sugar",
+        "1-inch bread cubes",
+        "two us sticks unsalted butter",
+    ] {
+        assert_eq!(ramekin_core::catalog::parsed_name(name), name);
+    }
+    assert_eq!(
+        ramekin_core::catalog::parsed_name("chickpeas, rinsed"),
+        "chickpeas"
     );
 }
 
@@ -899,4 +915,51 @@ fn name_specific_pieces_replace_the_foods() {
     // A can of corn is canned corn's, not raw corn's.
     assert_eq!(piece("canned corn", Some("can")), Some(432.0));
     assert_eq!(piece("corn", Some("can")), None);
+}
+
+#[test]
+fn clean_curated_drops_the_category_of_a_removed_name() {
+    // Neither name resolves, so the key goes; a category left on it would
+    // name nothing and the catalog would refuse to load.
+    let json = r#"{"aliases": {"zzfood, chopped": "zzfood"}, "not_food": {}, "categories": {"zzfood, chopped": "Produce", "zzother": "Produce"}}"#;
+    let (cleaned, changes) =
+        ramekin_core::catalog::clean_curated(json, &std::collections::BTreeSet::new());
+    assert_eq!(
+        changes,
+        vec![ramekin_core::catalog::CuratedChange::Remove {
+            section: "aliases",
+            name: "zzfood, chopped".to_string(),
+        }]
+    );
+    let cleaned: serde_json::Value = serde_json::from_str(&cleaned).unwrap();
+    assert_eq!(
+        cleaned["categories"],
+        serde_json::json!({"zzother": "Produce"})
+    );
+}
+
+#[test]
+fn clean_curated_keeps_names_people_type() {
+    // A hand-typed shopping-list item is matched as typed, never parsed.
+    let json = r#"{"aliases": {"zzfood, chopped": "zzfood"}, "not_food": {}, "categories": {}}"#;
+    let typed = std::collections::BTreeSet::from(["zzfood, chopped".to_string()]);
+    let (_, changes) = ramekin_core::catalog::clean_curated(json, &typed);
+    assert!(changes.is_empty(), "{changes:?}");
+}
+
+/// Normalized hand-typed shopping-list items, which curated keys must keep
+/// matching (see `clean_curated`).
+fn typed_names() -> std::collections::BTreeSet<String> {
+    #[derive(serde::Deserialize)]
+    struct ShoppingItem {
+        item: String,
+    }
+    let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("../data/shopping-list-categories.json");
+    let items: Vec<ShoppingItem> =
+        serde_json::from_str(&std::fs::read_to_string(path).unwrap()).unwrap();
+    items
+        .iter()
+        .map(|item| ramekin_core::catalog::normalize(&item.item))
+        .collect()
 }
