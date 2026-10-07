@@ -351,6 +351,11 @@ extension RecipeDetailViewModel {
                     await loadRecipe()
                     return
                 } else if job.status == "failed" {
+                    if isFinishingRescrapeEnrichment {
+                        // Other enrichment branches may have landed before
+                        // this one failed.
+                        await loadRecipe()
+                    }
                     rescrapeError = job.error ?? "Unknown error"
                     return
                 } else if job.status == "enriching" && !isFinishingRescrapeEnrichment {

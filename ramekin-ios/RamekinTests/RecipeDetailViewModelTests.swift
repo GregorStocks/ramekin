@@ -351,7 +351,8 @@ final class RecipeDetailViewModelRescrapeTests: XCTestCase {
 
         await viewModel.rescrapeFromSource()
 
-        XCTAssertEqual(loadCount, 1)
+        // Once when saved, again to pick up branches that landed.
+        XCTAssertEqual(loadCount, 2)
         XCTAssertEqual(viewModel.recipe?.title, "Rescraped")
         XCTAssertEqual(viewModel.rescrapeError, "AI call failed")
         XCTAssertFalse(viewModel.isRescraping)
