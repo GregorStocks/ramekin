@@ -90,7 +90,9 @@ api/openapi.json: $(API_SOURCES)
 server-release-build:
 	@cd server && cargo build --release -q
 
-# Install the lockfile-pinned UI toolchain used to compile the generated client
+# Install the lockfile-pinned UI toolchain used to compile the generated client.
+# The script skips an install that is already current; repair a broken
+# node_modules with UI_DEPS_FORCE=1 make -B ui-deps.
 $(UI_DEPS_MARKER): ramekin-ui/package.json ramekin-ui/package-lock.json
 	@./scripts/install-ui-deps.sh
 
@@ -165,7 +167,7 @@ test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires D
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-ui-tests.sh
 
 ui-unit-test: $(CLIENT_MARKER) ## Run web unit tests (Vitest)
-	@if [ ! -x ramekin-ui/node_modules/.bin/vitest ]; then ./scripts/install-ui-deps.sh; fi && cd ramekin-ui && npx vitest run
+	@if [ ! -x ramekin-ui/node_modules/.bin/vitest ]; then UI_DEPS_FORCE=1 ./scripts/install-ui-deps.sh; fi && cd ramekin-ui && npx vitest run
 
 pretool-hook-test: venv $(CLIENT_MARKER) ## Run repo PreToolUse hook policy tests
 	@PYTHONPATH="$(CURDIR)/tests:$(CURDIR)/tests/generated" \

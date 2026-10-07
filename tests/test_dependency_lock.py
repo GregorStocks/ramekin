@@ -228,10 +228,12 @@ def _ui_deps_sandbox(tmp_path: Path) -> dict[str, str]:
     return {**os.environ, "PATH": f"{bin_dir}:{os.environ['PATH']}"}
 
 
-def _install_ui_deps(tmp_path: Path, env: dict[str, str]) -> subprocess.Popen:
+def _install_ui_deps(
+    tmp_path: Path, env: dict[str, str], **extra_env: str
+) -> subprocess.Popen:
     return subprocess.Popen(
         [str(tmp_path / "scripts" / "install-ui-deps.sh")],
-        env=env,
+        env={**env, **extra_env},
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True,
@@ -257,19 +259,52 @@ def test_concurrent_ui_dep_installs_take_turns(tmp_path):
     assert not (tmp_path / "logs" / "locks" / "ui-deps.lock").exists()
 
 
-def test_uncontended_ui_dep_install_runs_even_when_marker_is_fresh(tmp_path):
-    # `make -W ramekin-ui/package-lock.json ui-deps` forces a reinstall without
-    # touching mtimes, so only an install that waited may skip.
-    env = _ui_deps_sandbox(tmp_path)
+def _fresh_marker(tmp_path: Path) -> None:
     marker = tmp_path / "ramekin-ui" / "node_modules" / ".package-lock.json"
     marker.parent.mkdir()
     marker.touch()
+
+
+def test_ui_dep_install_skips_when_another_install_already_finished(tmp_path):
+    # make can decide the marker is stale, then reach the lock only after
+    # another install released it. Reinstalling would delete node_modules out
+    # from under that other process.
+    env = _ui_deps_sandbox(tmp_path)
+    _fresh_marker(tmp_path)
 
     proc = _install_ui_deps(tmp_path, env)
     output = proc.communicate(timeout=30)[0]
 
     assert proc.returncode == 0, output
+    assert _installs(tmp_path) == 0
+
+
+def test_forced_ui_dep_install_runs_even_when_marker_is_fresh(tmp_path):
+    env = _ui_deps_sandbox(tmp_path)
+    _fresh_marker(tmp_path)
+
+    proc = _install_ui_deps(tmp_path, env, UI_DEPS_FORCE="1")
+    output = proc.communicate(timeout=30)[0]
+
+    assert proc.returncode == 0, output
     assert _installs(tmp_path) == 1
+
+
+def test_ui_dep_install_gives_up_on_a_lock_held_too_long(tmp_path):
+    # A crashed installer's PID can be reused by an unrelated process, which
+    # would otherwise keep the lock looking live forever.
+    env = _ui_deps_sandbox(tmp_path)
+    lock = tmp_path / "logs" / "locks" / "ui-deps.lock"
+    lock.mkdir(parents=True)
+    (lock / "pid").write_text(f"{os.getpid()}\n", encoding="utf-8")
+
+    proc = _install_ui_deps(tmp_path, env, REPO_LOCK_WAIT_SECONDS="1")
+    output = proc.communicate(timeout=30)[0]
+
+    assert proc.returncode == 1, output
+    assert "Refusing to start UI dependency install" in output
+    assert _installs(tmp_path) == 0
+    assert lock.exists()
 
 
 def test_ui_dep_install_clears_a_lock_left_by_a_dead_process(tmp_path):

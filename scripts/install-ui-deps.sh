@@ -14,9 +14,11 @@ MARKER=ramekin-ui/node_modules/.package-lock.json
 
 REPO_LOCK_WAIT=1 acquire_repo_lock ui-deps "UI dependency install"
 
-# Only skip after waiting: a caller that got the lock immediately asked for an
-# install (possibly forced via make -W), so honor it.
-if [ -n "$REPO_LOCK_WAITED" ] &&
+# Make decided to install before taking the lock, so another install may have
+# finished since; rerunning npm ci would delete node_modules out from under
+# whoever is using it. UI_DEPS_FORCE=1 reinstalls anyway (e.g. to repair a
+# corrupted node_modules).
+if [ -z "${UI_DEPS_FORCE:-}" ] &&
     [ "$MARKER" -nt ramekin-ui/package.json ] &&
     [ "$MARKER" -nt ramekin-ui/package-lock.json ]; then
     exit 0
