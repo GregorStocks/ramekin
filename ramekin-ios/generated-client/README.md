@@ -33,6 +33,7 @@ Class | Method | HTTP request | Description
 *EnrichAPI* | [**enrichRecipe**](docs/EnrichAPI.md#enrichrecipe) | **POST** /api/enrich | Enrich a recipe
 *ImportAPI* | [**importFromPhotos**](docs/ImportAPI.md#importfromphotos) | **POST** /api/import/photos | 
 *ImportAPI* | [**importRecipe**](docs/ImportAPI.md#importrecipe) | **POST** /api/import/recipe | 
+*ImportAPI* | [**lookupImportJobs**](docs/ImportAPI.md#lookupimportjobs) | **POST** /api/import/recipe/lookup | 
 *ImportAPI* | [**prepareTextRecipe**](docs/ImportAPI.md#preparetextrecipe) | **POST** /api/import/text | 
 *IngredientNamesAPI* | [**getIngredientNamesStatus**](docs/IngredientNamesAPI.md#getingredientnamesstatus) | **GET** /api/ingredient-names/status | 
 *IngredientNamesAPI* | [**retryIngredientNames**](docs/IngredientNamesAPI.md#retryingredientnames) | **POST** /api/ingredient-names/retry | 
@@ -111,6 +112,7 @@ Class | Method | HTTP request | Description
  - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](docs/ImportFromPhotosRequest.md)
  - [ImportFromPhotosResponse](docs/ImportFromPhotosResponse.md)
+ - [ImportJobKey](docs/ImportJobKey.md)
  - [ImportRawRecipe](docs/ImportRawRecipe.md)
  - [ImportRecipeRequest](docs/ImportRecipeRequest.md)
  - [ImportRecipeResponse](docs/ImportRecipeResponse.md)
@@ -123,6 +125,8 @@ Class | Method | HTTP request | Description
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)
+ - [LookupImportJobsRequest](docs/LookupImportJobsRequest.md)
+ - [LookupImportJobsResponse](docs/LookupImportJobsResponse.md)
  - [MeResponse](docs/MeResponse.md)
  - [MealPlanItem](docs/MealPlanItem.md)
  - [MealPlanListResponse](docs/MealPlanListResponse.md)

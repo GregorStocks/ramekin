@@ -17,6 +17,14 @@ pub struct ImportRecipeRequest {
     /// The extraction/import method used
     #[serde(rename = "extraction_method")]
     pub extraction_method: models::ImportExtractionMethod,
+    /// Client-chosen key for this import. Resubmitting a key the user already used returns the original job (200) instead of creating another recipe; the resubmission's photo_ids are then ignored.
+    #[serde(
+        rename = "idempotency_key",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub idempotency_key: Option<Option<String>>,
     /// Photo IDs that have already been uploaded via POST /api/photos
     #[serde(rename = "photo_ids")]
     pub photo_ids: Vec<uuid::Uuid>,
@@ -34,6 +42,7 @@ impl ImportRecipeRequest {
     ) -> ImportRecipeRequest {
         ImportRecipeRequest {
             extraction_method,
+            idempotency_key: None,
             photo_ids,
             raw_recipe: Box::new(raw_recipe),
         }

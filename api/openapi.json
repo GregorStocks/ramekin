@@ -392,12 +392,77 @@
           "required": true
         },
         "responses": {
+          "200": {
+            "description": "Existing job for a repeated idempotency_key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImportRecipeResponse"
+                }
+              }
+            }
+          },
           "201": {
             "description": "Import job created",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ImportRecipeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/import/recipe/lookup": {
+      "post": {
+        "tags": [
+          "import"
+        ],
+        "operationId": "lookup_import_jobs",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LookupImportJobsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Jobs for the keys this user has used",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LookupImportJobsResponse"
                 }
               }
             }
@@ -3561,6 +3626,23 @@
           }
         }
       },
+      "ImportJobKey": {
+        "type": "object",
+        "description": "An import job submitted with an idempotency key",
+        "required": [
+          "idempotency_key",
+          "job_id"
+        ],
+        "properties": {
+          "idempotency_key": {
+            "type": "string"
+          },
+          "job_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
       "ImportRawRecipe": {
         "type": "object",
         "description": "Raw recipe data for import (mirrors ramekin_core::RawRecipe)",
@@ -3679,6 +3761,13 @@
           "extraction_method": {
             "$ref": "#/components/schemas/ImportExtractionMethod",
             "description": "The extraction/import method used"
+          },
+          "idempotency_key": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Client-chosen key for this import. Resubmitting a key the user already\nused returns the original job (200) instead of creating another recipe;\nthe resubmission's photo_ids are then ignored."
           },
           "photo_ids": {
             "type": "array",
@@ -3966,6 +4055,37 @@
         "properties": {
           "token": {
             "type": "string"
+          }
+        }
+      },
+      "LookupImportJobsRequest": {
+        "type": "object",
+        "description": "Request body for looking up import jobs by idempotency key",
+        "required": [
+          "idempotency_keys"
+        ],
+        "properties": {
+          "idempotency_keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Keys previously sent as ImportRecipeRequest.idempotency_key (at most 1000)"
+          }
+        }
+      },
+      "LookupImportJobsResponse": {
+        "type": "object",
+        "description": "The caller's import jobs for the requested keys; unknown keys are omitted",
+        "required": [
+          "jobs"
+        ],
+        "properties": {
+          "jobs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImportJobKey"
+            }
           }
         }
       },

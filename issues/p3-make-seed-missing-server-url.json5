@@ -1,0 +1,14 @@
+{
+  "title": "make seed fails with missing --server-url",
+  "description": "The Makefile `seed` target runs `cargo run -q -- seed` without `--server-url`, and the CLI only falls back to API_BASE_URL, which the target does not load from dev.env. .claude/skills/audit-ui/SKILL.md documents the resulting 'missing --server-url' error and tells agents to work around it by invoking the CLI directly. \
+Pass the dev server URL (for example by sourcing dev.env and using http://localhost:$PORT) so `make seed` works, then drop the workaround note from the audit-ui skill.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "dev-environment",
+    "cli",
+  ],
+  "created_at": "2026-10-06T00:00:00Z",
+  "updated_at": "2026-10-06T00:00:00Z",
+}

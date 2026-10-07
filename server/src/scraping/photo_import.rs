@@ -17,7 +17,7 @@ use super::jobs::{mark_failed, save_step_output, update_status_and_step};
 use super::runner::run_scrape_job;
 use super::{run_scrape_db, ScrapeError, STATUS_PARSING, STATUS_SCRAPING};
 
-const PHOTO_EXTRACT_STEP: &str = "photo_extract";
+pub(super) const PHOTO_EXTRACT_STEP: &str = "photo_extract";
 
 /// Create a pending photo import job (no step pre-population yet).
 pub async fn create_pending_photo_job(

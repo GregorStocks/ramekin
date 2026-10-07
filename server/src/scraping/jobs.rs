@@ -1,5 +1,6 @@
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
+use diesel::result::{DatabaseErrorKind, Error as DieselError};
 use uuid::Uuid;
 
 use ramekin_core::pipeline::steps::{
@@ -9,7 +10,7 @@ use ramekin_core::{ExtractRecipeOutput, ExtractionMethod, FetchHtmlOutput, Fetch
 use ramekin_core::{RawRecipe, BUILD_ID};
 
 use crate::db::{DbConn, DbPool};
-use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob};
+use crate::models::{NewImportJob, NewScrapeJob, NewStepOutput, ScrapeJob};
 use crate::schema::{scrape_jobs, step_outputs};
 
 use super::status;
@@ -130,6 +131,10 @@ pub async fn create_job_with_html(
 
 /// Create an import job with pre-populated extract_recipe and fetch_images outputs.
 /// This allows imports to skip the fetch and extract steps and start directly at parse_ingredients.
+///
+/// With an `idempotency_key`, a repeat of a key this user already used returns
+/// the original job instead of creating a duplicate. The bool is whether a new
+/// job was created (and so needs spawning).
 pub async fn create_import_job(
     pool: &DbPool,
     user_id: Uuid,
@@ -137,52 +142,105 @@ pub async fn create_import_job(
     raw_recipe: RawRecipe,
     extraction_method: ExtractionMethod,
     photo_ids: Vec<Uuid>,
-) -> Result<ScrapeJob, ScrapeError> {
+    idempotency_key: Option<String>,
+) -> Result<(ScrapeJob, bool), ScrapeError> {
     let source_url = source_url.map(str::to_string);
+    let extract_json = serde_json::to_value(ExtractRecipeOutput {
+        raw_recipe,
+        method_used: extraction_method,
+        all_attempts: vec![],
+    })
+    .map_err(|e| ScrapeError::Database(e.to_string()))?;
+    // Photos are already uploaded
+    let images_json = serde_json::to_value(FetchImagesOutput {
+        photo_ids,
+        failed_urls: vec![],
+    })
+    .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
     run_scrape_db(pool, move |conn| {
-        // Create the job (url is optional for imports)
-        let new_job = NewScrapeJob {
-            user_id,
-            url: source_url.as_deref(),
-        };
-        let job: ScrapeJob = diesel::insert_into(scrape_jobs::table)
-            .values(&new_job)
-            .get_result(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
+        let key = idempotency_key.as_deref();
+        if let Some(job) = key
+            .map(|key| find_job_by_key(conn, user_id, key))
+            .transpose()?
+            .flatten()
+        {
+            return Ok((job, false));
+        }
+        // One transaction so a job found by its key always has its outputs.
+        let created = conn.transaction(|conn| {
+            let new_job = NewImportJob {
+                user_id,
+                url: source_url.as_deref(),
+                idempotency_key: key,
+            };
+            let job: ScrapeJob = diesel::insert_into(scrape_jobs::table)
+                .values(&new_job)
+                .get_result(conn)
+                .map_err(|e| match e {
+                    DieselError::DatabaseError(DatabaseErrorKind::UniqueViolation, _) => {
+                        ScrapeError::DuplicateIdempotencyKey
+                    }
+                    e => e.into(),
+                })?;
 
-        // Store the extract_recipe step output
-        let extract_output = ExtractRecipeOutput {
-            raw_recipe,
-            method_used: extraction_method,
-            all_attempts: vec![],
-        };
-        let extract_json = serde_json::to_value(&extract_output)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
-        save_step_output(conn, job.id, ExtractRecipeStep::NAME, extract_json)?;
+            save_step_output(conn, job.id, ExtractRecipeStep::NAME, extract_json)?;
+            save_step_output(conn, job.id, FetchImagesStepMeta::NAME, images_json)?;
 
-        // Store the fetch_images step output (photos already uploaded)
-        let images_output = FetchImagesOutput {
-            photo_ids,
-            failed_urls: vec![],
-        };
-        let images_json = serde_json::to_value(&images_output)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
-        save_step_output(conn, job.id, FetchImagesStepMeta::NAME, images_json)?;
+            // Start from parse_ingredients (skip fetch_html, extract_recipe, fetch_images)
+            let now = Utc::now();
+            diesel::update(scrape_jobs::table.find(job.id))
+                .set((
+                    scrape_jobs::status.eq(STATUS_PARSING),
+                    scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
+                    scrape_jobs::current_step_started_at.eq(Some(now)),
+                    scrape_jobs::updated_at.eq(now),
+                ))
+                .execute(conn)?;
 
-        // Update the job to start from parse_ingredients (skip fetch_html, extract_recipe, fetch_images)
-        let now = Utc::now();
-        diesel::update(scrape_jobs::table.find(job.id))
-            .set((
-                scrape_jobs::status.eq(STATUS_PARSING),
-                scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
-                scrape_jobs::current_step_started_at.eq(Some(now)),
-                scrape_jobs::updated_at.eq(now),
-            ))
-            .execute(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
+            get_job_conn(conn, job.id)
+        });
+        match (created, key) {
+            (Ok(job), _) => Ok((job, true)),
+            // A concurrent request with the same key won the insert.
+            (Err(ScrapeError::DuplicateIdempotencyKey), Some(key)) => {
+                let job = find_job_by_key(conn, user_id, key)?.ok_or(ScrapeError::JobNotFound)?;
+                Ok((job, false))
+            }
+            (Err(e), _) => Err(e),
+        }
+    })
+    .await
+}
 
-        // Return the updated job
-        get_job_conn(conn, job.id)
+fn find_job_by_key(
+    conn: &mut DbConn,
+    user_id: Uuid,
+    key: &str,
+) -> Result<Option<ScrapeJob>, ScrapeError> {
+    Ok(scrape_jobs::table
+        .filter(scrape_jobs::user_id.eq(user_id))
+        .filter(scrape_jobs::idempotency_key.eq(key))
+        .first::<ScrapeJob>(conn)
+        .optional()?)
+}
+
+/// The user's import jobs for the given idempotency keys, as (key, job id).
+pub async fn find_import_jobs_by_key(
+    pool: &DbPool,
+    user_id: Uuid,
+    keys: Vec<String>,
+) -> Result<Vec<(String, Uuid)>, ScrapeError> {
+    run_scrape_db(pool, move |conn| {
+        let rows = scrape_jobs::table
+            .filter(scrape_jobs::user_id.eq(user_id))
+            .filter(scrape_jobs::idempotency_key.eq_any(keys))
+            .select((scrape_jobs::idempotency_key, scrape_jobs::id))
+            .load::<(Option<String>, Uuid)>(conn)?;
+        Ok(rows
+            .into_iter()
+            .filter_map(|(key, id)| key.map(|key| (key, id)))
+            .collect())
     })
     .await
 }

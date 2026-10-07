@@ -195,6 +195,10 @@ async fn main() {
     // for photos created before the column existed).
     photos::spawn_dimension_backfill(pool.clone());
 
+    // Finish scrape and import jobs a previous run left in progress.
+    // Before serving, so a new request's job isn't also picked up here.
+    scraping::resume_interrupted_jobs(&pool).await;
+
     // Resolve ingredient names the catalog doesn't know, starting with any
     // left pending by a previous run or that this catalog changed (learned,
     // lost, or offers new candidates for).
@@ -283,6 +287,10 @@ async fn main() {
             post(api::enrich::custom_enrich_recipe),
         )
         .route("/api/import/recipe", post(api::import::import_recipe))
+        .route(
+            "/api/import/recipe/lookup",
+            post(api::import::lookup_import_jobs),
+        )
         .route("/api/import/text", post(api::import::prepare_text_recipe))
         .route("/api/import/photos", post(api::import::import_from_photos))
         .layer(middleware::from_fn_with_state(

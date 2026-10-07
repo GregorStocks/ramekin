@@ -70,6 +70,7 @@ Class | Method | HTTP request | Description
 *EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
 *ImportApi* | [**import_from_photos**](ramekin_client/docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
+*ImportApi* | [**lookup_import_jobs**](ramekin_client/docs/ImportApi.md#lookup_import_jobs) | **POST** /api/import/recipe/lookup | 
 *ImportApi* | [**prepare_text_recipe**](ramekin_client/docs/ImportApi.md#prepare_text_recipe) | **POST** /api/import/text | 
 *IngredientNamesApi* | [**get_ingredient_names_status**](ramekin_client/docs/IngredientNamesApi.md#get_ingredient_names_status) | **GET** /api/ingredient-names/status | 
 *IngredientNamesApi* | [**retry_ingredient_names**](ramekin_client/docs/IngredientNamesApi.md#retry_ingredient_names) | **POST** /api/ingredient-names/retry | 
@@ -149,6 +150,7 @@ Class | Method | HTTP request | Description
  - [ImportExtractionMethod](ramekin_client/docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](ramekin_client/docs/ImportFromPhotosRequest.md)
  - [ImportFromPhotosResponse](ramekin_client/docs/ImportFromPhotosResponse.md)
+ - [ImportJobKey](ramekin_client/docs/ImportJobKey.md)
  - [ImportRawRecipe](ramekin_client/docs/ImportRawRecipe.md)
  - [ImportRecipeRequest](ramekin_client/docs/ImportRecipeRequest.md)
  - [ImportRecipeResponse](ramekin_client/docs/ImportRecipeResponse.md)
@@ -161,6 +163,8 @@ Class | Method | HTTP request | Description
  - [ListRecipesResponse](ramekin_client/docs/ListRecipesResponse.md)
  - [LoginRequest](ramekin_client/docs/LoginRequest.md)
  - [LoginResponse](ramekin_client/docs/LoginResponse.md)
+ - [LookupImportJobsRequest](ramekin_client/docs/LookupImportJobsRequest.md)
+ - [LookupImportJobsResponse](ramekin_client/docs/LookupImportJobsResponse.md)
  - [MeResponse](ramekin_client/docs/MeResponse.md)
  - [MealPlanItem](ramekin_client/docs/MealPlanItem.md)
  - [MealPlanListResponse](ramekin_client/docs/MealPlanListResponse.md)

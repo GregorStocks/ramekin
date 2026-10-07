@@ -2,9 +2,10 @@ use anyhow::{bail, Context, Result};
 use base64::Engine;
 use flate2::read::GzDecoder;
 use ramekin_client::apis::configuration::Configuration;
-use ramekin_client::apis::{auth_api, scrape_api};
-use ramekin_client::models::LoginRequest;
+use ramekin_client::apis::{auth_api, import_api, scrape_api};
+use ramekin_client::models::{LoginRequest, LookupImportJobsRequest};
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::Read;
 use std::path::Path;
@@ -81,6 +82,8 @@ struct ImportRecipeRequest {
     raw_recipe: ImportRawRecipe,
     photo_ids: Vec<uuid::Uuid>,
     extraction_method: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    idempotency_key: Option<String>,
 }
 
 /// Import response
@@ -184,6 +187,7 @@ async fn import_recipe(
     config: &Configuration,
     raw_recipe: ImportRawRecipe,
     photo_ids: Vec<uuid::Uuid>,
+    idempotency_key: Option<String>,
 ) -> Result<ImportRecipeResponse> {
     let client = reqwest::Client::new();
 
@@ -191,6 +195,7 @@ async fn import_recipe(
         raw_recipe,
         photo_ids,
         extraction_method: "paprika".to_string(),
+        idempotency_key,
     };
 
     let mut request = client
@@ -281,6 +286,58 @@ pub async fn import(
 
     config.bearer_access_token = Some(login_response.token);
 
+    import_archive(&config, preserve_tags, file_path, None, &HashMap::new()).await
+}
+
+/// Names of the recipe entries in a Paprika archive, in archive order.
+pub fn recipe_entry_names(file_path: &Path) -> Result<Vec<String>> {
+    let file = File::open(file_path)
+        .with_context(|| format!("Failed to open file: {}", file_path.display()))?;
+    let archive = ZipArchive::new(file)
+        .with_context(|| format!("Failed to read zip archive: {}", file_path.display()))?;
+    Ok(archive
+        .file_names()
+        .filter(|name| name.ends_with(".paprikarecipe"))
+        .map(String::from)
+        .collect())
+}
+
+/// The caller's import jobs for these idempotency keys, keyed by idempotency key.
+pub async fn lookup_import_jobs(
+    config: &Configuration,
+    keys: Vec<String>,
+) -> Result<HashMap<String, uuid::Uuid>> {
+    // The server caps keys per lookup.
+    const CHUNK: usize = 1000;
+    let mut jobs = HashMap::new();
+    for chunk in keys.chunks(CHUNK) {
+        let response =
+            import_api::lookup_import_jobs(config, LookupImportJobsRequest::new(chunk.to_vec()))
+                .await
+                .context("Failed to look up existing import jobs")?;
+        jobs.extend(
+            response
+                .jobs
+                .into_iter()
+                .map(|job| (job.idempotency_key, job.job_id)),
+        );
+    }
+    Ok(jobs)
+}
+
+/// Import every recipe in a Paprika archive using an authenticated config.
+///
+/// With `idempotency_key`, each entry is submitted under the key it returns,
+/// and `existing` maps entry names to jobs the server already has for those
+/// keys: those are waited on instead of being uploaded again. Resubmitting a key whose job the caller
+/// didn't know about returns that job rather than creating a duplicate.
+pub async fn import_archive(
+    config: &Configuration,
+    preserve_tags: bool,
+    file_path: &Path,
+    idempotency_key: Option<&dyn Fn(&str) -> String>,
+    existing: &HashMap<String, uuid::Uuid>,
+) -> Result<()> {
     // Open the paprikarecipes file
     let file = File::open(file_path)
         .with_context(|| format!("Failed to open file: {}", file_path.display()))?;
@@ -300,6 +357,13 @@ pub async fn import(
 
             if !entry_name.ends_with(".paprikarecipe") {
                 tracing::debug!(file = %entry_name, "Skipping non-recipe file");
+                continue;
+            }
+
+            // A job that failed before saving fails the wait below; resubmitting
+            // its key would only return the same job, and imports can't be retried.
+            if let Some(&job_id) = existing.get(&entry_name) {
+                jobs.push(job_id);
                 continue;
             }
 
@@ -324,7 +388,7 @@ pub async fn import(
             // leave this recipe's other photos uploaded but unattached.
             let mut photo_ids = Vec::new();
             for (n, image_bytes) in decode_photos(&recipe)?.iter().enumerate() {
-                let id = upload_photo(&config, image_bytes).await.with_context(|| {
+                let id = upload_photo(config, image_bytes).await.with_context(|| {
                     format!("Failed to upload photo {} of recipe '{recipe_name}'", n + 1)
                 })?;
                 photo_ids.push(id);
@@ -333,7 +397,8 @@ pub async fn import(
             // Convert to RawRecipe format and call the import endpoint
             let raw_recipe = convert_to_raw_recipe(&recipe, preserve_tags);
 
-            let response = import_recipe(&config, raw_recipe, photo_ids)
+            let key = idempotency_key.map(|key| key(&entry_name));
+            let response = import_recipe(config, raw_recipe, photo_ids, key)
                 .await
                 .with_context(|| format!("Failed to submit recipe '{recipe_name}'"))?;
             tracing::info!(
@@ -357,9 +422,12 @@ pub async fn import(
         )));
     }
 
+    if !existing.is_empty() {
+        tracing::info!("{} recipe(s) were already submitted", existing.len());
+    }
     let saved_count = jobs.len();
     let enrichment_failures =
-        tokio::time::timeout(Duration::from_secs(600), wait_for_imports(&config, jobs))
+        tokio::time::timeout(Duration::from_secs(600), wait_for_imports(config, jobs))
             .await
             .context(
                 "Timed out waiting for import jobs; submitted recipes remain on the server",
