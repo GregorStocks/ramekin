@@ -21,6 +21,27 @@ release_repo_lock() {
     fi
 }
 
+# With REPO_LOCK_WAIT=1, wait for a live lock holder instead of refusing to
+# start. Waiting is bounded by REPO_LOCK_WAIT_SECONDS because PID liveness can't
+# tell a crashed holder from an unrelated process that reused its PID.
+# Uses acquire_repo_lock's wait_started local (bash locals are dynamically scoped).
+repo_lock_wait() {
+    local human_name="$1"
+    local lock_owner_name="$2"
+    local lock_dir="$3"
+    local wait_seconds="${REPO_LOCK_WAIT_SECONDS:-600}"
+
+    [ -n "${REPO_LOCK_WAIT:-}" ] || return 1
+    if [ -z "$wait_started" ]; then
+        wait_started=$(date +%s)
+        echo "[$(repo_lock_timestamp)] Waiting up to ${wait_seconds}s for another ${lock_owner_name} to finish before starting ${human_name}." >&2
+        echo "[$(repo_lock_timestamp)] Active lock: ${lock_dir}" >&2
+    elif [ $(($(date +%s) - wait_started)) -ge "$wait_seconds" ]; then
+        return 1
+    fi
+    sleep 0.2
+}
+
 acquire_repo_lock() {
     local lock_name="$1"
     local human_name="$2"
@@ -31,6 +52,7 @@ acquire_repo_lock() {
     local lock_pid=
     local lock_mtime=
     local now_epoch=
+    local wait_started=
 
     mkdir -p "$lock_root"
 
@@ -48,6 +70,9 @@ acquire_repo_lock() {
             lock_mtime=$(repo_lock_mtime_epoch "$lock_dir" 2>/dev/null || echo 0)
             now_epoch=$(date +%s)
             if [ "$lock_mtime" -gt 0 ] && [ $((now_epoch - lock_mtime)) -lt "$lock_grace_seconds" ]; then
+                if repo_lock_wait "$human_name" "$lock_owner_name" "$lock_dir"; then
+                    continue
+                fi
                 echo "[$(repo_lock_timestamp)] Refusing to start ${human_name}: another ${lock_owner_name} is still acquiring the lock." >&2
                 echo "[$(repo_lock_timestamp)] Active lock: ${lock_dir}" >&2
                 return 1
@@ -55,6 +80,9 @@ acquire_repo_lock() {
         fi
 
         if [ -n "$lock_pid" ] && kill -0 "$lock_pid" 2>/dev/null; then
+            if repo_lock_wait "$human_name" "$lock_owner_name" "$lock_dir"; then
+                continue
+            fi
             echo "[$(repo_lock_timestamp)] Refusing to start ${human_name}: another ${lock_owner_name} is already running (pid ${lock_pid})." >&2
             echo "[$(repo_lock_timestamp)] Active lock: ${lock_dir}" >&2
             return 1

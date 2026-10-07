@@ -333,9 +333,25 @@ that appears in both releases.
   - leave a fragment ("pepper or");
   - move an ambiguous (null) alias onto a shorter name.
 
+  A key that a measured line keeps whole ("1 cup medium grain rice") counts as
+  already parsed, even if the bare key would lose a leading size or count. A
+  key that a hand-typed shopping-list item in
+  `data/shopping-list-categories.json` uses verbatim stays too, because the
+  shopping list matches typed text without parsing it. A removed or re-keyed
+  name takes its `categories` entry with it.
+
   The `curated_names_are_what_the_parser_produces` test fails until it has
   been run. The first run (2026-09-29, alongside the parser fix) removed 571
-  keys, re-keyed 74, and left 131 conflicts.
+  keys, re-keyed 74, and left 131 conflicts. A review on 2026-10-06 settled the
+  75 conflicts left after the next parser fix. 13 were live keys that the
+  measured-line check above now recognizes. Most of the rest were deleted,
+  leaving their clean name's mapping in charge, even where the split-off note
+  mattered ("apples, peeled", "lemon, juiced", "chickpeas, rinsed"; see
+  `issues/*note-aware-catalog-resolution*`). Seven were re-keyed by hand to
+  the name the parser really stores ("baking mix", "dried mushrooms"). The one
+  conflict left, "turkish or 1/2 california bay leaf", is a live key: recipes
+  capitalize "Turkish", which keeps "or 1/2" in the name, and the lowercase key
+  loses that.
   Recipes already stored keep the items an older parser gave them. After that
   parser fix, a one-off re-parse (since removed) re-read every stored item and
   saved a new version (source "reparse") for recipes that changed.

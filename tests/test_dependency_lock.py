@@ -196,3 +196,128 @@ def test_lockfile_mode_needs_no_dev_tooling(tmp_path):
     )
 
     assert result.returncode == 0, result.stdout
+
+
+# Stands in for `npx ... npm ci`: flags any overlapping install, then writes
+# the marker npm leaves behind.
+FAKE_NPX = """#!/bin/bash
+mkdir ../install-running 2>/dev/null || echo overlap >> ../overlaps
+echo install >> ../installs
+sleep 1
+mkdir -p node_modules && touch node_modules/.package-lock.json
+rmdir ../install-running
+"""
+
+
+def _ui_deps_sandbox(tmp_path: Path) -> dict[str, str]:
+    """Lay out a fake project for scripts/install-ui-deps.sh and return the env
+    that puts the fake npx on PATH."""
+    scripts = tmp_path / "scripts"
+    scripts.mkdir()
+    for name in ["install-ui-deps.sh", "repo-lock.sh"]:
+        shutil.copy(REPO_ROOT / "scripts" / name, scripts / name)
+    ui = tmp_path / "ramekin-ui"
+    ui.mkdir()
+    (ui / "package.json").write_text("{}", encoding="utf-8")
+    (ui / "package-lock.json").write_text("{}", encoding="utf-8")
+    bin_dir = tmp_path / "bin"
+    bin_dir.mkdir()
+    npx = bin_dir / "npx"
+    npx.write_text(FAKE_NPX, encoding="utf-8")
+    npx.chmod(0o755)
+    return {**os.environ, "PATH": f"{bin_dir}:{os.environ['PATH']}"}
+
+
+def _install_ui_deps(
+    tmp_path: Path, env: dict[str, str], **extra_env: str
+) -> subprocess.Popen:
+    return subprocess.Popen(
+        [str(tmp_path / "scripts" / "install-ui-deps.sh")],
+        env={**env, **extra_env},
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+    )
+
+
+def _installs(tmp_path: Path) -> int:
+    log = tmp_path / "installs"
+    return len(log.read_text().splitlines()) if log.exists() else 0
+
+
+def test_concurrent_ui_dep_installs_take_turns(tmp_path):
+    # make lint and make test both pull in ui-deps; parallel npm ci runs
+    # corrupt node_modules, and the one that waited has nothing left to do.
+    env = _ui_deps_sandbox(tmp_path)
+
+    procs = [_install_ui_deps(tmp_path, env) for _ in range(2)]
+    outputs = [p.communicate(timeout=30)[0] for p in procs]
+
+    assert [p.returncode for p in procs] == [0, 0], outputs
+    assert not (tmp_path / "overlaps").exists()
+    assert _installs(tmp_path) == 1
+    assert not (tmp_path / "logs" / "locks" / "ui-deps.lock").exists()
+
+
+def _fresh_marker(tmp_path: Path) -> None:
+    marker = tmp_path / "ramekin-ui" / "node_modules" / ".package-lock.json"
+    marker.parent.mkdir()
+    marker.touch()
+
+
+def test_ui_dep_install_skips_when_another_install_already_finished(tmp_path):
+    # make can decide the marker is stale, then reach the lock only after
+    # another install released it. Reinstalling would delete node_modules out
+    # from under that other process.
+    env = _ui_deps_sandbox(tmp_path)
+    _fresh_marker(tmp_path)
+
+    proc = _install_ui_deps(tmp_path, env)
+    output = proc.communicate(timeout=30)[0]
+
+    assert proc.returncode == 0, output
+    assert _installs(tmp_path) == 0
+
+
+def test_forced_ui_dep_install_runs_even_when_marker_is_fresh(tmp_path):
+    env = _ui_deps_sandbox(tmp_path)
+    _fresh_marker(tmp_path)
+
+    proc = _install_ui_deps(tmp_path, env, UI_DEPS_FORCE="1")
+    output = proc.communicate(timeout=30)[0]
+
+    assert proc.returncode == 0, output
+    assert _installs(tmp_path) == 1
+
+
+def test_ui_dep_install_gives_up_on_a_lock_held_too_long(tmp_path):
+    # A crashed installer's PID can be reused by an unrelated process, which
+    # would otherwise keep the lock looking live forever.
+    env = _ui_deps_sandbox(tmp_path)
+    lock = tmp_path / "logs" / "locks" / "ui-deps.lock"
+    lock.mkdir(parents=True)
+    (lock / "pid").write_text(f"{os.getpid()}\n", encoding="utf-8")
+
+    proc = _install_ui_deps(tmp_path, env, REPO_LOCK_WAIT_SECONDS="1")
+    output = proc.communicate(timeout=30)[0]
+
+    assert proc.returncode == 1, output
+    assert "Refusing to start UI dependency install" in output
+    assert _installs(tmp_path) == 0
+    assert lock.exists()
+
+
+def test_ui_dep_install_clears_a_lock_left_by_a_dead_process(tmp_path):
+    env = _ui_deps_sandbox(tmp_path)
+    finished = subprocess.Popen(["true"])
+    finished.wait()
+    lock = tmp_path / "logs" / "locks" / "ui-deps.lock"
+    lock.mkdir(parents=True)
+    (lock / "pid").write_text(f"{finished.pid}\n", encoding="utf-8")
+
+    proc = _install_ui_deps(tmp_path, env)
+    output = proc.communicate(timeout=30)[0]
+
+    assert proc.returncode == 0, output
+    assert "Removing stale" in output
+    assert _installs(tmp_path) == 1

@@ -341,6 +341,17 @@ jobs:
         # make ios-test-ui-prebuilt uses IOS_UI_DESTINATION from the boot step.
         run: scripts/prepare-ios-ui-simulator.sh configure
 
+      - name: Warm up simulator keyboard
+        # The first keyboard use of a run cold-launches the simulator's
+        # out-of-process keyboard (InputUI). Under load, runningboardd once
+        # suspended it while on screen and the app's main thread blocked for
+        # minutes, failing the first test that typed. Take that cold launch
+        # here, where a stall or failure doesn't fail the job. See
+        # KeyboardWarmupTests.swift.
+        timeout-minutes: 8
+        continue-on-error: true
+        run: make ios-warm-ui-keyboard
+
       - name: Run UI tests
         timeout-minutes: 20
         run: make ios-test-ui-prebuilt
