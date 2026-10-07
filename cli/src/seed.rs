@@ -5,6 +5,7 @@ use ramekin_client::apis::tags_api::CreateTagError;
 use ramekin_client::apis::{auth_api, recipes_api, tags_api};
 use ramekin_client::models::{CreateTagRequest, LoginRequest, SignupRequest};
 use serde::Deserialize;
+use sha2::{Digest, Sha256};
 use std::collections::HashMap;
 use std::path::Path;
 
@@ -14,9 +15,12 @@ struct TagsFile {
 }
 
 /// Seed imports are keyed by archive entry so a rerun after an interrupted or
-/// failed seed resumes it without duplicating recipes.
+/// failed seed resumes it without duplicating recipes. Hashed so long entry
+/// names stay within the server's key length limit.
 fn seed_key(entry_name: &str) -> String {
-    format!("seed:{entry_name}")
+    let digest = Sha256::digest(entry_name.as_bytes());
+    let hex: String = digest.iter().map(|b| format!("{b:02x}")).collect();
+    format!("seed:{hex}")
 }
 
 pub async fn seed(
@@ -139,6 +143,17 @@ mod tests {
             content: String::new(),
             entity: None,
         })
+    }
+
+    #[test]
+    fn seed_keys_are_bounded_and_distinct() {
+        let long = "x".repeat(1000);
+        assert_eq!(seed_key(&long).len(), seed_key("Soup.paprikarecipe").len());
+        assert!(seed_key(&long).len() <= 255);
+        assert_ne!(
+            seed_key("Soup.paprikarecipe"),
+            seed_key("Bread.paprikarecipe")
+        );
     }
 
     #[test]
