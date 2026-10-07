@@ -655,12 +655,18 @@ fn a_fat_note_selects_the_ground_meat_blend() {
     assert_eq!(line_fdc("ground beef", Some("90/10")), blend(90));
     // The parser can leave the percentage in the item.
     assert_eq!(line_fdc("ground beef, 90% lean", None), blend(90));
+    assert_eq!(line_fdc("ground beef, 90 percent lean", None), blend(90));
     // A range allows any blend in it.
     assert_eq!(
         line_fdc("ground beef", Some("preferably a leaner meat, 85-93% lean")),
         blend(80)
     );
-    for note in ["85%-93% lean", "85% to 93% lean", "15-20% fat"] {
+    for note in [
+        "85%-93% lean",
+        "85% to 93% lean",
+        "15-20% fat",
+        "85 to 93 percent lean",
+    ] {
         assert_eq!(line_fdc("ground beef", Some(note)), blend(80), "{note}");
     }
     // A percentage describing an alternative doesn't change this food.

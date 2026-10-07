@@ -707,10 +707,16 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     // The first group catches a range ("85-93% lean", "85% to 93% lean"),
     // which names no blend.
     static LEAN: LazyLock<regex::Regex> = LazyLock::new(|| {
-        regex::Regex::new(r"(?i)(\d\s*%?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*%\s*lean\b").unwrap()
+        regex::Regex::new(
+            r"(?i)(\d\s*(?:%|percent)?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*(?:%|percent)\s*lean\b",
+        )
+        .unwrap()
     });
     static FAT: LazyLock<regex::Regex> = LazyLock::new(|| {
-        regex::Regex::new(r"(?i)(\d\s*%?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*%\s*fat\b").unwrap()
+        regex::Regex::new(
+            r"(?i)(\d\s*(?:%|percent)?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*(?:%|percent)\s*fat\b",
+        )
+        .unwrap()
     });
     static RATIO: LazyLock<regex::Regex> =
         LazyLock::new(|| regex::Regex::new(r"\b(\d{2})\s*/\s*(\d{1,2})\b").unwrap());
