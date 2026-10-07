@@ -360,6 +360,23 @@ jobs:
             > logs/simulator-system.log 2>&1 || true
           gzip -f logs/simulator-system.log
 
+      - name: Collect host exec log
+        if: ${{ !cancelled() }}
+        timeout-minutes: 5
+        # In run 37392182564 the test runner sat for 294 s between spawn and
+        # exec on an idle runner: xcodebuild had marked it runnable, and the
+        # simulator log is silent until launchd_sim's "uncorking exec source".
+        # That stage runs in the host's exec and code-signing path, which only
+        # the host log shows.
+        run: |
+          predicate='process IN {"amfid", "syspolicyd", "XprotectService", "CoreSimulatorService"}'
+          kernel='eventMessage CONTAINS[c] "AMFI" OR eventMessage CONTAINS[c] "codesign"'
+          kernel="$kernel OR eventMessage CONTAINS[c] \"xpcproxy_sim\""
+          predicate="$predicate OR (process == \"kernel\" AND ($kernel))"
+          log show --last 40m --style compact --info --debug --predicate "$predicate" \
+            > logs/host-exec.log 2>&1 || true
+          gzip -f logs/host-exec.log
+
       - name: Upload UI test results and screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -369,4 +386,5 @@ jobs:
             logs/*.xcresult
             logs/runner-load.log
             logs/simulator-system.log.gz
+            logs/host-exec.log.gz
           if-no-files-found: ignore
