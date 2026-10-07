@@ -266,8 +266,10 @@ fn part_ingredient(
     })
 }
 
-/// The trailer without a closing restatement of the item: "(about 1/4 cup
-/// fresh lemon juice)" is "(about 1/4 cup)", whose volume then parses.
+/// The trailer without a restatement of the item closing a measurement:
+/// "(about 1/4 cup fresh lemon juice)" is "(about 1/4 cup)", whose volume
+/// then parses. Prose ending in the item ("enough to cover the fish in lime
+/// juice") keeps it.
 fn without_restated_item(trailer: &str, item: &str) -> String {
     let item = item
         .split_whitespace()
@@ -275,10 +277,12 @@ fn without_restated_item(trailer: &str, item: &str) -> String {
         .collect::<Vec<_>>()
         .join(r"\s+");
     let restated = Regex::new(&format!(
-        r"(?i)\s+(?:fresh(?:ly)?(?:[\s-]+squeezed)?\s+)?{item}(?P<end>\s*\)|\s*$)"
+        r"(?i)(?P<measure>\d[\d/.\s-]*[a-z]+\.?)\s+(?:fresh(?:ly)?(?:[\s-]+squeezed)?\s+)?{item}(?P<end>\s*\)|\s*$)"
     ))
     .expect("Invalid restated citrus item regex");
-    restated.replace_all(trailer, "$end").into_owned()
+    restated
+        .replace_all(trailer, "${measure}${end}")
+        .into_owned()
 }
 
 /// Whether the trailer names the other part ("zest" or "juice") and not this one.
@@ -647,7 +651,13 @@ mod tests {
     fn restated_juice_volume_in_juice_of_line() {
         let parsed = parse_one("Juice of 1 lemon (about 3 tablespoons lemon juice)");
         assert_eq!(parsed.measurements[0], measurement("3", "tbsp"));
-        // Only a closing restatement goes: this one is the note's subject.
+        // Only a restatement closing a measurement goes, not prose that ends
+        // in the item or a note about it.
+        let parsed = parse_one("4 limes, juiced (enough to cover the fish in lime juice)");
+        assert_eq!(
+            parsed.note.as_deref(),
+            Some("enough to cover the fish in lime juice")
+        );
         let parsed = parse_one("Juice of 1 lemon, plus more lemon juice to taste");
         assert_eq!(
             parsed.note.as_deref(),
