@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ios-build-ui-tests ios-test-ui-prebuilt ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import catalog-apply-classification catalog-harvest-learned catalog-clean-aliases shopping-list-categorizer-test ingredient-catalog-audit ingredient-catalog-unresolved ingredient-catalog-uncategorized ai-eval ai-eval-golden ai-eval-judge server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ios-build-ui-tests ios-test-ui-prebuilt ios-warm-ui-keyboard ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import catalog-apply-classification catalog-harvest-learned catalog-clean-aliases shopping-list-categorizer-test ingredient-catalog-audit ingredient-catalog-unresolved ingredient-catalog-uncategorized ai-eval ai-eval-golden ai-eval-judge server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -350,18 +350,27 @@ ios-build-ui-tests: ios-generate ## Build the app and UI tests without running t
 		-derivedDataPath $(IOS_UI_DERIVED_DATA) \
 		-only-testing:RamekinUITests
 
-ios-test-ui-prebuilt: ## Run iOS UI tests built by ios-build-ui-tests (requires dev server running)
-	@mkdir -p logs
-	@rm -rf logs/ios-ui-tests.xcresult
-	@XCTESTRUN=$$(ls ramekin-ios/$(IOS_UI_DERIVED_DATA)/Build/Products/*.xctestrun 2>/dev/null | head -1); \
+# Run UI tests built by ios-build-ui-tests. $(1): -only-testing/-skip-testing
+# flags; $(2): result bundle path.
+ios_ui_test_prebuilt = \
+	mkdir -p logs && rm -rf $(2); \
+	XCTESTRUN=$$(ls ramekin-ios/$(IOS_UI_DERIVED_DATA)/Build/Products/*.xctestrun 2>/dev/null | head -1); \
 	if [ -z "$$XCTESTRUN" ]; then echo "No .xctestrun found; run make ios-build-ui-tests" >&2; exit 1; fi; \
 	$(call ios_resolve_destination,$(IOS_UI_DESTINATION)); \
 	xcodebuild test-without-building \
 		-xctestrun "$$XCTESTRUN" \
 		-destination "$$DEST" \
-		-only-testing:RamekinUITests \
-		-resultBundlePath logs/ios-ui-tests.xcresult
+		$(1) \
+		-resultBundlePath $(2)
+
+ios-test-ui-prebuilt: ## Run iOS UI tests built by ios-build-ui-tests (requires dev server running)
+	@$(call ios_ui_test_prebuilt,-only-testing:RamekinUITests -skip-testing:RamekinUITests/KeyboardWarmupTests,logs/ios-ui-tests.xcresult)
 	@echo "UI test results at logs/ios-ui-tests.xcresult"
+
+# CI runs this before ios-test-ui-prebuilt so the simulator's keyboard
+# process cold-launches outside the real tests; see KeyboardWarmupTests.
+ios-warm-ui-keyboard: ## Show the simulator keyboard once using the prebuilt UI tests
+	@$(call ios_ui_test_prebuilt,-only-testing:RamekinUITests/KeyboardWarmupTests,logs/ios-ui-keyboard-warmup.xcresult)
 
 ingredient-tests-generate: ## Generate ingredient parsing test fixtures from latest pipeline run
 	@cargo run -q --release --manifest-path cli/Cargo.toml -- ingredient-tests-generate

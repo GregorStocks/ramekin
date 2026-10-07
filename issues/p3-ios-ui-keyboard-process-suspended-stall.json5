@@ -10,7 +10,11 @@ InputUI logged nothing from 23:50:02 until a brief assertion woke it at 23:53:21
 Runner 1-minute load was about 188 when InputUI was suspended, then fell to about 9 while the app stayed blocked. \
 So the stall itself is not CPU starvation, though the load may explain why the assertion lapsed. \
 Ideas, none tried yet: warm up the keyboard in scripts/prepare-ios-ui-simulator.sh configure, so InputUI is not cold-launched mid-test; connect the simulator hardware keyboard so the tests don't drive the software keyboard through InputUI; check whether this reproduces locally on an iOS 26.5 simulator. \
-Related, but a different symptom: issues/p3-ios-ui-app-launch-hang.json5.",
+Related, but a different symptom: issues/p3-ios-ui-app-launch-hang.json5. \
+Tried (mitigation, unconfirmed): CI now runs a 'Warm up simulator keyboard' step (make ios-warm-ui-keyboard, KeyboardWarmupTests.swift) before the UI tests, with continue-on-error, so InputUI cold-launches outside the real tests. \
+The hardware-keyboard idea was not tried: only Simulator.app connects a hardware keyboard, and CI runs the simulator headless. \
+To judge it over the next runs: in simulator-system.log.gz, InputUI should launch during the warm-up step, not during testLoginFailure; the real tests should log no 'Keyboard queue task timeout detected'; and check whether the warm-up step itself stalls or fails, and how long it takes. \
+If stalls recur after a warm launch, the suspension isn't specific to cold launch, so look at what lets InputUI's assertion lapse while visible.",
   "status": "open",
   "priority": 3,
   "type": "task",
@@ -19,5 +23,5 @@ Related, but a different symptom: issues/p3-ios-ui-app-launch-hang.json5.",
     "flaky-test",
   ],
   "created_at": "2026-10-05T17:20:00.000000-07:00",
-  "updated_at": "2026-10-05T17:20:00.000000-07:00",
+  "updated_at": "2026-10-06T00:00:00.000000-07:00",
 }
