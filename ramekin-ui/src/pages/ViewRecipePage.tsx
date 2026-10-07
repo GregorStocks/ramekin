@@ -37,7 +37,6 @@ import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
 import {
   PollScrapeJobAbortedError,
   pollScrapeJob,
-  SCRAPE_JOB_LONG_POLL_TIMEOUT_MS,
 } from "../utils/pollScrapeJob";
 import { createRequestTracker } from "../utils/requestTracker";
 import type { RecipeResponse, VersionSummary } from "ramekin-client";
@@ -372,7 +371,8 @@ export default function ViewRecipePage() {
     setEnrichmentFailedJobId(null);
     void pollScrapeJob(getScrapeApi(), jobId, {
       signal: controller.signal,
-      timeoutMs: SCRAPE_JOB_LONG_POLL_TIMEOUT_MS,
+      // Track the job until it ends; leaving the page aborts the poll.
+      timeoutMs: null,
     })
       .then(async (result) => {
         if (result.status === "failed") setEnrichmentFailedJobId(jobId);
