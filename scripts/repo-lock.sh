@@ -21,6 +21,23 @@ release_repo_lock() {
     fi
 }
 
+# With REPO_LOCK_WAIT=1, wait for a live lock holder instead of refusing to
+# start. Sets REPO_LOCK_WAITED=1 so callers can recheck work the holder may
+# have already done.
+repo_lock_wait() {
+    local human_name="$1"
+    local lock_owner_name="$2"
+    local lock_dir="$3"
+
+    [ -n "${REPO_LOCK_WAIT:-}" ] || return 1
+    if [ -z "$REPO_LOCK_WAITED" ]; then
+        echo "[$(repo_lock_timestamp)] Waiting for another ${lock_owner_name} to finish before starting ${human_name}." >&2
+        echo "[$(repo_lock_timestamp)] Active lock: ${lock_dir}" >&2
+    fi
+    REPO_LOCK_WAITED=1
+    sleep 0.2
+}
+
 acquire_repo_lock() {
     local lock_name="$1"
     local human_name="$2"
@@ -32,6 +49,7 @@ acquire_repo_lock() {
     local lock_mtime=
     local now_epoch=
 
+    REPO_LOCK_WAITED=
     mkdir -p "$lock_root"
 
     while ! mkdir "$lock_dir" 2>/dev/null; do
@@ -48,6 +66,9 @@ acquire_repo_lock() {
             lock_mtime=$(repo_lock_mtime_epoch "$lock_dir" 2>/dev/null || echo 0)
             now_epoch=$(date +%s)
             if [ "$lock_mtime" -gt 0 ] && [ $((now_epoch - lock_mtime)) -lt "$lock_grace_seconds" ]; then
+                if repo_lock_wait "$human_name" "$lock_owner_name" "$lock_dir"; then
+                    continue
+                fi
                 echo "[$(repo_lock_timestamp)] Refusing to start ${human_name}: another ${lock_owner_name} is still acquiring the lock." >&2
                 echo "[$(repo_lock_timestamp)] Active lock: ${lock_dir}" >&2
                 return 1
@@ -55,6 +76,9 @@ acquire_repo_lock() {
         fi
 
         if [ -n "$lock_pid" ] && kill -0 "$lock_pid" 2>/dev/null; then
+            if repo_lock_wait "$human_name" "$lock_owner_name" "$lock_dir"; then
+                continue
+            fi
             echo "[$(repo_lock_timestamp)] Refusing to start ${human_name}: another ${lock_owner_name} is already running (pid ${lock_pid})." >&2
             echo "[$(repo_lock_timestamp)] Active lock: ${lock_dir}" >&2
             return 1
