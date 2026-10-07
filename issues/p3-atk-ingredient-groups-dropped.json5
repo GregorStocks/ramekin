@@ -1,0 +1,21 @@
+{
+  "title": "America's Test Kitchen imports drop ingredient group headers",
+  "description": "ATK recipes are extracted from JSON-LD recipeIngredient, which lists every ingredient but omits the group headers. \
+As a result, none of the 58 ATK pipeline snapshots has a section. \
+Example: americastestkitchen-com_recipes-14919-san-diego-fish-tacos has groups (Pickled Red Onion, sauce, fish, …) in the page HTML but comes out as one flat list. \
+The page HTML has the groups as `<div><h3 …>Pickled Red Onion</h3><span class=\"recipePrintBody_ingredient…\">…</span>…</div>` inside `recipePrintBody_ingredientList`. \
+Fix: when JSON-LD has no headers, match the recipePrintBody groups to the JSON-LD lines (same order, same text modulo whitespace and ', ' spacing) and set the section from each `<h3>`. \
+Expect intentional data/ diffs from make pipeline: ATK snapshots gain sections. \
+Stale prod rows like 'Chipotle Sour Cream' and 'Burritos' stored as measurement-less ingredients came from older imports. \
+The promote_section_headers data migration leaves them alone because they have no colon. \
+Re-importing the recipe would fix them once this lands.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "pipeline",
+  ],
+  "created_at": "2026-10-07T08:00:00-07:00",
+  "updated_at": "2026-10-07T08:00:00-07:00",
+}

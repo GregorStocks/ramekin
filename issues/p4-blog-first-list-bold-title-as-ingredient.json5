@@ -1,0 +1,18 @@
+{
+  "title": "Blog fallback keeps a bold recipe title at the top of the first ingredient list as an ingredient",
+  "description": "Some unstructured blog posts repeat the recipe title in bold as the first line of the first ingredient `<p>` (e.g. `<p><b>Blueberry Lavender Muffins</b><br>2 cups flour…`). extract_ingredient_lines_from_chunk (ramekin-core/src/extract/blog.rs) keeps that line as an ingredient. \
+It only promotes a leading bold line to a section when detect_section_header accepts it as written, or when it opens a later ingredient list. \
+Promoting any Title-Case bold line at the top of the first list would also swallow a bold ingredient like 'Fresh Parsley' (Codex review on #777). \
+In data/unique-ingredients.txt this shows up as 'Bakery-Style Buttermilk Blueberry Muffins', 'Blueberry Lavender Muffins', 'Buttermilk Coconut Waffles', 'Coconut Chocolate Chip Cookies', 'Crispy Salted Peanut Butter Cookies', 'Nutella Raspberries Cupcakes' and 'Blueberries and Cream Bread Pudding'. \
+Likely fix: drop the line when it matches the extracted recipe title (or page title) after normalization. \
+Expect intentional data/ diffs from make pipeline: those recipes lose one ingredient line.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+    "pipeline",
+  ],
+  "created_at": "2026-10-07T12:00:00-07:00",
+  "updated_at": "2026-10-07T12:00:00-07:00",
+}
