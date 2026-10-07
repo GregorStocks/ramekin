@@ -720,6 +720,9 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     });
     static RATIO: LazyLock<regex::Regex> =
         LazyLock::new(|| regex::Regex::new(r"\b(\d{2})\s*/\s*(\d{1,2})\b").unwrap());
+    static REJECTED: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(r"(?i)\b(not|never|no|avoid|without)\b|n['’]t\b").unwrap()
+    });
     static BLEND: LazyLock<regex::Regex> =
         LazyLock::new(|| regex::Regex::new(r"\d+% lean meat / ?\d+% fat").unwrap());
     // USDA names are also indexed without their "(includes foods for ...)".
@@ -743,7 +746,11 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
             .find(|(unpeeled, _)| id.contains(unpeeled))
             .map(|(unpeeled, peeled)| id.replace(unpeeled, peeled))
     } else {
-        let written = clauses().collect::<Vec<_>>().join(";");
+        // "not 95% lean", "avoid 95% lean" rule a blend out.
+        let written = clauses()
+            .filter(|clause| !REJECTED.is_match(clause))
+            .collect::<Vec<_>>()
+            .join(";");
         let percent = |re: &regex::Regex| {
             let caps = re.captures(&written)?;
             caps.get(1).is_none().then(|| caps[2].parse::<u32>().ok())?

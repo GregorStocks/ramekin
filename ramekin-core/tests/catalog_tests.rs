@@ -667,6 +667,8 @@ fn a_fat_note_selects_the_ground_meat_blend() {
         "85% to 93% lean",
         "15-20% fat",
         "85 to 93 percent lean",
+        "avoid 95% lean",
+        "not 95% lean",
     ] {
         assert_eq!(line_fdc("ground beef", Some(note)), blend(80), "{note}");
     }
