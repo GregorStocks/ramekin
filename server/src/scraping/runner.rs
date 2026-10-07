@@ -18,12 +18,14 @@ use crate::schema::{scrape_jobs, step_outputs, user_tags};
 
 use super::jobs::{get_job, mark_completed, mark_failed, update_status_and_step};
 use super::output_store::DbOutputStore;
+use super::photo_import::PHOTO_EXTRACT_STEP;
 use super::steps::{
     ApplyAutoTagsStep, ApplyGeneratedDescriptionStep, ApplyNormalizedTitleStep, FetchHtmlStep,
     FetchImagesStep, ResolveIngredientNamesStep, SaveRecipeStep,
 };
 use super::{
-    run_scrape_db, ScrapeError, STATUS_COMPLETED, STATUS_FAILED, STATUS_PARSING, STATUS_SCRAPING,
+    run_scrape_db, ScrapeError, STATUS_COMPLETED, STATUS_FAILED, STATUS_PARSING, STATUS_PENDING,
+    STATUS_SCRAPING,
 };
 
 /// Maximum retries before hard fail
@@ -193,6 +195,76 @@ pub fn spawn_scrape_job(pool: Arc<DbPool>, job_id: Uuid, url: &str, operation: &
         }
         .instrument(span),
     );
+}
+
+/// What to do at startup with a job a previous server process left mid-pipeline.
+#[derive(Debug, PartialEq, Eq)]
+enum InterruptedJobAction {
+    /// Resume from the persisted `current_step`.
+    Respawn,
+    /// Photo extraction needs photo ids that only lived in the dead process.
+    Fail,
+}
+
+fn interrupted_job_action(url: Option<&str>, current_step: Option<&str>) -> InterruptedJobAction {
+    match (url, current_step) {
+        (_, Some(PHOTO_EXTRACT_STEP)) | (None, None) => InterruptedJobAction::Fail,
+        _ => InterruptedJobAction::Respawn,
+    }
+}
+
+/// Jobs only run as tasks of the process that created them, so a restart
+/// strands any job still in progress. Pick them back up so they finish.
+/// Assumes this is the only server process running jobs against the database.
+pub fn spawn_interrupted_jobs(pool: Arc<DbPool>) {
+    tokio::spawn(async move {
+        let jobs = run_scrape_db(&pool, |conn| {
+            scrape_jobs::table
+                .filter(scrape_jobs::status.eq_any([
+                    STATUS_PENDING,
+                    STATUS_SCRAPING,
+                    STATUS_PARSING,
+                ]))
+                .select((scrape_jobs::id, scrape_jobs::url, scrape_jobs::current_step))
+                .load::<(Uuid, Option<String>, Option<String>)>(conn)
+                .map_err(|e| ScrapeError::Database(e.to_string()))
+        })
+        .await;
+        let jobs = match jobs {
+            Ok(jobs) => jobs,
+            Err(e) => {
+                tracing::error!("Failed to load interrupted scrape jobs: {e}");
+                return;
+            }
+        };
+        if !jobs.is_empty() {
+            tracing::info!(
+                count = jobs.len(),
+                "Resuming scrape jobs interrupted by a restart"
+            );
+        }
+        for (job_id, url, current_step) in jobs {
+            match interrupted_job_action(url.as_deref(), current_step.as_deref()) {
+                InterruptedJobAction::Fail => {
+                    let step = current_step.as_deref().unwrap_or(PHOTO_EXTRACT_STEP);
+                    if let Err(e) = mark_failed(
+                        &pool,
+                        job_id,
+                        step,
+                        "Interrupted by a server restart; upload the photos again",
+                    )
+                    .await
+                    {
+                        tracing::error!(%job_id, "Failed to mark interrupted job failed: {e}");
+                    }
+                }
+                InterruptedJobAction::Respawn => match url {
+                    Some(url) => spawn_scrape_job(pool.clone(), job_id, &url, "resume"),
+                    None => spawn_import_job(pool.clone(), job_id),
+                },
+            }
+        }
+    });
 }
 
 #[derive(Debug, PartialEq, Eq)]
@@ -617,6 +689,25 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeErro
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn interrupted_jobs_resume_unless_they_need_in_memory_photos() {
+        use InterruptedJobAction::{Fail, Respawn};
+        for (url, step, expected) in [
+            (Some("https://example.com"), None, Respawn),
+            (Some("https://example.com"), Some("save_recipe"), Respawn),
+            (None, Some("parse_ingredients"), Respawn),
+            (None, Some("enrich_auto_tag"), Respawn),
+            (None, Some(PHOTO_EXTRACT_STEP), Fail),
+            (None, None, Fail),
+        ] {
+            assert_eq!(
+                interrupted_job_action(url, step),
+                expected,
+                "{url:?} {step:?}"
+            );
+        }
+    }
 
     #[test]
     fn terminal_failure_wins_over_saved_recipe() {

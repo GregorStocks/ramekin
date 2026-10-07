@@ -12,7 +12,7 @@ pub use jobs::{
     create_rescrape_job, get_job,
 };
 pub use photo_import::{create_pending_photo_job, spawn_photo_import_job};
-pub use runner::{retry_job, spawn_import_job, spawn_scrape_job};
+pub use runner::{retry_job, spawn_import_job, spawn_interrupted_jobs, spawn_scrape_job};
 
 use thiserror::Error;
 
@@ -61,6 +61,7 @@ where
 }
 
 /// Job statuses
+pub const STATUS_PENDING: &str = "pending";
 pub const STATUS_SCRAPING: &str = "scraping";
 pub const STATUS_PARSING: &str = "parsing";
 pub const STATUS_COMPLETED: &str = "completed";

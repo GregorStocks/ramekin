@@ -195,6 +195,9 @@ async fn main() {
     // for photos created before the column existed).
     photos::spawn_dimension_backfill(pool.clone());
 
+    // Finish scrape and import jobs a previous run left in progress.
+    scraping::spawn_interrupted_jobs(pool.clone());
+
     // Resolve ingredient names the catalog doesn't know, starting with any
     // left pending by a previous run or that this catalog changed (learned,
     // lost, or offers new candidates for).
