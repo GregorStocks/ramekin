@@ -604,6 +604,8 @@ fn a_peeled_note_selects_the_peeled_food() {
         Some("not peeled"),
         Some("should not be peeled"),
         Some("peeled only if desired"),
+        Some("peeled, if desired"),
+        Some("peeled (optional)"),
         Some("don't bother, peeled or unpeeled"),
     ] {
         assert_eq!(line_fdc("apples", note), fdc_id("apples"), "{note:?}");
@@ -646,6 +648,8 @@ fn a_fat_note_selects_the_ground_meat_blend() {
     assert_eq!(line_fdc("ground beef", Some("80% lean/20% fat")), blend(80));
     assert_eq!(line_fdc("ground beef", Some("93% lean")), blend(93));
     assert_eq!(line_fdc("ground beef", Some("90/10")), blend(90));
+    // The parser can leave the percentage in the item.
+    assert_eq!(line_fdc("ground beef, 90% lean", None), blend(90));
     // No USDA blend has 17% fat, and a ratio must add up to 100.
     assert_eq!(line_fdc("ground beef", Some("17% fat")), blend(80));
     assert_eq!(line_fdc("ground beef", Some("1/2 pound")), blend(80));

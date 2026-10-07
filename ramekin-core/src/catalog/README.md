@@ -150,7 +150,7 @@ milk is often "refrigerated overnight". A note saying the food is peeled
 desired") swaps a USDA food "with skin" or "with peel" for its exact peeled
 counterpart ("apples, raw, without skin"),
 since the skin is discarded whenever the peeling happens; a food with no
-counterpart (granny smith apples) stays as written. A note giving a fat or lean
+counterpart (granny smith apples) stays as written. A note (or the item) giving a fat or lean
 percentage ("at least 15% fat", "93% lean", "90/10") picks that blend when the
 item resolves to a USDA "N% lean meat / M% fat" food and USDA has the blend.
 "Drained" and "rinsed" notes are deliberately ignored: the amount is nearly

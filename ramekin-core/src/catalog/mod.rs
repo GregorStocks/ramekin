@@ -677,13 +677,13 @@ pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
     let Resolution::Entry { entry, .. } = resolved else {
         return resolved;
     };
-    let note = note.unwrap_or_default();
-    prepared_form(&entry.id, note).unwrap_or(resolved)
+    prepared_form(&entry.id, item, note.unwrap_or_default()).unwrap_or(resolved)
 }
 
-/// The food entry `id` names, in the state `note` describes: peeled, or ground
-/// meat of a stated fat percentage. See `resolve_line`.
-fn prepared_form(id: &str, note: &str) -> Option<Resolution> {
+/// The food entry `id` names, in the state the line describes: peeled (per
+/// the note), or ground meat of a stated fat percentage (in the note or the
+/// item: "ground beef, 90% lean"). See `resolve_line`.
+fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     // A whole word, so "unpeeled" doesn't count.
     static PEELED: LazyLock<regex::Regex> =
         LazyLock::new(|| regex::Regex::new(r"(?i)\bpeeled\b").unwrap());
@@ -691,6 +691,14 @@ fn prepared_form(id: &str, note: &str) -> Option<Resolution> {
     // within the clause naming peeled, so "peeled, but not cored" is peeled.
     static MAYBE_UNPEELED: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(r"(?i)\b(not|never|no|unpeeled|if|optional|optionally)\b|n't\b").unwrap()
+    });
+    // A clause that only makes the rest optional: "peeled, if desired",
+    // "peeled (optional)".
+    static OPTIONAL: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(
+            r"(?i)^\s*(if\s+(desired|preferred|you\s+(like|prefer|want))|optional(ly)?)\s*$",
+        )
+        .unwrap()
     });
     static LEAN: LazyLock<regex::Regex> =
         LazyLock::new(|| regex::Regex::new(r"(?i)\b(\d{1,2})\s*%\s*lean\b").unwrap());
@@ -702,23 +710,25 @@ fn prepared_form(id: &str, note: &str) -> Option<Resolution> {
         LazyLock::new(|| regex::Regex::new(r"\d+% lean meat / ?\d+% fat").unwrap());
     // USDA names are also indexed without their "(includes foods for ...)".
     let id = id.split(" (includes ").next().unwrap_or(id);
-    let peeled = note
-        .split([',', ';', '(', ')'])
-        .any(|clause| PEELED.is_match(clause) && !MAYBE_UNPEELED.is_match(clause));
+    let clauses = || note.split([',', ';', '(', ')']);
+    let peeled = clauses()
+        .any(|clause| PEELED.is_match(clause) && !MAYBE_UNPEELED.is_match(clause))
+        && !clauses().any(|clause| OPTIONAL.is_match(clause));
     let swapped = if peeled {
         [("with skin", "without skin"), ("with peel", "peeled")]
             .into_iter()
             .find(|(unpeeled, _)| id.contains(unpeeled))
             .map(|(unpeeled, peeled)| id.replace(unpeeled, peeled))
     } else {
+        let written = format!("{item}; {note}");
         let percent = |re: &regex::Regex| {
-            re.captures(note)
+            re.captures(&written)
                 .and_then(|caps| caps[1].parse::<u32>().ok())
         };
         let lean = percent(&LEAN)
             .or_else(|| percent(&FAT).map(|fat| 100 - fat))
             .or_else(|| {
-                let caps = RATIO.captures(note)?;
+                let caps = RATIO.captures(&written)?;
                 let (lean, fat) = (caps[1].parse::<u32>().ok()?, caps[2].parse::<u32>().ok()?);
                 (lean + fat == 100).then_some(lean)
             });
