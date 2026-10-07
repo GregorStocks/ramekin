@@ -1,6 +1,6 @@
 use ramekin_core::catalog::{
-    category, chosen_alternative, food, grams_per_cup, grams_per_piece, resolve, resolve_line,
-    version, Kind, Resolution, Via,
+    category, chosen_alternative, food, grams_per_cup, grams_per_piece, line_grams_per_cup,
+    resolve, resolve_line, version, Kind, Resolution, Via,
 };
 
 fn density(item: &str) -> f64 {
@@ -210,7 +210,7 @@ fn resolution_reports_how_it_matched() {
 
 #[test]
 fn version_is_stable() {
-    assert!(version().starts_with("catalog-v2-sr2018-"));
+    assert!(version().starts_with("catalog-v3-sr2018-"));
     assert_eq!(version(), version());
 }
 
@@ -577,6 +577,68 @@ fn salmon_defaults_to_farmed_unless_named() {
     assert_eq!(fdc_id("salmon"), fdc_id("fish, salmon, atlantic, farmed"));
     assert!(kcal("wild salmon") < kcal("salmon"));
     assert_eq!(fdc_id("sockeye salmon"), fdc_id("fish, salmon, sockeye"));
+}
+
+#[test]
+fn a_peeled_note_selects_the_peeled_food() {
+    let line_fdc = |item, note| match resolve_line(item, note) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    let peeled = fdc_id("apples, raw, without skin");
+    assert_ne!(fdc_id("apples"), peeled);
+    for note in [
+        "peeled",
+        "peeled and cored",
+        "peeled, seeded and coarsely chopped",
+    ] {
+        assert_eq!(line_fdc("apples", Some(note)), peeled, "{note}");
+        assert_eq!(line_fdc("tart apple", Some(note)), peeled, "{note}");
+    }
+    for note in [None, Some("unpeeled"), Some("no need to peel, cored")] {
+        assert_eq!(line_fdc("apples", note), fdc_id("apples"), "{note:?}");
+    }
+    // USDA weighs peeled apples by the cup of slices.
+    assert_eq!(
+        line_grams_per_cup("apples", Some("peeled and cored")),
+        Some(110.0)
+    );
+    // USDA has no peeled granny smith, so the apple stays as written.
+    assert_eq!(
+        line_fdc("granny smith apple", Some("peeled")),
+        fdc_id("granny smith apple")
+    );
+    assert_eq!(
+        line_fdc("cucumber", Some("peeled and sliced")),
+        fdc_id("cucumber, peeled, raw")
+    );
+    // Draining is ignored: the can is measured with its liquid.
+    assert_eq!(
+        line_fdc("chickpeas", Some("drained and rinsed")),
+        fdc_id("chickpeas")
+    );
+}
+
+#[test]
+fn a_fat_note_selects_the_ground_meat_blend() {
+    let line_fdc = |item, note| match resolve_line(item, note) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    let blend = |lean: u32| {
+        fdc_id(&format!(
+            "beef, ground, {lean}% lean meat / {}% fat, raw",
+            100 - lean
+        ))
+    };
+    assert_eq!(fdc_id("ground beef"), blend(80));
+    assert_eq!(line_fdc("ground beef", Some("at least 15% fat")), blend(85));
+    assert_eq!(line_fdc("ground beef", Some("80% lean/20% fat")), blend(80));
+    assert_eq!(line_fdc("ground beef", Some("93% lean")), blend(93));
+    assert_eq!(line_fdc("ground beef", Some("90/10")), blend(90));
+    // No USDA blend has 17% fat, and a ratio must add up to 100.
+    assert_eq!(line_fdc("ground beef", Some("17% fat")), blend(80));
+    assert_eq!(line_fdc("ground beef", Some("1/2 pound")), blend(80));
 }
 
 #[test]

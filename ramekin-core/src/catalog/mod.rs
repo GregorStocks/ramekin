@@ -38,7 +38,7 @@ const USDA_JSON: &str = include_str!("data/usda.json");
 const FNDDS_JSON: &str = include_str!("data/fndds.json");
 pub const CURATED_JSON: &str = include_str!("data/curated.json");
 const BESPOKE_JSON: &str = include_str!("data/bespoke.json");
-const RULE_VERSION: &str = "catalog-v2";
+const RULE_VERSION: &str = "catalog-v3";
 
 /// A food from a pinned USDA release (SR Legacy, or FNDDS for foods SR Legacy
 /// lacks).
@@ -636,6 +636,14 @@ pub fn food(fdc_id: u32) -> Option<&'static UsdaFood> {
 /// six times the calories of the carton drink. Brand names and a bare
 /// "refrigerated" don't count, since canned coconut milk is often "refrigerated
 /// overnight".
+///
+/// A note saying the food is peeled ("peeled and cored") swaps a USDA food
+/// "with skin" or "with peel" for its peeled counterpart when USDA has one:
+/// the skin is discarded whenever the peeling happens. A note giving a fat or
+/// lean percentage ("at least 15% fat", "90/10") picks that blend of ground
+/// meat. "Drained" and "rinsed" are ignored: the amount is nearly always the
+/// can or net weight before draining, which the with-liquid food prices about
+/// right.
 pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
     static COOKED: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(r"(?i)^\s*(leftover\s+)?cooked\s*(\(.*\))?\s*$").unwrap()
@@ -665,7 +673,61 @@ pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
             _ => Resolution::Unresolved,
         };
     }
-    resolve(item)
+    let resolved = resolve(item);
+    let Resolution::Entry { entry, .. } = resolved else {
+        return resolved;
+    };
+    let note = note.unwrap_or_default();
+    prepared_form(&entry.id, note).unwrap_or(resolved)
+}
+
+/// The food entry `id` names, in the state `note` describes: peeled, or ground
+/// meat of a stated fat percentage. See `resolve_line`.
+fn prepared_form(id: &str, note: &str) -> Option<Resolution> {
+    // A whole word, so "unpeeled" doesn't count.
+    static PEELED: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"(?i)\bpeeled\b").unwrap());
+    static LEAN: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"(?i)\b(\d{1,2})\s*%\s*lean\b").unwrap());
+    static FAT: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"(?i)\b(\d{1,2})\s*%\s*fat\b").unwrap());
+    static RATIO: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"\b(\d{2})\s*/\s*(\d{1,2})\b").unwrap());
+    static BLEND: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"\d+% lean meat / ?\d+% fat").unwrap());
+    // USDA names are also indexed without their "(includes foods for ...)".
+    let id = id.split(" (includes ").next().unwrap_or(id);
+    let swapped = if PEELED.is_match(note) {
+        [("with skin", "without skin"), ("with peel", "peeled")]
+            .into_iter()
+            .find(|(unpeeled, _)| id.contains(unpeeled))
+            .map(|(unpeeled, peeled)| id.replace(unpeeled, peeled))
+    } else {
+        let percent = |re: &regex::Regex| {
+            re.captures(note)
+                .and_then(|caps| caps[1].parse::<u32>().ok())
+        };
+        let lean = percent(&LEAN)
+            .or_else(|| percent(&FAT).map(|fat| 100 - fat))
+            .or_else(|| {
+                let caps = RATIO.captures(note)?;
+                let (lean, fat) = (caps[1].parse::<u32>().ok()?, caps[2].parse::<u32>().ok()?);
+                (lean + fat == 100).then_some(lean)
+            });
+        lean.filter(|_| BLEND.is_match(id)).map(|lean| {
+            BLEND
+                .replace(id, format!("{lean}% lean meat / {}% fat", 100 - lean))
+                .into_owned()
+        })
+    };
+    // Only that exact food: trimming "apples, raw, granny smith, without skin"
+    // would land back on unpeeled apples.
+    match resolve(&swapped?) {
+        resolved @ Resolution::Entry {
+            via: Via::Exact, ..
+        } => Some(resolved),
+        _ => None,
+    }
 }
 
 /// Grams per US cup for an ingredient line (see `resolve_line`).
