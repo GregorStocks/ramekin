@@ -143,11 +143,15 @@
         "item": "lemon juice",
         "measurements": [
           {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
             "amount": "1",
             "unit": "large lemon"
           }
         ],
-        "note": "2 tbsp fresh lemon juice",
+        "note": null,
         "category": "Produce"
       }
     },

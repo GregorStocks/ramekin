@@ -898,9 +898,32 @@ fn curated_pieces_fill_counts_usda_lacks() {
     assert_eq!(piece("lemon zest", Some("lemons")), Some(6.0));
     assert_eq!(piece("lime zest", Some("lime")), Some(3.0));
     assert_eq!(piece("orange zest", Some("orange")), Some(7.5));
+    assert_eq!(piece("grapefruit juice", Some("grapefruits")), Some(196.0));
+    assert_eq!(
+        piece("pink grapefruit juice", Some("pink grapefruit")),
+        Some(196.0)
+    );
+    assert_eq!(
+        piece("blood orange juice", Some("blood orange")),
+        Some(86.0)
+    );
+    assert_eq!(piece("blood orange zest", Some("blood orange")), Some(7.5));
     // A sized piece with no exact portion is the piece.
     assert_eq!(piece("lemon juice", Some("large lemon")), Some(48.0));
     assert_eq!(piece("orange zest", Some("extra-large oranges")), Some(7.5));
+    assert_eq!(
+        piece("grapefruit juice", Some("large grapefruit")),
+        Some(196.0)
+    );
+    // A many-word piece counts in the plural too.
+    assert_eq!(
+        piece("blood orange juice", Some("blood oranges")),
+        Some(86.0)
+    );
+    assert_eq!(
+        piece("pink grapefruit juice", Some("large pink grapefruits")),
+        Some(196.0)
+    );
 }
 
 #[test]

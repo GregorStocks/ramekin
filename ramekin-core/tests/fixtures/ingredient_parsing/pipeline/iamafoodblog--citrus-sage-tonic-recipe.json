@@ -33,19 +33,19 @@
     {
       "raw": "2 large grapefruits, juiced (about 2 cups)",
       "expected": {
-        "item": "grapefruits, juiced",
+        "item": "grapefruit juice",
         "measurements": [
           {
             "amount": "2",
-            "unit": "large"
+            "unit": "cup"
           },
           {
             "amount": "2",
-            "unit": "cup"
+            "unit": "large grapefruits"
           }
         ],
         "note": "about 2 cups",
-        "category": "Produce"
+        "category": "Beverages"
       }
     },
     {
