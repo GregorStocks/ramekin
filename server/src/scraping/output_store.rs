@@ -1,5 +1,6 @@
 //! Database-backed step output store for the server.
 
+use std::collections::{HashMap, HashSet};
 use std::error::Error;
 
 use async_trait::async_trait;
@@ -26,6 +27,29 @@ impl<'a> DbOutputStore<'a> {
     /// Create a new database output store for a job.
     pub fn new(pool: &'a DbPool, job_id: Uuid) -> Self {
         Self { pool, job_id }
+    }
+
+    /// Steps whose latest output row in this job is a success.
+    pub async fn succeeded_steps(&self) -> Result<HashSet<String>, Box<dyn Error + Send + Sync>> {
+        let job_id = self.job_id;
+        let rows: Vec<(String, bool)> = run_blocking(self.pool, move |conn| {
+            step_outputs::table
+                .filter(step_outputs::scrape_job_id.eq(job_id))
+                .order(step_outputs::created_at.asc())
+                .select((step_outputs::step_name, step_outputs::success))
+                .load(conn)
+        })
+        .await
+        .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?
+        .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?;
+        let mut latest = HashMap::new();
+        for (name, success) in rows {
+            latest.insert(name, success);
+        }
+        Ok(latest
+            .into_iter()
+            .filter_map(|(name, success)| success.then_some(name))
+            .collect())
     }
 
     /// Insert a step output row. Takes `&self` so concurrently running steps

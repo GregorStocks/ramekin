@@ -524,6 +524,11 @@ struct PostSaveOutcome {
 /// order. After a terminal failure, steps after it in canonical order no
 /// longer start, but earlier ones still run to completion, so the earliest
 /// failed step is a sound retry point: everything before it finished.
+///
+/// A step that already succeeded in an earlier attempt (concurrent steps can
+/// finish after the one a retry or restart resumes at) is not rerun unless a
+/// step it depends on reran: rerunning an apply step would find the recipe
+/// already moved past its expected version by its own earlier write and skip.
 async fn run_post_save_steps(
     pool: &DbPool,
     job_id: Uuid,
@@ -547,6 +552,11 @@ async fn run_post_save_steps(
         })?;
 
     let mut finished: HashSet<&str> = steps[..start].iter().map(|(name, _)| *name).collect();
+    let succeeded_before = store
+        .succeeded_steps()
+        .await
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+    let mut reran: HashSet<&str> = HashSet::new();
     let mut waiting: Vec<(&str, Vec<&str>)> = steps[start..].to_vec();
     let mut running = FuturesUnordered::new();
     let mut running_names: Vec<&str> = Vec::new();
@@ -563,23 +573,50 @@ async fn run_post_save_steps(
             .map(|(name, _)| canonical_index(name))
             .min()
             .unwrap_or(usize::MAX);
-        let (ready, still_waiting): (Vec<_>, Vec<_>) =
-            waiting.into_iter().partition(|(name, deps)| {
-                canonical_index(name) < earliest_failure
-                    && deps.iter().all(|dep| finished.contains(dep))
-            });
-        waiting = still_waiting;
-        for (name, _) in ready {
-            let Some(step) = registry.get(name) else {
-                failures.push((name, format!("Step {name} is not registered")));
-                continue;
-            };
-            let continues_on_failure = step.metadata().continues_on_failure;
-            running.push(async move {
-                let result = execute_step_with_tracing(step, url, store, name).await;
-                (name, continues_on_failure, result)
-            });
-            running_names.push(name);
+        loop {
+            let (ready, still_waiting): (Vec<_>, Vec<_>) =
+                waiting.into_iter().partition(|(name, deps)| {
+                    canonical_index(name) < earliest_failure
+                        && deps.iter().all(|dep| finished.contains(dep))
+                });
+            waiting = still_waiting;
+            let mut reused_any = false;
+            for (name, deps) in ready {
+                if reuse_earlier_success(name, &deps, &succeeded_before, &reran) {
+                    // Re-record it so the status API counts it in this attempt.
+                    if let Some(output) = store.get_output(name).await {
+                        let result = StepResult {
+                            step_name: name.to_string(),
+                            success: true,
+                            output,
+                            error: None,
+                            duration_ms: 0,
+                            next_step: None,
+                        };
+                        let result = record_step_result(store, name, false, result).await;
+                        if result.success {
+                            finished.insert(name);
+                            reused_any = true;
+                            continue;
+                        }
+                    }
+                }
+                let Some(step) = registry.get(name) else {
+                    failures.push((name, format!("Step {name} is not registered")));
+                    continue;
+                };
+                let continues_on_failure = step.metadata().continues_on_failure;
+                reran.insert(name);
+                running.push(async move {
+                    let result = execute_step_with_tracing(step, url, store, name).await;
+                    (name, continues_on_failure, result)
+                });
+                running_names.push(name);
+            }
+            // Reusing a step can make its dependents ready right away.
+            if !reused_any {
+                break;
+            }
         }
 
         // The job row has room for one current step; report the earliest
@@ -632,6 +669,17 @@ async fn run_post_save_steps(
         .min_by_key(|(name, _)| canonical_index(name))
         .map(|(name, error)| (name.to_string(), error));
     Ok(outcome)
+}
+
+/// Whether a post-save step can keep the output it succeeded with in an
+/// earlier attempt: only if none of its dependencies reran in this one.
+fn reuse_earlier_success(
+    name: &str,
+    deps: &[&str],
+    succeeded_before: &HashSet<String>,
+    reran: &HashSet<&str>,
+) -> bool {
+    succeeded_before.contains(name) && deps.iter().all(|dep| !reran.contains(dep))
 }
 
 /// Execute a pipeline step with OpenTelemetry tracing.
@@ -865,6 +913,35 @@ mod tests {
                 "{url:?} {step:?}"
             );
         }
+    }
+
+    #[test]
+    fn earlier_success_is_reused_unless_a_dependency_reran() {
+        let succeeded: HashSet<String> = ["apply_normalized_title", "enrich_auto_tag"]
+            .into_iter()
+            .map(String::from)
+            .collect();
+        let none = HashSet::new();
+        assert!(reuse_earlier_success(
+            "apply_normalized_title",
+            &["enrich_normalize_title"],
+            &succeeded,
+            &none
+        ));
+        let reran: HashSet<&str> = ["enrich_normalize_title"].into_iter().collect();
+        assert!(!reuse_earlier_success(
+            "apply_normalized_title",
+            &["enrich_normalize_title"],
+            &succeeded,
+            &reran
+        ));
+        // Never succeeded (or its latest attempt failed): run it.
+        assert!(!reuse_earlier_success(
+            "enrich_generate_description",
+            &[],
+            &succeeded,
+            &none
+        ));
     }
 
     #[test]
