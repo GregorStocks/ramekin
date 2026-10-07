@@ -603,6 +603,8 @@ fn a_peeled_note_selects_the_peeled_food() {
         Some("no need to peel, cored"),
         Some("not peeled"),
         Some("should not be peeled"),
+        Some("without being peeled"),
+        Some("shouldn’t be peeled"),
         Some("peeled only if desired"),
         Some("peeled, if desired"),
         Some("peeled (optional)"),

@@ -690,7 +690,10 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     // "not peeled", "peeled only if desired": the skin may stay on. Checked
     // within the clause naming peeled, so "peeled, but not cored" is peeled.
     static MAYBE_UNPEELED: LazyLock<regex::Regex> = LazyLock::new(|| {
-        regex::Regex::new(r"(?i)\b(not|never|no|unpeeled|if|optional|optionally)\b|n't\b").unwrap()
+        regex::Regex::new(
+            r"(?i)\b(not|never|no|without|unpeeled|if|optional|optionally)\b|n['’]t\b",
+        )
+        .unwrap()
     });
     // A clause that only makes the rest optional: "peeled, if desired",
     // "peeled (optional)".
