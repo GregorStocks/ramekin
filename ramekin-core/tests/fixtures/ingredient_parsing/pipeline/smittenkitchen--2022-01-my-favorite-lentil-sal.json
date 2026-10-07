@@ -112,11 +112,11 @@
     {
       "raw": "1 lime, juiced, plus more to taste",
       "expected": {
-        "item": "lime, juiced",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lime"
           }
         ],
         "note": "plus more to taste",

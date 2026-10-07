@@ -33,11 +33,11 @@
     {
       "raw": "2 limes, juiced",
       "expected": {
-        "item": "limes, juiced",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "limes"
           }
         ],
         "note": null,

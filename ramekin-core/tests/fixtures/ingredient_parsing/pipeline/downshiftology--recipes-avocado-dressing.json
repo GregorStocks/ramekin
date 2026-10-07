@@ -61,14 +61,14 @@
     {
       "raw": "1  lime (juiced)",
       "expected": {
-        "item": "lime",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lime"
           }
         ],
-        "note": "juiced",
+        "note": null,
         "category": "Produce"
       }
     },

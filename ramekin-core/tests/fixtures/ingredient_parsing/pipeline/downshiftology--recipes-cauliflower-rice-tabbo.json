@@ -89,16 +89,31 @@
     {
       "raw": "2  lemons (zested and juiced)",
       "expected": {
-        "item": "lemons",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "lemons"
           }
         ],
-        "note": "zested and juiced",
+        "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "2  lemons (zested and juiced)",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lemons"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "1/4 cup olive oil",

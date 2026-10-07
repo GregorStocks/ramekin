@@ -75,16 +75,31 @@
     {
       "raw": "2 lemons, juiced and zested",
       "expected": {
-        "item": "lemons, juiced and zested",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "lemons"
           }
         ],
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "2 lemons, juiced and zested",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lemons"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "2 tablespoons butter",

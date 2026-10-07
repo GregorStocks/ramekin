@@ -117,14 +117,14 @@
     {
       "raw": "1  lemon finely zested",
       "expected": {
-        "item": "lemon finely zested",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lemon"
           }
         ],
-        "note": null,
+        "note": "finely",
         "category": "Produce"
       }
     },

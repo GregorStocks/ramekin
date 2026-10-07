@@ -98,11 +98,11 @@
     {
       "raw": "1 lemon, zested",
       "expected": {
-        "item": "lemon, zested",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lemon"
           }
         ],
         "note": null,

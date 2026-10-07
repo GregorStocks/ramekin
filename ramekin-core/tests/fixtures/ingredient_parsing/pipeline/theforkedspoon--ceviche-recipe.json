@@ -75,14 +75,14 @@
     {
       "raw": "10  limes (juiced (enough to fully cover the fish in lime juice))",
       "expected": {
-        "item": "limes",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "10",
-            "unit": null
+            "unit": "limes"
           }
         ],
-        "note": "juiced (enough to fully cover the fish in lime juice)",
+        "note": "enough to fully cover the fish in lime juice",
         "category": "Produce"
       }
     },
@@ -103,15 +103,15 @@
     {
       "raw": "2  oranges (juiced)",
       "expected": {
-        "item": "oranges",
+        "item": "orange juice",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "oranges"
           }
         ],
-        "note": "juiced",
-        "category": "Produce"
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -182,14 +182,14 @@
     {
       "raw": "10  limes (juiced)",
       "expected": {
-        "item": "limes",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "10",
-            "unit": null
+            "unit": "limes"
           }
         ],
-        "note": "juiced",
+        "note": null,
         "category": "Produce"
       }
     },

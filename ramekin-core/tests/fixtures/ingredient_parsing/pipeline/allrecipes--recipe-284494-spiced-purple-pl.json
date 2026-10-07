@@ -19,16 +19,31 @@
     {
       "raw": "1 lemon, zested and juiced",
       "expected": {
-        "item": "lemon, zested and juiced",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lemon"
           }
         ],
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "1 lemon, zested and juiced",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "4 cups white sugar",

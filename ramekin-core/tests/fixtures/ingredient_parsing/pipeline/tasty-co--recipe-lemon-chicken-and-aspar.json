@@ -89,11 +89,11 @@
     {
       "raw": "½ lemon, zested, plus more for garnish",
       "expected": {
-        "item": "lemon, zested",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "lemon"
           }
         ],
         "note": "plus more for garnish",
@@ -103,11 +103,11 @@
     {
       "raw": "½ lemon, juiced",
       "expected": {
-        "item": "lemon, juiced",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "lemon"
           }
         ],
         "note": null,

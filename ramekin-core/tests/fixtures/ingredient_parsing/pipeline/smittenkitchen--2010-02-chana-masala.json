@@ -243,14 +243,14 @@
     {
       "raw": "1/2 lemon (juiced) (see note; I used a whole lemon to swap for the amchoor powder)",
       "expected": {
-        "item": "lemon",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "lemon"
           }
         ],
-        "note": "juiced, see note; I used a whole lemon to swap for the amchoor powder",
+        "note": "see note; I used a whole lemon to swap for the amchoor powder",
         "category": "Produce"
       }
     }

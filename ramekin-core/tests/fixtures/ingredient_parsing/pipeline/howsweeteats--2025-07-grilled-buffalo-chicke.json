@@ -98,14 +98,14 @@
     {
       "raw": "2  limes, (freshly juiced)",
       "expected": {
-        "item": "limes",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "limes"
           }
         ],
-        "note": "freshly juiced",
+        "note": "freshly",
         "category": "Produce"
       }
     },

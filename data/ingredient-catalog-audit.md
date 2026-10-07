@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60532 | 306 | 53427/60226 (88.7%) | 49748/60226 (82.6%) | 1143/5408 (21.1%) | n/a (no servings) | 31759/37264 (85.2%) | 59806/60532 (98.8%) |
+| Pipeline fixtures | 5408 | 60548 | 306 | 53446/60242 (88.7%) | 49767/60242 (82.6%) | 1143/5408 (21.1%) | n/a (no servings) | 31762/37265 (85.2%) | 59822/60548 (98.8%) |
 | Paprika fixtures | 462 | 5379 | 22 | 5150/5357 (96.1%) | 4687/5357 (87.5%) | 153/462 (33.1%) | n/a (no servings) | 2543/2888 (88.1%) | 5347/5379 (99.4%) |
 | Pipeline snapshots | 445 | 5179 | 17 | 4983/5162 (96.5%) | 4594/5162 (89.0%) | 149/445 (33.5%) | 77/445 (17.3%) | 2518/2848 (88.4%) | 5167/5179 (99.8%) |
 
@@ -28,7 +28,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Frying oil: only part of it is absorbed | 98 | 0.2% |
 | Missing density for this food | 1125 | 1.9% |
 | Missing quantity | 1875 | 3.1% |
-| No supported nutrition match | 6324 | 10.4% |
+| No supported nutrition match | 6321 | 10.4% |
 | Several ingredients share one amount | 55 | 0.1% |
 | Unsupported or missing quantity | 50 | 0.1% |
 | Unsupported quantity unit | 476 | 0.8% |
@@ -37,11 +37,11 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 1734 | 32.1% |
-| 1 | 1743 | 32.2% |
+| 0 | 1735 | 32.1% |
+| 1 | 1742 | 32.2% |
 | 2 | 1046 | 19.3% |
-| 3 | 508 | 9.4% |
-| 4-5 | 305 | 5.6% |
+| 3 | 510 | 9.4% |
+| 4-5 | 303 | 5.6% |
 | 6+ | 72 | 1.3% |
 
 Estimate status with at most 3 uncounted: Complete 31.9%, Insufficient 8.2%, Partial 59.9%
@@ -52,8 +52,8 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 330
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 7781 | `e72cd210c421` |
-| Density | 2758 | `c7817d47ed3b` |
+| Nutrition (all failures) | 7778 | `88774ec63abc` |
+| Density | 2756 | `1b0fd8a7123f` |
 | Shopping category | 583 | `686969d39add` |
 
 ## Paprika fixtures

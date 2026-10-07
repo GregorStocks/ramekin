@@ -117,16 +117,31 @@
     {
       "raw": "1  lemon (juiced and zested)",
       "expected": {
-        "item": "lemon",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lemon"
           }
         ],
-        "note": "juiced and zested",
+        "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "1  lemon (juiced and zested)",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "1 1/2 cups blackberries",
