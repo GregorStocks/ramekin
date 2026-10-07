@@ -650,6 +650,15 @@ fn a_fat_note_selects_the_ground_meat_blend() {
     assert_eq!(line_fdc("ground beef", Some("90/10")), blend(90));
     // The parser can leave the percentage in the item.
     assert_eq!(line_fdc("ground beef, 90% lean", None), blend(90));
+    // A percentage describing an alternative doesn't change this food.
+    assert_eq!(
+        line_fdc(
+            "ground sirloin",
+            Some("or other ground beef, with around 20% fat")
+        ),
+        fdc_id("ground sirloin")
+    );
+    assert_ne!(fdc_id("ground sirloin"), blend(80));
     // No USDA blend has 17% fat, and a ratio must add up to 100.
     assert_eq!(line_fdc("ground beef", Some("17% fat")), blend(80));
     assert_eq!(line_fdc("ground beef", Some("1/2 pound")), blend(80));

@@ -710,7 +710,12 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
         LazyLock::new(|| regex::Regex::new(r"\d+% lean meat / ?\d+% fat").unwrap());
     // USDA names are also indexed without their "(includes foods for ...)".
     let id = id.split(" (includes ").next().unwrap_or(id);
-    let clauses = || note.split([',', ';', '(', ')']);
+    // Clauses from an alternative on ("or other ground beef, with around 20%
+    // fat") describe that food, not this one.
+    let clauses = || {
+        note.split([',', ';', '(', ')'])
+            .take_while(|clause| !clause.trim_start().to_lowercase().starts_with("or "))
+    };
     let peeled = clauses()
         .any(|clause| PEELED.is_match(clause) && !MAYBE_UNPEELED.is_match(clause))
         && !clauses().any(|clause| OPTIONAL.is_match(clause));
@@ -720,7 +725,7 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
             .find(|(unpeeled, _)| id.contains(unpeeled))
             .map(|(unpeeled, peeled)| id.replace(unpeeled, peeled))
     } else {
-        let written = format!("{item}; {note}");
+        let written = format!("{item}; {}", clauses().collect::<Vec<_>>().join(";"));
         let percent = |re: &regex::Regex| {
             re.captures(&written)
                 .and_then(|caps| caps[1].parse::<u32>().ok())
