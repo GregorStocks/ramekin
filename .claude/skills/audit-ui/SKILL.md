@@ -48,12 +48,7 @@ curl -sS -X POST http://localhost:$PORT/api/auth/login \
   -d '{"username":"t","password":"t"}'
 ```
 
-If login fails, the seed is missing. Note: `make seed` in this repo
-currently errors with "missing --server-url" — rather than fixing that
-ad-hoc, escalate or work around by calling `cd cli && cargo run -q -- seed
---server-url http://localhost:$PORT --username t --password t
-../data/dev/seed.paprikarecipes` — but confirm with the user first, since
-the project rule is "always use existing Makefile commands."
+If login fails, the seed is missing; run `make seed` with the dev server up.
 
 ## 3. Drive the browser
 
