@@ -587,6 +587,25 @@ mod tests {
     }
 
     #[test]
+    fn extract_recipe_recovers_headers_on_the_html_fallback_path() {
+        // No recipeInstructions, so the full JSON-LD extractors fail and the
+        // HTML fallback merges JSON-LD ingredients with page instructions.
+        let html = r#"<html><head><script type="application/ld+json">
+            {"@type": "Recipe", "name": "Tacos",
+             "recipeIngredient": ["1 red onion , sliced", "1/2 cup mayonnaise"]}
+            </script></head><body>
+            <div><div><h3>Pickles</h3><span>1 red onion, sliced</span></div>
+            <div><h3>Sauce</h3><span>½ cup mayonnaise</span></div></div>
+            <div class="recipe-instructions"><p>Make tacos.</p></div>
+            </body></html>"#;
+        let recipe = extract_recipe(html, "https://example.com/tacos").unwrap();
+        assert_eq!(
+            recipe.ingredients,
+            "Pickles:\n1 red onion , sliced\nSauce:\n1/2 cup mayonnaise"
+        );
+    }
+
+    #[test]
     fn no_headings_returns_none() {
         let body = r#"<ul><li>2 cups flour</li><li>1 cup butter</li></ul>"#;
         assert_eq!(recover(&["2 cups flour", "1 cup butter"], body), None);
