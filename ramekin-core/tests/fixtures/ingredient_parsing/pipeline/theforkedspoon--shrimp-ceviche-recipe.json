@@ -103,15 +103,15 @@
     {
       "raw": "1  grapefruit (juiced)",
       "expected": {
-        "item": "grapefruit",
+        "item": "grapefruit juice",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "grapefruit"
           }
         ],
-        "note": "juiced",
-        "category": "Produce"
+        "note": null,
+        "category": "Beverages"
       }
     },
     {

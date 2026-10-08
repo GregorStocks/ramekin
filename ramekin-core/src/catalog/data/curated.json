@@ -293,6 +293,7 @@
     "block cream cheese": "cream cheese",
     "block konnyaku": "shirataki noodles",
     "blood orange juice": "orange juice, raw",
+    "blood orange zest": "orange peel",
     "blood oranges": "oranges, raw, all commercial varieties",
     "blue cheese": "cheese, blue",
     "blue cheese dressing": "salad dressing, blue or roquefort cheese dressing, commercial, regular",
@@ -1506,6 +1507,7 @@
     "grape seed oil": "oil, grapeseed",
     "grape tomatoes": "tomatoes, red, ripe, raw, year round average",
     "grapefruit": "grapefruit, raw, pink and red and white, all areas",
+    "grapefruit juice": "grapefruit juice, white",
     "grapes": "grapes, red or green (european type, such as thompson seedless), raw",
     "grapeseed oil": "oil, grapeseed",
     "grapeseed oil or other neutral oil": "oil, grapeseed",
@@ -2362,6 +2364,7 @@
     "pineapple rings": "pineapple, canned, juice pack, drained",
     "pineapple tidbits": "pineapple, canned, juice pack, drained",
     "pink grapefruit": "grapefruit, raw, pink and red, all areas",
+    "pink grapefruit juice": "grapefruit juice, pink",
     "pink salmon": "fish, salmon, pink",
     "pinto beans": "beans, pinto, canned, drained solids",
     "pistachio extract": "vanilla extract",
@@ -4687,6 +4690,14 @@
     },
     "aonori": {
       "trace_ok": true
+    },
+    "apples, raw, without skin": {
+      "fdc_id": 171689,
+      "grams_per_cup": {
+        "source": "USDA FoodData Central SR Legacy 171689 (Apples, raw, without skin): 1 cup slices = 110 g",
+        "url": "https://fdc.nal.usda.gov/food-details/171689/portions",
+        "value": 110.0
+      }
     },
     "artichoke hearts": {
       "grams_per_cup": {
