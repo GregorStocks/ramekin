@@ -19,6 +19,8 @@ const MAX_GAP_LETTERS: usize = 80;
 
 const SKIPPED_ELEMENTS: &[&str] = &["script", "style", "noscript", "template", "head"];
 
+const ROW_ELEMENTS: &[&str] = &["li", "tr", "dd"];
+
 const HEADING_ELEMENTS: &[&str] = &["h1", "h2", "h3", "h4", "h5", "h6", "strong", "b"];
 
 /// One non-whitespace text node of the rendered page.
@@ -299,14 +301,30 @@ fn is_inside_ingredient_row(
     items: &[ElementRef<'_>],
     before: usize,
 ) -> bool {
-    let prev = before.checked_sub(1).and_then(|i| items.get(i));
-    let next = items.get(before);
-    let row_only = |row: Option<&ElementRef<'_>>, other: Option<&ElementRef<'_>>| {
-        row.is_some_and(|row| {
-            contains(*row, heading.element) && !other.is_some_and(|other| contains(*row, *other))
+    let prev = before.checked_sub(1).and_then(|i| items.get(i).copied());
+    let next = items.get(before).copied();
+    let row_only = |item: Option<ElementRef<'_>>, other: Option<ElementRef<'_>>| {
+        item.is_some_and(|item| {
+            let row = ingredient_row(item, items);
+            contains(row, heading.element) && !other.is_some_and(|other| contains(row, other))
         })
     };
     row_only(prev, next) || row_only(next, prev)
+}
+
+/// The list row that holds `item` alone, e.g. the `<li>` around
+/// `<li><strong>Optional:</strong> <span>1 cup nuts</span></li>`. Falls back
+/// to the item itself when there's no such row.
+fn ingredient_row<'a>(item: ElementRef<'a>, items: &[ElementRef<'a>]) -> ElementRef<'a> {
+    std::iter::once(item)
+        .chain(item.ancestors().filter_map(ElementRef::wrap))
+        .take_while(|el| {
+            items
+                .iter()
+                .all(|&other| other == item || !contains(*el, other))
+        })
+        .find(|el| ROW_ELEMENTS.contains(&el.value().name()))
+        .unwrap_or(item)
 }
 
 fn contains(outer: ElementRef<'_>, inner: ElementRef<'_>) -> bool {
@@ -486,6 +504,16 @@ mod tests {
             <ul>
               <li>2 cups flour</li>
               <li><strong>Optional:</strong> 1 cup nuts</li>
+            </ul>"#;
+        assert_eq!(recover(&["2 cups flour", "1 cup nuts"], body), None);
+    }
+
+    #[test]
+    fn bold_label_beside_a_wrapped_ingredient_bails() {
+        let body = r#"
+            <ul>
+              <li><span>2 cups flour</span></li>
+              <li><strong>Optional:</strong><span>1 cup nuts</span></li>
             </ul>"#;
         assert_eq!(recover(&["2 cups flour", "1 cup nuts"], body), None);
     }
