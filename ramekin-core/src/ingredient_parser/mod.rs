@@ -321,7 +321,8 @@ fn split_sized_measure(size: &str, after_size: &str) -> Option<(String, String)>
     if rest.trim().is_empty() {
         return None;
     }
-    Some((format!("{size} {measure}"), rest))
+    // "XL pinch" -> "extra-large pinch"
+    Some((format!("{} {measure}", normalize_unit(size)), rest))
 }
 
 /// Leading words that say how a food is packed or how good it is, never
@@ -2528,6 +2529,13 @@ mod tests {
         let parsed = parse_ingredient("Small handful picked fresh rosemary leaves, finely chopped");
         assert_eq!(parsed.item, "picked fresh rosemary leaves");
         assert_eq!(measurements(&parsed), vec![(None, Some("small handful"))]);
+
+        assert_eq!(
+            parse_ingredient("1 XL pinch saffron").measurements[0]
+                .unit
+                .as_deref(),
+            Some("extra-large pinch")
+        );
 
         let parsed = parse_ingredient("1 large bunch kale");
         assert_eq!(parsed.item, "kale");
