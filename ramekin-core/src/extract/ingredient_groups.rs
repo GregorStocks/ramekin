@@ -257,18 +257,21 @@ fn gap_header<'a>(gap: &[Token<'a>]) -> Result<Option<Heading<'a>>, ()> {
 }
 
 /// The heading right before the first ingredient, if it belongs to the list.
-/// Only the closest heading counts, and it must sit inside the element that
-/// holds every ingredient, so list titles ("Ingredients") and controls above
-/// the list (unit toggles, scaling buttons) are skipped.
+/// Only the closest heading or colon label counts, and it must sit inside the
+/// element that holds every ingredient, so list titles ("Ingredients") and
+/// controls above the list (unit toggles, scaling buttons) are skipped.
 fn leading_header<'a>(before: &[Token<'a>], container: ElementRef<'a>) -> Option<Heading<'a>> {
+    // A heading's text can span several nodes (`<h3>Sauce <em>B</em></h3>`);
+    // a plain colon label is one element's text.
+    let label_element = |t: &Token<'a>| heading_element(t.parent).unwrap_or(t.parent);
     let last_worded = before.iter().rposition(|t| !t.key.is_empty())?;
-    let heading = heading_element(before[last_worded].parent)?;
-    if !heading.ancestors().any(|a| a.id() == container.id()) {
+    let label = label_element(&before[last_worded]);
+    if !label.ancestors().any(|a| a.id() == container.id()) {
         return None;
     }
     let first = before[..=last_worded]
         .iter()
-        .rposition(|t| !t.key.is_empty() && heading_element(t.parent) != Some(heading))
+        .rposition(|t| !t.key.is_empty() && label_element(t) != label)
         .map_or(0, |i| i + 1);
     gap_header(&before[first..=last_worded]).ok().flatten()
 }
@@ -421,6 +424,21 @@ mod tests {
             atk_group(None, &["⅓ cup sugar"]),
         );
         assert_eq!(recover(&ATK_INGREDIENTS[..2], &body), None);
+    }
+
+    #[test]
+    fn leading_colon_label_is_a_header() {
+        let body = r#"
+            <ul>
+              <li>Dough:</li>
+              <li>2 cups flour</li>
+              <li>Glaze:</li>
+              <li>1 cup powdered sugar</li>
+            </ul>"#;
+        assert_eq!(
+            recover(&["2 cups flour", "1 cup powdered sugar"], body).unwrap(),
+            vec!["Dough:", "2 cups flour", "Glaze:", "1 cup powdered sugar"]
+        );
     }
 
     #[test]
