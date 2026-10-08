@@ -261,7 +261,8 @@ fn get_job_conn(conn: &mut DbConn, job_id: Uuid) -> Result<ScrapeJob, ScrapeErro
 }
 
 /// The recipe a job's `save_recipe` step saved, if it has run. New-recipe
-/// jobs only record `recipe_id` on the job row when they complete.
+/// jobs record `recipe_id` on the job row when they save; jobs saved before
+/// that only have it in the step output until they complete.
 pub async fn saved_recipe_id(pool: &DbPool, job_id: Uuid) -> Result<Option<Uuid>, ScrapeError> {
     let output: Option<serde_json::Value> = run_scrape_db(pool, move |conn| {
         step_outputs::table

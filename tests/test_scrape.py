@@ -1,3 +1,4 @@
+import psycopg
 import pytest
 
 from conftest import (
@@ -208,6 +209,47 @@ class TestScrapeRetry:
             f"got {job2.failed_at_step}"
         )
         assert job2.retry_count == 1
+
+    def test_retry_after_lost_save_output_reuses_recipe(
+        self, authed_api_client, database_url
+    ):
+        """A save_recipe rerun must not duplicate a recipe it already saved.
+
+        Simulates the step output write failing after the recipe committed:
+        the job keeps the recipe id it recorded in the save transaction but
+        has no save_recipe (or later) output.
+        """
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+
+        url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
+        response = scrape_api.create_scrape(CreateScrapeRequest(url=url))
+        job = wait_for_job_completion(scrape_api, response.id)
+        assert job.status == "completed"
+
+        with psycopg.connect(database_url, autocommit=True) as conn:
+            conn.execute(
+                "DELETE FROM step_outputs WHERE scrape_job_id = %s AND created_at >="
+                " (SELECT min(created_at) FROM step_outputs"
+                "  WHERE scrape_job_id = %s AND step_name = 'save_recipe')",
+                (job.id, job.id),
+            )
+            conn.execute(
+                "UPDATE scrape_jobs SET status = 'failed',"
+                " failed_at_step = 'save_recipe' WHERE id = %s",
+                (job.id,),
+            )
+
+        scrape_api.retry_scrape(job.id)
+        job2 = wait_for_job_completion(scrape_api, job.id)
+
+        assert job2.status == "completed"
+        assert job2.recipe_id == job.recipe_id
+        with psycopg.connect(database_url) as conn:
+            (count,) = conn.execute(
+                "SELECT count(*) FROM recipes WHERE user_id = %s", (user_id,)
+            ).fetchone()
+        assert count == 1
 
     def test_cannot_retry_completed_job(self, authed_api_client):
         """Test that we cannot retry a job that completed successfully."""
