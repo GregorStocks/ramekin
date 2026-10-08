@@ -38,7 +38,7 @@ const USDA_JSON: &str = include_str!("data/usda.json");
 const FNDDS_JSON: &str = include_str!("data/fndds.json");
 pub const CURATED_JSON: &str = include_str!("data/curated.json");
 const BESPOKE_JSON: &str = include_str!("data/bespoke.json");
-const RULE_VERSION: &str = "catalog-v2";
+const RULE_VERSION: &str = "catalog-v3";
 
 /// A food from a pinned USDA release (SR Legacy, or FNDDS for foods SR Legacy
 /// lacks).
@@ -636,6 +636,14 @@ pub fn food(fdc_id: u32) -> Option<&'static UsdaFood> {
 /// six times the calories of the carton drink. Brand names and a bare
 /// "refrigerated" don't count, since canned coconut milk is often "refrigerated
 /// overnight".
+///
+/// A note saying the food is peeled ("peeled and cored") swaps a USDA food
+/// "with skin" or "with peel" for its peeled counterpart when USDA has one:
+/// the skin is discarded whenever the peeling happens. A note giving a fat or
+/// lean percentage ("at least 15% fat", "90/10") picks that blend of ground
+/// meat. "Drained" and "rinsed" are ignored: the amount is nearly always the
+/// can or net weight before draining, which the with-liquid food prices about
+/// right.
 pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
     static COOKED: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(r"(?i)^\s*(leftover\s+)?cooked\s*(\(.*\))?\s*$").unwrap()
@@ -665,7 +673,109 @@ pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
             _ => Resolution::Unresolved,
         };
     }
-    resolve(item)
+    let resolved = resolve(item);
+    let Resolution::Entry { entry, .. } = resolved else {
+        return resolved;
+    };
+    prepared_form(&entry.id, item, note.unwrap_or_default()).unwrap_or(resolved)
+}
+
+/// The food entry `id` names, in the state the line describes: peeled, or
+/// ground meat of a stated fat percentage. Both read the item as well as the
+/// note, since the parser can leave them there ("chopped peeled apples",
+/// "ground beef, 90% lean"). See `resolve_line`.
+fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
+    // A whole word, so "unpeeled" doesn't count.
+    static PEELED: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"(?i)\bpeeled\b").unwrap());
+    // "not peeled", "peeled only if desired": the skin may stay on. Checked
+    // within the clause naming peeled, so "peeled but not cored" is peeled.
+    static MAYBE_UNPEELED: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(
+            r"(?i)\b(not|never|no|without|unpeeled|if|optional|optionally)\b|n['’]t\b",
+        )
+        .unwrap()
+    });
+    // A clause that only makes the rest optional: "peeled, if desired",
+    // "peeled (optional)".
+    static OPTIONAL: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(
+            r"(?i)^\s*(if\s+(desired|preferred|you\s+(like|prefer|want))|optional(ly)?)\s*$",
+        )
+        .unwrap()
+    });
+    // The first group catches a range ("85-93% lean", "85% to 93% lean"),
+    // which names no blend.
+    static LEAN: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(
+            r"(?i)(\d\s*(?:%|percent)?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*(?:%|percent)\s*lean\b",
+        )
+        .unwrap()
+    });
+    static FAT: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(
+            r"(?i)(\d\s*(?:%|percent)?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*(?:%|percent)\s*fat\b",
+        )
+        .unwrap()
+    });
+    static RATIO: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"\b(\d{2})\s*/\s*(\d{1,2})\b").unwrap());
+    static REJECTED: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(r"(?i)\b(not|never|no|avoid|without)\b|n['’]t\b").unwrap()
+    });
+    static BLEND: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"\d+% lean meat / ?\d+% fat").unwrap());
+    // USDA names are also indexed without their "(includes foods for ...)".
+    let id = id.split(" (includes ").next().unwrap_or(id);
+    // Clauses from an alternative on ("or other ground beef, with around 20%
+    // fat") describe that food, not this one.
+    // The item and note are cut separately, so "apples, or pears" still
+    // reads a "peeled" note.
+    fn clauses_of(text: &str) -> impl Iterator<Item = &str> {
+        text.split([',', ';', '(', ')'])
+            .flat_map(|clause| clause.split(" but "))
+            .take_while(|clause| !clause.trim_start().to_lowercase().starts_with("or "))
+    }
+    let clauses = || clauses_of(item).chain(clauses_of(note));
+    let peeled = clauses()
+        .any(|clause| PEELED.is_match(clause) && !MAYBE_UNPEELED.is_match(clause))
+        && !clauses().any(|clause| OPTIONAL.is_match(clause));
+    let swapped = if peeled {
+        [("with skin", "without skin"), ("with peel", "peeled")]
+            .into_iter()
+            .find(|(unpeeled, _)| id.contains(unpeeled))
+            .map(|(unpeeled, peeled)| id.replace(unpeeled, peeled))
+    } else {
+        // "not 95% lean", "avoid 95% lean" rule a blend out.
+        let written = clauses()
+            .filter(|clause| !REJECTED.is_match(clause))
+            .collect::<Vec<_>>()
+            .join(";");
+        let percent = |re: &regex::Regex| {
+            let caps = re.captures(&written)?;
+            caps.get(1).is_none().then(|| caps[2].parse::<u32>().ok())?
+        };
+        let lean = percent(&LEAN)
+            .or_else(|| percent(&FAT).map(|fat| 100 - fat))
+            .or_else(|| {
+                let caps = RATIO.captures(&written)?;
+                let (lean, fat) = (caps[1].parse::<u32>().ok()?, caps[2].parse::<u32>().ok()?);
+                (lean + fat == 100).then_some(lean)
+            });
+        lean.filter(|_| BLEND.is_match(id)).map(|lean| {
+            BLEND
+                .replace(id, format!("{lean}% lean meat / {}% fat", 100 - lean))
+                .into_owned()
+        })
+    };
+    // Only that exact food: trimming "apples, raw, granny smith, without skin"
+    // would land back on unpeeled apples.
+    match resolve(&swapped?) {
+        resolved @ Resolution::Entry {
+            via: Via::Exact, ..
+        } => Some(resolved),
+        _ => None,
+    }
 }
 
 /// Grams per US cup for an ingredient line (see `resolve_line`).
