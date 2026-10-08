@@ -112,6 +112,12 @@ fn usable_headers<'a>(
         .fold(items[0], |acc, &item| common_ancestor(acc, item));
 
     headers[0] = leading_header(&tokens[..matched[0].start], container);
+    if headers.iter().enumerate().any(|(i, h)| {
+        h.as_ref()
+            .is_some_and(|h| is_inside_ingredient_row(h, &items, i))
+    }) {
+        return None;
+    }
     if has_unheaded_group_after_header(&items, &headers, container) {
         return None;
     }
@@ -266,7 +272,7 @@ fn leading_header<'a>(before: &[Token<'a>], container: ElementRef<'a>) -> Option
     let label_element = |t: &Token<'a>| heading_element(t.parent).unwrap_or(t.parent);
     let last_worded = before.iter().rposition(|t| !t.key.is_empty())?;
     let label = label_element(&before[last_worded]);
-    if !label.ancestors().any(|a| a.id() == container.id()) {
+    if !contains(container, label) || label == container {
         return None;
     }
     let first = before[..=last_worded]
@@ -282,6 +288,29 @@ fn heading_element(parent: ElementRef<'_>) -> Option<ElementRef<'_>> {
     std::iter::once(parent)
         .chain(parent.parent().and_then(ElementRef::wrap))
         .find(|el| HEADING_ELEMENTS.contains(&el.value().name()))
+}
+
+/// Bold text inside an ingredient's own row (`<li>1 cup flour <strong>King
+/// Arthur preferred</strong></li>`) is an annotation the structured line
+/// omitted, not a heading. Text inside an element that holds both neighbors
+/// (`<p>flour<br><b>Glaze</b><br>sugar</p>`) can still be one.
+fn is_inside_ingredient_row(
+    heading: &Heading<'_>,
+    items: &[ElementRef<'_>],
+    before: usize,
+) -> bool {
+    let prev = before.checked_sub(1).and_then(|i| items.get(i));
+    let next = items.get(before);
+    let row_only = |row: Option<&ElementRef<'_>>, other: Option<&ElementRef<'_>>| {
+        row.is_some_and(|row| {
+            contains(*row, heading.element) && !other.is_some_and(|other| contains(*row, *other))
+        })
+    };
+    row_only(prev, next) || row_only(next, prev)
+}
+
+fn contains(outer: ElementRef<'_>, inner: ElementRef<'_>) -> bool {
+    outer == inner || inner.ancestors().any(|a| a.id() == outer.id())
 }
 
 /// The flat ingredient text can't close a section, so an unheaded group that
@@ -438,6 +467,35 @@ mod tests {
         assert_eq!(
             recover(&["2 cups flour", "1 cup powdered sugar"], body).unwrap(),
             vec!["Dough:", "2 cups flour", "Glaze:", "1 cup powdered sugar"]
+        );
+    }
+
+    #[test]
+    fn bold_annotation_inside_an_ingredient_row_bails() {
+        let body = r#"
+            <ul>
+              <li>2 cups flour <strong>King Arthur preferred</strong></li>
+              <li>1 cup butter</li>
+            </ul>"#;
+        assert_eq!(recover(&["2 cups flour", "1 cup butter"], body), None);
+    }
+
+    #[test]
+    fn bold_label_leading_an_ingredient_row_bails() {
+        let body = r#"
+            <ul>
+              <li>2 cups flour</li>
+              <li><strong>Optional:</strong> 1 cup nuts</li>
+            </ul>"#;
+        assert_eq!(recover(&["2 cups flour", "1 cup nuts"], body), None);
+    }
+
+    #[test]
+    fn bold_heading_inside_a_shared_paragraph_is_kept() {
+        let body = r#"<p>2 cups flour<br><b>Glaze</b><br>1 cup powdered sugar</p>"#;
+        assert_eq!(
+            recover(&["2 cups flour", "1 cup powdered sugar"], body).unwrap(),
+            vec!["2 cups flour", "Glaze:", "1 cup powdered sugar"]
         );
     }
 
