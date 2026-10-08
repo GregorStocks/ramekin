@@ -45,6 +45,24 @@
         }
       }
     },
+    "blood orange juice": {
+      "pieces": {
+        "blood orange": {
+          "basis": "USDA SR Legacy 169098 (Orange juice, raw): juice of 1 orange (\"1 fruit yields\") = 86 g; a blood orange is an orange variety",
+          "grams": 86,
+          "url": "https://fdc.nal.usda.gov/food-details/169098/nutrients"
+        }
+      }
+    },
+    "blood orange zest": {
+      "pieces": {
+        "blood orange": {
+          "basis": "1 orange yields 1 to 1 1/2 tbsp zest (Baking Bites), taken as 1 1/4 tbsp; USDA SR Legacy orange peel is 96 g per cup, so 6 g per tbsp; a blood orange is an orange variety",
+          "grams": 7.5,
+          "url": "https://bakingbites.com/2017/01/how-much-zest-does-citrus-lemon-yield/"
+        }
+      }
+    },
     "broccoli": {
       "pieces": {
         "head large": {
@@ -172,6 +190,15 @@
         }
       }
     },
+    "grapefruit juice": {
+      "pieces": {
+        "grapefruit": {
+          "basis": "USDA SR Legacy 173039 (Grapefruit juice, white, raw): juice of 1 grapefruit (\"1 fruit yields\") = 196 g",
+          "grams": 196,
+          "url": "https://fdc.nal.usda.gov/food-details/173039/nutrients"
+        }
+      }
+    },
     "great northern beans": {
       "pieces": {
         "can": {
@@ -257,6 +284,15 @@
           "basis": "Parsley: '3-ounce bunch' (America's Test Kitchen, Our Handy Guide to Herb Yields)",
           "grams": 85,
           "url": "https://www.americastestkitchen.com/articles/3362-our-handy-guide-to-herb-yields"
+        }
+      }
+    },
+    "pink grapefruit juice": {
+      "pieces": {
+        "pink grapefruit": {
+          "basis": "USDA SR Legacy 167774 (Grapefruit juice, pink, raw): juice of 1 grapefruit (\"1 fruit yields\") = 196 g",
+          "grams": 196,
+          "url": "https://fdc.nal.usda.gov/food-details/167774/nutrients"
         }
       }
     },

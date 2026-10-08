@@ -89,15 +89,15 @@
     {
       "raw": "1 large grapefruit (juiced)",
       "expected": {
-        "item": "grapefruit",
+        "item": "grapefruit juice",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large grapefruit"
           }
         ],
-        "note": "juiced",
-        "category": "Produce"
+        "note": null,
+        "category": "Beverages"
       }
     },
     {

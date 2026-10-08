@@ -745,20 +745,25 @@ const PARTIAL_PIECES: [&str; 8] = [
 pub fn piece_unit(unit: &str) -> String {
     let unit = normalize(&unit.replace('-', " "));
     let (first, rest) = unit.split_once(' ').unwrap_or((&unit, ""));
-    let first = if let Some(stem) = first.strip_suffix("leaves") {
+    let first = singular(first);
+    if rest.is_empty() {
+        first
+    } else {
+        format!("{first} {rest}")
+    }
+}
+
+/// "leaves" is "leaf", "cloves" is "clove"; "glass" and "as" stay.
+fn singular(word: &str) -> String {
+    if let Some(stem) = word.strip_suffix("leaves") {
         format!("{stem}leaf")
-    } else if let Some(stem) = first
+    } else if let Some(stem) = word
         .strip_suffix('s')
         .filter(|stem| stem.chars().count() >= 3 && !stem.ends_with('s'))
     {
         stem.to_string()
     } else {
-        first.to_string()
-    };
-    if rest.is_empty() {
-        first
-    } else {
-        format!("{first} {rest}")
+        word.to_string()
     }
 }
 
@@ -777,11 +782,21 @@ pub fn grams_per_piece(entry: &Entry, unit: Option<&str>) -> Option<f64> {
     if let Some(&grams) = portions.get(&key) {
         return Some(grams);
     }
-    // A sized piece with no exact portion ("large lemon") is the piece.
+    // A sized piece with no exact portion ("large lemon") is the piece, and
+    // a many-word piece counts in the plural too ("blood oranges").
     let unsized_piece = SIZES
         .iter()
-        .find_map(|size| key.strip_prefix(size)?.strip_prefix(' '));
-    if let Some(&grams) = unsized_piece.and_then(|piece| portions.get(&piece_unit(piece))) {
+        .find_map(|size| key.strip_prefix(size)?.strip_prefix(' '))
+        .unwrap_or(&key);
+    let piece = piece_unit(unsized_piece);
+    let singular_piece = match piece.rsplit_once(' ') {
+        Some((head, last)) => format!("{head} {}", singular(last)),
+        None => piece.clone(),
+    };
+    if let Some(&grams) = portions
+        .get(&piece)
+        .or_else(|| portions.get(&singular_piece))
+    {
         return Some(grams);
     }
     if SIZES.contains(&key.as_str()) {
