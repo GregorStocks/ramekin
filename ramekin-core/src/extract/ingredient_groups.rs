@@ -19,7 +19,7 @@ const MAX_GAP_LETTERS: usize = 80;
 
 const SKIPPED_ELEMENTS: &[&str] = &["script", "style", "noscript", "template", "head"];
 
-const ROW_ELEMENTS: &[&str] = &["li", "tr", "dd"];
+const ROW_ELEMENTS: &[&str] = &["li", "tr", "dd", "p"];
 
 const HEADING_ELEMENTS: &[&str] = &["h1", "h2", "h3", "h4", "h5", "h6", "strong", "b"];
 
@@ -292,39 +292,46 @@ fn heading_element(parent: ElementRef<'_>) -> Option<ElementRef<'_>> {
         .find(|el| HEADING_ELEMENTS.contains(&el.value().name()))
 }
 
-/// Bold text inside an ingredient's own row (`<li>1 cup flour <strong>King
-/// Arthur preferred</strong></li>`) is an annotation the structured line
-/// omitted, not a heading. Text inside an element that holds both neighbors
+/// Bold text inside an ingredient's own row is an annotation the structured
+/// line omitted, not a heading: `<li>1 cup flour <strong>King Arthur
+/// preferred</strong></li>` or `<li><strong>Optional:</strong> 1 cup
+/// nuts</li>`. Text inside an element that holds both neighbors
 /// (`<p>flour<br><b>Glaze</b><br>sugar</p>`) can still be one.
 fn is_inside_ingredient_row(
     heading: &Heading<'_>,
     items: &[ElementRef<'_>],
     before: usize,
 ) -> bool {
-    let prev = before.checked_sub(1).and_then(|i| items.get(i).copied());
-    let next = items.get(before).copied();
-    let row_only = |item: Option<ElementRef<'_>>, other: Option<ElementRef<'_>>| {
-        item.is_some_and(|item| {
-            let row = ingredient_row(item, items);
-            contains(row, heading.element) && !other.is_some_and(|other| contains(row, other))
-        })
-    };
-    row_only(prev, next) || row_only(next, prev)
+    // Nothing that follows an ingredient inside a wrapper of its own can
+    // introduce the next group, whatever the wrapper is.
+    let after_prev = before.checked_sub(1).is_some_and(|prev| {
+        own_wrappers(prev, items)
+            .last()
+            .is_some_and(|&wrapper| contains(wrapper, heading.element))
+    });
+    // Before an ingredient it's ambiguous: a `<div>` holding a heading and one
+    // ingredient is a group (ATK), so only list-like rows count there.
+    let before_next = before < items.len()
+        && own_wrappers(before, items)
+            .into_iter()
+            .find(|el| ROW_ELEMENTS.contains(&el.value().name()))
+            .is_some_and(|row| contains(row, heading.element));
+    after_prev || before_next
 }
 
-/// The list row that holds `item` alone, e.g. the `<li>` around
-/// `<li><strong>Optional:</strong> <span>1 cup nuts</span></li>`. Falls back
-/// to the item itself when there's no such row.
-fn ingredient_row<'a>(item: ElementRef<'a>, items: &[ElementRef<'a>]) -> ElementRef<'a> {
+/// `item` and its ancestors that hold no other matched ingredient, innermost
+/// first.
+fn own_wrappers<'a>(index: usize, items: &[ElementRef<'a>]) -> Vec<ElementRef<'a>> {
+    let item = items[index];
     std::iter::once(item)
         .chain(item.ancestors().filter_map(ElementRef::wrap))
         .take_while(|el| {
             items
                 .iter()
-                .all(|&other| other == item || !contains(*el, other))
+                .enumerate()
+                .all(|(i, &other)| i == index || !contains(*el, other))
         })
-        .find(|el| ROW_ELEMENTS.contains(&el.value().name()))
-        .unwrap_or(item)
+        .collect()
 }
 
 fn contains(outer: ElementRef<'_>, inner: ElementRef<'_>) -> bool {
@@ -516,6 +523,14 @@ mod tests {
               <li><strong>Optional:</strong><span>1 cup nuts</span></li>
             </ul>"#;
         assert_eq!(recover(&["2 cups flour", "1 cup nuts"], body), None);
+    }
+
+    #[test]
+    fn bold_annotation_after_a_wrapped_ingredient_bails() {
+        let body = r#"
+            <p><span>2 cups flour</span><strong>King Arthur preferred</strong></p>
+            <div><span>1 cup butter</span></div>"#;
+        assert_eq!(recover(&["2 cups flour", "1 cup butter"], body), None);
     }
 
     #[test]
