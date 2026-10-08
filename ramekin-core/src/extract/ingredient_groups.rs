@@ -227,7 +227,7 @@ fn find_next_line(tokens: &[Token<'_>], from: usize, key: &str) -> Option<Matche
         if let Some(end) = match_run(tokens, start, key) {
             return Some(MatchedLine { start, end });
         }
-        gap_letters += tokens[start].key.len();
+        gap_letters += tokens[start].key.chars().count();
         if gap_letters > MAX_GAP_LETTERS {
             return None;
         }
