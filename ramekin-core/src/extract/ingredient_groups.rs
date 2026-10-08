@@ -29,6 +29,12 @@ struct Token<'a> {
     parent: ElementRef<'a>,
 }
 
+/// A heading found between ingredients, with the element its text sits in.
+struct Heading<'a> {
+    name: String,
+    element: ElementRef<'a>,
+}
+
 /// A structured ingredient line found on the page as tokens `start..end`.
 struct MatchedLine {
     start: usize,
@@ -86,12 +92,12 @@ pub(super) fn recover_ingredient_headers(ingredients: &str, document: &Html) -> 
 
 /// The header line (if any) to insert before each matched line, or `None` if
 /// this copy of the list has no headings we can safely use.
-fn usable_headers(
-    tokens: &[Token<'_>],
+fn usable_headers<'a>(
+    tokens: &[Token<'a>],
     matched: &[MatchedLine],
-    mut headers: Vec<Option<String>>,
+    mut headers: Vec<Option<Heading<'a>>>,
 ) -> Option<Vec<Option<String>>> {
-    let items: Vec<ElementRef<'_>> = matched
+    let items: Vec<ElementRef<'a>> = matched
         .iter()
         .map(|m| {
             tokens[m.start + 1..m.end]
@@ -106,9 +112,12 @@ fn usable_headers(
         .fold(items[0], |acc, &item| common_ancestor(acc, item));
 
     headers[0] = leading_header(&tokens[..matched[0].start], container);
+    if has_unheaded_group_after_header(&items, &headers, container) {
+        return None;
+    }
     let header_lines: Vec<Option<String>> = headers
         .into_iter()
-        .map(|h| h.map(|name| format!("{name}:")))
+        .map(|h| h.map(|h| format!("{}:", h.name)))
         .collect();
     if header_lines.iter().all(Option::is_none) {
         return None;
@@ -121,9 +130,6 @@ fn usable_headers(
         .flatten()
         .any(|h| detect_section_header(h).is_none())
     {
-        return None;
-    }
-    if has_unheaded_group_after_header(&items, &header_lines, container) {
         return None;
     }
     Some(header_lines)
@@ -171,11 +177,11 @@ fn tokenize(document: &Html) -> Vec<Token<'_>> {
 /// Find every line's tokens, in order, with the first line starting at token
 /// `start`. Returns the matches plus the heading (if any) in the gap before
 /// each line; the slot for the first line is left `None` for the caller.
-fn match_lines_from(
-    tokens: &[Token<'_>],
+fn match_lines_from<'a>(
+    tokens: &[Token<'a>],
     keys: &[String],
     start: usize,
-) -> Option<(Vec<MatchedLine>, Vec<Option<String>>)> {
+) -> Option<(Vec<MatchedLine>, Vec<Option<Heading<'a>>>)> {
     let end = match_run(tokens, start, &keys[0])?;
     let mut matched = vec![MatchedLine { start, end }];
     let mut headers = vec![None];
@@ -224,7 +230,7 @@ fn find_next_line(tokens: &[Token<'_>], from: usize, key: &str) -> Option<Matche
 /// Classify the tokens between two ingredients: `Ok(None)` for letterless
 /// junk (checkboxes, bullets, amounts), `Ok(Some(_))` for a single heading,
 /// `Err` for anything else.
-fn gap_header(gap: &[Token<'_>]) -> Result<Option<String>, ()> {
+fn gap_header<'a>(gap: &[Token<'a>]) -> Result<Option<Heading<'a>>, ()> {
     let worded: Vec<&Token<'_>> = gap.iter().filter(|t| !t.key.is_empty()).collect();
     let Some(first) = worded.first() else {
         return Ok(None);
@@ -244,14 +250,17 @@ fn gap_header(gap: &[Token<'_>]) -> Result<Option<String>, ()> {
     if key.is_empty() || key == "ingredients" || name.chars().count() > MAX_HEADER_CHARS {
         return Err(());
     }
-    Ok(Some(name.to_string()))
+    Ok(Some(Heading {
+        name: name.to_string(),
+        element: first.parent,
+    }))
 }
 
 /// The heading right before the first ingredient, if it belongs to the list.
 /// Only the closest heading counts, and it must sit inside the element that
 /// holds every ingredient, so list titles ("Ingredients") and controls above
 /// the list (unit toggles, scaling buttons) are skipped.
-fn leading_header(before: &[Token<'_>], container: ElementRef<'_>) -> Option<String> {
+fn leading_header<'a>(before: &[Token<'a>], container: ElementRef<'a>) -> Option<Heading<'a>> {
     let last_worded = before.iter().rposition(|t| !t.key.is_empty())?;
     let heading = heading_element(before[last_worded].parent)?;
     if !heading.ancestors().any(|a| a.id() == container.id()) {
@@ -274,19 +283,25 @@ fn heading_element(parent: ElementRef<'_>) -> Option<ElementRef<'_>> {
 
 /// The flat ingredient text can't close a section, so an unheaded group that
 /// follows a headed one would be filed under the earlier heading. When the page
-/// really groups its ingredients (some group holds several), require a heading
+/// really groups its ingredients (some group holds several, or a heading sits
+/// inside the same wrapper as the ingredient it introduces), require a heading
 /// at every group change once headings have started.
 fn has_unheaded_group_after_header(
     items: &[ElementRef<'_>],
-    headers: &[Option<String>],
+    headers: &[Option<Heading<'_>>],
     container: ElementRef<'_>,
 ) -> bool {
     let groups: Vec<_> = items
         .iter()
         .map(|&item| group_of(item, container))
         .collect();
-    let grouped = groups.windows(2).any(|w| w[0].is_some() && w[0] == w[1]);
-    if !grouped {
+    let shared_group = groups.windows(2).any(|w| w[0].is_some() && w[0] == w[1]);
+    let wrapped_heading = headers.iter().zip(&groups).any(|(header, group)| {
+        header
+            .as_ref()
+            .is_some_and(|h| group.is_some() && group_of(h.element, container) == *group)
+    });
+    if !(shared_group || wrapped_heading) {
         return false;
     }
     let mut seen_header = false;
@@ -396,6 +411,16 @@ mod tests {
             ),
         );
         assert_eq!(recover(ATK_INGREDIENTS, &body), None);
+    }
+
+    #[test]
+    fn unheaded_singleton_group_after_headed_one_bails() {
+        let body = format!(
+            r#"<div class="list">{}{}</div>"#,
+            atk_group(Some("Onion"), &["1 red onion, halved and sliced thin"]),
+            atk_group(None, &["⅓ cup sugar"]),
+        );
+        assert_eq!(recover(&ATK_INGREDIENTS[..2], &body), None);
     }
 
     #[test]
