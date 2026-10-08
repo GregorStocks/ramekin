@@ -316,6 +316,11 @@ fn split_sized_measure(size: &str, after_size: &str) -> Option<(String, String)>
     let rest = strip_leading_of_article(&after_measure)
         .map(str::to_string)
         .unwrap_or(after_measure);
+    // "2 large pinches (of saffron)": the food went to the note, so the
+    // measure stays as the item rather than leave it empty.
+    if rest.trim().is_empty() {
+        return None;
+    }
     Some((format!("{size} {measure}"), rest))
 }
 
@@ -2528,6 +2533,11 @@ mod tests {
         assert_eq!(
             measurements(&parsed),
             vec![(Some("1"), Some("large bunch"))]
+        );
+
+        assert_eq!(
+            parse_ingredient("2 large pinches (of Spanish saffron threads)").item,
+            "pinches"
         );
 
         let parsed = parse_ingredient("1/2 of a small head of garlic");

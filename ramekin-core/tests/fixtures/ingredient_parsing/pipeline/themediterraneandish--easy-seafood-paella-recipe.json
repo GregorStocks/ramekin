@@ -88,15 +88,15 @@
     {
       "raw": "2  large pinches  (of Spanish saffron threads soaked in 1/2 cup water)",
       "expected": {
-        "item": "2  large pinches  (of Spanish saffron threads soaked in 1/2 cup water)",
+        "item": "pinches",
         "measurements": [
           {
             "amount": "2",
-            "unit": "large pinches"
+            "unit": "large"
           }
         ],
         "note": "of Spanish saffron threads soaked in 1/2 cup water",
-        "category": "Spices & Seasonings"
+        "category": "Other"
       }
     },
     {
