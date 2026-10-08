@@ -130,11 +130,11 @@
     {
       "raw": "1 medium head iceberg lettuce (about 1 pound)",
       "expected": {
-        "item": "head iceberg lettuce",
+        "item": "iceberg lettuce",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium head"
           },
           {
             "amount": "1",

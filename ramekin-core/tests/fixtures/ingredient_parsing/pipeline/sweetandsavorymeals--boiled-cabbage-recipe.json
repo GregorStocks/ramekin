@@ -5,11 +5,11 @@
     {
       "raw": "1  medium head cabbage",
       "expected": {
-        "item": "head cabbage",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium head"
           }
         ],
         "note": null,

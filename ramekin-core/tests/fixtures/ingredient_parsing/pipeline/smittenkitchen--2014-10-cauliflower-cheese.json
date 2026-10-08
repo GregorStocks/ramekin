@@ -70,11 +70,11 @@
     {
       "raw": "1 medium head (about 2 to 2 1/4 pounds) cauliflower",
       "expected": {
-        "item": "head cauliflower",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium head"
           },
           {
             "amount": "2 to 2.25",

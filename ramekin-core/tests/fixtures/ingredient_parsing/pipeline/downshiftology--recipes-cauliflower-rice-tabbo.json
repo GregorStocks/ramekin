@@ -5,11 +5,11 @@
     {
       "raw": "1/2  medium head of cauliflower (riced (approx 4 cups))",
       "expected": {
-        "item": "head of cauliflower",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": "medium"
+            "unit": "medium head"
           }
         ],
         "note": "riced (approx 4 cups)",

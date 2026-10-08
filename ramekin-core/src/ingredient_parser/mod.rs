@@ -299,8 +299,25 @@ fn is_standalone_parenthetical_package_fragment(s: &str) -> bool {
         || is_bare_parenthetical_package_size(content)
 }
 
-/// Loose measures a size word can modify ("small handful", "large bunch").
-const SIZEABLE_MEASURES: &[&str] = &["handful", "bunch", "pinch"];
+/// Measures a size word can modify ("small handful", "large bunch", "small
+/// head").
+const SIZEABLE_MEASURES: &[&str] = &["handful", "bunch", "pinch", "head"];
+
+/// "Small handful rosemary", "small head of garlic": a size before a measure
+/// sizes the measure, not the food. Returns the sized measure and the text
+/// after it.
+fn split_sized_measure(size: &str, after_size: &str) -> Option<(String, String)> {
+    if !is_size_unit(size) {
+        return None;
+    }
+    let (measure, after_measure) = extract_unit(after_size);
+    let measure =
+        measure.filter(|measure| SIZEABLE_MEASURES.contains(&normalize_unit(measure).as_str()))?;
+    let rest = strip_leading_of_article(&after_measure)
+        .map(str::to_string)
+        .unwrap_or(after_measure);
+    Some((format!("{size} {measure}"), rest))
+}
 
 /// Leading words that say how a food is packed or how good it is, never
 /// which food it is. Longer phrases first.
@@ -754,16 +771,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         extract_unit(&remaining)
     };
 
-    // "Small handful rosemary": a size before a loose measure sizes the
-    // measure, not the food.
-    if base_unit.as_deref().is_some_and(is_size_unit) {
-        let (sized_unit, after_sized_unit) = extract_unit(&after_unit);
-        if let (Some(size), Some(sized_unit)) = (base_unit.as_deref(), sized_unit) {
-            if SIZEABLE_MEASURES.contains(&normalize_unit(&sized_unit).as_str()) {
-                base_unit = Some(format!("{size} {sized_unit}"));
-                after_unit = after_sized_unit;
-            }
-        }
+    if let Some((sized_measure, after_measure)) = base_unit
+        .as_deref()
+        .and_then(|size| split_sized_measure(size, &after_unit))
+    {
+        base_unit = Some(sized_measure);
+        after_unit = after_measure;
     }
 
     // Step 4a: Handle "N unit container" compound units (e.g., "14 ounce can")
@@ -798,9 +811,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             remaining = after_of.to_string();
             // "1/2 of a small onion": the size after the article is the unit.
             let (size, after_size) = extract_unit(&remaining);
-            if size.as_deref().is_some_and(is_size_unit) {
-                base_unit = size;
-                remaining = after_size;
+            if let Some(size) = size.filter(|size| is_size_unit(size)) {
+                (base_unit, remaining) = match split_sized_measure(&size, &after_size) {
+                    Some((sized_measure, after_measure)) => (Some(sized_measure), after_measure),
+                    None => (Some(size), after_size),
+                };
             }
         }
     }
@@ -2513,6 +2528,13 @@ mod tests {
         assert_eq!(
             measurements(&parsed),
             vec![(Some("1"), Some("large bunch"))]
+        );
+
+        let parsed = parse_ingredient("1/2 of a small head of garlic");
+        assert_eq!(parsed.item, "garlic");
+        assert_eq!(
+            measurements(&parsed),
+            vec![(Some("1/2"), Some("small head"))]
         );
 
         // A size before the food stays the unit.

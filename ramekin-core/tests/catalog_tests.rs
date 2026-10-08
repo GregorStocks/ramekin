@@ -1025,6 +1025,9 @@ fn curated_pieces_fill_counts_usda_lacks() {
     assert_eq!(piece("blood orange zest", Some("blood orange")), Some(7.5));
     // A sized piece with no exact portion is the piece.
     assert_eq!(piece("lemon juice", Some("large lemon")), Some(48.0));
+    // A sized piece uses the portion at that size.
+    assert_eq!(piece("cauliflower", Some("small head")), Some(265.0));
+    assert_eq!(piece("cabbage", Some("large heads")), Some(1248.0));
     assert_eq!(piece("orange zest", Some("extra-large oranges")), Some(7.5));
     assert_eq!(
         piece("grapefruit juice", Some("large grapefruit")),
