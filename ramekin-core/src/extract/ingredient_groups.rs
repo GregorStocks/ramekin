@@ -70,8 +70,27 @@ pub(super) fn recover_ingredient_headers(ingredients: &str, document: &Html) -> 
     }
 
     let tokens = tokenize(document);
-    let (matched, mut headers) = find_lines(&tokens, &keys)?;
+    // A page can render the list more than once (e.g. an ungrouped summary
+    // before the grouped card), so keep looking past copies without headings.
+    let header_lines = (0..tokens.len())
+        .filter_map(|start| match_lines_from(&tokens, &keys, start))
+        .find_map(|(matched, headers)| usable_headers(&tokens, &matched, headers))?;
 
+    let mut out = Vec::with_capacity(lines.len() + header_lines.len());
+    for (line, header) in lines.iter().zip(header_lines) {
+        out.extend(header);
+        out.push((*line).to_string());
+    }
+    Some(out.join("\n"))
+}
+
+/// The header line (if any) to insert before each matched line, or `None` if
+/// this copy of the list has no headings we can safely use.
+fn usable_headers(
+    tokens: &[Token<'_>],
+    matched: &[MatchedLine],
+    mut headers: Vec<Option<String>>,
+) -> Option<Vec<Option<String>>> {
     let items: Vec<ElementRef<'_>> = matched
         .iter()
         .map(|m| {
@@ -107,13 +126,7 @@ pub(super) fn recover_ingredient_headers(ingredients: &str, document: &Html) -> 
     if has_unheaded_group_after_header(&items, &header_lines, container) {
         return None;
     }
-
-    let mut out = Vec::with_capacity(lines.len() + header_lines.len());
-    for (line, header) in lines.iter().zip(header_lines) {
-        out.extend(header);
-        out.push((*line).to_string());
-    }
-    Some(out.join("\n"))
+    Some(header_lines)
 }
 
 fn is_header_line(line: &str) -> bool {
@@ -155,33 +168,24 @@ fn tokenize(document: &Html) -> Vec<Token<'_>> {
         .collect()
 }
 
-/// Find every line's tokens, in order, trying each plausible start for the
-/// first line. Returns the matches plus the heading (if any) in the gap before
+/// Find every line's tokens, in order, with the first line starting at token
+/// `start`. Returns the matches plus the heading (if any) in the gap before
 /// each line; the slot for the first line is left `None` for the caller.
-fn find_lines(
+fn match_lines_from(
     tokens: &[Token<'_>],
     keys: &[String],
+    start: usize,
 ) -> Option<(Vec<MatchedLine>, Vec<Option<String>>)> {
-    'start: for start in 0..tokens.len() {
-        let Some(end) = match_run(tokens, start, &keys[0]) else {
-            continue;
-        };
-        let mut matched = vec![MatchedLine { start, end }];
-        let mut headers = vec![None];
-        for key in &keys[1..] {
-            let gap_start = matched.last().map_or(0, |m| m.end);
-            let Some(next) = find_next_line(tokens, gap_start, key) else {
-                continue 'start;
-            };
-            let Ok(header) = gap_header(&tokens[gap_start..next.start]) else {
-                continue 'start;
-            };
-            headers.push(header);
-            matched.push(next);
-        }
-        return Some((matched, headers));
+    let end = match_run(tokens, start, &keys[0])?;
+    let mut matched = vec![MatchedLine { start, end }];
+    let mut headers = vec![None];
+    for key in &keys[1..] {
+        let gap_start = matched.last().map_or(0, |m| m.end);
+        let next = find_next_line(tokens, gap_start, key)?;
+        headers.push(gap_header(&tokens[gap_start..next.start]).ok()?);
+        matched.push(next);
     }
-    None
+    Some((matched, headers))
 }
 
 /// Match `key` against consecutive tokens starting at `start`.
@@ -527,6 +531,21 @@ mod tests {
         assert_eq!(
             recipe.ingredients,
             "Pickles:\n1 red onion , sliced\nSauce:\n1/2 cup mayonnaise"
+        );
+    }
+
+    #[test]
+    fn ungrouped_copy_before_grouped_list_is_skipped() {
+        let body = r#"
+            <ul class="summary"><li>2 cups flour</li><li>1 cup butter</li></ul>
+            <ul class="card">
+              <li>2 cups flour</li>
+              <li><strong>Frosting</strong></li>
+              <li>1 cup butter</li>
+            </ul>"#;
+        assert_eq!(
+            recover(&["2 cups flour", "1 cup butter"], body).unwrap(),
+            vec!["2 cups flour", "Frosting:", "1 cup butter"]
         );
     }
 
