@@ -349,6 +349,20 @@ fn negligible_lines_are_known_zero() {
     assert_eq!(known(ingredient("ground cumin", "1", "pinch")), 0.0);
     assert_eq!(known(ingredient("saffron", "1", "large pinch")), 0.0);
     assert_eq!(known(ingredient("kosher salt", "1", "small pinch")), 0.0);
+    assert_eq!(known(ingredient("saffron", "1", "extra-large pinch")), 0.0);
+    // A quality word after a package weight leaves the weight leading the note.
+    let can = |raw: &str| {
+        let parsed = ramekin_core::ingredient_parser::parse_ingredient(raw);
+        estimate(&[parsed], None, 1.0)
+            .unwrap()
+            .known_calories
+            .unwrap()
+            .min
+    };
+    assert_eq!(
+        can("1 (28-ounce) can good quality whole tomatoes"),
+        can("1 (28-ounce) can whole tomatoes")
+    );
     assert_eq!(known(ingredient("cayenne", "a few", "shakes")), 0.0);
     // Compounds whose every food is negligible on the line.
     assert_eq!(known(bare("salt and pepper")), 0.0);

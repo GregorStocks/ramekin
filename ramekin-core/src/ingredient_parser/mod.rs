@@ -1445,10 +1445,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
     // Step 5.9: "packed dark-brown sugar", "good quality dark chocolate": how
     // the food is packed or how good it is goes to the note. It stays off the
-    // unit so "1 cup" still converts by volume.
+    // unit so "1 cup" still converts by volume, and goes last so a package
+    // weight ("28-ounce") still leads the note.
     if let Some((qualifier, item_part)) = split_leading_item_qualifier(&remaining) {
         note = Some(match note {
-            Some(existing) => format!("{qualifier}, {existing}"),
+            Some(existing) => format!("{existing}, {qualifier}"),
             None => qualifier.to_string(),
         });
         remaining = item_part.to_string();
@@ -2496,7 +2497,7 @@ mod tests {
             (
                 "6 ounces good quality dark chocolate (70-75%), finely chopped",
                 "dark chocolate",
-                "good quality, 70-75%, finely chopped",
+                "70-75%, finely chopped, good quality",
             ),
             (
                 "good quality kitchen shears",

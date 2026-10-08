@@ -221,13 +221,19 @@ fn has_no_amount(ingredient: &ParsedIngredient) -> bool {
     })
 }
 
-/// A trace unit, sized or not ("pinch", "large pinch").
+/// A trace unit, sized or not ("pinch", "large pinch", "extra-large pinch").
 fn is_trace_unit(unit: &str) -> bool {
     let unit = normalize(unit);
-    let unsized_unit = ["small ", "medium ", "large "]
-        .iter()
-        .find_map(|size| unit.strip_prefix(size))
-        .unwrap_or(&unit);
+    let unsized_unit = [
+        "small ",
+        "medium ",
+        "large ",
+        "extra-large ",
+        "extra large ",
+    ]
+    .iter()
+    .find_map(|size| unit.strip_prefix(size))
+    .unwrap_or(&unit);
     TRACE_UNITS.contains(&unsized_unit)
 }
 
