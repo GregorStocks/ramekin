@@ -1,0 +1,17 @@
+{
+  "title": "Ingredient parser: fold a parenthesized inch size into the piece unit",
+  "description": "\"1 (1 1/2-inch) piece fresh ginger\" (also 1-, 2-, 3-, 4- and 5-inch variants in the fixtures) parses as unit \"piece\" with the size in the note (\"1 1/2-inch\"), because parenthetical extraction moves the size out before units.rs try_extract_inch_piece_unit runs. \
+Ginger has no generic piece or default portion, so nutrition reports Unsupported quantity unit, though nutrition::inch_piece_grams could weigh \"1 1/2-inch piece\" from the 1-inch portion. \
+Fix: when a parenthetical is only an inch size and the text right after it starts with a piece noun (piece/chunk/knob/hunk), join them into the unit (\"1 1/2-inch piece\") instead of a note, much as nutrition::noted_package_unit already does for \"2 (15-ounce) cans\". \
+Raised in review of #785. \
+Expect intentional data/ diffs from make pipeline.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+    "nutrition",
+  ],
+  "created_at": "2026-10-08T11:00:00-07:00",
+  "updated_at": "2026-10-08T11:00:00-07:00",
+}
