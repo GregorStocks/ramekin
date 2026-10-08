@@ -21,11 +21,15 @@
       "section": null
     },
     {
-      "item": "small or 1/4 of a large white onion",
+      "item": "white onion",
       "measurements": [
         {
           "amount": "0.5",
-          "unit": null
+          "unit": "small"
+        },
+        {
+          "amount": "0.25",
+          "unit": "large"
         }
       ],
       "note": null,

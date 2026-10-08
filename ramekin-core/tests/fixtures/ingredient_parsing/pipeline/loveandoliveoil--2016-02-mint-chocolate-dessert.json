@@ -33,14 +33,14 @@
     {
       "raw": "4 ounces good quality dark chocolate (60%), about 2/3 cup of chips, callets or finely chopped chocolate",
       "expected": {
-        "item": "good quality dark chocolate",
+        "item": "dark chocolate",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": "60%, about 2/3 cup of chips, callets or finely chopped chocolate",
+        "note": "good quality, 60%, about 2/3 cup of chips, callets or finely chopped chocolate",
         "category": "Baking"
       }
     },

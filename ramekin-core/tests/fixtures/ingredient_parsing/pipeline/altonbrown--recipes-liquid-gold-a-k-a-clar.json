@@ -5,14 +5,14 @@
     {
       "raw": "1 pound high-quality butter",
       "expected": {
-        "item": "high-quality butter",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "high-quality",
         "category": "Dairy & Eggs"
       }
     }

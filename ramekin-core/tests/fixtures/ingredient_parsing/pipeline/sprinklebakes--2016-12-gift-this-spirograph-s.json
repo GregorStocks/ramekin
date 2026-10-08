@@ -51,11 +51,15 @@
     {
       "raw": "1/2 lb. two US sticks unsalted butter",
       "expected": {
-        "item": "two US sticks unsalted butter",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "lb"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
           }
         ],
         "note": null,

@@ -154,11 +154,11 @@
     {
       "raw": "1 7-ounce container plain Greek yogurt (about 3/4 cup)",
       "expected": {
-        "item": "7-ounce container plain Greek yogurt",
+        "item": "plain Greek yogurt",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "7-ounce container"
           },
           {
             "amount": "0.75",

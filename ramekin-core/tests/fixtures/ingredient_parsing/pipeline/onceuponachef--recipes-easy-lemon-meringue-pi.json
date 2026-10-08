@@ -79,14 +79,14 @@
     {
       "raw": "1 teaspoon packed finely grated lemon zest, from 1 lemon",
       "expected": {
-        "item": "packed finely grated lemon zest",
+        "item": "finely grated lemon zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "from 1 lemon",
+        "note": "packed, from 1 lemon",
         "category": "Produce"
       }
     },

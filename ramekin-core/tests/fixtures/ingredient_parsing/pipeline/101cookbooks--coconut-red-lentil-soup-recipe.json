@@ -197,11 +197,11 @@
     {
       "raw": "one small handful  chopped cilantro (and/or lots of kale chips)",
       "expected": {
-        "item": "handful  chopped cilantro",
+        "item": "chopped cilantro",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": "and/or lots of kale chips",

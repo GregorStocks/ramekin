@@ -75,28 +75,28 @@
     {
       "raw": "1/2 cup packed culantro (see notes)",
       "expected": {
-        "item": "packed culantro",
+        "item": "culantro",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "see notes",
+        "note": "packed, see notes",
         "category": "Produce"
       }
     },
     {
       "raw": "1/4 cup packed mint leaves",
       "expected": {
-        "item": "packed mint leaves",
+        "item": "mint leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

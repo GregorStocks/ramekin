@@ -383,14 +383,14 @@
     {
       "raw": "1 teaspoon good-quality saffron (soaked in 3 tbsp of hot water or warm milk)",
       "expected": {
-        "item": "good-quality saffron",
+        "item": "saffron",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "soaked in 3 tbsp of hot water or warm milk",
+        "note": "good-quality, soaked in 3 tbsp of hot water or warm milk",
         "category": "Spices & Seasonings"
       }
     },

@@ -49,11 +49,15 @@
       "section": null
     },
     {
-      "item": "or 2 regular carrots",
+      "item": "regular carrots",
       "measurements": [
         {
           "amount": "1",
           "unit": "large"
+        },
+        {
+          "amount": "2",
+          "unit": null
         }
       ],
       "note": "diced",

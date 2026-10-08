@@ -369,11 +369,11 @@
     {
       "raw": "small  handful  of spinach",
       "expected": {
-        "item": "handful  of spinach",
+        "item": "spinach",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": null,

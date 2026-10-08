@@ -19,14 +19,14 @@
     {
       "raw": "1 1/2 cups packed brown sugar",
       "expected": {
-        "item": "packed brown sugar",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

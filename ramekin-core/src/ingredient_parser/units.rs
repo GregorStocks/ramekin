@@ -116,6 +116,13 @@ pub(super) const UNITS_RAW: &[&str] = &[
     "xl",
 ];
 
+/// Size descriptors that act like units ("1 large onion"), in canonical form.
+const SIZE_UNITS: &[&str] = &["small", "medium", "large", "extra-large"];
+
+pub(super) fn is_size_unit(unit: &str) -> bool {
+    SIZE_UNITS.contains(&normalize_unit_base(unit.trim()).to_lowercase().as_str())
+}
+
 /// Map of unit variations to their canonical forms.
 /// Used by normalize_unit() to standardize units after parsing.
 pub(super) static UNIT_CANONICAL_MAP: LazyLock<HashMap<&'static str, &'static str>> =
@@ -238,8 +245,14 @@ pub(super) fn strip_measurement_modifier(s: &str) -> (Option<String>, String) {
     for &modifier in MEASUREMENT_MODIFIERS {
         if s_lower.trim().starts_with(modifier) {
             if let Some(after) = s_trimmed.get(modifier.len()..) {
+                // "good quality chocolate" names how good the food is, not a
+                // generous measure.
+                let names_quality = after
+                    .trim_start()
+                    .get(..7)
+                    .is_some_and(|word| word.eq_ignore_ascii_case("quality"));
                 // Make sure it's a word boundary (followed by space or end)
-                if after.is_empty() || after.starts_with(char::is_whitespace) {
+                if (after.is_empty() || after.starts_with(char::is_whitespace)) && !names_quality {
                     return (Some(modifier.to_string()), after.trim().to_string());
                 }
             }
@@ -371,9 +384,73 @@ pub(super) fn try_extract_hyphenated_unit_tail(
 
 /// Container types that can form compound units like "14 ounce can"
 pub(super) const CONTAINERS: &[&str] = &[
-    "packages", "package", "bottles", "bottle", "boxes", "cans", "jars", "bags", "box", "can",
-    "jar", "bag", "pkgs", "pkg",
+    "packages",
+    "package",
+    "bottles",
+    "bottle",
+    "boxes",
+    "cans",
+    "jars",
+    "bags",
+    "box",
+    "can",
+    "jar",
+    "bag",
+    "pkgs",
+    "pkg",
+    "containers",
+    "container",
 ];
+
+/// A container or packet that holds the food ("can", "packet", "envelope").
+pub(super) fn is_package_noun(word: &str) -> bool {
+    let lower = word.to_lowercase();
+    CONTAINERS.contains(&lower.as_str())
+        || [
+            "packet",
+            "packets",
+            "envelope",
+            "envelopes",
+            "sachet",
+            "sachets",
+        ]
+        .contains(&lower.as_str())
+}
+
+/// Nouns for a piece cut to a size in inches ("3-inch piece", "3-4 inch chunk").
+const INCH_PIECE_NOUNS: &[&str] = &[
+    "piece", "pieces", "chunk", "chunks", "knob", "knobs", "hunk", "hunks",
+];
+
+/// A size in inches before a piece noun, as the unit: "3-inch piece",
+/// "3-4 inch chunk", "1 1/2-inch knob". The size is a number or a range.
+fn try_extract_inch_piece_unit(words: &[&str]) -> Option<(String, String)> {
+    let is_size = |size: &str| !size.is_empty() && size.split('-').all(is_amount_like);
+    let first_lower = words.first()?.to_lowercase();
+    let noun_index = match first_lower.strip_suffix("-inch") {
+        Some(size) if is_size(size) => 1,
+        _ if is_size(&first_lower)
+            && words
+                .get(1)
+                .is_some_and(|word| ["inch", "inches"].contains(&word.to_lowercase().as_str())) =>
+        {
+            2
+        }
+        _ => return None,
+    };
+    let noun = words.get(noun_index)?;
+    if !INCH_PIECE_NOUNS.contains(&noun.to_lowercase().as_str()) {
+        return None;
+    }
+    let mut rest = &words[noun_index + 1..];
+    if rest
+        .first()
+        .is_some_and(|word| word.eq_ignore_ascii_case("of"))
+    {
+        rest = &rest[1..];
+    }
+    Some((words[..=noun_index].join(" "), rest.join(" ")))
+}
 
 /// Weight/volume units that can precede containers in compound units
 pub(super) const WEIGHT_UNITS_FOR_COMPOUND: &[&str] = &[
@@ -404,6 +481,10 @@ pub(super) fn try_extract_compound_unit(s: &str) -> Option<(String, String)> {
 
     if words.is_empty() {
         return None;
+    }
+
+    if let Some(inch_piece) = try_extract_inch_piece_unit(&words) {
+        return Some(inch_piece);
     }
 
     // Check for hyphenated form first: "28-oz." or "14-ounce" followed by container

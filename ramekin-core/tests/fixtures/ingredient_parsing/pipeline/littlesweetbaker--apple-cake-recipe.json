@@ -83,7 +83,7 @@
     {
       "raw": "1 cup (200g) lightly packed brown sugar",
       "expected": {
-        "item": "lightly packed brown sugar",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "1",
@@ -94,7 +94,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "lightly packed",
         "category": "Baking"
       }
     },

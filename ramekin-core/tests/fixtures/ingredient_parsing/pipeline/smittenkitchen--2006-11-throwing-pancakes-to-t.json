@@ -61,11 +61,15 @@
     {
       "raw": "1 large or 2 thin carrots, peeled",
       "expected": {
-        "item": "or 2 thin carrots",
+        "item": "thin carrots",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
+          },
+          {
+            "amount": "2",
+            "unit": null
           }
         ],
         "note": "peeled",

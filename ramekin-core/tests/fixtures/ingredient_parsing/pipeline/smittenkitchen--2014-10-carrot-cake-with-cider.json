@@ -252,7 +252,7 @@
     {
       "raw": "1 1/2 cups packed coarsely grated carrots from about 9 ounces (2 to 2 1/2 meaty/large or 4 to 5 slim; about 255 grams) whole carrots",
       "expected": {
-        "item": "packed coarsely grated carrots from about 9 ounces whole carrots",
+        "item": "coarsely grated carrots from about 9 ounces whole carrots",
         "measurements": [
           {
             "amount": "1.5",
@@ -263,7 +263,7 @@
             "unit": "g"
           }
         ],
-        "note": "2 to 2 1/2 meaty/large or 4 to 5 slim; about 255 grams",
+        "note": "packed, 2 to 2 1/2 meaty/large or 4 to 5 slim; about 255 grams",
         "category": "Produce"
       }
     },

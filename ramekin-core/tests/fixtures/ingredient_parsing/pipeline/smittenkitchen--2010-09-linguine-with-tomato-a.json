@@ -23,11 +23,11 @@
     {
       "raw": "1 large handful fresh basil leaves",
       "expected": {
-        "item": "handful fresh basil leaves",
+        "item": "fresh basil leaves",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large handful"
           }
         ],
         "note": null,

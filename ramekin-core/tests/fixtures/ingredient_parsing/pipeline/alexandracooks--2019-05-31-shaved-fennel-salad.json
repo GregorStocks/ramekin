@@ -42,14 +42,14 @@
     {
       "raw": "1/4 cup (or more) loosely packed fennel fronds",
       "expected": {
-        "item": "loosely packed fennel fronds",
+        "item": "fennel fronds",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or more",
+        "note": "loosely packed, or more",
         "category": "Produce"
       }
     },

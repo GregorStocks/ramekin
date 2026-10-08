@@ -65,11 +65,11 @@
     {
       "raw": "1 large handful cilantro",
       "expected": {
-        "item": "handful cilantro",
+        "item": "cilantro",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large handful"
           }
         ],
         "note": null,

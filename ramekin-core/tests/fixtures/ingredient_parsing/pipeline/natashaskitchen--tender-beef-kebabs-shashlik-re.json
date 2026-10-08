@@ -5,14 +5,14 @@
     {
       "raw": "2 lbs good quality beef (I used top sirloin, cut into 1 1/2\" pieces)",
       "expected": {
-        "item": "good quality beef",
+        "item": "beef",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": "I used top sirloin, cut into 1 1/2\" pieces",
+        "note": "good quality, I used top sirloin, cut into 1 1/2\" pieces",
         "category": "Meat & Seafood"
       }
     },

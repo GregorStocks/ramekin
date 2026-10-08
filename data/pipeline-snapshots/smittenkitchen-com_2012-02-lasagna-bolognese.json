@@ -21,11 +21,15 @@
       "section": "Bolognese Sauce"
     },
     {
-      "item": "or 2 slim carrots",
+      "item": "slim carrots",
       "measurements": [
         {
           "amount": "1",
           "unit": "large"
+        },
+        {
+          "amount": "2",
+          "unit": null
         }
       ],
       "note": "coarsely chopped",

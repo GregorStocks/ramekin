@@ -5,11 +5,11 @@
     {
       "raw": "large handful of ice",
       "expected": {
-        "item": "handful of ice",
+        "item": "ice",
         "measurements": [
           {
             "amount": null,
-            "unit": "large"
+            "unit": "large handful"
           }
         ],
         "note": null,

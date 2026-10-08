@@ -159,14 +159,14 @@
     {
       "raw": "1 cup packed dark brown sugar",
       "expected": {
-        "item": "packed dark brown sugar",
+        "item": "dark brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

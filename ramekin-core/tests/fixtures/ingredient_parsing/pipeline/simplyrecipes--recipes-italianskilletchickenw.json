@@ -182,11 +182,11 @@
     {
       "raw": "2 large handfuls spinach, about 2 packed cups",
       "expected": {
-        "item": "handfuls spinach",
+        "item": "spinach",
         "measurements": [
           {
             "amount": "2",
-            "unit": "large"
+            "unit": "large handfuls"
           }
         ],
         "note": "about 2 packed cups",

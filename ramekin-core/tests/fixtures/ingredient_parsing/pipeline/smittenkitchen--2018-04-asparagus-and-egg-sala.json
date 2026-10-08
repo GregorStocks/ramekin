@@ -123,14 +123,14 @@
     {
       "raw": "1/4 cup lightly packed fresh mint leaves, chopped",
       "expected": {
-        "item": "lightly packed fresh mint leaves",
+        "item": "fresh mint leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "chopped",
+        "note": "lightly packed, chopped",
         "category": "Produce"
       }
     },

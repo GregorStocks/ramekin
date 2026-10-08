@@ -24,11 +24,11 @@
     {
       "raw": "1 2-inch piece ginger, finely grated",
       "expected": {
-        "item": "2-inch piece ginger",
+        "item": "ginger",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "2-inch piece"
           }
         ],
         "note": "finely grated",

@@ -182,11 +182,11 @@
     {
       "raw": "large bunch coriander leaves only, roughly chopped",
       "expected": {
-        "item": "bunch coriander leaves only",
+        "item": "coriander leaves only",
         "measurements": [
           {
             "amount": null,
-            "unit": "large"
+            "unit": "large bunch"
           }
         ],
         "note": "roughly chopped",

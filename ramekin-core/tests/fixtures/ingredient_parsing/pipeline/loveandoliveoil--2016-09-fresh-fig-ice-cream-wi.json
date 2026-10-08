@@ -104,14 +104,14 @@
     {
       "raw": "4 ounces good quality bittersweet chocolate, finely chopped",
       "expected": {
-        "item": "good quality bittersweet chocolate",
+        "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "4",
             "unit": "oz"
           }
         ],
-        "note": "finely chopped",
+        "note": "good quality, finely chopped",
         "category": "Baking"
       }
     }

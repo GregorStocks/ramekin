@@ -239,6 +239,11 @@ fn looser_spellings_resolve_to_the_same_food() {
     same("freshly ground black pepper", "black pepper");
     same("large eggs", "eggs");
     same("chopped fresh cilantro", "cilantro");
+    // Sizes left from a count alternative ("1 large or 2 thin carrots").
+    same("thin carrots", "carrots");
+    same("smaller leeks", "leeks");
+    same("plain pork sausages", "pork sausages");
+    same("picked fresh rosemary leaves", "fresh rosemary");
     assert_eq!(via("large eggs"), Via::LeadingModifiers);
     // es/ies plurals.
     same("strawberry", "strawberries");
@@ -784,12 +789,15 @@ fn parsed_name_never_cuts_into_a_name() {
     for name in [
         "medium grain rice",
         "small new potatoes",
-        "packed dark-brown sugar",
         "1-inch bread cubes",
-        "two us sticks unsalted butter",
     ] {
         assert_eq!(ramekin_core::catalog::parsed_name(name), name);
     }
+    // How the food is packed goes to the note.
+    assert_eq!(
+        ramekin_core::catalog::parsed_name("packed dark-brown sugar"),
+        "dark-brown sugar"
+    );
     assert_eq!(
         ramekin_core::catalog::parsed_name("chickpeas, rinsed"),
         "chickpeas"

@@ -89,14 +89,14 @@
     {
       "raw": "1/4 cup good quality extra virgin olive oil",
       "expected": {
-        "item": "good quality extra virgin olive oil",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "good quality",
         "category": "Oils & Vinegars"
       }
     }

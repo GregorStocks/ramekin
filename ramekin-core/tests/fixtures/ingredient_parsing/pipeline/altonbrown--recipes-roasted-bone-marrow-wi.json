@@ -89,28 +89,28 @@
     {
       "raw": "1/2 cup packed chopped fresh parsley",
       "expected": {
-        "item": "packed chopped fresh parsley",
+        "item": "chopped fresh parsley",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },
     {
       "raw": "1/4 cup packed chopped celery leaves ((or additional parsley leaves))",
       "expected": {
-        "item": "packed chopped celery leaves",
+        "item": "chopped celery leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or additional parsley leaves",
+        "note": "packed, or additional parsley leaves",
         "category": "Produce"
       }
     },

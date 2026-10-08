@@ -5,14 +5,14 @@
     {
       "raw": "1/2 cup loosely packed mint leaves, plus more for the garnish",
       "expected": {
-        "item": "loosely packed mint leaves",
+        "item": "mint leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "plus more for the garnish",
+        "note": "loosely packed, plus more for the garnish",
         "category": "Produce"
       }
     },

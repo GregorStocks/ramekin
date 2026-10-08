@@ -5,14 +5,14 @@
     {
       "raw": "0.5 cup firmly packed fresh cilantro leaves and tender stems",
       "expected": {
-        "item": "firmly packed fresh cilantro leaves and tender stems",
+        "item": "fresh cilantro leaves and tender stems",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "firmly packed",
         "category": "Produce"
       }
     },
@@ -33,14 +33,14 @@
     {
       "raw": "0.25 cup firmly packed fresh dill fronds",
       "expected": {
-        "item": "firmly packed fresh dill fronds",
+        "item": "fresh dill fronds",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "firmly packed",
         "category": "Produce"
       }
     },

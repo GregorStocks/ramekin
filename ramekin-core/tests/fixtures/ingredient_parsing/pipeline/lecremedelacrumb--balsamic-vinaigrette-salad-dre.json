@@ -5,14 +5,14 @@
     {
       "raw": "½ cup high quality balsamic vinegar",
       "expected": {
-        "item": "high quality balsamic vinegar",
+        "item": "balsamic vinegar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "high quality",
         "category": "Oils & Vinegars"
       }
     },

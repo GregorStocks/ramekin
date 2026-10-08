@@ -78,14 +78,14 @@
     {
       "raw": "1/2 cup firmly packed dark brown sugar",
       "expected": {
-        "item": "firmly packed dark brown sugar",
+        "item": "dark brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "firmly packed",
         "category": "Baking"
       }
     },

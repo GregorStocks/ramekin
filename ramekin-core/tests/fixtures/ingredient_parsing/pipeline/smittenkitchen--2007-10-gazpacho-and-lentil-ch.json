@@ -33,11 +33,11 @@
     {
       "raw": "1 large pinch of coarse salt (Kosher or sea)",
       "expected": {
-        "item": "pinch of coarse salt",
+        "item": "coarse salt",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large pinch"
           }
         ],
         "note": "Kosher or sea",
@@ -47,11 +47,11 @@
     {
       "raw": "1 small pinch of cumin seeds",
       "expected": {
-        "item": "pinch of cumin seeds",
+        "item": "cumin seeds",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small pinch"
           }
         ],
         "note": null,
@@ -280,14 +280,14 @@
     {
       "raw": "1 tablespoon best-quality red wine vinegar",
       "expected": {
-        "item": "best-quality red wine vinegar",
+        "item": "red wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "best-quality",
         "category": "Oils & Vinegars"
       }
     },

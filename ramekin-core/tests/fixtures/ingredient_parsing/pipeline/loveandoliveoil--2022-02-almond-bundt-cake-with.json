@@ -177,14 +177,14 @@
     {
       "raw": "6 oz good quality dark chocolate (finely chopped)",
       "expected": {
-        "item": "good quality dark chocolate",
+        "item": "dark chocolate",
         "measurements": [
           {
             "amount": "6",
             "unit": "oz"
           }
         ],
-        "note": "finely chopped",
+        "note": "good quality, finely chopped",
         "category": "Baking"
       }
     },

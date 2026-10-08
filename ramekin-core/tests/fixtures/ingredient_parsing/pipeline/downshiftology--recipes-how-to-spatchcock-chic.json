@@ -23,14 +23,9 @@
     {
       "raw": "good quality kitchen shears",
       "expected": {
-        "item": "quality kitchen shears",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "good"
-          }
-        ],
-        "note": null,
+        "item": "kitchen shears",
+        "measurements": [],
+        "note": "good quality",
         "category": "Other"
       }
     }

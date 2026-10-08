@@ -173,14 +173,14 @@
     {
       "raw": "0.5 cup packed brown sugar",
       "expected": {
-        "item": "packed brown sugar",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

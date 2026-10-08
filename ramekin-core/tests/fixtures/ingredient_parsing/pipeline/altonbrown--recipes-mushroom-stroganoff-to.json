@@ -145,14 +145,14 @@
     {
       "raw": "4 (3/4-inch-thick) slices high-quality bread, such as country French or sourdough",
       "expected": {
-        "item": "high-quality bread",
+        "item": "bread",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": "3/4-inch-thick, such as country French or sourdough",
+        "note": "high-quality, 3/4-inch-thick, such as country French or sourdough",
         "category": "Bakery & Bread"
       }
     }

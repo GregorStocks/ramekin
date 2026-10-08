@@ -45,7 +45,7 @@
     {
       "raw": "1/2 cup (100g) packed light or dark brown sugar (I prefer dark)",
       "expected": {
-        "item": "packed light or dark brown sugar",
+        "item": "light or dark brown sugar",
         "measurements": [
           {
             "amount": "0.5",
@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": "I prefer dark",
+        "note": "packed, I prefer dark",
         "category": "Baking"
       }
     },
@@ -141,7 +141,7 @@
     {
       "raw": "1/2 cup (100g) packed light or dark brown sugar (I prefer dark)",
       "expected": {
-        "item": "packed light or dark brown sugar",
+        "item": "light or dark brown sugar",
         "measurements": [
           {
             "amount": "0.5",
@@ -152,7 +152,7 @@
             "unit": "g"
           }
         ],
-        "note": "I prefer dark",
+        "note": "packed, I prefer dark",
         "category": "Baking"
       }
     },

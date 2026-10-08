@@ -41,7 +41,7 @@
     {
       "raw": "1 cup (190 grams) packed light brown sugar",
       "expected": {
-        "item": "packed light brown sugar",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

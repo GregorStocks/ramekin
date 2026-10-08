@@ -5,11 +5,11 @@
     {
       "raw": "1  large bunch of basil, (leaves only, washed and dried)",
       "expected": {
-        "item": "bunch of basil",
+        "item": "basil",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large bunch"
           }
         ],
         "note": "leaves only, washed and dried",
@@ -33,11 +33,11 @@
     {
       "raw": "one small handful of raw pine nuts",
       "expected": {
-        "item": "handful of raw pine nuts",
+        "item": "raw pine nuts",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": null,

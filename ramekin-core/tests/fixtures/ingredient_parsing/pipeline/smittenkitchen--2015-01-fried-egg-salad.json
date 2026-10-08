@@ -134,14 +134,14 @@
     {
       "raw": "1/4 cup lightly packed coarsely chopped cilantro, thin stems and leaves",
       "expected": {
-        "item": "lightly packed coarsely chopped cilantro, thin stems and leaves",
+        "item": "coarsely chopped cilantro, thin stems and leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "lightly packed",
         "section": "Salad",
         "category": "Produce"
       }

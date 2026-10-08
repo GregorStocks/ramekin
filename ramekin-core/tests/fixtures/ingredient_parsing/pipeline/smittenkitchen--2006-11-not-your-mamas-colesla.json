@@ -145,11 +145,11 @@
     {
       "raw": "1/2 of a small head (about 430 grams or 15 ounces for half) green cabbage",
       "expected": {
-        "item": "small head green cabbage",
+        "item": "head green cabbage",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "small"
           },
           {
             "amount": "430",
