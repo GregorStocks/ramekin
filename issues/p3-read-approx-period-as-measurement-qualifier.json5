@@ -1,0 +1,15 @@
+{
+  "title": "Ingredient parser: read \"approx.\" (with a period) as a measurement qualifier",
+  "description": "The generic parser treats \"about\", \"approximately\", \"approx\" and \"roughly\" as qualifiers before a parenthetical measurement (parentheticals.rs parenthetical_measurement_has_note_qualifier, mod.rs strip_leading_measurement_qualifier), but not \"approx.\" with a trailing period. \
+So \"lemon juice ((approx. 2 TBSP))\" keeps the volume only in the note, while \"lemon juice ((about 2 TBSP))\" reads 2 tbsp as a measurement. \
+About 20 fixture lines use \"approx.\", e.g. \"1  lemon, juiced ((approx. 2 TBSP lemon juice))\", \"2 tbsp lime juice (approx. 1 lime)\", \"1 cup (approx. 120 grams) white whole wheat flour\". \
+Accept \"approx.\" everywhere \"approx\" is accepted, update the citrus.rs test restated_juice_leaves_the_note to expect the volume first, and rerun make ingredient-tests-update and make pipeline.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-10-07T15:45:00-07:00",
+  "updated_at": "2026-10-07T15:45:00-07:00",
+}

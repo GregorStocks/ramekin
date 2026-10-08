@@ -50,11 +50,15 @@
         "item": "lemon juice",
         "measurements": [
           {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
             "amount": "1",
             "unit": "lemon"
           }
         ],
-        "note": "about 1/4 cup fresh lemon juice",
+        "note": "about 1/4 cup",
         "category": "Produce"
       }
     },

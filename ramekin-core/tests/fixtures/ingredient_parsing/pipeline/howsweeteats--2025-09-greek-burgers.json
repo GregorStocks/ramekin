@@ -140,16 +140,31 @@
     {
       "raw": "1  lemon, (juiced and zest freshly grated)",
       "expected": {
-        "item": "lemon",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lemon"
           }
         ],
-        "note": "juiced and zest freshly grated",
+        "note": "freshly grated",
         "category": "Produce"
       }
+    },
+    {
+      "raw": "1  lemon, (juiced and zest freshly grated)",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lemon"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "kosher salt and pepper",

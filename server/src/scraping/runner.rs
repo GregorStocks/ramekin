@@ -53,11 +53,13 @@ async fn fetch_user_tags(pool: &DbPool, user_id: Uuid) -> Result<Vec<String>, Sc
 /// Build a step registry for server-side pipeline execution.
 ///
 /// This creates all step implementations with the necessary resources (DB pool, user ID).
-/// If `existing_recipe_id` is provided, SaveRecipeStep will update that recipe instead of
-/// creating a new one (for rescrape functionality).
+/// If `expected_version_id` is provided, SaveRecipeStep will update `existing_recipe_id`
+/// instead of creating a new recipe (for rescrape functionality). Without it, an
+/// `existing_recipe_id` is one an earlier attempt of this job already created.
 pub async fn build_registry(
     pool: Arc<DbPool>,
     user_id: Uuid,
+    job_id: Uuid,
     existing_recipe_id: Option<Uuid>,
     expected_version_id: Option<Uuid>,
     photo_only: bool,
@@ -79,12 +81,7 @@ pub async fn build_registry(
         (Some(recipe_id), Some(expected_version_id), false) => {
             SaveRecipeStep::for_rescrape(pool.clone(), user_id, recipe_id, expected_version_id)
         }
-        (Some(_), None, _) => {
-            return Err(ScrapeError::InvalidState(
-                "rescrape job has no expected recipe version".to_string(),
-            ));
-        }
-        (None, None, _) => SaveRecipeStep::new(pool.clone(), user_id),
+        (_, None, _) => SaveRecipeStep::new(pool.clone(), user_id, job_id),
         (None, Some(_), _) => {
             return Err(ScrapeError::InvalidState(
                 "new recipe job unexpectedly has an expected recipe version".to_string(),
@@ -342,10 +339,11 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
     );
 
     // Build the step registry and output store.
-    // If job.recipe_id is already set, this is a rescrape - pass it to build_registry.
+    // A job with an expected_version_id is a rescrape of job.recipe_id.
     let registry = match build_registry(
         pool.clone(),
         job.user_id,
+        job.id,
         job.recipe_id,
         job.expected_version_id,
         job.photo_only,

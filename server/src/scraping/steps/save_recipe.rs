@@ -17,13 +17,14 @@ use crate::db::{run_blocking, DbPool};
 use crate::ingredient_names;
 use crate::models::{Ingredient, NewRecipeVersion};
 use crate::recipes::{create_new_version_cas, insert_recipe, TagSource, VersionWriteError};
-use crate::schema::recipe_versions;
+use crate::schema::{recipe_versions, scrape_jobs};
 
 /// How SaveRecipeStep should behave.
 #[derive(Debug, Clone, Copy)]
 pub enum SaveMode {
-    /// Create a brand-new recipe.
-    Create,
+    /// Create a brand-new recipe for scrape job `job_id`, or reuse the one an
+    /// earlier attempt of the same job already saved.
+    Create { job_id: Uuid },
     /// Update an existing recipe by creating a new version from the newly
     /// scraped data.
     Rescrape {
@@ -47,11 +48,11 @@ pub struct SaveRecipeStep {
 }
 
 impl SaveRecipeStep {
-    pub fn new(pool: Arc<DbPool>, user_id: Uuid) -> Self {
+    pub fn new(pool: Arc<DbPool>, user_id: Uuid, job_id: Uuid) -> Self {
         Self {
             pool,
             user_id,
-            mode: SaveMode::Create,
+            mode: SaveMode::Create { job_id },
         }
     }
 
@@ -155,7 +156,7 @@ impl PipelineStep for SaveRecipeStep {
             Some(ExtractionMethod::Paprika) => "import",
             Some(ExtractionMethod::PhotoUpload) => "photo_import",
             _ => match self.mode {
-                SaveMode::Create => "scrape",
+                SaveMode::Create { .. } => "scrape",
                 SaveMode::Rescrape { .. } => "rescrape",
                 SaveMode::PhotoOnly { .. } => "photo_rescrape",
             },
@@ -229,9 +230,15 @@ impl PipelineStep for SaveRecipeStep {
 
         // Create or update recipe in database
         let result = match self.mode {
-            SaveMode::Create => {
-                self.create_recipe(raw_recipe, &photo_ids, &parsed_ingredients, version_source)
-                    .await
+            SaveMode::Create { job_id } => {
+                self.create_recipe(
+                    job_id,
+                    raw_recipe,
+                    &photo_ids,
+                    &parsed_ingredients,
+                    version_source,
+                )
+                .await
             }
             SaveMode::Rescrape {
                 recipe_id,
@@ -286,8 +293,12 @@ impl PipelineStep for SaveRecipeStep {
 }
 
 impl SaveRecipeStep {
+    /// Records the new recipe on the job row in the same transaction, so a
+    /// rerun of this step (retry, or resume after a restart) that lost the
+    /// step output reuses the recipe instead of creating a duplicate.
     async fn create_recipe(
         &self,
+        job_id: Uuid,
         raw: RawRecipe,
         photo_ids: &[Uuid],
         parsed_ingredients: &[Ingredient],
@@ -316,6 +327,26 @@ impl SaveRecipeStep {
         // Use a transaction to create recipe + version atomically
         run_blocking(&self.pool, move |conn| {
             conn.transaction(|conn| {
+                let saved_recipe_id: Option<Uuid> = scrape_jobs::table
+                    .find(job_id)
+                    .select(scrape_jobs::recipe_id)
+                    .for_update()
+                    .first(conn)?;
+                if let Some(recipe_id) = saved_recipe_id {
+                    // A create job's first version is the one its save wrote.
+                    let version_id: Uuid = recipe_versions::table
+                        .filter(recipe_versions::recipe_id.eq(recipe_id))
+                        .order(recipe_versions::created_at.asc())
+                        .select(recipe_versions::id)
+                        .first(conn)?;
+                    tracing::info!(
+                        "save_recipe: job {} already saved recipe {}, reusing it",
+                        job_id,
+                        recipe_id
+                    );
+                    return Ok((recipe_id, version_id));
+                }
+
                 let recipe_id = insert_recipe(conn, user_id)?;
 
                 let new_version = NewRecipeVersion {
@@ -349,6 +380,9 @@ impl SaveRecipeStep {
                 )?;
                 // Queued with the save; the next step resolves them.
                 ingredient_names::enqueue(conn, &unknown_names)?;
+                diesel::update(scrape_jobs::table.find(job_id))
+                    .set(scrape_jobs::recipe_id.eq(Some(recipe_id)))
+                    .execute(conn)?;
 
                 Ok((recipe_id, version_id))
             })

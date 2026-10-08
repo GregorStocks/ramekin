@@ -14,15 +14,15 @@
     {
       "raw": "1 blood orange, juiced",
       "expected": {
-        "item": "blood orange, juiced",
+        "item": "blood orange juice",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "blood orange"
           }
         ],
         "note": null,
-        "category": "Produce"
+        "category": "Beverages"
       }
     },
     {
