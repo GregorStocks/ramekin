@@ -426,15 +426,23 @@ const INCH_PIECE_NOUNS: &[&str] = &[
 /// "3-4 inch chunk", "1 1/2-inch knob". The size is a number or a range.
 fn try_extract_inch_piece_unit(words: &[&str]) -> Option<(String, String)> {
     let is_size = |size: &str| !size.is_empty() && size.split('-').all(is_amount_like);
-    let first_lower = words.first()?.to_lowercase();
-    let noun_index = match first_lower.strip_suffix("-inch") {
-        Some(size) if is_size(size) => 1,
-        _ if is_size(&first_lower)
+    // "1 1/2-inch knob": a whole number before a fraction is one size.
+    let size_index = usize::from(
+        words.first()?.chars().all(|c| c.is_ascii_digit())
             && words
                 .get(1)
+                .and_then(|word| word.split('-').next())
+                .is_some_and(is_fraction),
+    );
+    let size_lower = words.get(size_index)?.to_lowercase();
+    let noun_index = match size_lower.strip_suffix("-inch") {
+        Some(size) if is_size(size) => size_index + 1,
+        _ if is_size(&size_lower)
+            && words
+                .get(size_index + 1)
                 .is_some_and(|word| ["inch", "inches"].contains(&word.to_lowercase().as_str())) =>
         {
-            2
+            size_index + 2
         }
         _ => return None,
     };

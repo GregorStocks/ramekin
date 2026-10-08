@@ -2402,6 +2402,7 @@ mod tests {
                 "fresh ginger",
             ),
             ("A 3-inch piece of ginger", "3-inch piece", "ginger"),
+            ("A 1 1/2-inch piece of ginger", "1 1/2-inch piece", "ginger"),
             (
                 "Four 3-inch knobs fresh ginger",
                 "3-inch knobs",
