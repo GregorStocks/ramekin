@@ -221,14 +221,21 @@ fn has_no_amount(ingredient: &ParsedIngredient) -> bool {
     })
 }
 
+/// A trace unit, sized or not ("pinch", "large pinch").
+fn is_trace_unit(unit: &str) -> bool {
+    let unit = normalize(unit);
+    let unsized_unit = ["small ", "medium ", "large "]
+        .iter()
+        .find_map(|size| unit.strip_prefix(size))
+        .unwrap_or(&unit);
+    TRACE_UNITS.contains(&unsized_unit)
+}
+
 /// A line with no real amount: no numeric quantity at all ("to taste", "as
 /// needed", no measurement), or only a pinch or dash.
 fn is_trace_line(ingredient: &ParsedIngredient) -> bool {
     ingredient.measurements.iter().all(|measurement| {
-        let trace_unit = measurement
-            .unit
-            .as_deref()
-            .is_some_and(|unit| TRACE_UNITS.contains(&normalize(unit).as_str()));
+        let trace_unit = measurement.unit.as_deref().is_some_and(is_trace_unit);
         let has_number = measurement
             .amount
             .as_deref()

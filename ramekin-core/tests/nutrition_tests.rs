@@ -347,6 +347,8 @@ fn negligible_lines_are_known_zero() {
     // Spices without a real amount.
     assert_eq!(known(bare("freshly ground black pepper")), 0.0);
     assert_eq!(known(ingredient("ground cumin", "1", "pinch")), 0.0);
+    assert_eq!(known(ingredient("saffron", "1", "large pinch")), 0.0);
+    assert_eq!(known(ingredient("kosher salt", "1", "small pinch")), 0.0);
     assert_eq!(known(ingredient("cayenne", "a few", "shakes")), 0.0);
     // Compounds whose every food is negligible on the line.
     assert_eq!(known(bare("salt and pepper")), 0.0);
