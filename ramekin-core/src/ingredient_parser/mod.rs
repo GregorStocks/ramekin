@@ -390,9 +390,14 @@ fn split_stick_count(s: &str) -> Option<(Measurement, String)> {
     let (amount, after_amount) = extract_amount(&normalized);
     let amount = amount?;
     let after_us = after_amount.trim_start();
-    let after_us = after_us
-        .strip_prefix("US ")
-        .or_else(|| after_us.strip_prefix("U.S. "))
+    let after_us = ["us ", "u.s. "]
+        .iter()
+        .find_map(|marker| {
+            after_us
+                .get(..marker.len())
+                .filter(|prefix| prefix.eq_ignore_ascii_case(marker))
+                .and_then(|_| after_us.get(marker.len()..))
+        })
         .unwrap_or(after_us);
     let (unit, after_unit) = extract_unit(after_us);
     if normalize_unit(&unit?) != "stick" || after_unit.trim().is_empty() {
@@ -2390,6 +2395,11 @@ mod tests {
         assert_eq!(
             measurements(&parsed),
             vec![(Some("1/2"), Some("lb")), (Some("2"), Some("stick"))]
+        );
+
+        assert_eq!(
+            parse_ingredient("1/2 lb. two us sticks unsalted butter").item,
+            "unsalted butter"
         );
 
         let parsed = parse_ingredient("3/4 cup 1 1/2 sticks/170g unsalted butter");
