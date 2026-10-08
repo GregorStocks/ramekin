@@ -482,6 +482,31 @@ fn packages_carry_their_own_weight_and_fill_words_are_ignored() {
 }
 
 #[test]
+fn inch_pieces_scale_the_one_inch_piece() {
+    let kcal = |unit: &str| {
+        let result = estimate(&[ingredient("ginger", "1", unit)], None, 1.0).unwrap();
+        assert!(
+            result.unknown_ingredients.is_empty(),
+            "{unit}: {:?}",
+            result.unknown_ingredients
+        );
+        result.known_calories.unwrap()
+    };
+    let inch = kcal("1-inch piece").min;
+    for (unit, inches) in [
+        ("3-inch piece", 3.0),
+        ("3-inch knobs", 3.0),
+        ("3/4-inch piece", 0.75),
+        ("1 1/2-inch chunk", 1.5),
+    ] {
+        assert!((kcal(unit).min - inches * inch).abs() < 1e-9, "{unit}");
+    }
+    let range = kcal("3-4 inch chunk");
+    assert!((range.min - 3.0 * inch).abs() < 1e-9);
+    assert!((range.max - 4.0 * inch).abs() < 1e-9);
+}
+
+#[test]
 fn counted_trace_foods_without_a_piece_weight_are_negligible() {
     let known = |ingredient: ParsedIngredient| {
         let result = estimate(&[ingredient], None, 1.0).unwrap();
