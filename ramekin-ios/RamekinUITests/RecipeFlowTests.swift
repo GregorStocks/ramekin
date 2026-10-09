@@ -312,10 +312,15 @@ final class RecipeFlowTests: XCTestCase {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM d"
         let addDinner = app.buttons["Add Dinner on \(formatter.string(from: Date()))"]
-        XCTAssertTrue(addDinner.waitForExistence(timeout: slowSimulatorTimeout))
-        for _ in 0..<8 where !addDinner.isHittable {
-            app.swipeUp()
+        // The week is a LazyVStack, so later days are not in the hierarchy
+        // until they scroll into view. Wait for the week, then scroll to today.
+        let firstAdd = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Add Breakfast on ")).firstMatch
+        XCTAssertTrue(firstAdd.waitForExistence(timeout: slowSimulatorTimeout))
+        // Slow swipes scroll less than a screen, so they can't skip past today.
+        for _ in 0..<12 where !(addDinner.exists && addDinner.isHittable) {
+            app.swipeUp(velocity: .slow)
         }
+        XCTAssertTrue(addDinner.isHittable)
         addDinner.tap()
 
         let pickerBar = app.navigationBars["Add Dinner"]
