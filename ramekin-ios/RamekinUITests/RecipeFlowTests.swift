@@ -352,8 +352,11 @@ final class RecipeFlowTests: XCTestCase {
             object: pickerBar
         )
         XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: slowSimulatorTimeout), .completed)
+        // The add runs after the sheet closes, so bring today's row back into
+        // view and wait there; the card renders in the same day section.
+        scrollMealPlanWeek(toReveal: addDinner)
         let card = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", title)).firstMatch
-        scrollMealPlanWeek(toReveal: card)
+        XCTAssertTrue(card.waitForExistence(timeout: slowSimulatorTimeout))
         // Icon-only card actions name the meal they act on.
         XCTAssertTrue(app.buttons["Edit \(title)"].firstMatch.exists)
         XCTAssertTrue(app.buttons["Remove \(title)"].firstMatch.exists)
