@@ -678,7 +678,7 @@ pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
     // beef"). The "%" must follow the first number, so a range doesn't match.
     static BLEND_PREFIX: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(
-            r"(?i)^\s*(?:\d{1,2}\s*(?:%|percent)\s*(?:lean|fat)|\d{2}\s*/\s*\d{1,2})\b[\s-]*(.+)$",
+            r"(?i)^\s*(?:\d{1,2}\s*(?:%|percent)[\s-]*(?:lean|fat)|\d{2}\s*/\s*\d{1,2})\b[\s-]*(.+)$",
         )
         .unwrap()
     });
@@ -725,13 +725,13 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     // which names no blend.
     static LEAN: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(
-            r"(?i)(\d\s*(?:%|percent)?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*(?:%|percent)\s*lean\b",
+            r"(?i)(\d\s*(?:%|percent)?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*(?:%|percent)[\s-]*lean\b",
         )
         .unwrap()
     });
     static FAT: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(
-            r"(?i)(\d\s*(?:%|percent)?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*(?:%|percent)\s*fat\b",
+            r"(?i)(\d\s*(?:%|percent)?\s*(?:-|–|to)\s*)?\b(\d{1,2})\s*(?:%|percent)[\s-]*fat\b",
         )
         .unwrap()
     });

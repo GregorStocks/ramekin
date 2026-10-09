@@ -665,6 +665,8 @@ fn a_fat_note_selects_the_ground_meat_blend() {
     // Or lead the item.
     assert_eq!(line_fdc("95% lean ground beef", None), blend(95));
     assert_eq!(line_fdc("93 percent lean ground beef", None), blend(93));
+    assert_eq!(line_fdc("95%-lean ground beef", None), blend(95));
+    assert_eq!(line_fdc("ground beef", Some("93%-lean")), blend(93));
     assert_eq!(line_fdc("15% fat ground beef", None), blend(85));
     assert_eq!(line_fdc("80/20 ground beef", None), blend(80));
     assert_eq!(line_fdc("70/30 ground beef", Some("chilled")), blend(70));
