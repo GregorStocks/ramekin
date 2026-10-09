@@ -69,6 +69,8 @@ export default function AddToShoppingListModal(
   });
 
   onCleanup(() => {
+    // A submission still in flight at unmount must not arm a close timer.
+    presentation++;
     clearCloseTimer();
   });
 
