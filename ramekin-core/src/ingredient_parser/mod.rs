@@ -134,7 +134,7 @@ fn leading_measurement_consumes_all(s: &str) -> bool {
 fn strip_leading_measurement_qualifier(s: &str) -> (Option<&str>, &str) {
     let trimmed = s.trim_start();
     let lower = trimmed.to_lowercase();
-    for qualifier in ["about", "approximately", "approx", "roughly"] {
+    for qualifier in ["about", "approximately", "approx.", "approx", "roughly"] {
         if lower.starts_with(qualifier) {
             if let Some(after) = trimmed.get(qualifier.len()..) {
                 if after.is_empty() || after.starts_with(char::is_whitespace) {
