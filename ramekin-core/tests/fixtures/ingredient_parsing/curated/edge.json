@@ -1162,8 +1162,13 @@
       "name": "article_before_size_without_unit_kept",
       "raw": "A 3-inch piece of ginger, peeled and sliced",
       "expected": {
-        "item": "A 3-inch piece of ginger",
-        "measurements": [],
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "3-inch piece"
+          }
+        ],
         "note": "peeled and sliced",
         "category": "Produce"
       }

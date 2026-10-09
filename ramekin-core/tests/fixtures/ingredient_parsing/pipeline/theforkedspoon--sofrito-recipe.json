@@ -131,11 +131,11 @@
     {
       "raw": "1 large bunch cilantro (with the thicker stems removed)",
       "expected": {
-        "item": "bunch cilantro",
+        "item": "cilantro",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large bunch"
           }
         ],
         "note": "with the thicker stems removed",

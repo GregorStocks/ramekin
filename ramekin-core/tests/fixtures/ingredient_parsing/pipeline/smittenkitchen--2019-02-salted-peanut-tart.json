@@ -113,7 +113,7 @@
     {
       "raw": "2/3 cup (125 grams) packed light or dark brown sugar",
       "expected": {
-        "item": "packed light or dark brown sugar",
+        "item": "light or dark brown sugar",
         "measurements": [
           {
             "amount": "0.67",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

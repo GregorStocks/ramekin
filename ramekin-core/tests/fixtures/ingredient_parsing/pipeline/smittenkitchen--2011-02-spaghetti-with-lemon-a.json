@@ -97,11 +97,11 @@
     {
       "raw": "Small handful fresh basil or arugula (what I used, deliciously, in a pinch) leaves, shredded",
       "expected": {
-        "item": "handful fresh basil or arugula leaves",
+        "item": "fresh basil or arugula leaves",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": "what I used, deliciously, in a pinch, shredded",

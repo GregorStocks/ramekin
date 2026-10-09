@@ -98,11 +98,11 @@
     {
       "raw": "1 small pinch of saffron, crumbled",
       "expected": {
-        "item": "pinch of saffron",
+        "item": "saffron",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small pinch"
           }
         ],
         "note": "crumbled",

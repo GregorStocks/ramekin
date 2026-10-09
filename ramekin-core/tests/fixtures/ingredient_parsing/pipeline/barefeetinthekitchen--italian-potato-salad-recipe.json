@@ -131,11 +131,11 @@
     {
       "raw": "small handful of parsley leaves (minced, about 2 tablespoons worth)",
       "expected": {
-        "item": "handful of parsley leaves",
+        "item": "parsley leaves",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": "minced, about 2 tablespoons worth",

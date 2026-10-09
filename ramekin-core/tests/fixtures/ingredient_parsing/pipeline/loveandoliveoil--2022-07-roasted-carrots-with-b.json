@@ -37,28 +37,28 @@
     {
       "raw": "1 ½ cups lightly packed carrot greens (large stems removed)",
       "expected": {
-        "item": "lightly packed carrot greens",
+        "item": "carrot greens",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "large stems removed",
+        "note": "large stems removed, lightly packed",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup lightly packed basil leaves",
       "expected": {
-        "item": "lightly packed basil leaves",
+        "item": "basil leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "lightly packed",
         "category": "Produce"
       }
     },

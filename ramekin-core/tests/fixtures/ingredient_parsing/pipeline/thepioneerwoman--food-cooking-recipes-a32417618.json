@@ -19,14 +19,14 @@
     {
       "raw": "1 heaping tablespoon packed dark brown sugar",
       "expected": {
-        "item": "packed dark brown sugar",
+        "item": "dark brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "heaping tbsp"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

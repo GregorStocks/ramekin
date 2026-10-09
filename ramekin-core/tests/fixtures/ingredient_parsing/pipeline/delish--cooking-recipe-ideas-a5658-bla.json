@@ -115,14 +115,14 @@
     {
       "raw": "1/4 c. loosely packed cilantro or parsley leaves",
       "expected": {
-        "item": "loosely packed cilantro or parsley leaves",
+        "item": "cilantro or parsley leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loosely packed",
         "category": "Produce"
       }
     },

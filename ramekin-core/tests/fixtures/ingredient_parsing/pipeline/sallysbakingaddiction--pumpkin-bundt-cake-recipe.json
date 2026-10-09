@@ -153,7 +153,7 @@
     {
       "raw": "1 cup (200g) packed light or dark brown sugar",
       "expected": {
-        "item": "packed light or dark brown sugar",
+        "item": "light or dark brown sugar",
         "measurements": [
           {
             "amount": "1",
@@ -164,7 +164,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

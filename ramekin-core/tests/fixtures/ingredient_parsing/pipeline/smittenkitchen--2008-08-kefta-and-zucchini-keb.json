@@ -195,28 +195,28 @@
     {
       "raw": "1/4 cup loosely packed fresh parsley leaves",
       "expected": {
-        "item": "loosely packed fresh parsley leaves",
+        "item": "fresh parsley leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loosely packed",
         "category": "Produce"
       }
     },
     {
       "raw": "1/4 cup loosely packed fresh cilantro leaves",
       "expected": {
-        "item": "loosely packed fresh cilantro leaves",
+        "item": "fresh cilantro leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loosely packed",
         "category": "Produce"
       }
     },

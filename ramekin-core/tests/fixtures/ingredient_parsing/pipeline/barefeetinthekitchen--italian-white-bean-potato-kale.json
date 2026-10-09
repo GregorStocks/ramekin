@@ -173,11 +173,11 @@
     {
       "raw": "1  small bunch of kale (stems removed and leaves chopped bite size, about 3-4 cups)",
       "expected": {
-        "item": "bunch of kale",
+        "item": "kale",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small bunch"
           }
         ],
         "note": "stems removed and leaves chopped bite size, about 3-4 cups",

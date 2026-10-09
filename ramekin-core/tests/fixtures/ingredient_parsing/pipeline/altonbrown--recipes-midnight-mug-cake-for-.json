@@ -103,14 +103,14 @@
     {
       "raw": "6 tablespoons high-quality semi-sweet chocolate chips",
       "expected": {
-        "item": "high-quality semi-sweet chocolate chips",
+        "item": "semi-sweet chocolate chips",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "high-quality",
         "category": "Baking"
       }
     },

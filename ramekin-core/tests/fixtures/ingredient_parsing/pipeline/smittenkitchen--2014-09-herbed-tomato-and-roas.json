@@ -5,11 +5,11 @@
     {
       "raw": "1 small head garlic",
       "expected": {
-        "item": "head garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small head"
           }
         ],
         "note": null,

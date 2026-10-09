@@ -118,7 +118,7 @@
     {
       "raw": "1/2 cup 120g/2.75 oz. packed light brown sugar",
       "expected": {
-        "item": "packed light brown sugar",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
@@ -133,7 +133,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

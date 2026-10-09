@@ -37,7 +37,7 @@
     {
       "raw": "1/4 cup packed brown sugar ((55g) )",
       "expected": {
-        "item": "packed brown sugar",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "0.25",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },
@@ -193,7 +193,7 @@
     {
       "raw": "1/2 cup packed brown sugar ((110g))",
       "expected": {
-        "item": "packed brown sugar",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "0.5",
@@ -204,7 +204,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

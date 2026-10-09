@@ -77,7 +77,7 @@
     {
       "raw": "1/4 cup (50 grams) packed light brown sugar",
       "expected": {
-        "item": "packed light brown sugar",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.25",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },
@@ -181,7 +181,7 @@
     {
       "raw": "1/4 cup (50 grams) packed light brown sugar",
       "expected": {
-        "item": "packed light brown sugar",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.25",
@@ -192,7 +192,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

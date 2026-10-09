@@ -217,11 +217,11 @@
     {
       "raw": "1 medium bunch Swiss Chard (10 ounces; 283 g), stemmed and chopped",
       "expected": {
-        "item": "bunch Swiss Chard",
+        "item": "Swiss Chard",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium bunch"
           },
           {
             "amount": "10",

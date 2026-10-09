@@ -5,11 +5,11 @@
     {
       "raw": "1  small head red cabbage (thinly sliced)",
       "expected": {
-        "item": "head red cabbage",
+        "item": "red cabbage",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small head"
           }
         ],
         "note": "thinly sliced",

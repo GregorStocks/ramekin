@@ -5,11 +5,11 @@
     {
       "raw": "1 medium head of cauliflower, (cut into florets)",
       "expected": {
-        "item": "head of cauliflower",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium head"
           }
         ],
         "note": "cut into florets",

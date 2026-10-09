@@ -162,14 +162,14 @@
     {
       "raw": "1 1/2 cups packed chopped kale",
       "expected": {
-        "item": "packed chopped kale",
+        "item": "chopped kale",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

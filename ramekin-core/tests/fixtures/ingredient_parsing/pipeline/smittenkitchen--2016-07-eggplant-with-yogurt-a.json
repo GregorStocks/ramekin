@@ -74,14 +74,14 @@
     {
       "raw": "1/4 cup packed flat-leaf parsley leaves",
       "expected": {
-        "item": "packed flat-leaf parsley leaves",
+        "item": "flat-leaf parsley leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

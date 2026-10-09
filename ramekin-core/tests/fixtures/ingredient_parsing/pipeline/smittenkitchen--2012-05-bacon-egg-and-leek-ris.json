@@ -51,11 +51,15 @@
     {
       "raw": "2 large or 3 smaller leeks, quartered lengthwise, cleaned of grit, and chopped small",
       "expected": {
-        "item": "or 3 smaller leeks",
+        "item": "smaller leeks",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
+          },
+          {
+            "amount": "3",
+            "unit": null
           }
         ],
         "note": "quartered lengthwise, cleaned of grit, and chopped small",

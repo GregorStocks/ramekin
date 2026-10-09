@@ -5,14 +5,14 @@
     {
       "raw": "1 tbsp top-quality instant coffee",
       "expected": {
-        "item": "top-quality instant coffee",
+        "item": "instant coffee",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "top-quality",
         "category": "Beverages"
       }
     },

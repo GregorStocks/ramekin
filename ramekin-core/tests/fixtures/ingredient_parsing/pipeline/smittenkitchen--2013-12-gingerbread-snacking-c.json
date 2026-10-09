@@ -59,14 +59,14 @@
     {
       "raw": "2/3 cup packed dark-brown sugar",
       "expected": {
-        "item": "packed dark-brown sugar",
+        "item": "dark-brown sugar",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

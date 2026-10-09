@@ -5,11 +5,11 @@
     {
       "raw": "1  medium head of white cabbage",
       "expected": {
-        "item": "head of white cabbage",
+        "item": "white cabbage",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium head"
           }
         ],
         "note": null,
@@ -19,11 +19,11 @@
     {
       "raw": "1/2  medium head of red/purple cabbage",
       "expected": {
-        "item": "head of red/purple cabbage",
+        "item": "red/purple cabbage",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": "medium"
+            "unit": "medium head"
           }
         ],
         "note": null,

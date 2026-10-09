@@ -163,14 +163,14 @@
     {
       "raw": "1/4 cup firmly packed brown sugar",
       "expected": {
-        "item": "firmly packed brown sugar",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "firmly packed",
         "section": "For the Topping",
         "category": "Baking"
       }

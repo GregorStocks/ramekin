@@ -121,11 +121,11 @@
     {
       "raw": "3 6-ounce containers fresh raspberries (510 grams, 18 ounces, or about 4.5 cups)",
       "expected": {
-        "item": "6-ounce containers fresh raspberries",
+        "item": "fresh raspberries",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "6-ounce containers"
           },
           {
             "amount": "510",
@@ -263,11 +263,11 @@
     {
       "raw": "5 1/2 6-ounce containers fresh raspberries (905 grams, 32 ounces, or 8 cups)",
       "expected": {
-        "item": "6-ounce containers fresh raspberries",
+        "item": "fresh raspberries",
         "measurements": [
           {
             "amount": "5.5",
-            "unit": null
+            "unit": "6-ounce containers"
           },
           {
             "amount": "905",

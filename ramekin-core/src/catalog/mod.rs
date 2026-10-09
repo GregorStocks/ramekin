@@ -909,19 +909,21 @@ pub fn grams_per_piece(entry: &Entry, unit: Option<&str>) -> Option<f64> {
     if let Some(&grams) = portions.get(&key) {
         return Some(grams);
     }
-    // A sized piece with no exact portion ("large lemon") is the piece, and
-    // a many-word piece counts in the plural too ("blood oranges").
-    let unsized_piece = SIZES
+    // A sized piece ("small head") uses the piece at that size ("head
+    // small"); with no such portion ("large lemon") it is the piece, and a
+    // many-word piece counts in the plural too ("blood oranges").
+    let (size, unsized_piece) = SIZES
         .iter()
-        .find_map(|size| key.strip_prefix(size)?.strip_prefix(' '))
-        .unwrap_or(&key);
+        .find_map(|size| Some((Some(*size), key.strip_prefix(size)?.strip_prefix(' ')?)))
+        .unwrap_or((None, &key));
     let piece = piece_unit(unsized_piece);
     let singular_piece = match piece.rsplit_once(' ') {
         Some((head, last)) => format!("{head} {}", singular(last)),
         None => piece.clone(),
     };
-    if let Some(&grams) = portions
-        .get(&piece)
+    if let Some(&grams) = size
+        .and_then(|size| portions.get(&format!("{piece} {size}")))
+        .or_else(|| portions.get(&piece))
         .or_else(|| portions.get(&singular_piece))
     {
         return Some(grams);

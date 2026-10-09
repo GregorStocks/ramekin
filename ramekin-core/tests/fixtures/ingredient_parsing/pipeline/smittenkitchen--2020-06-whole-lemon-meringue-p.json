@@ -41,11 +41,11 @@
     {
       "raw": "Large pinch of salt",
       "expected": {
-        "item": "pinch of salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
-            "unit": "large"
+            "unit": "large pinch"
           }
         ],
         "note": null,

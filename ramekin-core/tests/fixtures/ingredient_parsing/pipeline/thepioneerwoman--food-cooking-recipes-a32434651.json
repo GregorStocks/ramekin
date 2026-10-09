@@ -140,11 +140,11 @@
     {
       "raw": "1 small head iceberg lettuce, chopped",
       "expected": {
-        "item": "head iceberg lettuce",
+        "item": "iceberg lettuce",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small head"
           }
         ],
         "note": "chopped",
