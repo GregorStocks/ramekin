@@ -23,9 +23,13 @@ struct MealPlanView: View {
     @State private var weekStart: Date = MealPlanDateSupport.mondayStart(from: Date())
     @State private var mealPlans: [MealPlanItem] = []
     @State private var isLoading = false
+    // The week whose meal plans are loaded. Reloading the same week after an
+    // add or edit updates it in place (keeping the scroll position, even when
+    // the week has no meals yet); switching weeks shows the loading state.
+    @State private var loadedWeek: Date?
     @State private var error: String?
     /// Failures of add/remove once the week is on screen; shown as an alert
-    /// because `error` only replaces an empty calendar.
+    /// because `error` only replaces a week that hasn't loaded.
     @State private var actionError: String?
 
     @State private var showingRecipePicker = false
@@ -40,10 +44,10 @@ struct MealPlanView: View {
     var body: some View {
         NavigationStack {
             Group {
-                if isLoading && mealPlans.isEmpty {
+                if isLoading && loadedWeek != weekStart {
                     ProgressView("Loading meal plans…")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if let error = error, mealPlans.isEmpty {
+                } else if let error = error, loadedWeek != weekStart {
                     errorView(message: error)
                 } else {
                     weekCalendar
@@ -301,6 +305,7 @@ extension MealPlanView {
                 // replace the week on screen.
                 guard weekStart == requestedWeek else { return }
                 mealPlans = response.mealPlans
+                loadedWeek = requestedWeek
                 isLoading = false
             }
         } catch is CancellationError {
@@ -308,7 +313,7 @@ extension MealPlanView {
         } catch {
             await MainActor.run {
                 guard weekStart == requestedWeek else { return }
-                if mealPlans.isEmpty {
+                if loadedWeek != requestedWeek {
                     self.error = "Could not load meal plans. Please try again."
                 } else {
                     actionError = "Couldn't refresh this week. Pull down to try again."
