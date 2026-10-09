@@ -38,7 +38,7 @@ const USDA_JSON: &str = include_str!("data/usda.json");
 const FNDDS_JSON: &str = include_str!("data/fndds.json");
 pub const CURATED_JSON: &str = include_str!("data/curated.json");
 const BESPOKE_JSON: &str = include_str!("data/bespoke.json");
-const RULE_VERSION: &str = "catalog-v3";
+const RULE_VERSION: &str = "catalog-v4";
 
 /// A food from a pinned USDA release (SR Legacy, or FNDDS for foods SR Legacy
 /// lacks).

@@ -210,7 +210,7 @@ fn resolution_reports_how_it_matched() {
 
 #[test]
 fn version_is_stable() {
-    assert!(version().starts_with("catalog-v3-sr2018-"));
+    assert!(version().starts_with("catalog-v4-sr2018-"));
     assert_eq!(version(), version());
 }
 
