@@ -91,6 +91,7 @@ struct MealPlanView: View {
                 // The old week's meals don't belong to the new dates; clearing
                 // them shows the loading state instead of an empty week.
                 mealPlans = []
+                loadedWeek = nil
                 Task { await loadMealPlans() }
             }
             .onReceive(NotificationCenter.default.publisher(for: .recipeDeleted)) { _ in
