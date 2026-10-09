@@ -1,0 +1,17 @@
+{
+  "title": "Keep a late meal-plan response from dismissing a reopened sheet",
+  "description": "AddToMealPlanModal.tsx tracks and clears its 1500ms close timer, but handleAddToMealPlan does not check whether the modal was closed while createMealPlan was in flight. \
+Pressing Escape during a pending submission and reopening lets the late response set mealPlanSuccess and arm closeTimer, so the reopened modal shows the success message and then closes itself. \
+AddToMealPlanSheet.swift starts an unowned Task that does `try? await Task.sleep` and then sets the shared isPresented binding to false; the task is never cancelled on disappear and the `try?` swallows cancellation, so swiping the sheet away and reopening within a second dismisses the new presentation. \
+AddToShoppingListModal.tsx (presentation counter) and SheetAutoDismissSupport.swift (cancellable dismiss task) show the fix for the shopping-list sheet; apply the same here and cover close/reopen during both pending submission and success on web and iOS.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+    "ios",
+    "meal-plan",
+  ],
+  "created_at": "2026-10-09T00:00:00Z",
+  "updated_at": "2026-10-09T00:00:00Z",
+}
