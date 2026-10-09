@@ -210,7 +210,7 @@ fn resolution_reports_how_it_matched() {
 
 #[test]
 fn version_is_stable() {
-    assert!(version().starts_with("catalog-v3-sr2018-"));
+    assert!(version().starts_with("catalog-v4-sr2018-"));
     assert_eq!(version(), version());
 }
 
@@ -662,6 +662,26 @@ fn a_fat_note_selects_the_ground_meat_blend() {
     // The parser can leave the percentage in the item.
     assert_eq!(line_fdc("ground beef, 90% lean", None), blend(90));
     assert_eq!(line_fdc("ground beef, 90 percent lean", None), blend(90));
+    // Or lead the item.
+    assert_eq!(line_fdc("95% lean ground beef", None), blend(95));
+    assert_eq!(line_fdc("93 percent lean ground beef", None), blend(93));
+    assert_eq!(line_fdc("95%-lean ground beef", None), blend(95));
+    assert_eq!(line_fdc("ground beef", Some("93%-lean")), blend(93));
+    assert_eq!(line_fdc("15% fat ground beef", None), blend(85));
+    assert_eq!(line_fdc("80/20 ground beef", None), blend(80));
+    assert_eq!(line_fdc("70/30 ground beef", Some("chilled")), blend(70));
+    // A leading blend USDA lacks, or a range, leaves the line unresolved
+    // rather than defaulting to 80/20.
+    for item in [
+        "17% fat ground beef",
+        "85-93% lean ground beef",
+        "60/30 ground beef",
+    ] {
+        assert!(
+            matches!(resolve_line(item, None), Resolution::Unresolved),
+            "{item}"
+        );
+    }
     // A range allows any blend in it.
     assert_eq!(
         line_fdc("ground beef", Some("preferably a leaner meat, 85-93% lean")),
