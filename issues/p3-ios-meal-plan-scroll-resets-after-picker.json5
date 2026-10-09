@@ -2,8 +2,12 @@
   "title": "iOS meal plan jumps back to Monday after adding a meal from the picker",
   "description": "On iOS, scrolling the Meal Plan week down to a later day (e.g. Friday), tapping Add, and picking a recipe leaves the week scrolled back to the top (Monday) once the picker sheet closes, so the new card is off screen. \
 Seen in PR #787's iOS UI test runs (e.g. run 37956100763): the xcresult hierarchy snapshot taken while waiting for the new card shows Monday's header at y=197 (scroll top) and no Thursday-Sunday rows at all. \
-PR #787 already fixed one cause: loadMealPlans() reloading an empty week showed the full-screen spinner (`isLoading && mealPlans.isEmpty`), which discarded the ScrollView. MealPlanView now tracks `loadedWeek` like web's MealPlanPage. The reset still happened after that fix, so something else is involved. Candidates: the RecipePickerSheet's `.searchable` / keyboard dismissal on iOS 26, or the ScrollView/LazyVStack identity changing when mealPlans updates. \
-testMealPlanRecipePicker now scrolls to find the card, so it won't catch this. Reproduce manually in the simulator, and consider a ScrollViewReader that scrolls to the edited day after addMealPlan. Check web for parity (web reloads in place and should keep its position).",
+PR #787 already fixed one cause: loadMealPlans() reloading an empty week showed the full-screen spinner (`isLoading && mealPlans.isEmpty`), which discarded the ScrollView. \
+MealPlanView now tracks `loadedWeek` like web's MealPlanPage. \
+The reset still happened after that fix, so something else is involved. \
+Candidates: the RecipePickerSheet's `.searchable` / keyboard dismissal on iOS 26, or the ScrollView/LazyVStack identity changing when mealPlans updates. testMealPlanRecipePicker now scrolls to find the card, so it won't catch this. \
+Reproduce manually in the simulator, and consider a ScrollViewReader that scrolls to the edited day after addMealPlan. \
+Check web for parity (web reloads in place and should keep its position).",
   "status": "open",
   "priority": 3,
   "type": "bug",
