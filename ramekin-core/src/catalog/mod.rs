@@ -641,7 +641,8 @@ pub fn food(fdc_id: u32) -> Option<&'static UsdaFood> {
 /// "with skin" or "with peel" for its peeled counterpart when USDA has one:
 /// the skin is discarded whenever the peeling happens. A note giving a fat or
 /// lean percentage ("at least 15% fat", "90/10") picks that blend of ground
-/// meat. "Drained" and "rinsed" are ignored: the amount is nearly always the
+/// meat, as does one leading the item ("95% lean ground beef"), which USDA
+/// must have exactly or the line stays unresolved. "Drained" and "rinsed" are ignored: the amount is nearly always the
 /// can or net weight before draining, which the with-liquid food prices about
 /// right.
 pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
@@ -673,11 +674,27 @@ pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
             _ => Resolution::Unresolved,
         };
     }
+    // A blend written before the food ("95% lean ground beef", "80/20 ground
+    // beef"). The "%" must follow the first number, so a range doesn't match.
+    static BLEND_PREFIX: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(
+            r"(?i)^\s*(?:\d{1,2}\s*(?:%|percent)\s*(?:lean|fat)|\d{2}\s*/\s*\d{1,2})\b[\s-]*(.+)$",
+        )
+        .unwrap()
+    });
+    let note = note.unwrap_or_default();
     let resolved = resolve(item);
     let Resolution::Entry { entry, .. } = resolved else {
-        return resolved;
+        // Only the blend itself: the food's default blend would misstate it.
+        return BLEND_PREFIX
+            .captures(item)
+            .and_then(|caps| match resolve(&caps[1]) {
+                Resolution::Entry { entry, .. } => prepared_form(&entry.id, item, note),
+                _ => None,
+            })
+            .unwrap_or(resolved);
     };
-    prepared_form(&entry.id, item, note.unwrap_or_default()).unwrap_or(resolved)
+    prepared_form(&entry.id, item, note).unwrap_or(resolved)
 }
 
 /// The food entry `id` names, in the state the line describes: peeled, or
