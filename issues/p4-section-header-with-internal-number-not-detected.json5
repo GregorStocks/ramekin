@@ -1,0 +1,18 @@
+{
+  "title": "Colon-terminated section headers with digits or an inner colon aren't detected",
+  "description": "detect_section_header rejects page headings like 'Version #1: Garden Vegetable:' and 'Version #2: Mediterranean-Inspired:' (sallysbakingaddiction.com/frittata-recipe), so they would be parsed as ingredients. \
+Generic ingredient-header recovery (extract/ingredient_groups.rs) aligns JSON-LD lines with the rendered page and inserts headings as colon-terminated lines. \
+It deliberately bails on the whole recipe when any recovered heading isn't recognized by detect_section_header, so the frittata stays a flat list. \
+Teaching detect_section_header to accept these (for example a short, colon-terminated line with no parseable amount+unit, even if it contains '#1') would let header recovery cover pages like this. \
+Check for regressions in pipeline data: the risk is ingredient lines that end with ':'. \
+Expect make pipeline data/ diffs: the frittata gains sections.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "pipeline",
+  ],
+  "created_at": "2026-10-08T09:00:00-07:00",
+  "updated_at": "2026-10-08T09:00:00-07:00",
+}

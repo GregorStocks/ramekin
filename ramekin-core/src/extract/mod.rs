@@ -12,6 +12,7 @@ mod blog;
 mod footnotes;
 mod html_fallback;
 mod images;
+mod ingredient_groups;
 mod jsonld;
 mod microdata;
 mod substack;
@@ -21,6 +22,7 @@ use blog::*;
 use footnotes::*;
 use html_fallback::*;
 use images::*;
+use ingredient_groups::*;
 use jsonld::*;
 use microdata::*;
 use substack::*;
@@ -46,7 +48,7 @@ pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, Extract
     if let Some(mut recipe) = extract_jsonld_fast(html, source_url) {
         // Structured data can miss richer HTML-only structure or include
         // polluted instruction text; supplement from the rendered recipe card.
-        if should_parse_html_for_supplements(html) {
+        if should_parse_html_for_supplements(html, &recipe) {
             let document = Html::parse_document(html);
             supplement_recipe_from_html(&mut recipe, &document);
         }
@@ -72,8 +74,9 @@ pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, Extract
     extract_recipe_with_html_fallback(html, &document, source_url)
 }
 
-fn should_parse_html_for_supplements(html: &str) -> bool {
-    html.contains("wprm-recipe-group-name")
+fn should_parse_html_for_supplements(html: &str, recipe: &RawRecipe) -> bool {
+    needs_ingredient_header_recovery(&recipe.ingredients)
+        || html.contains("wprm-recipe-group-name")
         || html.contains("jetpack-recipe-ingredients")
         || html.contains("wprm-recipe-instruction")
         || html.contains("structured-ingredients__list-item")
@@ -84,6 +87,9 @@ fn supplement_recipe_from_html(recipe: &mut RawRecipe, document: &Html) {
     supplement_ingredient_groups(recipe, document);
     supplement_dotdash_ingredients(recipe, document);
     supplement_instructions(recipe, document);
+    if let Some(with_headers) = recover_ingredient_headers(&recipe.ingredients, document) {
+        recipe.ingredients = with_headers;
+    }
 }
 
 /// Try to replace flat ingredients with a grouped version from HTML.
@@ -179,7 +185,7 @@ pub fn extract_recipe_with_stats(
 ) -> Result<ExtractRecipeOutput, ExtractError> {
     // Fast path: try regex-based JSON-LD extraction (avoids DOM parsing)
     if let Some(mut recipe) = extract_jsonld_fast(html, source_url) {
-        if should_parse_html_for_supplements(html) {
+        if should_parse_html_for_supplements(html, &recipe) {
             let document = Html::parse_document(html);
             supplement_recipe_from_html(&mut recipe, &document);
         }

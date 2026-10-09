@@ -25,7 +25,12 @@ pub(super) fn extract_recipe_with_html_fallback(
     // Merge: prefer JSON-LD fields, fall back to microdata
     let title = partial.title.or(micro_partial.title);
     let description = partial.description.or(micro_partial.description);
-    let ingredients = partial.ingredients.or(micro_partial.ingredients);
+    // Structured ingredients are flat; recover their group headings from the page.
+    // HTML-derived ingredients below already carry whatever headings they have.
+    let ingredients = partial
+        .ingredients
+        .or(micro_partial.ingredients)
+        .map(|flat| recover_ingredient_headers(&flat, document).unwrap_or(flat));
     let instructions = partial.instructions.or(micro_partial.instructions);
     let image_urls = if partial.image_urls.is_empty() {
         micro_partial.image_urls
