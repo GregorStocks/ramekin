@@ -260,7 +260,9 @@ seed: ## Create test user with sample recipes (requires dev server running)
 		--username t --password t ../data/dev/seed.paprikarecipes
 
 load-test: ## Run load test creating users with recipes and photos (for performance testing)
-	@cd cli && cargo run -q -- load-test
+	@set -a && . ./dev.env && set +a && cd cli && cargo run -q -- load-test \
+		--server-url "$${API_BASE_URL:-http://localhost:$$PORT}" \
+		--ui-url "$${UI_BASE_URL:-http://localhost:$$UI_PORT_HTTP}"
 
 install-hooks: ## Install git hooks for local development
 	@cp scripts/pre-push .git/hooks/pre-push
