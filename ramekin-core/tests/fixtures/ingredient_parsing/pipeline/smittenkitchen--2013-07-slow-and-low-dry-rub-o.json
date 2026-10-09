@@ -73,14 +73,14 @@
     {
       "raw": "6 tablespoons packed dark brown sugar",
       "expected": {
-        "item": "packed dark brown sugar",
+        "item": "dark brown sugar",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "packed",
         "section": "Dry Rub",
         "category": "Baking"
       }

@@ -121,11 +121,11 @@
     {
       "raw": "1 large head cauliflower",
       "expected": {
-        "item": "head cauliflower",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large head"
           }
         ],
         "note": null,

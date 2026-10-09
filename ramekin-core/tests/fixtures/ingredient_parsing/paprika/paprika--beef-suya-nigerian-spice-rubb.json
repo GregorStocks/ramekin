@@ -191,11 +191,11 @@
     {
       "raw": "¼ small head green cabbage , sliced thin (1½ cups)",
       "expected": {
-        "item": "head green cabbage",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "0.25",
-            "unit": "small"
+            "unit": "small head"
           },
           {
             "amount": "1.5",

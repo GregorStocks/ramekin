@@ -61,14 +61,14 @@
     {
       "raw": "1/4 cup high quality mayonnaise",
       "expected": {
-        "item": "high quality mayonnaise",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "high quality",
         "category": "Condiments & Sauces"
       }
     },

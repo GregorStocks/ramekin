@@ -73,14 +73,14 @@
     {
       "raw": "5 ounces good-quality milk (their recommendation) or semi-sweet (what I’d use next time) chocolate, coarsely chopped",
       "expected": {
-        "item": "good-quality milk or semi-sweet chocolate",
+        "item": "milk or semi-sweet chocolate",
         "measurements": [
           {
             "amount": "5",
             "unit": "oz"
           }
         ],
-        "note": "their recommendation, what I’d use next time, coarsely chopped",
+        "note": "their recommendation, what I’d use next time, coarsely chopped, good-quality",
         "section": "For the Milk Chocolate Peanut Butter Layer",
         "category": "Baking"
       }

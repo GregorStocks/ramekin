@@ -47,7 +47,7 @@
     {
       "raw": "3 tablespoons (37 grams) packed dark or light brown sugar",
       "expected": {
-        "item": "packed dark or light brown sugar",
+        "item": "dark or light brown sugar",
         "measurements": [
           {
             "amount": "3",
@@ -58,7 +58,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "section": "Crumble",
         "category": "Baking"
       }

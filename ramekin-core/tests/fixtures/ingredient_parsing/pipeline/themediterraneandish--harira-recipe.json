@@ -191,14 +191,14 @@
     {
       "raw": "1 cup packed chopped fresh cilantro",
       "expected": {
-        "item": "packed chopped fresh cilantro",
+        "item": "chopped fresh cilantro",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

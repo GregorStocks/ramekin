@@ -293,14 +293,14 @@
     {
       "raw": "1/2 cup loosely packed fresh cilantro leaves",
       "expected": {
-        "item": "loosely packed fresh cilantro leaves",
+        "item": "fresh cilantro leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loosely packed",
         "section": "For Salad",
         "category": "Produce"
       }
@@ -308,14 +308,14 @@
     {
       "raw": "1/2 cup loosely packed fresh mint leaves",
       "expected": {
-        "item": "loosely packed fresh mint leaves",
+        "item": "fresh mint leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loosely packed",
         "section": "For Salad",
         "category": "Produce"
       }
@@ -323,14 +323,14 @@
     {
       "raw": "1/2 cup loosely packed fresh small basil leaves",
       "expected": {
-        "item": "loosely packed fresh small basil leaves",
+        "item": "fresh small basil leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loosely packed",
         "section": "For Salad",
         "category": "Produce"
       }

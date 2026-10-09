@@ -145,11 +145,11 @@
     {
       "raw": "1 small bunch fresh cilantro (finely chopped)",
       "expected": {
-        "item": "bunch fresh cilantro",
+        "item": "fresh cilantro",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small bunch"
           }
         ],
         "note": "finely chopped",

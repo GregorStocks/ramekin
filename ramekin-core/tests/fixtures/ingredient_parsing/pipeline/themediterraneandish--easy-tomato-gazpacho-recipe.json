@@ -190,11 +190,11 @@
     {
       "raw": "Small handful fresh mint leaves, (torn or chopped)",
       "expected": {
-        "item": "handful fresh mint leaves",
+        "item": "fresh mint leaves",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": "torn or chopped",
@@ -204,11 +204,11 @@
     {
       "raw": "Small handful fresh cilantro leaves, (torn or chopped)",
       "expected": {
-        "item": "handful fresh cilantro leaves",
+        "item": "fresh cilantro leaves",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": "torn or chopped",

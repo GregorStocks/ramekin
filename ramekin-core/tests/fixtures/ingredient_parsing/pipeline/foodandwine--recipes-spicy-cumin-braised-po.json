@@ -5,14 +5,14 @@
     {
       "raw": "1 1/2 cups loosely packed fresh cilantro leaves and tender stems",
       "expected": {
-        "item": "loosely packed fresh cilantro leaves and tender stems",
+        "item": "fresh cilantro leaves and tender stems",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loosely packed",
         "category": "Produce"
       }
     },

@@ -47,11 +47,11 @@
     {
       "raw": "small handful parsley chopped",
       "expected": {
-        "item": "handful parsley chopped",
+        "item": "parsley chopped",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": null,

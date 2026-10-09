@@ -172,11 +172,15 @@
     {
       "raw": "3 large or 5 skinny scallions, sliced thin and white/pale green parts and dark green tops in separate piles",
       "expected": {
-        "item": "or 5 skinny scallions",
+        "item": "skinny scallions",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
+          },
+          {
+            "amount": "5",
+            "unit": null
           }
         ],
         "note": "sliced thin and white/pale green parts and dark green tops in separate piles",

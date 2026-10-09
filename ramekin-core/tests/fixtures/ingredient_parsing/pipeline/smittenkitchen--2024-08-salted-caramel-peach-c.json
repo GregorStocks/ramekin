@@ -172,7 +172,7 @@
     {
       "raw": "6 tablespoons (80 grams) packed dark brown sugar",
       "expected": {
-        "item": "packed dark brown sugar",
+        "item": "dark brown sugar",
         "measurements": [
           {
             "amount": "6",
@@ -183,7 +183,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

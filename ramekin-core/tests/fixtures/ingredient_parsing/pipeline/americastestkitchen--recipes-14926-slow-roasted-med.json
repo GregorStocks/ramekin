@@ -145,14 +145,14 @@
     {
       "raw": "1 tablespoon packed brown sugar",
       "expected": {
-        "item": "packed brown sugar",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

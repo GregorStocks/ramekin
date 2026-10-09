@@ -88,11 +88,11 @@
     {
       "raw": "1 6-ounce container raspberries",
       "expected": {
-        "item": "6-ounce container raspberries",
+        "item": "raspberries",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "6-ounce container"
           }
         ],
         "note": null,

@@ -32,7 +32,7 @@
     {
       "raw": "3/4 cup (145 grams) firmly packed dark brown sugar",
       "expected": {
-        "item": "firmly packed dark brown sugar",
+        "item": "dark brown sugar",
         "measurements": [
           {
             "amount": "0.75",
@@ -43,7 +43,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "firmly packed",
         "category": "Baking"
       }
     },

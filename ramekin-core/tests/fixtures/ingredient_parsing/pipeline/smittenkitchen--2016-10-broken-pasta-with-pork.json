@@ -191,11 +191,11 @@
     {
       "raw": "Large handful arugula leaves, cleaned",
       "expected": {
-        "item": "handful arugula leaves",
+        "item": "arugula leaves",
         "measurements": [
           {
             "amount": null,
-            "unit": "large"
+            "unit": "large handful"
           }
         ],
         "note": "cleaned",

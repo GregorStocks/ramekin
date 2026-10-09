@@ -145,14 +145,14 @@
     {
       "raw": "½ cup packed light brown sugar",
       "expected": {
-        "item": "packed light brown sugar",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

@@ -37,7 +37,7 @@
     {
       "raw": "6 Tbsp (75g) packed light-brown sugar",
       "expected": {
-        "item": "packed light-brown sugar",
+        "item": "light-brown sugar",
         "measurements": [
           {
             "amount": "6",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

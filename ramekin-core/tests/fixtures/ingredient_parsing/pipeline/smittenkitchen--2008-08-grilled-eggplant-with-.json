@@ -5,11 +5,11 @@
     {
       "raw": "1 12-ounce container grape or cherry tomatoes, quartered lengthwise",
       "expected": {
-        "item": "12-ounce container grape or cherry tomatoes",
+        "item": "grape or cherry tomatoes",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "12-ounce container"
           }
         ],
         "note": "quartered lengthwise",

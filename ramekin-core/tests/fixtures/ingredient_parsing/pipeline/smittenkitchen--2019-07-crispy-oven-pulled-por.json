@@ -117,11 +117,11 @@
     {
       "raw": "1 small (2-pound) head green cabbage",
       "expected": {
-        "item": "head green cabbage",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small head"
           }
         ],
         "note": "2-pound",

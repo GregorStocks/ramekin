@@ -155,7 +155,7 @@
     {
       "raw": "1/3 cup (67g) packed light or dark brown sugar",
       "expected": {
-        "item": "packed light or dark brown sugar",
+        "item": "light or dark brown sugar",
         "measurements": [
           {
             "amount": "0.33",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },
@@ -269,16 +269,46 @@
     {
       "raw": "small pinch each of ground cinnamon, ginger, and cloves",
       "expected": {
-        "item": "pinch each of ground cinnamon, ginger, and cloves",
+        "item": "ground cinnamon",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small pinch"
           }
         ],
         "note": null,
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small pinch"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "small pinch each of ground cinnamon, ginger, and cloves",
+      "expected": {
+        "item": "cloves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
     },
     {
       "raw": "optional: sprinkles and/or sugared cranberries for garnish",

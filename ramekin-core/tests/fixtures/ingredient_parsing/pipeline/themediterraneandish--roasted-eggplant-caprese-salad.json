@@ -102,14 +102,14 @@
     {
       "raw": "1 cup packed basil leaves",
       "expected": {
-        "item": "packed basil leaves",
+        "item": "basil leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

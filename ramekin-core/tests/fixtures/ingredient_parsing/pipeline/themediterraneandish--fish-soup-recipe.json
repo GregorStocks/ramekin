@@ -205,28 +205,28 @@
     {
       "raw": "1 cup packed chopped fresh parsley",
       "expected": {
-        "item": "packed chopped fresh parsley",
+        "item": "chopped fresh parsley",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup packed chopped fresh cilantro",
       "expected": {
-        "item": "packed chopped fresh cilantro",
+        "item": "chopped fresh cilantro",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

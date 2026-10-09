@@ -61,11 +61,11 @@
     {
       "raw": "large handful coriander seed sprigs",
       "expected": {
-        "item": "handful coriander seed sprigs",
+        "item": "coriander seed sprigs",
         "measurements": [
           {
             "amount": null,
-            "unit": "large"
+            "unit": "large handful"
           }
         ],
         "note": null,

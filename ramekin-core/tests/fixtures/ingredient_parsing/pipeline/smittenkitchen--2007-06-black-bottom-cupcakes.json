@@ -117,14 +117,14 @@
     {
       "raw": "1 cup firmly packed light brown sugar",
       "expected": {
-        "item": "firmly packed light brown sugar",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "firmly packed",
         "category": "Baking"
       }
     },

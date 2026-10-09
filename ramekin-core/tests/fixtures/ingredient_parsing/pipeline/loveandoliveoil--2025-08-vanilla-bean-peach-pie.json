@@ -47,11 +47,15 @@
     {
       "raw": "1/2 cup 1 stick cold unsalted butter (cut into 1/4-inch pieces)",
       "expected": {
-        "item": "1 stick cold unsalted butter",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
           }
         ],
         "note": "cut into 1/4-inch pieces",

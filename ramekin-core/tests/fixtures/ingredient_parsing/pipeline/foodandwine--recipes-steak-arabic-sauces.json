@@ -5,14 +5,14 @@
     {
       "raw": "2 cups packed parsley leaves",
       "expected": {
-        "item": "packed parsley leaves",
+        "item": "parsley leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

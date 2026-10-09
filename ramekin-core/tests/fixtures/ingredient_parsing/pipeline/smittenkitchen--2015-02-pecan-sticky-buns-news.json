@@ -309,7 +309,7 @@
     {
       "raw": "1/4 cup (50 grams) packed dark brown sugar",
       "expected": {
-        "item": "packed dark brown sugar",
+        "item": "dark brown sugar",
         "measurements": [
           {
             "amount": "0.25",
@@ -320,7 +320,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

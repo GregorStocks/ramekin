@@ -33,14 +33,14 @@
     {
       "raw": "2 cups packed shredded or baby lettuce leaves",
       "expected": {
-        "item": "packed shredded or baby lettuce leaves",
+        "item": "shredded or baby lettuce leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

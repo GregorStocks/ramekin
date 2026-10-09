@@ -61,11 +61,11 @@
     {
       "raw": "Small handful basil leaves, most left whole, a few slivered for garnish",
       "expected": {
-        "item": "handful basil leaves, most left whole, a few slivered",
+        "item": "basil leaves, most left whole, a few slivered",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": "for garnish",

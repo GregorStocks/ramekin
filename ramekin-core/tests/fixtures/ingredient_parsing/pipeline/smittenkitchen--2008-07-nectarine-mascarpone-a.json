@@ -47,11 +47,11 @@
     {
       "raw": "1 8-ounce container mascarpone cheese",
       "expected": {
-        "item": "8-ounce container mascarpone cheese",
+        "item": "mascarpone cheese",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "8-ounce container"
           }
         ],
         "note": null,

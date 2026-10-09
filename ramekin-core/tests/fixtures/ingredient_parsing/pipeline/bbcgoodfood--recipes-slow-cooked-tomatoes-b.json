@@ -33,11 +33,11 @@
     {
       "raw": "large bunch basil leaves only",
       "expected": {
-        "item": "bunch basil leaves only",
+        "item": "basil leaves only",
         "measurements": [
           {
             "amount": null,
-            "unit": "large"
+            "unit": "large bunch"
           }
         ],
         "note": null,

@@ -211,28 +211,28 @@
     {
       "raw": "1/2 cup packed chopped fresh parsley leaves",
       "expected": {
-        "item": "packed chopped fresh parsley leaves",
+        "item": "chopped fresh parsley leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 cup packed chopped fresh mint leaves",
       "expected": {
-        "item": "packed chopped fresh mint leaves",
+        "item": "chopped fresh mint leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

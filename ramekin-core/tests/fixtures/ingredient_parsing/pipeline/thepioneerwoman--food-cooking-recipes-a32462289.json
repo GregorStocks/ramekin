@@ -70,11 +70,11 @@
     {
       "raw": "1 large head cauliflower, cut into florets",
       "expected": {
-        "item": "head cauliflower",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large head"
           }
         ],
         "note": "cut into florets",
