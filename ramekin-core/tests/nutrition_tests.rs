@@ -347,6 +347,22 @@ fn negligible_lines_are_known_zero() {
     // Spices without a real amount.
     assert_eq!(known(bare("freshly ground black pepper")), 0.0);
     assert_eq!(known(ingredient("ground cumin", "1", "pinch")), 0.0);
+    assert_eq!(known(ingredient("saffron", "1", "large pinch")), 0.0);
+    assert_eq!(known(ingredient("kosher salt", "1", "small pinch")), 0.0);
+    assert_eq!(known(ingredient("saffron", "1", "extra-large pinch")), 0.0);
+    // A quality word after a package weight leaves the weight leading the note.
+    let can = |raw: &str| {
+        let parsed = ramekin_core::ingredient_parser::parse_ingredient(raw);
+        estimate(&[parsed], None, 1.0)
+            .unwrap()
+            .known_calories
+            .unwrap()
+            .min
+    };
+    assert_eq!(
+        can("1 (28-ounce) can good quality whole tomatoes"),
+        can("1 (28-ounce) can whole tomatoes")
+    );
     assert_eq!(known(ingredient("cayenne", "a few", "shakes")), 0.0);
     // Compounds whose every food is negligible on the line.
     assert_eq!(known(bare("salt and pepper")), 0.0);
@@ -479,6 +495,31 @@ fn packages_carry_their_own_weight_and_fill_words_are_ignored() {
             kcal("granulated sugar", "1", "tsp")
         );
     }
+}
+
+#[test]
+fn inch_pieces_scale_the_one_inch_piece() {
+    let kcal = |unit: &str| {
+        let result = estimate(&[ingredient("ginger", "1", unit)], None, 1.0).unwrap();
+        assert!(
+            result.unknown_ingredients.is_empty(),
+            "{unit}: {:?}",
+            result.unknown_ingredients
+        );
+        result.known_calories.unwrap()
+    };
+    let inch = kcal("1-inch piece").min;
+    for (unit, inches) in [
+        ("3-inch piece", 3.0),
+        ("3-inch knobs", 3.0),
+        ("3/4-inch piece", 0.75),
+        ("1 1/2-inch chunk", 1.5),
+    ] {
+        assert!((kcal(unit).min - inches * inch).abs() < 1e-9, "{unit}");
+    }
+    let range = kcal("3-4 inch chunk");
+    assert!((range.min - 3.0 * inch).abs() < 1e-9);
+    assert!((range.max - 4.0 * inch).abs() < 1e-9);
 }
 
 #[test]

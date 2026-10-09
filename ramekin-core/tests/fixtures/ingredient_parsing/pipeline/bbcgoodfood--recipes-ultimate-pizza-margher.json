@@ -149,11 +149,11 @@
     {
       "raw": "two small handfuls  basil leaves, roughly torn parmesan shavings and rocket, to serve",
       "expected": {
-        "item": "handfuls  basil leaves, roughly torn parmesan shavings and rocket",
+        "item": "basil leaves, roughly torn parmesan shavings and rocket",
         "measurements": [
           {
             "amount": "2",
-            "unit": "small"
+            "unit": "small handfuls"
           }
         ],
         "note": "to serve",

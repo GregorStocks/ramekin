@@ -221,14 +221,27 @@ fn has_no_amount(ingredient: &ParsedIngredient) -> bool {
     })
 }
 
+/// A trace unit, sized or not ("pinch", "large pinch", "extra-large pinch").
+fn is_trace_unit(unit: &str) -> bool {
+    let unit = normalize(unit);
+    let unsized_unit = [
+        "small ",
+        "medium ",
+        "large ",
+        "extra-large ",
+        "extra large ",
+    ]
+    .iter()
+    .find_map(|size| unit.strip_prefix(size))
+    .unwrap_or(&unit);
+    TRACE_UNITS.contains(&unsized_unit)
+}
+
 /// A line with no real amount: no numeric quantity at all ("to taste", "as
 /// needed", no measurement), or only a pinch or dash.
 fn is_trace_line(ingredient: &ParsedIngredient) -> bool {
     ingredient.measurements.iter().all(|measurement| {
-        let trace_unit = measurement
-            .unit
-            .as_deref()
-            .is_some_and(|unit| TRACE_UNITS.contains(&normalize(unit).as_str()));
+        let trace_unit = measurement.unit.as_deref().is_some_and(is_trace_unit);
         let has_number = measurement
             .amount
             .as_deref()
@@ -461,6 +474,24 @@ fn package_grams(unit: &str) -> Option<CalorieRange> {
     })
 }
 
+/// A piece cut to a size in inches ("3-inch piece", "3-4 inch chunk", "3/4
+/// inch knob"): that many times the food's 1-inch piece, else the food's
+/// default piece.
+fn inch_piece_grams(unit: &str, food: &Food) -> Option<CalorieRange> {
+    static INCH_PIECE: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"^(.+?)[- ]inch(?:es)? (?:piece|chunk|knob|hunk)s?$").unwrap()
+    });
+    let size = quantity(&INCH_PIECE.captures(unit)?[1])?;
+    if let Some(per_inch) = catalog::grams_per_piece(food.entry, Some("1 inch piece")) {
+        return Some(CalorieRange {
+            min: size.min * per_inch,
+            max: size.max * per_inch,
+        });
+    }
+    // Never asks for an estimate: an inch size isn't a unit to ask about.
+    catalog::grams_per_piece(food.entry, None).map(exact)
+}
+
 fn exact(grams: f64) -> CalorieRange {
     CalorieRange {
         min: grams,
@@ -500,6 +531,9 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str>
             .ok_or("Unsupported quantity unit");
     }
     if let Some(grams) = package_grams(&normalized) {
+        return Ok(grams);
+    }
+    if let Some(grams) = inch_piece_grams(&normalized, food) {
         return Ok(grams);
     }
     let unit = canonical_unit(&normalized);

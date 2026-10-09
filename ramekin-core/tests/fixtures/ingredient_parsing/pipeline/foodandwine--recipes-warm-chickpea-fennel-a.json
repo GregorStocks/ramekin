@@ -134,14 +134,14 @@
     {
       "raw": "3/4 cup loosely packed flat-leaf parsley leaves",
       "expected": {
-        "item": "loosely packed flat-leaf parsley leaves",
+        "item": "flat-leaf parsley leaves",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loosely packed",
         "category": "Produce"
       }
     },

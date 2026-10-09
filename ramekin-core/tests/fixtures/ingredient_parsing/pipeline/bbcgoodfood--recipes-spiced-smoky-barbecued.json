@@ -104,16 +104,31 @@
     {
       "raw": "2 large bunches each rosemary and thyme",
       "expected": {
-        "item": "bunches each rosemary and thyme",
+        "item": "rosemary",
         "measurements": [
           {
             "amount": "2",
-            "unit": "large"
+            "unit": "large bunches"
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
+        "category": "Produce"
       }
+    },
+    {
+      "raw": "2 large bunches each rosemary and thyme",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large bunches"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
     },
     {
       "raw": "2 branches fresh  bay leaves",

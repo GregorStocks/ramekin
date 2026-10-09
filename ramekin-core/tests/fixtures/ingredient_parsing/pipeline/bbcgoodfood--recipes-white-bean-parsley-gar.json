@@ -75,11 +75,11 @@
     {
       "raw": "large handful flat-leaf parsley",
       "expected": {
-        "item": "handful flat-leaf parsley",
+        "item": "flat-leaf parsley",
         "measurements": [
           {
             "amount": null,
-            "unit": "large"
+            "unit": "large handful"
           }
         ],
         "note": null,

@@ -126,14 +126,14 @@
     {
       "raw": "1 1/2 tablespoons packed dark brown sugar",
       "expected": {
-        "item": "packed dark brown sugar",
+        "item": "dark brown sugar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

@@ -47,14 +47,14 @@
     {
       "raw": "3 tablespoons best-quality extra-virgin olive oil, divided",
       "expected": {
-        "item": "best-quality extra-virgin olive oil",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "divided",
+        "note": "divided, best-quality",
         "category": "Oils & Vinegars"
       }
     }

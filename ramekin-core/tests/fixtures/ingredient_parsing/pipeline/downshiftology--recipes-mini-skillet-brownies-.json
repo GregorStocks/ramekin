@@ -37,14 +37,14 @@
     {
       "raw": "1 cup packed fresh mint leaves",
       "expected": {
-        "item": "packed fresh mint leaves",
+        "item": "fresh mint leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

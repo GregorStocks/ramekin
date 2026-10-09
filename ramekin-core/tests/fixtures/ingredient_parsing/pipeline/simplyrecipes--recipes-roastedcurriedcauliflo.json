@@ -5,11 +5,11 @@
     {
       "raw": "1 large (or 2 small) head(s) cauliflower, cored, broken into large-ish florets, florets sliced into 1/2-inch slices",
       "expected": {
-        "item": "head cauliflower, cored, broken into large-ish florets",
+        "item": "cauliflower, cored, broken into large-ish florets",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large head"
           }
         ],
         "note": "florets sliced into 1/2-inch slices; or 2 small, s",

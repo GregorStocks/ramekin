@@ -299,6 +299,119 @@ fn is_standalone_parenthetical_package_fragment(s: &str) -> bool {
         || is_bare_parenthetical_package_size(content)
 }
 
+/// Measures a size word can modify ("small handful", "large bunch", "small
+/// head").
+const SIZEABLE_MEASURES: &[&str] = &["handful", "bunch", "pinch", "head"];
+
+/// "Small handful rosemary", "small head of garlic": a size before a measure
+/// sizes the measure, not the food. Returns the sized measure and the text
+/// after it.
+fn split_sized_measure(size: &str, after_size: &str) -> Option<(String, String)> {
+    if !is_size_unit(size) {
+        return None;
+    }
+    let (measure, after_measure) = extract_unit(after_size);
+    let measure =
+        measure.filter(|measure| SIZEABLE_MEASURES.contains(&normalize_unit(measure).as_str()))?;
+    let rest = strip_leading_of_article(&after_measure)
+        .map(str::to_string)
+        .unwrap_or(after_measure);
+    // "2 large pinches (of saffron)": the food went to the note, so the
+    // measure stays as the item rather than leave it empty.
+    if rest.trim().is_empty() {
+        return None;
+    }
+    // "XL pinch" -> "extra-large pinch"
+    Some((format!("{} {measure}", normalize_unit(size)), rest))
+}
+
+/// Leading words that say how a food is packed or how good it is, never
+/// which food it is. Longer phrases first.
+const LEADING_ITEM_QUALIFIERS: &[&str] = &[
+    "firmly packed",
+    "lightly packed",
+    "loosely packed",
+    "tightly packed",
+    "well packed",
+    "packed",
+    "good quality",
+    "good-quality",
+    "high quality",
+    "high-quality",
+    "best quality",
+    "best-quality",
+    "top quality",
+    "top-quality",
+];
+
+/// "packed dark-brown sugar" -> ("packed", "dark-brown sugar"). Never leaves
+/// the item empty.
+fn split_leading_item_qualifier(item: &str) -> Option<(&str, &str)> {
+    let trimmed = item.trim_start();
+    LEADING_ITEM_QUALIFIERS.iter().find_map(|qualifier| {
+        let rest = trimmed
+            .get(..qualifier.len())
+            .filter(|prefix| prefix.eq_ignore_ascii_case(qualifier))
+            .and_then(|_| trimmed.get(qualifier.len()..))?;
+        let rest_trimmed = rest.trim_start();
+        (rest.starts_with(char::is_whitespace) && rest_trimmed.starts_with(char::is_alphanumeric))
+            .then(|| {
+                (
+                    trimmed.get(..qualifier.len()).unwrap_or(qualifier),
+                    rest_trimmed,
+                )
+            })
+    })
+}
+
+/// The text after a leading "of" and any article: "of a lemon" -> "lemon".
+fn strip_leading_of_article(s: &str) -> Option<&str> {
+    let trimmed = s.trim_start();
+    let after_of = trimmed
+        .get(..3)
+        .filter(|prefix| prefix.eq_ignore_ascii_case("of "))
+        .and_then(|_| trimmed.get(3..))?
+        .trim_start();
+    for article in ["a ", "an ", "the "] {
+        if let Some(rest) = after_of
+            .get(..article.len())
+            .filter(|prefix| prefix.eq_ignore_ascii_case(article))
+            .and_then(|_| after_of.get(article.len()..))
+        {
+            return Some(rest.trim_start());
+        }
+    }
+    Some(after_of)
+}
+
+/// "two US sticks unsalted butter" -> (2 stick, "unsalted butter").
+fn split_stick_count(s: &str) -> Option<(Measurement, String)> {
+    let normalized = normalize_word_numbers(s.trim_start());
+    let (amount, after_amount) = extract_amount(&normalized);
+    let amount = amount?;
+    let after_us = after_amount.trim_start();
+    let after_us = ["us ", "u.s. "]
+        .iter()
+        .find_map(|marker| {
+            after_us
+                .get(..marker.len())
+                .filter(|prefix| prefix.eq_ignore_ascii_case(marker))
+                .and_then(|_| after_us.get(marker.len()..))
+        })
+        .unwrap_or(after_us);
+    let (unit, after_unit) = extract_unit(after_us);
+    if normalize_unit(&unit?) != "stick" || after_unit.trim().is_empty() {
+        return None;
+    }
+    Some((
+        Measurement {
+            amount: Some(amount),
+            unit: Some("stick".to_string()),
+        },
+        after_unit,
+    ))
+}
+
 /// Parse a single ingredient line into structured data.
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
@@ -609,8 +722,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             .get(..article.len())
             .filter(|prefix| prefix.eq_ignore_ascii_case(article))
             .and_then(|_| remaining.get(article.len()..));
-        // Only before a sized container ("a 14-ounce can"); "a 3-inch piece
-        // of ginger" has no unit to count.
+        // Only before a sized unit ("a 14-ounce can", "a 3-inch piece of
+        // ginger").
         if let Some(rest) = after_article.filter(|rest| {
             rest.starts_with(|c: char| c.is_ascii_digit())
                 && try_extract_compound_unit(rest).is_some()
@@ -669,6 +782,14 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         extract_unit(&remaining)
     };
 
+    if let Some((sized_measure, after_measure)) = base_unit
+        .as_deref()
+        .and_then(|size| split_sized_measure(size, &after_unit))
+    {
+        base_unit = Some(sized_measure);
+        after_unit = after_measure;
+    }
+
     // Step 4a: Handle "N unit container" compound units (e.g., "14 ounce can")
     // If no unit was found, check if remaining starts with a compound unit pattern
     if base_unit.is_none() {
@@ -697,20 +818,16 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Handles "Half of a lemon" → after amount "1/2" extracted, remaining is
     // "of a lemon". With no unit to absorb the "of", strip it here.
     if primary_amount.is_some() && base_unit.is_none() {
-        let remaining_trimmed = remaining.trim_start();
-        let remaining_lower = remaining_trimmed.to_lowercase();
-        if remaining_lower.starts_with("of ") {
-            let after_of = remaining_trimmed.get(3..).unwrap_or("").trim_start();
-            let after_of_lower = after_of.to_lowercase();
-            remaining = if after_of_lower.starts_with("a ") {
-                after_of.get(2..).unwrap_or("").trim_start().to_string()
-            } else if after_of_lower.starts_with("an ") {
-                after_of.get(3..).unwrap_or("").trim_start().to_string()
-            } else if after_of_lower.starts_with("the ") {
-                after_of.get(4..).unwrap_or("").trim_start().to_string()
-            } else {
-                after_of.to_string()
-            };
+        if let Some(after_of) = strip_leading_of_article(&remaining) {
+            remaining = after_of.to_string();
+            // "1/2 of a small onion": the size after the article is the unit.
+            let (size, after_size) = extract_unit(&remaining);
+            if let Some(size) = size.filter(|size| is_size_unit(size)) {
+                (base_unit, remaining) = match split_sized_measure(&size, &after_size) {
+                    Some((sized_measure, after_measure)) => (Some(sized_measure), after_measure),
+                    None => (Some(size), after_size),
+                };
+            }
         }
     }
 
@@ -721,7 +838,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     {
         let remaining_trimmed = remaining.trim_start();
         if remaining_trimmed.to_lowercase().starts_with("each ") {
-            remaining = remaining_trimmed.get(5..).unwrap_or("").to_string();
+            let after_each = remaining_trimmed.get(5..).unwrap_or("");
+            // "small pinch each of cinnamon and ginger"
+            remaining = strip_leading_of_article(after_each)
+                .unwrap_or(after_each)
+                .to_string();
             base_unit = Some(match base_unit {
                 Some(u) => format!("{} each", u),
                 None => "each".to_string(),
@@ -848,13 +969,19 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     if remaining_lower.starts_with("or ") {
         // Use the length of what was stripped to get from original (preserving case)
         let after_or = remaining_trimmed.get(3..).unwrap_or("").trim_start();
+        // "or approximately 4 sausages": the approximation is dropped, as in
+        // a parenthetical "(about 4 medium)".
+        let (_, after_or) = strip_leading_measurement_qualifier(after_or);
 
         // Try to parse as measurement, following the same flow as main parsing:
         // 1. Strip pre-amount modifier (e.g., "scant 1 cup")
         let (or_pre_amount_modifier, after_or_modifier) = strip_measurement_modifier(after_or);
 
-        // 2. Extract amount
+        // 2. Extract amount; "or 1/4 of a large onion" drops the "of a"
         let (or_amount, after_or_amount) = extract_amount(&after_or_modifier);
+        let after_or_amount = strip_leading_of_article(&after_or_amount)
+            .map(str::to_string)
+            .unwrap_or(after_or_amount);
 
         // 3. Strip pre-unit modifier (e.g., "3 heaping cups")
         let (or_pre_unit_modifier, after_or_pre_unit) =
@@ -863,8 +990,21 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         // 4. Extract unit
         let (or_base_unit, after_or_unit) = extract_unit(&after_or_pre_unit);
 
+        // "14 ounces or 4 plain pork sausages": right after a full
+        // measurement, a bare count before the food is an alternative too.
+        let bare_count = or_base_unit.is_none()
+            && primary_amount.is_some()
+            && primary_unit.is_some()
+            && after_or_modifier.starts_with(|c: char| c.is_ascii_digit())
+            && after_or_unit.trim_start().starts_with(char::is_alphabetic)
+            // "or 1 packet instant yeast" counts packets, not the food.
+            && !after_or_unit
+                .split_whitespace()
+                .next()
+                .is_some_and(is_package_noun);
+
         // Only treat as alternative if we got BOTH amount AND unit
-        if or_amount.is_some() && or_base_unit.is_some() {
+        if or_amount.is_some() && (or_base_unit.is_some() || bare_count) {
             // Combine modifiers with unit (prefer pre-unit, fall back to pre-amount)
             let or_modifier = or_pre_unit_modifier.or(or_pre_amount_modifier);
             let or_unit = match (or_modifier, or_base_unit) {
@@ -879,6 +1019,15 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             });
 
             remaining = after_or_unit;
+        }
+    }
+
+    // Step 4.55: "1/2 lb. two US sticks unsalted butter": a count of sticks
+    // after the measurement restates it.
+    if primary_amount.is_some() && primary_unit.is_some() {
+        if let Some((stick_measurement, after_sticks)) = split_stick_count(&remaining) {
+            alt_measurements.push(stick_measurement);
+            remaining = after_sticks;
         }
     }
 
@@ -1299,6 +1448,18 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     }
 
     prepend_deferred_parenthetical_notes(&mut note, &deferred_parenthetical_notes);
+
+    // Step 5.9: "packed dark-brown sugar", "good quality dark chocolate": how
+    // the food is packed or how good it is goes to the note. It stays off the
+    // unit so "1 cup" still converts by volume, and goes last so a package
+    // weight ("28-ounce") still leads the note.
+    if let Some((qualifier, item_part)) = split_leading_item_qualifier(&remaining) {
+        note = Some(match note {
+            Some(existing) => format!("{existing}, {qualifier}"),
+            None => qualifier.to_string(),
+        });
+        remaining = item_part.to_string();
+    }
 
     // Step 6: Build measurements list
     if primary_amount.is_some() || primary_unit.is_some() {
@@ -2217,5 +2378,197 @@ mod tests {
         assert_eq!(result.len(), 3);
         assert_eq!(result[0].item, "flour");
         assert_eq!(result[2].item, "salt and pepper");
+    }
+
+    fn measurements(parsed: &ParsedIngredient) -> Vec<(Option<&str>, Option<&str>)> {
+        parsed
+            .measurements
+            .iter()
+            .map(|m| (m.amount.as_deref(), m.unit.as_deref()))
+            .collect()
+    }
+
+    #[test]
+    fn test_parse_stick_count_after_measurement() {
+        let parsed = parse_ingredient("1/2 lb. two US sticks unsalted butter");
+        assert_eq!(parsed.item, "unsalted butter");
+        assert_eq!(
+            measurements(&parsed),
+            vec![(Some("1/2"), Some("lb")), (Some("2"), Some("stick"))]
+        );
+
+        assert_eq!(
+            parse_ingredient("1/2 lb. two us sticks unsalted butter").item,
+            "unsalted butter"
+        );
+
+        let parsed = parse_ingredient("3/4 cup 1 1/2 sticks/170g unsalted butter");
+        assert_eq!(parsed.item, "unsalted butter");
+        assert_eq!(
+            measurements(&parsed),
+            vec![
+                (Some("3/4"), Some("cup")),
+                (Some("1 1/2"), Some("stick")),
+                (Some("170"), Some("g"))
+            ]
+        );
+    }
+
+    #[test]
+    fn test_parse_sized_container_unit() {
+        let parsed = parse_ingredient("3 6-ounce containers fresh raspberries");
+        assert_eq!(parsed.item, "fresh raspberries");
+        assert_eq!(
+            measurements(&parsed),
+            vec![(Some("3"), Some("6-ounce containers"))]
+        );
+    }
+
+    #[test]
+    fn test_parse_inch_sized_piece_unit() {
+        for (raw, unit, item) in [
+            ("1 3-4 inch chunk of ginger", "3-4 inch chunk", "ginger"),
+            (
+                "1 3-inch piece fresh ginger",
+                "3-inch piece",
+                "fresh ginger",
+            ),
+            ("A 3-inch piece of ginger", "3-inch piece", "ginger"),
+            ("A 1 1/2-inch piece of ginger", "1 1/2-inch piece", "ginger"),
+            (
+                "Four 3-inch knobs fresh ginger",
+                "3-inch knobs",
+                "fresh ginger",
+            ),
+        ] {
+            let parsed = parse_ingredient(raw);
+            assert_eq!(parsed.item, item, "{raw}");
+            assert_eq!(parsed.measurements[0].unit.as_deref(), Some(unit), "{raw}");
+        }
+    }
+
+    #[test]
+    fn test_parse_size_after_of_a() {
+        let parsed = parse_ingredient("1/2 of a small or 1/4 of a large white onion");
+        assert_eq!(parsed.item, "white onion");
+        assert_eq!(
+            measurements(&parsed),
+            vec![(Some("1/2"), Some("small")), (Some("1/4"), Some("large"))]
+        );
+        assert_eq!(parse_ingredient("Half of a lemon").item, "lemon");
+    }
+
+    #[test]
+    fn test_parse_bare_count_alternative_after_measurement() {
+        let parsed =
+            parse_ingredient("14 ounces (400 grams) or approximately 4 plain pork sausages");
+        assert_eq!(parsed.item, "plain pork sausages");
+        assert_eq!(
+            measurements(&parsed),
+            vec![
+                (Some("14"), Some("oz")),
+                (Some("400"), Some("g")),
+                (Some("4"), None)
+            ]
+        );
+        // A counted packet isn't a count of the food.
+        let parsed = parse_ingredient("2 1/4 teaspoons or 1 packet instant yeast");
+        assert_eq!(parsed.item, "or 1 packet instant yeast");
+    }
+
+    #[test]
+    fn test_parse_orange_before_count_alternative() {
+        let parsed = parse_ingredient("1 large orange or 2 small ones, juiced");
+        assert_eq!(parsed.item, "orange");
+        assert_eq!(parsed.note.as_deref(), Some("or 2 small ones, juiced"));
+        assert_eq!(
+            parse_ingredient("3 red, orange, and yellow bell peppers").item,
+            "red, orange, and yellow bell peppers"
+        );
+    }
+
+    #[test]
+    fn test_parse_packing_and_quality_words_go_to_note() {
+        for (raw, item, note) in [
+            (
+                "2/3 cup packed dark-brown sugar",
+                "dark-brown sugar",
+                "packed",
+            ),
+            (
+                "1 1/2 cups packed (285 grams) dark-brown sugar",
+                "dark-brown sugar",
+                "packed",
+            ),
+            (
+                "1 cup firmly packed light brown sugar",
+                "light brown sugar",
+                "firmly packed",
+            ),
+            (
+                "6 ounces good quality dark chocolate (70-75%), finely chopped",
+                "dark chocolate",
+                "70-75%, finely chopped, good quality",
+            ),
+            (
+                "good quality kitchen shears",
+                "kitchen shears",
+                "good quality",
+            ),
+            ("1 pound high-quality butter", "butter", "high-quality"),
+        ] {
+            let parsed = parse_ingredient(raw);
+            assert_eq!(parsed.item, item, "{raw}");
+            assert_eq!(parsed.note.as_deref(), Some(note), "{raw}");
+        }
+        // The unit stays a plain volume so it still converts.
+        assert_eq!(
+            parse_ingredient("2/3 cup packed dark-brown sugar").measurements[0]
+                .unit
+                .as_deref(),
+            Some("cup")
+        );
+        // A packed measure is still a modified unit.
+        let parsed = parse_ingredient("1 packed cup brown sugar");
+        assert_eq!(parsed.item, "brown sugar");
+        assert_eq!(parsed.measurements[0].unit.as_deref(), Some("packed cup"));
+    }
+
+    #[test]
+    fn test_parse_sized_loose_measure() {
+        let parsed = parse_ingredient("Small handful picked fresh rosemary leaves, finely chopped");
+        assert_eq!(parsed.item, "picked fresh rosemary leaves");
+        assert_eq!(measurements(&parsed), vec![(None, Some("small handful"))]);
+
+        assert_eq!(
+            parse_ingredient("1 XL pinch saffron").measurements[0]
+                .unit
+                .as_deref(),
+            Some("extra-large pinch")
+        );
+
+        let parsed = parse_ingredient("1 large bunch kale");
+        assert_eq!(parsed.item, "kale");
+        assert_eq!(
+            measurements(&parsed),
+            vec![(Some("1"), Some("large bunch"))]
+        );
+
+        assert_eq!(
+            parse_ingredient("2 large pinches (of Spanish saffron threads)").item,
+            "pinches"
+        );
+
+        let parsed = parse_ingredient("1/2 of a small head of garlic");
+        assert_eq!(parsed.item, "garlic");
+        assert_eq!(
+            measurements(&parsed),
+            vec![(Some("1/2"), Some("small head"))]
+        );
+
+        // A size before the food stays the unit.
+        let parsed = parse_ingredient("1 large onion");
+        assert_eq!(parsed.item, "onion");
+        assert_eq!(measurements(&parsed), vec![(Some("1"), Some("large"))]);
     }
 }

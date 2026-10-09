@@ -89,11 +89,11 @@
     {
       "raw": "Small pinch salt",
       "expected": {
-        "item": "pinch salt",
+        "item": "salt",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small pinch"
           }
         ],
         "note": null,
@@ -103,11 +103,11 @@
     {
       "raw": "Small pinch cayenne",
       "expected": {
-        "item": "pinch cayenne",
+        "item": "cayenne",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small pinch"
           }
         ],
         "note": null,

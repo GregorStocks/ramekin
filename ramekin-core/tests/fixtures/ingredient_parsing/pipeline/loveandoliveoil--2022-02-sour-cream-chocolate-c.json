@@ -187,14 +187,14 @@
     {
       "raw": "2 oz good quality dark chocolate (60-70%) (finely chopped)",
       "expected": {
-        "item": "good quality dark chocolate",
+        "item": "dark chocolate",
         "measurements": [
           {
             "amount": "2",
             "unit": "oz"
           }
         ],
-        "note": "60-70%, finely chopped",
+        "note": "60-70%, finely chopped, good quality",
         "category": "Baking"
       }
     },

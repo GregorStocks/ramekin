@@ -201,7 +201,7 @@
     {
       "raw": "1 &amp;amp; 1/4 cup (8oz) good quality semi-sweet chocolate chips ((see notes below*))",
       "expected": {
-        "item": "good quality semi-sweet chocolate chips",
+        "item": "semi-sweet chocolate chips",
         "measurements": [
           {
             "amount": "1.25",
@@ -212,7 +212,7 @@
             "unit": "oz"
           }
         ],
-        "note": "see notes below",
+        "note": "see notes below*, good quality",
         "category": "Baking"
       }
     }

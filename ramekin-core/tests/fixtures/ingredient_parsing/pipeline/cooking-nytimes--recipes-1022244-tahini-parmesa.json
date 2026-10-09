@@ -88,14 +88,14 @@
     {
       "raw": "1/2 cup packed mint leaves, torn if large",
       "expected": {
-        "item": "packed mint leaves, torn if large",
+        "item": "mint leaves, torn if large",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Produce"
       }
     },

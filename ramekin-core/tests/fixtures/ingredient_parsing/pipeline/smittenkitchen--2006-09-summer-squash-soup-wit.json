@@ -129,28 +129,28 @@
     {
       "raw": "3/4 cup loosely packed fresh mint leaves",
       "expected": {
-        "item": "loosely packed fresh mint leaves",
+        "item": "fresh mint leaves",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loosely packed",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 cup loosely packed fresh flat-leaf parsley sprigs",
       "expected": {
-        "item": "loosely packed fresh flat-leaf parsley sprigs",
+        "item": "fresh flat-leaf parsley sprigs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loosely packed",
         "category": "Produce"
       }
     },

@@ -220,7 +220,7 @@
     {
       "raw": "1 teaspoon packed brown sugar ((5ml) )",
       "expected": {
-        "item": "packed brown sugar",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "1",
@@ -231,7 +231,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

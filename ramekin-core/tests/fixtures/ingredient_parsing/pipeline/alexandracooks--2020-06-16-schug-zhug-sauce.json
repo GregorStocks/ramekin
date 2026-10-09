@@ -61,28 +61,28 @@
     {
       "raw": "2 cups lightly packed cilantro leaves and stems",
       "expected": {
-        "item": "lightly packed cilantro leaves and stems",
+        "item": "cilantro leaves and stems",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "lightly packed",
         "category": "Produce"
       }
     },
     {
       "raw": "2 cups lightly packed flat-leaf parsley leaves and stems (rough stems removed)",
       "expected": {
-        "item": "lightly packed flat-leaf parsley leaves and stems",
+        "item": "flat-leaf parsley leaves and stems",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "rough stems removed",
+        "note": "rough stems removed, lightly packed",
         "category": "Produce"
       }
     },

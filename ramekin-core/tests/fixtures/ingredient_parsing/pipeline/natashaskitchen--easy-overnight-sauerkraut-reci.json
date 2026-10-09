@@ -5,11 +5,11 @@
     {
       "raw": "2  medium heads of cabbage (4lb)",
       "expected": {
-        "item": "heads of cabbage",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "2",
-            "unit": "medium"
+            "unit": "medium heads"
           },
           {
             "amount": "4",

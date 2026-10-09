@@ -28,11 +28,11 @@
     {
       "raw": "1  medium head romaine lettuce (chopped)",
       "expected": {
-        "item": "head romaine lettuce",
+        "item": "romaine lettuce",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium head"
           }
         ],
         "note": "chopped",

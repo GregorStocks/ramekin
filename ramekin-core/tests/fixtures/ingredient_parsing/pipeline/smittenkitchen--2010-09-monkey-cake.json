@@ -151,7 +151,7 @@
     {
       "raw": "1 1/2 cups (11 1/2 ounces or 327 grams) packed golden brown sugar",
       "expected": {
-        "item": "packed golden brown sugar",
+        "item": "golden brown sugar",
         "measurements": [
           {
             "amount": "1.5",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },
@@ -387,7 +387,7 @@
     {
       "raw": "1 cup (7 5/8 ounces or 218 grams) packed golden brown sugar",
       "expected": {
-        "item": "packed golden brown sugar",
+        "item": "golden brown sugar",
         "measurements": [
           {
             "amount": "1",
@@ -402,7 +402,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

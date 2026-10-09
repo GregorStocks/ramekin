@@ -103,15 +103,26 @@ const LEADING_MODIFIERS: &[&str] = &[
     "organic",
     "packed",
     "peeled",
+    // "picked rosemary leaves": picked off the stem.
+    "picked",
+    // "plain pork sausages"; an exact name ("plain yogurt") matches first.
+    "plain",
     // "raw pecan halves"; an exact name ("raw sugar") matches first.
     "raw",
+    // "regular cloves garlic", from "3 large or 4 regular cloves garlic".
+    "regular",
     "roughly",
     "shredded",
     "skinless",
+    "skinny",
     "sliced",
+    "slim",
     "small",
+    "smaller",
     "store-bought",
     "storebought",
+    // "thin carrots"; an exact name ("thin spaghetti") matches first.
+    "thin",
     "thinly",
     "toasted",
     // "unsalted pecan halves"; an exact name ("unsalted butter") matches first.

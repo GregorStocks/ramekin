@@ -126,11 +126,11 @@
     {
       "raw": "2-3 large handfuls fresh spinach",
       "expected": {
-        "item": "handfuls fresh spinach",
+        "item": "fresh spinach",
         "measurements": [
           {
             "amount": "2-3",
-            "unit": "large"
+            "unit": "large handfuls"
           }
         ],
         "note": null,

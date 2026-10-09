@@ -88,11 +88,11 @@
     {
       "raw": "1 small head cauliflower, cored and cut into rough 1-inch chunks",
       "expected": {
-        "item": "head cauliflower",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small head"
           }
         ],
         "note": "cored and cut into rough 1-inch chunks",

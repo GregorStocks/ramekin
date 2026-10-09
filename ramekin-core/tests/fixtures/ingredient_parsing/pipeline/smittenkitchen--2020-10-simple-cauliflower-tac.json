@@ -84,11 +84,11 @@
     {
       "raw": "1 large (3 pounds) head cauliflower, trimmed, chopped small, including core",
       "expected": {
-        "item": "head cauliflower",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large head"
           },
           {
             "amount": "3",

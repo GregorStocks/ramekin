@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (1 ounce) packed fresh herbs, such as chives, parsley, and mint",
       "expected": {
-        "item": "packed fresh herbs",
+        "item": "fresh herbs",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "oz"
           }
         ],
-        "note": "such as chives, parsley, and mint",
+        "note": "such as chives, parsley, and mint, packed",
         "category": "Produce"
       }
     },

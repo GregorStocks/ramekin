@@ -5,11 +5,11 @@
     {
       "raw": "1  large head green cabbage",
       "expected": {
-        "item": "head green cabbage",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large head"
           }
         ],
         "note": null,

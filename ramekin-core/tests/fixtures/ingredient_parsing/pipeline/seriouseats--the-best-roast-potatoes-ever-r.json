@@ -68,11 +68,11 @@
     {
       "raw": "Small handful picked rosemary leaves, finely chopped",
       "expected": {
-        "item": "handful picked rosemary leaves",
+        "item": "picked rosemary leaves",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": "finely chopped",
@@ -105,11 +105,11 @@
     {
       "raw": "Small handful fresh parsley leaves, minced",
       "expected": {
-        "item": "handful fresh parsley leaves",
+        "item": "fresh parsley leaves",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small handful"
           }
         ],
         "note": "minced",

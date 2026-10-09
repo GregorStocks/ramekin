@@ -145,11 +145,11 @@
     {
       "raw": "small bunch of fresh coriander roughly chopped",
       "expected": {
-        "item": "bunch of fresh coriander roughly chopped",
+        "item": "fresh coriander roughly chopped",
         "measurements": [
           {
             "amount": null,
-            "unit": "small"
+            "unit": "small bunch"
           }
         ],
         "note": null,

@@ -47,15 +47,19 @@
     {
       "raw": "1 large bunch/1 1/2 pounds Swiss chard, stems and leaves separated and chopped (about 9 cups)",
       "expected": {
-        "item": "bunch/1 1/2 pounds Swiss chard",
+        "item": "Swiss chard",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large bunch"
           },
           {
             "amount": "9",
             "unit": "cup"
+          },
+          {
+            "amount": "1.5",
+            "unit": "lb"
           }
         ],
         "note": "about 9 cups, stems and leaves separated and chopped",

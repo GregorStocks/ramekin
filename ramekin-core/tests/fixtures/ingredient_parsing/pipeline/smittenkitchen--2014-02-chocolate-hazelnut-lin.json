@@ -91,7 +91,7 @@
     {
       "raw": "3/4 cup (145 grams) packed light or dark brown sugar",
       "expected": {
-        "item": "packed light or dark brown sugar",
+        "item": "light or dark brown sugar",
         "measurements": [
           {
             "amount": "0.75",
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "packed",
         "category": "Baking"
       }
     },

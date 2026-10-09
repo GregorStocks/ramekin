@@ -149,14 +149,14 @@
     {
       "raw": "1/2 cup packed basil leaves, more for serving (optional)",
       "expected": {
-        "item": "packed basil leaves",
+        "item": "basil leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "optional, more for serving",
+        "note": "optional, more for serving, packed",
         "category": "Produce"
       }
     },

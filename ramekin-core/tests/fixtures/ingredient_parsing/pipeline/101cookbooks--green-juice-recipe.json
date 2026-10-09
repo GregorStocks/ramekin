@@ -19,11 +19,11 @@
     {
       "raw": "large handful of spinach",
       "expected": {
-        "item": "handful of spinach",
+        "item": "spinach",
         "measurements": [
           {
             "amount": null,
-            "unit": "large"
+            "unit": "large handful"
           }
         ],
         "note": null,
@@ -61,11 +61,11 @@
     {
       "raw": "1  small bunch of parsley, trimmed",
       "expected": {
-        "item": "bunch of parsley",
+        "item": "parsley",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small bunch"
           }
         ],
         "note": "trimmed",

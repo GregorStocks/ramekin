@@ -201,11 +201,11 @@
     {
       "raw": "One 2 1/2–inch knob fresh ginger (about 30g), peeled and grated",
       "expected": {
-        "item": "2 1/2-inch knob fresh ginger",
+        "item": "fresh ginger",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "2 1/2-inch knob"
           },
           {
             "amount": "30",

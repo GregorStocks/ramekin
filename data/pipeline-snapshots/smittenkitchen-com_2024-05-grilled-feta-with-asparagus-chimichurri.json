@@ -9,11 +9,15 @@
   "source_name": "Smittenkitchen.com",
   "ingredients": [
     {
-      "item": "or 4 regular cloves garlic",
+      "item": "regular cloves garlic",
       "measurements": [
         {
           "amount": "3",
           "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": null
         }
       ],
       "note": null,

@@ -75,14 +75,14 @@
     {
       "raw": "4 good-quality sausages skins removed",
       "expected": {
-        "item": "good-quality sausages skins removed",
+        "item": "sausages skins removed",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "good-quality",
         "category": "Meat & Seafood"
       }
     },

@@ -14,9 +14,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60550 | 306 | 53450/60244 (88.7%) | 49771/60244 (82.6%) | 1144/5408 (21.2%) | n/a (no servings) | 31767/37267 (85.2%) | 59824/60550 (98.8%) |
-| Paprika fixtures | 462 | 5379 | 22 | 5150/5357 (96.1%) | 4687/5357 (87.5%) | 153/462 (33.1%) | n/a (no servings) | 2543/2888 (88.1%) | 5347/5379 (99.4%) |
-| Pipeline snapshots | 445 | 5177 | 17 | 4983/5160 (96.6%) | 4594/5160 (89.0%) | 149/445 (33.5%) | 77/445 (17.3%) | 2518/2848 (88.4%) | 5165/5177 (99.8%) |
+| Pipeline fixtures | 5408 | 60553 | 306 | 53548/60247 (88.9%) | 49870/60247 (82.8%) | 1162/5408 (21.5%) | n/a (no servings) | 31790/37267 (85.3%) | 59827/60553 (98.8%) |
+| Paprika fixtures | 462 | 5379 | 22 | 5157/5357 (96.3%) | 4695/5357 (87.6%) | 156/462 (33.8%) | n/a (no servings) | 2543/2888 (88.1%) | 5347/5379 (99.4%) |
+| Pipeline snapshots | 445 | 5177 | 17 | 4990/5160 (96.7%) | 4602/5160 (89.2%) | 152/445 (34.2%) | 80/445 (18.0%) | 2518/2848 (88.4%) | 5165/5177 (99.8%) |
 
 ## Pipeline fixtures
 
@@ -24,37 +24,37 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Reason | Lines | Share of lines |
 | --- | ---: | ---: |
-| Ambiguous ingredient | 475 | 0.8% |
+| Ambiguous ingredient | 477 | 0.8% |
 | Frying oil: only part of it is absorbed | 98 | 0.2% |
-| Missing density for this food | 1125 | 1.9% |
-| Missing quantity | 1875 | 3.1% |
-| No supported nutrition match | 6319 | 10.4% |
+| Missing density for this food | 1127 | 1.9% |
+| Missing quantity | 1874 | 3.1% |
+| No supported nutrition match | 6222 | 10.3% |
 | Several ingredients share one amount | 55 | 0.1% |
-| Unsupported or missing quantity | 50 | 0.1% |
-| Unsupported quantity unit | 476 | 0.8% |
+| Unsupported or missing quantity | 53 | 0.1% |
+| Unsupported quantity unit | 471 | 0.8% |
 
 ### Uncounted ingredients per recipe
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 1736 | 32.1% |
-| 1 | 1742 | 32.2% |
-| 2 | 1045 | 19.3% |
-| 3 | 510 | 9.4% |
-| 4-5 | 303 | 5.6% |
-| 6+ | 72 | 1.3% |
+| 0 | 1756 | 32.5% |
+| 1 | 1747 | 32.3% |
+| 2 | 1033 | 19.1% |
+| 3 | 508 | 9.4% |
+| 4-5 | 293 | 5.4% |
+| 6+ | 71 | 1.3% |
 
-Estimate status with at most 3 uncounted: Complete 31.9%, Insufficient 8.2%, Partial 59.9%
+Estimate status with at most 3 uncounted: Complete 32.3%, Insufficient 8.0%, Partial 59.8%
 
-Weights to estimate (distinct food and unit pairs the catalog can't weigh): 330
+Weights to estimate (distinct food and unit pairs the catalog can't weigh): 319
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 7776 | `1470165205e6` |
-| Density | 2753 | `2330ca76b73b` |
-| Shopping category | 583 | `686969d39add` |
+| Nutrition (all failures) | 7667 | `5b4a577ff03e` |
+| Density | 2716 | `deec5326d086` |
+| Shopping category | 583 | `af31082b212f` |
 
 ## Paprika fixtures
 
@@ -65,8 +65,8 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 330
 | Ambiguous ingredient | 80 | 1.5% |
 | Frying oil: only part of it is absorbed | 17 | 0.3% |
 | Missing density for this food | 98 | 1.8% |
-| Missing quantity | 272 | 5.1% |
-| No supported nutrition match | 127 | 2.4% |
+| Missing quantity | 271 | 5.0% |
+| No supported nutrition match | 120 | 2.2% |
 | Several ingredients share one amount | 6 | 0.1% |
 | Unsupported or missing quantity | 7 | 0.1% |
 | Unsupported quantity unit | 63 | 1.2% |
@@ -75,14 +75,14 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 330
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 266 | 57.6% |
+| 0 | 267 | 57.8% |
 | 1 | 126 | 27.3% |
-| 2 | 51 | 11.0% |
+| 2 | 50 | 10.8% |
 | 3 | 16 | 3.5% |
 | 4-5 | 3 | 0.6% |
 | 6+ | 0 | 0.0% |
 
-Estimate status with at most 3 uncounted: Complete 57.4%, Insufficient 0.9%, Partial 41.8%
+Estimate status with at most 3 uncounted: Complete 57.6%, Insufficient 0.9%, Partial 41.6%
 
 Weights to estimate (distinct food and unit pairs the catalog can't weigh): 73
 
@@ -90,8 +90,8 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 73
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 559 | `e295f48f9624` |
-| Density | 195 | `b6ffc9879035` |
+| Nutrition (all failures) | 549 | `046f8549fcb1` |
+| Density | 194 | `9d0c686f5ff8` |
 | Shopping category | 30 | `a4d992035336` |
 
 ## Pipeline snapshots
@@ -103,8 +103,8 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 73
 | Ambiguous ingredient | 63 | 1.2% |
 | Frying oil: only part of it is absorbed | 16 | 0.3% |
 | Missing density for this food | 96 | 1.9% |
-| Missing quantity | 205 | 4.0% |
-| No supported nutrition match | 114 | 2.2% |
+| Missing quantity | 204 | 3.9% |
+| No supported nutrition match | 107 | 2.1% |
 | Several ingredients share one amount | 8 | 0.2% |
 | Unsupported or missing quantity | 5 | 0.1% |
 | Unsupported quantity unit | 59 | 1.1% |
@@ -114,8 +114,8 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 73
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
 | 0 | 244 | 54.8% |
-| 1 | 131 | 29.4% |
-| 2 | 53 | 11.9% |
+| 1 | 134 | 30.1% |
+| 2 | 50 | 11.2% |
 | 3 | 13 | 2.9% |
 | 4-5 | 4 | 0.9% |
 | 6+ | 0 | 0.0% |
@@ -128,8 +128,8 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 72
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 483 | `8041b39ce65b` |
-| Density | 190 | `93890dd57493` |
+| Nutrition (all failures) | 473 | `6b84f6d39952` |
+| Density | 189 | `0be48beef217` |
 | Shopping category | 12 | `cdc3abdf23c6` |
 
 ## Shopping-list corpus

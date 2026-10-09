@@ -69,6 +69,9 @@ const MODIFIER_ONLY_WORDS: &[&str] = &[
     "sweet", "white", "yellow",
 ];
 
+/// Colors in `MODIFIER_ONLY_WORDS` that are also a food on their own.
+const COLOR_FOODS: &[&str] = &["orange"];
+
 /// Nouns that name a component of the preceding item ("lemon, zest and
 /// juice", "eggs, whites and yolks separated") rather than an ingredient of
 /// their own.
@@ -210,6 +213,13 @@ pub(super) fn names_item_before_count_alternative(before_or: &str) -> bool {
         let lower = word.to_lowercase();
         MODIFIER_ONLY_WORDS.contains(&lower.as_str()) || SIZE_WORDS.contains(&lower.as_str())
     };
+    // "orange or 2 small ones": a color that is also a food names it when
+    // it stands alone.
+    if let [only] = words.as_slice() {
+        if COLOR_FOODS.contains(&only.to_lowercase().as_str()) {
+            return true;
+        }
+    }
     // "tomatoes, chopped small or 1 can ...": the size word belongs to a
     // prep note after the item.
     if is_modifier(last) && !before_or.contains(',') {
