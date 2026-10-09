@@ -8,6 +8,16 @@ processes:
   server:
     command: ${SERVER_CMD:-cargo watch -x run}
     working_dir: ./server
+    # A cold `cargo watch` debug build (or a big rebuild after an edit) takes
+    # minutes. With the default threshold, the probe fails mid-build and
+    # process-compose kills and restarts the server forever, so allow ~30 min.
+    readiness_probe:
+      http_get:
+        host: localhost
+        port: ${PORT}
+        path: /api/test/unauthed-ping
+      period_seconds: 2
+      failure_threshold: 900
     availability:
       restart: ${SERVER_RESTART:-on_failure}
 
