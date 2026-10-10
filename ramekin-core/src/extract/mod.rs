@@ -44,6 +44,18 @@ static INGREDIENT_START_AFTER_SPLIT_RE: LazyLock<Regex> = LazyLock::new(|| {
 ///
 /// Uses a fast regex-based path for JSON-LD to avoid full DOM parsing.
 pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
+    extract_recipe_untrimmed(html, source_url).map(trim_title)
+}
+
+/// Source pages often leave a trailing space or newline in the recipe name
+/// (e.g. JSON-LD `"name": "Reverse-Seared Steak "`); strip it whichever
+/// extraction method produced the title.
+fn trim_title(mut recipe: RawRecipe) -> RawRecipe {
+    recipe.title = recipe.title.trim().to_string();
+    recipe
+}
+
+fn extract_recipe_untrimmed(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
     // Fast path: extract JSON-LD using regex (avoids DOM parsing)
     if let Some(mut recipe) = extract_jsonld_fast(html, source_url) {
         // Structured data can miss richer HTML-only structure or include
@@ -180,6 +192,16 @@ fn supplement_instructions(recipe: &mut RawRecipe, document: &Html) {
 ///
 /// Uses fast regex-based JSON-LD extraction when possible to avoid DOM parsing.
 pub fn extract_recipe_with_stats(
+    html: &str,
+    source_url: &str,
+) -> Result<ExtractRecipeOutput, ExtractError> {
+    extract_recipe_with_stats_untrimmed(html, source_url).map(|output| ExtractRecipeOutput {
+        raw_recipe: trim_title(output.raw_recipe),
+        ..output
+    })
+}
+
+fn extract_recipe_with_stats_untrimmed(
     html: &str,
     source_url: &str,
 ) -> Result<ExtractRecipeOutput, ExtractError> {
@@ -461,6 +483,26 @@ fn extract_title_from_html(document: &Html) -> Option<String> {
 #[allow(clippy::print_stdout, clippy::print_stderr)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_extracted_title_is_trimmed() {
+        let html = r#"<html><head><script type="application/ld+json">
+        {"@type": "Recipe", "name": "Reverse-Seared Steak \n",
+         "recipeIngredient": ["1 steak"], "recipeInstructions": "Sear it."}
+        </script></head><body></body></html>"#;
+        let url = "https://example.com/steak";
+        assert_eq!(
+            extract_recipe(html, url).unwrap().title,
+            "Reverse-Seared Steak"
+        );
+        assert_eq!(
+            extract_recipe_with_stats(html, url)
+                .unwrap()
+                .raw_recipe
+                .title,
+            "Reverse-Seared Steak"
+        );
+    }
 
     #[test]
     fn test_split_paren_digit() {

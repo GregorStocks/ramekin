@@ -460,6 +460,17 @@ fn try_extract_inch_piece_unit(words: &[&str]) -> Option<(String, String)> {
     Some((words[..=noun_index].join(" "), rest.join(" ")))
 }
 
+/// True if a parenthetical is only an inch size and a piece noun follows it:
+/// "(1 1/2-inch) piece", "(2 inch) chunks".
+pub(super) fn is_inch_size_before_piece(size: &str, after: &str) -> bool {
+    let Some(noun) = after.split_whitespace().next() else {
+        return false;
+    };
+    let mut words: Vec<&str> = size.split_whitespace().collect();
+    words.push(noun);
+    try_extract_inch_piece_unit(&words).is_some_and(|(_, rest)| rest.is_empty())
+}
+
 /// Weight/volume units that can precede containers in compound units
 pub(super) const WEIGHT_UNITS_FOR_COMPOUND: &[&str] = &[
     "ounce",

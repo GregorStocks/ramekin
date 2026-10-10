@@ -99,8 +99,15 @@ fn insert_version_row(
     conn: &mut PgConnection,
     new_version: &NewRecipeVersion<'_>,
 ) -> QueryResult<Uuid> {
+    // Every version write lands here, so trimming here keeps a stray space or
+    // newline from a client or a scraped page out of the stored title.
+    let new_version = NewRecipeVersion {
+        title: new_version.title.trim(),
+        ingredients: new_version.ingredients.clone(),
+        ..*new_version
+    };
     diesel::insert_into(recipe_versions::table)
-        .values(new_version)
+        .values(&new_version)
         .returning(recipe_versions::id)
         .get_result(conn)
 }
