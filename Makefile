@@ -67,7 +67,7 @@ dev-down: ## Stop dev processes (not database)
 	else \
 		echo "No process-compose instance running on port $$port"; \
 	fi
-	@pkill -f "cargo watch" 2>/dev/null || true
+	@./scripts/kill-worktree-server.sh "cargo watch"
 
 serve-down: ## Stop release-mode serve processes
 	@if [ -f dev.env ]; then set -a && . ./dev.env && set +a; fi; \
@@ -77,7 +77,7 @@ serve-down: ## Stop release-mode serve processes
 	else \
 		echo "No process-compose instance running on port $$port"; \
 	fi
-	@pkill -f "systemfd --no-pid" 2>/dev/null || true
+	@./scripts/kill-worktree-server.sh "systemfd --no-pid"
 
 # Generate OpenAPI spec from Rust source
 api/openapi.json: $(API_SOURCES)
