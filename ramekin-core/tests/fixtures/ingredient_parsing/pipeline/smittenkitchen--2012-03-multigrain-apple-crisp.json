@@ -5,7 +5,7 @@
     {
       "raw": "4 large or 5 small-medium apples (about 2 pounds)",
       "expected": {
-        "item": "small-medium apples",
+        "item": "apples",
         "measurements": [
           {
             "amount": "4",
@@ -17,7 +17,7 @@
           },
           {
             "amount": "5",
-            "unit": null
+            "unit": "small-medium"
           }
         ],
         "note": "about 2 pounds",

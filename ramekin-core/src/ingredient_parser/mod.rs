@@ -325,6 +325,27 @@ fn split_sized_measure(size: &str, after_size: &str) -> Option<(String, String)>
     Some((format!("{} {measure}", normalize_unit(size)), rest))
 }
 
+/// Words that size the alternative in "2 large or 3 smaller leeks" without
+/// being a size unit on their own ("thin carrots" alone names a food).
+const ALTERNATIVE_SIZE_WORDS: &[&str] = &[
+    "smaller", "larger", "thin", "thick", "slim", "skinny", "regular", "average", "little", "big",
+];
+
+/// "smaller leeks" -> ("smaller", "leeks"), "medium-sized lemons" ->
+/// ("medium", "lemons"), "small-medium apples" -> ("small-medium", "apples").
+/// Never leaves the item empty.
+fn split_alternative_size(s: &str) -> Option<(String, String)> {
+    let trimmed = s.trim_start();
+    let (word, rest) = trimmed.split_once(char::is_whitespace)?;
+    if !rest.trim_start().starts_with(char::is_alphabetic) {
+        return None;
+    }
+    let lower = word.to_lowercase();
+    let base = lower.strip_suffix("-sized").unwrap_or(&lower);
+    let is_size = ALTERNATIVE_SIZE_WORDS.contains(&base) || base.split('-').all(is_size_unit);
+    is_size.then(|| (normalize_unit(base), rest.trim_start().to_string()))
+}
+
 /// Leading words that say how a food is packed or how good it is, never
 /// which food it is. Longer phrases first.
 const LEADING_ITEM_QUALIFIERS: &[&str] = &[
@@ -1007,11 +1028,20 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         if or_amount.is_some() && (or_base_unit.is_some() || bare_count) {
             // Combine modifiers with unit (prefer pre-unit, fall back to pre-amount)
             let or_modifier = or_pre_unit_modifier.or(or_pre_amount_modifier);
-            let or_unit = match (or_modifier, or_base_unit) {
+            let mut or_unit = match (or_modifier, or_base_unit) {
                 (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
                 (None, u) => u,
                 _ => None,
             };
+            let mut after_or_unit = after_or_unit;
+            // "2 large or 3 smaller leeks": after a sized count, the
+            // alternative count is sized too.
+            if bare_count && primary_unit.as_deref().is_some_and(is_size_unit) {
+                if let Some((size, after_size)) = split_alternative_size(&after_or_unit) {
+                    or_unit = Some(size);
+                    after_or_unit = after_size;
+                }
+            }
 
             alt_measurements.push(Measurement {
                 amount: or_amount,
@@ -2474,6 +2504,29 @@ mod tests {
         // A counted packet isn't a count of the food.
         let parsed = parse_ingredient("2 1/4 teaspoons or 1 packet instant yeast");
         assert_eq!(parsed.item, "or 1 packet instant yeast");
+    }
+
+    #[test]
+    fn test_parse_sized_count_alternative() {
+        for (raw, item, size) in [
+            ("2 large or 3 smaller leeks", "leeks", "smaller"),
+            ("1 large or 2 thin carrots", "carrots", "thin"),
+            (
+                "3 large or 4 regular cloves garlic",
+                "cloves garlic",
+                "regular",
+            ),
+            ("5 large or 6 medium-sized lemons", "lemons", "medium"),
+            ("4 large or 5 small-medium apples", "apples", "small-medium"),
+        ] {
+            let parsed = parse_ingredient(raw);
+            assert_eq!(parsed.item, item, "{raw}");
+            assert_eq!(parsed.measurements[1].unit.as_deref(), Some(size), "{raw}");
+        }
+        // Without a sized primary, the word stays with the food.
+        let parsed = parse_ingredient("14 ounces or 4 thin pork sausages");
+        assert_eq!(parsed.item, "thin pork sausages");
+        assert_eq!(parsed.measurements[1].unit, None);
     }
 
     #[test]
