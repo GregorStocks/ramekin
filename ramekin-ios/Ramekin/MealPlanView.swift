@@ -106,7 +106,11 @@ struct MealPlanView: View {
                     date: pickerDate,
                     mealType: pickerMealType
                 ) { recipe in
-                    Task { await addMealPlan(recipe: recipe) }
+                    // Another Add sheet can reassign the picker state before
+                    // this add finishes, so pass the slot along with it.
+                    let date = pickerDate
+                    let mealType = pickerMealType
+                    Task { await addMealPlan(recipe: recipe, date: date, mealType: mealType) }
                 }
             }
             .sheet(item: $editingMealPlan) { meal in
@@ -338,18 +342,18 @@ extension MealPlanView {
         }
     }
 
-    private func addMealPlan(recipe: RecipeSummary) async {
+    private func addMealPlan(recipe: RecipeSummary, date: Date, mealType: MealType) async {
         do {
             _ = try await logger.timed("createMealPlan API", source: "MealPlan") {
                 try await RamekinAPI.shared.createMealPlan(
                     recipeId: recipe.id,
-                    mealDate: pickerDate,
-                    mealType: pickerMealType.rawValue
+                    mealDate: date,
+                    mealType: mealType.rawValue
                 )
             }
             await loadMealPlans()
             await MainActor.run {
-                scrollTarget = Calendar.current.startOfDay(for: pickerDate)
+                scrollTarget = Calendar.current.startOfDay(for: date)
             }
         } catch is CancellationError {
             // ignored
