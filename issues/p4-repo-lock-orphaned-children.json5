@@ -1,11 +1,14 @@
 {
-  "title": "repo-lock.sh reclaims a lock while the dead holder's children still run",
+  "title": "Make repo-lock.sh stale-lock reclamation fully robust",
   "description": "scripts/repo-lock.sh records only the holder shell's $$ and treats the lock as stale once that PID is gone. \
 If only the shell is SIGKILLed (e.g. `kill -9 <pid>` rather than killing the process group), its children keep running: an orphaned `npx openapi-generator` from generate-clients.sh can still be writing to `<output>.generating` (or an orphaned `npm ci` from install-ui-deps.sh into node_modules) while the next run reclaims the lock and starts over in the same directories. \
 Not seen in practice; raised by Codex review on PR #803. \
 Killing the whole process group (Ctrl-C, make, container death) doesn't hit this. \
 A portable fix is awkward: flock(1) would hand the lock to children automatically but isn't on stock macOS, and checking the holder's process group is unsafe because waiters launched by the same make share that group. \
-Options: record the holder's process group and refuse to reclaim while any process in it other than our own ancestry is alive, or have the holder run workers via a helper that writes their PIDs into the lock dir.",
+Second gap (also from Codex on PR #803): stale-lock reclamation runs under a `<name>.reclaim` mkdir mutex that is itself treated as abandoned after 10s by an unowned check-then-rm. \
+If a reclaimer is SIGKILLed inside that millisecond-long section and three or more waiters then race, one can delete another's fresh mutex and two can reclaim at once. \
+Both gaps would go away with a kernel lock (flock/lockf, released on death and inherited by children) — e.g. a tiny python3 `fcntl.flock` helper, since python3 is available on both Linux and macOS. \
+Other options for the orphaned-children gap: record the holder's process group and refuse to reclaim while any process in it other than our own ancestry is alive, or have the holder run workers via a helper that writes their PIDs into the lock dir.",
   "status": "open",
   "priority": 4,
   "type": "bug",
