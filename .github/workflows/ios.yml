@@ -184,7 +184,7 @@ jobs:
     # Backstop only, above the sum of the step timeouts below. A step timeout
     # fails the step (rather than the whole job being cancelled), so the
     # diagnostics upload still runs.
-    timeout-minutes: 72
+    timeout-minutes: 80
     steps:
       - uses: actions/checkout@v4
 
@@ -367,7 +367,7 @@ jobs:
       - name: Check simulator is still listed
         # Once, xcodebuild found no simulators right after the warm-up while
         # the runner was busy with disk images; see the script.
-        timeout-minutes: 10
+        timeout-minutes: 7
         run: scripts/prepare-ios-ui-simulator.sh ensure
 
       - name: Run UI tests
