@@ -210,7 +210,7 @@ fn resolution_reports_how_it_matched() {
 
 #[test]
 fn version_is_stable() {
-    assert!(version().starts_with("catalog-v4-sr2018-"));
+    assert!(version().starts_with("catalog-v5-sr2018-"));
     assert_eq!(version(), version());
 }
 
@@ -709,6 +709,49 @@ fn a_fat_note_selects_the_ground_meat_blend() {
     // No USDA blend has 17% fat, and a ratio must add up to 100.
     assert_eq!(line_fdc("ground beef", Some("17% fat")), blend(80));
     assert_eq!(line_fdc("ground beef", Some("1/2 pound")), blend(80));
+}
+
+#[test]
+fn a_fat_note_selects_turkey_and_pork_blends() {
+    let line_fdc = |item, note| match resolve_line(item, note) {
+        Resolution::Entry { entry, .. } => entry.fdc_id,
+        other => panic!("{item:?} did not resolve: {other:?}"),
+    };
+    let turkey = |lean: u32| {
+        fdc_id(&format!(
+            "turkey, ground, {lean}% lean, {}% fat, raw",
+            100 - lean
+        ))
+    };
+    let pork = |lean: u32| {
+        fdc_id(&format!(
+            "pork, ground, {lean}% lean / {}% fat, raw",
+            100 - lean
+        ))
+    };
+    assert_eq!(line_fdc("ground turkey", Some("93% lean")), turkey(93));
+    assert_eq!(line_fdc("ground turkey, 85% lean", None), turkey(85));
+    assert_eq!(line_fdc("93/7 ground turkey", None), turkey(93));
+    assert_eq!(line_fdc("7% fat ground turkey", None), turkey(93));
+    // An alias that already names a blend can name another.
+    assert_eq!(line_fdc("lean ground turkey", Some("85/15")), turkey(85));
+    assert_eq!(line_fdc("ground pork", Some("96% lean")), pork(96));
+    assert_eq!(line_fdc("84/16 ground pork", None), pork(84));
+    // USDA has no 80/20 pork: a note keeps the generic food, and a leading
+    // blend leaves the line unresolved rather than misstating the fat.
+    assert_eq!(
+        line_fdc("ground pork", Some("20% fat")),
+        fdc_id("ground pork")
+    );
+    assert!(matches!(
+        resolve_line("80/20 ground pork", None),
+        Resolution::Unresolved
+    ));
+    // Other ground meats have no USDA blends to pick.
+    assert_eq!(
+        line_fdc("ground chicken", Some("93% lean")),
+        fdc_id("ground chicken")
+    );
 }
 
 #[test]
