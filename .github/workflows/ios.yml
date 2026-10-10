@@ -184,7 +184,7 @@ jobs:
     # Backstop only, above the sum of the step timeouts below. A step timeout
     # fails the step (rather than the whole job being cancelled), so the
     # diagnostics upload still runs.
-    timeout-minutes: 70
+    timeout-minutes: 72
     steps:
       - uses: actions/checkout@v4
 
@@ -351,7 +351,7 @@ jobs:
         # first-launch app hang can fail it before it reaches the keyboard;
         # each attempt has taken up to about 7.5 minutes.
         id: warm-keyboard
-        timeout-minutes: 14
+        timeout-minutes: 16
         continue-on-error: true
         run: make ios-warm-ui-keyboard
 
