@@ -326,9 +326,10 @@ fn split_sized_measure(size: &str, after_size: &str) -> Option<(String, String)>
 }
 
 /// Words that size the alternative in "2 large or 3 smaller leeks" without
-/// being a size unit on their own ("thin carrots" alone names a food).
+/// being a size unit on their own ("thin carrots" alone names a food). No
+/// "little" or "big", which start food names ("Little Gem lettuces").
 const ALTERNATIVE_SIZE_WORDS: &[&str] = &[
-    "smaller", "larger", "thin", "thick", "slim", "skinny", "regular", "average", "little", "big",
+    "smaller", "larger", "thin", "thick", "slim", "skinny", "regular", "average",
 ];
 
 /// "smaller leeks" -> ("smaller", "leeks"), "medium-sized lemons" ->
@@ -2527,6 +2528,8 @@ mod tests {
         let parsed = parse_ingredient("14 ounces or 4 thin pork sausages");
         assert_eq!(parsed.item, "thin pork sausages");
         assert_eq!(parsed.measurements[1].unit, None);
+        let parsed = parse_ingredient("1 large or 2 Little Gem lettuces");
+        assert_eq!(parsed.item, "Little Gem lettuces");
     }
 
     #[test]
