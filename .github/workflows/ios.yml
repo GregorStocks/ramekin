@@ -184,7 +184,7 @@ jobs:
     # Backstop only, above the sum of the step timeouts below. A step timeout
     # fails the step (rather than the whole job being cancelled), so the
     # diagnostics upload still runs.
-    timeout-minutes: 60
+    timeout-minutes: 72
     steps:
       - uses: actions/checkout@v4
 
@@ -347,10 +347,22 @@ jobs:
         # suspended it while on screen and the app's main thread blocked for
         # minutes, failing the first test that typed. Take that cold launch
         # here, where a stall or failure doesn't fail the job. See
-        # KeyboardWarmupTests.swift.
-        timeout-minutes: 8
+        # KeyboardWarmupTests.swift. The test retries once, because a
+        # first-launch app hang can fail it before it reaches the keyboard;
+        # each attempt has taken up to about 7.5 minutes.
+        id: warm-keyboard
+        timeout-minutes: 16
         continue-on-error: true
         run: make ios-warm-ui-keyboard
+
+      - name: Report keyboard warm-up failure
+        # continue-on-error leaves the warm-up step green, so say it failed.
+        if: ${{ steps.warm-keyboard.outcome == 'failure' }}
+        run: >-
+          echo "::warning title=Keyboard warm-up failed::The simulator keyboard
+          was not warmed up, so the first UI test that types will cold-launch
+          InputUI and may stall. See issues/p3-ios-ui-app-launch-hang.json5
+          and logs/ios-ui-keyboard-warmup.xcresult."
 
       - name: Run UI tests
         timeout-minutes: 20

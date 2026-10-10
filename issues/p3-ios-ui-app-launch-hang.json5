@@ -21,8 +21,13 @@ Then read host-exec.log.gz for that window and pick a targeted fix. \
 If the host log is silent too, widen its predicate. \
 To get xcodebuild's session log from the xcresult without macOS: zstd -dc each ios-ui-tests.xcresult/Data/data.* blob and grep for 'Test process runnable'. \
 To get timings from the job log: grep 'Launch com.ramekin.app' and 'Setting up automation session'. \
-Separately, run 37389551049 failed with 'process main thread busy for 30.0s' after tapping Username. \
-That is tracked in p3-ios-ui-keyboard-process-suspended-stall, not here.",
+This hang also undermines the keyboard warm-up (KeyboardWarmupTests, make ios-warm-ui-keyboard). \
+That warm-up keeps the simulator keyboard process (InputUI) from cold-launching mid-test, which once stalled the app's main thread for minutes ('process main thread busy for 30.0s', run 37389551049). \
+Across runs from 2026-10-07 to 2026-10-09, no stall followed a warm launch. \
+But the warm-up failed in 3 of 10 runs (37644698155, 37699386596, 37945361291), each time because the app never became snapshot-able after launch. \
+In those runs InputUI cold-launched in testLoginFailure again, with short keyboard-queue timeouts. \
+The warm-up now retries once and posts a CI warning annotation if it still fails, so watch for that annotation. \
+The hang is not limited to the first launch: in 37954090122, testLoginFailure spent 5 minutes on 'App event loop idle notification not received' after a successful warm-up.",
   "status": "open",
   "priority": 3,
   "type": "task",
@@ -31,5 +36,5 @@ That is tracked in p3-ios-ui-keyboard-process-suspended-stall, not here.",
     "flaky-test",
   ],
   "created_at": "2026-10-05T16:30:00.000000-07:00",
-  "updated_at": "2026-10-06T13:50:00.000000-07:00",
+  "updated_at": "2026-10-09T17:00:00.000000-07:00",
 }

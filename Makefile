@@ -375,8 +375,10 @@ ios-test-ui-prebuilt: ## Run iOS UI tests built by ios-build-ui-tests (requires 
 
 # CI runs this before ios-test-ui-prebuilt so the simulator's keyboard
 # process cold-launches outside the real tests; see KeyboardWarmupTests.
+# A first-launch app hang can fail the warm-up before it reaches the
+# keyboard, so retry it once.
 ios-warm-ui-keyboard: ## Show the simulator keyboard once using the prebuilt UI tests
-	@$(call ios_ui_test_prebuilt,-only-testing:RamekinUITests/KeyboardWarmupTests,logs/ios-ui-keyboard-warmup.xcresult)
+	@$(call ios_ui_test_prebuilt,-only-testing:RamekinUITests/KeyboardWarmupTests -retry-tests-on-failure -test-iterations 2,logs/ios-ui-keyboard-warmup.xcresult)
 
 ingredient-tests-generate: ## Generate ingredient parsing test fixtures from latest pipeline run
 	@cargo run -q --release --manifest-path cli/Cargo.toml -- ingredient-tests-generate
