@@ -185,6 +185,7 @@ def test_export_single_recipe(authed_api_client, server_url):
         "1 cup sugar\n"
         "For the topping:\n"
         "1 stick butter (softened)\n"
+        "\n"
         "salt"
     )
     assert exported["description"] == "A recipe to test export"

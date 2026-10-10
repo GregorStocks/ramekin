@@ -6,8 +6,9 @@ use anyhow::{Context, Result};
 use flate2::read::GzDecoder;
 use ramekin_core::ingredient_categorizer;
 use ramekin_core::ingredient_parser::{
-    detect_peer_section_header, detect_section_header, next_peer_section_anchor, parse_ingredient,
-    parse_ingredients, should_ignore_line, Measurement, ParsedIngredient,
+    detect_paprika_section_header, detect_peer_section_header, detect_section_header,
+    next_peer_section_anchor, parse_ingredient, parse_ingredients, parse_paprika_ingredients,
+    should_ignore_line, Measurement, ParsedIngredient,
 };
 use serde::{Deserialize, Serialize};
 use std::fs::{self, File};
@@ -91,9 +92,13 @@ struct BatchResult {
 /// Run the ingredient parsing pipeline on a multi-line blob.
 /// This includes section header detection, filtering, and applying sections to subsequent ingredients.
 /// Returns both the raw line and expected output for each ingredient (section headers are filtered out).
-fn run_pipeline_batch(raw_lines: &[String]) -> Vec<BatchResult> {
+fn run_pipeline_batch(raw_lines: &[String], paprika: bool) -> Vec<BatchResult> {
     let blob = raw_lines.join("\n");
-    let parsed = parse_ingredients(&blob);
+    let parsed = if paprika {
+        parse_paprika_ingredients(&blob)
+    } else {
+        parse_ingredients(&blob)
+    };
     parsed
         .into_iter()
         .map(|ing| {
@@ -245,7 +250,9 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                     .filter(|i| !i.expanded)
                     .map(|i| i.raw.clone())
                     .collect();
-                let batch_results = run_pipeline_batch(&raw_lines);
+                // Paprika imports parse with the Paprika rules, as in production.
+                let paprika = subdir == "paprika";
+                let batch_results = run_pipeline_batch(&raw_lines, paprika);
 
                 // Build new ingredients list, preserving section headers as markers
                 // Skip lines that should be ignored (scraper artifacts)
@@ -261,7 +268,12 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                         line_idx += 1;
                         continue;
                     }
-                    if let Some(section_name) = detect_section_header(raw) {
+                    let section_header = if paprika {
+                        detect_paprika_section_header(raw)
+                    } else {
+                        detect_section_header(raw)
+                    };
+                    if let Some(section_name) = section_header {
                         // This is a section header - mark it as such
                         new_ingredients.push(IngredientTestCase {
                             raw: raw.clone(),
