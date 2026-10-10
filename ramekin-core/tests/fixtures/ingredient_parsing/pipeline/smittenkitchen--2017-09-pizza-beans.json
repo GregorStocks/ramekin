@@ -51,7 +51,7 @@
     {
       "raw": "1 large or 2 regular carrots, diced",
       "expected": {
-        "item": "regular carrots",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "1",
@@ -59,7 +59,7 @@
           },
           {
             "amount": "2",
-            "unit": null
+            "unit": "regular"
           }
         ],
         "note": "diced",
