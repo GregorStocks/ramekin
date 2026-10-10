@@ -232,6 +232,79 @@ def test_shopping_response_after_dismissal_leaves_reopened_dialog_alone(
     expect_fresh_shopping_dialog(reopened)
 
 
+def flush_page_tasks(page: Page) -> None:
+    # MessageChannel tasks aren't faked by page.clock, so these let a resolved
+    # fetch's handlers run while timers stay frozen.
+    page.evaluate(
+        """async () => {
+            for (let i = 0; i < 10; i++) {
+                await new Promise(resolve => {
+                    const channel = new MessageChannel();
+                    channel.port1.onmessage = resolve;
+                    channel.port2.postMessage(null);
+                });
+            }
+        }"""
+    )
+
+
+def expect_fresh_meal_plan_dialog(dialog: Locator) -> None:
+    expect(dialog).to_be_visible()
+    expect(dialog).not_to_contain_text("Added to meal plan!")
+    expect(dialog.get_by_role("button", name="Add", exact=True)).to_be_enabled()
+
+
+def test_meal_plan_success_timer_does_not_close_reopened_dialog(modal_page: Page):
+    page = modal_page
+    frozen_time = datetime(2026, 9, 9, tzinfo=timezone.utc)
+    page.clock.install(time=frozen_time)
+    page.clock.pause_at(frozen_time)
+    dialog = open_recipe_modal(page, "Add to Meal Plan")
+
+    dialog.get_by_role("button", name="Add", exact=True).click()
+    expect(dialog).to_contain_text("Added to meal plan!")
+    page.keyboard.press("Escape")
+    expect(dialog).not_to_be_visible()
+
+    reopened = open_recipe_modal(page, "Add to Meal Plan")
+    page.clock.run_for(1500)
+    expect_fresh_meal_plan_dialog(reopened)
+
+
+def test_meal_plan_response_after_dismissal_leaves_reopened_dialog_alone(
+    modal_page: Page,
+):
+    page = modal_page
+    pending: list[Route] = []
+    page.route(
+        "**/api/meal-plans",
+        lambda route: (
+            pending.append(route)
+            if route.request.method == "POST"
+            else route.continue_()
+        ),
+    )
+    frozen_time = datetime(2026, 9, 9, tzinfo=timezone.utc)
+    page.clock.install(time=frozen_time)
+    page.clock.pause_at(frozen_time)
+    dialog = open_recipe_modal(page, "Add to Meal Plan")
+
+    dialog.get_by_role("button", name="Add", exact=True).click()
+    expect(dialog.get_by_role("button", name="Adding...")).to_be_disabled()
+    assert len(pending) == 1
+    page.keyboard.press("Escape")
+    expect(dialog).not_to_be_visible()
+
+    reopened = open_recipe_modal(page, "Add to Meal Plan")
+    with page.expect_response("**/api/meal-plans") as response_info:
+        pending[0].continue_()
+    response_info.value.finished()
+    flush_page_tasks(page)
+    expect_fresh_meal_plan_dialog(reopened)
+    page.clock.run_for(1500)
+    expect_fresh_meal_plan_dialog(reopened)
+
+
 def test_dialog_restores_direct_opener_and_cleans_up_on_navigation(
     logged_in_page: Page, ui_url: str
 ):
