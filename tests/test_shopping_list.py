@@ -489,17 +489,14 @@ def test_sync_returns_server_deletions(authed_api_client):
     assert all(change.id != item_id for change in sync_response.server_changes)
 
 
-def test_sync_from_cursor_returns_only_later_changes(authed_api_client):
+def test_sync_from_cursor_returns_later_changes(authed_api_client):
     client, user_id = authed_api_client
     api = ShoppingListApi(client)
-    old_id, changed_id = api.create_items(
+    changed_id = api.create_items(
         CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(item="untouched"),
-                CreateShoppingListItemRequest(item="checked later"),
-            ]
+            items=[CreateShoppingListItemRequest(item="checked later")]
         )
-    ).ids
+    ).ids[0]
     initial_sync = api.sync_items(SyncRequest())
 
     api.update_item(changed_id, UpdateShoppingListItemRequest(is_checked=True))
@@ -508,9 +505,11 @@ def test_sync_from_cursor_returns_only_later_changes(authed_api_client):
     ).ids[0]
 
     sync_response = api.sync_items(SyncRequest(cursor=initial_sync.cursor))
-    changed = {change.id for change in sync_response.server_changes}
-    assert changed == {changed_id, added_id}
-    assert old_id not in changed
+    # A superset, not equality: unrelated transactions in flight hold the
+    # watermark back, so earlier changes may be redelivered.
+    changes = {change.id: change for change in sync_response.server_changes}
+    assert changes[changed_id].is_checked
+    assert added_id in changes
     assert sync_response.cursor >= initial_sync.cursor
 
 
