@@ -1,0 +1,12 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_first_list_drops_bold_recipe_title.html",
+  "source_url": "https://example.com/blueberry-lavender-muffins",
+  "expected": {
+    "title": "Blueberry Lavender Muffins",
+    "method_used": "html_fallback",
+    "ingredients_raw": "2 cups all purpose flour\n1/2 tsp baking soda\n1 cup blueberries",
+    "instructions_contains": [
+      "fold in the blueberries"
+    ]
+  }
+}
