@@ -550,10 +550,13 @@ mod tests {
 
     #[test]
     fn restated_juice_leaves_the_note() {
-        // The generic parser doesn't read "approx." as a qualifier yet, so the
-        // volume stays in the note, but without the restated "lemon juice".
+        // "approx." is a qualifier, so the restated juice volume reads first;
+        // the restated "lemon juice" leaves the note.
         let parsed = parse_one("1  lemon, juiced ((approx. 2 TBSP lemon juice))");
-        assert_eq!(parsed.measurements, vec![measurement("1", "lemon")]);
+        assert_eq!(
+            parsed.measurements,
+            vec![measurement("2", "tbsp"), measurement("1", "lemon")]
+        );
         assert_eq!(parsed.note.as_deref(), Some("approx. 2 TBSP"));
     }
 

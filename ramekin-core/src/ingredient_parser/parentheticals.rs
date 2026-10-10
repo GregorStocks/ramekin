@@ -63,6 +63,7 @@ pub(super) fn parenthetical_measurement_has_note_qualifier(content: &str) -> boo
         || normalized.starts_with('~')
         || normalized.starts_with("about ")
         || normalized.starts_with("approx ")
+        || normalized.starts_with("approx. ")
         || normalized.starts_with("approximately ")
         || normalized.starts_with("roughly ")
 }
@@ -666,7 +667,15 @@ pub(super) fn strip_measurement_qualifiers(s: &str) -> String {
     }
 
     // Also handle qualifiers at the start
-    let start_qualifiers = ["about ", "approximately ", "approx ", "roughly ", "~", "@"];
+    let start_qualifiers = [
+        "about ",
+        "approximately ",
+        "approx. ",
+        "approx ",
+        "roughly ",
+        "~",
+        "@",
+    ];
     let lower = result.to_lowercase();
     for q in start_qualifiers {
         if lower.starts_with(q) {
@@ -695,6 +704,30 @@ mod tests {
         assert_eq!(result[0].unit, Some("lbs".to_string()));
         assert_eq!(result[1].amount, Some("570".to_string()));
         assert_eq!(result[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_approx_with_period_reads_like_about() {
+        for (approx, about) in [
+            (
+                "1 cup (approx. 120 grams) white whole wheat flour",
+                "1 cup (about 120 grams) white whole wheat flour",
+            ),
+            (
+                "lemon juice ((approx. 2 TBSP))",
+                "lemon juice ((about 2 TBSP))",
+            ),
+            ("Approx. 2 cups flour", "About 2 cups flour"),
+        ] {
+            let approx_result = parse_ingredient(approx);
+            let about_result = parse_ingredient(about);
+            assert!(!approx_result.measurements.is_empty(), "{approx}");
+            assert_eq!(
+                approx_result.measurements, about_result.measurements,
+                "{approx}"
+            );
+            assert_eq!(approx_result.item, about_result.item, "{approx}");
+        }
     }
 
     #[test]
