@@ -100,7 +100,7 @@ ensure() {
                     echo "::warning title=Simulator shut down::Simulator $udid shut down before the UI tests;" \
                         "booting and configuring it again. Its keyboard is no longer warmed up." >&2
                     xcrun simctl boot "$udid" >&2 || true
-                    configure || true
+                    configure
                     rebooted=1
                     continue
                 fi
