@@ -454,7 +454,8 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         try:
             start = all_text.index("- Title: ") + len("- Title: ")
             end = all_text.index("\n", start)
-            title = all_text[start:end].strip()
+            # Collapse whitespace runs so a test can provoke a changed title.
+            title = " ".join(all_text[start:end].split())
             return json.dumps({"normalized_title": title})
         except ValueError:
             return json.dumps({"normalized_title": "Normalized Recipe"})

@@ -245,6 +245,31 @@ def test_update_recipe_partial(authed_api_client):
     assert recipe.description == "Original description"
 
 
+def test_create_and_update_trim_title(authed_api_client):
+    """Leading/trailing whitespace never reaches the stored title."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    create_response = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="  Reverse-Seared Steak \n",
+            instructions="Sear it",
+            ingredients=[make_ingredient(item="steak")],
+        )
+    )
+    recipe_id = str(create_response.id)
+    assert recipes_api.get_recipe(id=recipe_id).title == "Reverse-Seared Steak"
+
+    recipes_api.update_recipe(
+        id=recipe_id,
+        update_recipe_request=UpdateRecipeRequest(
+            expected_version_id=current_version_id(recipes_api, recipe_id),
+            title="Bless This Pickle Sandwich ",
+        ),
+    )
+    assert recipes_api.get_recipe(id=recipe_id).title == "Bless This Pickle Sandwich"
+
+
 def test_concurrent_updates_allow_exactly_one_writer(authed_api_client):
     """Two edits of one version cannot both become current."""
     client, _user_id = authed_api_client
