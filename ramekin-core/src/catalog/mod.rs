@@ -38,7 +38,7 @@ const USDA_JSON: &str = include_str!("data/usda.json");
 const FNDDS_JSON: &str = include_str!("data/fndds.json");
 pub const CURATED_JSON: &str = include_str!("data/curated.json");
 const BESPOKE_JSON: &str = include_str!("data/bespoke.json");
-const RULE_VERSION: &str = "catalog-v4";
+const RULE_VERSION: &str = "catalog-v5";
 
 /// A food from a pinned USDA release (SR Legacy, or FNDDS for foods SR Legacy
 /// lacks).
@@ -641,10 +641,10 @@ pub fn food(fdc_id: u32) -> Option<&'static UsdaFood> {
 /// "with skin" or "with peel" for its peeled counterpart when USDA has one:
 /// the skin is discarded whenever the peeling happens. A note giving a fat or
 /// lean percentage ("at least 15% fat", "90/10") picks that blend of ground
-/// meat, as does one leading the item ("95% lean ground beef"), which USDA
-/// must have exactly or the line stays unresolved. "Drained" and "rinsed" are ignored: the amount is nearly always the
-/// can or net weight before draining, which the with-liquid food prices about
-/// right.
+/// beef, turkey or pork, as does one leading the item ("95% lean ground
+/// beef"), which USDA must have exactly or the line stays unresolved.
+/// "Drained" and "rinsed" are ignored: the amount is nearly always the can or
+/// net weight before draining, which the with-liquid food prices about right.
 pub fn resolve_line(item: &str, note: Option<&str>) -> Resolution {
     static COOKED: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(r"(?i)^\s*(leftover\s+)?cooked\s*(\(.*\))?\s*$").unwrap()
@@ -742,6 +742,15 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     });
     static BLEND: LazyLock<regex::Regex> =
         LazyLock::new(|| regex::Regex::new(r"\d+% lean meat / ?\d+% fat").unwrap());
+    // Turkey and pork, which USDA names "turkey, ground, 93% lean, 7% fat"
+    // and "pork, ground, 84% lean / 16% fat", and defaults to blendless
+    // "turkey, ground, raw" and "pork, fresh, ground, raw".
+    static GROUND: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(
+            r"^(turkey|pork), (?:fresh, )?ground(?:, \d+% lean(?:,| /) \d+% fat)?(, raw)?$",
+        )
+        .unwrap()
+    });
     // USDA names are also indexed without their "(includes foods for ...)".
     let id = id.split(" (includes ").next().unwrap_or(id);
     // Clauses from an alternative on ("or other ground beef, with around 20%
@@ -757,11 +766,13 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
     let peeled = clauses()
         .any(|clause| PEELED.is_match(clause) && !MAYBE_UNPEELED.is_match(clause))
         && !clauses().any(|clause| OPTIONAL.is_match(clause));
-    let swapped = if peeled {
+    let swapped: Vec<String> = if peeled {
         [("with skin", "without skin"), ("with peel", "peeled")]
             .into_iter()
             .find(|(unpeeled, _)| id.contains(unpeeled))
             .map(|(unpeeled, peeled)| id.replace(unpeeled, peeled))
+            .into_iter()
+            .collect()
     } else {
         // "not 95% lean", "avoid 95% lean" rule a blend out.
         let written = clauses()
@@ -779,20 +790,34 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
                 let (lean, fat) = (caps[1].parse::<u32>().ok()?, caps[2].parse::<u32>().ok()?);
                 (lean + fat == 100).then_some(lean)
             });
-        lean.filter(|_| BLEND.is_match(id)).map(|lean| {
-            BLEND
-                .replace(id, format!("{lean}% lean meat / {}% fat", 100 - lean))
-                .into_owned()
-        })
+        let lean = lean?;
+        let fat = 100 - lean;
+        if BLEND.is_match(id) {
+            vec![BLEND
+                .replace(id, format!("{lean}% lean meat / {fat}% fat"))
+                .into_owned()]
+        } else if let Some(caps) = GROUND.captures(id) {
+            let (meat, raw) = (&caps[1], caps.get(2).map_or("", |raw| raw.as_str()));
+            let mut names: Vec<String> = [",", " /"]
+                .map(|sep| format!("{meat}, ground, {lean}% lean{sep} {fat}% fat{raw}"))
+                .into();
+            // USDA's fat-free turkey is what "99% lean ground turkey" means.
+            if meat == "turkey" && lean == 99 {
+                names.push(format!("turkey, ground, fat free{raw}"));
+            }
+            names
+        } else {
+            Vec::new()
+        }
     };
     // Only that exact food: trimming "apples, raw, granny smith, without skin"
     // would land back on unpeeled apples.
-    match resolve(&swapped?) {
+    swapped.iter().find_map(|name| match resolve(name) {
         resolved @ Resolution::Entry {
             via: Via::Exact, ..
         } => Some(resolved),
         _ => None,
-    }
+    })
 }
 
 /// Grams per US cup for an ingredient line (see `resolve_line`).
