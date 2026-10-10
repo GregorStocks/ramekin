@@ -8,6 +8,7 @@ Name | Type
 ------------ | -------------
 `categoryOrder` | Array&lt;string&gt;
 `created` | [Array&lt;SyncCreatedItem&gt;](SyncCreatedItem.md)
+`cursor` | number
 `deleted` | Array&lt;string&gt;
 `serverChanges` | [Array&lt;SyncServerChange&gt;](SyncServerChange.md)
 `syncTimestamp` | Date
@@ -22,6 +23,7 @@ import type { SyncResponse } from ''
 const example = {
   "categoryOrder": null,
   "created": null,
+  "cursor": null,
   "deleted": null,
   "serverChanges": null,
   "syncTimestamp": null,

@@ -5,14 +5,15 @@ import type {
   SyncServerChange,
 } from "ramekin-client";
 
-const CACHE_VERSION = 1;
+// Version 2 replaced the wall-clock `lastSyncAt` with the server's `cursor`.
+const CACHE_VERSION = 2;
 const CACHE_KEY_PREFIX = "shoppingListSyncCache";
 
 export interface ShoppingListSyncCache {
   version: typeof CACHE_VERSION;
   items: ShoppingListItemResponse[];
   categoryOrder: string[];
-  lastSyncAt: Date | null;
+  cursor: number | null;
 }
 
 export function shoppingListCacheKey(token: string): string {
@@ -39,13 +40,7 @@ export function saveShoppingListSyncCache(
 ): void {
   if (!token) return;
 
-  storage.setItem(
-    shoppingListCacheKey(token),
-    JSON.stringify({
-      ...cache,
-      lastSyncAt: cache.lastSyncAt?.toISOString() ?? null,
-    }),
-  );
+  storage.setItem(shoppingListCacheKey(token), JSON.stringify(cache));
 }
 
 export function clearShoppingListSyncCache(
@@ -63,7 +58,7 @@ export function applyShoppingListSyncResponse(
 ): ShoppingListSyncCache {
   const deleted = new Set(response.deleted);
   const byId = new Map<string, ShoppingListItemResponse>();
-  const cachedItems = cache?.lastSyncAt == null ? [] : cache.items;
+  const cachedItems = cache?.cursor == null ? [] : cache.items;
 
   for (const item of cachedItems) {
     if (!deleted.has(item.id)) {
@@ -81,7 +76,7 @@ export function applyShoppingListSyncResponse(
     version: CACHE_VERSION,
     items: Array.from(byId.values()),
     categoryOrder: response.categoryOrder,
-    lastSyncAt: response.syncTimestamp,
+    cursor: response.cursor,
   };
 }
 
@@ -93,7 +88,7 @@ export async function refreshShoppingListSyncCache(
   const cached = loadShoppingListSyncCache(storage, token);
   const response = await api.syncItems({
     syncRequest: {
-      lastSyncAt: cached?.lastSyncAt ?? undefined,
+      cursor: cached?.cursor ?? undefined,
     },
   });
   const nextCache = applyShoppingListSyncResponse(cached, response);
@@ -110,7 +105,7 @@ export function replaceShoppingListCachedItems(
     version: CACHE_VERSION,
     items,
     categoryOrder,
-    lastSyncAt: cache?.lastSyncAt ?? null,
+    cursor: cache?.cursor ?? null,
   };
 }
 
@@ -148,7 +143,7 @@ function parseCache(value: unknown): ShoppingListSyncCache {
     throw new Error("Shopping list sync cache category order is invalid");
   }
 
-  const lastSyncAt = parseNullableDate(value.lastSyncAt);
+  const cursor = parseNullableNumber(value.cursor, "cursor");
   const items = value.items.map(parseCachedItem);
   const categoryOrder = value.categoryOrder.map((category) => {
     if (typeof category !== "string") {
@@ -161,7 +156,7 @@ function parseCache(value: unknown): ShoppingListSyncCache {
     version: CACHE_VERSION,
     items,
     categoryOrder,
-    lastSyncAt,
+    cursor,
   };
 }
 
@@ -205,9 +200,9 @@ function parseCachedItem(value: unknown): ShoppingListItemResponse {
   };
 }
 
-function parseNullableDate(value: unknown): Date | null {
+function parseNullableNumber(value: unknown, field: string): number | null {
   if (value === null) return null;
-  return requiredDate(value, "lastSyncAt");
+  return requiredNumber(value, field);
 }
 
 function requiredDate(value: unknown, field: string): Date {

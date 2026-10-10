@@ -327,7 +327,7 @@ def test_resolving_a_name_reaches_incremental_sync(authed_api_client, padding):
         lambda: [
             c
             for c in shopping.sync_items(
-                SyncRequest(last_sync_at=synced.sync_timestamp)
+                SyncRequest(cursor=synced.cursor)
             ).server_changes
             if c.item == stored
         ]

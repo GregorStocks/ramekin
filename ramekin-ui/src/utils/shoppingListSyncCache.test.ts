@@ -32,10 +32,10 @@ class MemoryStorage {
 }
 
 describe("shopping list sync cache", () => {
-  it("round-trips cached items and dates through storage", () => {
+  it("round-trips cached items, dates, and cursor through storage", () => {
     const storage = new MemoryStorage();
     const cache: ShoppingListSyncCache = {
-      version: 1,
+      version: 2,
       categoryOrder: ["Produce", "Other"],
       items: [
         shoppingItem({
@@ -45,7 +45,7 @@ describe("shopping list sync cache", () => {
           updatedAt: new Date("2026-07-01T12:00:00.000Z"),
         }),
       ],
-      lastSyncAt: new Date("2026-07-01T12:01:00.000Z"),
+      cursor: 41,
     };
 
     saveShoppingListSyncCache(storage, "token-a", cache);
@@ -53,16 +53,15 @@ describe("shopping list sync cache", () => {
     const loaded = loadShoppingListSyncCache(storage, "token-a");
     expect(loaded).toEqual(cache);
     expect(loaded?.items[0].updatedAt).toBeInstanceOf(Date);
-    expect(loaded?.lastSyncAt).toBeInstanceOf(Date);
   });
 
   it("keeps cache entries separated by token", () => {
     const storage = new MemoryStorage();
     const cache: ShoppingListSyncCache = {
-      version: 1,
+      version: 2,
       categoryOrder: ["Other"],
       items: [],
-      lastSyncAt: null,
+      cursor: null,
     };
 
     saveShoppingListSyncCache(storage, "token-a", cache);
@@ -73,10 +72,10 @@ describe("shopping list sync cache", () => {
   it("clears cached data for one token", () => {
     const storage = new MemoryStorage();
     const cache: ShoppingListSyncCache = {
-      version: 1,
+      version: 2,
       categoryOrder: ["Other"],
       items: [],
-      lastSyncAt: null,
+      cursor: null,
     };
     saveShoppingListSyncCache(storage, "token-a", cache);
     saveShoppingListSyncCache(storage, "token-b", cache);
@@ -89,14 +88,14 @@ describe("shopping list sync cache", () => {
 
   it("applies server changes and deletions to existing cached items", () => {
     const cached: ShoppingListSyncCache = {
-      version: 1,
+      version: 2,
       categoryOrder: ["Other"],
       items: [
         shoppingItem({ id: "deleted", item: "old deleted" }),
         shoppingItem({ id: "updated", item: "old name", version: 1 }),
         shoppingItem({ id: "unchanged", item: "keep me" }),
       ],
-      lastSyncAt: new Date("2026-07-01T12:00:00.000Z"),
+      cursor: 40,
     };
     const response: SyncResponse = {
       categoryOrder: ["Produce", "Other"],
@@ -112,13 +111,14 @@ describe("shopping list sync cache", () => {
         serverChange({ id: "created", item: "new item", category: "Other" }),
       ],
       syncTimestamp: new Date("2026-07-01T12:05:00.000Z"),
+      cursor: 45,
       updated: [],
     };
 
     const next = applyShoppingListSyncResponse(cached, response);
 
     expect(next.categoryOrder).toEqual(["Produce", "Other"]);
-    expect(next.lastSyncAt).toEqual(new Date("2026-07-01T12:05:00.000Z"));
+    expect(next.cursor).toBe(45);
     expect(next.items.map((item) => item.id).sort()).toEqual([
       "created",
       "unchanged",
@@ -133,13 +133,13 @@ describe("shopping list sync cache", () => {
 
   it("replaces cached items when the sync response is a full snapshot", () => {
     const cached: ShoppingListSyncCache = {
-      version: 1,
+      version: 2,
       categoryOrder: ["Other"],
       items: [
         shoppingItem({ id: "remote-deleted", item: "old deleted" }),
         shoppingItem({ id: "active", item: "old active", version: 1 }),
       ],
-      lastSyncAt: null,
+      cursor: null,
     };
     const response: SyncResponse = {
       categoryOrder: ["Produce", "Other"],
@@ -154,6 +154,7 @@ describe("shopping list sync cache", () => {
         }),
       ],
       syncTimestamp: new Date("2026-07-01T12:05:00.000Z"),
+      cursor: 45,
       updated: [],
     };
 
@@ -165,7 +166,24 @@ describe("shopping list sync cache", () => {
       version: 2,
       category: "Produce",
     });
-    expect(next.lastSyncAt).toEqual(new Date("2026-07-01T12:05:00.000Z"));
+    expect(next.cursor).toBe(45);
+  });
+
+  it("rejects caches from before the sync cursor", () => {
+    const storage = new MemoryStorage();
+    storage.setItem(
+      shoppingListCacheKey("token-a"),
+      JSON.stringify({
+        version: 1,
+        categoryOrder: ["Other"],
+        items: [],
+        lastSyncAt: "2026-07-01T12:00:00.000Z",
+      }),
+    );
+
+    expect(() => loadShoppingListSyncCache(storage, "token-a")).toThrow(
+      "unsupported version",
+    );
   });
 
   it("throws on malformed cached data", () => {
@@ -177,16 +195,15 @@ describe("shopping list sync cache", () => {
     );
   });
 
-  it("replaces cached items without advancing the sync timestamp", () => {
-    const lastSyncAt = new Date("2026-07-01T12:00:00.000Z");
+  it("replaces cached items without advancing the sync cursor", () => {
     const nextItems = [shoppingItem({ id: "checked", item: "milk" })];
 
     const next = replaceShoppingListCachedItems(
       {
-        version: 1,
+        version: 2,
         categoryOrder: ["Other"],
         items: [shoppingItem({ id: "old", item: "eggs" })],
-        lastSyncAt,
+        cursor: 40,
       },
       nextItems,
       ["Dairy & Eggs", "Other"],
@@ -194,29 +211,40 @@ describe("shopping list sync cache", () => {
 
     expect(next.items).toBe(nextItems);
     expect(next.categoryOrder).toEqual(["Dairy & Eggs", "Other"]);
-    expect(next.lastSyncAt).toBe(lastSyncAt);
+    expect(next.cursor).toBe(40);
   });
 
   it("refreshes the cache from the sync API", async () => {
     const storage = new MemoryStorage();
     const syncTimestamp = new Date("2026-07-01T12:05:00.000Z");
+    const requests: unknown[] = [];
     const api = {
-      syncItems: async () => ({
-        categoryOrder: ["Other"],
-        created: [],
-        deleted: [],
-        serverChanges: [serverChange({ id: "new", item: "flour" })],
-        syncTimestamp,
-        updated: [],
-      }),
+      syncItems: async (request: unknown) => {
+        requests.push(request);
+        return {
+          categoryOrder: ["Other"],
+          created: [],
+          deleted: [],
+          serverChanges: [serverChange({ id: "new", item: "flour" })],
+          syncTimestamp,
+          cursor: 45,
+          updated: [],
+        };
+      },
     };
 
     const next = await refreshShoppingListSyncCache(api, storage, "token-a");
 
     expect(next.items).toHaveLength(1);
     expect(next.items[0].item).toBe("flour");
-    expect(next.lastSyncAt).toBe(syncTimestamp);
+    expect(next.cursor).toBe(45);
     expect(loadShoppingListSyncCache(storage, "token-a")).toEqual(next);
+
+    await refreshShoppingListSyncCache(api, storage, "token-a");
+    expect(requests).toEqual([
+      { syncRequest: { cursor: undefined } },
+      { syncRequest: { cursor: 45 } },
+    ]);
   });
 });
 

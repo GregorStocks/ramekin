@@ -7,6 +7,7 @@
 Name | Type
 ------------ | -------------
 `creates` | [Array&lt;SyncCreateItem&gt;](SyncCreateItem.md)
+`cursor` | number
 `deletes` | Array&lt;string&gt;
 `lastSyncAt` | Date
 `updates` | [Array&lt;SyncUpdateItem&gt;](SyncUpdateItem.md)
@@ -19,6 +20,7 @@ import type { SyncRequest } from ''
 // TODO: Update the object below with actual values
 const example = {
   "creates": null,
+  "cursor": null,
   "deletes": null,
   "lastSyncAt": null,
   "updates": null,
