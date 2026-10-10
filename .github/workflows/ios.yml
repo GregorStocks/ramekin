@@ -184,7 +184,7 @@ jobs:
     # Backstop only, above the sum of the step timeouts below. A step timeout
     # fails the step (rather than the whole job being cancelled), so the
     # diagnostics upload still runs.
-    timeout-minutes: 72
+    timeout-minutes: 80
     steps:
       - uses: actions/checkout@v4
 
@@ -364,9 +364,30 @@ jobs:
           InputUI and may stall. See issues/p3-ios-ui-app-launch-hang.json5
           and logs/ios-ui-keyboard-warmup.xcresult."
 
+      - name: Check simulator is still listed
+        # Once, xcodebuild found no simulators right after the warm-up while
+        # the runner was busy with disk images; see the script.
+        timeout-minutes: 7
+        run: scripts/prepare-ios-ui-simulator.sh ensure
+
       - name: Run UI tests
         timeout-minutes: 20
-        run: make ios-test-ui-prebuilt
+        # simctl listing the device doesn't prove xcodebuild's own destination
+        # lookup will find it, so if that lookup fails (no test has run yet),
+        # wait for the device again and retry once. A run takes 6-8 minutes,
+        # so a failed lookup, the wait and a retry fit in the step timeout.
+        run: |
+          set -o pipefail
+          if make ios-test-ui-prebuilt 2>&1 | tee logs/ios-ui-run.log; then
+            exit 0
+          fi
+          if ! grep -q "Unable to find a device matching" logs/ios-ui-run.log; then
+            exit 1
+          fi
+          echo "::warning title=Simulator destination missing::xcodebuild could not find" \
+            "simulator $IOS_UI_UDID; waiting for it and retrying the UI tests once"
+          scripts/prepare-ios-ui-simulator.sh ensure
+          make ios-test-ui-prebuilt
 
       - name: Collect simulator system log
         if: ${{ !cancelled() }}
