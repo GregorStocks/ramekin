@@ -51,7 +51,7 @@ impl PipelineStep for EnrichAutoTagStep {
         StepMetadata {
             name: Self::NAME,
             description: "Auto-tag recipe based on user's existing tags",
-            continues_on_failure: false, // Errors should stop the pipeline
+            continues_on_failure: false,
         }
     }
 
