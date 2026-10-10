@@ -132,6 +132,33 @@ fn inline_leading_bold_title(chunk: &str) -> Option<String> {
     bold_only_heading(first_part)
 }
 
+/// Drop a standalone bold line at the top of the first ingredient list when it
+/// just repeats the recipe title (`<p><b>Blueberry Lavender Muffins</b><br>2
+/// cups flour…`). Matching the title, rather than any Title-Case bold line,
+/// keeps a bold ingredient like `<b>Fresh Parsley</b>` in the list.
+fn strip_leading_bold_recipe_title<'a>(chunk: &'a str, recipe_title: &str) -> &'a str {
+    let title_tokens = normalize_wprm_title_tokens(recipe_title);
+    if title_tokens.is_empty() {
+        return chunk;
+    }
+    let mut part_start = 0;
+    for br in BR_TAG_REGEX.find_iter(chunk) {
+        let part = chunk.get(part_start..br.start()).unwrap_or_default().trim();
+        part_start = br.end();
+        if part.is_empty() {
+            continue;
+        }
+        let repeats_title = bold_only_heading(part)
+            .is_some_and(|heading| normalize_wprm_title_tokens(&heading) == title_tokens);
+        return if repeats_title {
+            chunk.get(br.end()..).unwrap_or(chunk)
+        } else {
+            chunk
+        };
+    }
+    chunk
+}
+
 pub(super) fn has_instruction_paragraph_between(
     chunks: &[&str],
     start_idx: usize,
@@ -264,11 +291,6 @@ pub(super) fn extract_recipe_from_unstructured_blog(
     let first_block = blocks.first()?;
     let first_ingredient_idx = *first_block.ingredient_chunk_indices.first()?;
 
-    let ingredient_lines = collect_unstructured_ingredient_lines(&chunks, &blocks);
-    if ingredient_lines.is_empty() {
-        return None;
-    }
-
     let mut title = first_block.title.clone();
 
     // Fall back to page title if no bold title found near ingredients
@@ -278,6 +300,11 @@ pub(super) fn extract_recipe_from_unstructured_blog(
     }
 
     let title = title?;
+
+    let ingredient_lines = collect_unstructured_ingredient_lines(&chunks, &blocks, &title);
+    if ingredient_lines.is_empty() {
+        return None;
+    }
 
     let instruction_paragraphs =
         flatten_recipe_text_sections(collect_unstructured_instruction_sections(&chunks, &blocks));
@@ -441,6 +468,7 @@ fn starts_new_unstructured_block(
 fn collect_unstructured_ingredient_lines(
     chunks: &[&str],
     blocks: &[UnstructuredRecipeBlock],
+    recipe_title: &str,
 ) -> Vec<String> {
     let is_multi_block = blocks.len() > 1;
     let mut ingredient_lines = Vec::new();
@@ -450,7 +478,12 @@ fn collect_unstructured_ingredient_lines(
             push_normalized_block_section_header(&mut ingredient_lines, block.title.as_deref());
         }
         for &idx in &block.ingredient_chunk_indices {
-            extract_ingredient_lines_from_chunk(chunks[idx], !is_first_list, &mut ingredient_lines);
+            let chunk = if is_first_list {
+                strip_leading_bold_recipe_title(chunks[idx], recipe_title)
+            } else {
+                chunks[idx]
+            };
+            extract_ingredient_lines_from_chunk(chunk, !is_first_list, &mut ingredient_lines);
             is_first_list = false;
         }
     }
@@ -1267,6 +1300,36 @@ mod tests {
         // Lowercase stays an ingredient even when it opens a later list.
         let lines = later_chunk_lines("<b>Chopped parsley</b><br />2 cups flour<br />1 cup sugar");
         assert_eq!(lines[0], "Chopped parsley");
+    }
+
+    #[test]
+    fn strip_leading_bold_recipe_title_drops_only_a_title_repeat() {
+        let chunk = "<b>Blueberry Lavender Muffins</b><br />2 cups flour<br />1 cup sugar";
+        assert_eq!(
+            strip_leading_bold_recipe_title(chunk, "Blueberry Lavender Muffins - Example Blog"),
+            "2 cups flour<br />1 cup sugar"
+        );
+        assert_eq!(
+            strip_leading_bold_recipe_title(chunk, "blueberry-lavender muffins recipe"),
+            "2 cups flour<br />1 cup sugar"
+        );
+        // A bold ingredient that isn't the title stays.
+        let parsley = "<b>Fresh Parsley</b><br />2 cups flour<br />1 cup sugar";
+        assert_eq!(
+            strip_leading_bold_recipe_title(parsley, "Parsley Potatoes"),
+            parsley
+        );
+        // The title as a plain (non-bold) or non-leading line stays.
+        let plain = "Blueberry Lavender Muffins<br />2 cups flour<br />1 cup sugar";
+        assert_eq!(
+            strip_leading_bold_recipe_title(plain, "Blueberry Lavender Muffins"),
+            plain
+        );
+        let later = "2 cups flour<br /><b>Blueberry Lavender Muffins</b><br />1 cup sugar";
+        assert_eq!(
+            strip_leading_bold_recipe_title(later, "Blueberry Lavender Muffins"),
+            later
+        );
     }
 
     #[test]
