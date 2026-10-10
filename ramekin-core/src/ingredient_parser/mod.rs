@@ -1775,15 +1775,15 @@ fn parse_ingredient_lines(blob: &str, paprika: bool) -> Vec<ParsedIngredient> {
             continue;
         }
 
-        if paprika {
-            if let Some(section_name) = trimmed.strip_suffix(':').map(str::trim) {
-                if !section_name.is_empty() {
-                    peer_section_anchor = None;
-                    current_section = Some(section_name.to_string());
-                    section_has_ingredients = false;
-                    continue;
-                }
-            }
+        if let Some(section_name) = trimmed
+            .strip_suffix(':')
+            .map(str::trim)
+            .filter(|name| paprika && !name.is_empty())
+        {
+            peer_section_anchor = None;
+            current_section = Some(section_name.to_string());
+            section_has_ingredients = false;
+            continue;
         }
 
         // Check if this line is a section header

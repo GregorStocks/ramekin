@@ -300,49 +300,50 @@ mod tests {
         );
     }
 
+    /// Each parsed ingredient's (item, section) for "Part 1:\n1 cup flour"
+    /// extracted with `method`.
+    async fn item_sections(method: Option<&str>) -> Vec<(JsonValue, JsonValue)> {
+        let mut extract = json!({
+            "raw_recipe": {
+                "title": "Pie",
+                "ingredients": "Part 1:\n1 cup flour",
+                "instructions": "",
+                "image_urls": [],
+            },
+        });
+        if let Some(method) = method {
+            extract["method_used"] = json!(method);
+        }
+        let mut outputs = TestOutputStore::default();
+        outputs
+            .outputs
+            .insert("extract_recipe".to_string(), extract);
+        let ctx = StepContext {
+            url: "https://example.test/pie",
+            outputs: &outputs,
+        };
+        let result = ParseIngredientsStep.execute(&ctx).await;
+        assert!(result.success, "{:?}", result.error);
+        result.output["ingredients"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .map(|i| (i["item"].clone(), i["section"].clone()))
+            .collect()
+    }
+
     #[tokio::test]
     async fn paprika_imports_trust_colon_section_headers() {
-        let raw_recipe = json!({
-            "title": "Pie",
-            "ingredients": "Part 1:\n1 cup flour",
-            "instructions": "",
-            "image_urls": [],
-        });
-        let sections = |method: Option<&str>| {
-            let mut extract = json!({ "raw_recipe": raw_recipe });
-            if let Some(method) = method {
-                extract["method_used"] = json!(method);
-            }
-            let mut outputs = TestOutputStore::default();
-            outputs
-                .outputs
-                .insert("extract_recipe".to_string(), extract);
-            async move {
-                let ctx = StepContext {
-                    url: "https://example.test/pie",
-                    outputs: &outputs,
-                };
-                let result = ParseIngredientsStep.execute(&ctx).await;
-                assert!(result.success, "{:?}", result.error);
-                result.output["ingredients"]
-                    .as_array()
-                    .unwrap()
-                    .iter()
-                    .map(|i| (i["item"].clone(), i["section"].clone()))
-                    .collect::<Vec<_>>()
-            }
-        };
-
         assert_eq!(
-            sections(Some("paprika")).await,
+            item_sections(Some("paprika")).await,
             [(json!("flour"), json!("Part 1"))]
         );
         let scraped = [
             (json!("Part 1:"), JsonValue::Null),
             (json!("flour"), JsonValue::Null),
         ];
-        assert_eq!(sections(Some("json_ld")).await, scraped);
+        assert_eq!(item_sections(Some("json_ld")).await, scraped);
         // Text-recipe drafts record no method.
-        assert_eq!(sections(None).await, scraped);
+        assert_eq!(item_sections(None).await, scraped);
     }
 }
