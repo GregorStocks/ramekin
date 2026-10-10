@@ -7,12 +7,12 @@ use std::time::Instant;
 use async_trait::async_trait;
 
 use crate::catalog::Learned;
-use crate::ingredient_parser::{parse_ingredients, ParsedIngredient};
+use crate::ingredient_parser::{parse_ingredients, parse_paprika_ingredients, ParsedIngredient};
 use crate::metric_weights::MetricConversionStats;
 use crate::pipeline::{
     deserialize_required_output_field, PipelineStep, StepContext, StepMetadata, StepResult,
 };
-use crate::types::{ParseIngredientsOutput, RawRecipe};
+use crate::types::{ExtractionMethod, ParseIngredientsOutput, RawRecipe};
 use crate::volume_to_weight::{derived_grams_with_stats, VolumeConversionStats};
 
 /// Step that parses raw ingredient strings into structured data.
@@ -74,8 +74,33 @@ impl PipelineStep for ParseIngredientsStep {
             }
         };
 
-        // Parse the ingredients blob into structured data
-        let mut parsed = parse_ingredients(&raw_recipe.ingredients);
+        // Parse the ingredients blob into structured data. Paprika imports are
+        // plain text the user typed (or Ramekin exported), not scraped HTML.
+        // Text-recipe drafts record no method.
+        let method_used: Option<ExtractionMethod> = match extract_output
+            .get("method_used")
+            .map(|_| {
+                deserialize_required_output_field(&extract_output, "extract_recipe", "method_used")
+            })
+            .transpose()
+        {
+            Ok(method) => method,
+            Err(e) => {
+                return StepResult {
+                    step_name: Self::NAME.to_string(),
+                    success: false,
+                    output: serde_json::Value::Null,
+                    error: Some(e),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: None,
+                };
+            }
+        };
+        let mut parsed = if method_used == Some(ExtractionMethod::Paprika) {
+            parse_paprika_ingredients(&raw_recipe.ingredients)
+        } else {
+            parse_ingredients(&raw_recipe.ingredients)
+        };
 
         // Annotate ingredients with footnote text extracted from HTML
         if let Some(ref footnotes) = raw_recipe.footnotes {
@@ -273,5 +298,52 @@ mod tests {
             result.error.as_deref(),
             Some("Missing raw_recipe in extract_recipe output")
         );
+    }
+
+    /// Each parsed ingredient's (item, section) for "Part 1:\n1 cup flour"
+    /// extracted with `method`.
+    async fn item_sections(method: Option<&str>) -> Vec<(JsonValue, JsonValue)> {
+        let mut extract = json!({
+            "raw_recipe": {
+                "title": "Pie",
+                "ingredients": "Part 1:\n1 cup flour",
+                "instructions": "",
+                "image_urls": [],
+            },
+        });
+        if let Some(method) = method {
+            extract["method_used"] = json!(method);
+        }
+        let mut outputs = TestOutputStore::default();
+        outputs
+            .outputs
+            .insert("extract_recipe".to_string(), extract);
+        let ctx = StepContext {
+            url: "https://example.test/pie",
+            outputs: &outputs,
+        };
+        let result = ParseIngredientsStep.execute(&ctx).await;
+        assert!(result.success, "{:?}", result.error);
+        result.output["ingredients"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .map(|i| (i["item"].clone(), i["section"].clone()))
+            .collect()
+    }
+
+    #[tokio::test]
+    async fn paprika_imports_trust_colon_section_headers() {
+        assert_eq!(
+            item_sections(Some("paprika")).await,
+            [(json!("flour"), json!("Part 1"))]
+        );
+        let scraped = [
+            (json!("Part 1:"), JsonValue::Null),
+            (json!("flour"), JsonValue::Null),
+        ];
+        assert_eq!(item_sections(Some("json_ld")).await, scraped);
+        // Text-recipe drafts record no method.
+        assert_eq!(item_sections(None).await, scraped);
     }
 }
