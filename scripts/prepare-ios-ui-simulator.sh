@@ -95,9 +95,12 @@ ensure() {
                 ;;
             Shutdown)
                 if [ -z "$rebooted" ]; then
-                    echo "::warning title=Simulator shut down::Simulator $udid shut down before the UI tests; booting it again" >&2
+                    # A boot reloads mediaanalysisd and loses the keyboard
+                    # warm-up, so configure again; the keyboard stays cold.
+                    echo "::warning title=Simulator shut down::Simulator $udid shut down before the UI tests;" \
+                        "booting and configuring it again. Its keyboard is no longer warmed up." >&2
                     xcrun simctl boot "$udid" >&2 || true
-                    xcrun simctl bootstatus "$udid" -b >&2 || true
+                    configure || true
                     rebooted=1
                     continue
                 fi
