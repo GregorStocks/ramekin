@@ -47,6 +47,7 @@ struct AddToShoppingListSheet: View {
     @State private var selectedIngredients: Set<Int> = []
     @State private var showingConfirmation = false
     @State private var error: String?
+    @State private var dismissTask: Task<Void, Never>?
 
     var body: some View {
         NavigationStack {
@@ -113,6 +114,7 @@ struct AddToShoppingListSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
+                        SheetAutoDismissSupport.cancel(&dismissTask)
                         isPresented = false
                     }
                 }
@@ -128,6 +130,11 @@ struct AddToShoppingListSheet: View {
             .onAppear {
                 // Select all by default
                 selectedIngredients = Set(0..<recipe.ingredients.count)
+            }
+            .onDisappear {
+                // A swipe-down dismissal must not leave a pending close that
+                // would dismiss the next presentation of this sheet.
+                SheetAutoDismissSupport.cancel(&dismissTask)
             }
             .overlay {
                 if showingConfirmation {
@@ -174,7 +181,7 @@ struct AddToShoppingListSheet: View {
             showingConfirmation = true
             UIAccessibility.post(notification: .announcement, argument: "Added \(selectedIngredients.count) items")
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            SheetAutoDismissSupport.schedule(&dismissTask) {
                 isPresented = false
             }
         } catch {

@@ -1,4 +1,4 @@
-import { createSignal, createEffect, For, Show } from "solid-js";
+import { createSignal, createEffect, For, onCleanup, Show } from "solid-js";
 import { useAuth } from "../context/AuthContext";
 import Modal from "./Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
@@ -31,18 +31,47 @@ export default function AddToShoppingListModal(
   const [adding, setAdding] = createSignal(false);
   const [error, setError] = createSignal<string | null>(null);
   const [showSuccess, setShowSuccess] = createSignal(false);
+  const [wasOpen, setWasOpen] = createSignal(false);
+  // Bumped on every open and close so a submission or close timer from an
+  // earlier presentation can't touch the one that is showing now.
+  let presentation = 0;
+  let closeTimer: ReturnType<typeof setTimeout> | null = null;
+
+  const clearCloseTimer = () => {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+  };
+
+  const close = () => {
+    presentation++;
+    clearCloseTimer();
+    props.onClose();
+  };
 
   const scale = () => props.scale?.() ?? 1;
   const ingredients = () => props.recipe.ingredients ?? [];
 
   // Select all ingredients by default when modal opens
   createEffect(() => {
-    if (props.isOpen()) {
+    const open = props.isOpen();
+    if (open && !wasOpen()) {
+      presentation++;
+      clearCloseTimer();
       const allIndices = new Set(ingredients().map((_, i) => i));
       setSelectedIndices(allIndices);
+      setAdding(false);
       setError(null);
       setShowSuccess(false);
     }
+    setWasOpen(open);
+  });
+
+  onCleanup(() => {
+    // A submission still in flight at unmount must not arm a close timer.
+    presentation++;
+    clearCloseTimer();
   });
 
   const allSelected = () => selectedIndices().size === ingredients().length;
@@ -71,6 +100,8 @@ export default function AddToShoppingListModal(
     const selected = selectedIndices();
     if (selected.size === 0) return;
 
+    const current = presentation;
+    const isCurrent = () => presentation === current;
     setAdding(true);
     setError(null);
     try {
@@ -97,18 +128,18 @@ export default function AddToShoppingListModal(
         );
       }
 
+      if (!isCurrent()) return;
       setShowSuccess(true);
-      setTimeout(() => {
-        props.onClose();
-      }, 1500);
+      clearCloseTimer();
+      closeTimer = setTimeout(close, 1500);
     } catch (err) {
       const message = await extractApiError(
         err,
         "Failed to add items to shopping list",
       );
-      setError(message);
+      if (isCurrent()) setError(message);
     } finally {
-      setAdding(false);
+      if (isCurrent()) setAdding(false);
     }
   };
 
@@ -117,11 +148,11 @@ export default function AddToShoppingListModal(
   return (
     <Modal
       isOpen={props.isOpen}
-      onClose={props.onClose}
+      onClose={close}
       title="Add to Shopping List"
       actions={
         <Show when={!showSuccess()}>
-          <button class="btn" onClick={props.onClose} disabled={adding()}>
+          <button class="btn" onClick={close} disabled={adding()}>
             Cancel
           </button>
           <button

@@ -1,6 +1,7 @@
 """Browser regressions for the shared modal's keyboard and focus lifecycle."""
 
 import re
+import time
 import uuid
 from datetime import datetime, timezone
 
@@ -153,6 +154,82 @@ def test_dialog_keeps_focus_when_async_action_removes_controls(modal_page: Page)
     expect(dialog).not_to_be_visible()
     expect(page.locator(".recipe-more-actions > summary")).to_be_focused()
     expect(page.locator("body")).not_to_have_css("overflow", "hidden")
+
+
+def hold_shopping_list_posts(page: Page) -> list[Route]:
+    pending: list[Route] = []
+
+    def handle(route: Route) -> None:
+        if route.request.method == "POST":
+            pending.append(route)
+        else:
+            route.continue_()
+
+    page.route("**/api/shopping-list", handle)
+    return pending
+
+
+def wait_for_synced_shopping_item(page: Page, item: str) -> None:
+    # Poll from Python: page.clock is paused, so in-page timers won't tick.
+    for _ in range(100):
+        if page.evaluate(
+            """item => Object.keys(localStorage).some(key =>
+                key.startsWith("shoppingListSyncCache") &&
+                localStorage.getItem(key).includes(item))""",
+            item,
+        ):
+            return
+        time.sleep(0.05)
+    raise AssertionError(f"{item!r} never reached the shopping list sync cache")
+
+
+def expect_fresh_shopping_dialog(dialog: Locator) -> None:
+    expect(dialog).to_be_visible()
+    expect(dialog).not_to_contain_text("Added 2 items to shopping list!")
+    expect(dialog.get_by_role("button", name="Add 2 items")).to_be_enabled()
+
+
+def test_shopping_success_timer_does_not_close_reopened_dialog(modal_page: Page):
+    page = modal_page
+    frozen_time = datetime(2026, 9, 9, tzinfo=timezone.utc)
+    page.clock.install(time=frozen_time)
+    page.clock.pause_at(frozen_time)
+    dialog = open_recipe_modal(page, "Add to Shopping List")
+
+    dialog.get_by_role("button", name="Add 2 items").click()
+    expect(dialog).to_contain_text("Added 2 items to shopping list!")
+    page.keyboard.press("Escape")
+    expect(dialog).not_to_be_visible()
+
+    reopened = open_recipe_modal(page, "Add to Shopping List")
+    page.clock.run_for(1500)
+    expect_fresh_shopping_dialog(reopened)
+
+
+def test_shopping_response_after_dismissal_leaves_reopened_dialog_alone(
+    modal_page: Page,
+):
+    page = modal_page
+    pending = hold_shopping_list_posts(page)
+    frozen_time = datetime(2026, 9, 9, tzinfo=timezone.utc)
+    page.clock.install(time=frozen_time)
+    page.clock.pause_at(frozen_time)
+    dialog = open_recipe_modal(page, "Add to Shopping List")
+
+    dialog.get_by_role("button", name="Add 2 items").click()
+    expect(dialog.get_by_role("button", name="Adding...")).to_be_disabled()
+    assert len(pending) == 1
+    page.keyboard.press("Escape")
+    expect(dialog).not_to_be_visible()
+
+    reopened = open_recipe_modal(page, "Add to Shopping List")
+    pending[0].continue_()
+    # The stale submission still refreshes the sync cache; once that lands it
+    # has reached the point where it used to show success and arm the close.
+    wait_for_synced_shopping_item(page, "carrots")
+    expect_fresh_shopping_dialog(reopened)
+    page.clock.run_for(1500)
+    expect_fresh_shopping_dialog(reopened)
 
 
 def test_dialog_restores_direct_opener_and_cleans_up_on_navigation(
