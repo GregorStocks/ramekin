@@ -513,24 +513,23 @@ pub async fn sync_items(
                 .filter(shopping_list_items::user_id.eq(user_id))
                 .filter(shopping_list_items::deleted_at.is_null())
                 .into_boxed();
-            let mut deleted_query = shopping_list_items::table
+            let deleted_items = shopping_list_items::table
                 .filter(shopping_list_items::user_id.eq(user_id))
                 .filter(shopping_list_items::deleted_at.is_not_null())
                 .into_boxed();
-            match since {
+            let deleted_query = match since {
                 // No cursor means first sync - return all items and no deletes
-                ChangesSince::All => {}
+                ChangesSince::All => None,
                 ChangesSince::Cursor(since) => {
                     changes_query = changes_query.filter(shopping_list_items::change_xid.ge(since));
-                    deleted_query = deleted_query.filter(shopping_list_items::change_xid.ge(since));
+                    Some(deleted_items.filter(shopping_list_items::change_xid.ge(since)))
                 }
                 ChangesSince::Timestamp(last_sync) => {
                     changes_query =
                         changes_query.filter(shopping_list_items::updated_at.gt(last_sync));
-                    deleted_query =
-                        deleted_query.filter(shopping_list_items::deleted_at.gt(last_sync));
+                    Some(deleted_items.filter(shopping_list_items::deleted_at.gt(last_sync)))
                 }
-            }
+            };
 
             let rows: Vec<ServerChangeRow> = changes_query
                 .select((
@@ -590,7 +589,7 @@ pub async fn sync_items(
                 )
                 .collect();
 
-            if !matches!(since, ChangesSince::All) {
+            if let Some(deleted_query) = deleted_query {
                 let deleted_rows: Vec<Uuid> =
                     deleted_query.select(shopping_list_items::id).load(conn)?;
                 deleted_set.extend(deleted_rows);

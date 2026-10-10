@@ -143,7 +143,8 @@ function parseCache(value: unknown): ShoppingListSyncCache {
     throw new Error("Shopping list sync cache category order is invalid");
   }
 
-  const cursor = parseNullableNumber(value.cursor, "cursor");
+  const cursor =
+    value.cursor === null ? null : requiredNumber(value.cursor, "cursor");
   const items = value.items.map(parseCachedItem);
   const categoryOrder = value.categoryOrder.map((category) => {
     if (typeof category !== "string") {
@@ -198,11 +199,6 @@ function parseCachedItem(value: unknown): ShoppingListItemResponse {
     updatedAt,
     version,
   };
-}
-
-function parseNullableNumber(value: unknown, field: string): number | null {
-  if (value === null) return null;
-  return requiredNumber(value, field);
 }
 
 function requiredDate(value: unknown, field: string): Date {

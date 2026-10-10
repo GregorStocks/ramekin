@@ -136,7 +136,7 @@ final class ShoppingListStoreTests: XCTestCase {
         await store.syncWithServer(isFollowUp: true)
 
         XCTAssertEqual(requests.map(\.cursor), [nil, 41, nil])
-        XCTAssertEqual(requests[1].lastSyncAt, Date(timeIntervalSince1970: 1_000))
+        XCTAssertEqual(requests.map(\.lastSyncAt), [nil, nil, nil])
     }
 
     func testInFlightResponseStaysWithOriginatingAccount() async throws {

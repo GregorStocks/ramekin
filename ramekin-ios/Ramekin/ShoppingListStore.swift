@@ -308,13 +308,14 @@ extension ShoppingListStore {
             }
         }
 
-        // The server prefers `cursor`; `lastSyncAt` only matters for the first
-        // sync after upgrading from a build that predates the cursor.
+        // `lastSyncAt` only resumes the first sync after upgrading from a build
+        // that predates the cursor.
+        let cursor = syncCursor(accountKey: accountKey)
         return SyncRequest(
             creates: creates.isEmpty ? nil : creates,
-            cursor: syncCursor(accountKey: accountKey),
+            cursor: cursor,
             deletes: deletes.isEmpty ? nil : deletes,
-            lastSyncAt: lastSyncAt(accountKey: accountKey),
+            lastSyncAt: cursor == nil ? lastSyncAt(accountKey: accountKey) : nil,
             updates: updates.isEmpty ? nil : updates
         )
     }

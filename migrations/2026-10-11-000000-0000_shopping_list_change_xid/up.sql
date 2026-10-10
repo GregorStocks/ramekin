@@ -12,8 +12,9 @@ ADD COLUMN change_xid BIGINT NOT NULL DEFAULT current_change_xid();
 
 -- Every UPDATE is a sync-visible change (edits, soft deletes, the categorizer
 -- version bump, the ingredient-name resolver's touch), so stamp them all here
--- rather than trusting each writer to remember.
-CREATE FUNCTION stamp_shopping_list_item_change_xid()
+-- rather than trusting each writer to remember. Generic, so other change-feed
+-- tables can attach it too.
+CREATE FUNCTION stamp_change_xid()
 RETURNS TRIGGER
 LANGUAGE plpgsql
 AS $$
@@ -26,7 +27,7 @@ $$;
 CREATE TRIGGER shopping_list_items_stamp_change_xid
 BEFORE UPDATE ON shopping_list_items
 FOR EACH ROW
-EXECUTE FUNCTION stamp_shopping_list_item_change_xid();
+EXECUTE FUNCTION stamp_change_xid();
 
 CREATE INDEX idx_shopping_list_items_user_change_xid
 ON shopping_list_items (user_id, change_xid);
