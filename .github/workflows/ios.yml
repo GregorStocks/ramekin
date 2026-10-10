@@ -266,9 +266,18 @@ jobs:
         run: |
           mkdir -p logs
           make mock-openrouter MOCK_OPENROUTER_PORT=55002 > logs/mock-openrouter.log 2>&1 &
-          for i in {1..30}; do
+          mock_pid=$!
+          # `uv run` can spend minutes fetching a Python on a cold macOS
+          # runner before the mock starts listening, so wait generously but
+          # stop early if the process has already died.
+          for i in {1..180}; do
             if curl -fsS http://localhost:55002/ > /dev/null 2>&1; then
+              echo "Mock AI service is ready"
               exit 0
+            fi
+            if ! kill -0 "$mock_pid" 2>/dev/null; then
+              echo "Mock AI service exited before becoming ready"
+              break
             fi
             sleep 1
           done
