@@ -26,11 +26,12 @@ def test_normalize_title_applies_and_carries_tags_forward(authed_api_client):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
 
-    # The mock normalizer echoes the title back stripped, so a trailing
-    # space guarantees changed=True and exercises the write path.
+    # The mock normalizer echoes the title back with whitespace runs
+    # collapsed, so a double space guarantees changed=True and exercises the
+    # write path. (A trailing space wouldn't: saving trims it.)
     create_response = recipes_api.create_recipe(
         CreateRecipeRequest(
-            title="Garlic Shrimp Pasta ",
+            title="Garlic  Shrimp Pasta",
             instructions="Cook pasta. Sauté garlic, add shrimp, toss.",
             ingredients=[
                 make_ingredient(item="shrimp", amount="1", unit="lb"),
