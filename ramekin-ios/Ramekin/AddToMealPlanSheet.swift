@@ -9,6 +9,8 @@ struct AddToMealPlanSheet: View {
     @State private var isAdding = false
     @State private var showingConfirmation = false
     @State private var error: String?
+    @State private var submitTask: Task<Void, Never>?
+    @State private var dismissTask: Task<Void, Never>?
 
     var body: some View {
         NavigationStack {
@@ -35,15 +37,23 @@ struct AddToMealPlanSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
+                        cancelPendingWork()
                         isPresented = false
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
-                        Task { await addToMealPlan() }
+                        submitTask = Task { await addToMealPlan() }
                     }
-                    .disabled(isAdding)
+                    // Stays disabled during the success overlay so a second
+                    // tap can't schedule the recipe twice.
+                    .disabled(isAdding || showingConfirmation)
                 }
+            }
+            .onDisappear {
+                // A swipe-down dismissal must not leave a pending submission
+                // or close that would dismiss the next presentation.
+                cancelPendingWork()
             }
             .overlay {
                 if showingConfirmation {
@@ -67,6 +77,14 @@ struct AddToMealPlanSheet: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 
+    @MainActor
+    private func cancelPendingWork() {
+        submitTask?.cancel()
+        submitTask = nil
+        SheetAutoDismissSupport.cancel(&dismissTask)
+    }
+
+    @MainActor
     private func addToMealPlan() async {
         isAdding = true
         error = nil
@@ -77,21 +95,20 @@ struct AddToMealPlanSheet: View {
                 mealDate: selectedDate,
                 mealType: selectedMealType.rawValue
             )
-            await MainActor.run {
-                showingConfirmation = true
-                UIAccessibility.post(notification: .announcement, argument: "Added to meal plan")
-            }
-            try? await Task.sleep(nanoseconds: 1_000_000_000)
-            await MainActor.run {
+            // The sheet was dismissed while the request was in flight.
+            guard !Task.isCancelled else { return }
+            isAdding = false
+            showingConfirmation = true
+            UIAccessibility.post(notification: .announcement, argument: "Added to meal plan")
+            SheetAutoDismissSupport.schedule(&dismissTask) {
                 isPresented = false
             }
         } catch is CancellationError {
             // ignored
         } catch {
-            await MainActor.run {
-                self.error = error.localizedDescription
-                isAdding = false
-            }
+            guard !Task.isCancelled else { return }
+            self.error = error.localizedDescription
+            isAdding = false
         }
     }
 }

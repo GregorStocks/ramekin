@@ -35,6 +35,9 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
   const [mealPlanError, setMealPlanError] = createSignal<string | null>(null);
   const [mealPlanSuccess, setMealPlanSuccess] = createSignal(false);
   const [wasOpen, setWasOpen] = createSignal(false);
+  // Bumped on every open and close so a submission or close timer from an
+  // earlier presentation can't touch the one that is showing now.
+  let presentation = 0;
   let closeTimer: ReturnType<typeof setTimeout> | null = null;
 
   const clearCloseTimer = () => {
@@ -45,7 +48,9 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
   };
 
   const reset = () => {
+    presentation++;
     clearCloseTimer();
+    setAddingToMealPlan(false);
     setMealPlanDate(formatDateLocal(new Date()));
     setMealPlanMealType("dinner");
     setMealPlanError(null);
@@ -53,6 +58,7 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
   };
 
   const close = () => {
+    presentation++;
     clearCloseTimer();
     props.onClose();
     setMealPlanError(null);
@@ -70,6 +76,8 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
   });
 
   const handleAddToMealPlan = async () => {
+    const current = presentation;
+    const isCurrent = () => presentation === current;
     setAddingToMealPlan(true);
     setMealPlanError(null);
     try {
@@ -80,11 +88,13 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
           mealType: mealPlanMealType(),
         },
       });
+      if (!isCurrent()) return;
       setMealPlanSuccess(true);
       clearCloseTimer();
       closeTimer = setTimeout(close, 1500);
     } catch (err) {
       const parsed = await parseApiError(err, "Failed to add to meal plan");
+      if (!isCurrent()) return;
       if (parsed.code === ErrorCode.Conflict) {
         setMealPlanError(
           `This recipe is already scheduled for ${MEAL_TYPE_LABELS[mealPlanMealType()].toLowerCase()} on this date`,
@@ -93,7 +103,7 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
         setMealPlanError(parsed.message);
       }
     } finally {
-      setAddingToMealPlan(false);
+      if (isCurrent()) setAddingToMealPlan(false);
     }
   };
 
