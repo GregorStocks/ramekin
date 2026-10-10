@@ -424,6 +424,7 @@ fn dissimilar_alternatives_and_bare_herbs() {
         // An unknown first alternative passes to a citrus part counted by the
         // fruit.
         ("amchur powder or juice of half a lemon", "lemon juice"),
+        ("amchur powder or juice of 1 key lime", "key lime juice"),
     ] {
         assert!(
             matches!(
