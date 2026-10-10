@@ -526,9 +526,6 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
 /// ("cooked and cooled white rice" is cooked white rice). A citrus part
 /// counted by the fruit ("juice of half a lemon") is that part ("lemon juice").
 fn clean_alternative(piece: &str) -> String {
-    if let Some(part) = citrus_part_name(piece) {
-        return part;
-    }
     static EXAMPLE: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(r"^(?:[^:]+:\s*)?(?:(?:like|such as|e\.g\.|eg|for example),? )?").unwrap()
     });
@@ -536,6 +533,9 @@ fn clean_alternative(piece: &str) -> String {
     let piece = EXAMPLE.replace(piece, "");
     // A footnote marker ("dried bread crumbs*** or panko").
     let piece = piece.trim_end_matches(['*', '†', '‡']).trim_end();
+    if let Some(part) = citrus_part_name(piece) {
+        return part;
+    }
     let words: Vec<&str> = piece.split(' ').collect();
     let mut kept = Vec::with_capacity(words.len());
     let mut index = 0;
