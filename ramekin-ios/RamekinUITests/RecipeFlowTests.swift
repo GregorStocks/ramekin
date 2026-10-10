@@ -328,7 +328,15 @@ final class RecipeFlowTests: XCTestCase {
         // Matches MealPlanView.dayHeaderFormatter.
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM d"
-        let addDinner = app.buttons["Add Dinner on \(formatter.string(from: Date()))"]
+        // Sunday ends the Monday-first week that opens by default, so its row
+        // always starts below the fold; adding there catches the week jumping
+        // back to Monday after the picker closes on any weekday.
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        // Calendar weekdays run Sunday = 1 through Saturday = 7.
+        let daysUntilSunday = (8 - calendar.component(.weekday, from: today)) % 7
+        let sunday = calendar.date(byAdding: .day, value: daysUntilSunday, to: today)!
+        let addDinner = app.buttons["Add Dinner on \(formatter.string(from: sunday))"]
         scrollMealPlanWeek(toReveal: addDinner)
         addDinner.tap()
 
@@ -353,8 +361,8 @@ final class RecipeFlowTests: XCTestCase {
         )
         XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: slowSimulatorTimeout), .completed)
         // The add runs after the sheet closes, and the week then scrolls to
-        // the edited day on its own. No swiping here: closing the picker used
-        // to leave the week back at Monday with a late-week card off screen.
+        // Sunday on its own. No swiping here: closing the picker used to leave
+        // the week back at Monday with the new card off screen.
         let card = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", title)).firstMatch
         let cardOnScreen = XCTNSPredicateExpectation(
             predicate: NSPredicate(format: "exists == true AND hittable == true"),
