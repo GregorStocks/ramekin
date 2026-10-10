@@ -13,6 +13,9 @@
 #              (autocorrect, predictions, slide-to-type and its first-use
 #              tutorials) and unload mediaanalysisd. Needs IOS_UI_UDID from
 #              the boot phase.
+#   ensure     Wait for CoreSimulator to list the booted device again before
+#              a test run, re-booting it if it shut down, and fail with a
+#              clear error if it doesn't come back. Needs IOS_UI_UDID.
 #
 # The boot phase prints GITHUB_ENV lines on stdout; progress goes to stderr:
 #   IOS_UI_UDID=<udid>
@@ -72,6 +75,65 @@ configure() {
     fi
 }
 
+# In run 38010047883, xcodebuild found no iOS simulators at all ten seconds
+# after the keyboard warm-up had used this one, though the simulator kept
+# running and simctl reached it a minute later. The runner was busy with
+# disk images at the time (diskutil, diskimagesiod), so CoreSimulator likely
+# lost sight of the runtime volume for a while. Wait that out here, where the
+# cause is clear, instead of failing inside xcodebuild.
+ensure() {
+    local udid=${IOS_UI_UDID:?run the boot phase first}
+    local deadline=$((SECONDS + 300)) state rebooted=
+    while true; do
+        state=$(device_state "$udid")
+        case "$state" in
+            Booted)
+                echo "Simulator $udid is booted" >&2
+                return 0
+                ;;
+            Shutdown)
+                if [ -z "$rebooted" ]; then
+                    echo "::warning title=Simulator shut down::Simulator $udid shut down before the UI tests; booting it again" >&2
+                    xcrun simctl boot "$udid" >&2 || true
+                    xcrun simctl bootstatus "$udid" -b >&2 || true
+                    rebooted=1
+                    continue
+                fi
+                ;;
+        esac
+        if [ "$SECONDS" -ge "$deadline" ]; then
+            echo "::error title=Simulator unavailable::CoreSimulator lists simulator $udid as '$state' after 5 minutes. This is a runner problem, not a test failure." >&2
+            xcrun simctl list devices >&2 || true
+            xcrun simctl list runtimes >&2 || true
+            return 1
+        fi
+        echo "Simulator $udid is '$state'; waiting for CoreSimulator to list it as booted" >&2
+        sleep 10
+    done
+}
+
+# Prints the device's state (Booted, Shutdown, ...), "unavailable: <reason>"
+# if its runtime is missing, or "missing" if CoreSimulator doesn't list it.
+device_state() {
+    { xcrun simctl list devices -j 2>/dev/null || true; } | python3 -c '
+import json, sys
+udid = sys.argv[1]
+try:
+    runtimes = json.load(sys.stdin)["devices"].values()
+except (ValueError, KeyError):
+    runtimes = []
+for devices in runtimes:
+    for d in devices:
+        if d["udid"] == udid:
+            if d.get("isAvailable", True):
+                print(d["state"])
+            else:
+                print("unavailable: " + d.get("availabilityError", "unknown"))
+            sys.exit()
+print("missing")
+' "$1"
+}
+
 mediaanalysis_labels() {
     xcrun simctl spawn "$1" launchctl list | awk 'tolower($3) ~ /mediaanalysis/ { print $3 }'
 }
@@ -79,8 +141,9 @@ mediaanalysis_labels() {
 case "${1:-}" in
     boot) boot ;;
     configure) configure ;;
+    ensure) ensure ;;
     *)
-        echo "usage: $0 boot|configure" >&2
+        echo "usage: $0 boot|configure|ensure" >&2
         exit 2
         ;;
 esac

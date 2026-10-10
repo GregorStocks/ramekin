@@ -364,6 +364,12 @@ jobs:
           InputUI and may stall. See issues/p3-ios-ui-app-launch-hang.json5
           and logs/ios-ui-keyboard-warmup.xcresult."
 
+      - name: Check simulator is still listed
+        # Once, xcodebuild found no simulators right after the warm-up while
+        # the runner was busy with disk images; see the script.
+        timeout-minutes: 10
+        run: scripts/prepare-ios-ui-simulator.sh ensure
+
       - name: Run UI tests
         timeout-minutes: 20
         run: make ios-test-ui-prebuilt
