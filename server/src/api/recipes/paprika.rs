@@ -479,8 +479,8 @@ mod tests {
             ingredient("flour", &[("2", "cup"), ("240", "g")], None),
             ingredient("butter", &[("1", "stick")], Some("Part 1")),
             ingredient("water", &[("2", "tbsp")], Some("Part 1")),
-            ingredient("apples", &[("6", "large")], Some("for the filling")),
-            ingredient("sugar", &[("1/2", "cup")], Some("FILLING")),
+            ingredient("apples", &[("6", "large")], Some("For the Filling")),
+            ingredient("sugar", &[("1/2", "cup")], Some("Filling")),
             ingredient("salt", &[("1", "pinch")], None),
             ingredient("egg", &[("1", "large")], Some("Wash")),
         ];

@@ -1712,6 +1712,22 @@ pub fn detect_peer_section_header(raw: &str, peer_section_anchor: Option<&str>) 
     Some(normalize_section_name(trimmed))
 }
 
+/// Section header for a line of a Paprika ingredients field: whatever
+/// `detect_section_header` accepts, named the same way, or else any other line
+/// ending in a colon, named as written. Paprika text is typed by the user (or
+/// written by Ramekin's export, which puts a `Section:` line before each
+/// section), so a colon there marks a header even when scraped text's guards
+/// would reject it ("Part 1:").
+pub fn detect_paprika_section_header(raw: &str) -> Option<String> {
+    detect_section_header(raw).or_else(|| {
+        raw.trim()
+            .strip_suffix(':')
+            .map(str::trim)
+            .filter(|name| !name.is_empty())
+            .map(str::to_string)
+    })
+}
+
 /// Parse multiple ingredient lines (separated by newlines).
 /// Detects section headers (lines ending with colon, no measurements) and
 /// applies the section name to subsequent ingredients.
@@ -1723,9 +1739,8 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
 /// Parse a Paprika ingredients field, which is plain text the user typed (or
 /// Ramekin's own export wrote) rather than scraped HTML, so its layout can be
 /// trusted more:
-/// - Any line ending in a colon is a section header, named as written. Ramekin's
-///   export writes one before each section, and scraped text's guards against
-///   colon-terminated ingredient lines would drop headers like "Part 1:".
+/// - Any line ending in a colon is a section header
+///   (`detect_paprika_section_header`).
 /// - A blank line after a section's ingredients ends that section, so the
 ///   ingredients below it have no section until the next header.
 pub fn parse_paprika_ingredients(blob: &str) -> Vec<ParsedIngredient> {
@@ -1775,19 +1790,13 @@ fn parse_ingredient_lines(blob: &str, paprika: bool) -> Vec<ParsedIngredient> {
             continue;
         }
 
-        if let Some(section_name) = trimmed
-            .strip_suffix(':')
-            .map(str::trim)
-            .filter(|name| paprika && !name.is_empty())
-        {
-            peer_section_anchor = None;
-            current_section = Some(section_name.to_string());
-            section_has_ingredients = false;
-            continue;
-        }
-
         // Check if this line is a section header
-        if let Some(section_name) = detect_section_header(trimmed) {
+        let section_header = if paprika {
+            detect_paprika_section_header(trimmed)
+        } else {
+            detect_section_header(trimmed)
+        };
+        if let Some(section_name) = section_header {
             peer_section_anchor = next_peer_section_anchor(&section_name);
             current_section = Some(section_name);
             section_has_ingredients = false;
@@ -1857,7 +1866,7 @@ mod tests {
     }
 
     #[test]
-    fn test_parse_paprika_ingredients_trusts_colon_headers_as_written() {
+    fn test_parse_paprika_ingredients_trusts_colon_headers() {
         let blob = "Part 1:\n1 cup flour\nfor the crust:\nsalt\nPart 1:\n1 egg";
         let result = parse_paprika_ingredients(blob);
 
@@ -1869,7 +1878,8 @@ mod tests {
             sections,
             [
                 (Some("Part 1"), "flour"),
-                (Some("for the crust"), "salt"),
+                // Headers scraped text also accepts are named the same way.
+                (Some("For the Crust"), "salt"),
                 (Some("Part 1"), "egg"),
             ]
         );
