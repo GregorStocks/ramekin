@@ -733,6 +733,9 @@ fn a_fat_note_selects_turkey_and_pork_blends() {
     assert_eq!(line_fdc("ground turkey, 85% lean", None), turkey(85));
     assert_eq!(line_fdc("93/7 ground turkey", None), turkey(93));
     assert_eq!(line_fdc("7% fat ground turkey", None), turkey(93));
+    let fat_free = fdc_id("turkey, ground, fat free, raw");
+    assert_eq!(line_fdc("ground turkey", Some("99% lean")), fat_free);
+    assert_eq!(line_fdc("99/1 ground turkey", None), fat_free);
     // An alias that already names a blend can name another.
     assert_eq!(line_fdc("lean ground turkey", Some("85/15")), turkey(85));
     assert_eq!(line_fdc("ground pork", Some("96% lean")), pork(96));

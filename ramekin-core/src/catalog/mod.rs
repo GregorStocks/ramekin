@@ -798,9 +798,14 @@ fn prepared_form(id: &str, item: &str, note: &str) -> Option<Resolution> {
                 .into_owned()]
         } else if let Some(caps) = GROUND.captures(id) {
             let (meat, raw) = (&caps[1], caps.get(2).map_or("", |raw| raw.as_str()));
-            [",", " /"]
+            let mut names: Vec<String> = [",", " /"]
                 .map(|sep| format!("{meat}, ground, {lean}% lean{sep} {fat}% fat{raw}"))
-                .into()
+                .into();
+            // USDA's fat-free turkey is what "99% lean ground turkey" means.
+            if meat == "turkey" && lean == 99 {
+                names.push(format!("turkey, ground, fat free{raw}"));
+            }
+            names
         } else {
             Vec::new()
         }
