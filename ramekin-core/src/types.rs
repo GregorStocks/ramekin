@@ -34,14 +34,6 @@ impl PipelineStep {
         PipelineStep::ApplyAutoTags,
     ];
 
-    /// Steps that should continue on failure (don't fail the overall job)
-    pub fn continues_on_failure(&self) -> bool {
-        matches!(
-            self,
-            PipelineStep::EnrichAutoTag | PipelineStep::ApplyAutoTags
-        )
-    }
-
     /// Steps that are DB-specific (CLI can skip or stub these)
     pub fn is_db_specific(&self) -> bool {
         matches!(self, PipelineStep::FetchImages)

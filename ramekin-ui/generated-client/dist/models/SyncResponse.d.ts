@@ -32,19 +32,27 @@ export interface SyncResponse {
      */
     created: Array<SyncCreatedItem>;
     /**
+     * Snapshot watermark to pass as `cursor` on the next sync. Changes may be
+     * redelivered across syncs, but none can be skipped.
+     * @type {number}
+     * @memberof SyncResponse
+     */
+    cursor: number;
+    /**
      * IDs of items that were deleted
      * @type {Array<string>}
      * @memberof SyncResponse
      */
     deleted: Array<string>;
     /**
-     * Server-side changes since last_sync_at
+     * Server-side changes since the request's cursor
      * @type {Array<SyncServerChange>}
      * @memberof SyncResponse
      */
     serverChanges: Array<SyncServerChange>;
     /**
-     * New sync timestamp to use for next sync
+     * Server time when this sync started. Deprecated as a cursor: pass
+     * `cursor` instead.
      * @type {Date}
      * @memberof SyncResponse
      */

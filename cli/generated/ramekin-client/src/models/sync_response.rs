@@ -19,13 +19,16 @@ pub struct SyncResponse {
     /// Items that were created (maps client_id to server_id)
     #[serde(rename = "created")]
     pub created: Vec<models::SyncCreatedItem>,
+    /// Snapshot watermark to pass as `cursor` on the next sync. Changes may be redelivered across syncs, but none can be skipped.
+    #[serde(rename = "cursor")]
+    pub cursor: i64,
     /// IDs of items that were deleted
     #[serde(rename = "deleted")]
     pub deleted: Vec<uuid::Uuid>,
-    /// Server-side changes since last_sync_at
+    /// Server-side changes since the request's cursor
     #[serde(rename = "server_changes")]
     pub server_changes: Vec<models::SyncServerChange>,
-    /// New sync timestamp to use for next sync
+    /// Server time when this sync started. Deprecated as a cursor: pass `cursor` instead.
     #[serde(rename = "sync_timestamp")]
     pub sync_timestamp: String,
     /// Items that were updated (with success status)
@@ -37,6 +40,7 @@ impl SyncResponse {
     pub fn new(
         category_order: Vec<String>,
         created: Vec<models::SyncCreatedItem>,
+        cursor: i64,
         deleted: Vec<uuid::Uuid>,
         server_changes: Vec<models::SyncServerChange>,
         sync_timestamp: String,
@@ -45,6 +49,7 @@ impl SyncResponse {
         SyncResponse {
             category_order,
             created,
+            cursor,
             deleted,
             server_changes,
             sync_timestamp,

@@ -44,6 +44,7 @@ class TestSyncResponse(unittest.TestCase):
                         server_id = '', 
                         version = 56, )
                     ],
+                cursor = 56,
                 deleted = [
                     ''
                     ],
@@ -82,6 +83,7 @@ class TestSyncResponse(unittest.TestCase):
                         server_id = '', 
                         version = 56, )
                     ],
+                cursor = 56,
                 deleted = [
                     ''
                     ],

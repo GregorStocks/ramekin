@@ -6,8 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creates** | [**List[SyncCreateItem]**](SyncCreateItem.md) | Items created offline | [optional] 
+**cursor** | **int** | &#x60;cursor&#x60; from the previous sync&#39;s response. Server returns changes at or after it, and takes precedence over &#x60;last_sync_at&#x60;. | [optional] 
 **deletes** | **List[UUID]** | IDs of items deleted offline | [optional] 
-**last_sync_at** | **datetime** | Last sync timestamp - server will return changes since this time | [optional] 
+**last_sync_at** | **datetime** | Deprecated: use &#x60;cursor&#x60;. Server returns changes after this time when &#x60;cursor&#x60; is absent; with neither, it returns every item. | [optional] 
 **updates** | [**List[SyncUpdateItem]**](SyncUpdateItem.md) | Items updated offline | [optional] 
 
 ## Example

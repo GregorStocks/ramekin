@@ -1,0 +1,16 @@
+{
+  "title": "Stop repo-lock.sh from aborting when the lock is released mid-check",
+  "description": "acquire_repo_lock in scripts/repo-lock.sh checks `[ -f \"$lock_dir/pid\" ]` and then reads it with `tr ... < \"$lock_dir/pid\"`. \
+If the holder releases the lock between those two steps, the redirect fails with 'logs/locks/ui-deps.lock/pid: No such file or directory' and the waiter exits 1 instead of retrying mkdir. \
+Seen as a flaky failure of tests/test_dependency_lock.py::test_concurrent_ui_dep_installs_take_turns during `make test` (passes when rerun alone). \
+Read the pid with a guarded read (e.g. `lock_pid=$(tr -d '[:space:]' < \"$lock_dir/pid\" 2>/dev/null || true)`) so a vanished lock falls through to the next mkdir attempt.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "tooling",
+    "flaky-test",
+  ],
+  "created_at": "2026-10-10T00:00:00Z",
+  "updated_at": "2026-10-10T00:00:00Z",
+}

@@ -109,7 +109,7 @@
     {
       "raw": "5 large or 6 medium-sized lemons",
       "expected": {
-        "item": "medium-sized lemons",
+        "item": "lemons",
         "measurements": [
           {
             "amount": "5",
@@ -117,7 +117,7 @@
           },
           {
             "amount": "6",
-            "unit": null
+            "unit": "medium"
           }
         ],
         "note": null,
