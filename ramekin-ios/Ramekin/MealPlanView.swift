@@ -38,6 +38,10 @@ struct MealPlanView: View {
 
     @State private var deletingMealPlan: MealPlanItem?
     @State private var editingMealPlan: MealPlanItem?
+    /// Day to scroll to once an add or edit has reloaded the week. Closing
+    /// the picker sheet can leave the week scrolled back to Monday, so the
+    /// edited day is brought back into view explicitly.
+    @State private var scrollTarget: Date?
 
     private let logger = DebugLogger.shared
 
@@ -157,12 +161,22 @@ struct MealPlanView: View {
     // MARK: - Week Calendar
 
     private var weekCalendar: some View {
-        ScrollView {
-            LazyVStack(spacing: 0) {
-                weekHeader
-                ForEach(daysInWeek, id: \.self) { date in
-                    daySection(date: date)
+        ScrollViewReader { proxy in
+            ScrollView {
+                LazyVStack(spacing: 0) {
+                    weekHeader
+                    ForEach(daysInWeek, id: \.self) { date in
+                        daySection(date: date)
+                            .id(date)
+                    }
                 }
+            }
+            .onChange(of: scrollTarget) { target in
+                guard let target else { return }
+                withAnimation {
+                    proxy.scrollTo(target, anchor: .top)
+                }
+                scrollTarget = nil
             }
         }
     }
@@ -334,6 +348,9 @@ extension MealPlanView {
                 )
             }
             await loadMealPlans()
+            await MainActor.run {
+                scrollTarget = Calendar.current.startOfDay(for: pickerDate)
+            }
         } catch is CancellationError {
             // ignored
         } catch {
@@ -380,6 +397,16 @@ extension MealPlanView {
             )
         }
         await loadMealPlans()
+        // A meal moved to another day would otherwise end up off screen.
+        let oldDay = Calendar.current.startOfDay(
+            for: MealPlanDateSupport.localDate(fromAPIDate: meal.mealDate)
+        )
+        let newDay = Calendar.current.startOfDay(for: mealDate)
+        if newDay != oldDay {
+            await MainActor.run {
+                scrollTarget = newDay
+            }
+        }
     }
 }
 
