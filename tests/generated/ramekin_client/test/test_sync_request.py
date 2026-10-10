@@ -47,6 +47,7 @@ class TestSyncRequest(unittest.TestCase):
                         source_recipe_id = '', 
                         source_recipe_title = '', )
                     ],
+                cursor = 56,
                 deletes = [
                     ''
                     ],

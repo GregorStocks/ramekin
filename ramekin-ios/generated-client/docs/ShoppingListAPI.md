@@ -204,7 +204,7 @@ This endpoint does not need any parameter.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import RamekinClient
 
-let syncRequest = SyncRequest(creates: [SyncCreateItem(amount: "amount_example", categoryOverride: "categoryOverride_example", clientId: 123, isChecked: false, item: "item_example", note: "note_example", sortOrder: 123, sourceRecipeId: 123, sourceRecipeTitle: "sourceRecipeTitle_example")], deletes: [123], lastSyncAt: Date(), updates: [SyncUpdateItem(amount: "amount_example", categoryOverride: "categoryOverride_example", clearCategoryOverride: false, expectedVersion: 123, id: 123, isChecked: false, item: "item_example", note: "note_example", sortOrder: 123)]) // SyncRequest | 
+let syncRequest = SyncRequest(creates: [SyncCreateItem(amount: "amount_example", categoryOverride: "categoryOverride_example", clientId: 123, isChecked: false, item: "item_example", note: "note_example", sortOrder: 123, sourceRecipeId: 123, sourceRecipeTitle: "sourceRecipeTitle_example")], cursor: 123, deletes: [123], lastSyncAt: Date(), updates: [SyncUpdateItem(amount: "amount_example", categoryOverride: "categoryOverride_example", clearCategoryOverride: false, expectedVersion: 123, id: 123, isChecked: false, item: "item_example", note: "note_example", sortOrder: 123)]) // SyncRequest | 
 
 ShoppingListAPI.syncItems(syncRequest: syncRequest) { (response, error) in
     guard error == nil else {

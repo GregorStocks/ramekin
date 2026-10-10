@@ -143,7 +143,11 @@ offline-write pattern:
 - Updates carry an expected integer version and fail on a concurrent change.
 - Deletes are server-side soft deletes.
 - The sync response maps created IDs, reports update success and current
-  versions, returns tombstones, and advances the timestamp.
+  versions, returns tombstones, and advances a `change_xid` cursor using the
+  same watermark as recipe sync. `shopping_list_items.change_xid` is stamped by
+  a column default on insert and the `stamp_change_xid()` BEFORE UPDATE
+  trigger, so no writer can forget it. `last_sync_at` remains only as a
+  fallback for iOS builds that predate the cursor.
 
 This is already most of the machinery a single-user, multi-device recipe
 workflow would need. It is intentionally explicit about domain behavior rather

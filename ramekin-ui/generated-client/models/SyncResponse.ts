@@ -55,19 +55,27 @@ export interface SyncResponse {
      */
     created: Array<SyncCreatedItem>;
     /**
+     * Snapshot watermark to pass as `cursor` on the next sync. Changes may be
+     * redelivered across syncs, but none can be skipped.
+     * @type {number}
+     * @memberof SyncResponse
+     */
+    cursor: number;
+    /**
      * IDs of items that were deleted
      * @type {Array<string>}
      * @memberof SyncResponse
      */
     deleted: Array<string>;
     /**
-     * Server-side changes since last_sync_at
+     * Server-side changes since the request's cursor
      * @type {Array<SyncServerChange>}
      * @memberof SyncResponse
      */
     serverChanges: Array<SyncServerChange>;
     /**
-     * New sync timestamp to use for next sync
+     * Server time when this sync started. Deprecated as a cursor: pass
+     * `cursor` instead.
      * @type {Date}
      * @memberof SyncResponse
      */
@@ -86,6 +94,7 @@ export interface SyncResponse {
 export function instanceOfSyncResponse(value: object): value is SyncResponse {
     if (!('categoryOrder' in value) || value['categoryOrder'] === undefined) return false;
     if (!('created' in value) || value['created'] === undefined) return false;
+    if (!('cursor' in value) || value['cursor'] === undefined) return false;
     if (!('deleted' in value) || value['deleted'] === undefined) return false;
     if (!('serverChanges' in value) || value['serverChanges'] === undefined) return false;
     if (!('syncTimestamp' in value) || value['syncTimestamp'] === undefined) return false;
@@ -105,6 +114,7 @@ export function SyncResponseFromJSONTyped(json: any, ignoreDiscriminator: boolea
         
         'categoryOrder': json['category_order'],
         'created': ((json['created'] as Array<any>).map(SyncCreatedItemFromJSON)),
+        'cursor': json['cursor'],
         'deleted': json['deleted'],
         'serverChanges': ((json['server_changes'] as Array<any>).map(SyncServerChangeFromJSON)),
         'syncTimestamp': (new Date(json['sync_timestamp'])),
@@ -125,6 +135,7 @@ export function SyncResponseToJSONTyped(value?: SyncResponse | null, ignoreDiscr
         
         'category_order': value['categoryOrder'],
         'created': ((value['created'] as Array<any>).map(SyncCreatedItemToJSON)),
+        'cursor': value['cursor'],
         'deleted': value['deleted'],
         'server_changes': ((value['serverChanges'] as Array<any>).map(SyncServerChangeToJSON)),
         'sync_timestamp': value['syncTimestamp'].toISOString(),

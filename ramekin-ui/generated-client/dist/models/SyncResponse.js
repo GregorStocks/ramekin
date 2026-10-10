@@ -22,6 +22,8 @@ export function instanceOfSyncResponse(value) {
         return false;
     if (!('created' in value) || value['created'] === undefined)
         return false;
+    if (!('cursor' in value) || value['cursor'] === undefined)
+        return false;
     if (!('deleted' in value) || value['deleted'] === undefined)
         return false;
     if (!('serverChanges' in value) || value['serverChanges'] === undefined)
@@ -42,6 +44,7 @@ export function SyncResponseFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'categoryOrder': json['category_order'],
         'created': (json['created'].map(SyncCreatedItemFromJSON)),
+        'cursor': json['cursor'],
         'deleted': json['deleted'],
         'serverChanges': (json['server_changes'].map(SyncServerChangeFromJSON)),
         'syncTimestamp': (new Date(json['sync_timestamp'])),
@@ -58,6 +61,7 @@ export function SyncResponseToJSONTyped(value, ignoreDiscriminator = false) {
     return {
         'category_order': value['categoryOrder'],
         'created': (value['created'].map(SyncCreatedItemToJSON)),
+        'cursor': value['cursor'],
         'deleted': value['deleted'],
         'server_changes': (value['serverChanges'].map(SyncServerChangeToJSON)),
         'sync_timestamp': value['syncTimestamp'].toISOString(),
