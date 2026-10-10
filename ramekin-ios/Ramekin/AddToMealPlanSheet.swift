@@ -43,6 +43,10 @@ struct AddToMealPlanSheet: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
+                        // Mark the submission active before spawning it so a
+                        // second tap can't start an untracked submission.
+                        guard !isAdding else { return }
+                        isAdding = true
                         submitTask = Task { await addToMealPlan() }
                     }
                     // Stays disabled during the success overlay so a second
@@ -86,7 +90,6 @@ struct AddToMealPlanSheet: View {
 
     @MainActor
     private func addToMealPlan() async {
-        isAdding = true
         error = nil
 
         do {
