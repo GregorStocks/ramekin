@@ -1,0 +1,16 @@
+{
+  "title": "generate-clients.sh waits forever on a stale lock left by a killed run",
+  "description": "scripts/generate-clients.sh takes a mkdir lock at .generate-clients.lock and spins on `sleep 0.1` until it can create it. \
+The lock is only removed by an EXIT trap, so if a previous run is SIGKILLed (or the machine/container dies) the lock dir stays behind and every later `make generate-clients` / `make lint` / `make test` hangs silently forever. \
+Seen 2026-10-09: a run died at 17:08 leaving .generate-clients.lock and cli/generated/ramekin-client.generating; the next `make lint` sat in the acquire loop for 15+ hours with no output. \
+Fix: write the holder's PID into the lock dir and reclaim the lock when that PID is no longer alive (and/or time out with a clear error naming the lock path). \
+Also clean up stale `*.generating` dirs when the lock is reclaimed.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "tooling",
+  ],
+  "created_at": "2026-10-10T00:00:00Z",
+  "updated_at": "2026-10-10T00:00:00Z",
+}
