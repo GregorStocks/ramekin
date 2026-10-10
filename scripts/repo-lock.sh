@@ -95,5 +95,9 @@ acquire_repo_lock() {
     printf '%s\n' "$$" > "$lock_dir/pid"
     printf '%s\n' "${PWD}" > "$lock_dir/pwd"
     REPO_LOCK_DIR_ACTIVE="$lock_dir"
-    trap release_repo_lock EXIT INT TERM
+    trap release_repo_lock EXIT
+    # Exit on signals (releasing via the EXIT trap) rather than swallowing them:
+    # a trap that only released the lock would let the run carry on unlocked.
+    trap 'exit 130' INT
+    trap 'exit 143' TERM
 }

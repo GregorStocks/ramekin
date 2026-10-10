@@ -1,6 +1,8 @@
 import os
 import shutil
+import signal
 import subprocess
+import time
 from pathlib import Path
 
 
@@ -8,6 +10,10 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 # Stands in for both openapi-generator (creates the -o dir) and tsc (no-op).
 FAKE_NPX = """#!/bin/bash
+if [ -n "${GENERATE_STARTED:-}" ]; then
+    touch "$GENERATE_STARTED"
+    sleep 1
+fi
 while [ $# -gt 0 ]; do
     if [ "$1" = "-o" ]; then
         mkdir -p "$2"
@@ -102,3 +108,28 @@ def test_generate_clients_gives_up_on_a_lock_held_too_long(tmp_path):
     assert str(lock) in result.stdout
     assert _generated(tmp_path) == 0
     assert lock.exists()
+
+
+def test_generate_clients_stops_when_terminated(tmp_path):
+    # SIGTERM to the script alone (not its process group) must end the run, not
+    # just drop the lock and let it keep regenerating clients unlocked.
+    env = _generate_clients_sandbox(tmp_path)
+    started = tmp_path / "started"
+    proc = subprocess.Popen(
+        [str(tmp_path / "scripts" / "generate-clients.sh")],
+        env={**env, "GENERATE_STARTED": str(started)},
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+    )
+    deadline = time.monotonic() + 10
+    while not started.exists():
+        assert time.monotonic() < deadline, "generator never started"
+        time.sleep(0.05)
+
+    proc.send_signal(signal.SIGTERM)
+    output = proc.communicate(timeout=30)[0]
+
+    assert proc.returncode == 143, output
+    assert _generated(tmp_path) == 1
+    assert not _lock(tmp_path).exists()
