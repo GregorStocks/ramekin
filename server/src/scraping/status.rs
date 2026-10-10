@@ -411,8 +411,8 @@ fn build_step_states_from_outputs(
             let (status, summary_val, error_val) = if *success {
                 ("completed".to_string(), summary.clone(), None)
             } else {
-                // continues_on_failure enrichment step failed: surface the
-                // per-step error even though the overall job completed.
+                // Surface the per-step error. For a continues_on_failure
+                // step the overall job still completed.
                 ("failed".to_string(), None, step_error.clone())
             };
             states.push(StepState {
@@ -664,7 +664,7 @@ mod tests {
     }
 
     #[test]
-    fn continues_on_failure_enrichment_renders_as_failed() {
+    fn continues_on_failure_step_renders_as_failed() {
         // Auto-applied enrichment steps can fail after save_recipe; the status
         // page must still render that step as "failed" with the stored error.
         let finished = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
