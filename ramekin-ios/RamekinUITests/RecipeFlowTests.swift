@@ -304,8 +304,8 @@ final class RecipeFlowTests: XCTestCase {
 
     /// Scrolls the meal-plan week until `element` is on screen. The week is a
     /// LazyVStack, so days below the fold are not in the hierarchy until they
-    /// scroll into view, and the list can be back at Monday after the picker
-    /// closes. Slow swipes scroll less than a screen, so they can't skip past it.
+    /// scroll into view. Slow swipes scroll less than a screen, so they can't
+    /// skip past it.
     private func scrollMealPlanWeek(toReveal element: XCUIElement) {
         // Any day's add button, since a scrolled list may no longer render Monday.
         let weekLoaded = app.buttons.matching(
@@ -328,7 +328,15 @@ final class RecipeFlowTests: XCTestCase {
         // Matches MealPlanView.dayHeaderFormatter.
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM d"
-        let addDinner = app.buttons["Add Dinner on \(formatter.string(from: Date()))"]
+        // Sunday ends the Monday-first week that opens by default, so its row
+        // always starts below the fold; adding there catches the week jumping
+        // back to Monday after the picker closes on any weekday.
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        // Calendar weekdays run Sunday = 1 through Saturday = 7.
+        let daysUntilSunday = (8 - calendar.component(.weekday, from: today)) % 7
+        let sunday = calendar.date(byAdding: .day, value: daysUntilSunday, to: today)!
+        let addDinner = app.buttons["Add Dinner on \(formatter.string(from: sunday))"]
         scrollMealPlanWeek(toReveal: addDinner)
         addDinner.tap()
 
@@ -352,11 +360,15 @@ final class RecipeFlowTests: XCTestCase {
             object: pickerBar
         )
         XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: slowSimulatorTimeout), .completed)
-        // The add runs after the sheet closes, so bring today's row back into
-        // view and wait there; the card renders in the same day section.
-        scrollMealPlanWeek(toReveal: addDinner)
+        // The add runs after the sheet closes, and the week then scrolls to
+        // Sunday on its own. No swiping here: closing the picker used to leave
+        // the week back at Monday with the new card off screen.
         let card = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", title)).firstMatch
-        XCTAssertTrue(card.waitForExistence(timeout: slowSimulatorTimeout))
+        let cardOnScreen = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "exists == true AND hittable == true"),
+            object: card
+        )
+        XCTAssertEqual(XCTWaiter.wait(for: [cardOnScreen], timeout: slowSimulatorTimeout), .completed)
         // Icon-only card actions name the meal they act on.
         XCTAssertTrue(app.buttons["Edit \(title)"].firstMatch.exists)
         XCTAssertTrue(app.buttons["Remove \(title)"].firstMatch.exists)

@@ -38,6 +38,10 @@ struct MealPlanView: View {
 
     @State private var deletingMealPlan: MealPlanItem?
     @State private var editingMealPlan: MealPlanItem?
+    /// Day to scroll to once an add or edit has reloaded the week. Closing
+    /// the picker sheet can leave the week scrolled back to Monday, so the
+    /// edited day is brought back into view explicitly.
+    @State private var scrollTarget: Date?
 
     private let logger = DebugLogger.shared
 
@@ -102,7 +106,11 @@ struct MealPlanView: View {
                     date: pickerDate,
                     mealType: pickerMealType
                 ) { recipe in
-                    Task { await addMealPlan(recipe: recipe) }
+                    // Another Add sheet can reassign the picker state before
+                    // this add finishes, so pass the slot along with it.
+                    let date = pickerDate
+                    let mealType = pickerMealType
+                    Task { await addMealPlan(recipe: recipe, date: date, mealType: mealType) }
                 }
             }
             .sheet(item: $editingMealPlan) { meal in
@@ -157,12 +165,22 @@ struct MealPlanView: View {
     // MARK: - Week Calendar
 
     private var weekCalendar: some View {
-        ScrollView {
-            LazyVStack(spacing: 0) {
-                weekHeader
-                ForEach(daysInWeek, id: \.self) { date in
-                    daySection(date: date)
+        ScrollViewReader { proxy in
+            ScrollView {
+                LazyVStack(spacing: 0) {
+                    weekHeader
+                    ForEach(daysInWeek, id: \.self) { date in
+                        daySection(date: date)
+                            .id(date)
+                    }
                 }
+            }
+            .onChange(of: scrollTarget) { target in
+                guard let target else { return }
+                withAnimation {
+                    proxy.scrollTo(target, anchor: .top)
+                }
+                scrollTarget = nil
             }
         }
     }
@@ -324,16 +342,19 @@ extension MealPlanView {
         }
     }
 
-    private func addMealPlan(recipe: RecipeSummary) async {
+    private func addMealPlan(recipe: RecipeSummary, date: Date, mealType: MealType) async {
         do {
             _ = try await logger.timed("createMealPlan API", source: "MealPlan") {
                 try await RamekinAPI.shared.createMealPlan(
                     recipeId: recipe.id,
-                    mealDate: pickerDate,
-                    mealType: pickerMealType.rawValue
+                    mealDate: date,
+                    mealType: mealType.rawValue
                 )
             }
             await loadMealPlans()
+            await MainActor.run {
+                scrollTarget = Calendar.current.startOfDay(for: date)
+            }
         } catch is CancellationError {
             // ignored
         } catch {
@@ -380,6 +401,16 @@ extension MealPlanView {
             )
         }
         await loadMealPlans()
+        // A meal moved to another day would otherwise end up off screen.
+        let oldDay = Calendar.current.startOfDay(
+            for: MealPlanDateSupport.localDate(fromAPIDate: meal.mealDate)
+        )
+        let newDay = Calendar.current.startOfDay(for: mealDate)
+        if newDay != oldDay {
+            await MainActor.run {
+                scrollTarget = newDay
+            }
+        }
     }
 }
 
