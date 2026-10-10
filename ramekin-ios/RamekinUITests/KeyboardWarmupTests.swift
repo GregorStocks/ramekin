@@ -8,7 +8,10 @@ import XCTest
 /// suspended that freshly launched process while the keyboard was on screen,
 /// and the app's main thread then blocked in UIKeyboardTaskQueue for about
 /// four minutes, failing the first test that typed (run 37389551049). Showing
-/// the keyboard here moves that cold launch out of the real tests.
+/// the keyboard here moves that cold launch out of the real tests. Since then,
+/// no stall has followed a warm launch. When this test failed, it was always
+/// the first-launch app hang (issues/p3-ios-ui-app-launch-hang.json5), which
+/// left the keyboard cold, so make ios-warm-ui-keyboard retries it once.
 final class KeyboardWarmupTests: XCTestCase {
 
     /// Long enough to outlast the four-minute stall seen on CI.
