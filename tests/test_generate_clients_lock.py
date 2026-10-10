@@ -16,8 +16,13 @@ if [ -n "${GENERATE_STARTED:-}" ]; then
 fi
 while [ $# -gt 0 ]; do
     if [ "$1" = "-o" ]; then
+        if ! mkdir "$GENERATE_LOG.running" 2>/dev/null; then
+            touch "$GENERATE_LOG.overlaps"
+        fi
         mkdir -p "$2"
         echo generate >> "$GENERATE_LOG"
+        sleep 0.05
+        rmdir "$GENERATE_LOG.running"
     fi
     shift
 done
@@ -91,6 +96,34 @@ def test_generate_clients_clears_a_lock_left_by_a_killed_run(tmp_path):
     assert "Removing stale" in result.stdout
     assert _generated(tmp_path) == 4
     assert not lock.exists()
+
+
+def test_concurrent_runs_reclaim_a_stale_lock_one_at_a_time(tmp_path):
+    # Waiters that all saw the same stale lock must not each delete it: the
+    # slower one would remove the lock the faster one just took.
+    env = _generate_clients_sandbox(tmp_path)
+    finished = subprocess.Popen(["true"])
+    finished.wait()
+    lock = _lock(tmp_path)
+    lock.mkdir(parents=True)
+    (lock / "pid").write_text(f"{finished.pid}\n", encoding="utf-8")
+
+    procs = [
+        subprocess.Popen(
+            [str(tmp_path / "scripts" / "generate-clients.sh")],
+            env=env,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+        )
+        for _ in range(6)
+    ]
+    outputs = [p.communicate(timeout=60)[0] for p in procs]
+
+    assert [p.returncode for p in procs] == [0] * 6, outputs
+    assert not (tmp_path / "generated.overlaps").exists(), outputs
+    assert _generated(tmp_path) == 24
+    assert list(lock.parent.iterdir()) == []
 
 
 def test_generate_clients_gives_up_on_a_lock_held_too_long(tmp_path):

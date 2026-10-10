@@ -15,6 +15,32 @@ repo_lock_mtime_epoch() {
     stat -c %Y "$path"
 }
 
+repo_lock_read_pid() {
+    local pid
+    pid=$(tr -d '[:space:]' 2>/dev/null < "$1/pid" || true)
+    case "$pid" in
+        ''|*[!0-9]*) pid="" ;;
+    esac
+    printf '%s' "$pid"
+}
+
+# A lock is stale when its holder is dead, or when it has no PID yet and is
+# older than the startup grace period.
+repo_lock_is_stale() {
+    local lock_dir="$1"
+    local grace_seconds="$2"
+    local pid
+    local mtime
+
+    pid=$(repo_lock_read_pid "$lock_dir")
+    if [ -n "$pid" ]; then
+        ! kill -0 "$pid" 2>/dev/null
+        return
+    fi
+    mtime=$(repo_lock_mtime_epoch "$lock_dir" 2>/dev/null || echo 0)
+    [ "$mtime" -gt 0 ] && [ $(($(date +%s) - mtime)) -ge "$grace_seconds" ]
+}
+
 release_repo_lock() {
     if [ -n "${REPO_LOCK_DIR_ACTIVE:-}" ] && [ -d "$REPO_LOCK_DIR_ACTIVE" ]; then
         rm -rf "$REPO_LOCK_DIR_ACTIVE"
@@ -53,12 +79,15 @@ acquire_repo_lock() {
     local lock_mtime=
     local now_epoch=
     local wait_started=
+    local reclaim_dir="${lock_root}/${lock_name}.reclaim"
 
     mkdir -p "$lock_root"
 
+    # The holder can release the lock at any point while we inspect it; when
+    # its pid file or directory vanishes mid-check, go back to mkdir.
     while ! mkdir "$lock_dir" 2>/dev/null; do
         if [ -f "$lock_dir/pid" ]; then
-            lock_pid=$(tr -d '[:space:]' < "$lock_dir/pid")
+            lock_pid=$(tr -d '[:space:]' 2>/dev/null < "$lock_dir/pid") || continue
             case "$lock_pid" in
                 ''|*[!0-9]*) lock_pid="" ;;
             esac
@@ -67,9 +96,9 @@ acquire_repo_lock() {
         fi
 
         if [ -z "$lock_pid" ]; then
-            lock_mtime=$(repo_lock_mtime_epoch "$lock_dir" 2>/dev/null || echo 0)
+            lock_mtime=$(repo_lock_mtime_epoch "$lock_dir" 2>/dev/null) || continue
             now_epoch=$(date +%s)
-            if [ "$lock_mtime" -gt 0 ] && [ $((now_epoch - lock_mtime)) -lt "$lock_grace_seconds" ]; then
+            if [ $((now_epoch - lock_mtime)) -lt "$lock_grace_seconds" ]; then
                 if repo_lock_wait "$human_name" "$lock_owner_name" "$lock_dir"; then
                     continue
                 fi
@@ -88,8 +117,22 @@ acquire_repo_lock() {
             return 1
         fi
 
-        echo "[$(repo_lock_timestamp)] Removing stale ${lock_owner_name} lock: ${lock_dir}" >&2
-        rm -rf "$lock_dir"
+        # Waiters that saw the same stale lock race to reclaim it, and a plain
+        # rm -rf could delete the lock a faster waiter just took. Reclaim under
+        # a short-lived mutex and recheck staleness while holding it.
+        if ! mkdir "$reclaim_dir" 2>/dev/null; then
+            # Reclaiming takes milliseconds; an old mutex means its owner died.
+            if repo_lock_is_stale "$reclaim_dir" 10; then
+                rm -rf "$reclaim_dir"
+            fi
+            sleep 0.05
+            continue
+        fi
+        if repo_lock_is_stale "$lock_dir" "$lock_grace_seconds"; then
+            echo "[$(repo_lock_timestamp)] Removing stale ${lock_owner_name} lock: ${lock_dir}" >&2
+            rm -rf "$lock_dir"
+        fi
+        rmdir "$reclaim_dir" 2>/dev/null || true
     done
 
     printf '%s\n' "$$" > "$lock_dir/pid"
