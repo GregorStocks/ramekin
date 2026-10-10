@@ -575,6 +575,15 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             .trim_start_matches(')')
             .trim_start();
 
+        // "1 (2-inch) piece ginger": the size belongs to the piece unit.
+        if is_inch_size_before_piece(paren_content, after_parenthetical) {
+            remaining = join_segments(
+                &join_segments(before_parenthetical, paren_content),
+                after_parenthetical,
+            );
+            continue;
+        }
+
         if let Some((item_segment, note_segment)) = split_parenthetical_item_identity(paren_content)
         {
             let outside_text = join_segments(before_parenthetical, after_parenthetical);
@@ -2440,6 +2449,14 @@ mod tests {
                 "3-inch knobs",
                 "fresh ginger",
             ),
+            ("1 1 1/2-inch piece ginger", "1 1/2-inch piece", "ginger"),
+            (
+                "1 (1 1/2-inch) piece fresh ginger",
+                "1 1/2-inch piece",
+                "fresh ginger",
+            ),
+            ("1 (2-inch) piece ginger", "2-inch piece", "ginger"),
+            ("2 (2 inch) chunks of ginger", "2 inch chunks", "ginger"),
         ] {
             let parsed = parse_ingredient(raw);
             assert_eq!(parsed.item, item, "{raw}");
