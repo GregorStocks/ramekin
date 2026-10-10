@@ -141,7 +141,8 @@ fn strip_leading_bold_recipe_title<'a>(chunk: &'a str, recipe_title: &str) -> &'
     for br in BR_TAG_REGEX.find_iter(chunk) {
         let part = chunk.get(part_start..br.start()).unwrap_or_default().trim();
         part_start = br.end();
-        if part.is_empty() {
+        // Markup-only fragments (`<span></span>`, `&nbsp;`) aren't a line.
+        if fragment_to_text(part).is_empty() {
             continue;
         }
         let repeats_title = bold_only_heading(part)
@@ -1325,6 +1326,14 @@ mod tests {
         );
         assert_eq!(
             strip_leading_bold_recipe_title(chunk, "blueberry-lavender muffins recipe"),
+            "2 cups flour<br />1 cup sugar"
+        );
+        // Markup-only fragments before the title don't hide it.
+        assert_eq!(
+            strip_leading_bold_recipe_title(
+                &format!("<span></span>&nbsp;<br />{chunk}"),
+                "Blueberry Lavender Muffins"
+            ),
             "2 cups flour<br />1 cup sugar"
         );
         // A bold ingredient that isn't the title stays.
