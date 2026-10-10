@@ -421,6 +421,9 @@ fn dissimilar_alternatives_and_bare_herbs() {
         ("country or sourdough bread", "bread"),
         ("vegetable, canola, or peanut oil", "vegetable oil"),
         ("cheddar and/or monterey jack cheese", "cheddar cheese"),
+        // An unknown first alternative passes to a citrus part counted by the
+        // fruit.
+        ("amchur powder or juice of half a lemon", "lemon juice"),
     ] {
         assert!(
             matches!(

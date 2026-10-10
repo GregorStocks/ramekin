@@ -5,6 +5,7 @@ use std::sync::LazyLock;
 use regex::Regex;
 
 use super::{normalize, AmbiguousName, Entry, Target, CATALOG};
+use crate::ingredient_parser::citrus_part_name;
 
 /// What a written ingredient name refers to.
 #[derive(Debug)]
@@ -522,8 +523,12 @@ fn alternative_candidates(normalized: &str) -> Option<Vec<(String, Vec<String>)>
 /// One alternative without what keeps it from naming its food: an example
 /// marker ("like cream cheese", "such as ..."), a footnote marker ("***"),
 /// and a prep word joined by "and"
-/// ("cooked and cooled white rice" is cooked white rice).
+/// ("cooked and cooled white rice" is cooked white rice). A citrus part
+/// counted by the fruit ("juice of half a lemon") is that part ("lemon juice").
 fn clean_alternative(piece: &str) -> String {
+    if let Some(part) = citrus_part_name(piece) {
+        return part;
+    }
     static EXAMPLE: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(r"^(?:[^:]+:\s*)?(?:(?:like|such as|e\.g\.|eg|for example),? )?").unwrap()
     });
