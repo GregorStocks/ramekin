@@ -372,7 +372,22 @@ jobs:
 
       - name: Run UI tests
         timeout-minutes: 20
-        run: make ios-test-ui-prebuilt
+        # simctl listing the device doesn't prove xcodebuild's own destination
+        # lookup will find it, so if that lookup fails (no test has run yet),
+        # wait for the device again and retry once. A run takes 6-8 minutes,
+        # so a failed lookup, the wait and a retry fit in the step timeout.
+        run: |
+          set -o pipefail
+          if make ios-test-ui-prebuilt 2>&1 | tee logs/ios-ui-run.log; then
+            exit 0
+          fi
+          if ! grep -q "Unable to find a device matching" logs/ios-ui-run.log; then
+            exit 1
+          fi
+          echo "::warning title=Simulator destination missing::xcodebuild could not find" \
+            "simulator $IOS_UI_UDID; waiting for it and retrying the UI tests once"
+          scripts/prepare-ios-ui-simulator.sh ensure
+          make ios-test-ui-prebuilt
 
       - name: Collect simulator system log
         if: ${{ !cancelled() }}

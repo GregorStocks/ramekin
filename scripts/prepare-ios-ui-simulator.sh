@@ -80,7 +80,9 @@ configure() {
 # running and simctl reached it a minute later. The runner was busy with
 # disk images at the time (diskutil, diskimagesiod), so CoreSimulator likely
 # lost sight of the runtime volume for a while. Wait that out here, where the
-# cause is clear, instead of failing inside xcodebuild.
+# cause is clear, instead of failing inside xcodebuild. simctl and xcodebuild
+# look devices up differently, so the workflow also retries the test run once
+# if xcodebuild still can't find the device.
 ensure() {
     local udid=${IOS_UI_UDID:?run the boot phase first}
     local deadline=$((SECONDS + 300)) state rebooted=
