@@ -282,16 +282,24 @@ jobs:
       - name: Start server
         run: |
           cd server
-          ./target/release/ramekin-server &
-          # Wait for server to be ready
-          for i in {1..60}; do
-            if curl -s http://localhost:55000/api/test/unauthed-ping > /dev/null 2>&1; then
+          ./target/release/ramekin-server > ../logs/server.log 2>&1 &
+          server_pid=$!
+          # Fail here rather than letting a server that never came up surface
+          # later as "Connection refused" while seeding. Slow runners can take
+          # a while to create the DB pool and run migrations.
+          for i in {1..120}; do
+            if curl -fsS http://localhost:55000/api/test/unauthed-ping > /dev/null 2>&1; then
               echo "Server is ready"
+              exit 0
+            fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then
+              echo "Server exited before becoming ready"
               break
             fi
-            echo "Waiting for server..."
             sleep 1
           done
+          cat ../logs/server.log
+          exit 1
         env:
           DATABASE_URL: postgres://ramekin@localhost:5432/ramekin_ios
           PORT: 55000
@@ -408,6 +416,7 @@ jobs:
           path: |
             logs/*.xcresult
             logs/runner-load.log
+            logs/server.log
             logs/simulator-system.log.gz
             logs/host-exec.log.gz
           if-no-files-found: ignore
