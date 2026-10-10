@@ -72,6 +72,8 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
   });
 
   onCleanup(() => {
+    // A submission still in flight at unmount must not arm a close timer.
+    presentation++;
     clearCloseTimer();
   });
 
