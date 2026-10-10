@@ -32,7 +32,7 @@
 use glob::glob;
 use ramekin_core::ingredient_categorizer;
 use ramekin_core::ingredient_parser::{
-    parse_ingredient, parse_ingredients, Measurement, ParsedIngredient,
+    parse_ingredient, parse_ingredients, parse_paprika_ingredients, Measurement, ParsedIngredient,
 };
 use serde::Deserialize;
 use std::fs;
@@ -119,9 +119,14 @@ fn run_pipeline(raw: &str) -> Expected {
 
 /// Run the ingredient parsing pipeline on a multi-line blob.
 /// This includes section header detection, filtering, and applying sections to subsequent ingredients.
-fn run_pipeline_batch(raw_lines: &[String]) -> Vec<Expected> {
+/// Paprika fixtures parse with the Paprika rules, as Paprika imports do.
+fn run_pipeline_batch(raw_lines: &[String], paprika: bool) -> Vec<Expected> {
     let blob = raw_lines.join("\n");
-    let parsed = parse_ingredients(&blob);
+    let parsed = if paprika {
+        parse_paprika_ingredients(&blob)
+    } else {
+        parse_ingredients(&blob)
+    };
     parsed
         .into_iter()
         .map(|ing| Expected::from(ing.normalize_amounts()))
@@ -131,6 +136,7 @@ fn run_pipeline_batch(raw_lines: &[String]) -> Vec<Expected> {
 /// A recipe batch test case (all ingredients processed together)
 struct RecipeBatchTest {
     name: String,
+    paprika: bool,
     raw_lines: Vec<String>,
     expected: Vec<Expected>,
 }
@@ -205,6 +211,7 @@ fn load_recipe_batch_tests() -> Vec<RecipeBatchTest> {
 
             batches.push(RecipeBatchTest {
                 name,
+                paprika: subdir == "paprika",
                 raw_lines,
                 expected,
             });
@@ -239,7 +246,7 @@ fn test_ingredient_parsing_golden_files() {
     let mut recipe_failures = Vec::new();
 
     for batch in &recipe_batches {
-        let actual = run_pipeline_batch(&batch.raw_lines);
+        let actual = run_pipeline_batch(&batch.raw_lines, batch.paprika);
 
         if actual != batch.expected {
             recipe_failures.push((
