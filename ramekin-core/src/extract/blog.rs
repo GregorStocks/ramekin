@@ -137,10 +137,6 @@ fn inline_leading_bold_title(chunk: &str) -> Option<String> {
 /// cups flour…`). Matching the title, rather than any Title-Case bold line,
 /// keeps a bold ingredient like `<b>Fresh Parsley</b>` in the list.
 fn strip_leading_bold_recipe_title<'a>(chunk: &'a str, recipe_title: &str) -> &'a str {
-    let title_tokens = normalize_wprm_title_tokens(recipe_title);
-    if title_tokens.is_empty() {
-        return chunk;
-    }
     let mut part_start = 0;
     for br in BR_TAG_REGEX.find_iter(chunk) {
         let part = chunk.get(part_start..br.start()).unwrap_or_default().trim();
@@ -149,7 +145,7 @@ fn strip_leading_bold_recipe_title<'a>(chunk: &'a str, recipe_title: &str) -> &'
             continue;
         }
         let repeats_title = bold_only_heading(part)
-            .is_some_and(|heading| normalize_wprm_title_tokens(&heading) == title_tokens);
+            .is_some_and(|heading| heading_repeats_title(&heading, recipe_title));
         return if repeats_title {
             chunk.get(br.end()..).unwrap_or(chunk)
         } else {
@@ -157,6 +153,24 @@ fn strip_leading_bold_recipe_title<'a>(chunk: &'a str, recipe_title: &str) -> &'
         };
     }
     chunk
+}
+
+/// Whether a bold heading is the recipe title. Only the title side may carry a
+/// " - Site Name" suffix to strip: the heading is compared whole, so a
+/// component like "Apple Pie - Filling" doesn't match "Apple Pie".
+fn heading_repeats_title(heading: &str, recipe_title: &str) -> bool {
+    let heading_tokens = title_tokens(heading);
+    !heading_tokens.is_empty()
+        && (heading_tokens == title_tokens(recipe_title)
+            || heading_tokens == normalize_wprm_title_tokens(recipe_title))
+}
+
+/// Lowercase alphanumeric words of a title, ignoring "recipe"/"recipes".
+fn title_tokens(text: &str) -> Vec<String> {
+    text.split(|c: char| !c.is_alphanumeric())
+        .map(str::to_lowercase)
+        .filter(|word| !word.is_empty() && !matches!(word.as_str(), "recipe" | "recipes"))
+        .collect()
 }
 
 pub(super) fn has_instruction_paragraph_between(
@@ -1324,6 +1338,16 @@ mod tests {
         assert_eq!(
             strip_leading_bold_recipe_title(plain, "Blueberry Lavender Muffins"),
             plain
+        );
+        // A component heading isn't truncated at " - " like a site suffix.
+        let component = "<b>Apple Pie - Filling</b><br />6 apples<br />1 cup sugar";
+        assert_eq!(
+            strip_leading_bold_recipe_title(component, "Apple Pie - Example Blog"),
+            component
+        );
+        assert_eq!(
+            strip_leading_bold_recipe_title(component, "Apple Pie - Filling"),
+            "6 apples<br />1 cup sugar"
         );
         let later = "2 cups flour<br /><b>Blueberry Lavender Muffins</b><br />1 cup sugar";
         assert_eq!(
