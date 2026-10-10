@@ -133,7 +133,7 @@ export default function ShoppingListPage() {
       const response = await logger.timed("Shopping", "syncItems", () =>
         getShoppingListApi().syncItems({
           syncRequest: {
-            lastSyncAt: cached?.lastSyncAt ?? undefined,
+            cursor: cached?.cursor ?? undefined,
           },
         }),
       );

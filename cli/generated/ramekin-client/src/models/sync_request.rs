@@ -16,10 +16,18 @@ pub struct SyncRequest {
     /// Items created offline
     #[serde(rename = "creates", skip_serializing_if = "Option::is_none")]
     pub creates: Option<Vec<models::SyncCreateItem>>,
+    /// `cursor` from the previous sync's response. Server returns changes at or after it, and takes precedence over `last_sync_at`.
+    #[serde(
+        rename = "cursor",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub cursor: Option<Option<i64>>,
     /// IDs of items deleted offline
     #[serde(rename = "deletes", skip_serializing_if = "Option::is_none")]
     pub deletes: Option<Vec<uuid::Uuid>>,
-    /// Last sync timestamp - server will return changes since this time
+    /// Deprecated: use `cursor`. Server returns changes after this time when `cursor` is absent; with neither, it returns every item.
     #[serde(
         rename = "last_sync_at",
         default,
@@ -36,6 +44,7 @@ impl SyncRequest {
     pub fn new() -> SyncRequest {
         SyncRequest {
             creates: None,
+            cursor: None,
             deletes: None,
             last_sync_at: None,
             updates: None,

@@ -24,13 +24,21 @@ export interface SyncRequest {
      */
     creates?: Array<SyncCreateItem>;
     /**
+     * `cursor` from the previous sync's response. Server returns changes at
+     * or after it, and takes precedence over `last_sync_at`.
+     * @type {number}
+     * @memberof SyncRequest
+     */
+    cursor?: number | null;
+    /**
      * IDs of items deleted offline
      * @type {Array<string>}
      * @memberof SyncRequest
      */
     deletes?: Array<string>;
     /**
-     * Last sync timestamp - server will return changes since this time
+     * Deprecated: use `cursor`. Server returns changes after this time when
+     * `cursor` is absent; with neither, it returns every item.
      * @type {Date}
      * @memberof SyncRequest
      */

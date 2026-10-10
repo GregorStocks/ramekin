@@ -113,6 +113,32 @@ final class ShoppingListStoreTests: XCTestCase {
         XCTAssertNil(defaults.object(forKey: "shopping_list_category_order"))
     }
 
+    func testSyncResumesFromTheServerCursor() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var requests: [SyncRequest] = []
+        var nextCursor: Int64 = 41
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: {
+                requests.append($0)
+                defer { nextCursor += 1 }
+                return Self.emptyResponse(cursor: nextCursor)
+            }
+        )
+
+        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer(isFollowUp: true)
+        store.setActiveAccountKey(secondUserAccount)
+        await store.syncWithServer(isFollowUp: true)
+
+        XCTAssertEqual(requests.map(\.cursor), [nil, 41, nil])
+        XCTAssertEqual(requests.map(\.lastSyncAt), [nil, nil, nil])
+    }
+
     func testInFlightResponseStaysWithOriginatingAccount() async throws {
         let (stack, defaults) = makeStorage()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
@@ -135,6 +161,7 @@ final class ShoppingListStoreTests: XCTestCase {
             with: SyncResponse(
                 categoryOrder: ["Produce"],
                 created: [SyncCreatedItem(clientId: clientId, serverId: serverId, version: 1)],
+                cursor: 80,
                 deleted: [],
                 serverChanges: [],
                 syncTimestamp: Date(timeIntervalSince1970: 800),
@@ -198,10 +225,11 @@ final class ShoppingListStoreTests: XCTestCase {
         XCTAssertEqual(staleItem.item, "Apples")
     }
 
-    private static func emptyResponse() -> SyncResponse {
+    private static func emptyResponse(cursor: Int64 = 100) -> SyncResponse {
         SyncResponse(
             categoryOrder: [],
             created: [],
+            cursor: cursor,
             deleted: [],
             serverChanges: [],
             syncTimestamp: Date(timeIntervalSince1970: 1_000),

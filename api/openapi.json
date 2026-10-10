@@ -5113,6 +5113,14 @@
             },
             "description": "Items created offline"
           },
+          "cursor": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "`cursor` from the previous sync's response. Server returns changes at\nor after it, and takes precedence over `last_sync_at`."
+          },
           "deletes": {
             "type": "array",
             "items": {
@@ -5127,7 +5135,7 @@
               "null"
             ],
             "format": "date-time",
-            "description": "Last sync timestamp - server will return changes since this time"
+            "description": "Deprecated: use `cursor`. Server returns changes after this time when\n`cursor` is absent; with neither, it returns every item."
           },
           "updates": {
             "type": "array",
@@ -5146,6 +5154,7 @@
           "deleted",
           "server_changes",
           "sync_timestamp",
+          "cursor",
           "category_order"
         ],
         "properties": {
@@ -5163,6 +5172,11 @@
             },
             "description": "Items that were created (maps client_id to server_id)"
           },
+          "cursor": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Snapshot watermark to pass as `cursor` on the next sync. Changes may be\nredelivered across syncs, but none can be skipped."
+          },
           "deleted": {
             "type": "array",
             "items": {
@@ -5176,12 +5190,12 @@
             "items": {
               "$ref": "#/components/schemas/SyncServerChange"
             },
-            "description": "Server-side changes since last_sync_at"
+            "description": "Server-side changes since the request's cursor"
           },
           "sync_timestamp": {
             "type": "string",
             "format": "date-time",
-            "description": "New sync timestamp to use for next sync"
+            "description": "Server time when this sync started. Deprecated as a cursor: pass\n`cursor` instead."
           },
           "updated": {
             "type": "array",

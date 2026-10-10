@@ -36,7 +36,10 @@ class ShoppingListStore: ObservableObject {
     private let automaticallySync: Bool
     private var activeAccountKey: String?
 
+    /// Wall-clock time of the last sync, used only to decide when a sync is stale.
     private static let lastSyncAtKeyPrefix = "shopping_list_last_sync_at"
+    /// Server change cursor to resume incremental sync from.
+    private static let syncCursorKeyPrefix = "shopping_list_sync_cursor"
     private static let categoryOrderKeyPrefix = "shopping_list_category_order"
     private static let legacyMigrationKey = "shopping_list_account_scope_migrated"
 
@@ -240,6 +243,7 @@ extension ShoppingListStore {
                 accountKey: syncAccountKey
             )
             setLastSyncAt(response.syncTimestamp, accountKey: syncAccountKey)
+            setSyncCursor(response.cursor, accountKey: syncAccountKey)
             userDefaults.set(response.categoryOrder, forKey: categoryOrderKey(accountKey: syncAccountKey))
             if activeAccountKey == syncAccountKey {
                 categoryOrder = response.categoryOrder
@@ -304,10 +308,14 @@ extension ShoppingListStore {
             }
         }
 
+        // `lastSyncAt` only resumes the first sync after upgrading from a build
+        // that predates the cursor.
+        let cursor = syncCursor(accountKey: accountKey)
         return SyncRequest(
             creates: creates.isEmpty ? nil : creates,
+            cursor: cursor,
             deletes: deletes.isEmpty ? nil : deletes,
-            lastSyncAt: lastSyncAt(accountKey: accountKey),
+            lastSyncAt: cursor == nil ? lastSyncAt(accountKey: accountKey) : nil,
             updates: updates.isEmpty ? nil : updates
         )
     }
@@ -423,6 +431,18 @@ extension ShoppingListStore {
 
     private func lastSyncAtKey(accountKey: String) -> String {
         AccountScope.userDefaultsKey(prefix: Self.lastSyncAtKeyPrefix, accountKey: accountKey)
+    }
+
+    private func syncCursor(accountKey: String) -> Int64? {
+        userDefaults.object(forKey: syncCursorKey(accountKey: accountKey)) as? Int64
+    }
+
+    private func setSyncCursor(_ cursor: Int64, accountKey: String) {
+        userDefaults.set(cursor, forKey: syncCursorKey(accountKey: accountKey))
+    }
+
+    private func syncCursorKey(accountKey: String) -> String {
+        AccountScope.userDefaultsKey(prefix: Self.syncCursorKeyPrefix, accountKey: accountKey)
     }
 
     private func categoryOrderKey(accountKey: String) -> String {

@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from ramekin_client.models.sync_create_item import SyncCreateItem
@@ -31,10 +31,11 @@ class SyncRequest(BaseModel):
     SyncRequest
     """ # noqa: E501
     creates: Optional[List[SyncCreateItem]] = Field(default=None, description="Items created offline")
+    cursor: Optional[StrictInt] = Field(default=None, description="`cursor` from the previous sync's response. Server returns changes at or after it, and takes precedence over `last_sync_at`.")
     deletes: Optional[List[UUID]] = Field(default=None, description="IDs of items deleted offline")
-    last_sync_at: Optional[datetime] = Field(default=None, description="Last sync timestamp - server will return changes since this time")
+    last_sync_at: Optional[datetime] = Field(default=None, description="Deprecated: use `cursor`. Server returns changes after this time when `cursor` is absent; with neither, it returns every item.")
     updates: Optional[List[SyncUpdateItem]] = Field(default=None, description="Items updated offline")
-    __properties: ClassVar[List[str]] = ["creates", "deletes", "last_sync_at", "updates"]
+    __properties: ClassVar[List[str]] = ["creates", "cursor", "deletes", "last_sync_at", "updates"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,11 @@ class SyncRequest(BaseModel):
                 if _item_updates:
                     _items.append(_item_updates.to_dict())
             _dict['updates'] = _items
+        # set to None if cursor (nullable) is None
+        # and model_fields_set contains the field
+        if self.cursor is None and "cursor" in self.model_fields_set:
+            _dict['cursor'] = None
+
         # set to None if last_sync_at (nullable) is None
         # and model_fields_set contains the field
         if self.last_sync_at is None and "last_sync_at" in self.model_fields_set:
@@ -107,6 +113,7 @@ class SyncRequest(BaseModel):
 
         _obj = cls.model_validate({
             "creates": [SyncCreateItem.from_dict(_item) for _item in obj["creates"]] if obj.get("creates") is not None else None,
+            "cursor": obj.get("cursor"),
             "deletes": obj.get("deletes"),
             "last_sync_at": obj.get("last_sync_at"),
             "updates": [SyncUpdateItem.from_dict(_item) for _item in obj["updates"]] if obj.get("updates") is not None else None

@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from uuid import UUID
 from ramekin_client.models.sync_created_item import SyncCreatedItem
@@ -33,11 +33,12 @@ class SyncResponse(BaseModel):
     """ # noqa: E501
     category_order: List[StrictStr] = Field(description="Canonical category display order for grouping items; every item's `category` is guaranteed to appear in this list.")
     created: List[SyncCreatedItem] = Field(description="Items that were created (maps client_id to server_id)")
+    cursor: StrictInt = Field(description="Snapshot watermark to pass as `cursor` on the next sync. Changes may be redelivered across syncs, but none can be skipped.")
     deleted: List[UUID] = Field(description="IDs of items that were deleted")
-    server_changes: List[SyncServerChange] = Field(description="Server-side changes since last_sync_at")
-    sync_timestamp: datetime = Field(description="New sync timestamp to use for next sync")
+    server_changes: List[SyncServerChange] = Field(description="Server-side changes since the request's cursor")
+    sync_timestamp: datetime = Field(description="Server time when this sync started. Deprecated as a cursor: pass `cursor` instead.")
     updated: List[SyncUpdatedItem] = Field(description="Items that were updated (with success status)")
-    __properties: ClassVar[List[str]] = ["category_order", "created", "deleted", "server_changes", "sync_timestamp", "updated"]
+    __properties: ClassVar[List[str]] = ["category_order", "created", "cursor", "deleted", "server_changes", "sync_timestamp", "updated"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,6 +114,7 @@ class SyncResponse(BaseModel):
         _obj = cls.model_validate({
             "category_order": obj.get("category_order"),
             "created": [SyncCreatedItem.from_dict(_item) for _item in obj["created"]] if obj.get("created") is not None else None,
+            "cursor": obj.get("cursor"),
             "deleted": obj.get("deleted"),
             "server_changes": [SyncServerChange.from_dict(_item) for _item in obj["server_changes"]] if obj.get("server_changes") is not None else None,
             "sync_timestamp": obj.get("sync_timestamp"),

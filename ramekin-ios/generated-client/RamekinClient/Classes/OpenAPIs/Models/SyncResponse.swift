@@ -16,18 +16,21 @@ public struct SyncResponse: Codable, JSONEncodable, Hashable {
     public var categoryOrder: [String]
     /** Items that were created (maps client_id to server_id) */
     public var created: [SyncCreatedItem]
+    /** Snapshot watermark to pass as `cursor` on the next sync. Changes may be redelivered across syncs, but none can be skipped. */
+    public var cursor: Int64
     /** IDs of items that were deleted */
     public var deleted: [UUID]
-    /** Server-side changes since last_sync_at */
+    /** Server-side changes since the request's cursor */
     public var serverChanges: [SyncServerChange]
-    /** New sync timestamp to use for next sync */
+    /** Server time when this sync started. Deprecated as a cursor: pass `cursor` instead. */
     public var syncTimestamp: Date
     /** Items that were updated (with success status) */
     public var updated: [SyncUpdatedItem]
 
-    public init(categoryOrder: [String], created: [SyncCreatedItem], deleted: [UUID], serverChanges: [SyncServerChange], syncTimestamp: Date, updated: [SyncUpdatedItem]) {
+    public init(categoryOrder: [String], created: [SyncCreatedItem], cursor: Int64, deleted: [UUID], serverChanges: [SyncServerChange], syncTimestamp: Date, updated: [SyncUpdatedItem]) {
         self.categoryOrder = categoryOrder
         self.created = created
+        self.cursor = cursor
         self.deleted = deleted
         self.serverChanges = serverChanges
         self.syncTimestamp = syncTimestamp
@@ -37,6 +40,7 @@ public struct SyncResponse: Codable, JSONEncodable, Hashable {
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case categoryOrder = "category_order"
         case created
+        case cursor
         case deleted
         case serverChanges = "server_changes"
         case syncTimestamp = "sync_timestamp"
@@ -49,6 +53,7 @@ public struct SyncResponse: Codable, JSONEncodable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(categoryOrder, forKey: .categoryOrder)
         try container.encode(created, forKey: .created)
+        try container.encode(cursor, forKey: .cursor)
         try container.encode(deleted, forKey: .deleted)
         try container.encode(serverChanges, forKey: .serverChanges)
         try container.encode(syncTimestamp, forKey: .syncTimestamp)
