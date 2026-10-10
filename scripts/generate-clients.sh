@@ -7,18 +7,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 SPEC_FILE="$PROJECT_ROOT/api/openapi.json"
-LOCK_DIR="$PROJECT_ROOT/.generate-clients.lock"
 
-cleanup() {
-    rm -rf "$LOCK_DIR"
-}
-
-acquire_lock() {
-    while ! mkdir "$LOCK_DIR" 2>/dev/null; do
-        sleep 0.1
-    done
-    trap cleanup EXIT
-}
+# shellcheck source=/dev/null
+source "$SCRIPT_DIR/repo-lock.sh"
 
 generate_client() {
     local generator=$1
@@ -99,6 +90,10 @@ EOF
 LOG_DIR="$PROJECT_ROOT/logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/generate-clients.log"
-acquire_lock
+# Concurrent make targets (lint, test, ...) all regenerate clients into the same
+# directories, so runs take turns. The lock records our PID so a run that was
+# killed can't wedge every later run.
+REPO_LOCK_DIR="$LOG_DIR/locks" REPO_LOCK_WAIT=1 \
+    acquire_repo_lock generate-clients "API client generation"
 main > "$LOG_FILE" 2>&1
 echo "Generated clients, log at $LOG_FILE"
