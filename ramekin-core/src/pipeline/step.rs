@@ -14,7 +14,16 @@ pub struct StepMetadata {
     pub name: &'static str,
     /// Human-readable description
     pub description: &'static str,
-    /// If true, failures don't fail the overall pipeline
+    /// If true, failures don't fail the overall pipeline. This is the only
+    /// definition of which steps fail soft; the core executor and the server
+    /// runner both read it.
+    ///
+    /// AI enrich steps set this to false: if one fails after `save_recipe`,
+    /// the job fails at that step with the saved recipe still attached, so
+    /// clients can open the recipe and retry resumes at the failed step.
+    /// Only best-effort post-save steps (resolving ingredient names, applying
+    /// auto tags) set it to true; the job then completes and the status API
+    /// shows that step as failed.
     pub continues_on_failure: bool,
 }
 
@@ -52,9 +61,9 @@ pub trait StepOutputStore: Send + Sync {
     ///
     /// `success` records whether the step succeeded; `error` carries the
     /// step's error message when `success == false`. These are persisted
-    /// alongside the output so the status API can surface per-step failures
-    /// for enrichment steps that have `continues_on_failure = true` (the
-    /// overall job completes, but the individual step still failed).
+    /// alongside the output so the status API can surface per-step failures,
+    /// including for `continues_on_failure` steps (the overall job completes,
+    /// but the individual step still failed).
     async fn save_output(
         &mut self,
         step_name: &str,
