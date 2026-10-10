@@ -1,0 +1,18 @@
+{
+  "title": "iOS UI tests: booted simulator disappears before the Run UI tests step",
+  "description": "In run 38010047883 (PR #793), the iOS UI Tests job booted iPhone 17e (DF686390-8E1F-46B8-A4D9-883644620714) and used it during 'Warm up simulator keyboard' at 00:50 UTC. \
+At 00:52, 'Run UI tests' failed with 'xcodebuild: error: Unable to find a device matching the provided destination specifier: { platform:iOS Simulator, id:DF686390-... }'. \
+The list of available destinations included no iOS Simulator devices at all, only placeholders. \
+So CoreSimulator lost the device (or its whole device set) between those two steps; no test ran. \
+The job uploads simulator logs; check them and CoreSimulatorService's host log for that window. \
+If it recurs, consider having the run step check `xcrun simctl list devices` for IOS_UI_UDID and re-boot or fail with a clear infrastructure error.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ios",
+    "ci",
+  ],
+  "created_at": "2026-10-10T00:00:00Z",
+  "updated_at": "2026-10-10T00:00:00Z",
+}
