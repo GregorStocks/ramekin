@@ -48,11 +48,16 @@ struct PaprikaPhoto {
 
 /// Render stored ingredients as Paprika's newline-separated ingredients text.
 ///
-/// Each line matches the clients' display format, and a `Section:` header line
-/// precedes each change of section so the importer's section-header detection
-/// restores the grouping on re-import. Paprika's plain text has no way to end a
-/// section, so ingredients that return to no section re-import under the
-/// header above them (issues/p4-paprika-export-round-trip.json5).
+/// Each line matches the clients' display format. A `Section:` header line
+/// precedes each change of section, and a blank line ends a section when the
+/// ingredients after it have none; the Paprika importer
+/// (`parse_paprika_ingredients`) reads both back.
+///
+/// Two shapes keep their text but not their structure on re-import: an
+/// alternative with only an amount or only a unit ("2 (pinch) eggs") comes back
+/// as a note, and a note shaped like a measurement ("flour (2 tbsp)") comes back
+/// as an alternative. The importer can't tell either from what Paprika users
+/// type, where a trailing "(120 g)" is an alternative and "(3)" is a note.
 ///
 /// Read-time derived grams are left out: they're approximate, and Paprika
 /// would store them as source text.
@@ -65,8 +70,11 @@ fn format_ingredients_text(ingredients: &[Ingredient]) -> String {
             .as_deref()
             .map(str::trim)
             .filter(|s| !s.is_empty());
-        if section.is_some() && section != current_section {
-            lines.push(format!("{}:", section.unwrap_or_default()));
+        if section != current_section {
+            match section {
+                Some(section) => lines.push(format!("{}:", section)),
+                None => lines.push(String::new()),
+            }
         }
         current_section = section;
         lines.push(format_ingredient_line(ingredient, true, true));
@@ -317,6 +325,7 @@ pub(super) fn export_recipe_to_paprikarecipe(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use ramekin_core::ingredient_parser::{parse_paprika_ingredients, ParsedIngredient};
     use serde::Deserialize;
 
     #[derive(Deserialize)]
@@ -400,7 +409,82 @@ mod tests {
              2 tbsp water\n\
              Filling:\n\
              6 apples\n\
+             \n\
              salt"
         );
+    }
+
+    /// The stored shape an ingredient should come back as: trimmed, with blank
+    /// measurement parts and notes dropped, and no raw text.
+    fn normalized(mut ingredient: ParsedIngredient) -> ParsedIngredient {
+        let clean =
+            |value: Option<String>| value.as_deref().and_then(non_blank).map(str::to_string);
+        ingredient.item = ingredient.item.trim().to_string();
+        ingredient.measurements = ingredient
+            .measurements
+            .into_iter()
+            .map(|m| ramekin_core::ingredient_parser::Measurement {
+                amount: clean(m.amount),
+                unit: clean(m.unit),
+            })
+            .filter(|m| m.amount.is_some() || m.unit.is_some())
+            .collect();
+        ingredient.note = clean(ingredient.note);
+        ingredient.section = clean(ingredient.section);
+        ingredient.raw = None;
+        ingredient
+    }
+
+    fn round_trip(ingredients: &[Ingredient]) -> Vec<ParsedIngredient> {
+        parse_paprika_ingredients(&format_ingredients_text(ingredients))
+            .into_iter()
+            .map(normalized)
+            .collect()
+    }
+
+    fn assert_round_trips(ingredients: &[Ingredient], context: &str) {
+        let expected: Vec<_> = ingredients
+            .iter()
+            .cloned()
+            .map(|i| normalized(i.into()))
+            .collect();
+        assert_eq!(round_trip(ingredients), expected, "{}", context);
+    }
+
+    #[test]
+    fn shared_ingredient_formatting_vectors_round_trip_through_paprika_import() {
+        let cases: Vec<FormattingCase> = serde_json::from_str(include_str!(
+            "../../../../shared-test-vectors/ingredient-formatting.json"
+        ))
+        .unwrap();
+
+        // The export always writes alternatives and notes, so every vector's
+        // stored ingredient applies, whatever display options it tests.
+        for case in cases {
+            // A unit-only alternative re-imports as a note; see
+            // format_ingredients_text.
+            if case.name == "amount-only and unit-only measurements" {
+                let parsed = &round_trip(&[case.ingredient])[0];
+                assert_eq!(parsed.measurements.len(), 1);
+                assert_eq!(parsed.note.as_deref(), Some("pinch"));
+                continue;
+            }
+            assert_round_trips(&[case.ingredient], &case.name);
+        }
+    }
+
+    #[test]
+    fn sectioned_ingredients_round_trip_through_paprika_import() {
+        let mut ingredients = vec![
+            ingredient("flour", &[("2", "cup"), ("240", "g")], None),
+            ingredient("butter", &[("1", "stick")], Some("Part 1")),
+            ingredient("water", &[("2", "tbsp")], Some("Part 1")),
+            ingredient("apples", &[("6", "large")], Some("for the filling")),
+            ingredient("sugar", &[("1/2", "cup")], Some("FILLING")),
+            ingredient("salt", &[("1", "pinch")], None),
+            ingredient("egg", &[("1", "large")], Some("Wash")),
+        ];
+        ingredients[2].note = Some("ice cold".to_string());
+        assert_round_trips(&ingredients, "sectioned");
     }
 }

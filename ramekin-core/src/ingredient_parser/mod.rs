@@ -1717,7 +1717,24 @@ pub fn detect_peer_section_header(raw: &str, peer_section_anchor: Option<&str>) 
 /// applies the section name to subsequent ingredients.
 /// Skips lines that should be ignored (scraper artifacts like "Gather Your Ingredients").
 pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
+    parse_ingredient_lines(blob, false)
+}
+
+/// Parse a Paprika ingredients field, which is plain text the user typed (or
+/// Ramekin's own export wrote) rather than scraped HTML, so its layout can be
+/// trusted more:
+/// - Any line ending in a colon is a section header, named as written. Ramekin's
+///   export writes one before each section, and scraped text's guards against
+///   colon-terminated ingredient lines would drop headers like "Part 1:".
+/// - A blank line after a section's ingredients ends that section, so the
+///   ingredients below it have no section until the next header.
+pub fn parse_paprika_ingredients(blob: &str) -> Vec<ParsedIngredient> {
+    parse_ingredient_lines(blob, true)
+}
+
+fn parse_ingredient_lines(blob: &str, paprika: bool) -> Vec<ParsedIngredient> {
     let mut current_section: Option<String> = None;
+    let mut section_has_ingredients = false;
     let mut peer_section_anchor: Option<String> = None;
     let mut results = Vec::new();
 
@@ -1734,6 +1751,11 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
 
         let trimmed = line.trim();
         if trimmed.is_empty() {
+            if paprika && section_has_ingredients {
+                current_section = None;
+                peer_section_anchor = None;
+                section_has_ingredients = false;
+            }
             continue;
         }
         // The raw text stays the line as written, list marker included.
@@ -1753,10 +1775,22 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
             continue;
         }
 
+        if paprika {
+            if let Some(section_name) = trimmed.strip_suffix(':').map(str::trim) {
+                if !section_name.is_empty() {
+                    peer_section_anchor = None;
+                    current_section = Some(section_name.to_string());
+                    section_has_ingredients = false;
+                    continue;
+                }
+            }
+        }
+
         // Check if this line is a section header
         if let Some(section_name) = detect_section_header(trimmed) {
             peer_section_anchor = next_peer_section_anchor(&section_name);
             current_section = Some(section_name);
+            section_has_ingredients = false;
             continue; // Don't emit the header as an ingredient
         }
         if let Some(section_name) =
@@ -1764,8 +1798,10 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
         {
             peer_section_anchor = Some(section_name.clone());
             current_section = Some(section_name);
+            section_has_ingredients = false;
             continue;
         }
+        section_has_ingredients = current_section.is_some();
 
         // "Zest and juice of 1 lemon" names two ingredients; each keeps the
         // original line as its raw text.
@@ -1818,6 +1854,51 @@ mod tests {
         assert_eq!(result[1].item, "oil");
         assert_eq!(result[2].section, Some("For the Pasta".to_string()));
         assert_eq!(result[2].item, "spaghetti");
+    }
+
+    #[test]
+    fn test_parse_paprika_ingredients_trusts_colon_headers_as_written() {
+        let blob = "Part 1:\n1 cup flour\nfor the crust:\nsalt\nPart 1:\n1 egg";
+        let result = parse_paprika_ingredients(blob);
+
+        let sections: Vec<_> = result
+            .iter()
+            .map(|i| (i.section.as_deref(), i.item.as_str()))
+            .collect();
+        assert_eq!(
+            sections,
+            [
+                (Some("Part 1"), "flour"),
+                (Some("for the crust"), "salt"),
+                (Some("Part 1"), "egg"),
+            ]
+        );
+        // Scraped text keeps its stricter header rules.
+        assert_eq!(parse_ingredients(blob)[0].item, "Part 1:");
+    }
+
+    #[test]
+    fn test_parse_paprika_ingredients_blank_line_ends_a_section() {
+        let blob = "1 cup flour\nCrust:\n\n2 tbsp butter\n\n1 tsp salt\nFILLING\n6 apples\n\nsugar";
+        let result = parse_paprika_ingredients(blob);
+
+        let sections: Vec<_> = result
+            .iter()
+            .map(|i| (i.section.as_deref(), i.item.as_str()))
+            .collect();
+        assert_eq!(
+            sections,
+            [
+                (None, "flour"),
+                // A blank line right after a header doesn't end the section.
+                (Some("Crust"), "butter"),
+                (None, "salt"),
+                (Some("Filling"), "apples"),
+                (None, "sugar"),
+            ]
+        );
+        // Scraped text keeps a section across blank lines.
+        assert_eq!(parse_ingredients(blob)[2].section.as_deref(), Some("Crust"));
     }
 
     #[test]
