@@ -1,0 +1,15 @@
+{
+  "title": "Give the iOS CI mock AI service longer to start",
+  "description": "The `Start mock AI service` step in .github/workflows/ios.yml polls http://localhost:55002/ 30 times with 1s sleeps, but `make mock-openrouter` runs through `uv run --no-project`, which can spend minutes resolving/installing on a cold macOS runner. \
+Seen on PR #798 (run 38070088652, iOS UI Tests): the step started at 17:14:37 and the mock only logged 'Mock OpenRouter server running on port 55002' at 17:16:52, after the loop had already given up, so the job failed with exit 1 before any tests ran. \
+Fix: wait longer (e.g. 180s, matching how slow these runners are) and/or warm uv's environment in an earlier step, and fail fast if the backgrounded process has exited.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ci",
+    "ios",
+  ],
+  "created_at": "2026-10-10T00:00:00Z",
+  "updated_at": "2026-10-10T00:00:00Z",
+}
