@@ -6,6 +6,8 @@ import subprocess
 import time
 from pathlib import Path
 
+from repo_lock_helpers import held_repo_lock
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_PATH = REPO_ROOT / "scripts" / "run-tests.sh"
@@ -105,13 +107,9 @@ def test_run_tests_refuses_when_lock_is_held(tmp_path):
     marker_path = tmp_path / "process-compose-called"
     env_file = tmp_path / "test.env"
     env_file.write_text("PROCESS_COMPOSE_PORT=4317\n", encoding="utf-8")
-    lock_dir = tmp_path / "locks" / "tests-script-lock-held-unit.lock"
-    lock_dir.mkdir(parents=True)
+    lock_file = tmp_path / "locks" / "tests-script-lock-held-unit.flock"
 
-    lock_holder = subprocess.Popen(["sleep", "60"])
-    try:
-        (lock_dir / "pid").write_text(f"{lock_holder.pid}\n", encoding="utf-8")
-
+    with held_repo_lock(lock_file):
         _write_executable(
             bin_dir / "process-compose",
             f"""#!/bin/bash
@@ -135,9 +133,6 @@ exit 0
             text=True,
             check=False,
         )
-    finally:
-        lock_holder.terminate()
-        lock_holder.wait(timeout=5)
 
     assert result.returncode == 1
     assert "Refusing to start test run" in result.stderr
@@ -152,13 +147,9 @@ def test_run_tests_default_lock_excludes_other_top_level_runs(tmp_path):
     marker_path = tmp_path / "process-compose-called"
     env_file = tmp_path / "test.env"
     env_file.write_text("PROCESS_COMPOSE_PORT=4317\n", encoding="utf-8")
-    lock_dir = tmp_path / "locks" / "top-level-run.lock"
-    lock_dir.mkdir(parents=True)
+    lock_file = tmp_path / "locks" / "top-level-run.flock"
 
-    lock_holder = subprocess.Popen(["sleep", "60"])
-    try:
-        (lock_dir / "pid").write_text(f"{lock_holder.pid}\n", encoding="utf-8")
-
+    with held_repo_lock(lock_file):
         _write_executable(
             bin_dir / "process-compose",
             f"""#!/bin/bash
@@ -181,9 +172,6 @@ exit 0
             text=True,
             check=False,
         )
-    finally:
-        lock_holder.terminate()
-        lock_holder.wait(timeout=5)
 
     assert result.returncode == 1
     assert "Refusing to start test run" in result.stderr

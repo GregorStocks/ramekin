@@ -91,8 +91,7 @@ LOG_DIR="$PROJECT_ROOT/logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/generate-clients.log"
 # Concurrent make targets (lint, test, ...) all regenerate clients into the same
-# directories, so runs take turns. The lock records our PID so a run that was
-# killed can't wedge every later run.
+# directories, so runs take turns.
 REPO_LOCK_DIR="$LOG_DIR/locks" REPO_LOCK_WAIT=1 \
     acquire_repo_lock generate-clients "API client generation"
 main > "$LOG_FILE" 2>&1
