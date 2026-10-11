@@ -80,7 +80,9 @@ pub(super) fn parse_parenthetical_measurement_details(
 /// Amounts that split the whole ("(divided, 3/4 cup, 2 tbsp)", "(3/4 cup, 1/4
 /// cup)") are portions rather than alternatives, so they aren't read. One
 /// amount ("(620g, divided)") or equivalents in one part ("(2 sticks/8
-/// ounces, softened and divided)") are still the whole.
+/// ounces, softened and divided)") are still the whole. Equivalents split
+/// across parts of a divided note ("(2 sticks, 8 ounces, divided)") read like
+/// portions, so they're dropped too.
 pub(super) fn prep_note_parenthetical_measurements(
     content: &str,
     outside_text: &str,
@@ -92,7 +94,12 @@ pub(super) fn prep_note_parenthetical_measurements(
                 .any(|c| c.is_ascii_digit() || unicode_fraction_ascii(c).is_some())
         })
         .collect();
-    let measurements = parse_parenthetical_measurement_details(content, "").measurements;
+    // Each part on its own, so "each" in "(2 cans, drained, 15 ounces each)"
+    // stays with its part.
+    let measurements: Vec<Measurement> = parts_with_amount
+        .iter()
+        .flat_map(|part| parse_parenthetical_measurement_details(part, "").measurements)
+        .collect();
     if !measurements.is_empty() {
         if parts_with_amount.len() > 1 && content.to_lowercase().contains("divided") {
             return Vec::new();
@@ -979,6 +986,15 @@ mod tests {
                     measurement("227", "g"),
                 ],
                 "2 sticks/8 ounces/227 g, softened and divided",
+            ),
+            (
+                "30 ounces tomatoes (2 cans, drained, 15 ounces each)",
+                vec![
+                    measurement("30", "oz"),
+                    measurement("2", "can"),
+                    measurement("15", "oz each"),
+                ],
+                "2 cans, drained, 15 ounces each",
             ),
             (
                 "1 cup sugar (divided, 3/4 cup, 1/4 cup)",
