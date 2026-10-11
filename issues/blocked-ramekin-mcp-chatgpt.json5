@@ -54,6 +54,7 @@ Research starting points (re-verify at implementation time): https://developers.
     "web",
     "ios",
   ],
+  "blocked": "Owner needs to decide the overall direction (e.g. Cloudflare Managed OAuth vs. separate MCP auth route vs. tunnel vs. moving to Cloudflare+SQLite) before an agent picks this up.",
   "created_at": "2026-09-08T09:39:49-07:00",
-  "updated_at": "2026-09-08T09:39:49-07:00",
+  "updated_at": "2026-10-10T16:49:10-07:00",
 }

@@ -486,6 +486,7 @@ fn collect_unstructured_ingredient_lines(
     recipe_title: &str,
 ) -> Vec<String> {
     let is_multi_block = blocks.len() > 1;
+    let first_list_is_component = first_list_is_one_component(chunks, blocks);
     let mut ingredient_lines = Vec::new();
     let mut is_first_list = true;
     for (block_idx, block) in blocks.iter().enumerate() {
@@ -498,11 +499,43 @@ fn collect_unstructured_ingredient_lines(
             } else {
                 chunks[idx]
             };
-            extract_ingredient_lines_from_chunk(chunk, !is_first_list, &mut ingredient_lines);
+            extract_ingredient_lines_from_chunk(
+                chunk,
+                !is_first_list || first_list_is_component,
+                &mut ingredient_lines,
+            );
             is_first_list = false;
         }
     }
     ingredient_lines
+}
+
+/// Whether the first ingredient list is one component among several, so a
+/// Title-Case bold line at its top is a component heading rather than a bold
+/// ingredient. That holds when the recipe title already came from a preceding
+/// paragraph and a later list opens with its own bold heading, e.g.
+/// `<p><b>Sandwich Cookies</b></p><p><b>Peanut Butter Cookies</b><br>1 cup
+/// flour…</p>…<p><b>Chocolate Ganache</b><br>3 oz chocolate…</p>`.
+fn first_list_is_one_component(chunks: &[&str], blocks: &[UnstructuredRecipeBlock]) -> bool {
+    let Some(first_block) = blocks.first() else {
+        return false;
+    };
+    first_block.title.is_some()
+        && blocks
+            .iter()
+            .flat_map(|block| &block.ingredient_chunk_indices)
+            .skip(1)
+            .any(|&idx| opens_with_bold_component_heading(chunks[idx]))
+}
+
+/// Whether a later ingredient list's first text line is a bold heading that
+/// [`leading_bold_section_title`] would turn into a section header.
+fn opens_with_bold_component_heading(chunk: &str) -> bool {
+    BR_TAG_REGEX
+        .split(chunk)
+        .map(str::trim)
+        .find(|part| !fragment_to_text(part).is_empty())
+        .is_some_and(|part| leading_bold_section_title(part, true).is_some())
 }
 
 fn collect_unstructured_instruction_sections(
@@ -1169,10 +1202,11 @@ fn leading_bold_section_title(part: &str, is_later_list: bool) -> Option<String>
 /// ingredient from the recipe. A leading standalone bold heading is treated the
 /// same way when it reads as one (see [`leading_bold_section_title`]).
 ///
-/// `is_later_list` is true for every ingredient paragraph after the first. A
-/// separate paragraph that opens with a bold Title-Case line ("Curry-Lime
-/// Yogurt") is the source's own grouping even when no instructions sit
-/// between it and the previous list.
+/// `is_later_list` is true for every ingredient paragraph after the first, and
+/// for the first one when it is one component among several (see
+/// [`first_list_is_one_component`]). A separate paragraph that opens with a
+/// bold Title-Case line ("Curry-Lime Yogurt") is the source's own grouping even
+/// when no instructions sit between it and the previous list.
 pub(super) fn extract_ingredient_lines_from_chunk(
     chunk: &str,
     is_later_list: bool,
@@ -1315,6 +1349,30 @@ mod tests {
         // Lowercase stays an ingredient even when it opens a later list.
         let lines = later_chunk_lines("<b>Chopped parsley</b><br />2 cups flour<br />1 cup sugar");
         assert_eq!(lines[0], "Chopped parsley");
+    }
+
+    #[test]
+    fn first_list_bold_heading_is_a_section_only_among_components() {
+        let ingredients = |html: &str| {
+            let page =
+                format!("<html><head><title>Cookies</title></head><body>{html}</body></html>");
+            extract_recipe_from_unstructured_blog(&page, "https://example.com/r")
+                .map(|recipe| recipe.ingredients)
+                .unwrap_or_default()
+        };
+        let first = "<p><b>Fresh Parsley</b><br>2 cups flour<br>1 cup sugar</p>\
+                     <p>Mix the flour and sugar together.</p>";
+        let ganache = "<p><b>Chocolate Ganache</b><br>3 oz chocolate<br>1 cup cream</p>\
+                       <p>Melt the chocolate into the cream.</p>";
+        let plain_later = "<p>3 oz chocolate<br>1 cup cream</p>\
+                           <p>Melt the chocolate into the cream.</p>";
+        let title = "<p><b>Sandwich Cookies</b></p>";
+
+        assert!(ingredients(&format!("{title}{first}{ganache}")).starts_with("Fresh Parsley:\n"));
+        // No later component heading: the bold line may be an ingredient.
+        assert!(ingredients(&format!("{title}{first}{plain_later}")).starts_with("Fresh Parsley\n"));
+        // No title paragraph before the first list: same.
+        assert!(ingredients(&format!("{first}{ganache}")).starts_with("Fresh Parsley\n"));
     }
 
     #[test]
