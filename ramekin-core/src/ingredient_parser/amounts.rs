@@ -438,8 +438,8 @@ pub(super) fn split_leading_attached_unit_token(s: &str) -> Option<(&str, &str)>
 /// amount: "2 -3 tsp" and "4- 5 cups" are ranges ("2-3", "4-5"), "1- inch
 /// knob" is the size "1-inch knob", and in "2- cups" or "1- pound" the dash is
 /// just spacing ("2 cups"). The high end of a range must be above the low end
-/// and at most four times it, and a sized package ("1- 3 ounce package", one
-/// 3-ounce package) is left alone, as is "2- to 3-inch".
+/// and at most four times it. In a sized package ("1- 3 ounce package", one
+/// 3-ounce package) the dash is spacing too. "2- to 3-inch" is left alone.
 pub(super) fn close_one_sided_dash(s: &str) -> String {
     let trimmed = s.trim_start();
     let Some((first, after)) = trimmed.split_once(char::is_whitespace) else {
@@ -470,11 +470,13 @@ pub(super) fn close_one_sided_dash(s: &str) -> String {
         }) && words
             .get(after_high + 1)
             .is_some_and(|word| is_package_noun(word.trim_end_matches(['.', ',', ')'])));
-        let range = !sizes_a_package
-            && matches!(
-                (parse_amount(low), parse_amount(&high)),
-                (Some(low), Some(high)) if high > low && high <= low * 4.0
-            );
+        if sizes_a_package {
+            return format!("{low} {rest}");
+        }
+        let range = matches!(
+            (parse_amount(low), parse_amount(&high)),
+            (Some(low), Some(high)) if high > low && high <= low * 4.0
+        );
         return if range {
             format!("{low}-{rest}")
         } else {

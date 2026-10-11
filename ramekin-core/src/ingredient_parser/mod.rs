@@ -2749,12 +2749,13 @@ mod tests {
             Some("1-2")
         );
         // One sized package, not a range.
-        for raw in [
-            "1- 15 Ounce Can Tomato Sauce",
-            "1- 3 ounce package cream cheese",
+        for (raw, item) in [
+            ("1- 15 Ounce Can Tomato Sauce", "Tomato Sauce"),
+            ("1- 3 ounce package cream cheese", "cream cheese"),
         ] {
-            let amount = parse_ingredient(raw).measurements[0].amount.clone();
-            assert!(!amount.is_some_and(|a| a.contains('-')), "{raw}");
+            let parsed = parse_ingredient(raw);
+            assert_eq!(parsed.item, item, "{raw}");
+            assert_eq!(parsed.measurements[0].amount.as_deref(), Some("1"), "{raw}");
         }
     }
 
