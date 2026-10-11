@@ -1,0 +1,12 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/blog/unstructured_first_list_bold_component_heading.html",
+  "source_url": "https://example.com/peanut-butter-sandwich-cookies",
+  "expected": {
+    "title": "Peanut Butter Sandwich Cookies",
+    "method_used": "html_fallback",
+    "ingredients_raw": "Crispy Peanut Butter Cookies:\n1 1/4 cups all purpose flour\n1/2 tsp baking soda\n1/2 cup smooth peanut butter\nChocolate Peanut Butter Ganache:\n3 oz dark chocolate, chopped\n1 cup creamy peanut butter",
+    "instructions_contains": [
+      "stir in the peanut butter"
+    ]
+  }
+}
