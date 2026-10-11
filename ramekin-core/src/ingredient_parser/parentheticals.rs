@@ -218,8 +218,12 @@ pub(super) fn try_parse_measurement_before_filler(
                 return None;
             }
             let restated = remaining.trim();
-            if extract_unit(restated).0.is_some() || !restates_outside_text(restated, outside_text)
-            {
+            // "(15 ounce cans)" restates the unit, not the item; a size word
+            // ("(100 g large eggs)") is part of the item.
+            let restates_unit = extract_unit(restated)
+                .0
+                .is_some_and(|unit| !is_size_unit(&unit));
+            if restates_unit || !restates_outside_text(restated, outside_text) {
                 return None;
             }
             part.strip_suffix(restated)?
@@ -830,6 +834,7 @@ mod tests {
                 measurement("1/2", "cup"),
             ),
             ("1 cup water (240 ml water)", measurement("240", "ml")),
+            ("2 large eggs (100 g large eggs)", measurement("100", "g")),
             (
                 "Large handful fresh cilantro (about 1 cup fresh cilantro)",
                 measurement("1", "cup"),
