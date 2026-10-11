@@ -880,6 +880,49 @@ mod tests {
     }
 
     #[test]
+    fn test_measurement_inside_prep_note_parenthetical() {
+        let measurement = |amount: &str, unit: &str| Measurement {
+            amount: Some(amount.to_string()),
+            unit: Some(unit.to_string()),
+        };
+        let count = |amount: &str| Measurement {
+            amount: Some(amount.to_string()),
+            unit: None,
+        };
+        for (line, measurements, note) in [
+            (
+                "2 green onions (sliced very thin, about 1/4 cup worth)",
+                vec![count("2"), measurement("1/4", "cup")],
+                "sliced very thin, about 1/4 cup worth",
+            ),
+            (
+                "8 crimini mushrooms (sliced very thin, about 2 cups worth)",
+                vec![count("8"), measurement("2", "cup")],
+                "sliced very thin, about 2 cups worth",
+            ),
+            (
+                "2 tomatoes (halved, 2 oz each)",
+                vec![count("2"), measurement("2", "oz each")],
+                "halved, 2 oz each",
+            ),
+            (
+                "1 cup rice (180 g uncooked)",
+                vec![measurement("1", "cup")],
+                "180 g uncooked",
+            ),
+            (
+                "2 potatoes (cut into 1-inch cubes, peeled)",
+                vec![count("2")],
+                "cut into 1-inch cubes, peeled",
+            ),
+        ] {
+            let parsed = parse_ingredient(line);
+            assert_eq!(parsed.measurements, measurements, "{line}");
+            assert_eq!(parsed.note.as_deref(), Some(note), "{line}");
+        }
+    }
+
+    #[test]
     fn test_approx_with_period_reads_like_about() {
         for (approx, about) in [
             (
