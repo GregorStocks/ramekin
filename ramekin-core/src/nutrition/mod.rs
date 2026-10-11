@@ -10,7 +10,7 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v15";
+const RULE_VERSION: &str = "calories-v16";
 
 static VERSION: LazyLock<String> =
     LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
