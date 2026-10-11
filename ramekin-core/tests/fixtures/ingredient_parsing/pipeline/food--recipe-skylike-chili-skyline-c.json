@@ -65,11 +65,11 @@
     {
       "raw": "2 -3   tablespoons    chili powder",
       "expected": {
-        "item": "-3   tablespoons    chili powder",
+        "item": "chili powder",
         "measurements": [
           {
-            "amount": "2",
-            "unit": null
+            "amount": "2-3",
+            "unit": "tbsp"
           }
         ],
         "note": null,

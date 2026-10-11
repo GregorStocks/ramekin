@@ -14,7 +14,7 @@ use crate::photos::load_photo_images;
 use crate::schema::scrape_jobs;
 
 use super::jobs::{mark_failed, save_step_output, update_status_and_step};
-use super::runner::run_scrape_job;
+use super::runner::{job_slot, run_scrape_job_in_slot};
 use super::{run_scrape_db, ScrapeError, STATUS_PARSING, STATUS_SCRAPING};
 
 pub(super) const PHOTO_EXTRACT_STEP: &str = "photo_extract";
@@ -54,6 +54,8 @@ pub fn spawn_photo_import_job(
 
     tokio::spawn(
         async move {
+            // One slot for the whole job, extraction included.
+            let _slot = job_slot().await;
             if let Err(e) = run_photo_import_job(pool, job_id, user_id, photo_ids).await {
                 let current_span = tracing::Span::current();
                 current_span.record("job.status", "failed");
@@ -152,6 +154,6 @@ async fn run_photo_import_job_inner(
     .await?;
 
     // Step 4: Run the rest of the pipeline
-    run_scrape_job(pool, job_id).await;
+    run_scrape_job_in_slot(pool, job_id).await;
     Ok(())
 }

@@ -439,6 +439,48 @@ fn split_stick_count(s: &str) -> Option<(Measurement, String)> {
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
 /// we return the raw text as the item with empty measurements.
+/// Last words that make a Title Case name a food rather than a brand, so a
+/// name ending in one keeps its own food before "or" ("Chicken Stock").
+const TITLE_CASE_FOOD_NOUNS: &[&str] = &[
+    "stock",
+    "broth",
+    "bouillon",
+    "sauce",
+    "salt",
+    "sugar",
+    "flour",
+    "oil",
+    "butter",
+    "cheese",
+    "cream",
+    "milk",
+    "water",
+    "juice",
+    "powder",
+    "paste",
+    "vinegar",
+    "wine",
+    "beer",
+    "syrup",
+    "honey",
+    "rice",
+    "beans",
+    "pasta",
+    "noodles",
+    "bread",
+    "chocolate",
+    "seasoning",
+    "mustard",
+    "ketchup",
+    "mayonnaise",
+    "yogurt",
+    "oats",
+    "potatoes",
+    "onions",
+    "peppers",
+    "tomatoes",
+];
+
 pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let raw = raw.trim();
     if raw.is_empty() {
@@ -461,6 +503,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let decoded = decode_html_entities(raw);
     let normalized = normalize_unicode(&decoded);
     let normalized = strip_leading_list_marker(&normalized);
+    let normalized = close_one_sided_dash(&normalized);
     let normalized = normalize_digit_letter_spacing(&normalized);
     let mut remaining = normalize_word_numbers(&normalized);
     let mut measurements = Vec::new();
@@ -1399,11 +1442,16 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             // Crystal kosher salt".
             // A multi-word capitalized name ("Diamond Crystal", "Grand
             // Marnier"); a single capitalized word ("Tajín") is its own food.
+            // A Title Case food ("Chicken Stock or 2 cups water", "Better Than
+            // Bouillon or ...") ends in a food noun and keeps its own name.
             let brand_words: Vec<&str> = before_or.split_whitespace().collect();
             let brand_only = brand_words.len() >= 2
                 && brand_words
                     .iter()
-                    .all(|word| word.chars().next().is_some_and(char::is_uppercase));
+                    .all(|word| word.chars().next().is_some_and(char::is_uppercase))
+                && !brand_words.last().is_some_and(|last| {
+                    TITLE_CASE_FOOD_NOUNS.contains(&last.to_lowercase().as_str())
+                });
             let shared_food = if brand_only {
                 let alternative_item = parse_ingredient(after_or).item;
                 let food: Vec<&str> = alternative_item
@@ -2649,6 +2697,90 @@ mod tests {
         assert_eq!(parsed.measurements[1].unit, None);
         let parsed = parse_ingredient("1 large or 2 Little Gem lettuces");
         assert_eq!(parsed.item, "Little Gem lettuces");
+    }
+
+    #[test]
+    fn test_parse_dash_spaced_on_one_side() {
+        for (raw, amount, unit, item) in [
+            ("2 -3   teaspoons    honey", "2-3", "tsp", "honey"),
+            (
+                "4- 5 cups all-purpose flour",
+                "4-5",
+                "cup",
+                "all-purpose flour",
+            ),
+            ("1/4 -1/2 tsp salt", "1/4-1/2", "tsp", "salt"),
+            (
+                "2– 2 ½   cups of warm water",
+                "2-2 1/2",
+                "cup",
+                "warm water",
+            ),
+            ("1- pound ground beef", "1", "lb", "ground beef"),
+            ("2- cups flour", "2", "cup", "flour"),
+            ("3- cloves garlic", "3", "clove", "garlic"),
+            ("1- 2 cans black beans", "1-2", "can", "black beans"),
+            (
+                "1- inch knob fresh ginger",
+                "1",
+                "1-inch knob",
+                "fresh ginger",
+            ),
+            (
+                "12- ounces frozen orange juice concentrate",
+                "12",
+                "oz",
+                "frozen orange juice concentrate",
+            ),
+        ] {
+            let parsed = parse_ingredient(raw);
+            assert_eq!(parsed.item, item, "{raw}");
+            assert_eq!(
+                parsed.measurements[0].amount.as_deref(),
+                Some(amount),
+                "{raw}"
+            );
+            assert_eq!(parsed.measurements[0].unit.as_deref(), Some(unit), "{raw}");
+        }
+        assert_eq!(
+            parse_ingredient("1- 2 large cans tomatoes").measurements[0]
+                .amount
+                .as_deref(),
+            Some("1-2")
+        );
+        // One sized package, not a range.
+        for (raw, item) in [
+            ("1- 15 Ounce Can Tomato Sauce", "Tomato Sauce"),
+            ("1- 3 ounce package cream cheese", "cream cheese"),
+        ] {
+            let parsed = parse_ingredient(raw);
+            assert_eq!(parsed.item, item, "{raw}");
+            assert_eq!(parsed.measurements[0].amount.as_deref(), Some("1"), "{raw}");
+        }
+    }
+
+    #[test]
+    fn test_parse_title_case_food_before_or_keeps_its_name() {
+        assert_eq!(
+            parse_ingredient("2 cups Chicken Stock or 2 cups water").item,
+            "Chicken Stock"
+        );
+        for (raw, item) in [
+            (
+                "1 tsp Diamond Crystal or 1/2 tsp Morton kosher salt",
+                "Diamond Crystal kosher salt",
+            ),
+            (
+                "1 tsp Diamond Crystal or 1/2 tsp kosher salt",
+                "Diamond Crystal kosher salt",
+            ),
+            (
+                "2 cups Better Than Bouillon or 2 cups water",
+                "Better Than Bouillon",
+            ),
+        ] {
+            assert_eq!(parse_ingredient(raw).item, item, "{raw}");
+        }
     }
 
     #[test]

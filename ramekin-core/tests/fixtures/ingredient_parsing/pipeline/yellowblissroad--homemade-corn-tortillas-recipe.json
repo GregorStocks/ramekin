@@ -33,11 +33,11 @@
     {
       "raw": "2– 2 ½   cups of warm water",
       "expected": {
-        "item": "- 2 1/2   cups of warm water",
+        "item": "warm water",
         "measurements": [
           {
-            "amount": "2",
-            "unit": null
+            "amount": "2-2.5",
+            "unit": "cup"
           }
         ],
         "note": null,

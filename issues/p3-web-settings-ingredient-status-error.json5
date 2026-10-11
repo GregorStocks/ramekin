@@ -1,0 +1,18 @@
+{
+  "title": "Web Settings breaks when the ingredient-name status request fails",
+  "description": "ramekin-ui/src/pages/SettingsPage.tsx reads the ingredient-name status createResource with no error handling, and the app has no ErrorBoundary. \
+In Solid, reading a resource that errored throws, so one failed /api/ingredient-names/status request most likely takes down the Settings page; the same read feeds failedCount() and the 2 s poll effect. \
+Fix: handle the resource's error state (show the section as unavailable, keep polling with backoff). \
+Separately, decide whether this section belongs in end-user Settings at all: it shows internal states (reasking, reask_failed) and raw LLM error strings, and iOS has no counterpart. \
+If it stays, it needs an iOS version (AGENTS.md: both clients by default); if it's an operator tool, move it out of user Settings. \
+The calorie architecture issue (p2-calorie-architecture) may remove most of these states anyway.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-10-11T08:00:00-07:00",
+  "updated_at": "2026-10-11T08:00:00-07:00",
+}

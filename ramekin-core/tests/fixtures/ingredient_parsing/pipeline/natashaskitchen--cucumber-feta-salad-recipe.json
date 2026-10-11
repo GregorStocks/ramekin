@@ -103,11 +103,11 @@
     {
       "raw": "1/2- 1 tsp salt (or to taste)",
       "expected": {
-        "item": "/2- 1 tsp salt",
+        "item": "salt",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.5-1",
+            "unit": "tsp"
           }
         ],
         "note": "or to taste",

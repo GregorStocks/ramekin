@@ -1,8 +1,9 @@
 use std::collections::HashSet;
-use std::sync::Arc;
+use std::sync::{Arc, LazyLock};
 
 use diesel::prelude::*;
 use futures::stream::{FuturesUnordered, StreamExt};
+use tokio::sync::{Semaphore, SemaphorePermit};
 use tracing::Instrument;
 use uuid::Uuid;
 
@@ -20,7 +21,8 @@ use crate::db::DbPool;
 use crate::schema::{scrape_jobs, step_outputs, user_tags};
 
 use super::jobs::{
-    get_job, mark_completed, mark_failed, update_current_step_keeping_start, update_status_and_step,
+    fail_unfinished, get_job, mark_completed, mark_failed, update_current_step_keeping_start,
+    update_status_and_step,
 };
 use super::output_store::DbOutputStore;
 use super::photo_import::PHOTO_EXTRACT_STEP;
@@ -303,10 +305,33 @@ fn determine_final_outcome(
     }
 }
 
+/// How many jobs run at once. The rest wait as pending, so a bulk import or
+/// a restart that resumes many jobs doesn't start them all against the
+/// database pool and the AI provider together.
+const MAX_RUNNING_JOBS: usize = 8;
+static JOB_SLOTS: LazyLock<Semaphore> = LazyLock::new(|| Semaphore::new(MAX_RUNNING_JOBS));
+
+/// Wait for one of the `MAX_RUNNING_JOBS` slots; the job holds it until the
+/// returned permit drops.
+pub(super) async fn job_slot() -> SemaphorePermit<'static> {
+    JOB_SLOTS
+        .acquire()
+        .await
+        .expect("job semaphore is never closed")
+}
+
 /// Run the scrape job state machine.
 /// This processes the job through its states: pending -> scraping -> parsing -> completed
 pub async fn run_scrape_job(pool: Arc<DbPool>, job_id: Uuid) {
-    let result = run_scrape_job_inner(pool, job_id).await;
+    let _slot = job_slot().await;
+    run_scrape_job_in_slot(pool, job_id).await;
+}
+
+/// `run_scrape_job` for a caller already holding a `job_slot`.
+pub(super) async fn run_scrape_job_in_slot(pool: Arc<DbPool>, job_id: Uuid) {
+    // The step the job last entered, for `fail_unfinished`.
+    let mut step = None;
+    let result = run_scrape_job_inner(pool.clone(), job_id, &mut step).await;
     let current_span = tracing::Span::current();
 
     match &result {
@@ -317,11 +342,18 @@ pub async fn run_scrape_job(pool: Arc<DbPool>, job_id: Uuid) {
             current_span.record("job.status", "failed");
             current_span.record("job.error", tracing::field::display(e));
             tracing::warn!("Scrape job {} failed: {}", job_id, e);
+            if let Err(e) = fail_unfinished(&pool, job_id, step.as_deref(), &e.to_string()).await {
+                tracing::error!(%job_id, "Failed to mark the job failed: {e}");
+            }
         }
     }
 }
 
-async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), ScrapeError> {
+async fn run_scrape_job_inner(
+    pool: Arc<DbPool>,
+    job_id: Uuid,
+    entered: &mut Option<String>,
+) -> Result<(), ScrapeError> {
     let job = get_job(&pool, job_id).await?;
 
     // Terminal states - nothing to do
@@ -331,6 +363,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
 
     // Determine starting step
     let first_step = job.current_step.as_deref().unwrap_or(FetchHtmlStep::NAME);
+    *entered = Some(first_step.to_string());
 
     tracing::info!(
         "Job {} starting pipeline from step '{}'",
@@ -370,6 +403,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
     let mut terminal_error: Option<(String, String)> = None;
 
     while let Some(step_name) = current_step_name.take() {
+        *entered = Some(step_name.clone());
         if is_scrape_post_save_step(&step_name) {
             let outcome =
                 run_post_save_steps(&pool, job_id, &registry, url, &store, &step_name).await?;

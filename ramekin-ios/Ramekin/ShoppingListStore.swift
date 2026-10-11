@@ -331,7 +331,7 @@ extension ShoppingListStore {
         for created in response.created {
             if let local = pendingItems.first(where: { $0.id == created.clientId }) {
                 local.id = created.serverId
-                ShoppingListSyncSupport.reconcileSyncedItem(
+                _ = ShoppingListSyncSupport.reconcileSyncedItem(
                     local,
                     version: created.version,
                     success: true,
@@ -342,12 +342,15 @@ extension ShoppingListStore {
 
         for updated in response.updated {
             if let local = pendingItems.first(where: { $0.id == updated.id }) {
-                ShoppingListSyncSupport.reconcileSyncedItem(
+                let outcome = ShoppingListSyncSupport.reconcileSyncedItem(
                     local,
                     version: updated.version,
                     success: updated.success,
                     syncStartedAt: syncStartedAt
                 )
+                if outcome == .deletedOnServer {
+                    context.delete(local)
+                }
             }
         }
 

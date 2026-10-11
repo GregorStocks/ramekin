@@ -434,6 +434,67 @@ pub(super) fn split_leading_attached_unit_token(s: &str) -> Option<(&str, &str)>
 }
 
 /// Check if a string looks like an amount (number, fraction, decimal)
+/// Close up a dash typed with a space on one side only after a leading
+/// amount: "2 -3 tsp" and "4- 5 cups" are ranges ("2-3", "4-5"), "1- inch
+/// knob" is the size "1-inch knob", and in "2- cups" or "1- pound" the dash is
+/// just spacing ("2 cups"). The high end of a range must be above the low end
+/// and at most four times it. In a sized package ("1- 3 ounce package", one
+/// 3-ounce package) the dash is spacing too. "2- to 3-inch" is left alone.
+pub(super) fn close_one_sided_dash(s: &str) -> String {
+    let trimmed = s.trim_start();
+    let Some((first, after)) = trimmed.split_once(char::is_whitespace) else {
+        return s.to_string();
+    };
+    let after = after.trim_start();
+    let (low, rest) = match (first.strip_suffix('-'), after.strip_prefix('-')) {
+        // "4- 5": the dash ends the first word, and a space follows it.
+        (Some(low), _) => (low, after),
+        // "2 -3": the dash starts the next word.
+        (None, Some(rest)) => (first, rest),
+        (None, None) => return s.to_string(),
+    };
+    if !is_amount_like(low) || rest.is_empty() || rest.starts_with(char::is_whitespace) {
+        return s.to_string();
+    }
+    let words: Vec<&str> = rest.split_whitespace().collect();
+    if rest.starts_with(|c: char| c.is_ascii_digit()) {
+        let high = match words.get(1) {
+            Some(fraction) if is_fraction(fraction) => format!("{} {}", words[0], fraction),
+            _ => words[0].to_string(),
+        };
+        // "1- 3 ounce package": one 3-ounce package, not a range; "1- 2
+        // cans" and "1- 2 large cans" are ranges of them.
+        let after_high = if high.contains(' ') { 2 } else { 1 };
+        let sizes_a_package = words.get(after_high).is_some_and(|unit| {
+            WEIGHT_UNITS_FOR_COMPOUND.contains(&unit.trim_end_matches('.').to_lowercase().as_str())
+        }) && words
+            .get(after_high + 1)
+            .is_some_and(|word| is_package_noun(word.trim_end_matches(['.', ',', ')'])));
+        if sizes_a_package {
+            return format!("{low} {rest}");
+        }
+        let range = matches!(
+            (parse_amount(low), parse_amount(&high)),
+            (Some(low), Some(high)) if high > low && high <= low * 4.0
+        );
+        return if range {
+            format!("{low}-{rest}")
+        } else {
+            s.to_string()
+        };
+    }
+    let word = words[0].to_lowercase();
+    if !rest.starts_with(|c: char| c.is_alphabetic())
+        || ["to", "or", "and"].contains(&word.as_str())
+    {
+        s.to_string()
+    } else if word.starts_with("inch") {
+        format!("{low}-{rest}")
+    } else {
+        format!("{low} {rest}")
+    }
+}
+
 pub(super) fn is_amount_like(s: &str) -> bool {
     if s.is_empty() {
         return false;

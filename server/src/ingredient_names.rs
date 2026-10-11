@@ -49,6 +49,12 @@ static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
 /// Set whenever names are saved resolved, so the worker sweeps stored recipes
 /// for the weight gaps the answers reveal.
 static NAMES_SAVED: AtomicBool = AtomicBool::new(false);
+/// Set whenever names or weights are queued or put back in the queue, or the
+/// provider answers. Reads of names that are already pending also wake the
+/// worker (clients poll while names resolve), so only these cut a failure
+/// backoff short; otherwise a provider outage would be retried at the clients'
+/// polling interval.
+static NEW_WORK: AtomicBool = AtomicBool::new(false);
 pub(crate) static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
 /// One client for the process, so its rate limit spaces every call, with
 /// the model it asks: the ingredient model (`AiConfig::for_ingredients`).
@@ -81,10 +87,12 @@ pub fn enqueue(conn: &mut PgConnection, new_names: &[String]) -> QueryResult<usi
         .iter()
         .map(|name| (names::name.eq(name), names::status.eq(PENDING)))
         .collect();
-    diesel::insert_into(names::table)
+    let queued = diesel::insert_into(names::table)
         .values(&rows)
         .on_conflict_do_nothing()
-        .execute(conn)
+        .execute(conn)?;
+    note_new_work(queued);
+    Ok(queued)
 }
 
 /// Put failed names back in the queue, clearing their error, so the next
@@ -108,6 +116,7 @@ pub fn requeue_failed(conn: &mut PgConnection, failed: &[String]) -> QueryResult
         names::reask_error.eq(None::<String>),
     ))
     .execute(conn)?;
+    note_new_work(pending + reasked);
     Ok(pending + reasked)
 }
 
@@ -155,6 +164,13 @@ pub fn enqueue_unasked<'a>(
 /// Wake the worker.
 pub fn wake() {
     WAKE.notify_one();
+}
+
+/// Record that `queued` names or weights were added to the queue.
+pub(crate) fn note_new_work(queued: usize) {
+    if queued > 0 {
+        NEW_WORK.store(true, Ordering::SeqCst);
+    }
 }
 
 /// Resolved answers for `items`' unknown names, for estimating or
@@ -425,6 +441,7 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
         let mut sweep_weights = false;
         let mut backoff = RETRY_MIN;
         loop {
+            NEW_WORK.store(false, Ordering::SeqCst);
             let mut pass = work_pass(&pool).await;
             sweep_weights |= NAMES_SAVED.swap(false, Ordering::SeqCst);
             if pass.is_ok() && sweep_weights {
@@ -456,9 +473,14 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
                         "Ingredient name resolution failed: {}",
                         e
                     );
-                    tokio::select! {
-                        () = WAKE.notified() => {}
-                        () = tokio::time::sleep(backoff) => {}
+                    let retry_at = tokio::time::Instant::now() + backoff;
+                    loop {
+                        tokio::select! {
+                            () = WAKE.notified() => if NEW_WORK.swap(false, Ordering::SeqCst) {
+                                break;
+                            },
+                            () = tokio::time::sleep_until(retry_at) => break,
+                        }
                     }
                     backoff = (backoff * 2).min(RETRY_MAX);
                 }
@@ -737,6 +759,12 @@ async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<
     let provider_wide = !error.is_answer_specific();
     let error = error.to_string();
     save_failed(pool, names, error.clone(), provider_wide).await?;
+    if provider_wide {
+        // The names stay pending. A scrape job resolving its own names
+        // directly may have hit this while the worker was idle, so wake it to
+        // retry them with its backoff.
+        wake();
+    }
     Ok(if provider_wide {
         Batch::ProviderFailed(error)
     } else {
@@ -837,6 +865,9 @@ async fn save_resolved(
     .map_err(|e| e.to_string())?;
     tracing::info!(resolved, "resolved ingredient names");
     NAMES_SAVED.store(true, Ordering::SeqCst);
+    // The provider answered, so a worker backing off from an outage should
+    // retry its pending names now.
+    note_new_work(resolved);
     wake();
     Ok(())
 }
@@ -872,10 +903,11 @@ fn touch_shopping_items(
     Ok(())
 }
 
-/// Record a failed attempt. A pending name is marked failed. A name being
-/// re-asked keeps its old answer: after a provider failure it stays queued for
-/// the worker's retry; after an invalid answer the re-ask stops with its
-/// error recorded, for the status page and its Retry.
+/// Record a failed attempt. After a provider failure (an outage, a rate
+/// limit, a missing key) every name stays queued for the worker's retry.
+/// After an invalid answer a pending name is marked failed, and a name being
+/// re-asked keeps its old answer with the error recorded, for the status page
+/// and its Retry.
 async fn save_failed(
     pool: &Arc<DbPool>,
     failed: Vec<String>,
@@ -887,6 +919,9 @@ async fn save_failed(
         "ingredient name resolution failed: {}",
         error
     );
+    if provider_wide {
+        return Ok(());
+    }
     let now = Utc::now();
     let message = error.clone();
     let given_up = run_blocking(pool, move |conn| {
@@ -903,9 +938,6 @@ async fn save_failed(
                 names::updated_at.eq(now),
             ))
             .execute(conn)?;
-            if provider_wide {
-                return QueryResult::Ok(0);
-            }
             // The candidates the failed re-ask offered are recorded, so a
             // restart doesn't ask about the same ones again (only Retry or
             // a catalog that offers different ones does).
@@ -925,7 +957,7 @@ async fn save_failed(
                 ))
                 .execute(conn)?;
             }
-            Ok(given_up)
+            QueryResult::Ok(given_up)
         })
     })
     .await

@@ -205,11 +205,11 @@
     {
       "raw": "1- 15 Ounce Can Tomato Sauce",
       "expected": {
-        "item": "- 15 Ounce Can Tomato Sauce",
+        "item": "Tomato Sauce",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "15 Ounce Can"
           }
         ],
         "note": null,

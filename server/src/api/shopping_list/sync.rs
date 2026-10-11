@@ -508,6 +508,15 @@ pub async fn sync_items(
                 }
             }
 
+            // A rejected update's item comes back in the changes even if it
+            // changed before the client's cursor, so the client can take the
+            // server's copy instead of resending its stale one.
+            let conflicted: Vec<Uuid> = updated
+                .iter()
+                .filter(|u| !u.success && u.version > 0)
+                .map(|u| u.id)
+                .collect();
+
             // 4. Get server changes since the client's last sync
             let mut changes_query = shopping_list_items::table
                 .filter(shopping_list_items::user_id.eq(user_id))
@@ -521,12 +530,19 @@ pub async fn sync_items(
                 // No cursor means first sync - return all items and no deletes
                 ChangesSince::All => None,
                 ChangesSince::Cursor(since) => {
-                    changes_query = changes_query.filter(shopping_list_items::change_xid.ge(since));
+                    changes_query = changes_query.filter(
+                        shopping_list_items::change_xid
+                            .ge(since)
+                            .or(shopping_list_items::id.eq_any(conflicted)),
+                    );
                     Some(deleted_items.filter(shopping_list_items::change_xid.ge(since)))
                 }
                 ChangesSince::Timestamp(last_sync) => {
-                    changes_query =
-                        changes_query.filter(shopping_list_items::updated_at.gt(last_sync));
+                    changes_query = changes_query.filter(
+                        shopping_list_items::updated_at
+                            .gt(last_sync)
+                            .or(shopping_list_items::id.eq_any(conflicted)),
+                    );
                     Some(deleted_items.filter(shopping_list_items::deleted_at.gt(last_sync)))
                 }
             };

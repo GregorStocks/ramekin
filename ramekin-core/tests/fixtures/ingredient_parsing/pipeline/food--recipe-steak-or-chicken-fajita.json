@@ -145,10 +145,10 @@
     {
       "raw": "1 -2       onion, we usually use approx. 1-2 depending on size  (however much you like,enough to make a good mix with the peppers)",
       "expected": {
-        "item": "-2       onion, we usually use approx. 1-2 depending on size",
+        "item": "onion, we usually use approx. 1-2 depending on size",
         "measurements": [
           {
-            "amount": "1",
+            "amount": "1-2",
             "unit": null
           }
         ],

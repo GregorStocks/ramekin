@@ -36,6 +36,9 @@ INGREDIENT_NAME_ANSWERS = {}
 INGREDIENT_NAME_CALLS_LOCK = threading.Lock()
 # Names whose resolver calls fail until a test clears them.
 FAILING_INGREDIENT_NAMES = set()
+# Names whose resolver calls get an HTTP 503, as in a provider outage, until a
+# test clears them. Counted as calls.
+DOWN_INGREDIENT_NAMES = set()
 # Names whose answer is held back until a test releases them, so the test can
 # observe a name while it is still pending. Never held longer than this.
 HELD_INGREDIENT_NAMES = set()
@@ -90,6 +93,18 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                     FAILING_INGREDIENT_NAMES.add(name)
                 else:
                     FAILING_INGREDIENT_NAMES.discard(name)
+            self.send_response(204)
+            self.end_headers()
+            return
+
+        if parsed.path == "/test/ingredient-name-outage":
+            params = parse_qs(parsed.query)
+            name = params.get("name", [""])[0]
+            with INGREDIENT_NAME_CALLS_LOCK:
+                if params.get("down", ["true"])[0] == "true":
+                    DOWN_INGREDIENT_NAMES.add(name)
+                else:
+                    DOWN_INGREDIENT_NAMES.discard(name)
             self.send_response(204)
             self.end_headers()
             return
@@ -177,6 +192,10 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 )
                 return
 
+            if self._ingredient_names_down(request):
+                self.send_error(503, "Provider unavailable")
+                return
+
             content = self._generate_response_content(request)
 
             response = {
@@ -207,6 +226,18 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(response).encode())
         else:
             self.send_error(404, "Not found")
+
+    def _ingredient_names_down(self, request):
+        """Whether this is a resolver call that includes a name a test took
+        down (/test/ingredient-name-outage); counts the call if so."""
+        text = json.dumps(request.get("messages", []))
+        if "ingredient name resolver" not in text:
+            return False
+        with INGREDIENT_NAME_CALLS_LOCK:
+            down = [name for name in DOWN_INGREDIENT_NAMES if name in text]
+            for name in down:
+                INGREDIENT_NAME_CALLS[name] = INGREDIENT_NAME_CALLS.get(name, 0) + 1
+        return bool(down)
 
     def _mock_resolve_ingredient_names(self, all_text):
         """Resolve each item to its first candidate (an ambiguous one too).
