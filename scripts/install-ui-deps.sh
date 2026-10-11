@@ -24,5 +24,5 @@ if [ -z "${UI_DEPS_FORCE:-}" ] &&
     exit 0
 fi
 
-# Subshell: the lock-release trap uses a path relative to the project root.
-(cd ramekin-ui && npx --yes -p npm@latest npm ci --silent)
+cd ramekin-ui
+npx --yes -p npm@latest npm ci --silent
