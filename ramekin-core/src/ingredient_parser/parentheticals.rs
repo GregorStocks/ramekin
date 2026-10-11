@@ -2,6 +2,7 @@
 
 use super::*;
 use regex::Regex;
+use std::collections::HashSet;
 
 /// Parse parenthetical content that may contain multiple measurements.
 /// Handles formats like "8 ounces; 227 g each" or "113g, 1/2 cup" or "8 ounces or 225 grams"
@@ -75,12 +76,26 @@ pub(super) fn parse_parenthetical_measurement_details(
 /// restate the item: "(finely diced, about 3 stalks celery)" on a celery line.
 /// Two amounts ("(1/2 pound fresh cranberry beans, 1/2 pound fresh lima
 /// beans)") are options again, so neither restates it.
+///
+/// Amounts that split the whole ("(divided, 3/4 cup, 2 tbsp)", "(3/4 cup, 1/4
+/// cup)") are portions rather than alternatives, so they aren't read; one
+/// amount ("(620g, divided)") is still the whole.
 pub(super) fn prep_note_parenthetical_measurements(
     content: &str,
     outside_text: &str,
 ) -> Vec<Measurement> {
     let measurements = parse_parenthetical_measurement_details(content, "").measurements;
     if !measurements.is_empty() {
+        if measurements.len() > 1 && content.to_lowercase().contains("divided") {
+            return Vec::new();
+        }
+        let units = measurements
+            .iter()
+            .map(|m| m.unit.as_deref().map(normalize_unit))
+            .collect::<HashSet<_>>();
+        if units.len() < measurements.len() {
+            return Vec::new();
+        }
         return measurements;
     }
     let mut parts_with_amount = content.split([';', ',']).filter(|part| {
@@ -940,6 +955,31 @@ mod tests {
                 "1 pound shell beans (I used 1/2 pound fresh cranberry beans, 1/2 pound fresh lima beans)",
                 vec![measurement("1", "lb")],
                 "I used 1/2 pound fresh cranberry beans, 1/2 pound fresh lima beans",
+            ),
+            (
+                "1 cup sugar (divided, 3/4 cup, 2 tbsp)",
+                vec![measurement("1", "cup")],
+                "divided, 3/4 cup, 2 tbsp",
+            ),
+            (
+                "4 3/4 cups flour (620g, divided)",
+                vec![measurement("4 3/4", "cup"), measurement("620", "g")],
+                "620g, divided",
+            ),
+            (
+                "1 cup sugar (divided, 3/4 cup, 1/4 cup)",
+                vec![measurement("1", "cup")],
+                "divided, 3/4 cup, 1/4 cup",
+            ),
+            (
+                "2 cups cheese (shredded, 1 cup for the filling; 1 cup for the top)",
+                vec![measurement("2", "cup")],
+                "shredded, 1 cup for the filling; 1 cup for the top",
+            ),
+            (
+                "2 cups cheese (shredded, 1 cup, 1 cup)",
+                vec![measurement("2", "cup")],
+                "shredded, 1 cup, 1 cup",
             ),
             (
                 "1 cup rice (180 g uncooked)",
