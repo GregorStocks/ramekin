@@ -247,16 +247,25 @@ fn is_decreasing_range(amount: &str) -> bool {
 
 /// Whether `words` ("fresh lemon juice") name what `outside_text` already
 /// does ("lemon juice"), whole words and ignoring case and a leading "fresh".
+/// A phrase starting with a function word ("for garnish", "to taste") is a
+/// note even when the line repeats it.
 fn restates_outside_text(words: &str, outside_text: &str) -> bool {
+    const NOTE_LEADING_WORDS: &[&str] = &[
+        "for", "to", "plus", "in", "with", "from", "as", "at", "on", "if", "until", "per",
+    ];
+
     let words = words.to_lowercase();
     let words = ["freshly squeezed ", "fresh squeezed ", "freshly ", "fresh "]
         .iter()
         .find_map(|prefix| words.strip_prefix(prefix))
         .unwrap_or(&words);
     let words: Vec<&str> = words.split_whitespace().collect();
-    if !words
-        .iter()
-        .any(|word| word.chars().any(|c| c.is_alphabetic()))
+    if words
+        .first()
+        .is_none_or(|first| NOTE_LEADING_WORDS.contains(first))
+        || !words
+            .iter()
+            .any(|word| word.chars().any(|c| c.is_alphabetic()))
     {
         return false;
     }
@@ -853,12 +862,16 @@ mod tests {
             "1/4 cup honey or sugar ((85g honey, 50g sugar))",
             "9.3 oz milk chocolate bars (6 - 1.55 oz bars)",
             "3 cans hominy ((15 ounce cans) drained and rinsed)",
+            "1 bunch parsley, plus more for garnish (1/4 cup for garnish)",
         ] {
             let parsed = parse_ingredient(line);
             assert!(parsed.note.is_some(), "{line}: {parsed:?}");
         }
         let parsed = parse_ingredient("1 cup rice (180 g uncooked)");
         assert_eq!(parsed.measurements, vec![measurement("1", "cup")]);
+        let parsed =
+            parse_ingredient("1 bunch parsley, plus more for garnish (1/4 cup for garnish)");
+        assert_eq!(parsed.measurements, vec![measurement("1", "bunch")]);
 
         // What the volume is worth of stays in the note.
         let parsed = parse_ingredient("3 large peaches (3 cups worth of slices)");
