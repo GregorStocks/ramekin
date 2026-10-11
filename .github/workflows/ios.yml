@@ -199,6 +199,15 @@ jobs:
         # memory for the rest of the job, from before the simulator boots
         # through the UI tests, so a failure shows whether the runner was
         # starved and by what.
+        #
+        # The whole runner also freezes for 30-100 s at low load, in green
+        # runs too: this sampler's 15 s loop stretched to 45-100 s while the
+        # simulator log and the host exec log went quiet. The heartbeat execs
+        # date every second, so a gap in runner-heartbeat.log times a freeze
+        # to the second. Each freeze so far came while provjobd (the runner
+        # image's agent) was running diskutil and diskimagesiod (which serves
+        # the simulator runtime's disk image) was busy, so the sampler also
+        # records disk-image commands and disk throughput.
         run: |
           mkdir -p logs
           # GitHub runs steps with bash -e; a failed sample (memory_pressure,
@@ -207,8 +216,12 @@ jobs:
             echo "== $(date -u +%H:%M:%S) $(uptime | sed 's/.*load/load/')"
             memory_pressure -Q | tail -1
             ps -Ao pcpu,rss,comm -r | head -12
+            pgrep -lf 'diskutil|hdiutil|^asr '
+            iostat -d -c 2 -w 1 | sed -n '1,2p;$p'
             sleep 15
           done) > logs/runner-load.log 2>&1 &
+          (set +e; while true; do date -u +%H:%M:%S; sleep 1; done) \
+            > logs/runner-heartbeat.log 2>&1 &
 
       - name: Disable Spotlight indexing
         # mds and mdworker index the build output and cost the runner CPU the
@@ -428,9 +441,12 @@ jobs:
         # exec on an idle runner: xcodebuild had marked it runnable, and the
         # simulator log is silent until launchd_sim's "uncorking exec source".
         # That stage runs in the host's exec and code-signing path, which only
-        # the host log shows.
+        # the host log shows. The code-signing daemons were idle during later
+        # stalls (runs 37960299170, 38087567451), so this also logs the disk
+        # image and disk arbitration daemons the simulator runtime depends on.
         run: |
-          predicate='process IN {"amfid", "syspolicyd", "XprotectService", "CoreSimulatorService"}'
+          predicate='process IN {"amfid", "syspolicyd", "XprotectService", "CoreSimulatorService",'
+          predicate="$predicate \"diskimagesiod\", \"diskimagesiod_ram\", \"diskarbitrationd\", \"diskmanagementd\"}"
           kernel='eventMessage CONTAINS[c] "AMFI" OR eventMessage CONTAINS[c] "codesign"'
           kernel="$kernel OR eventMessage CONTAINS[c] \"xpcproxy_sim\""
           predicate="$predicate OR (process == \"kernel\" AND ($kernel))"
@@ -446,6 +462,7 @@ jobs:
           path: |
             logs/*.xcresult
             logs/runner-load.log
+            logs/runner-heartbeat.log
             logs/server.log
             logs/simulator-system.log.gz
             logs/host-exec.log.gz
