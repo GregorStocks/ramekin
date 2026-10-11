@@ -130,8 +130,8 @@ fn usable_headers<'a>(
     if header_lines.iter().all(Option::is_none) {
         return None;
     }
-    // A header the parser wouldn't recognize (e.g. "Version #1: Garden
-    // Vegetable:") would become a bogus ingredient, and dropping just that one
+    // A header the parser wouldn't recognize (e.g. "Makes 12 Mini
+    // Frittatas:") would become a bogus ingredient, and dropping just that one
     // would file its group under the previous heading.
     if header_lines
         .iter()
@@ -694,12 +694,32 @@ mod tests {
     }
 
     #[test]
-    fn header_the_parser_rejects_bails() {
+    fn numbered_version_headers_are_recovered() {
         let body = r#"
             <ul>
               <li><strong>Base Frittata Recipe</strong></li>
               <li>8 large eggs</li>
               <li><strong>Version #1: Garden Vegetable</strong></li>
+              <li>1 cup spinach</li>
+            </ul>"#;
+        assert_eq!(
+            recover(&["8 large eggs", "1 cup spinach"], body).unwrap(),
+            vec![
+                "Base Frittata Recipe:",
+                "8 large eggs",
+                "Version #1: Garden Vegetable:",
+                "1 cup spinach"
+            ]
+        );
+    }
+
+    #[test]
+    fn header_the_parser_rejects_bails() {
+        let body = r#"
+            <ul>
+              <li><strong>Base Frittata Recipe</strong></li>
+              <li>8 large eggs</li>
+              <li><strong>Makes 12 Mini Frittatas</strong></li>
               <li>1 cup spinach</li>
             </ul>"#;
         assert_eq!(recover(&["8 large eggs", "1 cup spinach"], body), None);

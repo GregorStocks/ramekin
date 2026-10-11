@@ -25,6 +25,27 @@ fn test_detect_section_header_for_the_pattern() {
 }
 
 #[test]
+fn test_detect_section_header_numbered_label() {
+    // A "#N" label is allowed in an otherwise short colon-terminated header,
+    // even with an inner colon.
+    assert_eq!(
+        detect_section_header("Version #1: Garden Vegetable:"),
+        Some("Version #1: Garden Vegetable".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Version #2: Mediterranean-Inspired:"),
+        Some("Version #2: Mediterranean-inspired".to_string())
+    );
+    assert_eq!(
+        detect_section_header("Variation #2: Roasted Red Pepper & Spinach:"),
+        Some("Variation #2: Roasted Red Pepper & Spinach".to_string())
+    );
+    // Other digits still mark the line as an ingredient.
+    assert_eq!(detect_section_header("2 eggs, beaten:"), None);
+    assert_eq!(detect_section_header("Makes 2 dozen #1:"), None);
+}
+
+#[test]
 fn test_detect_section_header_all_caps() {
     // All-caps headers WITH colon should be normalized to title case
     assert_eq!(

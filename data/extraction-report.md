@@ -16,11 +16,11 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 60612
+- Total ingredients: 60607
 - Volume-to-weight converted: 27377/42448 (64.5%)
 - Unknown ingredient (no density data): 5503
 - Already has weight: 9568
-- No volume unit (count-based): 17500
+- No volume unit (count-based): 17495
 - Metric converted (oz→g): 2452
 - Metric converted (lb→g): 1814
 
