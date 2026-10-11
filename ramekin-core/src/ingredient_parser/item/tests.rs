@@ -34,7 +34,7 @@ fn test_detect_section_header_numbered_label() {
     );
     assert_eq!(
         detect_section_header("Version #2: Mediterranean-Inspired:"),
-        Some("Version #2: Mediterranean-inspired".to_string())
+        Some("Version #2: Mediterranean-Inspired".to_string())
     );
     assert_eq!(
         detect_section_header("Variation #2: Roasted Red Pepper & Spinach:"),
@@ -438,6 +438,10 @@ fn test_title_case() {
         title_case("FOR THE STEAK FAJITA MARINADE"),
         "For the Steak Fajita Marinade"
     );
+    assert_eq!(title_case("Curry-Lime Yogurt"), "Curry-Lime Yogurt");
+    assert_eq!(title_case("CURRY-LIME YOGURT"), "Curry-Lime Yogurt");
+    assert_eq!(title_case("make-ahead sauce"), "Make-Ahead Sauce");
+    assert_eq!(title_case("READY-TO-EAT"), "Ready-to-Eat");
 }
 
 #[test]

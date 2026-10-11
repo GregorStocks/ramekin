@@ -1,16 +1,20 @@
 //! Parenthetical segment handling: measurements, notes, and item identity.
 
 use super::*;
+use regex::Regex;
 
 /// Parse parenthetical content that may contain multiple measurements.
 /// Handles formats like "8 ounces; 227 g each" or "113g, 1/2 cup" or "8 ounces or 225 grams"
 #[cfg(test)]
 pub(super) fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
-    parse_parenthetical_measurement_details(content).measurements
+    parse_parenthetical_measurement_details(content, "").measurements
 }
 
+/// `outside_text` is the line around the parenthetical, so a measurement
+/// that restates the item ("1 cup water (240 ml water)") still parses.
 pub(super) fn parse_parenthetical_measurement_details(
     content: &str,
+    outside_text: &str,
 ) -> ParentheticalMeasurementParse {
     let mut results = Vec::new();
     let mut has_non_measurement_content = parenthetical_measurement_has_note_qualifier(content);
@@ -29,13 +33,22 @@ pub(super) fn parse_parenthetical_measurement_details(
         .replace(" OR ", ";");
 
     // Split by semicolons or commas (common separators in recipe measurements)
-    for part in normalized.split([';', ',']) {
-        let part = part.trim();
-        if part.is_empty() {
-            continue;
-        }
-
-        if let Some(mut m) = try_parse_parenthetical_measurement(part) {
+    let parts: Vec<&str> = normalized
+        .split([';', ','])
+        .map(str::trim)
+        .filter(|part| !part.is_empty())
+        .collect();
+    // Only a lone measurement restates the item; see
+    // try_parse_measurement_before_filler.
+    let outside_text = if parts.len() == 1 { outside_text } else { "" };
+    for part in parts {
+        let measurement = try_parse_parenthetical_measurement(part).or_else(|| {
+            let (measurement, describes_more) =
+                try_parse_measurement_before_filler(part, outside_text)?;
+            has_non_measurement_content |= describes_more;
+            Some(measurement)
+        });
+        if let Some(mut m) = measurement {
             // If the entire parenthetical had trailing "each", apply it to all measurements
             // unless this measurement already has "each"
             if has_trailing_each {
@@ -159,6 +172,109 @@ pub(super) fn try_parse_parenthetical_measurement(s: &str) -> Option<Measurement
         amount: Some(amount),
         unit: Some(unit),
     })
+}
+
+/// "about 1/4 cup's worth", "2 cups worth", "3 cups worth of slices": the
+/// measurement before "worth", and what it's worth of.
+static TRAILING_WORTH_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"(?i)(?:'s|’s|'|’)?\s+worth(?P<of>\s+of\s+\S.*?)?\.?$")
+        .expect("Invalid trailing worth regex")
+});
+
+/// A measurement followed by words that add nothing to it: "worth" ("about
+/// 1/4 cup's worth") or a restatement of the item outside the parenthetical
+/// ("(240 ml water)" on "1 cup water", "(2 tbsp fresh lemon juice)" on a
+/// lemon juice line). A size word isn't a measurement here, so "(about 4
+/// large shallots)" stays a note.
+///
+/// Only a parenthetical that is one measurement restates the item: in "(85g
+/// honey, 50g sugar)" each weight is one option's, and "(15 ounce cans)" or
+/// "(6 - 1.55 oz bars)" sizes the pieces rather than measuring the whole.
+///
+/// Also returns whether words worth keeping in the note follow ("of slices").
+pub(super) fn try_parse_measurement_before_filler(
+    part: &str,
+    outside_text: &str,
+) -> Option<(Measurement, bool)> {
+    let part = part.trim();
+    let mut describes_more = false;
+    let measure = match TRAILING_WORTH_REGEX.captures(part) {
+        Some(worth) => {
+            describes_more = worth.name("of").is_some();
+            part.get(..worth.get(0)?.start())?
+        }
+        None => {
+            let lower = part.to_lowercase();
+            if lower.contains([',', ';']) || lower.contains(" or ") {
+                return None;
+            }
+            let (_, after_qualifier) = strip_leading_measurement_qualifier(part);
+            let (amount, after_amount) = extract_amount(after_qualifier);
+            if amount.as_deref().is_none_or(is_decreasing_range) {
+                return None;
+            }
+            let (unit, remaining) = extract_unit(&after_amount);
+            if unit.is_some_and(|unit| is_size_unit(&unit)) {
+                return None;
+            }
+            let restated = remaining.trim();
+            // "(15 ounce cans)" restates the unit, not the item; a size word
+            // ("(100 g large eggs)") is part of the item.
+            let restates_unit = extract_unit(restated)
+                .0
+                .is_some_and(|unit| !is_size_unit(&unit));
+            if restates_unit || !restates_outside_text(restated, outside_text) {
+                return None;
+            }
+            part.strip_suffix(restated)?
+        }
+    };
+    let measurement = try_parse_parenthetical_measurement(measure)?;
+    if measurement.unit.as_deref().is_some_and(is_size_unit) {
+        return None;
+    }
+    Some((measurement, describes_more))
+}
+
+/// Whether `amount` is a range that runs downward ("6 - 1.55"), which is a
+/// count and a size rather than one amount.
+fn is_decreasing_range(amount: &str) -> bool {
+    let Some((low, high)) = amount.split_once('-') else {
+        return false;
+    };
+    matches!((parse_amount(low), parse_amount(high)), (Some(low), Some(high)) if low > high)
+}
+
+/// Whether `words` ("fresh lemon juice") name what `outside_text` already
+/// does ("lemon juice"), whole words and ignoring case and a leading "fresh".
+/// A phrase starting with a function word ("for garnish", "to taste") is a
+/// note even when the line repeats it.
+fn restates_outside_text(words: &str, outside_text: &str) -> bool {
+    const NOTE_LEADING_WORDS: &[&str] = &[
+        "for", "to", "plus", "in", "with", "from", "as", "at", "on", "if", "until", "per",
+    ];
+
+    let words = words.to_lowercase();
+    let words = ["freshly squeezed ", "fresh squeezed ", "freshly ", "fresh "]
+        .iter()
+        .find_map(|prefix| words.strip_prefix(prefix))
+        .unwrap_or(&words);
+    let words: Vec<&str> = words.split_whitespace().collect();
+    if words
+        .first()
+        .is_none_or(|first| NOTE_LEADING_WORDS.contains(first))
+        || !words
+            .iter()
+            .any(|word| word.chars().any(|c| c.is_alphabetic()))
+    {
+        return false;
+    }
+    let outside = outside_text.to_lowercase();
+    let outside: Vec<&str> = outside
+        .split(|c: char| !c.is_alphanumeric() && c != '-')
+        .filter(|word| !word.is_empty())
+        .collect();
+    outside.windows(words.len()).any(|window| window == words)
 }
 
 pub(super) fn looks_like_bare_parenthetical_size_unit(s: &str, normalized_unit: &str) -> bool {
@@ -704,6 +820,63 @@ mod tests {
         assert_eq!(result[0].unit, Some("lbs".to_string()));
         assert_eq!(result[1].amount, Some("570".to_string()));
         assert_eq!(result[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_measurement_before_worth_or_restated_item() {
+        let measurement = |amount: &str, unit: &str| Measurement {
+            amount: Some(amount.to_string()),
+            unit: Some(unit.to_string()),
+        };
+        for (line, alternative) in [
+            (
+                "1 recipe cold coleslaw (about 4 cups worth)",
+                measurement("4", "cup"),
+            ),
+            ("2 shallots (1/2 cup's worth)", measurement("1/2", "cup")),
+            (
+                "3 large peaches (about 3 cups worth of slices)",
+                measurement("3", "cup"),
+            ),
+            (
+                "2 shallots (approximately 1/2 cup worth)",
+                measurement("1/2", "cup"),
+            ),
+            ("1 cup water (240 ml water)", measurement("240", "ml")),
+            ("2 large eggs (100 g large eggs)", measurement("100", "g")),
+            (
+                "Large handful fresh cilantro (about 1 cup fresh cilantro)",
+                measurement("1", "cup"),
+            ),
+        ] {
+            let parsed = parse_ingredient(line);
+            assert_eq!(parsed.measurements.last(), Some(&alternative), "{line}");
+        }
+
+        // A count or size word isn't a measurement, and words that don't
+        // restate the item are more than filler.
+        for line in [
+            "1 1/2 cups graham cracker crumbs (about 10 crackers worth)",
+            "2 cups thinly sliced shallots (about 4 large shallots)",
+            "1 cup rice (180 g uncooked)",
+            "1/4 cup honey or sugar ((85g honey, 50g sugar))",
+            "9.3 oz milk chocolate bars (6 - 1.55 oz bars)",
+            "3 cans hominy ((15 ounce cans) drained and rinsed)",
+            "1 bunch parsley, plus more for garnish (1/4 cup for garnish)",
+        ] {
+            let parsed = parse_ingredient(line);
+            assert!(parsed.note.is_some(), "{line}: {parsed:?}");
+        }
+        let parsed = parse_ingredient("1 cup rice (180 g uncooked)");
+        assert_eq!(parsed.measurements, vec![measurement("1", "cup")]);
+        let parsed =
+            parse_ingredient("1 bunch parsley, plus more for garnish (1/4 cup for garnish)");
+        assert_eq!(parsed.measurements, vec![measurement("1", "bunch")]);
+
+        // What the volume is worth of stays in the note.
+        let parsed = parse_ingredient("3 large peaches (3 cups worth of slices)");
+        assert_eq!(parsed.measurements.last(), Some(&measurement("3", "cup")));
+        assert_eq!(parsed.note.as_deref(), Some("3 cups worth of slices"));
     }
 
     #[test]

@@ -8,8 +8,9 @@ use std::sync::LazyLock;
 use regex::Regex;
 
 use super::{
-    extract_amount, normalize_unicode, normalize_word_numbers, parse_ingredient,
-    strip_leading_list_marker, Measurement, ParsedIngredient,
+    extract_amount, is_size_unit, normalize_unicode, normalize_word_numbers,
+    parenthetical_measurement_has_note_qualifier, parse_ingredient, strip_leading_list_marker,
+    try_parse_parenthetical_measurement, Measurement, ParsedIngredient,
 };
 use crate::text::decode_html_entities;
 
@@ -247,8 +248,27 @@ fn part_ingredient(
 ) -> Option<ParsedIngredient> {
     let mut measurements = vec![measurement];
     let mut notes: Vec<String> = prep.map(str::to_string).into_iter().collect();
-    if !trailer.is_empty() {
-        let trailer = without_restated_item(trailer, item);
+    let trailer = without_restated_item(trailer, item);
+    // "Juice of 1 orange or 1/2 cup orange juice": an "or" volume is the
+    // author's measure too.
+    let trimmed_trailer = trailer.trim();
+    let or_text = trimmed_trailer
+        .get(..3)
+        .filter(|or| or.eq_ignore_ascii_case("or "))
+        .and_then(|_| trimmed_trailer.get(3..))
+        .unwrap_or_default();
+    let or_volume = try_parse_parenthetical_measurement(or_text)
+        .filter(|volume| !volume.unit.as_deref().is_some_and(is_size_unit));
+    if let Some(volume) = or_volume {
+        if keep_trailer_measurements {
+            measurements.insert(0, volume);
+        }
+        // "or about 1/2 cup" keeps its approximation in the note, as a
+        // qualified parenthetical volume does.
+        if parenthetical_measurement_has_note_qualifier(or_text) {
+            notes.push(or_text.to_string());
+        }
+    } else if !trailer.is_empty() {
         let parsed = parse_ingredient(&format!("{item}{trailer}"));
         let leftover = parsed.item.strip_prefix(item)?;
         // An explicit volume ("(about 3 tablespoons)") is the author's
@@ -555,6 +575,50 @@ mod tests {
             assert_eq!(parsed.measurements[0], measurement(amount, unit), "{line}");
             assert_eq!(parsed.measurements.len(), 2, "{line}");
         }
+    }
+
+    #[test]
+    fn trailing_volume_leads() {
+        for (line, amount, unit, fruit) in [
+            (
+                "juice of 1 large lime (about 2 teaspoons worth)",
+                "2",
+                "tsp",
+                measurement("1", "large lime"),
+            ),
+            (
+                "juice of 2 limes (about 1/4 cup's worth)",
+                "1/4",
+                "cup",
+                measurement("2", "limes"),
+            ),
+            (
+                "juice of 1 orange or 1/2 cup orange juice",
+                "1/2",
+                "cup",
+                measurement("1", "orange"),
+            ),
+            (
+                "Juice of 1 orange OR 1/2 cup orange juice",
+                "1/2",
+                "cup",
+                measurement("1", "orange"),
+            ),
+        ] {
+            let parsed = parse_one(line);
+            assert_eq!(
+                parsed.measurements,
+                vec![measurement(amount, unit), fruit],
+                "{line}"
+            );
+        }
+
+        let parsed = parse_one("juice of 1 orange or about 1/2 cup orange juice");
+        assert_eq!(
+            parsed.measurements,
+            vec![measurement("1/2", "cup"), measurement("1", "orange")]
+        );
+        assert_eq!(parsed.note.as_deref(), Some("about 1/2 cup"));
     }
 
     #[test]

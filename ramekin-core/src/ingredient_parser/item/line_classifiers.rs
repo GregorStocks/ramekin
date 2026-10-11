@@ -257,7 +257,8 @@ pub(in crate::ingredient_parser) fn normalize_section_name(name: &str) -> String
 }
 
 /// Convert a string to title case.
-/// Capitalizes first letter of each word, lowercases the rest.
+/// Capitalizes first letter of each word, lowercases the rest. Hyphen-joined
+/// parts count as separate words, so "CURRY-LIME" becomes "Curry-Lime".
 /// Special handling for small words (the, and, or, of, for, a, an, to, in) - kept lowercase except at start.
 pub(in crate::ingredient_parser) fn title_case(s: &str) -> String {
     const SMALL_WORDS: &[&str] = &[
@@ -269,7 +270,7 @@ pub(in crate::ingredient_parser) fn title_case(s: &str) -> String {
     let mut current_word = String::new();
 
     for c in s.chars() {
-        if c.is_whitespace() || c == ',' || c == '(' || c == ')' {
+        if c.is_whitespace() || matches!(c, ',' | '(' | ')' | '-') {
             // End of word - flush current word
             if !current_word.is_empty() {
                 let word_lower = current_word.to_lowercase();
