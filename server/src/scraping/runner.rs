@@ -1,8 +1,9 @@
 use std::collections::HashSet;
-use std::sync::Arc;
+use std::sync::{Arc, LazyLock};
 
 use diesel::prelude::*;
 use futures::stream::{FuturesUnordered, StreamExt};
+use tokio::sync::Semaphore;
 use tracing::Instrument;
 use uuid::Uuid;
 
@@ -20,7 +21,8 @@ use crate::db::DbPool;
 use crate::schema::{scrape_jobs, step_outputs, user_tags};
 
 use super::jobs::{
-    get_job, mark_completed, mark_failed, update_current_step_keeping_start, update_status_and_step,
+    fail_unfinished, get_job, mark_completed, mark_failed, update_current_step_keeping_start,
+    update_status_and_step,
 };
 use super::output_store::DbOutputStore;
 use super::photo_import::PHOTO_EXTRACT_STEP;
@@ -303,10 +305,20 @@ fn determine_final_outcome(
     }
 }
 
+/// How many jobs run at once. The rest wait as pending, so a bulk import or
+/// a restart that resumes many jobs doesn't start them all against the
+/// database pool and the AI provider together.
+const MAX_RUNNING_JOBS: usize = 8;
+static JOB_SLOTS: LazyLock<Semaphore> = LazyLock::new(|| Semaphore::new(MAX_RUNNING_JOBS));
+
 /// Run the scrape job state machine.
 /// This processes the job through its states: pending -> scraping -> parsing -> completed
 pub async fn run_scrape_job(pool: Arc<DbPool>, job_id: Uuid) {
-    let result = run_scrape_job_inner(pool, job_id).await;
+    let _slot = JOB_SLOTS
+        .acquire()
+        .await
+        .expect("job semaphore is never closed");
+    let result = run_scrape_job_inner(pool.clone(), job_id).await;
     let current_span = tracing::Span::current();
 
     match &result {
@@ -317,6 +329,9 @@ pub async fn run_scrape_job(pool: Arc<DbPool>, job_id: Uuid) {
             current_span.record("job.status", "failed");
             current_span.record("job.error", tracing::field::display(e));
             tracing::warn!("Scrape job {} failed: {}", job_id, e);
+            if let Err(e) = fail_unfinished(&pool, job_id, &e.to_string()).await {
+                tracing::error!(%job_id, "Failed to mark the job failed: {e}");
+            }
         }
     }
 }

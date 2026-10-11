@@ -412,6 +412,34 @@ pub(super) async fn mark_failed(
     .await
 }
 
+/// Fail a job that stopped on an error before recording how it ended, at the
+/// step it was on, so clients stop polling it and Retry can resume it. A job
+/// already completed or failed is left alone.
+pub(super) async fn fail_unfinished(
+    pool: &DbPool,
+    job_id: Uuid,
+    error: &str,
+) -> Result<(), ScrapeError> {
+    let error = error.to_string();
+    run_scrape_db(pool, move |conn| {
+        diesel::update(
+            scrape_jobs::table
+                .find(job_id)
+                .filter(scrape_jobs::status.ne_all([STATUS_COMPLETED, STATUS_FAILED])),
+        )
+        .set((
+            scrape_jobs::status.eq(STATUS_FAILED),
+            scrape_jobs::failed_at_step.eq(scrape_jobs::current_step),
+            scrape_jobs::error_message.eq(Some(error.as_str())),
+            scrape_jobs::updated_at.eq(Utc::now()),
+        ))
+        .execute(conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+        Ok(())
+    })
+    .await
+}
+
 /// Mark job as completed with recipe ID.
 pub(super) async fn mark_completed(
     pool: &DbPool,
