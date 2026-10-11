@@ -434,6 +434,48 @@ pub(super) fn split_leading_attached_unit_token(s: &str) -> Option<(&str, &str)>
 }
 
 /// Check if a string looks like an amount (number, fraction, decimal)
+/// Close up a dash typed with a space on one side only after a leading
+/// amount: "2 -3 tsp" and "4- 5 cups" are ranges ("2-3", "4-5"), and
+/// "1- pound" is "1-pound". The high end of a range must be above the low end
+/// and at most four times it, so "1- 15 ounce can" (one 15-ounce can) is left
+/// alone, as is "2- to 3-inch".
+pub(super) fn close_one_sided_dash(s: &str) -> String {
+    let trimmed = s.trim_start();
+    let Some((first, after)) = trimmed.split_once(char::is_whitespace) else {
+        return s.to_string();
+    };
+    let after = after.trim_start();
+    let (low, rest) = match (first.strip_suffix('-'), after.strip_prefix('-')) {
+        // "4- 5": the dash ends the first word, and a space follows it.
+        (Some(low), _) => (low, after),
+        // "2 -3": the dash starts the next word.
+        (None, Some(rest)) => (first, rest),
+        (None, None) => return s.to_string(),
+    };
+    if !is_amount_like(low) || rest.is_empty() || rest.starts_with(char::is_whitespace) {
+        return s.to_string();
+    }
+    let words: Vec<&str> = rest.split_whitespace().collect();
+    let joins = if rest.starts_with(|c: char| c.is_ascii_digit()) {
+        let high = match words.get(1) {
+            Some(fraction) if is_fraction(fraction) => format!("{} {}", words[0], fraction),
+            _ => words[0].to_string(),
+        };
+        matches!(
+            (parse_amount(low), parse_amount(&high)),
+            (Some(low), Some(high)) if high > low && high <= low * 4.0
+        )
+    } else {
+        rest.starts_with(|c: char| c.is_alphabetic())
+            && !["to", "or", "and"].contains(&words[0].to_lowercase().as_str())
+    };
+    if joins {
+        format!("{low}-{rest}")
+    } else {
+        s.to_string()
+    }
+}
+
 pub(super) fn is_amount_like(s: &str) -> bool {
     if s.is_empty() {
         return false;

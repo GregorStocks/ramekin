@@ -84,10 +84,10 @@
     {
       "raw": "1 -2  chipotles in adobo sauce (canned)",
       "expected": {
-        "item": "-2  chipotles in adobo sauce",
+        "item": "chipotles in adobo sauce",
         "measurements": [
           {
-            "amount": "1",
+            "amount": "1-2",
             "unit": null
           }
         ],

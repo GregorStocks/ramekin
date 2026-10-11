@@ -504,11 +504,11 @@
     {
       "raw": "2 -3   teaspoons    honey",
       "expected": {
-        "item": "-3   teaspoons    honey",
+        "item": "honey",
         "measurements": [
           {
-            "amount": "2",
-            "unit": null
+            "amount": "2-3",
+            "unit": "tsp"
           }
         ],
         "note": null,

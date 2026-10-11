@@ -33,11 +33,11 @@
     {
       "raw": "1- pound ground beef",
       "expected": {
-        "item": "- pound ground beef",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lb"
           }
         ],
         "note": null,

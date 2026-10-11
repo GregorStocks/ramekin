@@ -33,15 +33,15 @@
     {
       "raw": "12- ounces frozen orange juice concentrate",
       "expected": {
-        "item": "- ounces frozen orange juice concentrate",
+        "item": "frozen orange juice concentrate",
         "measurements": [
           {
             "amount": "12",
-            "unit": null
+            "unit": "oz"
           }
         ],
         "note": null,
-        "category": "Beverages"
+        "category": "Frozen"
       }
     },
     {
