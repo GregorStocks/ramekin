@@ -37,10 +37,12 @@ pub fn enqueue(conn: &mut PgConnection, gaps: &[WeightKey]) -> QueryResult<usize
             )
         })
         .collect();
-    diesel::insert_into(weights::table)
+    let queued = diesel::insert_into(weights::table)
         .values(&rows)
         .on_conflict_do_nothing()
-        .execute(conn)
+        .execute(conn)?;
+    crate::ingredient_names::note_new_work(queued);
+    Ok(queued)
 }
 
 /// The rows for `keys`, by status. Rows for other units of the same foods are
@@ -204,6 +206,7 @@ pub fn requeue_failed(conn: &mut PgConnection, foods: &[String]) -> QueryResult<
         weights::reask_error.eq(None::<String>),
     ))
     .execute(conn)?;
+    crate::ingredient_names::note_new_work(pending + reasked);
     Ok(pending + reasked)
 }
 

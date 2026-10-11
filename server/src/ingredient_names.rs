@@ -49,6 +49,11 @@ static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
 /// Set whenever names are saved resolved, so the worker sweeps stored recipes
 /// for the weight gaps the answers reveal.
 static NAMES_SAVED: AtomicBool = AtomicBool::new(false);
+/// Set whenever names or weights are queued or put back in the queue. Reads
+/// of names that are already pending also wake the worker (clients poll while
+/// names resolve), so only new work cuts a failure backoff short; otherwise a
+/// provider outage would be retried at the clients' polling interval.
+static NEW_WORK: AtomicBool = AtomicBool::new(false);
 pub(crate) static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
 /// One client for the process, so its rate limit spaces every call, with
 /// the model it asks: the ingredient model (`AiConfig::for_ingredients`).
@@ -81,10 +86,12 @@ pub fn enqueue(conn: &mut PgConnection, new_names: &[String]) -> QueryResult<usi
         .iter()
         .map(|name| (names::name.eq(name), names::status.eq(PENDING)))
         .collect();
-    diesel::insert_into(names::table)
+    let queued = diesel::insert_into(names::table)
         .values(&rows)
         .on_conflict_do_nothing()
-        .execute(conn)
+        .execute(conn)?;
+    note_new_work(queued);
+    Ok(queued)
 }
 
 /// Put failed names back in the queue, clearing their error, so the next
@@ -108,6 +115,7 @@ pub fn requeue_failed(conn: &mut PgConnection, failed: &[String]) -> QueryResult
         names::reask_error.eq(None::<String>),
     ))
     .execute(conn)?;
+    note_new_work(pending + reasked);
     Ok(pending + reasked)
 }
 
@@ -155,6 +163,13 @@ pub fn enqueue_unasked<'a>(
 /// Wake the worker.
 pub fn wake() {
     WAKE.notify_one();
+}
+
+/// Record that `queued` names or weights were added to the queue.
+pub(crate) fn note_new_work(queued: usize) {
+    if queued > 0 {
+        NEW_WORK.store(true, Ordering::SeqCst);
+    }
 }
 
 /// Resolved answers for `items`' unknown names, for estimating or
@@ -425,6 +440,7 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
         let mut sweep_weights = false;
         let mut backoff = RETRY_MIN;
         loop {
+            NEW_WORK.store(false, Ordering::SeqCst);
             let mut pass = work_pass(&pool).await;
             sweep_weights |= NAMES_SAVED.swap(false, Ordering::SeqCst);
             if pass.is_ok() && sweep_weights {
@@ -456,9 +472,14 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
                         "Ingredient name resolution failed: {}",
                         e
                     );
-                    tokio::select! {
-                        () = WAKE.notified() => {}
-                        () = tokio::time::sleep(backoff) => {}
+                    let retry_at = tokio::time::Instant::now() + backoff;
+                    loop {
+                        tokio::select! {
+                            () = WAKE.notified() => if NEW_WORK.swap(false, Ordering::SeqCst) {
+                                break;
+                            },
+                            () = tokio::time::sleep_until(retry_at) => break,
+                        }
                     }
                     backoff = (backoff * 2).min(RETRY_MAX);
                 }
