@@ -438,8 +438,8 @@ pub(super) fn split_leading_attached_unit_token(s: &str) -> Option<(&str, &str)>
 /// amount: "2 -3 tsp" and "4- 5 cups" are ranges ("2-3", "4-5"), "1- inch
 /// knob" is the size "1-inch knob", and in "2- cups" or "1- pound" the dash is
 /// just spacing ("2 cups"). The high end of a range must be above the low end
-/// and at most four times it, so "1- 15 ounce can" (one 15-ounce can) is left
-/// alone, as is "2- to 3-inch".
+/// and at most four times it, and a sized package ("1- 3 ounce package", one
+/// 3-ounce package) is left alone, as is "2- to 3-inch".
 pub(super) fn close_one_sided_dash(s: &str) -> String {
     let trimmed = s.trim_start();
     let Some((first, after)) = trimmed.split_once(char::is_whitespace) else {
@@ -462,10 +462,18 @@ pub(super) fn close_one_sided_dash(s: &str) -> String {
             Some(fraction) if is_fraction(fraction) => format!("{} {}", words[0], fraction),
             _ => words[0].to_string(),
         };
-        let range = matches!(
-            (parse_amount(low), parse_amount(&high)),
-            (Some(low), Some(high)) if high > low && high <= low * 4.0
-        );
+        // "1- 3 ounce package": one 3-ounce package, not a range.
+        let after_high = if high.contains(' ') { 2 } else { 1 };
+        let sizes_a_container = words
+            .iter()
+            .skip(after_high)
+            .take(2)
+            .any(|word| is_container_word(word));
+        let range = !sizes_a_container
+            && matches!(
+                (parse_amount(low), parse_amount(&high)),
+                (Some(low), Some(high)) if high > low && high <= low * 4.0
+            );
         return if range {
             format!("{low}-{rest}")
         } else {
@@ -482,6 +490,34 @@ pub(super) fn close_one_sided_dash(s: &str) -> String {
     } else {
         format!("{low} {rest}")
     }
+}
+
+/// A package a sized amount can describe ("15 ounce can", "3-oz package").
+fn is_container_word(word: &str) -> bool {
+    let word = word.trim_end_matches(['.', ',', ')']).to_lowercase();
+    let singular = word
+        .strip_suffix("es")
+        .filter(|w| w.ends_with('x'))
+        .unwrap_or(word.strip_suffix('s').unwrap_or(&word));
+    [
+        "can",
+        "package",
+        "pkg",
+        "jar",
+        "box",
+        "bag",
+        "bottle",
+        "carton",
+        "container",
+        "tub",
+        "packet",
+        "envelope",
+        "block",
+        "tin",
+        "stick",
+        "loaf",
+    ]
+    .contains(&singular)
 }
 
 pub(super) fn is_amount_like(s: &str) -> bool {

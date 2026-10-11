@@ -2700,13 +2700,14 @@ mod tests {
             );
             assert_eq!(parsed.measurements[0].unit.as_deref(), Some(unit), "{raw}");
         }
-        // One 15-ounce can, not a range of 1 to 15 ounces.
-        assert_ne!(
-            parse_ingredient("1- 15 Ounce Can Tomato Sauce").measurements[0]
-                .amount
-                .as_deref(),
-            Some("1-15")
-        );
+        // One sized package, not a range.
+        for raw in [
+            "1- 15 Ounce Can Tomato Sauce",
+            "1- 3 ounce package cream cheese",
+        ] {
+            let amount = parse_ingredient(raw).measurements[0].amount.clone();
+            assert!(!amount.is_some_and(|a| a.contains('-')), "{raw}");
+        }
     }
 
     #[test]

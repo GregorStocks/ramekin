@@ -3,7 +3,7 @@ use std::sync::{Arc, LazyLock};
 
 use diesel::prelude::*;
 use futures::stream::{FuturesUnordered, StreamExt};
-use tokio::sync::Semaphore;
+use tokio::sync::{Semaphore, SemaphorePermit};
 use tracing::Instrument;
 use uuid::Uuid;
 
@@ -311,13 +311,24 @@ fn determine_final_outcome(
 const MAX_RUNNING_JOBS: usize = 8;
 static JOB_SLOTS: LazyLock<Semaphore> = LazyLock::new(|| Semaphore::new(MAX_RUNNING_JOBS));
 
+/// Wait for one of the `MAX_RUNNING_JOBS` slots; the job holds it until the
+/// returned permit drops.
+pub(super) async fn job_slot() -> SemaphorePermit<'static> {
+    JOB_SLOTS
+        .acquire()
+        .await
+        .expect("job semaphore is never closed")
+}
+
 /// Run the scrape job state machine.
 /// This processes the job through its states: pending -> scraping -> parsing -> completed
 pub async fn run_scrape_job(pool: Arc<DbPool>, job_id: Uuid) {
-    let _slot = JOB_SLOTS
-        .acquire()
-        .await
-        .expect("job semaphore is never closed");
+    let _slot = job_slot().await;
+    run_scrape_job_in_slot(pool, job_id).await;
+}
+
+/// `run_scrape_job` for a caller already holding a `job_slot`.
+pub(super) async fn run_scrape_job_in_slot(pool: Arc<DbPool>, job_id: Uuid) {
     let result = run_scrape_job_inner(pool.clone(), job_id).await;
     let current_span = tracing::Span::current();
 
