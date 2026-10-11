@@ -14,9 +14,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60553 | 306 | 53560/60247 (88.9%) | 49888/60247 (82.8%) | 1164/5408 (21.5%) | n/a (no servings) | 31804/37286 (85.3%) | 59827/60553 (98.8%) |
-| Paprika fixtures | 462 | 5379 | 22 | 5157/5357 (96.3%) | 4698/5357 (87.7%) | 157/462 (34.0%) | n/a (no servings) | 2545/2891 (88.0%) | 5347/5379 (99.4%) |
-| Pipeline snapshots | 445 | 5177 | 17 | 4990/5160 (96.7%) | 4604/5160 (89.2%) | 153/445 (34.4%) | 81/445 (18.2%) | 2520/2851 (88.4%) | 5165/5177 (99.8%) |
+| Pipeline fixtures | 5408 | 60553 | 306 | 53562/60247 (88.9%) | 49890/60247 (82.8%) | 1164/5408 (21.5%) | n/a (no servings) | 31793/37268 (85.3%) | 59827/60553 (98.8%) |
+| Paprika fixtures | 462 | 5379 | 22 | 5158/5357 (96.3%) | 4699/5357 (87.7%) | 157/462 (34.0%) | n/a (no servings) | 2544/2888 (88.1%) | 5347/5379 (99.4%) |
+| Pipeline snapshots | 445 | 5177 | 17 | 4991/5160 (96.7%) | 4605/5160 (89.2%) | 153/445 (34.4%) | 81/445 (18.2%) | 2519/2848 (88.4%) | 5165/5177 (99.8%) |
 
 ## Pipeline fixtures
 
@@ -28,7 +28,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Frying oil: only part of it is absorbed | 98 | 0.2% |
 | Missing density for this food | 1127 | 1.9% |
 | Missing quantity | 1874 | 3.1% |
-| No supported nutrition match | 6210 | 10.3% |
+| No supported nutrition match | 6208 | 10.3% |
 | Several ingredients share one amount | 55 | 0.1% |
 | Unsupported or missing quantity | 53 | 0.1% |
 | Unsupported quantity unit | 465 | 0.8% |
@@ -37,14 +37,14 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 1762 | 32.6% |
-| 1 | 1749 | 32.3% |
+| 0 | 1764 | 32.6% |
+| 1 | 1747 | 32.3% |
 | 2 | 1028 | 19.0% |
 | 3 | 505 | 9.3% |
 | 4-5 | 293 | 5.4% |
 | 6+ | 71 | 1.3% |
 
-Estimate status with at most 3 uncounted: Complete 32.4%, Insufficient 8.0%, Partial 59.7%
+Estimate status with at most 3 uncounted: Complete 32.4%, Insufficient 8.0%, Partial 59.6%
 
 Weights to estimate (distinct food and unit pairs the catalog can't weigh): 319
 
@@ -52,8 +52,8 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 319
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 7660 | `bb8a0f078c8b` |
-| Density | 2719 | `a6648b76c4cf` |
+| Nutrition (all failures) | 7658 | `e93d13fd2e30` |
+| Density | 2714 | `9e974fc7d180` |
 | Shopping category | 583 | `af31082b212f` |
 
 ## Paprika fixtures
@@ -66,7 +66,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 319
 | Frying oil: only part of it is absorbed | 17 | 0.3% |
 | Missing density for this food | 98 | 1.8% |
 | Missing quantity | 271 | 5.0% |
-| No supported nutrition match | 120 | 2.2% |
+| No supported nutrition match | 119 | 2.2% |
 | Several ingredients share one amount | 6 | 0.1% |
 | Unsupported or missing quantity | 7 | 0.1% |
 | Unsupported quantity unit | 60 | 1.1% |
@@ -75,14 +75,14 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 319
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 269 | 58.2% |
-| 1 | 125 | 27.1% |
+| 0 | 270 | 58.4% |
+| 1 | 124 | 26.8% |
 | 2 | 49 | 10.6% |
 | 3 | 16 | 3.5% |
 | 4-5 | 3 | 0.6% |
 | 6+ | 0 | 0.0% |
 
-Estimate status with at most 3 uncounted: Complete 58.0%, Insufficient 0.9%, Partial 41.1%
+Estimate status with at most 3 uncounted: Complete 58.2%, Insufficient 0.9%, Partial 40.9%
 
 Weights to estimate (distinct food and unit pairs the catalog can't weigh): 73
 
@@ -90,8 +90,8 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 73
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 548 | `79d85dff71f9` |
-| Density | 194 | `279b74ce79ea` |
+| Nutrition (all failures) | 547 | `f4729331bc67` |
+| Density | 193 | `2d81f0ce585c` |
 | Shopping category | 30 | `a4d992035336` |
 
 ## Pipeline snapshots
@@ -104,7 +104,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 73
 | Frying oil: only part of it is absorbed | 16 | 0.3% |
 | Missing density for this food | 96 | 1.9% |
 | Missing quantity | 204 | 3.9% |
-| No supported nutrition match | 107 | 2.1% |
+| No supported nutrition match | 106 | 2.0% |
 | Several ingredients share one amount | 8 | 0.2% |
 | Unsupported or missing quantity | 5 | 0.1% |
 | Unsupported quantity unit | 57 | 1.1% |
@@ -113,14 +113,14 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 73
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 246 | 55.3% |
-| 1 | 132 | 29.7% |
+| 0 | 247 | 55.5% |
+| 1 | 131 | 29.4% |
 | 2 | 50 | 11.2% |
 | 3 | 13 | 2.9% |
 | 4-5 | 4 | 0.9% |
 | 6+ | 0 | 0.0% |
 
-Estimate status with at most 3 uncounted: Complete 55.1%, Insufficient 1.3%, Partial 43.6%
+Estimate status with at most 3 uncounted: Complete 55.3%, Insufficient 1.3%, Partial 43.4%
 
 Weights to estimate (distinct food and unit pairs the catalog can't weigh): 72
 
@@ -128,8 +128,8 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 72
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 472 | `6765e65343a3` |
-| Density | 189 | `3a0da603576d` |
+| Nutrition (all failures) | 471 | `d4e63166f22c` |
+| Density | 188 | `1fb5673ec0d4` |
 | Shopping category | 12 | `cdc3abdf23c6` |
 
 ## Shopping-list corpus

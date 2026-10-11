@@ -51,6 +51,15 @@ pub(super) fn parse_citrus_part_line(raw: &str) -> Option<Vec<ParsedIngredient>>
     citrus.ingredients(raw)
 }
 
+/// The part a "<part> of <count> <citrus>" name ("juice of half a lemon")
+/// names, as the catalog spells it ("lemon juice"), or None for any other
+/// name, including one naming both parts or followed by more words.
+pub(crate) fn citrus_part_name(name: &str) -> Option<String> {
+    let citrus = parse_part_of(name.trim())?;
+    (citrus.trailer.is_empty() && !citrus.parts.contains(' '))
+        .then(|| format!("{} {}", citrus.fruit, citrus.parts))
+}
+
 /// A citrus line taken apart: "<prep> <parts> of <amount> <unit><trailer>".
 struct CitrusLine {
     amount: String,
@@ -754,6 +763,20 @@ mod tests {
             "3 medium clementines (zested and fruit inside blended)",
         ] {
             assert_eq!(parse_citrus_part_line(line), None, "{line}");
+        }
+    }
+
+    #[test]
+    fn citrus_part_names() {
+        for (name, part) in [
+            ("juice of half a lemon", Some("lemon juice")),
+            ("zest of 2 limes", Some("lime zest")),
+            ("finely grated zest of an orange", Some("orange zest")),
+            ("zest and juice of 1 lemon", None),
+            ("juice of 1 lemon, plus more", None),
+            ("lemon juice", None),
+        ] {
+            assert_eq!(citrus_part_name(name).as_deref(), part, "{name}");
         }
     }
 }

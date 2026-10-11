@@ -19,6 +19,7 @@ mod units;
 
 pub(crate) use amounts::normalize_fraction_to_decimal;
 use amounts::*;
+pub(crate) use citrus::citrus_part_name;
 use citrus::parse_citrus_part_line;
 use item::*;
 use parentheticals::*;
