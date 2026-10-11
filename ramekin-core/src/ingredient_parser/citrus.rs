@@ -250,9 +250,11 @@ fn part_ingredient(
     let trailer = without_restated_item(trailer, item);
     // "Juice of 1 orange or 1/2 cup orange juice": an "or" volume is the
     // author's measure too.
-    let or_volume = trailer
-        .trim()
-        .strip_prefix("or ")
+    let trimmed_trailer = trailer.trim();
+    let or_volume = trimmed_trailer
+        .get(..3)
+        .filter(|or| or.eq_ignore_ascii_case("or "))
+        .and_then(|_| trimmed_trailer.get(3..))
         .and_then(try_parse_parenthetical_measurement)
         .filter(|volume| !volume.unit.as_deref().is_some_and(is_size_unit));
     if let Some(volume) = or_volume {
@@ -585,6 +587,12 @@ mod tests {
             ),
             (
                 "juice of 1 orange or 1/2 cup orange juice",
+                "1/2",
+                "cup",
+                measurement("1", "orange"),
+            ),
+            (
+                "Juice of 1 orange OR 1/2 cup orange juice",
                 "1/2",
                 "cup",
                 measurement("1", "orange"),
