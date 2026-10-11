@@ -1019,6 +1019,67 @@ fn bare_cans_use_standard_sizes() {
 }
 
 #[test]
+fn per_item_weights_multiply_the_count() {
+    let line = |item: &str, measurements: &[(&str, &str)]| ParsedIngredient {
+        measurements: measurements
+            .iter()
+            .map(|(amount, unit)| Measurement {
+                amount: Some((*amount).into()),
+                unit: Some((*unit).into()),
+            })
+            .collect(),
+        ..ingredient(item, "", "")
+    };
+    let calories = |line: ParsedIngredient| {
+        estimate(&[line], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| (range.min, range.max))
+    };
+    let grams = |item: &str, grams: f64| {
+        calories(ingredient(item, &grams.to_string(), "g"))
+            .unwrap()
+            .0
+    };
+    let oz = 28.349523125;
+    // "2 (8 oz each) packages cream cheese": two packages of 8 oz.
+    let (min, max) = calories(line("cream cheese", &[("2", "package"), ("8", "oz each")])).unwrap();
+    assert!((min - grams("cream cheese", 16.0 * oz)).abs() < 1e-9);
+    assert_eq!(min, max);
+    // A bare count works too, and a ranged count gives a range.
+    let (min, max) = calories(line("chicken breast", &[("2-3", ""), ("200", "g each")])).unwrap();
+    assert!((min - grams("chicken breast", 400.0)).abs() < 1e-9);
+    assert!((max - grams("chicken breast", 600.0)).abs() < 1e-9);
+    // A stated weight beats the standard can size.
+    let (min, _) = calories(line("black beans", &[("2", "can"), ("10", "oz each")])).unwrap();
+    assert!((min - grams("black beans", 20.0 * oz)).abs() < 1e-9);
+    // A per-item amount on the primary is the whole amount.
+    let (min, _) = calories(ingredient("granulated sugar", "2", "tbsp each")).unwrap();
+    assert_eq!(
+        min,
+        calories(ingredient("granulated sugar", "2", "tbsp"))
+            .unwrap()
+            .0
+    );
+    // A primary that is already a weight or volume counts nothing, so the
+    // primary wins and the per-item weight is not used on its own.
+    let (min, _) = calories(line("granulated sugar", &[("1", "cup"), ("50", "g each")])).unwrap();
+    assert_eq!(
+        min,
+        calories(ingredient("granulated sugar", "1", "cup"))
+            .unwrap()
+            .0
+    );
+    assert_eq!(
+        calories(line(
+            "cream cheese",
+            &[("a few", "package"), ("8", "oz each")]
+        )),
+        None
+    );
+}
+
+#[test]
 fn alternatives_count_the_first_and_say_so() {
     let line = |item: &str| {
         let result = estimate(&[ingredient(item, "100", "g")], None, 1.0).unwrap();

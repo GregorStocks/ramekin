@@ -1,0 +1,16 @@
+{
+  "title": "Flaky: test_estimate_ranges_partial_unknown_and_empty compares resolving across two calls",
+  "description": "tests/test_calorie_estimates.py::test_estimate_ranges_partial_unknown_and_empty asserts that a second identical estimate request returns exactly the first result. \
+The first request queues \"unknowable yogurt\" for the background name worker, so `resolving` can be true on one call and false on the other depending on when the mock model answers. \
+Seen 2026-10-10 under `make test`: `{'resolving': True} != {'resolving': False}`; the rerun passed. \
+Fix: wait for the name to resolve (as other tests do) before the equality check, or compare the result without `resolving`.",
+  "status": "open",
+  "priority": 2,
+  "type": "bug",
+  "labels": [
+    "api",
+    "flaky-test",
+  ],
+  "created_at": "2026-10-10T21:10:00-07:00",
+  "updated_at": "2026-10-10T21:10:00-07:00",
+}
