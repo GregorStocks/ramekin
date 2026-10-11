@@ -294,7 +294,7 @@ fn is_standalone_parenthetical_package_fragment(s: &str) -> bool {
         return false;
     }
 
-    !parse_parenthetical_measurement_details(content)
+    !parse_parenthetical_measurement_details(content, "")
         .measurements
         .is_empty()
         || is_bare_parenthetical_package_size(content)
@@ -607,9 +607,9 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             continue;
         }
 
+        let outside_text = join_segments(before_parenthetical, after_parenthetical);
         if let Some((item_segment, note_segment)) = split_parenthetical_item_identity(paren_content)
         {
-            let outside_text = join_segments(before_parenthetical, after_parenthetical);
             if outside_lacks_item_identity(&outside_text) {
                 if let Some(note_segment) = note_segment {
                     push_deferred_parenthetical_note(
@@ -637,7 +637,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             .chars()
             .next()
             .is_some_and(|c| c.is_ascii_digit());
-        let skip_prep_note = has_nested_parens && starts_with_digit;
+        // "(about 1 cup fresh cilantro)" is a measurement restating the item,
+        // even though "fresh" reads as prep.
+        let skip_prep_note = (has_nested_parens && starts_with_digit)
+            || try_parse_measurement_before_filler(paren_content, &outside_text).is_some();
         if is_prep_note(paren_content) && !skip_prep_note {
             // Strip leading comma (e.g., from raw like "tomato (, sliced)")
             let trimmed_content = paren_content
@@ -659,7 +662,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
         // Try to parse the parenthetical content as one or more measurements
         // Split by semicolons or commas to handle "8 ounces; 227 g each"
-        let parsed_measurements = parse_parenthetical_measurement_details(paren_content);
+        let parsed_measurements =
+            parse_parenthetical_measurement_details(paren_content, &outside_text);
 
         if !parsed_measurements.measurements.is_empty() {
             alt_measurements.extend(parsed_measurements.measurements);
