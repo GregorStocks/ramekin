@@ -6,7 +6,7 @@ import uuid
 import psycopg
 
 from conftest import make_ingredient
-from ramekin_client.api import RecipesApi
+from ramekin_client.api import IngredientNamesApi, RecipesApi
 from ramekin_client.models import (
     EstimateCaloriesRequest,
     Ingredient,
@@ -68,14 +68,18 @@ def test_learned_names_get_grams_but_estimates_do_not(authed_api_client):
     ]
     recipe_id = create(recipes, ingredients)
 
-    def resolved():
-        lines = recipes.estimate_calories(
+    # Wait for the worker to finish with both names. A provider hiccup under
+    # load (another test's 503s) can fail the batch they were in, and failed
+    # names stay failed until retried, so retry them as a user would.
+    deadline = time.monotonic() + 30
+    while True:
+        estimate = recipes.estimate_calories(
             EstimateCaloriesRequest(ingredients=ingredients, scale=1)
-        ).lines
-        return all(line.text != "Not recognized" for line in lines)
-
-    deadline = time.monotonic() + 20
-    while not resolved():
+        )
+        if not estimate.resolving:
+            if all(line.text != "Not recognized" for line in estimate.lines):
+                break
+            IngredientNamesApi(client).retry_ingredient_names()
         assert time.monotonic() < deadline, "names were never resolved"
         time.sleep(0.2)
 
