@@ -425,7 +425,10 @@ fn dissimilar_alternatives_and_bare_herbs() {
         // fruit.
         ("amchur powder or juice of half a lemon", "lemon juice"),
         ("amchur powder or juice of 1 key lime", "key lime juice"),
-        ("amchur powder or substitute: juice of half a lemon***", "lemon juice"),
+        (
+            "amchur powder or substitute: juice of half a lemon***",
+            "lemon juice",
+        ),
     ] {
         assert!(
             matches!(
