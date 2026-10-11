@@ -2742,6 +2742,12 @@ mod tests {
             );
             assert_eq!(parsed.measurements[0].unit.as_deref(), Some(unit), "{raw}");
         }
+        assert_eq!(
+            parse_ingredient("1- 2 large cans tomatoes").measurements[0]
+                .amount
+                .as_deref(),
+            Some("1-2")
+        );
         // One sized package, not a range.
         for raw in [
             "1- 15 Ounce Can Tomato Sauce",
