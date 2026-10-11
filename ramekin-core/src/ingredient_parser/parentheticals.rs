@@ -70,6 +70,61 @@ pub(super) fn parse_parenthetical_measurement_details(
     }
 }
 
+/// Measurements among the parts of a prep-note parenthetical. The other
+/// parts are prep words rather than options, so a lone measurement part can
+/// restate the item: "(finely diced, about 3 stalks celery)" on a celery line.
+/// Two amounts ("(1/2 pound fresh cranberry beans, 1/2 pound fresh lima
+/// beans)") are options again, so neither restates it.
+///
+/// Amounts in separate parts may split the whole ("(divided, 3/4 cup, 2
+/// tbsp)", "(reserved, 1 cup, 2 tbsp)") rather than restate it, and the text
+/// can't tell those from equivalents ("(2 sticks, 8 ounces, softened)"), so
+/// none of them are read. Equivalents in one part ("(2 sticks/8 ounces,
+/// softened)") and a per-item size beside a count ("(2 cans, drained, 15
+/// ounces each)") are still read.
+pub(super) fn prep_note_parenthetical_measurements(
+    content: &str,
+    outside_text: &str,
+) -> Vec<Measurement> {
+    let parts_with_amount: Vec<&str> = content
+        .split([';', ','])
+        .filter(|part| {
+            part.chars()
+                .any(|c| c.is_ascii_digit() || unicode_fraction_ascii(c).is_some())
+        })
+        .collect();
+    // Each part on its own, so "each" in "(2 cans, drained, 15 ounces each)"
+    // stays with its part.
+    let part_measurements: Vec<Vec<Measurement>> = parts_with_amount
+        .iter()
+        .map(|part| parse_parenthetical_measurement_details(part, "").measurements)
+        .collect();
+    let parts_measuring_whole = part_measurements
+        .iter()
+        .filter(|measurements| {
+            measurements.iter().any(|m| {
+                !m.unit
+                    .as_deref()
+                    .is_some_and(|unit| unit.ends_with(" each"))
+            })
+        })
+        .count();
+    if parts_measuring_whole > 1 {
+        return Vec::new();
+    }
+    let measurements: Vec<Measurement> = part_measurements.into_iter().flatten().collect();
+    if !measurements.is_empty() {
+        return measurements;
+    }
+    match parts_with_amount.as_slice() {
+        [part] => try_parse_measurement_before_filler(part, outside_text)
+            .map(|(measurement, _)| measurement)
+            .into_iter()
+            .collect(),
+        _ => Vec::new(),
+    }
+}
+
 pub(super) fn parenthetical_measurement_has_note_qualifier(content: &str) -> bool {
     let normalized = content.trim_start().to_lowercase();
     normalized.starts_with('@')
@@ -877,6 +932,108 @@ mod tests {
         let parsed = parse_ingredient("3 large peaches (3 cups worth of slices)");
         assert_eq!(parsed.measurements.last(), Some(&measurement("3", "cup")));
         assert_eq!(parsed.note.as_deref(), Some("3 cups worth of slices"));
+    }
+
+    #[test]
+    fn test_measurement_inside_prep_note_parenthetical() {
+        let measurement = |amount: &str, unit: &str| Measurement {
+            amount: Some(amount.to_string()),
+            unit: Some(unit.to_string()),
+        };
+        let count = |amount: &str| Measurement {
+            amount: Some(amount.to_string()),
+            unit: None,
+        };
+        for (line, measurements, note) in [
+            (
+                "2 green onions (sliced very thin, about 1/4 cup worth)",
+                vec![count("2"), measurement("1/4", "cup")],
+                "sliced very thin, about 1/4 cup worth",
+            ),
+            (
+                "8 crimini mushrooms (sliced very thin, about 2 cups worth)",
+                vec![count("8"), measurement("2", "cup")],
+                "sliced very thin, about 2 cups worth",
+            ),
+            (
+                "2 tomatoes (halved, 2 oz each)",
+                vec![count("2"), measurement("2", "oz each")],
+                "halved, 2 oz each",
+            ),
+            (
+                "1 cup celery (finely diced, about 3 stalks celery)",
+                vec![measurement("1", "cup"), measurement("3", "stalk")],
+                "finely diced, about 3 stalks celery",
+            ),
+            (
+                "1 pound shell beans (I used 1/2 pound fresh cranberry beans, 1/2 pound fresh lima beans)",
+                vec![measurement("1", "lb")],
+                "I used 1/2 pound fresh cranberry beans, 1/2 pound fresh lima beans",
+            ),
+            (
+                "1 cup sugar (divided, 3/4 cup, 2 tbsp)",
+                vec![measurement("1", "cup")],
+                "divided, 3/4 cup, 2 tbsp",
+            ),
+            (
+                "4 3/4 cups flour (620g, divided)",
+                vec![measurement("4 3/4", "cup"), measurement("620", "g")],
+                "620g, divided",
+            ),
+            (
+                "1 cup butter (2 sticks/8 ounces/227 g, softened and divided)",
+                vec![
+                    measurement("1", "cup"),
+                    measurement("2", "stick"),
+                    measurement("8", "oz"),
+                    measurement("227", "g"),
+                ],
+                "2 sticks/8 ounces/227 g, softened and divided",
+            ),
+            (
+                "30 ounces tomatoes (2 cans, drained, 15 ounces each)",
+                vec![
+                    measurement("30", "oz"),
+                    measurement("2", "can"),
+                    measurement("15", "oz each"),
+                ],
+                "2 cans, drained, 15 ounces each",
+            ),
+            (
+                "1 cup sugar (reserved, 3/4 cup, 2 tbsp)",
+                vec![measurement("1", "cup")],
+                "reserved, 3/4 cup, 2 tbsp",
+            ),
+            (
+                "1 cup sugar (divided, 3/4 cup, 1/4 cup)",
+                vec![measurement("1", "cup")],
+                "divided, 3/4 cup, 1/4 cup",
+            ),
+            (
+                "2 cups cheese (shredded, 1 cup for the filling; 1 cup for the top)",
+                vec![measurement("2", "cup")],
+                "shredded, 1 cup for the filling; 1 cup for the top",
+            ),
+            (
+                "2 cups cheese (shredded, 1 cup, 1 cup)",
+                vec![measurement("2", "cup")],
+                "shredded, 1 cup, 1 cup",
+            ),
+            (
+                "1 cup rice (180 g uncooked)",
+                vec![measurement("1", "cup")],
+                "180 g uncooked",
+            ),
+            (
+                "2 potatoes (cut into 1-inch cubes, peeled)",
+                vec![count("2")],
+                "cut into 1-inch cubes, peeled",
+            ),
+        ] {
+            let parsed = parse_ingredient(line);
+            assert_eq!(parsed.measurements, measurements, "{line}");
+            assert_eq!(parsed.note.as_deref(), Some(note), "{line}");
+        }
     }
 
     #[test]
