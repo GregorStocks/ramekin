@@ -38,7 +38,6 @@ export function CalorieEstimateResponseFromJSONTyped(json, ignoreDiscriminator) 
         return json;
     }
     return {
-        'databaseVersion': json['database_version'] == null ? undefined : json['database_version'],
         'headline': json['headline'],
         'knownCalories': json['known_calories'] == null ? undefined : CalorieRangeFromJSON(json['known_calories']),
         'lines': (json['lines'].map(CalorieLineFromJSON)),
@@ -57,7 +56,6 @@ export function CalorieEstimateResponseToJSONTyped(value, ignoreDiscriminator = 
         return value;
     }
     return {
-        'database_version': value['databaseVersion'],
         'headline': value['headline'],
         'known_calories': CalorieRangeToJSON(value['knownCalories']),
         'lines': (value['lines'].map(CalorieLineToJSON)),

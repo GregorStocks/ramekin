@@ -19,14 +19,6 @@ import type { CalorieRange } from './CalorieRange';
  */
 export interface CalorieEstimateResponse {
     /**
-     * Unused; always the same value. Sent only because iOS builds before
-     * 2026-10-11 require it (see blocked-remove-calorie-database-version).
-     * @type {string}
-     * @memberof CalorieEstimateResponse
-     * @deprecated
-     */
-    databaseVersion?: string | null;
-    /**
      * The main line: "~520 kcal per serving", "At least ~3,100 kcal for the
      * whole recipe", or "Not enough ingredient data to estimate calories".
      * @type {string}

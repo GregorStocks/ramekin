@@ -29,7 +29,6 @@ class CalorieEstimateResponse(BaseModel):
     """
     Every display string is final; clients render them as-is.
     """ # noqa: E501
-    database_version: Optional[StrictStr] = Field(default=None, description="Unused; always the same value. Sent only because iOS builds before 2026-10-11 require it (see blocked-remove-calorie-database-version).")
     headline: StrictStr = Field(description="The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the whole recipe\", or \"Not enough ingredient data to estimate calories\".")
     known_calories: Optional[CalorieRange] = Field(default=None, description="Null when nothing was counted. A lower bound when status is partial.")
     lines: List[CalorieLine] = Field(description="The breakdown, one entry per ingredient in order.")
@@ -38,7 +37,7 @@ class CalorieEstimateResponse(BaseModel):
     resolving: StrictBool = Field(description="Some ingredient names are still being recognized, or weights estimated, in the background; ask again shortly for an estimate that includes them.")
     secondary: Optional[StrictStr] = Field(default=None, description="Shown under the headline when present.")
     status: CalorieStatus
-    __properties: ClassVar[List[str]] = ["database_version", "headline", "known_calories", "lines", "not_counted", "per_serving_calories", "resolving", "secondary", "status"]
+    __properties: ClassVar[List[str]] = ["headline", "known_calories", "lines", "not_counted", "per_serving_calories", "resolving", "secondary", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,11 +91,6 @@ class CalorieEstimateResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of per_serving_calories
         if self.per_serving_calories:
             _dict['per_serving_calories'] = self.per_serving_calories.to_dict()
-        # set to None if database_version (nullable) is None
-        # and model_fields_set contains the field
-        if self.database_version is None and "database_version" in self.model_fields_set:
-            _dict['database_version'] = None
-
         # set to None if known_calories (nullable) is None
         # and model_fields_set contains the field
         if self.known_calories is None and "known_calories" in self.model_fields_set:
@@ -124,7 +118,6 @@ class CalorieEstimateResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "database_version": obj.get("database_version"),
             "headline": obj.get("headline"),
             "known_calories": CalorieRange.from_dict(obj["known_calories"]) if obj.get("known_calories") is not None else None,
             "lines": [CalorieLine.from_dict(_item) for _item in obj["lines"]] if obj.get("lines") is not None else None,

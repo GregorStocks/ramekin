@@ -35,7 +35,6 @@ class TestCalorieEstimateResponse(unittest.TestCase):
         model = CalorieEstimateResponse()
         if include_optional:
             return CalorieEstimateResponse(
-                database_version = '',
                 headline = '',
                 known_calories = ramekin_client.models.calorie_range.CalorieRange(
                     max = 1.337, 

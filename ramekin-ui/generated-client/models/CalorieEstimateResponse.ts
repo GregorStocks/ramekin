@@ -42,14 +42,6 @@ import {
  */
 export interface CalorieEstimateResponse {
     /**
-     * Unused; always the same value. Sent only because iOS builds before
-     * 2026-10-11 require it (see blocked-remove-calorie-database-version).
-     * @type {string}
-     * @memberof CalorieEstimateResponse
-     * @deprecated
-     */
-    databaseVersion?: string | null;
-    /**
      * The main line: "~520 kcal per serving", "At least ~3,100 kcal for the
      * whole recipe", or "Not enough ingredient data to estimate calories".
      * @type {string}
@@ -128,7 +120,6 @@ export function CalorieEstimateResponseFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'databaseVersion': json['database_version'] == null ? undefined : json['database_version'],
         'headline': json['headline'],
         'knownCalories': json['known_calories'] == null ? undefined : CalorieRangeFromJSON(json['known_calories']),
         'lines': ((json['lines'] as Array<any>).map(CalorieLineFromJSON)),
@@ -151,7 +142,6 @@ export function CalorieEstimateResponseToJSONTyped(value?: CalorieEstimateRespon
 
     return {
         
-        'database_version': value['databaseVersion'],
         'headline': value['headline'],
         'known_calories': CalorieRangeToJSON(value['knownCalories']),
         'lines': ((value['lines'] as Array<any>).map(CalorieLineToJSON)),
