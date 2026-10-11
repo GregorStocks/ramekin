@@ -1,0 +1,16 @@
+{
+  "title": "Sync cursors silently stop syncing after a database dump/restore",
+  "description": "Recipe and shopping-list sync cursors are raw Postgres transaction ids (pg_current_xact_id(), migrations 2026-07-12 sync_change_xid and 2026-10-11 shopping_list_change_xid; server/src/api/shopping_list/sync.rs, server/src/api/recipes/sync.rs). \
+A logical dump/restore or a move to a new cluster restarts the xid counter low, so clients keep cursors above every new change_xid and never receive new changes, with no error. \
+Fix: in both sync handlers, treat a cursor above pg_snapshot_xmax(pg_current_snapshot()) as invalid and do a full resync, with an e2e test that sends an impossibly high cursor. \
+This may be subsumed by blocked-one-sync-mechanism; fix it there if that lands first.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "api",
+    "sync",
+  ],
+  "created_at": "2026-10-11T08:00:00-07:00",
+  "updated_at": "2026-10-11T08:00:00-07:00",
+}
