@@ -534,9 +534,12 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
     // We already rejected anything that parses with both amount + unit above,
     // so by here the line has no obvious ingredient shape. Treat short,
     // digit-free, few-word phrases as section headers (e.g. "Dough:",
-    // "Asparagus pesto:", "Chicken and noodle salad:").
-    let word_count = name.split_whitespace().count();
-    if name.len() <= 50 && word_count <= 5 && !name.chars().any(|c| c.is_ascii_digit()) {
+    // "Asparagus pesto:", "Chicken and noodle salad:"). A leading "Word #N:"
+    // label is checked on what follows it ("Version #1: Garden Vegetable:").
+    let short_part = strip_number_label(name).unwrap_or(name);
+    let word_count = short_part.split_whitespace().count();
+    if short_part.len() <= 50 && word_count <= 5 && !short_part.chars().any(|c| c.is_ascii_digit())
+    {
         return Some(normalize_section_name(name));
     }
 
@@ -557,4 +560,20 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
     }
 
     None
+}
+
+/// Strip a leading "Word #N:" label ("Variation #2: Roasted Red Pepper"),
+/// returning the rest if it isn't empty.
+fn strip_number_label(name: &str) -> Option<&str> {
+    let (label, rest) = name.split_once(':')?;
+    let mut words = label.split_whitespace();
+    let (_, number, None) = (words.next()?, words.next()?, words.next()) else {
+        return None;
+    };
+    let digits = number.strip_prefix('#')?;
+    if digits.is_empty() || !digits.chars().all(|c| c.is_ascii_digit()) {
+        return None;
+    }
+    let rest = rest.trim();
+    (!rest.is_empty()).then_some(rest)
 }
