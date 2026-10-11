@@ -758,6 +758,12 @@ async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<
     let provider_wide = !error.is_answer_specific();
     let error = error.to_string();
     save_failed(pool, names, error.clone(), provider_wide).await?;
+    if provider_wide {
+        // The names stay pending. A scrape job resolving its own names
+        // directly may have hit this while the worker was idle, so wake it to
+        // retry them with its backoff.
+        wake();
+    }
     Ok(if provider_wide {
         Batch::ProviderFailed(error)
     } else {

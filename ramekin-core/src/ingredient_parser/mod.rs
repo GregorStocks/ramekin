@@ -2676,6 +2676,14 @@ mod tests {
                 "warm water",
             ),
             ("1- pound ground beef", "1", "lb", "ground beef"),
+            ("2- cups flour", "2", "cup", "flour"),
+            ("3- cloves garlic", "3", "clove", "garlic"),
+            (
+                "1- inch knob fresh ginger",
+                "1",
+                "1-inch knob",
+                "fresh ginger",
+            ),
             (
                 "12- ounces frozen orange juice concentrate",
                 "12",

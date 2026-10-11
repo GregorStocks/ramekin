@@ -435,8 +435,9 @@ pub(super) fn split_leading_attached_unit_token(s: &str) -> Option<(&str, &str)>
 
 /// Check if a string looks like an amount (number, fraction, decimal)
 /// Close up a dash typed with a space on one side only after a leading
-/// amount: "2 -3 tsp" and "4- 5 cups" are ranges ("2-3", "4-5"), and
-/// "1- pound" is "1-pound". The high end of a range must be above the low end
+/// amount: "2 -3 tsp" and "4- 5 cups" are ranges ("2-3", "4-5"), "1- inch
+/// knob" is the size "1-inch knob", and in "2- cups" or "1- pound" the dash is
+/// just spacing ("2 cups"). The high end of a range must be above the low end
 /// and at most four times it, so "1- 15 ounce can" (one 15-ounce can) is left
 /// alone, as is "2- to 3-inch".
 pub(super) fn close_one_sided_dash(s: &str) -> String {
@@ -456,23 +457,30 @@ pub(super) fn close_one_sided_dash(s: &str) -> String {
         return s.to_string();
     }
     let words: Vec<&str> = rest.split_whitespace().collect();
-    let joins = if rest.starts_with(|c: char| c.is_ascii_digit()) {
+    if rest.starts_with(|c: char| c.is_ascii_digit()) {
         let high = match words.get(1) {
             Some(fraction) if is_fraction(fraction) => format!("{} {}", words[0], fraction),
             _ => words[0].to_string(),
         };
-        matches!(
+        let range = matches!(
             (parse_amount(low), parse_amount(&high)),
             (Some(low), Some(high)) if high > low && high <= low * 4.0
-        )
-    } else {
-        rest.starts_with(|c: char| c.is_alphabetic())
-            && !["to", "or", "and"].contains(&words[0].to_lowercase().as_str())
-    };
-    if joins {
+        );
+        return if range {
+            format!("{low}-{rest}")
+        } else {
+            s.to_string()
+        };
+    }
+    let word = words[0].to_lowercase();
+    if !rest.starts_with(|c: char| c.is_alphabetic())
+        || ["to", "or", "and"].contains(&word.as_str())
+    {
+        s.to_string()
+    } else if word.starts_with("inch") {
         format!("{low}-{rest}")
     } else {
-        s.to_string()
+        format!("{low} {rest}")
     }
 }
 
