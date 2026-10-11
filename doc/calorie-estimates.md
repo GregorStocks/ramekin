@@ -69,6 +69,12 @@ fluid-ounce portions (zero-amount rows excluded). An entry without a density pro
   catalog's bespoke data ("1 can black beans" is 15 oz, "1 can diced tomatoes"
   14.5 oz); a food with no standard size (crushed tomatoes, sold in 14.5- and
   28-ounce cans) stays unknown.
+- A per-item weight next to a count ("2 cans, 10 oz each", "2 steaks, 200 g
+  each", measurements "2 can" and "10 oz each") weighs the count times it, and
+  like a noted weight beats a standard package size. "Each" on the only or
+  first measurement ("2 cans each artichoke hearts") is the plain unit; a
+  primary that is already a weight or volume ("1 cup", "50 g each") keeps the
+  primary.
 - Counts use USDA per-piece weights (catalog README, "Piece rules"): "3 eggs"
   (large, 50 g each), "2 cloves garlic" (3 g), "1 medium onion" (110 g), "1
   stalk celery" (40 g), "1 1/2 sticks butter" (113 g each). A count the food

@@ -522,6 +522,55 @@ fn canonical_unit(normalized: &str) -> String {
     .to_string()
 }
 
+/// Grams in one of a mass unit in canonical spelling.
+fn mass_grams(unit: &str) -> Option<f64> {
+    match unit {
+        "gram" | "grams" | "g" => Some(1.0),
+        "kilogram" | "kilograms" | "kg" => Some(1000.0),
+        "milligram" | "milligrams" | "mg" => Some(0.001),
+        "ounce" | "ounces" | "oz" => Some(28.349523125),
+        "pound" | "pounds" | "lb" | "lbs" => Some(453.59237),
+        _ => None,
+    }
+}
+
+/// A unit that counts items rather than weighing or measuring them: none at
+/// all, or anything that isn't a mass, a volume, or a package stating its
+/// weight ("2 cans", "3 steaks").
+fn is_count_unit(unit: &str) -> bool {
+    let normalized = normalize(unit);
+    let unit = canonical_unit(&normalized);
+    normalized.is_empty()
+        || (mass_grams(&unit).is_none()
+            && catalog::volume_to_cups(1.0, &unit).is_none()
+            && package_grams(&normalized).is_none())
+}
+
+/// "2 cans, 10 oz each" or "2 steaks, 4 oz each": an alternative giving the
+/// weight of one of the primary measurement's items, so the line weighs the
+/// count times it. A stated weight beats a package's standard size, as a
+/// noted package weight does.
+fn per_item_grams(ingredient: &ParsedIngredient, food: &Food) -> Option<CalorieRange> {
+    let (primary, alternatives) = ingredient.measurements.split_first()?;
+    if !primary.unit.as_deref().is_none_or(is_count_unit) {
+        return None;
+    }
+    let count = quantity(&normalize(primary.amount.as_deref()?))?;
+    alternatives.iter().find_map(|measurement| {
+        let unit = normalize(measurement.unit.as_deref()?);
+        let each = measurement_grams(
+            measurement.amount.as_deref()?,
+            Some(unit.strip_suffix(" each")?),
+            food,
+        )
+        .ok()?;
+        Some(CalorieRange {
+            min: count.min * each.min,
+            max: count.max * each.max,
+        })
+    })
+}
+
 fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str> {
     let normalized = normalize(unit);
     if normalized.is_empty() {
@@ -537,13 +586,8 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str>
         return Ok(grams);
     }
     let unit = canonical_unit(&normalized);
-    match unit.as_str() {
-        "gram" | "grams" | "g" => return Ok(exact(1.0)),
-        "kilogram" | "kilograms" | "kg" => return Ok(exact(1000.0)),
-        "milligram" | "milligrams" | "mg" => return Ok(exact(0.001)),
-        "ounce" | "ounces" | "oz" => return Ok(exact(28.349523125)),
-        "pound" | "pounds" | "lb" | "lbs" => return Ok(exact(453.59237)),
-        _ => {}
+    if let Some(grams) = mass_grams(&unit) {
+        return Ok(exact(grams));
     }
     let unit = unit.as_str();
     let Some(cups) = catalog::volume_to_cups(1.0, unit) else {
@@ -765,14 +809,32 @@ fn catalog_calories(
     ingredient: &ParsedIngredient,
     food: &Food,
 ) -> Result<CalorieRange, &'static str> {
+    let calories = |grams: CalorieRange| {
+        let factor = food.kcal_per_100g / 100.0;
+        CalorieRange {
+            min: grams.min * factor,
+            max: grams.max * factor,
+        }
+    };
+    if let Some(grams) = per_item_grams(ingredient, food) {
+        return Ok(calories(grams));
+    }
     let mut reason = "Missing quantity";
     // Measurements are alternatives, not additive. Prefer the primary whenever
     // supported, then the first supported alternative, so rounded gram enrichments
     // do not replace precise primary amounts.
-    for Measurement { amount, unit } in &ingredient.measurements {
+    for (index, Measurement { amount, unit }) in ingredient.measurements.iter().enumerate() {
         let Some(amount) = amount.as_deref() else {
             reason = "Unsupported or missing quantity";
             continue;
+        };
+        let unit = unit.as_deref().map(normalize);
+        // A per-item amount is the whole amount only on the primary ("2 cans
+        // each artichoke hearts"); as an alternative it is one of the count.
+        let unit = match unit.as_deref().map(|unit| unit.strip_suffix(" each")) {
+            Some(Some(_)) if index > 0 => continue,
+            Some(Some(stripped)) => Some(stripped.to_string()),
+            _ => unit,
         };
         let noted = unit
             .as_deref()
@@ -784,11 +846,7 @@ fn catalog_calories(
                 continue;
             }
         };
-        let factor = food.kcal_per_100g / 100.0;
-        return Ok(CalorieRange {
-            min: grams.min * factor,
-            max: grams.max * factor,
-        });
+        return Ok(calories(grams));
     }
     Err(reason)
 }
