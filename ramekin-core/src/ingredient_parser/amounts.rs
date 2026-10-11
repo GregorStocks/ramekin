@@ -462,13 +462,15 @@ pub(super) fn close_one_sided_dash(s: &str) -> String {
             Some(fraction) if is_fraction(fraction) => format!("{} {}", words[0], fraction),
             _ => words[0].to_string(),
         };
-        // "1- 3 ounce package": one 3-ounce package, not a range.
+        // "1- 3 ounce package": one 3-ounce package, not a range. A
+        // container right after the number ("1- 2 cans") is a range of them.
         let after_high = if high.contains(' ') { 2 } else { 1 };
         let sizes_a_container = words
-            .iter()
-            .skip(after_high)
-            .take(2)
-            .any(|word| is_container_word(word));
+            .get(after_high)
+            .is_some_and(|unit| !is_container_word(unit))
+            && words
+                .get(after_high + 1)
+                .is_some_and(|word| is_container_word(word));
         let range = !sizes_a_container
             && matches!(
                 (parse_amount(low), parse_amount(&high)),

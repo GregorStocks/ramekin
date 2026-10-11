@@ -2719,6 +2719,7 @@ mod tests {
             ("1- pound ground beef", "1", "lb", "ground beef"),
             ("2- cups flour", "2", "cup", "flour"),
             ("3- cloves garlic", "3", "clove", "garlic"),
+            ("1- 2 cans black beans", "1-2", "can", "black beans"),
             (
                 "1- inch knob fresh ginger",
                 "1",
