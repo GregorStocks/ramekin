@@ -73,19 +73,20 @@ pub fn strip_leading_list_marker(s: &str) -> String {
 
 /// Regex for unit words like "grams" attached to numbers: "450grams" → "450 grams"
 static UNIT_WORD_REGEX: LazyLock<Regex> =
-    LazyLock::new(|| Regex::new(r"(?i)(\d+)(grams?)\b").expect("Invalid unit word regex"));
+    LazyLock::new(|| Regex::new(r"(?i)\b(\d+)(grams?)\b").expect("Invalid unit word regex"));
 
 /// Regex for "g" metric unit followed by other letters: "450gpowdered" → "450g powdered"
 static METRIC_G_REGEX: LazyLock<Regex> =
-    LazyLock::new(|| Regex::new(r"(?i)(\d+g)([a-z])").expect("Invalid metric g regex"));
+    LazyLock::new(|| Regex::new(r"(?i)\b(\d+g)([a-z])").expect("Invalid metric g regex"));
 
 /// Regex for digit(s) followed by 4+ letters (clearly a word): "1finely" → "1 finely"
 static DIGIT_WORD_REGEX: LazyLock<Regex> =
-    LazyLock::new(|| Regex::new(r"(?i)(\d+)([a-z]{4,})").expect("Invalid digit word regex"));
+    LazyLock::new(|| Regex::new(r"(?i)\b(\d+)([a-z]{4,})").expect("Invalid digit word regex"));
 
 /// Insert space between digits and letters that are clearly separate words.
 /// Handles cases like "1finely" → "1 finely" and "450gpowdered" → "450g powdered"
-/// But preserves dimension patterns like "6x6-inch".
+/// But preserves dimension patterns like "6x6-inch", and only splits tokens that
+/// start with the number, so a word with inner digits ("abc53defg") stays whole.
 pub(in crate::ingredient_parser) fn normalize_digit_letter_spacing(s: &str) -> String {
     let s = UNIT_WORD_REGEX.replace_all(s, "$1 $2");
     let s = METRIC_G_REGEX.replace_all(&s, "$1 $2");
