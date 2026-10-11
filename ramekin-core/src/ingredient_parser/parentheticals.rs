@@ -2,7 +2,6 @@
 
 use super::*;
 use regex::Regex;
-use std::collections::HashSet;
 
 /// Parse parenthetical content that may contain multiple measurements.
 /// Handles formats like "8 ounces; 227 g each" or "113g, 1/2 cup" or "8 ounces or 225 grams"
@@ -77,12 +76,12 @@ pub(super) fn parse_parenthetical_measurement_details(
 /// Two amounts ("(1/2 pound fresh cranberry beans, 1/2 pound fresh lima
 /// beans)") are options again, so neither restates it.
 ///
-/// Amounts that split the whole ("(divided, 3/4 cup, 2 tbsp)", "(3/4 cup, 1/4
-/// cup)") are portions rather than alternatives, so they aren't read. One
-/// amount ("(620g, divided)") or equivalents in one part ("(2 sticks/8
-/// ounces, softened and divided)") are still the whole. Equivalents split
-/// across parts of a divided note ("(2 sticks, 8 ounces, divided)") read like
-/// portions, so they're dropped too.
+/// Amounts in separate parts may split the whole ("(divided, 3/4 cup, 2
+/// tbsp)", "(reserved, 1 cup, 2 tbsp)") rather than restate it, and the text
+/// can't tell those from equivalents ("(2 sticks, 8 ounces, softened)"), so
+/// none of them are read. Equivalents in one part ("(2 sticks/8 ounces,
+/// softened)") and a per-item size beside a count ("(2 cans, drained, 15
+/// ounces each)") are still read.
 pub(super) fn prep_note_parenthetical_measurements(
     content: &str,
     outside_text: &str,
@@ -96,21 +95,25 @@ pub(super) fn prep_note_parenthetical_measurements(
         .collect();
     // Each part on its own, so "each" in "(2 cans, drained, 15 ounces each)"
     // stays with its part.
-    let measurements: Vec<Measurement> = parts_with_amount
+    let part_measurements: Vec<Vec<Measurement>> = parts_with_amount
         .iter()
-        .flat_map(|part| parse_parenthetical_measurement_details(part, "").measurements)
+        .map(|part| parse_parenthetical_measurement_details(part, "").measurements)
         .collect();
+    let parts_measuring_whole = part_measurements
+        .iter()
+        .filter(|measurements| {
+            measurements.iter().any(|m| {
+                !m.unit
+                    .as_deref()
+                    .is_some_and(|unit| unit.ends_with(" each"))
+            })
+        })
+        .count();
+    if parts_measuring_whole > 1 {
+        return Vec::new();
+    }
+    let measurements: Vec<Measurement> = part_measurements.into_iter().flatten().collect();
     if !measurements.is_empty() {
-        if parts_with_amount.len() > 1 && content.to_lowercase().contains("divided") {
-            return Vec::new();
-        }
-        let units = measurements
-            .iter()
-            .map(|m| m.unit.as_deref().map(normalize_unit))
-            .collect::<HashSet<_>>();
-        if units.len() < measurements.len() {
-            return Vec::new();
-        }
         return measurements;
     }
     match parts_with_amount.as_slice() {
@@ -995,6 +998,11 @@ mod tests {
                     measurement("15", "oz each"),
                 ],
                 "2 cans, drained, 15 ounces each",
+            ),
+            (
+                "1 cup sugar (reserved, 3/4 cup, 2 tbsp)",
+                vec![measurement("1", "cup")],
+                "reserved, 3/4 cup, 2 tbsp",
             ),
             (
                 "1 cup sugar (divided, 3/4 cup, 1/4 cup)",
