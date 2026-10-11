@@ -183,8 +183,8 @@ jobs:
     runs-on: macos-26
     # Backstop only, above the sum of the step timeouts below. A step timeout
     # fails the step (rather than the whole job being cancelled), so the
-    # diagnostics upload still runs.
-    timeout-minutes: 80
+    # results upload still runs.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
@@ -193,36 +193,6 @@ jobs:
       - name: Install dependencies
         run: brew install postgresql@16 uv
 
-      - name: Start runner load sampler
-        # A degraded simulator can stop answering accessibility queries for
-        # minutes (SpringBoard kAXErrorIPCTimeout). Record runner CPU and
-        # memory for the rest of the job, from before the simulator boots
-        # through the UI tests, so a failure shows whether the runner was
-        # starved and by what.
-        #
-        # The whole runner also freezes for 30-100 s at low load, in green
-        # runs too: this sampler's 15 s loop stretched to 45-100 s while the
-        # simulator log and the host exec log went quiet. The heartbeat execs
-        # date every second, so a gap in runner-heartbeat.log times a freeze
-        # to the second. Each freeze so far came while provjobd (the runner
-        # image's agent) was running diskutil and diskimagesiod (which serves
-        # the simulator runtime's disk image) was busy, so the sampler also
-        # records disk-image commands and disk throughput.
-        run: |
-          mkdir -p logs
-          # GitHub runs steps with bash -e; a failed sample (memory_pressure,
-          # ps) must not end the sampler.
-          (set +e; while true; do
-            echo "== $(date -u +%H:%M:%S) $(uptime | sed 's/.*load/load/')"
-            memory_pressure -Q | tail -1
-            ps -Ao pcpu,rss,comm -r | head -12
-            pgrep -lf 'diskutil|hdiutil|^asr '
-            iostat -d -c 2 -w 1 | sed -n '1,2p;$p'
-            sleep 15
-          done) > logs/runner-load.log 2>&1 &
-          (set +e; while true; do date -u +%H:%M:%S; sleep 1; done) \
-            > logs/runner-heartbeat.log 2>&1 &
-
       - name: Disable Spotlight indexing
         # mds and mdworker index the build output and cost the runner CPU the
         # simulator needs.
@@ -230,7 +200,7 @@ jobs:
 
       - name: Start booting simulator
         # A fresh simulator saturates the runner for minutes after booting;
-        # start it now so that overlaps the setup below. See the script.
+        # start it now so that overlaps the setup below.
         run: scripts/prepare-ios-ui-simulator.sh boot >> "$GITHUB_ENV"
 
       - name: Start PostgreSQL
@@ -366,104 +336,33 @@ jobs:
 
       - name: Configure simulator
         timeout-minutes: 10
-        # Finish booting, turn off keyboard extras and unload mediaanalysisd;
-        # see the script.
         # make ios-test-ui-prebuilt uses IOS_UI_DESTINATION from the boot step.
         run: scripts/prepare-ios-ui-simulator.sh configure
 
-      - name: Warm up simulator keyboard
-        # The first keyboard use of a run cold-launches the simulator's
-        # out-of-process keyboard (InputUI). Under load, runningboardd once
-        # suspended it while on screen and the app's main thread blocked for
-        # minutes, failing the first test that typed. Take that cold launch
-        # here, where a stall or failure doesn't fail the job. See
-        # KeyboardWarmupTests.swift. The test retries once, because a
-        # first-launch app hang can fail it before it reaches the keyboard;
-        # each attempt has taken up to about 7.5 minutes.
-        id: warm-keyboard
-        timeout-minutes: 16
-        continue-on-error: true
-        run: make ios-warm-ui-keyboard
-
-      - name: Report keyboard warm-up failure
-        # continue-on-error leaves the warm-up step green, so say it failed.
-        if: ${{ steps.warm-keyboard.outcome == 'failure' }}
-        run: >-
-          echo "::warning title=Keyboard warm-up failed::The simulator keyboard
-          was not warmed up, so the first UI test that types will cold-launch
-          InputUI and may stall. See issues/p3-ios-ui-app-launch-hang.json5
-          and logs/ios-ui-keyboard-warmup.xcresult."
-
-      - name: Check simulator is still listed
-        # Once, xcodebuild found no simulators right after the warm-up while
-        # the runner was busy with disk images; see the script.
-        timeout-minutes: 7
-        run: scripts/prepare-ios-ui-simulator.sh ensure
-
       - name: Run UI tests
         timeout-minutes: 20
-        # simctl listing the device doesn't prove xcodebuild's own destination
-        # lookup will find it, so if that lookup fails (no test has run yet),
-        # wait for the device again and retry once. A run takes 6-8 minutes,
-        # so a failed lookup, the wait and a retry fit in the step timeout.
-        run: |
-          set -o pipefail
-          if make ios-test-ui-prebuilt 2>&1 | tee logs/ios-ui-run.log; then
-            exit 0
-          fi
-          if ! grep -q "Unable to find a device matching" logs/ios-ui-run.log; then
-            exit 1
-          fi
-          echo "::warning title=Simulator destination missing::xcodebuild could not find" \
-            "simulator $IOS_UI_UDID; waiting for it and retrying the UI tests once"
-          scripts/prepare-ios-ui-simulator.sh ensure
-          make ios-test-ui-prebuilt
+        run: make ios-test-ui-prebuilt
 
       - name: Collect simulator system log
-        if: ${{ !cancelled() }}
+        if: ${{ failure() }}
         timeout-minutes: 5
-        # The xcresult only has the test runner's side of a stall; the
+        # The xcresult only has the test runner's side of a failure; the
         # simulator's own log shows what SpringBoard and the app were doing.
-        # Collected on green runs too: app launches that hang for ~5 minutes
-        # on an idle runner usually still pass. apsd (push service) writes about
-        # half the lines and none are about the tests; skipping it cuts the
-        # gzipped log from ~40 MB to ~14 MB.
+        # apsd (push service) writes about half the lines, none about the tests.
         run: |
           xcrun simctl spawn "$IOS_UI_UDID" log show --last 40m --style compact \
             --predicate 'process != "apsd"' \
             > logs/simulator-system.log 2>&1 || true
           gzip -f logs/simulator-system.log
 
-      - name: Collect host exec log
-        if: ${{ !cancelled() }}
-        timeout-minutes: 5
-        # In run 37392182564 the test runner sat for 294 s between spawn and
-        # exec on an idle runner: xcodebuild had marked it runnable, and the
-        # simulator log is silent until launchd_sim's "uncorking exec source".
-        # That stage runs in the host's exec and code-signing path, which only
-        # the host log shows. The code-signing daemons were idle during later
-        # stalls (runs 37960299170, 38087567451), so this also logs the disk
-        # image and disk arbitration daemons the simulator runtime depends on.
-        run: |
-          predicate='process IN {"amfid", "syspolicyd", "XprotectService", "CoreSimulatorService",'
-          predicate="$predicate \"diskimagesiod\", \"diskimagesiod_ram\", \"diskarbitrationd\", \"diskmanagementd\"}"
-          kernel='eventMessage CONTAINS[c] "AMFI" OR eventMessage CONTAINS[c] "codesign"'
-          kernel="$kernel OR eventMessage CONTAINS[c] \"xpcproxy_sim\""
-          predicate="$predicate OR (process == \"kernel\" AND ($kernel))"
-          log show --last 40m --style compact --info --debug --predicate "$predicate" \
-            > logs/host-exec.log 2>&1 || true
-          gzip -f logs/host-exec.log
-
       - name: Upload UI test results and screenshots
-        if: always()
+        if: ${{ failure() }}
         uses: actions/upload-artifact@v4
         with:
           name: ios-ui-test-results
+          retention-days: 7
           path: |
             logs/*.xcresult
-            logs/runner-load.log
-            logs/runner-heartbeat.log
             logs/server.log
             logs/simulator-system.log.gz
-            logs/host-exec.log.gz
           if-no-files-found: ignore

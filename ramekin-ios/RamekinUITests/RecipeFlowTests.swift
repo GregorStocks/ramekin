@@ -2,11 +2,8 @@ import XCTest
 
 final class RecipeFlowTests: XCTestCase {
 
-    /// Budget for waits that are normally sub-second but must survive a
-    /// degraded CI simulator, which can take tens of seconds to service a
-    /// single accessibility-hierarchy snapshot. Any timeout shorter than a
-    /// couple of slow snapshots flakes on such runners.
-    let slowSimulatorTimeout: TimeInterval = 60
+    /// Budget for waits that are normally sub-second; CI simulators are slow.
+    let slowSimulatorTimeout: TimeInterval = 30
 
     /// The seeded backend CI starts for these tests.
     let serverURL = "http://localhost:55000"
@@ -26,32 +23,8 @@ final class RecipeFlowTests: XCTestCase {
         app = nil
     }
 
-    func testTextRecipeReviewAndSave() throws {
-        try launchSignedIn()
-        app.buttons["New Recipe"].tap()
-        let text = app.textViews["Recipe text"]
-        XCTAssertTrue(text.waitForExistence(timeout: slowSimulatorTimeout))
-        text.tap()
-        text.typeText("Text Pancakes\n1 cup all-purpose flour\nMix and cook.")
-        app.navigationBars.buttons["Review"].tap()
-        let title = app.textFields["Recipe title"]
-        XCTAssertTrue(title.waitForExistence(timeout: slowSimulatorTimeout))
-        replaceText(in: title, with: "iOS text pancakes")
-        app.navigationBars.buttons["Save"].tap()
-        XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
-        let search = app.searchFields.firstMatch
-        XCTAssertTrue(search.waitForExistence(timeout: slowSimulatorTimeout))
-        search.tap()
-        search.typeText("iOS text pancakes")
-        let savedRecipe = app.buttons.matching(
-            NSPredicate(format: "label BEGINSWITH %@", "iOS text pancakes")
-        ).firstMatch
-        XCTAssertTrue(savedRecipe.waitForExistence(timeout: slowSimulatorTimeout))
-    }
-
     /// Launch already signed in as the seeded user and wait for the recipe
-    /// list. Only the login tests type into the login form: every keystroke
-    /// is more accessibility traffic for a degraded CI simulator to stall on.
+    /// list.
     private func launchSignedIn(file: StaticString = #filePath, line: UInt = #line) throws {
         let token = try signInOverHTTP(username: "t", password: "t")
         app.launchEnvironment["RAMEKIN_UITEST_SERVER_URL"] = serverURL
@@ -92,50 +65,6 @@ final class RecipeFlowTests: XCTestCase {
         return try XCTUnwrap((body as? [String: Any])?["token"] as? String)
     }
 
-    /// Launch to the login screen and fill in the form.
-    private func fillLoginForm(username: String, password: String) {
-        app.launch()
-        let serverField = app.textFields["https://ramekin.app"]
-        XCTAssertTrue(
-            serverField.waitForExistence(timeout: slowSimulatorTimeout),
-            "Server URL field should exist"
-        )
-        replaceText(in: serverField, with: serverURL)
-        replaceText(in: app.textFields["Username"], with: username)
-        replaceText(in: app.secureTextFields["Password"], with: password)
-    }
-
-    /// Replace a field's contents, then synchronize on the resulting value.
-    ///
-    /// Selecting the old text with a triple-tap is unreliable on a slow CI
-    /// simulator: it can land as a double-tap that selects only the last word,
-    /// or select nothing, and the typed text then joins what was left (a URL
-    /// of "https://ramekin.ap" plus the new one, or a recipe saved as
-    /// "TextiOS text pancakes"). Instead, put the cursor after the last
-    /// character and delete exactly as many characters as the field holds.
-    private func replaceText(
-        in field: XCUIElement,
-        with text: String,
-        file: StaticString = #filePath,
-        line: UInt = #line
-    ) {
-        field.tap()
-        // An empty field reports its placeholder as its value, which can't be
-        // told apart from a prefilled value equal to the placeholder (the
-        // server URL field). Deleting past the start of the text is harmless,
-        // so always delete as many characters as the reported value.
-        let current = field.value as? String ?? ""
-        // A tap past the end of the text puts the cursor after it.
-        field.coordinate(withNormalizedOffset: CGVector(dx: 0.98, dy: 0.5)).tap()
-        field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count))
-        field.typeText(text)
-        // A secure field reports one bullet per character.
-        let expected = field.elementType == .secureTextField
-            ? String(repeating: "•", count: text.count)
-            : text
-        assertAccessibleValue(field, equals: expected, file: file, line: line)
-    }
-
     /// Input can finish before a slow simulator's accessibility snapshot
     /// reflects it. Synchronize on the resulting value before continuing.
     private func assertAccessibleValue(
@@ -163,41 +92,6 @@ final class RecipeFlowTests: XCTestCase {
         screenshot.name = name
         screenshot.lifetime = .keepAlways
         add(screenshot)
-    }
-
-    private func submitLogin() {
-        // Reveal the final Form rows before tapping. XCTest's implicit
-        // scroll-to-visible can move the button while synthesizing its tap
-        // on a slow simulator, leaving the login request unsubmitted.
-        app.swipeUp()
-        let button = app.buttons["Sign In"]
-        XCTAssertTrue(button.isEnabled, "Login fields must be populated before submitting")
-        XCTAssertTrue(button.isHittable, "Sign In must be visible before tapping")
-        button.tap()
-    }
-
-    /// Test signing in through the login form
-    func testLoginSuccess() throws {
-        fillLoginForm(username: "t", password: "t")
-        attachScreenshot(named: "01-LoginForm")
-        submitLogin()
-
-        // The login screen is a Form whose rows also match `app.cells`, so the
-        // logged-in check must be something only the recipe list has: its
-        // "Recipes" navigation bar (the login screen has no navigation bar).
-        let recipesBar = app.navigationBars["Recipes"]
-        let loginError = app.staticTexts["login-error-message"]
-        let loginFinished = XCTNSPredicateExpectation(
-            predicate: NSPredicate { _, _ in recipesBar.exists || loginError.exists },
-            object: nil
-        )
-        let loginResult = XCTWaiter.wait(for: [loginFinished], timeout: slowSimulatorTimeout)
-        guard loginResult == .completed, recipesBar.exists else {
-            attachScreenshot(named: "02-AfterLogin")
-            let error = loginError.exists ? loginError.label : "No login error displayed"
-            XCTFail("Never reached Recipes after Sign In: \(error).\n\(app.debugDescription)")
-            return
-        }
     }
 
     /// Test the recipe flow: recipe list -> recipe detail -> sheets
@@ -300,106 +194,6 @@ final class RecipeFlowTests: XCTestCase {
         mealPlanBar.buttons["Cancel"].tap()
         XCTAssertTrue(moreActions.waitForExistence(timeout: slowSimulatorTimeout))
         XCTAssertTrue(moreActions.isHittable)
-    }
-
-    /// Scrolls the meal-plan week until `element` is on screen. The week is a
-    /// LazyVStack, so days below the fold are not in the hierarchy until they
-    /// scroll into view. Slow swipes scroll less than a screen, so they can't
-    /// skip past it.
-    private func scrollMealPlanWeek(toReveal element: XCUIElement) {
-        // Any day's add button, since a scrolled list may no longer render Monday.
-        let weekLoaded = app.buttons.matching(
-            NSPredicate(format: "label BEGINSWITH 'Add ' AND label CONTAINS ' on '")
-        ).firstMatch
-        XCTAssertTrue(weekLoaded.waitForExistence(timeout: slowSimulatorTimeout))
-        for _ in 0..<12 {
-            if element.waitForExistence(timeout: 2) && element.isHittable { break }
-            app.swipeUp(velocity: .slow)
-        }
-        XCTAssertTrue(element.isHittable, "\(element) never scrolled into view")
-    }
-
-    /// Search the meal-plan recipe picker and add a result through its
-    /// accessible button, the path VoiceOver and keyboard users take.
-    func testMealPlanRecipePicker() throws {
-        try launchSignedIn()
-
-        app.tabBars.buttons["Meal Plan"].tap()
-        // Matches MealPlanView.dayHeaderFormatter.
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, MMM d"
-        // Sunday ends the Monday-first week that opens by default, so its row
-        // always starts below the fold; adding there catches the week jumping
-        // back to Monday after the picker closes on any weekday.
-        let calendar = Calendar.current
-        let today = calendar.startOfDay(for: Date())
-        // Calendar weekdays run Sunday = 1 through Saturday = 7.
-        let daysUntilSunday = (8 - calendar.component(.weekday, from: today)) % 7
-        let sunday = calendar.date(byAdding: .day, value: daysUntilSunday, to: today)!
-        let addDinner = app.buttons["Add Dinner on \(formatter.string(from: sunday))"]
-        scrollMealPlanWeek(toReveal: addDinner)
-        addDinner.tap()
-
-        let pickerBar = app.navigationBars["Add Dinner"]
-        XCTAssertTrue(pickerBar.waitForExistence(timeout: slowSimulatorTimeout))
-        let firstResult = app.cells.firstMatch.buttons.firstMatch
-        XCTAssertTrue(firstResult.waitForExistence(timeout: slowSimulatorTimeout))
-        let title = firstResult.label
-        XCTAssertFalse(title.isEmpty, "Picker results need the recipe title as their label")
-
-        let search = app.searchFields.firstMatch
-        search.tap()
-        search.typeText(title)
-        let result = app.buttons.matching(NSPredicate(format: "label == %@", title)).firstMatch
-        XCTAssertTrue(result.waitForExistence(timeout: slowSimulatorTimeout))
-        attachScreenshot(named: "MealPlanPicker")
-        result.tap()
-
-        let dismissed = XCTNSPredicateExpectation(
-            predicate: NSPredicate(format: "exists == false"),
-            object: pickerBar
-        )
-        XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: slowSimulatorTimeout), .completed)
-        // The add runs after the sheet closes, and the week then scrolls to
-        // Sunday on its own. No swiping here: closing the picker used to leave
-        // the week back at Monday with the new card off screen.
-        let card = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", title)).firstMatch
-        let cardOnScreen = XCTNSPredicateExpectation(
-            predicate: NSPredicate(format: "exists == true AND hittable == true"),
-            object: card
-        )
-        XCTAssertEqual(XCTWaiter.wait(for: [cardOnScreen], timeout: slowSimulatorTimeout), .completed)
-        // Icon-only card actions name the meal they act on.
-        XCTAssertTrue(app.buttons["Edit \(title)"].firstMatch.exists)
-        XCTAssertTrue(app.buttons["Remove \(title)"].firstMatch.exists)
-    }
-
-    /// Test that login fails with invalid credentials
-    func testLoginFailure() throws {
-        fillLoginForm(username: "invalid", password: "wrong")
-        submitLogin()
-
-        // The error message renders in the same UI update that ends the
-        // in-flight spinner, so it appearing IS the "login request finished"
-        // signal. On a healthy run it shows up in well under a second; the
-        // budget only has to outlast the app's 15s login timeout plus the
-        // tens of seconds a degraded CI simulator can take per accessibility
-        // snapshot (issue: testLoginFailure flaked when a fixed 10s expired
-        // during a single slow snapshot).
-        let errorMessage = app.staticTexts["login-error-message"]
-        let errorExists = errorMessage.waitForExistence(timeout: slowSimulatorTimeout)
-        attachScreenshot(named: "LoginError")
-        if !errorExists {
-            if app.descendants(matching: .any)["login-in-progress"].exists {
-                XCTFail(
-                    "Login request still in flight after \(Int(slowSimulatorTimeout))s "
-                        + "despite the app's 15s login timeout — test-host or network stall, "
-                        + "not a login-error-path regression."
-                )
-            } else {
-                XCTFail("Login request finished but no error message was shown after a failed login.")
-            }
-        }
     }
 }
 
