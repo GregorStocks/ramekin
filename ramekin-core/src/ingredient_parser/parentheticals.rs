@@ -42,8 +42,12 @@ pub(super) fn parse_parenthetical_measurement_details(
     // try_parse_measurement_before_filler.
     let outside_text = if parts.len() == 1 { outside_text } else { "" };
     for part in parts {
-        let measurement = try_parse_parenthetical_measurement(part)
-            .or_else(|| try_parse_measurement_before_filler(part, outside_text));
+        let measurement = try_parse_parenthetical_measurement(part).or_else(|| {
+            let (measurement, describes_more) =
+                try_parse_measurement_before_filler(part, outside_text)?;
+            has_non_measurement_content |= describes_more;
+            Some(measurement)
+        });
         if let Some(mut m) = measurement {
             // If the entire parenthetical had trailing "each", apply it to all measurements
             // unless this measurement already has "each"
@@ -170,9 +174,11 @@ pub(super) fn try_parse_parenthetical_measurement(s: &str) -> Option<Measurement
     })
 }
 
-/// "about 1/4 cup's worth", "2 cups worth": the measurement before "worth".
+/// "about 1/4 cup's worth", "2 cups worth", "3 cups worth of slices": the
+/// measurement before "worth", and what it's worth of.
 static TRAILING_WORTH_REGEX: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r"(?i)(?:'s|’s|'|’)?\s+worth\.?$").expect("Invalid trailing worth regex")
+    Regex::new(r"(?i)(?:'s|’s|'|’)?\s+worth(?P<of>\s+of\s+\S.*?)?\.?$")
+        .expect("Invalid trailing worth regex")
 });
 
 /// A measurement followed by words that add nothing to it: "worth" ("about
@@ -184,13 +190,19 @@ static TRAILING_WORTH_REGEX: LazyLock<Regex> = LazyLock::new(|| {
 /// Only a parenthetical that is one measurement restates the item: in "(85g
 /// honey, 50g sugar)" each weight is one option's, and "(15 ounce cans)" or
 /// "(6 - 1.55 oz bars)" sizes the pieces rather than measuring the whole.
+///
+/// Also returns whether words worth keeping in the note follow ("of slices").
 pub(super) fn try_parse_measurement_before_filler(
     part: &str,
     outside_text: &str,
-) -> Option<Measurement> {
+) -> Option<(Measurement, bool)> {
     let part = part.trim();
-    let measure = match TRAILING_WORTH_REGEX.find(part) {
-        Some(worth) => part.get(..worth.start())?,
+    let mut describes_more = false;
+    let measure = match TRAILING_WORTH_REGEX.captures(part) {
+        Some(worth) => {
+            describes_more = worth.name("of").is_some();
+            part.get(..worth.get(0)?.start())?
+        }
         None => {
             let lower = part.to_lowercase();
             if lower.contains([',', ';']) || lower.contains(" or ") {
@@ -217,7 +229,7 @@ pub(super) fn try_parse_measurement_before_filler(
     if measurement.unit.as_deref().is_some_and(is_size_unit) {
         return None;
     }
-    Some(measurement)
+    Some((measurement, describes_more))
 }
 
 /// Whether `amount` is a range that runs downward ("6 - 1.55"), which is a
@@ -810,6 +822,10 @@ mod tests {
             ),
             ("2 shallots (1/2 cup's worth)", measurement("1/2", "cup")),
             (
+                "3 large peaches (about 3 cups worth of slices)",
+                measurement("3", "cup"),
+            ),
+            (
                 "2 shallots (approximately 1/2 cup worth)",
                 measurement("1/2", "cup"),
             ),
@@ -838,6 +854,11 @@ mod tests {
         }
         let parsed = parse_ingredient("1 cup rice (180 g uncooked)");
         assert_eq!(parsed.measurements, vec![measurement("1", "cup")]);
+
+        // What the volume is worth of stays in the note.
+        let parsed = parse_ingredient("3 large peaches (3 cups worth of slices)");
+        assert_eq!(parsed.measurements.last(), Some(&measurement("3", "cup")));
+        assert_eq!(parsed.note.as_deref(), Some("3 cups worth of slices"));
     }
 
     #[test]
