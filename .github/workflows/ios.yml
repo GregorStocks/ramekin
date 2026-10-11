@@ -75,7 +75,7 @@ jobs:
     # Backstop only, above the sum of the step timeouts below. A step timeout
     # fails the step, so the Rust cache (cache-on-failure) still saves; a job
     # timeout cancels the job and loses the cold build.
-    timeout-minutes: 45
+    timeout-minutes: 60
     env:
       # Help the linker find libpq from Homebrew.
       LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
@@ -184,7 +184,7 @@ jobs:
     # Backstop only, above the sum of the step timeouts below. A step timeout
     # fails the step (rather than the whole job being cancelled), so the
     # results upload still runs.
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
