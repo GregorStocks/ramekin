@@ -326,6 +326,10 @@ async fn save_estimated(
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
     tracing::info!(estimated, "estimated ingredient weights");
+    // Names share this provider, so names backing off from an outage should
+    // retry now.
+    crate::ingredient_names::note_new_work(estimated);
+    crate::ingredient_names::wake();
     Ok(())
 }
 
