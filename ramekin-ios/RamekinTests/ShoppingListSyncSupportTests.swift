@@ -59,7 +59,7 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         XCTAssertEqual(item.serverVersion, 0)
     }
 
-    func testReconcileKeepsAnEditMadeDuringARejectedSync() throws {
+    func testReconcileTakesTheServerCopyOverAnEditMadeDuringARejectedSync() throws {
         let context = CoreDataTestStack.makeContext()
         let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.syncStatusEnum = .pendingUpdate
@@ -74,8 +74,8 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         )
 
         XCTAssertEqual(outcome, .kept)
-        XCTAssertEqual(item.syncStatusEnum, .pendingUpdate)
-        XCTAssertEqual(item.serverVersion, 5)
+        XCTAssertEqual(item.syncStatusEnum, .synced)
+        XCTAssertEqual(item.serverVersion, 0)
     }
 
     func testReconcileReportsAnItemTheServerNoLongerHas() throws {
