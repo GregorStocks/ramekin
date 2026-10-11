@@ -14,7 +14,8 @@ enum ShoppingListSyncSupport {
     /// server's row, which comes back in the same response's changes, replaces
     /// it rather than the stale local copy being resent over it. That includes
     /// an edit made while the sync was in flight: updates send the whole row,
-    /// so keeping it would overwrite the other device's change.
+    /// so keeping it would overwrite the other device's change. A delete made
+    /// while the sync was in flight still stands and is sent next round.
     static func reconcileSyncedItem(
         _ local: ShoppingItem,
         version: Int,
@@ -27,7 +28,9 @@ enum ShoppingListSyncSupport {
             return .deletedOnServer
         }
         if !success {
-            local.markSynced(serverVersion: 0)
+            if local.syncStatusEnum != .pendingDelete {
+                local.markSynced(serverVersion: 0)
+            }
         } else if !modifiedDuringSync {
             local.markSynced(serverVersion: Int32(version))
         } else {

@@ -78,6 +78,27 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         XCTAssertEqual(item.serverVersion, 0)
     }
 
+    func testReconcileKeepsADeleteMadeDuringARejectedSync() throws {
+        let context = CoreDataTestStack.makeContext()
+        let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
+        item.syncStatusEnum = .pendingUpdate
+        item.serverVersion = 3
+        item.markDeleted()
+        item.updatedAt = Date(timeIntervalSince1970: 300)
+
+        let outcome = ShoppingListSyncSupport.reconcileSyncedItem(
+            item,
+            version: 5,
+            success: false,
+            syncStartedAt: Date(timeIntervalSince1970: 200)
+        )
+
+        // Still pending, so the server's row doesn't bring it back and the
+        // delete is sent next sync.
+        XCTAssertEqual(outcome, .kept)
+        XCTAssertEqual(item.syncStatusEnum, .pendingDelete)
+    }
+
     func testReconcileReportsAnItemTheServerNoLongerHas() throws {
         let context = CoreDataTestStack.makeContext()
         let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
