@@ -1354,7 +1354,8 @@ mod tests {
     #[test]
     fn first_list_bold_heading_is_a_section_only_among_components() {
         let ingredients = |html: &str| {
-            let page = format!("<html><head><title>Cookies</title></head><body>{html}</body></html>");
+            let page =
+                format!("<html><head><title>Cookies</title></head><body>{html}</body></html>");
             extract_recipe_from_unstructured_blog(&page, "https://example.com/r")
                 .map(|recipe| recipe.ingredients)
                 .unwrap_or_default()
