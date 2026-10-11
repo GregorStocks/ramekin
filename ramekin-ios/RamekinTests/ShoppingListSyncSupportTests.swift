@@ -9,13 +9,14 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         item.syncStatusEnum = .pendingUpdate
         item.updatedAt = Date(timeIntervalSince1970: 100)
 
-        ShoppingListSyncSupport.reconcileSyncedItem(
+        let outcome = ShoppingListSyncSupport.reconcileSyncedItem(
             item,
             version: 4,
             success: true,
             syncStartedAt: Date(timeIntervalSince1970: 200)
         )
 
+        XCTAssertEqual(outcome, .kept)
         XCTAssertEqual(item.syncStatusEnum, .synced)
         XCTAssertEqual(item.serverVersion, 4)
     }
@@ -25,50 +26,73 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.updatedAt = Date(timeIntervalSince1970: 250)
 
-        ShoppingListSyncSupport.reconcileSyncedItem(
+        let outcome = ShoppingListSyncSupport.reconcileSyncedItem(
             item,
             version: 7,
             success: true,
             syncStartedAt: Date(timeIntervalSince1970: 200)
         )
 
+        XCTAssertEqual(outcome, .kept)
         XCTAssertEqual(item.syncStatusEnum, .pendingUpdate)
         XCTAssertEqual(item.serverVersion, 7)
     }
 
-    func testReconcileRetainsPendingUpdateWhenServerRejectsWithNewVersion() throws {
+    func testReconcileTakesTheServerCopyWhenAnUpdateIsRejected() throws {
         let context = CoreDataTestStack.makeContext()
         let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
         item.syncStatusEnum = .pendingUpdate
         item.serverVersion = 3
         item.updatedAt = Date(timeIntervalSince1970: 100)
 
-        ShoppingListSyncSupport.reconcileSyncedItem(
+        let outcome = ShoppingListSyncSupport.reconcileSyncedItem(
             item,
             version: 5,
             success: false,
             syncStartedAt: Date(timeIntervalSince1970: 200)
         )
 
+        // Synced at version 0, so the server's row in the same response
+        // replaces the local copy instead of the local copy being resent.
+        XCTAssertEqual(outcome, .kept)
+        XCTAssertEqual(item.syncStatusEnum, .synced)
+        XCTAssertEqual(item.serverVersion, 0)
+    }
+
+    func testReconcileKeepsAnEditMadeDuringARejectedSync() throws {
+        let context = CoreDataTestStack.makeContext()
+        let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
+        item.syncStatusEnum = .pendingUpdate
+        item.serverVersion = 3
+        item.updatedAt = Date(timeIntervalSince1970: 300)
+
+        let outcome = ShoppingListSyncSupport.reconcileSyncedItem(
+            item,
+            version: 5,
+            success: false,
+            syncStartedAt: Date(timeIntervalSince1970: 200)
+        )
+
+        XCTAssertEqual(outcome, .kept)
         XCTAssertEqual(item.syncStatusEnum, .pendingUpdate)
         XCTAssertEqual(item.serverVersion, 5)
     }
 
-    func testReconcileDoesNotClobberPendingItemWhenServerReturnsVersionZero() throws {
+    func testReconcileReportsAnItemTheServerNoLongerHas() throws {
         let context = CoreDataTestStack.makeContext()
         let item = ShoppingItem.create(in: context, accountKey: accountKey, item: "Milk", sortOrder: 0)
+        item.syncStatusEnum = .pendingUpdate
         item.serverVersion = 2
-        item.updatedAt = Date(timeIntervalSince1970: 300)
+        item.updatedAt = Date(timeIntervalSince1970: 100)
 
-        ShoppingListSyncSupport.reconcileSyncedItem(
+        let outcome = ShoppingListSyncSupport.reconcileSyncedItem(
             item,
             version: 0,
             success: false,
             syncStartedAt: Date(timeIntervalSince1970: 200)
         )
 
-        XCTAssertEqual(item.syncStatusEnum, .pendingCreate)
-        XCTAssertEqual(item.serverVersion, 2)
+        XCTAssertEqual(outcome, .deletedOnServer)
     }
 
     private var accountKey: String { "https://example.test|chef" }

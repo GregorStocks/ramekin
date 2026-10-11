@@ -225,6 +225,85 @@ final class ShoppingListStoreTests: XCTestCase {
         XCTAssertEqual(staleItem.item, "Apples")
     }
 
+    func testRejectedUpdateTakesTheServerCopy() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let serverId = UUID()
+        var responses: [SyncResponse] = []
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { _ in responses.removeFirst() }
+        )
+        store.addItem(name: "Milk")
+        let clientId = try XCTUnwrap(store.items.first?.id)
+        responses.append(Self.response(created: [SyncCreatedItem(clientId: clientId, serverId: serverId, version: 1)]))
+        await store.syncWithServer(isFollowUp: true)
+
+        // Another device checks it off while this one edits the note.
+        let milk = try XCTUnwrap(store.items.first)
+        store.updateItem(milk, note: "2%")
+        responses.append(Self.response(
+            updated: [SyncUpdatedItem(id: serverId, success: false, version: 2)],
+            serverChanges: [SyncServerChange(
+                category: "Dairy", computedCategory: "Dairy", id: serverId, isChecked: true,
+                item: "Milk", sortOrder: 0, updatedAt: Date(timeIntervalSince1970: 500), version: 2
+            )]
+        ))
+        await store.syncWithServer(isFollowUp: true)
+
+        let synced = try XCTUnwrap(store.items.first)
+        XCTAssertTrue(synced.isChecked)
+        XCTAssertNil(synced.note)
+        XCTAssertEqual(synced.syncStatusEnum, .synced)
+        XCTAssertEqual(synced.serverVersion, 2)
+    }
+
+    func testUpdateOfAnItemDeletedOnTheServerDropsIt() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let serverId = UUID()
+        var responses: [SyncResponse] = []
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { _ in responses.removeFirst() }
+        )
+        store.addItem(name: "Eggs")
+        let clientId = try XCTUnwrap(store.items.first?.id)
+        responses.append(Self.response(created: [SyncCreatedItem(clientId: clientId, serverId: serverId, version: 1)]))
+        await store.syncWithServer(isFollowUp: true)
+
+        store.updateItem(try XCTUnwrap(store.items.first), note: "a dozen")
+        responses.append(Self.response(updated: [SyncUpdatedItem(id: serverId, success: false, version: 0)]))
+        await store.syncWithServer(isFollowUp: true)
+
+        XCTAssertTrue(store.items.isEmpty)
+        XCTAssertTrue(
+            try stack.viewContext.fetch(ShoppingItem.fetchPendingSync(accountKey: firstAccount)).isEmpty
+        )
+    }
+
+    private static func response(
+        created: [SyncCreatedItem] = [],
+        updated: [SyncUpdatedItem] = [],
+        serverChanges: [SyncServerChange] = []
+    ) -> SyncResponse {
+        SyncResponse(
+            categoryOrder: [],
+            created: created,
+            cursor: 100,
+            deleted: [],
+            serverChanges: serverChanges,
+            syncTimestamp: Date(timeIntervalSince1970: 1_000),
+            updated: updated
+        )
+    }
+
     private static func emptyResponse(cursor: Int64 = 100) -> SyncResponse {
         SyncResponse(
             categoryOrder: [],

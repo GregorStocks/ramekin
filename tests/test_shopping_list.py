@@ -443,6 +443,38 @@ def test_sync_update_conflict(authed_api_client):
     assert sync_response.updated[0].success is False
 
 
+def test_sync_update_conflict_returns_the_server_copy(authed_api_client):
+    """A rejected update brings back the server's current row, even when it
+    changed before the client's cursor, so the client can take it."""
+    client, _ = authed_api_client
+    api = ShoppingListApi(client)
+    item_id = api.create_items(
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="milk")])
+    ).ids[0]
+    api.update_item(item_id, UpdateShoppingListItemRequest(is_checked=True))
+    # The client syncs past the check-off (say it skipped it while the item
+    # had a local edit), then sends that edit against the old version.
+    cursor = api.sync_items(SyncRequest()).cursor
+    other_id = api.create_items(
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="eggs")])
+    ).ids[0]
+
+    response = api.sync_items(
+        SyncRequest(
+            cursor=cursor,
+            updates=[SyncUpdateItem(id=item_id, note="2%", expected_version=1)],
+        )
+    )
+
+    assert response.updated[0].success is False
+    changes = {change.id: change for change in response.server_changes}
+    assert changes[item_id].is_checked is True
+    assert changes[item_id].note is None
+    assert changes[item_id].version == response.updated[0].version
+    # Only the conflicted row is added to the usual changes since the cursor.
+    assert set(changes) == {item_id, other_id}
+
+
 def test_sync_delete_items(authed_api_client):
     """Test syncing item deletions."""
     client, user_id = authed_api_client
