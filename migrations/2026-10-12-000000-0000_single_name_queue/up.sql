@@ -10,6 +10,12 @@ UPDATE ingredient_name_resolutions
 SET status = 'pending'
 WHERE status = 'harvested';
 
+-- Invalid answers now get a fixed number of attempts, so every pending name
+-- (reopened above, or put back by an earlier Retry) starts with all of them.
+UPDATE ingredient_name_resolutions
+SET attempts = 0
+WHERE status = 'pending';
+
 UPDATE ingredient_name_resolutions
 SET reasked = false, reask_error = NULL
 WHERE reasked OR reask_error IS NOT NULL;
