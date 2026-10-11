@@ -1053,6 +1053,19 @@ fn per_item_weights_multiply_the_count() {
     // A stated weight beats the standard can size.
     let (min, _) = calories(line("black beans", &[("2", "can"), ("10", "oz each")])).unwrap();
     assert!((min - grams("black beans", 20.0 * oz)).abs() < 1e-9);
+    // The parser may leave the per-item weight in the note instead:
+    // "3 packages (8 oz. each cream cheese)" is unit "package each".
+    for unit in ["package each", "packages"] {
+        let noted = ParsedIngredient {
+            note: Some("8 oz. each cream cheese".into()),
+            ..ingredient("cream cheese", "3", unit)
+        };
+        let (min, _) = calories(noted).unwrap();
+        assert!(
+            (min - grams("cream cheese", 24.0 * oz)).abs() < 1e-9,
+            "{unit}"
+        );
+    }
     // A per-item amount on the primary is the whole amount.
     let (min, _) = calories(ingredient("granulated sugar", "2", "tbsp each")).unwrap();
     assert_eq!(

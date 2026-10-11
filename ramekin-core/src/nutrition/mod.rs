@@ -435,12 +435,16 @@ const PACKAGE_WORDS: &str = "can|package|block|bag|jar|box|carton|container|tin|
 const PACKAGE_MASS: &str = "ounces?|oz|pounds?|lbs?|grams?|g";
 
 /// "2 (15-ounce) cans" parses as unit "can" with the weight leading the note
-/// ("15-ounce, drained"); join them back into one weighed unit.
+/// ("15-ounce, drained"); join them back into one weighed unit. A per-item
+/// weight reads the same ("3 packages (8 oz. each)" has note "8 oz. each").
 fn noted_package_unit(unit: &str, note: Option<&str>) -> Option<String> {
     static BARE: LazyLock<Regex> =
         LazyLock::new(|| Regex::new(&format!(r"^(?:{PACKAGE_WORDS})s?$")).unwrap());
     static WEIGHT: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(&format!(r"^(.+?)[- ]?({PACKAGE_MASS})\.?(?:$|[,;]| or )")).unwrap()
+        Regex::new(&format!(
+            r"^(.+?)[- ]?({PACKAGE_MASS})\.?(?:$|[,;]| or | each\b)"
+        ))
+        .unwrap()
     });
     let unit = normalize(unit);
     if !BARE.is_match(&unit) {
