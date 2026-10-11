@@ -439,6 +439,48 @@ fn split_stick_count(s: &str) -> Option<(Measurement, String)> {
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
 /// we return the raw text as the item with empty measurements.
+/// Last words that make a Title Case name a food rather than a brand, so a
+/// name ending in one keeps its own food before "or" ("Chicken Stock").
+const TITLE_CASE_FOOD_NOUNS: &[&str] = &[
+    "stock",
+    "broth",
+    "bouillon",
+    "sauce",
+    "salt",
+    "sugar",
+    "flour",
+    "oil",
+    "butter",
+    "cheese",
+    "cream",
+    "milk",
+    "water",
+    "juice",
+    "powder",
+    "paste",
+    "vinegar",
+    "wine",
+    "beer",
+    "syrup",
+    "honey",
+    "rice",
+    "beans",
+    "pasta",
+    "noodles",
+    "bread",
+    "chocolate",
+    "seasoning",
+    "mustard",
+    "ketchup",
+    "mayonnaise",
+    "yogurt",
+    "oats",
+    "potatoes",
+    "onions",
+    "peppers",
+    "tomatoes",
+];
+
 pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let raw = raw.trim();
     if raw.is_empty() {
@@ -1400,20 +1442,20 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             // Crystal kosher salt".
             // A multi-word capitalized name ("Diamond Crystal", "Grand
             // Marnier"); a single capitalized word ("Tajín") is its own food.
-            // Only when the alternative is another brand of it ("Morton
-            // kosher salt", "another orange liqueur"): a Title Case food
-            // ("Chicken Stock or 2 cups water") keeps its own name.
+            // A Title Case food ("Chicken Stock or 2 cups water", "Better Than
+            // Bouillon or ...") ends in a food noun and keeps its own name.
             let brand_words: Vec<&str> = before_or.split_whitespace().collect();
             let brand_only = brand_words.len() >= 2
                 && brand_words
                     .iter()
-                    .all(|word| word.chars().next().is_some_and(char::is_uppercase));
+                    .all(|word| word.chars().next().is_some_and(char::is_uppercase))
+                && !brand_words.last().is_some_and(|last| {
+                    TITLE_CASE_FOOD_NOUNS.contains(&last.to_lowercase().as_str())
+                });
             let shared_food = if brand_only {
                 let alternative_item = parse_ingredient(after_or).item;
-                let alternative_words: Vec<&str> = alternative_item.split_whitespace().collect();
-                let food: Vec<&str> = alternative_words
-                    .iter()
-                    .copied()
+                let food: Vec<&str> = alternative_item
+                    .split_whitespace()
                     .skip_while(|word| word.chars().next().is_some_and(char::is_uppercase))
                     // "or another orange liqueur": the determiner isn't the food.
                     .skip_while(|word| {
@@ -1421,7 +1463,6 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                             .contains(&word.to_lowercase().as_str())
                     })
                     .collect();
-                let names_another_brand = food.len() < alternative_words.len();
                 // "King Arthur Rolled Oats or 1 cup rolled oats" already names
                 // the food; only a name without it borrows the alternative's.
                 let names_food = food.last().is_some_and(|last| {
@@ -1430,7 +1471,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                         .split_whitespace()
                         .any(|word| word == last.to_lowercase())
                 });
-                (names_another_brand && !food.is_empty() && !names_food)
+                (!food.is_empty() && !names_food)
                     .then(|| format!("{} {}", before_or, food.join(" ")))
             } else {
                 None
@@ -2716,10 +2757,22 @@ mod tests {
             parse_ingredient("2 cups Chicken Stock or 2 cups water").item,
             "Chicken Stock"
         );
-        assert_eq!(
-            parse_ingredient("1 tsp Diamond Crystal or 1/2 tsp Morton kosher salt").item,
-            "Diamond Crystal kosher salt"
-        );
+        for (raw, item) in [
+            (
+                "1 tsp Diamond Crystal or 1/2 tsp Morton kosher salt",
+                "Diamond Crystal kosher salt",
+            ),
+            (
+                "1 tsp Diamond Crystal or 1/2 tsp kosher salt",
+                "Diamond Crystal kosher salt",
+            ),
+            (
+                "2 cups Better Than Bouillon or 2 cups water",
+                "Better Than Bouillon",
+            ),
+        ] {
+            assert_eq!(parse_ingredient(raw).item, item, "{raw}");
+        }
     }
 
     #[test]
