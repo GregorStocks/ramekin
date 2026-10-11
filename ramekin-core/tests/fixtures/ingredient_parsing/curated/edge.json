@@ -1392,6 +1392,96 @@
         "note": "Cream mixture",
         "category": "Dairy & Eggs"
       }
+    },
+    {
+      "name": "inner_digits_word_stays_whole",
+      "raw": "100 g zqb53aadb2 sugar",
+      "expected": {
+        "item": "zqb53aadb2 sugar",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "name": "inner_digits_v8",
+      "raw": "1 cup v8 juice",
+      "expected": {
+        "item": "v8 juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "name": "inner_digits_a1",
+      "raw": "2 tablespoons a1 sauce",
+      "expected": {
+        "item": "a1 sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "name": "inner_digits_7up",
+      "raw": "1 can 7up",
+      "expected": {
+        "item": "7up",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "name": "glued_amount_word",
+      "raw": "1finely chopped onion",
+      "expected": {
+        "item": "finely chopped onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "glued_grams",
+      "raw": "450grams flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
     }
   ]
 }
