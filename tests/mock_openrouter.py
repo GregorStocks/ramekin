@@ -34,8 +34,9 @@ INGREDIENT_NAME_CALLS = {}
 # is re-asked one name at a time, so calls can exceed answers.
 INGREDIENT_NAME_ANSWERS = {}
 INGREDIENT_NAME_CALLS_LOCK = threading.Lock()
-# Names whose resolver calls fail until a test clears them.
-FAILING_INGREDIENT_NAMES = set()
+# Names whose resolver calls fail until a test clears them, or (with a count)
+# for that many more calls that include them.
+FAILING_INGREDIENT_NAMES = {}
 # Names whose resolver calls get an HTTP 503, as in a provider outage, until a
 # test clears them. Counted as calls.
 DOWN_INGREDIENT_NAMES = set()
@@ -90,9 +91,10 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             name = params.get("name", [""])[0]
             with INGREDIENT_NAME_CALLS_LOCK:
                 if params.get("fail", ["true"])[0] == "true":
-                    FAILING_INGREDIENT_NAMES.add(name)
+                    times = params.get("times", [None])[0]
+                    FAILING_INGREDIENT_NAMES[name] = int(times) if times else None
                 else:
-                    FAILING_INGREDIENT_NAMES.discard(name)
+                    FAILING_INGREDIENT_NAMES.pop(name, None)
             self.send_response(204)
             self.end_headers()
             return
@@ -259,7 +261,16 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                     break
             time.sleep(0.05)
         with INGREDIENT_NAME_CALLS_LOCK:
-            failing = any(item["name"] in FAILING_INGREDIENT_NAMES for item in items)
+            failing = [
+                i["name"] for i in items if i["name"] in FAILING_INGREDIENT_NAMES
+            ]
+            for name in failing:
+                remaining = FAILING_INGREDIENT_NAMES[name]
+                if remaining is not None:
+                    if remaining <= 1:
+                        del FAILING_INGREDIENT_NAMES[name]
+                    else:
+                        FAILING_INGREDIENT_NAMES[name] = remaining - 1
         if failing:
             return '{"resolutions": ['
         resolutions = []

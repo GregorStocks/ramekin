@@ -35,11 +35,15 @@ def unique(label: str) -> str:
     return f"zq{token} {label}"
 
 
-def mock_fail(name: str, fail: bool) -> None:
+def mock_fail(name: str, fail: bool, times: int | None = None) -> None:
+    """Make calls that include `name` fail: until cleared, or `times` times."""
     port = os.environ["MOCK_OPENROUTER_PORT"]
+    params = {"name": name, "fail": "true" if fail else "false"}
+    if times is not None:
+        params["times"] = str(times)
     requests.get(
         f"http://localhost:{port}/test/ingredient-name-failure",
-        params={"name": name, "fail": "true" if fail else "false"},
+        params=params,
         timeout=10,
     ).raise_for_status()
 
@@ -232,6 +236,22 @@ def test_resolver_failures_do_not_strand_imports(authed_api_client):
     assert names_api.retry_ingredient_names().queued >= 1
     wait_for(lambda: line_text(RecipesApi(client), item) != "Not recognized")
     assert failures_named(names_api, item.lower()) == []
+
+
+def test_a_name_that_recovers_on_retry_is_not_a_failure(authed_api_client):
+    """Two invalid answers, then a valid one, within the attempt limit: the
+    import's step and the status page show no failure."""
+    client, _ = authed_api_client
+    names_api = IngredientNamesApi(client)
+    item = unique("sugar")
+    mock_fail(item.lower(), True, times=2)
+    job = import_recipe(client, item)
+    assert job.status == "completed"
+    wait_for(lambda: line_text(RecipesApi(client), item) != "Not recognized")
+    assert mock_calls(item.lower()) >= 3
+    assert failures_named(names_api, item.lower()) == []
+    resolve = next(s for s in job.steps if s.name == "resolve_ingredient_names")
+    assert resolve.status == "completed"
 
 
 def test_shopping_list_items_are_resolved(authed_api_client):

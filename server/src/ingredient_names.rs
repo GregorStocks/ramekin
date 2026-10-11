@@ -491,8 +491,10 @@ pub async fn resolve_pending(pool: &Arc<DbPool>, only: Vec<String>) -> Result<()
 
 /// How a batch ended. Its failures are already recorded on its names.
 enum Batch {
+    /// Answered, or an invalid answer left names pending for another attempt.
     Resolved,
-    /// The model's answer for some names was invalid.
+    /// The model's answers for some names stayed invalid until they ran out
+    /// of attempts.
     NamesFailed(String),
     /// The provider or configuration failed, so later batches would too.
     ProviderFailed(String),
@@ -540,17 +542,19 @@ async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, 
 async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<Batch, String> {
     let provider_wide = !error.is_answer_specific();
     let error = error.to_string();
-    save_failed(pool, names, error.clone(), provider_wide).await?;
-    if provider_wide {
+    let given_up = save_failed(pool, names, error.clone(), provider_wide).await?;
+    Ok(if provider_wide {
         // The names stay pending. A scrape job resolving its own names
         // directly may have hit this while the worker was idle, so wake it to
         // retry them with its backoff.
         wake();
-    }
-    Ok(if provider_wide {
         Batch::ProviderFailed(error)
-    } else {
+    } else if given_up > 0 {
         Batch::NamesFailed(error)
+    } else {
+        // Still pending with attempts left: not a failure yet, and the next
+        // batch asks again.
+        Batch::Resolved
     })
 }
 
@@ -671,19 +675,20 @@ fn touch_shopping_items(
 /// limit, a missing key) every name stays queued for the worker's retry.
 /// After an invalid answer a name stays queued until it has had
 /// `MAX_ATTEMPTS`, then is marked failed for the status page and its Retry.
+/// Returns how many names were marked failed.
 async fn save_failed(
     pool: &Arc<DbPool>,
     failed: Vec<String>,
     error: String,
     provider_wide: bool,
-) -> Result<(), String> {
+) -> Result<usize, String> {
     tracing::warn!(
         names = failed.len(),
         "ingredient name resolution failed: {}",
         error
     );
     if provider_wide {
-        return Ok(());
+        return Ok(0);
     }
     let now = Utc::now();
     run_blocking(pool, move |conn| {
@@ -699,14 +704,12 @@ async fn save_failed(
                 .execute(conn)?;
             diesel::update(failed.filter(names::attempts.ge(MAX_ATTEMPTS)))
                 .set((names::status.eq(FAILED), names::error.eq(&error)))
-                .execute(conn)?;
-            QueryResult::Ok(())
+                .execute(conn)
         })
     })
     .await
     .map_err(|e| e.to_string())?
-    .map_err(|e| e.to_string())?;
-    Ok(())
+    .map_err(|e| e.to_string())
 }
 
 #[cfg(test)]
