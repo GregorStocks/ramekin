@@ -5,6 +5,8 @@ import subprocess
 import time
 from pathlib import Path
 
+from repo_lock_helpers import held_repo_lock, is_repo_lock_held
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -62,7 +64,7 @@ def _generate_clients(tmp_path: Path, env: dict[str, str], **extra_env: str):
 
 
 def _lock(tmp_path: Path) -> Path:
-    return tmp_path / "logs" / "locks" / "generate-clients.lock"
+    return tmp_path / "logs" / "locks" / "generate-clients.flock"
 
 
 def _generated(tmp_path: Path) -> int:
@@ -77,36 +79,28 @@ def test_generate_clients_releases_its_lock(tmp_path):
 
     assert result.returncode == 0, result.stdout
     assert _generated(tmp_path) == 4
-    assert not _lock(tmp_path).exists()
+    assert not is_repo_lock_held(_lock(tmp_path))
 
 
-def test_generate_clients_clears_a_lock_left_by_a_killed_run(tmp_path):
-    # A SIGKILLed run never reaches its EXIT trap; later runs used to wait on
-    # its lock forever.
+def test_generate_clients_ignores_a_lock_file_left_by_a_killed_run(tmp_path):
+    # A SIGKILLed run never reaches its EXIT trap, so its lock file stays
+    # behind with a dead PID in it; only a held flock may block later runs.
     env = _generate_clients_sandbox(tmp_path)
     finished = subprocess.Popen(["true"])
     finished.wait()
     lock = _lock(tmp_path)
-    lock.mkdir(parents=True)
-    (lock / "pid").write_text(f"{finished.pid}\n", encoding="utf-8")
+    lock.parent.mkdir(parents=True)
+    lock.write_text(f"{finished.pid}\n", encoding="utf-8")
 
     result = _generate_clients(tmp_path, env)
 
     assert result.returncode == 0, result.stdout
-    assert "Removing stale" in result.stdout
     assert _generated(tmp_path) == 4
-    assert not lock.exists()
+    assert not is_repo_lock_held(lock)
 
 
-def test_concurrent_runs_reclaim_a_stale_lock_one_at_a_time(tmp_path):
-    # Waiters that all saw the same stale lock must not each delete it: the
-    # slower one would remove the lock the faster one just took.
+def test_concurrent_runs_take_turns(tmp_path):
     env = _generate_clients_sandbox(tmp_path)
-    finished = subprocess.Popen(["true"])
-    finished.wait()
-    lock = _lock(tmp_path)
-    lock.mkdir(parents=True)
-    (lock / "pid").write_text(f"{finished.pid}\n", encoding="utf-8")
 
     procs = [
         subprocess.Popen(
@@ -123,24 +117,23 @@ def test_concurrent_runs_reclaim_a_stale_lock_one_at_a_time(tmp_path):
     assert [p.returncode for p in procs] == [0] * 6, outputs
     assert not (tmp_path / "generated.overlaps").exists(), outputs
     assert _generated(tmp_path) == 24
-    assert list(lock.parent.iterdir()) == []
+    assert not is_repo_lock_held(_lock(tmp_path))
 
 
 def test_generate_clients_gives_up_on_a_lock_held_too_long(tmp_path):
-    # A killed run's PID can be reused by an unrelated process, which would
-    # otherwise keep the lock looking live forever.
+    # A hung run (or one whose orphaned children never finish) must not block
+    # every later run forever.
     env = _generate_clients_sandbox(tmp_path)
     lock = _lock(tmp_path)
-    lock.mkdir(parents=True)
-    (lock / "pid").write_text(f"{os.getpid()}\n", encoding="utf-8")
 
-    result = _generate_clients(tmp_path, env, REPO_LOCK_WAIT_SECONDS="1")
+    with held_repo_lock(lock):
+        result = _generate_clients(tmp_path, env, REPO_LOCK_WAIT_SECONDS="1")
 
     assert result.returncode == 1, result.stdout
     assert "Refusing to start API client generation" in result.stdout
+    assert f"(pid {os.getpid()})" in result.stdout
     assert str(lock) in result.stdout
     assert _generated(tmp_path) == 0
-    assert lock.exists()
 
 
 def test_generate_clients_stops_when_terminated(tmp_path):
@@ -165,4 +158,4 @@ def test_generate_clients_stops_when_terminated(tmp_path):
 
     assert proc.returncode == 143, output
     assert _generated(tmp_path) == 1
-    assert not _lock(tmp_path).exists()
+    assert not is_repo_lock_held(_lock(tmp_path))

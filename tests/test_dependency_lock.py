@@ -5,6 +5,8 @@ from pathlib import Path
 
 import pytest
 
+from repo_lock_helpers import held_repo_lock, is_repo_lock_held
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -256,7 +258,7 @@ def test_concurrent_ui_dep_installs_take_turns(tmp_path):
     assert [p.returncode for p in procs] == [0, 0], outputs
     assert not (tmp_path / "overlaps").exists()
     assert _installs(tmp_path) == 1
-    assert not (tmp_path / "logs" / "locks" / "ui-deps.lock").exists()
+    assert not is_repo_lock_held(tmp_path / "logs" / "locks" / "ui-deps.flock")
 
 
 def _fresh_marker(tmp_path: Path) -> None:
@@ -291,33 +293,14 @@ def test_forced_ui_dep_install_runs_even_when_marker_is_fresh(tmp_path):
 
 
 def test_ui_dep_install_gives_up_on_a_lock_held_too_long(tmp_path):
-    # A crashed installer's PID can be reused by an unrelated process, which
-    # would otherwise keep the lock looking live forever.
+    # A hung installer (or one whose orphaned npm ci never finishes) must not
+    # block every later install forever.
     env = _ui_deps_sandbox(tmp_path)
-    lock = tmp_path / "logs" / "locks" / "ui-deps.lock"
-    lock.mkdir(parents=True)
-    (lock / "pid").write_text(f"{os.getpid()}\n", encoding="utf-8")
 
-    proc = _install_ui_deps(tmp_path, env, REPO_LOCK_WAIT_SECONDS="1")
-    output = proc.communicate(timeout=30)[0]
+    with held_repo_lock(tmp_path / "logs" / "locks" / "ui-deps.flock"):
+        proc = _install_ui_deps(tmp_path, env, REPO_LOCK_WAIT_SECONDS="1")
+        output = proc.communicate(timeout=30)[0]
 
     assert proc.returncode == 1, output
     assert "Refusing to start UI dependency install" in output
     assert _installs(tmp_path) == 0
-    assert lock.exists()
-
-
-def test_ui_dep_install_clears_a_lock_left_by_a_dead_process(tmp_path):
-    env = _ui_deps_sandbox(tmp_path)
-    finished = subprocess.Popen(["true"])
-    finished.wait()
-    lock = tmp_path / "logs" / "locks" / "ui-deps.lock"
-    lock.mkdir(parents=True)
-    (lock / "pid").write_text(f"{finished.pid}\n", encoding="utf-8")
-
-    proc = _install_ui_deps(tmp_path, env)
-    output = proc.communicate(timeout=30)[0]
-
-    assert proc.returncode == 0, output
-    assert "Removing stale" in output
-    assert _installs(tmp_path) == 1
