@@ -41,7 +41,6 @@ pub async fn extract_recipe_from_photos(
     let request = ChatRequest {
         messages: vec![ChatMessage::user_with_images(prompt, images)],
         json_response: true,
-        fresh: false,
         // A long page's recipe runs to ~2.5k tokens, and reasoning models
         // think first.
         max_tokens: Some(8192),

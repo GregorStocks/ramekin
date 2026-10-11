@@ -7,8 +7,11 @@
 //! (pending, resolved, failed), so a name is resolved once however many saves
 //! mention it. One worker resolves pending names in batches; a batch lock
 //! keeps two callers from paying for the same names. Saves never wait on it,
-//! reads never call the LLM, and a failed batch stays visible (Settings ->
-//! Ingredient recognition) until retried.
+//! and reads neither call the LLM nor queue names. An invalid answer is asked
+//! again up to `MAX_ATTEMPTS` times; a name that still fails stays visible
+//! (Settings -> Ingredient recognition) until retried. An answer is kept until
+//! the catalog stops accepting it (see `CatalogSync`): names are never re-asked
+//! because the model or the candidate list changed.
 
 use std::collections::{BTreeMap, BTreeSet, HashSet};
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -42,16 +45,13 @@ const RETRY_MAX: Duration = Duration::from_secs(60 * 60);
 pub const PENDING: &str = "pending";
 pub const RESOLVED: &str = "resolved";
 pub const FAILED: &str = "failed";
-/// The committed catalog knows the name now; the row keeps its last answer.
-pub const HARVESTED: &str = "harvested";
+/// How many invalid answers a name gets before it's marked failed.
+const MAX_ATTEMPTS: i32 = 3;
 
 static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
-/// Set whenever names are saved resolved, so the worker sweeps stored recipes
-/// for the weight gaps the answers reveal.
-static NAMES_SAVED: AtomicBool = AtomicBool::new(false);
 /// Set whenever names or weights are queued or put back in the queue, or the
-/// provider answers. Reads of names that are already pending also wake the
-/// worker (clients poll while names resolve), so only these cut a failure
+/// provider answers. Estimate reads with weights still pending also wake the
+/// worker (clients poll while they resolve), so only these cut a failure
 /// backoff short; otherwise a provider outage would be retried at the clients'
 /// polling interval.
 static NEW_WORK: AtomicBool = AtomicBool::new(false);
@@ -95,29 +95,21 @@ pub fn enqueue(conn: &mut PgConnection, new_names: &[String]) -> QueryResult<usi
     Ok(queued)
 }
 
-/// Put failed names back in the queue, clearing their error, so the next
-/// pass asks about them again. That includes failed re-asks, which keep
-/// their earlier answer meanwhile.
+/// Put failed names back in the queue with a fresh set of attempts.
 pub fn requeue_failed(conn: &mut PgConnection, failed: &[String]) -> QueryResult<usize> {
     let pending = diesel::update(
         names::table
             .filter(names::status.eq(FAILED))
             .filter(names::name.eq_any(failed)),
     )
-    .set((names::status.eq(PENDING), names::error.eq(None::<String>)))
-    .execute(conn)?;
-    let reasked = diesel::update(
-        names::table
-            .filter(names::reask_error.is_not_null())
-            .filter(names::name.eq_any(failed)),
-    )
     .set((
-        names::reasked.eq(true),
-        names::reask_error.eq(None::<String>),
+        names::status.eq(PENDING),
+        names::error.eq(None::<String>),
+        names::attempts.eq(0),
     ))
     .execute(conn)?;
-    note_new_work(pending + reasked);
-    Ok(pending + reasked)
+    note_new_work(pending);
+    Ok(pending)
 }
 
 /// Queue the unknown names in `items`. Write paths call this inside their
@@ -128,37 +120,6 @@ pub fn enqueue_items<'a>(
     items: impl IntoIterator<Item = &'a str>,
 ) -> QueryResult<usize> {
     enqueue(conn, &unlearned_names(items))
-}
-
-/// The most new names one read queues: a recipe rarely has more, and the
-/// rest are queued on later reads, so a read can't grow the paid queue
-/// without bound.
-const MAX_QUEUED_PER_READ: usize = 50;
-
-/// Queue `items`' unknown or ambiguous names that have no row yet, up to
-/// `MAX_QUEUED_PER_READ`. A read path calls this, so recipes saved before a
-/// catalog change (or before ambiguous names were learned) still get their
-/// names resolved. Returns whether any were left for a later read, which
-/// should keep the reader polling like a pending name.
-pub fn enqueue_unasked<'a>(
-    conn: &mut PgConnection,
-    items: impl IntoIterator<Item = &'a str>,
-) -> QueryResult<bool> {
-    let wanted = unlearned_names(items);
-    if wanted.is_empty() {
-        return Ok(false);
-    }
-    let asked: Vec<String> = names::table
-        .filter(names::name.eq_any(&wanted))
-        .select(names::name)
-        .load(conn)?;
-    let unasked: Vec<String> = wanted
-        .into_iter()
-        .filter(|name| !asked.contains(name))
-        .collect();
-    let (now, later) = unasked.split_at(unasked.len().min(MAX_QUEUED_PER_READ));
-    enqueue(conn, now)?;
-    Ok(!later.is_empty())
 }
 
 /// Wake the worker.
@@ -244,34 +205,16 @@ pub fn any_pending<'a>(
     .get_result(conn)
 }
 
-/// What the startup sync does to a stored name after a catalog change.
+/// Why the startup sync puts a resolved name back in the queue: its answer
+/// no longer fits the committed catalog. Nothing else re-asks a name.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 pub enum CatalogSync {
-    /// The committed catalog knows the name now (its answer was harvested
-    /// into `curated.json`, or a classification pass added it), so its row
-    /// is retired, keeping its last answer.
-    Harvest,
-    /// A harvested name the catalog no longer knows (an alias was removed):
-    /// ask again.
-    Unharvest,
     /// The learned key no longer names one entry (removed or split): ask
     /// again rather than silently reading as unknown.
     StaleKey,
     /// The catalog now calls the name ambiguous, which rules out an estimate
     /// or a non-food answer: ask again for the food a recipe most likely means.
     NowAmbiguous,
-    /// Answered unknown or estimated (both mean no candidate fit), and the
-    /// catalog now offers different candidates: re-ask in case one fits,
-    /// serving the old answer until the new one replaces it.
-    NewCandidates,
-}
-
-impl CatalogSync {
-    /// Whether the name's computed shopping category may change, so items
-    /// with it must be sent again by incremental sync.
-    fn changes_category(self) -> bool {
-        !matches!(self, Self::NewCandidates)
-    }
 }
 
 /// A stored name as the startup sync reads it.
@@ -281,29 +224,18 @@ pub struct StoredName {
     pub status: String,
     pub disposition: Option<String>,
     pub catalog_key: Option<String>,
-    /// The candidates last asked about, answered or not.
-    pub candidates: Option<Vec<Option<String>>>,
 }
 
-/// What the committed catalog means for a stored name, if anything.
+/// Whether the committed catalog rules out a stored answer. A name the
+/// catalog knows itself is never looked up here, so its row is left alone.
 pub fn catalog_sync(row: &StoredName) -> Option<CatalogSync> {
-    let known = unlearned_name(&row.name).is_none();
-    if row.status == HARVESTED {
-        return (!known).then_some(CatalogSync::Unharvest);
-    }
-    if known {
-        return Some(CatalogSync::Harvest);
-    }
-    if row.status != RESOLVED {
+    if row.status != RESOLVED || unlearned_name(&row.name).is_none() {
         return None;
     }
     match (row.disposition.as_deref(), row.catalog_key.as_deref()) {
         (Some("entry"), Some(key)) if !learned_key_resolves(key) => Some(CatalogSync::StaleKey),
         (Some("estimate" | "not_food"), _) if is_ambiguous(&row.name) => {
             Some(CatalogSync::NowAmbiguous)
-        }
-        (Some("unknown" | "estimate"), _) if row.candidates != Some(stored(offered(&row.name))) => {
-            Some(CatalogSync::NewCandidates)
         }
         _ => None,
     }
@@ -317,23 +249,18 @@ fn offered(name: &str) -> Vec<String> {
         .collect()
 }
 
-/// Candidate keys as the `candidates` column holds them.
-fn stored(keys: Vec<String>) -> Vec<Option<String>> {
-    keys.into_iter().map(Some).collect()
-}
-
-/// Bring stored names in line with the committed catalog (see
-/// `CatalogSync`), returning how many of each changed. Runs at startup,
-/// before serving, since the catalog only changes with a deploy.
+/// Put names whose answer the committed catalog rules out (see
+/// `CatalogSync`) back in the queue, returning how many of each. Runs at
+/// startup, before serving, since the catalog only changes with a deploy.
 pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, String> {
     let mut conn = pool.get().map_err(|e| e.to_string())?;
     let rows: Vec<StoredName> = names::table
+        .filter(names::status.eq(RESOLVED))
         .select((
             names::name,
             names::status,
             names::disposition,
             names::catalog_key,
-            names::candidates,
         ))
         .load(&mut conn)
         .map_err(|e| e.to_string())?;
@@ -343,124 +270,44 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
             changes.entry(sync).or_default().push(row.name);
         }
     }
-    conn.transaction(|conn| {
-        let now = Utc::now();
-        let recategorized: HashSet<&str> = changes
-            .iter()
-            .filter(|(sync, _)| sync.changes_category())
-            .flat_map(|(_, changed)| changed.iter().map(String::as_str))
-            .collect();
-        touch_shopping_items(conn, &recategorized, now)?;
-        for (sync, changed) in &changes {
-            let rows = names::table.filter(names::name.eq_any(changed));
-            match sync {
-                CatalogSync::Harvest => diesel::update(rows)
-                    .set((
-                        names::status.eq(HARVESTED),
-                        names::reasked.eq(false),
-                        names::reask_error.eq(None::<String>),
-                        names::error.eq(None::<String>),
-                        names::updated_at.eq(now),
-                    ))
-                    .execute(conn)?,
-                CatalogSync::NewCandidates => diesel::update(rows)
-                    .set((
-                        names::reasked.eq(true),
-                        names::reask_error.eq(None::<String>),
-                        names::updated_at.eq(now),
-                    ))
-                    .execute(conn)?,
-                CatalogSync::Unharvest | CatalogSync::StaleKey | CatalogSync::NowAmbiguous => {
-                    diesel::update(rows)
-                        .set((
-                            names::status.eq(PENDING),
-                            names::reasked.eq(false),
-                            names::reask_error.eq(None::<String>),
-                            names::disposition.eq(None::<String>),
-                            names::catalog_key.eq(None::<String>),
-                            names::kcal_per_100g.eq(None::<f64>),
-                            names::grams_per_cup.eq(None::<f64>),
-                            names::grams_per_piece.eq(None::<f64>),
-                            names::candidates.eq(None::<Vec<Option<String>>>),
-                            names::error.eq(None::<String>),
-                            names::updated_at.eq(now),
-                        ))
-                        .execute(conn)?
-                }
-            };
-        }
-        QueryResult::Ok(())
-    })
-    .map_err(|e| e.to_string())?;
+    let requeued: Vec<&String> = changes.values().flatten().collect();
+    if !requeued.is_empty() {
+        conn.transaction(|conn| {
+            let now = Utc::now();
+            // The old answer may have given these items their category.
+            let names: HashSet<&str> = requeued.iter().map(|name| name.as_str()).collect();
+            touch_shopping_items(conn, &names, now)?;
+            diesel::update(names::table.filter(names::name.eq_any(&requeued)))
+                .set((
+                    names::status.eq(PENDING),
+                    names::disposition.eq(None::<String>),
+                    names::catalog_key.eq(None::<String>),
+                    names::kcal_per_100g.eq(None::<f64>),
+                    names::grams_per_cup.eq(None::<f64>),
+                    names::grams_per_piece.eq(None::<f64>),
+                    names::error.eq(None::<String>),
+                    names::attempts.eq(0),
+                    names::updated_at.eq(now),
+                ))
+                .execute(conn)?;
+            QueryResult::Ok(())
+        })
+        .map_err(|e| e.to_string())?;
+    }
     Ok(changes
         .into_iter()
         .map(|(sync, changed)| (sync, changed.len()))
         .collect())
 }
 
-/// Flag resolved answers from a model other than `model` to be asked again.
-/// They keep being served until the new answer replaces them. Runs at
-/// startup, so a model change upgrades the stored answers.
-pub fn reask_other_models(pool: &DbPool, model: &str) -> Result<(usize, usize), String> {
-    use crate::schema::ingredient_weight_estimates as weights;
-    let mut conn = pool.get().map_err(|e| e.to_string())?;
-    conn.transaction(|conn| {
-        let names = diesel::update(
-            names::table
-                .filter(names::status.eq(RESOLVED))
-                .filter(names::model.is_distinct_from(model)),
-        )
-        .set((
-            names::reasked.eq(true),
-            names::reask_error.eq(None::<String>),
-        ))
-        .execute(conn)?;
-        let weights = diesel::update(
-            weights::table
-                .filter(weights::status.eq(RESOLVED))
-                .filter(weights::model.is_distinct_from(model)),
-        )
-        .set((
-            weights::reasked.eq(true),
-            weights::reask_error.eq(None::<String>),
-        ))
-        .execute(conn)?;
-        QueryResult::Ok((names, weights))
-    })
-    .map_err(|e| e.to_string())
-}
-
 /// Start the worker. It first drains whatever was pending at startup, then
 /// waits to be woken.
 pub fn spawn_worker(pool: Arc<DbPool>) {
     tokio::spawn(async move {
-        // `queue_stored` ran at startup. A saved answer can reveal a weight
-        // gap in any stored recipe, whichever path resolved it (this worker,
-        // a scrape job, a retry), so weights are swept again after every pass
-        // that follows one, retrying until that sweep succeeds.
-        let mut sweep_weights = false;
         let mut backoff = RETRY_MIN;
         loop {
             NEW_WORK.store(false, Ordering::SeqCst);
-            let mut pass = work_pass(&pool).await;
-            sweep_weights |= NAMES_SAVED.swap(false, Ordering::SeqCst);
-            if pass.is_ok() && sweep_weights {
-                let swept = run_blocking(&pool, |conn| queue_stored(conn, false))
-                    .await
-                    .map_err(|e| e.to_string())
-                    .and_then(|result| result);
-                match swept {
-                    Ok((_, weights)) => {
-                        sweep_weights = false;
-                        if weights > 0 {
-                            tracing::info!(weights, "queued stored ingredient weight gaps");
-                            continue;
-                        }
-                    }
-                    Err(e) => pass = Err(format!("sweeping stored weight gaps: {e}")),
-                }
-            }
-            match pass {
+            match work_pass(&pool).await {
                 Ok(()) => {
                     backoff = RETRY_MIN;
                     WAKE.notified().await;
@@ -489,17 +336,13 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
     });
 }
 
-/// Queue what every stored recipe and shopping-list item needs: unknown or
-/// ambiguous names (when `queue_names`), and the weight gaps their estimates
-/// report with what's learned so far. Returns how many names and weights were
-/// queued. Stored recipes are otherwise only queued when saved or read, so
-/// after a deploy (a catalog change, a new kind of answer) the server runs
-/// this at startup rather than waiting for each to be opened.
-pub fn queue_stored(conn: &mut PgConnection, queue_names: bool) -> Result<(usize, usize), String> {
+/// Queue the unknown or ambiguous names of every stored recipe and
+/// shopping-list item, returning how many were new. Saves queue their own
+/// names, so this only finds names a catalog change stopped recognizing; the
+/// server runs it at startup, since the catalog only changes with a deploy.
+pub fn queue_stored(conn: &mut PgConnection) -> Result<usize, String> {
     use crate::models::Ingredient;
     use crate::schema::{recipe_versions, recipes, shopping_list_items};
-    use ramekin_core::ingredient_parser::ParsedIngredient;
-    use ramekin_core::nutrition;
 
     let versions: Vec<serde_json::Value> = recipes::table
         .inner_join(
@@ -510,53 +353,19 @@ pub fn queue_stored(conn: &mut PgConnection, queue_names: bool) -> Result<(usize
         .select(recipe_versions::ingredients)
         .load(conn)
         .map_err(|e| e.to_string())?;
-    let recipes: Vec<Vec<ParsedIngredient>> = versions
-        .into_iter()
-        .map(|ingredients| {
-            serde_json::from_value::<Vec<Ingredient>>(ingredients)
-                .map(|ingredients| ingredients.into_iter().map(Into::into).collect())
-                .map_err(|e| format!("stored recipe ingredients are not valid: {e}"))
-        })
-        .collect::<Result<_, _>>()?;
-    let mut items: Vec<String> = recipes
-        .iter()
-        .flatten()
-        .map(|ingredient| ingredient.item.clone())
-        .collect();
-    let queued_names = if queue_names {
-        let shopping: Vec<String> = shopping_list_items::table
-            .filter(shopping_list_items::deleted_at.is_null())
-            .select(shopping_list_items::item)
-            .load(conn)
-            .map_err(|e| e.to_string())?;
-        items.extend(shopping);
-        enqueue(conn, &unlearned_names(items.iter().map(String::as_str)))
-            .map_err(|e| e.to_string())?
-    } else {
-        0
-    };
-    let learned =
-        load_learned(conn, items.iter().map(String::as_str)).map_err(|e| e.to_string())?;
-    let empty = nutrition::Weights::new();
-    let mut gaps = BTreeSet::new();
-    for ingredients in &recipes {
-        let estimate = nutrition::estimate_with(ingredients, None, 1.0, &learned, &empty)
-            .map_err(|e| format!("stored recipe estimate failed: {e}"))?;
-        gaps.extend(estimate.weight_gaps);
+    let mut items: Vec<String> = Vec::new();
+    for ingredients in versions {
+        let ingredients = serde_json::from_value::<Vec<Ingredient>>(ingredients)
+            .map_err(|e| format!("stored recipe ingredients are not valid: {e}"))?;
+        items.extend(ingredients.into_iter().map(|ingredient| ingredient.item));
     }
-    let queued_weights =
-        crate::ingredient_weights::enqueue(conn, &gaps.into_iter().collect::<Vec<_>>())
-            .map_err(|e| e.to_string())?;
-    Ok((queued_names, queued_weights))
-}
-
-/// Which rows a batch is taken from.
-#[derive(Clone, Copy)]
-pub(crate) enum Work {
-    /// Never answered, or asked again with nothing to serve meanwhile.
-    Pending,
-    /// Answered by another model and asked again; the old answer is served.
-    Reasked,
+    let shopping: Vec<String> = shopping_list_items::table
+        .filter(shopping_list_items::deleted_at.is_null())
+        .select(shopping_list_items::item)
+        .load(conn)
+        .map_err(|e| e.to_string())?;
+    items.extend(shopping);
+    enqueue(conn, &unlearned_names(items.iter().map(String::as_str))).map_err(|e| e.to_string())
 }
 
 /// How taking one batch from a queue went. Failures are already recorded on
@@ -580,32 +389,16 @@ async fn work_pass(pool: &Arc<DbPool>) -> Result<(), String> {
     // A queue whose provider failed sits out the rest of the pass: its next
     // batch would fail the same way, so it waits for the worker's retry. An
     // idle queue is checked again every turn, since saves keep adding work.
-    // Pending work in either queue goes first; an answer being re-asked of a
-    // newer model is still served, so its batch waits until nothing is
-    // pending, one at a time, so new work never waits behind a backlog.
     let (mut names_down, mut weights_down) = (false, false);
     loop {
         let mut worked = false;
         if !names_down {
-            let step = resolve_next_batch(pool, None, Work::Pending).await?;
+            let step = resolve_next_batch(pool, None).await?;
             names_down = matches!(step, Step::ProviderFailed(_));
             worked |= record(step, &mut first_error);
         }
         if !weights_down {
-            let step = crate::ingredient_weights::estimate_next_batch(pool, Work::Pending).await?;
-            weights_down = matches!(step, Step::ProviderFailed(_));
-            worked |= record(step, &mut first_error);
-        }
-        if worked {
-            continue;
-        }
-        if !names_down {
-            let step = resolve_next_batch(pool, None, Work::Reasked).await?;
-            names_down = matches!(step, Step::ProviderFailed(_));
-            worked |= record(step, &mut first_error);
-        }
-        if !worked && !weights_down {
-            let step = crate::ingredient_weights::estimate_next_batch(pool, Work::Reasked).await?;
+            let step = crate::ingredient_weights::estimate_next_batch(pool).await?;
             weights_down = matches!(step, Step::ProviderFailed(_));
             worked |= record(step, &mut first_error);
         }
@@ -636,22 +429,15 @@ fn record(step: Step, first_error: &mut Option<String>) -> bool {
 /// Resolve one batch of pending names, or only of `only`. The batch is taken
 /// under the batch lock, so no name is asked about twice, and one at a time,
 /// so a scrape job's few names wait for at most the batch in flight.
-async fn resolve_next_batch(
-    pool: &Arc<DbPool>,
-    only: Option<Vec<String>>,
-    work: Work,
-) -> Result<Step, String> {
+async fn resolve_next_batch(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> Result<Step, String> {
     let _batch = BATCH.lock().await;
     let batch: Vec<String> = run_blocking(pool, move |conn| {
         let mut query = names::table
+            .filter(names::status.eq(PENDING))
             .select(names::name)
             .order(names::name)
             .limit(BATCH_SIZE)
             .into_boxed();
-        query = match work {
-            Work::Pending => query.filter(names::status.eq(PENDING)),
-            Work::Reasked => query.filter(names::reasked),
-        };
         if let Some(only) = only {
             query = query.filter(names::name.eq_any(only));
         }
@@ -665,7 +451,7 @@ async fn resolve_next_batch(
     }
     // A failed answer is recorded on its names; failing to record it would
     // leave them pending, so `Err` stops rather than asking again.
-    Ok(match resolve_batch(pool, batch, work).await? {
+    Ok(match resolve_batch(pool, batch).await? {
         Batch::Resolved => Step::Done,
         Batch::NamesFailed(e) => Step::Failed(e),
         Batch::ProviderFailed(e) => Step::ProviderFailed(e),
@@ -678,7 +464,7 @@ async fn resolve_next_batch(
 pub async fn resolve_pending(pool: &Arc<DbPool>, only: Vec<String>) -> Result<(), String> {
     let mut first_error = None;
     while record(
-        resolve_next_batch(pool, Some(only.clone()), Work::Pending).await?,
+        resolve_next_batch(pool, Some(only.clone())).await?,
         &mut first_error,
     ) {}
     if let Some(e) = first_error {
@@ -717,12 +503,8 @@ enum Batch {
 /// doesn't fail the others; only the names that fail on their own are marked
 /// failed. Provider and configuration errors fail the batch at once. `Err`
 /// means an outcome couldn't be saved.
-async fn resolve_batch(
-    pool: &Arc<DbPool>,
-    batch: Vec<String>,
-    work: Work,
-) -> Result<Batch, String> {
-    let error = match ask(&batch, work).await {
+async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, String> {
+    let error = match ask(&batch).await {
         Ok((resolutions, model)) => {
             save_resolved(pool, resolutions, model).await?;
             return Ok(Batch::Resolved);
@@ -738,7 +520,7 @@ async fn resolve_batch(
     let mut outcome = Batch::Resolved;
     for name in batch {
         let single = vec![name];
-        match ask(&single, work).await {
+        match ask(&single).await {
             Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await?,
             Err(error) => match fail(pool, single, error).await? {
                 Batch::NamesFailed(e) => {
@@ -772,12 +554,8 @@ async fn fail(pool: &Arc<DbPool>, names: Vec<String>, error: AiError) -> Result<
     })
 }
 
-/// One name's answer and the candidate keys it was offered.
-type Answer = (String, NameResolution, Vec<String>);
-
 /// One LLM call for `batch`: each name's answer, and the model that gave it.
-/// A re-ask skips the cache, which holds the answer being questioned.
-async fn ask(batch: &[String], work: Work) -> Result<(Vec<Answer>, String), AiError> {
+async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String), AiError> {
     let prompt: Vec<NameQuery> = batch
         .iter()
         .map(|name| NameQuery {
@@ -787,13 +565,12 @@ async fn ask(batch: &[String], work: Work) -> Result<(Vec<Answer>, String), AiEr
         })
         .collect();
     let (client, model) = CLIENT.as_ref().map_err(|e| AiError::Config(e.clone()))?;
-    let fresh = matches!(work, Work::Reasked);
-    let mut result = resolve_ingredient_names(client, &prompt, fresh).await?;
+    let mut result = resolve_ingredient_names(client, &prompt).await?;
     let answers = prompt
         .into_iter()
         .filter_map(|query| {
             let resolution = result.resolutions.remove(&query.name)?;
-            Some((query.name, resolution, query.candidates))
+            Some((query.name, resolution))
         })
         .collect();
     Ok((answers, model.clone()))
@@ -801,7 +578,7 @@ async fn ask(batch: &[String], work: Work) -> Result<(Vec<Answer>, String), AiEr
 
 async fn save_resolved(
     pool: &Arc<DbPool>,
-    answers: Vec<Answer>,
+    answers: Vec<(String, NameResolution)>,
     model: String,
 ) -> Result<(), String> {
     let resolved = answers.len();
@@ -810,29 +587,20 @@ async fn save_resolved(
             // Taken once the connection is ours, to keep the touch as close
             // to its commit as possible for incremental sync.
             let now = Utc::now();
-            // Only entries and non-foods give a shopping category, so the
-            // items' computed category changes when the new answer or the
-            // one it replaces (a re-asked row) is one of them.
-            let asked: Vec<&str> = answers.iter().map(|(name, _, _)| name.as_str()).collect();
-            let previously_categorized: HashSet<String> = names::table
-                .filter(names::name.eq_any(&asked))
-                .filter(names::disposition.eq_any(["entry", "not_food"]))
-                .select(names::name)
-                .load::<String>(conn)?
-                .into_iter()
-                .collect();
+            // Only entries and non-foods give a shopping category. A pending
+            // name has no earlier answer, so nothing else changes one.
             let recategorized: HashSet<&str> = answers
                 .iter()
-                .filter(|(name, resolution, _)| {
+                .filter(|(_, resolution)| {
                     matches!(
                         resolution,
                         NameResolution::Entry(_) | NameResolution::NotFood
-                    ) || previously_categorized.contains(name)
+                    )
                 })
-                .map(|(name, _, _)| name.as_str())
+                .map(|(name, _)| name.as_str())
                 .collect();
             touch_shopping_items(conn, &recategorized, now)?;
-            for (name, resolution, offered) in &answers {
+            for (name, resolution) in &answers {
                 let (disposition, key, estimate) = match resolution {
                     NameResolution::Entry(key) => ("entry", Some(key.as_str()), None),
                     NameResolution::Estimate(estimate) => ("estimate", None, Some(estimate)),
@@ -842,14 +610,11 @@ async fn save_resolved(
                 diesel::update(names::table.find(name))
                     .set((
                         names::status.eq(RESOLVED),
-                        names::reasked.eq(false),
-                        names::reask_error.eq(None::<String>),
                         names::disposition.eq(disposition),
                         names::catalog_key.eq(key),
                         names::kcal_per_100g.eq(estimate.map(|e| e.kcal_per_100g)),
                         names::grams_per_cup.eq(estimate.and_then(|e| e.grams_per_cup)),
                         names::grams_per_piece.eq(estimate.and_then(|e| e.grams_per_piece)),
-                        names::candidates.eq(stored(offered.clone())),
                         names::model.eq(&model),
                         names::error.eq(None::<String>),
                         names::attempts.eq(names::attempts + 1),
@@ -864,7 +629,6 @@ async fn save_resolved(
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
     tracing::info!(resolved, "resolved ingredient names");
-    NAMES_SAVED.store(true, Ordering::SeqCst);
     // The provider answered, so a worker backing off from an outage should
     // retry its pending names now.
     note_new_work(resolved);
@@ -905,9 +669,8 @@ fn touch_shopping_items(
 
 /// Record a failed attempt. After a provider failure (an outage, a rate
 /// limit, a missing key) every name stays queued for the worker's retry.
-/// After an invalid answer a pending name is marked failed, and a name being
-/// re-asked keeps its old answer with the error recorded, for the status page
-/// and its Retry.
+/// After an invalid answer a name stays queued until it has had
+/// `MAX_ATTEMPTS`, then is marked failed for the status page and its Retry.
 async fn save_failed(
     pool: &Arc<DbPool>,
     failed: Vec<String>,
@@ -923,53 +686,26 @@ async fn save_failed(
         return Ok(());
     }
     let now = Utc::now();
-    let message = error.clone();
-    let given_up = run_blocking(pool, move |conn| {
+    run_blocking(pool, move |conn| {
         conn.transaction(|conn| {
-            diesel::update(
-                names::table
-                    .filter(names::name.eq_any(&failed))
-                    .filter(names::status.eq(PENDING)),
-            )
-            .set((
-                names::status.eq(FAILED),
-                names::error.eq(&message),
-                names::attempts.eq(names::attempts + 1),
-                names::updated_at.eq(now),
-            ))
-            .execute(conn)?;
-            // The candidates the failed re-ask offered are recorded, so a
-            // restart doesn't ask about the same ones again (only Retry or
-            // a catalog that offers different ones does).
-            let mut given_up = 0;
-            for name in &failed {
-                given_up += diesel::update(
-                    names::table
-                        .filter(names::name.eq(name))
-                        .filter(names::reasked),
-                )
+            let failed = names::table
+                .filter(names::name.eq_any(&failed))
+                .filter(names::status.eq(PENDING));
+            diesel::update(failed.clone())
                 .set((
-                    names::reasked.eq(false),
-                    names::reask_error.eq(&message),
-                    names::candidates.eq(stored(offered(name))),
                     names::attempts.eq(names::attempts + 1),
                     names::updated_at.eq(now),
                 ))
                 .execute(conn)?;
-            }
-            QueryResult::Ok(given_up)
+            diesel::update(failed.filter(names::attempts.ge(MAX_ATTEMPTS)))
+                .set((names::status.eq(FAILED), names::error.eq(&error)))
+                .execute(conn)?;
+            QueryResult::Ok(())
         })
     })
     .await
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
-    if given_up > 0 {
-        tracing::error!(
-            names = given_up,
-            "re-asking ingredient names failed; keeping their earlier answers: {}",
-            error
-        );
-    }
     Ok(())
 }
 
@@ -983,24 +719,13 @@ mod tests {
             status: status.to_string(),
             disposition: disposition.map(str::to_string),
             catalog_key: key.map(str::to_string),
-            candidates: None,
         }
     }
 
     #[test]
-    fn names_the_catalog_knows_are_harvested_whatever_their_state() {
-        for status in [PENDING, FAILED, RESOLVED] {
-            let known = row("all-purpose flour", status, None, None);
-            assert_eq!(catalog_sync(&known), Some(CatalogSync::Harvest), "{status}");
-        }
-        let harvested = row("all-purpose flour", HARVESTED, Some("entry"), Some("flour"));
-        assert_eq!(catalog_sync(&harvested), None);
-    }
-
-    #[test]
-    fn harvested_names_the_catalog_lost_are_asked_again() {
-        let lost = row("zorblax paste", HARVESTED, Some("not_food"), None);
-        assert_eq!(catalog_sync(&lost), Some(CatalogSync::Unharvest));
+    fn names_the_catalog_knows_are_left_alone() {
+        let known = row("all-purpose flour", RESOLVED, Some("not_food"), None);
+        assert_eq!(catalog_sync(&known), None);
     }
 
     #[test]
@@ -1009,10 +734,6 @@ mod tests {
             let cheese = row("cheese", RESOLVED, Some(disposition), None);
             assert_eq!(catalog_sync(&cheese), Some(CatalogSync::NowAmbiguous));
         }
-    }
-
-    #[test]
-    fn ambiguous_names_are_never_harvested() {
         let cheese = row("cheese", RESOLVED, Some("entry"), Some("cheddar cheese"));
         assert_eq!(catalog_sync(&cheese), None);
     }
@@ -1031,31 +752,13 @@ mod tests {
     }
 
     #[test]
-    fn estimates_are_asked_again_when_the_candidates_change() {
-        let estimate = row("zorblax flour", RESOLVED, Some("estimate"), None);
-        assert_eq!(catalog_sync(&estimate), Some(CatalogSync::NewCandidates));
-    }
-
-    #[test]
-    fn unknown_answers_are_asked_again_when_the_candidates_change() {
-        let mut unknown = row("zorblax flour", RESOLVED, Some("unknown"), None);
-        assert_eq!(
-            catalog_sync(&unknown),
-            Some(CatalogSync::NewCandidates),
-            "answered before candidates were stored"
-        );
-        unknown.candidates = Some(stored(offered("zorblax flour")));
-        assert_eq!(catalog_sync(&unknown), None);
-        unknown.candidates = Some(vec![Some("all-purpose flour".to_string())]);
-        assert_eq!(catalog_sync(&unknown), Some(CatalogSync::NewCandidates));
-    }
-
-    #[test]
     fn other_answers_and_open_names_are_left_alone() {
         for (status, disposition) in [
             (PENDING, None),
             (FAILED, None),
             (RESOLVED, Some("not_food")),
+            (RESOLVED, Some("unknown")),
+            (RESOLVED, Some("estimate")),
         ] {
             assert_eq!(
                 catalog_sync(&row("zorblax paste", status, disposition, None)),

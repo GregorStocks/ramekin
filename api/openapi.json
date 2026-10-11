@@ -3016,7 +3016,6 @@
         "type": "object",
         "description": "Every display string is final; clients render them as-is.",
         "required": [
-          "database_version",
           "status",
           "headline",
           "not_counted",
@@ -3024,10 +3023,6 @@
           "resolving"
         ],
         "properties": {
-          "database_version": {
-            "type": "string",
-            "description": "Identifies the pinned source data, aliases, and calculation rules."
-          },
           "headline": {
             "type": "string",
             "description": "The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the\nwhole recipe\", or \"Not enough ingredient data to estimate calories\"."
@@ -3879,8 +3874,6 @@
           "unknown",
           "pending",
           "failed",
-          "reasking",
-          "reask_failed",
           "failures",
           "weights"
         ],
@@ -3893,14 +3886,14 @@
           "failed": {
             "type": "integer",
             "format": "int64",
-            "description": "The last attempt failed; retry to try again."
+            "description": "Every attempt gave an invalid answer; retry to try again."
           },
           "failures": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/IngredientNameFailure"
             },
-            "description": "The most recent failures, failed re-asks included."
+            "description": "The most recent failures."
           },
           "not_food": {
             "type": "integer",
@@ -3910,17 +3903,7 @@
           "pending": {
             "type": "integer",
             "format": "int64",
-            "description": "Waiting for the background resolver."
-          },
-          "reask_failed": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Re-asking with the current model failed; the earlier model's answer\nis still used (and counted above). Retry to try again."
-          },
-          "reasking": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Being asked again by the current model; the earlier model's answer\nis used meanwhile (and counted above)."
+            "description": "Waiting for the background resolver (including names whose answer\nwas invalid and will be asked again)."
           },
           "recognized": {
             "type": "integer",
@@ -3970,8 +3953,6 @@
           "no_typical_weight",
           "pending",
           "failed",
-          "reasking",
-          "reask_failed",
           "failures"
         ],
         "properties": {
@@ -3990,7 +3971,7 @@
             "items": {
               "$ref": "#/components/schemas/IngredientWeightFailure"
             },
-            "description": "The most recent failures, failed re-asks included."
+            "description": "The most recent failures."
           },
           "no_typical_weight": {
             "type": "integer",
@@ -4001,16 +3982,6 @@
             "type": "integer",
             "format": "int64",
             "description": "Waiting for the background estimator (queued when an estimate is shown)."
-          },
-          "reask_failed": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Re-asking with the current model failed; the earlier model's estimate\nis still used (and counted above). Retry to try again."
-          },
-          "reasking": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Being asked again by the current model; the earlier model's estimate\nis used meanwhile (and counted above)."
           }
         }
       },

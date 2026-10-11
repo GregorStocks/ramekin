@@ -598,7 +598,7 @@ async fn eval_weights(
         Split::Halves,
         spend,
         async |batch: &[(String, String)]| {
-            estimate_ingredient_weights(&client, batch, false)
+            estimate_ingredient_weights(&client, batch)
                 .await
                 .map(|result| (result.weights, result.usage))
         },
@@ -678,7 +678,7 @@ async fn eval_foods(
                     ambiguous: false,
                 })
                 .collect();
-            resolve_ingredient_names(&client, &batch, false)
+            resolve_ingredient_names(&client, &batch)
                 .await
                 .map(|result| (result.resolutions, result.usage))
         },
@@ -772,7 +772,7 @@ async fn eval_names(
                     ambiguous: false,
                 })
                 .collect();
-            resolve_ingredient_names(&client, &batch, false)
+            resolve_ingredient_names(&client, &batch)
                 .await
                 .map(|result| (result.resolutions, result.usage))
         },

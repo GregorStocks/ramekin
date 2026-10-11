@@ -10,11 +10,6 @@ use crate::catalog::{self, normalize, Entry, Kind, Resolution};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::parse_amount;
 
-const RULE_VERSION: &str = "calories-v17";
-
-static VERSION: LazyLock<String> =
-    LazyLock::new(|| format!("{RULE_VERSION}-{}", catalog::version()));
-
 /// A weight the catalog lacks for one food: grams per `unit` of the catalog
 /// entry `food` (its id). `unit` is "cup" for any volume (a missing density),
 /// else the counted unit in the catalog's piece spelling ("bunch", "head",
@@ -170,7 +165,6 @@ pub struct LineEstimate {
 
 #[derive(Debug)]
 pub struct Estimate {
-    pub database_version: String,
     pub status: Status,
     /// The one line to show: "~520 kcal per serving", "At least ~3,100 kcal
     /// for the whole recipe", "Not enough ingredient data to estimate calories".
@@ -1172,7 +1166,6 @@ pub fn estimate_with(
     left_out.sort_by_key(|line| line.index);
     let not_counted = left_out.into_iter().map(|line| line.item.clone()).collect();
     Ok(Estimate {
-        database_version: VERSION.clone(),
         status,
         headline,
         secondary,

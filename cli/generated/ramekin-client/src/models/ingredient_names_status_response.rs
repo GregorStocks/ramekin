@@ -16,24 +16,18 @@ pub struct IngredientNamesStatusResponse {
     /// A real food no catalog entry matches, counted with the model's own calories (\"estimated calories\").
     #[serde(rename = "estimated")]
     pub estimated: i64,
-    /// The last attempt failed; retry to try again.
+    /// Every attempt gave an invalid answer; retry to try again.
     #[serde(rename = "failed")]
     pub failed: i64,
-    /// The most recent failures, failed re-asks included.
+    /// The most recent failures.
     #[serde(rename = "failures")]
     pub failures: Vec<models::IngredientNameFailure>,
     /// Resolved as not an ingredient (a heading, a serving note).
     #[serde(rename = "not_food")]
     pub not_food: i64,
-    /// Waiting for the background resolver.
+    /// Waiting for the background resolver (including names whose answer was invalid and will be asked again).
     #[serde(rename = "pending")]
     pub pending: i64,
-    /// Re-asking with the current model failed; the earlier model's answer is still used (and counted above). Retry to try again.
-    #[serde(rename = "reask_failed")]
-    pub reask_failed: i64,
-    /// Being asked again by the current model; the earlier model's answer is used meanwhile (and counted above).
-    #[serde(rename = "reasking")]
-    pub reasking: i64,
     /// Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means).
     #[serde(rename = "recognized")]
     pub recognized: i64,
@@ -51,8 +45,6 @@ impl IngredientNamesStatusResponse {
         failures: Vec<models::IngredientNameFailure>,
         not_food: i64,
         pending: i64,
-        reask_failed: i64,
-        reasking: i64,
         recognized: i64,
         unknown: i64,
         weights: models::IngredientWeightsStatus,
@@ -63,8 +55,6 @@ impl IngredientNamesStatusResponse {
             failures,
             not_food,
             pending,
-            reask_failed,
-            reasking,
             recognized,
             unknown,
             weights: Box::new(weights),

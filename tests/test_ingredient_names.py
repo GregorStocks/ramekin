@@ -6,7 +6,6 @@ import threading
 import time
 import uuid
 
-import psycopg
 import pytest
 import requests
 
@@ -128,6 +127,21 @@ def test_saved_unknown_names_are_resolved_and_counted(authed_api_client):
     assert mock_answers(item.lower()) == 1
 
 
+def test_reading_an_estimate_queues_nothing(authed_api_client):
+    """Only saves queue names, so an unsaved edit can't add paid work."""
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    item = unique("flour")
+    first = estimate(api, item)
+    assert not first.resolving
+    assert first.lines[0].text == "Not recognized"
+    # A save of another name wakes the worker; the unsaved one isn't asked.
+    other = unique("flour")
+    create_recipe(api, other)
+    wait_for(lambda: line_text(api, other) != "Not recognized")
+    assert mock_calls(item.lower()) == 0
+
+
 def test_unknowable_names_stay_unknown(authed_api_client):
     client, _ = authed_api_client
     api = RecipesApi(client)
@@ -170,7 +184,9 @@ def test_failures_are_visible_and_retryable(authed_api_client):
             None,
         )
     )
+    # An invalid answer is asked again automatically, then given up on.
     assert failure.error
+    assert failure.attempts == 3
     assert line_text(api, item) == "Not recognized"
 
     mock_fail(item.lower(), False)
@@ -178,64 +194,6 @@ def test_failures_are_visible_and_retryable(authed_api_client):
     wait_for(lambda: line_text(api, item) != "Not recognized")
     status = names_api.get_ingredient_names_status()
     assert all(f.name != item.lower() for f in status.failures)
-
-
-def reask_state(database_url, name: str):
-    with psycopg.connect(database_url, autocommit=True) as conn:
-        return conn.execute(
-            "SELECT reasked, reask_error FROM ingredient_name_resolutions"
-            " WHERE name = %s",
-            (name,),
-        ).fetchone()
-
-
-def test_failed_reasks_keep_the_answer_and_are_retryable(
-    authed_api_client, database_url
-):
-    client, _ = authed_api_client
-    api = RecipesApi(client)
-    names_api = IngredientNamesApi(client)
-    item = unique("sugar")
-    name = item.lower()
-    create_recipe(api, item)
-    answered = wait_for(lambda: (t := line_text(api, item)) != "Not recognized" and t)
-
-    # What startup does for answers from another model.
-    mock_fail(name, True)
-    with psycopg.connect(database_url, autocommit=True) as conn:
-        conn.execute(
-            "UPDATE ingredient_name_resolutions SET reasked = true WHERE name = %s",
-            (name,),
-        )
-    names_api.retry_ingredient_names()  # wakes the worker
-
-    # The invalid re-answer is recorded, not retried forever, and the earlier
-    # answer is still served.
-    failure = wait_for(
-        lambda: next(
-            (
-                f
-                for f in names_api.get_ingredient_names_status().failures
-                if f.name == name
-            ),
-            None,
-        ),
-        timeout=60.0,
-    )
-    assert failure.error
-    assert names_api.get_ingredient_names_status().reask_failed >= 1
-    reasked, reask_error = reask_state(database_url, name)
-    assert not reasked and reask_error
-    assert line_text(api, item) == answered
-
-    # Retry asks again, and a valid answer clears the failure.
-    mock_fail(name, False)
-    answers = mock_answers(name)
-    assert names_api.retry_ingredient_names().queued >= 1
-    wait_for(lambda: mock_answers(name) > answers, timeout=60.0)
-    wait_for(lambda: reask_state(database_url, name) == (False, None))
-    status = names_api.get_ingredient_names_status()
-    assert all(f.name != name for f in status.failures)
 
 
 def import_recipe(client, item: str):
@@ -265,13 +223,15 @@ def test_resolver_failures_do_not_strand_imports(authed_api_client):
     assert job.recipe_id
     assert failures_named(names_api, item.lower())
 
-    # A later save retries the failed name rather than reusing the failure.
+    # A later save doesn't pay for the failed name again; Retry does.
     mock_fail(item.lower(), False)
     calls = mock_calls(item.lower())
     assert import_recipe(client, item).status == "completed"
-    assert mock_calls(item.lower()) > calls
+    assert mock_calls(item.lower()) == calls
+    assert failures_named(names_api, item.lower())
+    assert names_api.retry_ingredient_names().queued >= 1
+    wait_for(lambda: line_text(RecipesApi(client), item) != "Not recognized")
     assert failures_named(names_api, item.lower()) == []
-    assert line_text(RecipesApi(client), item) != "Not recognized"
 
 
 def test_shopping_list_items_are_resolved(authed_api_client):
@@ -420,8 +380,6 @@ def test_failed_names_are_not_resolving(authed_api_client):
     item = unique("sugar")
     mock_fail(item.lower(), True)
     try:
-        # Reading queues it, so it's resolving until the attempt fails.
-        assert estimate(api, item).resolving
         create_recipe(api, item)
         wait_for(lambda: failures_named(names_api, item.lower()))
         assert not estimate(api, item).resolving
@@ -445,41 +403,10 @@ def test_provider_outage_leaves_names_queued(authed_api_client):
     finally:
         mock_outage(item.lower(), False)
     # Queuing another name wakes the worker from its backoff.
-    estimate(api, unique("flour"))
+    create_recipe(api, unique("flour"))
     resolved = wait_for(lambda: (e := estimate(api, item)) and not e.resolving and e)
     assert resolved.lines[0].text != "Not recognized"
     assert failures_named(names_api, item.lower()) == []
-
-
-def test_reading_an_estimate_queues_names_never_saved(authed_api_client):
-    """A recipe saved before a catalog change, or a draft, still gets its
-    names resolved: reading the estimate queues them."""
-    client, _ = authed_api_client
-    api = RecipesApi(client)
-    item = unique("flour")
-    first = estimate(api, item)
-    assert first.resolving
-    assert first.lines[0].text == "Not recognized"
-    text = wait_for(lambda: (t := line_text(api, item)) != "Not recognized" and t)
-    assert text.endswith("kcal"), text
-
-
-def test_reading_queues_names_past_the_per_read_limit(authed_api_client):
-    """A read queues at most 50 new names but stays resolving until the rest
-    are queued by later reads, so every name is eventually resolved."""
-    client, _ = authed_api_client
-    api = RecipesApi(client)
-    items = [unique(f"flour {word}") for word in "abcdefghijklmnopqrstuvwxyz"]
-    items += [unique(f"sugar {word}") for word in "abcdefghijklmnopqrstuvwxyz"]
-    request = EstimateCaloriesRequest(
-        ingredients=[make_ingredient(item, "100", "g") for item in items], scale=1
-    )
-    assert api.estimate_calories(request).resolving
-    done = wait_for(
-        lambda: (e := api.estimate_calories(request)) and not e.resolving and e,
-        timeout=60.0,
-    )
-    assert all(line.text != "Not recognized" for line in done.lines)
 
 
 def test_foods_no_entry_matches_are_estimated(authed_api_client):
@@ -500,5 +427,6 @@ def test_ambiguous_names_take_a_labeled_default(authed_api_client):
     api = RecipesApi(client)
     # "cheese" could be several foods; the model picks the likely one. Shared
     # across runs, so only the end state is checked.
+    create_recipe(api, "cheese")
     text = wait_for(lambda: (t := line_text(api, "cheese")) and "(assumed " in t and t)
     assert text.startswith("~"), text

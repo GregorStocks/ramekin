@@ -18,7 +18,7 @@ use ramekin_core::ai::{estimate_ingredient_weights, AiError};
 use ramekin_core::nutrition::{WeightKey, Weights};
 
 use crate::db::{run_blocking, DbPool};
-use crate::ingredient_names::{Step, Work, BATCH, BATCH_SIZE, CLIENT, FAILED, PENDING, RESOLVED};
+use crate::ingredient_names::{Step, BATCH, BATCH_SIZE, CLIENT, FAILED, PENDING, RESOLVED};
 use crate::schema::ingredient_weight_estimates as weights;
 
 /// Queue weight gaps for estimating. Gaps already queued or estimated are
@@ -110,26 +110,12 @@ pub struct Counts {
     pub no_typical_weight: i64,
     pub pending: i64,
     pub failed: i64,
-    /// Estimates being asked again by the current model; their earlier
-    /// estimate is used meanwhile.
-    pub reasking: i64,
-    /// Estimates whose re-ask failed; their earlier estimate is still used.
-    pub reask_failed: i64,
-    /// Failed estimates and failed re-asks, most recent first.
+    /// Failed estimates, most recent first.
     pub failures: Vec<(WeightKey, String, i32)>,
 }
 
-/// Food, unit, status, grams, reasked, error, reask error, attempts.
-type CountRow = (
-    String,
-    String,
-    String,
-    Option<f64>,
-    bool,
-    Option<String>,
-    Option<String>,
-    i32,
-);
+/// Food, unit, status, grams, error, attempts.
+type CountRow = (String, String, String, Option<f64>, Option<String>, i32);
 
 /// Every estimate row for `foods`, whatever its unit: a gap can depend on the
 /// scale it was viewed at, so the stored recipes alone can't say which units
@@ -143,9 +129,7 @@ pub fn counts(conn: &mut PgConnection, foods: &[String]) -> QueryResult<Counts> 
             weights::unit,
             weights::status,
             weights::grams,
-            weights::reasked,
             weights::error,
-            weights::reask_error,
             weights::attempts,
         ))
         .load(conn)?;
@@ -154,27 +138,16 @@ pub fn counts(conn: &mut PgConnection, foods: &[String]) -> QueryResult<Counts> 
         no_typical_weight: 0,
         pending: 0,
         failed: 0,
-        reasking: 0,
-        reask_failed: 0,
         failures: Vec::new(),
     };
-    for (food, unit, status, grams, reasked, error, reask_error, attempts) in rows {
-        counts.reasking += i64::from(reasked);
+    for (food, unit, status, grams, error, attempts) in rows {
         match (status.as_str(), grams) {
             (RESOLVED, Some(_)) => counts.estimated += 1,
             (RESOLVED, None) => counts.no_typical_weight += 1,
             (PENDING, _) => counts.pending += 1,
             _ => counts.failed += 1,
         }
-        let error = match (status.as_str(), reask_error) {
-            (FAILED, _) => error,
-            (_, Some(reask_error)) => {
-                counts.reask_failed += 1;
-                Some(reask_error)
-            }
-            _ => None,
-        };
-        if let Some(error) = error {
+        if let (FAILED, Some(error)) = (status.as_str(), error) {
             counts
                 .failures
                 .push((WeightKey { food, unit }, error, attempts));
@@ -183,8 +156,7 @@ pub fn counts(conn: &mut PgConnection, foods: &[String]) -> QueryResult<Counts> 
     Ok(counts)
 }
 
-/// Put the failed estimates for `foods` back in the queue, failed re-asks
-/// included (they keep their earlier estimate meanwhile).
+/// Put the failed estimates for `foods` back in the queue.
 pub fn requeue_failed(conn: &mut PgConnection, foods: &[String]) -> QueryResult<usize> {
     let pending = diesel::update(
         weights::table
@@ -196,34 +168,20 @@ pub fn requeue_failed(conn: &mut PgConnection, foods: &[String]) -> QueryResult<
         weights::error.eq(None::<String>),
     ))
     .execute(conn)?;
-    let reasked = diesel::update(
-        weights::table
-            .filter(weights::reask_error.is_not_null())
-            .filter(weights::food.eq_any(foods)),
-    )
-    .set((
-        weights::reasked.eq(true),
-        weights::reask_error.eq(None::<String>),
-    ))
-    .execute(conn)?;
-    crate::ingredient_names::note_new_work(pending + reasked);
-    Ok(pending + reasked)
+    crate::ingredient_names::note_new_work(pending);
+    Ok(pending)
 }
 
 /// Estimate one batch of pending weights, taken under the shared batch lock.
-pub(crate) async fn estimate_next_batch(pool: &Arc<DbPool>, work: Work) -> Result<Step, String> {
+pub(crate) async fn estimate_next_batch(pool: &Arc<DbPool>) -> Result<Step, String> {
     let _batch = BATCH.lock().await;
     let batch: Vec<(String, String)> = run_blocking(pool, move |conn| {
-        let query = weights::table
+        weights::table
+            .filter(weights::status.eq(PENDING))
             .select((weights::food, weights::unit))
             .order((weights::food, weights::unit))
             .limit(BATCH_SIZE)
-            .into_boxed();
-        match work {
-            Work::Pending => query.filter(weights::status.eq(PENDING)),
-            Work::Reasked => query.filter(weights::reasked),
-        }
-        .load(conn)
+            .load(conn)
     })
     .await
     .map_err(|e| e.to_string())?
@@ -231,7 +189,7 @@ pub(crate) async fn estimate_next_batch(pool: &Arc<DbPool>, work: Work) -> Resul
     if batch.is_empty() {
         return Ok(Step::Idle);
     }
-    Ok(match estimate_batch(pool, batch, work).await? {
+    Ok(match estimate_batch(pool, batch).await? {
         None => Step::Done,
         Some((error, true)) => Step::ProviderFailed(error),
         Some((error, false)) => Step::Failed(error),
@@ -248,9 +206,9 @@ type BatchFuture<'a> =
 /// the model can't handle fails alone in about 2·log2(n) calls rather than n.
 /// Returns the first failure and whether it was the provider's (so later
 /// batches would fail too); `Err` means an outcome couldn't be saved.
-fn estimate_batch(pool: &Arc<DbPool>, batch: Vec<(String, String)>, work: Work) -> BatchFuture<'_> {
+fn estimate_batch(pool: &Arc<DbPool>, batch: Vec<(String, String)>) -> BatchFuture<'_> {
     Box::pin(async move {
-        let error = match ask(&batch, work).await {
+        let error = match ask(&batch).await {
             Ok((estimates, model)) => {
                 save_estimated(pool, estimates, model).await?;
                 return Ok(None);
@@ -265,11 +223,11 @@ fn estimate_batch(pool: &Arc<DbPool>, batch: Vec<(String, String)>, work: Work) 
         );
         let mut first = batch;
         let second = first.split_off(first.len() / 2);
-        let outcome = estimate_batch(pool, first, work).await?;
+        let outcome = estimate_batch(pool, first).await?;
         if matches!(outcome, Some((_, true))) {
             return Ok(outcome);
         }
-        let later = estimate_batch(pool, second, work).await?;
+        let later = estimate_batch(pool, second).await?;
         Ok(match (outcome, later) {
             (_, provider @ Some((_, true))) => provider,
             (Some(first), _) => Some(first),
@@ -279,13 +237,11 @@ fn estimate_batch(pool: &Arc<DbPool>, batch: Vec<(String, String)>, work: Work) 
 }
 
 /// One LLM call: each item's grams (None: no typical weight), and the model.
-/// A re-ask skips the cache, which holds the answer being questioned.
 async fn ask(
     batch: &[(String, String)],
-    work: Work,
 ) -> Result<(Vec<(WeightKey, Option<f64>)>, String), AiError> {
     let (client, model) = CLIENT.as_ref().map_err(|e| AiError::Config(e.clone()))?;
-    let result = estimate_ingredient_weights(client, batch, matches!(work, Work::Reasked)).await?;
+    let result = estimate_ingredient_weights(client, batch).await?;
     Ok((
         result
             .weights
@@ -309,8 +265,6 @@ async fn save_estimated(
                 diesel::update(weights::table.find((&key.food, &key.unit)))
                     .set((
                         weights::status.eq(RESOLVED),
-                        weights::reasked.eq(false),
-                        weights::reask_error.eq(None::<String>),
                         weights::grams.eq(grams),
                         weights::model.eq(&model),
                         weights::error.eq(None::<String>),
@@ -336,8 +290,7 @@ async fn save_estimated(
 /// Record a failed attempt, and say whether it was the provider's. After a
 /// provider failure (an outage, a rate limit, a missing key) every item stays
 /// queued for the worker's retry. After an invalid answer a pending gap is
-/// marked failed, and an estimate being re-asked keeps its old value with the
-/// error recorded, for the status page and its Retry.
+/// marked failed, for the status page and its Retry.
 async fn fail(
     pool: &Arc<DbPool>,
     items: Vec<(String, String)>,
@@ -355,9 +308,8 @@ async fn fail(
     }
     let message = error.clone();
     let now = Utc::now();
-    let given_up = run_blocking(pool, move |conn| {
+    run_blocking(pool, move |conn| {
         conn.transaction(|conn| {
-            let mut given_up = 0;
             for (food, unit) in &items {
                 diesel::update(
                     weights::table
@@ -371,28 +323,12 @@ async fn fail(
                     weights::updated_at.eq(now),
                 ))
                 .execute(conn)?;
-                given_up +=
-                    diesel::update(weights::table.find((food, unit)).filter(weights::reasked))
-                        .set((
-                            weights::reasked.eq(false),
-                            weights::reask_error.eq(&message),
-                            weights::attempts.eq(weights::attempts + 1),
-                            weights::updated_at.eq(now),
-                        ))
-                        .execute(conn)?;
             }
-            QueryResult::Ok(given_up)
+            QueryResult::Ok(())
         })
     })
     .await
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
-    if given_up > 0 {
-        tracing::error!(
-            weights = given_up,
-            "re-asking ingredient weights failed; keeping their earlier estimates: {}",
-            error
-        );
-    }
     Ok((error, false))
 }

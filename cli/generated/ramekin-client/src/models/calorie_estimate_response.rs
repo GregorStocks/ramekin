@@ -14,9 +14,6 @@ use serde::{Deserialize, Serialize};
 /// CalorieEstimateResponse : Every display string is final; clients render them as-is.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CalorieEstimateResponse {
-    /// Identifies the pinned source data, aliases, and calculation rules.
-    #[serde(rename = "database_version")]
-    pub database_version: String,
     /// The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the whole recipe\", or \"Not enough ingredient data to estimate calories\".
     #[serde(rename = "headline")]
     pub headline: String,
@@ -59,7 +56,6 @@ pub struct CalorieEstimateResponse {
 impl CalorieEstimateResponse {
     /// Every display string is final; clients render them as-is.
     pub fn new(
-        database_version: String,
         headline: String,
         lines: Vec<models::CalorieLine>,
         not_counted: Vec<String>,
@@ -67,7 +63,6 @@ impl CalorieEstimateResponse {
         status: models::CalorieStatus,
     ) -> CalorieEstimateResponse {
         CalorieEstimateResponse {
-            database_version,
             headline,
             known_calories: None,
             lines,

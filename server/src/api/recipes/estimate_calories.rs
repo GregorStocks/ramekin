@@ -78,8 +78,6 @@ pub struct CalorieLine {
 /// Every display string is final; clients render them as-is.
 #[derive(Serialize, ToSchema)]
 pub struct CalorieEstimateResponse {
-    /// Identifies the pinned source data, aliases, and calculation rules.
-    pub database_version: String,
     pub status: CalorieStatus,
     /// The main line: "~520 kcal per serving", "At least ~3,100 kcal for the
     /// whole recipe", or "Not enough ingredient data to estimate calories".
@@ -121,23 +119,20 @@ pub async fn estimate_calories(
     let ingredients: Vec<ParsedIngredient> =
         request.ingredients.into_iter().map(Into::into).collect();
     // Stored answers for names the committed catalog doesn't know or calls
-    // ambiguous. Names never asked about are queued here, so a recipe saved
-    // before a catalog change still gets them resolved; until then they read
-    // as unknown.
+    // ambiguous. Only saves queue names, so a name in an unsaved edit reads
+    // as unknown until it's saved.
     let items: Vec<String> = ingredients.iter().map(|i| i.item.clone()).collect();
     let (learned, resolving_names) = run_db(&pool, move |conn| {
         let names = || items.iter().map(String::as_str);
-        crate::ingredient_names::enqueue_unasked(conn, names())
-            .and_then(|unqueued| {
-                // Pending first: a name leaves pending in the same update that
-                // stores its answer, so once nothing reads as pending every
-                // answer is committed and the load below sees it. Loading
-                // first could miss an answer that lands between the two reads
-                // and then report nothing pending, ending the client's polling
-                // on a stale "Not recognized".
-                let pending = crate::ingredient_names::any_pending(conn, names())?;
+        // Pending first: a name leaves pending in the same update that stores
+        // its answer, so once nothing reads as pending every answer is
+        // committed and the load below sees it. Loading first could miss an
+        // answer that lands between the two reads and then report nothing
+        // pending, ending the client's polling on a stale "Not recognized".
+        crate::ingredient_names::any_pending(conn, names())
+            .and_then(|pending| {
                 let learned = crate::ingredient_names::load_learned(conn, names())?;
-                Ok((learned, unqueued || pending))
+                Ok((learned, pending))
             })
             .map_err(|e| {
                 tracing::error!("Failed to load learned ingredient names: {}", e);
@@ -145,9 +140,6 @@ pub async fn estimate_calories(
             })
     })
     .await?;
-    if resolving_names {
-        crate::ingredient_names::wake();
-    }
     let estimate = |weights: &nutrition::Weights| {
         nutrition::estimate_with(
             &ingredients,
@@ -175,7 +167,6 @@ pub async fn estimate_calories(
     let result = estimate(&weights)?;
     let resolving = resolving_names || resolving_weights;
     Ok(Json(CalorieEstimateResponse {
-        database_version: result.database_version,
         status: result.status.into(),
         headline: result.headline,
         secondary: result.secondary,

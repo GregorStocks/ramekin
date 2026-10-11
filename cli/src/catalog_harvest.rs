@@ -2,7 +2,7 @@
 //! the committed catalog: resolved rows of an `ingredient_name_resolutions`
 //! export become step-2 classification decisions, to verify and apply with
 //! `make catalog-apply-classification`. Once a deploy carries them, the server
-//! marks their rows harvested at startup.
+//! no longer looks those names up in the table.
 
 use crate::ingredient_catalog_audit::{read_json, LearnedRow};
 use anyhow::{Context, Result};

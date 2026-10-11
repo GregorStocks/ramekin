@@ -50,7 +50,6 @@ SCALE_TEST_TOTAL_2X = "At least ~6,190 kcal for the whole recipe"
 def _estimate_json(headline: str, resolving: bool = False) -> dict:
     """A stubbed estimate response."""
     return {
-        "database_version": "test",
         "status": "complete",
         "headline": headline,
         "not_counted": [],

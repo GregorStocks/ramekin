@@ -18,8 +18,6 @@ import { CalorieRangeFromJSON, CalorieRangeToJSON, } from './CalorieRange';
  * Check if a given object implements the CalorieEstimateResponse interface.
  */
 export function instanceOfCalorieEstimateResponse(value) {
-    if (!('databaseVersion' in value) || value['databaseVersion'] === undefined)
-        return false;
     if (!('headline' in value) || value['headline'] === undefined)
         return false;
     if (!('lines' in value) || value['lines'] === undefined)
@@ -40,7 +38,6 @@ export function CalorieEstimateResponseFromJSONTyped(json, ignoreDiscriminator) 
         return json;
     }
     return {
-        'databaseVersion': json['database_version'],
         'headline': json['headline'],
         'knownCalories': json['known_calories'] == null ? undefined : CalorieRangeFromJSON(json['known_calories']),
         'lines': (json['lines'].map(CalorieLineFromJSON)),
@@ -59,7 +56,6 @@ export function CalorieEstimateResponseToJSONTyped(value, ignoreDiscriminator = 
         return value;
     }
     return {
-        'database_version': value['databaseVersion'],
         'headline': value['headline'],
         'known_calories': CalorieRangeToJSON(value['knownCalories']),
         'lines': (value['lines'].map(CalorieLineToJSON)),

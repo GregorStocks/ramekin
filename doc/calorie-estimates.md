@@ -8,6 +8,43 @@ not save data or use an LLM. Both clients render the returned summaries and
 unknown reasons, and request a new estimate when the displayed recipe or scale
 changes. Historical versions therefore use their own ingredients.
 
+## Architecture
+
+Calorie estimation is two separate problems:
+
+1. **Recognition** turns a parsed line's item text into a canonical food, "not
+   food", or unknown. This is the hard part: the committed catalog
+   (`ramekin-core/src/catalog/`: USDA SR Legacy and FNDDS, curated entries and
+   aliases, modifier stripping, "x or y"), then one background LLM queue for
+   names the catalog doesn't know (`server/src/ingredient_names.rs`; see "Names
+   the catalog doesn't know").
+2. **Calories for a known food** turn (food, unit, amount) into grams and then
+   kcal (`ramekin-core/src/nutrition/`). This should be close to trivial: a
+   mass-unit constant, the food's grams per cup, a piece weight, or a package
+   weight, times the amount, times the food's kcal per 100 g. All numbers come
+   from committed catalog data or the recognized food's own learned estimate.
+   It has no LLM calls, queues, or versions.
+
+Where the code doesn't match this yet (each item has an issue in `issues/`):
+- **Weights:** a second runtime LLM queue (`server/src/ingredient_weights.rs`)
+  still fills missing cup and piece weights. It is to be replaced by a
+  dev-time command that fills them into the catalog once, reviewed in a PR.
+- **Shopping categories** are computed on every read, so any catalog edit
+  touches every live shopping item at startup (`categorizer_version`) to push
+  new categories through incremental sync. The category is to be stored at
+  write and recomputed only when an item's name gets resolved.
+- **Curated data:** `curated.json` holds parser-leftover alias keys ("-ounce
+  block feta"), and a harvest loop (`make catalog-harvest-learned`) copies
+  learned answers into it. Junk keys are to be dropped under a rule a test
+  enforces, and the harvest loop deleted: learned answers live in the database.
+- **Quantity parsing** (ranges, "plus" compounds, "each", package sizes) lives
+  in `nutrition`. It is to move into parser normalization, leaving unit-to-grams
+  conversion and the trace and frying rules.
+
+Database columns the design no longer uses (`reasked`, `reask_error`,
+`candidates` on the name and weight tables, `categorizer_version` once
+categories are stored) are kept, unread, until their removal is approved.
+
 ## Data and regeneration
 
 Source: USDA FoodData Central, SR Legacy April 2018, public domain (CC0).
@@ -88,39 +125,44 @@ fluid-ounce portions (zero-amount rows excluded). An entry without a density pro
   above 10^15 kcal. A real known zero (e.g. table salt) is distinct from no known
   ingredients, which returns null rather than zero.
 
-The response version combines the calculation rule version with the catalog
-version (a hash of the catalog data and its resolution rule version). Bump the
-calculation rule version when changing calculation behavior, including changes
-to reused volume constants. Identical inputs and version give identical
-results, except that a name the catalog doesn't know can change from unknown to
-counted once its learned answer arrives (see "Names the catalog doesn't know").
-Numeric fields retain calculation precision; display strings round as
-described under Presentation.
+Estimates are computed on every request and never stored, so there is no
+version to bump: identical inputs and catalog give identical results, except
+that a name the catalog doesn't know can change from unknown to counted once
+its learned answer arrives (see "Names the catalog doesn't know"). Numeric
+fields retain calculation precision; display strings round as described under
+Presentation.
 
 ## Names the catalog doesn't know
 
-After a recipe or shopping-list item is saved, and whenever an estimate reads
-one never asked about (at most 50 new names per request, staying `resolving`
-until the rest are queued), names the committed catalog doesn't know or calls
-ambiguous are resolved by an LLM in the background (catalog step 3). The answer
-is stored once per name and used by later estimates:
+When a recipe or shopping-list item is saved, names the committed catalog
+doesn't know or calls ambiguous are queued and resolved by an LLM in the
+background (catalog step 3). At startup the server also queues the names of
+every stored recipe and shopping item, which only finds names a catalog change
+stopped recognizing. Reading an estimate never queues anything, so an unsaved
+edit can't add paid work: its new names read as unknown until it's saved. The
+answer is stored once per name, shared across accounts, and used by later
+estimates:
 - a catalog key: the same food, or for an ambiguous name ("cheese") the one a
   recipe most likely means, labeled "(assumed cheddar cheese)";
 - an estimate, for a real food no catalog entry matches: the model's calories
   per 100 g, and its cup and piece weights when it gave them (calories 0–900
   per 100 g, 5–700 g per cup, 0.01–5000 g per piece, or the batch is
   rejected), labeled "(estimated calories)";
-- "not food".
+- "not food";
+- unknown, when the model can't place it.
 
-When the ingredient model changes, the server flags answers made by any other
-model at startup and asks them again, serving the old answer until the new one
-replaces it (an invalid new answer leaves the old one in place).
+An answer is kept until the catalog stops accepting it: its key no longer
+names one entry, or the name became ambiguous and the answer is an estimate or
+"not food". Startup puts those back in the queue. Nothing else re-asks a name:
+not a new model, and not a catalog edit that changes the candidates it would be
+offered. A name the catalog learns itself is simply no longer looked up.
 
 Saving never waits for it, and estimating never calls the LLM:
 - a name not resolved yet reads as unknown ("Not recognized");
 - so does a name the model couldn't place;
-- a failed resolution shows in Settings → Ingredient recognition, where it can
-  be retried.
+- a provider outage leaves names queued, retried with backoff;
+- an invalid answer is asked again, up to 3 attempts; after that the name
+  shows in Settings → Ingredient recognition, where it can be retried.
 
 While any of an estimate's names is still pending, the response sets
 `resolving`. The web and iOS clients then re-request the same estimate every
@@ -133,18 +175,14 @@ capers"), or no weight for a counted unit ("1 bunch kale", "2 jars capers", a
 bare "3 shallots" with no default piece). The estimate reports each such gap as
 (catalog food, unit), with "cup" standing for any volume and "piece" for a bare
 count, but only for lines no measurement can be weighed with catalog data alone.
-The estimate endpoint queues the gaps it sees (and at startup the server queues
-every stored recipe's names and gaps, then sweeps weights again once the first
-pass has resolved names, so a deploy doesn't wait on each recipe being opened),
-and the same background worker
+The estimate endpoint queues the gaps it sees, and the same background worker
 asks the LLM for grams per unit, stored once per (food, unit) and shared across
 accounts. The endpoint never calls the LLM itself, and sets `resolving` while
 any of its gaps is pending. A line weighed with an estimate says so: "~40 kcal
 (estimated weight)". A weight the model says has no typical value (null) stays
 unknown, and failures show and retry in Settings → Ingredient recognition.
 Answers must be plausible (5–700 g per cup, 0.01–5000 g per other unit) or the
-batch is rejected. An estimate's version doesn't change when a weight arrives,
-like a learned name.
+batch is rejected. This queue is temporary: see "Architecture".
 
 ## Negligible, compound, and non-food lines
 

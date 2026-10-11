@@ -1,0 +1,20 @@
+{
+  "title": "Calorie architecture phase 4: drop junk catalog aliases under a tested rule and delete the harvest loop",
+  "description": "Phase 4 of the design in doc/calorie-estimates.md (\"Architecture\"), approved 2026-10-11. ramekin-core/src/catalog/data/curated.json has 3,517 aliases, mostly written by LLM classification passes, including parser leftovers as keys (\"-ounce block feta\", \"-inch piece of ginger\", \"12- to 16-pound fresh turkey\", \"a pinch ground cinnamon\"; about 45 clear cases), and a few in categories (\"-pound chicken, in parts\", \"4 cloves\"). \
+Up to about 250 more start with a prep or size word (\"chopped basil\") that modifier stripping probably already handles. \
+Fix: define what an alias key may be and enforce it in ramekin-core/tests/catalog_tests.rs: a name the current parser can produce (not starting with '-', a digit, or a unit) that doesn't resolve to the same entry without the alias. \
+Drop the keys that fail. \
+The existing catalog::clean_curated / make catalog-clean-aliases may already do part of this. \
+Delete the harvest loop: cli/src/catalog_harvest.rs, the catalog-harvest-learned Makefile target, and its README section. \
+Learned answers live in the database; the server no longer looks up names the catalog knows. \
+Run make pipeline and review data/ diffs (recognition coverage in data/ingredient-catalog-audit.md must not drop for names the parser produces today).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "catalog",
+    "cli",
+  ],
+  "created_at": "2026-10-11T15:16:00-07:00",
+  "updated_at": "2026-10-11T15:16:00-07:00",
+}

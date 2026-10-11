@@ -200,31 +200,22 @@ async fn main() {
     scraping::resume_interrupted_jobs(&pool).await;
 
     // Resolve ingredient names the catalog doesn't know, starting with any
-    // left pending by a previous run or that this catalog changed (learned,
-    // lost, or offers new candidates for).
+    // left pending by a previous run or whose answer this catalog rules out.
     let synced = ingredient_names::sync_with_catalog(&pool)
         .expect("Failed to sync learned ingredient names with the catalog");
     for (sync, names) in synced {
-        tracing::info!(
-            ?sync,
-            names,
-            "synced learned ingredient names with the catalog"
-        );
+        tracing::info!(?sync, names, "asking again about learned ingredient names");
     }
-    // Everything stored recipes need, so a deploy doesn't wait on each being
-    // opened.
-    let (names, weights) = {
+    // Names a catalog change stopped recognizing, which no save will queue.
+    let names = {
         let mut conn = pool
             .get()
             .expect("Failed to get a connection to queue stored ingredient names");
-        ingredient_names::queue_stored(&mut conn, true)
-            .expect("Failed to queue stored ingredient names and weights")
+        ingredient_names::queue_stored(&mut conn).expect("Failed to queue stored ingredient names")
     };
-    if names + weights > 0 {
-        tracing::info!(names, weights, "queued stored ingredient names and weights");
+    if names > 0 {
+        tracing::info!(names, "queued stored ingredient names");
     }
-    // Answers from an earlier ingredient model are asked again (and served
-    // until replaced), so a model change reaches the stored answers.
     let recategorized = api::shopping_list::list::touch_recategorized_items(&pool)
         .expect("Failed to touch shopping items for the new categorizer");
     if recategorized > 0 {
@@ -233,28 +224,6 @@ async fn main() {
             categorizer = ramekin_core::ingredient_categorizer::version(),
             "re-sending shopping items whose category may have changed"
         );
-    }
-
-    // With no API key AI is off (a supported setup) and there's nothing to ask;
-    // any other configuration error is a broken deploy.
-    match ramekin_core::ai::AiConfig::from_env() {
-        Ok(config) => {
-            let model = config.for_ingredients().model;
-            let (names, weights) = ingredient_names::reask_other_models(&pool, &model)
-                .expect("Failed to flag ingredient answers from other models");
-            if names + weights > 0 {
-                tracing::info!(
-                    names,
-                    weights,
-                    model,
-                    "re-asking ingredient answers from other models"
-                );
-            }
-        }
-        Err(ramekin_core::ai::ConfigError::MissingEnvVar(var)) => {
-            tracing::info!("AI is off ({var} unset); not re-asking ingredient answers");
-        }
-        Err(e) => panic!("Invalid AI configuration: {e}"),
     }
     ingredient_names::spawn_worker(pool.clone());
 

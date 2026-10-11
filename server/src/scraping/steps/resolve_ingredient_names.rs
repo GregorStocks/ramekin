@@ -11,7 +11,7 @@ use ramekin_core::pipeline::{
 };
 
 use crate::db::{run_blocking, DbPool};
-use crate::ingredient_names::{requeue_failed, resolve_pending, unlearned_names};
+use crate::ingredient_names::{resolve_pending, unlearned_names};
 use crate::models::Ingredient;
 use crate::schema::recipe_versions;
 
@@ -72,11 +72,9 @@ impl PipelineStep for ResolveIngredientNamesStep {
                 .map_err(|e| e.to_string())?;
             let ingredients: Vec<Ingredient> =
                 serde_json::from_value(ingredients).map_err(|e| e.to_string())?;
-            let names = unlearned_names(ingredients.iter().map(|i| i.item.as_str()));
-            // save_recipe queued these with the recipe. Names that failed
-            // before (for an earlier save) are asked about again.
-            requeue_failed(conn, &names).map_err(|e| e.to_string())?;
-            Ok::<_, String>(names)
+            // save_recipe queued these with the recipe. Names that already
+            // failed stay failed until retried from Settings.
+            Ok::<_, String>(unlearned_names(ingredients.iter().map(|i| i.item.as_str())))
         })
         .await
         .map_err(|e| e.to_string())
