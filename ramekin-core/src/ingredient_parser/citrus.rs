@@ -8,8 +8,9 @@ use std::sync::LazyLock;
 use regex::Regex;
 
 use super::{
-    extract_amount, is_size_unit, normalize_unicode, normalize_word_numbers, parse_ingredient,
-    strip_leading_list_marker, try_parse_parenthetical_measurement, Measurement, ParsedIngredient,
+    extract_amount, is_size_unit, normalize_unicode, normalize_word_numbers,
+    parenthetical_measurement_has_note_qualifier, parse_ingredient, strip_leading_list_marker,
+    try_parse_parenthetical_measurement, Measurement, ParsedIngredient,
 };
 use crate::text::decode_html_entities;
 
@@ -251,15 +252,21 @@ fn part_ingredient(
     // "Juice of 1 orange or 1/2 cup orange juice": an "or" volume is the
     // author's measure too.
     let trimmed_trailer = trailer.trim();
-    let or_volume = trimmed_trailer
+    let or_text = trimmed_trailer
         .get(..3)
         .filter(|or| or.eq_ignore_ascii_case("or "))
         .and_then(|_| trimmed_trailer.get(3..))
-        .and_then(try_parse_parenthetical_measurement)
+        .unwrap_or_default();
+    let or_volume = try_parse_parenthetical_measurement(or_text)
         .filter(|volume| !volume.unit.as_deref().is_some_and(is_size_unit));
     if let Some(volume) = or_volume {
         if keep_trailer_measurements {
             measurements.insert(0, volume);
+        }
+        // "or about 1/2 cup" keeps its approximation in the note, as a
+        // qualified parenthetical volume does.
+        if parenthetical_measurement_has_note_qualifier(or_text) {
+            notes.push(or_text.to_string());
         }
     } else if !trailer.is_empty() {
         let parsed = parse_ingredient(&format!("{item}{trailer}"));
@@ -605,6 +612,13 @@ mod tests {
                 "{line}"
             );
         }
+
+        let parsed = parse_one("juice of 1 orange or about 1/2 cup orange juice");
+        assert_eq!(
+            parsed.measurements,
+            vec![measurement("1/2", "cup"), measurement("1", "orange")]
+        );
+        assert_eq!(parsed.note.as_deref(), Some("about 1/2 cup"));
     }
 
     #[test]
