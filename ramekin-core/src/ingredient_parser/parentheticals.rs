@@ -78,15 +78,23 @@ pub(super) fn parse_parenthetical_measurement_details(
 /// beans)") are options again, so neither restates it.
 ///
 /// Amounts that split the whole ("(divided, 3/4 cup, 2 tbsp)", "(3/4 cup, 1/4
-/// cup)") are portions rather than alternatives, so they aren't read; one
-/// amount ("(620g, divided)") is still the whole.
+/// cup)") are portions rather than alternatives, so they aren't read. One
+/// amount ("(620g, divided)") or equivalents in one part ("(2 sticks/8
+/// ounces, softened and divided)") are still the whole.
 pub(super) fn prep_note_parenthetical_measurements(
     content: &str,
     outside_text: &str,
 ) -> Vec<Measurement> {
+    let parts_with_amount: Vec<&str> = content
+        .split([';', ','])
+        .filter(|part| {
+            part.chars()
+                .any(|c| c.is_ascii_digit() || unicode_fraction_ascii(c).is_some())
+        })
+        .collect();
     let measurements = parse_parenthetical_measurement_details(content, "").measurements;
     if !measurements.is_empty() {
-        if measurements.len() > 1 && content.to_lowercase().contains("divided") {
+        if parts_with_amount.len() > 1 && content.to_lowercase().contains("divided") {
             return Vec::new();
         }
         let units = measurements
@@ -98,12 +106,8 @@ pub(super) fn prep_note_parenthetical_measurements(
         }
         return measurements;
     }
-    let mut parts_with_amount = content.split([';', ',']).filter(|part| {
-        part.chars()
-            .any(|c| c.is_ascii_digit() || unicode_fraction_ascii(c).is_some())
-    });
-    match (parts_with_amount.next(), parts_with_amount.next()) {
-        (Some(part), None) => try_parse_measurement_before_filler(part, outside_text)
+    match parts_with_amount.as_slice() {
+        [part] => try_parse_measurement_before_filler(part, outside_text)
             .map(|(measurement, _)| measurement)
             .into_iter()
             .collect(),
@@ -965,6 +969,16 @@ mod tests {
                 "4 3/4 cups flour (620g, divided)",
                 vec![measurement("4 3/4", "cup"), measurement("620", "g")],
                 "620g, divided",
+            ),
+            (
+                "1 cup butter (2 sticks/8 ounces/227 g, softened and divided)",
+                vec![
+                    measurement("1", "cup"),
+                    measurement("2", "stick"),
+                    measurement("8", "oz"),
+                    measurement("227", "g"),
+                ],
+                "2 sticks/8 ounces/227 g, softened and divided",
             ),
             (
                 "1 cup sugar (divided, 3/4 cup, 1/4 cup)",
