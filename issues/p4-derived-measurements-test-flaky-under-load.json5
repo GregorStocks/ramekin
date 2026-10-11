@@ -2,7 +2,8 @@
   "title": "test_learned_names_get_grams_but_estimates_do_not is flaky under load",
   "description": "tests/test_derived_measurements.py::test_learned_names_get_grams_but_estimates_do_not polls estimate_calories for up to 20 seconds waiting for the mock model to resolve two new ingredient names, then fails with 'names were never resolved'. \
 Observed a one-off failure (2026-10-10) during a full `make test` run while the server was logging 503s around the same time; an immediate rerun of the suite passed (634 passed). \
-Likely the background name-resolution job lagged past the 20-second deadline under xdist load. Investigate whether the deadline is just too tight or whether resolution can be stuck behind other workers' jobs (e.g. the 503s), and either widen the deadline or wait on a more direct signal.",
+Likely the background name-resolution job lagged past the 20-second deadline under xdist load. \
+Investigate whether the deadline is just too tight or whether resolution can be stuck behind other workers' jobs (e.g. the 503s), and either widen the deadline or wait on a more direct signal.",
   "status": "open",
   "priority": 4,
   "type": "chore",
