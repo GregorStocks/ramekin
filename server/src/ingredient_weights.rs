@@ -326,10 +326,10 @@ async fn save_estimated(
     Ok(())
 }
 
-/// Record `error` on `items`, and whether it was the provider's.
-/// Record a failed attempt. A pending gap is marked failed. An estimate being
-/// re-asked keeps its old value: after a provider failure it stays queued for
-/// the worker's retry; after an invalid answer the re-ask stops with its
+/// Record a failed attempt, and say whether it was the provider's. After a
+/// provider failure (an outage, a rate limit, a missing key) every item stays
+/// queued for the worker's retry. After an invalid answer a pending gap is
+/// marked failed, and an estimate being re-asked keeps its old value with the
 /// error recorded, for the status page and its Retry.
 async fn fail(
     pool: &Arc<DbPool>,
@@ -343,6 +343,9 @@ async fn fail(
         "ingredient weight estimation failed: {}",
         error
     );
+    if provider_wide {
+        return Ok((error, true));
+    }
     let message = error.clone();
     let now = Utc::now();
     let given_up = run_blocking(pool, move |conn| {
@@ -361,17 +364,15 @@ async fn fail(
                     weights::updated_at.eq(now),
                 ))
                 .execute(conn)?;
-                if !provider_wide {
-                    given_up +=
-                        diesel::update(weights::table.find((food, unit)).filter(weights::reasked))
-                            .set((
-                                weights::reasked.eq(false),
-                                weights::reask_error.eq(&message),
-                                weights::attempts.eq(weights::attempts + 1),
-                                weights::updated_at.eq(now),
-                            ))
-                            .execute(conn)?;
-                }
+                given_up +=
+                    diesel::update(weights::table.find((food, unit)).filter(weights::reasked))
+                        .set((
+                            weights::reasked.eq(false),
+                            weights::reask_error.eq(&message),
+                            weights::attempts.eq(weights::attempts + 1),
+                            weights::updated_at.eq(now),
+                        ))
+                        .execute(conn)?;
             }
             QueryResult::Ok(given_up)
         })
@@ -386,5 +387,5 @@ async fn fail(
             error
         );
     }
-    Ok((error, provider_wide))
+    Ok((error, false))
 }

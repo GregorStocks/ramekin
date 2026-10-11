@@ -45,6 +45,15 @@ def mock_fail(name: str, fail: bool) -> None:
     ).raise_for_status()
 
 
+def mock_outage(name: str, down: bool) -> None:
+    port = os.environ["MOCK_OPENROUTER_PORT"]
+    requests.get(
+        f"http://localhost:{port}/test/ingredient-name-outage",
+        params={"name": name, "down": "true" if down else "false"},
+        timeout=10,
+    ).raise_for_status()
+
+
 def mock_hold(name: str, hold: bool) -> None:
     port = os.environ["MOCK_OPENROUTER_PORT"]
     requests.get(
@@ -418,6 +427,28 @@ def test_failed_names_are_not_resolving(authed_api_client):
         assert not estimate(api, item).resolving
     finally:
         mock_fail(item.lower(), False)
+
+
+def test_provider_outage_leaves_names_queued(authed_api_client):
+    """An outage isn't the name's fault: the name stays pending, and the
+    worker resolves it once the provider is back, with no Retry."""
+    client, _ = authed_api_client
+    api = RecipesApi(client)
+    names_api = IngredientNamesApi(client)
+    item = unique("sugar")
+    mock_outage(item.lower(), True)
+    try:
+        create_recipe(api, item)
+        wait_for(lambda: mock_calls(item.lower()) >= 1)
+        assert failures_named(names_api, item.lower()) == []
+        assert estimate(api, item).resolving
+    finally:
+        mock_outage(item.lower(), False)
+    # Queuing another name wakes the worker from its backoff.
+    estimate(api, unique("flour"))
+    resolved = wait_for(lambda: (e := estimate(api, item)) and not e.resolving and e)
+    assert resolved.lines[0].text != "Not recognized"
+    assert failures_named(names_api, item.lower()) == []
 
 
 def test_reading_an_estimate_queues_names_never_saved(authed_api_client):

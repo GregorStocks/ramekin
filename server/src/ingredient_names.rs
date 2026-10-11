@@ -872,10 +872,11 @@ fn touch_shopping_items(
     Ok(())
 }
 
-/// Record a failed attempt. A pending name is marked failed. A name being
-/// re-asked keeps its old answer: after a provider failure it stays queued for
-/// the worker's retry; after an invalid answer the re-ask stops with its
-/// error recorded, for the status page and its Retry.
+/// Record a failed attempt. After a provider failure (an outage, a rate
+/// limit, a missing key) every name stays queued for the worker's retry.
+/// After an invalid answer a pending name is marked failed, and a name being
+/// re-asked keeps its old answer with the error recorded, for the status page
+/// and its Retry.
 async fn save_failed(
     pool: &Arc<DbPool>,
     failed: Vec<String>,
@@ -887,6 +888,9 @@ async fn save_failed(
         "ingredient name resolution failed: {}",
         error
     );
+    if provider_wide {
+        return Ok(());
+    }
     let now = Utc::now();
     let message = error.clone();
     let given_up = run_blocking(pool, move |conn| {
@@ -903,9 +907,6 @@ async fn save_failed(
                 names::updated_at.eq(now),
             ))
             .execute(conn)?;
-            if provider_wide {
-                return QueryResult::Ok(0);
-            }
             // The candidates the failed re-ask offered are recorded, so a
             // restart doesn't ask about the same ones again (only Retry or
             // a catalog that offers different ones does).
@@ -925,7 +926,7 @@ async fn save_failed(
                 ))
                 .execute(conn)?;
             }
-            Ok(given_up)
+            QueryResult::Ok(given_up)
         })
     })
     .await
