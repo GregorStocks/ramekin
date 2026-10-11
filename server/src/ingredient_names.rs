@@ -49,10 +49,11 @@ static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
 /// Set whenever names are saved resolved, so the worker sweeps stored recipes
 /// for the weight gaps the answers reveal.
 static NAMES_SAVED: AtomicBool = AtomicBool::new(false);
-/// Set whenever names or weights are queued or put back in the queue. Reads
-/// of names that are already pending also wake the worker (clients poll while
-/// names resolve), so only new work cuts a failure backoff short; otherwise a
-/// provider outage would be retried at the clients' polling interval.
+/// Set whenever names or weights are queued or put back in the queue, or the
+/// provider answers. Reads of names that are already pending also wake the
+/// worker (clients poll while names resolve), so only these cut a failure
+/// backoff short; otherwise a provider outage would be retried at the clients'
+/// polling interval.
 static NEW_WORK: AtomicBool = AtomicBool::new(false);
 pub(crate) static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
 /// One client for the process, so its rate limit spaces every call, with
@@ -864,6 +865,9 @@ async fn save_resolved(
     .map_err(|e| e.to_string())?;
     tracing::info!(resolved, "resolved ingredient names");
     NAMES_SAVED.store(true, Ordering::SeqCst);
+    // The provider answered, so a worker backing off from an outage should
+    // retry its pending names now.
+    note_new_work(resolved);
     wake();
     Ok(())
 }

@@ -329,7 +329,9 @@ pub async fn run_scrape_job(pool: Arc<DbPool>, job_id: Uuid) {
 
 /// `run_scrape_job` for a caller already holding a `job_slot`.
 pub(super) async fn run_scrape_job_in_slot(pool: Arc<DbPool>, job_id: Uuid) {
-    let result = run_scrape_job_inner(pool.clone(), job_id).await;
+    // The step the job last entered, for `fail_unfinished`.
+    let mut step = None;
+    let result = run_scrape_job_inner(pool.clone(), job_id, &mut step).await;
     let current_span = tracing::Span::current();
 
     match &result {
@@ -340,14 +342,18 @@ pub(super) async fn run_scrape_job_in_slot(pool: Arc<DbPool>, job_id: Uuid) {
             current_span.record("job.status", "failed");
             current_span.record("job.error", tracing::field::display(e));
             tracing::warn!("Scrape job {} failed: {}", job_id, e);
-            if let Err(e) = fail_unfinished(&pool, job_id, &e.to_string()).await {
+            if let Err(e) = fail_unfinished(&pool, job_id, step.as_deref(), &e.to_string()).await {
                 tracing::error!(%job_id, "Failed to mark the job failed: {e}");
             }
         }
     }
 }
 
-async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), ScrapeError> {
+async fn run_scrape_job_inner(
+    pool: Arc<DbPool>,
+    job_id: Uuid,
+    entered: &mut Option<String>,
+) -> Result<(), ScrapeError> {
     let job = get_job(&pool, job_id).await?;
 
     // Terminal states - nothing to do
@@ -357,6 +363,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
 
     // Determine starting step
     let first_step = job.current_step.as_deref().unwrap_or(FetchHtmlStep::NAME);
+    *entered = Some(first_step.to_string());
 
     tracing::info!(
         "Job {} starting pipeline from step '{}'",
@@ -396,6 +403,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
     let mut terminal_error: Option<(String, String)> = None;
 
     while let Some(step_name) = current_step_name.take() {
+        *entered = Some(step_name.clone());
         if is_scrape_post_save_step(&step_name) {
             let outcome =
                 run_post_save_steps(&pool, job_id, &registry, url, &store, &step_name).await?;
