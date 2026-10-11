@@ -14,9 +14,9 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60553 | 306 | 53562/60247 (88.9%) | 49892/60247 (82.8%) | 1165/5408 (21.5%) | n/a (no servings) | 31826/37318 (85.3%) | 59827/60553 (98.8%) |
-| Paprika fixtures | 462 | 5379 | 22 | 5158/5357 (96.3%) | 4699/5357 (87.7%) | 157/462 (34.0%) | n/a (no servings) | 2546/2891 (88.1%) | 5347/5379 (99.4%) |
-| Pipeline snapshots | 445 | 5177 | 17 | 4991/5160 (96.7%) | 4605/5160 (89.2%) | 153/445 (34.4%) | 81/445 (18.2%) | 2521/2851 (88.4%) | 5165/5177 (99.8%) |
+| Pipeline fixtures | 5408 | 60553 | 306 | 53562/60247 (88.9%) | 49892/60247 (82.8%) | 1165/5408 (21.5%) | n/a (no servings) | 31827/37319 (85.3%) | 59827/60553 (98.8%) |
+| Paprika fixtures | 462 | 5379 | 22 | 5158/5357 (96.3%) | 4699/5357 (87.7%) | 157/462 (34.0%) | n/a (no servings) | 2547/2892 (88.1%) | 5347/5379 (99.4%) |
+| Pipeline snapshots | 445 | 5177 | 17 | 4991/5160 (96.7%) | 4605/5160 (89.2%) | 153/445 (34.4%) | 81/445 (18.2%) | 2522/2852 (88.4%) | 5165/5177 (99.8%) |
 
 ## Pipeline fixtures
 

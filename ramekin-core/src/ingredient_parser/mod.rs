@@ -650,8 +650,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .to_string();
             // "(sliced very thin, about 1/4 cup worth)": a measurement part is
             // still an alternative, and the whole parenthetical stays the note.
-            alt_measurements
-                .extend(parse_parenthetical_measurement_details(paren_content, "").measurements);
+            alt_measurements.extend(prep_note_parenthetical_measurements(
+                paren_content,
+                &outside_text,
+            ));
             push_deferred_parenthetical_note(
                 &mut deferred_parenthetical_notes,
                 &trimmed_content,

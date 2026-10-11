@@ -70,6 +70,32 @@ pub(super) fn parse_parenthetical_measurement_details(
     }
 }
 
+/// Measurements among the parts of a prep-note parenthetical. The other
+/// parts are prep words rather than options, so a lone measurement part can
+/// restate the item: "(finely diced, about 3 stalks celery)" on a celery line.
+/// Two amounts ("(1/2 pound fresh cranberry beans, 1/2 pound fresh lima
+/// beans)") are options again, so neither restates it.
+pub(super) fn prep_note_parenthetical_measurements(
+    content: &str,
+    outside_text: &str,
+) -> Vec<Measurement> {
+    let measurements = parse_parenthetical_measurement_details(content, "").measurements;
+    if !measurements.is_empty() {
+        return measurements;
+    }
+    let mut parts_with_amount = content.split([';', ',']).filter(|part| {
+        part.chars()
+            .any(|c| c.is_ascii_digit() || unicode_fraction_ascii(c).is_some())
+    });
+    match (parts_with_amount.next(), parts_with_amount.next()) {
+        (Some(part), None) => try_parse_measurement_before_filler(part, outside_text)
+            .map(|(measurement, _)| measurement)
+            .into_iter()
+            .collect(),
+        _ => Vec::new(),
+    }
+}
+
 pub(super) fn parenthetical_measurement_has_note_qualifier(content: &str) -> bool {
     let normalized = content.trim_start().to_lowercase();
     normalized.starts_with('@')
@@ -904,6 +930,16 @@ mod tests {
                 "2 tomatoes (halved, 2 oz each)",
                 vec![count("2"), measurement("2", "oz each")],
                 "halved, 2 oz each",
+            ),
+            (
+                "1 cup celery (finely diced, about 3 stalks celery)",
+                vec![measurement("1", "cup"), measurement("3", "stalk")],
+                "finely diced, about 3 stalks celery",
+            ),
+            (
+                "1 pound shell beans (I used 1/2 pound fresh cranberry beans, 1/2 pound fresh lima beans)",
+                vec![measurement("1", "lb")],
+                "I used 1/2 pound fresh cranberry beans, 1/2 pound fresh lima beans",
             ),
             (
                 "1 cup rice (180 g uncooked)",
