@@ -1,0 +1,19 @@
+{
+  "title": "Scaling multiplies per-item (\"each\") alternative measurements",
+  "description": "The parser stores per-item sizes as alternatives with an \" each\" unit: \"2 packages marshmallows (10 ounces each)\" → [2 package, 10 oz each]. \
+Both clients (ramekin-ui/src/utils/ingredientFormatting.ts and ramekin-ios/Ramekin/IngredientFormatting.swift) multiply every alternative's amount by the recipe scale, so scaling by 2 shows \"4 packages (20 oz each)\" instead of keeping 10 oz each (or showing a 40 oz total). \
+Fix: don't scale an alternative whose unit ends in \" each\" (or convert it to a total before storing). \
+This is deterministic client logic, so follow doc/client-logic-sharing.md: push it to the server if it fits, otherwise mirror tests with shared vectors on web and iOS. \
+Also check that nutrition/catalog_calories doesn't treat \"10 oz each\" as the line's total weight. \
+No make pipeline data/ diffs expected if the fix is client-side.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "web",
+    "ios",
+    "ingredient-parser",
+  ],
+  "created_at": "2026-10-10T21:35:00-07:00",
+  "updated_at": "2026-10-10T21:35:00-07:00",
+}
