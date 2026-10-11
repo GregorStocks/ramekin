@@ -54,11 +54,15 @@
         "item": "orange juice",
         "measurements": [
           {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
             "amount": "1",
             "unit": "orange"
           }
         ],
-        "note": "or 1/2 cup",
+        "note": null,
         "category": "Beverages"
       }
     },

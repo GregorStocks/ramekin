@@ -1,0 +1,16 @@
+{
+  "title": "Ingredient parser: read the measurement in a prep-note parenthetical (\"(sliced very thin, about 1/4 cup worth)\")",
+  "description": "A parenthetical that contains any prep word (is_prep_note matches \"sliced\", \"minced\", \"chopped\", \"fresh\", \"approximately\", ...) goes wholesale to the note before parse_parenthetical_measurement_details runs, so a measurement inside it is never an alternative: \"2 green onions (sliced very thin, about 1/4 cup worth)\", \"small handful of parsley leaves (minced, about 2 tablespoons worth)\", \"8 crimini mushrooms (sliced very thin, about 2 cups worth)\" keep only the count. \"(cut into 1/2\\\" pieces, about 1 cup's worth)\" already works because \"cut into\" isn't a prep word. \
+Fix: when a prep-note parenthetical has a comma/semicolon part that parses as a measurement (including the \"worth\" form from try_parse_measurement_before_filler), add it as an alternative and keep the whole parenthetical as the note. \
+Watch for parts that size the pieces rather than measure the whole (\"(cut into 1-inch cubes)\" has no unit, but \"(halved, 2 oz each)\" should stay per-item). \
+Rerun make pipeline and expect data/ diffs adding volume alternatives on produce lines.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+    "nutrition",
+  ],
+  "created_at": "2026-10-10T17:00:00-07:00",
+  "updated_at": "2026-10-10T17:00:00-07:00",
+}
