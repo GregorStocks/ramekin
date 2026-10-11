@@ -1,6 +1,6 @@
 """End-to-end tests for the extended scrape status response and step output endpoint."""
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -59,13 +59,17 @@ class TestScrapeStatusResponse:
         scrape_api = ScrapeApi(client)
 
         url = f"{fixture_base_url}/seriouseats/rice_pilaf.html"
+        before = datetime.now(timezone.utc)
         created = scrape_api.create_scrape(CreateScrapeRequest(url=url))
+        after = datetime.now(timezone.utc)
         job = scrape_api.get_scrape(created.id)
         assert job.created_at is not None
-        # Sanity: created_at should be within a minute of now (catches e.g. accidentally
-        # populating from a different column).
-        now = datetime.now(timezone.utc)
-        assert abs((now - job.created_at).total_seconds()) < 60
+        # Sanity: created_at should fall inside the create request (catches e.g.
+        # accidentally populating from a different column). Bracketing the request
+        # instead of comparing to "now" keeps this stable when a loaded test worker
+        # stalls; the slack only absorbs host/database clock jitter.
+        slack = timedelta(seconds=5)
+        assert before - slack <= job.created_at <= after + slack
 
     def test_step_output_endpoint_returns_json(
         self, authed_api_client, server_url, fixture_base_url
