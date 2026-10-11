@@ -14,6 +14,14 @@ use serde::{Deserialize, Serialize};
 /// CalorieEstimateResponse : Every display string is final; clients render them as-is.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CalorieEstimateResponse {
+    /// Unused; always the same value. Sent only because iOS builds before 2026-10-11 require it (see blocked-remove-calorie-database-version).
+    #[serde(
+        rename = "database_version",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub database_version: Option<Option<String>>,
     /// The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the whole recipe\", or \"Not enough ingredient data to estimate calories\".
     #[serde(rename = "headline")]
     pub headline: String,
@@ -63,6 +71,7 @@ impl CalorieEstimateResponse {
         status: models::CalorieStatus,
     ) -> CalorieEstimateResponse {
         CalorieEstimateResponse {
+            database_version: None,
             headline,
             known_calories: None,
             lines,

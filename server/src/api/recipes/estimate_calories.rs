@@ -78,6 +78,10 @@ pub struct CalorieLine {
 /// Every display string is final; clients render them as-is.
 #[derive(Serialize, ToSchema)]
 pub struct CalorieEstimateResponse {
+    /// Unused; always the same value. Sent only because iOS builds before
+    /// 2026-10-11 require it (see blocked-remove-calorie-database-version).
+    #[schema(deprecated)]
+    pub database_version: Option<String>,
     pub status: CalorieStatus,
     /// The main line: "~520 kcal per serving", "At least ~3,100 kcal for the
     /// whole recipe", or "Not enough ingredient data to estimate calories".
@@ -167,6 +171,7 @@ pub async fn estimate_calories(
     let result = estimate(&weights)?;
     let resolving = resolving_names || resolving_weights;
     Ok(Json(CalorieEstimateResponse {
+        database_version: Some("unused".to_string()),
         status: result.status.into(),
         headline: result.headline,
         secondary: result.secondary,

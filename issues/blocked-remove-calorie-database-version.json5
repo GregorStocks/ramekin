@@ -1,0 +1,17 @@
+{
+  "title": "Remove the deprecated database_version field from calorie estimates",
+  "description": "CalorieEstimateResponse.database_version (server/src/api/recipes/estimate_calories.rs) is unused and always \"unused\". \
+It is still sent because iOS builds generated before 2026-10-11 declare it as a required String, so a response without it fails to decode and the calorie section never shows. \
+Current generated clients make it optional. \
+Once older iOS builds are no longer in use, delete the field and regenerate the clients.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "api",
+    "ios",
+  ],
+  "blocked": "iOS builds generated before 2026-10-11 must age out first; until then, dropping the field breaks their calorie estimates.",
+  "created_at": "2026-10-11T15:44:00-07:00",
+  "updated_at": "2026-10-11T15:44:00-07:00",
+}

@@ -6,6 +6,7 @@ Every display string is final; clients render them as-is.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**database_version** | **str** | Unused; always the same value. Sent only because iOS builds before 2026-10-11 require it (see blocked-remove-calorie-database-version). | [optional] 
 **headline** | **str** | The main line: \&quot;~520 kcal per serving\&quot;, \&quot;At least ~3,100 kcal for the whole recipe\&quot;, or \&quot;Not enough ingredient data to estimate calories\&quot;. | 
 **known_calories** | [**CalorieRange**](CalorieRange.md) | Null when nothing was counted. A lower bound when status is partial. | [optional] 
 **lines** | [**List[CalorieLine]**](CalorieLine.md) | The breakdown, one entry per ingredient in order. | 
