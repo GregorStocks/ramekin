@@ -332,7 +332,9 @@ that appears in both releases.
 - Alias and not-food keys are what the parser stores as `item`, never raw line
   text. A key with an amount, a prep clause or a usage note ("about 7 cloves
   garlic", "oil, for frying") can never match a newly parsed line.
-  `make catalog-clean-aliases` re-parses every key:
+  `make catalog-clean-aliases` removes keys that start with the tail of a
+  hyphenated amount ("-ounce block feta", from an older parser that split
+  "8-ounce"), then re-parses every other key:
   - it removes the key when the parsed name already resolves the same way;
   - it re-keys it to the parsed name when that name resolves to nothing, but
     only when the re-parse split off nothing but notes;
@@ -365,6 +367,22 @@ that appears in both releases.
   conflict left, "turkish or 1/2 california bay leaf", is a live key: recipes
   capitalize "Turkish", which keeps "or 1/2" in the name, and the lowercase key
   loses that.
+- An alias or not-food key must be needed. `make catalog-clean-aliases` also
+  removes every key the resolver reaches anyway: hidden from the catalog, the
+  key and every ingredient line in the repo's corpora that could reach it (the
+  pipeline and Paprika parser fixtures, `data/pipeline-snapshots`, and the
+  shopping-list corpus; a line reaches a key only if its item has all the
+  key's words, plurals aside) estimate exactly as before. That compares the
+  food the item and note resolve to, the item's own resolution, and the
+  alternative the estimate says it assumed ("assumed mild" for "mild or spicy
+  italian sausage" stays, though "italian sausage" would read better). "chopped fresh basil"
+  goes, because modifier stripping finds "basil". Longer keys go first, so of
+  two keys that only need each other ("tomato", "tomatoes") the shorter stays.
+  Ambiguous (null) aliases are deliberate and stay, as do names `bespoke.json`
+  gives pieces. Rerun it until it reports nothing, since a removal can leave
+  another key redundant. The first run (2026-10-12) removed 710 keys. Keys
+  starting with "a pinch of", "a few sprigs" and the like stay: the parser
+  keeps those words in `item` today, so the keys still match real lines.
   Recipes already stored keep the items an older parser gave them. After that
   parser fix, a one-off re-parse (since removed) re-read every stored item and
   saved a new version (source "reparse") for recipes that changed.
@@ -478,21 +496,16 @@ every recipe and shopping-list save, the background worker, the scrape step
 `resolve_ingredient_names`, and Settings → Ingredient recognition) is in
 `server/src/ingredient_names.rs`.
 
-`make catalog-harvest-learned LEARNED=<export>` turns resolved entry and
-not-food answers into step-2 decisions (entries become aliases of their key;
-estimates, unknowns and ambiguous names are left out), to verify and apply like
-any classification pass (`docs/agent/catalog-classification.md`). It is slated
-for removal (see `doc/calorie-estimates.md`, "Architecture"). A name the catalog
-knows is never looked up in the table, so its row is simply left alone. At
-startup the server puts back in the queue only answers the committed catalog
-rules out (`sync_with_catalog`):
+A name the catalog knows is never looked up in the table, so its row is
+simply left alone. At startup the server puts back in the queue only answers
+the committed catalog rules out (`sync_with_catalog`):
 - an answer whose key no longer names one entry;
 - an estimate or not-food answer for a name the catalog now calls ambiguous,
   since an ambiguous name takes neither.
 
 Learned names don't add gram alternatives: those are fixed at ingest from the
-committed catalog. A harvested name gets them for recipes saved after its
-deploy; reaching existing recipes is `p2-compute-gram-alternatives-at-read-time`.
+committed catalog; reaching existing recipes is
+`p2-compute-gram-alternatives-at-read-time`.
 
 ## Classification passes
 

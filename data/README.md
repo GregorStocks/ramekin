@@ -160,8 +160,7 @@ corpora are added to the local report only:
 - `LEARNED=path/to/learned.json` (with `PROD_RECIPES`) applies the server's learned
   names to the prod dump, as the server does when it estimates: a JSON array of
   `ingredient_name_resolutions` rows (`name`, `status`, `disposition`, `catalog_key`,
-  and an estimate's `kcal_per_100g`, `grams_per_cup`, `grams_per_piece`). Add `model`
-  for `make catalog-harvest-learned`, which reads the same export.
+  and an estimate's `kcal_per_100g`, `grams_per_cup`, `grams_per_piece`).
 
 The local report also lists the most frequent nutrition failures as "reason: name",
 the quickest way to see what to fix next.
