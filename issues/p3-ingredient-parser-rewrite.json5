@@ -7,7 +7,8 @@ Proposal: tokenize a line once (numbers, fractions, ranges, units, sizes, contai
 Pin today's behavior first: the ~5,400 pipeline fixtures under ramekin-core/tests/fixtures/ingredient_parsing/pipeline are the regression suite. \
 Run make pipeline and review the data/ diffs; any change should be an improvement you can name. \
 Coordinate with p2-calorie-architecture, which owns everything after a line is parsed (recognizing the food and its calories). \
-This issue is only about turning the text into amount, unit and item.",
+This issue is only about turning the text into amount, unit and item. \
+Numbers are read from the parsed strings afterwards by ingredient_parser/quantity.rs (ranges, \"plus\" compounds, package and per-item weights, weights in the note); a tokenizer could produce those terms directly and retire that second pass.",
   "status": "open",
   "priority": 3,
   "type": "task",
@@ -16,5 +17,5 @@ This issue is only about turning the text into amount, unit and item.",
     "ramekin-core",
   ],
   "created_at": "2026-10-11T12:41:00-07:00",
-  "updated_at": "2026-10-11T12:41:00-07:00",
+  "updated_at": "2026-10-12T10:45:00-07:00",
 }

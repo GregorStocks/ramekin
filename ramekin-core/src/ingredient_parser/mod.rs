@@ -15,6 +15,7 @@ mod citrus;
 mod fractions;
 mod item;
 mod parentheticals;
+pub mod quantity;
 mod units;
 
 pub(crate) use amounts::normalize_fraction_to_decimal;

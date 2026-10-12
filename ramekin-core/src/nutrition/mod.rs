@@ -7,8 +7,8 @@ use std::sync::LazyLock;
 use regex::Regex;
 
 use crate::catalog::{self, normalize, Entry, Kind, Resolution};
+use crate::ingredient_parser::quantity::{self, Measure, Range, Term, Unit};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
-use crate::metric_weights::parse_amount;
 
 /// A weight the catalog lacks for one food: grams per `unit` of the catalog
 /// entry `food` (its id). `unit` is "cup" for any volume (a missing density),
@@ -115,11 +115,8 @@ impl Food<'_> {
     }
 }
 
-#[derive(Debug, Clone, Copy, PartialEq)]
-pub struct CalorieRange {
-    pub min: f64,
-    pub max: f64,
-}
+/// Calories (or grams, on the way there), possibly a range.
+pub type CalorieRange = Range;
 
 #[derive(Debug)]
 pub struct UnknownIngredient {
@@ -253,20 +250,22 @@ const MAX_TRACE_COUNT: f64 = 10.0;
 /// A few whole leaves, sticks, or pods of a food USDA has no piece weight for
 /// ("2 bay leaves"); a handful of a trace food is a few calories.
 fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bool {
-    ingredient.measurements.iter().all(|measurement| {
-        let few = measurement
-            .amount
-            .as_deref()
-            .and_then(quantity)
-            .is_some_and(|count| count.max * scale <= MAX_TRACE_COUNT);
-        let unit = measurement
-            .unit
-            .as_deref()
-            .map(normalize)
-            .unwrap_or_default();
-        few && TRACE_COUNT_UNITS.contains(&unit.as_str())
-            && catalog::grams_per_piece(entry, Some(unit.as_str())).is_none()
-    })
+    ingredient
+        .measurements
+        .iter()
+        .all(|measurement| match quantity::read(measurement).as_deref() {
+            Some(
+                [Term {
+                    amount,
+                    unit: Unit::Piece(unit),
+                }],
+            ) => {
+                amount.max * scale <= MAX_TRACE_COUNT
+                    && TRACE_COUNT_UNITS.contains(&unit.as_str())
+                    && catalog::grams_per_piece(entry, Some(unit)).is_none()
+            }
+            _ => false,
+        })
 }
 
 /// The most volume of a trace food with no density, after scaling, that still
@@ -279,14 +278,11 @@ const MAX_TRACE_CUPS: f64 = catalog::CUPS_PER_TBSP;
 /// A food with a density is computed normally.
 fn is_unweighed_spoonful(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bool {
     let cups = |measurement: &Measurement| {
-        let cups_per_unit = |unit: &str| {
-            catalog::volume_to_cups(1.0, &canonical_unit(&normalize(unit)))
-                .map(exact)
-                .ok_or("Not a volume")
+        let cups_per_unit = |unit: &Unit| match unit {
+            Unit::Cups(cups) => Ok(Range::exact(*cups)),
+            _ => Err("Not a volume"),
         };
-        measurement.amount.as_deref().and_then(|amount| {
-            measurement_total(amount, measurement.unit.as_deref(), cups_per_unit).ok()
-        })
+        total(&quantity::read(measurement)?, cups_per_unit).ok()
     };
     // Measurements are alternatives and the primary one leads, as in
     // `measured_calories`. A weight alternative ("1 tsp / 2 g") is counted
@@ -337,297 +333,47 @@ enum Line {
     Skipped,
 }
 
-/// Strict quantity grammar: decimals, fractions, mixed numbers and bounded ranges.
-/// This does not alter the extraction pipeline's interpretation of ingredients.
-fn quantity(value: &str) -> Option<CalorieRange> {
-    static GROUPED: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"^[1-9][0-9]{0,2},[0-9]{3}$").unwrap());
-    static MIXED: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"^([0-9]+)-([0-9]+/[0-9]+)$").unwrap());
-    static NUMBER: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(r"^(?:[0-9]+(?:\.[0-9]+)?|\.[0-9]+|[0-9]+/[0-9]+|[0-9]+ [0-9]+/[0-9]+)$")
-            .unwrap()
-    });
-    let mut value = value.trim().to_string();
-    for (fraction, replacement) in [
-        ('¼', "1/4"),
-        ('½', "1/2"),
-        ('¾', "3/4"),
-        ('⅓', "1/3"),
-        ('⅔', "2/3"),
-        ('⅕', "1/5"),
-        ('⅖', "2/5"),
-        ('⅗', "3/5"),
-        ('⅘', "4/5"),
-        ('⅙', "1/6"),
-        ('⅚', "5/6"),
-        ('⅛', "1/8"),
-        ('⅜', "3/8"),
-        ('⅝', "5/8"),
-        ('⅞', "7/8"),
-    ] {
-        value = value.replace(fraction, &format!(" {replacement}"));
-    }
-    let value = value.split_whitespace().collect::<Vec<_>>().join(" ");
-    let number = |s: &str| {
-        let s = MIXED.replace(s.trim(), "$1 $2");
-        if GROUPED.is_match(&s) {
-            return None;
-        }
-        let s = s.replace(',', ".");
-        if !NUMBER.is_match(&s) {
-            return None;
-        }
-        parse_amount(&s).filter(|n| n.is_finite() && *n >= 0.0 && *n <= 1e12)
-    };
-    if let Some(amount) = number(&value) {
-        return Some(CalorieRange {
-            min: amount,
-            max: amount,
-        });
-    }
-    for delimiter in [" to ", " or ", "–", "—", "-"] {
-        for (index, _) in value.match_indices(delimiter) {
-            if let (Some(min), Some(max)) = (
-                number(
-                    value
-                        .get(..index)
-                        .expect("regex match starts at a character boundary"),
-                ),
-                number(
-                    value
-                        .get(index + delimiter.len()..)
-                        .expect("regex match ends at a character boundary"),
-                ),
-            ) {
-                if min <= max {
-                    return Some(CalorieRange { min, max });
-                }
-            }
-        }
-    }
-    None
-}
-
-/// Containers whose weight a recipe may state ("15-ounce can").
-const PACKAGE_WORDS: &str = "can|package|block|bag|jar|box|carton|container|tin|bottle|packet|tub";
-
-/// Mass units a package weight may use.
-const PACKAGE_MASS: &str = "ounces?|oz|pounds?|lbs?|grams?|g";
-
-/// "2 (15-ounce) cans" parses as unit "can" with the weight leading the note
-/// ("15-ounce, drained"); join them back into one weighed unit. A per-item
-/// weight reads the same ("3 packages (8 oz. each)" has note "8 oz. each").
-fn noted_package_unit(unit: &str, note: Option<&str>) -> Option<String> {
-    static BARE: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(&format!(r"^(?:{PACKAGE_WORDS})s?$")).unwrap());
-    static WEIGHT: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(&format!(
-            r"^(.+?)[- ]?({PACKAGE_MASS})\.?(?:$|[,;]| or | each\b)"
-        ))
-        .unwrap()
-    });
-    let unit = normalize(unit);
-    if !BARE.is_match(&unit) {
-        return None;
-    }
-    let note = normalize(note?);
-    let weight = WEIGHT.captures(&note)?;
-    Some(format!("{} {} {unit}", &weight[1], &weight[2]))
-}
-
-/// A unit that carries its own weight: "15-ounce can", "(28-oz.) can", "14
-/// 1/2-ounce can", "12- to 18-ounce package", "425-gram package".
-fn package_grams(unit: &str) -> Option<CalorieRange> {
-    static PACKAGE: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(&format!(
-            r"^\(?(.+?)[- ]?({PACKAGE_MASS})\.?\)?[- ]?(?:{PACKAGE_WORDS})s?$"
-        ))
-        .unwrap()
-    });
-    let parts = PACKAGE.captures(unit)?;
-    // "12- to 18-ounce" shares the unit between both ends of the range.
-    let weight = quantity(&parts[1].replace("- to ", " to "))?;
-    let grams_per = match parts[2].trim_end_matches('s') {
-        "ounce" | "oz" => 28.349523125,
-        "pound" | "lb" => 453.59237,
-        _ => 1.0,
-    };
-    Some(CalorieRange {
-        min: weight.min * grams_per,
-        max: weight.max * grams_per,
-    })
-}
-
-/// A piece cut to a size in inches ("3-inch piece", "3-4 inch chunk", "3/4
-/// inch knob"): that many times the food's 1-inch piece, else the food's
-/// default piece.
-fn inch_piece_grams(unit: &str, food: &Food) -> Option<CalorieRange> {
-    static INCH_PIECE: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(r"^(.+?)[- ]inch(?:es)? (?:piece|chunk|knob|hunk)s?$").unwrap()
-    });
-    let size = quantity(&INCH_PIECE.captures(unit)?[1])?;
-    if let Some(per_inch) = catalog::grams_per_piece(food.entry, Some("1 inch piece")) {
-        return Some(CalorieRange {
-            min: size.min * per_inch,
-            max: size.max * per_inch,
-        });
-    }
-    // Never asks for an estimate: an inch size isn't a unit to ask about.
-    catalog::grams_per_piece(food.entry, None).map(exact)
-}
-
-fn exact(grams: f64) -> CalorieRange {
-    CalorieRange {
-        min: grams,
-        max: grams,
-    }
-}
-
-/// A normalized unit with any fill word dropped (a heaped or scant spoon is
-/// close enough to a level one) and volume names in the catalog's spelling
-/// ("tablespoons" -> "tbsp").
-fn canonical_unit(normalized: &str) -> String {
-    static FILL: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(r"^(?:slightly )?(?:heaped|heaping|scant|generous|level|rounded) ").unwrap()
-    });
-    let unit = FILL.replace(normalized, "");
-    match unit.as_ref() {
-        "cups" => "cup",
-        "pints" => "pint",
-        "quarts" => "quart",
-        "gallons" => "gallon",
-        "tablespoon" | "tablespoons" => "tbsp",
-        "teaspoon" | "teaspoons" => "tsp",
-        "fluid ounce" | "fluid ounces" | "fl oz" => "fl oz",
-        "milliliter" | "milliliters" => "ml",
-        "liter" | "liters" | "litre" | "litres" => "l",
-        other => other,
-    }
-    .to_string()
-}
-
-/// Grams in one of a mass unit in canonical spelling.
-fn mass_grams(unit: &str) -> Option<f64> {
+fn grams_per_unit(unit: &Unit, food: &Food) -> Result<CalorieRange, &'static str> {
     match unit {
-        "gram" | "grams" | "g" => Some(1.0),
-        "kilogram" | "kilograms" | "kg" => Some(1000.0),
-        "milligram" | "milligrams" | "mg" => Some(0.001),
-        "ounce" | "ounces" | "oz" => Some(28.349523125),
-        "pound" | "pounds" | "lb" | "lbs" => Some(453.59237),
-        _ => None,
+        Unit::Grams(grams) => Ok(*grams),
+        Unit::Cups(cups) => Ok(Range::exact(
+            cups * food
+                .entry
+                .grams_per_cup
+                .or_else(|| food.estimated("cup"))
+                .ok_or("Missing density for this food")?,
+        )),
+        // That many times the food's 1-inch piece, else the food's default
+        // piece. Never asks for an estimate: an inch size isn't a unit to ask
+        // about.
+        Unit::Inches(size) => match catalog::grams_per_piece(food.entry, Some("1 inch piece")) {
+            Some(per_inch) => Ok(size.times(Range::exact(per_inch))),
+            None => catalog::grams_per_piece(food.entry, None)
+                .map(Range::exact)
+                .ok_or("Unsupported quantity unit"),
+        },
+        Unit::Piece(unit) if unit.is_empty() => catalog::grams_per_piece(food.entry, None)
+            .map(Range::exact)
+            .ok_or("Unsupported quantity unit"),
+        Unit::Piece(unit) => catalog::grams_per_piece(food.entry, Some(unit))
+            .or_else(|| food.estimated(&catalog::piece_unit(unit)))
+            .map(Range::exact)
+            .ok_or("Unsupported quantity unit"),
     }
 }
 
-/// A unit that counts items rather than weighing or measuring them: none at
-/// all, or anything that isn't a mass, a volume, or a package stating its
-/// weight ("2 cans", "3 steaks").
-fn is_count_unit(unit: &str) -> bool {
-    let normalized = normalize(unit);
-    let unit = canonical_unit(&normalized);
-    normalized.is_empty()
-        || (mass_grams(&unit).is_none()
-            && catalog::volume_to_cups(1.0, &unit).is_none()
-            && package_grams(&normalized).is_none())
-}
-
-/// "2 cans, 10 oz each" or "2 steaks, 4 oz each": an alternative giving the
-/// weight of one of the primary measurement's items, so the line weighs the
-/// count times it. A stated weight beats a package's standard size, as a
-/// noted package weight does.
-fn per_item_grams(ingredient: &ParsedIngredient, food: &Food) -> Option<CalorieRange> {
-    let (primary, alternatives) = ingredient.measurements.split_first()?;
-    if !primary.unit.as_deref().is_none_or(is_count_unit) {
-        return None;
-    }
-    let count = quantity(&normalize(primary.amount.as_deref()?))?;
-    alternatives.iter().find_map(|measurement| {
-        let unit = normalize(measurement.unit.as_deref()?);
-        let each = measurement_grams(
-            measurement.amount.as_deref()?,
-            Some(unit.strip_suffix(" each")?),
-            food,
-        )
-        .ok()?;
-        Some(CalorieRange {
-            min: count.min * each.min,
-            max: count.max * each.max,
+/// A measure's total in whatever `per_unit` converts one unit to.
+fn total(
+    terms: &[Term],
+    per_unit: impl Fn(&Unit) -> Result<CalorieRange, &'static str>,
+) -> Result<CalorieRange, &'static str> {
+    terms.iter().try_fold(Range::exact(0.0), |sum, term| {
+        let amount = term.amount.times(per_unit(&term.unit)?);
+        Ok(Range {
+            min: sum.min + amount.min,
+            max: sum.max + amount.max,
         })
     })
-}
-
-fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str> {
-    let normalized = normalize(unit);
-    if normalized.is_empty() {
-        return catalog::grams_per_piece(food.entry, None)
-            .map(exact)
-            .ok_or("Unsupported quantity unit");
-    }
-    if let Some(grams) = package_grams(&normalized) {
-        return Ok(grams);
-    }
-    if let Some(grams) = inch_piece_grams(&normalized, food) {
-        return Ok(grams);
-    }
-    let unit = canonical_unit(&normalized);
-    if let Some(grams) = mass_grams(&unit) {
-        return Ok(exact(grams));
-    }
-    let unit = unit.as_str();
-    let Some(cups) = catalog::volume_to_cups(1.0, unit) else {
-        return catalog::grams_per_piece(food.entry, Some(unit))
-            .or_else(|| food.estimated(&catalog::piece_unit(unit)))
-            .map(exact)
-            .ok_or("Unsupported quantity unit");
-    };
-    Ok(exact(
-        cups * food
-            .entry
-            .grams_per_cup
-            .or_else(|| food.estimated("cup"))
-            .ok_or("Missing density for this food")?,
-    ))
-}
-
-fn measurement_grams(
-    amount: &str,
-    unit: Option<&str>,
-    food: &Food,
-) -> Result<CalorieRange, &'static str> {
-    measurement_total(amount, unit, |unit| grams_per_unit(unit, food))
-}
-
-/// A measurement's total in whatever `per_unit` converts one unit to,
-/// including compound amounts ("1 cup plus 2 tbsp").
-fn measurement_total(
-    amount: &str,
-    unit: Option<&str>,
-    per_unit: impl Fn(&str) -> Result<CalorieRange, &'static str>,
-) -> Result<CalorieRange, &'static str> {
-    static PLUS: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"\s+(?:plus|\+)\s+").unwrap());
-    static EMBEDDED: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"^(.+?)\s+([a-z][a-z ]*)$").unwrap());
-    let amount = normalize(amount);
-    let mut total = CalorieRange { min: 0.0, max: 0.0 };
-    for segment in PLUS.split(&amount) {
-        let (range, factor) = if let Some(range) = quantity(segment) {
-            (range, per_unit(unit.unwrap_or(""))?)
-        } else {
-            // Compound measurements embed their units in amount, with no outer
-            // unit. A shared outer unit instead applies to every numeric term.
-            if unit.is_some_and(|unit| !unit.is_empty()) {
-                return Err("Unsupported or missing quantity");
-            }
-            let parts = EMBEDDED
-                .captures(segment)
-                .ok_or("Unsupported or missing quantity")?;
-            let range = quantity(&parts[1]).ok_or("Unsupported or missing quantity")?;
-            (range, per_unit(&parts[2])?)
-        };
-        total.min += range.min * factor.min;
-        total.max += range.max * factor.max;
-    }
-    Ok(total)
 }
 
 /// Calories per 100 g at which an estimated food counts as a cooking fat.
@@ -691,7 +437,7 @@ fn contribution(
     if is_negligible(entry, ingredient, scale) {
         return Ok(Line::Negligible);
     }
-    let calories = measured_calories(ingredient, &food(entry, estimated)?);
+    let calories = measured_calories(&quantity::measures(ingredient), &food(entry, estimated)?);
     if is_frying_medium(ingredient) && is_cooking_fat(entry) {
         // A deep-frying amount is mostly discarded; a spoonful for browning
         // stays in the dish.
@@ -742,7 +488,7 @@ fn estimated_food_calories(
         return Ok(Line::Negligible);
     }
     let calories = catalog_calories(
-        ingredient,
+        &quantity::measures(ingredient),
         &Food {
             kcal_per_100g: estimate.kcal_per_100g,
             entry: &entry,
@@ -766,64 +512,35 @@ fn estimated_food_calories(
 /// estimated weights (true when one was used). Every measurement gets the
 /// catalog's chance first, so an estimate never replaces a weighable amount.
 fn measured_calories(
-    ingredient: &ParsedIngredient,
+    measures: &[Measure],
     food: &Food,
 ) -> Result<(CalorieRange, bool), &'static str> {
     let committed = Food {
         estimated: None,
         ..*food
     };
-    match catalog_calories(ingredient, &committed) {
+    match catalog_calories(measures, &committed) {
         Ok(range) => Ok((range, false)),
-        Err(reason) if food.estimated.is_some() => catalog_calories(ingredient, food)
+        Err(reason) if food.estimated.is_some() => catalog_calories(measures, food)
             .map(|range| (range, true))
             .map_err(|_| reason),
         Err(reason) => Err(reason),
     }
 }
 
-fn catalog_calories(
-    ingredient: &ParsedIngredient,
-    food: &Food,
-) -> Result<CalorieRange, &'static str> {
-    let calories = |grams: CalorieRange| {
-        let factor = food.kcal_per_100g / 100.0;
-        CalorieRange {
-            min: grams.min * factor,
-            max: grams.max * factor,
-        }
-    };
-    if let Some(grams) = per_item_grams(ingredient, food) {
-        return Ok(calories(grams));
-    }
+/// The first of the line's measures (`quantity::measures`, best first)
+/// this food can weigh, in calories.
+fn catalog_calories(measures: &[Measure], food: &Food) -> Result<CalorieRange, &'static str> {
     let mut reason = "Missing quantity";
-    // Measurements are alternatives, not additive. Prefer the primary whenever
-    // supported, then the first supported alternative, so rounded gram enrichments
-    // do not replace precise primary amounts.
-    for (index, Measurement { amount, unit }) in ingredient.measurements.iter().enumerate() {
-        let Some(amount) = amount.as_deref() else {
+    for measure in measures {
+        let Some(terms) = measure else {
             reason = "Unsupported or missing quantity";
             continue;
         };
-        let unit = unit.as_deref().map(normalize);
-        // A per-item amount is the whole amount only on the primary ("2 cans
-        // each artichoke hearts"); as an alternative it is one of the count.
-        let unit = match unit.as_deref().map(|unit| unit.strip_suffix(" each")) {
-            Some(Some(_)) if index > 0 => continue,
-            Some(Some(stripped)) => Some(stripped.to_string()),
-            _ => unit,
-        };
-        let noted = unit
-            .as_deref()
-            .and_then(|unit| noted_package_unit(unit, ingredient.note.as_deref()));
-        let grams = match measurement_grams(amount, noted.as_deref().or(unit.as_deref()), food) {
-            Ok(grams) => grams,
-            Err(error) => {
-                reason = error;
-                continue;
-            }
-        };
-        return Ok(calories(grams));
+        match total(terms, |unit| grams_per_unit(unit, food)) {
+            Ok(grams) => return Ok(grams.times(Range::exact(food.kcal_per_100g / 100.0))),
+            Err(error) => reason = error,
+        }
     }
     Err(reason)
 }
@@ -918,7 +635,7 @@ fn serving_count(servings: &str) -> Option<CalorieRange> {
     }
     let count = PREFIX.replace(&text, "");
     let count = SUFFIX.replace(&count, "");
-    quantity(&count).filter(|r| r.min > 0.0 && r.min <= r.max)
+    quantity::range(&count).filter(|r| r.min > 0.0 && r.min <= r.max)
 }
 
 /// `estimate_with` using only the committed catalog.
