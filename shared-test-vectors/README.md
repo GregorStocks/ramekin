@@ -19,3 +19,7 @@ client match it in the same PR.
   filtering. Timestamps stop at millisecond precision because Foundation's date
   parsing truncates below that; the Rust unit tests additionally pin the
   microsecond boundary PostgreSQL can store.
+- `calorie-poll-delays.json`: web and iOS waits between calorie-estimate polls
+  while names are still being recognized: doubling from 2 s to 30 s, then
+  stopping once the waits reach 5 minutes. The schedule ends after the last
+  delay.

@@ -1,4 +1,5 @@
 import {
+  batch,
   createEffect,
   createResource,
   createSignal,
@@ -8,6 +9,7 @@ import {
 } from "solid-js";
 import type { Ingredient } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
+import { caloriePollDelaySeconds } from "../utils/caloriePolling";
 
 export default function CalorieEstimate(props: {
   ingredients: Ingredient[];
@@ -22,19 +24,19 @@ export default function CalorieEstimate(props: {
   });
   const fetchEstimate = (estimateCaloriesRequest: ReturnType<typeof request>) =>
     getRecipesApi().estimateCalories({ estimateCaloriesRequest });
-  const [pollFailed, setPollFailed] = createSignal(false);
+  // Polls made for the current estimate, which sets the next poll's delay.
+  const [polls, setPolls] = createSignal(0);
   const [estimate, { mutate }] = createResource(request, (r) => {
-    setPollFailed(false);
+    setPolls(0);
     return fetchEstimate(r);
   });
-  // Bumped after a poll that returned the same estimate, so the next poll is
-  // scheduled without republishing an unchanged result.
-  const [unchangedPolls, setUnchangedPolls] = createSignal(0);
   // Names still being recognized in the background: ask again quietly (no
-  // loading state) until the estimate includes them.
+  // loading state), backing off, until the estimate includes them or the
+  // schedule runs out.
   createEffect(() => {
-    unchangedPolls();
-    if (estimate.loading || !estimate()?.resolving) return;
+    const delay = caloriePollDelaySeconds(polls());
+    if (estimate.loading || estimate.error || !estimate()?.resolving) return;
+    if (delay === null) return;
     const polled = request();
     const current = () =>
       !estimate.loading &&
@@ -42,20 +44,22 @@ export default function CalorieEstimate(props: {
       props.servings === polled.servings &&
       props.scale === polled.scale;
     const timer = setTimeout(async () => {
+      let result: Awaited<ReturnType<typeof fetchEstimate>> | undefined;
       try {
-        const result = await fetchEstimate(polled);
-        if (!current()) return;
+        result = await fetchEstimate(polled);
+      } catch {
+        // Keep showing the last good estimate; the next poll may recover.
+      }
+      if (!current()) return;
+      batch(() => {
         // Most polls return the same estimate; re-rendering it every poll is
         // wasted work.
-        if (JSON.stringify(result) === JSON.stringify(estimate())) {
-          setUnchangedPolls((n) => n + 1);
-        } else {
+        if (result && JSON.stringify(result) !== JSON.stringify(estimate())) {
           mutate(result);
         }
-      } catch {
-        if (current()) setPollFailed(true);
-      }
-    }, 2000);
+        setPolls((n) => n + 1);
+      });
+    }, delay * 1000);
     onCleanup(() => clearTimeout(timer));
   });
 
@@ -65,14 +69,10 @@ export default function CalorieEstimate(props: {
       <Show when={estimate.loading}>
         <p role="status">Calculating calories…</p>
       </Show>
-      <Show when={estimate.error || pollFailed()}>
+      <Show when={estimate.error}>
         <p role="alert">Could not estimate calories. Please reload to retry.</p>
       </Show>
-      <Show
-        when={
-          !estimate.loading && !estimate.error && !pollFailed() && estimate()
-        }
-      >
+      <Show when={!estimate.loading && !estimate.error && estimate()}>
         {(result) => (
           <>
             <p class="calorie-headline">{result().headline}</p>

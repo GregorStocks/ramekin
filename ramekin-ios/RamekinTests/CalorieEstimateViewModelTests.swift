@@ -90,13 +90,13 @@ final class CalorieEstimateViewModelTests: XCTestCase {
         var calls = 0
         var loadingSeenDuringPoll = false
         var model: CalorieEstimateViewModel!
-        model = CalorieEstimateViewModel(pollInterval: .zero) { _ in
+        model = CalorieEstimateViewModel(pollDelay: { _ in .zero }, estimate: { _ in
             calls += 1
             if calls > 1, model.isLoading { loadingSeenDuringPoll = true }
             return calls < 3
                 ? self.estimate("Not yet", resolving: true)
                 : self.estimate("Counted")
-        }
+        })
         await model.load(request)
         XCTAssertEqual(calls, 3)
         XCTAssertEqual(model.response?.headline, "Counted")
@@ -108,12 +108,12 @@ final class CalorieEstimateViewModelTests: XCTestCase {
     func testPollReturningTheSameEstimateDoesNotRepublishIt() async {
         let request = EstimateCaloriesRequest(ingredients: [], scale: 1)
         var calls = 0
-        let model = CalorieEstimateViewModel(pollInterval: .zero) { _ in
+        let model = CalorieEstimateViewModel(pollDelay: { _ in .zero }, estimate: { _ in
             calls += 1
             return calls < 4
                 ? self.estimate("Not yet", resolving: true)
                 : self.estimate("Counted")
-        }
+        })
         var published: [String?] = []
         let subscription = model.$response.dropFirst().sink { published.append($0?.headline) }
         await model.load(request)
@@ -127,7 +127,7 @@ final class CalorieEstimateViewModelTests: XCTestCase {
     func testPollingStopsWhenANewerRequestReplacesIt() async {
         var calls = 0
         var model: CalorieEstimateViewModel!
-        model = CalorieEstimateViewModel(pollInterval: .zero) { request in
+        model = CalorieEstimateViewModel(pollDelay: { _ in .zero }, estimate: { request in
             calls += 1
             if request.scale == 1 {
                 if calls > 1 {
@@ -137,9 +137,56 @@ final class CalorieEstimateViewModelTests: XCTestCase {
                 return self.estimate("Old", resolving: true)
             }
             return self.estimate("New")
-        }
+        })
         await model.load(EstimateCaloriesRequest(ingredients: [], scale: 1))
         XCTAssertEqual(model.response?.headline, "New")
         XCTAssertEqual(model.request?.scale, 2)
+    }
+
+    @MainActor
+    func testPollingStopsWhenTheScheduleRunsOut() async {
+        var calls = 0
+        let model = CalorieEstimateViewModel(pollDelay: { $0 < 2 ? .zero : nil }, estimate: { _ in
+            calls += 1
+            return self.estimate("Not yet", resolving: true)
+        })
+        await model.load(EstimateCaloriesRequest(ingredients: [], scale: 1))
+        XCTAssertEqual(calls, 3, "the first request and two polls")
+        XCTAssertEqual(model.response?.headline, "Not yet")
+        XCTAssertFalse(model.isLoading)
+    }
+
+    @MainActor
+    func testFailedPollKeepsTheEstimateAndKeepsPolling() async {
+        var calls = 0
+        var shown: [String?] = []
+        var model: CalorieEstimateViewModel!
+        model = CalorieEstimateViewModel(pollDelay: { _ in .zero }, estimate: { _ in
+            calls += 1
+            shown.append(model.response?.headline)
+            switch calls {
+            case 1: return self.estimate("Not yet", resolving: true)
+            case 2: throw URLError(.timedOut)
+            default: return self.estimate("Counted")
+            }
+        })
+        await model.load(EstimateCaloriesRequest(ingredients: [], scale: 1))
+        XCTAssertEqual(calls, 3)
+        XCTAssertEqual(shown, [nil, "Not yet", "Not yet"], "the failure left the estimate up")
+        XCTAssertEqual(model.response?.headline, "Counted")
+        XCTAssertNil(model.error)
+    }
+
+    struct PollDelayVector: Decodable {
+        let delaysSeconds: [Int]
+    }
+
+    func testPollDelaysMatchSharedVectors() throws {
+        let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "calorie-poll-delays", withExtension: "json"))
+        let vector = try JSONDecoder().decode(PollDelayVector.self, from: Data(contentsOf: url))
+        let delays = vector.delaysSeconds.indices.map { CaloriePolling.delaySeconds(beforePoll: $0) }
+        XCTAssertEqual(delays, vector.delaysSeconds)
+        XCTAssertNil(CaloriePolling.delaySeconds(beforePoll: vector.delaysSeconds.count))
+        XCTAssertNil(CaloriePolling.delaySeconds(beforePoll: 1000))
     }
 }

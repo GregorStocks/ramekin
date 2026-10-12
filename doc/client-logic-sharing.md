@@ -18,6 +18,7 @@ are filed as separate issues (listed at the bottom).
 | Meal plan date helpers | `utils/mealPlanHelpers.ts` | `Ramekin/MealPlanDateSupport.swift` | none | ~40–50 | Monday week-start and local `YYYY-MM-DD` formatting are pinned by `shared-test-vectors/meal-plan-dates.json`; display formatting remains platform-specific. |
 | Shopping list category order | API response `categoryOrder` | API response `categoryOrder` | `server/src/api/shopping_list/list.rs` (yes) | ~15 | None — the canonical order now comes from the API. |
 | Created-date day filters | delegated to the server | `Ramekin/RecipeSummaryCacheSupport.swift` (cache filter) | `ramekin-core/src/created_date_filter.rs` (yes) | ~15 | Pinned by `shared-test-vectors/created-date-filter.json`, including end-of-day fractional seconds. |
+| Calorie estimate polling | `utils/caloriePolling.ts` | `Ramekin/CalorieEstimateSection.swift` (`CaloriePolling`) | none | ~15 | Backoff schedule pinned by `shared-test-vectors/calorie-poll-delays.json`. |
 
 Test coverage is still lopsided, but less than it was when this decision was
 written. iOS has XCTest units for most of these (`RecipeScaleSupportTests`,

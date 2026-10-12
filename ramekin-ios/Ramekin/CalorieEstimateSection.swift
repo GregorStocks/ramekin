@@ -1,5 +1,30 @@
 import SwiftUI
 
+/// Waits between calorie-estimate polls while names are still being
+/// recognized: doubling from 2 s to 30 s, giving up once the waits would pass
+/// 5 minutes. A stalled resolver (a provider outage, the worker backing off)
+/// then costs a few requests, not one every 2 s forever. Pinned with web by
+/// shared-test-vectors/calorie-poll-delays.json.
+enum CaloriePolling {
+    private static let firstDelaySeconds = 2
+    private static let maxDelaySeconds = 30
+    private static let totalSeconds = 300
+
+    /// Seconds to wait before poll `index` (0-based), or nil to stop.
+    static func delaySeconds(beforePoll index: Int) -> Int? {
+        guard index >= 0 else { return nil }
+        var waited = 0
+        var delay = firstDelaySeconds
+        for poll in 0...index {
+            waited += delay
+            if waited > totalSeconds { return nil }
+            if poll == index { return delay }
+            delay = min(delay * 2, maxDelaySeconds)
+        }
+        return nil
+    }
+}
+
 @MainActor
 final class CalorieEstimateViewModel: ObservableObject {
     @Published private(set) var response: CalorieEstimateResponse?
@@ -8,16 +33,18 @@ final class CalorieEstimateViewModel: ObservableObject {
     @Published private(set) var error: String?
 
     private let estimate: (EstimateCaloriesRequest) async throws -> CalorieEstimateResponse
-    private let pollInterval: Duration
+    private let pollDelay: (Int) -> Duration?
     private var generation = UUID()
 
     init(
-        pollInterval: Duration = .seconds(2),
+        pollDelay: @escaping (Int) -> Duration? = { index in
+            CaloriePolling.delaySeconds(beforePoll: index).map { .seconds($0) }
+        },
         estimate: @escaping (EstimateCaloriesRequest) async throws -> CalorieEstimateResponse = {
             try await RecipesAPI.estimateCalories(estimateCaloriesRequest: $0)
         }
     ) {
-        self.pollInterval = pollInterval
+        self.pollDelay = pollDelay
         self.estimate = estimate
     }
 
@@ -34,12 +61,23 @@ final class CalorieEstimateViewModel: ObservableObject {
             response = result
             isLoading = false
             // Names still being recognized in the background: ask again
-            // quietly until the estimate includes them. Ends when the view
-            // goes away (cancellation) or a newer request replaces this one.
-            while result.resolving {
-                try await Task.sleep(for: pollInterval)
+            // quietly, backing off, until the estimate includes them. Ends
+            // when the schedule runs out, the view goes away (cancellation),
+            // or a newer request replaces this one.
+            var polls = 0
+            while result.resolving, let delay = pollDelay(polls) {
+                polls += 1
+                try await Task.sleep(for: delay)
                 guard self.generation == generation else { return }
-                result = try await estimate(request)
+                do {
+                    result = try await estimate(request)
+                } catch is CancellationError {
+                    return
+                } catch {
+                    // Keep showing the last good estimate; the next poll may
+                    // recover.
+                    continue
+                }
                 guard self.generation == generation, !Task.isCancelled else { return }
                 // Most polls return the same estimate. Publishing it anyway
                 // re-renders the recipe screen every poll, and doing that
