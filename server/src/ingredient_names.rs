@@ -647,16 +647,17 @@ async fn save_resolved(
 /// these names, once their new answers have committed. An item whose category
 /// changed gets a new `updated_at` too, so incremental sync sends it; its
 /// version (and clients' pending edits) stay valid, since the item itself is
-/// unchanged.
+/// unchanged. A crash partway leaves the rest to `reconcile_categories` at the
+/// next startup.
 ///
-/// Its own transaction, after the answers' one, so locks are always taken
-/// item first, then name row, as writes take them: the matched items are
-/// locked and re-read (a concurrent rename may have changed the name), then
-/// the answers read under `load_learned_for_write`. A write that read an old
-/// answer held that name row until it committed, so it committed before the
-/// answer did, and this sees it; a later write reads the new answer itself.
-/// Names match by catalog normalization, which no SQL pattern expresses, so
-/// the live items are read once and matched here.
+/// Each item is its own transaction, after the answers' one, so at most one
+/// item lock is held and locks are taken item first, then name row, as writes
+/// take them: the item is locked and re-read (a concurrent rename may have
+/// changed its name), then the answers read under `load_learned_for_write`.
+/// A write that read an old answer held that name row until it committed, so
+/// it committed before the answer did, and this sees it; a later write reads
+/// the new answer itself. Names match by catalog normalization, which no SQL
+/// pattern expresses, so the live items are read once and matched here.
 fn recategorize_shopping_items(
     conn: &mut PgConnection,
     changed: &HashSet<String>,
@@ -666,46 +667,42 @@ fn recategorize_shopping_items(
         return Ok(());
     }
     let matches = |item: &str| changed.contains(normalize(item).as_str());
-    conn.transaction(|conn| {
-        let ids: Vec<uuid::Uuid> = items::table
-            .filter(items::deleted_at.is_null())
-            .select((items::id, items::item))
-            .load::<(uuid::Uuid, String)>(conn)?
-            .into_iter()
-            .filter(|(_, item)| matches(item))
-            .map(|(id, _)| id)
-            .collect();
-        if ids.is_empty() {
-            return Ok(());
-        }
-        let locked: Vec<(uuid::Uuid, String, Option<String>)> = items::table
-            .filter(items::id.eq_any(&ids))
-            .filter(items::deleted_at.is_null())
-            .order(items::id)
-            .select((items::id, items::item, items::computed_category))
-            .for_update()
-            .load(conn)?;
-        let matched: Vec<_> = locked
-            .into_iter()
-            .filter(|(_, item, _)| matches(item))
-            .collect();
-        let names: Vec<&str> = matched.iter().map(|(_, item, _)| item.as_str()).collect();
-        let categories = crate::api::shopping_list::list::categorize(conn, &names)?;
-        // Taken once the locks are ours, to keep the touch as close to its
-        // commit as possible for incremental sync.
-        let now = Utc::now();
-        for ((id, _, stored), category) in matched.iter().zip(categories) {
+    let ids: Vec<uuid::Uuid> = items::table
+        .filter(items::deleted_at.is_null())
+        .select((items::id, items::item))
+        .load::<(uuid::Uuid, String)>(conn)?
+        .into_iter()
+        .filter(|(_, item)| matches(item))
+        .map(|(id, _)| id)
+        .collect();
+    for id in ids {
+        conn.transaction(|conn| {
+            let Some((item, stored)) = items::table
+                .find(id)
+                .filter(items::deleted_at.is_null())
+                .select((items::item, items::computed_category))
+                .for_update()
+                .first::<(String, Option<String>)>(conn)
+                .optional()?
+            else {
+                return Ok(());
+            };
+            if !matches(&item) {
+                return Ok(());
+            }
+            let category = crate::api::shopping_list::list::categorize(conn, &[&item])?.remove(0);
             if stored.as_deref() != Some(category.as_str()) {
                 diesel::update(items::table.find(id))
                     .set((
                         items::computed_category.eq(&category),
-                        items::updated_at.eq(now),
+                        items::updated_at.eq(Utc::now()),
                     ))
                     .execute(conn)?;
             }
-        }
-        Ok(())
-    })
+            QueryResult::Ok(())
+        })?;
+    }
+    Ok(())
 }
 
 /// Record a failed attempt. After a provider failure (an outage, a rate
