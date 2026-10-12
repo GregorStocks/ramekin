@@ -198,6 +198,14 @@ async fn main() {
     // Before serving, so a new request's job isn't also picked up here.
     scraping::resume_interrupted_jobs(&pool).await;
 
+    // Shopping items saved before categories were stored. Before serving,
+    // since reads use the stored category.
+    let backfilled = api::shopping_list::list::backfill_categories(&pool)
+        .expect("Failed to store categories for shopping items");
+    if backfilled > 0 {
+        tracing::info!(backfilled, "stored categories for shopping items");
+    }
+
     // Resolve ingredient names the catalog doesn't know, starting with any
     // left pending by a previous run or whose answer this catalog rules out.
     let synced = ingredient_names::sync_with_catalog(&pool)
@@ -214,15 +222,6 @@ async fn main() {
     };
     if names > 0 {
         tracing::info!(names, "queued stored ingredient names");
-    }
-    let recategorized = api::shopping_list::list::touch_recategorized_items(&pool)
-        .expect("Failed to touch shopping items for the new categorizer");
-    if recategorized > 0 {
-        tracing::info!(
-            recategorized,
-            categorizer = ramekin_core::ingredient_categorizer::version(),
-            "re-sending shopping items whose category may have changed"
-        );
     }
     ingredient_names::spawn_worker(pool.clone());
 

@@ -293,25 +293,30 @@ def test_resolving_a_name_reaches_incremental_sync(authed_api_client, padding):
     client, _ = authed_api_client
     shopping = ShoppingListApi(client)
     names_api = IngredientNamesApi(client)
-    item = unique("sugar")
+    # Keywords say canned beans; the mock resolves it to bean sprouts.
+    item = unique("beans")
     stored = f"{padding}{item}{padding}"
+    other = unique("sugar")
     mock_fail(item.lower(), True)
     shopping.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item=stored)])
-    )
-    wait_for(lambda: failures_named(names_api, item.lower()))
-    synced = shopping.sync_items(SyncRequest())
-
-    # Resolving after the client's last sync must mark the item changed, so
-    # the next incremental sync carries its (possibly new) category.
-    mock_fail(item.lower(), False)
-    names_api.retry_ingredient_names()
-    wait_for(
-        lambda: (
-            not failures_named(names_api, item.lower())
-            and mock_calls(item.lower()) >= 2
+        CreateShoppingListRequest(
+            items=[
+                CreateShoppingListItemRequest(item=stored),
+                CreateShoppingListItemRequest(item=other),
+            ]
         )
     )
+    wait_for(lambda: failures_named(names_api, item.lower()))
+    wait_for(lambda: mock_answers(other.lower()) >= 1)
+    synced = shopping.sync_items(SyncRequest())
+    before = {c.item: c for c in synced.server_changes}
+    assert before[stored].computed_category == "Canned Goods"
+
+    # Resolving after the client's last sync stores the item's new category
+    # and marks it changed, so the next incremental sync carries it. Other
+    # items are left alone.
+    mock_fail(item.lower(), False)
+    names_api.retry_ingredient_names()
     changes = wait_for(
         lambda: [
             c
@@ -321,7 +326,36 @@ def test_resolving_a_name_reaches_incremental_sync(authed_api_client, padding):
             if c.item == stored
         ]
     )
-    assert changes[0].computed_category
+    assert changes[0].computed_category == "Produce"
+    assert changes[0].category == "Produce"
+    assert changes[0].version == before[stored].version
+    later = shopping.sync_items(SyncRequest(cursor=synced.cursor)).server_changes
+    assert other not in [c.item for c in later]
+    listed = {i.item: i for i in shopping.list_items().items}
+    assert listed[stored].computed_category == "Produce"
+
+
+def test_a_resolution_that_keeps_the_category_resends_nothing(authed_api_client):
+    client, _ = authed_api_client
+    shopping = ShoppingListApi(client)
+    names_api = IngredientNamesApi(client)
+    # Keywords and the resolved entry both say Baking.
+    item = unique("sugar")
+    mock_fail(item.lower(), True)
+    shopping.create_items(
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item=item)])
+    )
+    wait_for(lambda: failures_named(names_api, item.lower()))
+    synced = shopping.sync_items(SyncRequest())
+
+    mock_fail(item.lower(), False)
+    names_api.retry_ingredient_names()
+    wait_for(lambda: mock_answers(item.lower()) >= 1)
+    wait_for(lambda: names_api.get_ingredient_names_status().pending == 0)
+    changes = shopping.sync_items(SyncRequest(cursor=synced.cursor)).server_changes
+    assert item not in [c.item for c in changes]
+    listed = {i.item: i for i in shopping.list_items().items}
+    assert listed[item].computed_category == "Baking"
 
 
 def test_sync_queues_only_names_it_wrote(authed_api_client):

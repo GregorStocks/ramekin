@@ -272,9 +272,6 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
     if !requeued.is_empty() {
         conn.transaction(|conn| {
             let now = Utc::now();
-            // The old answer may have given these items their category.
-            let names: HashSet<&str> = requeued.iter().map(|name| name.as_str()).collect();
-            touch_shopping_items(conn, &names, now)?;
             diesel::update(names::table.filter(names::name.eq_any(&requeued)))
                 .set((
                     names::status.eq(PENDING),
@@ -288,6 +285,9 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
                     names::updated_at.eq(now),
                 ))
                 .execute(conn)?;
+            // The old answer may have given these items their category.
+            let names: HashSet<&str> = requeued.iter().map(|name| name.as_str()).collect();
+            recategorize_shopping_items(conn, &names, now)?;
             QueryResult::Ok(())
         })
         .map_err(|e| e.to_string())?;
@@ -568,19 +568,6 @@ async fn save_resolved(
             // Taken once the connection is ours, to keep the touch as close
             // to its commit as possible for incremental sync.
             let now = Utc::now();
-            // Only entries and non-foods give a shopping category. A pending
-            // name has no earlier answer, so nothing else changes one.
-            let recategorized: HashSet<&str> = answers
-                .iter()
-                .filter(|(_, resolution)| {
-                    matches!(
-                        resolution,
-                        NameResolution::Entry(_) | NameResolution::NotFood
-                    )
-                })
-                .map(|(name, _)| name.as_str())
-                .collect();
-            touch_shopping_items(conn, &recategorized, now)?;
             for (name, resolution) in &answers {
                 let (disposition, key, estimate) = match resolution {
                     NameResolution::Entry(key) => ("entry", Some(key.as_str()), None),
@@ -603,7 +590,19 @@ async fn save_resolved(
                     ))
                     .execute(conn)?;
             }
-            QueryResult::Ok(())
+            // Only entries and non-foods give a shopping category. A pending
+            // name has no earlier answer, so nothing else changes one.
+            let recategorized: HashSet<&str> = answers
+                .iter()
+                .filter(|(_, resolution)| {
+                    matches!(
+                        resolution,
+                        NameResolution::Entry(_) | NameResolution::NotFood
+                    )
+                })
+                .map(|(name, _)| name.as_str())
+                .collect();
+            recategorize_shopping_items(conn, &recategorized, now)
         })
     })
     .await
@@ -617,12 +616,13 @@ async fn save_resolved(
     Ok(())
 }
 
-/// Mark shopping-list items with any of these names as changed, so
-/// incremental sync sends their new computed category. Only `updated_at`
-/// moves: the item itself is unchanged, so its version (and clients' pending
-/// edits) stay valid. Names match by catalog normalization, which no SQL
-/// pattern expresses, so the live items are read once and matched here.
-fn touch_shopping_items(
+/// Recompute the stored category of live shopping-list items with any of
+/// these names, after their answers changed in this transaction. An item
+/// whose category changed gets a new `updated_at` too, so incremental sync
+/// sends it; its version (and clients' pending edits) stay valid, since the
+/// item itself is unchanged. Names match by catalog normalization, which no
+/// SQL pattern expresses, so the live items are read once and matched here.
+fn recategorize_shopping_items(
     conn: &mut PgConnection,
     changed: &HashSet<&str>,
     now: chrono::DateTime<Utc>,
@@ -631,19 +631,25 @@ fn touch_shopping_items(
     if changed.is_empty() {
         return Ok(());
     }
-    let live: Vec<(uuid::Uuid, String)> = items::table
+    let live: Vec<(uuid::Uuid, String, Option<String>)> = items::table
         .filter(items::deleted_at.is_null())
-        .select((items::id, items::item))
+        .select((items::id, items::item, items::computed_category))
         .load(conn)?;
-    let ids: Vec<uuid::Uuid> = live
+    let matched: Vec<_> = live
         .into_iter()
-        .filter(|(_, item)| changed.contains(normalize(item).as_str()))
-        .map(|(id, _)| id)
+        .filter(|(_, item, _)| changed.contains(normalize(item).as_str()))
         .collect();
-    if !ids.is_empty() {
-        diesel::update(items::table.filter(items::id.eq_any(ids)))
-            .set(items::updated_at.eq(now))
-            .execute(conn)?;
+    let names: Vec<&str> = matched.iter().map(|(_, item, _)| item.as_str()).collect();
+    let categories = crate::api::shopping_list::list::categorize(conn, &names)?;
+    for ((id, _, stored), category) in matched.iter().zip(categories) {
+        if stored.as_deref() != Some(category.as_str()) {
+            diesel::update(items::table.find(id))
+                .set((
+                    items::computed_category.eq(&category),
+                    items::updated_at.eq(now),
+                ))
+                .execute(conn)?;
+        }
     }
     Ok(())
 }

@@ -8,7 +8,6 @@ use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use diesel::upsert::on_constraint;
-use ramekin_core::ingredient_categorizer;
 use serde::{Deserialize, Serialize};
 use serde_with::rust::double_option;
 use std::collections::{HashMap, HashSet};
@@ -45,6 +44,7 @@ type ServerChangeRow = (
     Option<String>,
     bool,
     i32,
+    Option<String>,
     Option<String>,
     i32,
     DateTime<Utc>,
@@ -227,10 +227,13 @@ pub async fn sync_items(
             // Names this sync actually wrote, queued for resolution below.
             let mut written_items: Vec<String> = Vec::new();
             if !request.creates.is_empty() {
+                let items: Vec<&str> = request.creates.iter().map(|c| c.item.as_str()).collect();
+                let categories = super::list::categorize(conn, &items)?;
                 let new_items: Vec<NewShoppingListItem> = request
                     .creates
                     .iter()
-                    .map(|c| NewShoppingListItem {
+                    .zip(&categories)
+                    .map(|(c, category)| NewShoppingListItem {
                         user_id,
                         item: &c.item,
                         amount: c.amount.as_deref(),
@@ -241,7 +244,7 @@ pub async fn sync_items(
                         sort_order: c.sort_order,
                         category_override: c.category_override.as_deref(),
                         client_id: Some(c.client_id),
-                        categorizer_version: ingredient_categorizer::version(),
+                        computed_category: category,
                     })
                     .collect();
 
@@ -341,6 +344,16 @@ pub async fn sync_items(
                     );
                 }
 
+                // Every update stores its item's current category.
+                let learned = crate::ingredient_names::load_learned(
+                    conn,
+                    request
+                        .updates
+                        .iter()
+                        .filter_map(|u| u.item.as_deref())
+                        .chain(current_map.values().map(|row| row.0.as_str())),
+                )?;
+
                 for update_req in &request.updates {
                     let Some((
                         current_item,
@@ -384,6 +397,7 @@ pub async fn sync_items(
                             .unwrap_or(current_category_override)
                     };
                     let new_version = current_version + 1;
+                    let category = super::list::computed_category(&new_item, &learned);
 
                     let updated_rows = diesel::update(
                         shopping_list_items::table
@@ -399,6 +413,7 @@ pub async fn sync_items(
                         shopping_list_items::is_checked.eq(new_checked),
                         shopping_list_items::sort_order.eq(new_order),
                         shopping_list_items::category_override.eq(&new_category_override),
+                        shopping_list_items::computed_category.eq(&category),
                         shopping_list_items::version.eq(new_version),
                         shopping_list_items::updated_at.eq(sync_timestamp),
                     ))
@@ -558,12 +573,11 @@ pub async fn sync_items(
                     shopping_list_items::is_checked,
                     shopping_list_items::sort_order,
                     shopping_list_items::category_override,
+                    shopping_list_items::computed_category,
                     shopping_list_items::version,
                     shopping_list_items::updated_at,
                 ))
                 .load(conn)?;
-            let learned =
-                crate::ingredient_names::load_learned(conn, rows.iter().map(|row| row.1.as_str()))?;
 
             let server_changes: Vec<SyncServerChange> = rows
                 .into_iter()
@@ -578,10 +592,13 @@ pub async fn sync_items(
                         is_checked,
                         sort_order,
                         category_override,
+                        computed_category,
                         version,
                         updated_at,
                     )| {
-                        let computed_category = super::list::computed_category(&item, &learned);
+                        // Every write stores one, and startup fills in older items.
+                        let computed_category =
+                            computed_category.unwrap_or_else(|| "Other".to_string());
                         let category = super::list::item_category(
                             &computed_category,
                             category_override.as_deref(),

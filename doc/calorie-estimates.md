@@ -26,11 +26,14 @@ Calorie estimation is two separate problems:
    offline; see "Weights the catalog doesn't have") or the recognized food's
    own learned estimate. It has no LLM calls, queues, or versions.
 
+Shopping-list categories come from recognition too (the catalog's category,
+or a learned answer's). Each item stores its category when it's written
+(`shopping_list_items.computed_category`), and it's recomputed only when the
+item is written again or its name gets resolved; then only that item is sent
+to syncing clients. A catalog deploy leaves stored categories alone, so better
+categories reach new and edited items, and no deploy re-syncs every list.
+
 Where the code doesn't match this yet (each item has an issue in `issues/`):
-- **Shopping categories** are computed on every read, so any catalog edit
-  touches every live shopping item at startup (`categorizer_version`) to push
-  new categories through incremental sync. The category is to be stored at
-  write and recomputed only when an item's name gets resolved.
 - **Curated data:** `curated.json` holds parser-leftover alias keys ("-ounce
   block feta"), and a harvest loop (`make catalog-harvest-learned`) copies
   learned answers into it. Junk keys are to be dropped under a rule a test
@@ -41,8 +44,8 @@ Where the code doesn't match this yet (each item has an issue in `issues/`):
 
 Database data the design no longer uses (`reasked`, `reask_error`,
 `candidates` on the name and weight tables, the old runtime weights queue's
-`ingredient_weight_estimates` table, `categorizer_version` once categories are
-stored) is kept, unread, until its removal is approved.
+`ingredient_weight_estimates` table, `shopping_list_items.categorizer_version`)
+is kept, unread, until its removal is approved.
 
 ## Data and regeneration
 

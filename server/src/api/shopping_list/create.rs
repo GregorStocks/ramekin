@@ -6,7 +6,6 @@ use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
 use diesel::upsert::on_constraint;
-use ramekin_core::ingredient_categorizer;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -74,11 +73,13 @@ pub async fn create_items(
                 .first::<Option<i32>>(conn)?
                 .unwrap_or(0);
 
+            let items: Vec<&str> = request.items.iter().map(|i| i.item.as_str()).collect();
+            let categories = super::list::categorize(conn, &items)?;
             let mut ids = Vec::with_capacity(request.items.len());
             // Names this request actually inserted, queued for resolution.
             let mut inserted_items = Vec::with_capacity(request.items.len());
 
-            for (i, item_req) in request.items.iter().enumerate() {
+            for (i, (item_req, category)) in request.items.iter().zip(&categories).enumerate() {
                 let amount_ref = item_req.amount.as_deref();
                 let note_ref = item_req.note.as_deref();
                 let source_title_ref = item_req.source_recipe_title.as_deref();
@@ -94,7 +95,7 @@ pub async fn create_items(
                     sort_order: max_sort_order + 1 + i as i32,
                     category_override: item_req.category_override.as_deref(),
                     client_id: item_req.client_id,
-                    categorizer_version: ingredient_categorizer::version(),
+                    computed_category: category,
                 };
 
                 let id = if let Some(client_id) = item_req.client_id {
