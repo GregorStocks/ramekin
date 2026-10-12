@@ -198,12 +198,12 @@ async fn main() {
     // Before serving, so a new request's job isn't also picked up here.
     scraping::resume_interrupted_jobs(&pool).await;
 
-    // Shopping items saved before categories were stored. Before serving,
-    // since reads use the stored category.
-    let backfilled = api::shopping_list::list::backfill_categories(&pool)
-        .expect("Failed to store categories for shopping items");
-    if backfilled > 0 {
-        tracing::info!(backfilled, "stored categories for shopping items");
+    // Before serving, since reads use the stored category, and before the
+    // ingredient-name worker starts.
+    let recategorized = api::shopping_list::list::reconcile_categories(&pool)
+        .expect("Failed to reconcile shopping item categories");
+    if recategorized > 0 {
+        tracing::info!(recategorized, "stored new categories for shopping items");
     }
 
     // Resolve ingredient names the catalog doesn't know, starting with any

@@ -28,10 +28,11 @@ Calorie estimation is two separate problems:
 
 Shopping-list categories come from recognition too (the catalog's category,
 or a learned answer's). Each item stores its category when it's written
-(`shopping_list_items.computed_category`), and it's recomputed only when the
-item is written again or its name gets resolved; then only that item is sent
-to syncing clients. A catalog deploy leaves stored categories alone, so better
-categories reach new and edited items, and no deploy re-syncs every list.
+(`shopping_list_items.computed_category`), and it's recomputed when the item
+is written again, when its name gets resolved, and at startup (which also
+picks up a catalog deploy's changes). An item is touched, and so sent to
+syncing clients, only when its category actually changed, so no deploy
+re-syncs every list.
 
 Where the code doesn't match this yet (each item has an issue in `issues/`):
 - **Curated data:** `curated.json` holds parser-leftover alias keys ("-ounce

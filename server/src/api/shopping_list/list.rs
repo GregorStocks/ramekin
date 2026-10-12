@@ -56,10 +56,10 @@ pub fn computed_category(item: &str, learned: &ramekin_core::catalog::Learned) -
     ingredient_categorizer::categorize_with(item, learned).to_string()
 }
 
-/// The category to store with each of `items` when it's written. A catalog
-/// deploy leaves stored categories alone; an item is recategorized only when
-/// it's written again or its name gets resolved
-/// (`ingredient_names::recategorize_shopping_items`).
+/// The category to store with each of `items` when it's written. An item is
+/// recategorized when it's written again, when its name gets resolved
+/// (`ingredient_names::recategorize_shopping_items`), and at startup
+/// (`reconcile_categories`).
 pub fn categorize(conn: &mut PgConnection, items: &[&str]) -> QueryResult<Vec<String>> {
     let learned = crate::ingredient_names::load_learned_for_write(conn, items.iter().copied())?;
     Ok(items
@@ -82,24 +82,40 @@ pub fn store_categories(conn: &mut PgConnection, written: &[(Uuid, &str)]) -> Qu
     Ok(())
 }
 
-/// Store a category for live items saved before categories were stored.
-/// Runs at startup; returns how many items were filled in.
-pub fn backfill_categories(pool: &DbPool) -> Result<usize, String> {
+/// Bring every live item's stored category up to date, touching only the
+/// items whose category changed so incremental sync sends just those. Fills
+/// in items saved before categories were stored, items whose recategorization
+/// a crash cut off after their name's answer committed, and items a catalog
+/// deploy recategorizes. Runs at startup, before serving and before the
+/// ingredient-name worker starts; returns how many items changed.
+pub fn reconcile_categories(pool: &DbPool) -> Result<usize, String> {
     let mut conn = pool.get().map_err(|e| e.to_string())?;
     conn.transaction(|conn| {
-        let rows: Vec<(Uuid, String)> = shopping_list_items::table
+        let rows: Vec<(Uuid, String, Option<String>)> = shopping_list_items::table
             .filter(shopping_list_items::deleted_at.is_null())
-            .filter(shopping_list_items::computed_category.is_null())
-            .select((shopping_list_items::id, shopping_list_items::item))
+            .select((
+                shopping_list_items::id,
+                shopping_list_items::item,
+                shopping_list_items::computed_category,
+            ))
             .load(conn)?;
-        let items: Vec<&str> = rows.iter().map(|(_, item)| item.as_str()).collect();
-        let categories = categorize(conn, &items)?;
-        for ((id, _), category) in rows.iter().zip(&categories) {
-            diesel::update(shopping_list_items::table.find(id))
-                .set(shopping_list_items::computed_category.eq(category))
-                .execute(conn)?;
+        let items: Vec<&str> = rows.iter().map(|(_, item, _)| item.as_str()).collect();
+        let learned = crate::ingredient_names::load_learned(conn, items)?;
+        let now = Utc::now();
+        let mut changed = 0;
+        for (id, item, stored) in &rows {
+            let category = computed_category(item, &learned);
+            if stored.as_deref() != Some(category.as_str()) {
+                diesel::update(shopping_list_items::table.find(id))
+                    .set((
+                        shopping_list_items::computed_category.eq(&category),
+                        shopping_list_items::updated_at.eq(now),
+                    ))
+                    .execute(conn)?;
+                changed += 1;
+            }
         }
-        QueryResult::Ok(rows.len())
+        QueryResult::Ok(changed)
     })
     .map_err(|e| e.to_string())
 }
