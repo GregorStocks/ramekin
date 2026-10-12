@@ -434,8 +434,9 @@ Model-estimated weights for what the rest of the catalog can't weigh. A known
 food with no density, or no piece weight for a counted unit, makes
 `nutrition::estimate_with` report a `WeightKey { food: entry.id, unit }` gap
 ("cup" for any volume, the `piece_unit` spelling for a counted unit, only for
-`nutrition::ESTIMABLE_UNITS`; a bare count is never estimated, since aliases
-sharing an entry can mean different pieces). `make
+`nutrition::ESTIMABLE_UNITS`; a bare count or a size like "large" is never
+estimated, since it names no piece and aliases sharing an entry can mean
+different pieces). `make
 catalog-fill-weights` asks the ingredient model about the gaps across the
 committed corpora and records each answer under its entry id and unit, with
 the model's name; `null` means the model said there's no typical weight.

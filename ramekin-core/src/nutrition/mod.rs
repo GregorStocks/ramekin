@@ -21,12 +21,13 @@ pub struct WeightKey {
 }
 
 /// The units a weight is estimated for, in `catalog::piece_unit` spelling:
-/// "cup" for any volume, sizes, and common counted units and packages.
-/// Anything else ("1/2-inch pieces", a typo) stays unknown rather than
-/// becoming a paid question. A bare count ("3 shallots", "2 pieces") is never
-/// estimated: many aliases share one entry while meaning different pieces
-/// (toast fingers and bread slices, Fun Size and full-size bars, nori strips
-/// and sheets), so only the catalog's own default piece weighs one.
+/// "cup" for any volume, and common counted units and packages. Anything else
+/// ("1/2-inch pieces", a typo) stays unknown rather than becoming a paid
+/// question. A bare count ("3 shallots", "2 pieces") or a size ("6 large
+/// leaves lettuce", "1 large loaf challah") is never estimated: it doesn't
+/// name the piece, and many aliases share one entry while meaning different
+/// pieces (toast fingers and bread slices, lettuce leaves and heads), so only
+/// the catalog's own pieces weigh one.
 pub const ESTIMABLE_UNITS: &[&str] = &[
     "bag",
     "ball",
@@ -46,20 +47,16 @@ pub const ESTIMABLE_UNITS: &[&str] = &[
     "cup",
     "ear",
     "envelope",
-    "extra large",
     "fillet",
     "handful",
     "head",
     "heart",
     "jar",
-    "jumbo",
     "knob",
-    "large",
     "leaf",
     "leg",
     "link",
     "loaf",
-    "medium",
     "package",
     "packet",
     "pouch",
@@ -69,7 +66,6 @@ pub const ESTIMABLE_UNITS: &[&str] = &[
     "sheet",
     "slab",
     "slice",
-    "small",
     "spear",
     "sprig",
     "stalk",
@@ -81,7 +77,6 @@ pub const ESTIMABLE_UNITS: &[&str] = &[
     "tube",
     "tub",
     "wedge",
-    "whole",
     "wing",
 ];
 

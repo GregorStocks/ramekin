@@ -18,12 +18,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "artichoke hearts": {
-      "large": {
-        "grams": 35.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "arugula, raw": {
       "handful": {
         "grams": 20.0,
@@ -39,12 +33,6 @@
     "asparagus, raw": {
       "stalk": {
         "grams": 16.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "baby corn": {
-      "small": {
-        "grams": 7.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -88,12 +76,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "beef, chuck, arm pot roast, separable lean and fat, trimmed to 1/8\" fat, all grades, raw": {
-      "small": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "beef, variety meats and by-products, suet, raw": {
       "cup": {
         "grams": 115.0,
@@ -106,25 +88,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "blackberries, raw": {
-      "large": {
-        "grams": 8.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "bread, egg": {
-      "large": {
-        "grams": 50.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "bread, french or vienna (includes sourdough)": {
       "cup": {
         "grams": 35.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "large": {
-        "grams": 50.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -164,12 +130,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "burrata": {
-      "large": {
-        "grams": 225.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "butter": {
       "cube": {
         "grams": 113.0,
@@ -192,19 +152,11 @@
       "bag": {
         "grams": 397.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "medium": {
-        "grams": 908.0,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "cabbage, savoy, raw": {
       "head": {
         "grams": 750.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "large": {
-        "grams": 1000.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -251,10 +203,6 @@
     "candies, marshmallows": {
       "cup": {
         "grams": 50.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "large": {
-        "grams": 7.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -440,14 +388,6 @@
       "cup": {
         "grams": 150.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "large": {
-        "grams": 14.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "medium": {
-        "grams": 10.0,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "cucumber, with peel, raw": {
@@ -495,12 +435,6 @@
     "fish, salmon, chinook, smoked": {
       "slice": {
         "grams": 20.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "fish, tuna, fresh, yellowfin, raw": {
-      "small": {
-        "grams": 113.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -574,12 +508,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "kohlrabi, raw": {
-      "medium": {
-        "grams": 170.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "lemon grass (citronella), raw": {
       "stalk": {
         "grams": 25.0,
@@ -601,10 +529,6 @@
     "lettuce, green leaf, raw": {
       "cup": {
         "grams": 36.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "large": {
-        "grams": 400.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -800,12 +724,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "peppers, chili, green, canned": {
-      "small": {
-        "grams": 40.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "peppers, hot chili, green, raw": {
       "can": {
         "grams": 113.0,
@@ -886,12 +804,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "pumpkin, raw": {
-      "small": {
-        "grams": 1400.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "radicchio, raw": {
       "head": {
         "grams": 280.0,
@@ -920,23 +832,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "rice noodles, dry": {
-      "small": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "rosemary, fresh": {
       "bunch": {
         "grams": 25.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "large": {
-        "grams": 2.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "small": {
-        "grams": 0.5,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1058,22 +956,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "spices, bay leaf": {
-      "large": {
-        "grams": 0.3,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "small": {
-        "grams": 0.1,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "spices, cinnamon, ground": {
-      "small": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "spinach, raw": {
       "handful": {
         "grams": 30.0,
@@ -1092,29 +974,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "squash, winter, butternut, raw": {
-      "medium": {
-        "grams": 1000.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "small": {
-        "grams": 700.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "sweet potato, raw, unprepared (includes foods for usda's food distribution program)": {
       "slice": {
         "grams": 15.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "thyme, fresh": {
-      "large": {
-        "grams": 1.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "small": {
-        "grams": 0.5,
         "model": "anthropic/claude-opus-5.5"
       }
     },

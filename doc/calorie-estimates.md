@@ -173,7 +173,8 @@ A known food can still be unweighable: no density for a volume ("2 tbsp
 capers"), or no weight for a counted unit ("1 bunch kale", "2 jars capers").
 The estimate reports each such gap as (catalog food, unit), with "cup" standing
 for any volume, but only for lines no measurement can be weighed with catalog
-data alone. A bare count with no default piece ("3 shallots") is not a gap:
+data alone. A bare count or a size with no catalog piece ("3 shallots", "6
+large leaves lettuce") is not a gap:
 many aliases share one entry while meaning different pieces (toast fingers and
 bread slices, Fun Size and full-size bars), so one estimate per entry would be
 wrong for some of them, and the line stays unknown.
