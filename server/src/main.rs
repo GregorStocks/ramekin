@@ -194,17 +194,18 @@ async fn main() {
     // for photos created before the column existed).
     photos::spawn_dimension_backfill(pool.clone());
 
-    // Finish scrape and import jobs a previous run left in progress.
-    // Before serving, so a new request's job isn't also picked up here.
-    scraping::resume_interrupted_jobs(&pool).await;
-
-    // Before serving, since reads use the stored category, and before the
-    // ingredient-name worker starts.
+    // Before serving, since reads use the stored category, and before
+    // anything can resolve ingredient names (resumed jobs, the worker), so
+    // nothing changes an answer while this reads them.
     let recategorized = api::shopping_list::list::reconcile_categories(&pool)
         .expect("Failed to reconcile shopping item categories");
     if recategorized > 0 {
         tracing::info!(recategorized, "stored new categories for shopping items");
     }
+
+    // Finish scrape and import jobs a previous run left in progress.
+    // Before serving, so a new request's job isn't also picked up here.
+    scraping::resume_interrupted_jobs(&pool).await;
 
     // Resolve ingredient names the catalog doesn't know, starting with any
     // left pending by a previous run or whose answer this catalog rules out.
