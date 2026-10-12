@@ -55,46 +55,61 @@ final class CalorieEstimateViewModel: ObservableObject {
         response = nil
         error = nil
         isLoading = true
+        let result: CalorieEstimateResponse
         do {
-            var result = try await estimate(request)
-            guard self.generation == generation, !Task.isCancelled else { return }
-            response = result
-            isLoading = false
-            // Names still being recognized in the background: ask again
-            // quietly, backing off, until the estimate includes them. Ends
-            // when the schedule runs out, the view goes away (cancellation),
-            // or a newer request replaces this one.
-            var polls = 0
-            while result.resolving, let delay = pollDelay(polls) {
-                polls += 1
-                try await Task.sleep(for: delay)
-                guard self.generation == generation else { return }
-                do {
-                    result = try await estimate(request)
-                } catch is CancellationError {
-                    return
-                } catch {
-                    // Keep showing the last good estimate; the next poll may
-                    // recover.
-                    continue
-                }
-                guard self.generation == generation, !Task.isCancelled else { return }
-                // Most polls return the same estimate. Publishing it anyway
-                // re-renders the recipe screen every poll, and doing that
-                // while the toolbar menu is open kept the app's main thread
-                // busy for minutes on CI.
-                if result != response {
-                    response = result
-                }
-            }
+            result = try await estimate(request)
         } catch is CancellationError {
             return
         } catch {
             guard self.generation == generation, !Task.isCancelled else { return }
-            response = nil
             self.error = "Could not estimate calories: \(error.localizedDescription)"
+            isLoading = false
+            return
         }
+        guard self.generation == generation, !Task.isCancelled else { return }
+        response = result
         isLoading = false
+        await poll(after: result, request: request, generation: generation)
+    }
+
+    /// Names still being recognized in the background: ask again quietly,
+    /// backing off, until the estimate includes them. Ends when the schedule
+    /// runs out, the view goes away (cancellation), or a newer request
+    /// replaces this one.
+    private func poll(
+        after first: CalorieEstimateResponse,
+        request: EstimateCaloriesRequest,
+        generation: UUID
+    ) async {
+        var result = first
+        var polls = 0
+        while result.resolving, let delay = pollDelay(polls) {
+            polls += 1
+            do {
+                try await Task.sleep(for: delay)
+            } catch {
+                return
+            }
+            guard self.generation == generation else { return }
+            do {
+                result = try await estimate(request)
+            } catch {
+                // A replaced or cancelled request's failure ends this
+                // (URLError.cancelled is not a CancellationError). Any other
+                // keeps showing the last good estimate; the next poll may
+                // recover.
+                guard self.generation == generation, !Task.isCancelled else { return }
+                continue
+            }
+            guard self.generation == generation, !Task.isCancelled else { return }
+            // Most polls return the same estimate. Publishing it anyway
+            // re-renders the recipe screen every poll, and doing that while
+            // the toolbar menu is open kept the app's main thread busy for
+            // minutes on CI.
+            if result != response {
+                response = result
+            }
+        }
     }
 }
 
