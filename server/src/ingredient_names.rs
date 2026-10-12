@@ -175,6 +175,29 @@ pub fn load_learned<'a>(
         .collect())
 }
 
+/// `load_learned` for a write that stores something computed from the answers
+/// (a shopping item's category). The name rows are locked until the write
+/// commits, so the worker can't resolve one in between: its update waits for
+/// the write, and its `recategorize_shopping_items` then sees the written
+/// item. (A name with no row yet can't be locked; it's queued by this write,
+/// so the worker can't see it before the write commits either, unless another
+/// write queued the same new name a moment earlier.)
+pub fn load_learned_for_write<'a>(
+    conn: &mut PgConnection,
+    items: impl IntoIterator<Item = &'a str>,
+) -> QueryResult<Learned> {
+    let items: Vec<&str> = items.into_iter().collect();
+    let wanted = unlearned_names(items.iter().copied());
+    if !wanted.is_empty() {
+        names::table
+            .filter(names::name.eq_any(&wanted))
+            .select(names::name)
+            .for_share()
+            .load::<String>(conn)?;
+    }
+    load_learned(conn, items)
+}
+
 /// Name, disposition, key, and an estimate's calories, cup and piece weights.
 type LearnedRow = (
     String,

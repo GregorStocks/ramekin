@@ -345,7 +345,7 @@ pub async fn sync_items(
                 }
 
                 // Every update stores its item's current category.
-                let learned = crate::ingredient_names::load_learned(
+                let learned = crate::ingredient_names::load_learned_for_write(
                     conn,
                     request
                         .updates

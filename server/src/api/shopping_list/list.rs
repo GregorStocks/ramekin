@@ -61,7 +61,7 @@ pub fn computed_category(item: &str, learned: &ramekin_core::catalog::Learned) -
 /// it's written again or its name gets resolved
 /// (`ingredient_names::recategorize_shopping_items`).
 pub fn categorize(conn: &mut PgConnection, items: &[&str]) -> QueryResult<Vec<String>> {
-    let learned = crate::ingredient_names::load_learned(conn, items.iter().copied())?;
+    let learned = crate::ingredient_names::load_learned_for_write(conn, items.iter().copied())?;
     Ok(items
         .iter()
         .map(|item| computed_category(item, &learned))
