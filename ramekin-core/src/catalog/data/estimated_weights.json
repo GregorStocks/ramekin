@@ -106,23 +106,23 @@
     },
     "beef, chuck, arm pot roast, separable lean and fat, trimmed to 1/8\" fat, all grades, raw": {
       "piece": {
-        "grams": 1360.0,
+        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       },
       "small": {
-        "grams": 900.0,
+        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
     "beef, rib eye steak/roast, boneless, lip-on, separable lean and fat, trimmed to 1/8\" fat, all grades, raw": {
       "piece": {
-        "grams": 340.0,
+        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
     "beef, rib, whole (ribs 6-12), separable lean and fat, trimmed to 1/8\" fat, all grades, raw": {
       "piece": {
-        "grams": 1800.0,
+        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -848,7 +848,7 @@
     },
     "lamb, leg, whole (shank and sirloin), separable lean and fat, trimmed to 1/4\" fat, choice, raw": {
       "piece": {
-        "grams": 2500.0,
+        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
