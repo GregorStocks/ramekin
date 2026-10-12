@@ -177,6 +177,8 @@ fn unknowns_are_explicit_and_never_zero() {
             "g",
             "Unsupported or missing quantity",
         ),
+        // Kale is weighed by the bunch, but a bare count means nothing.
+        ("kale", "2", "", "Unsupported quantity unit"),
         ("flour", "2", "", "Unsupported quantity unit"),
         ("canned chickpeas", "1", "can", "Unsupported quantity unit"),
         (
