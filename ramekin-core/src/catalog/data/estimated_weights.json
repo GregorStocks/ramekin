@@ -744,7 +744,7 @@
     },
     "gravy, brown, dry": {
       "piece": {
-        "grams": 25.0,
+        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1302,7 +1302,7 @@
     },
     "puddings, vanilla, dry mix, instant": {
       "piece": {
-        "grams": 96.0,
+        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1642,13 +1642,13 @@
     },
     "tomato products, canned, paste, without salt added (includes foods for usda's food distribution program)": {
       "piece": {
-        "grams": 170.0,
+        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
     "tomato products, canned, sauce": {
       "piece": {
-        "grams": 425.0,
+        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
