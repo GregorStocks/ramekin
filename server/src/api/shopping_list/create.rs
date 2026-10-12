@@ -73,13 +73,11 @@ pub async fn create_items(
                 .first::<Option<i32>>(conn)?
                 .unwrap_or(0);
 
-            let items: Vec<&str> = request.items.iter().map(|i| i.item.as_str()).collect();
-            let categories = super::list::categorize(conn, &items)?;
             let mut ids = Vec::with_capacity(request.items.len());
             // Names this request actually inserted, queued for resolution.
             let mut inserted_items = Vec::with_capacity(request.items.len());
 
-            for (i, (item_req, category)) in request.items.iter().zip(&categories).enumerate() {
+            for (i, item_req) in request.items.iter().enumerate() {
                 let amount_ref = item_req.amount.as_deref();
                 let note_ref = item_req.note.as_deref();
                 let source_title_ref = item_req.source_recipe_title.as_deref();
@@ -95,7 +93,6 @@ pub async fn create_items(
                     sort_order: max_sort_order + 1 + i as i32,
                     category_override: item_req.category_override.as_deref(),
                     client_id: item_req.client_id,
-                    computed_category: category,
                 };
 
                 let id = if let Some(client_id) = item_req.client_id {
@@ -108,7 +105,7 @@ pub async fn create_items(
                         .get_result::<Uuid>(conn)
                     {
                         Ok(id) => {
-                            inserted_items.push(item_req.item.as_str());
+                            inserted_items.push((id, item_req.item.as_str()));
                             id
                         }
                         Err(diesel::result::Error::NotFound) => shopping_list_items::table
@@ -119,16 +116,21 @@ pub async fn create_items(
                         Err(e) => return Err(e),
                     }
                 } else {
-                    inserted_items.push(item_req.item.as_str());
-                    diesel::insert_into(shopping_list_items::table)
+                    let id = diesel::insert_into(shopping_list_items::table)
                         .values(&new_item)
                         .returning(shopping_list_items::id)
-                        .get_result::<Uuid>(conn)?
+                        .get_result::<Uuid>(conn)?;
+                    inserted_items.push((id, item_req.item.as_str()));
+                    id
                 };
 
                 ids.push(id);
             }
-            crate::ingredient_names::enqueue_items(conn, inserted_items)?;
+            crate::ingredient_names::enqueue_items(
+                conn,
+                inserted_items.iter().map(|(_, item)| *item),
+            )?;
+            super::list::store_categories(conn, &inserted_items)?;
 
             Ok(ids)
         })

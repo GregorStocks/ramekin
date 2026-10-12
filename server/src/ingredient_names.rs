@@ -176,12 +176,12 @@ pub fn load_learned<'a>(
 }
 
 /// `load_learned` for a write that stores something computed from the answers
-/// (a shopping item's category). The name rows are locked until the write
-/// commits, so the worker can't resolve one in between: its update waits for
-/// the write, and its `recategorize_shopping_items` then sees the written
-/// item. (A name with no row yet can't be locked; it's queued by this write,
-/// so the worker can't see it before the write commits either, unless another
-/// write queued the same new name a moment earlier.)
+/// (a shopping item's category), after queueing the names it wrote. The name
+/// rows are locked until the write commits, so the worker can't resolve one
+/// in between: its update waits for the write, and its
+/// `recategorize_shopping_items` then sees the written item. Queueing first
+/// gives every unknown name a row to lock: an insert racing another write's
+/// insert of the same new name waits for it to commit.
 pub fn load_learned_for_write<'a>(
     conn: &mut PgConnection,
     items: impl IntoIterator<Item = &'a str>,

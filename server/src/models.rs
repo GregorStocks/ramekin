@@ -438,7 +438,4 @@ pub struct NewShoppingListItem<'a> {
     pub sort_order: i32,
     pub category_override: Option<&'a str>,
     pub client_id: Option<Uuid>,
-    /// The category computed from `item` when it was saved
-    /// (`shopping_list::list::categorize`).
-    pub computed_category: &'a str,
 }

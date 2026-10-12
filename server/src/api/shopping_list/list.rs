@@ -68,6 +68,20 @@ pub fn categorize(conn: &mut PgConnection, items: &[&str]) -> QueryResult<Vec<St
         .collect())
 }
 
+/// Store the category of items this transaction just wrote. Their names must
+/// be queued first (`ingredient_names::enqueue_items`), so every name the
+/// catalog doesn't know has a row for `load_learned_for_write` to lock.
+pub fn store_categories(conn: &mut PgConnection, written: &[(Uuid, &str)]) -> QueryResult<()> {
+    let items: Vec<&str> = written.iter().map(|(_, item)| *item).collect();
+    let categories = categorize(conn, &items)?;
+    for ((id, _), category) in written.iter().zip(&categories) {
+        diesel::update(shopping_list_items::table.find(id))
+            .set(shopping_list_items::computed_category.eq(category))
+            .execute(conn)?;
+    }
+    Ok(())
+}
+
 /// Store a category for live items saved before categories were stored.
 /// Runs at startup; returns how many items were filled in.
 pub fn backfill_categories(pool: &DbPool) -> Result<usize, String> {

@@ -128,7 +128,6 @@ pub async fn update_item(
 
         // Update the item, queueing a new name in the same transaction
         let result = conn.transaction::<_, diesel::result::Error, _>(|conn| {
-            let category = super::list::categorize(conn, &[&new_item])?.remove(0);
             let updated = diesel::update(
                 shopping_list_items::table
                     .filter(shopping_list_items::id.eq(id))
@@ -142,7 +141,6 @@ pub async fn update_item(
                 shopping_list_items::is_checked.eq(new_checked),
                 shopping_list_items::sort_order.eq(new_order),
                 shopping_list_items::category_override.eq(&new_category_override),
-                shopping_list_items::computed_category.eq(&category),
                 shopping_list_items::version.eq(current_version + 1),
                 shopping_list_items::updated_at.eq(Utc::now()),
             ))
@@ -151,6 +149,7 @@ pub async fn update_item(
                 if let Some(item) = &renamed_to {
                     crate::ingredient_names::enqueue_items(conn, [item.as_str()])?;
                 }
+                super::list::store_categories(conn, &[(id, new_item.as_str())])?;
             }
             Ok(updated)
         });
