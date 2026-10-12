@@ -700,6 +700,42 @@ def test_items_have_category(authed_api_client):
     assert items_by_name["unknown_xyz_ingredient"].category == "Other"
 
 
+def test_renaming_an_item_stores_the_new_names_category(authed_api_client):
+    """The computed category is stored when an item is written, so a rename
+    through update or sync stores the new name's category."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    created = api.create_items(
+        CreateShoppingListRequest(
+            items=[
+                CreateShoppingListItemRequest(item="olive oil"),
+                CreateShoppingListItemRequest(item="milk"),
+            ]
+        )
+    )
+    oil_id, milk_id = created.ids
+    api.update_item(oil_id, UpdateShoppingListItemRequest(item="chicken breast"))
+    milk = {i.id: i for i in api.list_items().items}[milk_id]
+    sync_response = api.sync_items(
+        SyncRequest(
+            updates=[
+                SyncUpdateItem(
+                    id=milk_id, item="fresh basil", expected_version=milk.version
+                )
+            ]
+        )
+    )
+    assert sync_response.updated[0].success is True
+
+    items = {i.id: i for i in api.list_items().items}
+    assert items[oil_id].computed_category == "Meat & Seafood"
+    assert items[milk_id].computed_category == "Produce"
+    changes = {c.id: c for c in api.sync_items(SyncRequest()).server_changes}
+    assert changes[oil_id].computed_category == "Meat & Seafood"
+    assert changes[milk_id].category == "Produce"
+
+
 def test_update_item_category_override_wins_over_computed_category(authed_api_client):
     """Test that a persisted category override wins over computed category."""
     client, user_id = authed_api_client

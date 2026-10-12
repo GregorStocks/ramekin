@@ -1,6 +1,6 @@
 use ramekin_core::catalog::{
     category, chosen_alternative, food, grams_per_cup, grams_per_piece, line_grams_per_cup,
-    resolve, resolve_line, version, Kind, Resolution, Via,
+    resolve, resolve_line, Kind, Resolution, Via,
 };
 
 fn density(item: &str) -> f64 {
@@ -206,12 +206,6 @@ fn resolution_reports_how_it_matched() {
     assert_eq!(via("yellow onions"), Via::Plural);
     assert_eq!(via("room temperature butter"), Via::Modifiers);
     assert!(matches!(resolve("unicorn tears"), Resolution::Unresolved));
-}
-
-#[test]
-fn version_is_stable() {
-    assert!(version().starts_with("catalog-v5-sr2018-"));
-    assert_eq!(version(), version());
 }
 
 #[test]
@@ -1011,7 +1005,6 @@ fn secondary_sources_supply_foods_sr_legacy_lacks() {
     assert_eq!(fdc_id("garam masala"), None);
     assert_close(entry_kcal("garam masala").unwrap(), 300.0);
     assert_close(density("garam masala"), 160.0);
-    assert!(version().contains("fndds2024"));
 }
 
 #[test]

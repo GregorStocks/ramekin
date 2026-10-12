@@ -149,6 +149,7 @@ pub async fn update_item(
                 if let Some(item) = &renamed_to {
                     crate::ingredient_names::enqueue_items(conn, [item.as_str()])?;
                 }
+                super::list::store_categories(conn, &[(id, new_item.as_str())])?;
             }
             Ok(updated)
         });

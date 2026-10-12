@@ -175,6 +175,32 @@ pub fn load_learned<'a>(
         .collect())
 }
 
+/// `load_learned` for a write that stores something computed from the answers
+/// (a shopping item's category), after queueing the names it wrote. The name
+/// rows are locked until the write commits, so the worker can't resolve one
+/// in between: its update waits for the write, and its
+/// `recategorize_shopping_items` then sees the written item. Queueing first
+/// gives every unknown name a row to lock: an insert racing another write's
+/// insert of the same new name waits for it to commit.
+pub fn load_learned_for_write<'a>(
+    conn: &mut PgConnection,
+    items: impl IntoIterator<Item = &'a str>,
+) -> QueryResult<Learned> {
+    let items: Vec<&str> = items.into_iter().collect();
+    let wanted = unlearned_names(items.iter().copied());
+    if !wanted.is_empty() {
+        names::table
+            .filter(names::name.eq_any(&wanted))
+            .select(names::name)
+            // By name, the order `save_resolved` updates them in, so the two
+            // can't deadlock.
+            .order(names::name)
+            .for_share()
+            .load::<String>(conn)?;
+    }
+    load_learned(conn, items)
+}
+
 /// Name, disposition, key, and an estimate's calories, cup and piece weights.
 type LearnedRow = (
     String,
@@ -272,9 +298,6 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
     if !requeued.is_empty() {
         conn.transaction(|conn| {
             let now = Utc::now();
-            // The old answer may have given these items their category.
-            let names: HashSet<&str> = requeued.iter().map(|name| name.as_str()).collect();
-            touch_shopping_items(conn, &names, now)?;
             diesel::update(names::table.filter(names::name.eq_any(&requeued)))
                 .set((
                     names::status.eq(PENDING),
@@ -291,6 +314,9 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
             QueryResult::Ok(())
         })
         .map_err(|e| e.to_string())?;
+        // The old answer may have given these items their category.
+        let names: HashSet<String> = requeued.iter().map(|name| name.to_string()).collect();
+        recategorize_shopping_items(&mut conn, &names).map_err(|e| e.to_string())?;
     }
     Ok(changes
         .into_iter()
@@ -559,28 +585,28 @@ async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String)
 
 async fn save_resolved(
     pool: &Arc<DbPool>,
-    answers: Vec<(String, NameResolution)>,
+    mut answers: Vec<(String, NameResolution)>,
     model: String,
 ) -> Result<(), String> {
+    // Updated by name, the order writes lock name rows in
+    // (`load_learned_for_write`), so the two can't deadlock.
+    answers.sort_by(|(a, _), (b, _)| a.cmp(b));
     let resolved = answers.len();
+    // Only entries and non-foods give a shopping category. A pending name has
+    // no earlier answer, so nothing else changes one.
+    let recategorized: HashSet<String> = answers
+        .iter()
+        .filter(|(_, resolution)| {
+            matches!(
+                resolution,
+                NameResolution::Entry(_) | NameResolution::NotFood
+            )
+        })
+        .map(|(name, _)| name.clone())
+        .collect();
     run_blocking(pool, move |conn| {
         conn.transaction(|conn| {
-            // Taken once the connection is ours, to keep the touch as close
-            // to its commit as possible for incremental sync.
             let now = Utc::now();
-            // Only entries and non-foods give a shopping category. A pending
-            // name has no earlier answer, so nothing else changes one.
-            let recategorized: HashSet<&str> = answers
-                .iter()
-                .filter(|(_, resolution)| {
-                    matches!(
-                        resolution,
-                        NameResolution::Entry(_) | NameResolution::NotFood
-                    )
-                })
-                .map(|(name, _)| name.as_str())
-                .collect();
-            touch_shopping_items(conn, &recategorized, now)?;
             for (name, resolution) in &answers {
                 let (disposition, key, estimate) = match resolution {
                     NameResolution::Entry(key) => ("entry", Some(key.as_str()), None),
@@ -609,6 +635,12 @@ async fn save_resolved(
     .await
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
+    run_blocking(pool, move |conn| {
+        recategorize_shopping_items(conn, &recategorized)
+    })
+    .await
+    .map_err(|e| e.to_string())?
+    .map_err(|e| e.to_string())?;
     tracing::info!(resolved, "resolved ingredient names");
     // The provider answered, so a worker backing off from an outage should
     // retry its pending names now.
@@ -617,33 +649,64 @@ async fn save_resolved(
     Ok(())
 }
 
-/// Mark shopping-list items with any of these names as changed, so
-/// incremental sync sends their new computed category. Only `updated_at`
-/// moves: the item itself is unchanged, so its version (and clients' pending
-/// edits) stay valid. Names match by catalog normalization, which no SQL
+/// Recompute the stored category of live shopping-list items with any of
+/// these names, once their new answers have committed. An item whose category
+/// changed gets a new `updated_at` too, so incremental sync sends it; its
+/// version (and clients' pending edits) stay valid, since the item itself is
+/// unchanged. A crash partway leaves the rest to `reconcile_categories` at the
+/// next startup.
+///
+/// Each item is its own transaction, after the answers' one, so at most one
+/// item lock is held and locks are taken item first, then name row, as writes
+/// take them: the item is locked and re-read (a concurrent rename may have
+/// changed its name), then the answers read under `load_learned_for_write`.
+/// A write that read an old answer held that name row until it committed, so
+/// it committed before the answer did, and this sees it; a later write reads
+/// the new answer itself. Names match by catalog normalization, which no SQL
 /// pattern expresses, so the live items are read once and matched here.
-fn touch_shopping_items(
+fn recategorize_shopping_items(
     conn: &mut PgConnection,
-    changed: &HashSet<&str>,
-    now: chrono::DateTime<Utc>,
+    changed: &HashSet<String>,
 ) -> QueryResult<()> {
     use crate::schema::shopping_list_items as items;
     if changed.is_empty() {
         return Ok(());
     }
-    let live: Vec<(uuid::Uuid, String)> = items::table
+    let matches = |item: &str| changed.contains(normalize(item).as_str());
+    let ids: Vec<uuid::Uuid> = items::table
         .filter(items::deleted_at.is_null())
         .select((items::id, items::item))
-        .load(conn)?;
-    let ids: Vec<uuid::Uuid> = live
+        .load::<(uuid::Uuid, String)>(conn)?
         .into_iter()
-        .filter(|(_, item)| changed.contains(normalize(item).as_str()))
+        .filter(|(_, item)| matches(item))
         .map(|(id, _)| id)
         .collect();
-    if !ids.is_empty() {
-        diesel::update(items::table.filter(items::id.eq_any(ids)))
-            .set(items::updated_at.eq(now))
-            .execute(conn)?;
+    for id in ids {
+        conn.transaction(|conn| {
+            let Some((item, stored)) = items::table
+                .find(id)
+                .filter(items::deleted_at.is_null())
+                .select((items::item, items::computed_category))
+                .for_update()
+                .first::<(String, Option<String>)>(conn)
+                .optional()?
+            else {
+                return Ok(());
+            };
+            if !matches(&item) {
+                return Ok(());
+            }
+            let category = crate::api::shopping_list::list::categorize(conn, &[&item])?.remove(0);
+            if stored.as_deref() != Some(category.as_str()) {
+                diesel::update(items::table.find(id))
+                    .set((
+                        items::computed_category.eq(&category),
+                        items::updated_at.eq(Utc::now()),
+                    ))
+                    .execute(conn)?;
+            }
+            QueryResult::Ok(())
+        })?;
     }
     Ok(())
 }

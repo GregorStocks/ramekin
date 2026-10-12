@@ -194,6 +194,15 @@ async fn main() {
     // for photos created before the column existed).
     photos::spawn_dimension_backfill(pool.clone());
 
+    // Before serving, since reads use the stored category, and before
+    // anything can resolve ingredient names (resumed jobs, the worker), so
+    // nothing changes an answer while this reads them.
+    let recategorized = api::shopping_list::list::reconcile_categories(&pool)
+        .expect("Failed to reconcile shopping item categories");
+    if recategorized > 0 {
+        tracing::info!(recategorized, "stored new categories for shopping items");
+    }
+
     // Finish scrape and import jobs a previous run left in progress.
     // Before serving, so a new request's job isn't also picked up here.
     scraping::resume_interrupted_jobs(&pool).await;
@@ -214,15 +223,6 @@ async fn main() {
     };
     if names > 0 {
         tracing::info!(names, "queued stored ingredient names");
-    }
-    let recategorized = api::shopping_list::list::touch_recategorized_items(&pool)
-        .expect("Failed to touch shopping items for the new categorizer");
-    if recategorized > 0 {
-        tracing::info!(
-            recategorized,
-            categorizer = ramekin_core::ingredient_categorizer::version(),
-            "re-sending shopping items whose category may have changed"
-        );
     }
     ingredient_names::spawn_worker(pool.clone());
 

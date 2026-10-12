@@ -6,7 +6,6 @@ use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
 use diesel::upsert::on_constraint;
-use ramekin_core::ingredient_categorizer;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -94,7 +93,6 @@ pub async fn create_items(
                     sort_order: max_sort_order + 1 + i as i32,
                     category_override: item_req.category_override.as_deref(),
                     client_id: item_req.client_id,
-                    categorizer_version: ingredient_categorizer::version(),
                 };
 
                 let id = if let Some(client_id) = item_req.client_id {
@@ -107,7 +105,7 @@ pub async fn create_items(
                         .get_result::<Uuid>(conn)
                     {
                         Ok(id) => {
-                            inserted_items.push(item_req.item.as_str());
+                            inserted_items.push((id, item_req.item.as_str()));
                             id
                         }
                         Err(diesel::result::Error::NotFound) => shopping_list_items::table
@@ -118,16 +116,21 @@ pub async fn create_items(
                         Err(e) => return Err(e),
                     }
                 } else {
-                    inserted_items.push(item_req.item.as_str());
-                    diesel::insert_into(shopping_list_items::table)
+                    let id = diesel::insert_into(shopping_list_items::table)
                         .values(&new_item)
                         .returning(shopping_list_items::id)
-                        .get_result::<Uuid>(conn)?
+                        .get_result::<Uuid>(conn)?;
+                    inserted_items.push((id, item_req.item.as_str()));
+                    id
                 };
 
                 ids.push(id);
             }
-            crate::ingredient_names::enqueue_items(conn, inserted_items)?;
+            crate::ingredient_names::enqueue_items(
+                conn,
+                inserted_items.iter().map(|(_, item)| *item),
+            )?;
+            super::list::store_categories(conn, &inserted_items)?;
 
             Ok(ids)
         })

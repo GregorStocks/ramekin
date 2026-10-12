@@ -189,6 +189,7 @@ diesel::table! {
         category_override -> Nullable<Text>,
         categorizer_version -> Nullable<Text>,
         change_xid -> Int8,
+        computed_category -> Nullable<Text>,
     }
 }
 

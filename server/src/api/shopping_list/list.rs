@@ -56,23 +56,67 @@ pub fn computed_category(item: &str, learned: &ramekin_core::catalog::Learned) -
     ingredient_categorizer::categorize_with(item, learned).to_string()
 }
 
-/// Touch items whose category was computed by another categorizer version
-/// (a deploy that changed the catalog or keyword rules), so incremental sync
-/// sends their recomputed category. Only `updated_at` moves, as for a changed
-/// learned answer. Runs at startup; returns how many items were touched.
-pub fn touch_recategorized_items(pool: &DbPool) -> Result<usize, String> {
-    let version = ingredient_categorizer::version();
+/// The category to store with each of `items` when it's written. An item is
+/// recategorized when it's written again, when its name gets resolved
+/// (`ingredient_names::recategorize_shopping_items`), and at startup
+/// (`reconcile_categories`).
+pub fn categorize(conn: &mut PgConnection, items: &[&str]) -> QueryResult<Vec<String>> {
+    let learned = crate::ingredient_names::load_learned_for_write(conn, items.iter().copied())?;
+    Ok(items
+        .iter()
+        .map(|item| computed_category(item, &learned))
+        .collect())
+}
+
+/// Store the category of items this transaction just wrote. Their names must
+/// be queued first (`ingredient_names::enqueue_items`), so every name the
+/// catalog doesn't know has a row for `load_learned_for_write` to lock.
+pub fn store_categories(conn: &mut PgConnection, written: &[(Uuid, &str)]) -> QueryResult<()> {
+    let items: Vec<&str> = written.iter().map(|(_, item)| *item).collect();
+    let categories = categorize(conn, &items)?;
+    for ((id, _), category) in written.iter().zip(&categories) {
+        diesel::update(shopping_list_items::table.find(id))
+            .set(shopping_list_items::computed_category.eq(category))
+            .execute(conn)?;
+    }
+    Ok(())
+}
+
+/// Bring every live item's stored category up to date, touching only the
+/// items whose category changed so incremental sync sends just those. Fills
+/// in items saved before categories were stored, items whose recategorization
+/// a crash cut off after their name's answer committed, and items a catalog
+/// deploy recategorizes. Runs at startup, before serving and before the
+/// ingredient-name worker starts; returns how many items changed.
+pub fn reconcile_categories(pool: &DbPool) -> Result<usize, String> {
     let mut conn = pool.get().map_err(|e| e.to_string())?;
-    diesel::update(
-        shopping_list_items::table
+    conn.transaction(|conn| {
+        let rows: Vec<(Uuid, String, Option<String>)> = shopping_list_items::table
             .filter(shopping_list_items::deleted_at.is_null())
-            .filter(shopping_list_items::categorizer_version.is_distinct_from(version)),
-    )
-    .set((
-        shopping_list_items::categorizer_version.eq(version),
-        shopping_list_items::updated_at.eq(Utc::now()),
-    ))
-    .execute(&mut conn)
+            .select((
+                shopping_list_items::id,
+                shopping_list_items::item,
+                shopping_list_items::computed_category,
+            ))
+            .load(conn)?;
+        let items: Vec<&str> = rows.iter().map(|(_, item, _)| item.as_str()).collect();
+        let learned = crate::ingredient_names::load_learned(conn, items)?;
+        let now = Utc::now();
+        let mut changed = 0;
+        for (id, item, stored) in &rows {
+            let category = computed_category(item, &learned);
+            if stored.as_deref() != Some(category.as_str()) {
+                diesel::update(shopping_list_items::table.find(id))
+                    .set((
+                        shopping_list_items::computed_category.eq(&category),
+                        shopping_list_items::updated_at.eq(now),
+                    ))
+                    .execute(conn)?;
+                changed += 1;
+            }
+        }
+        QueryResult::Ok(changed)
+    })
     .map_err(|e| e.to_string())
 }
 
@@ -90,6 +134,7 @@ type ShoppingListRow = (
     Option<String>,
     bool,
     i32,
+    Option<String>,
     Option<String>,
     i32,
     DateTime<Utc>,
@@ -123,6 +168,7 @@ pub async fn list_items(
                 shopping_list_items::is_checked,
                 shopping_list_items::sort_order,
                 shopping_list_items::category_override,
+                shopping_list_items::computed_category,
                 shopping_list_items::version,
                 shopping_list_items::updated_at,
             ))
@@ -133,16 +179,6 @@ pub async fn list_items(
             .load(conn)
             .map_err(|e| {
                 tracing::error!("Failed to fetch shopping list: {}", e);
-                ApiError::internal("Failed to fetch shopping list")
-            })
-    })
-    .await?;
-
-    let items_to_learn: Vec<String> = rows.iter().map(|row| row.1.clone()).collect();
-    let learned = run_db(&pool, move |conn| {
-        crate::ingredient_names::load_learned(conn, items_to_learn.iter().map(String::as_str))
-            .map_err(|e| {
-                tracing::error!("Failed to load learned ingredient names: {}", e);
                 ApiError::internal("Failed to fetch shopping list")
             })
     })
@@ -161,10 +197,12 @@ pub async fn list_items(
                 is_checked,
                 sort_order,
                 category_override,
+                computed_category,
                 version,
                 updated_at,
             )| {
-                let computed_category = computed_category(&item, &learned);
+                // Every write stores one, and startup fills in older items.
+                let computed_category = computed_category.unwrap_or_else(|| "Other".to_string());
                 let category = item_category(&computed_category, category_override.as_deref());
                 ShoppingListItemResponse {
                     id,

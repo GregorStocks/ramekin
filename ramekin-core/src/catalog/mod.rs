@@ -21,7 +21,6 @@ use std::sync::LazyLock;
 use serde::{Deserialize, Serialize};
 
 use crate::ingredient_categorizer::CATEGORIES;
-use sha2::{Digest, Sha256};
 
 pub use cleanup::{clean_curated, parsed_name, CuratedChange};
 pub use learned::{
@@ -39,7 +38,6 @@ const FNDDS_JSON: &str = include_str!("data/fndds.json");
 pub const CURATED_JSON: &str = include_str!("data/curated.json");
 const BESPOKE_JSON: &str = include_str!("data/bespoke.json");
 pub const ESTIMATED_WEIGHTS_JSON: &str = include_str!("data/estimated_weights.json");
-const RULE_VERSION: &str = "catalog-v5";
 
 /// A food from a pinned USDA release (SR Legacy, or FNDDS for foods SR Legacy
 /// lacks).
@@ -271,7 +269,6 @@ struct Catalog {
     index: HashMap<String, Target>,
     estimated_weights: BTreeMap<String, BTreeMap<String, EstimatedWeight>>,
     density_withheld: HashSet<String>,
-    version: String,
 }
 
 /// Lowercase and collapse whitespace; every catalog key is stored this way.
@@ -647,12 +644,6 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         }
     }
 
-    // Estimated weights only change calories, so they stay out of the
-    // version the shopping-list categories are keyed by.
-    let hash = Sha256::digest(format!(
-        "{RULE_VERSION}\n{USDA_JSON}\n{FNDDS_JSON}\n{CURATED_JSON}\n{BESPOKE_JSON}"
-    ));
-    let hash: String = hash.iter().map(|byte| format!("{byte:02x}")).collect();
     Catalog {
         entries,
         ambiguous,
@@ -660,14 +651,8 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         index,
         estimated_weights: estimated.weights,
         density_withheld,
-        version: format!("{RULE_VERSION}-sr2018-fndds2024-{hash}"),
     }
 });
-
-/// A stable identifier for the catalog data and resolution rules.
-pub fn version() -> &'static str {
-    &CATALOG.version
-}
 
 /// The model's estimate of grams per `unit` (in `piece_unit` spelling, "cup"
 /// for any volume) of this entry's food, for what its catalog data can't

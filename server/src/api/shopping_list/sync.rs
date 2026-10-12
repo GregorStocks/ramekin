@@ -8,7 +8,6 @@ use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use diesel::upsert::on_constraint;
-use ramekin_core::ingredient_categorizer;
 use serde::{Deserialize, Serialize};
 use serde_with::rust::double_option;
 use std::collections::{HashMap, HashSet};
@@ -45,6 +44,7 @@ type ServerChangeRow = (
     Option<String>,
     bool,
     i32,
+    Option<String>,
     Option<String>,
     i32,
     DateTime<Utc>,
@@ -226,6 +226,8 @@ pub async fn sync_items(
             let mut created = Vec::with_capacity(request.creates.len());
             // Names this sync actually wrote, queued for resolution below.
             let mut written_items: Vec<String> = Vec::new();
+            // Items this sync wrote, whose categories are stored below.
+            let mut categorized: Vec<(Uuid, String)> = Vec::new();
             if !request.creates.is_empty() {
                 let new_items: Vec<NewShoppingListItem> = request
                     .creates
@@ -241,7 +243,6 @@ pub async fn sync_items(
                         sort_order: c.sort_order,
                         category_override: c.category_override.as_deref(),
                         client_id: Some(c.client_id),
-                        categorizer_version: ingredient_categorizer::version(),
                     })
                     .collect();
 
@@ -261,7 +262,8 @@ pub async fn sync_items(
                 let mut by_client_id: HashMap<Uuid, (Uuid, i32)> =
                     HashMap::with_capacity(request.creates.len());
                 for (cid, id, ver, item) in inserted {
-                    written_items.push(item);
+                    written_items.push(item.clone());
+                    categorized.push((id, item));
                     if let Some(cid) = cid {
                         by_client_id.insert(cid, (id, ver));
                     }
@@ -408,6 +410,7 @@ pub async fn sync_items(
                         if update_req.item.is_some() {
                             written_items.push(new_item.clone());
                         }
+                        categorized.push((update_req.id, new_item.clone()));
                         // Write-back so a later update for the same id in this batch sees
                         // the new state instead of the stale prefetch.
                         current_map.insert(
@@ -517,6 +520,15 @@ pub async fn sync_items(
                 .map(|u| u.id)
                 .collect();
 
+            // Queue the names this sync wrote, then store its items' categories
+            // (in that order; see `store_categories`), before reading changes.
+            crate::ingredient_names::enqueue_items(conn, written_items.iter().map(String::as_str))?;
+            let categorized: Vec<(Uuid, &str)> = categorized
+                .iter()
+                .map(|(id, item)| (*id, item.as_str()))
+                .collect();
+            super::list::store_categories(conn, &categorized)?;
+
             // 4. Get server changes since the client's last sync
             let mut changes_query = shopping_list_items::table
                 .filter(shopping_list_items::user_id.eq(user_id))
@@ -558,12 +570,11 @@ pub async fn sync_items(
                     shopping_list_items::is_checked,
                     shopping_list_items::sort_order,
                     shopping_list_items::category_override,
+                    shopping_list_items::computed_category,
                     shopping_list_items::version,
                     shopping_list_items::updated_at,
                 ))
                 .load(conn)?;
-            let learned =
-                crate::ingredient_names::load_learned(conn, rows.iter().map(|row| row.1.as_str()))?;
 
             let server_changes: Vec<SyncServerChange> = rows
                 .into_iter()
@@ -578,10 +589,13 @@ pub async fn sync_items(
                         is_checked,
                         sort_order,
                         category_override,
+                        computed_category,
                         version,
                         updated_at,
                     )| {
-                        let computed_category = super::list::computed_category(&item, &learned);
+                        // Every write stores one, and startup fills in older items.
+                        let computed_category =
+                            computed_category.unwrap_or_else(|| "Other".to_string());
                         let category = super::list::item_category(
                             &computed_category,
                             category_override.as_deref(),
@@ -610,8 +624,6 @@ pub async fn sync_items(
                     deleted_query.select(shopping_list_items::id).load(conn)?;
                 deleted_set.extend(deleted_rows);
             }
-
-            crate::ingredient_names::enqueue_items(conn, written_items.iter().map(String::as_str))?;
 
             Ok(SyncResponse {
                 created,
