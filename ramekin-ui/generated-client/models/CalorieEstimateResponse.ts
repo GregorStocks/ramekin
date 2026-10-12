@@ -42,12 +42,6 @@ import {
  */
 export interface CalorieEstimateResponse {
     /**
-     * Identifies the pinned source data, aliases, and calculation rules.
-     * @type {string}
-     * @memberof CalorieEstimateResponse
-     */
-    databaseVersion: string;
-    /**
      * The main line: "~520 kcal per serving", "At least ~3,100 kcal for the
      * whole recipe", or "Not enough ingredient data to estimate calories".
      * @type {string}
@@ -108,7 +102,6 @@ export interface CalorieEstimateResponse {
  * Check if a given object implements the CalorieEstimateResponse interface.
  */
 export function instanceOfCalorieEstimateResponse(value: object): value is CalorieEstimateResponse {
-    if (!('databaseVersion' in value) || value['databaseVersion'] === undefined) return false;
     if (!('headline' in value) || value['headline'] === undefined) return false;
     if (!('lines' in value) || value['lines'] === undefined) return false;
     if (!('notCounted' in value) || value['notCounted'] === undefined) return false;
@@ -127,7 +120,6 @@ export function CalorieEstimateResponseFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'databaseVersion': json['database_version'],
         'headline': json['headline'],
         'knownCalories': json['known_calories'] == null ? undefined : CalorieRangeFromJSON(json['known_calories']),
         'lines': ((json['lines'] as Array<any>).map(CalorieLineFromJSON)),
@@ -150,7 +142,6 @@ export function CalorieEstimateResponseToJSONTyped(value?: CalorieEstimateRespon
 
     return {
         
-        'database_version': value['databaseVersion'],
         'headline': value['headline'],
         'known_calories': CalorieRangeToJSON(value['knownCalories']),
         'lines': ((value['lines'] as Array<any>).map(CalorieLineToJSON)),

@@ -13,8 +13,6 @@ import AnyCodable
 /** Every display string is final; clients render them as-is. */
 public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
 
-    /** Identifies the pinned source data, aliases, and calculation rules. */
-    public var databaseVersion: String
     /** The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the whole recipe\", or \"Not enough ingredient data to estimate calories\". */
     public var headline: String
     /** Null when nothing was counted. A lower bound when status is partial. */
@@ -30,8 +28,7 @@ public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
     public var secondary: String?
     public var status: CalorieStatus
 
-    public init(databaseVersion: String, headline: String, knownCalories: CalorieRange? = nil, lines: [CalorieLine], notCounted: [String], perServingCalories: CalorieRange? = nil, resolving: Bool, secondary: String? = nil, status: CalorieStatus) {
-        self.databaseVersion = databaseVersion
+    public init(headline: String, knownCalories: CalorieRange? = nil, lines: [CalorieLine], notCounted: [String], perServingCalories: CalorieRange? = nil, resolving: Bool, secondary: String? = nil, status: CalorieStatus) {
         self.headline = headline
         self.knownCalories = knownCalories
         self.lines = lines
@@ -43,7 +40,6 @@ public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case databaseVersion = "database_version"
         case headline
         case knownCalories = "known_calories"
         case lines
@@ -58,7 +54,6 @@ public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(databaseVersion, forKey: .databaseVersion)
         try container.encode(headline, forKey: .headline)
         try container.encodeIfPresent(knownCalories, forKey: .knownCalories)
         try container.encode(lines, forKey: .lines)

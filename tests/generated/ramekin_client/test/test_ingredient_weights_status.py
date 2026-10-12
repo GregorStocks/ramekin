@@ -45,9 +45,7 @@ class TestIngredientWeightsStatus(unittest.TestCase):
                         unit = '', )
                     ],
                 no_typical_weight = 56,
-                pending = 56,
-                reask_failed = 56,
-                reasking = 56
+                pending = 56
             )
         else:
             return IngredientWeightsStatus(
@@ -62,8 +60,6 @@ class TestIngredientWeightsStatus(unittest.TestCase):
                     ],
                 no_typical_weight = 56,
                 pending = 56,
-                reask_failed = 56,
-                reasking = 56,
         )
         """
 

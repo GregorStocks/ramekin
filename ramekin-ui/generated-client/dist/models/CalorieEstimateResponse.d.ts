@@ -19,12 +19,6 @@ import type { CalorieRange } from './CalorieRange';
  */
 export interface CalorieEstimateResponse {
     /**
-     * Identifies the pinned source data, aliases, and calculation rules.
-     * @type {string}
-     * @memberof CalorieEstimateResponse
-     */
-    databaseVersion: string;
-    /**
      * The main line: "~520 kcal per serving", "At least ~3,100 kcal for the
      * whole recipe", or "Not enough ingredient data to estimate calories".
      * @type {string}

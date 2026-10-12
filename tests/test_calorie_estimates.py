@@ -38,8 +38,8 @@ def test_estimate_invalid_scale(server_url, authed_api_client, scale):
 def test_estimate_ranges_partial_unknown_and_empty(server_url, authed_api_client):
     client, _ = authed_api_client
     sugar = make_ingredient("granulated sugar", "100-200", "g")
-    # Reading an estimate queues unknown names for the (mock) model, which
-    # answers "unknown" for this one, so it stays uncounted on every run.
+    # The (mock) model answers "unknown" for this name once a saved recipe
+    # queues it, so it stays uncounted on every run.
     yogurt = make_ingredient("unknowable yogurt", "1", "cup")
     response = estimate(server_url, client, [sugar, yogurt], scale=2, servings="4")
     assert response.status_code == 200
@@ -64,10 +64,11 @@ def test_estimate_ranges_partial_unknown_and_empty(server_url, authed_api_client
             "text": "Not recognized",
         },
     ]
-    assert (
-        result
-        == estimate(server_url, client, [sugar, yogurt], scale=2, servings="4").json()
-    )
+    # Another test's save can leave the name pending between the two calls.
+    again = estimate(server_url, client, [sugar, yogurt], scale=2, servings="4").json()
+    result.pop("resolving")
+    again.pop("resolving")
+    assert result == again
     for ingredients in [[yogurt], []]:
         unknown = estimate(server_url, client, ingredients, servings="4").json()
         assert unknown["known_calories"] is None

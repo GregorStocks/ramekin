@@ -4,6 +4,8 @@ When that means implementing the same pure logic on both clients (scaling, forma
 
 We plan to never actually delete any data from the DB - everything will be soft-deletes.
 
+This app has exactly one user, the owner, who updates the web and iOS clients along with the server. Breaking backwards compatibility is fine: change or remove API fields, endpoints, and behavior outright, without deprecation shims, compatibility paths for older client builds, or issues blocked on old clients aging out. This is about API and client compatibility only; the soft-delete rule above still applies to data.
+
 When adding new API endpoints, remember to add end-to-end tests before you start using them in the UI.
 
 # Pipeline

@@ -9,7 +9,6 @@ final class CalorieEstimateViewModelTests: XCTestCase {
         resolving: Bool = false
     ) -> CalorieEstimateResponse {
         CalorieEstimateResponse(
-            databaseVersion: "test",
             headline: headline,
             lines: [],
             notCounted: [],
@@ -23,7 +22,6 @@ final class CalorieEstimateViewModelTests: XCTestCase {
         let ingredient = Ingredient(item: "yogurt", measurements: [Measurement(amount: "100", unit: "g")])
         let request = EstimateCaloriesRequest(ingredients: [ingredient], scale: 2, servings: "4")
         let result = CalorieEstimateResponse(
-            databaseVersion: "test",
             headline: "Not enough ingredient data to estimate calories",
             lines: [CalorieLine(index: 0, item: "yogurt", text: "Could be several foods")],
             notCounted: [],

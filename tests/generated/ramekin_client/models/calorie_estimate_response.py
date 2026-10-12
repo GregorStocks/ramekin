@@ -29,7 +29,6 @@ class CalorieEstimateResponse(BaseModel):
     """
     Every display string is final; clients render them as-is.
     """ # noqa: E501
-    database_version: StrictStr = Field(description="Identifies the pinned source data, aliases, and calculation rules.")
     headline: StrictStr = Field(description="The main line: \"~520 kcal per serving\", \"At least ~3,100 kcal for the whole recipe\", or \"Not enough ingredient data to estimate calories\".")
     known_calories: Optional[CalorieRange] = Field(default=None, description="Null when nothing was counted. A lower bound when status is partial.")
     lines: List[CalorieLine] = Field(description="The breakdown, one entry per ingredient in order.")
@@ -38,7 +37,7 @@ class CalorieEstimateResponse(BaseModel):
     resolving: StrictBool = Field(description="Some ingredient names are still being recognized, or weights estimated, in the background; ask again shortly for an estimate that includes them.")
     secondary: Optional[StrictStr] = Field(default=None, description="Shown under the headline when present.")
     status: CalorieStatus
-    __properties: ClassVar[List[str]] = ["database_version", "headline", "known_calories", "lines", "not_counted", "per_serving_calories", "resolving", "secondary", "status"]
+    __properties: ClassVar[List[str]] = ["headline", "known_calories", "lines", "not_counted", "per_serving_calories", "resolving", "secondary", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,7 +118,6 @@ class CalorieEstimateResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "database_version": obj.get("database_version"),
             "headline": obj.get("headline"),
             "known_calories": CalorieRange.from_dict(obj["known_calories"]) if obj.get("known_calories") is not None else None,
             "lines": [CalorieLine.from_dict(_item) for _item in obj["lines"]] if obj.get("lines") is not None else None,

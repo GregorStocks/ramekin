@@ -82,19 +82,11 @@ export default function SettingsPage() {
   const [nameMessage, setNameMessage] = createSignal<string | null>(null);
   const [nameError, setNameError] = createSignal<string | null>(null);
   const failedCount = () =>
-    (nameStatus()?.failed ?? 0) +
-    (nameStatus()?.reaskFailed ?? 0) +
-    (nameStatus()?.weights.failed ?? 0) +
-    (nameStatus()?.weights.reaskFailed ?? 0);
-  // Keep the counts current while names or weights are waiting, or being
-  // asked again by the current model (which can still fail).
+    (nameStatus()?.failed ?? 0) + (nameStatus()?.weights.failed ?? 0);
+  // Keep the counts current while names or weights are waiting.
   createEffect(() => {
     const status = nameStatus();
-    const waiting =
-      (status?.pending ?? 0) +
-      (status?.weights.pending ?? 0) +
-      (status?.reasking ?? 0) +
-      (status?.weights.reasking ?? 0);
+    const waiting = (status?.pending ?? 0) + (status?.weights.pending ?? 0);
     if (waiting === 0) return;
     const timer = setTimeout(() => refetchNameStatus(), 2000);
     onCleanup(() => clearTimeout(timer));
@@ -193,16 +185,6 @@ export default function SettingsPage() {
                 {status().weights.pending} pending · {status().weights.failed}{" "}
                 failed
               </p>
-              <Show
-                when={status().reaskFailed + status().weights.reaskFailed > 0}
-              >
-                <p class="settings-reask-counts">
-                  Still using an earlier model's answer for{" "}
-                  {status().reaskFailed} names and{" "}
-                  {status().weights.reaskFailed} weights: asking the current
-                  model failed.
-                </p>
-              </Show>
               <Show
                 when={
                   status().failures.length + status().weights.failures.length >

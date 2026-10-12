@@ -1,5 +1,6 @@
 //! Status and controls for resolving ingredient names the catalog doesn't
-//! know or calls ambiguous, and estimating weights it lacks (catalog step 3). The resolution table is shared across accounts, but
+//! know or calls ambiguous, and estimating weights it lacks (catalog step 3).
+//! The resolution table is shared across accounts, but
 //! each account only sees and retries the names in its own recipes and
 //! shopping list.
 
@@ -58,13 +59,7 @@ pub struct IngredientWeightsStatus {
     pub pending: i64,
     /// The last attempt failed; retry to try again.
     pub failed: i64,
-    /// Being asked again by the current model; the earlier model's estimate
-    /// is used meanwhile (and counted above).
-    pub reasking: i64,
-    /// Re-asking with the current model failed; the earlier model's estimate
-    /// is still used (and counted above). Retry to try again.
-    pub reask_failed: i64,
-    /// The most recent failures, failed re-asks included.
+    /// The most recent failures.
     pub failures: Vec<IngredientWeightFailure>,
 }
 
@@ -80,17 +75,12 @@ pub struct IngredientNamesStatusResponse {
     pub not_food: i64,
     /// Resolved, but the model couldn't tell; still unknown in estimates.
     pub unknown: i64,
-    /// Waiting for the background resolver.
+    /// Waiting for the background resolver (including names whose answer
+    /// was invalid and will be asked again).
     pub pending: i64,
-    /// The last attempt failed; retry to try again.
+    /// Every attempt gave an invalid answer; retry to try again.
     pub failed: i64,
-    /// Being asked again by the current model; the earlier model's answer
-    /// is used meanwhile (and counted above).
-    pub reasking: i64,
-    /// Re-asking with the current model failed; the earlier model's answer
-    /// is still used (and counted above). Retry to try again.
-    pub reask_failed: i64,
-    /// The most recent failures, failed re-asks included.
+    /// The most recent failures.
     pub failures: Vec<IngredientNameFailure>,
     pub weights: IngredientWeightsStatus,
 }
@@ -212,33 +202,12 @@ pub async fn get_ingredient_names_status(
                 .map(|(_, _, n)| n)
                 .sum::<i64>()
         };
-        let reasking: i64 = names::table
+        let failures: Vec<(String, Option<String>, i32)> = names::table
             .filter(names::name.eq_any(&own))
-            .filter(names::reasked)
-            .count()
-            .get_result(conn)
-            .map_err(db_error)?;
-        let reask_failed: i64 = names::table
-            .filter(names::name.eq_any(&own))
-            .filter(names::reask_error.is_not_null())
-            .count()
-            .get_result(conn)
-            .map_err(db_error)?;
-        let failures: Vec<(String, Option<String>, Option<String>, i32)> = names::table
-            .filter(names::name.eq_any(&own))
-            .filter(
-                names::status
-                    .eq(FAILED)
-                    .or(names::reask_error.is_not_null()),
-            )
+            .filter(names::status.eq(FAILED))
             .order(names::updated_at.desc())
             .limit(FAILURES_SHOWN)
-            .select((
-                names::name,
-                names::error,
-                names::reask_error,
-                names::attempts,
-            ))
+            .select((names::name, names::error, names::attempts))
             .load(conn)
             .map_err(db_error)?;
         let foods = own_foods(conn, &recipes)?;
@@ -250,25 +219,19 @@ pub async fn get_ingredient_names_status(
             unknown: count(RESOLVED, Some("unknown")),
             pending: count(PENDING, None),
             failed: count(FAILED, None),
-            reasking,
-            reask_failed,
             failures: failures
                 .into_iter()
-                .map(
-                    |(name, error, reask_error, attempts)| IngredientNameFailure {
-                        name,
-                        error: error.or(reask_error).unwrap_or_default(),
-                        attempts,
-                    },
-                )
+                .map(|(name, error, attempts)| IngredientNameFailure {
+                    name,
+                    error: error.unwrap_or_default(),
+                    attempts,
+                })
                 .collect(),
             weights: IngredientWeightsStatus {
                 estimated: weights.estimated,
                 no_typical_weight: weights.no_typical_weight,
                 pending: weights.pending,
                 failed: weights.failed,
-                reasking: weights.reasking,
-                reask_failed: weights.reask_failed,
                 failures: weights
                     .failures
                     .into_iter()

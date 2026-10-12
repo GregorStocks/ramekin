@@ -223,7 +223,6 @@ fn deterministic_matching_zero_calories_and_servings() {
     let sugar = ingredient("  GRANULATED   SUGAR ", "100", "grams");
     let first = estimate(std::slice::from_ref(&sugar), Some("4"), 1.0).unwrap();
     let second = estimate(std::slice::from_ref(&sugar), Some("4"), 1.0).unwrap();
-    assert_eq!(first.database_version, second.database_version);
     assert_eq!(first.headline, second.headline);
     for servings in [
         "0",

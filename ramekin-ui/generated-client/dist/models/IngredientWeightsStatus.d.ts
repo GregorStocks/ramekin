@@ -31,7 +31,7 @@ export interface IngredientWeightsStatus {
      */
     failed: number;
     /**
-     * The most recent failures, failed re-asks included.
+     * The most recent failures.
      * @type {Array<IngredientWeightFailure>}
      * @memberof IngredientWeightsStatus
      */
@@ -48,20 +48,6 @@ export interface IngredientWeightsStatus {
      * @memberof IngredientWeightsStatus
      */
     pending: number;
-    /**
-     * Re-asking with the current model failed; the earlier model's estimate
-     * is still used (and counted above). Retry to try again.
-     * @type {number}
-     * @memberof IngredientWeightsStatus
-     */
-    reaskFailed: number;
-    /**
-     * Being asked again by the current model; the earlier model's estimate
-     * is used meanwhile (and counted above).
-     * @type {number}
-     * @memberof IngredientWeightsStatus
-     */
-    reasking: number;
 }
 /**
  * Check if a given object implements the IngredientWeightsStatus interface.

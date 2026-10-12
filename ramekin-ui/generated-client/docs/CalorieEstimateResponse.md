@@ -7,7 +7,6 @@ Every display string is final; clients render them as-is.
 
 Name | Type
 ------------ | -------------
-`databaseVersion` | string
 `headline` | string
 `knownCalories` | [CalorieRange](CalorieRange.md)
 `lines` | [Array&lt;CalorieLine&gt;](CalorieLine.md)
@@ -24,7 +23,6 @@ import type { CalorieEstimateResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "databaseVersion": null,
   "headline": null,
   "knownCalories": null,
   "lines": null,

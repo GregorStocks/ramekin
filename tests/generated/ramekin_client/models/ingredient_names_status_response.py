@@ -29,16 +29,14 @@ class IngredientNamesStatusResponse(BaseModel):
     IngredientNamesStatusResponse
     """ # noqa: E501
     estimated: StrictInt = Field(description="A real food no catalog entry matches, counted with the model's own calories (\"estimated calories\").")
-    failed: StrictInt = Field(description="The last attempt failed; retry to try again.")
-    failures: List[IngredientNameFailure] = Field(description="The most recent failures, failed re-asks included.")
+    failed: StrictInt = Field(description="Every attempt gave an invalid answer; retry to try again.")
+    failures: List[IngredientNameFailure] = Field(description="The most recent failures.")
     not_food: StrictInt = Field(description="Resolved as not an ingredient (a heading, a serving note).")
-    pending: StrictInt = Field(description="Waiting for the background resolver.")
-    reask_failed: StrictInt = Field(description="Re-asking with the current model failed; the earlier model's answer is still used (and counted above). Retry to try again.")
-    reasking: StrictInt = Field(description="Being asked again by the current model; the earlier model's answer is used meanwhile (and counted above).")
+    pending: StrictInt = Field(description="Waiting for the background resolver (including names whose answer was invalid and will be asked again).")
     recognized: StrictInt = Field(description="Resolved to a catalog food or product (for an ambiguous name, the one a recipe most likely means).")
     unknown: StrictInt = Field(description="Resolved, but the model couldn't tell; still unknown in estimates.")
     weights: IngredientWeightsStatus
-    __properties: ClassVar[List[str]] = ["estimated", "failed", "failures", "not_food", "pending", "reask_failed", "reasking", "recognized", "unknown", "weights"]
+    __properties: ClassVar[List[str]] = ["estimated", "failed", "failures", "not_food", "pending", "recognized", "unknown", "weights"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,8 +104,6 @@ class IngredientNamesStatusResponse(BaseModel):
             "failures": [IngredientNameFailure.from_dict(_item) for _item in obj["failures"]] if obj.get("failures") is not None else None,
             "not_food": obj.get("not_food"),
             "pending": obj.get("pending"),
-            "reask_failed": obj.get("reask_failed"),
-            "reasking": obj.get("reasking"),
             "recognized": obj.get("recognized"),
             "unknown": obj.get("unknown"),
             "weights": IngredientWeightsStatus.from_dict(obj["weights"]) if obj.get("weights") is not None else None
