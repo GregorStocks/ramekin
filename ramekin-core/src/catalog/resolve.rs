@@ -252,8 +252,6 @@ fn resolve_single(normalized: &str) -> Resolution {
     }
     let unmeasured = without_leading_measure(&normalized);
     let mut stripped_names = leading_strips(&normalized);
-    // "freshly ground black pepper to taste": both ends at once.
-    stripped_names.extend(leading_strips(&strip_modifiers(&normalized)));
     if let Some(unmeasured) = &unmeasured {
         stripped_names.push(unmeasured.clone());
         stripped_names.push(strip_modifiers(unmeasured));
