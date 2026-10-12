@@ -308,12 +308,12 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
                     names::updated_at.eq(now),
                 ))
                 .execute(conn)?;
-            // The old answer may have given these items their category.
-            let names: HashSet<&str> = requeued.iter().map(|name| name.as_str()).collect();
-            recategorize_shopping_items(conn, &names, now)?;
             QueryResult::Ok(())
         })
         .map_err(|e| e.to_string())?;
+        // The old answer may have given these items their category.
+        let names: HashSet<String> = requeued.iter().map(|name| name.to_string()).collect();
+        recategorize_shopping_items(&mut conn, &names).map_err(|e| e.to_string())?;
     }
     Ok(changes
         .into_iter()
@@ -586,10 +586,20 @@ async fn save_resolved(
     model: String,
 ) -> Result<(), String> {
     let resolved = answers.len();
+    // Only entries and non-foods give a shopping category. A pending name has
+    // no earlier answer, so nothing else changes one.
+    let recategorized: HashSet<String> = answers
+        .iter()
+        .filter(|(_, resolution)| {
+            matches!(
+                resolution,
+                NameResolution::Entry(_) | NameResolution::NotFood
+            )
+        })
+        .map(|(name, _)| name.clone())
+        .collect();
     run_blocking(pool, move |conn| {
         conn.transaction(|conn| {
-            // Taken once the connection is ours, to keep the touch as close
-            // to its commit as possible for incremental sync.
             let now = Utc::now();
             for (name, resolution) in &answers {
                 let (disposition, key, estimate) = match resolution {
@@ -613,20 +623,14 @@ async fn save_resolved(
                     ))
                     .execute(conn)?;
             }
-            // Only entries and non-foods give a shopping category. A pending
-            // name has no earlier answer, so nothing else changes one.
-            let recategorized: HashSet<&str> = answers
-                .iter()
-                .filter(|(_, resolution)| {
-                    matches!(
-                        resolution,
-                        NameResolution::Entry(_) | NameResolution::NotFood
-                    )
-                })
-                .map(|(name, _)| name.as_str())
-                .collect();
-            recategorize_shopping_items(conn, &recategorized, now)
+            QueryResult::Ok(())
         })
+    })
+    .await
+    .map_err(|e| e.to_string())?
+    .map_err(|e| e.to_string())?;
+    run_blocking(pool, move |conn| {
+        recategorize_shopping_items(conn, &recategorized)
     })
     .await
     .map_err(|e| e.to_string())?
@@ -640,41 +644,68 @@ async fn save_resolved(
 }
 
 /// Recompute the stored category of live shopping-list items with any of
-/// these names, after their answers changed in this transaction. An item
-/// whose category changed gets a new `updated_at` too, so incremental sync
-/// sends it; its version (and clients' pending edits) stay valid, since the
-/// item itself is unchanged. Names match by catalog normalization, which no
-/// SQL pattern expresses, so the live items are read once and matched here.
+/// these names, once their new answers have committed. An item whose category
+/// changed gets a new `updated_at` too, so incremental sync sends it; its
+/// version (and clients' pending edits) stay valid, since the item itself is
+/// unchanged.
+///
+/// Its own transaction, after the answers' one, so locks are always taken
+/// item first, then name row, as writes take them: the matched items are
+/// locked and re-read (a concurrent rename may have changed the name), then
+/// the answers read under `load_learned_for_write`. A write that read an old
+/// answer held that name row until it committed, so it committed before the
+/// answer did, and this sees it; a later write reads the new answer itself.
+/// Names match by catalog normalization, which no SQL pattern expresses, so
+/// the live items are read once and matched here.
 fn recategorize_shopping_items(
     conn: &mut PgConnection,
-    changed: &HashSet<&str>,
-    now: chrono::DateTime<Utc>,
+    changed: &HashSet<String>,
 ) -> QueryResult<()> {
     use crate::schema::shopping_list_items as items;
     if changed.is_empty() {
         return Ok(());
     }
-    let live: Vec<(uuid::Uuid, String, Option<String>)> = items::table
-        .filter(items::deleted_at.is_null())
-        .select((items::id, items::item, items::computed_category))
-        .load(conn)?;
-    let matched: Vec<_> = live
-        .into_iter()
-        .filter(|(_, item, _)| changed.contains(normalize(item).as_str()))
-        .collect();
-    let names: Vec<&str> = matched.iter().map(|(_, item, _)| item.as_str()).collect();
-    let categories = crate::api::shopping_list::list::categorize(conn, &names)?;
-    for ((id, _, stored), category) in matched.iter().zip(categories) {
-        if stored.as_deref() != Some(category.as_str()) {
-            diesel::update(items::table.find(id))
-                .set((
-                    items::computed_category.eq(&category),
-                    items::updated_at.eq(now),
-                ))
-                .execute(conn)?;
+    let matches = |item: &str| changed.contains(normalize(item).as_str());
+    conn.transaction(|conn| {
+        let ids: Vec<uuid::Uuid> = items::table
+            .filter(items::deleted_at.is_null())
+            .select((items::id, items::item))
+            .load::<(uuid::Uuid, String)>(conn)?
+            .into_iter()
+            .filter(|(_, item)| matches(item))
+            .map(|(id, _)| id)
+            .collect();
+        if ids.is_empty() {
+            return Ok(());
         }
-    }
-    Ok(())
+        let locked: Vec<(uuid::Uuid, String, Option<String>)> = items::table
+            .filter(items::id.eq_any(&ids))
+            .filter(items::deleted_at.is_null())
+            .order(items::id)
+            .select((items::id, items::item, items::computed_category))
+            .for_update()
+            .load(conn)?;
+        let matched: Vec<_> = locked
+            .into_iter()
+            .filter(|(_, item, _)| matches(item))
+            .collect();
+        let names: Vec<&str> = matched.iter().map(|(_, item, _)| item.as_str()).collect();
+        let categories = crate::api::shopping_list::list::categorize(conn, &names)?;
+        // Taken once the locks are ours, to keep the touch as close to its
+        // commit as possible for incremental sync.
+        let now = Utc::now();
+        for ((id, _, stored), category) in matched.iter().zip(categories) {
+            if stored.as_deref() != Some(category.as_str()) {
+                diesel::update(items::table.find(id))
+                    .set((
+                        items::computed_category.eq(&category),
+                        items::updated_at.eq(now),
+                    ))
+                    .execute(conn)?;
+            }
+        }
+        Ok(())
+    })
 }
 
 /// Record a failed attempt. After a provider failure (an outage, a rate
