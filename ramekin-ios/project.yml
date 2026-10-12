@@ -110,6 +110,9 @@ targets:
       - path: ../shared-test-vectors/recipe-scale-validation.json
         buildPhase: resources
         type: file
+      - path: ../shared-test-vectors/calorie-poll-delays.json
+        buildPhase: resources
+        type: file
       - path: ../shared-test-vectors/tag-hierarchy.json
         buildPhase: resources
         type: file
