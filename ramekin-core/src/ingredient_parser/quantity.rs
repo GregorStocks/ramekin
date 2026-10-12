@@ -305,52 +305,35 @@ fn per_item(count: Range, terms: Vec<Term>) -> Vec<Term> {
 /// A weight stated only in the note: "4 (8 ounce packages) cream cheese",
 /// "1 rib roast, approximately 8 to 10 pounds", "2 chicken breasts, about 1
 /// pound". It weighs one of a counted line's items when it says so ("6 oz
-/// each", "8 ounce packages"), reads as an adjective ("4 (7- to 9-ounce)
-/// potatoes"), or is in parentheses right after the count ("2 (8 oz) chicken
-/// breasts"); otherwise it's the whole line's weight.
+/// each", "8 ounce packages") or reads as an adjective ("4 (7- to 9-ounce)
+/// potatoes"), and the whole line when it says so ("1 pound total"), is
+/// hedged ("about 1 pound"), or the line is one item. Otherwise ("2 chicken
+/// breasts" noted "8 oz") it could be either, so it weighs nothing.
 fn noted_weight(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
     static WEIGHT: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(&format!(
-            r"^(?:(?:about|approximately|approx\.?|roughly|around)\s+)?(.+?)([- ]?)({PACKAGE_MASS}|kilograms?|kg)\.?(?:\s*\([^()]*\))?(?:\s+(each|total|(?:{PACKAGE_WORDS})s?))?$"
+            r"^((?:about|approximately|approx\.?|roughly|around)\s+)?(.+?)([- ]?)({PACKAGE_MASS}|kilograms?|kg)\.?(?:\s*\([^()]*\))?(?:\s+(each|total|(?:{PACKAGE_WORDS})s?))?$"
         ))
         .unwrap()
     });
     let note = normalize(ingredient.note.as_deref()?);
-    let (amount, mass, per) = note.split([',', ';']).find_map(|segment| {
+    let (parts, amount) = note.split([',', ';']).find_map(|segment| {
         let parts = WEIGHT.captures(segment.trim())?;
-        let amount = range(&parts[1].replace("- to ", " to "))?;
-        let per = match parts.get(4).map(|word| word.as_str()) {
-            Some("total") => false,
-            Some(_) => true,
-            None => &parts[2] == "-" || follows_count_in_parentheses(ingredient),
-        };
-        Some((amount, grams_per(&parts[3]), per))
+        let amount = range(&parts[2].replace("- to ", " to "))?;
+        Some((parts, amount))
     })?;
     let weight = vec![Term {
         amount,
-        unit: Unit::Grams(Range::exact(mass)),
+        unit: Unit::Grams(Range::exact(grams_per(&parts[4]))),
     }];
-    if !per {
-        return Some(weight);
+    let count = ingredient.measurements.first().and_then(count);
+    let per_item_word = parts.get(5).is_some_and(|word| word.as_str() != "total");
+    if per_item_word || &parts[3] == "-" {
+        return Some(per_item(count?, weight));
     }
-    Some(per_item(count(ingredient.measurements.first()?)?, weight))
-}
-
-/// Whether the raw line puts a parenthetical right after its count ("2 (8
-/// oz) chicken breasts").
-fn follows_count_in_parentheses(ingredient: &ParsedIngredient) -> bool {
-    let (Some(raw), Some(amount)) = (
-        ingredient.raw.as_deref(),
-        ingredient
-            .measurements
-            .first()
-            .and_then(|primary| primary.amount.as_deref()),
-    ) else {
-        return false;
-    };
-    raw.trim_start()
-        .strip_prefix(amount)
-        .is_some_and(|rest| rest.trim_start().starts_with('('))
+    let whole_line = parts.get(5).is_some() || parts.get(1).is_some();
+    let one_item = count.is_none_or(|count| count == Range::exact(1.0));
+    (whole_line || one_item).then_some(weight)
 }
 
 /// The ways to measure a line, best first: per-item weights ("2 cans, 10 oz
@@ -540,14 +523,11 @@ mod tests {
         // An adjective weighs one item.
         let potatoes = measures(&line("4", None, Some("7- to 9-ounce, unpeeled")));
         close(grams(potatoes[1].as_ref().unwrap()), 793.79, 1020.58);
-        // So does a parenthetical right after the count.
-        let mut breasts = line("2", None, Some("8 oz"));
-        breasts.raw = Some("2 (8 oz) chicken breasts".to_string());
-        close(
-            grams(measures(&breasts)[1].as_ref().unwrap()),
-            453.59,
-            453.59,
-        );
+        // A bare weight on one item is that item's.
+        let steak = measures(&line("1", None, Some("16 oz")));
+        close(grams(steak[1].as_ref().unwrap()), 453.59, 453.59);
+        // On several, it could be each or all of them, so it weighs nothing.
+        assert_eq!(measures(&line("2", None, Some("8 oz"))).len(), 1);
         // A per-item weight needs a count to multiply.
         assert_eq!(
             measures(&line("1", Some("cup"), Some("8 ounce packages"))).len(),
