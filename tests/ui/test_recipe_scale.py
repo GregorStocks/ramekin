@@ -31,8 +31,8 @@ SCALE_TEST_INGREDIENTS: List[Ingredient] = [
     Ingredient(item="milk", measurements=[Measurement(amount="2.5", unit="cups")]),
     Ingredient(item="eggs", measurements=[Measurement(amount="3", unit=None)]),
     Ingredient(item="salt", measurements=[Measurement(amount="to taste", unit=None)]),
-    # Counted in pods, which estimated weights never ask about, so past the
-    # trace limit it stays uncounted whatever the shared weight table holds.
+    # Counted in pods, which the catalog's estimated weights never cover, so
+    # past the trace limit it stays uncounted.
     Ingredient(item="cardamom", measurements=[Measurement(amount="6-8", unit="pods")]),
 ]
 

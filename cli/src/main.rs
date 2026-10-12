@@ -1,6 +1,7 @@
 #![deny(clippy::print_stdout, clippy::print_stderr)]
 
 mod ai_eval;
+mod catalog_fill_weights;
 mod catalog_harvest;
 mod export;
 mod generate_test_urls;
@@ -286,10 +287,16 @@ enum Commands {
         /// rows) to the prod recipes, as the server does
         #[arg(long)]
         learned: Option<PathBuf>,
-        /// Apply the server's estimated weights (a JSON array of
-        /// ingredient_weight_estimates rows) to the prod recipes, as the server does
+    },
+    /// Ask the model for the weights the catalog can't give across the ingredient corpora, writing them to the catalog's estimated_weights.json
+    CatalogFillWeights {
+        /// Also fill the weights a JSON array of {servings, ingredients} prod recipes needs
         #[arg(long)]
-        weights: Option<PathBuf>,
+        prod_recipes: Option<PathBuf>,
+        /// Apply the server's learned names (a JSON array of ingredient_name_resolutions
+        /// rows) to the prod recipes
+        #[arg(long)]
+        learned: Option<PathBuf>,
     },
     /// Evaluate AI models against the committed golden sets (data/ai-evals)
     AiEval {
@@ -502,15 +509,20 @@ async fn main() -> Result<()> {
             runs_dir,
             prod_recipes,
             learned,
-            weights,
         } => {
             ingredient_catalog_audit::run(
                 Path::new("."),
                 runs_dir.as_deref(),
                 prod_recipes.as_deref(),
                 learned.as_deref(),
-                weights.as_deref(),
             )?;
+        }
+        Commands::CatalogFillWeights {
+            prod_recipes,
+            learned,
+        } => {
+            catalog_fill_weights::run(Path::new("."), prod_recipes.as_deref(), learned.as_deref())
+                .await?;
         }
         Commands::AiEval {
             suite,
@@ -627,6 +639,7 @@ fn command_slug(cmd: &Commands) -> &'static str {
         Commands::IngredientTestsMigrateCurated { .. } => "ingredient-tests-migrate-curated",
         Commands::IngredientCatalogAudit { .. } => "ingredient-catalog-audit",
         Commands::CatalogCleanAliases => "catalog-clean-aliases",
+        Commands::CatalogFillWeights { .. } => "catalog-fill-weights",
         Commands::CatalogHarvestLearned { .. } => "catalog-harvest-learned",
         Commands::IngredientCatalogUnresolved { .. } => "ingredient-catalog-unresolved",
         Commands::IngredientCatalogUncategorized { .. } => "ingredient-catalog-uncategorized",

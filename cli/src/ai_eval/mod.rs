@@ -390,7 +390,7 @@ fn client_for(model: &str, use_case: fn(&AiConfig) -> AiConfig) -> Result<Cachin
 /// How a production worker retries a batch whose answer was rejected.
 #[derive(Clone, Copy)]
 enum Split {
-    /// Each half on its own, down to single items (the weights worker).
+    /// Each half on its own, down to single items (`make catalog-fill-weights`).
     Halves,
     /// Each item on its own (the names worker).
     Singles,

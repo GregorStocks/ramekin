@@ -22,13 +22,11 @@ Calorie estimation is two separate problems:
    kcal (`ramekin-core/src/nutrition/`). This should be close to trivial: a
    mass-unit constant, the food's grams per cup, a piece weight, or a package
    weight, times the amount, times the food's kcal per 100 g. All numbers come
-   from committed catalog data or the recognized food's own learned estimate.
-   It has no LLM calls, queues, or versions.
+   from committed catalog data (including the model-estimated weights filled
+   offline; see "Weights the catalog doesn't have") or the recognized food's
+   own learned estimate. It has no LLM calls, queues, or versions.
 
 Where the code doesn't match this yet (each item has an issue in `issues/`):
-- **Weights:** a second runtime LLM queue (`server/src/ingredient_weights.rs`)
-  still fills missing cup and piece weights. It is to be replaced by a
-  dev-time command that fills them into the catalog once, reviewed in a PR.
 - **Shopping categories** are computed on every read, so any catalog edit
   touches every live shopping item at startup (`categorizer_version`) to push
   new categories through incremental sync. The category is to be stored at
@@ -41,9 +39,10 @@ Where the code doesn't match this yet (each item has an issue in `issues/`):
   in `nutrition`. It is to move into parser normalization, leaving unit-to-grams
   conversion and the trace and frying rules.
 
-Database columns the design no longer uses (`reasked`, `reask_error`,
-`candidates` on the name and weight tables, `categorizer_version` once
-categories are stored) are kept, unread, until their removal is approved.
+Database data the design no longer uses (`reasked`, `reask_error`,
+`candidates` on the name and weight tables, the old runtime weights queue's
+`ingredient_weight_estimates` table, `categorizer_version` once categories are
+stored) is kept, unread, until its removal is approved.
 
 ## Data and regeneration
 
@@ -171,18 +170,30 @@ While any of an estimate's names is still pending, the response sets
 ## Weights the catalog doesn't have
 
 A known food can still be unweighable: no density for a volume ("2 tbsp
-capers"), or no weight for a counted unit ("1 bunch kale", "2 jars capers", a
-bare "3 shallots" with no default piece). The estimate reports each such gap as
-(catalog food, unit), with "cup" standing for any volume and "piece" for a bare
-count, but only for lines no measurement can be weighed with catalog data alone.
-The estimate endpoint queues the gaps it sees, and the same background worker
-asks the LLM for grams per unit, stored once per (food, unit) and shared across
-accounts. The endpoint never calls the LLM itself, and sets `resolving` while
-any of its gaps is pending. A line weighed with an estimate says so: "~40 kcal
-(estimated weight)". A weight the model says has no typical value (null) stays
-unknown, and failures show and retry in Settings → Ingredient recognition.
-Answers must be plausible (5–700 g per cup, 0.01–5000 g per other unit) or the
-batch is rejected. This queue is temporary: see "Architecture".
+capers"), or no weight for a counted unit ("1 bunch kale", "2 jars capers").
+The estimate reports each such gap as (catalog food, unit), with "cup" standing
+for any volume, but only for lines no measurement can be weighed with catalog
+data alone. A bare count or a size with no catalog piece ("3 shallots", "6
+large leaves lettuce") is not a gap:
+many aliases share one entry while meaning different pieces (toast fingers and
+bread slices, Fun Size and full-size bars), so one estimate per entry would be
+wrong for some of them, and the line stays unknown.
+`make catalog-fill-weights` collects those gaps across the committed
+ingredient corpora (pipeline and Paprika fixtures, pipeline snapshots, and
+optionally `PROD_RECIPES=` with `LEARNED=`), asks the ingredient model for
+grams per unit, and writes the answers to
+`ramekin-core/src/catalog/data/estimated_weights.json`, keyed by catalog entry
+id and unit and naming the model. The file is reviewed in a PR like any
+catalog change; estimates read it like the rest of the catalog and never call
+the LLM. A line weighed with one says so: "~40 kcal (estimated weight)". A
+weight the model says has no typical value (null) stays unknown, and is kept
+so the fill doesn't ask again. Answers must be plausible (5–700 g per cup,
+0.01–5000 g per other unit) or the batch is asked again in halves. A gap the
+file doesn't cover (a food first seen in a new recipe) stays unknown until the
+next fill; `data/ingredient-catalog-audit.md` counts the open gaps per corpus
+("Weights to estimate"). A cited `grams_per_cup` in `curated.json` or a piece
+in `bespoke.json` replaces an estimate: the catalog's own data is always tried
+first, and a test fails on an estimate that no longer weighs anything.
 
 ## Negligible, compound, and non-food lines
 

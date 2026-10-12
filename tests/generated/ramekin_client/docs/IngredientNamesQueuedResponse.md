@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**queued** | **int** | Names and weights queued again by this call. | 
+**queued** | **int** | Names queued again by this call. | 
 
 ## Example
 

@@ -20,7 +20,7 @@ import { mapValues } from '../runtime';
  */
 export interface IngredientNamesQueuedResponse {
     /**
-     * Names and weights queued again by this call.
+     * Names queued again by this call.
      * @type {number}
      * @memberof IngredientNamesQueuedResponse
      */

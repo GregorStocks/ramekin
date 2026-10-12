@@ -13,7 +13,6 @@ Name | Type
 `pending` | number
 `recognized` | number
 `unknown` | number
-`weights` | [IngredientWeightsStatus](IngredientWeightsStatus.md)
 
 ## Example
 
@@ -29,7 +28,6 @@ const example = {
   "pending": null,
   "recognized": null,
   "unknown": null,
-  "weights": null,
 } satisfies IngredientNamesStatusResponse
 
 console.log(example)

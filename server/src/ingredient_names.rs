@@ -34,7 +34,7 @@ use crate::db::{run_blocking, DbPool};
 use crate::schema::ingredient_name_resolutions as names;
 
 /// Names resolved per LLM call.
-pub(crate) const BATCH_SIZE: i64 = 40;
+const BATCH_SIZE: i64 = 40;
 /// Candidate catalog keys offered per name.
 const CANDIDATES: usize = 12;
 /// How soon the worker tries again after a pass that failed, doubling up to
@@ -49,23 +49,21 @@ pub const FAILED: &str = "failed";
 const MAX_ATTEMPTS: i32 = 3;
 
 static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
-/// Set whenever names or weights are queued or put back in the queue, or the
-/// provider answers. Estimate reads with weights still pending also wake the
-/// worker (clients poll while they resolve), so only these cut a failure
-/// backoff short; otherwise a provider outage would be retried at the clients'
-/// polling interval.
+/// Set whenever names are queued or put back in the queue, or the provider
+/// answers. Every save wakes the worker, whether or not it queued anything,
+/// so only these cut a failure backoff short; otherwise a provider outage
+/// would be retried at the rate of saves.
 static NEW_WORK: AtomicBool = AtomicBool::new(false);
-pub(crate) static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
+static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
 /// One client for the process, so its rate limit spaces every call, with
 /// the model it asks: the ingredient model (`AiConfig::for_ingredients`).
-pub(crate) static CLIENT: LazyLock<Result<(CachingAiClient, String), ConfigError>> =
-    LazyLock::new(|| {
-        AiConfig::from_env().map(|config| {
-            let config = config.for_ingredients();
-            let model = config.model.clone();
-            (CachingAiClient::new(config), model)
-        })
-    });
+static CLIENT: LazyLock<Result<(CachingAiClient, String), ConfigError>> = LazyLock::new(|| {
+    AiConfig::from_env().map(|config| {
+        let config = config.for_ingredients();
+        let model = config.model.clone();
+        (CachingAiClient::new(config), model)
+    })
+});
 
 /// The names among `items` the committed catalog doesn't know, deduplicated.
 pub fn unlearned_names<'a>(items: impl IntoIterator<Item = &'a str>) -> Vec<String> {
@@ -127,8 +125,8 @@ pub fn wake() {
     WAKE.notify_one();
 }
 
-/// Record that `queued` names or weights were added to the queue.
-pub(crate) fn note_new_work(queued: usize) {
+/// Record that `queued` names were added to the queue.
+fn note_new_work(queued: usize) {
     if queued > 0 {
         NEW_WORK.store(true, Ordering::SeqCst);
     }
@@ -370,7 +368,7 @@ pub fn queue_stored(conn: &mut PgConnection) -> Result<usize, String> {
 
 /// How taking one batch from a queue went. Failures are already recorded on
 /// their rows.
-pub(crate) enum Step {
+enum Step {
     /// Nothing was pending.
     Idle,
     Done,
@@ -380,37 +378,16 @@ pub(crate) enum Step {
     ProviderFailed(String),
 }
 
-/// Work both queues until both are empty, a batch from each in turn, so a
-/// backlog of names never starves weights or the reverse. Names go first in
-/// each turn: an answer can make a line's food known, and so its weight worth
-/// asking for. Returns the first failure.
+/// Resolve pending names until none are left or the provider fails. Returns
+/// the first failure.
 async fn work_pass(pool: &Arc<DbPool>) -> Result<(), String> {
     let mut first_error = None;
-    // A queue whose provider failed sits out the rest of the pass: its next
-    // batch would fail the same way, so it waits for the worker's retry. An
-    // idle queue is checked again every turn, since saves keep adding work.
-    let (mut names_down, mut weights_down) = (false, false);
-    loop {
-        let mut worked = false;
-        if !names_down {
-            let step = resolve_next_batch(pool, None).await?;
-            names_down = matches!(step, Step::ProviderFailed(_));
-            worked |= record(step, &mut first_error);
-        }
-        if !weights_down {
-            let step = crate::ingredient_weights::estimate_next_batch(pool).await?;
-            weights_down = matches!(step, Step::ProviderFailed(_));
-            worked |= record(step, &mut first_error);
-        }
-        if !worked {
-            break;
-        }
-    }
+    while record(resolve_next_batch(pool, None).await?, &mut first_error) {}
     first_error.map_or(Ok(()), Err)
 }
 
 /// Keep `step`'s error, if it's the first, and say whether it took a batch
-/// that a queue may have more of.
+/// that the queue may have more of.
 fn record(step: Step, first_error: &mut Option<String>) -> bool {
     match step {
         Step::Idle => false,

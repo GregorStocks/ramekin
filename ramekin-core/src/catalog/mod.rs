@@ -18,7 +18,7 @@ mod volume;
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::sync::LazyLock;
 
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 use crate::ingredient_categorizer::CATEGORIES;
 use sha2::{Digest, Sha256};
@@ -38,6 +38,7 @@ const USDA_JSON: &str = include_str!("data/usda.json");
 const FNDDS_JSON: &str = include_str!("data/fndds.json");
 pub const CURATED_JSON: &str = include_str!("data/curated.json");
 const BESPOKE_JSON: &str = include_str!("data/bespoke.json");
+pub const ESTIMATED_WEIGHTS_JSON: &str = include_str!("data/estimated_weights.json");
 const RULE_VERSION: &str = "catalog-v5";
 
 /// A food from a pinned USDA release (SR Legacy, or FNDDS for foods SR Legacy
@@ -145,6 +146,25 @@ struct BespokePiece {
     url: Option<String>,
 }
 
+/// Model-estimated weights for what the catalog can't weigh, filled offline by
+/// `make catalog-fill-weights`.
+#[derive(Debug, Default, Deserialize, Serialize)]
+#[serde(deny_unknown_fields)]
+pub struct EstimatedWeightsFile {
+    /// Entry id -> unit (`nutrition::ESTIMABLE_UNITS`) -> estimate.
+    pub weights: BTreeMap<String, BTreeMap<String, EstimatedWeight>>,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(deny_unknown_fields)]
+pub struct EstimatedWeight {
+    /// Grams per unit; None when the model said there's no typical weight,
+    /// so the pair isn't asked again.
+    pub grams: Option<f64>,
+    /// The model that estimated it.
+    pub model: String,
+}
+
 /// A hand-curated number and the record it came from.
 #[derive(Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -249,6 +269,8 @@ struct Catalog {
     ambiguous: Vec<AmbiguousName>,
     foods: HashMap<u32, UsdaFood>,
     index: HashMap<String, Target>,
+    estimated_weights: BTreeMap<String, BTreeMap<String, EstimatedWeight>>,
+    density_withheld: HashSet<String>,
     version: String,
 }
 
@@ -334,6 +356,8 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
     }
 
     let mut entries = Vec::new();
+    // Curated entries whose density is unknown on purpose (`{"none": ...}`).
+    let mut density_withheld = HashSet::new();
     let mut index = HashMap::new();
 
     // Curated entries come first so they shadow USDA names they share.
@@ -366,7 +390,10 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
                 assert!(valid_density(value), "invalid density for {id:?}");
                 Some(value)
             }
-            Some(CuratedDensity::Unknown { .. }) => None,
+            Some(CuratedDensity::Unknown { .. }) => {
+                density_withheld.insert(id.clone());
+                None
+            }
             None => food.and_then(|food| food.grams_per_cup),
         };
         // A name's own cited pieces replace its food's: a baguette's slice is
@@ -600,6 +627,28 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         }
     }
 
+    let estimated: EstimatedWeightsFile = serde_json::from_str(ESTIMATED_WEIGHTS_JSON)
+        .expect("invalid catalog estimated_weights.json");
+    let ids: HashSet<&str> = entries.iter().map(|entry| entry.id.as_str()).collect();
+    for (id, units) in &estimated.weights {
+        assert!(
+            ids.contains(id.as_str()),
+            "estimated weights for {id:?}, which is no entry id"
+        );
+        assert!(
+            !(units.contains_key("cup") && density_withheld.contains(id)),
+            "estimated density for {id:?}, whose density curated.json withholds"
+        );
+        for (unit, weight) in units {
+            assert!(
+                weight.grams.is_none_or(valid_density) && !weight.model.is_empty(),
+                "invalid estimated weight for {id:?} {unit:?}"
+            );
+        }
+    }
+
+    // Estimated weights only change calories, so they stay out of the
+    // version the shopping-list categories are keyed by.
     let hash = Sha256::digest(format!(
         "{RULE_VERSION}\n{USDA_JSON}\n{FNDDS_JSON}\n{CURATED_JSON}\n{BESPOKE_JSON}"
     ));
@@ -609,6 +658,8 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
         ambiguous,
         foods,
         index,
+        estimated_weights: estimated.weights,
+        density_withheld,
         version: format!("{RULE_VERSION}-sr2018-fndds2024-{hash}"),
     }
 });
@@ -616,6 +667,20 @@ static CATALOG: LazyLock<Catalog> = LazyLock::new(|| {
 /// A stable identifier for the catalog data and resolution rules.
 pub fn version() -> &'static str {
     &CATALOG.version
+}
+
+/// The model's estimate of grams per `unit` (in `piece_unit` spelling, "cup"
+/// for any volume) of this entry's food, for what its catalog data can't
+/// weigh. None when the pair was never estimated; Some(None) when the model
+/// said there's no typical weight, or for the density of an entry whose
+/// density curated.json withholds on purpose (black pepper's grind varies too
+/// much), which is never estimated.
+pub fn estimated_weight(entry: &Entry, unit: &str) -> Option<Option<f64>> {
+    if unit == "cup" && CATALOG.density_withheld.contains(&entry.id) {
+        return Some(None);
+    }
+    let weight = CATALOG.estimated_weights.get(&entry.id)?.get(unit)?;
+    Some(weight.grams)
 }
 
 /// The USDA food (SR Legacy or FNDDS) with this FDC id.

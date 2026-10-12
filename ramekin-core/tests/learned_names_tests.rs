@@ -4,7 +4,7 @@ use ramekin_core::catalog::{
 };
 use ramekin_core::ingredient_categorizer::categorize_with;
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
-use ramekin_core::nutrition::{estimate, estimate_with, Weights};
+use ramekin_core::nutrition::{estimate, estimate_with};
 
 fn learned(pairs: &[(&str, LearnedTarget)]) -> Learned {
     pairs
@@ -40,14 +40,7 @@ fn ambiguous_names_take_a_learned_default_and_say_so() {
     let without = estimate(std::slice::from_ref(&line), None, 1.0).unwrap();
     assert_eq!(without.lines[0].text, "Could be several foods");
     let learned = learned(&[("cheese", LearnedTarget::Entry("cheddar cheese".into()))]);
-    let with = estimate_with(
-        std::slice::from_ref(&line),
-        None,
-        1.0,
-        &learned,
-        &Weights::new(),
-    )
-    .unwrap();
+    let with = estimate_with(std::slice::from_ref(&line), None, 1.0, &learned).unwrap();
     let cheddar = estimate(&[grams_line("cheddar cheese", "100", "g")], None, 1.0).unwrap();
     assert_eq!(with.known_calories, cheddar.known_calories);
     assert!(
@@ -78,7 +71,7 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
     ));
     for (amount, unit, grams) in [("100", "g", 100.0), ("1", "cup", 120.0), ("2", "", 60.0)] {
         let line = grams_line("Moon Dust", amount, unit);
-        let result = estimate_with(&[line], None, 1.0, &learned, &Weights::new()).unwrap();
+        let result = estimate_with(&[line], None, 1.0, &learned).unwrap();
         assert!(
             (result.known_calories.unwrap().max - grams * 2.5).abs() < 1e-9,
             "{amount} {unit}"
@@ -89,30 +82,12 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
             result.lines[0].text
         );
     }
-    // A unit it gave no weight for is a weight gap like any food's, and once
-    // estimated the line says both numbers are the model's.
-    let line = grams_line("moon dust", "2", "jars");
-    let result = estimate_with(
-        std::slice::from_ref(&line),
-        None,
-        1.0,
-        &learned,
-        &Weights::new(),
-    )
-    .unwrap();
+    // A unit it gave no weight for stays unknown: the catalog's estimated
+    // weights are only for catalog entries, and it isn't one.
+    let result =
+        estimate_with(&[grams_line("moon dust", "2", "jars")], None, 1.0, &learned).unwrap();
     assert!(result.known_calories.is_none());
-    assert_eq!(result.weight_gaps.len(), 1);
-    assert_eq!(result.weight_gaps[0].unit, "jar");
-    let weights = Weights::from([(result.weight_gaps[0].clone(), 50.0)]);
-    let weighed = estimate_with(&[line], None, 1.0, &learned, &weights).unwrap();
-    assert!((weighed.known_calories.unwrap().max - 250.0).abs() < 1e-9);
-    assert!(
-        weighed.lines[0]
-            .text
-            .ends_with("(estimated calories; estimated weight)"),
-        "{}",
-        weighed.lines[0].text
-    );
+    assert!(result.weight_gaps.is_empty());
     // A zero-calorie estimate is negligible on any line, weighable or not.
     let diet = self::learned(&[(
         "moon soda",
@@ -122,14 +97,8 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
             grams_per_piece: None,
         }),
     )]);
-    let result = estimate_with(
-        &[grams_line("moon soda", "2", "bottles")],
-        None,
-        1.0,
-        &diet,
-        &Weights::new(),
-    )
-    .unwrap();
+    let result =
+        estimate_with(&[grams_line("moon soda", "2", "bottles")], None, 1.0, &diet).unwrap();
     assert_eq!(result.lines[0].text, "Negligible (estimated calories)");
     // An estimated fat listed for frying follows the frying-medium rule.
     let fat = self::learned(&[(
@@ -144,7 +113,7 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
         note: Some("for frying".into()),
         ..grams_line("vanaspati", "2", "cups")
     };
-    let result = estimate_with(&[frying], None, 1.0, &fat, &Weights::new()).unwrap();
+    let result = estimate_with(&[frying], None, 1.0, &fat).unwrap();
     assert!(result.known_calories.is_none());
     assert_eq!(
         result.unknown_ingredients[0].reason,
@@ -154,7 +123,7 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
         note: Some("for frying".into()),
         ..grams_line("vanaspati", "1", "tbsp")
     };
-    let result = estimate_with(&[browning], None, 1.0, &fat, &Weights::new()).unwrap();
+    let result = estimate_with(&[browning], None, 1.0, &fat).unwrap();
     assert!(result.known_calories.is_some());
     assert!(result.weight_gaps.is_empty());
 }
@@ -219,14 +188,7 @@ fn estimates_and_categories_use_learned_names() {
         "moon sugar",
         LearnedTarget::Entry("granulated sugar".into()),
     )]);
-    let with = estimate_with(
-        std::slice::from_ref(&line),
-        None,
-        1.0,
-        &learned,
-        &Weights::new(),
-    )
-    .unwrap();
+    let with = estimate_with(std::slice::from_ref(&line), None, 1.0, &learned).unwrap();
     assert_eq!(with.known_calories.unwrap().min, 387.0);
 
     assert_eq!(categorize_with("moon sugar", &learned), "Baking");

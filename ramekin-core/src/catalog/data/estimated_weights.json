@@ -1,0 +1,1056 @@
+{
+  "weights": {
+    "achiote paste": {
+      "cup": {
+        "grams": 270.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "alcoholic beverage, wine, table, all": {
+      "bottle": {
+        "grams": 740.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "alcoholic beverage, wine, table, red": {
+      "bottle": {
+        "grams": 740.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "arugula, raw": {
+      "handful": {
+        "grams": 20.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "asiago cheese": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "asparagus, raw": {
+      "stalk": {
+        "grams": 16.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "baguette": {
+      "cup": {
+        "grams": 35.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "slice": {
+        "grams": 20.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "basil, fresh": {
+      "bunch": {
+        "grams": 60.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "cup": {
+        "grams": 24.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "handful": {
+        "grams": 10.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "stalk": {
+        "grams": 5.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "beans, chili, barbecue, ranch style, cooked": {
+      "can": {
+        "grams": 425.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "beans, snap, green, raw": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "beef, variety meats and by-products, suet, raw": {
+      "cup": {
+        "grams": 115.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "beverages, malted drink mix, natural, powder, dairy based.": {
+      "cup": {
+        "grams": 120.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "bread, french or vienna (includes sourdough)": {
+      "cup": {
+        "grams": 35.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "bread, french or vienna, toasted (includes sourdough)": {
+      "box": {
+        "grams": null,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "bread, multi-grain (includes whole-grain)": {
+      "slice": {
+        "grams": 28.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "bread, pita, white, enriched": {
+      "slice": {
+        "grams": 60.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "bread, stuffing, dry mix": {
+      "cup": {
+        "grams": 70.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "bread, whole-wheat, commercially prepared": {
+      "cup": {
+        "grams": 45.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "broccoli, frozen, spears, unprepared (includes foods for usda's food distribution program)": {
+      "cup": {
+        "grams": 90.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "butter": {
+      "cube": {
+        "grams": 113.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "butter, clarified butter (ghee)": {
+      "cup": {
+        "grams": 205.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cabbage, chinese (pak-choi), raw": {
+      "bunch": {
+        "grams": 450.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cabbage, raw": {
+      "bag": {
+        "grams": 397.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cabbage, savoy, raw": {
+      "head": {
+        "grams": 750.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cake, pudding-type, chocolate, dry mix": {
+      "package": {
+        "grams": 432.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cake, pudding-type, white, enriched, dry mix": {
+      "package": {
+        "grams": 432.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cake, yellow, enriched, dry mix": {
+      "box": {
+        "grams": 432.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "cup": {
+        "grams": 115.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "canadian bacon, unprepared": {
+      "cup": {
+        "grams": 140.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "candies, chocolate, dark, nfs (45-59% cacao solids 90%; 60-69% cacao solids 5%; 70-85% cacao solids 5%)": {
+      "cup": {
+        "grams": 170.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "candies, hard": {
+      "cup": {
+        "grams": 190.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "candies, marshmallows": {
+      "cup": {
+        "grams": 50.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "candies, milk chocolate": {
+      "cup": {
+        "grams": 170.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "candies, semisweet chocolate": {
+      "cup": {
+        "grams": 170.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "candies, toffee, prepared-from-recipe": {
+      "cup": {
+        "grams": 160.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "capers, canned": {
+      "cup": {
+        "grams": 137.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "carrots, baby, raw": {
+      "cup": {
+        "grams": 130.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "carrots, raw": {
+      "cup": {
+        "grams": 128.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cauliflower, raw": {
+      "cup": {
+        "grams": 107.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "celery, raw": {
+      "bunch": {
+        "grams": 500.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "chard, swiss, raw": {
+      "bunch": {
+        "grams": 340.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cheese, cheddar, reduced fat (includes foods for usda's food distribution program)": {
+      "cup": {
+        "grams": 113.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cheese, goat, soft type": {
+      "cup": {
+        "grams": 140.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cheese, gouda": {
+      "cup": {
+        "grams": 113.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cheese, mexican blend": {
+      "cup": {
+        "grams": 112.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cheese, parmesan, hard": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cheese, romano": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "chili bean sauce": {
+      "cup": {
+        "grams": 260.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "chives, raw": {
+      "bunch": {
+        "grams": 25.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "cup": {
+        "grams": 48.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "chocolate-flavored hazelnut spread": {
+      "cup": {
+        "grams": 296.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "chopped jarred calabrian chiles in oil": {
+      "cup": {
+        "grams": 230.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "chrysanthemum, garland, raw": {
+      "bunch": {
+        "grams": 170.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "clementines, raw": {
+      "cup": {
+        "grams": 190.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cookies, gingersnaps": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cookies, vanilla wafers, higher fat": {
+      "cup": {
+        "grams": 90.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "coriander (cilantro) leaves, raw": {
+      "handful": {
+        "grams": 10.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "corn, sweet, yellow, frozen, kernels cut off cob, unprepared (includes foods for usda's food distribution program)": {
+      "bag": {
+        "grams": 340.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "corn, sweet, yellow, raw": {
+      "can": {
+        "grams": 300.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "crackers, matzo, plain": {
+      "cup": {
+        "grams": 45.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cream cheese": {
+      "package": {
+        "grams": 227.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "crustaceans, crab, blue, canned": {
+      "can": {
+        "grams": 120.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "crustaceans, shrimp, raw": {
+      "cup": {
+        "grams": 150.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "cucumber, with peel, raw": {
+      "cup": {
+        "grams": 119.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "dates, medjool": {
+      "cup": {
+        "grams": 170.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "dill weed, fresh": {
+      "cup": {
+        "grams": 9.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "dry white wine": {
+      "bottle": {
+        "grams": 740.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "edamame, frozen, unprepared": {
+      "bag": {
+        "grams": 340.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "eggplant, raw": {
+      "slice": {
+        "grams": 30.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "fennel, bulb, raw": {
+      "head": {
+        "grams": 234.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "fish, salmon, chinook, smoked": {
+      "slice": {
+        "grams": 20.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "gelatins, dry powder, unsweetened": {
+      "cup": {
+        "grams": 150.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "package": {
+        "grams": 7.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "ginger beer": {
+      "cup": {
+        "grams": 245.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "gums, seed gums (includes locust bean, guar)": {
+      "cup": {
+        "grams": 140.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "hearts of palm, raw": {
+      "cup": {
+        "grams": 145.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "herbs de provence": {
+      "cup": {
+        "grams": 50.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "hominy, canned, white": {
+      "can": {
+        "grams": 425.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "ice creams, vanilla": {
+      "cup": {
+        "grams": 132.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "italian seasoning": {
+      "cup": {
+        "grams": 48.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "jellies": {
+      "cup": {
+        "grams": 304.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "kale, raw": {
+      "handful": {
+        "grams": 20.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "kamaboko fish cake": {
+      "slice": {
+        "grams": 10.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "lemon grass (citronella), raw": {
+      "stalk": {
+        "grams": 25.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "lemons, raw, without peel": {
+      "slice": {
+        "grams": 7.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "lettuce, cos or romaine, raw": {
+      "cup": {
+        "grams": 47.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "lettuce, green leaf, raw": {
+      "cup": {
+        "grams": 36.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "luncheon meat, pork with ham, minced, canned, includes spam (hormel)": {
+      "slice": {
+        "grams": 56.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "mangos, raw": {
+      "cup": {
+        "grams": 165.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "maraschino cherries, canned, drained": {
+      "cup": {
+        "grams": 155.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "matcha": {
+      "cup": {
+        "grams": 96.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "mixed frozen berries": {
+      "bag": {
+        "grams": 454.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "mushrooms, brown, italian, or crimini, raw": {
+      "cup": {
+        "grams": 87.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "mushrooms, enoki, raw": {
+      "bunch": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "package": {
+        "grams": 200.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "mushrooms, portabella, raw": {
+      "cup": {
+        "grams": 86.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "mushrooms, shiitake, raw": {
+      "cup": {
+        "grams": 70.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "package": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "natto": {
+      "package": {
+        "grams": 45.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "nuts, almonds, dry roasted, without salt added": {
+      "cup": {
+        "grams": 138.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "nuts, cashew nuts, raw": {
+      "cup": {
+        "grams": 137.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "nuts, coconut meat, dried (desiccated), not sweetened": {
+      "cup": {
+        "grams": 80.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "nuts, coconut meat, dried (desiccated), toasted": {
+      "cup": {
+        "grams": 75.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "nuts, hazelnuts or filberts, dry roasted, without salt added": {
+      "cup": {
+        "grams": 120.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "nuts, pecans, dry roasted, without salt added": {
+      "cup": {
+        "grams": 110.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "nuts, walnuts, english": {
+      "handful": {
+        "grams": 28.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "olives, pickled, canned or bottled, green": {
+      "cup": {
+        "grams": 135.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "onions, frozen, whole, unprepared": {
+      "cup": {
+        "grams": 130.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "onions, spring or scallions (includes tops and bulb), raw": {
+      "stalk": {
+        "grams": 15.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "onions, welsh, raw": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pancetta": {
+      "cup": {
+        "grams": 140.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "parsley, fresh": {
+      "handful": {
+        "grams": 10.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "parsnips, raw": {
+      "cup": {
+        "grams": 133.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pasta, dry, enriched": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pasta, dry, unenriched": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "peaches, yellow, raw": {
+      "cup": {
+        "grams": 154.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "slice": {
+        "grams": 20.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "peanut butter chips": {
+      "cup": {
+        "grams": 170.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "peanuts, all types, dry-roasted, with salt": {
+      "cup": {
+        "grams": 146.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pepperoni, beef and pork, sliced": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "peppers, hot chili, green, raw": {
+      "can": {
+        "grams": 113.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "peppers, hot pickled, canned": {
+      "cup": {
+        "grams": 136.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "jar": {
+        "grams": 340.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "peppers, jalapeno, canned, solids and liquids": {
+      "slice": {
+        "grams": 2.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "peppers, sweet, yellow, raw": {
+      "cup": {
+        "grams": 150.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "phyllo dough": {
+      "package": {
+        "grams": 454.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pie crust, refrigerated, regular, unbaked": {
+      "package": {
+        "grams": 400.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pie fillings, apple, canned": {
+      "can": {
+        "grams": 595.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "cup": {
+        "grams": 255.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pineapple, canned, juice pack, drained": {
+      "can": {
+        "grams": 350.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pitted kalamata olives": {
+      "cup": {
+        "grams": 135.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pomegranates, raw": {
+      "cup": {
+        "grams": 174.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pork, cured, bacon, pre-sliced, cooked, pan-fried": {
+      "cup": {
+        "grams": 85.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "pork, cured, bacon, unprepared": {
+      "cup": {
+        "grams": 150.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "radicchio, raw": {
+      "head": {
+        "grams": 280.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "radishes, oriental, raw": {
+      "cup": {
+        "grams": 116.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "radishes, raw": {
+      "bunch": {
+        "grams": 170.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "cup": {
+        "grams": 116.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "red gel icing": {
+      "cup": {
+        "grams": 310.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "rosemary, fresh": {
+      "bunch": {
+        "grams": 25.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "sauce, enchilada, red, mild, ready to serve": {
+      "can": {
+        "grams": 284.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "sauce, pasta, spaghetti/marinara, ready-to-serve": {
+      "cup": {
+        "grams": 250.0,
+        "model": "anthropic/claude-opus-5.5"
+      },
+      "jar": {
+        "grams": 680.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "sauce, salsa, ready-to-serve": {
+      "jar": {
+        "grams": 454.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "sauce, tartar, ready-to-serve": {
+      "cup": {
+        "grams": 224.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "sausage, italian, pork, mild, raw": {
+      "cup": {
+        "grams": 225.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "seasoning mix, dry, taco, original": {
+      "package": {
+        "grams": 28.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "seeds, chia seeds, dried": {
+      "cup": {
+        "grams": 170.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "seeds, sesame seeds, whole, roasted and toasted": {
+      "cup": {
+        "grams": 128.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "shallots, raw": {
+      "cup": {
+        "grams": 160.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "snacks, bagel chips, plain": {
+      "cup": {
+        "grams": 50.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "snacks, banana chips": {
+      "cup": {
+        "grams": 75.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "snacks, corn-based, extruded, cones, plain": {
+      "cup": {
+        "grams": 22.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "snacks, potato chips, plain, salted": {
+      "cup": {
+        "grams": 20.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "snacks, pretzels, hard, plain, salted": {
+      "cup": {
+        "grams": 50.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "snacks, tortilla chips, plain, white corn, salted": {
+      "handful": {
+        "grams": 20.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "soup, beef broth or bouillon, powder, dry": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "soup, cream of mushroom, canned, condensed": {
+      "can": {
+        "grams": 298.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "spearmint, fresh": {
+      "handful": {
+        "grams": 5.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "spices, basil, dried": {
+      "cup": {
+        "grams": 34.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "spinach, raw": {
+      "handful": {
+        "grams": 30.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "squash, summer, crookneck and straightneck, raw": {
+      "cup": {
+        "grams": 120.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "squash, winter, all varieties, raw": {
+      "slice": {
+        "grams": 80.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "sweet potato, raw, unprepared (includes foods for usda's food distribution program)": {
+      "slice": {
+        "grams": 15.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "tofu, firm, prepared with calcium sulfate and magnesium chloride (nigari)": {
+      "package": {
+        "grams": 397.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "toppings, butterscotch or caramel": {
+      "jar": {
+        "grams": 347.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "toppings, marshmallow cream": {
+      "cup": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "turkey, whole, meat only, cooked, roasted": {
+      "cup": {
+        "grams": 140.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "vegetables, mixed, frozen, unprepared": {
+      "cup": {
+        "grams": 135.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "waterchestnuts, chinese, canned, solids and liquids": {
+      "cup": {
+        "grams": 140.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "watercress, raw": {
+      "bunch": {
+        "grams": 100.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "wheat flour, whole-grain, soft wheat": {
+      "cup": {
+        "grams": 120.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "wonton wrappers (includes egg roll wrappers)": {
+      "package": {
+        "grams": 340.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "yogurt, greek, plain, nonfat (includes foods for usda's food distribution program)": {
+      "cup": {
+        "grams": 227.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "yogurt, greek, plain, whole milk": {
+      "cup": {
+        "grams": 227.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    },
+    "yogurt, greek, vanilla, lowfat": {
+      "cup": {
+        "grams": 227.0,
+        "model": "anthropic/claude-opus-5.5"
+      }
+    }
+  }
+}
