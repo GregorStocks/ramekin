@@ -1,8 +1,6 @@
-use ramekin_core::catalog::Learned;
+use ramekin_core::catalog;
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
-use ramekin_core::nutrition::{
-    estimate, estimate_with, Status, WeightKey, Weights, MAX_UNKNOWN_LINES,
-};
+use ramekin_core::nutrition::{estimate, Status, WeightKey, MAX_UNKNOWN_LINES};
 
 #[test]
 fn scale_limits_match_both_clients() {
@@ -179,8 +177,6 @@ fn unknowns_are_explicit_and_never_zero() {
             "g",
             "Unsupported or missing quantity",
         ),
-        // Kale is weighed by the bunch, but a bare count means nothing.
-        ("kale", "2", "", "Unsupported quantity unit"),
         ("flour", "2", "", "Unsupported quantity unit"),
         ("canned chickpeas", "1", "can", "Unsupported quantity unit"),
         (
@@ -590,7 +586,16 @@ fn a_spoonful_of_an_unweighable_trace_food_is_negligible() {
     // A trace food with a density is computed normally.
     assert!(calories("ground cumin", "1", "tbsp", 1.0).unwrap() > 0.0);
     // Only trace foods: a spoonful of anything else still needs a density.
-    let result = estimate(&[ingredient("capers", "1", "tbsp")], None, 1.0).unwrap();
+    let result = estimate(
+        &[ingredient(
+            "waffles, buttermilk, frozen, ready-to-heat",
+            "1",
+            "tbsp",
+        )],
+        None,
+        1.0,
+    )
+    .unwrap();
     assert!(result.known_calories.is_none());
 }
 
@@ -1124,49 +1129,47 @@ fn alternatives_count_the_first_and_say_so() {
 
 #[test]
 fn estimated_weights_fill_catalog_gaps_and_say_so() {
-    let capers = match ramekin_core::catalog::resolve("capers") {
-        ramekin_core::catalog::Resolution::Entry { entry, .. } => entry,
+    let capers = match catalog::resolve("capers") {
+        catalog::Resolution::Entry { entry, .. } => entry,
         other => panic!("capers: {other:?}"),
     };
     assert!(
         capers.grams_per_cup.is_none(),
         "pick a food without a density"
     );
-    let key = |unit: &str| WeightKey {
-        food: capers.id.clone(),
-        unit: unit.to_string(),
-    };
-    let line = ingredient("capers", "2", "tbsp");
-    // Without an estimate the line is unknown, and the gap is reported.
-    let without = estimate(std::slice::from_ref(&line), None, 1.0).unwrap();
-    assert!(without.known_calories.is_none());
-    assert_eq!(without.weight_gaps, vec![key("cup")]);
-    // With one, it's counted at that density and labeled.
-    let weights = Weights::from([(key("cup"), 136.0), (key("jar"), 100.0)]);
-    let with = estimate_with(
-        std::slice::from_ref(&line),
-        None,
-        1.0,
-        &Learned::new(),
-        &weights,
-    )
-    .unwrap();
-    let kcal = capers.kcal_per_100g.unwrap() * 136.0 / 8.0 / 100.0;
-    assert!((with.known_calories.unwrap().max - kcal).abs() < 1e-9);
-    assert!(
-        with.lines[0].text.ends_with("(estimated weight)"),
-        "{}",
-        with.lines[0].text
-    );
-    assert!(with.weight_gaps.is_empty());
-    // A counted unit the catalog has no piece for, in its piece spelling.
-    let jars = ingredient("capers", "2", "jars");
-    let without = estimate(std::slice::from_ref(&jars), None, 1.0).unwrap();
-    assert_eq!(without.weight_gaps, vec![key("jar")]);
-    let with = estimate_with(&[jars], None, 1.0, &Learned::new(), &weights).unwrap();
-    assert!((with.known_calories.unwrap().max - capers.kcal_per_100g.unwrap() * 2.0).abs() < 1e-9);
+    let result = estimate(&[ingredient("capers", "2", "tbsp")], None, 1.0).unwrap();
+    match catalog::estimated_weight(capers, "cup") {
+        // Counted at the estimated density, and labeled.
+        Some(Some(grams)) => {
+            let kcal = capers.kcal_per_100g.unwrap() * grams / 8.0 / 100.0;
+            assert!((result.known_calories.unwrap().max - kcal).abs() < 1e-9);
+            assert!(
+                result.lines[0].text.ends_with("(estimated weight)"),
+                "{}",
+                result.lines[0].text
+            );
+            assert!(result.weight_gaps.is_empty());
+        }
+        // The model said there's no typical weight: unknown, and not a gap
+        // to ask about again.
+        Some(None) => {
+            assert!(result.known_calories.is_none());
+            assert!(result.weight_gaps.is_empty());
+        }
+        // Unknown, and reported for `make catalog-fill-weights`.
+        None => {
+            assert!(result.known_calories.is_none());
+            assert_eq!(
+                result.weight_gaps,
+                vec![WeightKey {
+                    food: capers.id.clone(),
+                    unit: "cup".into(),
+                }]
+            );
+        }
+    }
     // A measurement the catalog can weigh wins over an estimated one, and
-    // asks for nothing.
+    // reports nothing.
     let weighed = ParsedIngredient {
         measurements: vec![
             Measurement {
@@ -1180,13 +1183,56 @@ fn estimated_weights_fill_catalog_gaps_and_say_so() {
         ],
         ..ingredient("capers", "2", "tbsp")
     };
-    let result = estimate_with(&[weighed], None, 1.0, &Learned::new(), &weights).unwrap();
+    let result = estimate(&[weighed], None, 1.0).unwrap();
     assert!(!result.lines[0].text.contains("estimated"));
     assert!(result.weight_gaps.is_empty());
-    // Only known units are asked about, so a request can't queue arbitrary
+    // Only known units are estimated, so the fill asks a bounded set of
     // questions.
     for unit in ["1/2-inch pieces", "zqfrobs", "glugs"] {
         let junk = estimate(&[ingredient("capers", "2", unit)], None, 1.0).unwrap();
         assert!(junk.weight_gaps.is_empty(), "{unit}");
     }
+}
+
+/// Every estimated weight in the catalog weighs a line of its food, so none is
+/// stale after a catalog edit (an entry that gained its own weight, or a
+/// renamed one).
+#[test]
+fn every_estimated_weight_is_used() {
+    let file: catalog::EstimatedWeightsFile =
+        serde_json::from_str(catalog::ESTIMATED_WEIGHTS_JSON).unwrap();
+    let mut unused = Vec::new();
+    for (id, units) in &file.weights {
+        let entry = match catalog::resolve(id) {
+            catalog::Resolution::Entry { entry, .. } if entry.id == *id => entry,
+            // A USDA description several foods share names none of them.
+            _ => continue,
+        };
+        for (unit, weight) in units {
+            let Some(grams) = weight.grams else { continue };
+            // Twenty, past the few pieces of a trace food that are
+            // negligible. "piece" is both a bare count and "pieces".
+            let mut lines = vec![ingredient(id, "20", unit)];
+            if unit == "piece" {
+                lines[0].measurements[0].unit = None;
+                lines.push(ingredient(id, "20", "pieces"));
+            }
+            let kcal = entry.kcal_per_100g.unwrap_or_default() * grams * 20.0 / 100.0;
+            let texts: Vec<String> = lines
+                .into_iter()
+                .map(|line| estimate(&[line], None, 1.0).unwrap())
+                .filter(|result| {
+                    !result
+                        .known_calories
+                        .is_some_and(|known| (known.max - kcal).abs() < 1e-6)
+                        || !result.lines[0].text.contains("estimated weight")
+                })
+                .map(|result| result.lines[0].text.clone())
+                .collect();
+            if texts.len() == if unit == "piece" { 2 } else { 1 } {
+                unused.push(format!("{id} per {unit}: {texts:?}"));
+            }
+        }
+    }
+    assert!(unused.is_empty(), "unused estimated weights: {unused:#?}");
 }

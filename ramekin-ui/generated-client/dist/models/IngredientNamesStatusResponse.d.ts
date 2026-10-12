@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 import type { IngredientNameFailure } from './IngredientNameFailure';
-import type { IngredientWeightsStatus } from './IngredientWeightsStatus';
 /**
  *
  * @export
@@ -62,12 +61,6 @@ export interface IngredientNamesStatusResponse {
      * @memberof IngredientNamesStatusResponse
      */
     unknown: number;
-    /**
-     *
-     * @type {IngredientWeightsStatus}
-     * @memberof IngredientNamesStatusResponse
-     */
-    weights: IngredientWeightsStatus;
 }
 /**
  * Check if a given object implements the IngredientNamesStatusResponse interface.

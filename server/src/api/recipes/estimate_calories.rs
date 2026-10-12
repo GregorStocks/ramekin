@@ -93,9 +93,8 @@ pub struct CalorieEstimateResponse {
     pub per_serving_calories: Option<CalorieRange>,
     /// The breakdown, one entry per ingredient in order.
     pub lines: Vec<CalorieLine>,
-    /// Some ingredient names are still being recognized, or weights
-    /// estimated, in the background; ask again shortly for an estimate that
-    /// includes them.
+    /// Some ingredient names are still being recognized in the background;
+    /// ask again shortly for an estimate that includes them.
     pub resolving: bool,
 }
 
@@ -122,7 +121,7 @@ pub async fn estimate_calories(
     // ambiguous. Only saves queue names, so a name in an unsaved edit reads
     // as unknown until it's saved.
     let items: Vec<String> = ingredients.iter().map(|i| i.item.clone()).collect();
-    let (learned, resolving_names) = run_db(&pool, move |conn| {
+    let (learned, resolving) = run_db(&pool, move |conn| {
         let names = || items.iter().map(String::as_str);
         // Pending first: a name leaves pending in the same update that stores
         // its answer, so once nothing reads as pending every answer is
@@ -140,32 +139,13 @@ pub async fn estimate_calories(
             })
     })
     .await?;
-    let estimate = |weights: &nutrition::Weights| {
-        nutrition::estimate_with(
-            &ingredients,
-            request.servings.as_deref(),
-            request.scale,
-            &learned,
-            weights,
-        )
-        .map_err(ApiError::invalid_request)
-    };
-    // Weights the catalog lacks for foods it knows: estimated in the
-    // background once reported, then read back here. Queuing a gap is the
-    // only write; the model is never called on this path.
-    let gaps = estimate(&nutrition::Weights::new())?.weight_gaps;
-    let (weights, resolving_weights) = run_db(&pool, move |conn| {
-        crate::ingredient_weights::load_and_enqueue(conn, &gaps).map_err(|e| {
-            tracing::error!("Failed to load estimated ingredient weights: {}", e);
-            ApiError::internal("Failed to load ingredient weights")
-        })
-    })
-    .await?;
-    if resolving_weights {
-        crate::ingredient_names::wake();
-    }
-    let result = estimate(&weights)?;
-    let resolving = resolving_names || resolving_weights;
+    let result = nutrition::estimate_with(
+        &ingredients,
+        request.servings.as_deref(),
+        request.scale,
+        &learned,
+    )
+    .map_err(ApiError::invalid_request)?;
     Ok(Json(CalorieEstimateResponse {
         status: result.status.into(),
         headline: result.headline,

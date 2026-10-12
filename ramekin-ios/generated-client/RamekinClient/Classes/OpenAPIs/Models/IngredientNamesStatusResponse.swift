@@ -26,9 +26,8 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
     public var recognized: Int64
     /** Resolved, but the model couldn't tell; still unknown in estimates. */
     public var unknown: Int64
-    public var weights: IngredientWeightsStatus
 
-    public init(estimated: Int64, failed: Int64, failures: [IngredientNameFailure], notFood: Int64, pending: Int64, recognized: Int64, unknown: Int64, weights: IngredientWeightsStatus) {
+    public init(estimated: Int64, failed: Int64, failures: [IngredientNameFailure], notFood: Int64, pending: Int64, recognized: Int64, unknown: Int64) {
         self.estimated = estimated
         self.failed = failed
         self.failures = failures
@@ -36,7 +35,6 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
         self.pending = pending
         self.recognized = recognized
         self.unknown = unknown
-        self.weights = weights
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
@@ -47,7 +45,6 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
         case pending
         case recognized
         case unknown
-        case weights
     }
 
     // Encodable protocol methods
@@ -61,7 +58,6 @@ public struct IngredientNamesStatusResponse: Codable, JSONEncodable, Hashable {
         try container.encode(pending, forKey: .pending)
         try container.encode(recognized, forKey: .recognized)
         try container.encode(unknown, forKey: .unknown)
-        try container.encode(weights, forKey: .weights)
     }
 }
 

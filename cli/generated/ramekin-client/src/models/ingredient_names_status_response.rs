@@ -34,8 +34,6 @@ pub struct IngredientNamesStatusResponse {
     /// Resolved, but the model couldn't tell; still unknown in estimates.
     #[serde(rename = "unknown")]
     pub unknown: i64,
-    #[serde(rename = "weights")]
-    pub weights: Box<models::IngredientWeightsStatus>,
 }
 
 impl IngredientNamesStatusResponse {
@@ -47,7 +45,6 @@ impl IngredientNamesStatusResponse {
         pending: i64,
         recognized: i64,
         unknown: i64,
-        weights: models::IngredientWeightsStatus,
     ) -> IngredientNamesStatusResponse {
         IngredientNamesStatusResponse {
             estimated,
@@ -57,7 +54,6 @@ impl IngredientNamesStatusResponse {
             pending,
             recognized,
             unknown,
-            weights: Box::new(weights),
         }
     }
 }

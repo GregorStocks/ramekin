@@ -1,5 +1,5 @@
 //! Status and controls for resolving ingredient names the catalog doesn't
-//! know or calls ambiguous, and estimating weights it lacks (catalog step 3).
+//! know or calls ambiguous (catalog step 3).
 //! The resolution table is shared across accounts, but
 //! each account only sees and retries the names in its own recipes and
 //! shopping list.
@@ -7,10 +7,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::ingredient_names::{
-    load_learned, requeue_failed, unlearned_names, wake, FAILED, PENDING, RESOLVED,
-};
-use crate::ingredient_weights;
+use crate::ingredient_names::{requeue_failed, unlearned_names, wake, FAILED, PENDING, RESOLVED};
 use crate::models::Ingredient;
 use crate::schema::{
     ingredient_name_resolutions as names, recipe_versions, recipes, shopping_list_items,
@@ -19,10 +16,7 @@ use crate::AppState;
 use axum::routing::{get, post};
 use axum::{extract::State, Json, Router};
 use diesel::prelude::*;
-use ramekin_core::catalog::{self, Resolution};
-use ramekin_core::nutrition;
 use serde::Serialize;
-use std::collections::BTreeSet;
 use std::sync::Arc;
 use utoipa::{OpenApi, ToSchema};
 use uuid::Uuid;
@@ -35,32 +29,6 @@ pub struct IngredientNameFailure {
     pub name: String,
     pub error: String,
     pub attempts: i32,
-}
-
-#[derive(Debug, Serialize, ToSchema)]
-pub struct IngredientWeightFailure {
-    /// The catalog food, as the catalog names it.
-    pub food: String,
-    pub unit: String,
-    pub error: String,
-    pub attempts: i32,
-}
-
-/// Weights the catalog lacks for foods in the user's recipes (a density, or
-/// a counted unit such as "bunch"), estimated in the background: every
-/// estimate for those foods, whichever view queued it.
-#[derive(Debug, Serialize, ToSchema)]
-pub struct IngredientWeightsStatus {
-    /// Estimated; lines using one say "estimated weight".
-    pub estimated: i64,
-    /// The model said there's no typical weight; still unknown in estimates.
-    pub no_typical_weight: i64,
-    /// Waiting for the background estimator (queued when an estimate is shown).
-    pub pending: i64,
-    /// The last attempt failed; retry to try again.
-    pub failed: i64,
-    /// The most recent failures.
-    pub failures: Vec<IngredientWeightFailure>,
 }
 
 #[derive(Debug, Serialize, ToSchema)]
@@ -82,12 +50,11 @@ pub struct IngredientNamesStatusResponse {
     pub failed: i64,
     /// The most recent failures.
     pub failures: Vec<IngredientNameFailure>,
-    pub weights: IngredientWeightsStatus,
 }
 
 #[derive(Debug, Serialize, ToSchema)]
 pub struct IngredientNamesQueuedResponse {
-    /// Names and weights queued again by this call.
+    /// Names queued again by this call.
     pub queued: usize,
 }
 
@@ -139,36 +106,6 @@ fn own_names(
     Ok(unlearned_names(items.iter().map(String::as_str)))
 }
 
-/// The foods the user's current recipes use, as their calorie estimates
-/// resolve them (catalog entry ids, and the stand-in ids of estimated
-/// foods), for scoping weight estimates.
-fn own_foods(
-    conn: &mut PgConnection,
-    recipes: &[Vec<Ingredient>],
-) -> Result<Vec<String>, ApiError> {
-    let learned = load_learned(
-        conn,
-        recipes
-            .iter()
-            .flatten()
-            .map(|ingredient| ingredient.item.as_str()),
-    )
-    .map_err(db_error)?;
-    let foods: BTreeSet<String> = recipes
-        .iter()
-        .flatten()
-        .filter_map(|ingredient| {
-            match catalog::resolve_line_with(&ingredient.item, ingredient.note.as_deref(), &learned)
-            {
-                Resolution::Entry { entry, .. } => Some(entry.id.clone()),
-                _ => catalog::learned_estimate(&ingredient.item, &learned)
-                    .map(|_| nutrition::estimated_food_id(&ingredient.item)),
-            }
-        })
-        .collect();
-    Ok(foods.into_iter().collect())
-}
-
 #[utoipa::path(
     get,
     path = "/api/ingredient-names/status",
@@ -210,8 +147,6 @@ pub async fn get_ingredient_names_status(
             .select((names::name, names::error, names::attempts))
             .load(conn)
             .map_err(db_error)?;
-        let foods = own_foods(conn, &recipes)?;
-        let weights = ingredient_weights::counts(conn, &foods).map_err(db_error)?;
         Ok(IngredientNamesStatusResponse {
             recognized: count(RESOLVED, Some("entry")),
             estimated: count(RESOLVED, Some("estimate")),
@@ -227,23 +162,6 @@ pub async fn get_ingredient_names_status(
                     attempts,
                 })
                 .collect(),
-            weights: IngredientWeightsStatus {
-                estimated: weights.estimated,
-                no_typical_weight: weights.no_typical_weight,
-                pending: weights.pending,
-                failed: weights.failed,
-                failures: weights
-                    .failures
-                    .into_iter()
-                    .take(FAILURES_SHOWN as usize)
-                    .map(|(key, error, attempts)| IngredientWeightFailure {
-                        food: key.food,
-                        unit: key.unit,
-                        error,
-                        attempts,
-                    })
-                    .collect(),
-            },
         })
     })
     .await?;
@@ -255,7 +173,7 @@ pub async fn get_ingredient_names_status(
     path = "/api/ingredient-names/retry",
     tag = "ingredient_names",
     responses(
-        (status = 200, description = "Failed names and weights queued again", body = IngredientNamesQueuedResponse),
+        (status = 200, description = "Failed names queued again", body = IngredientNamesQueuedResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse)
     ),
     security(("bearer_auth" = []))
@@ -268,10 +186,7 @@ pub async fn retry_ingredient_names(
     let queued = run_db(&pool, move |conn| {
         let recipes = own_recipes(conn, user_id)?;
         let own = own_names(conn, user_id, &recipes)?;
-        let names = requeue_failed(conn, &own).map_err(db_error)?;
-        let foods = own_foods(conn, &recipes)?;
-        let weights = ingredient_weights::requeue_failed(conn, &foods).map_err(db_error)?;
-        Ok(names + weights)
+        requeue_failed(conn, &own).map_err(db_error)
     })
     .await?;
     wake();
@@ -290,8 +205,6 @@ pub fn router() -> Router<AppState> {
     components(schemas(
         IngredientNamesStatusResponse,
         IngredientNameFailure,
-        IngredientWeightsStatus,
-        IngredientWeightFailure,
         IngredientNamesQueuedResponse
     ))
 )]
