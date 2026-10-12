@@ -1099,6 +1099,63 @@ fn per_item_weights_multiply_the_count() {
 }
 
 #[test]
+fn a_weight_in_the_note_weighs_a_counted_line() {
+    let noted = |raw: &str, item: &str, amount: &str, note: &str| ParsedIngredient {
+        measurements: vec![Measurement {
+            amount: Some(amount.into()),
+            unit: None,
+        }],
+        note: Some(note.into()),
+        raw: Some(raw.into()),
+        ..ingredient(item, "", "")
+    };
+    let calories = |line: ParsedIngredient| {
+        estimate(&[line], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| (range.min, range.max))
+    };
+    let grams = |item: &str, grams: f64| {
+        calories(ingredient(item, &grams.to_string(), "g"))
+            .unwrap()
+            .0
+    };
+    let pound = 453.59237;
+    // Four packages of 8 oz, not 8 oz in all.
+    let (min, max) = calories(noted(
+        "4 (8 ounce packages) cream cheese",
+        "cream cheese",
+        "4",
+        "8 ounce packages",
+    ))
+    .unwrap();
+    assert!((min - grams("cream cheese", 32.0 * 28.349523125)).abs() < 1e-9);
+    assert_eq!(min, max);
+    // The roast's own weight, as a range.
+    let (min, max) = calories(noted(
+        "1 3-to-4-rib roast of beef, approximately 8 to 10 pounds",
+        "3-to-4-rib roast of beef",
+        "1",
+        "approximately 8 to 10 pounds",
+    ))
+    .unwrap();
+    assert!((min - grams("3-to-4-rib roast of beef", 8.0 * pound)).abs() < 1e-6);
+    assert!((max - grams("3-to-4-rib roast of beef", 10.0 * pound)).abs() < 1e-6);
+    // The note only weighs what the catalog can't: a food with a piece
+    // weight is counted by it.
+    let fillets = |note: &str| {
+        calories(noted(
+            "2 salmon fillets, about 1 lb",
+            "salmon fillets",
+            "2",
+            note,
+        ))
+    };
+    assert_eq!(fillets("about 1 lb"), fillets("skin on"));
+    assert!(fillets("skin on").is_some());
+}
+
+#[test]
 fn alternatives_count_the_first_and_say_so() {
     let line = |item: &str| {
         let result = estimate(&[ingredient(item, "100", "g")], None, 1.0).unwrap();

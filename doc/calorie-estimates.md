@@ -34,10 +34,13 @@ picks up a catalog deploy's changes). An item is touched, and so sent to
 syncing clients, only when its category actually changed, so no deploy
 re-syncs every list.
 
-Where the code doesn't match this yet (each item has an issue in `issues/`):
-- **Quantity parsing** (ranges, "plus" compounds, "each", package sizes) lives
-  in `nutrition`. It is to move into parser normalization, leaving unit-to-grams
-  conversion and the trace and frying rules.
+Quantities are read before either step, by
+`ramekin-core/src/ingredient_parser/quantity.rs`: each of a line's
+measurements becomes an amount (or range) and a unit in canonical form, a mass
+or container weight in grams, a volume in cups, an inch size, or a counted
+piece. Ranges, "plus" compounds, "each", package sizes and weights stated only
+in the note are all handled there. `nutrition` only converts those units to
+grams with the food's data and applies the trace and frying rules.
 
 Database data the design no longer uses (`reasked`, `reask_error`,
 `candidates` on the name and weight tables, the old runtime weights queue's
@@ -111,6 +114,13 @@ fluid-ounce portions (zero-amount rows excluded). An entry without a density pro
   first measurement ("2 cans each artichoke hearts") is the plain unit; a
   primary that is already a weight or volume ("1 cup", "50 g each") keeps the
   primary.
+- A weight stated only in the note of a counted line ("4 (8 ounce packages)
+  cream cheese", "1 rib roast, approximately 8 to 10 pounds") weighs the line
+  when nothing else can. It weighs one item when it says so ("6 oz each", "8
+  ounce packages"), reads as an adjective ("4 (7- to 9-ounce) potatoes"), or
+  sits in parentheses right after the count ("2 (8 oz) chicken breasts");
+  otherwise ("2 salmon fillets, about 1 lb") it is the whole line's weight. A
+  food's own piece weight comes first.
 - Counts use USDA per-piece weights (catalog README, "Piece rules"): "3 eggs"
   (large, 50 g each), "2 cloves garlic" (3 g), "1 medium onion" (110 g), "1
   stalk celery" (40 g), "1 1/2 sticks butter" (113 g each). A count the food
