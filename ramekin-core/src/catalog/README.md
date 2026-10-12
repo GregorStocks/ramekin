@@ -369,15 +369,18 @@ that appears in both releases.
   loses that.
 - An alias or not-food key must be needed. `make catalog-clean-aliases` also
   removes every key the resolver reaches anyway: hidden from the catalog, the
-  key and every item name in the repo's corpora that could reach it (the
+  key and every ingredient line in the repo's corpora that could reach it (the
   pipeline and Paprika parser fixtures, `data/pipeline-snapshots`, and the
-  shopping-list corpus; a name reaches a key only if it has all the key's
-  words, plurals aside) still resolve to the same thing. "chopped fresh basil"
+  shopping-list corpus; a line reaches a key only if its item has all the
+  key's words, plurals aside) estimate exactly as before. That compares the
+  food the item and note resolve to, the item's own resolution, and the
+  alternative the estimate says it assumed ("assumed mild" for "mild or spicy
+  italian sausage" stays, though "italian sausage" would read better). "chopped fresh basil"
   goes, because modifier stripping finds "basil". Longer keys go first, so of
   two keys that only need each other ("tomato", "tomatoes") the shorter stays.
   Ambiguous (null) aliases are deliberate and stay, as do names `bespoke.json`
   gives pieces. Rerun it until it reports nothing, since a removal can leave
-  another key redundant. The first run (2026-10-12) removed 754 keys. Keys
+  another key redundant. The first run (2026-10-12) removed 710 keys. Keys
   starting with "a pinch of", "a few sprigs" and the like stay: the parser
   keeps those words in `item` today, so the keys still match real lines.
   Recipes already stored keep the items an older parser gave them. After that

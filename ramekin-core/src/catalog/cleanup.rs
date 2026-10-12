@@ -20,8 +20,8 @@ use std::path::Path;
 
 use serde_json::{Map, Value};
 
-use super::resolve::resolve_without;
-use super::{normalize, Resolution, BESPOKE_JSON, CATALOG};
+use super::resolve::{chosen_alternative, resolve, with_hidden};
+use super::{normalize, resolve_line, Resolution, BESPOKE_JSON, CATALOG};
 use crate::ingredient_parser::parse_ingredient;
 
 #[derive(Debug, PartialEq, Eq)]
@@ -102,12 +102,11 @@ fn is_clean_rename(name: &str, parsed: &str) -> bool {
 
 /// How a name resolves, comparably: the entry id, or the kind of non-match.
 fn outcome(name: &str) -> String {
-    outcome_without(name, &HashSet::new())
+    describe(resolve(name))
 }
 
-/// How a name would resolve without the catalog names in `hidden`.
-fn outcome_without(name: &str, hidden: &HashSet<String>) -> String {
-    match resolve_without(name, hidden) {
+fn describe(resolution: Resolution) -> String {
+    match resolution {
         Resolution::Entry { entry, .. } => format!("entry {}", entry.id),
         Resolution::Compound(entries) => format!(
             "compound {}",
@@ -121,6 +120,22 @@ fn outcome_without(name: &str, hidden: &HashSet<String>) -> String {
         Resolution::Ambiguous(_) => "ambiguous".to_string(),
         Resolution::Unresolved => "unresolved".to_string(),
     }
+}
+
+/// Everything a calorie estimate takes from the catalog for one line, without
+/// the catalog names in `hidden`: the food its item and note resolve to, the
+/// item's own resolution (an ambiguous item is reported as such), and the
+/// alternative it says it assumed.
+fn line_outcome(line: &(String, Option<String>), hidden: &HashSet<String>) -> String {
+    let (item, note) = line;
+    with_hidden(hidden, || {
+        format!(
+            "{} / {} / {:?}",
+            describe(resolve_line(item, note.as_deref())),
+            outcome(item),
+            chosen_alternative(item)
+        )
+    })
 }
 
 /// Plan and apply the cleanup to curated.json's text. Returns the new text
@@ -266,9 +281,9 @@ pub struct CleanupNames {
     /// Normalized hand-typed shopping-list items; their keys are never
     /// re-keyed, even when the parser would split them.
     pub typed: BTreeSet<String>,
-    /// Normalized item names (typed ones included) whose resolution removing
-    /// a redundant key must not change.
-    pub corpus: BTreeSet<String>,
+    /// Item lines (item and note; typed items included) whose estimate
+    /// removing a redundant key must not change.
+    pub corpus: BTreeSet<(String, Option<String>)>,
 }
 
 impl CleanupNames {
@@ -281,28 +296,33 @@ impl CleanupNames {
             serde_json::from_str(&text)
                 .unwrap_or_else(|e| panic!("parsing {}: {e}", path.display()))
         };
-        let items = |value: &Value, pointer: &str| -> Vec<String> {
+        let lines = |value: &Value, prefix: &str| -> Vec<(String, Option<String>)> {
             value
                 .as_array()
                 .expect("an array of ingredients")
                 .iter()
-                .filter_map(|line| line.pointer(pointer)?.as_str().map(normalize))
+                .filter_map(|line| {
+                    let item = line.pointer(&format!("{prefix}/item"))?.as_str()?;
+                    let note = line
+                        .pointer(&format!("{prefix}/note"))
+                        .and_then(Value::as_str);
+                    (!item.trim().is_empty()).then(|| (item.to_string(), note.map(str::to_string)))
+                })
                 .collect()
         };
-        let typed: BTreeSet<String> = items(&read(&root.join(SHOPPING_CORPUS)), "/item")
-            .into_iter()
-            .collect();
-        let mut corpus = typed.clone();
-        for (dir, pointer) in [
+        let shopping = lines(&read(&root.join(SHOPPING_CORPUS)), "");
+        let typed = shopping.iter().map(|(item, _)| normalize(item)).collect();
+        let mut corpus: BTreeSet<_> = shopping.into_iter().map(|(item, _)| (item, None)).collect();
+        for (dir, prefix) in [
             (
                 "ramekin-core/tests/fixtures/ingredient_parsing/pipeline",
-                "/expected/item",
+                "/expected",
             ),
             (
                 "ramekin-core/tests/fixtures/ingredient_parsing/paprika",
-                "/expected/item",
+                "/expected",
             ),
-            ("data/pipeline-snapshots", "/item"),
+            ("data/pipeline-snapshots", ""),
         ] {
             let dir = root.join(dir);
             let entries = std::fs::read_dir(&dir)
@@ -310,11 +330,10 @@ impl CleanupNames {
             for entry in entries {
                 let path = entry.expect("a directory entry").path();
                 if path.extension().is_some_and(|ext| ext == "json") {
-                    corpus.extend(items(&read(&path)["ingredients"], pointer));
+                    corpus.extend(lines(&read(&path)["ingredients"], prefix));
                 }
             }
         }
-        corpus.retain(|name| !name.is_empty());
         CleanupNames { typed, corpus }
     }
 }
@@ -342,9 +361,9 @@ fn stems(name: &str) -> BTreeSet<String> {
 
 /// The keys left in `curated` that nothing needs: hidden from the catalog
 /// (with the keys `changes` already removed), the key itself and every corpus
-/// name that could reach it still resolve as they do now. A name reaches a key
-/// only through spellings built from its own words, so only names with all
-/// of the key's words are checked. Longer keys go first, so of two keys that
+/// line that could reach it still estimate as they do now (`line_outcome`). A
+/// name reaches a key only through spellings built from its own words, so only
+/// lines whose item has all of the key's words are checked. Longer keys go first, so of two keys that
 /// only need each other ("tomato", "tomatoes") the shorter stays.
 ///
 /// Ambiguous (null) aliases are deliberate overrides and always stay, as do
@@ -353,18 +372,18 @@ fn stems(name: &str) -> BTreeSet<String> {
 fn redundant_keys(
     curated: &Map<String, Value>,
     changes: &[CuratedChange],
-    corpus: &BTreeSet<String>,
+    corpus: &BTreeSet<(String, Option<String>)>,
 ) -> Vec<CuratedChange> {
     let bespoke: Value = serde_json::from_str(BESPOKE_JSON).expect("bespoke.json is JSON");
     let bespoke = bespoke["pieces"].as_object().expect("bespoke pieces");
-    let corpus: Vec<&String> = corpus.iter().collect();
+    let corpus: Vec<&(String, Option<String>)> = corpus.iter().collect();
     let mut by_stem: HashMap<String, Vec<usize>> = HashMap::new();
-    for (index, name) in corpus.iter().enumerate() {
-        for word in stems(name) {
+    for (index, (item, _)) in corpus.iter().enumerate() {
+        for word in stems(&item.to_lowercase()) {
             by_stem.entry(word).or_default().push(index);
         }
     }
-    let mut now: HashMap<&str, String> = HashMap::new();
+    let mut now: HashMap<(String, Option<String>), String> = HashMap::new();
     let mut hidden: HashSet<String> = changes
         .iter()
         .filter_map(|change| match change {
@@ -400,16 +419,19 @@ fn redundant_keys(
                 None => names,
             });
         }
-        let names = std::iter::once(key.as_str()).chain(
+        let lines = std::iter::once((key.clone(), None)).chain(
             reaching
                 .into_iter()
                 .flatten()
-                .map(|index| corpus[index].as_str()),
+                .map(|index| corpus[index].clone()),
         );
         hidden.insert(key.clone());
-        let unchanged = names.into_iter().all(|name| {
-            let before = now.entry(name).or_insert_with(|| outcome(name)).clone();
-            outcome_without(name, &hidden) == before
+        let unchanged = lines.into_iter().all(|line| {
+            let after = line_outcome(&line, &hidden);
+            let before = now
+                .entry(line)
+                .or_insert_with_key(|line| line_outcome(line, &HashSet::new()));
+            after == *before
         });
         if unchanged {
             redundant.push(CuratedChange::Redundant {

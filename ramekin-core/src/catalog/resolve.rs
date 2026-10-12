@@ -226,13 +226,13 @@ fn lookup(name: &str) -> Option<(Target, Via)> {
         .map(|target| (target, Via::Plural))
 }
 
-/// How `item` would resolve if the catalog lacked the names in `hidden`, for
-/// finding aliases the resolver no longer needs.
-pub(crate) fn resolve_without(item: &str, hidden: &HashSet<String>) -> Resolution {
+/// Run `f` as if the catalog lacked the names in `hidden`, for finding
+/// aliases the resolver no longer needs.
+pub(crate) fn with_hidden<T>(hidden: &HashSet<String>, f: impl FnOnce() -> T) -> T {
     HIDDEN.with(|cell| cell.borrow_mut().clone_from(hidden));
-    let resolution = resolve(item);
+    let result = f();
     HIDDEN.with(|cell| cell.borrow_mut().clear());
-    resolution
+    result
 }
 
 /// Resolve one already-normalized name as a single food, trying progressively
