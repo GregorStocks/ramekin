@@ -192,6 +192,9 @@ pub fn load_learned_for_write<'a>(
         names::table
             .filter(names::name.eq_any(&wanted))
             .select(names::name)
+            // By name, the order `save_resolved` updates them in, so the two
+            // can't deadlock.
+            .order(names::name)
             .for_share()
             .load::<String>(conn)?;
     }
@@ -582,9 +585,12 @@ async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String)
 
 async fn save_resolved(
     pool: &Arc<DbPool>,
-    answers: Vec<(String, NameResolution)>,
+    mut answers: Vec<(String, NameResolution)>,
     model: String,
 ) -> Result<(), String> {
+    // Updated by name, the order writes lock name rows in
+    // (`load_learned_for_write`), so the two can't deadlock.
+    answers.sort_by(|(a, _), (b, _)| a.cmp(b));
     let resolved = answers.len();
     // Only entries and non-foods give a shopping category. A pending name has
     // no earlier answer, so nothing else changes one.
