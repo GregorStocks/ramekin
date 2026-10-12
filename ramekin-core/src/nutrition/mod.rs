@@ -13,7 +13,7 @@ use crate::metric_weights::parse_amount;
 /// A weight the catalog lacks for one food: grams per `unit` of the catalog
 /// entry `food` (its id). `unit` is "cup" for any volume (a missing density),
 /// else the counted unit in the catalog's piece spelling ("bunch", "head",
-/// "large"), or "piece" for a bare count.
+/// "large").
 #[derive(Debug, Clone, PartialEq, Eq, Hash, PartialOrd, Ord)]
 pub struct WeightKey {
     pub food: String,
@@ -21,9 +21,12 @@ pub struct WeightKey {
 }
 
 /// The units a weight is estimated for, in `catalog::piece_unit` spelling:
-/// "cup" for any volume, "piece" for a bare count, sizes, and common counted
-/// units and packages. Anything else ("1/2-inch pieces", a typo) stays unknown
-/// rather than becoming a paid question.
+/// "cup" for any volume, sizes, and common counted units and packages.
+/// Anything else ("1/2-inch pieces", a typo) stays unknown rather than
+/// becoming a paid question. A bare count ("3 shallots", "2 pieces") is never
+/// estimated: many aliases share one entry while meaning different pieces
+/// (toast fingers and bread slices, Fun Size and full-size bars, nori strips
+/// and sheets), so only the catalog's own default piece weighs one.
 pub const ESTIMABLE_UNITS: &[&str] = &[
     "bag",
     "ball",
@@ -59,7 +62,6 @@ pub const ESTIMABLE_UNITS: &[&str] = &[
     "medium",
     "package",
     "packet",
-    "piece",
     "pouch",
     "rib",
     "ring",
@@ -563,7 +565,6 @@ fn grams_per_unit(unit: &str, food: &Food) -> Result<CalorieRange, &'static str>
     let normalized = normalize(unit);
     if normalized.is_empty() {
         return catalog::grams_per_piece(food.entry, None)
-            .or_else(|| food.estimated("piece"))
             .map(exact)
             .ok_or("Unsupported quantity unit");
     }

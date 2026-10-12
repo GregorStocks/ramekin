@@ -6,12 +6,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "alcoholic beverage, beer, regular, all": {
-      "piece": {
-        "grams": 356.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "alcoholic beverage, wine, table, all": {
       "bottle": {
         "grams": 740.0,
@@ -24,19 +18,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "all-purpose flour": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "artichoke hearts": {
       "large": {
         "grams": 35.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 25.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -105,23 +89,7 @@
       }
     },
     "beef, chuck, arm pot roast, separable lean and fat, trimmed to 1/8\" fat, all grades, raw": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      },
       "small": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "beef, rib eye steak/roast, boneless, lip-on, separable lean and fat, trimmed to 1/8\" fat, all grades, raw": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "beef, rib, whole (ribs 6-12), separable lean and fat, trimmed to 1/8\" fat, all grades, raw": {
-      "piece": {
         "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
@@ -129,12 +97,6 @@
     "beef, variety meats and by-products, suet, raw": {
       "cup": {
         "grams": 115.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "beverages, coffee, brewed, espresso, restaurant-prepared": {
-      "piece": {
-        "grams": 30.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -148,19 +110,11 @@
       "large": {
         "grams": 8.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 5.0,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "bread, egg": {
       "large": {
         "grams": 50.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 40.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -172,25 +126,11 @@
       "large": {
         "grams": 50.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 40.0,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "bread, french or vienna, toasted (includes sourdough)": {
       "box": {
         "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 30.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "bread, italian": {
-      "piece": {
-        "grams": 30.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -212,21 +152,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "bread, white, commercially prepared (includes soft bread crumbs)": {
-      "piece": {
-        "grams": 27.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "bread, whole-wheat, commercially prepared": {
       "cup": {
         "grams": 45.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "brioche buns": {
-      "piece": {
-        "grams": 70.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -236,31 +164,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "broccoli, raw": {
-      "piece": {
-        "grams": 150.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "broth": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "brown sugar": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "burrata": {
       "large": {
         "grams": 225.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 125.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -279,16 +185,6 @@
     "cabbage, chinese (pak-choi), raw": {
       "bunch": {
         "grams": 450.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 200.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "cabbage, chinese (pe-tsai), raw": {
-      "piece": {
-        "grams": 900.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -350,10 +246,6 @@
       "cup": {
         "grams": 190.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 6.0,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "candies, marshmallows": {
@@ -364,10 +256,6 @@
       "large": {
         "grams": 7.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 7.0,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "candies, milk chocolate": {
@@ -376,19 +264,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "candies, nestle, butterfinger bar": {
-      "piece": {
-        "grams": 54.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "candies, semisweet chocolate": {
       "cup": {
         "grams": 170.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -440,19 +318,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "cheese, cheddar, sharp, sliced": {
-      "piece": {
-        "grams": 21.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "cheese, goat, soft type": {
       "cup": {
         "grams": 140.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -474,33 +342,15 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "cheese, ricotta, whole milk": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "cheese, romano": {
       "cup": {
         "grams": 100.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained solids": {
-      "piece": {
-        "grams": 0.5,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "chili bean sauce": {
       "cup": {
         "grams": 260.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "chipotle chile in adobo sauce": {
-      "piece": {
-        "grams": 15.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -511,10 +361,6 @@
       },
       "cup": {
         "grams": 48.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -539,12 +385,6 @@
     "clementines, raw": {
       "cup": {
         "grams": 190.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "cocoa powder": {
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -578,31 +418,15 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "cornstarch": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "crackers, matzo, plain": {
       "cup": {
         "grams": 45.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "crackers, saltines (includes oyster, soda, soup)": {
-      "piece": {
-        "grams": 3.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "cream cheese": {
       "package": {
         "grams": 227.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -624,10 +448,6 @@
       "medium": {
         "grams": 10.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 12.0,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "cucumber, with peel, raw": {
@@ -636,21 +456,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "currants, zante, dried": {
-      "piece": {
-        "grams": 0.2,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "dates, medjool": {
       "cup": {
         "grams": 170.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "dessert topping, semi solid, frozen": {
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -684,12 +492,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "fish, salmon, atlantic, farmed, raw": {
-      "piece": {
-        "grams": 170.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "fish, salmon, chinook, smoked": {
       "slice": {
         "grams": 20.0,
@@ -699,18 +501,6 @@
     "fish, tuna, fresh, yellowfin, raw": {
       "small": {
         "grams": 113.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "fish, tuna, light, canned in oil, drained solids": {
-      "piece": {
-        "grams": 115.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "frankfurter, meat": {
-      "piece": {
-        "grams": 45.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -730,36 +520,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "ginger root, raw": {
-      "piece": {
-        "grams": 15.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "granulated sugar": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "gravy, brown, dry": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "guacamole": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "gummy worms": {
-      "piece": {
-        "grams": 5.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "gums, seed gums (includes locust bean, guar)": {
       "cup": {
         "grams": 140.0,
@@ -769,12 +529,6 @@
     "hearts of palm, raw": {
       "cup": {
         "grams": 145.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "heavy cream": {
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -794,10 +548,6 @@
       "cup": {
         "grams": 132.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "italian seasoning": {
@@ -812,19 +562,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "jujube, raw": {
-      "piece": {
-        "grams": 15.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "kale, raw": {
       "handful": {
         "grams": 20.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -840,33 +580,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "kombu": {
-      "piece": {
-        "grams": 5.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "lamb, leg, whole (shank and sirloin), separable lean and fat, trimmed to 1/4\" fat, choice, raw": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "leavening agents, yeast, baker's, active dry": {
-      "piece": {
-        "grams": 7.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "lemon grass (citronella), raw": {
       "stalk": {
         "grams": 25.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "lemon peel, raw": {
-      "piece": {
-        "grams": 3.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -876,19 +592,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "lettuce": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "lettuce, cos or romaine, raw": {
       "cup": {
         "grams": 47.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -899,10 +605,6 @@
       },
       "large": {
         "grams": 400.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -924,33 +626,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "marinated artichoke hearts": {
-      "piece": {
-        "grams": 12.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "mascarpone cheese": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "matcha": {
       "cup": {
         "grams": 96.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "melons, honeydew, raw": {
-      "piece": {
-        "grams": 1280.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "milk": {
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -998,12 +676,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "nori": {
-      "piece": {
-        "grams": 2.5,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "nuts, almonds, dry roasted, without salt added": {
       "cup": {
         "grams": 138.0,
@@ -1013,10 +685,6 @@
     "nuts, cashew nuts, raw": {
       "cup": {
         "grams": 137.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 1.5,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1038,12 +706,6 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "nuts, pecans": {
-      "piece": {
-        "grams": 1.4,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "nuts, pecans, dry roasted, without salt added": {
       "cup": {
         "grams": 110.0,
@@ -1053,16 +715,6 @@
     "nuts, walnuts, english": {
       "handful": {
         "grams": 28.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 4.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "olive oil": {
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1088,16 +740,6 @@
       "cup": {
         "grams": 100.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 40.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "orange peel, raw": {
-      "piece": {
-        "grams": 6.0,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "pancetta": {
@@ -1122,19 +764,11 @@
       "cup": {
         "grams": 100.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "pasta, dry, unenriched": {
       "cup": {
         "grams": 100.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1157,12 +791,6 @@
     "peanuts, all types, dry-roasted, with salt": {
       "cup": {
         "grams": 146.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "peas, green, raw": {
-      "piece": {
-        "grams": 0.4,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1192,21 +820,11 @@
       "jar": {
         "grams": 340.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 12.0,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "peppers, jalapeno, canned, solids and liquids": {
       "slice": {
         "grams": 2.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "peppers, sweet, red, canned, solids and liquids": {
-      "piece": {
-        "grams": 45.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1225,12 +843,6 @@
     "pie crust, refrigerated, regular, unbaked": {
       "package": {
         "grams": 400.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "pie crust, standard-type, prepared from recipe, unbaked": {
-      "piece": {
-        "grams": 190.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1254,16 +866,6 @@
       "cup": {
         "grams": 135.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 4.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "pizza dough": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "pomegranates, raw": {
@@ -1282,35 +884,9 @@
       "cup": {
         "grams": 150.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": 25.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "pork, cured, ham, boneless, regular (approximately 11% fat), roasted": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "pork, fresh, shoulder, whole, separable lean and fat, raw": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "puddings, vanilla, dry mix, instant": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "pumpkin, raw": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      },
       "small": {
         "grams": 1400.0,
         "model": "anthropic/claude-opus-5.5"
@@ -1338,45 +914,15 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "raisins, dark, seedless (includes foods for usda's food distribution program)": {
-      "piece": {
-        "grams": 0.5,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "red gel icing": {
       "cup": {
         "grams": 310.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "refried beans, canned, traditional style": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "rice noodles, dry": {
       "small": {
         "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "rice, white, short-grain, cooked, unenriched": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "rolls, dinner, plain, commercially prepared (includes brown-and-serve)": {
-      "piece": {
-        "grams": 28.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "rolls, hamburger or hotdog, plain": {
-      "piece": {
-        "grams": 43.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1410,19 +956,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "sauce, ready-to-serve, pepper or hot": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "sauce, salsa, ready-to-serve": {
       "jar": {
         "grams": 454.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1435,12 +971,6 @@
     "sausage, italian, pork, mild, raw": {
       "cup": {
         "grams": 225.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "sausage, smoked link sausage, pork and beef": {
-      "piece": {
-        "grams": 68.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1465,12 +995,6 @@
     "shallots, raw": {
       "cup": {
         "grams": 160.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "shirataki noodles": {
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1510,21 +1034,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "soup, beef broth or bouillon canned, ready-to-serve": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "soup, beef broth or bouillon, powder, dry": {
       "cup": {
         "grams": 100.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "soup, chicken broth or bouillon, dry": {
-      "piece": {
-        "grams": 5.0,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1556,21 +1068,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "spices, cardamom": {
-      "piece": {
-        "grams": 0.2,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "spices, cinnamon, ground": {
       "small": {
         "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "spices, cloves, ground": {
-      "piece": {
-        "grams": 0.1,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1587,10 +1087,6 @@
       }
     },
     "squash, winter, all varieties, raw": {
-      "piece": {
-        "grams": 700.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
       "slice": {
         "grams": 80.0,
         "model": "anthropic/claude-opus-5.5"
@@ -1598,10 +1094,6 @@
     },
     "squash, winter, butternut, raw": {
       "medium": {
-        "grams": 1000.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
         "grams": 1000.0,
         "model": "anthropic/claude-opus-5.5"
       },
@@ -1621,10 +1113,6 @@
         "grams": 1.0,
         "model": "anthropic/claude-opus-5.5"
       },
-      "piece": {
-        "grams": 0.8,
-        "model": "anthropic/claude-opus-5.5"
-      },
       "small": {
         "grams": 0.5,
         "model": "anthropic/claude-opus-5.5"
@@ -1634,37 +1122,11 @@
       "package": {
         "grams": 397.0,
         "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "tomato products, canned, paste, without salt added (includes foods for usda's food distribution program)": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "tomato products, canned, sauce": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "tomatoes, crushed, canned": {
-      "piece": {
-        "grams": null,
-        "model": "anthropic/claude-opus-5.5"
       }
     },
     "toppings, butterscotch or caramel": {
       "jar": {
         "grams": 347.0,
-        "model": "anthropic/claude-opus-5.5"
-      },
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },
@@ -1674,27 +1136,9 @@
         "model": "anthropic/claude-opus-5.5"
       }
     },
-    "tortillas, ready-to-bake or -fry, whole wheat": {
-      "piece": {
-        "grams": 45.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
     "turkey, whole, meat only, cooked, roasted": {
       "cup": {
         "grams": 140.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "umeboshi pickled sour plum": {
-      "piece": {
-        "grams": 10.0,
-        "model": "anthropic/claude-opus-5.5"
-      }
-    },
-    "vanilla extract": {
-      "piece": {
-        "grams": null,
         "model": "anthropic/claude-opus-5.5"
       }
     },

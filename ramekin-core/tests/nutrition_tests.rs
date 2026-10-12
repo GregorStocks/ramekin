@@ -1213,26 +1213,14 @@ fn every_estimated_weight_is_used() {
         for (unit, weight) in units {
             let Some(grams) = weight.grams else { continue };
             // Twenty, past the few pieces of a trace food that are
-            // negligible. "piece" is both a bare count and "pieces".
-            let mut lines = vec![ingredient(id, "20", unit)];
-            if unit == "piece" {
-                lines[0].measurements[0].unit = None;
-                lines.push(ingredient(id, "20", "pieces"));
-            }
+            // negligible.
+            let result = estimate(&[ingredient(id, "20", unit)], None, 1.0).unwrap();
             let kcal = entry.kcal_per_100g.unwrap_or_default() * grams * 20.0 / 100.0;
-            let texts: Vec<String> = lines
-                .into_iter()
-                .map(|line| estimate(&[line], None, 1.0).unwrap())
-                .filter(|result| {
-                    !result
-                        .known_calories
-                        .is_some_and(|known| (known.max - kcal).abs() < 1e-6)
-                        || !result.lines[0].text.contains("estimated weight")
-                })
-                .map(|result| result.lines[0].text.clone())
-                .collect();
-            if texts.len() == if unit == "piece" { 2 } else { 1 } {
-                unused.push(format!("{id} per {unit}: {texts:?}"));
+            let counted = result
+                .known_calories
+                .is_some_and(|known| (known.max - kcal).abs() < 1e-6);
+            if !counted || !result.lines[0].text.contains("estimated weight") {
+                unused.push(format!("{id} per {unit}: {}", result.lines[0].text));
             }
         }
     }
