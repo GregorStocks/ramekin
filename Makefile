@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ios-build-ui-tests ios-test-ui-prebuilt ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import catalog-apply-classification catalog-harvest-learned catalog-fill-weights catalog-clean-aliases shopping-list-categorizer-test ingredient-catalog-audit ingredient-catalog-unresolved ingredient-catalog-uncategorized ai-eval ai-eval-golden ai-eval-judge server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ios-build-ui-tests ios-test-ui-prebuilt ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import catalog-apply-classification catalog-fill-weights catalog-clean-aliases shopping-list-categorizer-test ingredient-catalog-audit ingredient-catalog-unresolved ingredient-catalog-uncategorized ai-eval ai-eval-golden ai-eval-judge server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -402,11 +402,7 @@ catalog-fill-weights: ## Ask the model (cli.env) for the weights the catalog can
 		$(if $(PROD_RECIPES),--prod-recipes $(PROD_RECIPES),) \
 		$(if $(LEARNED),--learned $(LEARNED),)
 
-catalog-harvest-learned: ## Write the server's learned names (LEARNED=learned.json) as classification decisions to logs/catalog-harvest-learned.json
-	@test -n "$(LEARNED)" || { echo "usage: make catalog-harvest-learned LEARNED=path/to/learned.json" >&2; exit 1; }
-	@cargo run -q --release --manifest-path cli/Cargo.toml -- catalog-harvest-learned --learned "$(LEARNED)"
-
-catalog-clean-aliases: ## Re-key or remove curated aliases the ingredient parser no longer produces (report in logs/catalog-alias-cleanup.md)
+catalog-clean-aliases: ## Re-key or remove curated aliases the parser no longer produces or the resolver no longer needs (report in logs/catalog-alias-cleanup.md)
 	@cargo run -q --release --manifest-path cli/Cargo.toml -- catalog-clean-aliases
 
 ingredient-catalog-unresolved: ## Write names the ingredient catalog does not resolve to logs/catalog-unresolved.json (optional PROD_RECIPES=)

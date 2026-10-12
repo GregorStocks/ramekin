@@ -269,16 +269,13 @@ fn load_pipeline_run_corpus(runs_dir: &Path) -> Result<Corpus> {
 }
 
 /// A row of the server's `ingredient_name_resolutions` table, as exported
-/// for `--learned` and `catalog-harvest-learned`.
+/// for `--learned`.
 #[derive(Deserialize)]
-pub(crate) struct LearnedRow {
-    pub name: String,
-    pub status: String,
-    pub disposition: Option<String>,
-    pub catalog_key: Option<String>,
-    /// The model that answered.
-    #[serde(default)]
-    pub model: Option<String>,
+struct LearnedRow {
+    name: String,
+    status: String,
+    disposition: Option<String>,
+    catalog_key: Option<String>,
     #[serde(default)]
     kcal_per_100g: Option<f64>,
     #[serde(default)]
@@ -289,7 +286,7 @@ pub(crate) struct LearnedRow {
 
 impl LearnedRow {
     /// A resolved row's answer, as the server reads it.
-    pub fn target(&self) -> Result<LearnedTarget> {
+    fn target(&self) -> Result<LearnedTarget> {
         Ok(
             match (
                 self.disposition.as_deref(),
@@ -829,21 +826,20 @@ const CLEANUP_REPORT: &str = "logs/catalog-alias-cleanup.md";
 /// Re-key or remove curated names the parser no longer produces, writing
 /// curated.json and a report of every change and conflict.
 pub fn clean_aliases(root: &Path) -> Result<()> {
-    use ramekin_core::catalog::{clean_curated, CuratedChange};
+    use ramekin_core::catalog::{clean_curated, CleanupNames, CuratedChange};
     let path = root.join(CURATED_PATH);
     let json =
         fs::read_to_string(&path).with_context(|| format!("Failed to read {CURATED_PATH}"))?;
-    let shopping_items: Vec<ShoppingItem> = read_json(&root.join(SHOPPING_CORPUS))?;
-    let typed = shopping_items
-        .iter()
-        .map(|item| ramekin_core::catalog::normalize(&item.item))
-        .collect();
-    let (cleaned, changes) = clean_curated(&json, &typed);
+    let (cleaned, changes) = clean_curated(&json, &CleanupNames::load(root));
     fs::write(&path, cleaned).with_context(|| format!("Failed to write {CURATED_PATH}"))?;
-    let (mut removed, mut renamed, mut conflicts) = (Vec::new(), Vec::new(), Vec::new());
+    let (mut removed, mut redundant, mut renamed, mut conflicts) =
+        (Vec::new(), Vec::new(), Vec::new(), Vec::new());
     for change in &changes {
         match change {
             CuratedChange::Remove { section, name } => removed.push(format!("- {section}: {name}")),
+            CuratedChange::Redundant { section, name } => {
+                redundant.push(format!("- {section}: {name}"))
+            }
             CuratedChange::Rename { section, from, to } => {
                 renamed.push(format!("- {section}: {from} -> {to}"))
             }
@@ -858,9 +854,11 @@ pub fn clean_aliases(root: &Path) -> Result<()> {
         }
     }
     let report = format!(
-        "# Curated alias cleanup\n\n## Removed ({})\n\n{}\n\n## Renamed ({})\n\n{}\n\n## Conflicts, kept ({})\n\n{}\n",
+        "# Curated alias cleanup\n\n## Removed ({})\n\n{}\n\n## Redundant, removed ({})\n\n{}\n\n## Renamed ({})\n\n{}\n\n## Conflicts, kept ({})\n\n{}\n",
         removed.len(),
         removed.join("\n"),
+        redundant.len(),
+        redundant.join("\n"),
         renamed.len(),
         renamed.join("\n"),
         conflicts.len(),
@@ -869,8 +867,9 @@ pub fn clean_aliases(root: &Path) -> Result<()> {
     fs::create_dir_all(root.join("logs"))?;
     fs::write(root.join(CLEANUP_REPORT), report)?;
     tracing::info!(
-        "Removed {}, renamed {}, kept {} conflicts; report at {CLEANUP_REPORT}",
+        "Removed {} unparsed and {} redundant, renamed {}, kept {} conflicts; report at {CLEANUP_REPORT}",
         removed.len(),
+        redundant.len(),
         renamed.len(),
         conflicts.len()
     );

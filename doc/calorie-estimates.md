@@ -35,10 +35,6 @@ syncing clients, only when its category actually changed, so no deploy
 re-syncs every list.
 
 Where the code doesn't match this yet (each item has an issue in `issues/`):
-- **Curated data:** `curated.json` holds parser-leftover alias keys ("-ounce
-  block feta"), and a harvest loop (`make catalog-harvest-learned`) copies
-  learned answers into it. Junk keys are to be dropped under a rule a test
-  enforces, and the harvest loop deleted: learned answers live in the database.
 - **Quantity parsing** (ranges, "plus" compounds, "each", package sizes) lives
   in `nutrition`. It is to move into parser normalization, leaving unit-to-grams
   conversion and the trace and frying rules.

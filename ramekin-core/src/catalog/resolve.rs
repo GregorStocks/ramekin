@@ -1,5 +1,7 @@
 //! Turn a written ingredient name into a catalog entry.
 
+use std::cell::RefCell;
+use std::collections::HashSet;
 use std::sync::LazyLock;
 
 use regex::Regex;
@@ -198,15 +200,39 @@ fn plural_variants(name: &str) -> Vec<String> {
     variants
 }
 
+thread_local! {
+    /// Catalog names `resolve_without` hides from this thread's lookups.
+    static HIDDEN: RefCell<HashSet<String>> = RefCell::new(HashSet::new());
+}
+
+/// The catalog's target for one exact name, unless `resolve_without` hides it.
+fn indexed(name: &str) -> Option<Target> {
+    let target = CATALOG.index.get(name).copied()?;
+    let hidden = HIDDEN.with(|hidden| {
+        let hidden = hidden.borrow();
+        !hidden.is_empty() && hidden.contains(name)
+    });
+    (!hidden).then_some(target)
+}
+
 /// Exact lookup, then singular/plural variants.
 fn lookup(name: &str) -> Option<(Target, Via)> {
-    if let Some(target) = CATALOG.index.get(name) {
-        return Some((*target, Via::Exact));
+    if let Some(target) = indexed(name) {
+        return Some((target, Via::Exact));
     }
     plural_variants(name)
         .iter()
-        .find_map(|variant| CATALOG.index.get(variant).copied())
+        .find_map(|variant| indexed(variant))
         .map(|target| (target, Via::Plural))
+}
+
+/// How `item` would resolve if the catalog lacked the names in `hidden`, for
+/// finding aliases the resolver no longer needs.
+pub(crate) fn resolve_without(item: &str, hidden: &HashSet<String>) -> Resolution {
+    HIDDEN.with(|cell| cell.borrow_mut().clone_from(hidden));
+    let resolution = resolve(item);
+    HIDDEN.with(|cell| cell.borrow_mut().clear());
+    resolution
 }
 
 /// Resolve one already-normalized name as a single food, trying progressively
@@ -226,6 +252,8 @@ fn resolve_single(normalized: &str) -> Resolution {
     }
     let unmeasured = without_leading_measure(&normalized);
     let mut stripped_names = leading_strips(&normalized);
+    // "freshly ground black pepper to taste": both ends at once.
+    stripped_names.extend(leading_strips(&strip_modifiers(&normalized)));
     if let Some(unmeasured) = &unmeasured {
         stripped_names.push(unmeasured.clone());
         stripped_names.push(strip_modifiers(unmeasured));
@@ -382,7 +410,7 @@ pub fn chosen_alternative(item: &str) -> Option<String> {
         .flat_map(|(_, candidates)| candidates)
         .find(|name| matches!(resolve_single(name), Resolution::Entry { entry: e, .. } if std::ptr::eq(e, entry)))
         // An alias for the whole name whose chosen spelling names nothing on
-        // its own ("bundle lacinato kale, swiss chard or spinach" is kale):
+        // its own ("beef drippings or ghee" is beef fat):
         // aliases pick the first-listed food, so label that.
         .or(first)
 }

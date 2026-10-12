@@ -3,22 +3,33 @@
 //! Classification passes used to alias whatever string the parser left in
 //! `item`, including amounts and notes it failed to split off ("about 7 cloves
 //! garlic", "chickpeas, rinsed"). Once the parser splits them, those keys are
-//! dead weight. `clean_curated` re-parses every alias and not-food key and:
+//! dead weight. `clean_curated` removes keys starting with the tail of a
+//! hyphenated amount ("-ounce block feta"), re-parses every other alias and
+//! not-food key and:
 //! - removes it when the parsed name already resolves the same way;
 //! - renames it to the parsed name when that name resolves to nothing;
 //! - otherwise reports a conflict and keeps it.
+//!
+//! It then removes every alias and not-food key the resolver no longer needs:
+//! hidden from the catalog, the key and every corpus name that could reach it
+//! still resolve the same way, through modifier stripping, plurals or a
+//! shorter key ("chopped fresh basil").
 
-use std::collections::{BTreeMap, BTreeSet};
+use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet};
+use std::path::Path;
 
 use serde_json::{Map, Value};
 
-use super::{normalize, resolve, Resolution};
+use super::resolve::resolve_without;
+use super::{normalize, Resolution, BESPOKE_JSON, CATALOG};
 use crate::ingredient_parser::parse_ingredient;
 
 #[derive(Debug, PartialEq, Eq)]
 pub enum CuratedChange {
     /// The parsed name already resolves the same way.
     Remove { section: &'static str, name: String },
+    /// Hidden from the catalog, the name still resolves the same way.
+    Redundant { section: &'static str, name: String },
     /// The parsed name resolves to nothing, so the key moves there.
     Rename {
         section: &'static str,
@@ -91,7 +102,12 @@ fn is_clean_rename(name: &str, parsed: &str) -> bool {
 
 /// How a name resolves, comparably: the entry id, or the kind of non-match.
 fn outcome(name: &str) -> String {
-    match resolve(name) {
+    outcome_without(name, &HashSet::new())
+}
+
+/// How a name would resolve without the catalog names in `hidden`.
+fn outcome_without(name: &str, hidden: &HashSet<String>) -> String {
+    match resolve_without(name, hidden) {
         Resolution::Entry { entry, .. } => format!("entry {}", entry.id),
         Resolution::Compound(entries) => format!(
             "compound {}",
@@ -110,10 +126,10 @@ fn outcome(name: &str) -> String {
 /// Plan and apply the cleanup to curated.json's text. Returns the new text
 /// (formatted like the file: 2-space indent, sorted keys) and the changes.
 ///
-/// `typed` holds names people type as-is, such as hand-typed shopping-list
-/// items (normalized). The shopping list matches them without parsing, so a
-/// key among them stays even when the parser would never produce it.
-pub fn clean_curated(json: &str, typed: &BTreeSet<String>) -> (String, Vec<CuratedChange>) {
+/// A key among `known.typed` stays even when the parser would never produce
+/// it: the shopping list matches those names without parsing. A redundant key
+/// goes only if no name in `known.corpus` resolves differently without it.
+pub fn clean_curated(json: &str, known: &CleanupNames) -> (String, Vec<CuratedChange>) {
     let mut curated: Map<String, Value> =
         serde_json::from_str(json).expect("curated.json is an object");
     let mut changes = Vec::new();
@@ -126,8 +142,18 @@ pub fn clean_curated(json: &str, typed: &BTreeSet<String>) -> (String, Vec<Curat
         // one key moves there only if every key in the group agrees.
         let mut renames: BTreeMap<String, Vec<String>> = BTreeMap::new();
         for name in names.keys() {
+            // The tail of a hyphenated amount the parser once split ("-ounce
+            // block feta" from "8-ounce block feta"); it now reads the whole
+            // amount, so no line produces the key.
+            if name.starts_with('-') && !known.typed.contains(name) {
+                changes.push(CuratedChange::Remove {
+                    section,
+                    name: name.clone(),
+                });
+                continue;
+            }
             let parsed = parsed_name(name);
-            if parsed.is_empty() || parsed == *name || typed.contains(name) {
+            if parsed.is_empty() || parsed == *name || known.typed.contains(name) {
                 continue;
             }
             let current = outcome(name);
@@ -204,12 +230,21 @@ pub fn clean_curated(json: &str, typed: &BTreeSet<String>) -> (String, Vec<Curat
             }
         }
     }
+    changes.extend(redundant_keys(&curated, &changes, &known.corpus));
+    for change in &changes {
+        if let CuratedChange::Redundant { section, name } = change {
+            curated[*section]
+                .as_object_mut()
+                .expect("object")
+                .remove(name);
+        }
+    }
     // A shopping category keyed on a removed or renamed name follows it: the
     // catalog refuses a category for a name that no longer resolves.
     let categories = curated["categories"].as_object_mut().expect("object");
     for change in &changes {
         match change {
-            CuratedChange::Remove { name, .. } => {
+            CuratedChange::Remove { name, .. } | CuratedChange::Redundant { name, .. } => {
                 categories.remove(name);
             }
             CuratedChange::Rename { from, to, .. } => {
@@ -222,4 +257,168 @@ pub fn clean_curated(json: &str, typed: &BTreeSet<String>) -> (String, Vec<Curat
     }
     let text = serde_json::to_string_pretty(&Value::Object(curated)).expect("serializes") + "\n";
     (text, changes)
+}
+
+/// The names a cleanup must leave resolving as they do: hand-typed
+/// shopping-list items, which are matched as typed, and every item name the
+/// parser produces for the repo's recipe corpora.
+pub struct CleanupNames {
+    /// Normalized hand-typed shopping-list items; their keys are never
+    /// re-keyed, even when the parser would split them.
+    pub typed: BTreeSet<String>,
+    /// Normalized item names (typed ones included) whose resolution removing
+    /// a redundant key must not change.
+    pub corpus: BTreeSet<String>,
+}
+
+impl CleanupNames {
+    /// Read the corpora under the repo root: the pipeline and Paprika parser
+    /// fixtures, the pipeline snapshots and the shopping-list corpus.
+    pub fn load(root: &Path) -> Self {
+        let read = |path: &Path| -> Value {
+            let text = std::fs::read_to_string(path)
+                .unwrap_or_else(|e| panic!("reading {}: {e}", path.display()));
+            serde_json::from_str(&text)
+                .unwrap_or_else(|e| panic!("parsing {}: {e}", path.display()))
+        };
+        let items = |value: &Value, pointer: &str| -> Vec<String> {
+            value
+                .as_array()
+                .expect("an array of ingredients")
+                .iter()
+                .filter_map(|line| line.pointer(pointer)?.as_str().map(normalize))
+                .collect()
+        };
+        let typed: BTreeSet<String> = items(&read(&root.join(SHOPPING_CORPUS)), "/item")
+            .into_iter()
+            .collect();
+        let mut corpus = typed.clone();
+        for (dir, pointer) in [
+            (
+                "ramekin-core/tests/fixtures/ingredient_parsing/pipeline",
+                "/expected/item",
+            ),
+            (
+                "ramekin-core/tests/fixtures/ingredient_parsing/paprika",
+                "/expected/item",
+            ),
+            ("data/pipeline-snapshots", "/item"),
+        ] {
+            let dir = root.join(dir);
+            let entries = std::fs::read_dir(&dir)
+                .unwrap_or_else(|e| panic!("reading {}: {e}", dir.display()));
+            for entry in entries {
+                let path = entry.expect("a directory entry").path();
+                if path.extension().is_some_and(|ext| ext == "json") {
+                    corpus.extend(items(&read(&path)["ingredients"], pointer));
+                }
+            }
+        }
+        corpus.retain(|name| !name.is_empty());
+        CleanupNames { typed, corpus }
+    }
+}
+
+const SHOPPING_CORPUS: &str = "data/shopping-list-categories.json";
+
+/// A word with any plural ending dropped, so a name that reaches a key only
+/// through a singular or plural spelling (`plural_variants`) still shares
+/// its words.
+fn stem(word: &str) -> String {
+    let word = match word.strip_suffix("ies") {
+        Some(stem) => format!("{stem}y"),
+        None => word.to_string(),
+    };
+    let word = word.strip_suffix('s').unwrap_or(&word);
+    word.strip_suffix('e').unwrap_or(word).to_string()
+}
+
+fn stems(name: &str) -> BTreeSet<String> {
+    name.split(|c: char| !c.is_alphanumeric())
+        .filter(|word| !word.is_empty())
+        .map(stem)
+        .collect()
+}
+
+/// The keys left in `curated` that nothing needs: hidden from the catalog
+/// (with the keys `changes` already removed), the key itself and every corpus
+/// name that could reach it still resolve as they do now. A name reaches a key
+/// only through spellings built from its own words, so only names with all
+/// of the key's words are checked. Longer keys go first, so of two keys that
+/// only need each other ("tomato", "tomatoes") the shorter stays.
+///
+/// Ambiguous (null) aliases are deliberate overrides and always stay, as do
+/// names bespoke.json gives pieces (it needs the exact name); keys the
+/// compiled catalog doesn't have yet are left for the next run.
+fn redundant_keys(
+    curated: &Map<String, Value>,
+    changes: &[CuratedChange],
+    corpus: &BTreeSet<String>,
+) -> Vec<CuratedChange> {
+    let bespoke: Value = serde_json::from_str(BESPOKE_JSON).expect("bespoke.json is JSON");
+    let bespoke = bespoke["pieces"].as_object().expect("bespoke pieces");
+    let corpus: Vec<&String> = corpus.iter().collect();
+    let mut by_stem: HashMap<String, Vec<usize>> = HashMap::new();
+    for (index, name) in corpus.iter().enumerate() {
+        for word in stems(name) {
+            by_stem.entry(word).or_default().push(index);
+        }
+    }
+    let mut now: HashMap<&str, String> = HashMap::new();
+    let mut hidden: HashSet<String> = changes
+        .iter()
+        .filter_map(|change| match change {
+            CuratedChange::Remove { name, .. } => Some(name.clone()),
+            CuratedChange::Rename { from, .. } => Some(from.clone()),
+            _ => None,
+        })
+        .collect();
+    let mut keys: Vec<(&'static str, &String)> = ["aliases", "not_food"]
+        .into_iter()
+        .flat_map(|section| {
+            curated[section]
+                .as_object()
+                .expect("curated section is an object")
+                .iter()
+                .filter(|(name, target)| {
+                    !target.is_null()
+                        && !bespoke.contains_key(*name)
+                        && CATALOG.index.contains_key(*name)
+                })
+                .map(move |(name, _)| (section, name))
+        })
+        .collect();
+    keys.sort_by_key(|(_, name)| std::cmp::Reverse(name.len()));
+    let mut redundant = Vec::new();
+    for (section, key) in keys {
+        let mut reaching: Option<BTreeSet<usize>> = None;
+        for word in stems(key) {
+            let names: BTreeSet<usize> =
+                by_stem.get(&word).into_iter().flatten().copied().collect();
+            reaching = Some(match reaching {
+                Some(found) => found.intersection(&names).copied().collect(),
+                None => names,
+            });
+        }
+        let names = std::iter::once(key.as_str()).chain(
+            reaching
+                .into_iter()
+                .flatten()
+                .map(|index| corpus[index].as_str()),
+        );
+        hidden.insert(key.clone());
+        let unchanged = names.into_iter().all(|name| {
+            let before = now.entry(name).or_insert_with(|| outcome(name)).clone();
+            outcome_without(name, &hidden) == before
+        });
+        if unchanged {
+            redundant.push(CuratedChange::Redundant {
+                section,
+                name: key.clone(),
+            });
+        } else {
+            hidden.remove(key);
+        }
+    }
+    redundant
 }
