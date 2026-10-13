@@ -274,20 +274,6 @@ pub(super) fn extract_unit(s: &str) -> (Option<String>, String) {
     measure::read_unit(s)
 }
 
-fn extract_single_letter_period_unit(s: &str, marker: &str) -> Option<String> {
-    let after = s.strip_prefix(marker)?;
-    if after.is_empty() || after.starts_with(|c: char| c.is_whitespace() || c == ',') {
-        return Some(
-            after
-                .trim()
-                .trim_start_matches("of ")
-                .trim_start()
-                .to_string(),
-        );
-    }
-    None
-}
-
 /// Count/container nouns that pair with a hyphenated size descriptor.
 /// Examples: "14-ounce package", "1/2-inch piece", "8-ounce block".
 pub(super) const HYPHENATED_DESCRIPTOR_NOUNS: &[&str] = &[
@@ -458,83 +444,6 @@ pub(super) const WEIGHT_UNITS_FOR_COMPOUND: &[&str] = &[
     "l",
 ];
 
-/// Try to extract a compound unit like "14 ounce can" or "10 oz bag".
-/// Also handles hyphenated forms like "28-oz. can" or "14-ounce can".
-/// Returns (compound_unit, remaining) if found, None otherwise.
-pub(super) fn try_extract_compound_unit(s: &str) -> Option<(String, String)> {
-    let s = s.trim();
-    let words: Vec<&str> = s.split_whitespace().collect();
-
-    if words.is_empty() {
-        return None;
-    }
-
-    if let Some(inch_piece) = try_extract_inch_piece_unit(&words) {
-        return Some(inch_piece);
-    }
-
-    // Check for hyphenated form first: "28-oz." or "14-ounce" followed by container
-    // Pattern: FIRST_WORD contains hyphen with NUMBER-UNIT format
-    let first = words[0];
-    if let Some((before_hyphen, after_hyphen)) = first.split_once('-') {
-        // Before hyphen must be a number
-        if is_amount_like(before_hyphen) {
-            // After hyphen must be a weight unit (possibly with trailing period)
-            let after_lower = after_hyphen.to_lowercase();
-            let after_no_dot = after_lower.trim_end_matches('.');
-            let is_weight = WEIGHT_UNITS_FOR_COMPOUND.contains(&after_no_dot);
-
-            if is_weight && words.len() >= 2 {
-                // Second word must be a container
-                let second_lower = words[1].to_lowercase();
-                let is_container = CONTAINERS.iter().any(|&c| second_lower == c);
-
-                if is_container {
-                    // Build compound unit preserving original format
-                    let compound_unit = format!("{} {}", first, words[1]);
-                    let remaining = words[2..].join(" ");
-                    return Some((compound_unit, remaining));
-                }
-            }
-        }
-    }
-
-    // Fall back to spaced form: NUMBER UNIT CONTAINER
-    // Need at least 3 words: NUMBER UNIT CONTAINER
-    if words.len() < 3 {
-        return None;
-    }
-
-    // First word must be a number (integer or decimal)
-    if !is_amount_like(first) {
-        return None;
-    }
-
-    // Second word must be a weight/volume unit
-    let second_lower = words[1].to_lowercase();
-    let is_weight_unit = WEIGHT_UNITS_FOR_COMPOUND
-        .iter()
-        .any(|&u| second_lower == u || second_lower == format!("{}.", u));
-    if !is_weight_unit {
-        return None;
-    }
-
-    // Third word must be a container
-    let third_lower = words[2].to_lowercase();
-    let is_container = CONTAINERS.iter().any(|&c| third_lower == c);
-    if !is_container {
-        return None;
-    }
-
-    // Build the compound unit (preserving original case)
-    let compound_unit = format!("{} {} {}", words[0], words[1], words[2]);
-
-    // Calculate remaining string
-    let remaining = words[3..].join(" ");
-
-    Some((compound_unit, remaining))
-}
-
 /// Metric units that can be attached to numbers without space (e.g., "65g", "100ml")
 pub(super) const ATTACHED_METRIC_UNITS: &[&str] = &["kg", "g", "mg", "ml", "l", "oz", "lb", "lbs"];
 
@@ -619,55 +528,6 @@ pub(super) fn try_extract_attached_metric(s: &str) -> Option<(Measurement, Strin
     }
 
     None
-}
-
-/// Try to extract a measurement after a leading multiplier marker like "x" or "×".
-/// Examples:
-/// - "x 14 ounce cans black beans" -> ("14 ounce cans", "black beans")
-/// - "x 400g cans cannellini beans" -> ("400g cans", "cannellini beans")
-/// - "x packs shortcrust pastry" -> ("packs", "shortcrust pastry")
-pub(super) fn try_extract_multiplier_unit(s: &str) -> Option<(String, String)> {
-    let s = s.trim_start();
-    let after_marker = if let Some(rest) = s.strip_prefix('x') {
-        rest
-    } else {
-        s.strip_prefix('×')?
-    };
-
-    let next_char = after_marker.chars().next()?;
-    if !next_char.is_ascii_digit() && !next_char.is_whitespace() {
-        return None;
-    }
-
-    let after_marker = after_marker.trim_start();
-    if after_marker.is_empty() {
-        return None;
-    }
-
-    if let Some((compound_unit, remaining)) = try_extract_compound_unit(after_marker) {
-        return Some((compound_unit, remaining));
-    }
-
-    if let Some((measurement, after_metric)) = try_extract_attached_metric(after_marker) {
-        let metric_amount = measurement.amount?;
-        let metric_unit = measurement.unit?;
-        let (container, remaining) = extract_unit(&after_metric);
-
-        if let Some(container) = container {
-            if CONTAINERS
-                .iter()
-                .any(|&c| c.eq_ignore_ascii_case(&container))
-            {
-                return Some((
-                    format!("{}{} {}", metric_amount, metric_unit, container),
-                    remaining,
-                ));
-            }
-        }
-    }
-
-    let (unit, remaining) = extract_unit(after_marker);
-    unit.map(|unit| (unit, remaining))
 }
 
 /// Normalize a unit string to its canonical form.

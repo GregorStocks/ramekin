@@ -58,6 +58,11 @@ impl<'a> Cursor<'a> {
         self.s.get(self.offset()..).unwrap_or("").trim()
     }
 
+    /// The text from the cursor on, with runs of whitespace collapsed.
+    pub fn collapsed_rest(&self) -> String {
+        self.rest().split_whitespace().collect::<Vec<_>>().join(" ")
+    }
+
     fn text_between(&self, from: usize, to: usize) -> &'a str {
         let start = self.tokens.get(from).map_or(self.s.len(), |t| t.start);
         let end = to
@@ -110,13 +115,13 @@ impl<'a> Cursor<'a> {
         self.s.get(end..)?.chars().next()
     }
 
-    /// Skip a leading "of", and "of a"/"of an".
+    /// Skip a leading "of", and "of a"/"of an"/"of the".
     fn skip_of(&mut self, with_article: bool) -> bool {
         if self.take_word(&["of"]).is_none() {
             return false;
         }
         if with_article {
-            self.take_word(&["a", "an"]);
+            self.take_word(&["a", "an", "the"]);
         }
         true
     }
@@ -124,14 +129,15 @@ impl<'a> Cursor<'a> {
 
 /// A measurement read off the front of a string.
 #[derive(Debug, Clone, PartialEq, Default)]
-pub(super) struct Read<'a> {
+pub(super) struct Read {
     pub modifier: Option<String>,
     pub amount: Option<String>,
     pub unit: Option<String>,
-    pub rest: &'a str,
+    /// The text after the measurement, with runs of whitespace collapsed.
+    pub rest: String,
 }
 
-impl Read<'_> {
+impl Read {
     /// The unit with any measurement modifier in front ("heaping tbsp").
     pub fn modified_unit(&self) -> Option<String> {
         match (&self.modifier, &self.unit) {
@@ -289,9 +295,9 @@ fn amount(c: &mut Cursor) -> Option<String> {
 /// Read a measurement modifier ("scant", "heaping", "lightly packed").
 fn modifier(c: &mut Cursor) -> Option<String> {
     let (modifier, count) = c.phrase(MEASUREMENT_MODIFIERS)?;
-    // "good quality chocolate" names how good the food is, not a generous
-    // measure.
-    if c.peek(count).is_some_and(|t| t.is_word("quality")) {
+    // "good quality chocolate" and "good-quality sausages" name how good the
+    // food is, not a generous measure.
+    if c.peek(count).is_some_and(|t| t.is_word("quality") || !t.space_before) {
         return None;
     }
     c.pos += count;
@@ -343,7 +349,6 @@ fn unit(c: &mut Cursor) -> Option<String> {
 
 /// Read a package size: "15 ounce can", "14-oz. can", returned as written.
 fn package_size(c: &mut Cursor) -> Option<String> {
-    let start = c.pos;
     let mut probe = c.clone();
     let size = probe.take_if(|t| t.kind == Kind::Number)?;
     if !is_amount_like(size.text) {
@@ -361,13 +366,24 @@ fn package_size(c: &mut Cursor) -> Option<String> {
     if !WEIGHT_UNITS_FOR_COMPOUND.contains(&mass.lower().as_str()) {
         return None;
     }
-    probe.take_if(|t| t.kind == Kind::Period && !t.space_before);
-    let container = probe.take_if(|t| t.kind == Kind::Word)?;
-    if !is_package_noun(container.text) || !unit_boundary(&probe, 0) {
+    let period = probe.take_if(|t| t.kind == Kind::Period && !t.space_before);
+    let container = *probe
+        .peek(0)
+        .filter(|t| t.kind == Kind::Word && is_package_noun(t.text))?;
+    if !unit_boundary(&probe, 0) {
         return None;
     }
+    probe.pos += 1;
     *c = probe;
-    Some(c.text_between(start, c.pos).to_string())
+    // "14- ounce can" is written "14-ounce can".
+    Some(format!(
+        "{}{}{}{} {}",
+        size.text,
+        if dash.is_some() { "-" } else { " " },
+        mass.text,
+        period.map_or("", |p| p.text),
+        container.text
+    ))
 }
 
 /// Read a size in inches before a piece noun: "3-inch piece", "3-4 inch
@@ -375,7 +391,11 @@ fn package_size(c: &mut Cursor) -> Option<String> {
 fn inch_piece(c: &mut Cursor) -> Option<String> {
     let start = c.pos;
     let mut probe = c.clone();
-    number(&mut probe)?;
+    let whole = number(&mut probe)?;
+    // "1 1/2-inch knob": the fraction completes the size.
+    if whole.bytes().all(|b| b.is_ascii_digit()) {
+        probe.take_if(|t| t.is_fraction() && t.space_before);
+    }
     let is_range = probe.peek(0).is_some_and(|t| t.kind == Kind::Dash)
         && probe.peek(1).is_some_and(|t| t.kind == Kind::Number);
     if is_range {
@@ -518,7 +538,7 @@ fn attached_package(c: &mut Cursor) -> Option<String> {
 pub(super) fn read_amount(s: &str) -> (Option<String>, String) {
     let mut c = Cursor::new(s);
     let amount = amount(&mut c);
-    (amount, c.rest().split_whitespace().collect::<Vec<_>>().join(" "))
+    (amount, c.collapsed_rest())
 }
 
 /// Read a plain unit alone off the front of `s`, and an "of" after it.
@@ -527,7 +547,7 @@ pub(super) fn read_unit(s: &str) -> (Option<String>, String) {
     match unit(&mut c) {
         Some(unit) => {
             c.skip_of(false);
-            (Some(unit), c.rest().to_string())
+            (Some(unit), c.collapsed_rest())
         }
         None => (None, s.trim().to_string()),
     }
@@ -535,11 +555,24 @@ pub(super) fn read_unit(s: &str) -> (Option<String>, String) {
 
 /// Read a whole measurement off the front of `s`: modifiers, amount, unit
 /// phrase, "each", and "of a" after an amount with no unit.
-pub(super) fn read_measurement(s: &str) -> Read<'_> {
+pub(super) fn read_measurement(s: &str) -> Read {
     let mut c = Cursor::new(s);
     let pre_amount_modifier = modifier(&mut c);
     let amount_start = c.pos;
     let mut amount = amount(&mut c);
+
+    // "A 14-ounce can", "a 3-inch piece": the article counts one sized unit.
+    if amount.is_none() && c.peek(0).is_some_and(|t| t.is_word("a") || t.is_word("an")) {
+        let mut probe = c.clone();
+        probe.pos += 1;
+        if package_size(&mut probe.clone())
+            .or_else(|| inch_piece(&mut probe.clone()))
+            .is_some()
+        {
+            c = probe;
+            amount = Some("1".to_string());
+        }
+    }
 
     // A "+" between the amount and the unit: "1 + 1/2 teaspoons" is a mixed
     // number, "1/4 + 1/8 teaspoon" sums two fractions, and in "3+ cups" the
@@ -596,7 +629,7 @@ pub(super) fn read_measurement(s: &str) -> Read<'_> {
         modifier: pre_unit_modifier.or(pre_amount_modifier),
         amount,
         unit,
-        rest: c.rest(),
+        rest: c.collapsed_rest(),
     }
 }
 
@@ -613,7 +646,7 @@ fn unit_phrase_size(c: &mut Cursor) -> Option<String> {
 mod tests {
     use super::*;
 
-    fn read(s: &str) -> (Option<String>, Option<String>, &str) {
+    fn read(s: &str) -> (Option<String>, Option<String>, String) {
         let read = read_measurement(s);
         let unit = read.modified_unit();
         (read.amount, unit, read.rest)
@@ -641,18 +674,18 @@ mod tests {
 
     #[test]
     fn one_sided_dashes() {
-        assert_eq!(read("2 -3 tsp salt"), (some("2-3"), some("tsp"), "salt"));
-        assert_eq!(read("4- 5 cups flour"), (some("4-5"), some("cups"), "flour"));
-        assert_eq!(read("1- 2 cans beans"), (some("1-2"), some("cans"), "beans"));
+        assert_eq!(read("2 -3 tsp salt"), (some("2-3"), some("tsp"), "salt".to_string()));
+        assert_eq!(read("4- 5 cups flour"), (some("4-5"), some("cups"), "flour".to_string()));
+        assert_eq!(read("1- 2 cans beans"), (some("1-2"), some("cans"), "beans".to_string()));
         // An implausible range is spacing, not a range.
         assert_eq!(read("1- 20 almonds").0, some("1"));
         assert_eq!(
             read("1- 15 ounce can tomatoes"),
-            (some("1"), some("15 ounce can"), "tomatoes")
+            (some("1"), some("15 ounce can"), "tomatoes".to_string())
         );
         assert_eq!(
             read("1- 3 ounce package cream cheese"),
-            (some("1"), some("3 ounce package"), "cream cheese")
+            (some("1"), some("3 ounce package"), "cream cheese".to_string())
         );
     }
 
@@ -660,41 +693,41 @@ mod tests {
     fn a_size_before_a_container_sizes_the_container() {
         assert_eq!(
             read("1- 2 large cans tomatoes"),
-            (some("1-2"), some("large can"), "tomatoes")
+            (some("1-2"), some("large can"), "tomatoes".to_string())
         );
         assert_eq!(
             read("2 small cans of tuna"),
-            (some("2"), some("small can"), "tuna")
+            (some("2"), some("small can"), "tuna".to_string())
         );
         assert_eq!(
             read("1 small handful rosemary"),
-            (some("1"), some("small handful"), "rosemary")
+            (some("1"), some("small handful"), "rosemary".to_string())
         );
-        assert_eq!(read("2 large eggs"), (some("2"), some("large"), "eggs"));
+        assert_eq!(read("2 large eggs"), (some("2"), some("large"), "eggs".to_string()));
     }
 
     #[test]
     fn package_and_piece_sizes() {
         assert_eq!(
             read("1 14-oz. can tomatoes"),
-            (some("1"), some("14-oz. can"), "tomatoes")
+            (some("1"), some("14-oz. can"), "tomatoes".to_string())
         );
         assert_eq!(
             read("14-ounce can of chickpeas"),
-            (some("1"), some("14-ounce can"), "chickpeas")
+            (some("1"), some("14-ounce can"), "chickpeas".to_string())
         );
         assert_eq!(
             read("1/2-inch piece of ginger"),
-            (some("1"), some("1/2-inch piece"), "ginger")
+            (some("1"), some("1/2-inch piece"), "ginger".to_string())
         );
-        assert_eq!(read("1/2-pound beef"), (some("1/2"), some("pound"), "beef"));
+        assert_eq!(read("1/2-pound beef"), (some("1/2"), some("pound"), "beef".to_string()));
         assert_eq!(
             read("2 3-4 inch chunks ginger"),
-            (some("2"), some("3-4 inch chunks"), "ginger")
+            (some("2"), some("3-4 inch chunks"), "ginger".to_string())
         );
         assert_eq!(
             read("2 x 400g cans beans"),
-            (some("2"), some("400g cans"), "beans")
+            (some("2"), some("400g cans"), "beans".to_string())
         );
     }
 
@@ -702,24 +735,24 @@ mod tests {
     fn modifiers_plus_and_each() {
         assert_eq!(
             read("scant 1 teaspoon salt"),
-            (some("1"), some("scant teaspoon"), "salt")
+            (some("1"), some("scant teaspoon"), "salt".to_string())
         );
         assert_eq!(
             read("2 heaping tablespoons cocoa"),
-            (some("2"), some("heaping tablespoons"), "cocoa")
+            (some("2"), some("heaping tablespoons"), "cocoa".to_string())
         );
         assert_eq!(read("1 + 1/2 tsp salt").0, some("1 1/2"));
         assert_eq!(read("1/4 + 1/8 tsp salt").0, some("1/4 plus 1/8"));
-        assert_eq!(read("3+ cups sugar"), (some("3"), some("cups"), "sugar"));
+        assert_eq!(read("3+ cups sugar"), (some("3"), some("cups"), "sugar".to_string()));
         assert_eq!(
             read("1/2 tsp each salt and pepper"),
-            (some("1/2"), some("tsp each"), "salt and pepper")
+            (some("1/2"), some("tsp each"), "salt and pepper".to_string())
         );
         assert_eq!(
             read("1/2 of a small onion"),
-            (some("1/2"), some("small"), "onion")
+            (some("1/2"), some("small"), "onion".to_string())
         );
-        assert_eq!(read("2 T. butter"), (some("2"), some("tbsp"), "butter"));
-        assert_eq!(read("2 cloves of garlic"), (some("2"), some("cloves"), "garlic"));
+        assert_eq!(read("2 T. butter"), (some("2"), some("tbsp"), "butter".to_string()));
+        assert_eq!(read("2 cloves of garlic"), (some("2"), some("cloves"), "garlic".to_string()));
     }
 }

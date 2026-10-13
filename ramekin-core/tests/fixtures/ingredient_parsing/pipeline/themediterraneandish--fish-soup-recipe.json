@@ -163,15 +163,15 @@
     {
       "raw": "1 28- ounce can whole tomatoes",
       "expected": {
-        "item": "28- ounce can whole tomatoes",
+        "item": "whole tomatoes",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "28-ounce can"
           }
         ],
         "note": null,
-        "category": "Produce"
+        "category": "Canned Goods"
       }
     },
     {

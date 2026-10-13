@@ -63,11 +63,11 @@
     {
       "raw": "1 10- ounce package vanilla baking chips",
       "expected": {
-        "item": "10- ounce package vanilla baking chips",
+        "item": "vanilla baking chips",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "10-ounce package"
           }
         ],
         "note": null,
@@ -77,11 +77,11 @@
     {
       "raw": "1 7- ounce jar marshmallow crème",
       "expected": {
-        "item": "7- ounce jar marshmallow crème",
+        "item": "marshmallow crème",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "7-ounce jar"
           }
         ],
         "note": null,

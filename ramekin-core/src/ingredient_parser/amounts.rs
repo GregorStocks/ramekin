@@ -151,77 +151,10 @@ pub(super) fn extract_amount(s: &str) -> (Option<String>, String) {
     measure::read_amount(s)
 }
 
-/// Parse a leading amount from whitespace-split words.
-/// Returns the normalized amount string and number of consumed words.
-pub(super) fn parse_leading_amount_words(words: &[&str]) -> Option<(String, usize)> {
-    if words.is_empty() {
-        return None;
-    }
-
-    let first = words[0];
-
-    if words.len() >= 2 && first.chars().all(|c| c.is_ascii_digit()) && is_fraction(words[1]) {
-        return Some((format!("{} {}", first, words[1]), 2));
-    }
-
-    if let Some((whole, fraction)) = split_hyphenated_mixed_number(first) {
-        return Some((format!("{} {}", whole, fraction), 1));
-    }
-
-    if words.len() >= 3
-        && first.chars().all(|c| c.is_ascii_digit())
-        && (words[1].eq_ignore_ascii_case("and") || words[1] == "&")
-        && is_fraction(words[2])
-    {
-        return Some((format!("{} {}", first, words[2]), 3));
-    }
-
-    if is_amount_like(first) {
-        return Some((first.to_string(), 1));
-    }
-
-    None
-}
-
 pub(super) fn split_hyphenated_mixed_number(s: &str) -> Option<(&str, &str)> {
     let (whole, fraction) = s.split_once('-')?;
     if whole.chars().all(|c| c.is_ascii_digit()) && is_fraction(fraction) {
         Some((whole, fraction))
-    } else {
-        None
-    }
-}
-
-pub(super) fn split_leading_attached_unit_token(s: &str) -> Option<(&str, &str)> {
-    let mut split_idx = 0;
-    let mut has_digit = false;
-    let mut has_dot = false;
-
-    for (i, c) in s.char_indices() {
-        if c.is_ascii_digit() {
-            has_digit = true;
-            split_idx = i + 1;
-        } else if c == '.' && has_digit && !has_dot {
-            has_dot = true;
-            split_idx = i + 1;
-        } else {
-            break;
-        }
-    }
-
-    if !has_digit || split_idx == 0 || split_idx >= s.len() {
-        return None;
-    }
-
-    let amount = s.get(..split_idx)?;
-    let unit = s.get(split_idx..)?.trim_end_matches('.');
-    if unit.is_empty() {
-        return None;
-    }
-
-    let normalized_unit = normalize_unit(unit);
-    if ATTACHED_METRIC_UNITS.contains(&normalized_unit.as_str()) {
-        Some((amount, unit))
     } else {
         None
     }
@@ -404,17 +337,6 @@ pub(super) fn try_extract_hyphenated_descriptor_range(s: &str) -> Option<(String
         format!("{} {}", unit, descriptor),
         remaining,
     ))
-}
-
-/// Extract a unit from the beginning of a string.
-/// Returns (unit, remaining_string).
-pub(super) fn slash_starts_measurement(s: &str) -> bool {
-    let Some(after_slash) = s.strip_prefix('/') else {
-        return false;
-    };
-    let after_slash = after_slash.trim_start();
-    let (amount, _) = extract_amount(after_slash);
-    amount.is_some()
 }
 
 #[cfg(test)]

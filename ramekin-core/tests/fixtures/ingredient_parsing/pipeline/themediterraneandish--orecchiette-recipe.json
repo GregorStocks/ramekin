@@ -144,11 +144,11 @@
     {
       "raw": "1 15- ounce can cannellini beans (or white beans of your choice, drained and rinsed)",
       "expected": {
-        "item": "15- ounce can cannellini beans",
+        "item": "cannellini beans",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "15-ounce can"
           }
         ],
         "note": "or white beans of your choice, drained and rinsed",

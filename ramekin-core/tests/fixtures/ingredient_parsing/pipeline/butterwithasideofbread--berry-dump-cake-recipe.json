@@ -5,11 +5,11 @@
     {
       "raw": "1 20- oz can Berry pie filling",
       "expected": {
-        "item": "20- oz can Berry pie filling",
+        "item": "Berry pie filling",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "20-oz can"
           }
         ],
         "note": null,
@@ -33,11 +33,11 @@
     {
       "raw": "1 9- oz box Jiffy cake mix (you can also use 1/2 box of yellow or white cake mix)",
       "expected": {
-        "item": "9- oz box Jiffy cake mix",
+        "item": "Jiffy cake mix",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "9-oz box"
           }
         ],
         "note": "you can also use 1/2 box of yellow or white cake mix",

@@ -303,32 +303,6 @@ fn is_standalone_parenthetical_package_fragment(s: &str) -> bool {
         || is_bare_parenthetical_package_size(content)
 }
 
-/// Measures a size word can modify ("small handful", "large bunch", "small
-/// head").
-const SIZEABLE_MEASURES: &[&str] = &["handful", "bunch", "pinch", "head"];
-
-/// "Small handful rosemary", "small head of garlic": a size before a measure
-/// sizes the measure, not the food. Returns the sized measure and the text
-/// after it.
-fn split_sized_measure(size: &str, after_size: &str) -> Option<(String, String)> {
-    if !is_size_unit(size) {
-        return None;
-    }
-    let (measure, after_measure) = extract_unit(after_size);
-    let measure =
-        measure.filter(|measure| SIZEABLE_MEASURES.contains(&normalize_unit(measure).as_str()))?;
-    let rest = strip_leading_of_article(&after_measure)
-        .map(str::to_string)
-        .unwrap_or(after_measure);
-    // "2 large pinches (of saffron)": the food went to the note, so the
-    // measure stays as the item rather than leave it empty.
-    if rest.trim().is_empty() {
-        return None;
-    }
-    // "XL pinch" -> "extra-large pinch"
-    Some((format!("{} {measure}", normalize_unit(size)), rest))
-}
-
 /// Words that size the alternative in "2 large or 3 smaller leeks" without
 /// being a size unit on their own ("thin carrots" alone names a food). No
 /// "little" or "big", which start food names ("Little Gem lettuces").
@@ -803,148 +777,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
-    // Step 2.95: "A 14-ounce can of crushed tomatoes": the article counts one
-    // of the sized unit, like "1 14-ounce can".
-    for article in ["a ", "an "] {
-        let after_article = remaining
-            .get(..article.len())
-            .filter(|prefix| prefix.eq_ignore_ascii_case(article))
-            .and_then(|_| remaining.get(article.len()..));
-        // Only before a sized unit ("a 14-ounce can", "a 3-inch piece of
-        // ginger").
-        if let Some(rest) = after_article.filter(|rest| {
-            rest.starts_with(|c: char| c.is_ascii_digit())
-                && try_extract_compound_unit(rest).is_some()
-        }) {
-            remaining = format!("1 {rest}");
-            break;
-        }
-    }
-
-    // Step 3: Strip measurement modifiers before amount, preserve for unit
-    // Handles "scant 1 teaspoon" - modifier goes on the unit as "scant teaspoon"
-    let (pre_amount_modifier, after_modifier) = strip_measurement_modifier(&remaining);
-    remaining = after_modifier;
-
-    let (mut primary_amount, after_amount) = extract_amount(&remaining);
-    remaining = after_amount;
-
-    // Handle a "+" between the amount and the unit:
-    // - "1 + 1/2 teaspoons" is a mixed number -> amount "1 1/2"
-    // - "1/4 + 1/8 teaspoon" sums two fractions sharing a unit -> amount "1/4 plus 1/8"
-    // - "3+ cups sugar" / "1/4 + teaspoon salt" has a stray "+" -> drop it
-    if let Some(amount) = primary_amount.as_deref() {
-        let remaining_trimmed = remaining.trim_start();
-        if let Some(after_plus) = remaining_trimmed.strip_prefix('+') {
-            let after_plus = after_plus.trim_start();
-            let (next_amount, after_next_amount) = extract_amount(after_plus);
-            match next_amount {
-                Some(next) if next.contains('/') => {
-                    primary_amount = if amount.chars().all(|c| c.is_ascii_digit()) {
-                        Some(format!("{} {}", amount, next))
-                    } else {
-                        Some(format!("{} plus {}", amount, next))
-                    };
-                    remaining = after_next_amount;
-                }
-                None if extract_unit(after_plus).0.is_some() => {
-                    remaining = after_plus.to_string();
-                }
-                _ => {}
-            }
-        }
-    }
-
-    // Step 4: Strip measurement modifiers before unit, combine with any pre-amount modifier
-    // Handles "2 heaping tablespoons" - modifier goes on the unit as "heaping tablespoons"
-    let (pre_unit_modifier, after_modifier) = strip_measurement_modifier(&remaining);
-    remaining = after_modifier;
-
-    let multiplier_unit = primary_amount
-        .as_ref()
-        .and_then(|_| try_extract_multiplier_unit(&remaining));
-
-    let (mut base_unit, mut after_unit) = if let Some((unit, after_multiplier)) = multiplier_unit {
-        (Some(unit), after_multiplier)
-    } else {
-        extract_unit(&remaining)
-    };
-
-    if let Some((sized_measure, after_measure)) = base_unit
-        .as_deref()
-        .and_then(|size| split_sized_measure(size, &after_unit))
-    {
-        base_unit = Some(sized_measure);
-        after_unit = after_measure;
-    }
-
-    // Step 4a: Handle "N unit container" compound units (e.g., "14 ounce can")
-    // If no unit was found, check if remaining starts with a compound unit pattern
-    if base_unit.is_none() {
-        if let Some((compound_unit, after_compound)) = try_extract_compound_unit(&remaining) {
-            base_unit = Some(compound_unit);
-            // "1 14-ounce can of crushed tomatoes": the "of" joins unit and food.
-            after_unit = after_compound
-                .trim_start()
-                .strip_prefix("of ")
-                .map(str::to_string)
-                .unwrap_or(after_compound);
-        } else if let Some(amount_str) = primary_amount.as_deref() {
-            if let Some(((replacement_amount, recovered_unit), after_recovered)) =
-                try_extract_hyphenated_unit_tail(amount_str, &remaining)
-            {
-                primary_amount = Some(replacement_amount);
-                base_unit = Some(recovered_unit);
-                after_unit = after_recovered;
-            }
-        }
-    }
-
-    remaining = after_unit;
-
-    // Step 4.0.5: Strip orphaned "of" + article after amount extraction with no unit.
-    // Handles "Half of a lemon" → after amount "1/2" extracted, remaining is
-    // "of a lemon". With no unit to absorb the "of", strip it here.
-    if primary_amount.is_some() && base_unit.is_none() {
-        if let Some(after_of) = strip_leading_of_article(&remaining) {
-            remaining = after_of.to_string();
-            // "1/2 of a small onion": the size after the article is the unit.
-            let (size, after_size) = extract_unit(&remaining);
-            if let Some(size) = size.filter(|size| is_size_unit(size)) {
-                (base_unit, remaining) = match split_sized_measure(&size, &after_size) {
-                    Some((sized_measure, after_measure)) => (Some(sized_measure), after_measure),
-                    None => (Some(size), after_size),
-                };
-            }
-        }
-    }
-
-    // Step 4.1: Move leading "each" from remaining text onto the unit
-    // Handles "1/2 tsp each salt and pepper" -> unit becomes "tsp each", item becomes "salt and pepper"
-    // "each" here means "this measurement applies to each of the following items"
-    // This is consistent with how parenthetical "each" is handled (e.g., "(8 oz each)" -> unit: "oz each")
-    {
-        let remaining_trimmed = remaining.trim_start();
-        if remaining_trimmed.to_lowercase().starts_with("each ") {
-            let after_each = remaining_trimmed.get(5..).unwrap_or("");
-            // "small pinch each of cinnamon and ginger"
-            remaining = strip_leading_of_article(after_each)
-                .unwrap_or(after_each)
-                .to_string();
-            base_unit = Some(match base_unit {
-                Some(u) => format!("{} each", u),
-                None => "each".to_string(),
-            });
-        }
-    }
-
-    // Combine modifiers with unit: prefer pre-unit modifier, fall back to pre-amount modifier
-    let modifier = pre_unit_modifier.or(pre_amount_modifier);
-    let mut primary_unit = match (modifier, base_unit) {
-        (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
-        (Some(m), None) => Some(m), // modifier without unit (rare but possible)
-        (None, u) => u,
-    };
+    // Step 3: Read the measurement: modifiers, amount, unit phrase ("15
+    // ounce can", "small handful", "2 x 400g cans") and "each".
+    let read = measure::read_measurement(&remaining);
+    let mut primary_amount = read.amount.clone();
+    let mut primary_unit = read.modified_unit();
+    remaining = read.rest.to_string();
 
     // Step 4.4a: Handle repeated-unit ranges like "1/2 cup to 1 cup white rum".
     // If the second half parses as another measurement with the same unit, fold it

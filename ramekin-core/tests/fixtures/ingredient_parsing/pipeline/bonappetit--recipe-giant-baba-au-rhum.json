@@ -79,11 +79,11 @@
     {
       "raw": "1 ¼-oz. envelope instant yeast (about 2¼ tsp.)",
       "expected": {
-        "item": "1/4-oz. envelope instant yeast",
+        "item": "instant yeast",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "1/4-oz. envelope"
           },
           {
             "amount": "2.25",

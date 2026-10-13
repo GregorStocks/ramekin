@@ -163,11 +163,11 @@
     {
       "raw": "2 14- ounce cans crushed tomatoes",
       "expected": {
-        "item": "14- ounce cans crushed tomatoes",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "14-ounce cans"
           }
         ],
         "note": null,
@@ -233,11 +233,11 @@
     {
       "raw": "1 14- ounce can chickpeas",
       "expected": {
-        "item": "14- ounce can chickpeas",
+        "item": "chickpeas",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "14-ounce can"
           }
         ],
         "note": null,
