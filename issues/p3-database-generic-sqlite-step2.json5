@@ -9,8 +9,6 @@ Run the e2e suite against both backends in CI until SQLite passes, write and reh
   "labels": [
     "api",
   ],
-  "blocked": "Owner go/no-go on doc/sqlite-pilot-analysis.md. \
-If the motivation is running inside Cloudflare (blocked-ramekin-mcp-chatgpt), confirm first that a self-hosted SQLite file is the target and not D1 or Durable Objects.",
   "created_at": "2026-10-12T22:55:00-07:00",
   "updated_at": "2026-10-12T22:55:00-07:00",
 }
