@@ -1,0 +1,15 @@
+{
+  "title": "Ingredient-name worker API tests time out intermittently in CI",
+  "description": "tests/test_ingredient_names.py tests that wait on the background name-resolution worker sometimes hit wait_for's 20s timeout in CI. \
+Seen: test_failed_names_are_not_resolving on master run 38305499545 (6ad440e), and test_failures_are_visible_and_retryable on PR #832 run 38353525867 (waiting at line 181 for the failure to appear after 3 attempts). \
+Both are near 93% of the xdist run, so the worker may be starved or backed off by other tests' queued names rather than slow on this one. \
+Find why the worker sometimes doesn't reach the name within 20s (shared queue across xdist workers? retry backoff?) and fix the root cause instead of raising the timeout.",
+  "status": "open",
+  "priority": 2,
+  "type": "bug",
+  "labels": [
+    "tests",
+  ],
+  "created_at": "2026-10-12T23:10:00-07:00",
+  "updated_at": "2026-10-12T23:10:00-07:00",
+}
