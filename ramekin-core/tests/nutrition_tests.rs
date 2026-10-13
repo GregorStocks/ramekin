@@ -81,6 +81,8 @@ fn compounds_sum_every_supported_segment_and_keep_ranges() {
         ("1/2 cup plus 1–2 tbsp plus 1 tsp", "", 451.5, 499.875),
         ("1/4 plus 1/8", "cup", 290.25, 290.25),
         ("1 g + 1 kg", "", 3873.87, 3873.87),
+        // A pinch is 1/16 tsp, 1/768 cup.
+        ("1 cup plus 1 pinch", "", 775.0078125, 775.0078125),
     ] {
         let result = estimate(&[ingredient("granulated sugar", amount, unit)], None, 2.0).unwrap();
         let range = result.known_calories.unwrap();
@@ -90,7 +92,7 @@ fn compounds_sum_every_supported_segment_and_keep_ranges() {
     for amount in [
         "1 tablespoon plus more to taste",
         "1 cup plus 1/0 tbsp",
-        "1 cup plus 1 pinch",
+        "1 cup plus 1 handful",
         "1 cup plus ",
     ] {
         let result = estimate(&[ingredient("granulated sugar", amount, "")], None, 1.0).unwrap();
@@ -486,12 +488,48 @@ fn packages_carry_their_own_weight_and_fill_words_are_ignored() {
         "heaping tsp",
         "scant tsp",
         "slightly heaped tsp",
+        "packed tsp",
+        "firmly packed tsp",
     ] {
         assert_eq!(
             kcal("granulated sugar", "1", unit),
             kcal("granulated sugar", "1", "tsp")
         );
     }
+}
+
+#[test]
+fn tiny_measures_of_non_trace_foods_use_the_density() {
+    let kcal = |item: &str, amount: &str, unit: &str| {
+        let result = estimate(&[ingredient(item, amount, unit)], None, 1.0).unwrap();
+        assert!(
+            result.unknown_ingredients.is_empty(),
+            "{item} {unit}: {:?}",
+            result.unknown_ingredients
+        );
+        result.known_calories.unwrap().min
+    };
+    let tsp = kcal("granulated sugar", "1", "tsp");
+    for (unit, per_tsp) in [
+        ("dash", 1.0 / 8.0),
+        ("pinch", 1.0 / 16.0),
+        ("smidgen", 1.0 / 32.0),
+        ("drop", 1.0 / 96.0),
+    ] {
+        assert!(
+            (kcal("granulated sugar", "2", unit) - 2.0 * per_tsp * tsp).abs() < 1e-9,
+            "{unit}"
+        );
+    }
+    assert!(kcal("worcestershire sauce", "1", "dash") > 0.0);
+    assert!(kcal("toasted sesame oil", "1", "dash") > 0.0);
+    // A trace spice is still negligible.
+    assert_eq!(kcal("ground cumin", "1", "dash"), 0.0);
+    // A packed cup weighs as a plain one; brown sugar's density is packed.
+    assert_eq!(
+        kcal("brown sugar", "1", "packed cup"),
+        kcal("brown sugar", "1", "cup")
+    );
 }
 
 #[test]
