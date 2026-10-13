@@ -28,6 +28,9 @@ processes:
       - RAMEKIN_AI_BASE_URL=http://localhost:${MOCK_OPENROUTER_PORT}/v1
       - RAMEKIN_AI_CACHE_DIR=../logs/test-ai-cache
       - RAMEKIN_CLIENT_LOG_DIR=../logs/test-client-logs
+      # The mock answers locally, so nothing needs spacing; the default delay
+      # between calls would make tests wait on the shared name worker.
+      - RAMEKIN_AI_RATE_LIMIT_MS=0
     depends_on:
       fixture:
         condition: process_healthy

@@ -49,11 +49,9 @@ pub const FAILED: &str = "failed";
 const MAX_ATTEMPTS: i32 = 3;
 
 static WAKE: LazyLock<Notify> = LazyLock::new(Notify::new);
-/// Set whenever names are queued or put back in the queue, or the provider
-/// answers. Every save wakes the worker, whether or not it queued anything,
-/// so only these cut a failure backoff short; otherwise a provider outage
-/// would be retried at the rate of saves.
-static NEW_WORK: AtomicBool = AtomicBool::new(false);
+/// Set once the provider has answered, after the answer commits, so a worker
+/// backing off from an outage retries its pending names now.
+static PROVIDER_ANSWERED: AtomicBool = AtomicBool::new(false);
 static BATCH: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
 /// One client for the process, so its rate limit spaces every call, with
 /// the model it asks: the ingredient model (`AiConfig::for_ingredients`).
@@ -85,17 +83,15 @@ pub fn enqueue(conn: &mut PgConnection, new_names: &[String]) -> QueryResult<usi
         .iter()
         .map(|name| (names::name.eq(name), names::status.eq(PENDING)))
         .collect();
-    let queued = diesel::insert_into(names::table)
+    diesel::insert_into(names::table)
         .values(&rows)
         .on_conflict_do_nothing()
-        .execute(conn)?;
-    note_new_work(queued);
-    Ok(queued)
+        .execute(conn)
 }
 
 /// Put failed names back in the queue with a fresh set of attempts.
 pub fn requeue_failed(conn: &mut PgConnection, failed: &[String]) -> QueryResult<usize> {
-    let pending = diesel::update(
+    diesel::update(
         names::table
             .filter(names::status.eq(FAILED))
             .filter(names::name.eq_any(failed)),
@@ -105,9 +101,7 @@ pub fn requeue_failed(conn: &mut PgConnection, failed: &[String]) -> QueryResult
         names::error.eq(None::<String>),
         names::attempts.eq(0),
     ))
-    .execute(conn)?;
-    note_new_work(pending);
-    Ok(pending)
+    .execute(conn)
 }
 
 /// Queue the unknown names in `items`. Write paths call this inside their
@@ -123,13 +117,6 @@ pub fn enqueue_items<'a>(
 /// Wake the worker.
 pub fn wake() {
     WAKE.notify_one();
-}
-
-/// Record that `queued` names were added to the queue.
-fn note_new_work(queued: usize) {
-    if queued > 0 {
-        NEW_WORK.store(true, Ordering::SeqCst);
-    }
 }
 
 /// Resolved answers for `items`' unknown names, for estimating or
@@ -330,7 +317,10 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
     tokio::spawn(async move {
         let mut backoff = RETRY_MIN;
         loop {
-            NEW_WORK.store(false, Ordering::SeqCst);
+            PROVIDER_ANSWERED.store(false, Ordering::SeqCst);
+            // Read before the pass, so a name committed while it runs is
+            // missing here even if the pass never saw it.
+            let before = pending_names(&pool).await.unwrap_or_default();
             match work_pass(&pool).await {
                 Ok(()) => {
                     backoff = RETRY_MIN;
@@ -347,7 +337,7 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
                     let retry_at = tokio::time::Instant::now() + backoff;
                     loop {
                         tokio::select! {
-                            () = WAKE.notified() => if NEW_WORK.swap(false, Ordering::SeqCst) {
+                            () = WAKE.notified() => if new_work(&pool, &before).await {
                                 break;
                             },
                             () = tokio::time::sleep_until(retry_at) => break,
@@ -358,6 +348,38 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
             }
         }
     });
+}
+
+/// Every pending name.
+async fn pending_names(pool: &Arc<DbPool>) -> Result<HashSet<String>, String> {
+    run_blocking(pool, |conn| {
+        names::table
+            .filter(names::status.eq(PENDING))
+            .select(names::name)
+            .load::<String>(conn)
+    })
+    .await
+    .map_err(|e| e.to_string())?
+    .map(|pending| pending.into_iter().collect())
+    .map_err(|e| e.to_string())
+}
+
+/// Whether a wake should cut a failure backoff short: the provider has
+/// answered, or a name outside `before` (the names pending when the failed
+/// pass started) is pending, because it was queued or put back in the queue
+/// since. Every save wakes the worker, whether or not it queued anything, so
+/// a wake alone isn't enough; otherwise a provider outage would be retried at
+/// the rate of saves. This reads the queue rather than trusting a flag the
+/// save sets, since a save queues its names before it commits.
+async fn new_work(pool: &Arc<DbPool>, before: &HashSet<String>) -> bool {
+    if PROVIDER_ANSWERED.load(Ordering::SeqCst) {
+        return true;
+    }
+    match pending_names(pool).await {
+        Ok(pending) => !pending.is_subset(before),
+        // Wait for the retry timer.
+        Err(_) => false,
+    }
 }
 
 /// Queue the unknown or ambiguous names of every stored recipe and
@@ -404,12 +426,17 @@ enum Step {
     ProviderFailed(String),
 }
 
-/// Resolve pending names until none are left or the provider fails. Returns
-/// the first failure.
+/// Resolve pending names until none are left or the provider fails. Names
+/// that ran out of attempts are marked failed and wait for a Retry, so they
+/// leave nothing pending to try again later; only a provider failure does.
 async fn work_pass(pool: &Arc<DbPool>) -> Result<(), String> {
-    let mut first_error = None;
-    while record(resolve_next_batch(pool, None).await?, &mut first_error) {}
-    first_error.map_or(Ok(()), Err)
+    loop {
+        match resolve_next_batch(pool, None).await? {
+            Step::Idle => return Ok(()),
+            Step::Done | Step::Failed(_) => {}
+            Step::ProviderFailed(e) => return Err(e),
+        }
+    }
 }
 
 /// Keep `step`'s error, if it's the first, and say whether it took a batch
@@ -434,11 +461,11 @@ fn record(step: Step, first_error: &mut Option<String>) -> bool {
 /// so a scrape job's few names wait for at most the batch in flight.
 async fn resolve_next_batch(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> Result<Step, String> {
     let _batch = BATCH.lock().await;
-    let batch: Vec<String> = run_blocking(pool, move |conn| {
+    let pending: Vec<(String, i32)> = run_blocking(pool, move |conn| {
         let mut query = names::table
             .filter(names::status.eq(PENDING))
-            .select(names::name)
-            .order(names::name)
+            .select((names::name, names::attempts))
+            .order((names::attempts, names::name))
             .limit(BATCH_SIZE)
             .into_boxed();
         if let Some(only) = only {
@@ -449,9 +476,18 @@ async fn resolve_next_batch(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> Re
     .await
     .map_err(|e| e.to_string())?
     .map_err(|e| e.to_string())?;
-    if batch.is_empty() {
-        return Ok(Step::Idle);
-    }
+    // A name the model already gave an invalid answer for is asked alone, after
+    // every fresh name: batched again, it would likely break the batch, and
+    // every other name in it would be asked again one at a time.
+    let batch: Vec<String> = match pending.first() {
+        None => return Ok(Step::Idle),
+        Some((name, attempts)) if *attempts > 0 => vec![name.clone()],
+        Some(_) => pending
+            .into_iter()
+            .take_while(|(_, attempts)| *attempts == 0)
+            .map(|(name, _)| name)
+            .collect(),
+    };
     // A failed answer is recorded on its names; failing to record it would
     // leave them pending, so `Err` stops rather than asking again.
     Ok(match resolve_batch(pool, batch).await? {
@@ -644,7 +680,9 @@ async fn save_resolved(
     tracing::info!(resolved, "resolved ingredient names");
     // The provider answered, so a worker backing off from an outage should
     // retry its pending names now.
-    note_new_work(resolved);
+    if resolved > 0 {
+        PROVIDER_ANSWERED.store(true, Ordering::SeqCst);
+    }
     wake();
     Ok(())
 }
