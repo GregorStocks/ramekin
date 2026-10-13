@@ -100,10 +100,7 @@ impl<'a> Cursor<'a> {
             })
             .filter_map(|phrase| {
                 let end = start + phrase.len();
-                let count = self.tokens[self.pos..]
-                    .iter()
-                    .position(|t| t.end == end)?
-                    + 1;
+                let count = self.tokens[self.pos..].iter().position(|t| t.end == end)? + 1;
                 Some((*phrase, count))
             })
             .max_by_key(|(phrase, _)| phrase.len())
@@ -238,7 +235,8 @@ fn amount(c: &mut Cursor) -> Option<String> {
     let low = number(c)?;
     let before_connector = c.pos;
     // "1. Remove the rind": a list number's period.
-    if c.peek(0).is_some_and(|t| t.kind == Kind::Period && !t.space_before)
+    if c.peek(0)
+        .is_some_and(|t| t.kind == Kind::Period && !t.space_before)
         && c.char_after(0).is_none_or(char::is_whitespace)
     {
         c.pos += 1;
@@ -297,7 +295,9 @@ fn modifier(c: &mut Cursor) -> Option<String> {
     let (modifier, count) = c.phrase(MEASUREMENT_MODIFIERS)?;
     // "good quality chocolate" and "good-quality sausages" name how good the
     // food is, not a generous measure.
-    if c.peek(count).is_some_and(|t| t.is_word("quality") || !t.space_before) {
+    if c.peek(count)
+        .is_some_and(|t| t.is_word("quality") || !t.space_before)
+    {
         return None;
     }
     c.pos += count;
@@ -332,7 +332,8 @@ fn unit(c: &mut Cursor) -> Option<String> {
         if let Some(unit) = unit.filter(|_| {
             period.kind == Kind::Period
                 && !period.space_before
-                && c.char_after(1).is_none_or(|ch| ch.is_whitespace() || ch == ',')
+                && c.char_after(1)
+                    .is_none_or(|ch| ch.is_whitespace() || ch == ',')
         }) {
             c.pos += 2;
             return Some(unit.to_string());
@@ -507,9 +508,13 @@ fn unit_phrase(c: &mut Cursor, amount_start: usize) -> Option<(Option<String>, S
             return Some(read);
         }
         // "2- cups": a dash typed between the amount and the unit.
-        let stray_dash = c.peek(0).is_some_and(|t| t.kind == Kind::Dash && !t.space_before)
+        let stray_dash = c
+            .peek(0)
+            .is_some_and(|t| t.kind == Kind::Dash && !t.space_before)
             && c.peek(1).is_some_and(|t| {
-                t.kind == Kind::Word && t.space_before && !["to", "or", "and"].contains(&t.lower().as_str())
+                t.kind == Kind::Word
+                    && t.space_before
+                    && !["to", "or", "and"].contains(&t.lower().as_str())
             });
         if stray_dash {
             c.pos += 1;
@@ -724,9 +729,18 @@ mod tests {
 
     #[test]
     fn one_sided_dashes() {
-        assert_eq!(read("2 -3 tsp salt"), (some("2-3"), some("tsp"), "salt".to_string()));
-        assert_eq!(read("4- 5 cups flour"), (some("4-5"), some("cups"), "flour".to_string()));
-        assert_eq!(read("1- 2 cans beans"), (some("1-2"), some("cans"), "beans".to_string()));
+        assert_eq!(
+            read("2 -3 tsp salt"),
+            (some("2-3"), some("tsp"), "salt".to_string())
+        );
+        assert_eq!(
+            read("4- 5 cups flour"),
+            (some("4-5"), some("cups"), "flour".to_string())
+        );
+        assert_eq!(
+            read("1- 2 cans beans"),
+            (some("1-2"), some("cans"), "beans".to_string())
+        );
         // An implausible range is spacing, not a range.
         assert_eq!(read("1- 20 almonds").0, some("1"));
         assert_eq!(
@@ -735,7 +749,11 @@ mod tests {
         );
         assert_eq!(
             read("1- 3 ounce package cream cheese"),
-            (some("1"), some("3 ounce package"), "cream cheese".to_string())
+            (
+                some("1"),
+                some("3 ounce package"),
+                "cream cheese".to_string()
+            )
         );
     }
 
@@ -753,7 +771,10 @@ mod tests {
             read("1 small handful rosemary"),
             (some("1"), some("small handful"), "rosemary".to_string())
         );
-        assert_eq!(read("2 large eggs"), (some("2"), some("large"), "eggs".to_string()));
+        assert_eq!(
+            read("2 large eggs"),
+            (some("2"), some("large"), "eggs".to_string())
+        );
     }
 
     #[test]
@@ -770,7 +791,10 @@ mod tests {
             read("1/2-inch piece of ginger"),
             (some("1"), some("1/2-inch piece"), "ginger".to_string())
         );
-        assert_eq!(read("1/2-pound beef"), (some("1/2"), some("pound"), "beef".to_string()));
+        assert_eq!(
+            read("1/2-pound beef"),
+            (some("1/2"), some("pound"), "beef".to_string())
+        );
         assert_eq!(
             read("2 3-4 inch chunks ginger"),
             (some("2"), some("3-4 inch chunks"), "ginger".to_string())
@@ -793,7 +817,10 @@ mod tests {
         );
         assert_eq!(read("1 + 1/2 tsp salt").0, some("1 1/2"));
         assert_eq!(read("1/4 + 1/8 tsp salt").0, some("1/4 plus 1/8"));
-        assert_eq!(read("3+ cups sugar"), (some("3"), some("cups"), "sugar".to_string()));
+        assert_eq!(
+            read("3+ cups sugar"),
+            (some("3"), some("cups"), "sugar".to_string())
+        );
         assert_eq!(
             read("1/2 tsp each salt and pepper"),
             (some("1/2"), some("tsp each"), "salt and pepper".to_string())
@@ -802,7 +829,13 @@ mod tests {
             read("1/2 of a small onion"),
             (some("1/2"), some("small"), "onion".to_string())
         );
-        assert_eq!(read("2 T. butter"), (some("2"), some("tbsp"), "butter".to_string()));
-        assert_eq!(read("2 cloves of garlic"), (some("2"), some("cloves"), "garlic".to_string()));
+        assert_eq!(
+            read("2 T. butter"),
+            (some("2"), some("tbsp"), "butter".to_string())
+        );
+        assert_eq!(
+            read("2 cloves of garlic"),
+            (some("2"), some("cloves"), "garlic".to_string())
+        );
     }
 }

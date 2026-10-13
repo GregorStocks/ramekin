@@ -65,8 +65,7 @@ pub(super) fn tokenize(s: &str) -> Vec<Token<'_>> {
             continue;
         }
         let start = i;
-        let starts_decimal =
-            c == '.' && bytes.get(i + 1).is_some_and(|b| b.is_ascii_digit());
+        let starts_decimal = c == '.' && bytes.get(i + 1).is_some_and(|b| b.is_ascii_digit());
         let kind = if c.is_ascii_digit() || starts_decimal {
             i = number_end(bytes, i);
             Kind::Number
@@ -127,13 +126,12 @@ fn number_end(bytes: &[u8], mut i: usize) -> usize {
 fn word_end(s: &str, mut i: usize) -> usize {
     let mut chars = s.get(i..).unwrap_or("").chars().peekable();
     while let Some(c) = chars.next() {
-        if c.is_alphabetic() {
-            i += c.len_utf8();
-        } else if matches!(c, '\'' | '’') && chars.peek().is_some_and(|n| n.is_alphabetic()) {
-            i += c.len_utf8();
-        } else {
+        let inner_apostrophe =
+            matches!(c, '\'' | '’') && chars.peek().is_some_and(|n| n.is_alphabetic());
+        if !c.is_alphabetic() && !inner_apostrophe {
             break;
         }
+        i += c.len_utf8();
     }
     i
 }
@@ -172,7 +170,11 @@ mod tests {
         );
         assert_eq!(
             kinds("2.5/3"),
-            vec![(Kind::Number, "2.5"), (Kind::Slash, "/"), (Kind::Number, "3")]
+            vec![
+                (Kind::Number, "2.5"),
+                (Kind::Slash, "/"),
+                (Kind::Number, "3")
+            ]
         );
     }
 

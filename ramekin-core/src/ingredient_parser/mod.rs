@@ -118,7 +118,12 @@ fn parse_plus_continuation_measurement(
 ) -> Option<(String, String, String, Option<String>)> {
     let (plus_prefix, after_plus_prefix) = strip_plus_measurement_prefix(s);
     let read = measure::read_measurement(&after_plus_prefix);
-    Some((read.amount?, read.unit?, read.rest, read.modifier.or(plus_prefix)))
+    Some((
+        read.amount?,
+        read.unit?,
+        read.rest,
+        read.modifier.or(plus_prefix),
+    ))
 }
 
 fn leading_measurement_consumes_all(s: &str) -> bool {
