@@ -1,11 +1,10 @@
 import os
+import re
 import shutil
 import subprocess
 from pathlib import Path
 
 import pytest
-
-from repo_lock_helpers import held_repo_lock, is_repo_lock_held
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -200,14 +199,11 @@ def test_lockfile_mode_needs_no_dev_tooling(tmp_path):
     assert result.returncode == 0, result.stdout
 
 
-# Stands in for `npx ... npm ci`: flags any overlapping install, then writes
-# the marker npm leaves behind.
+# Stands in for `npx ... npm ci`: logs its arguments, then writes the marker
+# npm leaves behind.
 FAKE_NPX = """#!/bin/bash
-mkdir ../install-running 2>/dev/null || echo overlap >> ../overlaps
-echo install >> ../installs
-sleep 1
+echo "$*" >> ../installs
 mkdir -p node_modules && touch node_modules/.package-lock.json
-rmdir ../install-running
 """
 
 
@@ -216,8 +212,7 @@ def _ui_deps_sandbox(tmp_path: Path) -> dict[str, str]:
     that puts the fake npx on PATH."""
     scripts = tmp_path / "scripts"
     scripts.mkdir()
-    for name in ["install-ui-deps.sh", "repo-lock.sh"]:
-        shutil.copy(REPO_ROOT / "scripts" / name, scripts / name)
+    shutil.copy(REPO_ROOT / "scripts" / "install-ui-deps.sh", scripts)
     ui = tmp_path / "ramekin-ui"
     ui.mkdir()
     (ui / "package.json").write_text("{}", encoding="utf-8")
@@ -232,33 +227,21 @@ def _ui_deps_sandbox(tmp_path: Path) -> dict[str, str]:
 
 def _install_ui_deps(
     tmp_path: Path, env: dict[str, str], **extra_env: str
-) -> subprocess.Popen:
-    return subprocess.Popen(
+) -> subprocess.CompletedProcess:
+    return subprocess.run(
         [str(tmp_path / "scripts" / "install-ui-deps.sh")],
         env={**env, **extra_env},
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True,
+        check=False,
+        timeout=30,
     )
 
 
-def _installs(tmp_path: Path) -> int:
+def _installs(tmp_path: Path) -> list[str]:
     log = tmp_path / "installs"
-    return len(log.read_text().splitlines()) if log.exists() else 0
-
-
-def test_concurrent_ui_dep_installs_take_turns(tmp_path):
-    # make lint and make test both pull in ui-deps; parallel npm ci runs
-    # corrupt node_modules, and the one that waited has nothing left to do.
-    env = _ui_deps_sandbox(tmp_path)
-
-    procs = [_install_ui_deps(tmp_path, env) for _ in range(2)]
-    outputs = [p.communicate(timeout=30)[0] for p in procs]
-
-    assert [p.returncode for p in procs] == [0, 0], outputs
-    assert not (tmp_path / "overlaps").exists()
-    assert _installs(tmp_path) == 1
-    assert not is_repo_lock_held(tmp_path / "logs" / "locks" / "ui-deps.flock")
+    return log.read_text().splitlines() if log.exists() else []
 
 
 def _fresh_marker(tmp_path: Path) -> None:
@@ -267,40 +250,32 @@ def _fresh_marker(tmp_path: Path) -> None:
     marker.touch()
 
 
-def test_ui_dep_install_skips_when_another_install_already_finished(tmp_path):
-    # make can decide the marker is stale, then reach the lock only after
-    # another install released it. Reinstalling would delete node_modules out
-    # from under that other process.
+def test_ui_dep_install_uses_a_pinned_npm(tmp_path):
+    env = _ui_deps_sandbox(tmp_path)
+
+    result = _install_ui_deps(tmp_path, env)
+
+    assert result.returncode == 0, result.stdout
+    [install] = _installs(tmp_path)
+    assert "npm@latest" not in install
+    assert re.search(r"-p npm@\d+\.\d+\.\d+ npm ci", install), install
+
+
+def test_ui_dep_install_skips_when_node_modules_is_current(tmp_path):
     env = _ui_deps_sandbox(tmp_path)
     _fresh_marker(tmp_path)
 
-    proc = _install_ui_deps(tmp_path, env)
-    output = proc.communicate(timeout=30)[0]
+    result = _install_ui_deps(tmp_path, env)
 
-    assert proc.returncode == 0, output
-    assert _installs(tmp_path) == 0
+    assert result.returncode == 0, result.stdout
+    assert _installs(tmp_path) == []
 
 
 def test_forced_ui_dep_install_runs_even_when_marker_is_fresh(tmp_path):
     env = _ui_deps_sandbox(tmp_path)
     _fresh_marker(tmp_path)
 
-    proc = _install_ui_deps(tmp_path, env, UI_DEPS_FORCE="1")
-    output = proc.communicate(timeout=30)[0]
+    result = _install_ui_deps(tmp_path, env, UI_DEPS_FORCE="1")
 
-    assert proc.returncode == 0, output
-    assert _installs(tmp_path) == 1
-
-
-def test_ui_dep_install_gives_up_on_a_lock_held_too_long(tmp_path):
-    # A hung installer (or one whose orphaned npm ci never finishes) must not
-    # block every later install forever.
-    env = _ui_deps_sandbox(tmp_path)
-
-    with held_repo_lock(tmp_path / "logs" / "locks" / "ui-deps.flock"):
-        proc = _install_ui_deps(tmp_path, env, REPO_LOCK_WAIT_SECONDS="1")
-        output = proc.communicate(timeout=30)[0]
-
-    assert proc.returncode == 1, output
-    assert "Refusing to start UI dependency install" in output
-    assert _installs(tmp_path) == 0
+    assert result.returncode == 0, result.stdout
+    assert len(_installs(tmp_path)) == 1

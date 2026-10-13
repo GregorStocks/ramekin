@@ -5,7 +5,7 @@ SolidJS frontend. Usually started via `make dev` from the project root.
 ## Development
 
 ```bash
-npm install
+../scripts/install-ui-deps.sh
 npm run dev
 ```
 

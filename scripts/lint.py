@@ -213,15 +213,15 @@ def get_required_ui_paths(ui_dir: Path) -> list[Path]:
 
 
 def ensure_ui_node_modules(ui_dir: Path) -> bool:
-    """Install UI dependencies using npx when node_modules is missing."""
+    """Reinstall UI dependencies when any linter is missing from node_modules."""
     required_paths = get_required_ui_paths(ui_dir)
 
     if all(path.exists() for path in required_paths):
         return True
 
     install_result = subprocess.run(
-        ["npx", "--yes", "-p", "npm@latest", "npm", "ci", "--silent"],
-        cwd=ui_dir,
+        [str(ui_dir.parent / "scripts" / "install-ui-deps.sh")],
+        env={**os.environ, "UI_DEPS_FORCE": "1"},
         capture_output=True,
         text=True,
         check=False,
@@ -241,9 +241,6 @@ def lint_typescript(project_root: Path) -> tuple[str, bool]:
     """Lint TypeScript code."""
     ui_dir = project_root / "ramekin-ui"
     node_bin_dir = ui_dir / "node_modules" / ".bin"
-
-    if not ensure_ui_node_modules(ui_dir):
-        return ("TypeScript", False)
 
     # Run prettier
     prettier_result = subprocess.run(
@@ -292,9 +289,6 @@ def lint_css(project_root: Path) -> tuple[str, bool]:
     """Lint CSS files with Stylelint."""
     ui_dir = project_root / "ramekin-ui"
     node_bin_dir = ui_dir / "node_modules" / ".bin"
-
-    if not ensure_ui_node_modules(ui_dir):
-        return ("CSS", False)
 
     result = subprocess.run(
         [
@@ -692,10 +686,11 @@ def main() -> None:
     overall_start = time.monotonic()
     project_root = get_project_root()
 
-    # Install UI node_modules before parallel linting to avoid race condition
-    # (both lint_typescript and lint_css call ensure_ui_node_modules concurrently)
-    ui_dir = project_root / "ramekin-ui"
-    ensure_ui_node_modules(ui_dir)
+    # Install once up front: the TypeScript and CSS linters run in parallel and
+    # share node_modules, so neither may reinstall it.
+    if not ensure_ui_node_modules(project_root / "ramekin-ui"):
+        print("Failed to install UI dependencies", file=sys.stderr)
+        sys.exit(1)
 
     # Define linters to run
     linters = [
