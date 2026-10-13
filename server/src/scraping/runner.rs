@@ -905,19 +905,34 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeErro
             STATUS_PARSING
         };
 
+        // Only reset the exact failure this request read: still failed, with
+        // the retry count it saw (only this update changes it). Of two
+        // retries that both passed the status check above, the second updates
+        // nothing and is rejected, so the job is spawned once — even if the
+        // first one's run has already failed again by then.
         let now = chrono::Utc::now();
-        diesel::update(scrape_jobs::table.find(job_id))
-            .set((
-                scrape_jobs::status.eq(resume_status),
-                scrape_jobs::current_step.eq(Some(resume_step.as_str())),
-                scrape_jobs::current_step_started_at.eq(Some(now)),
-                scrape_jobs::failed_at_step.eq::<Option<String>>(None),
-                scrape_jobs::error_message.eq::<Option<String>>(None),
-                scrape_jobs::retry_count.eq(job.retry_count + 1),
-                scrape_jobs::updated_at.eq(now),
-            ))
-            .execute(conn)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
+        let updated = diesel::update(
+            scrape_jobs::table
+                .find(job_id)
+                .filter(scrape_jobs::status.eq(STATUS_FAILED))
+                .filter(scrape_jobs::retry_count.eq(job.retry_count)),
+        )
+        .set((
+            scrape_jobs::status.eq(resume_status),
+            scrape_jobs::current_step.eq(Some(resume_step.as_str())),
+            scrape_jobs::current_step_started_at.eq(Some(now)),
+            scrape_jobs::failed_at_step.eq::<Option<String>>(None),
+            scrape_jobs::error_message.eq::<Option<String>>(None),
+            scrape_jobs::retry_count.eq(job.retry_count + 1),
+            scrape_jobs::updated_at.eq(now),
+        ))
+        .execute(conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+        if updated == 0 {
+            return Err(ScrapeError::InvalidState(
+                "Job is already being retried".to_string(),
+            ));
+        }
 
         Ok(resume_status.to_string())
     })
