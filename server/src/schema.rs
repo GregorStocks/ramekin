@@ -105,6 +105,7 @@ diesel::table! {
         version_source -> Varchar,
         created_at -> Timestamptz,
         change_xid -> Int8,
+        is_current -> Bool,
     }
 }
 
