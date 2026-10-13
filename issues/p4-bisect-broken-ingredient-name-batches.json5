@@ -2,7 +2,8 @@
   "title": "Ingredient-name worker re-asks every name in a broken batch one at a time",
   "description": "When the model's answer for a multi-name batch is invalid, resolve_batch (server/src/ingredient_names.rs) asks each of the batch's names alone, so one bad name in a full 40-name batch costs 41 calls, spaced by the client's 500ms rate limit (~20s during which the worker resolves nothing else). \
 Names that already failed are now asked alone after fresh names, so this only happens on a bad name's first attempt, but that first split is still linear in the batch size. \
-Splitting the batch in halves and recursing would find the bad names in about 2*log2(n) calls and resolve the good halves in one call each. Seen while fixing the flaky ingredient-name worker tests: at the default rate limit, the tests' deliberately failing names still starved the worker about one run in three.",
+Splitting the batch in halves and recursing would find the bad names in about 2*log2(n) calls and resolve the good halves in one call each. \
+Seen while fixing the flaky ingredient-name worker tests: at the default rate limit, the tests' deliberately failing names still starved the worker about one run in three.",
   "status": "open",
   "priority": 4,
   "type": "task",

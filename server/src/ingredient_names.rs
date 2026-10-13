@@ -100,6 +100,8 @@ pub fn requeue_failed(conn: &mut PgConnection, failed: &[String]) -> QueryResult
         names::status.eq(PENDING),
         names::error.eq(None::<String>),
         names::attempts.eq(0),
+        // A new stamp, so a backing-off worker sees the name as new work.
+        names::updated_at.eq(Utc::now()),
     ))
     .execute(conn)
 }
@@ -320,7 +322,7 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
             PROVIDER_ANSWERED.store(false, Ordering::SeqCst);
             // Read before the pass, so a name committed while it runs is
             // missing here even if the pass never saw it.
-            let before = pending_names(&pool).await.unwrap_or_default();
+            let before = pending_rows(&pool).await.unwrap_or_default();
             match work_pass(&pool).await {
                 Ok(()) => {
                     backoff = RETRY_MIN;
@@ -350,13 +352,16 @@ pub fn spawn_worker(pool: Arc<DbPool>) {
     });
 }
 
-/// Every pending name.
-async fn pending_names(pool: &Arc<DbPool>) -> Result<HashSet<String>, String> {
+/// A pending name and when its row last changed.
+type PendingRow = (String, chrono::DateTime<Utc>);
+
+/// Every pending row.
+async fn pending_rows(pool: &Arc<DbPool>) -> Result<HashSet<PendingRow>, String> {
     run_blocking(pool, |conn| {
         names::table
             .filter(names::status.eq(PENDING))
-            .select(names::name)
-            .load::<String>(conn)
+            .select((names::name, names::updated_at))
+            .load::<PendingRow>(conn)
     })
     .await
     .map_err(|e| e.to_string())?
@@ -365,17 +370,20 @@ async fn pending_names(pool: &Arc<DbPool>) -> Result<HashSet<String>, String> {
 }
 
 /// Whether a wake should cut a failure backoff short: the provider has
-/// answered, or a name outside `before` (the names pending when the failed
-/// pass started) is pending, because it was queued or put back in the queue
-/// since. Every save wakes the worker, whether or not it queued anything, so
-/// a wake alone isn't enough; otherwise a provider outage would be retried at
-/// the rate of saves. This reads the queue rather than trusting a flag the
-/// save sets, since a save queues its names before it commits.
-async fn new_work(pool: &Arc<DbPool>, before: &HashSet<String>) -> bool {
+/// answered, or a row outside `before` (the rows pending when the failed pass
+/// started) is pending, because its name was queued or put back in the queue
+/// since. A name that was pending then, failed during the pass, and was put
+/// back by Retry has a new `updated_at`, so it counts too. (So does a name
+/// whose invalid answer the pass recorded, which costs one early retry.)
+/// Every save wakes the worker, whether or not it queued anything, so a wake
+/// alone isn't enough; otherwise a provider outage would be retried at the
+/// rate of saves. This reads the queue rather than trusting a flag the save
+/// sets, since a save queues its names before it commits.
+async fn new_work(pool: &Arc<DbPool>, before: &HashSet<PendingRow>) -> bool {
     if PROVIDER_ANSWERED.load(Ordering::SeqCst) {
         return true;
     }
-    match pending_names(pool).await {
+    match pending_rows(pool).await {
         Ok(pending) => !pending.is_subset(before),
         // Wait for the retry timer.
         Err(_) => false,
