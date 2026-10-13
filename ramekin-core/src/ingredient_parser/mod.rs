@@ -201,15 +201,13 @@ fn split_malformed_parenthetical_package_item(s: &str) -> Option<(String, String
         return None;
     }
 
-    let (amount, after_amount) = extract_amount(after_qualifier);
-    let amount = amount?;
-    let ((replacement_amount, unit), after_unit) =
-        try_extract_hyphenated_unit_tail(&amount, &after_amount)?;
-    if replacement_amount != "1" {
+    // "14-ounce can chickpeas": one package of a hyphenated size.
+    let (amount, unit, after_unit) = measure::read_hyphenated_size(after_qualifier)?;
+    if amount != "1" || !unit.contains(' ') {
         return None;
     }
 
-    let item = after_unit.trim().trim_start_matches(',').trim();
+    let item = after_unit.trim_start_matches(',').trim();
     let identity_segment = item.split(" or ").next().unwrap_or(item).trim();
     if item.is_empty() || !looks_like_parenthetical_item_identity(identity_segment) {
         return None;
@@ -248,23 +246,9 @@ fn repair_unclosed_parenthetical_measurement_fragment(s: &str) -> String {
 
 fn is_bare_parenthetical_package_size(s: &str) -> bool {
     let (_, after_qualifier) = strip_leading_measurement_qualifier(s);
-    let (amount, after_amount) = extract_amount(after_qualifier);
-    let Some(amount) = amount else {
-        return false;
-    };
-
-    let Some(((replacement_amount, unit), remaining)) =
-        try_extract_hyphenated_unit_tail(&amount, &after_amount)
-    else {
-        return false;
-    };
-    if replacement_amount != amount || !remaining.trim().is_empty() {
-        return false;
-    }
-
-    let normalized_unit = unit.to_lowercase();
-    let normalized_unit = normalized_unit.trim_end_matches('.');
-    WEIGHT_UNITS_FOR_COMPOUND.contains(&normalized_unit)
+    measure::read_hyphenated_size(after_qualifier).is_some_and(|(_, unit, rest)| {
+        rest.is_empty() && WEIGHT_UNITS_FOR_COMPOUND.contains(&unit.to_lowercase().as_str())
+    })
 }
 
 fn is_standalone_parenthetical_package_fragment(s: &str) -> bool {
@@ -973,7 +957,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
         // Check for attached metric (e.g., "65g" at start of remaining)
         if let Some((attached_measurement, after_attached)) =
-            try_extract_attached_metric(&remaining)
+            measure::read_attached_metric(&remaining)
         {
             alt_measurements.push(attached_measurement);
             remaining = after_attached;

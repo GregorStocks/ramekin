@@ -568,6 +568,41 @@ pub(super) fn read_unit(s: &str) -> (Option<String>, String) {
     }
 }
 
+/// Read a metric amount attached to its number off the front of `s`: "65g
+/// granulated sugar", or "120g" before "/2.75 oz.".
+pub(super) fn read_attached_metric(s: &str) -> Option<(Measurement, String)> {
+    let mut c = Cursor::new(s);
+    let amount = c.take_if(|t| t.kind == Kind::Number && !t.is_fraction())?;
+    let unit = c.take_if(|t| t.kind == Kind::Word && !t.space_before)?;
+    if !ATTACHED_METRIC_UNITS.contains(&unit.lower().as_str())
+        || !c
+            .s
+            .get(unit.end..)
+            .and_then(|after| after.chars().next())
+            .is_none_or(|ch| ch.is_whitespace() || matches!(ch, ',' | '/' | '.'))
+    {
+        return None;
+    }
+    c.take_if(|t| t.kind == Kind::Period && !t.space_before);
+    Some((
+        Measurement {
+            amount: Some(amount.text.to_string()),
+            unit: Some(unit.text.to_string()),
+        },
+        c.rest().to_string(),
+    ))
+}
+
+/// Read a hyphenated size off the front of `s`: "15-ounce" is (amount
+/// "15", unit "ounce"), "14-ounce can of beans" is one "14-ounce can". Returns
+/// the amount, the unit, and the text after them.
+pub(super) fn read_hyphenated_size(s: &str) -> Option<(String, String, String)> {
+    let mut c = Cursor::new(s);
+    let amount = amount(&mut c)?;
+    let (count, unit) = hyphenated_unit(&mut c, 0)?;
+    Some((count.unwrap_or(amount), unit, c.collapsed_rest()))
+}
+
 /// Read a whole measurement off the front of `s`: modifiers, amount, unit
 /// phrase, "each", and "of a" after an amount with no unit.
 pub(super) fn read_measurement(s: &str) -> Read {
