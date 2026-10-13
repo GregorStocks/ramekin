@@ -1,0 +1,17 @@
+{
+  "title": "Ingredient parser: parse parentheticals as token groups instead of the find('(') loop",
+  "description": "parse_ingredient (ingredient_parser/mod.rs, Step 1) pulls parentheticals out with a find('(') loop plus repair passes for unclosed or doubled parens (repair_unclosed_parenthetical_measurement_fragment, unwrap_redundant_parentheses, the TK/TODO stripper), then parentheticals.rs splits the content on commas, semicolons and \" or \". \
+The tokenizer (ingredient_parser/tokens.rs) already emits Open/Close tokens; group them into balanced subtrees once and hand each group's tokens to the measurement grammar (measure.rs) and the note classifier. \
+Inconsistency to settle while doing it: a bare package weight goes to the note for quantity.rs to join with the unit (\"1 (15-ounce) can\" and \"1 (28-oz.) can\" -> note \"15-ounce\"), but a mixed-number or ranged one becomes an alternative measurement (\"1 (14 1/2-ounce) can\" -> {14.5, oz}, \"4 (7- to 9-ounce) potatoes\" -> {7 to 9, oz}) because looks_like_bare_parenthetical_size_unit only checks single-word sizes. \
+Pick one representation (probably the package unit, \"14 1/2-ounce can\") so nutrition reads them the same way. \
+Rerun make pipeline; expect data/ diffs.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "ramekin-core",
+  ],
+  "created_at": "2026-10-12T23:20:00-07:00",
+  "updated_at": "2026-10-12T23:20:00-07:00",
+}

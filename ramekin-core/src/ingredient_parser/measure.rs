@@ -2,8 +2,9 @@
 //! front of a string from its tokens.
 //!
 //! ```text
-//! measurement := [modifier] amount? ["+"] [modifier] unit_phrase? [each] [of [a|an]]
-//! amount      := number [(to | or | "-") number]
+//! measurement := [modifier] (amount | a|an before a sized unit)? ["+" fraction] [modifier]
+//!                (unit_phrase | of [a|an|the] [size])? [each [of [a|an|the]]]
+//! amount      := number ["."] [(["-"] to | or | "-") number]
 //! number      := int fraction | int "-" fraction | int (and | &) fraction | int | decimal | fraction
 //! unit_phrase := "x" unit_phrase                         // "2 x 400g cans"
 //!              | number ["-"] mass ["."] container        // "15 ounce can", "14-oz. can"
@@ -125,7 +126,7 @@ impl<'a> Cursor<'a> {
 }
 
 /// A measurement read off the front of a string.
-#[derive(Debug, Clone, PartialEq, Default)]
+#[derive(Debug, Clone)]
 pub(super) struct Read {
     pub modifier: Option<String>,
     pub amount: Option<String>,
@@ -348,7 +349,8 @@ fn unit(c: &mut Cursor) -> Option<String> {
     Some(unit.to_string())
 }
 
-/// Read a package size: "15 ounce can", "14-oz. can", returned as written.
+/// Read a package size: "15 ounce can", "14-oz. can" (and "14- ounce can"
+/// as "14-ounce can").
 fn package_size(c: &mut Cursor) -> Option<String> {
     let mut probe = c.clone();
     let size = probe.take_if(|t| t.kind == Kind::Number)?;
@@ -376,7 +378,6 @@ fn package_size(c: &mut Cursor) -> Option<String> {
     }
     probe.pos += 1;
     *c = probe;
-    // "14- ounce can" is written "14-ounce can".
     Some(format!(
         "{}{}{}{} {}",
         size.text,
