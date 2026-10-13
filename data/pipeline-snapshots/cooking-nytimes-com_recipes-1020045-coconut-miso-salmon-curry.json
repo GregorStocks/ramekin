@@ -104,9 +104,13 @@
         {
           "amount": "1",
           "unit": null
+        },
+        {
+          "amount": "1.5",
+          "unit": "lb"
         }
       ],
-      "note": "1 1/2-pound, cut into 2-inch pieces",
+      "note": "cut into 2-inch pieces",
       "raw": "1 (1 1/2-pound) salmon fillet, cut into 2-inch pieces",
       "section": null
     },
@@ -116,6 +120,10 @@
         {
           "amount": "5",
           "unit": "oz"
+        },
+        {
+          "amount": "5",
+          "unit": "packed cup"
         }
       ],
       "note": "about 5 packed cups",
