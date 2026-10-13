@@ -14,7 +14,10 @@ mixed load of the scrape runner, the ingredient-name worker and shopping-list
 edits running alongside readers. The real costs are:
 
 - **Writes serialize.** The longest write measured, rewriting every current
-  recipe at 5k recipes, took ~225 ms. A small write behind it waits that long.
+  recipe and its search-index entry at 5k recipes, took ~2.8 s. A small write
+  behind it waits that long, where on Postgres it would not wait at all. Such
+  rewrites only happen in startup data migrations today. Any future runtime
+  bulk job has to commit in chunks.
 - **No transparent compression.** Large step outputs (fetched HTML) make the
   file several times bigger than the Postgres database (see
   [Database size](#database-size)).
@@ -51,7 +54,7 @@ Cost: S = mechanical, M = needs design or a few files, L = cross-cutting.
 | Feature | Where | SQLite equivalent | Cost |
 |---|---|---|---|
 | `pg_current_xact_id()` / `pg_snapshot_xmin()` sync cursors (`current_change_xid()`, `change_xid_watermark()`), `stamp_change_xid()` trigger | migrations `2026-07-12…sync_change_xid`, `2026-10-11…shopping_list_change_xid`; `server/src/raw_sql.rs`; `api/recipes/sync.rs`, `api/shopping_list/sync.rs`; hand-stamped in `tags.rs`, `api/tags/*`, `api/recipes/delete.rs` | A one-row `sync_clock` counter bumped inside each write transaction. SQLite has a single writer, so commit order equals counter order and the watermark can simply be the current value. The xmin race the Postgres design guards against can't happen. Triggers become SQLite `AFTER UPDATE` triggers that read the counter. This also fixes `p3-sync-cursor-after-restore`, because the counter is data and is dumped with the DB. Coordinate with `blocked-one-sync-mechanism`. | M |
-| Trigram + unaccent search: `pg_trgm`, `unaccent`, `f_unaccent()`, five GIN expression indexes, `ILIKE` | `api/recipes/list.rs` text and source filters; migration `2026-04-16…unaccent_search` | FTS5 table with the plain `trigram` tokenizer over the current versions, kept in sync on version insert. Columns are pre-normalized in Rust with `ramekin_core::search::normalize_for_search`, and query tokens go through the same function. FTS5's `remove_diacritics` can't be used on its own: it strips a narrower set than the search normalization contract, so `oeufs` wouldn't find `Œufs`, and `ß`, `æ`, `ø`, ligatures and fractions would also differ. Tokens shorter than 3 characters can't use a trigram index, so they fall back to a scan with a `normalize_for_search` UDF registered on each connection. That UDF also covers the `source:` filter. The contract asset (`shared-test-vectors/search-normalization.json`) is currently regenerated from Postgres's `unaccent`/`lower()` by `scripts/generate-search-normalization.sh`. On SQLite it becomes the frozen source of truth. `tests/test_search_normalization_contract.py` has to change from "matches the live server" to "the server's search obeys the asset". In the benchmark, row sets matched `f_unaccent(..) ILIKE` for the four test queries, but those queries didn't exercise the ligature expansions. Step 2 must run the contract vectors, such as `tests/test_recipes.py`'s `Œufs` case, against SQLite. | M |
+| Trigram + unaccent search: `pg_trgm`, `unaccent`, `f_unaccent()`, five GIN expression indexes, `ILIKE` | `api/recipes/list.rs` text and source filters; migration `2026-04-16…unaccent_search` | FTS5 table with the plain `trigram` tokenizer over the current versions, kept in sync in the same transaction as every version insert or rewrite. The FTS rowid must come from an explicit `INTEGER PRIMARY KEY` on `recipe_versions` (for example a `seq` column next to the uuid), because `VACUUM` may renumber implicit rowids. Join the matches with `+v.seq IN (SELECT rowid FROM fts WHERE fts MATCH ?)`. Without the unary `+`, SQLite probed the version index once per (recipe, match) pair: 170 ms instead of 3 ms at 5k recipes. Columns are pre-normalized in Rust with `ramekin_core::search::normalize_for_search`, and query tokens go through the same function. FTS5's `remove_diacritics` can't be used on its own: it strips a narrower set than the search normalization contract, so `oeufs` wouldn't find `Œufs`, and `ß`, `æ`, `ø`, ligatures and fractions would also differ. Tokens shorter than 3 characters can't use a trigram index, so they fall back to a scan with a `normalize_for_search` UDF registered on each connection. That UDF also covers the `source:` filter. The contract asset (`shared-test-vectors/search-normalization.json`) is currently regenerated from Postgres's `unaccent`/`lower()` by `scripts/generate-search-normalization.sh`. On SQLite it becomes the frozen source of truth. `tests/test_search_normalization_contract.py` has to change from "matches the live server" to "the server's search obeys the asset". In the benchmark, row sets matched `f_unaccent(..) ILIKE` for the four test queries, but those queries didn't exercise the ligature expansions. Step 2 must run the contract vectors, such as `tests/test_recipes.py`'s `Œufs` case, against SQLite. | M |
 | `recipe_versions.ingredients::text` as the sync search haystack (`ingredient_match_text`) | `raw_sql::ingredients_text()`, recipe sync, iOS local search | Ingredients become a JSON `TEXT` column, so the haystack is that text. Postgres's jsonb serialization (`{"a": 1}` with spaces) differs from compact JSON. iOS matches against whatever string the server sends, so this only changes the served bytes. A full resync re-delivers them, so it's not a client change. | S |
 | `jsonb` columns (`recipe_versions.ingredients`, `step_outputs.output`) | models, scraping output store | Stored as `TEXT` JSON. No jsonb operators are used in queries (only `::text`), so this is a type swap. Diesel 2.3's SQLite backend supports `Json`/`Jsonb` types. | S |
 | `uuid` primary/foreign keys, `gen_random_uuid()` defaults | every table | Diesel's SQLite backend has no `Uuid` SQL type. Store as `TEXT` (or 16-byte `BLOB`) with a small `FromSql`/`ToSql` newtype, and generate ids in Rust (most inserts already do). | M (wide but mechanical) |
@@ -101,7 +104,9 @@ only one write transaction runs at a time. Requirements for the port:
 - Keep write transactions short. Existing writes are already per-recipe or
   per-batch. The largest are data migrations (one transaction over every
   version) and `queue_stored`. Both run at startup before the server accepts
-  requests, so they block nothing.
+  requests, so they block nothing. A bulk job that runs while the server is up
+  must commit in chunks of a few hundred rows; a single 5k-recipe transaction
+  holds the write lock for seconds.
 - AI calls and HTTP fetches already happen outside transactions in the scrape
   steps. That rule has to keep holding, because a network call inside a
   SQLite write transaction would stall every other writer.
@@ -127,7 +132,7 @@ It also seeds the non-recipe tables the background workers write:
 
 Prod data sizes weren't available. The two scales bracket a plausible
 personal collection: 1k recipes is likely close, and 5k is a generous upper
-bound. Other worktrees were using the machine (load average ~7), so treat
+bound. Other worktrees were using the machine (load average 2–7), so treat
 single numbers as ±30 %. The orders of magnitude were stable across repeated
 runs.
 
@@ -135,14 +140,14 @@ Median latency (ms):
 
 | Workload | PG 1k | SQLite 1k | PG 5k | SQLite 5k |
 |---|---:|---:|---:|---:|
-| List page (50, newest first, tags) + total count | 4.9 | 4.4 | 7.8 | 14 |
-| Search "chicken" (220 / 1110 rows) | 85 | 1.6 | 310 | 10 |
-| Search "garlic butter" (193 / 985 rows) | 70 | 1.7 | 335 | 9.9 |
-| Search "brulee", diacritic-insensitive (3 / 12 rows) | 0.5 | 0.3 | 1.0 | 2.0 |
-| Search with no match | 0.2 | 0.3 | 0.2 | 1.9 |
-| Full recipe sync sweep (all pages of 200) | 65 | 6.3 | 237 | 39 |
-| Single recipe save (new version + tags + pointer) | 2.6 | 1.5 | 5.3 | 4.9 |
-| Bulk rewrite of every current version (one txn) | 810 | 63 | 4456 | 225 |
+| List page (50, newest first, tags) + total count | 1.7 | 1.9 | 7.2 | 11 |
+| Search "chicken" (220 / 1110 rows) | 61 | 1.5 | 304 | 9.3 |
+| Search "garlic butter" (193 / 985 rows) | 66 | 2.2 | 326 | 9.2 |
+| Search "brulee", diacritic-insensitive (3 / 12 rows) | 0.4 | 0.4 | 1.0 | 1.9 |
+| Search with no match | 0.2 | 0.3 | 0.2 | 1.6 |
+| Full recipe sync sweep (all pages of 200) | 45 | 8.7 | 219 | 37 |
+| Single recipe save (new version + tags + pointer) | 4.7 | 4.3 | 4.8 | 4.2 |
+| Bulk rewrite of every current version, search index included (one txn) | 674 | 440 | 4208 | 2774 |
 
 ### Mixed background load
 
@@ -158,16 +163,16 @@ SQLite writers share one app-level mutex. Latency p50 / p99 (ms):
 
 | | reads | step output | recipe save | 50-name batch | shopping edit |
 |---|---|---|---|---|---|
-| Postgres | 9.9 / 945 | 5.0 / 17 | 7.4 / 21 | 20 / 52 | 6.2 / 22 |
-| SQLite | 24 / 130 | 4.2 / 16 | 5.8 / 21 | 9.0 / 30 | 8.7 / 21 |
+| Postgres | 7.8 / 661 | 1.2 / 7.9 | 2.8 / 11 | 10 / 33 | 1.5 / 12 |
+| SQLite | 24 / 136 | 0.8 / 11 | 2.0 / 30 | 5.2 / 27 | 3.0 / 26 |
 
 The Postgres read p99 is its trigram search. At 1k recipes every write path on
 both backends had p99 under 40 ms.
 
-A single save issued while the bulk rewrite runs waited 11 ms on Postgres and
-186 ms on SQLite, roughly the length of the SQLite bulk rewrite. Postgres saves
-don't wait on other rows' writers, but its bulk rewrite took ~20× longer
-because it maintains five GIN trigram indexes.
+A single save issued while the bulk rewrite runs waited 12 ms on Postgres and
+2.7 s on SQLite, the length of the SQLite bulk rewrite. Postgres saves don't
+wait on other rows' writers. Its bulk rewrite is slower (five GIN trigram
+indexes), but it doesn't block anyone.
 
 ### Database size
 
@@ -201,7 +206,8 @@ What the numbers say:
   workers running.** Each write is a short transaction with an fsync, so the
   scrape runner, ingredient worker and shopping edits interleave behind the
   mutex with p99 in the tens of milliseconds. The exception is a whole-table
-  rewrite holding the lock.
+  rewrite holding the lock, which has to be chunked if it ever runs while the
+  server is up.
 - **Not covered:** photo upload and import writes (multi-MB `BLOB`s inside a
   transaction) and WAL checkpoint behavior over days of uptime. Both are
   bounded by the same single-writer rule, but step 2 should watch them.

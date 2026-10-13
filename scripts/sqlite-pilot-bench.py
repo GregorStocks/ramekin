@@ -150,8 +150,8 @@ CREATE TABLE recipes (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, current_versio
     TEXT,
   created_at TEXT NOT NULL, deleted_at TEXT, deleted_xid INTEGER);
 CREATE INDEX idx_recipes_user_active ON recipes(user_id) WHERE deleted_at IS NULL;
-CREATE TABLE recipe_versions (id TEXT PRIMARY KEY, recipe_id TEXT NOT NULL REFERENCES
-    recipes(id),
+CREATE TABLE recipe_versions (seq INTEGER PRIMARY KEY, id TEXT NOT NULL UNIQUE,
+  recipe_id TEXT NOT NULL REFERENCES recipes(id),
   title TEXT NOT NULL, description TEXT, ingredients TEXT NOT NULL, instructions TEXT
     NOT NULL,
   source_name TEXT, photo_ids TEXT NOT NULL, notes TEXT, rating INTEGER, created_at
@@ -273,7 +273,9 @@ def setup_sqlite(data):
         ],
     )
     c.executemany(
-        "INSERT INTO recipe_versions VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO recipe_versions (id, recipe_id, title, description, ingredients, "
+        "instructions, source_name, photo_ids, notes, rating, created_at, change_xid) "
+        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
         [
             (
                 v["id"],
@@ -296,7 +298,7 @@ def setup_sqlite(data):
     c.execute(
         "INSERT INTO rv_fts (rowid, title, description, instructions, notes, "
         "ingredients) "
-        "SELECT v.rowid, v.title, v.description, v.instructions, v.notes, "
+        "SELECT v.seq, v.title, v.description, v.instructions, v.notes, "
         "v.ingredients "
         "FROM recipe_versions v JOIN recipes r ON r.current_version_id = v.id"
     )
@@ -390,12 +392,13 @@ def sl_search_scan(c, tokens):
 
 def sl_search_fts(c, tokens):
     # Trigram FTS5 matches substrings case- and diacritic-insensitively, for
-    # tokens of 3+ characters.
+    # tokens of 3+ characters. The unary + keeps the planner from probing the
+    # recipe_versions index once per (recipe, match) pair, which is ~50x slower.
     match = " AND ".join('"' + unaccent(t).replace('"', '""') + '"' for t in tokens)
     return c.execute(
         "SELECT r.id, v.title, v.description, v.ingredients, v.instructions, "
         f"v.notes, {SL_TAGS} "
-        f"{CUR.format(p='?')} AND v.rowid IN (SELECT rowid FROM rv_fts WHERE rv_fts "
+        f"{CUR.format(p='?')} AND +v.seq IN (SELECT rowid FROM rv_fts WHERE rv_fts "
         "MATCH ?)",
         (USER, match),
     ).fetchall()
@@ -513,13 +516,13 @@ def sl_save(c, rid):
         )
         c.execute("UPDATE recipes SET current_version_id = ? WHERE id = ?", (vid, rid))
         old_rowid = c.execute(
-            "SELECT rowid FROM recipe_versions WHERE id = ?", (cur,)
+            "SELECT seq FROM recipe_versions WHERE id = ?", (cur,)
         ).fetchone()[0]
         c.execute("DELETE FROM rv_fts WHERE rowid = ?", (old_rowid,))
         c.execute(
             "INSERT INTO rv_fts (rowid, title, description, instructions, notes, "
             "ingredients) "
-            "SELECT rowid, title, description, instructions, notes, ingredients FROM "
+            "SELECT seq, title, description, instructions, notes, ingredients FROM "
             "recipe_versions WHERE id = ?",
             (vid,),
         )
@@ -538,10 +541,22 @@ def pg_bulk_rewrite(c):
 
 
 def sl_bulk_rewrite(c):
+    # The FTS index is refreshed in the same transaction, as the port must do;
+    # Postgres's UPDATE maintains its GIN indexes implicitly.
+    current = (
+        "SELECT v.seq FROM recipe_versions v "
+        "JOIN recipes r ON r.current_version_id = v.id"
+    )
     c.execute("BEGIN IMMEDIATE")
     c.execute(
         "UPDATE recipe_versions SET ingredients = json(ingredients) "
         "WHERE id IN (SELECT current_version_id FROM recipes)"
+    )
+    c.execute(f"DELETE FROM rv_fts WHERE rowid IN ({current})")
+    c.execute(
+        "INSERT INTO rv_fts (rowid, title, description, instructions, notes, "
+        "ingredients) SELECT seq, title, description, instructions, notes, "
+        f"ingredients FROM recipe_versions WHERE seq IN ({current})"
     )
     c.execute("COMMIT")
 
