@@ -55,7 +55,7 @@ Cost: S = mechanical, M = needs design or a few files, L = cross-cutting.
 |---|---|---|---|
 | `pg_current_xact_id()` / `pg_snapshot_xmin()` sync cursors (`current_change_xid()`, `change_xid_watermark()`), `stamp_change_xid()` trigger | migrations `2026-07-12…sync_change_xid`, `2026-10-11…shopping_list_change_xid`; `server/src/raw_sql.rs`; `api/recipes/sync.rs`, `api/shopping_list/sync.rs`; hand-stamped in `tags.rs`, `api/tags/*`, `api/recipes/delete.rs` | A one-row `sync_clock` counter bumped inside each write transaction. SQLite has a single writer, so commit order equals counter order and the watermark can simply be the current value. The xmin race the Postgres design guards against can't happen. Triggers become SQLite `AFTER UPDATE` triggers that read the counter. This also fixes `p3-sync-cursor-after-restore`, because the counter is data and is dumped with the DB. Coordinate with `blocked-one-sync-mechanism`. | M |
 | Trigram + unaccent search: `pg_trgm`, `unaccent`, `f_unaccent()`, five GIN expression indexes, `ILIKE` | `api/recipes/list.rs` text and source filters; migration `2026-04-16…unaccent_search` | FTS5 table with the plain `trigram` tokenizer over the current versions, kept in sync in the same transaction as every version insert or rewrite. The FTS rowid must come from an explicit `INTEGER PRIMARY KEY` on `recipe_versions` (for example a `seq` column next to the uuid), because `VACUUM` may renumber implicit rowids. Join the matches with `+v.seq IN (SELECT rowid FROM fts WHERE fts MATCH ?)`. Without the unary `+`, SQLite probed the version index once per (recipe, match) pair: 170 ms instead of 3 ms at 5k recipes. Columns are pre-normalized in Rust with `ramekin_core::search::normalize_for_search`, and query tokens go through the same function. FTS5's `remove_diacritics` can't be used on its own: it strips a narrower set than the search normalization contract, so `oeufs` wouldn't find `Œufs`, and `ß`, `æ`, `ø`, ligatures and fractions would also differ. Tokens shorter than 3 characters can't use a trigram index, so they fall back to a scan with a `normalize_for_search` UDF registered on each connection. That UDF also covers the `source:` filter. The contract asset (`shared-test-vectors/search-normalization.json`) is currently regenerated from Postgres's `unaccent`/`lower()` by `scripts/generate-search-normalization.sh`. On SQLite it becomes the frozen source of truth. `tests/test_search_normalization_contract.py` has to change from "matches the live server" to "the server's search obeys the asset". In the benchmark, row sets matched `f_unaccent(..) ILIKE` for the four test queries, but those queries didn't exercise the ligature expansions. Step 2 must run the contract vectors, such as `tests/test_recipes.py`'s `Œufs` case, against SQLite. | M |
-| `recipe_versions.ingredients::text` as the sync search haystack (`ingredient_match_text`) | `raw_sql::ingredients_text()`, recipe sync, iOS local search | Ingredients become a JSON `TEXT` column, so the haystack is that text. Postgres's jsonb serialization (`{"a": 1}` with spaces) differs from compact JSON. iOS matches against whatever string the server sends, so this only changes the served bytes. A full resync re-delivers them, so it's not a client change. | S |
+| `recipe_versions.ingredients::text` as the sync search haystack (`ingredient_match_text`) | `raw_sql::ingredients_text()`, recipe sync, iOS local search | Ingredients become a JSON `TEXT` column, so the haystack is that text. Postgres's jsonb serialization (`{"a": 1}` with spaces) differs from compact JSON. iOS matches against whatever string the server sends, so this only changes the served bytes. Clients have cached the old bytes, and a normal delta sync won't resend unchanged recipes. iOS reuses its persisted cursor whenever it has cached recipes (`RecipeListViewModel.swift`). So the data migration must restamp every current version (step 4 of the migration plan), which makes ordinary delta syncs deliver the new haystack with no client change. | S |
 | `jsonb` columns (`recipe_versions.ingredients`, `step_outputs.output`) | models, scraping output store | Stored as `TEXT` JSON. No jsonb operators are used in queries (only `::text`), so this is a type swap. Diesel 2.3's SQLite backend supports `Json`/`Jsonb` types. | S |
 | `uuid` primary/foreign keys, `gen_random_uuid()` defaults | every table | Diesel's SQLite backend has no `Uuid` SQL type. Store as `TEXT` (or 16-byte `BLOB`) with a small `FromSql`/`ToSql` newtype, and generate ids in Rust (most inserts already do). | M (wide but mechanical) |
 | `uuid[]` `recipe_versions.photo_ids`; `= ANY(photo_ids)`, `cardinality()` | `raw_sql.rs` photo filters, `api/recipes/list.rs` has-photos filter, photo loading | Either JSON array `TEXT` with `json_each` / `json_array_length`, or a `recipe_version_photos` junction table that preserves order. The junction table is cleaner and needs a data migration either way. | M |
@@ -240,12 +240,20 @@ What the numbers say:
    (Rewriting all stamps and restarting the clock low is not a substitute. It
    only works if the server also rejects pre-cutover cursors and forces a
    cursorless full sync.)
+   Then restamp every current recipe version, and every live tag, with a fresh
+   clock value above that seed. The ingredient haystack's serialization changes
+   from jsonb text to compact JSON, and clients persist cursors: an iOS install
+   with cached recipes only ever sends delta syncs. Restamping makes those
+   ordinary delta syncs re-deliver every recipe with the new text, so offline
+   search agrees with the server without a client-side cache reset.
 5. Build the FTS5 index from current versions.
 6. Verify row counts per table, including soft-deleted rows, and spot-check
    the API responses against the Postgres instance for a sample of recipes and
    the shopping list.
-7. Switch `DATABASE_URL`, start the server, run a client full sync on web and
-   iOS, then keep Postgres around read-only until the owner is satisfied.
+7. Switch `DATABASE_URL`, start the server, and sync web and iOS normally.
+   Thanks to the restamp, each client re-receives every recipe. Check that an
+   offline iOS search matches a server search, then keep Postgres around
+   read-only until the owner is satisfied.
 
 ## Effort
 
