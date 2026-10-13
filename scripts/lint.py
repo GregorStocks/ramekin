@@ -213,15 +213,15 @@ def get_required_ui_paths(ui_dir: Path) -> list[Path]:
 
 
 def ensure_ui_node_modules(ui_dir: Path) -> bool:
-    """Install UI dependencies using npx when node_modules is missing."""
+    """Reinstall UI dependencies when any linter is missing from node_modules."""
     required_paths = get_required_ui_paths(ui_dir)
 
     if all(path.exists() for path in required_paths):
         return True
 
     install_result = subprocess.run(
-        ["npx", "--yes", "-p", "npm@latest", "npm", "ci", "--silent"],
-        cwd=ui_dir,
+        [str(ui_dir.parent / "scripts" / "install-ui-deps.sh")],
+        env={**os.environ, "UI_DEPS_FORCE": "1"},
         capture_output=True,
         text=True,
         check=False,

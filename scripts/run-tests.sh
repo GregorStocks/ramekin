@@ -4,15 +4,7 @@ set -e
 cd "$(dirname "$0")/.."
 
 # shellcheck source=/dev/null
-source ./scripts/repo-lock.sh
-# shellcheck source=/dev/null
 source ./scripts/test-orchestration.sh
-test_lock_name="${TEST_LOCK_NAME:-top-level-run}"
-test_lock_owner_name="test run"
-if [ -z "${TEST_LOCK_NAME:-}" ]; then
-  test_lock_owner_name="top-level run"
-fi
-acquire_repo_lock "$test_lock_name" "test run" "$test_lock_owner_name"
 
 ENV_FILE="${TEST_ENV_FILE:-test.env}"
 ORIG_PROCESS_COMPOSE_PORT="${PROCESS_COMPOSE_PORT:-}"
@@ -47,7 +39,7 @@ assert_test_ports_available \
 PROCESS_COMPOSE_STARTED=0
 PROCESS_COMPOSE_PID=""
 
-trap 'EXIT_CODE=$?; set +e; stop_test_orchestration "$PROCESS_COMPOSE_STARTED" "$PROCESS_COMPOSE_PID" "$PROCESS_COMPOSE_PORT"; release_repo_lock; exit "$EXIT_CODE"' EXIT
+trap 'EXIT_CODE=$?; set +e; stop_test_orchestration "$PROCESS_COMPOSE_STARTED" "$PROCESS_COMPOSE_PID" "$PROCESS_COMPOSE_PORT"; exit "$EXIT_CODE"' EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
 
