@@ -1263,11 +1263,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         let after_comma = remaining.get(comma_idx + 1..).unwrap_or("").trim();
 
         if !before_comma.is_empty() && !after_comma.is_empty() {
-            let (alt_amount, after_alt_amount) = extract_amount(after_comma);
-            let (alt_unit, after_alt_unit) = extract_unit(&after_alt_amount);
+            let read = measure::read_measurement(after_comma);
+            let alt_unit = read.modified_unit();
 
-            if let (Some(ref amt), Some(ref unit)) = (&alt_amount, &alt_unit) {
-                let after_alt_unit_trimmed = after_alt_unit.trim();
+            if let (Some(ref amt), Some(ref unit)) = (&read.amount, &alt_unit) {
+                let after_alt_unit_trimmed = read.rest.as_str();
                 let before_comma_lower = before_comma.to_lowercase();
                 let after_unit_lower = after_alt_unit_trimmed.to_lowercase();
 
@@ -2482,6 +2482,8 @@ mod tests {
             ("2- cups flour", "2", "cup", "flour"),
             ("3- cloves garlic", "3", "clove", "garlic"),
             ("1- 2 cans black beans", "1-2", "can", "black beans"),
+            // The size sizes the cans; it isn't the unit.
+            ("1- 2 large cans tomatoes", "1-2", "large can", "tomatoes"),
             (
                 "1- inch knob fresh ginger",
                 "1",
@@ -2504,12 +2506,6 @@ mod tests {
             );
             assert_eq!(parsed.measurements[0].unit.as_deref(), Some(unit), "{raw}");
         }
-        assert_eq!(
-            parse_ingredient("1- 2 large cans tomatoes").measurements[0]
-                .amount
-                .as_deref(),
-            Some("1-2")
-        );
         // One sized package, not a range.
         for (raw, item) in [
             ("1- 15 Ounce Can Tomato Sauce", "Tomato Sauce"),
