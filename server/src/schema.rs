@@ -34,25 +34,6 @@ diesel::table! {
         kcal_per_100g -> Nullable<Float8>,
         grams_per_cup -> Nullable<Float8>,
         grams_per_piece -> Nullable<Float8>,
-        reasked -> Bool,
-        reask_error -> Nullable<Text>,
-        candidates -> Nullable<Array<Nullable<Text>>>,
-    }
-}
-
-diesel::table! {
-    ingredient_weight_estimates (food, unit) {
-        food -> Text,
-        unit -> Text,
-        status -> Text,
-        grams -> Nullable<Float8>,
-        model -> Nullable<Text>,
-        error -> Nullable<Text>,
-        attempts -> Int4,
-        created_at -> Timestamptz,
-        updated_at -> Timestamptz,
-        reasked -> Bool,
-        reask_error -> Nullable<Text>,
     }
 }
 
@@ -187,7 +168,6 @@ diesel::table! {
         version -> Int4,
         deleted_at -> Nullable<Timestamptz>,
         category_override -> Nullable<Text>,
-        categorizer_version -> Nullable<Text>,
         change_xid -> Int8,
         computed_category -> Nullable<Text>,
     }
@@ -253,7 +233,6 @@ diesel::allow_tables_to_appear_in_same_query!(
     client_log_uploads,
     data_migrations,
     ingredient_name_resolutions,
-    ingredient_weight_estimates,
     meal_plans,
     photo_thumbnails,
     photos,

@@ -42,11 +42,6 @@ piece. Ranges, "plus" compounds, "each", package sizes and weights stated only
 in the note are all handled there. `nutrition` only converts those units to
 grams with the food's data and applies the trace and frying rules.
 
-Database data the design no longer uses (`reasked`, `reask_error`,
-`candidates` on the name and weight tables, the old runtime weights queue's
-`ingredient_weight_estimates` table, `shopping_list_items.categorizer_version`)
-is kept, unread, until its removal is approved.
-
 ## Data and regeneration
 
 Source: USDA FoodData Central, SR Legacy April 2018, public domain (CC0).
