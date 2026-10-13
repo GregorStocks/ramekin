@@ -33,7 +33,7 @@
     {
       "raw": "4 sheets leaf  gelatine",
       "expected": {
-        "item": "sheets leaf  gelatine",
+        "item": "sheets leaf gelatine",
         "measurements": [
           {
             "amount": "4",
@@ -47,7 +47,7 @@
     {
       "raw": "142ml carton  single cream",
       "expected": {
-        "item": "carton  single cream",
+        "item": "carton single cream",
         "measurements": [
           {
             "amount": "142",
@@ -89,7 +89,7 @@
     {
       "raw": "finely grated zest 1 small  orange",
       "expected": {
-        "item": "finely grated zest 1 small  orange",
+        "item": "finely grated zest 1 small orange",
         "measurements": [],
         "note": null,
         "category": "Produce"
@@ -126,7 +126,7 @@
     {
       "raw": "284ml carton  double cream",
       "expected": {
-        "item": "carton  double cream",
+        "item": "carton double cream",
         "measurements": [
           {
             "amount": "284",
@@ -140,7 +140,7 @@
     {
       "raw": "250g mixture of  strawberries (chopped) and raspberries",
       "expected": {
-        "item": "mixture of  strawberries and raspberries",
+        "item": "mixture of strawberries and raspberries",
         "measurements": [
           {
             "amount": "250",
@@ -182,7 +182,7 @@
     {
       "raw": "mixture of  strawberries (some halved), raspberries and blueberries",
       "expected": {
-        "item": "mixture of  strawberries, raspberries and blueberries",
+        "item": "mixture of strawberries, raspberries and blueberries",
         "measurements": [],
         "note": "some halved",
         "category": "Produce"

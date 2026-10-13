@@ -84,7 +84,7 @@
     {
       "raw": "½ tsp hot  chilli powder",
       "expected": {
-        "item": "hot  chilli powder",
+        "item": "hot chilli powder",
         "measurements": [
           {
             "amount": "0.5",
@@ -196,11 +196,11 @@
     {
       "raw": "1 ¼kg sweet potatoes peeled and cut into chunks",
       "expected": {
-        "item": "1/4kg sweet potatoes peeled and cut into chunks",
+        "item": "sweet potatoes peeled and cut into chunks",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1.25",
+            "unit": "kg"
           }
         ],
         "note": null,
@@ -210,11 +210,11 @@
     {
       "raw": "1 ¼kg potatoes peeled and cut into large chunks",
       "expected": {
-        "item": "1/4kg potatoes peeled and cut into large chunks",
+        "item": "potatoes peeled and cut into large chunks",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1.25",
+            "unit": "kg"
           }
         ],
         "note": null,

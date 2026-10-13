@@ -5,7 +5,7 @@
     {
       "raw": "568ml pot  single cream",
       "expected": {
-        "item": "pot  single cream",
+        "item": "pot single cream",
         "measurements": [
           {
             "amount": "568",
@@ -75,7 +75,7 @@
     {
       "raw": "1⁄2 400g can  cherries",
       "expected": {
-        "item": "can  cherries",
+        "item": "can cherries",
         "measurements": [
           {
             "amount": "0.5",

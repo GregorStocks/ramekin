@@ -131,7 +131,7 @@
     {
       "raw": "¼ cup fresh cilantro leaves  and stems",
       "expected": {
-        "item": "fresh cilantro leaves  and stems",
+        "item": "fresh cilantro leaves and stems",
         "measurements": [
           {
             "amount": "0.25",
@@ -192,9 +192,13 @@
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "3.5 to 4",
+            "unit": "lb"
           }
         ],
-        "note": "3 1/2- to 4-pound, about 7 bones",
+        "note": "about 7 bones",
         "category": "Meat & Seafood"
       }
     },

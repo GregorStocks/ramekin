@@ -5,11 +5,11 @@
     {
       "raw": "1 1/4- to 1 1/2-pound skirt steak",
       "expected": {
-        "item": "1/4- to 1 1/2-pound skirt steak",
+        "item": "skirt steak",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1.25 to 1.5",
+            "unit": "lb"
           }
         ],
         "note": null,

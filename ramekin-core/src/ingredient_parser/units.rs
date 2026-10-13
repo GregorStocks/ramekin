@@ -271,40 +271,7 @@ pub(super) fn units_share_base(a: &str, b: &str) -> bool {
 }
 
 pub(super) fn extract_unit(s: &str) -> (Option<String>, String) {
-    let s = s.trim();
-
-    if let Some(remaining) = extract_single_letter_period_unit(s, "T.") {
-        return (Some("tbsp".to_string()), remaining);
-    }
-    if let Some(remaining) = extract_single_letter_period_unit(s, "t.") {
-        return (Some("tsp".to_string()), remaining);
-    }
-
-    let s_lower = s.to_lowercase();
-
-    for &unit in UNITS_SORTED.iter() {
-        if s_lower.starts_with(unit) {
-            // Make sure it's a word boundary
-            let after = s.get(unit.len()..).unwrap_or("");
-            if after.is_empty()
-                || after.starts_with(|c: char| c.is_whitespace() || c == '.' || c == ',')
-                || slash_starts_measurement(after)
-            {
-                // Skip any trailing period or whitespace
-                let mut remaining = after.trim_start_matches('.').trim();
-
-                // Strip "of " if present after the unit (e.g., "cloves of garlic" -> "garlic")
-                let remaining_lower = remaining.to_lowercase();
-                if remaining_lower.starts_with("of ") || remaining_lower == "of" {
-                    remaining = remaining.get(2..).unwrap_or("").trim_start();
-                }
-
-                return (Some(unit.to_string()), remaining.to_string());
-            }
-        }
-    }
-
-    (None, s.to_string())
+    measure::read_unit(s)
 }
 
 fn extract_single_letter_period_unit(s: &str, marker: &str) -> Option<String> {

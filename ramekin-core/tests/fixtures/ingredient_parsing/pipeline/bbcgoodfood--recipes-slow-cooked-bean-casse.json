@@ -5,7 +5,7 @@
     {
       "raw": "500g dried  red kidney beans",
       "expected": {
-        "item": "dried  red kidney beans",
+        "item": "dried red kidney beans",
         "measurements": [
           {
             "amount": "500",
@@ -19,7 +19,7 @@
     {
       "raw": "350g piece  bacon with rind",
       "expected": {
-        "item": "piece  bacon with rind",
+        "item": "piece bacon with rind",
         "measurements": [
           {
             "amount": "350",

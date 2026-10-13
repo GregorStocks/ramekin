@@ -33,7 +33,7 @@
     {
       "raw": "thumb-sized piece  ginger shredded (no need to peel)",
       "expected": {
-        "item": "thumb-sized piece  ginger shredded",
+        "item": "thumb-sized piece ginger shredded",
         "measurements": [],
         "note": "no need to peel",
         "category": "Produce"
@@ -70,7 +70,7 @@
     {
       "raw": "½ tsp Chinese  five spice powder",
       "expected": {
-        "item": "Chinese  five spice powder",
+        "item": "Chinese five spice powder",
         "measurements": [
           {
             "amount": "0.5",

@@ -103,7 +103,7 @@
     {
       "raw": "1  (8-ounce) container  frozen whipped topping (thawed )",
       "expected": {
-        "item": "container  frozen whipped topping",
+        "item": "container frozen whipped topping",
         "measurements": [
           {
             "amount": "1",
@@ -117,7 +117,7 @@
     {
       "raw": "1 (8-ounce) container  frozen whipped topping (thawed )",
       "expected": {
-        "item": "container  frozen whipped topping",
+        "item": "container frozen whipped topping",
         "measurements": [
           {
             "amount": "1",
