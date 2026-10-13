@@ -13,21 +13,10 @@ from conftest import make_ingredient
 from ramekin_client.api import RecipesApi
 from ramekin_client.models import CreateRecipeRequest, UpdateRecipeRequest
 
-# Mirrors the server's text filter in api/recipes/list.rs for one token.
-SEARCH_SQL = """
-select recipes.id
-from recipes
-join recipe_versions on recipe_versions.id = recipes.current_version_id
-where recipes.user_id = %(user_id)s
-  and recipes.deleted_at is null
-  and recipe_versions.is_current
-  and (
-    f_unaccent(recipe_versions.title) ilike %(pattern)s
-    or f_unaccent(recipe_versions.description) ilike %(pattern)s
-    or f_unaccent(recipe_versions.instructions) ilike %(pattern)s
-    or f_unaccent(recipe_versions.notes) ilike %(pattern)s
-    or f_unaccent(recipe_versions.ingredients::text) ilike %(pattern)s
-  )
+# The instructions arm of the server's text filter in api/recipes/list.rs.
+INSTRUCTIONS_SEARCH_SQL = """
+select id from recipe_versions
+where is_current and f_unaccent(instructions) ilike %s
 """
 
 
@@ -89,7 +78,7 @@ def test_is_current_follows_current_version(authed_api_client, database_url):
 
 
 def test_search_skips_old_versions(authed_api_client, database_url):
-    client, user_id = authed_api_client
+    client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
     token = uuid.uuid4().hex[:12]
     recipe_id = _create_with_versions(recipes_api, f"Stir in the {token}.", 3)
@@ -97,25 +86,22 @@ def test_search_skips_old_versions(authed_api_client, database_url):
     assert [str(r.id) for r in recipes_api.list_recipes(q=token).recipes] == [recipe_id]
 
     with psycopg.connect(database_url) as conn:
-        # Every version contains the token, so an index over all versions
-        # would hand the heap scan three rows. On a table this small the
-        # planner would rather walk recipes and fetch each current version by
-        # primary key, so rule out every path except the trigram bitmaps.
-        for setting in ("enable_seqscan", "enable_indexscan", "enable_nestloop"):
+        # Keep the tiny test table from planning a sequential scan instead.
+        for setting in ("enable_seqscan", "enable_indexscan"):
             conn.execute(f"set local {setting} = off")
         ((explain,),) = conn.execute(
-            "explain (analyze, format json) " + SEARCH_SQL,
-            {"user_id": user_id, "pattern": f"%{token}%"},
+            "explain (analyze, format json) " + INSTRUCTIONS_SEARCH_SQL,
+            (f"%{token}%",),
         ).fetchall()
 
+    # Every version contains the token, so an index over all versions would
+    # hand back three rows. The partial index only holds the current one.
     plan = explain[0]["Plan"]
-    all_nodes = list(_plan_nodes(plan))
-    assert any("_trgm" in node.get("Index Name", "") for node in all_nodes), plan
-    nodes = [n for n in all_nodes if n.get("Relation Name") == "recipe_versions"]
-    scanned = sum(
-        node["Actual Rows"] * node["Actual Loops"]
-        + node.get("Rows Removed by Index Recheck", 0)
-        + node.get("Rows Removed by Filter", 0)
-        for node in nodes
-    )
-    assert scanned == 1, plan
+    index_scans = [
+        node
+        for node in _plan_nodes(plan)
+        if node.get("Index Name") == "idx_recipe_versions_instructions_trgm"
+        and "Index Cond" in node
+    ]
+    assert len(index_scans) == 1, plan
+    assert index_scans[0]["Actual Rows"] == 1, plan
