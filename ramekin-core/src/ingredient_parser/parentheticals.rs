@@ -52,8 +52,13 @@ pub(super) fn parse_parenthetical_measurement_details(
             // If the entire parenthetical had trailing "each", apply it to all measurements
             // unless this measurement already has "each". A count is how many items
             // there are, not one item's size: "(2pkg./250g each)" is 2 packages of
-            // 250 g each.
-            if has_trailing_each && !quantity::counts_pieces(&m) {
+            // 250 g each, and "3 8-ounce packages" is 3 packages even though they weigh.
+            let counts_containers = m
+                .unit
+                .as_deref()
+                .and_then(|unit| unit.split_whitespace().last())
+                .is_some_and(is_package_noun);
+            if has_trailing_each && !quantity::counts_pieces(&m) && !counts_containers {
                 if let Some(ref unit) = m.unit {
                     if !unit.ends_with(" each") {
                         m.unit = Some(format!("{} each", unit));
@@ -863,6 +868,10 @@ mod tests {
         let result = parse_parenthetical_measurements("2 sticks/4 oz each");
         let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
         assert_eq!(units, [Some("sticks"), Some("oz each")]);
+
+        let result = parse_parenthetical_measurements("3 8-ounce packages/226 g each");
+        let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
+        assert_eq!(units, [Some("8-ounce packages"), Some("g each")]);
 
         let result = parse_parenthetical_measurements("8 ounces; 227 g each");
         let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
