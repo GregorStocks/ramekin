@@ -45,7 +45,7 @@ Cost: S = mechanical, M = needs design or a few files, L = cross-cutting.
 | Feature | Where | SQLite equivalent | Cost |
 |---|---|---|---|
 | `pg_current_xact_id()` / `pg_snapshot_xmin()` sync cursors (`current_change_xid()`, `change_xid_watermark()`), `stamp_change_xid()` trigger | migrations `2026-07-12…sync_change_xid`, `2026-10-11…shopping_list_change_xid`; `server/src/raw_sql.rs`; `api/recipes/sync.rs`, `api/shopping_list/sync.rs`; hand-stamped in `tags.rs`, `api/tags/*`, `api/recipes/delete.rs` | A one-row `sync_clock` counter bumped inside each write transaction. SQLite has a single writer, so commit order equals counter order and the watermark can simply be the current value. The xmin race the Postgres design guards against can't happen. Triggers become SQLite `AFTER UPDATE` triggers that read the counter. This also fixes `p3-sync-cursor-after-restore`, because the counter is data and is dumped with the DB. Coordinate with `blocked-one-sync-mechanism`. | M |
-| Trigram + unaccent search: `pg_trgm`, `unaccent`, `f_unaccent()`, five GIN expression indexes, `ILIKE` | `api/recipes/list.rs` text and source filters; migration `2026-04-16…unaccent_search` | FTS5 table with `tokenize='trigram remove_diacritics 1'` over the current versions, kept in sync on version insert. It returned identical row sets to `f_unaccent(..) ILIKE '%x%'` in every benchmark query. Tokens shorter than 3 characters can't use a trigram index, so they fall back to a scan with an `unaccent`/lowercase UDF registered on each connection. The same UDF covers the `source:` filter. | M |
+| Trigram + unaccent search: `pg_trgm`, `unaccent`, `f_unaccent()`, five GIN expression indexes, `ILIKE` | `api/recipes/list.rs` text and source filters; migration `2026-04-16…unaccent_search` | FTS5 table with the plain `trigram` tokenizer over the current versions, kept in sync on version insert. Columns are pre-normalized in Rust with `ramekin_core::search::normalize_for_search`, and query tokens go through the same function. FTS5's `remove_diacritics` can't be used on its own: it strips a narrower set than the search normalization contract, so `oeufs` wouldn't find `Œufs`, and `ß`, `æ`, `ø`, ligatures and fractions would also differ. Tokens shorter than 3 characters can't use a trigram index, so they fall back to a scan with a `normalize_for_search` UDF registered on each connection. That UDF also covers the `source:` filter. The contract asset (`shared-test-vectors/search-normalization.json`) is currently regenerated from Postgres's `unaccent`/`lower()` by `scripts/generate-search-normalization.sh`. On SQLite it becomes the frozen source of truth. `tests/test_search_normalization_contract.py` has to change from "matches the live server" to "the server's search obeys the asset". In the benchmark, row sets matched `f_unaccent(..) ILIKE` for the four test queries, but those queries didn't exercise the ligature expansions. Step 2 must run the contract vectors, such as `tests/test_recipes.py`'s `Œufs` case, against SQLite. | M |
 | `recipe_versions.ingredients::text` as the sync search haystack (`ingredient_match_text`) | `raw_sql::ingredients_text()`, recipe sync, iOS local search | Ingredients become a JSON `TEXT` column, so the haystack is that text. Postgres's jsonb serialization (`{"a": 1}` with spaces) differs from compact JSON. iOS matches against whatever string the server sends, so this only changes the served bytes. A full resync re-delivers them, so it's not a client change. | S |
 | `jsonb` columns (`recipe_versions.ingredients`, `step_outputs.output`) | models, scraping output store | Stored as `TEXT` JSON. No jsonb operators are used in queries (only `::text`), so this is a type swap. Diesel 2.3's SQLite backend supports `Json`/`Jsonb` types. | S |
 | `uuid` primary/foreign keys, `gen_random_uuid()` defaults | every table | Diesel's SQLite backend has no `Uuid` SQL type. Store as `TEXT` (or 16-byte `BLOB`) with a small `FromSql`/`ToSql` newtype, and generate ids in Rust (most inserts already do). | M (wide but mechanical) |
@@ -169,9 +169,14 @@ What the numbers say:
    or Python exporter. The exporter converts uuids to text, `uuid[]` to the
    junction table or JSON, jsonb to compact JSON text, citext to text plus
    `name_key`, and timestamps to UTC ISO-8601.
-4. Seed `sync_clock` above every migrated `change_xid` / `deleted_xid`, so
-   cursors persisted by clients still compare correctly. Alternatively, rewrite
-   all stamps to 1 and bump the clock, which forces one full resync.
+4. Seed `sync_clock` from `pg_snapshot_xmax(pg_current_snapshot())` captured
+   at the freeze, not from the highest stored stamp. A client's persisted
+   cursor is a past `pg_snapshot_xmin()` watermark, which can be above every
+   stored `change_xid` if the DB was idle after that sync. Seeding below it
+   would make the first post-cutover writes invisible to that client forever.
+   (Rewriting all stamps and restarting the clock low is not a substitute. It
+   only works if the server also rejects pre-cutover cursors and forces a
+   cursorless full sync.)
 5. Build the FTS5 index from current versions.
 6. Verify row counts per table, including soft-deleted rows, and spot-check
    the API responses against the Postgres instance for a sample of recipes and

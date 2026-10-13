@@ -133,6 +133,8 @@ CREATE INDEX ON recipe_versions USING GIN (f_unaccent(ingredients::text) gin_trg
 ANALYZE;
 """
 
+# remove_diacritics stands in for normalize_for_search here: same index cost, but
+# it misses the contract's ligature expansions (see doc/sqlite-pilot-analysis.md).
 SQLITE_SCHEMA = """
 CREATE TABLE recipes (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, current_version_id
     TEXT,
