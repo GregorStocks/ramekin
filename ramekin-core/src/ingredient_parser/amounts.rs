@@ -204,40 +204,17 @@ pub(super) fn is_fraction(s: &str) -> bool {
     }
 }
 
+/// The measurement after "to" or "+" in a range or sum: "2 cups", "2-inch
+/// piece" (an inch size, read as the range's high end).
 pub(super) fn parse_range_continuation_measurement(
     s: &str,
 ) -> Option<(String, Option<String>, String)> {
-    let (pre_amount_modifier, after_modifier) = strip_measurement_modifier(s);
-    let (mut amount, after_amount) = extract_amount(&after_modifier);
-    let (pre_unit_modifier, after_pre_unit) = strip_measurement_modifier(&after_amount);
-    let modifier = pre_unit_modifier.or(pre_amount_modifier);
-    let (mut base_unit, mut remaining) = extract_unit(&after_pre_unit);
-
-    if base_unit.is_none() {
-        if let Some((descriptor_amount, descriptor_unit, descriptor_remaining)) =
-            try_extract_hyphenated_descriptor_range(&after_pre_unit)
-        {
-            amount = Some(descriptor_amount);
-            base_unit = Some(descriptor_unit);
-            remaining = descriptor_remaining;
-        } else if let Some(amount_str) = amount.as_deref() {
-            if let Some(((replacement_amount, recovered_unit), after_recovered)) =
-                try_extract_hyphenated_unit_tail(amount_str, &after_pre_unit)
-            {
-                amount = Some(replacement_amount);
-                base_unit = Some(recovered_unit);
-                remaining = after_recovered;
-            }
-        }
+    if let Some((amount, unit, rest)) = try_extract_hyphenated_descriptor_range(s) {
+        return Some((amount, Some(unit), rest));
     }
-
-    let unit = match (modifier, base_unit) {
-        (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
-        (Some(m), None) => Some(m),
-        (None, u) => u,
-    };
-
-    Some((amount?, unit, remaining))
+    let read = measure::read_measurement(s);
+    let unit = read.modified_unit();
+    Some((read.amount?, unit, read.rest))
 }
 
 pub(super) fn try_extract_hyphenated_descriptor_range(s: &str) -> Option<(String, String, String)> {

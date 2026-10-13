@@ -117,22 +117,13 @@ fn parse_plus_continuation_measurement(
     s: &str,
 ) -> Option<(String, String, String, Option<String>)> {
     let (plus_prefix, after_plus_prefix) = strip_plus_measurement_prefix(s);
-    let (pre_amount_modifier, after_modifier) = strip_measurement_modifier(&after_plus_prefix);
-    let (amount, after_amount) = extract_amount(&after_modifier);
-    let (pre_unit_modifier, after_pre_unit) = strip_measurement_modifier(&after_amount);
-    let modifier = pre_unit_modifier.or(pre_amount_modifier).or(plus_prefix);
-    let (unit, remaining) = extract_unit(&after_pre_unit);
-
-    Some((amount?, unit?, remaining, modifier))
+    let read = measure::read_measurement(&after_plus_prefix);
+    Some((read.amount?, read.unit?, read.rest, read.modifier.or(plus_prefix)))
 }
 
 fn leading_measurement_consumes_all(s: &str) -> bool {
-    let (_, after_pre_amount_modifier) = strip_measurement_modifier(s);
-    let (amount, after_amount) = extract_amount(&after_pre_amount_modifier);
-    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
-    let (unit, after_unit) = extract_unit(&after_pre_unit_modifier);
-
-    amount.is_some() && unit.is_some() && after_unit.trim().is_empty()
+    let read = measure::read_measurement(s);
+    read.amount.is_some() && read.unit.is_some() && read.rest.is_empty()
 }
 
 fn strip_leading_measurement_qualifier(s: &str) -> (Option<&str>, &str) {
