@@ -423,11 +423,9 @@ fn inch_piece(c: &mut Cursor) -> Option<String> {
 /// of one ("1 14-ounce can"); returns the replacement amount if so.
 fn hyphenated_unit(c: &mut Cursor, amount_start: usize) -> Option<(Option<String>, String)> {
     let mut probe = c.clone();
-    let dash = probe.take_if(|t| t.kind == Kind::Dash)?;
-    if dash.space_before {
-        return None;
-    }
-    // "1- inch knob": a space after the dash is a typo for "1-inch".
+    // "1- inch knob" and "14.5 -ounce": a space on either side of the dash is
+    // a typo for "1-inch" and "14.5-ounce".
+    probe.take_if(|t| t.kind == Kind::Dash)?;
     let base = probe.take_if(|t| t.kind == Kind::Word)?;
     let base_lower = base.lower();
     if !WEIGHT_UNITS_FOR_COMPOUND.contains(&base_lower.as_str())
@@ -796,6 +794,7 @@ mod tests {
             read("1/2-pound beef"),
             (some("1/2"), some("pound"), "beef".to_string())
         );
+        assert_eq!(read("14.5 -ounce").1, some("ounce"));
         assert_eq!(
             read("2 3-4 inch chunks ginger"),
             (some("2"), some("3-4 inch chunks"), "ginger".to_string())
