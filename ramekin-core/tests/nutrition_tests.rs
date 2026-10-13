@@ -1,5 +1,5 @@
 use ramekin_core::catalog;
-use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
+use ramekin_core::ingredient_parser::{parse_ingredient, Measurement, ParsedIngredient};
 use ramekin_core::nutrition::{estimate, Status, WeightKey, MAX_UNKNOWN_LINES};
 
 #[test]
@@ -513,7 +513,6 @@ fn tiny_measures_of_non_trace_foods_use_the_density() {
     for (unit, per_tsp) in [
         ("dash", 1.0 / 8.0),
         ("pinch", 1.0 / 16.0),
-        ("smidgen", 1.0 / 32.0),
         ("drop", 1.0 / 96.0),
     ] {
         assert!(
@@ -530,6 +529,25 @@ fn tiny_measures_of_non_trace_foods_use_the_density() {
         kcal("brown sugar", "1", "packed cup"),
         kcal("brown sugar", "1", "cup")
     );
+    // The same, from raw recipe text through the parser.
+    let parsed = |raw: &str| {
+        let result = estimate(&[parse_ingredient(raw)], None, 1.0).unwrap();
+        assert!(
+            result.unknown_ingredients.is_empty(),
+            "{raw}: {:?}",
+            result.unknown_ingredients
+        );
+        result.known_calories.unwrap().min
+    };
+    assert!(parsed("2 dashes Worcestershire sauce") > 0.0);
+    assert!(parsed("3 drops Tabasco sauce") > 0.0);
+    for raw in [
+        "1 packed cup brown sugar",
+        "1 firmly packed cup brown sugar",
+        "1 lightly packed cup brown sugar",
+    ] {
+        assert_eq!(parsed(raw), kcal("brown sugar", "1", "cup"), "{raw}");
+    }
 }
 
 #[test]

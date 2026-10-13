@@ -364,14 +364,13 @@ fn grams_per_unit(unit: &Unit, food: &Food) -> Result<CalorieRange, &'static str
 }
 
 /// Cups in one of a tiny measure, as measuring-spoon sets size them (a dash is
-/// 1/8 tsp, a pinch 1/16, a smidgen 1/32) and a drop as 0.05 ml (1/96 tsp).
+/// 1/8 tsp, a pinch 1/16) and a drop as 0.05 ml (1/96 tsp).
 /// Trace spices are negligible before this; it weighs a dash of hot sauce or a
 /// pinch of sugar with the food's density.
 fn trace_measure_cups(unit: &str) -> Option<f64> {
     let tsp = match unit {
         "dash" => 1.0 / 8.0,
         "pinch" => 1.0 / 16.0,
-        "smidgen" => 1.0 / 32.0,
         "drop" => 1.0 / 96.0,
         _ => return None,
     };

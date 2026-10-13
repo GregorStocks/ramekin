@@ -192,7 +192,7 @@ fn inch_piece_size(unit: &str) -> Option<Range> {
 fn canonical_unit(normalized: &str) -> String {
     static FILL: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(
-            r"^(?:(?:slightly )?(?:heaped|heaping|scant|generous|level|rounded)|(?:firmly |lightly |loosely |tightly |well )?packed) ",
+            r"^(?:(?:slightly )?(?:heaped|heaping|scant|generous|level|rounded)|(?:firmly |lightly |loosely )?packed) ",
         )
         .unwrap()
     });
