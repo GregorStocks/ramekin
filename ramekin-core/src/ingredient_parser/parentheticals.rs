@@ -180,27 +180,14 @@ pub(super) fn normalize_parenthetical_measurement_separators(content: &str) -> S
 
 pub(super) fn try_parse_parenthetical_measurement(s: &str) -> Option<Measurement> {
     let cleaned = strip_measurement_qualifiers(s);
-    let (mut amount, after_amount) = extract_amount(&cleaned);
-    let (mut unit, mut remaining) = extract_unit(&after_amount);
-
-    if unit.is_none() {
-        if let Some(amount_str) = amount.as_deref() {
-            if let Some(((replacement_amount, recovered_unit), after_recovered)) =
-                try_extract_hyphenated_unit_tail(amount_str, &after_amount)
-            {
-                amount = Some(replacement_amount);
-                unit = Some(recovered_unit);
-                remaining = after_recovered;
-            }
-        }
-    }
-
-    let (amount, unit) = match (amount, unit) {
+    let read = measure::read_measurement(&cleaned);
+    let unit = read.modified_unit();
+    let (amount, unit) = match (read.amount, unit) {
         (Some(amount), Some(unit)) => (amount, unit),
         _ => return None,
     };
 
-    let remaining = remaining.trim();
+    let remaining = read.rest.trim();
     let has_each_suffix = remaining.eq_ignore_ascii_case("each");
     if !remaining.is_empty() && !has_each_suffix {
         return None;
@@ -379,10 +366,7 @@ pub(super) fn parenthetical_branch_context(raw_before_parenthetical: &str) -> (b
 /// own measurement leads `before_or`, so it is stripped before checking the
 /// item (see `is_count_alternative_after_item`).
 pub(super) fn is_count_alternative(before_or: &str, after_or: &str) -> bool {
-    let (_, after_pre_amount_modifier) = strip_measurement_modifier(before_or);
-    let (_, after_amount) = extract_amount(&after_pre_amount_modifier);
-    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
-    let (_, item) = extract_unit(&after_pre_unit_modifier);
+    let item = measure::read_measurement(before_or).rest;
     is_count_alternative_after_item(&item, after_or)
 }
 
@@ -412,11 +396,8 @@ pub(super) fn is_count_alternative_after_item(item: &str, after_or: &str) -> boo
 }
 
 pub(super) fn segment_starts_with_measurement(segment: &str) -> bool {
-    let (_, after_pre_amount_modifier) = strip_measurement_modifier(segment);
-    let (amount, after_amount) = extract_amount(&after_pre_amount_modifier);
-    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
-    let (unit, _) = extract_unit(&after_pre_unit_modifier);
-    amount.is_some() && unit.is_some()
+    let read = measure::read_measurement(segment);
+    read.amount.is_some() && read.unit.is_some()
 }
 
 pub(super) fn segment_contains_measurement(segment: &str) -> bool {
@@ -601,15 +582,12 @@ pub(super) fn split_parenthetical_item_identity(content: &str) -> Option<(String
 pub(super) fn split_measured_parenthetical_item_identity(
     content: &str,
 ) -> Option<(String, Option<String>)> {
-    let (_, after_pre_amount_modifier) = strip_measurement_modifier(content);
-    let (amount, after_amount) = extract_amount(&after_pre_amount_modifier);
-    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
-    let (unit, after_unit) = extract_unit(&after_pre_unit_modifier);
-    if amount.is_none() || unit.is_none() {
+    let read = measure::read_measurement(content);
+    if read.amount.is_none() || read.unit.is_none() {
         return None;
     }
 
-    let item_and_note = after_unit.trim().trim_start_matches(',').trim();
+    let item_and_note = read.rest.trim_start_matches(',').trim();
     if item_and_note.is_empty() {
         return None;
     }
@@ -705,10 +683,7 @@ pub(super) fn outside_lacks_item_identity(s: &str) -> bool {
         return true;
     }
 
-    let (_, after_pre_amount_modifier) = strip_measurement_modifier(s);
-    let (_, after_amount) = extract_amount(&after_pre_amount_modifier);
-    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
-    let (_, after_unit) = extract_unit(&after_pre_unit_modifier);
+    let after_unit = measure::read_measurement(s).rest;
     let candidate = consume_leading_measurement_continuations(after_unit.trim_start_matches(','));
 
     candidate.is_empty() || is_only_descriptor_or_prep_words(&candidate)
