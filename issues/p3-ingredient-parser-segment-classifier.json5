@@ -1,0 +1,17 @@
+{
+  "title": "Ingredient parser: classify the item segments in one pass",
+  "description": "The item/note passes in parse_ingredient (mod.rs, Steps 2 and 3.5 through 5.7) now find their boundaries with ingredient_parser/segments.rs, which splits a string at top-level commas, \"or\", \"plus\"/\"+\", \"/\" and a spaced \" - \" from the token stream (ignoring separators inside closed brackets/parentheses, \"and/or\" and \"1,000\"). \
+They still run as a sequence of passes that each rebuild Segments on the shrinking remaining string, and their order decides overlaps (Step 2 takes everything after \", plus\", Step 5 peels commas before Step 5.5 looks at \"or\"). \
+Next step: split the post-measurement text once and classify every segment (alternative measurement, item, note, guidance, alternative-food note) in one place, so the passes stop depending on order. \
+Also in Step 5.5: the \"or\" alternative test still checks a hard-coded list of unit words (unit_patterns) plus any digit; read the alternative with measure::read_measurement instead. \
+Pin behavior with the pipeline fixtures, rerun make pipeline, and name every data/ diff.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "ramekin-core",
+  ],
+  "created_at": "2026-10-13T08:30:00-07:00",
+  "updated_at": "2026-10-13T08:30:00-07:00",
+}
