@@ -425,19 +425,26 @@ fn hyphenated_unit(c: &mut Cursor, amount_start: usize) -> Option<(Option<String
     if dash.space_before {
         return None;
     }
-    let base = probe.take_if(|t| t.kind == Kind::Word && !t.space_before)?;
+    // "1- inch knob": a space after the dash is a typo for "1-inch".
+    let base = probe.take_if(|t| t.kind == Kind::Word)?;
     let base_lower = base.lower();
     if !WEIGHT_UNITS_FOR_COMPOUND.contains(&base_lower.as_str())
         && !["inch", "inches"].contains(&base_lower.as_str())
     {
         return None;
     }
-    probe.take_if(|t| t.kind == Kind::Period && !t.space_before);
+    let period = probe.take_if(|t| t.kind == Kind::Period && !t.space_before);
     let after_base = probe.pos;
     let result = match probe.take_word(HYPHENATED_DESCRIPTOR_NOUNS) {
-        Some(_) => (
+        Some(noun) => (
             Some("1".to_string()),
-            probe.text_between(amount_start, probe.pos).to_string(),
+            format!(
+                "{}-{}{} {}",
+                c.text_between(amount_start, c.pos),
+                base.text,
+                period.map_or("", |p| p.text),
+                noun.text
+            ),
         ),
         None => {
             probe.pos = after_base;
@@ -498,6 +505,14 @@ fn unit_phrase(c: &mut Cursor, amount_start: usize) -> Option<(Option<String>, S
         }
         if let Some(read) = hyphenated_unit(c, amount_start) {
             return Some(read);
+        }
+        // "2- cups": a dash typed between the amount and the unit.
+        let stray_dash = c.peek(0).is_some_and(|t| t.kind == Kind::Dash && !t.space_before)
+            && c.peek(1).is_some_and(|t| {
+                t.kind == Kind::Word && t.space_before && !["to", "or", "and"].contains(&t.lower().as_str())
+            });
+        if stray_dash {
+            c.pos += 1;
         }
     }
     if let Some(unit) = package_size(c).or_else(|| inch_piece(c)) {

@@ -480,7 +480,6 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let decoded = decode_html_entities(raw);
     let normalized = normalize_unicode(&decoded);
     let normalized = strip_leading_list_marker(&normalized);
-    let normalized = close_one_sided_dash(&normalized);
     let normalized = normalize_digit_letter_spacing(&normalized);
     let mut remaining = normalize_word_numbers(&normalized);
     let mut measurements = Vec::new();

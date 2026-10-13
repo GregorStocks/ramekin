@@ -5,11 +5,11 @@
     {
       "raw": "2- to 3- pound boneless chuck roast",
       "expected": {
-        "item": "- pound boneless chuck roast",
+        "item": "boneless chuck roast",
         "measurements": [
           {
             "amount": "2 to 3",
-            "unit": null
+            "unit": "lb"
           }
         ],
         "note": null,
