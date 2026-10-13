@@ -222,12 +222,12 @@ fn split_malformed_parenthetical_package_item(s: &str) -> Option<(String, String
 }
 
 fn repair_unclosed_parenthetical_measurement_fragment(s: &str) -> String {
-    let Some(start) = s.find('(') else {
+    let Some(start) = tokens::first_group(s)
+        .filter(|group| !group.closed)
+        .map(|group| group.open)
+    else {
         return s.to_string();
     };
-    if find_matching_closing_paren(s, start).is_some() {
-        return s.to_string();
-    }
 
     let before = s.get(..start).unwrap_or("").trim_end();
     let content = s.get(start + 1..).unwrap_or("").trim_start();
@@ -258,15 +258,13 @@ fn is_bare_parenthetical_package_size(s: &str) -> bool {
 
 fn is_standalone_parenthetical_package_fragment(s: &str) -> bool {
     let trimmed = s.trim();
-    if !trimmed.starts_with('(') {
-        return false;
-    }
-    let Some(close_idx) = find_matching_closing_paren(trimmed, 0) else {
+    let Some(group) = tokens::first_group(trimmed).filter(|group| group.open == 0 && group.closed)
+    else {
         return false;
     };
-    let content = trimmed.get(1..close_idx).unwrap_or("").trim();
+    let content = group.content(trimmed).trim();
     let after = trimmed
-        .get(close_idx + 1..)
+        .get(group.end(trimmed)..)
         .unwrap_or("")
         .trim()
         .trim_end_matches(['.', ',', ';'])
@@ -487,61 +485,34 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
     remaining = repair_unclosed_parenthetical_measurement_fragment(&remaining);
 
-    // Strip placeholder parentheticals: TK ("to come") and TODO markers
-    // e.g., "1/2 cup (TK g) panko bread crumbs" -> "1/2 cup panko bread crumbs"
-    // e.g., "(TODO) chicken stock" -> "chicken stock"
-    loop {
-        let lower = remaining.to_lowercase();
-        let Some(start) = lower.find("(tk").or_else(|| lower.find("(todo")) else {
-            break;
-        };
-        let after = match remaining.get(start..) {
-            Some(s) => s,
-            None => break,
-        };
-        let Some(end_offset) = after.find(')') else {
-            break;
-        };
-        let before = remaining.get(..start).unwrap_or("").trim_end();
-        let after = remaining
-            .get(start + end_offset + 1..)
-            .unwrap_or("")
-            .trim_start();
-        remaining = if before.is_empty() {
-            after.to_string()
-        } else if after.is_empty() {
-            before.to_string()
-        } else {
-            format!("{} {}", before, after)
-        };
-    }
+    remaining = strip_placeholder_parentheticals(&remaining);
 
     // Unwrap leading parentheticals that contain quantities
     // e.g., "(half stick) butter" -> "1/2 stick butter"
     // But NOT "(optional) 1/4 cup" which should keep the paren structure
-    if remaining.starts_with('(') {
-        if let Some(close_idx) = remaining.find(')') {
-            let paren_content = remaining.get(1..close_idx).unwrap_or("").trim();
+    if let Some(group) =
+        tokens::first_group(&remaining).filter(|group| group.open == 0 && group.close.is_some())
+    {
+        let paren_content = group.content(&remaining).trim();
 
-            // Normalize word numbers in paren content (e.g., "half" -> "1/2", "two" -> "2")
-            let normalized_content = normalize_word_numbers(paren_content);
+        // Normalize word numbers in paren content (e.g., "half" -> "1/2", "two" -> "2")
+        let normalized_content = normalize_word_numbers(paren_content);
 
-            // Only unwrap if the content starts with a digit (after normalization)
-            // or is a known measurement modifier like "heaping", "scant"
-            let first_char = normalized_content.chars().next();
-            let is_quantity = first_char.is_some_and(|c| c.is_ascii_digit());
-            let is_modifier = MEASUREMENT_MODIFIERS
-                .iter()
-                .any(|&m| normalized_content.eq_ignore_ascii_case(m));
+        // Only unwrap if the content starts with a digit (after normalization)
+        // or is a known measurement modifier like "heaping", "scant"
+        let first_char = normalized_content.chars().next();
+        let is_quantity = first_char.is_some_and(|c| c.is_ascii_digit());
+        let is_modifier = MEASUREMENT_MODIFIERS
+            .iter()
+            .any(|&m| normalized_content.eq_ignore_ascii_case(m));
 
-            if is_quantity || is_modifier {
-                let after_paren = remaining.get(close_idx + 1..).unwrap_or("").trim();
-                remaining = if after_paren.is_empty() {
-                    normalized_content
-                } else {
-                    format!("{} {}", normalized_content, after_paren)
-                };
-            }
+        if is_quantity || is_modifier {
+            let after_paren = remaining.get(group.end(&remaining)..).unwrap_or("").trim();
+            remaining = if after_paren.is_empty() {
+                normalized_content
+            } else {
+                format!("{} {}", normalized_content, after_paren)
+            };
         }
     }
 
@@ -550,28 +521,18 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // e.g., "1/2 cup butter (softened)" -> extract "(softened)" as note
     let mut alt_measurements = Vec::new();
     let mut deferred_parenthetical_notes = Vec::new();
-    while let Some(start) = remaining.find('(') {
-        let Some(close_idx) = find_matching_closing_paren(&remaining, start).or_else(|| {
-            remaining
-                .get(start + 1..)
-                .and_then(|tail| tail.find(')').map(|idx| start + 1 + idx))
-        }) else {
-            break;
-        };
-        let paren_content = match remaining.get(start + 1..close_idx) {
-            Some(s) => s,
-            None => break,
-        };
-        let paren_content = paren_content.trim_start_matches('(').trim();
+    while let Some(group) = tokens::first_group(&remaining).filter(|group| group.close.is_some()) {
+        // An unclosed doubled "(" ("((2 cups) flour") leaves one "(" inside.
+        let paren_content = group.content(&remaining).trim_start_matches('(').trim();
 
-        let raw_before_parenthetical = remaining.get(..start).unwrap_or("");
+        let raw_before_parenthetical = remaining.get(..group.open).unwrap_or("");
         let (follows_comma, follows_or) = parenthetical_branch_context(raw_before_parenthetical);
         let before_parenthetical = raw_before_parenthetical
             .trim_end()
             .trim_end_matches(',')
             .trim_end();
         let after_parenthetical = remaining
-            .get(close_idx + 1..)
+            .get(group.end(&remaining)..)
             .unwrap_or("")
             .trim_start()
             .trim_start_matches(')')
@@ -671,11 +632,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         } else {
             // Preserve any non-measurement parenthetical as ingredient-relevant note
             // instead of dropping it on the floor.
-            let trimmed_content = paren_content
-                .trim()
-                .trim_start_matches(',')
-                .trim()
-                .to_string();
+            let trimmed_content = bare_parenthetical_size(paren_content).unwrap_or_else(|| {
+                paren_content
+                    .trim()
+                    .trim_start_matches(',')
+                    .trim()
+                    .to_string()
+            });
             push_deferred_parenthetical_note(
                 &mut deferred_parenthetical_notes,
                 &trimmed_content,

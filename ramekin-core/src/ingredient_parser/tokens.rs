@@ -97,6 +97,100 @@ pub(super) fn tokenize(s: &str) -> Vec<Token<'_>> {
     tokens
 }
 
+/// A top-level parenthetical, by the byte offsets of its parens. Nested
+/// parentheticals stay inside it.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub(super) struct Group {
+    pub open: usize,
+    /// The matching ")", or for a group that never closes the first ")"
+    /// inside it: "(about (2 cups) flour" reads as one doubled "(".
+    pub close: Option<usize>,
+    /// The group has a matching ")".
+    pub closed: bool,
+}
+
+impl Group {
+    /// The text between the parens, to the end of `s` when nothing closes it.
+    pub fn content<'a>(&self, s: &'a str) -> &'a str {
+        s.get(self.open + 1..self.close.unwrap_or(s.len()))
+            .unwrap_or("")
+    }
+
+    /// The offset just past the group's ")".
+    pub fn end(&self, s: &str) -> usize {
+        self.close.map_or(s.len(), |close| close + 1)
+    }
+}
+
+/// The top-level parentheticals of `s`, in order. A ")" with no "(" before
+/// it is ignored; a "(" that never closes runs to the end of the line.
+pub(super) fn groups(s: &str) -> Vec<Group> {
+    if !s.contains('(') {
+        return Vec::new();
+    }
+    let toks = tokenize(s);
+    let mut groups = Vec::new();
+    let mut i = 0;
+    while let Some(token) = toks.get(i) {
+        if token.kind != Kind::Open {
+            i += 1;
+            continue;
+        }
+        let Some(close) = matching_close(&toks, i) else {
+            let close = toks
+                .get(i..)
+                .and_then(|rest| rest.iter().find(|t| t.kind == Kind::Close));
+            groups.push(Group {
+                open: token.start,
+                close: close.map(|t| t.start),
+                closed: false,
+            });
+            break;
+        };
+        groups.push(Group {
+            open: token.start,
+            close: Some(toks[close].start),
+            closed: true,
+        });
+        i = close + 1;
+    }
+    groups
+}
+
+/// The first top-level parenthetical of `s`.
+pub(super) fn first_group(s: &str) -> Option<Group> {
+    groups(s).into_iter().next()
+}
+
+/// The content of `s` when it is one parenthetical end to end: "(serves 4)"
+/// -> "serves 4".
+pub(super) fn sole_group_content(s: &str) -> Option<&str> {
+    match groups(s).as_slice() {
+        [group] if group.open == 0 && group.closed && group.end(s) == s.len() => {
+            Some(group.content(s))
+        }
+        _ => None,
+    }
+}
+
+/// The index of the Close token matching the Open token at `open`.
+pub(super) fn matching_close(tokens: &[Token], open: usize) -> Option<usize> {
+    let mut depth = 0;
+    for (i, token) in tokens.iter().enumerate().skip(open) {
+        match token.kind {
+            Kind::Open => depth += 1,
+            Kind::Close => {
+                depth -= 1;
+                if depth == 0 {
+                    return Some(i);
+                }
+            }
+            _ => {}
+        }
+    }
+    None
+}
+
 /// End of the number starting at `i`: digits, one decimal part, and a
 /// "/digits" denominator when the number is an integer.
 fn number_end(bytes: &[u8], mut i: usize) -> usize {
@@ -194,6 +288,36 @@ mod tests {
                 (Kind::Word, "can"),
             ]
         );
+    }
+
+    fn contents(s: &str) -> Vec<&str> {
+        groups(s).iter().map(|g| g.content(s)).collect()
+    }
+
+    #[test]
+    fn groups_balance_nested_parens() {
+        assert_eq!(
+            contents("1 (15-ounce) can beans (drained (well))"),
+            vec!["15-ounce", "drained (well)"]
+        );
+        assert_eq!(contents("a) b (c)"), vec!["c"]);
+        assert!(contents("no parens").is_empty());
+    }
+
+    #[test]
+    fn unclosed_groups() {
+        let s = "1 cup (about 2 lemons";
+        let group = groups(s)[0];
+        assert!(!group.closed);
+        assert_eq!(group.content(s), "about 2 lemons");
+        assert_eq!(group.end(s), s.len());
+
+        // A doubled "(" closes at the first ")".
+        let s = "flour (about (2 cups) sifted";
+        let group = groups(s)[0];
+        assert!(!group.closed);
+        assert_eq!(group.content(s), "about (2 cups");
+        assert_eq!(s.get(group.end(s)..), Some(" sifted"));
     }
 
     #[test]
