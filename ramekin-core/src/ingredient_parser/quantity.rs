@@ -283,6 +283,18 @@ pub fn read(measurement: &Measurement) -> Measure {
     terms(measurement.amount.as_deref()?, &outer)
 }
 
+/// Whether a measurement counts pieces ("2 cans", "2 sticks") rather than
+/// sizing one: a weight, a volume, or a length.
+pub(super) fn counts_pieces(measurement: &Measurement) -> bool {
+    matches!(
+        read(measurement).as_deref(),
+        Some([Term {
+            unit: Unit::Piece(_),
+            ..
+        }])
+    )
+}
+
 /// How many items a measurement counts ("2 cans", "3 steaks", "4"), when
 /// it's a plain count rather than a weight or a volume.
 fn count(measurement: &Measurement) -> Option<Range> {

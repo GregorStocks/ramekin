@@ -50,12 +50,12 @@ pub(super) fn parse_parenthetical_measurement_details(
         });
         if let Some(mut m) = measurement {
             // If the entire parenthetical had trailing "each", apply it to all measurements
-            // unless this measurement already has "each". A container count is how many
-            // items there are, not one item's size: "(2pkg./250g each)" is 2 packages of
+            // unless this measurement already has "each". A count is how many items
+            // there are, not one item's size: "(2pkg./250g each)" is 2 packages of
             // 250 g each.
-            if has_trailing_each {
+            if has_trailing_each && !quantity::counts_pieces(&m) {
                 if let Some(ref unit) = m.unit {
-                    if !unit.ends_with(" each") && !is_package_noun(unit) {
+                    if !unit.ends_with(" each") {
                         m.unit = Some(format!("{} each", unit));
                     }
                 }
@@ -855,10 +855,14 @@ mod tests {
     }
 
     #[test]
-    fn test_trailing_each_skips_a_container_count() {
+    fn test_trailing_each_skips_a_count() {
         let result = parse_parenthetical_measurements("2pkg./250g each");
         let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
         assert_eq!(units, [Some("pkg"), Some("g each")]);
+
+        let result = parse_parenthetical_measurements("2 sticks/4 oz each");
+        let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
+        assert_eq!(units, [Some("sticks"), Some("oz each")]);
 
         let result = parse_parenthetical_measurements("8 ounces; 227 g each");
         let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
