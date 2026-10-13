@@ -79,11 +79,11 @@
     {
       "raw": "1 1-oz. packet ranch seasoning (such as Hidden Valley)",
       "expected": {
-        "item": "1-oz. packet ranch seasoning",
+        "item": "ranch seasoning",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "1-oz. packet"
           }
         ],
         "note": "such as Hidden Valley",

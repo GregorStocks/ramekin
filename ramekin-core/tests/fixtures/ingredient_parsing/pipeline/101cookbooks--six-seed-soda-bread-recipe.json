@@ -34,7 +34,22 @@
     {
       "raw": "2 1/2 tablespoons EACH sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
       "expected": {
-        "item": "sesame seeds, poppy seeds",
+        "item": "sesame seeds",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "2 1/2 tablespoons EACH sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
+      "expected": {
+        "item": "poppy seeds",
         "measurements": [
           {
             "amount": "2.5",

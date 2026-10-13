@@ -5,11 +5,11 @@
     {
       "raw": "2 - 2 1/4 lb zucchini (4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work))",
       "expected": {
-        "item": "1/4 lb zucchini",
+        "item": "zucchini",
         "measurements": [
           {
-            "amount": "2-2",
-            "unit": null
+            "amount": "2-2.25",
+            "unit": "lb"
           }
         ],
         "note": "4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work)",

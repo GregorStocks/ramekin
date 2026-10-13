@@ -135,11 +135,11 @@
     {
       "raw": "2 15- oz cans cannellini beans (drained and well rinsed)",
       "expected": {
-        "item": "15- oz cans cannellini beans",
+        "item": "cannellini beans",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "15-oz cans"
           }
         ],
         "note": "drained and well rinsed",

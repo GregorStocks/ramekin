@@ -70,7 +70,7 @@
     {
       "raw": "4.5 Years Ago:  Zucchini Fritters",
       "expected": {
-        "item": "Years Ago:  Zucchini Fritters",
+        "item": "Years Ago: Zucchini Fritters",
         "measurements": [
           {
             "amount": "4.5",
@@ -131,9 +131,13 @@
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
           }
         ],
-        "note": "1 15-ounce can, drained and patted dry on towels",
+        "note": "drained and patted dry on towels",
         "category": "Canned Goods"
       }
     },

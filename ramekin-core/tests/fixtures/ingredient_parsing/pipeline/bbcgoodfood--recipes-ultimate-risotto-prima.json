@@ -5,7 +5,7 @@
     {
       "raw": "200g shelled  broad beans 800g/1lb 12oz in the pod)",
       "expected": {
-        "item": "shelled  broad beans 800g/1lb 12oz in the pod)",
+        "item": "shelled broad beans 800g/1lb 12oz in the pod)",
         "measurements": [
           {
             "amount": "200",
@@ -117,7 +117,7 @@
     {
       "raw": "350g Carnaroli  rice (or Arborio or Vialone)",
       "expected": {
-        "item": "Carnaroli  rice",
+        "item": "Carnaroli rice",
         "measurements": [
           {
             "amount": "350",
@@ -131,7 +131,7 @@
     {
       "raw": "100ml dry  white wine",
       "expected": {
-        "item": "dry  white wine",
+        "item": "dry white wine",
         "measurements": [
           {
             "amount": "100",

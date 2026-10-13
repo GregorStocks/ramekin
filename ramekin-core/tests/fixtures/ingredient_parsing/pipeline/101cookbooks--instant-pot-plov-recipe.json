@@ -47,11 +47,11 @@
     {
       "raw": "1 14- ounce can of chickpeas, drained, rinsed (or equivalent)",
       "expected": {
-        "item": "14- ounce can of chickpeas",
+        "item": "chickpeas",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "14-ounce can"
           }
         ],
         "note": "drained, rinsed; or equivalent",

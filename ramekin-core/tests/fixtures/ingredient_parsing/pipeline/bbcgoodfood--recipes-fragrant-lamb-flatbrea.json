@@ -5,7 +5,7 @@
     {
       "raw": "half a 500g pack  bread mix - or make your own (see below)",
       "expected": {
-        "item": "a 500g pack  bread mix - or make your own",
+        "item": "a 500g pack bread mix - or make your own",
         "measurements": [
           {
             "amount": "0.5",
@@ -131,7 +131,7 @@
     {
       "raw": "250g strong  white flour",
       "expected": {
-        "item": "strong  white flour",
+        "item": "strong white flour",
         "measurements": [
           {
             "amount": "250",

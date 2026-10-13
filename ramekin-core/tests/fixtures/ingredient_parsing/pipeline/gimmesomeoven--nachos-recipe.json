@@ -5,11 +5,11 @@
     {
       "raw": "1 small bag (about 8 ounces) corn tortilla chips",
       "expected": {
-        "item": "bag corn tortilla chips",
+        "item": "corn tortilla chips",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small bag"
           },
           {
             "amount": "8",

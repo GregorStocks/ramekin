@@ -91,11 +91,11 @@
     {
       "raw": "1 1/4-ounce (2 1/4 teaspoons or 7 grams) packet instant yeast",
       "expected": {
-        "item": "1/4-ounce packet instant yeast",
+        "item": "instant yeast",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "1/4-ounce packet"
           },
           {
             "amount": "2.25",

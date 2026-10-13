@@ -248,9 +248,13 @@
           {
             "amount": "4",
             "unit": null
+          },
+          {
+            "amount": "6 to 8",
+            "unit": "oz"
           }
         ],
-        "note": "6- to 8-ounce, each cut lengthwise into 3 pieces",
+        "note": "each cut lengthwise into 3 pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -383,7 +387,7 @@
     {
       "raw": "¼ cup coarsely chopped cilantro leaves  and stems",
       "expected": {
-        "item": "coarsely chopped cilantro leaves  and stems",
+        "item": "coarsely chopped cilantro leaves and stems",
         "measurements": [
           {
             "amount": "0.25",

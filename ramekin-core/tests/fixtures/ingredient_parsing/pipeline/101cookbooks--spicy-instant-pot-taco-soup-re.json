@@ -103,11 +103,11 @@
     {
       "raw": "2 14- ounce cans pinto beans (rinsed OR 3 1/2 cups cooked pinto beans)",
       "expected": {
-        "item": "14- ounce cans pinto beans",
+        "item": "pinto beans",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "14-ounce cans"
           }
         ],
         "note": "rinsed OR 3 1/2 cups cooked pinto beans",
@@ -131,11 +131,11 @@
     {
       "raw": "1 14- ounce can crushed tomatoes",
       "expected": {
-        "item": "14- ounce can crushed tomatoes",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "14-ounce can"
           }
         ],
         "note": null,

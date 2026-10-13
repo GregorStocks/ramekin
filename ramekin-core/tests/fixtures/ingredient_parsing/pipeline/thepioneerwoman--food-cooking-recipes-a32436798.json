@@ -10,9 +10,13 @@
           {
             "amount": "1",
             "unit": "piece"
+          },
+          {
+            "amount": "2.5",
+            "unit": "lb"
           }
         ],
-        "note": "2 1/2-lb.",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -61,13 +65,9 @@
           {
             "amount": "1",
             "unit": "jar"
-          },
-          {
-            "amount": "12",
-            "unit": "oz."
           }
         ],
-        "note": null,
+        "note": "12-oz.",
         "category": "Canned Goods"
       }
     },

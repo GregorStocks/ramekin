@@ -159,11 +159,11 @@
     {
       "raw": "1 28- ounce can whole tomatoes and their liquid (fire-roasted optional)",
       "expected": {
-        "item": "28- ounce can whole tomatoes and their liquid",
+        "item": "whole tomatoes and their liquid",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "28-ounce can"
           }
         ],
         "note": "fire-roasted optional",

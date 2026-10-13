@@ -205,11 +205,15 @@
     {
       "raw": "1 1/2lb/680.389 g center-cut salmon fillet (skin on, if possible)",
       "expected": {
-        "item": "1/2lb/680.389 g center-cut salmon fillet",
+        "item": "center-cut salmon fillet",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680.39",
+            "unit": "g"
           }
         ],
         "note": "skin on, if possible",

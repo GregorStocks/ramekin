@@ -45,11 +45,11 @@
     {
       "raw": "One 1-ounce envelope ranch dressing mix",
       "expected": {
-        "item": "1-ounce envelope ranch dressing mix",
+        "item": "ranch dressing mix",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "1-ounce envelope"
           }
         ],
         "note": null,

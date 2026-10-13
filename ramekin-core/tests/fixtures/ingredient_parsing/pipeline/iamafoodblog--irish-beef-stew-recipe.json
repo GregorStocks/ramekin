@@ -5,11 +5,11 @@
     {
       "raw": "1 – 1 1/2 pounds beef shank",
       "expected": {
-        "item": "1/2 pounds beef shank",
+        "item": "beef shank",
         "measurements": [
           {
-            "amount": "1-1",
-            "unit": null
+            "amount": "1-1.5",
+            "unit": "lb"
           }
         ],
         "note": null,
