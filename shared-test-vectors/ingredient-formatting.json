@@ -60,6 +60,30 @@
     "expected": "1 cup (226 g) butter (softened)"
   },
   {
+    "name": "per-item alternatives keep their size when scaled",
+    "ingredient": {
+      "item": "marshmallows",
+      "measurements": [
+        {"amount": "2", "unit": "package"},
+        {"amount": "10", "unit": "oz each"},
+        {"amount": "283", "unit": "g each"}
+      ],
+      "note": null
+    },
+    "options": {"scale": 2, "includeAlternatives": true},
+    "expected": "4 package (10 oz each, 283 g each) marshmallows"
+  },
+  {
+    "name": "a per-item primary is the whole amount and scales",
+    "ingredient": {
+      "item": "artichoke hearts",
+      "measurements": [{"amount": "2", "unit": "cans each"}],
+      "note": null
+    },
+    "options": {"scale": 2},
+    "expected": "4 cans each artichoke hearts"
+  },
+  {
     "name": "amount-only and unit-only measurements",
     "ingredient": {
       "item": "eggs",
