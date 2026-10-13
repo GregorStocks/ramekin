@@ -61,7 +61,7 @@ Cost: S = mechanical, M = needs design or a few files, L = cross-cutting.
 | `uuid[]` `recipe_versions.photo_ids`; `= ANY(photo_ids)`, `cardinality()` | `raw_sql.rs` photo filters, `api/recipes/list.rs` has-photos filter, photo loading | Either JSON array `TEXT` with `json_each` / `json_array_length`, or a `recipe_version_photos` junction table that preserves order. The junction table is cleaner and needs a data migration either way. | M |
 | `LEAST(p.width, p.height)` | `raw_sql::photo_min_dim_filter` (`photo_dim:` search filter) | SQLite's multi-argument scalar `min(p.width, p.height)`. Every raw fragment in `raw_sql.rs` has to be rewritten per backend anyway; this is the one that uses a Postgres-only function besides `ANY`/`cardinality`/`array_agg`. | S |
 | `array_agg(... ORDER BY)` tags subquery | `raw_sql::tags_subquery()` | `json_group_array` over an ordered subquery, deserialized as JSON. Compute it only for the page after `LIMIT`. SQLite evaluates result-column subqueries before sorting, which made an unpaged version ~3× slower in the benchmark. | S |
-| `citext` (`user_tags.name`) | tags | `COLLATE NOCASE` only folds ASCII. Store a normalized `name_key` column (Unicode lowercase in Rust) with the unique index on `(user_id, name_key)`. | S |
+| Unicode case-insensitive text: `citext` (`user_tags.name`) and `lower()` on `users.username` (`raw_sql::lower` in `api/public/auth/login.rs`, unique index `idx_users_username_lower` on `LOWER(username)`) | tags, login, signup | SQLite's `lower()` and `COLLATE NOCASE` only fold ASCII, so `Élodie` would stop matching a login as `élodie`, and `ÉLODIE` could sign up as a duplicate. Store normalized key columns lowercased in Rust: `user_tags.name_key` with a unique index on `(user_id, name_key)`, and `users.username_key` with a unique index. Compare against the key in login, signup and tag lookups. The data migration fills both keys. | S |
 | `timestamptz` | every table | Diesel's SQLite `TimestamptzSqlite` (chrono) stores ISO-8601 text that sorts correctly. `diesel::dsl::now` works. The sync code's `day_start_utc` comparisons keep working as long as every timestamp is written in UTC. | S |
 | `bytea` photo data and thumbnails | `photos.data`, `photo_thumbnails` | `BLOB`. The DB file grows with photos. That's fine for SQLite, but backups become whole-file copies. Moving photos to files on disk is optional and separate. | S |
 | `SELECT … FOR UPDATE` | `ingredient_names.rs:690`, `scraping/steps/save_recipe.rs:333` | Not needed: `BEGIN IMMEDIATE` takes the write lock up front. Diesel: `conn.immediate_transaction(..)`. | S |
@@ -220,7 +220,7 @@ What the numbers say:
 3. Create the SQLite baseline schema, then copy table by table through a Rust
    or Python exporter. The exporter converts uuids to text, `uuid[]` to the
    junction table or JSON, jsonb to compact JSON text, citext to text plus
-   `name_key`, and timestamps to UTC ISO-8601.
+   `name_key`, usernames plus `username_key`, and timestamps to UTC ISO-8601.
 4. Seed `sync_clock` from `pg_snapshot_xmax(pg_current_snapshot())` captured
    at the freeze, not from the highest stored stamp. A client's persisted
    cursor is a past `pg_snapshot_xmin()` watermark, which can be above every
