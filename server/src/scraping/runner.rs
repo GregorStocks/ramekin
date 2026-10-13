@@ -905,14 +905,17 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeErro
             STATUS_PARSING
         };
 
-        // Only reset a job that is still failed: of two retries that both
-        // passed the status check above, the second updates nothing and is
-        // rejected, so the job is spawned once.
+        // Only reset the exact failure this request read: still failed, with
+        // the retry count it saw (only this update changes it). Of two
+        // retries that both passed the status check above, the second updates
+        // nothing and is rejected, so the job is spawned once — even if the
+        // first one's run has already failed again by then.
         let now = chrono::Utc::now();
         let updated = diesel::update(
             scrape_jobs::table
                 .find(job_id)
-                .filter(scrape_jobs::status.eq(STATUS_FAILED)),
+                .filter(scrape_jobs::status.eq(STATUS_FAILED))
+                .filter(scrape_jobs::retry_count.eq(job.retry_count)),
         )
         .set((
             scrape_jobs::status.eq(resume_status),

@@ -92,9 +92,9 @@ def wait_until_blocked_behind(database_url, holder_pid, writes, count=1):
     Matches on the holder's backend pid via `pg_blocking_pids` rather than on
     query text, so concurrently running tests (pytest-xdist) can't satisfy the
     wait by accident. Follows chains of waiters: a second write to the same
-    row queues behind the first waiter's tuple lock, not the holder's. Returns early if any of the `writes` futures finishes, so
-    a write that fails outright surfaces its error instead of burning the
-    timeout.
+    row queues behind the first waiter's tuple lock, not the holder's.
+    Returns early if any of the `writes` futures finishes, so a write that
+    fails outright surfaces its error instead of burning the timeout.
 
     Also requires the blocked backend to already hold an assigned transaction
     id (`backend_xid`). The sync race tests need the writer's xid to predate
