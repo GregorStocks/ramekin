@@ -101,7 +101,8 @@ def gen_rows(snaps):
 
 
 PG_SCHEMA = """
-DROP TABLE IF EXISTS recipe_version_tags, user_tags, recipe_versions, recipes CASCADE;
+DROP TABLE IF EXISTS recipe_version_tags, user_tags, recipe_versions, recipes,
+    step_outputs, ingredient_name_resolutions, shopping_list_items CASCADE;
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
 CREATE EXTENSION IF NOT EXISTS unaccent;
 CREATE OR REPLACE FUNCTION f_unaccent(text) RETURNS text LANGUAGE sql IMMUTABLE
@@ -123,6 +124,15 @@ CREATE TABLE user_tags (id uuid PRIMARY KEY, user_id uuid NOT NULL, name text NO
   deleted_at timestamptz, change_xid bigint NOT NULL DEFAULT 0);
 CREATE TABLE recipe_version_tags (recipe_version_id uuid REFERENCES recipe_versions(id),
   tag_id uuid REFERENCES user_tags(id), PRIMARY KEY (recipe_version_id, tag_id));
+CREATE TABLE step_outputs (id uuid PRIMARY KEY, scrape_job_id uuid NOT NULL,
+  step_name text NOT NULL, output jsonb NOT NULL, created_at timestamptz NOT NULL);
+CREATE INDEX ON step_outputs(scrape_job_id);
+CREATE TABLE ingredient_name_resolutions (name text PRIMARY KEY, status text NOT NULL,
+  result jsonb, updated_at timestamptz NOT NULL);
+CREATE TABLE shopping_list_items (id uuid PRIMARY KEY, user_id uuid NOT NULL,
+  item text NOT NULL, checked boolean NOT NULL, change_xid bigint NOT NULL,
+  updated_at timestamptz NOT NULL);
+CREATE INDEX ON shopping_list_items(user_id, change_xid);
 """
 PG_INDEXES = """
 CREATE INDEX ON recipe_versions USING GIN (f_unaccent(title) gin_trgm_ops);
@@ -153,6 +163,15 @@ CREATE TABLE user_tags (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, name TEXT NO
 CREATE TABLE recipe_version_tags (recipe_version_id TEXT REFERENCES recipe_versions(id),
   tag_id TEXT REFERENCES user_tags(id), PRIMARY KEY (recipe_version_id, tag_id))
     WITHOUT ROWID;
+CREATE TABLE step_outputs (id TEXT PRIMARY KEY, scrape_job_id TEXT NOT NULL,
+  step_name TEXT NOT NULL, output TEXT NOT NULL, created_at TEXT NOT NULL);
+CREATE INDEX so_job ON step_outputs(scrape_job_id);
+CREATE TABLE ingredient_name_resolutions (name TEXT PRIMARY KEY, status TEXT NOT NULL,
+  result TEXT, updated_at TEXT NOT NULL);
+CREATE TABLE shopping_list_items (id TEXT PRIMARY KEY, user_id TEXT NOT NULL,
+  item TEXT NOT NULL, checked INTEGER NOT NULL, change_xid INTEGER NOT NULL,
+  updated_at TEXT NOT NULL);
+CREATE INDEX sli_user ON shopping_list_items(user_id, change_xid);
 CREATE TABLE sync_clock (id INTEGER PRIMARY KEY CHECK (id = 1), value INTEGER NOT NULL);
 INSERT INTO sync_clock VALUES (1, 1000000);
 CREATE VIRTUAL TABLE rv_fts USING fts5(title, description, instructions, notes,
@@ -215,7 +234,7 @@ def sqlite_connect():
         SQLITE_PATH, timeout=30, isolation_level=None, check_same_thread=False
     )
     c.execute("PRAGMA journal_mode=WAL")
-    c.execute("PRAGMA synchronous=NORMAL")
+    c.execute("PRAGMA synchronous=FULL")
     c.execute("PRAGMA foreign_keys=ON")
     c.create_function("f_unaccent", 1, unaccent, deterministic=True)
     # ILIKE equivalent: SQLite LIKE is only ASCII-case-insensitive, so fold both sides.
@@ -574,6 +593,222 @@ def sl_save_serialized(c, rid):
         sl_save(c, rid)
 
 
+# --- Non-recipe tables and the mixed background workload ------------------
+# Sizes are scaled from the test database: step outputs average ~6 KB
+# compressed in Postgres with fetched HTML up to ~130 KB. SQLite doesn't
+# compress, so raw sizes are used: 9 small JSON outputs plus one ~100 KB HTML
+# blob per scrape job, one job per recipe, plus 10k ingredient
+# names and 2k shopping-list items.
+STEPS_PER_JOB = 10
+N_NAMES = 10_000
+N_SHOPPING = 2_000
+
+
+def step_payload(i):
+    if i % STEPS_PER_JOB == 0:
+        html = "<p>" + ("Lorem ipsum dolor sit amet, consectetur adipiscing. " * 1900)
+        return json.dumps({"html": html})
+    return json.dumps(
+        {"step": i, "items": [{"k": j, "v": "x" * 30} for j in range(60)]}
+    )
+
+
+def extra_rows(n_recipes):
+    jobs = [str(uuid.uuid4()) for _ in range(n_recipes)]
+    now = datetime.now(timezone.utc)
+    steps = [
+        (
+            str(uuid.uuid4()),
+            jobs[i // STEPS_PER_JOB],
+            f"step{i % STEPS_PER_JOB}",
+            i,
+            now,
+        )
+        for i in range(n_recipes * STEPS_PER_JOB)
+    ]
+    names = [(f"ingredient name {i}", "resolved", now) for i in range(N_NAMES)]
+    shopping = [
+        (str(uuid.uuid4()), USER, f"item {i}", i % 2 == 0, 1000 + i, now)
+        for i in range(N_SHOPPING)
+    ]
+    return jobs, steps, names, shopping
+
+
+def seed_extra_pg(extra):
+    _, steps, names, shopping = extra
+    with psycopg.connect(PG_DSN, autocommit=True) as c, c.cursor() as cur:
+        with cur.copy(
+            "COPY step_outputs (id, scrape_job_id, step_name, output, created_at) "
+            "FROM STDIN"
+        ) as cp:
+            for sid, job, step, i, ts in steps:
+                cp.write_row((sid, job, step, step_payload(i), ts))
+        with cur.copy(
+            "COPY ingredient_name_resolutions (name, status, result, updated_at) "
+            "FROM STDIN"
+        ) as cp:
+            for name, status, ts in names:
+                cp.write_row((name, status, '{"grams": 1}', ts))
+        with cur.copy("COPY shopping_list_items FROM STDIN") as cp:
+            for row in shopping:
+                cp.write_row(row)
+        c.execute("ANALYZE")
+
+
+def seed_extra_sqlite(c, extra):
+    _, steps, names, shopping = extra
+    c.execute("BEGIN")
+    c.executemany(
+        "INSERT INTO step_outputs VALUES (?,?,?,?,?)",
+        (
+            (sid, job, step, step_payload(i), ts.isoformat())
+            for sid, job, step, i, ts in steps
+        ),
+    )
+    c.executemany(
+        "INSERT INTO ingredient_name_resolutions VALUES (?,?,?,?)",
+        ((n, st, '{"grams": 1}', ts.isoformat()) for n, st, ts in names),
+    )
+    c.executemany(
+        "INSERT INTO shopping_list_items VALUES (?,?,?,?,?,?)",
+        ((i, u, it, int(ch), x, ts.isoformat()) for i, u, it, ch, x, ts in shopping),
+    )
+    c.execute("COMMIT")
+    c.execute("ANALYZE")
+
+
+class Backend:
+    """The mixed workload's statements, written once with {p} placeholders."""
+
+    def __init__(self, name, connect, placeholder, begin, save, list_fn, search_fn):
+        self.name, self.connect, self.p = name, connect, placeholder
+        self.begin, self.save = begin, save
+        self.list_fn, self.search_fn = list_fn, search_fn
+
+    def sql(self, q):
+        return q.replace("{p}", self.p)
+
+    def txn(self, c, statements):
+        c.execute(self.begin)
+        try:
+            for q, params in statements:
+                c.execute(self.sql(q), params)
+            c.execute("COMMIT")
+        except Exception:
+            c.execute("ROLLBACK")
+            raise
+
+
+def mixed(be, extra, rids, lock=None, seconds=8.0):
+    """Readers plus the scrape runner, ingredient-name worker and shopping edits."""
+    jobs, _, _, shopping = extra
+    stop = time.perf_counter() + seconds
+    lat = {k: [] for k in ("read", "step_output", "save_recipe", "names", "shop")}
+    errors = []
+
+    def timed(kind, fn):
+        t = time.perf_counter()
+        try:
+            if lock is None or kind == "read":
+                fn()
+            else:
+                with lock:
+                    fn()
+        except Exception as e:  # noqa: BLE001
+            errors.append(repr(e))
+        lat[kind].append((time.perf_counter() - t) * 1000)
+
+    def reader():
+        c = be.connect()
+        while time.perf_counter() < stop:
+            r = random.random()
+            if r < 0.3:
+                timed("read", lambda: be.list_fn(c))
+            elif r < 0.5:
+                timed("read", lambda: be.search_fn(c, ["garlic"]))
+            elif r < 0.8:
+                q = "SELECT * FROM shopping_list_items WHERE user_id = {p}"
+                timed("read", lambda: c.execute(be.sql(q), (USER,)).fetchall())
+            else:
+                q = "SELECT * FROM step_outputs WHERE scrape_job_id = {p}"
+                job = random.choice(jobs)
+                timed("read", lambda: c.execute(be.sql(q), (job,)).fetchall())
+
+    def scraper():
+        c = be.connect()
+        i = 0
+        while time.perf_counter() < stop:
+            job = str(uuid.uuid4())
+            for step in range(STEPS_PER_JOB):
+                ins = (
+                    "INSERT INTO step_outputs VALUES ({p}, {p}, {p}, {p}, {p})",
+                    (
+                        str(uuid.uuid4()),
+                        job,
+                        f"step{step}",
+                        step_payload(step + i),
+                        datetime.now(timezone.utc).isoformat(),
+                    ),
+                )
+                timed("step_output", lambda: be.txn(c, [ins]))
+            i += 1
+            timed("save_recipe", lambda: be.save(c, random.choice(rids)))
+
+    def names_worker():
+        c = be.connect()
+        while time.perf_counter() < stop:
+            batch = random.sample(range(N_NAMES), 50)
+            stmts = [
+                (
+                    "UPDATE ingredient_name_resolutions SET status = {p}, "
+                    "result = {p}, updated_at = {p} WHERE name = {p}",
+                    (
+                        "resolved",
+                        '{"grams": 2}',
+                        datetime.now(timezone.utc).isoformat(),
+                        f"ingredient name {n}",
+                    ),
+                )
+                for n in batch
+            ]
+            timed("names", lambda: be.txn(c, stmts))
+            time.sleep(0.05)
+
+    def shopper():
+        c = be.connect()
+        while time.perf_counter() < stop:
+            item = random.choice(shopping)[0]
+            stmt = (
+                "UPDATE shopping_list_items SET checked = NOT checked, "
+                "change_xid = change_xid + 1, updated_at = {p} WHERE id = {p}",
+                (datetime.now(timezone.utc).isoformat(), item),
+            )
+            timed("shop", lambda: be.txn(c, [stmt]))
+            time.sleep(0.02)
+
+    ths = [threading.Thread(target=reader) for _ in range(4)] + [
+        threading.Thread(target=f) for f in (scraper, names_worker, shopper)
+    ]
+    for t in ths:
+        t.start()
+    for t in ths:
+        t.join()
+
+    def q(xs, p):
+        xs = sorted(xs)
+        return xs[min(len(xs) - 1, int(len(xs) * p))] if xs else float("nan")
+
+    parts = [
+        f"{k} n={len(v)} p50 {q(v, 0.5):.1f} p99 {q(v, 0.99):.1f}"
+        for k, v in lat.items()
+    ]
+    return (
+        " | ".join(parts)
+        + f" ms | errors {len(errors)}"
+        + (f" {errors[0]}" if errors else "")
+    )
+
+
 def blocked_by_bulk(connect, bulk, save, rid):
     """Duration of a bulk rewrite, and how long a small save waits behind it."""
     done = {}
@@ -658,6 +893,28 @@ def main():
             rids,
         ),
     )
+    extra = extra_rows(N)
+    t = time.perf_counter()
+    seed_extra_pg(extra)
+    seed_extra_sqlite(sl, extra)
+    print(f"[setup] non-recipe tables {time.perf_counter() - t:.1f}s")
+    size = pg.execute("SELECT pg_database_size(current_database())").fetchone()[0]
+    print(
+        f"[size] pg database {size / 1e6:.0f} MB, sqlite file "
+        f"{os.path.getsize(SQLITE_PATH) / 1e6:.0f} MB"
+    )
+    pg_be = Backend("pg", pg_conn, "%s", "BEGIN", pg_save, pg_list, pg_search)
+    sl_be = Backend(
+        "sqlite",
+        sqlite_connect,
+        "?",
+        "BEGIN IMMEDIATE",
+        sl_save,
+        sl_list,
+        sl_search_fts,
+    )
+    print("mixed pg                ", mixed(pg_be, extra, rids))
+    print("mixed sqlite (mutex)    ", mixed(sl_be, extra, rids, lock=WRITE_LOCK))
     print("bulk pg     ", blocked_by_bulk(pg_conn, pg_bulk_rewrite, pg_save, rids[0]))
     print(
         "bulk sqlite ",

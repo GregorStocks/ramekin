@@ -8,10 +8,16 @@ owner's decision (`issues/blocked-database-generic-sqlite-step2.json5`).
 ## Recommendation: go, as a cutover rather than a permanent second backend
 
 Performance is not a reason to stay on Postgres. At realistic single-user sizes,
-SQLite (WAL mode, FTS5 for search) matched or beat Postgres on every hot path
-measured, often by a wide margin. The one real cost is that writes serialize.
-The longest write measured, rewriting every current recipe at 5k recipes, took
-under 300 ms on SQLite. A small write behind it waits that long.
+SQLite (WAL mode with `synchronous=FULL`, FTS5 for search) matched or beat
+Postgres on every hot path measured, often by a wide margin. That held under a
+mixed load of the scrape runner, the ingredient-name worker and shopping-list
+edits running alongside readers. The real costs are:
+
+- **Writes serialize.** The longest write measured, rewriting every current
+  recipe at 5k recipes, took ~225 ms. A small write behind it waits that long.
+- **No transparent compression.** Large step outputs (fetched HTML) make the
+  file several times bigger than the Postgres database (see
+  [Database size](#database-size)).
 
 The real cost is engineering effort, roughly two to four focused PRs (see
 [Effort](#effort)). Most of it is in four areas: the search filter, the sync
@@ -50,6 +56,7 @@ Cost: S = mechanical, M = needs design or a few files, L = cross-cutting.
 | `jsonb` columns (`recipe_versions.ingredients`, `step_outputs.output`) | models, scraping output store | Stored as `TEXT` JSON. No jsonb operators are used in queries (only `::text`), so this is a type swap. Diesel 2.3's SQLite backend supports `Json`/`Jsonb` types. | S |
 | `uuid` primary/foreign keys, `gen_random_uuid()` defaults | every table | Diesel's SQLite backend has no `Uuid` SQL type. Store as `TEXT` (or 16-byte `BLOB`) with a small `FromSql`/`ToSql` newtype, and generate ids in Rust (most inserts already do). | M (wide but mechanical) |
 | `uuid[]` `recipe_versions.photo_ids`; `= ANY(photo_ids)`, `cardinality()` | `raw_sql.rs` photo filters, `api/recipes/list.rs` has-photos filter, photo loading | Either JSON array `TEXT` with `json_each` / `json_array_length`, or a `recipe_version_photos` junction table that preserves order. The junction table is cleaner and needs a data migration either way. | M |
+| `LEAST(p.width, p.height)` | `raw_sql::photo_min_dim_filter` (`photo_dim:` search filter) | SQLite's multi-argument scalar `min(p.width, p.height)`. Every raw fragment in `raw_sql.rs` has to be rewritten per backend anyway; this is the one that uses a Postgres-only function besides `ANY`/`cardinality`/`array_agg`. | S |
 | `array_agg(... ORDER BY)` tags subquery | `raw_sql::tags_subquery()` | `json_group_array` over an ordered subquery, deserialized as JSON. Compute it only for the page after `LIMIT`. SQLite evaluates result-column subqueries before sorting, which made an unpaged version ~3× slower in the benchmark. | S |
 | `citext` (`user_tags.name`) | tags | `COLLATE NOCASE` only folds ASCII. Store a normalized `name_key` column (Unicode lowercase in Rust) with the unique index on `(user_id, name_key)`. | S |
 | `timestamptz` | every table | Diesel's SQLite `TimestamptzSqlite` (chrono) stores ISO-8601 text that sorts correctly. `diesel::dsl::now` works. The sync code's `day_start_utc` comparisons keep working as long as every timestamp is written in UTC. | S |
@@ -58,6 +65,7 @@ Cost: S = mechanical, M = needs design or a few files, L = cross-cutting.
 | `ON CONFLICT ON CONSTRAINT uq_shopping_list_client_id` | `api/shopping_list/create.rs`, `sync.rs` | `on_conflict((user_id, client_id))` by columns (Diesel's SQLite backend has no `on_constraint`). Plain `on_conflict_do_nothing` and column-target upserts in `tags.rs`, `recipes.rs`, `auth/db.rs`, `get_thumbnail.rs` work as-is. | S |
 | `REPEATABLE READ READ ONLY` sync transaction | `api/recipes/sync.rs` | A plain `BEGIN` read transaction in WAL mode is already a stable snapshot. | S |
 | Partial indexes (`WHERE deleted_at IS NULL`) | several migrations | Supported natively. | S |
+| `NULLS LAST` rating sort | `api/recipes/list.rs` (`.nulls_last()`) | Supported natively since SQLite 3.30. | S |
 | `random()` sort | `api/recipes/list.rs` | `random()` exists (returns an integer, which is still a valid sort key). | S |
 | `RETURNING` | many inserts/updates | Supported since SQLite 3.35. Enable Diesel's `returning_clauses_for_sqlite_3_35` feature. | S |
 | 51 Postgres SQL migrations | `migrations/` | Squash into one fresh SQLite baseline migration for the new backend. Postgres migration history doesn't need to replay on SQLite. | M |
@@ -79,14 +87,17 @@ backfill, and startup's `queue_stored` / `reconcile_categories` /
 On SQLite in WAL mode, readers never block and never block the writer, but
 only one write transaction runs at a time. Requirements for the port:
 
-- `PRAGMA journal_mode=WAL; synchronous=NORMAL; foreign_keys=ON; busy_timeout=…`
-  on every pooled connection (r2d2 `CustomizeConnection`).
+- `PRAGMA journal_mode=WAL; synchronous=FULL; foreign_keys=ON; busy_timeout=…`
+  on every pooled connection (r2d2 `CustomizeConnection`). `FULL` syncs the WAL
+  on every commit, matching Postgres's `synchronous_commit=on`. `NORMAL` would
+  let a power loss roll back writes the API already reported as committed. All
+  benchmark numbers below use `FULL` on an NVMe disk.
 - **Serialize writes in the app** instead of relying on `busy_timeout` alone:
   either a single dedicated writer connection or a write mutex around
-  `immediate_transaction`. In the benchmark, two writers contending through
-  SQLite's busy handler alone left one writer starved for the entire 5 s
-  window once. With an app-level mutex, worst-case write latency stayed under
-  ~150 ms.
+  `immediate_transaction`. In an early benchmark run, two writers contending
+  through SQLite's busy handler alone left one writer starved for the entire
+  5 s window. With an app-level mutex, p99 write latency stayed under ~50 ms in
+  every run.
 - Keep write transactions short. Existing writes are already per-recipe or
   per-batch. The largest are data migrations (one transaction over every
   version) and `queue_stored`. Both run at startup before the server accepts
@@ -101,14 +112,22 @@ only one write transaction runs at a time. Requirements for the port:
 `data/pipeline-snapshots/` (real titles, descriptions, ingredients and
 instructions), replicated to N current recipes with 3 versions each and 2 tags
 per version, for one user. It loads them into a Postgres 16 database with the
-production search indexes and into a SQLite 3.50 file (WAL, FTS5 trigram), then
-times each workload through Python drivers (psycopg 3, stdlib `sqlite3`).
-Postgres columns are cast to text in the queries so driver-side
-jsonb/uuid parsing doesn't count against it.
+production search indexes and into a SQLite 3.50 file on the same NVMe disk
+(WAL, `synchronous=FULL`, FTS5 trigram), then times each workload through
+Python drivers (psycopg 3, stdlib `sqlite3`). Postgres runs with `fsync` and
+`synchronous_commit` on. Postgres columns are cast to text in the queries so
+driver-side jsonb/uuid parsing doesn't count against it.
+
+It also seeds the non-recipe tables the background workers write:
+- one scrape job per recipe, with 10 `step_outputs` rows each (nine ~3 KB JSON
+  outputs and one ~100 KB fetched-HTML output; the test database averages
+  ~6 KB per output compressed, up to ~130 KB)
+- 10k `ingredient_name_resolutions` rows
+- 2k `shopping_list_items` rows
 
 Prod data sizes weren't available. The two scales bracket a plausible
 personal collection: 1k recipes is likely close, and 5k is a generous upper
-bound. The machine was busy (load average ~15) during the runs, so treat
+bound. Other worktrees were using the machine (load average ~7), so treat
 single numbers as ±30 %. The orders of magnitude were stable across repeated
 runs.
 
@@ -116,28 +135,50 @@ Median latency (ms):
 
 | Workload | PG 1k | SQLite 1k | PG 5k | SQLite 5k |
 |---|---:|---:|---:|---:|
-| List page (50, newest first, tags) + total count | 3.2 | 3.0 | 13 | 20 |
-| Search "chicken" (220 / 1110 rows) | 74 | 3.1 | 501 | 31 |
-| Search "garlic butter" (193 / 985 rows) | 95 | 1.7 | 649 | 43 |
-| Search "brulee", diacritic-insensitive (3 / 12 rows) | 0.7 | 0.3 | 4.1 | 5.2 |
-| Search with no match | 0.2 | 0.3 | 1.1 | 4.2 |
-| Full recipe sync sweep (all pages of 200) | 65 | 6.5 | 733 | 177 |
-| Single recipe save (new version + tags + pointer) | 2.9 | 0.4 | 9.9 | 1.5 |
-| Bulk rewrite of every current version (one txn) | 1415 | 75 | 7477 | 284 |
+| List page (50, newest first, tags) + total count | 4.9 | 4.4 | 7.8 | 14 |
+| Search "chicken" (220 / 1110 rows) | 85 | 1.6 | 310 | 10 |
+| Search "garlic butter" (193 / 985 rows) | 70 | 1.7 | 335 | 9.9 |
+| Search "brulee", diacritic-insensitive (3 / 12 rows) | 0.5 | 0.3 | 1.0 | 2.0 |
+| Search with no match | 0.2 | 0.3 | 0.2 | 1.9 |
+| Full recipe sync sweep (all pages of 200) | 65 | 6.3 | 237 | 39 |
+| Single recipe save (new version + tags + pointer) | 2.6 | 1.5 | 5.3 | 4.9 |
+| Bulk rewrite of every current version (one txn) | 810 | 63 | 4456 | 225 |
 
-Mixed load, 5 s with 4 reader threads (list + search) and 2 writer threads
-saving recipes back-to-back, at 5k recipes:
+### Mixed background load
 
-| | reads p50 / p99 | writes p50 / p99 |
-|---|---|---|
-| Postgres | 72 / 1218 ms | 11 / 102 ms |
-| SQLite, busy_timeout only | 145 / 391 ms | 3.0 / 62 ms |
-| SQLite, app write mutex | 149 / 374 ms | 11 / 67 ms |
+The mixed load ran for 8 s at 5k recipes:
+- 4 reader threads: recipe list, search, the shopping list, and a scrape job's
+  step outputs
+- the scrape runner: 10 step-output inserts per job, each its own transaction,
+  then a recipe save
+- the ingredient-name worker: 50-name update transactions
+- shopping-list item toggles
 
-A single save issued while the bulk rewrite runs waited 18 ms on Postgres and
-235 ms on SQLite, roughly the length of the SQLite bulk rewrite. Postgres saves
-don't wait on other rows' writers, but its bulk rewrite took 26× longer because
-it maintains five GIN trigram indexes.
+SQLite writers share one app-level mutex. Latency p50 / p99 (ms):
+
+| | reads | step output | recipe save | 50-name batch | shopping edit |
+|---|---|---|---|---|---|
+| Postgres | 9.9 / 945 | 5.0 / 17 | 7.4 / 21 | 20 / 52 | 6.2 / 22 |
+| SQLite | 24 / 130 | 4.2 / 16 | 5.8 / 21 | 9.0 / 30 | 8.7 / 21 |
+
+The Postgres read p99 is its trigram search. At 1k recipes every write path on
+both backends had p99 under 40 ms.
+
+A single save issued while the bulk rewrite runs waited 11 ms on Postgres and
+186 ms on SQLite, roughly the length of the SQLite bulk rewrite. Postgres saves
+don't wait on other rows' writers, but its bulk rewrite took ~20× longer
+because it maintains five GIN trigram indexes.
+
+### Database size
+
+At 5k recipes with the non-recipe tables seeded, the Postgres database was
+154 MB and the SQLite file 834 MB. At 1k, it was 65 MB versus 179 MB. Postgres
+TOAST-compresses large values, and the benchmark's HTML filler is very
+repetitive, so this overstates the gap for real pages. The direction still
+holds: SQLite stores step outputs and photo `BLOB`s uncompressed. Step 2 should
+compress `fetch_html` outputs in the app (for example with zstd) or move them
+out of the database. Disk space for one user's collection isn't a blocker
+either way, but backup size is.
 
 What the numbers say:
 
@@ -156,9 +197,14 @@ What the numbers say:
   should be several times faster, and the path only triggers for queries made
   entirely of 1–2 character tokens. If that's a concern, the fallback can scan
   only `title`.
-- **Serialized writes didn't matter at this scale.** Worst-case write latency
-  under contention was in the tens of milliseconds, except while a whole-table
-  rewrite holds the lock.
+- **Serialized writes didn't matter at this scale, even with the background
+  workers running.** Each write is a short transaction with an fsync, so the
+  scrape runner, ingredient worker and shopping edits interleave behind the
+  mutex with p99 in the tens of milliseconds. The exception is a whole-table
+  rewrite holding the lock.
+- **Not covered:** photo upload and import writes (multi-MB `BLOB`s inside a
+  transaction) and WAL checkpoint behavior over days of uptime. Both are
+  bounded by the same single-writer rule, but step 2 should watch them.
 
 ## Data migration plan (outline, for step 2)
 
