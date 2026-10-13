@@ -57,12 +57,6 @@ def _current_flags(conn, recipe_id):
     return rows
 
 
-def _plan_nodes(plan):
-    yield plan
-    for child in plan.get("Plans", []):
-        yield from _plan_nodes(child)
-
-
 def test_is_current_follows_current_version(authed_api_client, database_url):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
@@ -95,13 +89,18 @@ def test_search_skips_old_versions(authed_api_client, database_url):
         ).fetchall()
 
     # Every version contains the token, so an index over all versions would
-    # hand back three rows. The partial index only holds the current one.
+    # hand the heap three live rows to recheck and filter out. The partial
+    # index only holds current versions. Versions that stopped being current
+    # can leave dead index entries until vacuum, so count what the heap
+    # examined rather than the index scan's raw tuple ids.
     plan = explain[0]["Plan"]
-    index_scans = [
-        node
-        for node in _plan_nodes(plan)
-        if node.get("Index Name") == "idx_recipe_versions_instructions_trgm"
-        and "Index Cond" in node
-    ]
-    assert len(index_scans) == 1, plan
-    assert index_scans[0]["Actual Rows"] == 1, plan
+    assert plan["Node Type"] == "Bitmap Heap Scan", plan
+    (index_scan,) = plan["Plans"]
+    assert index_scan["Index Name"] == "idx_recipe_versions_instructions_trgm", plan
+    assert "Index Cond" in index_scan, plan
+    examined = (
+        plan["Actual Rows"]
+        + plan.get("Rows Removed by Index Recheck", 0)
+        + plan.get("Rows Removed by Filter", 0)
+    )
+    assert examined == 1, plan
