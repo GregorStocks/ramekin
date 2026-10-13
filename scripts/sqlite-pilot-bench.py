@@ -866,10 +866,16 @@ def main():
     print("list page+count   pg     ", fmt(timeit(lambda: pg_list(pg), 50)))
     print("list page+count   sqlite ", fmt(timeit(lambda: sl_list(sl), 50)))
     for toks in (["chicken"], ["garlic", "butter"], ["brulee"], ["xqzv"]):
-        n_pg = len(pg_search(pg, toks))
-        n_sc = len(sl_search_scan(sl, toks))
-        n_ft = len(sl_search_fts(sl, toks))
-        print(f"search {' '.join(toks):14s} rows pg={n_pg} scan={n_sc} fts={n_ft}")
+        # Compare which recipes matched, not just how many.
+        ids_pg = {row[0] for row in pg_search(pg, toks)}
+        ids_sc = {row[0] for row in sl_search_scan(sl, toks)}
+        ids_ft = {row[0] for row in sl_search_fts(sl, toks)}
+        same = ids_pg == ids_sc == ids_ft
+        print(
+            f"search {' '.join(toks):14s} rows pg={len(ids_pg)} scan={len(ids_sc)} "
+            f"fts={len(ids_ft)} same_ids={same}"
+        )
+        assert same, f"search results differ for {toks}"
         print("   pg trgm+ILIKE     ", fmt(timeit(lambda: pg_search(pg, toks), 20)))
         print("   sqlite scan+UDF   ", fmt(timeit(lambda: sl_search_scan(sl, toks), 5)))
         print("   sqlite fts5 trgm  ", fmt(timeit(lambda: sl_search_fts(sl, toks), 20)))
