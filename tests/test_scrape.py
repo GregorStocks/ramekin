@@ -2,9 +2,12 @@ import psycopg
 import pytest
 
 from conftest import (
+    WRITE_TIMEOUT_SECONDS,
     _require_fixture_base_url,
     make_ingredient,
+    run_in_daemon_thread,
     wait_for_job_completion,
+    wait_until_blocked_behind,
 )
 from ramekin_client.api import RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
@@ -280,6 +283,44 @@ class TestScrapeRetry:
             with pytest.raises(ApiException) as exc_info:
                 scrape_api.retry_scrape(response.id)
             assert exc_info.value.status == 400
+
+    def test_concurrent_retries_restart_the_job_once(
+        self, authed_api_client, database_url, uncommitted
+    ):
+        """Two Retry taps at once (double tap, web and iOS) start one run."""
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+
+        url = f"{FIXTURE_BASE_URL}/nonexistent/page.html"
+        response = scrape_api.create_scrape(CreateScrapeRequest(url=url))
+        job = wait_for_job_completion(scrape_api, response.id)
+        assert job.status == "failed"
+
+        # Both retries see the job failed, then queue their reset UPDATE
+        # behind this lock, so they race exactly where the check used to be.
+        uncommitted.execute(
+            "SELECT id FROM scrape_jobs WHERE id = %s FOR UPDATE", (job.id,)
+        )
+        holder_pid = uncommitted.execute("SELECT pg_backend_pid()").fetchone()[0]
+
+        def retry():
+            try:
+                scrape_api.retry_scrape(job.id, _request_timeout=WRITE_TIMEOUT_SECONDS)
+                return 200
+            except ApiException as e:
+                return e.status
+
+        retries = [run_in_daemon_thread(retry) for _ in range(2)]
+        try:
+            wait_until_blocked_behind(database_url, holder_pid, retries, count=2)
+        finally:
+            uncommitted.rollback()
+        statuses = sorted(r.result(timeout=WRITE_TIMEOUT_SECONDS) for r in retries)
+        assert statuses == [200, 400]
+
+        job2 = wait_for_job_completion(scrape_api, job.id)
+        assert job2.status == "failed"
+        assert job2.retry_count == 1
 
 
 class TestScrapeAuth:
