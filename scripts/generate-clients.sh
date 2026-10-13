@@ -8,9 +8,6 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 SPEC_FILE="$PROJECT_ROOT/api/openapi.json"
 
-# shellcheck source=/dev/null
-source "$SCRIPT_DIR/repo-lock.sh"
-
 generate_client() {
     local generator=$1
     local output=$2
@@ -90,9 +87,5 @@ EOF
 LOG_DIR="$PROJECT_ROOT/logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/generate-clients.log"
-# Concurrent make targets (lint, test, ...) all regenerate clients into the same
-# directories, so runs take turns.
-REPO_LOCK_DIR="$LOG_DIR/locks" REPO_LOCK_WAIT=1 \
-    acquire_repo_lock generate-clients "API client generation"
 main > "$LOG_FILE" 2>&1
 echo "Generated clients, log at $LOG_FILE"

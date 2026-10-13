@@ -86,13 +86,15 @@ LOCK_WAIT_TIMEOUT_SECONDS = 30
 WRITE_TIMEOUT_SECONDS = 60
 
 
-def _wait_until_blocked_behind(database_url, holder_pid, write):
-    """Wait for some backend to queue on a lock held by backend `holder_pid`.
+def wait_until_blocked_behind(database_url, holder_pid, writes, count=1):
+    """Wait for `count` backends to queue on a lock held by backend `holder_pid`.
 
     Matches on the holder's backend pid via `pg_blocking_pids` rather than on
     query text, so concurrently running tests (pytest-xdist) can't satisfy the
-    wait by accident. Returns early if the write future finishes, so a write
-    that fails outright surfaces its error instead of burning the timeout.
+    wait by accident. Follows chains of waiters: a second write to the same
+    row queues behind the first waiter's tuple lock, not the holder's.
+    Returns early if any of the `writes` futures finishes, so a write that
+    fails outright surfaces its error instead of burning the timeout.
 
     Also requires the blocked backend to already hold an assigned transaction
     id (`backend_xid`). The sync race tests need the writer's xid to predate
@@ -105,24 +107,29 @@ def _wait_until_blocked_behind(database_url, holder_pid, write):
     deadline = time.monotonic() + LOCK_WAIT_TIMEOUT_SECONDS
     with psycopg.connect(database_url, autocommit=True) as conn:
         while time.monotonic() < deadline:
-            if write.done():
+            if any(write.done() for write in writes):
                 return
             waiting = conn.execute(
-                "SELECT count(*) FROM pg_stat_activity"
-                " WHERE wait_event_type = 'Lock'"
-                " AND backend_xid IS NOT NULL"
-                " AND %s = ANY(pg_blocking_pids(pid))",
+                "WITH RECURSIVE waiters(pid) AS ("
+                " SELECT pid FROM pg_stat_activity"
+                " WHERE wait_event_type = 'Lock' AND backend_xid IS NOT NULL"
+                " AND %s = ANY(pg_blocking_pids(pid))"
+                " UNION"
+                " SELECT a.pid FROM pg_stat_activity a"
+                " JOIN waiters w ON w.pid = ANY(pg_blocking_pids(a.pid))"
+                " WHERE a.wait_event_type = 'Lock' AND a.backend_xid IS NOT NULL"
+                ") SELECT count(*) FROM waiters",
                 (holder_pid,),
             ).fetchone()[0]
-            if waiting:
+            if waiting >= count:
                 return
             time.sleep(0.1)
     raise TimeoutError(
-        "the write never started waiting on the row lock with an assigned xid"
+        f"{count} write(s) never started waiting on the row lock with an assigned xid"
     )
 
 
-def _run_in_daemon_thread(fn):
+def run_in_daemon_thread(fn):
     """Run `fn` on a daemon thread, exposing its outcome as a Future.
 
     A daemon thread rather than a ThreadPoolExecutor worker: nothing joins the
@@ -153,9 +160,9 @@ def blocked_api_write(database_url, uncommitted, send_write):
     Yields the write's Future; its result is available after the block.
     """
     holder_pid = uncommitted.execute("SELECT pg_backend_pid()").fetchone()[0]
-    write = _run_in_daemon_thread(send_write)
+    write = run_in_daemon_thread(send_write)
     try:
-        _wait_until_blocked_behind(database_url, holder_pid, write)
+        wait_until_blocked_behind(database_url, holder_pid, [write])
         if write.done():
             write.result()  # surfaces the failed write's own error
             # It cannot have committed while the lock was held, so finishing

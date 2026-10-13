@@ -99,8 +99,7 @@ do_setup() {
     # Install npm dependencies
     echo ""
     echo "Installing npm dependencies..."
-    cd "$PROJECT_ROOT/ramekin-ui"
-    npm ci --loglevel verbose
+    "$PROJECT_ROOT/scripts/install-ui-deps.sh"
 
     # Build cargo
     echo ""

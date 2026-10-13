@@ -17,7 +17,7 @@ processes:
 
   ui:
     command: >-
-      npm ci && npm run build &&
+      ../scripts/install-ui-deps.sh && npm run build &&
       npm run preview -- --port ${UI_PORT} --strictPort
     working_dir: ./ramekin-ui
     depends_on:
