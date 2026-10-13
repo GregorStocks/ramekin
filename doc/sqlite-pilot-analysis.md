@@ -10,8 +10,8 @@ owner's decision (`issues/blocked-database-generic-sqlite-step2.json5`).
 Performance is not a reason to stay on Postgres. At realistic single-user sizes,
 SQLite (WAL mode with `synchronous=FULL`, FTS5 for search) matched or beat
 Postgres on every hot path measured, often by a wide margin. That held under a
-mixed load of the scrape runner, the ingredient-name worker and shopping-list
-edits running alongside readers. The real costs are:
+mixed load approximating the scrape runner, the ingredient-name worker and
+shopping-list edits running alongside readers. The real costs are:
 
 - **Writes serialize.** The longest write measured, rewriting every current
   recipe and its search-index entry at 5k recipes, took ~2.8 s. A small write
@@ -136,7 +136,13 @@ bound. Other worktrees were using the machine (load average 2–7), so treat
 single numbers as ±30 %. The orders of magnitude were stable across repeated
 runs.
 
-Median latency (ms):
+Median latency (ms). These are database times only. A default text search
+also takes the relevance path in `api/recipes/list.rs`, which deserializes,
+scores and sorts every match in Rust. That cost was not measured. It is the
+same code and input on either backend, so it adds the same amount to both
+search columns: the absolute gap holds, but the ratio end to end is smaller
+than shown.
+
 
 | Workload | PG 1k | SQLite 1k | PG 5k | SQLite 5k |
 |---|---:|---:|---:|---:|
@@ -154,8 +160,13 @@ Median latency (ms):
 The mixed load ran for 8 s at 5k recipes:
 - 4 reader threads: recipe list, search, the shopping list, and a scrape job's
   step outputs
-- the scrape runner: 10 step-output inserts per job, each its own transaction,
-  then a recipe save
+- a stand-in for the scrape runner: 10 step-output inserts per job, each its
+  own transaction, then a recipe-version write (new version + tags + pointer
+  update). The real `save_recipe` transaction (`scraping/steps/save_recipe.rs`)
+  also locks and updates the `scrape_jobs` row, creates the recipe, and
+  enqueues ingredient names. That's a few more small row writes in the same
+  transaction, so the lock is held somewhat longer than measured here. It was
+  not benchmarked directly.
 - the ingredient-name worker: 50-name update transactions
 - shopping-list item toggles
 
@@ -204,7 +215,7 @@ What the numbers say:
   only `title`.
 - **Serialized writes didn't matter at this scale, even with the background
   workers running.** Each write is a short transaction with an fsync, so the
-  scrape runner, ingredient worker and shopping edits interleave behind the
+  approximated scrape, ingredient-worker and shopping writes interleave behind the
   mutex with p99 in the tens of milliseconds. The exception is a whole-table
   rewrite holding the lock, which has to be chunked if it ever runs while the
   server is up.
