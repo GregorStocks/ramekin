@@ -1,0 +1,16 @@
+{
+  "title": "Port the server to SQLite and cut prod over (step 2 of the SQLite pilot)",
+  "description": "doc/sqlite-pilot-analysis.md is the step-1 pre-analysis: it lists every Postgres-specific feature with its SQLite equivalent, has benchmarks from scripts/sqlite-pilot-bench.py, and recommends going ahead as a cutover rather than keeping two backends permanently. \
+If the owner says go: add a SQLite backend (pool with WAL/busy_timeout/foreign_keys pragmas and app-level write serialization, a baseline SQLite migration, and uuid/JSON column newtypes); port the search filter to an FTS5 trigram index over current versions with an unaccent UDF fallback for tokens under 3 characters; replace the pg_current_xact_id sync cursors with a sync_clock counter (coordinate with blocked-one-sync-mechanism; this also fixes p3-sync-cursor-after-restore); move recipe_versions.photo_ids off uuid[]; and replace citext tag names with a normalized key column. \
+Run the e2e suite against both backends in CI until SQLite passes, write and rehearse the data migration from the doc's outline (keep soft-deleted rows, seed sync_clock above every migrated change_xid), cut prod over, then delete the Postgres backend.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+  ],
+  "blocked": "Owner go/no-go on doc/sqlite-pilot-analysis.md. \
+If the motivation is running inside Cloudflare (blocked-ramekin-mcp-chatgpt), confirm first that a self-hosted SQLite file is the target and not D1 or Durable Objects.",
+  "created_at": "2026-10-12T22:55:00-07:00",
+  "updated_at": "2026-10-12T22:55:00-07:00",
+}

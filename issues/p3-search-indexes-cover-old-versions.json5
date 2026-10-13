@@ -1,0 +1,17 @@
+{
+  "title": "Recipe text search rechecks every old version, making common-word searches slow",
+  "description": "The trigram search indexes from migration 2026-04-16-000000-0000_unaccent_search are on recipe_versions, so they cover every historical version, not just each recipe's current one. \
+For a common word, the bitmap index scans in GET /api/recipes match thousands of rows (most of them old versions), and each one is rechecked with f_unaccent() over the full instructions and ingredients::text before the join to recipes.current_version_id throws it away. \
+With scripts/sqlite-pilot-bench.py at 5k recipes x 3 versions, EXPLAIN ANALYZE shows about 300 ms server-side for 'chicken', and end-to-end search took about 0.5 s (doc/sqlite-pilot-analysis.md). \
+Fix options: partial or expression indexes limited to current versions (for example an is_current flag maintained on version writes), or a separate search table keyed by recipe holding only the current text. \
+Add a regression check that EXPLAIN for a common token doesn't recheck non-current versions. \
+Moot if the SQLite cutover in blocked-database-generic-sqlite-step2 lands first, since that plan indexes current versions only.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "api",
+  ],
+  "created_at": "2026-10-12T22:56:00-07:00",
+  "updated_at": "2026-10-12T22:56:00-07:00",
+}
