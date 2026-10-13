@@ -77,11 +77,11 @@
     "name": "a per-item primary is the whole amount and scales",
     "ingredient": {
       "item": "artichoke hearts",
-      "measurements": [{"amount": "2", "unit": "cans each"}],
+      "measurements": [{"amount": "2", "unit": "can each"}],
       "note": null
     },
     "options": {"scale": 2},
-    "expected": "4 cans each artichoke hearts"
+    "expected": "4 can each artichoke hearts"
   },
   {
     "name": "amount-only and unit-only measurements",
