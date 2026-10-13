@@ -186,11 +186,15 @@
     {
       "raw": "1 3/4 cups or 1 19-ounce can kidney beans, rinsed and drained",
       "expected": {
-        "item": "or 1 19-ounce can kidney beans",
+        "item": "kidney beans",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "19-ounce can"
           }
         ],
         "note": "rinsed and drained",

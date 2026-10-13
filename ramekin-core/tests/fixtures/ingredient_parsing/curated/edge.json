@@ -1092,7 +1092,7 @@
       "name": "count_only_or_after_unit_kept",
       "raw": "1 large can or 2 small cans diced tomatoes",
       "expected": {
-        "item": "cans diced tomatoes",
+        "item": "diced tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -1100,7 +1100,7 @@
           },
           {
             "amount": "2",
-            "unit": "small"
+            "unit": "small can"
           }
         ],
         "note": null,

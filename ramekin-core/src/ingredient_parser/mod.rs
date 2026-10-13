@@ -355,26 +355,6 @@ fn split_leading_item_qualifier(item: &str) -> Option<(&str, &str)> {
     })
 }
 
-/// The text after a leading "of" and any article: "of a lemon" -> "lemon".
-fn strip_leading_of_article(s: &str) -> Option<&str> {
-    let trimmed = s.trim_start();
-    let after_of = trimmed
-        .get(..3)
-        .filter(|prefix| prefix.eq_ignore_ascii_case("of "))
-        .and_then(|_| trimmed.get(3..))?
-        .trim_start();
-    for article in ["a ", "an ", "the "] {
-        if let Some(rest) = after_of
-            .get(..article.len())
-            .filter(|prefix| prefix.eq_ignore_ascii_case(article))
-            .and_then(|_| after_of.get(article.len()..))
-        {
-            return Some(rest.trim_start());
-        }
-    }
-    Some(after_of)
-}
-
 /// "two US sticks unsalted butter" -> (2 stick, "unsalted butter").
 fn split_stick_count(s: &str) -> Option<(Measurement, String)> {
     let normalized = normalize_word_numbers(s.trim_start());
@@ -889,30 +869,19 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         // a parenthetical "(about 4 medium)".
         let (_, after_or) = strip_leading_measurement_qualifier(after_or);
 
-        // Try to parse as measurement, following the same flow as main parsing:
-        // 1. Strip pre-amount modifier (e.g., "scant 1 cup")
-        let (or_pre_amount_modifier, after_or_modifier) = strip_measurement_modifier(after_or);
-
-        // 2. Extract amount; "or 1/4 of a large onion" drops the "of a"
-        let (or_amount, after_or_amount) = extract_amount(&after_or_modifier);
-        let after_or_amount = strip_leading_of_article(&after_or_amount)
-            .map(str::to_string)
-            .unwrap_or(after_or_amount);
-
-        // 3. Strip pre-unit modifier (e.g., "3 heaping cups")
-        let (or_pre_unit_modifier, after_or_pre_unit) =
-            strip_measurement_modifier(&after_or_amount);
-
-        // 4. Extract unit
-        let (or_base_unit, after_or_unit) = extract_unit(&after_or_pre_unit);
+        // "or 3 heaping cups frozen pineapple", "or 1/4 of a large onion"
+        let read = measure::read_measurement(after_or);
+        let after_or_unit = read.rest.clone();
 
         // "14 ounces or 4 plain pork sausages": right after a full
         // measurement, a bare count before the food is an alternative too.
-        let bare_count = or_base_unit.is_none()
+        let bare_count = read.unit.is_none()
             && primary_amount.is_some()
             && primary_unit.is_some()
-            && after_or_modifier.starts_with(|c: char| c.is_ascii_digit())
-            && after_or_unit.trim_start().starts_with(char::is_alphabetic)
+            && strip_measurement_modifier(after_or)
+                .1
+                .starts_with(|c: char| c.is_ascii_digit())
+            && after_or_unit.starts_with(char::is_alphabetic)
             // "or 1 packet instant yeast" counts packets, not the food.
             && !after_or_unit
                 .split_whitespace()
@@ -920,14 +889,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .is_some_and(is_package_noun);
 
         // Only treat as alternative if we got BOTH amount AND unit
-        if or_amount.is_some() && (or_base_unit.is_some() || bare_count) {
-            // Combine modifiers with unit (prefer pre-unit, fall back to pre-amount)
-            let or_modifier = or_pre_unit_modifier.or(or_pre_amount_modifier);
-            let mut or_unit = match (or_modifier, or_base_unit) {
-                (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
-                (None, u) => u,
-                _ => None,
-            };
+        if read.amount.is_some() && (read.unit.is_some() || bare_count) {
+            let mut or_unit = read.unit.as_ref().and(read.modified_unit());
             let mut after_or_unit = after_or_unit;
             // "2 large or 3 smaller leeks": after a sized count, the
             // alternative count is sized too.
@@ -939,7 +902,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             }
 
             alt_measurements.push(Measurement {
-                amount: or_amount,
+                amount: read.amount,
                 unit: or_unit,
             });
 
@@ -967,29 +930,15 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         };
         let after_slash = after_slash.trim_start();
 
-        // Try to parse as measurement
-        let (slash_pre_amount_modifier, after_slash_modifier) =
-            strip_measurement_modifier(after_slash);
-        let (slash_amount, after_slash_amount) = extract_amount(&after_slash_modifier);
-        let (slash_pre_unit_modifier, after_slash_pre_unit) =
-            strip_measurement_modifier(&after_slash_amount);
-        let (slash_base_unit, after_slash_unit) = extract_unit(&after_slash_pre_unit);
-
         // Only treat as alternative if we got BOTH amount AND unit
-        if slash_amount.is_some() && slash_base_unit.is_some() {
-            let slash_modifier = slash_pre_unit_modifier.or(slash_pre_amount_modifier);
-            let slash_unit = match (slash_modifier, slash_base_unit) {
-                (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
-                (None, u) => u,
-                _ => None,
-            };
-
+        let read = measure::read_measurement(after_slash);
+        if read.amount.is_some() && read.unit.is_some() {
             alt_measurements.push(Measurement {
-                amount: slash_amount,
-                unit: slash_unit,
+                unit: read.modified_unit(),
+                amount: read.amount,
             });
 
-            remaining = after_slash_unit;
+            remaining = read.rest;
         } else {
             break;
         }
@@ -1010,15 +959,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         if found_attached_metric {
             if let Some(after_slash) = remaining_trimmed.strip_prefix('/') {
                 let after_slash = after_slash.trim_start();
-                let (slash_amount, after_slash_amount) = extract_amount(after_slash);
-                let (slash_unit, after_slash_unit) = extract_unit(&after_slash_amount);
-
-                if slash_amount.is_some() && slash_unit.is_some() {
+                let read = measure::read_measurement(after_slash);
+                if read.amount.is_some() && read.unit.is_some() {
                     alt_measurements.push(Measurement {
-                        amount: slash_amount,
-                        unit: slash_unit,
+                        unit: read.modified_unit(),
+                        amount: read.amount,
                     });
-                    remaining = after_slash_unit;
+                    remaining = read.rest;
                     continue;
                 }
             }

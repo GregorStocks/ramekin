@@ -159,7 +159,7 @@
     {
       "raw": "1 large can (28 ounces) or 2 small cans (15 ounces each) diced tomatoes**, with their juices",
       "expected": {
-        "item": "cans diced tomatoes",
+        "item": "diced tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -175,7 +175,7 @@
           },
           {
             "amount": "2",
-            "unit": "small"
+            "unit": "small can"
           }
         ],
         "note": "with their juices",
