@@ -1,4 +1,4 @@
-use crate::ingredient_parser::{find_matching_closing_paren, parse_ingredient};
+use crate::ingredient_parser::{parse_ingredient, tokens};
 
 /// Lines that should be completely ignored (scraper artifacts, not ingredients or headers).
 /// These are checked case-insensitively.
@@ -152,16 +152,7 @@ pub(in crate::ingredient_parser) fn is_equipment_line(lower: &str) -> bool {
 
 pub(in crate::ingredient_parser) fn is_standalone_yield_metadata_line(raw: &str) -> bool {
     let trimmed = raw.trim();
-    let unwrapped = if trimmed.starts_with('(') && trimmed.ends_with(')') {
-        let closing_idx = trimmed.len() - 1;
-        if find_matching_closing_paren(trimmed, 0) == Some(closing_idx) {
-            trimmed.get(1..closing_idx).unwrap_or(trimmed).trim()
-        } else {
-            trimmed
-        }
-    } else {
-        trimmed
-    };
+    let unwrapped = tokens::sole_group_content(trimmed).unwrap_or(trimmed);
     let normalized = unwrapped.trim().trim_end_matches(['.', '!', ';']).trim();
     let lower = normalized.to_lowercase();
 

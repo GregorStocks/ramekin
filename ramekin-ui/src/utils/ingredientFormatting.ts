@@ -42,6 +42,14 @@ function trimmedValue(value: string | null | undefined): string | null {
   return trimmed ? trimmed : null;
 }
 
+/**
+ * A per-item size ("10 oz each" in "2 packages (10 oz each)") stays the same
+ * however many items the recipe calls for.
+ */
+function isPerItem(measurement: Measurement): boolean {
+  return (measurement.unit?.trim().toLowerCase() ?? "").endsWith(" each");
+}
+
 function formatMeasurement(
   measurement: Measurement,
   scale: number,
@@ -67,7 +75,7 @@ export function formatIngredientParts(
     const formatted = [
       ...ingredient.measurements
         .slice(1)
-        .map((m) => formatMeasurement(m, scale)),
+        .map((m) => formatMeasurement(m, isPerItem(m) ? 1 : scale)),
       derived && `~${derived}`,
     ].filter((v): v is string => !!v);
     alternatives = formatted.length > 0 ? formatted.join(", ") : null;

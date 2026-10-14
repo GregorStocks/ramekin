@@ -28,16 +28,24 @@
     {
       "raw": "Slightly heaped 1/8, 1/4 or 1/2 teaspoon active dry yeast (for Overnight, All-Day, or Part-Day Schedules respectively)",
       "expected": {
-        "item": "1/4",
+        "item": "active dry yeast",
         "measurements": [
           {
             "amount": "0.13",
-            "unit": "slightly heaped"
+            "unit": "slightly heaped tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "slightly heaped tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "slightly heaped tsp"
           }
         ],
-        "note": "or 1/2 teaspoon active dry yeast (for Overnight, All-Day, or Part-Day Schedules respectively)",
+        "note": "for Overnight, All-Day, or Part-Day Schedules respectively",
         "section": "Dough",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {

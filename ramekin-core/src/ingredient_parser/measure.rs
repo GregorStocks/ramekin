@@ -18,6 +18,7 @@
 //! and "1-2 cans" are the same range, and "1- 15 ounce can" is one sized can
 //! because a mass and a container follow the second number.
 
+use super::quantity::Range;
 use super::tokens::{tokenize, Kind, Token};
 use super::*;
 
@@ -35,6 +36,9 @@ pub(super) struct Cursor<'a> {
     s: &'a str,
     tokens: Vec<Token<'a>>,
     pos: usize,
+    /// The text is itself a size ("14 1/2-ounce can"), so no number in it
+    /// sizes what follows.
+    is_size: bool,
 }
 
 impl<'a> Cursor<'a> {
@@ -43,7 +47,21 @@ impl<'a> Cursor<'a> {
             s,
             tokens: tokenize(s),
             pos: 0,
+            is_size: false,
         }
+    }
+
+    /// A cursor over text that is a size or amount on its own: a unit or
+    /// note already split from its line.
+    fn size(s: &'a str) -> Self {
+        Cursor {
+            is_size: true,
+            ..Cursor::new(s)
+        }
+    }
+
+    fn at_end(&self) -> bool {
+        self.peek(0).is_none()
     }
 
     fn peek(&self, n: usize) -> Option<&Token<'a>> {
@@ -185,6 +203,9 @@ fn number(c: &mut Cursor) -> Option<String> {
 /// packet" the fraction sizes the slices or packet, so it doesn't join the
 /// number before it. "1 1/4-pound squash" is still 1 1/4 pounds.
 fn sizes_what_follows(c: &Cursor) -> bool {
+    if c.is_size {
+        return false;
+    }
     let mut probe = c.clone();
     probe.pos += 1;
     // 4 ½"-thick chops": an inch mark.
@@ -231,8 +252,39 @@ fn sizes_a_package(c: &Cursor) -> bool {
         .is_some_and(|word| is_package_noun(word.text))
 }
 
+/// An amount: its text, and its value when every number in it reads as
+/// one and a range runs low to high.
+pub(super) struct Amount {
+    pub text: String,
+    pub value: Option<Range>,
+}
+
+/// The value of a number the grammar read.
+fn value(number: &str) -> Option<f64> {
+    parse_amount(number).filter(|n| n.is_finite() && (0.0..=1e12).contains(n))
+}
+
+impl Amount {
+    fn single(number: String) -> Self {
+        Amount {
+            value: value(&number).map(Range::exact),
+            text: number,
+        }
+    }
+
+    fn range(low: &str, connector: &str, high: &str) -> Self {
+        Amount {
+            value: match (value(low), value(high)) {
+                (Some(min), Some(max)) if min <= max => Some(Range { min, max }),
+                _ => None,
+            },
+            text: format!("{low}{connector}{high}"),
+        }
+    }
+}
+
 /// Read an amount: a number or a range of two.
-fn amount(c: &mut Cursor) -> Option<String> {
+fn amount(c: &mut Cursor) -> Option<Amount> {
     let low = number(c)?;
     let before_connector = c.pos;
     // "1. Remove the rind": a list number's period.
@@ -241,7 +293,7 @@ fn amount(c: &mut Cursor) -> Option<String> {
         && c.char_after(0).is_none_or(char::is_whitespace)
     {
         c.pos += 1;
-        return Some(low);
+        return Some(Amount::single(low));
     }
     // "1 1/4- to 1 1/2-pound": a dash before "to" repeats the unit to come.
     if c.peek(0).is_some_and(|t| t.kind == Kind::Dash) && c.peek(1).is_some_and(|t| t.is_word("to"))
@@ -252,19 +304,23 @@ fn amount(c: &mut Cursor) -> Option<String> {
         // "1/4 to 1/2-inch pieces" sizes the pieces; it doesn't count them.
         if !sizes_what_follows(c) {
             if let Some(high) = number(c) {
-                return Some(format!("{low} {} {high}", connector.lower()));
+                return Some(Amount::range(
+                    &low,
+                    &format!(" {} ", connector.lower()),
+                    &high,
+                ));
             }
         }
     }
     c.pos = before_connector;
     let Some(dash) = c.peek(0).filter(|t| t.kind == Kind::Dash).copied() else {
-        return Some(low);
+        return Some(Amount::single(low));
     };
     let Some(next) = c.peek(1).copied() else {
-        return Some(low);
+        return Some(Amount::single(low));
     };
     if next.kind != Kind::Number {
-        return Some(low);
+        return Some(Amount::single(low));
     }
     // "1 - 2" and "6-8" read as ranges; with a space on only one side ("1- 2",
     // "2 -3"), the dash may just be spacing: "1- 15 ounce can" is one can.
@@ -274,11 +330,11 @@ fn amount(c: &mut Cursor) -> Option<String> {
     let high = number(c);
     if one_sided && sizes_a_package(c) {
         c.pos = after_dash;
-        return Some(low);
+        return Some(Amount::single(low));
     }
     let Some(high) = high else {
         c.pos = before_connector;
-        return Some(low);
+        return Some(Amount::single(low));
     };
     let plausible = matches!(
         (parse_amount(&low), parse_amount(&high)),
@@ -286,9 +342,9 @@ fn amount(c: &mut Cursor) -> Option<String> {
     );
     if one_sided && !plausible {
         c.pos = before_connector;
-        return Some(low);
+        return Some(Amount::single(low));
     }
-    Some(format!("{low}-{high}"))
+    Some(Amount::range(&low, "-", &high))
 }
 
 /// Read a measurement modifier ("scant", "heaping", "lightly packed").
@@ -556,7 +612,7 @@ fn attached_package(c: &mut Cursor) -> Option<String> {
 /// Read an amount alone off the front of `s`.
 pub(super) fn read_amount(s: &str) -> (Option<String>, String) {
     let mut c = Cursor::new(s);
-    let amount = amount(&mut c);
+    let amount = amount(&mut c).map(|amount| amount.text);
     (amount, c.collapsed_rest())
 }
 
@@ -602,7 +658,7 @@ pub(super) fn read_attached_metric(s: &str) -> Option<(Measurement, String)> {
 /// the amount, the unit, and the text after them.
 pub(super) fn read_hyphenated_size(s: &str) -> Option<(String, String, String)> {
     let mut c = Cursor::new(s);
-    let amount = amount(&mut c)?;
+    let amount = amount(&mut c)?.text;
     let (count, unit) = hyphenated_unit(&mut c, 0)?;
     Some((count.unwrap_or(amount), unit, c.collapsed_rest()))
 }
@@ -613,7 +669,7 @@ pub(super) fn read_measurement(s: &str) -> Read {
     let mut c = Cursor::new(s);
     let pre_amount_modifier = modifier(&mut c);
     let amount_start = c.pos;
-    let mut amount = amount(&mut c);
+    let mut amount = amount(&mut c).map(|amount| amount.text);
 
     // "A 14-ounce can", "a 3-inch piece": the article counts one sized unit.
     if amount.is_none() && c.peek(0).is_some_and(|t| t.is_word("a") || t.is_word("an")) {
@@ -694,6 +750,257 @@ fn unit_phrase_size(c: &mut Cursor) -> Option<String> {
     let unit = sized_unit(&mut probe, &size).unwrap_or(size);
     *c = probe;
     Some(unit)
+}
+
+// Reading a measurement's parts back into numbers, for nutrition: the
+// parts may have been edited by hand since the line was parsed, so they are
+// read again rather than carried over from the parse.
+
+/// Mass units a package or noted weight may use.
+const PACKAGE_MASSES: &[&str] = &[
+    "ounce", "ounces", "oz", "pound", "pounds", "lb", "lbs", "gram", "grams", "g",
+];
+
+/// Containers whose weight a recipe may state ("15-ounce can").
+const PACKAGE_WORDS: &[&str] = &[
+    "can",
+    "package",
+    "block",
+    "bag",
+    "jar",
+    "box",
+    "carton",
+    "container",
+    "tin",
+    "bottle",
+    "packet",
+    "tub",
+];
+
+/// Words that hedge a weight ("about 1 pound").
+const HEDGES: &[&str] = &["about", "approximately", "approx", "roughly", "around"];
+
+pub(super) fn is_package_word(word: &str) -> bool {
+    let word = word.to_lowercase();
+    PACKAGE_WORDS.contains(&word.as_str())
+        || word
+            .strip_suffix('s')
+            .is_some_and(|singular| PACKAGE_WORDS.contains(&singular))
+}
+
+/// Unicode fractions and dashes in ASCII, and decimal commas ("1,5",
+/// ",5") as points. A comma grouping thousands ("1,000") stays, so the
+/// amount doesn't read: no amount in a recipe is that large.
+fn ascii_amounts(s: &str) -> String {
+    let s = normalize_unicode(s);
+    let tokens = tokenize(&s);
+    let mut out = String::with_capacity(s.len());
+    let mut end = 0;
+    for (index, comma) in tokens.iter().enumerate() {
+        let Some(digits) = tokens.get(index + 1) else {
+            continue;
+        };
+        if comma.kind != Kind::Comma || !digits.is_integer() || digits.start != comma.end {
+            continue;
+        }
+        let before = index
+            .checked_sub(1)
+            .and_then(|before| tokens.get(before))
+            .filter(|before| before.end == comma.start);
+        let decimal = match before {
+            Some(whole) if whole.kind == Kind::Number => {
+                let grouped = whole.is_integer()
+                    && !whole.text.starts_with('0')
+                    && whole.text.len() <= 3
+                    && digits.text.len() == 3;
+                !grouped
+            }
+            Some(before) => before.kind == Kind::Dash,
+            None => true,
+        };
+        if decimal {
+            out.push_str(s.get(end..comma.start).unwrap_or(""));
+            out.push('.');
+            end = comma.end;
+        }
+    }
+    out.push_str(s.get(end..).unwrap_or(""));
+    out
+}
+
+/// Read a whole string as an amount: "1 1/2", "1½", "2 to 3", "4-6".
+pub(super) fn read_range(s: &str) -> Option<Range> {
+    let s = ascii_amounts(s);
+    let mut c = Cursor::size(&s);
+    let amount = amount(&mut c)?;
+    c.at_end().then_some(amount.value).flatten()
+}
+
+/// True when the token at the cursor separates the terms of a compound
+/// amount: "plus" or "+" with whitespace on both sides.
+fn at_plus(c: &Cursor) -> bool {
+    c.peek(0)
+        .is_some_and(|t| (t.is_word("plus") || t.kind == Kind::Plus) && t.space_before)
+        && c.peek(1).is_some_and(|t| t.space_before)
+}
+
+/// Read a compound amount: amounts joined by "plus" or "+", each with any
+/// unit words after it ("1 cup plus 2 tbsp", "1/4 plus 1/8"). A term's unit
+/// is empty when none is written.
+pub(super) fn read_terms(s: &str) -> Option<Vec<(Range, String)>> {
+    let s = ascii_amounts(s);
+    let mut c = Cursor::size(&s);
+    let mut terms = Vec::new();
+    loop {
+        let amount = amount(&mut c)?.value?;
+        let start = c.pos;
+        while !c.at_end() && !at_plus(&c) {
+            let word = c.take_if(|t| {
+                t.kind == Kind::Word && t.text.chars().all(|ch| ch.is_ascii_alphabetic())
+            })?;
+            if c.pos == start + 1 && !word.space_before {
+                return None;
+            }
+        }
+        terms.push((amount, c.text_between(start, c.pos).to_string()));
+        if c.at_end() {
+            return Some(terms);
+        }
+        c.pos += 1;
+    }
+}
+
+/// Read a weight: an amount and a mass unit ("15-ounce", "8 oz.", "7- to
+/// 9-ounce"). Returns the amount, the mass, and whether a dash joins them.
+fn weight(c: &mut Cursor, masses: &[&str]) -> Option<(Range, String, bool)> {
+    let amount = amount(c)?.value?;
+    let dash = c.take_if(|t| t.kind == Kind::Dash).is_some();
+    let mass = c.take_if(|t| masses.iter().any(|mass| t.is_word(mass)))?;
+    c.take_if(|t| t.kind == Kind::Period && !t.space_before);
+    Some((amount, mass.lower(), dash))
+}
+
+/// Read a container that states its weight: "15-ounce can", "(28-oz.)
+/// can", "14 1/2-ounce can", "12- to 18-ounce package", "400g cans".
+/// Returns the weight of one and its mass unit.
+pub(super) fn read_package(s: &str) -> Option<(Range, String)> {
+    let s = ascii_amounts(s);
+    let mut c = Cursor::size(&s);
+    c.take_if(|t| t.kind == Kind::Open);
+    let (amount, mass, _) = weight(&mut c, PACKAGE_MASSES)?;
+    c.take_if(|t| t.kind == Kind::Close);
+    c.take_if(|t| t.kind == Kind::Dash);
+    c.take_if(|t| t.kind == Kind::Word && is_package_word(t.text))?;
+    c.at_end().then_some((amount, mass))
+}
+
+/// Read the size of a piece cut to a size in inches: "3-inch piece", "3-4
+/// inch chunks", "3/4 inch knob".
+pub(super) fn read_inch_piece(s: &str) -> Option<Range> {
+    let s = ascii_amounts(s);
+    let mut c = Cursor::size(&s);
+    let amount = amount(&mut c)?.value?;
+    c.take_if(|t| t.kind == Kind::Dash);
+    c.take_word(&["inch", "inches"])?;
+    c.take_word(INCH_PIECE_NOUNS)?;
+    c.at_end().then_some(amount)
+}
+
+/// Read a package weight leading a note: "15-ounce, drained", "8 oz. each",
+/// "28 oz or 800 g". Returns the weight, None when its amount doesn't read
+/// ("about 15-ounce"), and its mass unit; None when the note doesn't lead
+/// with a weight.
+pub(super) fn read_noted_package(note: &str) -> Option<(Option<Range>, String)> {
+    let note = ascii_amounts(note);
+    let c = Cursor::size(&note);
+    (1..c.tokens.len()).find_map(|index| {
+        let mut probe = c.clone();
+        probe.pos = index;
+        let mass = probe.take_if(|t| PACKAGE_MASSES.iter().any(|mass| t.is_word(mass)))?;
+        probe.take_if(|t| t.kind == Kind::Period && !t.space_before);
+        let ends = probe.at_end()
+            || probe
+                .peek(0)
+                .is_some_and(|t| t.kind == Kind::Comma || t.text == ";")
+            || probe
+                .peek(0)
+                .is_some_and(|t| (t.is_word("or") || t.is_word("each")) && t.space_before);
+        if !ends {
+            return None;
+        }
+        let mut before = Cursor::size(c.text_between(0, index));
+        let weight = amount(&mut before).and_then(|weight| weight.value);
+        before.take_if(|t| t.kind == Kind::Dash);
+        Some((weight.filter(|_| before.at_end()), mass.lower()))
+    })
+}
+
+/// What a weight in a note says it weighs.
+#[derive(Debug, Clone, Copy, PartialEq)]
+pub(super) enum Weighs {
+    /// Not said: "8 oz".
+    Unsaid,
+    /// One item: "6 oz each", "8 ounce packages", or as an adjective,
+    /// "7- to 9-ounce".
+    Each,
+    /// The whole line: "1 pound total", or hedged, "about 1 pound".
+    Total,
+}
+
+/// A weight stated in a note.
+#[derive(Debug, Clone, PartialEq)]
+pub(super) struct NotedWeight {
+    pub amount: Range,
+    pub mass: String,
+    pub weighs: Weighs,
+}
+
+/// Read a weight that is a whole part of a note: "about 1 1/2 pounds", "6
+/// oz each", "2 1/2 lbs (1.1 k) each", "8 ounce packages", "7- to 9-ounce".
+pub(super) fn read_noted_weight(part: &str) -> Option<NotedWeight> {
+    let part = ascii_amounts(part);
+    let mut c = Cursor::size(&part);
+    let hedged = c.take_word(HEDGES).is_some_and(|hedge| {
+        if hedge.is_word("approx") {
+            c.take_if(|t| t.kind == Kind::Period && !t.space_before);
+        }
+        c.peek(0).is_some_and(|t| t.space_before)
+    });
+    if !hedged {
+        c.pos = 0;
+    }
+    let masses = [PACKAGE_MASSES, &["kilogram", "kilograms", "kg"]].concat();
+    let (amount, mass, dash) = weight(&mut c, &masses)?;
+    // "(1.1 k)": a conversion in parentheses.
+    if c.peek(0).is_some_and(|t| t.kind == Kind::Open) {
+        let mut probe = c.clone();
+        probe.pos += 1;
+        while probe
+            .take_if(|t| !matches!(t.kind, Kind::Open | Kind::Close))
+            .is_some()
+        {}
+        probe.take_if(|t| t.kind == Kind::Close)?;
+        c = probe;
+    }
+    let word = c.take_if(|t| {
+        t.space_before && (t.is_word("each") || t.is_word("total") || is_package_word(t.text))
+    });
+    if !c.at_end() {
+        return None;
+    }
+    let total = word.is_some_and(|word| word.is_word("total"));
+    let weighs = if dash || (word.is_some() && !total) {
+        Weighs::Each
+    } else if total || hedged {
+        Weighs::Total
+    } else {
+        Weighs::Unsaid
+    };
+    Some(NotedWeight {
+        amount,
+        mass,
+        weighs,
+    })
 }
 
 #[cfg(test)]
@@ -837,5 +1144,69 @@ mod tests {
             read("2 cloves of garlic"),
             (some("2"), some("cloves"), "garlic".to_string())
         );
+    }
+
+    #[test]
+    fn readers_take_a_whole_size() {
+        let exact = |value| Some(Range::exact(value));
+        assert_eq!(read_range("1 1/2"), exact(1.5));
+        assert_eq!(read_range("1½"), exact(1.5));
+        assert_eq!(read_range("6-4"), None);
+        assert_eq!(read_range("1,000"), None);
+        assert_eq!(read_range("1 2"), None);
+        assert_eq!(
+            read_terms("1 cup plus 2 tbsp"),
+            Some(vec![
+                (Range::exact(1.0), "cup".to_string()),
+                (Range::exact(2.0), "tbsp".to_string())
+            ])
+        );
+        assert_eq!(
+            read_terms("1/4 + 1/8"),
+            Some(vec![
+                (Range::exact(0.25), String::new()),
+                (Range::exact(0.125), String::new())
+            ])
+        );
+        assert_eq!(read_terms("2 fl. oz"), None);
+        // A size reads whole: in a line "12- to 18-ounce" would size what
+        // follows, but here it is the size.
+        assert_eq!(
+            read_package("12- to 18-ounce package"),
+            Some((
+                Range {
+                    min: 12.0,
+                    max: 18.0
+                },
+                "ounce".to_string()
+            ))
+        );
+        assert_eq!(read_package("15-ounce cans of beans"), None);
+        assert_eq!(
+            read_inch_piece("3-4 inch chunks"),
+            Some(Range { min: 3.0, max: 4.0 })
+        );
+        assert_eq!(
+            read_noted_package("15-ounce, drained"),
+            Some((exact(15.0), "ounce".to_string()))
+        );
+        assert_eq!(
+            read_noted_package("about 15-ounce"),
+            Some((None, "ounce".to_string()))
+        );
+        assert_eq!(read_noted_package("drained"), None);
+    }
+
+    #[test]
+    fn noted_weights_say_what_they_weigh() {
+        let weighs = |part| read_noted_weight(part).map(|weight| weight.weighs);
+        assert_eq!(weighs("6 oz each"), Some(Weighs::Each));
+        assert_eq!(weighs("8 ounce packages"), Some(Weighs::Each));
+        assert_eq!(weighs("7- to 9-ounce"), Some(Weighs::Each));
+        assert_eq!(weighs("1 pound total"), Some(Weighs::Total));
+        assert_eq!(weighs("approx. 2 kg"), Some(Weighs::Total));
+        assert_eq!(weighs("2 1/2 lbs (1.1 k) each"), Some(Weighs::Each));
+        assert_eq!(weighs("8 oz"), Some(Weighs::Unsaid));
+        assert_eq!(weighs("about 8 ounces after peeling"), None);
     }
 }

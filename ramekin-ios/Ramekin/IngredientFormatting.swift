@@ -22,8 +22,10 @@ extension Ingredient {
         if includeAlternatives {
             // Derived grams the server computed come after the stored
             // alternatives, marked approximate ("~120 g").
+            // A per-item size ("10 oz each") stays the same however many
+            // items the recipe calls for.
             var alternatives = measurements.dropFirst().compactMap { measurement in
-                Self.formattedMeasurement(measurement, scale: scale)
+                Self.formattedMeasurement(measurement, scale: Self.isPerItem(measurement) ? 1 : scale)
             }
             if let derived, let formatted = Self.formattedMeasurement(derived, scale: scale) {
                 alternatives.append("~\(formatted)")
@@ -50,6 +52,13 @@ extension Ingredient {
         let amount = RecipeScaleSupport.scaleAmount(measurement.amount, by: scale)
         let values = [amount, measurement.unit].compactMap(Self.trimmedValue)
         return values.isEmpty ? nil : values.joined(separator: " ")
+    }
+
+    private static func isPerItem(_ measurement: Measurement) -> Bool {
+        guard let unit = trimmedValue(measurement.unit)?.lowercased() else {
+            return false
+        }
+        return unit.hasSuffix(" each")
     }
 
     private static func trimmedValue(_ value: String?) -> String? {

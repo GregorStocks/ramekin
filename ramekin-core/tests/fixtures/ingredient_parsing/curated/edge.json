@@ -1486,6 +1486,82 @@
         "note": null,
         "category": "Baking"
       }
+    },
+    {
+      "name": "count_alternative_list",
+      "raw": "2, 3 or 4 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "name": "amount_alternative_list_serial_comma",
+      "raw": "1/8, 1/4, or 1/2 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "name": "comma_inside_brackets",
+      "raw": "1 cup spinach [see note, below]",
+      "expected": {
+        "item": "spinach",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "see note, below",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "and_or_stays_in_item",
+      "raw": "1 cup raisins and/or currants",
+      "expected": {
+        "item": "raisins and/or currants",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
     }
   ]
 }

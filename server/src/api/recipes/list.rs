@@ -316,6 +316,109 @@ pub async fn list_recipes(
     Ok((StatusCode::OK, Json(response)))
 }
 
+type CurrentRecipeVersionsQuery = diesel::dsl::Filter<
+    diesel::dsl::Filter<
+        diesel::dsl::InnerJoinOn<
+            recipes::table,
+            recipe_versions::table,
+            diesel::dsl::Eq<
+                diesel::dsl::Nullable<recipe_versions::id>,
+                recipes::current_version_id,
+            >,
+        >,
+        diesel::dsl::Eq<recipes::user_id, Uuid>,
+    >,
+    diesel::dsl::IsNull<recipes::deleted_at>,
+>;
+
+type FilteredRecipesQuery<'a> =
+    diesel::dsl::IntoBoxed<'a, CurrentRecipeVersionsQuery, diesel::pg::Pg>;
+
+/// The user's current recipe versions narrowed by every filter in `parsed`.
+fn filtered_recipes_query(user_id: Uuid, parsed: &ParsedQuery) -> FilteredRecipesQuery<'_> {
+    // We use into_boxed() to allow dynamic filter additions.
+    let mut query = current_recipe_versions_for_user!(user_id).into_boxed();
+
+    // Text search: each word must appear somewhere across all fields (AND
+    // between words, OR between fields). Matches are case- AND
+    // accent-insensitive ("creme brulee" finds "Crème Brûlée").
+    //
+    // The join already limits rows to current versions, but the trigram
+    // indexes are partial on `is_current`, and the planner only uses them
+    // when the predicate is spelled out. Without it, a common word rechecks
+    // every old version that contains it.
+    if !parsed.text.is_empty() {
+        query = query.filter(recipe_versions::is_current);
+    }
+    for token in &parsed.text {
+        let pattern = literal_search_pattern(token);
+        query = query.filter(
+            raw_sql::f_unaccent(recipe_versions::title.nullable())
+                .ilike(pattern.clone())
+                .or(raw_sql::f_unaccent(recipe_versions::description).ilike(pattern.clone()))
+                .or(
+                    raw_sql::f_unaccent(recipe_versions::instructions.nullable())
+                        .ilike(pattern.clone()),
+                )
+                .or(raw_sql::f_unaccent(recipe_versions::notes).ilike(pattern.clone()))
+                .or(raw_sql::f_unaccent(raw_sql::ingredients_text().nullable())
+                    .ilike(pattern.clone())),
+        );
+    }
+
+    // Tag filters (AND logic - must have ALL tags)
+    // Use EXISTS subquery for each tag
+    for tag in &parsed.tags {
+        let tag_subquery = recipe_version_tags::table
+            .inner_join(user_tags::table)
+            .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
+            .filter(user_tags::name.eq(tag))
+            .filter(user_tags::deleted_at.is_null())
+            .select(recipe_version_tags::recipe_version_id);
+        query = query.filter(diesel::dsl::exists(tag_subquery));
+    }
+
+    // Source filter (accent- and case-insensitive)
+    if let Some(ref source) = parsed.source {
+        let pattern = literal_search_pattern(source);
+        query = query.filter(raw_sql::f_unaccent(recipe_versions::source_name).ilike(pattern));
+    }
+
+    // Has photos filter
+    if let Some(has_photos) = parsed.has_photos {
+        if has_photos {
+            query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).gt(0));
+        } else {
+            query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).eq(0));
+        }
+    }
+
+    // Photo file size filter (bytes)
+    if let Some(threshold) = parsed.photo_size {
+        query = query.filter(raw_sql::photo_file_size_filter(
+            threshold.op,
+            threshold.value,
+        ));
+    }
+
+    // Photo dimension filter (pixels, compares smaller of width/height)
+    if let Some(threshold) = parsed.photo_dim {
+        query = query.filter(raw_sql::photo_min_dim_filter(threshold.op, threshold.value));
+    }
+
+    // Date range filters (on recipe created_at). The filter dates name
+    // inclusive UTC calendar days; the shared bounds keep the iOS cache
+    // filter's day semantics and this query in agreement.
+    if let Some(after) = parsed.created_after {
+        query = query.filter(recipes::created_at.ge(day_start_utc(after)));
+    }
+    if let Some(before) = parsed.created_before {
+        query = query.filter(recipes::created_at.lt(day_end_utc_exclusive(before)));
+    }
+
+    query
+}
+
 /// Blocking DB and ranking work for `list_recipes`; runs on the blocking
 /// thread pool via `run_db`.
 fn list_recipes_blocking(
@@ -330,81 +433,7 @@ fn list_recipes_blocking(
     // Build the filtered query on demand so an empty page can rerun the same
     // filters as a count query without changing the single-query populated-page
     // path.
-    let build_query = || {
-        // We use into_boxed() to allow dynamic filter additions.
-        let mut query = current_recipe_versions_for_user!(user_id).into_boxed();
-
-        // Text search: each word must appear somewhere across all fields (AND
-        // between words, OR between fields). Matches are case- AND
-        // accent-insensitive ("creme brulee" finds "Crème Brûlée").
-        for token in &parsed.text {
-            let pattern = literal_search_pattern(token);
-            query = query.filter(
-                raw_sql::f_unaccent(recipe_versions::title.nullable())
-                    .ilike(pattern.clone())
-                    .or(raw_sql::f_unaccent(recipe_versions::description).ilike(pattern.clone()))
-                    .or(
-                        raw_sql::f_unaccent(recipe_versions::instructions.nullable())
-                            .ilike(pattern.clone()),
-                    )
-                    .or(raw_sql::f_unaccent(recipe_versions::notes).ilike(pattern.clone()))
-                    .or(raw_sql::f_unaccent(raw_sql::ingredients_text().nullable())
-                        .ilike(pattern.clone())),
-            );
-        }
-
-        // Tag filters (AND logic - must have ALL tags)
-        // Use EXISTS subquery for each tag
-        for tag in &parsed.tags {
-            let tag_subquery = recipe_version_tags::table
-                .inner_join(user_tags::table)
-                .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
-                .filter(user_tags::name.eq(tag))
-                .filter(user_tags::deleted_at.is_null())
-                .select(recipe_version_tags::recipe_version_id);
-            query = query.filter(diesel::dsl::exists(tag_subquery));
-        }
-
-        // Source filter (accent- and case-insensitive)
-        if let Some(ref source) = parsed.source {
-            let pattern = literal_search_pattern(source);
-            query = query.filter(raw_sql::f_unaccent(recipe_versions::source_name).ilike(pattern));
-        }
-
-        // Has photos filter
-        if let Some(has_photos) = parsed.has_photos {
-            if has_photos {
-                query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).gt(0));
-            } else {
-                query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).eq(0));
-            }
-        }
-
-        // Photo file size filter (bytes)
-        if let Some(threshold) = parsed.photo_size {
-            query = query.filter(raw_sql::photo_file_size_filter(
-                threshold.op,
-                threshold.value,
-            ));
-        }
-
-        // Photo dimension filter (pixels, compares smaller of width/height)
-        if let Some(threshold) = parsed.photo_dim {
-            query = query.filter(raw_sql::photo_min_dim_filter(threshold.op, threshold.value));
-        }
-
-        // Date range filters (on recipe created_at). The filter dates name
-        // inclusive UTC calendar days; the shared bounds keep the iOS cache
-        // filter's day semantics and this query in agreement.
-        if let Some(after) = parsed.created_after {
-            query = query.filter(recipes::created_at.ge(day_start_utc(after)));
-        }
-        if let Some(before) = parsed.created_before {
-            query = query.filter(recipes::created_at.lt(day_end_utc_exclusive(before)));
-        }
-
-        query
-    };
+    let build_query = || filtered_recipes_query(user_id, parsed);
 
     let query = build_query();
 
@@ -708,5 +737,24 @@ mod tests {
         let parsed = parse_query("\"green beans\" tag:side");
         assert_eq!(parsed.text, vec!["green beans"]);
         assert_eq!(parsed.tags, vec!["side"]);
+    }
+
+    fn filters_sql(query: &str) -> String {
+        let parsed = parse_query(query);
+        let filtered = filtered_recipes_query(Uuid::nil(), &parsed);
+        let sql = diesel::debug_query::<diesel::pg::Pg, _>(&filtered).to_string();
+        // The select list names every column, is_current included.
+        let (_, filters) = sql.split_once(" WHERE ").unwrap();
+        filters.to_string()
+    }
+
+    #[test]
+    fn test_text_search_states_is_current_for_partial_indexes() {
+        assert!(filters_sql("chicken").contains(r#""recipe_versions"."is_current""#));
+    }
+
+    #[test]
+    fn test_non_text_filters_skip_is_current() {
+        assert!(!filters_sql("tag:dinner").contains("is_current"));
     }
 }

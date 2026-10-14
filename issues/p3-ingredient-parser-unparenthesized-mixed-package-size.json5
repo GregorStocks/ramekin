@@ -1,0 +1,15 @@
+{
+  "title": "Ingredient parser: a mixed-number package size without parens (\"1 14 1/2-ounce can\") ends up in the item",
+  "description": "\"1 14 1/2-ounce can diced tomatoes\" (smittenkitchen red bean chili) parses as {amount: 1, unit: null} with item \"14 1/2-ounce can diced tomatoes\", and \"2 15 1/2-ounce cans kidney beans\" is the same. \
+The single-number form \"1 15-ounce can\" already reads as one \"15-ounce can\" in the measurement grammar (measure.rs hyphenated_unit), but there a count followed by a mixed number reads \"1 14 1/2\" as the amount, or stops before the size. \
+The parenthesized form (\"1 (14 1/2-ounce) can\") now puts \"14 1/2-ounce\" in the note for quantity.rs to join with \"can\", so the unparenthesized form should read as {1, \"14 1/2-ounce can\"} or the same note shape. \
+Rerun make pipeline; expect a few data/ diffs.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-10-13T01:35:00-07:00",
+  "updated_at": "2026-10-13T01:35:00-07:00",
+}

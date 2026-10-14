@@ -4,17 +4,18 @@
 //! that state their weight ("15-ounce can", "2 cans" noted "15-ounce"),
 //! per-item weights ("2 cans, 10 oz each"), pieces cut to a size ("3-inch
 //! piece") and weights stated only in the note ("4 (8 ounce packages)") are
-//! all read here. Nutrition weighs the result with the catalog's densities and
+//! all read here. The text is read with the measurement grammar's readers
+//! (`measure.rs`), so amounts and sizes read the same here as when the line
+//! was parsed. Nutrition weighs the result with the catalog's densities and
 //! piece weights.
 
 use std::sync::LazyLock;
 
 use regex::Regex;
 
-use super::fractions::unicode_fraction_ascii;
+use super::measure::{self, Weighs};
 use super::{Measurement, ParsedIngredient};
 use crate::catalog::{normalize, volume_to_cups};
-use crate::metric_weights::parse_amount;
 
 /// A number, or a bounded range of them ("2-3", "4 to 6").
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -66,88 +67,23 @@ pub struct Term {
 /// tbsp"), or None when its amount isn't one this module can read.
 pub type Measure = Option<Vec<Term>>;
 
-/// Strict quantity grammar: decimals, fractions, mixed numbers and bounded
-/// ranges. This does not alter the extraction pipeline's interpretation of
-/// ingredients.
+/// A whole string read as an amount: decimals, fractions, mixed numbers and
+/// bounded ranges.
 pub fn range(value: &str) -> Option<Range> {
-    static GROUPED: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"^[1-9][0-9]{0,2},[0-9]{3}$").unwrap());
-    static MIXED: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"^([0-9]+)-([0-9]+/[0-9]+)$").unwrap());
-    static NUMBER: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(r"^(?:[0-9]+(?:\.[0-9]+)?|\.[0-9]+|[0-9]+/[0-9]+|[0-9]+ [0-9]+/[0-9]+)$")
-            .unwrap()
-    });
-    let value: String = value
-        .trim()
-        .chars()
-        .map(|c| match unicode_fraction_ascii(c) {
-            Some(fraction) => format!(" {fraction}"),
-            None => c.to_string(),
-        })
-        .collect();
-    let value = value.split_whitespace().collect::<Vec<_>>().join(" ");
-    let number = |s: &str| {
-        let s = MIXED.replace(s.trim(), "$1 $2");
-        if GROUPED.is_match(&s) {
-            return None;
-        }
-        let s = s.replace(',', ".");
-        if !NUMBER.is_match(&s) {
-            return None;
-        }
-        parse_amount(&s).filter(|n| n.is_finite() && *n >= 0.0 && *n <= 1e12)
-    };
-    if let Some(amount) = number(&value) {
-        return Some(Range::exact(amount));
-    }
-    for delimiter in [" to ", " or ", "–", "—", "-"] {
-        for (index, _) in value.match_indices(delimiter) {
-            if let (Some(min), Some(max)) = (
-                number(
-                    value
-                        .get(..index)
-                        .expect("regex match starts at a character boundary"),
-                ),
-                number(
-                    value
-                        .get(index + delimiter.len()..)
-                        .expect("regex match ends at a character boundary"),
-                ),
-            ) {
-                if min <= max {
-                    return Some(Range { min, max });
-                }
-            }
-        }
-    }
-    None
+    measure::read_range(value)
 }
 
-/// Containers whose weight a recipe may state ("15-ounce can").
-const PACKAGE_WORDS: &str = "can|package|block|bag|jar|box|carton|container|tin|bottle|packet|tub";
-
-/// Mass units a package weight may use.
-const PACKAGE_MASS: &str = "ounces?|oz|pounds?|lbs?|grams?|g";
-
 /// "2 (15-ounce) cans" parses as unit "can" with the weight leading the note
-/// ("15-ounce, drained"); join them back into one weighed unit. A per-item
-/// weight reads the same ("3 packages (8 oz. each)" has note "8 oz. each").
-fn noted_package_unit(unit: &str, note: Option<&str>) -> Option<String> {
-    static BARE: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(&format!(r"^(?:{PACKAGE_WORDS})s?$")).unwrap());
-    static WEIGHT: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(&format!(
-            r"^(.+?)[- ]?({PACKAGE_MASS})\.?(?:$|[,;]| or | each\b)"
-        ))
-        .unwrap()
-    });
-    if !BARE.is_match(unit) {
+/// ("15-ounce, drained"); together they weigh one can. A per-item weight
+/// reads the same ("3 packages (8 oz. each)" has note "8 oz. each"). None
+/// when the note states no weight, and Some(None) when it states one that
+/// doesn't read ("about 15-ounce").
+fn noted_package(unit: &str, note: Option<&str>) -> Option<Option<Unit>> {
+    if !measure::is_package_word(unit) {
         return None;
     }
-    let note = normalize(note?);
-    let weight = WEIGHT.captures(&note)?;
-    Some(format!("{} {} {unit}", &weight[1], &weight[2]))
+    let (weight, mass) = measure::read_noted_package(&normalize(note?))?;
+    Some(weight.map(|weight| Unit::Grams(weight.times(Range::exact(grams_per(&mass))))))
 }
 
 /// Grams in one of a mass unit.
@@ -159,30 +95,6 @@ fn grams_per(mass: &str) -> f64 {
         "milligram" | "mg" => 0.001,
         _ => 1.0,
     }
-}
-
-/// A unit that carries its own weight: "15-ounce can", "(28-oz.) can", "14
-/// 1/2-ounce can", "12- to 18-ounce package", "425-gram package".
-fn package_grams(unit: &str) -> Option<Range> {
-    static PACKAGE: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(&format!(
-            r"^\(?(.+?)[- ]?({PACKAGE_MASS})\.?\)?[- ]?(?:{PACKAGE_WORDS})s?$"
-        ))
-        .unwrap()
-    });
-    let parts = PACKAGE.captures(unit)?;
-    // "12- to 18-ounce" shares the unit between both ends of the range.
-    let weight = range(&parts[1].replace("- to ", " to "))?;
-    Some(weight.times(Range::exact(grams_per(&parts[2]))))
-}
-
-/// The size of a piece cut to a size in inches ("3-inch piece", "3-4 inch
-/// chunk", "3/4 inch knob").
-fn inch_piece_size(unit: &str) -> Option<Range> {
-    static INCH_PIECE: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(r"^(.+?)[- ]inch(?:es)? (?:piece|chunk|knob|hunk)s?$").unwrap()
-    });
-    range(&INCH_PIECE.captures(unit)?[1])
 }
 
 /// A normalized unit with any fill word dropped (a heaped or scant spoon is
@@ -228,10 +140,10 @@ fn unit(normalized: &str) -> Unit {
     if normalized.is_empty() {
         return Unit::Piece(String::new());
     }
-    if let Some(grams) = package_grams(normalized) {
-        return Unit::Grams(grams);
+    if let Some((weight, mass)) = measure::read_package(normalized) {
+        return Unit::Grams(weight.times(Range::exact(grams_per(&mass))));
     }
-    if let Some(size) = inch_piece_size(normalized) {
+    if let Some(size) = measure::read_inch_piece(normalized) {
         return Unit::Inches(size);
     }
     let unit = canonical_unit(normalized);
@@ -244,31 +156,20 @@ fn unit(normalized: &str) -> Unit {
     }
 }
 
-/// An amount and its normalized unit, including compound amounts ("1 cup
-/// plus 2 tbsp", or "1 cup plus 2 tbsp" with the units in the amount).
-fn terms(amount: &str, outer: &str) -> Measure {
-    static PLUS: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"\s+(?:plus|\+)\s+").unwrap());
-    static EMBEDDED: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"^(.+?)\s+([a-z][a-z ]*)$").unwrap());
-    let amount = normalize(amount);
-    PLUS.split(&amount)
-        .map(|segment| {
-            if let Some(amount) = range(segment) {
-                return Some(Term {
-                    amount,
-                    unit: unit(outer),
-                });
-            }
-            // Compound measurements embed their units in amount, with no outer
-            // unit. A shared outer unit instead applies to every numeric term.
-            if !outer.is_empty() {
-                return None;
-            }
-            let parts = EMBEDDED.captures(segment)?;
-            Some(Term {
-                amount: range(&parts[1])?,
-                unit: unit(&parts[2]),
-            })
+/// An amount in one unit, or a compound amount ("1 cup plus 2 tbsp", or
+/// "1 plus 2" with a shared outer unit). Compound measurements embed their
+/// units in the amount, with no outer unit; a shared outer unit instead
+/// applies to every numeric term.
+fn terms(amount: &str, outer: &Unit) -> Measure {
+    measure::read_terms(&normalize(amount))?
+        .into_iter()
+        .map(|(amount, embedded)| {
+            let unit = match embedded.as_str() {
+                "" => outer.clone(),
+                _ if *outer != Unit::Piece(String::new()) => return None,
+                embedded => unit(embedded),
+            };
+            Some(Term { amount, unit })
         })
         .collect()
 }
@@ -280,7 +181,23 @@ pub fn read(measurement: &Measurement) -> Measure {
         .as_deref()
         .map(normalize)
         .unwrap_or_default();
-    terms(measurement.amount.as_deref()?, &outer)
+    terms(measurement.amount.as_deref()?, &unit(&outer))
+}
+
+/// Whether a measurement can size one item: a plain mass, volume, or length
+/// ("10 oz", "1 cup", "3 inches"). Counts of anything, weighed containers
+/// ("3 8-ounce packages") and cut pieces ("2 3-inch chunks") included, can't.
+pub(super) fn sizes_one_item(measurement: &Measurement) -> bool {
+    let Some(unit) = measurement.unit.as_deref().map(normalize) else {
+        return false;
+    };
+    if package_grams(&unit).is_some() || inch_piece_size(&unit).is_some() {
+        return false;
+    }
+    let unit = canonical_unit(&unit);
+    mass_grams(&unit).is_some()
+        || volume_to_cups(1.0, &unit).is_some()
+        || matches!(unit.as_str(), "inch" | "inches" | "in" | "cm")
 }
 
 /// How many items a measurement counts ("2 cans", "3 steaks", "4"), when
@@ -314,30 +231,22 @@ fn per_item(count: Range, terms: Vec<Term>) -> Vec<Term> {
 /// hedged ("about 1 pound"), or the line is one item. Otherwise ("2 chicken
 /// breasts" noted "8 oz") it could be either, so it weighs nothing.
 fn noted_weight(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
-    static WEIGHT: LazyLock<Regex> = LazyLock::new(|| {
-        Regex::new(&format!(
-            r"^((?:about|approximately|approx\.?|roughly|around)\s+)?(.+?)([- ]?)({PACKAGE_MASS}|kilograms?|kg)\.?(?:\s*\([^()]*\))?(?:\s+(each|total|(?:{PACKAGE_WORDS})s?))?$"
-        ))
-        .unwrap()
-    });
     let note = normalize(ingredient.note.as_deref()?);
-    let (parts, amount) = note.split([',', ';']).find_map(|segment| {
-        let parts = WEIGHT.captures(segment.trim())?;
-        let amount = range(&parts[2].replace("- to ", " to "))?;
-        Some((parts, amount))
-    })?;
+    let noted = note
+        .split([',', ';'])
+        .find_map(|part| measure::read_noted_weight(part.trim()))?;
     let weight = vec![Term {
-        amount,
-        unit: Unit::Grams(Range::exact(grams_per(&parts[4]))),
+        amount: noted.amount,
+        unit: Unit::Grams(Range::exact(grams_per(&noted.mass))),
     }];
     let count = ingredient.measurements.first().and_then(count);
-    let per_item_word = parts.get(5).is_some_and(|word| word.as_str() != "total");
-    if per_item_word || &parts[3] == "-" {
-        return Some(per_item(count?, weight));
+    match noted.weighs {
+        Weighs::Each => Some(per_item(count?, weight)),
+        Weighs::Total => Some(weight),
+        Weighs::Unsaid => count
+            .is_none_or(|count| count == Range::exact(1.0))
+            .then_some(weight),
     }
-    let whole_line = parts.get(5).is_some() || parts.get(1).is_some();
-    let one_item = count.is_none_or(|count| count == Range::exact(1.0));
-    (whole_line || one_item).then_some(weight)
 }
 
 /// The ways to measure a line, best first: per-item weights ("2 cans, 10 oz
@@ -346,7 +255,7 @@ fn noted_weight(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
 /// the note. Measurements are alternatives, not additive.
 pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
     let mut measures = Vec::new();
-    let mut noted_package = false;
+    let mut weighed_package = false;
     if let Some((primary, alternatives)) = ingredient.measurements.split_first() {
         // A stated weight per item beats a package's standard size, as a
         // noted package weight does.
@@ -363,7 +272,7 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
                 if let Some(terms) = alternative
                     .amount
                     .as_deref()
-                    .and_then(|amount| terms(amount, &each))
+                    .and_then(|amount| terms(amount, &unit(&each)))
                 {
                     measures.push(Some(per_item(count, terms)));
                 }
@@ -383,11 +292,15 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
             Some(stripped) => stripped.to_string(),
             None => unit,
         };
-        let noted = noted_package_unit(&unit, ingredient.note.as_deref());
-        noted_package |= noted.is_some();
-        measures.push(terms(amount, noted.as_deref().unwrap_or(&unit)));
+        measures.push(match noted_package(&unit, ingredient.note.as_deref()) {
+            Some(weighed) => {
+                weighed_package = true;
+                weighed.and_then(|unit| terms(amount, &unit))
+            }
+            None => terms(amount, &self::unit(&unit)),
+        });
     }
-    if !noted_package {
+    if !weighed_package {
         if let Some(weight) = noted_weight(ingredient) {
             measures.push(Some(weight));
         }
@@ -442,6 +355,10 @@ mod tests {
         assert_eq!(range("1,000"), None);
         assert_eq!(range("6-4"), None);
         assert_eq!(range("about 2"), None);
+        assert_eq!(range(",5"), Some(Range::exact(0.5)));
+        assert_eq!(range("1,5–2,5"), Some(Range { min: 1.5, max: 2.5 }));
+        assert_eq!(range("1-1/2-2"), Some(Range { min: 1.5, max: 2.0 }));
+        assert_eq!(range("80/20 or 85/15").map(|r| r.min), Some(4.0));
     }
 
     #[test]
@@ -461,6 +378,17 @@ mod tests {
             unit("3-4 inch chunks"),
             Unit::Inches(Range { min: 3.0, max: 4.0 })
         );
+        assert_eq!(
+            unit("14 1/2-ounce can"),
+            Unit::Grams(Range::exact(14.5 * 28.349523125))
+        );
+        assert_eq!(
+            unit("(28-oz.) can"),
+            Unit::Grams(Range::exact(28.0 * 28.349523125))
+        );
+        assert_eq!(unit("400g cans"), Unit::Grams(Range::exact(400.0)));
+        // "1- inch knob" is a typo for "1-inch knob", as the line grammar reads it.
+        assert_eq!(unit("3- inch chunk"), Unit::Inches(Range::exact(3.0)));
         assert_eq!(unit("large"), Unit::Piece("large".to_string()));
         assert_eq!(unit(""), Unit::Piece(String::new()));
     }
@@ -476,16 +404,38 @@ mod tests {
                 })
                 .sum()
         };
-        assert_eq!(cups(terms("1 plus 2", "cup").unwrap()), 3.0);
-        assert_eq!(cups(terms("1 cup plus 2 tbsp", "").unwrap()), 1.125);
-        assert_eq!(terms("1 cup plus 2 tbsp", "cup"), None);
+        assert_eq!(cups(terms("1 plus 2", &unit("cup")).unwrap()), 3.0);
+        assert_eq!(cups(terms("1 cup plus 2 tbsp", &unit("")).unwrap()), 1.125);
+        assert_eq!(terms("1 cup plus 2 tbsp", &unit("cup")), None);
     }
 
     #[test]
     fn noted_package_weights_join_the_unit() {
-        let measures = measures(&line("2", Some("cans"), Some("15-ounce, drained")));
-        assert_eq!(measures.len(), 1);
-        close(grams(measures[0].as_ref().unwrap()), 850.49, 850.49);
+        let cans = measures(&line("2", Some("cans"), Some("15-ounce, drained")));
+        assert_eq!(cans.len(), 1);
+        close(grams(cans[0].as_ref().unwrap()), 850.49, 850.49);
+        // Mixed-number and ranged sizes, as the parser spells them.
+        let tomatoes = measures(&line("1", Some("can"), Some("14 1/2-ounce")));
+        close(grams(tomatoes[0].as_ref().unwrap()), 411.07, 411.07);
+        let squash = measures(&line("2", None, Some("1 1/2- to 1 3/4-lb")));
+        close(grams(squash[1].as_ref().unwrap()), 1360.78, 1587.57);
+    }
+
+    #[test]
+    fn noted_package_weights_must_read() {
+        // A weight that doesn't read is an unclear amount, not a standard can.
+        assert_eq!(
+            measures(&line("1", Some("box"), Some("about 9 oz, 12 sheets"))),
+            vec![None]
+        );
+        // A mass unit is a whole word: "seasoning" doesn't end in grams.
+        assert_eq!(
+            measures(&line("1", Some("jar"), Some("rice seasoning"))),
+            vec![Some(vec![Term {
+                amount: Range::exact(1.0),
+                unit: Unit::Piece("jar".to_string())
+            }])]
+        );
     }
 
     #[test]
