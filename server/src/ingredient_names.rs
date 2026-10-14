@@ -75,7 +75,7 @@ pub fn unlearned_names<'a>(items: impl IntoIterator<Item = &'a str>) -> Vec<Stri
 
 /// Queue names for resolution. Names already queued or resolved are left
 /// alone, so a race between saves can never fail either.
-pub fn enqueue(conn: &mut PgConnection, new_names: &[String]) -> QueryResult<usize> {
+pub fn enqueue(conn: &mut SqliteConnection, new_names: &[String]) -> QueryResult<usize> {
     if new_names.is_empty() {
         return Ok(0);
     }
@@ -83,34 +83,38 @@ pub fn enqueue(conn: &mut PgConnection, new_names: &[String]) -> QueryResult<usi
         .iter()
         .map(|name| (names::name.eq(name), names::status.eq(PENDING)))
         .collect();
-    diesel::insert_into(names::table)
-        .values(&rows)
-        .on_conflict_do_nothing()
-        .execute(conn)
+    crate::db::write(conn, |conn| {
+        diesel::insert_into(names::table)
+            .values(&rows)
+            .on_conflict_do_nothing()
+            .execute(conn)
+    })
 }
 
 /// Put failed names back in the queue with a fresh set of attempts.
-pub fn requeue_failed(conn: &mut PgConnection, failed: &[String]) -> QueryResult<usize> {
-    diesel::update(
-        names::table
-            .filter(names::status.eq(FAILED))
-            .filter(names::name.eq_any(failed)),
-    )
-    .set((
-        names::status.eq(PENDING),
-        names::error.eq(None::<String>),
-        names::attempts.eq(0),
-        // A new stamp, so a backing-off worker sees the name as new work.
-        names::updated_at.eq(Utc::now()),
-    ))
-    .execute(conn)
+pub fn requeue_failed(conn: &mut SqliteConnection, failed: &[String]) -> QueryResult<usize> {
+    crate::db::write(conn, |conn| {
+        diesel::update(
+            names::table
+                .filter(names::status.eq(FAILED))
+                .filter(names::name.eq_any(failed)),
+        )
+        .set((
+            names::status.eq(PENDING),
+            names::error.eq(None::<String>),
+            names::attempts.eq(0),
+            // A new stamp, so a backing-off worker sees the name as new work.
+            names::updated_at.eq(Utc::now()),
+        ))
+        .execute(conn)
+    })
 }
 
 /// Queue the unknown names in `items`. Write paths call this inside their
 /// transaction, so a save and its queued names commit together, then call
 /// `wake` once it has committed.
 pub fn enqueue_items<'a>(
-    conn: &mut PgConnection,
+    conn: &mut SqliteConnection,
     items: impl IntoIterator<Item = &'a str>,
 ) -> QueryResult<usize> {
     enqueue(conn, &unlearned_names(items))
@@ -125,7 +129,7 @@ pub fn wake() {
 /// categorizing. Pending, failed, and never-queued names are simply absent,
 /// so they read as unknown.
 pub fn load_learned<'a>(
-    conn: &mut PgConnection,
+    conn: &mut SqliteConnection,
     items: impl IntoIterator<Item = &'a str>,
 ) -> QueryResult<Learned> {
     let wanted = unlearned_names(items);
@@ -165,28 +169,14 @@ pub fn load_learned<'a>(
 }
 
 /// `load_learned` for a write that stores something computed from the answers
-/// (a shopping item's category), after queueing the names it wrote. The name
-/// rows are locked until the write commits, so the worker can't resolve one
-/// in between: its update waits for the write, and its
-/// `recategorize_shopping_items` then sees the written item. Queueing first
-/// gives every unknown name a row to lock: an insert racing another write's
-/// insert of the same new name waits for it to commit.
+/// (a shopping item's category), after queueing the names it wrote. Call it
+/// inside the write (`db::write`): the write lock keeps the worker from
+/// resolving a name in between, so its `recategorize_shopping_items` then
+/// sees the written item.
 pub fn load_learned_for_write<'a>(
-    conn: &mut PgConnection,
+    conn: &mut SqliteConnection,
     items: impl IntoIterator<Item = &'a str>,
 ) -> QueryResult<Learned> {
-    let items: Vec<&str> = items.into_iter().collect();
-    let wanted = unlearned_names(items.iter().copied());
-    if !wanted.is_empty() {
-        names::table
-            .filter(names::name.eq_any(&wanted))
-            .select(names::name)
-            // By name, the order `save_resolved` updates them in, so the two
-            // can't deadlock.
-            .order(names::name)
-            .for_share()
-            .load::<String>(conn)?;
-    }
     load_learned(conn, items)
 }
 
@@ -203,7 +193,7 @@ type LearnedRow = (
 /// Whether any of `items`' unknown names is still waiting to be resolved,
 /// so a reader knows a fresher answer is coming.
 pub fn any_pending<'a>(
-    conn: &mut PgConnection,
+    conn: &mut SqliteConnection,
     items: impl IntoIterator<Item = &'a str>,
 ) -> QueryResult<bool> {
     let wanted = unlearned_names(items);
@@ -285,7 +275,7 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
     }
     let requeued: Vec<&String> = changes.values().flatten().collect();
     if !requeued.is_empty() {
-        conn.transaction(|conn| {
+        crate::db::write(&mut conn, |conn| {
             let now = Utc::now();
             diesel::update(names::table.filter(names::name.eq_any(&requeued)))
                 .set((
@@ -394,7 +384,7 @@ async fn new_work(pool: &Arc<DbPool>, before: &HashSet<PendingRow>) -> bool {
 /// shopping-list item, returning how many were new. Saves queue their own
 /// names, so this only finds names a catalog change stopped recognizing; the
 /// server runs it at startup, since the catalog only changes with a deploy.
-pub fn queue_stored(conn: &mut PgConnection) -> Result<usize, String> {
+pub fn queue_stored(conn: &mut SqliteConnection) -> Result<usize, String> {
     use crate::models::Ingredient;
     use crate::schema::{recipe_versions, recipes, shopping_list_items};
 
@@ -649,7 +639,7 @@ async fn save_resolved(
         .map(|(name, _)| name.clone())
         .collect();
     run_blocking(pool, move |conn| {
-        conn.transaction(|conn| {
+        crate::db::write(conn, |conn| {
             let now = Utc::now();
             for (name, resolution) in &answers {
                 let (disposition, key, estimate) = match resolution {
@@ -711,7 +701,7 @@ async fn save_resolved(
 /// the new answer itself. Names match by catalog normalization, which no SQL
 /// pattern expresses, so the live items are read once and matched here.
 fn recategorize_shopping_items(
-    conn: &mut PgConnection,
+    conn: &mut SqliteConnection,
     changed: &HashSet<String>,
 ) -> QueryResult<()> {
     use crate::schema::shopping_list_items as items;
@@ -719,21 +709,20 @@ fn recategorize_shopping_items(
         return Ok(());
     }
     let matches = |item: &str| changed.contains(normalize(item).as_str());
-    let ids: Vec<uuid::Uuid> = items::table
+    let ids: Vec<crate::ids::Uuid> = items::table
         .filter(items::deleted_at.is_null())
         .select((items::id, items::item))
-        .load::<(uuid::Uuid, String)>(conn)?
+        .load::<(crate::ids::Uuid, String)>(conn)?
         .into_iter()
         .filter(|(_, item)| matches(item))
         .map(|(id, _)| id)
         .collect();
     for id in ids {
-        conn.transaction(|conn| {
+        crate::db::write(conn, |conn| {
             let Some((item, stored)) = items::table
                 .find(id)
                 .filter(items::deleted_at.is_null())
                 .select((items::item, items::computed_category))
-                .for_update()
                 .first::<(String, Option<String>)>(conn)
                 .optional()?
             else {
@@ -778,7 +767,7 @@ async fn save_failed(
     }
     let now = Utc::now();
     run_blocking(pool, move |conn| {
-        conn.transaction(|conn| {
+        crate::db::write(conn, |conn| {
             let failed = names::table
                 .filter(names::name.eq_any(&failed))
                 .filter(names::status.eq(PENDING));

@@ -14,10 +14,11 @@ are deterministic on both sides.
 """
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
-import psycopg
 import pytest
+from conftest import connect_db
 from ramekin_client.api import PhotosApi, RecipesApi
 from ramekin_client.models import (
     CreateRecipeRequest,
@@ -45,6 +46,12 @@ def vectors():
     return json.loads(VECTORS_PATH.read_text())
 
 
+def _db_timestamp(iso: str) -> str:
+    """An ISO-8601 vector timestamp in the server's stored text form."""
+    utc = datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(timezone.utc)
+    return utc.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3] + "+00:00"
+
+
 def _ingredient(spec) -> Ingredient:
     return Ingredient(
         item=spec["item"],
@@ -65,7 +72,8 @@ def corpus(authed_api_client, database_url, test_image, vectors):
     photos_api = PhotosApi(client)
 
     slug_by_id = {}
-    with psycopg.connect(database_url) as conn:
+    conn = connect_db(database_url)
+    try:
         for recipe in vectors["recipes"]:
             photo_ids = None
             if recipe["has_photo"]:
@@ -101,31 +109,34 @@ def corpus(authed_api_client, database_url, test_image, vectors):
                 },
             )
 
-            # The vectors carry the exact JSONB-to-text haystack the SQL
-            # filter matches. It is generated from the database, never
+            # The vectors carry the exact stored ingredients JSON the search
+            # filter matches. It is copied from the database, never
             # hand-written; fail loudly if the stored form ever diverges.
             (match_text,) = conn.execute(
                 """
-                select rv.ingredients::text
+                select rv.ingredients
                 from recipes r join recipe_versions rv on rv.id = r.current_version_id
-                where r.id = %s
+                where r.id = ?
                 """,
-                (created.id,),
+                (str(created.id),),
             ).fetchone()
             assert match_text == recipe["ingredient_match_text"], recipe["id"]
 
+            conn.execute("BEGIN IMMEDIATE")
             conn.execute(
-                "update recipes set created_at = %s where id = %s",
-                (recipe["created_at"], created.id),
+                "update recipes set created_at = ? where id = ?",
+                (_db_timestamp(recipe["created_at"]), str(created.id)),
             )
             conn.execute(
                 """
-                update recipe_versions set created_at = %s
-                where id = (select current_version_id from recipes where id = %s)
+                update recipe_versions set created_at = ?
+                where id = (select current_version_id from recipes where id = ?)
                 """,
-                (recipe["updated_at"], created.id),
+                (_db_timestamp(recipe["updated_at"]), str(created.id)),
             )
-        conn.commit()
+            conn.execute("COMMIT")
+    finally:
+        conn.close()
 
     return recipes_api, slug_by_id
 
@@ -159,7 +170,7 @@ def test_match_filter_vectors(corpus, vectors):
 
 def test_sync_serves_the_same_ingredient_match_text(corpus, vectors):
     """The iOS side of the vectors matches against the synced
-    ingredient_match_text; it must be the same string the SQL filter sees,
+    ingredient_match_text; it must be the same string the search filter sees,
     and the sync must declare the normalization contract version the client
     checks before trusting local search."""
     recipes_api, slug_by_id = corpus

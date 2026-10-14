@@ -1,5 +1,6 @@
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
+use crate::ids::Uuid;
 use axum::{http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
@@ -9,7 +10,6 @@ use std::os::unix::fs::PermissionsExt;
 use std::path::PathBuf;
 use tokio::io::AsyncWriteExt;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 /// Matches the iOS DebugLogger rotation cap; a full log file always fits.
 pub const MAX_CONTENT_BYTES: usize = 2 * 1024 * 1024;

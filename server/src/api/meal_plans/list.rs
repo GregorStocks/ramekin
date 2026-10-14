@@ -1,6 +1,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::schema::{meal_plans, recipe_versions, recipes};
 use axum::{
     extract::{Query, State},
@@ -13,7 +14,6 @@ use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Copy, Deserialize, Serialize, ToSchema, PartialEq)]
 #[serde(rename_all = "lowercase")]
@@ -71,13 +71,13 @@ pub struct MealPlanListResponse {
 
 // Type alias for query result row
 type MealPlanRow = (
-    Uuid,              // meal_plan.id
-    Uuid,              // recipe_id
-    NaiveDate,         // meal_date
-    String,            // meal_type
-    Option<String>,    // notes
-    String,            // recipe_version.title
-    Vec<Option<Uuid>>, // recipe_version.photo_ids
+    Uuid,                 // meal_plan.id
+    Uuid,                 // recipe_id
+    NaiveDate,            // meal_date
+    String,               // meal_type
+    Option<String>,       // notes
+    String,               // recipe_version.title
+    crate::ids::PhotoIds, // recipe_version.photo_ids
 );
 
 #[utoipa::path(

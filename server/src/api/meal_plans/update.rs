@@ -1,7 +1,8 @@
 use super::list::MealType;
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::schema::meal_plans;
 use axum::{
     extract::{Path, State},
@@ -15,7 +16,6 @@ use diesel::result::{DatabaseErrorKind, Error as DieselError};
 use serde::Deserialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Deserialize, ToSchema, Default)]
 pub struct UpdateMealPlanRequest {
@@ -49,7 +49,7 @@ pub async fn update_meal_plan(
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
 
-    run_db(&pool, move |conn| {
+    run_db_write(&pool, move |conn| {
         // Fetch the existing meal plan
         let existing: Option<(NaiveDate, String, Option<String>)> = meal_plans::table
             .filter(meal_plans::id.eq(id))

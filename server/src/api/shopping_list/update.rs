@@ -1,6 +1,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::schema::shopping_list_items;
 use axum::{
     extract::{Path, State},
@@ -14,7 +15,6 @@ use serde::Deserialize;
 use serde_with::rust::double_option;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 // Type alias for query result row
 type ItemRow = (
@@ -127,7 +127,7 @@ pub async fn update_item(
         }
 
         // Update the item, queueing a new name in the same transaction
-        let result = conn.transaction::<_, diesel::result::Error, _>(|conn| {
+        let result = crate::db::write::<_, diesel::result::Error, _>(conn, |conn| {
             let updated = diesel::update(
                 shopping_list_items::table
                     .filter(shopping_list_items::id.eq(id))

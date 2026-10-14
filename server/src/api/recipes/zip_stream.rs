@@ -1,11 +1,11 @@
 use super::paprika::{export_recipe_to_paprikarecipe, PAPRIKARECIPE_EXTENSION};
 use super::read::RecipeWithVersion;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use bytes::Bytes;
 use std::collections::HashSet;
 use std::io::{self, Write};
 use tokio::sync::mpsc;
-use uuid::Uuid;
 use zip::write::SimpleFileOptions;
 use zip::ZipWriter;
 

@@ -1,10 +1,10 @@
 use std::sync::Arc;
 use std::time::Instant;
 
+use crate::ids::Uuid;
 use async_trait::async_trait;
 use diesel::prelude::*;
 use serde_json::json;
-use uuid::Uuid;
 
 use ramekin_core::pipeline::{
     deserialize_optional_output_field, deserialize_required_output_field,
@@ -13,7 +13,7 @@ use ramekin_core::pipeline::{
 };
 use ramekin_core::{ExtractionMethod, RawRecipe};
 
-use crate::db::{run_blocking, DbPool};
+use crate::db::DbPool;
 use crate::ingredient_names;
 use crate::models::{Ingredient, NewRecipeVersion};
 use crate::recipes::{create_new_version_cas, insert_recipe, TagSource, VersionWriteError};
@@ -310,7 +310,8 @@ impl SaveRecipeStep {
             ingredient_names::unlearned_names(parsed_ingredients.iter().map(|i| i.item.as_str()));
 
         // Convert photo IDs to Option<Uuid> for the database
-        let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
+        let photo_ids_nullable: crate::ids::PhotoIds =
+            photo_ids.iter().map(|id| Some(*id)).collect();
 
         // Categories come from Paprika imports and are applied as tags.
         let category_tags: Vec<String> = raw
@@ -325,12 +326,11 @@ impl SaveRecipeStep {
         let user_id = self.user_id;
 
         // Use a transaction to create recipe + version atomically
-        run_blocking(&self.pool, move |conn| {
-            conn.transaction(|conn| {
+        crate::db::run_blocking_locked(&self.pool, move |conn| {
+            crate::db::write(conn, |conn| {
                 let saved_recipe_id: Option<Uuid> = scrape_jobs::table
                     .find(job_id)
                     .select(scrape_jobs::recipe_id)
-                    .for_update()
                     .first(conn)?;
                 if let Some(recipe_id) = saved_recipe_id {
                     // A create job's first version is the one its save wrote.
@@ -350,6 +350,7 @@ impl SaveRecipeStep {
                 let recipe_id = insert_recipe(conn, user_id)?;
 
                 let new_version = NewRecipeVersion {
+                    id: crate::ids::Uuid::now_v7(),
                     recipe_id,
                     title: &raw.title,
                     description: raw.description.as_deref(),
@@ -407,16 +408,18 @@ impl SaveRecipeStep {
             ingredient_names::unlearned_names(parsed_ingredients.iter().map(|i| i.item.as_str()));
 
         // Convert photo IDs to Option<Uuid> for the database
-        let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
+        let photo_ids_nullable: crate::ids::PhotoIds =
+            photo_ids.iter().map(|id| Some(*id)).collect();
 
         let version_source = version_source.to_string();
 
         // Use a transaction to create a new version only if the recipe has not
         // changed since this rescrape job was created.
-        run_blocking(&self.pool, move |conn| {
-            conn.transaction(|conn| {
+        crate::db::run_blocking_locked(&self.pool, move |conn| {
+            crate::db::write(conn, |conn| {
                 // Create a new version
                 let new_version = NewRecipeVersion {
+                    id: Uuid::now_v7(),
                     recipe_id,
                     title: &raw.title,
                     description: raw.description.as_deref(),
@@ -476,11 +479,12 @@ impl SaveRecipeStep {
             );
         }
 
-        let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
+        let photo_ids_nullable: crate::ids::PhotoIds =
+            photo_ids.iter().map(|id| Some(*id)).collect();
         let version_source = version_source.to_string();
 
-        run_blocking(&self.pool, move |conn| {
-            conn.transaction(|conn| {
+        crate::db::run_blocking_locked(&self.pool, move |conn| {
+            crate::db::write(conn, |conn| {
                 let current: RecipeVersion = recipe_versions::table
                     .filter(recipe_versions::id.eq(expected_version_id))
                     .filter(recipe_versions::recipe_id.eq(recipe_id))
@@ -488,6 +492,7 @@ impl SaveRecipeStep {
                     .first(conn)?;
 
                 let new_version = NewRecipeVersion {
+                    id: crate::ids::Uuid::now_v7(),
                     photo_ids: &photo_ids_nullable,
                     ..NewRecipeVersion::copy_of(&current, &version_source)
                 };

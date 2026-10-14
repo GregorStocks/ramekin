@@ -1,11 +1,10 @@
-use crate::db::DbConn;
+use crate::ids::Uuid;
 use crate::models::RecipeVersion;
 use crate::raw_sql;
 use crate::schema::recipes;
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use serde_json::Value as JsonValue;
-use uuid::Uuid;
 
 macro_rules! current_recipe_versions_for_user {
     ($user_id:expr) => {
@@ -111,7 +110,7 @@ pub struct RecipeSummaryRow {
     pub created_at: DateTime<Utc>,
     pub title: String,
     pub description: Option<String>,
-    pub photo_ids: Vec<Option<Uuid>>,
+    pub photo_ids: crate::ids::PhotoIds,
     pub rating: Option<i32>,
     pub updated_at: DateTime<Utc>,
     pub tags: Vec<String>,
@@ -123,7 +122,7 @@ pub struct CountedRecipeSummaryRow {
     pub created_at: DateTime<Utc>,
     pub title: String,
     pub description: Option<String>,
-    pub photo_ids: Vec<Option<Uuid>>,
+    pub photo_ids: crate::ids::PhotoIds,
     pub rating: Option<i32>,
     pub updated_at: DateTime<Utc>,
     pub total: i64,
@@ -151,7 +150,7 @@ pub struct RecipeRelevanceRow {
     pub created_at: DateTime<Utc>,
     pub title: String,
     pub description: Option<String>,
-    pub photo_ids: Vec<Option<Uuid>>,
+    pub photo_ids: crate::ids::PhotoIds,
     pub rating: Option<i32>,
     pub updated_at: DateTime<Utc>,
     pub ingredients: JsonValue,
@@ -166,7 +165,7 @@ pub struct RecipeSyncRow {
     pub created_at: DateTime<Utc>,
     pub title: String,
     pub description: Option<String>,
-    pub photo_ids: Vec<Option<Uuid>>,
+    pub photo_ids: crate::ids::PhotoIds,
     pub rating: Option<i32>,
     pub updated_at: DateTime<Utc>,
     pub ingredients: JsonValue,
@@ -195,7 +194,7 @@ impl RecipeRelevanceRow {
 }
 
 pub fn fetch_current_recipe_with_version(
-    conn: &mut DbConn,
+    conn: &mut diesel::SqliteConnection,
     user_id: Uuid,
     recipe_id: Uuid,
 ) -> QueryResult<RecipeWithVersion> {
@@ -213,7 +212,7 @@ pub fn fetch_current_recipe_with_version(
 }
 
 pub fn fetch_current_recipe_with_version_and_tags(
-    conn: &mut DbConn,
+    conn: &mut diesel::SqliteConnection,
     user_id: Uuid,
     recipe_id: Uuid,
 ) -> QueryResult<(RecipeWithVersion, Vec<String>)> {
@@ -239,7 +238,7 @@ pub fn fetch_current_recipe_with_version_and_tags(
 }
 
 pub fn fetch_current_recipes_with_versions(
-    conn: &mut DbConn,
+    conn: &mut diesel::SqliteConnection,
     user_id: Uuid,
 ) -> QueryResult<Vec<RecipeWithVersion>> {
     let rows: Vec<(Uuid, DateTime<Utc>, RecipeVersion)> =

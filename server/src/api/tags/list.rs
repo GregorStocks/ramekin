@@ -1,6 +1,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
@@ -9,7 +10,6 @@ use diesel::prelude::*;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct TagItem {

@@ -1,14 +1,163 @@
-use diesel::connection::{set_default_instrumentation, Instrumentation, InstrumentationEvent};
+use diesel::connection::{
+    set_default_instrumentation, Instrumentation, InstrumentationEvent, SimpleConnection,
+};
 use diesel::prelude::*;
-use diesel::r2d2::{self, ConnectionManager};
+use diesel::r2d2::{self, ConnectionManager, CustomizeConnection};
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
-use std::cell::RefCell;
+use std::cell::{Cell, RefCell};
+use std::sync::Mutex;
 use tracing::Span;
 
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("../migrations");
 
-pub type DbPool = r2d2::Pool<ConnectionManager<PgConnection>>;
-pub type DbConn = r2d2::PooledConnection<ConnectionManager<PgConnection>>;
+pub type DbPool = r2d2::Pool<ConnectionManager<SqliteConnection>>;
+pub type DbConn = r2d2::PooledConnection<ConnectionManager<SqliteConnection>>;
+
+/// The key a case-insensitive name (a username, a tag) is unique and looked
+/// up by. SQLite's `lower()` and `NOCASE` only fold ASCII, so the key is
+/// computed here and stored next to the name.
+pub fn case_key(name: &str) -> String {
+    name.to_lowercase()
+}
+
+/// SQLite runs one write transaction at a time. Writers queue on this lock
+/// instead of SQLite's busy handler, which retries on a timer and can starve
+/// one writer behind a stream of others.
+static WRITE_LOCK: Mutex<()> = Mutex::new(());
+
+thread_local! {
+    /// Whether this thread holds `WRITE_LOCK`.
+    static HOLDS_WRITE_LOCK: Cell<bool> = const { Cell::new(false) };
+    /// Whether this thread is inside a write transaction, so a write nested
+    /// in another becomes a savepoint.
+    static IN_WRITE_TRANSACTION: Cell<bool> = const { Cell::new(false) };
+}
+
+/// Sets a thread-local flag until dropped, a panic included.
+struct FlagGuard(&'static std::thread::LocalKey<Cell<bool>>);
+
+impl FlagGuard {
+    fn set(flag: &'static std::thread::LocalKey<Cell<bool>>) -> Self {
+        flag.set(true);
+        Self(flag)
+    }
+}
+
+impl Drop for FlagGuard {
+    fn drop(&mut self) {
+        self.0.set(false);
+    }
+}
+
+/// The app-wide write lock, held until dropped. None when this thread
+/// already holds it.
+fn lock_writes() -> Option<(std::sync::MutexGuard<'static, ()>, FlagGuard)> {
+    if HOLDS_WRITE_LOCK.get() {
+        return None;
+    }
+    let lock = WRITE_LOCK
+        .lock()
+        .unwrap_or_else(|poisoned| poisoned.into_inner());
+    Some((lock, FlagGuard::set(&HOLDS_WRITE_LOCK)))
+}
+
+/// Run `f` in a write transaction. It takes the app-wide write lock, then
+/// `BEGIN IMMEDIATE`, so the transaction holds SQLite's write lock from its
+/// first statement and never fails to upgrade from a read. Every write goes
+/// through here, including single statements. Keep the closure short and
+/// free of network calls: every other writer waits for it.
+///
+/// Prefer [`run_blocking_write`] (or the API's `run_db_write`), which takes
+/// the lock before checking out a connection: a writer waiting here holds a
+/// pooled connection that readers can't use meanwhile.
+pub fn write<T, E, F>(conn: &mut SqliteConnection, f: F) -> Result<T, E>
+where
+    F: FnOnce(&mut SqliteConnection) -> Result<T, E>,
+    E: From<diesel::result::Error>,
+{
+    if IN_WRITE_TRANSACTION.get() {
+        return conn.transaction(f);
+    }
+    let _lock = lock_writes();
+    let _in_transaction = FlagGuard::set(&IN_WRITE_TRANSACTION);
+    conn.immediate_transaction(f)
+}
+
+/// [`run_blocking`] holding the write lock: takes the lock, then a
+/// connection, so waiting for the lock doesn't tie up a pooled connection.
+/// Writes inside `f` still go through [`write`].
+pub async fn run_blocking_locked<T, F>(pool: &DbPool, f: F) -> Result<T, r2d2::PoolError>
+where
+    F: FnOnce(&mut DbConn) -> T + Send + 'static,
+    T: Send + 'static,
+{
+    run_blocking_with(pool, true, f).await
+}
+
+/// [`run_blocking_locked`] with the whole closure in one [`write`].
+pub async fn run_blocking_write<T, E, F>(
+    pool: &DbPool,
+    f: F,
+) -> Result<Result<T, E>, r2d2::PoolError>
+where
+    F: FnOnce(&mut SqliteConnection) -> Result<T, E> + Send + 'static,
+    T: Send + 'static,
+    E: From<diesel::result::Error> + Send + 'static,
+{
+    run_blocking_locked(pool, move |conn| write(conn, f)).await
+}
+
+/// The sync cursor for a read starting now: one past the last change stamp
+/// handed out. Every change committed after this read carries a stamp at or
+/// above it, so the next sync's inclusive `>= cursor` filter picks it up.
+/// SQLite runs one writer at a time and stamps in commit order, so nothing
+/// below the cursor can still be in flight. Call it inside the sync's read
+/// transaction, before the reads, so they share one snapshot.
+pub fn sync_cursor(conn: &mut SqliteConnection) -> QueryResult<i64> {
+    use crate::schema::sync_clock;
+    let value: i64 = sync_clock::table.select(sync_clock::value).first(conn)?;
+    Ok(value + 1)
+}
+
+/// `cursor` if it could have come from this database, else None. A cursor
+/// above the current one was issued by another database (a restored backup,
+/// a rebuilt file), so it can't say what the client has seen: answer with a
+/// full sync instead of silently skipping every change below it.
+pub fn valid_since(cursor: Option<i64>, current: i64) -> Option<i64> {
+    cursor.filter(|&since| since <= current)
+}
+
+diesel::define_sql_function! {
+    /// `ramekin_core::search::normalize_for_search`, registered on every
+    /// connection. The search index triggers and the short-token search
+    /// fallback call it, so stored and queried text normalize identically.
+    fn normalize_for_search(value: diesel::sql_types::Nullable<diesel::sql_types::Text>) -> diesel::sql_types::Nullable<diesel::sql_types::Text>;
+}
+
+/// Per-connection setup: pragmas and the search normalization function.
+#[derive(Debug)]
+struct ConnectionSetup;
+
+impl CustomizeConnection<SqliteConnection, r2d2::Error> for ConnectionSetup {
+    fn on_acquire(&self, conn: &mut SqliteConnection) -> Result<(), r2d2::Error> {
+        setup_connection(conn).map_err(r2d2::Error::QueryError)
+    }
+}
+
+/// Pragmas and functions every connection needs, pooled or not.
+///
+/// `synchronous = FULL` syncs the WAL on every commit, so a write the API
+/// reported is durable across power loss. The busy timeout only backstops
+/// [`write`], which already serializes writers; it comes first so the other
+/// pragmas wait out a lock too.
+pub fn setup_connection(conn: &mut SqliteConnection) -> QueryResult<()> {
+    conn.batch_execute(
+        "PRAGMA busy_timeout = 10000; PRAGMA synchronous = FULL; PRAGMA foreign_keys = ON;",
+    )?;
+    normalize_for_search_utils::register_impl(conn, |value: Option<String>| {
+        value.map(|v| ramekin_core::search::normalize_for_search(&v))
+    })
+}
 
 /// Run blocking database work on tokio's blocking thread pool.
 ///
@@ -24,6 +173,18 @@ where
     F: FnOnce(&mut DbConn) -> T + Send + 'static,
     T: Send + 'static,
 {
+    run_blocking_with(pool, false, f).await
+}
+
+async fn run_blocking_with<T, F>(
+    pool: &DbPool,
+    write_lock: bool,
+    f: F,
+) -> Result<T, r2d2::PoolError>
+where
+    F: FnOnce(&mut DbConn) -> T + Send + 'static,
+    T: Send + 'static,
+{
     let pool = pool.clone();
     // Blocking threads carry no ambient request context, so re-enter the
     // caller's tracing span (keeps db.query spans parented to the request)
@@ -33,6 +194,7 @@ where
     match tokio::task::spawn_blocking(move || {
         let _entered = span.entered();
         crate::telemetry::with_query_counter(query_counter, || {
+            let _lock = if write_lock { lock_writes() } else { None };
             let mut conn = pool.get()?;
             Ok(f(&mut conn))
         })
@@ -67,7 +229,7 @@ impl Instrumentation for TracingInstrumentation {
                 let sql = sql.split(" -- binds:").next().unwrap_or(&sql);
                 let span = tracing::info_span!(
                     "db.query",
-                    db.system = "postgresql",
+                    db.system = "sqlite",
                     db.statement = %sql,
                 );
                 tracing::debug!(parent: &span, "executing query");
@@ -110,18 +272,30 @@ pub fn create_pool(database_url: &str) -> DbPool {
     set_default_instrumentation(tracing_instrumentation)
         .expect("Failed to set default instrumentation");
 
-    let manager = ConnectionManager::<PgConnection>::new(database_url);
-    let pool = r2d2::Pool::builder()
+    // Migrate on one connection before the pool opens any. WAL mode is a
+    // property of the file, so it's set here once rather than per connection
+    // (switching it needs every other connection out of the way).
+    {
+        if let Some(dir) = std::path::Path::new(database_url).parent() {
+            std::fs::create_dir_all(dir)
+                .unwrap_or_else(|e| panic!("Failed to create {}: {e}", dir.display()));
+        }
+        let mut conn = SqliteConnection::establish(database_url)
+            .unwrap_or_else(|e| panic!("Failed to open database {database_url}: {e}"));
+        setup_connection(&mut conn).expect("Failed to set up database connection");
+        conn.batch_execute("PRAGMA journal_mode = WAL;")
+            .expect("Failed to enable WAL mode");
+        conn.run_pending_migrations(MIGRATIONS)
+            .expect("Failed to run database migrations");
+        crate::data_migrations::run_pending(&mut conn).expect("Failed to run data migrations");
+    }
+
+    let manager = ConnectionManager::<SqliteConnection>::new(database_url);
+    r2d2::Pool::builder()
+        // Connections are cheap file handles; plenty of them keeps writers
+        // that wait on the write lock from starving readers of connections.
+        .max_size(32)
+        .connection_customizer(Box::new(ConnectionSetup))
         .build(manager)
-        .expect("Failed to create database pool");
-
-    // Run pending migrations on startup
-    let mut conn = pool
-        .get()
-        .expect("Failed to get DB connection for migrations");
-    conn.run_pending_migrations(MIGRATIONS)
-        .expect("Failed to run database migrations");
-    crate::data_migrations::run_pending(&mut conn).expect("Failed to run data migrations");
-
-    pool
+        .expect("Failed to create database pool")
 }

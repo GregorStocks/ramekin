@@ -1,6 +1,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::schema::{recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
@@ -13,7 +14,6 @@ use diesel::prelude::*;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 /// Version summary for listing version history
 #[derive(Debug, Clone, Serialize, ToSchema)]

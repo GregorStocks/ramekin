@@ -1,6 +1,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::Photo;
 use crate::schema::photos;
 use axum::{
@@ -11,7 +12,6 @@ use axum::{
 };
 use diesel::prelude::*;
 use std::sync::Arc;
-use uuid::Uuid;
 
 #[utoipa::path(
     get,

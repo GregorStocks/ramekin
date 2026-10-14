@@ -2,6 +2,7 @@ use crate::api::recipes::rescrape::{fetch_rescrape_target, RescrapeResponse};
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::scraping;
 use axum::{
     extract::{Path, State},
@@ -10,7 +11,6 @@ use axum::{
     Json,
 };
 use std::sync::Arc;
-use uuid::Uuid;
 
 #[utoipa::path(
     post,

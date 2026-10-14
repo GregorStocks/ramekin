@@ -6,12 +6,12 @@
 //! failure, etc.). `step_summary` produces a short human-readable summary line
 //! for a completed step's stored output.
 
+use crate::ids::Uuid;
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use serde::Serialize;
 use serde_json::Value as JsonValue;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 use crate::db::DbPool;
 use crate::schema::step_outputs;

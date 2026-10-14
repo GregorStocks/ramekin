@@ -24,10 +24,6 @@ playwright==1.61.0
     # via pytest-playwright
 pluggy==1.6.0
     # via pytest
-psycopg==3.3.4
-    # via -r requirements-test.txt
-psycopg-binary==3.3.4
-    # via -r requirements-test.txt
 pydantic==2.13.4
     # via -r requirements-test.txt
 pydantic-core==2.46.4
@@ -69,8 +65,6 @@ typing-extensions==4.16.0
     #   typing-inspection
 typing-inspection==0.4.2
     # via pydantic
-tzdata==2026.3 ; sys_platform == 'win32'
-    # via psycopg
 urllib3==2.7.0
     # via
     #   -r requirements-test.txt

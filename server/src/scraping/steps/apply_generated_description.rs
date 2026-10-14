@@ -1,17 +1,17 @@
 use std::sync::Arc;
 use std::time::Instant;
 
+use crate::ids::Uuid;
 use async_trait::async_trait;
 use diesel::prelude::*;
 use serde_json::json;
-use uuid::Uuid;
 
 use ramekin_core::pipeline::{
     deserialize_optional_output_field, deserialize_required_output_field,
     step_after_scrape_auto_applied_ai_step, PipelineStep, StepContext, StepMetadata, StepResult,
 };
 
-use crate::db::{run_blocking, DbPool};
+use crate::db::DbPool;
 use crate::models::NewRecipeVersion;
 use crate::recipes::{create_new_version_cas, TagSource};
 use crate::schema::recipe_versions;
@@ -183,8 +183,8 @@ impl ApplyGeneratedDescriptionStep {
         use crate::models::RecipeVersion;
 
         let description = description.to_string();
-        run_blocking(&self.pool, move |conn| {
-            skip_if_edited(conn.transaction(|conn| {
+        crate::db::run_blocking_locked(&self.pool, move |conn| {
+            skip_if_edited(crate::db::write(conn, |conn| {
                 let current: RecipeVersion = recipe_versions::table
                     .filter(recipe_versions::id.eq(expected_version_id))
                     .filter(recipe_versions::recipe_id.eq(recipe_id))

@@ -1,6 +1,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::NewPhotoThumbnail;
 use crate::photos::processing::{generate_thumbnail, MAX_THUMBNAIL_SIZE, THUMBNAIL_SIZE};
 use crate::schema::{photo_thumbnails, photos};
@@ -14,7 +15,6 @@ use diesel::prelude::*;
 use serde::Deserialize;
 use std::sync::Arc;
 use utoipa::IntoParams;
-use uuid::Uuid;
 
 #[derive(Debug, Deserialize, IntoParams)]
 pub struct ThumbnailParams {
@@ -123,15 +123,18 @@ pub async fn get_photo_thumbnail(
         })?;
 
         // Cache it (race-safe: ON CONFLICT DO NOTHING)
-        let _ = diesel::insert_into(photo_thumbnails::table)
-            .values(&NewPhotoThumbnail {
-                photo_id: id,
-                size: size as i32,
-                data: &thumb_bytes,
-            })
-            .on_conflict((photo_thumbnails::photo_id, photo_thumbnails::size))
-            .do_nothing()
-            .execute(conn);
+        let _ = crate::db::write(conn, |conn| {
+            diesel::insert_into(photo_thumbnails::table)
+                .values(&NewPhotoThumbnail {
+                    id: Uuid::now_v7(),
+                    photo_id: id,
+                    size: size as i32,
+                    data: &thumb_bytes,
+                })
+                .on_conflict((photo_thumbnails::photo_id, photo_thumbnails::size))
+                .do_nothing()
+                .execute(conn)
+        });
 
         Ok(thumb_bytes)
     })

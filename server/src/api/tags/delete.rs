@@ -1,7 +1,7 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::raw_sql;
+use crate::ids::Uuid;
 use crate::schema::user_tags;
 use axum::{
     extract::{Path, State},
@@ -11,7 +11,6 @@ use axum::{
 use chrono::Utc;
 use diesel::prelude::*;
 use std::sync::Arc;
-use uuid::Uuid;
 
 #[utoipa::path(
     delete,
@@ -36,7 +35,7 @@ pub async fn delete_tag(
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
 
-    let updated = run_db(&pool, move |conn| {
+    let updated = run_db_write(&pool, move |conn| {
         let now = Utc::now();
 
         // Soft delete - set deleted_at timestamp
@@ -49,7 +48,6 @@ pub async fn delete_tag(
         .set((
             user_tags::deleted_at.eq(Some(now)),
             user_tags::updated_at.eq(now),
-            user_tags::change_xid.eq(raw_sql::current_change_xid()),
         ))
         .execute(conn)
         .map_err(|e| {

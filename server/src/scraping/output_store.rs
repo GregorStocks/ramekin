@@ -3,12 +3,12 @@
 use std::collections::{HashMap, HashSet};
 use std::error::Error;
 
+use crate::ids::Uuid;
 use async_trait::async_trait;
 use diesel::prelude::*;
 use ramekin_core::pipeline::StepOutputStore;
 use ramekin_core::BUILD_ID;
 use serde_json::Value as JsonValue;
-use uuid::Uuid;
 
 use crate::db::{run_blocking, DbPool};
 use crate::models::{NewStepOutput, StepOutput};
@@ -63,6 +63,7 @@ impl<'a> DbOutputStore<'a> {
         error: Option<&str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
         let new_output = NewStepOutput {
+            id: Uuid::now_v7(),
             scrape_job_id: self.job_id,
             step_name: step_name.to_string(),
             build_id: BUILD_ID.to_string(),
@@ -73,10 +74,12 @@ impl<'a> DbOutputStore<'a> {
             error: error.map(|s| s.to_string()),
         };
 
-        run_blocking(self.pool, move |conn| {
-            diesel::insert_into(step_outputs::table)
-                .values(&new_output)
-                .execute(conn)
+        crate::db::run_blocking_write(self.pool, move |conn| {
+            crate::db::write(conn, |conn| {
+                diesel::insert_into(step_outputs::table)
+                    .values(&new_output)
+                    .execute(conn)
+            })
         })
         .await
         .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?

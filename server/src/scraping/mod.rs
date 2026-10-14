@@ -69,6 +69,20 @@ where
         .map_err(|e| ScrapeError::Database(e.to_string()))?
 }
 
+/// [`run_scrape_db`] for a closure that writes: it runs inside `db::write`.
+pub(crate) async fn run_scrape_db_write<T, F>(
+    pool: &crate::db::DbPool,
+    f: F,
+) -> Result<T, ScrapeError>
+where
+    F: FnOnce(&mut diesel::SqliteConnection) -> Result<T, ScrapeError> + Send + 'static,
+    T: Send + 'static,
+{
+    crate::db::run_blocking_write(pool, f)
+        .await
+        .map_err(|e| ScrapeError::Database(e.to_string()))?
+}
+
 /// Job statuses
 pub const STATUS_PENDING: &str = "pending";
 pub const STATUS_SCRAPING: &str = "scraping";

@@ -1,15 +1,14 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::NewRecipeVersion;
 use crate::recipes::{create_new_version_cas, insert_recipe, TagSource, VersionWriteError};
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
-use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct CreateRecipeRequest {
@@ -78,7 +77,7 @@ pub async fn create_recipe(
         Err(_) => return Err(ApiError::invalid_request("Invalid ingredients format")),
     };
 
-    let photo_ids: Vec<Option<Uuid>> = request
+    let photo_ids: crate::ids::PhotoIds = request
         .photo_ids
         .unwrap_or_default()
         .into_iter()
@@ -104,10 +103,11 @@ pub async fn create_recipe(
 
     let recipe_id = run_db(&pool, move |conn| {
         // Use a transaction to create recipe + version atomically
-        let result: Result<Uuid, VersionWriteError> = conn.transaction(|conn| {
+        let result: Result<Uuid, VersionWriteError> = crate::db::write(conn, |conn| {
             let recipe_id = insert_recipe(conn, user_id)?;
 
             let new_version = NewRecipeVersion {
+                id: Uuid::now_v7(),
                 recipe_id,
                 title: &request.content.title,
                 description: request.content.description.as_deref(),

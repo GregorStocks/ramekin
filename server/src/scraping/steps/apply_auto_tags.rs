@@ -1,17 +1,17 @@
 use std::sync::Arc;
 use std::time::Instant;
 
+use crate::ids::Uuid;
 use async_trait::async_trait;
 use diesel::prelude::*;
 use serde_json::json;
-use uuid::Uuid;
 
 use ramekin_core::pipeline::{
     deserialize_optional_output_field, step_after_scrape_auto_applied_ai_step, PipelineStep,
     StepContext, StepMetadata, StepResult,
 };
 
-use crate::db::{run_blocking, DbPool};
+use crate::db::DbPool;
 use crate::models::NewRecipeVersion;
 use crate::recipes::{create_new_version_cas, TagSource};
 use crate::schema::{recipe_versions, recipes};
@@ -160,7 +160,7 @@ impl ApplyAutoTagsStep {
         use crate::models::{Recipe, RecipeVersion};
 
         let new_tags = new_tags.to_vec();
-        run_blocking(&self.pool, move |conn| {
+        crate::db::run_blocking_locked(&self.pool, move |conn| {
             // Get the recipe to find user_id and current_version_id
             let recipe: Recipe = recipes::table
                 .find(recipe_id)
@@ -177,7 +177,7 @@ impl ApplyAutoTagsStep {
                 .map_err(|e| e.to_string())?;
 
             // Create new version with AI-suggested tags
-            skip_if_edited(conn.transaction(|conn| {
+            skip_if_edited(crate::db::write(conn, |conn| {
                 // 1. Create new version (copy all data, change version_source to "enrichment")
                 let new_version = NewRecipeVersion::copy_of(&current_version, "enrichment");
 

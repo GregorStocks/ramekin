@@ -4,12 +4,12 @@
 //! `recipes.current_version_id` must go through this module so the
 //! transaction shape and tag carry-forward stay identical everywhere.
 
+use crate::ids::Uuid;
 use crate::models::{NewRecipe, NewRecipeVersion, RecipeVersionTag};
 use crate::schema::{recipe_version_tags, recipe_versions, recipes};
 use crate::tags::upsert_user_tag;
-use diesel::pg::PgConnection;
 use diesel::prelude::*;
-use uuid::Uuid;
+use diesel::sqlite::SqliteConnection;
 
 /// How a new recipe version gets its `recipe_version_tags` rows.
 pub enum TagSource<'a> {
@@ -49,11 +49,16 @@ impl From<diesel::result::Error> for VersionWriteError {
 }
 
 /// Insert a bare `recipes` row and return its id. Call inside a transaction.
-pub fn insert_recipe(conn: &mut PgConnection, user_id: Uuid) -> QueryResult<Uuid> {
-    diesel::insert_into(recipes::table)
-        .values(NewRecipe { user_id })
-        .returning(recipes::id)
-        .get_result(conn)
+pub fn insert_recipe(conn: &mut SqliteConnection, user_id: Uuid) -> QueryResult<Uuid> {
+    crate::db::write(conn, |conn| {
+        diesel::insert_into(recipes::table)
+            .values(NewRecipe {
+                id: Uuid::now_v7(),
+                user_id,
+            })
+            .returning(recipes::id)
+            .get_result(conn)
+    })
 }
 
 /// Insert a new version row, repoint only if `current_version_id` still equals
@@ -61,42 +66,44 @@ pub fn insert_recipe(conn: &mut PgConnection, user_id: Uuid) -> QueryResult<Uuid
 /// Otherwise returns [`VersionWriteError::Stale`], which rolls back the
 /// caller's transaction. Call inside a transaction.
 pub fn create_new_version_cas(
-    conn: &mut PgConnection,
+    conn: &mut SqliteConnection,
     new_version: &NewRecipeVersion<'_>,
     expected_current: Option<Uuid>,
     tags: TagSource<'_>,
 ) -> Result<Uuid, VersionWriteError> {
-    let version_id = insert_version_row(conn, new_version)?;
+    crate::db::write(conn, |conn| {
+        let version_id = insert_version_row(conn, new_version)?;
 
-    let rows_updated = match expected_current {
-        Some(expected_version_id) => diesel::update(
-            recipes::table
-                .filter(recipes::id.eq(new_version.recipe_id))
-                .filter(recipes::current_version_id.eq(Some(expected_version_id)))
-                .filter(recipes::deleted_at.is_null()),
-        )
-        .set(recipes::current_version_id.eq(version_id))
-        .execute(conn)?,
-        None => diesel::update(
-            recipes::table
-                .filter(recipes::id.eq(new_version.recipe_id))
-                .filter(recipes::current_version_id.is_null())
-                .filter(recipes::deleted_at.is_null()),
-        )
-        .set(recipes::current_version_id.eq(version_id))
-        .execute(conn)?,
-    };
+        let rows_updated = match expected_current {
+            Some(expected_version_id) => diesel::update(
+                recipes::table
+                    .filter(recipes::id.eq(new_version.recipe_id))
+                    .filter(recipes::current_version_id.eq(Some(expected_version_id)))
+                    .filter(recipes::deleted_at.is_null()),
+            )
+            .set(recipes::current_version_id.eq(version_id))
+            .execute(conn)?,
+            None => diesel::update(
+                recipes::table
+                    .filter(recipes::id.eq(new_version.recipe_id))
+                    .filter(recipes::current_version_id.is_null())
+                    .filter(recipes::deleted_at.is_null()),
+            )
+            .set(recipes::current_version_id.eq(version_id))
+            .execute(conn)?,
+        };
 
-    if rows_updated == 0 {
-        return Err(VersionWriteError::Stale);
-    }
+        if rows_updated == 0 {
+            return Err(VersionWriteError::Stale);
+        }
 
-    apply_tags(conn, version_id, tags)?;
-    Ok(version_id)
+        apply_tags(conn, version_id, tags)?;
+        Ok(version_id)
+    })
 }
 
 fn insert_version_row(
-    conn: &mut PgConnection,
+    conn: &mut SqliteConnection,
     new_version: &NewRecipeVersion<'_>,
 ) -> QueryResult<Uuid> {
     // Every version write lands here, so trimming here keeps a stray space or
@@ -112,7 +119,11 @@ fn insert_version_row(
         .get_result(conn)
 }
 
-fn apply_tags(conn: &mut PgConnection, version_id: Uuid, tags: TagSource<'_>) -> QueryResult<()> {
+fn apply_tags(
+    conn: &mut SqliteConnection,
+    version_id: Uuid,
+    tags: TagSource<'_>,
+) -> QueryResult<()> {
     match tags {
         TagSource::CopyFrom(from_version) => {
             copy_recipe_version_tags(conn, from_version, version_id)?;
@@ -134,7 +145,7 @@ fn apply_tags(conn: &mut PgConnection, version_id: Uuid, tags: TagSource<'_>) ->
 
 /// Copy every tag link from `old_version_id` onto `new_version_id`.
 fn copy_recipe_version_tags(
-    conn: &mut PgConnection,
+    conn: &mut SqliteConnection,
     old_version_id: Uuid,
     new_version_id: Uuid,
 ) -> QueryResult<()> {
@@ -147,7 +158,7 @@ fn copy_recipe_version_tags(
 }
 
 fn link_tags_by_name(
-    conn: &mut PgConnection,
+    conn: &mut SqliteConnection,
     version_id: Uuid,
     user_id: Uuid,
     names: &[String],
@@ -160,18 +171,17 @@ fn link_tags_by_name(
     link_tags(conn, version_id, tag_ids)
 }
 
-fn link_tags(conn: &mut PgConnection, version_id: Uuid, tag_ids: Vec<Uuid>) -> QueryResult<()> {
-    let rows: Vec<RecipeVersionTag> = tag_ids
-        .into_iter()
-        .map(|tag_id| RecipeVersionTag {
-            recipe_version_id: version_id,
-            tag_id,
-        })
-        .collect();
-
-    diesel::insert_into(recipe_version_tags::table)
-        .values(&rows)
-        .on_conflict_do_nothing()
-        .execute(conn)?;
+fn link_tags(conn: &mut SqliteConnection, version_id: Uuid, tag_ids: Vec<Uuid>) -> QueryResult<()> {
+    // One statement per tag: Diesel's SQLite backend can't combine a
+    // multi-row insert with ON CONFLICT.
+    for tag_id in tag_ids {
+        diesel::insert_into(recipe_version_tags::table)
+            .values(RecipeVersionTag {
+                recipe_version_id: version_id,
+                tag_id,
+            })
+            .on_conflict_do_nothing()
+            .execute(conn)?;
+    }
     Ok(())
 }

@@ -2,6 +2,7 @@ use super::read::fetch_current_recipe_with_version_and_tags;
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::ingredient_names::load_learned;
 use crate::models::{derived_measurements, DerivedMeasurement, Ingredient, RecipeVersion};
 use crate::raw_sql;
@@ -18,7 +19,6 @@ use ramekin_core::catalog::Learned;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct RecipeResponse {

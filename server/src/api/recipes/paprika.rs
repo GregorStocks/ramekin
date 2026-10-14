@@ -1,5 +1,5 @@
 use super::read::RecipeWithVersion;
-use crate::db::DbConn;
+use crate::ids::Uuid;
 use crate::models::{Ingredient, Measurement};
 use crate::photos::processing::{generate_thumbnail, resize_for_export, EXPORT_PHOTO_DATA_SIZE};
 use crate::schema::{photos, recipe_version_tags, user_tags};
@@ -10,7 +10,6 @@ use flate2::Compression;
 use serde::Serialize;
 use sha2::{Digest, Sha256};
 use std::io::Write;
-use uuid::Uuid;
 
 /// Paprika recipe format for export.
 #[derive(Debug, Serialize)]
@@ -249,7 +248,7 @@ fn gzip_recipe(recipe: &PaprikaRecipe) -> Result<Vec<u8>, String> {
 
 /// Fetch all photo data for a recipe.
 fn fetch_recipe_photos(
-    conn: &mut diesel::PgConnection,
+    conn: &mut diesel::SqliteConnection,
     user_id: Uuid,
     photo_ids: &[Option<Uuid>],
 ) -> Result<Vec<(Uuid, Vec<u8>)>, String> {
@@ -278,7 +277,7 @@ pub(super) struct ExportedRecipe {
 /// Export a single recipe to .paprikarecipe format (gzipped JSON).
 /// This is the core export function used by both single-recipe and bulk export.
 pub(super) fn export_recipe_to_paprikarecipe(
-    conn: &mut DbConn,
+    conn: &mut diesel::SqliteConnection,
     user_id: Uuid,
     recipe: &RecipeWithVersion,
 ) -> Result<ExportedRecipe, String> {

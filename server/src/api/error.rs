@@ -140,6 +140,15 @@ impl ApiError {
     }
 }
 
+/// A query failure with no more specific handling: logged, and reported to
+/// the client as an internal error. Lets `?` work inside `db::write`.
+impl From<diesel::result::Error> for ApiError {
+    fn from(error: diesel::result::Error) -> Self {
+        tracing::error!(%error, "database error");
+        Self::internal("Database error")
+    }
+}
+
 impl IntoResponse for ApiError {
     fn into_response(self) -> Response {
         (

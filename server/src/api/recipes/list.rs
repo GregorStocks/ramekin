@@ -4,7 +4,8 @@ use super::read::{
 };
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
-use crate::db::{DbConn, DbPool};
+use crate::db::{self, DbPool};
+use crate::ids::Uuid;
 use crate::models::Ingredient;
 use crate::raw_sql;
 use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
@@ -21,7 +22,6 @@ use ramekin_core::search::normalize_for_search;
 use serde::{Deserialize, Serialize};
 use std::{collections::HashMap, sync::Arc};
 use utoipa::{IntoParams, ToSchema};
-use uuid::Uuid;
 
 /// Sort field for recipe list
 #[derive(Debug, Clone, Copy, Deserialize, ToSchema)]
@@ -263,7 +263,20 @@ pub struct ListRecipesResponse {
     pub pagination: PaginationMetadata,
 }
 
-/// Normalize before escaping: unaccent can introduce LIKE metacharacters.
+/// The FTS5 query matching `token` as a substring of any indexed field, or
+/// None when the normalized token is too short for the trigram index (under
+/// three characters) and has to be matched by a scan instead.
+fn search_index_query(token: &str) -> Option<String> {
+    let normalized = normalize_for_search(token);
+    if normalized.chars().count() < 3 {
+        return None;
+    }
+    // One quoted phrase: a trigram phrase matches as a substring, and
+    // quoting keeps FTS5 from reading operators or column filters in it.
+    Some(format!("\"{}\"", normalized.replace('"', "\"\"")))
+}
+
+/// Normalize before escaping: normalization can introduce LIKE metacharacters.
 fn literal_search_pattern(s: &str) -> String {
     let escaped = normalize_for_search(s)
         .replace('\\', "\\\\")
@@ -332,7 +345,7 @@ type CurrentRecipeVersionsQuery = diesel::dsl::Filter<
 >;
 
 type FilteredRecipesQuery<'a> =
-    diesel::dsl::IntoBoxed<'a, CurrentRecipeVersionsQuery, diesel::pg::Pg>;
+    diesel::dsl::IntoBoxed<'a, CurrentRecipeVersionsQuery, diesel::sqlite::Sqlite>;
 
 /// The user's current recipe versions narrowed by every filter in `parsed`.
 fn filtered_recipes_query(user_id: Uuid, parsed: &ParsedQuery) -> FilteredRecipesQuery<'_> {
@@ -342,28 +355,36 @@ fn filtered_recipes_query(user_id: Uuid, parsed: &ParsedQuery) -> FilteredRecipe
     // Text search: each word must appear somewhere across all fields (AND
     // between words, OR between fields). Matches are case- AND
     // accent-insensitive ("creme brulee" finds "Crème Brûlée").
-    //
-    // The join already limits rows to current versions, but the trigram
-    // indexes are partial on `is_current`, and the planner only uses them
-    // when the predicate is spelled out. Without it, a common word rechecks
-    // every old version that contains it.
-    if !parsed.text.is_empty() {
-        query = query.filter(recipe_versions::is_current);
-    }
     for token in &parsed.text {
-        let pattern = literal_search_pattern(token);
-        query = query.filter(
-            raw_sql::f_unaccent(recipe_versions::title.nullable())
-                .ilike(pattern.clone())
-                .or(raw_sql::f_unaccent(recipe_versions::description).ilike(pattern.clone()))
-                .or(
-                    raw_sql::f_unaccent(recipe_versions::instructions.nullable())
-                        .ilike(pattern.clone()),
+        query = match search_index_query(token) {
+            Some(fts_query) => query.filter(raw_sql::recipe_search_match(fts_query)),
+            // Too short for the trigram index: scan the user's current
+            // versions, normalizing each field the way the index does.
+            None => {
+                let pattern = literal_search_pattern(token);
+                query.filter(
+                    db::normalize_for_search(recipe_versions::title.nullable())
+                        .like(pattern.clone())
+                        .escape('\\')
+                        .or(db::normalize_for_search(recipe_versions::description)
+                            .like(pattern.clone())
+                            .escape('\\'))
+                        .or(
+                            db::normalize_for_search(recipe_versions::instructions.nullable())
+                                .like(pattern.clone())
+                                .escape('\\'),
+                        )
+                        .or(db::normalize_for_search(recipe_versions::notes)
+                            .like(pattern.clone())
+                            .escape('\\'))
+                        .or(
+                            db::normalize_for_search(raw_sql::ingredients_text().nullable())
+                                .like(pattern)
+                                .escape('\\'),
+                        ),
                 )
-                .or(raw_sql::f_unaccent(recipe_versions::notes).ilike(pattern.clone()))
-                .or(raw_sql::f_unaccent(raw_sql::ingredients_text().nullable())
-                    .ilike(pattern.clone())),
-        );
+            }
+        };
     }
 
     // Tag filters (AND logic - must have ALL tags)
@@ -372,7 +393,7 @@ fn filtered_recipes_query(user_id: Uuid, parsed: &ParsedQuery) -> FilteredRecipe
         let tag_subquery = recipe_version_tags::table
             .inner_join(user_tags::table)
             .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
-            .filter(user_tags::name.eq(tag))
+            .filter(user_tags::name_key.eq(db::case_key(tag)))
             .filter(user_tags::deleted_at.is_null())
             .select(recipe_version_tags::recipe_version_id);
         query = query.filter(diesel::dsl::exists(tag_subquery));
@@ -381,15 +402,19 @@ fn filtered_recipes_query(user_id: Uuid, parsed: &ParsedQuery) -> FilteredRecipe
     // Source filter (accent- and case-insensitive)
     if let Some(ref source) = parsed.source {
         let pattern = literal_search_pattern(source);
-        query = query.filter(raw_sql::f_unaccent(recipe_versions::source_name).ilike(pattern));
+        query = query.filter(
+            db::normalize_for_search(recipe_versions::source_name)
+                .like(pattern)
+                .escape('\\'),
+        );
     }
 
     // Has photos filter
     if let Some(has_photos) = parsed.has_photos {
         if has_photos {
-            query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).gt(0));
+            query = query.filter(raw_sql::json_array_length(recipe_versions::photo_ids).gt(0));
         } else {
-            query = query.filter(raw_sql::cardinality(recipe_versions::photo_ids).eq(0));
+            query = query.filter(raw_sql::json_array_length(recipe_versions::photo_ids).eq(0));
         }
     }
 
@@ -422,7 +447,7 @@ fn filtered_recipes_query(user_id: Uuid, parsed: &ParsedQuery) -> FilteredRecipe
 /// Blocking DB and ranking work for `list_recipes`; runs on the blocking
 /// thread pool via `run_db`.
 fn list_recipes_blocking(
-    conn: &mut DbConn,
+    conn: &mut diesel::SqliteConnection,
     user_id: Uuid,
     parsed: &ParsedQuery,
     sort_by: SortBy,
@@ -534,7 +559,7 @@ fn list_recipes_blocking(
         let descending = matches!(sort_dir, Direction::Desc);
         title_rows.sort_by(|lhs, rhs| {
             ramekin_core::recipe_title_sort::compare_recipe_titles(
-                &lhs.1, &lhs.0, &rhs.1, &rhs.0, descending,
+                &lhs.1, &lhs.0 .0, &rhs.1, &rhs.0 .0, descending,
             )
         });
 
@@ -593,11 +618,13 @@ fn list_recipes_blocking(
             query.order((recipe_versions::created_at.asc(), recipes::id.asc()))
         }
         (SortBy::Rating, Direction::Desc) => query.order((
-            recipe_versions::rating.desc().nulls_last(),
+            recipe_versions::rating.is_null().asc(),
+            recipe_versions::rating.desc(),
             recipes::id.asc(),
         )),
         (SortBy::Rating, Direction::Asc) => query.order((
-            recipe_versions::rating.asc().nulls_last(),
+            recipe_versions::rating.is_null().asc(),
+            recipe_versions::rating.asc(),
             recipes::id.asc(),
         )),
         (SortBy::CreatedAt, Direction::Desc) => {
@@ -739,22 +766,20 @@ mod tests {
         assert_eq!(parsed.tags, vec!["side"]);
     }
 
-    fn filters_sql(query: &str) -> String {
-        let parsed = parse_query(query);
-        let filtered = filtered_recipes_query(Uuid::nil(), &parsed);
-        let sql = diesel::debug_query::<diesel::pg::Pg, _>(&filtered).to_string();
-        // The select list names every column, is_current included.
-        let (_, filters) = sql.split_once(" WHERE ").unwrap();
-        filters.to_string()
+    #[test]
+    fn test_search_index_query_quotes_normalized_token() {
+        assert_eq!(search_index_query("Crème").as_deref(), Some("\"creme\""));
+        assert_eq!(
+            search_index_query("say \"hi\" now").as_deref(),
+            Some("\"say \"\"hi\"\" now\"")
+        );
     }
 
     #[test]
-    fn test_text_search_states_is_current_for_partial_indexes() {
-        assert!(filters_sql("chicken").contains(r#""recipe_versions"."is_current""#));
-    }
-
-    #[test]
-    fn test_non_text_filters_skip_is_current() {
-        assert!(!filters_sql("tag:dinner").contains("is_current"));
+    fn test_short_tokens_skip_the_search_index() {
+        assert_eq!(search_index_query("ab"), None);
+        assert_eq!(search_index_query("é"), None);
+        // Normalization can lengthen a token past the trigram minimum.
+        assert_eq!(search_index_query("Œu").as_deref(), Some("\"oeu\""));
     }
 }

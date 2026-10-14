@@ -40,6 +40,23 @@ where
     }
 }
 
+/// [`run_db`] for a closure that writes: it runs inside `db::write`, so it
+/// holds the database write lock throughout. Keep slow work (password
+/// hashing, network calls) out of the closure.
+pub async fn run_db_write<T, F>(pool: &DbPool, f: F) -> Result<T, ApiError>
+where
+    F: FnOnce(&mut diesel::SqliteConnection) -> Result<T, ApiError> + Send + 'static,
+    T: Send + 'static,
+{
+    match crate::db::run_blocking_write(pool, f).await {
+        Ok(result) => result,
+        Err(e) => {
+            tracing::error!(error = %e, "failed to get database connection");
+            Err(ApiError::internal("Database connection failed"))
+        }
+    }
+}
+
 /// Generate the complete OpenAPI spec by merging all module specs
 pub fn openapi() -> utoipa::openapi::OpenApi {
     // Base spec with shared components and security

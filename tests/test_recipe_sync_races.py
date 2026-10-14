@@ -3,19 +3,16 @@
 The window a wall-clock cursor loses: a writer takes its change stamp, a sync
 runs and hands back a cursor, and only *then* does the writer commit. The
 change's timestamp precedes the cursor, so the next `> last_sync_at` delta
-excludes it forever. The xid watermark closes it — an in-flight writer's
-transaction id is always at or above the cursor, so the next `>= cursor` delta
+excludes it forever. The sync clock closes it: stamps are handed out inside
+the single write transaction, so a write still in flight when the sync reads
+the clock gets a stamp at or above the cursor, and the next `>= cursor` delta
 returns it.
 
 Each test drives the racing write through the real API: a helper transaction
-holds a row lock on the write's target, `blocked_api_write` (conftest) starts
-the API write in a background thread and waits until it queues on that lock,
-the sync runs across the in-flight write, and only then does releasing the
-lock let the write commit. That exercises the handlers' own `change_xid`
-stamping inside the race window; the sequential deltas in
-`test_recipe_sync.py` cover the same stamping outside it. The choreography
-stays deterministic without sleeps: the write cannot commit while the helper
-transaction holds the lock.
+holds the database write lock, `blocked_api_write` (conftest) starts the API
+write in a background thread and lets it queue on that lock, the sync (a
+read, which the lock doesn't block) runs across the in-flight write, and only
+then does releasing the lock let the write commit.
 """
 
 import requests
@@ -44,7 +41,7 @@ def _sync(client, server_url, cursor=None):
 
 
 def test_sync_returns_update_that_commits_across_the_snapshot(
-    authed_api_client, server_url, database_url, uncommitted
+    authed_api_client, server_url, uncommitted
 ):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
@@ -58,12 +55,6 @@ def test_sync_returns_update_that_commits_across_the_snapshot(
     )
     version_id = recipes_api.get_recipe(created.id).version_id
 
-    # The update's INSERT INTO recipe_versions queues here: the new version
-    # row's foreign key takes a KEY SHARE lock on the referenced recipes row.
-    uncommitted.execute(
-        "SELECT id FROM recipes WHERE id = %s FOR UPDATE", (created.id,)
-    )
-
     def racing_update():
         recipes_api.update_recipe(
             created.id,
@@ -75,7 +66,7 @@ def test_sync_returns_update_that_commits_across_the_snapshot(
             _request_timeout=WRITE_TIMEOUT_SECONDS,
         )
 
-    with blocked_api_write(database_url, uncommitted, racing_update):
+    with blocked_api_write(uncommitted, racing_update):
         racing = _sync(client, server_url)
     assert "After Racing Update" not in {r["title"] for r in racing["recipes"]}
 
@@ -88,7 +79,7 @@ def test_sync_returns_update_that_commits_across_the_snapshot(
 
 
 def test_sync_returns_soft_delete_that_commits_across_the_snapshot(
-    authed_api_client, server_url, database_url, uncommitted
+    authed_api_client, server_url, uncommitted
 ):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
@@ -101,15 +92,10 @@ def test_sync_returns_soft_delete_that_commits_across_the_snapshot(
         )
     )
 
-    # The delete's UPDATE of the recipes row queues on the row lock.
-    uncommitted.execute(
-        "SELECT id FROM recipes WHERE id = %s FOR UPDATE", (created.id,)
-    )
-
     def racing_delete():
         recipes_api.delete_recipe(created.id, _request_timeout=WRITE_TIMEOUT_SECONDS)
 
-    with blocked_api_write(database_url, uncommitted, racing_delete):
+    with blocked_api_write(uncommitted, racing_delete):
         racing = _sync(client, server_url)
     assert str(created.id) not in racing["deleted"]
 
@@ -120,7 +106,7 @@ def test_sync_returns_soft_delete_that_commits_across_the_snapshot(
 
 
 def test_sync_returns_tag_rename_that_commits_across_the_snapshot(
-    authed_api_client, server_url, database_url, uncommitted
+    authed_api_client, server_url, uncommitted
 ):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
@@ -140,9 +126,6 @@ def test_sync_returns_tag_rename_that_commits_across_the_snapshot(
         if tag.name == "before-racing-rename"
     )
 
-    # The rename's UPDATE of the user_tags row queues on the row lock.
-    uncommitted.execute("SELECT id FROM user_tags WHERE id = %s FOR UPDATE", (tag.id,))
-
     def racing_rename():
         tags_api.rename_tag(
             tag.id,
@@ -150,7 +133,7 @@ def test_sync_returns_tag_rename_that_commits_across_the_snapshot(
             _request_timeout=WRITE_TIMEOUT_SECONDS,
         )
 
-    with blocked_api_write(database_url, uncommitted, racing_rename):
+    with blocked_api_write(uncommitted, racing_rename):
         racing = _sync(client, server_url)
 
     # The rename never touches the recipe's own version row, so the recipe can

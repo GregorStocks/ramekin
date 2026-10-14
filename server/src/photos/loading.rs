@@ -1,11 +1,11 @@
-use crate::db::{DbConn, DbPool};
+use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::Photo;
 use crate::schema::photos;
 use base64::Engine;
 use diesel::prelude::*;
 use std::collections::{HashMap, HashSet};
 use thiserror::Error;
-use uuid::Uuid;
 
 #[derive(Debug, Error)]
 pub enum PhotoImageLoadError {
@@ -36,7 +36,7 @@ pub async fn load_photo_images(
 /// Same as [`load_photo_images`], but uses an already checked-out connection.
 /// Async callers run this inside `crate::db::run_blocking`.
 fn load_photo_images_with_conn(
-    conn: &mut DbConn,
+    conn: &mut diesel::SqliteConnection,
     user_id: Uuid,
     photo_ids: &[Uuid],
 ) -> Result<Vec<ramekin_core::ai::ImageData>, PhotoImageLoadError> {

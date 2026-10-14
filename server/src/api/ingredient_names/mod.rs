@@ -7,6 +7,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::ingredient_names::{requeue_failed, unlearned_names, wake, FAILED, PENDING, RESOLVED};
 use crate::models::Ingredient;
 use crate::schema::{
@@ -19,7 +20,6 @@ use diesel::prelude::*;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::{OpenApi, ToSchema};
-use uuid::Uuid;
 
 /// Failed names shown in the status.
 const FAILURES_SHOWN: i64 = 20;
@@ -64,7 +64,10 @@ fn db_error(e: diesel::result::Error) -> ApiError {
 }
 
 /// The user's current recipes' ingredients, one list per recipe.
-fn own_recipes(conn: &mut PgConnection, user_id: Uuid) -> Result<Vec<Vec<Ingredient>>, ApiError> {
+fn own_recipes(
+    conn: &mut SqliteConnection,
+    user_id: Uuid,
+) -> Result<Vec<Vec<Ingredient>>, ApiError> {
     let versions: Vec<serde_json::Value> = recipes::table
         .inner_join(
             recipe_versions::table
@@ -87,7 +90,7 @@ fn own_recipes(conn: &mut PgConnection, user_id: Uuid) -> Result<Vec<Vec<Ingredi
 /// The names the catalog doesn't know in the user's current recipes and
 /// shopping list.
 fn own_names(
-    conn: &mut PgConnection,
+    conn: &mut SqliteConnection,
     user_id: Uuid,
     recipes: &[Vec<Ingredient>],
 ) -> Result<Vec<String>, ApiError> {

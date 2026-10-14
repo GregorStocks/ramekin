@@ -3,18 +3,24 @@
 ## Quick Start
 
 ```bash
-make db-up   # Start postgres (shared across environments, only needed once)
 make dev     # Starts server, UI with hot-reload
 ```
+
+The database is a SQLite file per worktree (`.db/dev.sqlite`, `.db/test.sqlite`,
+paths in `dev.env` / `test.env`). The server creates and migrates it on startup.
 
 Edit code in `server/src/` and it auto-recompiles. Stop with `make dev-down`.
 
 ## Database Migrations
 
 ```bash
-make db-migrate        # Run pending migrations
-make generate-schema   # Regenerate schema.rs after schema changes
+make new-migration NAME=add_widget_table   # Create migrations/<timestamp>_add_widget_table/up.sql
 ```
+
+The server runs pending migrations at startup. `server/src/schema.rs` is
+maintained by hand (Diesel can't tell UUID or JSON text from other TEXT
+columns): update it alongside each migration, using `UuidText` for UUID columns
+and `TimestamptzSqlite` for timestamps.
 
 Create migration files through a Makefile-backed workflow. If no Makefile
 target exists for the migration operation you need, add one before running the
@@ -34,5 +40,7 @@ make clean-api && make test
 ## Tips
 
 - Changes to Cargo.toml may require `make dev-down && make dev`
-- Database persists via Docker volume
+- Inspect the database with `sqlite3 .db/dev.sqlite` (the search index
+  triggers need the server's `normalize_for_search` function, so write through
+  the API, not the sqlite3 shell)
 - Generated clients are checked in, so CLI builds without running server

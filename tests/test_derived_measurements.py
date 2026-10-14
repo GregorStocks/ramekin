@@ -3,7 +3,6 @@
 import time
 import uuid
 
-import psycopg
 
 from conftest import make_ingredient
 from ramekin_client.api import IngredientNamesApi, RecipesApi
@@ -112,12 +111,3 @@ def test_saving_a_read_recipe_stores_no_grams(authed_api_client):
     # An earlier version gets its own grams too.
     old = recipes.get_recipe(recipe_id, version_id=original.version_id)
     assert derived(old) == [{"ingredient_index": 0, "amount": "227", "unit": "g"}]
-
-
-def test_server_startup_ran_the_gram_stripping_migration(database_url):
-    with psycopg.connect(database_url) as conn:
-        names = [
-            row[0]
-            for row in conn.execute("SELECT name FROM data_migrations").fetchall()
-        ]
-    assert "strip_materialized_grams" in names

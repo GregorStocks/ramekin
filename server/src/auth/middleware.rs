@@ -1,5 +1,6 @@
 use crate::api::ApiError;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use axum::{
     body::Body,
     extract::State,
@@ -8,7 +9,6 @@ use axum::{
     response::{IntoResponse, Response},
 };
 use std::sync::Arc;
-use uuid::Uuid;
 
 use super::db::{get_user_from_token, TOKEN_TYPE_BOOKMARKLET};
 

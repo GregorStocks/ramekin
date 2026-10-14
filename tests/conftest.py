@@ -2,11 +2,11 @@ import concurrent.futures
 import contextlib
 import os
 import re
+import sqlite3
 import threading
 import time
 import uuid
 
-import psycopg
 import pytest
 
 from query_thresholds import get_thresholds
@@ -71,62 +71,44 @@ def database_url():
     return url
 
 
+def connect_db(database_url):
+    """A connection to the server's SQLite database, in autocommit mode.
+
+    Waits out the server's write lock instead of failing on it.
+    """
+    conn = sqlite3.connect(database_url, timeout=30, isolation_level=None)
+    conn.execute("PRAGMA foreign_keys = ON")
+    return conn
+
+
 @pytest.fixture
 def uncommitted(database_url):
-    """A transaction left open, so its writes and row locks stay pending.
+    """A connection for holding the database's write lock with an open
+    transaction (`hold_write_lock`), so every server write waits behind it.
 
-    Rolled back at teardown; commit explicitly in the test to release it.
+    Rolled back at teardown; call `rollback()` in the test to release it
+    sooner. Keep it held for a few seconds at most: the server's busy timeout
+    (`db.rs`) fails a write that waits longer.
     """
-    with psycopg.connect(database_url) as conn:  # autocommit off
+    conn = connect_db(database_url)
+    try:
         yield conn
-        conn.rollback()
+    finally:
+        if conn.in_transaction:
+            conn.rollback()
+        conn.close()
 
 
-LOCK_WAIT_TIMEOUT_SECONDS = 30
+def hold_write_lock(uncommitted):
+    """Take the database write lock on the `uncommitted` connection."""
+    uncommitted.execute("BEGIN IMMEDIATE")
+
+
 WRITE_TIMEOUT_SECONDS = 60
-
-
-def wait_until_blocked_behind(database_url, holder_pid, writes, count=1):
-    """Wait for `count` backends to queue on a lock held by backend `holder_pid`.
-
-    Matches on the holder's backend pid via `pg_blocking_pids` rather than on
-    query text, so concurrently running tests (pytest-xdist) can't satisfy the
-    wait by accident. Follows chains of waiters: a second write to the same
-    row queues behind the first waiter's tuple lock, not the holder's.
-    Returns early if any of the `writes` futures finishes, so a write that
-    fails outright surfaces its error instead of burning the timeout.
-
-    Also requires the blocked backend to already hold an assigned transaction
-    id (`backend_xid`). The sync race tests need the writer's xid to predate
-    the racing snapshot — that is the window the xid watermark exists to
-    close. Postgres assigns the xid on entry to heap_insert/heap_update,
-    before the tuple-lock wait, so this holds today; checking it here makes
-    the wait time out loudly rather than let those tests pass vacuously if it
-    ever stopped holding.
-    """
-    deadline = time.monotonic() + LOCK_WAIT_TIMEOUT_SECONDS
-    with psycopg.connect(database_url, autocommit=True) as conn:
-        while time.monotonic() < deadline:
-            if any(write.done() for write in writes):
-                return
-            waiting = conn.execute(
-                "WITH RECURSIVE waiters(pid) AS ("
-                " SELECT pid FROM pg_stat_activity"
-                " WHERE wait_event_type = 'Lock' AND backend_xid IS NOT NULL"
-                " AND %s = ANY(pg_blocking_pids(pid))"
-                " UNION"
-                " SELECT a.pid FROM pg_stat_activity a"
-                " JOIN waiters w ON w.pid = ANY(pg_blocking_pids(a.pid))"
-                " WHERE a.wait_event_type = 'Lock' AND a.backend_xid IS NOT NULL"
-                ") SELECT count(*) FROM waiters",
-                (holder_pid,),
-            ).fetchone()[0]
-            if waiting >= count:
-                return
-            time.sleep(0.1)
-    raise TimeoutError(
-        f"{count} write(s) never started waiting on the row lock with an assigned xid"
-    )
+# How long a write gets to reach the held lock before the test assumes it is
+# waiting there. SQLite has no lock-wait view to poll, so this is a delay; a
+# write that finishes inside it can't have waited and fails the test.
+QUEUE_SETTLE_SECONDS = 1.0
 
 
 def run_in_daemon_thread(fn):
@@ -148,26 +130,31 @@ def run_in_daemon_thread(fn):
     return future
 
 
-@contextlib.contextmanager
-def blocked_api_write(database_url, uncommitted, send_write):
-    """Hold an API write in flight, queued behind a row lock.
-
-    `uncommitted` must already hold a lock (e.g. `SELECT ... FOR UPDATE`) on a
-    row that `send_write` will touch. The write runs in a background thread;
-    the body of the `with` block runs once the write is queued on the lock and
-    therefore cannot commit until the block exits. On exit the lock is
-    released so the write can finish, and any exception it raised propagates.
-    Yields the write's Future; its result is available after the block.
-    """
-    holder_pid = uncommitted.execute("SELECT pg_backend_pid()").fetchone()[0]
-    write = run_in_daemon_thread(send_write)
-    try:
-        wait_until_blocked_behind(database_url, holder_pid, [write])
+def wait_until_queued(writes):
+    """Give `writes` time to queue on the held lock, and check none finished."""
+    time.sleep(QUEUE_SETTLE_SECONDS)
+    for write in writes:
         if write.done():
             write.result()  # surfaces the failed write's own error
             # It cannot have committed while the lock was held, so finishing
             # means the lock never covered the write at all.
-            raise AssertionError("the write finished without queuing on the row lock")
+            raise AssertionError("the write finished without waiting on the lock")
+
+
+@contextlib.contextmanager
+def blocked_api_write(uncommitted, send_write):
+    """Hold an API write in flight, queued behind the database write lock.
+
+    Takes the lock on `uncommitted`. The write runs in a background thread; the
+    body of the `with` block runs once the write is queued and therefore
+    cannot commit until the block exits. On exit the lock is released so the
+    write can finish, and any exception it raised propagates. Yields the
+    write's Future; its result is available after the block.
+    """
+    hold_write_lock(uncommitted)
+    write = run_in_daemon_thread(send_write)
+    try:
+        wait_until_queued([write])
         yield write
     finally:
         # Release the lock even on failure so the write can finish.

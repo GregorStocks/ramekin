@@ -1,6 +1,7 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::schema::shopping_list_items;
 use axum::{
     extract::{Path, State},
@@ -10,7 +11,6 @@ use axum::{
 use chrono::Utc;
 use diesel::prelude::*;
 use std::sync::Arc;
-use uuid::Uuid;
 
 #[utoipa::path(
     delete,
@@ -32,7 +32,7 @@ pub async fn delete_item(
     Path(id): Path<Uuid>,
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
-    run_db(&pool, move |conn| {
+    run_db_write(&pool, move |conn| {
         let now = Utc::now();
         let deleted = diesel::update(
             shopping_list_items::table

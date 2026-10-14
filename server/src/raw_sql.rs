@@ -11,49 +11,47 @@
 //! 2. Ensure all user input uses `.bind()`
 //! 3. Update scripts/sql_allowlist.txt with the new pattern
 
+use crate::sql_types::UuidList;
+use diesel::deserialize::{self, FromSql};
 use diesel::dsl::sql;
 use diesel::expression::SqlLiteral;
-use diesel::sql_types::{Array, Bool, Nullable, Text, Uuid as SqlUuid};
+use diesel::sql_types::{Bool, Text};
+use diesel::sqlite::{Sqlite, SqliteValue};
 
 diesel::define_sql_function! {
-    /// PostgreSQL cardinality() function for array length.
-    fn cardinality(array: Array<Nullable<SqlUuid>>) -> diesel::sql_types::Integer;
+    /// SQLite json_array_length(): the number of photos in `photo_ids`.
+    fn json_array_length(array: UuidList) -> diesel::sql_types::Integer;
 }
 
 diesel::define_sql_function! {
-    /// PostgreSQL lower() function.
-    fn lower(x: diesel::sql_types::Text) -> diesel::sql_types::Text;
+    /// SQLite random(): a random 64-bit integer, a valid sort key.
+    fn random() -> diesel::sql_types::BigInt;
 }
 
-diesel::define_sql_function! {
-    /// PostgreSQL random() function.
-    fn random() -> diesel::sql_types::Double;
-}
+/// A list of strings returned as a JSON array (`json_group_array`).
+#[derive(diesel::sql_types::SqlType, diesel::query_builder::QueryId, Clone, Copy, Debug)]
+#[diesel(sqlite_type(name = "Text"))]
+pub struct TextList;
 
-diesel::define_sql_function! {
-    /// The writing transaction's own 64-bit id, used to stamp sync-visible
-    /// changes. Defined in the `sync_change_xid` migration.
-    fn current_change_xid() -> diesel::sql_types::BigInt;
-}
-
-diesel::define_sql_function! {
-    /// The lowest transaction id still in flight for the current snapshot.
-    /// Every change stamped below it is settled, so it is a race-safe sync
-    /// cursor. Defined in the `sync_change_xid` migration.
-    fn change_xid_watermark() -> diesel::sql_types::BigInt;
+impl FromSql<TextList, Sqlite> for Vec<String> {
+    fn from_sql(value: SqliteValue<'_, '_, '_>) -> deserialize::Result<Self> {
+        let text = <String as FromSql<Text, Sqlite>>::from_sql(value)?;
+        Ok(serde_json::from_str(&text)?)
+    }
 }
 
 /// Correlated subquery to fetch tags for the current recipe_versions row.
 ///
-/// Returns an array of tag names from user_tags via the junction table.
-/// Diesel doesn't support correlated subqueries with array_agg natively.
+/// Returns the tag names from user_tags via the junction table, ordered
+/// case-insensitively. Diesel doesn't support correlated subqueries with
+/// aggregates natively.
 ///
 /// # Safety
 /// Static SQL string with no user input. References recipe_versions.id
 /// from the outer query context.
-pub fn tags_subquery() -> SqlLiteral<Array<Text>> {
-    sql::<Array<Text>>(
-        "(SELECT COALESCE(array_agg(ut.name ORDER BY ut.name), ARRAY[]::text[]) \
+pub fn tags_subquery() -> SqlLiteral<TextList> {
+    sql::<TextList>(
+        "(SELECT json_group_array(ut.name ORDER BY ut.name_key, ut.name) \
          FROM recipe_version_tags rvt \
          JOIN user_tags ut ON ut.id = rvt.tag_id \
          WHERE rvt.recipe_version_id = recipe_versions.id \
@@ -71,7 +69,7 @@ pub fn photo_file_size_filter(op: &'static str, bytes: i32) -> SqlLiteral<Bool> 
     debug_assert!(op == "<" || op == ">");
     sql::<Bool>(&format!(
         "EXISTS (SELECT 1 FROM photos p \
-         WHERE p.id = ANY(recipe_versions.photo_ids) \
+         WHERE p.id IN (SELECT value FROM json_each(recipe_versions.photo_ids)) \
          AND p.deleted_at IS NULL \
          AND p.file_size IS NOT NULL \
          AND p.file_size {} {})",
@@ -89,31 +87,43 @@ pub fn photo_min_dim_filter(op: &'static str, pixels: i32) -> SqlLiteral<Bool> {
     debug_assert!(op == "<" || op == ">");
     sql::<Bool>(&format!(
         "EXISTS (SELECT 1 FROM photos p \
-         WHERE p.id = ANY(recipe_versions.photo_ids) \
+         WHERE p.id IN (SELECT value FROM json_each(recipe_versions.photo_ids)) \
          AND p.deleted_at IS NULL \
          AND p.width IS NOT NULL AND p.height IS NOT NULL \
-         AND LEAST(p.width, p.height) {} {})",
+         AND min(p.width, p.height) {} {})",
         op, pixels
     ))
 }
 
-diesel::define_sql_function! {
-    /// Accent normalization used by the search expression trigram indexes.
-    fn f_unaccent(value: Nullable<Text>) -> Nullable<Text>;
+/// Filter: the recipe's search index row (its current version's normalized
+/// text, see the `recipe_search` table) matches an FTS5 query.
+///
+/// The unary `+` keeps SQLite from probing the version index once per
+/// (recipe, match) pair instead of reading the match set once.
+///
+/// # Safety
+/// The query is bound as a parameter.
+pub fn recipe_search_match(
+    fts_query: String,
+) -> SqlLiteral<
+    Bool,
+    diesel::expression::UncheckedBind<
+        SqlLiteral<Bool>,
+        diesel::internal::derives::as_expression::Bound<Text, String>,
+    >,
+> {
+    sql::<Bool>("+recipes.seq IN (SELECT rowid FROM recipe_search WHERE recipe_search MATCH ")
+        .bind::<Text, _>(fts_query)
+        .sql(")")
 }
 
-/// The ingredients JSONB cast to text: the haystack bare-text search matches
-/// against, both as the filter below and as the `ingredient_match_text`
-/// served through recipe sync. One expression so they can never diverge.
-const INGREDIENTS_TEXT_SQL: &str = "recipe_versions.ingredients::text";
-
-/// The exact ingredient haystack used by recipe search. Served
-/// through recipe sync so the iOS local search matches the same string
-/// instead of trying to re-create PostgreSQL's JSONB serialization. Diesel
-/// has no native support for casting JSONB to text.
+/// The ingredient haystack bare-text search matches against: the stored
+/// ingredients JSON text, both indexed for the search filter and served as
+/// `ingredient_match_text` through recipe sync, so iOS local search matches
+/// the same string. Selected as raw text so the JSON isn't reserialized.
 ///
 /// # Safety
 /// Static SQL string with no user input.
 pub fn ingredients_text() -> SqlLiteral<Text> {
-    sql::<Text>(INGREDIENTS_TEXT_SQL)
+    sql::<Text>("recipe_versions.ingredients")
 }
