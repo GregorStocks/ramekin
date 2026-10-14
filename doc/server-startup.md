@@ -165,8 +165,11 @@ at this point, and none of the steps below run for them.
   cbe14ffa6 narrowed it to these two cases, removing the re-asks after a
   model change (`reask_other_models`) and the harvested state.
 - **Cost:** One in-memory catalog lookup per resolved name, with no
-  `candidates()` scan any more. Linear in resolved names (863): ~50 ms.
-  Changes anything only after a deploy that changed the catalog.
+  `candidates()` scan any more. Linear in resolved names (863): ~50 ms with
+  nothing to change. After a catalog deploy that invalidates answers, it
+  also updates those rows, scans every live shopping item, and rewrites the
+  categories that changed. That adds cost in proportion to the shopping list
+  and the number of invalidated names.
 - **On failure:** Panics.
 - **Must block serving:** Yes. Reads apply stored answers through
   `load_learned`, and a stored `not_food` answer still applies to a name the
@@ -228,7 +231,7 @@ at this point, and none of the steps below run for them.
 | Backup scheduler | no | dir creation only | database size (snapshot if overdue) | keep |
 | `reconcile_categories` | yes | yes | shopping items | keep |
 | `resume_interrupted_jobs` | yes | no | interrupted jobs | keep |
-| `sync_with_catalog` | yes | yes | resolved names | keep |
+| `sync_with_catalog` | yes | yes | resolved names; shopping items after a catalog change | keep |
 | `queue_stored` | yes | yes | recipes × ingredients | keep for now |
 | Name worker | no | no | pending names | keep |
 | Router and listener | yes | yes | — | keep |
