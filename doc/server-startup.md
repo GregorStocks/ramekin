@@ -13,9 +13,10 @@ port is already bound while the server starts: requests wait rather than being
 refused, and a slow startup shows up as slow first requests. A panic in a
 blocking step below exits the process and process-compose starts it again, so
 a failure that persists becomes a restart loop and keeps the API down until
-someone fixes it. A panic inside a background task (steps 5, 6 and 11) ends
-only that task, since nothing joins it. The server keeps serving without that
-task until the next restart.
+someone fixes it. A panic inside a background task ends only that task,
+since nothing joins it. Those tasks are steps 5, 6 and 11, plus the job
+runners step 8 starts. The server keeps serving without that task until the
+next restart; a job whose runner panicked stays stuck until then.
 
 ## Measured cost
 
