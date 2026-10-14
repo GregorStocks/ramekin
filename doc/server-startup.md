@@ -114,8 +114,10 @@ at this point, and none of the steps below run for them.
   the newest one is more than a day old, then one a day after that, and
   prunes old snapshots. Added in 8fa32b720; see `doc/sqlite-cutover.md`,
   "Backups".
-- **Cost:** Nothing at startup apart from `create_dir_all`. Snapshots run on a
-  background task.
+- **Cost:** Blocks only for `create_dir_all`. The background task scans the
+  directory for the newest snapshot. If it's missing or more than a day old,
+  the task runs `VACUUM INTO` right away, which reads the whole database
+  (about 1 GB today) while the server serves.
 - **On failure:** If the directory can't be created, the server panics. A
   failed snapshot logs an error and retries.
 - **Must block serving:** No, and it doesn't.
@@ -146,8 +148,9 @@ at this point, and none of the steps below run for them.
 - **Why blocking:** Before 8f743c1f7 this scan ran in a detached task. A job
   created by an early request could then be picked up a second time, and two
   runners would save the same recipe.
-- **Cost:** One query over `scrape_jobs`, filtered by status. The jobs
-  themselves run in the background.
+- **Cost:** One query over `scrape_jobs`, filtered by status, plus one
+  blocking write per interrupted photo job it marks failed. The jobs it
+  restarts run in the background.
 - **On failure:** Logs an error and keeps going, so interrupted jobs stay
   stuck until the next restart.
 - **Recommendation:** Keep.
@@ -194,7 +197,9 @@ at this point, and none of the steps below run for them.
 - **What:** Resolves pending names through the LLM in batches, starting
   with whatever was pending at startup, and backs off when the provider
   fails.
-- **Cost:** Nothing at startup.
+- **Cost:** Doesn't block. Right after startup it drains any names left
+  pending, one LLM batch of 40 at a time, which grows with the number of
+  pending names (0 in the prod copy).
 - **Recommendation:** Keep.
 
 ### 12. Router and listener
@@ -219,12 +224,12 @@ at this point, and none of the steps below run for them.
 | Data migrations | yes | yes | pending migrations (none) | keep the runner |
 | Connection pool | yes | yes | — | keep |
 | Photo dimension backfill | no | no | photos (nothing pending) | **delete** |
-| Backup scheduler | no | dir creation only | — | keep |
+| Backup scheduler | no | dir creation only | database size (snapshot if overdue) | keep |
 | `reconcile_categories` | yes | yes | shopping items | keep |
 | `resume_interrupted_jobs` | yes | no | interrupted jobs | keep |
 | `sync_with_catalog` | yes | yes | resolved names | keep |
 | `queue_stored` | yes | yes | recipes × ingredients | keep for now |
-| Name worker | no | no | — | keep |
+| Name worker | no | no | pending names | keep |
 | Router and listener | yes | yes | — | keep |
 
 Step 10 could run as the name worker's first step, after the server is
