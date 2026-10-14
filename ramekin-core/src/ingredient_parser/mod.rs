@@ -17,6 +17,7 @@ mod item;
 mod measure;
 mod parentheticals;
 pub mod quantity;
+mod segments;
 mod tokens;
 mod units;
 
@@ -26,6 +27,7 @@ pub(crate) use citrus::citrus_part_name;
 use citrus::parse_citrus_part_line;
 use item::*;
 use parentheticals::*;
+use segments::{Segments, Sep};
 use units::*;
 
 pub(in crate::ingredient_parser) use fractions::unicode_fraction_ascii;
@@ -342,6 +344,40 @@ fn split_leading_item_qualifier(item: &str) -> Option<(&str, &str)> {
                 )
             })
     })
+}
+
+/// After a bare amount, the rest of a list of alternative amounts: more bare
+/// amounts after commas, then "or" and the last amount with the unit or food
+/// they share (", 1/4 or 1/2 teaspoon yeast", ", 3, or 4 eggs"). Returns the
+/// middle amounts and the read of the last one.
+fn alternative_amount_list(rest: &str) -> Option<(Vec<String>, measure::Read)> {
+    let segments = Segments::new(rest);
+    let splits = segments.splits();
+    if !segments.head().is_empty() || splits.first()?.sep != Sep::Comma {
+        return None;
+    }
+    let mut amounts = Vec::new();
+    for split in splits {
+        match split.sep {
+            // ", or": the comma before the last amount.
+            Sep::Comma if split.segment.is_empty() => {}
+            Sep::Comma => {
+                let read = measure::read_measurement(split.segment);
+                if read.modifier.is_some() || read.unit.is_some() || !read.rest.is_empty() {
+                    return None;
+                }
+                amounts.push(read.amount?);
+            }
+            Sep::Or => {
+                let read = measure::read_measurement(split.after);
+                let names_food = read.unit.is_some() || read.rest.starts_with(char::is_alphabetic);
+                return (!amounts.is_empty() && read.amount.is_some() && names_food)
+                    .then_some((amounts, read));
+            }
+            _ => return None,
+        }
+    }
+    None
 }
 
 /// "two US sticks unsalted butter" -> (2 stick, "unsalted butter").
@@ -691,34 +727,34 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // " plus " -> check if followed by valid measurement (amount+unit)
     //   - If valid measurement: handled later as compound amount (e.g., "1 cup plus 2 tbsp flour")
     //   - If no valid measurement: extract as note (e.g., "1 egg plus 1 yolk")
-    if let Some(plus_idx) = remaining.to_lowercase().find(", plus ") {
-        // With comma: always extract as note
-        if let Some(plus_part) = remaining.get(plus_idx + 2..) {
-            if note.is_none() {
-                note = Some(plus_part.trim().to_string());
-            }
-        }
-        remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
-    } else if let Some(plus_idx) = remaining.to_lowercase().find(" plus ") {
-        // Without comma: check if followed by valid measurement
-        let before_plus = remaining.get(..plus_idx).unwrap_or("").trim();
-        let after_plus = remaining.get(plus_idx + 6..).unwrap_or("").trim();
-        if !after_plus.is_empty() {
-            let (plus_prefix, _) = strip_plus_measurement_prefix(after_plus);
-            let plus_measurement = parse_plus_continuation_measurement(after_plus);
-            let plus_belongs_to_leading_measurement = leading_measurement_consumes_all(before_plus);
+    {
+        let segments = Segments::new(&remaining);
+        let words = || {
+            segments
+                .splits()
+                .iter()
+                .filter(|s| s.sep == Sep::Plus && !s.sign)
+        };
+        if let Some(plus) = words().find(|s| s.follows_comma) {
+            // With comma: always extract as note
+            note = Some(plus.from_sep.to_string());
+            remaining = plus.before.trim_end_matches(',').trim().to_string();
+        } else if let Some(plus) = words().next() {
+            // Without comma: check if followed by valid measurement
+            if !plus.before.is_empty() && !plus.after.is_empty() {
+                let (plus_prefix, _) = strip_plus_measurement_prefix(plus.after);
+                let plus_measurement = parse_plus_continuation_measurement(plus.after);
+                let plus_belongs_to_leading_measurement =
+                    leading_measurement_consumes_all(plus.before);
 
-            // Only if we DON'T have amount+unit, treat as note (fallback)
-            // Cases with valid measurement are handled later as compound amounts
-            if plus_measurement.is_none()
-                || (plus_prefix.is_some() && !plus_belongs_to_leading_measurement)
-            {
-                if let Some(plus_part) = remaining.get(plus_idx + 1..) {
-                    if note.is_none() {
-                        note = Some(plus_part.trim().to_string());
-                    }
+                // Only if we DON'T have amount+unit, treat as note (fallback)
+                // Cases with valid measurement are handled later as compound amounts
+                if plus_measurement.is_none()
+                    || (plus_prefix.is_some() && !plus_belongs_to_leading_measurement)
+                {
+                    note = Some(plus.from_sep.to_string());
+                    remaining = plus.before.to_string();
                 }
-                remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
             }
         }
     }
@@ -742,6 +778,33 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let mut primary_amount = read.amount.clone();
     let mut primary_unit = read.modified_unit();
     remaining = read.rest.to_string();
+
+    // Step 3.5: "1/8, 1/4 or 1/2 teaspoon yeast", "2, 3 or 4 eggs": a list
+    // of bare amounts ending in an "or" alternative shares its unit.
+    if primary_amount.is_some() && read.unit.is_none() {
+        if let Some((amounts, last)) = alternative_amount_list(&remaining) {
+            let shared_unit = match (&read.modifier, &last.unit) {
+                (Some(m), Some(u)) => Some(format!("{m} {u}")),
+                (Some(m), None) => Some(m.clone()),
+                (None, u) => u.clone(),
+            };
+            let last_unit = if last.modifier.is_some() {
+                last.modified_unit()
+            } else {
+                shared_unit.clone()
+            };
+            primary_unit = shared_unit.clone();
+            alt_measurements.extend(amounts.into_iter().map(|amount| Measurement {
+                amount: Some(amount),
+                unit: shared_unit.clone(),
+            }));
+            alt_measurements.push(Measurement {
+                amount: last.amount,
+                unit: last_unit,
+            });
+            remaining = last.rest;
+        }
+    }
 
     // Step 4.4a: Handle repeated-unit ranges like "1/2 cup to 1 cup white rum".
     // If the second half parses as another measurement with the same unit, fold it
@@ -788,15 +851,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // e.g., "1/2 cup plus 2 tablespoons flour" -> amount="1/2 cup plus 2 tablespoons", unit=null
     // This keeps the compound quantity together as a single amount rather than splitting into note
     loop {
-        let remaining_trimmed = remaining.trim_start();
-        let remaining_lower = remaining_trimmed.to_lowercase();
-        let (after_plus, is_plus_sign) = if let Some(rest) = remaining_trimmed.strip_prefix('+') {
-            (rest.trim_start(), true)
-        } else if remaining_lower.starts_with("plus ") {
-            (remaining_trimmed.get(5..).unwrap_or("").trim_start(), false)
-        } else {
+        let segments = Segments::new(&remaining);
+        let Some(plus) = segments.leading().filter(|s| s.sep == Sep::Plus) else {
             break;
         };
+        let (after_plus, is_plus_sign) = (plus.after, plus.sign);
 
         // Try to parse a measurement from what follows "plus"
         let plus_measurement = parse_plus_continuation_measurement(after_plus);
@@ -849,11 +908,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // e.g., remaining = " or 3 heaping cups frozen pineapple"
     // Only split if what follows "or" is a valid measurement (has amount AND unit)
     // This avoids false positives like "vanilla or chocolate ice cream"
-    let remaining_trimmed = remaining.trim_start();
-    let remaining_lower = remaining_trimmed.to_lowercase();
-    if remaining_lower.starts_with("or ") {
-        // Use the length of what was stripped to get from original (preserving case)
-        let after_or = remaining_trimmed.get(3..).unwrap_or("").trim_start();
+    if let Some(after_or) = Segments::new(&remaining).leading_after(Sep::Or) {
         // "or approximately 4 sausages": the approximation is dropped, as in
         // a parenthetical "(about 4 medium)".
         let (_, after_or) = strip_leading_measurement_qualifier(after_or);
@@ -913,11 +968,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // This handles metric/imperial alternatives like "3.5 oz / 100g"
     // Loop to handle multiple: "3/4 cup / 4 oz / 115g toasted sunflower seeds"
     loop {
-        let remaining_trimmed = remaining.trim_start();
-        let Some(after_slash) = remaining_trimmed.strip_prefix('/') else {
+        let segments = Segments::new(&remaining);
+        let Some(after_slash) = segments.leading_after(Sep::Slash) else {
             break;
         };
-        let after_slash = after_slash.trim_start();
 
         // Only treat as alternative if we got BOTH amount AND unit
         let read = measure::read_measurement(after_slash);
@@ -940,14 +994,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Loop to handle multiple attached measurements, including slash patterns
     let mut found_attached_metric = false;
     loop {
-        let remaining_trimmed = remaining.trim_start();
-
         // Check for slash-separated alternative (e.g., "/8 oz." after "226g")
         // Only do this AFTER we've found at least one attached metric, to avoid
         // false positives like "1/2cup" being parsed as "1" then "/2 cup"
         if found_attached_metric {
-            if let Some(after_slash) = remaining_trimmed.strip_prefix('/') {
-                let after_slash = after_slash.trim_start();
+            if let Some(after_slash) = Segments::new(&remaining).leading_after(Sep::Slash) {
                 let read = measure::read_measurement(after_slash);
                 if read.amount.is_some() && read.unit.is_some() {
                     alt_measurements.push(Measurement {
@@ -975,9 +1026,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Step 4.7b: Fold same-unit trailing "+ amount unit" continuations that
     // appear after the item text, e.g. "3/4 tsp salt + 1/8 tsp".
     if let (Some(amount), Some(unit)) = (primary_amount.as_ref(), primary_unit.as_ref()) {
-        if let Some(plus_idx) = remaining.rfind(" + ") {
-            let before_plus = remaining.get(..plus_idx).unwrap_or("").trim();
-            let after_plus = remaining.get(plus_idx + 3..).unwrap_or("").trim();
+        let segments = Segments::new(&remaining);
+        if let Some(plus) = segments
+            .splits()
+            .iter()
+            .rfind(|s| s.sep == Sep::Plus && s.sign)
+        {
+            let (before_plus, after_plus) = (plus.before, plus.after);
             if !before_plus.is_empty() {
                 if let Some((plus_amount, Some(plus_unit), after_plus_unit)) =
                     parse_range_continuation_measurement(after_plus)
@@ -994,9 +1049,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Step 4.7c: Treat mid-item "+ more ..." guidance as a note, matching the
     // existing handling for ", plus more ...".
     if note.is_none() {
-        if let Some(plus_idx) = remaining.to_lowercase().find(" + ") {
-            let before_plus = remaining.get(..plus_idx).unwrap_or("").trim();
-            let after_plus = remaining.get(plus_idx + 3..).unwrap_or("").trim();
+        let segments = Segments::new(&remaining);
+        if let Some(plus) = segments
+            .splits()
+            .iter()
+            .find(|s| s.sep == Sep::Plus && s.sign)
+        {
+            let (before_plus, after_plus) = (plus.before, plus.after);
             if !before_plus.is_empty() && !after_plus.is_empty() {
                 let plus_note = format!("plus {}", after_plus);
                 if is_trailing_guidance_note(&plus_note) {
@@ -1014,13 +1073,9 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // the end of the line (", plus more").
     {
         let mut peeled: Vec<String> = Vec::new();
-        while let Some(comma_idx) = remaining.rfind(',') {
-            let potential_note = remaining
-                .get(comma_idx + 1..)
-                .unwrap_or("")
-                .trim()
-                .to_string();
-            let potential_item = remaining.get(..comma_idx).unwrap_or("").trim().to_string();
+        while let Some(comma) = Segments::new(&remaining).last(Sep::Comma) {
+            let potential_note = comma.after.to_string();
+            let potential_item = comma.before.to_string();
             let guidance = is_trailing_guidance_note(&potential_note);
             let lower_note = potential_note.to_lowercase();
             // "and sliced scallions" continues a list of foods; it is never a note.
@@ -1084,10 +1139,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
         // "apples - peeled, cored, and sliced": a dash sets off the first
         // prep step.
-        if let Some((item_part, prep)) = remaining.split_once(" - ") {
-            if !item_part.trim().is_empty() && is_strict_trailing_prep_note(prep) {
-                peeled.push(prep.trim().to_string());
-                remaining = item_part.trim().to_string();
+        if let Some(dash) = Segments::new(&remaining).first(Sep::Dash) {
+            if !dash.before.is_empty() && is_strict_trailing_prep_note(dash.after) {
+                peeled.push(dash.after.to_string());
+                remaining = dash.before.to_string();
             }
         }
         if !peeled.is_empty() {
@@ -1141,18 +1196,21 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // - The text after " or " contains a measurement somewhere (indicating an alternative preparation)
     // This avoids breaking compound noun phrases like "chicken or vegetable stock"
     {
-        if let Some(or_idx) = remaining.to_lowercase().find(" or ") {
-            let before_or = remaining.get(..or_idx).unwrap_or("").trim();
-            let after_or = remaining.get(or_idx + 4..).unwrap_or("").trim(); // Skip " or "
+        let segments = Segments::new(&remaining);
+        if let Some(or) = segments.first(Sep::Or) {
+            let (before_or, after_or) = (or.before, or.after);
 
             // Check if after_or contains a measurement pattern (number + unit)
             // This catches cases like "a combination of 1/4 teaspoon..."
             // We require BOTH a number AND a unit to be present to avoid false positives
             // Only check content before the first comma (to avoid "orange or lemon zest, 1 tsp...")
             // Exclude content in parentheses from the check (e.g., "(I used 5 cups...)")
-            let after_or_lower = after_or.to_lowercase();
             // Get content before first comma, then remove parentheticals
-            let before_comma = after_or_lower.split(',').next().unwrap_or(&after_or_lower);
+            let after_or_segments = Segments::new(after_or);
+            let before_comma = after_or_segments
+                .first(Sep::Comma)
+                .map_or(after_or, |comma| comma.before)
+                .to_lowercase();
             let without_parens: String = {
                 let mut result = String::new();
                 let mut depth: i32 = 0;
@@ -1263,9 +1321,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // e.g., remaining = "vegetable broth, 1 1/2 cups vegetable broth (for cooked chickpeas)"
     // Pattern: [item], [amount] [unit] [same item] ([condition])
     // The repeated item name distinguishes this from other comma uses.
-    if let Some(comma_idx) = remaining.find(',') {
-        let before_comma = remaining.get(..comma_idx).unwrap_or("").trim();
-        let after_comma = remaining.get(comma_idx + 1..).unwrap_or("").trim();
+    if let Some(comma) = Segments::new(&remaining).first(Sep::Comma) {
+        let (before_comma, after_comma) = (comma.before, comma.after);
 
         if !before_comma.is_empty() && !after_comma.is_empty() {
             let read = measure::read_measurement(after_comma);

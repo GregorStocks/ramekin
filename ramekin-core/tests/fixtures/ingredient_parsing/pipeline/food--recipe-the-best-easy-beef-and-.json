@@ -19,14 +19,14 @@
     {
       "raw": "1/2  cup    water, plus",
       "expected": {
-        "item": "water, plus",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus",
         "category": "Beverages"
       }
     },
