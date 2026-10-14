@@ -1,5 +1,5 @@
 use super::read::fetch_current_recipe_with_version_and_tags;
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
@@ -100,7 +100,7 @@ pub async fn update_recipe(
 
     let user_id = user.id;
 
-    run_db(&pool, move |conn| {
+    run_db_locked(&pool, move |conn| {
         let (current_version, cur_tags): (RecipeVersion, Vec<String>) =
             match fetch_current_recipe_with_version_and_tags(conn, user_id, id) {
                 Ok((recipe, tags)) => (recipe.version, tags),

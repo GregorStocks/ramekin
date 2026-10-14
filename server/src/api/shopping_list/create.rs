@@ -1,4 +1,4 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
@@ -62,7 +62,7 @@ pub async fn create_items(
     }
 
     let user_id = user.id;
-    let ids = run_db(&pool, move |conn| {
+    let ids = run_db_locked(&pool, move |conn| {
         crate::db::write(conn, |conn| {
             // Get current max sort_order for this user
             let max_sort_order: i32 = shopping_list_items::table

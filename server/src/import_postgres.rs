@@ -394,8 +394,10 @@ pub fn run(postgres_url: &str, database_url: &str) -> anyhow::Result<()> {
         )?
         .get(0);
 
-    let mut copied = Vec::new();
-    conn.immediate_transaction(|conn| {
+    // Validated before the transaction commits, so a failed check leaves
+    // nothing behind.
+    let indexed = conn.immediate_transaction(|conn| {
+        let mut copied = Vec::new();
         for table in TABLES {
             let count = copy_table(&mut snapshot, conn, table)?;
             tracing::info!(table = table.name, rows = count, "copied");
@@ -446,29 +448,30 @@ pub fn run(postgres_url: &str, database_url: &str) -> anyhow::Result<()> {
              UPDATE shopping_list_items SET change_seq = {restamp} WHERE deleted_at IS NULL;"
         ))?;
 
-        anyhow::Ok(())
-    })?;
-
-    // Every row came across, deleted ones included.
-    for (table, count) in &copied {
-        let sqlite = sqlite_count(&mut conn, table)?;
+        // Every row came across, deleted ones included.
+        for (table, count) in &copied {
+            let sqlite = sqlite_count(conn, table)?;
+            anyhow::ensure!(
+                sqlite == *count as i64,
+                "{table}: {count} rows in Postgres, {sqlite} in SQLite"
+            );
+        }
+        let live: i64 = snapshot
+            .query_one(
+                "SELECT count(*) FROM recipes WHERE deleted_at IS NULL AND current_version_id IS NOT NULL",
+                &[],
+            )?
+            .get(0);
+        let indexed = sqlite_count(conn, "recipe_search")?;
         anyhow::ensure!(
-            sqlite == *count as i64,
-            "{table}: {count} rows in Postgres, {sqlite} in SQLite"
+            indexed == live,
+            "search index has {indexed} rows for {live} live recipes"
         );
-    }
-    let live: i64 = snapshot
-        .query_one(
-            "SELECT count(*) FROM recipes WHERE deleted_at IS NULL AND current_version_id IS NOT NULL",
-            &[],
-        )?
-        .get(0);
-    let indexed = sqlite_count(&mut conn, "recipe_search")?;
-    anyhow::ensure!(
-        indexed == live,
-        "search index has {indexed} rows for {live} live recipes"
-    );
-    snapshot.commit()?;
+
+        anyhow::Ok(indexed)
+    })?;
+    // The snapshot only read; dropping it rolls it back.
+    drop(snapshot);
 
     tracing::info!(xmax, indexed, "import complete");
     Ok(())

@@ -68,8 +68,9 @@ fn lock_writes() -> Option<(std::sync::MutexGuard<'static, ()>, FlagGuard)> {
 /// through here, including single statements. Keep the closure short and
 /// free of network calls: every other writer waits for it.
 ///
-/// When the whole closure of a `run_blocking` is one write, use
-/// [`run_blocking_write`] (or the API's `run_db_write`) instead.
+/// Run it under [`run_blocking_locked`] or [`run_blocking_write`] (the API's
+/// `run_db_locked` / `run_db_write`), which take the lock before a pooled
+/// connection.
 pub fn write<T, E, F>(conn: &mut SqliteConnection, f: F) -> Result<T, E>
 where
     F: FnOnce(&mut SqliteConnection) -> Result<T, E>,
@@ -81,6 +82,18 @@ where
     let _lock = lock_writes();
     let _in_transaction = FlagGuard::set(&IN_WRITE_TRANSACTION);
     conn.immediate_transaction(f)
+}
+
+/// [`run_blocking`] holding the write lock: takes the lock, then a
+/// connection, so a writer waiting for the lock doesn't tie up a pooled
+/// connection readers could use. For closures that read and then call
+/// [`write`] themselves.
+pub async fn run_blocking_locked<T, F>(pool: &DbPool, f: F) -> Result<T, r2d2::PoolError>
+where
+    F: FnOnce(&mut DbConn) -> T + Send + 'static,
+    T: Send + 'static,
+{
+    run_blocking_with(pool, true, f).await
 }
 
 /// [`run_blocking`] with the whole closure in one [`write`]. Takes the write

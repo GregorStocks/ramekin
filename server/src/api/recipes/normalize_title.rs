@@ -1,5 +1,5 @@
 use crate::api::ai::ai_client_from_env;
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db, run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
@@ -140,7 +140,7 @@ pub async fn normalize_title(
     }
 
     let title_for_write = new_title.clone();
-    run_db(&pool, move |conn| {
+    run_db_locked(&pool, move |conn| {
         let write_result: Result<(), VersionWriteError> = crate::db::write(conn, |conn| {
             let new_version = NewRecipeVersion {
                 title: &title_for_write,

@@ -1,5 +1,5 @@
 use crate::api::ai::ai_config_from_env;
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db, run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
@@ -187,7 +187,7 @@ pub async fn generate_photo(
         }
     };
 
-    let (photo_id, version_id) = run_db(&pool, move |conn| {
+    let (photo_id, version_id) = run_db_locked(&pool, move |conn| {
         let write_result: Result<(Uuid, Uuid), VersionWriteError> =
             crate::db::write(conn, |conn| {
                 let (current_version_id, current_version): (Option<Uuid>, RecipeVersion) =

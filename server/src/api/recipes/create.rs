@@ -1,4 +1,4 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
@@ -101,7 +101,7 @@ pub async fn create_recipe(
 
     let user_id = user.id;
 
-    let recipe_id = run_db(&pool, move |conn| {
+    let recipe_id = run_db_locked(&pool, move |conn| {
         // Use a transaction to create recipe + version atomically
         let result: Result<Uuid, VersionWriteError> = crate::db::write(conn, |conn| {
             let recipe_id = insert_recipe(conn, user_id)?;

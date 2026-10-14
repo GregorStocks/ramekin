@@ -721,21 +721,19 @@ async fn save_failed(
         return Ok(0);
     }
     let now = Utc::now();
-    run_blocking(pool, move |conn| {
-        crate::db::write(conn, |conn| {
-            let failed = names::table
-                .filter(names::name.eq_any(&failed))
-                .filter(names::status.eq(PENDING));
-            diesel::update(failed.clone())
-                .set((
-                    names::attempts.eq(names::attempts + 1),
-                    names::updated_at.eq(now),
-                ))
-                .execute(conn)?;
-            diesel::update(failed.filter(names::attempts.ge(MAX_ATTEMPTS)))
-                .set((names::status.eq(FAILED), names::error.eq(&error)))
-                .execute(conn)
-        })
+    crate::db::run_blocking_write(pool, move |conn| {
+        let failed = names::table
+            .filter(names::name.eq_any(&failed))
+            .filter(names::status.eq(PENDING));
+        diesel::update(failed.clone())
+            .set((
+                names::attempts.eq(names::attempts + 1),
+                names::updated_at.eq(now),
+            ))
+            .execute(conn)?;
+        diesel::update(failed.filter(names::attempts.ge(MAX_ATTEMPTS)))
+            .set((names::status.eq(FAILED), names::error.eq(&error)))
+            .execute(conn)
     })
     .await
     .map_err(|e| e.to_string())?

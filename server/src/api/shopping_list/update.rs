@@ -1,4 +1,4 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
@@ -63,7 +63,7 @@ pub async fn update_item(
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
     let renamed_to = request.item.clone();
-    run_db(&pool, move |conn| {
+    run_db_locked(&pool, move |conn| {
         // Fetch the existing item
         let existing: Option<ItemRow> = shopping_list_items::table
             .filter(shopping_list_items::id.eq(id))

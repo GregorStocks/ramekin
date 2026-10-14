@@ -40,6 +40,23 @@ where
     }
 }
 
+/// [`run_db`] holding the database write lock, for a closure that reads and
+/// then calls `db::write` itself. The lock comes before the pooled
+/// connection, so queued writers don't starve readers of connections.
+pub async fn run_db_locked<T, F>(pool: &DbPool, f: F) -> Result<T, ApiError>
+where
+    F: FnOnce(&mut DbConn) -> Result<T, ApiError> + Send + 'static,
+    T: Send + 'static,
+{
+    match crate::db::run_blocking_locked(pool, f).await {
+        Ok(result) => result,
+        Err(e) => {
+            tracing::error!(error = %e, "failed to get database connection");
+            Err(ApiError::internal("Database connection failed"))
+        }
+    }
+}
+
 /// [`run_db`] for a closure that writes: it runs inside `db::write`, so it
 /// holds the database write lock throughout. Keep slow work (password
 /// hashing, network calls) out of the closure.

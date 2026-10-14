@@ -1,4 +1,4 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::{self, DbPool};
 use crate::ids::Uuid;
@@ -209,7 +209,7 @@ pub async fn sync_items(
         (None, None) => ChangesSince::All,
     };
 
-    let response = run_db(&pool, move |conn| {
+    let response = run_db_locked(&pool, move |conn| {
         db::write::<_, diesel::result::Error, _>(conn, |conn| {
             // Read before this sync's own writes, which therefore carry stamps
             // at or above it and come back on the next sync. Clients apply
