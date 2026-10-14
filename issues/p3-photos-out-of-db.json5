@@ -1,0 +1,19 @@
+{
+  "title": "Store photo blobs as files outside the SQLite database",
+  "description": "Photos live in the database as BLOBs (photos.data, photos.thumbnail, photo_thumbnails.data), so they dominate the SQLite file's size and every backup copies all of them. \
+That's why backups are daily (server/src/backup.rs, doc/sqlite-cutover.md): an hourly snapshot of a mostly-image database is a lot of I/O and backup storage. \
+Move the image bytes to content-addressed files in a directory next to the database (e.g. a hash-named file per photo and thumbnail), keeping only metadata and the file reference in the tables. \
+Never delete data: a soft-deleted photo keeps its file, and the migration copies existing BLOBs out in chunked writes (each write transaction short, since every other writer waits) before clearing the columns. \
+Backups then need the photo directory too (files are immutable once written, so a plain sync/rsync of it is enough). \
+Serve photos and thumbnails from the files in api/photos, and update the importer docs and the cutover runbook. \
+Once done, confirm the database file has become small (compare its size before and after on a copy of prod), and if so consider going back to hourly snapshots in backup.rs. \
+Related: p4-compress-fetched-html, the other large thing in the file.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+  ],
+  "created_at": "2026-10-14T14:00:00-07:00",
+  "updated_at": "2026-10-14T14:00:00-07:00",
+}

@@ -7,7 +7,9 @@ make dev     # Starts server, UI with hot-reload
 ```
 
 The database is a SQLite file per worktree (`.db/dev.sqlite`, `.db/test.sqlite`,
-paths in `dev.env` / `test.env`). The server creates and migrates it on startup.
+paths in `dev.env` / `test.env`). The server creates and migrates it on startup. With
+`RAMEKIN_BACKUP_DIR` set it also writes a daily snapshot there (see
+doc/sqlite-cutover.md); `make db-backup` takes one on demand.
 
 Edit code in `server/src/` and it auto-recompiles. Stop with `make dev-down`.
 
