@@ -204,8 +204,9 @@ What the numbers say:
   rechecks over the whole instructions and ingredients text. `EXPLAIN ANALYZE`
   at 5k recipes shows ~300 ms of that server-side, so the cost is real and not
   driver overhead. An FTS5 index over current versions only is far cheaper.
-  (Indexing only current versions would also help on Postgres, as a separate
-  improvement.)
+  (Postgres has since limited its trigram indexes to current versions, in
+  migration `2026-10-15-000000-0000_current_version_search_indexes`; the
+  benchmark's own Postgres schema still models the old all-versions indexes.)
 - **Sync and list are in-process lookups on SQLite.** There's no socket round
   trip or result serialization, which dominates the full sync sweep.
 - **The scan fallback for <3-char tokens is the slow path.** With a Python
