@@ -202,14 +202,13 @@ at this point, and none of the steps below run for them.
 - **What:** Builds the router, takes the listener from `systemfd` or binds
   `PORT`, and serves.
 - **Cost:** Constant.
-- **On failure:** Panics if `PORT` is missing or invalid, or if no socket can
-  be bound. The panic comes only after steps 2–10 have run, so a bad `PORT`
-  repeats all of them on every restart of the loop. Under `make serve`,
-  `systemfd` already holds the socket, so only a bad `PORT` can fail here.
-- **Recommendation:** Keep. Reading and checking `PORT` at the top of
-  `main()` would make a bad `PORT` fail before any database work. That's
-  cheap, but the work it skips takes only half a second, so it isn't
-  worth an issue unless you want it.
+- **On failure:** Run directly, the server panics if `PORT` is missing or
+  invalid, or if it can't bind the socket. The panic comes only after steps
+  2–10 have run. Under `make serve` that can't happen:
+  `serve-release.sh` rejects a missing `PORT`, and `systemfd` fails on a
+  malformed or busy port before it launches the server. It then hands over
+  a socket it has already bound.
+- **Recommendation:** Keep.
 
 ## Summary
 
