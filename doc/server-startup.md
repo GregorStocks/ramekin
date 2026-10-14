@@ -190,8 +190,17 @@ cost grows with the recipe collection.
 
 ### 12. Router and listener
 
-Builds the router, takes the listener from `systemfd` or binds `PORT`, and
-serves.
+- **What:** Builds the router, takes the listener from `systemfd` or binds
+  `PORT`, and serves.
+- **Cost:** Constant.
+- **On failure:** Panics if `PORT` is missing or invalid, or if no socket can
+  be bound. The panic comes only after steps 2–10 have run, so a bad `PORT`
+  repeats all of them on every restart of the loop. Under `make serve`,
+  `systemfd` already holds the socket, so only a bad `PORT` can fail here.
+- **Recommendation:** Keep. Reading and checking `PORT` at the top of
+  `main()` would make a bad `PORT` fail before any database work. That's
+  cheap, but the work it skips takes only half a second, so it isn't
+  worth an issue unless you want it.
 
 ## Summary
 
@@ -207,6 +216,7 @@ serves.
 | `sync_with_catalog` | yes | yes | resolved names | keep |
 | `queue_stored` | yes | yes | recipes × ingredients | keep for now |
 | Name worker | no | no | — | keep |
+| Router and listener | yes | yes | — | keep |
 
 Step 10 could run as the name worker's first step, after the server is
 listening. That would take about 270 ms off startup. It would also turn a
