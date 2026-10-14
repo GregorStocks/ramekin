@@ -49,9 +49,10 @@ pub(super) fn parse_parenthetical_measurement_details(
             Some(measurement)
         });
         if let Some(mut m) = measurement {
-            // If the entire parenthetical had trailing "each", apply it to all measurements
-            // unless this measurement already has "each"
-            if has_trailing_each {
+            // If the entire parenthetical had trailing "each", apply it to every
+            // measurement that sizes one item, unless it already has "each". A count is
+            // how many items there are: "(2pkg./250g each)" is 2 packages of 250 g each.
+            if has_trailing_each && quantity::sizes_one_item(&m) {
                 if let Some(ref unit) = m.unit {
                     if !unit.ends_with(" each") {
                         m.unit = Some(format!("{} each", unit));
@@ -850,6 +851,29 @@ mod tests {
         assert_eq!(result[0].unit, Some("lbs".to_string()));
         assert_eq!(result[1].amount, Some("570".to_string()));
         assert_eq!(result[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_trailing_each_skips_a_count() {
+        let result = parse_parenthetical_measurements("2pkg./250g each");
+        let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
+        assert_eq!(units, [Some("pkg"), Some("g each")]);
+
+        let result = parse_parenthetical_measurements("2 sticks/4 oz each");
+        let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
+        assert_eq!(units, [Some("sticks"), Some("oz each")]);
+
+        let result = parse_parenthetical_measurements("3 8-ounce packages/226 g each");
+        let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
+        assert_eq!(units, [Some("8-ounce packages"), Some("g each")]);
+
+        let result = parse_parenthetical_measurements("2 3-inch chunks/28 g each");
+        let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
+        assert_eq!(units, [Some("3-inch chunks"), Some("g each")]);
+
+        let result = parse_parenthetical_measurements("8 ounces; 227 g each");
+        let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
+        assert_eq!(units, [Some("ounces each"), Some("g each")]);
     }
 
     #[test]

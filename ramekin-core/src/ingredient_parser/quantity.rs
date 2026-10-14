@@ -283,6 +283,22 @@ pub fn read(measurement: &Measurement) -> Measure {
     terms(measurement.amount.as_deref()?, &outer)
 }
 
+/// Whether a measurement can size one item: a plain mass, volume, or length
+/// ("10 oz", "1 cup", "3 inches"). Counts of anything, weighed containers
+/// ("3 8-ounce packages") and cut pieces ("2 3-inch chunks") included, can't.
+pub(super) fn sizes_one_item(measurement: &Measurement) -> bool {
+    let Some(unit) = measurement.unit.as_deref().map(normalize) else {
+        return false;
+    };
+    if package_grams(&unit).is_some() || inch_piece_size(&unit).is_some() {
+        return false;
+    }
+    let unit = canonical_unit(&unit);
+    mass_grams(&unit).is_some()
+        || volume_to_cups(1.0, &unit).is_some()
+        || matches!(unit.as_str(), "inch" | "inches" | "in" | "cm")
+}
+
 /// How many items a measurement counts ("2 cans", "3 steaks", "4"), when
 /// it's a plain count rather than a weight or a volume.
 fn count(measurement: &Measurement) -> Option<Range> {
