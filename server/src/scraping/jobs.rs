@@ -1,7 +1,7 @@
+use crate::ids::Uuid;
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use diesel::result::{DatabaseErrorKind, Error as DieselError};
-use uuid::Uuid;
 
 use ramekin_core::pipeline::steps::{
     ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
@@ -9,19 +9,23 @@ use ramekin_core::pipeline::steps::{
 use ramekin_core::{ExtractRecipeOutput, ExtractionMethod, FetchHtmlOutput, FetchImagesOutput};
 use ramekin_core::{RawRecipe, BUILD_ID};
 
-use crate::db::{DbConn, DbPool};
+use crate::db::DbPool;
 use crate::models::{NewImportJob, NewScrapeJob, NewStepOutput, ScrapeJob};
 use crate::schema::{scrape_jobs, step_outputs};
 
 use super::status;
 use super::steps::FetchHtmlStep;
-use super::{run_scrape_db, ScrapeError, STATUS_COMPLETED, STATUS_FAILED, STATUS_PARSING};
+use super::{
+    run_scrape_db, run_scrape_db_write, ScrapeError, STATUS_COMPLETED, STATUS_FAILED,
+    STATUS_PARSING,
+};
 
 /// Create a new scrape job.
 pub async fn create_job(pool: &DbPool, user_id: Uuid, url: &str) -> Result<ScrapeJob, ScrapeError> {
     let url = url.to_string();
-    run_scrape_db(pool, move |conn| {
+    run_scrape_db_write(pool, move |conn| {
         let new_job = NewScrapeJob {
+            id: Uuid::now_v7(),
             user_id,
             url: Some(url.as_str()),
         };
@@ -44,9 +48,10 @@ pub async fn create_rescrape_job(
     url: &str,
 ) -> Result<ScrapeJob, ScrapeError> {
     let url = url.to_string();
-    run_scrape_db(pool, move |conn| {
+    run_scrape_db_write(pool, move |conn| {
         diesel::insert_into(scrape_jobs::table)
             .values((
+                scrape_jobs::id.eq(Uuid::now_v7()),
                 scrape_jobs::user_id.eq(user_id),
                 scrape_jobs::url.eq(url.as_str()),
                 scrape_jobs::recipe_id.eq(Some(recipe_id)),
@@ -69,9 +74,10 @@ pub async fn create_photo_rescrape_job(
     url: &str,
 ) -> Result<ScrapeJob, ScrapeError> {
     let url = url.to_string();
-    run_scrape_db(pool, move |conn| {
+    run_scrape_db_write(pool, move |conn| {
         diesel::insert_into(scrape_jobs::table)
             .values((
+                scrape_jobs::id.eq(Uuid::now_v7()),
                 scrape_jobs::user_id.eq(user_id),
                 scrape_jobs::url.eq(url.as_str()),
                 scrape_jobs::recipe_id.eq(Some(recipe_id)),
@@ -94,9 +100,10 @@ pub async fn create_job_with_html(
     html: String,
 ) -> Result<ScrapeJob, ScrapeError> {
     let url = url.to_string();
-    run_scrape_db(pool, move |conn| {
+    run_scrape_db_write(pool, move |conn| {
         // Create the job
         let new_job = NewScrapeJob {
+            id: Uuid::now_v7(),
             user_id,
             url: Some(url.as_str()),
         };
@@ -153,7 +160,7 @@ pub async fn create_import_job(
     .map_err(|e| ScrapeError::Database(e.to_string()))?;
     // Photos are already uploaded
     let images_json = serde_json::to_value(FetchImagesOutput {
-        photo_ids,
+        photo_ids: photo_ids.into_iter().map(Into::into).collect(),
         failed_urls: vec![],
     })
     .map_err(|e| ScrapeError::Database(e.to_string()))?;
@@ -168,8 +175,9 @@ pub async fn create_import_job(
             return Ok((job, false));
         }
         // One transaction so a job found by its key always has its outputs.
-        let created = conn.transaction(|conn| {
+        let created = crate::db::write(conn, |conn| {
             let new_job = NewImportJob {
+                id: Uuid::now_v7(),
                 user_id,
                 url: source_url.as_deref(),
                 idempotency_key: key,
@@ -214,7 +222,7 @@ pub async fn create_import_job(
 }
 
 fn find_job_by_key(
-    conn: &mut DbConn,
+    conn: &mut diesel::SqliteConnection,
     user_id: Uuid,
     key: &str,
 ) -> Result<Option<ScrapeJob>, ScrapeError> {
@@ -251,7 +259,10 @@ pub async fn get_job(pool: &DbPool, job_id: Uuid) -> Result<ScrapeJob, ScrapeErr
 }
 
 /// Get a scrape job by ID using an already checked-out connection.
-fn get_job_conn(conn: &mut DbConn, job_id: Uuid) -> Result<ScrapeJob, ScrapeError> {
+fn get_job_conn(
+    conn: &mut diesel::SqliteConnection,
+    job_id: Uuid,
+) -> Result<ScrapeJob, ScrapeError> {
     scrape_jobs::table
         .find(job_id)
         .first::<ScrapeJob>(conn)
@@ -296,7 +307,7 @@ pub(super) async fn update_status_and_step(
 ) -> Result<(), ScrapeError> {
     let status = status.to_string();
     let current_step = current_step.map(str::to_string);
-    run_scrape_db(pool, move |conn| {
+    run_scrape_db_write(pool, move |conn| {
         let now = Utc::now();
         match current_step {
             Some(step) => {
@@ -338,7 +349,7 @@ pub(super) async fn update_current_step_keeping_start(
     current_step: &str,
 ) -> Result<(), ScrapeError> {
     let current_step = current_step.to_string();
-    run_scrape_db(pool, move |conn| {
+    run_scrape_db_write(pool, move |conn| {
         diesel::update(scrape_jobs::table.find(job_id))
             .set((
                 scrape_jobs::current_step.eq(Some(current_step.as_str())),
@@ -353,13 +364,14 @@ pub(super) async fn update_current_step_keeping_start(
 
 /// Save a step output to the database (append-only).
 pub(super) fn save_step_output(
-    conn: &mut DbConn,
+    conn: &mut diesel::SqliteConnection,
     job_id: Uuid,
     step_name: &str,
     output: serde_json::Value,
 ) -> Result<(), ScrapeError> {
     let summary = status::step_summary(step_name, &output);
     let new_output = NewStepOutput {
+        id: Uuid::now_v7(),
         scrape_job_id: job_id,
         step_name: step_name.to_string(),
         build_id: BUILD_ID.to_string(),
@@ -395,7 +407,7 @@ pub(super) async fn mark_failed(
 ) -> Result<(), ScrapeError> {
     let step_name = step_name.to_string();
     let error = error.to_string();
-    run_scrape_db(pool, move |conn| {
+    run_scrape_db_write(pool, move |conn| {
         // Leave current_step_started_at set so the status API can show when the failed step started.
         diesel::update(scrape_jobs::table.find(job_id))
             .set((
@@ -425,7 +437,7 @@ pub(super) async fn fail_unfinished(
 ) -> Result<(), ScrapeError> {
     let step = step.map(str::to_string);
     let error = error.to_string();
-    run_scrape_db(pool, move |conn| {
+    run_scrape_db_write(pool, move |conn| {
         let unfinished = scrape_jobs::table
             .find(job_id)
             .filter(scrape_jobs::status.ne_all([STATUS_COMPLETED, STATUS_FAILED]));
@@ -459,7 +471,7 @@ pub(super) async fn mark_completed(
     job_id: Uuid,
     recipe_id: Uuid,
 ) -> Result<(), ScrapeError> {
-    run_scrape_db(pool, move |conn| {
+    run_scrape_db_write(pool, move |conn| {
         diesel::update(scrape_jobs::table.find(job_id))
             .set((
                 scrape_jobs::status.eq(STATUS_COMPLETED),

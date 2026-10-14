@@ -1,14 +1,14 @@
 """The server must keep answering while one query is stuck.
 
 Regression test for a whole-server stall: handlers used to run their Diesel
-calls directly on a tokio worker, so a single query waiting on a row lock
+calls directly on a tokio worker, so a single query waiting on a lock
 parked the worker -- and when that worker held the IO driver, the server
 stopped accepting connections entirely. Even endpoints that touch no database
 went unanswered. Database work now runs on the blocking thread pool
 (`db::run_blocking`), so a stalled write hangs only its own request.
 
-The test wedges a recipe update on a row lock held by an uncommitted
-transaction, then requires that a database-free endpoint still answers over
+The test wedges a recipe update on the database write lock, held by an
+uncommitted transaction, then requires that a database-free endpoint still answers over
 fresh connections while the write is waiting.
 """
 
@@ -22,7 +22,7 @@ PING_TIMEOUT_SECONDS = 5
 
 
 def test_unrelated_requests_answer_while_a_write_waits_on_a_lock(
-    authed_api_client, server_url, database_url, uncommitted
+    authed_api_client, server_url, uncommitted
 ):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
@@ -33,12 +33,6 @@ def test_unrelated_requests_answer_while_a_write_waits_on_a_lock(
             instructions="Cook it.",
             ingredients=[make_ingredient(item="lentils")],
         )
-    )
-
-    # The update's INSERT INTO recipe_versions queues here: the new version
-    # row's foreign key takes a KEY SHARE lock on the referenced recipes row.
-    uncommitted.execute(
-        "SELECT id FROM recipes WHERE id = %s FOR UPDATE", (created.id,)
     )
 
     # The stalled write must arrive over a warm keep-alive connection: that is
@@ -62,7 +56,7 @@ def test_unrelated_requests_answer_while_a_write_waits_on_a_lock(
             timeout=WRITE_TIMEOUT_SECONDS,
         )
 
-    with blocked_api_write(database_url, uncommitted, blocked_update) as write:
+    with blocked_api_write(uncommitted, blocked_update) as write:
         # No database, and a fresh TCP connection each time: exactly what went
         # unanswered before database work moved off the runtime threads.
         for _ in range(3):

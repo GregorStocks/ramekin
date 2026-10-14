@@ -1,1 +1,0 @@
-DROP TABLE ingredient_weight_estimates;

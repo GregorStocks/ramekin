@@ -10,7 +10,7 @@ import Foundation
 import AnyCodable
 #endif
 
-/** Ingredient structure for JSONB storage */
+/** Ingredient structure for JSON storage */
 public struct Ingredient: Codable, JSONEncodable, Hashable {
 
     /** The ingredient name (e.g., \"butter\", \"all-purpose flour\") */

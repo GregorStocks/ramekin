@@ -1,6 +1,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::schema::{scrape_jobs, step_outputs};
 use axum::{
     extract::{Path, State},
@@ -11,7 +12,6 @@ use axum::{
 use diesel::prelude::*;
 use serde_json::Value as JsonValue;
 use std::sync::Arc;
-use uuid::Uuid;
 
 #[utoipa::path(
     get,

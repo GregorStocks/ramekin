@@ -2,7 +2,6 @@ use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::{create_session_with_token, verify_password, DEV_TEST_TOKEN};
 use crate::db::DbPool;
 use crate::models::User;
-use crate::raw_sql;
 use crate::schema::users;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
@@ -37,7 +36,7 @@ pub async fn login(
 ) -> Result<impl IntoResponse, ApiError> {
     let token = run_db(&pool, move |conn| {
         let user: User = users::table
-            .filter(raw_sql::lower(users::username).eq(req.username.to_lowercase()))
+            .filter(users::username_key.eq(crate::db::case_key(&req.username)))
             .filter(users::deleted_at.is_null())
             .select(User::as_select())
             .first(conn)

@@ -1,17 +1,17 @@
 use std::sync::Arc;
 use std::time::Instant;
 
+use crate::ids::Uuid;
 use async_trait::async_trait;
 use diesel::prelude::*;
 use serde_json::json;
-use uuid::Uuid;
 
 use ramekin_core::pipeline::{
     deserialize_optional_output_field, deserialize_required_output_field,
     step_after_scrape_auto_applied_ai_step, PipelineStep, StepContext, StepMetadata, StepResult,
 };
 
-use crate::db::{run_blocking, DbPool};
+use crate::db::DbPool;
 use crate::models::NewRecipeVersion;
 use crate::recipes::{create_new_version_cas, TagSource};
 use crate::schema::recipe_versions;
@@ -176,8 +176,8 @@ impl ApplyNormalizedTitleStep {
         use crate::models::RecipeVersion;
 
         let normalized_title = normalized_title.to_string();
-        run_blocking(&self.pool, move |conn| {
-            skip_if_edited(conn.transaction(|conn| {
+        skip_if_edited(
+            crate::db::run_blocking_write(&self.pool, move |conn| {
                 let current: RecipeVersion = recipe_versions::table
                     .filter(recipe_versions::id.eq(expected_version_id))
                     .filter(recipe_versions::recipe_id.eq(recipe_id))
@@ -201,9 +201,9 @@ impl ApplyNormalizedTitleStep {
                 )?;
 
                 Ok(new_version_id)
-            }))
-        })
-        .await
-        .map_err(|e| e.to_string())?
+            })
+            .await
+            .map_err(|e| e.to_string())?,
+        )
     }
 }

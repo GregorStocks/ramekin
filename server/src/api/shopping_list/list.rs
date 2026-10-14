@@ -1,6 +1,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
@@ -9,7 +10,6 @@ use ramekin_core::ingredient_categorizer;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct ShoppingListItemResponse {
@@ -60,18 +60,19 @@ pub fn computed_category(item: &str, learned: &ramekin_core::catalog::Learned) -
 /// recategorized when it's written again, when its name gets resolved
 /// (`ingredient_names::recategorize_shopping_items`), and at startup
 /// (`reconcile_categories`).
-pub fn categorize(conn: &mut PgConnection, items: &[&str]) -> QueryResult<Vec<String>> {
-    let learned = crate::ingredient_names::load_learned_for_write(conn, items.iter().copied())?;
+pub fn categorize(conn: &mut SqliteConnection, items: &[&str]) -> QueryResult<Vec<String>> {
+    let learned = crate::ingredient_names::load_learned(conn, items.iter().copied())?;
     Ok(items
         .iter()
         .map(|item| computed_category(item, &learned))
         .collect())
 }
 
-/// Store the category of items this transaction just wrote. Their names must
-/// be queued first (`ingredient_names::enqueue_items`), so every name the
-/// catalog doesn't know has a row for `load_learned_for_write` to lock.
-pub fn store_categories(conn: &mut PgConnection, written: &[(Uuid, &str)]) -> QueryResult<()> {
+/// Store the category of items this write just wrote, after queueing their
+/// names (`ingredient_names::enqueue_items`). Call inside `db::write`: the
+/// write lock keeps the name worker from resolving a name in between, so its
+/// `recategorize_shopping_items` then sees the written item.
+pub fn store_categories(conn: &mut SqliteConnection, written: &[(Uuid, &str)]) -> QueryResult<()> {
     let items: Vec<&str> = written.iter().map(|(_, item)| *item).collect();
     let categories = categorize(conn, &items)?;
     for ((id, _), category) in written.iter().zip(&categories) {
@@ -90,7 +91,7 @@ pub fn store_categories(conn: &mut PgConnection, written: &[(Uuid, &str)]) -> Qu
 /// ingredient-name worker starts; returns how many items changed.
 pub fn reconcile_categories(pool: &DbPool) -> Result<usize, String> {
     let mut conn = pool.get().map_err(|e| e.to_string())?;
-    conn.transaction(|conn| {
+    crate::db::write(&mut conn, |conn| {
         let rows: Vec<(Uuid, String, Option<String>)> = shopping_list_items::table
             .filter(shopping_list_items::deleted_at.is_null())
             .select((

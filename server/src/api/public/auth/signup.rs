@@ -1,6 +1,7 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::{create_session_with_token, hash_password, DEV_TEST_TOKEN};
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::NewUser;
 use crate::schema::users;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
@@ -8,7 +9,6 @@ use diesel::prelude::*;
 use serde::Deserialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct SignupRequest {
@@ -37,11 +37,18 @@ pub async fn signup(
     State(pool): State<Arc<DbPool>>,
     Json(req): Json<SignupRequest>,
 ) -> Result<impl IntoResponse, ApiError> {
-    let (user_id, token) = run_db(&pool, move |conn| {
-        let password_hash = hash_password(&req.password)
-            .map_err(|_| ApiError::internal("Failed to hash password"))?;
+    // Hashing is slow, so it happens before taking the write lock.
+    let (req, password_hash) = tokio::task::spawn_blocking(move || {
+        let password_hash = hash_password(&req.password);
+        (req, password_hash)
+    })
+    .await
+    .expect("password hashing task panicked");
+    let password_hash = password_hash.map_err(|_| ApiError::internal("Failed to hash password"))?;
 
+    let (user_id, token) = run_db_write(&pool, move |conn| {
         let new_user = NewUser {
+            id: Uuid::now_v7(),
             username: &req.username,
             password_hash: &password_hash,
         };

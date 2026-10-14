@@ -2,6 +2,13 @@
 
 Decision record for issue `p4-sqlite-local-first-exploration` (2026-07-11).
 
+> **Update (2026-10):** the server has since moved to SQLite for its own
+> reasons (doc/sqlite-pilot-analysis.md, doc/sqlite-cutover.md). The rest of
+> this record still holds: the move didn't put server data on a phone, and
+> local search still rides the application sync described below. "What exists
+> today" describes the SQLite server; the sections arguing for PostgreSQL are
+> kept as the reasoning at the time.
+
 ## Decision
 
 Keep PostgreSQL as the server database. PR #643 extended the existing read-only
@@ -43,21 +50,22 @@ sync on the main thread stalled the app for tens of seconds:
   cursor, plus recipes whose tags changed.
 - Soft-deleted recipe IDs are returned as tombstones.
 
-The cursor is a PostgreSQL transaction-id watermark, not a wall clock. Every
-sync-visible change carries the 64-bit id of the transaction that wrote it
-(`recipe_versions.change_xid`, `recipes.deleted_xid`, `user_tags.change_xid`,
-all stamped by `current_change_xid()`). The sync reads in a single read-only
-repeatable-read transaction and returns `change_xid_watermark()` — the snapshot's
-`pg_snapshot_xmin`, the lowest transaction id still in flight — as the next
-cursor. Every transaction that has not committed-and-become-visible by that
-snapshot necessarily has an id at or above the watermark, so the next request's
-inclusive `>= cursor` filter returns it.
+The cursor is a database change counter, not a wall clock. Every sync-visible
+change carries a stamp from the one-row `sync_clock` table
+(`recipe_versions.change_seq`, `recipes.deleted_seq`, `user_tags.change_seq`),
+taken by triggers inside the write's transaction. SQLite runs one write
+transaction at a time, so stamps commit in order. The sync reads in a single
+read transaction and returns one past the clock's current value as the next
+cursor (`db::sync_cursor`). A write that hasn't committed by the sync's
+snapshot takes its stamp later, at or above that cursor, so the next request's
+inclusive `>= cursor` filter returns it. A cursor above the clock (one issued
+by another database, as after restoring an older backup) gets a full sync.
 
 That ordering is what a wall-clock cursor could not provide: a transaction took
 its timestamp before the cursor, committed after the sync SELECT's snapshot, and
 was then excluded by the next request's strict `>` filter, permanently omitting a
-recipe update, tag change, or tombstone. The trade is deliberate — the watermark
-lags any in-flight writer, so changes can be *redelivered* across syncs. Clients
+recipe update, tag change, or tombstone. Changes can still be *redelivered*
+across syncs (a sweep keeps its first page's cursor). Clients
 already apply changes idempotently (upsert by id, tombstone by id), and
 redelivering a change is recoverable where skipping one is not.
 `tests/test_recipe_sync_races.py` pins this by stalling a real API write
@@ -89,8 +97,8 @@ matched another field, but bare text does not match tags; tags enter the result
 set through explicit `tag:` filters.
 
 `tag:` has its own comparison contract. The server compares the complete tag
-value through PostgreSQL `CITEXT`: case-insensitive but accent-sensitive
-equality, not unaccented substring matching. Thus `tag:dinner` matches `Dinner`,
+value by its case-folded key (`ramekin_core::search::fold_case`, the
+contract's lowercase mapping): case-insensitive but accent-sensitive equality, not unaccented substring matching. Thus `tag:dinner` matches `Dinner`,
 while `tag:creme` does not match `Crème`. The Swift implementation needs a
 dedicated comparator pinned to server-backed case and accent vectors; it must
 not pass tag values through the bare-text normalizer.
@@ -104,9 +112,9 @@ not pass tag values through the bare-text normalizer.
 | Instructions | yes | yes | 50 |
 | Notes | yes | yes | 50 |
 
-Ingredients currently have two distinct search representations. The SQL match
-casts the stored JSONB to text, so JSON keys and serialization syntax can make
-a recipe match. The scorer instead flattens measurement values, item, note,
+Ingredients currently have two distinct search representations. The search
+filter matches the stored ingredients JSON text, so JSON keys and syntax can
+make a recipe match. The scorer instead flattens measurement values, item, note,
 and section into human-facing text. A token found only in a JSON key can
 therefore select a row and still contribute no ingredient score.
 
@@ -127,7 +135,7 @@ random browsing without text terms needs the server.)
 
 PR #643 made the initial sync larger; later syncs now transfer only changed
 recipes. Immutable `recipe_versions` provide a stable version identity, and
-`change_xid` orders those versions against commits in a way wall-clock
+`change_seq` orders those versions against commits in a way wall-clock
 `created_at` cannot. Before enabling local search, measure stored cache size and search
 latency against representative large cookbooks. That measurement should choose
 the query implementation; it should not hold the data model hostage to an
@@ -143,10 +151,9 @@ offline-write pattern:
 - Updates carry an expected integer version and fail on a concurrent change.
 - Deletes are server-side soft deletes.
 - The sync response maps created IDs, reports update success and current
-  versions, returns tombstones, and advances a `change_xid` cursor using the
-  same watermark as recipe sync. `shopping_list_items.change_xid` is stamped by
-  a column default on insert and the `stamp_change_xid()` BEFORE UPDATE
-  trigger, so no writer can forget it. `last_sync_at` remains only as a
+  versions, returns tombstones, and advances a `change_seq` cursor using the
+  same clock as recipe sync. `shopping_list_items.change_seq` is stamped by
+  insert and update triggers, so no writer can forget it. `last_sync_at` remains only as a
   fallback for iOS builds that predate the cursor.
 
 This is already most of the machinery a single-user, multi-device recipe

@@ -4,7 +4,7 @@ import Foundation
 struct CachedRecipeSearchDocument {
     let summary: RecipeSummary
     let ingredients: [Ingredient]
-    /// The server-produced JSONB-to-text rendering of the ingredients — the
+    /// The server's stored JSON text of the ingredients — the
     /// exact haystack server search matches bare text against. Distinct from
     /// `ingredients`, which the relevance scorer flattens itself.
     let ingredientMatchText: String

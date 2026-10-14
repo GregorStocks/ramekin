@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation generate-schema test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ios-build-ui-tests ios-test-ui-prebuilt ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import catalog-apply-classification catalog-fill-weights catalog-clean-aliases shopping-list-categorizer-test ingredient-catalog-audit ingredient-catalog-unresolved ingredient-catalog-uncategorized ai-eval ai-eval-golden ai-eval-judge server-release-build
+.PHONY: help new-migration dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ios-build-ui-tests ios-test-ui-prebuilt ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import catalog-apply-classification catalog-fill-weights catalog-clean-aliases shopping-list-categorizer-test ingredient-catalog-audit ingredient-catalog-unresolved ingredient-catalog-uncategorized ai-eval ai-eval-golden ai-eval-judge server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -44,22 +44,22 @@ help: ## Show this help message
 	@echo 'Available targets:'
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-20s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-dev: check-deps db-up $(CLIENT_MARKER) ## Start local dev environment (server + UI via process-compose)
+dev: check-deps $(CLIENT_MARKER) ## Start local dev environment (server + UI via process-compose)
 	@echo "Starting dev environment (Ctrl+C to stop)..."
 	@mkdir -p logs
 	@set -a && . ./dev.env && set +a && process-compose up -e dev.env --port "$${PROCESS_COMPOSE_PORT:-8180}"
 
-dev-headless: check-deps db-up $(CLIENT_MARKER) ## Start local dev environment without TUI
+dev-headless: check-deps $(CLIENT_MARKER) ## Start local dev environment without TUI
 	@echo "Starting dev environment (headless)..."
 	@mkdir -p logs
 	@set -a && . ./dev.env && set +a && process-compose up -e dev.env -t=false --port "$${PROCESS_COMPOSE_PORT:-8180}"
 
-serve: check-deps db-up $(CLIENT_MARKER) server-release-build ## Start release-mode server with socket activation and a memory cap
+serve: check-deps $(CLIENT_MARKER) server-release-build ## Start release-mode server with socket activation and a memory cap
 	@echo "Starting release server..."
 	@mkdir -p logs
 	@set -a && . ./dev.env && set +a && process-compose up -e dev.env -f serve-compose.yaml -t=false --port "$${PROCESS_COMPOSE_PORT:-8180}"
 
-dev-down: ## Stop dev processes (not database)
+dev-down: ## Stop dev processes
 	@if [ -f dev.env ]; then set -a && . ./dev.env && set +a; fi; \
 	port="$${PROCESS_COMPOSE_PORT:-8180}"; \
 	if process-compose project state --port "$$port" >/dev/null 2>&1; then \
@@ -132,13 +132,10 @@ clean-api: ## Force regeneration of OpenAPI spec and clients on next build
 	@rm -f api/openapi.json
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 
-generate-schema: db-migrate ## Regenerate schema.rs from the migrated dev database
-	@cd server && DATABASE_URL=$$(grep '^DATABASE_URL=' ../dev.env | cut -d= -f2-) \
-	    diesel print-schema --no-generate-missing-sql-type-definitions > src/schema.rs.tmp \
-	    && mv src/schema.rs.tmp src/schema.rs \
-	    || { rm -f src/schema.rs.tmp; echo "diesel print-schema failed; schema.rs left unchanged" >&2; exit 1; }
-	@echo "Schema generated at server/src/schema.rs" | $(TS)
-	$(MAKE) lint
+new-migration: ## Create an empty SQL migration (NAME=snake_case_name)
+	@test -n "$(NAME)" || { echo "usage: make new-migration NAME=snake_case_name" >&2; exit 1; }
+	@dir="migrations/$$(date -u +%Y-%m-%d-%H%M%S)-0000_$(NAME)"; \
+	  mkdir -p "$$dir" && touch "$$dir/up.sql" && echo "Created $$dir/up.sql"
 
 setup-claude-web: ## Setup environment for Claude Code for Web (no-op elsewhere)
 	@./scripts/setup-claude-web.sh
@@ -202,57 +199,6 @@ check-deps: venv setup-claude-web ## Check that all dependencies are installed
 
 venv-clean: ## Remove Python venv
 	@rm -rf .venv
-
-db-up: ## Start postgres container with dev and test databases
-	@if docker ps --format '{{.Names}}' | grep -q '^ramekin-db$$'; then \
-	  echo "Postgres already running."; \
-	elif docker ps -a --format '{{.Names}}' | grep -q '^ramekin-db$$'; then \
-	  echo "Starting existing postgres container..."; \
-	  docker start ramekin-db >/dev/null; \
-	  echo "Waiting for postgres..."; \
-	  until docker exec ramekin-db pg_isready -U ramekin >/dev/null 2>&1; do sleep 0.2; done; \
-	  echo "Postgres ready on localhost:54321"; \
-	else \
-	  echo "Starting postgres..."; \
-	  docker run -d --name ramekin-db \
-	    -e POSTGRES_USER=ramekin \
-	    -e POSTGRES_PASSWORD=ramekin \
-	    -e POSTGRES_DB=ramekin \
-	    -p 54321:5432 \
-	    postgres:16-alpine >/dev/null; \
-	  echo "Waiting for postgres..."; \
-	  until docker exec ramekin-db pg_isready -U ramekin >/dev/null 2>&1; do sleep 0.2; done; \
-	  echo "Creating test database..."; \
-	  docker exec ramekin-db createdb -U ramekin ramekin_test 2>/dev/null || true; \
-	  echo "Postgres ready on localhost:54321 (databases: ramekin, ramekin_test)"; \
-	fi
-	@# Create workspace-specific databases from dev.env and test.env if they exist
-	@if [ -f dev.env ]; then \
-	  DEV_DB=$$(grep '^DATABASE_URL=' dev.env | sed 's|.*/||'); \
-	  if [ -n "$$DEV_DB" ]; then \
-	    if docker exec ramekin-db createdb -U ramekin "$$DEV_DB" 2>/dev/null; then \
-	      echo "Created database: $$DEV_DB"; \
-	    fi; \
-	  fi; \
-	fi
-	@if [ -f test.env ]; then \
-	  TEST_DB=$$(grep '^DATABASE_URL=' test.env | sed 's|.*/||'); \
-	  if [ -n "$$TEST_DB" ]; then \
-	    if docker exec ramekin-db createdb -U ramekin "$$TEST_DB" 2>/dev/null; then \
-	      echo "Created database: $$TEST_DB"; \
-	    fi; \
-	  fi; \
-	fi
-
-db-down: ## Stop postgres container
-	@docker stop ramekin-db >/dev/null 2>&1 || true
-
-db-clean: db-down ## Stop postgres and remove data
-	@docker rm ramekin-db >/dev/null 2>&1 || true
-
-db-migrate: db-up ## Apply pending diesel migrations against the dev database
-	@cd server && DATABASE_URL=$$(grep '^DATABASE_URL=' ../dev.env | cut -d= -f2-) \
-	    diesel migration run
 
 seed: ## Create test user with sample recipes (requires dev server running)
 	@set -a && . ./dev.env && set +a && cd cli && cargo run -q -- seed \

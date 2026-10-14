@@ -155,8 +155,6 @@ fi
 # --- Everything else (dev/test environment) ---
 
 if [ "$MODE" = "full" ]; then
-    require diesel "cargo install diesel_cli --no-default-features --features postgres"
-
     # cargo-watch for dev (not needed in CI)
     if [ -z "$CI" ]; then
         if ! cargo watch --version >/dev/null 2>&1; then
@@ -190,17 +188,6 @@ if [ "$MODE" = "full" ]; then
         fi
         if [ ! -f "$PROJECT_ROOT/test.env" ]; then
             MISSING+=("test.env file (run: make worktree-setup)")
-        fi
-    fi
-
-    # Check postgres connection using test.env
-    if [ -f "$PROJECT_ROOT/test.env" ]; then
-        # shellcheck source=/dev/null
-        source "$PROJECT_ROOT/test.env"
-        if [ -n "$DATABASE_URL" ]; then
-            if ! pg_isready -d "$DATABASE_URL" >/dev/null 2>&1; then
-                MISSING+=("postgres not reachable (run: make db-up)")
-            fi
         fi
     fi
 fi

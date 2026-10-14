@@ -1,7 +1,8 @@
 use super::list::MealType;
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::NewMealPlan;
 use crate::schema::{meal_plans, recipes};
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
@@ -11,7 +12,6 @@ use diesel::result::{DatabaseErrorKind, Error as DieselError};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct CreateMealPlanRequest {
@@ -46,7 +46,7 @@ pub async fn create_meal_plan(
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
 
-    let id = run_db(&pool, move |conn| {
+    let id = run_db_write(&pool, move |conn| {
         // Verify recipe exists and belongs to user
         let recipe_exists: bool = recipes::table
             .filter(recipes::id.eq(request.recipe_id))
@@ -69,6 +69,7 @@ pub async fn create_meal_plan(
         let notes_ref = request.notes.as_deref();
         diesel::insert_into(meal_plans::table)
             .values(NewMealPlan {
+                id: Uuid::now_v7(),
                 user_id,
                 recipe_id: request.recipe_id,
                 meal_date: request.meal_date,

@@ -1,7 +1,8 @@
 use super::read::fetch_current_recipe_with_version_and_tags;
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
 use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
 use axum::{
@@ -10,12 +11,10 @@ use axum::{
     response::IntoResponse,
     Json,
 };
-use diesel::prelude::*;
 use serde::Deserialize;
 use serde_with::rust::double_option;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct UpdateRecipeRequest {
@@ -101,7 +100,7 @@ pub async fn update_recipe(
 
     let user_id = user.id;
 
-    run_db(&pool, move |conn| {
+    run_db_locked(&pool, move |conn| {
         let (current_version, cur_tags): (RecipeVersion, Vec<String>) =
             match fetch_current_recipe_with_version_and_tags(conn, user_id, id) {
                 Ok((recipe, tags)) => (recipe.version, tags),
@@ -142,7 +141,7 @@ pub async fn update_recipe(
         let new_source_name = request
             .source_name
             .unwrap_or_else(|| current_version.source_name.clone());
-        let new_photo_ids: Vec<Option<Uuid>> = request
+        let new_photo_ids: crate::ids::PhotoIds = request
             .photo_ids
             .map(|ids| ids.into_iter().map(Some).collect())
             .unwrap_or_else(|| current_version.photo_ids.clone());
@@ -184,7 +183,7 @@ pub async fn update_recipe(
             .unwrap_or_else(|| current_version.notes.clone());
 
         // Create new version in a transaction
-        let result: Result<(), VersionWriteError> = conn.transaction(|conn| {
+        let result: Result<(), VersionWriteError> = crate::db::write(conn, |conn| {
             let new_version = NewRecipeVersion {
                 title: &new_title,
                 description: new_description.as_deref(),

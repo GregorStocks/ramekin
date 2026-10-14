@@ -1,6 +1,7 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::schema::meal_plans;
 use axum::{
     extract::{Path, State},
@@ -10,7 +11,6 @@ use axum::{
 use chrono::Utc;
 use diesel::prelude::*;
 use std::sync::Arc;
-use uuid::Uuid;
 
 #[utoipa::path(
     delete,
@@ -33,7 +33,7 @@ pub async fn delete_meal_plan(
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
 
-    let updated = run_db(&pool, move |conn| {
+    let updated = run_db_write(&pool, move |conn| {
         // Soft delete - set deleted_at timestamp
         diesel::update(
             meal_plans::table

@@ -4,6 +4,7 @@ use super::zip_stream::write_zip_stream;
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use axum::{
     body::Body,
     extract::{Path, State},
@@ -17,7 +18,6 @@ use std::sync::Arc;
 use std::time::Instant;
 use tokio::sync::mpsc;
 use tokio_stream::wrappers::ReceiverStream;
-use uuid::Uuid;
 
 #[utoipa::path(
     get,

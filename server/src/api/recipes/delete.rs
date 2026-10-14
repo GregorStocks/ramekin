@@ -1,7 +1,7 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::raw_sql;
+use crate::ids::Uuid;
 use crate::schema::recipes;
 use axum::{
     extract::{Path, State},
@@ -11,7 +11,6 @@ use axum::{
 use chrono::Utc;
 use diesel::prelude::*;
 use std::sync::Arc;
-use uuid::Uuid;
 
 #[utoipa::path(
     delete,
@@ -37,17 +36,14 @@ pub async fn delete_recipe(
     let user_id = user.id;
 
     // Soft delete - set deleted_at timestamp
-    let updated = run_db(&pool, move |conn| {
+    let updated = run_db_write(&pool, move |conn| {
         diesel::update(
             recipes::table
                 .filter(recipes::id.eq(id))
                 .filter(recipes::user_id.eq(user_id))
                 .filter(recipes::deleted_at.is_null()),
         )
-        .set((
-            recipes::deleted_at.eq(Some(Utc::now())),
-            recipes::deleted_xid.eq(raw_sql::current_change_xid().nullable()),
-        ))
+        .set(recipes::deleted_at.eq(Some(Utc::now())))
         .execute(conn)
         .map_err(|e| {
             tracing::error!("Failed to delete recipe: {}", e);

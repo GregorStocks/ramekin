@@ -1,26 +1,36 @@
-// @generated automatically by Diesel CLI.
+// Hand-maintained: Diesel's SQLite schema printer can't tell UUID or JSON
+// text from other TEXT columns. Keep in step with migrations/.
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     client_log_uploads (id) {
-        id -> Uuid,
-        user_id -> Uuid,
+        id -> UuidText,
+        user_id -> UuidText,
         platform -> Text,
         app_version -> Nullable<Text>,
         os_info -> Nullable<Text>,
         content -> Text,
-        created_at -> Timestamptz,
-        deleted_at -> Nullable<Timestamptz>,
+        created_at -> TimestamptzSqlite,
+        deleted_at -> Nullable<TimestamptzSqlite>,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     data_migrations (name) {
         name -> Text,
-        run_at -> Timestamptz,
+        run_at -> TimestamptzSqlite,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     ingredient_name_resolutions (name) {
         name -> Text,
         status -> Text,
@@ -28,161 +38,189 @@ diesel::table! {
         catalog_key -> Nullable<Text>,
         model -> Nullable<Text>,
         error -> Nullable<Text>,
-        attempts -> Int4,
-        created_at -> Timestamptz,
-        updated_at -> Timestamptz,
-        kcal_per_100g -> Nullable<Float8>,
-        grams_per_cup -> Nullable<Float8>,
-        grams_per_piece -> Nullable<Float8>,
+        attempts -> Integer,
+        created_at -> TimestamptzSqlite,
+        updated_at -> TimestamptzSqlite,
+        kcal_per_100g -> Nullable<Double>,
+        grams_per_cup -> Nullable<Double>,
+        grams_per_piece -> Nullable<Double>,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     meal_plans (id) {
-        id -> Uuid,
-        user_id -> Uuid,
-        recipe_id -> Uuid,
+        id -> UuidText,
+        user_id -> UuidText,
+        recipe_id -> UuidText,
         meal_date -> Date,
-        #[max_length = 20]
-        meal_type -> Varchar,
+        meal_type -> Text,
         notes -> Nullable<Text>,
-        created_at -> Timestamptz,
-        deleted_at -> Nullable<Timestamptz>,
+        created_at -> TimestamptzSqlite,
+        deleted_at -> Nullable<TimestamptzSqlite>,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     photo_thumbnails (id) {
-        id -> Uuid,
-        photo_id -> Uuid,
-        size -> Int4,
-        data -> Bytea,
-        created_at -> Timestamptz,
+        id -> UuidText,
+        photo_id -> UuidText,
+        size -> Integer,
+        data -> Binary,
+        created_at -> TimestamptzSqlite,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     photos (id) {
-        id -> Uuid,
-        user_id -> Uuid,
-        content_type -> Varchar,
-        data -> Bytea,
-        created_at -> Timestamptz,
-        deleted_at -> Nullable<Timestamptz>,
-        thumbnail -> Bytea,
-        width -> Nullable<Int4>,
-        height -> Nullable<Int4>,
-        file_size -> Nullable<Int4>,
+        id -> UuidText,
+        user_id -> UuidText,
+        content_type -> Text,
+        data -> Binary,
+        created_at -> TimestamptzSqlite,
+        deleted_at -> Nullable<TimestamptzSqlite>,
+        thumbnail -> Binary,
+        width -> Nullable<Integer>,
+        height -> Nullable<Integer>,
+        file_size -> Nullable<Integer>,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     recipe_version_tags (recipe_version_id, tag_id) {
-        recipe_version_id -> Uuid,
-        tag_id -> Uuid,
+        recipe_version_id -> UuidText,
+        tag_id -> UuidText,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     recipe_versions (id) {
-        id -> Uuid,
-        recipe_id -> Uuid,
-        title -> Varchar,
+        id -> UuidText,
+        recipe_id -> UuidText,
+        title -> Text,
         description -> Nullable<Text>,
-        ingredients -> Jsonb,
+        ingredients -> Json,
         instructions -> Text,
-        source_url -> Nullable<Varchar>,
-        source_name -> Nullable<Varchar>,
-        photo_ids -> Array<Nullable<Uuid>>,
+        source_url -> Nullable<Text>,
+        source_name -> Nullable<Text>,
+        photo_ids -> UuidList,
         servings -> Nullable<Text>,
         prep_time -> Nullable<Text>,
         cook_time -> Nullable<Text>,
         total_time -> Nullable<Text>,
-        rating -> Nullable<Int4>,
+        rating -> Nullable<Integer>,
         difficulty -> Nullable<Text>,
         nutritional_info -> Nullable<Text>,
         notes -> Nullable<Text>,
-        version_source -> Varchar,
-        created_at -> Timestamptz,
-        change_xid -> Int8,
-        is_current -> Bool,
+        version_source -> Text,
+        created_at -> TimestamptzSqlite,
+        change_seq -> BigInt,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     recipes (id) {
-        id -> Uuid,
-        user_id -> Uuid,
-        current_version_id -> Nullable<Uuid>,
-        created_at -> Timestamptz,
-        deleted_at -> Nullable<Timestamptz>,
-        deleted_xid -> Nullable<Int8>,
+        id -> UuidText,
+        user_id -> UuidText,
+        current_version_id -> Nullable<UuidText>,
+        created_at -> TimestamptzSqlite,
+        deleted_at -> Nullable<TimestamptzSqlite>,
+        deleted_seq -> Nullable<BigInt>,
+        seq -> BigInt,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     scrape_jobs (id) {
-        id -> Uuid,
-        user_id -> Uuid,
-        url -> Nullable<Varchar>,
-        status -> Varchar,
-        failed_at_step -> Nullable<Varchar>,
-        recipe_id -> Nullable<Uuid>,
+        id -> UuidText,
+        user_id -> UuidText,
+        url -> Nullable<Text>,
+        status -> Text,
+        failed_at_step -> Nullable<Text>,
+        recipe_id -> Nullable<UuidText>,
         error_message -> Nullable<Text>,
-        retry_count -> Int4,
-        created_at -> Timestamptz,
-        updated_at -> Timestamptz,
-        current_step -> Nullable<Varchar>,
+        retry_count -> Integer,
+        created_at -> TimestamptzSqlite,
+        updated_at -> TimestamptzSqlite,
+        current_step -> Nullable<Text>,
         photo_only -> Bool,
-        current_step_started_at -> Nullable<Timestamptz>,
-        expected_version_id -> Nullable<Uuid>,
+        current_step_started_at -> Nullable<TimestamptzSqlite>,
+        expected_version_id -> Nullable<UuidText>,
         idempotency_key -> Nullable<Text>,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     sessions (id) {
-        id -> Uuid,
-        user_id -> Uuid,
-        #[max_length = 255]
-        token_hash -> Varchar,
-        expires_at -> Timestamptz,
-        created_at -> Timestamptz,
+        id -> UuidText,
+        user_id -> UuidText,
+        token_hash -> Text,
+        expires_at -> TimestamptzSqlite,
+        created_at -> TimestamptzSqlite,
         token_type -> Text,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     shopping_list_items (id) {
-        id -> Uuid,
-        user_id -> Uuid,
+        id -> UuidText,
+        user_id -> UuidText,
         item -> Text,
         amount -> Nullable<Text>,
         note -> Nullable<Text>,
-        source_recipe_id -> Nullable<Uuid>,
+        source_recipe_id -> Nullable<UuidText>,
         source_recipe_title -> Nullable<Text>,
         is_checked -> Bool,
-        sort_order -> Int4,
-        created_at -> Timestamptz,
-        updated_at -> Timestamptz,
-        client_id -> Nullable<Uuid>,
-        version -> Int4,
-        deleted_at -> Nullable<Timestamptz>,
+        sort_order -> Integer,
+        created_at -> TimestamptzSqlite,
+        updated_at -> TimestamptzSqlite,
+        client_id -> Nullable<UuidText>,
+        version -> Integer,
+        deleted_at -> Nullable<TimestamptzSqlite>,
         category_override -> Nullable<Text>,
-        change_xid -> Int8,
+        change_seq -> BigInt,
         computed_category -> Nullable<Text>,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     step_outputs (id) {
-        id -> Uuid,
-        scrape_job_id -> Uuid,
-        step_name -> Varchar,
-        build_id -> Varchar,
-        output -> Jsonb,
-        created_at -> Timestamptz,
-        duration_ms -> Nullable<Int8>,
+        id -> UuidText,
+        scrape_job_id -> UuidText,
+        step_name -> Text,
+        build_id -> Text,
+        output -> Json,
+        created_at -> TimestamptzSqlite,
+        duration_ms -> Nullable<BigInt>,
         summary -> Nullable<Text>,
         success -> Bool,
         error -> Nullable<Text>,
@@ -190,27 +228,40 @@ diesel::table! {
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     user_tags (id) {
-        id -> Uuid,
-        user_id -> Uuid,
-        name -> Citext,
-        created_at -> Timestamptz,
-        deleted_at -> Nullable<Timestamptz>,
-        updated_at -> Timestamptz,
-        change_xid -> Int8,
+        id -> UuidText,
+        user_id -> UuidText,
+        name -> Text,
+        created_at -> TimestamptzSqlite,
+        deleted_at -> Nullable<TimestamptzSqlite>,
+        updated_at -> TimestamptzSqlite,
+        change_seq -> BigInt,
+        name_key -> Text,
     }
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::sql_types::*;
+
     users (id) {
-        id -> Uuid,
-        #[max_length = 255]
-        username -> Varchar,
-        #[max_length = 255]
-        password_hash -> Varchar,
-        created_at -> Timestamptz,
-        updated_at -> Timestamptz,
-        deleted_at -> Nullable<Timestamptz>,
+        id -> UuidText,
+        username -> Text,
+        password_hash -> Text,
+        created_at -> TimestamptzSqlite,
+        updated_at -> TimestamptzSqlite,
+        deleted_at -> Nullable<TimestamptzSqlite>,
+        username_key -> Text,
+    }
+}
+
+diesel::table! {
+    sync_clock (id) {
+        id -> BigInt,
+        value -> BigInt,
     }
 }
 
@@ -244,6 +295,7 @@ diesel::allow_tables_to_appear_in_same_query!(
     sessions,
     shopping_list_items,
     step_outputs,
+    sync_clock,
     user_tags,
     users,
 );

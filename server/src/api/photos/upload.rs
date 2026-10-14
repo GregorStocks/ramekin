@@ -1,6 +1,7 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::NewPhoto;
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
 use crate::schema::photos;
@@ -14,7 +15,6 @@ use diesel::prelude::*;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 /// Allow the multipart request body to carry a MAX_FILE_SIZE image plus
 /// ordinary multipart headers and boundaries.
@@ -110,8 +110,9 @@ pub async fn upload(
     .await
     .expect("image processing task panicked")?;
 
-    let photo_id: Uuid = run_db(&pool, move |conn| {
+    let photo_id: Uuid = run_db_write(&pool, move |conn| {
         let new_photo = NewPhoto {
+            id: Uuid::now_v7(),
             user_id,
             content_type: &processed.content_type,
             data: &data,

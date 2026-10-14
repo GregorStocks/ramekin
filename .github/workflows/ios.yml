@@ -76,10 +76,6 @@ jobs:
     # fails the step, so the Rust cache (cache-on-failure) still saves; a job
     # timeout cancels the job and loses the cold build.
     timeout-minutes: 60
-    env:
-      # Help the linker find libpq from Homebrew.
-      LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
-      PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
     steps:
       - uses: actions/checkout@v4
 
@@ -98,10 +94,6 @@ jobs:
               'rust-toolchain.toml', 'server/**', 'cli/**', 'ramekin-core/**',
               'migrations/**', 'data/ingredients.json', 'shared-test-vectors/**',
               'Makefile', '.github/workflows/ios.yml') }}
-
-      - name: Install dependencies
-        if: steps.backend-cache.outputs.cache-hit != 'true'
-        run: brew install postgresql@16
 
       - name: Install Rust
         if: steps.backend-cache.outputs.cache-hit != 'true'
@@ -191,7 +183,7 @@ jobs:
       # Before the simulator boots: this takes seconds on an idle runner but
       # minutes during the boot storm.
       - name: Install dependencies
-        run: brew install postgresql@16 uv
+        run: brew install uv
 
       - name: Disable Spotlight indexing
         # mds and mdworker index the build output and cost the runner CPU the
@@ -202,38 +194,6 @@ jobs:
         # A fresh simulator saturates the runner for minutes after booting;
         # start it now so that overlaps the setup below.
         run: scripts/prepare-ios-ui-simulator.sh boot >> "$GITHUB_ENV"
-
-      - name: Start PostgreSQL
-        run: |
-          # Add PostgreSQL binaries to PATH
-          export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
-
-          # Initialize database if needed
-          if [ ! -d "/opt/homebrew/var/postgresql@16" ]; then
-            initdb --locale=C -E UTF-8 /opt/homebrew/var/postgresql@16
-          fi
-
-          brew services start postgresql@16
-
-          # Wait for postgres to be ready
-          for i in {1..30}; do
-            if pg_isready -h localhost -p 5432 2>/dev/null; then
-              echo "PostgreSQL is ready"
-              break
-            fi
-            if [ $i -eq 30 ]; then
-              echo "PostgreSQL failed to start"
-              exit 1
-            fi
-            echo "Waiting for PostgreSQL... ($i/30)"
-            sleep 1
-          done
-
-      - name: Create database and user
-        run: |
-          export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
-          createuser -s ramekin 2>/dev/null || true
-          createdb -O ramekin ramekin_ios 2>/dev/null || true
 
       - uses: actions/download-artifact@v4
         with:
@@ -293,7 +253,7 @@ jobs:
           cat ../logs/server.log
           exit 1
         env:
-          DATABASE_URL: postgres://ramekin@localhost:5432/ramekin_ios
+          DATABASE_URL: ${{ github.workspace }}/.db/ios.sqlite
           PORT: 55000
           RUST_LOG: error
           INSECURE_PASSWORD_HASHING: 1

@@ -5,7 +5,7 @@ import Foundation
 /// shared-test-vectors/search-ranking.json. Scoring only orders rows that
 /// membership already matched, so it uses plain substring containment on
 /// normalized text (never LIKE patterns) and flattened human-facing
-/// ingredient text (never the JSONB match text), exactly like the server.
+/// ingredient text (never the JSON match text), exactly like the server.
 extension RecipeSearchSupport {
     /// The searchable fields of one recipe as plain text — the Swift mirror
     /// of `SearchDoc` in ramekin-core/src/search.rs.

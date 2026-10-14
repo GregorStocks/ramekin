@@ -1,6 +1,7 @@
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::schema::photos;
 use crate::scraping;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
@@ -8,7 +9,6 @@ use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct ImportFromPhotosRequest {

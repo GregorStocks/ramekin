@@ -1,11 +1,11 @@
 use std::collections::HashSet;
 use std::sync::{Arc, LazyLock};
 
+use crate::ids::Uuid;
 use diesel::prelude::*;
 use futures::stream::{FuturesUnordered, StreamExt};
 use tokio::sync::{Semaphore, SemaphorePermit};
 use tracing::Instrument;
-use uuid::Uuid;
 
 use ramekin_core::ai::{AiClient, AiConfig, CachingAiClient, UnconfiguredAiClient};
 use ramekin_core::pipeline::steps::{
@@ -31,8 +31,8 @@ use super::steps::{
     FetchImagesStep, ResolveIngredientNamesStep, SaveRecipeStep,
 };
 use super::{
-    run_scrape_db, ScrapeError, STATUS_COMPLETED, STATUS_ENRICHING, STATUS_FAILED, STATUS_PARSING,
-    STATUS_PENDING, STATUS_SCRAPING,
+    run_scrape_db, run_scrape_db_write, ScrapeError, STATUS_COMPLETED, STATUS_ENRICHING,
+    STATUS_FAILED, STATUS_PARSING, STATUS_PENDING, STATUS_SCRAPING,
 };
 
 /// Maximum retries before hard fail
@@ -842,7 +842,7 @@ pub async fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeErro
         return Err(ScrapeError::MaxRetriesExceeded);
     }
 
-    run_scrape_db(pool, move |conn| {
+    run_scrape_db_write(pool, move |conn| {
         // Resume at the step that failed. `failed_at_step` holds the real pipeline
         // step name (see `mark_failed`); if it's missing or not a canonical pipeline
         // step, fall back to running the whole pipeline from the top.

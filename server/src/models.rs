@@ -1,13 +1,13 @@
+use crate::ids::{PhotoIds, Uuid};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use ramekin_core::catalog::Learned;
 use serde::{Deserialize, Serialize};
 use serde_json::Value as JsonValue;
-use uuid::Uuid;
 
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::users)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 #[allow(dead_code)]
 pub struct User {
     pub id: Uuid,
@@ -21,13 +21,14 @@ pub struct User {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::users)]
 pub struct NewUser<'a> {
+    pub id: Uuid,
     pub username: &'a str,
     pub password_hash: &'a str,
 }
 
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::sessions)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 #[allow(dead_code)]
 pub struct Session {
     pub id: Uuid,
@@ -44,6 +45,7 @@ pub struct Session {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::sessions)]
 pub struct NewSession<'a> {
+    pub id: Uuid,
     pub user_id: Uuid,
     pub token_hash: &'a str,
     pub expires_at: DateTime<Utc>,
@@ -57,7 +59,7 @@ pub struct Measurement {
     pub unit: Option<String>,
 }
 
-/// Ingredient structure for JSONB storage
+/// Ingredient structure for JSON storage
 #[derive(Debug, Clone, Serialize, Deserialize, utoipa::ToSchema)]
 pub struct Ingredient {
     /// The ingredient name (e.g., "butter", "all-purpose flour")
@@ -149,7 +151,7 @@ pub fn derived_grams(
 
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::photos)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 #[allow(dead_code)]
 pub struct Photo {
     pub id: Uuid,
@@ -167,6 +169,7 @@ pub struct Photo {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::photos)]
 pub struct NewPhoto<'a> {
+    pub id: Uuid,
     pub user_id: Uuid,
     pub content_type: &'a str,
     pub data: &'a [u8],
@@ -178,7 +181,7 @@ pub struct NewPhoto<'a> {
 
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::photo_thumbnails)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 #[allow(dead_code)]
 pub struct PhotoThumbnail {
     pub id: Uuid,
@@ -191,6 +194,7 @@ pub struct PhotoThumbnail {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::photo_thumbnails)]
 pub struct NewPhotoThumbnail<'a> {
+    pub id: Uuid,
     pub photo_id: Uuid,
     pub size: i32,
     pub data: &'a [u8],
@@ -199,7 +203,7 @@ pub struct NewPhotoThumbnail<'a> {
 // Recipe is now minimal - just identity + pointer to current version
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::recipes)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 #[allow(dead_code)]
 pub struct Recipe {
     pub id: Uuid,
@@ -212,13 +216,14 @@ pub struct Recipe {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::recipes)]
 pub struct NewRecipe {
+    pub id: Uuid,
     pub user_id: Uuid,
 }
 
 // RecipeVersion contains all recipe content (normalized from recipes table)
 #[derive(Queryable, Selectable, Debug, Clone)]
 #[diesel(table_name = crate::schema::recipe_versions)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 pub struct RecipeVersion {
     pub id: Uuid,
     pub recipe_id: Uuid,
@@ -228,7 +233,7 @@ pub struct RecipeVersion {
     pub instructions: String,
     pub source_url: Option<String>,
     pub source_name: Option<String>,
-    pub photo_ids: Vec<Option<Uuid>>,
+    pub photo_ids: PhotoIds,
     pub servings: Option<String>,
     pub prep_time: Option<String>,
     pub cook_time: Option<String>,
@@ -244,6 +249,7 @@ pub struct RecipeVersion {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::recipe_versions)]
 pub struct NewRecipeVersion<'a> {
+    pub id: Uuid,
     pub recipe_id: Uuid,
     pub title: &'a str,
     pub description: Option<&'a str>,
@@ -251,7 +257,7 @@ pub struct NewRecipeVersion<'a> {
     pub instructions: &'a str,
     pub source_url: Option<&'a str>,
     pub source_name: Option<&'a str>,
-    pub photo_ids: &'a [Option<Uuid>],
+    pub photo_ids: &'a PhotoIds,
     pub servings: Option<&'a str>,
     pub prep_time: Option<&'a str>,
     pub cook_time: Option<&'a str>,
@@ -269,6 +275,7 @@ impl<'a> NewRecipeVersion<'a> {
     /// `NewRecipeVersion { title: new_title, ..NewRecipeVersion::copy_of(...) }`
     pub fn copy_of(current: &'a RecipeVersion, version_source: &'a str) -> Self {
         Self {
+            id: Uuid::now_v7(),
             recipe_id: current.recipe_id,
             title: &current.title,
             description: current.description.as_deref(),
@@ -293,7 +300,7 @@ impl<'a> NewRecipeVersion<'a> {
 // Scrape job for async URL scraping
 #[derive(Queryable, Selectable, Debug, Clone)]
 #[diesel(table_name = crate::schema::scrape_jobs)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 #[allow(dead_code)]
 pub struct ScrapeJob {
     pub id: Uuid,
@@ -316,6 +323,7 @@ pub struct ScrapeJob {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::scrape_jobs)]
 pub struct NewScrapeJob<'a> {
+    pub id: Uuid,
     pub user_id: Uuid,
     pub url: Option<&'a str>,
 }
@@ -323,6 +331,7 @@ pub struct NewScrapeJob<'a> {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::scrape_jobs)]
 pub struct NewImportJob<'a> {
+    pub id: Uuid,
     pub user_id: Uuid,
     pub url: Option<&'a str>,
     pub idempotency_key: Option<&'a str>,
@@ -331,7 +340,7 @@ pub struct NewImportJob<'a> {
 // Step output for pipeline step results (append-only log)
 #[derive(Queryable, Selectable, Debug, Clone)]
 #[diesel(table_name = crate::schema::step_outputs)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 #[allow(dead_code)]
 pub struct StepOutput {
     pub id: Uuid,
@@ -349,6 +358,7 @@ pub struct StepOutput {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::step_outputs)]
 pub struct NewStepOutput {
+    pub id: Uuid,
     pub scrape_job_id: Uuid,
     pub step_name: String,
     pub build_id: String,
@@ -362,6 +372,7 @@ pub struct NewStepOutput {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::user_tags)]
 pub struct NewUserTag<'a> {
+    pub id: Uuid,
     pub user_id: Uuid,
     pub name: &'a str,
 }
@@ -369,7 +380,7 @@ pub struct NewUserTag<'a> {
 // Junction table for recipe version <-> tag associations
 #[derive(Queryable, Selectable, Insertable, Debug, Clone)]
 #[diesel(table_name = crate::schema::recipe_version_tags)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 pub struct RecipeVersionTag {
     pub recipe_version_id: Uuid,
     pub tag_id: Uuid,
@@ -378,7 +389,7 @@ pub struct RecipeVersionTag {
 // Meal planning: assign recipes to dates and meal types
 #[derive(Queryable, Selectable, Debug, Clone)]
 #[diesel(table_name = crate::schema::meal_plans)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 #[allow(dead_code)]
 pub struct MealPlan {
     pub id: Uuid,
@@ -394,6 +405,7 @@ pub struct MealPlan {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::meal_plans)]
 pub struct NewMealPlan<'a> {
+    pub id: Uuid,
     pub user_id: Uuid,
     pub recipe_id: Uuid,
     pub meal_date: chrono::NaiveDate,
@@ -404,7 +416,7 @@ pub struct NewMealPlan<'a> {
 // Shopping list: track ingredients to buy (offline-capable)
 #[derive(Queryable, Selectable, Debug, Clone)]
 #[diesel(table_name = crate::schema::shopping_list_items)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 #[allow(dead_code)]
 pub struct ShoppingListItem {
     pub id: Uuid,
@@ -428,6 +440,7 @@ pub struct ShoppingListItem {
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::shopping_list_items)]
 pub struct NewShoppingListItem<'a> {
+    pub id: Uuid,
     pub user_id: Uuid,
     pub item: &'a str,
     pub amount: Option<&'a str>,

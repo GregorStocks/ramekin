@@ -1,0 +1,16 @@
+{
+  "title": "Compress fetched HTML step outputs in the SQLite database",
+  "description": "step_outputs.output holds each scrape's fetched page (fetch_html, often 100 KB+) as uncompressed JSON text. \
+Postgres TOAST-compressed these; SQLite doesn't, so the database file is several times larger (doc/sqlite-pilot-analysis.md, Database size), and so is every backup. \
+Compress large outputs in the app (e.g. zstd) on write in scraping/output_store.rs and decompress on read, or move fetched HTML out of the database. \
+Existing rows can be compressed in a chunked startup data migration (keep each write transaction short; every other writer waits). \
+Check the file size before and after on a copy of prod.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "api",
+  ],
+  "created_at": "2026-10-14T12:00:00-07:00",
+  "updated_at": "2026-10-14T12:00:00-07:00",
+}

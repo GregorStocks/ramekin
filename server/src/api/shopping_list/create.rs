@@ -1,15 +1,14 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::NewShoppingListItem;
 use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
-use diesel::upsert::on_constraint;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct CreateShoppingListItemRequest {
@@ -63,8 +62,8 @@ pub async fn create_items(
     }
 
     let user_id = user.id;
-    let ids = run_db(&pool, move |conn| {
-        conn.transaction(|conn| {
+    let ids = run_db_locked(&pool, move |conn| {
+        crate::db::write(conn, |conn| {
             // Get current max sort_order for this user
             let max_sort_order: i32 = shopping_list_items::table
                 .filter(shopping_list_items::user_id.eq(user_id))
@@ -83,6 +82,7 @@ pub async fn create_items(
                 let source_title_ref = item_req.source_recipe_title.as_deref();
 
                 let new_item = NewShoppingListItem {
+                    id: Uuid::now_v7(),
                     user_id,
                     item: &item_req.item,
                     amount: amount_ref,
@@ -99,7 +99,7 @@ pub async fn create_items(
                     // Use the unique constraint for conflict detection (dedup offline syncs)
                     match diesel::insert_into(shopping_list_items::table)
                         .values(&new_item)
-                        .on_conflict(on_constraint("uq_shopping_list_client_id"))
+                        .on_conflict((shopping_list_items::user_id, shopping_list_items::client_id))
                         .do_nothing()
                         .returning(shopping_list_items::id)
                         .get_result::<Uuid>(conn)

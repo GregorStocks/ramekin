@@ -82,7 +82,7 @@ pub async fn enrich_recipe(
 
 /// Try to enrich tags using AI.
 async fn try_enrich_tags(
-    user_id: &uuid::Uuid,
+    user_id: &crate::ids::Uuid,
     pool: &Arc<DbPool>,
     request: &RecipeContent,
 ) -> Result<Vec<String>, TagEnrichmentError> {
@@ -153,7 +153,7 @@ pub struct CustomEnrichRequest {
     pub recipe: RecipeContent,
     pub instruction: String,
     #[serde(default)]
-    pub photo_ids: Vec<uuid::Uuid>,
+    pub photo_ids: Vec<crate::ids::Uuid>,
 }
 
 /// Apply a custom AI modification to a recipe

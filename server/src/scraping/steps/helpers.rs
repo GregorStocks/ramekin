@@ -1,7 +1,7 @@
 use std::time::Instant;
 
+use crate::ids::Uuid;
 use serde_json::json;
-use uuid::Uuid;
 
 use ramekin_core::pipeline::{
     deserialize_required_output_field, step_after_scrape_auto_applied_ai_step, StepContext,

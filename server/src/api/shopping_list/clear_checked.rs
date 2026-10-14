@@ -1,4 +1,4 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::schema::shopping_list_items;
@@ -29,7 +29,7 @@ pub async fn clear_checked(
     State(pool): State<Arc<DbPool>>,
 ) -> Result<impl IntoResponse, ApiError> {
     let user_id = user.id;
-    let deleted = run_db(&pool, move |conn| {
+    let deleted = run_db_write(&pool, move |conn| {
         let now = Utc::now();
         diesel::update(
             shopping_list_items::table

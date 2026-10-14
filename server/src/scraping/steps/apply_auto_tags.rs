@@ -1,17 +1,17 @@
 use std::sync::Arc;
 use std::time::Instant;
 
+use crate::ids::Uuid;
 use async_trait::async_trait;
 use diesel::prelude::*;
 use serde_json::json;
-use uuid::Uuid;
 
 use ramekin_core::pipeline::{
     deserialize_optional_output_field, step_after_scrape_auto_applied_ai_step, PipelineStep,
     StepContext, StepMetadata, StepResult,
 };
 
-use crate::db::{run_blocking, DbPool};
+use crate::db::DbPool;
 use crate::models::NewRecipeVersion;
 use crate::recipes::{create_new_version_cas, TagSource};
 use crate::schema::{recipe_versions, recipes};
@@ -160,29 +160,22 @@ impl ApplyAutoTagsStep {
         use crate::models::{Recipe, RecipeVersion};
 
         let new_tags = new_tags.to_vec();
-        run_blocking(&self.pool, move |conn| {
-            // Get the recipe to find user_id and current_version_id
-            let recipe: Recipe = recipes::table
-                .find(recipe_id)
-                .select(Recipe::as_select())
-                .first(conn)
-                .map_err(|e| e.to_string())?;
+        skip_if_edited(
+            crate::db::run_blocking_write(&self.pool, move |conn| {
+                let recipe: Recipe = recipes::table
+                    .find(recipe_id)
+                    .select(Recipe::as_select())
+                    .first(conn)?;
+                let current_version: RecipeVersion = recipe_versions::table
+                    .filter(recipe_versions::id.eq(expected_version_id))
+                    .filter(recipe_versions::recipe_id.eq(recipe_id))
+                    .select(RecipeVersion::as_select())
+                    .first(conn)?;
 
-            // Fetch current version data
-            let current_version: RecipeVersion = recipe_versions::table
-                .filter(recipe_versions::id.eq(expected_version_id))
-                .filter(recipe_versions::recipe_id.eq(recipe_id))
-                .select(RecipeVersion::as_select())
-                .first(conn)
-                .map_err(|e| e.to_string())?;
-
-            // Create new version with AI-suggested tags
-            skip_if_edited(conn.transaction(|conn| {
-                // 1. Create new version (copy all data, change version_source to "enrichment")
+                // A new version copying everything, with the existing tags
+                // carried forward plus the AI-suggested ones.
                 let new_version = NewRecipeVersion::copy_of(&current_version, "enrichment");
-
-                // 2. Carry existing tags forward and add the AI-suggested ones
-                let new_version_id = create_new_version_cas(
+                create_new_version_cas(
                     conn,
                     &new_version,
                     Some(expected_version_id),
@@ -191,12 +184,10 @@ impl ApplyAutoTagsStep {
                         user_id: recipe.user_id,
                         names: &new_tags,
                     },
-                )?;
-
-                Ok(new_version_id)
-            }))
-        })
-        .await
-        .map_err(|e| e.to_string())?
+                )
+            })
+            .await
+            .map_err(|e| e.to_string())?,
+        )
     }
 }

@@ -1,8 +1,8 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::NewUserTag;
-use crate::raw_sql;
 use crate::schema::user_tags;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
@@ -10,7 +10,6 @@ use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct CreateTagRequest {
@@ -51,11 +50,11 @@ pub async fn create_tag(
 
     let user_id = user.id;
 
-    let (id, name) = run_db(&pool, move |conn| {
+    let (id, name) = run_db_write(&pool, move |conn| {
         // Check if tag already exists (including soft-deleted)
         let existing: Option<(Uuid, String, Option<DateTime<Utc>>)> = user_tags::table
             .filter(user_tags::user_id.eq(user_id))
-            .filter(user_tags::name.eq(name.as_str()))
+            .filter(user_tags::name_key.eq(crate::db::case_key(&name)))
             .select((user_tags::id, user_tags::name, user_tags::deleted_at))
             .first(conn)
             .optional()
@@ -72,7 +71,6 @@ pub async fn create_tag(
                     .set((
                         user_tags::deleted_at.eq(None::<DateTime<Utc>>),
                         user_tags::updated_at.eq(now),
-                        user_tags::change_xid.eq(raw_sql::current_change_xid()),
                     ))
                     .execute(conn)
                     .map_err(|e| {
@@ -89,6 +87,7 @@ pub async fn create_tag(
         // Insert the new tag
         diesel::insert_into(user_tags::table)
             .values(NewUserTag {
+                id: Uuid::now_v7(),
                 user_id,
                 name: name.as_str(),
             })

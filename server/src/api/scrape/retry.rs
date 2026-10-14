@@ -1,6 +1,7 @@
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::scraping;
 use axum::{
     extract::{Path, State},
@@ -11,7 +12,6 @@ use axum::{
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct RetryScrapeResponse {

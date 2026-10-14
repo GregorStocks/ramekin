@@ -35,7 +35,7 @@ export interface SyncRecipe {
      */
     id: string;
     /**
-     * The database's text rendering of the stored ingredients JSONB — the
+     * The stored ingredients JSON text, exactly as the database holds it — the
      * exact haystack the server's bare-text search filter matches (JSON keys
      * and syntax included). Local search must match against this string, not
      * a re-encoding of `ingredients`, to reproduce server result membership.

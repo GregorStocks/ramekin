@@ -100,8 +100,8 @@ playwright-cli close
 ```
 
 The dev server stays up — don't tear it down unless the user asked. If you
-do need to stop it, `make dev-down` kills the process-compose processes
-without touching Postgres; `make db-down` stops the DB.
+do need to stop it, `make dev-down` kills the process-compose processes.
+The database is the SQLite file in `.db/` and is left as is.
 
 ## Gotchas
 

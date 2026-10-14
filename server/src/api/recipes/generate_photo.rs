@@ -1,7 +1,8 @@
 use crate::api::ai::ai_config_from_env;
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db, run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::{Ingredient, NewPhoto, NewRecipeVersion, RecipeVersion};
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
 use crate::recipes::{create_new_version_cas, VersionWriteError};
@@ -18,7 +19,6 @@ use ramekin_core::ai::generate_recipe_photo as ai_generate_recipe_photo;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct GeneratePhotoResponse {
@@ -187,65 +187,67 @@ pub async fn generate_photo(
         }
     };
 
-    let (photo_id, version_id) = run_db(&pool, move |conn| {
-        let write_result: Result<(Uuid, Uuid), VersionWriteError> = conn.transaction(|conn| {
-            let (current_version_id, current_version): (Option<Uuid>, RecipeVersion) =
-                recipes::table
-                    .inner_join(
-                        recipe_versions::table.on(recipe_versions::id
-                            .nullable()
-                            .eq(recipes::current_version_id)),
-                    )
-                    .filter(recipes::id.eq(recipe_id))
-                    .filter(recipes::user_id.eq(user_id))
-                    .filter(recipes::deleted_at.is_null())
-                    .select((recipes::current_version_id, RecipeVersion::as_select()))
-                    .first(conn)
-                    .map_err(|e| match e {
-                        diesel::result::Error::NotFound => VersionWriteError::Stale,
-                        other => VersionWriteError::Db(other),
-                    })?;
+    let (photo_id, version_id) = run_db_locked(&pool, move |conn| {
+        let write_result: Result<(Uuid, Uuid), VersionWriteError> =
+            crate::db::write(conn, |conn| {
+                let (current_version_id, current_version): (Option<Uuid>, RecipeVersion) =
+                    recipes::table
+                        .inner_join(
+                            recipe_versions::table.on(recipe_versions::id
+                                .nullable()
+                                .eq(recipes::current_version_id)),
+                        )
+                        .filter(recipes::id.eq(recipe_id))
+                        .filter(recipes::user_id.eq(user_id))
+                        .filter(recipes::deleted_at.is_null())
+                        .select((recipes::current_version_id, RecipeVersion::as_select()))
+                        .first(conn)
+                        .map_err(|e| match e {
+                            diesel::result::Error::NotFound => VersionWriteError::Stale,
+                            other => VersionWriteError::Db(other),
+                        })?;
 
-            if current_version_id != Some(source_version_id) {
-                return Err(VersionWriteError::Stale);
-            }
+                if current_version_id != Some(source_version_id) {
+                    return Err(VersionWriteError::Stale);
+                }
 
-            let new_photo = NewPhoto {
-                user_id,
-                content_type: &processed.content_type,
-                data: &raw_image,
-                thumbnail: &processed.thumbnail,
-                width: Some(processed.width as i32),
-                height: Some(processed.height as i32),
-                file_size: Some(raw_image.len() as i32),
-            };
+                let new_photo = NewPhoto {
+                    id: Uuid::now_v7(),
+                    user_id,
+                    content_type: &processed.content_type,
+                    data: &raw_image,
+                    thumbnail: &processed.thumbnail,
+                    width: Some(processed.width as i32),
+                    height: Some(processed.height as i32),
+                    file_size: Some(raw_image.len() as i32),
+                };
 
-            let photo_id: Uuid = diesel::insert_into(photos::table)
-                .values(&new_photo)
-                .returning(photos::id)
-                .get_result(conn)
-                .map_err(VersionWriteError::Db)?;
+                let photo_id: Uuid = diesel::insert_into(photos::table)
+                    .values(&new_photo)
+                    .returning(photos::id)
+                    .get_result(conn)
+                    .map_err(VersionWriteError::Db)?;
 
-            let mut new_photo_ids = Vec::with_capacity(current_version.photo_ids.len() + 1);
-            new_photo_ids.push(Some(photo_id));
-            new_photo_ids.extend(current_version.photo_ids.iter().copied());
+                let new_photo_ids: crate::ids::PhotoIds = std::iter::once(Some(photo_id))
+                    .chain(current_version.photo_ids.iter().copied())
+                    .collect();
 
-            let new_version = NewRecipeVersion {
-                photo_ids: &new_photo_ids,
-                ..NewRecipeVersion::copy_of(&current_version, "ai_photo")
-            };
+                let new_version = NewRecipeVersion {
+                    photo_ids: &new_photo_ids,
+                    ..NewRecipeVersion::copy_of(&current_version, "ai_photo")
+                };
 
-            // Compare-and-swap: only repoint if current_version_id still matches
-            // the version we generated the photo for.
-            let new_version_id = create_new_version_cas(
-                conn,
-                &new_version,
-                Some(source_version_id),
-                crate::recipes::TagSource::CopyFrom(source_version_id),
-            )?;
+                // Compare-and-swap: only repoint if current_version_id still matches
+                // the version we generated the photo for.
+                let new_version_id = create_new_version_cas(
+                    conn,
+                    &new_version,
+                    Some(source_version_id),
+                    crate::recipes::TagSource::CopyFrom(source_version_id),
+                )?;
 
-            Ok((photo_id, new_version_id))
-        });
+                Ok((photo_id, new_version_id))
+            });
 
         match write_result {
             Ok(ids) => Ok(ids),

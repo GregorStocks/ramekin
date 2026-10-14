@@ -1,7 +1,7 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::raw_sql;
+use crate::ids::Uuid;
 use crate::schema::user_tags;
 use axum::{
     extract::{Path, State},
@@ -14,7 +14,6 @@ use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct RenameTagRequest {
@@ -60,7 +59,7 @@ pub async fn rename_tag(
 
     let user_id = user.id;
 
-    let (id, name) = run_db(&pool, move |conn| {
+    let (id, name) = run_db_write(&pool, move |conn| {
         // Check if tag exists, belongs to user, and is not deleted
         let existing_tag: Option<(Uuid, String)> = user_tags::table
             .filter(user_tags::id.eq(id))
@@ -78,9 +77,10 @@ pub async fn rename_tag(
             return Err(ApiError::not_found("Tag not found"));
         };
 
-        // If renaming to the same name (possibly different case), just return success
-        // CITEXT comparison handles case-insensitivity
-        if current_name.eq_ignore_ascii_case(&new_name) {
+        let new_key = crate::db::case_key(&new_name);
+
+        // Renaming to the same name in a different case only changes the casing.
+        if crate::db::case_key(&current_name) == new_key {
             // Update to preserve the new casing
             let now = Utc::now();
             return diesel::update(
@@ -91,7 +91,6 @@ pub async fn rename_tag(
             .set((
                 user_tags::name.eq(new_name.as_str()),
                 user_tags::updated_at.eq(now),
-                user_tags::change_xid.eq(raw_sql::current_change_xid()),
             ))
             .returning((user_tags::id, user_tags::name))
             .get_result(conn)
@@ -104,7 +103,7 @@ pub async fn rename_tag(
         // Check if another non-deleted tag with the new name already exists (case-insensitive)
         let duplicate: Option<Uuid> = user_tags::table
             .filter(user_tags::user_id.eq(user_id))
-            .filter(user_tags::name.eq(new_name.as_str()))
+            .filter(user_tags::name_key.eq(&new_key))
             .filter(user_tags::id.ne(id))
             .filter(user_tags::deleted_at.is_null())
             .select(user_tags::id)
@@ -129,7 +128,6 @@ pub async fn rename_tag(
         .set((
             user_tags::name.eq(new_name.as_str()),
             user_tags::updated_at.eq(now),
-            user_tags::change_xid.eq(raw_sql::current_change_xid()),
         ))
         .returning((user_tags::id, user_tags::name))
         .get_result(conn)

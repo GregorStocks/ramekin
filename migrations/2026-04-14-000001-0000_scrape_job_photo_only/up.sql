@@ -1,2 +1,0 @@
-ALTER TABLE scrape_jobs
-    ADD COLUMN photo_only BOOLEAN NOT NULL DEFAULT FALSE;

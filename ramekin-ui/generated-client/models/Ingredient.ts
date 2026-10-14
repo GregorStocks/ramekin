@@ -22,7 +22,7 @@ import {
 } from './Measurement';
 
 /**
- * Ingredient structure for JSONB storage
+ * Ingredient structure for JSON storage
  * @export
  * @interface Ingredient
  */

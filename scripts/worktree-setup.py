@@ -7,17 +7,13 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
-import os
 import re
 import socket
-import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
-MAX_PG_IDENTIFIER_LENGTH = 63
-DEFAULT_DATABASE_HOST = "localhost"
-DEFAULT_DATABASE_PORT = 54321
+# SQLite files, inside the worktree so each one has its own.
+DATABASE_DIR = ".db"
 PORT_ASSIGNMENT_ORDER = (
     "dev_port",
     "dev_ui_port",
@@ -37,8 +33,6 @@ class GeneratedConfig:
     """Resolved per-worktree settings."""
 
     workspace_name: str
-    dev_database_name: str
-    test_database_name: str
     dev_port: int
     dev_ui_port: int
     dev_ui_port_http: int
@@ -58,32 +52,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--workspace-name",
-        help=(
-            "Workspace name to encode into database names. "
-            "Defaults to the repo directory name."
-        ),
+        help="Workspace name to report. Defaults to the repo directory name.",
     )
     parser.add_argument(
         "--base-port",
         type=int,
         help="Use this reserved port block instead of random free ports.",
-    )
-    parser.add_argument(
-        "--database-host",
-        default=DEFAULT_DATABASE_HOST,
-        help=(
-            "Database host to write into DATABASE_URL "
-            f"(default: {DEFAULT_DATABASE_HOST})."
-        ),
-    )
-    parser.add_argument(
-        "--database-port",
-        type=int,
-        default=DEFAULT_DATABASE_PORT,
-        help=(
-            "Database port to write into DATABASE_URL "
-            f"(default: {DEFAULT_DATABASE_PORT})."
-        ),
     )
     parser.add_argument(
         "--force",
@@ -96,33 +70,6 @@ def parse_args() -> argparse.Namespace:
 def project_root() -> Path:
     """Return the repository root."""
     return Path(__file__).resolve().parent.parent
-
-
-def sanitize_workspace_name(workspace_name: str) -> str:
-    """Convert the workspace name into a postgres-safe suffix."""
-    sanitized = re.sub(r"[^a-z0-9]+", "_", workspace_name.lower()).strip("_")
-    return sanitized or "worktree"
-
-
-def limit_postgres_identifier(name: str) -> str:
-    """Clamp postgres identifiers to 63 bytes with a stable hash suffix."""
-    if len(name) <= MAX_PG_IDENTIFIER_LENGTH:
-        return name
-
-    digest = hashlib.sha1(name.encode("utf-8")).hexdigest()[:8]
-    prefix_length = MAX_PG_IDENTIFIER_LENGTH - len(digest) - 1
-    truncated = name[:prefix_length].rstrip("_")
-    if not truncated:
-        truncated = name[:prefix_length]
-    return f"{truncated}_{digest}"
-
-
-def database_names_for_workspace(workspace_name: str) -> tuple[str, str]:
-    """Derive workspace-specific dev/test database names."""
-    suffix = sanitize_workspace_name(workspace_name)
-    dev_name = limit_postgres_identifier(f"ramekin_{suffix}")
-    test_name = limit_postgres_identifier(f"ramekin_{suffix}_test")
-    return dev_name, test_name
 
 
 def is_port_available(port: int) -> bool:
@@ -169,9 +116,7 @@ def reserve_random_ports(count: int) -> list[int]:
 
 
 def generate_config(workspace_name: str, base_port: int | None) -> GeneratedConfig:
-    """Build all database names and port assignments."""
-    dev_database_name, test_database_name = database_names_for_workspace(workspace_name)
-
+    """Build all port assignments."""
     if base_port is not None:
         validate_base_port(base_port)
         assigned_ports = list(range(base_port, base_port + len(PORT_ASSIGNMENT_ORDER)))
@@ -182,8 +127,6 @@ def generate_config(workspace_name: str, base_port: int | None) -> GeneratedConf
 
     return GeneratedConfig(
         workspace_name=workspace_name,
-        dev_database_name=dev_database_name,
-        test_database_name=test_database_name,
         dev_port=ports["dev_port"],
         dev_ui_port=ports["dev_ui_port"],
         dev_ui_port_http=ports["dev_ui_port_http"],
@@ -242,90 +185,15 @@ def write_env_file(
     output_path.write_text(rendered, encoding="utf-8")
 
 
-def postgres_is_ready(database_host: str, database_port: int) -> bool:
-    """Return whether postgres is reachable on the configured host/port."""
-    try:
-        result = subprocess.run(
-            [
-                "pg_isready",
-                "-h",
-                database_host,
-                "-p",
-                str(database_port),
-                "-U",
-                "ramekin",
-            ],
-            check=False,
-            capture_output=True,
-            text=True,
-        )
-    except FileNotFoundError:
-        return False
-
-    return result.returncode == 0
-
-
-def ensure_database_exists(
-    database_host: str, database_port: int, database_name: str
-) -> None:
-    """Create the database unless it already exists."""
-    result = subprocess.run(
-        [
-            "createdb",
-            "-h",
-            database_host,
-            "-p",
-            str(database_port),
-            "-U",
-            "ramekin",
-            "--no-password",
-            database_name,
-        ],
-        check=False,
-        capture_output=True,
-        text=True,
-        env={**os.environ, "PGPASSWORD": "ramekin"},
-    )
-    if result.returncode == 0:
-        print(f"Created database: {database_name}")
-        return
-
-    stderr = result.stderr.strip()
-    if "already exists" in stderr.lower():
-        print(f"Database already exists: {database_name}")
-        return
-
-    detail = stderr or "createdb exited without error output"
-    raise SystemExit(f"Failed to create database {database_name}: {detail}")
-
-
-def create_workspace_databases_if_available(
-    config: GeneratedConfig, database_host: str, database_port: int
-) -> None:
-    """Create workspace databases when postgres is already running."""
-    if not postgres_is_ready(database_host, database_port):
-        print(
-            "Postgres not reachable at "
-            f"{database_host}:{database_port}; skipped workspace database creation."
-        )
-        return
-
-    ensure_database_exists(database_host, database_port, config.dev_database_name)
-    ensure_database_exists(database_host, database_port, config.test_database_name)
+def database_paths(root: Path) -> tuple[Path, Path]:
+    """The dev and test SQLite database files for a worktree."""
+    return root / DATABASE_DIR / "dev.sqlite", root / DATABASE_DIR / "test.sqlite"
 
 
 def print_summary(
-    config: GeneratedConfig, database_host: str, database_port: int
+    config: GeneratedConfig, dev_database_url: Path, test_database_url: Path
 ) -> None:
     """Print the generated configuration."""
-    dev_database_url = (
-        f"postgres://ramekin:ramekin@{database_host}:{database_port}/"
-        f"{config.dev_database_name}"
-    )
-    test_database_url = (
-        f"postgres://ramekin:ramekin@{database_host}:{database_port}/"
-        f"{config.test_database_name}"
-    )
 
     print(f"Configured worktree: {config.workspace_name}")
     print(
@@ -352,16 +220,14 @@ def main() -> None:
     workspace_name = args.workspace_name or root.name
     config = generate_config(workspace_name, args.base_port)
 
-    database_prefix = (
-        f"postgres://ramekin:ramekin@{args.database_host}:{args.database_port}"
-    )
+    dev_database, test_database = database_paths(root)
     # Dev: `make dev` runs setup-certs.sh before launching vite, so UI_PORT serves
     # HTTPS. External links point at that.
     # Test: vite only has certs when a prior dev run generated them, so cert state
     # is unpredictable. Point at the HTTP mirror (UI_PORT_HTTP), which vite always
     # serves via httpMirrorPlugin regardless of cert presence.
     dev_overrides = {
-        "DATABASE_URL": f"{database_prefix}/{config.dev_database_name}",
+        "DATABASE_URL": str(dev_database),
         "PORT": str(config.dev_port),
         "UI_PORT": str(config.dev_ui_port),
         "UI_PORT_HTTP": str(config.dev_ui_port_http),
@@ -370,7 +236,7 @@ def main() -> None:
         "RAMEKIN_EXTERNAL_URL": f"https://localhost:{config.dev_ui_port}",
     }
     test_overrides = {
-        "DATABASE_URL": f"{database_prefix}/{config.test_database_name}",
+        "DATABASE_URL": str(test_database),
         "PORT": str(config.test_port),
         "FIXTURE_PORT": str(config.test_fixture_port),
         "UI_PORT": str(config.test_ui_port),
@@ -385,10 +251,7 @@ def main() -> None:
     ensure_outputs_are_writable(output_paths, args.force)
     write_env_file(root / "dev.env.example", output_paths[0], dev_overrides)
     write_env_file(root / "test.env.example", output_paths[1], test_overrides)
-    create_workspace_databases_if_available(
-        config, args.database_host, args.database_port
-    )
-    print_summary(config, args.database_host, args.database_port)
+    print_summary(config, dev_database, test_database)
 
 
 if __name__ == "__main__":

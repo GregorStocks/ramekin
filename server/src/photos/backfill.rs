@@ -51,7 +51,7 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
         // Re-query each batch so already-processed rows drop out of the
         // pending set. This keeps memory use bounded by BACKFILL_BATCH_SIZE
         // rather than growing with the total number of pending photos.
-        let batch: Vec<(uuid::Uuid, Vec<u8>)> = photos::table
+        let batch: Vec<(crate::ids::Uuid, Vec<u8>)> = photos::table
             .filter(photos::width.is_null())
             .filter(photos::file_size.is_null())
             .filter(photos::deleted_at.is_null())
@@ -68,14 +68,16 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
             let file_size = data.len() as i32;
             match decode_dimensions(&data) {
                 Ok((w, h)) => {
-                    if diesel::update(photos::table.find(id))
-                        .set((
-                            photos::width.eq(Some(w as i32)),
-                            photos::height.eq(Some(h as i32)),
-                            photos::file_size.eq(Some(file_size)),
-                        ))
-                        .execute(&mut conn)
-                        .is_ok()
+                    if crate::db::write(&mut conn, |conn| {
+                        diesel::update(photos::table.find(id))
+                            .set((
+                                photos::width.eq(Some(w as i32)),
+                                photos::height.eq(Some(h as i32)),
+                                photos::file_size.eq(Some(file_size)),
+                            ))
+                            .execute(conn)
+                    })
+                    .is_ok()
                     {
                         ok += 1;
                     } else {
@@ -90,9 +92,11 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
                     // still record file_size, which both makes the bytes
                     // filter work *and* marks the row as "backfill attempted"
                     // so it falls out of the pending query.
-                    let _ = diesel::update(photos::table.find(id))
-                        .set(photos::file_size.eq(Some(file_size)))
-                        .execute(&mut conn);
+                    let _ = crate::db::write(&mut conn, |conn| {
+                        diesel::update(photos::table.find(id))
+                            .set(photos::file_size.eq(Some(file_size)))
+                            .execute(conn)
+                    });
                     failed += 1;
                 }
             }

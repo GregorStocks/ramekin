@@ -1,13 +1,14 @@
-import psycopg
 import pytest
 
 from conftest import (
     WRITE_TIMEOUT_SECONDS,
     _require_fixture_base_url,
+    connect_db,
+    hold_write_lock,
     make_ingredient,
     run_in_daemon_thread,
     wait_for_job_completion,
-    wait_until_blocked_behind,
+    wait_until_queued,
 )
 from ramekin_client.api import RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
@@ -230,28 +231,32 @@ class TestScrapeRetry:
         job = wait_for_job_completion(scrape_api, response.id)
         assert job.status == "completed"
 
-        with psycopg.connect(database_url, autocommit=True) as conn:
+        conn = connect_db(database_url)
+        with conn:
+            conn.execute("BEGIN IMMEDIATE")
             conn.execute(
-                "DELETE FROM step_outputs WHERE scrape_job_id = %s AND created_at >="
+                "DELETE FROM step_outputs WHERE scrape_job_id = ? AND created_at >="
                 " (SELECT min(created_at) FROM step_outputs"
-                "  WHERE scrape_job_id = %s AND step_name = 'save_recipe')",
-                (job.id, job.id),
+                "  WHERE scrape_job_id = ? AND step_name = 'save_recipe')",
+                (str(job.id), str(job.id)),
             )
             conn.execute(
                 "UPDATE scrape_jobs SET status = 'failed',"
-                " failed_at_step = 'save_recipe' WHERE id = %s",
-                (job.id,),
+                " failed_at_step = 'save_recipe' WHERE id = ?",
+                (str(job.id),),
             )
+        conn.close()
 
         scrape_api.retry_scrape(job.id)
         job2 = wait_for_job_completion(scrape_api, job.id)
 
         assert job2.status == "completed"
         assert job2.recipe_id == job.recipe_id
-        with psycopg.connect(database_url) as conn:
-            (count,) = conn.execute(
-                "SELECT count(*) FROM recipes WHERE user_id = %s", (user_id,)
-            ).fetchone()
+        conn = connect_db(database_url)
+        (count,) = conn.execute(
+            "SELECT count(*) FROM recipes WHERE user_id = ?", (str(user_id),)
+        ).fetchone()
+        conn.close()
         assert count == 1
 
     def test_cannot_retry_completed_job(self, authed_api_client):
@@ -296,12 +301,9 @@ class TestScrapeRetry:
         job = wait_for_job_completion(scrape_api, response.id)
         assert job.status == "failed"
 
-        # Both retries see the job failed, then queue their reset UPDATE
-        # behind this lock, so they race exactly where the check used to be.
-        uncommitted.execute(
-            "SELECT id FROM scrape_jobs WHERE id = %s FOR UPDATE", (job.id,)
-        )
-        holder_pid = uncommitted.execute("SELECT pg_backend_pid()").fetchone()[0]
+        # Both retries queue their check-and-reset behind this lock, so they
+        # race exactly where the check used to be.
+        hold_write_lock(uncommitted)
 
         def retry():
             try:
@@ -312,7 +314,7 @@ class TestScrapeRetry:
 
         retries = [run_in_daemon_thread(retry) for _ in range(2)]
         try:
-            wait_until_blocked_behind(database_url, holder_pid, retries, count=2)
+            wait_until_queued(retries)
         finally:
             uncommitted.rollback()
         statuses = sorted(r.result(timeout=WRITE_TIMEOUT_SECONDS) for r in retries)

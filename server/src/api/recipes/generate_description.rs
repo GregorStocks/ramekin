@@ -1,7 +1,8 @@
 use crate::api::ai::ai_client_from_env;
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db, run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
 use crate::recipes::{create_new_version_cas, VersionWriteError};
 use crate::schema::{recipe_versions, recipes};
@@ -16,7 +17,6 @@ use ramekin_core::ai::generate_description as ai_generate_description;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct GenerateDescriptionResponse {
@@ -142,8 +142,8 @@ pub async fn generate_description(
     }
 
     let description_for_write = new_description.clone();
-    run_db(&pool, move |conn| {
-        let write_result: Result<(), VersionWriteError> = conn.transaction(|conn| {
+    run_db_locked(&pool, move |conn| {
+        let write_result: Result<(), VersionWriteError> = crate::db::write(conn, |conn| {
             let new_version = NewRecipeVersion {
                 description: Some(&description_for_write),
                 ..NewRecipeVersion::copy_of(&current_version, "generate_description")

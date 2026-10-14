@@ -40,3 +40,16 @@ def test_login_case_insensitive_username(auth_api, unique_username):
     )
 
     assert response.token is not None
+
+
+def test_login_folds_non_ascii_case(auth_api, unique_username):
+    """Usernames compare case-insensitively beyond ASCII ("Élodie" and
+    "ÉLODIE" are one user)."""
+    username = f"Élodie_{unique_username}"
+    auth_api.signup(SignupRequest(username=username, password="testpass123"))
+
+    response = auth_api.login(
+        LoginRequest(username=username.upper(), password="testpass123")
+    )
+
+    assert response.token is not None

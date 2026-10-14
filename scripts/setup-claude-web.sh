@@ -17,21 +17,15 @@ echo "Installing shared agent-issues hooks..."
 uv tool install -U git+https://github.com/GregorStocks/agent-issues.git
 
 # Install system dependencies if not present
-if ! dpkg -l libpq-dev >/dev/null 2>&1 || ! command -v shellcheck >/dev/null 2>&1 || ! command -v gh >/dev/null 2>&1 || ! command -v mkcert >/dev/null 2>&1; then
+if ! command -v shellcheck >/dev/null 2>&1 || ! command -v gh >/dev/null 2>&1 || ! command -v mkcert >/dev/null 2>&1; then
     echo "Installing system dependencies..."
-    apt-get update -qq && apt-get install -y -qq libpq-dev shellcheck gh mkcert
+    apt-get update -qq && apt-get install -y -qq shellcheck gh mkcert
 fi
 
 # Initialize mkcert if installed but not initialized
 if command -v mkcert >/dev/null 2>&1; then
     # mkcert -install sets up the local CA (idempotent, safe to run multiple times)
     mkcert -install 2>/dev/null || true
-fi
-
-# Install diesel_cli if not present
-if ! command -v diesel >/dev/null 2>&1; then
-    echo "Installing diesel_cli..."
-    cargo install diesel_cli --no-default-features --features postgres
 fi
 
 # Install cargo-watch if not present
@@ -55,43 +49,10 @@ if ! command -v process-compose >/dev/null 2>&1; then
     ln -sf "$(go env GOPATH)/bin/process-compose" /usr/local/bin/process-compose
 fi
 
-# Create test.env from example if it doesn't exist
-if [ ! -f test.env ]; then
-    echo "Creating test.env from test.env.example..."
-    cp test.env.example test.env
-    # Use port 5432 (system postgres) instead of 54321 (docker)
-    sed -i 's/:54321/:5432/' test.env
-fi
-
-# Create dev.env from example if it doesn't exist
-if [ ! -f dev.env ]; then
-    echo "Creating dev.env from dev.env.example..."
-    cp dev.env.example dev.env
-    # Use port 5432 (system postgres) instead of 54321 (docker)
-    sed -i 's/:54321/:5432/' dev.env
-fi
-
-# Start postgres if not running
-if ! pg_isready -q 2>/dev/null; then
-    echo "Starting PostgreSQL..."
-    service postgresql start || pg_ctlcluster 16 main start
-    sleep 2
-fi
-
-# Create user and databases if they don't exist
-if ! sudo -u postgres psql -tAc "SELECT 1 FROM pg_roles WHERE rolname='ramekin'" | grep -q 1; then
-    echo "Creating postgres user 'ramekin'..."
-    sudo -u postgres psql -c "CREATE USER ramekin WITH PASSWORD 'ramekin' CREATEDB;"
-fi
-
-if ! sudo -u postgres psql -tAc "SELECT 1 FROM pg_database WHERE datname='ramekin'" | grep -q 1; then
-    echo "Creating database 'ramekin'..."
-    sudo -u postgres psql -c "CREATE DATABASE ramekin OWNER ramekin;"
-fi
-
-if ! sudo -u postgres psql -tAc "SELECT 1 FROM pg_database WHERE datname='ramekin_test'" | grep -q 1; then
-    echo "Creating database 'ramekin_test'..."
-    sudo -u postgres psql -c "CREATE DATABASE ramekin_test OWNER ramekin;"
+# Create the env files with the worktree's own SQLite paths and ports.
+if [ ! -f test.env ] || [ ! -f dev.env ]; then
+    echo "Creating dev.env and test.env..."
+    uv run scripts/worktree-setup.py --force
 fi
 
 echo "Claude Code for Web environment ready"

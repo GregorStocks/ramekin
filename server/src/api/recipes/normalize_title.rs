@@ -1,7 +1,8 @@
 use crate::api::ai::ai_client_from_env;
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db, run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::ids::Uuid;
 use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
 use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
 use crate::schema::{recipe_versions, recipes};
@@ -16,7 +17,6 @@ use ramekin_core::ai::normalize_title as ai_normalize_title;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct NormalizeTitleResponse {
@@ -140,8 +140,8 @@ pub async fn normalize_title(
     }
 
     let title_for_write = new_title.clone();
-    run_db(&pool, move |conn| {
-        let write_result: Result<(), VersionWriteError> = conn.transaction(|conn| {
+    run_db_locked(&pool, move |conn| {
+        let write_result: Result<(), VersionWriteError> = crate::db::write(conn, |conn| {
             let new_version = NewRecipeVersion {
                 title: &title_for_write,
                 ..NewRecipeVersion::copy_of(&current_version, "normalize_title")

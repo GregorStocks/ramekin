@@ -169,8 +169,9 @@ enum RecipeSearchSupport {
     /// Whether a cached recipe belongs in the result set — the mirror of the
     /// server's SQL filters. Bare-text tokens AND together, each matching any
     /// of title, description, instructions, notes, or the ingredient match
-    /// text (NULL fields never match, like SQL). Tags use whole-value CITEXT
-    /// equality: case-insensitive but accent-sensitive, never unaccented.
+    /// text (NULL fields never match, like SQL). Tags use whole-value
+    /// case-folded equality (`citextFold`): case-insensitive but
+    /// accent-sensitive, never unaccented.
     /// `membershipTokens` are the tokens' normalized Unicode scalars — like the
     /// server, they are built once per query, not per row.
     static func matches(

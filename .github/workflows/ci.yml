@@ -16,29 +16,12 @@ jobs:
     name: Lint and Test
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    services:
-      postgres:
-        image: postgres:16-alpine
-        env:
-          POSTGRES_USER: ramekin
-          POSTGRES_PASSWORD: ramekin
-          POSTGRES_DB: ramekin
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U ramekin"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
     steps:
       - name: Record CI start time
         run: echo "CI_START=$(date +%s)" >> $GITHUB_ENV
 
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
-
-      - name: Create test database
-        run: PGPASSWORD=ramekin psql -h localhost -U ramekin -d ramekin -c "CREATE DATABASE ramekin_test;"
 
       - name: Install UI dependencies
         run: |
@@ -105,7 +88,7 @@ jobs:
         run: |
           # Find free ports for API tests
           eval $(./scripts/find-free-ports.sh PORT FIXTURE_PORT MOCK_OPENROUTER_PORT PROCESS_COMPOSE_PORT)
-          echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin_test" > test.env
+          echo "DATABASE_URL=${GITHUB_WORKSPACE}/.db/test.sqlite" > test.env
           echo "PORT=${PORT}" >> test.env
           echo "FIXTURE_PORT=${FIXTURE_PORT}" >> test.env
           echo "MOCK_OPENROUTER_PORT=${MOCK_OPENROUTER_PORT}" >> test.env
@@ -119,7 +102,7 @@ jobs:
           # Find free ports for UI tests
           eval $(./scripts/find-free-ports.sh \
             PORT FIXTURE_PORT UI_PORT UI_PORT_HTTP MOCK_OPENROUTER_PORT PROCESS_COMPOSE_PORT)
-          echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin" > test-ui.env
+          echo "DATABASE_URL=${GITHUB_WORKSPACE}/.db/test-ui.sqlite" > test-ui.env
           echo "PORT=${PORT}" >> test-ui.env
           echo "FIXTURE_PORT=${FIXTURE_PORT}" >> test-ui.env
           echo "UI_PORT=${UI_PORT}" >> test-ui.env

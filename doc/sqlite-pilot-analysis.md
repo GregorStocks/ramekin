@@ -2,8 +2,13 @@
 
 Step 1 of the "make the database layer generic and pilot SQLite" task: what
 moving off Postgres would take, what it would do to performance, and a
-go/no-go recommendation. Nothing here changes code; step 2 waits on the
-owner's decision (`issues/blocked-database-generic-sqlite-step2.json5`).
+go/no-go recommendation.
+
+> **Status:** the owner said go, and step 2 is done: the server runs on
+> SQLite as a direct switch (no dual-backend period; CI going green on SQLite
+> stood in for it). doc/sqlite-cutover.md is the runbook for moving prod's
+> data. This document is kept as the analysis behind it; the benchmark script
+> it cites was removed with the Postgres backend.
 
 ## Recommendation: go, as a cutover rather than a permanent second backend
 

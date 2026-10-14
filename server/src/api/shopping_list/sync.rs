@@ -1,19 +1,17 @@
-use crate::api::{run_db, ApiError, ErrorResponse};
+use crate::api::{run_db_locked, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
-use crate::db::DbPool;
+use crate::db::{self, DbPool};
+use crate::ids::Uuid;
 use crate::models::NewShoppingListItem;
-use crate::raw_sql;
 use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
-use diesel::upsert::on_constraint;
 use serde::{Deserialize, Serialize};
 use serde_with::rust::double_option;
 use std::collections::{HashMap, HashSet};
 use std::sync::Arc;
 use utoipa::ToSchema;
-use uuid::Uuid;
 
 // Type aliases for complex tuple types
 type ItemUpdateRow = (
@@ -211,16 +209,20 @@ pub async fn sync_items(
         (None, None) => ChangesSince::All,
     };
 
-    let response = run_db(&pool, move |conn| {
-        conn.transaction::<_, diesel::result::Error, _>(|conn| {
-            // Runs before every read below, so each of their snapshots sees at
-            // least what this one does. The cursor is this snapshot's xmin: the
-            // lowest transaction id still in flight. Any write not yet visible
-            // here — including this sync's own — carries a change_xid at or
-            // above it, so the next sync's inclusive `>= cursor` filter picks it
-            // up instead of skipping it. The price is that changes can be
-            // redelivered; clients apply them idempotently by version.
-            let cursor: i64 = diesel::select(raw_sql::change_xid_watermark()).get_result(conn)?;
+    let response = run_db_locked(&pool, move |conn| {
+        db::write::<_, diesel::result::Error, _>(conn, |conn| {
+            // Read before this sync's own writes, which therefore carry stamps
+            // at or above it and come back on the next sync. Clients apply
+            // redelivered changes idempotently by version.
+            let cursor = db::sync_cursor(conn)?;
+            // A cursor this database never issued (see `db::valid_since`)
+            // gets everything, deletions included, as if from the start.
+            let since = match since {
+                ChangesSince::Cursor(since) => {
+                    ChangesSince::Cursor(db::valid_since(Some(since), cursor).unwrap_or(0))
+                }
+                other => other,
+            };
 
             // 1. Process creates — batch insert, fall back to a single SELECT for conflicts
             let mut created = Vec::with_capacity(request.creates.len());
@@ -233,6 +235,7 @@ pub async fn sync_items(
                     .creates
                     .iter()
                     .map(|c| NewShoppingListItem {
+                        id: Uuid::now_v7(),
                         user_id,
                         item: &c.item,
                         amount: c.amount.as_deref(),
@@ -249,7 +252,7 @@ pub async fn sync_items(
                 let inserted: Vec<(Option<Uuid>, Uuid, i32, String)> =
                     diesel::insert_into(shopping_list_items::table)
                         .values(&new_items)
-                        .on_conflict(on_constraint("uq_shopping_list_client_id"))
+                        .on_conflict((shopping_list_items::user_id, shopping_list_items::client_id))
                         .do_nothing()
                         .returning((
                             shopping_list_items::client_id,
@@ -543,11 +546,11 @@ pub async fn sync_items(
                 ChangesSince::All => None,
                 ChangesSince::Cursor(since) => {
                     changes_query = changes_query.filter(
-                        shopping_list_items::change_xid
+                        shopping_list_items::change_seq
                             .ge(since)
                             .or(shopping_list_items::id.eq_any(conflicted)),
                     );
-                    Some(deleted_items.filter(shopping_list_items::change_xid.ge(since)))
+                    Some(deleted_items.filter(shopping_list_items::change_seq.ge(since)))
                 }
                 ChangesSince::Timestamp(last_sync) => {
                     changes_query = changes_query.filter(

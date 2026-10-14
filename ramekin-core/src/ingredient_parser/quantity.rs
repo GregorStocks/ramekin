@@ -191,7 +191,7 @@ pub(super) fn sizes_one_item(measurement: &Measurement) -> bool {
     let Some(unit) = measurement.unit.as_deref().map(normalize) else {
         return false;
     };
-    if package_grams(&unit).is_some() || inch_piece_size(&unit).is_some() {
+    if measure::read_package(&unit).is_some() || measure::read_inch_piece(&unit).is_some() {
         return false;
     }
     let unit = canonical_unit(&unit);

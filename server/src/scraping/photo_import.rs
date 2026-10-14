@@ -1,8 +1,8 @@
 use std::sync::Arc;
 
+use crate::ids::Uuid;
 use diesel::prelude::*;
 use tracing::Instrument;
-use uuid::Uuid;
 
 use ramekin_core::ai::{extract_recipe_from_photos, AiConfig, AiError, CachingAiClient};
 use ramekin_core::pipeline::steps::{ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep};
@@ -15,7 +15,7 @@ use crate::schema::scrape_jobs;
 
 use super::jobs::{mark_failed, save_step_output, update_status_and_step};
 use super::runner::{job_slot, run_scrape_job_in_slot};
-use super::{run_scrape_db, ScrapeError, STATUS_PARSING, STATUS_SCRAPING};
+use super::{run_scrape_db_write, ScrapeError, STATUS_PARSING, STATUS_SCRAPING};
 
 pub(super) const PHOTO_EXTRACT_STEP: &str = "photo_extract";
 
@@ -24,8 +24,12 @@ pub async fn create_pending_photo_job(
     pool: &DbPool,
     user_id: Uuid,
 ) -> Result<ScrapeJob, ScrapeError> {
-    run_scrape_db(pool, move |conn| {
-        let new_job = NewScrapeJob { user_id, url: None };
+    run_scrape_db_write(pool, move |conn| {
+        let new_job = NewScrapeJob {
+            id: Uuid::now_v7(),
+            user_id,
+            url: None,
+        };
 
         diesel::insert_into(scrape_jobs::table)
             .values(&new_job)
@@ -127,13 +131,13 @@ async fn run_photo_import_job_inner(
 
     // fetch_images output (photos already uploaded)
     let images_output = FetchImagesOutput {
-        photo_ids,
+        photo_ids: photo_ids.into_iter().map(Into::into).collect(),
         failed_urls: vec![],
     };
     let images_json =
         serde_json::to_value(&images_output).map_err(|e| ScrapeError::Database(e.to_string()))?;
 
-    run_scrape_db(&pool, move |conn| {
+    run_scrape_db_write(&pool, move |conn| {
         save_step_output(conn, job_id, ExtractRecipeStep::NAME, extract_json)?;
         save_step_output(conn, job_id, FetchImagesStepMeta::NAME, images_json)?;
 

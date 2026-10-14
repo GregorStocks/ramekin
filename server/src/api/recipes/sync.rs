@@ -3,9 +3,9 @@ use crate::api::recipes::read::{
 };
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
-use crate::db::DbPool;
+use crate::db::{self, DbPool};
+use crate::ids::Uuid;
 use crate::models::Ingredient;
-use crate::raw_sql;
 use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Query, State},
@@ -19,7 +19,6 @@ use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
-use uuid::Uuid;
 
 /// Ceiling on the sync page size: the whole point of paging is that no single
 /// response is ever huge.
@@ -75,7 +74,7 @@ pub struct SyncRecipe {
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
     pub ingredients: Vec<Ingredient>,
-    /// The database's text rendering of the stored ingredients JSONB — the
+    /// The stored ingredients JSON text, exactly as the database holds it — the
     /// exact haystack the server's bare-text search filter matches (JSON keys
     /// and syntax included). Local search must match against this string, not
     /// a re-encoding of `ingredients`, to reproduce server result membership.
@@ -131,79 +130,73 @@ pub async fn sync_recipes(
 
     let user_id = user.id;
 
-    // One read-only repeatable-read transaction, so the cursor and both reads
-    // come from a single snapshot. The cursor is the snapshot's xmin: the
-    // lowest transaction id still in flight. Anything a writer commits after
-    // this snapshot carries a change_xid at or above it, so the next sync's
-    // inclusive `>= cursor` filter picks it up instead of skipping it. The
-    // price is that changes can be redelivered; applying them is idempotent.
+    // One read transaction, so the cursor and both reads come from a single
+    // snapshot (see `db::sync_cursor`). Applying a redelivered change is
+    // idempotent.
     //
     // A sweep pages through the recipe-id space under a fixed `cursor` filter.
     // Every row matching the filter that committed before the sweep began is
     // visible to every page's snapshot, so partitioning by id delivers each of
     // them exactly once. A change committed mid-sweep can land in an id range
-    // the sweep already passed, but its change_xid is at or above the first
+    // the sweep already passed, but its change_seq is at or above the first
     // page's watermark — which is why clients persist the first page's cursor,
     // not the last one's.
     let (cursor, rows, deleted, has_more) = run_db(&pool, move |conn| {
-        conn.build_transaction()
-            .read_only()
-            .repeatable_read()
-            .run(|conn| {
-                // Runs first so it establishes the snapshot the reads below use.
-                let cursor: i64 =
-                    diesel::select(raw_sql::change_xid_watermark()).get_result(conn)?;
+        conn.transaction(|conn| {
+            // Runs first so it establishes the snapshot the reads below use.
+            let cursor = db::sync_cursor(conn)?;
+            let since = db::valid_since(params.cursor, cursor);
 
-                let mut query = current_recipe_versions_for_user!(user_id).into_boxed();
+            let mut query = current_recipe_versions_for_user!(user_id).into_boxed();
 
-                if let Some(since) = params.cursor {
-                    // A rename or delete rewrites the tags of every recipe carrying
-                    // the tag, without touching the recipe's own version row.
-                    let tag_changed = exists(
-                        recipe_version_tags::table
-                            .inner_join(user_tags::table)
-                            .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
-                            .filter(user_tags::change_xid.ge(since)),
-                    );
-                    query = query.filter(recipe_versions::change_xid.ge(since).or(tag_changed));
+            if let Some(since) = since {
+                // A rename or delete rewrites the tags of every recipe carrying
+                // the tag, without touching the recipe's own version row.
+                let tag_changed = exists(
+                    recipe_version_tags::table
+                        .inner_join(user_tags::table)
+                        .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
+                        .filter(user_tags::change_seq.ge(since)),
+                );
+                query = query.filter(recipe_versions::change_seq.ge(since).or(tag_changed));
+            }
+
+            if let Some(after_id) = params.after_id {
+                query = query.filter(recipes::id.gt(after_id));
+            }
+
+            let mut rows: Vec<RecipeSyncRow> = query
+                .select(recipe_sync_select!())
+                .order(recipes::id.asc())
+                .limit(params.limit + 1)
+                .load(conn)?;
+
+            let has_more = rows.len() as i64 > params.limit;
+            rows.truncate(params.limit as usize);
+
+            // Deletions are cheap (bare IDs) and not paged, so one page — the
+            // first — carries them all and the rest skip the query.
+            let deleted: Vec<Uuid> = if params.after_id.is_none() {
+                let mut deleted_query = recipes::table
+                    .filter(recipes::user_id.eq(user_id))
+                    .filter(recipes::deleted_at.is_not_null())
+                    .into_boxed();
+
+                if let Some(since) = since {
+                    deleted_query = deleted_query.filter(recipes::deleted_seq.ge(since));
                 }
 
-                if let Some(after_id) = params.after_id {
-                    query = query.filter(recipes::id.gt(after_id));
-                }
+                deleted_query.select(recipes::id).load(conn)?
+            } else {
+                Vec::new()
+            };
 
-                let mut rows: Vec<RecipeSyncRow> = query
-                    .select(recipe_sync_select!())
-                    .order(recipes::id.asc())
-                    .limit(params.limit + 1)
-                    .load(conn)?;
-
-                let has_more = rows.len() as i64 > params.limit;
-                rows.truncate(params.limit as usize);
-
-                // Deletions are cheap (bare IDs) and not paged, so one page — the
-                // first — carries them all and the rest skip the query.
-                let deleted: Vec<Uuid> = if params.after_id.is_none() {
-                    let mut deleted_query = recipes::table
-                        .filter(recipes::user_id.eq(user_id))
-                        .filter(recipes::deleted_at.is_not_null())
-                        .into_boxed();
-
-                    if let Some(since) = params.cursor {
-                        deleted_query = deleted_query.filter(recipes::deleted_xid.ge(since));
-                    }
-
-                    deleted_query.select(recipes::id).load(conn)?
-                } else {
-                    Vec::new()
-                };
-
-                Ok::<_, diesel::result::Error>((cursor, rows, deleted, has_more))
-            })
-            .map_err(|e| {
-                tracing::error!("Failed to sync recipes: {}", e);
-                ApiError::internal("Failed to sync recipes")
-            })
+            Ok::<_, diesel::result::Error>((cursor, rows, deleted, has_more))
+        })
+        .map_err(|e| {
+            tracing::error!("Failed to sync recipes: {}", e);
+            ApiError::internal("Failed to sync recipes")
+        })
     })
     .await?;
 

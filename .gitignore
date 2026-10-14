@@ -94,3 +94,6 @@ crates/
 .playwright-cli/
 
 .superpowers/
+
+# Local SQLite databases (scripts/worktree-setup.py)
+.db/
