@@ -915,6 +915,34 @@ def test_search_case_insensitive(authed_api_client):
     assert len(response.recipes) == 1
 
 
+def test_search_short_tokens(authed_api_client):
+    """Tokens under three characters are too short for the trigram index and
+    match through a scan of the same normalized text, accents and case
+    folded, LIKE wildcards literal."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    matching = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Œ Dish",
+            instructions="Cook it",
+            ingredients=[make_ingredient(item="flour")],
+            notes="Serve with jus at 50% power",
+        )
+    ).id
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Plain Dish",
+            instructions="Cook it",
+            ingredients=[make_ingredient(item="flour")],
+        )
+    )
+
+    for query in ["oe", "OE", "Œ", "ju", "0%"]:
+        response = recipes_api.list_recipes(q=query)
+        assert [r.id for r in response.recipes] == [matching], query
+    assert recipes_api.list_recipes(q="_%").recipes == []
+
+
 def test_search_accent_insensitive(authed_api_client):
     """Search is accent-insensitive: plain ASCII matches diacritics and vice versa."""
     client, user_id = authed_api_client

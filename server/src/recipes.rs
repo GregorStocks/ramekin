@@ -48,58 +48,54 @@ impl From<diesel::result::Error> for VersionWriteError {
     }
 }
 
-/// Insert a bare `recipes` row and return its id. Call inside a transaction.
+/// Insert a bare `recipes` row and return its id. Call inside `db::write`.
 pub fn insert_recipe(conn: &mut SqliteConnection, user_id: Uuid) -> QueryResult<Uuid> {
-    crate::db::write(conn, |conn| {
-        diesel::insert_into(recipes::table)
-            .values(NewRecipe {
-                id: Uuid::now_v7(),
-                user_id,
-            })
-            .returning(recipes::id)
-            .get_result(conn)
-    })
+    diesel::insert_into(recipes::table)
+        .values(NewRecipe {
+            id: Uuid::now_v7(),
+            user_id,
+        })
+        .returning(recipes::id)
+        .get_result(conn)
 }
 
 /// Insert a new version row, repoint only if `current_version_id` still equals
 /// `expected_current` and the recipe is not soft-deleted, then apply `tags`.
 /// Otherwise returns [`VersionWriteError::Stale`], which rolls back the
-/// caller's transaction. Call inside a transaction.
+/// caller's transaction. Call inside `db::write`.
 pub fn create_new_version_cas(
     conn: &mut SqliteConnection,
     new_version: &NewRecipeVersion<'_>,
     expected_current: Option<Uuid>,
     tags: TagSource<'_>,
 ) -> Result<Uuid, VersionWriteError> {
-    crate::db::write(conn, |conn| {
-        let version_id = insert_version_row(conn, new_version)?;
+    let version_id = insert_version_row(conn, new_version)?;
 
-        let rows_updated = match expected_current {
-            Some(expected_version_id) => diesel::update(
-                recipes::table
-                    .filter(recipes::id.eq(new_version.recipe_id))
-                    .filter(recipes::current_version_id.eq(Some(expected_version_id)))
-                    .filter(recipes::deleted_at.is_null()),
-            )
-            .set(recipes::current_version_id.eq(version_id))
-            .execute(conn)?,
-            None => diesel::update(
-                recipes::table
-                    .filter(recipes::id.eq(new_version.recipe_id))
-                    .filter(recipes::current_version_id.is_null())
-                    .filter(recipes::deleted_at.is_null()),
-            )
-            .set(recipes::current_version_id.eq(version_id))
-            .execute(conn)?,
-        };
+    let rows_updated = match expected_current {
+        Some(expected_version_id) => diesel::update(
+            recipes::table
+                .filter(recipes::id.eq(new_version.recipe_id))
+                .filter(recipes::current_version_id.eq(Some(expected_version_id)))
+                .filter(recipes::deleted_at.is_null()),
+        )
+        .set(recipes::current_version_id.eq(version_id))
+        .execute(conn)?,
+        None => diesel::update(
+            recipes::table
+                .filter(recipes::id.eq(new_version.recipe_id))
+                .filter(recipes::current_version_id.is_null())
+                .filter(recipes::deleted_at.is_null()),
+        )
+        .set(recipes::current_version_id.eq(version_id))
+        .execute(conn)?,
+    };
 
-        if rows_updated == 0 {
-            return Err(VersionWriteError::Stale);
-        }
+    if rows_updated == 0 {
+        return Err(VersionWriteError::Stale);
+    }
 
-        apply_tags(conn, version_id, tags)?;
-        Ok(version_id)
-    })
+    apply_tags(conn, version_id, tags)?;
+    Ok(version_id)
 }
 
 fn insert_version_row(

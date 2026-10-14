@@ -14,9 +14,9 @@ pub type DbPool = r2d2::Pool<ConnectionManager<SqliteConnection>>;
 pub type DbConn = r2d2::PooledConnection<ConnectionManager<SqliteConnection>>;
 
 /// The key a case-insensitive name (a username, a tag) is unique and looked
-/// up by: `ramekin_core::search::fold_case`, which iOS mirrors for tags.
-/// SQLite's `lower()` and `NOCASE` only fold ASCII, so the key is computed
-/// here and stored next to the name.
+/// up by: `ramekin_core::search::fold_case`, which iOS mirrors for tags. The
+/// database stores it in generated `username_key` / `name_key` columns
+/// through the `fold_case` SQL function; compare lookups against this.
 pub fn case_key(name: &str) -> String {
     ramekin_core::search::fold_case(name)
 }
@@ -68,9 +68,8 @@ fn lock_writes() -> Option<(std::sync::MutexGuard<'static, ()>, FlagGuard)> {
 /// through here, including single statements. Keep the closure short and
 /// free of network calls: every other writer waits for it.
 ///
-/// Prefer [`run_blocking_write`] (or the API's `run_db_write`), which takes
-/// the lock before checking out a connection: a writer waiting here holds a
-/// pooled connection that readers can't use meanwhile.
+/// When the whole closure of a `run_blocking` is one write, use
+/// [`run_blocking_write`] (or the API's `run_db_write`) instead.
 pub fn write<T, E, F>(conn: &mut SqliteConnection, f: F) -> Result<T, E>
 where
     F: FnOnce(&mut SqliteConnection) -> Result<T, E>,
@@ -84,18 +83,9 @@ where
     conn.immediate_transaction(f)
 }
 
-/// [`run_blocking`] holding the write lock: takes the lock, then a
-/// connection, so waiting for the lock doesn't tie up a pooled connection.
-/// Writes inside `f` still go through [`write`].
-pub async fn run_blocking_locked<T, F>(pool: &DbPool, f: F) -> Result<T, r2d2::PoolError>
-where
-    F: FnOnce(&mut DbConn) -> T + Send + 'static,
-    T: Send + 'static,
-{
-    run_blocking_with(pool, true, f).await
-}
-
-/// [`run_blocking_locked`] with the whole closure in one [`write`].
+/// [`run_blocking`] with the whole closure in one [`write`]. Takes the write
+/// lock before checking out a connection, so waiting for the lock doesn't tie
+/// up a pooled connection that readers could use.
 pub async fn run_blocking_write<T, E, F>(
     pool: &DbPool,
     f: F,
@@ -105,7 +95,7 @@ where
     T: Send + 'static,
     E: From<diesel::result::Error> + Send + 'static,
 {
-    run_blocking_locked(pool, move |conn| write(conn, f)).await
+    run_blocking_with(pool, true, move |conn| write(conn, f)).await
 }
 
 /// The sync cursor for a read starting now: one past the last change stamp
@@ -130,9 +120,15 @@ pub fn valid_since(cursor: Option<i64>, current: i64) -> Option<i64> {
 
 diesel::define_sql_function! {
     /// `ramekin_core::search::normalize_for_search`, registered on every
-    /// connection. The search index triggers and the short-token search
-    /// fallback call it, so stored and queried text normalize identically.
+    /// connection. The search index triggers and the `source:` filter call
+    /// it, so stored and queried text normalize identically.
     fn normalize_for_search(value: diesel::sql_types::Nullable<diesel::sql_types::Text>) -> diesel::sql_types::Nullable<diesel::sql_types::Text>;
+}
+
+diesel::define_sql_function! {
+    /// [`case_key`], registered on every connection for the generated
+    /// `username_key` and `name_key` columns.
+    fn fold_case(value: diesel::sql_types::Text) -> diesel::sql_types::Text;
 }
 
 /// Per-connection setup: pragmas and the search normalization function.
@@ -145,7 +141,8 @@ impl CustomizeConnection<SqliteConnection, r2d2::Error> for ConnectionSetup {
     }
 }
 
-/// Pragmas and functions every connection needs, pooled or not.
+/// Pragmas and functions every connection needs, pooled or not. Writes to
+/// tables with generated keys or search triggers fail without the functions.
 ///
 /// `synchronous = FULL` syncs the WAL on every commit, so a write the API
 /// reported is durable across power loss. The busy timeout only backstops
@@ -157,7 +154,8 @@ pub fn setup_connection(conn: &mut SqliteConnection) -> QueryResult<()> {
     )?;
     normalize_for_search_utils::register_impl(conn, |value: Option<String>| {
         value.map(|v| ramekin_core::search::normalize_for_search(&v))
-    })
+    })?;
+    fold_case_utils::register_impl(conn, |value: String| case_key(&value))
 }
 
 /// Run blocking database work on tokio's blocking thread pool.
@@ -301,6 +299,7 @@ pub fn create_pool(database_url: &str) -> DbPool {
         // Connections are cheap file handles; plenty of them keeps writers
         // that wait on the write lock from starving readers of connections.
         .max_size(32)
+        .min_idle(Some(4))
         .connection_customizer(Box::new(ConnectionSetup))
         .build(manager)
         .expect("Failed to create database pool")

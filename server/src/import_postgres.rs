@@ -61,9 +61,6 @@ const fn from(name: &'static str, source: &'static str, kind: Kind) -> Column {
 struct Table {
     name: &'static str,
     columns: &'static [Column],
-    /// A column filled from another (`username_key` from `username`):
-    /// (target, source) with the value `db::case_key(source)`.
-    key_column: Option<(&'static str, &'static str)>,
 }
 
 use Kind::*;
@@ -81,7 +78,6 @@ const TABLES: &[Table] = &[
             col("updated_at", Timestamp),
             col("deleted_at", Timestamp),
         ],
-        key_column: Some(("username_key", "username")),
     },
     Table {
         name: "sessions",
@@ -93,7 +89,6 @@ const TABLES: &[Table] = &[
             col("created_at", Timestamp),
             col("token_type", Text),
         ],
-        key_column: None,
     },
     Table {
         name: "client_log_uploads",
@@ -107,12 +102,10 @@ const TABLES: &[Table] = &[
             col("created_at", Timestamp),
             col("deleted_at", Timestamp),
         ],
-        key_column: None,
     },
     Table {
         name: "data_migrations",
         columns: &[col("name", Text), col("run_at", Timestamp)],
-        key_column: None,
     },
     Table {
         name: "ingredient_name_resolutions",
@@ -130,7 +123,6 @@ const TABLES: &[Table] = &[
             col("grams_per_cup", Real),
             col("grams_per_piece", Real),
         ],
-        key_column: None,
     },
     Table {
         name: "photos",
@@ -146,7 +138,6 @@ const TABLES: &[Table] = &[
             col("height", Int),
             col("file_size", Int),
         ],
-        key_column: None,
     },
     Table {
         name: "photo_thumbnails",
@@ -157,7 +148,6 @@ const TABLES: &[Table] = &[
             col("data", Bytes),
             col("created_at", Timestamp),
         ],
-        key_column: None,
     },
     Table {
         name: "recipes",
@@ -168,7 +158,6 @@ const TABLES: &[Table] = &[
             col("deleted_at", Timestamp),
             from("deleted_seq", "deleted_xid", BigInt),
         ],
-        key_column: None,
     },
     Table {
         name: "recipe_versions",
@@ -193,7 +182,6 @@ const TABLES: &[Table] = &[
             col("version_source", Text),
             col("created_at", Timestamp),
         ],
-        key_column: None,
     },
     Table {
         name: "user_tags",
@@ -205,12 +193,10 @@ const TABLES: &[Table] = &[
             col("deleted_at", Timestamp),
             col("updated_at", Timestamp),
         ],
-        key_column: Some(("name_key", "name")),
     },
     Table {
         name: "recipe_version_tags",
         columns: &[col("recipe_version_id", Text), col("tag_id", Text)],
-        key_column: None,
     },
     Table {
         name: "meal_plans",
@@ -224,7 +210,6 @@ const TABLES: &[Table] = &[
             col("created_at", Timestamp),
             col("deleted_at", Timestamp),
         ],
-        key_column: None,
     },
     Table {
         name: "shopping_list_items",
@@ -246,7 +231,6 @@ const TABLES: &[Table] = &[
             col("category_override", Text),
             col("computed_category", Text),
         ],
-        key_column: None,
     },
     Table {
         name: "scrape_jobs",
@@ -267,7 +251,6 @@ const TABLES: &[Table] = &[
             col("expected_version_id", Text),
             col("idempotency_key", Text),
         ],
-        key_column: None,
     },
     Table {
         name: "step_outputs",
@@ -283,7 +266,6 @@ const TABLES: &[Table] = &[
             col("success", Bool),
             col("error", Text),
         ],
-        key_column: None,
     },
 ];
 
@@ -300,61 +282,46 @@ fn select_expr(column: &Column) -> String {
     }
 }
 
-/// A value read from Postgres, ready to bind into SQLite.
+/// A non-null value read from Postgres, ready to bind into SQLite.
 enum Value {
-    Null,
     Text(String),
     Int(i64),
     Real(f64),
     Bytes(Vec<u8>),
 }
 
-fn read(row: &Row, index: usize, column: &Column) -> anyhow::Result<Value> {
+fn read(row: &Row, index: usize, column: &Column) -> anyhow::Result<Option<Value>> {
     Ok(match column.kind {
-        Text | Timestamp => match row.try_get::<_, Option<String>>(index)? {
-            Some(s) => Value::Text(s),
-            None => Value::Null,
-        },
+        Text | Timestamp => row.try_get::<_, Option<String>>(index)?.map(Value::Text),
         Json => match row.try_get::<_, Option<String>>(index)? {
             Some(s) => {
                 let parsed: serde_json::Value = serde_json::from_str(&s)?;
-                Value::Text(serde_json::to_string(&parsed)?)
+                Some(Value::Text(serde_json::to_string(&parsed)?))
             }
-            None => Value::Null,
+            None => None,
         },
-        Int => match row.try_get::<_, Option<i32>>(index)? {
-            Some(v) => Value::Int(v.into()),
-            None => Value::Null,
-        },
-        BigInt => match row.try_get::<_, Option<i64>>(index)? {
-            Some(v) => Value::Int(v),
-            None => Value::Null,
-        },
-        Real => match row.try_get::<_, Option<f64>>(index)? {
-            Some(v) => Value::Real(v),
-            None => Value::Null,
-        },
-        Bool => match row.try_get::<_, Option<bool>>(index)? {
-            Some(v) => Value::Int(v.into()),
-            None => Value::Null,
-        },
-        Bytes => match row.try_get::<_, Option<Vec<u8>>>(index)? {
-            Some(v) => Value::Bytes(v),
-            None => Value::Null,
-        },
+        Int => row
+            .try_get::<_, Option<i32>>(index)?
+            .map(|v| Value::Int(v.into())),
+        BigInt => row.try_get::<_, Option<i64>>(index)?.map(Value::Int),
+        Real => row.try_get::<_, Option<f64>>(index)?.map(Value::Real),
+        Bool => row
+            .try_get::<_, Option<bool>>(index)?
+            .map(|v| Value::Int(v.into())),
+        Bytes => row.try_get::<_, Option<Vec<u8>>>(index)?.map(Value::Bytes),
     })
 }
 
 fn bind<'f, Q>(
     query: diesel::query_builder::BoxedSqlQuery<'f, Sqlite, Q>,
-    value: Value,
+    value: Option<Value>,
 ) -> diesel::query_builder::BoxedSqlQuery<'f, Sqlite, Q> {
     match value {
-        Value::Null => query.bind::<sql::Nullable<sql::Text>, _>(None::<String>),
-        Value::Text(v) => query.bind::<sql::Text, _>(v),
-        Value::Int(v) => query.bind::<sql::BigInt, _>(v),
-        Value::Real(v) => query.bind::<sql::Double, _>(v),
-        Value::Bytes(v) => query.bind::<sql::Binary, _>(v),
+        None => query.bind::<sql::Nullable<sql::Text>, _>(None::<String>),
+        Some(Value::Text(v)) => query.bind::<sql::Text, _>(v),
+        Some(Value::Int(v)) => query.bind::<sql::BigInt, _>(v),
+        Some(Value::Real(v)) => query.bind::<sql::Double, _>(v),
+        Some(Value::Bytes(v)) => query.bind::<sql::Binary, _>(v),
     }
 }
 
@@ -377,42 +344,29 @@ fn copy_table(
     table: &Table,
 ) -> anyhow::Result<usize> {
     let selects: Vec<String> = table.columns.iter().map(select_expr).collect();
-    let rows = pg.query(
-        &format!("SELECT {} FROM {}", selects.join(", "), table.name),
-        &[],
-    )?;
-
-    let mut names: Vec<&str> = table.columns.iter().map(|c| c.name).collect();
-    if let Some((key, _)) = table.key_column {
-        names.push(key);
-    }
-    let placeholders = vec!["?"; names.len()].join(", ");
+    let names: Vec<&str> = table.columns.iter().map(|c| c.name).collect();
     let insert = format!(
-        "INSERT INTO {} ({}) VALUES ({placeholders})",
+        "INSERT INTO {} ({}) VALUES ({})",
         table.name,
-        names.join(", ")
+        names.join(", "),
+        vec!["?"; names.len()].join(", ")
     );
 
-    for row in &rows {
+    // Streamed: photo tables hold every image, too much to load at once.
+    let mut rows = pg.query_raw(
+        &format!("SELECT {} FROM {}", selects.join(", "), table.name),
+        std::iter::empty::<i32>(),
+    )?;
+    let mut count = 0;
+    while let Some(row) = postgres::fallible_iterator::FallibleIterator::next(&mut rows)? {
         let mut query = diesel::sql_query(insert.as_str()).into_boxed::<Sqlite>();
-        let mut key_value = None;
         for (index, column) in table.columns.iter().enumerate() {
-            let value = read(row, index, column)?;
-            if let (Some((_, source)), Value::Text(text)) = (table.key_column, &value) {
-                if source == column.name {
-                    key_value = Some(db::case_key(text));
-                }
-            }
-            query = bind(query, value);
-        }
-        if table.key_column.is_some() {
-            let key = key_value
-                .ok_or_else(|| anyhow::anyhow!("{}: missing value for key column", table.name))?;
-            query = query.bind::<sql::Text, _>(key);
+            query = bind(query, read(&row, index, column)?);
         }
         query.execute(conn)?;
+        count += 1;
     }
-    Ok(rows.len())
+    Ok(count)
 }
 
 /// Copy the Postgres database at `postgres_url` into the empty SQLite
@@ -498,12 +452,9 @@ pub fn run(postgres_url: &str, database_url: &str) -> anyhow::Result<()> {
     // Every row came across, deleted ones included.
     for (table, count) in &copied {
         let sqlite = sqlite_count(&mut conn, table)?;
-        let postgres: i64 = snapshot
-            .query_one(&format!("SELECT count(*) FROM {table}"), &[])?
-            .get(0);
         anyhow::ensure!(
-            sqlite == postgres && sqlite == *count as i64,
-            "{table}: {postgres} rows in Postgres, {sqlite} in SQLite"
+            sqlite == *count as i64,
+            "{table}: {count} rows in Postgres, {sqlite} in SQLite"
         );
     }
     let live: i64 = snapshot

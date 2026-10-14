@@ -7,13 +7,15 @@
 --   insert that forgets one fails instead of writing a NULL key.
 -- - Timestamps are UTC text, `YYYY-MM-DD HH:MM:SS.SSS+00:00`, matching
 --   `db::now()` and Diesel's own encoding, so they compare as text.
--- - Case-insensitive names (usernames, tag names) carry a key column holding
---   the Rust-lowercased name, since SQLite only folds ASCII.
+-- - Case-insensitive names (usernames, tag names) carry a generated key
+--   column, fold_case(name): the search contract's lowercase mapping, a
+--   function the server registers on every connection (SQLite's own lower()
+--   only folds ASCII).
 
 CREATE TABLE users (
     id TEXT PRIMARY KEY NOT NULL,
     username TEXT NOT NULL,
-    username_key TEXT NOT NULL,
+    username_key TEXT NOT NULL GENERATED ALWAYS AS (fold_case(username)) STORED,
     password_hash TEXT NOT NULL,
     created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%d %H:%M:%f+00:00', 'now')),
     updated_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%d %H:%M:%f+00:00', 'now')),
@@ -151,7 +153,7 @@ CREATE TABLE user_tags (
     id TEXT PRIMARY KEY NOT NULL,
     user_id TEXT NOT NULL REFERENCES users (id),
     name TEXT NOT NULL,
-    name_key TEXT NOT NULL,
+    name_key TEXT NOT NULL GENERATED ALWAYS AS (fold_case(name)) STORED,
     created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%d %H:%M:%f+00:00', 'now')),
     deleted_at TEXT,
     updated_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%d %H:%M:%f+00:00', 'now')),

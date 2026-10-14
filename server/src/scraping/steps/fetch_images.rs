@@ -132,7 +132,7 @@ impl FetchImagesStep {
 
         // Store in database
         let user_id = self.user_id;
-        let photo_id: Uuid = crate::db::run_blocking_locked(&self.pool, move |conn| {
+        let photo_id: Uuid = crate::db::run_blocking_write(&self.pool, move |conn| {
             let new_photo = NewPhoto {
                 id: Uuid::now_v7(),
                 user_id,
@@ -143,17 +143,14 @@ impl FetchImagesStep {
                 height: Some(processed.height as i32),
                 file_size: Some(data.len() as i32),
             };
-
-            crate::db::write(conn, |conn| {
-                diesel::insert_into(photos::table)
-                    .values(&new_photo)
-                    .returning(photos::id)
-                    .get_result(conn)
-            })
-            .map_err(|e: diesel::result::Error| e.to_string())
+            diesel::insert_into(photos::table)
+                .values(&new_photo)
+                .returning(photos::id)
+                .get_result::<Uuid>(conn)
         })
         .await
-        .map_err(|e| e.to_string())??;
+        .map_err(|e| e.to_string())?
+        .map_err(|e: diesel::result::Error| e.to_string())?;
 
         tracing::info!("Stored photo {} from {}", photo_id, url);
         Ok(photo_id)

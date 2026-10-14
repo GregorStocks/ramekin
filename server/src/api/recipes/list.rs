@@ -358,32 +358,9 @@ fn filtered_recipes_query(user_id: Uuid, parsed: &ParsedQuery) -> FilteredRecipe
     for token in &parsed.text {
         query = match search_index_query(token) {
             Some(fts_query) => query.filter(raw_sql::recipe_search_match(fts_query)),
-            // Too short for the trigram index: scan the user's current
-            // versions, normalizing each field the way the index does.
-            None => {
-                let pattern = literal_search_pattern(token);
-                query.filter(
-                    db::normalize_for_search(recipe_versions::title.nullable())
-                        .like(pattern.clone())
-                        .escape('\\')
-                        .or(db::normalize_for_search(recipe_versions::description)
-                            .like(pattern.clone())
-                            .escape('\\'))
-                        .or(
-                            db::normalize_for_search(recipe_versions::instructions.nullable())
-                                .like(pattern.clone())
-                                .escape('\\'),
-                        )
-                        .or(db::normalize_for_search(recipe_versions::notes)
-                            .like(pattern.clone())
-                            .escape('\\'))
-                        .or(
-                            db::normalize_for_search(raw_sql::ingredients_text().nullable())
-                                .like(pattern)
-                                .escape('\\'),
-                        ),
-                )
-            }
+            // Too short for the trigram index: match the index's stored
+            // text with LIKE instead.
+            None => query.filter(raw_sql::recipe_search_like(literal_search_pattern(token))),
         };
     }
 

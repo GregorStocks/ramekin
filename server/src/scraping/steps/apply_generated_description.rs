@@ -183,8 +183,8 @@ impl ApplyGeneratedDescriptionStep {
         use crate::models::RecipeVersion;
 
         let description = description.to_string();
-        crate::db::run_blocking_locked(&self.pool, move |conn| {
-            skip_if_edited(crate::db::write(conn, |conn| {
+        skip_if_edited(
+            crate::db::run_blocking_write(&self.pool, move |conn| {
                 let current: RecipeVersion = recipe_versions::table
                     .filter(recipe_versions::id.eq(expected_version_id))
                     .filter(recipe_versions::recipe_id.eq(recipe_id))
@@ -208,9 +208,9 @@ impl ApplyGeneratedDescriptionStep {
                 )?;
 
                 Ok(new_version_id)
-            }))
-        })
-        .await
-        .map_err(|e| e.to_string())?
+            })
+            .await
+            .map_err(|e| e.to_string())?,
+        )
     }
 }

@@ -17,8 +17,8 @@ into the SQLite file named by `DATABASE_URL`, which must be new or empty:
    one SQLite transaction. If anything fails, the SQLite file is left with an
    empty schema; delete it and run again.
 3. Converts types along the way: uuids to text, `uuid[]` photo ids and
-   `jsonb` to compact JSON text, timestamps to UTC text, and fills the
-   case-folded `username_key` / `name_key` columns.
+   `jsonb` to compact JSON text, and timestamps to UTC text. The case-folded
+   `username_key` / `name_key` columns fill themselves (generated columns).
 4. Seeds the sync clock above the snapshot's `pg_snapshot_xmax`, so it starts
    above every cursor a client could hold. Every live recipe version, tag and
    shopping item gets a stamp above that, so each client's next normal delta

@@ -11,12 +11,11 @@
 //! 2. Ensure all user input uses `.bind()`
 //! 3. Update scripts/sql_allowlist.txt with the new pattern
 
-use crate::sql_types::UuidList;
-use diesel::deserialize::{self, FromSql};
+use crate::sql_types::{TextList, UuidList};
 use diesel::dsl::sql;
 use diesel::expression::SqlLiteral;
 use diesel::sql_types::{Bool, Text};
-use diesel::sqlite::{Sqlite, SqliteValue};
+use diesel::sqlite::Sqlite;
 
 diesel::define_sql_function! {
     /// SQLite json_array_length(): the number of photos in `photo_ids`.
@@ -26,18 +25,6 @@ diesel::define_sql_function! {
 diesel::define_sql_function! {
     /// SQLite random(): a random 64-bit integer, a valid sort key.
     fn random() -> diesel::sql_types::BigInt;
-}
-
-/// A list of strings returned as a JSON array (`json_group_array`).
-#[derive(diesel::sql_types::SqlType, diesel::query_builder::QueryId, Clone, Copy, Debug)]
-#[diesel(sqlite_type(name = "Text"))]
-pub struct TextList;
-
-impl FromSql<TextList, Sqlite> for Vec<String> {
-    fn from_sql(value: SqliteValue<'_, '_, '_>) -> deserialize::Result<Self> {
-        let text = <String as FromSql<Text, Sqlite>>::from_sql(value)?;
-        Ok(serde_json::from_str(&text)?)
-    }
 }
 
 /// Correlated subquery to fetch tags for the current recipe_versions row.
@@ -115,6 +102,33 @@ pub fn recipe_search_match(
     sql::<Bool>("+recipes.seq IN (SELECT rowid FROM recipe_search WHERE recipe_search MATCH ")
         .bind::<Text, _>(fts_query)
         .sql(")")
+}
+
+/// Filter: the recipe's search index row has a field containing `pattern`, a
+/// LIKE pattern (`\` escapes) over the index's normalized text. For tokens
+/// too short for the trigram index, which SQLite then answers by scanning the
+/// index's stored text.
+///
+/// # Safety
+/// The pattern is bound as a parameter, once per field.
+pub fn recipe_search_like<'a, QS: 'a>(
+    pattern: String,
+) -> Box<dyn diesel::BoxableExpression<QS, Sqlite, SqlType = Bool> + 'a> {
+    // Each `.bind` writes its own `?` placeholder.
+    const ESCAPE: &str = " ESCAPE '\\'";
+    Box::new(
+        sql::<Bool>("+recipes.seq IN (SELECT rowid FROM recipe_search WHERE title LIKE ")
+            .bind::<Text, _>(pattern.clone())
+            .sql(&format!("{ESCAPE} OR description LIKE "))
+            .bind::<Text, _>(pattern.clone())
+            .sql(&format!("{ESCAPE} OR instructions LIKE "))
+            .bind::<Text, _>(pattern.clone())
+            .sql(&format!("{ESCAPE} OR notes LIKE "))
+            .bind::<Text, _>(pattern.clone())
+            .sql(&format!("{ESCAPE} OR ingredients LIKE "))
+            .bind::<Text, _>(pattern)
+            .sql(&format!("{ESCAPE})")),
+    )
 }
 
 /// The ingredient haystack bare-text search matches against: the stored

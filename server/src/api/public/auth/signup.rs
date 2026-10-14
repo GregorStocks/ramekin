@@ -47,11 +47,9 @@ pub async fn signup(
     let password_hash = password_hash.map_err(|_| ApiError::internal("Failed to hash password"))?;
 
     let (user_id, token) = run_db_write(&pool, move |conn| {
-        let username_key = crate::db::case_key(&req.username);
         let new_user = NewUser {
             id: Uuid::now_v7(),
             username: &req.username,
-            username_key: &username_key,
             password_hash: &password_hash,
         };
 

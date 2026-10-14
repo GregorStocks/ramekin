@@ -75,11 +75,9 @@ impl<'a> DbOutputStore<'a> {
         };
 
         crate::db::run_blocking_write(self.pool, move |conn| {
-            crate::db::write(conn, |conn| {
-                diesel::insert_into(step_outputs::table)
-                    .values(&new_output)
-                    .execute(conn)
-            })
+            diesel::insert_into(step_outputs::table)
+                .values(&new_output)
+                .execute(conn)
         })
         .await
         .map_err(|e| Box::new(e) as Box<dyn Error + Send + Sync>)?

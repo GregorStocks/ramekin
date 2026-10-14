@@ -168,18 +168,6 @@ pub fn load_learned<'a>(
         .collect())
 }
 
-/// `load_learned` for a write that stores something computed from the answers
-/// (a shopping item's category), after queueing the names it wrote. Call it
-/// inside the write (`db::write`): the write lock keeps the worker from
-/// resolving a name in between, so its `recategorize_shopping_items` then
-/// sees the written item.
-pub fn load_learned_for_write<'a>(
-    conn: &mut SqliteConnection,
-    items: impl IntoIterator<Item = &'a str>,
-) -> QueryResult<Learned> {
-    load_learned(conn, items)
-}
-
 /// Name, disposition, key, and an estimate's calories, cup and piece weights.
 type LearnedRow = (
     String,
@@ -619,12 +607,9 @@ async fn ask(batch: &[String]) -> Result<(Vec<(String, NameResolution)>, String)
 
 async fn save_resolved(
     pool: &Arc<DbPool>,
-    mut answers: Vec<(String, NameResolution)>,
+    answers: Vec<(String, NameResolution)>,
     model: String,
 ) -> Result<(), String> {
-    // Updated by name, the order writes lock name rows in
-    // (`load_learned_for_write`), so the two can't deadlock.
-    answers.sort_by(|(a, _), (b, _)| a.cmp(b));
     let resolved = answers.len();
     // Only entries and non-foods give a shopping category. A pending name has
     // no earlier answer, so nothing else changes one.
@@ -638,38 +623,32 @@ async fn save_resolved(
         })
         .map(|(name, _)| name.clone())
         .collect();
-    run_blocking(pool, move |conn| {
-        crate::db::write(conn, |conn| {
-            let now = Utc::now();
-            for (name, resolution) in &answers {
-                let (disposition, key, estimate) = match resolution {
-                    NameResolution::Entry(key) => ("entry", Some(key.as_str()), None),
-                    NameResolution::Estimate(estimate) => ("estimate", None, Some(estimate)),
-                    NameResolution::NotFood => ("not_food", None, None),
-                    NameResolution::Unknown => ("unknown", None, None),
-                };
-                diesel::update(names::table.find(name))
-                    .set((
-                        names::status.eq(RESOLVED),
-                        names::disposition.eq(disposition),
-                        names::catalog_key.eq(key),
-                        names::kcal_per_100g.eq(estimate.map(|e| e.kcal_per_100g)),
-                        names::grams_per_cup.eq(estimate.and_then(|e| e.grams_per_cup)),
-                        names::grams_per_piece.eq(estimate.and_then(|e| e.grams_per_piece)),
-                        names::model.eq(&model),
-                        names::error.eq(None::<String>),
-                        names::attempts.eq(names::attempts + 1),
-                        names::updated_at.eq(now),
-                    ))
-                    .execute(conn)?;
-            }
-            QueryResult::Ok(())
-        })
-    })
-    .await
-    .map_err(|e| e.to_string())?
-    .map_err(|e| e.to_string())?;
-    run_blocking(pool, move |conn| {
+    // One write for the answers and the categories they change, so no
+    // shopping write lands in between with an old answer.
+    crate::db::run_blocking_write(pool, move |conn| {
+        let now = Utc::now();
+        for (name, resolution) in &answers {
+            let (disposition, key, estimate) = match resolution {
+                NameResolution::Entry(key) => ("entry", Some(key.as_str()), None),
+                NameResolution::Estimate(estimate) => ("estimate", None, Some(estimate)),
+                NameResolution::NotFood => ("not_food", None, None),
+                NameResolution::Unknown => ("unknown", None, None),
+            };
+            diesel::update(names::table.find(name))
+                .set((
+                    names::status.eq(RESOLVED),
+                    names::disposition.eq(disposition),
+                    names::catalog_key.eq(key),
+                    names::kcal_per_100g.eq(estimate.map(|e| e.kcal_per_100g)),
+                    names::grams_per_cup.eq(estimate.and_then(|e| e.grams_per_cup)),
+                    names::grams_per_piece.eq(estimate.and_then(|e| e.grams_per_piece)),
+                    names::model.eq(&model),
+                    names::error.eq(None::<String>),
+                    names::attempts.eq(names::attempts + 1),
+                    names::updated_at.eq(now),
+                ))
+                .execute(conn)?;
+        }
         recategorize_shopping_items(conn, &recategorized)
     })
     .await
@@ -686,20 +665,11 @@ async fn save_resolved(
 }
 
 /// Recompute the stored category of live shopping-list items with any of
-/// these names, once their new answers have committed. An item whose category
-/// changed gets a new `updated_at` too, so incremental sync sends it; its
-/// version (and clients' pending edits) stay valid, since the item itself is
-/// unchanged. A crash partway leaves the rest to `reconcile_categories` at the
-/// next startup.
-///
-/// Each item is its own transaction, after the answers' one, so at most one
-/// item lock is held and locks are taken item first, then name row, as writes
-/// take them: the item is locked and re-read (a concurrent rename may have
-/// changed its name), then the answers read under `load_learned_for_write`.
-/// A write that read an old answer held that name row until it committed, so
-/// it committed before the answer did, and this sees it; a later write reads
-/// the new answer itself. Names match by catalog normalization, which no SQL
-/// pattern expresses, so the live items are read once and matched here.
+/// these names, in the write that stores their new answers. An item whose
+/// category changed gets a new `updated_at` too, so incremental sync sends it;
+/// its version (and clients' pending edits) stay valid, since the item itself
+/// is unchanged. Names match by catalog normalization, which no SQL pattern
+/// expresses, so the live items are read once and matched here.
 fn recategorize_shopping_items(
     conn: &mut SqliteConnection,
     changed: &HashSet<String>,
@@ -708,40 +678,25 @@ fn recategorize_shopping_items(
     if changed.is_empty() {
         return Ok(());
     }
-    let matches = |item: &str| changed.contains(normalize(item).as_str());
-    let ids: Vec<crate::ids::Uuid> = items::table
+    let matched: Vec<(crate::ids::Uuid, String, Option<String>)> = items::table
         .filter(items::deleted_at.is_null())
-        .select((items::id, items::item))
-        .load::<(crate::ids::Uuid, String)>(conn)?
+        .select((items::id, items::item, items::computed_category))
+        .load::<(crate::ids::Uuid, String, Option<String>)>(conn)?
         .into_iter()
-        .filter(|(_, item)| matches(item))
-        .map(|(id, _)| id)
+        .filter(|(_, item, _)| changed.contains(normalize(item).as_str()))
         .collect();
-    for id in ids {
-        crate::db::write(conn, |conn| {
-            let Some((item, stored)) = items::table
-                .find(id)
-                .filter(items::deleted_at.is_null())
-                .select((items::item, items::computed_category))
-                .first::<(String, Option<String>)>(conn)
-                .optional()?
-            else {
-                return Ok(());
-            };
-            if !matches(&item) {
-                return Ok(());
-            }
-            let category = crate::api::shopping_list::list::categorize(conn, &[&item])?.remove(0);
-            if stored.as_deref() != Some(category.as_str()) {
-                diesel::update(items::table.find(id))
-                    .set((
-                        items::computed_category.eq(&category),
-                        items::updated_at.eq(Utc::now()),
-                    ))
-                    .execute(conn)?;
-            }
-            QueryResult::Ok(())
-        })?;
+    let names: Vec<&str> = matched.iter().map(|(_, item, _)| item.as_str()).collect();
+    let categories = crate::api::shopping_list::list::categorize(conn, &names)?;
+    let now = Utc::now();
+    for ((id, _, stored), category) in matched.iter().zip(categories) {
+        if stored.as_deref() != Some(category.as_str()) {
+            diesel::update(items::table.find(id))
+                .set((
+                    items::computed_category.eq(&category),
+                    items::updated_at.eq(now),
+                ))
+                .execute(conn)?;
+        }
     }
     Ok(())
 }

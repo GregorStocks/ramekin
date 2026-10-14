@@ -384,4 +384,5 @@ def test_recipe_sync_answers_a_cursor_from_another_database_with_a_full_sync(
 
     assert str(live.id) in {recipe["id"] for recipe in response["recipes"]}
     assert str(deleted.id) in response["deleted"]
-    assert response["cursor"] == current
+    # Other users' writes can move the clock on in between.
+    assert response["cursor"] >= current

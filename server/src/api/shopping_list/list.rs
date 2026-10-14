@@ -61,27 +61,26 @@ pub fn computed_category(item: &str, learned: &ramekin_core::catalog::Learned) -
 /// (`ingredient_names::recategorize_shopping_items`), and at startup
 /// (`reconcile_categories`).
 pub fn categorize(conn: &mut SqliteConnection, items: &[&str]) -> QueryResult<Vec<String>> {
-    let learned = crate::ingredient_names::load_learned_for_write(conn, items.iter().copied())?;
+    let learned = crate::ingredient_names::load_learned(conn, items.iter().copied())?;
     Ok(items
         .iter()
         .map(|item| computed_category(item, &learned))
         .collect())
 }
 
-/// Store the category of items this transaction just wrote. Their names must
-/// be queued first (`ingredient_names::enqueue_items`), so every name the
-/// catalog doesn't know has a row for `load_learned_for_write` to lock.
+/// Store the category of items this write just wrote, after queueing their
+/// names (`ingredient_names::enqueue_items`). Call inside `db::write`: the
+/// write lock keeps the name worker from resolving a name in between, so its
+/// `recategorize_shopping_items` then sees the written item.
 pub fn store_categories(conn: &mut SqliteConnection, written: &[(Uuid, &str)]) -> QueryResult<()> {
-    crate::db::write(conn, |conn| {
-        let items: Vec<&str> = written.iter().map(|(_, item)| *item).collect();
-        let categories = categorize(conn, &items)?;
-        for ((id, _), category) in written.iter().zip(&categories) {
-            diesel::update(shopping_list_items::table.find(id))
-                .set(shopping_list_items::computed_category.eq(category))
-                .execute(conn)?;
-        }
-        Ok(())
-    })
+    let items: Vec<&str> = written.iter().map(|(_, item)| *item).collect();
+    let categories = categorize(conn, &items)?;
+    for ((id, _), category) in written.iter().zip(&categories) {
+        diesel::update(shopping_list_items::table.find(id))
+            .set(shopping_list_items::computed_category.eq(category))
+            .execute(conn)?;
+    }
+    Ok(())
 }
 
 /// Bring every live item's stored category up to date, touching only the

@@ -127,7 +127,6 @@ pub async fn rename_tag(
         )
         .set((
             user_tags::name.eq(new_name.as_str()),
-            user_tags::name_key.eq(&new_key),
             user_tags::updated_at.eq(now),
         ))
         .returning((user_tags::id, user_tags::name))

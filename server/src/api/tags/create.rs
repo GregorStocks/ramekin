@@ -90,7 +90,6 @@ pub async fn create_tag(
                 id: Uuid::now_v7(),
                 user_id,
                 name: name.as_str(),
-                name_key: &crate::db::case_key(&name),
             })
             .returning((user_tags::id, user_tags::name))
             .get_result(conn)

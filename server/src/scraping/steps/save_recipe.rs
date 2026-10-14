@@ -326,71 +326,69 @@ impl SaveRecipeStep {
         let user_id = self.user_id;
 
         // Use a transaction to create recipe + version atomically
-        crate::db::run_blocking_locked(&self.pool, move |conn| {
-            crate::db::write(conn, |conn| {
-                let saved_recipe_id: Option<Uuid> = scrape_jobs::table
-                    .find(job_id)
-                    .select(scrape_jobs::recipe_id)
+        crate::db::run_blocking_write(&self.pool, move |conn| {
+            let saved_recipe_id: Option<Uuid> = scrape_jobs::table
+                .find(job_id)
+                .select(scrape_jobs::recipe_id)
+                .first(conn)?;
+            if let Some(recipe_id) = saved_recipe_id {
+                // A create job's first version is the one its save wrote.
+                let version_id: Uuid = recipe_versions::table
+                    .filter(recipe_versions::recipe_id.eq(recipe_id))
+                    .order(recipe_versions::created_at.asc())
+                    .select(recipe_versions::id)
                     .first(conn)?;
-                if let Some(recipe_id) = saved_recipe_id {
-                    // A create job's first version is the one its save wrote.
-                    let version_id: Uuid = recipe_versions::table
-                        .filter(recipe_versions::recipe_id.eq(recipe_id))
-                        .order(recipe_versions::created_at.asc())
-                        .select(recipe_versions::id)
-                        .first(conn)?;
-                    tracing::info!(
-                        "save_recipe: job {} already saved recipe {}, reusing it",
-                        job_id,
-                        recipe_id
-                    );
-                    return Ok((recipe_id, version_id));
-                }
+                tracing::info!(
+                    "save_recipe: job {} already saved recipe {}, reusing it",
+                    job_id,
+                    recipe_id
+                );
+                return Ok((recipe_id, version_id));
+            }
 
-                let recipe_id = insert_recipe(conn, user_id)?;
+            let recipe_id = insert_recipe(conn, user_id)?;
 
-                let new_version = NewRecipeVersion {
-                    id: crate::ids::Uuid::now_v7(),
-                    recipe_id,
-                    title: &raw.title,
-                    description: raw.description.as_deref(),
-                    ingredients: ingredients_json.clone(),
-                    instructions: &raw.instructions,
-                    source_url: raw.source_url.as_deref(),
-                    source_name: raw.source_name.as_deref(),
-                    photo_ids: &photo_ids_nullable,
-                    servings: raw.servings.as_deref(),
-                    prep_time: raw.prep_time.as_deref(),
-                    cook_time: raw.cook_time.as_deref(),
-                    total_time: raw.total_time.as_deref(),
-                    rating: raw.rating,
-                    difficulty: raw.difficulty.as_deref(),
-                    nutritional_info: raw.nutritional_info.as_deref(),
-                    notes: raw.notes.as_deref(),
-                    version_source: &version_source,
-                };
+            let new_version = NewRecipeVersion {
+                id: crate::ids::Uuid::now_v7(),
+                recipe_id,
+                title: &raw.title,
+                description: raw.description.as_deref(),
+                ingredients: ingredients_json.clone(),
+                instructions: &raw.instructions,
+                source_url: raw.source_url.as_deref(),
+                source_name: raw.source_name.as_deref(),
+                photo_ids: &photo_ids_nullable,
+                servings: raw.servings.as_deref(),
+                prep_time: raw.prep_time.as_deref(),
+                cook_time: raw.cook_time.as_deref(),
+                total_time: raw.total_time.as_deref(),
+                rating: raw.rating,
+                difficulty: raw.difficulty.as_deref(),
+                nutritional_info: raw.nutritional_info.as_deref(),
+                notes: raw.notes.as_deref(),
+                version_source: &version_source,
+            };
 
-                let version_id = create_new_version_cas(
-                    conn,
-                    &new_version,
-                    None,
-                    TagSource::Names {
-                        user_id,
-                        names: &category_tags,
-                    },
-                )?;
-                // Queued with the save; the next step resolves them.
-                ingredient_names::enqueue(conn, &unknown_names)?;
-                diesel::update(scrape_jobs::table.find(job_id))
-                    .set(scrape_jobs::recipe_id.eq(Some(recipe_id)))
-                    .execute(conn)?;
+            let version_id = create_new_version_cas(
+                conn,
+                &new_version,
+                None,
+                TagSource::Names {
+                    user_id,
+                    names: &category_tags,
+                },
+            )?;
+            // Queued with the save; the next step resolves them.
+            ingredient_names::enqueue(conn, &unknown_names)?;
+            diesel::update(scrape_jobs::table.find(job_id))
+                .set(scrape_jobs::recipe_id.eq(Some(recipe_id)))
+                .execute(conn)?;
 
-                Ok((recipe_id, version_id))
-            })
-            .map_err(|e: VersionWriteError| e.to_string())
+            Ok((recipe_id, version_id))
         })
         .await
         .map_err(|e| e.to_string())?
+        .map_err(|e: VersionWriteError| e.to_string())
     }
 
     async fn update_recipe(
@@ -415,45 +413,43 @@ impl SaveRecipeStep {
 
         // Use a transaction to create a new version only if the recipe has not
         // changed since this rescrape job was created.
-        crate::db::run_blocking_locked(&self.pool, move |conn| {
-            crate::db::write(conn, |conn| {
-                // Create a new version
-                let new_version = NewRecipeVersion {
-                    id: Uuid::now_v7(),
-                    recipe_id,
-                    title: &raw.title,
-                    description: raw.description.as_deref(),
-                    ingredients: ingredients_json.clone(),
-                    instructions: &raw.instructions,
-                    source_url: raw.source_url.as_deref(),
-                    source_name: raw.source_name.as_deref(),
-                    photo_ids: &photo_ids_nullable,
-                    servings: raw.servings.as_deref(),
-                    prep_time: raw.prep_time.as_deref(),
-                    cook_time: raw.cook_time.as_deref(),
-                    total_time: raw.total_time.as_deref(),
-                    rating: raw.rating,
-                    difficulty: raw.difficulty.as_deref(),
-                    nutritional_info: raw.nutritional_info.as_deref(),
-                    notes: None,
-                    version_source: &version_source,
-                };
+        crate::db::run_blocking_write(&self.pool, move |conn| {
+            // Create a new version
+            let new_version = NewRecipeVersion {
+                id: Uuid::now_v7(),
+                recipe_id,
+                title: &raw.title,
+                description: raw.description.as_deref(),
+                ingredients: ingredients_json.clone(),
+                instructions: &raw.instructions,
+                source_url: raw.source_url.as_deref(),
+                source_name: raw.source_name.as_deref(),
+                photo_ids: &photo_ids_nullable,
+                servings: raw.servings.as_deref(),
+                prep_time: raw.prep_time.as_deref(),
+                cook_time: raw.cook_time.as_deref(),
+                total_time: raw.total_time.as_deref(),
+                rating: raw.rating,
+                difficulty: raw.difficulty.as_deref(),
+                nutritional_info: raw.nutritional_info.as_deref(),
+                notes: None,
+                version_source: &version_source,
+            };
 
-                let version_id = create_new_version_cas(
-                    conn,
-                    &new_version,
-                    Some(expected_version_id),
-                    TagSource::CopyFrom(expected_version_id),
-                )?;
-                // Queued with the save; the next step resolves them.
-                ingredient_names::enqueue(conn, &unknown_names)?;
+            let version_id = create_new_version_cas(
+                conn,
+                &new_version,
+                Some(expected_version_id),
+                TagSource::CopyFrom(expected_version_id),
+            )?;
+            // Queued with the save; the next step resolves them.
+            ingredient_names::enqueue(conn, &unknown_names)?;
 
-                Ok((recipe_id, version_id))
-            })
-            .map_err(|e: VersionWriteError| e.to_string())
+            Ok((recipe_id, version_id))
         })
         .await
         .map_err(|e| e.to_string())?
+        .map_err(|e: VersionWriteError| e.to_string())
     }
 
     /// Create a new version that copies every field from the recipe's current
@@ -483,32 +479,30 @@ impl SaveRecipeStep {
             photo_ids.iter().map(|id| Some(*id)).collect();
         let version_source = version_source.to_string();
 
-        crate::db::run_blocking_locked(&self.pool, move |conn| {
-            crate::db::write(conn, |conn| {
-                let current: RecipeVersion = recipe_versions::table
-                    .filter(recipe_versions::id.eq(expected_version_id))
-                    .filter(recipe_versions::recipe_id.eq(recipe_id))
-                    .select(RecipeVersion::as_select())
-                    .first(conn)?;
+        crate::db::run_blocking_write(&self.pool, move |conn| {
+            let current: RecipeVersion = recipe_versions::table
+                .filter(recipe_versions::id.eq(expected_version_id))
+                .filter(recipe_versions::recipe_id.eq(recipe_id))
+                .select(RecipeVersion::as_select())
+                .first(conn)?;
 
-                let new_version = NewRecipeVersion {
-                    id: crate::ids::Uuid::now_v7(),
-                    photo_ids: &photo_ids_nullable,
-                    ..NewRecipeVersion::copy_of(&current, &version_source)
-                };
+            let new_version = NewRecipeVersion {
+                id: crate::ids::Uuid::now_v7(),
+                photo_ids: &photo_ids_nullable,
+                ..NewRecipeVersion::copy_of(&current, &version_source)
+            };
 
-                let version_id = create_new_version_cas(
-                    conn,
-                    &new_version,
-                    Some(expected_version_id),
-                    TagSource::CopyFrom(expected_version_id),
-                )?;
+            let version_id = create_new_version_cas(
+                conn,
+                &new_version,
+                Some(expected_version_id),
+                TagSource::CopyFrom(expected_version_id),
+            )?;
 
-                Ok((recipe_id, version_id))
-            })
-            .map_err(|e: VersionWriteError| e.to_string())
+            Ok((recipe_id, version_id))
         })
         .await
         .map_err(|e| e.to_string())?
+        .map_err(|e: VersionWriteError| e.to_string())
     }
 }

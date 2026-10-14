@@ -23,8 +23,6 @@ pub struct User {
 pub struct NewUser<'a> {
     pub id: Uuid,
     pub username: &'a str,
-    /// `username_key(username)`: the unique, case-insensitive login key.
-    pub username_key: &'a str,
     pub password_hash: &'a str,
 }
 
@@ -377,8 +375,6 @@ pub struct NewUserTag<'a> {
     pub id: Uuid,
     pub user_id: Uuid,
     pub name: &'a str,
-    /// `crate::tags::name_key(name)`.
-    pub name_key: &'a str,
 }
 
 // Junction table for recipe version <-> tag associations
