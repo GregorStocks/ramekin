@@ -6,9 +6,10 @@ use image::ImageReader;
 use std::io::Cursor;
 
 use crate::db::DbPool;
+use crate::photos::PhotoStore;
 use crate::schema::photos;
 
-/// How many photos to pull into memory per backfill batch. Photo blobs can be
+/// How many photos to pull into memory per backfill batch. Photos can be
 /// up to 2 MB each, so loading every pending row at once would scale with the
 /// whole table; 16 keeps peak memory bounded at ~32 MB even for large libraries.
 const BACKFILL_BATCH_SIZE: i64 = 16;
@@ -44,6 +45,7 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
 
     let start = Instant::now();
     tracing::info!("Backfilling dimensions for {} photos...", total_pending);
+    let store = PhotoStore::of(&mut conn).map_err(|e| format!("{e:#}"))?;
 
     let mut ok = 0;
     let mut failed = 0;
@@ -51,11 +53,11 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
         // Re-query each batch so already-processed rows drop out of the
         // pending set. This keeps memory use bounded by BACKFILL_BATCH_SIZE
         // rather than growing with the total number of pending photos.
-        let batch: Vec<(crate::ids::Uuid, Vec<u8>)> = photos::table
+        let batch: Vec<(crate::ids::Uuid, String)> = photos::table
             .filter(photos::width.is_null())
             .filter(photos::file_size.is_null())
             .filter(photos::deleted_at.is_null())
-            .select((photos::id, photos::data))
+            .select((photos::id, photos::data_hash))
             .limit(BACKFILL_BATCH_SIZE)
             .load(&mut conn)
             .map_err(|e| e.to_string())?;
@@ -64,7 +66,8 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
             break;
         }
 
-        for (id, data) in batch {
+        for (id, hash) in batch {
+            let data = store.read(&hash).map_err(|e| format!("{e:#}"))?;
             let file_size = data.len() as i32;
             match decode_dimensions(&data) {
                 Ok((w, h)) => {

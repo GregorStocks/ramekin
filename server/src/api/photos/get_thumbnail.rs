@@ -1,9 +1,11 @@
+use super::get::photo_file_error;
 use crate::api::{run_db, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::NewPhotoThumbnail;
 use crate::photos::processing::{generate_thumbnail, MAX_THUMBNAIL_SIZE, THUMBNAIL_SIZE};
+use crate::photos::PhotoStore;
 use crate::schema::{photo_thumbnails, photos};
 use axum::{
     body::Body,
@@ -62,64 +64,44 @@ pub async fn get_photo_thumbnail(
         .unwrap_or(THUMBNAIL_SIZE)
         .clamp(1, MAX_THUMBNAIL_SIZE);
 
-    // Fast path: size=200 uses the pre-generated photos.thumbnail column
-    if size == THUMBNAIL_SIZE {
-        let thumbnail: Vec<u8> = run_db(&pool, move |conn| {
-            photos::table
-                .filter(photos::id.eq(id))
-                .filter(photos::user_id.eq(user_id))
-                .filter(photos::deleted_at.is_null())
-                .select(photos::thumbnail)
-                .first(conn)
-                .map_err(|e| match e {
-                    diesel::result::Error::NotFound => ApiError::not_found("Photo not found"),
-                    _ => ApiError::internal("Failed to fetch photo"),
-                })
-        })
-        .await?;
-
-        return Ok(jpeg_response(thumbnail));
-    }
-
-    let thumb_bytes: Vec<u8> = run_db(&pool, move |conn| {
-        // Verify photo exists and belongs to user (without loading the full blob)
-        let photo_exists: bool = photos::table
+    // A size-200 thumbnail was made with the photo. Any other size is made
+    // on first request and kept in photo_thumbnails.
+    let path = run_db(&pool, move |conn| {
+        let store = PhotoStore::of(conn).map_err(photo_file_error)?;
+        let (data_hash, thumbnail_hash): (String, String) = photos::table
             .filter(photos::id.eq(id))
             .filter(photos::user_id.eq(user_id))
             .filter(photos::deleted_at.is_null())
-            .select(diesel::dsl::count_star().gt(0))
+            .select((photos::data_hash, photos::thumbnail_hash))
             .first(conn)
-            .map_err(|_| ApiError::internal("Failed to fetch photo"))?;
-
-        if !photo_exists {
-            return Err(ApiError::not_found("Photo not found"));
+            .map_err(|e| match e {
+                diesel::result::Error::NotFound => ApiError::not_found("Photo not found"),
+                _ => ApiError::internal("Failed to fetch photo"),
+            })?;
+        if size == THUMBNAIL_SIZE {
+            return store.path(&thumbnail_hash).map_err(photo_file_error);
         }
 
-        // Check the thumbnail cache
-        let cached: Option<Vec<u8>> = photo_thumbnails::table
+        let cached: Option<String> = photo_thumbnails::table
             .filter(photo_thumbnails::photo_id.eq(id))
             .filter(photo_thumbnails::size.eq(size as i32))
-            .select(photo_thumbnails::data)
+            .select(photo_thumbnails::data_hash)
             .first(conn)
             .optional()
             .map_err(|_| ApiError::internal("Failed to fetch thumbnail cache"))?;
-
-        if let Some(data) = cached {
-            return Ok(data);
+        if let Some(hash) = cached {
+            return store.path(&hash).map_err(photo_file_error);
         }
 
-        // Cache miss: load the full image and generate
-        let full_data: Vec<u8> = photos::table
-            .filter(photos::id.eq(id))
-            .filter(photos::user_id.eq(user_id))
-            .filter(photos::deleted_at.is_null())
-            .select(photos::data)
-            .first(conn)
-            .map_err(|_| ApiError::internal("Failed to load photo data"))?;
-
+        // Cache miss: generate from the full image.
+        let full_data = store.read(&data_hash).map_err(photo_file_error)?;
         let thumb_bytes = generate_thumbnail(&full_data, size).map_err(|e| {
             tracing::error!("Failed to generate thumbnail: {}", e);
             ApiError::internal("Failed to generate thumbnail")
+        })?;
+        let hash = store.put(&thumb_bytes).map_err(|e| {
+            tracing::error!("Failed to store thumbnail: {e:#}");
+            ApiError::internal("Failed to store thumbnail")
         })?;
 
         // Cache it (race-safe: ON CONFLICT DO NOTHING)
@@ -129,16 +111,19 @@ pub async fn get_photo_thumbnail(
                     id: Uuid::now_v7(),
                     photo_id: id,
                     size: size as i32,
-                    data: &thumb_bytes,
+                    data_hash: &hash,
                 })
                 .on_conflict((photo_thumbnails::photo_id, photo_thumbnails::size))
                 .do_nothing()
                 .execute(conn)
         });
 
-        Ok(thumb_bytes)
+        store.path(&hash).map_err(photo_file_error)
     })
     .await?;
+    let data = tokio::fs::read(&path)
+        .await
+        .map_err(|e| photo_file_error(anyhow::anyhow!("{}: {e}", path.display())))?;
 
-    Ok(jpeg_response(thumb_bytes))
+    Ok(jpeg_response(data))
 }

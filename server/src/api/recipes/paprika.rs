@@ -2,6 +2,7 @@ use super::read::RecipeWithVersion;
 use crate::ids::Uuid;
 use crate::models::{Ingredient, Measurement};
 use crate::photos::processing::{generate_thumbnail, resize_for_export, EXPORT_PHOTO_DATA_SIZE};
+use crate::photos::PhotoStore;
 use crate::schema::{photos, recipe_version_tags, user_tags};
 use base64::Engine;
 use diesel::prelude::*;
@@ -257,13 +258,18 @@ fn fetch_recipe_photos(
         return Ok(Vec::new());
     }
 
-    photos::table
+    let hashes = photos::table
         .filter(photos::id.eq_any(&ids))
         .filter(photos::user_id.eq(user_id))
         .filter(photos::deleted_at.is_null())
-        .select((photos::id, photos::data))
-        .load::<(Uuid, Vec<u8>)>(conn)
-        .map_err(|e| format!("failed to fetch photos: {}", e))
+        .select((photos::id, photos::data_hash))
+        .load::<(Uuid, String)>(conn)
+        .map_err(|e| format!("failed to fetch photos: {}", e))?;
+    let store = PhotoStore::of(conn).map_err(|e| format!("{e:#}"))?;
+    hashes
+        .into_iter()
+        .map(|(id, hash)| Ok((id, store.read(&hash).map_err(|e| format!("{e:#}"))?)))
+        .collect()
 }
 
 pub(super) const PAPRIKARECIPE_EXTENSION: &str = ".paprikarecipe";

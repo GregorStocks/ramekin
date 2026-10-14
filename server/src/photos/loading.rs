@@ -1,6 +1,7 @@
 use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::Photo;
+use crate::photos::PhotoStore;
 use crate::schema::photos;
 use base64::Engine;
 use diesel::prelude::*;
@@ -13,9 +14,11 @@ pub enum PhotoImageLoadError {
     NotFound,
     #[error("Database error: {0}")]
     Database(String),
+    #[error("Photo file error: {0}")]
+    File(String),
 }
 
-/// Load owned photo bytes from the database and convert them to vision inputs.
+/// Load owned photos' bytes from their files and convert them to vision inputs.
 pub async fn load_photo_images(
     pool: &DbPool,
     user_id: Uuid,
@@ -62,12 +65,16 @@ fn load_photo_images_with_conn(
         .map(|photo| (photo.id, photo))
         .collect();
 
+    let store = PhotoStore::of(conn).map_err(|e| PhotoImageLoadError::File(format!("{e:#}")))?;
     let mut ordered_images = Vec::with_capacity(photo_ids.len());
     for photo_id in photo_ids {
         let photo = photos_by_id
             .get(photo_id)
             .ok_or(PhotoImageLoadError::NotFound)?;
-        let base64 = base64::engine::general_purpose::STANDARD.encode(&photo.data);
+        let data = store
+            .read(&photo.data_hash)
+            .map_err(|e| PhotoImageLoadError::File(format!("{e:#}")))?;
+        let base64 = base64::engine::general_purpose::STANDARD.encode(&data);
         ordered_images.push(ramekin_core::ai::ImageData {
             base64,
             content_type: photo.content_type.clone(),
