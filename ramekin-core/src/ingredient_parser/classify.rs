@@ -76,9 +76,9 @@ impl<'a> ItemText<'a> {
     /// a phrase rule ("sesame seeds to taste") split it between words.
     fn cut_after_words(&mut self, words: usize) {
         let item = self.text.get(..self.end).unwrap_or("");
-        let word_end = item
-            .split_whitespace()
-            .nth(words.saturating_sub(1))
+        let word_end = words
+            .checked_sub(1)
+            .and_then(|last| item.split_whitespace().nth(last))
             .map_or(0, |word| {
                 word.as_ptr() as usize - item.as_ptr() as usize + word.len()
             });
@@ -86,7 +86,7 @@ impl<'a> ItemText<'a> {
     }
 }
 
-/// Note parts gathered while classifying, in the order of the text.
+/// The note parts gathered while classifying.
 #[derive(Default)]
 struct Note(Option<String>);
 
@@ -414,14 +414,18 @@ fn measures_something(s: &str) -> bool {
         })
 }
 
-/// "1/2 cup", "A 250-gram", "medium-sized": text that ends in an amount or a
-/// size rather than naming a food.
+/// "1/2 cup", "A 250-gram", "medium-sized", "spare ribs about 2.2 pounds":
+/// text that ends in an amount or a size rather than naming a food.
 fn is_amount_or_size(s: &str) -> bool {
-    let read = measure::read_measurement(s);
-    if read.amount.is_some() && read.rest.is_empty() {
+    let words: Vec<&str> = s.split_whitespace().collect();
+    let ends_in_measurement = (1..=words.len().min(3)).any(|n| {
+        let read = measure::read_measurement(&words[words.len() - n..].join(" "));
+        read.amount.is_some() && read.unit.is_some() && read.rest.is_empty()
+    });
+    if ends_in_measurement || measure::read_measurement(s).rest.is_empty() {
         return true;
     }
-    let last = s.split_whitespace().last().unwrap_or("");
+    let last = words.last().copied().unwrap_or("");
     let last = last.strip_suffix("-sized").unwrap_or(last);
     last.contains(|c: char| c.is_ascii_digit()) || is_size_unit(last)
 }
@@ -584,6 +588,7 @@ mod tests {
         assert!(is_amount_or_size("1/2 cup"));
         assert!(is_amount_or_size("A 250-gram"));
         assert!(is_amount_or_size("medium-sized"));
+        assert!(is_amount_or_size("pork belly spare ribs about 2.2 pounds"));
         assert!(!is_amount_or_size("garlic cloves"));
     }
 }
