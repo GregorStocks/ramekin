@@ -103,7 +103,7 @@ to `RAMEKIN_BACKUP_DIR` or `DIR=/somewhere`.
 3. `make serve`.
 
 `db-restore` keeps the replaced database: it renames the file and its
-`-wal`/`-shm` to `<database>.before-restore-<time>`. Then it copies the
+`-wal`/`-shm` to `<database>.before-restore-<time>-<tag>`. Then it copies the
 snapshot into place.
 
 It also moves the sync clock far past anything the replaced database handed

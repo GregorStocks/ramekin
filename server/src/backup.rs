@@ -154,8 +154,8 @@ const RESTORE_CLOCK_JUMP: i64 = 1 << 40;
 
 /// `ramekin-server restore <snapshot>`: replace the database at
 /// `database_url` with `snapshot`. Run it with the server stopped. The
-/// current files are kept, renamed `<database>.before-restore-<time>` (with
-/// their `-wal`/`-shm`). Clients synced past the snapshot hold cursors the
+/// current files are kept, renamed `<database>.before-restore-<time>-<tag>`
+/// (with their `-wal`/`-shm`). Clients synced past the snapshot hold cursors the
 /// restored clock could later reach again, which would make their syncs skip
 /// the rolled-back rows; so the clock jumps far ahead and every live row is
 /// restamped above it, and every client's next sync re-delivers it all.
@@ -163,20 +163,37 @@ const RESTORE_CLOCK_JUMP: i64 = 1 << 40;
 pub fn restore(database_url: &str, snapshot: &Path) -> anyhow::Result<Option<PathBuf>> {
     anyhow::ensure!(snapshot.is_file(), "no snapshot at {}", snapshot.display());
     let database = Path::new(database_url);
+    // The time for people, a random tag so two restores never share a name.
     let aside = database.exists().then(|| {
         PathBuf::from(format!(
-            "{database_url}.before-restore-{}",
-            Utc::now().format(STAMP_FORMAT)
+            "{database_url}.before-restore-{}-{}",
+            Utc::now().format(STAMP_FORMAT),
+            uuid::Uuid::new_v4()
+                .simple()
+                .to_string()
+                .get(..8)
+                .unwrap_or_default()
         ))
     });
     if let Some(aside) = &aside {
         // A database file and its -wal/-shm only make sense together, so
-        // they move as a set under the new name.
-        for suffix in ["", "-wal", "-shm"] {
-            let from = PathBuf::from(format!("{database_url}{suffix}"));
-            if from.exists() {
-                std::fs::rename(&from, format!("{}{suffix}", aside.display()))?;
-            }
+        // they move as a set under the new name, and only if none of the new
+        // names is taken: a rename would replace what's there.
+        let moves: Vec<(PathBuf, PathBuf)> = ["", "-wal", "-shm"]
+            .into_iter()
+            .map(|suffix| {
+                (
+                    PathBuf::from(format!("{database_url}{suffix}")),
+                    PathBuf::from(format!("{}{suffix}", aside.display())),
+                )
+            })
+            .filter(|(from, _)| from.exists())
+            .collect();
+        for (_, to) in &moves {
+            anyhow::ensure!(!to.exists(), "{} already exists", to.display());
+        }
+        for (from, to) in &moves {
+            std::fs::rename(from, to)?;
         }
     }
     std::fs::copy(snapshot, database)?;
@@ -324,6 +341,12 @@ mod tests {
         // The replaced database is kept, change and all.
         let mut replaced = SqliteConnection::establish(aside.to_str().unwrap()).unwrap();
         assert_eq!(tags(&mut replaced).len(), 2);
+        drop(restored);
+
+        // A second restore right away keeps both replaced databases.
+        let second = restore(&live, &snapshot_path).unwrap().unwrap();
+        assert_ne!(second, aside);
+        assert!(aside.exists() && second.exists());
         std::fs::remove_dir_all(&dir).unwrap();
     }
 
