@@ -427,7 +427,16 @@ fn is_amount_or_size(s: &str) -> bool {
     }
     let last = words.last().copied().unwrap_or("");
     let last = last.strip_suffix("-sized").unwrap_or(last);
-    last.contains(|c: char| c.is_ascii_digit()) || is_size_unit(last)
+    // A bare number or a hyphenated size ("250-gram"), but not a name with a
+    // digit in it ("7up").
+    let number_len = last
+        .find(|c: char| !(c.is_ascii_digit() || c == '.' || c == '/'))
+        .unwrap_or(last.len());
+    let numeric_size = number_len > 0
+        && last
+            .get(number_len..)
+            .is_some_and(|rest| rest.is_empty() || rest.starts_with('-'));
+    numeric_size || is_size_unit(last)
 }
 
 /// A unit that measures how much food there is, rather than its size
@@ -590,5 +599,10 @@ mod tests {
         assert!(is_amount_or_size("medium-sized"));
         assert!(is_amount_or_size("pork belly spare ribs about 2.2 pounds"));
         assert!(!is_amount_or_size("garlic cloves"));
+        assert!(!is_amount_or_size("7up"));
+        assert_eq!(
+            parsed("1 cup 7up or 1 cup lemon-lime soda"),
+            ("7up".into(), note("or 1 cup lemon-lime soda"))
+        );
     }
 }
