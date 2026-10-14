@@ -427,15 +427,12 @@ fn is_amount_or_size(s: &str) -> bool {
     }
     let last = words.last().copied().unwrap_or("");
     let last = last.strip_suffix("-sized").unwrap_or(last);
-    // A bare number or a hyphenated size ("250-gram"), but not a name with a
-    // digit in it ("7up").
-    let number_len = last
-        .find(|c: char| !(c.is_ascii_digit() || c == '.' || c == '/'))
-        .unwrap_or(last.len());
-    let numeric_size = number_len > 0
+    // A bare number; a hyphenated size ("250-gram") reads as a measurement
+    // above, and a name with a digit in it ("7up", "7-Up") is not a size.
+    let numeric_size = !last.is_empty()
         && last
-            .get(number_len..)
-            .is_some_and(|rest| rest.is_empty() || rest.starts_with('-'));
+            .chars()
+            .all(|c| c.is_ascii_digit() || c == '.' || c == '/');
     numeric_size || is_size_unit(last)
 }
 
@@ -600,6 +597,9 @@ mod tests {
         assert!(is_amount_or_size("pork belly spare ribs about 2.2 pounds"));
         assert!(!is_amount_or_size("garlic cloves"));
         assert!(!is_amount_or_size("7up"));
+        assert!(!is_amount_or_size("7-Up"));
+        assert!(is_amount_or_size("A 250-gram"));
+        assert!(is_amount_or_size("8-ounce"));
         assert_eq!(
             parsed("1 cup 7up or 1 cup lemon-lime soda"),
             ("7up".into(), note("or 1 cup lemon-lime soda"))
