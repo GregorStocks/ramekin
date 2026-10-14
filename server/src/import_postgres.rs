@@ -15,7 +15,6 @@
 //! stamps, which compare correctly against those cursors.
 
 use crate::db;
-use diesel::connection::SimpleConnection;
 use diesel::prelude::*;
 use diesel::sql_types as sql;
 use diesel::sqlite::{Sqlite, SqliteConnection};
@@ -441,12 +440,7 @@ pub fn run(postgres_url: &str, database_url: &str) -> anyhow::Result<()> {
         }
 
         // Everything live, above every client's cursor.
-        conn.batch_execute(&format!(
-            "UPDATE recipe_versions SET change_seq = {restamp} \
-               WHERE id IN (SELECT current_version_id FROM recipes WHERE deleted_at IS NULL); \
-             UPDATE user_tags SET change_seq = {restamp} WHERE deleted_at IS NULL; \
-             UPDATE shopping_list_items SET change_seq = {restamp} WHERE deleted_at IS NULL;"
-        ))?;
+        db::restamp_live(conn, restamp)?;
 
         // Every row came across, deleted ones included.
         for (table, count) in &copied {

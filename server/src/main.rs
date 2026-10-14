@@ -176,14 +176,16 @@ async fn not_found_fallback() -> impl axum::response::IntoResponse {
     api::error::ApiError::not_found("Not found")
 }
 
-/// The directory of `ramekin-server backup <dir>`, when invoked that way.
-fn args_backup_dir() -> Option<std::path::PathBuf> {
+/// The argument of `ramekin-server <command> <arg>`, when invoked that way.
+fn command_arg(command: &str) -> Option<std::path::PathBuf> {
     let args: Vec<String> = env::args().collect();
-    if args.get(1).map(String::as_str) != Some("backup") {
+    if args.get(1).map(String::as_str) != Some(command) {
         return None;
     }
-    let dir = args.get(2).expect("usage: ramekin-server backup <dir>");
-    Some(std::path::PathBuf::from(dir))
+    let arg = args
+        .get(2)
+        .unwrap_or_else(|| panic!("usage: ramekin-server {command} <path>"));
+    Some(std::path::PathBuf::from(arg))
 }
 
 #[tokio::main]
@@ -203,7 +205,23 @@ async fn main() {
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
     // `ramekin-server backup <dir>`: snapshot the database into <dir>, then exit.
-    if let Some(dir) = args_backup_dir() {
+    // `ramekin-server restore <snapshot>`: replace the database with a
+    // snapshot (server stopped), then exit. See backup::restore.
+    if let Some(snapshot) = command_arg("restore") {
+        match backup::restore(&database_url, &snapshot) {
+            Ok(aside) => tracing::info!(
+                replaced = ?aside,
+                "database restored; every client's next sync re-delivers everything"
+            ),
+            Err(e) => {
+                tracing::error!("restore failed: {e:#}");
+                std::process::exit(1);
+            }
+        }
+        return;
+    }
+
+    if let Some(dir) = command_arg("backup") {
         match backup::run_command(&database_url, &dir) {
             Ok(path) => tracing::info!(path = %path.display(), "database snapshot written"),
             Err(e) => {

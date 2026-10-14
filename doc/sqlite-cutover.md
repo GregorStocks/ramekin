@@ -99,12 +99,19 @@ to `RAMEKIN_BACKUP_DIR` or `DIR=/somewhere`.
 ## Restoring a backup
 
 1. `make serve-down`.
-2. Move the current database file and its `-wal` / `-shm` files aside. Keep
-   them; don't delete them.
-3. Copy the snapshot to the `DATABASE_URL` path.
-4. `make serve`.
+2. `make db-restore SNAPSHOT=/path/to/ramekin-<time>.sqlite`.
+3. `make serve`.
 
-Clients that synced after the snapshot hold cursors the restored database
-never issued, so their next sync is a full one (`db::valid_since`). Anything
-created after the snapshot lingers in client caches until
+`db-restore` keeps the replaced database: it renames the file and its
+`-wal`/`-shm` to `<database>.before-restore-<time>`. Then it copies the
+snapshot into place.
+
+It also moves the sync clock far past anything the replaced database handed
+out, and restamps every live recipe, tag and shopping item above it. Clients
+that synced after the snapshot hold cursors the restored clock would otherwise
+reach again, and their later syncs would then silently skip the rolled-back
+rows. With the restamp, every client's next sync re-delivers the restored
+state, however long it waits to sync.
+
+Anything created after the snapshot lingers in client caches until
 `p4-full-resync-prune` lands.

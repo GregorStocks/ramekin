@@ -147,6 +147,49 @@ pub fn spawn_scheduler(pool: Arc<DbPool>, dir: PathBuf) {
     });
 }
 
+/// How far a restore moves the sync clock past the snapshot's: more than
+/// the stamps any database handed out since the snapshot, so every cursor
+/// issued before the restore ends up below it.
+const RESTORE_CLOCK_JUMP: i64 = 1 << 40;
+
+/// `ramekin-server restore <snapshot>`: replace the database at
+/// `database_url` with `snapshot`. Run it with the server stopped. The
+/// current files are kept, renamed `<database>.before-restore-<time>` (with
+/// their `-wal`/`-shm`). Clients synced past the snapshot hold cursors the
+/// restored clock could later reach again, which would make their syncs skip
+/// the rolled-back rows; so the clock jumps far ahead and every live row is
+/// restamped above it, and every client's next sync re-delivers it all.
+/// Returns where the replaced database went, if there was one.
+pub fn restore(database_url: &str, snapshot: &Path) -> anyhow::Result<Option<PathBuf>> {
+    anyhow::ensure!(snapshot.is_file(), "no snapshot at {}", snapshot.display());
+    let database = Path::new(database_url);
+    let aside = database.exists().then(|| {
+        PathBuf::from(format!(
+            "{database_url}.before-restore-{}",
+            Utc::now().format(STAMP_FORMAT)
+        ))
+    });
+    if let Some(aside) = &aside {
+        // A database file and its -wal/-shm only make sense together, so
+        // they move as a set under the new name.
+        for suffix in ["", "-wal", "-shm"] {
+            let from = PathBuf::from(format!("{database_url}{suffix}"));
+            if from.exists() {
+                std::fs::rename(&from, format!("{}{suffix}", aside.display()))?;
+            }
+        }
+    }
+    std::fs::copy(snapshot, database)?;
+
+    let mut conn = db::open_migrated(database_url);
+    db::write(&mut conn, |conn| {
+        use crate::schema::sync_clock;
+        let restored: i64 = sync_clock::table.select(sync_clock::value).first(conn)?;
+        db::restamp_live(conn, restored + RESTORE_CLOCK_JUMP)
+    })?;
+    Ok(aside)
+}
+
 /// `ramekin-server backup <dir>`: one snapshot of `database_url` into `dir`.
 pub fn run_command(database_url: &str, dir: &Path) -> anyhow::Result<PathBuf> {
     // Opening a missing file would create an empty database and back that up.
@@ -212,6 +255,75 @@ mod tests {
         assert!(error.contains(&stuck), "{error}");
         assert!(dir.join(&recent).exists());
         assert!(!dir.join(&expired).exists());
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[derive(QueryableByName)]
+    struct Stamp {
+        #[diesel(sql_type = diesel::sql_types::Text)]
+        name: String,
+        #[diesel(sql_type = diesel::sql_types::BigInt)]
+        change_seq: i64,
+    }
+
+    fn tags(conn: &mut SqliteConnection) -> Vec<(String, i64)> {
+        diesel::sql_query("SELECT name, change_seq FROM user_tags ORDER BY name")
+            .load::<Stamp>(conn)
+            .unwrap()
+            .into_iter()
+            .map(|t| (t.name, t.change_seq))
+            .collect()
+    }
+
+    fn clock(conn: &mut SqliteConnection) -> i64 {
+        use crate::schema::sync_clock;
+        sync_clock::table
+            .select(sync_clock::value)
+            .first(conn)
+            .unwrap()
+    }
+
+    #[test]
+    fn restore_puts_the_snapshot_back_and_moves_every_cursor_behind_it() {
+        let dir =
+            std::env::temp_dir().join(format!("ramekin-restore-test-{}", uuid::Uuid::new_v4()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let live = dir.join("live.sqlite");
+        let live = live.to_str().unwrap().to_string();
+        let mut conn = db::open_migrated(&live);
+        let add_tag = |conn: &mut SqliteConnection, name: &str| {
+            diesel::sql_query("INSERT INTO user_tags (id, user_id, name) VALUES (?, 'u', ?)")
+                .bind::<Text, _>(uuid::Uuid::new_v4().to_string())
+                .bind::<Text, _>(name)
+                .execute(conn)
+                .unwrap();
+        };
+        diesel::sql_query("PRAGMA foreign_keys = OFF")
+            .execute(&mut conn)
+            .unwrap();
+        add_tag(&mut conn, "before");
+        let snapshot_path = snapshot(&mut conn, &dir, Utc::now()).unwrap();
+        let snapshot_clock = clock(&mut conn);
+        // A change after the snapshot, which a client then synced past.
+        add_tag(&mut conn, "after");
+        let client_cursor = clock(&mut conn) + 1;
+        drop(conn);
+
+        let aside = restore(&live, &snapshot_path).unwrap().unwrap();
+
+        let mut restored = db::open_migrated(&live);
+        let restored_clock = clock(&mut restored);
+        assert_eq!(restored_clock, snapshot_clock + RESTORE_CLOCK_JUMP);
+        assert!(restored_clock > client_cursor);
+        // The live row comes back to every client: stamped at or after any
+        // cursor issued before the restore.
+        assert_eq!(
+            tags(&mut restored),
+            vec![("before".to_string(), restored_clock)]
+        );
+        // The replaced database is kept, change and all.
+        let mut replaced = SqliteConnection::establish(aside.to_str().unwrap()).unwrap();
+        assert_eq!(tags(&mut replaced).len(), 2);
         std::fs::remove_dir_all(&dir).unwrap();
     }
 
