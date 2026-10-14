@@ -16,6 +16,8 @@ use std::path::{Path, PathBuf};
 use std::sync::Arc;
 
 const PREFIX: &str = "ramekin-";
+/// Where a snapshot is written before it's renamed into place.
+const PARTIAL: &str = ".ramekin-snapshot.tmp";
 const SUFFIX: &str = ".sqlite";
 /// UTC, sortable, and safe in file names on every platform.
 const STAMP_FORMAT: &str = "%Y-%m-%dT%H-%M-%SZ";
@@ -45,11 +47,11 @@ pub fn snapshot(
     dir: &Path,
     now: DateTime<Utc>,
 ) -> anyhow::Result<PathBuf> {
-    let name = file_name(now);
-    let partial = dir.join(format!(".{name}.tmp"));
-    let path = dir.join(&name);
-    // VACUUM INTO refuses to overwrite a file; a leftover from a crash
-    // mid-snapshot is incomplete anyway.
+    let path = dir.join(file_name(now));
+    // One fixed temporary name: VACUUM INTO refuses to overwrite a file, and
+    // whatever a crashed or failed attempt left there is incomplete, so each
+    // attempt clears it rather than leaving one behind per attempt.
+    let partial = dir.join(PARTIAL);
     if partial.exists() {
         std::fs::remove_file(&partial)?;
     }
@@ -169,7 +171,7 @@ mod tests {
         assert_eq!(file_name(when), "ramekin-2026-10-14T09-00-00Z.sqlite");
         assert_eq!(taken_at(&file_name(when)), Some(when));
         assert_eq!(taken_at("notes.txt"), None);
-        assert_eq!(taken_at(".ramekin-2026-10-14T09-00-00Z.sqlite.tmp"), None);
+        assert_eq!(taken_at(PARTIAL), None);
     }
 
     #[test]
@@ -207,8 +209,11 @@ mod tests {
 
         let backups = dir.join("backups");
         std::fs::create_dir_all(&backups).unwrap();
+        // What an interrupted attempt leaves behind doesn't block the next.
+        std::fs::write(backups.join(PARTIAL), b"incomplete").unwrap();
         let path = snapshot(&mut conn, &backups, Utc::now()).unwrap();
         assert_eq!(snapshot_names(&backups).unwrap().len(), 1);
+        assert!(!backups.join(PARTIAL).exists());
 
         // Restoring is starting a server on the file: it opens and migrates
         // cleanly, and holds the data.
