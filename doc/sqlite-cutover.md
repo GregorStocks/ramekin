@@ -81,12 +81,37 @@ SQLite file.
 
 ## Backups
 
-The database is one file plus its `-wal`/`-shm` siblings. Never copy the file
-while the server runs; use SQLite's online backup instead:
+Set `RAMEKIN_BACKUP_DIR` in `dev.env` before cutover, pointing at a folder
+that is synced or mounted off this machine. The server then writes a snapshot
+there once a day (on startup too, if the newest is more than a day old) and
+deletes snapshots older than 7 days. Without it, the server logs a warning at
+startup and backs nothing up.
 
-```bash
-sqlite3 .db/dev.sqlite ".backup '/path/to/backup/ramekin-$(date +%F).sqlite'"
-```
+A snapshot is `ramekin-<UTC time>.sqlite`: SQLite's `VACUUM INTO`, a
+consistent, compacted, self-contained copy taken while the server keeps
+running. It's written under a temporary name and renamed into place, so a sync
+tool never sees a partial file. Never copy the live database file itself; it
+can be mid-write, and recent changes may still be in its `-wal` file.
 
-or `VACUUM INTO`, or run Litestream for continuous replication. Set one up
-before cutover (tracked in `issues/`).
+Take one on demand (before an upgrade, say) with `make db-backup`, which writes
+to `RAMEKIN_BACKUP_DIR` or `DIR=/somewhere`.
+
+## Restoring a backup
+
+1. `make serve-down`.
+2. `make db-restore SNAPSHOT=/path/to/ramekin-<time>.sqlite`.
+3. `make serve`.
+
+`db-restore` keeps the replaced database: it renames the file and its
+`-wal`/`-shm` to `<database>.before-restore-<time>-<tag>`. Then it copies the
+snapshot into place.
+
+It also moves the sync clock far past anything the replaced database handed
+out, and restamps every live recipe, tag and shopping item above it. Clients
+that synced after the snapshot hold cursors the restored clock would otherwise
+reach again, and their later syncs would then silently skip the rolled-back
+rows. With the restamp, every client's next sync re-delivers the restored
+state, however long it waits to sync.
+
+Anything created after the snapshot lingers in client caches until
+`p4-full-resync-prune` lands.

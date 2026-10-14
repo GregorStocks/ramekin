@@ -123,6 +123,22 @@ pub fn sync_cursor(conn: &mut SqliteConnection) -> QueryResult<i64> {
     Ok(value + 1)
 }
 
+/// Move the sync clock to `value` and stamp every live recipe version, tag
+/// and shopping item with it, so any client whose cursor is below `value`
+/// gets all of them again on its next delta sync. For when the database's
+/// contents changed under clients' feet: an import, a restored backup.
+/// `value` must be above every cursor a client could hold. Call inside
+/// [`write`].
+pub fn restamp_live(conn: &mut SqliteConnection, value: i64) -> QueryResult<()> {
+    conn.batch_execute(&format!(
+        "UPDATE sync_clock SET value = {value}; \
+         UPDATE recipe_versions SET change_seq = {value} \
+           WHERE id IN (SELECT current_version_id FROM recipes WHERE deleted_at IS NULL); \
+         UPDATE user_tags SET change_seq = {value} WHERE deleted_at IS NULL; \
+         UPDATE shopping_list_items SET change_seq = {value} WHERE deleted_at IS NULL;"
+    ))
+}
+
 /// `cursor` if it could have come from this database, else None. A cursor
 /// above the current one was issued by another database (a restored backup,
 /// a rebuilt file), so it can't say what the client has seen: answer with a
