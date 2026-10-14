@@ -1,5 +1,6 @@
 //! Parenthetical segment handling: measurements, notes, and item identity.
 
+use super::tokens::{matching_close, tokenize, Kind};
 use super::*;
 use regex::Regex;
 
@@ -26,18 +27,7 @@ pub(super) fn parse_parenthetical_measurement_details(
         || content_lower.trim().ends_with(";each")
         || content_lower.trim().ends_with(",each");
 
-    // First, normalize " or " to ";" for splitting (but not "or" within words)
-    let normalized = normalize_parenthetical_measurement_separators(content)
-        .replace(" or ", ";")
-        .replace(" Or ", ";")
-        .replace(" OR ", ";");
-
-    // Split by semicolons or commas (common separators in recipe measurements)
-    let parts: Vec<&str> = normalized
-        .split([';', ','])
-        .map(str::trim)
-        .filter(|part| !part.is_empty())
-        .collect();
+    let parts = measurement_parts(content);
     // Only a lone measurement restates the item; see
     // try_parse_measurement_before_filler.
     let outside_text = if parts.len() == 1 { outside_text } else { "" };
@@ -137,46 +127,40 @@ pub(super) fn parenthetical_measurement_has_note_qualifier(content: &str) -> boo
         || normalized.starts_with("roughly ")
 }
 
-pub(super) fn normalize_parenthetical_measurement_separators(content: &str) -> String {
-    let chars: Vec<char> = content.chars().collect();
-    let mut normalized = String::with_capacity(content.len() + 4);
-    let mut i = 0;
-
-    while i < chars.len() {
-        if chars[i] != '/' {
-            normalized.push(chars[i]);
-            i += 1;
-            continue;
-        }
-
-        let prev = chars[..i]
-            .iter()
-            .rev()
-            .find(|c| !c.is_whitespace())
-            .copied();
-        let next = chars[i + 1..].iter().find(|c| !c.is_whitespace()).copied();
-
-        let is_measurement_separator = prev.is_some_and(|c| c.is_ascii_alphabetic() || c == '.')
-            && next.is_some_and(|c| c.is_ascii_digit());
-
-        if is_measurement_separator {
-            while normalized.ends_with(' ') {
-                normalized.pop();
+/// Split parenthetical content into its measurements: at commas,
+/// semicolons, " or ", and a slash between a unit and the next amount ("8
+/// ounces; 227 g", "113g, 1/2 cup", "8 ounces or 225 grams", "2 oz/56 g").
+fn measurement_parts(content: &str) -> Vec<&str> {
+    let toks = tokenize(content);
+    let mut parts = Vec::new();
+    let mut start = 0;
+    for (i, token) in toks.iter().enumerate() {
+        let next = toks.get(i + 1);
+        let separates = match token.kind {
+            Kind::Comma => true,
+            Kind::Other => token.text == ";",
+            Kind::Word => {
+                token.is_word("or") && token.space_before && next.is_some_and(|n| n.space_before)
             }
-            normalized.push(';');
-            normalized.push(' ');
-            i += 1;
-            while i < chars.len() && chars[i].is_whitespace() {
-                i += 1;
+            Kind::Slash => {
+                i.checked_sub(1)
+                    .and_then(|prev| toks.get(prev))
+                    .is_some_and(|prev| matches!(prev.kind, Kind::Word | Kind::Period))
+                    && next.is_some_and(|n| n.kind == Kind::Number)
             }
-            continue;
+            _ => false,
+        };
+        if separates {
+            parts.push(content.get(start..token.start).unwrap_or(""));
+            start = token.end;
         }
-
-        normalized.push('/');
-        i += 1;
     }
-
-    normalized
+    parts.push(content.get(start..).unwrap_or(""));
+    parts
+        .into_iter()
+        .map(str::trim)
+        .filter(|part| !part.is_empty())
+        .collect()
 }
 
 pub(super) fn try_parse_parenthetical_measurement(s: &str) -> Option<Measurement> {
@@ -207,7 +191,7 @@ pub(super) fn try_parse_parenthetical_measurement(s: &str) -> Option<Measurement
         return None;
     }
 
-    if looks_like_bare_parenthetical_size_unit(&cleaned, normalized_base) {
+    if bare_parenthetical_size(&cleaned).is_some() {
         return None;
     }
 
@@ -320,27 +304,19 @@ fn restates_outside_text(words: &str, outside_text: &str) -> bool {
     outside.windows(words.len()).any(|window| window == words)
 }
 
-pub(super) fn looks_like_bare_parenthetical_size_unit(s: &str, normalized_unit: &str) -> bool {
-    const BARE_PARENTHEICAL_SIZE_UNITS: &[&str] = &["oz", "lb", "inch", "fl oz"];
+/// A hyphenated size alone ("15-ounce", "14 1/2-ounce", "7- to 9-ounce")
+/// reads as an adjective of the package or piece beside the parenthetical, so
+/// it goes to the note for the nutrition reader to join with that unit rather
+/// than measure the line. Returns the size spelled one way: "(15- ounce)" ->
+/// "15-ounce", "(1 1/2 - to 1 3/4-lb.)" -> "1 1/2- to 1 3/4-lb".
+pub(super) fn bare_parenthetical_size(content: &str) -> Option<String> {
+    const BARE_PARENTHETICAL_SIZE_UNITS: &[&str] = &["oz", "lb", "inch"];
 
-    if !BARE_PARENTHEICAL_SIZE_UNITS.contains(&normalized_unit) {
-        return false;
-    }
-
-    let trimmed = s.trim().trim_end_matches('.').to_lowercase();
-    let words: Vec<&str> = trimmed.split_whitespace().collect();
-    if words.len() != 1 {
-        return false;
-    }
-
-    let Some((amount_part, unit_part)) = words[0].split_once('-') else {
-        return false;
-    };
-    if !is_amount_like(amount_part) {
-        return false;
-    }
-
-    normalize_unit(unit_part.trim_end_matches('.')) == normalized_unit
+    let (amount, unit, rest) = measure::read_hyphenated_size(content.trim())?;
+    let bare = rest.is_empty()
+        && !unit.contains(' ')
+        && BARE_PARENTHETICAL_SIZE_UNITS.contains(&normalize_unit(&unit).as_str());
+    bare.then(|| format!("{}-{unit}", amount.replace(" to ", "- to ")))
 }
 
 pub(super) fn parenthetical_branch_context(raw_before_parenthetical: &str) -> (bool, bool) {
@@ -752,45 +728,55 @@ pub(super) fn is_only_descriptor_or_prep_words(s: &str) -> bool {
     saw_word
 }
 
+/// "((about 4 cloves))" -> "(about 4 cloves)": a "(" doubled with nothing
+/// between drops its outer pair.
 pub(super) fn unwrap_redundant_parentheses(s: &str) -> String {
+    if !s.contains("((") {
+        return s.to_string();
+    }
+    let toks = tokenize(s);
     let mut result = String::with_capacity(s.len());
     let mut cursor = 0;
-
-    while let Some(relative_start) = s.get(cursor..).and_then(|tail| tail.find("((")) {
-        let start = cursor + relative_start;
-        let Some(close_idx) = find_matching_closing_paren(s, start) else {
+    let mut i = 0;
+    while let (Some(open), Some(inner)) = (toks.get(i), toks.get(i + 1)) {
+        if open.kind != Kind::Open || inner.kind != Kind::Open || inner.start != open.end {
+            i += 1;
+            continue;
+        }
+        let Some(close) = matching_close(&toks, i) else {
             break;
         };
-
-        result.push_str(s.get(cursor..start).unwrap_or(""));
-        result.push_str(s.get(start + 1..close_idx).unwrap_or(""));
-        cursor = close_idx + 1;
+        let close_paren = &toks[close];
+        result.push_str(s.get(cursor..open.start).unwrap_or(""));
+        result.push_str(s.get(open.end..close_paren.start).unwrap_or(""));
+        cursor = close_paren.end;
+        i = close + 1;
     }
-
     result.push_str(s.get(cursor..).unwrap_or(""));
     result
 }
 
-pub(super) fn find_matching_closing_paren(s: &str, open_idx: usize) -> Option<usize> {
-    if !s.get(open_idx..)?.starts_with('(') {
-        return None;
-    }
-
-    let mut depth = 0;
-    for (offset, ch) in s.get(open_idx..)?.char_indices() {
-        match ch {
-            '(' => depth += 1,
-            ')' => {
-                depth -= 1;
-                if depth == 0 {
-                    return Some(open_idx + offset);
-                }
+/// Drop placeholder parentheticals, TK ("to come") and TODO, at any depth:
+/// "1/2 cup (TK g) panko bread crumbs" -> "1/2 cup panko bread crumbs",
+/// "(TODO) chicken stock" -> "chicken stock".
+pub(super) fn strip_placeholder_parentheticals(s: &str) -> String {
+    let mut s = s.to_string();
+    loop {
+        let toks = tokenize(&s);
+        let span = toks.windows(2).enumerate().find_map(|(i, pair)| {
+            if pair[0].kind != Kind::Open || !(pair[1].is_word("tk") || pair[1].is_word("todo")) {
+                return None;
             }
-            _ => {}
-        }
+            Some((pair[0].start, toks.get(matching_close(&toks, i)?)?.end))
+        });
+        let Some((start, end)) = span else {
+            return s;
+        };
+        s = join_segments(
+            s.get(..start).unwrap_or("").trim_end(),
+            s.get(end..).unwrap_or("").trim_start(),
+        );
     }
-
-    None
 }
 
 /// Strip common qualifiers from measurement strings, but preserve "each" as a unit suffix.
@@ -1217,6 +1203,63 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("1/2".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_mixed_and_ranged_package_sizes_go_to_the_note_like_bare_ones() {
+        for (raw, unit, note) in [
+            ("1 (15-ounce) can chickpeas", Some("can"), "15-ounce"),
+            ("1 (28-oz.) can tomatoes", Some("can"), "28-oz"),
+            ("1 (14 1/2-ounce) can tomatoes", Some("can"), "14 1/2-ounce"),
+            ("1 (15- ounce) can black beans", Some("can"), "15-ounce"),
+            ("1 (14.5 -ounce) can tomatoes", Some("can"), "14.5-ounce"),
+            ("4 (7- to 9-ounce) potatoes", None, "7- to 9-ounce"),
+            (
+                "2 (1 1/2 - to 1 3/4-lb) acorn squash",
+                None,
+                "1 1/2- to 1 3/4-lb",
+            ),
+        ] {
+            let result = parse_ingredient(raw);
+            assert_eq!(result.measurements.len(), 1, "{raw}");
+            assert_eq!(result.measurements[0].unit.as_deref(), unit, "{raw}");
+            assert_eq!(result.note.as_deref(), Some(note), "{raw}");
+        }
+    }
+
+    #[test]
+    fn test_measurement_parts_split_on_separators_and_unit_slashes() {
+        assert_eq!(
+            measurement_parts("8 ounces; 227 g, 1/2 cup or 2 oz/56 g"),
+            vec!["8 ounces", "227 g", "1/2 cup", "2 oz", "56 g"]
+        );
+        // A fraction's slash and "or" inside a word don't split.
+        assert_eq!(measurement_parts("1/2 cup orzo"), vec!["1/2 cup orzo"]);
+    }
+
+    #[test]
+    fn test_placeholder_parentheticals_are_dropped() {
+        assert_eq!(
+            strip_placeholder_parentheticals("1/2 cup (TK g) panko bread crumbs"),
+            "1/2 cup panko bread crumbs"
+        );
+        assert_eq!(
+            strip_placeholder_parentheticals("(TODO) chicken stock"),
+            "chicken stock"
+        );
+        assert_eq!(
+            strip_placeholder_parentheticals("1 jar (tkemali sauce)"),
+            "1 jar (tkemali sauce)"
+        );
+    }
+
+    #[test]
+    fn test_doubled_parens_unwrap_once() {
+        assert_eq!(
+            unwrap_redundant_parentheses("garlic ((about 4 cloves))"),
+            "garlic (about 4 cloves)"
+        );
+        assert_eq!(unwrap_redundant_parentheses("((a) b"), "((a) b");
     }
 
     #[test]

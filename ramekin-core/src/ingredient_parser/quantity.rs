@@ -411,9 +411,14 @@ mod tests {
 
     #[test]
     fn noted_package_weights_join_the_unit() {
-        let measures = measures(&line("2", Some("cans"), Some("15-ounce, drained")));
-        assert_eq!(measures.len(), 1);
-        close(grams(measures[0].as_ref().unwrap()), 850.49, 850.49);
+        let cans = measures(&line("2", Some("cans"), Some("15-ounce, drained")));
+        assert_eq!(cans.len(), 1);
+        close(grams(cans[0].as_ref().unwrap()), 850.49, 850.49);
+        // Mixed-number and ranged sizes, as the parser spells them.
+        let tomatoes = measures(&line("1", Some("can"), Some("14 1/2-ounce")));
+        close(grams(tomatoes[0].as_ref().unwrap()), 411.07, 411.07);
+        let squash = measures(&line("2", None, Some("1 1/2- to 1 3/4-lb")));
+        close(grams(squash[1].as_ref().unwrap()), 1360.78, 1587.57);
     }
 
     #[test]
