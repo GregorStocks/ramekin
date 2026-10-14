@@ -102,13 +102,16 @@ fn newest(dir: &Path) -> anyhow::Result<Option<DateTime<Utc>>> {
         .max())
 }
 
-/// Snapshot and prune once, on a pooled connection.
+/// Snapshot and prune once, on a pooled connection. Only a failed snapshot
+/// is an error: a failed prune is logged, and the new snapshot still counts.
 async fn run_once(pool: &DbPool, dir: PathBuf) -> anyhow::Result<()> {
     db::run_blocking(pool, move |conn| {
         let now = Utc::now();
         let path = snapshot(conn, &dir, now)?;
-        let pruned = prune(&dir, now)?;
-        tracing::info!(path = %path.display(), pruned, "database snapshot written");
+        tracing::info!(path = %path.display(), "database snapshot written");
+        if let Err(e) = prune(&dir, now) {
+            tracing::error!(dir = %dir.display(), "pruning old database snapshots failed: {e:#}");
+        }
         anyhow::Ok(())
     })
     .await?
