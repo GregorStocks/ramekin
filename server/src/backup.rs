@@ -75,14 +75,18 @@ fn to_prune(names: &[String], now: DateTime<Utc>) -> Vec<String> {
         .collect()
 }
 
-/// Delete the snapshots in `dir` that retention drops. Returns how many.
-fn prune(dir: &Path, now: DateTime<Utc>) -> anyhow::Result<usize> {
-    let names = snapshot_names(dir)?;
-    let doomed = to_prune(&names, now);
-    for name in &doomed {
-        std::fs::remove_file(dir.join(name))?;
-    }
-    Ok(doomed.len())
+/// Delete the snapshots in `dir` that retention drops. One that can't be
+/// deleted doesn't stop the rest; the failures are reported together.
+fn prune(dir: &Path, now: DateTime<Utc>) -> anyhow::Result<()> {
+    let failures: Vec<String> = to_prune(&snapshot_names(dir)?, now)
+        .into_iter()
+        .filter_map(|name| {
+            let error = std::fs::remove_file(dir.join(&name)).err()?;
+            Some(format!("{name}: {error}"))
+        })
+        .collect();
+    anyhow::ensure!(failures.is_empty(), "{}", failures.join("; "));
+    Ok(())
 }
 
 fn snapshot_names(dir: &Path) -> anyhow::Result<Vec<String>> {
@@ -188,6 +192,27 @@ mod tests {
                 file_name(now - Duration::days(9)),
             ]
         );
+    }
+
+    #[test]
+    fn one_undeletable_snapshot_does_not_stop_pruning() {
+        let dir = std::env::temp_dir().join(format!("ramekin-prune-test-{}", uuid::Uuid::new_v4()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let now = at(2026, 10, 14, 12);
+        let recent = file_name(now - Duration::days(1));
+        let expired = file_name(now - Duration::days(9));
+        // A directory under an expired snapshot's name: remove_file fails on it.
+        let stuck = file_name(now - Duration::days(10));
+        std::fs::write(dir.join(&recent), b"").unwrap();
+        std::fs::write(dir.join(&expired), b"").unwrap();
+        std::fs::create_dir(dir.join(&stuck)).unwrap();
+
+        let error = prune(&dir, now).unwrap_err().to_string();
+
+        assert!(error.contains(&stuck), "{error}");
+        assert!(dir.join(&recent).exists());
+        assert!(!dir.join(&expired).exists());
+        std::fs::remove_dir_all(&dir).unwrap();
     }
 
     #[test]
