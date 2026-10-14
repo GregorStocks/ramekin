@@ -40,7 +40,9 @@ cost grows with the recipe collection.
 - **What:** Sets up console logging. If `OTEL_EXPORTER_OTLP_ENDPOINT` is set,
   it also tries a TCP connection to the endpoint (100 ms timeout) and exports
   traces and logs there if the connection succeeds.
-- **Cost:** Constant. At most 100 ms, and only when the endpoint is set.
+- **Cost:** Only when the endpoint is set. The connection attempt is capped
+  at 100 ms, but the hostname is first resolved with a synchronous
+  `to_socket_addrs()` that has no time limit, so slow DNS stalls startup.
 - **On failure:** If the collector can't be reached, the server logs to the
   console only. If the exporter can't be built, the server panics.
 - **Must block serving:** Yes. Logging has to be set up before anything else.
@@ -153,9 +155,13 @@ cost grows with the recipe collection.
   `candidates()` scan any more. Linear in resolved names (863): ~50 ms.
   Changes anything only after a deploy that changed the catalog.
 - **On failure:** Panics.
-- **Must block serving:** Not strictly. Nothing on the read path depends on
-  it. It only has to finish before the name worker resolves anything.
-- **Recommendation:** Keep for now (see below).
+- **Must block serving:** Yes. Reads apply stored answers through
+  `load_learned`, and a stored `not_food` answer still applies to a name the
+  new catalog calls ambiguous (`resolve_learned` returns `NotFood` whatever
+  the catalog said). Until this runs, calorie estimates and categories would
+  use answers the deployed catalog rules out. It must also finish before the
+  name worker resolves anything.
+- **Recommendation:** Keep, blocking.
 
 ### 10. `ingredient_names::queue_stored`, blocks serving
 
@@ -168,7 +174,10 @@ cost grows with the recipe collection.
   per recipe, and a catalog lookup per ingredient. It queues nothing unless
   the catalog changed.
 - **On failure:** Panics.
-- **Must block serving:** Not strictly, for the same reason as step 9.
+- **Must block serving:** Not strictly. Reads use only resolved answers, so
+  a name this hasn't queued yet reads the same as a queued one. The one
+  difference: reads won't report that a fresher answer is coming
+  (`any_pending`).
 - **Recommendation:** Keep for now (see below).
 
 ### 11. Name worker (`ingredient_names::spawn_worker`), in the background
@@ -195,12 +204,13 @@ serves.
 | Backup scheduler | no | dir creation only | — | keep |
 | `reconcile_categories` | yes | yes | shopping items | keep |
 | `resume_interrupted_jobs` | yes | no | interrupted jobs | keep |
-| `sync_with_catalog` | yes | yes | learned names | keep for now |
+| `sync_with_catalog` | yes | yes | resolved names | keep |
 | `queue_stored` | yes | yes | recipes × ingredients | keep for now |
 | Name worker | no | no | — | keep |
 
-Steps 9 and 10 could run as the name worker's first step, after the server
-is listening. That would take about 320 ms off startup. It would also turn a
-panic at startup into a logged error that the worker retries. They're worth
-moving if the collection grows by an order of magnitude or startup becomes
-noticeable. At today's size, keeping them simple and fatal costs less.
+Step 10 could run as the name worker's first step, after the server is
+listening. That would take about 270 ms off startup. It would also turn a
+panic at startup into a logged error that the worker retries. Step 9 has to
+stay ahead of serving (see above). Step 10 is worth moving if the collection
+grows by an order of magnitude or startup becomes noticeable. At today's
+size, keeping it simple and fatal costs less.
