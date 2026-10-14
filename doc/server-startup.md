@@ -10,9 +10,12 @@ failure does. Code: `main()` in `server/src/main.rs` and `create_pool` /
 `make serve` runs `scripts/serve-release.sh` under process-compose with
 `restart: on_failure`, and that script runs the binary under `systemfd`. So the
 port is already bound while the server starts: requests wait rather than being
-refused, and a slow startup shows up as slow first requests. A panic exits the
-process and process-compose starts it again, so a failure that persists
-becomes a restart loop and keeps the API down until someone fixes it.
+refused, and a slow startup shows up as slow first requests. A panic in a
+blocking step below exits the process and process-compose starts it again, so
+a failure that persists becomes a restart loop and keeps the API down until
+someone fixes it. A panic inside a background task (steps 5, 6 and 11) ends
+only that task, since nothing joins it. The server keeps serving without that
+task until the next restart.
 
 ## Measured cost
 
@@ -48,6 +51,11 @@ cost grows with the recipe collection.
 - **Must block serving:** Yes. Logging has to be set up before anything else.
 - **Recommendation:** Keep.
 
+`DATABASE_URL` is read right after this. If it's missing or not valid
+Unicode, the server panics before touching the database. It's required, so
+that's correct. Subcommands (`backup`, `restore`, `import-postgres`) return
+at this point, and none of the steps below run for them.
+
 ### 2. Schema migrations (`open_migrated`, `run_pending_migrations`)
 
 - **What:** Creates the database directory if it's missing, opens the file,
@@ -82,6 +90,7 @@ cost grows with the recipe collection.
   `normalize_for_search` and `fold_case` SQL functions.
 - **Cost:** Constant.
 - **On failure:** Panics.
+- **Must block serving:** Yes. Every later step uses the pool.
 - **Recommendation:** Keep.
 
 ### 5. Photo dimension backfill (`photos::spawn_dimension_backfill`), in the background
@@ -209,6 +218,7 @@ cost grows with the recipe collection.
 | Telemetry | yes | exporter build only | — | keep |
 | Schema migrations | yes | yes | pending migrations | keep |
 | Data migrations | yes | yes | pending migrations (none) | keep the runner |
+| Connection pool | yes | yes | — | keep |
 | Photo dimension backfill | no | no | photos (nothing pending) | **delete** |
 | Backup scheduler | no | dir creation only | — | keep |
 | `reconcile_categories` | yes | yes | shopping items | keep |
