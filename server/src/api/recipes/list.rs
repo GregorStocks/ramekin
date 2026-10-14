@@ -486,8 +486,8 @@ fn list_recipes_blocking(
                     );
                     ApiError::internal("Recipe ingredients are corrupt")
                 })?;
-            // One text per ingredient covering everything the SQL filter can
-            // match in the JSONB (measurements included), so tokens like
+            // One text per ingredient covering everything the search filter
+            // can match in the stored JSON (measurements included), so tokens like
             // "cups" score instead of matching silently.
             let ingredient_texts: Vec<String> = ingredients
                 .into_iter()
@@ -544,8 +544,8 @@ fn list_recipes_blocking(
         });
     }
 
-    // PostgreSQL text ordering depends on the database collation, which the
-    // offline iOS cache cannot reproduce. Apply the shared locale-independent
+    // Database text ordering is plain byte order, which isn't what users
+    // expect and which the offline iOS cache would have to mirror. Apply the shared locale-independent
     // comparator in memory so cached and server-backed title sorts agree.
     if matches!(sort_by, SortBy::Title) {
         let mut title_rows: Vec<(Uuid, String)> = query

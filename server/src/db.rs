@@ -14,10 +14,11 @@ pub type DbPool = r2d2::Pool<ConnectionManager<SqliteConnection>>;
 pub type DbConn = r2d2::PooledConnection<ConnectionManager<SqliteConnection>>;
 
 /// The key a case-insensitive name (a username, a tag) is unique and looked
-/// up by. SQLite's `lower()` and `NOCASE` only fold ASCII, so the key is
-/// computed here and stored next to the name.
+/// up by: `ramekin_core::search::fold_case`, which iOS mirrors for tags.
+/// SQLite's `lower()` and `NOCASE` only fold ASCII, so the key is computed
+/// here and stored next to the name.
 pub fn case_key(name: &str) -> String {
-    name.to_lowercase()
+    ramekin_core::search::fold_case(name)
 }
 
 /// SQLite runs one write transaction at a time. Writers queue on this lock
@@ -267,28 +268,33 @@ fn tracing_instrumentation() -> Option<Box<dyn Instrumentation>> {
     Some(Box::new(TracingInstrumentation))
 }
 
+/// Open the database file (creating it and its directory if missing), set up
+/// the connection, and run pending schema and data migrations. WAL mode is a
+/// property of the file, so it's set here once rather than per connection
+/// (switching it needs every other connection out of the way).
+pub fn open_migrated(database_url: &str) -> SqliteConnection {
+    if let Some(dir) = std::path::Path::new(database_url).parent() {
+        std::fs::create_dir_all(dir)
+            .unwrap_or_else(|e| panic!("Failed to create {}: {e}", dir.display()));
+    }
+    let mut conn = SqliteConnection::establish(database_url)
+        .unwrap_or_else(|e| panic!("Failed to open database {database_url}: {e}"));
+    setup_connection(&mut conn).expect("Failed to set up database connection");
+    conn.batch_execute("PRAGMA journal_mode = WAL;")
+        .expect("Failed to enable WAL mode");
+    conn.run_pending_migrations(MIGRATIONS)
+        .expect("Failed to run database migrations");
+    crate::data_migrations::run_pending(&mut conn).expect("Failed to run data migrations");
+    conn
+}
+
 pub fn create_pool(database_url: &str) -> DbPool {
     // Set up automatic tracing for all database operations
     set_default_instrumentation(tracing_instrumentation)
         .expect("Failed to set default instrumentation");
 
-    // Migrate on one connection before the pool opens any. WAL mode is a
-    // property of the file, so it's set here once rather than per connection
-    // (switching it needs every other connection out of the way).
-    {
-        if let Some(dir) = std::path::Path::new(database_url).parent() {
-            std::fs::create_dir_all(dir)
-                .unwrap_or_else(|e| panic!("Failed to create {}: {e}", dir.display()));
-        }
-        let mut conn = SqliteConnection::establish(database_url)
-            .unwrap_or_else(|e| panic!("Failed to open database {database_url}: {e}"));
-        setup_connection(&mut conn).expect("Failed to set up database connection");
-        conn.batch_execute("PRAGMA journal_mode = WAL;")
-            .expect("Failed to enable WAL mode");
-        conn.run_pending_migrations(MIGRATIONS)
-            .expect("Failed to run database migrations");
-        crate::data_migrations::run_pending(&mut conn).expect("Failed to run data migrations");
-    }
+    // Migrate on one connection before the pool opens any.
+    drop(open_migrated(database_url));
 
     let manager = ConnectionManager::<SqliteConnection>::new(database_url);
     r2d2::Pool::builder()

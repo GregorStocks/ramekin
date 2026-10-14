@@ -3799,7 +3799,7 @@
       },
       "Ingredient": {
         "type": "object",
-        "description": "Ingredient structure for JSONB storage",
+        "description": "Ingredient structure for JSON storage",
         "required": [
           "item",
           "measurements"
@@ -4917,7 +4917,7 @@
           },
           "ingredient_match_text": {
             "type": "string",
-            "description": "The database's text rendering of the stored ingredients JSONB — the\nexact haystack the server's bare-text search filter matches (JSON keys\nand syntax included). Local search must match against this string, not\na re-encoding of `ingredients`, to reproduce server result membership."
+            "description": "The stored ingredients JSON text, exactly as the database holds it — the\nexact haystack the server's bare-text search filter matches (JSON keys\nand syntax included). Local search must match against this string, not\na re-encoding of `ingredients`, to reproduce server result membership."
           },
           "ingredients": {
             "type": "array",

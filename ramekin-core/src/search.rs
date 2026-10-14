@@ -7,18 +7,15 @@
 //! client implementations — behavior changes here must update that file, and
 //! vice versa.
 //!
-//! Matching semantics mirror the SQL filters in the list-recipes endpoint:
-//! case-insensitive, accent-insensitive substring containment (Postgres
-//! `f_unaccent(col) ILIKE pattern`, with query text normalized before LIKE
-//! escaping). `normalize_for_search`
-//! reproduces that pipeline exactly by consuming the versioned contract at
-//! shared-test-vectors/search-normalization.json: the server database's
-//! complete per-codepoint unaccent dictionary followed by its per-codepoint
-//! lower() mapping (which is what ILIKE's case-insensitivity applies).
-//! tests/test_search_normalization_contract.py fails when that asset drifts
-//! from the running database, and recipe sync refuses to feed a client whose
-//! contract version differs, so local matching can rely on this
-//! normalization being byte-identical to SQL matching.
+//! Matching semantics mirror the filters in the list-recipes endpoint:
+//! case-insensitive, accent-insensitive substring containment, with both the
+//! stored text and the query normalized by `normalize_for_search`. That
+//! normalization is defined by the versioned contract at
+//! shared-test-vectors/search-normalization.json: a complete per-codepoint
+//! unaccent mapping followed by a per-codepoint lowercase mapping. The
+//! server's search index stores text normalized by this same function, and
+//! recipe sync refuses to feed a client whose contract version differs, so
+//! local matching can rely on being byte-identical to server matching.
 
 use std::collections::HashMap;
 use std::sync::OnceLock;
@@ -106,12 +103,11 @@ pub fn normalization_contract_version() -> u32 {
     contract().version
 }
 
-/// Normalize text for matching and scoring, byte-identical to the database's
-/// `f_unaccent(text)` under `ILIKE`: apply the contract's unaccent mapping
-/// per codepoint (replacements may be empty or multi-character), then its
-/// per-codepoint lower() mapping. Unlike Rust's `str::to_lowercase`, the
-/// database lowercases without context (no final-sigma handling), so the
-/// contract's table is authoritative.
+/// Normalize text for matching and scoring: apply the contract's unaccent
+/// mapping per codepoint (replacements may be empty or multi-character),
+/// then its per-codepoint lowercase mapping. Unlike Rust's
+/// `str::to_lowercase`, the mapping has no context rules (no final-sigma
+/// handling), so the contract's table is authoritative.
 pub fn normalize_for_search(s: &str) -> String {
     let contract = contract();
     let lower = |c: char| contract.lower.get(&c).copied().unwrap_or(c);
@@ -123,6 +119,16 @@ pub fn normalize_for_search(s: &str) -> String {
         }
     }
     out
+}
+
+/// Case-fold a name for case-insensitive, accent-sensitive equality (tag
+/// names, usernames): the contract's per-codepoint lowercase mapping alone,
+/// as iOS's `citextFold` applies it.
+pub fn fold_case(s: &str) -> String {
+    let contract = contract();
+    s.chars()
+        .map(|c| contract.lower.get(&c).copied().unwrap_or(c))
+        .collect()
 }
 
 /// Score one recipe against the text tokens of a search query. Tokens are
@@ -210,6 +216,14 @@ mod tests {
     #[test]
     fn test_contract_version_is_positive() {
         assert!(normalization_contract_version() >= 1);
+    }
+
+    #[test]
+    fn test_fold_case_keeps_accents() {
+        assert_eq!(fold_case("CRÈME"), "crème");
+        assert_ne!(fold_case("Crème"), fold_case("Creme"));
+        // No context rules: a final capital sigma folds like any other.
+        assert_eq!(fold_case("ΣΟΥΠΕΣ"), "σουπεσ");
     }
 
     #[test]

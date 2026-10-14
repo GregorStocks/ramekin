@@ -5,6 +5,7 @@ mod auth;
 mod data_migrations;
 mod db;
 mod ids;
+mod import_postgres;
 mod ingredient_names;
 mod models;
 mod photos;
@@ -189,6 +190,26 @@ async fn main() {
     init_telemetry();
 
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+
+    // `ramekin-server import-postgres <postgres-url>`: copy the old Postgres
+    // database into the (new, empty) SQLite file at DATABASE_URL, then exit.
+    let args: Vec<String> = env::args().collect();
+    if args.get(1).map(String::as_str) == Some("import-postgres") {
+        let postgres_url = args
+            .get(2)
+            .expect("usage: ramekin-server import-postgres <postgres-url>")
+            .clone();
+        // The Postgres client is synchronous and runs its own runtime.
+        let result =
+            tokio::task::spawn_blocking(move || import_postgres::run(&postgres_url, &database_url))
+                .await
+                .expect("import task panicked");
+        if let Err(e) = result {
+            tracing::error!("import failed: {e:#}");
+            std::process::exit(1);
+        }
+        return;
+    }
 
     let pool: AppState = Arc::new(db::create_pool(&database_url));
 

@@ -1072,3 +1072,28 @@ def test_sync_created_items_have_category_in_server_changes(authed_api_client):
     assert changes_by_item["chicken breast"].category == "Meat & Seafood"
     assert "olive oil" in changes_by_item
     assert changes_by_item["olive oil"].category == "Oils & Vinegars"
+
+
+def test_sync_answers_a_cursor_from_another_database_with_everything(
+    authed_api_client,
+):
+    """A cursor above any this database has issued (a client that synced
+    before a restore from an older backup) gets every item and every
+    deletion, instead of silently skipping every change below it."""
+    client, _user_id = authed_api_client
+    api = ShoppingListApi(client)
+    kept, removed = api.create_items(
+        CreateShoppingListRequest(
+            items=[
+                CreateShoppingListItemRequest(item="kept"),
+                CreateShoppingListItemRequest(item="removed"),
+            ]
+        )
+    ).ids
+    api.delete_item(removed)
+    current = api.sync_items(SyncRequest()).cursor
+
+    response = api.sync_items(SyncRequest(cursor=current + 1_000_000_000))
+
+    assert kept in {change.id for change in response.server_changes}
+    assert removed in response.deleted

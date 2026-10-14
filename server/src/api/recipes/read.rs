@@ -169,8 +169,8 @@ pub struct RecipeSyncRow {
     pub rating: Option<i32>,
     pub updated_at: DateTime<Utc>,
     pub ingredients: JsonValue,
-    /// The database's own text rendering of the ingredients JSONB — the
-    /// haystack the search filter matches, which clients cannot re-create by
+    /// The stored ingredients JSON text — the haystack the search filter
+    /// matches, which clients cannot re-create by
     /// re-encoding the structured ingredients.
     pub ingredient_match_text: String,
     pub instructions: String,

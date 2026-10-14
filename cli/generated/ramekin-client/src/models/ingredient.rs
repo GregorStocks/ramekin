@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Ingredient : Ingredient structure for JSONB storage
+/// Ingredient : Ingredient structure for JSON storage
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Ingredient {
     /// The ingredient name (e.g., \"butter\", \"all-purpose flour\")
@@ -39,7 +39,7 @@ pub struct Ingredient {
 }
 
 impl Ingredient {
-    /// Ingredient structure for JSONB storage
+    /// Ingredient structure for JSON storage
     pub fn new(item: String, measurements: Vec<models::Measurement>) -> Ingredient {
         Ingredient {
             item,

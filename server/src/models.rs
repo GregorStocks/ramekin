@@ -61,7 +61,7 @@ pub struct Measurement {
     pub unit: Option<String>,
 }
 
-/// Ingredient structure for JSONB storage
+/// Ingredient structure for JSON storage
 #[derive(Debug, Clone, Serialize, Deserialize, utoipa::ToSchema)]
 pub struct Ingredient {
     /// The ingredient name (e.g., "butter", "all-purpose flour")

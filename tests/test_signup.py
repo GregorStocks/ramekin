@@ -31,3 +31,13 @@ def test_signup_duplicate_username_case_insensitive(auth_api, unique_username):
         )
 
     assert exc_info.value.status == 409
+
+
+def test_signup_duplicate_username_non_ascii_case(auth_api, unique_username):
+    username = f"élodie_{unique_username}"
+    auth_api.signup(SignupRequest(username=username, password="testpass123"))
+
+    with pytest.raises(ApiException) as exc_info:
+        auth_api.signup(SignupRequest(username=username.upper(), password="otherpass"))
+
+    assert exc_info.value.status == 409

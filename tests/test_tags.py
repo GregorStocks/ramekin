@@ -93,6 +93,19 @@ def test_create_tag_duplicate_case_insensitive(authed_api_client):
     assert exc_info.value.status == 409
 
 
+def test_create_tag_duplicate_non_ascii_case(authed_api_client):
+    """Tag names compare case-insensitively beyond ASCII."""
+    client, user_id = authed_api_client
+    tags_api = TagsApi(client)
+
+    tags_api.create_tag(CreateTagRequest(name="crème"))
+
+    with pytest.raises(ApiException) as exc_info:
+        tags_api.create_tag(CreateTagRequest(name="CRÈME"))
+
+    assert exc_info.value.status == 409
+
+
 def test_delete_tag_success(authed_api_client):
     """Test deleting a tag successfully."""
     client, user_id = authed_api_client

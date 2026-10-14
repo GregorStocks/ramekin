@@ -32,7 +32,7 @@ class SyncRecipe(BaseModel):
     created_at: datetime
     description: Optional[StrictStr] = None
     id: UUID
-    ingredient_match_text: StrictStr = Field(description="The database's text rendering of the stored ingredients JSONB — the exact haystack the server's bare-text search filter matches (JSON keys and syntax included). Local search must match against this string, not a re-encoding of `ingredients`, to reproduce server result membership.")
+    ingredient_match_text: StrictStr = Field(description="The stored ingredients JSON text, exactly as the database holds it — the exact haystack the server's bare-text search filter matches (JSON keys and syntax included). Local search must match against this string, not a re-encoding of `ingredients`, to reproduce server result membership.")
     ingredients: List[Ingredient]
     instructions: StrictStr
     notes: Optional[StrictStr] = None

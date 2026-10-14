@@ -352,3 +352,36 @@ def test_recipe_sync_requires_auth(unauthed_api_client, server_url):
     )
 
     assert response.status_code == 401
+
+
+def test_recipe_sync_answers_a_cursor_from_another_database_with_a_full_sync(
+    authed_api_client, server_url
+):
+    """A cursor above any this database has issued (a client that synced
+    before a restore from an older backup) can't say what the client has
+    seen, so the server sends everything rather than silently skipping every
+    change below the client's cursor."""
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    live = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Live Before Restore",
+            instructions="Cook it.",
+            ingredients=[make_ingredient(item="rice")],
+        )
+    )
+    deleted = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Deleted Before Restore",
+            instructions="Cook it.",
+            ingredients=[make_ingredient(item="beans")],
+        )
+    )
+    recipes_api.delete_recipe(deleted.id)
+    current = _sync(client, server_url)["cursor"]
+
+    response = _sync(client, server_url, cursor=current + 1_000_000_000)
+
+    assert str(live.id) in {recipe["id"] for recipe in response["recipes"]}
+    assert str(deleted.id) in response["deleted"]
+    assert response["cursor"] == current

@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class Ingredient(BaseModel):
     """
-    Ingredient structure for JSONB storage
+    Ingredient structure for JSON storage
     """ # noqa: E501
     item: StrictStr = Field(description="The ingredient name (e.g., \"butter\", \"all-purpose flour\")")
     measurements: List[Measurement] = Field(description="Measurements - first is primary, rest are alternatives (e.g., \"1 stick\" then \"113g\")")

@@ -60,8 +60,8 @@ mod tests {
     }
 
     // The shared vectors stop at millisecond precision because Foundation's
-    // date parsing truncates below that; PostgreSQL timestamps carry
-    // microseconds, so pin the full-precision boundary here.
+    // date parsing truncates below that; stored timestamps can carry
+    // microseconds (and finer), so pin the full-precision boundary here.
     #[test]
     fn end_bound_includes_final_microsecond() {
         let end = day_end_utc_exclusive(NaiveDate::from_ymd_opt(2024, 3, 15).unwrap());

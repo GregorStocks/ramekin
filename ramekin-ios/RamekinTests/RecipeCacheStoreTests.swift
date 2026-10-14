@@ -9,7 +9,7 @@ final class RecipeCacheStoreTests: XCTestCase {
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
         let encodedAccountKey = Data(accountKey.utf8).base64EncodedString()
         // The timestamp cursor a pre-v3 install persisted. It is meaningless to
-        // the xid cursor, so the store must ignore it and take a full sync.
+        // the change cursor, so the store must ignore it and take a full sync.
         defaults.set(
             Date(timeIntervalSince1970: 100),
             forKey: "recipe_cache_v2_last_sync_at_\(encodedAccountKey)"

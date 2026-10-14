@@ -1,0 +1,15 @@
+{
+  "title": "Delete the Postgres importer once prod runs on SQLite",
+  "description": "`ramekin-server import-postgres` (server/src/import_postgres.rs, the `postgres` crate in server/Cargo.toml) exists only to move prod's data from Postgres to SQLite once (doc/sqlite-cutover.md). \
+After the cutover, delete the module, its dispatch in main.rs, the `postgres` dependency, and the cutover runbook's import steps (keep its backup section, or move it to DEVELOPMENT.md). \
+Also drop the leftover Postgres wording that only made sense during the move (e.g. the data_migrations.rs note about migrations that ran on Postgres can stay).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+  ],
+  "blocked": "Owner confirms prod has been cut over to SQLite and the Postgres rollback copy is no longer needed for re-importing.",
+  "created_at": "2026-10-14T12:00:00-07:00",
+  "updated_at": "2026-10-14T12:00:00-07:00",
+}

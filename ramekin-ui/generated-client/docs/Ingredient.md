@@ -1,7 +1,7 @@
 
 # Ingredient
 
-Ingredient structure for JSONB storage
+Ingredient structure for JSON storage
 
 ## Properties
 

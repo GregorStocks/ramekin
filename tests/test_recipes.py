@@ -1409,7 +1409,7 @@ def test_search_relevance_accent_insensitive(authed_api_client):
 
 
 def test_search_relevance_ligature_expansion(authed_api_client):
-    """Postgres unaccent expands ligatures (Œ -> OE); the scorer must rank
+    """The normalization contract expands ligatures (Œ -> OE); the scorer must rank
     the same way so a ligature title still wins for its ascii query."""
     client, user_id = authed_api_client
     recipes_api = RecipesApi(client)
@@ -1437,7 +1437,7 @@ def test_search_relevance_ligature_expansion(authed_api_client):
 
 
 def test_search_relevance_presentation_ligature(authed_api_client):
-    """Postgres unaccent expands presentation ligatures (U+FB01 'ﬁ' -> fi);
+    """The normalization contract expands presentation ligatures (U+FB01 'ﬁ' -> fi);
     the scorer must credit those matches too. If it didn't, Hot Cocoa would
     score only its 'chocolate' matches (250), tying newer Spice Blend (250)
     and losing the recency tiebreak."""
@@ -1465,7 +1465,7 @@ def test_search_relevance_presentation_ligature(authed_api_client):
 
 def test_search_relevance_measurement_text(authed_api_client):
     """Amounts and units live only in ingredient measurements; the SQL filter
-    matches them via the JSONB text, so the scorer must credit them too. If
+    matches them via the stored JSON text, so the scorer must credit them too. If
     it didn't, Snack Mix would score 0 and lose to newer Muffins (50)."""
     client, user_id = authed_api_client
     recipes_api = RecipesApi(client)

@@ -1,20 +1,19 @@
 import Foundation
 
 /// The versioned search normalization contract shared with the server
-/// (shared-test-vectors/search-normalization.json): the complete
-/// per-codepoint unaccent dictionary PostgreSQL's `f_unaccent` applies, and
-/// the complete per-codepoint `lower()` mapping that `ILIKE` and `CITEXT`
-/// case-insensitivity apply. Local search matches server result membership
+/// (shared-test-vectors/search-normalization.json): a complete
+/// per-codepoint unaccent mapping and a per-codepoint lowercase mapping,
+/// which the server's search and tag matching apply. Local search matches server result membership
 /// only while both sides normalize with the same contract version, so recipe
 /// sync fails when the versions differ (see RecipeSyncSweep).
 enum SearchNormalizationSupport {
     static var contractVersion: Int { contract.version }
 
-    /// Mirror of the server's `lower(f_unaccent(text))` pipeline — the exact
-    /// normalization SQL bare-text matching applies to both the recipe
-    /// fields and the query pattern, and the one the relevance scorer uses.
+    /// Mirror of the server's `normalize_for_search` — the exact
+    /// normalization server bare-text matching applies to both the recipe
+    /// fields and the query, and the one the relevance scorer uses.
     /// Applied per Unicode scalar; unaccent replacements may be empty or
-    /// multi-character. PostgreSQL lowercases without context (no
+    /// multi-character. The lowercase mapping has no context rules (no
     /// final-sigma handling), so Swift's `lowercased()` must not be used.
     static func normalizeForSearch(_ text: String) -> String {
         var out = String.UnicodeScalarView()
@@ -30,9 +29,10 @@ enum SearchNormalizationSupport {
         return String(out)
     }
 
-    /// Mirror of PostgreSQL `CITEXT` equality folding: per-codepoint
-    /// `lower()` only. Tag comparisons are case-insensitive but
-    /// accent-sensitive, so they must not pass through the unaccent mapping.
+    /// Mirror of the server's tag-name folding (`ramekin_core::search::
+    /// fold_case`): the contract's per-codepoint lowercase mapping only. Tag
+    /// comparisons are case-insensitive but accent-sensitive, so they must
+    /// not pass through the unaccent mapping.
     static func citextFold(_ text: String) -> String {
         String(String.UnicodeScalarView(text.unicodeScalars.map(lowered)))
     }
