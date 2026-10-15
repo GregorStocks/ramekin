@@ -431,7 +431,8 @@ fn is_amount_or_size(s: &str) -> bool {
         let read = measure::read_measurement(&words[words.len() - n..].join(" "));
         read.amount.is_some() && read.unit.is_some() && read.rest.is_empty()
     });
-    if ends_in_measurement || measure::read_measurement(s).rest.is_empty() {
+    let read = measure::read_measurement(s);
+    if ends_in_measurement || (read.amount.is_some() && read.rest.is_empty()) {
         return true;
     }
     let last = words.last().copied().unwrap_or("");
@@ -608,6 +609,8 @@ mod tests {
         assert!(!is_amount_or_size("garlic cloves"));
         assert!(!is_amount_or_size("7up"));
         assert!(!is_amount_or_size("7-Up"));
+        // A food that is also a unit name.
+        assert!(!is_amount_or_size("cloves"));
         assert!(is_amount_or_size("A 250-gram"));
         assert!(is_amount_or_size("8-ounce"));
         assert_eq!(
