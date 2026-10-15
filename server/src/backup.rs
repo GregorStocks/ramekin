@@ -82,18 +82,35 @@ fn write_partial(conn: &mut SqliteConnection, dir: &Path) -> anyhow::Result<()> 
 
 /// Finish the snapshot [`write_partial`] left in `dir`: copy in the photo
 /// files `dir`'s store lacks from `photos`, the store the snapshot came
-/// from, then give the snapshot its name for `now`. Only a snapshot whose
-/// photos are all backed up carries a snapshot name, so a failed copy never
-/// leaves one that looks complete. Returns its path and how many photo files
+/// from, check that every file the snapshot names is there, then give the
+/// snapshot its name for `now`. Only a snapshot whose photos are all backed
+/// up carries a snapshot name, so neither a failed copy nor a file already
+/// missing from `photos` leaves one that looks complete. Returns its path and how many photo files
 /// were copied.
 fn publish(
     photos: &PhotoStore,
     dir: &Path,
     now: DateTime<Utc>,
 ) -> anyhow::Result<(PathBuf, usize)> {
-    let copied = photos.copy_missing_into(&backup_store(dir))?;
+    let backed_up = backup_store(dir);
+    let copied = photos.copy_missing_into(&backed_up)?;
+    let partial = dir.join(PARTIAL);
+    let mut snapshot = SqliteConnection::establish(
+        partial
+            .to_str()
+            .ok_or_else(|| anyhow::anyhow!("backup path {} is not UTF-8", partial.display()))?,
+    )?;
+    let missing = backed_up.missing(&mut snapshot)?;
+    drop(snapshot);
+    anyhow::ensure!(
+        missing.is_empty(),
+        "{} photo files the snapshot names are missing from {} (one is {})",
+        missing.len(),
+        photos.dir().display(),
+        missing.first().map(String::as_str).unwrap_or_default(),
+    );
     let path = dir.join(file_name(now));
-    std::fs::rename(dir.join(PARTIAL), &path)?;
+    std::fs::rename(&partial, &path)?;
     Ok((path, copied))
 }
 
@@ -477,6 +494,38 @@ mod tests {
         std::fs::write(backups.join(PHOTOS), b"").unwrap();
 
         assert!(snapshot(&mut conn, &backups, Utc::now()).is_err());
+        assert!(snapshot_names(&backups).unwrap().is_empty());
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
+    fn a_snapshot_naming_a_missing_photo_keeps_its_temporary_name() {
+        let dir = std::env::temp_dir().join(format!(
+            "ramekin-photo-missing-test-{}",
+            uuid::Uuid::new_v4()
+        ));
+        std::fs::create_dir_all(&dir).unwrap();
+        let mut conn = db::open_migrated(dir.join("live.sqlite").to_str().unwrap());
+        diesel::sql_query("INSERT INTO users (id, username, password_hash) VALUES ('u', 'u', '')")
+            .execute(&mut conn)
+            .unwrap();
+        // A row whose file the live store never had.
+        let hash = "ab".repeat(32);
+        diesel::sql_query(
+            "INSERT INTO photos (id, user_id, content_type, data_hash, thumbnail_hash) \
+             VALUES ('p', 'u', 'image/png', ?, ?)",
+        )
+        .bind::<Text, _>(&hash)
+        .bind::<Text, _>(&hash)
+        .execute(&mut conn)
+        .unwrap();
+        let backups = dir.join("backups");
+        std::fs::create_dir_all(&backups).unwrap();
+
+        let error = snapshot(&mut conn, &backups, Utc::now())
+            .unwrap_err()
+            .to_string();
+        assert!(error.contains(&hash), "{error}");
         assert!(snapshot_names(&backups).unwrap().is_empty());
         std::fs::remove_dir_all(&dir).unwrap();
     }

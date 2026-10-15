@@ -104,8 +104,11 @@ deletes snapshots older than 7 days. Without it, the server logs a warning at
 startup and backs nothing up.
 
 With each snapshot, the photo files the backup folder's `photos/` lacks are
-copied in before the snapshot gets its name, so a snapshot you can see always
-has its photos. Since photo files never change, that keeps `photos/` complete
+copied in before the snapshot gets its name, and the snapshot only gets it if
+every photo file it names is there, so a snapshot you can see always has its
+photos. A photo file missing from the live store makes the snapshot fail
+(logged, retried an hour later) rather than publish one that can't be fully
+restored. Since photo files never change, that keeps `photos/` complete
 for every snapshot; it's never pruned.
 
 A snapshot is `ramekin-<UTC time>.sqlite`: SQLite's `VACUUM INTO`, a
