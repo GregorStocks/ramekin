@@ -3,7 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::Photo;
-use crate::photos::PhotoStore;
+use crate::photos::store::read_live;
 use crate::schema::photos;
 use axum::{
     body::Body,
@@ -35,8 +35,8 @@ pub async fn get_photo(
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
 ) -> Result<impl IntoResponse, ApiError> {
-    let (path, content_type) = run_db(&pool, move |conn| {
-        let photo: Photo = photos::table
+    let photo: Photo = run_db(&pool, move |conn| {
+        photos::table
             .filter(photos::id.eq(id))
             .filter(photos::user_id.eq(user.id))
             .filter(photos::deleted_at.is_null())
@@ -45,27 +45,24 @@ pub async fn get_photo(
             .map_err(|e| match e {
                 diesel::result::Error::NotFound => ApiError::not_found("Photo not found"),
                 _ => ApiError::internal("Failed to fetch photo"),
-            })?;
-        let path = PhotoStore::of(conn)
-            .and_then(|store| store.path(&photo.data_hash))
-            .map_err(photo_file_error)?;
-        Ok((path, photo.content_type))
+            })
     })
     .await?;
-    let data = tokio::fs::read(&path)
-        .await
-        .map_err(|e| photo_file_error(anyhow::anyhow!("{}: {e}", path.display())))?;
+    let data = read_photo_file(photo.data_hash).await?;
 
     Ok(Response::builder()
         .status(StatusCode::OK)
-        .header(header::CONTENT_TYPE, content_type)
+        .header(header::CONTENT_TYPE, photo.content_type)
         .header(header::CACHE_CONTROL, "public, max-age=31536000, immutable")
         .body(Body::from(data))
         .unwrap())
 }
 
-/// A photo whose row exists but whose file can't be found or read.
-pub(super) fn photo_file_error(error: anyhow::Error) -> ApiError {
-    tracing::error!("failed to read photo file: {error:#}");
-    ApiError::internal("Failed to read photo")
+/// The photo file named `hash`. A row whose file can't be read is a
+/// server error.
+pub(super) async fn read_photo_file(hash: String) -> Result<Vec<u8>, ApiError> {
+    read_live(hash).await.map_err(|e| {
+        tracing::error!("failed to read photo file: {e:#}");
+        ApiError::internal("Failed to read photo")
+    })
 }

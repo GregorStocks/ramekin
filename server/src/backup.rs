@@ -13,6 +13,7 @@
 //! that copy covers every photo any snapshot names.
 
 use crate::db::{self, DbPool};
+use crate::photos::store::live;
 use crate::photos::PhotoStore;
 use chrono::{DateTime, Duration, NaiveDateTime, Utc};
 use diesel::prelude::*;
@@ -73,12 +74,9 @@ pub fn snapshot(
     Ok(path)
 }
 
-/// Copy the photo files `dir`'s store lacks into it, from the store beside
-/// the database `conn` is open on. Run it after the snapshot, so every file
-/// the snapshot names is already in the live store. Returns how many it
-/// copied.
-fn back_up_photos(conn: &mut SqliteConnection, dir: &Path) -> anyhow::Result<usize> {
-    PhotoStore::of(conn)?.copy_missing_into(&PhotoStore::new(dir.join(PHOTOS)))
+/// The photo store in the backup directory `dir`.
+fn backup_store(dir: &Path) -> PhotoStore {
+    PhotoStore::new(dir.join(PHOTOS))
 }
 
 /// The snapshots in `names` older than `KEEP_DAYS` as of `now`. Names that
@@ -124,13 +122,17 @@ fn newest(dir: &Path) -> anyhow::Result<Option<DateTime<Utc>>> {
         .max())
 }
 
-/// Snapshot, back up photos and prune once, on a pooled connection. Only a
-/// failed snapshot or photo copy is an error: a failed prune is logged, and the new snapshot still counts.
+/// Snapshot, back up photos and prune once. Only a failed snapshot or photo
+/// copy is an error: a failed prune is logged, and the new snapshot still
+/// counts.
 async fn run_once(pool: &DbPool, dir: PathBuf) -> anyhow::Result<()> {
-    db::run_blocking(pool, move |conn| {
-        let now = Utc::now();
-        let path = snapshot(conn, &dir, now)?;
-        let photos = back_up_photos(conn, &dir)?;
+    let now = Utc::now();
+    let snapshot_dir = dir.clone();
+    let path = db::run_blocking(pool, move |conn| snapshot(conn, &snapshot_dir, now)).await??;
+    // After the snapshot, so every file it names is already in the live
+    // store; and without a connection, since it's only file copies.
+    tokio::task::spawn_blocking(move || {
+        let photos = live().copy_missing_into(&backup_store(&dir))?;
         tracing::info!(path = %path.display(), photos, "database snapshot written");
         if let Err(e) = prune(&dir, now) {
             tracing::error!(dir = %dir.display(), "pruning old database snapshots failed: {e:#}");
@@ -172,10 +174,10 @@ const RESTORE_CLOCK_JUMP: i64 = 1 << 40;
 /// `ramekin-server restore <snapshot>`: replace the database at
 /// `database_url` with `snapshot`, and copy in the photo files from the
 /// `photos/` beside it that the live store lacks. Run it with the server
-/// stopped. The
-/// current files are kept, renamed `<database>.before-restore-<time>-<tag>`
-/// (with their `-wal`/`-shm`). Clients synced past the snapshot hold cursors the
-/// restored clock could later reach again, which would make their syncs skip
+/// stopped. The current files are kept, renamed
+/// `<database>.before-restore-<time>-<tag>` (with their `-wal`/`-shm`).
+/// Clients synced past the snapshot hold cursors the restored clock could
+/// later reach again, which would make their syncs skip
 /// the rolled-back rows; so the clock jumps far ahead and every live row is
 /// restamped above it, and every client's next sync re-delivers it all.
 /// Returns where the replaced database went, if there was one.
@@ -224,15 +226,10 @@ pub fn restore(database_url: &str, snapshot: &Path) -> anyhow::Result<Option<Pat
         db::restamp_live(conn, restored + RESTORE_CLOCK_JUMP)
     })?;
 
-    let backed_up = PhotoStore::new(
-        snapshot
-            .parent()
-            .unwrap_or_else(|| Path::new("."))
-            .join(PHOTOS),
-    );
-    let live = PhotoStore::of(&mut conn)?;
-    let photos = backed_up.copy_missing_into(&live)?;
-    tracing::info!(photos, dir = %live.dir().display(), "photo files restored");
+    let backed_up = backup_store(snapshot.parent().unwrap_or_else(|| Path::new(".")));
+    let store = PhotoStore::of(&mut conn)?;
+    let photos = backed_up.copy_missing_into(&store)?;
+    tracing::info!(photos, dir = %store.dir().display(), "photo files restored");
     Ok(aside)
 }
 
@@ -248,7 +245,7 @@ pub fn run_command(database_url: &str, dir: &Path) -> anyhow::Result<PathBuf> {
     let mut conn = SqliteConnection::establish(database_url)?;
     db::setup_connection(&mut conn)?;
     let path = snapshot(&mut conn, dir, Utc::now())?;
-    back_up_photos(&mut conn, dir)?;
+    PhotoStore::of(&mut conn)?.copy_missing_into(&backup_store(dir))?;
     Ok(path)
 }
 
@@ -396,10 +393,7 @@ mod tests {
 
         let backups = dir.join("backups");
         let snapshot = run_command(live, &backups).unwrap();
-        assert_eq!(
-            PhotoStore::new(backups.join(PHOTOS)).read(&hash).unwrap(),
-            b"photo"
-        );
+        assert_eq!(backup_store(&backups).read(&hash).unwrap(), b"photo");
 
         // Restored on a machine with no photos yet.
         std::fs::create_dir_all(dir.join("elsewhere")).unwrap();

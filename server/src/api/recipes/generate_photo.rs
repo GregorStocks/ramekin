@@ -189,7 +189,7 @@ pub async fn generate_photo(
     };
 
     let file_size = raw_image.len() as i32;
-    let stored = store_photo(&pool, raw_image, processed.thumbnail)
+    let stored = store_photo(raw_image, processed.thumbnail)
         .await
         .map_err(|e| {
             tracing::error!("Failed to store generated photo files: {e:#}");

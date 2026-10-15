@@ -181,18 +181,6 @@ pub struct NewPhoto<'a> {
     pub thumbnail_hash: &'a str,
 }
 
-#[derive(Queryable, Selectable, Debug)]
-#[diesel(table_name = crate::schema::photo_thumbnails)]
-#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
-#[allow(dead_code)]
-pub struct PhotoThumbnail {
-    pub id: Uuid,
-    pub photo_id: Uuid,
-    pub size: i32,
-    pub created_at: DateTime<Utc>,
-    pub data_hash: String,
-}
-
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::photo_thumbnails)]
 pub struct NewPhotoThumbnail<'a> {

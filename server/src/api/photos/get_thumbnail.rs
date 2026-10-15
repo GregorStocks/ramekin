@@ -1,11 +1,11 @@
-use super::get::photo_file_error;
-use crate::api::{run_db, ApiError, ErrorResponse};
+use super::get::read_photo_file;
+use crate::api::{run_db, run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::NewPhotoThumbnail;
 use crate::photos::processing::{generate_thumbnail, MAX_THUMBNAIL_SIZE, THUMBNAIL_SIZE};
-use crate::photos::PhotoStore;
+use crate::photos::store::live;
 use crate::schema::{photo_thumbnails, photos};
 use axum::{
     body::Body,
@@ -66,8 +66,7 @@ pub async fn get_photo_thumbnail(
 
     // A size-200 thumbnail was made with the photo. Any other size is made
     // on first request and kept in photo_thumbnails.
-    let path = run_db(&pool, move |conn| {
-        let store = PhotoStore::of(conn).map_err(photo_file_error)?;
+    let (data_hash, stored) = run_db(&pool, move |conn| {
         let (data_hash, thumbnail_hash): (String, String) = photos::table
             .filter(photos::id.eq(id))
             .filter(photos::user_id.eq(user_id))
@@ -79,9 +78,8 @@ pub async fn get_photo_thumbnail(
                 _ => ApiError::internal("Failed to fetch photo"),
             })?;
         if size == THUMBNAIL_SIZE {
-            return store.path(&thumbnail_hash).map_err(photo_file_error);
+            return Ok((data_hash, Some(thumbnail_hash)));
         }
-
         let cached: Option<String> = photo_thumbnails::table
             .filter(photo_thumbnails::photo_id.eq(id))
             .filter(photo_thumbnails::size.eq(size as i32))
@@ -89,41 +87,44 @@ pub async fn get_photo_thumbnail(
             .first(conn)
             .optional()
             .map_err(|_| ApiError::internal("Failed to fetch thumbnail cache"))?;
-        if let Some(hash) = cached {
-            return store.path(&hash).map_err(photo_file_error);
-        }
+        Ok((data_hash, cached))
+    })
+    .await?;
+    if let Some(hash) = stored {
+        return Ok(jpeg_response(read_photo_file(hash).await?));
+    }
 
-        // Cache miss: generate from the full image.
-        let full_data = store.read(&data_hash).map_err(photo_file_error)?;
+    // Cache miss: generate from the full image.
+    let full_data = read_photo_file(data_hash).await?;
+    let (thumb_bytes, hash) = tokio::task::spawn_blocking(move || {
         let thumb_bytes = generate_thumbnail(&full_data, size).map_err(|e| {
             tracing::error!("Failed to generate thumbnail: {}", e);
             ApiError::internal("Failed to generate thumbnail")
         })?;
-        let hash = store.put(&thumb_bytes).map_err(|e| {
+        let hash = live().put(&thumb_bytes).map_err(|e| {
             tracing::error!("Failed to store thumbnail: {e:#}");
             ApiError::internal("Failed to store thumbnail")
         })?;
-
-        // Cache it (race-safe: ON CONFLICT DO NOTHING)
-        let _ = crate::db::write(conn, |conn| {
-            diesel::insert_into(photo_thumbnails::table)
-                .values(&NewPhotoThumbnail {
-                    id: Uuid::now_v7(),
-                    photo_id: id,
-                    size: size as i32,
-                    data_hash: &hash,
-                })
-                .on_conflict((photo_thumbnails::photo_id, photo_thumbnails::size))
-                .do_nothing()
-                .execute(conn)
-        });
-
-        store.path(&hash).map_err(photo_file_error)
+        Ok::<_, ApiError>((thumb_bytes, hash))
     })
-    .await?;
-    let data = tokio::fs::read(&path)
-        .await
-        .map_err(|e| photo_file_error(anyhow::anyhow!("{}: {e}", path.display())))?;
+    .await
+    .expect("thumbnail task panicked")?;
 
-    Ok(jpeg_response(data))
+    // Cache it (race-safe: ON CONFLICT DO NOTHING)
+    let _ = run_db_write(&pool, move |conn| {
+        diesel::insert_into(photo_thumbnails::table)
+            .values(&NewPhotoThumbnail {
+                id: Uuid::now_v7(),
+                photo_id: id,
+                size: size as i32,
+                data_hash: &hash,
+            })
+            .on_conflict((photo_thumbnails::photo_id, photo_thumbnails::size))
+            .do_nothing()
+            .execute(conn)
+            .map_err(ApiError::from)
+    })
+    .await;
+
+    Ok(jpeg_response(thumb_bytes))
 }

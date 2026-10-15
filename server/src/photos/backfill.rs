@@ -6,12 +6,12 @@ use image::ImageReader;
 use std::io::Cursor;
 
 use crate::db::DbPool;
-use crate::photos::PhotoStore;
+use crate::photos::store::live;
 use crate::schema::photos;
 
-/// How many photos to pull into memory per backfill batch. Photos can be
-/// up to 2 MB each, so loading every pending row at once would scale with the
-/// whole table; 16 keeps peak memory bounded at ~32 MB even for large libraries.
+/// How many pending photos to look up per backfill batch. Each one's file is
+/// read and decoded on its own, so only one photo's bytes are in memory at a
+/// time.
 const BACKFILL_BATCH_SIZE: i64 = 16;
 
 /// Spawn a background task that populates `width`, `height`, and `file_size`
@@ -45,14 +45,12 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
 
     let start = Instant::now();
     tracing::info!("Backfilling dimensions for {} photos...", total_pending);
-    let store = PhotoStore::of(&mut conn).map_err(|e| format!("{e:#}"))?;
 
     let mut ok = 0;
     let mut failed = 0;
     loop {
         // Re-query each batch so already-processed rows drop out of the
-        // pending set. This keeps memory use bounded by BACKFILL_BATCH_SIZE
-        // rather than growing with the total number of pending photos.
+        // pending set.
         let batch: Vec<(crate::ids::Uuid, String)> = photos::table
             .filter(photos::width.is_null())
             .filter(photos::file_size.is_null())
@@ -67,7 +65,7 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
         }
 
         for (id, hash) in batch {
-            let data = store.read(&hash).map_err(|e| format!("{e:#}"))?;
+            let data = live().read(&hash).map_err(|e| format!("{e:#}"))?;
             let file_size = data.len() as i32;
             match decode_dimensions(&data) {
                 Ok((w, h)) => {

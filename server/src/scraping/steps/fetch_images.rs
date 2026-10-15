@@ -133,7 +133,7 @@ impl FetchImagesStep {
 
         // Write the files, then the row naming them
         let file_size = data.len() as i32;
-        let stored = store_photo(&self.pool, data, processed.thumbnail)
+        let stored = store_photo(data, processed.thumbnail)
             .await
             .map_err(|e| format!("{e:#}"))?;
         let user_id = self.user_id;

@@ -132,24 +132,44 @@ fn write_new(
     result.with_context(|| format!("failed to write {}", path.display()))
 }
 
+/// The server's store, found once at startup by [`init_live`].
+static LIVE: std::sync::OnceLock<PhotoStore> = std::sync::OnceLock::new();
+
+/// Find the store beside the database `pool` opens and make it the one
+/// [`live`] returns. Call once at startup, before anything touches photos.
+pub fn init_live(pool: &DbPool) -> anyhow::Result<()> {
+    let mut conn = pool.get()?;
+    let store = PhotoStore::of(&mut conn)?;
+    LIVE.set(store)
+        .map_err(|_| anyhow::anyhow!("the photo store is already set"))
+}
+
+/// The server's photo store.
+pub fn live() -> &'static PhotoStore {
+    LIVE.get()
+        .expect("photos::store::init_live runs at startup")
+}
+
+/// Read the file named `hash` from the server's store, off the async runtime.
+pub async fn read_live(hash: String) -> anyhow::Result<Vec<u8>> {
+    tokio::task::spawn_blocking(move || live().read(&hash)).await?
+}
+
 /// The files of a new photo.
 pub struct StoredPhoto {
     pub data_hash: String,
     pub thumbnail_hash: String,
 }
 
-/// Write a new photo's bytes and thumbnail to files. Call it before
-/// inserting the row that names them, and outside any write transaction.
-pub async fn store_photo<D>(
-    pool: &DbPool,
-    data: D,
-    thumbnail: Vec<u8>,
-) -> anyhow::Result<StoredPhoto>
+/// Write a new photo's bytes and thumbnail to the server's store. Call it
+/// before inserting the row that names them, and outside any write
+/// transaction.
+pub async fn store_photo<D>(data: D, thumbnail: Vec<u8>) -> anyhow::Result<StoredPhoto>
 where
     D: AsRef<[u8]> + Send + 'static,
 {
-    db::run_blocking(pool, move |conn| {
-        let store = PhotoStore::of(conn)?;
+    tokio::task::spawn_blocking(move || {
+        let store = live();
         Ok(StoredPhoto {
             data_hash: store.put(data.as_ref())?,
             thumbnail_hash: store.put(&thumbnail)?,

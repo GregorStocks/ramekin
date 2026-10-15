@@ -112,12 +112,10 @@ pub async fn upload(
     .expect("image processing task panicked")?;
 
     let file_size = data.len() as i32;
-    let stored = store_photo(&pool, data, processed.thumbnail)
-        .await
-        .map_err(|e| {
-            tracing::error!("Failed to store photo files: {e:#}");
-            ApiError::internal("Failed to save photo")
-        })?;
+    let stored = store_photo(data, processed.thumbnail).await.map_err(|e| {
+        tracing::error!("Failed to store photo files: {e:#}");
+        ApiError::internal("Failed to save photo")
+    })?;
 
     let photo_id: Uuid = run_db_write(&pool, move |conn| {
         let new_photo = NewPhoto {
