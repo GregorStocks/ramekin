@@ -1,6 +1,7 @@
 use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::Photo;
+use crate::photos::store::read_live;
 use crate::schema::photos;
 use base64::Engine;
 use diesel::prelude::*;
@@ -13,9 +14,11 @@ pub enum PhotoImageLoadError {
     NotFound,
     #[error("Database error: {0}")]
     Database(String),
+    #[error("Photo file error: {0}")]
+    File(String),
 }
 
-/// Load owned photo bytes from the database and convert them to vision inputs.
+/// Load owned photos' bytes from their files and convert them to vision inputs.
 pub async fn load_photo_images(
     pool: &DbPool,
     user_id: Uuid,
@@ -26,24 +29,30 @@ pub async fn load_photo_images(
     }
 
     let photo_ids = photo_ids.to_vec();
-    crate::db::run_blocking(pool, move |conn| {
-        load_photo_images_with_conn(conn, user_id, &photo_ids)
-    })
-    .await
-    .map_err(|e| PhotoImageLoadError::Database(e.to_string()))?
+    let photos = crate::db::run_blocking(pool, move |conn| find_photos(conn, user_id, &photo_ids))
+        .await
+        .map_err(|e| PhotoImageLoadError::Database(e.to_string()))??;
+
+    let mut images = Vec::with_capacity(photos.len());
+    for (data_hash, content_type) in photos {
+        let data = read_live(data_hash)
+            .await
+            .map_err(|e| PhotoImageLoadError::File(format!("{e:#}")))?;
+        images.push(ramekin_core::ai::ImageData {
+            base64: base64::engine::general_purpose::STANDARD.encode(&data),
+            content_type,
+        });
+    }
+    Ok(images)
 }
 
-/// Same as [`load_photo_images`], but uses an already checked-out connection.
-/// Async callers run this inside `crate::db::run_blocking`.
-fn load_photo_images_with_conn(
+/// The file hash and content type of each owned, live photo `photo_ids`
+/// names, in that order.
+fn find_photos(
     conn: &mut diesel::SqliteConnection,
     user_id: Uuid,
     photo_ids: &[Uuid],
-) -> Result<Vec<ramekin_core::ai::ImageData>, PhotoImageLoadError> {
-    if photo_ids.is_empty() {
-        return Ok(vec![]);
-    }
-
+) -> Result<Vec<(String, String)>, PhotoImageLoadError> {
     let photos_list: Vec<Photo> = photos::table
         .filter(photos::id.eq_any(photo_ids))
         .filter(photos::user_id.eq(user_id))
@@ -62,17 +71,13 @@ fn load_photo_images_with_conn(
         .map(|photo| (photo.id, photo))
         .collect();
 
-    let mut ordered_images = Vec::with_capacity(photo_ids.len());
-    for photo_id in photo_ids {
-        let photo = photos_by_id
-            .get(photo_id)
-            .ok_or(PhotoImageLoadError::NotFound)?;
-        let base64 = base64::engine::general_purpose::STANDARD.encode(&photo.data);
-        ordered_images.push(ramekin_core::ai::ImageData {
-            base64,
-            content_type: photo.content_type.clone(),
-        });
-    }
-
-    Ok(ordered_images)
+    photo_ids
+        .iter()
+        .map(|id| {
+            photos_by_id
+                .get(id)
+                .map(|photo| (photo.data_hash.clone(), photo.content_type.clone()))
+                .ok_or(PhotoImageLoadError::NotFound)
+        })
+        .collect()
 }

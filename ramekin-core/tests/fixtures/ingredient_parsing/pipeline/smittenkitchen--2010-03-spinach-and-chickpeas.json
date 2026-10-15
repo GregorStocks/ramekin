@@ -55,7 +55,7 @@
     {
       "raw": "A hefty 1-inch slice from a country loaf or about 2 slices from sandwich loaf bread (2.5 ounces or 75 grams), crusts removed and cut into small cubes",
       "expected": {
-        "item": "A hefty 1-inch slice from a country loaf or about 2 slices from sandwich loaf bread, crusts removed and cut into small cubes",
+        "item": "A hefty 1-inch slice from a country loaf",
         "measurements": [
           {
             "amount": "2.5",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or about 2 slices from sandwich loaf bread, crusts removed and cut into small cubes",
         "category": "Bakery & Bread"
       }
     },

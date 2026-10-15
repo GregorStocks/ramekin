@@ -253,6 +253,7 @@ async fn main() {
     }
 
     let pool: AppState = Arc::new(db::create_pool(&database_url));
+    photos::store::init_live(&pool).expect("Failed to find the photo store");
 
     // Spawn background backfill for photo dimensions (populates width/height
     // for photos created before the column existed).
