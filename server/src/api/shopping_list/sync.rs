@@ -87,20 +87,13 @@ enum ChangesSince {
     /// A cursor this database can't answer with a delta: every item, and
     /// every deletion, as if from the start.
     Restart,
-    /// Wall-clock cursor from clients that predate `cursor`. It can miss a
-    /// write that commits after a concurrent sync's read; such clients switch
-    /// to `cursor` after one sync.
-    Timestamp(DateTime<Utc>),
 }
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct SyncRequest {
     /// `cursor` from the previous sync's response. Server returns changes at
-    /// or after it, and takes precedence over `last_sync_at`.
+    /// or after it; without one, it returns every item.
     pub cursor: Option<i64>,
-    /// Deprecated: use `cursor`. Server returns changes after this time when
-    /// `cursor` is absent; with neither, it returns every item.
-    pub last_sync_at: Option<DateTime<Utc>>,
     /// Items created offline
     #[serde(default)]
     pub creates: Vec<SyncCreateItem>,
@@ -213,10 +206,9 @@ pub async fn sync_items(
 
     let user_id = user.id;
     let sync_timestamp = Utc::now();
-    let since = match (request.cursor, request.last_sync_at) {
-        (Some(cursor), _) => ChangesSince::Cursor(cursor),
-        (None, Some(last_sync_at)) => ChangesSince::Timestamp(last_sync_at),
-        (None, None) => ChangesSince::All,
+    let since = match request.cursor {
+        Some(cursor) => ChangesSince::Cursor(cursor),
+        None => ChangesSince::All,
     };
 
     let response = run_db_locked(&pool, move |conn| {
@@ -236,7 +228,7 @@ pub async fn sync_items(
                 },
                 other => other,
             };
-            let full_resync = matches!(since, ChangesSince::All | ChangesSince::Restart);
+            let full_resync = !matches!(since, ChangesSince::Cursor(_));
 
             // 1. Process creates — batch insert, fall back to a single SELECT for conflicts
             let mut created = Vec::with_capacity(request.creates.len());
@@ -566,14 +558,6 @@ pub async fn sync_items(
                             .or(shopping_list_items::id.eq_any(conflicted)),
                     );
                     Some(deleted_items.filter(shopping_list_items::change_seq.ge(since)))
-                }
-                ChangesSince::Timestamp(last_sync) => {
-                    changes_query = changes_query.filter(
-                        shopping_list_items::updated_at
-                            .gt(last_sync)
-                            .or(shopping_list_items::id.eq_any(conflicted)),
-                    );
-                    Some(deleted_items.filter(shopping_list_items::deleted_at.gt(last_sync)))
                 }
             };
 

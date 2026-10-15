@@ -5026,7 +5026,7 @@
               "null"
             ],
             "format": "int64",
-            "description": "`cursor` from the previous sync's response. Server returns changes at\nor after it, and takes precedence over `last_sync_at`."
+            "description": "`cursor` from the previous sync's response. Server returns changes at\nor after it; without one, it returns every item."
           },
           "deletes": {
             "type": "array",
@@ -5035,14 +5035,6 @@
               "format": "uuid"
             },
             "description": "IDs of items deleted offline"
-          },
-          "last_sync_at": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "date-time",
-            "description": "Deprecated: use `cursor`. Server returns changes after this time when\n`cursor` is absent; with neither, it returns every item."
           },
           "updates": {
             "type": "array",

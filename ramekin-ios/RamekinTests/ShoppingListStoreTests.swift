@@ -108,7 +108,10 @@ final class ShoppingListStoreTests: XCTestCase {
         XCTAssertEqual(store.items.first?.accountKey, firstAccount)
         XCTAssertEqual(store.categoryOrder, ["Produce", "Other"])
         await store.syncWithServer(isFollowUp: true)
-        XCTAssertEqual(request?.lastSyncAt, legacySyncDate)
+        // Without a cursor the sync is a full resync, whatever the legacy
+        // sync time says.
+        XCTAssertNotNil(request)
+        XCTAssertNil(request?.cursor)
         XCTAssertNil(defaults.object(forKey: "shopping_list_last_sync_at"))
         XCTAssertNil(defaults.object(forKey: "shopping_list_category_order"))
     }
@@ -136,7 +139,6 @@ final class ShoppingListStoreTests: XCTestCase {
         await store.syncWithServer(isFollowUp: true)
 
         XCTAssertEqual(requests.map(\.cursor), [nil, 41, nil])
-        XCTAssertEqual(requests.map(\.lastSyncAt), [nil, nil, nil])
     }
 
     func testInFlightResponseStaysWithOriginatingAccount() async throws {

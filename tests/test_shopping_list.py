@@ -547,42 +547,6 @@ def test_sync_from_cursor_returns_later_changes(authed_api_client):
     assert sync_response.full_resync is False
 
 
-def test_sync_cursor_takes_precedence_over_last_sync_at(authed_api_client):
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-    initial_sync = api.sync_items(SyncRequest())
-    item_id = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="new")])
-    ).ids[0]
-    later_sync = api.sync_items(SyncRequest())
-
-    sync_response = api.sync_items(
-        SyncRequest(cursor=initial_sync.cursor, last_sync_at=later_sync.sync_timestamp)
-    )
-    assert item_id in {change.id for change in sync_response.server_changes}
-
-
-def test_legacy_last_sync_at_still_returns_later_changes(authed_api_client):
-    """Builds from before `cursor` send only `last_sync_at`."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-    item_id = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="old")])
-    ).ids[0]
-    initial_sync = api.sync_items(SyncRequest())
-
-    api.delete_item(item_id)
-    added_id = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="new")])
-    ).ids[0]
-
-    sync_response = api.sync_items(
-        SyncRequest(last_sync_at=initial_sync.sync_timestamp)
-    )
-    assert item_id in sync_response.deleted
-    assert {change.id for change in sync_response.server_changes} == {added_id}
-
-
 def test_sync_returns_server_changes(authed_api_client):
     """Test that sync returns server-side changes."""
     client, user_id = authed_api_client
@@ -595,7 +559,7 @@ def test_sync_returns_server_changes(authed_api_client):
         )
     )
 
-    # Sync with no last_sync_at should return all items
+    # Sync with no cursor should return all items
     sync_response = api.sync_items(SyncRequest())
 
     assert len(sync_response.server_changes) == 1
@@ -1029,7 +993,7 @@ def test_sync_server_changes_have_category(authed_api_client):
         CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
     )
 
-    # Sync with no last_sync_at should return all items with category
+    # Sync with no cursor should return all items with category
     sync_response = api.sync_items(SyncRequest())
 
     assert len(sync_response.server_changes) == 1

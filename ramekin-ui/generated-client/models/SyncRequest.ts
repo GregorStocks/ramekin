@@ -42,7 +42,7 @@ export interface SyncRequest {
     creates?: Array<SyncCreateItem>;
     /**
      * `cursor` from the previous sync's response. Server returns changes at
-     * or after it, and takes precedence over `last_sync_at`.
+     * or after it; without one, it returns every item.
      * @type {number}
      * @memberof SyncRequest
      */
@@ -53,13 +53,6 @@ export interface SyncRequest {
      * @memberof SyncRequest
      */
     deletes?: Array<string>;
-    /**
-     * Deprecated: use `cursor`. Server returns changes after this time when
-     * `cursor` is absent; with neither, it returns every item.
-     * @type {Date}
-     * @memberof SyncRequest
-     */
-    lastSyncAt?: Date | null;
     /**
      * Items updated offline
      * @type {Array<SyncUpdateItem>}
@@ -88,7 +81,6 @@ export function SyncRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean
         'creates': json['creates'] == null ? undefined : ((json['creates'] as Array<any>).map(SyncCreateItemFromJSON)),
         'cursor': json['cursor'] == null ? undefined : json['cursor'],
         'deletes': json['deletes'] == null ? undefined : json['deletes'],
-        'lastSyncAt': json['last_sync_at'] == null ? undefined : (new Date(json['last_sync_at'])),
         'updates': json['updates'] == null ? undefined : ((json['updates'] as Array<any>).map(SyncUpdateItemFromJSON)),
     };
 }
@@ -107,7 +99,6 @@ export function SyncRequestToJSONTyped(value?: SyncRequest | null, ignoreDiscrim
         'creates': value['creates'] == null ? undefined : ((value['creates'] as Array<any>).map(SyncCreateItemToJSON)),
         'cursor': value['cursor'],
         'deletes': value['deletes'],
-        'last_sync_at': value['lastSyncAt'] == null ? value['lastSyncAt'] : value['lastSyncAt'].toISOString(),
         'updates': value['updates'] == null ? undefined : ((value['updates'] as Array<any>).map(SyncUpdateItemToJSON)),
     };
 }

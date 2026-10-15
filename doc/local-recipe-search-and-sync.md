@@ -161,8 +161,8 @@ offline-write pattern:
 - The sync response maps created IDs, reports update success and current
   versions, returns tombstones, and advances a `change_seq` cursor using the
   same clock as recipe sync. `shopping_list_items.change_seq` is stamped by
-  insert and update triggers, so no writer can forget it. `last_sync_at` remains only as a
-  fallback for iOS builds that predate the cursor.
+  insert and update triggers, so no writer can forget it. A sync without a
+  cursor is a flagged full resync.
 
 This is already most of the machinery a single-user, multi-device recipe
 workflow would need. It is intentionally explicit about domain behavior rather
