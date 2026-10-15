@@ -195,8 +195,9 @@ const RESTORE_CLOCK_JUMP: i64 = 1 << 40;
 
 /// `ramekin-server restore <snapshot>`: replace the database at
 /// `database_url` with `snapshot`, and copy in the photo files from the
-/// `photos/` beside it that the live store lacks. Run it with the server
-/// stopped. The current files are kept, renamed
+/// `photos/` beside it that the live store lacks. Fails, after restoring,
+/// if a photo file the database names is still missing. Run it with the
+/// server stopped. The current files are kept, renamed
 /// `<database>.before-restore-<time>-<tag>` (with their `-wal`/`-shm`).
 /// Clients synced past the snapshot hold cursors the restored clock could
 /// later reach again, which would make their syncs skip
@@ -252,6 +253,19 @@ pub fn restore(database_url: &str, snapshot: &Path) -> anyhow::Result<Option<Pat
     let store = PhotoStore::of(&mut conn)?;
     let photos = backed_up.copy_missing_into(&store)?;
     tracing::info!(photos, dir = %store.dir().display(), "photo files restored");
+    let missing = store.missing(&mut conn)?;
+    anyhow::ensure!(
+        missing.is_empty(),
+        "the database is restored, but {} photo files it names are in neither {} nor {} \
+         (one is {}); the replaced database is kept at {}",
+        missing.len(),
+        backed_up.dir().display(),
+        store.dir().display(),
+        missing.first().map(String::as_str).unwrap_or_default(),
+        aside
+            .as_deref()
+            .map_or("(none)".into(), |p| p.display().to_string()),
+    );
     Ok(aside)
 }
 
@@ -408,8 +422,20 @@ mod tests {
         std::fs::create_dir_all(&dir).unwrap();
         let live = dir.join("live.sqlite");
         let live = live.to_str().unwrap();
-        drop(db::open_migrated(live));
+        let mut conn = db::open_migrated(live);
         let hash = PhotoStore::beside(Path::new(live)).put(b"photo").unwrap();
+        diesel::sql_query("INSERT INTO users (id, username, password_hash) VALUES ('u', 'u', '')")
+            .execute(&mut conn)
+            .unwrap();
+        diesel::sql_query(
+            "INSERT INTO photos (id, user_id, content_type, data_hash, thumbnail_hash) \
+             VALUES ('p', 'u', 'image/png', ?, ?)",
+        )
+        .bind::<Text, _>(&hash)
+        .bind::<Text, _>(&hash)
+        .execute(&mut conn)
+        .unwrap();
+        drop(conn);
 
         let backups = dir.join("backups");
         let snapshot = run_command(live, &backups).unwrap();
@@ -425,6 +451,15 @@ mod tests {
             PhotoStore::of(&mut conn).unwrap().read(&hash).unwrap(),
             b"photo"
         );
+        drop(conn);
+
+        // Without the backup's photos, a restore elsewhere reports them.
+        std::fs::remove_dir_all(backups.join(PHOTOS)).unwrap();
+        let bare = dir.join("elsewhere").join("bare.sqlite");
+        let error = restore(bare.to_str().unwrap(), &snapshot)
+            .unwrap_err()
+            .to_string();
+        assert!(error.contains("1 photo files"), "{error}");
         std::fs::remove_dir_all(&dir).unwrap();
     }
 

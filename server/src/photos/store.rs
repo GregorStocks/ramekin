@@ -75,6 +75,32 @@ impl PhotoStore {
         Ok(hash)
     }
 
+    /// The files rows in the database `conn` is open on name, deleted
+    /// photos' included, that this store doesn't have.
+    pub fn missing(&self, conn: &mut SqliteConnection) -> anyhow::Result<Vec<String>> {
+        use crate::schema::{photo_thumbnails, photos};
+        let mut hashes: Vec<String> = photos::table.select(photos::data_hash).load(conn)?;
+        hashes.extend(
+            photos::table
+                .select(photos::thumbnail_hash)
+                .load::<String>(conn)?,
+        );
+        hashes.extend(
+            photo_thumbnails::table
+                .select(photo_thumbnails::data_hash)
+                .load::<String>(conn)?,
+        );
+        hashes.sort_unstable();
+        hashes.dedup();
+        let mut missing = Vec::new();
+        for hash in hashes {
+            if !self.path(&hash)?.exists() {
+                missing.push(hash);
+            }
+        }
+        Ok(missing)
+    }
+
     /// Copy every file this store has and `to` lacks into `to`. Returns how
     /// many were copied.
     pub fn copy_missing_into(&self, to: &PhotoStore) -> anyhow::Result<usize> {
@@ -299,8 +325,11 @@ pub fn move_blobs_out(conn: &mut SqliteConnection) -> anyhow::Result<()> {
         moved_thumbnails += batch.len();
     }
 
-    // Every column is empty now, so dropping them rewrites little, and
-    // VACUUM hands the space the bytes took back to the file system.
+    // Every column is empty now. VACUUM hands the space the bytes took back
+    // to the file system, then dropping the columns rewrites little. In that
+    // order, so the columns still mark the move unfinished, and the next
+    // startup retries, if VACUUM fails or is interrupted.
+    conn.batch_execute("VACUUM;")?;
     db::write(conn, |conn| {
         conn.batch_execute(
             "ALTER TABLE photos DROP COLUMN data; \
@@ -308,7 +337,7 @@ pub fn move_blobs_out(conn: &mut SqliteConnection) -> anyhow::Result<()> {
              ALTER TABLE photo_thumbnails DROP COLUMN data;",
         )
     })?;
-    conn.batch_execute("VACUUM; PRAGMA wal_checkpoint(TRUNCATE);")?;
+    conn.batch_execute("PRAGMA wal_checkpoint(TRUNCATE);")?;
     tracing::info!(
         photos = moved_photos,
         thumbnails = moved_thumbnails,

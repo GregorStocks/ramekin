@@ -92,8 +92,8 @@ one file per photo or thumbnail, named by the SHA-256 of its contents
 soft-deleted photo's included. Keep the directory with the database file.
 
 A database from before this layout moves its photo BLOBs out to files on the
-next startup, 16 rows per write transaction, then drops the emptied columns
-and VACUUMs. It's safe to interrupt: the next startup carries on.
+next startup, 16 rows per write transaction, then VACUUMs and drops the
+emptied columns. It's safe to interrupt: the next startup carries on.
 
 ## Backups
 
@@ -126,7 +126,9 @@ to `RAMEKIN_BACKUP_DIR` or `DIR=/somewhere`, photos included.
 `db-restore` keeps the replaced database: it renames the file and its
 `-wal`/`-shm` to `<database>.before-restore-<time>-<tag>`. Then it copies the
 snapshot into place, and copies the photo files from the `photos/` beside the
-snapshot that `<database>-photos/` lacks (all of them, on a new machine). The
+snapshot that `<database>-photos/` lacks (all of them, on a new machine). If a
+photo file the restored database names is still missing after that, it says
+how many and exits with an error (the database is restored by then). The
 live photo directory isn't renamed: its files are a superset of what the
 snapshot names.
 
