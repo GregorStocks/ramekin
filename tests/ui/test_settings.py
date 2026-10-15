@@ -73,3 +73,30 @@ def test_settings_shows_ingredient_recognition(logged_in_page: Page, ui_url: str
     expect(panel.locator(".settings-name-counts")).to_contain_text("recognized")
     expect(panel.locator(".settings-name-counts")).to_contain_text("0 failed")
     expect(panel.get_by_role("button", name="Retry failed")).to_be_disabled()
+
+
+def test_settings_survives_ingredient_status_failure(logged_in_page: Page, ui_url: str):
+    """A failed status request leaves Settings usable and is retried."""
+    attempts = []
+
+    def handle(route):
+        attempts.append(route)
+        if len(attempts) == 1:
+            route.fulfill(status=500, json={"error": "status exploded"})
+        else:
+            route.continue_()
+
+    logged_in_page.route("**/api/ingredient-names/status", handle)
+    logged_in_page.goto(f"{ui_url}/settings")
+
+    panel = logged_in_page.get_by_role("region", name="Ingredient recognition")
+    expect(panel.locator(".settings-name-unavailable")).to_contain_text(
+        "status exploded"
+    )
+    # The rest of the page still renders.
+    expect(logged_in_page.get_by_role("button", name="Sign Out")).to_be_visible()
+    expect(panel.get_by_role("button", name="Retry failed")).to_be_disabled()
+
+    # The panel retries on its own and recovers.
+    expect(panel.locator(".settings-name-counts")).to_contain_text("recognized")
+    expect(panel.locator(".settings-name-unavailable")).to_have_count(0)
