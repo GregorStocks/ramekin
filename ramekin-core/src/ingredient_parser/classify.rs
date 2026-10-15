@@ -393,7 +393,8 @@ fn or_alternative(
 
 /// Whether `s` holds an amount with a unit ("a combination of 1/4 teaspoon
 /// dried oregano"), outside any parentheses ("(I used 5 cups)"). A size alone
-/// ("1/2 large California bay leaf") doesn't count.
+/// ("1/2 large California bay leaf") or a count of cut pieces ("tofu cut into
+/// 2 pieces") doesn't count.
 fn measures_something(s: &str) -> bool {
     let mut outside = String::new();
     let mut depth: i32 = 0;
@@ -405,10 +406,18 @@ fn measures_something(s: &str) -> bool {
             _ => {}
         }
     }
-    tokenize(&outside)
+    let tokens = tokenize(&outside);
+    tokens
         .iter()
-        .filter(|token| token.kind == Kind::Number)
-        .any(|token| {
+        .enumerate()
+        .filter(|(i, token)| {
+            let cut_into = i
+                .checked_sub(1)
+                .and_then(|prev| tokens.get(prev))
+                .is_some_and(|prev| prev.is_word("into") || prev.is_word("in"));
+            token.kind == Kind::Number && !cut_into
+        })
+        .any(|(_, token)| {
             let read = measure::read_measurement(outside.get(token.start..).unwrap_or(""));
             read.amount.is_some() && read.unit.is_some_and(|unit| measures_amount(&unit))
         })
@@ -588,6 +597,7 @@ mod tests {
         // The unit list this replaced matched "cupcakes".
         assert!(!measures_something("3 cupcakes"));
         assert!(!measures_something("1-inch segment of vanilla bean"));
+        assert!(!measures_something("extra firm tofu cut into 2 pieces"));
         assert!(measures_something(
             "a combination of 1/4 teaspoon dried oregano"
         ));
