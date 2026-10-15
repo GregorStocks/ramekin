@@ -407,17 +407,16 @@ fn measures_something(s: &str) -> bool {
         }
     }
     let tokens = tokenize(&outside);
-    tokens
+    // Everything after "into" or "in" ("cut into about 2 pieces") counts
+    // pieces of the food rather than measuring it.
+    let prep_start = tokens
         .iter()
-        .enumerate()
-        .filter(|(i, token)| {
-            let cut_into = i
-                .checked_sub(1)
-                .and_then(|prev| tokens.get(prev))
-                .is_some_and(|prev| prev.is_word("into") || prev.is_word("in"));
-            token.kind == Kind::Number && !cut_into
-        })
-        .any(|(_, token)| {
+        .position(|token| token.is_word("into") || token.is_word("in"))
+        .unwrap_or(tokens.len());
+    tokens[..prep_start]
+        .iter()
+        .filter(|token| token.kind == Kind::Number)
+        .any(|token| {
             let read = measure::read_measurement(outside.get(token.start..).unwrap_or(""));
             read.amount.is_some() && read.unit.is_some_and(|unit| measures_amount(&unit))
         })
@@ -599,6 +598,9 @@ mod tests {
         assert!(!measures_something("3 cupcakes"));
         assert!(!measures_something("1-inch segment of vanilla bean"));
         assert!(!measures_something("extra firm tofu cut into 2 pieces"));
+        assert!(!measures_something(
+            "extra firm tofu cut into about 2 pieces"
+        ));
         assert!(measures_something(
             "a combination of 1/4 teaspoon dried oregano"
         ));
