@@ -14,8 +14,8 @@ refused, and a slow startup shows up as slow first requests. A panic in a
 blocking step below exits the process and process-compose starts it again, so
 a failure that persists becomes a restart loop and keeps the API down until
 someone fixes it. A panic inside a background task ends only that task,
-since nothing joins it. Those tasks are steps 5, 6 and 11, plus the job
-runners step 8 starts. The server keeps serving without that task until the
+since nothing joins it. Those tasks are steps 5 and 10, plus the job
+runners step 7 starts. The server keeps serving without that task until the
 next restart; a job whose runner panicked stays stuck until then.
 
 ## Measured cost
@@ -94,22 +94,7 @@ at this point, and none of the steps below run for them.
 - **Must block serving:** Yes. Every later step uses the pool.
 - **Recommendation:** Keep.
 
-### 5. Photo dimension backfill (`photos::spawn_dimension_backfill`), in the background
-
-- **What:** Decodes each live photo that has neither dimensions nor a
-  `file_size`, then stores its dimensions and size. Added in #387 (49e3608db,
-  2026-04) for the `photo_dim:` / `photo_size:` filters on photos stored
-  before those columns existed.
-- **Today:** Nothing is left for it to do. The #387 migration filled in
-  `file_size` for every existing photo. Every code path that writes a photo
-  (upload, scrape, generated photo) sets `file_size`. The Postgres import
-  carried `file_size` over. In the prod copy, 0 photos match. What remains is
-  one `COUNT(*)` over `photos` on every start.
-- **On failure:** Logs a warning.
-- **Must block serving:** No, and it doesn't.
-- **Recommendation:** Delete it. The work is finished.
-
-### 6. Backup scheduler (`backup::spawn_scheduler`), in the background
+### 5. Backup scheduler (`backup::spawn_scheduler`), in the background
 
 - **What:** If `RAMEKIN_BACKUP_DIR` is set, takes a snapshot right away when
   the newest one is more than a day old, then one a day after that, and
@@ -124,7 +109,7 @@ at this point, and none of the steps below run for them.
 - **Must block serving:** No, and it doesn't.
 - **Recommendation:** Keep.
 
-### 7. `reconcile_categories`, blocks serving
+### 6. `reconcile_categories`, blocks serving
 
 - **What:** Recomputes the category of every live shopping-list item and
   writes only the items whose category changed. Those writes give the items
@@ -132,7 +117,7 @@ at this point, and none of the steps below run for them.
   recategorization a crash interrupted, and items a catalog deploy
   reclassifies. Added in 288838029.
 - **Why first:** List reads return the stored category. This step also has to
-  read learned answers before anything can change them. Steps 9 and 11 can
+  read learned answers before anything can change them. Steps 8 and 10 can
   change them.
 - **Cost:** Linear in live shopping items, which number in the tens. Runs as
   one write transaction. Its ~160 ms is almost entirely the first load of
@@ -140,7 +125,7 @@ at this point, and none of the steps below run for them.
 - **On failure:** Panics.
 - **Recommendation:** Keep, blocking.
 
-### 8. `resume_interrupted_jobs`, blocks serving
+### 7. `resume_interrupted_jobs`, blocks serving
 
 - **What:** Restarts scrape and import jobs that were in progress when the
   previous process stopped. It marks photo-extraction jobs failed instead,
@@ -156,7 +141,7 @@ at this point, and none of the steps below run for them.
   stuck until the next restart.
 - **Recommendation:** Keep.
 
-### 9. `ingredient_names::sync_with_catalog`, blocks serving
+### 8. `ingredient_names::sync_with_catalog`, blocks serving
 
 - **What:** Puts learned ingredient names back in the queue when the
   committed catalog no longer accepts their stored answer: the key no longer
@@ -179,7 +164,7 @@ at this point, and none of the steps below run for them.
   name worker resolves anything.
 - **Recommendation:** Keep, blocking.
 
-### 10. `ingredient_names::queue_stored`, blocks serving
+### 9. `ingredient_names::queue_stored`, blocks serving
 
 - **What:** Parses the ingredients of every live recipe's current version
   and every live shopping item, and queues each name the catalog doesn't
@@ -196,7 +181,7 @@ at this point, and none of the steps below run for them.
   (`any_pending`).
 - **Recommendation:** Keep for now (see below).
 
-### 11. Name worker (`ingredient_names::spawn_worker`), in the background
+### 10. Name worker (`ingredient_names::spawn_worker`), in the background
 
 - **What:** Resolves pending names through the LLM in batches, starting
   with whatever was pending at startup, and backs off when the provider
@@ -206,14 +191,14 @@ at this point, and none of the steps below run for them.
   pending names (0 in the prod copy).
 - **Recommendation:** Keep.
 
-### 12. Router and listener
+### 11. Router and listener
 
 - **What:** Builds the router, takes the listener from `systemfd` or binds
   `PORT`, and serves.
 - **Cost:** Constant.
 - **On failure:** Run directly, the server panics if `PORT` is missing or
   invalid, or if it can't bind the socket. The panic comes only after steps
-  2–10 have run. Under `make serve` that can't happen:
+  2–9 have run. Under `make serve` that can't happen:
   `serve-release.sh` rejects a missing `PORT`, and `systemfd` fails on a
   malformed or busy port before it launches the server. It then hands over
   a socket it has already bound.
@@ -227,7 +212,6 @@ at this point, and none of the steps below run for them.
 | Schema migrations | yes | yes | pending migrations | keep |
 | Data migrations | yes | yes | pending migrations (none) | keep the runner |
 | Connection pool | yes | yes | — | keep |
-| Photo dimension backfill | no | no | photos (nothing pending) | **delete** |
 | Backup scheduler | no | dir creation only | database size (snapshot if overdue) | keep |
 | `reconcile_categories` | yes | yes | shopping items | keep |
 | `resume_interrupted_jobs` | yes | no | interrupted jobs | keep |
@@ -236,9 +220,9 @@ at this point, and none of the steps below run for them.
 | Name worker | no | no | pending names | keep |
 | Router and listener | yes | yes | — | keep |
 
-Step 10 could run as the name worker's first step, after the server is
+Step 9 could run as the name worker's first step, after the server is
 listening. That would take about 270 ms off startup. It would also turn a
-panic at startup into a logged error that the worker retries. Step 9 has to
-stay ahead of serving (see above). Step 10 is worth moving if the collection
+panic at startup into a logged error that the worker retries. Step 8 has to
+stay ahead of serving (see above). Step 9 is worth moving if the collection
 grows by an order of magnitude or startup becomes noticeable. At today's
 size, keeping it simple and fatal costs less.

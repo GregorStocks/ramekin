@@ -254,10 +254,6 @@ async fn main() {
 
     let pool: AppState = Arc::new(db::create_pool(&database_url));
 
-    // Spawn background backfill for photo dimensions (populates width/height
-    // for photos created before the column existed).
-    photos::spawn_dimension_backfill(pool.clone());
-
     // Daily snapshots of the database (doc/sqlite-cutover.md, Backups).
     match env::var_os("RAMEKIN_BACKUP_DIR") {
         Some(dir) if !dir.is_empty() => {
