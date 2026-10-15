@@ -407,11 +407,22 @@ fn measures_something(s: &str) -> bool {
         }
     }
     let tokens = tokenize(&outside);
-    // Everything after "into" or "in" ("cut into about 2 pieces") counts
-    // pieces of the food rather than measuring it.
+    // Everything after "into" or a prep "in" ("cut into about 2 pieces",
+    // "cut in 4") counts pieces of the food rather than measuring it; a plain
+    // "in" ("pineapple in a 20-ounce can") can still lead to the amount.
+    const PREP_VERBS: [&str; 6] = ["cut", "torn", "broken", "split", "sliced", "chopped"];
     let prep_start = tokens
         .iter()
-        .position(|token| token.is_word("into") || token.is_word("in"))
+        .enumerate()
+        .position(|(i, token)| {
+            token.is_word("into")
+                || (token.is_word("in")
+                    && tokens[..i]
+                        .iter()
+                        .rev()
+                        .find(|prev| prev.kind == Kind::Word)
+                        .is_some_and(|prev| PREP_VERBS.iter().any(|verb| prev.is_word(verb))))
+        })
         .unwrap_or(tokens.len());
     tokens[..prep_start]
         .iter()
@@ -609,6 +620,8 @@ mod tests {
         assert!(measures_something(
             "a combination of 1/4 teaspoon dried oregano"
         ));
+        assert!(!measures_something("extra firm tofu cut in 2 pieces"));
+        assert!(measures_something("pineapple in a 20-ounce can"));
         assert!(is_amount_or_size("1/2 cup"));
         assert!(is_amount_or_size("A 250-gram"));
         assert!(is_amount_or_size("A 250-gram,"));
