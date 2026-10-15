@@ -305,9 +305,11 @@ pub fn open_migrated(database_url: &str) -> SqliteConnection {
 
 /// [`open_migrated`] without the data migrations, for filling a fresh file
 /// whose data (and `data_migrations` rows) come from elsewhere: those
-/// migrations then run on that data when the server starts. WAL mode is a
-/// property of the file, so it's set here once rather than per connection
-/// (switching it needs every other connection out of the way).
+/// migrations then run on that data when the server starts. Moving photo
+/// bytes still in the database out to files counts as schema here, since it
+/// drops the legacy BLOB columns. WAL mode is a property of the file, so it's
+/// set here once rather than per connection (switching it needs every other
+/// connection out of the way).
 pub fn open_schema_migrated(database_url: &str) -> SqliteConnection {
     if let Some(dir) = std::path::Path::new(database_url).parent() {
         std::fs::create_dir_all(dir)
@@ -320,6 +322,8 @@ pub fn open_schema_migrated(database_url: &str) -> SqliteConnection {
         .expect("Failed to enable WAL mode");
     conn.run_pending_migrations(MIGRATIONS)
         .expect("Failed to run database migrations");
+    crate::photos::store::move_blobs_out(&mut conn)
+        .expect("Failed to move photo bytes out of the database");
     conn
 }
 

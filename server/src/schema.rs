@@ -71,8 +71,8 @@ diesel::table! {
         id -> UuidText,
         photo_id -> UuidText,
         size -> Integer,
-        data -> Binary,
         created_at -> TimestamptzSqlite,
+        data_hash -> Text,
     }
 }
 
@@ -84,13 +84,13 @@ diesel::table! {
         id -> UuidText,
         user_id -> UuidText,
         content_type -> Text,
-        data -> Binary,
         created_at -> TimestamptzSqlite,
         deleted_at -> Nullable<TimestamptzSqlite>,
-        thumbnail -> Binary,
         width -> Nullable<Integer>,
         height -> Nullable<Integer>,
         file_size -> Nullable<Integer>,
+        data_hash -> Text,
+        thumbnail_hash -> Text,
     }
 }
 

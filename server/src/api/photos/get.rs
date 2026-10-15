@@ -3,6 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::Photo;
+use crate::photos::store::read_live;
 use crate::schema::photos;
 use axum::{
     body::Body,
@@ -47,11 +48,21 @@ pub async fn get_photo(
             })
     })
     .await?;
+    let data = read_photo_file(photo.data_hash).await?;
 
     Ok(Response::builder()
         .status(StatusCode::OK)
         .header(header::CONTENT_TYPE, photo.content_type)
         .header(header::CACHE_CONTROL, "public, max-age=31536000, immutable")
-        .body(Body::from(photo.data))
+        .body(Body::from(data))
         .unwrap())
+}
+
+/// The photo file named `hash`. A row whose file can't be read is a
+/// server error.
+pub(super) async fn read_photo_file(hash: String) -> Result<Vec<u8>, ApiError> {
+    read_live(hash).await.map_err(|e| {
+        tracing::error!("failed to read photo file: {e:#}");
+        ApiError::internal("Failed to read photo")
+    })
 }

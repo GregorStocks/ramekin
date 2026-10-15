@@ -158,13 +158,15 @@ pub struct Photo {
     pub id: Uuid,
     pub user_id: Uuid,
     pub content_type: String,
-    pub data: Vec<u8>,
     pub created_at: DateTime<Utc>,
     pub deleted_at: Option<DateTime<Utc>>,
-    pub thumbnail: Vec<u8>,
     pub width: Option<i32>,
     pub height: Option<i32>,
     pub file_size: Option<i32>,
+    /// The photo's file in the [`crate::photos::PhotoStore`].
+    pub data_hash: String,
+    /// Its 200px JPEG thumbnail's file.
+    pub thumbnail_hash: String,
 }
 
 #[derive(Insertable)]
@@ -173,23 +175,11 @@ pub struct NewPhoto<'a> {
     pub id: Uuid,
     pub user_id: Uuid,
     pub content_type: &'a str,
-    pub data: &'a [u8],
-    pub thumbnail: &'a [u8],
     pub width: Option<i32>,
     pub height: Option<i32>,
     pub file_size: Option<i32>,
-}
-
-#[derive(Queryable, Selectable, Debug)]
-#[diesel(table_name = crate::schema::photo_thumbnails)]
-#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
-#[allow(dead_code)]
-pub struct PhotoThumbnail {
-    pub id: Uuid,
-    pub photo_id: Uuid,
-    pub size: i32,
-    pub data: Vec<u8>,
-    pub created_at: DateTime<Utc>,
+    pub data_hash: &'a str,
+    pub thumbnail_hash: &'a str,
 }
 
 #[derive(Insertable)]
@@ -198,7 +188,7 @@ pub struct NewPhotoThumbnail<'a> {
     pub id: Uuid,
     pub photo_id: Uuid,
     pub size: i32,
-    pub data: &'a [u8],
+    pub data_hash: &'a str,
 }
 
 // Recipe is now minimal - just identity + pointer to current version

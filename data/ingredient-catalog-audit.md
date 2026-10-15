@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60554 | 306 | 53615/60248 (89.0%) | 51232/60248 (85.0%) | 1472/5408 (27.2%) | n/a (no servings) | 31848/37337 (85.3%) | 59829/60554 (98.8%) |
+| Pipeline fixtures | 5408 | 60554 | 306 | 53615/60248 (89.0%) | 51232/60248 (85.0%) | 1473/5408 (27.2%) | n/a (no servings) | 31848/37337 (85.3%) | 59829/60554 (98.8%) |
 | Paprika fixtures | 462 | 5379 | 22 | 5160/5357 (96.3%) | 4807/5357 (89.7%) | 184/462 (39.8%) | n/a (no servings) | 2547/2893 (88.0%) | 5348/5379 (99.4%) |
 | Pipeline snapshots | 445 | 5177 | 17 | 4995/5160 (96.8%) | 4711/5160 (91.3%) | 185/445 (41.6%) | 96/445 (21.6%) | 2523/2853 (88.4%) | 5166/5177 (99.8%) |
 
@@ -37,14 +37,14 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 2193 | 40.6% |
-| 1 | 1734 | 32.1% |
-| 2 | 863 | 16.0% |
+| 0 | 2194 | 40.6% |
+| 1 | 1731 | 32.0% |
+| 2 | 865 | 16.0% |
 | 3 | 388 | 7.2% |
 | 4-5 | 182 | 3.4% |
 | 6+ | 48 | 0.9% |
 
-Estimate status with at most 3 uncounted: Complete 40.4%, Insufficient 5.4%, Partial 54.3%
+Estimate status with at most 3 uncounted: Complete 40.4%, Insufficient 5.4%, Partial 54.2%
 
 Weights to estimate (distinct food and unit pairs the catalog can't weigh): 0
 
@@ -52,7 +52,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 0
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 7055 | `ccbeac39e2f0` |
+| Nutrition (all failures) | 7054 | `bc9ecfdb3390` |
 | Density | 2723 | `282809c85b34` |
 | Shopping category | 582 | `88eecc86290a` |
 
