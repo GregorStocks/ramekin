@@ -69,7 +69,12 @@ impl PhotoStore {
     pub fn put(&self, bytes: &[u8]) -> anyhow::Result<String> {
         let hash = hex::encode(Sha256::digest(bytes));
         let path = self.path(&hash)?;
-        if !path.exists() {
+        if path.exists() {
+            // Another write may have just renamed it into place without yet
+            // syncing the directories; the row about to name it must not
+            // outlive it.
+            sync_dirs(&path).with_context(|| format!("failed to sync {}", path.display()))?;
+        } else {
             write_new(&path, |file| file.write_all(bytes))?;
         }
         Ok(hash)
@@ -148,22 +153,27 @@ fn write_new(
         write(&mut file)?;
         file.sync_all()?;
         std::fs::rename(&partial, path)?;
-        // The new name, and the entries of the shard and store directories
-        // in case this write created them: a directory entry is only durable
-        // once its parent is synced. Always, not just when this call created
-        // them, since a concurrent write may have created them without
-        // syncing yet.
-        #[cfg(unix)]
-        for synced in dir.ancestors().take(3) {
-            File::open(synced)?.sync_all()?;
-        }
-        std::io::Result::Ok(())
+        sync_dirs(path)
     })();
     if result.is_err() {
         // A temporary file, never a stored photo.
         let _ = std::fs::remove_file(&partial);
     }
     result.with_context(|| format!("failed to write {}", path.display()))
+}
+
+/// Sync the directories leading to the file at `path`
+/// (`<store>/<shard>/<hash>`): the shard, for the file's name, and the store
+/// and its parent, for the shard's and the store's own entries in case the
+/// write created them. A directory entry is only durable once its parent is
+/// synced. Always all three, not just the ones this write created, since a
+/// concurrent write may have created them without syncing yet.
+fn sync_dirs(path: &Path) -> std::io::Result<()> {
+    #[cfg(unix)]
+    for dir in path.ancestors().skip(1).take(3) {
+        File::open(dir)?.sync_all()?;
+    }
+    Ok(())
 }
 
 /// The server's store, found once at startup by [`init_live`].
