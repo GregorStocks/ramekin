@@ -425,10 +425,15 @@ fn measures_something(s: &str) -> bool {
 /// "1/2 cup", "A 250-gram", "medium-sized", "spare ribs about 2.2 pounds":
 /// text that ends in an amount or a size rather than naming a food.
 fn is_amount_or_size(s: &str) -> bool {
+    // "A 250-gram, or 8.8-ounce package": the comma belongs to the "or".
+    let s = s.trim_end_matches(',').trim_end();
     let words: Vec<&str> = s.split_whitespace().collect();
     let ends_in_measurement = (1..=words.len().min(3)).any(|n| {
         let read = measure::read_measurement(&words[words.len() - n..].join(" "));
-        read.amount.is_some() && read.unit.is_some() && read.rest.is_empty()
+        // "broken into 1-inch pieces" sizes the pieces, not the amount.
+        read.amount.is_some()
+            && read.unit.is_some_and(|unit| measures_amount(&unit))
+            && read.rest.is_empty()
     });
     let read = measure::read_measurement(s);
     if ends_in_measurement || (read.amount.is_some() && read.rest.is_empty()) {
@@ -606,6 +611,8 @@ mod tests {
         ));
         assert!(is_amount_or_size("1/2 cup"));
         assert!(is_amount_or_size("A 250-gram"));
+        assert!(is_amount_or_size("A 250-gram,"));
+        assert!(!is_amount_or_size("thin pasta, broken into 1-inch pieces,"));
         assert!(is_amount_or_size("medium-sized"));
         assert!(is_amount_or_size("pork belly spare ribs about 2.2 pounds"));
         assert!(!is_amount_or_size("garlic cloves"));
