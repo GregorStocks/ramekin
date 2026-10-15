@@ -5,6 +5,7 @@ use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::{Ingredient, NewPhoto, NewRecipeVersion, RecipeVersion};
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
+use crate::photos::store_photo;
 use crate::recipes::{create_new_version_cas, VersionWriteError};
 use crate::schema::{photos, recipe_versions, recipes};
 use axum::{
@@ -187,6 +188,14 @@ pub async fn generate_photo(
         }
     };
 
+    let file_size = raw_image.len() as i32;
+    let stored = store_photo(raw_image, processed.thumbnail)
+        .await
+        .map_err(|e| {
+            tracing::error!("Failed to store generated photo files: {e:#}");
+            ApiError::internal("Failed to save photo")
+        })?;
+
     let (photo_id, version_id) = run_db_locked(&pool, move |conn| {
         let write_result: Result<(Uuid, Uuid), VersionWriteError> =
             crate::db::write(conn, |conn| {
@@ -215,11 +224,11 @@ pub async fn generate_photo(
                     id: Uuid::now_v7(),
                     user_id,
                     content_type: &processed.content_type,
-                    data: &raw_image,
-                    thumbnail: &processed.thumbnail,
                     width: Some(processed.width as i32),
                     height: Some(processed.height as i32),
-                    file_size: Some(raw_image.len() as i32),
+                    file_size: Some(file_size),
+                    data_hash: &stored.data_hash,
+                    thumbnail_hash: &stored.thumbnail_hash,
                 };
 
                 let photo_id: Uuid = diesel::insert_into(photos::table)
