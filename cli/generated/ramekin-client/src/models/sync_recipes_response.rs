@@ -19,6 +19,9 @@ pub struct SyncRecipesResponse {
     /// Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first page; later pages return an empty list.
     #[serde(rename = "deleted")]
     pub deleted: Vec<uuid::Uuid>,
+    /// True when this sweep returns every active recipe rather than changes since `cursor`: `cursor` was absent, or this database never issued it (a restored backup). The client must then drop cached recipes the sweep doesn't return — a recipe created after the backup was taken is in neither `recipes` nor `deleted`. Pages are ordered by ID, so each page settles the ID range from `after_id` (exclusive) through its last recipe, or to the end of the ID space on the last page. Same value on every page of a sweep.
+    #[serde(rename = "full_resync")]
+    pub full_resync: bool,
     /// True when the sweep has more pages. Request the next one with the same `cursor` and `after_id` set to this page's last recipe ID.
     #[serde(rename = "has_more")]
     pub has_more: bool,
@@ -34,6 +37,7 @@ impl SyncRecipesResponse {
     pub fn new(
         cursor: i64,
         deleted: Vec<uuid::Uuid>,
+        full_resync: bool,
         has_more: bool,
         normalization_contract_version: i32,
         recipes: Vec<models::SyncRecipe>,
@@ -41,6 +45,7 @@ impl SyncRecipesResponse {
         SyncRecipesResponse {
             cursor,
             deleted,
+            full_resync,
             has_more,
             normalization_contract_version,
             recipes,

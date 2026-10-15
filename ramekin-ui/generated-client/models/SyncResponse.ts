@@ -68,6 +68,16 @@ export interface SyncResponse {
      */
     deleted: Array<string>;
     /**
+     * True when `server_changes` holds every live item rather than changes
+     * since the request's cursor: no cursor was sent, or this database never
+     * issued it (a restored backup). The client must then drop synced
+     * cached items missing from `server_changes` — an item created after the
+     * backup was taken is in neither `server_changes` nor `deleted`.
+     * @type {boolean}
+     * @memberof SyncResponse
+     */
+    fullResync: boolean;
+    /**
      * Server-side changes since the request's cursor
      * @type {Array<SyncServerChange>}
      * @memberof SyncResponse
@@ -96,6 +106,7 @@ export function instanceOfSyncResponse(value: object): value is SyncResponse {
     if (!('created' in value) || value['created'] === undefined) return false;
     if (!('cursor' in value) || value['cursor'] === undefined) return false;
     if (!('deleted' in value) || value['deleted'] === undefined) return false;
+    if (!('fullResync' in value) || value['fullResync'] === undefined) return false;
     if (!('serverChanges' in value) || value['serverChanges'] === undefined) return false;
     if (!('syncTimestamp' in value) || value['syncTimestamp'] === undefined) return false;
     if (!('updated' in value) || value['updated'] === undefined) return false;
@@ -116,6 +127,7 @@ export function SyncResponseFromJSONTyped(json: any, ignoreDiscriminator: boolea
         'created': ((json['created'] as Array<any>).map(SyncCreatedItemFromJSON)),
         'cursor': json['cursor'],
         'deleted': json['deleted'],
+        'fullResync': json['full_resync'],
         'serverChanges': ((json['server_changes'] as Array<any>).map(SyncServerChangeFromJSON)),
         'syncTimestamp': (new Date(json['sync_timestamp'])),
         'updated': ((json['updated'] as Array<any>).map(SyncUpdatedItemFromJSON)),
@@ -137,6 +149,7 @@ export function SyncResponseToJSONTyped(value?: SyncResponse | null, ignoreDiscr
         'created': ((value['created'] as Array<any>).map(SyncCreatedItemToJSON)),
         'cursor': value['cursor'],
         'deleted': value['deleted'],
+        'full_resync': value['fullResync'],
         'server_changes': ((value['serverChanges'] as Array<any>).map(SyncServerChangeToJSON)),
         'sync_timestamp': value['syncTimestamp'].toISOString(),
         'updated': ((value['updated'] as Array<any>).map(SyncUpdatedItemToJSON)),

@@ -366,6 +366,10 @@ extension ShoppingListStore {
             applyServerChange(change, accountKey: accountKey, in: context)
         }
 
+        if response.fullResync {
+            ShoppingListSyncSupport.dropItemsMissingFromFullResync(response, accountKey: accountKey, in: context)
+        }
+
         coreDataStack.saveContext()
     }
 

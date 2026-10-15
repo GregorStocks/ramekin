@@ -54,6 +54,15 @@ pub struct SyncRecipesResponse {
     /// True when the sweep has more pages. Request the next one with the same
     /// `cursor` and `after_id` set to this page's last recipe ID.
     pub has_more: bool,
+    /// True when this sweep returns every active recipe rather than changes
+    /// since `cursor`: `cursor` was absent, or this database never issued it
+    /// (a restored backup). The client must then drop cached recipes the
+    /// sweep doesn't return — a recipe created after the backup was taken is
+    /// in neither `recipes` nor `deleted`. Pages are ordered by ID, so each
+    /// page settles the ID range from `after_id` (exclusive) through its last
+    /// recipe, or to the end of the ID space on the last page. Same value on
+    /// every page of a sweep.
+    pub full_resync: bool,
     /// Version of the shared search-normalization contract
     /// (shared-test-vectors/search-normalization.json) the server was built
     /// with. A client mirroring server search locally must fail the sync when
@@ -141,7 +150,7 @@ pub async fn sync_recipes(
     // the sweep already passed, but its change_seq is at or above the first
     // page's watermark — which is why clients persist the first page's cursor,
     // not the last one's.
-    let (cursor, rows, deleted, has_more) = run_db(&pool, move |conn| {
+    let (cursor, rows, deleted, has_more, full_resync) = run_db(&pool, move |conn| {
         conn.transaction(|conn| {
             // Runs first so it establishes the snapshot the reads below use.
             let cursor = db::sync_cursor(conn)?;
@@ -191,7 +200,7 @@ pub async fn sync_recipes(
                 Vec::new()
             };
 
-            Ok::<_, diesel::result::Error>((cursor, rows, deleted, has_more))
+            Ok::<_, diesel::result::Error>((cursor, rows, deleted, has_more, since.is_none()))
         })
         .map_err(|e| {
             tracing::error!("Failed to sync recipes: {}", e);
@@ -219,6 +228,7 @@ pub async fn sync_recipes(
             deleted,
             cursor,
             has_more,
+            full_resync,
             normalization_contract_version: ramekin_core::search::normalization_contract_version(),
         }),
     ))

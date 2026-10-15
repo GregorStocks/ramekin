@@ -543,6 +543,8 @@ def test_sync_from_cursor_returns_later_changes(authed_api_client):
     assert changes[changed_id].is_checked
     assert added_id in changes
     assert sync_response.cursor >= initial_sync.cursor
+    assert initial_sync.full_resync is True
+    assert sync_response.full_resync is False
 
 
 def test_sync_cursor_takes_precedence_over_last_sync_at(authed_api_client):
@@ -1097,3 +1099,5 @@ def test_sync_answers_a_cursor_from_another_database_with_everything(
 
     assert kept in {change.id for change in response.server_changes}
     assert removed in response.deleted
+    # Flagged so the client drops cached items this database doesn't have.
+    assert response.full_resync is True

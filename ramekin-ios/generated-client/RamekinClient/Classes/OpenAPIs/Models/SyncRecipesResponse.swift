@@ -17,6 +17,8 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
     public var cursor: Int64
     /** Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first page; later pages return an empty list. */
     public var deleted: [UUID]
+    /** True when this sweep returns every active recipe rather than changes since `cursor`: `cursor` was absent, or this database never issued it (a restored backup). The client must then drop cached recipes the sweep doesn't return — a recipe created after the backup was taken is in neither `recipes` nor `deleted`. Pages are ordered by ID, so each page settles the ID range from `after_id` (exclusive) through its last recipe, or to the end of the ID space on the last page. Same value on every page of a sweep. */
+    public var fullResync: Bool
     /** True when the sweep has more pages. Request the next one with the same `cursor` and `after_id` set to this page's last recipe ID. */
     public var hasMore: Bool
     /** Version of the shared search-normalization contract (shared-test-vectors/search-normalization.json) the server was built with. A client mirroring server search locally must fail the sync when it does not support this version: matching with a stale contract would silently drop or add results relative to server search. */
@@ -24,9 +26,10 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
     /** The next `limit` active recipes (by ascending recipe ID, starting past `after_id`) changed at or after `cursor`. All active recipes match when `cursor` is absent. */
     public var recipes: [SyncRecipe]
 
-    public init(cursor: Int64, deleted: [UUID], hasMore: Bool, normalizationContractVersion: Int, recipes: [SyncRecipe]) {
+    public init(cursor: Int64, deleted: [UUID], fullResync: Bool, hasMore: Bool, normalizationContractVersion: Int, recipes: [SyncRecipe]) {
         self.cursor = cursor
         self.deleted = deleted
+        self.fullResync = fullResync
         self.hasMore = hasMore
         self.normalizationContractVersion = normalizationContractVersion
         self.recipes = recipes
@@ -35,6 +38,7 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case cursor
         case deleted
+        case fullResync = "full_resync"
         case hasMore = "has_more"
         case normalizationContractVersion = "normalization_contract_version"
         case recipes
@@ -46,6 +50,7 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(cursor, forKey: .cursor)
         try container.encode(deleted, forKey: .deleted)
+        try container.encode(fullResync, forKey: .fullResync)
         try container.encode(hasMore, forKey: .hasMore)
         try container.encode(normalizationContractVersion, forKey: .normalizationContractVersion)
         try container.encode(recipes, forKey: .recipes)

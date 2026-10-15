@@ -163,6 +163,7 @@ final class ShoppingListStoreTests: XCTestCase {
                 created: [SyncCreatedItem(clientId: clientId, serverId: serverId, version: 1)],
                 cursor: 80,
                 deleted: [],
+                fullResync: false,
                 serverChanges: [],
                 syncTimestamp: Date(timeIntervalSince1970: 800),
                 updated: []
@@ -228,13 +229,15 @@ final class ShoppingListStoreTests: XCTestCase {
     private static func response(
         created: [SyncCreatedItem] = [],
         updated: [SyncUpdatedItem] = [],
-        serverChanges: [SyncServerChange] = []
+        serverChanges: [SyncServerChange] = [],
+        fullResync: Bool = false
     ) -> SyncResponse {
         SyncResponse(
             categoryOrder: [],
             created: created,
             cursor: 100,
             deleted: [],
+            fullResync: fullResync,
             serverChanges: serverChanges,
             syncTimestamp: Date(timeIntervalSince1970: 1_000),
             updated: updated
@@ -247,6 +250,7 @@ final class ShoppingListStoreTests: XCTestCase {
             created: [],
             cursor: cursor,
             deleted: [],
+            fullResync: false,
             serverChanges: [],
             syncTimestamp: Date(timeIntervalSince1970: 1_000),
             updated: []
@@ -257,6 +261,61 @@ final class ShoppingListStoreTests: XCTestCase {
         let defaults = UserDefaults(suiteName: defaultsSuiteName)!
         defaults.removePersistentDomain(forName: defaultsSuiteName)
         return (CoreDataTestStack.makeStack(), defaults)
+    }
+
+    func testFullResyncDropsSyncedItemsTheServerNoLongerHas() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let kept = Self.serverChange(item: "Kept")
+        let lost = Self.serverChange(item: "Lost")
+        var responses = [Self.response(serverChanges: [kept, lost])]
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { _ in responses.removeFirst() }
+        )
+        await store.syncWithServer(isFollowUp: true)
+        // Not yet on the server; the response below doesn't acknowledge it.
+        store.addItem(name: "Pending")
+
+        // The server was restored from a backup taken before "Lost" existed:
+        // it has neither the item nor a tombstone for it.
+        responses.append(Self.response(serverChanges: [kept], fullResync: true))
+        await store.syncWithServer(isFollowUp: true)
+
+        XCTAssertEqual(Set(store.items.compactMap(\.item)), ["Kept", "Pending"])
+    }
+
+    func testIncrementalSyncKeepsItemsItDoesNotMention() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let kept = Self.serverChange(item: "Kept")
+        let unchanged = Self.serverChange(item: "Unchanged")
+        var responses = [
+            Self.response(serverChanges: [kept, unchanged]),
+            Self.response(serverChanges: [kept])
+        ]
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { _ in responses.removeFirst() }
+        )
+
+        await store.syncWithServer(isFollowUp: true)
+        await store.syncWithServer(isFollowUp: true)
+
+        XCTAssertEqual(Set(store.items.compactMap(\.item)), ["Kept", "Unchanged"])
+    }
+
+    private static func serverChange(item: String) -> SyncServerChange {
+        SyncServerChange(
+            category: "Other", computedCategory: "Other", id: UUID(), isChecked: false,
+            item: item, sortOrder: 0, updatedAt: Date(timeIntervalSince1970: 500), version: 1
+        )
     }
 
     private var defaultsSuiteName: String { "ShoppingListStoreTests.\(name)" }

@@ -45,6 +45,16 @@ export interface SyncResponse {
      */
     deleted: Array<string>;
     /**
+     * True when `server_changes` holds every live item rather than changes
+     * since the request's cursor: no cursor was sent, or this database never
+     * issued it (a restored backup). The client must then drop synced
+     * cached items missing from `server_changes` — an item created after the
+     * backup was taken is in neither `server_changes` nor `deleted`.
+     * @type {boolean}
+     * @memberof SyncResponse
+     */
+    fullResync: boolean;
+    /**
      * Server-side changes since the request's cursor
      * @type {Array<SyncServerChange>}
      * @memberof SyncResponse

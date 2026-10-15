@@ -1,3 +1,4 @@
+import CoreData
 import Foundation
 
 enum ShoppingListSyncSupport {
@@ -40,5 +41,23 @@ enum ShoppingListSyncSupport {
             }
         }
         return .kept
+    }
+
+    /// A full resync returns every live item, so a synced item it omits is
+    /// gone from the server without a tombstone (e.g. created after a
+    /// restored backup was taken). Pending items stay: their own sync round
+    /// settles them.
+    static func dropItemsMissingFromFullResync(
+        _ response: SyncResponse,
+        accountKey: String,
+        in context: NSManagedObjectContext
+    ) {
+        let live = Set(response.serverChanges.map(\.id))
+        let synced = (try? context.fetch(ShoppingItem.fetchSynced(accountKey: accountKey))) ?? []
+        for item in synced {
+            if let id = item.id, !live.contains(id) {
+                context.delete(item)
+            }
+        }
     }
 }

@@ -84,6 +84,9 @@ pub struct SyncUpdateItem {
 enum ChangesSince {
     All,
     Cursor(i64),
+    /// A cursor this database never issued: every item, and every deletion,
+    /// as if from the start.
+    Restart,
     /// Wall-clock cursor from clients that predate `cursor`. It can miss a
     /// write that commits after a concurrent sync's read; such clients switch
     /// to `cursor` after one sync.
@@ -159,6 +162,12 @@ pub struct SyncResponse {
     /// Snapshot watermark to pass as `cursor` on the next sync. Changes may be
     /// redelivered across syncs, but none can be skipped.
     pub cursor: i64,
+    /// True when `server_changes` holds every live item rather than changes
+    /// since the request's cursor: no cursor was sent, or this database never
+    /// issued it (a restored backup). The client must then drop synced
+    /// cached items missing from `server_changes` — an item created after the
+    /// backup was taken is in neither `server_changes` nor `deleted`.
+    pub full_resync: bool,
     /// Canonical category display order for grouping items; every item's
     /// `category` is guaranteed to appear in this list.
     pub category_order: Vec<String>,
@@ -218,11 +227,13 @@ pub async fn sync_items(
             // A cursor this database never issued (see `db::valid_since`)
             // gets everything, deletions included, as if from the start.
             let since = match since {
-                ChangesSince::Cursor(since) => {
-                    ChangesSince::Cursor(db::valid_since(Some(since), cursor).unwrap_or(0))
-                }
+                ChangesSince::Cursor(since) => match db::valid_since(Some(since), cursor) {
+                    Some(since) => ChangesSince::Cursor(since),
+                    None => ChangesSince::Restart,
+                },
                 other => other,
             };
+            let full_resync = matches!(since, ChangesSince::All | ChangesSince::Restart);
 
             // 1. Process creates — batch insert, fall back to a single SELECT for conflicts
             let mut created = Vec::with_capacity(request.creates.len());
@@ -544,6 +555,7 @@ pub async fn sync_items(
             let deleted_query = match since {
                 // No cursor means first sync - return all items and no deletes
                 ChangesSince::All => None,
+                ChangesSince::Restart => Some(deleted_items),
                 ChangesSince::Cursor(since) => {
                     changes_query = changes_query.filter(
                         shopping_list_items::change_seq
@@ -635,6 +647,7 @@ pub async fn sync_items(
                 server_changes,
                 sync_timestamp,
                 cursor,
+                full_resync,
                 category_order: super::list::category_order(),
             })
         })

@@ -52,7 +52,7 @@ enum RecipeSyncSweep {
                     supported: SearchNormalizationSupport.contractVersion
                 )
             }
-            try await cache.apply(response, accountKey)
+            try await cache.apply(response, afterId, accountKey)
             let watermark = sweepWatermark ?? response.cursor
             sweepWatermark = watermark
 
@@ -71,5 +71,31 @@ enum RecipeSyncSweep {
                 return
             }
         }
+    }
+
+    /// Whether a full-resync page, requested with `afterId`, settles `id`:
+    /// the server returns every live recipe in ascending ID order, so a page
+    /// covers the IDs past `afterId` through its last recipe, and the final
+    /// page runs to the end. A cached recipe in that range the page didn't
+    /// return is gone from the server. A page claiming more pages but
+    /// carrying no recipe settles nothing.
+    static func fullResyncPageCovers(_ id: UUID, afterId: UUID?, response: SyncRecipesResponse) -> Bool {
+        let key = serverOrderKey(id)
+        if let afterId, key <= serverOrderKey(afterId) {
+            return false
+        }
+        guard response.hasMore else {
+            return true
+        }
+        guard let lastId = response.recipes.last?.id else {
+            return false
+        }
+        return key <= serverOrderKey(lastId)
+    }
+
+    /// The server stores IDs as lowercase hyphenated text and pages in that
+    /// text's order.
+    private static func serverOrderKey(_ id: UUID) -> String {
+        id.uuidString.lowercased()
     }
 }

@@ -30,6 +30,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                     return SyncRecipesResponse(
                         cursor: 100,
                         deleted: [],
+                        fullResync: false,
                         hasMore: true,
                         normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                         recipes: pageOne
@@ -38,6 +39,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                 return SyncRecipesResponse(
                     cursor: 200,
                     deleted: [],
+                    fullResync: false,
                     hasMore: false,
                     normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                     recipes: pageTwo
@@ -48,7 +50,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                 setSyncCursor: { cursor, _ in persistedCursor = cursor },
                 setPendingSyncSweep: { sweep, _ in persistedSweeps.append(sweep) },
                 clearPendingSyncSweep: { _ in clearedPendingSweep = true },
-                apply: { response, _ in
+                apply: { response, _, _ in
                     appliedRecipeTitles.append(contentsOf: response.recipes.map(\.title))
                 }
             )
@@ -82,6 +84,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                 return SyncRecipesResponse(
                     cursor: 500,
                     deleted: [],
+                    fullResync: false,
                     hasMore: false,
                     normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                     recipes: finalPage
@@ -157,6 +160,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                 SyncRecipesResponse(
                     cursor: 400,
                     deleted: [],
+                    fullResync: false,
                     hasMore: true,
                     normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                     recipes: []
@@ -255,6 +259,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                 SyncRecipesResponse(
                     cursor: 100,
                     deleted: [],
+                    fullResync: false,
                     hasMore: false,
                     normalizationContractVersion: SearchNormalizationSupport.contractVersion + 1,
                     recipes: []
@@ -264,7 +269,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                 currentAccountKey: { "account" },
                 syncCursor: { _ in 300 },
                 loadRecipes: { _ in [cached] },
-                apply: { _, _ in applied = true }
+                apply: { _, _, _ in applied = true }
             )
         )
 

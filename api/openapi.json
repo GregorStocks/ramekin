@@ -4970,6 +4970,7 @@
           "deleted",
           "cursor",
           "has_more",
+          "full_resync",
           "normalization_contract_version"
         ],
         "properties": {
@@ -4985,6 +4986,10 @@
               "format": "uuid"
             },
             "description": "Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first\npage; later pages return an empty list."
+          },
+          "full_resync": {
+            "type": "boolean",
+            "description": "True when this sweep returns every active recipe rather than changes\nsince `cursor`: `cursor` was absent, or this database never issued it\n(a restored backup). The client must then drop cached recipes the\nsweep doesn't return — a recipe created after the backup was taken is\nin neither `recipes` nor `deleted`. Pages are ordered by ID, so each\npage settles the ID range from `after_id` (exclusive) through its last\nrecipe, or to the end of the ID space on the last page. Same value on\nevery page of a sweep."
           },
           "has_more": {
             "type": "boolean",
@@ -5057,6 +5062,7 @@
           "server_changes",
           "sync_timestamp",
           "cursor",
+          "full_resync",
           "category_order"
         ],
         "properties": {
@@ -5086,6 +5092,10 @@
               "format": "uuid"
             },
             "description": "IDs of items that were deleted"
+          },
+          "full_resync": {
+            "type": "boolean",
+            "description": "True when `server_changes` holds every live item rather than changes\nsince the request's cursor: no cursor was sent, or this database never\nissued it (a restored backup). The client must then drop synced\ncached items missing from `server_changes` — an item created after the\nbackup was taken is in neither `server_changes` nor `deleted`."
           },
           "server_changes": {
             "type": "array",
