@@ -326,6 +326,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
 extension RecipeListViewModelSyncTests {
     func testFullResyncSweepRequestsLaterPagesWithoutACursor() async {
         let pageOne = [makeSyncRecipe(title: "Aioli")]
+        let pageTwo = [makeSyncRecipe(title: "Bread")]
         var requests: [SyncRequest] = []
         var persistedSweeps: [PendingSyncSweep] = []
 
@@ -338,7 +339,7 @@ extension RecipeListViewModelSyncTests {
                     fullResync: true,
                     hasMore: afterId == nil,
                     normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                    recipes: afterId == nil ? pageOne : [makeSyncRecipe(title: "Bread")]
+                    recipes: afterId == nil ? pageOne : pageTwo
                 )
             },
             cache: RecipeListTestSupport.cacheClient(
