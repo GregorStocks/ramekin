@@ -17,7 +17,7 @@ public struct SyncRecipesResponse: Codable, JSONEncodable, Hashable {
     public var cursor: Int64
     /** Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first page; later pages return an empty list. */
     public var deleted: [UUID]
-    /** True when this sweep returns every active recipe rather than changes since `cursor`: `cursor` was absent, or this database never issued it (a restored backup). The client must then drop cached recipes the sweep doesn't return — a recipe created after the backup was taken is in neither `recipes` nor `deleted`. Pages are ordered by ID, so each page settles the ID range from `after_id` (exclusive) through its last recipe, or to the end of the ID space on the last page. Same value on every page of a sweep. */
+    /** True when this page lists every active recipe in its ID range rather than changes since `cursor`: `cursor` was absent, predates a restored backup or import, or came from another database. The client must then drop cached recipes the sweep doesn't return — a recipe rolled back by a restore is in neither `recipes` nor `deleted` — and request the sweep's remaining pages without `cursor`, since a later page could otherwise judge the same cursor differently. Pages are ordered by ID, so each settles the ID range from `after_id` (exclusive) through its last recipe, or to the end of the ID space on the last page. */
     public var fullResync: Bool
     /** True when the sweep has more pages. Request the next one with the same `cursor` and `after_id` set to this page's last recipe ID. */
     public var hasMore: Bool

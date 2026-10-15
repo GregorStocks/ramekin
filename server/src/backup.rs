@@ -157,8 +157,9 @@ const RESTORE_CLOCK_JUMP: i64 = 1 << 40;
 /// current files are kept, renamed `<database>.before-restore-<time>-<tag>`
 /// (with their `-wal`/`-shm`). Clients synced past the snapshot hold cursors the
 /// restored clock could later reach again, which would make their syncs skip
-/// the rolled-back rows; so the clock jumps far ahead and every live row is
-/// restamped above it, and every client's next sync re-delivers it all.
+/// the rolled-back rows; so the clock jumps far ahead, every live row is
+/// restamped above it, and every client's next sync is a flagged full resync
+/// that drops the rolled-back rows it still caches.
 /// Returns where the replaced database went, if there was one.
 pub fn restore(database_url: &str, snapshot: &Path) -> anyhow::Result<Option<PathBuf>> {
     anyhow::ensure!(snapshot.is_file(), "no snapshot at {}", snapshot.display());
@@ -332,6 +333,13 @@ mod tests {
         let restored_clock = clock(&mut restored);
         assert_eq!(restored_clock, snapshot_clock + RESTORE_CLOCK_JUMP);
         assert!(restored_clock > client_cursor);
+        // That client's next sync is a full resync, so it drops "after".
+        let sync_cursor = db::sync_cursor(&mut restored).unwrap();
+        assert_eq!(sync_cursor.since(Some(client_cursor)), None);
+        assert_eq!(
+            sync_cursor.since(Some(sync_cursor.value)),
+            Some(sync_cursor.value)
+        );
         // The live row comes back to every client: stamped at or after any
         // cursor issued before the restore.
         assert_eq!(

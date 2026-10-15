@@ -39,13 +39,19 @@ enum RecipeSyncSweep {
     ) async throws {
         var afterId: UUID?
         var sweepWatermark: Int64?
+        var fullResync = false
         if let pending = cache.pendingSyncSweep(accountKey), pending.since == cursor {
             afterId = pending.afterId
             sweepWatermark = pending.watermark
+            fullResync = pending.fullResync
         }
 
         while true {
-            let response = try await api.syncRecipes(cursor, pageSize, afterId)
+            // Once the server answers with a full resync, the rest of the
+            // sweep asks for one outright: the server judges the cursor per
+            // page, and a write landing mid-sweep could make it answer later
+            // pages with a delta that omits the unchanged recipes left to prune.
+            let response = try await api.syncRecipes(fullResync ? nil : cursor, pageSize, afterId)
             guard response.normalizationContractVersion == SearchNormalizationSupport.contractVersion else {
                 throw RecipeSyncError.normalizationContractMismatch(
                     server: response.normalizationContractVersion,
@@ -53,6 +59,7 @@ enum RecipeSyncSweep {
                 )
             }
             try await cache.apply(response, afterId, accountKey)
+            fullResync = fullResync || response.fullResync
             let watermark = sweepWatermark ?? response.cursor
             sweepWatermark = watermark
 
@@ -62,7 +69,7 @@ enum RecipeSyncSweep {
                 }
                 afterId = lastId
                 cache.setPendingSyncSweep(
-                    PendingSyncSweep(since: cursor, afterId: lastId, watermark: watermark),
+                    PendingSyncSweep(since: cursor, afterId: lastId, watermark: watermark, fullResync: fullResync),
                     accountKey
                 )
             } else {

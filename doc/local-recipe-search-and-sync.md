@@ -58,8 +58,16 @@ transaction at a time, so stamps commit in order. The sync reads in a single
 read transaction and returns one past the clock's current value as the next
 cursor (`db::sync_cursor`). A write that hasn't committed by the sync's
 snapshot takes its stamp later, at or above that cursor, so the next request's
-inclusive `>= cursor` filter returns it. A cursor above the clock (one issued
-by another database, as after restoring an older backup) gets a full sync.
+inclusive `>= cursor` filter returns it.
+
+Some cursors can't be answered with a delta, and get a full resync instead:
+one above the clock (issued by another database), and one at or below
+`sync_clock.resync_floor`, which `db::restamp_live` sets when a restore or
+import changes rows under clients' feet. A row the restore rolled back has no
+tombstone, so the response sets `full_resync` and clients drop cached rows it
+omits. iOS prunes recipes page by page within each page's ID range, and
+requests the rest of a full-resync sweep without a cursor so every page is
+judged the same way.
 
 That ordering is what a wall-clock cursor could not provide: a transaction took
 its timestamp before the cursor, committed after the sync SELECT's snapshot, and

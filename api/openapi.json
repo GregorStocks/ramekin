@@ -4989,7 +4989,7 @@
           },
           "full_resync": {
             "type": "boolean",
-            "description": "True when this sweep returns every active recipe rather than changes\nsince `cursor`: `cursor` was absent, or this database never issued it\n(a restored backup). The client must then drop cached recipes the\nsweep doesn't return — a recipe created after the backup was taken is\nin neither `recipes` nor `deleted`. Pages are ordered by ID, so each\npage settles the ID range from `after_id` (exclusive) through its last\nrecipe, or to the end of the ID space on the last page. Same value on\nevery page of a sweep."
+            "description": "True when this page lists every active recipe in its ID range rather\nthan changes since `cursor`: `cursor` was absent, predates a restored\nbackup or import, or came from another database. The client must then\ndrop cached recipes the sweep doesn't return — a recipe rolled back by\na restore is in neither `recipes` nor `deleted` — and request the\nsweep's remaining pages without `cursor`, since a later page could\notherwise judge the same cursor differently. Pages are ordered by ID,\nso each settles the ID range from `after_id` (exclusive) through its\nlast recipe, or to the end of the ID space on the last page."
           },
           "has_more": {
             "type": "boolean",
@@ -5095,7 +5095,7 @@
           },
           "full_resync": {
             "type": "boolean",
-            "description": "True when `server_changes` holds every live item rather than changes\nsince the request's cursor: no cursor was sent, or this database never\nissued it (a restored backup). The client must then drop synced\ncached items missing from `server_changes` — an item created after the\nbackup was taken is in neither `server_changes` nor `deleted`."
+            "description": "True when `server_changes` holds every live item rather than changes\nsince the request's cursor: no cursor was sent, or it predates a\nrestored backup or import, or came from another database. The client\nmust then drop synced cached items missing from `server_changes` — an\nitem rolled back by a restore is in neither `server_changes` nor\n`deleted`."
           },
           "server_changes": {
             "type": "array",

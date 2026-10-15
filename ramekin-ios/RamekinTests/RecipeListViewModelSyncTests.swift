@@ -320,3 +320,70 @@ final class RecipeListViewModelSyncTests: XCTestCase {
         )
     }
 }
+
+// MARK: - Full resync
+
+extension RecipeListViewModelSyncTests {
+    func testFullResyncSweepRequestsLaterPagesWithoutACursor() async {
+        let pageOne = [makeSyncRecipe(title: "Aioli")]
+        var requests: [SyncRequest] = []
+        var persistedSweeps: [PendingSyncSweep] = []
+
+        let viewModel = makeViewModel(
+            syncRecipes: { cursor, limit, afterId in
+                requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
+                return SyncRecipesResponse(
+                    cursor: 100,
+                    deleted: [],
+                    fullResync: true,
+                    hasMore: afterId == nil,
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                    recipes: afterId == nil ? pageOne : [makeSyncRecipe(title: "Bread")]
+                )
+            },
+            cache: RecipeListTestSupport.cacheClient(
+                currentAccountKey: { "account" },
+                // A cursor the server can't answer with a delta (it predates
+                // a restore).
+                syncCursor: { _ in 300 },
+                setPendingSyncSweep: { sweep, _ in persistedSweeps.append(sweep) },
+                loadRecipes: { _ in [RecipeListTestSupport.makeRecipe(title: "Cached")] }
+            )
+        )
+
+        await viewModel.loadRecipes(reset: true)
+
+        XCTAssertEqual(requests, [
+            SyncRequest(cursor: 300, limit: 100, afterId: nil),
+            SyncRequest(cursor: nil, limit: 100, afterId: pageOne.last?.id)
+        ])
+        XCTAssertEqual(
+            persistedSweeps,
+            [PendingSyncSweep(since: 300, afterId: pageOne.last!.id, watermark: 100, fullResync: true)]
+        )
+    }
+
+    func testResumedFullResyncSweepStaysWithoutACursor() async {
+        let resumeAfterId = UUID()
+        var requests: [SyncRequest] = []
+
+        let viewModel = makeViewModel(
+            syncRecipes: { cursor, limit, afterId in
+                requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
+                return RecipeListTestSupport.emptySyncResponse()
+            },
+            cache: RecipeListTestSupport.cacheClient(
+                currentAccountKey: { "account" },
+                syncCursor: { _ in 300 },
+                pendingSyncSweep: { _ in
+                    PendingSyncSweep(since: 300, afterId: resumeAfterId, watermark: 50, fullResync: true)
+                },
+                loadRecipes: { _ in [RecipeListTestSupport.makeRecipe(title: "Cached")] }
+            )
+        )
+
+        await viewModel.loadRecipes(reset: true)
+
+        XCTAssertEqual(requests, [SyncRequest(cursor: nil, limit: 100, afterId: resumeAfterId)])
+    }
+}

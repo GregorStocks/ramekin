@@ -24,6 +24,9 @@ struct PendingSyncSweep: Codable, Equatable {
     /// they would skip changes that committed mid-sweep in id ranges the
     /// sweep had already passed.
     let watermark: Int64
+    /// A page came back as a full resync, so the rest of the sweep is
+    /// requested without a cursor (see `RecipeSyncSweep.run`).
+    var fullResync = false
 }
 
 enum RecipeCacheError: LocalizedError {

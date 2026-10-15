@@ -25,7 +25,7 @@ pub struct SyncResponse {
     /// IDs of items that were deleted
     #[serde(rename = "deleted")]
     pub deleted: Vec<uuid::Uuid>,
-    /// True when `server_changes` holds every live item rather than changes since the request's cursor: no cursor was sent, or this database never issued it (a restored backup). The client must then drop synced cached items missing from `server_changes` — an item created after the backup was taken is in neither `server_changes` nor `deleted`.
+    /// True when `server_changes` holds every live item rather than changes since the request's cursor: no cursor was sent, or it predates a restored backup or import, or came from another database. The client must then drop synced cached items missing from `server_changes` — an item rolled back by a restore is in neither `server_changes` nor `deleted`.
     #[serde(rename = "full_resync")]
     pub full_resync: bool,
     /// Server-side changes since the request's cursor

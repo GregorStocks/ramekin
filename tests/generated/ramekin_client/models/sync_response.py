@@ -35,7 +35,7 @@ class SyncResponse(BaseModel):
     created: List[SyncCreatedItem] = Field(description="Items that were created (maps client_id to server_id)")
     cursor: StrictInt = Field(description="Snapshot watermark to pass as `cursor` on the next sync. Changes may be redelivered across syncs, but none can be skipped.")
     deleted: List[UUID] = Field(description="IDs of items that were deleted")
-    full_resync: StrictBool = Field(description="True when `server_changes` holds every live item rather than changes since the request's cursor: no cursor was sent, or this database never issued it (a restored backup). The client must then drop synced cached items missing from `server_changes` — an item created after the backup was taken is in neither `server_changes` nor `deleted`.")
+    full_resync: StrictBool = Field(description="True when `server_changes` holds every live item rather than changes since the request's cursor: no cursor was sent, or it predates a restored backup or import, or came from another database. The client must then drop synced cached items missing from `server_changes` — an item rolled back by a restore is in neither `server_changes` nor `deleted`.")
     server_changes: List[SyncServerChange] = Field(description="Server-side changes since the request's cursor")
     sync_timestamp: datetime = Field(description="Server time when this sync started. Deprecated as a cursor: pass `cursor` instead.")
     updated: List[SyncUpdatedItem] = Field(description="Items that were updated (with success status)")

@@ -34,14 +34,15 @@ export interface SyncRecipesResponse {
      */
     deleted: Array<string>;
     /**
-     * True when this sweep returns every active recipe rather than changes
-     * since `cursor`: `cursor` was absent, or this database never issued it
-     * (a restored backup). The client must then drop cached recipes the
-     * sweep doesn't return — a recipe created after the backup was taken is
-     * in neither `recipes` nor `deleted`. Pages are ordered by ID, so each
-     * page settles the ID range from `after_id` (exclusive) through its last
-     * recipe, or to the end of the ID space on the last page. Same value on
-     * every page of a sweep.
+     * True when this page lists every active recipe in its ID range rather
+     * than changes since `cursor`: `cursor` was absent, predates a restored
+     * backup or import, or came from another database. The client must then
+     * drop cached recipes the sweep doesn't return — a recipe rolled back by
+     * a restore is in neither `recipes` nor `deleted` — and request the
+     * sweep's remaining pages without `cursor`, since a later page could
+     * otherwise judge the same cursor differently. Pages are ordered by ID,
+     * so each settles the ID range from `after_id` (exclusive) through its
+     * last recipe, or to the end of the ID space on the last page.
      * @type {boolean}
      * @memberof SyncRecipesResponse
      */

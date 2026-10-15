@@ -84,8 +84,8 @@ pub struct SyncUpdateItem {
 enum ChangesSince {
     All,
     Cursor(i64),
-    /// A cursor this database never issued: every item, and every deletion,
-    /// as if from the start.
+    /// A cursor this database can't answer with a delta: every item, and
+    /// every deletion, as if from the start.
     Restart,
     /// Wall-clock cursor from clients that predate `cursor`. It can miss a
     /// write that commits after a concurrent sync's read; such clients switch
@@ -163,10 +163,11 @@ pub struct SyncResponse {
     /// redelivered across syncs, but none can be skipped.
     pub cursor: i64,
     /// True when `server_changes` holds every live item rather than changes
-    /// since the request's cursor: no cursor was sent, or this database never
-    /// issued it (a restored backup). The client must then drop synced
-    /// cached items missing from `server_changes` — an item created after the
-    /// backup was taken is in neither `server_changes` nor `deleted`.
+    /// since the request's cursor: no cursor was sent, or it predates a
+    /// restored backup or import, or came from another database. The client
+    /// must then drop synced cached items missing from `server_changes` — an
+    /// item rolled back by a restore is in neither `server_changes` nor
+    /// `deleted`.
     pub full_resync: bool,
     /// Canonical category display order for grouping items; every item's
     /// `category` is guaranteed to appear in this list.
@@ -223,11 +224,13 @@ pub async fn sync_items(
             // Read before this sync's own writes, which therefore carry stamps
             // at or above it and come back on the next sync. Clients apply
             // redelivered changes idempotently by version.
-            let cursor = db::sync_cursor(conn)?;
-            // A cursor this database never issued (see `db::valid_since`)
-            // gets everything, deletions included, as if from the start.
+            let sync_cursor = db::sync_cursor(conn)?;
+            let cursor = sync_cursor.value;
+            // A cursor this database can't answer with a delta (see
+            // `SyncCursor::since`) gets everything, deletions included, as if
+            // from the start.
             let since = match since {
-                ChangesSince::Cursor(since) => match db::valid_since(Some(since), cursor) {
+                ChangesSince::Cursor(since) => match sync_cursor.since(Some(since)) {
                     Some(since) => ChangesSince::Cursor(since),
                     None => ChangesSince::Restart,
                 },
