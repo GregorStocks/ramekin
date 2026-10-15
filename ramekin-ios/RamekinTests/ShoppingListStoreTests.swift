@@ -265,6 +265,15 @@ final class ShoppingListStoreTests: XCTestCase {
         return (CoreDataTestStack.makeStack(), defaults)
     }
 
+    private var defaultsSuiteName: String { "ShoppingListStoreTests.\(name)" }
+    private var firstAccount: String { AccountScope.key(serverURL: "https://one.test", username: "chef") }
+    private var secondUserAccount: String { AccountScope.key(serverURL: "https://one.test", username: "baker") }
+    private var secondServerAccount: String { AccountScope.key(serverURL: "https://two.test", username: "chef") }
+}
+
+// MARK: - Full resync
+
+extension ShoppingListStoreTests {
     func testFullResyncDropsSyncedItemsTheServerNoLongerHas() async throws {
         let (stack, defaults) = makeStorage()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
@@ -288,6 +297,33 @@ final class ShoppingListStoreTests: XCTestCase {
         await store.syncWithServer(isFollowUp: true)
 
         XCTAssertEqual(Set(store.items.compactMap(\.item)), ["Kept", "Pending"])
+    }
+
+    func testFullResyncSettlesPendingDeletesTheServerNeverHad() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let kept = Self.serverChange(item: "Kept")
+        let lost = Self.serverChange(item: "Lost")
+        var responses = [Self.response(serverChanges: [kept, lost])]
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { _ in responses.removeFirst() }
+        )
+        await store.syncWithServer(isFollowUp: true)
+        store.deleteItem(try XCTUnwrap(store.items.first { $0.item == "Lost" }))
+
+        // Restored from a backup taken before "Lost" existed, so the server
+        // can't acknowledge deleting it.
+        responses.append(Self.response(serverChanges: [kept], fullResync: true))
+        await store.syncWithServer(isFollowUp: true)
+
+        XCTAssertEqual(store.items.compactMap(\.item), ["Kept"])
+        XCTAssertTrue(
+            try stack.viewContext.fetch(ShoppingItem.fetchPendingSync(accountKey: firstAccount)).isEmpty
+        )
     }
 
     func testIncrementalSyncKeepsItemsItDoesNotMention() async throws {
@@ -319,11 +355,6 @@ final class ShoppingListStoreTests: XCTestCase {
             item: item, sortOrder: 0, updatedAt: Date(timeIntervalSince1970: 500), version: 1
         )
     }
-
-    private var defaultsSuiteName: String { "ShoppingListStoreTests.\(name)" }
-    private var firstAccount: String { AccountScope.key(serverURL: "https://one.test", username: "chef") }
-    private var secondUserAccount: String { AccountScope.key(serverURL: "https://one.test", username: "baker") }
-    private var secondServerAccount: String { AccountScope.key(serverURL: "https://two.test", username: "chef") }
 }
 
 // MARK: - Conflicts

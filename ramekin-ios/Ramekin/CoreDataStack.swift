@@ -251,12 +251,13 @@ extension ShoppingItem {
     }
 
     /// Fetches items pending deletion
-    static func fetchSynced(accountKey: String) -> NSFetchRequest<ShoppingItem> {
+    static func fetchSyncedOrPendingDelete(accountKey: String) -> NSFetchRequest<ShoppingItem> {
         let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
         request.predicate = NSPredicate(
-            format: "accountKey == %@ AND syncStatus == %@",
+            // A nil status reads as synced (see `syncStatusEnum`).
+            format: "accountKey == %@ AND (syncStatus == nil OR syncStatus IN %@)",
             accountKey,
-            SyncStatus.synced.rawValue
+            [SyncStatus.synced.rawValue, SyncStatus.pendingDelete.rawValue]
         )
         return request
     }

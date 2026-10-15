@@ -45,16 +45,18 @@ enum ShoppingListSyncSupport {
 
     /// A full resync returns every live item, so a synced item it omits is
     /// gone from the server without a tombstone (e.g. created after a
-    /// restored backup was taken). Pending items stay: their own sync round
-    /// settles them.
+    /// restored backup was taken). So is a pending delete it omits: the
+    /// server can't acknowledge deleting a row it never had, and retrying
+    /// would never settle it. Pending creates and updates stay: their own
+    /// sync round settles them.
     static func dropItemsMissingFromFullResync(
         _ response: SyncResponse,
         accountKey: String,
         in context: NSManagedObjectContext
     ) {
         let live = Set(response.serverChanges.map(\.id))
-        let synced = (try? context.fetch(ShoppingItem.fetchSynced(accountKey: accountKey))) ?? []
-        for item in synced {
+        let settled = (try? context.fetch(ShoppingItem.fetchSyncedOrPendingDelete(accountKey: accountKey))) ?? []
+        for item in settled {
             if let id = item.id, !live.contains(id) {
                 context.delete(item)
             }
