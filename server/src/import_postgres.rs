@@ -30,8 +30,6 @@ enum Kind {
     /// jsonb, or a uuid[] read as JSON: re-serialized the way the server
     /// writes JSON (compact, keys sorted).
     Json,
-    /// Json, stored zstd-compressed (`crate::sql_types::CompressedJson`).
-    CompressedJson,
     Int,
     BigInt,
     Real,
@@ -260,7 +258,7 @@ const TABLES: &[Table] = &[
             col("scrape_job_id", Text),
             col("step_name", Text),
             col("build_id", Text),
-            col("output", CompressedJson),
+            col("output", Json),
             col("created_at", Timestamp),
             col("duration_ms", BigInt),
             col("summary", Text),
@@ -278,7 +276,7 @@ fn select_expr(column: &Column) -> String {
         Timestamp => {
             format!("to_char({source} AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.US') || '+00:00'")
         }
-        Text | Json | CompressedJson => format!("({source})::text"),
+        Text | Json => format!("({source})::text"),
         Int | BigInt | Real | Bool | Bytes => source.to_string(),
     }
 }
@@ -291,23 +289,14 @@ enum Value {
     Bytes(Vec<u8>),
 }
 
-/// A JSON column re-serialized the way the server writes JSON.
-fn read_json(row: &Row, index: usize) -> anyhow::Result<Option<String>> {
-    match row.try_get::<_, Option<String>>(index)? {
-        Some(s) => {
-            let parsed: serde_json::Value = serde_json::from_str(&s)?;
-            Ok(Some(serde_json::to_string(&parsed)?))
-        }
-        None => Ok(None),
-    }
-}
-
 fn read(row: &Row, index: usize, column: &Column) -> anyhow::Result<Option<Value>> {
     Ok(match column.kind {
         Text | Timestamp => row.try_get::<_, Option<String>>(index)?.map(Value::Text),
-        Json => read_json(row, index)?.map(Value::Text),
-        CompressedJson => match read_json(row, index)? {
-            Some(json) => Some(Value::Bytes(crate::sql_types::compress_json(&json)?)),
+        Json => match row.try_get::<_, Option<String>>(index)? {
+            Some(s) => {
+                let parsed: serde_json::Value = serde_json::from_str(&s)?;
+                Some(Value::Text(serde_json::to_string(&parsed)?))
+            }
             None => None,
         },
         Int => row
@@ -382,7 +371,9 @@ fn copy_table(
 /// Copy the Postgres database at `postgres_url` into the empty SQLite
 /// database at `database_url`.
 pub fn run(postgres_url: &str, database_url: &str) -> anyhow::Result<()> {
-    let mut conn = db::open_migrated(database_url);
+    // Data migrations wait for the server's first start: run now, they'd
+    // record rows that the copied `data_migrations` table doesn't expect.
+    let mut conn = db::open_schema_migrated(database_url);
     let existing = sqlite_count(&mut conn, "users")? + sqlite_count(&mut conn, "recipes")?;
     anyhow::ensure!(
         existing == 0,

@@ -296,10 +296,19 @@ fn tracing_instrumentation() -> Option<Box<dyn Instrumentation>> {
 }
 
 /// Open the database file (creating it and its directory if missing), set up
-/// the connection, and run pending schema and data migrations. WAL mode is a
+/// the connection, and run pending schema and data migrations.
+pub fn open_migrated(database_url: &str) -> SqliteConnection {
+    let mut conn = open_schema_migrated(database_url);
+    crate::data_migrations::run_pending(&mut conn).expect("Failed to run data migrations");
+    conn
+}
+
+/// [`open_migrated`] without the data migrations, for filling a fresh file
+/// whose data (and `data_migrations` rows) come from elsewhere: those
+/// migrations then run on that data when the server starts. WAL mode is a
 /// property of the file, so it's set here once rather than per connection
 /// (switching it needs every other connection out of the way).
-pub fn open_migrated(database_url: &str) -> SqliteConnection {
+pub fn open_schema_migrated(database_url: &str) -> SqliteConnection {
     if let Some(dir) = std::path::Path::new(database_url).parent() {
         std::fs::create_dir_all(dir)
             .unwrap_or_else(|e| panic!("Failed to create {}: {e}", dir.display()));
@@ -311,7 +320,6 @@ pub fn open_migrated(database_url: &str) -> SqliteConnection {
         .expect("Failed to enable WAL mode");
     conn.run_pending_migrations(MIGRATIONS)
         .expect("Failed to run database migrations");
-    crate::data_migrations::run_pending(&mut conn).expect("Failed to run data migrations");
     conn
 }
 
