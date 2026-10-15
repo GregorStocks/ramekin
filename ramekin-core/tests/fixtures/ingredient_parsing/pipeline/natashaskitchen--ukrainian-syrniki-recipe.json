@@ -5,14 +5,14 @@
     {
       "raw": "15 oz about 2 cups farmers cheese, homemade or purchase 2 packages.",
       "expected": {
-        "item": "about 2 cups farmers cheese, homemade or purchase 2 packages.",
+        "item": "about 2 cups farmers cheese, homemade",
         "measurements": [
           {
             "amount": "15",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "or purchase 2 packages.",
         "category": "Cheese"
       }
     },

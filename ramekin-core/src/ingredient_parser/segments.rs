@@ -26,6 +26,9 @@ pub(super) struct Split<'a> {
     pub sign: bool,
     /// A comma comes right before this separator (", plus more", ", or").
     pub follows_comma: bool,
+    /// The separator's byte span in the string.
+    pub start: usize,
+    pub end: usize,
     /// Everything before the separator.
     pub before: &'a str,
     /// Everything after the separator.
@@ -75,6 +78,8 @@ impl<'a> Segments<'a> {
                     sep,
                     sign,
                     follows_comma,
+                    start,
+                    end,
                     before: trimmed(s, 0, start),
                     after: trimmed(s, end, s.len()),
                     from_sep: trimmed(s, start, s.len()),
@@ -96,16 +101,6 @@ impl<'a> Segments<'a> {
     /// Every top-level separator, in order.
     pub fn splits(&self) -> &[Split<'a>] {
         &self.splits
-    }
-
-    /// The first top-level `sep`.
-    pub fn first(&self, sep: Sep) -> Option<Split<'a>> {
-        self.splits.iter().find(|s| s.sep == sep).copied()
-    }
-
-    /// The last top-level `sep`.
-    pub fn last(&self, sep: Sep) -> Option<Split<'a>> {
-        self.splits.iter().rfind(|s| s.sep == sep).copied()
     }
 
     /// The separator the string starts with ("or 3 cups", "/ 100g", "+ 2 tbsp").
@@ -219,7 +214,9 @@ mod tests {
     #[test]
     fn split_text() {
         let segments = Segments::new("salt, plus more to taste");
-        let plus = segments.first(Sep::Plus).unwrap();
+        let plus = segments.splits()[1];
+        assert_eq!(plus.sep, Sep::Plus);
+        assert_eq!((plus.start, plus.end), (6, 10));
         assert!(plus.follows_comma);
         assert!(!plus.sign);
         assert_eq!(plus.before, "salt,");
@@ -227,9 +224,9 @@ mod tests {
         assert_eq!(plus.from_sep, "plus more to taste");
 
         let segments = Segments::new("a, b, c");
-        assert_eq!(segments.first(Sep::Comma).unwrap().after, "b, c");
-        assert_eq!(segments.last(Sep::Comma).unwrap().before, "a, b");
-        assert!(!segments.last(Sep::Comma).unwrap().follows_comma);
+        assert_eq!(segments.splits()[0].after, "b, c");
+        assert_eq!(segments.splits()[1].before, "a, b");
+        assert!(!segments.splits()[1].follows_comma);
     }
 
     #[test]
