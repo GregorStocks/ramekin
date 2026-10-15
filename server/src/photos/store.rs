@@ -132,9 +132,10 @@ impl PhotoStore {
     }
 }
 
-/// Create the file at `path` through a temporary name beside it, so it
-/// appears whole or not at all, and sync it to disk, so the database row
-/// naming it never outlives it in a crash.
+/// Create the file at `path` (`<store>/<shard>/<hash>`) through a temporary
+/// name beside it, so it appears whole or not at all, and sync it and the
+/// directories leading to it to disk, so the database row naming it never
+/// outlives it in a crash.
 fn write_new(
     path: &Path,
     write: impl FnOnce(&mut File) -> std::io::Result<()>,
@@ -147,8 +148,15 @@ fn write_new(
         write(&mut file)?;
         file.sync_all()?;
         std::fs::rename(&partial, path)?;
+        // The new name, and the entries of the shard and store directories
+        // in case this write created them: a directory entry is only durable
+        // once its parent is synced. Always, not just when this call created
+        // them, since a concurrent write may have created them without
+        // syncing yet.
         #[cfg(unix)]
-        File::open(dir)?.sync_all()?;
+        for synced in dir.ancestors().take(3) {
+            File::open(synced)?.sync_all()?;
+        }
         std::io::Result::Ok(())
     })();
     if result.is_err() {
