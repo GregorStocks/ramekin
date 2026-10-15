@@ -1,7 +1,6 @@
 import {
   createSignal,
   createEffect,
-  createResource,
   onCleanup,
   For,
   Show,
@@ -14,6 +13,7 @@ import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import { logger } from "../utils/logger";
+import { createApiResource } from "../utils/asyncState";
 
 type ConnectionStatus = "checking" | "connected" | "error";
 type UploadState = "idle" | "uploading" | "done";
@@ -75,17 +75,29 @@ export default function SettingsPage() {
   };
 
   // Ingredient names the catalog doesn't know, resolved in the background.
-  const [nameStatus, { refetch: refetchNameStatus }] = createResource(() =>
-    getIngredientNamesApi().getIngredientNamesStatus(),
+  const nameStatus = createApiResource(
+    () => getIngredientNamesApi().getIngredientNamesStatus(),
+    "Could not load ingredient recognition status",
   );
+  const refetchNameStatus = () => void nameStatus.refetch();
   const [retrying, setRetrying] = createSignal(false);
   const [nameMessage, setNameMessage] = createSignal<string | null>(null);
   const [nameError, setNameError] = createSignal<string | null>(null);
-  const failedCount = () => nameStatus()?.failed ?? 0;
-  // Keep the counts current while names are waiting.
+  const failedCount = () => nameStatus.data()?.failed ?? 0;
+  // Keep the counts current while names are waiting, and keep retrying a
+  // failed status request, backing off from 2 s to a minute.
+  let statusFailures = 0;
   createEffect(() => {
-    if ((nameStatus()?.pending ?? 0) === 0) return;
-    const timer = setTimeout(() => refetchNameStatus(), 2000);
+    let delay: number;
+    if (nameStatus.error()) {
+      delay = Math.min(2000 * 2 ** statusFailures, 60000);
+      statusFailures++;
+    } else {
+      statusFailures = 0;
+      if ((nameStatus.data()?.pending ?? 0) === 0) return;
+      delay = 2000;
+    }
+    const timer = setTimeout(refetchNameStatus, delay);
     onCleanup(() => clearTimeout(timer));
   });
   const handleRetryNames = async () => {
@@ -166,7 +178,14 @@ export default function SettingsPage() {
           likely means, and a food the catalog has no entry for gets estimated
           calories. Until then they count as unknown in calorie estimates.
         </p>
-        <Show when={nameStatus()}>
+        <Show when={nameStatus.error()}>
+          {(error) => (
+            <p class="error settings-name-unavailable">
+              Recognition status is unavailable: {error()}
+            </p>
+          )}
+        </Show>
+        <Show when={nameStatus.data()}>
           {(status) => (
             <>
               <p class="settings-name-counts">
