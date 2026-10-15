@@ -7,10 +7,10 @@
 //! written under a temporary name and renamed into place, so a sync tool
 //! watching the directory never picks up a partial file.
 //!
-//! Photo files live outside the database (crate::photos::store). After each
-//! snapshot, the ones the backup directory's `photos/` lacks are copied in.
-//! They never change and are never deleted, there or in the live store, so
-//! that copy covers every photo any snapshot names.
+//! Photo files live outside the database (crate::photos::store). Before a
+//! snapshot gets its name, the ones the backup directory's `photos/` lacks
+//! are copied in. They never change and are never deleted, there or in the
+//! live store, so that copy covers every photo any snapshot names.
 
 use crate::db::{self, DbPool};
 use crate::photos::store::live;
@@ -50,13 +50,20 @@ fn taken_at(name: &str) -> Option<DateTime<Utc>> {
 }
 
 /// Write a snapshot of the database `conn` is open on into `dir`, named for
-/// `now`. Returns its path.
+/// `now`, with the photo files it names. Returns its path.
 pub fn snapshot(
     conn: &mut SqliteConnection,
     dir: &Path,
     now: DateTime<Utc>,
 ) -> anyhow::Result<PathBuf> {
-    let path = dir.join(file_name(now));
+    write_partial(conn, dir)?;
+    let (path, _) = publish(&PhotoStore::of(conn)?, dir, now)?;
+    Ok(path)
+}
+
+/// Write a snapshot of the database `conn` is open on into `dir` under the
+/// temporary name, for [`publish`] to finish.
+fn write_partial(conn: &mut SqliteConnection, dir: &Path) -> anyhow::Result<()> {
     // One fixed temporary name: VACUUM INTO refuses to overwrite a file, and
     // whatever a crashed or failed attempt left there is incomplete, so each
     // attempt clears it rather than leaving one behind per attempt.
@@ -70,8 +77,24 @@ pub fn snapshot(
     diesel::sql_query("VACUUM INTO ?")
         .bind::<Text, _>(target)
         .execute(conn)?;
-    std::fs::rename(&partial, &path)?;
-    Ok(path)
+    Ok(())
+}
+
+/// Finish the snapshot [`write_partial`] left in `dir`: copy in the photo
+/// files `dir`'s store lacks from `photos`, the store the snapshot came
+/// from, then give the snapshot its name for `now`. Only a snapshot whose
+/// photos are all backed up carries a snapshot name, so a failed copy never
+/// leaves one that looks complete. Returns its path and how many photo files
+/// were copied.
+fn publish(
+    photos: &PhotoStore,
+    dir: &Path,
+    now: DateTime<Utc>,
+) -> anyhow::Result<(PathBuf, usize)> {
+    let copied = photos.copy_missing_into(&backup_store(dir))?;
+    let path = dir.join(file_name(now));
+    std::fs::rename(dir.join(PARTIAL), &path)?;
+    Ok((path, copied))
 }
 
 /// The photo store in the backup directory `dir`.
@@ -128,11 +151,10 @@ fn newest(dir: &Path) -> anyhow::Result<Option<DateTime<Utc>>> {
 async fn run_once(pool: &DbPool, dir: PathBuf) -> anyhow::Result<()> {
     let now = Utc::now();
     let snapshot_dir = dir.clone();
-    let path = db::run_blocking(pool, move |conn| snapshot(conn, &snapshot_dir, now)).await??;
-    // After the snapshot, so every file it names is already in the live
-    // store; and without a connection, since it's only file copies.
+    db::run_blocking(pool, move |conn| write_partial(conn, &snapshot_dir)).await??;
+    // Without a connection: it's only file copies and a rename.
     tokio::task::spawn_blocking(move || {
-        let photos = live().copy_missing_into(&backup_store(&dir))?;
+        let (path, photos) = publish(live(), &dir, now)?;
         tracing::info!(path = %path.display(), photos, "database snapshot written");
         if let Err(e) = prune(&dir, now) {
             tracing::error!(dir = %dir.display(), "pruning old database snapshots failed: {e:#}");
@@ -244,9 +266,7 @@ pub fn run_command(database_url: &str, dir: &Path) -> anyhow::Result<PathBuf> {
     std::fs::create_dir_all(dir)?;
     let mut conn = SqliteConnection::establish(database_url)?;
     db::setup_connection(&mut conn)?;
-    let path = snapshot(&mut conn, dir, Utc::now())?;
-    PhotoStore::of(&mut conn)?.copy_missing_into(&backup_store(dir))?;
-    Ok(path)
+    snapshot(&mut conn, dir, Utc::now())
 }
 
 #[cfg(test)]
@@ -405,6 +425,24 @@ mod tests {
             PhotoStore::of(&mut conn).unwrap().read(&hash).unwrap(),
             b"photo"
         );
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
+    fn a_snapshot_whose_photos_fail_to_copy_keeps_its_temporary_name() {
+        let dir =
+            std::env::temp_dir().join(format!("ramekin-photo-fail-test-{}", uuid::Uuid::new_v4()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let live = dir.join("live.sqlite");
+        let mut conn = db::open_migrated(live.to_str().unwrap());
+        PhotoStore::beside(&live).put(b"photo").unwrap();
+        let backups = dir.join("backups");
+        std::fs::create_dir_all(&backups).unwrap();
+        // A file where the photo directory should be: the copy fails.
+        std::fs::write(backups.join(PHOTOS), b"").unwrap();
+
+        assert!(snapshot(&mut conn, &backups, Utc::now()).is_err());
+        assert!(snapshot_names(&backups).unwrap().is_empty());
         std::fs::remove_dir_all(&dir).unwrap();
     }
 

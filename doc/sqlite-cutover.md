@@ -103,9 +103,10 @@ there once a day (on startup too, if the newest is more than a day old) and
 deletes snapshots older than 7 days. Without it, the server logs a warning at
 startup and backs nothing up.
 
-After each snapshot, the photo files the backup folder's `photos/` lacks are
-copied in. Since photo files never change, that keeps `photos/` complete for
-every snapshot; it's never pruned.
+With each snapshot, the photo files the backup folder's `photos/` lacks are
+copied in before the snapshot gets its name, so a snapshot you can see always
+has its photos. Since photo files never change, that keeps `photos/` complete
+for every snapshot; it's never pruned.
 
 A snapshot is `ramekin-<UTC time>.sqlite`: SQLite's `VACUUM INTO`, a
 consistent, compacted, self-contained copy taken while the server keeps
