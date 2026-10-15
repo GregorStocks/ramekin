@@ -84,7 +84,7 @@ def mock_calls(name: str) -> int:
 
 def mock_answers(name: str) -> int:
     """Valid answers sent for the name. A batch that another test's failing
-    name broke is re-asked name by name, which adds a call but no answer."""
+    name broke is re-asked in halves, which adds calls but no answer."""
     return mock_counts(name)["answers"]
 
 

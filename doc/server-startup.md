@@ -84,6 +84,21 @@ at this point, and none of the steps below run for them.
 - **Recommendation:** Keep the runner. Keep deleting each migration once it
   has run in prod, as the module comment already says to.
 
+### 3a. Move photo bytes out (`photos::store::move_blobs_out`)
+
+- **What:** Photo bytes live in files in `<DATABASE_URL>-photos/`, not in the
+  database (`doc/sqlite-cutover.md`, "Photo files"). A database that still
+  has the legacy BLOB columns gets them copied out to files, 16 rows per
+  write transaction, then the emptied columns dropped and the file VACUUMed.
+- **Cost:** One `pragma_table_info` query once the columns are gone. The one
+  run that moves them reads and writes every photo (about 1 GB), then
+  VACUUMs.
+- **On failure:** Panics. A later start resumes where it stopped.
+- **Must block serving:** Yes. Reads and writes use the files and hash
+  columns only.
+- **Recommendation:** Keep until it has run in prod, then delete it along
+  with the legacy table declarations in `photos/store.rs`.
+
 ### 4. Connection pool (`create_pool`)
 
 - **What:** Builds an r2d2 pool of up to 32 connections, with 4 kept open.
@@ -94,6 +109,10 @@ at this point, and none of the steps below run for them.
 - **Must block serving:** Yes. Every later step uses the pool.
 - **Recommendation:** Keep.
 
+Right after, `photos::store::init_live` asks the database where its file is
+and records the photo store beside it, which every photo read and write uses.
+One query; panics if the database isn't a file on disk.
+
 ### 5. Backup scheduler (`backup::spawn_scheduler`), in the background
 
 - **What:** If `RAMEKIN_BACKUP_DIR` is set, takes a snapshot right away when
@@ -103,7 +122,8 @@ at this point, and none of the steps below run for them.
 - **Cost:** Blocks only for `create_dir_all`. The background task scans the
   directory for the newest snapshot. If it's missing or more than a day old,
   the task runs `VACUUM INTO` right away, which reads the whole database
-  (about 1 GB today) while the server serves.
+  (about 1 GB today) while the server serves, then copies the photo files
+  the backup's `photos/` lacks.
 - **On failure:** If the directory can't be created, the server panics. A
   failed snapshot logs an error and retries.
 - **Must block serving:** No, and it doesn't.
@@ -211,6 +231,7 @@ at this point, and none of the steps below run for them.
 | Telemetry | yes | exporter build only | — | keep |
 | Schema migrations | yes | yes | pending migrations | keep |
 | Data migrations | yes | yes | pending migrations (none) | keep the runner |
+| Move photo bytes out | yes | yes | photos, once | delete after it runs in prod |
 | Connection pool | yes | yes | — | keep |
 | Backup scheduler | no | dir creation only | database size (snapshot if overdue) | keep |
 | `reconcile_categories` | yes | yes | shopping items | keep |

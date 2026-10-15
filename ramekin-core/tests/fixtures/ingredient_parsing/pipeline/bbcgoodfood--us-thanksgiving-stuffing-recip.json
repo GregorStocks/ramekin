@@ -5,14 +5,14 @@
     {
       "raw": "1 stick plus 2 tbsp butter plus extra for the dish",
       "expected": {
-        "item": "butter plus extra for the dish",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1 stick plus 2 tbsp",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "plus extra for the dish",
         "category": "Dairy & Eggs"
       }
     },

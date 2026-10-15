@@ -464,7 +464,7 @@ async fn resolve_next_batch(pool: &Arc<DbPool>, only: Option<Vec<String>>) -> Re
     .map_err(|e| e.to_string())?;
     // A name the model already gave an invalid answer for is asked alone, after
     // every fresh name: batched again, it would likely break the batch, and
-    // every other name in it would be asked again one at a time.
+    // the batch would be split again to find it.
     let batch: Vec<String> = match pending.first() {
         None => return Ok(Step::Idle),
         Some((name, attempts)) if *attempts > 0 => vec![name.clone()],
@@ -526,38 +526,68 @@ enum Batch {
 }
 
 /// Resolve one batch. If the model's answer for a multi-name batch is
-/// invalid, each name is retried alone, so one name the model can't handle
-/// doesn't fail the others; only the names that fail on their own are marked
-/// failed. Provider and configuration errors fail the batch at once. `Err`
-/// means an outcome couldn't be saved.
+/// invalid, the batch is split in halves and each half asked again, down to
+/// single names, so one name the model can't handle doesn't fail the others
+/// and costs about 2*log2(n) calls to find rather than one per name; only the
+/// names that fail on their own are marked failed. Provider and configuration
+/// errors fail the batch at once. `Err` means an outcome couldn't be saved.
 async fn resolve_batch(pool: &Arc<DbPool>, batch: Vec<String>) -> Result<Batch, String> {
-    let error = match ask(&batch).await {
-        Ok((resolutions, model)) => {
-            save_resolved(pool, resolutions, model).await?;
-            return Ok(Batch::Resolved);
-        }
-        Err(error) if error.is_answer_specific() && batch.len() > 1 => error.to_string(),
-        Err(error) => return fail(pool, batch, error).await,
-    };
-    tracing::warn!(
-        names = batch.len(),
-        "ingredient name batch failed, retrying names one at a time: {}",
-        error
-    );
+    bisect(batch, |chunk| async move {
+        let error = match ask(&chunk).await {
+            Ok((resolutions, model)) => {
+                save_resolved(pool, resolutions, model).await?;
+                return Ok(Attempt::Answered);
+            }
+            Err(error) if error.is_answer_specific() && chunk.len() > 1 => error,
+            Err(error) => return Ok(Attempt::Recorded(fail(pool, chunk, error).await?)),
+        };
+        tracing::warn!(
+            names = chunk.len(),
+            "ingredient name batch failed, retrying it in halves: {}",
+            error
+        );
+        Ok(Attempt::Invalid)
+    })
+    .await
+}
+
+/// How asking about one chunk of a batch went.
+enum Attempt {
+    /// Answered and saved.
+    Answered,
+    /// The model's answer for this multi-name chunk was invalid; nothing was
+    /// recorded, so its names are asked again in smaller chunks.
+    Invalid,
+    /// A failure recorded on the chunk's names.
+    Recorded(Batch),
+}
+
+/// Ask about `batch` with `attempt`, splitting each chunk it calls invalid in
+/// halves, in order, until every name is answered or recorded. The first
+/// names-failed outcome is kept; a provider failure stops at once and leaves
+/// the names not yet asked about pending.
+async fn bisect<F, Fut>(batch: Vec<String>, mut attempt: F) -> Result<Batch, String>
+where
+    F: FnMut(Vec<String>) -> Fut,
+    Fut: std::future::Future<Output = Result<Attempt, String>>,
+{
     let mut outcome = Batch::Resolved;
-    for name in batch {
-        let single = vec![name];
-        match ask(&single).await {
-            Ok((resolutions, model)) => save_resolved(pool, resolutions, model).await?,
-            Err(error) => match fail(pool, single, error).await? {
-                Batch::NamesFailed(e) => {
-                    if matches!(outcome, Batch::Resolved) {
-                        outcome = Batch::NamesFailed(e);
-                    }
+    // A stack, so the first half is asked before the second.
+    let mut chunks = vec![batch];
+    while let Some(mut chunk) = chunks.pop() {
+        match attempt(chunk.clone()).await? {
+            Attempt::Answered | Attempt::Recorded(Batch::Resolved) => {}
+            Attempt::Invalid => {
+                let second = chunk.split_off(chunk.len() / 2);
+                chunks.push(second);
+                chunks.push(chunk);
+            }
+            Attempt::Recorded(Batch::NamesFailed(e)) => {
+                if matches!(outcome, Batch::Resolved) {
+                    outcome = Batch::NamesFailed(e);
                 }
-                // Names not yet asked about stay pending.
-                provider => return Ok(provider),
-            },
+            }
+            Attempt::Recorded(provider) => return Ok(provider),
         }
     }
     Ok(outcome)
@@ -751,6 +781,94 @@ mod tests {
             disposition: disposition.map(str::to_string),
             catalog_key: key.map(str::to_string),
         }
+    }
+
+    /// Run `bisect` over `names` against a model that breaks any multi-name
+    /// chunk holding a name in `bad`, fails a bad name alone, and goes down
+    /// when asked about `down` alone. Returns the outcome and every chunk asked.
+    async fn bisect_with(
+        names: &[String],
+        bad: &[&str],
+        down: Option<&str>,
+    ) -> (Batch, Vec<Vec<String>>) {
+        let asked = std::cell::RefCell::new(Vec::new());
+        let outcome = bisect(names.to_vec(), |chunk| {
+            asked.borrow_mut().push(chunk.clone());
+            let attempt = if down.is_some_and(|d| chunk == [d]) {
+                Attempt::Recorded(Batch::ProviderFailed("down".to_string()))
+            } else if !chunk.iter().any(|n| bad.contains(&n.as_str())) {
+                Attempt::Answered
+            } else if chunk.len() > 1 {
+                Attempt::Invalid
+            } else {
+                Attempt::Recorded(Batch::NamesFailed(format!("{} failed", chunk[0])))
+            };
+            async move { Ok::<_, String>(attempt) }
+        })
+        .await
+        .unwrap();
+        (outcome, asked.into_inner())
+    }
+
+    fn numbered(n: usize) -> Vec<String> {
+        (0..n).map(|i| format!("name {i:02}")).collect()
+    }
+
+    #[tokio::test]
+    async fn a_good_batch_is_asked_once() {
+        let names = numbered(40);
+        let (outcome, asked) = bisect_with(&names, &[], None).await;
+        assert!(matches!(outcome, Batch::Resolved));
+        assert_eq!(asked, vec![names]);
+    }
+
+    #[tokio::test]
+    async fn one_bad_name_in_a_full_batch_is_found_in_halves() {
+        let names = numbered(40);
+        let (outcome, asked) = bisect_with(&names, &["name 17"], None).await;
+        assert!(matches!(outcome, Batch::NamesFailed(e) if e == "name 17 failed"));
+        // One call per level for each half, against 41 one name at a time.
+        assert!(asked.len() <= 2 * 6 + 1, "{} calls", asked.len());
+        // Every name ends in exactly one answered or failed single call.
+        let mut settled: Vec<&String> = asked
+            .iter()
+            .filter(|chunk| chunk.len() == 1 || !chunk.contains(&"name 17".to_string()))
+            .flatten()
+            .collect();
+        settled.sort();
+        assert_eq!(settled, names.iter().collect::<Vec<_>>());
+    }
+
+    #[tokio::test]
+    async fn every_bad_name_fails_and_the_first_failure_is_kept() {
+        let names = numbered(8);
+        let (outcome, asked) = bisect_with(&names, &["name 06", "name 01"], None).await;
+        assert!(matches!(outcome, Batch::NamesFailed(e) if e == "name 01 failed"));
+        let failed: Vec<&String> = asked
+            .iter()
+            .filter(|chunk| matches!(chunk.as_slice(), [n] if n == "name 01" || n == "name 06"))
+            .flatten()
+            .collect();
+        assert_eq!(failed, vec!["name 01", "name 06"]);
+    }
+
+    #[tokio::test]
+    async fn a_provider_failure_stops_the_split() {
+        let names = numbered(8);
+        let (outcome, asked) = bisect_with(&names, &["name 02"], Some("name 02")).await;
+        assert!(matches!(outcome, Batch::ProviderFailed(e) if e == "down"));
+        // Names 03 to 07 were never asked about, so they stay pending.
+        let chunk = |range: std::ops::Range<usize>| names[range].to_vec();
+        assert_eq!(
+            asked,
+            vec![
+                chunk(0..8),
+                chunk(0..4),
+                chunk(0..2),
+                chunk(2..4),
+                chunk(2..3)
+            ]
+        );
     }
 
     #[test]

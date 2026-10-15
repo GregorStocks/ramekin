@@ -253,6 +253,7 @@ async fn main() {
     }
 
     let pool: AppState = Arc::new(db::create_pool(&database_url));
+    photos::store::init_live(&pool).expect("Failed to find the photo store");
 
     // Daily snapshots of the database (doc/sqlite-cutover.md, Backups).
     match env::var_os("RAMEKIN_BACKUP_DIR") {

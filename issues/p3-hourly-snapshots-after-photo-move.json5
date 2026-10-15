@@ -1,0 +1,17 @@
+{
+  "title": "Measure the database after photos moved to files; consider hourly snapshots",
+  "description": "Photo bytes now live in <DATABASE_URL>-photos/ instead of the SQLite file (server/src/photos/store.rs), and the first startup after that change moves existing BLOBs out, drops the columns and VACUUMs. \
+That change couldn't be measured against real data when it landed. \
+On a copy of prod (never prod itself): copy the database with `sqlite3 -readonly <db> \"VACUUM INTO '/tmp/copy.sqlite'\"`, note its size, start a server on the copy (or run `ramekin-server backup` against it after a startup), and compare the file size and the photos directory size afterwards. \
+Spot-check that photos and thumbnails load from the copy. \
+If the database is now small, switch backup.rs's INTERVAL from daily back to hourly (and update doc/sqlite-cutover.md's Backups section and dev.env.example). \
+Related: p4-compress-fetched-html, the other large thing in the file.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+  ],
+  "created_at": "2026-10-14T16:30:00-07:00",
+  "updated_at": "2026-10-14T16:30:00-07:00",
+}
