@@ -6,6 +6,7 @@ use diesel::r2d2::{self, ConnectionManager, CustomizeConnection};
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
 use std::cell::{Cell, RefCell};
 use std::sync::Mutex;
+use std::time::{Duration, Instant};
 use tracing::Span;
 
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("../migrations");
@@ -50,16 +51,53 @@ impl Drop for FlagGuard {
     }
 }
 
+/// A write lock wait or hold longer than this logs a warning; shorter ones
+/// log at debug. Every other writer queues behind a long hold, and SQLite
+/// fails a writer whose wait on the file lock passes the busy timeout.
+const SLOW_WRITE_LOCK: Duration = Duration::from_millis(500);
+
+/// The app-wide write lock, held until dropped. Logs how long it was held.
+struct WriteLockGuard {
+    _lock: std::sync::MutexGuard<'static, ()>,
+    _holds: FlagGuard,
+    acquired: Instant,
+}
+
+impl Drop for WriteLockGuard {
+    fn drop(&mut self) {
+        let held = self.acquired.elapsed();
+        let held_ms = held.as_millis() as u64;
+        if held >= SLOW_WRITE_LOCK {
+            tracing::warn!(held_ms, "slow write lock hold");
+        } else {
+            tracing::debug!(held_ms, "released write lock");
+        }
+    }
+}
+
 /// The app-wide write lock, held until dropped. None when this thread
-/// already holds it.
-fn lock_writes() -> Option<(std::sync::MutexGuard<'static, ()>, FlagGuard)> {
+/// already holds it. Logs how long it waited for the lock.
+fn lock_writes() -> Option<WriteLockGuard> {
     if HOLDS_WRITE_LOCK.get() {
         return None;
     }
+    let started = Instant::now();
     let lock = WRITE_LOCK
         .lock()
         .unwrap_or_else(|poisoned| poisoned.into_inner());
-    Some((lock, FlagGuard::set(&HOLDS_WRITE_LOCK)))
+    let acquired = Instant::now();
+    let waited = acquired - started;
+    let waited_ms = waited.as_millis() as u64;
+    if waited >= SLOW_WRITE_LOCK {
+        tracing::warn!(waited_ms, "slow write lock wait");
+    } else {
+        tracing::debug!(waited_ms, "acquired write lock");
+    }
+    Some(WriteLockGuard {
+        _lock: lock,
+        _holds: FlagGuard::set(&HOLDS_WRITE_LOCK),
+        acquired,
+    })
 }
 
 /// Run `f` in a write transaction. It takes the app-wide write lock, then
@@ -271,7 +309,14 @@ impl Instrumentation for TracingInstrumentation {
                     if let Some((span, _entered)) = cell.borrow_mut().take() {
                         if let Some(err) = error {
                             span.record("error", tracing::field::display(err));
-                            tracing::warn!(parent: &span, error = %err, "query failed");
+                            if is_database_locked(err) {
+                                // A writer waited out busy_timeout on SQLite's
+                                // file lock: something wrote outside `write`,
+                                // or another process holds the file.
+                                tracing::error!(parent: &span, error = %err, "database is locked");
+                            } else {
+                                tracing::warn!(parent: &span, error = %err, "query failed");
+                            }
                         }
                         // _entered is dropped here, exiting the span
                     }
@@ -289,6 +334,12 @@ impl Instrumentation for TracingInstrumentation {
             _ => {}
         }
     }
+}
+
+/// Whether `err` is SQLite's SQLITE_BUSY ("database is locked"), which
+/// Diesel surfaces only as a message.
+fn is_database_locked(err: &diesel::result::Error) -> bool {
+    err.to_string().contains("database is locked")
 }
 
 fn tracing_instrumentation() -> Option<Box<dyn Instrumentation>> {
@@ -335,4 +386,25 @@ pub fn create_pool(database_url: &str) -> DbPool {
         .connection_customizer(Box::new(ConnectionSetup))
         .build(manager)
         .expect("Failed to create database pool")
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn recognizes_a_busy_writer() {
+        let dir = std::env::temp_dir().join(format!("ramekin-db-lock-{}", uuid::Uuid::new_v4()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let url = dir.join("db.sqlite").to_str().unwrap().to_string();
+        let mut holder = SqliteConnection::establish(&url).unwrap();
+        holder.batch_execute("BEGIN IMMEDIATE;").unwrap();
+        let mut waiter = SqliteConnection::establish(&url).unwrap();
+        let err = waiter
+            .batch_execute("PRAGMA busy_timeout = 0; BEGIN IMMEDIATE;")
+            .unwrap_err();
+        assert!(is_database_locked(&err), "{err}");
+        assert!(!is_database_locked(&diesel::result::Error::NotFound));
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
 }
