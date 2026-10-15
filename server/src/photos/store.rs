@@ -81,9 +81,14 @@ impl PhotoStore {
     }
 
     /// The files rows in the database `conn` is open on name, deleted
-    /// photos' included, that this store doesn't have.
+    /// photos' included, that this store doesn't have. Rows whose bytes are
+    /// still in the database (a database from before photo files, or one
+    /// part way through [`move_blobs_out`]) name no files.
     pub fn missing(&self, conn: &mut SqliteConnection) -> anyhow::Result<Vec<String>> {
         use crate::schema::{photo_thumbnails, photos};
+        if !has_column(conn, "photos", "data_hash")? {
+            return Ok(Vec::new());
+        }
         let mut hashes: Vec<String> = photos::table.select(photos::data_hash).load(conn)?;
         hashes.extend(
             photos::table
@@ -95,6 +100,7 @@ impl PhotoStore {
                 .select(photo_thumbnails::data_hash)
                 .load::<String>(conn)?,
         );
+        hashes.retain(|hash| !hash.is_empty());
         hashes.sort_unstable();
         hashes.dedup();
         let mut missing = Vec::new();
@@ -260,6 +266,17 @@ mod unlisted {
     }
 }
 
+/// Whether `table` in the database `conn` is open on has `column`.
+fn has_column(conn: &mut SqliteConnection, table: &str, column: &str) -> QueryResult<bool> {
+    use unlisted::pragma_table_info as columns;
+    let count: i64 = columns::table
+        .filter(columns::arg.eq(table))
+        .filter(columns::name.eq(column))
+        .count()
+        .get_result(conn)?;
+    Ok(count > 0)
+}
+
 /// Rows per batch when moving legacy BLOBs out. A batch's bytes are all in
 /// memory at once (an original can be 10 MB), and its write transaction
 /// holds up every other writer.
@@ -272,14 +289,9 @@ const MOVE_BATCH: i64 = 16;
 /// transaction, so an interrupted run resumes where it stopped. Does nothing
 /// once the columns are gone.
 pub fn move_blobs_out(conn: &mut SqliteConnection) -> anyhow::Result<()> {
-    use unlisted::{photo_thumbnails, photos, pragma_table_info as columns};
+    use unlisted::{photo_thumbnails, photos};
 
-    let legacy: i64 = columns::table
-        .filter(columns::arg.eq("photos"))
-        .filter(columns::name.eq("data"))
-        .count()
-        .get_result(conn)?;
-    if legacy == 0 {
+    if !has_column(conn, "photos", "data")? {
         return Ok(());
     }
     let store = PhotoStore::of(conn)?;

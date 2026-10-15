@@ -531,6 +531,27 @@ mod tests {
     }
 
     #[test]
+    fn a_database_from_before_photo_files_backs_up() {
+        use diesel_migrations::MigrationHarness;
+        let dir = std::env::temp_dir().join(format!(
+            "ramekin-legacy-backup-test-{}",
+            uuid::Uuid::new_v4()
+        ));
+        std::fs::create_dir_all(&dir).unwrap();
+        let live = dir.join("live.sqlite");
+        let live = live.to_str().unwrap();
+        let mut conn = SqliteConnection::establish(live).unwrap();
+        db::setup_connection(&mut conn).unwrap();
+        // The baseline schema alone: photo bytes still in BLOB columns.
+        conn.run_next_migration(db::MIGRATIONS).unwrap();
+        drop(conn);
+
+        let path = run_command(live, &dir.join("backups")).unwrap();
+        assert!(path.is_file());
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
     fn nothing_to_prune_in_an_empty_directory() {
         assert!(to_prune(&[], Utc::now()).is_empty());
     }
