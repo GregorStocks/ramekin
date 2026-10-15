@@ -107,11 +107,11 @@
     {
       "raw": "1 14 1/2-ounce can diced tomatoes",
       "expected": {
-        "item": "14 1/2-ounce can diced tomatoes",
+        "item": "diced tomatoes",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "14 1/2-ounce can"
           }
         ],
         "note": null,
@@ -121,11 +121,11 @@
     {
       "raw": "2 15 1/2-ounce cans kidney beans, drained and rinsed",
       "expected": {
-        "item": "15 1/2-ounce cans kidney beans",
+        "item": "kidney beans",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "15 1/2-ounce cans"
           }
         ],
         "note": "drained and rinsed",
