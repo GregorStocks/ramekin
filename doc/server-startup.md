@@ -72,13 +72,16 @@ at this point, and none of the steps below run for them.
 ### 3. Data migrations (`data_migrations::run_pending`)
 
 - **What:** Runs Rust migrations that need server logic, such as the
-  ingredient parser or the catalog. Each one runs once, in the same
-  transaction as the row that records it. Added in 61e3efdb5.
-- **Today:** The list is empty. When this issue was filed, the list held
-  `strip_materialized_grams` and `promote_section_headers`, which rewrote
-  every recipe. Both had already run in prod (their rows are in
-  `data_migrations`), and the SQLite move (aa5cd81cd) deleted them.
-- **Cost:** One `SELECT` on `data_migrations`.
+  ingredient parser or the catalog, or that rewrite a big table. Each one
+  runs once, either in the same transaction as the row that records it or,
+  for a batched one, one short transaction per batch. Added in 61e3efdb5.
+- **Today:** The list holds `compress_step_outputs`, which zstd-compresses
+  step outputs stored as plain JSON text, 100 rows per transaction. When
+  this issue was filed, the list held `strip_materialized_grams` and
+  `promote_section_headers`, which rewrote every recipe. Both had already
+  run in prod (their rows are in `data_migrations`), and the SQLite move
+  (aa5cd81cd) deleted them.
+- **Cost:** One `SELECT` on `data_migrations` once everything has run.
 - **On failure:** Startup aborts, which is what a migration should do.
 - **Must block serving:** Yes, whenever there's a migration to run.
 - **Recommendation:** Keep the runner. Keep deleting each migration once it

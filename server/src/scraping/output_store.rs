@@ -14,6 +14,7 @@ use crate::db::{run_blocking, DbPool};
 use crate::models::{NewStepOutput, StepOutput};
 use crate::schema::step_outputs;
 use crate::scraping::status::step_summary;
+use crate::sql_types::Compressed;
 
 /// Database-backed output store for server pipeline runs.
 ///
@@ -67,7 +68,7 @@ impl<'a> DbOutputStore<'a> {
             scrape_job_id: self.job_id,
             step_name: step_name.to_string(),
             build_id: BUILD_ID.to_string(),
-            output: output.clone(),
+            output: Compressed(output.clone()),
             duration_ms: Some(duration_ms),
             summary: step_summary(step_name, output),
             success,

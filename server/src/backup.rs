@@ -382,7 +382,7 @@ mod tests {
             .select(crate::schema::data_migrations::name)
             .load(&mut restored)
             .unwrap();
-        assert_eq!(names, vec!["backup-test".to_string()]);
+        assert!(names.contains(&"backup-test".to_string()), "{names:?}");
         std::fs::remove_dir_all(&dir).unwrap();
     }
 }

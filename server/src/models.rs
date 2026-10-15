@@ -1,4 +1,5 @@
 use crate::ids::{PhotoIds, Uuid};
+use crate::sql_types::Compressed;
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use ramekin_core::catalog::Learned;
@@ -362,7 +363,7 @@ pub struct NewStepOutput {
     pub scrape_job_id: Uuid,
     pub step_name: String,
     pub build_id: String,
-    pub output: JsonValue,
+    pub output: Compressed,
     pub duration_ms: Option<i64>,
     pub summary: Option<String>,
     pub success: bool,

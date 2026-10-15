@@ -30,6 +30,8 @@ enum Kind {
     /// jsonb, or a uuid[] read as JSON: re-serialized the way the server
     /// writes JSON (compact, keys sorted).
     Json,
+    /// Json, stored zstd-compressed (`crate::sql_types::CompressedJson`).
+    CompressedJson,
     Int,
     BigInt,
     Real,
@@ -258,7 +260,7 @@ const TABLES: &[Table] = &[
             col("scrape_job_id", Text),
             col("step_name", Text),
             col("build_id", Text),
-            col("output", Json),
+            col("output", CompressedJson),
             col("created_at", Timestamp),
             col("duration_ms", BigInt),
             col("summary", Text),
@@ -276,7 +278,7 @@ fn select_expr(column: &Column) -> String {
         Timestamp => {
             format!("to_char({source} AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.US') || '+00:00'")
         }
-        Text | Json => format!("({source})::text"),
+        Text | Json | CompressedJson => format!("({source})::text"),
         Int | BigInt | Real | Bool | Bytes => source.to_string(),
     }
 }
@@ -289,14 +291,23 @@ enum Value {
     Bytes(Vec<u8>),
 }
 
+/// A JSON column re-serialized the way the server writes JSON.
+fn read_json(row: &Row, index: usize) -> anyhow::Result<Option<String>> {
+    match row.try_get::<_, Option<String>>(index)? {
+        Some(s) => {
+            let parsed: serde_json::Value = serde_json::from_str(&s)?;
+            Ok(Some(serde_json::to_string(&parsed)?))
+        }
+        None => Ok(None),
+    }
+}
+
 fn read(row: &Row, index: usize, column: &Column) -> anyhow::Result<Option<Value>> {
     Ok(match column.kind {
         Text | Timestamp => row.try_get::<_, Option<String>>(index)?.map(Value::Text),
-        Json => match row.try_get::<_, Option<String>>(index)? {
-            Some(s) => {
-                let parsed: serde_json::Value = serde_json::from_str(&s)?;
-                Some(Value::Text(serde_json::to_string(&parsed)?))
-            }
+        Json => read_json(row, index)?.map(Value::Text),
+        CompressedJson => match read_json(row, index)? {
+            Some(json) => Some(Value::Bytes(crate::sql_types::compress_json(&json)?)),
             None => None,
         },
         Int => row

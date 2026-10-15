@@ -12,6 +12,7 @@ use ramekin_core::{RawRecipe, BUILD_ID};
 use crate::db::DbPool;
 use crate::models::{NewImportJob, NewScrapeJob, NewStepOutput, ScrapeJob};
 use crate::schema::{scrape_jobs, step_outputs};
+use crate::sql_types::Compressed;
 
 use super::status;
 use super::steps::FetchHtmlStep;
@@ -375,7 +376,7 @@ pub(super) fn save_step_output(
         scrape_job_id: job_id,
         step_name: step_name.to_string(),
         build_id: BUILD_ID.to_string(),
-        output,
+        output: Compressed(output),
         // Pre-populated outputs (HTML capture / photo import / recipe import)
         // don't run the step, so there's no meaningful duration to record.
         duration_ms: None,
