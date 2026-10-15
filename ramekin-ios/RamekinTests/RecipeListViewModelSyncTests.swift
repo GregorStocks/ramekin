@@ -387,4 +387,43 @@ extension RecipeListViewModelSyncTests {
 
         XCTAssertEqual(requests, [SyncRequest(cursor: nil, limit: 100, afterId: resumeAfterId)])
     }
+
+    func testSweepThatTurnsIntoAFullResyncMidwayStartsOver() async {
+        let resumeAfterId = UUID()
+        var requests: [SyncRequest] = []
+        var persistedCursor: Int64?
+
+        let viewModel = makeViewModel(
+            syncRecipes: { cursor, limit, afterId in
+                requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
+                return SyncRecipesResponse(
+                    cursor: afterId == nil ? 900 : 800,
+                    deleted: [],
+                    fullResync: true,
+                    hasMore: false,
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+                    recipes: []
+                )
+            },
+            cache: RecipeListTestSupport.cacheClient(
+                currentAccountKey: { "account" },
+                syncCursor: { _ in 300 },
+                setSyncCursor: { cursor, _ in persistedCursor = cursor },
+                // An incremental sweep interrupted before a restore.
+                pendingSyncSweep: { _ in
+                    PendingSyncSweep(since: 300, afterId: resumeAfterId, watermark: 50)
+                },
+                loadRecipes: { _ in [RecipeListTestSupport.makeRecipe(title: "Cached")] }
+            )
+        )
+
+        await viewModel.loadRecipes(reset: true)
+
+        XCTAssertEqual(requests, [
+            SyncRequest(cursor: 300, limit: 100, afterId: resumeAfterId),
+            SyncRequest(cursor: nil, limit: 100, afterId: nil)
+        ])
+        // The restarted sweep's own first page sets the watermark.
+        XCTAssertEqual(persistedCursor, 900)
+    }
 }

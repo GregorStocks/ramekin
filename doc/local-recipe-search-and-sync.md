@@ -67,7 +67,8 @@ import changes rows under clients' feet. A row the restore rolled back has no
 tombstone, so the response sets `full_resync` and clients drop cached rows it
 omits. iOS prunes recipes page by page within each page's ID range, and
 requests the rest of a full-resync sweep without a cursor so every page is
-judged the same way.
+judged the same way. A sweep that turns into a full resync partway through
+starts over from its first page, so no ID range goes unpruned.
 
 That ordering is what a wall-clock cursor could not provide: a transaction took
 its timestamp before the cursor, committed after the sync SELECT's snapshot, and

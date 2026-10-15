@@ -58,6 +58,17 @@ enum RecipeSyncSweep {
                     supported: SearchNormalizationSupport.contractVersion
                 )
             }
+            if response.fullResync && !fullResync && afterId != nil {
+                // The server switched to a full resync mid-sweep (a restore
+                // landed between pages). Pruning only settles the pages it
+                // sees, so start over from the first page or recipes the
+                // restore lost in the ID range already passed would stay.
+                fullResync = true
+                afterId = nil
+                sweepWatermark = nil
+                cache.clearPendingSyncSweep(accountKey)
+                continue
+            }
             try await cache.apply(response, afterId, accountKey)
             fullResync = fullResync || response.fullResync
             let watermark = sweepWatermark ?? response.cursor
