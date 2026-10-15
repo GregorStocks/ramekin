@@ -207,6 +207,7 @@ pub(super) fn try_parse_parenthetical_measurement(s: &str) -> Option<Measurement
 fn sizes_cut_pieces(amount: &str, unit: &str) -> bool {
     const PLURAL_PIECE_NOUNS: &[&str] = &["pieces", "chunks", "knobs", "hunks"];
 
+    let unit = unit.strip_suffix(" each").unwrap_or(unit);
     amount == "1"
         && unit
             .rsplit(' ')
@@ -939,6 +940,7 @@ mod tests {
             "1 cup lightly-packed torn green leaf lettuce (approximately 2-inch pieces)",
             "1 cup torn lettuce (about 2-inch pieces)",
             "2 cups squash (1-inch chunks)",
+            "1 cup torn lettuce (2-inch pieces each)",
         ] {
             let parsed = parse_ingredient(line);
             assert_eq!(parsed.measurements.len(), 1, "{line}: {parsed:?}");
