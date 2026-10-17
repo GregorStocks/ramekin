@@ -1,6 +1,6 @@
 {
   "title": "Check WAL size and slow write-lock logs after a few weeks of SQLite in prod",
-  "description": "The server now logs 'slow write lock wait' / 'slow write lock hold' warnings (over 500 ms, db.rs) and an error for any 'database is locked' failure. \
+  "description": "The server now logs a 'slow write lock' warning when a writer waits for or holds the write lock over 500 ms (db.rs) and an error for any 'database is locked' failure. \
 After a few weeks of prod uptime: check the -wal file size next to the database (does checkpointing keep it bounded?), grep the logs for those warnings and errors, and look at which requests hold the lock longest. \
 Any runtime bulk job that rewrites many rows should commit in chunks so it doesn't hold the lock for long. \
 File follow-ups for anything slow.",

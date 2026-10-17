@@ -56,27 +56,32 @@ impl Drop for FlagGuard {
 /// fails a writer whose wait on the file lock passes the busy timeout.
 const SLOW_WRITE_LOCK: Duration = Duration::from_millis(500);
 
-/// The app-wide write lock, held until dropped. Logs how long it was held.
+/// The app-wide write lock, held until dropped. On release it logs how long
+/// it waited for the lock and how long it held it, after unlocking so a slow
+/// log writer never holds up the next writer.
 struct WriteLockGuard {
-    _lock: std::sync::MutexGuard<'static, ()>,
+    lock: Option<std::sync::MutexGuard<'static, ()>>,
     _holds: FlagGuard,
+    waited: Duration,
     acquired: Instant,
 }
 
 impl Drop for WriteLockGuard {
     fn drop(&mut self) {
         let held = self.acquired.elapsed();
+        drop(self.lock.take());
+        let waited_ms = self.waited.as_millis() as u64;
         let held_ms = held.as_millis() as u64;
-        if held >= SLOW_WRITE_LOCK {
-            tracing::warn!(held_ms, "slow write lock hold");
+        if self.waited >= SLOW_WRITE_LOCK || held >= SLOW_WRITE_LOCK {
+            tracing::warn!(waited_ms, held_ms, "slow write lock");
         } else {
-            tracing::debug!(held_ms, "released write lock");
+            tracing::debug!(waited_ms, held_ms, "released write lock");
         }
     }
 }
 
 /// The app-wide write lock, held until dropped. None when this thread
-/// already holds it. Logs how long it waited for the lock.
+/// already holds it.
 fn lock_writes() -> Option<WriteLockGuard> {
     if HOLDS_WRITE_LOCK.get() {
         return None;
@@ -86,16 +91,10 @@ fn lock_writes() -> Option<WriteLockGuard> {
         .lock()
         .unwrap_or_else(|poisoned| poisoned.into_inner());
     let acquired = Instant::now();
-    let waited = acquired - started;
-    let waited_ms = waited.as_millis() as u64;
-    if waited >= SLOW_WRITE_LOCK {
-        tracing::warn!(waited_ms, "slow write lock wait");
-    } else {
-        tracing::debug!(waited_ms, "acquired write lock");
-    }
     Some(WriteLockGuard {
-        _lock: lock,
+        lock: Some(lock),
         _holds: FlagGuard::set(&HOLDS_WRITE_LOCK),
+        waited: acquired - started,
         acquired,
     })
 }
