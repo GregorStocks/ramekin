@@ -5,6 +5,7 @@ mod auth;
 mod backup;
 mod data_migrations;
 mod db;
+mod files;
 mod ids;
 mod import_postgres;
 mod ingredient_names;
@@ -253,9 +254,9 @@ async fn main() {
     }
 
     let pool: AppState = Arc::new(db::create_pool(&database_url));
-    photos::store::init_live(&pool).expect("Failed to find the photo store");
+    files::init_live(&pool).expect("Failed to find the file store");
 
-    // Daily snapshots of the database (doc/sqlite-cutover.md, Backups).
+    // Hourly snapshots of the database (doc/sqlite-cutover.md, Backups).
     match env::var_os("RAMEKIN_BACKUP_DIR") {
         Some(dir) if !dir.is_empty() => {
             let dir = std::path::PathBuf::from(dir);

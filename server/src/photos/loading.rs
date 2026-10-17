@@ -1,7 +1,7 @@
 use crate::db::DbPool;
+use crate::files::read_live;
 use crate::ids::Uuid;
 use crate::models::Photo;
-use crate::photos::store::read_live;
 use crate::schema::photos;
 use base64::Engine;
 use diesel::prelude::*;

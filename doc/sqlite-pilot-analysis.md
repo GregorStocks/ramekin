@@ -201,6 +201,11 @@ compress `fetch_html` outputs in the app (for example with zstd) or move them
 out of the database. Disk space for one user's collection isn't a blocker
 either way, but backup size is.
 
+Done since: photos and then large step outputs moved out to files beside the
+database (`doc/sqlite-cutover.md`, "Stored files"). On a copy of prod on
+2026-10-17 that took the database from 483 MB to 52 MB, and backups went from
+daily to hourly.
+
 What the numbers say:
 
 - **Search is the biggest difference, and it favors SQLite.** The Postgres

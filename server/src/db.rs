@@ -367,9 +367,10 @@ fn tracing_instrumentation() -> Option<Box<dyn Instrumentation>> {
 
 /// Open the database file (creating it and its directory if missing), set up
 /// the connection, and run pending schema and data migrations, including
-/// moving any photo bytes still in the database out to files. WAL mode is a
-/// property of the file, so it's set here once rather than per connection
-/// (switching it needs every other connection out of the way).
+/// moving any photo bytes and large step outputs still in the database out
+/// to files. WAL mode is a property of the file, so it's set here once rather
+/// than per connection (switching it needs every other connection out of the
+/// way).
 pub fn open_migrated(database_url: &str) -> SqliteConnection {
     if let Some(dir) = std::path::Path::new(database_url).parent() {
         std::fs::create_dir_all(dir)
@@ -385,6 +386,8 @@ pub fn open_migrated(database_url: &str) -> SqliteConnection {
     crate::data_migrations::run_pending(&mut conn).expect("Failed to run data migrations");
     crate::photos::store::move_blobs_out(&mut conn)
         .expect("Failed to move photo bytes out of the database");
+    crate::scraping::output_store::move_outputs_out(&mut conn)
+        .expect("Failed to move step outputs out of the database");
     conn
 }
 
@@ -405,6 +408,17 @@ pub fn create_pool(database_url: &str) -> DbPool {
         .connection_customizer(Box::new(ConnectionSetup))
         .build(manager)
         .expect("Failed to create database pool")
+}
+
+/// Whether `table` in the database `conn` is open on has `column`.
+pub fn has_column(conn: &mut SqliteConnection, table: &str, column: &str) -> QueryResult<bool> {
+    use crate::files::pragmas::pragma_table_info as columns;
+    let count: i64 = columns::table
+        .filter(columns::arg.eq(table))
+        .filter(columns::name.eq(column))
+        .count()
+        .get_result(conn)?;
+    Ok(count > 0)
 }
 
 #[cfg(test)]

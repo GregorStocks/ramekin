@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
-from conftest import wait_for_job_completion
+from conftest import connect_db, wait_for_job_completion
 from ramekin_client.api import ScrapeApi
 from ramekin_client.models import CreateScrapeRequest
 
@@ -72,7 +72,7 @@ class TestScrapeStatusResponse:
         assert before - slack <= job.created_at <= after + slack
 
     def test_step_output_endpoint_returns_json(
-        self, authed_api_client, server_url, fixture_base_url
+        self, authed_api_client, server_url, fixture_base_url, database_url
     ):
         client, _user_id = authed_api_client
         scrape_api = ScrapeApi(client)
@@ -89,6 +89,18 @@ class TestScrapeStatusResponse:
         assert resp.status_code == 200, resp.text
         body = resp.json()
         assert isinstance(body, dict)
+        assert "Rice Pilaf" in body["html"]
+
+        # A fetched page this size lives in a file, not in the row.
+        conn = connect_db(database_url)
+        output, output_hash = conn.execute(
+            "SELECT output, output_hash FROM step_outputs"
+            " WHERE scrape_job_id = ? AND step_name = 'fetch_html'",
+            (str(created.id),),
+        ).fetchone()
+        conn.close()
+        assert output == "null"
+        assert len(output_hash) == 64
 
     def test_step_output_endpoint_404_for_unknown_step(
         self, authed_api_client, server_url, fixture_base_url

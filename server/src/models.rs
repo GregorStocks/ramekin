@@ -162,7 +162,7 @@ pub struct Photo {
     pub width: Option<i32>,
     pub height: Option<i32>,
     pub file_size: Option<i32>,
-    /// The photo's file in the [`crate::photos::PhotoStore`].
+    /// The photo's file in the [`crate::files::FileStore`].
     pub data_hash: String,
     /// Its 200px JPEG thumbnail's file.
     pub thumbnail_hash: String,
@@ -343,6 +343,9 @@ pub struct StepOutput {
     pub summary: Option<String>,
     pub success: bool,
     pub error: Option<String>,
+    /// The file in the [`crate::files::FileStore`] holding the output, or ''
+    /// when it's inline in `output`.
+    pub output_hash: String,
 }
 
 #[derive(Insertable)]
@@ -357,6 +360,7 @@ pub struct NewStepOutput {
     pub summary: Option<String>,
     pub success: bool,
     pub error: Option<String>,
+    pub output_hash: String,
 }
 
 #[derive(Insertable)]

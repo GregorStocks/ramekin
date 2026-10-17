@@ -7,14 +7,14 @@
 //! written under a temporary name and renamed into place, so a sync tool
 //! watching the directory never picks up a partial file.
 //!
-//! Photo files live outside the database (crate::photos::store). Before a
-//! snapshot gets its name, the ones the backup directory's `photos/` lacks
-//! are copied in. They never change and are never deleted, there or in the
-//! live store, so that copy covers every photo any snapshot names.
+//! Photos and large step outputs live in files outside the database
+//! (crate::files). Before a snapshot gets its name, the files the backup
+//! directory's `files/` lacks are copied in. They never change and are never
+//! deleted, there or in the live store, so that copy covers every file any
+//! snapshot names.
 
 use crate::db::{self, DbPool};
-use crate::photos::store::live;
-use crate::photos::PhotoStore;
+use crate::files::{live, FileStore};
 use chrono::{DateTime, Duration, NaiveDateTime, Utc};
 use diesel::prelude::*;
 use diesel::sql_types::Text;
@@ -28,14 +28,17 @@ const PARTIAL: &str = ".ramekin-snapshot.tmp";
 const SUFFIX: &str = ".sqlite";
 /// UTC, sortable, and safe in file names on every platform.
 const STAMP_FORMAT: &str = "%Y-%m-%dT%H-%M-%SZ";
-/// One snapshot a day...
-const INTERVAL: std::time::Duration = std::time::Duration::from_secs(24 * 60 * 60);
+/// One snapshot an hour: with fetched pages and photos in files, a snapshot
+/// is about 50 MB, so a week of them is under 10 GB...
+const INTERVAL: std::time::Duration = std::time::Duration::from_secs(60 * 60);
 /// How soon a failed snapshot is tried again.
-const RETRY: std::time::Duration = std::time::Duration::from_secs(60 * 60);
+const RETRY: std::time::Duration = std::time::Duration::from_secs(10 * 60);
 /// Each snapshot is kept this long.
 const KEEP_DAYS: i64 = 7;
-/// The photo store inside a backup directory, shared by its snapshots.
-const PHOTOS: &str = "photos";
+/// The file store inside a backup directory, shared by its snapshots.
+const FILES: &str = "files";
+/// Where that store was when it held only photos.
+const LEGACY_PHOTOS: &str = "photos";
 
 fn file_name(at: DateTime<Utc>) -> String {
     format!("{PREFIX}{}{SUFFIX}", at.format(STAMP_FORMAT))
@@ -50,14 +53,14 @@ fn taken_at(name: &str) -> Option<DateTime<Utc>> {
 }
 
 /// Write a snapshot of the database `conn` is open on into `dir`, named for
-/// `now`, with the photo files it names. Returns its path.
+/// `now`, with the files it names. Returns its path.
 pub fn snapshot(
     conn: &mut SqliteConnection,
     dir: &Path,
     now: DateTime<Utc>,
 ) -> anyhow::Result<PathBuf> {
     write_partial(conn, dir)?;
-    let (path, _) = publish(&PhotoStore::of(conn)?, dir, now)?;
+    let (path, _) = publish(&FileStore::of(conn)?, dir, now)?;
     Ok(path)
 }
 
@@ -80,20 +83,16 @@ fn write_partial(conn: &mut SqliteConnection, dir: &Path) -> anyhow::Result<()> 
     Ok(())
 }
 
-/// Finish the snapshot [`write_partial`] left in `dir`: copy in the photo
-/// files `dir`'s store lacks from `photos`, the store the snapshot came
-/// from, check that every file the snapshot names is there, then give the
-/// snapshot its name for `now`. Only a snapshot whose photos are all backed
-/// up carries a snapshot name, so neither a failed copy nor a file already
-/// missing from `photos` leaves one that looks complete. Returns its path and how many photo files
-/// were copied.
-fn publish(
-    photos: &PhotoStore,
-    dir: &Path,
-    now: DateTime<Utc>,
-) -> anyhow::Result<(PathBuf, usize)> {
-    let backed_up = backup_store(dir);
-    let copied = photos.copy_missing_into(&backed_up)?;
+/// Finish the snapshot [`write_partial`] left in `dir`: copy in the files
+/// `dir`'s store lacks from `files`, the store the snapshot came from, check
+/// that every file the snapshot names is there, then give the snapshot its
+/// name for `now`. Only a snapshot whose files are all backed up carries a
+/// snapshot name, so neither a failed copy nor a file already missing from
+/// `files` leaves one that looks complete. Returns its path and how many
+/// files were copied.
+fn publish(files: &FileStore, dir: &Path, now: DateTime<Utc>) -> anyhow::Result<(PathBuf, usize)> {
+    let backed_up = backup_store(dir)?;
+    let copied = files.copy_missing_into(&backed_up)?;
     let partial = dir.join(PARTIAL);
     let mut snapshot = SqliteConnection::establish(
         partial
@@ -104,9 +103,9 @@ fn publish(
     drop(snapshot);
     anyhow::ensure!(
         missing.is_empty(),
-        "{} photo files the snapshot names are missing from {} (one is {})",
+        "{} files the snapshot names are missing from {} (one is {})",
         missing.len(),
-        photos.dir().display(),
+        files.dir().display(),
         missing.first().map(String::as_str).unwrap_or_default(),
     );
     let path = dir.join(file_name(now));
@@ -114,9 +113,9 @@ fn publish(
     Ok((path, copied))
 }
 
-/// The photo store in the backup directory `dir`.
-fn backup_store(dir: &Path) -> PhotoStore {
-    PhotoStore::new(dir.join(PHOTOS))
+/// The file store in the backup directory `dir`.
+fn backup_store(dir: &Path) -> anyhow::Result<FileStore> {
+    FileStore::adopting(&dir.join(LEGACY_PHOTOS), FileStore::new(dir.join(FILES)))
 }
 
 /// The snapshots in `names` older than `KEEP_DAYS` as of `now`. Names that
@@ -162,7 +161,7 @@ fn newest(dir: &Path) -> anyhow::Result<Option<DateTime<Utc>>> {
         .max())
 }
 
-/// Snapshot, back up photos and prune once. Only a failed snapshot or photo
+/// Snapshot, back up files and prune once. Only a failed snapshot or file
 /// copy is an error: a failed prune is logged, and the new snapshot still
 /// counts.
 async fn run_once(pool: &DbPool, dir: PathBuf) -> anyhow::Result<()> {
@@ -171,8 +170,8 @@ async fn run_once(pool: &DbPool, dir: PathBuf) -> anyhow::Result<()> {
     db::run_blocking(pool, move |conn| write_partial(conn, &snapshot_dir)).await??;
     // Without a connection: it's only file copies and a rename.
     tokio::task::spawn_blocking(move || {
-        let (path, photos) = publish(live(), &dir, now)?;
-        tracing::info!(path = %path.display(), photos, "database snapshot written");
+        let (path, files) = publish(live(), &dir, now)?;
+        tracing::info!(path = %path.display(), files, "database snapshot written");
         if let Err(e) = prune(&dir, now) {
             tracing::error!(dir = %dir.display(), "pruning old database snapshots failed: {e:#}");
         }
@@ -181,9 +180,9 @@ async fn run_once(pool: &DbPool, dir: PathBuf) -> anyhow::Result<()> {
     .await?
 }
 
-/// Snapshot the database into `dir` once a day, starting now unless the
-/// newest snapshot there is less than a day old. A failure is logged and
-/// retried an hour later.
+/// Snapshot the database into `dir` once an hour, starting now unless the
+/// newest snapshot there is less than an hour old. A failure is logged and
+/// retried ten minutes later.
 pub fn spawn_scheduler(pool: Arc<DbPool>, dir: PathBuf) {
     tokio::spawn(async move {
         let mut wait = match newest(&dir) {
@@ -211,9 +210,9 @@ pub fn spawn_scheduler(pool: Arc<DbPool>, dir: PathBuf) {
 const RESTORE_CLOCK_JUMP: i64 = 1 << 40;
 
 /// `ramekin-server restore <snapshot>`: replace the database at
-/// `database_url` with `snapshot`, and copy in the photo files from the
-/// `photos/` beside it that the live store lacks. Fails, after restoring,
-/// if a photo file the database names is still missing. Run it with the
+/// `database_url` with `snapshot`, and copy in the files from the `files/`
+/// beside it that the live store lacks. Fails, after restoring, if a file
+/// the database names is still missing. Run it with the
 /// server stopped. The current files are kept, renamed
 /// `<database>.before-restore-<time>-<tag>` (with their `-wal`/`-shm`).
 /// Clients synced past the snapshot hold cursors the restored clock could
@@ -267,14 +266,14 @@ pub fn restore(database_url: &str, snapshot: &Path) -> anyhow::Result<Option<Pat
         db::restamp_live(conn, restored + RESTORE_CLOCK_JUMP)
     })?;
 
-    let backed_up = backup_store(snapshot.parent().unwrap_or_else(|| Path::new(".")));
-    let store = PhotoStore::of(&mut conn)?;
-    let photos = backed_up.copy_missing_into(&store)?;
-    tracing::info!(photos, dir = %store.dir().display(), "photo files restored");
+    let backed_up = backup_store(snapshot.parent().unwrap_or_else(|| Path::new(".")))?;
+    let store = FileStore::of(&mut conn)?;
+    let files = backed_up.copy_missing_into(&store)?;
+    tracing::info!(files, dir = %store.dir().display(), "stored files restored");
     let missing = store.missing(&mut conn)?;
     anyhow::ensure!(
         missing.is_empty(),
-        "the database is restored, but {} photo files it names are in neither {} nor {} \
+        "the database is restored, but {} files it names are in neither {} nor {} \
          (one is {}); the replaced database is kept at {}",
         missing.len(),
         backed_up.dir().display(),
@@ -288,7 +287,7 @@ pub fn restore(database_url: &str, snapshot: &Path) -> anyhow::Result<Option<Pat
 }
 
 /// `ramekin-server backup <dir>`: one snapshot of `database_url` into `dir`,
-/// and the photo files `dir` lacks.
+/// and the stored files `dir` lacks.
 pub fn run_command(database_url: &str, dir: &Path) -> anyhow::Result<PathBuf> {
     // Opening a missing file would create an empty database and back that up.
     anyhow::ensure!(
@@ -439,16 +438,16 @@ mod tests {
     }
 
     #[test]
-    fn photo_files_go_with_snapshots_and_come_back_on_restore() {
-        let dir = std::env::temp_dir().join(format!(
-            "ramekin-photo-backup-test-{}",
-            uuid::Uuid::new_v4()
-        ));
+    fn stored_files_go_with_snapshots_and_come_back_on_restore() {
+        let dir =
+            std::env::temp_dir().join(format!("ramekin-file-backup-test-{}", uuid::Uuid::new_v4()));
         std::fs::create_dir_all(&dir).unwrap();
         let live = dir.join("live.sqlite");
         let live = live.to_str().unwrap();
         let mut conn = db::open_migrated(live);
-        let hash = PhotoStore::beside(Path::new(live)).put(b"photo").unwrap();
+        let store = FileStore::beside(Path::new(live));
+        let photo = store.put(b"photo").unwrap();
+        let page = store.put(br#"{"html":"<p>soup</p>"}"#).unwrap();
         diesel::sql_query("INSERT INTO users (id, username, password_hash) VALUES ('u', 'u', '')")
             .execute(&mut conn)
             .unwrap();
@@ -456,35 +455,65 @@ mod tests {
             "INSERT INTO photos (id, user_id, content_type, data_hash, thumbnail_hash) \
              VALUES ('p', 'u', 'image/png', ?, ?)",
         )
-        .bind::<Text, _>(&hash)
-        .bind::<Text, _>(&hash)
+        .bind::<Text, _>(&photo)
+        .bind::<Text, _>(&photo)
+        .execute(&mut conn)
+        .unwrap();
+        diesel::sql_query("PRAGMA foreign_keys = OFF")
+            .execute(&mut conn)
+            .unwrap();
+        diesel::sql_query(
+            "INSERT INTO step_outputs (id, scrape_job_id, step_name, build_id, output, output_hash) \
+             VALUES ('s', 'j', 'fetch_html', 'b', 'null', ?)",
+        )
+        .bind::<Text, _>(&page)
         .execute(&mut conn)
         .unwrap();
         drop(conn);
 
         let backups = dir.join("backups");
         let snapshot = run_command(live, &backups).unwrap();
-        assert_eq!(backup_store(&backups).read(&hash).unwrap(), b"photo");
+        let backed_up = backup_store(&backups).unwrap();
+        assert_eq!(backed_up.read(&photo).unwrap(), b"photo");
+        assert_eq!(backed_up.read(&page).unwrap(), br#"{"html":"<p>soup</p>"}"#);
 
-        // Restored on a machine with no photos yet.
+        // Restored on a machine with no files yet.
         std::fs::create_dir_all(dir.join("elsewhere")).unwrap();
         let fresh = dir.join("elsewhere").join("fresh.sqlite");
         let fresh = fresh.to_str().unwrap();
         restore(fresh, &snapshot).unwrap();
         let mut conn = SqliteConnection::establish(fresh).unwrap();
-        assert_eq!(
-            PhotoStore::of(&mut conn).unwrap().read(&hash).unwrap(),
-            b"photo"
-        );
+        let restored = FileStore::of(&mut conn).unwrap();
+        assert_eq!(restored.read(&photo).unwrap(), b"photo");
+        assert_eq!(restored.read(&page).unwrap(), br#"{"html":"<p>soup</p>"}"#);
         drop(conn);
 
-        // Without the backup's photos, a restore elsewhere reports them.
-        std::fs::remove_dir_all(backups.join(PHOTOS)).unwrap();
+        // Without the backup's files, a restore elsewhere reports them.
+        std::fs::remove_dir_all(backups.join(FILES)).unwrap();
         let bare = dir.join("elsewhere").join("bare.sqlite");
         let error = restore(bare.to_str().unwrap(), &snapshot)
             .unwrap_err()
             .to_string();
-        assert!(error.contains("1 photo files"), "{error}");
+        assert!(error.contains("2 files"), "{error}");
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
+    fn a_backup_directory_from_before_pages_keeps_its_photos() {
+        let dir = std::env::temp_dir().join(format!(
+            "ramekin-legacy-files-test-{}",
+            uuid::Uuid::new_v4()
+        ));
+        let backups = dir.join("backups");
+        let photo = FileStore::new(backups.join(LEGACY_PHOTOS))
+            .put(b"photo")
+            .unwrap();
+
+        assert_eq!(
+            backup_store(&backups).unwrap().read(&photo).unwrap(),
+            b"photo"
+        );
+        assert!(!backups.join(LEGACY_PHOTOS).exists());
         std::fs::remove_dir_all(&dir).unwrap();
     }
 
@@ -495,11 +524,11 @@ mod tests {
         std::fs::create_dir_all(&dir).unwrap();
         let live = dir.join("live.sqlite");
         let mut conn = db::open_migrated(live.to_str().unwrap());
-        PhotoStore::beside(&live).put(b"photo").unwrap();
+        FileStore::beside(&live).put(b"photo").unwrap();
         let backups = dir.join("backups");
         std::fs::create_dir_all(&backups).unwrap();
-        // A file where the photo directory should be: the copy fails.
-        std::fs::write(backups.join(PHOTOS), b"").unwrap();
+        // A file where the backup's store should be: the copy fails.
+        std::fs::write(backups.join(FILES), b"").unwrap();
 
         assert!(snapshot(&mut conn, &backups, Utc::now()).is_err());
         assert!(snapshot_names(&backups).unwrap().is_empty());

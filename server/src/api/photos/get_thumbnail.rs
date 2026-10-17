@@ -2,10 +2,10 @@ use super::get::read_photo_file;
 use crate::api::{run_db, run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::files::live;
 use crate::ids::Uuid;
 use crate::models::NewPhotoThumbnail;
 use crate::photos::processing::{generate_thumbnail, MAX_THUMBNAIL_SIZE, THUMBNAIL_SIZE};
-use crate::photos::store::live;
 use crate::schema::{photo_thumbnails, photos};
 use axum::{
     body::Body,

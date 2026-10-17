@@ -17,7 +17,7 @@
 //! stamps, which compare correctly against those cursors.
 
 use crate::db;
-use crate::photos::PhotoStore;
+use crate::files::FileStore;
 use diesel::prelude::*;
 use diesel::sql_types as sql;
 use diesel::sqlite::{Sqlite, SqliteConnection};
@@ -297,7 +297,7 @@ fn read(
     row: &Row,
     index: usize,
     column: &Column,
-    photos: &PhotoStore,
+    photos: &FileStore,
 ) -> anyhow::Result<Option<Value>> {
     Ok(match column.kind {
         Text | Timestamp => row.try_get::<_, Option<String>>(index)?.map(Value::Text),
@@ -352,7 +352,7 @@ fn copy_table(
     pg: &mut postgres::Transaction<'_>,
     conn: &mut SqliteConnection,
     table: &Table,
-    photos: &PhotoStore,
+    photos: &FileStore,
 ) -> anyhow::Result<usize> {
     let selects: Vec<String> = table.columns.iter().map(select_expr).collect();
     let names: Vec<&str> = table.columns.iter().map(|c| c.name).collect();
@@ -384,7 +384,7 @@ fn copy_table(
 /// database at `database_url`.
 pub fn run(postgres_url: &str, database_url: &str) -> anyhow::Result<()> {
     let mut conn = db::open_migrated(database_url);
-    let photos = PhotoStore::of(&mut conn)?;
+    let photos = FileStore::of(&mut conn)?;
     let existing = sqlite_count(&mut conn, "users")? + sqlite_count(&mut conn, "recipes")?;
     anyhow::ensure!(
         existing == 0,

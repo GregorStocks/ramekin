@@ -15,14 +15,15 @@ into the SQLite file named by `DATABASE_URL`, which must be new or empty:
 1. Creates the schema (the same migrations the server runs at startup).
 2. Reads every table in one repeatable-read Postgres snapshot and writes it in
    one SQLite transaction. If anything fails, the SQLite file is left with an
-   empty schema; delete it and run again. (Photo files already written can
+   empty schema; delete it and run again. (Stored files already written can
    stay: the next run writes the same names.)
 3. Converts types along the way: uuids to text, `uuid[]` photo ids and
    `jsonb` to compact JSON text, and timestamps to UTC text. The case-folded
    `username_key` / `name_key` columns fill themselves (generated columns).
    Photo and thumbnail bytes don't go in the database: each is written to a
-   file named by its SHA-256 in `<DATABASE_URL>-photos/`, and the row keeps
-   the hash (`data_hash`, `thumbnail_hash`).
+   file named by its SHA-256 in `<DATABASE_URL>-files/`, and the row keeps
+   the hash (`data_hash`, `thumbnail_hash`). Step outputs come across inline;
+   the server's first startup moves the large ones out to files.
 4. Seeds the sync clock above the snapshot's `pg_snapshot_xmax`, so it starts
    above every cursor a client could hold. Every live recipe version, tag and
    shopping item gets a stamp above that, so each client's next normal delta
@@ -84,32 +85,41 @@ Check out the last pre-SQLite commit, point `DATABASE_URL` back at Postgres,
 start it. Anything written on SQLite since the cutover stays only in the
 SQLite file.
 
-## Photo files
+## Stored files
 
-Photo bytes live beside the database, not in it: `<DATABASE_URL>-photos/`,
-one file per photo or thumbnail, named by the SHA-256 of its contents
-(`ab/ab12…`). A file never changes once written and is never deleted, a
-soft-deleted photo's included. Keep the directory with the database file.
+Photo bytes and large step outputs (fetched pages, mostly) live beside the
+database, not in it: `<DATABASE_URL>-files/`, one file per photo, thumbnail
+or output, named by the SHA-256 of its contents (`ab/ab12…`). A file never
+changes once written and is never deleted, a soft-deleted photo's included.
+Keep the directory with the database file. A step output goes to a file when
+its JSON is over 16 KB; its row then holds JSON null in `output` and the hash
+in `output_hash`.
 
 A database from before this layout moves its photo BLOBs out to files on the
 next startup, 16 rows per write transaction, then VACUUMs and drops the
-emptied columns. It's safe to interrupt: the next startup carries on.
+emptied columns. Large inline step outputs move the same way, 32 rows per
+write transaction, then a VACUUM. Both are safe to interrupt: the next
+startup carries on. (On a copy of prod on 2026-10-17, the output move took
+672 fetched pages and 2 extractions out, 379 MB as 600 files after
+duplicates, and the database went from 483 MB to 52 MB, in under 4 seconds.)
+The store used to be `<DATABASE_URL>-photos/`; startup renames it.
 
 ## Backups
 
 Set `RAMEKIN_BACKUP_DIR` in `dev.env` before cutover, pointing at a folder
 that is synced or mounted off this machine. The server then writes a snapshot
-there once a day (on startup too, if the newest is more than a day old) and
-deletes snapshots older than 7 days. Without it, the server logs a warning at
+there once an hour (on startup too, if the newest is more than an hour old)
+and deletes snapshots older than 7 days. Without it, the server logs a warning at
 startup and backs nothing up.
 
-With each snapshot, the photo files the backup folder's `photos/` lacks are
+With each snapshot, the stored files the backup folder's `files/` lacks are
 copied in before the snapshot gets its name, and the snapshot only gets it if
-every photo file it names is there, so a snapshot you can see always has its
-photos. A photo file missing from the live store makes the snapshot fail
-(logged, retried an hour later) rather than publish one that can't be fully
-restored. Since photo files never change, that keeps `photos/` complete
-for every snapshot; it's never pruned.
+every file it names is there, so a snapshot you can see always has its files.
+A file missing from the live store makes the snapshot fail (logged, retried
+ten minutes later) rather than publish one that can't be fully restored.
+Since stored files never change, that keeps `files/` complete for every
+snapshot; it's never pruned. A backup folder from before fetched pages moved
+to files has `photos/` instead; the first snapshot or restore renames it.
 
 A snapshot is `ramekin-<UTC time>.sqlite`: SQLite's `VACUUM INTO`, a
 consistent, compacted, self-contained copy taken while the server keeps
@@ -118,7 +128,7 @@ tool never sees a partial file. Never copy the live database file itself; it
 can be mid-write, and recent changes may still be in its `-wal` file.
 
 Take one on demand (before an upgrade, say) with `make db-backup`, which writes
-to `RAMEKIN_BACKUP_DIR` or `DIR=/somewhere`, photos included.
+to `RAMEKIN_BACKUP_DIR` or `DIR=/somewhere`, stored files included.
 
 ## Restoring a backup
 
@@ -128,12 +138,12 @@ to `RAMEKIN_BACKUP_DIR` or `DIR=/somewhere`, photos included.
 
 `db-restore` keeps the replaced database: it renames the file and its
 `-wal`/`-shm` to `<database>.before-restore-<time>-<tag>`. Then it copies the
-snapshot into place, and copies the photo files from the `photos/` beside the
-snapshot that `<database>-photos/` lacks (all of them, on a new machine). If a
-photo file the restored database names is still missing after that, it says
-how many and exits with an error (the database is restored by then). The
-live photo directory isn't renamed: its files are a superset of what the
-snapshot names.
+snapshot into place, and copies the stored files from the `files/` beside the
+snapshot that `<database>-files/` lacks (all of them, on a new machine). If a
+file the restored database names is still missing after that, it says how
+many and exits with an error (the database is restored by then). The live
+file directory isn't renamed: its files are a superset of what the snapshot
+names.
 
 It also moves the sync clock far past anything the replaced database handed
 out, and restamps every live recipe, tag and shopping item above it. Clients

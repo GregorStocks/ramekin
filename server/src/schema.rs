@@ -224,6 +224,7 @@ diesel::table! {
         summary -> Nullable<Text>,
         success -> Bool,
         error -> Nullable<Text>,
+        output_hash -> Text,
     }
 }
 

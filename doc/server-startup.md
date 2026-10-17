@@ -86,8 +86,10 @@ at this point, and none of the steps below run for them.
 
 ### 3a. Move photo bytes out (`photos::store::move_blobs_out`)
 
-- **What:** Photo bytes live in files in `<DATABASE_URL>-photos/`, not in the
-  database (`doc/sqlite-cutover.md`, "Photo files"). A database that still
+- **What:** Photo bytes live in files in `<DATABASE_URL>-files/`, not in the
+  database (`doc/sqlite-cutover.md`, "Stored files"). Finding that store
+  renames `<DATABASE_URL>-photos/`, where it used to be, if that's what's
+  there. A database that still
   has the legacy BLOB columns gets them copied out to files, 16 rows per
   write transaction, then the emptied columns dropped and the file VACUUMed.
 - **Cost:** One `pragma_table_info` query once the columns are gone. The one
@@ -99,6 +101,20 @@ at this point, and none of the steps below run for them.
 - **Recommendation:** Keep until it has run in prod, then delete it along
   with the legacy table declarations in `photos/store.rs`.
 
+### 3b. Move large step outputs out (`scraping::output_store::move_outputs_out`)
+
+- **What:** Step outputs whose JSON is over 16 KB (fetched pages, mostly)
+  live in the same file store. Inline ones that size, from before that or
+  from a restored snapshot, get copied out to files, 32 rows per write
+  transaction, and the file VACUUMed if anything moved.
+- **Cost:** One scan of `step_outputs` once nothing is left to move: 15-28 ms
+  on a copy of prod on 2026-10-17 (11,435 rows). The one run that moves them
+  took under 4 seconds there, VACUUM included (483 MB to 52 MB).
+- **On failure:** Panics. A later start resumes where it stopped.
+- **Must block serving:** Yes. Reads of a moved output go to its file.
+- **Recommendation:** Keep until it has run in prod and no snapshot from
+  before it is left to restore (a week), then delete it.
+
 ### 4. Connection pool (`create_pool`)
 
 - **What:** Builds an r2d2 pool of up to 32 connections, with 4 kept open.
@@ -109,21 +125,22 @@ at this point, and none of the steps below run for them.
 - **Must block serving:** Yes. Every later step uses the pool.
 - **Recommendation:** Keep.
 
-Right after, `photos::store::init_live` asks the database where its file is
-and records the photo store beside it, which every photo read and write uses.
+Right after, `files::init_live` asks the database where its file is and
+records the file store beside it, which every photo and stored step output
+read and write uses.
 One query; panics if the database isn't a file on disk.
 
 ### 5. Backup scheduler (`backup::spawn_scheduler`), in the background
 
 - **What:** If `RAMEKIN_BACKUP_DIR` is set, takes a snapshot right away when
-  the newest one is more than a day old, then one a day after that, and
+  the newest one is more than an hour old, then one an hour after that, and
   prunes old snapshots. Added in 8fa32b720; see `doc/sqlite-cutover.md`,
   "Backups".
 - **Cost:** Blocks only for `create_dir_all`. The background task scans the
-  directory for the newest snapshot. If it's missing or more than a day old,
-  the task runs `VACUUM INTO` right away, which reads the whole database
-  (about 1 GB today) while the server serves, then copies the photo files
-  the backup's `photos/` lacks.
+  directory for the newest snapshot. If it's missing or more than an hour
+  old, the task runs `VACUUM INTO` right away, which reads the whole
+  database (about 50 MB on 2026-10-17) while the server serves, then copies
+  the stored files the backup's `files/` lacks.
 - **On failure:** If the directory can't be created, the server panics. A
   failed snapshot logs an error and retries.
 - **Must block serving:** No, and it doesn't.
@@ -232,6 +249,7 @@ One query; panics if the database isn't a file on disk.
 | Schema migrations | yes | yes | pending migrations | keep |
 | Data migrations | yes | yes | pending migrations (none) | keep the runner |
 | Move photo bytes out | yes | yes | photos, once | delete after it runs in prod |
+| Move large step outputs out | yes | yes | step outputs (a scan); large ones, once | delete a week after it runs in prod |
 | Connection pool | yes | yes | — | keep |
 | Backup scheduler | no | dir creation only | database size (snapshot if overdue) | keep |
 | `reconcile_categories` | yes | yes | shopping items | keep |
