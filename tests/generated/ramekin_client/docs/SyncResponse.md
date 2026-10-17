@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **deleted** | **List[UUID]** | IDs of items that were deleted | 
 **full_resync** | **bool** | True when &#x60;server_changes&#x60; holds every live item rather than changes since the request&#39;s cursor: no cursor was sent, or it predates a restored backup or import, or came from another database. The client must then drop synced cached items missing from &#x60;server_changes&#x60; — an item rolled back by a restore is in neither &#x60;server_changes&#x60; nor &#x60;deleted&#x60;. | 
 **server_changes** | [**List[SyncServerChange]**](SyncServerChange.md) | Server-side changes since the request&#39;s cursor | 
-**sync_timestamp** | **datetime** | Server time when this sync started. Deprecated as a cursor: pass &#x60;cursor&#x60; instead. | 
 **updated** | [**List[SyncUpdatedItem]**](SyncUpdatedItem.md) | Items that were updated (with success status) | 
 
 ## Example

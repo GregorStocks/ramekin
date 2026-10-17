@@ -242,7 +242,7 @@ extension ShoppingListStore {
                 syncStartedAt: syncStartedAt,
                 accountKey: syncAccountKey
             )
-            setLastSyncAt(response.syncTimestamp, accountKey: syncAccountKey)
+            setLastSyncAt(syncStartedAt, accountKey: syncAccountKey)
             setSyncCursor(response.cursor, accountKey: syncAccountKey)
             userDefaults.set(response.categoryOrder, forKey: categoryOrderKey(accountKey: syncAccountKey))
             if activeAccountKey == syncAccountKey {

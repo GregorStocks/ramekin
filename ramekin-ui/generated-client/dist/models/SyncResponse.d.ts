@@ -62,13 +62,6 @@ export interface SyncResponse {
      */
     serverChanges: Array<SyncServerChange>;
     /**
-     * Server time when this sync started. Deprecated as a cursor: pass
-     * `cursor` instead.
-     * @type {Date}
-     * @memberof SyncResponse
-     */
-    syncTimestamp: Date;
-    /**
      * Items that were updated (with success status)
      * @type {Array<SyncUpdatedItem>}
      * @memberof SyncResponse

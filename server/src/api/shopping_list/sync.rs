@@ -149,9 +149,6 @@ pub struct SyncResponse {
     pub deleted: Vec<Uuid>,
     /// Server-side changes since the request's cursor
     pub server_changes: Vec<SyncServerChange>,
-    /// Server time when this sync started. Deprecated as a cursor: pass
-    /// `cursor` instead.
-    pub sync_timestamp: DateTime<Utc>,
     /// Snapshot watermark to pass as `cursor` on the next sync. Changes may be
     /// redelivered across syncs, but none can be skipped.
     pub cursor: i64,
@@ -632,7 +629,6 @@ pub async fn sync_items(
                 updated,
                 deleted: deleted_set.into_iter().collect(),
                 server_changes,
-                sync_timestamp,
                 cursor,
                 full_resync,
                 category_order: super::list::category_order(),

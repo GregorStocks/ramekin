@@ -167,7 +167,6 @@ final class ShoppingListStoreTests: XCTestCase {
                 deleted: [],
                 fullResync: false,
                 serverChanges: [],
-                syncTimestamp: Date(timeIntervalSince1970: 800),
                 updated: []
             )
         )
@@ -241,7 +240,6 @@ final class ShoppingListStoreTests: XCTestCase {
             deleted: [],
             fullResync: fullResync,
             serverChanges: serverChanges,
-            syncTimestamp: Date(timeIntervalSince1970: 1_000),
             updated: updated
         )
     }
@@ -254,7 +252,6 @@ final class ShoppingListStoreTests: XCTestCase {
             deleted: [],
             fullResync: false,
             serverChanges: [],
-            syncTimestamp: Date(timeIntervalSince1970: 1_000),
             updated: []
         )
     }

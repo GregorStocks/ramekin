@@ -5052,7 +5052,6 @@
           "updated",
           "deleted",
           "server_changes",
-          "sync_timestamp",
           "cursor",
           "full_resync",
           "category_order"
@@ -5095,11 +5094,6 @@
               "$ref": "#/components/schemas/SyncServerChange"
             },
             "description": "Server-side changes since the request's cursor"
-          },
-          "sync_timestamp": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Server time when this sync started. Deprecated as a cursor: pass\n`cursor` instead."
           },
           "updated": {
             "type": "array",
