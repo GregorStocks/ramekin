@@ -58,7 +58,9 @@ export function applyShoppingListSyncResponse(
 ): ShoppingListSyncCache {
   const deleted = new Set(response.deleted);
   const byId = new Map<string, ShoppingListItemResponse>();
-  const cachedItems = cache?.cursor == null ? [] : cache.items;
+  // A full resync lists every live item, so anything cached that it omits
+  // is gone from the server (e.g. created after a restored backup was taken).
+  const cachedItems = response.fullResync ? [] : (cache?.items ?? []);
 
   for (const item of cachedItems) {
     if (!deleted.has(item.id)) {

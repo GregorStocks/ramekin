@@ -14,20 +14,17 @@ public struct SyncRequest: Codable, JSONEncodable, Hashable {
 
     /** Items created offline */
     public var creates: [SyncCreateItem]?
-    /** `cursor` from the previous sync's response. Server returns changes at or after it, and takes precedence over `last_sync_at`. */
+    /** `cursor` from the previous sync's response. Server returns changes at or after it; without one, it returns every item. */
     public var cursor: Int64?
     /** IDs of items deleted offline */
     public var deletes: [UUID]?
-    /** Deprecated: use `cursor`. Server returns changes after this time when `cursor` is absent; with neither, it returns every item. */
-    public var lastSyncAt: Date?
     /** Items updated offline */
     public var updates: [SyncUpdateItem]?
 
-    public init(creates: [SyncCreateItem]? = nil, cursor: Int64? = nil, deletes: [UUID]? = nil, lastSyncAt: Date? = nil, updates: [SyncUpdateItem]? = nil) {
+    public init(creates: [SyncCreateItem]? = nil, cursor: Int64? = nil, deletes: [UUID]? = nil, updates: [SyncUpdateItem]? = nil) {
         self.creates = creates
         self.cursor = cursor
         self.deletes = deletes
-        self.lastSyncAt = lastSyncAt
         self.updates = updates
     }
 
@@ -35,7 +32,6 @@ public struct SyncRequest: Codable, JSONEncodable, Hashable {
         case creates
         case cursor
         case deletes
-        case lastSyncAt = "last_sync_at"
         case updates
     }
 
@@ -46,7 +42,6 @@ public struct SyncRequest: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(creates, forKey: .creates)
         try container.encodeIfPresent(cursor, forKey: .cursor)
         try container.encodeIfPresent(deletes, forKey: .deletes)
-        try container.encodeIfPresent(lastSyncAt, forKey: .lastSyncAt)
         try container.encodeIfPresent(updates, forKey: .updates)
     }
 }

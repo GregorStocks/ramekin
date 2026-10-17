@@ -58,8 +58,17 @@ transaction at a time, so stamps commit in order. The sync reads in a single
 read transaction and returns one past the clock's current value as the next
 cursor (`db::sync_cursor`). A write that hasn't committed by the sync's
 snapshot takes its stamp later, at or above that cursor, so the next request's
-inclusive `>= cursor` filter returns it. A cursor above the clock (one issued
-by another database, as after restoring an older backup) gets a full sync.
+inclusive `>= cursor` filter returns it.
+
+Some cursors can't be answered with a delta, and get a full resync instead:
+one above the clock (issued by another database), and one at or below
+`sync_clock.resync_floor`, which `db::restamp_live` sets when a restore or
+import changes rows under clients' feet. A row the restore rolled back has no
+tombstone, so the response sets `full_resync` and clients drop cached rows it
+omits. iOS prunes recipes page by page within each page's ID range, and
+requests the rest of a full-resync sweep without a cursor so every page is
+judged the same way. A sweep that turns into a full resync partway through
+starts over from its first page, so no ID range goes unpruned.
 
 That ordering is what a wall-clock cursor could not provide: a transaction took
 its timestamp before the cursor, committed after the sync SELECT's snapshot, and
@@ -153,8 +162,8 @@ offline-write pattern:
 - The sync response maps created IDs, reports update success and current
   versions, returns tombstones, and advances a `change_seq` cursor using the
   same clock as recipe sync. `shopping_list_items.change_seq` is stamped by
-  insert and update triggers, so no writer can forget it. `last_sync_at` remains only as a
-  fallback for iOS builds that predate the cursor.
+  insert and update triggers, so no writer can forget it. A sync without a
+  cursor is a flagged full resync.
 
 This is already most of the machinery a single-user, multi-device recipe
 workflow would need. It is intentionally explicit about domain behavior rather

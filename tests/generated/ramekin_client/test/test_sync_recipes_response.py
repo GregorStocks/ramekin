@@ -39,6 +39,7 @@ class TestSyncRecipesResponse(unittest.TestCase):
                 deleted = [
                     ''
                     ],
+                full_resync = True,
                 has_more = True,
                 normalization_contract_version = 0,
                 recipes = [
@@ -75,6 +76,7 @@ class TestSyncRecipesResponse(unittest.TestCase):
                 deleted = [
                     ''
                     ],
+                full_resync = True,
                 has_more = True,
                 normalization_contract_version = 0,
                 recipes = [

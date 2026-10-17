@@ -25,6 +25,9 @@ pub struct SyncResponse {
     /// IDs of items that were deleted
     #[serde(rename = "deleted")]
     pub deleted: Vec<uuid::Uuid>,
+    /// True when `server_changes` holds every live item rather than changes since the request's cursor: no cursor was sent, or it predates a restored backup or import, or came from another database. The client must then drop synced cached items missing from `server_changes` — an item rolled back by a restore is in neither `server_changes` nor `deleted`.
+    #[serde(rename = "full_resync")]
+    pub full_resync: bool,
     /// Server-side changes since the request's cursor
     #[serde(rename = "server_changes")]
     pub server_changes: Vec<models::SyncServerChange>,
@@ -42,6 +45,7 @@ impl SyncResponse {
         created: Vec<models::SyncCreatedItem>,
         cursor: i64,
         deleted: Vec<uuid::Uuid>,
+        full_resync: bool,
         server_changes: Vec<models::SyncServerChange>,
         sync_timestamp: String,
         updated: Vec<models::SyncUpdatedItem>,
@@ -51,6 +55,7 @@ impl SyncResponse {
             created,
             cursor,
             deleted,
+            full_resync,
             server_changes,
             sync_timestamp,
             updated,

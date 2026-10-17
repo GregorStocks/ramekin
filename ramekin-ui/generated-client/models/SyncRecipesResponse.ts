@@ -45,6 +45,20 @@ export interface SyncRecipesResponse {
      */
     deleted: Array<string>;
     /**
+     * True when this page lists every active recipe in its ID range rather
+     * than changes since `cursor`: `cursor` was absent, predates a restored
+     * backup or import, or came from another database. The client must then
+     * drop cached recipes the sweep doesn't return — a recipe rolled back by
+     * a restore is in neither `recipes` nor `deleted` — and request the
+     * sweep's remaining pages without `cursor`, since a later page could
+     * otherwise judge the same cursor differently. Pages are ordered by ID,
+     * so each settles the ID range from `after_id` (exclusive) through its
+     * last recipe, or to the end of the ID space on the last page.
+     * @type {boolean}
+     * @memberof SyncRecipesResponse
+     */
+    fullResync: boolean;
+    /**
      * True when the sweep has more pages. Request the next one with the same
      * `cursor` and `after_id` set to this page's last recipe ID.
      * @type {boolean}
@@ -77,6 +91,7 @@ export interface SyncRecipesResponse {
 export function instanceOfSyncRecipesResponse(value: object): value is SyncRecipesResponse {
     if (!('cursor' in value) || value['cursor'] === undefined) return false;
     if (!('deleted' in value) || value['deleted'] === undefined) return false;
+    if (!('fullResync' in value) || value['fullResync'] === undefined) return false;
     if (!('hasMore' in value) || value['hasMore'] === undefined) return false;
     if (!('normalizationContractVersion' in value) || value['normalizationContractVersion'] === undefined) return false;
     if (!('recipes' in value) || value['recipes'] === undefined) return false;
@@ -95,6 +110,7 @@ export function SyncRecipesResponseFromJSONTyped(json: any, ignoreDiscriminator:
         
         'cursor': json['cursor'],
         'deleted': json['deleted'],
+        'fullResync': json['full_resync'],
         'hasMore': json['has_more'],
         'normalizationContractVersion': json['normalization_contract_version'],
         'recipes': ((json['recipes'] as Array<any>).map(SyncRecipeFromJSON)),
@@ -114,6 +130,7 @@ export function SyncRecipesResponseToJSONTyped(value?: SyncRecipesResponse | nul
         
         'cursor': value['cursor'],
         'deleted': value['deleted'],
+        'full_resync': value['fullResync'],
         'has_more': value['hasMore'],
         'normalization_contract_version': value['normalizationContractVersion'],
         'recipes': ((value['recipes'] as Array<any>).map(SyncRecipeToJSON)),

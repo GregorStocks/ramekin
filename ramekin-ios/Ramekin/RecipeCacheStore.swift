@@ -24,6 +24,9 @@ struct PendingSyncSweep: Codable, Equatable {
     /// they would skip changes that committed mid-sweep in id ranges the
     /// sweep had already passed.
     let watermark: Int64
+    /// A page came back as a full resync, so the rest of the sweep is
+    /// requested without a cursor (see `RecipeSyncSweep.run`).
+    var fullResync = false
 }
 
 enum RecipeCacheError: LocalizedError {
@@ -153,18 +156,26 @@ final class RecipeCacheStore {
         try backgroundContext.save()
     }
 
-    func apply(syncResponse: SyncRecipesResponse, accountKey: String) async throws {
+    /// `afterId` is the `after_id` the page was requested with, which bounds
+    /// the ID range a full-resync page prunes.
+    func apply(syncResponse: SyncRecipesResponse, afterId: UUID?, accountKey: String) async throws {
         try await backgroundContext.perform { [self] in
             let context = backgroundContext
-            // One lookup for the whole page; a fetch per recipe dominated
-            // applying a 100-recipe page.
-            let pageIds = syncResponse.deleted + syncResponse.recipes.map(\.id)
             let request = NSFetchRequest<CachedRecipe>(entityName: "CachedRecipe")
-            request.predicate = NSPredicate(
-                format: "accountKey == %@ AND id IN %@",
-                accountKey,
-                pageIds as NSArray
-            )
+            if syncResponse.fullResync {
+                // The page settles a whole ID range, so look at every cached
+                // row; full resyncs are rare.
+                request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
+            } else {
+                // One lookup for the whole page; a fetch per recipe dominated
+                // applying a 100-recipe page.
+                let pageIds = syncResponse.deleted + syncResponse.recipes.map(\.id)
+                request.predicate = NSPredicate(
+                    format: "accountKey == %@ AND id IN %@",
+                    accountKey,
+                    pageIds as NSArray
+                )
+            }
             var existingById: [UUID: CachedRecipe] = [:]
             for row in try context.fetch(request) {
                 if let id = row.id {
@@ -175,6 +186,21 @@ final class RecipeCacheStore {
             for id in syncResponse.deleted {
                 if let cachedRecipe = existingById.removeValue(forKey: id) {
                     context.delete(cachedRecipe)
+                }
+            }
+
+            if syncResponse.fullResync {
+                // A recipe the server lost without a tombstone (e.g. created
+                // after a restored backup was taken) is in neither list.
+                let live = Set(syncResponse.recipes.map(\.id))
+                let gone = existingById.keys.filter {
+                    !live.contains($0)
+                        && RecipeSyncSweep.fullResyncPageCovers($0, afterId: afterId, response: syncResponse)
+                }
+                for id in gone {
+                    if let cachedRecipe = existingById.removeValue(forKey: id) {
+                        context.delete(cachedRecipe)
+                    }
                 }
             }
 
