@@ -201,12 +201,10 @@ compress `fetch_html` outputs in the app (for example with zstd) or move them
 out of the database. Disk space for one user's collection isn't a blocker
 either way, but backup size is.
 
-Done since: step outputs are stored zstd-compressed
-(`sql_types::CompressedJson`). On 1,000 real recipe pages from the pipeline's
-HTTP cache, stored as `fetch_html` outputs, the file went from 464 MB to
-125 MB. The `compress_step_outputs` data migration rewrites existing rows.
-Backups (`VACUUM INTO`) come out compacted right away; the live file keeps
-the freed pages for later writes until someone runs `VACUUM` on it.
+Done since: photos and then large step outputs moved out to files beside the
+database (`doc/sqlite-cutover.md`, "Stored files"). On a copy of prod on
+2026-10-17 that took the database from 483 MB to 52 MB, and backups went from
+daily to hourly.
 
 What the numbers say:
 

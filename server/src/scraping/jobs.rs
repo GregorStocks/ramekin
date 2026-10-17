@@ -6,15 +6,14 @@ use diesel::result::{DatabaseErrorKind, Error as DieselError};
 use ramekin_core::pipeline::steps::{
     ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
 };
+use ramekin_core::RawRecipe;
 use ramekin_core::{ExtractRecipeOutput, ExtractionMethod, FetchHtmlOutput, FetchImagesOutput};
-use ramekin_core::{RawRecipe, BUILD_ID};
 
 use crate::db::DbPool;
-use crate::models::{NewImportJob, NewScrapeJob, NewStepOutput, ScrapeJob};
+use crate::models::{NewImportJob, NewScrapeJob, ScrapeJob};
 use crate::schema::{scrape_jobs, step_outputs};
-use crate::sql_types::Compressed;
 
-use super::status;
+use super::output_store::{latest_output, PreparedOutput};
 use super::steps::FetchHtmlStep;
 use super::{
     run_scrape_db, run_scrape_db_write, ScrapeError, STATUS_COMPLETED, STATUS_FAILED,
@@ -101,6 +100,9 @@ pub async fn create_job_with_html(
     html: String,
 ) -> Result<ScrapeJob, ScrapeError> {
     let url = url.to_string();
+    let fetch_output = serde_json::to_value(FetchHtmlOutput { html })
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+    let fetch_output = prepare_output(FetchHtmlStep::NAME, fetch_output).await?;
     run_scrape_db_write(pool, move |conn| {
         // Create the job
         let new_job = NewScrapeJob {
@@ -114,10 +116,7 @@ pub async fn create_job_with_html(
             .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
         // Store the HTML as the fetch_html step output
-        let fetch_output = FetchHtmlOutput { html };
-        let output_json = serde_json::to_value(&fetch_output)
-            .map_err(|e| ScrapeError::Database(e.to_string()))?;
-        save_step_output(conn, job.id, FetchHtmlStep::NAME, output_json)?;
+        save_step_output(conn, job.id, FetchHtmlStep::NAME, fetch_output)?;
 
         // Update the job to start from parsing (skip fetch step)
         let now = Utc::now();
@@ -165,6 +164,8 @@ pub async fn create_import_job(
         failed_urls: vec![],
     })
     .map_err(|e| ScrapeError::Database(e.to_string()))?;
+    let extract_output = prepare_output(ExtractRecipeStep::NAME, extract_json).await?;
+    let images_output = prepare_output(FetchImagesStepMeta::NAME, images_json).await?;
 
     run_scrape_db(pool, move |conn| {
         let key = idempotency_key.as_deref();
@@ -193,8 +194,8 @@ pub async fn create_import_job(
                     e => e.into(),
                 })?;
 
-            save_step_output(conn, job.id, ExtractRecipeStep::NAME, extract_json)?;
-            save_step_output(conn, job.id, FetchImagesStepMeta::NAME, images_json)?;
+            save_step_output(conn, job.id, ExtractRecipeStep::NAME, extract_output)?;
+            save_step_output(conn, job.id, FetchImagesStepMeta::NAME, images_output)?;
 
             // Start from parse_ingredients (skip fetch_html, extract_recipe, fetch_images)
             let now = Utc::now();
@@ -276,18 +277,9 @@ fn get_job_conn(
 /// jobs record `recipe_id` on the job row when they save; jobs saved before
 /// that only have it in the step output until they complete.
 pub async fn saved_recipe_id(pool: &DbPool, job_id: Uuid) -> Result<Option<Uuid>, ScrapeError> {
-    let output: Option<serde_json::Value> = run_scrape_db(pool, move |conn| {
-        step_outputs::table
-            .filter(step_outputs::scrape_job_id.eq(job_id))
-            .filter(step_outputs::step_name.eq(SaveRecipeStepMeta::NAME))
-            .filter(step_outputs::success.eq(true))
-            .order(step_outputs::created_at.desc())
-            .select(step_outputs::output)
-            .first(conn)
-            .optional()
-            .map_err(|e| ScrapeError::Database(e.to_string()))
-    })
-    .await?;
+    let output = latest_output(pool, job_id, SaveRecipeStepMeta::NAME, true)
+        .await
+        .map_err(|e| ScrapeError::Database(format!("{e:#}")))?;
     Ok(output
         .as_ref()
         .and_then(|o| o.get("recipe_id"))
@@ -363,29 +355,29 @@ pub(super) async fn update_current_step_keeping_start(
     .await
 }
 
+/// [`PreparedOutput::prepare`] for a pre-populated output, before the write
+/// transaction that saves it.
+pub(super) async fn prepare_output(
+    step_name: &str,
+    output: serde_json::Value,
+) -> Result<PreparedOutput, ScrapeError> {
+    PreparedOutput::prepare(step_name, output)
+        .await
+        .map_err(|e| ScrapeError::Database(format!("{e:#}")))
+}
+
 /// Save a step output to the database (append-only).
 pub(super) fn save_step_output(
     conn: &mut diesel::SqliteConnection,
     job_id: Uuid,
     step_name: &str,
-    output: serde_json::Value,
+    output: PreparedOutput,
 ) -> Result<(), ScrapeError> {
-    let summary = status::step_summary(step_name, &output);
-    let new_output = NewStepOutput {
-        id: Uuid::now_v7(),
-        scrape_job_id: job_id,
-        step_name: step_name.to_string(),
-        build_id: BUILD_ID.to_string(),
-        output: Compressed(output),
-        // Pre-populated outputs (HTML capture / photo import / recipe import)
-        // don't run the step, so there's no meaningful duration to record.
-        duration_ms: None,
-        summary,
-        // Pre-populated outputs are always successful — the step didn't run
-        // so there's no failure to record.
-        success: true,
-        error: None,
-    };
+    // Pre-populated outputs (HTML capture / photo import / recipe import)
+    // don't run the step, so there's no meaningful duration to record, and
+    // they're always successful: the step didn't run so there's no failure
+    // to record.
+    let new_output = output.into_row(job_id, step_name, None, true, None);
 
     diesel::insert_into(step_outputs::table)
         .values(&new_output)

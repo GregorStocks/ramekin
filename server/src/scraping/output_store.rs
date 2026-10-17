@@ -1,20 +1,187 @@
 //! Database-backed step output store for the server.
+//!
+//! An output whose JSON is larger than [`INLINE_LIMIT`] (in practice, a
+//! fetched page) lives in the file store beside the database
+//! ([`crate::files`]): its row holds JSON null in `output` and names the
+//! file in `output_hash`. Smaller outputs stay inline.
 
 use std::collections::{HashMap, HashSet};
 use std::error::Error;
 
 use crate::ids::Uuid;
+use anyhow::Context;
 use async_trait::async_trait;
+use diesel::connection::SimpleConnection;
 use diesel::prelude::*;
+use diesel::SqliteConnection;
 use ramekin_core::pipeline::StepOutputStore;
 use ramekin_core::BUILD_ID;
 use serde_json::Value as JsonValue;
 
-use crate::db::{run_blocking, DbPool};
-use crate::models::{NewStepOutput, StepOutput};
+use crate::db::{self, run_blocking, DbPool};
+use crate::files::{self, FileStore};
+use crate::models::NewStepOutput;
 use crate::schema::step_outputs;
 use crate::scraping::status::step_summary;
-use crate::sql_types::Compressed;
+
+/// Outputs whose JSON is longer than this many bytes go to the file store.
+const INLINE_LIMIT: usize = 16 * 1024;
+
+/// A step output ready to insert: its summary, and the output itself either
+/// inline or already written to the file store. Prepare it before the write
+/// transaction that inserts it, since writing the file waits on the disk.
+pub struct PreparedOutput {
+    summary: Option<String>,
+    output: JsonValue,
+    output_hash: String,
+}
+
+impl PreparedOutput {
+    /// Prepare `output` of step `step_name`, writing it to `store` if it's
+    /// large.
+    pub fn new(store: &FileStore, step_name: &str, output: JsonValue) -> anyhow::Result<Self> {
+        let summary = step_summary(step_name, &output);
+        let json = serde_json::to_vec(&output)?;
+        if json.len() <= INLINE_LIMIT {
+            return Ok(Self {
+                summary,
+                output,
+                output_hash: String::new(),
+            });
+        }
+        Ok(Self {
+            summary,
+            output: JsonValue::Null,
+            output_hash: store.put(&json)?,
+        })
+    }
+
+    /// [`PreparedOutput::new`] against the server's store, off the async
+    /// runtime.
+    pub async fn prepare(step_name: &str, output: JsonValue) -> anyhow::Result<Self> {
+        let step_name = step_name.to_string();
+        tokio::task::spawn_blocking(move || Self::new(files::live(), &step_name, output)).await?
+    }
+
+    /// The row recording this output of step `step_name` in job `job_id`.
+    pub fn into_row(
+        self,
+        job_id: Uuid,
+        step_name: &str,
+        duration_ms: Option<i64>,
+        success: bool,
+        error: Option<&str>,
+    ) -> NewStepOutput {
+        NewStepOutput {
+            id: Uuid::now_v7(),
+            scrape_job_id: job_id,
+            step_name: step_name.to_string(),
+            build_id: BUILD_ID.to_string(),
+            output: self.output,
+            duration_ms,
+            summary: self.summary,
+            success,
+            error: error.map(|s| s.to_string()),
+            output_hash: self.output_hash,
+        }
+    }
+}
+
+/// The output a row holds: `output` itself, or the file `output_hash` names.
+fn load(store: &FileStore, output: JsonValue, output_hash: &str) -> anyhow::Result<JsonValue> {
+    if output_hash.is_empty() {
+        return Ok(output);
+    }
+    let json = store.read(output_hash)?;
+    serde_json::from_slice(&json).with_context(|| format!("stored output {output_hash} isn't JSON"))
+}
+
+/// The latest output of step `step_name` in job `job_id`, or only of its
+/// successful runs if `successful`. Its file, if it has one, is read after
+/// the database connection is handed back.
+pub async fn latest_output(
+    pool: &DbPool,
+    job_id: Uuid,
+    step_name: &str,
+    successful: bool,
+) -> anyhow::Result<Option<JsonValue>> {
+    let step_name = step_name.to_string();
+    let row: Option<(JsonValue, String)> = run_blocking(pool, move |conn| {
+        let mut query = step_outputs::table
+            .filter(step_outputs::scrape_job_id.eq(job_id))
+            .filter(step_outputs::step_name.eq(step_name))
+            .into_boxed();
+        if successful {
+            query = query.filter(step_outputs::success.eq(true));
+        }
+        query
+            .order(step_outputs::created_at.desc())
+            .select((step_outputs::output, step_outputs::output_hash))
+            .first(conn)
+            .optional()
+    })
+    .await??;
+    let Some((output, output_hash)) = row else {
+        return Ok(None);
+    };
+    let output =
+        tokio::task::spawn_blocking(move || load(files::live(), output, &output_hash)).await??;
+    Ok(Some(output))
+}
+
+diesel::define_sql_function! {
+    /// SQLite length(): a text's length in characters.
+    fn length(value: diesel::sql_types::Json) -> diesel::sql_types::BigInt;
+}
+
+/// Rows per batch when moving inline outputs out. A batch's outputs are all
+/// in memory at once (a fetched page runs to a few hundred KB), and its write
+/// transaction holds up every other writer.
+const MOVE_BATCH: i64 = 32;
+
+/// Move inline outputs larger than [`INLINE_LIMIT`] out to files: ones
+/// written before large outputs went to files, in this database or a
+/// snapshot restored into it. Each batch is written to files first, then its
+/// rows cleared in one short transaction, so an interrupted run resumes
+/// where it stopped. If anything moved, VACUUM then hands the space back to
+/// the file system. One query once nothing is left to move.
+pub fn move_outputs_out(conn: &mut SqliteConnection) -> anyhow::Result<()> {
+    let store = FileStore::of(conn)?;
+    let mut moved = 0;
+    loop {
+        // Characters, not bytes, but a text is never shorter in bytes.
+        let batch: Vec<(Uuid, JsonValue)> = step_outputs::table
+            .filter(step_outputs::output_hash.eq(""))
+            .filter(length(step_outputs::output).gt(INLINE_LIMIT as i64))
+            .select((step_outputs::id, step_outputs::output))
+            .limit(MOVE_BATCH)
+            .load(conn)?;
+        if batch.is_empty() {
+            break;
+        }
+        let stored = batch
+            .into_iter()
+            .map(|(id, output)| Ok((id, store.put(&serde_json::to_vec(&output)?)?)))
+            .collect::<anyhow::Result<Vec<_>>>()?;
+        db::write(conn, |conn| {
+            for (id, output_hash) in &stored {
+                diesel::update(step_outputs::table.find(id))
+                    .set((
+                        step_outputs::output.eq(JsonValue::Null),
+                        step_outputs::output_hash.eq(output_hash),
+                    ))
+                    .execute(conn)?;
+            }
+            QueryResult::Ok(())
+        })?;
+        moved += stored.len();
+    }
+    if moved > 0 {
+        conn.batch_execute("VACUUM; PRAGMA wal_checkpoint(TRUNCATE);")?;
+        tracing::info!(moved, dir = %store.dir().display(), "moved large step outputs out of the database");
+    }
+    Ok(())
+}
 
 /// Database-backed output store for server pipeline runs.
 ///
@@ -63,17 +230,10 @@ impl<'a> DbOutputStore<'a> {
         success: bool,
         error: Option<&str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
-        let new_output = NewStepOutput {
-            id: Uuid::now_v7(),
-            scrape_job_id: self.job_id,
-            step_name: step_name.to_string(),
-            build_id: BUILD_ID.to_string(),
-            output: Compressed(output.clone()),
-            duration_ms: Some(duration_ms),
-            summary: step_summary(step_name, output),
-            success,
-            error: error.map(|s| s.to_string()),
-        };
+        let new_output = PreparedOutput::prepare(step_name, output.clone())
+            .await
+            .map_err(|e| Box::<dyn Error + Send + Sync>::from(format!("{e:#}")))?
+            .into_row(self.job_id, step_name, Some(duration_ms), success, error);
 
         crate::db::run_blocking_write(self.pool, move |conn| {
             diesel::insert_into(step_outputs::table)
@@ -91,21 +251,12 @@ impl<'a> DbOutputStore<'a> {
 #[async_trait]
 impl StepOutputStore for DbOutputStore<'_> {
     async fn get_output(&self, step_name: &str) -> Option<JsonValue> {
-        let job_id = self.job_id;
-        let step_name = step_name.to_string();
-
-        run_blocking(self.pool, move |conn| {
-            step_outputs::table
-                .filter(step_outputs::scrape_job_id.eq(job_id))
-                .filter(step_outputs::step_name.eq(step_name))
-                .order(step_outputs::created_at.desc())
-                .first::<StepOutput>(conn)
-                .optional()
-        })
-        .await
-        .ok()?
-        .ok()?
-        .map(|output| output.output)
+        latest_output(self.pool, self.job_id, step_name, false)
+            .await
+            .unwrap_or_else(|e| {
+                tracing::error!(job_id = %self.job_id, step_name, "failed to load step output: {e:#}");
+                None
+            })
     }
 
     async fn save_output(
@@ -118,5 +269,101 @@ impl StepOutputStore for DbOutputStore<'_> {
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
         self.save(step_name, output, duration_ms, success, error)
             .await
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use diesel::sql_types::Text;
+
+    fn page(i: usize) -> JsonValue {
+        serde_json::json!({ "html": format!("<p>soup {i}</p>").repeat(INLINE_LIMIT / 10) })
+    }
+
+    #[test]
+    fn large_outputs_go_to_files_and_small_ones_stay_inline() {
+        let dir = files::temp_dir("output-store-test");
+        let store = FileStore::new(dir.join("files"));
+
+        let small = serde_json::json!({ "recipe_id": "r" });
+        let prepared = PreparedOutput::new(&store, "save_recipe", small.clone()).unwrap();
+        assert_eq!(prepared.output, small);
+        assert_eq!(prepared.output_hash, "");
+        assert_eq!(
+            load(&store, prepared.output, &prepared.output_hash).unwrap(),
+            small
+        );
+
+        let large = page(0);
+        let prepared = PreparedOutput::new(&store, "fetch_html", large.clone()).unwrap();
+        assert_eq!(prepared.output, JsonValue::Null);
+        assert_ne!(prepared.output_hash, "");
+        assert_eq!(
+            load(&store, prepared.output, &prepared.output_hash).unwrap(),
+            large
+        );
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
+    fn large_inline_outputs_move_to_files_at_startup() {
+        let dir = files::temp_dir("output-move-test");
+        let database = dir.join("db.sqlite");
+        let mut conn = db::open_migrated(database.to_str().unwrap());
+        diesel::sql_query("PRAGMA foreign_keys = OFF")
+            .execute(&mut conn)
+            .unwrap();
+        // More than a batch of large outputs written inline, as they were
+        // before files, and a small one.
+        let insert = |conn: &mut SqliteConnection, id: String, output: &JsonValue| {
+            diesel::sql_query(
+                "INSERT INTO step_outputs (id, scrape_job_id, step_name, build_id, output) \
+                 VALUES (?, '00000000-0000-0000-0000-000000000000', 'fetch_html', 'b', ?)",
+            )
+            .bind::<Text, _>(id)
+            .bind::<Text, _>(output.to_string())
+            .execute(conn)
+            .unwrap();
+        };
+        let count = MOVE_BATCH as usize + 3;
+        for i in 0..count {
+            insert(
+                &mut conn,
+                format!("00000000-0000-0000-0000-{i:012}"),
+                &page(i),
+            );
+        }
+        let small = serde_json::json!({ "photo_ids": [] });
+        insert(
+            &mut conn,
+            "ffffffff-0000-0000-0000-000000000000".into(),
+            &small,
+        );
+
+        move_outputs_out(&mut conn).unwrap();
+
+        let store = FileStore::beside(&database);
+        let rows: Vec<(Uuid, JsonValue, String)> = step_outputs::table
+            .order(step_outputs::id)
+            .select((
+                step_outputs::id,
+                step_outputs::output,
+                step_outputs::output_hash,
+            ))
+            .load(&mut conn)
+            .unwrap();
+        assert_eq!(rows.len(), count + 1);
+        for (i, (_, output, output_hash)) in rows.iter().take(count).enumerate() {
+            assert_eq!(*output, JsonValue::Null);
+            assert_eq!(load(&store, output.clone(), output_hash).unwrap(), page(i));
+        }
+        let (_, output, output_hash) = rows.last().unwrap();
+        assert_eq!((output, output_hash.as_str()), (&small, ""));
+
+        // Run again, as every later startup does: nothing to do.
+        move_outputs_out(&mut conn).unwrap();
+        drop(conn);
+        std::fs::remove_dir_all(&dir).unwrap();
     }
 }

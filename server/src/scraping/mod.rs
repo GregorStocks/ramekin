@@ -1,6 +1,6 @@
 mod allowlist;
 mod jobs;
-mod output_store;
+pub mod output_store;
 mod photo_import;
 mod runner;
 pub mod status;

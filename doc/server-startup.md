@@ -69,10 +69,27 @@ at this point, and none of the steps below run for them.
 - **Must block serving:** Yes. The code assumes the current schema.
 - **Recommendation:** Keep.
 
-### 2a. Move photo bytes out (`photos::store::move_blobs_out`)
+### 3. Data migrations (`data_migrations::run_pending`)
 
-- **What:** Photo bytes live in files in `<DATABASE_URL>-photos/`, not in the
-  database (`doc/sqlite-cutover.md`, "Photo files"). A database that still
+- **What:** Runs Rust migrations that need server logic, such as the
+  ingredient parser or the catalog. Each one runs once, in the same
+  transaction as the row that records it. Added in 61e3efdb5.
+- **Today:** The list is empty. When this issue was filed, the list held
+  `strip_materialized_grams` and `promote_section_headers`, which rewrote
+  every recipe. Both had already run in prod (their rows are in
+  `data_migrations`), and the SQLite move (aa5cd81cd) deleted them.
+- **Cost:** One `SELECT` on `data_migrations`.
+- **On failure:** Startup aborts, which is what a migration should do.
+- **Must block serving:** Yes, whenever there's a migration to run.
+- **Recommendation:** Keep the runner. Keep deleting each migration once it
+  has run in prod, as the module comment already says to.
+
+### 3a. Move photo bytes out (`photos::store::move_blobs_out`)
+
+- **What:** Photo bytes live in files in `<DATABASE_URL>-files/`, not in the
+  database (`doc/sqlite-cutover.md`, "Stored files"). Finding that store
+  renames `<DATABASE_URL>-photos/`, where it used to be, if that's what's
+  there. A database that still
   has the legacy BLOB columns gets them copied out to files, 16 rows per
   write transaction, then the emptied columns dropped and the file VACUUMed.
 - **Cost:** One `pragma_table_info` query once the columns are gone. The one
@@ -80,29 +97,23 @@ at this point, and none of the steps below run for them.
   VACUUMs.
 - **On failure:** Panics. A later start resumes where it stopped.
 - **Must block serving:** Yes. Reads and writes use the files and hash
-  columns only. It runs before the data migrations, as part of
-  `db::open_schema_migrated`, because `import-postgres` writes photo rows
-  without the legacy columns.
+  columns only.
 - **Recommendation:** Keep until it has run in prod, then delete it along
   with the legacy table declarations in `photos/store.rs`.
 
-### 3. Data migrations (`data_migrations::run_pending`)
+### 3b. Move large step outputs out (`scraping::output_store::move_outputs_out`)
 
-- **What:** Runs Rust migrations that need server logic, such as the
-  ingredient parser or the catalog, or that rewrite a big table. Each one
-  runs once, either in the same transaction as the row that records it or,
-  for a batched one, one short transaction per batch. Added in 61e3efdb5.
-- **Today:** The list holds `compress_step_outputs`, which zstd-compresses
-  step outputs stored as plain JSON text, 100 rows per transaction. When
-  this issue was filed, the list held `strip_materialized_grams` and
-  `promote_section_headers`, which rewrote every recipe. Both had already
-  run in prod (their rows are in `data_migrations`), and the SQLite move
-  (aa5cd81cd) deleted them.
-- **Cost:** One `SELECT` on `data_migrations` once everything has run.
-- **On failure:** Startup aborts, which is what a migration should do.
-- **Must block serving:** Yes, whenever there's a migration to run.
-- **Recommendation:** Keep the runner. Keep deleting each migration once it
-  has run in prod, as the module comment already says to.
+- **What:** Step outputs whose JSON is over 16 KB (fetched pages, mostly)
+  live in the same file store. Inline ones that size, from before that or
+  from a restored snapshot, get copied out to files, 32 rows per write
+  transaction, and the file VACUUMed if anything moved.
+- **Cost:** One scan of `step_outputs` once nothing is left to move: 15-28 ms
+  on a copy of prod on 2026-10-17 (11,435 rows). The one run that moves them
+  took under 4 seconds there, VACUUM included (483 MB to 52 MB).
+- **On failure:** Panics. A later start resumes where it stopped.
+- **Must block serving:** Yes. Reads of a moved output go to its file.
+- **Recommendation:** Keep until it has run in prod and no snapshot from
+  before it is left to restore (a week), then delete it.
 
 ### 4. Connection pool (`create_pool`)
 
@@ -114,21 +125,22 @@ at this point, and none of the steps below run for them.
 - **Must block serving:** Yes. Every later step uses the pool.
 - **Recommendation:** Keep.
 
-Right after, `photos::store::init_live` asks the database where its file is
-and records the photo store beside it, which every photo read and write uses.
+Right after, `files::init_live` asks the database where its file is and
+records the file store beside it, which every photo and stored step output
+read and write uses.
 One query; panics if the database isn't a file on disk.
 
 ### 5. Backup scheduler (`backup::spawn_scheduler`), in the background
 
 - **What:** If `RAMEKIN_BACKUP_DIR` is set, takes a snapshot right away when
-  the newest one is more than a day old, then one a day after that, and
+  the newest one is more than an hour old, then one an hour after that, and
   prunes old snapshots. Added in 8fa32b720; see `doc/sqlite-cutover.md`,
   "Backups".
 - **Cost:** Blocks only for `create_dir_all`. The background task scans the
-  directory for the newest snapshot. If it's missing or more than a day old,
-  the task runs `VACUUM INTO` right away, which reads the whole database
-  (about 1 GB today) while the server serves, then copies the photo files
-  the backup's `photos/` lacks.
+  directory for the newest snapshot. If it's missing or more than an hour
+  old, the task runs `VACUUM INTO` right away, which reads the whole
+  database (about 50 MB on 2026-10-17) while the server serves, then copies
+  the stored files the backup's `files/` lacks.
 - **On failure:** If the directory can't be created, the server panics. A
   failed snapshot logs an error and retries.
 - **Must block serving:** No, and it doesn't.
@@ -235,8 +247,9 @@ One query; panics if the database isn't a file on disk.
 | --- | --- | --- | --- | --- |
 | Telemetry | yes | exporter build only | — | keep |
 | Schema migrations | yes | yes | pending migrations | keep |
+| Data migrations | yes | yes | pending migrations (none) | keep the runner |
 | Move photo bytes out | yes | yes | photos, once | delete after it runs in prod |
-| Data migrations | yes | yes | pending migrations (`compress_step_outputs`: step outputs, once) | keep the runner |
+| Move large step outputs out | yes | yes | step outputs (a scan); large ones, once | delete a week after it runs in prod |
 | Connection pool | yes | yes | — | keep |
 | Backup scheduler | no | dir creation only | database size (snapshot if overdue) | keep |
 | `reconcile_categories` | yes | yes | shopping items | keep |

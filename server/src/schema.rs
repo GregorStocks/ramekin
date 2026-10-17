@@ -218,12 +218,13 @@ diesel::table! {
         scrape_job_id -> UuidText,
         step_name -> Text,
         build_id -> Text,
-        output -> CompressedJson,
+        output -> Json,
         created_at -> TimestamptzSqlite,
         duration_ms -> Nullable<BigInt>,
         summary -> Nullable<Text>,
         success -> Bool,
         error -> Nullable<Text>,
+        output_hash -> Text,
     }
 }
 

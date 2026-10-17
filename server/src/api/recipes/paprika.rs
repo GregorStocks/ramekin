@@ -1,8 +1,8 @@
 use super::read::RecipeWithVersion;
+use crate::files::live;
 use crate::ids::Uuid;
 use crate::models::{Ingredient, Measurement};
 use crate::photos::processing::{generate_thumbnail, resize_for_export, EXPORT_PHOTO_DATA_SIZE};
-use crate::photos::store::live;
 use crate::schema::{photos, recipe_version_tags, user_tags};
 use base64::Engine;
 use diesel::prelude::*;

@@ -13,7 +13,7 @@ use crate::models::{NewScrapeJob, ScrapeJob};
 use crate::photos::load_photo_images;
 use crate::schema::scrape_jobs;
 
-use super::jobs::{mark_failed, save_step_output, update_status_and_step};
+use super::jobs::{mark_failed, prepare_output, save_step_output, update_status_and_step};
 use super::runner::{job_slot, run_scrape_job_in_slot};
 use super::{run_scrape_db_write, ScrapeError, STATUS_PARSING, STATUS_SCRAPING};
 
@@ -136,10 +136,12 @@ async fn run_photo_import_job_inner(
     };
     let images_json =
         serde_json::to_value(&images_output).map_err(|e| ScrapeError::Database(e.to_string()))?;
+    let extract_output = prepare_output(ExtractRecipeStep::NAME, extract_json).await?;
+    let images_output = prepare_output(FetchImagesStepMeta::NAME, images_json).await?;
 
     run_scrape_db_write(&pool, move |conn| {
-        save_step_output(conn, job_id, ExtractRecipeStep::NAME, extract_json)?;
-        save_step_output(conn, job_id, FetchImagesStepMeta::NAME, images_json)?;
+        save_step_output(conn, job_id, ExtractRecipeStep::NAME, extract_output)?;
+        save_step_output(conn, job_id, FetchImagesStepMeta::NAME, images_output)?;
 
         // Update job to start from parse_ingredients
         let now = chrono::Utc::now();
