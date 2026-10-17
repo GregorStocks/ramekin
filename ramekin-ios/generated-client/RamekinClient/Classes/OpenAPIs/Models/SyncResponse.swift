@@ -20,6 +20,8 @@ public struct SyncResponse: Codable, JSONEncodable, Hashable {
     public var cursor: Int64
     /** IDs of items that were deleted */
     public var deleted: [UUID]
+    /** True when `server_changes` holds every live item rather than changes since the request's cursor: no cursor was sent, or it predates a restored backup or import, or came from another database. The client must then drop synced cached items missing from `server_changes` — an item rolled back by a restore is in neither `server_changes` nor `deleted`. */
+    public var fullResync: Bool
     /** Server-side changes since the request's cursor */
     public var serverChanges: [SyncServerChange]
     /** Server time when this sync started. Deprecated as a cursor: pass `cursor` instead. */
@@ -27,11 +29,12 @@ public struct SyncResponse: Codable, JSONEncodable, Hashable {
     /** Items that were updated (with success status) */
     public var updated: [SyncUpdatedItem]
 
-    public init(categoryOrder: [String], created: [SyncCreatedItem], cursor: Int64, deleted: [UUID], serverChanges: [SyncServerChange], syncTimestamp: Date, updated: [SyncUpdatedItem]) {
+    public init(categoryOrder: [String], created: [SyncCreatedItem], cursor: Int64, deleted: [UUID], fullResync: Bool, serverChanges: [SyncServerChange], syncTimestamp: Date, updated: [SyncUpdatedItem]) {
         self.categoryOrder = categoryOrder
         self.created = created
         self.cursor = cursor
         self.deleted = deleted
+        self.fullResync = fullResync
         self.serverChanges = serverChanges
         self.syncTimestamp = syncTimestamp
         self.updated = updated
@@ -42,6 +45,7 @@ public struct SyncResponse: Codable, JSONEncodable, Hashable {
         case created
         case cursor
         case deleted
+        case fullResync = "full_resync"
         case serverChanges = "server_changes"
         case syncTimestamp = "sync_timestamp"
         case updated
@@ -55,6 +59,7 @@ public struct SyncResponse: Codable, JSONEncodable, Hashable {
         try container.encode(created, forKey: .created)
         try container.encode(cursor, forKey: .cursor)
         try container.encode(deleted, forKey: .deleted)
+        try container.encode(fullResync, forKey: .fullResync)
         try container.encode(serverChanges, forKey: .serverChanges)
         try container.encode(syncTimestamp, forKey: .syncTimestamp)
         try container.encode(updated, forKey: .updated)

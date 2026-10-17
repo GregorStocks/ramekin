@@ -51,7 +51,6 @@ class TestSyncRequest(unittest.TestCase):
                 deletes = [
                     ''
                     ],
-                last_sync_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 updates = [
                     ramekin_client.models.sync_update_item.SyncUpdateItem(
                         amount = '', 

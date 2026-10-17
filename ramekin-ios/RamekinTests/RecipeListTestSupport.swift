@@ -43,7 +43,7 @@ enum RecipeListTestSupport {
         setPendingSyncSweep: @escaping (PendingSyncSweep, String) -> Void = { _, _ in },
         clearPendingSyncSweep: @escaping (String) -> Void = { _ in },
         loadRecipes: @escaping (String) throws -> [RecipeSummary] = { _ in [] },
-        apply: @escaping (SyncRecipesResponse, String) throws -> Void = { _, _ in }
+        apply: @escaping (SyncRecipesResponse, UUID?, String) throws -> Void = { _, _, _ in }
     ) -> RecipeListCacheClient {
         RecipeListCacheClient(
             currentAccountKey: currentAccountKey,
@@ -66,6 +66,7 @@ enum RecipeListTestSupport {
         SyncRecipesResponse(
             cursor: 1,
             deleted: [],
+            fullResync: false,
             hasMore: false,
             normalizationContractVersion: SearchNormalizationSupport.contractVersion,
             recipes: []

@@ -8,6 +8,7 @@ Name | Type
 ------------ | -------------
 `cursor` | number
 `deleted` | Array&lt;string&gt;
+`fullResync` | boolean
 `hasMore` | boolean
 `normalizationContractVersion` | number
 `recipes` | [Array&lt;SyncRecipe&gt;](SyncRecipe.md)
@@ -21,6 +22,7 @@ import type { SyncRecipesResponse } from ''
 const example = {
   "cursor": null,
   "deleted": null,
+  "fullResync": null,
   "hasMore": null,
   "normalizationContractVersion": null,
   "recipes": null,

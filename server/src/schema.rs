@@ -262,6 +262,7 @@ diesel::table! {
     sync_clock (id) {
         id -> BigInt,
         value -> BigInt,
+        resync_floor -> BigInt,
     }
 }
 

@@ -67,7 +67,7 @@ final class RecipeListViewModelTests: XCTestCase {
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
                 loadRecipes: { _ in cachedRecipes },
-                apply: { _, _ in cachedRecipes = [matching, hidden] }
+                apply: { _, _, _ in cachedRecipes = [matching, hidden] }
             ),
             userDefaults: RecipeListTestSupport.isolatedDefaults(),
             pageSize: 20
@@ -295,7 +295,7 @@ final class RecipeListViewModelTests: XCTestCase {
             cache: RecipeListTestSupport.cacheClient(
                 currentAccountKey: { "account" },
                 loadRecipes: { _ in cachedRecipes },
-                apply: { _, _ in
+                apply: { _, _, _ in
                     cachedRecipes = [cached]
                     viewModel?.sourceFilter = "Bakery"
                 }
