@@ -27,8 +27,6 @@ diesel = { version = "2.3", features = ["sqlite", "returning_clauses_for_sqlite_
 # Bundled so every machine (dev, CI, iOS CI) runs the same SQLite with FTS5.
 libsqlite3-sys = { version = "0.38", features = ["bundled"] }
 diesel_migrations = "2.3"
-# Only for `import-postgres`, the one-shot copy from the old Postgres database.
-postgres = "0.19"
 
 # Serialization
 serde = { version = "1.0", features = ["derive"] }

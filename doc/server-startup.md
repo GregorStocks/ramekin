@@ -54,7 +54,7 @@ cost grows with the recipe collection.
 
 `DATABASE_URL` is read right after this. If it's missing or not valid
 Unicode, the server panics before touching the database. It's required, so
-that's correct. Subcommands (`backup`, `restore`, `import-postgres`) return
+that's correct. Subcommands (`backup`, `restore`) return
 at this point, and none of the steps below run for them.
 
 ### 2. Schema migrations (`open_migrated`, `run_pending_migrations`)
@@ -87,7 +87,7 @@ at this point, and none of the steps below run for them.
 ### 3a. Move photo bytes out (`photos::store::move_blobs_out`)
 
 - **What:** Photo bytes live in files in `<DATABASE_URL>-files/`, not in the
-  database (`doc/sqlite-cutover.md`, "Stored files"). Finding that store
+  database (`doc/database.md`, "Stored files"). Finding that store
   renames `<DATABASE_URL>-photos/`, where it used to be, if that's what's
   there. A database that still
   has the legacy BLOB columns gets them copied out to files, 16 rows per
@@ -134,7 +134,7 @@ One query; panics if the database isn't a file on disk.
 
 - **What:** If `RAMEKIN_BACKUP_DIR` is set, takes a snapshot right away when
   the newest one is more than an hour old, then one an hour after that, and
-  prunes old snapshots. Added in 8fa32b720; see `doc/sqlite-cutover.md`,
+  prunes old snapshots. Added in 8fa32b720; see `doc/database.md`,
   "Backups".
 - **Cost:** Blocks only for `create_dir_all`. The background task scans the
   directory for the newest snapshot. If it's missing or more than an hour

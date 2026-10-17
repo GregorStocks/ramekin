@@ -6,9 +6,10 @@ go/no-go recommendation.
 
 > **Status:** the owner said go, and step 2 is done: the server runs on
 > SQLite as a direct switch (no dual-backend period; CI going green on SQLite
-> stood in for it). doc/sqlite-cutover.md is the runbook for moving prod's
-> data. This document is kept as the analysis behind it; the benchmark script
-> it cites was removed with the Postgres backend.
+> stood in for it), prod has been cut over, and the one-shot Postgres
+> importer has been deleted (it lives in git history). This document is kept
+> as the analysis behind it; the benchmark script it cites was removed with the
+> Postgres backend.
 
 ## Recommendation: go, as a cutover rather than a permanent second backend
 
@@ -202,7 +203,7 @@ out of the database. Disk space for one user's collection isn't a blocker
 either way, but backup size is.
 
 Done since: photos and then large step outputs moved out to files beside the
-database (`doc/sqlite-cutover.md`, "Stored files"). On a copy of prod on
+database (`doc/database.md`, "Stored files"). On a copy of prod on
 2026-10-17 that took the database from 483 MB to 52 MB, and backups went from
 daily to hourly.
 

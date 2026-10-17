@@ -1,6 +1,6 @@
 //! Scheduled snapshots of the SQLite database into `RAMEKIN_BACKUP_DIR`,
 //! and `ramekin-server backup <dir>` for one on demand. See the Backups
-//! section of doc/sqlite-cutover.md.
+//! section of doc/database.md.
 //!
 //! A snapshot is `VACUUM INTO`: a consistent, compacted, self-contained copy
 //! (no WAL) taken in a read transaction, so writers carry on meanwhile. It's
