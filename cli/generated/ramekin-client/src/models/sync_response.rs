@@ -31,9 +31,6 @@ pub struct SyncResponse {
     /// Server-side changes since the request's cursor
     #[serde(rename = "server_changes")]
     pub server_changes: Vec<models::SyncServerChange>,
-    /// Server time when this sync started. Deprecated as a cursor: pass `cursor` instead.
-    #[serde(rename = "sync_timestamp")]
-    pub sync_timestamp: String,
     /// Items that were updated (with success status)
     #[serde(rename = "updated")]
     pub updated: Vec<models::SyncUpdatedItem>,
@@ -47,7 +44,6 @@ impl SyncResponse {
         deleted: Vec<uuid::Uuid>,
         full_resync: bool,
         server_changes: Vec<models::SyncServerChange>,
-        sync_timestamp: String,
         updated: Vec<models::SyncUpdatedItem>,
     ) -> SyncResponse {
         SyncResponse {
@@ -57,7 +53,6 @@ impl SyncResponse {
             deleted,
             full_resync,
             server_changes,
-            sync_timestamp,
             updated,
         }
     }

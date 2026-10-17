@@ -110,7 +110,6 @@ describe("shopping list sync cache", () => {
         }),
         serverChange({ id: "created", item: "new item", category: "Other" }),
       ],
-      syncTimestamp: new Date("2026-07-01T12:05:00.000Z"),
       cursor: 45,
       fullResync: false,
       updated: [],
@@ -154,7 +153,6 @@ describe("shopping list sync cache", () => {
           category: "Produce",
         }),
       ],
-      syncTimestamp: new Date("2026-07-01T12:05:00.000Z"),
       cursor: 45,
       fullResync: true,
       updated: [],
@@ -195,7 +193,6 @@ describe("shopping list sync cache", () => {
           category: "Produce",
         }),
       ],
-      syncTimestamp: new Date("2026-07-01T12:05:00.000Z"),
       cursor: 45,
       fullResync: true,
       updated: [],
@@ -259,7 +256,6 @@ describe("shopping list sync cache", () => {
 
   it("refreshes the cache from the sync API", async () => {
     const storage = new MemoryStorage();
-    const syncTimestamp = new Date("2026-07-01T12:05:00.000Z");
     const requests: unknown[] = [];
     const api = {
       syncItems: async (request: unknown) => {
@@ -269,7 +265,6 @@ describe("shopping list sync cache", () => {
           created: [],
           deleted: [],
           serverChanges: [serverChange({ id: "new", item: "flour" })],
-          syncTimestamp,
           cursor: 45,
           fullResync: false,
           updated: [],

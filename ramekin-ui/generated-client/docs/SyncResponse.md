@@ -12,7 +12,6 @@ Name | Type
 `deleted` | Array&lt;string&gt;
 `fullResync` | boolean
 `serverChanges` | [Array&lt;SyncServerChange&gt;](SyncServerChange.md)
-`syncTimestamp` | Date
 `updated` | [Array&lt;SyncUpdatedItem&gt;](SyncUpdatedItem.md)
 
 ## Example
@@ -28,7 +27,6 @@ const example = {
   "deleted": null,
   "fullResync": null,
   "serverChanges": null,
-  "syncTimestamp": null,
   "updated": null,
 } satisfies SyncResponse
 

@@ -85,13 +85,6 @@ export interface SyncResponse {
      */
     serverChanges: Array<SyncServerChange>;
     /**
-     * Server time when this sync started. Deprecated as a cursor: pass
-     * `cursor` instead.
-     * @type {Date}
-     * @memberof SyncResponse
-     */
-    syncTimestamp: Date;
-    /**
      * Items that were updated (with success status)
      * @type {Array<SyncUpdatedItem>}
      * @memberof SyncResponse
@@ -109,7 +102,6 @@ export function instanceOfSyncResponse(value: object): value is SyncResponse {
     if (!('deleted' in value) || value['deleted'] === undefined) return false;
     if (!('fullResync' in value) || value['fullResync'] === undefined) return false;
     if (!('serverChanges' in value) || value['serverChanges'] === undefined) return false;
-    if (!('syncTimestamp' in value) || value['syncTimestamp'] === undefined) return false;
     if (!('updated' in value) || value['updated'] === undefined) return false;
     return true;
 }
@@ -130,7 +122,6 @@ export function SyncResponseFromJSONTyped(json: any, ignoreDiscriminator: boolea
         'deleted': json['deleted'],
         'fullResync': json['full_resync'],
         'serverChanges': ((json['server_changes'] as Array<any>).map(SyncServerChangeFromJSON)),
-        'syncTimestamp': (new Date(json['sync_timestamp'])),
         'updated': ((json['updated'] as Array<any>).map(SyncUpdatedItemFromJSON)),
     };
 }
@@ -152,7 +143,6 @@ export function SyncResponseToJSONTyped(value?: SyncResponse | null, ignoreDiscr
         'deleted': value['deleted'],
         'full_resync': value['fullResync'],
         'server_changes': ((value['serverChanges'] as Array<any>).map(SyncServerChangeToJSON)),
-        'sync_timestamp': value['syncTimestamp'].toISOString(),
         'updated': ((value['updated'] as Array<any>).map(SyncUpdatedItemToJSON)),
     };
 }

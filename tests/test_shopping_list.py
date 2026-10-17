@@ -564,7 +564,7 @@ def test_sync_returns_server_changes(authed_api_client):
 
     assert len(sync_response.server_changes) == 1
     assert sync_response.server_changes[0].item == "server_item"
-    assert sync_response.sync_timestamp is not None
+    assert sync_response.full_resync
 
 
 def test_sync_requires_auth(unauthed_api_client):

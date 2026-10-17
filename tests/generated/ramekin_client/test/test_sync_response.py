@@ -65,7 +65,6 @@ class TestSyncResponse(unittest.TestCase):
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         version = 56, )
                     ],
-                sync_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 updated = [
                     ramekin_client.models.sync_updated_item.SyncUpdatedItem(
                         id = '', 
@@ -105,7 +104,6 @@ class TestSyncResponse(unittest.TestCase):
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         version = 56, )
                     ],
-                sync_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 updated = [
                     ramekin_client.models.sync_updated_item.SyncUpdatedItem(
                         id = '', 
