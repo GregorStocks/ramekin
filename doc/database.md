@@ -10,16 +10,18 @@ database, not in it: `<DATABASE_URL>-files/`, one file per photo, thumbnail
 or output, named by the SHA-256 of its contents (`ab/ab12…`). A file never
 changes once written and is never deleted, a soft-deleted photo's included.
 Keep the directory with the database file. A step output goes to a file when
-its JSON is over 16 KB; its row then holds JSON null in `output` and the hash
-in `output_hash`.
+its JSON is over 16 KB, zstd-compressed; its row then holds JSON null in
+`output` and the hash in `output_hash`. (Output files written before
+compression are plain JSON, and still load.)
 
 A database from before this layout moves its photo BLOBs out to files on the
 next startup, 16 rows per write transaction, then VACUUMs and drops the
 emptied columns. Large inline step outputs move the same way, 32 rows per
 write transaction, then a VACUUM. Both are safe to interrupt: the next
 startup carries on. (On a copy of prod on 2026-10-17, the output move took
-672 fetched pages and 2 extractions out, 379 MB as 600 files after
-duplicates, and the database went from 483 MB to 52 MB, in under 4 seconds.)
+672 fetched pages and 2 extractions out, 379 MB of JSON as 600 files after
+duplicates, 55 MB compressed, and the database went from 483 MB to 52 MB, in
+under 6 seconds.)
 The store used to be `<DATABASE_URL>-photos/`; startup renames it.
 
 ## Backups
