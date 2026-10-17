@@ -31,7 +31,7 @@ SLOW_IMAGE_GENERATION_BARRIER = SlowImageGenerationBarrier()
 # check that concurrent saves of one name pay for a single call.
 INGREDIENT_NAME_CALLS = {}
 # Valid answers sent per name. A batch broken by another test's failing name
-# is re-asked one name at a time, so calls can exceed answers.
+# is re-asked in halves, so calls can exceed answers.
 INGREDIENT_NAME_ANSWERS = {}
 INGREDIENT_NAME_CALLS_LOCK = threading.Lock()
 # Names whose resolver calls fail until a test clears them, or (with a count)

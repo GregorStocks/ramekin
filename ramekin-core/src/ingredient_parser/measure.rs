@@ -405,14 +405,20 @@ fn unit(c: &mut Cursor) -> Option<String> {
     Some(unit.to_string())
 }
 
-/// Read a package size: "15 ounce can", "14-oz. can" (and "14- ounce can"
-/// as "14-ounce can").
+/// Read a package size: "15 ounce can", "14-oz. can", "14 1/2-ounce can"
+/// (and "14- ounce can" as "14-ounce can").
 fn package_size(c: &mut Cursor) -> Option<String> {
     let mut probe = c.clone();
-    let size = probe.take_if(|t| t.kind == Kind::Number)?;
-    if !is_amount_like(size.text) {
+    let start = probe.pos;
+    let whole = probe.take_if(|t| t.kind == Kind::Number)?;
+    if !is_amount_like(whole.text) {
         return None;
     }
+    // "14 1/2-ounce can": the fraction completes the size.
+    if whole.is_integer() {
+        probe.take_if(|t| t.is_fraction() && t.space_before);
+    }
+    let size = probe.text_between(start, probe.pos);
     let dash = probe.take_if(|t| t.kind == Kind::Dash);
     if dash.is_some_and(|d| d.space_before) {
         return None;
@@ -436,7 +442,7 @@ fn package_size(c: &mut Cursor) -> Option<String> {
     *c = probe;
     Some(format!(
         "{}{}{}{} {}",
-        size.text,
+        size,
         if dash.is_some() { "-" } else { " " },
         mass.text,
         period.map_or("", |p| p.text),
@@ -1092,6 +1098,22 @@ mod tests {
         assert_eq!(
             read("14-ounce can of chickpeas"),
             (some("1"), some("14-ounce can"), "chickpeas".to_string())
+        );
+        assert_eq!(
+            read("1 14 1/2-ounce can diced tomatoes"),
+            (
+                some("1"),
+                some("14 1/2-ounce can"),
+                "diced tomatoes".to_string()
+            )
+        );
+        assert_eq!(
+            read("2 15 1/2 ounce cans kidney beans"),
+            (
+                some("2"),
+                some("15 1/2 ounce cans"),
+                "kidney beans".to_string()
+            )
         );
         assert_eq!(
             read("1/2-inch piece of ginger"),

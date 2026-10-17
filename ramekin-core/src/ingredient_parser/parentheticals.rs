@@ -191,7 +191,7 @@ pub(super) fn try_parse_parenthetical_measurement(s: &str) -> Option<Measurement
         return None;
     }
 
-    if bare_parenthetical_size(&cleaned).is_some() {
+    if bare_parenthetical_size(&cleaned).is_some() || sizes_cut_pieces(&amount, &unit) {
         return None;
     }
 
@@ -199,6 +199,21 @@ pub(super) fn try_parse_parenthetical_measurement(s: &str) -> Option<Measurement
         amount: Some(amount),
         unit: Some(unit),
     })
+}
+
+/// Whether a measurement of one plural piece ("(about 2-inch pieces)")
+/// sizes the cut rather than measuring the whole. One "1-inch piece" of
+/// ginger is a quantity; "2 2-inch pieces" still counts them.
+fn sizes_cut_pieces(amount: &str, unit: &str) -> bool {
+    const PLURAL_PIECE_NOUNS: &[&str] = &["pieces", "chunks", "knobs", "hunks"];
+
+    let unit = unit.strip_suffix(" each").unwrap_or(unit);
+    amount == "1"
+        && unit
+            .rsplit(' ')
+            .next()
+            .is_some_and(|noun| PLURAL_PIECE_NOUNS.contains(&noun.to_lowercase().as_str()))
+        && unit.to_lowercase().contains("inch")
 }
 
 /// "about 1/4 cup's worth", "2 cups worth", "3 cups worth of slices": the
@@ -917,6 +932,33 @@ mod tests {
         let parsed = parse_ingredient("3 large peaches (3 cups worth of slices)");
         assert_eq!(parsed.measurements.last(), Some(&measurement("3", "cup")));
         assert_eq!(parsed.note.as_deref(), Some("3 cups worth of slices"));
+    }
+
+    #[test]
+    fn test_cut_piece_size_is_not_an_alternative() {
+        for line in [
+            "1 cup lightly-packed torn green leaf lettuce (approximately 2-inch pieces)",
+            "1 cup torn lettuce (about 2-inch pieces)",
+            "2 cups squash (1-inch chunks)",
+            "1 cup torn lettuce (2-inch pieces each)",
+        ] {
+            let parsed = parse_ingredient(line);
+            assert_eq!(parsed.measurements.len(), 1, "{line}: {parsed:?}");
+            assert!(parsed.note.is_some(), "{line}: {parsed:?}");
+        }
+
+        // One piece, or a count of pieces, is a quantity.
+        let parsed = parse_ingredient("30 grams fresh ginger (~1-inch piece)");
+        assert_eq!(
+            parsed.measurements.last(),
+            Some(&Measurement {
+                amount: Some("1".to_string()),
+                unit: Some("1-inch piece".to_string()),
+            })
+        );
+        let result = parse_parenthetical_measurements("2 3-inch chunks");
+        let units: Vec<_> = result.iter().map(|m| m.unit.as_deref()).collect();
+        assert_eq!(units, [Some("3-inch chunks")]);
     }
 
     #[test]

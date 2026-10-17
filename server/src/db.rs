@@ -6,6 +6,7 @@ use diesel::r2d2::{self, ConnectionManager, CustomizeConnection};
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
 use std::cell::{Cell, RefCell};
 use std::sync::Mutex;
+use std::time::{Duration, Instant};
 use tracing::Span;
 
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("../migrations");
@@ -50,16 +51,53 @@ impl Drop for FlagGuard {
     }
 }
 
+/// A write lock wait or hold longer than this logs a warning; shorter ones
+/// log at debug. Every other writer queues behind a long hold, and SQLite
+/// fails a writer whose wait on the file lock passes the busy timeout.
+const SLOW_WRITE_LOCK: Duration = Duration::from_millis(500);
+
+/// The app-wide write lock, held until dropped. Logs how long it was held.
+struct WriteLockGuard {
+    _lock: std::sync::MutexGuard<'static, ()>,
+    _holds: FlagGuard,
+    acquired: Instant,
+}
+
+impl Drop for WriteLockGuard {
+    fn drop(&mut self) {
+        let held = self.acquired.elapsed();
+        let held_ms = held.as_millis() as u64;
+        if held >= SLOW_WRITE_LOCK {
+            tracing::warn!(held_ms, "slow write lock hold");
+        } else {
+            tracing::debug!(held_ms, "released write lock");
+        }
+    }
+}
+
 /// The app-wide write lock, held until dropped. None when this thread
-/// already holds it.
-fn lock_writes() -> Option<(std::sync::MutexGuard<'static, ()>, FlagGuard)> {
+/// already holds it. Logs how long it waited for the lock.
+fn lock_writes() -> Option<WriteLockGuard> {
     if HOLDS_WRITE_LOCK.get() {
         return None;
     }
+    let started = Instant::now();
     let lock = WRITE_LOCK
         .lock()
         .unwrap_or_else(|poisoned| poisoned.into_inner());
-    Some((lock, FlagGuard::set(&HOLDS_WRITE_LOCK)))
+    let acquired = Instant::now();
+    let waited = acquired - started;
+    let waited_ms = waited.as_millis() as u64;
+    if waited >= SLOW_WRITE_LOCK {
+        tracing::warn!(waited_ms, "slow write lock wait");
+    } else {
+        tracing::debug!(waited_ms, "acquired write lock");
+    }
+    Some(WriteLockGuard {
+        _lock: lock,
+        _holds: FlagGuard::set(&HOLDS_WRITE_LOCK),
+        acquired,
+    })
 }
 
 /// Run `f` in a write transaction. It takes the app-wide write lock, then
@@ -117,18 +155,53 @@ where
 /// SQLite runs one writer at a time and stamps in commit order, so nothing
 /// below the cursor can still be in flight. Call it inside the sync's read
 /// transaction, before the reads, so they share one snapshot.
-pub fn sync_cursor(conn: &mut SqliteConnection) -> QueryResult<i64> {
+pub fn sync_cursor(conn: &mut SqliteConnection) -> QueryResult<SyncCursor> {
     use crate::schema::sync_clock;
-    let value: i64 = sync_clock::table.select(sync_clock::value).first(conn)?;
-    Ok(value + 1)
+    let (value, resync_floor): (i64, i64) = sync_clock::table
+        .select((sync_clock::value, sync_clock::resync_floor))
+        .first(conn)?;
+    Ok(SyncCursor {
+        value: value + 1,
+        resync_floor,
+    })
 }
 
-/// `cursor` if it could have come from this database, else None. A cursor
-/// above the current one was issued by another database (a restored backup,
-/// a rebuilt file), so it can't say what the client has seen: answer with a
-/// full sync instead of silently skipping every change below it.
-pub fn valid_since(cursor: Option<i64>, current: i64) -> Option<i64> {
-    cursor.filter(|&since| since <= current)
+/// A sync's [`sync_cursor`], plus what it needs to vet the client's.
+#[derive(Debug, Clone, Copy)]
+pub struct SyncCursor {
+    /// The cursor to hand back to the client.
+    pub value: i64,
+    /// The clock value of the last [`restamp_live`].
+    resync_floor: i64,
+}
+
+impl SyncCursor {
+    /// The client's `cursor` if this database can answer it with a delta,
+    /// else None: a full resync, which the response flags so the client drops
+    /// cached rows it omits. A cursor at or below the resync floor predates
+    /// a restore or import that changed rows under the client without
+    /// leaving tombstones. A cursor above the current one was issued by
+    /// another database (a rebuilt file) and can't say what the client has
+    /// seen.
+    pub fn since(&self, cursor: Option<i64>) -> Option<i64> {
+        cursor.filter(|&since| since > self.resync_floor && since <= self.value)
+    }
+}
+
+/// Move the sync clock and its resync floor to `value` and stamp every live
+/// recipe version, tag and shopping item with it, so any client whose cursor
+/// is at or below `value` gets a full resync (see [`SyncCursor::since`]).
+/// For when the database's contents changed under clients' feet: an import,
+/// a restored backup. `value` must be at or above every cursor a client could
+/// hold. Call inside [`write`].
+pub fn restamp_live(conn: &mut SqliteConnection, value: i64) -> QueryResult<()> {
+    conn.batch_execute(&format!(
+        "UPDATE sync_clock SET value = {value}, resync_floor = {value}; \
+         UPDATE recipe_versions SET change_seq = {value} \
+           WHERE id IN (SELECT current_version_id FROM recipes WHERE deleted_at IS NULL); \
+         UPDATE user_tags SET change_seq = {value} WHERE deleted_at IS NULL; \
+         UPDATE shopping_list_items SET change_seq = {value} WHERE deleted_at IS NULL;"
+    ))
 }
 
 diesel::define_sql_function! {
@@ -255,7 +328,14 @@ impl Instrumentation for TracingInstrumentation {
                     if let Some((span, _entered)) = cell.borrow_mut().take() {
                         if let Some(err) = error {
                             span.record("error", tracing::field::display(err));
-                            tracing::warn!(parent: &span, error = %err, "query failed");
+                            if is_database_locked(err) {
+                                // A writer waited out busy_timeout on SQLite's
+                                // file lock: something wrote outside `write`,
+                                // or another process holds the file.
+                                tracing::error!(parent: &span, error = %err, "database is locked");
+                            } else {
+                                tracing::warn!(parent: &span, error = %err, "query failed");
+                            }
                         }
                         // _entered is dropped here, exiting the span
                     }
@@ -275,12 +355,19 @@ impl Instrumentation for TracingInstrumentation {
     }
 }
 
+/// Whether `err` is SQLite's SQLITE_BUSY ("database is locked"), which
+/// Diesel surfaces only as a message.
+fn is_database_locked(err: &diesel::result::Error) -> bool {
+    err.to_string().contains("database is locked")
+}
+
 fn tracing_instrumentation() -> Option<Box<dyn Instrumentation>> {
     Some(Box::new(TracingInstrumentation))
 }
 
 /// Open the database file (creating it and its directory if missing), set up
-/// the connection, and run pending schema and data migrations. WAL mode is a
+/// the connection, and run pending schema and data migrations, including
+/// moving any photo bytes still in the database out to files. WAL mode is a
 /// property of the file, so it's set here once rather than per connection
 /// (switching it needs every other connection out of the way).
 pub fn open_migrated(database_url: &str) -> SqliteConnection {
@@ -296,6 +383,8 @@ pub fn open_migrated(database_url: &str) -> SqliteConnection {
     conn.run_pending_migrations(MIGRATIONS)
         .expect("Failed to run database migrations");
     crate::data_migrations::run_pending(&mut conn).expect("Failed to run data migrations");
+    crate::photos::store::move_blobs_out(&mut conn)
+        .expect("Failed to move photo bytes out of the database");
     conn
 }
 
@@ -316,4 +405,57 @@ pub fn create_pool(database_url: &str) -> DbPool {
         .connection_customizer(Box::new(ConnectionSetup))
         .build(manager)
         .expect("Failed to create database pool")
+}
+
+#[cfg(test)]
+mod write_lock_tests {
+    use super::*;
+
+    #[test]
+    fn recognizes_a_busy_writer() {
+        let dir = std::env::temp_dir().join(format!("ramekin-db-lock-{}", uuid::Uuid::new_v4()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let url = dir.join("db.sqlite").to_str().unwrap().to_string();
+        let mut holder = SqliteConnection::establish(&url).unwrap();
+        holder.batch_execute("BEGIN IMMEDIATE;").unwrap();
+        let mut waiter = SqliteConnection::establish(&url).unwrap();
+        let err = waiter
+            .batch_execute("PRAGMA busy_timeout = 0; BEGIN IMMEDIATE;")
+            .unwrap_err();
+        assert!(is_database_locked(&err), "{err}");
+        assert!(!is_database_locked(&diesel::result::Error::NotFound));
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+}
+
+#[cfg(test)]
+mod sync_cursor_tests {
+    use super::SyncCursor;
+
+    const CURSOR: SyncCursor = SyncCursor {
+        value: 100,
+        resync_floor: 50,
+    };
+
+    #[test]
+    fn a_cursor_this_database_issued_since_the_last_restamp_is_a_delta() {
+        assert_eq!(CURSOR.since(Some(51)), Some(51));
+        assert_eq!(CURSOR.since(Some(100)), Some(100));
+    }
+
+    #[test]
+    fn no_cursor_is_a_full_resync() {
+        assert_eq!(CURSOR.since(None), None);
+    }
+
+    #[test]
+    fn a_cursor_from_before_a_restore_or_import_is_a_full_resync() {
+        assert_eq!(CURSOR.since(Some(50)), None);
+        assert_eq!(CURSOR.since(Some(1)), None);
+    }
+
+    #[test]
+    fn a_cursor_from_another_database_is_a_full_resync() {
+        assert_eq!(CURSOR.since(Some(101)), None);
+    }
 }

@@ -4,7 +4,9 @@
 //!
 //! Everything is read in one repeatable-read snapshot and written in one
 //! SQLite transaction, so a failure leaves nothing behind but an empty
-//! schema. Soft-deleted rows come across like any other.
+//! schema (and photo files no row names). Soft-deleted rows come across like
+//! any other. Photo bytes go to files in the photo store beside the SQLite
+//! file, as the server stores them.
 //!
 //! Sync stamps: clients hold cursors that are Postgres snapshot watermarks,
 //! all at or below the snapshot's xmax. The sync clock starts above that
@@ -15,7 +17,7 @@
 //! stamps, which compare correctly against those cursors.
 
 use crate::db;
-use diesel::connection::SimpleConnection;
+use crate::photos::PhotoStore;
 use diesel::prelude::*;
 use diesel::sql_types as sql;
 use diesel::sqlite::{Sqlite, SqliteConnection};
@@ -35,7 +37,9 @@ enum Kind {
     BigInt,
     Real,
     Bool,
-    Bytes,
+    /// bytea, written to a file in the photo store; the column holds the
+    /// file's hash.
+    File,
 }
 
 /// One column: its SQLite name, the Postgres expression it's read from, and
@@ -130,10 +134,10 @@ const TABLES: &[Table] = &[
             col("id", Text),
             col("user_id", Text),
             col("content_type", Text),
-            col("data", Bytes),
+            from("data_hash", "data", File),
             col("created_at", Timestamp),
             col("deleted_at", Timestamp),
-            col("thumbnail", Bytes),
+            from("thumbnail_hash", "thumbnail", File),
             col("width", Int),
             col("height", Int),
             col("file_size", Int),
@@ -145,7 +149,7 @@ const TABLES: &[Table] = &[
             col("id", Text),
             col("photo_id", Text),
             col("size", Int),
-            col("data", Bytes),
+            from("data_hash", "data", File),
             col("created_at", Timestamp),
         ],
     },
@@ -278,7 +282,7 @@ fn select_expr(column: &Column) -> String {
             format!("to_char({source} AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.US') || '+00:00'")
         }
         Text | Json => format!("({source})::text"),
-        Int | BigInt | Real | Bool | Bytes => source.to_string(),
+        Int | BigInt | Real | Bool | File => source.to_string(),
     }
 }
 
@@ -287,10 +291,14 @@ enum Value {
     Text(String),
     Int(i64),
     Real(f64),
-    Bytes(Vec<u8>),
 }
 
-fn read(row: &Row, index: usize, column: &Column) -> anyhow::Result<Option<Value>> {
+fn read(
+    row: &Row,
+    index: usize,
+    column: &Column,
+    photos: &PhotoStore,
+) -> anyhow::Result<Option<Value>> {
     Ok(match column.kind {
         Text | Timestamp => row.try_get::<_, Option<String>>(index)?.map(Value::Text),
         Json => match row.try_get::<_, Option<String>>(index)? {
@@ -308,7 +316,10 @@ fn read(row: &Row, index: usize, column: &Column) -> anyhow::Result<Option<Value
         Bool => row
             .try_get::<_, Option<bool>>(index)?
             .map(|v| Value::Int(v.into())),
-        Bytes => row.try_get::<_, Option<Vec<u8>>>(index)?.map(Value::Bytes),
+        File => match row.try_get::<_, Option<Vec<u8>>>(index)? {
+            Some(bytes) => Some(Value::Text(photos.put(&bytes)?)),
+            None => None,
+        },
     })
 }
 
@@ -321,7 +332,6 @@ fn bind<'f, Q>(
         Some(Value::Text(v)) => query.bind::<sql::Text, _>(v),
         Some(Value::Int(v)) => query.bind::<sql::BigInt, _>(v),
         Some(Value::Real(v)) => query.bind::<sql::Double, _>(v),
-        Some(Value::Bytes(v)) => query.bind::<sql::Binary, _>(v),
     }
 }
 
@@ -342,6 +352,7 @@ fn copy_table(
     pg: &mut postgres::Transaction<'_>,
     conn: &mut SqliteConnection,
     table: &Table,
+    photos: &PhotoStore,
 ) -> anyhow::Result<usize> {
     let selects: Vec<String> = table.columns.iter().map(select_expr).collect();
     let names: Vec<&str> = table.columns.iter().map(|c| c.name).collect();
@@ -361,7 +372,7 @@ fn copy_table(
     while let Some(row) = postgres::fallible_iterator::FallibleIterator::next(&mut rows)? {
         let mut query = diesel::sql_query(insert.as_str()).into_boxed::<Sqlite>();
         for (index, column) in table.columns.iter().enumerate() {
-            query = bind(query, read(&row, index, column)?);
+            query = bind(query, read(&row, index, column, photos)?);
         }
         query.execute(conn)?;
         count += 1;
@@ -373,6 +384,7 @@ fn copy_table(
 /// database at `database_url`.
 pub fn run(postgres_url: &str, database_url: &str) -> anyhow::Result<()> {
     let mut conn = db::open_migrated(database_url);
+    let photos = PhotoStore::of(&mut conn)?;
     let existing = sqlite_count(&mut conn, "users")? + sqlite_count(&mut conn, "recipes")?;
     anyhow::ensure!(
         existing == 0,
@@ -399,7 +411,7 @@ pub fn run(postgres_url: &str, database_url: &str) -> anyhow::Result<()> {
     let indexed = conn.immediate_transaction(|conn| {
         let mut copied = Vec::new();
         for table in TABLES {
-            let count = copy_table(&mut snapshot, conn, table)?;
+            let count = copy_table(&mut snapshot, conn, table, &photos)?;
             tracing::info!(table = table.name, rows = count, "copied");
             copied.push((table.name, count));
         }
@@ -441,12 +453,7 @@ pub fn run(postgres_url: &str, database_url: &str) -> anyhow::Result<()> {
         }
 
         // Everything live, above every client's cursor.
-        conn.batch_execute(&format!(
-            "UPDATE recipe_versions SET change_seq = {restamp} \
-               WHERE id IN (SELECT current_version_id FROM recipes WHERE deleted_at IS NULL); \
-             UPDATE user_tags SET change_seq = {restamp} WHERE deleted_at IS NULL; \
-             UPDATE shopping_list_items SET change_seq = {restamp} WHERE deleted_at IS NULL;"
-        ))?;
+        db::restamp_live(conn, restamp)?;
 
         // Every row came across, deleted ones included.
         for (table, count) in &copied {

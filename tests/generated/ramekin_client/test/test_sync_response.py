@@ -48,6 +48,7 @@ class TestSyncResponse(unittest.TestCase):
                 deleted = [
                     ''
                     ],
+                full_resync = True,
                 server_changes = [
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 
@@ -87,6 +88,7 @@ class TestSyncResponse(unittest.TestCase):
                 deleted = [
                     ''
                     ],
+                full_resync = True,
                 server_changes = [
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 

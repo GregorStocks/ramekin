@@ -2,6 +2,7 @@
 
 mod api;
 mod auth;
+mod backup;
 mod data_migrations;
 mod db;
 mod ids;
@@ -175,6 +176,18 @@ async fn not_found_fallback() -> impl axum::response::IntoResponse {
     api::error::ApiError::not_found("Not found")
 }
 
+/// The argument of `ramekin-server <command> <arg>`, when invoked that way.
+fn command_arg(command: &str) -> Option<std::path::PathBuf> {
+    let args: Vec<String> = env::args().collect();
+    if args.get(1).map(String::as_str) != Some(command) {
+        return None;
+    }
+    let arg = args
+        .get(2)
+        .unwrap_or_else(|| panic!("usage: ramekin-server {command} <path>"));
+    Some(std::path::PathBuf::from(arg))
+}
+
 #[tokio::main]
 async fn main() {
     // Check for --openapi flag to dump spec and exit
@@ -190,6 +203,34 @@ async fn main() {
     init_telemetry();
 
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+
+    // `ramekin-server backup <dir>`: snapshot the database into <dir>, then exit.
+    // `ramekin-server restore <snapshot>`: replace the database with a
+    // snapshot (server stopped), then exit. See backup::restore.
+    if let Some(snapshot) = command_arg("restore") {
+        match backup::restore(&database_url, &snapshot) {
+            Ok(aside) => tracing::info!(
+                replaced = ?aside,
+                "database restored; every client's next sync re-delivers everything"
+            ),
+            Err(e) => {
+                tracing::error!("restore failed: {e:#}");
+                std::process::exit(1);
+            }
+        }
+        return;
+    }
+
+    if let Some(dir) = command_arg("backup") {
+        match backup::run_command(&database_url, &dir) {
+            Ok(path) => tracing::info!(path = %path.display(), "database snapshot written"),
+            Err(e) => {
+                tracing::error!("backup failed: {e:#}");
+                std::process::exit(1);
+            }
+        }
+        return;
+    }
 
     // `ramekin-server import-postgres <postgres-url>`: copy the old Postgres
     // database into the (new, empty) SQLite file at DATABASE_URL, then exit.
@@ -212,10 +253,18 @@ async fn main() {
     }
 
     let pool: AppState = Arc::new(db::create_pool(&database_url));
+    photos::store::init_live(&pool).expect("Failed to find the photo store");
 
-    // Spawn background backfill for photo dimensions (populates width/height
-    // for photos created before the column existed).
-    photos::spawn_dimension_backfill(pool.clone());
+    // Daily snapshots of the database (doc/sqlite-cutover.md, Backups).
+    match env::var_os("RAMEKIN_BACKUP_DIR") {
+        Some(dir) if !dir.is_empty() => {
+            let dir = std::path::PathBuf::from(dir);
+            std::fs::create_dir_all(&dir)
+                .unwrap_or_else(|e| panic!("Failed to create {}: {e}", dir.display()));
+            backup::spawn_scheduler(pool.clone(), dir);
+        }
+        _ => tracing::warn!("RAMEKIN_BACKUP_DIR is not set; the database is not being backed up"),
+    }
 
     // Before serving, since reads use the stored category, and before
     // anything can resolve ingredient names (resumed jobs, the worker), so

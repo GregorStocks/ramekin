@@ -84,20 +84,16 @@ pub struct SyncUpdateItem {
 enum ChangesSince {
     All,
     Cursor(i64),
-    /// Wall-clock cursor from clients that predate `cursor`. It can miss a
-    /// write that commits after a concurrent sync's read; such clients switch
-    /// to `cursor` after one sync.
-    Timestamp(DateTime<Utc>),
+    /// A cursor this database can't answer with a delta: every item, and
+    /// every deletion, as if from the start.
+    Restart,
 }
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct SyncRequest {
     /// `cursor` from the previous sync's response. Server returns changes at
-    /// or after it, and takes precedence over `last_sync_at`.
+    /// or after it; without one, it returns every item.
     pub cursor: Option<i64>,
-    /// Deprecated: use `cursor`. Server returns changes after this time when
-    /// `cursor` is absent; with neither, it returns every item.
-    pub last_sync_at: Option<DateTime<Utc>>,
     /// Items created offline
     #[serde(default)]
     pub creates: Vec<SyncCreateItem>,
@@ -159,6 +155,13 @@ pub struct SyncResponse {
     /// Snapshot watermark to pass as `cursor` on the next sync. Changes may be
     /// redelivered across syncs, but none can be skipped.
     pub cursor: i64,
+    /// True when `server_changes` holds every live item rather than changes
+    /// since the request's cursor: no cursor was sent, or it predates a
+    /// restored backup or import, or came from another database. The client
+    /// must then drop synced cached items missing from `server_changes` — an
+    /// item rolled back by a restore is in neither `server_changes` nor
+    /// `deleted`.
+    pub full_resync: bool,
     /// Canonical category display order for grouping items; every item's
     /// `category` is guaranteed to appear in this list.
     pub category_order: Vec<String>,
@@ -203,10 +206,9 @@ pub async fn sync_items(
 
     let user_id = user.id;
     let sync_timestamp = Utc::now();
-    let since = match (request.cursor, request.last_sync_at) {
-        (Some(cursor), _) => ChangesSince::Cursor(cursor),
-        (None, Some(last_sync_at)) => ChangesSince::Timestamp(last_sync_at),
-        (None, None) => ChangesSince::All,
+    let since = match request.cursor {
+        Some(cursor) => ChangesSince::Cursor(cursor),
+        None => ChangesSince::All,
     };
 
     let response = run_db_locked(&pool, move |conn| {
@@ -214,15 +216,19 @@ pub async fn sync_items(
             // Read before this sync's own writes, which therefore carry stamps
             // at or above it and come back on the next sync. Clients apply
             // redelivered changes idempotently by version.
-            let cursor = db::sync_cursor(conn)?;
-            // A cursor this database never issued (see `db::valid_since`)
-            // gets everything, deletions included, as if from the start.
+            let sync_cursor = db::sync_cursor(conn)?;
+            let cursor = sync_cursor.value;
+            // A cursor this database can't answer with a delta (see
+            // `SyncCursor::since`) gets everything, deletions included, as if
+            // from the start.
             let since = match since {
-                ChangesSince::Cursor(since) => {
-                    ChangesSince::Cursor(db::valid_since(Some(since), cursor).unwrap_or(0))
-                }
+                ChangesSince::Cursor(since) => match sync_cursor.since(Some(since)) {
+                    Some(since) => ChangesSince::Cursor(since),
+                    None => ChangesSince::Restart,
+                },
                 other => other,
             };
+            let full_resync = !matches!(since, ChangesSince::Cursor(_));
 
             // 1. Process creates — batch insert, fall back to a single SELECT for conflicts
             let mut created = Vec::with_capacity(request.creates.len());
@@ -544,6 +550,7 @@ pub async fn sync_items(
             let deleted_query = match since {
                 // No cursor means first sync - return all items and no deletes
                 ChangesSince::All => None,
+                ChangesSince::Restart => Some(deleted_items),
                 ChangesSince::Cursor(since) => {
                     changes_query = changes_query.filter(
                         shopping_list_items::change_seq
@@ -551,14 +558,6 @@ pub async fn sync_items(
                             .or(shopping_list_items::id.eq_any(conflicted)),
                     );
                     Some(deleted_items.filter(shopping_list_items::change_seq.ge(since)))
-                }
-                ChangesSince::Timestamp(last_sync) => {
-                    changes_query = changes_query.filter(
-                        shopping_list_items::updated_at
-                            .gt(last_sync)
-                            .or(shopping_list_items::id.eq_any(conflicted)),
-                    );
-                    Some(deleted_items.filter(shopping_list_items::deleted_at.gt(last_sync)))
                 }
             };
 
@@ -635,6 +634,7 @@ pub async fn sync_items(
                 server_changes,
                 sync_timestamp,
                 cursor,
+                full_resync,
                 category_order: super::list::category_order(),
             })
         })

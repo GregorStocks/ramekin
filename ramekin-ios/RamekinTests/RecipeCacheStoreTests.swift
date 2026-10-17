@@ -29,10 +29,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [makeRecipe()]
             ),
+            afterId: nil,
             accountKey: accountKey
         )
         let markerKey = defaults.dictionaryRepresentation().keys.first {
@@ -48,10 +50,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 400,
                 deleted: [],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [makeRecipe()]
             ),
+            afterId: nil,
             accountKey: accountKey
         )
         let served = try await store.loadSearchDocuments(accountKey: accountKey)
@@ -79,10 +83,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [recipe]
             ),
+            afterId: nil,
             accountKey: accountKey
         )
 
@@ -127,10 +133,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [makeRecipe(id: id, instructions: "Old instructions", notes: "Old notes")]
             ),
+            afterId: nil,
             accountKey: accountKey
         )
         let updated = makeRecipe(
@@ -145,10 +153,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 500,
                 deleted: [],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [updated]
             ),
+            afterId: nil,
             accountKey: accountKey
         )
 
@@ -167,10 +177,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [recipe]
             ),
+            afterId: nil,
             accountKey: accountKey
         )
 
@@ -178,10 +190,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 400,
                 deleted: [recipe.id],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: []
             ),
+            afterId: nil,
             accountKey: accountKey
         )
 
@@ -198,10 +212,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [kept, deleted]
             ),
+            afterId: nil,
             accountKey: accountKey
         )
         let added = makeRecipe(updatedAt: Date(timeIntervalSince1970: 100))
@@ -210,10 +226,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 400,
                 deleted: [deleted.id, UUID()],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [makeRecipe(id: kept.id, instructions: "New instructions"), added]
             ),
+            afterId: nil,
             accountKey: accountKey
         )
 
@@ -232,10 +250,12 @@ final class RecipeCacheStoreTests: XCTestCase {
                 syncResponse: SyncRecipesResponse(
                     cursor: 300,
                     deleted: [],
+                    fullResync: false,
                     hasMore: false,
                     normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                     recipes: [recipe]
                 ),
+                afterId: nil,
                 accountKey: key
             )
         }
@@ -244,10 +264,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 400,
                 deleted: [recipe.id],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: []
             ),
+            afterId: nil,
             accountKey: accountKey
         )
 
@@ -271,10 +293,12 @@ final class RecipeCacheStoreTests: XCTestCase {
                 syncResponse: SyncRecipesResponse(
                     cursor: 300,
                     deleted: [],
+                    fullResync: false,
                     hasMore: false,
                     normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                     recipes: [recipe]
                 ),
+                afterId: nil,
                 accountKey: accountKey
             )
             return try await store.loadSearchDocuments(accountKey: accountKey)
@@ -316,6 +340,95 @@ final class RecipeCacheStoreTests: XCTestCase {
             thumbnailPhotoId: UUID(),
             title: "Cached Recipe",
             updatedAt: updatedAt
+        )
+    }
+}
+
+// MARK: - Full resync
+
+extension RecipeCacheStoreTests {
+    func testFullResyncDropsCachedRecipesTheServerNoLongerHas() async throws {
+        let (store, defaults) = makeStore()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let kept = makeRecipe()
+        let lost = makeRecipe()
+        try await store.apply(syncResponse: page([kept, lost]), afterId: nil, accountKey: accountKey)
+
+        // The server was restored from a backup taken before `lost` existed:
+        // it has neither the recipe nor a tombstone for it.
+        try await store.apply(
+            syncResponse: page([kept], fullResync: true),
+            afterId: nil,
+            accountKey: accountKey
+        )
+
+        let documents = try await store.loadSearchDocuments(accountKey: accountKey)
+        XCTAssertEqual(documents.map(\.summary.id), [kept.id])
+    }
+
+    func testFullResyncPagePrunesOnlyItsOwnIdRange() async throws {
+        let (store, defaults) = makeStore()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        let ids = ["1", "3", "5", "7"].map(Self.orderedId)
+        try await store.apply(
+            syncResponse: page(ids.map { makeRecipe(id: $0) }),
+            afterId: nil,
+            accountKey: accountKey
+        )
+
+        // The server only has ids[0] and ids[2]. The first page settles IDs
+        // through ids[0], so nothing past it may be dropped yet.
+        try await store.apply(
+            syncResponse: page([makeRecipe(id: ids[0])], fullResync: true, hasMore: true),
+            afterId: nil,
+            accountKey: accountKey
+        )
+        var cached = try await store.loadSearchDocuments(accountKey: accountKey)
+        XCTAssertEqual(Set(cached.map(\.summary.id)), Set(ids))
+
+        try await store.apply(
+            syncResponse: page([makeRecipe(id: ids[2])], fullResync: true),
+            afterId: ids[0],
+            accountKey: accountKey
+        )
+        cached = try await store.loadSearchDocuments(accountKey: accountKey)
+        XCTAssertEqual(Set(cached.map(\.summary.id)), [ids[0], ids[2]])
+    }
+
+    func testFullResyncPageWithMoreButNoRecipesSettlesNothing() {
+        let response = page([], fullResync: true, hasMore: true)
+
+        XCTAssertFalse(RecipeSyncSweep.fullResyncPageCovers(Self.orderedId("9"), afterId: nil, response: response))
+    }
+
+    func testFullResyncPageCoversIdsInServerTextOrder() {
+        // The server orders lowercase hex text, where digits sort before letters.
+        let response = page([makeRecipe(id: Self.orderedId("a"))], fullResync: true, hasMore: true)
+
+        XCTAssertTrue(RecipeSyncSweep.fullResyncPageCovers(Self.orderedId("9"), afterId: nil, response: response))
+        XCTAssertFalse(RecipeSyncSweep.fullResyncPageCovers(Self.orderedId("b"), afterId: nil, response: response))
+        XCTAssertFalse(
+            RecipeSyncSweep.fullResyncPageCovers(Self.orderedId("9"), afterId: Self.orderedId("9"), response: response)
+        )
+    }
+
+    /// An ID whose position in server order is set by its first hex digit.
+    private static func orderedId(_ firstDigit: String) -> UUID {
+        UUID(uuidString: "\(firstDigit)0000000-0000-0000-0000-000000000000")!
+    }
+
+    private func page(
+        _ recipes: [SyncRecipe],
+        fullResync: Bool = false,
+        hasMore: Bool = false
+    ) -> SyncRecipesResponse {
+        SyncRecipesResponse(
+            cursor: 300,
+            deleted: [],
+            fullResync: fullResync,
+            hasMore: hasMore,
+            normalizationContractVersion: SearchNormalizationSupport.contractVersion,
+            recipes: recipes
         )
     }
 }

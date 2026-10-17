@@ -203,7 +203,7 @@ pub async fn custom_enrich_recipe(
             )
             .into_response();
         }
-        Err(PhotoImageLoadError::Database(e)) => {
+        Err(e @ (PhotoImageLoadError::Database(_) | PhotoImageLoadError::File(_))) => {
             tracing::error!("Failed to load custom enrich photos: {}", e);
             return ApiError::internal("Failed to load photos").into_response();
         }

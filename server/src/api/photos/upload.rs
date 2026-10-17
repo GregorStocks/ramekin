@@ -4,6 +4,7 @@ use crate::db::DbPool;
 use crate::ids::Uuid;
 use crate::models::NewPhoto;
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
+use crate::photos::store_photo;
 use crate::schema::photos;
 use axum::{
     extract::{Multipart, State},
@@ -110,16 +111,22 @@ pub async fn upload(
     .await
     .expect("image processing task panicked")?;
 
+    let file_size = data.len() as i32;
+    let stored = store_photo(data, processed.thumbnail).await.map_err(|e| {
+        tracing::error!("Failed to store photo files: {e:#}");
+        ApiError::internal("Failed to save photo")
+    })?;
+
     let photo_id: Uuid = run_db_write(&pool, move |conn| {
         let new_photo = NewPhoto {
             id: Uuid::now_v7(),
             user_id,
             content_type: &processed.content_type,
-            data: &data,
-            thumbnail: &processed.thumbnail,
             width: Some(processed.width as i32),
             height: Some(processed.height as i32),
-            file_size: Some(data.len() as i32),
+            file_size: Some(file_size),
+            data_hash: &stored.data_hash,
+            thumbnail_hash: &stored.thumbnail_hash,
         };
 
         diesel::insert_into(photos::table)

@@ -15,10 +15,14 @@ into the SQLite file named by `DATABASE_URL`, which must be new or empty:
 1. Creates the schema (the same migrations the server runs at startup).
 2. Reads every table in one repeatable-read Postgres snapshot and writes it in
    one SQLite transaction. If anything fails, the SQLite file is left with an
-   empty schema; delete it and run again.
+   empty schema; delete it and run again. (Photo files already written can
+   stay: the next run writes the same names.)
 3. Converts types along the way: uuids to text, `uuid[]` photo ids and
    `jsonb` to compact JSON text, and timestamps to UTC text. The case-folded
    `username_key` / `name_key` columns fill themselves (generated columns).
+   Photo and thumbnail bytes don't go in the database: each is written to a
+   file named by its SHA-256 in `<DATABASE_URL>-photos/`, and the row keeps
+   the hash (`data_hash`, `thumbnail_hash`).
 4. Seeds the sync clock above the snapshot's `pg_snapshot_xmax`, so it starts
    above every cursor a client could hold. Every live recipe version, tag and
    shopping item gets a stamp above that, so each client's next normal delta
@@ -46,7 +50,8 @@ DATABASE_URL=/tmp/rehearsal.sqlite server/target/release/ramekin-server \
 
 Then start a server on `/tmp/rehearsal.sqlite` (a spare `PORT`) and compare it
 with the old server: the recipe list and a few recipes, search results, tags,
-the shopping list and meal plans. A pre-cutover iOS install pointed at it
+the shopping list and meal plans, and that photos and thumbnails load. A
+pre-cutover iOS install pointed at it
 should receive every recipe on its next sync, and an offline search should
 match a server search.
 
@@ -79,14 +84,63 @@ Check out the last pre-SQLite commit, point `DATABASE_URL` back at Postgres,
 start it. Anything written on SQLite since the cutover stays only in the
 SQLite file.
 
+## Photo files
+
+Photo bytes live beside the database, not in it: `<DATABASE_URL>-photos/`,
+one file per photo or thumbnail, named by the SHA-256 of its contents
+(`ab/ab12…`). A file never changes once written and is never deleted, a
+soft-deleted photo's included. Keep the directory with the database file.
+
+A database from before this layout moves its photo BLOBs out to files on the
+next startup, 16 rows per write transaction, then VACUUMs and drops the
+emptied columns. It's safe to interrupt: the next startup carries on.
+
 ## Backups
 
-The database is one file plus its `-wal`/`-shm` siblings. Never copy the file
-while the server runs; use SQLite's online backup instead:
+Set `RAMEKIN_BACKUP_DIR` in `dev.env` before cutover, pointing at a folder
+that is synced or mounted off this machine. The server then writes a snapshot
+there once a day (on startup too, if the newest is more than a day old) and
+deletes snapshots older than 7 days. Without it, the server logs a warning at
+startup and backs nothing up.
 
-```bash
-sqlite3 .db/dev.sqlite ".backup '/path/to/backup/ramekin-$(date +%F).sqlite'"
-```
+With each snapshot, the photo files the backup folder's `photos/` lacks are
+copied in before the snapshot gets its name, and the snapshot only gets it if
+every photo file it names is there, so a snapshot you can see always has its
+photos. A photo file missing from the live store makes the snapshot fail
+(logged, retried an hour later) rather than publish one that can't be fully
+restored. Since photo files never change, that keeps `photos/` complete
+for every snapshot; it's never pruned.
 
-or `VACUUM INTO`, or run Litestream for continuous replication. Set one up
-before cutover (tracked in `issues/`).
+A snapshot is `ramekin-<UTC time>.sqlite`: SQLite's `VACUUM INTO`, a
+consistent, compacted, self-contained copy taken while the server keeps
+running. It's written under a temporary name and renamed into place, so a sync
+tool never sees a partial file. Never copy the live database file itself; it
+can be mid-write, and recent changes may still be in its `-wal` file.
+
+Take one on demand (before an upgrade, say) with `make db-backup`, which writes
+to `RAMEKIN_BACKUP_DIR` or `DIR=/somewhere`, photos included.
+
+## Restoring a backup
+
+1. `make serve-down`.
+2. `make db-restore SNAPSHOT=/path/to/ramekin-<time>.sqlite`.
+3. `make serve`.
+
+`db-restore` keeps the replaced database: it renames the file and its
+`-wal`/`-shm` to `<database>.before-restore-<time>-<tag>`. Then it copies the
+snapshot into place, and copies the photo files from the `photos/` beside the
+snapshot that `<database>-photos/` lacks (all of them, on a new machine). If a
+photo file the restored database names is still missing after that, it says
+how many and exits with an error (the database is restored by then). The
+live photo directory isn't renamed: its files are a superset of what the
+snapshot names.
+
+It also moves the sync clock far past anything the replaced database handed
+out, and restamps every live recipe, tag and shopping item above it. Clients
+that synced after the snapshot hold cursors the restored clock would otherwise
+reach again, and their later syncs would then silently skip the rolled-back
+rows. With the restamp, every client's next sync re-delivers the restored
+state, however long it waits to sync.
+
+Anything created after the snapshot lingers in client caches until
+`p4-full-resync-prune` lands.
