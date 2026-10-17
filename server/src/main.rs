@@ -7,7 +7,6 @@ mod data_migrations;
 mod db;
 mod files;
 mod ids;
-mod import_postgres;
 mod ingredient_names;
 mod models;
 mod photos;
@@ -233,30 +232,10 @@ async fn main() {
         return;
     }
 
-    // `ramekin-server import-postgres <postgres-url>`: copy the old Postgres
-    // database into the (new, empty) SQLite file at DATABASE_URL, then exit.
-    let args: Vec<String> = env::args().collect();
-    if args.get(1).map(String::as_str) == Some("import-postgres") {
-        let postgres_url = args
-            .get(2)
-            .expect("usage: ramekin-server import-postgres <postgres-url>")
-            .clone();
-        // The Postgres client is synchronous and runs its own runtime.
-        let result =
-            tokio::task::spawn_blocking(move || import_postgres::run(&postgres_url, &database_url))
-                .await
-                .expect("import task panicked");
-        if let Err(e) = result {
-            tracing::error!("import failed: {e:#}");
-            std::process::exit(1);
-        }
-        return;
-    }
-
     let pool: AppState = Arc::new(db::create_pool(&database_url));
     files::init_live(&pool).expect("Failed to find the file store");
 
-    // Hourly snapshots of the database (doc/sqlite-cutover.md, Backups).
+    // Hourly snapshots of the database (doc/database.md, Backups).
     match env::var_os("RAMEKIN_BACKUP_DIR") {
         Some(dir) if !dir.is_empty() => {
             let dir = std::path::PathBuf::from(dir);

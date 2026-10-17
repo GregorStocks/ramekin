@@ -3,7 +3,7 @@
 Decision record for issue `p4-sqlite-local-first-exploration` (2026-07-11).
 
 > **Update (2026-10):** the server has since moved to SQLite for its own
-> reasons (doc/sqlite-pilot-analysis.md, doc/sqlite-cutover.md). The rest of
+> reasons (doc/sqlite-pilot-analysis.md, doc/database.md). The rest of
 > this record still holds: the move didn't put server data on a phone, and
 > local search still rides the application sync described below. "What exists
 > today" describes the SQLite server; the sections arguing for PostgreSQL are
