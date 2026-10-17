@@ -93,7 +93,8 @@ or output, named by the SHA-256 of its contents (`ab/ab12…`). A file never
 changes once written and is never deleted, a soft-deleted photo's included.
 Keep the directory with the database file. A step output goes to a file when
 its JSON is over 16 KB, zstd-compressed; its row then holds JSON null in
-`output` and the hash in `output_hash`.
+`output` and the hash in `output_hash`. (Output files written before
+compression are plain JSON, and still load.)
 
 A database from before this layout moves its photo BLOBs out to files on the
 next startup, 16 rows per write transaction, then VACUUMs and drops the
