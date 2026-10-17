@@ -368,9 +368,9 @@ fn tracing_instrumentation() -> Option<Box<dyn Instrumentation>> {
 /// Open the database file (creating it and its directory if missing), set up
 /// the connection, and run pending schema and data migrations, including
 /// moving any photo bytes and large step outputs still in the database out
-/// to files. WAL mode is a
-/// property of the file, so it's set here once rather than per connection
-/// (switching it needs every other connection out of the way).
+/// to files. WAL mode is a property of the file, so it's set here once rather
+/// than per connection (switching it needs every other connection out of the
+/// way).
 pub fn open_migrated(database_url: &str) -> SqliteConnection {
     if let Some(dir) = std::path::Path::new(database_url).parent() {
         std::fs::create_dir_all(dir)
