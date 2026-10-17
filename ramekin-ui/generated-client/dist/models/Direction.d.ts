@@ -14,8 +14,8 @@
  * @export
  */
 export declare const Direction: {
-    readonly Desc: "desc";
-    readonly Asc: "asc";
+    readonly Desc: 'desc';
+    readonly Asc: 'asc';
 };
 export type Direction = typeof Direction[keyof typeof Direction];
 export declare function instanceOfDirection(value: any): boolean;
