@@ -941,6 +941,11 @@ const PARTIAL_PIECES: [&str; 8] = [
     "slice", "strip", "wedge", "ring", "cube", "chip", "pat", "spear",
 ];
 
+/// Whether a counted unit is a size word alone ("large", "extra-large").
+pub fn is_size(unit: &str) -> bool {
+    SIZES.contains(&piece_unit(unit).as_str())
+}
+
 /// Normalize a counted unit to a portion key: lowercase, "extra-large" ->
 /// "extra large", and the first word singular ("cloves" -> "clove"). Matches
 /// the importer's `portion_key`.

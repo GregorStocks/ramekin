@@ -248,7 +248,8 @@ fn is_cooking_fat(entry: &Entry) -> bool {
 const MAX_TRACE_COUNT: f64 = 10.0;
 
 /// A few whole leaves, sticks, or pods of a food USDA has no piece weight for
-/// ("2 bay leaves"); a handful of a trace food is a few calories.
+/// ("2 bay leaves"), sized or not ("1 small bay leaf"); a handful of a trace
+/// food is a few calories.
 fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) -> bool {
     ingredient
         .measurements
@@ -261,7 +262,7 @@ fn is_unweighed_count(entry: &Entry, ingredient: &ParsedIngredient, scale: f64) 
                 }],
             ) => {
                 amount.max * scale <= MAX_TRACE_COUNT
-                    && TRACE_COUNT_UNITS.contains(&unit.as_str())
+                    && (TRACE_COUNT_UNITS.contains(&unit.as_str()) || catalog::is_size(unit))
                     && catalog::grams_per_piece(entry, Some(unit)).is_none()
             }
             _ => false,
