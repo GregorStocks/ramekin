@@ -590,6 +590,13 @@ fn counted_trace_foods_without_a_piece_weight_are_negligible() {
     assert_eq!(known(ingredient("bay leaves", "2", "leaves")), 0.0);
     assert_eq!(known(ingredient("cinnamon", "1", "stick")), 0.0);
     assert_eq!(known(count("bay leaves", "6-8")), 0.0);
+    // A size before the piece ("1 small bay leaf") counts the same pieces.
+    assert_eq!(known(ingredient("bay leaf", "1", "small")), 0.0);
+    assert_eq!(known(ingredient("cinnamon sticks", "2", "small")), 0.0);
+    assert_eq!(known(ingredient("sprigs fresh thyme", "3", "large")), 0.0);
+    assert_eq!(known(ingredient("bay leaves", "2", "extra-large")), 0.0);
+    let many_large = estimate(&[ingredient("bay leaves", "20", "large")], None, 1.0).unwrap();
+    assert!(many_large.known_calories.is_none());
     // Past a handful, including after scaling, the calories are unknown
     // rather than zero.
     let doubled = estimate(&[count("bay leaves", "6-8")], None, 2.0).unwrap();
