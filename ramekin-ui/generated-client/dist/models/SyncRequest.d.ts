@@ -25,7 +25,7 @@ export interface SyncRequest {
     creates?: Array<SyncCreateItem>;
     /**
      * `cursor` from the previous sync's response. Server returns changes at
-     * or after it, and takes precedence over `last_sync_at`.
+     * or after it; without one, it returns every item.
      * @type {number}
      * @memberof SyncRequest
      */
@@ -36,13 +36,6 @@ export interface SyncRequest {
      * @memberof SyncRequest
      */
     deletes?: Array<string>;
-    /**
-     * Deprecated: use `cursor`. Server returns changes after this time when
-     * `cursor` is absent; with neither, it returns every item.
-     * @type {Date}
-     * @memberof SyncRequest
-     */
-    lastSyncAt?: Date | null;
     /**
      * Items updated offline
      * @type {Array<SyncUpdateItem>}

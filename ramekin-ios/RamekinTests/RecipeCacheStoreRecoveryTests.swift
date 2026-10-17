@@ -33,10 +33,12 @@ final class RecipeCacheStoreRecoveryTests: XCTestCase {
             syncResponse: SyncRecipesResponse(
                 cursor: 300,
                 deleted: [],
+                fullResync: false,
                 hasMore: false,
                 normalizationContractVersion: SearchNormalizationSupport.contractVersion,
                 recipes: [good]
             ),
+            afterId: nil,
             accountKey: accountKey
         )
         store.setSyncCursor(300, accountKey: accountKey)

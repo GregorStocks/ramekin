@@ -26,6 +26,8 @@ export function instanceOfSyncResponse(value) {
         return false;
     if (!('deleted' in value) || value['deleted'] === undefined)
         return false;
+    if (!('fullResync' in value) || value['fullResync'] === undefined)
+        return false;
     if (!('serverChanges' in value) || value['serverChanges'] === undefined)
         return false;
     if (!('syncTimestamp' in value) || value['syncTimestamp'] === undefined)
@@ -46,6 +48,7 @@ export function SyncResponseFromJSONTyped(json, ignoreDiscriminator) {
         'created': (json['created'].map(SyncCreatedItemFromJSON)),
         'cursor': json['cursor'],
         'deleted': json['deleted'],
+        'fullResync': json['full_resync'],
         'serverChanges': (json['server_changes'].map(SyncServerChangeFromJSON)),
         'syncTimestamp': (new Date(json['sync_timestamp'])),
         'updated': (json['updated'].map(SyncUpdatedItemFromJSON)),
@@ -63,6 +66,7 @@ export function SyncResponseToJSONTyped(value, ignoreDiscriminator = false) {
         'created': (value['created'].map(SyncCreatedItemToJSON)),
         'cursor': value['cursor'],
         'deleted': value['deleted'],
+        'full_resync': value['fullResync'],
         'server_changes': (value['serverChanges'].map(SyncServerChangeToJSON)),
         'sync_timestamp': value['syncTimestamp'].toISOString(),
         'updated': (value['updated'].map(SyncUpdatedItemToJSON)),

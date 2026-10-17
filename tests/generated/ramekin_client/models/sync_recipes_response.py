@@ -31,10 +31,11 @@ class SyncRecipesResponse(BaseModel):
     """ # noqa: E501
     cursor: StrictInt = Field(description="This page's snapshot watermark. Once a sweep completes, persist the *first* page's cursor and pass it to the next sync: changes committed mid-sweep can land in id ranges the sweep already passed, and only the first watermark is low enough to redeliver all of them. Changes may be redelivered across syncs, but none can be skipped.")
     deleted: List[UUID] = Field(description="Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first page; later pages return an empty list.")
+    full_resync: StrictBool = Field(description="True when this page lists every active recipe in its ID range rather than changes since `cursor`: `cursor` was absent, predates a restored backup or import, or came from another database. The client must then drop cached recipes the sweep doesn't return — a recipe rolled back by a restore is in neither `recipes` nor `deleted` — and request the sweep's remaining pages without `cursor`, since a later page could otherwise judge the same cursor differently. Pages are ordered by ID, so each settles the ID range from `after_id` (exclusive) through its last recipe, or to the end of the ID space on the last page.")
     has_more: StrictBool = Field(description="True when the sweep has more pages. Request the next one with the same `cursor` and `after_id` set to this page's last recipe ID.")
     normalization_contract_version: Annotated[int, Field(strict=True, ge=0)] = Field(description="Version of the shared search-normalization contract (shared-test-vectors/search-normalization.json) the server was built with. A client mirroring server search locally must fail the sync when it does not support this version: matching with a stale contract would silently drop or add results relative to server search.")
     recipes: List[SyncRecipe] = Field(description="The next `limit` active recipes (by ascending recipe ID, starting past `after_id`) changed at or after `cursor`. All active recipes match when `cursor` is absent.")
-    __properties: ClassVar[List[str]] = ["cursor", "deleted", "has_more", "normalization_contract_version", "recipes"]
+    __properties: ClassVar[List[str]] = ["cursor", "deleted", "full_resync", "has_more", "normalization_contract_version", "recipes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +97,7 @@ class SyncRecipesResponse(BaseModel):
         _obj = cls.model_validate({
             "cursor": obj.get("cursor"),
             "deleted": obj.get("deleted"),
+            "full_resync": obj.get("full_resync"),
             "has_more": obj.get("has_more"),
             "normalization_contract_version": obj.get("normalization_contract_version"),
             "recipes": [SyncRecipe.from_dict(_item) for _item in obj["recipes"]] if obj.get("recipes") is not None else None

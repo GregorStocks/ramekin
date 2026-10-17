@@ -4970,6 +4970,7 @@
           "deleted",
           "cursor",
           "has_more",
+          "full_resync",
           "normalization_contract_version"
         ],
         "properties": {
@@ -4985,6 +4986,10 @@
               "format": "uuid"
             },
             "description": "Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first\npage; later pages return an empty list."
+          },
+          "full_resync": {
+            "type": "boolean",
+            "description": "True when this page lists every active recipe in its ID range rather\nthan changes since `cursor`: `cursor` was absent, predates a restored\nbackup or import, or came from another database. The client must then\ndrop cached recipes the sweep doesn't return — a recipe rolled back by\na restore is in neither `recipes` nor `deleted` — and request the\nsweep's remaining pages without `cursor`, since a later page could\notherwise judge the same cursor differently. Pages are ordered by ID,\nso each settles the ID range from `after_id` (exclusive) through its\nlast recipe, or to the end of the ID space on the last page."
           },
           "has_more": {
             "type": "boolean",
@@ -5021,7 +5026,7 @@
               "null"
             ],
             "format": "int64",
-            "description": "`cursor` from the previous sync's response. Server returns changes at\nor after it, and takes precedence over `last_sync_at`."
+            "description": "`cursor` from the previous sync's response. Server returns changes at\nor after it; without one, it returns every item."
           },
           "deletes": {
             "type": "array",
@@ -5030,14 +5035,6 @@
               "format": "uuid"
             },
             "description": "IDs of items deleted offline"
-          },
-          "last_sync_at": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "date-time",
-            "description": "Deprecated: use `cursor`. Server returns changes after this time when\n`cursor` is absent; with neither, it returns every item."
           },
           "updates": {
             "type": "array",
@@ -5057,6 +5054,7 @@
           "server_changes",
           "sync_timestamp",
           "cursor",
+          "full_resync",
           "category_order"
         ],
         "properties": {
@@ -5086,6 +5084,10 @@
               "format": "uuid"
             },
             "description": "IDs of items that were deleted"
+          },
+          "full_resync": {
+            "type": "boolean",
+            "description": "True when `server_changes` holds every live item rather than changes\nsince the request's cursor: no cursor was sent, or it predates a\nrestored backup or import, or came from another database. The client\nmust then drop synced cached items missing from `server_changes` — an\nitem rolled back by a restore is in neither `server_changes` nor\n`deleted`."
           },
           "server_changes": {
             "type": "array",

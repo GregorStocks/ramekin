@@ -20,6 +20,8 @@ export function instanceOfSyncRecipesResponse(value) {
         return false;
     if (!('deleted' in value) || value['deleted'] === undefined)
         return false;
+    if (!('fullResync' in value) || value['fullResync'] === undefined)
+        return false;
     if (!('hasMore' in value) || value['hasMore'] === undefined)
         return false;
     if (!('normalizationContractVersion' in value) || value['normalizationContractVersion'] === undefined)
@@ -38,6 +40,7 @@ export function SyncRecipesResponseFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'cursor': json['cursor'],
         'deleted': json['deleted'],
+        'fullResync': json['full_resync'],
         'hasMore': json['has_more'],
         'normalizationContractVersion': json['normalization_contract_version'],
         'recipes': (json['recipes'].map(SyncRecipeFromJSON)),
@@ -53,6 +56,7 @@ export function SyncRecipesResponseToJSONTyped(value, ignoreDiscriminator = fals
     return {
         'cursor': value['cursor'],
         'deleted': value['deleted'],
+        'full_resync': value['fullResync'],
         'has_more': value['hasMore'],
         'normalization_contract_version': value['normalizationContractVersion'],
         'recipes': (value['recipes'].map(SyncRecipeToJSON)),

@@ -155,34 +155,53 @@ where
 /// SQLite runs one writer at a time and stamps in commit order, so nothing
 /// below the cursor can still be in flight. Call it inside the sync's read
 /// transaction, before the reads, so they share one snapshot.
-pub fn sync_cursor(conn: &mut SqliteConnection) -> QueryResult<i64> {
+pub fn sync_cursor(conn: &mut SqliteConnection) -> QueryResult<SyncCursor> {
     use crate::schema::sync_clock;
-    let value: i64 = sync_clock::table.select(sync_clock::value).first(conn)?;
-    Ok(value + 1)
+    let (value, resync_floor): (i64, i64) = sync_clock::table
+        .select((sync_clock::value, sync_clock::resync_floor))
+        .first(conn)?;
+    Ok(SyncCursor {
+        value: value + 1,
+        resync_floor,
+    })
 }
 
-/// Move the sync clock to `value` and stamp every live recipe version, tag
-/// and shopping item with it, so any client whose cursor is below `value`
-/// gets all of them again on its next delta sync. For when the database's
-/// contents changed under clients' feet: an import, a restored backup.
-/// `value` must be above every cursor a client could hold. Call inside
-/// [`write`].
+/// A sync's [`sync_cursor`], plus what it needs to vet the client's.
+#[derive(Debug, Clone, Copy)]
+pub struct SyncCursor {
+    /// The cursor to hand back to the client.
+    pub value: i64,
+    /// The clock value of the last [`restamp_live`].
+    resync_floor: i64,
+}
+
+impl SyncCursor {
+    /// The client's `cursor` if this database can answer it with a delta,
+    /// else None: a full resync, which the response flags so the client drops
+    /// cached rows it omits. A cursor at or below the resync floor predates
+    /// a restore or import that changed rows under the client without
+    /// leaving tombstones. A cursor above the current one was issued by
+    /// another database (a rebuilt file) and can't say what the client has
+    /// seen.
+    pub fn since(&self, cursor: Option<i64>) -> Option<i64> {
+        cursor.filter(|&since| since > self.resync_floor && since <= self.value)
+    }
+}
+
+/// Move the sync clock and its resync floor to `value` and stamp every live
+/// recipe version, tag and shopping item with it, so any client whose cursor
+/// is at or below `value` gets a full resync (see [`SyncCursor::since`]).
+/// For when the database's contents changed under clients' feet: an import,
+/// a restored backup. `value` must be at or above every cursor a client could
+/// hold. Call inside [`write`].
 pub fn restamp_live(conn: &mut SqliteConnection, value: i64) -> QueryResult<()> {
     conn.batch_execute(&format!(
-        "UPDATE sync_clock SET value = {value}; \
+        "UPDATE sync_clock SET value = {value}, resync_floor = {value}; \
          UPDATE recipe_versions SET change_seq = {value} \
            WHERE id IN (SELECT current_version_id FROM recipes WHERE deleted_at IS NULL); \
          UPDATE user_tags SET change_seq = {value} WHERE deleted_at IS NULL; \
          UPDATE shopping_list_items SET change_seq = {value} WHERE deleted_at IS NULL;"
     ))
-}
-
-/// `cursor` if it could have come from this database, else None. A cursor
-/// above the current one was issued by another database (a restored backup,
-/// a rebuilt file), so it can't say what the client has seen: answer with a
-/// full sync instead of silently skipping every change below it.
-pub fn valid_since(cursor: Option<i64>, current: i64) -> Option<i64> {
-    cursor.filter(|&since| since <= current)
 }
 
 diesel::define_sql_function! {
@@ -389,7 +408,7 @@ pub fn create_pool(database_url: &str) -> DbPool {
 }
 
 #[cfg(test)]
-mod tests {
+mod write_lock_tests {
     use super::*;
 
     #[test]
@@ -406,5 +425,37 @@ mod tests {
         assert!(is_database_locked(&err), "{err}");
         assert!(!is_database_locked(&diesel::result::Error::NotFound));
         std::fs::remove_dir_all(&dir).unwrap();
+    }
+}
+
+#[cfg(test)]
+mod sync_cursor_tests {
+    use super::SyncCursor;
+
+    const CURSOR: SyncCursor = SyncCursor {
+        value: 100,
+        resync_floor: 50,
+    };
+
+    #[test]
+    fn a_cursor_this_database_issued_since_the_last_restamp_is_a_delta() {
+        assert_eq!(CURSOR.since(Some(51)), Some(51));
+        assert_eq!(CURSOR.since(Some(100)), Some(100));
+    }
+
+    #[test]
+    fn no_cursor_is_a_full_resync() {
+        assert_eq!(CURSOR.since(None), None);
+    }
+
+    #[test]
+    fn a_cursor_from_before_a_restore_or_import_is_a_full_resync() {
+        assert_eq!(CURSOR.since(Some(50)), None);
+        assert_eq!(CURSOR.since(Some(1)), None);
+    }
+
+    #[test]
+    fn a_cursor_from_another_database_is_a_full_resync() {
+        assert_eq!(CURSOR.since(Some(101)), None);
     }
 }

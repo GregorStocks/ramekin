@@ -112,6 +112,7 @@ describe("shopping list sync cache", () => {
       ],
       syncTimestamp: new Date("2026-07-01T12:05:00.000Z"),
       cursor: 45,
+      fullResync: false,
       updated: [],
     };
 
@@ -155,6 +156,48 @@ describe("shopping list sync cache", () => {
       ],
       syncTimestamp: new Date("2026-07-01T12:05:00.000Z"),
       cursor: 45,
+      fullResync: true,
+      updated: [],
+    };
+
+    const next = applyShoppingListSyncResponse(cached, response);
+
+    expect(next.items.map((item) => item.id)).toEqual(["active"]);
+    expect(next.items[0]).toMatchObject({
+      item: "new active",
+      version: 2,
+      category: "Produce",
+    });
+    expect(next.cursor).toBe(45);
+  });
+
+  it("drops cached items a full resync omits even when the cache had a cursor", () => {
+    const cached: ShoppingListSyncCache = {
+      version: 2,
+      categoryOrder: ["Other"],
+      items: [
+        // Created after the restored backup was taken: the server has
+        // neither the item nor a tombstone for it.
+        shoppingItem({ id: "lost-in-restore", item: "lost" }),
+        shoppingItem({ id: "active", item: "old active", version: 1 }),
+      ],
+      cursor: 40,
+    };
+    const response: SyncResponse = {
+      categoryOrder: ["Produce", "Other"],
+      created: [],
+      deleted: [],
+      serverChanges: [
+        serverChange({
+          id: "active",
+          item: "new active",
+          version: 2,
+          category: "Produce",
+        }),
+      ],
+      syncTimestamp: new Date("2026-07-01T12:05:00.000Z"),
+      cursor: 45,
+      fullResync: true,
       updated: [],
     };
 
@@ -228,6 +271,7 @@ describe("shopping list sync cache", () => {
           serverChanges: [serverChange({ id: "new", item: "flour" })],
           syncTimestamp,
           cursor: 45,
+          fullResync: false,
           updated: [],
         };
       },

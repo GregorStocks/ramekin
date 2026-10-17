@@ -66,6 +66,7 @@ def test_recipe_sync_initial_response_includes_active_recipes(
     assert set(recipes_by_id[str(created.id)]["tags"]) == {"sync", "cache"}
     assert response["deleted"] == []
     assert response["cursor"] > 0
+    assert response["full_resync"] is True
 
 
 def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
@@ -117,6 +118,7 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
     assert recipes_by_id[str(updated.id)]["tags"] == ["changed"]
     assert str(deleted.id) not in recipes_by_id
     assert str(deleted.id) in response["deleted"]
+    assert response["full_resync"] is False
 
 
 def test_recipe_sync_full_response_includes_deleted_ids(authed_api_client, server_url):
@@ -386,3 +388,32 @@ def test_recipe_sync_answers_a_cursor_from_another_database_with_a_full_sync(
     assert str(deleted.id) in response["deleted"]
     # Other users' writes can move the clock on in between.
     assert response["cursor"] >= current
+    # Flagged so the client drops cached recipes this database doesn't have.
+    assert response["full_resync"] is True
+
+
+def test_recipe_sync_full_resync_flag_is_on_every_page_of_a_full_sweep(
+    authed_api_client, server_url
+):
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    for title in ("Page One", "Page Two"):
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=title,
+                instructions="Cook it.",
+                ingredients=[make_ingredient(item="rice")],
+            )
+        )
+
+    first = _sync(client, server_url, limit=1)
+    second = _sync(
+        client,
+        server_url,
+        limit=1,
+        after_id=first["recipes"][0]["id"],
+    )
+
+    assert first["has_more"] is True
+    assert first["full_resync"] is True
+    assert second["full_resync"] is True

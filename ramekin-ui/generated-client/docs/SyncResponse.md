@@ -10,6 +10,7 @@ Name | Type
 `created` | [Array&lt;SyncCreatedItem&gt;](SyncCreatedItem.md)
 `cursor` | number
 `deleted` | Array&lt;string&gt;
+`fullResync` | boolean
 `serverChanges` | [Array&lt;SyncServerChange&gt;](SyncServerChange.md)
 `syncTimestamp` | Date
 `updated` | [Array&lt;SyncUpdatedItem&gt;](SyncUpdatedItem.md)
@@ -25,6 +26,7 @@ const example = {
   "created": null,
   "cursor": null,
   "deleted": null,
+  "fullResync": null,
   "serverChanges": null,
   "syncTimestamp": null,
   "updated": null,

@@ -30,7 +30,6 @@ export function SyncRequestFromJSONTyped(json, ignoreDiscriminator) {
         'creates': json['creates'] == null ? undefined : (json['creates'].map(SyncCreateItemFromJSON)),
         'cursor': json['cursor'] == null ? undefined : json['cursor'],
         'deletes': json['deletes'] == null ? undefined : json['deletes'],
-        'lastSyncAt': json['last_sync_at'] == null ? undefined : (new Date(json['last_sync_at'])),
         'updates': json['updates'] == null ? undefined : (json['updates'].map(SyncUpdateItemFromJSON)),
     };
 }
@@ -45,7 +44,6 @@ export function SyncRequestToJSONTyped(value, ignoreDiscriminator = false) {
         'creates': value['creates'] == null ? undefined : (value['creates'].map(SyncCreateItemToJSON)),
         'cursor': value['cursor'],
         'deletes': value['deletes'],
-        'last_sync_at': value['lastSyncAt'] == null ? value['lastSyncAt'] : value['lastSyncAt'].toISOString(),
         'updates': value['updates'] == null ? undefined : (value['updates'].map(SyncUpdateItemToJSON)),
     };
 }
