@@ -1,0 +1,22 @@
+{
+  "title": "Close the gap between catalog-only and keyword shopping categorization",
+  "description": "blocked-catalog-delete-keyword-categorizer can't land until the catalog categorizes names well enough without the keyword fallback in data/ingredients.json. \
+Measured 2026-10-17 by making keyword_category() return \"Other\": \n\
+- make shopping-list-categorizer-test: 60 distinct mismatches and 64 Other out of 280 items (bars: MAX_MISMATCHES=2, MAX_OTHER=3). \
+Misses include common foods ('1 medium white onion', '3 large onions', 'Bagels', '13 1/2-ounce can unsweetened coconut milk', '3 lb chicken parts', 'tonkatsu sauce') and brands/non-foods ('Chex', 'Coke'). \n\
+- ingredient-catalog-audit 'Lines categorized': pipeline fixtures 89.9% catalog-only vs 98.8% with keywords; Paprika fixtures 97.8% vs 99.4%. \n\
+Close the gap with classification passes over names the catalog doesn't resolve (make ingredient-catalog-unresolved), categories for foods and ambiguous names that lack one (make ingredient-catalog-uncategorized), and product entries for brands and non-food shopping items. \
+Fix the scorecard misses first: they are real prod shopping-list items. \n\
+Done when, with the keyword fallback disabled: the shopping-list scorecard meets today's bars (<=2 mismatches, <=3 Other), and each audit corpus's 'Lines categorized' is at most 1 percentage point below its with-keywords value (today: pipeline fixtures >=97.8%, Paprika >=98.4%, snapshots >=98.8%). \
+Then unblock blocked-catalog-delete-keyword-categorizer. \
+Catalog edits change pipeline output; rerun make pipeline and commit the data/ diffs.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "pipeline",
+  ],
+  "created_at": "2026-10-17T13:22:59-07:00",
+  "updated_at": "2026-10-17T13:22:59-07:00",
+}
