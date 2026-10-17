@@ -3,7 +3,8 @@
 //! An output whose JSON is larger than [`INLINE_LIMIT`] (in practice, a
 //! fetched page) lives in the file store beside the database
 //! ([`crate::files`]), zstd-compressed: its row holds JSON null in `output`
-//! and names the file in `output_hash`. Smaller outputs stay inline.
+//! and names the file in `output_hash`. Smaller outputs stay inline. Files
+//! written before compression, uncompressed, still load.
 
 use std::collections::{HashMap, HashSet};
 use std::error::Error;
@@ -101,8 +102,15 @@ fn load(store: &FileStore, output: JsonValue, output_hash: &str) -> anyhow::Resu
     if output_hash.is_empty() {
         return Ok(output);
     }
-    let json = zstd::stream::decode_all(store.read(output_hash)?.as_slice())
-        .with_context(|| format!("stored output {output_hash} isn't zstd"))?;
+    let bytes = store.read(output_hash)?;
+    // Files from before compression hold the JSON as is, and JSON never
+    // starts with zstd's magic number.
+    let json = if bytes.starts_with(&zstd::zstd_safe::MAGICNUMBER.to_le_bytes()) {
+        zstd::stream::decode_all(bytes.as_slice())
+            .with_context(|| format!("stored output {output_hash} isn't valid zstd"))?
+    } else {
+        bytes
+    };
     serde_json::from_slice(&json).with_context(|| format!("stored output {output_hash} isn't JSON"))
 }
 
@@ -315,6 +323,16 @@ mod tests {
             load(&store, prepared.output, &prepared.output_hash).unwrap(),
             large
         );
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
+    fn uncompressed_output_files_still_load() {
+        let dir = files::temp_dir("output-raw-test");
+        let store = FileStore::new(dir.join("files"));
+        let large = page(0);
+        let hash = store.put(&serde_json::to_vec(&large).unwrap()).unwrap();
+        assert_eq!(load(&store, JsonValue::Null, &hash).unwrap(), large);
         std::fs::remove_dir_all(&dir).unwrap();
     }
 
