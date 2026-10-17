@@ -104,12 +104,13 @@ at this point, and none of the steps below run for them.
 ### 3b. Move large step outputs out (`scraping::output_store::move_outputs_out`)
 
 - **What:** Step outputs whose JSON is over 16 KB (fetched pages, mostly)
-  live in the same file store. Inline ones that size, from before that or
-  from a restored snapshot, get copied out to files, 32 rows per write
-  transaction, and the file VACUUMed if anything moved.
+  live zstd-compressed in the same file store. Inline ones that size, from
+  before that or from a restored snapshot, get copied out to files, 32 rows
+  per write transaction, and the file VACUUMed if anything moved.
 - **Cost:** One scan of `step_outputs` once nothing is left to move: 15-28 ms
   on a copy of prod on 2026-10-17 (11,435 rows). The one run that moves them
-  took under 4 seconds there, VACUUM included (483 MB to 52 MB).
+  took under 6 seconds there, VACUUM included (483 MB to 52 MB; the
+  files came to 55 MB).
 - **On failure:** Panics. A later start resumes where it stopped.
 - **Must block serving:** Yes. Reads of a moved output go to its file.
 - **Recommendation:** Keep until it has run in prod and no snapshot from

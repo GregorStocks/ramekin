@@ -67,9 +67,10 @@ image = "0.25"
 # Encoding
 base64 = "0.23"
 
-# Compression (for Paprika export)
+# Compression (Paprika export; step outputs in the file store)
 flate2 = "1.1"
 zip = "8.6"
+zstd = "0.13"
 
 # Web scraping
 reqwest = { version = "0.13", default-features = false, features = ["rustls", "json"] }
