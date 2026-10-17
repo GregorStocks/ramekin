@@ -14,10 +14,10 @@
  * @export
  */
 export declare const CalorieStatus: {
-    readonly Complete: "complete";
-    readonly Partial: "partial";
-    readonly Insufficient: "insufficient";
-    readonly Empty: "empty";
+    readonly Complete: 'complete';
+    readonly Partial: 'partial';
+    readonly Insufficient: 'insufficient';
+    readonly Empty: 'empty';
 };
 export type CalorieStatus = typeof CalorieStatus[keyof typeof CalorieStatus];
 export declare function instanceOfCalorieStatus(value: any): boolean;
