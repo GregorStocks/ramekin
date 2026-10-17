@@ -1,0 +1,173 @@
+{
+  "description": "Applying a sync response (doc/sync-design.md) to a client's cache of rows. Each cached row has a change_seq, its fields, a pending local write (null, \"create\", \"update\" or \"delete\") and the fields with unsent local edits (dirty). A tombstone drops the row. A server row older than the cached one (lower change_seq) is skipped; otherwise it overwrites every field that isn't dirty. A full resync drops cached rows it omits, except pending creates and updates, which their own ops settle. Rows the response doesn't mention stay. Expected rows are listed by id. Web caches never hold pending writes, so web runs only the cases where every cached row is clean.",
+  "cases": [
+    {
+      "name": "a new row is inserted",
+      "cache": [],
+      "response": {
+        "changes": [{ "id": "a", "change_seq": 4, "fields": { "item": "eggs", "is_checked": false } }],
+        "deleted": [],
+        "full_resync": false
+      },
+      "expected": [
+        { "id": "a", "change_seq": 4, "fields": { "item": "eggs", "is_checked": false }, "pending": null, "dirty": [] }
+      ]
+    },
+    {
+      "name": "a clean row takes the server copy",
+      "cache": [
+        { "id": "a", "change_seq": 4, "fields": { "item": "eggs", "is_checked": false }, "pending": null, "dirty": [] }
+      ],
+      "response": {
+        "changes": [{ "id": "a", "change_seq": 9, "fields": { "item": "6 eggs", "is_checked": true } }],
+        "deleted": [],
+        "full_resync": false
+      },
+      "expected": [
+        { "id": "a", "change_seq": 9, "fields": { "item": "6 eggs", "is_checked": true }, "pending": null, "dirty": [] }
+      ]
+    },
+    {
+      "name": "an equal change_seq is taken (a meal plan's recipe title changed)",
+      "cache": [
+        { "id": "a", "change_seq": 4, "fields": { "recipe_title": "Soup" }, "pending": null, "dirty": [] }
+      ],
+      "response": {
+        "changes": [{ "id": "a", "change_seq": 4, "fields": { "recipe_title": "Miso Soup" } }],
+        "deleted": [],
+        "full_resync": false
+      },
+      "expected": [
+        { "id": "a", "change_seq": 4, "fields": { "recipe_title": "Miso Soup" }, "pending": null, "dirty": [] }
+      ]
+    },
+    {
+      "name": "an older server row is skipped",
+      "cache": [
+        { "id": "a", "change_seq": 9, "fields": { "item": "6 eggs" }, "pending": null, "dirty": [] }
+      ],
+      "response": {
+        "changes": [{ "id": "a", "change_seq": 4, "fields": { "item": "eggs" } }],
+        "deleted": [],
+        "full_resync": false
+      },
+      "expected": [
+        { "id": "a", "change_seq": 9, "fields": { "item": "6 eggs" }, "pending": null, "dirty": [] }
+      ]
+    },
+    {
+      "name": "dirty fields keep their local values and the rest take the server's",
+      "cache": [
+        { "id": "a", "change_seq": 4, "fields": { "item": "eggs", "is_checked": true, "note": null }, "pending": "update", "dirty": ["is_checked"] }
+      ],
+      "response": {
+        "changes": [{ "id": "a", "change_seq": 9, "fields": { "item": "6 eggs", "is_checked": false, "note": "free range" } }],
+        "deleted": [],
+        "full_resync": false
+      },
+      "expected": [
+        { "id": "a", "change_seq": 9, "fields": { "item": "6 eggs", "is_checked": true, "note": "free range" }, "pending": "update", "dirty": ["is_checked"] }
+      ]
+    },
+    {
+      "name": "a pending create takes the echo of its own write",
+      "cache": [
+        { "id": "a", "change_seq": 0, "fields": { "item": "eggs", "is_checked": true }, "pending": "create", "dirty": ["item", "is_checked"] }
+      ],
+      "response": {
+        "changes": [{ "id": "a", "change_seq": 12, "fields": { "item": "eggs", "is_checked": false } }],
+        "deleted": [],
+        "full_resync": false
+      },
+      "expected": [
+        { "id": "a", "change_seq": 12, "fields": { "item": "eggs", "is_checked": true }, "pending": "create", "dirty": ["item", "is_checked"] }
+      ]
+    },
+    {
+      "name": "a tombstone drops a clean row",
+      "cache": [
+        { "id": "a", "change_seq": 4, "fields": { "item": "eggs" }, "pending": null, "dirty": [] },
+        { "id": "b", "change_seq": 5, "fields": { "item": "milk" }, "pending": null, "dirty": [] }
+      ],
+      "response": { "changes": [], "deleted": ["a"], "full_resync": false },
+      "expected": [
+        { "id": "b", "change_seq": 5, "fields": { "item": "milk" }, "pending": null, "dirty": [] }
+      ]
+    },
+    {
+      "name": "a tombstone drops a row with unsent edits: delete wins",
+      "cache": [
+        { "id": "a", "change_seq": 4, "fields": { "item": "eggs", "is_checked": true }, "pending": "update", "dirty": ["is_checked"] }
+      ],
+      "response": { "changes": [], "deleted": ["a"], "full_resync": false },
+      "expected": []
+    },
+    {
+      "name": "a tombstone for a row the cache never had is ignored",
+      "cache": [
+        { "id": "b", "change_seq": 5, "fields": { "item": "milk" }, "pending": null, "dirty": [] }
+      ],
+      "response": { "changes": [], "deleted": ["a"], "full_resync": false },
+      "expected": [
+        { "id": "b", "change_seq": 5, "fields": { "item": "milk" }, "pending": null, "dirty": [] }
+      ]
+    },
+    {
+      "name": "a full resync drops clean rows it omits and keeps the ones it sends",
+      "cache": [
+        { "id": "a", "change_seq": 4, "fields": { "item": "eggs" }, "pending": null, "dirty": [] },
+        { "id": "b", "change_seq": 5, "fields": { "item": "milk" }, "pending": null, "dirty": [] }
+      ],
+      "response": {
+        "changes": [{ "id": "b", "change_seq": 70, "fields": { "item": "milk" } }],
+        "deleted": [],
+        "full_resync": true
+      },
+      "expected": [
+        { "id": "b", "change_seq": 70, "fields": { "item": "milk" }, "pending": null, "dirty": [] }
+      ]
+    },
+    {
+      "name": "a full resync keeps omitted pending creates and updates and drops omitted pending deletes",
+      "cache": [
+        { "id": "a", "change_seq": 0, "fields": { "item": "eggs" }, "pending": "create", "dirty": ["item"] },
+        { "id": "b", "change_seq": 5, "fields": { "item": "milk" }, "pending": "update", "dirty": ["item"] },
+        { "id": "c", "change_seq": 6, "fields": { "item": "jam" }, "pending": "delete", "dirty": [] }
+      ],
+      "response": { "changes": [], "deleted": [], "full_resync": true },
+      "expected": [
+        { "id": "a", "change_seq": 0, "fields": { "item": "eggs" }, "pending": "create", "dirty": ["item"] },
+        { "id": "b", "change_seq": 5, "fields": { "item": "milk" }, "pending": "update", "dirty": ["item"] }
+      ]
+    },
+    {
+      "name": "a pending delete the server still has stays pending",
+      "cache": [
+        { "id": "c", "change_seq": 6, "fields": { "item": "jam" }, "pending": "delete", "dirty": [] }
+      ],
+      "response": {
+        "changes": [{ "id": "c", "change_seq": 8, "fields": { "item": "strawberry jam" } }],
+        "deleted": [],
+        "full_resync": true
+      },
+      "expected": [
+        { "id": "c", "change_seq": 8, "fields": { "item": "strawberry jam" }, "pending": "delete", "dirty": [] }
+      ]
+    },
+    {
+      "name": "a delta leaves rows it doesn't mention alone",
+      "cache": [
+        { "id": "a", "change_seq": 4, "fields": { "item": "eggs" }, "pending": null, "dirty": [] }
+      ],
+      "response": {
+        "changes": [{ "id": "b", "change_seq": 9, "fields": { "item": "milk" } }],
+        "deleted": [],
+        "full_resync": false
+      },
+      "expected": [
+        { "id": "a", "change_seq": 4, "fields": { "item": "eggs" }, "pending": null, "dirty": [] },
+        { "id": "b", "change_seq": 9, "fields": { "item": "milk" }, "pending": null, "dirty": [] }
+      ]
+    }
+  ]
+}

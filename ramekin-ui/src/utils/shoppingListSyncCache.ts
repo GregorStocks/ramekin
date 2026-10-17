@@ -1,19 +1,27 @@
 import type {
-  ShoppingListApi,
-  ShoppingListItemResponse,
-  SyncResponse,
-  SyncServerChange,
+  OpResult,
+  ShoppingListOp,
+  SyncApi,
+  SyncShoppingListItem,
+  SyncShoppingListResponse,
 } from "ramekin-client";
+import { applySyncResponse } from "./syncApply";
 
-// Version 2 replaced the wall-clock `lastSyncAt` with the server's `cursor`.
-const CACHE_VERSION = 2;
+// Version 3 moved to the one-protocol sync (doc/sync-design.md): items carry
+// `changeSeq` instead of `version` and `updatedAt`.
+const CACHE_VERSION = 3;
 const CACHE_KEY_PREFIX = "shoppingListSyncCache";
 
 export interface ShoppingListSyncCache {
   version: typeof CACHE_VERSION;
-  items: ShoppingListItemResponse[];
+  items: SyncShoppingListItem[];
   categoryOrder: string[];
   cursor: number | null;
+}
+
+export interface ShoppingListSyncResult {
+  cache: ShoppingListSyncCache;
+  results: OpResult[];
 }
 
 export function shoppingListCacheKey(token: string): string {
@@ -52,83 +60,78 @@ export function clearShoppingListSyncCache(
   storage.removeItem(shoppingListCacheKey(token));
 }
 
+/**
+ * The cache after a sync: the response applied, then every item an op found
+ * gone dropped (it may have been deleted too long ago for a tombstone).
+ */
 export function applyShoppingListSyncResponse(
   cache: ShoppingListSyncCache | null,
-  response: SyncResponse,
+  response: SyncShoppingListResponse,
+  ops: readonly ShoppingListOp[] = [],
 ): ShoppingListSyncCache {
-  const deleted = new Set(response.deleted);
-  const byId = new Map<string, ShoppingListItemResponse>();
-  // A full resync lists every live item, so anything cached that it omits
-  // is gone from the server (e.g. created after a restored backup was taken).
-  const cachedItems = response.fullResync ? [] : (cache?.items ?? []);
-
-  for (const item of cachedItems) {
-    if (!deleted.has(item.id)) {
-      byId.set(item.id, item);
-    }
-  }
-
-  for (const change of response.serverChanges) {
-    if (!deleted.has(change.id)) {
-      byId.set(change.id, itemFromServerChange(change));
-    }
-  }
-
+  const gone = new Set(
+    ops.filter((_, i) => response.results[i] === "gone").map((op) => op.id),
+  );
   return {
     version: CACHE_VERSION,
-    items: Array.from(byId.values()),
+    items: applySyncResponse(cache?.items ?? [], response).filter(
+      (item) => !gone.has(item.id),
+    ),
     categoryOrder: response.categoryOrder,
     cursor: response.cursor,
   };
 }
 
-export async function refreshShoppingListSyncCache(
-  api: Pick<ShoppingListApi, "syncItems">,
-  storage: Pick<Storage, "getItem" | "setItem">,
+// One sync at a time: a response computed before another sync's writes
+// would otherwise land after them and bring back what they deleted.
+let inFlight: Promise<unknown> = Promise.resolve();
+
+/**
+ * Send `ops` (none for a plain refresh) from the cached cursor, and store
+ * the result. A cache that can't be read is synced from scratch; one that
+ * can't be written is cleared, via `onCacheError`.
+ */
+export function syncShoppingList(
+  api: Pick<SyncApi, "syncShoppingList">,
+  storage: Pick<Storage, "getItem" | "setItem" | "removeItem">,
   token: string | null,
-): Promise<ShoppingListSyncCache> {
-  const cached = loadShoppingListSyncCache(storage, token);
-  const response = await api.syncItems({
-    syncRequest: {
-      cursor: cached?.cursor ?? undefined,
-    },
-  });
-  const nextCache = applyShoppingListSyncResponse(cached, response);
-  saveShoppingListSyncCache(storage, token, nextCache);
-  return nextCache;
+  ops: ShoppingListOp[] = [],
+  onCacheError: (context: string, err: unknown) => void = () => {},
+): Promise<ShoppingListSyncResult> {
+  const run = async () => {
+    let cached: ShoppingListSyncCache | null = null;
+    try {
+      cached = loadShoppingListSyncCache(storage, token);
+    } catch (err) {
+      onCacheError("shopping list cache read failed", err);
+      clearQuietly(storage, token);
+    }
+    const response = await api.syncShoppingList({
+      syncShoppingListRequest: { cursor: cached?.cursor ?? undefined, ops },
+    });
+    const cache = applyShoppingListSyncResponse(cached, response, ops);
+    try {
+      saveShoppingListSyncCache(storage, token, cache);
+    } catch (err) {
+      onCacheError("shopping list cache write failed", err);
+      clearQuietly(storage, token);
+    }
+    return { cache, results: response.results };
+  };
+  const result = inFlight.then(run, run);
+  inFlight = result.catch(() => {});
+  return result;
 }
 
-export function replaceShoppingListCachedItems(
-  cache: ShoppingListSyncCache | null,
-  items: ShoppingListItemResponse[],
-  categoryOrder: string[],
-): ShoppingListSyncCache {
-  return {
-    version: CACHE_VERSION,
-    items,
-    categoryOrder,
-    cursor: cache?.cursor ?? null,
-  };
-}
-
-function itemFromServerChange(
-  change: SyncServerChange,
-): ShoppingListItemResponse {
-  return {
-    amount: change.amount,
-    category: change.category,
-    categoryOverride: change.categoryOverride,
-    computedCategory: change.computedCategory,
-    id: change.id,
-    isChecked: change.isChecked,
-    item: change.item,
-    note: change.note,
-    sortOrder: change.sortOrder,
-    sourceRecipeId: change.sourceRecipeId,
-    sourceRecipeTitle: change.sourceRecipeTitle,
-    updatedAt: change.updatedAt,
-    version: change.version,
-  };
+function clearQuietly(
+  storage: Pick<Storage, "removeItem">,
+  token: string | null,
+): void {
+  try {
+    clearShoppingListSyncCache(storage, token);
+  } catch {
+    // Nothing more to do: the next read fails and syncs from scratch.
+  }
 }
 
 function parseCache(value: unknown): ShoppingListSyncCache {
@@ -163,7 +166,7 @@ function parseCache(value: unknown): ShoppingListSyncCache {
   };
 }
 
-function parseCachedItem(value: unknown): ShoppingListItemResponse {
+function parseCachedItem(value: unknown): SyncShoppingListItem {
   if (!isRecord(value)) {
     throw new Error("Shopping list sync cache item is not an object");
   }
@@ -177,8 +180,7 @@ function parseCachedItem(value: unknown): ShoppingListItemResponse {
   );
   const isChecked = requiredBoolean(value.isChecked, "isChecked");
   const sortOrder = requiredNumber(value.sortOrder, "sortOrder");
-  const version = requiredNumber(value.version, "version");
-  const updatedAt = requiredDate(value.updatedAt, "updatedAt");
+  const changeSeq = requiredNumber(value.changeSeq, "changeSeq");
 
   return {
     amount: optionalString(value.amount, "amount"),
@@ -187,6 +189,7 @@ function parseCachedItem(value: unknown): ShoppingListItemResponse {
       value.categoryOverride,
       "categoryOverride",
     ),
+    changeSeq,
     computedCategory,
     id,
     isChecked,
@@ -198,20 +201,7 @@ function parseCachedItem(value: unknown): ShoppingListItemResponse {
       value.sourceRecipeTitle,
       "sourceRecipeTitle",
     ),
-    updatedAt,
-    version,
   };
-}
-
-function requiredDate(value: unknown, field: string): Date {
-  if (typeof value !== "string") {
-    throw new Error(`Shopping list sync cache ${field} is not a string`);
-  }
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) {
-    throw new Error(`Shopping list sync cache ${field} is not a valid date`);
-  }
-  return date;
 }
 
 function requiredString(value: unknown, field: string): string {

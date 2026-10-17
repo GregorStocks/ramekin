@@ -7,11 +7,8 @@ import {
   formatIngredientAmount,
 } from "../utils/ingredientFormatting";
 import { logger } from "../utils/logger";
-import {
-  clearShoppingListSyncCache,
-  refreshShoppingListSyncCache,
-} from "../utils/shoppingListSyncCache";
-import type { RecipeResponse } from "ramekin-client";
+import { syncShoppingList } from "../utils/shoppingListSyncCache";
+import type { RecipeResponse, ShoppingListOp } from "ramekin-client";
 
 interface AddToShoppingListModalProps {
   isOpen: () => boolean;
@@ -23,7 +20,7 @@ interface AddToShoppingListModalProps {
 export default function AddToShoppingListModal(
   props: AddToShoppingListModalProps,
 ) {
-  const { getShoppingListApi, token } = useAuth();
+  const { getSyncApi, token } = useAuth();
 
   const [selectedIndices, setSelectedIndices] = createSignal<Set<number>>(
     new Set(),
@@ -105,28 +102,26 @@ export default function AddToShoppingListModal(
     setAdding(true);
     setError(null);
     try {
-      const items = ingredients()
+      const ops = ingredients()
         .filter((_, i) => selected.has(i))
-        .map((ing) => ({
-          item: ing.item,
-          amount: formatIngredientAmount(ing, scale()),
-          sourceRecipeId: props.recipe.id,
-          sourceRecipeTitle: props.recipe.title,
+        .map((ing): ShoppingListOp => ({
+          op: "create",
+          id: crypto.randomUUID(),
+          fields: {
+            item: ing.item,
+            amount: formatIngredientAmount(ing, scale()),
+            sourceRecipeId: props.recipe.id,
+            sourceRecipeTitle: props.recipe.title,
+          },
         }));
 
-      const api = getShoppingListApi();
-      await api.createItems({
-        createShoppingListRequest: { items },
-      });
-      try {
-        await refreshShoppingListSyncCache(api, localStorage, token());
-      } catch (refreshErr) {
-        clearShoppingListSyncCache(localStorage, token());
-        logger.warn(
-          "Shopping",
-          `cache refresh after recipe add failed: ${String(refreshErr)}`,
-        );
-      }
+      await syncShoppingList(
+        getSyncApi(),
+        localStorage,
+        token(),
+        ops,
+        (context, err) => logger.warn("Shopping", `${context}: ${String(err)}`),
+      );
 
       if (!isCurrent()) return;
       setShowSuccess(true);

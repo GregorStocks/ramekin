@@ -8,31 +8,27 @@ import { logger } from "../utils/logger";
 import { createAsyncAction } from "../utils/asyncState";
 import { reuseUnchanged } from "../utils/stableList";
 import {
-  applyShoppingListSyncResponse,
-  clearShoppingListSyncCache,
   loadShoppingListSyncCache,
-  replaceShoppingListCachedItems,
-  saveShoppingListSyncCache,
+  syncShoppingList,
   type ShoppingListSyncCache,
 } from "../utils/shoppingListSyncCache";
-import type { ShoppingListItemResponse } from "ramekin-client";
+import type { ShoppingListOp, SyncShoppingListItem } from "ramekin-client";
 
 export default function ShoppingListPage() {
   usePageTitle(() => "Shopping List");
-  const { getShoppingListApi, token } = useAuth();
+  const { getSyncApi, token } = useAuth();
 
-  const [items, setItems] = createSignal<ShoppingListItemResponse[]>([]);
+  const [items, setItems] = createSignal<SyncShoppingListItem[]>([]);
   const [categoryOrder, setCategoryOrder] = createSignal<string[]>([]);
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
   const [deletingItem, setDeletingItem] =
-    createSignal<ShoppingListItemResponse | null>(null);
+    createSignal<SyncShoppingListItem | null>(null);
   const [newItemName, setNewItemName] = createSignal("");
   const [newItemAmount, setNewItemAmount] = createSignal("");
   const [updatingCategoryId, setUpdatingCategoryId] = createSignal<
     string | null
   >(null);
-  let cacheMutationVersion = 0;
 
   const hasCheckedItems = () => items().some((item) => item.isChecked);
 
@@ -40,7 +36,7 @@ export default function ShoppingListPage() {
     const unchecked = items()
       .filter((i) => !i.isChecked)
       .sort((a, b) => a.sortOrder - b.sortOrder);
-    const grouped = new Map<string, ShoppingListItemResponse[]>();
+    const grouped = new Map<string, SyncShoppingListItem[]>();
     for (const item of unchecked) {
       const cat = item.category;
       if (!grouped.has(cat)) grouped.set(cat, []);
@@ -65,88 +61,40 @@ export default function ShoppingListPage() {
     setCategoryOrder(cache.categoryOrder);
   };
 
-  const markConfirmedServerMutation = () => {
-    cacheMutationVersion += 1;
-  };
-
-  const clearCacheAfterError = (
-    context: string,
-    err: unknown,
-    cacheToken: string | null,
-  ) => {
+  const warnCache = (context: string, err: unknown) => {
     logger.warn("Shopping", `${context}: ${String(err)}`);
-    try {
-      clearShoppingListSyncCache(localStorage, cacheToken);
-    } catch (clearErr) {
-      logger.warn(
-        "Shopping",
-        `shopping list cache clear failed: ${String(clearErr)}`,
-      );
-    }
   };
 
-  const loadCacheOrNull = (
-    cacheToken: string | null,
-  ): ShoppingListSyncCache | null => {
-    try {
-      return loadShoppingListSyncCache(localStorage, cacheToken);
-    } catch (err) {
-      clearCacheAfterError("shopping list cache read failed", err, cacheToken);
-      return null;
-    }
-  };
-
-  const persistCache = (
-    cache: ShoppingListSyncCache,
-    cacheToken: string | null,
-  ) => {
-    try {
-      saveShoppingListSyncCache(localStorage, cacheToken, cache);
-    } catch (err) {
-      clearCacheAfterError("shopping list cache write failed", err, cacheToken);
-    }
-  };
-
-  const saveCurrentCacheItems = (nextItems: ShoppingListItemResponse[]) => {
-    markConfirmedServerMutation();
-    const cacheToken = token();
-    const cached = loadCacheOrNull(cacheToken);
-    persistCache(
-      replaceShoppingListCachedItems(cached, nextItems, categoryOrder()),
-      cacheToken,
-    );
-  };
-
-  const loadItems = async (showLoading = true): Promise<boolean> => {
+  /** Write `ops` (or just refresh) and show the server's answer. */
+  const sync = async (ops: ShoppingListOp[] = []) => {
     const requestToken = token();
-    const cached = loadCacheOrNull(requestToken);
-    const syncStartedAtMutationVersion = cacheMutationVersion;
+    const { cache } = await logger.timed("Shopping", "syncShoppingList", () =>
+      syncShoppingList(
+        getSyncApi(),
+        localStorage,
+        requestToken,
+        ops,
+        warnCache,
+      ),
+    );
+    if (requestToken === token()) applyCache(cache);
+  };
+
+  const loadItems = async () => {
+    let cached: ShoppingListSyncCache | null = null;
+    try {
+      cached = loadShoppingListSyncCache(localStorage, token());
+    } catch (err) {
+      warnCache("shopping list cache read failed", err);
+    }
     if (cached) {
       applyCache(cached);
       setLoading(false);
-    } else if (showLoading) {
-      setLoading(true);
     }
 
     setError(null);
     try {
-      const response = await logger.timed("Shopping", "syncItems", () =>
-        getShoppingListApi().syncItems({
-          syncRequest: {
-            cursor: cached?.cursor ?? undefined,
-          },
-        }),
-      );
-      if (requestToken !== token()) {
-        return true;
-      }
-      if (syncStartedAtMutationVersion !== cacheMutationVersion) {
-        return await loadItems(false);
-      }
-      const nextCache = applyShoppingListSyncResponse(cached, response);
-      applyCache(nextCache);
-      persistCache(nextCache, requestToken);
-      return true;
+      await sync();
     } catch (err) {
       const message = await extractApiError(
         err,
@@ -155,7 +103,6 @@ export default function ShoppingListPage() {
           : "Failed to load shopping list",
       );
       setError(message);
-      return false;
     } finally {
       setLoading(false);
     }
@@ -165,53 +112,38 @@ export default function ShoppingListPage() {
     const name = newItemName().trim();
     if (!name) return;
 
-    const amount = newItemAmount().trim() || undefined;
-    await logger.timed("Shopping", "createItems", () =>
-      getShoppingListApi().createItems({
-        createShoppingListRequest: {
-          items: [{ item: name, amount }],
-        },
-      }),
-    );
-    markConfirmedServerMutation();
+    await sync([
+      {
+        op: "create",
+        id: crypto.randomUUID(),
+        fields: { item: name, amount: newItemAmount().trim() || undefined },
+      },
+    ]);
     setNewItemName("");
     setNewItemAmount("");
-    if (!(await loadItems(false))) {
-      clearShoppingListSyncCache(localStorage, token());
-    }
   }, "Failed to add item");
 
   const toggleCheckedAction = createAsyncAction(
-    async (item: ShoppingListItemResponse) => {
-      await getShoppingListApi().updateItem({
-        id: item.id,
-        updateShoppingListItemRequest: {
-          isChecked: !item.isChecked,
-        },
-      });
-      const nextItems = items().map((i) =>
-        i.id === item.id ? { ...i, isChecked: !i.isChecked } : i,
-      );
-      setItems(nextItems);
-      saveCurrentCacheItems(nextItems);
+    async (item: SyncShoppingListItem) => {
+      await sync([
+        { op: "update", id: item.id, fields: { isChecked: !item.isChecked } },
+      ]);
     },
     "Failed to update item",
   );
 
   const updateCategoryAction = createAsyncAction(
-    async (item: ShoppingListItemResponse, categoryOverride: string | null) => {
+    async (item: SyncShoppingListItem, categoryOverride: string | null) => {
       setUpdatingCategoryId(item.id);
       try {
-        await getShoppingListApi().updateItem({
-          id: item.id,
-          updateShoppingListItemRequest: {
-            categoryOverride,
+        // "" clears the override.
+        await sync([
+          {
+            op: "update",
+            id: item.id,
+            fields: { categoryOverride: categoryOverride ?? "" },
           },
-        });
-        markConfirmedServerMutation();
-        if (!(await loadItems(false))) {
-          clearShoppingListSyncCache(localStorage, token());
-        }
+        ]);
       } finally {
         setUpdatingCategoryId(null);
       }
@@ -220,12 +152,9 @@ export default function ShoppingListPage() {
   );
 
   const deleteItemAction = createAsyncAction(
-    async (item: ShoppingListItemResponse) => {
-      await getShoppingListApi().deleteItem({ id: item.id });
+    async (item: SyncShoppingListItem) => {
+      await sync([{ op: "delete", id: item.id }]);
       setDeletingItem(null);
-      const nextItems = items().filter((i) => i.id !== item.id);
-      setItems(nextItems);
-      saveCurrentCacheItems(nextItems);
     },
     "Failed to delete item",
     {
@@ -235,11 +164,14 @@ export default function ShoppingListPage() {
     },
   );
 
+  // Deletes only the checked items on screen, so an item checked on another
+  // device since the last sync is never removed unseen.
   const clearCheckedAction = createAsyncAction(async () => {
-    await getShoppingListApi().clearChecked();
-    const nextItems = items().filter((i) => !i.isChecked);
-    setItems(nextItems);
-    saveCurrentCacheItems(nextItems);
+    await sync(
+      items()
+        .filter((i) => i.isChecked)
+        .map((i): ShoppingListOp => ({ op: "delete", id: i.id })),
+    );
   }, "Failed to clear checked items");
 
   const adding = addItemAction.loading;
@@ -274,14 +206,14 @@ export default function ShoppingListPage() {
     await addItemAction.run();
   };
 
-  const handleToggleChecked = async (item: ShoppingListItemResponse) => {
+  const handleToggleChecked = async (item: SyncShoppingListItem) => {
     setError(null);
     clearActionErrors();
     await toggleCheckedAction.run(item);
   };
 
   const handleCategoryChange = async (
-    item: ShoppingListItemResponse,
+    item: SyncShoppingListItem,
     categoryOverride: string | null,
   ) => {
     setError(null);
@@ -289,7 +221,7 @@ export default function ShoppingListPage() {
     await updateCategoryAction.run(item, categoryOverride);
   };
 
-  const confirmDelete = (item: ShoppingListItemResponse) => {
+  const confirmDelete = (item: SyncShoppingListItem) => {
     setDeletingItem(item);
   };
 
@@ -308,7 +240,7 @@ export default function ShoppingListPage() {
     await clearCheckedAction.run();
   };
 
-  const renderItem = (item: ShoppingListItemResponse) => (
+  const renderItem = (item: SyncShoppingListItem) => (
     <li class="shopping-item" classList={{ checked: item.isChecked }}>
       <label class="shopping-checkbox-label">
         <input

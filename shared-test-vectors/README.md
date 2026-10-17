@@ -23,3 +23,7 @@ client match it in the same PR.
   while names are still being recognized: doubling from 2 s to 30 s, then
   stopping once the waits reach 5 minutes. The schedule ends after the last
   delay.
+- `sync-apply.json`: web and iOS application of a sync response to a cached
+  table (doc/sync-design.md): tombstones, full-resync pruning, skipping older
+  server rows, and keeping fields with unsent local edits. Web runs the cases
+  with no pending local writes, since its cache never holds any.
