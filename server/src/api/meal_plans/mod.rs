@@ -1,41 +1,19 @@
-pub mod create;
-pub mod delete;
 pub mod list;
-pub mod update;
 
 use crate::AppState;
-use axum::routing::{get, put};
+use axum::routing::get;
 use axum::Router;
 use utoipa::OpenApi;
 
-/// Returns the router for /api/meal-plans endpoints (mounted at /api/meal-plans)
+/// Returns the router for /api/meal-plans endpoints (mounted at /api/meal-plans).
+/// Writes go through `POST /api/sync/meal-plans`.
 pub fn router() -> Router<AppState> {
-    Router::new()
-        .route(
-            "/",
-            get(list::list_meal_plans).post(create::create_meal_plan),
-        )
-        .route(
-            "/{id}",
-            put(update::update_meal_plan).delete(delete::delete_meal_plan),
-        )
+    Router::new().route("/", get(list::list_meal_plans))
 }
 
 #[derive(OpenApi)]
 #[openapi(
-    paths(
-        list::list_meal_plans,
-        create::create_meal_plan,
-        update::update_meal_plan,
-        delete::delete_meal_plan
-    ),
-    components(schemas(
-        list::MealPlanListResponse,
-        list::MealPlanItem,
-        list::MealType,
-        create::CreateMealPlanRequest,
-        create::CreateMealPlanResponse,
-        update::UpdateMealPlanRequest,
-    ))
+    paths(list::list_meal_plans),
+    components(schemas(list::MealPlanListResponse, list::MealPlanItem, list::MealType,))
 )]
 pub struct ApiDoc;

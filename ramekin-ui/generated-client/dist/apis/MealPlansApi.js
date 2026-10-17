@@ -12,73 +12,11 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateMealPlanRequestToJSON, CreateMealPlanResponseFromJSON, MealPlanListResponseFromJSON, UpdateMealPlanRequestToJSON, } from '../models/index';
+import { MealPlanListResponseFromJSON, } from '../models/index';
 /**
  *
  */
 export class MealPlansApi extends runtime.BaseAPI {
-    /**
-     */
-    async createMealPlanRaw(requestParameters, initOverrides) {
-        if (requestParameters['createMealPlanRequest'] == null) {
-            throw new runtime.RequiredError('createMealPlanRequest', 'Required parameter "createMealPlanRequest" was null or undefined when calling createMealPlan().');
-        }
-        const queryParameters = {};
-        const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-        let urlPath = `/api/meal-plans`;
-        const response = await this.request({
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CreateMealPlanRequestToJSON(requestParameters['createMealPlanRequest']),
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => CreateMealPlanResponseFromJSON(jsonValue));
-    }
-    /**
-     */
-    async createMealPlan(requestParameters, initOverrides) {
-        const response = await this.createMealPlanRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-    /**
-     */
-    async deleteMealPlanRaw(requestParameters, initOverrides) {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling deleteMealPlan().');
-        }
-        const queryParameters = {};
-        const headerParameters = {};
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-        let urlPath = `/api/meal-plans/{id}`;
-        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
-        const response = await this.request({
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-        return new runtime.VoidApiResponse(response);
-    }
-    /**
-     */
-    async deleteMealPlan(requestParameters, initOverrides) {
-        await this.deleteMealPlanRaw(requestParameters, initOverrides);
-    }
     /**
      */
     async listMealPlansRaw(requestParameters, initOverrides) {
@@ -111,40 +49,5 @@ export class MealPlansApi extends runtime.BaseAPI {
     async listMealPlans(requestParameters = {}, initOverrides) {
         const response = await this.listMealPlansRaw(requestParameters, initOverrides);
         return await response.value();
-    }
-    /**
-     */
-    async updateMealPlanRaw(requestParameters, initOverrides) {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling updateMealPlan().');
-        }
-        if (requestParameters['updateMealPlanRequest'] == null) {
-            throw new runtime.RequiredError('updateMealPlanRequest', 'Required parameter "updateMealPlanRequest" was null or undefined when calling updateMealPlan().');
-        }
-        const queryParameters = {};
-        const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-        let urlPath = `/api/meal-plans/{id}`;
-        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
-        const response = await this.request({
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: UpdateMealPlanRequestToJSON(requestParameters['updateMealPlanRequest']),
-        }, initOverrides);
-        return new runtime.VoidApiResponse(response);
-    }
-    /**
-     */
-    async updateMealPlan(requestParameters, initOverrides) {
-        await this.updateMealPlanRaw(requestParameters, initOverrides);
     }
 }

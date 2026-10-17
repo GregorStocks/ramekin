@@ -3,930 +3,387 @@ import uuid
 import pytest
 
 from conftest import make_ingredient
-from ramekin_client.api import RecipesApi, ShoppingListApi
+from ramekin_client.api import RecipesApi, SyncApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import (
     CreateRecipeRequest,
-    CreateShoppingListItemRequest,
-    CreateShoppingListRequest,
-    SyncCreateItem,
-    SyncRequest,
-    SyncUpdateItem,
-    UpdateShoppingListItemRequest,
+    OpKind,
+    OpResult,
+    ShoppingListFields,
+    ShoppingListOp,
 )
+from shopping_list_ops import add, create, delete, items, sync, update
 
 
-def test_list_shopping_list_empty(authed_api_client):
-    """Test listing shopping list when user has none."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+def test_empty_list(authed_api_client):
+    client, _ = authed_api_client
+    response = sync(SyncApi(client))
+    assert response.changes == []
+    assert response.deleted == []
+    assert response.full_resync is True
 
-    response = api.list_items()
-    assert response.items == []
 
-
-def test_list_shopping_list_requires_auth(unauthed_api_client):
-    """Test that listing shopping list requires authentication."""
-    api = ShoppingListApi(unauthed_api_client)
-
+def test_sync_requires_auth(unauthed_api_client):
     with pytest.raises(ApiException) as exc_info:
-        api.list_items()
-
+        sync(SyncApi(unauthed_api_client))
     assert exc_info.value.status == 401
 
 
-def test_create_shopping_list_item(authed_api_client):
-    """Test creating shopping list items."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+def test_create_items_under_the_clients_ids(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    butter = create("butter", amount="1 cup")
+    flour = create("flour", amount="2 cups")
 
-    response = api.create_items(
-        CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(item="butter", amount="1 cup"),
-                CreateShoppingListItemRequest(item="flour", amount="2 cups"),
-            ]
-        )
-    )
+    response = sync(api, butter, flour)
 
-    assert len(response.ids) == 2
-
-    # Verify they appear in list
-    list_response = api.list_items()
-    assert len(list_response.items) == 2
-    items_by_name = {item.item: item for item in list_response.items}
-    assert "butter" in items_by_name
-    assert items_by_name["butter"].amount == "1 cup"
-    assert "flour" in items_by_name
+    assert response.results == [OpResult.APPLIED, OpResult.APPLIED]
+    # The request's own writes come back in the same response.
+    changes = {change.id: change for change in response.changes}
+    assert set(changes) == {butter.id, flour.id}
+    assert changes[butter.id].item == "butter"
+    assert changes[butter.id].amount == "1 cup"
+    assert changes[butter.id].is_checked is False
 
 
-def test_create_shopping_list_requires_auth(unauthed_api_client):
-    """Test that creating shopping list requires authentication."""
-    api = ShoppingListApi(unauthed_api_client)
+def test_replaying_a_create_is_a_no_op(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    milk = create("milk")
+    sync(api, milk)
+    sync(api, update(milk.id, is_checked=True))
 
-    with pytest.raises(ApiException) as exc_info:
-        api.create_items(
-            CreateShoppingListRequest(
-                items=[CreateShoppingListItemRequest(item="test")]
-            )
-        )
+    # The response to the first create was lost, so the client resends it.
+    response = sync(api, milk)
 
-    assert exc_info.value.status == 401
+    assert response.results == [OpResult.APPLIED]
+    listed = items(api)
+    assert len(listed) == 1
+    assert listed[milk.id].is_checked is True
 
 
-def test_create_shopping_list_empty_fails(authed_api_client):
-    """Test that creating with empty items list fails."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+def test_creates_sort_last_unless_told_otherwise(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    first, second = add(api, "a", "b")
+    placed = create("c", sort_order=100)
+    sync(api, placed)
+    last = add(api, "d")[0]
 
-    with pytest.raises(ApiException) as exc_info:
-        api.create_items(CreateShoppingListRequest(items=[]))
-
-    assert exc_info.value.status == 400
+    orders = {item_id: item.sort_order for item_id, item in items(api).items()}
+    assert orders[first] < orders[second] < orders[placed.id] == 100 < orders[last]
 
 
 def test_create_with_source_recipe(authed_api_client):
-    """Test creating items with source recipe info."""
-
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-    recipes_api = RecipesApi(client)
-
-    # Create a real recipe to reference
-    recipe = recipes_api.create_recipe(
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    recipe = RecipesApi(client).create_recipe(
         CreateRecipeRequest(
             title="Chocolate Cake",
             instructions="Bake it",
             ingredients=[make_ingredient(item="sugar")],
         )
     )
-
-    api.create_items(
-        CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(
-                    item="sugar",
-                    amount="1/2 cup",
-                    source_recipe_id=str(recipe.id),
-                    source_recipe_title="Chocolate Cake",
-                )
-            ]
-        )
+    sugar = create(
+        "sugar",
+        amount="1/2 cup",
+        source_recipe_id=str(recipe.id),
+        source_recipe_title="Chocolate Cake",
     )
 
-    list_response = api.list_items()
-    assert list_response.items[0].source_recipe_title == "Chocolate Cake"
-    assert list_response.items[0].source_recipe_id == recipe.id
+    sync(api, sugar)
+
+    item = items(api)[sugar.id]
+    assert item.source_recipe_id == recipe.id
+    assert item.source_recipe_title == "Chocolate Cake"
 
 
-def test_update_shopping_list_item(authed_api_client):
-    """Test updating a shopping list item."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="milk", amount="1 gallon")]
-        )
-    )
-
-    item_id = create_response.ids[0]
-
-    # Update the item
-    api.update_item(
-        item_id,
-        UpdateShoppingListItemRequest(amount="2 gallons"),
-    )
-
-    list_response = api.list_items()
-    assert list_response.items[0].amount == "2 gallons"
+def test_a_create_needs_a_nonblank_item(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    for op in [
+        ShoppingListOp(op=OpKind.CREATE, id=str(uuid.uuid4())),
+        create("  "),
+    ]:
+        with pytest.raises(ApiException) as exc_info:
+            sync(api, op)
+        assert exc_info.value.status == 400
+    assert items(api) == {}
 
 
-def test_update_check_item(authed_api_client):
-    """Test checking/unchecking a shopping list item."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+def test_update_sets_only_the_fields_it_names(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    milk = create("milk", amount="1 gallon", note="2%")
+    sync(api, milk)
 
-    create_response = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="eggs")])
-    )
+    response = sync(api, update(milk.id, amount="2 gallons"))
 
-    item_id = create_response.ids[0]
-
-    # Check the item
-    api.update_item(item_id, UpdateShoppingListItemRequest(is_checked=True))
-
-    list_response = api.list_items()
-    assert list_response.items[0].is_checked is True
-
-    # Uncheck the item
-    api.update_item(item_id, UpdateShoppingListItemRequest(is_checked=False))
-
-    list_response = api.list_items()
-    assert list_response.items[0].is_checked is False
+    assert response.results == [OpResult.APPLIED]
+    item = items(api)[milk.id]
+    assert item.amount == "2 gallons"
+    assert item.note == "2%"
+    assert item.item == "milk"
 
 
-def test_update_shopping_list_requires_auth(unauthed_api_client):
-    """Test that updating shopping list requires authentication."""
-    api = ShoppingListApi(unauthed_api_client)
+def test_updates_from_two_devices_to_different_fields_both_win(authed_api_client):
+    """Per-field last-writer-wins: the phone's check-off and the web's
+    rename both survive, whatever each device last saw."""
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    eggs = add(api, "eggs")[0]
 
-    with pytest.raises(ApiException) as exc_info:
-        api.update_item(
-            str(uuid.uuid4()),
-            UpdateShoppingListItemRequest(is_checked=True),
-        )
+    sync(api, update(eggs, item="6 eggs"))
+    sync(api, update(eggs, is_checked=True))
 
-    assert exc_info.value.status == 401
-
-
-def test_update_shopping_list_not_found(authed_api_client):
-    """Test that updating non-existent item returns 404."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    with pytest.raises(ApiException) as exc_info:
-        api.update_item(
-            str(uuid.uuid4()),
-            UpdateShoppingListItemRequest(is_checked=True),
-        )
-
-    assert exc_info.value.status == 404
+    item = items(api)[eggs]
+    assert item.item == "6 eggs"
+    assert item.is_checked is True
 
 
-def test_delete_shopping_list_item(authed_api_client):
-    """Test deleting a shopping list item."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+def test_the_later_update_to_a_field_wins(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    eggs = add(api, "eggs")[0]
 
-    create_response = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="bread")])
-    )
+    response = sync(api, update(eggs, amount="6"), update(eggs, amount="12"))
 
-    item_id = create_response.ids[0]
-    api.delete_item(item_id)
-
-    # Verify it's gone
-    list_response = api.list_items()
-    assert len(list_response.items) == 0
+    assert response.results == [OpResult.APPLIED, OpResult.APPLIED]
+    assert items(api)[eggs].amount == "12"
 
 
-def test_delete_shopping_list_requires_auth(unauthed_api_client):
-    """Test that deleting shopping list requires authentication."""
-    api = ShoppingListApi(unauthed_api_client)
+def test_blank_clears_a_nullable_field(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    milk = create("milk", amount="1 gallon", note="2%", category_override="Produce")
+    sync(api, milk)
 
-    with pytest.raises(ApiException) as exc_info:
-        api.delete_item(str(uuid.uuid4()))
+    sync(api, update(milk.id, amount="", note="", category_override=""))
 
-    assert exc_info.value.status == 401
-
-
-def test_delete_shopping_list_not_found(authed_api_client):
-    """Test that deleting non-existent item returns 404."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    with pytest.raises(ApiException) as exc_info:
-        api.delete_item(str(uuid.uuid4()))
-
-    assert exc_info.value.status == 404
+    item = items(api)[milk.id]
+    assert item.amount is None
+    assert item.note is None
+    assert item.category_override is None
+    assert item.category == "Dairy & Eggs"
 
 
-def test_clear_checked_items(authed_api_client):
-    """Test clearing all checked items."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+def test_check_and_uncheck(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    eggs = add(api, "eggs")[0]
 
-    # Create some items
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(item="item1"),
-                CreateShoppingListItemRequest(item="item2"),
-                CreateShoppingListItemRequest(item="item3"),
-            ]
-        )
-    )
-
-    # Check first two items
-    api.update_item(
-        create_response.ids[0], UpdateShoppingListItemRequest(is_checked=True)
-    )
-    api.update_item(
-        create_response.ids[1], UpdateShoppingListItemRequest(is_checked=True)
-    )
-
-    # Clear checked
-    clear_response = api.clear_checked()
-    assert clear_response.deleted_count == 2
-
-    # Verify only unchecked item remains
-    list_response = api.list_items()
-    assert len(list_response.items) == 1
-    assert list_response.items[0].item == "item3"
+    sync(api, update(eggs, is_checked=True))
+    assert items(api)[eggs].is_checked is True
+    sync(api, update(eggs, is_checked=False))
+    assert items(api)[eggs].is_checked is False
 
 
-def test_clear_checked_requires_auth(unauthed_api_client):
-    """Test that clearing checked requires authentication."""
-    api = ShoppingListApi(unauthed_api_client)
+def test_update_of_an_unknown_item_is_gone(authed_api_client):
+    client, _ = authed_api_client
+    response = sync(SyncApi(client), update(str(uuid.uuid4()), is_checked=True))
+    assert response.results == [OpResult.GONE]
 
-    with pytest.raises(ApiException) as exc_info:
-        api.clear_checked()
 
-    assert exc_info.value.status == 401
+def test_delete_wins_over_a_later_update(authed_api_client):
+    """An edit from a device that hasn't seen the delete yet changes nothing."""
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    bread = add(api, "bread")[0]
+    sync(api, delete(bread))
+
+    response = sync(api, update(bread, is_checked=True))
+
+    assert response.results == [OpResult.GONE]
+    assert items(api) == {}
+
+
+def test_delete(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    bread, kept = add(api, "bread", "jam")
+    cursor = sync(api).cursor
+
+    response = sync(api, delete(bread), cursor=cursor)
+
+    assert response.results == [OpResult.APPLIED]
+    assert bread in response.deleted
+    assert set(items(api)) == {kept}
+
+
+def test_deleting_twice_is_applied_and_unknown_is_gone(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    bread = add(api, "bread")[0]
+
+    response = sync(api, delete(bread), delete(bread), delete(str(uuid.uuid4())))
+
+    assert response.results == [OpResult.APPLIED, OpResult.APPLIED, OpResult.GONE]
 
 
 def test_cross_user_isolation(authed_api_client, second_authed_api_client):
-    """Test that users cannot see or modify each other's shopping lists."""
-    client1, user_id1 = authed_api_client
-    client2, user_id2 = second_authed_api_client
+    client1, _ = authed_api_client
+    client2, _ = second_authed_api_client
+    api1 = SyncApi(client1)
+    api2 = SyncApi(client2)
+    private = create("private_item")
+    sync(api1, private)
 
-    api1 = ShoppingListApi(client1)
-    api2 = ShoppingListApi(client2)
-
-    # User 1 creates items
-    create_response = api1.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="private_item")]
-        )
+    assert items(api2) == {}
+    response = sync(
+        api2,
+        update(private.id, is_checked=True),
+        delete(private.id),
+        # Reusing another user's id can never create the client's row.
+        ShoppingListOp(
+            op=OpKind.CREATE, id=private.id, fields=ShoppingListFields(item="mine")
+        ),
     )
-    item_id = create_response.ids[0]
-
-    # User 2 should not see it
-    list_response = api2.list_items()
-    assert len(list_response.items) == 0
-
-    # User 2 should not be able to update it
-    with pytest.raises(ApiException) as exc_info:
-        api2.update_item(item_id, UpdateShoppingListItemRequest(is_checked=True))
-    assert exc_info.value.status == 404
-
-    # User 2 should not be able to delete it
-    with pytest.raises(ApiException) as exc_info:
-        api2.delete_item(item_id)
-    assert exc_info.value.status == 404
-
-
-def test_sync_create_items(authed_api_client):
-    """Test syncing items created offline."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    client_id = str(uuid.uuid4())
-    sync_response = api.sync_items(
-        SyncRequest(
-            creates=[
-                SyncCreateItem(
-                    client_id=client_id,
-                    item="synced_item",
-                    amount="1 lb",
-                    is_checked=False,
-                    sort_order=0,
-                )
-            ]
-        )
-    )
-
-    assert len(sync_response.created) == 1
-    assert str(sync_response.created[0].client_id) == client_id
-    assert sync_response.created[0].server_id is not None
-
-    # Verify item exists
-    list_response = api.list_items()
-    assert len(list_response.items) == 1
-    assert list_response.items[0].item == "synced_item"
-
-
-def test_sync_update_items(authed_api_client):
-    """Test syncing item updates."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    # Create an item first
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="update_me")]
-        )
-    )
-    item_id = create_response.ids[0]
-
-    # Get current version
-    list_response = api.list_items()
-    current_version = list_response.items[0].version
-
-    # Sync an update
-    sync_response = api.sync_items(
-        SyncRequest(
-            updates=[
-                SyncUpdateItem(
-                    id=item_id,
-                    is_checked=True,
-                    expected_version=current_version,
-                )
-            ]
-        )
-    )
-
-    assert len(sync_response.updated) == 1
-    assert sync_response.updated[0].success is True
-
-    # Verify item is updated
-    list_response = api.list_items()
-    assert list_response.items[0].is_checked is True
-
-
-def test_sync_update_multiple_same_item(authed_api_client):
-    """Sequential updates for the same id in one sync request should chain correctly."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="chain_test")]
-        )
-    )
-    item_id = create_response.ids[0]
-
-    list_response = api.list_items()
-    v1 = list_response.items[0].version
-
-    sync_response = api.sync_items(
-        SyncRequest(
-            updates=[
-                SyncUpdateItem(id=item_id, is_checked=True, expected_version=v1),
-                SyncUpdateItem(id=item_id, amount="2 lbs", expected_version=v1 + 1),
-            ]
-        )
-    )
-
-    assert len(sync_response.updated) == 2
-    assert sync_response.updated[0].success is True
-    assert sync_response.updated[0].version == v1 + 1
-    assert sync_response.updated[1].success is True
-    assert sync_response.updated[1].version == v1 + 2
-
-    list_response = api.list_items()
-    assert list_response.items[0].is_checked is True
-    assert list_response.items[0].amount == "2 lbs"
-    assert list_response.items[0].version == v1 + 2
-
-
-def test_sync_update_conflict(authed_api_client):
-    """Test sync conflict detection."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    # Create an item
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="conflict_test")]
-        )
-    )
-    item_id = create_response.ids[0]
-
-    # Update it via normal API (bumps version)
-    api.update_item(item_id, UpdateShoppingListItemRequest(is_checked=True))
-
-    # Try to sync with old version - should fail
-    sync_response = api.sync_items(
-        SyncRequest(
-            updates=[
-                SyncUpdateItem(
-                    id=item_id,
-                    is_checked=False,
-                    expected_version=1,  # Old version
-                )
-            ]
-        )
-    )
-
-    assert len(sync_response.updated) == 1
-    assert sync_response.updated[0].success is False
-
-
-def test_sync_update_conflict_returns_the_server_copy(authed_api_client):
-    """A rejected update brings back the server's current row, even when it
-    changed before the client's cursor, so the client can take it."""
-    client, _ = authed_api_client
-    api = ShoppingListApi(client)
-    item_id = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="milk")])
-    ).ids[0]
-    api.update_item(item_id, UpdateShoppingListItemRequest(is_checked=True))
-    # The client syncs past the check-off (say it skipped it while the item
-    # had a local edit), then sends that edit against the old version.
-    cursor = api.sync_items(SyncRequest()).cursor
-    other_id = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="eggs")])
-    ).ids[0]
-
-    response = api.sync_items(
-        SyncRequest(
-            cursor=cursor,
-            updates=[SyncUpdateItem(id=item_id, note="2%", expected_version=1)],
-        )
-    )
-
-    assert response.updated[0].success is False
-    changes = {change.id: change for change in response.server_changes}
-    assert changes[item_id].is_checked is True
-    assert changes[item_id].note is None
-    assert changes[item_id].version == response.updated[0].version
-    # Only the conflicted row is added to the usual changes since the cursor.
-    assert set(changes) == {item_id, other_id}
-
-
-def test_sync_delete_items(authed_api_client):
-    """Test syncing item deletions."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    # Create an item
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="delete_via_sync")]
-        )
-    )
-    item_id = create_response.ids[0]
-
-    # Sync a delete
-    sync_response = api.sync_items(SyncRequest(deletes=[item_id]))
-
-    assert item_id in sync_response.deleted
-
-    # Verify item is gone
-    list_response = api.list_items()
-    assert len(list_response.items) == 0
-
-
-def test_sync_returns_server_deletions(authed_api_client):
-    """Test that sync returns deletions performed on the server."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="server_deleted")]
-        )
-    )
-    item_id = create_response.ids[0]
-
-    initial_sync = api.sync_items(SyncRequest())
-
-    # Delete on server
-    api.delete_item(item_id)
-
-    # Sync from the cursor should report deletion
-    sync_response = api.sync_items(SyncRequest(cursor=initial_sync.cursor))
-    assert item_id in sync_response.deleted
-    assert all(change.id != item_id for change in sync_response.server_changes)
+    assert response.results == [OpResult.GONE, OpResult.GONE, OpResult.GONE]
+    item = items(api1)[private.id]
+    assert item.item == "private_item"
+    assert item.is_checked is False
 
 
 def test_sync_from_cursor_returns_later_changes(authed_api_client):
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-    changed_id = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="checked later")]
-        )
-    ).ids[0]
-    initial_sync = api.sync_items(SyncRequest())
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    changed, untouched = add(api, "checked later", "untouched")
+    initial = sync(api)
 
-    api.update_item(changed_id, UpdateShoppingListItemRequest(is_checked=True))
-    added_id = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="added")])
-    ).ids[0]
+    sync(api, update(changed, is_checked=True))
+    added = add(api, "added")[0]
 
-    sync_response = api.sync_items(SyncRequest(cursor=initial_sync.cursor))
-    # A superset, not equality: unrelated transactions in flight hold the
-    # watermark back, so earlier changes may be redelivered.
-    changes = {change.id: change for change in sync_response.server_changes}
-    assert changes[changed_id].is_checked
-    assert added_id in changes
-    assert sync_response.cursor >= initial_sync.cursor
-    assert initial_sync.full_resync is True
-    assert sync_response.full_resync is False
+    response = sync(api, cursor=initial.cursor)
+    changes = {change.id: change for change in response.changes}
+    assert changes[changed].is_checked
+    assert added in changes
+    assert untouched not in changes
+    assert response.cursor > initial.cursor
+    assert initial.full_resync is True
+    assert response.full_resync is False
 
 
-def test_sync_returns_server_changes(authed_api_client):
-    """Test that sync returns server-side changes."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+def test_own_writes_are_not_redelivered(authed_api_client):
+    """Writes come back in their own response, and the cursor it returns is
+    past them."""
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    cursor = sync(api).cursor
+    milk = create("milk")
 
-    # Create an item via normal API
-    api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="server_item")]
-        )
-    )
+    written = sync(api, milk, cursor=cursor)
+    assert [change.id for change in written.changes] == [milk.id]
 
-    # Sync with no cursor should return all items
-    sync_response = api.sync_items(SyncRequest())
-
-    assert len(sync_response.server_changes) == 1
-    assert sync_response.server_changes[0].item == "server_item"
-    assert sync_response.full_resync
+    after = sync(api, cursor=written.cursor)
+    assert after.changes == []
+    assert after.deleted == []
 
 
-def test_sync_requires_auth(unauthed_api_client):
-    """Test that sync requires authentication."""
-    api = ShoppingListApi(unauthed_api_client)
+def test_change_seq_grows_with_each_change(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    eggs = add(api, "eggs")[0]
+    first = items(api)[eggs].change_seq
 
-    with pytest.raises(ApiException) as exc_info:
-        api.sync_items(SyncRequest())
+    sync(api, update(eggs, is_checked=True))
 
-    assert exc_info.value.status == 401
-
-
-def test_items_ordered_by_checked_then_sort_order(authed_api_client):
-    """Test that items are returned with unchecked first, then by sort_order."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    # Create items
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(item="a"),
-                CreateShoppingListItemRequest(item="b"),
-                CreateShoppingListItemRequest(item="c"),
-            ]
-        )
-    )
-
-    # Check the middle one
-    api.update_item(
-        create_response.ids[1], UpdateShoppingListItemRequest(is_checked=True)
-    )
-
-    # Get list
-    list_response = api.list_items()
-
-    # Unchecked items should come first
-    assert list_response.items[0].item == "a"
-    assert list_response.items[0].is_checked is False
-    assert list_response.items[1].item == "c"
-    assert list_response.items[1].is_checked is False
-    # Checked item last
-    assert list_response.items[2].item == "b"
-    assert list_response.items[2].is_checked is True
+    assert items(api)[eggs].change_seq > first
 
 
-def test_version_increments_on_update(authed_api_client):
-    """Test that version increments on each update."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+def test_full_resync_sends_no_tombstones(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    kept, removed = add(api, "kept", "removed")
+    sync(api, delete(removed))
 
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="version_test")]
-        )
-    )
-    item_id = create_response.ids[0]
+    response = sync(api)
 
-    # Initial version should be 1
-    list_response = api.list_items()
-    assert list_response.items[0].version == 1
+    assert set(change.id for change in response.changes) == {kept}
+    assert response.deleted == []
+    assert response.full_resync is True
 
-    # Update and check version
-    api.update_item(item_id, UpdateShoppingListItemRequest(is_checked=True))
-    list_response = api.list_items()
-    assert list_response.items[0].version == 2
 
-    # Another update
-    api.update_item(item_id, UpdateShoppingListItemRequest(is_checked=False))
-    list_response = api.list_items()
-    assert list_response.items[0].version == 3
+def test_sync_answers_a_cursor_from_another_database_with_a_full_resync(
+    authed_api_client,
+):
+    """A cursor above any this database has issued (a client that synced
+    before a restore from an older backup) gets every live item, flagged so
+    the client drops cached items this database doesn't have."""
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    kept, removed = add(api, "kept", "removed")
+    sync(api, delete(removed))
+    current = sync(api).cursor
+
+    response = sync(api, cursor=current + 1_000_000_000)
+
+    assert {change.id for change in response.changes} == {kept}
+    assert response.deleted == []
+    assert response.full_resync is True
 
 
 def test_items_have_category(authed_api_client):
-    """Test that items include computed category based on ingredient name."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    # Create items with known categories
-    api.create_items(
-        CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(item="chicken breast"),
-                CreateShoppingListItemRequest(item="olive oil"),
-                CreateShoppingListItemRequest(item="fresh basil"),
-                CreateShoppingListItemRequest(item="parmesan cheese"),
-                CreateShoppingListItemRequest(item="unknown_xyz_ingredient"),
-            ]
-        )
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    add(
+        api,
+        "chicken breast",
+        "olive oil",
+        "fresh basil",
+        "parmesan cheese",
+        "unknown_xyz_ingredient",
     )
 
-    list_response = api.list_items()
-    items_by_name = {item.item: item for item in list_response.items}
+    by_name = {item.item: item for item in items(api).values()}
 
-    assert items_by_name["chicken breast"].category == "Meat & Seafood"
-    assert items_by_name["olive oil"].category == "Oils & Vinegars"
-    assert items_by_name["fresh basil"].category == "Produce"
-    assert items_by_name["parmesan cheese"].category == "Cheese"
-    assert items_by_name["unknown_xyz_ingredient"].category == "Other"
+    assert by_name["chicken breast"].category == "Meat & Seafood"
+    assert by_name["olive oil"].category == "Oils & Vinegars"
+    assert by_name["fresh basil"].category == "Produce"
+    assert by_name["parmesan cheese"].category == "Cheese"
+    assert by_name["unknown_xyz_ingredient"].category == "Other"
 
 
 def test_renaming_an_item_stores_the_new_names_category(authed_api_client):
-    """The computed category is stored when an item is written, so a rename
-    through update or sync stores the new name's category."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    oil = add(api, "olive oil")[0]
 
-    created = api.create_items(
-        CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(item="olive oil"),
-                CreateShoppingListItemRequest(item="milk"),
-            ]
-        )
-    )
-    oil_id, milk_id = created.ids
-    api.update_item(oil_id, UpdateShoppingListItemRequest(item="chicken breast"))
-    milk = {i.id: i for i in api.list_items().items}[milk_id]
-    sync_response = api.sync_items(
-        SyncRequest(
-            updates=[
-                SyncUpdateItem(
-                    id=milk_id, item="fresh basil", expected_version=milk.version
-                )
-            ]
-        )
-    )
-    assert sync_response.updated[0].success is True
+    response = sync(api, update(oil, item="chicken breast"))
 
-    items = {i.id: i for i in api.list_items().items}
-    assert items[oil_id].computed_category == "Meat & Seafood"
-    assert items[milk_id].computed_category == "Produce"
-    changes = {c.id: c for c in api.sync_items(SyncRequest()).server_changes}
-    assert changes[oil_id].computed_category == "Meat & Seafood"
-    assert changes[milk_id].category == "Produce"
+    change = {c.id: c for c in response.changes}[oil]
+    assert change.computed_category == "Meat & Seafood"
+    assert items(api)[oil].category == "Meat & Seafood"
 
 
-def test_update_item_category_override_wins_over_computed_category(authed_api_client):
-    """Test that a persisted category override wins over computed category."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+def test_category_override_wins_over_computed_category(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    chicken = create("chicken breast", category_override="Produce")
+    sync(api, chicken)
 
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="chicken breast")]
-        )
-    )
-
-    api.update_item(
-        create_response.ids[0],
-        UpdateShoppingListItemRequest(category_override="Produce"),
-    )
-
-    item = api.list_items().items[0]
+    item = items(api)[chicken.id]
     assert item.category == "Produce"
     assert item.category_override == "Produce"
     assert item.computed_category == "Meat & Seafood"
 
-
-def test_update_item_category_override_can_be_cleared(authed_api_client):
-    """Test that explicit null clears a category override."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    create_response = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
-    )
-    item_id = create_response.ids[0]
-
-    api.update_item(item_id, UpdateShoppingListItemRequest(category_override="Produce"))
-    assert api.list_items().items[0].category == "Produce"
-
-    api.update_item(item_id, UpdateShoppingListItemRequest(category_override=None))
-
-    item = api.list_items().items[0]
-    assert item.category == "Dairy & Eggs"
-    assert item.category_override is None
-    assert item.computed_category == "Dairy & Eggs"
+    sync(api, update(chicken.id, category_override="Cheese"))
+    assert items(api)[chicken.id].category == "Cheese"
 
 
-def test_update_item_category_override_can_be_cleared_with_flag(authed_api_client):
-    """Test that clients which cannot encode null can clear with a flag."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+def test_rejects_unknown_category_override(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    butter = add(api, "butter")[0]
 
-    create_response = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
-    )
-    item_id = create_response.ids[0]
-
-    api.update_item(item_id, UpdateShoppingListItemRequest(category_override="Produce"))
-    api.update_item(
-        item_id, UpdateShoppingListItemRequest(clear_category_override=True)
-    )
-
-    item = api.list_items().items[0]
-    assert item.category == "Dairy & Eggs"
-    assert item.category_override is None
-
-
-def test_update_item_rejects_unknown_category_override(authed_api_client):
-    """Test that category overrides must use the served category vocabulary."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    create_response = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
-    )
-
-    with pytest.raises(ApiException) as exc_info:
-        api.update_item(
-            create_response.ids[0],
-            UpdateShoppingListItemRequest(category_override="Not A Category"),
-        )
-
-    assert exc_info.value.status == 400
-
-
-def test_sync_create_item_category_override(authed_api_client):
-    """Test that sync-created items can carry a category override."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    sync_response = api.sync_items(
-        SyncRequest(
-            creates=[
-                SyncCreateItem(
-                    client_id=str(uuid.uuid4()),
-                    item="chicken breast",
-                    category_override="Produce",
-                    is_checked=False,
-                    sort_order=0,
-                )
-            ]
-        )
-    )
-
-    assert len(sync_response.created) == 1
-    item = api.list_items().items[0]
-    assert item.category == "Produce"
-    assert item.category_override == "Produce"
-    assert item.computed_category == "Meat & Seafood"
-
-
-def test_sync_update_item_category_override_can_be_cleared(authed_api_client):
-    """Test that sync updates can set and clear a category override."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="olive oil")]
-        )
-    )
-    item_id = create_response.ids[0]
-    version = api.list_items().items[0].version
-
-    sync_response = api.sync_items(
-        SyncRequest(
-            updates=[
-                SyncUpdateItem(
-                    id=item_id,
-                    category_override="Produce",
-                    expected_version=version,
-                )
-            ]
-        )
-    )
-    assert sync_response.updated[0].success is True
-    item = api.list_items().items[0]
-    assert item.category == "Produce"
-    assert item.category_override == "Produce"
-    assert item.computed_category == "Oils & Vinegars"
-
-    sync_response = api.sync_items(
-        SyncRequest(
-            updates=[
-                SyncUpdateItem(
-                    id=item_id,
-                    category_override=None,
-                    expected_version=item.version,
-                )
-            ]
-        )
-    )
-    assert sync_response.updated[0].success is True
-    item = api.list_items().items[0]
-    assert item.category == "Oils & Vinegars"
-    assert item.category_override is None
-
-
-def test_sync_update_item_category_override_can_be_cleared_with_flag(
-    authed_api_client,
-):
-    """Test that sync clients can clear category override without encoding null."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    create_response = api.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item="olive oil")]
-        )
-    )
-    item_id = create_response.ids[0]
-    version = api.list_items().items[0].version
-
-    sync_response = api.sync_items(
-        SyncRequest(
-            updates=[
-                SyncUpdateItem(
-                    id=item_id,
-                    category_override="Produce",
-                    expected_version=version,
-                )
-            ]
-        )
-    )
-    assert sync_response.updated[0].success is True
-
-    item = api.list_items().items[0]
-    sync_response = api.sync_items(
-        SyncRequest(
-            updates=[
-                SyncUpdateItem(
-                    id=item_id,
-                    clear_category_override=True,
-                    expected_version=item.version,
-                )
-            ]
-        )
-    )
-
-    assert sync_response.updated[0].success is True
-    item = api.list_items().items[0]
-    assert item.category == "Oils & Vinegars"
-    assert item.category_override is None
-
-
-def test_sync_update_rejects_unknown_category_override(authed_api_client):
-    """Test that sync category overrides must use the served vocabulary."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    create_response = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
-    )
-    item = api.list_items().items[0]
-
-    with pytest.raises(ApiException) as exc_info:
-        api.sync_items(
-            SyncRequest(
-                updates=[
-                    SyncUpdateItem(
-                        id=create_response.ids[0],
-                        category_override="Not A Category",
-                        expected_version=item.version,
-                    )
-                ]
-            )
-        )
-
-    assert exc_info.value.status == 400
+    for op in [
+        update(butter, category_override="Not A Category"),
+        create("milk", category_override="Not A Category"),
+    ]:
+        with pytest.raises(ApiException) as exc_info:
+            # The whole request fails, valid ops included.
+            sync(api, update(butter, is_checked=True), op)
+        assert exc_info.value.status == 400
+    assert items(api)[butter].is_checked is False
 
 
 EXPECTED_CATEGORY_ORDER = [
@@ -952,116 +409,13 @@ EXPECTED_CATEGORY_ORDER = [
 ]
 
 
-def test_list_includes_category_order(authed_api_client):
-    """Test that the list response includes the canonical category order."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    api.create_items(
-        CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(item="chicken breast"),
-                CreateShoppingListItemRequest(item="unknown_xyz_ingredient"),
-            ]
-        )
-    )
-
-    list_response = api.list_items()
-    assert list_response.category_order == EXPECTED_CATEGORY_ORDER
-
-    # Every item's category must be groupable using the served order
-    for item in list_response.items:
-        assert item.category in list_response.category_order
-
-
 def test_sync_includes_category_order(authed_api_client):
-    """Test that the sync response includes the canonical category order."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    add(api, "chicken breast", "unknown_xyz_ingredient")
 
-    sync_response = api.sync_items(SyncRequest())
-    assert sync_response.category_order == EXPECTED_CATEGORY_ORDER
+    response = sync(api)
 
-
-def test_sync_server_changes_have_category(authed_api_client):
-    """Test that sync response includes category in server_changes."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    # Create an item via normal API
-    api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
-    )
-
-    # Sync with no cursor should return all items with category
-    sync_response = api.sync_items(SyncRequest())
-
-    assert len(sync_response.server_changes) == 1
-    assert sync_response.server_changes[0].item == "butter"
-    assert sync_response.server_changes[0].category == "Dairy & Eggs"
-    assert sync_response.server_changes[0].computed_category == "Dairy & Eggs"
-
-
-def test_sync_created_items_have_category_in_server_changes(authed_api_client):
-    """Test that items created via sync include correct category in server_changes."""
-    client, user_id = authed_api_client
-    api = ShoppingListApi(client)
-
-    # Create items via sync (simulating iOS offline-create)
-    client_id1 = str(uuid.uuid4())
-    client_id2 = str(uuid.uuid4())
-    sync_response = api.sync_items(
-        SyncRequest(
-            creates=[
-                SyncCreateItem(
-                    client_id=client_id1,
-                    item="chicken breast",
-                    is_checked=False,
-                    sort_order=0,
-                ),
-                SyncCreateItem(
-                    client_id=client_id2,
-                    item="olive oil",
-                    is_checked=False,
-                    sort_order=1,
-                ),
-            ]
-        )
-    )
-
-    # Both items should be in created
-    assert len(sync_response.created) == 2
-
-    # Both items should also appear in server_changes with correct categories
-    changes_by_item = {c.item: c for c in sync_response.server_changes}
-    assert "chicken breast" in changes_by_item
-    assert changes_by_item["chicken breast"].category == "Meat & Seafood"
-    assert "olive oil" in changes_by_item
-    assert changes_by_item["olive oil"].category == "Oils & Vinegars"
-
-
-def test_sync_answers_a_cursor_from_another_database_with_everything(
-    authed_api_client,
-):
-    """A cursor above any this database has issued (a client that synced
-    before a restore from an older backup) gets every item and every
-    deletion, instead of silently skipping every change below it."""
-    client, _user_id = authed_api_client
-    api = ShoppingListApi(client)
-    kept, removed = api.create_items(
-        CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(item="kept"),
-                CreateShoppingListItemRequest(item="removed"),
-            ]
-        )
-    ).ids
-    api.delete_item(removed)
-    current = api.sync_items(SyncRequest()).cursor
-
-    response = api.sync_items(SyncRequest(cursor=current + 1_000_000_000))
-
-    assert kept in {change.id for change in response.server_changes}
-    assert removed in response.deleted
-    # Flagged so the client drops cached items this database doesn't have.
-    assert response.full_resync is True
+    assert response.category_order == EXPECTED_CATEGORY_ORDER
+    for item in response.changes:
+        assert item.category in response.category_order

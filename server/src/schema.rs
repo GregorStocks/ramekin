@@ -60,6 +60,7 @@ diesel::table! {
         notes -> Nullable<Text>,
         created_at -> TimestamptzSqlite,
         deleted_at -> Nullable<TimestamptzSqlite>,
+        change_seq -> BigInt,
     }
 }
 
@@ -200,6 +201,8 @@ diesel::table! {
         sort_order -> Integer,
         created_at -> TimestamptzSqlite,
         updated_at -> TimestamptzSqlite,
+        // Retired (client-chosen ids and last-writer-wins replaced them);
+        // kept because live data is never dropped.
         client_id -> Nullable<UuidText>,
         version -> Integer,
         deleted_at -> Nullable<TimestamptzSqlite>,

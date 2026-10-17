@@ -37,10 +37,7 @@ Class | Method | HTTP request | Description
 *ImportAPI* | [**prepareTextRecipe**](docs/ImportAPI.md#preparetextrecipe) | **POST** /api/import/text | 
 *IngredientNamesAPI* | [**getIngredientNamesStatus**](docs/IngredientNamesAPI.md#getingredientnamesstatus) | **GET** /api/ingredient-names/status | 
 *IngredientNamesAPI* | [**retryIngredientNames**](docs/IngredientNamesAPI.md#retryingredientnames) | **POST** /api/ingredient-names/retry | 
-*MealPlansAPI* | [**createMealPlan**](docs/MealPlansAPI.md#createmealplan) | **POST** /api/meal-plans | 
-*MealPlansAPI* | [**deleteMealPlan**](docs/MealPlansAPI.md#deletemealplan) | **DELETE** /api/meal-plans/{id} | 
 *MealPlansAPI* | [**listMealPlans**](docs/MealPlansAPI.md#listmealplans) | **GET** /api/meal-plans | 
-*MealPlansAPI* | [**updateMealPlan**](docs/MealPlansAPI.md#updatemealplan) | **PUT** /api/meal-plans/{id} | 
 *PhotosAPI* | [**getPhoto**](docs/PhotosAPI.md#getphoto) | **GET** /api/photos/{id} | 
 *PhotosAPI* | [**getPhotoThumbnail**](docs/PhotosAPI.md#getphotothumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosAPI* | [**upload**](docs/PhotosAPI.md#upload) | **POST** /api/photos | 
@@ -57,19 +54,16 @@ Class | Method | HTTP request | Description
 *RecipesAPI* | [**normalizeTitle**](docs/RecipesAPI.md#normalizetitle) | **POST** /api/recipes/{id}/normalize-title | 
 *RecipesAPI* | [**rescrape**](docs/RecipesAPI.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesAPI* | [**rescrapePhoto**](docs/RecipesAPI.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo | 
-*RecipesAPI* | [**syncRecipes**](docs/RecipesAPI.md#syncrecipes) | **GET** /api/recipes/sync | 
 *RecipesAPI* | [**updateRecipe**](docs/RecipesAPI.md#updaterecipe) | **PUT** /api/recipes/{id} | 
 *ScrapeAPI* | [**capture**](docs/ScrapeAPI.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeAPI* | [**createScrape**](docs/ScrapeAPI.md#createscrape) | **POST** /api/scrape | 
 *ScrapeAPI* | [**getScrape**](docs/ScrapeAPI.md#getscrape) | **GET** /api/scrape/{id} | 
 *ScrapeAPI* | [**getStepOutput**](docs/ScrapeAPI.md#getstepoutput) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 *ScrapeAPI* | [**retryScrape**](docs/ScrapeAPI.md#retryscrape) | **POST** /api/scrape/{id}/retry | 
-*ShoppingListAPI* | [**clearChecked**](docs/ShoppingListAPI.md#clearchecked) | **DELETE** /api/shopping-list/clear-checked | 
-*ShoppingListAPI* | [**createItems**](docs/ShoppingListAPI.md#createitems) | **POST** /api/shopping-list | 
-*ShoppingListAPI* | [**deleteItem**](docs/ShoppingListAPI.md#deleteitem) | **DELETE** /api/shopping-list/{id} | 
-*ShoppingListAPI* | [**listItems**](docs/ShoppingListAPI.md#listitems) | **GET** /api/shopping-list | 
-*ShoppingListAPI* | [**syncItems**](docs/ShoppingListAPI.md#syncitems) | **POST** /api/shopping-list/sync | 
-*ShoppingListAPI* | [**updateItem**](docs/ShoppingListAPI.md#updateitem) | **PUT** /api/shopping-list/{id} | 
+*SyncAPI* | [**syncMealPlans**](docs/SyncAPI.md#syncmealplans) | **POST** /api/sync/meal-plans | 
+*SyncAPI* | [**syncRecipes**](docs/SyncAPI.md#syncrecipes) | **GET** /api/sync/recipes | 
+*SyncAPI* | [**syncShoppingList**](docs/SyncAPI.md#syncshoppinglist) | **POST** /api/sync/shopping-list | 
+*SyncAPI* | [**syncTags**](docs/SyncAPI.md#synctags) | **GET** /api/sync/tags | 
 *TagsAPI* | [**createTag**](docs/TagsAPI.md#createtag) | **POST** /api/tags | 
 *TagsAPI* | [**deleteTag**](docs/TagsAPI.md#deletetag) | **DELETE** /api/tags/{id} | 
 *TagsAPI* | [**listAllTags**](docs/TagsAPI.md#listalltags) | **GET** /api/tags | 
@@ -88,18 +82,12 @@ Class | Method | HTTP request | Description
  - [CalorieRange](docs/CalorieRange.md)
  - [CalorieStatus](docs/CalorieStatus.md)
  - [CaptureRequest](docs/CaptureRequest.md)
- - [ClearCheckedResponse](docs/ClearCheckedResponse.md)
  - [CreateClientLogRequest](docs/CreateClientLogRequest.md)
  - [CreateClientLogResponse](docs/CreateClientLogResponse.md)
- - [CreateMealPlanRequest](docs/CreateMealPlanRequest.md)
- - [CreateMealPlanResponse](docs/CreateMealPlanResponse.md)
  - [CreateRecipeRequest](docs/CreateRecipeRequest.md)
  - [CreateRecipeResponse](docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](docs/CreateScrapeRequest.md)
  - [CreateScrapeResponse](docs/CreateScrapeResponse.md)
- - [CreateShoppingListItemRequest](docs/CreateShoppingListItemRequest.md)
- - [CreateShoppingListRequest](docs/CreateShoppingListRequest.md)
- - [CreateShoppingListResponse](docs/CreateShoppingListResponse.md)
  - [CreateTagRequest](docs/CreateTagRequest.md)
  - [CreateTagResponse](docs/CreateTagResponse.md)
  - [CustomEnrichRequest](docs/CustomEnrichRequest.md)
@@ -126,12 +114,16 @@ Class | Method | HTTP request | Description
  - [LookupImportJobsRequest](docs/LookupImportJobsRequest.md)
  - [LookupImportJobsResponse](docs/LookupImportJobsResponse.md)
  - [MeResponse](docs/MeResponse.md)
+ - [MealPlanFields](docs/MealPlanFields.md)
  - [MealPlanItem](docs/MealPlanItem.md)
  - [MealPlanListResponse](docs/MealPlanListResponse.md)
+ - [MealPlanOp](docs/MealPlanOp.md)
  - [MealType](docs/MealType.md)
  - [Measurement](docs/Measurement.md)
  - [ModelErrorResponse](docs/ModelErrorResponse.md)
  - [NormalizeTitleResponse](docs/NormalizeTitleResponse.md)
+ - [OpKind](docs/OpKind.md)
+ - [OpResult](docs/OpResult.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)
  - [PingResponse](docs/PingResponse.md)
  - [PrepareTextRecipeRequest](docs/PrepareTextRecipeRequest.md)
@@ -144,27 +136,26 @@ Class | Method | HTTP request | Description
  - [RescrapeResponse](docs/RescrapeResponse.md)
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)
- - [ShoppingListItemResponse](docs/ShoppingListItemResponse.md)
- - [ShoppingListResponse](docs/ShoppingListResponse.md)
+ - [ShoppingListFields](docs/ShoppingListFields.md)
+ - [ShoppingListOp](docs/ShoppingListOp.md)
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)
  - [SortBy](docs/SortBy.md)
  - [StepState](docs/StepState.md)
- - [SyncCreateItem](docs/SyncCreateItem.md)
- - [SyncCreatedItem](docs/SyncCreatedItem.md)
+ - [SyncMealPlan](docs/SyncMealPlan.md)
+ - [SyncMealPlansRequest](docs/SyncMealPlansRequest.md)
+ - [SyncMealPlansResponse](docs/SyncMealPlansResponse.md)
  - [SyncRecipe](docs/SyncRecipe.md)
  - [SyncRecipesResponse](docs/SyncRecipesResponse.md)
- - [SyncRequest](docs/SyncRequest.md)
- - [SyncResponse](docs/SyncResponse.md)
- - [SyncServerChange](docs/SyncServerChange.md)
- - [SyncUpdateItem](docs/SyncUpdateItem.md)
- - [SyncUpdatedItem](docs/SyncUpdatedItem.md)
+ - [SyncShoppingListItem](docs/SyncShoppingListItem.md)
+ - [SyncShoppingListRequest](docs/SyncShoppingListRequest.md)
+ - [SyncShoppingListResponse](docs/SyncShoppingListResponse.md)
+ - [SyncTag](docs/SyncTag.md)
+ - [SyncTagsResponse](docs/SyncTagsResponse.md)
  - [TagItem](docs/TagItem.md)
  - [TagsListResponse](docs/TagsListResponse.md)
  - [UnauthedPingResponse](docs/UnauthedPingResponse.md)
- - [UpdateMealPlanRequest](docs/UpdateMealPlanRequest.md)
  - [UpdateRecipeRequest](docs/UpdateRecipeRequest.md)
- - [UpdateShoppingListItemRequest](docs/UpdateShoppingListItemRequest.md)
  - [UploadPhotoResponse](docs/UploadPhotoResponse.md)
  - [VersionListResponse](docs/VersionListResponse.md)
  - [VersionSummary](docs/VersionSummary.md)

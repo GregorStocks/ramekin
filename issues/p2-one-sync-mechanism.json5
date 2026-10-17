@@ -1,0 +1,20 @@
+{
+  "title": "Replace the sync mechanisms with one clean design (owner approves the design first)",
+  "description": "Sync has grown several overlapping mechanisms. \
+(The SQLite move already unified change stamping: one sync_clock counter, stamped by triggers on recipe_versions, recipes, user_tags and shopping_list_items, and a cursor from another database gets a full sync.) \
+Still open: shopping-list sync still accepts the deprecated wall-clock last_sync_at path (see blocked-remove-shopping-sync-last-sync-at); iOS sends whole-row updates with expected_version while web uses per-field PATCH endpoints with no versions. \
+A 2026-10-11 fix made a rejected iOS shopping-list update take the server's copy (server returns the conflicted row), which is a stopgap, not a design: because iOS updates send the whole row, an edit made on the phone while a rejected sync is in flight is dropped too. \
+Deliverable 1: a short design doc for the owner covering one change-tracking mechanism for every synced table (recipes, tags, shopping list, meal plan if applicable), the cursor format and how it survives restores, conflict policy (server-wins, last-writer-wins per field, or field-level merge) applied the same way on web and iOS, deletes (soft-delete tombstones), and a migration path for installed iOS builds. \
+Deliverable 2, only after the owner approves the design: implement it on server, web and iOS with e2e tests.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "api",
+    "sync",
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-10-11T08:00:00-07:00",
+  "updated_at": "2026-10-14T12:00:00-07:00",
+}

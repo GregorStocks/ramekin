@@ -10,20 +10,10 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { CreateMealPlanRequest, CreateMealPlanResponse, MealPlanListResponse, UpdateMealPlanRequest } from '../models/index';
-export interface CreateMealPlanOperationRequest {
-    createMealPlanRequest: CreateMealPlanRequest;
-}
-export interface DeleteMealPlanRequest {
-    id: string;
-}
+import type { MealPlanListResponse } from '../models/index';
 export interface ListMealPlansRequest {
     startDate?: Date | null;
     endDate?: Date | null;
-}
-export interface UpdateMealPlanOperationRequest {
-    id: string;
-    updateMealPlanRequest: UpdateMealPlanRequest;
 }
 /**
  *
@@ -31,26 +21,8 @@ export interface UpdateMealPlanOperationRequest {
 export declare class MealPlansApi extends runtime.BaseAPI {
     /**
      */
-    createMealPlanRaw(requestParameters: CreateMealPlanOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateMealPlanResponse>>;
-    /**
-     */
-    createMealPlan(requestParameters: CreateMealPlanOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateMealPlanResponse>;
-    /**
-     */
-    deleteMealPlanRaw(requestParameters: DeleteMealPlanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     */
-    deleteMealPlan(requestParameters: DeleteMealPlanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
-    /**
-     */
     listMealPlansRaw(requestParameters: ListMealPlansRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MealPlanListResponse>>;
     /**
      */
     listMealPlans(requestParameters?: ListMealPlansRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MealPlanListResponse>;
-    /**
-     */
-    updateMealPlanRaw(requestParameters: UpdateMealPlanOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     */
-    updateMealPlan(requestParameters: UpdateMealPlanOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

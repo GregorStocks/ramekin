@@ -104,12 +104,6 @@ class TestRecipesApi(unittest.TestCase):
         """
         pass
 
-    def test_sync_recipes(self) -> None:
-        """Test case for sync_recipes
-
-        """
-        pass
-
     def test_update_recipe(self) -> None:
         """Test case for update_recipe
 

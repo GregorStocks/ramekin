@@ -16,6 +16,8 @@ import { SyncRecipeFromJSON, SyncRecipeToJSON, } from './SyncRecipe';
  * Check if a given object implements the SyncRecipesResponse interface.
  */
 export function instanceOfSyncRecipesResponse(value) {
+    if (!('changes' in value) || value['changes'] === undefined)
+        return false;
     if (!('cursor' in value) || value['cursor'] === undefined)
         return false;
     if (!('deleted' in value) || value['deleted'] === undefined)
@@ -25,8 +27,6 @@ export function instanceOfSyncRecipesResponse(value) {
     if (!('hasMore' in value) || value['hasMore'] === undefined)
         return false;
     if (!('normalizationContractVersion' in value) || value['normalizationContractVersion'] === undefined)
-        return false;
-    if (!('recipes' in value) || value['recipes'] === undefined)
         return false;
     return true;
 }
@@ -38,12 +38,12 @@ export function SyncRecipesResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        'changes': (json['changes'].map(SyncRecipeFromJSON)),
         'cursor': json['cursor'],
         'deleted': json['deleted'],
         'fullResync': json['full_resync'],
         'hasMore': json['has_more'],
         'normalizationContractVersion': json['normalization_contract_version'],
-        'recipes': (json['recipes'].map(SyncRecipeFromJSON)),
     };
 }
 export function SyncRecipesResponseToJSON(json) {
@@ -54,11 +54,11 @@ export function SyncRecipesResponseToJSONTyped(value, ignoreDiscriminator = fals
         return value;
     }
     return {
+        'changes': (value['changes'].map(SyncRecipeToJSON)),
         'cursor': value['cursor'],
         'deleted': value['deleted'],
         'full_resync': value['fullResync'],
         'has_more': value['hasMore'],
         'normalization_contract_version': value['normalizationContractVersion'],
-        'recipes': (value['recipes'].map(SyncRecipeToJSON)),
     };
 }

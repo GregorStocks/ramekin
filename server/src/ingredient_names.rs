@@ -716,7 +716,7 @@ fn recategorize_shopping_items(
         .filter(|(_, item, _)| changed.contains(normalize(item).as_str()))
         .collect();
     let names: Vec<&str> = matched.iter().map(|(_, item, _)| item.as_str()).collect();
-    let categories = crate::api::shopping_list::list::categorize(conn, &names)?;
+    let categories = crate::shopping_list::categorize(conn, &names)?;
     let now = Utc::now();
     for ((id, _, stored), category) in matched.iter().zip(categories) {
         if stored.as_deref() != Some(category.as_str()) {

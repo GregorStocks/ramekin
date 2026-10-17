@@ -14,6 +14,7 @@ mod raw_sql;
 mod recipes;
 mod schema;
 mod scraping;
+mod shopping_list;
 mod sql_types;
 mod tags;
 mod telemetry;
@@ -249,7 +250,7 @@ async fn main() {
     // Before serving, since reads use the stored category, and before
     // anything can resolve ingredient names (resumed jobs, the worker), so
     // nothing changes an answer while this reads them.
-    let recategorized = api::shopping_list::list::reconcile_categories(&pool)
+    let recategorized = shopping_list::reconcile_categories(&pool)
         .expect("Failed to reconcile shopping item categories");
     if recategorized > 0 {
         tracing::info!(recategorized, "stored new categories for shopping items");
@@ -299,7 +300,7 @@ async fn main() {
         .nest("/api/scrape", api::scrape::router())
         .nest("/api/tags", api::tags::router())
         .nest("/api/meal-plans", api::meal_plans::router())
-        .nest("/api/shopping-list", api::shopping_list::router())
+        .nest("/api/sync", api::sync::router())
         .nest("/api/users", api::users::router())
         .route("/api/enrich", post(api::enrich::enrich_recipe))
         .route(
