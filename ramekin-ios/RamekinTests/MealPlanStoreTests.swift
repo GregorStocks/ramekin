@@ -174,6 +174,58 @@ final class MealPlanStoreTests: XCTestCase {
         XCTAssertEqual(store.plans.map(\.recipeTitle), ["Soup"])
     }
 
+    func testReconnectingSendsEditsMadeOffline() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var requests: [Request] = []
+        let store = makeStore(stack: stack, defaults: defaults) { cursor, ops in
+            requests.append((cursor, ops))
+            return self.response(results: ops.map { _ in .applied })
+        }
+        try store.add(recipeId: UUID(), recipeTitle: "Soup", thumbnailPhotoId: nil, date: day("2026-04-17"), mealType: .dinner)
+
+        await store.syncIfPending()
+
+        XCTAssertEqual(requests.count, 1)
+        XCTAssertEqual(requests.first?.ops.first?["op"] as? String, "create")
+        XCTAssertTrue(try stack.viewContext.fetch(CachedMealPlan.fetchPendingSync(accountKey: account)).isEmpty)
+    }
+
+    func testReconnectingDuringAFailingSyncRetriesOnceItEnds() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var store: MealPlanStore!
+        var requestCount = 0
+        store = makeStore(stack: stack, defaults: defaults) { _, ops in
+            requestCount += 1
+            if requestCount == 1 {
+                await store.syncIfPending()
+                throw URLError(.notConnectedToInternet)
+            }
+            return self.response(results: ops.map { _ in .applied })
+        }
+        try store.add(recipeId: UUID(), recipeTitle: "Soup", thumbnailPhotoId: nil, date: day("2026-04-17"), mealType: .dinner)
+
+        await store.syncWithServer()
+
+        XCTAssertEqual(requestCount, 2)
+        XCTAssertTrue(try stack.viewContext.fetch(CachedMealPlan.fetchPendingSync(accountKey: account)).isEmpty)
+    }
+
+    func testReconnectingWithNothingPendingDoesNotSync() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var requestCount = 0
+        let store = makeStore(stack: stack, defaults: defaults) { _, _ in
+            requestCount += 1
+            return self.response()
+        }
+
+        await store.syncIfPending()
+
+        XCTAssertEqual(requestCount, 0)
+    }
+
     private func makeStore(
         stack: CoreDataStack,
         defaults: UserDefaults,

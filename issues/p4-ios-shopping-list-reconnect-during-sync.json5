@@ -1,0 +1,15 @@
+{
+  "title": "Retry the iOS shopping-list sync when the network returns mid-sync",
+  "description": "ShoppingListStore's reconnect observer calls syncIfNeeded, which returns early while isSyncing. \
+If the network comes back during a sync that then fails (it likely started offline), pending edits wait for the next manual trigger or edit. \
+MealPlanStore handles this with a retryAfterSync flag set by syncIfPending and consumed when the in-flight sync ends (PR #866); give ShoppingListStore the same treatment and mirror the MealPlanStoreTests overlap test.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ios",
+    "sync",
+  ],
+  "created_at": "2026-10-18T15:10:00-07:00",
+  "updated_at": "2026-10-18T15:10:00-07:00",
+}
