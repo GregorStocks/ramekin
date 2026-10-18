@@ -191,6 +191,27 @@ final class MealPlanStoreTests: XCTestCase {
         XCTAssertTrue(try stack.viewContext.fetch(CachedMealPlan.fetchPendingSync(accountKey: account)).isEmpty)
     }
 
+    func testReconnectingDuringAFailingSyncRetriesOnceItEnds() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var store: MealPlanStore!
+        var requestCount = 0
+        store = makeStore(stack: stack, defaults: defaults) { _, ops in
+            requestCount += 1
+            if requestCount == 1 {
+                await store.syncIfPending()
+                throw URLError(.notConnectedToInternet)
+            }
+            return self.response(results: ops.map { _ in .applied })
+        }
+        try store.add(recipeId: UUID(), recipeTitle: "Soup", thumbnailPhotoId: nil, date: day("2026-04-17"), mealType: .dinner)
+
+        await store.syncWithServer()
+
+        XCTAssertEqual(requestCount, 2)
+        XCTAssertTrue(try stack.viewContext.fetch(CachedMealPlan.fetchPendingSync(accountKey: account)).isEmpty)
+    }
+
     func testReconnectingWithNothingPendingDoesNotSync() async throws {
         let (stack, defaults) = makeStorage()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }

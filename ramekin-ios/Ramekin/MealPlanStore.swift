@@ -35,6 +35,8 @@ final class MealPlanStore: ObservableObject {
     private let syncMealPlans: (_ cursor: Int64?, _ ops: [[String: Any]]) async throws -> SyncMealPlansResponse
     private let automaticallySync: Bool
     private var activeAccountKey: String?
+    /// The network came back during a sync that may have failed offline.
+    private var retryAfterSync = false
 
     private static let syncCursor = SyncCursorStore(prefix: "meal_plan_sync_cursor")
 
@@ -191,6 +193,10 @@ extension MealPlanStore {
     /// Sends edits made offline; a no-op when there are none.
     func syncIfPending() async {
         guard let activeAccountKey, hasPendingEdits(accountKey: activeAccountKey) else { return }
+        guard !isSyncing else {
+            retryAfterSync = true
+            return
+        }
         await syncWithServer()
     }
 
@@ -222,7 +228,13 @@ extension MealPlanStore {
 
         // The account changed mid-sync: the new one hasn't synced yet.
         guard activeAccountKey == syncAccountKey else {
+            retryAfterSync = false
             triggerSync()
+            return
+        }
+        if retryAfterSync {
+            retryAfterSync = false
+            await syncIfPending()
             return
         }
         // Edits made while the sync was in flight go out in one follow-up.
