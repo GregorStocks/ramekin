@@ -446,7 +446,9 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
             } else {
                 stats.categorized += 1;
             }
-            if catalog_category_with(&ingredient.item, &corpus.learned).is_some() {
+            if catalog_category_with(&ingredient.item, &corpus.learned)
+                .is_some_and(|c| c != "Other")
+            {
                 stats.catalog_categorized += 1;
             }
         }
@@ -498,7 +500,7 @@ fn audit_shopping(items: &[ShoppingItem]) -> Result<ShoppingStats> {
             stats.categorized += 1;
             stats.categorized_uses += entry.count;
         }
-        if catalog_category_with(&entry.item, &Learned::new()).is_some() {
+        if catalog_category_with(&entry.item, &Learned::new()).is_some_and(|c| c != "Other") {
             stats.catalog_categorized += 1;
             stats.catalog_categorized_uses += entry.count;
         }

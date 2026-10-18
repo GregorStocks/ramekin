@@ -168,7 +168,7 @@ fn shopping_list_categorizer_scorecard() {
     catalog_only.sort_by(|a, b| a.0.item.cmp(&b.0.item));
     let catalog_only_other = corpus
         .iter()
-        .filter(|entry| catalog_category_with(&entry.item, &learned).is_none())
+        .filter(|entry| catalog_category_with(&entry.item, &learned).unwrap_or("Other") == "Other")
         .count();
     println!(
         "\ncatalog only (no keyword rules): {} mismatches, {catalog_only_other} Other",
