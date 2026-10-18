@@ -29,9 +29,9 @@ class SyncMealPlansResponse(BaseModel):
     """
     SyncMealPlansResponse
     """ # noqa: E501
-    changes: List[SyncMealPlan] = Field(description="Live plans (of live recipes) changed at or after the request's `cursor`, this request's own writes and any plan an op couldn't update included; every live plan on a full resync.")
+    changes: List[SyncMealPlan] = Field(description="Live plans (of live recipes) changed at or after the request's `cursor`, this request's own writes and every refused op's live plan included; every live plan on a full resync.")
     cursor: StrictInt = Field(description="Pass as `cursor` on the next sync.")
-    deleted: List[UUID] = Field(description="Plan IDs deleted, or whose recipe was deleted, at or after `cursor`. Empty on a full resync.")
+    deleted: List[UUID] = Field(description="Plan IDs deleted, or whose recipe was deleted, at or after `cursor`, and every refused op's plan that isn't live. Only the latter on a full resync.")
     full_resync: StrictBool = Field(description="True when `changes` holds every live plan: drop cached plans it omits.")
     results: List[OpResult] = Field(description="One per request op, in order.")
     __properties: ClassVar[List[str]] = ["changes", "cursor", "deleted", "full_resync", "results"]

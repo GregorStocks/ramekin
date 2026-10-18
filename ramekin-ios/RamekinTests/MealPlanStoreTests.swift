@@ -80,7 +80,12 @@ final class MealPlanStoreTests: XCTestCase {
     func testADuplicateTheServerRefusesDropsTheCreateAndSaysWhy() async throws {
         let (stack, defaults) = makeStorage()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        let store = makeStore(stack: stack, defaults: defaults) { _, _ in self.response(results: [.duplicate]) }
+        // The server refuses the create and, since the plan never existed,
+        // sends its id as a tombstone.
+        let store = makeStore(stack: stack, defaults: defaults) { _, ops in
+            let id = try XCTUnwrap((ops.first?["id"] as? String).flatMap(UUID.init(uuidString:)))
+            return self.response(results: [.duplicate], deleted: [id])
+        }
 
         // Planned on another device too, before this one synced.
         try store.add(recipeId: UUID(), recipeTitle: "Soup", thumbnailPhotoId: nil, date: day("2026-04-17"), mealType: .dinner)

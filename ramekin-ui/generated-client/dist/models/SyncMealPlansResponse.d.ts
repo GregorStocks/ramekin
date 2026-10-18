@@ -19,8 +19,8 @@ import type { OpResult } from './OpResult';
 export interface SyncMealPlansResponse {
     /**
      * Live plans (of live recipes) changed at or after the request's
-     * `cursor`, this request's own writes and any plan an op couldn't
-     * update included; every live plan on a full resync.
+     * `cursor`, this request's own writes and every refused op's live plan
+     * included; every live plan on a full resync.
      * @type {Array<SyncMealPlan>}
      * @memberof SyncMealPlansResponse
      */
@@ -32,8 +32,9 @@ export interface SyncMealPlansResponse {
      */
     cursor: number;
     /**
-     * Plan IDs deleted, or whose recipe was deleted, at or after `cursor`.
-     * Empty on a full resync.
+     * Plan IDs deleted, or whose recipe was deleted, at or after `cursor`,
+     * and every refused op's plan that isn't live. Only the latter on a full
+     * resync.
      * @type {Array<string>}
      * @memberof SyncMealPlansResponse
      */

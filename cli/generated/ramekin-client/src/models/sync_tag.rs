@@ -13,6 +13,9 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SyncTag {
+    /// Sync stamp of the tag's last change.
+    #[serde(rename = "change_seq")]
+    pub change_seq: i64,
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
     #[serde(rename = "name")]
@@ -20,7 +23,11 @@ pub struct SyncTag {
 }
 
 impl SyncTag {
-    pub fn new(id: uuid::Uuid, name: String) -> SyncTag {
-        SyncTag { id, name }
+    pub fn new(change_seq: i64, id: uuid::Uuid, name: String) -> SyncTag {
+        SyncTag {
+            change_seq,
+            id,
+            name,
+        }
     }
 }

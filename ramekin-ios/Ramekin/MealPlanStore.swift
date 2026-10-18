@@ -23,6 +23,8 @@ final class MealPlanStore: ObservableObject {
 
     /// Every plan not waiting to be deleted, for the active account.
     @Published private(set) var plans: [MealPlanItem] = []
+    /// The same plans by their `yyyy-MM-dd` day, for the week view.
+    @Published private(set) var plansByDay: [String: [MealPlanItem]] = [:]
     @Published private(set) var isSyncing = false
     @Published var lastSyncError: String?
     /// Why the server refused a change made offline, to show once.
@@ -34,7 +36,7 @@ final class MealPlanStore: ObservableObject {
     private let automaticallySync: Bool
     private var activeAccountKey: String?
 
-    private static let syncCursorKeyPrefix = "meal_plan_sync_cursor"
+    private static let syncCursor = SyncCursorStore(prefix: "meal_plan_sync_cursor")
 
     init(
         coreDataStack: CoreDataStack = .shared,
@@ -59,6 +61,7 @@ extension MealPlanStore {
     func setActiveAccountKey(_ accountKey: String?) {
         activeAccountKey = accountKey
         plans = []
+        plansByDay = [:]
         lastSyncError = nil
         refusal = nil
         guard accountKey != nil else { return }
@@ -69,10 +72,18 @@ extension MealPlanStore {
     func fetchPlans() {
         guard let activeAccountKey else {
             plans = []
+            plansByDay = [:]
             return
         }
         let cached = (try? coreDataStack.viewContext.fetch(CachedMealPlan.fetchActive(accountKey: activeAccountKey))) ?? []
         plans = cached.compactMap(\.item)
+        plansByDay = Dictionary(grouping: plans) { MealPlanDateSupport.apiDay(fromAPIDate: $0.mealDate) }
+    }
+
+    /// The plans for one meal on `date`, a local day.
+    func plans(on date: Date, mealType: MealType) -> [MealPlanItem] {
+        let day = SharedDateFormatters.localDateOnly.string(from: date)
+        return plansByDay[day, default: []].filter { $0.mealType == mealType }
     }
 
     /// Plan `recipe` for the meal on `date`, a local day.
@@ -133,16 +144,13 @@ extension MealPlanStore {
     /// create may have reached it on a sync whose response was lost.
     func delete(_ meal: MealPlanItem) {
         guard let plan = cachedPlan(id: meal.id) else { return }
-        plan.syncStatusEnum = .pendingDelete
-        plan.dirtyFields = nil
+        plan.markDeleted()
         try? saveAndSync()
     }
 
     private func isPlanned(recipeId: UUID, day: String, mealType: MealType, except: UUID?) -> Bool {
-        guard let activeAccountKey else { return false }
-        let active = (try? coreDataStack.viewContext.fetch(CachedMealPlan.fetchActive(accountKey: activeAccountKey))) ?? []
-        return active.contains { plan in
-            plan.id != except && plan.recipeId == recipeId && plan.mealDay == day && plan.mealType == mealType.rawValue
+        plansByDay[day, default: []].contains { plan in
+            plan.id != except && plan.recipeId == recipeId && plan.mealType == mealType
         }
     }
 
@@ -184,10 +192,10 @@ extension MealPlanStore {
             )
             let outbox = MealPlanSyncSupport.outbox(for: pending)
             let response = try await logger.timed("meal plan sync API", source: "MealPlan") {
-                try await syncMealPlans(syncCursor(accountKey: syncAccountKey), outbox.ops)
+                try await syncMealPlans(Self.syncCursor.cursor(accountKey: syncAccountKey, in: userDefaults), outbox.ops)
             }
             process(response, outbox: outbox, accountKey: syncAccountKey)
-            setSyncCursor(response.cursor, accountKey: syncAccountKey)
+            Self.syncCursor.set(response.cursor, accountKey: syncAccountKey, in: userDefaults)
         } catch {
             logger.log("meal plan sync failed: \(error.localizedDescription)", source: "MealPlan")
             if activeAccountKey == syncAccountKey {
@@ -218,18 +226,11 @@ extension MealPlanStore {
         )
         for (id, result) in zip(outbox.order, response.results) {
             guard let plan = byId[id], let sent = outbox.sent[id] else { continue }
-            switch MealPlanSyncSupport.settle(plan, result: result, sent: sent) {
-            case .kept:
-                break
-            case .removed:
+            if result == .duplicate || result == .recipeMissing, activeAccountKey == accountKey {
+                refusal = Self.refusalMessage(result, recipeTitle: plan.recipeTitle ?? "A recipe")
+            }
+            if plan.settle(result: result, sent: sent) == .removed {
                 context.delete(plan)
-            case .refused(let result):
-                if activeAccountKey == accountKey {
-                    refusal = Self.refusalMessage(result, recipeTitle: plan.recipeTitle ?? "A recipe")
-                }
-                if sent.kind == .create {
-                    context.delete(plan)
-                }
             }
         }
 
@@ -244,17 +245,5 @@ extension MealPlanStore {
         default:
             return "\(recipeTitle) was already planned for that meal, so the change was undone."
         }
-    }
-
-    private func syncCursor(accountKey: String) -> Int64? {
-        userDefaults.object(forKey: syncCursorKey(accountKey: accountKey)) as? Int64
-    }
-
-    private func setSyncCursor(_ cursor: Int64, accountKey: String) {
-        userDefaults.set(cursor, forKey: syncCursorKey(accountKey: accountKey))
-    }
-
-    private func syncCursorKey(accountKey: String) -> String {
-        AccountScope.userDefaultsKey(prefix: Self.syncCursorKeyPrefix, accountKey: accountKey)
     }
 }

@@ -20,6 +20,12 @@ import { mapValues } from '../runtime';
  */
 export interface SyncTag {
     /**
+     * Sync stamp of the tag's last change.
+     * @type {number}
+     * @memberof SyncTag
+     */
+    changeSeq: number;
+    /**
      * 
      * @type {string}
      * @memberof SyncTag
@@ -37,6 +43,7 @@ export interface SyncTag {
  * Check if a given object implements the SyncTag interface.
  */
 export function instanceOfSyncTag(value: object): value is SyncTag {
+    if (!('changeSeq' in value) || value['changeSeq'] === undefined) return false;
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('name' in value) || value['name'] === undefined) return false;
     return true;
@@ -52,6 +59,7 @@ export function SyncTagFromJSONTyped(json: any, ignoreDiscriminator: boolean): S
     }
     return {
         
+        'changeSeq': json['change_seq'],
         'id': json['id'],
         'name': json['name'],
     };
@@ -68,6 +76,7 @@ export function SyncTagToJSONTyped(value?: SyncTag | null, ignoreDiscriminator: 
 
     return {
         
+        'change_seq': value['changeSeq'],
         'id': value['id'],
         'name': value['name'],
     };

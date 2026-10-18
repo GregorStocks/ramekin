@@ -133,20 +133,25 @@ def test_create_with_a_missing_or_deleted_recipe(authed_api_client):
 
     assert response.results == [OpResult.RECIPE_MISSING, OpResult.RECIPE_MISSING]
     assert plans(client) == {}
+    assert len(response.deleted) == 2
 
 
 def test_planning_a_recipe_twice_for_one_meal_is_a_duplicate(authed_api_client):
     client, _ = authed_api_client
     recipe = make_recipe(client)
 
-    response = sync(
-        client,
-        create(recipe.id, meal_type="breakfast"),
-        create(recipe.id, meal_type="breakfast"),
-    )
+    first = create(recipe.id, meal_type="breakfast")
+    second = create(recipe.id, meal_type="breakfast")
+
+    response = sync(client, first, second)
 
     assert response.results == [OpResult.APPLIED, OpResult.DUPLICATE]
     assert len(plans(client)) == 1
+    # The refused create's plan never existed, so it comes back as a
+    # tombstone and the client drops it, even on a full resync.
+    assert response.full_resync is True
+    assert [plan.id for plan in response.changes] == [first.id]
+    assert response.deleted == [second.id]
 
 
 def test_different_recipes_share_a_meal(authed_api_client):

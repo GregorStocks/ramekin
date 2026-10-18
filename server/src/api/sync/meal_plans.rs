@@ -1,4 +1,4 @@
-use super::{patch_text, text_or_none, OpKind, OpResult, Window};
+use super::{patch_text, refused, text_or_none, with_refused, OpKind, OpResult, Target, Window};
 use crate::api::meal_plans::list::MealType;
 use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
@@ -63,11 +63,12 @@ pub struct SyncMealPlansResponse {
     /// One per request op, in order.
     pub results: Vec<OpResult>,
     /// Live plans (of live recipes) changed at or after the request's
-    /// `cursor`, this request's own writes and any plan an op couldn't
-    /// update included; every live plan on a full resync.
+    /// `cursor`, this request's own writes and every refused op's live plan
+    /// included; every live plan on a full resync.
     pub changes: Vec<SyncMealPlan>,
-    /// Plan IDs deleted, or whose recipe was deleted, at or after `cursor`.
-    /// Empty on a full resync.
+    /// Plan IDs deleted, or whose recipe was deleted, at or after `cursor`,
+    /// and every refused op's plan that isn't live. Only the latter on a full
+    /// resync.
     pub deleted: Vec<Uuid>,
     /// Pass as `cursor` on the next sync.
     pub cursor: i64,
@@ -103,22 +104,11 @@ pub async fn sync_meal_plans(
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<SyncMealPlansRequest>,
 ) -> Result<impl IntoResponse, ApiError> {
-    if request.ops.iter().any(|op| {
-        op.op == OpKind::Create
-            && (op.fields.recipe_id.is_none()
-                || op.fields.meal_date.is_none()
-                || op.fields.meal_type.is_none())
-    }) {
-        return Err(ApiError::invalid_request(
-            "A create needs a recipe, date and meal",
-        ));
-    }
     let user_id = user.id;
 
     let response = run_db_write(&pool, move |conn| {
+        let ids: Vec<Uuid> = request.ops.iter().map(|op| op.id).collect();
         let mut results = Vec::with_capacity(request.ops.len());
-        // Plans an op couldn't update, sent back so the client retakes them.
-        let mut kept: Vec<Uuid> = Vec::new();
 
         for op in request.ops {
             let owner: Option<(Uuid, bool)> = meal_plans::table
@@ -126,41 +116,13 @@ pub async fn sync_meal_plans(
                 .select((meal_plans::user_id, meal_plans::deleted_at.is_null()))
                 .first(conn)
                 .optional()?;
-            let mine = owner.filter(|(owner, _)| *owner == user_id);
+            let target = Target::of(owner, user_id);
 
             let result = match op.op {
-                // A replayed create (even of a plan deleted since) is done.
-                OpKind::Create if mine.is_some() => OpResult::Applied,
-                // Another user's id: the client's row can never exist.
-                OpKind::Create if owner.is_some() => OpResult::Gone,
-                OpKind::Create => {
-                    let fields = op.fields;
-                    let (Some(recipe_id), Some(meal_date), Some(meal_type)) =
-                        (fields.recipe_id, fields.meal_date, fields.meal_type)
-                    else {
-                        return Err(ApiError::invalid_request(
-                            "A create needs a recipe, date and meal",
-                        ));
-                    };
-                    if !recipe_is_live(conn, user_id, recipe_id)? {
-                        OpResult::RecipeMissing
-                    } else if slot_taken(conn, user_id, None, recipe_id, meal_date, meal_type)? {
-                        OpResult::Duplicate
-                    } else {
-                        let notes = text_or_none(fields.notes);
-                        diesel::insert_into(meal_plans::table)
-                            .values(NewMealPlan {
-                                id: op.id,
-                                user_id,
-                                recipe_id,
-                                meal_date,
-                                meal_type: meal_type.as_str(),
-                                notes: notes.as_deref(),
-                            })
-                            .execute(conn)?;
-                        OpResult::Applied
-                    }
-                }
+                OpKind::Create => match target.existing_create() {
+                    Some(result) => result,
+                    None => create(conn, user_id, op.id, op.fields)?,
+                },
                 OpKind::Update => {
                     // A plan whose recipe is deleted is gone from the feed.
                     let current: Option<(Uuid, NaiveDate, String, Option<String>)> =
@@ -196,7 +158,6 @@ pub async fn sync_meal_plans(
                                 meal_date,
                                 meal_type,
                             )? {
-                                kept.push(op.id);
                                 OpResult::Duplicate
                             } else {
                                 diesel::update(meal_plans::table.find(op.id))
@@ -211,17 +172,14 @@ pub async fn sync_meal_plans(
                         }
                     }
                 }
-                OpKind::Delete => match mine {
-                    None => OpResult::Gone,
-                    Some((_, live)) => {
-                        if live {
-                            diesel::update(meal_plans::table.find(op.id))
-                                .set(meal_plans::deleted_at.eq(Utc::now()))
-                                .execute(conn)?;
-                        }
-                        OpResult::Applied
+                OpKind::Delete => {
+                    if target == (Target::Mine { live: true }) {
+                        diesel::update(meal_plans::table.find(op.id))
+                            .set(meal_plans::deleted_at.eq(Utc::now()))
+                            .execute(conn)?;
                     }
-                },
+                    target.delete()
+                }
             };
             results.push(result);
         }
@@ -230,6 +188,7 @@ pub async fn sync_meal_plans(
         // the next sync. The write lock keeps anything else from committing
         // in between.
         let window = Window::read(conn, request.cursor)?;
+        let refused = refused(&ids, &results);
 
         let mut changed = meal_plans::table
             .inner_join(recipes::table)
@@ -247,7 +206,7 @@ pub async fn sync_meal_plans(
                 meal_plans::change_seq
                     .ge(since)
                     .or(recipe_versions::change_seq.ge(since))
-                    .or(meal_plans::id.eq_any(kept)),
+                    .or(meal_plans::id.eq_any(&refused)),
             );
         }
         let rows: Vec<PlanRow> = changed
@@ -263,7 +222,7 @@ pub async fn sync_meal_plans(
             ))
             .order((meal_plans::meal_date.asc(), meal_plans::id.asc()))
             .load(conn)?;
-        let changes = rows
+        let changes: Vec<SyncMealPlan> = rows
             .into_iter()
             .filter_map(
                 |(
@@ -306,6 +265,8 @@ pub async fn sync_meal_plans(
                 .load(conn)?,
             None => Vec::new(),
         };
+        let live: Vec<Uuid> = changes.iter().map(|plan| plan.id).collect();
+        let deleted = with_refused(deleted, &refused, &live);
 
         Ok(SyncMealPlansResponse {
             results,
@@ -318,6 +279,40 @@ pub async fn sync_meal_plans(
     .await?;
 
     Ok((StatusCode::OK, Json(response)))
+}
+
+/// Insert a new plan, unless its recipe is gone or already in that meal.
+fn create(
+    conn: &mut SqliteConnection,
+    user_id: Uuid,
+    id: Uuid,
+    fields: MealPlanFields,
+) -> Result<OpResult, ApiError> {
+    let (Some(recipe_id), Some(meal_date), Some(meal_type)) =
+        (fields.recipe_id, fields.meal_date, fields.meal_type)
+    else {
+        return Err(ApiError::invalid_request(
+            "A create needs a recipe, date and meal",
+        ));
+    };
+    if !recipe_is_live(conn, user_id, recipe_id)? {
+        return Ok(OpResult::RecipeMissing);
+    }
+    if slot_taken(conn, user_id, None, recipe_id, meal_date, meal_type)? {
+        return Ok(OpResult::Duplicate);
+    }
+    let notes = text_or_none(fields.notes);
+    diesel::insert_into(meal_plans::table)
+        .values(NewMealPlan {
+            id,
+            user_id,
+            recipe_id,
+            meal_date,
+            meal_type: meal_type.as_str(),
+            notes: notes.as_deref(),
+        })
+        .execute(conn)?;
+    Ok(OpResult::Applied)
 }
 
 fn recipe_is_live(

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**change_seq** | **i64** | Sync stamp of the tag's last change. | 
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **name** | **String** |  | 
 

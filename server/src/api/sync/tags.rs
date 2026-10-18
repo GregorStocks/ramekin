@@ -25,6 +25,8 @@ pub struct SyncTagsParams {
 pub struct SyncTag {
     pub id: Uuid,
     pub name: String,
+    /// Sync stamp of the tag's last change.
+    pub change_seq: i64,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -70,11 +72,15 @@ pub async fn sync_tags(
                 changed = changed.filter(user_tags::change_seq.ge(since));
             }
             let changes = changed
-                .select((user_tags::id, user_tags::name))
+                .select((user_tags::id, user_tags::name, user_tags::change_seq))
                 .order(user_tags::name_key.asc())
-                .load::<(Uuid, String)>(conn)?
+                .load::<(Uuid, String, i64)>(conn)?
                 .into_iter()
-                .map(|(id, name)| SyncTag { id, name })
+                .map(|(id, name, change_seq)| SyncTag {
+                    id,
+                    name,
+                    change_seq,
+                })
                 .collect();
 
             let deleted = match window.since {

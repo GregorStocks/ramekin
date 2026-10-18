@@ -13,13 +13,13 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SyncMealPlansResponse {
-    /// Live plans (of live recipes) changed at or after the request's `cursor`, this request's own writes and any plan an op couldn't update included; every live plan on a full resync.
+    /// Live plans (of live recipes) changed at or after the request's `cursor`, this request's own writes and every refused op's live plan included; every live plan on a full resync.
     #[serde(rename = "changes")]
     pub changes: Vec<models::SyncMealPlan>,
     /// Pass as `cursor` on the next sync.
     #[serde(rename = "cursor")]
     pub cursor: i64,
-    /// Plan IDs deleted, or whose recipe was deleted, at or after `cursor`. Empty on a full resync.
+    /// Plan IDs deleted, or whose recipe was deleted, at or after `cursor`, and every refused op's plan that isn't live. Only the latter on a full resync.
     #[serde(rename = "deleted")]
     pub deleted: Vec<uuid::Uuid>,
     /// True when `changes` holds every live plan: drop cached plans it omits.

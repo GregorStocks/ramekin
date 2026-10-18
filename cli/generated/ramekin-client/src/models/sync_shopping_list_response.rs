@@ -22,7 +22,7 @@ pub struct SyncShoppingListResponse {
     /// Pass as `cursor` on the next sync.
     #[serde(rename = "cursor")]
     pub cursor: i64,
-    /// Item IDs deleted at or after `cursor`. Empty on a full resync.
+    /// Item IDs deleted at or after `cursor`, and every refused op's item that isn't live. Only the latter on a full resync.
     #[serde(rename = "deleted")]
     pub deleted: Vec<uuid::Uuid>,
     /// True when `changes` holds every live item: no cursor was sent, or it predates a restored backup, or came from another database. Drop cached items it omits.

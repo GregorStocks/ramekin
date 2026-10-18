@@ -32,7 +32,7 @@ class SyncShoppingListResponse(BaseModel):
     category_order: List[StrictStr] = Field(description="Canonical category display order for grouping items; every item's `category` is guaranteed to appear in this list.")
     changes: List[SyncShoppingListItem] = Field(description="Live items changed at or after the request's `cursor`, this request's own writes included; every live item on a full resync.")
     cursor: StrictInt = Field(description="Pass as `cursor` on the next sync.")
-    deleted: List[UUID] = Field(description="Item IDs deleted at or after `cursor`. Empty on a full resync.")
+    deleted: List[UUID] = Field(description="Item IDs deleted at or after `cursor`, and every refused op's item that isn't live. Only the latter on a full resync.")
     full_resync: StrictBool = Field(description="True when `changes` holds every live item: no cursor was sent, or it predates a restored backup, or came from another database. Drop cached items it omits.")
     results: List[OpResult] = Field(description="One per request op, in order.")
     __properties: ClassVar[List[str]] = ["category_order", "changes", "cursor", "deleted", "full_resync", "results"]

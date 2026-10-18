@@ -1,5 +1,4 @@
 import type {
-  OpResult,
   ShoppingListOp,
   SyncApi,
   SyncShoppingListItem,
@@ -17,11 +16,6 @@ export interface ShoppingListSyncCache {
   items: SyncShoppingListItem[];
   categoryOrder: string[];
   cursor: number | null;
-}
-
-export interface ShoppingListSyncResult {
-  cache: ShoppingListSyncCache;
-  results: OpResult[];
 }
 
 export function shoppingListCacheKey(token: string): string {
@@ -60,23 +54,15 @@ export function clearShoppingListSyncCache(
   storage.removeItem(shoppingListCacheKey(token));
 }
 
-/**
- * The cache after a sync: the response applied, then every item an op found
- * gone dropped (it may have been deleted too long ago for a tombstone).
- */
+/** The cache after a sync. (A refused op's item comes back as a change or a
+ * tombstone, so op results need no handling of their own.) */
 export function applyShoppingListSyncResponse(
   cache: ShoppingListSyncCache | null,
   response: SyncShoppingListResponse,
-  ops: readonly ShoppingListOp[] = [],
 ): ShoppingListSyncCache {
-  const gone = new Set(
-    ops.filter((_, i) => response.results[i] === "gone").map((op) => op.id),
-  );
   return {
     version: CACHE_VERSION,
-    items: applySyncResponse(cache?.items ?? [], response).filter(
-      (item) => !gone.has(item.id),
-    ),
+    items: applySyncResponse(cache?.items ?? [], response),
     categoryOrder: response.categoryOrder,
     cursor: response.cursor,
   };
@@ -97,7 +83,7 @@ export function syncShoppingList(
   token: string | null,
   ops: ShoppingListOp[] = [],
   onCacheError: (context: string, err: unknown) => void = () => {},
-): Promise<ShoppingListSyncResult> {
+): Promise<ShoppingListSyncCache> {
   const run = async () => {
     let cached: ShoppingListSyncCache | null = null;
     try {
@@ -109,14 +95,14 @@ export function syncShoppingList(
     const response = await api.syncShoppingList({
       syncShoppingListRequest: { cursor: cached?.cursor ?? undefined, ops },
     });
-    const cache = applyShoppingListSyncResponse(cached, response, ops);
+    const cache = applyShoppingListSyncResponse(cached, response);
     try {
       saveShoppingListSyncCache(storage, token, cache);
     } catch (err) {
       onCacheError("shopping list cache write failed", err);
       clearQuietly(storage, token);
     }
-    return { cache, results: response.results };
+    return cache;
   };
   const result = inFlight.then(run, run);
   inFlight = result.catch(() => {});

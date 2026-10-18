@@ -4519,7 +4519,7 @@
             "items": {
               "$ref": "#/components/schemas/SyncMealPlan"
             },
-            "description": "Live plans (of live recipes) changed at or after the request's\n`cursor`, this request's own writes and any plan an op couldn't\nupdate included; every live plan on a full resync."
+            "description": "Live plans (of live recipes) changed at or after the request's\n`cursor`, this request's own writes and every refused op's live plan\nincluded; every live plan on a full resync."
           },
           "cursor": {
             "type": "integer",
@@ -4532,7 +4532,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "description": "Plan IDs deleted, or whose recipe was deleted, at or after `cursor`.\nEmpty on a full resync."
+            "description": "Plan IDs deleted, or whose recipe was deleted, at or after `cursor`,\nand every refused op's plan that isn't live. Only the latter on a full\nresync."
           },
           "full_resync": {
             "type": "boolean",
@@ -4799,7 +4799,7 @@
               "type": "string",
               "format": "uuid"
             },
-            "description": "Item IDs deleted at or after `cursor`. Empty on a full resync."
+            "description": "Item IDs deleted at or after `cursor`, and every refused op's item\nthat isn't live. Only the latter on a full resync."
           },
           "full_resync": {
             "type": "boolean",
@@ -4818,9 +4818,15 @@
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "change_seq"
         ],
         "properties": {
+          "change_seq": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Sync stamp of the tag's last change."
+          },
           "id": {
             "type": "string",
             "format": "uuid"

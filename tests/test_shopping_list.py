@@ -180,8 +180,11 @@ def test_check_and_uncheck(authed_api_client):
 
 def test_update_of_an_unknown_item_is_gone(authed_api_client):
     client, _ = authed_api_client
-    response = sync(SyncApi(client), update(str(uuid.uuid4()), is_checked=True))
+    unknown = str(uuid.uuid4())
+    response = sync(SyncApi(client), update(unknown, is_checked=True))
     assert response.results == [OpResult.GONE]
+    # A refused op's row is always settled by the feed: gone, so a tombstone.
+    assert [str(id) for id in response.deleted] == [unknown]
 
 
 def test_delete_wins_over_a_later_update(authed_api_client):
@@ -191,9 +194,11 @@ def test_delete_wins_over_a_later_update(authed_api_client):
     bread = add(api, "bread")[0]
     sync(api, delete(bread))
 
-    response = sync(api, update(bread, is_checked=True))
+    # From a client whose cursor is past the delete's tombstone.
+    response = sync(api, update(bread, is_checked=True), cursor=sync(api).cursor)
 
     assert response.results == [OpResult.GONE]
+    assert response.deleted == [bread]
     assert items(api) == {}
 
 

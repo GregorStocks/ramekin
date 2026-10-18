@@ -41,7 +41,7 @@ class ShoppingListStore: ObservableObject {
     /// Server change cursor to resume incremental sync from. Versioned with
     /// the sync protocol (doc/sync-design.md): a new one starts with a full
     /// resync.
-    private static let syncCursorKeyPrefix = "shopping_list_sync_cursor_v2"
+    private static let syncCursor = SyncCursorStore(prefix: "shopping_list_sync_cursor_v2")
     private static let categoryOrderKeyPrefix = "shopping_list_category_order"
     private static let legacyMigrationKey = "shopping_list_account_scope_migrated"
 
@@ -235,7 +235,7 @@ extension ShoppingListStore {
             let outbox = ShoppingListSyncSupport.outbox(for: pending)
             logger.log("syncWithServer: \(outbox.ops.count) pending ops", source: "Shopping")
             let request = SyncShoppingListRequest(
-                cursor: syncCursor(accountKey: syncAccountKey),
+                cursor: Self.syncCursor.cursor(accountKey: syncAccountKey, in: userDefaults),
                 ops: outbox.ops.isEmpty ? nil : outbox.ops
             )
             let response = try await logger.timed("shopping sync API", source: "Shopping") {
@@ -243,7 +243,7 @@ extension ShoppingListStore {
             }
             processServerResponse(response, outbox: outbox, accountKey: syncAccountKey)
             setLastSyncAt(syncStartedAt, accountKey: syncAccountKey)
-            setSyncCursor(response.cursor, accountKey: syncAccountKey)
+            Self.syncCursor.set(response.cursor, accountKey: syncAccountKey, in: userDefaults)
             userDefaults.set(response.categoryOrder, forKey: categoryOrderKey(accountKey: syncAccountKey))
             if activeAccountKey == syncAccountKey {
                 categoryOrder = response.categoryOrder
@@ -293,7 +293,7 @@ extension ShoppingListStore {
                   let local = (try? context.fetch(
                       ShoppingItem.fetchById(operation.id, accountKey: accountKey)
                   ))?.first else { continue }
-            if ShoppingListSyncSupport.settle(local, result: result, sent: sent) == .removed {
+            if local.settle(result: result, sent: sent) == .removed {
                 context.delete(local)
             }
         }
@@ -323,18 +323,6 @@ extension ShoppingListStore {
 
     private func lastSyncAtKey(accountKey: String) -> String {
         AccountScope.userDefaultsKey(prefix: Self.lastSyncAtKeyPrefix, accountKey: accountKey)
-    }
-
-    private func syncCursor(accountKey: String) -> Int64? {
-        userDefaults.object(forKey: syncCursorKey(accountKey: accountKey)) as? Int64
-    }
-
-    private func setSyncCursor(_ cursor: Int64, accountKey: String) {
-        userDefaults.set(cursor, forKey: syncCursorKey(accountKey: accountKey))
-    }
-
-    private func syncCursorKey(accountKey: String) -> String {
-        AccountScope.userDefaultsKey(prefix: Self.syncCursorKeyPrefix, accountKey: accountKey)
     }
 
     private func categoryOrderKey(accountKey: String) -> String {

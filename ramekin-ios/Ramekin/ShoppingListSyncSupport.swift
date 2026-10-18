@@ -9,14 +9,7 @@ enum ShoppingListSyncSupport {
     /// The ops for every pending item, and what each op sent.
     struct Outbox {
         var ops: [ShoppingListOp] = []
-        var sent: [UUID: Sent] = [:]
-    }
-
-    /// An op as sent: its kind, and the value of each field it carried, so
-    /// a field edited again mid-sync stays dirty.
-    struct Sent {
-        let kind: OpKind
-        let values: [String: String?]
+        var sent: [UUID: OutboxSent] = [:]
     }
 
     static func outbox(for pending: [ShoppingItem]) -> Outbox {
@@ -64,47 +57,9 @@ enum ShoppingListSyncSupport {
                 continue
             }
             outbox.ops.append(operation)
-            outbox.sent[id] = Sent(
-                kind: operation.op,
-                values: Dictionary(
-                    uniqueKeysWithValues: item.dirtyFieldSet.map { ($0, item.syncedValue(of: $0)) }
-                )
-            )
+            outbox.sent[id] = item.sent(operation.op)
         }
         return outbox
-    }
-
-    enum Settled: Equatable {
-        case kept
-        /// The server deleted the item, or the local delete went through.
-        case removed
-    }
-
-    /// Settle an item's op from its result. A field that still holds the
-    /// value sent is clean; one edited again while the sync was in flight
-    /// stays dirty and goes out next round, and so does a delete made then.
-    static func settle(_ item: ShoppingItem, result: OpResult, sent: Sent) -> Settled {
-        if result == .gone || sent.kind == .delete {
-            return .removed
-        }
-        switch item.syncStatusEnum {
-        case .pendingDelete, .synced:
-            // Deleted locally after its create or update went out: the
-            // delete goes out next round.
-            return .kept
-        case .pendingCreate, .pendingUpdate:
-            let stillDirty = item.dirtyFieldSet.filter { field in
-                guard let value = sent.values[field] else { return true }
-                return item.syncedValue(of: field) != value
-            }
-            if stillDirty.isEmpty {
-                item.markSynced()
-            } else {
-                item.syncStatusEnum = .pendingUpdate
-                item.dirtyFieldSet = stillDirty
-            }
-            return .kept
-        }
     }
 
     /// Apply the server's changes and tombstones to every cached item of
@@ -116,33 +71,13 @@ enum ShoppingListSyncSupport {
     ) {
         let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
         request.predicate = NSPredicate(format: "accountKey == %@", accountKey)
-        let cachedItems = (try? context.fetch(request)) ?? []
-        var byId: [UUID: ShoppingItem] = [:]
-        for item in cachedItems {
-            if let id = item.id { byId[id] = item }
-        }
-        let changes = Dictionary(response.changes.map { ($0.id, $0) }, uniquingKeysWith: { $1 })
-
-        let actions = SyncApplySupport.plan(
-            cached: byId.mapValues {
-                SyncApplySupport.CachedState(changeSeq: $0.changeSeq, pending: $0.pendingWrite)
-            },
-            changes: response.changes.map { (id: $0.id, changeSeq: $0.changeSeq) },
-            deleted: response.deleted,
-            fullResync: response.fullResync
+        OutboxSupport.apply(
+            response,
+            cached: (try? context.fetch(request)) ?? [],
+            in: context,
+            insert: { newItem(id: $0, accountKey: accountKey, in: context) },
+            take: take(_:into:)
         )
-        for (id, action) in actions {
-            switch action {
-            case .keep:
-                break
-            case .drop:
-                if let item = byId[id] { context.delete(item) }
-            case .take:
-                guard let change = changes[id] else { continue }
-                let item = byId[id] ?? newItem(id: id, accountKey: accountKey, in: context)
-                take(change, into: item)
-            }
-        }
     }
 
     private static func newItem(id: UUID, accountKey: String, in context: NSManagedObjectContext) -> ShoppingItem {
@@ -171,6 +106,5 @@ enum ShoppingListSyncSupport {
         item.sourceRecipeId = change.sourceRecipeId
         item.sourceRecipeTitle = change.sourceRecipeTitle
         item.computedCategory = change.computedCategory
-        item.changeSeq = change.changeSeq
     }
 }

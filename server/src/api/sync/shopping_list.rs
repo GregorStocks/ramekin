@@ -1,4 +1,4 @@
-use super::{patch_text, text_or_none, OpKind, OpResult, Window};
+use super::{patch_text, refused, text_or_none, with_refused, OpKind, OpResult, Target, Window};
 use crate::api::{run_db_write, ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
@@ -76,7 +76,8 @@ pub struct SyncShoppingListResponse {
     /// Live items changed at or after the request's `cursor`, this request's
     /// own writes included; every live item on a full resync.
     pub changes: Vec<SyncShoppingListItem>,
-    /// Item IDs deleted at or after `cursor`. Empty on a full resync.
+    /// Item IDs deleted at or after `cursor`, and every refused op's item
+    /// that isn't live. Only the latter on a full resync.
     pub deleted: Vec<Uuid>,
     /// Pass as `cursor` on the next sync.
     pub cursor: i64,
@@ -138,6 +139,7 @@ pub async fn sync_shopping_list(
         // Items this sync wrote, whose categories are stored below.
         let mut written: Vec<(Uuid, String)> = Vec::new();
 
+        let ids: Vec<Uuid> = request.ops.iter().map(|op| op.id).collect();
         for op in request.ops {
             let owner: Option<(Uuid, bool)> = shopping_list_items::table
                 .find(op.id)
@@ -147,40 +149,19 @@ pub async fn sync_shopping_list(
                 ))
                 .first(conn)
                 .optional()?;
-            let mine = owner.filter(|(owner, _)| *owner == user_id);
-            let live = mine.is_some_and(|(_, live)| live);
+            let target = Target::of(owner, user_id);
+            let live = target == (Target::Mine { live: true });
 
             let result = match op.op {
-                // A replayed create (even of an item deleted since) is done.
-                OpKind::Create if mine.is_some() => OpResult::Applied,
-                // Another user's id: the client's row can never exist.
-                OpKind::Create if owner.is_some() => OpResult::Gone,
-                OpKind::Create => {
-                    let fields = op.fields;
-                    let item = fields.item.unwrap_or_default();
-                    let sort_order = fields.sort_order.unwrap_or(next_sort_order);
-                    next_sort_order = next_sort_order.max(sort_order + 1);
-                    let amount = text_or_none(fields.amount);
-                    let note = text_or_none(fields.note);
-                    let category_override = text_or_none(fields.category_override);
-                    diesel::insert_into(shopping_list_items::table)
-                        .values(NewShoppingListItem {
-                            id: op.id,
-                            user_id,
-                            item: &item,
-                            amount: amount.as_deref(),
-                            note: note.as_deref(),
-                            source_recipe_id: fields.source_recipe_id,
-                            source_recipe_title: fields.source_recipe_title.as_deref(),
-                            is_checked: fields.is_checked.unwrap_or(false),
-                            sort_order,
-                            category_override: category_override.as_deref(),
-                        })
-                        .execute(conn)?;
-                    renamed.push(item.clone());
-                    written.push((op.id, item));
-                    OpResult::Applied
-                }
+                OpKind::Create => match target.existing_create() {
+                    Some(result) => result,
+                    None => {
+                        let item = create(conn, user_id, op.id, op.fields, &mut next_sort_order)?;
+                        renamed.push(item.clone());
+                        written.push((op.id, item));
+                        OpResult::Applied
+                    }
+                },
                 OpKind::Update if !live => OpResult::Gone,
                 OpKind::Update => {
                     let fields = op.fields;
@@ -223,7 +204,6 @@ pub async fn sync_shopping_list(
                     written.push((op.id, item));
                     OpResult::Applied
                 }
-                OpKind::Delete if mine.is_none() => OpResult::Gone,
                 OpKind::Delete => {
                     if live {
                         diesel::update(shopping_list_items::table.find(op.id))
@@ -233,7 +213,7 @@ pub async fn sync_shopping_list(
                             ))
                             .execute(conn)?;
                     }
-                    OpResult::Applied
+                    target.delete()
                 }
             };
             results.push(result);
@@ -252,15 +232,20 @@ pub async fn sync_shopping_list(
         // the next sync. The write lock keeps anything else from committing
         // in between.
         let window = Window::read(conn, request.cursor)?;
+        let refused = refused(&ids, &results);
 
         let mut changed = shopping_list_items::table
             .filter(shopping_list_items::user_id.eq(user_id))
             .filter(shopping_list_items::deleted_at.is_null())
             .into_boxed();
         if let Some(since) = window.since {
-            changed = changed.filter(shopping_list_items::change_seq.ge(since));
+            changed = changed.filter(
+                shopping_list_items::change_seq
+                    .ge(since)
+                    .or(shopping_list_items::id.eq_any(&refused)),
+            );
         }
-        let changes = changed
+        let changes: Vec<SyncShoppingListItem> = changed
             .select((
                 shopping_list_items::id,
                 shopping_list_items::item,
@@ -292,6 +277,8 @@ pub async fn sync_shopping_list(
                 .load(conn)?,
             None => Vec::new(),
         };
+        let live: Vec<Uuid> = changes.iter().map(|item| item.id).collect();
+        let deleted = with_refused(deleted, &refused, &live);
 
         Ok(SyncShoppingListResponse {
             results,
@@ -307,6 +294,38 @@ pub async fn sync_shopping_list(
     crate::ingredient_names::wake();
 
     Ok((StatusCode::OK, Json(response)))
+}
+
+/// Insert a new item, sorted last unless the op says where, and return its
+/// name.
+fn create(
+    conn: &mut SqliteConnection,
+    user_id: Uuid,
+    id: Uuid,
+    fields: ShoppingListFields,
+    next_sort_order: &mut i32,
+) -> QueryResult<String> {
+    let item = fields.item.unwrap_or_default();
+    let sort_order = fields.sort_order.unwrap_or(*next_sort_order);
+    *next_sort_order = (*next_sort_order).max(sort_order + 1);
+    let amount = text_or_none(fields.amount);
+    let note = text_or_none(fields.note);
+    let category_override = text_or_none(fields.category_override);
+    diesel::insert_into(shopping_list_items::table)
+        .values(NewShoppingListItem {
+            id,
+            user_id,
+            item: &item,
+            amount: amount.as_deref(),
+            note: note.as_deref(),
+            source_recipe_id: fields.source_recipe_id,
+            source_recipe_title: fields.source_recipe_title.as_deref(),
+            is_checked: fields.is_checked.unwrap_or(false),
+            sort_order,
+            category_override: category_override.as_deref(),
+        })
+        .execute(conn)?;
+    Ok(item)
 }
 
 /// Reject a request whose ops can never apply, before writing any of them.

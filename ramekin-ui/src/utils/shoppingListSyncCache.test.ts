@@ -136,24 +136,6 @@ describe("shopping list sync cache", () => {
     expect(next.items[0].item).toBe("new active");
   });
 
-  it("drops an item an op found gone", () => {
-    const cached: ShoppingListSyncCache = {
-      ...emptyCache(),
-      items: [shoppingItem({ id: "gone", item: "deleted long ago" })],
-    };
-    const ops: ShoppingListOp[] = [
-      { op: "update", id: "gone", fields: { isChecked: true } },
-    ];
-
-    const next = applyShoppingListSyncResponse(
-      cached,
-      response({ results: ["gone"] }),
-      ops,
-    );
-
-    expect(next.items).toEqual([]);
-  });
-
   it("rejects caches from before the one-protocol sync", () => {
     const storage = new MemoryStorage();
     storage.setItem(
@@ -187,7 +169,6 @@ describe("shopping list sync cache", () => {
       syncShoppingList: async (request: unknown) => {
         requests.push(request);
         return response({
-          results: requests.length === 1 ? ["applied"] : [],
           changes: [shoppingItem({ id: "new", item: "flour" })],
           cursor: 45,
         });
@@ -201,9 +182,8 @@ describe("shopping list sync cache", () => {
 
     const first = await syncShoppingList(api, storage, "token-a", [create]);
 
-    expect(first.results).toEqual(["applied"]);
-    expect(first.cache.items.map((item) => item.item)).toEqual(["flour"]);
-    expect(loadShoppingListSyncCache(storage, "token-a")).toEqual(first.cache);
+    expect(first.items.map((item) => item.item)).toEqual(["flour"]);
+    expect(loadShoppingListSyncCache(storage, "token-a")).toEqual(first);
 
     await syncShoppingList(api, storage, "token-a");
     expect(requests).toEqual([

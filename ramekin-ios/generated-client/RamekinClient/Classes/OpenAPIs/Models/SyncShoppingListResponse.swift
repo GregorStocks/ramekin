@@ -18,7 +18,7 @@ public struct SyncShoppingListResponse: Codable, JSONEncodable, Hashable {
     public var changes: [SyncShoppingListItem]
     /** Pass as `cursor` on the next sync. */
     public var cursor: Int64
-    /** Item IDs deleted at or after `cursor`. Empty on a full resync. */
+    /** Item IDs deleted at or after `cursor`, and every refused op's item that isn't live. Only the latter on a full resync. */
     public var deleted: [UUID]
     /** True when `changes` holds every live item: no cursor was sent, or it predates a restored backup, or came from another database. Drop cached items it omits. */
     public var fullResync: Bool

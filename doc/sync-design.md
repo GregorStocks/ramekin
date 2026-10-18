@@ -63,7 +63,7 @@ Every response carries:
 
 ```
 changes:     [Row]     full current rows changed at or after `cursor`
-deleted:     [Uuid]    tombstones (delta syncs only; empty on a full resync)
+deleted:     [Uuid]    tombstones (on a full resync, only refused ops' rows)
 cursor:      i64       pass back on the next sync
 full_resync: bool      `changes` is every live row; drop cached rows it omits
 ```
@@ -100,9 +100,12 @@ does every recipe write.
 * **Writes are in the same response.** A write endpoint applies its ops
   first and then reads the cursor and the changes. The write lock is held
   throughout, so a client gets its own writes back as ordinary changes, and
-  the next sync doesn't redeliver them. A row whose op wasn't applied also
-  comes back, whatever the cursor says, so the client can retake the
-  server's copy.
+  the next sync doesn't redeliver them.
+* **A refused op's row is settled by the feed.** For every op that wasn't
+  applied, the response carries the server's truth whatever the cursor says:
+  the live row in `changes`, or else its id in `deleted` (even on a full
+  resync). Clients then need no special handling of op results beyond
+  telling the user, and the shared apply logic settles the cache.
 * **Derived rows.** A recipe's tag names come from `user_tags`, so a tag
   change resends the recipes that carry it (as today). A meal plan's recipe
   title and thumbnail come from the recipe's current version, so a new
@@ -170,7 +173,7 @@ a cursor too old to answer gets a full resync, and pruning covers it.
 ### 5. Feeds per domain
 
 * **Recipes**: the existing `SyncRecipe` rows, renamed to `changes`.
-* **Tags**: `{ id, name }`. Clients parse namespaces from names, as they
+* **Tags**: `{ id, name, change_seq }`. Clients parse namespaces from names, as they
   already did. On iOS this replaces the `listAllTags` snapshot behind the
   filter chips and the recipe form's suggestions, and the recipe cursor is no
   longer reset on `tagsDidChange`. Tag counts stay on `GET /api/tags` for the

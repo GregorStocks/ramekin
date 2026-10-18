@@ -3,14 +3,14 @@ import XCTest
 
 final class TagSyncSupportTests: XCTestCase {
     func testDeltaAddsRenamesAndDeletesTags() {
-        let dinner = SyncTag(id: UUID(), name: "Dinner")
-        let quick = SyncTag(id: UUID(), name: "Quick")
-        let gone = SyncTag(id: UUID(), name: "Gone")
-        let added = SyncTag(id: UUID(), name: "Added")
+        let dinner = SyncTag(changeSeq: 1, id: UUID(), name: "Dinner")
+        let quick = SyncTag(changeSeq: 1, id: UUID(), name: "Quick")
+        let gone = SyncTag(changeSeq: 1, id: UUID(), name: "Gone")
+        let added = SyncTag(changeSeq: 1, id: UUID(), name: "Added")
 
         let tags = TagSyncSupport.apply(
             SyncTagsResponse(
-                changes: [SyncTag(id: quick.id, name: "Fast"), added],
+                changes: [SyncTag(changeSeq: 5, id: quick.id, name: "Fast"), added],
                 cursor: 9,
                 deleted: [gone.id],
                 fullResync: false
@@ -22,8 +22,8 @@ final class TagSyncSupportTests: XCTestCase {
     }
 
     func testFullResyncDropsTagsItOmits() {
-        let kept = SyncTag(id: UUID(), name: "Kept")
-        let lost = SyncTag(id: UUID(), name: "Lost")
+        let kept = SyncTag(changeSeq: 1, id: UUID(), name: "Kept")
+        let lost = SyncTag(changeSeq: 1, id: UUID(), name: "Lost")
 
         let tags = TagSyncSupport.apply(
             SyncTagsResponse(changes: [kept], cursor: 9, deleted: [], fullResync: true),
@@ -40,7 +40,7 @@ final class TagSyncSupportTests: XCTestCase {
         defer { defaults.removePersistentDomain(forName: suiteName) }
         let accountKey = AccountScope.key(serverURL: "https://one.test", username: "chef")
         var cursors: [Int64?] = []
-        let dinner = SyncTag(id: UUID(), name: "Dinner")
+        let dinner = SyncTag(changeSeq: 1, id: UUID(), name: "Dinner")
 
         for _ in 0..<2 {
             try await TagSyncSupport.refresh(accountKey: accountKey, userDefaults: defaults) { cursor in

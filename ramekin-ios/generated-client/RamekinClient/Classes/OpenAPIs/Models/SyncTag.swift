@@ -12,15 +12,19 @@ import AnyCodable
 
 public struct SyncTag: Codable, JSONEncodable, Hashable {
 
+    /** Sync stamp of the tag's last change. */
+    public var changeSeq: Int64
     public var id: UUID
     public var name: String
 
-    public init(id: UUID, name: String) {
+    public init(changeSeq: Int64, id: UUID, name: String) {
+        self.changeSeq = changeSeq
         self.id = id
         self.name = name
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case changeSeq = "change_seq"
         case id
         case name
     }
@@ -29,6 +33,7 @@ public struct SyncTag: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(changeSeq, forKey: .changeSeq)
         try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
     }

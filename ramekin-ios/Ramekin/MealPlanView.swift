@@ -261,15 +261,7 @@ struct MealPlanView: View {
     // MARK: - Helpers
 
     private func mealsFor(date: Date, mealType: MealType) -> [MealPlanItem] {
-        let dateString = Self.localDateString(from: date)
-        return store.plans.filter { meal in
-            let mealDate = MealPlanDateSupport.localDate(fromAPIDate: meal.mealDate)
-            return Self.localDateString(from: mealDate) == dateString && meal.mealType == mealType
-        }
-    }
-
-    private static func localDateString(from date: Date) -> String {
-        SharedDateFormatters.localDateOnly.string(from: date)
+        store.plans(on: date, mealType: mealType)
     }
 
 }

@@ -35,11 +35,13 @@ class TestSyncTag(unittest.TestCase):
         model = SyncTag()
         if include_optional:
             return SyncTag(
+                change_seq = 56,
                 id = '',
                 name = ''
             )
         else:
             return SyncTag(
+                change_seq = 56,
                 id = '',
                 name = '',
         )

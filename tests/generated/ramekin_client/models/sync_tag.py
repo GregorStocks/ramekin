@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
 from uuid import UUID
 from typing import Optional, Set
@@ -27,9 +27,10 @@ class SyncTag(BaseModel):
     """
     SyncTag
     """ # noqa: E501
+    change_seq: StrictInt = Field(description="Sync stamp of the tag's last change.")
     id: UUID
     name: StrictStr
-    __properties: ClassVar[List[str]] = ["id", "name"]
+    __properties: ClassVar[List[str]] = ["change_seq", "id", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +83,7 @@ class SyncTag(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "change_seq": obj.get("change_seq"),
             "id": obj.get("id"),
             "name": obj.get("name")
         })

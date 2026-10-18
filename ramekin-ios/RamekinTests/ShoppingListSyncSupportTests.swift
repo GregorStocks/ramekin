@@ -47,7 +47,7 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         item.markUpdated(["is_checked"])
         let sent = try XCTUnwrap(ShoppingListSyncSupport.outbox(for: [item]).sent[XCTUnwrap(item.id)])
 
-        XCTAssertEqual(ShoppingListSyncSupport.settle(item, result: .applied, sent: sent), .kept)
+        XCTAssertEqual(item.settle(result: .applied, sent: sent), .kept)
         XCTAssertEqual(item.syncStatusEnum, .synced)
         XCTAssertTrue(item.dirtyFieldSet.isEmpty)
     }
@@ -64,7 +64,7 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         item.isChecked = true
         item.markUpdated(["note", "is_checked"])
 
-        XCTAssertEqual(ShoppingListSyncSupport.settle(item, result: .applied, sent: sent), .kept)
+        XCTAssertEqual(item.settle(result: .applied, sent: sent), .kept)
         XCTAssertEqual(item.syncStatusEnum, .pendingUpdate)
         XCTAssertEqual(item.dirtyFieldSet, ["note", "is_checked"])
     }
@@ -109,7 +109,7 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         item.markUpdated(["note"])
         let sent = try XCTUnwrap(ShoppingListSyncSupport.outbox(for: [item]).sent[XCTUnwrap(item.id)])
 
-        XCTAssertEqual(ShoppingListSyncSupport.settle(item, result: .gone, sent: sent), .removed)
+        XCTAssertEqual(item.settle(result: .gone, sent: sent), .removed)
     }
 
     func testADeleteMadeMidSyncStaysPending() throws {
@@ -120,7 +120,7 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         let sent = try XCTUnwrap(ShoppingListSyncSupport.outbox(for: [item]).sent[XCTUnwrap(item.id)])
         item.markDeleted()
 
-        XCTAssertEqual(ShoppingListSyncSupport.settle(item, result: .applied, sent: sent), .kept)
+        XCTAssertEqual(item.settle(result: .applied, sent: sent), .kept)
         XCTAssertEqual(item.syncStatusEnum, .pendingDelete)
     }
 

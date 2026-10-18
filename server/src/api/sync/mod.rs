@@ -10,6 +10,7 @@ pub mod shopping_list;
 pub mod tags;
 
 use crate::db;
+use crate::ids::Uuid;
 use crate::AppState;
 use axum::routing::{get, post};
 use axum::Router;
@@ -75,6 +76,7 @@ pub struct Window {
     pub cursor: i64,
     /// Where the delta starts, or None for a full resync: the client sent no
     /// cursor, or one this database can't answer (see `db::SyncCursor::since`).
+    /// A full resync sends no tombstones, except for refused ops' rows.
     pub since: Option<i64>,
 }
 
@@ -90,6 +92,68 @@ impl Window {
     pub fn full_resync(&self) -> bool {
         self.since.is_none()
     }
+}
+
+/// Whose row an op's id names.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Target {
+    Missing,
+    /// Another user's row: the client's row can never exist.
+    Foreign,
+    Mine {
+        live: bool,
+    },
+}
+
+impl Target {
+    /// From the id's `(user_id, deleted_at IS NULL)`, if it exists.
+    pub fn of(owner: Option<(Uuid, bool)>, user_id: Uuid) -> Self {
+        match owner {
+            None => Self::Missing,
+            Some((owner, _)) if owner != user_id => Self::Foreign,
+            Some((_, live)) => Self::Mine { live },
+        }
+    }
+
+    /// A create of an id that already exists is done (a replay, even of a
+    /// row deleted since), or `gone` when it's someone else's. None: insert.
+    pub fn existing_create(self) -> Option<OpResult> {
+        match self {
+            Self::Missing => None,
+            Self::Foreign => Some(OpResult::Gone),
+            Self::Mine { .. } => Some(OpResult::Applied),
+        }
+    }
+
+    /// A delete of the client's own row, live or not, is done.
+    pub fn delete(self) -> OpResult {
+        match self {
+            Self::Mine { .. } => OpResult::Applied,
+            Self::Missing | Self::Foreign => OpResult::Gone,
+        }
+    }
+}
+
+/// The ids of ops that weren't applied. The response tells the client the
+/// server's truth about each, whatever its cursor: the live row in
+/// `changes`, or else the id in `deleted` (see [`with_refused`]).
+pub fn refused(ids: &[Uuid], results: &[OpResult]) -> Vec<Uuid> {
+    ids.iter()
+        .zip(results)
+        .filter(|(_, result)| **result != OpResult::Applied)
+        .map(|(id, _)| *id)
+        .collect()
+}
+
+/// `deleted` plus every refused id `changes` doesn't carry, so clients
+/// settle a refused op's row from the feed alone.
+pub fn with_refused(mut deleted: Vec<Uuid>, refused: &[Uuid], live: &[Uuid]) -> Vec<Uuid> {
+    for id in refused {
+        if !live.contains(id) && !deleted.contains(id) {
+            deleted.push(*id);
+        }
+    }
+    deleted
 }
 
 /// A nullable text field on a create: "" means no value.
@@ -109,6 +173,17 @@ pub fn patch_text(update: Option<String>, current: Option<String>) -> Option<Str
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn refused_rows_not_in_changes_become_tombstones() {
+        let (live, gone, applied) = (Uuid::now_v7(), Uuid::now_v7(), Uuid::now_v7());
+        let refused = refused(
+            &[live, gone, applied],
+            &[OpResult::Duplicate, OpResult::Gone, OpResult::Applied],
+        );
+        assert_eq!(refused, vec![live, gone]);
+        assert_eq!(with_refused(vec![], &refused, &[live]), vec![gone]);
+    }
 
     #[test]
     fn patch_text_keeps_absent_clears_blank_and_sets_value() {

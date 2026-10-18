@@ -12,11 +12,11 @@ import AnyCodable
 
 public struct SyncMealPlansResponse: Codable, JSONEncodable, Hashable {
 
-    /** Live plans (of live recipes) changed at or after the request's `cursor`, this request's own writes and any plan an op couldn't update included; every live plan on a full resync. */
+    /** Live plans (of live recipes) changed at or after the request's `cursor`, this request's own writes and every refused op's live plan included; every live plan on a full resync. */
     public var changes: [SyncMealPlan]
     /** Pass as `cursor` on the next sync. */
     public var cursor: Int64
-    /** Plan IDs deleted, or whose recipe was deleted, at or after `cursor`. Empty on a full resync. */
+    /** Plan IDs deleted, or whose recipe was deleted, at or after `cursor`, and every refused op's plan that isn't live. Only the latter on a full resync. */
     public var deleted: [UUID]
     /** True when `changes` holds every live plan: drop cached plans it omits. */
     public var fullResync: Bool

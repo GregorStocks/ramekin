@@ -37,6 +37,7 @@ class TestSyncTagsResponse(unittest.TestCase):
             return SyncTagsResponse(
                 changes = [
                     ramekin_client.models.sync_tag.SyncTag(
+                        change_seq = 56, 
                         id = '', 
                         name = '', )
                     ],
@@ -50,6 +51,7 @@ class TestSyncTagsResponse(unittest.TestCase):
             return SyncTagsResponse(
                 changes = [
                     ramekin_client.models.sync_tag.SyncTag(
+                        change_seq = 56, 
                         id = '', 
                         name = '', )
                     ],

@@ -151,23 +151,8 @@ class CoreDataStack: ObservableObject {
 
 // MARK: - ShoppingItem Extensions
 
-extension ShoppingItem {
-    /// Sync status values
-    enum SyncStatus: String {
-        case synced = "synced"
-        case pendingCreate = "pending_create"
-        case pendingUpdate = "pending_update"
-        case pendingDelete = "pending_delete"
-    }
-
-    var syncStatusEnum: SyncStatus {
-        get {
-            SyncStatus(rawValue: syncStatus ?? "synced") ?? .synced
-        }
-        set {
-            syncStatus = newValue.rawValue
-        }
-    }
+extension ShoppingItem: OutboxRow {
+    var rowId: UUID? { id }
 
     /// API names of the fields an update op can send.
     static let syncedFields = ["item", "amount", "note", "is_checked", "sort_order", "category_override"]
@@ -195,38 +180,9 @@ extension ShoppingItem {
         shoppingItem.sortOrder = sortOrder
         shoppingItem.createdAt = Date()
         shoppingItem.updatedAt = Date()
-        shoppingItem.syncStatus = SyncStatus.pendingCreate.rawValue
-        shoppingItem.dirtyFields = DirtyFields.encode(Set(syncedFields))
+        shoppingItem.syncStatusEnum = .pendingCreate
         shoppingItem.changeSeq = 0
         return shoppingItem
-    }
-
-    /// The fields with unsent local edits: every field of a pending create,
-    /// none of a synced item or pending delete.
-    var dirtyFieldSet: Set<String> {
-        get {
-            switch syncStatusEnum {
-            case .pendingCreate:
-                return Set(Self.syncedFields)
-            case .pendingUpdate:
-                return DirtyFields.decode(dirtyFields, allFields: Self.syncedFields)
-            case .synced, .pendingDelete:
-                return []
-            }
-        }
-        set {
-            dirtyFields = DirtyFields.encode(newValue)
-        }
-    }
-
-    /// The pending write this item's outbox holds, for sync planning.
-    var pendingWrite: SyncApplySupport.PendingWrite? {
-        switch syncStatusEnum {
-        case .synced: return nil
-        case .pendingCreate: return .create
-        case .pendingUpdate: return .update
-        case .pendingDelete: return .delete
-        }
     }
 
     /// The current value of an API field, for telling whether it changed
@@ -242,33 +198,6 @@ extension ShoppingItem {
         default: return nil
         }
     }
-
-    /// Marks `fields` as edited locally, to send on the next sync.
-    func markUpdated(_ fields: Set<String>) {
-        updatedAt = Date()
-        switch syncStatusEnum {
-        case .synced:
-            dirtyFieldSet = fields
-            syncStatusEnum = .pendingUpdate
-        case .pendingUpdate:
-            dirtyFieldSet = dirtyFieldSet.union(fields)
-        case .pendingCreate, .pendingDelete:
-            break
-        }
-    }
-
-    /// Marks the item for deletion (will be removed on next sync)
-    func markDeleted() {
-        syncStatusEnum = .pendingDelete
-        dirtyFields = nil
-        updatedAt = Date()
-    }
-
-    /// Marks the item as matching the server
-    func markSynced() {
-        dirtyFields = nil
-        syncStatusEnum = .synced
-    }
 }
 
 // MARK: - Fetch Requests
@@ -280,7 +209,7 @@ extension ShoppingItem {
         request.predicate = NSPredicate(
             format: "accountKey == %@ AND syncStatus != %@",
             accountKey,
-            SyncStatus.pendingDelete.rawValue
+            OutboxStatus.pendingDelete.rawValue
         )
         request.sortDescriptors = [
             NSSortDescriptor(keyPath: \ShoppingItem.isChecked, ascending: true),
@@ -296,7 +225,7 @@ extension ShoppingItem {
         request.predicate = NSPredicate(
             format: "accountKey == %@ AND syncStatus != %@",
             accountKey,
-            SyncStatus.synced.rawValue
+            OutboxStatus.synced.rawValue
         )
         return request
     }

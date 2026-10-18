@@ -84,31 +84,7 @@ final class TagFilterCacheTests: XCTestCase {
     }
 
     private func makeTag(name: String) -> SyncTag {
-        SyncTag(id: UUID(), name: name)
-    }
-
-    func testASnapshotSavedBeforeTheTagsFeedStillLoads() throws {
-        let defaults = UserDefaults(suiteName: defaultsSuiteName)!
-        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        defaults.removePersistentDomain(forName: defaultsSuiteName)
-        let legacy = TagItem(
-            createdAt: Date(timeIntervalSince1970: 100),
-            id: UUID(),
-            name: "Dinner",
-            namespace: nil,
-            recipeCount: 1,
-            value: "Dinner"
-        )
-        TagFilterCache.migrateLegacyState(activeAccountKey: firstAccount, userDefaults: defaults)
-        defaults.set(
-            try CodableHelper.jsonEncoder.encode([legacy]),
-            forKey: AccountScope.userDefaultsKey(prefix: "recipe_available_tags", accountKey: firstAccount)
-        )
-
-        XCTAssertEqual(
-            TagFilterCache.loadAvailableTags(accountKey: firstAccount, userDefaults: defaults),
-            [SyncTag(id: legacy.id, name: "Dinner")]
-        )
+        SyncTag(changeSeq: 1, id: UUID(), name: name)
     }
 
     private var defaultsSuiteName: String { "TagFilterCacheTests.\(name)" }

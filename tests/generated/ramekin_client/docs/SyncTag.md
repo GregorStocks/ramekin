@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**change_seq** | **int** | Sync stamp of the tag&#39;s last change. | 
 **id** | **UUID** |  | 
 **name** | **str** |  | 
 

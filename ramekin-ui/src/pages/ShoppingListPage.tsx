@@ -68,7 +68,7 @@ export default function ShoppingListPage() {
   /** Write `ops` (or just refresh) and show the server's answer. */
   const sync = async (ops: ShoppingListOp[] = []) => {
     const requestToken = token();
-    const { cache } = await logger.timed("Shopping", "syncShoppingList", () =>
+    const cache = await logger.timed("Shopping", "syncShoppingList", () =>
       syncShoppingList(
         getSyncApi(),
         localStorage,

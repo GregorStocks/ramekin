@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**changeSeq** | **Int64** | Sync stamp of the tag&#39;s last change. | 
 **id** | **UUID** |  | 
 **name** | **String** |  | 
 

@@ -8,7 +8,8 @@ extension Notification.Name {
 enum TagFilterCache {
     private static let selectedTagsKeyPrefix = "recipe_selected_tags"
     private static let availableTagsKeyPrefix = "recipe_available_tags"
-    private static let tagsSyncCursorKeyPrefix = "recipe_available_tags_sync_cursor"
+    /// The tags feed's cursor for the cached available tags.
+    static let tagsSyncCursor = SyncCursorStore(prefix: "recipe_available_tags_sync_cursor")
     private static let legacySelectedTagsKey = "recipeSelectedTags"
     private static let legacyAvailableTagsKey = "recipeAvailableTags"
     private static let legacyMigrationKey = "recipe_tag_cache_account_scope_migrated"
@@ -103,7 +104,8 @@ enum TagFilterCache {
         accountKey: String,
         userDefaults: UserDefaults = .standard
     ) -> [SyncTag] {
-        // A snapshot saved as `TagItem`s, before the tags feed, decodes too.
+        // A snapshot from before the tags feed doesn't decode, and reads as
+        // empty until the first sync.
         guard let data = userDefaults.data(forKey: availableTagsKey(accountKey: accountKey)),
               let tags = try? CodableHelper.jsonDecoder.decode([SyncTag].self, from: data) else {
             return []
@@ -124,15 +126,6 @@ enum TagFilterCache {
         userDefaults.set(data, forKey: availableTagsKey(accountKey: accountKey))
     }
 
-    /// The tags feed's cursor for the cached available tags.
-    static func tagsSyncCursor(accountKey: String, userDefaults: UserDefaults = .standard) -> Int64? {
-        userDefaults.object(forKey: tagsSyncCursorKey(accountKey: accountKey)) as? Int64
-    }
-
-    static func setTagsSyncCursor(_ cursor: Int64, accountKey: String, userDefaults: UserDefaults = .standard) {
-        userDefaults.set(cursor, forKey: tagsSyncCursorKey(accountKey: accountKey))
-    }
-
     static func notifyTagsDidChange() {
         NotificationCenter.default.post(name: .tagsDidChange, object: nil)
     }
@@ -143,10 +136,6 @@ enum TagFilterCache {
 
     private static func availableTagsKey(accountKey: String) -> String {
         AccountScope.userDefaultsKey(prefix: availableTagsKeyPrefix, accountKey: accountKey)
-    }
-
-    private static func tagsSyncCursorKey(accountKey: String) -> String {
-        AccountScope.userDefaultsKey(prefix: tagsSyncCursorKeyPrefix, accountKey: accountKey)
     }
 }
 

@@ -15,6 +15,8 @@
  * Check if a given object implements the SyncTag interface.
  */
 export function instanceOfSyncTag(value) {
+    if (!('changeSeq' in value) || value['changeSeq'] === undefined)
+        return false;
     if (!('id' in value) || value['id'] === undefined)
         return false;
     if (!('name' in value) || value['name'] === undefined)
@@ -29,6 +31,7 @@ export function SyncTagFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        'changeSeq': json['change_seq'],
         'id': json['id'],
         'name': json['name'],
     };
@@ -41,6 +44,7 @@ export function SyncTagToJSONTyped(value, ignoreDiscriminator = false) {
         return value;
     }
     return {
+        'change_seq': value['changeSeq'],
         'id': value['id'],
         'name': value['name'],
     };

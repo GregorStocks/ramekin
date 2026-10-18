@@ -16,6 +16,12 @@
  */
 export interface SyncTag {
     /**
+     * Sync stamp of the tag's last change.
+     * @type {number}
+     * @memberof SyncTag
+     */
+    changeSeq: number;
+    /**
      *
      * @type {string}
      * @memberof SyncTag

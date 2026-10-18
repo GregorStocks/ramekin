@@ -55,7 +55,8 @@ export interface SyncShoppingListResponse {
      */
     cursor: number;
     /**
-     * Item IDs deleted at or after `cursor`. Empty on a full resync.
+     * Item IDs deleted at or after `cursor`, and every refused op's item
+     * that isn't live. Only the latter on a full resync.
      * @type {Array<string>}
      * @memberof SyncShoppingListResponse
      */

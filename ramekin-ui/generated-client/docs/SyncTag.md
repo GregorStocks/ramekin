@@ -6,6 +6,7 @@
 
 Name | Type
 ------------ | -------------
+`changeSeq` | number
 `id` | string
 `name` | string
 
@@ -16,6 +17,7 @@ import type { SyncTag } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "changeSeq": null,
   "id": null,
   "name": null,
 } satisfies SyncTag
