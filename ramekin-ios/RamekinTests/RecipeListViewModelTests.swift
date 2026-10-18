@@ -8,7 +8,7 @@ final class RecipeListViewModelTests: XCTestCase {
         var capturedRequest: ListRequest?
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 listRecipes: { limit, offset, query, sortBy, sortDir in
                     capturedRequest = ListRequest(
                         limit: limit,
@@ -51,7 +51,7 @@ final class RecipeListViewModelTests: XCTestCase {
 
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 listRecipes: { _, _, _, _, _ in
                     didListRecipes = true
                     return ListRecipesResponse(
@@ -120,7 +120,7 @@ final class RecipeListViewModelTests: XCTestCase {
         )
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 listRecipes: { limit, offset, _, _, _ in
                     ListRecipesResponse(
                         pagination: PaginationMetadata(limit: limit, offset: offset, total: 1),
@@ -163,7 +163,7 @@ final class RecipeListViewModelTests: XCTestCase {
         )
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 listRecipes: { _, _, _, _, _ in
                     XCTFail("cacheable browse must not hit listRecipes")
                     return ListRecipesResponse(
@@ -195,7 +195,7 @@ final class RecipeListViewModelTests: XCTestCase {
         let cached = RecipeListTestSupport.makeRecipe(title: "Aioli", tags: ["Sauce"])
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 listRecipes: { _, _, _, _, _ in
                     XCTFail("cacheable browse must not hit listRecipes")
                     return ListRecipesResponse(
@@ -227,7 +227,7 @@ final class RecipeListViewModelTests: XCTestCase {
         var calls = 0
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 listRecipes: { limit, offset, _, _, _ in
                     calls += 1
                     if calls > 1 { throw URLError(.timedOut) }
@@ -261,7 +261,7 @@ final class RecipeListViewModelTests: XCTestCase {
     func testSyncFailureWithEmptyCacheStillShowsError() async {
         let viewModel = RecipeListViewModel(
             api: RecipeListViewAPIClient(
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 listRecipes: { limit, offset, _, _, _ in
                     ListRecipesResponse(
                         pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),

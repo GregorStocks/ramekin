@@ -40,7 +40,7 @@ required.
 The iOS app already has a SQLite-backed Core Data store. Since PR #643,
 `RecipeCacheStore` stores every active recipe's summary, structured ingredients,
 instructions, and notes for an account in `CachedRecipe`. The endpoint
-`GET /api/recipes/sync` maintains it using an opaque integer cursor. Applying
+`GET /api/sync/recipes` maintains it using an opaque integer cursor. Applying
 sync pages, loading the cached corpus, and ranking it all run off the main
 thread (the store owns a private background context), because a full first
 sync on the main thread stalled the app for tens of seconds:
@@ -156,12 +156,15 @@ The shopping list demonstrates the repository's application-specific
 offline-write pattern:
 
 - Core Data records pending creates, updates, and deletes.
-- Creates carry a client-generated ID and are idempotent on the server.
-- Updates carry an expected integer version and fail on a concurrent change.
+- Creates use a client-generated ID as the row's ID and are idempotent on the
+  server.
+- Updates name only the fields the user changed, and the server applies them
+  last-writer-wins per field (doc/sync-design.md, which replaced the earlier
+  whole-row expected-version check).
 - Deletes are server-side soft deletes.
-- The sync response maps created IDs, reports update success and current
-  versions, returns tombstones, and advances a `change_seq` cursor using the
-  same clock as recipe sync. `shopping_list_items.change_seq` is stamped by
+- The sync response reports each op's result, returns the changed rows and
+  tombstones, and advances a `change_seq` cursor using the same clock as
+  recipe sync. `shopping_list_items.change_seq` is stamped by
   insert and update triggers, so no writer can forget it. A sync without a
   cursor is a flagged full resync.
 

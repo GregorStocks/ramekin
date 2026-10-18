@@ -98,7 +98,6 @@ class RamekinAPI {
         case httpError(Int, ErrorCode?, String?)
         case networkError(Error)
         case decodingError(Error)
-        case unsupportedMealType(String)
 
         var errorDescription: String? {
             switch self {
@@ -116,8 +115,6 @@ class RamekinAPI {
                 return "Network error: \(error.localizedDescription)"
             case .decodingError(let error):
                 return "Failed to parse response: \(error.localizedDescription)"
-            case .unsupportedMealType(let rawValue):
-                return "Unsupported meal type: \(rawValue)"
             }
         }
 
@@ -372,52 +369,12 @@ extension RamekinAPI {
 // MARK: - Meal Plans
 
 extension RamekinAPI {
-    func listMealPlans(startDate: Date, endDate: Date) async throws -> MealPlanListResponse {
+    /// `POST /api/sync/meal-plans`. `ops` are the request's op objects, their
+    /// dates already the API's `yyyy-MM-dd` days.
+    func syncMealPlans(cursor: Int64?, ops: [[String: Any]]) async throws -> SyncMealPlansResponse {
+        // Built inside, after the client configuration is refreshed.
         try await executeGenerated {
-            try await listMealPlansRequestBuilder(
-                startDate: startDate,
-                endDate: endDate
-            ).execute().body
-        }
-    }
-
-    func createMealPlan(
-        recipeId: UUID, mealDate: Date, mealType: String, notes: String? = nil
-    ) async throws -> CreateMealPlanResponse {
-        let normalizedNotes: String?
-        if let notes, !notes.isEmpty {
-            normalizedNotes = notes
-        } else {
-            normalizedNotes = nil
-        }
-
-        let request = CreateMealPlanRequest(
-            mealDate: mealDate,
-            mealType: try generatedMealType(from: mealType),
-            notes: normalizedNotes,
-            recipeId: recipeId
-        )
-        return try await executeGenerated {
-            try await createMealPlanRequestBuilder(request).execute().body
-        }
-    }
-
-    func deleteMealPlan(id: UUID) async throws {
-        try await executeGenerated {
-            try await MealPlansAPI.deleteMealPlan(id: id)
-        }
-    }
-
-    func updateMealPlan(
-        id: UUID, mealDate: Date, mealType: String, notes: String
-    ) async throws {
-        let request = UpdateMealPlanRequest(
-            mealDate: mealDate,
-            mealType: try generatedMealType(from: mealType),
-            notes: notes
-        )
-        try await executeGenerated {
-            try await updateMealPlanRequestBuilder(id: id, request: request).execute().body
+            try await syncMealPlansRequestBuilder(cursor: cursor, ops: ops).execute().body
         }
     }
 }

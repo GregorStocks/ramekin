@@ -77,98 +77,29 @@ extension RamekinAPI {
         }
     }
 
-    func generatedMealType(from rawValue: String) throws -> MealType {
-        guard let mealType = MealType(rawValue: rawValue) else {
-            throw APIError.unsupportedMealType(rawValue)
-        }
-        return mealType
-    }
-
-    func listMealPlansRequestBuilder(startDate: Date, endDate: Date) -> RequestBuilder<MealPlanListResponse> {
-        let urlString = RamekinClientAPI.basePath + "/api/meal-plans"
-        var urlComponents = URLComponents(string: urlString)
-        urlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "start_date": (
-                wrappedValue: SharedDateFormatters.localDateOnly.string(from: startDate),
-                isExplode: true
-            ),
-            "end_date": (
-                wrappedValue: SharedDateFormatters.localDateOnly.string(from: endDate),
-                isExplode: true
-            )
-        ])
-
-        let builderType: RequestBuilder<MealPlanListResponse>.Type = RamekinClientAPI
-            .requestBuilderFactory
-            .getBuilder()
-        return builderType.init(
-            method: "GET",
-            URLString: urlComponents?.string ?? urlString,
-            parameters: nil,
-            headers: [:],
-            requiresAuthentication: true
-        )
-    }
-
-    func createMealPlanRequestBuilder(
-        _ request: CreateMealPlanRequest
-    ) -> RequestBuilder<CreateMealPlanResponse> {
+    /// The meal-plan sync request, built by hand: the generated encoder
+    /// writes a `Date` as a UTC timestamp, but a meal's date is a local day.
+    func syncMealPlansRequestBuilder(
+        cursor: Int64?,
+        ops: [[String: Any]]
+    ) throws -> RequestBuilder<SyncMealPlansResponse> {
         var body: [String: Any] = [
-            CreateMealPlanRequest.CodingKeys.mealDate.rawValue: SharedDateFormatters.localDateOnly
-                .string(from: request.mealDate),
-            CreateMealPlanRequest.CodingKeys.mealType.rawValue: request.mealType.rawValue,
-            CreateMealPlanRequest.CodingKeys.recipeId.rawValue: request.recipeId.uuidString
+            SyncMealPlansRequest.CodingKeys.ops.rawValue: ops
         ]
-        if let notes = request.notes {
-            body[CreateMealPlanRequest.CodingKeys.notes.rawValue] = notes
+        if let cursor {
+            body[SyncMealPlansRequest.CodingKeys.cursor.rawValue] = cursor
         }
+        let data = try JSONSerialization.data(withJSONObject: body)
 
-        let builderType: RequestBuilder<CreateMealPlanResponse>.Type = RamekinClientAPI
+        let builderType: RequestBuilder<SyncMealPlansResponse>.Type = RamekinClientAPI
             .requestBuilderFactory
             .getBuilder()
         return builderType.init(
             method: "POST",
-            URLString: RamekinClientAPI.basePath + "/api/meal-plans",
-            parameters: jsonParameters(from: body),
+            URLString: RamekinClientAPI.basePath + "/api/sync/meal-plans",
+            parameters: JSONDataEncoding.encodingParameters(jsonData: data),
             headers: ["Content-Type": "application/json"],
             requiresAuthentication: true
         )
-    }
-
-    func updateMealPlanRequestBuilder(
-        id: UUID,
-        request: UpdateMealPlanRequest
-    ) -> RequestBuilder<Void> {
-        var body: [String: Any] = [:]
-        if let mealDate = request.mealDate {
-            body[UpdateMealPlanRequest.CodingKeys.mealDate.rawValue] = SharedDateFormatters.localDateOnly
-                .string(from: mealDate)
-        }
-        if let mealType = request.mealType {
-            body[UpdateMealPlanRequest.CodingKeys.mealType.rawValue] = mealType.rawValue
-        }
-        if let notes = request.notes {
-            body[UpdateMealPlanRequest.CodingKeys.notes.rawValue] = notes
-        }
-
-        let builderType: RequestBuilder<Void>.Type = RamekinClientAPI
-            .requestBuilderFactory
-            .getNonDecodableBuilder()
-        return builderType.init(
-            method: "PUT",
-            URLString: RamekinClientAPI.basePath + "/api/meal-plans/\(id.uuidString)",
-            parameters: jsonParameters(from: body),
-            headers: ["Content-Type": "application/json"],
-            requiresAuthentication: true
-        )
-    }
-
-    private func jsonParameters(from body: [String: Any]) -> [String: Any]? {
-        do {
-            let data = try JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
-            return JSONDataEncoding.encodingParameters(jsonData: data)
-        } catch {
-            fatalError("Could not encode meal plan request body: \(error)")
-        }
     }
 }

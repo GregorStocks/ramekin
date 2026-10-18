@@ -27,12 +27,12 @@ final class RecipeCacheStoreTests: XCTestCase {
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [makeRecipe()],
                 cursor: 300,
                 deleted: [],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: [makeRecipe()]
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey
@@ -48,12 +48,12 @@ final class RecipeCacheStoreTests: XCTestCase {
         // A fresh apply stamps the current schema version, so its rows serve.
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [makeRecipe()],
                 cursor: 400,
                 deleted: [],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: [makeRecipe()]
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey
@@ -81,12 +81,12 @@ final class RecipeCacheStoreTests: XCTestCase {
 
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [recipe],
                 cursor: 300,
                 deleted: [],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: [recipe]
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey
@@ -131,12 +131,12 @@ final class RecipeCacheStoreTests: XCTestCase {
         let id = UUID()
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [makeRecipe(id: id, instructions: "Old instructions", notes: "Old notes")],
                 cursor: 300,
                 deleted: [],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: [makeRecipe(id: id, instructions: "Old instructions", notes: "Old notes")]
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey
@@ -151,12 +151,12 @@ final class RecipeCacheStoreTests: XCTestCase {
 
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [updated],
                 cursor: 500,
                 deleted: [],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: [updated]
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey
@@ -175,12 +175,12 @@ final class RecipeCacheStoreTests: XCTestCase {
         let recipe = makeRecipe()
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [recipe],
                 cursor: 300,
                 deleted: [],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: [recipe]
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey
@@ -188,12 +188,12 @@ final class RecipeCacheStoreTests: XCTestCase {
 
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [],
                 cursor: 400,
                 deleted: [recipe.id],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: []
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey
@@ -210,12 +210,12 @@ final class RecipeCacheStoreTests: XCTestCase {
         let deleted = makeRecipe()
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [kept, deleted],
                 cursor: 300,
                 deleted: [],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: [kept, deleted]
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey
@@ -224,12 +224,12 @@ final class RecipeCacheStoreTests: XCTestCase {
 
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [makeRecipe(id: kept.id, instructions: "New instructions"), added],
                 cursor: 400,
                 deleted: [deleted.id, UUID()],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: [makeRecipe(id: kept.id, instructions: "New instructions"), added]
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey
@@ -248,12 +248,12 @@ final class RecipeCacheStoreTests: XCTestCase {
         for key in [accountKey, otherAccountKey] {
             try await store.apply(
                 syncResponse: SyncRecipesResponse(
+                    changes: [recipe],
                     cursor: 300,
                     deleted: [],
                     fullResync: false,
                     hasMore: false,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                    recipes: [recipe]
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
                 ),
                 afterId: nil,
                 accountKey: key
@@ -262,12 +262,12 @@ final class RecipeCacheStoreTests: XCTestCase {
 
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [],
                 cursor: 400,
                 deleted: [recipe.id],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: []
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey
@@ -291,12 +291,12 @@ final class RecipeCacheStoreTests: XCTestCase {
             XCTAssertFalse(Thread.isMainThread)
             try await store.apply(
                 syncResponse: SyncRecipesResponse(
+                    changes: [recipe],
                     cursor: 300,
                     deleted: [],
                     fullResync: false,
                     hasMore: false,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                    recipes: [recipe]
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
                 ),
                 afterId: nil,
                 accountKey: accountKey
@@ -423,12 +423,12 @@ extension RecipeCacheStoreTests {
         hasMore: Bool = false
     ) -> SyncRecipesResponse {
         SyncRecipesResponse(
+            changes: recipes,
             cursor: 300,
             deleted: [],
             fullResync: fullResync,
             hasMore: hasMore,
-            normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-            recipes: recipes
+            normalizationContractVersion: SearchNormalizationSupport.contractVersion
         )
     }
 }

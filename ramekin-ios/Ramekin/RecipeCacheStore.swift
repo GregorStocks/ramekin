@@ -169,7 +169,7 @@ final class RecipeCacheStore {
             } else {
                 // One lookup for the whole page; a fetch per recipe dominated
                 // applying a 100-recipe page.
-                let pageIds = syncResponse.deleted + syncResponse.recipes.map(\.id)
+                let pageIds = syncResponse.deleted + syncResponse.changes.map(\.id)
                 request.predicate = NSPredicate(
                     format: "accountKey == %@ AND id IN %@",
                     accountKey,
@@ -192,7 +192,7 @@ final class RecipeCacheStore {
             if syncResponse.fullResync {
                 // A recipe the server lost without a tombstone (e.g. created
                 // after a restored backup was taken) is in neither list.
-                let live = Set(syncResponse.recipes.map(\.id))
+                let live = Set(syncResponse.changes.map(\.id))
                 let gone = existingById.keys.filter {
                     !live.contains($0)
                         && RecipeSyncSweep.fullResyncPageCovers($0, afterId: afterId, response: syncResponse)
@@ -204,7 +204,7 @@ final class RecipeCacheStore {
                 }
             }
 
-            for recipe in syncResponse.recipes {
+            for recipe in syncResponse.changes {
                 let cachedRecipe = existingById[recipe.id] ?? CachedRecipe(context: context)
                 existingById[recipe.id] = cachedRecipe
                 cachedRecipe.accountKey = accountKey

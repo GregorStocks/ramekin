@@ -75,6 +75,13 @@ ramekin-ios/
 └── project.yml                 # XcodeGen project specification
 ```
 
+The offline caches and outboxes (shopping list, meal plans, recipes) live in
+Core Data. `Ramekin.xcdatamodeld` is versioned: to change the schema, add a
+new model version beside the existing ones and make it current in
+`.xccurrentversion`, rather than editing a shipped version. Lightweight
+migration needs the version each installed store was saved with.
+Sync follows doc/sync-design.md.
+
 ## Troubleshooting
 
 ### "Not Signed In" in Share Extension

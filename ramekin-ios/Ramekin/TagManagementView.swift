@@ -233,7 +233,6 @@ private extension TagManagementView {
             guard AccountScope.currentAccountKey() == accountKey else { return }
             await MainActor.run {
                 tags = response.tags
-                TagFilterCache.saveAvailableTags(response.tags, accountKey: accountKey)
                 TagFilterCache.pruneSelectedTags(
                     validNames: Set(response.tags.map(\.name)),
                     accountKey: accountKey
@@ -279,7 +278,6 @@ private extension TagManagementView {
             guard AccountScope.currentAccountKey() == accountKey else { return }
             await MainActor.run {
                 tags = TagManagementSupport.renamedTags(tags, id: tag.id, newName: response.name)
-                TagFilterCache.saveAvailableTags(tags, accountKey: accountKey)
                 TagFilterCache.renameSelectedTag(
                     from: tag.name,
                     to: response.name,
@@ -312,7 +310,6 @@ private extension TagManagementView {
             guard AccountScope.currentAccountKey() == accountKey else { return }
             await MainActor.run {
                 tags = TagManagementSupport.removingTag(tags, id: tag.id)
-                TagFilterCache.saveAvailableTags(tags, accountKey: accountKey)
                 TagFilterCache.removeSelectedTag(named: tag.name, accountKey: accountKey)
                 TagFilterCache.notifyTagsDidChange()
                 error = nil

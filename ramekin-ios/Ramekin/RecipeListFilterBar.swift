@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RecipeListFilterBar: View {
-    let availableTags: [TagItem]
+    let availableTags: [SyncTag]
     let selectedTags: Set<String>
     let photoFilter: PhotoFilter
     let advancedFilterLabel: String
@@ -136,13 +136,13 @@ struct RecipeListFilterBar: View {
 }
 
 private struct RecipeTagFiltersSheet: View {
-    let availableTags: [TagItem]
+    let availableTags: [SyncTag]
     let selectedTags: Set<String>
     let onToggleTag: (String) -> Void
 
     @Environment(\.dismiss) private var dismiss
 
-    private var groupedTags: [TagHierarchySupport.TagGroup<TagItem>] {
+    private var groupedTags: [TagHierarchySupport.TagGroup<SyncTag>] {
         TagHierarchySupport.groups(for: availableTags)
     }
 
@@ -175,7 +175,7 @@ private struct RecipeTagFiltersSheet: View {
         }
     }
 
-    private func tagGrid(_ tags: [TagItem]) -> some View {
+    private func tagGrid(_ tags: [SyncTag]) -> some View {
         FlexibleTagGrid(items: tags, id: \.id) { tag in
             Button {
                 onToggleTag(tag.name)

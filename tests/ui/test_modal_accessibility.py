@@ -129,7 +129,7 @@ def test_dialog_keeps_focus_when_async_action_removes_controls(modal_page: Page)
     dialog = open_recipe_modal(page, "Add to Shopping List")
     heading = dialog.get_by_role("heading")
     pending: list[Route] = []
-    page.route("**/api/shopping-list", lambda route: pending.append(route))
+    page.route("**/api/sync/shopping-list", lambda route: pending.append(route))
     frozen_time = datetime(2026, 9, 9, tzinfo=timezone.utc)
     page.clock.install(time=frozen_time)
     page.clock.pause_at(frozen_time)
@@ -165,7 +165,7 @@ def hold_shopping_list_posts(page: Page) -> list[Route]:
         else:
             route.continue_()
 
-    page.route("**/api/shopping-list", handle)
+    page.route("**/api/sync/shopping-list", handle)
     return pending
 
 
@@ -277,7 +277,7 @@ def test_meal_plan_response_after_dismissal_leaves_reopened_dialog_alone(
     page = modal_page
     pending: list[Route] = []
     page.route(
-        "**/api/meal-plans",
+        "**/api/sync/meal-plans",
         lambda route: (
             pending.append(route)
             if route.request.method == "POST"
@@ -296,7 +296,7 @@ def test_meal_plan_response_after_dismissal_leaves_reopened_dialog_alone(
     expect(dialog).not_to_be_visible()
 
     reopened = open_recipe_modal(page, "Add to Meal Plan")
-    with page.expect_response("**/api/meal-plans") as response_info:
+    with page.expect_response("**/api/sync/meal-plans") as response_info:
         pending[0].continue_()
     response_info.value.finished()
     flush_page_tasks(page)

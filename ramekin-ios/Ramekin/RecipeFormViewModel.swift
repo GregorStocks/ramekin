@@ -7,7 +7,7 @@ struct RecipeFormViewAPIClient {
     var createRecipe: (_ request: CreateRecipeRequest) async throws -> Void
     var updateRecipe: (_ id: UUID, _ request: UpdateRecipeRequest) async throws -> Void
     var getRecipe: (_ id: UUID) async throws -> RecipeResponse
-    var listAllTags: () async throws -> TagsListResponse
+    var syncTags: (_ cursor: Int64?) async throws -> SyncTagsResponse
     var uploadPhoto: (_ fileURL: URL) async throws -> UploadPhotoResponse
     var prepareTextRecipe: (_ text: String) async throws -> PrepareTextRecipeResponse = {
         try await ImportAPI.prepareTextRecipe(prepareTextRecipeRequest: PrepareTextRecipeRequest(text: $0))
@@ -23,8 +23,8 @@ struct RecipeFormViewAPIClient {
         getRecipe: {
             try await RecipesAPI.getRecipe(id: $0)
         },
-        listAllTags: {
-            try await TagsAPI.listAllTags()
+        syncTags: {
+            try await SyncAPI.syncTags(cursor: $0)
         },
         uploadPhoto: {
             try await PhotosAPI.upload(file: $0)
@@ -37,7 +37,7 @@ final class RecipeFormViewModel: ObservableObject {
     let mode: RecipeFormMode
 
     @Published var formData: RecipeFormData
-    @Published var availableTags: [TagItem] = []
+    @Published var availableTags: [SyncTag] = []
     @Published var selectedTagNamespace: String?
     @Published var newTagValue = ""
     @Published var newNamespace = ""
@@ -237,10 +237,9 @@ extension RecipeFormViewModel {
             return
         }
         do {
-            let response = try await api.listAllTags()
+            let tags = try await TagSyncSupport.refresh(accountKey: accountKey, fetch: api.syncTags)
             guard AccountScope.currentAccountKey() == accountKey else { return }
-            availableTags = response.tags
-            TagFilterCache.saveAvailableTags(response.tags, accountKey: accountKey)
+            availableTags = tags
         } catch is CancellationError {
             DebugLogger.shared.log("loadAvailableTags cancelled", source: "RecipeForm")
         } catch {

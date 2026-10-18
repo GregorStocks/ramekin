@@ -62,20 +62,24 @@ enum RecipeListTestSupport {
         cacheClient()
     }
 
+    static func emptyTagsResponse() -> SyncTagsResponse {
+        SyncTagsResponse(changes: [], cursor: 1, deleted: [], fullResync: false)
+    }
+
     static func emptySyncResponse() -> SyncRecipesResponse {
         SyncRecipesResponse(
+            changes: [],
             cursor: 1,
             deleted: [],
             fullResync: false,
             hasMore: false,
-            normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-            recipes: []
+            normalizationContractVersion: SearchNormalizationSupport.contractVersion
         )
     }
 
     static func emptyAPIClient() -> RecipeListViewAPIClient {
         RecipeListViewAPIClient(
-            listAllTags: { TagsListResponse(tags: []) },
+            syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
             listRecipes: { limit, offset, _, _, _ in
                 ListRecipesResponse(
                     pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),
