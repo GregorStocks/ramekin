@@ -2,7 +2,10 @@ import CoreData
 import Foundation
 
 extension CachedMealPlan: OutboxRow {
-    var rowId: UUID? { id }
+    var rowId: UUID? {
+        get { id }
+        set { id = newValue }
+    }
 
     /// API names of the fields an update op can send.
     static let syncedFields = ["meal_date", "meal_type", "notes"]

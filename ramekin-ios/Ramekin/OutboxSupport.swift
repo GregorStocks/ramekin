@@ -14,7 +14,7 @@ enum OutboxStatus: String {
 protocol OutboxRow: NSManagedObject {
     /// The row's `id` (named apart from `Identifiable.id`, which
     /// `NSManagedObject` also has).
-    var rowId: UUID? { get }
+    var rowId: UUID? { get set }
     var syncStatus: String? { get set }
     var dirtyFields: String? { get set }
     var changeSeq: Int64 { get set }
@@ -113,6 +113,14 @@ extension OutboxRow {
     func settle(result: OpResult, sent: OutboxSent) -> OutboxSettled {
         if result == .gone || sent.kind == .delete {
             return .removed
+        }
+        if result != .applied, sent.kind == .create, syncStatusEnum == .pendingCreate,
+           dirtyFieldSet.contains(where: { syncedValue(of: $0) != sent.values[$0] ?? nil }) {
+            // Edited while its refused create was in flight (moved to
+            // another meal, say): retry it as a new create. The fresh id
+            // keeps the refused one's tombstone from dropping it.
+            rowId = UUID()
+            return .kept
         }
         switch syncStatusEnum {
         case .pendingDelete, .synced:

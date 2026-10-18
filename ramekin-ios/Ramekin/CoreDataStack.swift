@@ -152,7 +152,10 @@ class CoreDataStack: ObservableObject {
 // MARK: - ShoppingItem Extensions
 
 extension ShoppingItem: OutboxRow {
-    var rowId: UUID? { id }
+    var rowId: UUID? {
+        get { id }
+        set { id = newValue }
+    }
 
     /// API names of the fields an update op can send.
     static let syncedFields = ["item", "amount", "note", "is_checked", "sort_order", "category_override"]

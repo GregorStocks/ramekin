@@ -206,8 +206,13 @@ extension MealPlanStore {
         isSyncing = false
         fetchPlans()
 
+        // The account changed mid-sync: the new one hasn't synced yet.
+        guard activeAccountKey == syncAccountKey else {
+            triggerSync()
+            return
+        }
         // Edits made while the sync was in flight go out in one follow-up.
-        guard activeAccountKey == syncAccountKey, lastSyncError == nil, !isFollowUp else { return }
+        guard lastSyncError == nil, !isFollowUp else { return }
         let hasPending = (try? coreDataStack.viewContext.fetch(
             CachedMealPlan.fetchPendingSync(accountKey: syncAccountKey)
         ))?.isEmpty == false

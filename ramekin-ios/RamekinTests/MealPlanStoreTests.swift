@@ -95,6 +95,34 @@ final class MealPlanStoreTests: XCTestCase {
         XCTAssertEqual(store.refusal, MealPlanStore.refusalMessage(.duplicate, recipeTitle: "Soup"))
     }
 
+    func testAPlanMovedWhileItsRefusedCreateWasInFlightIsRetried() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var requests: [Request] = []
+        var duringSync: (() throws -> Void)?
+        let store = makeStore(stack: stack, defaults: defaults) { cursor, ops in
+            requests.append((cursor, ops))
+            try duringSync?()
+            duringSync = nil
+            let id = try XCTUnwrap((ops.first?["id"] as? String).flatMap(UUID.init(uuidString:)))
+            return self.response(results: [requests.count == 1 ? .duplicate : .applied], deleted: requests.count == 1 ? [id] : [])
+        }
+        try store.add(recipeId: UUID(), recipeTitle: "Soup", thumbnailPhotoId: nil, date: day("2026-04-17"), mealType: .dinner)
+        let original = try XCTUnwrap(store.plans.first)
+        // The user moves it to lunch while the dinner create is refused.
+        duringSync = { try store.update(original, date: self.day("2026-04-17"), mealType: .lunch, notes: "") }
+
+        await store.syncWithServer(isFollowUp: true)
+
+        let retried = try XCTUnwrap(store.plans.first)
+        XCTAssertNotEqual(retried.id, original.id)
+        XCTAssertEqual(retried.mealType, .lunch)
+        await store.syncWithServer(isFollowUp: true)
+        let retry = try XCTUnwrap(requests.last?.ops.first)
+        XCTAssertEqual(retry["op"] as? String, "create")
+        XCTAssertEqual((retry["fields"] as? [String: Any])?["meal_type"] as? String, "lunch")
+    }
+
     func testDeletingARecipeTombstonesItsPlans() async throws {
         let (stack, defaults) = makeStorage()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
