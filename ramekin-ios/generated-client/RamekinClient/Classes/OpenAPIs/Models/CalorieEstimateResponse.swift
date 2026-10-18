@@ -17,7 +17,7 @@ public struct CalorieEstimateResponse: Codable, JSONEncodable, Hashable {
     public var headline: String
     /** Null when nothing was counted. A lower bound when status is partial. */
     public var knownCalories: CalorieRange?
-    /** The breakdown, one entry per ingredient in order. */
+    /** The breakdown, one entry per ingredient: counted lines by calories, most first (by the range's upper end, then its lower end), then the rest in recipe order. `index` is the line's place in the recipe. */
     public var lines: [CalorieLine]
     /** Ingredients the figures leave out, in recipe order: those given no amount (even in a complete estimate), and for a partial estimate the ones that couldn't be counted. */
     public var notCounted: [String]

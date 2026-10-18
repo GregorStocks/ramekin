@@ -25,7 +25,7 @@ pub struct CalorieEstimateResponse {
         skip_serializing_if = "Option::is_none"
     )]
     pub known_calories: Option<Option<Box<models::CalorieRange>>>,
-    /// The breakdown, one entry per ingredient in order.
+    /// The breakdown, one entry per ingredient: counted lines by calories, most first (by the range's upper end, then its lower end), then the rest in recipe order. `index` is the line's place in the recipe.
     #[serde(rename = "lines")]
     pub lines: Vec<models::CalorieLine>,
     /// Ingredients the figures leave out, in recipe order: those given no amount (even in a complete estimate), and for a partial estimate the ones that couldn't be counted.

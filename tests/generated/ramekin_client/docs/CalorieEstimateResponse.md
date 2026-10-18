@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **headline** | **str** | The main line: \&quot;~520 kcal per serving\&quot;, \&quot;At least ~3,100 kcal for the whole recipe\&quot;, or \&quot;Not enough ingredient data to estimate calories\&quot;. | 
 **known_calories** | [**CalorieRange**](CalorieRange.md) | Null when nothing was counted. A lower bound when status is partial. | [optional] 
-**lines** | [**List[CalorieLine]**](CalorieLine.md) | The breakdown, one entry per ingredient in order. | 
+**lines** | [**List[CalorieLine]**](CalorieLine.md) | The breakdown, one entry per ingredient: counted lines by calories, most first (by the range&#39;s upper end, then its lower end), then the rest in recipe order. &#x60;index&#x60; is the line&#39;s place in the recipe. | 
 **not_counted** | **List[str]** | Ingredients the figures leave out, in recipe order: those given no amount (even in a complete estimate), and for a partial estimate the ones that couldn&#39;t be counted. | 
 **per_serving_calories** | [**CalorieRange**](CalorieRange.md) |  | [optional] 
 **resolving** | **bool** | Some ingredient names are still being recognized in the background; ask again shortly for an estimate that includes them. | 
