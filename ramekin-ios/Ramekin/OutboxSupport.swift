@@ -107,21 +107,11 @@ extension OutboxRow {
     /// Settle the row's op from its result. A field that still holds the
     /// value sent is clean; one edited again while the sync was in flight
     /// stays dirty and goes out next round, and so does a delete made then.
-    /// A refused op leaves the row to the feed, which carries the server's
-    /// copy or a tombstone for it.
+    /// A refused op settles the same way: its sent fields are clean, so the
+    /// server's copy (or tombstone) in the feed replaces them, and fields
+    /// edited since stay dirty.
     func settle(result: OpResult, sent: OutboxSent) -> OutboxSettled {
-        switch result {
-        case .gone:
-            return .removed
-        case .duplicate, .recipeMissing:
-            if syncStatusEnum != .pendingDelete {
-                markSynced()
-            }
-            return .kept
-        case .applied:
-            break
-        }
-        if sent.kind == .delete {
+        if result == .gone || sent.kind == .delete {
             return .removed
         }
         switch syncStatusEnum {

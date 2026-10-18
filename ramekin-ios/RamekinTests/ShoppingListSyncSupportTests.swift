@@ -103,6 +103,21 @@ final class ShoppingListSyncSupportTests: XCTestCase {
         XCTAssertEqual(item.item, "Eggs")
     }
 
+    func testARefusedOpKeepsAnEditMadeWhileItWasInFlight() throws {
+        let context = CoreDataTestStack.makeContext()
+        let item = syncedItem(in: context)
+        item.note = "2%"
+        item.markUpdated(["note"])
+        let sent = try XCTUnwrap(ShoppingListSyncSupport.outbox(for: [item]).sent[XCTUnwrap(item.id)])
+        item.isChecked = true
+        item.markUpdated(["is_checked"])
+
+        XCTAssertEqual(item.settle(result: .duplicate, sent: sent), .kept)
+        // The refused note yields to the server's copy; the check-off is kept.
+        XCTAssertEqual(item.dirtyFieldSet, ["is_checked"])
+        XCTAssertEqual(item.syncStatusEnum, .pendingUpdate)
+    }
+
     func testGoneRemovesTheItem() throws {
         let context = CoreDataTestStack.makeContext()
         let item = syncedItem(in: context)
