@@ -1,0 +1,15 @@
+{
+  "title": "Sync the iOS meal-plan outbox when the network comes back",
+  "description": "MealPlanStore (ramekin-ios/Ramekin/MealPlanStore.swift) syncs when the account is set, when the meal-plan tab appears, on pull-to-refresh, and after each edit. \
+Unlike ShoppingListStore, it has no NWPathMonitor, so meal-plan edits made offline wait until one of those happens instead of going out as soon as the phone is back online. \
+Share one network monitor between the two stores (or move the shopping list's into a small shared helper) and have it call MealPlanStore.syncWithServer when the path becomes satisfied and edits are pending. iOS only: web has no outbox (doc/web-sync.md).",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ios",
+    "sync",
+  ],
+  "created_at": "2026-10-17T17:00:00-07:00",
+  "updated_at": "2026-10-17T17:00:00-07:00",
+}
