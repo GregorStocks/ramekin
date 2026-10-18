@@ -88,7 +88,8 @@ does every recipe write.
   row.
 * Shopping items stop using `version`, and the per-row `change_seq` takes
   over its job. Rows on writable feeds carry `change_seq`. A client ignores a server
-  row older than the copy it holds.
+  row older than the copy it holds, except on a full resync, whose stamps may
+  come from another database.
 * The cursor format is unchanged: an opaque `i64` meaning "one past the
   clock". Restores keep the current behavior: `restamp_live` jumps the clock
   by 2^40, sets `resync_floor`, and restamps every live row in every synced

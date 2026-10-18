@@ -1,5 +1,5 @@
 {
-  "description": "Applying a sync response (doc/sync-design.md) to a client's cache of rows. Each cached row has a change_seq, its fields, a pending local write (null, \"create\", \"update\" or \"delete\") and the fields with unsent local edits (dirty). A tombstone drops the row. A server row older than the cached one (lower change_seq) is skipped; otherwise it overwrites every field that isn't dirty. A full resync drops cached rows it omits, except pending creates and updates, which their own ops settle. Rows the response doesn't mention stay. Expected rows are listed by id. Web caches never hold pending writes, so web runs only the cases where every cached row is clean.",
+  "description": "Applying a sync response (doc/sync-design.md) to a client's cache of rows. Each cached row has a change_seq, its fields, a pending local write (null, \"create\", \"update\" or \"delete\") and the fields with unsent local edits (dirty). A tombstone drops the row. A server row older than the cached one (lower change_seq) is skipped, except on a full resync, whose stamps may come from another database; otherwise it overwrites every field that isn't dirty. A full resync drops cached rows it omits, except pending creates and updates, which their own ops settle. Rows the response doesn't mention stay. Expected rows are listed by id. Web caches never hold pending writes, so web runs only the cases where every cached row is clean.",
   "cases": [
     {
       "name": "a new row is inserted",
@@ -53,6 +53,20 @@
       },
       "expected": [
         { "id": "a", "change_seq": 9, "fields": { "item": "6 eggs" }, "pending": null, "dirty": [] }
+      ]
+    },
+    {
+      "name": "a full resync takes the server row even when its change_seq is lower (another database)",
+      "cache": [
+        { "id": "a", "change_seq": 100, "fields": { "item": "6 eggs" }, "pending": null, "dirty": [] }
+      ],
+      "response": {
+        "changes": [{ "id": "a", "change_seq": 5, "fields": { "item": "eggs" } }],
+        "deleted": [],
+        "full_resync": true
+      },
+      "expected": [
+        { "id": "a", "change_seq": 5, "fields": { "item": "eggs" }, "pending": null, "dirty": [] }
       ]
     },
     {

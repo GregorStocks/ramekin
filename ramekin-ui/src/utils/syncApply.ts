@@ -15,8 +15,9 @@ export interface SyncDelta<T extends SyncedRow> {
 
 /**
  * The cache after `response`: tombstones drop rows, a server row replaces
- * the cached one unless it is older, a full resync drops every row it
- * omits, and rows a delta doesn't mention stay.
+ * the cached one unless it is older (a full resync's always replaces it), a
+ * full resync drops every row it omits, and rows a delta doesn't mention
+ * stay.
  */
 export function applySyncResponse<T extends SyncedRow>(
   cached: readonly T[],
@@ -33,10 +34,11 @@ export function applySyncResponse<T extends SyncedRow>(
   for (const change of response.changes) {
     if (deleted.has(change.id)) continue;
     const held = previous.get(change.id);
-    byId.set(
-      change.id,
-      held && held.changeSeq > change.changeSeq ? held : change,
-    );
+    // A full resync's stamps may come from another database, so they
+    // can't be compared with the cached ones.
+    const newer =
+      !held || response.fullResync || held.changeSeq <= change.changeSeq;
+    byId.set(change.id, newer ? change : held);
   }
   return Array.from(byId.values());
 }

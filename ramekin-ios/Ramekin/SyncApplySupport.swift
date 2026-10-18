@@ -28,8 +28,8 @@ enum SyncApplySupport {
 
     /// The action for every row the cache or the response holds.
     /// Tombstones drop rows; a server row older than the cached one is
-    /// skipped; a full resync drops cached rows it omits, except pending
-    /// creates and updates, which their own ops settle.
+    /// skipped, except on a full resync; a full resync drops cached rows it
+    /// omits, except pending creates and updates, which their own ops settle.
     static func plan<ID: Hashable>(
         cached: [ID: CachedState],
         changes: [(id: ID, changeSeq: Int64)],
@@ -48,7 +48,9 @@ enum SyncApplySupport {
             }
         }
         for change in changes where !deleted.contains(change.id) {
-            if let state = cached[change.id], state.changeSeq > change.changeSeq {
+            // A full resync's stamps may come from another database, so they
+            // can't be compared with the cached ones.
+            if !fullResync, let state = cached[change.id], state.changeSeq > change.changeSeq {
                 actions[change.id] = .keep
             } else {
                 actions[change.id] = .take
