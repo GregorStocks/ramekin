@@ -263,7 +263,8 @@ the audit shows most uncounted lines are minor.
 A "How is this calculated?" disclosure lists every line with its scaled calories,
 "Negligible", "Not a food", "No amount given", or a short reason it couldn't be counted ("Not
 recognized", "Could be several foods", "Amount unclear", "Can't convert this
-measurement to weight"), followed by the USDA attribution.
+measurement to weight"), followed by the USDA attribution. The server orders the
+lines: counted ones by calories, most first, then the rest in recipe order.
 
 A per-serving estimate needs a positive serving count or range.
 - **Prefixes:** `serves`, `servings`, `yield`, `yields` or `makes`, with or without a colon (case-insensitive).

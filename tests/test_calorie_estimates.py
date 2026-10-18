@@ -100,6 +100,21 @@ def test_estimate_negligible_compound_and_skipped_lines(server_url, authed_api_c
     assert result["not_counted"] == ["olive oil and balsamic vinegar"]
 
 
+def test_estimate_lines_are_ordered_by_calories(server_url, authed_api_client):
+    client, _ = authed_api_client
+    ingredients = [
+        make_ingredient("salt", "1", "tsp"),
+        make_ingredient("unknowable yogurt", "1", "cup"),
+        make_ingredient("granulated sugar", "10", "g"),
+        make_ingredient("granulated sugar", "5-50", "g"),
+        make_ingredient("granulated sugar", "100", "g"),
+        make_ingredient("parchment paper"),
+    ]
+    result = estimate(server_url, client, ingredients).json()
+    # Counted lines by calories, most first; the rest keep recipe order.
+    assert [line["index"] for line in result["lines"]] == [4, 3, 2, 0, 1, 5]
+
+
 @pytest.mark.parametrize(
     "amount,unit,expected",
     [
@@ -195,8 +210,10 @@ def test_estimate_leaves_out_lines_with_no_amount(server_url, authed_api_client)
     assert result["status"] == "complete"
     assert result["headline"] == "~390 kcal for the whole recipe"
     assert result["not_counted"] == ["olive oil"]
-    assert result["lines"][0]["text"] == "No amount given"
-    assert result["lines"][0]["calories"] is None
+    # Counted lines come first, so the oil is listed last.
+    assert result["lines"][1]["index"] == 0
+    assert result["lines"][1]["text"] == "No amount given"
+    assert result["lines"][1]["calories"] is None
     # Lines with no amount never make an estimate partial or insufficient.
     unknown = [
         make_ingredient(f"unknowable moon dust {i}", "1", "cup") for i in range(3)

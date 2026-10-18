@@ -55,7 +55,9 @@ export interface CalorieEstimateResponse {
      */
     knownCalories?: CalorieRange | null;
     /**
-     * The breakdown, one entry per ingredient in order.
+     * The breakdown, one entry per ingredient: counted lines by calories,
+     * most first (by the range's upper end, then its lower end), then the
+     * rest in recipe order. `index` is the line's place in the recipe.
      * @type {Array<CalorieLine>}
      * @memberof CalorieEstimateResponse
      */

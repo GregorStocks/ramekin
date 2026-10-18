@@ -2746,7 +2746,7 @@
             "items": {
               "$ref": "#/components/schemas/CalorieLine"
             },
-            "description": "The breakdown, one entry per ingredient in order."
+            "description": "The breakdown, one entry per ingredient: counted lines by calories,\nmost first (by the range's upper end, then its lower end), then the\nrest in recipe order. `index` is the line's place in the recipe."
           },
           "not_counted": {
             "type": "array",

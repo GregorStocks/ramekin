@@ -91,7 +91,9 @@ pub struct CalorieEstimateResponse {
     /// Null when nothing was counted. A lower bound when status is partial.
     pub known_calories: Option<CalorieRange>,
     pub per_serving_calories: Option<CalorieRange>,
-    /// The breakdown, one entry per ingredient in order.
+    /// The breakdown, one entry per ingredient: counted lines by calories,
+    /// most first (by the range's upper end, then its lower end), then the
+    /// rest in recipe order. `index` is the line's place in the recipe.
     pub lines: Vec<CalorieLine>,
     /// Some ingredient names are still being recognized in the background;
     /// ask again shortly for an estimate that includes them.
@@ -146,6 +148,23 @@ pub async fn estimate_calories(
         &learned,
     )
     .map_err(ApiError::invalid_request)?;
+    let mut lines: Vec<CalorieLine> = result
+        .lines
+        .into_iter()
+        .map(|line| CalorieLine {
+            index: line.index,
+            item: line.item,
+            calories: line.calories.map(Into::into),
+            text: line.text,
+        })
+        .collect();
+    // Stable, so uncounted lines and ties keep recipe order.
+    lines.sort_by(|a, b| match (&a.calories, &b.calories) {
+        (Some(a), Some(b)) => b.max.total_cmp(&a.max).then(b.min.total_cmp(&a.min)),
+        (Some(_), None) => std::cmp::Ordering::Less,
+        (None, Some(_)) => std::cmp::Ordering::Greater,
+        (None, None) => std::cmp::Ordering::Equal,
+    });
     Ok(Json(CalorieEstimateResponse {
         status: result.status.into(),
         headline: result.headline,
@@ -153,16 +172,7 @@ pub async fn estimate_calories(
         not_counted: result.not_counted,
         known_calories: result.known_calories.map(Into::into),
         per_serving_calories: result.per_serving_calories.map(Into::into),
-        lines: result
-            .lines
-            .into_iter()
-            .map(|line| CalorieLine {
-                index: line.index,
-                item: line.item,
-                calories: line.calories.map(Into::into),
-                text: line.text,
-            })
-            .collect(),
+        lines,
         resolving,
     }))
 }
