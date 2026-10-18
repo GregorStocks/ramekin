@@ -485,7 +485,10 @@ is the pure half:
   `nutrition::estimate_with` counts it (`learned_estimate`), as a stand-in
   entry labeled "(estimated calories)". An ambiguous name is never estimated.
 - `categorize_with(item, &Learned)` uses the committed catalog's category
-  first (an ambiguous name's own included), then a learned entry's. Otherwise
+  first (an ambiguous name's own included), then a learned entry's
+  (`catalog_category_with`). A raw shopping line whose text gets neither ("1
+  medium white onion", "furikake (see note 3)") is read as an ingredient line
+  and tried again by its parsed item. Otherwise
   the item's own keywords decide, then the key's, so a learned answer never
   loses a category the keywords already gave. A learned non-food is
   categorized by keywords, like a committed one.
@@ -519,7 +522,15 @@ the names the catalog didn't resolve. The procedure, and how to rerun it, is in
 | 2026-09-29 | Tier 2: every remaining name seen ≥ 2 times, plus every prod name, minus tier-1 skips (2,568 names, 5,836 lines) | Claude Opus 5.5 via a Claude Code Workflow: 11 classifiers + 3 verifiers | 1,884 aliases, 128 ambiguous, 112 not-food, 4 products | 440 |
 | 2026-10-01 | Secondary sources: earlier skips still unresolved, prod names the step-3 resolver answered "unknown", and every unresolved prod name (1,099 names, 3,492 lines) | Claude Opus 5.5 via a Claude Code Workflow: 6 classifiers + 3 verifiers | 487 aliases, 83 cited Branded foods, 28 FNDDS entries, 64 ambiguous, 4 not-food, 11 products | 422 |
 | 2026-10-03 | Shopping categories: every uncategorized food entry or ambiguous name the fixtures, shopping-list corpus or curated names reach (1,095) | Claude Opus 5.5 via a Claude Code Workflow: 4 classifiers + 2 verifiers | 1,091 categories | 4 |
+| 2026-10-18 | Catalog-only categories: the shopping-list scorecard's catalog-only misses (hand-curated), then every unresolved fixture name seen ≥ 2 times (211 names, 616 lines) | Claude Opus 5.5: one classifier subagent, decisions reviewed by hand | 67 aliases, 16 ambiguous, 4 cited Branded foods, 5 entries, 5 products, 37 categories | 148 |
 
+- **Catalog-only categories (2026-10-18):** toward deleting the keyword rules
+  (`issues/*catalog-close-category-gap*`). With the raw-line re-read in `catalog_category_with`,
+  the scorecard's catalog-only misses went from 60 to 7, and catalog-only lines categorized
+  from 89.9% to 90.4% (pipeline fixtures), 97.8% to 98.1% (Paprika) and 98.1% to 98.4%
+  (snapshots). Nearly all of the remaining fixture gap is names seen once; the issue has the
+  breakdown. "garlic bread" became an entry linking the frozen USDA food, so it keeps
+  that food's calories but shops as Bakery & Bread.
 - **Shopping categories (2026-10-03):** one verifier read all 173 departures from the keyword
   rules plus a 1/7 sample of the rest, the other checked consistency; 11 corrections. All
   dried coconut is Baking. The shopping-list labels then moved canned fish, clams, canned

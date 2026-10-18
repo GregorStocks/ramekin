@@ -16,7 +16,8 @@
 //!
 //! Run `make shopping-list-categorizer-test` to see the full report.
 
-use ramekin_core::ingredient_categorizer::{categorize, CATEGORIES};
+use ramekin_core::catalog::Learned;
+use ramekin_core::ingredient_categorizer::{catalog_category_with, categorize, CATEGORIES};
 use serde::Deserialize;
 use std::collections::BTreeSet;
 use std::fs;
@@ -34,6 +35,12 @@ const MAX_OTHER: usize = 3;
 const MAX_WEIGHTED_MISMATCHES: u64 = 2;
 /// Upper bound on usage-weighted "Other" results (Other × times the item was added).
 const MAX_WEIGHTED_OTHER: u64 = 3;
+/// Upper bounds on distinct mismatches and "Other" results from the catalog alone,
+/// without the keyword rules. Deleting the keyword rules
+/// (`issues/*catalog-delete-keyword-categorizer*`) needs these at the bounds above;
+/// the lines still missed are in `issues/*catalog-shopping-lines-it-cannot-read*`.
+const MAX_CATALOG_ONLY_MISMATCHES: usize = 7;
+const MAX_CATALOG_ONLY_OTHER: usize = 9;
 
 /// One labeled corpus entry from `data/shopping-list-categories.json`.
 #[derive(Deserialize)]
@@ -149,6 +156,31 @@ fn shopping_list_categorizer_scorecard() {
         }
     }
 
+    let learned = Learned::new();
+    let mut catalog_only: Vec<(&CorpusEntry, &str)> = corpus
+        .iter()
+        .map(|entry| {
+            let category = catalog_category_with(&entry.item, &learned).unwrap_or("Other");
+            (entry, category)
+        })
+        .filter(|(entry, category)| *category != entry.category)
+        .collect();
+    catalog_only.sort_by(|a, b| a.0.item.cmp(&b.0.item));
+    let catalog_only_other = corpus
+        .iter()
+        .filter(|entry| catalog_category_with(&entry.item, &learned).is_none())
+        .count();
+    println!(
+        "\ncatalog only (no keyword rules): {} mismatches, {catalog_only_other} Other",
+        catalog_only.len()
+    );
+    for (entry, category) in &catalog_only {
+        println!(
+            "  {:>3}  {}  |  {}  ->  {category}",
+            entry.count, entry.item, entry.category
+        );
+    }
+
     assert!(
         mismatches.len() <= MAX_MISMATCHES,
         "distinct mismatches regressed: {} > {} (lower MAX_MISMATCHES once intentional)",
@@ -166,5 +198,14 @@ fn shopping_list_categorizer_scorecard() {
     assert!(
         weighted_other <= MAX_WEIGHTED_OTHER,
         "weighted 'Other' regressed: {weighted_other} > {MAX_WEIGHTED_OTHER} (lower once intentional)"
+    );
+    assert!(
+        catalog_only.len() <= MAX_CATALOG_ONLY_MISMATCHES,
+        "catalog-only mismatches regressed: {} > {MAX_CATALOG_ONLY_MISMATCHES}",
+        catalog_only.len()
+    );
+    assert!(
+        catalog_only_other <= MAX_CATALOG_ONLY_OTHER,
+        "catalog-only 'Other' count regressed: {catalog_only_other} > {MAX_CATALOG_ONLY_OTHER}"
     );
 }

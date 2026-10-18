@@ -1,0 +1,19 @@
+{
+  "title": "Resolve the prod shopping-list lines the catalog still can't read",
+  "description": "With the keyword rules left out, make shopping-list-categorizer-test's catalog-only report still misses these prod items (2026-10-18), each a parser or resolver gap rather than a missing name: \n\
+- '1 cup (4 ounces; 113 g), plus 2 tablespoons (3/4 ounce; 21 g) unroasted walnuts, divided': reparse_item gives up (the item starts with a number), so neither the raw text nor the parse resolves. \n\
+- 'Finely grated zest and juice of 1/2 lime': the citrus zest/juice parsing doesn't handle 'zest and juice of <count> <citrus>' with a leading prep phrase (the fixtures also have 'zest and juice from 1/2 a lemon', 3 lines). \n\
+- 'ground beef + ground pork - or use one type of your favorite ground meat': compounds are only split on 'and'/'&', not '+' (the fixtures also have 'salt + pepper', 6 lines). \n\
+- 'Middle Eastern jarred mild red pepper paste or spread (see notes)': the first alternative has descriptors the resolver doesn't strip, and the catalog has no red pepper paste. \n\
+- 'batch of buttermilk biscuits, split (see notes)': see p3-parser-leftover-measure-words. \n\
+Fixing these, plus the typo 'Banning soda', brings the catalog-only report to the bars keyword deletion needs (<=2 mismatches). \
+Lower MAX_CATALOG_ONLY_MISMATCHES / MAX_CATALOG_ONLY_OTHER in ramekin-core/tests/shopping_list_categorizer_tests.rs as they get fixed.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-10-18T00:00:00-07:00",
+  "updated_at": "2026-10-18T00:00:00-07:00",
+}
