@@ -1,6 +1,5 @@
 import CoreData
 import Foundation
-import Network
 
 /// Manages shopping list operations with offline-first CoreData storage and server sync
 @MainActor
@@ -31,8 +30,6 @@ class ShoppingListStore: ObservableObject {
     var isUsingVolatileStorage: Bool { coreDataStack.isUsingVolatileStore }
     private let userDefaults: UserDefaults
     private let syncItems: (SyncShoppingListRequest) async throws -> SyncShoppingListResponse
-    private let networkMonitor = NWPathMonitor()
-    private let monitorQueue = DispatchQueue(label: "NetworkMonitor")
     private let automaticallySync: Bool
     private var activeAccountKey: String?
 
@@ -50,6 +47,7 @@ class ShoppingListStore: ObservableObject {
         userDefaults: UserDefaults = .standard,
         initialAccountKey: String? = AccountScope.currentAccountKey(),
         automaticallySync: Bool = true,
+        networkMonitor: NetworkMonitor = .shared,
         syncItems: @escaping (SyncShoppingListRequest) async throws -> SyncShoppingListResponse = {
             try await SyncAPI.syncShoppingList(syncShoppingListRequest: $0)
         }
@@ -60,20 +58,16 @@ class ShoppingListStore: ObservableObject {
         self.syncItems = syncItems
 
         if automaticallySync {
-            networkMonitor.pathUpdateHandler = { [weak self] path in
-                Task { @MainActor in
-                    self?.isOnline = path.status == .satisfied
-                    if path.status == .satisfied {
-                        await self?.syncIfNeeded()
-                    }
+            isOnline = networkMonitor.isOnline
+            networkMonitor.observe { [weak self] online in
+                self?.isOnline = online
+                if online {
+                    Task { await self?.syncIfNeeded() }
                 }
             }
-            networkMonitor.start(queue: monitorQueue)
         }
         setActiveAccountKey(initialAccountKey)
     }
-
-    deinit { networkMonitor.cancel() }
 }
 
 extension ShoppingListStore {

@@ -43,6 +43,7 @@ final class MealPlanStore: ObservableObject {
         userDefaults: UserDefaults = .standard,
         initialAccountKey: String? = AccountScope.currentAccountKey(),
         automaticallySync: Bool = true,
+        networkMonitor: NetworkMonitor = .shared,
         syncMealPlans: @escaping (_ cursor: Int64?, _ ops: [[String: Any]]) async throws -> SyncMealPlansResponse = {
             try await RamekinAPI.shared.syncMealPlans(cursor: $0, ops: $1)
         }
@@ -51,6 +52,13 @@ final class MealPlanStore: ObservableObject {
         self.userDefaults = coreDataStack.syncStateDefaults(userDefaults)
         self.automaticallySync = automaticallySync
         self.syncMealPlans = syncMealPlans
+        if automaticallySync {
+            networkMonitor.observe { [weak self] online in
+                if online {
+                    Task { await self?.syncIfPending() }
+                }
+            }
+        }
         setActiveAccountKey(initialAccountKey)
     }
 }
@@ -180,6 +188,12 @@ extension MealPlanStore {
         Task { await syncWithServer() }
     }
 
+    /// Sends edits made offline; a no-op when there are none.
+    func syncIfPending() async {
+        guard let activeAccountKey, hasPendingEdits(accountKey: activeAccountKey) else { return }
+        await syncWithServer()
+    }
+
     func syncWithServer(isFollowUp: Bool = false) async {
         let logger = DebugLogger.shared
         guard let syncAccountKey = activeAccountKey, !isSyncing else { return }
@@ -213,12 +227,15 @@ extension MealPlanStore {
         }
         // Edits made while the sync was in flight go out in one follow-up.
         guard lastSyncError == nil, !isFollowUp else { return }
-        let hasPending = (try? coreDataStack.viewContext.fetch(
-            CachedMealPlan.fetchPendingSync(accountKey: syncAccountKey)
-        ))?.isEmpty == false
-        if hasPending {
+        if hasPendingEdits(accountKey: syncAccountKey) {
             await syncWithServer(isFollowUp: true)
         }
+    }
+
+    private func hasPendingEdits(accountKey: String) -> Bool {
+        (try? coreDataStack.viewContext.fetch(
+            CachedMealPlan.fetchPendingSync(accountKey: accountKey)
+        ))?.isEmpty == false
     }
 
     private func process(_ response: SyncMealPlansResponse, outbox: MealPlanSyncSupport.Outbox, accountKey: String) {
