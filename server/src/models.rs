@@ -424,8 +424,6 @@ pub struct ShoppingListItem {
     pub sort_order: i32,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
-    pub client_id: Option<Uuid>,
-    pub version: i32,
     pub deleted_at: Option<DateTime<Utc>>,
     pub category_override: Option<String>,
     pub computed_category: Option<String>,
@@ -444,5 +442,4 @@ pub struct NewShoppingListItem<'a> {
     pub is_checked: bool,
     pub sort_order: i32,
     pub category_override: Option<&'a str>,
-    pub client_id: Option<Uuid>,
 }

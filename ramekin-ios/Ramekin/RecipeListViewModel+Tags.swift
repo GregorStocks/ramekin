@@ -1,7 +1,7 @@
 import Foundation
 
-/// Tag filter state: loading the persisted selection, refreshing the
-/// available tags from the server, and keeping both in the per-account cache.
+/// Tag filter state: loading the persisted selection, syncing the available
+/// tags from the server's tags feed, and keeping both in the per-account cache.
 extension RecipeListViewModel {
     func loadPersistedTags() {
         guard let accountKey = cache.currentAccountKey() else {
@@ -19,10 +19,11 @@ extension RecipeListViewModel {
         availableTags = TagFilterCache.loadAvailableTags(accountKey: accountKey, userDefaults: userDefaults)
     }
 
+    /// A tag was renamed or deleted here: the tags feed and the recipe feed
+    /// both carry the change, so a sync of each picks it up.
     func handleTagsDidChange() {
         loadPersistedTags()
-        loadPersistedAvailableTags()
-        invalidateRecipeCacheSync()
+        Task { await loadTags() }
         reloadRecipes()
     }
 
@@ -33,18 +34,13 @@ extension RecipeListViewModel {
             return
         }
         do {
-            let response = try await DebugLogger.shared.timed("listAllTags API", source: "RecipeList") {
-                try await api.listAllTags()
+            let tags = try await DebugLogger.shared.timed("syncTags API", source: "RecipeList") {
+                try await TagSyncSupport.refresh(accountKey: accountKey, userDefaults: userDefaults, fetch: api.syncTags)
             }
             guard cache.currentAccountKey() == accountKey else { return }
-            availableTags = response.tags
-            TagFilterCache.saveAvailableTags(
-                response.tags,
-                accountKey: accountKey,
-                userDefaults: userDefaults
-            )
+            availableTags = tags
             TagFilterCache.pruneSelectedTags(
-                validNames: Set(response.tags.map(\.name)),
+                validNames: Set(tags.map(\.name)),
                 accountKey: accountKey,
                 userDefaults: userDefaults
             )

@@ -26,7 +26,7 @@ final class RecipeListViewModel: ObservableObject {
     /// the list may not match the current search, filters, or sort.
     @Published var reloadFailed = false
     @Published var selectedTags: Set<String> = []
-    @Published var availableTags: [TagItem] = []
+    @Published var availableTags: [SyncTag] = []
     @Published var showingAdvancedFilters = false
 
     @Published var sortOrder: RecipeSortOrder {
@@ -317,11 +317,6 @@ extension RecipeListViewModel {
         } catch {
             DebugLogger.shared.log("loadCachedRecipes error: \(error.localizedDescription)", source: "RecipeList")
         }
-    }
-
-    func invalidateRecipeCacheSync() {
-        guard let accountKey = cache.currentAccountKey() else { return }
-        cache.clearSyncCursor(accountKey)
     }
 }
 

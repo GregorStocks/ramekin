@@ -19,7 +19,7 @@ from pathlib import Path
 
 import pytest
 from conftest import connect_db
-from ramekin_client.api import PhotosApi, RecipesApi
+from ramekin_client.api import PhotosApi, RecipesApi, SyncApi
 from ramekin_client.models import (
     CreateRecipeRequest,
     Direction,
@@ -179,12 +179,12 @@ def test_sync_serves_the_same_ingredient_match_text(corpus, vectors):
     contract = json.loads(
         (REPO_ROOT / "shared-test-vectors" / "search-normalization.json").read_text()
     )
-    response = recipes_api.sync_recipes(limit=500)
+    response = SyncApi(recipes_api.api_client).sync_recipes(limit=500)
     assert response.normalization_contract_version == contract["version"]
 
     synced = {
         slug_by_id[str(r.id)]: r.ingredient_match_text
-        for r in response.recipes
+        for r in response.changes
         if str(r.id) in slug_by_id
     }
     assert synced == expected

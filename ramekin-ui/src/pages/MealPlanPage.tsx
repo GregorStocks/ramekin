@@ -8,6 +8,11 @@ import { usePageTitle } from "../utils/pageTitle";
 import { reuseUnchanged } from "../utils/stableList";
 import { createRequestTracker } from "../utils/requestTracker";
 import {
+  createMealPlanOp,
+  mealPlanOpError,
+  writeMealPlan,
+} from "../utils/mealPlanWrites";
+import {
   MEAL_TYPES,
   MEAL_TYPE_LABELS,
   parseLocalDate,
@@ -45,7 +50,7 @@ function formatDayHeader(d: Date): string {
 
 export default function MealPlanPage() {
   usePageTitle(() => "Meal Plan");
-  const { getMealPlansApi, getRecipesApi, token } = useAuth();
+  const { getMealPlansApi, getRecipesApi, getSyncApi, token } = useAuth();
 
   const [weekStart, setWeekStart] = createSignal(getMonday(new Date()));
   const [mealPlans, setMealPlans] = createSignal<MealPlanItem[]>([]);
@@ -183,14 +188,16 @@ export default function MealPlanPage() {
     if (!date || !mealType) return;
 
     try {
-      await getMealPlansApi().createMealPlan({
-        createMealPlanRequest: {
+      const result = await writeMealPlan(
+        getSyncApi(),
+        createMealPlanOp({
           recipeId: recipe.id,
           mealDate: toApiDate(date),
           mealType: mealType,
-        },
-      });
+        }),
+      );
       setPickerOpen(false);
+      setError(mealPlanOpError(result, mealType));
       await loadMealPlans();
     } catch (err) {
       const message = await extractApiError(err, "Failed to add meal");
@@ -223,15 +230,22 @@ export default function MealPlanPage() {
     setEditLoading(true);
     setEditError(null);
     try {
-      await getMealPlansApi().updateMealPlan({
+      const result = await writeMealPlan(getSyncApi(), {
+        op: "update",
         id: mp.id,
-        updateMealPlanRequest: {
+        fields: {
           mealDate: toApiDate(parseLocalDate(editDate())),
           mealType: editMealType(),
           notes: editNotes(),
         },
       });
+      const message = mealPlanOpError(result, editMealType());
+      if (result === "duplicate") {
+        setEditError(message);
+        return;
+      }
       setEditingMealPlan(null);
+      setError(message);
       await loadMealPlans();
     } catch (err) {
       const message = await extractApiError(err, "Failed to update meal");
@@ -247,7 +261,7 @@ export default function MealPlanPage() {
 
     setDeleteLoading(true);
     try {
-      await getMealPlansApi().deleteMealPlan({ id: mp.id });
+      await writeMealPlan(getSyncApi(), { op: "delete", id: mp.id });
       setDeletingMealPlan(null);
       await loadMealPlans();
     } catch (err) {

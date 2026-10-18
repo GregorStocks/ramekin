@@ -28,21 +28,21 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                 // watermark redelivers them on the next sync.
                 if afterId == nil {
                     return SyncRecipesResponse(
+                        changes: pageOne,
                         cursor: 100,
                         deleted: [],
                         fullResync: false,
                         hasMore: true,
-                        normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                        recipes: pageOne
+                        normalizationContractVersion: SearchNormalizationSupport.contractVersion
                     )
                 }
                 return SyncRecipesResponse(
+                    changes: pageTwo,
                     cursor: 200,
                     deleted: [],
                     fullResync: false,
                     hasMore: false,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                    recipes: pageTwo
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
                 )
             },
             cache: RecipeListTestSupport.cacheClient(
@@ -51,7 +51,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
                 setPendingSyncSweep: { sweep, _ in persistedSweeps.append(sweep) },
                 clearPendingSyncSweep: { _ in clearedPendingSweep = true },
                 apply: { response, _, _ in
-                    appliedRecipeTitles.append(contentsOf: response.recipes.map(\.title))
+                    appliedRecipeTitles.append(contentsOf: response.changes.map(\.title))
                 }
             )
         )
@@ -82,12 +82,12 @@ final class RecipeListViewModelSyncTests: XCTestCase {
             syncRecipes: { cursor, limit, afterId in
                 requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
                 return SyncRecipesResponse(
+                    changes: finalPage,
                     cursor: 500,
                     deleted: [],
                     fullResync: false,
                     hasMore: false,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                    recipes: finalPage
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
                 )
             },
             cache: RecipeListTestSupport.cacheClient(
@@ -158,12 +158,12 @@ final class RecipeListViewModelSyncTests: XCTestCase {
         let viewModel = makeViewModel(
             syncRecipes: { _, _, _ in
                 SyncRecipesResponse(
+                    changes: [],
                     cursor: 400,
                     deleted: [],
                     fullResync: false,
                     hasMore: true,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                    recipes: []
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
                 )
             },
             cache: RecipeListTestSupport.cacheClient(
@@ -257,12 +257,12 @@ final class RecipeListViewModelSyncTests: XCTestCase {
         let viewModel = makeViewModel(
             syncRecipes: { _, _, _ in
                 SyncRecipesResponse(
+                    changes: [],
                     cursor: 100,
                     deleted: [],
                     fullResync: false,
                     hasMore: false,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion + 1,
-                    recipes: []
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion + 1
                 )
             },
             cache: RecipeListTestSupport.cacheClient(
@@ -287,7 +287,7 @@ final class RecipeListViewModelSyncTests: XCTestCase {
     ) -> RecipeListViewModel {
         RecipeListViewModel(
             api: RecipeListViewAPIClient(
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 listRecipes: { limit, offset, _, _, _ in
                     ListRecipesResponse(
                         pagination: PaginationMetadata(limit: limit, offset: offset, total: 0),
@@ -334,12 +334,12 @@ extension RecipeListViewModelSyncTests {
             syncRecipes: { cursor, limit, afterId in
                 requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
                 return SyncRecipesResponse(
+                    changes: afterId == nil ? pageOne : pageTwo,
                     cursor: 100,
                     deleted: [],
                     fullResync: true,
                     hasMore: afterId == nil,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                    recipes: afterId == nil ? pageOne : pageTwo
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
                 )
             },
             cache: RecipeListTestSupport.cacheClient(
@@ -397,12 +397,12 @@ extension RecipeListViewModelSyncTests {
             syncRecipes: { cursor, limit, afterId in
                 requests.append(SyncRequest(cursor: cursor, limit: limit, afterId: afterId))
                 return SyncRecipesResponse(
+                    changes: [],
                     cursor: afterId == nil ? 900 : 800,
                     deleted: [],
                     fullResync: true,
                     hasMore: false,
-                    normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                    recipes: []
+                    normalizationContractVersion: SearchNormalizationSupport.contractVersion
                 )
             },
             cache: RecipeListTestSupport.cacheClient(

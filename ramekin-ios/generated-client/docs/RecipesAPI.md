@@ -17,7 +17,6 @@ Method | HTTP request | Description
 [**normalizeTitle**](RecipesAPI.md#normalizetitle) | **POST** /api/recipes/{id}/normalize-title | 
 [**rescrape**](RecipesAPI.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrapePhoto**](RecipesAPI.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo | 
-[**syncRecipes**](RecipesAPI.md#syncrecipes) | **GET** /api/recipes/sync | 
 [**updateRecipe**](RecipesAPI.md#updaterecipe) | **PUT** /api/recipes/{id} | 
 
 
@@ -626,57 +625,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RescrapeResponse**](RescrapeResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **syncRecipes**
-```swift
-    open class func syncRecipes(limit: Int64, cursor: Int64? = nil, afterId: UUID? = nil, completion: @escaping (_ data: SyncRecipesResponse?, _ error: Error?) -> Void)
-```
-
-
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import RamekinClient
-
-let limit = 987 // Int64 | Maximum number of recipes returned per page, between 1 and 500.
-let cursor = 987 // Int64 | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
-let afterId = 987 // UUID | ID of the last recipe on the previous page. Absent on a sweep's first page. (optional)
-
-RecipesAPI.syncRecipes(limit: limit, cursor: cursor, afterId: afterId) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **Int64** | Maximum number of recipes returned per page, between 1 and 500. | 
- **cursor** | **Int64** | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. | [optional] 
- **afterId** | **UUID** | ID of the last recipe on the previous page. Absent on a sweep&#39;s first page. | [optional] 
-
-### Return type
-
-[**SyncRecipesResponse**](SyncRecipesResponse.md)
 
 ### Authorization
 

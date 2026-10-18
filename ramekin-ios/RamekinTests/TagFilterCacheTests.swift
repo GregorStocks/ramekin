@@ -83,15 +83,8 @@ final class TagFilterCacheTests: XCTestCase {
         XCTAssertNil(defaults.object(forKey: "recipeAvailableTags"))
     }
 
-    private func makeTag(name: String) -> TagItem {
-        TagItem(
-            createdAt: Date(timeIntervalSince1970: 100),
-            id: UUID(),
-            name: name,
-            namespace: nil,
-            recipeCount: 1,
-            value: name
-        )
+    private func makeTag(name: String) -> SyncTag {
+        SyncTag(changeSeq: 1, id: UUID(), name: name)
     }
 
     private var defaultsSuiteName: String { "TagFilterCacheTests.\(name)" }

@@ -137,6 +137,9 @@ targets:
       - path: ../shared-test-vectors/search-match-filter.json
         buildPhase: resources
         type: file
+      - path: ../shared-test-vectors/sync-apply.json
+        buildPhase: resources
+        type: file
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.tests

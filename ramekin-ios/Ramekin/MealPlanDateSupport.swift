@@ -27,6 +27,26 @@ enum MealPlanDateSupport {
         return monday
     }
 
+    /// The API's `yyyy-MM-dd` day for a date the generated client decoded,
+    /// which it reads as UTC midnight.
+    static func apiDay(fromAPIDate apiDate: Date) -> String {
+        SharedDateFormatters.localDateOnly.string(from: localDate(fromAPIDate: apiDate))
+    }
+
+    /// The date the generated client would decode for an API day.
+    static func apiDate(fromDay day: String) -> Date? {
+        guard let local = SharedDateFormatters.localDateOnly.date(from: day) else { return nil }
+        let components = SharedDateFormatters.localDateOnly.calendar.dateComponents(
+            in: SharedDateFormatters.localDateOnly.timeZone,
+            from: local
+        )
+        return apiCalendar.date(from: DateComponents(
+            year: components.year,
+            month: components.month,
+            day: components.day
+        ))
+    }
+
     private static let apiCalendar: Calendar = {
         var calendar = Calendar(identifier: .iso8601)
         calendar.timeZone = TimeZone(secondsFromGMT: 0)!

@@ -230,42 +230,26 @@ final class RamekinAPITests: XCTestCase {
         XCTAssertEqual(json["source_url"], "https://example.com/recipe")
     }
 
-    func testCreateMealPlanRequestEncodingOmitsEmptyNotes() throws {
-        let recipeId = UUID(uuidString: "12345678-1234-1234-1234-123456789ABC")!
-        let date = try XCTUnwrap(SharedDateFormatters.localDateOnly.date(from: "2026-04-17"))
-
-        let builder = RamekinAPI.shared.createMealPlanRequestBuilder(
-            CreateMealPlanRequest(
-                mealDate: date,
-                mealType: .dinner,
-                notes: nil,
-                recipeId: recipeId
-            )
+    func testSyncMealPlansRequestSendsOpsAsTheyAreBuilt() throws {
+        let id = UUID(uuidString: "87654321-4321-4321-4321-CBA987654321")!
+        let builder = try RamekinAPI.shared.syncMealPlansRequestBuilder(
+            cursor: 41,
+            ops: [["op": "update", "id": id.uuidString, "fields": ["meal_date": "2026-04-18", "notes": ""]]]
         )
         let json = try requestBodyJSON(from: builder)
 
-        XCTAssertEqual(json["recipe_id"] as? String, recipeId.uuidString)
-        XCTAssertEqual(json["meal_date"] as? String, "2026-04-17")
-        XCTAssertEqual(json["meal_type"] as? String, "dinner")
-        XCTAssertNil(json["notes"])
+        XCTAssertEqual(json["cursor"] as? Int, 41)
+        let ops = try XCTUnwrap(json["ops"] as? [[String: Any]])
+        XCTAssertEqual(ops.first?["op"] as? String, "update")
+        let fields = try XCTUnwrap(ops.first?["fields"] as? [String: String])
+        XCTAssertEqual(fields, ["meal_date": "2026-04-18", "notes": ""])
     }
 
-    func testUpdateMealPlanRequestEncodingIncludesEmptyNotes() throws {
-        let date = try XCTUnwrap(SharedDateFormatters.localDateOnly.date(from: "2026-04-18"))
+    func testSyncMealPlansRequestLeavesOutAMissingCursor() throws {
+        let json = try requestBodyJSON(from: RamekinAPI.shared.syncMealPlansRequestBuilder(cursor: nil, ops: []))
 
-        let builder = RamekinAPI.shared.updateMealPlanRequestBuilder(
-            id: UUID(uuidString: "87654321-4321-4321-4321-CBA987654321")!,
-            request: UpdateMealPlanRequest(
-                mealDate: date,
-                mealType: .lunch,
-                notes: ""
-            )
-        )
-        let json = try requestBodyJSON(from: builder)
-
-        XCTAssertEqual(json["meal_date"] as? String, "2026-04-18")
-        XCTAssertEqual(json["meal_type"] as? String, "lunch")
-        XCTAssertEqual(json["notes"] as? String, "")
+        XCTAssertNil(json["cursor"])
+        XCTAssertEqual((json["ops"] as? [Any])?.count, 0)
     }
 
     // MARK: - Response Decoding Tests

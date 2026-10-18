@@ -35,14 +35,7 @@ class TestSyncRecipesResponse(unittest.TestCase):
         model = SyncRecipesResponse()
         if include_optional:
             return SyncRecipesResponse(
-                cursor = 56,
-                deleted = [
-                    ''
-                    ],
-                full_resync = True,
-                has_more = True,
-                normalization_contract_version = 0,
-                recipes = [
+                changes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
@@ -68,18 +61,18 @@ class TestSyncRecipesResponse(unittest.TestCase):
                         thumbnail_photo_id = '', 
                         title = '', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                    ]
+                    ],
+                cursor = 56,
+                deleted = [
+                    ''
+                    ],
+                full_resync = True,
+                has_more = True,
+                normalization_contract_version = 0
             )
         else:
             return SyncRecipesResponse(
-                cursor = 56,
-                deleted = [
-                    ''
-                    ],
-                full_resync = True,
-                has_more = True,
-                normalization_contract_version = 0,
-                recipes = [
+                changes = [
                     ramekin_client.models.sync_recipe.SyncRecipe(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
@@ -106,6 +99,13 @@ class TestSyncRecipesResponse(unittest.TestCase):
                         title = '', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                     ],
+                cursor = 56,
+                deleted = [
+                    ''
+                    ],
+                full_resync = True,
+                has_more = True,
+                normalization_contract_version = 0,
         )
         """
 

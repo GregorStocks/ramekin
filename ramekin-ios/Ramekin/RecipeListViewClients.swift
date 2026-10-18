@@ -3,7 +3,7 @@ import Foundation
 /// Injection seams for RecipeListViewModel, so tests can drive the list without
 /// a network or an on-disk cache.
 struct RecipeListViewAPIClient {
-    var listAllTags: () async throws -> TagsListResponse
+    var syncTags: (_ cursor: Int64?) async throws -> SyncTagsResponse
     var listRecipes: (
         _ limit: Int64,
         _ offset: Int64,
@@ -18,7 +18,7 @@ struct RecipeListViewAPIClient {
     ) async throws -> SyncRecipesResponse
 
     static let live = RecipeListViewAPIClient(
-        listAllTags: { try await TagsAPI.listAllTags() },
+        syncTags: { try await SyncAPI.syncTags(cursor: $0) },
         listRecipes: { limit, offset, query, sortBy, sortDir in
             try await RecipesAPI.listRecipes(
                 limit: limit,
@@ -29,7 +29,7 @@ struct RecipeListViewAPIClient {
             )
         },
         syncRecipes: { cursor, limit, afterId in
-            try await RecipesAPI.syncRecipes(limit: limit, cursor: cursor, afterId: afterId)
+            try await SyncAPI.syncRecipes(limit: limit, cursor: cursor, afterId: afterId)
         }
     )
 }

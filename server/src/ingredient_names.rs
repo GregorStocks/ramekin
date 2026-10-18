@@ -696,9 +696,9 @@ async fn save_resolved(
 
 /// Recompute the stored category of live shopping-list items with any of
 /// these names, in the write that stores their new answers. An item whose
-/// category changed gets a new `updated_at` too, so incremental sync sends it;
-/// its version (and clients' pending edits) stay valid, since the item itself
-/// is unchanged. Names match by catalog normalization, which no SQL pattern
+/// category changed takes a new sync stamp, so incremental sync sends it;
+/// clients' pending edits to it still apply, since writes are per-field.
+/// Names match by catalog normalization, which no SQL pattern
 /// expresses, so the live items are read once and matched here.
 fn recategorize_shopping_items(
     conn: &mut SqliteConnection,
@@ -716,7 +716,7 @@ fn recategorize_shopping_items(
         .filter(|(_, item, _)| changed.contains(normalize(item).as_str()))
         .collect();
     let names: Vec<&str> = matched.iter().map(|(_, item, _)| item.as_str()).collect();
-    let categories = crate::api::shopping_list::list::categorize(conn, &names)?;
+    let categories = crate::shopping_list::categorize(conn, &names)?;
     let now = Utc::now();
     for ((id, _, stored), category) in matched.iter().zip(categories) {
         if stored.as_deref() != Some(category.as_str()) {

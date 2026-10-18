@@ -31,12 +31,12 @@ final class RecipeCacheStoreRecoveryTests: XCTestCase {
         // as older-schema rows before they're decoded.
         try await store.apply(
             syncResponse: SyncRecipesResponse(
+                changes: [good],
                 cursor: 300,
                 deleted: [],
                 fullResync: false,
                 hasMore: false,
-                normalizationContractVersion: SearchNormalizationSupport.contractVersion,
-                recipes: [good]
+                normalizationContractVersion: SearchNormalizationSupport.contractVersion
             ),
             afterId: nil,
             accountKey: accountKey

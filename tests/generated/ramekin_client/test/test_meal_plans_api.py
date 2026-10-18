@@ -26,26 +26,8 @@ class TestMealPlansApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_create_meal_plan(self) -> None:
-        """Test case for create_meal_plan
-
-        """
-        pass
-
-    def test_delete_meal_plan(self) -> None:
-        """Test case for delete_meal_plan
-
-        """
-        pass
-
     def test_list_meal_plans(self) -> None:
         """Test case for list_meal_plans
-
-        """
-        pass
-
-    def test_update_meal_plan(self) -> None:
-        """Test case for update_meal_plan
 
         """
         pass

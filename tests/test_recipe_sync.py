@@ -20,7 +20,7 @@ def _sync(client, server_url, cursor=None, limit=500, after_id=None):
     if after_id is not None:
         params["after_id"] = after_id
     response = requests.get(
-        f"{server_url}/api/recipes/sync",
+        f"{server_url}/api/sync/recipes",
         headers=_auth_headers(client),
         params=params,
         timeout=10,
@@ -47,7 +47,7 @@ def test_recipe_sync_initial_response_includes_active_recipes(
 
     response = _sync(client, server_url)
 
-    recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
+    recipes_by_id = {recipe["id"]: recipe for recipe in response["changes"]}
     assert str(created.id) in recipes_by_id
     assert recipes_by_id[str(created.id)]["title"] == "Initial Sync Recipe"
     assert recipes_by_id[str(created.id)]["description"] == (
@@ -108,7 +108,7 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
 
     response = _sync(client, server_url, cursor=cursor)
 
-    recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
+    recipes_by_id = {recipe["id"]: recipe for recipe in response["changes"]}
     assert str(updated.id) in recipes_by_id
     assert recipes_by_id[str(updated.id)]["title"] == "After Update"
     assert recipes_by_id[str(updated.id)]["ingredients"][0]["item"] == "brown rice"
@@ -121,7 +121,7 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
     assert response["full_resync"] is False
 
 
-def test_recipe_sync_full_response_includes_deleted_ids(authed_api_client, server_url):
+def test_recipe_sync_full_response_sends_no_tombstones(authed_api_client, server_url):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
 
@@ -136,8 +136,9 @@ def test_recipe_sync_full_response_includes_deleted_ids(authed_api_client, serve
 
     response = _sync(client, server_url)
 
-    assert str(deleted.id) in response["deleted"]
-    assert str(deleted.id) not in {recipe["id"] for recipe in response["recipes"]}
+    # The client drops cached recipes a full resync omits instead.
+    assert response["deleted"] == []
+    assert str(deleted.id) not in {recipe["id"] for recipe in response["changes"]}
 
 
 def test_recipe_sync_includes_recipes_after_tag_rename(authed_api_client, server_url):
@@ -163,7 +164,7 @@ def test_recipe_sync_includes_recipes_after_tag_rename(authed_api_client, server
 
     response = _sync(client, server_url, cursor=cursor)
 
-    recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
+    recipes_by_id = {recipe["id"]: recipe for recipe in response["changes"]}
     assert recipes_by_id[str(created.id)]["tags"] == ["after-rename"]
 
 
@@ -190,7 +191,7 @@ def test_recipe_sync_includes_recipes_after_tag_delete(authed_api_client, server
 
     response = _sync(client, server_url, cursor=cursor)
 
-    recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
+    recipes_by_id = {recipe["id"]: recipe for recipe in response["changes"]}
     assert recipes_by_id[str(created.id)]["tags"] == []
 
 
@@ -227,13 +228,14 @@ def test_recipe_sync_includes_recipes_after_recipe_create_revives_tag(
 
     response = _sync(client, server_url, cursor=cursor)
 
-    recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
+    recipes_by_id = {recipe["id"]: recipe for recipe in response["changes"]}
     assert recipes_by_id[str(existing.id)]["tags"] == ["revived-by-create"]
 
 
 def test_recipe_sync_paginates_by_recipe_id(authed_api_client, server_url):
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
+    cursor = _sync(client, server_url)["cursor"]
 
     created_ids = set()
     for index in range(3):
@@ -252,32 +254,34 @@ def test_recipe_sync_paginates_by_recipe_id(authed_api_client, server_url):
             ingredients=[make_ingredient(item="pepper")],
         )
     )
+
     recipes_api.delete_recipe(deleted.id)
 
-    first_page = _sync(client, server_url, limit=2)
+    first_page = _sync(client, server_url, cursor=cursor, limit=2)
 
-    assert len(first_page["recipes"]) == 2
+    assert len(first_page["changes"]) == 2
     assert first_page["has_more"] is True
     assert str(deleted.id) in first_page["deleted"]
 
     second_page = _sync(
         client,
         server_url,
+        cursor=cursor,
         limit=2,
-        after_id=first_page["recipes"][-1]["id"],
+        after_id=first_page["changes"][-1]["id"],
     )
 
     assert second_page["has_more"] is False
     # Deletions all ride on the sweep's first page.
     assert second_page["deleted"] == []
 
-    swept_ids = {recipe["id"] for recipe in first_page["recipes"]} | {
-        recipe["id"] for recipe in second_page["recipes"]
+    swept_ids = {recipe["id"] for recipe in first_page["changes"]} | {
+        recipe["id"] for recipe in second_page["changes"]
     }
     assert created_ids <= swept_ids
     # Pages sweep the recipe-id space in ascending order without overlap.
     all_ids = [
-        recipe["id"] for recipe in first_page["recipes"] + second_page["recipes"]
+        recipe["id"] for recipe in first_page["changes"] + second_page["changes"]
     ]
     assert all_ids == sorted(all_ids)
     assert len(all_ids) == len(set(all_ids))
@@ -311,25 +315,25 @@ def test_recipe_sync_first_page_cursor_covers_later_changes(
             ingredients=[make_ingredient(item="saffron")],
         )
     )
-    _sync(client, server_url, limit=1, after_id=first_page["recipes"][-1]["id"])
+    _sync(client, server_url, limit=1, after_id=first_page["changes"][-1]["id"])
 
     next_sync = _sync(client, server_url, cursor=first_page["cursor"])
 
-    assert str(late.id) in {recipe["id"] for recipe in next_sync["recipes"]}
+    assert str(late.id) in {recipe["id"] for recipe in next_sync["changes"]}
 
 
 def test_recipe_sync_rejects_missing_or_invalid_limit(authed_api_client, server_url):
     client, _user_id = authed_api_client
 
     missing = requests.get(
-        f"{server_url}/api/recipes/sync",
+        f"{server_url}/api/sync/recipes",
         headers=_auth_headers(client),
         timeout=10,
     )
     assert missing.status_code == 400
 
     zero = requests.get(
-        f"{server_url}/api/recipes/sync",
+        f"{server_url}/api/sync/recipes",
         headers=_auth_headers(client),
         params={"limit": 0},
         timeout=10,
@@ -338,7 +342,7 @@ def test_recipe_sync_rejects_missing_or_invalid_limit(authed_api_client, server_
     assert zero.json()["code"] == "invalid_request"
 
     oversized = requests.get(
-        f"{server_url}/api/recipes/sync",
+        f"{server_url}/api/sync/recipes",
         headers=_auth_headers(client),
         params={"limit": 501},
         timeout=10,
@@ -349,7 +353,7 @@ def test_recipe_sync_rejects_missing_or_invalid_limit(authed_api_client, server_
 
 def test_recipe_sync_requires_auth(unauthed_api_client, server_url):
     response = requests.get(
-        f"{server_url}/api/recipes/sync",
+        f"{server_url}/api/sync/recipes",
         timeout=10,
     )
 
@@ -361,8 +365,8 @@ def test_recipe_sync_answers_a_cursor_from_another_database_with_a_full_sync(
 ):
     """A cursor above any this database has issued (a client that synced
     before a restore from an older backup) can't say what the client has
-    seen, so the server sends everything rather than silently skipping every
-    change below the client's cursor."""
+    seen, so the server sends every live recipe rather than silently
+    skipping every change below the client's cursor."""
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
     live = recipes_api.create_recipe(
@@ -384,8 +388,9 @@ def test_recipe_sync_answers_a_cursor_from_another_database_with_a_full_sync(
 
     response = _sync(client, server_url, cursor=current + 1_000_000_000)
 
-    assert str(live.id) in {recipe["id"] for recipe in response["recipes"]}
-    assert str(deleted.id) in response["deleted"]
+    assert str(live.id) in {recipe["id"] for recipe in response["changes"]}
+    assert str(deleted.id) not in {recipe["id"] for recipe in response["changes"]}
+    assert response["deleted"] == []
     # Other users' writes can move the clock on in between.
     assert response["cursor"] >= current
     # Flagged so the client drops cached recipes this database doesn't have.
@@ -411,7 +416,7 @@ def test_recipe_sync_full_resync_flag_is_on_every_page_of_a_full_sweep(
         client,
         server_url,
         limit=1,
-        after_id=first["recipes"][0]["id"],
+        after_id=first["changes"][0]["id"],
     )
 
     assert first["has_more"] is True

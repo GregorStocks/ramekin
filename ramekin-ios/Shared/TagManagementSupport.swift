@@ -8,6 +8,8 @@ extension Notification.Name {
 enum TagFilterCache {
     private static let selectedTagsKeyPrefix = "recipe_selected_tags"
     private static let availableTagsKeyPrefix = "recipe_available_tags"
+    /// The tags feed's cursor for the cached available tags.
+    static let tagsSyncCursor = SyncCursorStore(prefix: "recipe_available_tags_sync_cursor")
     private static let legacySelectedTagsKey = "recipeSelectedTags"
     private static let legacyAvailableTagsKey = "recipeAvailableTags"
     private static let legacyMigrationKey = "recipe_tag_cache_account_scope_migrated"
@@ -101,9 +103,11 @@ enum TagFilterCache {
     static func loadAvailableTags(
         accountKey: String,
         userDefaults: UserDefaults = .standard
-    ) -> [TagItem] {
+    ) -> [SyncTag] {
+        // A snapshot from before the tags feed doesn't decode, and reads as
+        // empty until the first sync.
         guard let data = userDefaults.data(forKey: availableTagsKey(accountKey: accountKey)),
-              let tags = try? CodableHelper.jsonDecoder.decode([TagItem].self, from: data) else {
+              let tags = try? CodableHelper.jsonDecoder.decode([SyncTag].self, from: data) else {
             return []
         }
 
@@ -111,7 +115,7 @@ enum TagFilterCache {
     }
 
     static func saveAvailableTags(
-        _ availableTags: [TagItem],
+        _ availableTags: [SyncTag],
         accountKey: String,
         userDefaults: UserDefaults = .standard
     ) {

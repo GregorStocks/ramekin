@@ -66,7 +66,7 @@ file directory isn't renamed: its files are a superset of what the snapshot
 names.
 
 It also moves the sync clock far past anything the replaced database handed
-out, and restamps every live recipe, tag and shopping item above it. Clients
+out, and restamps every live recipe, tag, shopping item and meal plan above it. Clients
 that synced after the snapshot hold cursors the restored clock would otherwise
 reach again, and their later syncs would then silently skip the rolled-back
 rows. With the restamp, every client's next sync re-delivers the restored

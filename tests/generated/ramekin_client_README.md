@@ -74,10 +74,7 @@ Class | Method | HTTP request | Description
 *ImportApi* | [**prepare_text_recipe**](ramekin_client/docs/ImportApi.md#prepare_text_recipe) | **POST** /api/import/text | 
 *IngredientNamesApi* | [**get_ingredient_names_status**](ramekin_client/docs/IngredientNamesApi.md#get_ingredient_names_status) | **GET** /api/ingredient-names/status | 
 *IngredientNamesApi* | [**retry_ingredient_names**](ramekin_client/docs/IngredientNamesApi.md#retry_ingredient_names) | **POST** /api/ingredient-names/retry | 
-*MealPlansApi* | [**create_meal_plan**](ramekin_client/docs/MealPlansApi.md#create_meal_plan) | **POST** /api/meal-plans | 
-*MealPlansApi* | [**delete_meal_plan**](ramekin_client/docs/MealPlansApi.md#delete_meal_plan) | **DELETE** /api/meal-plans/{id} | 
 *MealPlansApi* | [**list_meal_plans**](ramekin_client/docs/MealPlansApi.md#list_meal_plans) | **GET** /api/meal-plans | 
-*MealPlansApi* | [**update_meal_plan**](ramekin_client/docs/MealPlansApi.md#update_meal_plan) | **PUT** /api/meal-plans/{id} | 
 *PhotosApi* | [**get_photo**](ramekin_client/docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 *PhotosApi* | [**get_photo_thumbnail**](ramekin_client/docs/PhotosApi.md#get_photo_thumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosApi* | [**upload**](ramekin_client/docs/PhotosApi.md#upload) | **POST** /api/photos | 
@@ -94,19 +91,16 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**normalize_title**](ramekin_client/docs/RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
 *RecipesApi* | [**rescrape**](ramekin_client/docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**rescrape_photo**](ramekin_client/docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
-*RecipesApi* | [**sync_recipes**](ramekin_client/docs/RecipesApi.md#sync_recipes) | **GET** /api/recipes/sync | 
 *RecipesApi* | [**update_recipe**](ramekin_client/docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 *ScrapeApi* | [**capture**](ramekin_client/docs/ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeApi* | [**create_scrape**](ramekin_client/docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
 *ScrapeApi* | [**get_scrape**](ramekin_client/docs/ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
 *ScrapeApi* | [**get_step_output**](ramekin_client/docs/ScrapeApi.md#get_step_output) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 *ScrapeApi* | [**retry_scrape**](ramekin_client/docs/ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
-*ShoppingListApi* | [**clear_checked**](ramekin_client/docs/ShoppingListApi.md#clear_checked) | **DELETE** /api/shopping-list/clear-checked | 
-*ShoppingListApi* | [**create_items**](ramekin_client/docs/ShoppingListApi.md#create_items) | **POST** /api/shopping-list | 
-*ShoppingListApi* | [**delete_item**](ramekin_client/docs/ShoppingListApi.md#delete_item) | **DELETE** /api/shopping-list/{id} | 
-*ShoppingListApi* | [**list_items**](ramekin_client/docs/ShoppingListApi.md#list_items) | **GET** /api/shopping-list | 
-*ShoppingListApi* | [**sync_items**](ramekin_client/docs/ShoppingListApi.md#sync_items) | **POST** /api/shopping-list/sync | 
-*ShoppingListApi* | [**update_item**](ramekin_client/docs/ShoppingListApi.md#update_item) | **PUT** /api/shopping-list/{id} | 
+*SyncApi* | [**sync_meal_plans**](ramekin_client/docs/SyncApi.md#sync_meal_plans) | **POST** /api/sync/meal-plans | 
+*SyncApi* | [**sync_recipes**](ramekin_client/docs/SyncApi.md#sync_recipes) | **GET** /api/sync/recipes | 
+*SyncApi* | [**sync_shopping_list**](ramekin_client/docs/SyncApi.md#sync_shopping_list) | **POST** /api/sync/shopping-list | 
+*SyncApi* | [**sync_tags**](ramekin_client/docs/SyncApi.md#sync_tags) | **GET** /api/sync/tags | 
 *TagsApi* | [**create_tag**](ramekin_client/docs/TagsApi.md#create_tag) | **POST** /api/tags | 
 *TagsApi* | [**delete_tag**](ramekin_client/docs/TagsApi.md#delete_tag) | **DELETE** /api/tags/{id} | 
 *TagsApi* | [**list_all_tags**](ramekin_client/docs/TagsApi.md#list_all_tags) | **GET** /api/tags | 
@@ -125,18 +119,12 @@ Class | Method | HTTP request | Description
  - [CalorieRange](ramekin_client/docs/CalorieRange.md)
  - [CalorieStatus](ramekin_client/docs/CalorieStatus.md)
  - [CaptureRequest](ramekin_client/docs/CaptureRequest.md)
- - [ClearCheckedResponse](ramekin_client/docs/ClearCheckedResponse.md)
  - [CreateClientLogRequest](ramekin_client/docs/CreateClientLogRequest.md)
  - [CreateClientLogResponse](ramekin_client/docs/CreateClientLogResponse.md)
- - [CreateMealPlanRequest](ramekin_client/docs/CreateMealPlanRequest.md)
- - [CreateMealPlanResponse](ramekin_client/docs/CreateMealPlanResponse.md)
  - [CreateRecipeRequest](ramekin_client/docs/CreateRecipeRequest.md)
  - [CreateRecipeResponse](ramekin_client/docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](ramekin_client/docs/CreateScrapeRequest.md)
  - [CreateScrapeResponse](ramekin_client/docs/CreateScrapeResponse.md)
- - [CreateShoppingListItemRequest](ramekin_client/docs/CreateShoppingListItemRequest.md)
- - [CreateShoppingListRequest](ramekin_client/docs/CreateShoppingListRequest.md)
- - [CreateShoppingListResponse](ramekin_client/docs/CreateShoppingListResponse.md)
  - [CreateTagRequest](ramekin_client/docs/CreateTagRequest.md)
  - [CreateTagResponse](ramekin_client/docs/CreateTagResponse.md)
  - [CustomEnrichRequest](ramekin_client/docs/CustomEnrichRequest.md)
@@ -164,11 +152,15 @@ Class | Method | HTTP request | Description
  - [LookupImportJobsRequest](ramekin_client/docs/LookupImportJobsRequest.md)
  - [LookupImportJobsResponse](ramekin_client/docs/LookupImportJobsResponse.md)
  - [MeResponse](ramekin_client/docs/MeResponse.md)
+ - [MealPlanFields](ramekin_client/docs/MealPlanFields.md)
  - [MealPlanItem](ramekin_client/docs/MealPlanItem.md)
  - [MealPlanListResponse](ramekin_client/docs/MealPlanListResponse.md)
+ - [MealPlanOp](ramekin_client/docs/MealPlanOp.md)
  - [MealType](ramekin_client/docs/MealType.md)
  - [Measurement](ramekin_client/docs/Measurement.md)
  - [NormalizeTitleResponse](ramekin_client/docs/NormalizeTitleResponse.md)
+ - [OpKind](ramekin_client/docs/OpKind.md)
+ - [OpResult](ramekin_client/docs/OpResult.md)
  - [PaginationMetadata](ramekin_client/docs/PaginationMetadata.md)
  - [PingResponse](ramekin_client/docs/PingResponse.md)
  - [PrepareTextRecipeRequest](ramekin_client/docs/PrepareTextRecipeRequest.md)
@@ -181,27 +173,26 @@ Class | Method | HTTP request | Description
  - [RescrapeResponse](ramekin_client/docs/RescrapeResponse.md)
  - [RetryScrapeResponse](ramekin_client/docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](ramekin_client/docs/ScrapeJobResponse.md)
- - [ShoppingListItemResponse](ramekin_client/docs/ShoppingListItemResponse.md)
- - [ShoppingListResponse](ramekin_client/docs/ShoppingListResponse.md)
+ - [ShoppingListFields](ramekin_client/docs/ShoppingListFields.md)
+ - [ShoppingListOp](ramekin_client/docs/ShoppingListOp.md)
  - [SignupRequest](ramekin_client/docs/SignupRequest.md)
  - [SignupResponse](ramekin_client/docs/SignupResponse.md)
  - [SortBy](ramekin_client/docs/SortBy.md)
  - [StepState](ramekin_client/docs/StepState.md)
- - [SyncCreateItem](ramekin_client/docs/SyncCreateItem.md)
- - [SyncCreatedItem](ramekin_client/docs/SyncCreatedItem.md)
+ - [SyncMealPlan](ramekin_client/docs/SyncMealPlan.md)
+ - [SyncMealPlansRequest](ramekin_client/docs/SyncMealPlansRequest.md)
+ - [SyncMealPlansResponse](ramekin_client/docs/SyncMealPlansResponse.md)
  - [SyncRecipe](ramekin_client/docs/SyncRecipe.md)
  - [SyncRecipesResponse](ramekin_client/docs/SyncRecipesResponse.md)
- - [SyncRequest](ramekin_client/docs/SyncRequest.md)
- - [SyncResponse](ramekin_client/docs/SyncResponse.md)
- - [SyncServerChange](ramekin_client/docs/SyncServerChange.md)
- - [SyncUpdateItem](ramekin_client/docs/SyncUpdateItem.md)
- - [SyncUpdatedItem](ramekin_client/docs/SyncUpdatedItem.md)
+ - [SyncShoppingListItem](ramekin_client/docs/SyncShoppingListItem.md)
+ - [SyncShoppingListRequest](ramekin_client/docs/SyncShoppingListRequest.md)
+ - [SyncShoppingListResponse](ramekin_client/docs/SyncShoppingListResponse.md)
+ - [SyncTag](ramekin_client/docs/SyncTag.md)
+ - [SyncTagsResponse](ramekin_client/docs/SyncTagsResponse.md)
  - [TagItem](ramekin_client/docs/TagItem.md)
  - [TagsListResponse](ramekin_client/docs/TagsListResponse.md)
  - [UnauthedPingResponse](ramekin_client/docs/UnauthedPingResponse.md)
- - [UpdateMealPlanRequest](ramekin_client/docs/UpdateMealPlanRequest.md)
  - [UpdateRecipeRequest](ramekin_client/docs/UpdateRecipeRequest.md)
- - [UpdateShoppingListItemRequest](ramekin_client/docs/UpdateShoppingListItemRequest.md)
  - [UploadPhotoResponse](ramekin_client/docs/UploadPhotoResponse.md)
  - [VersionListResponse](ramekin_client/docs/VersionListResponse.md)
  - [VersionSummary](ramekin_client/docs/VersionSummary.md)

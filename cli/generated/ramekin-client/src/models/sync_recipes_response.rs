@@ -13,13 +13,16 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SyncRecipesResponse {
+    /// The next `limit` active recipes (by ascending recipe ID, starting past `after_id`) changed at or after `cursor`. All active recipes match when `cursor` is absent.
+    #[serde(rename = "changes")]
+    pub changes: Vec<models::SyncRecipe>,
     /// This page's snapshot watermark. Once a sweep completes, persist the *first* page's cursor and pass it to the next sync: changes committed mid-sweep can land in id ranges the sweep already passed, and only the first watermark is low enough to redeliver all of them. Changes may be redelivered across syncs, but none can be skipped.
     #[serde(rename = "cursor")]
     pub cursor: i64,
-    /// Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first page; later pages return an empty list.
+    /// Recipe IDs deleted at or after `cursor`. Only sent on a delta sweep's first page; later pages and full resyncs return an empty list.
     #[serde(rename = "deleted")]
     pub deleted: Vec<uuid::Uuid>,
-    /// True when this page lists every active recipe in its ID range rather than changes since `cursor`: `cursor` was absent, predates a restored backup or import, or came from another database. The client must then drop cached recipes the sweep doesn't return — a recipe rolled back by a restore is in neither `recipes` nor `deleted` — and request the sweep's remaining pages without `cursor`, since a later page could otherwise judge the same cursor differently. Pages are ordered by ID, so each settles the ID range from `after_id` (exclusive) through its last recipe, or to the end of the ID space on the last page.
+    /// True when this page lists every active recipe in its ID range rather than changes since `cursor`: `cursor` was absent, predates a restored backup, or came from another database. The client must then drop cached recipes the sweep doesn't return (a full resync sends no tombstones) and request the sweep's remaining pages without `cursor`, since a later page could otherwise judge the same cursor differently. Pages are ordered by ID, so each settles the ID range from `after_id` (exclusive) through its last recipe, or to the end of the ID space on the last page.
     #[serde(rename = "full_resync")]
     pub full_resync: bool,
     /// True when the sweep has more pages. Request the next one with the same `cursor` and `after_id` set to this page's last recipe ID.
@@ -28,27 +31,24 @@ pub struct SyncRecipesResponse {
     /// Version of the shared search-normalization contract (shared-test-vectors/search-normalization.json) the server was built with. A client mirroring server search locally must fail the sync when it does not support this version: matching with a stale contract would silently drop or add results relative to server search.
     #[serde(rename = "normalization_contract_version")]
     pub normalization_contract_version: i32,
-    /// The next `limit` active recipes (by ascending recipe ID, starting past `after_id`) changed at or after `cursor`. All active recipes match when `cursor` is absent.
-    #[serde(rename = "recipes")]
-    pub recipes: Vec<models::SyncRecipe>,
 }
 
 impl SyncRecipesResponse {
     pub fn new(
+        changes: Vec<models::SyncRecipe>,
         cursor: i64,
         deleted: Vec<uuid::Uuid>,
         full_resync: bool,
         has_more: bool,
         normalization_contract_version: i32,
-        recipes: Vec<models::SyncRecipe>,
     ) -> SyncRecipesResponse {
         SyncRecipesResponse {
+            changes,
             cursor,
             deleted,
             full_resync,
             has_more,
             normalization_contract_version,
-            recipes,
         }
     }
 }

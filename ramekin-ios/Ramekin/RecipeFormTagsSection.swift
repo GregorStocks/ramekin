@@ -2,7 +2,7 @@ import SwiftUI
 
 struct RecipeFormTagsSection: View {
     @Binding var tags: [String]
-    @Binding var availableTags: [TagItem]
+    @Binding var availableTags: [SyncTag]
     @Binding var selectedTagNamespace: String?
     @Binding var newTagValue: String
     @Binding var newNamespace: String
@@ -14,7 +14,7 @@ struct RecipeFormTagsSection: View {
         )
     }
 
-    private var groupedAvailableTags: [TagHierarchySupport.TagGroup<TagItem>] {
+    private var groupedAvailableTags: [TagHierarchySupport.TagGroup<SyncTag>] {
         TagHierarchySupport.groups(for: availableTags)
     }
 
@@ -141,7 +141,7 @@ struct RecipeFormTagsSection: View {
         }
     }
 
-    private func availableTagChips(_ tags: [TagItem]) -> some View {
+    private func availableTagChips(_ tags: [SyncTag]) -> some View {
         FlexibleTagGrid(items: tags, id: \.id) { tag in
             Button {
                 addExistingTag(tag.name)

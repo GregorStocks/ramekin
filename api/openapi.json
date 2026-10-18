@@ -691,187 +691,6 @@
             "bearer_auth": []
           }
         ]
-      },
-      "post": {
-        "tags": [
-          "meal_plans"
-        ],
-        "operationId": "create_meal_plan",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateMealPlanRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "description": "Meal plan created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreateMealPlanResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid request (recipe not found or deleted)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Duplicate meal plan entry",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
-    "/api/meal-plans/{id}": {
-      "put": {
-        "tags": [
-          "meal_plans"
-        ],
-        "operationId": "update_meal_plan",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Meal plan ID",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateMealPlanRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Meal plan updated"
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Meal plan not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Conflict with existing meal plan",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "meal_plans"
-        ],
-        "operationId": "delete_meal_plan",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Meal plan ID",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Meal plan deleted"
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Meal plan not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
       }
     },
     "/api/photos": {
@@ -1281,89 +1100,6 @@
             "description": "Paprika recipes archive (.paprikarecipes)",
             "content": {
               "application/zip": {}
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
-    "/api/recipes/sync": {
-      "get": {
-        "tags": [
-          "recipes"
-        ],
-        "operationId": "sync_recipes",
-        "parameters": [
-          {
-            "name": "cursor",
-            "in": "query",
-            "description": "Cursor returned by a previous sync. Absent means a full sync. Every\npage of one sweep passes the same cursor.",
-            "required": false,
-            "schema": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "format": "int64"
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Maximum number of recipes returned per page, between 1 and 500.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          {
-            "name": "after_id",
-            "in": "query",
-            "description": "ID of the last recipe on the previous page. Absent on a sweep's first\npage.",
-            "required": false,
-            "schema": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Recipe changes for local cache sync",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SyncRecipesResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid limit",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
             }
           },
           "401": {
@@ -2353,68 +2089,35 @@
         ]
       }
     },
-    "/api/shopping-list": {
-      "get": {
-        "tags": [
-          "shopping_list"
-        ],
-        "operationId": "list_items",
-        "responses": {
-          "200": {
-            "description": "List of shopping list items",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ShoppingListResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      },
+    "/api/sync/meal-plans": {
       "post": {
         "tags": [
-          "shopping_list"
+          "sync"
         ],
-        "operationId": "create_items",
+        "operationId": "sync_meal_plans",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateShoppingListRequest"
+                "$ref": "#/components/schemas/SyncMealPlansRequest"
               }
             }
           },
           "required": true
         },
         "responses": {
-          "201": {
-            "description": "Items created",
+          "200": {
+            "description": "Ops applied; changes since the cursor",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateShoppingListResponse"
+                  "$ref": "#/components/schemas/SyncMealPlansResponse"
                 }
               }
             }
           },
           "400": {
-            "description": "Invalid request",
+            "description": "A malformed op",
             "content": {
               "application/json": {
                 "schema": {
@@ -2441,19 +2144,67 @@
         ]
       }
     },
-    "/api/shopping-list/clear-checked": {
-      "delete": {
+    "/api/sync/recipes": {
+      "get": {
         "tags": [
-          "shopping_list"
+          "sync"
         ],
-        "operationId": "clear_checked",
+        "operationId": "sync_recipes",
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor returned by a previous sync. Absent means a full sync. Every\npage of one sweep passes the same cursor.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of recipes returned per page, between 1 and 500.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "after_id",
+            "in": "query",
+            "description": "ID of the last recipe on the previous page. Absent on a sweep's first\npage.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uuid"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Checked items cleared",
+            "description": "Recipe changes for local cache sync",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClearCheckedResponse"
+                  "$ref": "#/components/schemas/SyncRecipesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
@@ -2476,17 +2227,17 @@
         ]
       }
     },
-    "/api/shopping-list/sync": {
+    "/api/sync/shopping-list": {
       "post": {
         "tags": [
-          "shopping_list"
+          "sync"
         ],
-        "operationId": "sync_items",
+        "operationId": "sync_shopping_list",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SyncRequest"
+                "$ref": "#/components/schemas/SyncShoppingListRequest"
               }
             }
           },
@@ -2494,11 +2245,21 @@
         },
         "responses": {
           "200": {
-            "description": "Sync completed",
+            "description": "Ops applied; changes since the cursor",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SyncResponse"
+                  "$ref": "#/components/schemas/SyncShoppingListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A malformed op",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
@@ -2521,98 +2282,40 @@
         ]
       }
     },
-    "/api/shopping-list/{id}": {
-      "put": {
+    "/api/sync/tags": {
+      "get": {
         "tags": [
-          "shopping_list"
+          "sync"
         ],
-        "operationId": "update_item",
+        "operationId": "sync_tags",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "description": "Shopping list item ID",
-            "required": true,
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor returned by the previous sync. Absent means a full sync.",
+            "required": false,
             "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateShoppingListItemRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Item updated"
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Item not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "shopping_list"
-        ],
-        "operationId": "delete_item",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Shopping list item ID",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
             }
           }
         ],
         "responses": {
-          "204": {
-            "description": "Item deleted"
-          },
-          "401": {
-            "description": "Unauthorized",
+          "200": {
+            "description": "Tag changes for the local cache",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/SyncTagsResponse"
                 }
               }
             }
           },
-          "404": {
-            "description": "Item not found",
+          "401": {
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
@@ -3155,18 +2858,6 @@
           }
         }
       },
-      "ClearCheckedResponse": {
-        "type": "object",
-        "required": [
-          "deleted_count"
-        ],
-        "properties": {
-          "deleted_count": {
-            "type": "integer",
-            "minimum": 0
-          }
-        }
-      },
       "CreateClientLogRequest": {
         "type": "object",
         "required": [
@@ -3195,45 +2886,6 @@
         }
       },
       "CreateClientLogResponse": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          }
-        }
-      },
-      "CreateMealPlanRequest": {
-        "type": "object",
-        "required": [
-          "recipe_id",
-          "meal_date",
-          "meal_type"
-        ],
-        "properties": {
-          "meal_date": {
-            "type": "string",
-            "format": "date"
-          },
-          "meal_type": {
-            "$ref": "#/components/schemas/MealType"
-          },
-          "notes": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "recipe_id": {
-            "type": "string",
-            "format": "uuid"
-          }
-        }
-      },
-      "CreateMealPlanResponse": {
         "type": "object",
         "required": [
           "id"
@@ -3313,85 +2965,6 @@
           "status": {
             "type": "string",
             "description": "Current job status"
-          }
-        }
-      },
-      "CreateShoppingListItemRequest": {
-        "type": "object",
-        "required": [
-          "item"
-        ],
-        "properties": {
-          "amount": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "category_override": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "client_id": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "uuid",
-            "description": "Client-generated ID for offline sync"
-          },
-          "item": {
-            "type": "string"
-          },
-          "note": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "source_recipe_id": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "uuid"
-          },
-          "source_recipe_title": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        }
-      },
-      "CreateShoppingListRequest": {
-        "type": "object",
-        "required": [
-          "items"
-        ],
-        "properties": {
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateShoppingListItemRequest"
-            }
-          }
-        }
-      },
-      "CreateShoppingListResponse": {
-        "type": "object",
-        "required": [
-          "ids"
-        ],
-        "properties": {
-          "ids": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
           }
         }
       },
@@ -4002,6 +3575,42 @@
           }
         }
       },
+      "MealPlanFields": {
+        "type": "object",
+        "description": "A meal plan's writable fields. On `create`, `recipe_id`, `meal_date` and\n`meal_type` are required. On `update`, only the fields present change,\nand `recipe_id` can't. `notes` is cleared with \"\".",
+        "properties": {
+          "meal_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "meal_type": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/MealType"
+              }
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "recipe_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          }
+        }
+      },
       "MealPlanItem": {
         "type": "object",
         "required": [
@@ -4059,6 +3668,26 @@
           }
         }
       },
+      "MealPlanOp": {
+        "type": "object",
+        "required": [
+          "op",
+          "id"
+        ],
+        "properties": {
+          "fields": {
+            "$ref": "#/components/schemas/MealPlanFields"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The plan's id. A create chooses it."
+          },
+          "op": {
+            "$ref": "#/components/schemas/OpKind"
+          }
+        }
+      },
       "MealType": {
         "type": "string",
         "enum": [
@@ -4108,6 +3737,25 @@
             "type": "string"
           }
         }
+      },
+      "OpKind": {
+        "type": "string",
+        "description": "What a write op does to its row.",
+        "enum": [
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      "OpResult": {
+        "type": "string",
+        "description": "The outcome of one write op, reported in request order.",
+        "enum": [
+          "applied",
+          "gone",
+          "duplicate",
+          "recipe_missing"
+        ]
       },
       "PaginationMetadata": {
         "type": "object",
@@ -4612,18 +4260,9 @@
           }
         }
       },
-      "ShoppingListItemResponse": {
+      "ShoppingListFields": {
         "type": "object",
-        "required": [
-          "id",
-          "item",
-          "is_checked",
-          "sort_order",
-          "version",
-          "updated_at",
-          "computed_category",
-          "category"
-        ],
+        "description": "An item's writable fields. On `create`, `item` is required and the rest\ndefault (unchecked, sorted last). On `update`, only the fields present\nchange. `amount`, `note` and `category_override` are cleared with \"\".\nThe source recipe is set on create and never changes.",
         "properties": {
           "amount": {
             "type": [
@@ -4631,30 +4270,24 @@
               "null"
             ]
           },
-          "category": {
-            "type": "string",
-            "description": "Aisle category for grouping (override when set, otherwise computed)."
-          },
           "category_override": {
             "type": [
               "string",
               "null"
             ],
-            "description": "User-selected category override; when set, it wins over computed category."
-          },
-          "computed_category": {
-            "type": "string",
-            "description": "Category computed from the item name before applying any override."
-          },
-          "id": {
-            "type": "string",
-            "format": "uuid"
+            "description": "User-selected aisle category; wins over the computed one."
           },
           "is_checked": {
-            "type": "boolean"
+            "type": [
+              "boolean",
+              "null"
+            ]
           },
           "item": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "note": {
             "type": [
@@ -4663,7 +4296,10 @@
             ]
           },
           "sort_order": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "format": "int32"
           },
           "source_recipe_id": {
@@ -4678,36 +4314,26 @@
               "string",
               "null"
             ]
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "version": {
-            "type": "integer",
-            "format": "int32"
           }
         }
       },
-      "ShoppingListResponse": {
+      "ShoppingListOp": {
         "type": "object",
         "required": [
-          "items",
-          "category_order"
+          "op",
+          "id"
         ],
         "properties": {
-          "category_order": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Canonical category display order for grouping items; every item's\n`category` is guaranteed to appear in this list."
+          "fields": {
+            "$ref": "#/components/schemas/ShoppingListFields"
           },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ShoppingListItemResponse"
-            }
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The item's id. A create chooses it."
+          },
+          "op": {
+            "$ref": "#/components/schemas/OpKind"
           }
         }
       },
@@ -4808,82 +4434,116 @@
           }
         }
       },
-      "SyncCreateItem": {
+      "SyncMealPlan": {
         "type": "object",
-        "description": "Request to create an item during sync (created offline)",
         "required": [
-          "client_id",
-          "item",
-          "is_checked",
-          "sort_order"
+          "id",
+          "recipe_id",
+          "recipe_title",
+          "meal_date",
+          "meal_type",
+          "change_seq"
         ],
         "properties": {
-          "amount": {
-            "type": [
-              "string",
-              "null"
-            ]
+          "change_seq": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Sync stamp of the plan's own last change. A cached copy with a higher\none is newer than this row."
           },
-          "category_override": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "client_id": {
+          "id": {
             "type": "string",
             "format": "uuid"
           },
-          "is_checked": {
-            "type": "boolean"
+          "meal_date": {
+            "type": "string",
+            "format": "date"
           },
-          "item": {
-            "type": "string"
+          "meal_type": {
+            "$ref": "#/components/schemas/MealType"
           },
-          "note": {
+          "notes": {
             "type": [
               "string",
               "null"
             ]
           },
-          "sort_order": {
-            "type": "integer",
-            "format": "int32"
+          "recipe_id": {
+            "type": "string",
+            "format": "uuid"
           },
-          "source_recipe_id": {
+          "recipe_title": {
+            "type": "string",
+            "description": "The recipe's current title and first photo. A new recipe version\nresends the plans that use it."
+          },
+          "thumbnail_photo_id": {
             "type": [
               "string",
               "null"
             ],
             "format": "uuid"
-          },
-          "source_recipe_title": {
-            "type": [
-              "string",
-              "null"
-            ]
           }
         }
       },
-      "SyncCreatedItem": {
+      "SyncMealPlansRequest": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "`cursor` from the previous sync. Absent means a full sync."
+          },
+          "ops": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MealPlanOp"
+            },
+            "description": "Writes to apply, in order, before reading changes."
+          }
+        }
+      },
+      "SyncMealPlansResponse": {
         "type": "object",
         "required": [
-          "client_id",
-          "server_id",
-          "version"
+          "results",
+          "changes",
+          "deleted",
+          "cursor",
+          "full_resync"
         ],
         "properties": {
-          "client_id": {
-            "type": "string",
-            "format": "uuid"
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SyncMealPlan"
+            },
+            "description": "Live plans (of live recipes) changed at or after the request's\n`cursor`, this request's own writes and every refused op's live plan\nincluded; every live plan on a full resync."
           },
-          "server_id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "version": {
+          "cursor": {
             "type": "integer",
-            "format": "int32"
+            "format": "int64",
+            "description": "Pass as `cursor` on the next sync."
+          },
+          "deleted": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Plan IDs deleted, or whose recipe was deleted, at or after `cursor`,\nand every refused op's plan that isn't live. Only the latter on a full\nresync."
+          },
+          "full_resync": {
+            "type": "boolean",
+            "description": "True when `changes` holds every live plan: drop cached plans it omits."
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpResult"
+            },
+            "description": "One per request op, in order."
           }
         }
       },
@@ -4966,7 +4626,7 @@
       "SyncRecipesResponse": {
         "type": "object",
         "required": [
-          "recipes",
+          "changes",
           "deleted",
           "cursor",
           "has_more",
@@ -4974,6 +4634,13 @@
           "normalization_contract_version"
         ],
         "properties": {
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SyncRecipe"
+            },
+            "description": "The next `limit` active recipes (by ascending recipe ID, starting past\n`after_id`) changed at or after `cursor`. All active recipes match when\n`cursor` is absent."
+          },
           "cursor": {
             "type": "integer",
             "format": "int64",
@@ -4985,11 +4652,11 @@
               "type": "string",
               "format": "uuid"
             },
-            "description": "Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first\npage; later pages return an empty list."
+            "description": "Recipe IDs deleted at or after `cursor`. Only sent on a delta sweep's\nfirst page; later pages and full resyncs return an empty list."
           },
           "full_resync": {
             "type": "boolean",
-            "description": "True when this page lists every active recipe in its ID range rather\nthan changes since `cursor`: `cursor` was absent, predates a restored\nbackup or import, or came from another database. The client must then\ndrop cached recipes the sweep doesn't return — a recipe rolled back by\na restore is in neither `recipes` nor `deleted` — and request the\nsweep's remaining pages without `cursor`, since a later page could\notherwise judge the same cursor differently. Pages are ordered by ID,\nso each settles the ID range from `after_id` (exclusive) through its\nlast recipe, or to the end of the ID space on the last page."
+            "description": "True when this page lists every active recipe in its ID range rather\nthan changes since `cursor`: `cursor` was absent, predates a restored\nbackup, or came from another database. The client must then drop\ncached recipes the sweep doesn't return (a full resync sends no\ntombstones) and request the\nsweep's remaining pages without `cursor`, since a later page could\notherwise judge the same cursor differently. Pages are ordered by ID,\nso each settles the ID range from `after_id` (exclusive) through its\nlast recipe, or to the end of the ID space on the last page."
           },
           "has_more": {
             "type": "boolean",
@@ -5000,121 +4667,19 @@
             "format": "int32",
             "description": "Version of the shared search-normalization contract\n(shared-test-vectors/search-normalization.json) the server was built\nwith. A client mirroring server search locally must fail the sync when\nit does not support this version: matching with a stale contract would\nsilently drop or add results relative to server search.",
             "minimum": 0
-          },
-          "recipes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SyncRecipe"
-            },
-            "description": "The next `limit` active recipes (by ascending recipe ID, starting past\n`after_id`) changed at or after `cursor`. All active recipes match when\n`cursor` is absent."
           }
         }
       },
-      "SyncRequest": {
-        "type": "object",
-        "properties": {
-          "creates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SyncCreateItem"
-            },
-            "description": "Items created offline"
-          },
-          "cursor": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "format": "int64",
-            "description": "`cursor` from the previous sync's response. Server returns changes at\nor after it; without one, it returns every item."
-          },
-          "deletes": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "IDs of items deleted offline"
-          },
-          "updates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SyncUpdateItem"
-            },
-            "description": "Items updated offline"
-          }
-        }
-      },
-      "SyncResponse": {
-        "type": "object",
-        "required": [
-          "created",
-          "updated",
-          "deleted",
-          "server_changes",
-          "cursor",
-          "full_resync",
-          "category_order"
-        ],
-        "properties": {
-          "category_order": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Canonical category display order for grouping items; every item's\n`category` is guaranteed to appear in this list."
-          },
-          "created": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SyncCreatedItem"
-            },
-            "description": "Items that were created (maps client_id to server_id)"
-          },
-          "cursor": {
-            "type": "integer",
-            "format": "int64",
-            "description": "Snapshot watermark to pass as `cursor` on the next sync. Changes may be\nredelivered across syncs, but none can be skipped."
-          },
-          "deleted": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "IDs of items that were deleted"
-          },
-          "full_resync": {
-            "type": "boolean",
-            "description": "True when `server_changes` holds every live item rather than changes\nsince the request's cursor: no cursor was sent, or it predates a\nrestored backup or import, or came from another database. The client\nmust then drop synced cached items missing from `server_changes` — an\nitem rolled back by a restore is in neither `server_changes` nor\n`deleted`."
-          },
-          "server_changes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SyncServerChange"
-            },
-            "description": "Server-side changes since the request's cursor"
-          },
-          "updated": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SyncUpdatedItem"
-            },
-            "description": "Items that were updated (with success status)"
-          }
-        }
-      },
-      "SyncServerChange": {
+      "SyncShoppingListItem": {
         "type": "object",
         "required": [
           "id",
           "item",
           "is_checked",
           "sort_order",
-          "version",
-          "updated_at",
           "computed_category",
-          "category"
+          "category",
+          "change_seq"
         ],
         "properties": {
           "amount": {
@@ -5133,6 +4698,11 @@
               "null"
             ],
             "description": "User-selected category override; when set, it wins over computed category."
+          },
+          "change_seq": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Sync stamp of the row's last change. A cached copy with a higher one\nis newer than this row."
           },
           "computed_category": {
             "type": "string",
@@ -5170,97 +4740,134 @@
               "string",
               "null"
             ]
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "version": {
-            "type": "integer",
-            "format": "int32"
           }
         }
       },
-      "SyncUpdateItem": {
+      "SyncShoppingListRequest": {
         "type": "object",
-        "description": "Request to update an item during sync (modified offline)",
-        "required": [
-          "id",
-          "expected_version"
-        ],
         "properties": {
-          "amount": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "category_override": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "clear_category_override": {
-            "type": [
-              "boolean",
-              "null"
-            ]
-          },
-          "expected_version": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Expected version for optimistic locking"
-          },
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "is_checked": {
-            "type": [
-              "boolean",
-              "null"
-            ]
-          },
-          "item": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "note": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "sort_order": {
+          "cursor": {
             "type": [
               "integer",
               "null"
             ],
-            "format": "int32"
+            "format": "int64",
+            "description": "`cursor` from the previous sync. Absent means a full sync."
+          },
+          "ops": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShoppingListOp"
+            },
+            "description": "Writes to apply, in order, before reading changes."
           }
         }
       },
-      "SyncUpdatedItem": {
+      "SyncShoppingListResponse": {
+        "type": "object",
+        "required": [
+          "results",
+          "changes",
+          "deleted",
+          "cursor",
+          "full_resync",
+          "category_order"
+        ],
+        "properties": {
+          "category_order": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Canonical category display order for grouping items; every item's\n`category` is guaranteed to appear in this list."
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SyncShoppingListItem"
+            },
+            "description": "Live items changed at or after the request's `cursor`, this request's\nown writes included; every live item on a full resync."
+          },
+          "cursor": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Pass as `cursor` on the next sync."
+          },
+          "deleted": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Item IDs deleted at or after `cursor`, and every refused op's item\nthat isn't live. Only the latter on a full resync."
+          },
+          "full_resync": {
+            "type": "boolean",
+            "description": "True when `changes` holds every live item: no cursor was sent, or it\npredates a restored backup, or came from another database. Drop\ncached items it omits."
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpResult"
+            },
+            "description": "One per request op, in order."
+          }
+        }
+      },
+      "SyncTag": {
         "type": "object",
         "required": [
           "id",
-          "version",
-          "success"
+          "name",
+          "change_seq"
         ],
         "properties": {
+          "change_seq": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Sync stamp of the tag's last change."
+          },
           "id": {
             "type": "string",
             "format": "uuid"
           },
-          "success": {
-            "type": "boolean"
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "SyncTagsResponse": {
+        "type": "object",
+        "required": [
+          "changes",
+          "deleted",
+          "cursor",
+          "full_resync"
+        ],
+        "properties": {
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SyncTag"
+            },
+            "description": "Live tags created, renamed or revived at or after `cursor`; every live\ntag on a full resync."
           },
-          "version": {
+          "cursor": {
             "type": "integer",
-            "format": "int32"
+            "format": "int64",
+            "description": "Pass as `cursor` on the next sync."
+          },
+          "deleted": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Tag IDs deleted at or after `cursor`. Empty on a full resync."
+          },
+          "full_resync": {
+            "type": "boolean",
+            "description": "True when `changes` holds every live tag: drop cached tags it omits."
           }
         }
       },
@@ -5325,35 +4932,6 @@
         "properties": {
           "message": {
             "type": "string"
-          }
-        }
-      },
-      "UpdateMealPlanRequest": {
-        "type": "object",
-        "properties": {
-          "meal_date": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "date"
-          },
-          "meal_type": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/MealType"
-              }
-            ]
-          },
-          "notes": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "Set to empty string to clear notes, or provide new value"
           }
         }
       },
@@ -5474,54 +5052,6 @@
               "string",
               "null"
             ]
-          }
-        }
-      },
-      "UpdateShoppingListItemRequest": {
-        "type": "object",
-        "properties": {
-          "amount": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "category_override": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "clear_category_override": {
-            "type": [
-              "boolean",
-              "null"
-            ]
-          },
-          "is_checked": {
-            "type": [
-              "boolean",
-              "null"
-            ]
-          },
-          "item": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "note": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "sort_order": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "format": "int32"
           }
         }
       },

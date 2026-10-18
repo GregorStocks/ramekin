@@ -20,16 +20,11 @@ extension MealType {
 // MARK: - MealPlanView
 
 struct MealPlanView: View {
+    /// Plans live in the offline cache, so any week shows at once; syncing
+    /// only refreshes it.
+    @ObservedObject private var store = MealPlanStore.shared
     @State private var weekStart: Date = MealPlanDateSupport.mondayStart(from: Date())
-    @State private var mealPlans: [MealPlanItem] = []
-    @State private var isLoading = false
-    // The week whose meal plans are loaded. Reloading the same week after an
-    // add or edit updates it in place (keeping the scroll position, even when
-    // the week has no meals yet); switching weeks shows the loading state.
-    @State private var loadedWeek: Date?
-    @State private var error: String?
-    /// Failures of add/remove once the week is on screen; shown as an alert
-    /// because `error` only replaces a week that hasn't loaded.
+    /// Failures of add/edit, shown as an alert.
     @State private var actionError: String?
 
     @State private var showingRecipePicker = false
@@ -47,16 +42,7 @@ struct MealPlanView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                if isLoading && loadedWeek != weekStart {
-                    ProgressView("Loading meal plans…")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if let error = error, loadedWeek != weekStart {
-                    errorView(message: error)
-                } else {
-                    weekCalendar
-                }
-            }
+            weekCalendar
             .navigationTitle("Meal Plan")
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
@@ -85,21 +71,15 @@ struct MealPlanView: View {
             }
             .refreshable {
                 logger.log("Pull-to-refresh started", source: "MealPlan")
-                await loadMealPlans()
+                await store.syncWithServer()
                 logger.log("Pull-to-refresh completed", source: "MealPlan")
             }
             .task {
-                await loadMealPlans()
-            }
-            .onChange(of: weekStart) { _ in
-                // The old week's meals don't belong to the new dates; clearing
-                // them shows the loading state instead of an empty week.
-                mealPlans = []
-                loadedWeek = nil
-                Task { await loadMealPlans() }
+                await store.syncWithServer()
             }
             .onReceive(NotificationCenter.default.publisher(for: .recipeDeleted)) { _ in
-                Task { await loadMealPlans() }
+                // The server tombstones a deleted recipe's plans.
+                Task { await store.syncWithServer() }
             }
             .sheet(isPresented: $showingRecipePicker) {
                 RecipePickerSheet(
@@ -108,14 +88,12 @@ struct MealPlanView: View {
                 ) { recipe in
                     // Another Add sheet can reassign the picker state before
                     // this add finishes, so pass the slot along with it.
-                    let date = pickerDate
-                    let mealType = pickerMealType
-                    Task { await addMealPlan(recipe: recipe, date: date, mealType: mealType) }
+                    addMealPlan(recipe: recipe, date: pickerDate, mealType: pickerMealType)
                 }
             }
             .sheet(item: $editingMealPlan) { meal in
                 EditMealPlanSheet(meal: meal) { mealDate, mealType, notes in
-                    try await updateMealPlan(
+                    try updateMealPlan(
                         meal,
                         mealDate: mealDate,
                         mealType: mealType,
@@ -133,7 +111,8 @@ struct MealPlanView: View {
             ) {
                 if let meal = deletingMealPlan {
                     Button("Remove \(meal.recipeTitle)", role: .destructive) {
-                        Task { await deleteMealPlan(meal) }
+                        store.delete(meal)
+                        deletingMealPlan = nil
                     }
                     Button("Cancel", role: .cancel) {
                         deletingMealPlan = nil
@@ -143,13 +122,18 @@ struct MealPlanView: View {
             .alert(
                 "Couldn't Update Meal Plan",
                 isPresented: Binding(
-                    get: { actionError != nil },
-                    set: { if !$0 { actionError = nil } }
+                    get: { actionError != nil || store.refusal != nil },
+                    set: {
+                        if !$0 {
+                            actionError = nil
+                            store.refusal = nil
+                        }
+                    }
                 )
             ) {
                 Button("OK", role: .cancel) {}
             } message: {
-                Text(actionError ?? "")
+                Text(actionError ?? store.refusal ?? "")
             }
             .navigationDestination(for: NavigationDestination.self) { destination in
                 switch destination {
@@ -189,11 +173,18 @@ struct MealPlanView: View {
         let endDate = Calendar.current.date(byAdding: .day, value: 6, to: weekStart)!
         let start = Self.weekRangeFormatter.string(from: weekStart)
         let end = Self.weekRangeFormatter.string(from: endDate)
-        return Text("\(start) – \(end)")
-            .font(.subheadline)
-            .foregroundColor(.secondary)
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 8)
+        return VStack(spacing: 2) {
+            Text("\(start) – \(end)")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            if store.lastSyncError != nil {
+                Text("Showing saved meals. Pull down to sync.")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 8)
     }
 
     private var daysInWeek: [Date] {
@@ -267,122 +258,30 @@ struct MealPlanView: View {
         }
     }
 
-    // MARK: - Error View
-
-    private func errorView(message: String) -> some View {
-        VStack(spacing: 16) {
-            Image(systemName: "exclamationmark.triangle")
-                .accessibilityHidden(true)
-                .font(.largeTitle)
-                .foregroundColor(.orange)
-            Text(message)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
-            Button("Retry") {
-                Task { await loadMealPlans() }
-            }
-            .buttonStyle(.borderedProminent)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-
     // MARK: - Helpers
 
     private func mealsFor(date: Date, mealType: MealType) -> [MealPlanItem] {
-        let dateString = Self.localDateString(from: date)
-        return mealPlans.filter { meal in
-            let mealDate = MealPlanDateSupport.localDate(fromAPIDate: meal.mealDate)
-            return Self.localDateString(from: mealDate) == dateString && meal.mealType == mealType
-        }
-    }
-
-    private static func localDateString(from date: Date) -> String {
-        SharedDateFormatters.localDateOnly.string(from: date)
+        store.plans(on: date, mealType: mealType)
     }
 
 }
 
-// MARK: - Data Loading
+// MARK: - Editing
 
 extension MealPlanView {
-    private func loadMealPlans() async {
-        await MainActor.run {
-            isLoading = true
-            error = nil
-        }
-
-        let requestedWeek = weekStart
-        let endDate = Calendar.current.date(byAdding: .day, value: 6, to: requestedWeek)!
-
+    private func addMealPlan(recipe: RecipeSummary, date: Date, mealType: MealType) {
         do {
-            let response = try await logger.timed("listMealPlans API", source: "MealPlan") {
-                try await RamekinAPI.shared.listMealPlans(startDate: requestedWeek, endDate: endDate)
-            }
-            await MainActor.run {
-                // A slow response for a week the user has left must not
-                // replace the week on screen.
-                guard weekStart == requestedWeek else { return }
-                mealPlans = response.mealPlans
-                loadedWeek = requestedWeek
-                isLoading = false
-            }
-        } catch is CancellationError {
-            logger.log("loadMealPlans cancelled", source: "MealPlan")
-        } catch {
-            await MainActor.run {
-                guard weekStart == requestedWeek else { return }
-                if loadedWeek != requestedWeek {
-                    self.error = "Could not load meal plans. Please try again."
-                } else {
-                    actionError = "Couldn't refresh this week. Pull down to try again."
-                }
-                isLoading = false
-            }
-        }
-    }
-
-    private func addMealPlan(recipe: RecipeSummary, date: Date, mealType: MealType) async {
-        do {
-            _ = try await logger.timed("createMealPlan API", source: "MealPlan") {
-                try await RamekinAPI.shared.createMealPlan(
-                    recipeId: recipe.id,
-                    mealDate: date,
-                    mealType: mealType.rawValue
-                )
-            }
-            await loadMealPlans()
-            await MainActor.run {
-                scrollTarget = Calendar.current.startOfDay(for: date)
-            }
-        } catch is CancellationError {
-            // ignored
+            try store.add(
+                recipeId: recipe.id,
+                recipeTitle: recipe.title,
+                thumbnailPhotoId: recipe.thumbnailPhotoId,
+                date: date,
+                mealType: mealType
+            )
+            scrollTarget = Calendar.current.startOfDay(for: date)
         } catch {
             logger.log("addMealPlan error: \(error.localizedDescription)", source: "MealPlan")
-            let message = APIErrorFormatter.code(from: error) == .conflict
-                ? "This recipe is already planned for this meal."
-                : APIErrorFormatter.userMessage(from: error, fallback: "Failed to add to meal plan")
-            await MainActor.run {
-                actionError = message
-            }
-        }
-    }
-
-    private func deleteMealPlan(_ meal: MealPlanItem) async {
-        do {
-            try await logger.timed("deleteMealPlan API", source: "MealPlan") {
-                try await RamekinAPI.shared.deleteMealPlan(id: meal.id)
-            }
-            await loadMealPlans()
-        } catch is CancellationError {
-            // ignored
-        } catch {
-            logger.log("deleteMealPlan error: \(error.localizedDescription)", source: "MealPlan")
-            await MainActor.run {
-                actionError = APIErrorFormatter.userMessage(
-                    from: error, fallback: "Failed to remove from meal plan"
-                )
-            }
+            actionError = error.localizedDescription
         }
     }
 
@@ -391,25 +290,15 @@ extension MealPlanView {
         mealDate: Date,
         mealType: MealType,
         notes: String
-    ) async throws {
-        try await logger.timed("updateMealPlan API", source: "MealPlan") {
-            try await RamekinAPI.shared.updateMealPlan(
-                id: meal.id,
-                mealDate: mealDate,
-                mealType: mealType.rawValue,
-                notes: notes
-            )
-        }
-        await loadMealPlans()
+    ) throws {
+        try store.update(meal, date: mealDate, mealType: mealType, notes: notes)
         // A meal moved to another day would otherwise end up off screen.
         let oldDay = Calendar.current.startOfDay(
             for: MealPlanDateSupport.localDate(fromAPIDate: meal.mealDate)
         )
         let newDay = Calendar.current.startOfDay(for: mealDate)
         if newDay != oldDay {
-            await MainActor.run {
-                scrollTarget = newDay
-            }
+            scrollTarget = newDay
         }
     }
 }

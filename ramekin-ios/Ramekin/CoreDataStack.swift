@@ -151,23 +151,14 @@ class CoreDataStack: ObservableObject {
 
 // MARK: - ShoppingItem Extensions
 
-extension ShoppingItem {
-    /// Sync status values
-    enum SyncStatus: String {
-        case synced = "synced"
-        case pendingCreate = "pending_create"
-        case pendingUpdate = "pending_update"
-        case pendingDelete = "pending_delete"
+extension ShoppingItem: OutboxRow {
+    var rowId: UUID? {
+        get { id }
+        set { id = newValue }
     }
 
-    var syncStatusEnum: SyncStatus {
-        get {
-            SyncStatus(rawValue: syncStatus ?? "synced") ?? .synced
-        }
-        set {
-            syncStatus = newValue.rawValue
-        }
-    }
+    /// API names of the fields an update op can send.
+    static let syncedFields = ["item", "amount", "note", "is_checked", "sort_order", "category_override"]
 
     /// Creates a new shopping item with default values
     static func create(
@@ -192,31 +183,23 @@ extension ShoppingItem {
         shoppingItem.sortOrder = sortOrder
         shoppingItem.createdAt = Date()
         shoppingItem.updatedAt = Date()
-        shoppingItem.clearCategoryOverride = false
-        shoppingItem.syncStatus = SyncStatus.pendingCreate.rawValue
-        shoppingItem.serverVersion = 0
+        shoppingItem.syncStatusEnum = .pendingCreate
+        shoppingItem.changeSeq = 0
         return shoppingItem
     }
 
-    /// Marks the item as needing sync after a local update
-    func markUpdated() {
-        updatedAt = Date()
-        if syncStatusEnum == .synced {
-            syncStatusEnum = .pendingUpdate
+    /// The current value of an API field, for telling whether it changed
+    /// while a sync carrying it was in flight.
+    func syncedValue(of field: String) -> String? {
+        switch field {
+        case "item": return item
+        case "amount": return amount
+        case "note": return note
+        case "is_checked": return isChecked ? "true" : "false"
+        case "sort_order": return String(sortOrder)
+        case "category_override": return categoryOverride
+        default: return nil
         }
-    }
-
-    /// Marks the item for deletion (will be removed on next sync)
-    func markDeleted() {
-        syncStatusEnum = .pendingDelete
-        updatedAt = Date()
-    }
-
-    /// Marks the item as synced with the server
-    func markSynced(serverVersion: Int32) {
-        self.serverVersion = serverVersion
-        clearCategoryOverride = false
-        syncStatusEnum = .synced
     }
 }
 
@@ -229,7 +212,7 @@ extension ShoppingItem {
         request.predicate = NSPredicate(
             format: "accountKey == %@ AND syncStatus != %@",
             accountKey,
-            SyncStatus.pendingDelete.rawValue
+            OutboxStatus.pendingDelete.rawValue
         )
         request.sortDescriptors = [
             NSSortDescriptor(keyPath: \ShoppingItem.isChecked, ascending: true),
@@ -245,29 +228,7 @@ extension ShoppingItem {
         request.predicate = NSPredicate(
             format: "accountKey == %@ AND syncStatus != %@",
             accountKey,
-            SyncStatus.synced.rawValue
-        )
-        return request
-    }
-
-    /// Fetches items pending deletion
-    static func fetchSyncedOrPendingDelete(accountKey: String) -> NSFetchRequest<ShoppingItem> {
-        let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
-        request.predicate = NSPredicate(
-            // A nil status reads as synced (see `syncStatusEnum`).
-            format: "accountKey == %@ AND (syncStatus == nil OR syncStatus IN %@)",
-            accountKey,
-            [SyncStatus.synced.rawValue, SyncStatus.pendingDelete.rawValue]
-        )
-        return request
-    }
-
-    static func fetchPendingDelete(accountKey: String) -> NSFetchRequest<ShoppingItem> {
-        let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
-        request.predicate = NSPredicate(
-            format: "accountKey == %@ AND syncStatus == %@",
-            accountKey,
-            SyncStatus.pendingDelete.rawValue
+            OutboxStatus.synced.rawValue
         )
         return request
     }
@@ -281,18 +242,6 @@ extension ShoppingItem {
             id as CVarArg
         )
         request.fetchLimit = 1
-        return request
-    }
-
-    /// Fetches an item by its item name (case-insensitive)
-    static func fetchByItemName(_ name: String, accountKey: String) -> NSFetchRequest<ShoppingItem> {
-        let request = NSFetchRequest<ShoppingItem>(entityName: "ShoppingItem")
-        request.predicate = NSPredicate(
-            format: "accountKey == %@ AND item ==[c] %@ AND syncStatus != %@",
-            accountKey,
-            name,
-            SyncStatus.pendingDelete.rawValue
-        )
         return request
     }
 

@@ -15,17 +15,15 @@ from ramekin_client.api import (
     IngredientNamesApi,
     RecipesApi,
     ScrapeApi,
-    ShoppingListApi,
+    SyncApi,
 )
 from ramekin_client.models import (
     CreateRecipeRequest,
-    CreateShoppingListItemRequest,
-    CreateShoppingListRequest,
     EstimateCaloriesRequest,
-    SyncCreateItem,
-    SyncRequest,
-    SyncUpdateItem,
+    ShoppingListFields,
+    ShoppingListOp,
 )
+from shopping_list_ops import add, create, items, sync, update
 
 
 def unique(label: str) -> str:
@@ -257,9 +255,7 @@ def test_a_name_that_recovers_on_retry_is_not_a_failure(authed_api_client):
 def test_shopping_list_items_are_resolved(authed_api_client):
     client, _ = authed_api_client
     item = unique("sugar")
-    ShoppingListApi(client).create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item=item)])
-    )
+    add(SyncApi(client), item)
     wait_for(lambda: mock_calls(item.lower()) >= 1)
 
 
@@ -291,25 +287,18 @@ def test_status_and_retry_only_cover_your_own_names(
 @pytest.mark.parametrize("padding", ["", "  "])
 def test_resolving_a_name_reaches_incremental_sync(authed_api_client, padding):
     client, _ = authed_api_client
-    shopping = ShoppingListApi(client)
+    shopping = SyncApi(client)
     names_api = IngredientNamesApi(client)
     # Keywords say canned beans; the mock resolves it to bean sprouts.
     item = unique("beans")
     stored = f"{padding}{item}{padding}"
     other = unique("sugar")
     mock_fail(item.lower(), True)
-    shopping.create_items(
-        CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(item=stored),
-                CreateShoppingListItemRequest(item=other),
-            ]
-        )
-    )
+    add(shopping, stored, other)
     wait_for(lambda: failures_named(names_api, item.lower()))
     wait_for(lambda: mock_answers(other.lower()) >= 1)
-    synced = shopping.sync_items(SyncRequest())
-    before = {c.item: c for c in synced.server_changes}
+    synced = sync(shopping)
+    before = {c.item: c for c in synced.changes}
     assert before[stored].computed_category == "Canned Goods"
 
     # Resolving after the client's last sync stores the item's new category
@@ -319,95 +308,63 @@ def test_resolving_a_name_reaches_incremental_sync(authed_api_client, padding):
     names_api.retry_ingredient_names()
     changes = wait_for(
         lambda: [
-            c
-            for c in shopping.sync_items(
-                SyncRequest(cursor=synced.cursor)
-            ).server_changes
-            if c.item == stored
+            c for c in sync(shopping, cursor=synced.cursor).changes if c.item == stored
         ]
     )
     assert changes[0].computed_category == "Produce"
     assert changes[0].category == "Produce"
-    assert changes[0].version == before[stored].version
-    later = shopping.sync_items(SyncRequest(cursor=synced.cursor)).server_changes
+    assert changes[0].change_seq > before[stored].change_seq
+    later = sync(shopping, cursor=synced.cursor).changes
     assert other not in [c.item for c in later]
-    listed = {i.item: i for i in shopping.list_items().items}
+    listed = {i.item: i for i in items(shopping).values()}
     assert listed[stored].computed_category == "Produce"
 
 
 def test_a_resolution_that_keeps_the_category_resends_nothing(authed_api_client):
     client, _ = authed_api_client
-    shopping = ShoppingListApi(client)
+    shopping = SyncApi(client)
     names_api = IngredientNamesApi(client)
     # Keywords and the resolved entry both say Baking.
     item = unique("sugar")
     mock_fail(item.lower(), True)
-    shopping.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item=item)])
-    )
+    add(shopping, item)
     wait_for(lambda: failures_named(names_api, item.lower()))
-    synced = shopping.sync_items(SyncRequest())
+    synced = sync(shopping)
 
     mock_fail(item.lower(), False)
     names_api.retry_ingredient_names()
     wait_for(lambda: mock_answers(item.lower()) >= 1)
     wait_for(lambda: names_api.get_ingredient_names_status().pending == 0)
-    changes = shopping.sync_items(SyncRequest(cursor=synced.cursor)).server_changes
+    changes = sync(shopping, cursor=synced.cursor).changes
     assert item not in [c.item for c in changes]
-    listed = {i.item: i for i in shopping.list_items().items}
+    listed = {i.item: i for i in items(shopping).values()}
     assert listed[item].computed_category == "Baking"
 
 
 def test_sync_queues_only_names_it_wrote(authed_api_client):
     client, _ = authed_api_client
-    shopping = ShoppingListApi(client)
+    shopping = SyncApi(client)
     prefix = unique("")
     written = f"{prefix}a sugar"
-    rejected = f"{prefix}b sugar"
-    shopping.sync_items(
-        SyncRequest(
-            creates=[
-                SyncCreateItem(
-                    client_id=uuid.uuid4(), item=written, is_checked=False, sort_order=0
-                )
-            ],
-            updates=[
-                SyncUpdateItem(id=uuid.uuid4(), expected_version=1, item=rejected)
-            ],
-        )
-    )
-    # Queued together, the two names would sort into the same batch.
+    gone = f"{prefix}b sugar"
+    replayed = f"{prefix}c sugar"
+    fresh = f"{prefix}d sugar"
+    first = create(written)
+    sync(shopping, first, update(str(uuid.uuid4()), item=gone))
     wait_for(lambda: mock_calls(written.lower()) >= 1)
-    assert mock_calls(rejected.lower()) == 0
-
-
-def test_create_queues_only_names_it_inserted(authed_api_client):
-    client, _ = authed_api_client
-    shopping = ShoppingListApi(client)
-    prefix = unique("")
-    written = f"{prefix}a sugar"
-    rejected = f"{prefix}b sugar"
-    client_id = uuid.uuid4()
-    shopping.create_items(
-        CreateShoppingListRequest(
-            items=[CreateShoppingListItemRequest(item=written, client_id=client_id)]
-        )
+    # A replayed create leaves the existing row alone, so its name was never
+    # saved and is never asked about.
+    sync(
+        shopping,
+        ShoppingListOp(
+            op=first.op, id=first.id, fields=ShoppingListFields(item=replayed)
+        ),
+        create(fresh),
     )
-    wait_for(lambda: mock_calls(written.lower()) >= 1)
-    # A retry with the same client_id returns the existing row; its new name
-    # was never saved, so it is never asked about.
-    fresh = f"{prefix}c sugar"
-    shopping.create_items(
-        CreateShoppingListRequest(
-            items=[
-                CreateShoppingListItemRequest(item=rejected, client_id=client_id),
-                CreateShoppingListItemRequest(item=fresh),
-            ]
-        )
-    )
-    # Queued together, the two names would sort into the same batch.
+    # Queued together, the names would sort into the same batch.
     wait_for(lambda: mock_calls(fresh.lower()) >= 1)
-    assert mock_calls(rejected.lower()) == 0
+    assert mock_calls(gone.lower()) == 0
+    assert mock_calls(replayed.lower()) == 0
 
 
 def test_estimates_say_when_names_are_still_resolving(authed_api_client):

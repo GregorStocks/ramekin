@@ -17,7 +17,6 @@ Method | HTTP request | Description
 [**normalize_title**](RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
 [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrape_photo**](RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
-[**sync_recipes**](RecipesApi.md#sync_recipes) | **GET** /api/recipes/sync | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 
 
@@ -1001,85 +1000,6 @@ Name | Type | Description  | Notes
 **400** | Recipe has no source URL |  -  |
 **401** | Unauthorized |  -  |
 **404** | Recipe not found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **sync_recipes**
-> SyncRecipesResponse sync_recipes(limit, cursor=cursor, after_id=after_id)
-
-### Example
-
-* Bearer Authentication (bearer_auth):
-
-```python
-import ramekin_client
-from ramekin_client.models.sync_recipes_response import SyncRecipesResponse
-from ramekin_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ramekin_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearer_auth
-configuration = ramekin_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with ramekin_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ramekin_client.RecipesApi(api_client)
-    limit = 56 # int | Maximum number of recipes returned per page, between 1 and 500.
-    cursor = 56 # int | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. (optional)
-    after_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | ID of the last recipe on the previous page. Absent on a sweep's first page. (optional)
-
-    try:
-        api_response = api_instance.sync_recipes(limit, cursor=cursor, after_id=after_id)
-        print("The response of RecipesApi->sync_recipes:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling RecipesApi->sync_recipes: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| Maximum number of recipes returned per page, between 1 and 500. | 
- **cursor** | **int**| Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. | [optional] 
- **after_id** | **UUID**| ID of the last recipe on the previous page. Absent on a sweep&#39;s first page. | [optional] 
-
-### Return type
-
-[**SyncRecipesResponse**](SyncRecipesResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Recipe changes for local cache sync |  -  |
-**400** | Invalid limit |  -  |
-**401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -75,7 +75,7 @@ enum RecipeSyncSweep {
             sweepWatermark = watermark
 
             if response.hasMore {
-                guard let lastId = response.recipes.last?.id else {
+                guard let lastId = response.changes.last?.id else {
                     throw RecipeSyncError.emptyPageWithMore
                 }
                 afterId = lastId
@@ -105,7 +105,7 @@ enum RecipeSyncSweep {
         guard response.hasMore else {
             return true
         }
-        guard let lastId = response.recipes.last?.id else {
+        guard let lastId = response.changes.last?.id else {
             return false
         }
         return key <= serverOrderKey(lastId)

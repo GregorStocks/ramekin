@@ -53,9 +53,11 @@ QUERY_THRESHOLDS: dict[str, tuple[int, int]] = {
     "GET /api/test/unauthed-ping": (0, 0),
     # Meal plan endpoints
     "GET /api/meal-plans": (4, 8),
-    "POST /api/meal-plans": (4, 8),
-    "PUT /api/meal-plans/{id}": (4, 8),
-    "DELETE /api/meal-plans/{id}": (4, 6),
+    # Sync endpoints (a write endpoint's count grows with its ops)
+    "GET /api/sync/recipes": (1, 8),
+    "GET /api/sync/tags": (1, 8),
+    "POST /api/sync/shopping-list": (1, 60),
+    "POST /api/sync/meal-plans": (1, 60),
 }
 
 # Default thresholds for endpoints not explicitly listed

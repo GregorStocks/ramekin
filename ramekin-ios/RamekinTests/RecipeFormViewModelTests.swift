@@ -13,7 +13,7 @@ final class RecipeFormViewModelTests: XCTestCase {
             createRecipe: { saved = $0 },
             updateRecipe: { _, _ in throw TestError.unexpectedCall },
             getRecipe: { _ in throw TestError.unexpectedCall },
-            listAllTags: { TagsListResponse(tags: []) },
+            syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
             uploadPhoto: { _ in throw TestError.unexpectedCall },
             prepareTextRecipe: { text in
                 XCTAssertEqual(text, "Pasted recipe")
@@ -39,7 +39,7 @@ final class RecipeFormViewModelTests: XCTestCase {
             createRecipe: { _ in throw TestError.unexpectedCall },
             updateRecipe: { _, _ in throw TestError.unexpectedCall },
             getRecipe: { _ in throw TestError.unexpectedCall },
-            listAllTags: { TagsListResponse(tags: []) },
+            syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
             uploadPhoto: { _ in throw TestError.unexpectedCall },
             prepareTextRecipe: { _ in throw TestError.unexpectedCall }
         ))
@@ -64,7 +64,7 @@ final class RecipeFormViewModelTests: XCTestCase {
                 createRecipe: { _ in throw TestError.unexpectedCall },
                 updateRecipe: { _, _ in throw TestError.unexpectedCall },
                 getRecipe: { _ in throw TestError.unexpectedCall },
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 uploadPhoto: { _ in throw TestError.unexpectedCall }
             )
         )
@@ -88,7 +88,7 @@ final class RecipeFormViewModelTests: XCTestCase {
                 },
                 updateRecipe: { _, _ in XCTFail("Expected create, not update") },
                 getRecipe: { _ in throw TestError.unexpectedCall },
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 uploadPhoto: { _ in UploadPhotoResponse(id: UUID()) }
             )
         )
@@ -125,7 +125,7 @@ final class RecipeFormViewModelTests: XCTestCase {
                     capturedUpdate = ($0, $1)
                 },
                 getRecipe: { _ in throw TestError.unexpectedCall },
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 uploadPhoto: { _ in UploadPhotoResponse(id: UUID()) }
             )
         )
@@ -157,7 +157,7 @@ final class RecipeFormViewModelTests: XCTestCase {
                     )
                 },
                 getRecipe: { _ in throw TestError.unexpectedCall },
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 uploadPhoto: { _ in UploadPhotoResponse(id: UUID()) }
             )
         )
@@ -182,7 +182,7 @@ final class RecipeFormViewModelTests: XCTestCase {
                 createRecipe: { _ in },
                 updateRecipe: { _, _ in },
                 getRecipe: { _ in throw TestError.unexpectedCall },
-                listAllTags: { TagsListResponse(tags: []) },
+                syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
                 uploadPhoto: { _ in UploadPhotoResponse(id: UUID()) }
             )
         )
@@ -209,7 +209,7 @@ final class RecipeFormViewModelTests: XCTestCase {
             createRecipe: { _ in throw TestError.unexpectedCall },
             updateRecipe: { _, _ in throw TestError.unexpectedCall },
             getRecipe: { _ in throw TestError.unexpectedCall },
-            listAllTags: { TagsListResponse(tags: []) },
+            syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
             uploadPhoto: { _ in throw TestError.unexpectedCall },
             prepareTextRecipe: { _ in
                 PrepareTextRecipeResponse(content: content, derivedMeasurements: [], rawIngredients: "", warnings: [])
@@ -254,7 +254,7 @@ final class RecipeFormViewModelTests: XCTestCase {
             createRecipe: { _ in throw TestError.unexpectedCall },
             updateRecipe: { _, _ in throw TestError.unexpectedCall },
             getRecipe: { _ in recipe },
-            listAllTags: { TagsListResponse(tags: []) },
+            syncTags: { _ in RecipeListTestSupport.emptyTagsResponse() },
             uploadPhoto: { _ in throw TestError.unexpectedCall }
         ))
         XCTAssertFalse(model.hasUnsavedChanges, "Nothing to lose before the recipe loads")

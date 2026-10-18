@@ -17,7 +17,6 @@ Method | HTTP request | Description
 [**normalize_title**](RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
 [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrape_photo**](RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
-[**sync_recipes**](RecipesApi.md#sync_recipes) | **GET** /api/recipes/sync | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 
 
@@ -375,36 +374,6 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::RescrapeResponse**](RescrapeResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## sync_recipes
-
-> models::SyncRecipesResponse sync_recipes(limit, cursor, after_id)
-
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**limit** | **i64** | Maximum number of recipes returned per page, between 1 and 500. | [required] |
-**cursor** | Option<**i64**> | Cursor returned by a previous sync. Absent means a full sync. Every page of one sweep passes the same cursor. |  |
-**after_id** | Option<**uuid::Uuid**> | ID of the last recipe on the previous page. Absent on a sweep's first page. |  |
-
-### Return type
-
-[**models::SyncRecipesResponse**](SyncRecipesResponse.md)
 
 ### Authorization
 

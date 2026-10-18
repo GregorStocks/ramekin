@@ -31,7 +31,7 @@ SYNC_TIMEOUT_SECONDS = 30
 def _sync(client, server_url, cursor=None):
     params = {"limit": 500} if cursor is None else {"limit": 500, "cursor": cursor}
     response = requests.get(
-        f"{server_url}/api/recipes/sync",
+        f"{server_url}/api/sync/recipes",
         headers={"Authorization": f"Bearer {client.configuration.access_token}"},
         params=params,
         timeout=SYNC_TIMEOUT_SECONDS,
@@ -68,11 +68,11 @@ def test_sync_returns_update_that_commits_across_the_snapshot(
 
     with blocked_api_write(uncommitted, racing_update):
         racing = _sync(client, server_url)
-    assert "After Racing Update" not in {r["title"] for r in racing["recipes"]}
+    assert "After Racing Update" not in {r["title"] for r in racing["changes"]}
 
     after = _sync(client, server_url, cursor=racing["cursor"])
 
-    recipes_by_id = {recipe["id"]: recipe for recipe in after["recipes"]}
+    recipes_by_id = {recipe["id"]: recipe for recipe in after["changes"]}
     assert str(created.id) in recipes_by_id
     assert recipes_by_id[str(created.id)]["title"] == "After Racing Update"
     assert recipes_by_id[str(created.id)]["instructions"] == "Simmer it."
@@ -102,7 +102,7 @@ def test_sync_returns_soft_delete_that_commits_across_the_snapshot(
     after = _sync(client, server_url, cursor=racing["cursor"])
 
     assert str(created.id) in after["deleted"]
-    assert str(created.id) not in {recipe["id"] for recipe in after["recipes"]}
+    assert str(created.id) not in {recipe["id"] for recipe in after["changes"]}
 
 
 def test_sync_returns_tag_rename_that_commits_across_the_snapshot(
@@ -140,6 +140,6 @@ def test_sync_returns_tag_rename_that_commits_across_the_snapshot(
     # only come back through the tag arm of the delta.
     after = _sync(client, server_url, cursor=racing["cursor"])
 
-    recipes_by_id = {recipe["id"]: recipe for recipe in after["recipes"]}
+    recipes_by_id = {recipe["id"]: recipe for recipe in after["changes"]}
     assert str(created.id) in recipes_by_id
     assert recipes_by_id[str(created.id)]["tags"] == ["after-racing-rename"]

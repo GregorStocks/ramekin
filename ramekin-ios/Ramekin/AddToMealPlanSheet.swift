@@ -93,12 +93,15 @@ struct AddToMealPlanSheet: View {
         error = nil
 
         do {
-            _ = try await RamekinAPI.shared.createMealPlan(
+            // Saved offline; the store syncs it.
+            try MealPlanStore.shared.add(
                 recipeId: recipe.id,
-                mealDate: selectedDate,
-                mealType: selectedMealType.rawValue
+                recipeTitle: recipe.title,
+                thumbnailPhotoId: recipe.photoIds.first,
+                date: selectedDate,
+                mealType: selectedMealType
             )
-            // The sheet was dismissed while the request was in flight.
+            // The sheet was dismissed in the meantime.
             guard !Task.isCancelled else { return }
             isAdding = false
             showingConfirmation = true
@@ -106,8 +109,6 @@ struct AddToMealPlanSheet: View {
             SheetAutoDismissSupport.schedule(&dismissTask) {
                 isPresented = false
             }
-        } catch is CancellationError {
-            // ignored
         } catch {
             guard !Task.isCancelled else { return }
             self.error = error.localizedDescription

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CalorieEstimateResponseFromJSON, CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, EstimateCaloriesRequestToJSON, GenerateDescriptionResponseFromJSON, GeneratePhotoResponseFromJSON, ListRecipesResponseFromJSON, NormalizeTitleResponseFromJSON, RecipeResponseFromJSON, RescrapeResponseFromJSON, SyncRecipesResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
+import { CalorieEstimateResponseFromJSON, CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, EstimateCaloriesRequestToJSON, GenerateDescriptionResponseFromJSON, GeneratePhotoResponseFromJSON, ListRecipesResponseFromJSON, NormalizeTitleResponseFromJSON, RecipeResponseFromJSON, RescrapeResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -427,45 +427,6 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async rescrapePhoto(requestParameters, initOverrides) {
         const response = await this.rescrapePhotoRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-    /**
-     */
-    async syncRecipesRaw(requestParameters, initOverrides) {
-        if (requestParameters['limit'] == null) {
-            throw new runtime.RequiredError('limit', 'Required parameter "limit" was null or undefined when calling syncRecipes().');
-        }
-        const queryParameters = {};
-        if (requestParameters['cursor'] != null) {
-            queryParameters['cursor'] = requestParameters['cursor'];
-        }
-        if (requestParameters['limit'] != null) {
-            queryParameters['limit'] = requestParameters['limit'];
-        }
-        if (requestParameters['afterId'] != null) {
-            queryParameters['after_id'] = requestParameters['afterId'];
-        }
-        const headerParameters = {};
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-        let urlPath = `/api/recipes/sync`;
-        const response = await this.request({
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => SyncRecipesResponseFromJSON(jsonValue));
-    }
-    /**
-     */
-    async syncRecipes(requestParameters, initOverrides) {
-        const response = await this.syncRecipesRaw(requestParameters, initOverrides);
         return await response.value();
     }
     /**

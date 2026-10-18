@@ -1,0 +1,95 @@
+//! Shopping-list aisle categories: computed when an item is written, kept up
+//! to date as names resolve, and served with every sync.
+
+use crate::db::DbPool;
+use crate::ids::Uuid;
+use crate::schema::shopping_list_items;
+use chrono::Utc;
+use diesel::prelude::*;
+use ramekin_core::ingredient_categorizer;
+
+/// The canonical category display order, as served to clients.
+pub fn category_order() -> Vec<String> {
+    ingredient_categorizer::CATEGORIES
+        .into_iter()
+        .map(str::to_string)
+        .collect()
+}
+
+pub fn is_valid_category(category: &str) -> bool {
+    ingredient_categorizer::CATEGORIES.contains(&category)
+}
+
+/// The item's category, using stored answers for names the catalog doesn't know.
+pub fn computed_category(item: &str, learned: &ramekin_core::catalog::Learned) -> String {
+    ingredient_categorizer::categorize_with(item, learned).to_string()
+}
+
+/// The category to store with each of `items` when it's written. An item is
+/// recategorized when it's written again, when its name gets resolved
+/// (`ingredient_names::recategorize_shopping_items`), and at startup
+/// (`reconcile_categories`).
+pub fn categorize(conn: &mut SqliteConnection, items: &[&str]) -> QueryResult<Vec<String>> {
+    let learned = crate::ingredient_names::load_learned(conn, items.iter().copied())?;
+    Ok(items
+        .iter()
+        .map(|item| computed_category(item, &learned))
+        .collect())
+}
+
+/// Store the category of items this write just wrote, after queueing their
+/// names (`ingredient_names::enqueue_items`). Call inside `db::write`: the
+/// write lock keeps the name worker from resolving a name in between, so its
+/// `recategorize_shopping_items` then sees the written item.
+pub fn store_categories(conn: &mut SqliteConnection, written: &[(Uuid, &str)]) -> QueryResult<()> {
+    let items: Vec<&str> = written.iter().map(|(_, item)| *item).collect();
+    let categories = categorize(conn, &items)?;
+    for ((id, _), category) in written.iter().zip(&categories) {
+        diesel::update(shopping_list_items::table.find(id))
+            .set(shopping_list_items::computed_category.eq(category))
+            .execute(conn)?;
+    }
+    Ok(())
+}
+
+/// Bring every live item's stored category up to date, touching only the
+/// items whose category changed so incremental sync sends just those. Fills
+/// in items saved before categories were stored, items whose recategorization
+/// a crash cut off after their name's answer committed, and items a catalog
+/// deploy recategorizes. Runs at startup, before serving and before the
+/// ingredient-name worker starts; returns how many items changed.
+pub fn reconcile_categories(pool: &DbPool) -> Result<usize, String> {
+    let mut conn = pool.get().map_err(|e| e.to_string())?;
+    crate::db::write(&mut conn, |conn| {
+        let rows: Vec<(Uuid, String, Option<String>)> = shopping_list_items::table
+            .filter(shopping_list_items::deleted_at.is_null())
+            .select((
+                shopping_list_items::id,
+                shopping_list_items::item,
+                shopping_list_items::computed_category,
+            ))
+            .load(conn)?;
+        let items: Vec<&str> = rows.iter().map(|(_, item, _)| item.as_str()).collect();
+        let learned = crate::ingredient_names::load_learned(conn, items)?;
+        let now = Utc::now();
+        let mut changed = 0;
+        for (id, item, stored) in &rows {
+            let category = computed_category(item, &learned);
+            if stored.as_deref() != Some(category.as_str()) {
+                diesel::update(shopping_list_items::table.find(id))
+                    .set((
+                        shopping_list_items::computed_category.eq(&category),
+                        shopping_list_items::updated_at.eq(now),
+                    ))
+                    .execute(conn)?;
+                changed += 1;
+            }
+        }
+        QueryResult::Ok(changed)
+    })
+    .map_err(|e| e.to_string())
+}
+
+pub fn item_category(computed_category: &str, category_override: Option<&str>) -> String {
+    category_override.unwrap_or(computed_category).to_string()
+}

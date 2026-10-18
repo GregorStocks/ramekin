@@ -17,6 +17,14 @@ import type { SyncRecipe } from './SyncRecipe';
  */
 export interface SyncRecipesResponse {
     /**
+     * The next `limit` active recipes (by ascending recipe ID, starting past
+     * `after_id`) changed at or after `cursor`. All active recipes match when
+     * `cursor` is absent.
+     * @type {Array<SyncRecipe>}
+     * @memberof SyncRecipesResponse
+     */
+    changes: Array<SyncRecipe>;
+    /**
      * This page's snapshot watermark. Once a sweep completes, persist the
      * *first* page's cursor and pass it to the next sync: changes committed
      * mid-sweep can land in id ranges the sweep already passed, and only the
@@ -27,8 +35,8 @@ export interface SyncRecipesResponse {
      */
     cursor: number;
     /**
-     * Recipe IDs deleted at or after `cursor`. Only sent on a sweep's first
-     * page; later pages return an empty list.
+     * Recipe IDs deleted at or after `cursor`. Only sent on a delta sweep's
+     * first page; later pages and full resyncs return an empty list.
      * @type {Array<string>}
      * @memberof SyncRecipesResponse
      */
@@ -36,9 +44,9 @@ export interface SyncRecipesResponse {
     /**
      * True when this page lists every active recipe in its ID range rather
      * than changes since `cursor`: `cursor` was absent, predates a restored
-     * backup or import, or came from another database. The client must then
-     * drop cached recipes the sweep doesn't return — a recipe rolled back by
-     * a restore is in neither `recipes` nor `deleted` — and request the
+     * backup, or came from another database. The client must then drop
+     * cached recipes the sweep doesn't return (a full resync sends no
+     * tombstones) and request the
      * sweep's remaining pages without `cursor`, since a later page could
      * otherwise judge the same cursor differently. Pages are ordered by ID,
      * so each settles the ID range from `after_id` (exclusive) through its
@@ -64,14 +72,6 @@ export interface SyncRecipesResponse {
      * @memberof SyncRecipesResponse
      */
     normalizationContractVersion: number;
-    /**
-     * The next `limit` active recipes (by ascending recipe ID, starting past
-     * `after_id`) changed at or after `cursor`. All active recipes match when
-     * `cursor` is absent.
-     * @type {Array<SyncRecipe>}
-     * @memberof SyncRecipesResponse
-     */
-    recipes: Array<SyncRecipe>;
 }
 /**
  * Check if a given object implements the SyncRecipesResponse interface.

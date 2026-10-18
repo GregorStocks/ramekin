@@ -188,7 +188,7 @@ impl SyncCursor {
 }
 
 /// Move the sync clock and its resync floor to `value` and stamp every live
-/// recipe version, tag and shopping item with it, so any client whose cursor
+/// recipe version, tag, shopping item and meal plan with it, so any client whose cursor
 /// is at or below `value` gets a full resync (see [`SyncCursor::since`]).
 /// For when the database's contents changed under clients' feet: an import,
 /// a restored backup. `value` must be at or above every cursor a client could
@@ -199,7 +199,8 @@ pub fn restamp_live(conn: &mut SqliteConnection, value: i64) -> QueryResult<()> 
          UPDATE recipe_versions SET change_seq = {value} \
            WHERE id IN (SELECT current_version_id FROM recipes WHERE deleted_at IS NULL); \
          UPDATE user_tags SET change_seq = {value} WHERE deleted_at IS NULL; \
-         UPDATE shopping_list_items SET change_seq = {value} WHERE deleted_at IS NULL;"
+         UPDATE shopping_list_items SET change_seq = {value} WHERE deleted_at IS NULL; \
+         UPDATE meal_plans SET change_seq = {value} WHERE deleted_at IS NULL;"
     ))
 }
 

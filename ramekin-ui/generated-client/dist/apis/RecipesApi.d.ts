@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { CalorieEstimateResponse, CreateRecipeRequest, CreateRecipeResponse, Direction, EstimateCaloriesRequest, GenerateDescriptionResponse, GeneratePhotoResponse, ListRecipesResponse, NormalizeTitleResponse, RecipeResponse, RescrapeResponse, SortBy, SyncRecipesResponse, UpdateRecipeRequest, VersionListResponse } from '../models/index';
+import type { CalorieEstimateResponse, CreateRecipeRequest, CreateRecipeResponse, Direction, EstimateCaloriesRequest, GenerateDescriptionResponse, GeneratePhotoResponse, ListRecipesResponse, NormalizeTitleResponse, RecipeResponse, RescrapeResponse, SortBy, UpdateRecipeRequest, VersionListResponse } from '../models/index';
 export interface CreateRecipeOperationRequest {
     createRecipeRequest: CreateRecipeRequest;
 }
@@ -51,11 +51,6 @@ export interface RescrapeRequest {
 }
 export interface RescrapePhotoRequest {
     id: string;
-}
-export interface SyncRecipesRequest {
-    limit: number;
-    cursor?: number | null;
-    afterId?: string | null;
 }
 export interface UpdateRecipeOperationRequest {
     id: string;
@@ -143,12 +138,6 @@ export declare class RecipesApi extends runtime.BaseAPI {
     /**
      */
     rescrapePhoto(requestParameters: RescrapePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RescrapeResponse>;
-    /**
-     */
-    syncRecipesRaw(requestParameters: SyncRecipesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SyncRecipesResponse>>;
-    /**
-     */
-    syncRecipes(requestParameters: SyncRecipesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SyncRecipesResponse>;
     /**
      */
     updateRecipeRaw(requestParameters: UpdateRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;

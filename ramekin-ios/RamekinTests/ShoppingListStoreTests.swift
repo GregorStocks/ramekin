@@ -7,7 +7,7 @@ final class ShoppingListStoreTests: XCTestCase {
     func testItemsAndPendingSyncAreIsolatedByUserAndServer() async throws {
         let (stack, defaults) = makeStorage()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        var requests: [SyncRequest] = []
+        var requests: [SyncShoppingListRequest] = []
         let store = ShoppingListStore(
             coreDataStack: stack,
             userDefaults: defaults,
@@ -31,8 +31,8 @@ final class ShoppingListStoreTests: XCTestCase {
         await store.syncWithServer(isFollowUp: true)
 
         XCTAssertEqual(requests.count, 2)
-        XCTAssertEqual(requests[0].creates?.map(\.item), ["Bananas"])
-        XCTAssertEqual(requests[1].creates?.map(\.item), ["Carrots"])
+        XCTAssertEqual(requests[0].ops?.map { $0.fields?.item }, ["Bananas"])
+        XCTAssertEqual(requests[1].ops?.map { $0.fields?.item }, ["Carrots"])
         XCTAssertEqual(
             try stack.viewContext.fetch(ShoppingItem.fetchActiveItems(accountKey: firstAccount)).map(\.item),
             ["Apples"]
@@ -85,7 +85,7 @@ final class ShoppingListStoreTests: XCTestCase {
         let legacySyncDate = Date(timeIntervalSince1970: 500)
         defaults.set(legacySyncDate, forKey: "shopping_list_last_sync_at")
         defaults.set(["Produce", "Other"], forKey: "shopping_list_category_order")
-        var request: SyncRequest?
+        var request: SyncShoppingListRequest?
 
         let store = ShoppingListStore(
             coreDataStack: stack,
@@ -119,7 +119,7 @@ final class ShoppingListStoreTests: XCTestCase {
     func testSyncResumesFromTheServerCursor() async throws {
         let (stack, defaults) = makeStorage()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        var requests: [SyncRequest] = []
+        var requests: [SyncShoppingListRequest] = []
         var nextCursor: Int64 = 41
         let store = ShoppingListStore(
             coreDataStack: stack,
@@ -153,21 +153,19 @@ final class ShoppingListStoreTests: XCTestCase {
             syncItems: { try await syncStub.sync($0) }
         )
         store.addItem(name: "Apples")
-        let clientId = try XCTUnwrap(store.items.first?.id)
-        let serverId = UUID()
+        let id = try XCTUnwrap(store.items.first?.id)
 
         let syncTask = Task { await store.syncWithServer() }
         await syncStub.waitForRequest()
         store.setActiveAccountKey(secondUserAccount)
         syncStub.complete(
-            with: SyncResponse(
+            with: SyncShoppingListResponse(
                 categoryOrder: ["Produce"],
-                created: [SyncCreatedItem(clientId: clientId, serverId: serverId, version: 1)],
+                changes: [Self.serverChange(id: id, item: "Apples", changeSeq: 3)],
                 cursor: 80,
                 deleted: [],
                 fullResync: false,
-                serverChanges: [],
-                updated: []
+                results: [.applied]
             )
         )
         await syncTask.value
@@ -177,8 +175,9 @@ final class ShoppingListStoreTests: XCTestCase {
             ShoppingItem.fetchActiveItems(accountKey: firstAccount)
         )
         XCTAssertEqual(firstAccountItems.map(\.item), ["Apples"])
-        XCTAssertEqual(firstAccountItems.first?.id, serverId)
+        XCTAssertEqual(firstAccountItems.first?.id, id)
         XCTAssertEqual(firstAccountItems.first?.syncStatusEnum, .synced)
+        XCTAssertEqual(firstAccountItems.first?.changeSeq, 3)
         XCTAssertTrue(
             try stack.viewContext.fetch(ShoppingItem.fetchActiveItems(accountKey: secondUserAccount)).isEmpty
         )
@@ -227,45 +226,55 @@ final class ShoppingListStoreTests: XCTestCase {
         XCTAssertEqual(staleItem.item, "Apples")
     }
 
-    private static func response(
-        created: [SyncCreatedItem] = [],
-        updated: [SyncUpdatedItem] = [],
-        serverChanges: [SyncServerChange] = [],
+    static func response(
+        results: [OpResult] = [],
+        changes: [SyncShoppingListItem] = [],
+        deleted: [UUID] = [],
         fullResync: Bool = false
-    ) -> SyncResponse {
-        SyncResponse(
+    ) -> SyncShoppingListResponse {
+        SyncShoppingListResponse(
             categoryOrder: [],
-            created: created,
+            changes: changes,
             cursor: 100,
-            deleted: [],
+            deleted: deleted,
             fullResync: fullResync,
-            serverChanges: serverChanges,
-            updated: updated
+            results: results
         )
     }
 
-    private static func emptyResponse(cursor: Int64 = 100) -> SyncResponse {
-        SyncResponse(
+    static func emptyResponse(cursor: Int64 = 100) -> SyncShoppingListResponse {
+        SyncShoppingListResponse(
             categoryOrder: [],
-            created: [],
+            changes: [],
             cursor: cursor,
             deleted: [],
             fullResync: false,
-            serverChanges: [],
-            updated: []
+            results: []
         )
     }
 
-    private func makeStorage() -> (CoreDataStack, UserDefaults) {
+    static func serverChange(
+        id: UUID = UUID(),
+        item: String,
+        isChecked: Bool = false,
+        changeSeq: Int64 = 1
+    ) -> SyncShoppingListItem {
+        SyncShoppingListItem(
+            category: "Other", changeSeq: changeSeq, computedCategory: "Other", id: id,
+            isChecked: isChecked, item: item, sortOrder: 0
+        )
+    }
+
+    func makeStorage() -> (CoreDataStack, UserDefaults) {
         let defaults = UserDefaults(suiteName: defaultsSuiteName)!
         defaults.removePersistentDomain(forName: defaultsSuiteName)
         return (CoreDataTestStack.makeStack(), defaults)
     }
 
-    private var defaultsSuiteName: String { "ShoppingListStoreTests.\(name)" }
-    private var firstAccount: String { AccountScope.key(serverURL: "https://one.test", username: "chef") }
-    private var secondUserAccount: String { AccountScope.key(serverURL: "https://one.test", username: "baker") }
-    private var secondServerAccount: String { AccountScope.key(serverURL: "https://two.test", username: "chef") }
+    var defaultsSuiteName: String { "ShoppingListStoreTests.\(name)" }
+    var firstAccount: String { AccountScope.key(serverURL: "https://one.test", username: "chef") }
+    var secondUserAccount: String { AccountScope.key(serverURL: "https://one.test", username: "baker") }
+    var secondServerAccount: String { AccountScope.key(serverURL: "https://two.test", username: "chef") }
 }
 
 // MARK: - Full resync
@@ -276,7 +285,7 @@ extension ShoppingListStoreTests {
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
         let kept = Self.serverChange(item: "Kept")
         let lost = Self.serverChange(item: "Lost")
-        var responses = [Self.response(serverChanges: [kept, lost])]
+        var responses = [Self.response(changes: [kept, lost])]
         let store = ShoppingListStore(
             coreDataStack: stack,
             userDefaults: defaults,
@@ -290,7 +299,7 @@ extension ShoppingListStoreTests {
 
         // The server was restored from a backup taken before "Lost" existed:
         // it has neither the item nor a tombstone for it.
-        responses.append(Self.response(serverChanges: [kept], fullResync: true))
+        responses.append(Self.response(changes: [kept], fullResync: true))
         await store.syncWithServer(isFollowUp: true)
 
         XCTAssertEqual(Set(store.items.compactMap(\.item)), ["Kept", "Pending"])
@@ -301,7 +310,7 @@ extension ShoppingListStoreTests {
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
         let kept = Self.serverChange(item: "Kept")
         let lost = Self.serverChange(item: "Lost")
-        var responses = [Self.response(serverChanges: [kept, lost])]
+        var responses = [Self.response(changes: [kept, lost])]
         let store = ShoppingListStore(
             coreDataStack: stack,
             userDefaults: defaults,
@@ -314,7 +323,7 @@ extension ShoppingListStoreTests {
 
         // Restored from a backup taken before "Lost" existed, so the server
         // can't acknowledge deleting it.
-        responses.append(Self.response(serverChanges: [kept], fullResync: true))
+        responses.append(Self.response(changes: [kept], fullResync: true))
         await store.syncWithServer(isFollowUp: true)
 
         XCTAssertEqual(store.items.compactMap(\.item), ["Kept"])
@@ -329,8 +338,8 @@ extension ShoppingListStoreTests {
         let kept = Self.serverChange(item: "Kept")
         let unchanged = Self.serverChange(item: "Unchanged")
         var responses = [
-            Self.response(serverChanges: [kept, unchanged]),
-            Self.response(serverChanges: [kept])
+            Self.response(changes: [kept, unchanged]),
+            Self.response(changes: [kept])
         ]
         let store = ShoppingListStore(
             coreDataStack: stack,
@@ -345,133 +354,15 @@ extension ShoppingListStoreTests {
 
         XCTAssertEqual(Set(store.items.compactMap(\.item)), ["Kept", "Unchanged"])
     }
-
-    private static func serverChange(item: String) -> SyncServerChange {
-        SyncServerChange(
-            category: "Other", computedCategory: "Other", id: UUID(), isChecked: false,
-            item: item, sortOrder: 0, updatedAt: Date(timeIntervalSince1970: 500), version: 1
-        )
-    }
-}
-
-// MARK: - Conflicts
-
-extension ShoppingListStoreTests {
-    func testRejectedUpdateTakesTheServerCopy() async throws {
-        let (stack, defaults) = makeStorage()
-        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        let serverId = UUID()
-        var responses: [SyncResponse] = []
-        let store = ShoppingListStore(
-            coreDataStack: stack,
-            userDefaults: defaults,
-            initialAccountKey: firstAccount,
-            automaticallySync: false,
-            syncItems: { _ in responses.removeFirst() }
-        )
-        store.addItem(name: "Milk")
-        let clientId = try XCTUnwrap(store.items.first?.id)
-        responses.append(Self.response(created: [SyncCreatedItem(clientId: clientId, serverId: serverId, version: 1)]))
-        await store.syncWithServer(isFollowUp: true)
-
-        // Another device checks it off while this one edits the note.
-        let milk = try XCTUnwrap(store.items.first)
-        store.updateItem(milk, note: "2%")
-        responses.append(Self.response(
-            updated: [SyncUpdatedItem(id: serverId, success: false, version: 2)],
-            serverChanges: [SyncServerChange(
-                category: "Dairy", computedCategory: "Dairy", id: serverId, isChecked: true,
-                item: "Milk", sortOrder: 0, updatedAt: Date(timeIntervalSince1970: 500), version: 2
-            )]
-        ))
-        await store.syncWithServer(isFollowUp: true)
-
-        let synced = try XCTUnwrap(store.items.first)
-        XCTAssertTrue(synced.isChecked)
-        XCTAssertNil(synced.note)
-        XCTAssertEqual(synced.syncStatusEnum, .synced)
-        XCTAssertEqual(synced.serverVersion, 2)
-    }
-
-    func testDeleteDuringARejectedUpdateIsStillSent() async throws {
-        let (stack, defaults) = makeStorage()
-        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        let serverId = UUID()
-        var responses: [SyncResponse] = []
-        var requests: [SyncRequest] = []
-        var duringSync: (() -> Void)?
-        let store = ShoppingListStore(
-            coreDataStack: stack,
-            userDefaults: defaults,
-            initialAccountKey: firstAccount,
-            automaticallySync: false,
-            syncItems: { request in
-                requests.append(request)
-                duringSync?()
-                duringSync = nil
-                return responses.removeFirst()
-            }
-        )
-        store.addItem(name: "Milk")
-        let clientId = try XCTUnwrap(store.items.first?.id)
-        responses.append(Self.response(created: [SyncCreatedItem(clientId: clientId, serverId: serverId, version: 1)]))
-        await store.syncWithServer(isFollowUp: true)
-
-        // The note edit is rejected (another device checked it off), but the
-        // user deleted the item while that sync was in flight.
-        let milk = try XCTUnwrap(store.items.first)
-        store.updateItem(milk, note: "2%")
-        duringSync = { store.deleteItem(milk) }
-        responses.append(Self.response(
-            updated: [SyncUpdatedItem(id: serverId, success: false, version: 2)],
-            serverChanges: [SyncServerChange(
-                category: "Dairy", computedCategory: "Dairy", id: serverId, isChecked: true,
-                item: "Milk", sortOrder: 0, updatedAt: Date(timeIntervalSince1970: 500), version: 2
-            )]
-        ))
-        await store.syncWithServer(isFollowUp: true)
-
-        XCTAssertTrue(store.items.isEmpty)
-        responses.append(Self.response())
-        await store.syncWithServer(isFollowUp: true)
-        XCTAssertEqual(requests.last?.deletes, [serverId])
-    }
-
-    func testUpdateOfAnItemDeletedOnTheServerDropsIt() async throws {
-        let (stack, defaults) = makeStorage()
-        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
-        let serverId = UUID()
-        var responses: [SyncResponse] = []
-        let store = ShoppingListStore(
-            coreDataStack: stack,
-            userDefaults: defaults,
-            initialAccountKey: firstAccount,
-            automaticallySync: false,
-            syncItems: { _ in responses.removeFirst() }
-        )
-        store.addItem(name: "Eggs")
-        let clientId = try XCTUnwrap(store.items.first?.id)
-        responses.append(Self.response(created: [SyncCreatedItem(clientId: clientId, serverId: serverId, version: 1)]))
-        await store.syncWithServer(isFollowUp: true)
-
-        store.updateItem(try XCTUnwrap(store.items.first), note: "a dozen")
-        responses.append(Self.response(updated: [SyncUpdatedItem(id: serverId, success: false, version: 0)]))
-        await store.syncWithServer(isFollowUp: true)
-
-        XCTAssertTrue(store.items.isEmpty)
-        XCTAssertTrue(
-            try stack.viewContext.fetch(ShoppingItem.fetchPendingSync(accountKey: firstAccount)).isEmpty
-        )
-    }
 }
 
 @MainActor
 private final class ShoppingSyncStub {
-    private var continuation: CheckedContinuation<SyncResponse, Error>?
+    private var continuation: CheckedContinuation<SyncShoppingListResponse, Error>?
     private var requestWaiters: [CheckedContinuation<Void, Never>] = []
-    private(set) var requests: [SyncRequest] = []
+    private(set) var requests: [SyncShoppingListRequest] = []
 
-    func sync(_ request: SyncRequest) async throws -> SyncResponse {
+    func sync(_ request: SyncShoppingListRequest) async throws -> SyncShoppingListResponse {
         requests.append(request)
         requestWaiters.forEach { $0.resume() }
         requestWaiters = []
@@ -483,7 +374,7 @@ private final class ShoppingSyncStub {
         await withCheckedContinuation { requestWaiters.append($0) }
     }
 
-    func complete(with response: SyncResponse) {
+    func complete(with response: SyncShoppingListResponse) {
         continuation?.resume(returning: response)
         continuation = nil
     }

@@ -6,7 +6,7 @@ import {
   Show,
   type Accessor,
 } from "solid-js";
-import { ErrorCode, type MealType } from "ramekin-client";
+import type { MealType } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
 import {
   MEAL_TYPES,
@@ -15,7 +15,12 @@ import {
   parseLocalDate,
   toApiDate,
 } from "../utils/mealPlanHelpers";
-import { parseApiError } from "../utils/recipeFormHelpers";
+import {
+  createMealPlanOp,
+  mealPlanOpError,
+  writeMealPlan,
+} from "../utils/mealPlanWrites";
+import { extractApiError } from "../utils/recipeFormHelpers";
 import Modal from "./Modal";
 
 interface AddToMealPlanModalProps {
@@ -25,7 +30,7 @@ interface AddToMealPlanModalProps {
 }
 
 export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
-  const { getMealPlansApi } = useAuth();
+  const { getSyncApi } = useAuth();
   const [mealPlanDate, setMealPlanDate] = createSignal(
     formatDateLocal(new Date()),
   );
@@ -83,27 +88,27 @@ export default function AddToMealPlanModal(props: AddToMealPlanModalProps) {
     setAddingToMealPlan(true);
     setMealPlanError(null);
     try {
-      await getMealPlansApi().createMealPlan({
-        createMealPlanRequest: {
+      const mealType = mealPlanMealType();
+      const result = await writeMealPlan(
+        getSyncApi(),
+        createMealPlanOp({
           recipeId: props.recipeId,
           mealDate: toApiDate(parseLocalDate(mealPlanDate())),
-          mealType: mealPlanMealType(),
-        },
-      });
+          mealType,
+        }),
+      );
       if (!isCurrent()) return;
+      const message = mealPlanOpError(result, mealType);
+      if (message) {
+        setMealPlanError(message);
+        return;
+      }
       setMealPlanSuccess(true);
       clearCloseTimer();
       closeTimer = setTimeout(close, 1500);
     } catch (err) {
-      const parsed = await parseApiError(err, "Failed to add to meal plan");
-      if (!isCurrent()) return;
-      if (parsed.code === ErrorCode.Conflict) {
-        setMealPlanError(
-          `This recipe is already scheduled for ${MEAL_TYPE_LABELS[mealPlanMealType()].toLowerCase()} on this date`,
-        );
-      } else {
-        setMealPlanError(parsed.message);
-      }
+      const message = await extractApiError(err, "Failed to add to meal plan");
+      if (isCurrent()) setMealPlanError(message);
     } finally {
       if (isCurrent()) setAddingToMealPlan(false);
     }

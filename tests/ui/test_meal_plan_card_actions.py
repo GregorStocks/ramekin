@@ -7,12 +7,15 @@ import pytest
 from playwright.sync_api import Page, expect
 
 from ramekin_client import ApiClient, Configuration
-from ramekin_client.api import AuthApi, MealPlansApi, RecipesApi
+from ramekin_client.api import AuthApi, RecipesApi, SyncApi
 from ramekin_client.models import (
-    CreateMealPlanRequest,
     CreateRecipeRequest,
+    MealPlanFields,
+    MealPlanOp,
     MealType,
+    OpKind,
     SignupRequest,
+    SyncMealPlansRequest,
 )
 
 TITLE = "Card actions miso soup"
@@ -32,9 +35,19 @@ def meal_plan_page(page: Page, api_url: str, ui_url: str) -> Page:
         recipe = RecipesApi(client).create_recipe(
             CreateRecipeRequest(title=TITLE, instructions="Cook.", ingredients=[])
         )
-        MealPlansApi(client).create_meal_plan(
-            CreateMealPlanRequest(
-                recipe_id=recipe.id, meal_date=date.today(), meal_type=MealType.DINNER
+        SyncApi(client).sync_meal_plans(
+            SyncMealPlansRequest(
+                ops=[
+                    MealPlanOp(
+                        op=OpKind.CREATE,
+                        id=str(uuid.uuid4()),
+                        fields=MealPlanFields(
+                            recipe_id=recipe.id,
+                            meal_date=date.today(),
+                            meal_type=MealType.DINNER,
+                        ),
+                    )
+                ]
             )
         )
     page.goto(ui_url)

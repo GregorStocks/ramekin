@@ -6,12 +6,12 @@
 
 Name | Type
 ------------ | -------------
+`changes` | [Array&lt;SyncRecipe&gt;](SyncRecipe.md)
 `cursor` | number
 `deleted` | Array&lt;string&gt;
 `fullResync` | boolean
 `hasMore` | boolean
 `normalizationContractVersion` | number
-`recipes` | [Array&lt;SyncRecipe&gt;](SyncRecipe.md)
 
 ## Example
 
@@ -20,12 +20,12 @@ import type { SyncRecipesResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "changes": null,
   "cursor": null,
   "deleted": null,
   "fullResync": null,
   "hasMore": null,
   "normalizationContractVersion": null,
-  "recipes": null,
 } satisfies SyncRecipesResponse
 
 console.log(example)

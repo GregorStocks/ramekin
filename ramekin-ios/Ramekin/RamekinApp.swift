@@ -130,6 +130,7 @@ class AppState: ObservableObject {
         let accountKey = AccountScope.currentAccountKey()
         TagFilterCache.migrateLegacyState(activeAccountKey: accountKey)
         ShoppingListStore.shared.setActiveAccountKey(accountKey)
+        MealPlanStore.shared.setActiveAccountKey(accountKey)
     }
 
     func logout() {

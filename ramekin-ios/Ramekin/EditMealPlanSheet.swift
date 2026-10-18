@@ -85,9 +85,7 @@ struct EditMealPlanSheet: View {
                 isSaving = false
             }
         } catch {
-            let message = APIErrorFormatter.code(from: error) == .conflict
-                ? "This recipe is already planned for that meal."
-                : APIErrorFormatter.userMessage(from: error, fallback: "Failed to update meal plan")
+            let message = APIErrorFormatter.userMessage(from: error, fallback: "Failed to update meal plan")
             await MainActor.run {
                 self.error = message
                 isSaving = false

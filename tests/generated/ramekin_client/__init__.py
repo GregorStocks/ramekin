@@ -27,7 +27,7 @@ __all__ = [
     "PhotosApi",
     "RecipesApi",
     "ScrapeApi",
-    "ShoppingListApi",
+    "SyncApi",
     "TagsApi",
     "TestingApi",
     "UsersApi",
@@ -46,18 +46,12 @@ __all__ = [
     "CalorieRange",
     "CalorieStatus",
     "CaptureRequest",
-    "ClearCheckedResponse",
     "CreateClientLogRequest",
     "CreateClientLogResponse",
-    "CreateMealPlanRequest",
-    "CreateMealPlanResponse",
     "CreateRecipeRequest",
     "CreateRecipeResponse",
     "CreateScrapeRequest",
     "CreateScrapeResponse",
-    "CreateShoppingListItemRequest",
-    "CreateShoppingListRequest",
-    "CreateShoppingListResponse",
     "CreateTagRequest",
     "CreateTagResponse",
     "CustomEnrichRequest",
@@ -85,11 +79,15 @@ __all__ = [
     "LookupImportJobsRequest",
     "LookupImportJobsResponse",
     "MeResponse",
+    "MealPlanFields",
     "MealPlanItem",
     "MealPlanListResponse",
+    "MealPlanOp",
     "MealType",
     "Measurement",
     "NormalizeTitleResponse",
+    "OpKind",
+    "OpResult",
     "PaginationMetadata",
     "PingResponse",
     "PrepareTextRecipeRequest",
@@ -102,27 +100,26 @@ __all__ = [
     "RescrapeResponse",
     "RetryScrapeResponse",
     "ScrapeJobResponse",
-    "ShoppingListItemResponse",
-    "ShoppingListResponse",
+    "ShoppingListFields",
+    "ShoppingListOp",
     "SignupRequest",
     "SignupResponse",
     "SortBy",
     "StepState",
-    "SyncCreateItem",
-    "SyncCreatedItem",
+    "SyncMealPlan",
+    "SyncMealPlansRequest",
+    "SyncMealPlansResponse",
     "SyncRecipe",
     "SyncRecipesResponse",
-    "SyncRequest",
-    "SyncResponse",
-    "SyncServerChange",
-    "SyncUpdateItem",
-    "SyncUpdatedItem",
+    "SyncShoppingListItem",
+    "SyncShoppingListRequest",
+    "SyncShoppingListResponse",
+    "SyncTag",
+    "SyncTagsResponse",
     "TagItem",
     "TagsListResponse",
     "UnauthedPingResponse",
-    "UpdateMealPlanRequest",
     "UpdateRecipeRequest",
-    "UpdateShoppingListItemRequest",
     "UploadPhotoResponse",
     "VersionListResponse",
     "VersionSummary",
@@ -138,7 +135,7 @@ from ramekin_client.api.meal_plans_api import MealPlansApi as MealPlansApi
 from ramekin_client.api.photos_api import PhotosApi as PhotosApi
 from ramekin_client.api.recipes_api import RecipesApi as RecipesApi
 from ramekin_client.api.scrape_api import ScrapeApi as ScrapeApi
-from ramekin_client.api.shopping_list_api import ShoppingListApi as ShoppingListApi
+from ramekin_client.api.sync_api import SyncApi as SyncApi
 from ramekin_client.api.tags_api import TagsApi as TagsApi
 from ramekin_client.api.testing_api import TestingApi as TestingApi
 from ramekin_client.api.users_api import UsersApi as UsersApi
@@ -161,18 +158,12 @@ from ramekin_client.models.calorie_line import CalorieLine as CalorieLine
 from ramekin_client.models.calorie_range import CalorieRange as CalorieRange
 from ramekin_client.models.calorie_status import CalorieStatus as CalorieStatus
 from ramekin_client.models.capture_request import CaptureRequest as CaptureRequest
-from ramekin_client.models.clear_checked_response import ClearCheckedResponse as ClearCheckedResponse
 from ramekin_client.models.create_client_log_request import CreateClientLogRequest as CreateClientLogRequest
 from ramekin_client.models.create_client_log_response import CreateClientLogResponse as CreateClientLogResponse
-from ramekin_client.models.create_meal_plan_request import CreateMealPlanRequest as CreateMealPlanRequest
-from ramekin_client.models.create_meal_plan_response import CreateMealPlanResponse as CreateMealPlanResponse
 from ramekin_client.models.create_recipe_request import CreateRecipeRequest as CreateRecipeRequest
 from ramekin_client.models.create_recipe_response import CreateRecipeResponse as CreateRecipeResponse
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest as CreateScrapeRequest
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse as CreateScrapeResponse
-from ramekin_client.models.create_shopping_list_item_request import CreateShoppingListItemRequest as CreateShoppingListItemRequest
-from ramekin_client.models.create_shopping_list_request import CreateShoppingListRequest as CreateShoppingListRequest
-from ramekin_client.models.create_shopping_list_response import CreateShoppingListResponse as CreateShoppingListResponse
 from ramekin_client.models.create_tag_request import CreateTagRequest as CreateTagRequest
 from ramekin_client.models.create_tag_response import CreateTagResponse as CreateTagResponse
 from ramekin_client.models.custom_enrich_request import CustomEnrichRequest as CustomEnrichRequest
@@ -200,11 +191,15 @@ from ramekin_client.models.login_response import LoginResponse as LoginResponse
 from ramekin_client.models.lookup_import_jobs_request import LookupImportJobsRequest as LookupImportJobsRequest
 from ramekin_client.models.lookup_import_jobs_response import LookupImportJobsResponse as LookupImportJobsResponse
 from ramekin_client.models.me_response import MeResponse as MeResponse
+from ramekin_client.models.meal_plan_fields import MealPlanFields as MealPlanFields
 from ramekin_client.models.meal_plan_item import MealPlanItem as MealPlanItem
 from ramekin_client.models.meal_plan_list_response import MealPlanListResponse as MealPlanListResponse
+from ramekin_client.models.meal_plan_op import MealPlanOp as MealPlanOp
 from ramekin_client.models.meal_type import MealType as MealType
 from ramekin_client.models.measurement import Measurement as Measurement
 from ramekin_client.models.normalize_title_response import NormalizeTitleResponse as NormalizeTitleResponse
+from ramekin_client.models.op_kind import OpKind as OpKind
+from ramekin_client.models.op_result import OpResult as OpResult
 from ramekin_client.models.pagination_metadata import PaginationMetadata as PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse as PingResponse
 from ramekin_client.models.prepare_text_recipe_request import PrepareTextRecipeRequest as PrepareTextRecipeRequest
@@ -217,27 +212,26 @@ from ramekin_client.models.rename_tag_response import RenameTagResponse as Renam
 from ramekin_client.models.rescrape_response import RescrapeResponse as RescrapeResponse
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse as RetryScrapeResponse
 from ramekin_client.models.scrape_job_response import ScrapeJobResponse as ScrapeJobResponse
-from ramekin_client.models.shopping_list_item_response import ShoppingListItemResponse as ShoppingListItemResponse
-from ramekin_client.models.shopping_list_response import ShoppingListResponse as ShoppingListResponse
+from ramekin_client.models.shopping_list_fields import ShoppingListFields as ShoppingListFields
+from ramekin_client.models.shopping_list_op import ShoppingListOp as ShoppingListOp
 from ramekin_client.models.signup_request import SignupRequest as SignupRequest
 from ramekin_client.models.signup_response import SignupResponse as SignupResponse
 from ramekin_client.models.sort_by import SortBy as SortBy
 from ramekin_client.models.step_state import StepState as StepState
-from ramekin_client.models.sync_create_item import SyncCreateItem as SyncCreateItem
-from ramekin_client.models.sync_created_item import SyncCreatedItem as SyncCreatedItem
+from ramekin_client.models.sync_meal_plan import SyncMealPlan as SyncMealPlan
+from ramekin_client.models.sync_meal_plans_request import SyncMealPlansRequest as SyncMealPlansRequest
+from ramekin_client.models.sync_meal_plans_response import SyncMealPlansResponse as SyncMealPlansResponse
 from ramekin_client.models.sync_recipe import SyncRecipe as SyncRecipe
 from ramekin_client.models.sync_recipes_response import SyncRecipesResponse as SyncRecipesResponse
-from ramekin_client.models.sync_request import SyncRequest as SyncRequest
-from ramekin_client.models.sync_response import SyncResponse as SyncResponse
-from ramekin_client.models.sync_server_change import SyncServerChange as SyncServerChange
-from ramekin_client.models.sync_update_item import SyncUpdateItem as SyncUpdateItem
-from ramekin_client.models.sync_updated_item import SyncUpdatedItem as SyncUpdatedItem
+from ramekin_client.models.sync_shopping_list_item import SyncShoppingListItem as SyncShoppingListItem
+from ramekin_client.models.sync_shopping_list_request import SyncShoppingListRequest as SyncShoppingListRequest
+from ramekin_client.models.sync_shopping_list_response import SyncShoppingListResponse as SyncShoppingListResponse
+from ramekin_client.models.sync_tag import SyncTag as SyncTag
+from ramekin_client.models.sync_tags_response import SyncTagsResponse as SyncTagsResponse
 from ramekin_client.models.tag_item import TagItem as TagItem
 from ramekin_client.models.tags_list_response import TagsListResponse as TagsListResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse as UnauthedPingResponse
-from ramekin_client.models.update_meal_plan_request import UpdateMealPlanRequest as UpdateMealPlanRequest
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest as UpdateRecipeRequest
-from ramekin_client.models.update_shopping_list_item_request import UpdateShoppingListItemRequest as UpdateShoppingListItemRequest
 from ramekin_client.models.upload_photo_response import UploadPhotoResponse as UploadPhotoResponse
 from ramekin_client.models.version_list_response import VersionListResponse as VersionListResponse
 from ramekin_client.models.version_summary import VersionSummary as VersionSummary

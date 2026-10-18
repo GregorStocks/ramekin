@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="NO" userDefinedModelVersionIdentifier="">
+    <entity name="CachedRecipe" representedClassName="CachedRecipe" syncable="YES" codeGenerationType="class">
+        <attribute name="accountKey" attributeType="String"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="ingredientMatchText" attributeType="String" defaultValueString="[]"/>
+        <attribute name="ingredientsJSON" attributeType="String" defaultValueString="[]"/>
+        <attribute name="instructions" attributeType="String" defaultValueString=""/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="String"/>
+        <attribute name="summaryDescription" optional="YES" attributeType="String"/>
+        <attribute name="tagsJSON" attributeType="String" defaultValueString="[]"/>
+        <attribute name="thumbnailPhotoId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="accountKey"/>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="CachedMealPlan" representedClassName="CachedMealPlan" syncable="YES" codeGenerationType="class">
+        <attribute name="accountKey" attributeType="String"/>
+        <attribute name="changeSeq" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dirtyFields" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="mealDay" attributeType="String"/>
+        <attribute name="mealType" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="recipeId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="recipeTitle" attributeType="String"/>
+        <attribute name="syncStatus" attributeType="String" defaultValueString="synced"/>
+        <attribute name="thumbnailPhotoId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="accountKey"/>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="ShoppingItem" representedClassName="ShoppingItem" syncable="YES" codeGenerationType="class">
+        <attribute name="accountKey" optional="YES" attributeType="String"/>
+        <attribute name="amount" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String" defaultValueString="Other"/>
+        <attribute name="categoryOverride" optional="YES" attributeType="String"/>
+        <attribute name="changeSeq" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="computedCategory" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dirtyFields" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isChecked" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="item" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="sortOrder" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sourceRecipeId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="sourceRecipeTitle" optional="YES" attributeType="String"/>
+        <attribute name="syncStatus" attributeType="String" defaultValueString="pending_create"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="accountKey"/>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>

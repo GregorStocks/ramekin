@@ -123,6 +123,14 @@ enum TagHierarchySupport {
         }
     }
 
+    static func groups(for tags: [SyncTag]) -> [TagGroup<SyncTag>] {
+        let grouped = Dictionary(grouping: tags) { parse(name: $0.name).namespace }
+
+        return orderedGroups(grouped) { lhs, rhs in
+            parse(name: lhs.name).value.localizedCaseInsensitiveCompare(parse(name: rhs.name).value) == .orderedAscending
+        }
+    }
+
     static func groups(for names: [String]) -> [TagGroup<ParsedTag>] {
         let parsedNames = names.map(parse(name:))
         let grouped = Dictionary(grouping: parsedNames, by: \.namespace)

@@ -10,8 +10,9 @@ import pytest
 from playwright.sync_api import Page, expect
 
 from ramekin_client import ApiClient, Configuration
-from ramekin_client.api import AuthApi, RecipesApi, ShoppingListApi
+from ramekin_client.api import AuthApi, RecipesApi, SyncApi
 from ramekin_client.models import (
+    SyncShoppingListRequest,
     CreateRecipeRequest,
     Ingredient,
     Measurement,
@@ -417,7 +418,7 @@ def test_shopping_list_uses_scaled_amounts(scale_recipe, api_url, page: Page):
     config = Configuration(host=api_url)
     config.access_token = token
     with ApiClient(config) as client:
-        items = ShoppingListApi(client).list_items().items
+        items = SyncApi(client).sync_shopping_list(SyncShoppingListRequest()).changes
 
     by_item = {it.item: it.amount for it in items}
     assert by_item["flour"] == "4 cups"
