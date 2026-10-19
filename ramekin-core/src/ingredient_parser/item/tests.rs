@@ -1050,6 +1050,18 @@ fn test_sized_cloves_sprigs_and_stalks_are_units() {
             "{line}: {item}"
         );
     }
+    // A bare size shares the sized measure of its alternative.
+    assert_eq!(
+        item_note_units("1 large or 2 small stalks celery, diced"),
+        (
+            "celery".to_string(),
+            Some("diced".to_string()),
+            vec![
+                Some("large stalk".to_string()),
+                Some("small stalk".to_string())
+            ]
+        )
+    );
     // A sized measure before "or" isn't the food.
     assert_eq!(
         item_note_units("1 big clove or 2 small cloves garlic").0,

@@ -1019,7 +1019,17 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         remaining = item_part.to_string();
     }
 
-    // Step 6: Build measurements list
+    // Step 6: Build measurements list. "1 large or 2 small stalks celery":
+    // the bare size shares the alternative's sized measure ("large stalk").
+    if let Some(size) = primary_unit.as_deref().filter(|unit| is_size_unit(unit)) {
+        let shared = alt_measurements.iter().find_map(|m| {
+            let (alt_size, measure) = m.unit.as_deref()?.split_once(' ')?;
+            is_size_unit(alt_size).then(|| measure.to_string())
+        });
+        if let Some(measure) = shared {
+            primary_unit = Some(format!("{size} {measure}"));
+        }
+    }
     if primary_amount.is_some() || primary_unit.is_some() {
         measurements.push(Measurement {
             amount: primary_amount,
