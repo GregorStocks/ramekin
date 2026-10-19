@@ -730,9 +730,10 @@ pub(super) fn read_measurement(s: &str) -> Read {
         }
     } else {
         let mut probe = c.clone();
-        // "Leaves from 3 sprigs thyme": with no count, "leaves" are the food.
-        if let Some((_, read)) = unit_phrase(&mut probe, amount_start)
-            .filter(|(_, unit)| !unit.eq_ignore_ascii_case("leaves"))
+        // "bar cookies", "Leaves from 3 sprigs thyme": with no count, these
+        // words name the food.
+        if let Some((_, read)) =
+            unit_phrase(&mut probe, amount_start).filter(|(_, unit)| !needs_amount(unit))
         {
             c = probe;
             unit = Some(read);

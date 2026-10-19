@@ -490,7 +490,7 @@ pub(in crate::ingredient_parser) fn split_trailing_prep_phrase(
     // Words a food name never ends with: the phrase would leave a dangling
     // list, preposition or verb behind.
     const DANGLING: &[&str] = &[
-        "and", "and/or", "been", "for", "in", "of", "or", "to", "with",
+        "and", "and/or", "been", "but", "for", "in", "of", "or", "to", "with",
     ];
     // Past the participle, these can lead back to a food ("peeled and
     // deveined shrimp", "grated or prepared horseradish", "cut of steak"), so
@@ -533,9 +533,13 @@ pub(in crate::ingredient_parser) fn split_trailing_prep_phrase(
     // the measured alternative, which goes to the note later.
     let measured_alternative =
         lower[..start].contains(&"or".to_string()) && item.contains(|c: char| c.is_ascii_digit());
+    // "berries partially crushed": an adverb not in PREP_ADVERBS would be
+    // left dangling at the end of the item ("jelly" and "belly" are foods).
+    let last = lower[start - 1].as_str();
     (!measured_alternative
         && !is_only_prep_words(&item)
-        && !DANGLING.contains(&lower[start - 1].as_str()))
+        && !DANGLING.contains(&last)
+        && (!last.ends_with("ly") || last.ends_with("elly")))
     .then(|| (item, words[start..].join(" ")))
 }
 

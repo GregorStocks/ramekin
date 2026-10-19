@@ -915,6 +915,11 @@ fn test_trailing_prep_without_comma_goes_to_note() {
         ),
         ("2 carrots thickly sliced", "carrots", "thickly sliced"),
         (
+            "1/4 cup red currant jelly melted",
+            "red currant jelly",
+            "melted",
+        ),
+        (
             "1 lb hot Italian sausage casings removed",
             "hot Italian sausage",
             "casings removed",
@@ -936,6 +941,8 @@ fn test_trailing_prep_without_comma_goes_to_note() {
         "10 ounces dry roasted & salted almonds",
         "2 red apples cored and thickly sliced",
         "4 strip steaks",
+        "1 cup fresh berries partially crushed",
+        "1 can kidney beans canned but drained",
     ] {
         let parsed = parse_ingredient(raw);
         assert_eq!(parsed.note, None, "{raw}");
@@ -969,8 +976,14 @@ fn test_count_words_read_as_units() {
 }
 
 #[test]
-fn test_leaves_without_a_count_are_the_food() {
-    let parsed = parse_ingredient("Leaves from 3 sprigs fresh thyme");
-    assert_eq!(parsed.item, "Leaves from 3 sprigs fresh thyme");
-    assert!(parsed.measurements.is_empty());
+fn test_count_words_without_an_amount_are_the_food() {
+    for raw in [
+        "Leaves from 3 sprigs fresh thyme",
+        "bar cookies",
+        "ball tip steak",
+    ] {
+        let parsed = parse_ingredient(raw);
+        assert_eq!(parsed.item, raw);
+        assert!(parsed.measurements.is_empty(), "{raw}");
+    }
 }

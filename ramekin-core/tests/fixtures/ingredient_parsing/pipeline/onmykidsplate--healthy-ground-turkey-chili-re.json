@@ -173,14 +173,14 @@
     {
       "raw": "46.5 ounces kidney beans canned but drained ( 46.5 ounces equals 3 15.5 ounce cans, or about 5 1/2 cups of canned kidney beans)",
       "expected": {
-        "item": "kidney beans canned but",
+        "item": "kidney beans canned but drained",
         "measurements": [
           {
             "amount": "46.5",
             "unit": "oz"
           }
         ],
-        "note": "46.5 ounces equals 3 15.5 ounce cans, or about 5 1/2 cups of canned kidney beans, drained",
+        "note": "46.5 ounces equals 3 15.5 ounce cans, or about 5 1/2 cups of canned kidney beans",
         "category": "Canned Goods"
       }
     },

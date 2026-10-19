@@ -95,7 +95,11 @@ const LEADING_MODIFIERS: &[&str] = &[
     "fresh",
     "freshly",
     "good",
+    "good-quality",
     "grated",
+    // "loaf high-quality sandwich bread", where "loaf" kept the parser from
+    // splitting the quality off.
+    "high-quality",
     // "homemade or store-bought chicken broth": where it comes from, not what.
     "homemade",
     "large",
