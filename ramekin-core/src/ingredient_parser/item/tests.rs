@@ -946,6 +946,8 @@ fn test_trailing_prep_without_comma_goes_to_note() {
         "10 ounces dry roasted & salted almonds",
         "2 red apples cored and thickly sliced",
         "4 strip steaks",
+        "1 banana split",
+        "2 lb beef shank cross cut",
         "1 cup fresh berries partially crushed",
         "1 can kidney beans canned but drained",
     ] {
@@ -1004,6 +1006,9 @@ fn test_count_with_the_food_in_parentheses() {
         parsed.measurements.first().and_then(|m| m.unit.as_deref()),
         Some("envelope")
     );
+    // A parenthetical that only measures names no food.
+    let raw = "1 envelope (about 2 teaspoons)";
+    assert_eq!(parse_ingredient(raw).item, raw);
 }
 
 #[test]

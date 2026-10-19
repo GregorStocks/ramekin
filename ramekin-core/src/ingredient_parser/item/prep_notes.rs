@@ -496,7 +496,14 @@ pub(in crate::ingredient_parser) fn split_trailing_prep_phrase(
     // deveined shrimp", "grated or prepared horseradish", "cut of steak"), so
     // only a phrase made of prep words alone may go on with one.
     const LEADS_TO_FOOD: &[&str] = &["&", "+", "and", "of", "or"];
-    if s.contains([',', ';', ':']) {
+    // Foods named for a cut or a dish ("beef shank cross cut", "banana
+    // split") end in a prep word.
+    const FOOD_ENDINGS: &[&str] = &[" cut", "banana split"];
+    if s.contains([',', ';', ':'])
+        || FOOD_ENDINGS
+            .iter()
+            .any(|ending| s.to_lowercase().ends_with(ending))
+    {
         return None;
     }
     let words: Vec<&str> = s.split_whitespace().collect();

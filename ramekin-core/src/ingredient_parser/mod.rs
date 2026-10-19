@@ -1073,7 +1073,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 let note = note.to_lowercase();
                 !note.starts_with("plus ") && !note.starts_with("or ")
             })
-            .and_then(reparse_item)
+            .and_then(|note| reparse_item(note).filter(|parsed| parsed.item != note))
             .filter(|parsed| !parsed.measurements.is_empty())
             .map(|parsed| parsed.item)
             .filter(|food| !is_only_prep_words(food))
