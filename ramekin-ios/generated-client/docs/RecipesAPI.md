@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**listRecipes**](RecipesAPI.md#listrecipes) | **GET** /api/recipes | 
 [**listVersions**](RecipesAPI.md#listversions) | **GET** /api/recipes/{id}/versions | 
 [**normalizeTitle**](RecipesAPI.md#normalizetitle) | **POST** /api/recipes/{id}/normalize-title | 
+[**reparseAllIngredients**](RecipesAPI.md#reparseallingredients) | **POST** /api/recipes/reparse-ingredients | Rebuild the ingredients of each of the user&#39;s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \&quot;reparse\&quot;) for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
 [**rescrape**](RecipesAPI.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrapePhoto**](RecipesAPI.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo | 
 [**updateRecipe**](RecipesAPI.md#updaterecipe) | **PUT** /api/recipes/{id} | 
@@ -531,6 +532,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NormalizeTitleResponse**](NormalizeTitleResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **reparseAllIngredients**
+```swift
+    open class func reparseAllIngredients(completion: @escaping (_ data: ReparseIngredientsResponse?, _ error: Error?) -> Void)
+```
+
+Rebuild the ingredients of each of the user's scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import RamekinClient
+
+
+// Rebuild the ingredients of each of the user's scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
+RecipesAPI.reparseAllIngredients() { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ReparseIngredientsResponse**](ReparseIngredientsResponse.md)
 
 ### Authorization
 

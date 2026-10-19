@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 [**list_versions**](RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 [**normalize_title**](RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
+[**reparse_all_ingredients**](RecipesApi.md#reparse_all_ingredients) | **POST** /api/recipes/reparse-ingredients | Rebuild the ingredients of each of the user's scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
 [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrape_photo**](RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -318,6 +319,31 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::NormalizeTitleResponse**](NormalizeTitleResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## reparse_all_ingredients
+
+> models::ReparseIngredientsResponse reparse_all_ingredients()
+Rebuild the ingredients of each of the user's scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::ReparseIngredientsResponse**](ReparseIngredientsResponse.md)
 
 ### Authorization
 

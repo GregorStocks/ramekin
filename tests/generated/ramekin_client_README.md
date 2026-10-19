@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**list_recipes**](ramekin_client/docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_versions**](ramekin_client/docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 *RecipesApi* | [**normalize_title**](ramekin_client/docs/RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
+*RecipesApi* | [**reparse_all_ingredients**](ramekin_client/docs/RecipesApi.md#reparse_all_ingredients) | **POST** /api/recipes/reparse-ingredients | Rebuild the ingredients of each of the user&#39;s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \&quot;reparse\&quot;) for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
 *RecipesApi* | [**rescrape**](ramekin_client/docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**rescrape_photo**](ramekin_client/docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 *RecipesApi* | [**update_recipe**](ramekin_client/docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -170,6 +171,7 @@ Class | Method | HTTP request | Description
  - [RecipeSummary](ramekin_client/docs/RecipeSummary.md)
  - [RenameTagRequest](ramekin_client/docs/RenameTagRequest.md)
  - [RenameTagResponse](ramekin_client/docs/RenameTagResponse.md)
+ - [ReparseIngredientsResponse](ramekin_client/docs/ReparseIngredientsResponse.md)
  - [RescrapeResponse](ramekin_client/docs/RescrapeResponse.md)
  - [RetryScrapeResponse](ramekin_client/docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](ramekin_client/docs/ScrapeJobResponse.md)

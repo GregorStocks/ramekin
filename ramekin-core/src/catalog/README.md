@@ -384,9 +384,11 @@ that appears in both releases.
   another key redundant. The first run (2026-10-12) removed 710 keys. Keys
   starting with "a pinch of", "a few sprigs" and the like stay: the parser
   keeps those words in `item` today, so the keys still match real lines.
-  Recipes already stored keep the items an older parser gave them. After that
-  parser fix, a one-off re-parse (since removed) re-read every stored item and
-  saved a new version (source "reparse") for recipes that changed.
+  Recipes already stored keep the items an older parser gave them until
+  **Re-parse recipes** in web Settings rebuilds them from the scrape that
+  saved them (its page, or its Paprika or text import). It saves a new
+  version (source "reparse") for each recipe that changed, and leaves
+  recipes edited by hand since that scrape alone.
 - `not_food` lists phrases that are not ingredients at all, with the reason.
   Names ending in ":" are headers and need no entry.
 - `food_overrides` correct SR Legacy foods by their unique description:

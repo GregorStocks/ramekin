@@ -96,23 +96,10 @@ impl PipelineStep for ParseIngredientsStep {
                 };
             }
         };
-        let mut parsed = if method_used == Some(ExtractionMethod::Paprika) {
-            parse_paprika_ingredients(&raw_recipe.ingredients)
-        } else {
-            parse_ingredients(&raw_recipe.ingredients)
-        };
-
-        // Annotate ingredients with footnote text extracted from HTML
-        if let Some(ref footnotes) = raw_recipe.footnotes {
-            apply_footnotes_to_ingredients(&mut parsed, footnotes);
-        }
+        let ingredients = parse_raw_ingredients(&raw_recipe, method_used);
 
         let mut weight_stats = MetricConversionStats::default();
         let mut volume_stats = VolumeConversionStats::default();
-        let ingredients: Vec<_> = parsed
-            .into_iter()
-            .map(|ing| ing.normalize_amounts())
-            .collect();
         for ingredient in &ingredients {
             derived_grams_with_stats(
                 &ingredient.item,
@@ -141,6 +128,31 @@ impl PipelineStep for ParseIngredientsStep {
             next_step: Some("save_recipe".to_string()),
         }
     }
+}
+
+/// The ingredients a scrape stores for an extracted recipe: its ingredient
+/// lines parsed (Paprika text by its own rules), annotated with footnotes and
+/// with amounts normalized. Re-parsing a stored recipe uses this too, so it
+/// stores what a fresh scrape would.
+pub fn parse_raw_ingredients(
+    raw_recipe: &RawRecipe,
+    method_used: Option<ExtractionMethod>,
+) -> Vec<ParsedIngredient> {
+    let mut parsed = if method_used == Some(ExtractionMethod::Paprika) {
+        parse_paprika_ingredients(&raw_recipe.ingredients)
+    } else {
+        parse_ingredients(&raw_recipe.ingredients)
+    };
+
+    // Annotate ingredients with footnote text extracted from HTML
+    if let Some(ref footnotes) = raw_recipe.footnotes {
+        apply_footnotes_to_ingredients(&mut parsed, footnotes);
+    }
+
+    parsed
+        .into_iter()
+        .map(|ing| ing.normalize_amounts())
+        .collect()
 }
 
 /// Apply extracted footnote text to ingredients that have asterisk markers.

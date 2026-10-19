@@ -27,6 +27,7 @@
   import_recipe: { platforms: "web-only", reason: "URL/text import flow not yet ported to iOS." },
   list_meal_plans: { platforms: "web-only", reason: "Web reads meal plans a week at a time; iOS keeps them in its offline cache via sync_meal_plans." },
   lookup_import_jobs: { platforms: "neither", reason: "Used by the CLI seed to resume interrupted imports without duplicating recipes; no app UI needs it." },
+  reparse_all_ingredients: { platforms: "web-only", reason: "Re-parses stored recipes from their saved scrapes after parser changes, from web Settings (owner: web-only maintenance, like retry_ingredient_names)." },
   retry_ingredient_names: { platforms: "web-only", reason: "Retries failed background ingredient-name resolution and weight estimation from web Settings (owner: web-only, like the re-parse button)." },
   mint_bookmarklet_token: { platforms: "web-only", reason: "Mints the long-lived token for the web Save-Recipe bookmarklet; the iOS share extension authenticates with its login session, so there is no bookmarklet token to mint." },
   ping: { platforms: "neither", reason: "Health check used by infra/curl; not called from either client." },
