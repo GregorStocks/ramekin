@@ -1167,4 +1167,10 @@ fn test_measured_plus_after_a_food_goes_to_the_note() {
         item_note_units("Egg wash: 1 egg plus 1 tablespoon water").0,
         "Egg wash: 1 egg plus 1 tablespoon water"
     );
+    // Without an amount of its own, the line before "plus" may not name the
+    // food.
+    assert_eq!(
+        item_note_units("A few branches plus 3 tablespoons chopped fresh dill").0,
+        "A few branches plus 3 tablespoons chopped fresh dill"
+    );
 }

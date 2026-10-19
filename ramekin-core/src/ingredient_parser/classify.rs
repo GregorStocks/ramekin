@@ -170,13 +170,16 @@ fn plus_note(line: &mut ItemText, note: &mut Note, measured_line: bool) {
         // "egg plus 1 large yolk": after a food, a measured addition is a
         // note; after an amount alone it measures the food that follows, and
         // after an "or" ("vanilla sugar or 1 tbsp sugar plus 1 tsp vanilla")
-        // it is part of the alternative.
+        // it is part of the alternative. On a line with no amount of its own
+        // ("A few branches plus 3 tablespoons chopped dill") the text before
+        // it may not name the food.
         let in_alternative = line
             .splits()
             .iter()
             .any(|s| s.sep == Sep::Or && s.start < plus.start);
         if measured
-            && (plus.before.is_empty()
+            && (!measured_line
+                || plus.before.is_empty()
                 || leading_measurement_consumes_all(plus.before)
                 || in_alternative)
         {

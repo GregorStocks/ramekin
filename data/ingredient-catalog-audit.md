@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized | Lines categorized (catalog only) |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60554 | 306 | 54141/60248 (89.9%) | 51664/60248 (85.8%) | 1587/5408 (29.3%) | n/a (no servings) | 31940/37338 (85.5%) | 59858/60554 (98.9%) | 55024/60554 (90.9%) |
+| Pipeline fixtures | 5408 | 60554 | 306 | 54141/60248 (89.9%) | 51664/60248 (85.8%) | 1587/5408 (29.3%) | n/a (no servings) | 31940/37338 (85.5%) | 59859/60554 (98.9%) | 55024/60554 (90.9%) |
 | Paprika fixtures | 462 | 5379 | 22 | 5177/5357 (96.6%) | 4824/5357 (90.1%) | 191/462 (41.3%) | n/a (no servings) | 2552/2893 (88.2%) | 5349/5379 (99.4%) | 5278/5379 (98.1%) |
 | Pipeline snapshots | 445 | 5177 | 17 | 5009/5160 (97.1%) | 4726/5160 (91.6%) | 194/445 (43.6%) | 98/445 (22.0%) | 2527/2853 (88.6%) | 5166/5177 (99.8%) | 5093/5177 (98.4%) |
 
@@ -52,9 +52,9 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 32
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 6726 | `d08f2e3c0d7a` |
+| Nutrition (all failures) | 6726 | `f4aa72397b90` |
 | Density | 2646 | `8d0914c25c7c` |
-| Shopping category | 568 | `25b3c2aa1cdd` |
+| Shopping category | 567 | `2913bc5b9180` |
 
 ## Paprika fixtures
 
