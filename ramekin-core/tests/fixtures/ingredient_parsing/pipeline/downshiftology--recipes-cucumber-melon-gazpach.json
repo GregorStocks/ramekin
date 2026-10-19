@@ -159,14 +159,14 @@
     {
       "raw": "1 piece fresh ginger ((approx 1/2 inch) peeled and chopped)",
       "expected": {
-        "item": "fresh ginger peeled and chopped",
+        "item": "fresh ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "piece"
           }
         ],
-        "note": "approx 1/2 inch",
+        "note": "approx 1/2 inch, peeled and chopped",
         "category": "Produce"
       }
     },

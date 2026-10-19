@@ -5,7 +5,7 @@
     {
       "raw": "500 grams (1.1 lbs)  Tomatoes ((ripe red tomatoes) cubed)",
       "expected": {
-        "item": "Tomatoes cubed",
+        "item": "Tomatoes",
         "measurements": [
           {
             "amount": "500",
@@ -16,7 +16,7 @@
             "unit": "lb"
           }
         ],
-        "note": "ripe red tomatoes",
+        "note": "ripe red tomatoes, cubed",
         "category": "Produce"
       }
     },

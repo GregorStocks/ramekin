@@ -93,11 +93,11 @@
     {
       "raw": "1 envelope brown gravy mix",
       "expected": {
-        "item": "envelope brown gravy mix",
+        "item": "brown gravy mix",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "envelope"
           }
         ],
         "note": null,

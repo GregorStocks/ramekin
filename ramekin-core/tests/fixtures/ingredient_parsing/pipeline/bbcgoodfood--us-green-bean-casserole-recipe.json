@@ -47,14 +47,14 @@
     {
       "raw": "1 lb 2 oz green beans trimmed",
       "expected": {
-        "item": "2 oz green beans trimmed",
+        "item": "2 oz green beans",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "trimmed",
         "category": "Produce"
       }
     },

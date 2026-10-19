@@ -168,11 +168,11 @@
     {
       "raw": "4 portions udon noodles (thick or medium-thick preferred for texture)",
       "expected": {
-        "item": "portions udon noodles",
+        "item": "udon noodles",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "portion"
           }
         ],
         "note": "thick or medium-thick preferred for texture",

@@ -103,11 +103,11 @@
     {
       "raw": "5 portions udon noodles",
       "expected": {
-        "item": "portions udon noodles",
+        "item": "udon noodles",
         "measurements": [
           {
             "amount": "5",
-            "unit": null
+            "unit": "portion"
           }
         ],
         "note": null,

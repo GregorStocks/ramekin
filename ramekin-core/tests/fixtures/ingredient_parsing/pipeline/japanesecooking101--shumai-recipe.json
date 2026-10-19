@@ -182,11 +182,11 @@
     {
       "raw": "2-3 leaves of lettuce or nappa cabbage",
       "expected": {
-        "item": "leaves of lettuce or nappa cabbage",
+        "item": "lettuce or nappa cabbage",
         "measurements": [
           {
             "amount": "2-3",
-            "unit": null
+            "unit": "leaf"
           }
         ],
         "note": null,

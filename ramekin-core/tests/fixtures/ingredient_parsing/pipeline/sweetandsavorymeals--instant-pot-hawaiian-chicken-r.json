@@ -145,14 +145,14 @@
     {
       "raw": "1 tablespoon ginger grated",
       "expected": {
-        "item": "ginger grated",
+        "item": "ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "grated",
         "category": "Produce"
       }
     },
@@ -229,14 +229,14 @@
     {
       "raw": "4  green onions sliced",
       "expected": {
-        "item": "green onions sliced",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced",
         "category": "Produce"
       }
     },

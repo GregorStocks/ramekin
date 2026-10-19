@@ -19,28 +19,28 @@
     {
       "raw": "1 thumb-size piece of fresh ginger peeled and very finely chopped",
       "expected": {
-        "item": "thumb-size piece of fresh ginger peeled and very finely chopped",
+        "item": "thumb-size piece of fresh ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and very finely chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "4 garlic cloves finely chopped",
       "expected": {
-        "item": "garlic cloves finely chopped",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
@@ -61,14 +61,14 @@
     {
       "raw": "15g pack fresh coriander chopped",
       "expected": {
-        "item": "pack fresh coriander chopped",
+        "item": "pack fresh coriander",
         "measurements": [
           {
             "amount": "15",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,14 +145,14 @@
     {
       "raw": "1 fresh red chilli deseeded and sliced",
       "expected": {
-        "item": "fresh red chilli deseeded and sliced",
+        "item": "fresh red chilli",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "deseeded and sliced",
         "category": "Produce"
       }
     },

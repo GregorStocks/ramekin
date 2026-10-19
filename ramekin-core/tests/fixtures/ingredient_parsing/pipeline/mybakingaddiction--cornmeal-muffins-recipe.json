@@ -145,14 +145,14 @@
     {
       "raw": "2 tablespoons unsalted butter melted",
       "expected": {
-        "item": "unsalted butter melted",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "melted",
         "category": "Dairy & Eggs"
       }
     },

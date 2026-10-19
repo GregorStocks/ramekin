@@ -196,14 +196,14 @@
     {
       "raw": "1  garlic clove minced",
       "expected": {
-        "item": "garlic clove minced",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "minced",
         "category": "Produce"
       }
     },

@@ -331,15 +331,15 @@
     {
       "raw": "2 tablespoons coriander leaves ((cilantro) fine chopped to garnish)",
       "expected": {
-        "item": "coriander leaves fine chopped to garnish",
+        "item": "coriander leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "cilantro",
-        "category": "Spices & Seasonings"
+        "note": "cilantro, fine chopped to garnish",
+        "category": "Produce"
       }
     }
   ]

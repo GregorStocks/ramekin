@@ -163,14 +163,14 @@
     {
       "raw": "1/2 small avocado diced",
       "expected": {
-        "item": "avocado diced",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "diced",
         "category": "Produce"
       }
     },

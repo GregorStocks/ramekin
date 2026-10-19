@@ -215,11 +215,11 @@
     {
       "raw": "1  scoop  collagen powder",
       "expected": {
-        "item": "scoop collagen powder",
+        "item": "collagen powder",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "scoop"
           }
         ],
         "note": null,

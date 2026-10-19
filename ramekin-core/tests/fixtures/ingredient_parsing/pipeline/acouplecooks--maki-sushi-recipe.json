@@ -243,11 +243,11 @@
     {
       "raw": "4 sheets sushi nori",
       "expected": {
-        "item": "sheets sushi nori",
+        "item": "sushi nori",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": null,

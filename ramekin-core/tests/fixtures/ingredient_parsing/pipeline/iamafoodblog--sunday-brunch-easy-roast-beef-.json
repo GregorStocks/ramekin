@@ -47,11 +47,11 @@
     {
       "raw": "1 sheet puff, thawed",
       "expected": {
-        "item": "sheet puff",
+        "item": "puff",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "thawed",

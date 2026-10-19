@@ -19,14 +19,14 @@
     {
       "raw": "2 onions roughly chopped",
       "expected": {
-        "item": "onions roughly chopped",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "roughly chopped",
         "category": "Produce"
       }
     },
@@ -42,14 +42,14 @@
     {
       "raw": "2 garlic cloves roughly chopped",
       "expected": {
-        "item": "garlic cloves roughly chopped",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "roughly chopped",
         "category": "Produce"
       }
     },
@@ -112,14 +112,14 @@
     {
       "raw": "6 large tomatoes roughly chopped",
       "expected": {
-        "item": "tomatoes roughly chopped",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "roughly chopped",
         "category": "Produce"
       }
     },
@@ -168,14 +168,14 @@
     {
       "raw": "200g dried apricot chopped",
       "expected": {
-        "item": "dried apricot chopped",
+        "item": "dried apricot",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -238,8 +238,13 @@
     {
       "raw": "splash of milk",
       "expected": {
-        "item": "splash of milk",
-        "measurements": [],
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": null,
         "category": "Dairy & Eggs"
       }

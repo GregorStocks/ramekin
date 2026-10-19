@@ -61,8 +61,13 @@
     {
       "raw": "Splash of milk",
       "expected": {
-        "item": "Splash of milk",
-        "measurements": [],
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": null,
         "category": "Dairy & Eggs"
       }

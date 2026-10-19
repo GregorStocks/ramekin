@@ -88,11 +88,11 @@
     {
       "raw": "1 ball fresh mozzarella",
       "expected": {
-        "item": "ball fresh mozzarella",
+        "item": "fresh mozzarella",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "ball"
           }
         ],
         "note": null,

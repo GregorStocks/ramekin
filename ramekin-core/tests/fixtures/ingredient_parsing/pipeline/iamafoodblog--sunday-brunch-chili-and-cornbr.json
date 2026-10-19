@@ -28,14 +28,14 @@
     {
       "raw": "3/4 – 1 lb boneless beef shank cut into 1/2 inch cubes",
       "expected": {
-        "item": "boneless beef shank cut into 1/2 inch cubes",
+        "item": "boneless beef shank",
         "measurements": [
           {
             "amount": "0.75-1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2 inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -209,11 +209,11 @@
     {
       "raw": "1 batch hatch chili",
       "expected": {
-        "item": "batch hatch chili",
+        "item": "hatch chili",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "batch"
           }
         ],
         "note": null,

@@ -5,14 +5,14 @@
     {
       "raw": "1⅔ sticks unsalted butter softened",
       "expected": {
-        "item": "unsalted butter softened",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1.67",
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "softened",
         "category": "Dairy & Eggs"
       }
     },

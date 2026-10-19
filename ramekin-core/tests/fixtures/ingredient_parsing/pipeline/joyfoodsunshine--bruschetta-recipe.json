@@ -103,11 +103,11 @@
     {
       "raw": "1  loaf bread ((French, Italian, sour dough, etc.))",
       "expected": {
-        "item": "loaf bread",
+        "item": "bread",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "loaf"
           }
         ],
         "note": "French, Italian, sour dough, etc.",

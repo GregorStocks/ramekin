@@ -5,11 +5,11 @@
     {
       "raw": "14 sheets (240 grams) graham crackers",
       "expected": {
-        "item": "sheets graham crackers",
+        "item": "graham crackers",
         "measurements": [
           {
             "amount": "14",
-            "unit": null
+            "unit": "sheet"
           },
           {
             "amount": "240",

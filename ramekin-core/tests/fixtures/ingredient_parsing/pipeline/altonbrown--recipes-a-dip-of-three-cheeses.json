@@ -65,11 +65,11 @@
     {
       "raw": "1 (8-ounce) block  cream cheese, at room temperature",
       "expected": {
-        "item": "block cream cheese",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "block"
           }
         ],
         "note": "8-ounce, at room temperature",
@@ -79,11 +79,11 @@
     {
       "raw": "1 (8-ounce) container  mascarpone cheese",
       "expected": {
-        "item": "container mascarpone cheese",
+        "item": "mascarpone cheese",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           }
         ],
         "note": "8-ounce",

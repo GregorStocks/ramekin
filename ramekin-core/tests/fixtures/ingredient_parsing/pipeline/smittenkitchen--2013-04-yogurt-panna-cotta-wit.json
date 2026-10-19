@@ -48,6 +48,10 @@
             "unit": "tsp"
           },
           {
+            "amount": "1",
+            "unit": "packet"
+          },
+          {
             "amount": "0.25",
             "unit": "oz"
           },
@@ -56,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": "1 packet or 1/4 ounce or 7 grams",
+        "note": null,
         "category": "Baking"
       }
     },

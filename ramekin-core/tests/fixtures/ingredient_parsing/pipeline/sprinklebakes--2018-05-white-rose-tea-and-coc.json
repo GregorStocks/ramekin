@@ -37,15 +37,15 @@
     {
       "raw": "1  envelope (.25 ounce unflavored powdered gelatin)",
       "expected": {
-        "item": "envelope",
+        "item": "unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "envelope"
           }
         ],
         "note": ".25 ounce unflavored powdered gelatin",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
@@ -129,15 +129,15 @@
     {
       "raw": "1/2  envelope (about 1 1/2 teaspoons unflavored powdered gelatin)",
       "expected": {
-        "item": "envelope",
+        "item": "unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "envelope"
           }
         ],
         "note": "about 1 1/2 teaspoons unflavored powdered gelatin",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {

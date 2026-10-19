@@ -19,14 +19,14 @@
     {
       "raw": "1 egg beaten",
       "expected": {
-        "item": "egg beaten",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten",
         "category": "Dairy & Eggs"
       }
     },
@@ -61,14 +61,14 @@
     {
       "raw": "2 sticks rhubarb thinly sliced on an angle",
       "expected": {
-        "item": "rhubarb thinly sliced on an angle",
+        "item": "rhubarb",
         "measurements": [
           {
             "amount": "2",
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "thinly sliced on an angle",
         "category": "Produce"
       }
     },

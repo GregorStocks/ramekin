@@ -155,8 +155,13 @@
       "raw": "fresh corn (1 ear)",
       "expected": {
         "item": "fresh corn",
-        "measurements": [],
-        "note": "1 ear",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "ear"
+          }
+        ],
+        "note": null,
         "category": "Produce"
       }
     },

@@ -47,14 +47,14 @@
     {
       "raw": "small knob fresh root ginger grated",
       "expected": {
-        "item": "knob fresh root ginger grated",
+        "item": "knob fresh root ginger",
         "measurements": [
           {
             "amount": null,
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "grated",
         "category": "Produce"
       }
     },
@@ -75,14 +75,14 @@
     {
       "raw": "1 spring onion finely chopped",
       "expected": {
-        "item": "spring onion finely chopped",
+        "item": "spring onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     }

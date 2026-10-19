@@ -5,28 +5,28 @@
     {
       "raw": "15 red peppers quartered and deseeded",
       "expected": {
-        "item": "red peppers quartered and deseeded",
+        "item": "red peppers",
         "measurements": [
           {
             "amount": "15",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "quartered and deseeded",
+        "category": "Produce"
       }
     },
     {
       "raw": "15 ripe  plum tomatoes quartered",
       "expected": {
-        "item": "ripe plum tomatoes quartered",
+        "item": "ripe plum tomatoes",
         "measurements": [
           {
             "amount": "15",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "quartered",
         "category": "Produce"
       }
     },
@@ -103,14 +103,14 @@
     {
       "raw": "3 handfuls  basil leaves roughly torn",
       "expected": {
-        "item": "basil leaves roughly torn",
+        "item": "basil leaves",
         "measurements": [
           {
             "amount": "3",
             "unit": "handful"
           }
         ],
-        "note": null,
+        "note": "roughly torn",
         "category": "Produce"
       }
     }

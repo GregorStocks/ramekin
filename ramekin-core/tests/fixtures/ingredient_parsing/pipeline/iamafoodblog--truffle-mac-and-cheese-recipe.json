@@ -89,11 +89,11 @@
     {
       "raw": "1/2 block cream cheese",
       "expected": {
-        "item": "block cream cheese",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "block"
           }
         ],
         "note": null,

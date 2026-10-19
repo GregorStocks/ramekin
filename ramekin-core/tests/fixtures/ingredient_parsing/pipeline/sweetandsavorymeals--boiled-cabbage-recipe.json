@@ -33,14 +33,14 @@
     {
       "raw": "4 tablespoons butter melted",
       "expected": {
-        "item": "butter melted",
+        "item": "butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "melted",
         "category": "Dairy & Eggs"
       }
     },

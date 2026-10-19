@@ -145,11 +145,11 @@
     {
       "raw": "1 sheet leaf gelatin or 1 teaspoon powdered gelatin",
       "expected": {
-        "item": "sheet leaf gelatin",
+        "item": "leaf gelatin",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "or 1 teaspoon powdered gelatin",
@@ -257,11 +257,11 @@
     {
       "raw": "1 sheet leaf gelatin or 1 teaspoon powdered gelatin",
       "expected": {
-        "item": "sheet leaf gelatin",
+        "item": "leaf gelatin",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "or 1 teaspoon powdered gelatin",
@@ -341,11 +341,11 @@
     {
       "raw": "6 sheets leaf gelatin or 2 tablespoons powdered gelatin",
       "expected": {
-        "item": "sheets leaf gelatin",
+        "item": "leaf gelatin",
         "measurements": [
           {
             "amount": "6",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "or 2 tablespoons powdered gelatin",

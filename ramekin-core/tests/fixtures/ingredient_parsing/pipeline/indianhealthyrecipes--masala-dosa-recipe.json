@@ -131,7 +131,7 @@
     {
       "raw": "2 cups potatoes cubed ((500 grams or 3 medium))",
       "expected": {
-        "item": "potatoes cubed",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "2",
@@ -146,7 +146,7 @@
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cubed",
         "category": "Produce"
       }
     },

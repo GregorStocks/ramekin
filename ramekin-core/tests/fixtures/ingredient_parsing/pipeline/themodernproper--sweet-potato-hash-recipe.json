@@ -121,14 +121,14 @@
     {
       "raw": "1 avocado thinly sliced, (optional)",
       "expected": {
-        "item": "avocado thinly sliced",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, thinly sliced",
         "category": "Produce"
       }
     },

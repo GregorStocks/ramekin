@@ -143,11 +143,11 @@
     {
       "raw": "1 sheet leaf gelatin* (gold strength) (cut into strips and softened in cold water for at least 5 minutes)",
       "expected": {
-        "item": "sheet leaf gelatin",
+        "item": "leaf gelatin",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "gold strength, cut into strips and softened in cold water for at least 5 minutes",
@@ -269,11 +269,11 @@
     {
       "raw": "2 sheets leaf gelatin* (gold strength) (cut into strips and softened in cold water for at least 5 minutes)",
       "expected": {
-        "item": "sheets leaf gelatin",
+        "item": "leaf gelatin",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "gold strength, cut into strips and softened in cold water for at least 5 minutes",

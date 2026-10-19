@@ -70,10 +70,15 @@
     {
       "raw": "splash grenadine",
       "expected": {
-        "item": "splash grenadine",
-        "measurements": [],
+        "item": "grenadine",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": null,
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {

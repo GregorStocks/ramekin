@@ -19,14 +19,14 @@
     {
       "raw": "100g butter softened",
       "expected": {
-        "item": "butter softened",
+        "item": "butter",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "softened",
         "category": "Dairy & Eggs"
       }
     },
@@ -75,14 +75,14 @@
     {
       "raw": "3 peaches halved, stoned and finely sliced",
       "expected": {
-        "item": "peaches halved",
+        "item": "peaches",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "stoned and finely sliced",
+        "note": "halved, stoned and finely sliced",
         "category": "Produce"
       }
     }

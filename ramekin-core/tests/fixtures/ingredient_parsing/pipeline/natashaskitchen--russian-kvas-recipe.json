@@ -79,11 +79,11 @@
     {
       "raw": "1/2  loaf of Rye Bread (cut into 1\" squares and toasted)",
       "expected": {
-        "item": "loaf of Rye Bread",
+        "item": "Rye Bread",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "loaf"
           }
         ],
         "note": "cut into 1\" squares and toasted",

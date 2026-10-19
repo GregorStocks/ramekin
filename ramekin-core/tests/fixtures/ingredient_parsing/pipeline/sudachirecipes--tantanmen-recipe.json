@@ -285,11 +285,11 @@
     {
       "raw": "3 portions ramen noodles",
       "expected": {
-        "item": "portions ramen noodles",
+        "item": "ramen noodles",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "portion"
           }
         ],
         "note": null,

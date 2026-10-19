@@ -47,11 +47,11 @@
     {
       "raw": "4 scoops Country Time pink lemonade mix",
       "expected": {
-        "item": "scoops Country Time pink lemonade mix",
+        "item": "Country Time pink lemonade mix",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "scoop"
           }
         ],
         "note": null,

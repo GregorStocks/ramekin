@@ -74,8 +74,13 @@
     {
       "raw": "Splash of vinegar",
       "expected": {
-        "item": "Splash of vinegar",
-        "measurements": [],
+        "item": "vinegar",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": null,
         "category": "Oils & Vinegars"
       }

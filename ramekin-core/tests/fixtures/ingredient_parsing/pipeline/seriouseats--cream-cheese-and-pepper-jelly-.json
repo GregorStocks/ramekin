@@ -5,11 +5,11 @@
     {
       "raw": "1 (8.6 ounce; 245 g) sheet puff pastry from 1 (17.3 ounce) package, thawed",
       "expected": {
-        "item": "sheet puff pastry",
+        "item": "puff pastry",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           },
           {
             "amount": "8.6",
@@ -40,15 +40,15 @@
     {
       "raw": "1 large egg beaten lightly with 1 teaspoon water, for egg wash",
       "expected": {
-        "item": "egg beaten lightly with 1 teaspoon water",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "for egg wash",
-        "category": "Beverages"
+        "note": "beaten lightly with 1 teaspoon water, for egg wash",
+        "category": "Dairy & Eggs"
       }
     },
     {

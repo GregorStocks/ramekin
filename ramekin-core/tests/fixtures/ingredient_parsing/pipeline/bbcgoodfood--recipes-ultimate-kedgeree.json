@@ -19,14 +19,14 @@
     {
       "raw": "2medium onions halved and very thinly sliced",
       "expected": {
-        "item": "onions halved and very thinly sliced",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "halved and very thinly sliced",
         "category": "Produce"
       }
     },
@@ -103,14 +103,14 @@
     {
       "raw": "1medium onion chopped",
       "expected": {
-        "item": "onion chopped",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },
@@ -131,14 +131,14 @@
     {
       "raw": "4 cardamom pods split",
       "expected": {
-        "item": "cardamom pods split",
+        "item": "cardamom pods",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split",
         "category": "Spices & Seasonings"
       }
     },

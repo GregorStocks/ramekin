@@ -149,11 +149,11 @@
     {
       "raw": "One (15-oz) container ricotta cheese or cottage cheese",
       "expected": {
-        "item": "container ricotta cheese or cottage cheese",
+        "item": "ricotta cheese or cottage cheese",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           }
         ],
         "note": "15-oz",

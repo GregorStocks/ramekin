@@ -132,21 +132,20 @@ pub fn catalog_category_with(
     learned: &crate::catalog::Learned,
 ) -> Option<&'static str> {
     use crate::catalog::normalize;
+    let parsed = crate::ingredient_parser::reparse_item(item)
+        .map(|parsed| parsed.item)
+        .filter(|parsed| normalize(parsed) != normalize(item));
+    // The catalog drops "frozen" to find the food ("2 bags frozen peaches"
+    // are peaches), but the shopper still buys them in the freezer aisle.
+    let frozen = |name: &str| normalize(name).starts_with("frozen ");
+    if frozen(item) || parsed.as_deref().is_some_and(frozen) {
+        return Some("Frozen");
+    }
     let lookup = |name: &str| {
-        // The catalog drops "frozen" to find the food ("frozen peaches" are
-        // peaches), but the shopper still buys them in the freezer aisle.
-        if normalize(name).starts_with("frozen ") {
-            return Some("Frozen");
-        }
         crate::catalog::category(name)
             .or_else(|| learned_key(name, learned).and_then(crate::catalog::category))
     };
-    lookup(item).or_else(|| {
-        let parsed = crate::ingredient_parser::reparse_item(item)?;
-        (normalize(&parsed.item) != normalize(item))
-            .then(|| lookup(&parsed.item))
-            .flatten()
-    })
+    lookup(item).or_else(|| lookup(parsed.as_deref()?))
 }
 
 /// The catalog entry a stored answer maps `item` to, if the catalog doesn't

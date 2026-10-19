@@ -243,11 +243,11 @@
     {
       "raw": "2 portions ramen noodles (preferably thick type)",
       "expected": {
-        "item": "portions ramen noodles",
+        "item": "ramen noodles",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "portion"
           }
         ],
         "note": "preferably thick type",

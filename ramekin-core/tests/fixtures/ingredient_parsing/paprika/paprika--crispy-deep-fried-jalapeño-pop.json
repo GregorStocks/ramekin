@@ -158,11 +158,11 @@
     {
       "raw": "1 batch roasted tomato salsa or your favorite salsa, for serving",
       "expected": {
-        "item": "batch roasted tomato salsa or your favorite salsa",
+        "item": "roasted tomato salsa or your favorite salsa",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "batch"
           }
         ],
         "note": "for serving",

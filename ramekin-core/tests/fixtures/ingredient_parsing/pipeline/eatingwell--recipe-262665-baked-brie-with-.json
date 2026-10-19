@@ -5,11 +5,11 @@
     {
       "raw": "1 sheet frozen puff pastry (about 8 1/2 ounces), thawed",
       "expected": {
-        "item": "sheet frozen puff pastry",
+        "item": "frozen puff pastry",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           },
           {
             "amount": "8.5",

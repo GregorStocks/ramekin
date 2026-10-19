@@ -5,11 +5,11 @@
     {
       "raw": "1/2 batch Rice Krispies Treats",
       "expected": {
-        "item": "batch Rice Krispies Treats",
+        "item": "Rice Krispies Treats",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "batch"
           }
         ],
         "note": null,

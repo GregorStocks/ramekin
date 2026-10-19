@@ -56,14 +56,14 @@
     {
       "raw": "1 clove garlic minced",
       "expected": {
-        "item": "garlic minced",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "minced",
         "category": "Produce"
       }
     },
@@ -149,14 +149,14 @@
     {
       "raw": "1/2 red onion thinly sliced",
       "expected": {
-        "item": "red onion thinly sliced",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thinly sliced",
         "category": "Produce"
       }
     },

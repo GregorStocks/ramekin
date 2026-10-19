@@ -5,14 +5,14 @@
     {
       "raw": "1 stick plus 1 tbsp unsalted butter softened",
       "expected": {
-        "item": "unsalted butter softened",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1 stick plus 1 tbsp",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "softened",
         "category": "Dairy & Eggs"
       }
     },

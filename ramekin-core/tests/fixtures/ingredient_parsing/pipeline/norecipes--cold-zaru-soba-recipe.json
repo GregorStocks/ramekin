@@ -117,15 +117,15 @@
     {
       "raw": "1/2 sheet nori ((cut into thin strips with scissors))",
       "expected": {
-        "item": "sheet nori",
+        "item": "nori",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "cut into thin strips with scissors",
-        "category": "Produce"
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -288,11 +288,11 @@
     {
       "raw": "1 sheet puff pastry from 1 (14-ounce package) frozen puff pastry, thawed (such as Dufour or Pepperidge Farm)",
       "expected": {
-        "item": "sheet puff pastry from 1 frozen puff pastry",
+        "item": "puff pastry from 1 frozen puff pastry",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           },
           {
             "amount": "1",

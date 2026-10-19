@@ -47,11 +47,11 @@
     {
       "raw": "1  scoop of protein powder (optional, use chocolate or vanilla)",
       "expected": {
-        "item": "scoop of protein powder",
+        "item": "protein powder",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "scoop"
           }
         ],
         "note": "optional, use chocolate or vanilla",

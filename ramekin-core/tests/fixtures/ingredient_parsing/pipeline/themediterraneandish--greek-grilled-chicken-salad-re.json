@@ -228,14 +228,14 @@
     {
       "raw": "1  English cucumber sliced into rounds, (diced)",
       "expected": {
-        "item": "English cucumber sliced into rounds",
+        "item": "English cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "diced",
+        "note": "diced, sliced into rounds",
         "category": "Produce"
       }
     },

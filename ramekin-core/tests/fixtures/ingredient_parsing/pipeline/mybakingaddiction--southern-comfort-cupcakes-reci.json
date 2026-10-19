@@ -205,14 +205,14 @@
     {
       "raw": "1/2 cup semisweet chocolate chips melted and cooled",
       "expected": {
-        "item": "semisweet chocolate chips melted and cooled",
+        "item": "semisweet chocolate chips",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "melted and cooled",
         "section": "For the Garnish",
         "category": "Baking"
       }

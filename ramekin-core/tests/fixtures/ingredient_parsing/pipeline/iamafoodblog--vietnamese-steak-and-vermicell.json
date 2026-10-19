@@ -37,11 +37,11 @@
     {
       "raw": "2-4 bundles of vermicelli",
       "expected": {
-        "item": "bundles of vermicelli",
+        "item": "vermicelli",
         "measurements": [
           {
             "amount": "2-4",
-            "unit": null
+            "unit": "bundle"
           }
         ],
         "note": null,

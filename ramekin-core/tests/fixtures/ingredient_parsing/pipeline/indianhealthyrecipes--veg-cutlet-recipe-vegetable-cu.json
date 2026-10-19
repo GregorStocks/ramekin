@@ -89,14 +89,14 @@
     {
       "raw": "¾ teaspoon ginger grated (or paste)",
       "expected": {
-        "item": "ginger grated",
+        "item": "ginger",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": "or paste",
+        "note": "grated; or paste",
         "category": "Produce"
       }
     },

@@ -5,11 +5,11 @@
     {
       "raw": "1 sheet of store-bought puff pastry",
       "expected": {
-        "item": "sheet of store-bought puff pastry",
+        "item": "store-bought puff pastry",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": null,

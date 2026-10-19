@@ -19,28 +19,28 @@
     {
       "raw": "1 onion chopped",
       "expected": {
-        "item": "onion chopped",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "2 carrots chopped",
       "expected": {
-        "item": "carrots chopped",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },
@@ -89,14 +89,14 @@
     {
       "raw": "1 head cauliflower cut into florets",
       "expected": {
-        "item": "cauliflower cut into florets",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut into florets",
         "category": "Produce"
       }
     },

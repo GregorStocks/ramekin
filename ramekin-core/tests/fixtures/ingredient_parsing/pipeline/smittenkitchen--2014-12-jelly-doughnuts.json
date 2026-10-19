@@ -143,7 +143,7 @@
     {
       "raw": "2 tablespoons (1 ounce or 30 grams) butter softened",
       "expected": {
-        "item": "butter softened",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
@@ -158,7 +158,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "softened",
         "category": "Dairy & Eggs"
       }
     },

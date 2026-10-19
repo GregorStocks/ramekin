@@ -103,11 +103,11 @@
     {
       "raw": "1 batch salsa verde",
       "expected": {
-        "item": "batch salsa verde",
+        "item": "salsa verde",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "batch"
           }
         ],
         "note": null,

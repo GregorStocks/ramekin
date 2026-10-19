@@ -5,14 +5,14 @@
     {
       "raw": "1 head of cauliflower cut into small florets",
       "expected": {
-        "item": "cauliflower cut into small florets",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut into small florets",
         "category": "Produce"
       }
     },

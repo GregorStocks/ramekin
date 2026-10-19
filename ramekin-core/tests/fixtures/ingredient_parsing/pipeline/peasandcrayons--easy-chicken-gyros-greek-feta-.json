@@ -19,11 +19,11 @@
     {
       "raw": "2-4 leaves romaine lettuce (trimmed)",
       "expected": {
-        "item": "leaves romaine lettuce",
+        "item": "romaine lettuce",
         "measurements": [
           {
             "amount": "2-4",
-            "unit": null
+            "unit": "leaf"
           }
         ],
         "note": "trimmed",

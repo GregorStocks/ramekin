@@ -61,11 +61,11 @@
     {
       "raw": "2 packets Swanson® Flavor Boost™ Concentrated Chicken Broth",
       "expected": {
-        "item": "packets Swanson® Flavor Boost™ Concentrated Chicken Broth",
+        "item": "Swanson® Flavor Boost™ Concentrated Chicken Broth",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "packet"
           }
         ],
         "note": null,

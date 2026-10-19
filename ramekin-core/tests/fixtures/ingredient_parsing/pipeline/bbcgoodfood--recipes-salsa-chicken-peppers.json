@@ -70,14 +70,14 @@
     {
       "raw": "200g can red kidney beans drained",
       "expected": {
-        "item": "can red kidney beans drained",
+        "item": "can red kidney beans",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "drained",
         "category": "Canned Goods"
       }
     },
@@ -98,14 +98,14 @@
     {
       "raw": "20g pack coriander chopped",
       "expected": {
-        "item": "pack coriander chopped",
+        "item": "pack coriander",
         "measurements": [
           {
             "amount": "20",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Spices & Seasonings"
       }
     },

@@ -19,7 +19,7 @@
     {
       "raw": "1  large yellow onions ((about 1 1/2 cups) finely chopped)",
       "expected": {
-        "item": "yellow onions finely chopped",
+        "item": "yellow onions",
         "measurements": [
           {
             "amount": "1",
@@ -30,7 +30,7 @@
             "unit": "cup"
           }
         ],
-        "note": "about 1 1/2 cups",
+        "note": "about 1 1/2 cups, finely chopped",
         "category": "Produce"
       }
     },

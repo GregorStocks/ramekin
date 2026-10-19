@@ -23,11 +23,11 @@
     {
       "raw": "1 (8 ounce) container sour cream",
       "expected": {
-        "item": "container sour cream",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           },
           {
             "amount": "8",

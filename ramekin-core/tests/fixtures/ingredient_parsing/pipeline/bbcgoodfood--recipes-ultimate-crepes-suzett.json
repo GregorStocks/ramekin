@@ -75,8 +75,13 @@
     {
       "raw": "splash of beer about 2 tbsp (optional)",
       "expected": {
-        "item": "splash of beer about 2 tbsp",
-        "measurements": [],
+        "item": "beer about 2 tbsp",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": "optional",
         "category": "Beverages"
       }

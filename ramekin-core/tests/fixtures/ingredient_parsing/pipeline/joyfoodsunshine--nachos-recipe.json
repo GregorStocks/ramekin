@@ -215,14 +215,14 @@
     {
       "raw": "1 cup baby tomatoes halved",
       "expected": {
-        "item": "baby tomatoes halved",
+        "item": "baby tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "halved",
         "category": "Produce"
       }
     },

@@ -95,7 +95,11 @@ const LEADING_MODIFIERS: &[&str] = &[
     "fresh",
     "freshly",
     "good",
+    "good-quality",
     "grated",
+    // "loaf high-quality sandwich bread", where "loaf" kept the parser from
+    // splitting the quality off.
+    "high-quality",
     // "homemade or store-bought chicken broth": where it comes from, not what.
     "homemade",
     "large",
@@ -134,11 +138,12 @@ const LEADING_MODIFIERS: &[&str] = &[
 
 /// The name without a leading measure the parser left in it ("8 tbsp
 /// unsalted butter", "240 ml heavy cream", "cloves garlic", "head green
-/// cabbage"): a count or unit never names the food.
+/// cabbage", "bag of fresh spinach" after "6 ounce", "big handfuls of kale"):
+/// a count, container or unit never names the food.
 fn without_leading_measure(name: &str) -> Option<String> {
     static MEASURE: LazyLock<Regex> = LazyLock::new(|| {
         Regex::new(
-            r"^(?:(?:one|a|an|[0-9][0-9./ ]*)\s*)?(?:heaping\s+|heaped\s+)?(?:(?:tbsps?|tsps?|tablespoons?|teaspoons?|cups?|oz|ounces?|ml|g|grams?|lbs?|pounds?|sticks?|cloves?|heads?|cans?|bunch(?:es)?|sprigs?|stalks?|packets?|packages?)\.?(?:\s*(?:/|or)\s*[0-9][0-9./ ]*\s*(?:g|grams?|ml|oz|ounces?|lbs?|pounds?)\.?)?\s+(?:of\s+)?|heaping\s+|heaped\s+)",
+            r"^(?:(?:one|a|an|[0-9][0-9./ ]*)\s*)?(?:heaping\s+|heaped\s+)?(?:(?:tbsps?|tsps?|tablespoons?|teaspoons?|cups?|oz|ounces?|ml|g|grams?|lbs?|pounds?|sticks?|cloves?|heads?|cans?|bunch(?:es)?|sprigs?|stalks?|packets?|packages?|envelopes?|sachets?|containers?|cartons?|pouch(?:es)?|tins?|tubs?|packs?|bags?|jars?|box(?:es)?|bottles?|blocks?|loaf|loaves|sheets?|bars?|balls?|ears?|leaves|rashers?|chunks?|knobs?|wedges?|fillets?|pieces?|slices?|bundles?|batch(?:es)?|portions?|scoops?|dollops?|splash(?:es)?|shots?|pinch(?:es)?|dash(?:es)?|(?:big\s+|large\s+|small\s+|generous\s+)?handfuls?)\.?(?:\s*(?:/|or)\s*[0-9][0-9./ ]*\s*(?:g|grams?|ml|oz|ounces?|lbs?|pounds?)\.?)?\s+(?:of\s+)?|heaping\s+|heaped\s+)",
         )
         .unwrap()
     });

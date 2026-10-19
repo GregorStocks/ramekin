@@ -54,11 +54,11 @@
     {
       "raw": "1 bundle (6 ounces or 170 grams) of scallions",
       "expected": {
-        "item": "bundle of scallions",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "bundle"
           },
           {
             "amount": "6",

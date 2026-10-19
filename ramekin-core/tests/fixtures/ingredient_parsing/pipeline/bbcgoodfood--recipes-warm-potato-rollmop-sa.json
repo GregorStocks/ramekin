@@ -19,28 +19,28 @@
     {
       "raw": "1 small red onion finely chopped",
       "expected": {
-        "item": "red onion finely chopped",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "6 small gherkins sliced",
       "expected": {
-        "item": "gherkins sliced",
+        "item": "gherkins",
         "measurements": [
           {
             "amount": "6",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "sliced",
         "category": "Other"
       }
     },

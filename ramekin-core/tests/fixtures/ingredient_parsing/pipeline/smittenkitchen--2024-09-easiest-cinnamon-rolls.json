@@ -73,19 +73,23 @@
     {
       "raw": "1 packet or 2.25 teaspoons (7 grams) active dry or instant yeast",
       "expected": {
-        "item": "packet",
+        "item": "active dry or instant yeast",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "packet"
           },
           {
             "amount": "7",
             "unit": "g"
+          },
+          {
+            "amount": "2.25",
+            "unit": "tsp"
           }
         ],
-        "note": "or 2.25 teaspoons active dry or instant yeast",
-        "category": "Other"
+        "note": null,
+        "category": "Baking"
       }
     },
     {

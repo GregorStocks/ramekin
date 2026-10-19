@@ -47,28 +47,28 @@
     {
       "raw": "1 tsp lemon zest grated",
       "expected": {
-        "item": "lemon zest grated",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "grated",
         "category": "Produce"
       }
     },
     {
       "raw": "1⅓ sticks butter cut into cubes",
       "expected": {
-        "item": "butter cut into cubes",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },

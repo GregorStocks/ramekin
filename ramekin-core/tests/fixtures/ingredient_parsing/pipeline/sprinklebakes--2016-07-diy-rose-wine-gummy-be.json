@@ -33,15 +33,15 @@
     {
       "raw": "6  packets (.25 oz. each powdered gelatin)",
       "expected": {
-        "item": "packets",
+        "item": "powdered gelatin",
         "measurements": [
           {
             "amount": "6",
-            "unit": null
+            "unit": "packet"
           }
         ],
         "note": ".25 oz. each powdered gelatin",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {

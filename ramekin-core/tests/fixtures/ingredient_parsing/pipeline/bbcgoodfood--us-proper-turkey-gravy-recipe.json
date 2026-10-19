@@ -5,14 +5,14 @@
     {
       "raw": "2  onions chopped",
       "expected": {
-        "item": "onions chopped",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },

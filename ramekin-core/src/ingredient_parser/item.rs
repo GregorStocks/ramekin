@@ -418,9 +418,11 @@ pub(super) fn split_bare_compound_line(line: &str) -> Option<Vec<String>> {
     {
         return None;
     }
+    // "leaf lettuce, tomatoes, and cucumber": a count word that needs an
+    // amount names the food here.
     let leads_with_unit = match (head_words.first(), head_words.get(1)) {
         (Some(first), second) => {
-            super::units::UNITS_RAW.contains(first)
+            (super::units::UNITS_RAW.contains(first) && !super::units::needs_amount(first))
                 || second.is_some_and(|second| {
                     let joined = format!("{} {}", first, second);
                     super::units::UNITS_RAW.iter().any(|unit| *unit == joined)

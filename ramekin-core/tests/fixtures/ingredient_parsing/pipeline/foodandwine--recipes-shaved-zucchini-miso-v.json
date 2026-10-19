@@ -168,15 +168,15 @@
     {
       "raw": "1 sheet of nori, julienned (see Note)",
       "expected": {
-        "item": "sheet of nori",
+        "item": "nori",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "see Note, julienned",
-        "category": "Produce"
+        "category": "Spices & Seasonings"
       }
     }
   ]

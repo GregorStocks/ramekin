@@ -117,11 +117,11 @@
     {
       "raw": "1 loaf Italian bread or French bread, large, (about 9-inch diameter), halved crosswise, most of the inner crumb removed",
       "expected": {
-        "item": "loaf Italian bread or French bread, large",
+        "item": "Italian bread or French bread, large",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "loaf"
           }
         ],
         "note": "about 9-inch diameter, halved crosswise, most of the inner crumb removed",

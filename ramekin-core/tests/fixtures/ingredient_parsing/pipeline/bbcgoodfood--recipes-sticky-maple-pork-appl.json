@@ -47,14 +47,14 @@
     {
       "raw": "1 garlic crushed",
       "expected": {
-        "item": "garlic crushed",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "crushed",
         "category": "Produce"
       }
     },

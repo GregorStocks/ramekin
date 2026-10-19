@@ -5,11 +5,11 @@
     {
       "raw": "1  loaf day-old sourdough or white bread",
       "expected": {
-        "item": "loaf day-old sourdough or white bread",
+        "item": "day-old sourdough or white bread",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "loaf"
           }
         ],
         "note": null,

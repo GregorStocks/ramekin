@@ -47,14 +47,14 @@
     {
       "raw": "1  garlic clove finely chopped",
       "expected": {
-        "item": "garlic clove finely chopped",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
@@ -89,28 +89,28 @@
     {
       "raw": "2-3  mushrooms thinly sliced",
       "expected": {
-        "item": "mushrooms thinly sliced",
+        "item": "mushrooms",
         "measurements": [
           {
             "amount": "2-3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "2  scallions shredded",
       "expected": {
-        "item": "scallions shredded",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "shredded",
         "category": "Produce"
       }
     },

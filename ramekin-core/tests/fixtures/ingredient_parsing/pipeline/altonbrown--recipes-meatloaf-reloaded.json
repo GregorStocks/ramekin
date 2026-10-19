@@ -33,14 +33,14 @@
     {
       "raw": "2  canned chipotle in adobo sauce seeded and finely chopped",
       "expected": {
-        "item": "canned chipotle in adobo sauce seeded and finely chopped",
+        "item": "canned chipotle in adobo sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and finely chopped",
         "category": "Canned Goods"
       }
     },

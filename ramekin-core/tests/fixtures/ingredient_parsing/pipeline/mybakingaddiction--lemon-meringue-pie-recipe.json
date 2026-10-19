@@ -5,11 +5,11 @@
     {
       "raw": "1 batch Homemade Microwave Lemon Curd (about 2 cups), chilled",
       "expected": {
-        "item": "batch Homemade Microwave Lemon Curd",
+        "item": "Homemade Microwave Lemon Curd",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "batch"
           },
           {
             "amount": "2",

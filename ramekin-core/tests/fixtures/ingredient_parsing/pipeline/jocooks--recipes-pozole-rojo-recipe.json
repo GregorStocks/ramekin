@@ -187,15 +187,15 @@
     {
       "raw": "3 cans hominy ((15 ounce cans) drained and rinsed)",
       "expected": {
-        "item": "hominy drained and rinsed",
+        "item": "hominy",
         "measurements": [
           {
             "amount": "3",
             "unit": "can"
           }
         ],
-        "note": "15 ounce cans",
-        "category": "Other"
+        "note": "15 ounce cans, drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {

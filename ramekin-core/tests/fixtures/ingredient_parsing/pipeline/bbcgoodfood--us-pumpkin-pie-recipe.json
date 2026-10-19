@@ -98,28 +98,28 @@
     {
       "raw": "2  eggs beaten",
       "expected": {
-        "item": "eggs beaten",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 tbsp butter melted",
       "expected": {
-        "item": "butter melted",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "melted",
         "category": "Dairy & Eggs"
       }
     },

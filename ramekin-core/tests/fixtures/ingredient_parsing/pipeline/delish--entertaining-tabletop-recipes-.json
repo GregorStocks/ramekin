@@ -5,11 +5,11 @@
     {
       "raw": "1 Sheet puff pastry, thawed",
       "expected": {
-        "item": "Sheet puff pastry",
+        "item": "puff pastry",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "thawed",

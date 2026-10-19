@@ -24,11 +24,11 @@
     {
       "raw": "1 bundle broccoli rabe (see above for options), stems and leaves cut into 1-inch segments",
       "expected": {
-        "item": "bundle broccoli rabe, stems and leaves cut into 1-inch segments",
+        "item": "broccoli rabe, stems and leaves cut into 1-inch segments",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "bundle"
           }
         ],
         "note": "see above for options",

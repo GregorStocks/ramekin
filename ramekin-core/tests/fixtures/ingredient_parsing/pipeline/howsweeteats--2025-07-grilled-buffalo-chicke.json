@@ -42,11 +42,11 @@
     {
       "raw": "6 to 8 ears of corn",
       "expected": {
-        "item": "ears of corn",
+        "item": "corn",
         "measurements": [
           {
             "amount": "6 to 8",
-            "unit": null
+            "unit": "ear"
           }
         ],
         "note": null,

@@ -149,11 +149,11 @@
     {
       "raw": "2 ears corn on the cob, shucked",
       "expected": {
-        "item": "ears corn on the cob",
+        "item": "corn on the cob",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "ear"
           }
         ],
         "note": "shucked",

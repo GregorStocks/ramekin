@@ -33,29 +33,29 @@
     {
       "raw": "1 onion finely chopped",
       "expected": {
-        "item": "onion finely chopped",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "1 green pepper finely chopped",
       "expected": {
-        "item": "green pepper finely chopped",
+        "item": "green pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -159,14 +159,14 @@
     {
       "raw": "4  hamburger buns split",
       "expected": {
-        "item": "hamburger buns split",
+        "item": "hamburger buns",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split",
         "category": "Bakery & Bread"
       }
     },

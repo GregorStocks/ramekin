@@ -108,12 +108,118 @@ pub(super) const UNITS_RAW: &[&str] = &[
     "pcs",
     "pkg",
     "pc",
+    // Counts of a container, a shape or a serving: "1 envelope taco
+    // seasoning", "2 ears corn", "1 ball burrata". All but "splash" and
+    // "dollop" need an amount (`needs_amount`), so a food that starts with
+    // one ("bar cookies") keeps it.
+    "envelopes",
+    "envelope",
+    "packets",
+    "packet",
+    "sachets",
+    "sachet",
+    "containers",
+    "container",
+    "cartons",
+    "carton",
+    "pouches",
+    "pouch",
+    "tins",
+    "tin",
+    "tubs",
+    "tub",
+    "packs",
+    "pack",
+    "blocks",
+    "block",
+    "loaves",
+    "loaf",
+    "sheets",
+    "sheet",
+    "bars",
+    "bar",
+    "balls",
+    "ball",
+    "ears",
+    "ear",
+    "leaves",
+    "leaf",
+    "rashers",
+    "rasher",
+    "chunks",
+    "chunk",
+    "knobs",
+    "knob",
+    "wedges",
+    "wedge",
+    "fillets",
+    "fillet",
+    "bundles",
+    "bundle",
+    "batches",
+    "batch",
+    "portions",
+    "portion",
+    "scoops",
+    "scoop",
+    "dollops",
+    "dollop",
+    "splashes",
+    "splash",
+    "shots",
+    "shot",
     // Size descriptors that act like units
     "extra-large",
     "medium",
     "small",
     "large",
     "xl",
+];
+
+/// Whether `unit` is only a unit after an amount: "1 bar chocolate" counts
+/// bars, but "bar cookies" and "Leaves from 3 sprigs thyme" name the food.
+pub(super) fn needs_amount(unit: &str) -> bool {
+    let unit = normalize_unit(&unit.to_lowercase());
+    COUNT_UNITS_NEEDING_AMOUNT.contains(&unit.as_str())
+}
+
+/// Whether `unit` counts a container, shape or serving ("envelope", "ear",
+/// "splash"): a whole word, never attached to the next one ("bartlett",
+/// "tinned").
+pub(super) fn is_count_noun(unit: &str) -> bool {
+    let unit = normalize_unit(&unit.to_lowercase());
+    needs_amount(&unit) || unit == "splash" || unit == "dollop"
+}
+
+/// The canonical count units added for containers, shapes and servings,
+/// except the amount-less "splash" and "dollop" ("splash of milk").
+const COUNT_UNITS_NEEDING_AMOUNT: &[&str] = &[
+    "envelope",
+    "packet",
+    "sachet",
+    "container",
+    "carton",
+    "pouch",
+    "tin",
+    "tub",
+    "pack",
+    "block",
+    "loaf",
+    "sheet",
+    "bar",
+    "ball",
+    "ear",
+    "leaf",
+    "rasher",
+    "chunk",
+    "knob",
+    "wedge",
+    "fillet",
+    "bundle",
+    "batch",
+    "portion",
+    "scoop",
+    "shot",
 ];
 
 /// Size descriptors that act like units ("1 large onion"), in canonical form.
@@ -208,6 +314,38 @@ pub(super) static UNIT_CANONICAL_MAP: LazyLock<HashMap<&'static str, &'static st
         map.insert("stalks", "stalk");
         map.insert("handfuls", "handful");
         map.insert("cubes", "cube");
+        for (plural, singular) in [
+            ("envelopes", "envelope"),
+            ("packets", "packet"),
+            ("sachets", "sachet"),
+            ("containers", "container"),
+            ("cartons", "carton"),
+            ("pouches", "pouch"),
+            ("tins", "tin"),
+            ("tubs", "tub"),
+            ("packs", "pack"),
+            ("blocks", "block"),
+            ("loaves", "loaf"),
+            ("sheets", "sheet"),
+            ("bars", "bar"),
+            ("balls", "ball"),
+            ("ears", "ear"),
+            ("leaves", "leaf"),
+            ("rashers", "rasher"),
+            ("chunks", "chunk"),
+            ("knobs", "knob"),
+            ("wedges", "wedge"),
+            ("fillets", "fillet"),
+            ("bundles", "bundle"),
+            ("batches", "batch"),
+            ("portions", "portion"),
+            ("scoops", "scoop"),
+            ("dollops", "dollop"),
+            ("splashes", "splash"),
+            ("shots", "shot"),
+        ] {
+            map.insert(plural, singular);
+        }
 
         // Size - normalize xl
         map.insert("xl", "extra-large");

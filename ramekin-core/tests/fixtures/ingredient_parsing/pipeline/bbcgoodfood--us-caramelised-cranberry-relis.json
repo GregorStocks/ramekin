@@ -19,14 +19,14 @@
     {
       "raw": "1 small piece of fresh ginger root finely shredded",
       "expected": {
-        "item": "piece of fresh ginger root finely shredded",
+        "item": "piece of fresh ginger root",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "finely shredded",
         "category": "Produce"
       }
     },
@@ -61,8 +61,13 @@
     {
       "raw": "splash of  port wine (optional)",
       "expected": {
-        "item": "splash of port wine",
-        "measurements": [],
+        "item": "port wine",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": "optional",
         "category": "Beverages"
       }

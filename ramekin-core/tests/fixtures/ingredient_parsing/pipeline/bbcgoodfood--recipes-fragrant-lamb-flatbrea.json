@@ -19,14 +19,14 @@
     {
       "raw": "1 onion finely chopped",
       "expected": {
-        "item": "onion finely chopped",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "1 garlic clove crushed",
       "expected": {
-        "item": "garlic clove crushed",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "crushed",
         "category": "Produce"
       }
     },
@@ -117,15 +117,15 @@
     {
       "raw": "handful mint chopped (or use a sprinkling of dried)",
       "expected": {
-        "item": "mint chopped",
+        "item": "mint",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": "or use a sprinkling of dried",
-        "category": "Spices & Seasonings"
+        "note": "chopped; or use a sprinkling of dried",
+        "category": "Produce"
       }
     },
     {

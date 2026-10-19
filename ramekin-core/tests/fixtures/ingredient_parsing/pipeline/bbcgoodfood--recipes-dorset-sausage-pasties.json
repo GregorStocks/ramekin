@@ -19,14 +19,14 @@
     {
       "raw": "1small onion finely chopped",
       "expected": {
-        "item": "onion finely chopped",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
@@ -75,14 +75,14 @@
     {
       "raw": "4 good-quality sausages skins removed",
       "expected": {
-        "item": "sausages skins removed",
+        "item": "sausages",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "good-quality",
+        "note": "skins removed, good-quality",
         "category": "Meat & Seafood"
       }
     },
@@ -121,14 +121,14 @@
     {
       "raw": "1 egg beaten",
       "expected": {
-        "item": "egg beaten",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten",
         "category": "Dairy & Eggs"
       }
     }

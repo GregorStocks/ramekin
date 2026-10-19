@@ -61,11 +61,11 @@
     {
       "raw": "1/2 block Konnyaku",
       "expected": {
-        "item": "block Konnyaku",
+        "item": "Konnyaku",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "block"
           }
         ],
         "note": null,

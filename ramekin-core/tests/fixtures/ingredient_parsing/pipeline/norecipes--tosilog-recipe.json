@@ -5,11 +5,11 @@
     {
       "raw": "1 batch Sinangag ((garlic rice))",
       "expected": {
-        "item": "batch Sinangag",
+        "item": "Sinangag",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "batch"
           }
         ],
         "note": "garlic rice",

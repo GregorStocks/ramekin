@@ -33,8 +33,13 @@
     {
       "raw": "splash of  water",
       "expected": {
-        "item": "splash of water",
-        "measurements": [],
+        "item": "water",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": null,
         "category": "Beverages"
       }

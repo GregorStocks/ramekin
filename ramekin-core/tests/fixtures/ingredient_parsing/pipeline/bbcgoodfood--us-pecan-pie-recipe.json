@@ -28,14 +28,14 @@
     {
       "raw": "⅓ cup butter softened",
       "expected": {
-        "item": "butter softened",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "softened",
         "category": "Dairy & Eggs"
       }
     },
@@ -84,14 +84,14 @@
     {
       "raw": "3  eggs beaten",
       "expected": {
-        "item": "eggs beaten",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten",
         "category": "Dairy & Eggs"
       }
     },

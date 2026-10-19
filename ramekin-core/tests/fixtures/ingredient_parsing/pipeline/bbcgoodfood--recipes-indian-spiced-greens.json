@@ -47,28 +47,28 @@
     {
       "raw": "4 green chillies finely chopped",
       "expected": {
-        "item": "green chillies finely chopped",
+        "item": "green chillies",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "large piece of ginger grated",
       "expected": {
-        "item": "piece of ginger grated",
+        "item": "piece of ginger",
         "measurements": [
           {
             "amount": null,
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "grated",
         "category": "Produce"
       }
     },
@@ -145,14 +145,14 @@
     {
       "raw": "small bunch of fresh coriander roughly chopped",
       "expected": {
-        "item": "fresh coriander roughly chopped",
+        "item": "fresh coriander",
         "measurements": [
           {
             "amount": null,
             "unit": "small bunch"
           }
         ],
-        "note": null,
+        "note": "roughly chopped",
         "category": "Spices & Seasonings"
       }
     },

@@ -164,7 +164,11 @@ fn extract_unit_allowing_attached_item(s: &str) -> (Option<String>, String) {
 
     let trimmed = s.trim_start();
     let lower = trimmed.to_lowercase();
-    for unit in UNITS_SORTED.iter().copied().filter(|unit| unit.len() > 1) {
+    for unit in UNITS_SORTED
+        .iter()
+        .copied()
+        .filter(|unit| unit.len() > 1 && !is_count_noun(unit))
+    {
         if !lower.starts_with(unit) {
             continue;
         }
@@ -1060,12 +1064,26 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         };
     }
 
+    // "1/2 envelope (about 1 1/2 teaspoons unflavored powdered gelatin)": the
+    // count took everything outside the parentheses, so the food is the one
+    // the note measures.
+    let item = if item.is_empty() {
+        note.as_deref()
+            .filter(|note| {
+                let note = note.to_lowercase();
+                !note.starts_with("plus ") && !note.starts_with("or ")
+            })
+            .and_then(|note| reparse_item(note).filter(|parsed| parsed.item != note))
+            .filter(|parsed| !parsed.measurements.is_empty())
+            .map(|parsed| parsed.item)
+            .filter(|food| !is_only_prep_words(food))
+            .unwrap_or_else(|| raw.to_string())
+    } else {
+        item
+    };
+
     ParsedIngredient {
-        item: if item.is_empty() {
-            raw.to_string()
-        } else {
-            item
-        },
+        item,
         measurements,
         note,
         raw: Some(raw.to_string()),
@@ -1936,7 +1954,7 @@ mod tests {
             "2 envelopes unflavored powdered gelatin (about 1 Tbsp. plus 2\ntsp.)\n1 2/3 cups whole milk";
         let result = parse_ingredients(blob);
         assert_eq!(result.len(), 2);
-        assert_eq!(result[0].item, "envelopes unflavored powdered gelatin");
+        assert_eq!(result[0].item, "unflavored powdered gelatin");
         assert_eq!(result[1].item, "whole milk");
 
         let blob = "6 tablespoons (90 grams) sour cream or whole Greek yogurt (i.e., a strained\nyogurt)\n1 tablespoon (15 ml) white wine vinegar";
@@ -2084,9 +2102,13 @@ mod tests {
                 (Some("4"), None)
             ]
         );
-        // A counted packet isn't a count of the food.
+        // A counted packet is an alternative measure of the food.
         let parsed = parse_ingredient("2 1/4 teaspoons or 1 packet instant yeast");
-        assert_eq!(parsed.item, "or 1 packet instant yeast");
+        assert_eq!(parsed.item, "instant yeast");
+        assert_eq!(
+            measurements(&parsed),
+            vec![(Some("2 1/4"), Some("tsp")), (Some("1"), Some("packet"))]
+        );
     }
 
     #[test]

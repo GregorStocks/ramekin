@@ -47,11 +47,11 @@
     {
       "raw": "1 (8-oz.)&nbsp;container whipped topping",
       "expected": {
-        "item": "container whipped topping",
+        "item": "whipped topping",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           }
         ],
         "note": "8-oz",

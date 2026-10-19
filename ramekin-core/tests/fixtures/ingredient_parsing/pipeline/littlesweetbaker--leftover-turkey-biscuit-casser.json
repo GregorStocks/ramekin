@@ -75,11 +75,11 @@
     {
       "raw": "1  container refrigerated biscuits",
       "expected": {
-        "item": "container refrigerated biscuits",
+        "item": "refrigerated biscuits",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           }
         ],
         "note": null,

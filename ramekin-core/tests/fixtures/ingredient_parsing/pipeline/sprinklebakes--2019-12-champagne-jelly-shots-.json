@@ -37,29 +37,29 @@
     {
       "raw": "1  packet (.25 oz. powdered gelatin)",
       "expected": {
-        "item": "packet",
+        "item": "powdered gelatin",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "packet"
           }
         ],
         "note": ".25 oz. powdered gelatin",
-        "category": "Other"
+        "category": "Baking"
       }
     },
     {
       "raw": "1  container (15.8 oz. pomegranate bursting boba)",
       "expected": {
-        "item": "container",
+        "item": "pomegranate bursting boba",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           }
         ],
         "note": "15.8 oz. pomegranate bursting boba",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {

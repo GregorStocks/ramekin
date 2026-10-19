@@ -23,11 +23,11 @@
     {
       "raw": "4 packets unflavored powdered gelatin (3 tablespoons plus 1 teaspoon; 30 g) (see notes)",
       "expected": {
-        "item": "packets unflavored powdered gelatin",
+        "item": "unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "packet"
           },
           {
             "amount": "30",

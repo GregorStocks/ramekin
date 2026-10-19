@@ -121,11 +121,11 @@
     {
       "raw": "1 batch Rhubarb Vanilla Compote (recipe below)",
       "expected": {
-        "item": "batch Rhubarb Vanilla Compote",
+        "item": "Rhubarb Vanilla Compote",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "batch"
           }
         ],
         "note": "recipe below",

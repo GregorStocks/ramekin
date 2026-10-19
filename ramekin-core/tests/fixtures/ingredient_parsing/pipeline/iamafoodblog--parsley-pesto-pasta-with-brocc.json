@@ -130,14 +130,14 @@
     {
       "raw": "1 small salmon fillet cut in two",
       "expected": {
-        "item": "salmon fillet cut in two",
+        "item": "salmon fillet",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut in two",
         "category": "Meat & Seafood"
       }
     }

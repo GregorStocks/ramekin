@@ -201,11 +201,11 @@
     {
       "raw": "1 fillet anchovy (finely chopped)",
       "expected": {
-        "item": "fillet anchovy",
+        "item": "anchovy",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "fillet"
           }
         ],
         "note": "finely chopped",

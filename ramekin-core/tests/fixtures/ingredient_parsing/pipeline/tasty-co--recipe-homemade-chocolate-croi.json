@@ -75,11 +75,11 @@
     {
       "raw": "1 packet instant dry yeast",
       "expected": {
-        "item": "packet instant dry yeast",
+        "item": "instant dry yeast",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "packet"
           }
         ],
         "note": null,
@@ -131,11 +131,11 @@
     {
       "raw": "2 bars sweetened chocolate bar",
       "expected": {
-        "item": "bars sweetened chocolate bar",
+        "item": "sweetened chocolate bar",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "bar"
           }
         ],
         "note": null,

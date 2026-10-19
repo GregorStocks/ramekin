@@ -23,11 +23,11 @@
     {
       "raw": "About 7 sheets storebought filo, defrosted (mine were 12″x17″)",
       "expected": {
-        "item": "sheets storebought filo",
+        "item": "storebought filo",
         "measurements": [
           {
             "amount": "7",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "about, mine were 12″x17″, defrosted",

@@ -33,11 +33,11 @@
     {
       "raw": "4 leaves fresh sage",
       "expected": {
-        "item": "leaves fresh sage",
+        "item": "fresh sage",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "leaf"
           }
         ],
         "note": null,

@@ -5,14 +5,14 @@
     {
       "raw": "2 1/2 lbs salmon filet sliced into 2\" wide slices (*)",
       "expected": {
-        "item": "salmon filet sliced into 2\" wide slices",
+        "item": "salmon filet",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "*, sliced into 2\" wide slices",
         "category": "Meat & Seafood"
       }
     },

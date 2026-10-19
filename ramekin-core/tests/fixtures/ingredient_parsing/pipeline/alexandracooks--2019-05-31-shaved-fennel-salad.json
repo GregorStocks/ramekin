@@ -19,8 +19,13 @@
     {
       "raw": "splash white balsamic vinegar",
       "expected": {
-        "item": "splash white balsamic vinegar",
-        "measurements": [],
+        "item": "white balsamic vinegar",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": null,
         "category": "Oils & Vinegars"
       }

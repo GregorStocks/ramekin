@@ -897,3 +897,130 @@ fn test_named_brands_and_singular_categories() {
     let mixin = parse("1 cup mix-in of choice, such as sliced almonds, chocolate chips");
     assert!(mixin.item.contains("sliced almonds"), "{mixin:?}");
 }
+
+#[test]
+fn test_trailing_prep_without_comma_goes_to_note() {
+    let cases = [
+        ("5 pears peeled and chopped", "pears", "peeled and chopped"),
+        ("3 eggs lightly beaten", "eggs", "lightly beaten"),
+        (
+            "1 spring onion finely chopped",
+            "spring onion",
+            "finely chopped",
+        ),
+        (
+            "1 lb paneer cut into 1in cubes",
+            "paneer",
+            "cut into 1in cubes",
+        ),
+        ("2 carrots thickly sliced", "carrots", "thickly sliced"),
+        ("1 onion roughly cut", "onion", "roughly cut"),
+        (
+            "1/4 cup red currant jelly melted",
+            "red currant jelly",
+            "melted",
+        ),
+        (
+            "1 lb cooked Italian sausage- sliced and crumbled",
+            "cooked Italian sausage",
+            "sliced and crumbled",
+        ),
+        (
+            "1 lb hot Italian sausage casings removed",
+            "hot Italian sausage",
+            "casings removed",
+        ),
+    ];
+    for (raw, item, note) in cases {
+        let parsed = parse_ingredient(raw);
+        assert_eq!(parsed.item, item, "{raw}");
+        assert_eq!(parsed.note.as_deref(), Some(note), "{raw}");
+    }
+    // A participle inside the food's name stays.
+    for raw in [
+        "1 can fire roasted crushed tomatoes",
+        "1 cup yellow split peas",
+        "1 piece center cut brisket",
+        "1 pound large peeled and deveined shrimp",
+        "1 tablespoon freshly grated or prepared horseradish",
+        "2 pounds top round cut of steak",
+        "10 ounces dry roasted & salted almonds",
+        "2 red apples cored and thickly sliced",
+        "4 strip steaks",
+        "1 banana split",
+        "2 lb beef shank cross cut",
+        "1 cup fresh berries partially crushed",
+        "1 can kidney beans canned but drained",
+    ] {
+        let parsed = parse_ingredient(raw);
+        assert_eq!(parsed.note, None, "{raw}");
+    }
+}
+
+#[test]
+fn test_count_words_read_as_units() {
+    let cases = [
+        ("1 envelope taco seasoning", "envelope", "taco seasoning"),
+        ("2 ears sweet corn", "ear", "sweet corn"),
+        ("1 ball burrata", "ball", "burrata"),
+        ("10 sheets filo dough", "sheet", "filo dough"),
+        ("1 loaf of rye bread", "loaf", "rye bread"),
+        (
+            "1/2 scoop vanilla protein powder",
+            "scoop",
+            "vanilla protein powder",
+        ),
+        ("splash of milk", "splash", "milk"),
+        ("1 leaf basil", "leaf", "basil"),
+    ];
+    for (raw, unit, item) in cases {
+        let parsed = parse_ingredient(raw);
+        assert_eq!(parsed.item, item, "{raw}");
+        assert_eq!(
+            parsed.measurements.first().and_then(|m| m.unit.as_deref()),
+            Some(unit),
+            "{raw}"
+        );
+    }
+}
+
+#[test]
+fn test_count_words_without_an_amount_are_the_food() {
+    for raw in [
+        "Leaves from 3 sprigs fresh thyme",
+        "bar cookies",
+        "ball tip steak",
+        "leaf lettuce",
+    ] {
+        let parsed = parse_ingredient(raw);
+        assert_eq!(parsed.item, raw);
+        assert!(parsed.measurements.is_empty(), "{raw}");
+    }
+}
+
+#[test]
+fn test_count_with_the_food_in_parentheses() {
+    let parsed =
+        parse_ingredient("1/2 envelope (about 1 1/2 teaspoons unflavored powdered gelatin)");
+    assert_eq!(parsed.item, "unflavored powdered gelatin");
+    assert_eq!(
+        parsed.measurements.first().and_then(|m| m.unit.as_deref()),
+        Some("envelope")
+    );
+    // A parenthetical that only measures names no food.
+    let raw = "1 envelope (about 2 teaspoons)";
+    assert_eq!(parse_ingredient(raw).item, raw);
+}
+
+#[test]
+fn test_count_words_stay_whole_words() {
+    let parsed =
+        crate::ingredient_parser::parse_ingredients("leaf lettuce, tomatoes, and cucumber");
+    let items: Vec<&str> = parsed.iter().map(|p| p.item.as_str()).collect();
+    assert_eq!(items, ["leaf lettuce", "tomatoes", "cucumber"]);
+    assert_eq!(parse_ingredient("1 bartlett pear").item, "bartlett pear");
+    assert_eq!(
+        parse_ingredient("1 tinned tomatoes").item,
+        "tinned tomatoes"
+    );
+}
