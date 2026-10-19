@@ -155,11 +155,11 @@
     {
       "raw": "2 medium cloves garlic, roughly chopped",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
-            "unit": "medium"
+            "unit": "medium clove"
           }
         ],
         "note": "roughly chopped",

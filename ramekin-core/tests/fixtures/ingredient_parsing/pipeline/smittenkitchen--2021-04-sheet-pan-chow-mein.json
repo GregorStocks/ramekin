@@ -200,11 +200,11 @@
     {
       "raw": "1 small clove garlic, grated or minced",
       "expected": {
-        "item": "clove garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small clove"
           }
         ],
         "note": "grated or minced",

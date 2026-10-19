@@ -42,11 +42,11 @@
     {
       "raw": "2 large cloves garlic, lightly smashed and peeled",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
-            "unit": "large"
+            "unit": "large clove"
           }
         ],
         "note": "lightly smashed and peeled",

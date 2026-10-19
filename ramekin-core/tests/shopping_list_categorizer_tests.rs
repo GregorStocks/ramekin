@@ -37,8 +37,9 @@ const MAX_WEIGHTED_MISMATCHES: u64 = 2;
 const MAX_WEIGHTED_OTHER: u64 = 3;
 /// Upper bounds on distinct mismatches and "Other" results from the catalog alone,
 /// without the keyword rules. Deleting the keyword rules
-/// (`issues/*catalog-delete-keyword-categorizer*`) needs these at the bounds above;
-/// the lines still missed are in `issues/*catalog-shopping-lines-it-cannot-read*`.
+/// (`issues/*catalog-delete-keyword-categorizer*`) needs these at the bounds above.
+/// Most of what's still missed is stale recipe text the corpus copied when it was
+/// added (`issues/*shopping-scorecard-hand-typed-only*`).
 const MAX_CATALOG_ONLY_MISMATCHES: usize = 6;
 const MAX_CATALOG_ONLY_OTHER: usize = 8;
 

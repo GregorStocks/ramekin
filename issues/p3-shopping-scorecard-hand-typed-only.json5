@@ -1,0 +1,17 @@
+{
+  "title": "Score only hand-typed items in the shopping-list categorizer scorecard",
+  "description": "data/shopping-list-categories.json is every distinct prod shopping-list item, and 298 of its 509 distinct items came from 'add this recipe's ingredients to my shopping list'. \
+Those are frozen copies of the recipe parse at the time they were added, so the scorecard keeps scoring stale parser output: e.g. 'Finely grated zest and juice of 1/2 lime' (the current parser splits it) and 'ground beef + ground pork - …' (the recipe was re-scraped; the line is now 'ground meat'). \
+Recipe lines are already covered by the ingredient fixtures and pipeline snapshots, which update with the parser. \n\
+Regenerate the corpus from prod with only rows where source_recipe_id and source_recipe_title are NULL (211 distinct items as of 2026-10-19; see the prod-db-copy notes for copying the DB), keep the labels for items that stay, and reset the MAX_* bounds in ramekin-core/tests/shopping_list_categorizer_tests.rs (with and without keywords) to the new measured values. \
+Update the bars quoted in issues/*catalog-close-category-gap* and issues/*catalog-delete-keyword-categorizer* to match. \
+This replaces the deleted p3-catalog-shopping-lines-it-cannot-read: its lines all came from recipes ('Banning soda' is a hand-typed typo).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-10-19T00:00:00-07:00",
+  "updated_at": "2026-10-19T00:00:00-07:00",
+}

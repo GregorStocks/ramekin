@@ -1,0 +1,29 @@
+{
+  "title": "Add a Settings button that re-parses stored recipes from their scraped lines",
+  "description": "Parser improvements only reach a recipe when it's saved or re-scraped again, so prod recipes keep stale parses. \
+That stale text shows up in the app and on the shopping list: 'Finely grated zest and juice of 1/2 lime' was added to the list as one item, though the current parser splits it into lime zest and lime juice. \
+The one-off 'Re-parse ingredients' button (#714) re-read the stored *item* text, not the original line, and #718 removed it after one use. \n\
+Measured 2026-10-19 on a copy of the prod DB: of 1,000 live recipes, 965 have a saved scrape and no hand edit after it. \
+Re-parsing their original lines changes 874 of them (amount formats like 0.5 vs 1/2 ignored). \
+Lines matching a catalog food go 10,795 -> 11,171 (94.4% -> 97.7%). \
+Catalog-only categories barely move (11,089 -> 11,079), since the categorizer already re-reads stale items. \n\
+The original lines are in step_outputs: the latest successful extract_recipe output (raw_recipe.ingredients, method_used, footnotes) of a scrape job for the recipe whose save_recipe succeeded. \
+Re-parse them the way ramekin-core/src/pipeline/steps/parse_ingredients.rs does: paprika vs normal parsing, apply_footnotes_to_ingredients, normalize_amounts. \
+Share that code rather than copying it. \n\
+A plain re-parse also loses things the stored version has, so keep them: 261 lines lost their section (keep the stored section when the new line has none), and 57 lines lost a gram weight the stored version has (e.g. 1/3 cup plus 67 g; source not traced; keep stored measurements the new parse lacks, or skip that line). \
+Skip recipes with a 'user' version after the extraction, and recipes with no saved extraction (17 in prod); report both counts. \n\
+Shape: a web Settings button (and iOS, unless the user says otherwise) the owner presses after parser PRs. \
+It is not a one-off: keep the endpoint. \
+It calls a POST endpoint that writes a new 'reparse' version (the existing 'Re-parsed' badge) only for recipes that change, compare-and-swap against the current version, tags copied, no deletes, and returns recipes checked / updated / skipped. \
+Add e2e tests before wiring the UI. \
+Fixing the parser bugs found in the same measurement first (size phrases like '8-ounce block halloumi', '2 medium cloves garlic') keeps a re-parse from regressing those lines.",
+  "status": "open",
+  "priority": 3,
+  "type": "feature",
+  "labels": [
+    "ingredient-parser",
+    "api",
+  ],
+  "created_at": "2026-10-19T00:00:00-07:00",
+  "updated_at": "2026-10-19T00:00:00-07:00",
+}

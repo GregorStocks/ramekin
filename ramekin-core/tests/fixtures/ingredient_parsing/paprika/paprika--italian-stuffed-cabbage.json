@@ -77,11 +77,11 @@
     {
       "raw": "1 small sprig of sage, finely chopped",
       "expected": {
-        "item": "sprig of sage",
+        "item": "sage",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small sprig"
           }
         ],
         "note": "finely chopped",
@@ -91,11 +91,11 @@
     {
       "raw": "1 small sprig of rosemary, finely chopped",
       "expected": {
-        "item": "sprig of rosemary",
+        "item": "rosemary",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small sprig"
           }
         ],
         "note": "finely chopped",

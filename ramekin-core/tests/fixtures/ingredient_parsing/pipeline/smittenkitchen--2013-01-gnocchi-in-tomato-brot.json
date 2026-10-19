@@ -46,11 +46,11 @@
     {
       "raw": "1 medium stalk celery, chopped",
       "expected": {
-        "item": "stalk celery",
+        "item": "celery",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium stalk"
           }
         ],
         "note": "chopped",

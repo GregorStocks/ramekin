@@ -54,7 +54,7 @@
           }
         ],
         "note": "divided",
-        "category": "Spices & Seasonings"
+        "category": "Produce"
       }
     },
     {
@@ -144,11 +144,11 @@
     {
       "raw": "1 medium clove garlic, minced (about 1 teaspoon)",
       "expected": {
-        "item": "clove garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium clove"
           },
           {
             "amount": "1",

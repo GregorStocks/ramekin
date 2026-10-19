@@ -105,11 +105,11 @@
     {
       "raw": "2 small sprigs thyme, leaves picked",
       "expected": {
-        "item": "sprigs thyme, leaves picked",
+        "item": "thyme, leaves picked",
         "measurements": [
           {
             "amount": "2",
-            "unit": "small"
+            "unit": "small sprig"
           }
         ],
         "note": null,

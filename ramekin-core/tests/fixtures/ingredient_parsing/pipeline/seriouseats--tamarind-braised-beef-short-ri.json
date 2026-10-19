@@ -230,11 +230,11 @@
     {
       "raw": "5 medium cloves garlic, smashed",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "5",
-            "unit": "medium"
+            "unit": "medium clove"
           }
         ],
         "note": "smashed",

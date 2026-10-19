@@ -1024,3 +1024,75 @@ fn test_count_words_stay_whole_words() {
         "tinned tomatoes"
     );
 }
+
+fn item_note_units(line: &str) -> (String, Option<String>, Vec<Option<String>>) {
+    let parsed = parse_ingredient(line);
+    let units = parsed.measurements.into_iter().map(|m| m.unit).collect();
+    (parsed.item, parsed.note, units)
+}
+
+#[test]
+fn test_sized_cloves_sprigs_and_stalks_are_units() {
+    for (line, unit) in [
+        ("2 medium cloves garlic, minced", "medium clove"),
+        ("1 large clove garlic", "large clove"),
+        ("3 large sprigs fresh thyme", "large sprig"),
+        ("2 large stalks celery, chopped", "large stalk"),
+    ] {
+        let (item, _, units) = item_note_units(line);
+        assert_eq!(
+            units.first().cloned().flatten().as_deref(),
+            Some(unit),
+            "{line}"
+        );
+        assert!(
+            ["garlic", "fresh thyme", "celery"].contains(&item.as_str()),
+            "{line}: {item}"
+        );
+    }
+    // A bare size shares the sized measure of its alternative.
+    assert_eq!(
+        item_note_units("1 large or 2 small stalks celery, diced"),
+        (
+            "celery".to_string(),
+            Some("diced".to_string()),
+            vec![
+                Some("large stalk".to_string()),
+                Some("small stalk".to_string())
+            ]
+        )
+    );
+    // A sized measure before "or" isn't the food.
+    assert_eq!(
+        item_note_units("1 big clove or 2 small cloves garlic").0,
+        "big clove or 2 small cloves garlic"
+    );
+}
+
+#[test]
+fn test_sizes_and_measured_additions_stay_in_the_item() {
+    // A shopping list shows only the item and amount, so the item keeps them;
+    // the catalog matches the food without them.
+    for line in [
+        "One 8-ounce (225-gram) block halloumi, in 1-inch cubes",
+        "3 8-ounce blocks cream cheese",
+        "1 large egg plus 1 large yolk",
+        "3 tablespoons lemon juice plus 2 teaspoons, divided",
+    ] {
+        let item = item_note_units(line).0;
+        assert!(
+            item.contains("block") || item.contains(" plus "),
+            "{line}: {item}"
+        );
+    }
+    // After an amount alone, the addition names the food.
+    for (line, item) in [
+        (
+            "1 cup (4 ounces; 113 g), plus 2 tablespoons (3/4 ounce; 21 g) unroasted walnuts, divided",
+            "unroasted walnuts",
+        ),
+        ("2 tablespoons, plus 2 teaspoons olive oil, divided", "olive oil"),
+    ] {
+        assert_eq!(item_note_units(line).0, item, "{line}");
+    }
+}

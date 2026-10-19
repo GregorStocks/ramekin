@@ -22,8 +22,11 @@ use super::quantity::Range;
 use super::tokens::{tokenize, Kind, Token};
 use super::*;
 
-/// Sizes a measure can take ("small handful", "large bunch", "small head").
-const SIZEABLE_MEASURES: &[&str] = &["handful", "bunch", "pinch", "head"];
+/// Sizes a measure can take ("small handful", "large bunch", "small head",
+/// "medium clove").
+const SIZEABLE_MEASURES: &[&str] = &[
+    "handful", "bunch", "pinch", "head", "clove", "stalk", "sprig",
+];
 
 /// Nouns for a piece cut to a size in inches ("3-inch piece", "3-4 inch chunk").
 const INCH_PIECE_NOUNS: &[&str] = &[
@@ -776,7 +779,7 @@ const PACKAGE_MASSES: &[&str] = &[
 ];
 
 /// Containers whose weight a recipe may state ("15-ounce can").
-const PACKAGE_WORDS: &[&str] = &[
+pub(super) const PACKAGE_WORDS: &[&str] = &[
     "can",
     "package",
     "block",
@@ -789,6 +792,13 @@ const PACKAGE_WORDS: &[&str] = &[
     "bottle",
     "packet",
     "tub",
+];
+
+/// Pieces a recipe may size by weight or length ("2-pound head", "4-ounce
+/// log", "1-inch slices"), besides the containers above.
+pub(super) const SIZED_PIECES: &[&str] = &[
+    "piece", "slice", "chunk", "cube", "head", "knob", "wedge", "round", "length", "segment",
+    "log", "wheel", "ball", "link", "bundle", "bunch", "rack", "stick",
 ];
 
 /// Words that hedge a weight ("about 1 pound").

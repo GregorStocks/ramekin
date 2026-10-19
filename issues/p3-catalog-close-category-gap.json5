@@ -3,7 +3,7 @@
   "description": "blocked-catalog-delete-keyword-categorizer can't land until the catalog categorizes names well enough without the keyword fallback in data/ingredients.json. \
 The gap is now measured without patching: data/ingredient-catalog-audit.md has a 'Lines categorized (catalog only)' column, and make shopping-list-categorizer-test prints a catalog-only report bounded by MAX_CATALOG_ONLY_MISMATCHES / MAX_CATALOG_ONLY_OTHER. \n\
 Progress 2026-10-18: the categorizer reads a raw shopping line as an ingredient line when its text gets no category, and the shopping misses plus the 211 names seen at least twice in the fixtures were classified. \
-Scorecard catalog-only: 60 mismatches / 64 Other -> 7 / 9; what's left is in p3-catalog-shopping-lines-it-cannot-read. \
+Scorecard catalog-only: 60 mismatches / 64 Other -> 7 / 9; most of what's left is stale recipe text copied into the corpus (p3-shopping-scorecard-hand-typed-only). \
 Lines categorized, catalog only vs with keywords: pipeline fixtures 90.4% vs 98.8%, Paprika 98.1% vs 99.4%, snapshots 98.4% vs 99.8%. \n\
 Why the fixture gap is hard: almost all of it is names the catalog doesn't resolve at all, not foods missing a category (make ingredient-catalog-uncategorized is nearly empty). \
 Of the ~5,400 unresolved fixture names, nearly all appear exactly once. \

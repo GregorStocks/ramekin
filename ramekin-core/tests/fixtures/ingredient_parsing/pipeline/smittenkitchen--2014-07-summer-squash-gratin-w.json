@@ -181,11 +181,11 @@
     {
       "raw": "2 small cloves garlic",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
-            "unit": "small"
+            "unit": "small clove"
           }
         ],
         "note": null,

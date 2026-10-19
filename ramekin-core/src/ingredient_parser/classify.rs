@@ -465,7 +465,14 @@ fn is_amount_or_size(s: &str) -> bool {
         && last
             .chars()
             .all(|c| c.is_ascii_digit() || c == '.' || c == '/');
-    numeric_size || is_size_unit(last)
+    // "1 big clove or 2 small cloves garlic": a sized measure.
+    // Bare "cloves" can be the spice.
+    let sized_measure = words.len() > 1
+        && matches!(measure::read_unit(last), (Some(_), rest) if rest.is_empty())
+        && words[..words.len() - 1].iter().all(|word| {
+            is_size_unit(word) || ["big", "fat"].contains(&word.to_lowercase().as_str())
+        });
+    numeric_size || is_size_unit(last) || sized_measure
 }
 
 /// A unit that measures how much food there is, rather than its size

@@ -61,7 +61,7 @@
     {
       "raw": "0.25 cup , plus 1 Tablespoon rice vinegar, divided",
       "expected": {
-        "item": "0.25 cup , plus 1 Tablespoon rice vinegar, divided",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "0.25",
@@ -75,7 +75,7 @@
     {
       "raw": "0.5 cup , plus 1 Tablespoon pure maple syrup, divided",
       "expected": {
-        "item": "0.5 cup , plus 1 Tablespoon pure maple syrup, divided",
+        "item": "pure maple syrup",
         "measurements": [
           {
             "amount": "0.5",

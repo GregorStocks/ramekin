@@ -109,11 +109,11 @@
     {
       "raw": "5 large cloves garlic, thinly sliced (about 3 tablespoons)",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "5",
-            "unit": "large"
+            "unit": "large clove"
           },
           {
             "amount": "3",

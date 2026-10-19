@@ -19,11 +19,11 @@
     {
       "raw": "2  large cloves of garlic (pressed)",
       "expected": {
-        "item": "cloves of garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
-            "unit": "large"
+            "unit": "large clove"
           }
         ],
         "note": "pressed",

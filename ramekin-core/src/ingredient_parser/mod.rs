@@ -349,6 +349,38 @@ fn split_leading_item_qualifier(item: &str) -> Option<(&str, &str)> {
     })
 }
 
+/// A size left at the front of the item, with the piece or container it sizes:
+/// "8-ounce block", "2\" piece", "1-inch thick", "5-pound", "14-ounce each
+/// cans".
+static LEADING_SIZE_REGEX: LazyLock<regex::Regex> = LazyLock::new(|| {
+    let nouns = [measure::PACKAGE_WORDS, measure::SIZED_PIECES]
+        .concat()
+        .iter()
+        .map(|noun| format!("{noun}(?:e?s)?"))
+        .collect::<Vec<_>>()
+        .join("|");
+    regex::Regex::new(&format!(
+        r#"(?i)^(?P<size>\d+(?:\s+\d+/\d+|/\d+|\.\d+)?(?:\s*(?:-|to)\s*\d+(?:/\d+|\.\d+)?)?(?:[-\s](?:inch(?:es)?\b|in\.)|["”]|-(?:ounces?|oz|pounds?|lbs?|grams?|g|kg|cm)\b\.?)(?:[-\s](?:thick|long|wide)\b)?(?:\s+each\b)?(?:\s+(?:{nouns})\b,?)?)\s+(?:of\s+)?(?P<rest>\p{{L}}.*)$"#
+    ))
+    .expect("Invalid leading size regex")
+});
+
+/// "8-ounce block halloumi" -> ("8-ounce block", "halloumi"): a size the
+/// measurement reader left in front of the food. The item keeps it, since a
+/// shopping list shows only the item and amount; the catalog matches the food
+/// without it.
+pub(crate) fn split_leading_size(item: &str) -> Option<(&str, &str)> {
+    let caps = LEADING_SIZE_REGEX.captures(item.trim_start())?;
+    let rest = caps.name("rest")?.as_str();
+    // "12-inch round or 9x13 pizza doughs", "1-inch slices from a loaf": the
+    // size doesn't lead a food.
+    let first = rest.split_whitespace().next()?.to_lowercase();
+    if ["or", "and", "from", "to"].contains(&first.as_str()) {
+        return None;
+    }
+    Some((caps.name("size")?.as_str().trim_end_matches(','), rest))
+}
+
 /// After a bare amount, the rest of a list of alternative amounts: more bare
 /// amounts after commas, then "or" and the last amount with the unit or food
 /// they share (", 1/4 or 1/2 teaspoon yeast", ", 3, or 4 eggs"). Returns the
@@ -979,7 +1011,17 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         remaining = item_part.to_string();
     }
 
-    // Step 6: Build measurements list
+    // Step 6: Build measurements list. "1 large or 2 small stalks celery":
+    // the bare size shares the alternative's sized measure ("large stalk").
+    if let Some(size) = primary_unit.as_deref().filter(|unit| is_size_unit(unit)) {
+        let shared = alt_measurements.iter().find_map(|m| {
+            let (alt_size, measure) = m.unit.as_deref()?.split_once(' ')?;
+            is_size_unit(alt_size).then(|| measure.to_string())
+        });
+        if let Some(measure) = shared {
+            primary_unit = Some(format!("{size} {measure}"));
+        }
+    }
     if primary_amount.is_some() || primary_unit.is_some() {
         measurements.push(Measurement {
             amount: primary_amount,
@@ -1066,12 +1108,16 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
     // "1/2 envelope (about 1 1/2 teaspoons unflavored powdered gelatin)": the
     // count took everything outside the parentheses, so the food is the one
-    // the note measures.
+    // the note measures. In "1 cup, plus 2 tablespoons walnuts" the addition
+    // measures the same food.
     let item = if item.is_empty() {
         note.as_deref()
-            .filter(|note| {
-                let note = note.to_lowercase();
-                !note.starts_with("plus ") && !note.starts_with("or ")
+            .filter(|note| !note.to_lowercase().starts_with("or "))
+            .map(|note| {
+                note.get(..5)
+                    .filter(|plus| plus.eq_ignore_ascii_case("plus "))
+                    .and_then(|_| note.get(5..))
+                    .unwrap_or(note)
             })
             .and_then(|note| reparse_item(note).filter(|parsed| parsed.item != note))
             .filter(|parsed| !parsed.measurements.is_empty())

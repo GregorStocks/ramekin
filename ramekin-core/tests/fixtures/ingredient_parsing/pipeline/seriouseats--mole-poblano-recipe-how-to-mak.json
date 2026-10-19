@@ -289,11 +289,11 @@
     {
       "raw": "10 medium cloves garlic, minced (about 10 teaspoons)",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "10",
-            "unit": "medium"
+            "unit": "medium clove"
           },
           {
             "amount": "10",

@@ -112,11 +112,11 @@
     {
       "raw": "1 small clove garlic, peeled and halved",
       "expected": {
-        "item": "clove garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small clove"
           }
         ],
         "note": "peeled and halved",

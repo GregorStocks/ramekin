@@ -214,11 +214,11 @@
     {
       "raw": "1 large stalk celery, finely chopped",
       "expected": {
-        "item": "stalk celery",
+        "item": "celery",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large stalk"
           }
         ],
         "note": "finely chopped",

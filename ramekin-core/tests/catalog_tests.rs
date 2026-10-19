@@ -247,6 +247,17 @@ fn looser_spellings_resolve_to_the_same_food() {
     same("tub sour cream", "sour cream");
     same("splash of water", "water");
     same("big handfuls of kale", "kale");
+    // A size the item keeps before the food, and a measured addition after
+    // it.
+    same("8-ounce block halloumi", "halloumi");
+    same("2-pound head green cabbage", "green cabbage");
+    same(
+        "1-inch thick boneless pork loin chops",
+        "boneless pork loin chops",
+    );
+    same("8-oz. skin-on salmon fillets", "skin-on salmon fillets");
+    same("egg plus 1 large yolk", "egg");
+    same("all-purpose flour plus 2 tablespoons", "all-purpose flour");
     // es/ies plurals.
     same("strawberry", "strawberries");
     same("radish", "radishes");
