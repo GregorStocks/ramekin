@@ -349,6 +349,30 @@ fn split_leading_item_qualifier(item: &str) -> Option<(&str, &str)> {
     })
 }
 
+/// A size left at the front of the item, with the piece or container it sizes:
+/// "8-ounce block", "2\" piece", "1-inch thick", "5-pound".
+static LEADING_SIZE_REGEX: LazyLock<regex::Regex> = LazyLock::new(|| {
+    regex::Regex::new(
+        r#"(?i)^(?P<size>\d+(?:\s+\d+/\d+|/\d+|\.\d+)?(?:\s*(?:-|to)\s*\d+(?:/\d+|\.\d+)?)?(?:[-\s](?:inch(?:es)?\b|in\.)|["”]|-(?:ounces?|oz|pounds?|lbs?|grams?|g|kg|cm)\b\.?)(?:[-\s]thick\b)?(?:\s+(?:blocks?|pieces?|slices?|chunks?|cubes?|heads?|knobs?|wedges?|rounds?|lengths?|segments?|cans?|jars?|packages?|bags?|boxes|box|bottles?|containers?|tins?|tubs?|logs?|wheels?|balls?|links?|bundles?|bunch(?:es)?|racks?|sticks?)\b,?)?)\s+(?:of\s+)?(?P<rest>\p{L}.*)$"#,
+    )
+    .expect("Invalid leading size regex")
+});
+
+/// "8-ounce block halloumi" -> ("8-ounce block", "halloumi"): a size the
+/// measurement reader left in front of the food sizes it, so it goes to the
+/// note.
+fn split_leading_size(item: &str) -> Option<(&str, &str)> {
+    let caps = LEADING_SIZE_REGEX.captures(item.trim_start())?;
+    let rest = caps.name("rest")?.as_str();
+    // "12-inch round or 9x13 pizza doughs", "1-inch slices from a loaf": the
+    // size doesn't lead a food.
+    let first = rest.split_whitespace().next()?.to_lowercase();
+    if ["or", "and", "from", "to"].contains(&first.as_str()) {
+        return None;
+    }
+    Some((caps.name("size")?.as_str().trim_end_matches(','), rest))
+}
+
 /// After a bare amount, the rest of a list of alternative amounts: more bare
 /// amounts after commas, then "or" and the last amount with the unit or food
 /// they share (", 1/4 or 1/2 teaspoon yeast", ", 3, or 4 eggs"). Returns the
@@ -954,6 +978,15 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
+    // "4 8-oz. salmon fillets", "One 8-ounce block halloumi": a size before
+    // the food leads the note, as a parenthesized one does.
+    let leading_size = split_leading_size(&remaining)
+        .map(|(size, item_part)| (size.to_string(), item_part.to_string()))
+        .map(|(size, item_part)| {
+            remaining = item_part;
+            size
+        });
+
     // Step 5: Classify what's left after the measurement into the item and
     // its note parts ("plus more", prep, guidance, "or" alternatives).
     let classified = classify::classify_item(
@@ -966,6 +999,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     note = classified.note;
 
     prepend_deferred_parenthetical_notes(&mut note, &deferred_parenthetical_notes);
+
+    if let Some(size) = leading_size {
+        note = Some(match note {
+            Some(existing) => format!("{size}, {existing}"),
+            None => size,
+        });
+    }
 
     // Step 5.9: "packed dark-brown sugar", "good quality dark chocolate": how
     // the food is packed or how good it is goes to the note. It stays off the
@@ -1066,12 +1106,16 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
     // "1/2 envelope (about 1 1/2 teaspoons unflavored powdered gelatin)": the
     // count took everything outside the parentheses, so the food is the one
-    // the note measures.
+    // the note measures. In "1 cup, plus 2 tablespoons walnuts" the addition
+    // measures the same food.
     let item = if item.is_empty() {
         note.as_deref()
-            .filter(|note| {
-                let note = note.to_lowercase();
-                !note.starts_with("plus ") && !note.starts_with("or ")
+            .filter(|note| !note.to_lowercase().starts_with("or "))
+            .map(|note| {
+                note.get(..5)
+                    .filter(|plus| plus.eq_ignore_ascii_case("plus "))
+                    .and_then(|_| note.get(5..))
+                    .unwrap_or(note)
             })
             .and_then(|note| reparse_item(note).filter(|parsed| parsed.item != note))
             .filter(|parsed| !parsed.measurements.is_empty())

@@ -61,14 +61,14 @@
     {
       "raw": "2 cups vegetable broth plus 1/2 cup more if needed",
       "expected": {
-        "item": "vegetable broth plus 1/2 cup more if needed",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus 1/2 cup more if needed",
         "category": "Canned Goods"
       }
     },

@@ -46,15 +46,15 @@
     {
       "raw": "4 whole sprigs of tarragon plus 1 tablespoon minced fresh tarragon leaves, divided",
       "expected": {
-        "item": "whole sprigs of tarragon plus 1 tablespoon minced fresh tarragon leaves",
+        "item": "whole sprigs of tarragon",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "divided",
-        "category": "Spices & Seasonings"
+        "note": "plus 1 tablespoon minced fresh tarragon leaves, divided",
+        "category": "Produce"
       }
     },
     {
@@ -144,11 +144,11 @@
     {
       "raw": "1 medium clove garlic, minced (about 1 teaspoon)",
       "expected": {
-        "item": "clove garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium clove"
           },
           {
             "amount": "1",

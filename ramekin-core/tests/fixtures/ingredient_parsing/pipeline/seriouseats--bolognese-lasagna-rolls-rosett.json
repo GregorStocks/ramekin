@@ -351,11 +351,11 @@
     {
       "raw": "1 medium clove garlic, lightly smashed",
       "expected": {
-        "item": "clove garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": "medium"
+            "unit": "medium clove"
           }
         ],
         "note": "lightly smashed",
@@ -365,11 +365,11 @@
     {
       "raw": "1 large sprig fresh basil",
       "expected": {
-        "item": "sprig fresh basil",
+        "item": "fresh basil",
         "measurements": [
           {
             "amount": "1",
-            "unit": "large"
+            "unit": "large sprig"
           }
         ],
         "note": null,

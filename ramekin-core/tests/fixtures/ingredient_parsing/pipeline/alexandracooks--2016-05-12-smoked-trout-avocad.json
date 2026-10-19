@@ -126,14 +126,14 @@
     {
       "raw": "Four&nbsp;1-inch thick slices good bread",
       "expected": {
-        "item": "1-inch thick slices good bread",
+        "item": "good bread",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "1-inch thick slices",
         "category": "Bakery & Bread"
       }
     }

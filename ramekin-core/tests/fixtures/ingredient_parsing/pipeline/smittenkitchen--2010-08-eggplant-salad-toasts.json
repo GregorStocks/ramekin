@@ -98,25 +98,25 @@
     {
       "raw": "8 1/2-inch slices of baguette, brushed with olive oil (I used 1-inch slices in the photos, then decided they were too thick)",
       "expected": {
-        "item": "1/2-inch slices of baguette, brushed with olive oil",
+        "item": "baguette, brushed with olive oil",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "I used 1-inch slices in the photos, then decided they were too thick",
+        "note": "1/2-inch slices, I used 1-inch slices in the photos, then decided they were too thick",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 small clove garlic, peeled and halved",
       "expected": {
-        "item": "clove garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small clove"
           }
         ],
         "note": "peeled and halved",

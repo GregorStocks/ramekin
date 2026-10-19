@@ -45,11 +45,11 @@
     {
       "raw": "5 medium cloves (25g) garlic, minced (2 tablespoons)",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "5",
-            "unit": "medium"
+            "unit": "medium clove"
           },
           {
             "amount": "25",
@@ -238,11 +238,11 @@
     {
       "raw": "2 medium cloves garlic, roughly chopped (1 tablespoon)",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
-            "unit": "medium"
+            "unit": "medium clove"
           },
           {
             "amount": "1",

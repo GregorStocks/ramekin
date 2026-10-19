@@ -47,14 +47,14 @@
     {
       "raw": "two&nbsp;6-ounce cod (or other) fish fillets, 1 to 1 1/2 inches thick",
       "expected": {
-        "item": "6-ounce cod fish fillets, 1 to 1 1/2 inches thick",
+        "item": "cod fish fillets, 1 to 1 1/2 inches thick",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "or other",
+        "note": "6-ounce, or other",
         "category": "Meat & Seafood"
       }
     },

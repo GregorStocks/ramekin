@@ -94,11 +94,11 @@
     {
       "raw": "2 medium cloves garlic (10 g), minced",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
-            "unit": "medium"
+            "unit": "medium clove"
           },
           {
             "amount": "10",

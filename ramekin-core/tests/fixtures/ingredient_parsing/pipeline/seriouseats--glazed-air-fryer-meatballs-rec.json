@@ -23,11 +23,11 @@
     {
       "raw": "2 medium cloves garlic, peeled and grated on a rasp grater such as a Microplane or finely chopped",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
-            "unit": "medium"
+            "unit": "medium clove"
           }
         ],
         "note": "peeled and grated on a rasp grater such as a Microplane or finely chopped",

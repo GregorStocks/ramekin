@@ -60,14 +60,14 @@
     {
       "raw": "1  7-ounce block Violife Vegan Feta Cheese  (, or use any feta of your choice)",
       "expected": {
-        "item": "7-ounce block Violife Vegan Feta Cheese",
+        "item": "Violife Vegan Feta Cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or use any feta of your choice",
+        "note": "7-ounce block, or use any feta of your choice",
         "category": "Cheese"
       }
     },

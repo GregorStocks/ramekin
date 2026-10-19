@@ -64,14 +64,14 @@
     {
       "raw": "2 large eggs plus 1 large yolk",
       "expected": {
-        "item": "eggs plus 1 large yolk",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "plus 1 large yolk",
         "category": "Dairy & Eggs"
       }
     },

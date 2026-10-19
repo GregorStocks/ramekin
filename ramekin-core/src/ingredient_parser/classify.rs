@@ -157,17 +157,28 @@ fn plus_note(line: &mut ItemText, note: &mut Note, measured_line: bool) {
     } else if let Some(plus) = words.first() {
         // Right after the measurement ("1 3/4 cups plus a pinch of sugar"),
         // a "plus" the measurement reader didn't fold into the amount takes
-        // the rest of the line.
+        // the rest of the line. A labeled list ("Egg wash: 1 egg plus 1
+        // tablespoon water") stays whole.
         let after = line.after(plus);
-        if after.is_empty() || (plus.before.is_empty() && !measured_line) {
+        if after.is_empty()
+            || (plus.before.is_empty() && !measured_line)
+            || plus.before.contains(':')
+        {
             return;
         }
-        let (plus_prefix, _) = strip_plus_measurement_prefix(after);
         let measured = parse_plus_continuation_measurement(after).is_some();
+        // "egg plus 1 large yolk": after a food, a measured addition is a
+        // note; after an amount alone it measures the food that follows, and
+        // after an "or" ("vanilla sugar or 1 tbsp sugar plus 1 tsp vanilla")
+        // it is part of the alternative.
+        let in_alternative = line
+            .splits()
+            .iter()
+            .any(|s| s.sep == Sep::Or && s.start < plus.start);
         if measured
             && (plus.before.is_empty()
-                || plus_prefix.is_none()
-                || leading_measurement_consumes_all(plus.before))
+                || leading_measurement_consumes_all(plus.before)
+                || in_alternative)
         {
             return;
         }
@@ -465,7 +476,14 @@ fn is_amount_or_size(s: &str) -> bool {
         && last
             .chars()
             .all(|c| c.is_ascii_digit() || c == '.' || c == '/');
-    numeric_size || is_size_unit(last)
+    // "1 big clove or 2 small cloves garlic": a sized measure.
+    // Bare "cloves" can be the spice.
+    let sized_measure = words.len() > 1
+        && matches!(measure::read_unit(last), (Some(_), rest) if rest.is_empty())
+        && words[..words.len() - 1].iter().all(|word| {
+            is_size_unit(word) || ["big", "fat"].contains(&word.to_lowercase().as_str())
+        });
+    numeric_size || is_size_unit(last) || sized_measure
 }
 
 /// A unit that measures how much food there is, rather than its size
@@ -603,8 +621,8 @@ mod tests {
         assert_eq!(
             parsed("1 8-ounce block cream cheese or 1 8-ounce tub non-dairy cream cheese, at room temperature"),
             (
-                "8-ounce block cream cheese".into(),
-                note("or 1 8-ounce tub non-dairy cream cheese; at room temperature")
+                "cream cheese".into(),
+                note("8-ounce block, or 1 8-ounce tub non-dairy cream cheese; at room temperature")
             )
         );
         // A piece size isn't an amount.

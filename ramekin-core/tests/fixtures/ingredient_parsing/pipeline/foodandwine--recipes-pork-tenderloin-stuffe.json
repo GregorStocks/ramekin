@@ -107,14 +107,14 @@
     {
       "raw": "One 1-pound pork tenderloin",
       "expected": {
-        "item": "1-pound pork tenderloin",
+        "item": "pork tenderloin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "1-pound",
         "category": "Meat & Seafood"
       }
     },

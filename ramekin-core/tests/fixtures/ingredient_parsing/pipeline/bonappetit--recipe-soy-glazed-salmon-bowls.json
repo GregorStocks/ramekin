@@ -5,14 +5,14 @@
     {
       "raw": "1 1\" piece ginger, peeled, finely grated",
       "expected": {
-        "item": "1\" piece ginger",
+        "item": "ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "peeled, finely grated",
+        "note": "1\" piece, peeled, finely grated",
         "category": "Produce"
       }
     },
@@ -103,14 +103,14 @@
     {
       "raw": "4 4 –6-oz. skinless salmon fillets or one 1–1½-lb. skinless salmon fillet, cut into 1\" pieces",
       "expected": {
-        "item": "4 -6-oz. skinless salmon fillets",
+        "item": "skinless salmon fillets",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "or one 1-1 1/2-lb. skinless salmon fillet; cut into 1\" pieces",
+        "note": "4 -6-oz., or one 1-1 1/2-lb. skinless salmon fillet; cut into 1\" pieces",
         "category": "Meat & Seafood"
       }
     },

@@ -28,11 +28,11 @@
     {
       "raw": "1 small clove garlic, minced, or more to taste",
       "expected": {
-        "item": "clove garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
+            "unit": "small clove"
           }
         ],
         "note": "minced, or more to taste",

@@ -19,14 +19,14 @@
     {
       "raw": "2 (6-ounce) 3/4-inch thick top sirloin steaks",
       "expected": {
-        "item": "3/4-inch thick top sirloin steaks",
+        "item": "top sirloin steaks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "6-ounce",
+        "note": "3/4-inch thick, 6-ounce",
         "category": "Meat & Seafood"
       }
     },

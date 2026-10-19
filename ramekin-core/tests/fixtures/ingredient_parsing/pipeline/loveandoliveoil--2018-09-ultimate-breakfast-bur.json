@@ -47,14 +47,14 @@
     {
       "raw": "4  9-inch flour tortillas",
       "expected": {
-        "item": "9-inch flour tortillas",
+        "item": "flour tortillas",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "9-inch",
         "category": "Bakery & Bread"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1 1½-lb. skin-on salmon fillet",
       "expected": {
-        "item": "1 1/2-lb. skin-on salmon fillet",
+        "item": "skin-on salmon fillet",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "1 1/2-lb.",
         "category": "Meat & Seafood"
       }
     },

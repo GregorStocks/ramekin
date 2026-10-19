@@ -154,7 +154,7 @@
     {
       "raw": "One 8-ounce (225-gram) block halloumi, in 1-inch cubes",
       "expected": {
-        "item": "8-ounce block halloumi",
+        "item": "halloumi",
         "measurements": [
           {
             "amount": "1",
@@ -165,7 +165,7 @@
             "unit": "g"
           }
         ],
-        "note": "in 1-inch cubes",
+        "note": "8-ounce block, in 1-inch cubes",
         "category": "Cheese"
       }
     }

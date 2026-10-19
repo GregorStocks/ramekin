@@ -254,7 +254,7 @@
     {
       "raw": "3 8-ounce (675 grams total) blocks cream cheese, at room temperature",
       "expected": {
-        "item": "8-ounce blocks cream cheese",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "3",
@@ -265,7 +265,7 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature",
+        "note": "8-ounce blocks, at room temperature",
         "section": "Frosting",
         "category": "Cheese"
       }

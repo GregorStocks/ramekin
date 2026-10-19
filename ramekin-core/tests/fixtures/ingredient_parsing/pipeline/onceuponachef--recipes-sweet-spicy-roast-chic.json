@@ -173,14 +173,14 @@
     {
       "raw": "3 cups ¼-inch sliced carrots",
       "expected": {
-        "item": "1/4-inch sliced carrots",
+        "item": "sliced carrots",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "1/4-inch",
         "category": "Produce"
       }
     },

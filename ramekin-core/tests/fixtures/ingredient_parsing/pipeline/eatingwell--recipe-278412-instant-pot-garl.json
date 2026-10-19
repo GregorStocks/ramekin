@@ -19,14 +19,14 @@
     {
       "raw": "1 tablespoon chopped fresh rosemary plus 3 teaspoons, divided",
       "expected": {
-        "item": "chopped fresh rosemary plus 3 teaspoons",
+        "item": "chopped fresh rosemary",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "divided",
+        "note": "plus 3 teaspoons, divided",
         "category": "Produce"
       }
     },
@@ -89,11 +89,11 @@
     {
       "raw": "4 medium cloves garlic, chopped",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "4",
-            "unit": "medium"
+            "unit": "medium clove"
           }
         ],
         "note": "chopped",

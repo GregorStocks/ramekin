@@ -47,7 +47,7 @@
     {
       "raw": "1 large or 2 small stalks celery, diced small",
       "expected": {
-        "item": "stalks celery",
+        "item": "celery",
         "measurements": [
           {
             "amount": "1",
@@ -55,7 +55,7 @@
           },
           {
             "amount": "2",
-            "unit": "small"
+            "unit": "small stalk"
           }
         ],
         "note": "diced small",

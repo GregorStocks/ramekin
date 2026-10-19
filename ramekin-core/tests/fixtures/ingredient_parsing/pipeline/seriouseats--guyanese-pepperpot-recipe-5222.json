@@ -151,11 +151,11 @@
     {
       "raw": "6 medium cloves garlic (about 25g), finely minced",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "6",
-            "unit": "medium"
+            "unit": "medium clove"
           },
           {
             "amount": "25",
@@ -237,14 +237,14 @@
     {
       "raw": "One 1-inch strip orange peel, trimmed of excess white pith",
       "expected": {
-        "item": "1-inch strip orange peel",
+        "item": "strip orange peel",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "trimmed of excess white pith",
+        "note": "1-inch, trimmed of excess white pith",
         "category": "Produce"
       }
     }

@@ -5,14 +5,14 @@
     {
       "raw": "8 3-ounce plastic cups",
       "expected": {
-        "item": "3-ounce plastic cups",
+        "item": "plastic cups",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "3-ounce",
         "category": "Other"
       }
     },

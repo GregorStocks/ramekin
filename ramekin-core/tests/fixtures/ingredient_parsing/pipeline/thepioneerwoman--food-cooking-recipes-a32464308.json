@@ -5,14 +5,14 @@
     {
       "raw": "6 6-inch corn tortillas",
       "expected": {
-        "item": "6-inch corn tortillas",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "6-inch",
         "category": "Bakery & Bread"
       }
     },

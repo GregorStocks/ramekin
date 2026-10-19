@@ -22,8 +22,11 @@ use super::quantity::Range;
 use super::tokens::{tokenize, Kind, Token};
 use super::*;
 
-/// Sizes a measure can take ("small handful", "large bunch", "small head").
-const SIZEABLE_MEASURES: &[&str] = &["handful", "bunch", "pinch", "head"];
+/// Sizes a measure can take ("small handful", "large bunch", "small head",
+/// "medium clove").
+const SIZEABLE_MEASURES: &[&str] = &[
+    "handful", "bunch", "pinch", "head", "clove", "stalk", "sprig",
+];
 
 /// Nouns for a piece cut to a size in inches ("3-inch piece", "3-4 inch chunk").
 const INCH_PIECE_NOUNS: &[&str] = &[

@@ -42,7 +42,7 @@
     {
       "raw": "2 large or 4 small cloves garlic, unpeeled",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
@@ -50,7 +50,7 @@
           },
           {
             "amount": "4",
-            "unit": "small"
+            "unit": "small clove"
           }
         ],
         "note": "unpeeled",

@@ -5,7 +5,7 @@
     {
       "raw": "One 2-pound (907 g) head green cabbage, any bruised outermost leaves removed",
       "expected": {
-        "item": "2-pound head green cabbage",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "any bruised outermost leaves removed",
+        "note": "2-pound head, any bruised outermost leaves removed",
         "category": "Produce"
       }
     },
@@ -109,11 +109,11 @@
     {
       "raw": "5 large cloves garlic, thinly sliced (about 3 tablespoons)",
       "expected": {
-        "item": "cloves garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "5",
-            "unit": "large"
+            "unit": "large clove"
           },
           {
             "amount": "3",

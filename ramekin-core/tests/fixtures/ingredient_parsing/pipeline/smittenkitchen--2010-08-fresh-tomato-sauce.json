@@ -47,11 +47,11 @@
     {
       "raw": "2 to 3 small cloves of garlic",
       "expected": {
-        "item": "cloves of garlic",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2 to 3",
-            "unit": "small"
+            "unit": "small clove"
           }
         ],
         "note": null,

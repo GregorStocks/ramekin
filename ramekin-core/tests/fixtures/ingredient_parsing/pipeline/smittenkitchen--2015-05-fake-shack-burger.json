@@ -198,14 +198,14 @@
     {
       "raw": "Four 1/4-inch-thick tomato slices",
       "expected": {
-        "item": "1/4-inch-thick tomato slices",
+        "item": "tomato slices",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "1/4-inch-thick",
         "section": "Assembly",
         "category": "Produce"
       }

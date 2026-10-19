@@ -970,13 +970,14 @@ fn parsed_name_never_cuts_into_a_name() {
     );
     // A leading size or count a measured line keeps ("1 cup medium grain
     // rice") is part of the stored name, though the bare name reads it as one.
-    for name in [
-        "medium grain rice",
-        "small new potatoes",
-        "1-inch bread cubes",
-    ] {
+    for name in ["medium grain rice", "small new potatoes"] {
         assert_eq!(ramekin_core::catalog::parsed_name(name), name);
     }
+    // A leading inch or weight size sizes the food, so it goes to the note.
+    assert_eq!(
+        ramekin_core::catalog::parsed_name("1-inch bread cubes"),
+        "bread cubes"
+    );
     // How the food is packed goes to the note.
     assert_eq!(
         ramekin_core::catalog::parsed_name("packed dark-brown sugar"),

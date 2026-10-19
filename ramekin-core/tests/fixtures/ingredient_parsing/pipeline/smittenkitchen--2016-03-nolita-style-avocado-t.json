@@ -84,14 +84,14 @@
     {
       "raw": "1 1/2-inch slice seven-grain sandwich bread",
       "expected": {
-        "item": "1/2-inch slice seven-grain sandwich bread",
+        "item": "seven-grain sandwich bread",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "1/2-inch slice",
         "category": "Bakery & Bread"
       }
     },
