@@ -110,25 +110,52 @@ pub fn categorize(item: &str) -> &'static str {
 /// is treated like a committed one: keywords still apply, since a shopping list
 /// can hold it.
 pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'static str {
-    use crate::catalog::{normalize, unlearned_name, LearnedTarget};
-    // The catalog drops "frozen" to find the food ("frozen peaches" are
-    // peaches), but the shopper still buys them in the freezer aisle.
-    if normalize(item).starts_with("frozen ") {
-        return "Frozen";
-    }
-    if let Some(category) = crate::catalog::category(item) {
+    if let Some(category) = catalog_category_with(item, learned) {
         return category;
     }
-    let key = match unlearned_name(item).and_then(|name| learned.get(&normalize(&name))) {
-        Some(LearnedTarget::Entry(key)) => key,
-        _ => return keyword_category(item),
+    match learned_key(item, learned) {
+        Some(key) => match keyword_category(item) {
+            "Other" => keyword_category(key),
+            category => category,
+        },
+        None => keyword_category(item),
+    }
+}
+
+/// The category the catalog alone gives `item`, without keyword rules: "Frozen"
+/// for a name starting with "frozen", else the committed catalog's category,
+/// else that of the learned entry. A raw line with an amount or a note ("1
+/// medium white onion", "furikake (see note 3)"), as a shopping list can hold,
+/// is read as an ingredient line when its text alone gets no category.
+pub fn catalog_category_with(
+    item: &str,
+    learned: &crate::catalog::Learned,
+) -> Option<&'static str> {
+    use crate::catalog::normalize;
+    let lookup = |name: &str| {
+        // The catalog drops "frozen" to find the food ("frozen peaches" are
+        // peaches), but the shopper still buys them in the freezer aisle.
+        if normalize(name).starts_with("frozen ") {
+            return Some("Frozen");
+        }
+        crate::catalog::category(name)
+            .or_else(|| learned_key(name, learned).and_then(crate::catalog::category))
     };
-    if let Some(category) = crate::catalog::category(key) {
-        return category;
-    }
-    match keyword_category(item) {
-        "Other" => keyword_category(key),
-        category => category,
+    lookup(item).or_else(|| {
+        let parsed = crate::ingredient_parser::reparse_item(item)?;
+        (normalize(&parsed.item) != normalize(item))
+            .then(|| lookup(&parsed.item))
+            .flatten()
+    })
+}
+
+/// The catalog entry a stored answer maps `item` to, if the catalog doesn't
+/// know the name itself.
+fn learned_key<'a>(item: &str, learned: &'a crate::catalog::Learned) -> Option<&'a str> {
+    use crate::catalog::{normalize, unlearned_name, LearnedTarget};
+    match unlearned_name(item).and_then(|name| learned.get(&normalize(&name))) {
+        Some(LearnedTarget::Entry(key)) => Some(key),
+        _ => None,
     }
 }
 
@@ -218,6 +245,26 @@ mod tests {
         assert_eq!(categorize("parmesan cheese"), "Cheese");
         assert_eq!(categorize("mozzarella"), "Cheese");
         assert_eq!(categorize("cream cheese"), "Cheese");
+    }
+
+    #[test]
+    fn test_catalog_reads_a_raw_line() {
+        // Shopping lists hold raw lines; the catalog finds the food once the
+        // amount or note is split off.
+        let learned = crate::catalog::Learned::new();
+        assert_eq!(
+            catalog_category_with("1 medium white onion", &learned),
+            Some("Produce")
+        );
+        assert_eq!(
+            catalog_category_with("furikake (see note 3)", &learned),
+            Some("Spices & Seasonings")
+        );
+        assert_eq!(
+            catalog_category_with("2 bags frozen peaches", &learned),
+            Some("Frozen")
+        );
+        assert_eq!(catalog_category_with("xyzfoobar123", &learned), None);
     }
 
     #[test]

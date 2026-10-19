@@ -1,0 +1,17 @@
+{
+  "title": "Drop leftover measure words ('bundle', 'ball', 'batch of', 'big handfuls of') from items",
+  "description": "Some lines keep a count word the parser doesn't know as a unit in `item`: '1 large bundle broccoli' -> 'bundle broccoli', '1 ball burrata, torn' -> 'ball burrata', '4-5 big handfuls of kale' -> 'big handfuls of kale', '1 batch of buttermilk biscuits, split' -> 'batch of buttermilk biscuits', '1 scoop collagen powder', '1 (3oz) bar firecracker chocolate', 'portions ramen noodles', 'ears sweet corn'. \
+Resolver step 6 only drops a leading measure it knows, so these stay unresolved. \
+Measured 2026-10-18: about 245 of the 5,395 once-seen unresolved names in the pipeline fixtures start with such a word. 'batch of buttermilk biscuits' is also a prod shopping-list item the catalog can't categorize (make shopping-list-categorizer-test, catalog-only report). \
+Teach the parser these units (or the resolver to drop them), keeping names where the word is the food ('bar cookies', 'ball tip steak'). \
+Rerun make ingredient-tests-update and make pipeline and commit the diffs.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+    "pipeline",
+  ],
+  "created_at": "2026-10-18T00:00:00-07:00",
+  "updated_at": "2026-10-18T00:00:00-07:00",
+}

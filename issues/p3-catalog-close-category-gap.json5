@@ -1,13 +1,16 @@
 {
   "title": "Close the gap between catalog-only and keyword shopping categorization",
   "description": "blocked-catalog-delete-keyword-categorizer can't land until the catalog categorizes names well enough without the keyword fallback in data/ingredients.json. \
-Measured 2026-10-17 by making keyword_category() return \"Other\": \n\
-- make shopping-list-categorizer-test: 60 distinct mismatches and 64 Other out of 280 items (bars: MAX_MISMATCHES=2, MAX_OTHER=3). \
-Misses include common foods ('1 medium white onion', '3 large onions', 'Bagels', '13 1/2-ounce can unsweetened coconut milk', '3 lb chicken parts', 'tonkatsu sauce') and brands/non-foods ('Chex', 'Coke'). \n\
-- ingredient-catalog-audit 'Lines categorized': pipeline fixtures 89.9% catalog-only vs 98.8% with keywords; Paprika fixtures 97.8% vs 99.4%. \n\
-Close the gap with classification passes over names the catalog doesn't resolve (make ingredient-catalog-unresolved), categories for foods and ambiguous names that lack one (make ingredient-catalog-uncategorized), and product entries for brands and non-food shopping items. \
-Fix the scorecard misses first: they are real prod shopping-list items. \n\
-Done when, with the keyword fallback disabled: the shopping-list scorecard meets today's bars (<=2 mismatches, <=3 Other), and each audit corpus's 'Lines categorized' is at most 1 percentage point below its with-keywords value (today: pipeline fixtures >=97.8%, Paprika >=98.4%, snapshots >=98.8%). \
+The gap is now measured without patching: data/ingredient-catalog-audit.md has a 'Lines categorized (catalog only)' column, and make shopping-list-categorizer-test prints a catalog-only report bounded by MAX_CATALOG_ONLY_MISMATCHES / MAX_CATALOG_ONLY_OTHER. \n\
+Progress 2026-10-18: the categorizer reads a raw shopping line as an ingredient line when its text gets no category, and the shopping misses plus the 211 names seen at least twice in the fixtures were classified. \
+Scorecard catalog-only: 60 mismatches / 64 Other -> 7 / 9; what's left is in p3-catalog-shopping-lines-it-cannot-read. \
+Lines categorized, catalog only vs with keywords: pipeline fixtures 90.4% vs 98.8%, Paprika 98.1% vs 99.4%, snapshots 98.4% vs 99.8%. \n\
+Why the fixture gap is hard: almost all of it is names the catalog doesn't resolve at all, not foods missing a category (make ingredient-catalog-uncategorized is nearly empty). \
+Of the ~5,400 unresolved fixture names, nearly all appear exactly once. \
+Heuristic buckets: ~4,200 real foods written with modifiers, brands or foods the catalog has no name for ('seedless green grapes', 'salted cashew halves', 'philly cream cheese', 'kielbasa'); ~440 prep words after the food with no comma (p3-parser-trailing-prep-without-comma); ~245 leftover measure words (p3-parser-leftover-measure-words); ~300 headers and fragments; ~210 run-on instruction lines. \
+Keyword rules match a word anywhere in the name, which is why they cover this tail; exact-name curation would mean classifying thousands of one-off strings (the tail #712 left to runtime LLM resolution, which prod already uses through Learned and the fixtures don't). \n\
+Options to close it, to decide before more work: fix the two parser issues above (~700 lines), then either a category-only fallback that categorizes an unresolved name by its longest resolvable trailing words ('dark soy sauce' -> 'soy sauce'; a 2026-10-17 prototype covered ~3,200 of the ~5,400 lines but disagreed with the keyword rules on ~12% of them, e.g. 'cashew milk' -> Dairy, 'canned tuna' -> Meat), or a large multi-agent classification pass over the one-off names, or relaxing the fixture bars in favor of the shopping scorecard and prod numbers. \n\
+Done when, with the keyword fallback disabled: the shopping-list scorecard meets the keyword bars (<=2 mismatches, <=3 Other), and each audit corpus's catalog-only 'Lines categorized' is at most 1 percentage point below its with-keywords value. \
 Then unblock blocked-catalog-delete-keyword-categorizer. \
 Catalog edits change pipeline output; rerun make pipeline and commit the data/ diffs.",
   "status": "open",
@@ -18,5 +21,5 @@ Catalog edits change pipeline output; rerun make pipeline and commit the data/ d
     "pipeline",
   ],
   "created_at": "2026-10-17T13:22:59-07:00",
-  "updated_at": "2026-10-17T13:22:59-07:00",
+  "updated_at": "2026-10-18T00:00:00-07:00",
 }
