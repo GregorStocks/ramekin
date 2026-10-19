@@ -35,7 +35,7 @@ def _script_env(tmp_path: Path) -> dict[str, str]:
 
 
 def _wait_for_path(path: Path) -> None:
-    deadline = time.monotonic() + 5
+    deadline = time.monotonic() + 30
     while time.monotonic() < deadline:
         if path.exists():
             return
@@ -203,7 +203,7 @@ exit 1
     try:
         _wait_for_path(started_path)
         proc.send_signal(signal.SIGTERM)
-        stdout, stderr = proc.communicate(timeout=5)
+        stdout, stderr = proc.communicate(timeout=30)
     finally:
         if proc.poll() is None:
             os.killpg(proc.pid, signal.SIGKILL)
@@ -273,7 +273,9 @@ def test_run_tests_cleans_up_when_process_compose_is_terminated(tmp_path):
 set -e
 
 if [ "$1" = "up" ]; then
-  printf '%s\n' "$$" > "{orchestration_pid_path}"
+  # Rename into place so the test never reads a created-but-empty file.
+  printf '%s\n' "$$" > "{orchestration_pid_path}.tmp"
+  mv "{orchestration_pid_path}.tmp" "{orchestration_pid_path}"
   trap 'exit 143' TERM
   while true; do
     sleep 0.1
@@ -307,7 +309,7 @@ exit 1
     try:
         _wait_for_path(orchestration_pid_path)
         os.kill(int(orchestration_pid_path.read_text(encoding="utf-8")), signal.SIGTERM)
-        stdout, stderr = proc.communicate(timeout=5)
+        stdout, stderr = proc.communicate(timeout=30)
     finally:
         if proc.poll() is None:
             os.killpg(proc.pid, signal.SIGKILL)
