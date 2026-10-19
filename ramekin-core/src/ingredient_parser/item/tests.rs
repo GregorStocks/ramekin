@@ -1005,3 +1005,16 @@ fn test_count_with_the_food_in_parentheses() {
         Some("envelope")
     );
 }
+
+#[test]
+fn test_count_words_stay_whole_words() {
+    let parsed =
+        crate::ingredient_parser::parse_ingredients("leaf lettuce, tomatoes, and cucumber");
+    let items: Vec<&str> = parsed.iter().map(|p| p.item.as_str()).collect();
+    assert_eq!(items, ["leaf lettuce", "tomatoes", "cucumber"]);
+    assert_eq!(parse_ingredient("1 bartlett pear").item, "bartlett pear");
+    assert_eq!(
+        parse_ingredient("1 tinned tomatoes").item,
+        "tinned tomatoes"
+    );
+}

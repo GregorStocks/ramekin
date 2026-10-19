@@ -164,7 +164,11 @@ fn extract_unit_allowing_attached_item(s: &str) -> (Option<String>, String) {
 
     let trimmed = s.trim_start();
     let lower = trimmed.to_lowercase();
-    for unit in UNITS_SORTED.iter().copied().filter(|unit| unit.len() > 1) {
+    for unit in UNITS_SORTED
+        .iter()
+        .copied()
+        .filter(|unit| unit.len() > 1 && !is_count_noun(unit))
+    {
         if !lower.starts_with(unit) {
             continue;
         }

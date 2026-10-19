@@ -183,6 +183,14 @@ pub(super) fn needs_amount(unit: &str) -> bool {
     COUNT_UNITS_NEEDING_AMOUNT.contains(&unit.as_str())
 }
 
+/// Whether `unit` counts a container, shape or serving ("envelope", "ear",
+/// "splash"): a whole word, never attached to the next one ("bartlett",
+/// "tinned").
+pub(super) fn is_count_noun(unit: &str) -> bool {
+    let unit = normalize_unit(&unit.to_lowercase());
+    needs_amount(&unit) || unit == "splash" || unit == "dollop"
+}
+
 /// The canonical count units added for containers, shapes and servings,
 /// except the amount-less "splash" and "dollop" ("splash of milk").
 const COUNT_UNITS_NEEDING_AMOUNT: &[&str] = &[
