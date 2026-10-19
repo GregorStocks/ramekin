@@ -138,14 +138,14 @@ Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`).
 
 | Metric | Distinct items | Usage-weighted |
 | --- | ---: | ---: |
-| Items | 280 | 424 |
-| Nutrition name recognized | 223/275 (81.1%) | 350/419 (83.5%) |
-| Categorized (not "Other") | 277/280 (98.9%) | 421/424 (99.3%) |
-| Categorized by the catalog alone | 272/280 (97.1%) | 416/424 (98.1%) |
+| Items | 212 | 434 |
+| Nutrition name recognized | 141/207 (68.1%) | 318/426 (74.6%) |
+| Categorized (not "Other") | 198/212 (93.4%) | 420/434 (96.8%) |
+| Categorized by the catalog alone | 176/212 (83.0%) | 394/434 (90.8%) |
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition | 52 | `1656a28b599c` |
-| Shopping category | 3 | `65911683b3db` |
+| Nutrition | 63 | `124e33763aec` |
+| Shopping category | 14 | `44127d709fac` |
