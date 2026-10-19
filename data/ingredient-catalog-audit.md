@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized | Lines categorized (catalog only) |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60554 | 306 | 54141/60248 (89.9%) | 51664/60248 (85.8%) | 1587/5408 (29.3%) | n/a (no servings) | 31940/37338 (85.5%) | 59859/60554 (98.9%) | 55024/60554 (90.9%) |
+| Pipeline fixtures | 5408 | 60554 | 306 | 54144/60248 (89.9%) | 51666/60248 (85.8%) | 1587/5408 (29.3%) | n/a (no servings) | 31940/37338 (85.5%) | 59859/60554 (98.9%) | 55026/60554 (90.9%) |
 | Paprika fixtures | 462 | 5379 | 22 | 5177/5357 (96.6%) | 4824/5357 (90.1%) | 191/462 (41.3%) | n/a (no servings) | 2552/2893 (88.2%) | 5349/5379 (99.4%) | 5278/5379 (98.1%) |
 | Pipeline snapshots | 445 | 5177 | 17 | 5009/5160 (97.1%) | 4726/5160 (91.6%) | 194/445 (43.6%) | 98/445 (22.0%) | 2527/2853 (88.6%) | 5166/5177 (99.8%) | 5093/5177 (98.4%) |
 
@@ -28,10 +28,10 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Frying oil: only part of it is absorbed | 98 | 0.2% |
 | Missing density for this food | 24 | 0.0% |
 | Missing quantity | 1889 | 3.1% |
-| No supported nutrition match | 5584 | 9.2% |
+| No supported nutrition match | 5581 | 9.2% |
 | Several ingredients share one amount | 55 | 0.1% |
 | Unsupported or missing quantity | 72 | 0.1% |
-| Unsupported quantity unit | 339 | 0.6% |
+| Unsupported quantity unit | 340 | 0.6% |
 
 ### Uncounted ingredients per recipe
 
@@ -39,12 +39,12 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | --- | ---: | ---: |
 | 0 | 2316 | 42.8% |
 | 1 | 1718 | 31.8% |
-| 2 | 821 | 15.2% |
+| 2 | 822 | 15.2% |
 | 3 | 359 | 6.6% |
-| 4-5 | 157 | 2.9% |
+| 4-5 | 156 | 2.9% |
 | 6+ | 37 | 0.7% |
 
-Estimate status with at most 3 uncounted: Complete 42.6%, Insufficient 4.7%, Partial 52.7%
+Estimate status with at most 3 uncounted: Complete 42.6%, Insufficient 4.6%, Partial 52.7%
 
 Weights to estimate (distinct food and unit pairs the catalog can't weigh): 32
 
@@ -52,7 +52,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 32
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 6726 | `f4aa72397b90` |
+| Nutrition (all failures) | 6724 | `67c3ef729beb` |
 | Density | 2646 | `8d0914c25c7c` |
 | Shopping category | 567 | `2913bc5b9180` |
 
