@@ -1060,12 +1060,26 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         };
     }
 
+    // "1/2 envelope (about 1 1/2 teaspoons unflavored powdered gelatin)": the
+    // count took everything outside the parentheses, so the food is the one
+    // the note measures.
+    let item = if item.is_empty() {
+        note.as_deref()
+            .filter(|note| {
+                let note = note.to_lowercase();
+                !note.starts_with("plus ") && !note.starts_with("or ")
+            })
+            .and_then(reparse_item)
+            .filter(|parsed| !parsed.measurements.is_empty())
+            .map(|parsed| parsed.item)
+            .filter(|food| !is_only_prep_words(food))
+            .unwrap_or_else(|| raw.to_string())
+    } else {
+        item
+    };
+
     ParsedIngredient {
-        item: if item.is_empty() {
-            raw.to_string()
-        } else {
-            item
-        },
+        item,
         measurements,
         note,
         raw: Some(raw.to_string()),

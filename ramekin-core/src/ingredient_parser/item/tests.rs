@@ -989,3 +989,14 @@ fn test_count_words_without_an_amount_are_the_food() {
         assert!(parsed.measurements.is_empty(), "{raw}");
     }
 }
+
+#[test]
+fn test_count_with_the_food_in_parentheses() {
+    let parsed =
+        parse_ingredient("1/2 envelope (about 1 1/2 teaspoons unflavored powdered gelatin)");
+    assert_eq!(parsed.item, "unflavored powdered gelatin");
+    assert_eq!(
+        parsed.measurements.first().and_then(|m| m.unit.as_deref()),
+        Some("envelope")
+    );
+}
