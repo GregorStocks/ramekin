@@ -920,6 +920,11 @@ fn test_trailing_prep_without_comma_goes_to_note() {
             "melted",
         ),
         (
+            "1 lb cooked Italian sausage- sliced and crumbled",
+            "cooked Italian sausage",
+            "sliced and crumbled",
+        ),
+        (
             "1 lb hot Italian sausage casings removed",
             "hot Italian sausage",
             "casings removed",

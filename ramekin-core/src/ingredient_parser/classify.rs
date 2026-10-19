@@ -55,14 +55,15 @@ impl<'a> ItemText<'a> {
         self.text.get(split.start..self.end).unwrap_or("").trim()
     }
 
-    /// End the item at byte `offset`, dropping a comma left at its end.
+    /// End the item at byte `offset`, dropping a comma or dash left at its
+    /// end ("sausage- sliced and crumbled").
     fn cut(&mut self, offset: usize) {
         let kept = self
             .text
             .get(..offset)
             .unwrap_or("")
             .trim_end()
-            .trim_end_matches(',')
+            .trim_end_matches([',', '-', '–', '—'])
             .trim_end();
         self.end = kept.len();
     }

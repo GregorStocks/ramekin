@@ -52,7 +52,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 32
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 6794 | `b63c3273817f` |
+| Nutrition (all failures) | 6794 | `8248274c8a91` |
 | Density | 2673 | `1d04821c240f` |
 | Shopping category | 567 | `7435971adae1` |
 
