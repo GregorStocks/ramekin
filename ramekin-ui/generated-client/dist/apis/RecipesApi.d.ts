@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { CalorieEstimateResponse, CreateRecipeRequest, CreateRecipeResponse, Direction, EstimateCaloriesRequest, GenerateDescriptionResponse, GeneratePhotoResponse, ListRecipesResponse, NormalizeTitleResponse, RecipeResponse, RescrapeResponse, SortBy, UpdateRecipeRequest, VersionListResponse } from '../models/index';
+import type { CalorieEstimateResponse, CreateRecipeRequest, CreateRecipeResponse, Direction, EstimateCaloriesRequest, GenerateDescriptionResponse, GeneratePhotoResponse, ListRecipesResponse, NormalizeTitleResponse, RecipeResponse, ReparseIngredientsResponse, RescrapeResponse, SortBy, UpdateRecipeRequest, VersionListResponse } from '../models/index';
 export interface CreateRecipeOperationRequest {
     createRecipeRequest: CreateRecipeRequest;
 }
@@ -126,6 +126,14 @@ export declare class RecipesApi extends runtime.BaseAPI {
     /**
      */
     normalizeTitle(requestParameters: NormalizeTitleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<NormalizeTitleResponse>;
+    /**
+     * Rebuild the ingredients of each of the user\'s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
+     */
+    reparseAllIngredientsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ReparseIngredientsResponse>>;
+    /**
+     * Rebuild the ingredients of each of the user\'s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
+     */
+    reparseAllIngredients(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReparseIngredientsResponse>;
     /**
      */
     rescrapeRaw(requestParameters: RescrapeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RescrapeResponse>>;

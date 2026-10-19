@@ -17,5 +17,5 @@ pub use enrich_normalize_title::EnrichNormalizeTitleStep;
 pub use extract_recipe::ExtractRecipeStep;
 pub use fetch_html::FetchHtmlStep;
 pub use fetch_images::FetchImagesStepMeta;
-pub use parse_ingredients::ParseIngredientsStep;
+pub use parse_ingredients::{parse_raw_ingredients, ParseIngredientsStep};
 pub use save_recipe::SaveRecipeStepMeta;

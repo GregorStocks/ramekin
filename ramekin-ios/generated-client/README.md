@@ -52,6 +52,7 @@ Class | Method | HTTP request | Description
 *RecipesAPI* | [**listRecipes**](docs/RecipesAPI.md#listrecipes) | **GET** /api/recipes | 
 *RecipesAPI* | [**listVersions**](docs/RecipesAPI.md#listversions) | **GET** /api/recipes/{id}/versions | 
 *RecipesAPI* | [**normalizeTitle**](docs/RecipesAPI.md#normalizetitle) | **POST** /api/recipes/{id}/normalize-title | 
+*RecipesAPI* | [**reparseAllIngredients**](docs/RecipesAPI.md#reparseallingredients) | **POST** /api/recipes/reparse-ingredients | Rebuild the ingredients of each of the user&#39;s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \&quot;reparse\&quot;) for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
 *RecipesAPI* | [**rescrape**](docs/RecipesAPI.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesAPI* | [**rescrapePhoto**](docs/RecipesAPI.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo | 
 *RecipesAPI* | [**updateRecipe**](docs/RecipesAPI.md#updaterecipe) | **PUT** /api/recipes/{id} | 
@@ -133,6 +134,7 @@ Class | Method | HTTP request | Description
  - [RecipeSummary](docs/RecipeSummary.md)
  - [RenameTagRequest](docs/RenameTagRequest.md)
  - [RenameTagResponse](docs/RenameTagResponse.md)
+ - [ReparseIngredientsResponse](docs/ReparseIngredientsResponse.md)
  - [RescrapeResponse](docs/RescrapeResponse.md)
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)

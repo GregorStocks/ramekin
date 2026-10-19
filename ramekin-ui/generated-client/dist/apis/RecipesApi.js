@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CalorieEstimateResponseFromJSON, CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, EstimateCaloriesRequestToJSON, GenerateDescriptionResponseFromJSON, GeneratePhotoResponseFromJSON, ListRecipesResponseFromJSON, NormalizeTitleResponseFromJSON, RecipeResponseFromJSON, RescrapeResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
+import { CalorieEstimateResponseFromJSON, CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, EstimateCaloriesRequestToJSON, GenerateDescriptionResponseFromJSON, GeneratePhotoResponseFromJSON, ListRecipesResponseFromJSON, NormalizeTitleResponseFromJSON, RecipeResponseFromJSON, ReparseIngredientsResponseFromJSON, RescrapeResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -365,6 +365,35 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async normalizeTitle(requestParameters, initOverrides) {
         const response = await this.normalizeTitleRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+    /**
+     * Rebuild the ingredients of each of the user\'s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
+     */
+    async reparseAllIngredientsRaw(initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+        let urlPath = `/api/recipes/reparse-ingredients`;
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReparseIngredientsResponseFromJSON(jsonValue));
+    }
+    /**
+     * Rebuild the ingredients of each of the user\'s scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
+     */
+    async reparseAllIngredients(initOverrides) {
+        const response = await this.reparseAllIngredientsRaw(initOverrides);
         return await response.value();
     }
     /**

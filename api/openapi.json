@@ -1120,6 +1120,42 @@
         ]
       }
     },
+    "/api/recipes/reparse-ingredients": {
+      "post": {
+        "tags": [
+          "recipes"
+        ],
+        "summary": "Rebuild the ingredients of each of the user's scraped or imported recipes\nfrom the scrape that saved them, with the current extractor and parser,\nsaving a new version (source \"reparse\") for each recipe whose ingredients\nchange. Recipes edited by hand since that scrape are left alone.",
+        "operationId": "reparse_all_ingredients",
+        "responses": {
+          "200": {
+            "description": "Every recipe checked; changed recipes got a new version",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReparseIngredientsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/{id}": {
       "get": {
         "tags": [
@@ -4149,6 +4185,37 @@
           },
           "name": {
             "type": "string"
+          }
+        }
+      },
+      "ReparseIngredientsResponse": {
+        "type": "object",
+        "required": [
+          "recipes_checked",
+          "recipes_updated",
+          "skipped_no_source",
+          "skipped_edited"
+        ],
+        "properties": {
+          "recipes_checked": {
+            "type": "integer",
+            "description": "Live recipes looked at.",
+            "minimum": 0
+          },
+          "recipes_updated": {
+            "type": "integer",
+            "description": "Recipes that got a new \"reparse\" version because their ingredients\nchanged.",
+            "minimum": 0
+          },
+          "skipped_edited": {
+            "type": "integer",
+            "description": "Recipes edited by hand since their last scrape, or changed while the\nre-parse ran.",
+            "minimum": 0
+          },
+          "skipped_no_source": {
+            "type": "integer",
+            "description": "Recipes with no saved scrape to re-read: typed in, or from text or a\nphoto, or a scrape whose page or text can't be read.",
+            "minimum": 0
           }
         }
       },

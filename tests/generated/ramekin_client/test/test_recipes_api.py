@@ -92,6 +92,13 @@ class TestRecipesApi(unittest.TestCase):
         """
         pass
 
+    def test_reparse_all_ingredients(self) -> None:
+        """Test case for reparse_all_ingredients
+
+        Rebuild the ingredients of each of the user's scraped or imported recipes from the scrape that saved them, with the current extractor and parser, saving a new version (source \"reparse\") for each recipe whose ingredients change. Recipes edited by hand since that scrape are left alone.
+        """
+        pass
+
     def test_rescrape(self) -> None:
         """Test case for rescrape
 
