@@ -1112,6 +1112,16 @@ fn test_leading_size_goes_to_the_note() {
             "New York strip steak",
             "1-inch thick, 16-ounce",
         ),
+        (
+            "2 14-Ounce Each Cans Sweetened Condensed Milk",
+            "Sweetened Condensed Milk",
+            "14-Ounce Each Cans",
+        ),
+        (
+            "One 2-pound head green cabbage",
+            "green cabbage",
+            "2-pound head",
+        ),
     ] {
         let (parsed_item, parsed_note, _) = item_note_units(line);
         assert_eq!(
@@ -1136,20 +1146,13 @@ fn test_leading_size_goes_to_the_note() {
 #[test]
 fn test_measured_plus_after_a_food_goes_to_the_note() {
     for (line, item, note) in [
+        ("1 cup flour plus 2 tablespoons", "flour", "plus 2 tablespoons"),
+        ("3 tablespoons lemon juice plus 2 teaspoons, divided", "lemon juice", "plus 2 teaspoons, divided"),
+        ("1/2 Tbsp sea salt for the lamb plus 1 tsp for stew", "sea salt for the lamb", "plus 1 tsp for stew"),
         (
-            "1 large egg plus 1 large yolk, room temperature",
-            "egg",
-            "plus 1 large yolk, room temperature",
-        ),
-        (
-            "1 cup flour plus 2 tablespoons",
-            "flour",
-            "plus 2 tablespoons",
-        ),
-        (
-            "1/2 tsp lemon zest plus 1/2 tsp juice",
-            "lemon zest",
-            "plus 1/2 tsp juice",
+            "1 cup (130 grams) all-purpose flour plus 1/2 cup (65 grams) all-purpose flour, divided",
+            "all-purpose flour",
+            "plus 1/2 cup all-purpose flour, divided",
         ),
     ] {
         let (parsed_item, parsed_note, _) = item_note_units(line);
@@ -1165,6 +1168,13 @@ fn test_measured_plus_after_a_food_goes_to_the_note() {
         ("2 tablespoons, plus 2 teaspoons olive oil, divided", "olive oil"),
     ] {
         assert_eq!(item_note_units(line).0, item, "{line}");
+    }
+    // Another food stays in the item, where a shopping list still sees it.
+    for line in [
+        "1 large egg plus 1 large yolk",
+        "1/2 tsp lemon zest plus 1/2 tsp juice",
+    ] {
+        assert!(item_note_units(line).0.contains(" plus "), "{line}");
     }
     // Inside an "or" alternative or a labeled list, the addition stays put.
     assert_eq!(

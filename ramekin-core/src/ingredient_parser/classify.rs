@@ -166,24 +166,29 @@ fn plus_note(line: &mut ItemText, note: &mut Note, measured_line: bool) {
         {
             return;
         }
-        let measured = parse_plus_continuation_measurement(after).is_some();
+        let addition = parse_plus_continuation_measurement(after);
         // "egg plus 1 large yolk": after a food, a measured addition is a
-        // note; after an amount alone it measures the food that follows, and
-        // after an "or" ("vanilla sugar or 1 tbsp sugar plus 1 tsp vanilla")
-        // it is part of the alternative. On a line with no amount of its own
-        // ("A few branches plus 3 tablespoons chopped dill") the text before
-        // it may not name the food.
-        let in_alternative = line
-            .splits()
-            .iter()
-            .any(|s| s.sep == Sep::Or && s.start < plus.start);
-        if measured
-            && (!measured_line
+        // note when it adds more of that food ("flour plus 2 tablespoons",
+        // "salt plus 1 tsp for the stew"). Another food ("plus 1 large yolk")
+        // stays in the item, where a shopping list still sees it. After an
+        // amount alone the addition measures the food that follows, and after
+        // an "or" ("vanilla sugar or 1 tbsp sugar plus 1 tsp vanilla") it is
+        // part of the alternative. On a line with no amount of its own ("A
+        // few branches plus 3 tablespoons chopped dill") the text before it
+        // may not name the food.
+        if let Some((_, _, rest, _)) = &addition {
+            let in_alternative = line
+                .splits()
+                .iter()
+                .any(|s| s.sep == Sep::Or && s.start < plus.start);
+            if !measured_line
                 || plus.before.is_empty()
                 || leading_measurement_consumes_all(plus.before)
-                || in_alternative)
-        {
-            return;
+                || in_alternative
+                || !adds_the_same_food(plus.before, rest)
+            {
+                return;
+            }
         }
         plus
     } else {
@@ -191,6 +196,22 @@ fn plus_note(line: &mut ItemText, note: &mut Note, measured_line: bool) {
     };
     note.prepend(line.with_sep(plus).to_string(), ", ");
     line.cut_before(plus);
+}
+
+/// Whether the food after a measured "plus" is the one before it: none named
+/// ("plus 2 tablespoons", "plus 1 tsp for the stew", "plus 1/2 cup more if
+/// needed"), or the same name ("flour plus 1/2 cup flour").
+fn adds_the_same_food(before: &str, rest: &str) -> bool {
+    let food = rest
+        .split([',', '(', ';'])
+        .next()
+        .unwrap_or("")
+        .trim()
+        .to_lowercase();
+    let first = food.split_whitespace().next().unwrap_or("");
+    food.is_empty()
+        || ["for", "more", "if", "to", "extra", "additional"].contains(&first)
+        || before.to_lowercase().contains(&food)
 }
 
 /// "3/4 tsp salt + 1/8 tsp": a trailing addition in the same unit folds into

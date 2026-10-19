@@ -75,15 +75,15 @@
     {
       "raw": "2 teaspoons finely grated orange zest plus 1 cup fresh orange juice, divided",
       "expected": {
-        "item": "finely grated orange zest",
+        "item": "finely grated orange zest plus 1 cup fresh orange juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "plus 1 cup fresh orange juice, divided",
-        "category": "Produce"
+        "note": "divided",
+        "category": "Beverages"
       }
     },
     {

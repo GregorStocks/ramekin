@@ -779,7 +779,7 @@ const PACKAGE_MASSES: &[&str] = &[
 ];
 
 /// Containers whose weight a recipe may state ("15-ounce can").
-const PACKAGE_WORDS: &[&str] = &[
+pub(super) const PACKAGE_WORDS: &[&str] = &[
     "can",
     "package",
     "block",
@@ -793,6 +793,22 @@ const PACKAGE_WORDS: &[&str] = &[
     "packet",
     "tub",
 ];
+
+/// Pieces a recipe may size by weight or length ("2-pound head", "4-ounce
+/// log", "1-inch slices"), besides the containers above.
+pub(super) const SIZED_PIECES: &[&str] = &[
+    "piece", "slice", "chunk", "cube", "head", "knob", "wedge", "round", "length", "segment",
+    "log", "wheel", "ball", "link", "bundle", "bunch", "rack", "stick",
+];
+
+/// A container or sized piece, singular or plural.
+pub(super) fn is_sized_noun(word: &str) -> bool {
+    let word = word.to_lowercase();
+    let known = |w: &str| PACKAGE_WORDS.contains(&w) || SIZED_PIECES.contains(&w);
+    known(&word)
+        || word.strip_suffix('s').is_some_and(known)
+        || word.strip_suffix("es").is_some_and(known)
+}
 
 /// Words that hedge a weight ("about 1 pound").
 const HEDGES: &[&str] = &["about", "approximately", "approx", "roughly", "around"];
@@ -999,9 +1015,11 @@ pub(super) fn read_noted_weight(part: &str) -> Option<NotedWeight> {
         probe.take_if(|t| t.kind == Kind::Close)?;
         c = probe;
     }
-    let word = c.take_if(|t| {
-        t.space_before && (t.is_word("each") || t.is_word("total") || is_package_word(t.text))
-    });
+    // "14-ounce each cans": "each" before the container.
+    let each = c.take_if(|t| t.space_before && t.is_word("each"));
+    let word = c
+        .take_if(|t| t.space_before && (t.is_word("total") || is_sized_noun(t.text)))
+        .or(each);
     if !c.at_end() {
         return None;
     }

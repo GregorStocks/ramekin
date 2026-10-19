@@ -135,14 +135,14 @@
     {
       "raw": "1 tablespoon grated lemon zest plus 1 tablespoon fresh lemon juice",
       "expected": {
-        "item": "grated lemon zest",
+        "item": "grated lemon zest plus 1 tablespoon fresh lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 1 tablespoon fresh lemon juice",
+        "note": null,
         "category": "Produce"
       }
     },

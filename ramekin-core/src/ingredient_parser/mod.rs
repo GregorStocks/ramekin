@@ -353,9 +353,15 @@ fn split_leading_item_qualifier(item: &str) -> Option<(&str, &str)> {
 /// "8-ounce block", "2\" piece", "1-inch thick", "5-pound", "14-ounce each
 /// cans".
 static LEADING_SIZE_REGEX: LazyLock<regex::Regex> = LazyLock::new(|| {
-    regex::Regex::new(
-        r#"(?i)^(?P<size>\d+(?:\s+\d+/\d+|/\d+|\.\d+)?(?:\s*(?:-|to)\s*\d+(?:/\d+|\.\d+)?)?(?:[-\s](?:inch(?:es)?\b|in\.)|["”]|-(?:ounces?|oz|pounds?|lbs?|grams?|g|kg|cm)\b\.?)(?:[-\s](?:thick|long|wide)\b)?(?:\s+each\b)?(?:\s+(?:blocks?|pieces?|slices?|chunks?|cubes?|heads?|knobs?|wedges?|rounds?|lengths?|segments?|cans?|jars?|packages?|bags?|boxes|box|bottles?|containers?|tins?|tubs?|logs?|wheels?|balls?|links?|bundles?|bunch(?:es)?|racks?|sticks?)\b,?)?)\s+(?:of\s+)?(?P<rest>\p{L}.*)$"#,
-    )
+    let nouns = [measure::PACKAGE_WORDS, measure::SIZED_PIECES]
+        .concat()
+        .iter()
+        .map(|noun| format!("{noun}(?:e?s)?"))
+        .collect::<Vec<_>>()
+        .join("|");
+    regex::Regex::new(&format!(
+        r#"(?i)^(?P<size>\d+(?:\s+\d+/\d+|/\d+|\.\d+)?(?:\s*(?:-|to)\s*\d+(?:/\d+|\.\d+)?)?(?:[-\s](?:inch(?:es)?\b|in\.)|["”]|-(?:ounces?|oz|pounds?|lbs?|grams?|g|kg|cm)\b\.?)(?:[-\s](?:thick|long|wide)\b)?(?:\s+each\b)?(?:\s+(?:{nouns})\b,?)?)\s+(?:of\s+)?(?P<rest>\p{{L}}.*)$"#
+    ))
     .expect("Invalid leading size regex")
 });
 

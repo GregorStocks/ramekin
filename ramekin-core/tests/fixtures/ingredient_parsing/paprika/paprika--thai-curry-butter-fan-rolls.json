@@ -41,14 +41,14 @@
     {
       "raw": "1 large egg plus 1 large yolk, room temperature",
       "expected": {
-        "item": "egg",
+        "item": "egg plus 1 large yolk",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "plus 1 large yolk, room temperature",
+        "note": "room temperature",
         "category": "Dairy & Eggs"
       }
     },
