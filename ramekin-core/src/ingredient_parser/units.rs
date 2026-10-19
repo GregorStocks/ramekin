@@ -143,6 +143,7 @@ pub(super) const UNITS_RAW: &[&str] = &[
     "ears",
     "ear",
     "leaves",
+    "leaf",
     "rashers",
     "rasher",
     "chunks",

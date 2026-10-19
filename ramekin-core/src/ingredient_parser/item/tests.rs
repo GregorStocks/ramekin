@@ -963,6 +963,7 @@ fn test_count_words_read_as_units() {
             "vanilla protein powder",
         ),
         ("splash of milk", "splash", "milk"),
+        ("1 leaf basil", "leaf", "basil"),
     ];
     for (raw, unit, item) in cases {
         let parsed = parse_ingredient(raw);
@@ -981,6 +982,7 @@ fn test_count_words_without_an_amount_are_the_food() {
         "Leaves from 3 sprigs fresh thyme",
         "bar cookies",
         "ball tip steak",
+        "leaf lettuce",
     ] {
         let parsed = parse_ingredient(raw);
         assert_eq!(parsed.item, raw);
