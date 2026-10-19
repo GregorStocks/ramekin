@@ -129,11 +129,11 @@
     {
       "raw": "1 batch of Chocolate Wafers (recipe above)",
       "expected": {
-        "item": "batch of Chocolate Wafers",
+        "item": "Chocolate Wafers",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "batch"
           }
         ],
         "note": "recipe above",

@@ -47,14 +47,14 @@
     {
       "raw": "3 Baby Gem lettuces finely shredded",
       "expected": {
-        "item": "Baby Gem lettuces finely shredded",
+        "item": "Baby Gem lettuces",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely shredded",
         "category": "Produce"
       }
     }

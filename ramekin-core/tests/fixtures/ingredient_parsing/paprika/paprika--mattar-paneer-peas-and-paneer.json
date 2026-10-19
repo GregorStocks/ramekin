@@ -19,14 +19,14 @@
     {
       "raw": "1/2 pound paneer or extra firm tofu cut into 1-inch cubes and patted very dry",
       "expected": {
-        "item": "paneer or extra firm tofu cut into 1-inch cubes and patted very dry",
+        "item": "paneer or extra firm tofu",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes and patted very dry",
         "category": "Cheese"
       }
     },

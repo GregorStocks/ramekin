@@ -210,11 +210,11 @@
     {
       "raw": "1 batch corn tortillas",
       "expected": {
-        "item": "batch corn tortillas",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "batch"
           }
         ],
         "note": null,

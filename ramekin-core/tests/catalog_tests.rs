@@ -241,6 +241,12 @@ fn looser_spellings_resolve_to_the_same_food() {
     assert_eq!(via("large eggs"), Via::LeadingModifiers);
     // Leading words and a trailing modifier together.
     same("freshly ground black pepper to taste", "black pepper");
+    // A container, piece or handful left before the food ("16 oz. bag
+    // broccoli florets", "splash of water").
+    same("bag of fresh spinach", "fresh spinach");
+    same("tub sour cream", "sour cream");
+    same("splash of water", "water");
+    same("big handfuls of kale", "kale");
     // es/ies plurals.
     same("strawberry", "strawberries");
     same("radish", "radishes");

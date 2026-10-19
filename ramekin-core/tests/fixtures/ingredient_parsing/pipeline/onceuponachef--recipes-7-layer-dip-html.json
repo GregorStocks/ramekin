@@ -168,11 +168,11 @@
     {
       "raw": "1 (8-oz) block sharp Cheddar, shredded (see note)",
       "expected": {
-        "item": "block sharp Cheddar",
+        "item": "sharp Cheddar",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "block"
           }
         ],
         "note": "8-oz, see note, shredded",
@@ -182,11 +182,11 @@
     {
       "raw": "1 (8-oz) container sour cream (1 cup)",
       "expected": {
-        "item": "container sour cream",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           },
           {
             "amount": "1",

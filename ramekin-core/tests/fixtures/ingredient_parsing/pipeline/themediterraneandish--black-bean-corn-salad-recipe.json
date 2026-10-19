@@ -5,11 +5,11 @@
     {
       "raw": "2  ears corn, (cleaned with no husks (or 1 1/2 cup cooked corn from frozen))",
       "expected": {
-        "item": "ears corn",
+        "item": "corn",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "ear"
           }
         ],
         "note": "cleaned with no husks (or 1 1/2 cup cooked corn from frozen)",

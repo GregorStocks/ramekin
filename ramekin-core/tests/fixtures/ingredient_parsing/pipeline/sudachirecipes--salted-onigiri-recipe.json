@@ -33,11 +33,11 @@
     {
       "raw": "3 sheets roasted seaweed for sushi (nori) (cut into strips)",
       "expected": {
-        "item": "sheets roasted seaweed for sushi",
+        "item": "roasted seaweed for sushi",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "nori, cut into strips",

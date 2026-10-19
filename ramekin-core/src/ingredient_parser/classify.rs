@@ -342,6 +342,12 @@ fn phrase_notes(line: &mut ItemText, note: &mut Note) {
         note.prepend(trailing, ", ");
         line.cut_after_words(item_part.split_whitespace().count());
     }
+
+    // Prep after the food without a comma ("pears peeled and chopped").
+    if let Some((item_part, trailing)) = split_trailing_prep_phrase(line.item()) {
+        note.prepend(trailing, ", ");
+        line.cut_after_words(item_part.split_whitespace().count());
+    }
 }
 
 /// "dried Italian seasoning or a combination of 1/4 teaspoon dried oregano
@@ -602,9 +608,11 @@ mod tests {
         );
         // A piece size isn't an amount.
         assert_eq!(
-            parsed("1/2 pound paneer or extra firm tofu cut into 1-inch cubes and patted very dry")
-                .0,
-            "paneer or extra firm tofu cut into 1-inch cubes and patted very dry"
+            parsed("1/2 pound paneer or extra firm tofu cut into 1-inch cubes and patted very dry"),
+            (
+                "paneer or extra firm tofu".into(),
+                note("cut into 1-inch cubes and patted very dry")
+            )
         );
     }
 

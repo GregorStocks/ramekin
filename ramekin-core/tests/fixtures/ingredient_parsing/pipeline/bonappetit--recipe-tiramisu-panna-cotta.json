@@ -5,11 +5,11 @@
     {
       "raw": "2 envelopes unflavored powdered gelatin (about 1 Tbsp. plus 2 tsp.)",
       "expected": {
-        "item": "envelopes unflavored powdered gelatin",
+        "item": "unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "envelope"
           }
         ],
         "note": "about 1 Tbsp. plus 2 tsp.",

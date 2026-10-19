@@ -140,8 +140,13 @@
     {
       "raw": "Splash of vanilla",
       "expected": {
-        "item": "Splash of vanilla",
-        "measurements": [],
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": null,
         "category": "Baking"
       }

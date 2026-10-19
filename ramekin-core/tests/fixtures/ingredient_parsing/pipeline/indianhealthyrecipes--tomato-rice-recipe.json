@@ -159,15 +159,15 @@
     {
       "raw": "3 tablespoon coriander leaves ((cilantro) finely chopped)",
       "expected": {
-        "item": "coriander leaves finely chopped",
+        "item": "coriander leaves",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "cilantro",
-        "category": "Spices & Seasonings"
+        "note": "cilantro, finely chopped",
+        "category": "Produce"
       }
     },
     {

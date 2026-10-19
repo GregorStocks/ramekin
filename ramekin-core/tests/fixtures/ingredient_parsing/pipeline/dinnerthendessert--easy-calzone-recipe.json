@@ -5,11 +5,11 @@
     {
       "raw": "1 ball pizza dough",
       "expected": {
-        "item": "ball pizza dough",
+        "item": "pizza dough",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "ball"
           }
         ],
         "note": null,

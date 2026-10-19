@@ -39,8 +39,8 @@ const MAX_WEIGHTED_OTHER: u64 = 3;
 /// without the keyword rules. Deleting the keyword rules
 /// (`issues/*catalog-delete-keyword-categorizer*`) needs these at the bounds above;
 /// the lines still missed are in `issues/*catalog-shopping-lines-it-cannot-read*`.
-const MAX_CATALOG_ONLY_MISMATCHES: usize = 7;
-const MAX_CATALOG_ONLY_OTHER: usize = 9;
+const MAX_CATALOG_ONLY_MISMATCHES: usize = 6;
+const MAX_CATALOG_ONLY_OTHER: usize = 8;
 
 /// One labeled corpus entry from `data/shopping-list-categories.json`.
 #[derive(Deserialize)]

@@ -284,8 +284,12 @@
     {
       "raw": "bundle (4 cups); if leaves are very wide, you can halve them lengthwise",
       "expected": {
-        "item": "bundle ; if leaves are very wide, you can halve them lengthwise",
+        "item": "; if leaves are very wide, you can halve them lengthwise",
         "measurements": [
+          {
+            "amount": null,
+            "unit": "bundle"
+          },
           {
             "amount": "4",
             "unit": "cup"

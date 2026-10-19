@@ -19,11 +19,11 @@
     {
       "raw": "about 16 leaves Swiss chard or Spinach, washed and dried",
       "expected": {
-        "item": "leaves Swiss chard or Spinach",
+        "item": "Swiss chard or Spinach",
         "measurements": [
           {
             "amount": "16",
-            "unit": null
+            "unit": "leaf"
           }
         ],
         "note": "about, washed and dried",

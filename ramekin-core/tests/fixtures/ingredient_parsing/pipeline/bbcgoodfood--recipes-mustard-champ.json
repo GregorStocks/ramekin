@@ -5,14 +5,14 @@
     {
       "raw": "1kg potato peeled and quartered",
       "expected": {
-        "item": "potato peeled and quartered",
+        "item": "potato",
         "measurements": [
           {
             "amount": "1",
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "peeled and quartered",
         "category": "Produce"
       }
     },
@@ -61,14 +61,14 @@
     {
       "raw": "2 bunches spring onion washed and sliced",
       "expected": {
-        "item": "spring onion washed and sliced",
+        "item": "spring onion",
         "measurements": [
           {
             "amount": "2",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "washed and sliced",
         "category": "Produce"
       }
     }

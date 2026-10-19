@@ -47,8 +47,13 @@
     {
       "raw": "splash of lime seltzer",
       "expected": {
-        "item": "splash of lime seltzer",
-        "measurements": [],
+        "item": "lime seltzer",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": null,
         "category": "Produce"
       }

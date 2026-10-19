@@ -75,7 +75,7 @@
     {
       "raw": "1  medium organic apple finely diced (about 105 g)",
       "expected": {
-        "item": "organic apple finely diced",
+        "item": "organic apple",
         "measurements": [
           {
             "amount": "1",
@@ -86,7 +86,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 105 g",
+        "note": "about 105 g, finely diced",
         "category": "Produce"
       }
     },

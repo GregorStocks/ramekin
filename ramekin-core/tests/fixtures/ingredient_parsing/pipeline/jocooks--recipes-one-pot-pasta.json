@@ -140,11 +140,11 @@
     {
       "raw": "6 leaves basil (chopped)",
       "expected": {
-        "item": "leaves basil",
+        "item": "basil",
         "measurements": [
           {
             "amount": "6",
-            "unit": null
+            "unit": "leaf"
           }
         ],
         "note": "chopped",

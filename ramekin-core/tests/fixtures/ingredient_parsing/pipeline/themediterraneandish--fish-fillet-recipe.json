@@ -191,14 +191,14 @@
     {
       "raw": "2 lb cod fillet cut into large 4 to 6-ounce pieces",
       "expected": {
-        "item": "cod fillet cut into large 4 to 6-ounce pieces",
+        "item": "cod fillet",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "cut into large 4 to 6-ounce pieces",
         "category": "Meat & Seafood"
       }
     },

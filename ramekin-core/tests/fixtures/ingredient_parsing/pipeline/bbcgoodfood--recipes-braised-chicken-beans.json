@@ -33,28 +33,28 @@
     {
       "raw": "1 onion chopped",
       "expected": {
-        "item": "onion chopped",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "1 garlic clove chopped",
       "expected": {
-        "item": "garlic clove chopped",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },
@@ -89,14 +89,14 @@
     {
       "raw": "400g can flageolet bean rinsed and drained",
       "expected": {
-        "item": "can flageolet bean rinsed and drained",
+        "item": "can flageolet bean",
         "measurements": [
           {
             "amount": "400",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "rinsed and drained",
         "category": "Canned Goods"
       }
     },

@@ -33,14 +33,14 @@
     {
       "raw": "½ stick butter softened",
       "expected": {
-        "item": "butter softened",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "softened",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,14 +131,14 @@
     {
       "raw": "1 tbsp butter melted",
       "expected": {
-        "item": "butter melted",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "melted",
         "category": "Dairy & Eggs"
       }
     }

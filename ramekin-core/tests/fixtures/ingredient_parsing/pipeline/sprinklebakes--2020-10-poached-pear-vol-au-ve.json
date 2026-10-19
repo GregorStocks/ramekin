@@ -223,15 +223,15 @@
     {
       "raw": "3  sheets (1 1/2 boxes puff pastry, thawed)",
       "expected": {
-        "item": "sheets",
+        "item": "puff pastry",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "1 1/2 boxes puff pastry, thawed",
-        "category": "Other"
+        "category": "Frozen"
       }
     },
     {

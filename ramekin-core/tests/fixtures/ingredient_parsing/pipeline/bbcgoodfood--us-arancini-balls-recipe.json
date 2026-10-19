@@ -33,28 +33,28 @@
     {
       "raw": "1  onion finely chopped",
       "expected": {
-        "item": "onion finely chopped",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "1  large garlic clove crushed",
       "expected": {
-        "item": "garlic clove crushed",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "crushed",
         "category": "Produce"
       }
     },
@@ -131,14 +131,14 @@
     {
       "raw": "5 oz fresh mozzarella cut into 18 small pieces",
       "expected": {
-        "item": "fresh mozzarella cut into 18 small pieces",
+        "item": "fresh mozzarella",
         "measurements": [
           {
             "amount": "5",
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "cut into 18 small pieces",
         "category": "Cheese"
       }
     },
@@ -168,14 +168,14 @@
     {
       "raw": "3  eggs lightly beaten",
       "expected": {
-        "item": "eggs lightly beaten",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "lightly beaten",
         "category": "Dairy & Eggs"
       }
     },

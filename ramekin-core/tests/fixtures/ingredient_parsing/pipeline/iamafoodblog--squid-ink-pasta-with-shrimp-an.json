@@ -98,11 +98,11 @@
     {
       "raw": "1 ball burrata, torn",
       "expected": {
-        "item": "ball burrata",
+        "item": "burrata",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "ball"
           }
         ],
         "note": "torn",

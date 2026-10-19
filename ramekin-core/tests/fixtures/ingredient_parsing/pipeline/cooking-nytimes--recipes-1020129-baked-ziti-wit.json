@@ -140,11 +140,11 @@
     {
       "raw": "1 (15-ounce) container ricotta",
       "expected": {
-        "item": "container ricotta",
+        "item": "ricotta",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           }
         ],
         "note": "15-ounce",

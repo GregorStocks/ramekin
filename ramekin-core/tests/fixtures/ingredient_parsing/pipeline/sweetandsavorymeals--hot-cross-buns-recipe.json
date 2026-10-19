@@ -61,11 +61,11 @@
     {
       "raw": "1  envelope active dry yeast (about 2 1/4 teaspoons)",
       "expected": {
-        "item": "envelope active dry yeast",
+        "item": "active dry yeast",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "envelope"
           },
           {
             "amount": "2.25",

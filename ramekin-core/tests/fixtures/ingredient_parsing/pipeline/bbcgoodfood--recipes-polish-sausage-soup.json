@@ -5,14 +5,14 @@
     {
       "raw": "2 large onions sliced",
       "expected": {
-        "item": "onions sliced",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "sliced",
         "category": "Produce"
       }
     },
@@ -33,28 +33,28 @@
     {
       "raw": "2 garlic cloves thinly sliced",
       "expected": {
-        "item": "garlic cloves thinly sliced",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "200g Kabanos Polish sausage chopped",
       "expected": {
-        "item": "Kabanos Polish sausage chopped",
+        "item": "Kabanos Polish sausage",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Meat & Seafood"
       }
     },
@@ -117,14 +117,14 @@
     {
       "raw": "3 carrots thickly sliced",
       "expected": {
-        "item": "carrots thickly sliced",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thickly sliced",
         "category": "Produce"
       }
     },

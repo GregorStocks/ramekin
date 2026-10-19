@@ -158,11 +158,11 @@
     {
       "raw": "1 ear corn, cut from the cob (about 1 cup)",
       "expected": {
-        "item": "ear corn, cut from the cob",
+        "item": "corn, cut from the cob",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "ear"
           },
           {
             "amount": "1",
@@ -198,11 +198,11 @@
     {
       "raw": "1 bundle (3 to 4 ounces or 85 to 115 grams) scallions, thinly sliced",
       "expected": {
-        "item": "bundle scallions",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "bundle"
           },
           {
             "amount": "3 to 4",

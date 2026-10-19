@@ -107,8 +107,13 @@
     {
       "raw": "Splash of heavy cream (optional)",
       "expected": {
-        "item": "Splash of heavy cream",
-        "measurements": [],
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": "optional",
         "category": "Dairy & Eggs"
       }

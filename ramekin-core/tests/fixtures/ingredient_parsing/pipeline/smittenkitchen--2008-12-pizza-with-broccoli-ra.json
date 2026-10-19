@@ -115,11 +115,11 @@
     {
       "raw": "1 bundle (about 1 pound) broccoli rabe (rapini), cut into 1-inch segments (florets and heavy stems)",
       "expected": {
-        "item": "bundle broccoli rabe",
+        "item": "broccoli rabe",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "bundle"
           },
           {
             "amount": "1",

@@ -298,11 +298,11 @@
     {
       "raw": "2 (9 1/2- by 9-inch) sheets puff pastry, thawed",
       "expected": {
-        "item": "sheets puff pastry",
+        "item": "puff pastry",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "9 1/2- by 9-inch, thawed",

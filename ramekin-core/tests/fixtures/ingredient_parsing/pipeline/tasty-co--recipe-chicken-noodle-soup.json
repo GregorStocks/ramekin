@@ -145,11 +145,11 @@
     {
       "raw": "2 leaves dried bay leaf",
       "expected": {
-        "item": "leaves dried bay leaf",
+        "item": "dried bay leaf",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "leaf"
           }
         ],
         "note": null,

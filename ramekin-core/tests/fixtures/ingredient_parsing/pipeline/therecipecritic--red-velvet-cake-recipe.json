@@ -173,11 +173,11 @@
     {
       "raw": "2 (8-ounce) blocks room-temperature cream cheese",
       "expected": {
-        "item": "blocks room-temperature cream cheese",
+        "item": "room-temperature cream cheese",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "block"
           }
         ],
         "note": "8-ounce",

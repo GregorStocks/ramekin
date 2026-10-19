@@ -131,14 +131,14 @@
     {
       "raw": "1 pound shitake mushrooms stemmed, cleaned and thinly sliced",
       "expected": {
-        "item": "shitake mushrooms stemmed",
+        "item": "shitake mushrooms",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": "cleaned and thinly sliced",
+        "note": "stemmed, cleaned and thinly sliced",
         "category": "Produce"
       }
     },

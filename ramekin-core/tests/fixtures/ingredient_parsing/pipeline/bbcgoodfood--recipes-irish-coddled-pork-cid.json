@@ -33,70 +33,70 @@
     {
       "raw": "4 rashers smoked bacon cut into pieces",
       "expected": {
-        "item": "rashers smoked bacon cut into pieces",
+        "item": "smoked bacon",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "rasher"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 potatoes cut into chunks",
       "expected": {
-        "item": "potatoes cut into chunks",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "1 carrot cut into large chunks",
       "expected": {
-        "item": "carrot cut into large chunks",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into large chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "1⁄2 small swede cut into chunks",
       "expected": {
-        "item": "swede cut into chunks",
+        "item": "swede",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Other"
       }
     },
     {
       "raw": "1⁄2 large cabbage cut into smaller pieces",
       "expected": {
-        "item": "cabbage cut into smaller pieces",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into smaller pieces",
         "category": "Produce"
       }
     },

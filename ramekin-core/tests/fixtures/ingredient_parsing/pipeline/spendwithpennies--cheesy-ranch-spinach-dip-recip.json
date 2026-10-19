@@ -89,11 +89,11 @@
     {
       "raw": "1 packet Hidden Valley Ranch Mix",
       "expected": {
-        "item": "packet Hidden Valley Ranch Mix",
+        "item": "Hidden Valley Ranch Mix",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "packet"
           }
         ],
         "note": null,

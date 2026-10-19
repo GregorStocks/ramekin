@@ -145,11 +145,11 @@
     {
       "raw": "1 (8-ounce) container cool whip (thawed)",
       "expected": {
-        "item": "container cool whip",
+        "item": "cool whip",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           }
         ],
         "note": "8-ounce, thawed",

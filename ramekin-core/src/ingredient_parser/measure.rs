@@ -728,8 +728,15 @@ pub(super) fn read_measurement(s: &str) -> Read {
                 unit = Some(size);
             }
         }
-    } else if let Some(read) = unit_phrase(&mut c, amount_start).map(|(_, unit)| unit) {
-        unit = Some(read);
+    } else {
+        let mut probe = c.clone();
+        // "Leaves from 3 sprigs thyme": with no count, "leaves" are the food.
+        if let Some((_, read)) = unit_phrase(&mut probe, amount_start)
+            .filter(|(_, unit)| !unit.eq_ignore_ascii_case("leaves"))
+        {
+            c = probe;
+            unit = Some(read);
+        }
     }
 
     // "1/2 tsp each salt and pepper": the measurement applies to each item.

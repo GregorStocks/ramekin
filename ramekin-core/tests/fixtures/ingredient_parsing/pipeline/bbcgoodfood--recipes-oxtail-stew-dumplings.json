@@ -51,28 +51,28 @@
     {
       "raw": "2 onions chopped",
       "expected": {
-        "item": "onions chopped",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "3 carrots cut into small chunks",
       "expected": {
-        "item": "carrots cut into small chunks",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into small chunks",
         "category": "Produce"
       }
     },
@@ -93,14 +93,14 @@
     {
       "raw": "2 garlic cloves chopped",
       "expected": {
-        "item": "garlic cloves chopped",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },

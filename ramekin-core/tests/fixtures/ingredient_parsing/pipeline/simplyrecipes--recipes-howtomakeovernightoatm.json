@@ -83,8 +83,13 @@
     {
       "raw": "Splash of milk, creme fraiche, or yogurt",
       "expected": {
-        "item": "Splash of milk, creme fraiche, or yogurt",
-        "measurements": [],
+        "item": "milk, creme fraiche, or yogurt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": null,
         "category": "Dairy & Eggs"
       }

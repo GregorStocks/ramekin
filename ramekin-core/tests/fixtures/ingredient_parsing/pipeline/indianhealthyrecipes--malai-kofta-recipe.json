@@ -19,7 +19,7 @@
     {
       "raw": "1 heaped cup  potato boiled &amp;amp; crumbled ((about 2 large))",
       "expected": {
-        "item": "potato boiled & crumbled",
+        "item": "potato",
         "measurements": [
           {
             "amount": "1",
@@ -30,7 +30,7 @@
             "unit": "large"
           }
         ],
-        "note": "about 2 large",
+        "note": "about 2 large, boiled & crumbled",
         "category": "Produce"
       }
     },
@@ -102,14 +102,14 @@
     {
       "raw": "1 tablespoons cashews chopped ( (optional))",
       "expected": {
-        "item": "cashews chopped",
+        "item": "cashews",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "(optional)",
+        "note": "(optional), chopped",
         "category": "Nuts & Dried Fruit"
       }
     },

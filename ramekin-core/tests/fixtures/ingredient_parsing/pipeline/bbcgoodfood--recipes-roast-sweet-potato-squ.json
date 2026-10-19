@@ -33,14 +33,14 @@
     {
       "raw": "2 bulbs of  garlic halved",
       "expected": {
-        "item": "bulbs of garlic halved",
+        "item": "bulbs of garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved",
         "category": "Produce"
       }
     },

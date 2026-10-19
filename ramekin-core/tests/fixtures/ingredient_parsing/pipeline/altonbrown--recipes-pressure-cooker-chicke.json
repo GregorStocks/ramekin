@@ -61,11 +61,11 @@
     {
       "raw": "1 (20- to 30-gram) packet mixed dried mushrooms",
       "expected": {
-        "item": "packet mixed dried mushrooms",
+        "item": "mixed dried mushrooms",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "packet"
           },
           {
             "amount": "20 to 30",

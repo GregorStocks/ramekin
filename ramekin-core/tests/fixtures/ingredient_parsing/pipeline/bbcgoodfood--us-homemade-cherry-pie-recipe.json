@@ -75,14 +75,14 @@
     {
       "raw": "2 lbs sweet cherries pitted",
       "expected": {
-        "item": "sweet cherries pitted",
+        "item": "sweet cherries",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "pitted",
         "category": "Produce"
       }
     },
@@ -131,14 +131,14 @@
     {
       "raw": "1  egg white beaten",
       "expected": {
-        "item": "egg white beaten",
+        "item": "egg white",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten",
         "category": "Dairy & Eggs"
       }
     }

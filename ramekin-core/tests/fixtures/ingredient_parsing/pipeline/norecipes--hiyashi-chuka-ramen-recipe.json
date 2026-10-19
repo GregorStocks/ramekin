@@ -187,11 +187,11 @@
     {
       "raw": "2 sheets usuyaki tamago (sliced into thin threads)",
       "expected": {
-        "item": "sheets usuyaki tamago",
+        "item": "usuyaki tamago",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "sliced into thin threads",

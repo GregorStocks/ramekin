@@ -5,14 +5,14 @@
     {
       "raw": "2 garlic cloves peeled finely",
       "expected": {
-        "item": "garlic cloves peeled finely",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled finely",
         "category": "Produce"
       }
     },

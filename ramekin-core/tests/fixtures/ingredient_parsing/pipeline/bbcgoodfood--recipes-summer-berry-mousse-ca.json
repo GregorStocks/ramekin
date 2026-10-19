@@ -19,25 +19,25 @@
     {
       "raw": "100g butter melted",
       "expected": {
-        "item": "butter melted",
+        "item": "butter",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "4 sheets leaf  gelatine",
       "expected": {
-        "item": "sheets leaf gelatine",
+        "item": "leaf gelatine",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": null,

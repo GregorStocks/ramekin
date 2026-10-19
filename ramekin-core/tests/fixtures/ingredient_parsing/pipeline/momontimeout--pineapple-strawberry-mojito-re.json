@@ -5,14 +5,14 @@
     {
       "raw": "8  strawberries trimmed (hulled, quartered)",
       "expected": {
-        "item": "strawberries trimmed",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "hulled, quartered",
+        "note": "hulled, quartered, trimmed",
         "category": "Produce"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "1  lime quartered",
       "expected": {
-        "item": "lime quartered",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "quartered",
         "category": "Produce"
       }
     },

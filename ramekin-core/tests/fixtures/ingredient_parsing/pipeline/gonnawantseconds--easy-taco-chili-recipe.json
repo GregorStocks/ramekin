@@ -61,11 +61,11 @@
     {
       "raw": "1  Envelope Mild Taco Seasoning",
       "expected": {
-        "item": "Envelope Mild Taco Seasoning",
+        "item": "Mild Taco Seasoning",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "envelope"
           }
         ],
         "note": null,

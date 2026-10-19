@@ -19,14 +19,14 @@
     {
       "raw": "1 medium onion thinly sliced or finely diced",
       "expected": {
-        "item": "onion thinly sliced or finely diced",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "thinly sliced or finely diced",
         "category": "Produce"
       }
     },

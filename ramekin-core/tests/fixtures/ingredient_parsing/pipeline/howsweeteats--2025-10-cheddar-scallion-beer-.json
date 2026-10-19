@@ -103,14 +103,14 @@
     {
       "raw": "½ cup butter melted",
       "expected": {
-        "item": "butter melted",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "melted",
         "category": "Dairy & Eggs"
       }
     }

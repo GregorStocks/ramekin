@@ -5,11 +5,11 @@
     {
       "raw": "2 ears corn, husked",
       "expected": {
-        "item": "ears corn",
+        "item": "corn",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "ear"
           }
         ],
         "note": "husked",

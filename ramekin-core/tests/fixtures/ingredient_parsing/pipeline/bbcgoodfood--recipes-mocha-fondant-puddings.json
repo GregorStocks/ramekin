@@ -75,14 +75,14 @@
     {
       "raw": "50g plain flour sifted",
       "expected": {
-        "item": "plain flour sifted",
+        "item": "plain flour",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sifted",
         "category": "Baking"
       }
     },

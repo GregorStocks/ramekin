@@ -5,11 +5,11 @@
     {
       "raw": "1  fillet of cooked unagi",
       "expected": {
-        "item": "fillet of cooked unagi",
+        "item": "cooked unagi",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "fillet"
           }
         ],
         "note": null,

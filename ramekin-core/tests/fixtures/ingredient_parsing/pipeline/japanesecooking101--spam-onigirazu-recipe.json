@@ -75,11 +75,11 @@
     {
       "raw": "2 leaves lettuce",
       "expected": {
-        "item": "leaves lettuce",
+        "item": "lettuce",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "leaf"
           }
         ],
         "note": null,
@@ -103,11 +103,11 @@
     {
       "raw": "2 sheets Nori  (roasted seaweed)",
       "expected": {
-        "item": "sheets Nori",
+        "item": "Nori",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "roasted seaweed",

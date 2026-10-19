@@ -33,14 +33,14 @@
     {
       "raw": "½  small red onion diced small, about 1/3 cup worth, plus more for topping",
       "expected": {
-        "item": "red onion diced small",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": "about 1/3 cup worth, plus more for topping",
+        "note": "diced small, about 1/3 cup worth, plus more for topping",
         "category": "Produce"
       }
     },

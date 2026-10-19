@@ -47,14 +47,14 @@
     {
       "raw": "1 lb paneer cut into 1in cubes",
       "expected": {
-        "item": "paneer cut into 1in cubes",
+        "item": "paneer",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "cut into 1in cubes",
         "category": "Cheese"
       }
     },
@@ -75,14 +75,14 @@
     {
       "raw": "1  onion finely chopped",
       "expected": {
-        "item": "onion finely chopped",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
@@ -112,14 +112,14 @@
     {
       "raw": "1  green chile pepper roughly chopped (include seeds for extra spice)",
       "expected": {
-        "item": "green chile pepper roughly chopped",
+        "item": "green chile pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "include seeds for extra spice",
+        "note": "include seeds for extra spice, roughly chopped",
         "category": "Spices & Seasonings"
       }
     },

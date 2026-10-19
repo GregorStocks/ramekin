@@ -468,6 +468,77 @@ pub(in crate::ingredient_parser) fn is_only_prep_words(s: &str) -> bool {
     true
 }
 
+/// Split a prep phrase that follows the food without a comma: "pears peeled
+/// and chopped" -> ("pears", "peeled and chopped"), "paneer cut into 1in
+/// cubes", "garlic clove finely chopped". The phrase starts at the first prep
+/// participle after the first word and must read as a whole prep note, so a
+/// participle inside a food's name ("fire roasted crushed tomatoes", "yellow
+/// split peas") has a food word after it and the item stays whole.
+pub(in crate::ingredient_parser) fn split_trailing_prep_phrase(
+    s: &str,
+) -> Option<(String, String)> {
+    // Adverbs that lead the phrase ("pears roughly chopped").
+    const PREP_ADVERBS: &[&str] = &[
+        "coarsely", "fine", "finely", "freshly", "lightly", "rough", "roughly", "thickly",
+        "thinly", "very", "well",
+    ];
+    // The part a "removed" phrase removes ("sausage casings removed").
+    const REMOVED_PARTS: &[&str] = &[
+        "bones", "casing", "casings", "core", "cores", "crusts", "pits", "seeds", "skin", "skins",
+        "stems",
+    ];
+    // Words a food name never ends with: the phrase would leave a dangling
+    // list, preposition or verb behind.
+    const DANGLING: &[&str] = &[
+        "and", "and/or", "been", "for", "in", "of", "or", "to", "with",
+    ];
+    // Past the participle, these can lead back to a food ("peeled and
+    // deveined shrimp", "grated or prepared horseradish", "cut of steak"), so
+    // only a phrase made of prep words alone may go on with one.
+    const LEADS_TO_FOOD: &[&str] = &["&", "+", "and", "of", "or"];
+    if s.contains([',', ';', ':']) {
+        return None;
+    }
+    let words: Vec<&str> = s.split_whitespace().collect();
+    let lower: Vec<String> = words.iter().map(|word| word.to_lowercase()).collect();
+    let index = (1..words.len()).find(|&index| {
+        let rest = lower[index..].join(" ");
+        ACTIVE_PREP_PREFIXES
+            .iter()
+            .chain(WHOLE_PART_PREP_WORDS)
+            .any(|prefix| {
+                rest.strip_prefix(prefix)
+                    .is_some_and(|after| after.is_empty() || after.starts_with(' '))
+            })
+    })?;
+    let phrase = words[index..].join(" ");
+    let leads_to_food = lower
+        .get(index + 1)
+        .is_some_and(|next| LEADS_TO_FOOD.contains(&next.as_str()));
+    if !is_strict_trailing_prep_note(&phrase)
+        && (leads_to_food || !is_trailing_prep_note_with_context(&phrase))
+    {
+        return None;
+    }
+    let mut start = index;
+    while start > 1 && PREP_ADVERBS.contains(&lower[start - 1].as_str()) {
+        start -= 1;
+    }
+    if lower[index] == "removed" && start > 1 && REMOVED_PARTS.contains(&lower[start - 1].as_str())
+    {
+        start -= 1;
+    }
+    let item = words[..start].join(" ");
+    // "cumin seeds or a heaped 1/2 teaspoon ground": the phrase belongs to
+    // the measured alternative, which goes to the note later.
+    let measured_alternative =
+        lower[..start].contains(&"or".to_string()) && item.contains(|c: char| c.is_ascii_digit());
+    (!measured_alternative
+        && !is_only_prep_words(&item)
+        && !DANGLING.contains(&lower[start - 1].as_str()))
+    .then(|| (item, words[start..].join(" ")))
+}
+
 /// Comma parts that qualify the preceding item rather than name it: purposes
 /// ("for frying"), examples ("such as canola"), references ("see note"), and
 /// amount guidance ("about 8 ounces", "divided").

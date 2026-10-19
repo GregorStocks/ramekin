@@ -5,11 +5,11 @@
     {
       "raw": "1 (5-ounce) block feta cheese",
       "expected": {
-        "item": "block feta cheese",
+        "item": "feta cheese",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "block"
           }
         ],
         "note": "5-ounce",

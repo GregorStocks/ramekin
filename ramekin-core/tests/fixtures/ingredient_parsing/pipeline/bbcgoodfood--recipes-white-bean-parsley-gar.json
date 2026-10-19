@@ -33,28 +33,28 @@
     {
       "raw": "2 garlic cloves chopped",
       "expected": {
-        "item": "garlic cloves chopped",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "2 x 400g cans  cannellini beans drained",
       "expected": {
-        "item": "cannellini beans drained",
+        "item": "cannellini beans",
         "measurements": [
           {
             "amount": "2",
             "unit": "400g cans"
           }
         ],
-        "note": null,
+        "note": "drained",
         "category": "Canned Goods"
       }
     },

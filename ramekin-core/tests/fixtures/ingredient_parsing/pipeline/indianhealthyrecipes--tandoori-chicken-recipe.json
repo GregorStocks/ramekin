@@ -79,14 +79,14 @@
     {
       "raw": "¼  teaspoon black pepper crushed ((powder))",
       "expected": {
-        "item": "black pepper crushed",
+        "item": "black pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "powder",
+        "note": "powder, crushed",
         "category": "Spices & Seasonings"
       }
     },

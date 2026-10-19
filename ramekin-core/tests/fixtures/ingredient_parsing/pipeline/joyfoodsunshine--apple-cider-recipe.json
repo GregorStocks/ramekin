@@ -19,14 +19,14 @@
     {
       "raw": "1  orange ((quartered and unpeeled))",
       "expected": {
-        "item": "orange quartered and unpeeled",
+        "item": "orange",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "quartered and unpeeled",
         "category": "Produce"
       }
     },

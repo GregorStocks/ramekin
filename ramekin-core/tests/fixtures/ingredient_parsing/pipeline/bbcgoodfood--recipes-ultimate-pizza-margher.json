@@ -103,14 +103,14 @@
     {
       "raw": "2 plump  garlic cloves finely chopped",
       "expected": {
-        "item": "plump garlic cloves finely chopped",
+        "item": "plump garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
@@ -131,11 +131,11 @@
     {
       "raw": "2 balls buffalo mozzarella (about 140g each)",
       "expected": {
-        "item": "balls buffalo mozzarella",
+        "item": "buffalo mozzarella",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "ball"
           },
           {
             "amount": "140",

@@ -131,11 +131,11 @@
     {
       "raw": "1/2 scoop vanilla protein-powder",
       "expected": {
-        "item": "scoop vanilla protein-powder",
+        "item": "vanilla protein-powder",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "scoop"
           }
         ],
         "note": null,

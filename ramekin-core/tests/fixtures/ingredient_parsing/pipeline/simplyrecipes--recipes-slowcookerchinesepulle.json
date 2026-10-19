@@ -131,14 +131,14 @@
     {
       "raw": "1 large scallion sliced",
       "expected": {
-        "item": "scallion sliced",
+        "item": "scallion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "sliced",
         "category": "Produce"
       }
     }

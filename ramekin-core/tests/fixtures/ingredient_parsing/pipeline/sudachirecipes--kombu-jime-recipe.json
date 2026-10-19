@@ -5,11 +5,11 @@
     {
       "raw": "2 fillets sashimi-grade sea bream",
       "expected": {
-        "item": "fillets sashimi-grade sea bream",
+        "item": "sashimi-grade sea bream",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "fillet"
           }
         ],
         "note": null,
@@ -33,15 +33,15 @@
     {
       "raw": "2 sheets dried kelp (kombu) (large enough to cover the surface of the sea bream)",
       "expected": {
-        "item": "sheets dried kelp",
+        "item": "dried kelp",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "kombu, large enough to cover the surface of the sea bream",
-        "category": "Produce"
+        "category": "Spices & Seasonings"
       }
     },
     {

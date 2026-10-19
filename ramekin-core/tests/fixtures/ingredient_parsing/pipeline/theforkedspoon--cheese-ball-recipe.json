@@ -5,11 +5,11 @@
     {
       "raw": "2 (8-ounce) blocks full-fat cream cheese (softened and at room temperature)",
       "expected": {
-        "item": "blocks full-fat cream cheese",
+        "item": "full-fat cream cheese",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "block"
           }
         ],
         "note": "8-ounce, softened and at room temperature",

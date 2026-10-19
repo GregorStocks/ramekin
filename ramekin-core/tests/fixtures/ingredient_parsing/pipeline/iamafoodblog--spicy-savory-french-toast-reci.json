@@ -121,14 +121,14 @@
     {
       "raw": "4 mini brioche buns cut into slices",
       "expected": {
-        "item": "mini brioche buns cut into slices",
+        "item": "mini brioche buns",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into slices",
         "category": "Bakery & Bread"
       }
     }

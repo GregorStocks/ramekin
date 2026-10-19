@@ -75,11 +75,11 @@
     {
       "raw": "3/4 sheet  leaf gelatin*",
       "expected": {
-        "item": "sheet leaf gelatin",
+        "item": "leaf gelatin",
         "measurements": [
           {
             "amount": "0.75",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": null,
@@ -224,11 +224,11 @@
     {
       "raw": "2 sheets leaf gelatin",
       "expected": {
-        "item": "sheets leaf gelatin",
+        "item": "leaf gelatin",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": null,
@@ -336,11 +336,11 @@
     {
       "raw": "6 sheets leaf gelatin",
       "expected": {
-        "item": "sheets leaf gelatin",
+        "item": "leaf gelatin",
         "measurements": [
           {
             "amount": "6",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": null,

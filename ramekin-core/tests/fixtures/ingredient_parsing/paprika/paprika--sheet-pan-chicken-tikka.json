@@ -275,8 +275,13 @@
     {
       "raw": "Dollops of yogurt",
       "expected": {
-        "item": "Dollops of yogurt",
-        "measurements": [],
+        "item": "yogurt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dollop"
+          }
+        ],
         "note": null,
         "section": "To Finish, If Desired",
         "category": "Dairy & Eggs"

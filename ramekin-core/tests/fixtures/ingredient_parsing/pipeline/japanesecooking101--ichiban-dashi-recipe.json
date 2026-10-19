@@ -19,11 +19,11 @@
     {
       "raw": "1 sheet Kombu dried sea kelp (&amp;quot;4 x 2&amp;quot; (10 cm x 5 cm) )",
       "expected": {
-        "item": "sheet Kombu dried sea kelp",
+        "item": "Kombu dried sea kelp",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "\"4 x 2\" (10 cm x 5 cm)",

@@ -79,11 +79,11 @@
     {
       "raw": "1 loaf (18 slices) white sandwich bread",
       "expected": {
-        "item": "loaf white sandwich bread",
+        "item": "white sandwich bread",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "loaf"
           },
           {
             "amount": "18",

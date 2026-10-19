@@ -330,11 +330,11 @@
     {
       "raw": "1/2  batch American buttercream (recipe here)",
       "expected": {
-        "item": "batch American buttercream",
+        "item": "American buttercream",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "batch"
           }
         ],
         "note": "recipe here",

@@ -47,14 +47,14 @@
     {
       "raw": "1 egg beaten",
       "expected": {
-        "item": "egg beaten",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten",
         "category": "Dairy & Eggs"
       }
     },

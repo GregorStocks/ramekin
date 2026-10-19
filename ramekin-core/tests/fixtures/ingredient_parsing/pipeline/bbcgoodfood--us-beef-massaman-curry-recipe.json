@@ -47,42 +47,42 @@
     {
       "raw": "1 lb 5 oz beef stew meat cut into large chunks",
       "expected": {
-        "item": "5 oz beef stew meat cut into large chunks",
+        "item": "5 oz beef stew meat",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "cut into large chunks",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 lb yellow potatoes cut into 1in chunks",
       "expected": {
-        "item": "yellow potatoes cut into 1in chunks",
+        "item": "yellow potatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "cut into 1in chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "1  onion cut into thin wedges",
       "expected": {
-        "item": "onion cut into thin wedges",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into thin wedges",
         "category": "Produce"
       }
     },
@@ -159,14 +159,14 @@
     {
       "raw": "1  red chile pepper deseeded and finely sliced, to serve",
       "expected": {
-        "item": "red chile pepper deseeded and finely sliced",
+        "item": "red chile pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "to serve",
+        "note": "deseeded and finely sliced, to serve",
         "category": "Spices & Seasonings"
       }
     },

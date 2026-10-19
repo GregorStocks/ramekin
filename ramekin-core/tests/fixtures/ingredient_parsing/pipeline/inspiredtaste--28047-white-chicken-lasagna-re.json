@@ -151,11 +151,11 @@
     {
       "raw": "1 (15-ounce) container part-skim ricotta cheese (about 1 and 3/4 cups)",
       "expected": {
-        "item": "container part-skim ricotta cheese",
+        "item": "part-skim ricotta cheese",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           },
           {
             "amount": "1.75",

@@ -194,7 +194,7 @@
     {
       "raw": "1 small bundle (2 to 3 ounces or about 8 thin green onions) thinly sliced",
       "expected": {
-        "item": "bundle thinly sliced",
+        "item": "bundle",
         "measurements": [
           {
             "amount": "1",
@@ -205,7 +205,7 @@
             "unit": "oz"
           }
         ],
-        "note": "2 to 3 ounces or about 8 thin green onions",
+        "note": "2 to 3 ounces or about 8 thin green onions, thinly sliced",
         "category": "Other"
       }
     },

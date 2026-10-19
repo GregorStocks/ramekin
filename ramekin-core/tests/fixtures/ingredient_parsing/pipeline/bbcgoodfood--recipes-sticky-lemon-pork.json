@@ -33,14 +33,14 @@
     {
       "raw": "800g leg or shoulder pork diced into large chunks",
       "expected": {
-        "item": "leg or shoulder pork diced into large chunks",
+        "item": "leg or shoulder pork",
         "measurements": [
           {
             "amount": "800",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "diced into large chunks",
         "category": "Meat & Seafood"
       }
     },
@@ -75,14 +75,14 @@
     {
       "raw": "4 garlic cloves chopped",
       "expected": {
-        "item": "garlic cloves chopped",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },

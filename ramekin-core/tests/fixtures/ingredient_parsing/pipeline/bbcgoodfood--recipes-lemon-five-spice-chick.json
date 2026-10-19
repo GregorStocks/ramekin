@@ -33,23 +33,23 @@
     {
       "raw": "thumb-sized piece  ginger shredded (no need to peel)",
       "expected": {
-        "item": "thumb-sized piece ginger shredded",
+        "item": "thumb-sized piece ginger",
         "measurements": [],
-        "note": "no need to peel",
+        "note": "no need to peel, shredded",
         "category": "Produce"
       }
     },
     {
       "raw": "2 garlic cloves crushed",
       "expected": {
-        "item": "garlic cloves crushed",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "crushed",
         "category": "Produce"
       }
     },
@@ -84,8 +84,13 @@
     {
       "raw": "splash dry sherry or dry white wine",
       "expected": {
-        "item": "splash dry sherry or dry white wine",
-        "measurements": [],
+        "item": "dry sherry or dry white wine",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": null,
         "category": "Beverages"
       }

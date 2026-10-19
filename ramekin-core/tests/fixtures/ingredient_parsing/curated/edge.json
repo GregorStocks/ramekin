@@ -99,14 +99,14 @@
       "name": "multiplied_compound_unit_metric",
       "raw": "2 x 400g cans cannellini beans drained",
       "expected": {
-        "item": "cannellini beans drained",
+        "item": "cannellini beans",
         "measurements": [
           {
             "amount": "2",
             "unit": "400g cans"
           }
         ],
-        "note": null,
+        "note": "drained",
         "category": "Canned Goods"
       }
     },
@@ -742,11 +742,11 @@
       "name": "leading_paren_no_unit",
       "raw": "(half block) cream cheese",
       "expected": {
-        "item": "block cream cheese",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "block"
           }
         ],
         "note": null,

@@ -65,11 +65,11 @@
     {
       "raw": "1 (16 ounce) container prepared chocolate frosting",
       "expected": {
-        "item": "container prepared chocolate frosting",
+        "item": "prepared chocolate frosting",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "container"
           },
           {
             "amount": "16",

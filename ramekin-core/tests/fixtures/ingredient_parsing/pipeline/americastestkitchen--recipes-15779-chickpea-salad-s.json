@@ -145,11 +145,11 @@
     {
       "raw": "4 leaves Bibb lettuce",
       "expected": {
-        "item": "leaves Bibb lettuce",
+        "item": "Bibb lettuce",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "leaf"
           }
         ],
         "note": null,

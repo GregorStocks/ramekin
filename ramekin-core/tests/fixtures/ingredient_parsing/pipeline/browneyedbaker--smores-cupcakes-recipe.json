@@ -177,11 +177,11 @@
     {
       "raw": "1  envelope unflavored gelatin (1 tablespoon)",
       "expected": {
-        "item": "envelope unflavored gelatin",
+        "item": "unflavored gelatin",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "envelope"
           },
           {
             "amount": "1",

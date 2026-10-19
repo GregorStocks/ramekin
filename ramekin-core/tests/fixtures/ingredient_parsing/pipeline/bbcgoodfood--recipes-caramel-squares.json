@@ -47,14 +47,14 @@
     {
       "raw": "85g blanched almond toasted then finely chopped",
       "expected": {
-        "item": "blanched almond toasted then finely chopped",
+        "item": "blanched almond",
         "measurements": [
           {
             "amount": "85",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "toasted then finely chopped",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -112,14 +112,14 @@
     {
       "raw": "50g butter cubed",
       "expected": {
-        "item": "butter cubed",
+        "item": "butter",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cubed",
         "category": "Dairy & Eggs"
       }
     },

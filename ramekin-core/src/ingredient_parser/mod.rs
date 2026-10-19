@@ -1936,7 +1936,7 @@ mod tests {
             "2 envelopes unflavored powdered gelatin (about 1 Tbsp. plus 2\ntsp.)\n1 2/3 cups whole milk";
         let result = parse_ingredients(blob);
         assert_eq!(result.len(), 2);
-        assert_eq!(result[0].item, "envelopes unflavored powdered gelatin");
+        assert_eq!(result[0].item, "unflavored powdered gelatin");
         assert_eq!(result[1].item, "whole milk");
 
         let blob = "6 tablespoons (90 grams) sour cream or whole Greek yogurt (i.e., a strained\nyogurt)\n1 tablespoon (15 ml) white wine vinegar";
@@ -2084,9 +2084,13 @@ mod tests {
                 (Some("4"), None)
             ]
         );
-        // A counted packet isn't a count of the food.
+        // A counted packet is an alternative measure of the food.
         let parsed = parse_ingredient("2 1/4 teaspoons or 1 packet instant yeast");
-        assert_eq!(parsed.item, "or 1 packet instant yeast");
+        assert_eq!(parsed.item, "instant yeast");
+        assert_eq!(
+            measurements(&parsed),
+            vec![(Some("2 1/4"), Some("tsp")), (Some("1"), Some("packet"))]
+        );
     }
 
     #[test]

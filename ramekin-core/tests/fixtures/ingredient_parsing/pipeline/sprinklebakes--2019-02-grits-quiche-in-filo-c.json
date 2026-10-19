@@ -23,11 +23,11 @@
     {
       "raw": "18  sheets phyllo dough",
       "expected": {
-        "item": "sheets phyllo dough",
+        "item": "phyllo dough",
         "measurements": [
           {
             "amount": "18",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": null,

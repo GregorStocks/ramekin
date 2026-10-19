@@ -219,14 +219,14 @@
     {
       "raw": "2 tablespoons red currant jelly melted with 1 tablespoon water",
       "expected": {
-        "item": "red currant jelly melted with 1 tablespoon water",
+        "item": "red currant jelly",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "melted with 1 tablespoon water",
         "category": "Condiments & Sauces"
       }
     },

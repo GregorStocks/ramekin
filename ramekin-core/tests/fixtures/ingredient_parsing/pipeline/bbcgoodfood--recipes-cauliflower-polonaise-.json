@@ -28,14 +28,14 @@
     {
       "raw": "1 onion chopped",
       "expected": {
-        "item": "onion chopped",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped",
         "category": "Produce"
       }
     },
@@ -84,25 +84,25 @@
     {
       "raw": "3-4 slices thick-cut  white bread crusts removed",
       "expected": {
-        "item": "thick-cut white bread crusts removed",
+        "item": "thick-cut white bread",
         "measurements": [
           {
             "amount": "3-4",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "crusts removed",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1-2 good knobs butter",
       "expected": {
-        "item": "knobs butter",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1-2",
-            "unit": "good"
+            "unit": "good knob"
           }
         ],
         "note": null,

@@ -19,11 +19,11 @@
     {
       "raw": "1 sheet Kombu dried sea kelp",
       "expected": {
-        "item": "sheet Kombu dried sea kelp",
+        "item": "Kombu dried sea kelp",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": null,

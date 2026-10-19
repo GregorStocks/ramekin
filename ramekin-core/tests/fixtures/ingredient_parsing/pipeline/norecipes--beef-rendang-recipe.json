@@ -177,11 +177,11 @@
     {
       "raw": "2 packs coconut cream powder ((or 1 can coconut milk))",
       "expected": {
-        "item": "packs coconut cream powder",
+        "item": "coconut cream powder",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "pack"
           }
         ],
         "note": "or 1 can coconut milk",

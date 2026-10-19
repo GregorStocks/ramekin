@@ -33,14 +33,14 @@
     {
       "raw": "2 sticks unsalted butter cubed",
       "expected": {
-        "item": "unsalted butter cubed",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "cubed",
         "category": "Dairy & Eggs"
       }
     },

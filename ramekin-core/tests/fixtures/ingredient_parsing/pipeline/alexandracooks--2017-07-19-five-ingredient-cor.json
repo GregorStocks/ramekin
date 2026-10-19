@@ -5,11 +5,11 @@
     {
       "raw": "8 to 10 ears corn, husks, stalks, and silk removed",
       "expected": {
-        "item": "ears corn, husks, stalks, and silk removed",
+        "item": "corn, husks, stalks, and silk removed",
         "measurements": [
           {
             "amount": "8 to 10",
-            "unit": null
+            "unit": "ear"
           }
         ],
         "note": null,

@@ -217,14 +217,14 @@
     {
       "raw": "1 avocado cubed",
       "expected": {
-        "item": "avocado cubed",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cubed",
         "section": "Mango Salsa",
         "category": "Produce"
       }
@@ -232,14 +232,14 @@
     {
       "raw": "1-2 jalapeños seeded, if desired and chopped",
       "expected": {
-        "item": "jalapeños seeded",
+        "item": "jalapeños",
         "measurements": [
           {
             "amount": "1-2",
             "unit": null
           }
         ],
-        "note": "if desired and chopped",
+        "note": "seeded, if desired and chopped",
         "section": "Mango Salsa",
         "category": "Produce"
       }

@@ -5,14 +5,14 @@
     {
       "raw": "1 large aubergine sliced into 1cm rounds",
       "expected": {
-        "item": "aubergine sliced into 1cm rounds",
+        "item": "aubergine",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "sliced into 1cm rounds",
         "category": "Other"
       }
     },
@@ -61,14 +61,14 @@
     {
       "raw": "200g cherry tomato halved",
       "expected": {
-        "item": "cherry tomato halved",
+        "item": "cherry tomato",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "halved",
         "category": "Produce"
       }
     },
@@ -89,14 +89,14 @@
     {
       "raw": "100g log firm goat's cheese cubed",
       "expected": {
-        "item": "log firm goat's cheese cubed",
+        "item": "log firm goat's cheese",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cubed",
         "category": "Cheese"
       }
     },

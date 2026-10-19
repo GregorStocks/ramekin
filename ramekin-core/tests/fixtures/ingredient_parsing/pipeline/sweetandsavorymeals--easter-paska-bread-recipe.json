@@ -5,11 +5,11 @@
     {
       "raw": "1  envelope Instant Yeast (7 grams)",
       "expected": {
-        "item": "envelope Instant Yeast",
+        "item": "Instant Yeast",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "envelope"
           },
           {
             "amount": "7",

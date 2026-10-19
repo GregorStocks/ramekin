@@ -19,28 +19,28 @@
     {
       "raw": "1 large  red onion halved and sliced",
       "expected": {
-        "item": "red onion halved and sliced",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "halved and sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "5 pears peeled and chopped",
       "expected": {
-        "item": "pears peeled and chopped",
+        "item": "pears",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and chopped",
         "category": "Produce"
       }
     },
@@ -126,14 +126,14 @@
     {
       "raw": "1 egg beaten",
       "expected": {
-        "item": "egg beaten",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten",
         "category": "Dairy & Eggs"
       }
     },

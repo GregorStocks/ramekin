@@ -229,14 +229,14 @@
     {
       "raw": "1 egg beaten (for egg wash (optional))",
       "expected": {
-        "item": "egg beaten",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "for egg wash (optional)",
+        "note": "for egg wash (optional), beaten",
         "category": "Dairy & Eggs"
       }
     }

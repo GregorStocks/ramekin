@@ -19,57 +19,57 @@
     {
       "raw": "8 slices stale bread cut into 1.5-inch cubes (we used sourdough)",
       "expected": {
-        "item": "stale bread cut into 1.5-inch cubes",
+        "item": "stale bread",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": "we used sourdough",
+        "note": "we used sourdough, cut into 1.5-inch cubes",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "2  onions finely chopped",
       "expected": {
-        "item": "onions finely chopped",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "4  celery sticks finely chopped",
       "expected": {
-        "item": "celery sticks finely chopped",
+        "item": "celery sticks",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "handful of sage leaves finely chopped",
       "expected": {
-        "item": "sage leaves finely chopped",
+        "item": "sage leaves",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {

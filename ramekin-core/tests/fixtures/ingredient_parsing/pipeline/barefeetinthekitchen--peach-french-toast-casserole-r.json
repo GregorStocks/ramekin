@@ -5,11 +5,11 @@
     {
       "raw": "1  loaf french bread",
       "expected": {
-        "item": "loaf french bread",
+        "item": "french bread",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "loaf"
           }
         ],
         "note": null,

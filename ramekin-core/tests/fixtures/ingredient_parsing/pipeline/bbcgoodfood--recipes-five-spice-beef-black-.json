@@ -83,28 +83,28 @@
     {
       "raw": "2 garlic cloves finely minced",
       "expected": {
-        "item": "garlic cloves finely minced",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "finely minced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 small piece fresh root ginger finely minced",
       "expected": {
-        "item": "piece fresh root ginger finely minced",
+        "item": "piece fresh root ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "finely minced",
         "category": "Produce"
       }
     },

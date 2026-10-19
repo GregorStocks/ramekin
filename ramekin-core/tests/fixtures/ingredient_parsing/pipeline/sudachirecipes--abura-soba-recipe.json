@@ -131,11 +131,11 @@
     {
       "raw": "2 portions ramen noodles (fresh or spaghetti hack)",
       "expected": {
-        "item": "portions ramen noodles",
+        "item": "ramen noodles",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "portion"
           }
         ],
         "note": "fresh or spaghetti hack",

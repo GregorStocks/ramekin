@@ -47,11 +47,11 @@
     {
       "raw": "6 ears fresh corn (white or yellow are both fine, but yellow makes for a prettier soup)",
       "expected": {
-        "item": "ears fresh corn",
+        "item": "fresh corn",
         "measurements": [
           {
             "amount": "6",
-            "unit": null
+            "unit": "ear"
           }
         ],
         "note": "white or yellow are both fine, but yellow makes for a prettier soup",

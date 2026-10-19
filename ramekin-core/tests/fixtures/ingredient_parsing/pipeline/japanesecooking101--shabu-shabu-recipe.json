@@ -61,11 +61,11 @@
     {
       "raw": "6 leaves nappa cabbage",
       "expected": {
-        "item": "leaves nappa cabbage",
+        "item": "nappa cabbage",
         "measurements": [
           {
             "amount": "6",
-            "unit": null
+            "unit": "leaf"
           }
         ],
         "note": null,

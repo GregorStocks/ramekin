@@ -61,11 +61,11 @@
     {
       "raw": "4 sheets Nori (roasted seaweed) (small)",
       "expected": {
-        "item": "sheets Nori",
+        "item": "Nori",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "sheet"
           }
         ],
         "note": "roasted seaweed, small",

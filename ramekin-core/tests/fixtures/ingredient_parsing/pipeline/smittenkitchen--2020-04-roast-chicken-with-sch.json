@@ -23,8 +23,13 @@
     {
       "raw": "Splash of oil, any kind",
       "expected": {
-        "item": "Splash of oil",
-        "measurements": [],
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "splash"
+          }
+        ],
         "note": "any kind",
         "category": "Oils & Vinegars"
       }

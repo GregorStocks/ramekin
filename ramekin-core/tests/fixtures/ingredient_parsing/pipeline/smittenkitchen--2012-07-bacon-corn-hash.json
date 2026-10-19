@@ -64,11 +64,11 @@
     {
       "raw": "1 bundle scallions, thinly sliced",
       "expected": {
-        "item": "bundle scallions",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "bundle"
           }
         ],
         "note": "thinly sliced",
