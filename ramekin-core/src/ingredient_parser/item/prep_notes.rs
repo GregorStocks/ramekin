@@ -498,7 +498,7 @@ pub(in crate::ingredient_parser) fn split_trailing_prep_phrase(
     const LEADS_TO_FOOD: &[&str] = &["&", "+", "and", "of", "or"];
     // Foods named for a cut or a dish ("beef shank cross cut", "banana
     // split") end in a prep word.
-    const FOOD_ENDINGS: &[&str] = &[" cut", "banana split"];
+    const FOOD_ENDINGS: &[&str] = &["banana split", "center cut", "centre cut", "cross cut"];
     if s.contains([',', ';', ':'])
         || FOOD_ENDINGS
             .iter()

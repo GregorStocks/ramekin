@@ -914,6 +914,7 @@ fn test_trailing_prep_without_comma_goes_to_note() {
             "cut into 1in cubes",
         ),
         ("2 carrots thickly sliced", "carrots", "thickly sliced"),
+        ("1 onion roughly cut", "onion", "roughly cut"),
         (
             "1/4 cup red currant jelly melted",
             "red currant jelly",
