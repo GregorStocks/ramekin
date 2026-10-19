@@ -47,14 +47,14 @@
     {
       "raw": "1 1/2 cups 3/4-inch bread cubes (croutons), preferably from a baguette or country bread loaf",
       "expected": {
-        "item": "bread cubes",
+        "item": "3/4-inch bread cubes",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "3/4-inch, croutons, preferably from a baguette or country bread loaf",
+        "note": "croutons, preferably from a baguette or country bread loaf",
         "category": "Bakery & Bread"
       }
     },

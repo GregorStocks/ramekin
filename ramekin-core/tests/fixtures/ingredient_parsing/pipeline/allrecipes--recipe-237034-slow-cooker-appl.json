@@ -19,14 +19,14 @@
     {
       "raw": "3 cups 1-inch bread cubes",
       "expected": {
-        "item": "bread cubes",
+        "item": "1-inch bread cubes",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "1-inch",
+        "note": null,
         "category": "Bakery & Bread"
       }
     },

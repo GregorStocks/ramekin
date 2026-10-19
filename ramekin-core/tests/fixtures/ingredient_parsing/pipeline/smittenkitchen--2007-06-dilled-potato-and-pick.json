@@ -33,14 +33,14 @@
     {
       "raw": "2 1-pound English (also sold as hothouse or seedless) cucumbers, very thinly sliced",
       "expected": {
-        "item": "English cucumbers",
+        "item": "1-pound English cucumbers",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "1-pound, also sold as hothouse or seedless, very thinly sliced",
+        "note": "also sold as hothouse or seedless, very thinly sliced",
         "category": "Produce"
       }
     },

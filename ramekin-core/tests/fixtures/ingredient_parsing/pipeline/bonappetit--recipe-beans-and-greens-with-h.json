@@ -153,14 +153,14 @@
     {
       "raw": "1 8–10-oz. package Halloumi cheese, patted dry",
       "expected": {
-        "item": "Halloumi cheese",
+        "item": "8-10-oz. package Halloumi cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "8-10-oz. package, patted dry",
+        "note": "patted dry",
         "category": "Cheese"
       }
     },

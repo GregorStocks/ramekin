@@ -33,14 +33,14 @@
     {
       "raw": "4 6-oz fish fillets of white fish such as Bronzino or Striped Bass",
       "expected": {
-        "item": "fish fillets of white fish",
+        "item": "6-oz fish fillets of white fish",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "6-oz, such as Bronzino or Striped Bass",
+        "note": "such as Bronzino or Striped Bass",
         "category": "Meat & Seafood"
       }
     },

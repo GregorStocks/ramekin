@@ -5,14 +5,14 @@
     {
       "raw": "8  1-inch thick slices brioche bread (see note)",
       "expected": {
-        "item": "brioche bread",
+        "item": "1-inch thick slices brioche bread",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "1-inch thick slices, see note",
+        "note": "see note",
         "category": "Bakery & Bread"
       }
     },

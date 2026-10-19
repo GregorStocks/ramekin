@@ -68,7 +68,7 @@
     {
       "raw": "3 cups (390 grams) all-purpose flour plus 2 tablespoons (15 grams)",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour plus 2 tablespoons",
         "measurements": [
           {
             "amount": "3",
@@ -83,7 +83,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons",
+        "note": null,
         "category": "Baking"
       }
     },

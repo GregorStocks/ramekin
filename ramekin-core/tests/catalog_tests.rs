@@ -247,6 +247,17 @@ fn looser_spellings_resolve_to_the_same_food() {
     same("tub sour cream", "sour cream");
     same("splash of water", "water");
     same("big handfuls of kale", "kale");
+    // A size the item keeps before the food, and a measured addition after
+    // it.
+    same("8-ounce block halloumi", "halloumi");
+    same("2-pound head green cabbage", "green cabbage");
+    same(
+        "1-inch thick boneless pork loin chops",
+        "boneless pork loin chops",
+    );
+    same("8-oz. skin-on salmon fillets", "skin-on salmon fillets");
+    same("egg plus 1 large yolk", "egg");
+    same("all-purpose flour plus 2 tablespoons", "all-purpose flour");
     // es/ies plurals.
     same("strawberry", "strawberries");
     same("radish", "radishes");
@@ -970,14 +981,13 @@ fn parsed_name_never_cuts_into_a_name() {
     );
     // A leading size or count a measured line keeps ("1 cup medium grain
     // rice") is part of the stored name, though the bare name reads it as one.
-    for name in ["medium grain rice", "small new potatoes"] {
+    for name in [
+        "medium grain rice",
+        "small new potatoes",
+        "1-inch bread cubes",
+    ] {
         assert_eq!(ramekin_core::catalog::parsed_name(name), name);
     }
-    // A leading inch or weight size sizes the food, so it goes to the note.
-    assert_eq!(
-        ramekin_core::catalog::parsed_name("1-inch bread cubes"),
-        "bread cubes"
-    );
     // How the food is packed goes to the note.
     assert_eq!(
         ramekin_core::catalog::parsed_name("packed dark-brown sugar"),

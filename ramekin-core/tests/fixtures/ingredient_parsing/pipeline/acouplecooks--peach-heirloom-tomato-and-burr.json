@@ -47,14 +47,14 @@
     {
       "raw": "2 4-ounce balls burrata cheese",
       "expected": {
-        "item": "burrata cheese",
+        "item": "4-ounce balls burrata cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "4-ounce balls",
+        "note": null,
         "category": "Cheese"
       }
     },

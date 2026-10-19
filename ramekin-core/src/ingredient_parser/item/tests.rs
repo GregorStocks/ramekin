@@ -1070,129 +1070,29 @@ fn test_sized_cloves_sprigs_and_stalks_are_units() {
 }
 
 #[test]
-fn test_leading_size_goes_to_the_note() {
-    for (line, item, note) in [
-        (
-            "One 8-ounce (225-gram) block halloumi, in 1-inch cubes",
-            "halloumi",
-            "8-ounce block, in 1-inch cubes",
-        ),
-        (
-            "4 8-oz. skin-on salmon fillets",
-            "skin-on salmon fillets",
-            "8-oz.",
-        ),
-        (
-            "1 2\" piece fresh ginger, peeled",
-            "fresh ginger",
-            "2\" piece, peeled",
-        ),
-        (
-            "4 cups 1-inch pieces peeled acorn squash",
-            "peeled acorn squash",
-            "1-inch pieces",
-        ),
-        (
-            "1 5-pound boneless beef chuck-eye roast, trimmed",
-            "boneless beef chuck-eye roast",
-            "5-pound, trimmed",
-        ),
-        (
-            "2 4-ounce balls burrata cheese",
-            "burrata cheese",
-            "4-ounce balls",
-        ),
-        (
-            "4 cups 1-inch cubes, butternut squash",
-            "butternut squash",
-            "1-inch cubes",
-        ),
-        (
-            "1 (16-ounce) 1-inch thick New York strip steak",
-            "New York strip steak",
-            "1-inch thick, 16-ounce",
-        ),
-        (
-            "2 14-Ounce Each Cans Sweetened Condensed Milk",
-            "Sweetened Condensed Milk",
-            "14-Ounce Each Cans",
-        ),
-        (
-            "One 2-pound head green cabbage",
-            "green cabbage",
-            "2-pound head",
-        ),
-    ] {
-        let (parsed_item, parsed_note, _) = item_note_units(line);
-        assert_eq!(
-            (parsed_item.as_str(), parsed_note.as_deref()),
-            (item, Some(note)),
-            "{line}"
-        );
-    }
-    // A size that doesn't lead a food stays.
+fn test_sizes_and_measured_additions_stay_in_the_item() {
+    // A shopping list shows only the item and amount, so the item keeps them;
+    // the catalog matches the food without them.
     for line in [
-        "2 12-inch round or 9x13 rectangular pizza doughs",
-        "4 1-inch slices from a large loaf of rye bread",
+        "One 8-ounce (225-gram) block halloumi, in 1-inch cubes",
+        "3 8-ounce blocks cream cheese",
+        "1 large egg plus 1 large yolk",
+        "3 tablespoons lemon juice plus 2 teaspoons, divided",
     ] {
-        let (item, _, _) = item_note_units(line);
+        let item = item_note_units(line).0;
         assert!(
-            item.starts_with(|c: char| c.is_ascii_digit()),
+            item.contains("block") || item.contains(" plus "),
             "{line}: {item}"
-        );
-    }
-}
-
-#[test]
-fn test_measured_plus_after_a_food_goes_to_the_note() {
-    for (line, item, note) in [
-        ("1 cup flour plus 2 tablespoons", "flour", "plus 2 tablespoons"),
-        ("3 tablespoons lemon juice plus 2 teaspoons, divided", "lemon juice", "plus 2 teaspoons, divided"),
-        ("1/2 Tbsp sea salt for the lamb plus 1 tsp for stew", "sea salt for the lamb", "plus 1 tsp for stew"),
-        (
-            "1 cup (130 grams) all-purpose flour plus 1/2 cup (65 grams) all-purpose flour, divided",
-            "all-purpose flour",
-            "plus 1/2 cup all-purpose flour, divided",
-        ),
-    ] {
-        let (parsed_item, parsed_note, _) = item_note_units(line);
-        assert_eq!(
-            (parsed_item.as_str(), parsed_note.as_deref()),
-            (item, Some(note)),
-            "{line}"
         );
     }
     // After an amount alone, the addition names the food.
     for (line, item) in [
-        ("1 cup (4 ounces; 113 g), plus 2 tablespoons (3/4 ounce; 21 g) unroasted walnuts, divided", "unroasted walnuts"),
+        (
+            "1 cup (4 ounces; 113 g), plus 2 tablespoons (3/4 ounce; 21 g) unroasted walnuts, divided",
+            "unroasted walnuts",
+        ),
         ("2 tablespoons, plus 2 teaspoons olive oil, divided", "olive oil"),
     ] {
         assert_eq!(item_note_units(line).0, item, "{line}");
     }
-    // Another food stays in the item, where a shopping list still sees it.
-    for line in [
-        "1 large egg plus 1 large yolk",
-        "1/2 tsp lemon zest plus 1/2 tsp juice",
-    ] {
-        assert!(item_note_units(line).0.contains(" plus "), "{line}");
-    }
-    // Inside an "or" alternative or a labeled list, the addition stays put.
-    assert_eq!(
-        item_note_units(
-            "1 tbsp vanilla sugar or 1 tbsp granulated sugar plus 1 tsp vanilla extract"
-        )
-        .1
-        .as_deref(),
-        Some("or 1 tbsp granulated sugar plus 1 tsp vanilla extract")
-    );
-    assert_eq!(
-        item_note_units("Egg wash: 1 egg plus 1 tablespoon water").0,
-        "Egg wash: 1 egg plus 1 tablespoon water"
-    );
-    // Without an amount of its own, the line before "plus" may not name the
-    // food.
-    assert_eq!(
-        item_note_units("A few branches plus 3 tablespoons chopped fresh dill").0,
-        "A few branches plus 3 tablespoons chopped fresh dill"
-    );
 }

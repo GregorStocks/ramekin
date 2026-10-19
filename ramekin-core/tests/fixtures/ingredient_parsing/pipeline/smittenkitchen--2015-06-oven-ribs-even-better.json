@@ -158,14 +158,14 @@
     {
       "raw": "1 5-pound rack spare ribs",
       "expected": {
-        "item": "spare ribs",
+        "item": "5-pound rack spare ribs",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "5-pound rack",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

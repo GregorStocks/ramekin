@@ -47,14 +47,14 @@
     {
       "raw": "2 pieces of 1-inch fresh ginger root (peeled)",
       "expected": {
-        "item": "fresh ginger root",
+        "item": "1-inch fresh ginger root",
         "measurements": [
           {
             "amount": "2",
             "unit": "piece"
           }
         ],
-        "note": "1-inch, peeled",
+        "note": "peeled",
         "category": "Produce"
       }
     },

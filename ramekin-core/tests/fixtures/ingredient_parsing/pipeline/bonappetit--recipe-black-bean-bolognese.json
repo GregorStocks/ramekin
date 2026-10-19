@@ -33,14 +33,14 @@
     {
       "raw": "1 1½\" piece ginger, peeled, very finely chopped",
       "expected": {
-        "item": "ginger",
+        "item": "1 1/2\" piece ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "1 1/2\" piece, peeled, very finely chopped",
+        "note": "peeled, very finely chopped",
         "category": "Produce"
       }
     },

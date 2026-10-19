@@ -295,14 +295,14 @@
     {
       "raw": "5 1.4-ounce Heath Bars, chopped into large pieces",
       "expected": {
-        "item": "Heath Bars",
+        "item": "1.4-ounce Heath Bars",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": "1.4-ounce, chopped into large pieces",
+        "note": "chopped into large pieces",
         "section": "For the Ganache",
         "category": "Snacks"
       }

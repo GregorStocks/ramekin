@@ -19,14 +19,14 @@
     {
       "raw": "One 1 1/2-pound head of green cabbage, cut through the core into 6 wedges",
       "expected": {
-        "item": "green cabbage, cut through the core into 6 wedges",
+        "item": "1 1/2-pound head of green cabbage, cut through the core into 6 wedges",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "1 1/2-pound head",
+        "note": null,
         "category": "Produce"
       }
     },

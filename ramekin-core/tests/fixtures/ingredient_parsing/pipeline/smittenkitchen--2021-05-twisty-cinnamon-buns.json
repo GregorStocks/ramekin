@@ -195,7 +195,7 @@
     {
       "raw": "1 8-ounce (225-grams) block cream cheese, at room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "8-ounce block cream cheese",
         "measurements": [
           {
             "amount": "1",
@@ -206,7 +206,7 @@
             "unit": "g"
           }
         ],
-        "note": "8-ounce block, at room temperature",
+        "note": "at room temperature",
         "category": "Cheese"
       }
     },

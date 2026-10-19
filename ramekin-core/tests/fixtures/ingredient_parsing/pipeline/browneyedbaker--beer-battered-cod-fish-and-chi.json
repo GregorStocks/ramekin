@@ -117,14 +117,14 @@
     {
       "raw": "1½ pounds 1-inch-thick cod filet (cut into eight 3-ounce pieces)",
       "expected": {
-        "item": "cod filet",
+        "item": "1-inch-thick cod filet",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "lb"
           }
         ],
-        "note": "1-inch-thick, cut into eight 3-ounce pieces",
+        "note": "cut into eight 3-ounce pieces",
         "category": "Meat & Seafood"
       }
     },

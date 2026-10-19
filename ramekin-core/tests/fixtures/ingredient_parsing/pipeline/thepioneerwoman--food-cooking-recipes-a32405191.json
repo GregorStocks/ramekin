@@ -154,7 +154,7 @@
     {
       "raw": "3 1-inch-thick strip steaks (about 2 pounds)",
       "expected": {
-        "item": "strip steaks",
+        "item": "1-inch-thick strip steaks",
         "measurements": [
           {
             "amount": "3",
@@ -165,7 +165,7 @@
             "unit": "lb"
           }
         ],
-        "note": "1-inch-thick, about 2 pounds",
+        "note": "about 2 pounds",
         "category": "Meat & Seafood"
       }
     },

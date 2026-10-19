@@ -19,14 +19,14 @@
     {
       "raw": "⅓ cup finely ground almond flour plus 2 tbsp",
       "expected": {
-        "item": "finely ground almond flour",
+        "item": "finely ground almond flour plus 2 tbsp",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tbsp",
+        "note": null,
         "category": "Baking"
       }
     },

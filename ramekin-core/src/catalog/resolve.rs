@@ -151,6 +151,28 @@ fn without_leading_measure(name: &str) -> Option<String> {
     (rest.len() < name.len() && !rest.is_empty()).then(|| rest.into_owned())
 }
 
+/// The name without the measures a stored item can keep: a leading measure
+/// word ("bag of fresh spinach"), a leading size ("8-ounce block halloumi",
+/// "1-inch thick strip steaks"), or a measured addition ("egg plus 1 large
+/// yolk", "lemon juice plus 2 teaspoons").
+fn without_measures(name: &str) -> Vec<String> {
+    static ADDITION: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"^(.+?),?\s+plus\s+(?:[0-9]|(?:a|an|one|two|three|half)\s)").unwrap()
+    });
+    let mut names: Vec<String> = without_leading_measure(name).into_iter().collect();
+    let base = ADDITION
+        .captures(name)
+        .and_then(|caps| caps.get(1))
+        .map(|base| base.as_str().to_string());
+    for name in std::iter::once(name.to_string()).chain(base.clone()) {
+        if let Some((_, rest)) = crate::ingredient_parser::split_leading_size(&name) {
+            names.push(rest.to_string());
+        }
+    }
+    names.extend(base);
+    names
+}
+
 /// The name with leading size/preparation words dropped one at a time,
 /// including comma-separated ones: "grated fresh ginger" -> ["fresh ginger",
 /// "ginger"]. Trying each step lets a more specific name ("fresh ginger") win
@@ -255,15 +277,14 @@ fn resolve_single(normalized: &str) -> Resolution {
         candidates.push((prefix.to_string(), Some(Via::Clause)));
         candidates.push((strip_modifiers(prefix), Some(Via::Clause)));
     }
-    let unmeasured = without_leading_measure(&normalized);
     let mut stripped_names = leading_strips(&normalized);
     // "freshly ground black pepper to taste": both ends at once.
     stripped_names.extend(leading_strips(&strip_modifiers(&normalized)));
-    if let Some(unmeasured) = &unmeasured {
+    for unmeasured in without_measures(&normalized) {
         stripped_names.push(unmeasured.clone());
-        stripped_names.push(strip_modifiers(unmeasured));
-        stripped_names.extend(leading_strips(unmeasured));
-        stripped_names.extend(leading_strips(&strip_modifiers(unmeasured)));
+        stripped_names.push(strip_modifiers(&unmeasured));
+        stripped_names.extend(leading_strips(&unmeasured));
+        stripped_names.extend(leading_strips(&strip_modifiers(&unmeasured)));
     }
     for stripped in stripped_names {
         let prefixes: Vec<String> = clause_prefixes(&stripped)

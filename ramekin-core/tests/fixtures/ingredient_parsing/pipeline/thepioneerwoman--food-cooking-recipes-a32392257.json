@@ -98,14 +98,14 @@
     {
       "raw": "6 6-ounce skinless salmon fillets",
       "expected": {
-        "item": "skinless salmon fillets",
+        "item": "6-ounce skinless salmon fillets",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "6-ounce",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

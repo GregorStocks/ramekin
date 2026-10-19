@@ -165,14 +165,14 @@
     {
       "raw": "Two 1-inch (3cm) strips fresh orange zest",
       "expected": {
-        "item": "strips fresh orange zest",
+        "item": "1-inch strips fresh orange zest",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "1-inch, 3cm",
+        "note": "3cm",
         "category": "Produce"
       }
     },

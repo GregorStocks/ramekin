@@ -121,14 +121,14 @@
     {
       "raw": "1 can 28-oz tomato sauce",
       "expected": {
-        "item": "tomato sauce",
+        "item": "28-oz tomato sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "28-oz",
+        "note": null,
         "category": "Canned Goods"
       }
     },

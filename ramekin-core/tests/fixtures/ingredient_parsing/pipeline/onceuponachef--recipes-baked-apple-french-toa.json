@@ -5,14 +5,14 @@
     {
       "raw": "One 1-lb challah or raisin challah",
       "expected": {
-        "item": "challah or raisin challah",
+        "item": "1-lb challah or raisin challah",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "1-lb",
+        "note": null,
         "category": "Bakery & Bread"
       }
     },

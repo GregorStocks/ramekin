@@ -5,14 +5,14 @@
     {
       "raw": "Six 1 1/4-pound lobsters",
       "expected": {
-        "item": "lobsters",
+        "item": "1 1/4-pound lobsters",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "1 1/4-pound",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

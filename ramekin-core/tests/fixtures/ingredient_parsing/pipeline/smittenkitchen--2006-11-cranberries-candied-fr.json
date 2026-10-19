@@ -177,14 +177,14 @@
     {
       "raw": "1 6-inch-long sprig fresh rosemary",
       "expected": {
-        "item": "sprig fresh rosemary",
+        "item": "6-inch-long sprig fresh rosemary",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "6-inch-long",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -47,14 +47,14 @@
     {
       "raw": "4&nbsp;cups 1/2-inch cubes butternut squash (about), 1.25 lbs. post peeling",
       "expected": {
-        "item": "butternut squash, 1.25 lbs. post peeling",
+        "item": "1/2-inch cubes butternut squash, 1.25 lbs. post peeling",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "1/2-inch cubes, about",
+        "note": "about",
         "category": "Produce"
       }
     },

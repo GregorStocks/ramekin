@@ -28,14 +28,14 @@
     {
       "raw": "1 28-ounce canned whole or crushed tomatoes",
       "expected": {
-        "item": "canned whole or crushed tomatoes",
+        "item": "28-ounce canned whole or crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "28-ounce",
+        "note": null,
         "category": "Canned Goods"
       }
     },

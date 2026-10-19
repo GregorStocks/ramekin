@@ -108,14 +108,14 @@
     {
       "raw": "2 8-inch ciabatta rolls, baguettes, or 1 round pan de champagne",
       "expected": {
-        "item": "ciabatta rolls, baguettes",
+        "item": "8-inch ciabatta rolls, baguettes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "8-inch, or 1 round pan de champagne",
+        "note": "or 1 round pan de champagne",
         "category": "Bakery & Bread"
       }
     },

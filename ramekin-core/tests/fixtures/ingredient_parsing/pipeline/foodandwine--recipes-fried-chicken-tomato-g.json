@@ -33,14 +33,14 @@
     {
       "raw": "One 3 1/2-pound chicken, cut into 8 pieces",
       "expected": {
-        "item": "chicken",
+        "item": "3 1/2-pound chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "3 1/2-pound, cut into 8 pieces",
+        "note": "cut into 8 pieces",
         "category": "Meat & Seafood"
       }
     },

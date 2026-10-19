@@ -801,15 +801,6 @@ pub(super) const SIZED_PIECES: &[&str] = &[
     "log", "wheel", "ball", "link", "bundle", "bunch", "rack", "stick",
 ];
 
-/// A container or sized piece, singular or plural.
-pub(super) fn is_sized_noun(word: &str) -> bool {
-    let word = word.to_lowercase();
-    let known = |w: &str| PACKAGE_WORDS.contains(&w) || SIZED_PIECES.contains(&w);
-    known(&word)
-        || word.strip_suffix('s').is_some_and(known)
-        || word.strip_suffix("es").is_some_and(known)
-}
-
 /// Words that hedge a weight ("about 1 pound").
 const HEDGES: &[&str] = &["about", "approximately", "approx", "roughly", "around"];
 
@@ -1015,11 +1006,9 @@ pub(super) fn read_noted_weight(part: &str) -> Option<NotedWeight> {
         probe.take_if(|t| t.kind == Kind::Close)?;
         c = probe;
     }
-    // "14-ounce each cans": "each" before the container.
-    let each = c.take_if(|t| t.space_before && t.is_word("each"));
-    let word = c
-        .take_if(|t| t.space_before && (t.is_word("total") || is_sized_noun(t.text)))
-        .or(each);
+    let word = c.take_if(|t| {
+        t.space_before && (t.is_word("each") || t.is_word("total") || is_package_word(t.text))
+    });
     if !c.at_end() {
         return None;
     }

@@ -757,14 +757,14 @@
       "name": "leading_paren_compound",
       "raw": "(two 6-oz.) salmon filets",
       "expected": {
-        "item": "salmon filets",
+        "item": "6-oz. salmon filets",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "6-oz.",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

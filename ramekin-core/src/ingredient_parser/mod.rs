@@ -366,9 +366,10 @@ static LEADING_SIZE_REGEX: LazyLock<regex::Regex> = LazyLock::new(|| {
 });
 
 /// "8-ounce block halloumi" -> ("8-ounce block", "halloumi"): a size the
-/// measurement reader left in front of the food sizes it, so it goes to the
-/// note.
-fn split_leading_size(item: &str) -> Option<(&str, &str)> {
+/// measurement reader left in front of the food. The item keeps it, since a
+/// shopping list shows only the item and amount; the catalog matches the food
+/// without it.
+pub(crate) fn split_leading_size(item: &str) -> Option<(&str, &str)> {
     let caps = LEADING_SIZE_REGEX.captures(item.trim_start())?;
     let rest = caps.name("rest")?.as_str();
     // "12-inch round or 9x13 pizza doughs", "1-inch slices from a loaf": the
@@ -985,15 +986,6 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
-    // "4 8-oz. salmon fillets", "One 8-ounce block halloumi": a size before
-    // the food leads the note, as a parenthesized one does.
-    let leading_size = split_leading_size(&remaining)
-        .map(|(size, item_part)| (size.to_string(), item_part.to_string()))
-        .map(|(size, item_part)| {
-            remaining = item_part;
-            size
-        });
-
     // Step 5: Classify what's left after the measurement into the item and
     // its note parts ("plus more", prep, guidance, "or" alternatives).
     let classified = classify::classify_item(
@@ -1006,13 +998,6 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     note = classified.note;
 
     prepend_deferred_parenthetical_notes(&mut note, &deferred_parenthetical_notes);
-
-    if let Some(size) = leading_size {
-        note = Some(match note {
-            Some(existing) => format!("{size}, {existing}"),
-            None => size,
-        });
-    }
 
     // Step 5.9: "packed dark-brown sugar", "good quality dark chocolate": how
     // the food is packed or how good it is goes to the note. It stays off the

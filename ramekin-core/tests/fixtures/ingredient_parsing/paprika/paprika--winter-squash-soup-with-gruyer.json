@@ -74,7 +74,7 @@
     {
       "raw": "4 cups 1-inch pieces peeled butternut squash (about 1 1/2 pounds)*",
       "expected": {
-        "item": "peeled butternut squash",
+        "item": "1-inch pieces peeled butternut squash",
         "measurements": [
           {
             "amount": "4",
@@ -85,14 +85,14 @@
             "unit": "lb"
           }
         ],
-        "note": "1-inch pieces, about 1 1/2 pounds",
+        "note": "about 1 1/2 pounds",
         "category": "Produce"
       }
     },
     {
       "raw": "4 cups 1-inch pieces peeled acorn squash (about 1 1/2 pounds)*",
       "expected": {
-        "item": "peeled acorn squash",
+        "item": "1-inch pieces peeled acorn squash",
         "measurements": [
           {
             "amount": "4",
@@ -103,7 +103,7 @@
             "unit": "lb"
           }
         ],
-        "note": "1-inch pieces, about 1 1/2 pounds",
+        "note": "about 1 1/2 pounds",
         "category": "Produce"
       }
     },
@@ -207,14 +207,14 @@
     {
       "raw": "24 1/4-inch-thick baguette bread slices",
       "expected": {
-        "item": "baguette bread slices",
+        "item": "1/4-inch-thick baguette bread slices",
         "measurements": [
           {
             "amount": "24",
             "unit": null
           }
         ],
-        "note": "1/4-inch-thick",
+        "note": null,
         "category": "Bakery & Bread"
       }
     },

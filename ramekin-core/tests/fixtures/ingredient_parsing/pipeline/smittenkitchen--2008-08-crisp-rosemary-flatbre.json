@@ -23,14 +23,14 @@
     {
       "raw": "1 tablespoon chopped rosemary plus 2 (6-inch) sprigs (optional)",
       "expected": {
-        "item": "chopped rosemary",
+        "item": "chopped rosemary plus 2 sprigs",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "6-inch, optional, plus 2 sprigs",
+        "note": "6-inch, optional",
         "category": "Produce"
       }
     },
