@@ -27,22 +27,23 @@ use std::path::Path;
 
 /// Upper bound on distinct-item mismatches (categorizer disagrees with the label).
 /// These are the current measured values; lower them as the categorizer improves.
-/// Most of what's left is household goods and items the keyword rules don't know
+/// What's left is items the keyword rules don't know or put in the wrong aisle
 /// (`issues/*shopping-hand-typed-misses*`), plus "Banning soda" (typo for baking
 /// soda).
-const MAX_MISMATCHES: usize = 16;
-/// Upper bound on distinct items the categorizer returns "Other" for. Five are
-/// labeled Other ("Cold salad", "Dip", "Go humans", "Hello", "Sandwich stuff").
-const MAX_OTHER: usize = 14;
+const MAX_MISMATCHES: usize = 12;
+/// Upper bound on distinct items the categorizer returns "Other" for. Thirteen
+/// are labeled Other: household goods (dish soap, sponges, foil), which a
+/// cooking app gives no aisle, and vague items ("Dip", "Sandwich stuff").
+const MAX_OTHER: usize = 18;
 /// Upper bound on usage-weighted mismatches (mismatches × times the item was added).
-const MAX_WEIGHTED_MISMATCHES: u64 = 17;
+const MAX_WEIGHTED_MISMATCHES: u64 = 13;
 /// Upper bound on usage-weighted "Other" results (Other × times the item was added).
-const MAX_WEIGHTED_OTHER: u64 = 14;
+const MAX_WEIGHTED_OTHER: u64 = 19;
 /// Upper bounds on distinct mismatches and "Other" results from the catalog alone,
 /// without the keyword rules. Deleting the keyword rules
 /// (`issues/*catalog-delete-keyword-categorizer*`) needs these at the bounds above.
-const MAX_CATALOG_ONLY_MISMATCHES: usize = 31;
-const MAX_CATALOG_ONLY_OTHER: usize = 36;
+const MAX_CATALOG_ONLY_MISMATCHES: usize = 26;
+const MAX_CATALOG_ONLY_OTHER: usize = 39;
 
 /// One labeled corpus entry from `data/shopping-list-categories.json`.
 #[derive(Deserialize)]

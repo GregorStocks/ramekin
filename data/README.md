@@ -92,7 +92,7 @@ This lets you incrementally grow the dataset over time without re-scraping every
 
 A small corpus of real shopping-list usage from the prod server, used to score the
 ingredient categorizer (`ramekin-core/src/ingredient_categorizer.rs`) against
-hand-typed items — including non-recipe store items (household goods, snacks) that
+hand-typed items — including non-recipe store items (snacks, and household goods, labeled Other) that
 never appear in `unique-ingredients.txt`.
 
 Each entry is one distinct item typed into the prod `shopping_list_items` table

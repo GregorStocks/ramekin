@@ -353,7 +353,7 @@ fn products_carry_only_a_shopping_category() {
     assert_eq!(grams_per_cup("parchment paper"), None);
     assert_eq!(
         category("wooden skewers, soaked in cold water"),
-        Some("Household")
+        Some("Other")
     );
 }
 

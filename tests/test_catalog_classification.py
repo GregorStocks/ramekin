@@ -24,12 +24,12 @@ USDA = {
 CURATED = {
     "entries": {
         "kosher salt": {"fdc_id": 1},
-        "foil": {"kind": "product", "category": "Household"},
+        "foil": {"kind": "product", "category": "Other"},
     },
     "aliases": {"egg yolk": "egg, yolk, raw, fresh", "cheese": None},
     "not_food": {"to serve": "A serving suggestion."},
 }
-CATEGORIES = {"Household", "Produce"}
+CATEGORIES = {"Other", "Produce"}
 FNDDS = {"foods": [{"fdc_id": 50, "description": "guacamole, nfs"}]}
 
 
@@ -44,7 +44,7 @@ def test_valid_decisions_apply():
         {"name": "kosher", "action": "alias", "target": "kosher salt"},
         {"name": "meat", "action": "ambiguous", "reason": "many meats"},
         {"name": "for the pan", "action": "not_food", "reason": "a note"},
-        {"name": "baking twine", "action": "product", "category": "Household"},
+        {"name": "baking twine", "action": "product", "category": "Other"},
         {
             "name": "garlic paste",
             "action": "entry",
@@ -60,7 +60,7 @@ def test_valid_decisions_apply():
     assert updated["not_food"]["for the pan"] == "a note"
     assert updated["entries"]["baking twine"] == {
         "kind": "product",
-        "category": "Household",
+        "category": "Other",
     }
     assert updated["entries"]["garlic paste"]["grams_per_cup"]["value"] == 240.0
     assert "moon dust" not in updated["aliases"]
@@ -132,8 +132,9 @@ def test_categories_come_from_the_categorizer():
         / "ramekin-core/src/ingredient_categorizer.rs"
     ).read_text()
     categories = APPLY.shopping_categories(source)
-    assert {"Produce", "Household", "Other"} <= categories
-    assert len(categories) == 19
+    assert {"Produce", "Other"} <= categories
+    assert "Household" not in categories
+    assert len(categories) == 18
 
 
 def test_aliases_can_target_entries_from_the_same_batch():
@@ -234,7 +235,7 @@ def test_categories_key_foods_and_ambiguous_names():
             {"name": "egg yolk", "action": "category", "category": "Produce"},
             "not a food",
         ),
-        ({"name": "foil", "action": "category", "category": "Household"}, "not a food"),
+        ({"name": "foil", "action": "category", "category": "Other"}, "not a food"),
         (
             {"name": "to serve", "action": "category", "category": "Produce"},
             "not a food",
