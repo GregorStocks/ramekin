@@ -93,9 +93,9 @@ fn category_to_static(category: &str) -> &'static str {
 ///
 /// The ingredient catalog's category wins when it has one (the food a name
 /// resolves to, a product such as parchment paper, an ambiguous name such as
-/// "cheese", or the first food of a "salt and pepper" line), then the aisle
-/// Open Food Facts gives the name. Otherwise keyword rules from
-/// `data/ingredients.json` apply.
+/// "cheese", or the first food of a "salt and pepper" line). Otherwise keyword
+/// rules from `data/ingredients.json` apply, and where they find nothing, the
+/// aisle Open Food Facts gives the name.
 ///
 /// Returns the category name, or "Other" if no match is found.
 /// Matching is case-insensitive and looks for keyword containment.
@@ -106,19 +106,26 @@ pub fn categorize(item: &str) -> &'static str {
 /// `categorize`, using a stored answer for a name the catalog doesn't know.
 /// A name starting with "frozen" is Frozen; otherwise the committed catalog's
 /// category wins, then the learned entry's; otherwise
-/// the item's own keywords decide, then the learned key's. A learned non-food
-/// is treated like a committed one: keywords still apply, since a shopping list
-/// can hold it.
+/// the item's own keywords decide, then the learned key's, then Open Food
+/// Facts. Its names are noisier than keyword matches ("spelt flour" is a grain
+/// there), so they only fill in what would otherwise be Other. A learned
+/// non-food is treated like a committed one: keywords still apply, since a
+/// shopping list can hold it.
 pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'static str {
-    if let Some(category) = catalog_category_with(item, learned) {
+    let parsed = parsed_name(item);
+    if let Some(category) = committed_category(item, parsed.as_deref(), learned) {
         return category;
     }
-    match learned_key(item, learned) {
+    let keywords = match learned_key(item, learned) {
         Some(key) => match keyword_category(item) {
             "Other" => keyword_category(key),
             category => category,
         },
         None => keyword_category(item),
+    };
+    match keywords {
+        "Other" => open_food_facts_category(item, parsed.as_deref()).unwrap_or("Other"),
+        category => category,
     }
 }
 
@@ -132,24 +139,45 @@ pub fn catalog_category_with(
     item: &str,
     learned: &crate::catalog::Learned,
 ) -> Option<&'static str> {
+    let parsed = parsed_name(item);
+    committed_category(item, parsed.as_deref(), learned)
+        .or_else(|| open_food_facts_category(item, parsed.as_deref()))
+}
+
+/// The item a raw line ("1 medium white onion") parses to, if it differs.
+fn parsed_name(item: &str) -> Option<String> {
     use crate::catalog::normalize;
-    let parsed = crate::ingredient_parser::reparse_item(item)
+    crate::ingredient_parser::reparse_item(item)
         .map(|parsed| parsed.item)
-        .filter(|parsed| normalize(parsed) != normalize(item));
+        .filter(|parsed| normalize(parsed) != normalize(item))
+}
+
+/// "Frozen" for a name starting with "frozen", else the committed catalog's
+/// category for the item or its parsed name, else that of the learned entry.
+fn committed_category(
+    item: &str,
+    parsed: Option<&str>,
+    learned: &crate::catalog::Learned,
+) -> Option<&'static str> {
+    use crate::catalog::normalize;
     // The catalog drops "frozen" to find the food ("2 bags frozen peaches"
     // are peaches), but the shopper still buys them in the freezer aisle.
     let frozen = |name: &str| normalize(name).starts_with("frozen ");
-    if frozen(item) || parsed.as_deref().is_some_and(frozen) {
+    if frozen(item) || parsed.is_some_and(frozen) {
         return Some("Frozen");
     }
     let lookup = |name: &str| {
         crate::catalog::category(name)
             .or_else(|| learned_key(name, learned).and_then(crate::catalog::category))
     };
-    let names = || std::iter::once(item).chain(parsed.as_deref());
-    names()
-        .find_map(lookup)
-        .or_else(|| names().find_map(crate::catalog::open_food_facts_category))
+    std::iter::once(item).chain(parsed).find_map(lookup)
+}
+
+/// The aisle Open Food Facts gives the item, or else its parsed name.
+fn open_food_facts_category(item: &str, parsed: Option<&str>) -> Option<&'static str> {
+    std::iter::once(item)
+        .chain(parsed)
+        .find_map(crate::catalog::open_food_facts_category)
 }
 
 /// The catalog entry a stored answer maps `item` to, if the catalog doesn't
@@ -483,6 +511,13 @@ mod tests {
             Some("Spices & Seasonings")
         );
         assert_eq!(categorize("basil"), "Produce");
+        // Keyword rules win over it, and it only fills in Other.
+        assert_eq!(
+            crate::catalog::open_food_facts_category("spelt flour"),
+            Some("Pasta & Rice")
+        );
+        assert_eq!(categorize("spelt flour"), "Baking");
+        assert_eq!(categorize("Cheerios"), "Snacks");
     }
 
     #[test]

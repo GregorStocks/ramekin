@@ -6,10 +6,10 @@ estimates (`nutrition/`) both go through it, so a name the catalog learns helps
 both. The shopping-list categorizer (`ingredient_categorizer.rs`) uses the
 catalog's category (`curated.json` `categories`, or a product's own) whenever
 the name resolves to a categorized entry or ambiguous name. For a name the
-catalog doesn't know, the aisle Open Food Facts gives it comes next
-(`data/open_food_facts.json`, below), then the keyword rules in
-`data/ingredients.json`; see `issues/*catalog-delete-keyword-categorizer*` for
-when those can go.
+catalog doesn't know, the keyword rules in `data/ingredients.json` come next,
+then, where they find nothing, the aisle Open Food Facts gives it
+(`data/open_food_facts.json`, below); see
+`issues/*catalog-delete-keyword-categorizer*` for when the keyword rules can go.
 
 Coverage of every matcher is tracked in `data/ingredient-catalog-audit.md`
 (`make ingredient-catalog-audit`); a change here should show up there.
@@ -282,19 +282,23 @@ downloads them again. Its offline tests are `tests/test_open_food_facts_import.p
 Names are keyed lowercased, with apostrophes dropped and other punctuation
 turned into spaces ("Cheez-It" is "cheez it"). `open_food_facts::category`
 tries a name as written, then as a singular or plural.
-`ingredient_categorizer::catalog_category_with` consults it only after the
-committed catalog and learned answers have no category for the item or its
-parsed name. It gives an aisle only, never a food, so it doesn't affect
+The categorizer consults it only after the committed catalog and learned
+answers have no category for the item or its parsed name. `categorize_with`
+also tries the keyword rules first, since Open Food Facts names are noisier
+("spelt flour" is a grain there, "lemon pepper" mostly seasoned fish), so it
+only fills in what would otherwise be Other. `catalog_category_with`, the
+catalog-only answer the keyword rules' deletion is measured by, uses it right
+after the catalog. It gives an aisle only, never a food, so it doesn't affect
 calories or density.
 
 On 2026-10-20 it took the scorecard's catalog-only misses from 26 to 15 and
-Other from 39 to 25 (with the keyword rules: 12 to 10 and 18 to 14). It agrees
-with the labels on about 96% of the hand-typed items it names, and moved 207
-fixture lines to a new aisle, mostly out of Other or out of a wrong keyword
-aisle (jams, sodas, soups, olives). Pipeline-fixture lines categorized went from
-98.8% to 99.0%, and from the catalog alone from 90.9% to 91.8%. Categories with no aisle a shopper would
-look in (prepared meals, sandwiches, supplements) aren't listed, so names under
-them get none.
+Other from 39 to 25 (with the keyword rules: 12 to 11 and 18 to 14). It agrees
+with the labels on about 96% of the hand-typed items it names. It moved 86
+fixture lines out of Other (brownies, soups, sodas, barley, kiwifruit).
+Pipeline-fixture lines categorized went from 98.8% to 99.0%, and from the
+catalog alone from 90.9% to 91.8%. Categories with no aisle a shopper would look
+in (prepared meals, sandwiches, supplements) aren't listed, so names under them
+get none.
 
 Contains data from Open Food Facts (https://world.openfoodfacts.org), available
 under the Open Database License (https://opendatacommons.org/licenses/odbl/1.0/).

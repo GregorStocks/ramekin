@@ -5,7 +5,7 @@ The gap is now measured without patching: data/ingredient-catalog-audit.md has a
 Progress 2026-10-18: the categorizer reads a raw shopping line as an ingredient line when its text gets no category, and the shopping misses plus the 211 names seen at least twice in the fixtures were classified. \
 Scorecard catalog-only: 60 mismatches / 64 Other -> 7 / 9. \
 Since 2026-10-19 the scorecard scores only hand-typed items (212; recipe-added items were stale copies of old parses): with keywords 12 mismatches / 18 Other, catalog only 26 / 39 (13 items are labeled Other, including household goods, since Household is no longer a category). \
-Open Food Facts names (2026-10-20, ramekin-core/src/catalog/data/open_food_facts.json) brought that to 10 / 14 and 15 / 25, and moved 207 fixture lines to a new aisle. \
+Open Food Facts names (2026-10-20, ramekin-core/src/catalog/data/open_food_facts.json) brought that to 11 / 14 and 15 / 25; with keyword rules it only fills in Other. \
 The hand-typed misses are in p3-shopping-hand-typed-misses. \
 Lines categorized, catalog only vs with keywords: pipeline fixtures 90.4% vs 98.8%, Paprika 98.1% vs 99.4%, snapshots 98.4% vs 99.8%. \n\
 Why the fixture gap is hard: almost all of it is names the catalog doesn't resolve at all, not foods missing a category (make ingredient-catalog-uncategorized is nearly empty). \
