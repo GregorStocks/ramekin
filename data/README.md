@@ -92,11 +92,14 @@ This lets you incrementally grow the dataset over time without re-scraping every
 
 A small corpus of real shopping-list usage from the prod server, used to score the
 ingredient categorizer (`ramekin-core/src/ingredient_categorizer.rs`) against
-hand-typed items — including non-recipe store items (household goods, snacks) that
+hand-typed items — including non-recipe store items (snacks, and household goods, labeled Other) that
 never appear in `unique-ingredients.txt`.
 
-Each entry is one distinct item ever added to the prod `shopping_list_items` table
-(including soft-deleted rows), ordered by count descending:
+Each entry is one distinct item typed into the prod `shopping_list_items` table
+(including soft-deleted rows), ordered by count descending. Items added from a recipe
+(`source_recipe_id` or `source_recipe_title` set) are left out: they copy the
+recipe's parse from when they were added, and the ingredient fixtures already score
+recipe lines with the current parser.
 
 ```json
 {
@@ -120,8 +123,9 @@ is intentionally **not** a Makefile target and the extraction query is intention
 **not** checked into the repo — it needs prod access, and per `AGENTS.md` a one-off
 prod query should be confirmed with the maintainer rather than baked into the
 codebase. To refresh it, ask Gregor to run a read-only extraction of the distinct
-`shopping_list_items` (grouped by item with usage counts, including soft-deleted
-rows, ordered by count descending), merge the results into
+`shopping_list_items` with both `source_recipe_id` and `source_recipe_title` null
+(grouped by item with usage counts, including soft-deleted rows, ordered by count
+descending), merge the results into
 `data/shopping-list-categories.json`, and label any new items so
 `make shopping-list-categorizer-test` passes.
 

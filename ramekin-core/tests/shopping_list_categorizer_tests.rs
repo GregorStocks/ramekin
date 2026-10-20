@@ -1,10 +1,12 @@
 //! Categorizer scorecard against a real shopping-list corpus.
 //!
-//! The corpus is every distinct item ever added to the shopping list on the prod
+//! The corpus is every distinct item typed into the shopping list on the prod
 //! server (including soft-deleted rows), extracted into
 //! `data/shopping-list-categories.json` as `{item, count, category}` entries, where
 //! `count` is how many times the item was added and `category` is the hand/LLM-labeled
-//! grocery-aisle category a shopper would expect.
+//! grocery-aisle category a shopper would expect. Items added from a recipe are left
+//! out: they are copies of the recipe's parse when they were added, and recipe lines
+//! are scored by the ingredient fixtures, which follow the parser.
 //!
 //! This test runs `ingredient_categorizer::categorize` over the labeled corpus and
 //! reports accuracy, the mismatches, and the "Other" rate (how much real usage the
@@ -25,23 +27,23 @@ use std::path::Path;
 
 /// Upper bound on distinct-item mismatches (categorizer disagrees with the label).
 /// These are the current measured values; lower them as the categorizer improves.
-/// The two remaining mismatches: "Banning soda" (typo for baking soda) and
-/// "finely chopped laver seaweed" (labeled Other, categorized Produce).
-const MAX_MISMATCHES: usize = 2;
-/// Upper bound on distinct items the categorizer returns "Other" for. The remaining
-/// ones are genuinely uncategorizable ("Cold salad", "Dip", "Go humans").
-const MAX_OTHER: usize = 3;
+/// What's left is items the keyword rules don't know or put in the wrong aisle
+/// (`issues/*shopping-hand-typed-misses*`), plus "Banning soda" (typo for baking
+/// soda).
+const MAX_MISMATCHES: usize = 12;
+/// Upper bound on distinct items the categorizer returns "Other" for. Thirteen
+/// are labeled Other: household goods (dish soap, sponges, foil), which a
+/// cooking app gives no aisle, and vague items ("Dip", "Sandwich stuff").
+const MAX_OTHER: usize = 18;
 /// Upper bound on usage-weighted mismatches (mismatches × times the item was added).
-const MAX_WEIGHTED_MISMATCHES: u64 = 2;
+const MAX_WEIGHTED_MISMATCHES: u64 = 13;
 /// Upper bound on usage-weighted "Other" results (Other × times the item was added).
-const MAX_WEIGHTED_OTHER: u64 = 3;
+const MAX_WEIGHTED_OTHER: u64 = 19;
 /// Upper bounds on distinct mismatches and "Other" results from the catalog alone,
 /// without the keyword rules. Deleting the keyword rules
 /// (`issues/*catalog-delete-keyword-categorizer*`) needs these at the bounds above.
-/// Most of what's still missed is stale recipe text the corpus copied when it was
-/// added (`issues/*shopping-scorecard-hand-typed-only*`).
-const MAX_CATALOG_ONLY_MISMATCHES: usize = 6;
-const MAX_CATALOG_ONLY_OTHER: usize = 8;
+const MAX_CATALOG_ONLY_MISMATCHES: usize = 26;
+const MAX_CATALOG_ONLY_OTHER: usize = 39;
 
 /// One labeled corpus entry from `data/shopping-list-categories.json`.
 #[derive(Deserialize)]

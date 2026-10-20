@@ -1,0 +1,16 @@
+{
+  "title": "Categorize the hand-typed shopping items the scorecard still misses",
+  "description": "make shopping-list-categorizer-test (hand-typed prod items only since 2026-10-19) misses these, with the keyword rules on (12 mismatches, 18 Other, 13 of them labeled Other): \n\
+- Wrong aisle: 'Lemon ginger tea' -> Produce (a 'lemon'/'ginger' keyword beats 'tea'), 'Calfia almond milk' -> Nuts & Dried Fruit (typo for Califia; 'Almond milk' itself is right), 'Rice cakes' -> Pasta & Rice, 'Ranch powder' -> Condiments & Sauces (ranch seasoning is Spices & Seasonings), 'Ground flaxseed' -> Nuts & Dried Fruit (labeled Baking; either is defensible, so consider relabeling), 'Potato salad' -> Produce (a prepared deli item, labeled Other). \n\
+- Unknown names: 'Jello', \"S'mores\", 'Slaw', 'salad', \"Cheers it's\" (typo for Cheez-Its), 'Banning soda' (typo for baking soda, now Beverages via 'soda'; leave it). \n\
+Catalog-only (no keyword rules) adds 14 more, mostly brands and snacks: Cheerios, Cereal, Oatmeal, Pretzels, Cheez its, Harissa, Ranch, Baked beans, Sandwich meat, whole-grain bread/crackers, mini microwave popcorns, ice cream bars. \n\
+Fix through the catalog (aliases to real foods, product entries, categories via make catalog-apply-classification) rather than new keyword rules, and lower the MAX_* bounds in ramekin-core/tests/shopping_list_categorizer_tests.rs as items pass.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-10-19T00:00:00-07:00",
+  "updated_at": "2026-10-19T00:00:00-07:00",
+}

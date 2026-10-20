@@ -266,7 +266,7 @@ that appears in both releases.
       "fdc_id": 173468,
       "grams_per_cup": { "none": "Crystal size varies too much ..." }
     },
-    "parchment paper": { "kind": "product", "category": "Household" }
+    "parchment paper": { "kind": "product", "category": "Other" }
   },
   "aliases": {
     "kosher salt": "diamond crystal kosher salt",

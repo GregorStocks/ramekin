@@ -1,38 +1,88 @@
 [
   {
-    "item": "onion",
-    "count": 11,
+    "item": "Bread",
+    "count": 16,
+    "category": "Bakery & Bread"
+  },
+  {
+    "item": "Coffee",
+    "count": 16,
+    "category": "Beverages"
+  },
+  {
+    "item": "Eggs",
+    "count": 13,
+    "category": "Dairy & Eggs"
+  },
+  {
+    "item": "Tomatoes",
+    "count": 10,
     "category": "Produce"
   },
   {
     "item": "Apples",
-    "count": 8,
+    "count": 9,
     "category": "Produce"
   },
   {
-    "item": "Eggs",
+    "item": "Pickles",
+    "count": 9,
+    "category": "Condiments & Sauces"
+  },
+  {
+    "item": "Milk",
     "count": 8,
     "category": "Dairy & Eggs"
   },
   {
-    "item": "Coffee",
+    "item": "English muffins",
     "count": 7,
-    "category": "Beverages"
+    "category": "Bakery & Bread"
   },
   {
-    "item": "Milk",
+    "item": "Greek yogurt",
     "count": 7,
     "category": "Dairy & Eggs"
   },
   {
-    "item": "Bread",
-    "count": 6,
-    "category": "Bakery & Bread"
+    "item": "Lettuce",
+    "count": 7,
+    "category": "Produce"
   },
   {
-    "item": "English muffins",
+    "item": "Beans",
+    "count": 6,
+    "category": "Canned Goods"
+  },
+  {
+    "item": "Cucumber",
+    "count": 6,
+    "category": "Produce"
+  },
+  {
+    "item": "Ketchup",
+    "count": 6,
+    "category": "Condiments & Sauces"
+  },
+  {
+    "item": "Tomato",
+    "count": 6,
+    "category": "Produce"
+  },
+  {
+    "item": "Carrots",
     "count": 5,
-    "category": "Bakery & Bread"
+    "category": "Produce"
+  },
+  {
+    "item": "Cheese",
+    "count": 5,
+    "category": "Cheese"
+  },
+  {
+    "item": "Feta",
+    "count": 5,
+    "category": "Cheese"
   },
   {
     "item": "Mozzarella",
@@ -40,9 +90,19 @@
     "category": "Cheese"
   },
   {
-    "item": "eggs",
+    "item": "Sauerkraut",
     "count": 5,
-    "category": "Dairy & Eggs"
+    "category": "Condiments & Sauces"
+  },
+  {
+    "item": "Turkey",
+    "count": 5,
+    "category": "Meat & Seafood"
+  },
+  {
+    "item": "Berries",
+    "count": 4,
+    "category": "Produce"
   },
   {
     "item": "Butter",
@@ -50,19 +110,39 @@
     "category": "Dairy & Eggs"
   },
   {
-    "item": "Carrots",
+    "item": "Chex",
+    "count": 4,
+    "category": "Snacks"
+  },
+  {
+    "item": "Coke",
+    "count": 4,
+    "category": "Beverages"
+  },
+  {
+    "item": "Lemons",
     "count": 4,
     "category": "Produce"
   },
   {
-    "item": "Sauerkraut",
+    "item": "Potatoes",
     "count": 4,
-    "category": "Condiments & Sauces"
+    "category": "Produce"
   },
   {
-    "item": "mozzarella",
+    "item": "Scallions",
     "count": 4,
-    "category": "Cheese"
+    "category": "Produce"
+  },
+  {
+    "item": "Sour cream",
+    "count": 4,
+    "category": "Dairy & Eggs"
+  },
+  {
+    "item": "Almond milk",
+    "count": 3,
+    "category": "Dairy & Eggs"
   },
   {
     "item": "Beer",
@@ -70,7 +150,12 @@
     "category": "Beverages"
   },
   {
-    "item": "Berries",
+    "item": "Bell pepper",
+    "count": 3,
+    "category": "Produce"
+  },
+  {
+    "item": "Bell peppers",
     "count": 3,
     "category": "Produce"
   },
@@ -80,19 +165,9 @@
     "category": "Produce"
   },
   {
-    "item": "Cheese",
-    "count": 3,
-    "category": "Cheese"
-  },
-  {
     "item": "Cherry tomatoes",
     "count": 3,
     "category": "Produce"
-  },
-  {
-    "item": "Chex",
-    "count": 3,
-    "category": "Snacks"
   },
   {
     "item": "Coconut milk",
@@ -100,79 +175,124 @@
     "category": "Canned Goods"
   },
   {
-    "item": "Ketchup",
+    "item": "Dog treats",
+    "count": 3,
+    "category": "Pet"
+  },
+  {
+    "item": "Honey lavender tea",
+    "count": 3,
+    "category": "Beverages"
+  },
+  {
+    "item": "Kimchi",
     "count": 3,
     "category": "Condiments & Sauces"
   },
   {
-    "item": "bite-sized or mini pretzel twists",
-    "count": 3,
-    "category": "Snacks"
-  },
-  {
-    "item": "celery stalks",
+    "item": "Lemon",
     "count": 3,
     "category": "Produce"
   },
   {
-    "item": "cheese crackers, such as Cheez-Its",
-    "count": 3,
-    "category": "Snacks"
-  },
-  {
-    "item": "cooked firm-tender giant white beans",
-    "count": 3,
-    "category": "Canned Goods"
-  },
-  {
-    "item": "crushed tomatoes",
-    "count": 3,
-    "category": "Canned Goods"
-  },
-  {
-    "item": "ground meat",
-    "count": 3,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "inches carrot",
+    "item": "Onion",
     "count": 3,
     "category": "Produce"
   },
   {
-    "item": "or 2 regular carrots",
+    "item": "Potato",
     "count": 3,
     "category": "Produce"
   },
   {
-    "item": "oyster crackers",
+    "item": "Ranch",
     "count": 3,
-    "category": "Snacks"
+    "category": "Condiments & Sauces"
   },
   {
-    "item": "packets ranch dressing seasoning mix",
+    "item": "Sake",
     "count": 3,
-    "category": "Spices & Seasonings"
-  },
-  {
-    "item": "whole milk",
-    "count": 3,
-    "category": "Dairy & Eggs"
-  },
-  {
-    "item": "yellow onion",
-    "count": 3,
-    "category": "Produce"
-  },
-  {
-    "item": "Coke",
-    "count": 2,
     "category": "Beverages"
   },
   {
-    "item": "Feta",
+    "item": "Salsa",
+    "count": 3,
+    "category": "Condiments & Sauces"
+  },
+  {
+    "item": "American cheese",
     "count": 2,
     "category": "Cheese"
+  },
+  {
+    "item": "Apple",
+    "count": 2,
+    "category": "Produce"
+  },
+  {
+    "item": "Bagels",
+    "count": 2,
+    "category": "Bakery & Bread"
+  },
+  {
+    "item": "Beef",
+    "count": 2,
+    "category": "Meat & Seafood"
+  },
+  {
+    "item": "Broccoli",
+    "count": 2,
+    "category": "Produce"
+  },
+  {
+    "item": "Broth",
+    "count": 2,
+    "category": "Canned Goods"
+  },
+  {
+    "item": "Cheez its",
+    "count": 2,
+    "category": "Snacks"
+  },
+  {
+    "item": "Chicken breast",
+    "count": 2,
+    "category": "Meat & Seafood"
+  },
+  {
+    "item": "Chocolate",
+    "count": 2,
+    "category": "Snacks"
+  },
+  {
+    "item": "Cottage cheese",
+    "count": 2,
+    "category": "Dairy & Eggs"
+  },
+  {
+    "item": "Crackers",
+    "count": 2,
+    "category": "Snacks"
+  },
+  {
+    "item": "Cumin",
+    "count": 2,
+    "category": "Spices & Seasonings"
+  },
+  {
+    "item": "Dish soap",
+    "count": 2,
+    "category": "Other"
+  },
+  {
+    "item": "Frozen blueberries",
+    "count": 2,
+    "category": "Frozen"
+  },
+  {
+    "item": "Fruit",
+    "count": 2,
+    "category": "Produce"
   },
   {
     "item": "Garlic",
@@ -180,34 +300,44 @@
     "category": "Produce"
   },
   {
-    "item": "Honey lavender tea",
+    "item": "Lemon ginger tea",
     "count": 2,
     "category": "Beverages"
   },
   {
-    "item": "Japanese curry roux (or see How to Make Japanese Curry Roux at home)",
+    "item": "Mac and cheese",
+    "count": 2,
+    "category": "Pasta & Rice"
+  },
+  {
+    "item": "Meat",
+    "count": 2,
+    "category": "Meat & Seafood"
+  },
+  {
+    "item": "Mexican cheese",
+    "count": 2,
+    "category": "Cheese"
+  },
+  {
+    "item": "Mushrooms",
+    "count": 2,
+    "category": "Produce"
+  },
+  {
+    "item": "Pizza sauce",
     "count": 2,
     "category": "Condiments & Sauces"
   },
   {
-    "item": "Kimchi",
+    "item": "radish",
     "count": 2,
-    "category": "Condiments & Sauces"
+    "category": "Produce"
   },
   {
-    "item": "Pickles",
+    "item": "Red onion",
     "count": 2,
-    "category": "Condiments & Sauces"
-  },
-  {
-    "item": "Rice Chex cereal",
-    "count": 2,
-    "category": "Snacks"
-  },
-  {
-    "item": "Sake",
-    "count": 2,
-    "category": "Beverages"
+    "category": "Produce"
   },
   {
     "item": "Sardines",
@@ -215,164 +345,29 @@
     "category": "Meat & Seafood"
   },
   {
-    "item": "Sour cream",
+    "item": "Soy sauce",
+    "count": 2,
+    "category": "Condiments & Sauces"
+  },
+  {
+    "item": "Spinach",
+    "count": 2,
+    "category": "Produce"
+  },
+  {
+    "item": "Tortillas",
+    "count": 2,
+    "category": "Bakery & Bread"
+  },
+  {
+    "item": "Whipped cream",
     "count": 2,
     "category": "Dairy & Eggs"
   },
   {
-    "item": "Tomatoes",
+    "item": "Zucchini",
     "count": 2,
     "category": "Produce"
-  },
-  {
-    "item": "Wheat Chex cereal",
-    "count": 2,
-    "category": "Snacks"
-  },
-  {
-    "item": "Yukon gold potatoes",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "beef steak about 2 cm thick, well-marbled ribeye/sirloin…etc",
-    "count": 2,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "button mushroom",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "cherry tomatoes",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "cloves garlic",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "curly kale leaves",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "evaporated milk",
-    "count": 2,
-    "category": "Canned Goods"
-  },
-  {
-    "item": "extra-sharp cheddar cheese",
-    "count": 2,
-    "category": "Cheese"
-  },
-  {
-    "item": "finely chopped green onions to taste",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "freshly squeezed lemon juice",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "furikake (see note 3)",
-    "count": 2,
-    "category": "Spices & Seasonings"
-  },
-  {
-    "item": "garlic",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "green bell pepper",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "ground beef, ground lamb, or a combination",
-    "count": 2,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "ground chicken",
-    "count": 2,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "hot dog sausages",
-    "count": 2,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "hothouse, English or seedless cucumber",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "lemon juice",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "minced fresh dill",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "packet ranch seasoning (see note 1)",
-    "count": 2,
-    "category": "Spices & Seasonings"
-  },
-  {
-    "item": "plain, unsweetened Greek yogurt",
-    "count": 2,
-    "category": "Dairy & Eggs"
-  },
-  {
-    "item": "pretzel twists (see note 2)",
-    "count": 2,
-    "category": "Snacks"
-  },
-  {
-    "item": "russet potatoes, peeled, cut in 2-inch chunks",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "shredded iceberg lettuce",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "snap peas",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "tomato",
-    "count": 2,
-    "category": "Produce"
-  },
-  {
-    "item": "1 cup (4 ounces; 113 g), plus 2 tablespoons (3/4 ounce; 21 g) unroasted walnuts, divided",
-    "count": 1,
-    "category": "Nuts & Dried Fruit"
-  },
-  {
-    "item": "1 medium white onion",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "13 1/2-ounce can unsweetened coconut milk",
-    "count": 1,
-    "category": "Canned Goods"
   },
   {
     "item": "3 large onions",
@@ -385,19 +380,14 @@
     "category": "Meat & Seafood"
   },
   {
-    "item": "A few handfuls of baby spinach",
+    "item": "4 clementines or grapes",
     "count": 1,
     "category": "Produce"
   },
   {
-    "item": "All-purpose flour, for dusting the patties",
+    "item": "Almonds",
     "count": 1,
-    "category": "Baking"
-  },
-  {
-    "item": "American cheese",
-    "count": 1,
-    "category": "Cheese"
+    "category": "Nuts & Dried Fruit"
   },
   {
     "item": "Anchovies",
@@ -405,9 +395,14 @@
     "category": "Meat & Seafood"
   },
   {
-    "item": "Bagels",
+    "item": "apples",
     "count": 1,
-    "category": "Bakery & Bread"
+    "category": "Produce"
+  },
+  {
+    "item": "baby carrots",
+    "count": 1,
+    "category": "Produce"
   },
   {
     "item": "Baguette",
@@ -415,9 +410,29 @@
     "category": "Bakery & Bread"
   },
   {
+    "item": "Baked beans",
+    "count": 1,
+    "category": "Canned Goods"
+  },
+  {
     "item": "Baking powder",
     "count": 1,
     "category": "Baking"
+  },
+  {
+    "item": "Banana",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "Bananas",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "bananas",
+    "count": 1,
+    "category": "Produce"
   },
   {
     "item": "Banning soda",
@@ -425,17 +440,22 @@
     "category": "Baking"
   },
   {
-    "item": "Beans",
-    "count": 1,
-    "category": "Canned Goods"
-  },
-  {
-    "item": "Bell pepper",
+    "item": "Basil",
     "count": 1,
     "category": "Produce"
   },
   {
-    "item": "Bell peppers",
+    "item": "bell peppers",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "berries",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "Berry",
     "count": 1,
     "category": "Produce"
   },
@@ -450,14 +470,19 @@
     "category": "Produce"
   },
   {
-    "item": "Broccoli",
+    "item": "Bok choy",
     "count": 1,
     "category": "Produce"
   },
   {
-    "item": "Broth",
+    "item": "Bonito flakes",
     "count": 1,
-    "category": "Canned Goods"
+    "category": "Spices & Seasonings"
+  },
+  {
+    "item": "Buns",
+    "count": 1,
+    "category": "Bakery & Bread"
   },
   {
     "item": "Buttermilk",
@@ -465,17 +490,57 @@
     "category": "Dairy & Eggs"
   },
   {
+    "item": "Calfia almond milk",
+    "count": 1,
+    "category": "Dairy & Eggs"
+  },
+  {
+    "item": "Cascade",
+    "count": 1,
+    "category": "Other"
+  },
+  {
+    "item": "Cereal",
+    "count": 1,
+    "category": "Snacks"
+  },
+  {
     "item": "Champagne",
     "count": 1,
     "category": "Beverages"
   },
   {
-    "item": "Chicken bouillon",
+    "item": "Cheddar",
     "count": 1,
-    "category": "Spices & Seasonings"
+    "category": "Cheese"
   },
   {
-    "item": "Chinese-style chicken bouillon powder",
+    "item": "Cheerios",
+    "count": 1,
+    "category": "Snacks"
+  },
+  {
+    "item": "Cheers it's",
+    "count": 1,
+    "category": "Snacks"
+  },
+  {
+    "item": "cheez-its",
+    "count": 1,
+    "category": "Snacks"
+  },
+  {
+    "item": "Cherry tomato",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "Chicken",
+    "count": 1,
+    "category": "Meat & Seafood"
+  },
+  {
+    "item": "Chicken bouillon",
     "count": 1,
     "category": "Spices & Seasonings"
   },
@@ -485,9 +550,9 @@
     "category": "Produce"
   },
   {
-    "item": "Chocolate",
+    "item": "Cilantro",
     "count": 1,
-    "category": "Snacks"
+    "category": "Produce"
   },
   {
     "item": "Cold salad",
@@ -495,9 +560,19 @@
     "category": "Other"
   },
   {
-    "item": "Crackers",
+    "item": "Coriander",
     "count": 1,
-    "category": "Snacks"
+    "category": "Spices & Seasonings"
+  },
+  {
+    "item": "Corn",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "cottage cheese",
+    "count": 1,
+    "category": "Dairy & Eggs"
   },
   {
     "item": "Croutons",
@@ -505,9 +580,14 @@
     "category": "Bakery & Bread"
   },
   {
-    "item": "Cumin",
+    "item": "cucumbers",
     "count": 1,
-    "category": "Spices & Seasonings"
+    "category": "Produce"
+  },
+  {
+    "item": "Cup noodle",
+    "count": 1,
+    "category": "Pasta & Rice"
   },
   {
     "item": "Cup noodles",
@@ -520,19 +600,9 @@
     "category": "Other"
   },
   {
-    "item": "Dish soap",
-    "count": 1,
-    "category": "Household"
-  },
-  {
     "item": "Dishwasher detergent",
     "count": 1,
-    "category": "Household"
-  },
-  {
-    "item": "Dog treats",
-    "count": 1,
-    "category": "Pet"
+    "category": "Other"
   },
   {
     "item": "Edamame",
@@ -540,19 +610,24 @@
     "category": "Produce"
   },
   {
-    "item": "Extra-virgin olive oil, neutral vegetable oil, or a combination, for pan-frying",
+    "item": "Enchilada sauce",
     "count": 1,
-    "category": "Oils & Vinegars"
+    "category": "Condiments & Sauces"
   },
   {
-    "item": "Finely grated zest and juice of 1/2 lime",
+    "item": "flatbread",
     "count": 1,
-    "category": "Produce"
+    "category": "Bakery & Bread"
   },
   {
-    "item": "Fresh dill",
+    "item": "french fries",
     "count": 1,
-    "category": "Produce"
+    "category": "Frozen"
+  },
+  {
+    "item": "frozen shelled edamame",
+    "count": 1,
+    "category": "Frozen"
   },
   {
     "item": "Frozen strawberries",
@@ -565,9 +640,9 @@
     "category": "Produce"
   },
   {
-    "item": "Garlic bread (optional)",
+    "item": "garlic powder",
     "count": 1,
-    "category": "Bakery & Bread"
+    "category": "Spices & Seasonings"
   },
   {
     "item": "Go humans",
@@ -585,9 +660,24 @@
     "category": "Condiments & Sauces"
   },
   {
+    "item": "granola",
+    "count": 1,
+    "category": "Snacks"
+  },
+  {
     "item": "Grapes",
     "count": 1,
     "category": "Produce"
+  },
+  {
+    "item": "Ground flaxseed",
+    "count": 1,
+    "category": "Baking"
+  },
+  {
+    "item": "Ground meat",
+    "count": 1,
+    "category": "Meat & Seafood"
   },
   {
     "item": "Gruyère",
@@ -595,34 +685,69 @@
     "category": "Cheese"
   },
   {
+    "item": "Harissa",
+    "count": 1,
+    "category": "Condiments & Sauces"
+  },
+  {
+    "item": "Hello",
+    "count": 1,
+    "category": "Other"
+  },
+  {
+    "item": "Hot dogs",
+    "count": 1,
+    "category": "Meat & Seafood"
+  },
+  {
     "item": "Ibuprofen",
     "count": 1,
     "category": "Personal Care"
   },
   {
-    "item": "Ikura (salmon roe)",
+    "item": "Ice cream",
     "count": 1,
-    "category": "Meat & Seafood"
+    "category": "Frozen"
   },
   {
-    "item": "Japanese mayonnaise a thin smear under the top bun, or regular mayonnaise",
+    "item": "ice cream",
+    "count": 1,
+    "category": "Frozen"
+  },
+  {
+    "item": "ice cream bars or similar",
+    "count": 1,
+    "category": "Frozen"
+  },
+  {
+    "item": "Jars",
+    "count": 1,
+    "category": "Other"
+  },
+  {
+    "item": "Jasmine rice",
+    "count": 1,
+    "category": "Pasta & Rice"
+  },
+  {
+    "item": "Jello",
+    "count": 1,
+    "category": "Baking"
+  },
+  {
+    "item": "Kiwi",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "Lemon juice",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "light mayo",
     "count": 1,
     "category": "Condiments & Sauces"
-  },
-  {
-    "item": "Kosher salt",
-    "count": 1,
-    "category": "Spices & Seasonings"
-  },
-  {
-    "item": "Lemons",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "Lettuce",
-    "count": 1,
-    "category": "Produce"
   },
   {
     "item": "Lucky charm",
@@ -645,27 +770,12 @@
     "category": "Snacks"
   },
   {
-    "item": "Mac and cheese",
-    "count": 1,
-    "category": "Pasta & Rice"
-  },
-  {
     "item": "Maple syrup",
     "count": 1,
     "category": "Condiments & Sauces"
   },
   {
-    "item": "Meat",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "Mexican cheese",
-    "count": 1,
-    "category": "Cheese"
-  },
-  {
-    "item": "Middle Eastern jarred mild red pepper paste or spread (see notes)",
+    "item": "Mayo",
     "count": 1,
     "category": "Condiments & Sauces"
   },
@@ -675,19 +785,34 @@
     "category": "Bakery & Bread"
   },
   {
-    "item": "Mint sprig or 5 to 7 picked mint leaves for garnish",
+    "item": "mini chocolate chips",
     "count": 1,
-    "category": "Produce"
+    "category": "Baking"
   },
   {
-    "item": "Mushrooms",
+    "item": "mini microwave popcorns",
     "count": 1,
-    "category": "Produce"
+    "category": "Snacks"
   },
   {
-    "item": "Onion",
+    "item": "Mirin",
     "count": 1,
-    "category": "Produce"
+    "category": "Condiments & Sauces"
+  },
+  {
+    "item": "Oatmeal",
+    "count": 1,
+    "category": "Snacks"
+  },
+  {
+    "item": "Oats stuff",
+    "count": 1,
+    "category": "Snacks"
+  },
+  {
+    "item": "olive oil",
+    "count": 1,
+    "category": "Oils & Vinegars"
   },
   {
     "item": "Onions",
@@ -695,14 +820,14 @@
     "category": "Produce"
   },
   {
-    "item": "Oyster crackers",
-    "count": 1,
-    "category": "Snacks"
-  },
-  {
     "item": "Palmolive ultra strength",
     "count": 1,
-    "category": "Household"
+    "category": "Other"
+  },
+  {
+    "item": "Parmesan",
+    "count": 1,
+    "category": "Cheese"
   },
   {
     "item": "Pasta",
@@ -715,12 +840,7 @@
     "category": "Spices & Seasonings"
   },
   {
-    "item": "Pita bread for serving",
-    "count": 1,
-    "category": "Bakery & Bread"
-  },
-  {
-    "item": "Pizza sauce",
+    "item": "pickles",
     "count": 1,
     "category": "Condiments & Sauces"
   },
@@ -730,14 +850,24 @@
     "category": "Snacks"
   },
   {
-    "item": "Potatoes",
+    "item": "Potato salad",
     "count": 1,
-    "category": "Produce"
+    "category": "Other"
   },
   {
-    "item": "Potatoes or crusty bread for serving",
+    "item": "Pretzels",
     "count": 1,
-    "category": "Produce"
+    "category": "Snacks"
+  },
+  {
+    "item": "Quart ziplocs",
+    "count": 1,
+    "category": "Other"
+  },
+  {
+    "item": "ranch",
+    "count": 1,
+    "category": "Condiments & Sauces"
   },
   {
     "item": "Ranch mix",
@@ -750,14 +880,64 @@
     "category": "Spices & Seasonings"
   },
   {
+    "item": "Ranch powder",
+    "count": 1,
+    "category": "Spices & Seasonings"
+  },
+  {
+    "item": "Raspberries",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "Rice cakes",
+    "count": 1,
+    "category": "Snacks"
+  },
+  {
+    "item": "Rolled oats",
+    "count": 1,
+    "category": "Snacks"
+  },
+  {
     "item": "Rose or prosecco",
     "count": 1,
     "category": "Beverages"
   },
   {
+    "item": "S'mores",
+    "count": 1,
+    "category": "Snacks"
+  },
+  {
+    "item": "salad",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "Salt",
+    "count": 1,
+    "category": "Spices & Seasonings"
+  },
+  {
+    "item": "Sandwich meat",
+    "count": 1,
+    "category": "Meat & Seafood"
+  },
+  {
+    "item": "Sandwich stuff",
+    "count": 1,
+    "category": "Other"
+  },
+  {
     "item": "Sausages",
     "count": 1,
     "category": "Meat & Seafood"
+  },
+  {
+    "item": "Shirataki noodles",
+    "count": 1,
+    "category": "Pasta & Rice"
   },
   {
     "item": "Short grain rice",
@@ -770,14 +950,24 @@
     "category": "Cheese"
   },
   {
+    "item": "Slaw",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "sliced turkey",
+    "count": 1,
+    "category": "Meat & Seafood"
+  },
+  {
+    "item": "Smoked paprika",
+    "count": 1,
+    "category": "Spices & Seasonings"
+  },
+  {
     "item": "Snacks",
     "count": 1,
     "category": "Snacks"
-  },
-  {
-    "item": "Soy sauce",
-    "count": 1,
-    "category": "Condiments & Sauces"
   },
   {
     "item": "Sparkling water",
@@ -785,7 +975,32 @@
     "category": "Beverages"
   },
   {
-    "item": "Spinach",
+    "item": "spinach",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "Sponges",
+    "count": 1,
+    "category": "Other"
+  },
+  {
+    "item": "sugar",
+    "count": 1,
+    "category": "Baking"
+  },
+  {
+    "item": "Tinfoil",
+    "count": 1,
+    "category": "Other"
+  },
+  {
+    "item": "Tofu",
+    "count": 1,
+    "category": "Produce"
+  },
+  {
+    "item": "tomato",
     "count": 1,
     "category": "Produce"
   },
@@ -795,9 +1010,9 @@
     "category": "Snacks"
   },
   {
-    "item": "Tortillas",
+    "item": "tortilla chips",
     "count": 1,
-    "category": "Bakery & Bread"
+    "category": "Snacks"
   },
   {
     "item": "Tuna",
@@ -810,14 +1025,24 @@
     "category": "Pasta & Rice"
   },
   {
-    "item": "Warm cooked white rice for serving",
+    "item": "Water",
     "count": 1,
-    "category": "Pasta & Rice"
+    "category": "Beverages"
   },
   {
-    "item": "Whipped cream",
+    "item": "White beans",
     "count": 1,
-    "category": "Dairy & Eggs"
+    "category": "Canned Goods"
+  },
+  {
+    "item": "whole-grain bread",
+    "count": 1,
+    "category": "Bakery & Bread"
+  },
+  {
+    "item": "whole-grain crackers",
+    "count": 1,
+    "category": "Snacks"
   },
   {
     "item": "Wine",
@@ -825,574 +1050,9 @@
     "category": "Beverages"
   },
   {
-    "item": "aged parmesan or pecorino romano",
-    "count": 1,
-    "category": "Cheese"
-  },
-  {
-    "item": "anchovy fillets",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "baby spinach or baby arugula",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "bacon, cut into 1/4-inch wide strips",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "batch of buttermilk biscuits, split (see notes)",
-    "count": 1,
-    "category": "Bakery & Bread"
-  },
-  {
-    "item": "bell peppers, cut into thin strips (I use a mix of green, red and other colors, if I can find them)",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "boneless chuck roast",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "boneless, skinless chicken thighs",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "brandy (preferably Armagnac), see notes",
-    "count": 1,
-    "category": "Beverages"
-  },
-  {
-    "item": "bread",
-    "count": 1,
-    "category": "Bakery & Bread"
-  },
-  {
-    "item": "burger buns",
-    "count": 1,
-    "category": "Bakery & Bread"
-  },
-  {
-    "item": "buttermilk",
+    "item": "Yogurt",
     "count": 1,
     "category": "Dairy & Eggs"
-  },
-  {
-    "item": "carrot",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "carrot, in big chunks",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "carrot, peeled, cut in 1/4-inch dice",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "carrots",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "cheez-its",
-    "count": 1,
-    "category": "Snacks"
-  },
-  {
-    "item": "chopped clams",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "cooked, drained beans (save cooking liquid for water in recipe, if desired) or 2 15-ounce cans small white beans (such as Great Northern or Cannelini)",
-    "count": 1,
-    "category": "Canned Goods"
-  },
-  {
-    "item": "corn Chex",
-    "count": 1,
-    "category": "Snacks"
-  },
-  {
-    "item": "cream cheese",
-    "count": 1,
-    "category": "Cheese"
-  },
-  {
-    "item": "cream cheese softened",
-    "count": 1,
-    "category": "Cheese"
-  },
-  {
-    "item": "crimini mushrooms",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "crispy fried eggs for serving",
-    "count": 1,
-    "category": "Dairy & Eggs"
-  },
-  {
-    "item": "crushed dried celery leaves",
-    "count": 1,
-    "category": "Spices & Seasonings"
-  },
-  {
-    "item": "deli ham, cut into 1/2-inch pieces",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "dry spaghetti",
-    "count": 1,
-    "category": "Pasta & Rice"
-  },
-  {
-    "item": "egg",
-    "count": 1,
-    "category": "Dairy & Eggs"
-  },
-  {
-    "item": "fillets salmon (thin), about 1 lb",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "finely chopped fresh cilantro leaves",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "finely chopped laver seaweed",
-    "count": 1,
-    "category": "Other"
-  },
-  {
-    "item": "finely chopped onion",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "finely chopped peeled fresh ginger",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "flat-leaf parsley leaves",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "flatbread",
-    "count": 1,
-    "category": "Bakery & Bread"
-  },
-  {
-    "item": "flour or corn tortillas",
-    "count": 1,
-    "category": "Bakery & Bread"
-  },
-  {
-    "item": "french fries",
-    "count": 1,
-    "category": "Frozen"
-  },
-  {
-    "item": "fresh basil leaves",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "fresh lemon juice",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "fresh lime juice (from about 2 limes)",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "fresh red chiles, thinly sliced",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "fresh thyme",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "freshly ground black pepper",
-    "count": 1,
-    "category": "Spices & Seasonings"
-  },
-  {
-    "item": "frozen peas",
-    "count": 1,
-    "category": "Frozen"
-  },
-  {
-    "item": "garlic cloves",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "garlic cloves, 4 left whole",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "garlic powder",
-    "count": 1,
-    "category": "Spices & Seasonings"
-  },
-  {
-    "item": "grated Parmesan",
-    "count": 1,
-    "category": "Cheese"
-  },
-  {
-    "item": "grated ginger root fresh or ginger paste",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "green onions",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "ground Aleppo pepper (see notes)",
-    "count": 1,
-    "category": "Spices & Seasonings"
-  },
-  {
-    "item": "ground beef",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "ground beef + ground pork - or use one type of your favorite ground meat",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "ground beef, preferably 80% lean",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "ground pork",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "ground pork around 20% fat",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "ground turmeric",
-    "count": 1,
-    "category": "Spices & Seasonings"
-  },
-  {
-    "item": "hot house cucumber",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "hot house cucumber thinly sliced",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "ice cream",
-    "count": 1,
-    "category": "Frozen"
-  },
-  {
-    "item": "leg of lamb",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "lettuce leaves a few leaves",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "light cream",
-    "count": 1,
-    "category": "Dairy & Eggs"
-  },
-  {
-    "item": "lime juice (half a juicy lime)",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "lime juice from 1 lime",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "links sausages (breakfast sausage preferred)",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "loaf high-quality sandwich bread crusts removed",
-    "count": 1,
-    "category": "Bakery & Bread"
-  },
-  {
-    "item": "medium starch yellow potatoes (such as Yukon Golds)",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "milk",
-    "count": 1,
-    "category": "Dairy & Eggs"
-  },
-  {
-    "item": "minced fresh rosemary",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "mushrooms",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "olive oil",
-    "count": 1,
-    "category": "Oils & Vinegars"
-  },
-  {
-    "item": "onion, cut in 1/2-inch dice",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "onion, cut into big chunks",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "oyster sauce",
-    "count": 1,
-    "category": "Condiments & Sauces"
-  },
-  {
-    "item": "parsnips",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "pasta",
-    "count": 1,
-    "category": "Pasta & Rice"
-  },
-  {
-    "item": "picked cilantro leaves and tender stems, finely chopped",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "pickles",
-    "count": 1,
-    "category": "Condiments & Sauces"
-  },
-  {
-    "item": "pomegranate molasses (see notes)",
-    "count": 1,
-    "category": "Condiments & Sauces"
-  },
-  {
-    "item": "pomegranate seeds",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "pork breakfast sausage, casings removed",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "red bell peppers",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "red pickled ginger (benishoga) or other pickles of choice",
-    "count": 1,
-    "category": "Condiments & Sauces"
-  },
-  {
-    "item": "ripe Hass avocados",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "ripe tomatoes, cut into 1/4- to 1/2-inch dice ; see notes",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "russet potatoes",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "scallions",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "serrano chile",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "serrano or jalapeño chiles",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "servings cooked Japanese short-grain rice",
-    "count": 1,
-    "category": "Pasta & Rice"
-  },
-  {
-    "item": "shallots",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "shokupan (Japanese milk bread) (or make homemade Shokupan; the same thickness as those from a square shokupan loaf cut into 8 slices)",
-    "count": 1,
-    "category": "Bakery & Bread"
-  },
-  {
-    "item": "short tube pasta (see suggestions above)",
-    "count": 1,
-    "category": "Pasta & Rice"
-  },
-  {
-    "item": "shredded mozzarella cheese",
-    "count": 1,
-    "category": "Cheese"
-  },
-  {
-    "item": "small cabbage, halved lengthwise, cored, then cut crosswise into 1/2-inch-thick slices",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "sour cream",
-    "count": 1,
-    "category": "Dairy & Eggs"
-  },
-  {
-    "item": "spinach or swiss chard",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "sugar",
-    "count": 1,
-    "category": "Baking"
-  },
-  {
-    "item": "to 3 cups raw mixed nuts",
-    "count": 1,
-    "category": "Nuts & Dried Fruit"
-  },
-  {
-    "item": "tomato 5 mm to 1 cm thick slices, 1 per burger",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "tomato paste",
-    "count": 1,
-    "category": "Canned Goods"
-  },
-  {
-    "item": "tomato puree",
-    "count": 1,
-    "category": "Canned Goods"
-  },
-  {
-    "item": "tonkatsu sauce",
-    "count": 1,
-    "category": "Condiments & Sauces"
-  },
-  {
-    "item": "tortilla chips",
-    "count": 1,
-    "category": "Snacks"
-  },
-  {
-    "item": "tube or can of tomato paste",
-    "count": 1,
-    "category": "Canned Goods"
-  },
-  {
-    "item": "unsalted popcorn",
-    "count": 1,
-    "category": "Snacks"
-  },
-  {
-    "item": "vanilla ice cream",
-    "count": 1,
-    "category": "Frozen"
-  },
-  {
-    "item": "white beans",
-    "count": 1,
-    "category": "Canned Goods"
-  },
-  {
-    "item": "white miso paste do not swap for red miso",
-    "count": 1,
-    "category": "Condiments & Sauces"
-  },
-  {
-    "item": "white onion",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "white or yellow onion",
-    "count": 1,
-    "category": "Produce"
-  },
-  {
-    "item": "whole baby clams",
-    "count": 1,
-    "category": "Meat & Seafood"
-  },
-  {
-    "item": "yellow or sweet onion",
-    "count": 1,
-    "category": "Produce"
   },
   {
     "item": "yogurt",

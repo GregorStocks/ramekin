@@ -60,7 +60,7 @@ static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
 
 /// The canonical set of grocery-aisle categories the categorizer can return.
 /// `categorize` always returns one of these (defaulting to "Other").
-pub const CATEGORIES: [&str; 19] = [
+pub const CATEGORIES: [&str; 18] = [
     "Produce",
     "Meat & Seafood",
     "Dairy & Eggs",
@@ -76,7 +76,6 @@ pub const CATEGORIES: [&str; 19] = [
     "Nuts & Dried Fruit",
     "Beverages",
     "Snacks",
-    "Household",
     "Personal Care",
     "Pet",
     "Other",
@@ -419,15 +418,16 @@ mod tests {
     }
 
     #[test]
-    fn test_household() {
-        assert_eq!(categorize("Dish soap"), "Household");
-        assert_eq!(categorize("Palmolive ultra strength"), "Household");
-        assert_eq!(categorize("Dishwasher detergent"), "Household");
-        assert_eq!(categorize("Cascade Platinum"), "Household");
-        assert_eq!(categorize("paper towels"), "Household");
-        assert_eq!(categorize("toilet paper"), "Household");
-        assert_eq!(categorize("trash bags"), "Household");
-        assert_eq!(categorize("aluminum foil"), "Household");
+    fn test_household_goods_are_other() {
+        // A cooking app has no aisle for these.
+        assert_eq!(categorize("Dish soap"), "Other");
+        assert_eq!(categorize("Palmolive ultra strength"), "Other");
+        assert_eq!(categorize("Dishwasher detergent"), "Other");
+        assert_eq!(categorize("Cascade Platinum"), "Other");
+        assert_eq!(categorize("paper towels"), "Other");
+        assert_eq!(categorize("toilet paper"), "Other");
+        assert_eq!(categorize("trash bags"), "Other");
+        assert_eq!(categorize("aluminum foil"), "Other");
     }
 
     #[test]
@@ -464,11 +464,11 @@ mod tests {
 
     #[test]
     fn test_catalog_category_overrides_keywords() {
-        assert_eq!(categorize("Parchment paper"), "Household");
+        assert_eq!(categorize("Parchment paper"), "Other");
         // The "water" keyword used to make this a beverage.
         assert_eq!(
             categorize("wooden skewers, soaked in cold water for 30 minutes"),
-            "Household"
+            "Other"
         );
         // Entries without a catalog category still use keyword rules.
         assert_eq!(categorize("salt and pepper"), "Spices & Seasonings");
