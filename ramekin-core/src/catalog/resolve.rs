@@ -217,7 +217,7 @@ fn clause_prefixes(name: &str) -> Vec<&str> {
 
 /// Singular/plural spellings to try when the name itself is unknown. The
 /// plain "s" forms come first, matching the original density lookup.
-fn plural_variants(name: &str) -> Vec<String> {
+pub(super) fn plural_variants(name: &str) -> Vec<String> {
     let mut variants = vec![format!("{name}s")];
     variants.extend(name.strip_suffix('s').map(str::to_string));
     variants.push(format!("{name}es"));

@@ -16,15 +16,9 @@ use crate::ingredient_categorizer::CATEGORIES;
 
 const OPEN_FOOD_FACTS_JSON: &str = include_str!("data/open_food_facts.json");
 
+/// The generated file also carries its attribution and sources, for readers.
 #[derive(Deserialize)]
-#[serde(deny_unknown_fields)]
 struct OpenFoodFactsFile {
-    #[allow(dead_code)]
-    attribution: String,
-    #[allow(dead_code)]
-    sources: BTreeMap<String, String>,
-    #[allow(dead_code)]
-    generation_notes: String,
     names: BTreeMap<String, String>,
 }
 
@@ -65,20 +59,9 @@ fn key(name: &str) -> String {
 /// singular ("cheez its" is "cheez it").
 pub fn category(name: &str) -> Option<&'static str> {
     let name = key(name);
-    let mut variants = vec![name.clone()];
-    if let Some(stem) = name.strip_suffix("ies") {
-        variants.push(format!("{stem}y"));
-    }
-    if let Some(stem) = name.strip_suffix("es") {
-        variants.push(stem.to_string());
-    }
-    match name.strip_suffix('s') {
-        Some(stem) => variants.push(stem.to_string()),
-        None => variants.push(format!("{name}s")),
-    }
-    variants
-        .iter()
-        .find_map(|variant| NAMES.get(variant).copied())
+    std::iter::once(name.clone())
+        .chain(super::resolve::plural_variants(&name))
+        .find_map(|variant| NAMES.get(&variant).copied())
 }
 
 #[cfg(test)]
