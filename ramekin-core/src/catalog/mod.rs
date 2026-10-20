@@ -12,6 +12,7 @@
 
 mod cleanup;
 mod learned;
+mod open_food_facts;
 mod resolve;
 mod volume;
 
@@ -27,6 +28,7 @@ pub use learned::{
     candidates, is_ambiguous, learned_estimate, learned_key_resolves, resolve_line_with,
     resolve_with, unlearned_name, EstimatedFood, Learned, LearnedTarget,
 };
+pub use open_food_facts::category as open_food_facts_category;
 pub use resolve::{chosen_alternative, resolve, Resolution, Via};
 pub use volume::{
     is_volume_unit, volume_to_cups, CUPS_PER_FL_OZ, CUPS_PER_GALLON, CUPS_PER_L, CUPS_PER_ML,

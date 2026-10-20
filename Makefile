@@ -1,4 +1,4 @@
-.PHONY: help db-backup db-restore new-migration dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ios-build-ui-tests ios-test-ui-prebuilt ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import catalog-apply-classification catalog-fill-weights catalog-clean-aliases shopping-list-categorizer-test ingredient-catalog-audit ingredient-catalog-unresolved ingredient-catalog-uncategorized ai-eval ai-eval-golden ai-eval-judge server-release-build
+.PHONY: help db-backup db-restore new-migration dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps check-lockfile lint clean clean-api generate-clients check-client-generation test test-core test-ui ui-deps ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ios-build-ui-tests ios-test-ui-prebuilt ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated catalog-import catalog-import-off catalog-apply-classification catalog-fill-weights catalog-clean-aliases shopping-list-categorizer-test ingredient-catalog-audit ingredient-catalog-unresolved ingredient-catalog-uncategorized ai-eval ai-eval-golden ai-eval-judge server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -338,6 +338,9 @@ ingredient-tests-migrate-curated: ## Migrate curated fixtures from individual fi
 
 catalog-import: ## Download pinned USDA SR Legacy and FNDDS data and regenerate the ingredient catalog's usda.json and fndds.json
 	@uv run --no-project scripts/import-catalog.py
+
+catalog-import-off: ## Regenerate the ingredient catalog's Open Food Facts shopping aisles (open_food_facts.json) from cached exports (REFRESH=1 downloads them again)
+	@uv run --no-project scripts/import-open-food-facts.py $(if $(REFRESH),--refresh)
 
 catalog-apply-classification: ## Merge classification decisions (FILE=decisions.json) into the ingredient catalog's curated.json
 	@test -n "$(FILE)" || { echo "usage: make catalog-apply-classification FILE=path/to/decisions.json" >&2; exit 1; }

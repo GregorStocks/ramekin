@@ -93,8 +93,9 @@ fn category_to_static(category: &str) -> &'static str {
 ///
 /// The ingredient catalog's category wins when it has one (the food a name
 /// resolves to, a product such as parchment paper, an ambiguous name such as
-/// "cheese", or the first food of a "salt and pepper" line). Otherwise keyword
-/// rules from `data/ingredients.json` apply.
+/// "cheese", or the first food of a "salt and pepper" line), then the aisle
+/// Open Food Facts gives the name. Otherwise keyword rules from
+/// `data/ingredients.json` apply.
 ///
 /// Returns the category name, or "Other" if no match is found.
 /// Matching is case-insensitive and looks for keyword containment.
@@ -123,7 +124,8 @@ pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'stati
 
 /// The category the catalog alone gives `item`, without keyword rules: "Frozen"
 /// for a name starting with "frozen", else the committed catalog's category,
-/// else that of the learned entry. A raw line with an amount or a note ("1
+/// else that of the learned entry, else the aisle Open Food Facts gives the
+/// name ("cheerios", "cheez it"). A raw line with an amount or a note ("1
 /// medium white onion", "furikake (see note 3)"), as a shopping list can hold,
 /// is read as an ingredient line when its text alone gets no category.
 pub fn catalog_category_with(
@@ -144,7 +146,10 @@ pub fn catalog_category_with(
         crate::catalog::category(name)
             .or_else(|| learned_key(name, learned).and_then(crate::catalog::category))
     };
-    lookup(item).or_else(|| lookup(parsed.as_deref()?))
+    let names = || std::iter::once(item).chain(parsed.as_deref());
+    names()
+        .find_map(lookup)
+        .or_else(|| names().find_map(crate::catalog::open_food_facts_category))
 }
 
 /// The catalog entry a stored answer maps `item` to, if the catalog doesn't
@@ -460,6 +465,24 @@ mod tests {
         assert_eq!(categorize("fresh fruit"), "Produce");
         assert_eq!(categorize("Sure-Jell fruit pectin"), "Baking");
         assert_eq!(categorize("fruit juice"), "Beverages");
+    }
+
+    #[test]
+    fn test_open_food_facts_names() {
+        let learned = crate::catalog::Learned::new();
+        // Brands and product names the catalog doesn't know.
+        assert_eq!(catalog_category_with("Cheerios", &learned), Some("Snacks"));
+        assert_eq!(catalog_category_with("Cheez-Its", &learned), Some("Snacks"));
+        assert_eq!(
+            catalog_category_with("Baked beans", &learned),
+            Some("Canned Goods")
+        );
+        // The catalog still wins: Open Food Facts files basil with the spices.
+        assert_eq!(
+            crate::catalog::open_food_facts_category("basil"),
+            Some("Spices & Seasonings")
+        );
+        assert_eq!(categorize("basil"), "Produce");
     }
 
     #[test]

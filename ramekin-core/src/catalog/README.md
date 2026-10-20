@@ -5,9 +5,11 @@ Wine") into a known food. Density lookup (`volume_to_weight.rs`) and calorie
 estimates (`nutrition/`) both go through it, so a name the catalog learns helps
 both. The shopping-list categorizer (`ingredient_categorizer.rs`) uses the
 catalog's category (`curated.json` `categories`, or a product's own) whenever
-the name resolves to a categorized entry or ambiguous name. Its keyword rules
-in `data/ingredients.json` cover only the names the catalog doesn't know; see
-`issues/*catalog-delete-keyword-categorizer*` for when they can go.
+the name resolves to a categorized entry or ambiguous name. For a name the
+catalog doesn't know, the aisle Open Food Facts gives it comes next
+(`data/open_food_facts.json`, below), then the keyword rules in
+`data/ingredients.json`; see `issues/*catalog-delete-keyword-categorizer*` for
+when those can go.
 
 Coverage of every matcher is tracked in `data/ingredient-catalog-audit.md`
 (`make ingredient-catalog-audit`); a change here should show up there.
@@ -252,6 +254,51 @@ There is no name index. FNDDS foods are never entries or names on their own, so
 adding the release changed no existing resolution. A curated entry reaches one by
 linking its `fdc_id`; the importer and the catalog loader both reject an FDC id
 that appears in both releases.
+
+### `data/open_food_facts.json` (generated; do not edit)
+
+Shopping aisles for about 30,000 names the catalog may not know: brands and
+product names ("cheerios", "cheez it") and category names ("rice cakes",
+"baked beans"). `make catalog-import-off` (`scripts/import-open-food-facts.py`)
+builds it from two Open Food Facts exports, cached in `.cache/`:
+
+- the category taxonomy (`categories.full.json`): every English category name
+  and synonym whose categories agree on an aisle;
+- the products CSV (about 1.2 GB gzipped): the names and brands of US products,
+  where at least 3 products have an aisle and at least 60% agree on it. Each
+  product counts by its main category.
+
+A category's aisle comes from `data/open_food_facts_aisles.json`
+(hand-maintained). It is an ordered list of Open Food Facts categories with the
+aisle each means, and a category takes the aisle of its nearest listed ancestor,
+itself first. Among listed ancestors equally near, the earlier entry wins, so
+the frozen and canned forms are listed first and beat the food. The taxonomy
+wins over product names, which win over brands.
+
+Open Food Facts publishes daily exports rather than pinned releases. The file
+records the sha256 of each cached input, and `make catalog-import-off REFRESH=1`
+downloads them again. Its offline tests are `tests/test_open_food_facts_import.py`.
+
+Names are keyed lowercased, with apostrophes dropped and other punctuation
+turned into spaces ("Cheez-It" is "cheez it"). `open_food_facts::category`
+tries a name as written, then as a singular or plural.
+`ingredient_categorizer::catalog_category_with` consults it only after the
+committed catalog and learned answers have no category for the item or its
+parsed name. It gives an aisle only, never a food, so it doesn't affect
+calories or density.
+
+On 2026-10-20 it took the scorecard's catalog-only misses from 26 to 15 and
+Other from 39 to 25 (with the keyword rules: 12 to 10 and 18 to 14). It agrees
+with the labels on about 96% of the hand-typed items it names, and moved 207
+fixture lines to a new aisle, mostly out of Other or out of a wrong keyword
+aisle (jams, sodas, soups, olives). Pipeline-fixture lines categorized went from
+98.8% to 99.0%, and from the catalog alone from 90.9% to 91.8%. Categories with no aisle a shopper would
+look in (prepared meals, sandwiches, supplements) aren't listed, so names under
+them get none.
+
+Contains data from Open Food Facts (https://world.openfoodfacts.org), available
+under the Open Database License (https://opendatacommons.org/licenses/odbl/1.0/).
+`open_food_facts.json` is a derived database under the same license.
 
 ### `data/curated.json` (hand-maintained)
 

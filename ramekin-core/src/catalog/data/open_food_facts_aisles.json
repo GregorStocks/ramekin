@@ -1,0 +1,617 @@
+{
+  "_comment": "Open Food Facts categories and the shopping aisle each means, read by scripts/import-open-food-facts.py. A category takes the aisle of its nearest listed ancestor (itself first); among listed ancestors equally near, the earlier entry wins, so a form (frozen, canned) beats the food. Categories with no aisle a shopper would look in (prepared meals, sandwiches, supplements) are left out, so their names get none and the keyword rules still apply.",
+  "aisles": [
+    [
+      "en:frozen-seafood",
+      "Meat & Seafood"
+    ],
+    [
+      "en:canned-fishes",
+      "Meat & Seafood"
+    ],
+    [
+      "en:frozen-plant-based-foods",
+      "Frozen"
+    ],
+    [
+      "en:frozen-berries",
+      "Frozen"
+    ],
+    [
+      "en:frozen-fruits",
+      "Frozen"
+    ],
+    [
+      "en:frozen-foods",
+      "Frozen"
+    ],
+    [
+      "en:frozen-desserts",
+      "Frozen"
+    ],
+    [
+      "en:ice-creams-and-sorbets",
+      "Frozen"
+    ],
+    [
+      "en:canned-foods",
+      "Canned Goods"
+    ],
+    [
+      "en:canned-soups",
+      "Canned Goods"
+    ],
+    [
+      "en:canned-common-beans",
+      "Canned Goods"
+    ],
+    [
+      "en:canned-fruits",
+      "Canned Goods"
+    ],
+    [
+      "en:canned-vegetables",
+      "Canned Goods"
+    ],
+    [
+      "en:canned-meats",
+      "Canned Goods"
+    ],
+    [
+      "en:dried-fruits",
+      "Nuts & Dried Fruit"
+    ],
+    [
+      "en:pulses",
+      "Canned Goods"
+    ],
+    [
+      "en:meat-alternatives",
+      "Produce"
+    ],
+    [
+      "en:plant-based-milk-alternatives",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:milk-substitutes",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:legume-based-drinks",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:milk-powders",
+      "Baking"
+    ],
+    [
+      "en:sauerkrauts",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:seaweeds-and-their-products",
+      "Produce"
+    ],
+    [
+      "en:corn",
+      "Produce"
+    ],
+    [
+      "en:syrups",
+      "Baking"
+    ],
+    [
+      "en:simple-syrups",
+      "Baking"
+    ],
+    [
+      "en:cream-cheeses",
+      "Cheese"
+    ],
+    [
+      "en:wheat-flours",
+      "Baking"
+    ],
+    [
+      "en:corn-on-the-cob",
+      "Produce"
+    ],
+    [
+      "en:sweet-corn",
+      "Produce"
+    ],
+    [
+      "en:onions",
+      "Produce"
+    ],
+    [
+      "en:nut-based-drinks",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:coconut-milks-and-creams",
+      "Canned Goods"
+    ],
+    [
+      "en:fermented-vegetables",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:lemon-juice",
+      "Produce"
+    ],
+    [
+      "en:ground-dried-vegetables",
+      "Spices & Seasonings"
+    ],
+    [
+      "en:garlic-powders",
+      "Spices & Seasonings"
+    ],
+    [
+      "en:common-beans",
+      "Canned Goods"
+    ],
+    [
+      "en:edamame",
+      "Produce"
+    ],
+    [
+      "en:jelly-desserts",
+      "Baking"
+    ],
+    [
+      "en:soups",
+      "Canned Goods"
+    ],
+    [
+      "en:broths",
+      "Canned Goods"
+    ],
+    [
+      "en:refried-beans",
+      "Canned Goods"
+    ],
+    [
+      "en:legumes-and-their-products",
+      "Canned Goods"
+    ],
+    [
+      "en:nuts",
+      "Nuts & Dried Fruit"
+    ],
+    [
+      "en:nuts-and-their-products",
+      "Nuts & Dried Fruit"
+    ],
+    [
+      "en:seeds",
+      "Nuts & Dried Fruit"
+    ],
+    [
+      "en:peanuts",
+      "Nuts & Dried Fruit"
+    ],
+    [
+      "en:nut-butters",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:peanut-butters",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:spreads",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:cheeses",
+      "Cheese"
+    ],
+    [
+      "en:cottage-cheeses",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:milks",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:yogurts",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:eggs",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:creams",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:creamer",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:butters",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:dairies",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:margarines",
+      "Dairy & Eggs"
+    ],
+    [
+      "en:beverages",
+      "Beverages"
+    ],
+    [
+      "en:waters",
+      "Beverages"
+    ],
+    [
+      "en:teas",
+      "Beverages"
+    ],
+    [
+      "en:tea-bags",
+      "Beverages"
+    ],
+    [
+      "en:coffees",
+      "Beverages"
+    ],
+    [
+      "en:alcoholic-beverages",
+      "Beverages"
+    ],
+    [
+      "en:fruit-juices",
+      "Beverages"
+    ],
+    [
+      "en:dehydrated-beverages",
+      "Beverages"
+    ],
+    [
+      "en:hot-beverages",
+      "Beverages"
+    ],
+    [
+      "en:breakfast-cereals",
+      "Snacks"
+    ],
+    [
+      "en:cereal-bars",
+      "Snacks"
+    ],
+    [
+      "en:snacks",
+      "Snacks"
+    ],
+    [
+      "en:salty-snacks",
+      "Snacks"
+    ],
+    [
+      "en:biscuits-and-crackers",
+      "Snacks"
+    ],
+    [
+      "en:crackers-appetizers",
+      "Snacks"
+    ],
+    [
+      "en:biscuits",
+      "Snacks"
+    ],
+    [
+      "en:confectioneries",
+      "Snacks"
+    ],
+    [
+      "en:chocolate-candies",
+      "Snacks"
+    ],
+    [
+      "en:candies",
+      "Snacks"
+    ],
+    [
+      "en:popcorn",
+      "Snacks"
+    ],
+    [
+      "en:puffed-rice-cakes",
+      "Snacks"
+    ],
+    [
+      "en:chips-and-fries",
+      "Snacks"
+    ],
+    [
+      "en:crisps",
+      "Snacks"
+    ],
+    [
+      "en:dips",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:breads",
+      "Bakery & Bread"
+    ],
+    [
+      "en:cakes",
+      "Bakery & Bread"
+    ],
+    [
+      "en:pastries",
+      "Bakery & Bread"
+    ],
+    [
+      "en:viennoiseries",
+      "Bakery & Bread"
+    ],
+    [
+      "en:flatbreads",
+      "Bakery & Bread"
+    ],
+    [
+      "en:cake-mixes",
+      "Baking"
+    ],
+    [
+      "en:pastry-helpers",
+      "Baking"
+    ],
+    [
+      "en:pie-dough",
+      "Baking"
+    ],
+    [
+      "en:flours",
+      "Baking"
+    ],
+    [
+      "en:sugars",
+      "Baking"
+    ],
+    [
+      "en:sweeteners",
+      "Baking"
+    ],
+    [
+      "en:baking-powders",
+      "Baking"
+    ],
+    [
+      "en:gelatin",
+      "Baking"
+    ],
+    [
+      "en:dessert-mixes",
+      "Baking"
+    ],
+    [
+      "en:puddings",
+      "Baking"
+    ],
+    [
+      "en:thickeners",
+      "Baking"
+    ],
+    [
+      "en:food-additives",
+      "Baking"
+    ],
+    [
+      "en:honeys",
+      "Baking"
+    ],
+    [
+      "en:maple-syrups",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:pastas",
+      "Pasta & Rice"
+    ],
+    [
+      "en:rices",
+      "Pasta & Rice"
+    ],
+    [
+      "en:noodles",
+      "Pasta & Rice"
+    ],
+    [
+      "en:cereal-grains",
+      "Pasta & Rice"
+    ],
+    [
+      "en:cereal-flakes",
+      "Snacks"
+    ],
+    [
+      "en:rolled-oats",
+      "Snacks"
+    ],
+    [
+      "en:quinoa",
+      "Pasta & Rice"
+    ],
+    [
+      "en:meats",
+      "Meat & Seafood"
+    ],
+    [
+      "en:meats-and-their-products",
+      "Meat & Seafood"
+    ],
+    [
+      "en:prepared-meats",
+      "Meat & Seafood"
+    ],
+    [
+      "en:sausages",
+      "Meat & Seafood"
+    ],
+    [
+      "en:poultries",
+      "Meat & Seafood"
+    ],
+    [
+      "en:seafood",
+      "Meat & Seafood"
+    ],
+    [
+      "en:fishes",
+      "Meat & Seafood"
+    ],
+    [
+      "en:fishes-and-their-products",
+      "Meat & Seafood"
+    ],
+    [
+      "en:meat-analogues",
+      "Produce"
+    ],
+    [
+      "en:vegetables",
+      "Produce"
+    ],
+    [
+      "en:fresh-vegetables",
+      "Produce"
+    ],
+    [
+      "en:fruits",
+      "Produce"
+    ],
+    [
+      "en:fresh-fruits",
+      "Produce"
+    ],
+    [
+      "en:fruits-and-vegetables-based-foods",
+      "Produce"
+    ],
+    [
+      "en:mushrooms",
+      "Produce"
+    ],
+    [
+      "en:condiments",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:sauces",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:salad-dressings",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:ketchup",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:mustards",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:mayonnaises",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:hot-sauces",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:pickles",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:jams",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:fruit-and-vegetable-preserves",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:olives",
+      "Condiments & Sauces"
+    ],
+    [
+      "en:spices",
+      "Spices & Seasonings"
+    ],
+    [
+      "en:herbs-and-spices",
+      "Spices & Seasonings"
+    ],
+    [
+      "en:dehydrated-broths",
+      "Spices & Seasonings"
+    ],
+    [
+      "en:baking-mixes",
+      "Baking"
+    ],
+    [
+      "en:baking-powder-or-raising-agent",
+      "Baking"
+    ],
+    [
+      "en:food-decorations",
+      "Baking"
+    ],
+    [
+      "en:herbs",
+      "Spices & Seasonings"
+    ],
+    [
+      "en:salts",
+      "Spices & Seasonings"
+    ],
+    [
+      "en:cooking-helpers",
+      "Spices & Seasonings"
+    ],
+    [
+      "en:bouillon-cubes",
+      "Spices & Seasonings"
+    ],
+    [
+      "en:vegetable-oils",
+      "Oils & Vinegars"
+    ],
+    [
+      "en:fats",
+      "Oils & Vinegars"
+    ],
+    [
+      "en:olive-oils",
+      "Oils & Vinegars"
+    ],
+    [
+      "en:vinegars",
+      "Oils & Vinegars"
+    ],
+    [
+      "en:animal-fats",
+      "Baking"
+    ],
+    [
+      "en:pizzas",
+      "Frozen"
+    ]
+  ]
+}
