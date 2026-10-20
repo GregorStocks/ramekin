@@ -257,7 +257,7 @@ that appears in both releases.
 
 ### `data/open_food_facts.json` (generated; do not edit)
 
-Shopping aisles for about 30,000 names the catalog may not know: brands and
+Shopping aisles for about 29,500 names the catalog may not know: brands and
 product names ("cheerios", "cheez it") and category names ("rice cakes",
 "baked beans"). `make catalog-import-off` (`scripts/import-open-food-facts.py`)
 builds it from two Open Food Facts exports, cached in `.cache/`:
@@ -266,7 +266,10 @@ builds it from two Open Food Facts exports, cached in `.cache/`:
   and synonym whose categories agree on an aisle;
 - the products CSV (about 1.2 GB gzipped): the names and brands of US products,
   where at least 3 products have an aisle and at least 60% agree on it. Each
-  product counts by its main category.
+  product counts by its main category. A brand that other brands' product names
+  use as an ordinary word at least 10 times per product of its own ("Sprout"
+  against brussels sprouts, "Fresh", "Garden") is left out; real brands measured
+  under 7, since a parent company's products name them (Kraft's say "Velveeta").
 
 A category's aisle comes from `data/open_food_facts_aisles.json`
 (hand-maintained). It is an ordered list of Open Food Facts categories with the
@@ -292,8 +295,8 @@ after the catalog. It gives an aisle only, never a food, so it doesn't affect
 calories or density.
 
 On 2026-10-20 it took the scorecard's catalog-only misses from 26 to 15 and
-Other from 39 to 25 (with the keyword rules: 12 to 11 and 18 to 14). It agrees
-with the labels on about 96% of the hand-typed items it names. It moved 86
+Other from 39 to 26 (with the keyword rules: 12 to 11 and 18 to 15). It agrees
+with the labels on about 96% of the hand-typed items it names. It moved 83
 fixture lines out of Other (brownies, soups, sodas, barley, kiwifruit).
 Pipeline-fixture lines categorized went from 98.8% to 99.0%, and from the
 catalog alone from 90.9% to 91.8%. Categories with no aisle a shopper would look

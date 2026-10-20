@@ -1,11 +1,11 @@
 {
   "title": "Categorize the hand-typed shopping items the scorecard still misses",
-  "description": "make shopping-list-categorizer-test (hand-typed prod items only) still misses these with the keyword rules on (11 mismatches, 14 Other, 12 of them labeled Other) and from the catalog alone (15 mismatches, 25 Other), after Open Food Facts names (ramekin-core/src/catalog/data/open_food_facts.json, 2026-10-20) placed Cheerios, Cheez its, Cereal, Oatmeal, Pretzels, Ranch, Baked beans, S'mores, salad and whole-grain bread. \n\
+  "description": "make shopping-list-categorizer-test (hand-typed prod items only) still misses these with the keyword rules on (11 mismatches, 15 Other, 12 of them labeled Other) and from the catalog alone (15 mismatches, 26 Other), after Open Food Facts names (ramekin-core/src/catalog/data/open_food_facts.json, 2026-10-20) placed Cheerios, Cheez its, Cereal, Oatmeal, Pretzels, Ranch, Baked beans, S'mores, salad and whole-grain bread. \n\
 - Typos: 'Banning soda' (baking soda), 'Cheers it's' (Cheez-Its), 'Calfia almond milk' (Califia). \n\
-- Names neither the catalog nor Open Food Facts knows: 'Harissa', 'Lemon ginger tea', 'Ranch powder', 'Sandwich meat', 'Slaw', 'Oats stuff', 'Potato salad' (keyword rules make it Produce; labeled Other). \n\
+- Names neither the catalog nor Open Food Facts knows: 'Harissa', 'Lemon ginger tea', 'Ranch powder', 'Sandwich meat', 'Slaw', 'Jello' (the Jell-O brand is a generic word in other brands' product names, so the importer leaves it out), 'Oats stuff', 'Potato salad' (keyword rules make it Produce; labeled Other). \n\
 - Extra words around a known name: 'ice cream bars or similar', 'mini microwave popcorns', 'whole-grain crackers'. \n\
 - 'Rice cakes': Open Food Facts says Snacks, but the keyword rules (Pasta & Rice) win, since they come first outside the catalog-only path. \n\
-- Open Food Facts aisles that disagree with the labels: 'Jello' -> Snacks (labeled Baking), 'Dip' -> Cheese (labeled Other). \
+- Open Food Facts aisles that disagree with the labels: 'Dip' -> Cheese (labeled Other). \
 'Ground flaxseed' -> Nuts & Dried Fruit follows the catalog (labeled Baking; consider relabeling). \n\
 Typos, dishes and unknown names are what the AI name resolver (server/src/ingredient_names.rs) is for, but it only returns a catalog key or a calorie estimate, and estimates carry no category (prod has harissa and slaw resolved as estimates, with no aisle). \
 Having it return a shopping aisle with every answer, and queueing the live shopping items created before the resolver existed (prod has no rows for Jello, Cheerios or Pretzels), would cover these in prod. \

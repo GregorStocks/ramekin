@@ -102,6 +102,20 @@ def test_product_votes_need_enough_agreeing_us_products():
     assert "unknown" not in names
 
 
+def test_generic_brand_words_are_left_out():
+    # "Sprout" sells 3 snacks, but 30 other products' names say "sprouts".
+    rows = [row("Puffs", "Sprout")] * 3 + [
+        row("Brussels sprouts", "Farm", category="en:vegetables")
+    ] * 30
+    rows += [row("Shells", "Velveeta")] * 3 + [
+        row("Velveeta cheese sauce", "Kraft")
+    ] * 2
+    names = IMPORTER.build_names(TAXONOMY, PAIRS, rows)
+    assert "sprout" not in names
+    assert names["velveeta"] == "Snacks"
+    assert names["farm"] == "Produce"
+
+
 def test_taxonomy_wins_over_products():
     rows = [row("Cheerios", category="en:vegetables")] * 3
     assert IMPORTER.build_names(TAXONOMY, PAIRS, rows)["cheerios"] == "Snacks"

@@ -9,7 +9,8 @@ know ("cheerios", "cheez it", "rice cakes"). Names come from two sources:
 - the category taxonomy's English names and synonyms ("Breakfast cereals",
   "Oat rings");
 - US products' names and brands, where at least MIN_PRODUCTS products give an
-  aisle and at least MIN_SHARE of them agree on it.
+  aisle and at least MIN_SHARE of them agree on it. A brand other brands'
+  product names use as an ordinary word ("Sprout", "Fresh") is left out.
 
 A category's aisle is that of its nearest ancestor (itself first) listed in
 open_food_facts_aisles.json; among listed ancestors equally near, the earlier
@@ -61,6 +62,12 @@ COUNTRY = "en:united-states"
 # share of them agreeing, to name an aisle.
 MIN_PRODUCTS = 3
 MIN_SHARE = 0.6
+# A brand is a generic word ("Sprout" baby food against brussels sprouts, "Fresh",
+# "Garden") when other brands' product names use it at least this often per
+# product of its own; its key would misplace the ordinary food. Real brands stay
+# under 7 (a parent company's products name them: Kraft's say "Velveeta"), and
+# generic words measured 22 and up.
+GENERIC_BRAND_USE = 10
 
 
 def name_key(text: str) -> str:
@@ -144,26 +151,59 @@ def taxonomy_names(taxonomy: dict, aisles: Aisles) -> dict[str, str]:
 
 def product_votes(
     rows: Iterable[dict], aisles: Aisles
-) -> tuple[dict[str, collections.Counter], dict[str, collections.Counter]]:
-    """Aisle votes per US product name and per brand, by main category."""
+) -> tuple[
+    dict[str, collections.Counter],
+    dict[str, collections.Counter],
+    list[tuple[str, frozenset[str]]],
+]:
+    """Aisle votes per US product name and per brand, by main category, and
+    every US product's name and brands."""
     names: dict[str, collections.Counter] = collections.defaultdict(collections.Counter)
     brands: dict[str, collections.Counter] = collections.defaultdict(
         collections.Counter
     )
+    products = []
     for row in rows:
         if COUNTRY not in (row.get("countries_tags") or "").split(","):
             continue
+        name = name_key(row.get("product_name") or "")
+        product_brands = frozenset(
+            filter(None, map(name_key, (row.get("brands_en") or "").split(",")))
+        )
+        products.append((name, product_brands))
         aisle = aisles.of(row.get("main_category") or "")
         if aisle is None:
             continue
-        name = name_key(row.get("product_name") or "")
         if name:
             names[name][aisle] += 1
-        for brand in (row.get("brands_en") or "").split(","):
-            brand = name_key(brand)
-            if brand:
-                brands[brand][aisle] += 1
-    return names, brands
+        for brand in product_brands:
+            brands[brand][aisle] += 1
+    return names, brands, products
+
+
+def generic_brands(
+    brands: dict[str, collections.Counter], products: list[tuple[str, frozenset[str]]]
+) -> set[str]:
+    """Brands other brands' product names use as a word, as often as
+    GENERIC_BRAND_USE per product of their own, singular or plural."""
+    forms = {}
+    for brand in brands:
+        for form in (brand, brand + "s", brand.removesuffix("s")):
+            forms.setdefault(form, set()).add(brand)
+    longest = max((len(form.split()) for form in forms), default=0)
+    used: collections.Counter = collections.Counter()
+    for name, product_brands in products:
+        words = name.split()
+        mentioned = set()
+        for start in range(len(words)):
+            for end in range(start + 1, min(len(words), start + longest) + 1):
+                mentioned |= forms.get(" ".join(words[start:end]), set())
+        used.update(mentioned - product_brands)
+    return {
+        brand
+        for brand, votes in brands.items()
+        if used[brand] >= GENERIC_BRAND_USE * sum(votes.values())
+    }
 
 
 def agreed(votes: collections.Counter) -> str | None:
@@ -179,7 +219,10 @@ def build_names(
 ) -> dict[str, str]:
     aisles = Aisles(taxonomy, pairs)
     index = taxonomy_names(taxonomy, aisles)
-    names, brands = product_votes(rows, aisles)
+    names, brands, products = product_votes(rows, aisles)
+    brands = {brand: votes for brand, votes in brands.items() if agreed(votes)}
+    for generic in generic_brands(brands, products):
+        del brands[generic]
     for votes_by_name in (names, brands):
         for name, votes in votes_by_name.items():
             aisle = agreed(votes)

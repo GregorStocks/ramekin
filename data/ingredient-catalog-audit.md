@@ -14,7 +14,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized | Lines categorized (catalog only) |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60554 | 306 | 54145/60248 (89.9%) | 51662/60248 (85.7%) | 1585/5408 (29.3%) | n/a (no servings) | 31942/37338 (85.5%) | 59927/60554 (99.0%) | 55563/60554 (91.8%) |
+| Pipeline fixtures | 5408 | 60554 | 306 | 54145/60248 (89.9%) | 51662/60248 (85.7%) | 1585/5408 (29.3%) | n/a (no servings) | 31942/37338 (85.5%) | 59924/60554 (99.0%) | 55560/60554 (91.8%) |
 | Paprika fixtures | 462 | 5379 | 22 | 5179/5357 (96.7%) | 4824/5357 (90.1%) | 191/462 (41.3%) | n/a (no servings) | 2552/2893 (88.2%) | 5348/5379 (99.4%) | 5281/5379 (98.2%) |
 | Pipeline snapshots | 445 | 5177 | 17 | 5011/5160 (97.1%) | 4726/5160 (91.6%) | 194/445 (43.6%) | 98/445 (22.0%) | 2527/2853 (88.6%) | 5163/5177 (99.7%) | 5098/5177 (98.5%) |
 
@@ -54,7 +54,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 32
 | --- | ---: | --- |
 | Nutrition (all failures) | 6735 | `fa4353537fe7` |
 | Density | 2647 | `63c8dec82d18` |
-| Shopping category | 504 | `4e468cf852bb` |
+| Shopping category | 507 | `42eb418a73f5` |
 
 ## Paprika fixtures
 
@@ -140,12 +140,12 @@ Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`).
 | --- | ---: | ---: |
 | Items | 212 | 434 |
 | Nutrition name recognized | 141/207 (68.1%) | 318/426 (74.6%) |
-| Categorized (not "Other") | 198/212 (93.4%) | 419/434 (96.5%) |
-| Categorized by the catalog alone | 187/212 (88.2%) | 407/434 (93.8%) |
+| Categorized (not "Other") | 197/212 (92.9%) | 418/434 (96.3%) |
+| Categorized by the catalog alone | 186/212 (87.7%) | 406/434 (93.5%) |
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
 | Nutrition | 63 | `124e33763aec` |
-| Shopping category | 14 | `afee21f15cd5` |
+| Shopping category | 15 | `18c353e039d6` |
