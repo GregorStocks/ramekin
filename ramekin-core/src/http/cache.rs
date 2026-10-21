@@ -65,7 +65,7 @@ impl DiskCache {
     /// Check if a response is cached for a URL (either success or error).
     pub fn is_cached(&self, url: &str) -> bool {
         let dir = self.url_dir(url);
-        dir.join("response.bin").exists() || dir.join("error.txt").exists()
+        dir.join("response.bin").exists() || self.get_error(url).is_some()
     }
 
     /// Get cached response if it exists.
@@ -89,13 +89,18 @@ impl DiskCache {
     }
 
     /// Get cached error if it exists.
+    ///
+    /// Only permanent errors (404/410) count. Older caches also stored 403s
+    /// and 429s, which depend on who's asking (e.g. a User-Agent block) and
+    /// would otherwise never be retried, so those are treated as misses.
     pub fn get_error(&self, url: &str) -> Option<CachedError> {
         let dir = self.url_dir(url);
         let error_path = dir.join("error.txt");
 
         if error_path.exists() {
             let error_str = read_or_warn(&error_path, fs::read_to_string(&error_path))?;
-            parse_or_warn(&error_path, &error_str)
+            let cached: CachedError = parse_or_warn(&error_path, &error_str)?;
+            is_permanent_error(&cached.error).then_some(cached)
         } else {
             None
         }
@@ -199,6 +204,19 @@ impl DiskCache {
     }
 }
 
+/// HTTP statuses that mean the URL itself is gone, so caching the failure is safe.
+pub fn is_permanent_status(status: reqwest::StatusCode) -> bool {
+    matches!(
+        status,
+        reqwest::StatusCode::NOT_FOUND | reqwest::StatusCode::GONE
+    )
+}
+
+/// Cached errors are stored as `format!("HTTP {status}")`.
+fn is_permanent_error(error: &str) -> bool {
+    error.starts_with("HTTP 404 ") || error.starts_with("HTTP 410 ")
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -226,7 +244,7 @@ mod tests {
     fn corrupt_cached_error_is_a_cache_miss() {
         let dir = tempfile::tempdir().unwrap();
         let cache = DiskCache::new(dir.path().to_path_buf());
-        cache.put_error(URL, "boom").unwrap();
+        cache.put_error(URL, "HTTP 404 Not Found").unwrap();
         assert!(cache.get_error(URL).is_some());
 
         fs::write(
@@ -236,5 +254,19 @@ mod tests {
         .unwrap();
 
         assert!(cache.get_error(URL).is_none());
+    }
+
+    #[test]
+    fn non_permanent_cached_error_is_a_cache_miss() {
+        let dir = tempfile::tempdir().unwrap();
+        let cache = DiskCache::new(dir.path().to_path_buf());
+
+        cache.put_error(URL, "HTTP 403 Forbidden").unwrap();
+        assert!(cache.get_error(URL).is_none());
+        assert!(!cache.is_cached(URL));
+
+        cache.put_error(URL, "HTTP 410 Gone").unwrap();
+        assert!(cache.get_error(URL).is_some());
+        assert!(cache.is_cached(URL));
     }
 }

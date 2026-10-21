@@ -8,7 +8,7 @@ use std::time::Duration;
 
 use crate::error::FetchError;
 
-use super::cache::DiskCache;
+use super::cache::{is_permanent_status, DiskCache};
 use super::charset;
 use super::rate_limiter::RateLimiter;
 
@@ -354,7 +354,9 @@ impl CachingClient {
             let error_msg = format!("HTTP {}", response.status());
             tracing::debug!(url, status = %response.status(), "network: request failed");
             if let Some(cache) = &self.cache {
-                let _ = cache.put_error(url, &error_msg);
+                if is_permanent_status(response.status()) {
+                    let _ = cache.put_error(url, &error_msg);
+                }
             }
             return Err(FetchError::RequestFailed(
                 response.error_for_status().unwrap_err(),
