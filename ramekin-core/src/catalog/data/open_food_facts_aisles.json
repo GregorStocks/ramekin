@@ -1,5 +1,5 @@
 {
-  "_comment": "Open Food Facts categories and the shopping aisle each means, read by scripts/import-open-food-facts.py. A category takes the aisle of its nearest listed ancestor (itself first); among listed ancestors equally near, the earlier entry wins, so a form (frozen, canned) beats the food. Categories with no aisle a shopper would look in (prepared meals, sandwiches, supplements) are left out, so their names get none and the keyword rules still apply.",
+  "_comment": "Open Food Facts categories and the shopping aisle each means, read by scripts/import-open-food-facts.py. A category takes the aisle of its nearest listed ancestor (itself first); among listed ancestors equally near, the earlier entry wins, so a form (frozen, canned) beats the food. Categories with no aisle a shopper would look in (prepared meals, sandwiches, supplements) are left out, so their names get none.",
   "aisles": [
     [
       "en:frozen-seafood",
@@ -8,6 +8,14 @@
     [
       "en:canned-fishes",
       "Meat & Seafood"
+    ],
+    [
+      "en:legume-flours",
+      "Baking"
+    ],
+    [
+      "en:nut-flours",
+      "Baking"
     ],
     [
       "en:frozen-plant-based-foods",

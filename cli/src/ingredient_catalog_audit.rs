@@ -10,9 +10,7 @@ use ramekin_core::catalog::{
     Learned, LearnedTarget, Resolution, Via, CURATED_JSON,
 };
 use ramekin_core::final_recipe::FinalRecipe;
-use ramekin_core::ingredient_categorizer::{
-    catalog_category_with, categorize, categorize_with, keyword_category,
-};
+use ramekin_core::ingredient_categorizer::{categorize, categorize_with};
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
 use ramekin_core::nutrition;
 use ramekin_core::types::ParseIngredientsOutput;
@@ -74,8 +72,6 @@ struct RecipeCorpusStats {
     density_hits: usize,
     density_misses: HashMap<String, usize>,
     categorized: usize,
-    /// Lines the catalog categorizes without the keyword rules.
-    catalog_categorized: usize,
     uncategorized: HashMap<String, usize>,
     /// Distinct weights uncounted lines need that the catalog has no
     /// estimate for: what `make catalog-fill-weights` would ask the model.
@@ -110,8 +106,6 @@ struct ShoppingStats {
     non_food_uses: u64,
     categorized: usize,
     categorized_uses: u64,
-    catalog_categorized: usize,
-    catalog_categorized_uses: u64,
     nutrition_unrecognized: HashMap<String, usize>,
     uncategorized: HashMap<String, usize>,
 }
@@ -453,11 +447,6 @@ fn audit_recipes(corpus: &Corpus) -> Result<RecipeCorpusStats> {
             } else {
                 stats.categorized += 1;
             }
-            if catalog_category_with(&ingredient.item, &corpus.learned)
-                .is_some_and(|c| c != "Other")
-            {
-                stats.catalog_categorized += 1;
-            }
         }
     }
     Ok(stats)
@@ -506,10 +495,6 @@ fn audit_shopping(items: &[ShoppingItem]) -> Result<ShoppingStats> {
         } else {
             stats.categorized += 1;
             stats.categorized_uses += entry.count;
-        }
-        if catalog_category_with(&entry.item, &Learned::new()).is_some_and(|c| c != "Other") {
-            stats.catalog_categorized += 1;
-            stats.catalog_categorized_uses += entry.count;
         }
     }
     Ok(stats)
@@ -593,8 +578,8 @@ fn render_recipe_corpora(
         "## Summary\n\n\
          | Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | \
          Calories computed | Recipes fully estimated | Recipes with per-serving | \
-         Volume lines with density | Lines categorized | Lines categorized (catalog only) |\n\
-         | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n",
+         Volume lines with density | Lines categorized |\n\
+         | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n",
     );
     for (name, s) in corpora {
         // Nutrition coverage is over lines that name something eaten.
@@ -606,7 +591,7 @@ fn render_recipe_corpora(
         };
         let _ = writeln!(
             out,
-            "| {name} | {} | {} | {} | {} | {} | {} | {per_serving} | {} | {} | {} |",
+            "| {name} | {} | {} | {} | {} | {} | {} | {per_serving} | {} | {} |",
             s.recipes,
             s.lines,
             s.non_food,
@@ -615,7 +600,6 @@ fn render_recipe_corpora(
             share(s.recipes_fully_estimated as u64, s.recipes as u64),
             share(s.density_hits as u64, s.volume_lines as u64),
             share(s.categorized as u64, s.lines as u64),
-            share(s.catalog_categorized as u64, s.lines as u64),
         );
     }
 
@@ -713,12 +697,6 @@ fn render_shopping(out: &mut String, s: &ShoppingStats, with_names: bool) {
         share(s.categorized as u64, s.items as u64),
         share(s.categorized_uses, s.uses)
     );
-    let _ = writeln!(
-        out,
-        "| Categorized by the catalog alone | {} | {} |",
-        share(s.catalog_categorized as u64, s.items as u64),
-        share(s.catalog_categorized_uses, s.uses)
-    );
     write_fingerprints(
         out,
         &[
@@ -749,8 +727,7 @@ counted separately and excluded from both, numerator and denominator. A recipe i
 has calories computed, and has per-serving calories when it is also fully estimated and its \
 servings parse; only snapshots carry servings.\n\
 - **Density**: `catalog::grams_per_cup`, over lines with a volume unit.\n\
-- **Shopping category**: `categorize`; \"categorized\" means not \"Other\". \
-\"Catalog only\" leaves out the keyword rules (`catalog_category_with`).\n\n\
+- **Shopping category**: `categorize`; \"categorized\" means not \"Other\".\n\n\
 A CLI unit test regenerates this file and fails if it is stale. The most frequent unrecognized \
 names change with every catalog edit, so they are written to the uncommitted \
 `logs/ingredient-catalog-audit-local.md` instead.\n\n";
@@ -990,8 +967,6 @@ struct UncategorizedName {
     count: u64,
     /// Up to five written names that reach it, most frequent first.
     examples: Vec<String>,
-    /// What the keyword rules say for those lines, by count.
-    keyword_categories: BTreeMap<&'static str, u64>,
     #[serde(skip)]
     example_counts: HashMap<String, u64>,
 }
@@ -1018,7 +993,6 @@ impl UncategorizedNames {
             }
             Resolution::Ambiguous(_) | Resolution::NotFood | Resolution::Unresolved => vec![],
         };
-        let keyword = keyword_category(item);
         let example = normalize_name(item);
         for (key, kind) in targets {
             let name = self
@@ -1029,14 +1003,10 @@ impl UncategorizedNames {
                     kind,
                     count: 0,
                     examples: Vec::new(),
-                    keyword_categories: BTreeMap::new(),
                     example_counts: HashMap::new(),
                 });
             name.count += count;
             *name.example_counts.entry(example.clone()).or_default() += count.max(1);
-            if count > 0 {
-                *name.keyword_categories.entry(keyword).or_default() += count;
-            }
         }
     }
 

@@ -2,7 +2,7 @@ use ramekin_core::catalog::{
     candidates, learned_key_resolves, resolve_line_with, unlearned_name, EstimatedFood, Learned,
     LearnedTarget, Resolution, Via,
 };
-use ramekin_core::ingredient_categorizer::{catalog_category_with, categorize_with};
+use ramekin_core::ingredient_categorizer::categorize_with;
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
 use ramekin_core::nutrition::{estimate, estimate_with};
 
@@ -209,38 +209,14 @@ fn estimates_give_their_aisle() {
             category,
         })
     };
-    // Keywords would say Meat & Seafood for this name; the model's aisle for
-    // the food wins, as a learned entry's category does.
+    // Nothing else knows this name; the model's aisle places it.
     let item = "zzqq chicken dip";
-    assert_eq!(categorize_with(item, &Learned::new()), "Meat & Seafood");
+    assert_eq!(categorize_with(item, &Learned::new()), "Other");
     let learned = learned(&[("zzqq chicken dip", estimate(Some("Condiments & Sauces")))]);
     assert_eq!(categorize_with(item, &learned), "Condiments & Sauces");
-    assert_eq!(
-        catalog_category_with(item, &learned),
-        Some("Condiments & Sauces")
-    );
     // An estimate stored before estimates had an aisle gives none.
     let old = self::learned(&[("zzqq chicken dip", estimate(None))]);
-    assert_eq!(categorize_with(item, &old), "Meat & Seafood");
-}
-
-#[test]
-fn learned_names_never_lose_a_keyword_category() {
-    use ramekin_core::ingredient_categorizer::categorize;
-    // A learned non-food is categorized like a committed one, by keywords.
-    let item = "any vegetables you have stashed in your stock bag";
-    assert_ne!(categorize(item), "Other");
-    let not_food = learned(&[(item, LearnedTarget::NotFood)]);
-    assert_eq!(categorize_with(item, &not_food), categorize(item));
-    // A learned key with no catalog category and no keyword keeps the item's
-    // own keyword category rather than becoming "Other".
-    let key = "abiyuch";
-    assert!(learned_key_resolves(key));
-    assert_eq!(categorize(key), "Other");
-    let item = "zzqq carrot medley";
-    assert_eq!(categorize(item), "Produce");
-    let entry = learned(&[(item, LearnedTarget::Entry(key.into()))]);
-    assert_eq!(categorize_with(item, &entry), "Produce");
+    assert_eq!(categorize_with(item, &old), "Other");
 }
 
 #[test]

@@ -1,62 +1,8 @@
 //! Ingredient categorization for shopping list grouping.
 //!
-//! Maps ingredient names to grocery store aisle categories. The ingredient
-//! catalog's curated categories decide when the catalog knows the name; keyword
-//! rules from `data/ingredients.json` (loaded at compile time) cover the rest.
-
-use serde::Deserialize;
-use std::collections::HashMap;
-use std::sync::LazyLock;
-
-const INGREDIENTS_JSON: &str = include_str!("../../data/ingredients.json");
-
-/// The raw JSON structure for ingredients data file.
-#[derive(Deserialize)]
-struct IngredientsData {
-    categories: HashMap<String, String>,
-}
-
-/// Ingredient map loaded from JSON and sorted by keyword length (longest first).
-/// This ensures more specific matches are tried before general ones.
-struct IngredientRule {
-    keyword: String,
-    keyword_tokens: Vec<String>,
-    category: String,
-}
-
-static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
-    let json = INGREDIENTS_JSON;
-    let data: IngredientsData =
-        serde_json::from_str(json).expect("Failed to parse ingredients.json");
-
-    let mut map: Vec<IngredientRule> = data
-        .categories
-        .into_iter()
-        .map(|(keyword, category)| {
-            assert!(
-                CATEGORIES.contains(&category.as_str()),
-                "ingredients.json keyword {keyword:?} has unknown category {category:?}"
-            );
-            IngredientRule {
-                keyword_tokens: word_tokens(&keyword)
-                    .into_iter()
-                    .map(str::to_string)
-                    .collect(),
-                keyword,
-                category,
-            }
-        })
-        .collect();
-    // Sort by keyword length descending so longer/more specific matches are tried first.
-    // Secondary sort by keyword alphabetically for deterministic ordering.
-    map.sort_by(|a, b| {
-        b.keyword
-            .len()
-            .cmp(&a.keyword.len())
-            .then_with(|| a.keyword.cmp(&b.keyword))
-    });
-    map
-});
+//! Maps ingredient names to grocery store aisle categories: the ingredient
+//! catalog's category for the food a name resolves to, then a learned answer's,
+//! then the aisle Open Food Facts gives the name.
 
 /// The canonical set of grocery-aisle categories the categorizer can return.
 /// `categorize` always returns one of these (defaulting to "Other").
@@ -81,69 +27,25 @@ pub const CATEGORIES: [&str; 18] = [
     "Other",
 ];
 
-/// Map a category string to its canonical `&'static str`.
-fn category_to_static(category: &str) -> &'static str {
-    CATEGORIES
-        .into_iter()
-        .find(|&c| c == category)
-        .expect("ingredient rule categories are validated when INGREDIENT_MAP loads")
-}
-
-/// Categorize an ingredient by name.
-///
-/// The ingredient catalog's category wins when it has one (the food a name
-/// resolves to, a product such as parchment paper, an ambiguous name such as
-/// "cheese", or the first food of a "salt and pepper" line). Otherwise keyword
-/// rules from `data/ingredients.json` apply, and where they find nothing, the
-/// aisle Open Food Facts gives the name.
-///
-/// Returns the category name, or "Other" if no match is found.
-/// Matching is case-insensitive and looks for keyword containment.
+/// Categorize an ingredient by name, with no learned answers.
 pub fn categorize(item: &str) -> &'static str {
     categorize_with(item, &crate::catalog::Learned::new())
 }
 
-/// `categorize`, using a stored answer for a name the catalog doesn't know.
-/// A name starting with "frozen" is Frozen; otherwise the committed catalog's
-/// category wins, then the learned entry's, then a learned estimate's aisle;
-/// otherwise
-/// the item's own keywords decide, then the learned key's, then Open Food
-/// Facts. Its names are noisier than keyword matches ("spelt flour" is a grain
-/// there), so they only fill in what would otherwise be Other. A learned
-/// non-food is treated like a committed one: keywords still apply, since a
-/// shopping list can hold it.
+/// The category for `item`: "Frozen" for a name starting with "frozen", else
+/// the committed catalog's category (the food a name resolves to, a product
+/// such as parchment paper, an ambiguous name such as "cheese", or the first
+/// food of a "salt and pepper" line), else that of the learned entry, else the
+/// aisle the model gave a learned estimate ("harissa"), else the aisle Open
+/// Food Facts gives the name ("cheerios", "cheez it"). A raw line with an
+/// amount or a note ("1 medium white onion", "furikake (see note 3)"), as a
+/// shopping list can hold, is read as an ingredient line when its text alone
+/// gets no category. Anything else is "Other".
 pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'static str {
-    let parsed = parsed_name(item);
-    if let Some(category) = committed_category(item, parsed.as_deref(), learned) {
-        return category;
-    }
-    let keywords = match learned_key(item, learned) {
-        Some(key) => match keyword_category(item) {
-            "Other" => keyword_category(key),
-            category => category,
-        },
-        None => keyword_category(item),
-    };
-    match keywords {
-        "Other" => open_food_facts_category(item, parsed.as_deref()).unwrap_or("Other"),
-        category => category,
-    }
-}
-
-/// The category the catalog alone gives `item`, without keyword rules: "Frozen"
-/// for a name starting with "frozen", else the committed catalog's category,
-/// else that of the learned entry, else the aisle the model gave a learned
-/// estimate ("harissa"), else the aisle Open Food Facts gives the
-/// name ("cheerios", "cheez it"). A raw line with an amount or a note ("1
-/// medium white onion", "furikake (see note 3)"), as a shopping list can hold,
-/// is read as an ingredient line when its text alone gets no category.
-pub fn catalog_category_with(
-    item: &str,
-    learned: &crate::catalog::Learned,
-) -> Option<&'static str> {
     let parsed = parsed_name(item);
     committed_category(item, parsed.as_deref(), learned)
         .or_else(|| open_food_facts_category(item, parsed.as_deref()))
+        .unwrap_or("Other")
 }
 
 /// The item a raw line ("1 medium white onion") parses to, if it differs.
@@ -195,76 +97,6 @@ fn learned_target<'a>(
     unlearned_name(item).and_then(|name| learned.get(&normalize(&name)))
 }
 
-/// The catalog entry a stored answer maps `item` to, if the catalog doesn't
-/// know the name itself.
-fn learned_key<'a>(item: &str, learned: &'a crate::catalog::Learned) -> Option<&'a str> {
-    match learned_target(item, learned) {
-        Some(crate::catalog::LearnedTarget::Entry(key)) => Some(key),
-        _ => None,
-    }
-}
-
-/// The first keyword rule matching `item`, or "Other", ignoring the catalog.
-pub fn keyword_category(item: &str) -> &'static str {
-    let lower = item.to_lowercase();
-    let item_tokens = word_tokens(&lower);
-
-    for rule in INGREDIENT_MAP.iter() {
-        if keyword_matches(&item_tokens, &rule.keyword_tokens) {
-            return category_to_static(&rule.category);
-        }
-    }
-
-    "Other"
-}
-
-fn keyword_matches(item_tokens: &[&str], keyword_tokens: &[String]) -> bool {
-    if keyword_tokens.is_empty() || item_tokens.len() < keyword_tokens.len() {
-        return false;
-    }
-
-    item_tokens
-        .windows(keyword_tokens.len())
-        .any(|window| keyword_tokens_match(window, keyword_tokens))
-}
-
-fn word_tokens(text: &str) -> Vec<&str> {
-    text.split(|c| !is_word_char(c))
-        .filter(|token| !token.is_empty())
-        .collect()
-}
-
-fn keyword_tokens_match(item_tokens: &[&str], keyword_tokens: &[String]) -> bool {
-    let last_index = keyword_tokens.len() - 1;
-
-    item_tokens.iter().zip(keyword_tokens).enumerate().all(
-        |(index, (item_token, keyword_token))| {
-            let item_token = *item_token;
-            let keyword_token = keyword_token.as_str();
-            if index == last_index {
-                token_matches_keyword(item_token, keyword_token)
-            } else {
-                item_token == keyword_token
-            }
-        },
-    )
-}
-
-fn token_matches_keyword(item_token: &str, keyword_token: &str) -> bool {
-    item_token == keyword_token
-        || item_token
-            .strip_prefix(keyword_token)
-            .is_some_and(is_allowed_inflection_suffix)
-}
-
-fn is_allowed_inflection_suffix(suffix: &str) -> bool {
-    matches!(suffix, "s" | "es" | "ies" | "y")
-}
-
-fn is_word_char(c: char) -> bool {
-    c.is_alphanumeric()
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -297,19 +129,13 @@ mod tests {
         // Shopping lists hold raw lines; the catalog finds the food once the
         // amount or note is split off.
         let learned = crate::catalog::Learned::new();
+        assert_eq!(categorize_with("1 medium white onion", &learned), "Produce");
         assert_eq!(
-            catalog_category_with("1 medium white onion", &learned),
-            Some("Produce")
+            categorize_with("furikake (see note 3)", &learned),
+            "Spices & Seasonings"
         );
-        assert_eq!(
-            catalog_category_with("furikake (see note 3)", &learned),
-            Some("Spices & Seasonings")
-        );
-        assert_eq!(
-            catalog_category_with("2 bags frozen peaches", &learned),
-            Some("Frozen")
-        );
-        assert_eq!(catalog_category_with("xyzfoobar123", &learned), None);
+        assert_eq!(categorize_with("2 bags frozen peaches", &learned), "Frozen");
+        assert_eq!(categorize_with("xyzfoobar123", &learned), "Other");
     }
 
     #[test]
@@ -335,7 +161,7 @@ mod tests {
     }
 
     #[test]
-    fn test_keywords_do_not_match_inside_words() {
+    fn test_names_inside_other_words() {
         assert_eq!(categorize("Beefeater"), "Other");
         assert_eq!(categorize("ginger"), "Produce");
         assert_eq!(categorize("graham cracker crumbs"), "Snacks");
@@ -344,7 +170,6 @@ mod tests {
     #[test]
     fn test_cookie_snacks() {
         assert_eq!(categorize("Oreo cookie crumbs"), "Snacks");
-        assert_eq!(categorize("cookie crumbs"), "Snacks");
         assert_eq!(categorize("cookies"), "Snacks");
     }
 
@@ -358,18 +183,16 @@ mod tests {
     #[test]
     fn test_chocolate_forms() {
         // Bare "chocolate" on a shopping list is candy; qualified baking forms
-        // and chip/chunk/morsel formats are baking aisle.
+        // and chips are baking aisle.
         assert_eq!(categorize("chocolate"), "Snacks");
         assert_eq!(categorize("bittersweet chocolate, chopped"), "Baking");
         assert_eq!(categorize("semisweet chocolate"), "Baking");
         assert_eq!(categorize("white chocolate"), "Baking");
         assert_eq!(categorize("chocolate chips"), "Baking");
-        assert_eq!(categorize("chocolate morsels"), "Baking");
         assert_eq!(categorize("hot chocolate"), "Beverages");
         assert_eq!(categorize("chocolate milk"), "Dairy & Eggs");
         // Bare "chocolate" must not hijack longer non-candy forms.
         assert_eq!(categorize("German Chocolate cake mix"), "Baking");
-        assert_eq!(categorize("chocolate frosting"), "Baking");
         assert_eq!(categorize("chocolate ice cream"), "Frozen");
         assert_eq!(categorize("chocolate sauce"), "Condiments & Sauces");
     }
@@ -382,7 +205,7 @@ mod tests {
         assert_eq!(categorize("lime juice from 1 lime"), "Produce");
         assert_eq!(categorize("juice of 1/2 lemon"), "Produce");
         assert_eq!(categorize("apple juice"), "Beverages");
-        // "water" must not hijack items that merely mention it.
+        // Items that merely mention water aren't water.
         assert_eq!(
             categorize("egg wash: 1 egg beaten with water"),
             "Dairy & Eggs"
@@ -392,11 +215,9 @@ mod tests {
 
     #[test]
     fn test_frozen_collisions() {
-        // Longer produce keywords used to beat "frozen".
         assert_eq!(categorize("frozen strawberries"), "Frozen");
         assert_eq!(categorize("strawberries"), "Produce");
         assert_eq!(categorize("french fries"), "Frozen");
-        assert_eq!(categorize("tater tots"), "Frozen");
     }
 
     #[test]
@@ -431,10 +252,8 @@ mod tests {
     #[test]
     fn test_chiles() {
         assert_eq!(categorize("fresh red chiles, thinly sliced"), "Produce");
-        assert_eq!(categorize("ancho chile powder"), "Spices & Seasonings");
         assert_eq!(categorize("chili beans"), "Canned Goods");
         assert_eq!(categorize("chili oil"), "Oils & Vinegars");
-        assert_eq!(categorize("Thai sweet chilli sauce"), "Condiments & Sauces");
     }
 
     #[test]
@@ -450,7 +269,6 @@ mod tests {
         // Plural "vegetables" means produce; singular "vegetable ..." is
         // usually the first option in an oil/broth list and must not win.
         assert_eq!(categorize("mixed vegetables"), "Produce");
-        assert_eq!(categorize("steamed vegetables"), "Produce");
         assert_eq!(
             categorize("vegetable or other neutral-flavored oil"),
             "Oils & Vinegars"
@@ -491,21 +309,13 @@ mod tests {
         assert_eq!(categorize("dog food"), "Pet");
         assert_eq!(categorize("cat food"), "Pet");
         assert_eq!(categorize("cat litter"), "Pet");
-        // Bare "dog"/"cat" are not keywords; hot dogs stay food.
+        // Hot dogs stay food.
         assert_eq!(categorize("hot dogs"), "Meat & Seafood");
     }
 
     #[test]
-    fn test_brand_collisions() {
-        // Campari the aperitif vs Campari tomatoes.
-        assert_eq!(categorize("Campari"), "Beverages");
-        assert_eq!(categorize("Campari tomatoes"), "Produce");
-        // Scotch the whisky vs scotch bonnet peppers.
-        assert_eq!(categorize("scotch"), "Beverages");
-        assert_eq!(categorize("scotch bonnet chiles"), "Produce");
-        // Fruit the produce vs canning/juice forms.
+    fn test_fruit_forms() {
         assert_eq!(categorize("fresh fruit"), "Produce");
-        assert_eq!(categorize("Sure-Jell fruit pectin"), "Baking");
         assert_eq!(categorize("fruit juice"), "Beverages");
     }
 
@@ -513,36 +323,32 @@ mod tests {
     fn test_open_food_facts_names() {
         let learned = crate::catalog::Learned::new();
         // Brands and product names the catalog doesn't know.
-        assert_eq!(catalog_category_with("Cheerios", &learned), Some("Snacks"));
-        assert_eq!(catalog_category_with("Cheez-Its", &learned), Some("Snacks"));
-        assert_eq!(
-            catalog_category_with("Baked beans", &learned),
-            Some("Canned Goods")
-        );
+        assert_eq!(categorize_with("Cheerios", &learned), "Snacks");
+        assert_eq!(categorize_with("Cheez-Its", &learned), "Snacks");
+        assert_eq!(categorize_with("Baked beans", &learned), "Canned Goods");
         // The catalog still wins: Open Food Facts files basil with the spices.
         assert_eq!(
             crate::catalog::open_food_facts_category("basil"),
             Some("Spices & Seasonings")
         );
         assert_eq!(categorize("basil"), "Produce");
-        // Keyword rules win over it, and it only fills in Other.
+        // Its taxonomy files "spelt flour" as the grain; the catalog knows the
+        // flour.
         assert_eq!(
             crate::catalog::open_food_facts_category("spelt flour"),
             Some("Pasta & Rice")
         );
         assert_eq!(categorize("spelt flour"), "Baking");
-        assert_eq!(categorize("Cheerios"), "Snacks");
     }
 
     #[test]
-    fn test_catalog_category_overrides_keywords() {
+    fn test_products_and_compound_lines() {
         assert_eq!(categorize("Parchment paper"), "Other");
-        // The "water" keyword used to make this a beverage.
         assert_eq!(
             categorize("wooden skewers, soaked in cold water for 30 minutes"),
             "Other"
         );
-        // Entries without a catalog category still use keyword rules.
+        // A compound line takes its first food's category.
         assert_eq!(categorize("salt and pepper"), "Spices & Seasonings");
     }
 }

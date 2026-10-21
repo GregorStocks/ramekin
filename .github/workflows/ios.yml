@@ -24,7 +24,6 @@ name: iOS
       - 'cli/**'
       - 'ramekin-core/**'
       - 'migrations/**'
-      - 'data/ingredients.json'
       - 'shared-test-vectors/**'
       - 'Makefile'
       - '.github/workflows/ios.yml'
@@ -92,7 +91,7 @@ jobs:
           key: >-
             ios-ui-backend-${{ runner.arch }}-${{ hashFiles(
               'rust-toolchain.toml', 'server/**', 'cli/**', 'ramekin-core/**',
-              'migrations/**', 'data/ingredients.json', 'shared-test-vectors/**',
+              'migrations/**', 'shared-test-vectors/**',
               'Makefile', '.github/workflows/ios.yml') }}
 
       - name: Install Rust

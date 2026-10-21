@@ -6,10 +6,13 @@ estimates (`nutrition/`) both go through it, so a name the catalog learns helps
 both. The shopping-list categorizer (`ingredient_categorizer.rs`) uses the
 catalog's category (`curated.json` `categories`, or a product's own) whenever
 the name resolves to a categorized entry or ambiguous name. For a name the
-catalog doesn't know, the keyword rules in `data/ingredients.json` come next,
-then, where they find nothing, the aisle Open Food Facts gives it
-(`data/open_food_facts.json`, below); see
-`issues/*catalog-delete-keyword-categorizer*` for when the keyword rules can go.
+catalog doesn't know, a learned answer's aisle comes next (the AI name
+resolver's, on the server), then the aisle Open Food Facts gives it
+(`data/open_food_facts.json`, below), else Other. The keyword rules that used
+to fill in after the catalog (`data/ingredients.json`) were deleted on
+2026-10-20: where they disagreed with the catalog they were nearly always
+wrong, and where only they answered, about one line in five got a wrong aisle
+or wasn't an ingredient at all.
 
 Coverage of every matcher is tracked in `data/ingredient-catalog-audit.md`
 (`make ingredient-catalog-audit`); a change here should show up there.
@@ -285,14 +288,12 @@ downloads them again. Its offline tests are `tests/test_open_food_facts_import.p
 Names are keyed lowercased, with apostrophes dropped and other punctuation
 turned into spaces ("Cheez-It" is "cheez it"). `open_food_facts::category`
 tries a name as written, then as a singular or plural.
-The categorizer consults it only after the committed catalog and learned
-answers have no category for the item or its parsed name. `categorize_with`
-also tries the keyword rules first, since Open Food Facts names are noisier
-("spelt flour" is a grain there, "lemon pepper" mostly seasoned fish), so it
-only fills in what would otherwise be Other. `catalog_category_with`, the
-catalog-only answer the keyword rules' deletion is measured by, uses it right
-after the catalog. It gives an aisle only, never a food, so it doesn't affect
-calories or density.
+The categorizer consults it last, only after the committed catalog and learned
+answers have no category for the item or its parsed name, since its names are
+noisier ("spelt flour" is a grain there, "lemon pepper" mostly seasoned fish).
+On the server a name it answers is still sent to the AI name resolver, whose
+answer then comes first. It gives an aisle only, never a food, so it doesn't
+affect calories or density.
 
 On 2026-10-20 it took the scorecard's catalog-only misses from 26 to 15 and
 Other from 39 to 26 (with the keyword rules: 12 to 11 and 18 to 15). It agrees
@@ -456,8 +457,8 @@ under the Open Database License (https://opendatacommons.org/licenses/odbl/1.0/)
   FNDDS foods are reached through curated entries, so their corrections live on
   those entries.
 - `categories` gives foods and ambiguous names their shopping-list category
-  (one of `ingredient_categorizer::CATEGORIES`), which beats the keyword
-  rules. Keys are a curated food entry id, a USDA stripped name or unique
+  (one of `ingredient_categorizer::CATEGORIES`), which beats learned answers
+  and Open Food Facts. Keys are a curated food entry id, a USDA stripped name or unique
   description, or an ambiguous name (`null` alias) — never an alias of a
   food or a product, and at most one key per entry. Every written name that
   resolves to the entry shares its category, so judge the food as bought (the
@@ -545,12 +546,10 @@ is the pure half:
   estimated.
 - `categorize_with(item, &Learned)` uses the committed catalog's category
   first (an ambiguous name's own included), then a learned entry's, then a
-  learned estimate's aisle (`catalog_category_with`). A raw shopping line whose text gets neither ("1
+  learned estimate's aisle. A raw shopping line whose text gets none ("1
   medium white onion", "furikake (see note 3)") is read as an ingredient line
-  and tried again by its parsed item. Otherwise
-  the item's own keywords decide, then the key's, so a learned answer never
-  loses a category the keywords already gave. A learned non-food is
-  categorized by keywords, like a committed one.
+  and tried again by its parsed item. Otherwise Open Food Facts decides, and
+  a name it doesn't know (a learned non-food among them) is Other.
 
 Pending, failed and "unknown" names stay unknown (an ambiguous one stays
 ambiguous). The server side (queueing on
