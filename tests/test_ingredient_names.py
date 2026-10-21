@@ -433,6 +433,21 @@ def test_foods_no_entry_matches_are_estimated(authed_api_client):
     assert status.estimated >= 1
 
 
+def test_estimated_foods_give_shopping_items_their_aisle(authed_api_client):
+    client, _ = authed_api_client
+    shopping = SyncApi(client)
+    # Neither the catalog nor a keyword places it; the mock's estimate says
+    # Snacks.
+    item = unique("estimable")
+    add(shopping, item)
+
+    def category():
+        listed = {i.item: i for i in items(shopping).values()}
+        return listed[item].computed_category
+
+    wait_for(lambda: category() == "Snacks")
+
+
 def test_ambiguous_names_take_a_labeled_default(authed_api_client):
     client, _ = authed_api_client
     api = RecipesApi(client)

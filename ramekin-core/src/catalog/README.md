@@ -537,13 +537,15 @@ is the pure half:
   come from committed data.
 - A real food no candidate matches can instead get an estimate
   (`LearnedTarget::Estimate`): the model's calories per 100 g and, when it
-  gave them, grams per cup and per piece. It isn't a catalog entry, so
-  densities, categories and `resolve_line_with` ignore it; only
-  `nutrition::estimate_with` counts it (`learned_estimate`), as a stand-in
-  entry labeled "(estimated calories)". An ambiguous name is never estimated.
+  gave them, grams per cup and per piece, plus the shopping aisle it's sold
+  in (one of `ingredient_categorizer::CATEGORIES`). It isn't a catalog entry,
+  so densities and `resolve_line_with` ignore it; `nutrition::estimate_with`
+  counts it (`learned_estimate`), as a stand-in entry labeled "(estimated
+  calories)", and the categorizer uses its aisle. An ambiguous name is never
+  estimated.
 - `categorize_with(item, &Learned)` uses the committed catalog's category
-  first (an ambiguous name's own included), then a learned entry's
-  (`catalog_category_with`). A raw shopping line whose text gets neither ("1
+  first (an ambiguous name's own included), then a learned entry's, then a
+  learned estimate's aisle (`catalog_category_with`). A raw shopping line whose text gets neither ("1
   medium white onion", "furikake (see note 3)") is read as an ingredient line
   and tried again by its parsed item. Otherwise
   the item's own keywords decide, then the key's, so a learned answer never
@@ -558,10 +560,12 @@ every recipe and shopping-list save, the background worker, the scrape step
 
 A name the catalog knows is never looked up in the table, so its row is
 simply left alone. At startup the server puts back in the queue only answers
-the committed catalog rules out (`sync_with_catalog`):
+the committed catalog rules out, or that lack a field (`sync_with_catalog`):
 - an answer whose key no longer names one entry;
 - an estimate or not-food answer for a name the catalog now calls ambiguous,
-  since an ambiguous name takes neither.
+  since an ambiguous name takes neither;
+- an estimate with no shopping aisle (stored before estimates carried one) or
+  with one the categorizer no longer has.
 
 Learned names don't add gram alternatives: those are fixed at ingest from the
 committed catalog; reaching existing recipes is

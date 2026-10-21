@@ -105,7 +105,8 @@ pub fn categorize(item: &str) -> &'static str {
 
 /// `categorize`, using a stored answer for a name the catalog doesn't know.
 /// A name starting with "frozen" is Frozen; otherwise the committed catalog's
-/// category wins, then the learned entry's; otherwise
+/// category wins, then the learned entry's, then a learned estimate's aisle;
+/// otherwise
 /// the item's own keywords decide, then the learned key's, then Open Food
 /// Facts. Its names are noisier than keyword matches ("spelt flour" is a grain
 /// there), so they only fill in what would otherwise be Other. A learned
@@ -131,7 +132,8 @@ pub fn categorize_with(item: &str, learned: &crate::catalog::Learned) -> &'stati
 
 /// The category the catalog alone gives `item`, without keyword rules: "Frozen"
 /// for a name starting with "frozen", else the committed catalog's category,
-/// else that of the learned entry, else the aisle Open Food Facts gives the
+/// else that of the learned entry, else the aisle the model gave a learned
+/// estimate ("harissa"), else the aisle Open Food Facts gives the
 /// name ("cheerios", "cheez it"). A raw line with an amount or a note ("1
 /// medium white onion", "furikake (see note 3)"), as a shopping list can hold,
 /// is read as an ingredient line when its text alone gets no category.
@@ -153,13 +155,14 @@ fn parsed_name(item: &str) -> Option<String> {
 }
 
 /// "Frozen" for a name starting with "frozen", else the committed catalog's
-/// category for the item or its parsed name, else that of the learned entry.
+/// category for the item or its parsed name, else that of the learned entry,
+/// else a learned estimate's aisle.
 fn committed_category(
     item: &str,
     parsed: Option<&str>,
     learned: &crate::catalog::Learned,
 ) -> Option<&'static str> {
-    use crate::catalog::normalize;
+    use crate::catalog::{normalize, LearnedTarget};
     // The catalog drops "frozen" to find the food ("2 bags frozen peaches"
     // are peaches), but the shopper still buys them in the freezer aisle.
     let frozen = |name: &str| normalize(name).starts_with("frozen ");
@@ -167,8 +170,11 @@ fn committed_category(
         return Some("Frozen");
     }
     let lookup = |name: &str| {
-        crate::catalog::category(name)
-            .or_else(|| learned_key(name, learned).and_then(crate::catalog::category))
+        crate::catalog::category(name).or_else(|| match learned_target(name, learned)? {
+            LearnedTarget::Entry(key) => crate::catalog::category(key),
+            LearnedTarget::Estimate(estimate) => estimate.category,
+            LearnedTarget::NotFood | LearnedTarget::Unknown => None,
+        })
     };
     std::iter::once(item).chain(parsed).find_map(lookup)
 }
@@ -180,12 +186,20 @@ fn open_food_facts_category(item: &str, parsed: Option<&str>) -> Option<&'static
         .find_map(crate::catalog::open_food_facts_category)
 }
 
+/// The stored answer for `item`, if the catalog doesn't know the name itself.
+fn learned_target<'a>(
+    item: &str,
+    learned: &'a crate::catalog::Learned,
+) -> Option<&'a crate::catalog::LearnedTarget> {
+    use crate::catalog::{normalize, unlearned_name};
+    unlearned_name(item).and_then(|name| learned.get(&normalize(&name)))
+}
+
 /// The catalog entry a stored answer maps `item` to, if the catalog doesn't
 /// know the name itself.
 fn learned_key<'a>(item: &str, learned: &'a crate::catalog::Learned) -> Option<&'a str> {
-    use crate::catalog::{normalize, unlearned_name, LearnedTarget};
-    match unlearned_name(item).and_then(|name| learned.get(&normalize(&name))) {
-        Some(LearnedTarget::Entry(key)) => Some(key),
+    match learned_target(item, learned) {
+        Some(crate::catalog::LearnedTarget::Entry(key)) => Some(key),
         _ => None,
     }
 }

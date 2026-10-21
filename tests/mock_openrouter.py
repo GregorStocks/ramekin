@@ -245,7 +245,7 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         """Resolve each item to its first candidate (an ambiguous one too).
         Names a test marked failing (/test/ingredient-name-failure) break the
         response; "estimable" gets an estimate (200 kcal/100 g, 150 g/cup,
-        40 g/piece); "unknowable" answers unknown; "serving platter" is not
+        40 g/piece, Snacks); "unknowable" answers unknown; "serving platter" is not
         food."""
         items_text = all_text.split("Items:", 1)[1].split("Respond with JSON", 1)[0]
         items = json.loads(items_text)
@@ -283,6 +283,7 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                         "kcal_per_100g": 200,
                         "grams_per_cup": 150,
                         "grams_per_piece": 40,
+                        "shopping_category": "Snacks",
                     }
                 )
             elif "unknowable" in item["name"] or not item["candidates"]:
