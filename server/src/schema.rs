@@ -44,6 +44,7 @@ diesel::table! {
         kcal_per_100g -> Nullable<Double>,
         grams_per_cup -> Nullable<Double>,
         grams_per_piece -> Nullable<Double>,
+        shopping_category -> Nullable<Text>,
     }
 }
 

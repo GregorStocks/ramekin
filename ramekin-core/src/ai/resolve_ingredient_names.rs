@@ -11,6 +11,7 @@ use crate::ai::{
     complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage, INGREDIENT_MAX_TOKENS,
 };
 use crate::catalog::EstimatedFood;
+use crate::ingredient_categorizer::CATEGORIES;
 
 #[derive(Debug, Deserialize)]
 struct Response {
@@ -25,6 +26,7 @@ struct RawResolution {
     kcal_per_100g: Option<f64>,
     grams_per_cup: Option<f64>,
     grams_per_piece: Option<f64>,
+    shopping_category: Option<String>,
 }
 
 /// The answer for one name.
@@ -32,7 +34,8 @@ struct RawResolution {
 pub enum NameResolution {
     /// A catalog key from that name's candidates.
     Entry(String),
-    /// A real food no candidate matches, with the model's numbers.
+    /// A real food no candidate matches, with the model's numbers and
+    /// shopping aisle.
     Estimate(EstimatedFood),
     NotFood,
     Unknown,
@@ -120,12 +123,23 @@ fn validate(
                 let kcal = raw.kcal_per_100g.filter(|v| within(*v, KCAL_PER_100G));
                 let cup_ok = raw.grams_per_cup.is_none_or(|v| within(v, CUP_GRAMS));
                 let piece_ok = raw.grams_per_piece.is_none_or(|v| within(v, PIECE_GRAMS));
+                let Some(category) = raw
+                    .shopping_category
+                    .as_deref()
+                    .and_then(|c| CATEGORIES.into_iter().find(|&known| known == c))
+                else {
+                    return Err(format!(
+                        "{:?}: shopping category {:?} is not one of the aisles",
+                        raw.name, raw.shopping_category
+                    ));
+                };
                 match kcal {
                     Some(kcal_per_100g) if cup_ok && piece_ok => {
                         NameResolution::Estimate(EstimatedFood {
                             kcal_per_100g,
                             grams_per_cup: raw.grams_per_cup,
                             grams_per_piece: raw.grams_per_piece,
+                            category: Some(category),
                         })
                     }
                     _ => {
@@ -213,7 +227,7 @@ mod tests {
         let resolved = validate(
             &names(),
             response(&with_cheese(
-                r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 380, "grams_per_cup": 200, "grams_per_piece": null},
+                r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 380, "grams_per_cup": 200, "grams_per_piece": null, "shopping_category": "Baking"},
             {"name": "platter", "answer": "unknown"}"#,
             )),
         )
@@ -224,6 +238,7 @@ mod tests {
                 kcal_per_100g: 380.0,
                 grams_per_cup: Some(200.0),
                 grams_per_piece: None,
+                category: Some("Baking"),
             })
         );
     }
@@ -236,10 +251,13 @@ mod tests {
             r#"{"name": "moon sugar", "answer": "unknown"}, {"name": "moon sugar", "answer": "unknown"}, {"name": "platter", "answer": "unknown"}"#,
             r#"{"name": "stardust", "answer": "unknown"}, {"name": "moon sugar", "answer": "unknown"}, {"name": "platter", "answer": "unknown"}"#,
             r#"{"name": "moon sugar", "answer": "maybe"}, {"name": "platter", "answer": "unknown"}"#,
-            // No calories, implausible calories, an implausible cup.
-            r#"{"name": "moon sugar", "answer": "estimate"}, {"name": "platter", "answer": "unknown"}"#,
-            r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 2000}, {"name": "platter", "answer": "unknown"}"#,
-            r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 300, "grams_per_cup": 5000}, {"name": "platter", "answer": "unknown"}"#,
+            // No calories, implausible calories, an implausible cup, no
+            // aisle, an aisle that isn't one.
+            r#"{"name": "moon sugar", "answer": "estimate", "shopping_category": "Baking"}, {"name": "platter", "answer": "unknown"}"#,
+            r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 2000, "shopping_category": "Baking"}, {"name": "platter", "answer": "unknown"}"#,
+            r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 300, "grams_per_cup": 5000, "shopping_category": "Baking"}, {"name": "platter", "answer": "unknown"}"#,
+            r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 300}, {"name": "platter", "answer": "unknown"}"#,
+            r#"{"name": "moon sugar", "answer": "estimate", "kcal_per_100g": 300, "shopping_category": "Aisle 9"}, {"name": "platter", "answer": "unknown"}"#,
         ] {
             let json = with_cheese(rest);
             assert!(validate(&names(), response(&json)).is_err(), "{json}");

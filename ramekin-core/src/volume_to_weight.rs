@@ -208,6 +208,7 @@ mod tests {
                     kcal_per_100g: 200.0,
                     grams_per_cup: Some(150.0),
                     grams_per_piece: None,
+                    category: None,
                 }),
             ),
         ]);

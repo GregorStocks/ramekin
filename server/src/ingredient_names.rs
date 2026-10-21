@@ -10,8 +10,9 @@
 //! and reads neither call the LLM nor queue names. An invalid answer is asked
 //! again up to `MAX_ATTEMPTS` times; a name that still fails stays visible
 //! (Settings -> Ingredient recognition) until retried. An answer is kept until
-//! the catalog stops accepting it (see `CatalogSync`): names are never re-asked
-//! because the model or the candidate list changed.
+//! the catalog stops accepting it or it lacks a shopping aisle (see
+//! `CatalogSync`): names are never re-asked because the model or the candidate
+//! list changed.
 
 use std::collections::{BTreeMap, BTreeSet, HashSet};
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -28,6 +29,7 @@ use ramekin_core::catalog::{
     candidates, is_ambiguous, learned_key_resolves, normalize, unlearned_name, EstimatedFood,
     Learned, LearnedTarget,
 };
+use ramekin_core::ingredient_categorizer::CATEGORIES;
 use tokio::sync::{Mutex, Notify};
 
 use crate::db::{run_blocking, DbPool};
@@ -146,11 +148,12 @@ pub fn load_learned<'a>(
             names::kcal_per_100g,
             names::grams_per_cup,
             names::grams_per_piece,
+            names::shopping_category,
         ))
         .load(conn)?;
     Ok(rows
         .into_iter()
-        .map(|(name, disposition, key, kcal, cup, piece)| {
+        .map(|(name, disposition, key, kcal, cup, piece, category)| {
             let target = match (disposition.as_deref(), key, kcal) {
                 (Some("entry"), Some(key), _) => LearnedTarget::Entry(key),
                 (Some("estimate"), _, Some(kcal_per_100g)) => {
@@ -158,6 +161,7 @@ pub fn load_learned<'a>(
                         kcal_per_100g,
                         grams_per_cup: cup,
                         grams_per_piece: piece,
+                        category: category.as_deref().and_then(shopping_category),
                     })
                 }
                 (Some("not_food"), _, _) => LearnedTarget::NotFood,
@@ -168,7 +172,8 @@ pub fn load_learned<'a>(
         .collect())
 }
 
-/// Name, disposition, key, and an estimate's calories, cup and piece weights.
+/// Name, disposition, key, and an estimate's calories, cup and piece
+/// weights, and aisle.
 type LearnedRow = (
     String,
     Option<String>,
@@ -176,7 +181,13 @@ type LearnedRow = (
     Option<f64>,
     Option<f64>,
     Option<f64>,
+    Option<String>,
 );
+
+/// A stored aisle as one of the categorizer's.
+fn shopping_category(stored: &str) -> Option<&'static str> {
+    CATEGORIES.into_iter().find(|&category| category == stored)
+}
 
 /// Whether any of `items`' unknown names is still waiting to be resolved,
 /// so a reader knows a fresher answer is coming.
@@ -206,6 +217,9 @@ pub enum CatalogSync {
     /// The catalog now calls the name ambiguous, which rules out an estimate
     /// or a non-food answer: ask again for the food a recipe most likely means.
     NowAmbiguous,
+    /// An estimate stored before estimates carried a shopping aisle (or with
+    /// one the categorizer no longer has): ask again for one.
+    NoCategory,
 }
 
 /// A stored name as the startup sync reads it.
@@ -215,6 +229,7 @@ pub struct StoredName {
     pub status: String,
     pub disposition: Option<String>,
     pub catalog_key: Option<String>,
+    pub shopping_category: Option<String>,
 }
 
 /// Whether the committed catalog rules out a stored answer. A name the
@@ -227,6 +242,15 @@ pub fn catalog_sync(row: &StoredName) -> Option<CatalogSync> {
         (Some("entry"), Some(key)) if !learned_key_resolves(key) => Some(CatalogSync::StaleKey),
         (Some("estimate" | "not_food"), _) if is_ambiguous(&row.name) => {
             Some(CatalogSync::NowAmbiguous)
+        }
+        (Some("estimate"), _)
+            if row
+                .shopping_category
+                .as_deref()
+                .and_then(shopping_category)
+                .is_none() =>
+        {
+            Some(CatalogSync::NoCategory)
         }
         _ => None,
     }
@@ -252,6 +276,7 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
             names::status,
             names::disposition,
             names::catalog_key,
+            names::shopping_category,
         ))
         .load(&mut conn)
         .map_err(|e| e.to_string())?;
@@ -273,6 +298,7 @@ pub fn sync_with_catalog(pool: &DbPool) -> Result<BTreeMap<CatalogSync, usize>, 
                     names::kcal_per_100g.eq(None::<f64>),
                     names::grams_per_cup.eq(None::<f64>),
                     names::grams_per_piece.eq(None::<f64>),
+                    names::shopping_category.eq(None::<String>),
                     names::error.eq(None::<String>),
                     names::attempts.eq(0),
                     names::updated_at.eq(now),
@@ -641,16 +667,11 @@ async fn save_resolved(
     model: String,
 ) -> Result<(), String> {
     let resolved = answers.len();
-    // Only entries and non-foods give a shopping category. A pending name has
-    // no earlier answer, so nothing else changes one.
+    // Entries, estimates and non-foods give a shopping category. A pending
+    // name has no earlier answer, so nothing else changes one.
     let recategorized: HashSet<String> = answers
         .iter()
-        .filter(|(_, resolution)| {
-            matches!(
-                resolution,
-                NameResolution::Entry(_) | NameResolution::NotFood
-            )
-        })
+        .filter(|(_, resolution)| !matches!(resolution, NameResolution::Unknown))
         .map(|(name, _)| name.clone())
         .collect();
     // One write for the answers and the categories they change, so no
@@ -672,6 +693,7 @@ async fn save_resolved(
                     names::kcal_per_100g.eq(estimate.map(|e| e.kcal_per_100g)),
                     names::grams_per_cup.eq(estimate.and_then(|e| e.grams_per_cup)),
                     names::grams_per_piece.eq(estimate.and_then(|e| e.grams_per_piece)),
+                    names::shopping_category.eq(estimate.and_then(|e| e.category)),
                     names::model.eq(&model),
                     names::error.eq(None::<String>),
                     names::attempts.eq(names::attempts + 1),
@@ -780,6 +802,7 @@ mod tests {
             status: status.to_string(),
             disposition: disposition.map(str::to_string),
             catalog_key: key.map(str::to_string),
+            shopping_category: (disposition == Some("estimate")).then(|| "Snacks".to_string()),
         }
     }
 
@@ -898,6 +921,21 @@ mod tests {
             Some("all-purpose flour"),
         );
         assert_eq!(catalog_sync(&good), None);
+    }
+
+    #[test]
+    fn estimates_without_an_aisle_are_asked_again() {
+        for stored in [None, Some("Household")] {
+            let old = StoredName {
+                shopping_category: stored.map(str::to_string),
+                ..row("zorblax paste", RESOLVED, Some("estimate"), None)
+            };
+            assert_eq!(
+                catalog_sync(&old),
+                Some(CatalogSync::NoCategory),
+                "{stored:?}"
+            );
+        }
     }
 
     #[test]

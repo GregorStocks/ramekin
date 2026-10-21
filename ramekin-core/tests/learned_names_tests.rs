@@ -2,7 +2,7 @@ use ramekin_core::catalog::{
     candidates, learned_key_resolves, resolve_line_with, unlearned_name, EstimatedFood, Learned,
     LearnedTarget, Resolution, Via,
 };
-use ramekin_core::ingredient_categorizer::categorize_with;
+use ramekin_core::ingredient_categorizer::{catalog_category_with, categorize_with};
 use ramekin_core::ingredient_parser::{Measurement, ParsedIngredient};
 use ramekin_core::nutrition::{estimate, estimate_with};
 
@@ -62,9 +62,10 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
         kcal_per_100g: 250.0,
         grams_per_cup: Some(120.0),
         grams_per_piece: Some(30.0),
+        category: None,
     };
     let learned = learned(&[("moon dust", LearnedTarget::Estimate(estimate_of))]);
-    // Still not a catalog entry, so densities and categories don't use it.
+    // Still not a catalog entry, so densities don't use it.
     assert!(matches!(
         resolve_line_with("moon dust", None, &learned),
         Resolution::Unresolved
@@ -95,6 +96,7 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
             kcal_per_100g: 0.0,
             grams_per_cup: None,
             grams_per_piece: None,
+            category: None,
         }),
     )]);
     let result =
@@ -107,6 +109,7 @@ fn estimated_foods_count_with_the_model_numbers_and_say_so() {
             kcal_per_100g: 880.0,
             grams_per_cup: Some(205.0),
             grams_per_piece: None,
+            category: None,
         }),
     )]);
     let frying = ParsedIngredient {
@@ -194,6 +197,31 @@ fn estimates_and_categories_use_learned_names() {
     assert_eq!(categorize_with("moon sugar", &learned), "Baking");
     let platter = self::learned(&[("serving platter", LearnedTarget::NotFood)]);
     assert_eq!(categorize_with("serving platter", &platter), "Other");
+}
+
+#[test]
+fn estimates_give_their_aisle() {
+    let estimate = |category| {
+        LearnedTarget::Estimate(EstimatedFood {
+            kcal_per_100g: 120.0,
+            grams_per_cup: None,
+            grams_per_piece: None,
+            category,
+        })
+    };
+    // Keywords would say Meat & Seafood for this name; the model's aisle for
+    // the food wins, as a learned entry's category does.
+    let item = "zzqq chicken dip";
+    assert_eq!(categorize_with(item, &Learned::new()), "Meat & Seafood");
+    let learned = learned(&[("zzqq chicken dip", estimate(Some("Condiments & Sauces")))]);
+    assert_eq!(categorize_with(item, &learned), "Condiments & Sauces");
+    assert_eq!(
+        catalog_category_with(item, &learned),
+        Some("Condiments & Sauces")
+    );
+    // An estimate stored before estimates had an aisle gives none.
+    let old = self::learned(&[("zzqq chicken dip", estimate(None))]);
+    assert_eq!(categorize_with(item, &old), "Meat & Seafood");
 }
 
 #[test]

@@ -288,6 +288,8 @@ struct LearnedRow {
     grams_per_cup: Option<f64>,
     #[serde(default)]
     grams_per_piece: Option<f64>,
+    #[serde(default)]
+    shopping_category: Option<String>,
 }
 
 impl LearnedRow {
@@ -305,6 +307,11 @@ impl LearnedRow {
                         kcal_per_100g,
                         grams_per_cup: self.grams_per_cup,
                         grams_per_piece: self.grams_per_piece,
+                        category: self.shopping_category.as_deref().and_then(|stored| {
+                            ramekin_core::ingredient_categorizer::CATEGORIES
+                                .into_iter()
+                                .find(|&category| category == stored)
+                        }),
                     })
                 }
                 (Some("not_food"), None, None) => LearnedTarget::NotFood,

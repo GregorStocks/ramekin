@@ -19,7 +19,8 @@ pub enum LearnedTarget {
     /// Not an ingredient (a heading, equipment, a serving note).
     NotFood,
     /// A real food no catalog entry matches, with the model's own numbers.
-    /// Estimates label it; never used for categories or density alternatives.
+    /// Estimates label it, and shopping lists use its aisle; never used for
+    /// density alternatives.
     Estimate(EstimatedFood),
     /// The LLM couldn't tell; still unknown.
     Unknown,
@@ -32,6 +33,9 @@ pub struct EstimatedFood {
     pub grams_per_cup: Option<f64>,
     /// One whole piece of a typical size, for a bare count.
     pub grams_per_piece: Option<f64>,
+    /// The shopping aisle (one of `ingredient_categorizer::CATEGORIES`).
+    /// None for an estimate stored before estimates carried one.
+    pub category: Option<&'static str>,
 }
 
 /// Learned answers keyed by the catalog-normalized name.
