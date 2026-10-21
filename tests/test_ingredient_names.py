@@ -289,7 +289,7 @@ def test_resolving_a_name_reaches_incremental_sync(authed_api_client, padding):
     client, _ = authed_api_client
     shopping = SyncApi(client)
     names_api = IngredientNamesApi(client)
-    # Keywords say canned beans; the mock resolves it to bean sprouts.
+    # Unresolved, nothing places it; the mock resolves it to bean sprouts.
     item = unique("beans")
     stored = f"{padding}{item}{padding}"
     other = unique("sugar")
@@ -299,7 +299,7 @@ def test_resolving_a_name_reaches_incremental_sync(authed_api_client, padding):
     wait_for(lambda: mock_answers(other.lower()) >= 1)
     synced = sync(shopping)
     before = {c.item: c for c in synced.changes}
-    assert before[stored].computed_category == "Canned Goods"
+    assert before[stored].computed_category == "Other"
 
     # Resolving after the client's last sync stores the item's new category
     # and marks it changed, so the next incremental sync carries it. Other
@@ -324,8 +324,8 @@ def test_a_resolution_that_keeps_the_category_resends_nothing(authed_api_client)
     client, _ = authed_api_client
     shopping = SyncApi(client)
     names_api = IngredientNamesApi(client)
-    # Keywords and the resolved entry both say Baking.
-    item = unique("sugar")
+    # The mock can't tell what it is, so it stays Other.
+    item = unique("unknowable sugar")
     mock_fail(item.lower(), True)
     add(shopping, item)
     wait_for(lambda: failures_named(names_api, item.lower()))
@@ -338,7 +338,7 @@ def test_a_resolution_that_keeps_the_category_resends_nothing(authed_api_client)
     changes = sync(shopping, cursor=synced.cursor).changes
     assert item not in [c.item for c in changes]
     listed = {i.item: i for i in items(shopping).values()}
-    assert listed[item].computed_category == "Baking"
+    assert listed[item].computed_category == "Other"
 
 
 def test_sync_queues_only_names_it_wrote(authed_api_client):

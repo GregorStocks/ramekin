@@ -2335,6 +2335,7 @@
     "spareribs": null,
     "sparkling water": "beverages, carbonated, club soda",
     "sparkling white wine": "dry white wine",
+    "spelt flour": "whole wheat flour",
     "spiced rum": "alcoholic beverage, distilled, rum, 80 proof",
     "spices": null,
     "spinach leaves": "spinach",
@@ -3946,6 +3947,10 @@
     "adobo seasoning": {
       "trace_ok": true
     },
+    "advil": {
+      "category": "Personal Care",
+      "kind": "product"
+    },
     "aleppo pepper": {
       "trace_ok": true
     },
@@ -4049,6 +4054,10 @@
         "value": 357.0
       }
     },
+    "aspirin": {
+      "category": "Personal Care",
+      "kind": "product"
+    },
     "assorted nerimono (japanese fish cakes)": {
       "kcal_per_100g": {
         "source": "USDA FoodData Central Branded food 537791 (ASSORTED FISH CAKE (ODEN SET), ANA): 166 kcal per 100 g",
@@ -4099,6 +4108,10 @@
         "url": "https://fdc.nal.usda.gov/food-details/373107/nutrients",
         "value": 176.0
       }
+    },
+    "band aids": {
+      "category": "Personal Care",
+      "kind": "product"
     },
     "bitters": {
       "trace_ok": true
@@ -4206,6 +4219,18 @@
         "url": "https://fdc.nal.usda.gov/food-details/593835/nutrients",
         "value": 371.0
       }
+    },
+    "cat food": {
+      "category": "Pet",
+      "kind": "product"
+    },
+    "cat litter": {
+      "category": "Pet",
+      "kind": "product"
+    },
+    "cat treats": {
+      "category": "Pet",
+      "kind": "product"
     },
     "celery salt": {
       "trace_ok": true
@@ -4414,6 +4439,14 @@
       "category": "Other",
       "kind": "product"
     },
+    "dental floss": {
+      "category": "Personal Care",
+      "kind": "product"
+    },
+    "deodorant": {
+      "category": "Personal Care",
+      "kind": "product"
+    },
     "diamond crystal kosher salt": {
       "fdc_id": 173468,
       "grams_per_cup": {
@@ -4439,6 +4472,10 @@
     },
     "disposable aluminum pan": {
       "category": "Other",
+      "kind": "product"
+    },
+    "dog food": {
+      "category": "Pet",
       "kind": "product"
     },
     "dog treats": {
@@ -4860,6 +4897,10 @@
       "category": "Other",
       "kind": "product"
     },
+    "kitty litter": {
+      "category": "Pet",
+      "kind": "product"
+    },
     "kombu": {
       "fdc_id": 2709988
     },
@@ -4939,6 +4980,10 @@
     },
     "liquid smoke": {
       "trace_ok": true
+    },
+    "lotion": {
+      "category": "Personal Care",
+      "kind": "product"
     },
     "lucky charms": {
       "grams_per_cup": {
@@ -5032,6 +5077,10 @@
     },
     "mixing bowls": {
       "category": "Other",
+      "kind": "product"
+    },
+    "mouthwash": {
+      "category": "Personal Care",
       "kind": "product"
     },
     "mrs. dash": {
@@ -5133,6 +5182,10 @@
         "url": "https://fdc.nal.usda.gov/food-details/570979/nutrients",
         "value": 533.0
       }
+    },
+    "pet food": {
+      "category": "Pet",
+      "kind": "product"
     },
     "pickle juice": {
       "grams_per_cup": {
@@ -5315,6 +5368,10 @@
     "seasoned salt": {
       "trace_ok": true
     },
+    "shampoo": {
+      "category": "Personal Care",
+      "kind": "product"
+    },
     "shelf-stable or refrigerated potato gnocchi": {
       "fdc_id": 2708722
     },
@@ -5373,6 +5430,10 @@
     "sumac": {
       "trace_ok": true
     },
+    "sunscreen": {
+      "category": "Personal Care",
+      "kind": "product"
+    },
     "tajin seasoning": {
       "trace_ok": true
     },
@@ -5419,8 +5480,20 @@
         "value": 167.0
       }
     },
+    "toothbrush": {
+      "category": "Personal Care",
+      "kind": "product"
+    },
+    "toothpaste": {
+      "category": "Personal Care",
+      "kind": "product"
+    },
     "toothpicks": {
       "category": "Other",
+      "kind": "product"
+    },
+    "tylenol": {
+      "category": "Personal Care",
       "kind": "product"
     },
     "tzatziki": {

@@ -6,17 +6,17 @@ Replays the three ingredient-name matchers over committed corpora:
 
 - **Nutrition**: `nutrition::estimate`. "Name recognized" means the name matched a food; "calories computed" also needs a usable quantity, and includes negligible lines (salt, spices to taste). Non-food lines (leftover headers, serving notes, products like parchment paper) are counted separately and excluded from both, numerator and denominator. A recipe is fully estimated when every line has calories computed, and has per-serving calories when it is also fully estimated and its servings parse; only snapshots carry servings.
 - **Density**: `catalog::grams_per_cup`, over lines with a volume unit.
-- **Shopping category**: `categorize`; "categorized" means not "Other". "Catalog only" leaves out the keyword rules (`catalog_category_with`).
+- **Shopping category**: `categorize`; "categorized" means not "Other".
 
 A CLI unit test regenerates this file and fails if it is stale. The most frequent unrecognized names change with every catalog edit, so they are written to the uncommitted `logs/ingredient-catalog-audit-local.md` instead.
 
 ## Summary
 
-| Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized | Lines categorized (catalog only) |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Pipeline fixtures | 5408 | 60554 | 306 | 54145/60248 (89.9%) | 51662/60248 (85.7%) | 1585/5408 (29.3%) | n/a (no servings) | 31942/37338 (85.5%) | 59924/60554 (99.0%) | 55560/60554 (91.8%) |
-| Paprika fixtures | 462 | 5379 | 22 | 5179/5357 (96.7%) | 4824/5357 (90.1%) | 191/462 (41.3%) | n/a (no servings) | 2552/2893 (88.2%) | 5348/5379 (99.4%) | 5281/5379 (98.2%) |
-| Pipeline snapshots | 445 | 5177 | 17 | 5011/5160 (97.1%) | 4726/5160 (91.6%) | 194/445 (43.6%) | 98/445 (22.0%) | 2527/2853 (88.6%) | 5163/5177 (99.7%) | 5098/5177 (98.5%) |
+| Corpus | Recipes | Lines | Non-food lines | Nutrition name recognized | Calories computed | Recipes fully estimated | Recipes with per-serving | Volume lines with density | Lines categorized |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Pipeline fixtures | 5408 | 60554 | 306 | 54146/60248 (89.9%) | 51663/60248 (85.8%) | 1585/5408 (29.3%) | n/a (no servings) | 31943/37338 (85.6%) | 55560/60554 (91.8%) |
+| Paprika fixtures | 462 | 5379 | 22 | 5179/5357 (96.7%) | 4824/5357 (90.1%) | 191/462 (41.3%) | n/a (no servings) | 2552/2893 (88.2%) | 5281/5379 (98.2%) |
+| Pipeline snapshots | 445 | 5177 | 17 | 5011/5160 (97.1%) | 4726/5160 (91.6%) | 194/445 (43.6%) | 98/445 (22.0%) | 2527/2853 (88.6%) | 5098/5177 (98.5%) |
 
 ## Pipeline fixtures
 
@@ -28,7 +28,7 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 | Frying oil: only part of it is absorbed | 98 | 0.2% |
 | Missing density for this food | 24 | 0.0% |
 | Missing quantity | 1889 | 3.1% |
-| No supported nutrition match | 5580 | 9.2% |
+| No supported nutrition match | 5579 | 9.2% |
 | Several ingredients share one amount | 55 | 0.1% |
 | Unsupported or missing quantity | 72 | 0.1% |
 | Unsupported quantity unit | 345 | 0.6% |
@@ -37,8 +37,8 @@ A CLI unit test regenerates this file and fails if it is stale. The most frequen
 
 | Uncounted | Recipes | Share of recipes |
 | --- | ---: | ---: |
-| 0 | 2312 | 42.8% |
-| 1 | 1724 | 31.9% |
+| 0 | 2313 | 42.8% |
+| 1 | 1723 | 31.9% |
 | 2 | 819 | 15.1% |
 | 3 | 359 | 6.6% |
 | 4-5 | 157 | 2.9% |
@@ -52,9 +52,9 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 32
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
-| Nutrition (all failures) | 6735 | `fa4353537fe7` |
-| Density | 2647 | `63c8dec82d18` |
-| Shopping category | 507 | `42eb418a73f5` |
+| Nutrition (all failures) | 6734 | `3f06693f51d0` |
+| Density | 2646 | `e52037e54f24` |
+| Shopping category | 4693 | `6a094fc61652` |
 
 ## Paprika fixtures
 
@@ -92,7 +92,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 3
 | --- | ---: | --- |
 | Nutrition (all failures) | 439 | `af4a8f9a953e` |
 | Density | 187 | `a8bf0b9db99c` |
-| Shopping category | 30 | `7c3de50af9b7` |
+| Shopping category | 96 | `1d5faa7492af` |
 
 ## Pipeline snapshots
 
@@ -130,7 +130,7 @@ Weights to estimate (distinct food and unit pairs the catalog can't weigh): 2
 | --- | ---: | --- |
 | Nutrition (all failures) | 366 | `10c85f9eb34b` |
 | Density | 182 | `019b033db1b4` |
-| Shopping category | 14 | `d2140a1aabe8` |
+| Shopping category | 78 | `591989325635` |
 
 ## Shopping-list corpus
 
@@ -140,12 +140,11 @@ Hand-typed shopping-list items from prod (`data/shopping-list-categories.json`).
 | --- | ---: | ---: |
 | Items | 212 | 434 |
 | Nutrition name recognized | 141/207 (68.1%) | 318/426 (74.6%) |
-| Categorized (not "Other") | 197/212 (92.9%) | 418/434 (96.3%) |
-| Categorized by the catalog alone | 186/212 (87.7%) | 406/434 (93.5%) |
+| Categorized (not "Other") | 186/212 (87.7%) | 406/434 (93.5%) |
 
 ### Unrecognized-name fingerprints
 
 | Matcher | Distinct entries | Fingerprint |
 | --- | ---: | --- |
 | Nutrition | 63 | `124e33763aec` |
-| Shopping category | 15 | `18c353e039d6` |
+| Shopping category | 26 | `460e07cce1ba` |
