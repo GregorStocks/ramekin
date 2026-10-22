@@ -175,6 +175,31 @@ and an ambiguous hit still lets a later step find a specific food. A trailing
 " to taste" is stripped like the other modifiers. If no single food matches,
 the name is tried as a compound (see above).
 
+## Compared with ingredient-parser
+
+[ingredient-parser](https://github.com/strangetom/ingredient-parser) (2.9.1,
+Python) is the established open-source library for the same job: a model
+trained on about 88k labeled sentences tags the name, size, prep and comment,
+and an optional matcher links the name to USDA FoodData Central. On
+2026-10-21 it was compared with our parser and catalog on 300 random lines
+from 116 recipes scraped fresh from the pipeline's sites (none of them fixture
+URLs). Judges were not told which system gave which answer.
+
+| Measure (of 300 lines) | Ours | Theirs |
+| --- | ---: | ---: |
+| Food name extracted cleanly | 243 | 279 |
+| Right food, via our catalog | 256 (1 wrong, 4 wrong form, 39 no match) | 260 (1 wrong, 3 wrong form, 36 no match), their parser into our catalog |
+| Right food, their matcher | — | 226 (27 wrong, 18 wrong form, 29 no match) |
+
+Their parser is better at splitting prep and size words off the name, but this
+resolver strips those words itself ("chopped red onion", "freshly grated
+nutmeg"), so swapping parsers changed the food on only 9 lines, 6 for the
+better. Their matcher leaves fewer lines unmatched (29 against 39), but its wrong answers are confident
+("chicken Marylands" → ground chicken, "pumpkin spice pudding mix" → pumpkin
+pie spice). A name this catalog can't match goes to the AI name resolver
+instead. Neither was adopted. The comparison covered food names only, not
+amounts and units.
+
 ## Data files
 
 ### `data/usda.json` (generated; do not edit)

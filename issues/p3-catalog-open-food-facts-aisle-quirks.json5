@@ -1,0 +1,14 @@
+{
+  "title": "Fix Open Food Facts aisle quirks",
+  "description": "A line that neither the catalog nor a learned answer places gets its aisle from Open Food Facts (data/open_food_facts.json), and a spot check found these wrong: butter variants ('sweet butter' -> Produce, 'garlic butter' and 'European-style butter' -> Oils & Vinegars), 'diced tomatoes with green chiles' -> Produce, pecans ('pecan chips', 'shelled pecans') -> Snacks, 'lemon pepper' -> Meat & Seafood, 'ginger juice' -> Beverages, 'fish stock' -> Spices & Seasonings, 'Seasonings' -> Condiments & Sauces, 'juniper berries' -> Condiments & Sauces. \
+Most come from product-name or brand votes rather than the taxonomy; look for a systematic fix in scripts/import-open-food-facts.py or open_food_facts_aisles.json before adding catalog entries one by one. \
+The shopping-list scorecard (make shopping-list-categorizer-test) reports wrong aisles apart from missing ones; its two wrong aisles are 'Dip' -> Cheese (Open Food Facts) and 'Ground flaxseed' -> Nuts & Dried Fruit (debatable label).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "catalog",
+  ],
+  "created_at": "2026-10-20T00:00:00-07:00",
+  "updated_at": "2026-10-21T00:00:00-07:00",
+}
