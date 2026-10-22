@@ -226,6 +226,35 @@ final class ShoppingListStoreTests: XCTestCase {
         XCTAssertEqual(staleItem.item, "Apples")
     }
 
+    func testReconnectingDuringAFailingSyncRetriesOnceItEnds() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var store: ShoppingListStore!
+        var requestCount = 0
+        store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { request in
+                requestCount += 1
+                if requestCount == 1 {
+                    await store.syncIfNeeded()
+                    throw URLError(.notConnectedToInternet)
+                }
+                return Self.response(results: (request.ops ?? []).map { _ in .applied })
+            }
+        )
+        store.addItem(name: "Apples")
+
+        await store.syncWithServer()
+
+        XCTAssertEqual(requestCount, 2)
+        XCTAssertTrue(
+            try stack.viewContext.fetch(ShoppingItem.fetchPendingSync(accountKey: firstAccount)).isEmpty
+        )
+    }
+
     static func response(
         results: [OpResult] = [],
         changes: [SyncShoppingListItem] = [],
