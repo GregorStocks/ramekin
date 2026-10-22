@@ -71,9 +71,10 @@ impl CachingClientBuilder {
             rate_limit_ms: 200, // Default 200ms between requests to same host
             never_network,
             timeout: Duration::from_secs(30),
-            // No "Mozilla/5.0 (compatible; ...)" prefix: some nginx bot filters
-            // (e.g. japanesecooking101.com) 403 that pattern but pass a plain token.
-            user_agent: "Ramekin/1.0 (+https://ramekin.app)".to_string(),
+            // No "(compatible; ...)": some bot filters (e.g. japanesecooking101.com)
+            // 403 that pattern. A browser-like UA is worse: many WordPress sites
+            // block it.
+            user_agent: "Mozilla/5.0 Ramekin/1.0 (+https://ramekin.app)".to_string(),
         }
     }
 
