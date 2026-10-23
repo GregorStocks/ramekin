@@ -775,7 +775,19 @@ fn unit_phrase_size(c: &mut Cursor) -> Option<String> {
 
 /// Mass units a package or noted weight may use.
 const PACKAGE_MASSES: &[&str] = &[
-    "ounce", "ounces", "oz", "pound", "pounds", "lb", "lbs", "gram", "grams", "g",
+    "ounce",
+    "ounces",
+    "oz",
+    "pound",
+    "pounds",
+    "lb",
+    "lbs",
+    "gram",
+    "grams",
+    "g",
+    "kilogram",
+    "kilograms",
+    "kg",
 ];
 
 /// Containers whose weight a recipe may state ("15-ounce can").
@@ -1016,8 +1028,7 @@ pub(super) fn read_noted_weight(part: &str) -> Option<NotedWeight> {
     if !hedged {
         c.pos = 0;
     }
-    let masses = [PACKAGE_MASSES, &["kilogram", "kilograms", "kg"]].concat();
-    let (amount, mass, dash) = weight(&mut c, &masses)?;
+    let (amount, mass, dash) = weight(&mut c, PACKAGE_MASSES)?;
     // "(1.1 k)": a conversion in parentheses.
     if c.peek(0).is_some_and(|t| t.kind == Kind::Open) {
         let mut probe = c.clone();
@@ -1265,6 +1276,10 @@ mod tests {
         assert_eq!(
             read_leading_weight("5- to 5 1/2-ounce log"),
             Some((Range { min: 5.0, max: 5.5 }, "ounce".to_string()))
+        );
+        assert_eq!(
+            read_leading_weight("1-kg bags"),
+            Some((Range::exact(1.0), "kg".to_string()))
         );
         assert_eq!(read_leading_weight("2-inch piece"), None);
         assert_eq!(
