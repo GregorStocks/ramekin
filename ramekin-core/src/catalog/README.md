@@ -304,7 +304,17 @@ A category's aisle comes from `data/open_food_facts_aisles.json`
 aisle each means, and a category takes the aisle of its nearest listed ancestor,
 itself first. Among listed ancestors equally near, the earlier entry wins, so
 the frozen and canned forms are listed first and beat the food. The taxonomy
-wins over product names, which win over brands.
+wins over product names, which win over brands. Many US products are tagged
+with only a broad root category, so a root's aisle is what those products
+mostly are: `en:fats` is Dairy & Eggs (butter and spreads; `en:vegetable-fats`
+stays Oils & Vinegars), and `en:cooking-helpers` is Baking (baking soda, mixes,
+coconut flakes, bread crumbs). Measured on 2026-10-22: of the 541 fixture
+names that only Open Food Facts places, about 12% are still in the wrong
+aisle. Most of those come from products tagged with one broad category: nuts
+and dried fruit sold as snacks ("pecan chips"), and canned tomatoes tagged only
+as tomatoes, so in Produce. Leaving out those categories' votes lost as many
+right answers as wrong ones. On the server, a learned answer's aisle comes
+first.
 
 Open Food Facts publishes daily exports rather than pinned releases. The file
 records the sha256 of each cached input, and `make catalog-import-off REFRESH=1`

@@ -80,4 +80,13 @@ mod tests {
         assert_eq!(category("cheez its"), Some("Snacks"));
         assert_eq!(category("pretzels"), Some("Snacks"));
     }
+
+    #[test]
+    fn broad_roots_take_what_their_products_mostly_are() {
+        // Products tagged only "fats" are butter and spreads, and only
+        // "cooking helpers" baking goods.
+        assert_eq!(category("european style butter"), Some("Dairy & Eggs"));
+        assert_eq!(category("vegetable fats"), Some("Oils & Vinegars"));
+        assert_eq!(category("muffin mix"), Some("Baking"));
+    }
 }
