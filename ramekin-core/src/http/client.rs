@@ -8,7 +8,7 @@ use std::time::Duration;
 
 use crate::error::FetchError;
 
-use super::cache::DiskCache;
+use super::cache::{is_permanent_status, DiskCache};
 use super::charset;
 use super::rate_limiter::RateLimiter;
 
@@ -71,7 +71,10 @@ impl CachingClientBuilder {
             rate_limit_ms: 200, // Default 200ms between requests to same host
             never_network,
             timeout: Duration::from_secs(30),
-            user_agent: "Mozilla/5.0 (compatible; Ramekin/1.0; +https://ramekin.app)".to_string(),
+            // No "(compatible; ...)": some bot filters (e.g. japanesecooking101.com)
+            // 403 that pattern. A browser-like UA is worse: many WordPress sites
+            // block it.
+            user_agent: "Mozilla/5.0 Ramekin/1.0 (+https://ramekin.app)".to_string(),
         }
     }
 
@@ -352,7 +355,9 @@ impl CachingClient {
             let error_msg = format!("HTTP {}", response.status());
             tracing::debug!(url, status = %response.status(), "network: request failed");
             if let Some(cache) = &self.cache {
-                let _ = cache.put_error(url, &error_msg);
+                if is_permanent_status(response.status()) {
+                    let _ = cache.put_error(url, &error_msg);
+                }
             }
             return Err(FetchError::RequestFailed(
                 response.error_for_status().unwrap_err(),
