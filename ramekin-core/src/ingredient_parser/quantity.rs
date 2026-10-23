@@ -505,7 +505,7 @@ mod tests {
         close(grams(milk[0].as_ref().unwrap()), 793.79, 793.79);
         let pudding = sized("2", "3.4 oz instant pistachio pudding mix");
         close(grams(pudding[0].as_ref().unwrap()), 192.78, 192.78);
-        let rice = sized("2", "1-kg bags rice");
+        let rice = sized("2", "1-kilogram bags rice");
         close(grams(rice[0].as_ref().unwrap()), 2000.0, 2000.0);
         let sauce = sized("1", "15-ounce tomato sauce");
         close(grams(sauce[0].as_ref().unwrap()), 425.24, 425.24);
