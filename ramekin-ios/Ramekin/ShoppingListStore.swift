@@ -32,6 +32,8 @@ class ShoppingListStore: ObservableObject {
     private let syncItems: (SyncShoppingListRequest) async throws -> SyncShoppingListResponse
     private let automaticallySync: Bool
     private var activeAccountKey: String?
+    /// The network came back during a sync that may have failed offline.
+    private var retryAfterSync = false
 
     /// Wall-clock time of the last sync, used only to decide when a sync is stale.
     private static let lastSyncAtKeyPrefix = "shopping_list_last_sync_at"
@@ -202,7 +204,11 @@ extension ShoppingListStore {
     }
 
     func syncIfNeeded() async {
-        guard let activeAccountKey, isOnline, !isSyncing else { return }
+        guard let activeAccountKey, isOnline else { return }
+        guard !isSyncing else {
+            retryAfterSync = true
+            return
+        }
         let hasPending = (try? coreDataStack.viewContext.fetch(
             ShoppingItem.fetchPendingSync(accountKey: activeAccountKey)
         ))?.isEmpty == false
@@ -254,9 +260,15 @@ extension ShoppingListStore {
         fetchItems()
 
         guard activeAccountKey == syncAccountKey else {
+            retryAfterSync = false
             if automaticallySync {
                 await syncIfNeeded()
             }
+            return
+        }
+        if retryAfterSync {
+            retryAfterSync = false
+            await syncIfNeeded()
             return
         }
 
