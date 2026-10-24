@@ -241,7 +241,9 @@ Piece rules (`portions`):
   yield of a pound of meat or a whole recipe are not pieces.
 - `default_portion`, the piece a bare count means, is the first of medium,
   fruit, whole, large, small; else the one "<piece> medium"; else the only
-  piece. Parts of a piece (slice, strip, wedge, ring, …) are never the default.
+  piece; else the piece the food is named for, the last word of its
+  description's first part ("rolls, dinner" → roll, not "each"; "pie crust" →
+  crust). Parts of a piece (slice, strip, wedge, ring, …) are never the default.
 
 At lookup, a counted unit is normalized the same way ("extra-large" → "extra
 large"). A size with no exact portion uses the food's one sized piece ("2 medium

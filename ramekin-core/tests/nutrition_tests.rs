@@ -1188,6 +1188,28 @@ fn a_size_leading_the_item_sizes_each_of_the_count() {
 }
 
 #[test]
+fn a_bare_count_weighs_the_piece_the_food_is_named_for() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    // USDA weighs a dinner roll "each" (25 g) and "roll" (28 g); a bare count
+    // means the roll.
+    assert_eq!(
+        calories("dinner rolls", "12", ""),
+        calories("dinner rolls", "12", "roll")
+    );
+    assert!(calories("dinner rolls", "12", "").is_some());
+    assert_eq!(
+        calories("saltine crackers", "42", ""),
+        calories("saltine crackers", "42", "cracker")
+    );
+    assert!(calories("saltine crackers", "42", "").is_some());
+}
+
+#[test]
 fn a_weight_in_the_note_weighs_a_counted_line() {
     let noted = |raw: &str, item: &str, amount: &str, note: &str| ParsedIngredient {
         measurements: vec![Measurement {
