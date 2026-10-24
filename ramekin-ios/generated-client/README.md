@@ -61,6 +61,8 @@ Class | Method | HTTP request | Description
 *ScrapeAPI* | [**getScrape**](docs/ScrapeAPI.md#getscrape) | **GET** /api/scrape/{id} | 
 *ScrapeAPI* | [**getStepOutput**](docs/ScrapeAPI.md#getstepoutput) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 *ScrapeAPI* | [**retryScrape**](docs/ScrapeAPI.md#retryscrape) | **POST** /api/scrape/{id}/retry | 
+*ShoppingListAPI* | [**listShoppingListHistory**](docs/ShoppingListAPI.md#listshoppinglisthistory) | **GET** /api/shopping-list/history | 
+*ShoppingListAPI* | [**undoShoppingListChange**](docs/ShoppingListAPI.md#undoshoppinglistchange) | **POST** /api/shopping-list/history/{id}/undo | 
 *SyncAPI* | [**syncMealPlans**](docs/SyncAPI.md#syncmealplans) | **POST** /api/sync/meal-plans | 
 *SyncAPI* | [**syncRecipes**](docs/SyncAPI.md#syncrecipes) | **GET** /api/sync/recipes | 
 *SyncAPI* | [**syncShoppingList**](docs/SyncAPI.md#syncshoppinglist) | **POST** /api/sync/shopping-list | 
@@ -139,6 +141,8 @@ Class | Method | HTTP request | Description
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)
  - [ShoppingListFields](docs/ShoppingListFields.md)
+ - [ShoppingListHistoryEntry](docs/ShoppingListHistoryEntry.md)
+ - [ShoppingListHistoryResponse](docs/ShoppingListHistoryResponse.md)
  - [ShoppingListOp](docs/ShoppingListOp.md)
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)

@@ -30,6 +30,8 @@ class ShoppingListStore: ObservableObject {
     var isUsingVolatileStorage: Bool { coreDataStack.isUsingVolatileStore }
     private let userDefaults: UserDefaults
     private let syncItems: (SyncShoppingListRequest) async throws -> SyncShoppingListResponse
+    private let listHistory: () async throws -> ShoppingListHistoryResponse
+    private let undoHistoryEntry: (UUID) async throws -> ShoppingListHistoryEntry
     private let automaticallySync: Bool
     private var activeAccountKey: String?
     /// The network came back during a sync that may have failed offline.
@@ -52,12 +54,20 @@ class ShoppingListStore: ObservableObject {
         networkMonitor: NetworkMonitor = .shared,
         syncItems: @escaping (SyncShoppingListRequest) async throws -> SyncShoppingListResponse = {
             try await SyncAPI.syncShoppingList(syncShoppingListRequest: $0)
+        },
+        listHistory: @escaping () async throws -> ShoppingListHistoryResponse = {
+            try await ShoppingListAPI.listShoppingListHistory()
+        },
+        undoHistoryEntry: @escaping (UUID) async throws -> ShoppingListHistoryEntry = {
+            try await ShoppingListAPI.undoShoppingListChange(id: $0)
         }
     ) {
         self.coreDataStack = coreDataStack
         self.userDefaults = coreDataStack.syncStateDefaults(userDefaults)
         self.automaticallySync = automaticallySync
         self.syncItems = syncItems
+        self.listHistory = listHistory
+        self.undoHistoryEntry = undoHistoryEntry
 
         if automaticallySync {
             isOnline = networkMonitor.isOnline
@@ -177,17 +187,80 @@ extension ShoppingListStore {
 
     /// Even an item whose create looks unsent is deleted through the server:
     /// the create may have reached it on a sync whose response was lost.
-    func deleteItem(_ item: ShoppingItem) {
-        guard isActiveAccountItem(item) else { return }
+    @discardableResult
+    func deleteItem(_ item: ShoppingItem) -> ShoppingListUndo? {
+        guard isActiveAccountItem(item) else { return nil }
+        let undo = ShoppingListUndo(message: "Deleted \(item.item ?? "item")", items: [.init(item)])
         item.markDeleted()
         saveAndSync()
+        return undo
     }
 
-    func clearChecked() {
-        for item in items where item.isChecked {
+    @discardableResult
+    func clearChecked() -> ShoppingListUndo? {
+        let checked = items.filter(\.isChecked)
+        guard !checked.isEmpty else { return nil }
+        let undo = ShoppingListUndo(
+            message: checked.count == 1 ? "Cleared 1 item" : "Cleared \(checked.count) items",
+            items: checked.map(ShoppingListUndo.Item.init)
+        )
+        for item in checked {
             item.markDeleted()
         }
         saveAndSync()
+        return undo
+    }
+
+    // MARK: - Undo
+
+    /// Bring back the items `undo` deleted, through a restore op each: the
+    /// cached row if its delete is still pending, else a new one.
+    func restore(_ undo: ShoppingListUndo) {
+        guard let activeAccountKey else { return }
+        let context = coreDataStack.viewContext
+        for snapshot in undo.items {
+            let row = (try? context.fetch(ShoppingItem.fetchById(snapshot.id, accountKey: activeAccountKey)))?.first
+                ?? Self.insert(snapshot, accountKey: activeAccountKey, in: context)
+            row.markRestored()
+        }
+        saveAndSync()
+    }
+
+    private static func insert(
+        _ snapshot: ShoppingListUndo.Item,
+        accountKey: String,
+        in context: NSManagedObjectContext
+    ) -> ShoppingItem {
+        let row = ShoppingItem(context: context)
+        row.accountKey = accountKey
+        row.id = snapshot.id
+        row.item = snapshot.item
+        row.amount = snapshot.amount
+        row.note = snapshot.note
+        row.isChecked = snapshot.isChecked
+        row.sortOrder = snapshot.sortOrder
+        row.categoryOverride = snapshot.categoryOverride
+        row.category = snapshot.category
+        row.computedCategory = snapshot.computedCategory
+        row.sourceRecipeId = snapshot.sourceRecipeId
+        row.sourceRecipeTitle = snapshot.sourceRecipeTitle
+        row.changeSeq = snapshot.changeSeq
+        row.createdAt = Date()
+        row.updatedAt = Date()
+        return row
+    }
+
+    // MARK: - History
+
+    /// The latest history entries, newest first. Online only.
+    func loadHistory() async throws -> [ShoppingListHistoryEntry] {
+        try await listHistory().entries
+    }
+
+    /// Undo a history entry on the server, then sync to show the result.
+    func undo(entry id: UUID) async throws {
+        _ = try await undoHistoryEntry(id)
+        await syncWithServer()
     }
 
     private func saveAndSync() {

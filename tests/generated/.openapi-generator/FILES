@@ -10,6 +10,7 @@ ramekin_client/api/meal_plans_api.py
 ramekin_client/api/photos_api.py
 ramekin_client/api/recipes_api.py
 ramekin_client/api/scrape_api.py
+ramekin_client/api/shopping_list_api.py
 ramekin_client/api/sync_api.py
 ramekin_client/api/tags_api.py
 ramekin_client/api/testing_api.py
@@ -87,7 +88,10 @@ ramekin_client/docs/RescrapeResponse.md
 ramekin_client/docs/RetryScrapeResponse.md
 ramekin_client/docs/ScrapeApi.md
 ramekin_client/docs/ScrapeJobResponse.md
+ramekin_client/docs/ShoppingListApi.md
 ramekin_client/docs/ShoppingListFields.md
+ramekin_client/docs/ShoppingListHistoryEntry.md
+ramekin_client/docs/ShoppingListHistoryResponse.md
 ramekin_client/docs/ShoppingListOp.md
 ramekin_client/docs/SignupRequest.md
 ramekin_client/docs/SignupResponse.md
@@ -178,6 +182,8 @@ ramekin_client/models/rescrape_response.py
 ramekin_client/models/retry_scrape_response.py
 ramekin_client/models/scrape_job_response.py
 ramekin_client/models/shopping_list_fields.py
+ramekin_client/models/shopping_list_history_entry.py
+ramekin_client/models/shopping_list_history_response.py
 ramekin_client/models/shopping_list_op.py
 ramekin_client/models/signup_request.py
 ramekin_client/models/signup_response.py
@@ -272,7 +278,10 @@ ramekin_client/test/test_rescrape_response.py
 ramekin_client/test/test_retry_scrape_response.py
 ramekin_client/test/test_scrape_api.py
 ramekin_client/test/test_scrape_job_response.py
+ramekin_client/test/test_shopping_list_api.py
 ramekin_client/test/test_shopping_list_fields.py
+ramekin_client/test/test_shopping_list_history_entry.py
+ramekin_client/test/test_shopping_list_history_response.py
 ramekin_client/test/test_shopping_list_op.py
 ramekin_client/test/test_signup_request.py
 ramekin_client/test/test_signup_response.py

@@ -7,6 +7,7 @@ export * from './MealPlansApi';
 export * from './PhotosApi';
 export * from './RecipesApi';
 export * from './ScrapeApi';
+export * from './ShoppingListApi';
 export * from './SyncApi';
 export * from './TagsApi';
 export * from './TestingApi';

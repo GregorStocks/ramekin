@@ -29,6 +29,7 @@ class OpKind(str, Enum):
     CREATE = 'create'
     UPDATE = 'update'
     DELETE = 'delete'
+    RESTORE = 'restore'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

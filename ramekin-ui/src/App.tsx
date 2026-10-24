@@ -12,6 +12,7 @@ import CapturePage from "./pages/CapturePage";
 import TagsPage from "./pages/TagsPage";
 import MealPlanPage from "./pages/MealPlanPage";
 import ShoppingListPage from "./pages/ShoppingListPage";
+import ShoppingListHistoryPage from "./pages/ShoppingListHistoryPage";
 import ImportPage from "./pages/ImportPage";
 import ScrapeStatusPage from "./pages/ScrapeStatusPage";
 import SettingsPage from "./pages/SettingsPage";
@@ -102,6 +103,14 @@ function App() {
           component={() => (
             <ProtectedRoute>
               <ShoppingListPage />
+            </ProtectedRoute>
+          )}
+        />
+        <Route
+          path="/shopping-list/history"
+          component={() => (
+            <ProtectedRoute>
+              <ShoppingListHistoryPage />
             </ProtectedRoute>
           )}
         />

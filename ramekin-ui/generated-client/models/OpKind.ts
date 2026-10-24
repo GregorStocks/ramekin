@@ -20,7 +20,8 @@
 export const OpKind = {
     Create: 'create',
     Update: 'update',
-    Delete: 'delete'
+    Delete: 'delete',
+    Restore: 'restore'
 } as const;
 export type OpKind = typeof OpKind[keyof typeof OpKind];
 

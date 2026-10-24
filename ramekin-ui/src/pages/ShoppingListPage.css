@@ -183,3 +183,84 @@
 .shopping-item-delete:hover {
   color: var(--danger);
 }
+
+.shopping-header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.shopping-undo-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0.75rem 0.6rem 1.1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 25%);
+  z-index: 100;
+  max-width: calc(100vw - 2rem);
+}
+
+.shopping-undo-button {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.shopping-undo-button:hover {
+  text-decoration: underline;
+}
+
+.shopping-history {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shopping-history-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border-hairline);
+  border-radius: 4px;
+}
+
+.shopping-history-entry.undone .shopping-history-summary {
+  color: var(--text-faint);
+}
+
+.shopping-history-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.shopping-history-summary {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.shopping-history-time,
+.shopping-history-undone {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}

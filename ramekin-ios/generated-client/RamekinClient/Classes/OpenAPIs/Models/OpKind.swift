@@ -15,4 +15,5 @@ public enum OpKind: String, Codable, CaseIterable {
     case create = "create"
     case update = "update"
     case delete = "delete"
+    case restore = "restore"
 }

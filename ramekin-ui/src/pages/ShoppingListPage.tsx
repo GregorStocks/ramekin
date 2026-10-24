@@ -1,7 +1,13 @@
-import { createSignal, createMemo, createEffect, For, Show } from "solid-js";
+import {
+  createSignal,
+  createMemo,
+  createEffect,
+  onCleanup,
+  For,
+  Show,
+} from "solid-js";
 import { A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
-import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import { logger } from "../utils/logger";
@@ -14,6 +20,15 @@ import {
 } from "../utils/shoppingListSyncCache";
 import type { ShoppingListOp, SyncShoppingListItem } from "ramekin-client";
 
+/** How long the toast offers to undo a delete. */
+const UNDO_TOAST_MS = 8000;
+
+/** A delete the toast offers to undo. */
+interface Undoable {
+  message: string;
+  ids: string[];
+}
+
 export default function ShoppingListPage() {
   usePageTitle(() => "Shopping List");
   const { getSyncApi, token } = useAuth();
@@ -22,8 +37,7 @@ export default function ShoppingListPage() {
   const [categoryOrder, setCategoryOrder] = createSignal<string[]>([]);
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
-  const [deletingItem, setDeletingItem] =
-    createSignal<SyncShoppingListItem | null>(null);
+  const [undoable, setUndoable] = createSignal<Undoable | null>(null);
   const [newItemName, setNewItemName] = createSignal("");
   const [newItemAmount, setNewItemAmount] = createSignal("");
   const [updatingCategoryId, setUpdatingCategoryId] = createSignal<
@@ -151,31 +165,47 @@ export default function ShoppingListPage() {
     "Failed to update category",
   );
 
+  let undoTimer: ReturnType<typeof setTimeout> | undefined;
+  onCleanup(() => clearTimeout(undoTimer));
+
+  const offerUndo = (message: string, ids: string[]) => {
+    clearTimeout(undoTimer);
+    setUndoable({ message, ids });
+    undoTimer = setTimeout(() => setUndoable(null), UNDO_TOAST_MS);
+  };
+
+  const dismissUndo = () => {
+    clearTimeout(undoTimer);
+    setUndoable(null);
+  };
+
   const deleteItemAction = createAsyncAction(
     async (item: SyncShoppingListItem) => {
       await sync([{ op: "delete", id: item.id }]);
-      setDeletingItem(null);
+      offerUndo(`Deleted ${item.item}`, [item.id]);
     },
     "Failed to delete item",
-    {
-      onError: () => {
-        setDeletingItem(null);
-      },
-    },
   );
 
   // Deletes only the checked items on screen, so an item checked on another
   // device since the last sync is never removed unseen.
   const clearCheckedAction = createAsyncAction(async () => {
-    await sync(
-      items()
-        .filter((i) => i.isChecked)
-        .map((i): ShoppingListOp => ({ op: "delete", id: i.id })),
+    const ids = items()
+      .filter((i) => i.isChecked)
+      .map((i) => i.id);
+    await sync(ids.map((id): ShoppingListOp => ({ op: "delete", id })));
+    offerUndo(
+      ids.length === 1 ? "Cleared 1 item" : `Cleared ${ids.length} items`,
+      ids,
     );
   }, "Failed to clear checked items");
 
+  const undoDeleteAction = createAsyncAction(async (ids: string[]) => {
+    dismissUndo();
+    await sync(ids.map((id): ShoppingListOp => ({ op: "restore", id })));
+  }, "Failed to undo");
+
   const adding = addItemAction.loading;
-  const deleteLoading = deleteItemAction.loading;
   const clearingChecked = clearCheckedAction.loading;
   const pageError = () =>
     error() ??
@@ -183,7 +213,8 @@ export default function ShoppingListPage() {
     toggleCheckedAction.error() ??
     updateCategoryAction.error() ??
     deleteItemAction.error() ??
-    clearCheckedAction.error();
+    clearCheckedAction.error() ??
+    undoDeleteAction.error();
 
   const clearActionErrors = () => {
     addItemAction.clearError();
@@ -191,6 +222,7 @@ export default function ShoppingListPage() {
     updateCategoryAction.clearError();
     deleteItemAction.clearError();
     clearCheckedAction.clearError();
+    undoDeleteAction.clearError();
   };
 
   createEffect(() => {
@@ -221,14 +253,7 @@ export default function ShoppingListPage() {
     await updateCategoryAction.run(item, categoryOverride);
   };
 
-  const confirmDelete = (item: SyncShoppingListItem) => {
-    setDeletingItem(item);
-  };
-
-  const handleDelete = async () => {
-    const item = deletingItem();
-    if (!item) return;
-
+  const handleDelete = async (item: SyncShoppingListItem) => {
     setError(null);
     clearActionErrors();
     await deleteItemAction.run(item);
@@ -238,6 +263,12 @@ export default function ShoppingListPage() {
     setError(null);
     clearActionErrors();
     await clearCheckedAction.run();
+  };
+
+  const handleUndo = async (ids: string[]) => {
+    setError(null);
+    clearActionErrors();
+    await undoDeleteAction.run(ids);
   };
 
   const renderItem = (item: SyncShoppingListItem) => (
@@ -280,7 +311,7 @@ export default function ShoppingListPage() {
       </select>
       <button
         class="shopping-item-delete"
-        onClick={() => confirmDelete(item)}
+        onClick={() => handleDelete(item)}
         title="Delete item"
       >
         &times;
@@ -292,15 +323,20 @@ export default function ShoppingListPage() {
     <div class="shopping-list-page">
       <div class="page-header">
         <h2>Shopping List</h2>
-        <Show when={hasCheckedItems()}>
-          <button
-            class="btn btn-small"
-            onClick={handleClearChecked}
-            disabled={clearingChecked()}
-          >
-            {clearingChecked() ? "Clearing..." : "Clear Checked"}
-          </button>
-        </Show>
+        <div class="shopping-header-actions">
+          <Show when={hasCheckedItems()}>
+            <button
+              class="btn btn-small"
+              onClick={handleClearChecked}
+              disabled={clearingChecked()}
+            >
+              {clearingChecked() ? "Clearing..." : "Clear Checked"}
+            </button>
+          </Show>
+          <A href="/shopping-list/history" class="btn btn-small">
+            History
+          </A>
+        </div>
       </div>
 
       <form
@@ -379,31 +415,19 @@ export default function ShoppingListPage() {
         </div>
       </Show>
 
-      <Modal
-        isOpen={() => deletingItem() !== null}
-        onClose={() => setDeletingItem(null)}
-        title="Delete Item"
-        actions={
-          <>
+      <Show when={undoable()}>
+        {(pending) => (
+          <div class="shopping-undo-toast" role="status">
+            <span>{pending().message}</span>
             <button
-              class="btn"
-              onClick={() => setDeletingItem(null)}
-              disabled={deleteLoading()}
+              class="shopping-undo-button"
+              onClick={() => handleUndo(pending().ids)}
             >
-              Cancel
+              Undo
             </button>
-            <button
-              class="btn btn-danger"
-              onClick={handleDelete}
-              disabled={deleteLoading()}
-            >
-              {deleteLoading() ? "Deleting..." : "Delete"}
-            </button>
-          </>
-        }
-      >
-        <p>Delete "{deletingItem()?.item}" from your shopping list?</p>
-      </Modal>
+          </div>
+        )}
+      </Show>
     </div>
   );
 }

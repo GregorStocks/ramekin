@@ -27,6 +27,7 @@ __all__ = [
     "PhotosApi",
     "RecipesApi",
     "ScrapeApi",
+    "ShoppingListApi",
     "SyncApi",
     "TagsApi",
     "TestingApi",
@@ -102,6 +103,8 @@ __all__ = [
     "RetryScrapeResponse",
     "ScrapeJobResponse",
     "ShoppingListFields",
+    "ShoppingListHistoryEntry",
+    "ShoppingListHistoryResponse",
     "ShoppingListOp",
     "SignupRequest",
     "SignupResponse",
@@ -136,6 +139,7 @@ from ramekin_client.api.meal_plans_api import MealPlansApi as MealPlansApi
 from ramekin_client.api.photos_api import PhotosApi as PhotosApi
 from ramekin_client.api.recipes_api import RecipesApi as RecipesApi
 from ramekin_client.api.scrape_api import ScrapeApi as ScrapeApi
+from ramekin_client.api.shopping_list_api import ShoppingListApi as ShoppingListApi
 from ramekin_client.api.sync_api import SyncApi as SyncApi
 from ramekin_client.api.tags_api import TagsApi as TagsApi
 from ramekin_client.api.testing_api import TestingApi as TestingApi
@@ -215,6 +219,8 @@ from ramekin_client.models.rescrape_response import RescrapeResponse as Rescrape
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse as RetryScrapeResponse
 from ramekin_client.models.scrape_job_response import ScrapeJobResponse as ScrapeJobResponse
 from ramekin_client.models.shopping_list_fields import ShoppingListFields as ShoppingListFields
+from ramekin_client.models.shopping_list_history_entry import ShoppingListHistoryEntry as ShoppingListHistoryEntry
+from ramekin_client.models.shopping_list_history_response import ShoppingListHistoryResponse as ShoppingListHistoryResponse
 from ramekin_client.models.shopping_list_op import ShoppingListOp as ShoppingListOp
 from ramekin_client.models.signup_request import SignupRequest as SignupRequest
 from ramekin_client.models.signup_response import SignupResponse as SignupResponse

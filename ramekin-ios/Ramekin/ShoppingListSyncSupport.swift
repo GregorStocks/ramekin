@@ -18,20 +18,25 @@ enum ShoppingListSyncSupport {
             guard let id = item.id else { continue }
             let operation: ShoppingListOp
             switch item.syncStatusEnum {
-            case .pendingCreate:
+            case .pendingCreate, .pendingRestore:
+                // A restore sets every field, so "" clears the empty ones.
+                let restoring = item.syncStatusEnum == .pendingRestore
+                func text(_ value: String?) -> String? {
+                    restoring ? (value ?? "") : value
+                }
                 operation = ShoppingListOp(
                     fields: ShoppingListFields(
-                        amount: item.amount,
-                        categoryOverride: item.categoryOverride,
+                        amount: text(item.amount),
+                        categoryOverride: text(item.categoryOverride),
                         isChecked: item.isChecked,
                         item: item.item ?? "",
-                        note: item.note,
+                        note: text(item.note),
                         sortOrder: Int(item.sortOrder),
                         sourceRecipeId: item.sourceRecipeId,
                         sourceRecipeTitle: item.sourceRecipeTitle
                     ),
                     id: id,
-                    op: .create
+                    op: restoring ? .restore : .create
                 )
             case .pendingUpdate:
                 let dirty = item.dirtyFieldSet

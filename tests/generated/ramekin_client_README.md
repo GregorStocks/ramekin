@@ -98,6 +98,8 @@ Class | Method | HTTP request | Description
 *ScrapeApi* | [**get_scrape**](ramekin_client/docs/ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
 *ScrapeApi* | [**get_step_output**](ramekin_client/docs/ScrapeApi.md#get_step_output) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 *ScrapeApi* | [**retry_scrape**](ramekin_client/docs/ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
+*ShoppingListApi* | [**list_shopping_list_history**](ramekin_client/docs/ShoppingListApi.md#list_shopping_list_history) | **GET** /api/shopping-list/history | 
+*ShoppingListApi* | [**undo_shopping_list_change**](ramekin_client/docs/ShoppingListApi.md#undo_shopping_list_change) | **POST** /api/shopping-list/history/{id}/undo | 
 *SyncApi* | [**sync_meal_plans**](ramekin_client/docs/SyncApi.md#sync_meal_plans) | **POST** /api/sync/meal-plans | 
 *SyncApi* | [**sync_recipes**](ramekin_client/docs/SyncApi.md#sync_recipes) | **GET** /api/sync/recipes | 
 *SyncApi* | [**sync_shopping_list**](ramekin_client/docs/SyncApi.md#sync_shopping_list) | **POST** /api/sync/shopping-list | 
@@ -176,6 +178,8 @@ Class | Method | HTTP request | Description
  - [RetryScrapeResponse](ramekin_client/docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](ramekin_client/docs/ScrapeJobResponse.md)
  - [ShoppingListFields](ramekin_client/docs/ShoppingListFields.md)
+ - [ShoppingListHistoryEntry](ramekin_client/docs/ShoppingListHistoryEntry.md)
+ - [ShoppingListHistoryResponse](ramekin_client/docs/ShoppingListHistoryResponse.md)
  - [ShoppingListOp](ramekin_client/docs/ShoppingListOp.md)
  - [SignupRequest](ramekin_client/docs/SignupRequest.md)
  - [SignupResponse](ramekin_client/docs/SignupResponse.md)
