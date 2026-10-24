@@ -146,7 +146,7 @@ struct CalorieEstimateSection: View {
                         VStack(alignment: .leading, spacing: 6) {
                             ForEach(response.lines, id: \.index) { line in
                                 HStack(alignment: .firstTextBaseline) {
-                                    Text(line.item)
+                                    Text(label(for: line))
                                     Spacer()
                                     Text(line.text)
                                         .foregroundStyle(.secondary)
@@ -166,5 +166,11 @@ struct CalorieEstimateSection: View {
         .task(id: request) {
             await model.load(request)
         }
+    }
+
+    /// The line as the ingredient list shows it, scaled: "2 cups flour".
+    private func label(for line: CalorieLine) -> String {
+        guard request.ingredients.indices.contains(line.index) else { return line.item }
+        return request.ingredients[line.index].formatted(scale: request.scale)
     }
 }

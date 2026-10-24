@@ -153,13 +153,14 @@ def test_calorie_estimates_follow_recipe_and_scale(
     expect(breakdown_line).to_be_hidden()
     section.get_by_text("How is this calculated?").click()
     expect(breakdown_line).to_contain_text("Not recognized")
-    expect(
-        section.locator(".calorie-breakdown li", has_text="granulated sugar")
-    ).to_contain_text("~380–780 kcal")
+    sugar_line = section.locator(".calorie-breakdown li", has_text="granulated sugar")
+    expect(sugar_line).to_contain_text("100–200 g granulated sugar")
+    expect(sugar_line).to_contain_text("~380–780 kcal")
     expect(page.get_by_text("Imported nutrition: 123 calories")).to_be_visible()
     page.locator(".scale-preset", has_text="2×").click()
     expect(section).to_contain_text("At least ~770 kcal for the whole recipe")
     expect(page.locator(".ingredients-list")).to_contain_text("200–400")
+    expect(sugar_line).to_contain_text("200–400 g granulated sugar")
     expect(page.locator(".recipe-metadata")).to_contain_text("Servings: 8")
     expect(section).to_contain_text("At least ~96 kcal per serving")
 
