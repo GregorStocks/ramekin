@@ -1,0 +1,21 @@
+{
+  "title": "Normalize: one 'Re-normalize…' sheet on web and iOS that asks which operations to run",
+  "description": "Depends on normalize-1 (the op registry and POST /api/recipes/{id}/normalize). \
+Replace the per-operation menu items (iOS RecipeDetailView: Enrich with AI, Auto-Rename, Generate Description, Rescrape from Source; web ViewRecipePage and the CookbookBulkToolbar bulk actions) with one 'Re-normalize…' action that opens a sheet listing the ops from the server's op list, grouped as Source (Re-fetch from source, Re-extract from saved page) and Normalize (title, description, tags, ingredient names, house style when it lands), plus Photo if those ops join the registry. \
+Behavior: defaults to the user's normal import set; checking Re-fetch checks and locks Re-extract; ops unavailable for the recipe are disabled with the reason (no source URL, no stored capture); if the recipe has hand edits since its last source-derived version and a source op is checked, the sheet says those edits will be replaced. \
+Progress shows per op from the job's steps, and when it finishes the client offers the before/after version diff. \
+The same sheet works on a multi-selection in the web cookbook (and iOS if it gets bulk selection), running the bulk endpoint. \
+'Customize with AI' (customize-1) stays a separate action since it takes free text. \
+'Generate AI photo' can stay its own menu item if it doesn't become an op. \
+Both clients; no data/ diffs expected.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "web",
+    "ios",
+    "ai",
+  ],
+  "created_at": "2026-10-24T15:46:03-07:00",
+  "updated_at": "2026-10-24T15:46:03-07:00",
+}

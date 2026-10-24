@@ -1,0 +1,23 @@
+{
+  "title": "Normalize: house-style op that rewrites recipes to the owner's preferences (weights, explicit prep steps, a style guide)",
+  "description": "A new normalize op (see normalize-1) that uses a frontier model to rewrite a recipe into the owner's house style. \
+Nothing in the repo records these preferences yet (no prompt or doc mentions weights or prep steps), so the first deliverable is a written style spec checked in (e.g. doc/house-style.md) that the prompt embeds and an ai-eval suite judges against. \
+Known preferences: (1) Weight-based measures by default: grams first, using the ingredient catalog's densities and piece weights (the same data calorie estimates use) rather than the model's guesses wherever the catalog can weigh the line, keeping the original volume or count alongside when useful (e.g. '120 g (1 cup) flour') and leaving things like '1 egg' or 'salt to taste' as they are. (2) No implicit prep in ingredient lines: '1 onion, chopped' becomes '1 onion' plus an explicit 'Chop the onion' step at the point it's needed. (3) A consistent style guide. \
+Options for (3), for the owner to pick: NYT Cooking (ingredients in order of use, imperative steps, specific doneness cues; note it keeps prep in the ingredient line, which conflicts with (2)); Serious Eats (very explicit steps with reasons, weights common); King Arthur Baking (weight-first, very consistent units); America's Test Kitchen / Cook's Illustrated (prep in the ingredient list, one action per step); or our own short spec borrowing from these. \
+Recommendation: our own spec, NYT-style voice and ingredient ordering plus weights first and prep moved into steps. \
+Also decide: sentence case vs title case for ingredient names, unit abbreviations (g, tbsp), temperature format (°F with °C?), and whether steps are split one action each. \
+The op should keep ingredient structure valid for the parser and calorie estimates (the rewritten lines must still parse; the PR should show before/after on pipeline fixtures). \
+Build an ai-eval suite (data/ai-evals/) with a handful of golden before/after recipes and a judge prompt keyed to the spec. \
+Whether the op runs by default on import is an owner decision once results are good. `make pipeline` should not change unless the op is added to the default import set.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ai",
+    "pipeline",
+    "api",
+  ],
+  "blocked": "Needs the owner to choose the style guide basis and settle the open style questions (unit display, title vs sentence case, one action per step, whether it runs on import) before the spec and prompt are written; also depends on normalize-1.",
+  "created_at": "2026-10-24T15:46:03-07:00",
+  "updated_at": "2026-10-24T15:46:03-07:00",
+}
