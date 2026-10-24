@@ -197,7 +197,24 @@ def test_piece_portions_are_per_one_and_first_wins():
     ],
 )
 def test_default_portion(pieces, expected):
-    assert IMPORTER.default_portion(pieces) == expected
+    assert IMPORTER.default_portion(pieces, "Example") == expected
+
+
+@pytest.mark.parametrize(
+    ("description", "pieces", "expected"),
+    [
+        ("Rolls, dinner, plain", {"each": 25, "roll": 28}, "roll"),
+        ("Pie crust, standard-type", {"crust": 194, "piece": 24}, "crust"),
+        ("Raisins, dark", {"raisin": 0.5, "small box": 43}, "raisin"),
+        ("Bagels, plain", {"bagel": 105, "medium": 1}, "medium"),
+        ("Cookies, fig bars", {"bar": 1, "piece": 1}, None),
+        ("Slices, luncheon", {"slice": 1, "slice thin": 1}, None),
+    ],
+)
+def test_default_portion_falls_back_to_the_piece_the_food_is_named_for(
+    description, pieces, expected
+):
+    assert IMPORTER.default_portion(pieces, description) == expected
 
 
 @pytest.mark.parametrize(
