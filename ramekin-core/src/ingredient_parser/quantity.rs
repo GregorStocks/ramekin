@@ -110,7 +110,7 @@ fn canonical_unit(normalized: &str) -> String {
     });
     let unit = FILL.replace(normalized, "");
     match unit.as_ref() {
-        "cups" => "cup",
+        "c" | "cups" => "cup",
         "pints" => "pint",
         "quarts" => "quart",
         "gallons" => "gallon",
@@ -249,12 +249,37 @@ fn noted_weight(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
     }
 }
 
+/// A size left at the front of a counted item, sizing each of the count: "2
+/// 4-ounce balls burrata", "1 14-oz block tofu", "1 2\" piece ginger".
+fn leading_size(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
+    let count = match read(ingredient.measurements.first()?)?.as_slice() {
+        [Term {
+            amount,
+            unit: Unit::Piece(unit),
+        }] if unit.is_empty() => *amount,
+        _ => return None,
+    };
+    let (size, _) = super::split_leading_size(&ingredient.item)?;
+    let size = normalize(size);
+    let unit = match measure::read_leading_weight(&size) {
+        Some((weight, mass)) => Unit::Grams(weight.times(Range::exact(grams_per(&mass)))),
+        None => Unit::Inches(measure::read_inch_piece(
+            &size.replace(['"', '”'], " inch"),
+        )?),
+    };
+    Some(vec![Term {
+        amount: count,
+        unit,
+    }])
+}
+
 /// The ways to measure a line, best first: per-item weights ("2 cans, 10 oz
-/// each"), then its measurements in order (the primary leads, so rounded gram
-/// enrichments don't replace precise amounts), then a weight stated only in
-/// the note. Measurements are alternatives, not additive.
+/// each") and sizes leading the item ("2 4-ounce balls burrata"), then its
+/// measurements in order (the primary leads, so rounded gram enrichments
+/// don't replace precise amounts), then a weight stated only in the note.
+/// Measurements are alternatives, not additive.
 pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
-    let mut measures = Vec::new();
+    let mut measures: Vec<Measure> = leading_size(ingredient).into_iter().map(Some).collect();
     let mut weighed_package = false;
     if let Some((primary, alternatives)) = ingredient.measurements.split_first() {
         // A stated weight per item beats a package's standard size, as a
@@ -406,6 +431,11 @@ mod tests {
         };
         assert_eq!(cups(terms("1 plus 2", &unit("cup")).unwrap()), 3.0);
         assert_eq!(cups(terms("1 cup plus 2 tbsp", &unit("")).unwrap()), 1.125);
+        // The parser leaves an abbreviated unit inside a compound amount.
+        assert_eq!(
+            cups(terms("1/2 c plus 2 tablespoons", &unit("")).unwrap()),
+            0.625
+        );
         assert_eq!(terms("1 cup plus 2 tbsp", &unit("cup")), None);
     }
 
@@ -455,6 +485,45 @@ mod tests {
                 unit: Unit::Piece("steaks".to_string())
             }])
         );
+    }
+
+    #[test]
+    fn sizes_leading_the_item_lead() {
+        let sized = |amount: &str, item: &str| {
+            let mut line = line(amount, None, None);
+            line.item = item.to_string();
+            measures(&line)
+        };
+        let burrata = sized("2", "4-ounce balls burrata cheese");
+        assert_eq!(burrata.len(), 2);
+        close(grams(burrata[0].as_ref().unwrap()), 226.80, 226.80);
+        let tofu = sized("1", "14-oz block extra-firm tofu");
+        close(grams(tofu[0].as_ref().unwrap()), 396.89, 396.89);
+        let goat_cheese = sized("1", "5- to 5 1/2-ounce log soft fresh goat cheese");
+        close(grams(goat_cheese[0].as_ref().unwrap()), 141.75, 155.92);
+        let milk = sized("2", "14-Ounce Each Cans Sweetened Condensed Milk");
+        close(grams(milk[0].as_ref().unwrap()), 793.79, 793.79);
+        let pudding = sized("2", "3.4 oz instant pistachio pudding mix");
+        close(grams(pudding[0].as_ref().unwrap()), 192.78, 192.78);
+        let rice = sized("2", "1-kilogram bags rice");
+        close(grams(rice[0].as_ref().unwrap()), 2000.0, 2000.0);
+        let sauce = sized("1", "15-ounce tomato sauce");
+        close(grams(sauce[0].as_ref().unwrap()), 425.24, 425.24);
+        assert_eq!(
+            sized("1", "1 1/2\" piece ginger")[0],
+            Some(vec![Term {
+                amount: Range::exact(1.0),
+                unit: Unit::Inches(Range::exact(1.5))
+            }])
+        );
+        // Thick slices are no length of the food, and a size that leads no
+        // food ("1-inch slices from a loaf") isn't split off.
+        assert_eq!(sized("3", "1/2-inch-thick slices of ginger").len(), 1);
+        assert_eq!(sized("4", "1-inch slices from a large loaf").len(), 1);
+        // Only a bare count is a count of the sized items.
+        let mut cups = line("2", Some("cups"), None);
+        cups.item = "15-ounce tomato sauce".to_string();
+        assert_eq!(measures(&cups).len(), 1);
     }
 
     #[test]

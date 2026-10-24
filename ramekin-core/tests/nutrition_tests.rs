@@ -1162,6 +1162,32 @@ fn per_item_weights_multiply_the_count() {
 }
 
 #[test]
+fn a_size_leading_the_item_sizes_each_of_the_count() {
+    let calories = |item: &str, amount: &str, unit: &str| {
+        estimate(&[ingredient(item, amount, unit)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    let oz = 28.349523125;
+    // "2 4-ounce balls burrata": the catalog matches the food without its size.
+    assert_eq!(
+        calories("4-ounce balls burrata cheese", "2", ""),
+        calories("burrata cheese", &(8.0 * oz).to_string(), "g")
+    );
+    assert_eq!(
+        calories("14-oz block extra-firm tofu", "1", ""),
+        calories("extra-firm tofu", &(14.0 * oz).to_string(), "g")
+    );
+    // An inch size weighs as that piece of the food does.
+    assert_eq!(
+        calories("2\" piece fresh ginger", "1", ""),
+        calories("fresh ginger", "1", "2-inch piece")
+    );
+    assert!(calories("2\" piece fresh ginger", "1", "").is_some());
+}
+
+#[test]
 fn a_weight_in_the_note_weighs_a_counted_line() {
     let noted = |raw: &str, item: &str, amount: &str, note: &str| ParsedIngredient {
         measurements: vec![Measurement {

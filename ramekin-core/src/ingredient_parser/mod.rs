@@ -351,7 +351,7 @@ fn split_leading_item_qualifier(item: &str) -> Option<(&str, &str)> {
 
 /// A size left at the front of the item, with the piece or container it sizes:
 /// "8-ounce block", "2\" piece", "1-inch thick", "5-pound", "14-ounce each
-/// cans".
+/// cans", "5- to 5 1/2-ounce log", "3.4 oz".
 static LEADING_SIZE_REGEX: LazyLock<regex::Regex> = LazyLock::new(|| {
     let nouns = [measure::PACKAGE_WORDS, measure::SIZED_PIECES]
         .concat()
@@ -360,7 +360,7 @@ static LEADING_SIZE_REGEX: LazyLock<regex::Regex> = LazyLock::new(|| {
         .collect::<Vec<_>>()
         .join("|");
     regex::Regex::new(&format!(
-        r#"(?i)^(?P<size>\d+(?:\s+\d+/\d+|/\d+|\.\d+)?(?:\s*(?:-|to)\s*\d+(?:/\d+|\.\d+)?)?(?:[-\s](?:inch(?:es)?\b|in\.)|["”]|-(?:ounces?|oz|pounds?|lbs?|grams?|g|kg|cm)\b\.?)(?:[-\s](?:thick|long|wide)\b)?(?:\s+each\b)?(?:\s+(?:{nouns})\b,?)?)\s+(?:of\s+)?(?P<rest>\p{{L}}.*)$"#
+        r#"(?i)^(?P<size>\d+(?:\s+\d+/\d+|/\d+|\.\d+)?(?:\s*(?:-\s*to|-|to)\s*\d+(?:\s+\d+/\d+|/\d+|\.\d+)?)?(?:[-\s](?:inch(?:es)?\b|in\.)|["”]|(?:-|\s+)(?:ounces?|oz|pounds?|lbs?|grams?|g|kilograms?|kg|cm)\b\.?)(?:[-\s](?:thick|long|wide)\b)?(?:\s+each\b)?(?:\s+(?:{nouns})\b,?)?)\s+(?:of\s+)?(?P<rest>\p{{L}}.*)$"#
     ))
     .expect("Invalid leading size regex")
 });
