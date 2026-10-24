@@ -338,6 +338,25 @@ def test_cookbook_density_toggle_persists(logged_in_page: Page):
     )
 
 
+def test_cookbook_sort_and_filters_persist(logged_in_page: Page, ui_url: str):
+    """A fresh visit restores the last sort and filters, but not search text."""
+    logged_in_page.goto(f"{ui_url}?q=has:photos")
+    logged_in_page.get_by_label("Sort recipes").select_option("rating")
+    expect(logged_in_page).to_have_url(re.compile(r"[?&]sort=rating"))
+
+    logged_in_page.goto(f"{ui_url}?q=wonton+has:photos")
+    expect(logged_in_page.get_by_label("Sort recipes")).to_be_disabled()
+
+    logged_in_page.goto(ui_url)
+    expect(logged_in_page).to_have_url(re.compile(r"[?&]sort=rating"))
+    expect(logged_in_page).to_have_url(re.compile(r"[?&]q=has%3Aphotos(&|$)"))
+    expect(logged_in_page.get_by_label("Sort recipes")).to_have_value("rating")
+
+    logged_in_page.goto(f"{ui_url}?q=tag:dinner")
+    expect(logged_in_page).to_have_url(re.compile(r"[?&]q=tag%3Adinner(&|$)"))
+    expect(logged_in_page.get_by_label("Sort recipes")).to_have_value("rating")
+
+
 def test_cookbook_filters_adapt_between_desktop_and_mobile(logged_in_page: Page):
     """The desktop sidebar becomes an accessible mobile filter sheet."""
     sidebar = logged_in_page.get_by_role("complementary", name="Filters")
