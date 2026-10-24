@@ -93,7 +93,7 @@ runs:
       uses: actions/cache@v4
       with:
         path: ~/.local/bin
-        key: tools-${{ runner.os }}-swiftlint-0.63.2-pc-v1.90.0-mkcert-v1.4.4
+        key: tools-${{ runner.os }}-swiftlint-0.63.2-static-pc-v1.90.0-mkcert-v1.4.4
 
     - name: Install SwiftLint
       shell: bash
@@ -111,7 +111,8 @@ runs:
           curl -fsSL "${SWIFTLINT_URL}/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip" \
             -o /tmp/swiftlint.zip
           unzip -q /tmp/swiftlint.zip -d /tmp/swiftlint
-          mv /tmp/swiftlint/swiftlint ~/.local/bin/swiftlint
+          # The static build needs no system libxml2/libcurl, which runner images drop.
+          mv /tmp/swiftlint/swiftlint-static ~/.local/bin/swiftlint
           chmod +x ~/.local/bin/swiftlint
         fi
         echo "SwiftLint ready in $(($(date +%s) - START))s"
