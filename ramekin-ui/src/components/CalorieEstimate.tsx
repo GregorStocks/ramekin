@@ -10,6 +10,7 @@ import {
 import type { Ingredient } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
 import { caloriePollDelaySeconds } from "../utils/caloriePolling";
+import { formatIngredient } from "../utils/ingredientFormatting";
 
 export default function CalorieEstimate(props: {
   ingredients: Ingredient[];
@@ -17,6 +18,13 @@ export default function CalorieEstimate(props: {
   scale: number;
 }) {
   const { getRecipesApi } = useAuth();
+  // The line as the ingredient list shows it, scaled: "2 cups flour".
+  const lineLabel = (line: { index: number; item: string }) => {
+    const ingredient = props.ingredients[line.index];
+    return ingredient
+      ? formatIngredient(ingredient, { scale: props.scale })
+      : line.item;
+  };
   const request = () => ({
     ingredients: props.ingredients,
     servings: props.servings,
@@ -91,7 +99,7 @@ export default function CalorieEstimate(props: {
                   <For each={result().lines}>
                     {(line) => (
                       <li>
-                        <span>{line.item}</span>
+                        <span>{lineLabel(line)}</span>
                         <span class="calorie-line-text">{line.text}</span>
                       </li>
                     )}
