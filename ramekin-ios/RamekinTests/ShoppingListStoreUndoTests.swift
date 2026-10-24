@@ -92,6 +92,44 @@ extension ShoppingListStoreTests {
         XCTAssertEqual(store.items.first?.syncStatusEnum, .synced)
     }
 
+    func testUndoingADeleteThatComesBackGoneStillSendsTheRestore() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var requests: [SyncShoppingListRequest] = []
+        var responses: [SyncShoppingListResponse] = []
+        var duringSync: (() -> Void)?
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { request in
+                requests.append(request)
+                duringSync?()
+                duringSync = nil
+                return responses.removeFirst()
+            }
+        )
+        // Added and deleted offline: the server never saw the create, so
+        // the delete is gone. Undo was tapped while it was in flight.
+        store.addItem(name: "Jam")
+        let id = try XCTUnwrap(store.items.first?.id)
+        let undo = try XCTUnwrap(store.deleteItem(try XCTUnwrap(store.items.first)))
+        duringSync = { store.restore(undo) }
+        responses.append(Self.response(results: [.gone], deleted: [id]))
+        await store.syncWithServer(isFollowUp: true)
+
+        XCTAssertEqual(store.items.map(\.item), ["Jam"])
+        responses.append(Self.response(
+            results: [.applied], changes: [Self.serverChange(id: id, item: "Jam", changeSeq: 2)]
+        ))
+        await store.syncWithServer(isFollowUp: true)
+        let restore = try XCTUnwrap(requests.last?.ops?.first)
+        XCTAssertEqual(restore.op, .restore)
+        XCTAssertEqual(restore.fields?.item, "Jam")
+        XCTAssertEqual(store.items.first?.syncStatusEnum, .synced)
+    }
+
     func testUndoingAnUnsentDeleteSendsOnlyTheRestore() async throws {
         let (stack, defaults) = makeStorage()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }

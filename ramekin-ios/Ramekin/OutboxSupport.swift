@@ -123,12 +123,14 @@ extension OutboxRow {
     /// server's copy (or tombstone) in the feed replaces them, and fields
     /// edited since stay dirty.
     func settle(result: OpResult, sent: OutboxSent) -> OutboxSettled {
+        if sent.kind == .delete {
+            // Restored while its delete was in flight: the restore goes next,
+            // even when the delete was gone (its create never arrived, which
+            // the restore's fields make up for).
+            return syncStatusEnum == .pendingRestore ? .kept : .removed
+        }
         if result == .gone {
             return .removed
-        }
-        if sent.kind == .delete {
-            // Restored while its delete was in flight: the restore goes next.
-            return syncStatusEnum == .pendingRestore ? .kept : .removed
         }
         if result != .applied, sent.kind == .create, syncStatusEnum == .pendingCreate,
            dirtyFieldSet.contains(where: { syncedValue(of: $0) != sent.values[$0] ?? nil }) {

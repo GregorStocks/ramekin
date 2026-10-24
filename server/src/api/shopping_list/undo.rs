@@ -93,7 +93,9 @@ fn inverse(
     let op = |op, fields| ShoppingListOp { op, id, fields };
     match (before, after) {
         (None, Some(_)) if live => Some(op(OpKind::Delete, ShoppingListFields::default())),
-        (Some(_), None) if !live => Some(op(OpKind::Restore, ShoppingListFields::default())),
+        // Every field, since the entry may have edited the item before
+        // deleting it.
+        (Some(before), None) if !live => Some(op(OpKind::Restore, all_fields(before))),
         (Some(before), Some(after)) if live => {
             // A field goes back only if it still holds what the entry set.
             fn back<T: PartialEq + Clone>(current: &T, before: &T, after: &T) -> Option<T> {
@@ -128,6 +130,19 @@ fn inverse(
     }
 }
 
+/// Fields that set an item to `fields` ("" clears a nullable one).
+fn all_fields(fields: &ItemFields) -> ShoppingListFields {
+    ShoppingListFields {
+        item: Some(fields.item.clone()),
+        amount: Some(fields.amount.clone().unwrap_or_default()),
+        note: Some(fields.note.clone().unwrap_or_default()),
+        is_checked: Some(fields.is_checked),
+        sort_order: Some(fields.sort_order),
+        category_override: Some(fields.category_override.clone().unwrap_or_default()),
+        ..ShoppingListFields::default()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -149,8 +164,12 @@ mod tests {
         let milk = fields("milk", false);
         let op = inverse(id, None, Some(&milk), Some((true, milk.clone()))).unwrap();
         assert_eq!(op.op, OpKind::Delete);
-        let op = inverse(id, Some(&milk), None, Some((false, milk.clone()))).unwrap();
+        // Restored as the entry found it, though it was renamed before the
+        // delete.
+        let eggs = fields("eggs", false);
+        let op = inverse(id, Some(&milk), None, Some((false, eggs))).unwrap();
         assert_eq!(op.op, OpKind::Restore);
+        assert_eq!(op.fields.item.as_deref(), Some("milk"));
         // Already back where the entry started.
         assert!(inverse(id, Some(&milk), None, Some((true, milk.clone()))).is_none());
     }

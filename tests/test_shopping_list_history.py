@@ -226,3 +226,16 @@ def test_undoing_an_unknown_entry_is_not_found(authed_api_client):
     with pytest.raises(ApiException) as exc_info:
         undo(client, str(uuid.uuid4()))
     assert exc_info.value.status == 404
+
+
+def test_undoing_an_edit_then_delete_restores_the_original(authed_api_client):
+    client, _ = authed_api_client
+    api = SyncApi(client)
+    milk = add(api, "milk")[0]
+    sync(api, update(milk, item="eggs", is_checked=True), delete(milk))
+
+    undo(client, history(client)[0].id)
+
+    restored = items(api)[milk]
+    assert restored.item == "milk"
+    assert restored.is_checked is False
