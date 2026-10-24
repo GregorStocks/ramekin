@@ -130,6 +130,48 @@ extension ShoppingListStoreTests {
         XCTAssertEqual(store.items.first?.syncStatusEnum, .synced)
     }
 
+    func testUndoingADeleteMadeWhileAGoneUpdateWasInFlightStillSendsTheRestore() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var requests: [SyncShoppingListRequest] = []
+        var responses: [SyncShoppingListResponse] = []
+        var duringSync: (() -> Void)?
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { request in
+                requests.append(request)
+                duringSync?()
+                duringSync = nil
+                return responses.removeFirst()
+            }
+        )
+        store.addItem(name: "Rice")
+        let id = try XCTUnwrap(store.items.first?.id)
+        responses.append(Self.response(results: [.applied], changes: [Self.serverChange(id: id, item: "Rice")]))
+        await store.syncWithServer(isFollowUp: true)
+
+        // Deleted on another device, so this update comes back gone; it was
+        // deleted and undone here while the update was in flight.
+        let rice = try XCTUnwrap(store.items.first)
+        store.updateItem(rice, note: "basmati")
+        duringSync = {
+            if let undo = store.deleteItem(rice) { store.restore(undo) }
+        }
+        responses.append(Self.response(results: [.gone], deleted: [id]))
+        await store.syncWithServer(isFollowUp: true)
+
+        XCTAssertEqual(store.items.map(\.item), ["Rice"])
+        responses.append(Self.response(
+            results: [.applied], changes: [Self.serverChange(id: id, item: "Rice", changeSeq: 4)]
+        ))
+        await store.syncWithServer(isFollowUp: true)
+        XCTAssertEqual(requests.last?.ops?.map(\.op), [.restore])
+        XCTAssertEqual(store.items.first?.syncStatusEnum, .synced)
+    }
+
     func testUndoingAnUnsentDeleteSendsOnlyTheRestore() async throws {
         let (stack, defaults) = makeStorage()
         defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
