@@ -226,4 +226,34 @@ extension ShoppingListStoreTests {
         XCTAssertEqual(undone, [entryId])
         XCTAssertEqual(syncs, 1)
     }
+
+    func testAHistoryUndoDuringASyncSyncsAgainAfterIt() async throws {
+        let (stack, defaults) = makeStorage()
+        defer { defaults.removePersistentDomain(forName: defaultsSuiteName) }
+        var syncs = 0
+        var duringSync: (() async -> Void)?
+        let store = ShoppingListStore(
+            coreDataStack: stack,
+            userDefaults: defaults,
+            initialAccountKey: firstAccount,
+            automaticallySync: false,
+            syncItems: { _ in
+                syncs += 1
+                let during = duringSync
+                duringSync = nil
+                await during?()
+                return Self.response()
+            },
+            undoHistoryEntry: {
+                ShoppingListHistoryEntry(createdAt: Date(), id: UUID(), summary: "Restored milk", undoesId: $0)
+            }
+        )
+        // The undo lands after the sync read the server, so that sync's
+        // response predates it.
+        duringSync = { try? await store.undo(entry: UUID()) }
+
+        await store.syncWithServer(isFollowUp: true)
+
+        XCTAssertEqual(syncs, 2)
+    }
 }

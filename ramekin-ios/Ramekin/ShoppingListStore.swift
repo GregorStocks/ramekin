@@ -36,6 +36,9 @@ class ShoppingListStore: ObservableObject {
     private var activeAccountKey: String?
     /// The network came back during a sync that may have failed offline.
     private var retryAfterSync = false
+    /// A server-side change (a history undo) landed during a sync whose
+    /// response may predate it: sync again once it finishes.
+    private var refreshAfterSync = false
 
     /// Wall-clock time of the last sync, used only to decide when a sync is stale.
     private static let lastSyncAtKeyPrefix = "shopping_list_last_sync_at"
@@ -260,7 +263,11 @@ extension ShoppingListStore {
     /// Undo a history entry on the server, then sync to show the result.
     func undo(entry id: UUID) async throws {
         _ = try await undoHistoryEntry(id)
-        await syncWithServer()
+        if isSyncing {
+            refreshAfterSync = true
+        } else {
+            await syncWithServer()
+        }
     }
 
     private func saveAndSync() {
@@ -331,12 +338,25 @@ extension ShoppingListStore {
 
         isSyncing = false
         fetchItems()
+        await syncAgainIfNeeded(after: syncAccountKey, isFollowUp: isFollowUp)
+    }
 
+    /// The sync, if any, that a finished one calls for: the account changed,
+    /// a server-side change or retry landed mid-sync, or edits made while it
+    /// was in flight still wait.
+    private func syncAgainIfNeeded(after syncAccountKey: String, isFollowUp: Bool) async {
         guard activeAccountKey == syncAccountKey else {
             retryAfterSync = false
+            refreshAfterSync = false
             if automaticallySync {
                 await syncIfNeeded()
             }
+            return
+        }
+        if refreshAfterSync {
+            refreshAfterSync = false
+            retryAfterSync = false
+            await syncWithServer()
             return
         }
         if retryAfterSync {
@@ -352,7 +372,7 @@ extension ShoppingListStore {
                 ShoppingItem.fetchPendingSync(accountKey: syncAccountKey)
             ))?.isEmpty == false
             if hasPending && isOnline {
-                logger.log("syncWithServer: still have pending items, follow-up sync", source: "Shopping")
+                DebugLogger.shared.log("syncWithServer: still have pending items, follow-up sync", source: "Shopping")
                 await syncWithServer(isFollowUp: true)
             }
         }
