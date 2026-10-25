@@ -5,14 +5,14 @@
     {
       "raw": "1 kabocha squash, roughly 2.5 – 3 pounds",
       "expected": {
-        "item": "kabocha squash, roughly 2.5 - 3 pounds",
+        "item": "kabocha squash",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "roughly 2.5 - 3 pounds",
         "category": "Produce"
       }
     },

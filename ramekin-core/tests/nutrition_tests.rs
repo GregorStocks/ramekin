@@ -1946,3 +1946,121 @@ fn counted_olives_pickles_and_artichoke_hearts_weigh_by_their_piece() {
         );
     }
 }
+
+#[test]
+fn containers_and_hedged_weights_read_their_stated_size() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+    };
+    for (stated, weighed) in [
+        // A metric volume on the container.
+        ("1 750-ml bottle red wine", "750 ml red wine"),
+        // A space typed after the hyphen.
+        (
+            "1 12- ounce beer, or equivalent amount of broth",
+            "12 oz beer",
+        ),
+        // A range hyphenated through.
+        (
+            "10-to-12-ounce (285-to-340-gram) bag semisweet chocolate chips",
+            "10 to 12 oz semisweet chocolate chips",
+        ),
+        // A weight leading the item after a package.
+        (
+            "1 package, 9 oz. chocolate wafer cookies (such as Nabisco)",
+            "9 oz chocolate wafer cookies",
+        ),
+        // A noted weight that runs on into the item.
+        (
+            "1  package (.25 ounce powdered gelatin)",
+            "0.25 oz powdered gelatin",
+        ),
+        (
+            "6  packets (.25 oz. each powdered gelatin)",
+            "1.5 oz powdered gelatin",
+        ),
+        // "roughly" hedges a weight like "about".
+        (
+            "1 kabocha squash, roughly 2.5 – 3 pounds",
+            "2.5 to 3 pounds kabocha squash",
+        ),
+    ] {
+        let (stated_kcal, weighed_kcal) = (calories(stated), calories(weighed));
+        let (stated_kcal, weighed_kcal) = (stated_kcal.expect(stated), weighed_kcal.unwrap());
+        assert!(
+            (stated_kcal.min - weighed_kcal.min).abs() < 1e-6
+                && (stated_kcal.max - weighed_kcal.max).abs() < 1e-6,
+            "{stated}: {stated_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}
+
+#[test]
+fn bread_pieces_baguette_slices_and_whole_wheat_tortillas_weigh_by_the_piece() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        // A piece of bread is a slice.
+        (
+            "2 pieces sourdough or whole grain bread, toasted",
+            "128 g sourdough bread",
+        ),
+        ("2 pieces of toasted bread", "58 g toasted bread"),
+        // A baguette slice is small.
+        (
+            "24 1/4-inch-thick baguette bread slices",
+            "240 g baguette slices",
+        ),
+        // A loaf of pita is one pita.
+        ("6 loaves of pita bread", "360 g pita bread"),
+        ("4 whole wheat tortillas", "180 g whole wheat tortillas"),
+        (
+            "2 large whole wheat tortillas",
+            "142 g whole wheat tortillas",
+        ),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}
+
+#[test]
+fn seasoning_mix_packets_and_bouillon_cubes_weigh_by_the_package() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        // An envelope, packet or package of a mix is the same container.
+        ("1 envelope taco seasoning", "28 g taco seasoning"),
+        ("1 packet taco seasoning", "28 g taco seasoning"),
+        ("1 envelope brown gravy mix", "24 g brown gravy mix"),
+        ("1 package ranch mix", "28 g ranch mix"),
+        // USDA's gelatin envelope answers for a package.
+        ("2 packages unflavored gelatin", "14 g unflavored gelatin"),
+        // A bare count of bouillon is cubes.
+        (
+            "1 chicken bouillon (cube or powder)",
+            "4 g chicken bouillon",
+        ),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}

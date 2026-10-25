@@ -75,15 +75,32 @@ pub fn range(value: &str) -> Option<Range> {
 
 /// "2 (15-ounce) cans" parses as unit "can" with the weight leading the note
 /// ("15-ounce, drained"); together they weigh one can. A per-item weight
-/// reads the same ("3 packages (8 oz. each)" has note "8 oz. each"). None
-/// when the note states no weight, and Some(None) when it states one that
-/// doesn't read ("about 15-ounce").
-fn noted_package(unit: &str, note: Option<&str>) -> Option<Option<Unit>> {
+/// reads the same ("3 packages (8 oz. each)" has note "8 oz. each"), as
+/// does one that runs on into the item ("1 package (.25 ounce powdered
+/// gelatin)" has note ".25 ounce powdered gelatin"). None when the note
+/// states no weight, and Some(None) when it states one that doesn't read
+/// ("about 15-ounce").
+fn noted_package(unit: &str, note: Option<&str>, item: &str) -> Option<Option<Unit>> {
     if !measure::is_package_word(unit) {
         return None;
     }
-    let (weight, mass) = measure::read_noted_package(&normalize(note?))?;
+    let note = normalize(note?);
+    let item = normalize(item);
+    let note = match note.strip_suffix(item.as_str()) {
+        Some(weight) if !item.is_empty() && weight.ends_with(' ') => weight.trim_end(),
+        _ => note.as_str(),
+    };
+    let (weight, mass) = measure::read_noted_package(note)?;
     Some(weight.map(|weight| Unit::Grams(weight.times(Range::exact(grams_per(&mass))))))
+}
+
+/// One container or piece of a stated weight or volume ("15-ounce can",
+/// "750-ml bottle"). A volume range doesn't read.
+fn sized(amount: Range, unit: &str) -> Option<Unit> {
+    match volume_to_cups(1.0, &canonical_unit(unit)) {
+        Some(cups) => (amount.min == amount.max).then_some(Unit::Cups(cups * amount.min)),
+        None => Some(Unit::Grams(amount.times(Range::exact(grams_per(unit))))),
+    }
 }
 
 /// Grams in one of a mass unit.
@@ -140,8 +157,10 @@ fn unit(normalized: &str) -> Unit {
     if normalized.is_empty() {
         return Unit::Piece(String::new());
     }
-    if let Some((weight, mass)) = measure::read_package(normalized) {
-        return Unit::Grams(weight.times(Range::exact(grams_per(&mass))));
+    if let Some(unit) =
+        measure::read_package(normalized).and_then(|(size, unit)| sized(size, &unit))
+    {
+        return unit;
     }
     if let Some(size) = measure::read_inch_piece(normalized) {
         return Unit::Inches(size);
@@ -251,19 +270,24 @@ fn noted_weight(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
 
 /// A size left at the front of a counted item, sizing each of the count: "2
 /// 4-ounce balls burrata", "1 14-oz block tofu", "1 2\" piece ginger", "2
-/// piece 1-inch fresh ginger root".
+/// piece 1-inch fresh ginger root", "1 package, 9 oz. chocolate wafers".
 fn leading_size(ingredient: &ParsedIngredient) -> Option<Vec<Term>> {
     let (count, piece) = match read(ingredient.measurements.first()?)?.as_slice() {
         [Term {
             amount,
             unit: Unit::Piece(unit),
-        }] if unit.is_empty() || measure::is_inch_piece_noun(unit) => (*amount, unit.clone()),
+        }] if unit.is_empty()
+            || measure::is_inch_piece_noun(unit)
+            || measure::is_package_word(unit) =>
+        {
+            (*amount, unit.clone())
+        }
         _ => return None,
     };
     let (size, _) = super::split_leading_size(&ingredient.item)?;
     let size = normalize(size).replace(['"', '”'], " inch");
     let unit = match measure::read_leading_weight(&size) {
-        Some((weight, mass)) => Unit::Grams(weight.times(Range::exact(grams_per(&mass)))),
+        Some((size, unit)) => sized(size, &unit)?,
         // A bare size behind a counted piece ("2 piece 1-inch ...") sizes
         // that piece.
         None => Unit::Inches(measure::read_inch_piece(&size).or_else(|| {
@@ -454,13 +478,15 @@ pub fn measures(ingredient: &ParsedIngredient) -> Vec<Measure> {
             Some(stripped) => stripped.to_string(),
             None => unit,
         };
-        measures.push(match noted_package(&unit, ingredient.note.as_deref()) {
-            Some(weighed) => {
-                weighed_package = true;
-                weighed.and_then(|unit| terms(amount, &unit))
-            }
-            None => terms(amount, &self::unit(&unit)),
-        });
+        measures.push(
+            match noted_package(&unit, ingredient.note.as_deref(), &ingredient.item) {
+                Some(weighed) => {
+                    weighed_package = true;
+                    weighed.and_then(|unit| terms(amount, &unit))
+                }
+                None => terms(amount, &self::unit(&unit)),
+            },
+        );
     }
     if !weighed_package {
         if let Some(weight) = noted_weight(ingredient) {

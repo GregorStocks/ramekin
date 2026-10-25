@@ -2,7 +2,7 @@
   "aliases": {
     "1-inch bread cubes": "bread, white, commercially prepared (includes soft bread crumbs)",
     "1/2-inch-thick slices of unpeeled fresh ginger": "ginger root",
-    "1/4-inch-thick baguette bread slices": "bread, french or vienna (includes sourdough)",
+    "1/4-inch-thick baguette bread slices": "baguette slices",
     "12- to 16-pound fresh turkey": "turkey, whole, meat and skin, raw",
     "14 1/2- by 9 1/2-inch sheets puff pastry from three 14-ounce packages frozen puff pastry, thawed": "puff pastry, frozen, ready-to-bake",
     "14- ounce can chickpeas": "chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained solids",
@@ -163,7 +163,6 @@
     "bacon strips": "pork, cured, bacon, unprepared",
     "bagel chips": "snacks, bagel chips, plain",
     "bagels": "bagels, plain, enriched, with calcium propionate (includes onion, poppy, sesame)",
-    "baguette or loaf of cuban bread": "bread, french or vienna (includes sourdough)",
     "baileys": "alcoholic beverage, liqueur, coffee with cream, 34 proof",
     "baileys irish cream": "alcoholic beverage, liqueur, coffee with cream, 34 proof",
     "baked ham": "pork, cured, ham, boneless, regular (approximately 11% fat), roasted",
@@ -2885,6 +2884,7 @@
     "bacon bits": "Meat & Seafood",
     "bagels, plain, enriched, with calcium propionate (includes onion, poppy, sesame)": "Bakery & Bread",
     "baguette": "Bakery & Bread",
+    "baguette slices": "Bakery & Bread",
     "baked or smoked tofu": "Produce",
     "baking chocolate, unsweetened, squares": "Baking",
     "balsamic glaze": "Oils & Vinegars",
@@ -4146,6 +4146,17 @@
         }
       }
     },
+    "baguette slices": {
+      "default_portion": "slice",
+      "fdc_id": 172675,
+      "portions": {
+        "slice": {
+          "source": "USDA FNDDS 2707610 (Bread, French or Vienna): 1 slice, snack-size = 10 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707610/nutrients",
+          "value": 10.0
+        }
+      }
+    },
     "baked or smoked tofu": {
       "kcal_per_100g": {
         "source": "USDA FoodData Central Branded food 390191 (WILDWOOD, SPROUTOFU, ORGANIC BAKED TOFU, SAVORY, Pulmuone Foods USA, Inc.): 176 kcal per 100 g",
@@ -4207,6 +4218,11 @@
           "source": "USDA FNDDS 2707610 (Bread, French or Vienna): 1 loaf (14\" long) = 470 g",
           "url": "https://fdc.nal.usda.gov/food-details/2707610/nutrients",
           "value": 470.0
+        },
+        "piece": {
+          "source": "A piece of bread is a slice. USDA FNDDS 2707610 (Bread, French or Vienna): 1 medium or regular slice = 64 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707610/nutrients",
+          "value": 64.0
         },
         "slice": {
           "source": "USDA FNDDS 2707610 (Bread, French or Vienna): 1 medium or regular slice = 64 g",
@@ -5538,6 +5554,13 @@
         "source": "USDA FoodData Central Branded food 2034751 (Ranch Dip Seasoning Mix, McCormick & Company, Inc.): 278 kcal per 100 g",
         "url": "https://fdc.nal.usda.gov/food-details/2034751/nutrients",
         "value": 278.0
+      },
+      "portions": {
+        "package": {
+          "source": "USDA FoodData Central Branded food 2680475 (SALAD DRESSING & SEASONING MIX, Hidden Valley): package 1.0 oz/28 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2680475/nutrients",
+          "value": 28.0
+        }
       }
     },
     "ras el hanout": {
@@ -5888,10 +5911,22 @@
       }
     },
     "bread, pita, white, enriched": {
-      "default_portion": "pita large"
+      "default_portion": "pita large",
+      "portions": {
+        "loaf": {
+          "source": "A loaf of pita is one pita. USDA SR Legacy 174915 (Bread, pita, white, enriched): 1 pita, large (6-1/2\" dia) = 60 g",
+          "url": "https://fdc.nal.usda.gov/food-details/174915/nutrients",
+          "value": 60.0
+        }
+      }
     },
     "bread, white, commercially prepared (includes soft bread crumbs)": {
       "portions": {
+        "piece": {
+          "source": "A piece of bread is a slice. USDA SR Legacy 174924 (Bread, white, commercially prepared): 1 slice = 29 g",
+          "url": "https://fdc.nal.usda.gov/food-details/174924/nutrients",
+          "value": 29.0
+        },
         "slice thick": {
           "source": "USDA FNDDS 2707598 (Bread, white): 1 large or thick slice = 43 g",
           "url": "https://fdc.nal.usda.gov/food-details/2707598/nutrients",
@@ -5958,6 +5993,15 @@
         "head": {
           "source": "Canadian Nutrient File 2394 (Garlic, raw): 1 bulb = 24 g",
           "url": "https://food-nutrition.canada.ca/api/canadian-nutrient-file/servingsize/?id=2394&lang=en&type=json",
+          "value": 24.0
+        }
+      }
+    },
+    "gravy, brown, dry": {
+      "portions": {
+        "package": {
+          "source": "USDA FoodData Central Branded food 2622331 (BROWN GRAVY MIX, McCormick): package 0.87 oz/24 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2622331/nutrients",
           "value": 24.0
         }
       }
@@ -6110,7 +6154,19 @@
         }
       }
     },
+    "seasoning mix, dry, taco, original": {
+      "portions": {
+        "package": {
+          "source": "USDA FoodData Central Branded food 2036930 (ORIGINAL TACO SEASONING MIX, McCormick): package 1 oz/28 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2036930/nutrients",
+          "value": 28.0
+        }
+      }
+    },
     "soup, chicken broth cubes, dry": {
+      "default_portion": "cube"
+    },
+    "soup, chicken broth or bouillon, dry": {
       "default_portion": "cube"
     },
     "soup, ramen noodle, any flavor, dry": {
@@ -6146,6 +6202,36 @@
           "source": "USDA FNDDS 2707823 (Tortilla, corn): 1 small = 18 g",
           "url": "https://fdc.nal.usda.gov/food-details/2707823/nutrients",
           "value": 18.0
+        }
+      }
+    },
+    "tortillas, ready-to-bake or -fry, whole wheat": {
+      "default_portion": "tortilla",
+      "portions": {
+        "extra large": {
+          "source": "USDA FNDDS 2707825 (Tortilla, whole wheat): 1 extra large = 104 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707825/nutrients",
+          "value": 104.0
+        },
+        "large": {
+          "source": "USDA FNDDS 2707825 (Tortilla, whole wheat): 1 large = 71 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707825/nutrients",
+          "value": 71.0
+        },
+        "medium": {
+          "source": "USDA FNDDS 2707825 (Tortilla, whole wheat): 1 medium = 45 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707825/nutrients",
+          "value": 45.0
+        },
+        "small": {
+          "source": "USDA FNDDS 2707825 (Tortilla, whole wheat): 1 small = 33 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707825/nutrients",
+          "value": 33.0
+        },
+        "tortilla": {
+          "source": "USDA FNDDS 2707825 (Tortilla, whole wheat): 1 medium = 45 g",
+          "url": "https://fdc.nal.usda.gov/food-details/2707825/nutrients",
+          "value": 45.0
         }
       }
     }

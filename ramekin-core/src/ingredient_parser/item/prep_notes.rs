@@ -627,7 +627,13 @@ pub(in crate::ingredient_parser) fn is_trailing_qualifier(s: &str) -> bool {
         && words
             .get(1)
             .is_some_and(|word| OPEN_ATTRIBUTES.contains(&word.trim_end_matches(',')));
+    // "roughly 3 pounds" hedges a measurement; "roughly torn" is prep that
+    // may lead a food.
+    let hedged_amount = lower
+        .strip_prefix("roughly ")
+        .is_some_and(|rest| rest.starts_with(|c: char| c.is_ascii_digit()));
     open_attribute
+        || hedged_amount
         || QUALIFIER_PREFIXES
             .iter()
             .any(|prefix| lower.starts_with(prefix))

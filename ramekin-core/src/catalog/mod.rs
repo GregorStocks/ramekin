@@ -1012,6 +1012,13 @@ pub fn grams_per_piece(entry: &Entry, unit: Option<&str>) -> Option<f64> {
     {
         return Some(grams);
     }
+    // A packet or envelope of a mix is its package, and the other way round.
+    const PACKAGES: [&str; 3] = ["package", "packet", "envelope"];
+    if PACKAGES.contains(&key.as_str()) {
+        if let Some(&grams) = PACKAGES.iter().find_map(|package| portions.get(*package)) {
+            return Some(grams);
+        }
+    }
     // A sized piece ("small head") uses the piece at that size ("head
     // small"); with no such portion ("large lemon") it is the piece, and a
     // many-word piece counts in the plural too ("blood oranges").

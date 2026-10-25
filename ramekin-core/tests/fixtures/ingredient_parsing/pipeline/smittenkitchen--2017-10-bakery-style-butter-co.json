@@ -157,14 +157,18 @@
     {
       "raw": "10-to-12-ounce (285-to-340-gram) bag semisweet chocolate chips or chopped chocolate",
       "expected": {
-        "item": "-to-12-ounce bag semisweet chocolate chips or chopped chocolate",
+        "item": "semisweet chocolate chips or chopped chocolate",
         "measurements": [
           {
-            "amount": "10",
-            "unit": null
+            "amount": "1",
+            "unit": "10-to-12-ounce bag"
+          },
+          {
+            "amount": "285 to 340",
+            "unit": "g"
           }
         ],
-        "note": "285-to-340-gram",
+        "note": null,
         "section": "To Finish",
         "category": "Baking"
       }
