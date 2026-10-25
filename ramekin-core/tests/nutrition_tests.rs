@@ -1996,3 +1996,40 @@ fn containers_and_hedged_weights_read_their_stated_size() {
         );
     }
 }
+
+#[test]
+fn bread_pieces_baguette_slices_and_whole_wheat_tortillas_weigh_by_the_piece() {
+    let calories = |raw: &str| {
+        estimate(&[parse_ingredient(raw)], None, 1.0)
+            .unwrap()
+            .known_calories
+            .map(|range| range.min)
+    };
+    for (counted, weighed) in [
+        // A piece of bread is a slice.
+        (
+            "2 pieces sourdough or whole grain bread, toasted",
+            "128 g sourdough bread",
+        ),
+        ("2 pieces of toasted bread", "58 g toasted bread"),
+        // A baguette slice is small.
+        (
+            "24 1/4-inch-thick baguette bread slices",
+            "240 g baguette slices",
+        ),
+        // A loaf of pita is one pita.
+        ("6 loaves of pita bread", "360 g pita bread"),
+        ("4 whole wheat tortillas", "180 g whole wheat tortillas"),
+        (
+            "2 large whole wheat tortillas",
+            "142 g whole wheat tortillas",
+        ),
+    ] {
+        let (counted_kcal, weighed_kcal) = (calories(counted), calories(weighed));
+        assert!(counted_kcal.is_some(), "{counted}");
+        assert!(
+            (counted_kcal.unwrap() - weighed_kcal.unwrap()).abs() < 1e-6,
+            "{counted}: {counted_kcal:?} vs {weighed_kcal:?}"
+        );
+    }
+}
