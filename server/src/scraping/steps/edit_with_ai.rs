@@ -10,6 +10,7 @@ use ramekin_core::pipeline::{
     PipelineStep, StepContext, StepMetadata, StepResult, EDIT_WITH_AI_STEP,
 };
 
+use crate::api::recipes::list::search_word_filter;
 use crate::db::{run_blocking, DbPool};
 use crate::ids::Uuid;
 use crate::normalize::load_version_blocking;
@@ -64,16 +65,12 @@ impl RecipeEditContext for UserRecipes {
 
     async fn search_recipes(&self, query: &str) -> Result<Vec<String>, String> {
         let (user_id, recipe_id) = (self.user_id, self.recipe_id);
-        let pattern = format!(
-            "%{}%",
-            query
-                .trim()
-                .replace('\\', "\\\\")
-                .replace('%', "\\%")
-                .replace('_', "\\_")
-        );
+        let words: Vec<String> = query.split_whitespace().map(str::to_string).collect();
+        if words.is_empty() {
+            return Ok(Vec::new());
+        }
         let found = run_blocking(&self.pool, move |conn| {
-            recipes::table
+            let mut search = recipes::table
                 .inner_join(
                     recipe_versions::table.on(recipe_versions::id
                         .nullable()
@@ -82,7 +79,12 @@ impl RecipeEditContext for UserRecipes {
                 .filter(recipes::user_id.eq(user_id))
                 .filter(recipes::deleted_at.is_null())
                 .filter(recipes::id.ne(recipe_id))
-                .filter(recipe_versions::title.like(&pattern).escape('\\'))
+                .into_boxed();
+            // As the cookbook searches: every word, in any text field.
+            for word in &words {
+                search = search.filter(search_word_filter(word));
+            }
+            search
                 .select((
                     recipe_versions::title,
                     recipe_versions::ingredients,

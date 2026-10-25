@@ -423,10 +423,18 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             )
             for m in messages
         )
-        if any(m.get("role") == "tool" for m in messages):
+        prompt = json.dumps(messages)
+        tool_results = [m for m in messages if m.get("role") == "tool"]
+        if "like my other" in prompt and not tool_results:
+            # Search the user's recipes by an ingredient, and report what
+            # came back so tests can see the search.
+            calls = [("search_recipes", {"query": "tahini"})]
+        elif "like my other" in prompt:
+            found = tool_results[-1].get("content", "")
+            calls = [("finish", {"summary": "Found: " + found.split("\n")[0]})]
+        elif tool_results:
             calls = [("finish", {"summary": "Marked the title as modified."})]
         else:
-            prompt = json.dumps(messages)
             title = "Test Recipe"
             marker = "Title: "
             if marker in prompt:

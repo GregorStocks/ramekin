@@ -166,3 +166,21 @@ def test_accepting_after_a_hand_edit_conflicts(authed_api_client):
         NormalizeApi(client).accept_normalize_proposal(recipe_id, job_id)
     assert exc_info.value.status == 409
     assert recipes.get_recipe(recipe_id).title == "Mine"
+
+
+def test_edit_searches_the_users_other_recipes_by_ingredient(authed_api_client):
+    client, _user_id = authed_api_client
+    RecipesApi(client).create_recipe(
+        CreateRecipeRequest(
+            title="Hummus",
+            instructions="Blend.",
+            ingredients=[make_ingredient("tahini", "1/4", "cup")],
+        )
+    )
+    recipe_id = create_recipe(client, title="Falafel Bowl")
+
+    _job_id, proposal = run_edit(
+        client, recipe_id, instruction="make the sauce like my other one"
+    )
+
+    assert proposal.summary == "Found: Title: Hummus"
