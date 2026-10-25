@@ -15,7 +15,9 @@ from __future__ import annotations
 import argparse
 import functools
 import json
+import os
 import re
+import socket
 import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -78,15 +80,29 @@ class Handler(SimpleHTTPRequestHandler):
         print(f"Saved {path.relative_to(ROOT)}")
 
 
+def default_host() -> str:
+    """The address this SSH session came in on, so the printed links open
+    from the machine you're sshing from; else localhost."""
+    fields = os.environ.get("SSH_CONNECTION", "").split()
+    return fields[2] if len(fields) == 4 else "127.0.0.1"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument("--host", default=default_host())
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
     handler = functools.partial(Handler, directory=str(PAGES))
-    server = ThreadingHTTPServer((args.host, args.port), handler)
+    ipv6 = ":" in args.host
+    server_class = type(
+        "Server",
+        (ThreadingHTTPServer,),
+        {"address_family": socket.AF_INET6 if ipv6 else socket.AF_INET},
+    )
+    server = server_class((args.host, args.port), handler)
+    url_host = f"[{args.host}]" if ipv6 else args.host
     for page in sorted(PAGES.glob("*/judge.html")):
-        print(f"http://{args.host}:{args.port}/{page.parent.name}/judge.html")
+        print(f"http://{url_host}:{args.port}/{page.parent.name}/judge.html")
     server.serve_forever()
 
 

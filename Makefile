@@ -378,8 +378,8 @@ ai-eval: ## Evaluate AI models on the golden sets: MODELS=a,b [SUITE=ingredient-
 		--suite $(or $(SUITE),all) --models "$(MODELS)" \
 		$(if $(BATCH),--batch-size $(BATCH),)
 
-ai-eval-judge: ## Serve the AI eval judging pages and save their judgments into data/ai-evals/judgments/ [HOST=127.0.0.1] [PORT=8765]
-	@./scripts/ai-eval-judge-server.py --host $(or $(HOST),127.0.0.1) --port $(or $(PORT),8765)
+ai-eval-judge: ## Serve the AI eval judging pages and save their judgments into data/ai-evals/judgments/ [HOST=the SSH session's address, else 127.0.0.1] [PORT=8765]
+	@./scripts/ai-eval-judge-server.py $(if $(HOST),--host $(HOST),) --port $(or $(PORT),8765)
 
 ai-eval-golden: ## Regenerate the generated AI eval golden sets (data/ai-evals/golden/) from the committed catalog and pipeline snapshots
 	@cargo run -q --release --manifest-path cli/Cargo.toml -- ai-eval --write-golden
