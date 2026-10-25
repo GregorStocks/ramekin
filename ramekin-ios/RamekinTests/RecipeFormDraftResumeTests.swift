@@ -98,6 +98,7 @@ final class RecipeFormDraftResumeTests: XCTestCase {
             id: UUID(),
             ingredients: [],
             instructions: "Simmer",
+            normalizeOps: [],
             notes: nil,
             nutritionalInfo: nil,
             photoIds: [],
