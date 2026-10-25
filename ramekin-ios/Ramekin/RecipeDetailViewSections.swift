@@ -32,9 +32,12 @@ extension RecipeDetailView {
 
                 instructionsSection(recipe.instructions)
 
+                // The sections after the steps are anchors too, so scrolling
+                // to them isn't restored as the last step.
                 if let notes = recipe.notes, !notes.isEmpty {
                     Divider()
                     notesSection(notes)
+                        .recipeScrollAnchor("notes")
                 }
 
                 Divider()
@@ -43,15 +46,18 @@ extension RecipeDetailView {
                     scale: viewModel.recipeScale,
                     servings: recipe.servings
                 ))
+                .recipeScrollAnchor("calories")
 
                 if let nutritionalInfo = recipe.nutritionalInfoForDisplay {
                     Divider()
                     nutritionalInfoSection(nutritionalInfo)
+                        .recipeScrollAnchor("nutrition")
                 }
 
                 if let sourceUrl = recipe.sourceUrl, let url = URL(string: sourceUrl) {
                     Divider()
                     sourceLinkSection(url: url, name: recipe.sourceName)
+                        .recipeScrollAnchor("source")
                 }
             }
             .padding()
@@ -59,6 +65,10 @@ extension RecipeDetailView {
     }
 
     @ViewBuilder var statusBanners: some View {
+        if resumableEdit != nil {
+            resumeEditBanner
+        }
+
         if viewModel.isRescraping {
             progressBanner("Rescraping from source…")
         }
@@ -194,6 +204,7 @@ extension RecipeDetailView {
                         scale: viewModel.recipeScale,
                         derived: derived.measurement(forIngredientAt: index)
                     )
+                    .recipeScrollAnchor(RecipeScrollAnchor.ingredient(index))
                 }
             }
         }
@@ -298,9 +309,41 @@ extension RecipeDetailView {
                 .fontWeight(.bold)
                 .accessibilityAddTraits(.isHeader)
 
-            Text(instructions)
-                .font(.body)
+            // One Text per line, which reads the same as one Text of them
+            // all, so the scroll position can be restored to a step.
+            VStack(alignment: .leading, spacing: 0) {
+                ForEach(Array(instructions.components(separatedBy: "\n").enumerated()), id: \.offset) { index, line in
+                    Text(line.isEmpty ? " " : line)
+                        .font(.body)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .accessibilityHidden(line.isEmpty)
+                        .recipeScrollAnchor(RecipeScrollAnchor.step(index))
+                }
+            }
         }
+    }
+
+    var resumeEditBanner: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top, spacing: 10) {
+                Image(systemName: "square.and.pencil")
+                    .foregroundColor(.accentColor)
+                    .accessibilityHidden(true)
+                Text("You have unsaved edits to this recipe.")
+                    .font(.subheadline)
+            }
+            HStack(spacing: 12) {
+                Button("Resume Editing") { resumeEdit() }
+                    .buttonStyle(.borderedProminent)
+                Button("Discard", role: .destructive) { discardResumableEdit() }
+                    .buttonStyle(.bordered)
+            }
+            .disabled(actionsDisabledForHistoricalVersion)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(12)
+        .background(Color.accentColor.opacity(0.14))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 
     func notesSection(_ notes: String) -> some View {

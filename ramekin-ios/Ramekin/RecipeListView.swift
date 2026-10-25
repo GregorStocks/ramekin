@@ -2,7 +2,11 @@ import SwiftUI
 
 struct RecipeListView: View {
     @StateObject private var viewModel: RecipeListViewModel
+    @Environment(\.recipeFormDraftMemory) private var draftMemory
     @State private var showingNewRecipe = false
+    /// A new recipe from before the app was terminated, offered for resuming.
+    @State private var resumableNewRecipe: RecipeFormDraft?
+    @State private var resumingNewRecipe: RecipeFormDraft?
 
     @MainActor
     init() {
@@ -19,6 +23,10 @@ struct RecipeListView: View {
     // List permanently in the hierarchy and draw status views as overlays.
     var body: some View {
         VStack(spacing: 0) {
+            if resumableNewRecipe != nil {
+                resumeNewRecipeBanner
+                Divider()
+            }
             if showsListChrome {
                 if viewModel.reloadFailed {
                     failureBanner("Couldn't update results — these may be out of date")
@@ -48,6 +56,9 @@ struct RecipeListView: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
+                    // A fresh form replaces the draft offered for resuming.
+                    resumableNewRecipe = nil
+                    resumingNewRecipe = nil
                     showingNewRecipe = true
                 } label: {
                     Image(systemName: "plus")
@@ -64,7 +75,7 @@ struct RecipeListView: View {
         // Cancel/Save rather than a push whose back swipe drops the draft.
         .sheet(isPresented: $showingNewRecipe) {
             NavigationStack {
-                RecipeFormView(mode: .create) {
+                RecipeFormView(mode: .create, resuming: resumingNewRecipe) {
                     Task { await viewModel.refresh() }
                 }
             }
@@ -73,6 +84,7 @@ struct RecipeListView: View {
             await viewModel.refresh()
         }
         .task {
+            resumableNewRecipe = draftMemory.stored(.create)
             await viewModel.start()
         }
         .onReceive(NotificationCenter.default.publisher(for: .tagsDidChange)) { _ in
@@ -143,6 +155,36 @@ struct RecipeListView: View {
         .padding(.horizontal)
         .padding(.vertical, 8)
         .background(Color(.systemYellow).opacity(0.15))
+    }
+
+    private var resumeNewRecipeBanner: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "square.and.pencil")
+                .foregroundColor(.accentColor)
+                .accessibilityHidden(true)
+            Text("Unsaved new recipe")
+                .font(.footnote)
+                .foregroundColor(.secondary)
+            Spacer()
+            Button("Discard", role: .destructive) {
+                draftMemory.remember(.create, nil)
+                resumableNewRecipe = nil
+            }
+            .font(.footnote)
+            .frame(minWidth: 44, minHeight: 44)
+            .contentShape(Rectangle())
+            Button("Resume") {
+                resumingNewRecipe = resumableNewRecipe
+                resumableNewRecipe = nil
+                showingNewRecipe = true
+            }
+            .font(.footnote.weight(.semibold))
+            .frame(minWidth: 44, minHeight: 44)
+            .contentShape(Rectangle())
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+        .background(Color.accentColor.opacity(0.12))
     }
 
     private var sortMenu: some View {

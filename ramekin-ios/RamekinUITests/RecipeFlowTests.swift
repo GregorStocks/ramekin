@@ -197,7 +197,8 @@ final class RecipeFlowTests: XCTestCase {
     }
 
     /// iOS terminating the app in the background must not lose the user's
-    /// place: relaunching restores the tab, the open recipe, and its scale.
+    /// place: relaunching restores the tab, the open recipe, its scale, and
+    /// how far down it was scrolled.
     func testRelaunchAfterTerminationRestoresPlace() throws {
         try launchSignedIn()
         let recipeCell = app.cells.firstMatch
@@ -207,29 +208,12 @@ final class RecipeFlowTests: XCTestCase {
         let recipeTitle = app.navigationBars.firstMatch.identifier
 
         let doubleScale = app.buttons["2x"]
-        scrollUntilHittable(doubleScale)
-        doubleScale.tap()
-        XCTAssertTrue(waitUntilSelected(doubleScale), "Tapping 2x should select it")
+        selectScaleThenScrollPastIt(doubleScale)
 
         app.tabBars.buttons["Meal Plan"].tap()
         XCTAssertTrue(app.navigationBars["Meal Plan"].waitForExistence(timeout: slowSimulatorTimeout))
 
-        // Background first so iOS saves scene state, then kill the process
-        // the way the OS does; swiping the app away would discard the state.
-        // Background work (sync) can keep the app from suspending, and scene
-        // state is saved on entering the background, so wait only for that.
-        XCUIDevice.shared.press(.home)
-        let backgrounded = XCTNSPredicateExpectation(
-            predicate: NSPredicate(format: "state != %d", XCUIApplication.State.runningForeground.rawValue),
-            object: app
-        )
-        XCTAssertEqual(XCTWaiter.wait(for: [backgrounded], timeout: slowSimulatorTimeout), .completed)
-        // Give the system a moment to write the scene's state.
-        _ = XCTWaiter.wait(for: [XCTestExpectation(description: "Scene state saved")], timeout: 2)
-        app.terminate()
-        // Keep the stored session: resetting auth would sign out.
-        app.launchArguments = []
-        app.launch()
+        terminateInBackgroundAndRelaunch()
 
         XCTAssertTrue(
             app.navigationBars["Meal Plan"].waitForExistence(timeout: slowSimulatorTimeout),
@@ -242,17 +226,139 @@ final class RecipeFlowTests: XCTestCase {
             "Relaunch should restore the open recipe"
         )
         XCTAssertTrue(app.navigationBars.buttons["Edit Recipe"].waitForExistence(timeout: slowSimulatorTimeout))
-        scrollUntilHittable(doubleScale)
+        XCTAssertTrue(doubleScale.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertTrue(
+            waitUntilNotHittable(doubleScale),
+            "Relaunch should restore how far down the recipe was scrolled"
+        )
+        attachScreenshot(named: "09-RestoredScroll")
+        scrollUntilHittable(doubleScale, toward: .towardStart)
         XCTAssertTrue(waitUntilSelected(doubleScale), "Relaunch should restore the recipe's scale")
         attachScreenshot(named: "09-RestoredRecipe")
+
+        leaveRecipeListAsRestoredPlace()
     }
 
-    private func scrollUntilHittable(_ element: XCUIElement) {
+    /// Edits the app was terminated on are offered for resuming on the
+    /// recipe's screen and come back as typed.
+    func testRelaunchAfterTerminationRestoresUnsavedEdit() throws {
+        try launchSignedIn()
+        let recipeCell = app.cells.firstMatch
+        XCTAssertTrue(recipeCell.waitForExistence(timeout: 60), "Seed data from make seed is required")
+        recipeCell.tap()
+        let editButton = app.navigationBars.buttons["Edit Recipe"]
+        XCTAssertTrue(editButton.waitForExistence(timeout: slowSimulatorTimeout))
+        editButton.tap()
+        XCTAssertTrue(app.navigationBars["Edit Recipe"].waitForExistence(timeout: slowSimulatorTimeout))
+
+        let marker = " unsaved-\(Int.random(in: 1000...9999))"
+        let titleField = app.textFields["Recipe title"]
+        XCTAssertTrue(titleField.waitForExistence(timeout: slowSimulatorTimeout))
+        // The loaded title replaces anything typed before the recipe loads;
+        // until then the field's value is its placeholder.
+        XCTAssertTrue(waitUntilValue(of: titleField, isNot: "Recipe title"))
+        titleField.tap()
+        titleField.typeText(marker)
+        XCTAssertTrue(waitUntilValue(of: titleField, contains: marker))
+
+        terminateInBackgroundAndRelaunch()
+
+        let resume = app.buttons["Resume Editing"]
+        XCTAssertTrue(
+            resume.waitForExistence(timeout: slowSimulatorTimeout),
+            "Relaunch should offer to resume the unsaved edit"
+        )
+        attachScreenshot(named: "10-ResumeEditOffer")
+        resume.tap()
+        XCTAssertTrue(app.navigationBars["Edit Recipe"].waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertTrue(
+            waitUntilValue(of: app.textFields["Recipe title"], contains: marker),
+            "Resuming should bring back the typed title"
+        )
+        attachScreenshot(named: "11-ResumedEdit")
+
+        app.navigationBars.buttons["Cancel"].tap()
+        let discard = app.buttons["Discard Changes"]
+        XCTAssertTrue(discard.waitForExistence(timeout: slowSimulatorTimeout))
+        discard.tap()
+        XCTAssertTrue(editButton.waitForExistence(timeout: slowSimulatorTimeout))
+        XCTAssertFalse(resume.exists, "Discarding the resumed edit should not offer it again")
+
+        leaveRecipeListAsRestoredPlace()
+    }
+
+    private func selectScaleThenScrollPastIt(_ scale: XCUIElement) {
+        scrollUntilHittable(scale)
+        scale.tap()
+        XCTAssertTrue(waitUntilSelected(scale), "Tapping 2x should select it")
+        for _ in 0..<8 where scale.isHittable {
+            swipe(.towardEnd)
+        }
+        XCTAssertFalse(scale.isHittable, "The seeded recipe should be long enough to scroll past its scale")
+    }
+
+    private func waitUntilNotHittable(_ element: XCUIElement) -> Bool {
+        let offScreen = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "hittable == false"),
+            object: element
+        )
+        return XCTWaiter.wait(for: [offScreen], timeout: slowSimulatorTimeout) == .completed
+    }
+
+    /// Background first so iOS saves scene state, then kill the process the
+    /// way the OS does; swiping the app away would discard the state.
+    private func terminateInBackgroundAndRelaunch() {
+        backgroundForSceneSave()
+        app.terminate()
+        // Keep the stored session: resetting auth would sign out.
+        app.launchArguments = []
+        app.launch()
+    }
+
+    /// Background work (sync) can keep the app from suspending, and scene
+    /// state is saved on entering the background, so wait only for that.
+    private func backgroundForSceneSave() {
+        XCUIDevice.shared.press(.home)
+        let backgrounded = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "state != %d", XCUIApplication.State.runningForeground.rawValue),
+            object: app
+        )
+        XCTAssertEqual(XCTWaiter.wait(for: [backgrounded], timeout: slowSimulatorTimeout), .completed)
+        // Give the system a moment to write the scene's state.
+        _ = XCTWaiter.wait(for: [XCTestExpectation(description: "Scene state saved")], timeout: 2)
+    }
+
+    /// Scene state outlives the test, so leave the next launch on the recipe
+    /// list that other tests start from.
+    private func leaveRecipeListAsRestoredPlace() {
+        app.tabBars.buttons["Recipes"].tap()
+        let back = app.navigationBars.buttons["Recipes"]
+        if back.exists { back.tap() }
+        XCTAssertTrue(app.navigationBars["Recipes"].waitForExistence(timeout: slowSimulatorTimeout))
+        backgroundForSceneSave()
+        app.terminate()
+    }
+
+    private enum SwipeDirection {
+        /// Reveal content further down.
+        case towardEnd
+        /// Reveal content further up.
+        case towardStart
+    }
+
+    private func swipe(_ direction: SwipeDirection) {
+        let lower = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.75))
+        let upper = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+        switch direction {
+        case .towardEnd: lower.press(forDuration: 0.01, thenDragTo: upper)
+        case .towardStart: upper.press(forDuration: 0.01, thenDragTo: lower)
+        }
+    }
+
+    private func scrollUntilHittable(_ element: XCUIElement, toward direction: SwipeDirection = .towardEnd) {
         XCTAssertTrue(element.waitForExistence(timeout: slowSimulatorTimeout))
         for _ in 0..<8 where !element.isHittable {
-            let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.75))
-            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
-            start.press(forDuration: 0.01, thenDragTo: end)
+            swipe(direction)
         }
     }
 
@@ -262,6 +368,22 @@ final class RecipeFlowTests: XCTestCase {
             object: element
         )
         return XCTWaiter.wait(for: [selected], timeout: slowSimulatorTimeout) == .completed
+    }
+
+    private func waitUntilValue(of element: XCUIElement, contains text: String) -> Bool {
+        let matches = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "value CONTAINS %@", text),
+            object: element
+        )
+        return XCTWaiter.wait(for: [matches], timeout: slowSimulatorTimeout) == .completed
+    }
+
+    private func waitUntilValue(of element: XCUIElement, isNot text: String) -> Bool {
+        let matches = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "value != %@", text),
+            object: element
+        )
+        return XCTWaiter.wait(for: [matches], timeout: slowSimulatorTimeout) == .completed
     }
 }
 
